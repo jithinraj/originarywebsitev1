@@ -8,13 +8,17 @@ echo "Running content lint checks..."
 # Define banned phrases
 BANNED_PHRASES=(
     "Introducing PEAC Protocol v2\.0"
-    "Trusted by.*(Anthropic|OpenAI|Mistral|Cohere)"
+    "Trusted by.*(Anthropic|OpenAI|Mistral|Cohere|Fortune.*companies)"
     "VERIFIED.*\d+\.\d+ms"
     "Originary's PEAC"
     "PEAC by Originary"
     "PEAC Protocol access"
     "99\.99%.*SLA"
     "Enterprise SLA.*99\.99"
+    "1M\+.*adapters"
+    "99\.99%.*compliance"
+    "99\.99%.*accuracy"
+    "—"
 )
 
 # Search for banned phrases in marketing pages

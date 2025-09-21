@@ -31,38 +31,22 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: 'Originary',
   url: 'https://originary.xyz',
-  logo: 'https://originary.xyz/og.jpg',
+  alternateName: ['Originary AI'],
   sameAs: [
-    'https://www.linkedin.com/company/originary/',
     'https://x.com/originaryinc',
-    'https://www.crunchbase.com/organization/originary',
+    'https://www.linkedin.com/company/originary/',
+    'https://github.com/peacprotocol',
+    'https://originaryai.com',
+    'https://peacprotocol.org'
   ],
-  contactPoint: [
-    {
-      '@type': 'ContactPoint',
-      contactType: 'sales',
-      email: 'contact@originary.xyz',
-      areaServed: 'Global',
-      availableLanguage: ['English'],
-    },
-  ],
-  address: {
-    '@type': 'PostalAddress',
-    addressCountry: 'US',
-  },
-  foundingDate: '2024',
-  description:
-    'Originary builds orchestration infrastructure for the agentic web. Policy, payments, and proof with receipts powered by the PEAC protocol.',
-  makesOffer: {
-    '@type': 'OfferCatalog',
-    name: 'Originary Product Suite',
-    itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'PEAC Protocol' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Verify API' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Gateway 402' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Studio' } },
-    ],
-  },
+  logo: 'https://originary.xyz/og/originary-logo.png'
+}
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Originary',
+  url: 'https://originary.xyz'
 }
 
 export const metadata: Metadata = {
@@ -136,8 +120,11 @@ export default function RootLayout({
       <head>
         <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" rx="64" fill="%23FAF8F1"/><circle cx="128" cy="128" r="78" fill="%230B0B0B"/><circle cx="128" cy="128" r="48" fill="%23FAF8F1"/></svg>' />
         <link rel="canonical" href="https://originary.xyz/" />
-        <Script id="originary-json-ld" type="application/ld+json" strategy="beforeInteractive">
+        <Script id="originary-organization-json-ld" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(organizationJsonLd)}
+        </Script>
+        <Script id="originary-website-json-ld" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify(websiteJsonLd)}
         </Script>
       </head>
       <body>

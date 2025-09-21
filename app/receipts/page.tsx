@@ -6,11 +6,11 @@ import { ArrowRight, Receipt, Shield, Zap, Globe, BarChart, Scale, CheckCircle, 
 
 export const metadata: Metadata = {
   title: 'Cryptographic Receipts - Originary',
-  description: 'Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Trusted by Fortune 500 companies for transparent AI operations.',
+  description: 'Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Transparent AI operations for leading companies.',
   keywords: 'cryptographic receipts, AI verification, proof of use, blockchain receipts, AI transparency, enterprise AI, compliance',
   openGraph: {
     title: 'Cryptographic Receipts - Originary',
-    description: 'Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Trusted by Fortune 500 companies for transparent AI operations.',
+    description: 'Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Transparent AI operations for leading companies.',
     url: 'https://originary.xyz/receipts/',
     siteName: 'Originary',
     images: [{ url: 'https://originary.xyz/og.jpg' }],
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Cryptographic Receipts - Originary',
-    description: 'Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Trusted by Fortune 500 companies for transparent AI operations.',
+    description: 'Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Transparent AI operations for leading companies.',
     images: ['https://originary.xyz/og.jpg'],
   },
   alternates: {

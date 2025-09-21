@@ -1,0 +1,4 @@
+1d771bd8af631ff0854e6302eaa3ac7b0869dd3d84702dd42c2d56f174e34411  originary-cli-v0.9.13-darwin-arm64.tar.gz
+0aa9876246dff6038000c2b0e106cbd7bd3b223f95153d18d113c5df8c55bb48  originary-cli-v0.9.13-linux-x64.tar.gz
+2b28030198b4c9db9e08d7e0c7b343823b4a3663fe552b51ed43a53bcb7ff443  originary-cli-v0.9.13-windows-x64.zip
+89dff0463a00981fc2057c22684a7763d4e4f75f72a3eaaed787573fb10f8cf7  peac-templates-v0.9.13.zip
