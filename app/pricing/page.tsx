@@ -4,8 +4,22 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle } from 'lucide-react'
+import { useEffect } from 'react'
 
 export default function Pricing() {
+  useEffect(() => {
+    // Load Razorpay script dynamically
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
+    script.setAttribute('data-payment_button_id', 'pl_RK5T4IykFzu0rh');
+    script.async = true;
+
+    const form = document.getElementById('razorpay-form');
+    if (form) {
+      form.appendChild(script);
+    }
+  }, []);
+
   return (
     <div className="wrap">
       <NavigationHeader />
@@ -57,12 +71,7 @@ export default function Pricing() {
                   ))}
                 </div>
                 <div style={{ width: '100%' }}>
-                  <form>
-                    <script
-                      src="https://checkout.razorpay.com/v1/payment-button.js"
-                      data-payment_button_id="pl_RK5T4IykFzu0rh"
-                      async
-                    />
+                  <form id="razorpay-form">
                   </form>
                 </div>
               </div>
