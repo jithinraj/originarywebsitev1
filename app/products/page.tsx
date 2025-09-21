@@ -402,8 +402,9 @@ function ProductCard({
           alignItems: 'center',
           gap: 'var(--space-2)'
         }}
+        aria-label={`Learn more about ${title}`}
       >
-        <span>Learn more</span>
+        <span>Learn more about {title}</span>
         <ArrowRight size={14} />
       </Link>
     </div>

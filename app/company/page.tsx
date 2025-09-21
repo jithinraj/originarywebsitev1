@@ -44,7 +44,7 @@ export default function CompanyPage() {
               <div className="card">
                 <h3>About Us</h3>
                 <p>We build infrastructure for intent routing, policy enforcement, and verified receipts across humans, agents, and machines.</p>
-                <a href="/company/about" className="link">Learn more</a>
+                <a href="/company/about" className="link" aria-label="Learn more about Originary">Learn more about Originary</a>
               </div>
               <div className="card">
                 <h3>Careers</h3>

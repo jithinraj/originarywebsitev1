@@ -136,6 +136,8 @@ export default function NavigationHeader() {
           <button
             className="mobile-menu-btn"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close mobile menu' : 'Open mobile menu'}
+            aria-expanded={isMenuOpen}
             style={{
               display: 'none',
               background: 'none',
@@ -269,6 +271,9 @@ function NavDropdown({ label, items }: { label: string; items: Array<{ href: str
       onMouseLeave={() => setIsOpen(false)}
     >
       <button
+        aria-label={`${label} menu`}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
         style={{
           display: 'flex',
           alignItems: 'center',
