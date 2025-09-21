@@ -82,7 +82,7 @@ export default function Contact() {
         {/* Contact Options */}
         <section className="section" style={{ background: 'var(--gray-50)' }}>
           <div className="container">
-            <div className=\"grid grid-2\" style={{ gap: 'var(--space-12)', alignItems: 'start' }}>
+            <div className="grid grid-2" style={{ gap: 'var(--space-12)', alignItems: 'start' }}>
               {/* Left Column - Contact Options */}
               <div>
                 <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-8)' }}>
