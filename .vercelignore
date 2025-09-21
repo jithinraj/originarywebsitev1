@@ -1,10 +1,6 @@
 # Dependencies
 node_modules/
 
-# Build outputs
-.next/
-out/
-
 # Environment variables (use Vercel dashboard instead)
 .env.local
 .env*.local
@@ -16,8 +12,6 @@ out/
 
 # Old files not needed for deployment
 *.html
-assets/
-downloads/
 LAUNCH_READINESS_REPORT.md
 
 # Database files

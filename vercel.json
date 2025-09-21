@@ -1,10 +1,28 @@
 {
+  "version": 2,
   "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
   "redirects": [
     {
       "source": "/docs/(.*)",
       "destination": "/developers",
       "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
     }
   ]
 }
