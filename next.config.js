@@ -13,6 +13,11 @@ const nextConfig = {
         destination: '/developers',
         permanent: true,
       },
+      {
+        source: '/.well-known/peac.txt',
+        destination: '/peac.txt',
+        permanent: true,
+      },
     ]
   },
 }

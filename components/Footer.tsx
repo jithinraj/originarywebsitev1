@@ -153,7 +153,7 @@ export default function Footer() {
               </a>.
             </small>
             <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7, marginTop: 'var(--space-1)' }}>
-              Originary is a trademark of Originary, Inc. All other names may be trademarks of their respective owners.
+              Originary is a trademark of its respective owner. All other names may be trademarks of their respective owners.
             </small>
           </div>
           <div
