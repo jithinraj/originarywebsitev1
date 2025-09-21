@@ -1,0 +1,73 @@
+import type { Metadata } from 'next'
+import StaticPageLayout from '@/components/StaticPageLayout'
+
+export const metadata: Metadata = {
+  title: 'Company : Originary',
+  description: 'Originary is a product company building orchestration for the agentic web.',
+  keywords: 'agentic web, orchestration protocol, AI coordination, PEAC protocol',
+  openGraph: {
+    title: 'Company : Originary',
+    description: 'Originary is a product company building orchestration for the agentic web.',
+    url: 'https://originary.xyz/company/',
+    siteName: 'Originary',
+    images: [{ url: 'https://originary.xyz/og.jpg' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Company : Originary',
+    description: 'Originary is a product company building orchestration for the agentic web.',
+    images: ['https://originary.xyz/og.jpg'],
+  },
+  alternates: {
+    canonical: 'https://originary.xyz/company/',
+  },
+}
+
+export default function CompanyPage() {
+  return (
+    <StaticPageLayout>
+      <main>
+        <section className="hero">
+          <div className="container">
+            <div className="hero-content">
+              <span className="kicker">COMPANY</span>
+              <h1 className="display">Company</h1>
+              <p className="sub">Originary is a product company building orchestration for the agentic web.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <div className="grid-2">
+              <div className="card">
+                <h3>About Us</h3>
+                <p>We build infrastructure for intent routing, policy enforcement, and verified receipts across humans, agents, and machines.</p>
+                <a href="/company/about" className="link">Learn more</a>
+              </div>
+              <div className="card">
+                <h3>Careers</h3>
+                <p>Join us in building the future of agentic coordination.</p>
+                <a href="/company/careers" className="link">View opportunities</a>
+              </div>
+            </div>
+
+            <div className="grid-2">
+              <div className="card">
+                <h3>Press & Media</h3>
+                <p>Media inquiries and press resources.</p>
+                <a href="/company/press" className="link">Press center</a>
+              </div>
+              <div className="card">
+                <h3>Contact</h3>
+                <p>Get in touch with our team.</p>
+                <a href="/company/contact" className="link">Contact us</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </StaticPageLayout>
+  )
+}

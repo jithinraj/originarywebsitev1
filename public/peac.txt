@@ -1,0 +1,93 @@
+# PEAC Policy - Originary.xyz
+# Policy for Efficient Agentic Coordination
+# Version: 1.2.0
+# Last Updated: 2025-01-21
+# Contact: contact@originary.xyz
+
+version: 1.2.0
+domain: originary.xyz
+effective_date: 2025-01-21
+expires: 2025-12-31
+
+# Policy Statement
+policy: attribution-required-commercial-license
+
+# Contact Information
+contact:
+  email: contact@originary.xyz
+  support: https://originary.xyz/company/contact
+
+# Attribution Requirements
+attribution:
+  required: true
+  format: "Content from Originary (https://originary.xyz)"
+  placement: "prominently displayed"
+
+# Usage Terms
+usage:
+  research: permitted
+  commercial: license-required
+  training: license-required
+  redistribution: prohibited
+
+# Licensing
+license:
+  type: commercial
+  contact: contact@originary.xyz
+  pricing: custom
+
+# Rate Limits
+rate_limits:
+  requests_per_minute: 100
+  requests_per_hour: 1000
+  requests_per_day: 10000
+
+# Content Classification
+content_types:
+  - type: documentation
+    policy: cc-by-nc
+    attribution_required: true
+  - type: code_examples
+    policy: mit
+    attribution_required: true
+  - type: marketing_copy
+    policy: all-rights-reserved
+    attribution_required: true
+  - type: legal_documents
+    policy: all-rights-reserved
+    attribution_required: true
+
+# AI Training Policy
+ai_training:
+  permitted: false
+  requires_license: true
+  contact: contact@originary.xyz
+
+# Verification
+verification:
+  endpoint: https://verify.originary.xyz/v1/verify
+  public_key: https://originary.xyz/.well-known/jwks.json
+
+# Payment Gateway
+payment:
+  gateway: https://gateway.originary.xyz
+  methods: ["stripe", "paypal", "crypto"]
+  currencies: ["USD", "EUR", "GBP"]
+
+# Compliance
+compliance:
+  gdpr: true
+  ccpa: true
+  coppa: false
+
+# Links
+links:
+  terms: https://originary.xyz/legal/terms
+  privacy: https://originary.xyz/legal/privacy
+  acceptable_use: https://originary.xyz/legal/acceptable-use
+
+# Protocol Information
+protocol:
+  specification: https://peacprotocol.org/spec
+  version: 1.2.0
+  implementation: originary-reference

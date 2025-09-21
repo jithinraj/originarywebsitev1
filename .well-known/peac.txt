@@ -1,0 +1,26 @@
+# /.well-known/peac.txt (live 0.9.13)
+version: 0.9.13
+usage: open
+purposes: [indexing, research, documentation, reference]
+attribution: optional
+preferences: https://originary.xyz/.well-known/ai-preferences.txt
+receipts: required
+verify: true
+access_control: http-402
+payments: ['x402', 'l402']
+provenance: c2pa
+public_keys: [
+  {
+    kid: "originary-2025-001",
+    alg: "Ed25519",
+    key: "ed25519:AAAAC3NzaC1lZDI1NTE5AAAAIExample..."
+  }
+]
+
+# Contact information
+contact: contact@originary.xyz
+support: https://originary.xyz/company/contact.html
+
+# Rate limiting
+rate_limit: 1000/hour
+free_quota: 100

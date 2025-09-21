@@ -1,0 +1,59 @@
+Contact: mailto:contact@originary.xyz
+Contact: https://originary.xyz/company/contact.html
+Expires: 2026-07-24T23:59:59.000Z
+Encryption: https://originary.xyz/.well-known/pgp-key.txt
+Acknowledgments: https://originary.xyz/security/hall-of-fame.html
+Preferred-Languages: en
+Canonical: https://originary.xyz/.well-known/security.txt
+Policy: https://originary.xyz/security/vulnerability-disclosure.html
+
+# Security Contact Information for Originary
+#
+# Originary (operated by Curious Explorations Private Limited) takes security
+# seriously and welcomes reports of potential vulnerabilities in our services.
+#
+# Reporting Guidelines:
+# 1. Email contact@originary.xyz with vulnerability details
+# 2. Include steps to reproduce the issue
+# 3. Provide impact assessment and affected systems
+# 4. Allow reasonable time for response and remediation
+# 5. Do not access or modify user data without permission
+#
+# Scope:
+# - originary.xyz and all subdomains
+# - PEAC Protocol implementations
+# - Verify API endpoints
+# - Gateway (402) services
+# - Studio platform and dashboards
+# - Official Originary mobile applications
+#
+# Out of Scope:
+# - Third-party integrations not controlled by Originary
+# - Social engineering attacks
+# - Physical security issues
+# - Denial of service attacks
+# - Issues requiring physical access to Originary facilities
+#
+# Response Timeline:
+# - Initial response: Within 24 hours
+# - Status updates: Every 72 hours
+# - Resolution timeline: Varies by severity
+#
+# Coordinated Disclosure:
+# We follow responsible disclosure practices and request that security
+# researchers do the same. Please do not publicly disclose vulnerabilities
+# until we have had reasonable time to address them.
+#
+# Recognition:
+# Valid security reports may be eligible for inclusion in our security
+# hall of fame and potential bug bounty rewards for qualifying findings.
+#
+# Legal Safe Harbor:
+# Originary will not pursue legal action against security researchers who:
+# - Make good faith efforts to follow this policy
+# - Avoid privacy violations and data destruction
+# - Report vulnerabilities promptly and confidentially
+# - Do not exploit vulnerabilities beyond demonstration
+#
+# This security.txt file is signed and updated regularly.
+# For questions about this policy, contact contact@originary.xyz
