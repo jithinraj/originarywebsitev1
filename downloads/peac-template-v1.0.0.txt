@@ -1,0 +1,32 @@
+# /.well-known/peac.txt (v0.9.13)
+version: 0.9.13
+usage: open
+purposes: [indexing, research, documentation, reference]
+attribution: optional
+preferences: https://yourdomain.com/.well-known/ai-preferences.txt
+receipts: required
+verify: true
+access_control: http-402
+payments: ['x402', 'l402']
+provenance: c2pa
+public_keys: [
+  {
+    kid: "yourdomain-2025-001",
+    alg: "Ed25519",
+    key: "ed25519:AAAAC3NzaC1lZDI1NTE5AAAAIYourKey..."
+  }
+]
+
+# Contact information
+contact: contact@yourdomain.com
+support: https://yourdomain.com/support
+
+# Rate limiting
+rate_limit: 1000/hour
+commercial_rate: "$0.001/request"
+
+# AI preferences
+ai_training: permitted
+ai_inference: permitted
+attribution_required: true
+retention_limit: "30 days"

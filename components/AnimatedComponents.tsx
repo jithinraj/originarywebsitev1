@@ -1,21 +1,6 @@
 'use client'
 
-import { motion, useAnimation, useInView, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import { useEffect, useRef, ReactNode, useState } from 'react'
-
-// Hook to handle hydration-safe rendering
-const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useEffect : () => {}
-
-// Check if we're on the client side
-const useIsClient = () => {
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
-
-  return isClient
-}
 import {
   ChevronRight,
   Check,
@@ -50,6 +35,44 @@ import {
   Headphones,
   Building
 } from 'lucide-react'
+
+// Hook to detect when element is in view
+const useInView = (ref: React.RefObject<HTMLElement>, options = {}) => {
+  const [isInView, setIsInView] = useState(false)
+
+  useEffect(() => {
+    const element = ref.current
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting)
+      },
+      { threshold: 0.3, ...options }
+    )
+
+    if (element) {
+      observer.observe(element)
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element)
+      }
+    }
+  }, [ref, options])
+
+  return isInView
+}
+
+// Check if we're on the client side
+const useIsClient = () => {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  return isClient
+}
 
 export const icons = {
   ChevronRight,
@@ -98,43 +121,31 @@ export const FadeIn = ({
   duration?: number
   className?: string
 }) => {
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const isClient = useIsClient()
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
-  const controls = useAnimation()
+  const isInView = useInView(ref)
+  const [hasAnimated, setHasAnimated] = useState(false)
 
   useEffect(() => {
-    if (isInView && isClient) {
-      controls.start('visible')
+    if (isInView && isClient && !hasAnimated) {
+      setHasAnimated(true)
     }
-  }, [isInView, controls, isClient])
+  }, [isInView, isClient, hasAnimated])
 
-  // Return a simple div during SSR to prevent hydration issues
-  if (!isClient) {
-    return <div className={className}>{children}</div>
+  const animationStyle = {
+    opacity: hasAnimated ? 1 : 0,
+    transform: hasAnimated ? 'translateY(0)' : 'translateY(20px)',
+    transition: `opacity ${duration}s ease-out ${delay}s, transform ${duration}s ease-out ${delay}s`
   }
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            delay,
-            duration,
-            ease: 'easeOut'
-          }
-        }
-      }}
+      style={isClient ? animationStyle : undefined}
       className={className}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
@@ -150,43 +161,39 @@ export const SlideIn = ({
   delay?: number
   className?: string
 }) => {
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const isClient = useIsClient()
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const isInView = useInView(ref)
+  const [hasAnimated, setHasAnimated] = useState(false)
 
-  const variants = {
-    hidden: {
-      opacity: 0,
-      x: direction === 'left' ? -50 : direction === 'right' ? 50 : 0,
-      y: direction === 'up' ? 50 : direction === 'down' ? -50 : 0,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
+  useEffect(() => {
+    if (isInView && isClient && !hasAnimated) {
+      setHasAnimated(true)
     }
+  }, [isInView, isClient, hasAnimated])
+
+  const getInitialTransform = () => {
+    if (direction === 'left') return 'translateX(-50px)'
+    if (direction === 'right') return 'translateX(50px)'
+    if (direction === 'up') return 'translateY(50px)'
+    if (direction === 'down') return 'translateY(-50px)'
+    return 'translateX(-50px)'
   }
 
-  // Return a simple div during SSR to prevent hydration issues
-  if (!isClient) {
-    return <div className={className}>{children}</div>
+  const animationStyle = {
+    opacity: hasAnimated ? 1 : 0,
+    transform: hasAnimated ? 'translate(0, 0)' : getInitialTransform(),
+    transition: `opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s`
   }
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      variants={variants}
-      transition={{
-        delay,
-        duration: 0.6,
-        ease: [0.16, 1, 0.3, 1]
-      }}
+      style={isClient ? animationStyle : undefined}
       className={className}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
@@ -200,29 +207,31 @@ export const ScaleIn = ({
   delay?: number
   className?: string
 }) => {
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const isClient = useIsClient()
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const isInView = useInView(ref)
+  const [hasAnimated, setHasAnimated] = useState(false)
 
-  // Return a simple div during SSR to prevent hydration issues
-  if (!isClient) {
-    return <div className={className}>{children}</div>
+  useEffect(() => {
+    if (isInView && isClient && !hasAnimated) {
+      setHasAnimated(true)
+    }
+  }, [isInView, isClient, hasAnimated])
+
+  const animationStyle = {
+    opacity: hasAnimated ? 1 : 0,
+    transform: hasAnimated ? 'scale(1)' : 'scale(0.8)',
+    transition: `opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s`
   }
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-      transition={{
-        delay,
-        duration: 0.5,
-        ease: [0.16, 1, 0.3, 1]
-      }}
+      style={isClient ? animationStyle : undefined}
       className={className}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
@@ -236,33 +245,46 @@ export const StaggerChildren = ({
   staggerDelay?: number
   className?: string
 }) => {
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const isClient = useIsClient()
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const isInView = useInView(ref)
+  const [hasAnimated, setHasAnimated] = useState(false)
 
-  // Return a simple div during SSR to prevent hydration issues
-  if (!isClient) {
-    return <div className={className}>{children}</div>
+  useEffect(() => {
+    if (isInView && isClient && !hasAnimated) {
+      setHasAnimated(true)
+      // Add staggered animation to children
+      const childElements = ref.current?.children
+      if (childElements) {
+        Array.from(childElements).forEach((child, index) => {
+          const element = child as HTMLElement
+          element.style.animationDelay = `${index * staggerDelay}s`
+          element.style.opacity = '1'
+          element.style.transform = 'translateY(0)'
+        })
+      }
+    }
+  }, [isInView, isClient, hasAnimated, staggerDelay])
+
+  const baseStyle = {
+    opacity: hasAnimated ? 1 : 0,
+    transition: 'opacity 0.6s ease-out'
+  }
+
+  const childStyle = {
+    opacity: hasAnimated ? 1 : 0,
+    transform: hasAnimated ? 'translateY(0)' : 'translateY(20px)',
+    transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
   }
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      variants={{
-        hidden: { opacity: 0 },
-        visible: {
-          opacity: 1,
-          transition: {
-            staggerChildren: staggerDelay,
-          }
-        }
-      }}
+      style={isClient ? baseStyle : undefined}
       className={className}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
@@ -274,30 +296,10 @@ export const StaggerItem = ({
   children: ReactNode
   className?: string
 }) => {
-  const isClient = useIsClient()
-
-  // Return a simple div during SSR to prevent hydration issues
-  if (!isClient) {
-    return <div className={className}>{children}</div>
-  }
-
   return (
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 0.5,
-            ease: 'easeOut'
-          }
-        }
-      }}
-      className={className}
-    >
+    <div className={className}>
       {children}
-    </motion.div>
+    </div>
   )
 }
 
@@ -313,9 +315,9 @@ export const AnimatedCounter = ({
   prefix?: string
   duration?: number
 }) => {
-  const ref = useRef(null)
+  const ref = useRef<HTMLSpanElement>(null)
   const isClient = useIsClient()
-  const isInView = useInView(ref, { once: true })
+  const isInView = useInView(ref)
   const [displayValue, setDisplayValue] = useState(0)
 
   useEffect(() => {
@@ -357,34 +359,20 @@ export const HoverCard = ({
   children: ReactNode
   className?: string
 }) => {
-  const isClient = useIsClient()
-
-  // Return a simple div during SSR to prevent hydration issues
-  if (!isClient) {
-    return <div className={className}>{children}</div>
+  const hoverStyle = {
+    transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+    transformStyle: 'preserve-3d' as const
   }
 
+  const hoverClass = 'hover:scale-105 hover:shadow-lg transform transition-all duration-300 ease-out'
+
   return (
-    <motion.div
-      whileHover={{
-        scale: 1.05,
-        rotateX: 5,
-        rotateY: 5,
-        transition: {
-          duration: 0.3,
-          ease: [0.16, 1, 0.3, 1]
-        }
-      }}
-      whileTap={{
-        scale: 0.95,
-        rotateX: 0,
-        rotateY: 0
-      }}
-      style={{ transformStyle: 'preserve-3d' }}
-      className={className}
+    <div
+      style={hoverStyle}
+      className={`${className} ${hoverClass}`}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
@@ -398,20 +386,34 @@ export const FloatingElement = ({
   duration?: number
   className?: string
 }) => {
+  const floatingStyle = {
+    animation: `float ${duration}s ease-in-out infinite`
+  }
+
+  useEffect(() => {
+    // Add CSS keyframes for floating animation
+    const style = document.createElement('style')
+    style.textContent = `
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+    `
+    document.head.appendChild(style)
+    return () => {
+      if (document.head.contains(style)) {
+        document.head.removeChild(style)
+      }
+    }
+  }, [])
+
   return (
-    <motion.div
-      animate={{
-        y: [0, -10, 0],
-      }}
-      transition={{
-        duration,
-        repeat: Infinity,
-        ease: 'easeInOut'
-      }}
+    <div
+      style={floatingStyle}
       className={className}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
@@ -422,30 +424,40 @@ export const GradientBlob = ({
   size = '600px',
   className = ''
 }) => {
+  const blobStyle = {
+    background: `radial-gradient(circle, ${color1} 0%, ${color2} 70%, transparent 100%)`,
+    width: size,
+    height: size,
+    animation: 'blob 25s ease-in-out infinite'
+  }
+
+  useEffect(() => {
+    const style = document.createElement('style')
+    style.textContent = `
+      @keyframes blob {
+        0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+        25% { transform: translate(150px, -120px) scale(1.2) rotate(90deg); }
+        50% { transform: translate(-100px, 80px) scale(0.8) rotate(180deg); }
+        75% { transform: translate(75px, -50px) scale(1.1) rotate(270deg); }
+      }
+    `
+    document.head.appendChild(style)
+    return () => {
+      if (document.head.contains(style)) {
+        document.head.removeChild(style)
+      }
+    }
+  }, [])
+
   return (
-    <motion.div
+    <div
       className={`absolute rounded-full filter blur-3xl opacity-15 ${className}`}
-      style={{
-        background: `radial-gradient(circle, ${color1} 0%, ${color2} 70%, transparent 100%)`,
-        width: size,
-        height: size,
-      }}
-      animate={{
-        x: [0, 150, -100, 0],
-        y: [0, -120, 80, 0],
-        scale: [1, 1.2, 0.8, 1],
-        rotate: [0, 180, 360],
-      }}
-      transition={{
-        duration: 25,
-        repeat: Infinity,
-        ease: 'easeInOut'
-      }}
+      style={blobStyle}
     />
   )
 }
 
-// Parallax scroll effect
+// Parallax scroll effect - simplified
 export const ParallaxScroll = ({
   children,
   offset = 50,
@@ -455,18 +467,30 @@ export const ParallaxScroll = ({
   offset?: number
   className?: string
 }) => {
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start']
-  })
+  const ref = useRef<HTMLDivElement>(null)
+  const [transform, setTransform] = useState('translateY(0)')
 
-  const y = useTransform(scrollYProgress, [0, 1], [offset, -offset])
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!ref.current) return
+      const rect = ref.current.getBoundingClientRect()
+      const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height)
+      const y = (scrollProgress - 0.5) * offset
+      setTransform(`translateY(${y}px)`)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [offset])
 
   return (
-    <motion.div ref={ref} style={{ y }} className={className}>
+    <div
+      ref={ref}
+      style={{ transform }}
+      className={className}
+    >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
@@ -482,32 +506,15 @@ export const AnimatedButton = ({
   className?: string
   variant?: 'primary' | 'secondary' | 'outline'
 }) => {
+  const buttonClass = `btn ${variant} ${className} transform transition-all duration-200 ease-out hover:scale-105 hover:-translate-y-0.5 active:scale-98 active:translate-y-0`
+
   return (
-    <motion.button
+    <button
       onClick={onClick}
-      className={`btn ${variant} ${className}`}
-      whileHover={{
-        scale: 1.05,
-        y: -2,
-        transition: {
-          duration: 0.2,
-          ease: [0.16, 1, 0.3, 1]
-        }
-      }}
-      whileTap={{
-        scale: 0.98,
-        y: 0
-      }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        type: 'spring',
-        stiffness: 400,
-        damping: 25
-      }}
+      className={buttonClass}
     >
       {children}
-    </motion.button>
+    </button>
   )
 }
 
@@ -519,16 +526,21 @@ export const ProgressBar = ({
   progress: number
   className?: string
 }) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref)
+  const [animatedWidth, setAnimatedWidth] = useState(0)
+
+  useEffect(() => {
+    if (isInView) {
+      setTimeout(() => setAnimatedWidth(progress), 100)
+    }
+  }, [isInView, progress])
 
   return (
     <div ref={ref} className={`w-full bg-gray-200 rounded-full h-2 ${className}`}>
-      <motion.div
-        className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
-        initial={{ width: 0 }}
-        animate={isInView ? { width: `${progress}%` } : { width: 0 }}
-        transition={{ duration: 1, ease: 'easeOut' }}
+      <div
+        className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000 ease-out"
+        style={{ width: `${animatedWidth}%` }}
       />
     </div>
   )
@@ -550,17 +562,12 @@ export const AnimatedTabs = ({
         <button
           key={tab}
           onClick={() => onTabChange(tab)}
-          className={`relative px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-            activeTab === tab ? 'text-white' : 'text-gray-600 hover:text-gray-900'
+          className={`relative px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+            activeTab === tab
+              ? 'text-white bg-gradient-to-r from-blue-500 to-purple-500'
+              : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
           }`}
         >
-          {activeTab === tab && (
-            <motion.div
-              layoutId="activeTab"
-              className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md"
-              transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-            />
-          )}
           <span className="relative z-10">{tab}</span>
         </button>
       ))}
@@ -596,23 +603,35 @@ export const RevealWithLine = ({
   children: ReactNode
   className?: string
 }) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref)
+  const [hasAnimated, setHasAnimated] = useState(false)
+
+  useEffect(() => {
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true)
+    }
+  }, [isInView, hasAnimated])
+
+  const contentStyle = {
+    opacity: hasAnimated ? 1 : 0,
+    transform: hasAnimated ? 'translateY(0)' : 'translateY(20px)',
+    transition: 'opacity 0.6s ease-out, transform 0.6s ease-out'
+  }
+
+  const lineStyle = {
+    height: hasAnimated ? '100%' : '0%',
+    transition: 'height 0.8s ease-out 0.2s'
+  }
 
   return (
     <div ref={ref} className={`relative ${className}`}>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-      >
+      <div style={contentStyle}>
         {children}
-      </motion.div>
-      <motion.div
+      </div>
+      <div
         className="absolute -left-4 top-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500"
-        initial={{ height: 0 }}
-        animate={isInView ? { height: '100%' } : { height: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+        style={lineStyle}
       />
     </div>
   )
@@ -629,8 +648,9 @@ export const TypewriterText = ({
   speed?: number
 }) => {
   const [displayText, setDisplayText] = useState('')
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+  const [showCursor, setShowCursor] = useState(true)
+  const ref = useRef<HTMLSpanElement>(null)
+  const isInView = useInView(ref)
 
   useEffect(() => {
     if (isInView) {
@@ -652,15 +672,17 @@ export const TypewriterText = ({
     }
   }, [isInView, text, delay, speed])
 
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setShowCursor(prev => !prev)
+    }, 500)
+    return () => clearInterval(cursorInterval)
+  }, [])
+
   return (
     <span ref={ref}>
       {displayText}
-      <motion.span
-        animate={{ opacity: [1, 0] }}
-        transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse' }}
-      >
-        |
-      </motion.span>
+      <span style={{ opacity: showCursor ? 1 : 0 }}>|</span>
     </span>
   )
 }
@@ -691,24 +713,21 @@ export const MagneticCard = ({
     setPosition({ x: 0, y: 0 })
   }
 
+  const transformStyle = {
+    transform: `translate(${position.x}px, ${position.y}px)`,
+    transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+  }
+
   return (
-    <motion.div
+    <div
       ref={ref}
       className={className}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      animate={{
-        x: position.x,
-        y: position.y
-      }}
-      transition={{
-        type: 'spring',
-        stiffness: 150,
-        damping: 15
-      }}
+      style={transformStyle}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
@@ -731,21 +750,22 @@ export const GlitchText = ({
     return () => clearInterval(interval)
   }, [])
 
+  const glitchStyle = {
+    transform: isGlitching ? 'translate(-1px, 0) skew(1deg)' : 'none',
+    transition: 'transform 0.2s ease-out'
+  }
+
   return (
-    <motion.span
+    <span
       className={className}
-      animate={isGlitching ? {
-        x: [0, -2, 2, -1, 1, 0],
-        skewX: [0, 2, -2, 1, -1, 0],
-      } : {}}
-      transition={{ duration: 0.2 }}
+      style={glitchStyle}
     >
       {text}
-    </motion.span>
+    </span>
   )
 }
 
-// Particle system
+// Particle system - simplified
 export const ParticleField = ({
   count = 50,
   className = ''
@@ -755,24 +775,35 @@ export const ParticleField = ({
 }) => {
   const particles = Array.from({ length: count }, (_, i) => i)
 
+  useEffect(() => {
+    const style = document.createElement('style')
+    style.textContent = `
+      @keyframes float-particles {
+        0%, 100% { transform: translate(0, 0); }
+        25% { transform: translate(100px, -50px); }
+        50% { transform: translate(-75px, 100px); }
+        75% { transform: translate(50px, -75px); }
+      }
+    `
+    document.head.appendChild(style)
+    return () => {
+      if (document.head.contains(style)) {
+        document.head.removeChild(style)
+      }
+    }
+  }, [])
+
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
       {particles.map((particle) => (
-        <motion.div
+        <div
           key={particle}
           className="absolute w-1 h-1 bg-blue-400 rounded-full opacity-30"
-          initial={{
-            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-            y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
-          }}
-          animate={{
-            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-            y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
-          }}
-          transition={{
-            duration: Math.random() * 10 + 20,
-            repeat: Infinity,
-            ease: 'linear'
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animation: `float-particles ${Math.random() * 10 + 20}s linear infinite`,
+            animationDelay: `${Math.random() * 5}s`
           }}
         />
       ))}
@@ -786,20 +817,41 @@ export const MorphingShape = ({
 }: {
   className?: string
 }) => {
+  useEffect(() => {
+    const style = document.createElement('style')
+    style.textContent = `
+      @keyframes morph {
+        0%, 100% {
+          border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+          transform: rotate(0deg);
+        }
+        25% {
+          border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+          transform: rotate(90deg);
+        }
+        50% {
+          border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+          transform: rotate(180deg);
+        }
+        75% {
+          border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+          transform: rotate(270deg);
+        }
+      }
+    `
+    document.head.appendChild(style)
+    return () => {
+      if (document.head.contains(style)) {
+        document.head.removeChild(style)
+      }
+    }
+  }, [])
+
   return (
-    <motion.div
+    <div
       className={`w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-600 ${className}`}
-      animate={{
-        borderRadius: ["30% 70% 70% 30% / 30% 30% 70% 70%",
-                      "50% 50% 50% 50% / 50% 50% 50% 50%",
-                      "70% 30% 30% 70% / 70% 70% 30% 30%",
-                      "30% 70% 70% 30% / 30% 30% 70% 70%"],
-        rotate: [0, 90, 180, 270, 360]
-      }}
-      transition={{
-        duration: 8,
-        repeat: Infinity,
-        ease: "easeInOut"
+      style={{
+        animation: 'morph 8s ease-in-out infinite'
       }}
     />
   )
@@ -815,25 +867,34 @@ export const FadeInStagger = ({
   className?: string
   staggerDelay?: number
 }) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref)
+  const [hasAnimated, setHasAnimated] = useState(false)
+
+  useEffect(() => {
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true)
+    }
+  }, [isInView, hasAnimated])
 
   return (
     <div ref={ref} className={className}>
-      {children.map((child, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{
-            duration: 0.6,
-            delay: index * staggerDelay,
-            ease: [0.16, 1, 0.3, 1]
-          }}
-        >
-          {child}
-        </motion.div>
-      ))}
+      {children.map((child, index) => {
+        const animationStyle = {
+          opacity: hasAnimated ? 1 : 0,
+          transform: hasAnimated ? 'translateY(0)' : 'translateY(30px)',
+          transition: `opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${index * staggerDelay}s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${index * staggerDelay}s`
+        }
+
+        return (
+          <div
+            key={index}
+            style={animationStyle}
+          >
+            {child}
+          </div>
+        )
+      })}
     </div>
   )
 }

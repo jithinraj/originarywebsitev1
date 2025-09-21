@@ -1,0 +1,12 @@
+# peac.txt — template (v0.9.x)
+version: 0.9.13
+access: deny-by-default
+attribution: required
+receipts: required
+payments:
+  - type: http-402
+    adapters: [stripe, x402, ap2]
+public_keys:
+  - kid: kid-2025-09
+    alg: EdDSA
+    key: YOUR_PUBLIC_KEY_BASE64

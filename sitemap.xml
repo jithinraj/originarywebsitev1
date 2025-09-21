@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://originary.xyz/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+
+  <!-- Product Pages -->
+  <url>
+    <loc>https://originary.xyz/products/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/products/peac.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/products/verify.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/products/gateway-402.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/products/studio.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/products/adapters.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+
+  <!-- Solutions -->
+  <url>
+    <loc>https://originary.xyz/solutions/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/solutions/api-providers.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/solutions/ai-builders.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/solutions/enterprises.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/solutions/publishers.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+
+  <!-- Developer Resources -->
+  <url>
+    <loc>https://originary.xyz/developers/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/downloads/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+
+  <!-- Resources -->
+  <url>
+    <loc>https://originary.xyz/resources/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/resources/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/resources/case-studies.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/resources/changelog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+
+  <!-- Receipts -->
+  <url>
+    <loc>https://originary.xyz/receipts/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+
+  <!-- Pricing -->
+  <url>
+    <loc>https://originary.xyz/pricing/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+
+  <!-- Company -->
+  <url>
+    <loc>https://originary.xyz/company/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/company/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/company/careers.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/company/press.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/company/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+
+  <!-- Events -->
+  <url>
+    <loc>https://originary.xyz/events/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+
+  <!-- Trademark -->
+  <url>
+    <loc>https://originary.xyz/trademark/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://originary.xyz/legal/privacy.html</loc>
+    <changefreq>quarterly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/legal/terms.html</loc>
+    <changefreq>quarterly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/legal/payments.html</loc>
+    <changefreq>quarterly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/legal/acceptable-use.html</loc>
+    <changefreq>quarterly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/legal/dpa.html</loc>
+    <changefreq>quarterly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+
+  <!-- Application Pages -->
+  <url>
+    <loc>https://originary.xyz/signup.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/signin.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/forgot-password.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/dashboard.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/api-keys.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/order.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/support.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+
+  <!-- Special Protocol Files -->
+  <url>
+    <loc>https://originary.xyz/peac.txt</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/robots.txt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+  <url>
+    <loc>https://originary.xyz/humans.txt</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2025-09-21</lastmod>
+  </url>
+</urlset>

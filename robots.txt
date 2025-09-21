@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://originary.xyz/sitemap.xml

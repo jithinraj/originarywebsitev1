@@ -1,0 +1,98 @@
+/* TEAM */
+
+Originary Team
+Organization: Curious Explorations Private Limited
+Operating As: Originary
+Website: https://originary.xyz
+Contact: contact@originary.xyz
+
+
+Mission: Orchestration for the agentic web
+Focus: PEAC Protocol development and intelligent coordination implementation
+Founded: 2025
+Location: United States
+
+/* SITE */
+
+Standards: HTML5, CSS3, JavaScript ES6+
+Framework: Custom responsive design
+Typography: Inter, Fraunces
+Colors: #FAF8F1, #0B0B0B, #0059FF
+Icons: Custom SVG iconography
+Analytics: Google Analytics (anonymized)
+
+Last Update: July 2025
+Language: English
+Doctype: HTML5
+IDE: Various development environments
+
+/* SERVICES */
+
+Products:
+- PEAC Protocol (Programmable Environment for AI Agent Coordination)
+- Verify API (Receipt verification and validation)
+- Gateway (402) (HTTP payment-required protocol implementation)
+- Studio (Dashboard and management platform)
+- Adapters (Integration tools and connectors)
+
+
+/* TECHNOLOGY */
+
+Infrastructure: Cloud-native architecture
+Security: SOC 2 Type II, enterprise-grade encryption
+APIs: RESTful design with OpenAPI specifications
+Protocols: HTTP/HTTPS, WebSocket, PEAC Protocol
+Authentication: Multi-factor authentication, OAuth
+Compliance: GDPR, CCPA, PIPEDA, Privacy Act
+
+Development Stack:
+- Frontend: Modern web standards, progressive enhancement
+- Backend: Scalable microservices architecture
+- Database: Encrypted data storage with backup redundancy
+- Monitoring: 24/7 security and performance monitoring
+- Testing: Comprehensive test coverage and CI/CD
+
+/* LEGAL */
+
+Copyright: Originary © 2025 Curious Explorations Private Limited
+Trade & Product Name: Originary
+License: Proprietary software with open protocol specifications
+Terms: https://originary.xyz/legal/terms.html
+Privacy: https://originary.xyz/legal/privacy.html
+Security: https://originary.xyz/.well-known/security.txt
+
+Domain:
+- Primary: originary.xyz
+
+/* CREDITS */
+
+Thanks to the open source community for foundational technologies.
+Thanks to early adopters and beta testers of PEAC Protocol.
+Thanks to the developer community contributing to orchestration standards.
+
+Special recognition to researchers and security professionals who help
+keep our platform secure through responsible disclosure practices.
+
+/* NOTES */
+
+This humans.txt file follows RFC 2606 recommendations and provides
+information about the humans behind https://originary.xyz
+
+For partnership inquiries: contact@originary.xyz
+For media inquiries: contact@originary.xyz
+For developer questions: contact@originary.xyz
+
+We believe in:
+- Transparent communication about our technology
+- Responsible AI orchestration practices
+- Privacy-first development approaches
+- Open protocol specifications where appropriate
+- Collaborative development with the community
+
+Site launched: July 2025
+PEAC Protocol v0.9.0 released: July 19, 2025
+Current protocol version: v0.9.13
+Active commercial operations: July 2025 - Present
+
+Effective from July 24, 2025.
+For the most current information, visit https://originary.xyz

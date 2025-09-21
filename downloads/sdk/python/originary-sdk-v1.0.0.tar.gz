@@ -1,0 +1,7 @@
+PKG-INFO
+METADATA
+setup.py
+originary/__init__.py
+originary/verify.py
+originary/peac.py
+README.md

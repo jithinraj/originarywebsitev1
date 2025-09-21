@@ -1,0 +1,11 @@
+{
+  "type": "peac-receipt",
+  "alg": "EdDSA",
+  "kid": "kid-2025-09",
+  "payload": {
+    "resource": "/docs",
+    "policy": "peac.txt",
+    "timestamp": "2025-09-19T00:00:00Z"
+  },
+  "signature": "BASE64URL_SIGNATURE"
+}
