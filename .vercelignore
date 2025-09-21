@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+out/
+
+# Environment variables (use Vercel dashboard instead)
+.env.local
+.env*.local
+
+# Cache
+.cache/
+*.tmp
+*.temp
+
+# Old files not needed for deployment
+*.html
+assets/
+downloads/
+LAUNCH_READINESS_REPORT.md
+
+# Database files
+*.db
+*.db-journal
+
+# IDE files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
