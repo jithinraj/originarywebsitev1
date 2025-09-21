@@ -62,7 +62,7 @@ export default function Developers() {
                 DEVELOPERS
               </span>
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">Build with PEAC</span>
+                <span className="text-gradient">Build with Originary</span>
               </h1>
               <p
                 style={{

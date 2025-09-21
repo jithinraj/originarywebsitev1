@@ -63,7 +63,7 @@ export default function Pricing() {
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Up to 10K agent transactions for trial</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['PEAC Protocol access', 'Basic verification API', 'Community support', 'Developer documentation'].map((feature) => (
+                  {['Protocol-compatible tools', 'Basic verification API', 'Community support', 'Developer documentation'].map((feature) => (
                     <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
                       <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
                       <span>{feature}</span>

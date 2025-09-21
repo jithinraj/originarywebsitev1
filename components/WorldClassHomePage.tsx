@@ -38,7 +38,7 @@ export default function WorldClassHomePage() {
                 lineHeight: 1.7
               }}
             >
-              Stripe-level engineering for the agentic economy. Legal, product, and engineering teams get a unified control plane for access and revenue—without slowing down innovation.
+              Stripe-level engineering for the agentic economy. Legal, product, and engineering teams get a unified control plane for access and revenue without slowing down innovation.
             </p>
           </div>
 
@@ -215,7 +215,7 @@ export default function WorldClassHomePage() {
                   margin: '0 auto var(--space-8) auto'
                 }}
               >
-                Join the companies building compliant, profitable AI interactions with Originary&apos;s PEAC protocol.
+                Join the companies building compliant, profitable AI interactions. Powered by an open protocol.
               </p>
               <div
                 style={{

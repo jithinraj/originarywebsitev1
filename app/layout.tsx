@@ -52,7 +52,7 @@ const organizationJsonLd = {
   },
   foundingDate: '2024',
   description:
-    'Originary builds orchestration infrastructure for the agentic web—policy, payments, and proof with receipts powered by the PEAC protocol.',
+    'Originary builds orchestration infrastructure for the agentic web. Policy, payments, and proof with receipts powered by the PEAC protocol.',
   makesOffer: {
     '@type': 'OfferCatalog',
     name: 'Originary Product Suite',
