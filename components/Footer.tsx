@@ -63,7 +63,7 @@ export default function Footer() {
                 fontSize: 'var(--text-base)'
               }}
             >
-              Orchestration for the agentic web. Powered by the PEAC open protocol.
+              Orchestration for the agentic web.
             </p>
             <div
               style={{
@@ -128,15 +128,30 @@ export default function Footer() {
             gap: 'var(--space-4)'
           }}
         >
-          <span
-            style={{
-              color: 'var(--gray-500)',
-              fontSize: 'var(--text-sm)'
-            }}
-            role="contentinfo"
-          >
-            © 2025 Originary. All rights reserved.
-          </span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
+            <span
+              style={{
+                color: 'var(--gray-500)',
+                fontSize: 'var(--text-sm)'
+              }}
+              role="contentinfo"
+            >
+              © 2025 Originary. All rights reserved.
+            </span>
+            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7 }}>
+              Powered by an <a
+                href="https://peacprotocol.org"
+                target="_blank"
+                rel="noopener"
+                style={{
+                  color: 'inherit',
+                  textDecoration: 'underline'
+                }}
+              >
+                open protocol
+              </a>.
+            </small>
+          </div>
           <div
             style={{
               display: 'flex',

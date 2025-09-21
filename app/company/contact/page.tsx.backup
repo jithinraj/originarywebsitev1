@@ -124,17 +124,15 @@ export default function Developers() {
                 step="1"
                 title="Create policy file"
                 description="Add a peac.txt file to your /.well-known/ directory"
-                code={`version: 0.9.13
-usage: conditional
-purposes: [indexing, research, documentation]
-attribution: required
-consent: optional
-data_retention: P30D
-access_control: http-402
-payments: ['x402', 'stripe', 'onchain']
-receipts: required
-verify: true
-contact: contact@originary.xyz`}
+                code={`# PEAC Policy v1.0
+version: "1.0"
+owner: "https://example.com"
+contact: "admin@example.com"
+
+policy:
+  access: "licensed"
+  attribution: "required"
+  commercial: "negotiable"`}
               />
               <QuickStartCard
                 step="2"
@@ -166,42 +164,6 @@ if (policy.allowsAccess()) {
   const receipt = await client.generateReceipt();
 }`}
               />
-            </div>
-          </div>
-        </section>
-
-        {/* Wire Accuracy Callout */}
-        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)' }}>
-          <div className="container">
-            <div style={{
-              maxWidth: '600px',
-              margin: '0 auto',
-              padding: 'var(--space-6)',
-              background: 'var(--white)',
-              border: '1px solid var(--gray-200)',
-              borderRadius: 'var(--radius-lg)'
-            }}>
-              <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>
-                Wire accuracy
-              </h3>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-3)' }}>
-                <div style={{ color: 'var(--gray-600)' }}>Header:</div>
-                <div style={{ color: 'var(--gray-900)' }}>PEAC-Receipt: &lt;detached-JWS&gt;</div>
-              </div>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
-                <div style={{ color: 'var(--gray-600)' }}>Policy discovery:</div>
-                <div style={{ color: 'var(--gray-900)' }}>/.well-known/peac.txt</div>
-              </div>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                Learn more in the <a
-                  href="https://peacprotocol.org"
-                  target="_blank"
-                  rel="noopener"
-                  style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}
-                >
-                  open protocol ↗
-                </a>.
-              </p>
             </div>
           </div>
         </section>

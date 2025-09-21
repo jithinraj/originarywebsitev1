@@ -93,7 +93,7 @@ export default function ReceiptsPage() {
             {/* Metrics */}
             <div className="grid grid-auto" style={{ gap: 'var(--space-8)', maxWidth: '1000px', margin: '0 auto' }}>
               <MetricCard value="10B+" label="Receipts Generated" />
-              <MetricCard value="99.99%" label="Verification Accuracy" />
+              <MetricCard value="Verified" label="Cryptographic Proof" />
               <MetricCard value="500+" label="Enterprise Customers" />
               <MetricCard value="24/7" label="Global Coverage" />
             </div>

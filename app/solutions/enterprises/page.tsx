@@ -165,7 +165,7 @@ export default function Enterprises() {
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>99.99% uptime SLA</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Enterprise support</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <span style={{ color: 'var(--brand-primary)' }}>✓</span>

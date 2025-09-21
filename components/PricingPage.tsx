@@ -63,7 +63,7 @@ const pricingTiers = [
       'Studio access (5 seats included)',
       'Custom adapter configurations',
       'Advanced analytics & reporting',
-      '99.9% uptime SLA',
+      'High availability SLA',
       'Webhook integrations'
     ],
     cta: 'Start Professional',
@@ -122,7 +122,7 @@ const enterpriseFeatures = [
     icon: BarChart,
     title: 'Guaranteed Performance',
     description: 'Industry-leading SLAs with automatic failover, global edge deployment, and performance guarantees.',
-    metrics: ['99.99% Uptime', '< 10ms Latency']
+    metrics: ['High availability', 'Low latency']
   },
   {
     icon: Globe,
@@ -229,7 +229,7 @@ export default function PricingPage() {
                 </div>
                 <div className="indicator">
                   <BarChart className="indicator-icon" />
-                  <span className="indicator-text">99.99% SLA</span>
+                  <span className="indicator-text">Enterprise SLA</span>
                 </div>
               </div>
             </div>

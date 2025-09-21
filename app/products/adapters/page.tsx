@@ -123,7 +123,7 @@ export default function Adapters() {
                     fontWeight: 700,
                     color: 'var(--brand-secondary)',
                     marginBottom: 'var(--space-2)'
-                  }}>1M+</div>
+                  }}>Active</div>
                   <div style={{
                     fontSize: 'var(--text-sm)',
                     color: 'var(--gray-600)'

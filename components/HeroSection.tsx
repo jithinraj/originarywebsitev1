@@ -58,39 +58,10 @@ function SlidingText({
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
-  const [currentHeading, setCurrentHeading] = useState('Proof-first')
-
-  const headings = [
-    'Proof-first',
-    'Access-first',
-    'Attribution-first',
-    'Compliance-first',
-    'Consent-first',
-    'Privacy-first',
-    'Payment-first',
-    'Provenance-first',
-    'Safety-first'
-  ]
-
-  const words = [
-    'commerce',
-    'access',
-    'attribution',
-    'compliance',
-    'consent',
-    'privacy',
-    'payments',
-    'provenance',
-    'safety'
-  ]
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
-
-  const handleSlideChange = (index: number) => {
-    setCurrentHeading(headings[index])
-  }
 
   return (
     <section
@@ -197,7 +168,7 @@ export default function HeroSection() {
               }}
             >
               <Sparkles size={16} />
-              <span>Introducing PEAC Protocol v2.0</span>
+              <span>Introducing Receipts for the Agentic Web</span>
               <ArrowRight size={14} />
             </div>
 
@@ -214,24 +185,7 @@ export default function HeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s'
               }}
             >
-              <span className="text-gradient">{currentHeading}</span> infrastructure for{' '}
-              <span style={{ position: 'relative' }}>
-                autonomous
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '8px',
-                    left: 0,
-                    right: 0,
-                    height: '8px',
-                    background: 'linear-gradient(90deg, rgba(99,91,255,0.3) 0%, rgba(0,212,170,0.3) 100%)',
-                    borderRadius: 'var(--radius-sm)',
-                    opacity: isVisible ? 1 : 0,
-                    transition: 'opacity 1s ease-out 0.8s'
-                  }}
-                />
-              </span>{' '}
-              <SlidingText words={words} onIndexChange={handleSlideChange} />
+              <span className="text-gradient">Receipts</span> for the Agentic Web
             </h1>
 
             {/* Subtitle */}
@@ -247,8 +201,7 @@ export default function HeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              Originary unifies policy, payments, and proof so autonomous agents, APIs, and humans can transact safely.
-              <strong style={{ color: 'var(--gray-800)' }}> Publish your peac.txt once, negotiate terms on the fly, settle instantly.</strong>
+              Publish `peac.txt` to declare <strong style={{ color: 'var(--gray-800)' }}>access, consent, attribution, privacy, and pricing</strong>. Agents settle via <strong style={{ color: 'var(--gray-800)' }}>x402</strong>—or Stripe/credits/fiat/stablecoin/on-chain via adapters—and present a <strong style={{ color: 'var(--gray-800)' }}>Receipt</strong> to prove compliance on every request.
             </p>
 
             {/* CTA Buttons */}
@@ -336,7 +289,7 @@ export default function HeroSection() {
                   marginBottom: 'var(--space-3)'
                 }}
               >
-                Trusted by leading AI companies
+                Works with
               </p>
               <div
                 style={{
@@ -346,9 +299,9 @@ export default function HeroSection() {
                   opacity: 0.7
                 }}
               >
-                {['Anthropic', 'OpenAI', 'Mistral', 'Cohere'].map((company, index) => (
+                {['MCP', 'A2A', 'x402', 'Stripe'].map((tech, index) => (
                   <div
-                    key={company}
+                    key={tech}
                     style={{
                       fontSize: 'var(--text-sm)',
                       fontWeight: 600,
@@ -357,7 +310,7 @@ export default function HeroSection() {
                       transition: `opacity 0.6s ease ${0.5 + index * 0.1}s`
                     }}
                   >
-                    {company}
+                    {tech}
                   </div>
                 ))}
               </div>
@@ -511,7 +464,7 @@ function InteractiveReceiptDemo() {
             value={
               <span style={{ color: 'var(--success)', fontWeight: 600 }}>
                 <Zap size={14} style={{ display: 'inline', marginRight: '4px' }} />
-                VERIFIED • 7.4ms
+                Receipt Ready
               </span>
             }
           />

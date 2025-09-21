@@ -139,7 +139,7 @@ export default function ProductsPage() {
                   'Real-time compliance checking',
                   'Blockchain anchoring',
                   'Audit trail generation',
-                  '99.9% uptime SLA'
+                  'High availability SLA'
                 ]}
                 href="/products/verify"
               />

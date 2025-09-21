@@ -124,7 +124,7 @@ export default function Pricing() {
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Unlimited transactions with volume discounts</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['Everything in Professional', 'All adapters included', 'Unlimited Studio seats', 'Dedicated support engineer', 'Custom integrations', 'Enterprise SLA (99.99%)', 'On-premises deployment'].map((feature) => (
+                  {['Everything in Professional', 'All adapters included', 'Unlimited Studio seats', 'Dedicated support engineer', 'Custom integrations', 'On-premises deployment'].map((feature) => (
                     <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
                       <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
                       <span>{feature}</span>
@@ -136,6 +136,37 @@ export default function Pricing() {
                 </Link>
               </div>
             </div>
+
+            {/* OSS Box */}
+            <section style={{
+              marginTop: 'var(--space-12)',
+              padding: 'var(--space-6)',
+              border: '1px solid var(--gray-200)',
+              borderRadius: 'var(--radius-2xl)',
+              background: 'var(--gray-50)'
+            }}>
+              <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
+                Prefer open source?
+              </h3>
+              <p style={{ marginBottom: 'var(--space-4)', color: 'var(--gray-600)' }}>
+                The <a
+                  href="https://peacprotocol.org"
+                  target="_blank"
+                  rel="noopener"
+                  style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}
+                >
+                  PEAC open protocol
+                </a> is free to use and modify. Explore the spec, examples, and reference implementations.
+              </p>
+              <a
+                href="https://peacprotocol.org"
+                target="_blank"
+                rel="noopener"
+                className="btn btn-secondary"
+              >
+                Explore the open protocol ↗
+              </a>
+            </section>
 
             <div style={{
               textAlign: 'center',

@@ -44,11 +44,7 @@ const heroHighlights = [
   'Signed receipts that follow every agent request for total accountability.',
 ]
 
-const heroMetrics = [
-  { label: 'Signed interactions last quarter', value: 58400000, suffix: 'M', meta: '+142% YoY volume' },
-  { label: 'Median verification latency', value: 7.8, suffix: 'ms', meta: 'p95 < 16ms worldwide' },
-  { label: 'Enterprise coverage', value: 26, suffix: ' regions', meta: 'GDPR, CCPA, ISO 31700 ready' },
-]
+// Metrics removed - will be re-added when methodology is ready
 
 const valueProps = [
   {
@@ -215,7 +211,7 @@ export default function HomePage() {
                   <span>Status</span>
                   <span className="status success">
                     <CheckCircle className="w-4 h-4" />
-                    VERIFIED • 7.4ms
+                    Receipt Ready
                   </span>
                 </div>
                 <div className="receipt-footer">
@@ -248,13 +244,13 @@ export default function HomePage() {
       </section>
 
       {/* Logo Strip */}
-      <section className="logo-strip" aria-label="Trusted by">
+      <section className="logo-strip" aria-label="Works with">
         <div className="container">
           <FadeIn>
-            <span className="logo-strip__label">Trusted by leaders safeguarding the agentic web</span>
+            <span className="logo-strip__label">Works with</span>
           </FadeIn>
           <StaggerChildren className="logo-strip__grid" staggerDelay={0.05}>
-            {['Tier-1 AI clouds', 'Global broadcasters', 'National archives', 'Fortune 100 fintech', 'Leading LLM labs', 'Regulatory sandboxes'].map((marker) => (
+            {['MCP', 'A2A', 'x402', 'Stripe', 'Circle', 'Cloudflare', 'Vercel'].map((marker) => (
               <StaggerItem key={marker}>
                 <HoverCard className="logo-pill">{marker}</HoverCard>
               </StaggerItem>

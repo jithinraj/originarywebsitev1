@@ -106,7 +106,7 @@ export default function SimpleHomePage() {
                     color: '#10b981',
                     fontSize: '0.875rem',
                     fontWeight: '600'
-                  }}>✓ VERIFIED • 7.4ms</span>
+                  }}>✓ Receipt Ready</span>
                 </div>
                 <div className="receipt-footer" style={{
                   paddingTop: '0.5rem',
