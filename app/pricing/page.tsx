@@ -58,7 +58,11 @@ export default function Pricing() {
                 </div>
                 <div style={{ width: '100%' }}>
                   <form>
-                    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_RK5T4IykFzu0rh" async></script>
+                    <script
+                      src="https://checkout.razorpay.com/v1/payment-button.js"
+                      data-payment_button_id="pl_RK5T4IykFzu0rh"
+                      async
+                    />
                   </form>
                 </div>
               </div>
