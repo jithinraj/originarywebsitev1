@@ -3,6 +3,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Zap, Shield, Database, BarChart, Users, Globe, Star, Code } from 'lucide-react'
+import ServiceOffers from '@/components/ServiceOffers'
 
 export const metadata: Metadata = {
   title: 'Products : Originary',
@@ -233,6 +234,8 @@ export default function ProductsPage() {
             </div>
           </div>
         </section>
+
+        <ServiceOffers />
 
         {/* CTA Section */}
         <section className="section">

@@ -96,6 +96,7 @@ export default function Footer() {
           <FooterSection
             title="Solutions"
             links={[
+              { href: '/originary-ai/', label: 'Originary AI' },
               { href: '/solutions/enterprises', label: 'Enterprises' },
               { href: '/solutions/ai-builders', label: 'AI Builders' },
               { href: '/solutions/publishers', label: 'Publishers' },

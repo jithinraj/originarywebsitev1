@@ -72,7 +72,7 @@ export default function Developers() {
                   marginBottom: 'var(--space-8)'
                 }}
               >
-                Everything you need to integrate PEAC protocol into your applications.
+                Everything you need to integrate PEAC protocol into your <Link href="/originary-ai/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Originary AI</Link> applications.
                 SDKs, APIs, documentation, and examples to get you started quickly.
               </p>
 
@@ -88,7 +88,11 @@ export default function Developers() {
                   <span>Get Started</span>
                   <ArrowRight size={18} />
                 </Link>
-                <Link href="#quickstart" className="btn btn-secondary btn-lg">
+                <Link href="/downloads" className="btn btn-secondary btn-lg">
+                  <Download size={18} />
+                  Downloads
+                </Link>
+                <Link href="#quickstart" className="btn btn-ghost btn-lg">
                   Quick Start Guide
                 </Link>
               </div>
@@ -202,6 +206,38 @@ if (policy.allowsAccess()) {
                   open protocol ↗
                 </a>.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Raw HTTP Example */}
+        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)' }}>
+          <div className="container">
+            <div style={{
+              maxWidth: '600px',
+              margin: '0 auto',
+              padding: 'var(--space-6)',
+              background: 'var(--white)',
+              border: '1px solid var(--gray-200)',
+              borderRadius: 'var(--radius-lg)'
+            }}>
+              <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>
+                Raw HTTP example
+              </h3>
+              <pre style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: 'var(--text-sm)',
+                background: 'var(--gray-900)',
+                color: 'var(--gray-100)',
+                padding: 'var(--space-4)',
+                borderRadius: 'var(--radius-md)',
+                overflowX: 'auto',
+                margin: 0
+              }}>
+                <code>{`curl -sS https://api.example.com/data \\
+  -H "PEAC-Receipt: eyJ...<detached-JWS>...==" \\
+  -H "Accept: application/json"`}</code>
+              </pre>
             </div>
           </div>
         </section>

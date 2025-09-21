@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { ArrowRight, CheckCircle, Zap, Shield, Database, BarChart, Users, Globe, Star } from 'lucide-react'
+import ServiceOffers from './ServiceOffers'
 
 export default function WorldClassHomePage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -168,7 +169,7 @@ export default function WorldClassHomePage() {
         </div>
       </section>
 
-
+      <ServiceOffers />
 
       {/* CTA Section */}
       <section className="section">

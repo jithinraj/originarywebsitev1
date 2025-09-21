@@ -22,12 +22,12 @@ const faqJsonLd = {
 }
 
 export const metadata: Metadata = {
-  title: 'Originary AI — Receipts for the Agentic Web',
+  title: 'Originary AI - Receipts for the Agentic Web',
   description: 'Originary delivers verifiable Receipts for AI agents and APIs. Publish peac.txt, settle via x402 or Stripe/fiat/stablecoin, and prove access, consent, attribution, privacy & payment on every request.',
   keywords: 'Originary AI, agentic web, AI receipts, x402, PEAC protocol, agent compliance',
   robots: 'index,follow',
   openGraph: {
-    title: 'Originary AI — Receipts for the Agentic Web',
+    title: 'Originary AI - Receipts for the Agentic Web',
     description: 'Originary delivers verifiable Receipts for AI agents and APIs. Publish peac.txt, settle via x402 or Stripe/fiat/stablecoin, and prove access, consent, attribution, privacy & payment on every request.',
     url: 'https://originary.xyz/originary-ai',
     type: 'website'
@@ -53,7 +53,7 @@ export default function OriginaryAI() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--gray-900)'
               }}>
-                <Mark>Originary</Mark> AI — Receipts for the Agentic Web
+                <Mark>Originary</Mark> AI - Receipts for the Agentic Web
               </h1>
 
               <p style={{
@@ -62,7 +62,7 @@ export default function OriginaryAI() {
                 color: 'var(--gray-600)',
                 marginBottom: 'var(--space-8)'
               }}>
-                Publish peac.txt, settle via <strong>x402</strong> (or Stripe/credits/fiat/stablecoin/on-chain), and present a <strong>Receipt</strong> on every request—proof of access, consent, attribution, privacy, and payment.
+                Publish peac.txt, settle via <strong>x402</strong> (or Stripe/credits/fiat/stablecoin/on-chain), and present a <strong>Receipt</strong> on every request - proof of access, consent, attribution, privacy, and payment.
               </p>
 
               <div style={{
@@ -97,15 +97,15 @@ export default function OriginaryAI() {
                 {[
                   {
                     title: 'Not another framework.',
-                    description: 'Keep your MCP/A2A tools and orchestrators—Originary adds verifiable Receipts so every access has proof of terms, consent, attribution, privacy, and payment.'
+                    description: 'Keep your MCP/A2A tools and orchestrators - Originary adds verifiable Receipts so every access has proof of terms, consent, attribution, privacy, and payment.'
                   },
                   {
                     title: 'Rail-neutral payments (x402 first).',
-                    description: 'Settle via x402 by default, or Stripe/credits/fiat/stablecoin/on-chain via adapters—no lock-in, same receipt format.'
+                    description: 'Settle via x402 by default, or Stripe/credits/fiat/stablecoin/on-chain via adapters - no lock-in, same receipt format.'
                   },
                   {
                     title: 'Compliance by construction.',
-                    description: 'Receipts encode purposes, retention windows, attribution & consent flags—turn audits into evidence, not meetings.'
+                    description: 'Receipts encode purposes, retention windows, attribution & consent flags - turn audits into evidence, not meetings.'
                   },
                   {
                     title: 'Drop-in at the edge.',
@@ -166,7 +166,7 @@ export default function OriginaryAI() {
                   MCP/A2A Integration
                 </h3>
                 <p style={{ margin: 0, lineHeight: 1.6 }}>
-                  Add Receipts beside your tools/resolvers, not instead of them—send a PEAC-Receipt with requests; verify at the edge.
+                  Add Receipts beside your tools/resolvers, not instead of them - send a PEAC-Receipt with requests; verify at the edge.
                 </p>
               </div>
 
