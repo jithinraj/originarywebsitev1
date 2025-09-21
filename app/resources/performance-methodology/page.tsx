@@ -28,7 +28,7 @@ export default function PerformanceMethodology() {
                   color: 'var(--gray-700)',
                   margin: 0
                 }}>
-                  We'll publish our test harness, environments, datasets, and p95/p99 definitions here.
+                  We&apos;ll publish our test harness, environments, datasets, and p95/p99 definitions here.
                   Until then, all performance numbers are treated as targets.
                 </p>
               </div>

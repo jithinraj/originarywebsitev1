@@ -169,19 +169,6 @@ export default function HomePage() {
               ))}
             </StaggerChildren>
 
-            <FadeIn delay={0.6}>
-              <div className="hero-metrics">
-                {heroMetrics.map((metric) => (
-                  <div key={metric.label} className="hero-metric">
-                    <span className="metric-value">
-                      <AnimatedCounter value={metric.value} suffix={metric.suffix} duration={2} />
-                    </span>
-                    <span className="metric-label">{metric.label}</span>
-                    <span className="metric-meta">{metric.meta}</span>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
           </SlideIn>
 
           <SlideIn direction="right" className="hero-showcase">
