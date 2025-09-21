@@ -4,12 +4,93 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { ArrowRight, Play, Sparkles, Zap, Shield } from 'lucide-react'
 
+function SlidingText({
+  words,
+  headings,
+  className,
+  onIndexChange
+}: {
+  words: string[],
+  headings?: string[],
+  className?: string,
+  onIndexChange?: (index: number) => void
+}) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isVisible, setIsVisible] = useState(true)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false)
+      setTimeout(() => {
+        const newIndex = (currentIndex + 1) % words.length
+        setCurrentIndex(newIndex)
+        onIndexChange?.(newIndex)
+        setIsVisible(true)
+      }, 300)
+    }, 2000)
+
+    return () => clearInterval(interval)
+  }, [words.length, currentIndex, onIndexChange])
+
+  return (
+    <span
+      className={className}
+      style={{
+        position: 'relative',
+        display: 'inline-block',
+        minWidth: '120px',
+        textAlign: 'left'
+      }}
+    >
+      <span
+        style={{
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? 'translateY(0)' : 'translateY(-10px)',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          display: 'inline-block'
+        }}
+      >
+        {words[currentIndex]}
+      </span>
+    </span>
+  )
+}
+
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
+  const [currentHeading, setCurrentHeading] = useState('Proof-first')
+
+  const headings = [
+    'Proof-first',
+    'Access-first',
+    'Attribution-first',
+    'Compliance-first',
+    'Consent-first',
+    'Privacy-first',
+    'Payment-first',
+    'Provenance-first',
+    'Safety-first'
+  ]
+
+  const words = [
+    'commerce',
+    'access',
+    'attribution',
+    'compliance',
+    'consent',
+    'privacy',
+    'payments',
+    'provenance',
+    'safety'
+  ]
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
+
+  const handleSlideChange = (index: number) => {
+    setCurrentHeading(headings[index])
+  }
 
   return (
     <section
@@ -133,7 +214,7 @@ export default function HeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s'
               }}
             >
-              <span className="text-gradient">Proof-first</span> infrastructure for{' '}
+              <span className="text-gradient">{currentHeading}</span> infrastructure for{' '}
               <span style={{ position: 'relative' }}>
                 autonomous
                 <div
@@ -150,7 +231,7 @@ export default function HeroSection() {
                   }}
                 />
               </span>{' '}
-              commerce
+              <SlidingText words={words} onIndexChange={handleSlideChange} />
             </h1>
 
             {/* Subtitle */}

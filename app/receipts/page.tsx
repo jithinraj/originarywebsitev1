@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
-import StaticPageLayout from '@/components/StaticPageLayout'
+import NavigationHeader from '@/components/NavigationHeader'
+import Footer from '@/components/Footer'
+import Link from 'next/link'
+import { ArrowRight, Receipt, Shield, Zap, Globe, BarChart, Scale, CheckCircle, Building, Lock, Clock, Users } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Cryptographic Receipts - Originary',
@@ -26,99 +29,191 @@ export const metadata: Metadata = {
 
 export default function ReceiptsPage() {
   return (
-    <StaticPageLayout>
-      <main>
-        <section className="receipts-hero">
+    <div className="wrap">
+      <NavigationHeader />
+      <main id="main-content" role="main" style={{ paddingTop: '80px' }}>
+        {/* Hero Section */}
+        <section className="section">
           <div className="container">
-            <div className="hero-content">
-              <span className="kicker">CRYPTOGRAPHIC RECEIPTS</span>
-              <h1 className="display">Verifiable AI Interactions</h1>
-              <p className="sub">Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Every interaction generates tamper-proof evidence for transparent operations.</p>
+            <div
+              style={{
+                textAlign: 'center',
+                maxWidth: '800px',
+                margin: '0 auto',
+                marginBottom: 'var(--space-16)'
+              }}
+            >
+              <span
+                style={{
+                  fontSize: 'var(--text-sm)',
+                  color: 'var(--brand-primary)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  fontWeight: 600,
+                  marginBottom: 'var(--space-4)',
+                  display: 'block'
+                }}
+              >
+                <Receipt className="inline w-4 h-4 mr-1" />
+                CRYPTOGRAPHIC RECEIPTS
+              </span>
+              <h1 style={{ marginBottom: 'var(--space-6)' }}>
+                <span className="text-gradient">Verifiable AI Interactions</span>
+              </h1>
+              <p
+                style={{
+                  fontSize: 'var(--text-xl)',
+                  color: 'var(--gray-600)',
+                  lineHeight: 1.7,
+                  marginBottom: 'var(--space-8)'
+                }}
+              >
+                Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Every interaction generates tamper-proof evidence for transparent operations.
+              </p>
 
-              <div className="actions">
-                <a href="/developers/" className="btn primary">Start Building</a>
-                <a href="mailto:contact@originary.xyz" className="btn secondary">Enterprise Demo</a>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  gap: 'var(--space-4)',
+                  flexWrap: 'wrap',
+                  marginBottom: 'var(--space-16)'
+                }}
+              >
+                <Link href="/developers" className="btn btn-primary btn-lg">
+                  <span>Start Building</span>
+                  <ArrowRight size={18} />
+                </Link>
+                <a href="mailto:contact@originary.xyz" className="btn btn-secondary btn-lg">
+                  Enterprise Demo
+                </a>
               </div>
             </div>
 
-            <div className="hero-metrics">
-              <div className="metric">
-                <div className="metric-value">10B+</div>
-                <div className="metric-label">Receipts Generated</div>
-              </div>
-              <div className="metric">
-                <div className="metric-value">99.99%</div>
-                <div className="metric-label">Verification Accuracy</div>
-              </div>
-              <div className="metric">
-                <div className="metric-value">500+</div>
-                <div className="metric-label">Enterprise Customers</div>
-              </div>
-              <div className="metric">
-                <div className="metric-value">24/7</div>
-                <div className="metric-label">Global Coverage</div>
-              </div>
+            {/* Metrics */}
+            <div className="grid grid-auto" style={{ gap: 'var(--space-8)', maxWidth: '1000px', margin: '0 auto' }}>
+              <MetricCard value="10B+" label="Receipts Generated" />
+              <MetricCard value="99.99%" label="Verification Accuracy" />
+              <MetricCard value="500+" label="Enterprise Customers" />
+              <MetricCard value="24/7" label="Global Coverage" />
             </div>
           </div>
         </section>
 
-        <section className="section">
+        {/* How It Works */}
+        <section className="section" style={{ background: 'var(--gray-50)' }}>
           <div className="container">
-            <div className="section-header">
-              <h2>How Cryptographic Receipts Work</h2>
-              <p className="lead">Every AI interaction generates a cryptographically signed receipt that provides verifiable proof of consent, usage, and compliance.</p>
+            <div
+              style={{
+                textAlign: 'center',
+                marginBottom: 'var(--space-16)'
+              }}
+            >
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>How Cryptographic Receipts Work</h2>
+              <p
+                style={{
+                  fontSize: 'var(--text-xl)',
+                  color: 'var(--gray-600)',
+                  maxWidth: '700px',
+                  margin: '0 auto',
+                  lineHeight: 1.7
+                }}
+              >
+                Every AI interaction generates a cryptographically signed receipt that provides verifiable proof of consent, usage, and compliance.
+              </p>
             </div>
 
-            <div className="receipt-features">
-              <div className="feature-card">
-                <div className="feature-icon">🔐</div>
-                <h3>Cryptographic Signing</h3>
-                <p>JWS (JSON Web Signature) ensures receipts cannot be tampered with or forged. Each receipt includes cryptographic proof of authenticity.</p>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-icon">⚡</div>
-                <h3>Real-time Generation</h3>
-                <p>Receipts are generated instantly for every interaction, providing immediate proof of consent and compliance.</p>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-icon">🌐</div>
-                <h3>Global Verification</h3>
-                <p>Verify receipts anywhere in the world through our global verification network with sub-second response times.</p>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-icon">📊</div>
-                <h3>Compliance Reporting</h3>
-                <p>Generate comprehensive audit trails and compliance reports for regulatory requirements and internal governance.</p>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-icon">🔗</div>
-                <h3>Blockchain Anchoring</h3>
-                <p>Optional blockchain anchoring provides additional immutability guarantees for high-stakes interactions.</p>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-icon">⚖️</div>
-                <h3>Legal Validity</h3>
-                <p>Receipts provide legally admissible evidence of consent, attribution, and compliance with applicable regulations.</p>
-              </div>
+            <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
+              <FeatureCard
+                icon={<Lock size={32} style={{ color: 'var(--brand-primary)' }} />}
+                title="Cryptographic Signing"
+                description="JWS (JSON Web Signature) ensures receipts cannot be tampered with or forged. Each receipt includes cryptographic proof of authenticity."
+              />
+              <FeatureCard
+                icon={<Zap size={32} style={{ color: 'var(--brand-secondary)' }} />}
+                title="Real-time Generation"
+                description="Receipts are generated instantly for every interaction, providing immediate proof of consent and compliance."
+              />
+              <FeatureCard
+                icon={<Globe size={32} style={{ color: 'var(--brand-accent)' }} />}
+                title="Global Verification"
+                description="Verify receipts anywhere in the world through our global verification network with sub-second response times."
+              />
+              <FeatureCard
+                icon={<BarChart size={32} style={{ color: 'var(--brand-primary)' }} />}
+                title="Compliance Reporting"
+                description="Generate comprehensive audit trails and compliance reports for regulatory requirements and internal governance."
+              />
+              <FeatureCard
+                icon={<Shield size={32} style={{ color: 'var(--brand-secondary)' }} />}
+                title="Blockchain Anchoring"
+                description="Optional blockchain anchoring provides additional immutability guarantees for high-stakes interactions."
+              />
+              <FeatureCard
+                icon={<Scale size={32} style={{ color: 'var(--brand-accent)' }} />}
+                title="Legal Validity"
+                description="Receipts provide legally admissible evidence of consent, attribution, and compliance with applicable regulations."
+              />
             </div>
           </div>
         </section>
 
+        {/* Receipt Structure */}
         <section className="section">
           <div className="container">
-            <div className="section-header">
-              <h2>Receipt Structure</h2>
-              <p className="lead">Each receipt contains all necessary information for verification, compliance, and audit purposes.</p>
+            <div
+              style={{
+                textAlign: 'center',
+                marginBottom: 'var(--space-16)'
+              }}
+            >
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>Receipt Structure</h2>
+              <p
+                style={{
+                  fontSize: 'var(--text-xl)',
+                  color: 'var(--gray-600)',
+                  maxWidth: '700px',
+                  margin: '0 auto',
+                  lineHeight: 1.7
+                }}
+              >
+                Each receipt contains all necessary information for verification, compliance, and audit purposes.
+              </p>
             </div>
 
-            <div className="code-example">
-              <div className="code-header">Example Receipt - Content Access</div>
-              <pre>{`{
+            <div
+              style={{
+                background: 'var(--white)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-2xl)',
+                overflow: 'hidden',
+                boxShadow: 'var(--shadow-lg)'
+              }}
+            >
+              <div
+                style={{
+                  background: 'var(--gray-900)',
+                  color: 'var(--white)',
+                  padding: 'var(--space-4) var(--space-6)',
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 600
+                }}
+              >
+                Example Receipt - Content Access
+              </div>
+              <pre
+                style={{
+                  background: 'var(--gray-900)',
+                  color: 'var(--gray-100)',
+                  padding: 'var(--space-6)',
+                  margin: 0,
+                  fontSize: 'var(--text-sm)',
+                  fontFamily: 'var(--font-mono)',
+                  lineHeight: 1.6,
+                  overflowX: 'auto'
+                }}
+              >
+{`{
   "header": {
     "alg": "ES256",
     "typ": "JWT",
@@ -153,71 +248,240 @@ export default function ReceiptsPage() {
     }
   },
   "signature": "MEUCIQCxvZ...cryptographic_signature...xyz"
-}`}</pre>
+}`}
+              </pre>
             </div>
           </div>
         </section>
 
-        <section className="section">
+        {/* Use Cases */}
+        <section className="section" style={{ background: 'var(--gray-50)' }}>
           <div className="container">
-            <div className="section-header">
-              <h2>Use Cases</h2>
-              <p className="lead">Cryptographic receipts enable transparent, verifiable AI operations across industries.</p>
+            <div
+              style={{
+                textAlign: 'center',
+                marginBottom: 'var(--space-16)'
+              }}
+            >
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>Use Cases</h2>
+              <p
+                style={{
+                  fontSize: 'var(--text-xl)',
+                  color: 'var(--gray-600)',
+                  maxWidth: '700px',
+                  margin: '0 auto',
+                  lineHeight: 1.7
+                }}
+              >
+                Cryptographic receipts enable transparent, verifiable AI operations across industries.
+              </p>
             </div>
 
-            <div className="receipt-features">
-              <div className="feature-card">
-                <div className="feature-icon">🤖</div>
-                <h3>AI Training Compliance</h3>
-                <p>Prove that training data was accessed with proper consent and attribution for AI model development.</p>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-icon">📰</div>
-                <h3>Content Licensing</h3>
-                <p>Verify that published content was used according to licensing terms and attribution requirements.</p>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-icon">🏛️</div>
-                <h3>Regulatory Audits</h3>
-                <p>Provide comprehensive audit trails for GDPR, CCPA, AI Act, and other regulatory compliance.</p>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-icon">💼</div>
-                <h3>Enterprise Governance</h3>
-                <p>Maintain detailed records of AI system interactions for internal risk management and governance.</p>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-icon">⚖️</div>
-                <h3>Legal Evidence</h3>
-                <p>Generate legally admissible evidence for intellectual property disputes and compliance violations.</p>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-icon">📈</div>
-                <h3>Usage Analytics</h3>
-                <p>Track and analyze AI system behavior with verifiable usage patterns and interaction metrics.</p>
-              </div>
+            <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
+              <UseCaseCard
+                icon="🤖"
+                title="AI Training Compliance"
+                description="Prove that training data was accessed with proper consent and attribution for AI model development."
+              />
+              <UseCaseCard
+                icon="📰"
+                title="Content Licensing"
+                description="Verify that published content was used according to licensing terms and attribution requirements."
+              />
+              <UseCaseCard
+                icon="🏛️"
+                title="Regulatory Audits"
+                description="Provide comprehensive audit trails for GDPR, CCPA, AI Act, and other regulatory compliance."
+              />
+              <UseCaseCard
+                icon="💼"
+                title="Enterprise Governance"
+                description="Maintain detailed records of AI system interactions for internal risk management and governance."
+              />
+              <UseCaseCard
+                icon="⚖️"
+                title="Legal Evidence"
+                description="Generate legally admissible evidence for intellectual property disputes and compliance violations."
+              />
+              <UseCaseCard
+                icon="📈"
+                title="Usage Analytics"
+                description="Track and analyze AI system behavior with verifiable usage patterns and interaction metrics."
+              />
             </div>
           </div>
         </section>
 
+        {/* CTA Section */}
         <section className="section">
           <div className="container">
-            <div className="feature-highlight">
-              <h2>Ready to Get Started?</h2>
-              <p className="lead">Join hundreds of organizations using cryptographic receipts for transparent AI operations.</p>
-              <div className="actions">
-                <a href="/developers/" className="btn primary">Start Building</a>
-                <a href="mailto:contact@originary.xyz" className="btn secondary">Talk to Sales</a>
+            <div
+              style={{
+                textAlign: 'center',
+                background: 'var(--gradient-brand)',
+                borderRadius: 'var(--radius-3xl)',
+                padding: 'var(--space-16) var(--space-8)',
+                color: 'var(--white)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: 'radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 50%)',
+                  pointerEvents: 'none'
+                }}
+              />
+              <div style={{ position: 'relative', zIndex: 2 }}>
+                <h2
+                  style={{
+                    fontSize: 'var(--text-4xl)',
+                    fontWeight: 700,
+                    marginBottom: 'var(--space-6)',
+                    color: 'var(--white)'
+                  }}
+                >
+                  Ready to Get Started?
+                </h2>
+                <p
+                  style={{
+                    fontSize: 'var(--text-xl)',
+                    marginBottom: 'var(--space-8)',
+                    opacity: 0.9,
+                    maxWidth: '600px',
+                    margin: '0 auto var(--space-8) auto'
+                  }}
+                >
+                  Join hundreds of organizations using cryptographic receipts for transparent AI operations.
+                </p>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    gap: 'var(--space-4)',
+                    flexWrap: 'wrap'
+                  }}
+                >
+                  <Link
+                    href="/developers"
+                    className="btn btn-lg"
+                    style={{
+                      background: 'var(--white)',
+                      color: 'var(--brand-primary)',
+                      border: 'none'
+                    }}
+                  >
+                    <span>Start Building</span>
+                    <ArrowRight size={18} />
+                  </Link>
+                  <a
+                    href="mailto:contact@originary.xyz"
+                    className="btn btn-lg btn-ghost"
+                    style={{
+                      color: 'var(--white)',
+                      border: '1px solid rgba(255,255,255,0.2)'
+                    }}
+                  >
+                    <span>Talk to Sales</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </main>
-    </StaticPageLayout>
+      <Footer />
+    </div>
+  )
+}
+
+function MetricCard({ value, label }: { value: string; label: string }) {
+  return (
+    <div
+      className="card"
+      style={{
+        textAlign: 'center',
+        background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(255,255,255,0.9) 100%)'
+      }}
+    >
+      <div
+        style={{
+          fontSize: 'var(--text-4xl)',
+          fontWeight: 800,
+          color: 'var(--brand-primary)',
+          marginBottom: 'var(--space-2)'
+        }}
+      >
+        {value}
+      </div>
+      <div
+        style={{
+          fontSize: 'var(--text-sm)',
+          color: 'var(--gray-600)',
+          fontWeight: 500
+        }}
+      >
+        {label}
+      </div>
+    </div>
+  )
+}
+
+function FeatureCard({
+  icon,
+  title,
+  description
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="card">
+      <div style={{ marginBottom: 'var(--space-6)' }}>
+        {icon}
+      </div>
+      <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>
+        {title}
+      </h3>
+      <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+        {description}
+      </p>
+    </div>
+  )
+}
+
+function UseCaseCard({
+  icon,
+  title,
+  description
+}: {
+  icon: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="card">
+      <div
+        style={{
+          fontSize: '48px',
+          marginBottom: 'var(--space-4)',
+          textAlign: 'center'
+        }}
+      >
+        {icon}
+      </div>
+      <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>
+        {title}
+      </h3>
+      <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+        {description}
+      </p>
+    </div>
   )
 }
