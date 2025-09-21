@@ -1,90 +1,123 @@
-import { auth } from "@/lib/auth"
-import { redirect } from "next/navigation"
-import Header from "@/components/Header"
-import Footer from "@/components/Footer"
-import { SessionProvider } from "next-auth/react"
-import Link from "next/link"
+'use client'
 
-export default async function Dashboard() {
-  const session = await auth()
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import NavigationHeader from '@/components/NavigationHeader'
+import Footer from '@/components/Footer'
+import Link from 'next/link'
 
-  if (!session?.user) {
-    redirect("/signin")
-  }
+export default function Dashboard() {
+  const router = useRouter()
+
+  useEffect(() => {
+    // Check if user is authenticated (placeholder for now)
+    const isAuthenticated = false // This would check actual auth state
+    if (!isAuthenticated) {
+      router.push('/signin')
+    }
+  }, [router])
 
   return (
-    <SessionProvider>
-      <Header />
-
-      <main>
-        <section className="hero">
+    <div className="wrap">
+      <NavigationHeader />
+      <main style={{ paddingTop: '80px' }}>
+        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
-            <div className="hero-content">
-              <span className="kicker">DASHBOARD</span>
-              <h1 className="display">Welcome back, {session.user.name || session.user.email}</h1>
-              <p className="sub">
+            <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 'var(--space-3)',
+                background: 'rgba(99, 91, 255, 0.1)',
+                border: '1px solid rgba(99, 91, 255, 0.2)',
+                borderRadius: 'var(--radius-full)',
+                padding: 'var(--space-2) var(--space-6)',
+                marginBottom: 'var(--space-6)',
+                fontSize: 'var(--text-sm)',
+                fontWeight: 600,
+                color: 'var(--brand-primary)'
+              }}>
+                <span>DASHBOARD</span>
+              </div>
+
+              <h1 style={{
+                fontSize: 'clamp(var(--text-4xl), 6vw, var(--text-5xl))',
+                fontWeight: 700,
+                lineHeight: 1.1,
+                letterSpacing: '-0.04em',
+                marginBottom: 'var(--space-6)',
+                color: 'var(--gray-900)'
+              }}>
+                Welcome to your Dashboard
+              </h1>
+              <p style={{
+                fontSize: 'var(--text-xl)',
+                color: 'var(--gray-600)',
+                marginBottom: 'var(--space-8)',
+                maxWidth: '600px',
+                margin: '0 auto var(--space-8) auto',
+                lineHeight: 1.7
+              }}>
                 Manage your API keys, view usage analytics, and configure your PEAC integration.
               </p>
 
-              <div className="actions">
-                <Link href="/api-keys" className="btn primary">Manage API Keys</Link>
-                <Link href="/developers" className="btn secondary">View Documentation</Link>
+              <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                gap: 'var(--space-4)',
+                flexWrap: 'wrap',
+                marginBottom: 'var(--space-12)'
+              }}>
+                <Link href="/signin" className="btn btn-primary">
+                  Sign In to Access
+                </Link>
+                <Link href="/developers" className="btn btn-secondary">
+                  View Documentation
+                </Link>
               </div>
             </div>
 
-            {/* Quick Stats */}
-            <div className="hero-metrics">
-              <div className="hero-metric">
-                <div className="metric-value">0</div>
-                <div className="metric-label">API Keys</div>
-              </div>
-              <div className="hero-metric">
-                <div className="metric-value">0</div>
-                <div className="metric-label">Requests This Month</div>
-              </div>
-              <div className="hero-metric">
-                <div className="metric-value">$0.00</div>
-                <div className="metric-label">Current Usage</div>
-              </div>
-              <div className="hero-metric">
-                <div className="metric-value">Active</div>
-                <div className="metric-label">Account Status</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section">
-          <div className="container">
-            <div className="section-header">
-              <h2>Quick Actions</h2>
-              <p className="lead">Get started with your Originary integration</p>
-            </div>
-
-            <div className="dashboard-actions">
-              <div className="dashboard-card">
-                <h3>🔑 Create API Key</h3>
-                <p>Generate your first API key to start making requests to our services.</p>
-                <Link href="/api-keys" className="btn secondary">Create Key</Link>
+            <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
+              <div className="card">
+                <h3 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-xl)' }}>
+                  🔑 API Key Management
+                </h3>
+                <p style={{ marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
+                  Generate and manage your API keys to start making requests to our services.
+                </p>
+                <Link href="/signin" className="btn btn-secondary">
+                  Get Started
+                </Link>
               </div>
 
-              <div className="dashboard-card">
-                <h3>📚 Read Documentation</h3>
-                <p>Learn how to integrate PEAC protocol and start building with our APIs.</p>
-                <Link href="/developers" className="btn secondary">View Docs</Link>
+              <div className="card">
+                <h3 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-xl)' }}>
+                  📊 Usage Analytics
+                </h3>
+                <p style={{ marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
+                  Monitor your API usage, track performance metrics, and analyze trends.
+                </p>
+                <Link href="/signin" className="btn btn-secondary">
+                  View Analytics
+                </Link>
               </div>
 
-              <div className="dashboard-card">
-                <h3>💳 Upgrade Plan</h3>
-                <p>View our pricing plans and upgrade for higher limits and enterprise features.</p>
-                <Link href="/pricing" className="btn secondary">View Pricing</Link>
+              <div className="card">
+                <h3 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-xl)' }}>
+                  ⚙️ PEAC Configuration
+                </h3>
+                <p style={{ marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
+                  Configure your PEAC protocol settings and integration preferences.
+                </p>
+                <Link href="/signin" className="btn btn-secondary">
+                  Configure
+                </Link>
               </div>
             </div>
           </div>
         </section>
       </main>
-
       <Footer />
-    </SessionProvider>
+    </div>
   )
 }
