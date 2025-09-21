@@ -57,25 +57,9 @@ export default function Pricing() {
                   ))}
                 </div>
                 <div style={{ width: '100%' }}>
-                  <div
-                    style={{
-                      border: '1px solid var(--brand-primary)',
-                      borderRadius: 'var(--radius-lg)',
-                      padding: 'var(--space-4)',
-                      textAlign: 'center',
-                      background: 'var(--brand-primary)',
-                      color: 'var(--white)',
-                      cursor: 'pointer',
-                      fontWeight: 600
-                    }}
-                    onClick={() => {
-                      if (typeof window !== 'undefined') {
-                        window.open('https://razorpay.me/@originary?amount=100', '_blank');
-                      }
-                    }}
-                  >
-                    Start $1 Trial
-                  </div>
+                  <form>
+                    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_RK5T4IykFzu0rh" async></script>
+                  </form>
                 </div>
               </div>
 
