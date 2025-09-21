@@ -44,7 +44,6 @@ const heroHighlights = [
   'Signed receipts that follow every agent request for total accountability.',
 ]
 
-// Metrics removed - will be re-added when methodology is ready
 
 const valueProps = [
   {

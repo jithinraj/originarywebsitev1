@@ -2,7 +2,7 @@
 
 import Script from 'next/script'
 
-const GA_TRACKING_ID = 'G-XXXXXXXXXX' // Replace with actual GA4 tracking ID
+const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID || 'G-XXXXXXXXXX'
 
 export default function GoogleAnalytics() {
   return (
