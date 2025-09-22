@@ -4,8 +4,6 @@ import './globals.css'
 import Script from 'next/script'
 import PerformanceMonitor from '@/components/PerformanceMonitor'
 import SkipNavigation from '@/components/SkipNavigation'
-import GA4ConsentLoader from '@/components/GA4ConsentLoader'
-import ConsentBanner from '@/components/ConsentBanner'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -139,9 +137,19 @@ export default function RootLayout({
           {children}
         </div>
 
-        {/* Privacy-first Analytics with Consent */}
-        <ConsentBanner />
-        <GA4ConsentLoader />
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-FPG3HTSN2R"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-FPG3HTSN2R');
+          `}
+        </Script>
       </body>
     </html>
   )
