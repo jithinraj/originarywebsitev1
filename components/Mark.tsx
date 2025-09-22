@@ -1,7 +1,5 @@
 export const Mark = ({ children }: { children: string }) => (
-  <>
-    {children}
-  </>
+  <>{children}<sup aria-hidden="true">™</sup></>
 );
 
 export default Mark;

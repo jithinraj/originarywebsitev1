@@ -53,7 +53,7 @@ export default function OriginaryAI() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--gray-900)'
               }}>
-                <Mark>Originary</Mark> AI - Receipts for the Agentic Web
+                Originary<sup>™</sup> AI - Receipts for the Agentic Web
               </h1>
 
               <p style={{
