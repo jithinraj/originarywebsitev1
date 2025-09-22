@@ -39,41 +39,52 @@ export default function ConsentBanner() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 bg-[#FAF8F1] border-t border-gray-200 p-4 shadow-lg z-50"
+      className="fixed bottom-6 left-6 right-6 md:left-auto md:right-6 md:max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-6 z-50"
       role="region"
       aria-label="Privacy consent"
       aria-live="polite"
+      style={{
+        boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+      }}
     >
-      <div className="container max-w-6xl mx-auto">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-gray-700 text-center sm:text-left">
-            We use minimal analytics to improve our developer tools. No personal data collected.
-            <button
-              onClick={clearConsent}
-              className="ml-2 text-sm text-gray-500 hover:text-gray-700 underline"
-              aria-label="Privacy policy"
-            >
-              Privacy policy
-            </button>
-          </p>
+      <div className="flex justify-between items-start mb-3">
+        <h3 className="text-sm font-semibold text-gray-900">Privacy & Cookies</h3>
+        <button
+          onClick={handleReject}
+          className="text-gray-400 hover:text-gray-600 transition-colors -mt-1"
+          aria-label="Close banner"
+        >
+          <X className="h-5 w-5" />
+        </button>
+      </div>
 
-          <div className="flex items-center gap-3">
-            <button
-              onClick={handleReject}
-              className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
-              aria-label="Reject analytics tracking"
-            >
-              Reject
-            </button>
-            <button
-              onClick={handleAccept}
-              className="px-6 py-2 text-sm bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors font-medium"
-              aria-label="Accept analytics tracking"
-            >
-              Accept
-            </button>
-          </div>
-        </div>
+      <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+        We use analytics to understand how you use our site and improve your experience.
+        No personal data is collected.
+        <button
+          onClick={clearConsent}
+          className="text-gray-900 underline underline-offset-2 hover:no-underline ml-1"
+          aria-label="Learn more about privacy"
+        >
+          Learn more
+        </button>
+      </p>
+
+      <div className="flex items-center gap-2">
+        <button
+          onClick={handleReject}
+          className="flex-1 px-4 py-2.5 text-sm font-medium text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
+          aria-label="Reject analytics tracking"
+        >
+          Decline
+        </button>
+        <button
+          onClick={handleAccept}
+          className="flex-1 px-4 py-2.5 text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 rounded-lg transition-colors"
+          aria-label="Accept analytics tracking"
+        >
+          Accept
+        </button>
       </div>
     </div>
   );
