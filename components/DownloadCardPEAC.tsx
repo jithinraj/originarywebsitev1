@@ -11,7 +11,7 @@ export default function DownloadCardPEAC() {
         fontWeight: 600,
         marginBottom: 'var(--space-2)'
       }}>
-        Open Protocol (PEAC) — Upstream Packages
+        Open Protocol (PEAC) - Upstream Packages
       </h3>
       <p style={{
         fontSize: 'var(--text-sm)',

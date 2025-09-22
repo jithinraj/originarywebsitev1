@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
+import Mark from '@/components/Mark'
 
 export const metadata: Metadata = {
   title: 'Consume responsibly with proof - AI Builders : Originary',
@@ -30,8 +31,55 @@ export const metadata: Metadata = {
 }
 
 export default function AIBuilders() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://originary.xyz/solutions/ai-builders#service",
+        "name": "Originary for AI Builders",
+        "description": "Prove compliance with creator preferences and data policies. Build AI systems that respect rights, maintain consent, and provide verifiable interaction records.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Originary",
+          "url": "https://originary.xyz"
+        },
+        "serviceType": "AI Compliance Platform",
+        "areaServed": "Worldwide",
+        "url": "https://originary.xyz/solutions/ai-builders"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://originary.xyz"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Solutions",
+            "item": "https://originary.xyz/solutions"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "AI Builders",
+            "item": "https://originary.xyz/solutions/ai-builders"
+          }
+        ]
+      }
+    ]
+  }
+
   return (
     <div className="wrap">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
         <section className="section">
@@ -51,11 +99,87 @@ export default function AIBuilders() {
                 AI BUILDERS
               </div>
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">Consume Responsibly with Proof</span>
+                <span className="text-gradient"><Mark>Originary</Mark> for AI Builders</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--gray-600)', maxWidth: '800px', margin: '0 auto' }}>
-                Detect and respect creator preferences (AIPREF / <code style={{ backgroundColor: 'var(--gray-100)', padding: 'var(--space-1)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-lg)' }}>peac.txt</code>). Maintain receipts for audits, attribution, and model hygiene.
+                Prove compliance with creator preferences and data policies. Build AI systems that respect rights, maintain consent, and provide verifiable interaction records.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="section" style={{ background: 'var(--gray-50)' }}>
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>Why Choose Originary</h2>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)', marginBottom: 'var(--space-12)' }}>
+                Build AI systems that respect creator rights while providing verifiable compliance.
+              </p>
+            </div>
+
+            <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
+              <div className="card" style={{ textAlign: 'center' }}>
+                <div style={{
+                  width: '64px',
+                  height: '64px',
+                  borderRadius: 'var(--radius-full)',
+                  background: 'var(--gradient-brand)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto var(--space-4)',
+                  color: 'white',
+                  fontSize: '1.5rem'
+                }}>
+                  ✓
+                </div>
+                <h4 style={{ marginBottom: 'var(--space-3)' }}>Provable</h4>
+                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                  Cryptographic receipts provide verifiable proof of policy compliance and creator consent.
+                </p>
+              </div>
+
+              <div className="card" style={{ textAlign: 'center' }}>
+                <div style={{
+                  width: '64px',
+                  height: '64px',
+                  borderRadius: 'var(--radius-full)',
+                  background: 'var(--gradient-brand)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto var(--space-4)',
+                  color: 'white',
+                  fontSize: '1.5rem'
+                }}>
+                  ⚖️
+                </div>
+                <h4 style={{ marginBottom: 'var(--space-3)' }}>Neutral</h4>
+                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                  Open protocol standards ensure no vendor lock-in and universal interoperability.
+                </p>
+              </div>
+
+              <div className="card" style={{ textAlign: 'center' }}>
+                <div style={{
+                  width: '64px',
+                  height: '64px',
+                  borderRadius: 'var(--radius-full)',
+                  background: 'var(--gradient-brand)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto var(--space-4)',
+                  color: 'white',
+                  fontSize: '1.5rem'
+                }}>
+                  🚀
+                </div>
+                <h4 style={{ marginBottom: 'var(--space-3)' }}>Practical</h4>
+                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                  Simple integration with existing ML workflows and infrastructure. Production-ready.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -65,7 +189,7 @@ export default function AIBuilders() {
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <h2 style={{ marginBottom: 'var(--space-6)' }}>How It Works</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)', marginBottom: 'var(--space-12)' }}>
-                AI builders integrate policy discovery and receipt generation into their training and inference pipelines.
+                Integrate policy compliance directly into your AI development workflow.
               </p>
             </div>
 
@@ -86,9 +210,9 @@ export default function AIBuilders() {
                 }}>
                   1
                 </div>
-                <h4 style={{ marginBottom: 'var(--space-3)' }}>Policy Discovery</h4>
+                <h4 style={{ marginBottom: 'var(--space-3)' }}>Discover Policies</h4>
                 <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
-                  Auto-detect AIPREF and <code style={{ backgroundColor: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac.txt</code> before data access
+                  Check for creator preferences before accessing any content or data.
                 </p>
               </div>
 
@@ -108,9 +232,9 @@ export default function AIBuilders() {
                 }}>
                   2
                 </div>
-                <h4 style={{ marginBottom: 'var(--space-3)' }}>Respect Preferences</h4>
+                <h4 style={{ marginBottom: 'var(--space-3)' }}>Respect Terms</h4>
                 <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
-                  Honor opt-outs, attribution requirements, and usage restrictions
+                  Honor creator requirements for attribution, usage limits, and consent.
                 </p>
               </div>
 
@@ -132,7 +256,7 @@ export default function AIBuilders() {
                 </div>
                 <h4 style={{ marginBottom: 'var(--space-3)' }}>Generate Receipts</h4>
                 <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
-                  Create PEAC-Receipts for every compliant data interaction
+                  Create cryptographic proof of every compliant interaction.
                 </p>
               </div>
 
@@ -152,9 +276,9 @@ export default function AIBuilders() {
                 }}>
                   4
                 </div>
-                <h4 style={{ marginBottom: 'var(--space-3)' }}>Maintain Records</h4>
+                <h4 style={{ marginBottom: 'var(--space-3)' }}>Audit & Report</h4>
                 <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
-                  Store receipts for compliance audits and attribution tracking
+                  Maintain comprehensive records for compliance audits and transparency.
                 </p>
               </div>
             </div>

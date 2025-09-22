@@ -142,27 +142,35 @@ contact: contact@originary.xyz`}
               />
               <QuickStartCard
                 step="2"
-                title="Use upstream CLI (optional)"
-                description="Install the official PEAC CLI for validation and testing"
-                code={`# Install from npm
-pnpm add -g @peacprotocol/cli @peacprotocol/core
+                title="Install Originary CLI"
+                description="Verify policies with our first-party CLI tool"
+                code={`# macOS/Linux (example)
+./originary --verify /path/to/.well-known/peac.txt
 
-# Initialize and validate
-npx peac init
-npx peac validate peac.txt`}
+# Windows (example)
+originary.exe --verify C:\\site\\.well-known\\peac.txt
+
+# Download from /downloads with checksums`}
               />
               <QuickStartCard
                 step="3"
                 title="Send receipts with requests"
                 description="Include PEAC receipts in your HTTP requests"
-                code={`# Include receipt in request headers
-curl -sS https://api.example.com/data \\
-  -H "PEAC-Receipt: eyJ...<signed-receipt>...==" \\
-  -H "Accept: application/json"
+                code={`# cURL example
+curl -sS https://publisher.example/api \\
+  -H "PEAC-Receipt: eyJfdHlwZSI6IlBFQUNSZWNlaXB0Iiwi..." \\
+  -H "User-Agent: Originary-AI/1.0"
 
-# Edge middleware example
-if (request.headers['peac-receipt']) {
-  // Verify receipt at edge
+# Node.js/fetch example
+await fetch("https://publisher.example/api", {
+  headers: {
+    "PEAC-Receipt": receiptToken,
+    "User-Agent": "Originary-AI/1.0"
+  }
+});
+
+# Edge verification example
+if (request.headers.get('peac-receipt')) {
   const isValid = await verifyReceipt(receipt);
   if (isValid) return fetch(request);
 }`}
@@ -182,7 +190,7 @@ if (request.headers['peac-receipt']) {
                 color: 'var(--gray-600)',
                 marginBottom: 'var(--space-3)'
               }}>
-                Prefer the OSS CLI? Install from npm:
+                Open Protocol (PEAC) - Upstream (link out):
               </p>
               <code style={{
                 display: 'block',
@@ -285,9 +293,9 @@ if (request.headers['peac-receipt']) {
                 overflowX: 'auto',
                 margin: 0
               }}>
-                <code>{`curl -sS https://api.example.com/data \\
-  -H "PEAC-Receipt: eyJ...<detached-JWS>...==" \\
-  -H "Accept: application/json"`}</code>
+                <code>{`curl -sS https://publisher.example/api \\
+  -H "PEAC-Receipt: eyJfdHlwZSI6IlBFQUNSZWNlaXB0Iiwi..." \\
+  -H "User-Agent: Originary-AI/1.0"`}</code>
               </pre>
             </div>
           </div>
