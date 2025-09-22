@@ -16,18 +16,27 @@ export default function ConsentBanner() {
     const stored = localStorage.getItem(CONSENT_KEY);
     if (!stored) {
       setShow(true);
+      // Add padding to body to prevent content overlap
+      document.body.style.paddingBottom = '48px';
     }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.paddingBottom = '';
+    };
   }, []);
 
   const handleAccept = () => {
     localStorage.setItem(CONSENT_KEY, JSON.stringify({ analytics: true }));
     setShow(false);
+    document.body.style.paddingBottom = '';
     window.location.reload();
   };
 
   const handleReject = () => {
     localStorage.setItem(CONSENT_KEY, JSON.stringify({ analytics: false }));
     setShow(false);
+    document.body.style.paddingBottom = '';
   };
 
   const clearConsent = () => {
