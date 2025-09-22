@@ -110,7 +110,7 @@ export default function Pricing() {
                   ))}
                 </div>
                 <div style={{ width: '100%' }}>
-                  <form id="razorpay-form" style={{ marginBottom: 'var(--space-2)' }}>
+                  <form id="razorpay-form" style={{ marginBottom: 'var(--space-2)' }} aria-label="Buy Developer activation for $1">
                   </form>
                   <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center' }}>
                     By purchasing you agree to our <Link href="/legal/terms" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Terms</Link> and <Link href="/legal/privacy" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Privacy Policy</Link>
@@ -133,7 +133,7 @@ export default function Pricing() {
                   {['Everything in Developer', 'Settlement gateway (402) access', 'Dashboard (preview)', 'Priority support', 'SLA available', 'Analytics (preview)'].map((feature) => (
                     <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
                       <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
-                      <span>{feature}</span>
+                      <span aria-describedby={feature.includes('(preview)') ? 'preview-legend' : undefined}>{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -173,7 +173,7 @@ export default function Pricing() {
               </div>
             </div>
 
-            <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center', marginTop: 'var(--space-4)' }}>
+            <p id="preview-legend" style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center', marginTop: 'var(--space-4)' }}>
               * Features marked &ldquo;preview&rdquo; are in limited release.
             </p>
 
