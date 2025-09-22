@@ -63,7 +63,7 @@ export default function Footer() {
                 fontSize: 'var(--text-base)'
               }}
             >
-              Orchestration for the agentic web.
+              Receipts for the Agentic Web.
             </p>
             <div
               style={{
@@ -108,8 +108,6 @@ export default function Footer() {
             title="Company"
             links={[
               { href: '/company/about', label: 'About' },
-              { href: '/company/press', label: 'Press' },
-              { href: '/company/careers', label: 'Careers' },
               { href: '/company/contact', label: 'Contact' },
               { href: '/legal/privacy', label: 'Privacy' },
               { href: '/legal/terms', label: 'Terms' }

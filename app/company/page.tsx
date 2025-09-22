@@ -47,18 +47,13 @@ export default function CompanyPage() {
                 <a href="/company/about" className="link" aria-label="Learn more about Originary">Learn more about Originary</a>
               </div>
               <div className="card">
-                <h3>Careers</h3>
-                <p>Join us in building the future of agentic coordination.</p>
-                <a href="/company/careers" className="link">View opportunities</a>
+                <h3>Press & Media</h3>
+                <p>Media inquiries and press resources.</p>
+                <a href="/press" className="link">Press center</a>
               </div>
             </div>
 
             <div className="grid-2">
-              <div className="card">
-                <h3>Press & Media</h3>
-                <p>Media inquiries and press resources.</p>
-                <a href="/company/press" className="link">Press center</a>
-              </div>
               <div className="card">
                 <h3>Contact</h3>
                 <p>Get in touch with our team.</p>

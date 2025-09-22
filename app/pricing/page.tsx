@@ -202,7 +202,7 @@ export default function Pricing() {
                   maxWidth: '600px',
                   margin: '0 auto var(--space-8) auto'
                 }}>
-                  Join hundreds of companies building the future of autonomous agents. Start with a free trial or speak with our team.
+                  Join teams building compliant, profitable AI interactions. Start with a free trial or speak with our team.
                 </p>
                 <div style={{
                   display: 'flex',

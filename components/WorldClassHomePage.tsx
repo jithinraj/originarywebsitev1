@@ -28,7 +28,7 @@ export default function WorldClassHomePage() {
             }}
           >
             <h2 style={{ marginBottom: 'var(--space-6)' }}>
-              <span className="text-gradient">Orchestrate every policy, payment, and proof</span> from one fabric
+              <span className="text-gradient">Control every policy, payment, and proof</span> from one fabric
             </h2>
             <p
               style={{
@@ -62,7 +62,7 @@ export default function WorldClassHomePage() {
               description="Bring your pricing logic and payment providers. Our gateway brokers credits, fiat, or crypto without refactoring existing endpoints."
               features={[
                 'Policy-aware usage metering and throttles',
-                'Stripe, x402, and on-chain settlement adapters',
+                'x402, Stripe, and on-chain settlement adapters',
                 'Dynamic rate cards per policy segment'
               ]}
               delay={0.2}

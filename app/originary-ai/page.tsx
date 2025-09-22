@@ -218,35 +218,19 @@ export default function OriginaryAI() {
 
               <div style={{
                 background: 'var(--gray-50)',
-                padding: 'var(--space-8)',
+                padding: 'var(--space-6)',
                 borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--gray-200)'
+                border: '1px solid var(--gray-200)',
+                textAlign: 'center'
               }}>
-                <h3 style={{
-                  fontSize: 'var(--text-xl)',
-                  fontWeight: 600,
-                  marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                <p style={{
+                  color: 'var(--gray-700)',
+                  lineHeight: 1.6,
+                  margin: 0,
+                  fontSize: 'var(--text-sm)'
                 }}>
-                  Frequently Asked Questions
-                </h3>
-                <div style={{ marginBottom: 'var(--space-4)' }}>
-                  <h4 style={{
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 600,
-                    marginBottom: 'var(--space-2)',
-                    color: 'var(--gray-900)'
-                  }}>
-                    Is this the same as originary.ai?
-                  </h4>
-                  <p style={{
-                    color: 'var(--gray-700)',
-                    lineHeight: 1.6,
-                    margin: 0
-                  }}>
-                    No. <strong>Originary</strong> is not affiliated with the operators of <strong>originary.ai</strong>.
-                  </p>
-                </div>
+                  For naming questions, see our <Link href="/trademark" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Trademark</Link> page.
+                </p>
               </div>
             </div>
           </div>

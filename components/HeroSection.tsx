@@ -439,7 +439,15 @@ function InteractiveReceiptDemo() {
                 letterSpacing: '0.05em'
               }}
             >
-              Live Receipt
+              Live Receipt <span style={{
+                marginLeft: '8px',
+                padding: '2px 8px',
+                fontSize: '10px',
+                background: 'var(--gray-100)',
+                borderRadius: 'var(--radius-full)',
+                color: 'var(--gray-600)',
+                fontWeight: 'normal'
+              }}>Demo</span>
             </span>
           </div>
           <span
@@ -457,8 +465,8 @@ function InteractiveReceiptDemo() {
         <div style={{ marginBottom: 'var(--space-6)' }}>
           <ReceiptRow label="Resource" value="/api/content/atlantic/17" mono />
           <ReceiptRow label="Requester" value="atlas-agent/2.3.1" />
-          <ReceiptRow label="Policy" value="peac:v2.0 - attribution + commercial" />
-          <ReceiptRow label="Settlement" value="$0.0025 via Stripe" />
+          <ReceiptRow label="Policy" value="peac:0.9.13 - attribution + commercial" />
+          <ReceiptRow label="Settlement" value="$0.0025 via x402 (primary)" />
           <ReceiptRow
             label="Status"
             value={

@@ -4,13 +4,13 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Enterprise agentic governance - Enterprises : Originary',
-  description: 'Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. SOC 2, GDPR, multi-region deployment.',
+  description: 'Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. Designed for SOC 2, GDPR, multi-region deployment.',
   keywords: 'enterprise agentic governance, policy management, compliance reporting, SOC 2, GDPR, security controls',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'Enterprise agentic governance - Enterprises : Originary',
-    description: 'Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. SOC 2, GDPR, multi-region deployment.',
+    description: 'Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. Designed for SOC 2, GDPR, multi-region deployment.',
     url: 'https://originary.xyz/solutions/enterprises',
     images: ['https://originary.xyz/og.jpg'],
     siteName: 'Originary',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Enterprise agentic governance - Enterprises : Originary',
-    description: 'Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. SOC 2, GDPR, multi-region deployment.',
+    description: 'Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. Designed for SOC 2, GDPR, multi-region deployment.',
     images: ['https://originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
@@ -54,7 +54,7 @@ export default function Enterprises() {
                 <span className="text-gradient">Enterprise Agentic Governance</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--gray-600)', maxWidth: '800px', margin: '0 auto' }}>
-                Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. SOC 2, GDPR, multi-region deployment.
+                Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. Designed for SOC 2, GDPR, multi-region deployment.
               </p>
             </div>
           </div>
@@ -89,11 +89,11 @@ export default function Enterprises() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>SOC 2 Type II certification</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Designed for SOC 2 Type II</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>GDPR and CCPA compliance</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Designed for GDPR and CCPA</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <span style={{ color: 'var(--brand-primary)' }}>✓</span>

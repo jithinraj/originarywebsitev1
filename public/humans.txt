@@ -7,7 +7,7 @@ Website: https://originary.xyz
 Contact: contact@originary.xyz
 
 
-Mission: Orchestration for the agentic web
+Mission: Receipts for the agentic web
 Focus: PEAC Protocol development and intelligent coordination implementation
 Founded: 2025
 Location: United States
@@ -39,11 +39,11 @@ Products:
 /* TECHNOLOGY */
 
 Infrastructure: Cloud-native architecture
-Security: SOC 2 Type II, enterprise-grade encryption
+Security: Designed for SOC 2 Type II, enterprise-grade encryption
 APIs: RESTful design with OpenAPI specifications
 Protocols: HTTP/HTTPS, WebSocket, PEAC Protocol
 Authentication: Multi-factor authentication, OAuth
-Compliance: GDPR, CCPA, PIPEDA, Privacy Act
+Compliance: Designed for GDPR, CCPA, PIPEDA, Privacy Act
 
 Development Stack:
 - Frontend: Modern web standards, progressive enhancement
