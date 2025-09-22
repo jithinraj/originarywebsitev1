@@ -30,7 +30,7 @@ export default function Trademark() {
 
               <div style={{ fontSize: 'var(--text-lg)', lineHeight: 1.7, color: 'var(--gray-700)' }}>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  <Mark>Originary</Mark> is a trademark of Originary, Inc. We claim rights to this mark for our services related to receipts, orchestration, and infrastructure for the agentic web.
+                  <Mark>Originary</Mark> is our brand for receipts, compliance, and infrastructure for the agentic web. We claim trademark rights in "Originary" for these services. For trademark matters, contact tm@originary.xyz.
                 </p>
 
                 <h2 style={{

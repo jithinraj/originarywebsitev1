@@ -205,7 +205,7 @@ export default function WorldClassHomePage() {
                   color: 'var(--white)'
                 }}
               >
-                Ready to orchestrate the agentic web?
+                Ready to ship Receipts for the agentic web?
               </h2>
               <p
                 style={{

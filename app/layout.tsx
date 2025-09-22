@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Originary : Orchestration for the Agentic Web',
+    title: 'Originary : Receipts for the Agentic Web',
     description: 'Publish peac.txt, settle via x402 or your rail, and prove compliance on every request with Receipts. Powered by the PEAC open protocol.',
     url: 'https://originary.xyz/',
     siteName: 'Originary',
@@ -77,14 +77,14 @@ export const metadata: Metadata = {
       url: '/og.jpg',
       width: 1200,
       height: 630,
-      alt: 'Originary - Orchestration for the Agentic Web'
+      alt: 'Originary - Receipts for the Agentic Web'
     }],
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary : Orchestration for the Agentic Web',
+    title: 'Originary : Receipts for the Agentic Web',
     description: 'Publish peac.txt, settle via x402 or your rail, and prove compliance on every request with Receipts. Powered by the PEAC open protocol.',
     images: ['/og.jpg'],
     site: '@originaryinc',

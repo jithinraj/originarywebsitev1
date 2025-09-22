@@ -63,7 +63,7 @@ export default function About() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--gray-900)'
               }}>
-                Orchestration for the <span className="text-gradient">agentic web</span>
+                Receipts for the <span className="text-gradient">agentic web</span>
               </h1>
 
               <p style={{

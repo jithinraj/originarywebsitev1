@@ -40,7 +40,7 @@ const {
 
 const heroHighlights = [
   'Machine-readable policy orchestration across content, APIs, and data lakes.',
-  'Dual-rail settlement via Stripe, x402, stablecoins, or enterprise credits.',
+  'Dual-rail settlement via x402, Stripe, stablecoins, or enterprise credits.',
   'Signed receipts that follow every agent request for total accountability.',
 ]
 
@@ -56,7 +56,7 @@ const valueProps = [
     icon: Zap,
     title: 'Composable commerce rails',
     copy: 'Bring your own pricing logic and payment providers. Our gateway brokers credits, fiat, or crypto without refactoring existing endpoints.',
-    bullets: ['Meter usage with policy-aware throttles', 'Stripe, x402, and on-chain adapters', 'Dynamic rate cards per policy segment'],
+    bullets: ['Meter usage with policy-aware throttles', 'x402, Stripe, and on-chain adapters', 'Dynamic rate cards per policy segment'],
   },
   {
     icon: Shield,

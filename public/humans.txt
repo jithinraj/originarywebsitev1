@@ -8,9 +8,9 @@ Contact: contact@originary.xyz
 
 
 Mission: Receipts for the agentic web
-Focus: PEAC Protocol development and intelligent coordination implementation
-Founded: 2025
-Location: United States
+Focus: Open protocol integrations, signed receipts, and edge verification
+Founded: 2024
+Location: United States/India
 
 /* SITE */
 
@@ -29,11 +29,10 @@ IDE: Various development environments
 /* SERVICES */
 
 Products:
-- PEAC Protocol (Programmable Environment for AI Agent Coordination)
-- Verify API (Receipt verification and validation)
-- Gateway (402) (HTTP payment-required protocol implementation)
-- Studio (Dashboard and management platform)
-- Adapters (Integration tools and connectors)
+- Receipts (verification and validation)
+- Gateway 402 (HTTP payment-required orchestration)
+- Studio (dashboard and management)
+- Adapters (integration tools and connectors)
 
 
 /* TECHNOLOGY */
