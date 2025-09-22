@@ -142,34 +142,85 @@ contact: contact@originary.xyz`}
               />
               <QuickStartCard
                 step="2"
-                title="Install SDK"
-                description="Choose your preferred language and install our SDK"
-                code={`# Node.js
-npm install @originary/sdk
+                title="Use upstream CLI (optional)"
+                description="Install the official PEAC CLI for validation and testing"
+                code={`# Install from npm
+pnpm add -g @peacprotocol/cli @peacprotocol/core
 
-# Python
-pip install originary
-
-# Go
-go get github.com/originary/go-sdk`}
+# Initialize and validate
+npx peac init
+npx peac validate peac.txt`}
               />
               <QuickStartCard
                 step="3"
-                title="Integrate verification"
-                description="Add policy checking to your application"
-                code={`import { Originary } from '@originary/sdk';
+                title="Send receipts with requests"
+                description="Include PEAC receipts in your HTTP requests"
+                code={`# Include receipt in request headers
+curl -sS https://api.example.com/data \\
+  -H "PEAC-Receipt: eyJ...<signed-receipt>...==" \\
+  -H "Accept: application/json"
 
-const client = new Originary({
-  apiKey: process.env.ORIGINARY_API_KEY
-});
-
-// Check policy compliance
-const policy = await client.checkPolicy(resourceUrl);
-if (policy.allowsAccess()) {
-  // Proceed with access
-  const receipt = await client.generateReceipt();
+# Edge middleware example
+if (request.headers['peac-receipt']) {
+  // Verify receipt at edge
+  const isValid = await verifyReceipt(receipt);
+  if (isValid) return fetch(request);
 }`}
               />
+            </div>
+
+            <div style={{
+              marginTop: 'var(--space-8)',
+              textAlign: 'center',
+              padding: 'var(--space-4)',
+              background: 'var(--white)',
+              borderRadius: 'var(--radius-lg)',
+              border: '1px solid var(--gray-200)'
+            }}>
+              <p style={{
+                fontSize: 'var(--text-sm)',
+                color: 'var(--gray-600)',
+                marginBottom: 'var(--space-3)'
+              }}>
+                Prefer the OSS CLI? Install from npm:
+              </p>
+              <code style={{
+                display: 'block',
+                background: 'var(--gray-50)',
+                padding: 'var(--space-2)',
+                borderRadius: 'var(--radius-sm)',
+                fontFamily: 'var(--font-mono)',
+                fontSize: 'var(--text-sm)',
+                marginBottom: 'var(--space-3)'
+              }}>
+                pnpm add -g @peacprotocol/cli @peacprotocol/core
+              </code>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)' }}>
+                <a
+                  href="https://github.com/peacprotocol/peac"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    color: 'var(--brand-primary)',
+                    textDecoration: 'underline',
+                    fontSize: 'var(--text-sm)'
+                  }}
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://peacprotocol.org/docs"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    color: 'var(--brand-primary)',
+                    textDecoration: 'underline',
+                    fontSize: 'var(--text-sm)'
+                  }}
+                >
+                  Docs
+                </a>
+              </div>
             </div>
           </div>
         </section>

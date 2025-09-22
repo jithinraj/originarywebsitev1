@@ -205,6 +205,22 @@ export default function HomePage() {
                   <span>Signature</span>
                   <code>0x94cd…5a9b</code>
                 </div>
+                <small style={{
+                  fontSize: 'var(--text-xs)',
+                  color: 'var(--gray-500)',
+                  textAlign: 'center',
+                  display: 'block',
+                  marginTop: 'var(--space-2)',
+                  paddingTop: 'var(--space-2)',
+                  borderTop: '1px solid var(--gray-100)'
+                }}>
+                  Compatibility: PEAC wire <code style={{
+                    background: 'var(--gray-50)',
+                    padding: '1px 3px',
+                    borderRadius: '2px',
+                    fontFamily: 'var(--font-mono)'
+                  }}>0.9.13</code>
+                </small>
               </div>
             </FloatingElement>
 

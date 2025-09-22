@@ -5,6 +5,7 @@ import Mark from '@/components/Mark'
 import Script from 'next/script'
 import DownloadsClient from './DownloadsClient'
 import DownloadsServer from './DownloadsServer'
+import DownloadCardPEAC from '@/components/DownloadCardPEAC'
 import { Suspense } from 'react'
 
 const softwareJsonLd = {
@@ -21,6 +22,16 @@ const softwareJsonLd = {
   }
 }
 
+const peacSourceCodeJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareSourceCode',
+  name: 'PEAC Protocol',
+  codeRepository: 'https://github.com/peacprotocol/peac',
+  license: 'https://www.apache.org/licenses/LICENSE-2.0',
+  programmingLanguage: 'TypeScript',
+  version: '0.9.13'
+}
+
 export const metadata: Metadata = {
   title: 'Downloads : Originary',
   description: 'Download the Originary CLI and PEAC policy templates. Verify policy files and implement receipts.',
@@ -32,6 +43,9 @@ export default function Downloads() {
     <div className="wrap">
       <Script id="software-json-ld" type="application/ld+json" strategy="beforeInteractive">
         {JSON.stringify(softwareJsonLd)}
+      </Script>
+      <Script id="peac-source-json-ld" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify(peacSourceCodeJsonLd)}
       </Script>
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
@@ -62,6 +76,18 @@ export default function Downloads() {
                 <DownloadsClient />
               </Suspense>
               <DownloadsServer />
+              <DownloadCardPEAC />
+
+              <div style={{
+                marginTop: 'var(--space-12)',
+                padding: 'var(--space-4)',
+                background: 'var(--gray-50)',
+                borderRadius: 'var(--radius-lg)',
+                fontSize: 'var(--text-sm)',
+                color: 'var(--gray-600)'
+              }}>
+                <strong>Originary</strong> artifacts are first-party and supported by us. <strong>PEAC</strong> packages are upstream community releases; we link for convenience and compatibility.
+              </div>
             </div>
           </div>
         </section>
