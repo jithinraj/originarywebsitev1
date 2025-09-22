@@ -30,7 +30,25 @@ export const metadata: Metadata = {
     title: 'Originary AI - Receipts for the Agentic Web',
     description: 'Originary delivers verifiable Receipts for AI agents and APIs. Publish peac.txt, settle via x402 or Stripe/fiat/stablecoin, and prove access, consent, attribution, privacy & payment on every request.',
     url: 'https://originary.xyz/originary-ai',
+    siteName: 'Originary',
+    images: [{
+      url: '/og.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Originary AI - Receipts for the Agentic Web'
+    }],
     type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Originary AI - Receipts for the Agentic Web',
+    description: 'Originary delivers verifiable Receipts for AI agents and APIs. Publish peac.txt, settle via x402 or Stripe/fiat/stablecoin, and prove access, consent, attribution, privacy & payment on every request.',
+    images: ['/og.jpg'],
+    site: '@originaryinc',
+    creator: '@originaryinc'
+  },
+  alternates: {
+    canonical: 'https://originary.xyz/originary-ai'
   }
 }
 

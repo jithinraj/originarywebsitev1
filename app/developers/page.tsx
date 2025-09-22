@@ -203,7 +203,18 @@ if (request.headers.get('peac-receipt')) {
               }}>
                 pnpm add -g @peacprotocol/cli @peacprotocol/core
               </code>
-              <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
+                <Link
+                  href="/downloads"
+                  style={{
+                    color: 'var(--brand-primary)',
+                    textDecoration: 'underline',
+                    fontSize: 'var(--text-sm)',
+                    fontWeight: 600
+                  }}
+                >
+                  First-party CLI
+                </Link>
                 <a
                   href="https://github.com/peacprotocol/peac"
                   target="_blank"

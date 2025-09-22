@@ -4,25 +4,30 @@ import Footer from '@/components/Footer'
 import Mark from '@/components/Mark'
 
 export const metadata: Metadata = {
-  title: 'Consume responsibly with proof - AI Builders : Originary',
-  description: 'Detect and respect creator preferences (AIPREF / peac.txt). Maintain receipts for audits, attribution, and model hygiene. Interop with MCP/A2A and multi-cloud infrastructure.',
-  keywords: 'AI builders, responsible consumption, AIPREF, model hygiene, MCP, A2A, multi-cloud',
+  title: 'Originary for AI Builders - Prove Compliance with Creator Preferences',
+  description: 'Build AI systems that respect creator rights, maintain consent, and provide verifiable interaction records. Cryptographic receipts for provable compliance.',
+  keywords: 'AI builders, compliance, creator rights, verifiable receipts, consent management, PEAC protocol',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Consume responsibly with proof - AI Builders : Originary',
-    description: 'Detect and respect creator preferences (AIPREF / peac.txt). Maintain receipts for audits, attribution, and model hygiene. Interop with MCP/A2A and multi-cloud infrastructure.',
+    title: 'Originary for AI Builders - Prove Compliance with Creator Preferences',
+    description: 'Build AI systems that respect creator rights, maintain consent, and provide verifiable interaction records. Cryptographic receipts for provable compliance.',
     url: 'https://originary.xyz/solutions/ai-builders',
-    images: ['https://originary.xyz/og.jpg'],
+    images: [{
+      url: '/og.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Originary for AI Builders - Prove compliance with creator preferences'
+    }],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Consume responsibly with proof - AI Builders : Originary',
-    description: 'Detect and respect creator preferences (AIPREF / peac.txt). Maintain receipts for audits, attribution, and model hygiene. Interop with MCP/A2A and multi-cloud infrastructure.',
-    images: ['https://originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    title: 'Originary for AI Builders - Prove Compliance with Creator Preferences',
+    description: 'Build AI systems that respect creator rights, maintain consent, and provide verifiable interaction records. Cryptographic receipts for provable compliance.',
+    images: ['/og.jpg'],
+    site: '@originaryinc',
+    creator: '@originaryinc',
   },
   robots: 'index,follow',
   alternates: {
@@ -475,6 +480,9 @@ if policy.allows_training():
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--brand-primary)' }}>
                   Talk to our AI team
+                </a>
+                <a href="/downloads" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                  Download CLI & tools
                 </a>
                 <a href="/developers/" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
                   View integration docs

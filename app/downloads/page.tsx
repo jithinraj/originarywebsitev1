@@ -35,7 +35,30 @@ const peacSourceCodeJsonLd = {
 export const metadata: Metadata = {
   title: 'Downloads : Originary',
   description: 'Download the Originary CLI and PEAC policy templates. Verify policy files and implement receipts.',
+  keywords: 'downloads, CLI, PEAC templates, policy verification, receipts implementation',
   robots: 'index,follow',
+  openGraph: {
+    title: 'Downloads : Originary',
+    description: 'Download the Originary CLI and PEAC policy templates. Verify policy files and implement receipts.',
+    url: 'https://originary.xyz/downloads',
+    siteName: 'Originary',
+    images: [{
+      url: '/og.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Originary Downloads - CLI and PEAC templates'
+    }],
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Downloads : Originary',
+    description: 'Download the Originary CLI and PEAC policy templates. Verify policy files and implement receipts.',
+    images: ['/og.jpg']
+  },
+  alternates: {
+    canonical: 'https://originary.xyz/downloads'
+  }
 }
 
 export default function Downloads() {
