@@ -138,7 +138,7 @@ export default function HomePage() {
             </FadeIn>
             <FadeIn delay={0.3}>
               <p className="sub">
-                Publish <code>peac.txt</code> to declare policies for access, attribution, consent, privacy, and pricing. <Mark>Originary</Mark> helps agents settle via x402 or Stripe/credits/fiat/stablecoin/on-chain via adapters and present a Receipt on every request - your auditable proof of compliance.
+                Publish <code>peac.txt</code> to declare policies for access, attribution, consent, privacy, and pricing. Agents settle via x402 or Stripe/credits/fiat/stablecoin/on-chain via adapters and present a Receipt on every request - your auditable proof of compliance.
               </p>
             </FadeIn>
 
@@ -192,7 +192,7 @@ export default function HomePage() {
                 </div>
                 <div className="receipt-row">
                   <span>Settlement:</span>
-                  <span>$0.0025 via x402 (primary)</span>
+                  <span> $0.0025 via x402 (primary)</span>
                 </div>
                 <div className="receipt-row">
                   <span>Status</span>
