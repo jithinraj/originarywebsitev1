@@ -137,7 +137,7 @@ export default function HomePage() {
             </FadeIn>
             <FadeIn delay={0.3}>
               <p className="sub">
-                Originary unifies policy, payments, and proof so autonomous agents, APIs, and humans can transact safely. Publish your <code>peac.txt</code> once, negotiate terms on the fly, settle instantly, and ship receipts that stand up in court.
+                Publish <code>peac.txt</code> to declare access, consent, attribution, privacy, and pricing. Agents settle via x402—or Stripe/credits/fiat/stablecoin/on-chain via adapters—and present a Receipt to prove compliance on every request.
               </p>
             </FadeIn>
 
@@ -191,7 +191,7 @@ export default function HomePage() {
                 </div>
                 <div className="receipt-row">
                   <span>Settlement</span>
-                  <span>$0.0025 via Stripe</span>
+                  <span>$0.0025 via x402 (primary)</span>
                 </div>
                 <div className="receipt-row">
                   <span>Status</span>

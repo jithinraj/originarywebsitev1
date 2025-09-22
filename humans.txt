@@ -7,10 +7,10 @@ Website: https://originary.xyz
 Contact: contact@originary.xyz
 
 
-Mission: Orchestration for the agentic web
-Focus: PEAC Protocol development and intelligent coordination implementation
-Founded: 2025
-Location: United States
+Mission: Receipts for the agentic web
+Focus: Open protocol integrations, signed receipts, and edge verification
+Founded: 2024
+Location: United States/India
 
 /* SITE */
 

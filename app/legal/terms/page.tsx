@@ -76,7 +76,7 @@ export default function Terms() {
               <h2>2. Description of Services</h2>
               <p>Originary provides infrastructure for agentic web coordination, including:</p>
               <ul>
-                <li><strong>PEAC Protocol:</strong> Policy for Efficient Agentic Coordination framework</li>
+                <li><strong>PEAC Protocol:</strong> Programmable Economic Access & Consent (open, receipts-first policy layer)</li>
                 <li><strong>Verify API:</strong> Cryptographic verification services for receipts and policies</li>
                 <li><strong>Gateway (402):</strong> HTTP 402 payment gateway for API monetization</li>
                 <li><strong>Studio:</strong> Visual policy builder and testing environment</li>

@@ -6,11 +6,11 @@ import { ArrowRight, BookOpen, FileText, GitBranch, Receipt, Globe, Github, Exte
 
 export const metadata: Metadata = {
   title: 'Resources : Originary',
-  description: 'Resources, documentation, and insights for building with the orchestration protocol for the agentic web.',
-  keywords: 'agentic web, orchestration protocol, AI coordination, PEAC protocol',
+  description: 'Resources, documentation, and insights for building with the receipts protocol for the agentic web.',
+  keywords: 'agentic web, receipts protocol, AI coordination, PEAC protocol',
   openGraph: {
     title: 'Resources : Originary',
-    description: 'Resources, documentation, and insights for building with the orchestration protocol for the agentic web.',
+    description: 'Resources, documentation, and insights for building with the receipts protocol for the agentic web.',
     url: 'https://originary.xyz/resources/',
     siteName: 'Originary',
     images: [{ url: 'https://originary.xyz/og.jpg' }],
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Resources : Originary',
-    description: 'Resources, documentation, and insights for building with the orchestration protocol for the agentic web.',
+    description: 'Resources, documentation, and insights for building with the receipts protocol for the agentic web.',
     images: ['https://originary.xyz/og.jpg'],
   },
   alternates: {
@@ -68,7 +68,7 @@ export default function ResourcesPage() {
                   marginBottom: 'var(--space-8)'
                 }}
               >
-                Documentation, insights, and updates for building with the orchestration protocol for the agentic web. Everything you need to stay informed and build successfully.
+                Documentation, insights, and updates for building with the receipts protocol for the agentic web. Everything you need to stay informed and build successfully.
               </p>
 
               <div

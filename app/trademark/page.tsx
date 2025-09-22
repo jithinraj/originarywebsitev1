@@ -30,7 +30,7 @@ export default function Trademark() {
 
               <div style={{ fontSize: 'var(--text-lg)', lineHeight: 1.7, color: 'var(--gray-700)' }}>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  <Mark>Originary</Mark> is our brand for receipts, compliance, and infrastructure for the agentic web. We claim trademark rights in &quot;Originary&quot; for these services. For trademark matters, contact tm@originary.xyz.
+                  <Mark>Originary</Mark> is our brand for receipts, compliance, and infrastructure for the agentic web. We claim trademark rights in &quot;Originary&quot; for these services.
                 </p>
 
                 <h2 style={{
@@ -54,10 +54,7 @@ export default function Trademark() {
                   Trademark Matters
                 </h2>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  For questions regarding our trademark or potential infringement, please contact us at{' '}
-                  <a href="mailto:tm@originary.xyz" style={{ color: 'var(--brand-primary)' }}>
-                    tm@originary.xyz
-                  </a>.
+                  For questions regarding our trademark or potential infringement, contact contact@originary.xyz.
                 </p>
               </div>
             </div>

@@ -5,8 +5,6 @@ Organization: Curious Explorations Private Limited
 Operating As: Originary
 Website: https://originary.xyz
 Contact: contact@originary.xyz
-
-
 Mission: Receipts for the agentic web
 Focus: Open protocol integrations, signed receipts, and edge verification
 Founded: 2024
@@ -30,7 +28,7 @@ IDE: Various development environments
 
 Products:
 - Receipts (verification and validation)
-- Gateway 402 (HTTP payment-required orchestration)
+- Gateway 402 (HTTP payment-required receipts)
 - Studio (dashboard and management)
 - Adapters (integration tools and connectors)
 
@@ -67,7 +65,7 @@ Domain:
 
 Thanks to the open source community for foundational technologies.
 Thanks to early adopters and beta testers of PEAC Protocol.
-Thanks to the developer community contributing to orchestration standards.
+Thanks to the developer community contributing to receipts and verification standards.
 
 Special recognition to researchers and security professionals who help
 keep our platform secure through responsible disclosure practices.
@@ -83,7 +81,7 @@ For developer questions: contact@originary.xyz
 
 We believe in:
 - Transparent communication about our technology
-- Responsible AI orchestration practices
+- Responsible AI receipts and verification practices
 - Privacy-first development approaches
 - Open protocol specifications where appropriate
 - Collaborative development with the community

@@ -201,7 +201,7 @@ export default function HeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              Publish `peac.txt` to declare <strong style={{ color: 'var(--gray-800)' }}>access, consent, attribution, privacy, and pricing</strong>. <Link href="/originary-ai/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Originary AI</Link> agents settle via <strong style={{ color: 'var(--gray-800)' }}>x402</strong> or Stripe/credits/fiat/stablecoin/on-chain via adapters and present a <strong style={{ color: 'var(--gray-800)' }}>Receipt</strong> to prove compliance on every request.
+              Publish `peac.txt` to declare <strong style={{ color: 'var(--gray-800)' }}>access, consent, attribution, privacy, and pricing</strong>. Agents settle via <strong style={{ color: 'var(--gray-800)' }}>x402</strong> or Stripe/credits/fiat/stablecoin/on-chain via adapters and present a <strong style={{ color: 'var(--gray-800)' }}>Receipt</strong> to prove compliance on every request.
             </p>
 
             {/* CTA Buttons */}

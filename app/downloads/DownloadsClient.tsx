@@ -29,7 +29,7 @@ export default function DownloadsClient() {
   }
 
   if (!manifest) {
-    return <div>Loading...</div>
+    return null
   }
 
   return (
