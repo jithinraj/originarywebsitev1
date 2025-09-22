@@ -42,7 +42,7 @@ export default function Brand() {
                   Wordmark Usage
                 </h2>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  Always use &quot;Originary&quot; (not &quot;originary&quot; or &quot;ORIGINARY&quot;) in written communications. On the first mention per page or document, include the trademark symbol: Originary™.
+                  Always use &quot;Originary&quot; (not &quot;originary&quot; or &quot;ORIGINARY&quot;) in written communications.
                 </p>
 
                 <h2 style={{

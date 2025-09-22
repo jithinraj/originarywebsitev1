@@ -137,7 +137,7 @@ export default function HomePage() {
             </FadeIn>
             <FadeIn delay={0.3}>
               <p className="sub">
-                Publish <code>peac.txt</code> to declare access, consent, attribution, privacy, and pricing. Agents settle via x402—or Stripe/credits/fiat/stablecoin/on-chain via adapters—and present a Receipt to prove compliance on every request.
+                Publish <code>peac.txt</code> to declare policies for access, attribution, consent, privacy, and pricing. Agents settle via x402 or Stripe/credits/fiat/stablecoin/on-chain via adapters and present a Receipt on every request—your auditable proof of compliance.
               </p>
             </FadeIn>
 

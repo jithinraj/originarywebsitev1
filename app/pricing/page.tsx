@@ -46,7 +46,7 @@ export default function Pricing() {
                 maxWidth: '800px',
                 margin: '0 auto var(--space-12) auto'
               }}>
-                From startups building their first agent to Fortune 500 companies orchestrating millions of autonomous transactions. Scale with confidence.
+                From startups building their first agent to Fortune 500 companies running millions of autonomous transactions. Scale with confidence.
               </p>
             </div>
 
