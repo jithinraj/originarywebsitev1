@@ -42,7 +42,7 @@ export default function Trademark() {
                   Disambiguation
                 </h2>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  Originary is not affiliated with the operators of originary.ai. We are separate entities with distinct services and offerings.
+                  Originary is not affiliated with the operators of originary.ai.
                 </p>
 
                 <h2 style={{
@@ -54,7 +54,7 @@ export default function Trademark() {
                   Trademark Matters
                 </h2>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  For questions regarding our trademark or potential infringement, contact contact@originary.xyz.
+                  For questions regarding our trademark or potential infringement, contact tm@originary.xyz.
                 </p>
               </div>
             </div>

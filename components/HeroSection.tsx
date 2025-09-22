@@ -466,7 +466,7 @@ function InteractiveReceiptDemo() {
           <ReceiptRow label="Resource" value="/api/content/atlantic/17" mono />
           <ReceiptRow label="Requester" value="atlas-agent/2.3.1" />
           <ReceiptRow label="Policy" value="peac:0.9.13 - attribution + commercial" />
-          <ReceiptRow label="Settlement" value="$0.0025 via x402 (primary)" />
+          <ReceiptRow label="Settlement:" value="$0.0025 via x402 (primary)" />
           <ReceiptRow
             label="Status"
             value={

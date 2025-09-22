@@ -216,22 +216,6 @@ export default function OriginaryAI() {
                 </div>
               </div>
 
-              <div style={{
-                background: 'var(--gray-50)',
-                padding: 'var(--space-6)',
-                borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--gray-200)',
-                textAlign: 'center'
-              }}>
-                <p style={{
-                  color: 'var(--gray-700)',
-                  lineHeight: 1.6,
-                  margin: 0,
-                  fontSize: 'var(--text-sm)'
-                }}>
-                  For naming questions, see our <Link href="/trademark" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Trademark</Link> page.
-                </p>
-              </div>
             </div>
           </div>
         </section>

@@ -104,6 +104,7 @@ export default function NavigationHeader() {
               ]} />
 
               <NavDropdown label="Solutions" items={[
+                { href: '/originary-ai', label: 'Originary AI' },
                 { href: '/solutions/enterprises', label: 'Enterprises' },
                 { href: '/solutions/ai-builders', label: 'AI Builders' },
                 { href: '/solutions/publishers', label: 'Publishers' },
@@ -178,6 +179,7 @@ export default function NavigationHeader() {
               ]} />
 
               <MobileNavSection title="Solutions" items={[
+                { href: '/originary-ai', label: 'Originary AI' },
                 { href: '/solutions/enterprises', label: 'Enterprises' },
                 { href: '/solutions/ai-builders', label: 'AI Builders' },
                 { href: '/solutions/publishers', label: 'Publishers' },
