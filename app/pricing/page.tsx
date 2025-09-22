@@ -54,16 +54,16 @@ export default function Pricing() {
               <div className="card" style={{ position: 'relative' }}>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-2)' }}>Developer</h3>
-                  <p style={{ color: 'var(--gray-600)' }}>Perfect for getting started with agentic infrastructure</p>
+                  <p style={{ color: 'var(--gray-600)' }}>Activate your developer account</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
-                    $1<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>/trial</span>
+                    $1<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}> one-time activation</span>
                   </div>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Up to 10K agent transactions for trial</p>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Includes verification credit; enable up to 10K agent transactions</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['Protocol-compatible tools', 'Basic verification API', 'Community support', 'Developer documentation'].map((feature) => (
+                  {['Protocol-compatible tools', 'Basic verification API', 'Community support', 'Developer docs'].map((feature) => (
                     <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
                       <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
                       <span>{feature}</span>
@@ -71,24 +71,15 @@ export default function Pricing() {
                   ))}
                 </div>
                 <div style={{ width: '100%' }}>
-                  <form id="razorpay-form">
+                  <form id="razorpay-form" style={{ marginBottom: 'var(--space-2)' }}>
                   </form>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center' }}>
+                    By purchasing you agree to our <Link href="/legal/terms" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Terms</Link> and <Link href="/legal/privacy" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Privacy Policy</Link>
+                  </p>
                 </div>
               </div>
 
-              <div className="card card-glow" style={{ position: 'relative', border: '2px solid var(--brand-primary)' }}>
-                <div style={{
-                  position: 'absolute',
-                  top: '-12px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  background: 'var(--brand-primary)',
-                  color: 'var(--white)',
-                  padding: 'var(--space-2) var(--space-4)',
-                  borderRadius: 'var(--radius-full)',
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 600
-                }}>MOST POPULAR</div>
+              <div className="card" style={{ position: 'relative' }}>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-2)' }}>Professional</h3>
                   <p style={{ color: 'var(--gray-600)' }}>For growing teams and production deployments</p>
@@ -100,40 +91,46 @@ export default function Pricing() {
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Up to 1M agent transactions/month</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['Everything in Developer', 'Gateway (402) access', 'Studio dashboard (5 seats)', 'Priority support', 'SLA guarantees', 'Advanced analytics'].map((feature) => (
+                  {['Everything in Developer', 'Settlement gateway (402) access', 'Studio dashboard (5 seats)', 'Priority support', 'SLA available', 'Advanced analytics'].map((feature) => (
                     <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
                       <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
                       <span>{feature}</span>
                     </div>
                   ))}
                 </div>
-                <Link href="/company/contact" className="btn btn-primary" style={{ width: '100%' }}>
-                  Start trial
+                <Link href="/company/contact" className="btn btn-primary" style={{ width: '100%', marginBottom: 'var(--space-2)' }}>
+                  Contact sales
                 </Link>
+                <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center' }}>
+                  By purchasing you agree to our <Link href="/legal/terms" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Terms</Link> and <Link href="/legal/privacy" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Privacy Policy</Link>
+                </p>
               </div>
 
               <div className="card">
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-2)' }}>Enterprise</h3>
-                  <p style={{ color: 'var(--gray-600)' }}>For Fortune 500 and high-scale deployments</p>
+                  <p style={{ color: 'var(--gray-600)' }}>High-volume and regulated workloads</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
                     Custom
                   </div>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Unlimited transactions with volume discounts</p>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>High-volume and regulated workloads</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['Everything in Professional', 'All adapters included', 'Unlimited Studio seats', 'Dedicated support engineer', 'Custom integrations', 'On-premises deployment'].map((feature) => (
+                  {['Everything in Professional', 'All adapters included', 'Unlimited seats', 'Dedicated support engineer', 'Custom integrations', 'On-premises deployment'].map((feature) => (
                     <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
                       <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
                       <span>{feature}</span>
                     </div>
                   ))}
                 </div>
-                <Link href="/company/contact" className="btn btn-secondary" style={{ width: '100%' }}>
+                <Link href="/company/contact" className="btn btn-secondary" style={{ width: '100%', marginBottom: 'var(--space-2)' }}>
                   Contact sales
                 </Link>
+                <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center' }}>
+                  By purchasing you agree to our <Link href="/legal/terms" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Terms</Link> and <Link href="/legal/privacy" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Privacy Policy</Link>
+                </p>
               </div>
             </div>
 

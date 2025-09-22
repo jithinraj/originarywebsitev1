@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { ArrowRight, Code, Terminal, Database, Globe, Users, CheckCircle, Download, Github, MessageCircle, BookOpen, Zap, Clock, Sparkles } from 'lucide-react'
+import { ArrowRight, Code, Download, Sparkles } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Developers : Originary',
@@ -312,7 +312,7 @@ if (request.headers.get('peac-receipt')) {
           </div>
         </section>
 
-        {/* SDKs Section */}
+        {/* Build with Receipts Section */}
         <section className="section">
           <div className="container">
             <div
@@ -321,7 +321,7 @@ if (request.headers.get('peac-receipt')) {
                 marginBottom: 'var(--space-16)'
               }}
             >
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>SDKs & Tools</h2>
+              <h2 style={{ marginBottom: 'var(--space-6)', fontSize: 'var(--text-3xl)', fontWeight: 700 }}>Build with receipts — not SDK promises.</h2>
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
@@ -331,43 +331,8 @@ if (request.headers.get('peac-receipt')) {
                   lineHeight: 1.7
                 }}
               >
-                Choose your language and start building
+                Start with the CLI, attach a PEAC-Receipt header, and verify at the edge. Full SDKs will ship when production-ready.
               </p>
-            </div>
-
-            <div className="grid grid-auto" style={{ gap: 'var(--space-8)' }}>
-              <SdkCard
-                icon={<Code size={32} style={{ color: 'var(--brand-primary)' }} />}
-                name="JavaScript/TypeScript"
-                status="Stable"
-                description="Full-featured SDK for Node.js and browser environments with TypeScript support."
-                downloadLink="/downloads/originary-js-sdk.tar.gz"
-                githubLink="https://github.com/originary/js-sdk"
-              />
-              <SdkCard
-                icon={<Terminal size={32} style={{ color: 'var(--brand-secondary)' }} />}
-                name="Python"
-                status="Stable"
-                description="Comprehensive Python SDK with async support and comprehensive error handling."
-                downloadLink="/downloads/originary-python-sdk.tar.gz"
-                githubLink="https://github.com/originary/python-sdk"
-              />
-              <SdkCard
-                icon={<Database size={32} style={{ color: 'var(--brand-accent)' }} />}
-                name="Go"
-                status="Stable"
-                description="High-performance Go SDK with context support and concurrent operations."
-                downloadLink="/downloads/originary-go-sdk.tar.gz"
-                githubLink="https://github.com/originary/go-sdk"
-              />
-              <SdkCard
-                icon={<Globe size={32} style={{ color: 'var(--brand-primary)' }} />}
-                name="Java/Kotlin"
-                status="Beta"
-                description="Enterprise-ready SDK with Spring Boot integration and comprehensive testing."
-                downloadLink="/downloads/originary-java-sdk.tar.gz"
-                githubLink="https://github.com/originary/java-sdk"
-              />
             </div>
           </div>
         </section>
@@ -424,100 +389,7 @@ if (request.headers.get('peac-receipt')) {
           </div>
         </section>
 
-        {/* Examples & Tutorials */}
-        <section className="section">
-          <div className="container">
-            <div
-              style={{
-                textAlign: 'center',
-                marginBottom: 'var(--space-16)'
-              }}
-            >
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Examples & Tutorials</h2>
-              <p
-                style={{
-                  fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
-                  maxWidth: '700px',
-                  margin: '0 auto',
-                  lineHeight: 1.7
-                }}
-              >
-                Learn by example with our comprehensive guides
-              </p>
-            </div>
 
-            <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
-              <ExampleCard
-                icon={<CheckCircle size={32} style={{ color: 'var(--brand-primary)' }} />}
-                title="Basic Integration"
-                description="Simple policy checking and receipt generation"
-                downloadLink="/downloads/basic-integration-example.zip"
-              />
-              <ExampleCard
-                icon={<Globe size={32} style={{ color: 'var(--brand-secondary)' }} />}
-                title="Express.js Middleware"
-                description="Add PEAC compliance to existing APIs"
-                downloadLink="/downloads/express-middleware-example.zip"
-              />
-              <ExampleCard
-                icon={<Users size={32} style={{ color: 'var(--brand-accent)' }} />}
-                title="Agent Framework"
-                description="Build PEAC-compliant autonomous agents"
-                downloadLink="/downloads/agent-framework-example.zip"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Community & Support */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
-          <div className="container">
-            <div
-              style={{
-                textAlign: 'center',
-                marginBottom: 'var(--space-16)'
-              }}
-            >
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Community & Support</h2>
-              <p
-                style={{
-                  fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
-                  maxWidth: '700px',
-                  margin: '0 auto',
-                  lineHeight: 1.7
-                }}
-              >
-                Join our developer community and get the help you need
-              </p>
-            </div>
-
-            <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
-              <CommunityCard
-                icon={<MessageCircle size={32} style={{ color: 'var(--brand-primary)' }} />}
-                title="Developer Discord"
-                description="Join our community for real-time help and discussions"
-                link="https://discord.gg/originary"
-                buttonText="Join Discord"
-              />
-              <CommunityCard
-                icon={<Github size={32} style={{ color: 'var(--brand-secondary)' }} />}
-                title="GitHub"
-                description="Contribute to our open-source tools and protocols"
-                link="https://github.com/originary"
-                buttonText="View GitHub"
-              />
-              <CommunityCard
-                icon={<BookOpen size={32} style={{ color: 'var(--brand-accent)' }} />}
-                title="Stack Overflow"
-                description="Ask questions and get answers from the community"
-                link="https://stackoverflow.com/questions/tagged/originary"
-                buttonText="View Questions"
-              />
-            </div>
-          </div>
-        </section>
 
         {/* CTA Section */}
         <section className="section">
@@ -658,56 +530,6 @@ function QuickStartCard({
   )
 }
 
-function SdkCard({
-  icon,
-  name,
-  status,
-  description,
-  downloadLink,
-  githubLink
-}: {
-  icon: React.ReactNode;
-  name: string;
-  status: string;
-  description: string;
-  downloadLink: string;
-  githubLink: string;
-}) {
-  return (
-    <div className="card">
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 'var(--space-4)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-          {icon}
-          <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600 }}>{name}</h3>
-        </div>
-        <span
-          style={{
-            padding: 'var(--space-1) var(--space-3)',
-            borderRadius: 'var(--radius-full)',
-            fontSize: 'var(--text-sm)',
-            fontWeight: 500,
-            background: status === 'Stable' ? 'rgba(0, 217, 36, 0.1)' : 'rgba(255, 171, 0, 0.1)',
-            color: status === 'Stable' ? 'var(--success)' : 'var(--warning)'
-          }}
-        >
-          {status}
-        </span>
-      </div>
-      <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>{description}</p>
-      <div style={{ display: 'flex', gap: 'var(--space-3)' }}>
-        <a href={downloadLink} className="btn btn-secondary" style={{ flex: 1, textAlign: 'center' }}>
-          <Download size={16} />
-          <span>Download</span>
-        </a>
-        <a href={githubLink} className="btn btn-ghost">
-          <Github size={16} />
-          <span>GitHub</span>
-        </a>
-      </div>
-    </div>
-  )
-}
-
 function ApiSection({
   title,
   description,
@@ -764,52 +586,3 @@ function ApiSection({
   )
 }
 
-function ExampleCard({
-  icon,
-  title,
-  description,
-  downloadLink
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  downloadLink: string;
-}) {
-  return (
-    <div className="card" style={{ textAlign: 'center' }}>
-      <div style={{ marginBottom: 'var(--space-4)' }}>{icon}</div>
-      <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>{title}</h3>
-      <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>{description}</p>
-      <a href={downloadLink} className="btn btn-secondary" style={{ width: '100%' }}>
-        <Download size={16} />
-        <span>Download example</span>
-      </a>
-    </div>
-  )
-}
-
-function CommunityCard({
-  icon,
-  title,
-  description,
-  link,
-  buttonText
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  link: string;
-  buttonText: string;
-}) {
-  return (
-    <div className="card" style={{ textAlign: 'center' }}>
-      <div style={{ marginBottom: 'var(--space-4)' }}>{icon}</div>
-      <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>{title}</h3>
-      <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>{description}</p>
-      <a href={link} className="btn btn-secondary" style={{ width: '100%' }}>
-        <span>{buttonText}</span>
-        <ArrowRight size={16} />
-      </a>
-    </div>
-  )
-}
