@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "check:meta": "node scripts/check-meta.mjs",
+    "check:tm": "node scripts/check-tm.mjs",
     "capture:specimens": "node scripts/capture-specimens.mjs"
   },
   "dependencies": {
