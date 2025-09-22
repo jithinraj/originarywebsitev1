@@ -112,8 +112,7 @@ export default function Footer() {
               { href: '/company/careers', label: 'Careers' },
               { href: '/company/contact', label: 'Contact' },
               { href: '/legal/privacy', label: 'Privacy' },
-              { href: '/legal/terms', label: 'Terms' },
-              { href: '/legal/payments', label: 'Payment Terms' }
+              { href: '/legal/terms', label: 'Terms' }
             ]}
           />
         </div>
