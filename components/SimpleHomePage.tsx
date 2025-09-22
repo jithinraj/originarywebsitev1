@@ -98,7 +98,7 @@ export default function SimpleHomePage() {
                 </div>
                 <div className="receipt-row" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
                   <span style={{ color: '#6b7280' }}>Settlement:</span>
-                  <span style={{ fontSize: '0.875rem' }}>$0.0025 via x402 (primary)</span>
+                  <span style={{ fontSize: '0.875rem' }}> $0.0025 via x402 (primary)</span>
                 </div>
                 <div className="receipt-row" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
                   <span style={{ color: '#6b7280' }}>Status</span>

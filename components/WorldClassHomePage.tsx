@@ -142,7 +142,7 @@ export default function WorldClassHomePage() {
 
             <ProductCard
               title="Gateway 402"
-              category="Commerce Orchestration"
+              category="Settlement Gateway"
               description="Drop-in payment gateway that wraps any endpoint in HTTP 402. Charge per request, stream usage events, and reconcile in minutes."
               features={[
                 'Credit pools & prepaid wallets',

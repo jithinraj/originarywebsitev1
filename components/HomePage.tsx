@@ -87,7 +87,7 @@ const productModules = [
   {
     icon: TrendingUp,
     name: 'Gateway 402',
-    role: 'Commerce orchestration',
+    role: 'Settlement Gateway',
     description: 'Drop-in payment gateway that wraps any endpoint in HTTP 402. Charge per request, stream usage events, and reconcile in minutes.',
     bullets: ['Credit pools & prepaid wallets', 'Adaptive pricing by segment', 'Webhook & ledger integrations'],
     href: '/products/gateway-402',
