@@ -190,7 +190,7 @@ export default function HomePage() {
                   <span>peac:v1.6 - attribution + commercial tier</span>
                 </div>
                 <div className="receipt-row">
-                  <span>Settlement</span>
+                  <span>Settlement:</span>
                   <span>$0.0025 via x402 (primary)</span>
                 </div>
                 <div className="receipt-row">
