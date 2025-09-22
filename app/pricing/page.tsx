@@ -18,6 +18,27 @@ export default function Pricing() {
     if (form) {
       form.appendChild(script);
     }
+
+    // Add Service JSON-LD
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Originary - PEAC Policy Setup",
+      "serviceType": "peac.txt generation, validation, and edge header snippets",
+      "provider": { "@type": "Organization", "name": "Originary" },
+      "offers": {
+        "@type": "Offer",
+        "price": "1",
+        "priceCurrency": "USD",
+        "name": "Developer activation",
+        "availability": "https://schema.org/InStock"
+      }
+    };
+
+    const scriptTag = document.createElement('script');
+    scriptTag.type = 'application/ld+json';
+    scriptTag.text = JSON.stringify(jsonLd);
+    document.head.appendChild(scriptTag);
   }, []);
 
   return (
@@ -60,10 +81,10 @@ export default function Pricing() {
                   <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
                     $1<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}> one-time activation</span>
                   </div>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Includes verification credit; enable up to 10K agent transactions</p>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Includes <code style={{ backgroundColor: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac.txt</code> generator, validator, and edge header snippets</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['Protocol-compatible tools', 'Basic verification API', 'Community support', 'Developer docs'].map((feature) => (
+                  {['Protocol-compatible tools', 'Policy generator & validator', 'Headers & edge snippets', 'Developer docs', 'Email/community support'].map((feature) => (
                     <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
                       <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
                       <span>{feature}</span>
@@ -91,7 +112,7 @@ export default function Pricing() {
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Up to 1M agent transactions/month</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['Everything in Developer', 'Settlement gateway (402) access', 'Studio dashboard (5 seats)', 'Priority support', 'SLA available', 'Advanced analytics'].map((feature) => (
+                  {['Everything in Developer', 'Settlement gateway (402) access', 'Dashboard (preview)', 'Priority support', 'SLA available', 'Analytics (preview)'].map((feature) => (
                     <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
                       <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
                       <span>{feature}</span>
@@ -118,7 +139,7 @@ export default function Pricing() {
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>High-volume and regulated workloads</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['Everything in Professional', 'All adapters included', 'Unlimited seats', 'Dedicated support engineer', 'Custom integrations', 'On-premises deployment'].map((feature) => (
+                  {['Everything in Professional', 'Adapter support', 'Team seats', 'Dedicated support engineer', 'Custom integrations', 'On-premises deployment'].map((feature) => (
                     <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
                       <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
                       <span>{feature}</span>
@@ -133,6 +154,10 @@ export default function Pricing() {
                 </p>
               </div>
             </div>
+
+            <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center', marginTop: 'var(--space-4)' }}>
+              * Features marked &ldquo;preview&rdquo; are in limited release.
+            </p>
 
             {/* OSS Box */}
             <section style={{

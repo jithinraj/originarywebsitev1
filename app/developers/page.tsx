@@ -72,8 +72,7 @@ export default function Developers() {
                   marginBottom: 'var(--space-8)'
                 }}
               >
-                Everything you need to integrate PEAC protocol into your <Link href="/originary-ai/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Originary AI</Link> applications.
-                SDKs, APIs, documentation, and examples to get you started quickly.
+                Everything you need to integrate receipts today—start with the Originary CLI and PEAC (open protocol) upstream packages.
               </p>
 
               <div
@@ -460,15 +459,14 @@ if (request.headers.get('peac-receipt')) {
                     <ArrowRight size={18} />
                   </a>
                   <a
-                    href="/downloads/developer-guide.pdf"
+                    href="#quickstart"
                     className="btn btn-lg btn-ghost"
                     style={{
                       color: 'var(--white)',
                       border: '1px solid rgba(255,255,255,0.2)'
                     }}
                   >
-                    <Download className="w-4 h-4" />
-                    <span>Download developer guide</span>
+                    <span>View Quick Start →</span>
                   </a>
                 </div>
               </div>
