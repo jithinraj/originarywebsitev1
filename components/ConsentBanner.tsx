@@ -39,48 +39,42 @@ export default function ConsentBanner() {
 
   return (
     <div
-      className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-96 bg-black/95 backdrop-blur-sm text-white p-4 rounded-lg shadow-xl border border-zinc-800 z-50"
+      className="fixed bottom-0 left-0 right-0 bg-[#FAF8F1] border-t border-gray-200 p-4 shadow-lg z-50"
       role="region"
       aria-label="Privacy consent"
       aria-live="polite"
     >
-      <button
-        onClick={handleReject}
-        className="absolute top-3 right-3 text-zinc-400 hover:text-white transition-colors"
-        aria-label="Close banner"
-      >
-        <X className="h-4 w-4" />
-      </button>
+      <div className="container max-w-6xl mx-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-gray-700 text-center sm:text-left">
+            We use minimal analytics to improve our developer tools. No personal data collected.
+            <button
+              onClick={clearConsent}
+              className="ml-2 text-sm text-gray-500 hover:text-gray-700 underline"
+              aria-label="Privacy policy"
+            >
+              Privacy policy
+            </button>
+          </p>
 
-      <p className="text-sm mb-3 pr-6">
-        We use analytics to understand how developers use our tools.
-        No personal data is collected.
-      </p>
-
-      <div className="flex gap-2">
-        <button
-          onClick={handleReject}
-          className="flex-1 px-3 py-1.5 text-xs border border-zinc-700 rounded hover:bg-zinc-900 transition-colors"
-          aria-label="Reject analytics tracking"
-        >
-          Reject
-        </button>
-        <button
-          onClick={handleAccept}
-          className="flex-1 px-3 py-1.5 text-xs bg-white text-black rounded hover:bg-zinc-200 transition-colors font-medium"
-          aria-label="Accept analytics tracking"
-        >
-          Accept
-        </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={handleReject}
+              className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              aria-label="Reject analytics tracking"
+            >
+              Reject
+            </button>
+            <button
+              onClick={handleAccept}
+              className="px-6 py-2 text-sm bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors font-medium"
+              aria-label="Accept analytics tracking"
+            >
+              Accept
+            </button>
+          </div>
+        </div>
       </div>
-
-      <button
-        onClick={clearConsent}
-        className="mt-2 text-xs text-zinc-500 hover:text-zinc-300 underline w-full text-center"
-        aria-label="Reset privacy choices"
-      >
-        Privacy choices
-      </button>
     </div>
   );
 }
