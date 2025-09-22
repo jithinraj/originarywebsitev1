@@ -39,6 +39,24 @@ export default function Pricing() {
     scriptTag.type = 'application/ld+json';
     scriptTag.text = JSON.stringify(jsonLd);
     document.head.appendChild(scriptTag);
+
+    // Add OfferCatalog JSON-LD
+    const offerCatalog = {
+      "@context": "https://schema.org",
+      "@type": "OfferCatalog",
+      "name": "Originary Plans",
+      "itemListElement": [
+        {"@type": "Offer", "name": "Developer", "price": "1", "priceCurrency": "USD", "description": "One-time activation"},
+        {"@type": "Offer", "name": "Professional", "price": "2500", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "2500", "priceCurrency": "USD", "unitText": "MONTH"}},
+        {"@type": "Offer", "name": "Enterprise", "description": "Custom pricing"}
+      ],
+      "provider": {"@type": "Organization", "name": "Originary"}
+    };
+
+    const catalogScript = document.createElement('script');
+    catalogScript.type = 'application/ld+json';
+    catalogScript.text = JSON.stringify(offerCatalog);
+    document.head.appendChild(catalogScript);
   }, []);
 
   return (
@@ -84,7 +102,7 @@ export default function Pricing() {
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Includes <code style={{ backgroundColor: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac.txt</code> generator, validator, and edge header snippets</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['Protocol-compatible tools', 'Policy generator & validator', 'Headers & edge snippets', 'Developer docs', 'Email/community support'].map((feature) => (
+                  {['Protocol-compatible tools', 'Policy generator & validator', 'Headers & edge snippets', 'Developer docs', 'Email support'].map((feature) => (
                     <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
                       <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
                       <span>{feature}</span>

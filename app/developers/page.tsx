@@ -6,13 +6,13 @@ import { ArrowRight, Code, Download, Sparkles } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Developers : Originary',
-  description: 'Developer documentation, SDKs, and tools for building with the PEAC protocol and Originary platform. APIs, code examples, and integration guides.',
-  keywords: 'developer docs, PEAC protocol, SDKs, APIs, integration guides, code examples',
+  description: 'Developer tools and CLI for integrating PEAC receipts. Policy generators, validators, and edge verification examples.',
+  keywords: 'developer docs, PEAC protocol, CLI, receipts, policy validation, edge verification',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'Developers : Originary',
-    description: 'Developer documentation, SDKs, and tools for building with the PEAC protocol and Originary platform. APIs, code examples, and integration guides.',
+    description: 'Developer tools and CLI for integrating PEAC receipts. Policy generators, validators, and edge verification examples.',
     url: 'https://originary.xyz/developers',
     images: ['https://originary.xyz/og.jpg'],
     siteName: 'Originary',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Developers : Originary',
-    description: 'Developer documentation, SDKs, and tools for building with the PEAC protocol and Originary platform. APIs, code examples, and integration guides.',
+    description: 'Developer tools and CLI for integrating PEAC receipts. Policy generators, validators, and edge verification examples.',
     images: ['https://originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
