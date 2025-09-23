@@ -72,7 +72,7 @@ export default function Developers() {
                   marginBottom: 'var(--space-8)'
                 }}
               >
-                Everything you need to integrate receipts today—start with the Originary CLI and PEAC (open protocol) upstream packages.
+                Everything you need to integrate receipts today - start with the Originary CLI and PEAC (open protocol) upstream packages.
               </p>
 
               <div
@@ -320,7 +320,7 @@ if (request.headers.get('peac-receipt')) {
                 marginBottom: 'var(--space-16)'
               }}
             >
-              <h2 style={{ marginBottom: 'var(--space-6)', fontSize: 'var(--text-3xl)', fontWeight: 700 }}>Build with receipts — not SDK promises.</h2>
+              <h2 style={{ marginBottom: 'var(--space-6)', fontSize: 'var(--text-3xl)', fontWeight: 700 }}>Build with receipts - not SDK promises.</h2>
               <p
                 style={{
                   fontSize: 'var(--text-xl)',

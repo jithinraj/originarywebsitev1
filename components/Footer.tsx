@@ -109,8 +109,11 @@ export default function Footer() {
             links={[
               { href: '/company/about', label: 'About' },
               { href: '/company/contact', label: 'Contact' },
-              { href: '/legal/privacy', label: 'Privacy' },
-              { href: '/legal/terms', label: 'Terms' }
+              { href: '/terms', label: 'Terms' },
+              { href: '/privacy', label: 'Privacy' },
+              { href: '/trademark', label: 'Trademark' },
+              { href: '/security', label: 'Security' },
+              { href: '/copyright', label: 'Copyright' }
             ]}
           />
         </div>
@@ -151,7 +154,7 @@ export default function Footer() {
               </a>.
             </small>
             <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7, marginTop: 'var(--space-1)' }}>
-              Originary<sup>™</sup> is a trademark of Curious Explorations Private Limited. All other names may be trademarks of their respective owners.
+              Originary™ is a trademark of Curious Explorations Private Limited.
             </small>
           </div>
           <div

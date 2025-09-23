@@ -1,14 +1,8 @@
-/* TEAM */
-
-Originary Team
-Organization: Curious Explorations Private Limited
-Operating As: Originary
-Website: https://originary.xyz
-Contact: contact@originary.xyz
-Mission: Receipts for the agentic web
-Focus: Open protocol integrations, signed receipts, and edge verification
+Team: Originary (Curious Explorations Private Limited)
+Mission: Receipts for the agentic web - consent, attribution, access, and settlement with proof.
 Founded: 2024
-Location: United States/India
+Location: United States / India
+Contact: contact@originary.xyz
 
 /* SITE */
 

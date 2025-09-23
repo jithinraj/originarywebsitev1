@@ -5,26 +5,26 @@ import Link from 'next/link'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Trademark & Brand Use : Originary',
-  description: 'Originary trademark guidelines and brand use policy for proper usage of our marks.',
+  title: 'Copyright Notice & Takedown : Originary',
+  description: 'Copyright notice and takedown process for Originary services.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/trademark',
+    canonical: 'https://originary.xyz/copyright',
   },
 }
 
 const webPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: 'Trademark & Brand Use',
-  url: 'https://originary.xyz/trademark',
+  name: 'Copyright Notice & Takedown',
+  url: 'https://originary.xyz/copyright',
   dateModified: '2025-07-27'
 }
 
-export default function Trademark() {
+export default function Copyright() {
   return (
     <div className="wrap">
-      <Script id="trademark-json-ld" type="application/ld+json" strategy="beforeInteractive">
+      <Script id="copyright-json-ld" type="application/ld+json" strategy="beforeInteractive">
         {JSON.stringify(webPageJsonLd)}
       </Script>
       <NavigationHeader />
@@ -57,8 +57,15 @@ export default function Trademark() {
                   marginBottom: 'var(--space-6)',
                   color: 'var(--gray-900)'
                 }}>
-                  Trademark &amp; Brand Use
+                  Copyright Notice &amp; Takedown
                 </h1>
+                <p style={{
+                  fontSize: 'var(--text-lg)',
+                  color: 'var(--gray-600)',
+                  marginBottom: 'var(--space-4)'
+                }}>
+                  Copyright notice and takedown process for our services.
+                </p>
                 <p style={{
                   fontSize: 'var(--text-sm)',
                   color: 'var(--gray-500)'
@@ -75,38 +82,57 @@ export default function Trademark() {
                   lineHeight: 1.7,
                   color: 'var(--gray-700)'
                 }}>
-              <p><strong>&ldquo;Originary&rdquo;</strong> and the Originary logo are trademarks of <strong>Curious Explorations Private Limited</strong>. Proper use:</p>
+              <p>If you believe content available through our services infringes your copyright, email <strong><Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link></strong> with:</p>
 
-              <h2>Permitted use</h2>
+              <h2>Required information</h2>
               <ul>
-                <li>Use &ldquo;Originary™&rdquo; on first prominent mention.</li>
-                <li>You may reference Originary for factual compatibility statements.</li>
-                <li>Reference our services in truthful comparative statements.</li>
-                <li>Use our name when describing integrations or partnerships (with accurate context).</li>
+                <li>Your contact details</li>
+                <li>A description of the copyrighted work</li>
+                <li>The location (URL) of the material you believe is infringing</li>
+                <li>A statement made in good faith that you have a reasonable belief the use is not authorized</li>
+                <li>A statement that the information in your notice is accurate</li>
+                <li>Your electronic or physical signature</li>
               </ul>
 
-              <p><strong>Do say:</strong> &ldquo;Built with receipts that work with Originary tools.&rdquo;</p>
-              <p><strong>Don&apos;t say:</strong> &ldquo;Originary-powered agents&rdquo; (unless we&apos;ve given you written permission).</p>
-
-              <h2>Prohibited use</h2>
+              <h2>Our process</h2>
               <ul>
-                <li>Do <strong>not</strong> use our marks as your product/company name.</li>
-                <li>Do <strong>not</strong> imply endorsement without written permission.</li>
-                <li>Do <strong>not</strong> create confusingly similar marks.</li>
-                <li>Do <strong>not</strong> use our marks in domain names, social media handles, or app names.</li>
-                <li>Do <strong>not</strong> modify our logos or use them in a misleading context.</li>
+                <li>We review all notices promptly</li>
+                <li>We may notify the user who posted the content</li>
+                <li>We may remove or restrict access to the material</li>
+                <li>We may accept a counter-notice where appropriate</li>
               </ul>
 
-              <h2>Disambiguation</h2>
-              <p>We are not affiliated with any other businesses that may use similar names. This site refers to Originary at <Link href="https://originary.xyz" style={{ color: 'var(--brand-primary)' }}>https://originary.xyz/</Link>.</p>
+              <h2>Counter-notice (if applicable)</h2>
+              <ul>
+                <li>Your contact information</li>
+                <li>Identification of the removed material and its prior location</li>
+                <li>A statement that you believe the removal was in error</li>
+                <li>Your signature</li>
+              </ul>
 
-              <h2>Open protocol notice</h2>
-              <p>We support the <strong>open-source PEAC protocol</strong>; those assets are governed by their own licenses.</p>
+              <h2>Repeat infringers</h2>
+              <p>We may suspend or terminate accounts that repeatedly infringe.</p>
 
-              <h2>Brand inquiries</h2>
+              <h2>Good faith</h2>
+              <p>Notices must be submitted in good faith. False or abusive notices may carry legal consequences.</p>
+
+              <h2>Contact</h2>
               <p><Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link></p>
 
                 </div>
+              </div>
+
+              <div style={{
+                background: 'var(--gray-50)',
+                padding: 'var(--space-6)',
+                borderRadius: 'var(--radius-lg)',
+                marginTop: 'var(--space-8)',
+                textAlign: 'center'
+              }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                  <strong>Contact for copyright matters:</strong><br />
+                  <Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link>
+                </p>
               </div>
 
               <div style={{ textAlign: 'center', marginTop: 'var(--space-12)' }}>
