@@ -242,7 +242,8 @@ export default function HeroSection() {
                 />
               </Link>
 
-              <button
+              <Link
+                href="/developers"
                 className="btn btn-ghost"
                 style={{
                   display: 'flex',
@@ -268,7 +269,7 @@ export default function HeroSection() {
                   <Play size={16} style={{ marginLeft: '2px' }} />
                 </div>
                 <span>Watch demo</span>
-              </button>
+              </Link>
             </div>
 
             {/* Trust Indicators */}
