@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const currentDate = '2025-09-21'
+  const currentDate = new Date().toISOString().split('T')[0]
 
   return [
     {
