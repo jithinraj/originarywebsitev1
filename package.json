@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "test:responsive": "node scripts/test-responsive.js",
     "check:meta": "node scripts/check-meta.mjs",
     "check:tm": "node scripts/check-tm.mjs",
     "capture:specimens": "node scripts/capture-specimens.mjs",

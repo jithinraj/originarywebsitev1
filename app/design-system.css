@@ -3,6 +3,9 @@
 
 /* Font Loading handled by Next.js - removed @import to prevent render blocking */
 
+/* === RESPONSIVE DESIGN FOUNDATION === */
+/* Better Windows font rendering and universal compatibility */
+
 /* CSS Variables - Premium Design Tokens */
 :root {
   /* === COLORS - SOPHISTICATED PALETTE === */
@@ -55,7 +58,7 @@
 
   /* === TYPOGRAPHY SCALE - MATHEMATICAL PRECISION === */
   --font-mono: var(--font-jetbrains-mono), 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
-  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe UI Variable', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
   /* Perfect Type Scale (1.25 ratio) */
   --text-xs: 0.75rem;     /* 12px */
@@ -133,6 +136,20 @@
   --z-skipLink: 1600;
   --z-toast: 1700;
   --z-tooltip: 1800;
+
+  /* === RESPONSIVE BREAKPOINTS === */
+  --breakpoint-xs: 320px;   /* Small phones */
+  --breakpoint-sm: 640px;   /* Large phones */
+  --breakpoint-md: 768px;   /* Tablets */
+  --breakpoint-lg: 1024px;  /* Small laptops */
+  --breakpoint-xl: 1280px;  /* Large laptops */
+  --breakpoint-2xl: 1536px; /* Desktop monitors */
+
+  /* === FLUID RESPONSIVE VALUES === */
+  --container-padding: clamp(1rem, 4vw, 3rem);
+  --section-padding: clamp(3rem, 8vh, 8rem);
+  --card-padding: clamp(1.5rem, 4vw, 2rem);
+  --grid-gap: clamp(1rem, 3vw, 2rem);
 }
 
 /* === BASE STYLES - FOUNDATION === */
@@ -149,6 +166,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  /* Windows-specific font smoothing improvements */
+  font-smooth: always;
+  -webkit-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  /* Better scaling for high DPI displays */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -304,28 +328,68 @@ p {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: 0 var(--container-padding);
+  /* Ensure container never goes edge-to-edge on small screens */
+  min-padding: 1rem;
+}
+
+/* Enhanced responsive container */
+@media (min-width: 320px) {
+  .container {
+    padding: 0 clamp(1rem, 5vw, 1.5rem);
+  }
 }
 
 @media (min-width: 640px) {
   .container {
-    padding: 0 var(--space-8);
+    padding: 0 clamp(1.5rem, 4vw, 2rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 clamp(2rem, 4vw, 2.5rem);
   }
 }
 
 @media (min-width: 1024px) {
   .container {
-    padding: 0 var(--space-12);
+    padding: 0 clamp(2.5rem, 3vw, 3rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding: 0 3rem;
   }
 }
 
 .section {
-  padding: var(--space-24) 0;
+  padding: var(--section-padding) 0;
 }
 
-@media (min-width: 768px) {
+/* Enhanced responsive sections with fluid spacing */
+@media (max-width: 479px) {
   .section {
-    padding: var(--space-32) 0;
+    padding: clamp(2rem, 8vw, 3rem) 0;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .section {
+    padding: clamp(3rem, 10vw, 4rem) 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section {
+    padding: clamp(4rem, 8vh, 6rem) 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: clamp(6rem, 8vh, 8rem) 0;
   }
 }
 
@@ -334,11 +398,14 @@ p {
   background: var(--white);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-2xl);
-  padding: var(--space-8);
+  padding: var(--card-padding);
   box-shadow: var(--shadow-sm);
   transition: all var(--duration-300) var(--ease-out);
   position: relative;
   overflow: hidden;
+  /* Ensure cards don't break on small screens */
+  min-width: 0;
+  word-wrap: break-word;
 }
 
 .card:hover {
@@ -358,10 +425,10 @@ p {
   box-shadow: var(--shadow-glow), var(--shadow-lg);
 }
 
-/* === GRID SYSTEMS === */
+/* === ENHANCED GRID SYSTEMS === */
 .grid {
   display: grid;
-  gap: var(--space-6);
+  gap: var(--grid-gap);
 }
 
 .grid-2 {
@@ -373,14 +440,48 @@ p {
 }
 
 .grid-auto {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-@media (max-width: 768px) {
+/* Comprehensive responsive grid breakpoints */
+@media (max-width: 479px) {
+  .grid {
+    gap: clamp(1rem, 4vw, 1.5rem);
+  }
   .grid-2,
   .grid-3,
   .grid-auto {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
 }
 
@@ -439,11 +540,71 @@ p {
   animation: scaleIn var(--duration-300) var(--ease-out);
 }
 
-/* === RESPONSIVE DESIGN === */
-@media (max-width: 640px) {
-  h1 { font-size: var(--text-3xl); }
-  h2 { font-size: var(--text-2xl); }
-  .section { padding: var(--space-16) 0; }
+/* === COMPREHENSIVE RESPONSIVE DESIGN === */
+
+/* Typography scaling for different screen sizes */
+@media (max-width: 479px) {
+  h1 {
+    font-size: clamp(var(--text-2xl), 8vw, var(--text-3xl));
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+  h2 {
+    font-size: clamp(var(--text-xl), 6vw, var(--text-2xl));
+    line-height: 1.3;
+  }
+  h3 {
+    font-size: clamp(var(--text-lg), 5vw, var(--text-xl));
+  }
+  p {
+    font-size: clamp(var(--text-sm), 4vw, var(--text-base));
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  h1 {
+    font-size: clamp(var(--text-3xl), 6vw, var(--text-4xl));
+  }
+  h2 {
+    font-size: clamp(var(--text-2xl), 5vw, var(--text-3xl));
+  }
+  h3 {
+    font-size: clamp(var(--text-xl), 4vw, var(--text-2xl));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  h1 {
+    font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+  }
+  h2 {
+    font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+  }
+}
+
+/* Windows-specific fixes */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* Internet Explorer/Edge specific fixes */
+  .card {
+    border: 1px solid var(--gray-200);
+  }
+  .grid {
+    display: -ms-grid;
+  }
+}
+
+/* Windows Chrome/Firefox specific improvements */
+@supports (-webkit-appearance: none) {
+  body {
+    font-feature-settings: "liga" 1, "kern" 1;
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
 }
 
 /* Force all elements to be visible */
@@ -462,4 +623,87 @@ p {
 body::before,
 body::after {
   display: none !important;
+}
+
+/* === RESPONSIVE UTILITIES === */
+.flex-responsive {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--grid-gap);
+}
+
+.flex-responsive > * {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+/* Button responsive adjustments */
+@media (max-width: 479px) {
+  .btn {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-lg {
+    padding: var(--space-4) var(--space-6);
+    font-size: var(--text-base);
+  }
+}
+
+@media (min-width: 480px) {
+  .btn {
+    width: auto;
+  }
+}
+
+/* Responsive image handling */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive table handling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-4) 0;
+}
+
+@media (max-width: 767px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid var(--gray-200);
+    margin-bottom: var(--space-2);
+    padding: var(--space-2);
+  }
+}
+
+/* Enhanced focus management for all devices */
+*:focus {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Windows-specific button improvements */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .btn {
+    border: 1px solid transparent;
+  }
+
+  .btn-primary {
+    border-color: var(--brand-primary);
+  }
 }

@@ -90,13 +90,6 @@ export default function ReceiptsPage() {
               </div>
             </div>
 
-            {/* Metrics */}
-            <div className="grid grid-auto" style={{ gap: 'var(--space-8)', maxWidth: '1000px', margin: '0 auto' }}>
-              <MetricCard value="10B+" label="Receipts Generated" />
-              <MetricCard value="Verified" label="Cryptographic Proof" />
-              <MetricCard value="500+" label="Enterprise Customers" />
-              <MetricCard value="24/7" label="Global Coverage" />
-            </div>
           </div>
         </section>
 
@@ -357,7 +350,7 @@ export default function ReceiptsPage() {
                     margin: '0 auto var(--space-8) auto'
                   }}
                 >
-                  Join hundreds of organizations using cryptographic receipts for transparent AI operations.
+                  Start using cryptographic receipts for transparent AI operations.
                 </p>
                 <div
                   style={{
@@ -400,37 +393,6 @@ export default function ReceiptsPage() {
   )
 }
 
-function MetricCard({ value, label }: { value: string; label: string }) {
-  return (
-    <div
-      className="card"
-      style={{
-        textAlign: 'center',
-        background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(255,255,255,0.9) 100%)'
-      }}
-    >
-      <div
-        style={{
-          fontSize: 'var(--text-4xl)',
-          fontWeight: 800,
-          color: 'var(--brand-primary)',
-          marginBottom: 'var(--space-2)'
-        }}
-      >
-        {value}
-      </div>
-      <div
-        style={{
-          fontSize: 'var(--text-sm)',
-          color: 'var(--gray-600)',
-          fontWeight: 500
-        }}
-      >
-        {label}
-      </div>
-    </div>
-  )
-}
 
 function FeatureCard({
   icon,
