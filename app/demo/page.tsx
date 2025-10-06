@@ -21,21 +21,21 @@ export default function DemoPage() {
 
   const PROCESS = [
     { key: 'first', title: 'Agent request', sub: 'Autonomous agent needs your API or content' },
-    { key: 'discover', title: 'Originary policy', sub: 'Agent reads your policy via Originary' },
-    { key: 'prefs', title: 'Terms evaluation', sub: 'Originary evaluates preferences and access rules' },
+    { key: 'discover', title: 'Policy discovery', sub: 'Agent reads peac.txt via Originary' },
+    { key: 'prefs', title: 'Terms evaluation', sub: 'Originary evaluates peac.txt and aipref.json' },
     { key: 'evaluate', title: 'Decision engine', sub: 'Originary determines: allow, deny, or payment required' },
     { key: 'settle', title: 'Payment gateway', sub: 'Originary Gateway (402) handles settlement' },
     { key: 'access', title: 'Resource access', sub: 'Agent accesses your resource with authorization' },
-    { key: 'receipt', title: 'Originary receipt', sub: 'Cryptographically signed proof of transaction' },
+    { key: 'receipt', title: 'PEAC receipt', sub: 'Cryptographically signed proof of transaction' },
     { key: 'verify', title: 'Receipt verification', sub: 'Originary Verify API validates authenticity' }
   ]
 
   const STEPS = [
-    { key: 'discover', title: 'Policy discovery', subtitle: 'Originary serves your PEAC policy to agents' },
-    { key: 'prefs', title: 'Terms check', subtitle: 'Originary evaluates preferences (AIPREF)' },
+    { key: 'discover', title: 'Policy discovery', subtitle: 'Agent fetches peac.txt via Originary' },
+    { key: 'prefs', title: 'Terms check', subtitle: 'Originary evaluates peac.txt and aipref.json' },
     { key: 'evaluate', title: 'Policy engine', subtitle: 'Originary decides: allow, deny, or payment' },
     { key: 'settle', title: 'Payment flow', subtitle: 'Originary Gateway (402) processes payment' },
-    { key: 'receipt', title: 'Generate proof', subtitle: 'Originary issues signed receipt (JWS)' },
+    { key: 'receipt', title: 'Generate proof', subtitle: 'Signed PEAC receipt (JWS)' },
     { key: 'verify', title: 'Verify receipt', subtitle: 'Originary Verify API confirms authenticity' },
   ]
 
@@ -324,7 +324,7 @@ export default function DemoPage() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--gray-900)'
               }}>
-                How <span className="text-gradient">Originary PEAC</span> works
+                How <span className="text-gradient">Originary</span> works
               </h1>
 
               <p style={{
@@ -335,7 +335,7 @@ export default function DemoPage() {
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
               }}>
-                Originary manages the complete agent transaction lifecycle: from policy discovery and payment processing to cryptographic receipts and verification — giving you enterprise-grade infrastructure for the agentic web.
+                Originary provides enterprise infrastructure for the open PEAC protocol. Watch agents discover your policies via <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontFamily: 'var(--font-mono)' }}>peac.txt</code> and <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontFamily: 'var(--font-mono)' }}>aipref.json</code>, complete transactions through Originary Gateway (402), and generate verifiable receipts.
               </p>
             </div>
 
@@ -347,10 +347,10 @@ export default function DemoPage() {
             }}>
               <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
                 <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
-                  Originary's PEAC protocol flow
+                  PEAC protocol flow via Originary
                 </h2>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                  From agent discovery to cryptographic proof. Click any step to explore.
+                  From policy discovery to cryptographic proof. Click any step to explore.
                 </p>
               </div>
               <CircularFlowchart />
@@ -361,10 +361,10 @@ export default function DemoPage() {
               {/* Left: peac.txt advertises */}
               <div className="card">
                 <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
-                  Originary policy file
+                  PEAC policy file
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
-                  Your <code style={{ fontFamily: 'var(--font-mono)', background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> published via Originary
+                  Your <code style={{ fontFamily: 'var(--font-mono)', background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> served by Originary
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
@@ -532,7 +532,7 @@ export default function DemoPage() {
                     textTransform: 'uppercase',
                     letterSpacing: '0.05em'
                   }}>
-                    <span>Originary Receipt (JWS)</span>
+                    <span>PEAC Receipt (JWS)</span>
                     {STEPS[demoIdx]?.key === 'receipt' && (
                       <span style={{ color: 'var(--brand-secondary)' }}>
                         Signed by Originary
@@ -551,7 +551,7 @@ export default function DemoPage() {
                     lineHeight: 1.5,
                     fontFamily: 'var(--font-mono)'
                   }}>
-                    {receiptText || '// Originary generates cryptographically signed receipts\n// Receipt will appear during the proof generation step'}
+                    {receiptText || '// Cryptographically signed PEAC receipts\n// Receipt will appear during the proof generation step'}
                   </pre>
                 </div>
 
