@@ -35,13 +35,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://originary.xyz/products/',
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.95,
     },
     {
       url: 'https://originary.xyz/receipts/',
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.95,
     },
     // Product pages
     {
@@ -136,13 +136,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.7,
-    },
-    // Other
-    {
-      url: 'https://originary.xyz/brand/',
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.5,
     },
   ]
 }
