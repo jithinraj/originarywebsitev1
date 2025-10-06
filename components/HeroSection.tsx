@@ -243,7 +243,7 @@ export default function HeroSection() {
               </Link>
 
               <Link
-                href="/developers"
+                href="/demo"
                 className="btn btn-ghost"
                 style={{
                   display: 'flex',

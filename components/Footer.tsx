@@ -89,7 +89,8 @@ export default function Footer() {
               { href: '/products/gateway-402', label: 'Gateway 402' },
               { href: '/products/studio', label: 'Studio' },
               { href: '/products/adapters', label: 'Adapters' },
-              { href: '/receipts', label: 'Receipts' }
+              { href: '/receipts', label: 'Receipts' },
+              { href: '/demo', label: 'Interactive Demo' }
             ]}
           />
 

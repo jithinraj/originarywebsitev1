@@ -112,6 +112,7 @@ export default function NavigationHeader() {
               ]} />
 
               <NavLink href="/developers">Developers</NavLink>
+              <NavLink href="/demo">Demo</NavLink>
               <NavLink href="/pricing">Pricing</NavLink>
               <NavLink href="/resources">Resources</NavLink>
             </div>
@@ -188,6 +189,9 @@ export default function NavigationHeader() {
 
               <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
                 Developers
+              </Link>
+              <Link href="/demo" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
+                Demo
               </Link>
               <Link href="/pricing" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
                 Pricing
