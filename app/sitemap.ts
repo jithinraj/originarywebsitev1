@@ -48,31 +48,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://originary.xyz/products/peac/',
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.9,
     },
     {
       url: 'https://originary.xyz/products/verify/',
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.9,
     },
     {
       url: 'https://originary.xyz/products/gateway-402/',
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.9,
     },
     {
       url: 'https://originary.xyz/products/studio/',
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.9,
     },
     {
       url: 'https://originary.xyz/products/adapters/',
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.9,
     },
     // Solutions
     {
