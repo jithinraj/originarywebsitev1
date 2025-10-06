@@ -3,5 +3,6 @@ Allow: /
 Disallow: /legal/
 Disallow: /dashboard/
 Disallow: /api/
+Disallow: /brand/
 
 Sitemap: https://originary.xyz/sitemap.xml
