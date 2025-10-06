@@ -6,13 +6,13 @@ import { ArrowRight, CheckCircle, FileText, Shield, Zap, Download, ExternalLink,
 
 export const metadata: Metadata = {
   title: 'PEAC Protocol : Originary',
-  description: 'PEAC (Programmable Environment for Agent Coordination) is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS) as auditable proof of use.',
+  description: 'PEAC is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS) as auditable proof of use.',
   keywords: 'PEAC protocol, file-based policy, verifiable receipts, JWS, agent coordination',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'PEAC Protocol : Originary',
-    description: 'PEAC (Programmable Environment for Agent Coordination) is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS) as auditable proof of use.',
+    description: 'PEAC is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS) as auditable proof of use.',
     url: 'https://originary.xyz/products/peac',
     images: ['https://originary.xyz/og.jpg'],
     siteName: 'Originary',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'PEAC Protocol : Originary',
-    description: 'PEAC (Programmable Environment for Agent Coordination) is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS) as auditable proof of use.',
+    description: 'PEAC is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS) as auditable proof of use.',
     images: ['https://originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
@@ -54,14 +54,6 @@ export default function PEACProtocol() {
               }}>
                 <FileText size={16} />
                 <span>OPEN PROTOCOL</span>
-                <div style={{
-                  background: 'var(--success)',
-                  color: 'var(--white)',
-                  padding: 'var(--space-1) var(--space-2)',
-                  borderRadius: 'var(--radius-sm)',
-                  fontSize: 'var(--text-xs)',
-                  fontWeight: 600
-                }}>v2.0 STABLE</div>
               </div>
 
               <h1 style={{
@@ -72,7 +64,7 @@ export default function PEACProtocol() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--gray-900)'
               }}>
-                The standard for <span className="text-gradient">agentic web</span> coordination
+                PEAC: the receipt protocol for the <span className="text-gradient">agentic web</span>
               </h1>
 
               <p style={{
@@ -83,13 +75,13 @@ export default function PEACProtocol() {
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
               }}>
-                PEAC (Programmable Environment for Agent Coordination) enables autonomous agents to discover policies, negotiate terms, and generate verifiable receipts. A simple <code style={{
+                Agents discover policies via <code style={{
                   background: 'var(--gray-100)',
                   padding: 'var(--space-1) var(--space-2)',
                   borderRadius: 'var(--radius-sm)',
                   fontFamily: 'var(--font-mono)',
                   fontSize: 'var(--text-base)'
-                }}>/.well-known/peac.txt</code> file transforms any resource into an agent-accessible service.
+                }}>/.well-known/peac.txt</code> and attach PEAC-Receipt on every request for verifiable compliance.
               </p>
 
 
@@ -259,23 +251,14 @@ export default function PEACProtocol() {
                   overflow: 'hidden'
                 }}>
                   <code style={{ color: 'var(--gray-300)' }}>
-{`# PEAC Policy v2.0
-version: "2.0"
-owner: "https://example.com"
-contact: "admin@example.com"
-
-policy:
-  access: "restricted"
-  attribution: "required"
-  commercial: "licensed"
-
-adapters:
-  - "https://originary.xyz/settle"
-  - "stripe://sk_live_..."
-
-rates:
-  api_call: "0.001 USD"
-  training: "negotiable"`}
+{`preferences: https://originary.xyz/.well-known/aipref.json
+access_control: http-402
+payments: x402, stripe
+provenance: c2pa
+receipts: required
+verify: https://api.originary.xyz/verify
+public_keys:
+  kid=2025-09-key1; alg=Ed25519; key=...   # base64url`}
                   </code>
                 </pre>
               </div>

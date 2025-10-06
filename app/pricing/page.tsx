@@ -130,10 +130,10 @@ export default function Pricing() {
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Up to 1M agent transactions/month</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['Everything in Developer', 'Settlement gateway (402) access', 'Dashboard (preview)', 'Priority support', 'SLA available', 'Analytics (preview)'].map((feature) => (
+                  {['Everything in Developer', 'Settlement gateway (402) access', 'Dashboard', 'Priority support', 'SLA available', 'Analytics'].map((feature) => (
                     <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
                       <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
-                      <span aria-describedby={feature.includes('(preview)') ? 'preview-legend' : undefined}>{feature}</span>
+                      <span>{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -172,10 +172,6 @@ export default function Pricing() {
                 </p>
               </div>
             </div>
-
-            <p id="preview-legend" style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center', marginTop: 'var(--space-4)' }}>
-              * Features marked &ldquo;preview&rdquo; are in limited release.
-            </p>
 
             {/* OSS Box */}
             <section style={{

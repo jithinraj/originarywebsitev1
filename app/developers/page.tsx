@@ -127,17 +127,14 @@ export default function Developers() {
                 step="1"
                 title="Create policy file"
                 description="Add a peac.txt file to your /.well-known/ directory"
-                code={`version: 0.9.13
-usage: conditional
-purposes: [indexing, research, documentation]
-attribution: required
-consent: optional
-data_retention: P30D
+                code={`preferences: https://originary.xyz/.well-known/aipref.json
 access_control: http-402
-payments: ['x402', 'stripe', 'onchain']
+payments: x402, stripe
+provenance: c2pa
 receipts: required
-verify: true
-contact: contact@originary.xyz`}
+verify: https://api.originary.xyz/verify
+public_keys:
+  kid=2025-09-key1; alg=Ed25519; key=...   # base64url`}
               />
               <QuickStartCard
                 step="2"
@@ -330,7 +327,7 @@ if (request.headers.get('peac-receipt')) {
                   lineHeight: 1.7
                 }}
               >
-                Start with the CLI, attach a PEAC-Receipt header, and verify at the edge. Full SDKs will ship when production-ready.
+                Use the CLI and official SDKs to validate policies and attach <strong>PEAC-Receipt</strong> headers.
               </p>
             </div>
           </div>

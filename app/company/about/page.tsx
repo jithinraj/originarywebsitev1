@@ -99,7 +99,7 @@ export default function About() {
                 <div className="card">
                   <h3 style={{ marginBottom: 'var(--space-4)' }}>PEAC Protocol</h3>
                   <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
-                    We developed the open PEAC protocol (Programmable Economic Access & Consent) for standardized agent–resource interaction with signed receipts.
+                    We developed the open PEAC protocol for standardized agent–resource interaction with signed receipts.
                   </p>
                 </div>
                 <div className="card">
