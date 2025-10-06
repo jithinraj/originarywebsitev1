@@ -6,13 +6,13 @@ import { ArrowRight, CheckCircle, Zap, Shield, BarChart, ExternalLink, Download 
 
 export const metadata: Metadata = {
   title: 'Verify API : Originary',
-  description: 'Sub-10ms stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and analytics.',
+  description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and analytics.',
   keywords: 'PEAC receipt verification, JWS validation, signature verification API, enterprise authentication, sub-10ms latency',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'Verify API : Originary',
-    description: 'Sub-10ms stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and analytics.',
+    description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and analytics.',
     url: 'https://originary.xyz/products/verify',
     images: ['https://originary.xyz/og.jpg'],
     siteName: 'Originary',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Verify API : Originary',
-    description: 'Sub-10ms stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and analytics.',
+    description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and analytics.',
     images: ['https://originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
@@ -83,7 +83,7 @@ export default function VerifyAPI() {
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
               }}>
-                Enterprise-grade stateless verification for PEAC-Receipts and JWS signatures. Our globally distributed API delivers sub-10ms deterministic validation with normalized metadata for compliance reporting and enterprise analytics.
+                Enterprise-grade stateless verification for PEAC-Receipts and JWS signatures. Our globally distributed API delivers deterministic validation with normalized metadata for compliance reporting and enterprise analytics.
               </p>
 
 
@@ -187,20 +187,9 @@ export default function VerifyAPI() {
                 }}>
                   <BarChart size={28} style={{ color: 'var(--brand-accent)' }} />
                 </div>
-                <h3 style={{ marginBottom: 'var(--space-4)' }}>Global scale</h3>
-                <div style={{
-                  fontSize: 'var(--text-2xl)',
-                  fontWeight: 700,
-                  color: 'var(--brand-accent)',
-                  marginBottom: 'var(--space-2)'
-                }}>15</div>
-                <div style={{
-                  fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-600)',
-                  marginBottom: 'var(--space-4)'
-                }}>global regions</div>
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Global deployment</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Deployed across major cloud providers and edge networks for optimal performance from any location.
+                  Deployed across major cloud providers and edge networks for low-latency performance from any location.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
                   <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Multi-cloud</span>
@@ -244,7 +233,7 @@ export default function VerifyAPI() {
                   maxWidth: '700px',
                   margin: '0 auto var(--space-8) auto'
                 }}>
-                  Join enterprise customers processing billions of verifications monthly with guaranteed performance and reliability. Our verification engineers provide dedicated support for mission-critical implementations.
+                  Join enterprise customers using our verification infrastructure with guaranteed performance and reliability. Our verification engineers provide dedicated support for mission-critical implementations.
                 </p>
                 <div style={{
                   display: 'flex',

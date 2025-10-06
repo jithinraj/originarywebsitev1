@@ -64,15 +64,16 @@ export default function PEACProtocol() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--gray-900)'
               }}>
-                PEAC: the receipt protocol for the <span className="text-gradient">agentic web</span>
+                PEAC: <span className="text-gradient">the receipt protocol</span>
               </h1>
 
               <p style={{
                 fontSize: 'var(--text-xl)',
-                lineHeight: 1.7,
+                lineHeight: 1.4,
+                letterSpacing: '-0.01em',
                 color: 'var(--gray-600)',
                 marginBottom: 'var(--space-8)',
-                maxWidth: '900px',
+                maxWidth: '48rem',
                 margin: '0 auto var(--space-8) auto'
               }}>
                 Agents discover policies via <code style={{
@@ -81,7 +82,7 @@ export default function PEACProtocol() {
                   borderRadius: 'var(--radius-sm)',
                   fontFamily: 'var(--font-mono)',
                   fontSize: 'var(--text-base)'
-                }}>/.well-known/peac.txt</code> and attach PEAC-Receipt on every request for verifiable compliance.
+                }}>/.well-known/peac.txt</code> and send <strong>PEAC-Receipt</strong> on every request.
               </p>
 
 
@@ -283,11 +284,6 @@ public_keys:
                 <p style={{ marginBottom: 'var(--space-4)' }}>
                   Agents automatically discover and respect your usage policies without manual integration or API documentation.
                 </p>
-                <div style={{
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 600,
-                  color: 'var(--brand-primary)'
-                }}>~50ms average discovery time</div>
               </div>
               <div className="card">
                 <div style={{
@@ -304,13 +300,8 @@ public_keys:
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Compliance by design</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Built-in attribution, quota enforcement, and audit trails ensure regulatory compliance and usage tracking.
+                  Built-in attribution, quota enforcement, and audit trails with cryptographically verifiable receipts.
                 </p>
-                <div style={{
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 600,
-                  color: 'var(--brand-secondary)'
-                }}>100% verifiable transactions</div>
               </div>
               <div className="card">
                 <div style={{
@@ -329,11 +320,6 @@ public_keys:
                 <p style={{ marginBottom: 'var(--space-4)' }}>
                   Works with existing infrastructure: CDNs, API gateways, auth systems, and payment processors.
                 </p>
-                <div style={{
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 600,
-                  color: 'var(--brand-accent)'
-                }}>Zero vendor lock-in</div>
               </div>
             </div>
 
@@ -346,7 +332,7 @@ public_keys:
             }}>
               <h2 style={{ marginBottom: 'var(--space-6)', color: 'white' }}>Deploy PEAC at enterprise scale</h2>
               <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', opacity: 0.9 }}>
-                Join Fortune 500 companies using PEAC Protocol to govern agent interactions, ensure compliance, and monetize digital resources.
+                Large enterprises use PEAC Protocol to govern agent interactions, ensure compliance, and monetize digital resources.
               </p>
               <div style={{
                 display: 'flex',

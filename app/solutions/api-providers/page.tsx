@@ -132,7 +132,7 @@ export default function APIProviders() {
               <div className="card">
                 <h3 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-xl)' }}>Gateway deployment</h3>
                 <p style={{ lineHeight: 1.7 }}>
-                  Deploy our HTTP 402 gateway in front of your existing APIs. Zero code changes required.
+                  Deploy our HTTP 402 gateway as a drop-in layer in front of your existing APIs.
                 </p>
               </div>
 
@@ -165,7 +165,7 @@ export default function APIProviders() {
                   marginBottom: 'var(--space-8)'
                 }}
               >
-                Join API providers earning revenue from autonomous agents. Setup takes less than 30 minutes.
+                Join API providers earning revenue from autonomous agents with guided setup.
               </p>
 
               <div

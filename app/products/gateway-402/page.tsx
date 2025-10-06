@@ -200,7 +200,7 @@ export default function Gateway402() {
                   maxWidth: '700px',
                   margin: '0 auto var(--space-8) auto'
                 }}>
-                  Enable autonomous agents to purchase access to your APIs and services through battle-tested payment infrastructure. Join companies processing millions in agent transactions monthly.
+                  Enable autonomous agents to purchase access to your APIs and services through standardized payment infrastructure.
                 </p>
                 <div style={{
                   display: 'flex',

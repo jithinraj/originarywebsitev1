@@ -129,7 +129,7 @@ export default function About() {
                 <div className="card">
                   <h3 style={{ marginBottom: 'var(--space-4)' }}>Enterprise Ready</h3>
                   <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
-                    Our solutions meet the highest standards for security, compliance, and reliability.
+                    Our solutions are designed for security, compliance, and reliability at scale.
                   </p>
                 </div>
               </div>

@@ -39,7 +39,7 @@ export default function WorldClassHomePage() {
                 lineHeight: 1.7
               }}
             >
-              Stripe-level engineering for the agentic economy. Legal, product, and engineering teams get a unified control plane for access and revenue without slowing down innovation.
+              Enterprise infrastructure for the agentic economy. Legal, product, and engineering teams get a unified control plane for access and revenue without slowing down innovation.
             </p>
           </div>
 
