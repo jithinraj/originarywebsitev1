@@ -131,13 +131,16 @@
 
 /* Skip navigation */
 .skip-nav {
-  position: absolute;
-  left: -9999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  z-index: -999;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  z-index: -999 !important;
 }
 
 .skip-nav:focus,
