@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Copyright notice and takedown process for Originary services.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/copyright',
+    canonical: 'https://www.originary.xyz/copyright',
   },
 }
 
@@ -17,7 +17,7 @@ const webPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Copyright Notice & Takedown',
-  url: 'https://originary.xyz/copyright',
+  url: 'https://www.originary.xyz/copyright',
   dateModified: '2025-07-27'
 }
 

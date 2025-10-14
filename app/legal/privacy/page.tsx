@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Originary privacy policy outlining how we collect, use, and protect your personal information.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/legal/privacy',
+    canonical: 'https://www.originary.xyz/legal/privacy',
   },
 }
 

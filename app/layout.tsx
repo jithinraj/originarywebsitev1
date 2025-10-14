@@ -30,7 +30,7 @@ const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Originary',
-  url: 'https://originary.xyz',
+  url: 'https://www.originary.xyz',
   alternateName: ['Originary AI'],
   sameAs: [
     'https://x.com/originaryinc',
@@ -39,14 +39,14 @@ const organizationJsonLd = {
     'https://originaryai.com',
     'https://peacprotocol.org'
   ],
-  logo: 'https://originary.xyz/og/originary-logo.png'
+  logo: 'https://www.originary.xyz/og/originary-logo.png'
 }
 
 const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Originary',
-  url: 'https://originary.xyz'
+  url: 'https://www.originary.xyz'
 }
 
 export const metadata: Metadata = {
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   description: 'Publish peac.txt, settle via x402 or your rail, and prove compliance on every request with Receipts. Powered by the PEAC open protocol.',
   keywords: ['agentic web', 'orchestration protocol', 'AI coordination', 'PEAC protocol', 'HTTP 402', 'verifiable receipts', 'API policy', 'machine readable payments', 'AI transparency'],
-  authors: [{ name: 'Originary', url: 'https://originary.xyz' }],
+  authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
   formatDetection: {
@@ -64,14 +64,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://originary.xyz'),
+  metadataBase: new URL('https://www.originary.xyz'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Originary : Receipts for the Agentic Web',
     description: 'Publish peac.txt, settle via x402 or your rail, and prove compliance on every request with Receipts. Powered by the PEAC open protocol.',
-    url: 'https://originary.xyz/',
+    url: 'https://www.originary.xyz/',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',
@@ -125,7 +125,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" rx="64" fill="%23FAF8F1"/><circle cx="128" cy="128" r="78" fill="%230B0B0B"/><circle cx="128" cy="128" r="48" fill="%23FAF8F1"/></svg>' />
-        <link rel="canonical" href="https://originary.xyz/" />
+        <link rel="canonical" href="https://www.originary.xyz/" />
         <Script id="originary-organization-json-ld" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(organizationJsonLd)}
         </Script>

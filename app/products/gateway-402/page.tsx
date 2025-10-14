@@ -13,21 +13,21 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Gateway (402) : Originary',
     description: 'HTTP 402 Payment Required gateway with x402 protocol support. Enterprise-grade policy enforcement with x402 protocol for authenticated agent transactions.',
-    url: 'https://originary.xyz/products/gateway-402',
-    images: ['https://originary.xyz/og.jpg'],
+    url: 'https://www.originary.xyz/products/gateway-402',
+    images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Gateway (402) : Originary',
     description: 'HTTP 402 Payment Required gateway with x402 protocol support. Enterprise-grade policy enforcement with x402 protocol for authenticated agent transactions.',
-    images: ['https://originary.xyz/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/products/gateway-402',
+    canonical: 'https://www.originary.xyz/products/gateway-402',
   },
 }
 

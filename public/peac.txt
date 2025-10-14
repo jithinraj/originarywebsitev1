@@ -1,5 +1,5 @@
 version: 0.9.13
-preferences: https://originary.xyz/.well-known/aipref.json
+preferences: https://www.originary.xyz/.well-known/aipref.json
 usage: conditional
 purposes: [indexing, research, documentation]
 attribution: required

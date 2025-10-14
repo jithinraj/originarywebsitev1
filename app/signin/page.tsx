@@ -13,21 +13,21 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Sign In : Originary',
     description: 'Sign in to your Originary account to access the PEAC protocol dashboard, manage your policies, and view analytics.',
-    url: 'https://originary.xyz/signin',
-    images: ['https://originary.xyz/og.jpg'],
+    url: 'https://www.originary.xyz/signin',
+    images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sign In : Originary',
     description: 'Sign in to your Originary account to access the PEAC protocol dashboard, manage your policies, and view analytics.',
-    images: ['https://originary.xyz/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/signin',
+    canonical: 'https://www.originary.xyz/signin',
   },
 }
 

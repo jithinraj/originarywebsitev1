@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'PEAC-Receipt Documentation',
     description: 'Learn about PEAC-Receipt, the open standard for verifiable agent access receipts.',
-    url: 'https://originary.xyz/docs/receipts',
+    url: 'https://www.originary.xyz/docs/receipts',
     siteName: 'Originary',
     type: 'website'
   }
@@ -141,7 +141,7 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
                 overflow: 'auto',
                 lineHeight: 1.6
               }}>
-{`curl -X POST https://originary.xyz/api/verify \\
+{`curl -X POST https://www.originary.xyz/api/verify \\
   -H "Content-Type: application/json" \\
   -d '{"receipt": "eyJhbGci..."}'`}
               </pre>

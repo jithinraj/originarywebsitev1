@@ -3,7 +3,7 @@ version: 0.9.13
 usage: open
 purposes: [indexing, research, documentation, reference]
 attribution: optional
-preferences: https://originary.xyz/.well-known/ai-preferences.txt
+preferences: https://www.originary.xyz/.well-known/ai-preferences.txt
 receipts: required
 verify: true
 access_control: http-402
@@ -19,7 +19,7 @@ public_keys: [
 
 # Contact information
 contact: contact@originary.xyz
-support: https://originary.xyz/company/contact.html
+support: https://www.originary.xyz/company/contact.html
 
 # Rate limiting
 rate_limit: 1000/hour

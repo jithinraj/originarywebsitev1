@@ -9,19 +9,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Solutions : Originary',
     description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
-    url: 'https://originary.xyz/solutions/',
+    url: 'https://www.originary.xyz/solutions/',
     siteName: 'Originary',
-    images: [{ url: 'https://originary.xyz/og.jpg' }],
+    images: [{ url: 'https://www.originary.xyz/og.jpg' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Solutions : Originary',
     description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
-    images: ['https://originary.xyz/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
   },
   alternates: {
-    canonical: 'https://originary.xyz/solutions/',
+    canonical: 'https://www.originary.xyz/solutions/',
   },
 }
 

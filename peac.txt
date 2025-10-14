@@ -3,7 +3,7 @@ version: 0.9.13
 usage: open
 purposes: [indexing, research, documentation, reference]
 attribution: optional
-aipref: https://originary.xyz/.well-known/ai-preferences.txt
+aipref: https://www.originary.xyz/.well-known/ai-preferences.txt
 receipts: required
 verify: true
 access_control: http-402

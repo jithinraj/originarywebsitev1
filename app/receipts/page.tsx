@@ -11,19 +11,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cryptographic Receipts - Originary',
     description: 'Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Transparent AI operations for leading companies.',
-    url: 'https://originary.xyz/receipts/',
+    url: 'https://www.originary.xyz/receipts/',
     siteName: 'Originary',
-    images: [{ url: 'https://originary.xyz/og.jpg' }],
+    images: [{ url: 'https://www.originary.xyz/og.jpg' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cryptographic Receipts - Originary',
     description: 'Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Transparent AI operations for leading companies.',
-    images: ['https://originary.xyz/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
   },
   alternates: {
-    canonical: 'https://originary.xyz/receipts/',
+    canonical: 'https://www.originary.xyz/receipts/',
   },
 }
 

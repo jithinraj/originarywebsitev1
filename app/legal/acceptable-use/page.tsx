@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Acceptable use policy outlining permitted and prohibited uses of Originary services.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/legal/acceptable-use',
+    canonical: 'https://www.originary.xyz/legal/acceptable-use',
   },
 }
 

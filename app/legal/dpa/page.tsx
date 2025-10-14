@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Data processing agreement for enterprise customers regarding GDPR compliance and data handling.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/legal/dpa',
+    canonical: 'https://www.originary.xyz/legal/dpa',
   },
 }
 

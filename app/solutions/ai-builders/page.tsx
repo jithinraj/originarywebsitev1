@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Originary for AI Builders - Prove Compliance with Creator Preferences',
     description: 'Build AI systems that respect creator rights, maintain consent, and provide verifiable interaction records. Cryptographic receipts for provable compliance.',
-    url: 'https://originary.xyz/solutions/ai-builders',
+    url: 'https://www.originary.xyz/solutions/ai-builders',
     images: [{
       url: '/og.jpg',
       width: 1200,
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/solutions/ai-builders',
+    canonical: 'https://www.originary.xyz/solutions/ai-builders',
   },
 }
 
@@ -41,17 +41,17 @@ export default function AIBuilders() {
     "@graph": [
       {
         "@type": "Service",
-        "@id": "https://originary.xyz/solutions/ai-builders#service",
+        "@id": "https://www.originary.xyz/solutions/ai-builders#service",
         "name": "Originary for AI Builders",
         "description": "Prove compliance with creator preferences and data policies. Build AI systems that respect rights, maintain consent, and provide verifiable interaction records.",
         "provider": {
           "@type": "Organization",
           "name": "Originary",
-          "url": "https://originary.xyz"
+          "url": "https://www.originary.xyz"
         },
         "serviceType": "AI Compliance Platform",
         "areaServed": "Worldwide",
-        "url": "https://originary.xyz/solutions/ai-builders"
+        "url": "https://www.originary.xyz/solutions/ai-builders"
       },
       {
         "@type": "BreadcrumbList",
@@ -60,19 +60,19 @@ export default function AIBuilders() {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://originary.xyz"
+            "item": "https://www.originary.xyz"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Solutions",
-            "item": "https://originary.xyz/solutions"
+            "item": "https://www.originary.xyz/solutions"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "AI Builders",
-            "item": "https://originary.xyz/solutions/ai-builders"
+            "item": "https://www.originary.xyz/solutions/ai-builders"
           }
         ]
       }

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: 'case studies, customer success, PEAC implementation, enterprise deployment',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/resources/case-studies',
+    canonical: 'https://www.originary.xyz/resources/case-studies',
   },
 }
 

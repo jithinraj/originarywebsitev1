@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Originary trademark guidelines and brand use policy for proper usage of our marks.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/trademark',
+    canonical: 'https://www.originary.xyz/trademark',
   },
 }
 
@@ -17,7 +17,7 @@ const webPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Trademark & Brand Use',
-  url: 'https://originary.xyz/trademark',
+  url: 'https://www.originary.xyz/trademark',
   dateModified: '2025-07-27'
 }
 
@@ -98,7 +98,7 @@ export default function Trademark() {
               </ul>
 
               <h2>Disambiguation</h2>
-              <p>We are not affiliated with any other businesses that may use similar names. This site refers to Originary at <Link href="https://originary.xyz" style={{ color: 'var(--brand-primary)' }}>https://originary.xyz/</Link>.</p>
+              <p>We are not affiliated with any other businesses that may use similar names. This site refers to Originary at <Link href="https://www.originary.xyz" style={{ color: 'var(--brand-primary)' }}>https://www.originary.xyz/</Link>.</p>
 
               <h2>Open protocol notice</h2>
               <p>We support the <strong>open-source PEAC protocol</strong>; those assets are governed by their own licenses.</p>

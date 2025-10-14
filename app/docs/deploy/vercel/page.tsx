@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Vercel Deployment Guide',
     description: 'Deploy Originary on Vercel Edge Runtime with HTTP 402 receipts.',
-    url: 'https://originary.xyz/docs/deploy/vercel',
+    url: 'https://www.originary.xyz/docs/deploy/vercel',
     siteName: 'Originary',
     type: 'website'
   }

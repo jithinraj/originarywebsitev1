@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Cancellation and Refund Policy for Originary services operated by Curious Explorations Private Limited.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/refund',
+    canonical: 'https://www.originary.xyz/refund',
   },
 }
 
@@ -18,7 +18,7 @@ export default function RefundPage() {
     "@type": "WebPage",
     "name": "Cancellation & Refund Policy",
     "description": "Cancellation and Refund Policy for Originary services",
-    "url": "https://originary.xyz/refund",
+    "url": "https://www.originary.xyz/refund",
     "publisher": {
       "@type": "Organization",
       "name": "Curious Explorations Private Limited",

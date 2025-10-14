@@ -1,4 +1,4 @@
-preferences: https://originary.xyz/.well-known/aipref.json
+preferences: https://www.originary.xyz/.well-known/aipref.json
 access_control: http-402
 payments: x402, stripe
 provenance: c2pa

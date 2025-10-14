@@ -11,21 +11,21 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Enterprise agentic governance - Enterprises : Originary',
     description: 'Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. Built for SOC 2, GDPR, and multi-region deployment.',
-    url: 'https://originary.xyz/solutions/enterprises',
-    images: ['https://originary.xyz/og.jpg'],
+    url: 'https://www.originary.xyz/solutions/enterprises',
+    images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Enterprise agentic governance - Enterprises : Originary',
     description: 'Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. Built for SOC 2, GDPR, and multi-region deployment.',
-    images: ['https://originary.xyz/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/solutions/enterprises',
+    canonical: 'https://www.originary.xyz/solutions/enterprises',
   },
 }
 

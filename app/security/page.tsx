@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Responsible security disclosure policy for Originary services and infrastructure.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/security',
+    canonical: 'https://www.originary.xyz/security',
   },
 }
 
@@ -17,7 +17,7 @@ const webPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Security Disclosure',
-  url: 'https://originary.xyz/security',
+  url: 'https://www.originary.xyz/security',
   dateModified: '2025-07-27'
 }
 

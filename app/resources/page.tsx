@@ -11,19 +11,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Resources : Originary',
     description: 'Resources, documentation, and insights for building with the receipts protocol for the agentic web.',
-    url: 'https://originary.xyz/resources/',
+    url: 'https://www.originary.xyz/resources/',
     siteName: 'Originary',
-    images: [{ url: 'https://originary.xyz/og.jpg' }],
+    images: [{ url: 'https://www.originary.xyz/og.jpg' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Resources : Originary',
     description: 'Resources, documentation, and insights for building with the receipts protocol for the agentic web.',
-    images: ['https://originary.xyz/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
   },
   alternates: {
-    canonical: 'https://originary.xyz/resources/',
+    canonical: 'https://www.originary.xyz/resources/',
   },
 }
 

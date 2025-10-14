@@ -13,21 +13,21 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Verify API : Originary',
     description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and analytics.',
-    url: 'https://originary.xyz/products/verify',
-    images: ['https://originary.xyz/og.jpg'],
+    url: 'https://www.originary.xyz/products/verify',
+    images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Verify API : Originary',
     description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and analytics.',
-    images: ['https://originary.xyz/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/products/verify',
+    canonical: 'https://www.originary.xyz/products/verify',
   },
 }
 

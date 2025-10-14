@@ -48,9 +48,9 @@ Development Stack:
 Copyright: Originary © 2025 Curious Explorations Private Limited
 Trade & Product Name: Originary
 License: Proprietary software with open protocol specifications
-Terms: https://originary.xyz/legal/terms.html
-Privacy: https://originary.xyz/legal/privacy.html
-Security: https://originary.xyz/.well-known/security.txt
+Terms: https://www.originary.xyz/legal/terms.html
+Privacy: https://www.originary.xyz/legal/privacy.html
+Security: https://www.originary.xyz/.well-known/security.txt
 
 Domain:
 - Primary: originary.xyz
@@ -67,7 +67,7 @@ keep our platform secure through responsible disclosure practices.
 /* NOTES */
 
 This humans.txt file follows RFC 2606 recommendations and provides
-information about the humans behind https://originary.xyz
+information about the humans behind https://www.originary.xyz
 
 For partnership inquiries: contact@originary.xyz
 For media inquiries: contact@originary.xyz
@@ -86,4 +86,4 @@ Current protocol version: v0.9.13
 Active commercial operations: July 2025 - Present
 
 Effective from July 24, 2025.
-For the most current information, visit https://originary.xyz
+For the most current information, visit https://www.originary.xyz

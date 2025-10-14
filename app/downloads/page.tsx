@@ -14,7 +14,7 @@ const softwareJsonLd = {
   name: 'Originary CLI',
   operatingSystem: 'Windows, macOS, Linux',
   applicationCategory: 'DeveloperApplication',
-  downloadUrl: 'https://originary.xyz/downloads/',
+  downloadUrl: 'https://www.originary.xyz/downloads/',
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Downloads : Originary',
     description: 'Download the Originary CLI and PEAC policy templates. Verify policy files and implement receipts.',
-    url: 'https://originary.xyz/downloads',
+    url: 'https://www.originary.xyz/downloads',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     images: ['/og.jpg']
   },
   alternates: {
-    canonical: 'https://originary.xyz/downloads'
+    canonical: 'https://www.originary.xyz/downloads'
   }
 }
 

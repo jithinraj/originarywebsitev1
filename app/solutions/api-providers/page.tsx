@@ -12,21 +12,21 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Monetize agent access - API Providers : Originary',
     description: 'Enable agents to discover and pay for your APIs through standardized protocols. HTTP 402, x402, PEAC receipts, and enterprise billing with compliance built-in.',
-    url: 'https://originary.xyz/solutions/api-providers',
-    images: ['https://originary.xyz/og.jpg'],
+    url: 'https://www.originary.xyz/solutions/api-providers',
+    images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Monetize agent access - API Providers : Originary',
     description: 'Enable agents to discover and pay for your APIs through standardized protocols. HTTP 402, x402, PEAC receipts, and enterprise billing with compliance built-in.',
-    images: ['https://originary.xyz/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryinc',
     creator: '@originaryinc',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/solutions/api-providers',
+    canonical: 'https://www.originary.xyz/solutions/api-providers',
   },
 }
 

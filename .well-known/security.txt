@@ -1,11 +1,11 @@
 Contact: mailto:contact@originary.xyz
-Contact: https://originary.xyz/company/contact.html
+Contact: https://www.originary.xyz/company/contact.html
 Expires: 2026-07-24T23:59:59.000Z
-Encryption: https://originary.xyz/.well-known/pgp-key.txt
-Acknowledgments: https://originary.xyz/security/hall-of-fame.html
+Encryption: https://www.originary.xyz/.well-known/pgp-key.txt
+Acknowledgments: https://www.originary.xyz/security/hall-of-fame.html
 Preferred-Languages: en
-Canonical: https://originary.xyz/.well-known/security.txt
-Policy: https://originary.xyz/security/vulnerability-disclosure.html
+Canonical: https://www.originary.xyz/.well-known/security.txt
+Policy: https://www.originary.xyz/security/vulnerability-disclosure.html
 
 # Security Contact Information for Originary
 #

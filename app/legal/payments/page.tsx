@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Payment terms and billing policies for Originary services.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/legal/payments',
+    canonical: 'https://www.originary.xyz/legal/payments',
   },
 }
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Shipping and Delivery Policy for Originary digital services operated by Curious Explorations Private Limited.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/shipping',
+    canonical: 'https://www.originary.xyz/shipping',
   },
 }
 
@@ -18,7 +18,7 @@ export default function ShippingPage() {
     "@type": "WebPage",
     "name": "Shipping & Delivery Policy",
     "description": "Shipping and Delivery Policy for Originary digital services",
-    "url": "https://originary.xyz/shipping",
+    "url": "https://www.originary.xyz/shipping",
     "publisher": {
       "@type": "Organization",
       "name": "Curious Explorations Private Limited",

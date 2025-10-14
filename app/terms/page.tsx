@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Terms of Service for Originary - commercial tools implementing receipts for the agentic web.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/terms',
+    canonical: 'https://www.originary.xyz/terms',
   },
 }
 
@@ -18,12 +18,12 @@ const webPageJsonLd = {
   '@type': 'WebPage',
   name: 'Terms of Service',
   description: 'Terms of Service for Originary - commercial tools implementing receipts for the agentic web.',
-  url: 'https://originary.xyz/terms',
+  url: 'https://www.originary.xyz/terms',
   dateModified: '2025-07-27',
   publisher: {
     '@type': 'Organization',
     name: 'Originary',
-    url: 'https://originary.xyz'
+    url: 'https://www.originary.xyz'
   }
 }
 

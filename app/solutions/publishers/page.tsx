@@ -11,21 +11,21 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Protect and monetize content - Publishers : Originary',
     description: 'Set preferences for AI training and usage. Verify compliance with attribution requirements. Monetize content access through automated licensing and payment.',
-    url: 'https://originary.xyz/solutions/publishers',
-    images: ['https://originary.xyz/og.jpg'],
+    url: 'https://www.originary.xyz/solutions/publishers',
+    images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Protect and monetize content - Publishers : Originary',
     description: 'Set preferences for AI training and usage. Verify compliance with attribution requirements. Monetize content access through automated licensing and payment.',
-    images: ['https://originary.xyz/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/solutions/publishers',
+    canonical: 'https://www.originary.xyz/solutions/publishers',
   },
 }
 

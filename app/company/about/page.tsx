@@ -13,21 +13,21 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'About : Originary',
     description: 'Originary provides orchestration infrastructure for the agentic web, enabling autonomous agents to discover policies, negotiate terms, and complete transactions safely.',
-    url: 'https://originary.xyz/company/about',
-    images: ['https://originary.xyz/og.jpg'],
+    url: 'https://www.originary.xyz/company/about',
+    images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About : Originary',
     description: 'Originary provides orchestration infrastructure for the agentic web, enabling autonomous agents to discover policies, negotiate terms, and complete transactions safely.',
-    images: ['https://originary.xyz/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/company/about',
+    canonical: 'https://www.originary.xyz/company/about',
   },
 }
 

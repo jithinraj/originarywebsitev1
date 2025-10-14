@@ -13,21 +13,21 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Adapters : Originary',
     description: 'Enterprise adapters for AIPREF, HTTP 402/x402, MCP/A2A, robots.txt/llms.txt, and C2PA. Production-ready integrations for policy enforcement and standards compliance in agentic systems.',
-    url: 'https://originary.xyz/products/adapters',
-    images: ['https://originary.xyz/og.jpg'],
+    url: 'https://www.originary.xyz/products/adapters',
+    images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Adapters : Originary',
     description: 'Enterprise adapters for AIPREF, HTTP 402/x402, MCP/A2A, robots.txt/llms.txt, and C2PA. Production-ready integrations for policy enforcement and standards compliance in agentic systems.',
-    images: ['https://originary.xyz/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/products/adapters',
+    canonical: 'https://www.originary.xyz/products/adapters',
   },
 }
 

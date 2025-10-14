@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Transparent Pricing for Every Scale : Originary',
     description: 'From startups building their first agent to Fortune 500 companies running millions of autonomous transactions. Originary receipts with transparent pricing.',
-    url: 'https://originary.xyz/pricing',
+    url: 'https://www.originary.xyz/pricing',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     images: ['/og.jpg']
   },
   alternates: {
-    canonical: 'https://originary.xyz/pricing'
+    canonical: 'https://www.originary.xyz/pricing'
   }
 }
 

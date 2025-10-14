@@ -1,4 +1,4 @@
 Contact: mailto:security@originary.xyz
-Policy: https://originary.xyz/security
+Policy: https://www.originary.xyz/security
 Preferred-Languages: en
 Expires: 2026-07-27T23:59:59Z

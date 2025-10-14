@@ -13,21 +13,21 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'PEAC Protocol : Originary',
     description: 'PEAC is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS) as auditable proof of use.',
-    url: 'https://originary.xyz/products/peac',
-    images: ['https://originary.xyz/og.jpg'],
+    url: 'https://www.originary.xyz/products/peac',
+    images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'PEAC Protocol : Originary',
     description: 'PEAC is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS) as auditable proof of use.',
-    images: ['https://originary.xyz/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/products/peac',
+    canonical: 'https://www.originary.xyz/products/peac',
   },
 }
 
@@ -252,7 +252,7 @@ export default function PEACProtocol() {
                   overflow: 'hidden'
                 }}>
                   <code style={{ color: 'var(--gray-300)' }}>
-{`preferences: https://originary.xyz/.well-known/aipref.json
+{`preferences: https://www.originary.xyz/.well-known/aipref.json
 access_control: http-402
 payments: x402, stripe
 provenance: c2pa

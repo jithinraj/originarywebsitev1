@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Originary terms of service governing your use of our platform and services.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/legal/terms',
+    canonical: 'https://www.originary.xyz/legal/terms',
   },
 }
 
@@ -131,7 +131,7 @@ export default function Terms() {
               <h2>5. Payment Terms</h2>
 
               <h3>Pricing and Billing</h3>
-              <p>Our pricing is available at <a href="/pricing">https://originary.xyz/pricing</a>. You agree to:</p>
+              <p>Our pricing is available at <a href="/pricing">https://www.originary.xyz/pricing</a>. You agree to:</p>
               <ul>
                 <li>Pay all fees according to your selected plan</li>
                 <li>Provide valid payment information</li>

@@ -88,7 +88,7 @@ const discoverPages = () => {
 
 // Generate sitemap XML
 const generateSitemap = () => {
-  const baseUrl = 'https://originary.xyz';
+  const baseUrl = 'https://www.originary.xyz';
   const currentDate = getCurrentDate();
   const discoveredPages = discoverPages();
 

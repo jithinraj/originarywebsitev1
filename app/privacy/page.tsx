@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Privacy Policy for Originary - minimal, consent-first data collection for receipts tooling.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/privacy',
+    canonical: 'https://www.originary.xyz/privacy',
   },
 }
 
@@ -17,7 +17,7 @@ const webPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Privacy Policy',
-  url: 'https://originary.xyz/privacy',
+  url: 'https://www.originary.xyz/privacy',
   dateModified: '2025-07-27'
 }
 

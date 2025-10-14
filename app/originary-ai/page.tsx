@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Originary AI - Receipts for the Agentic Web',
     description: 'Originary delivers verifiable Receipts for AI agents and APIs. Publish peac.txt, settle via x402 or Stripe/fiat/stablecoin, and prove access, consent, attribution, privacy & payment on every request.',
-    url: 'https://originary.xyz/originary-ai',
+    url: 'https://www.originary.xyz/originary-ai',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     creator: '@originaryinc'
   },
   alternates: {
-    canonical: 'https://originary.xyz/originary-ai'
+    canonical: 'https://www.originary.xyz/originary-ai'
   }
 }
 

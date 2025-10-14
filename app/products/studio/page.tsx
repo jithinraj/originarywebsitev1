@@ -13,21 +13,21 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Studio : Originary',
     description: 'Enterprise dashboard for managing PEAC policies, signing keys, receipt verification, attribution rules, and compliance reporting. Centralized control for agentic web orchestration.',
-    url: 'https://originary.xyz/products/studio',
-    images: ['https://originary.xyz/og.jpg'],
+    url: 'https://www.originary.xyz/products/studio',
+    images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Studio : Originary',
     description: 'Enterprise dashboard for managing PEAC policies, signing keys, receipt verification, attribution rules, and compliance reporting. Centralized control for agentic web orchestration.',
-    images: ['https://originary.xyz/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/products/studio',
+    canonical: 'https://www.originary.xyz/products/studio',
   },
 }
 

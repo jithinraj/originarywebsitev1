@@ -13,21 +13,21 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Developers : Originary',
     description: 'Developer tools and CLI for integrating PEAC receipts. Policy generators, validators, and edge verification examples.',
-    url: 'https://originary.xyz/developers',
-    images: ['https://originary.xyz/og.jpg'],
+    url: 'https://www.originary.xyz/developers',
+    images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Developers : Originary',
     description: 'Developer tools and CLI for integrating PEAC receipts. Policy generators, validators, and edge verification examples.',
-    images: ['https://originary.xyz/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://originary.xyz/developers',
+    canonical: 'https://www.originary.xyz/developers',
   },
 }
 
@@ -186,7 +186,7 @@ curl https://yourdomain.com/.well-known/peac.txt`}
                 title="Test with CLI (1 min)"
                 description="Validate your policy and generate test receipts"
                 code={`# Download CLI (one-time)
-curl -O https://originary.xyz/cli/originary-linux-x64
+curl -O https://www.originary.xyz/cli/originary-linux-x64
 chmod +x originary-linux-x64
 
 # Validate your policy

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'A2A Attach Points',
     description: 'Embed PEAC-Receipts in Agent2Agent protocol messages.',
-    url: 'https://originary.xyz/docs/a2a/attach-points',
+    url: 'https://www.originary.xyz/docs/a2a/attach-points',
     siteName: 'Originary',
     type: 'website'
   }
