@@ -77,12 +77,12 @@ const pricingTiers = [
     description: 'For large-scale deployments with custom requirements',
     features: [
       'Everything in Professional, plus:',
-      'Unlimited API calls',
-      'Unlimited receipt verifications',
+      'High-volume API access',
+      'Bulk receipt verifications',
       'Multi-region deployments',
       'On-premises & hybrid cloud options',
       '24/7 dedicated support team',
-      'Unlimited Studio seats',
+      'Multiple Studio seats',
       'Custom protocol integrations',
       'Advanced security & compliance',
       'Custom SLA terms (up to 99.99%)',
@@ -96,9 +96,9 @@ const pricingTiers = [
 ]
 
 const comparisonFeatures = [
-  { name: 'API Calls per month', developer: '1,000', professional: '100,000', enterprise: 'Unlimited' },
-  { name: 'Receipt Verifications', developer: '100', professional: '10,000', enterprise: 'Unlimited' },
-  { name: 'Studio Seats', developer: '-', professional: '5', enterprise: 'Unlimited' },
+  { name: 'API Calls per month', developer: '1,000', professional: '100,000', enterprise: 'Custom quota' },
+  { name: 'Receipt Verifications', developer: '100', professional: '10,000', enterprise: 'Custom quota' },
+  { name: 'Studio Seats', developer: '-', professional: '5', enterprise: 'Custom' },
   { name: 'Support Response Time', developer: 'Community', professional: '< 4 hours', enterprise: '< 1 hour' },
   { name: 'Uptime SLA', developer: '99%', professional: '99.9%', enterprise: '99.99%' },
   { name: 'Custom Integrations', developer: '-', professional: 'Limited', enterprise: 'Full' },
@@ -120,14 +120,14 @@ const enterpriseFeatures = [
   },
   {
     icon: BarChart,
-    title: 'Guaranteed Performance',
-    description: 'Industry-leading SLAs with automatic failover, global edge deployment, and performance guarantees.',
+    title: 'Performance Monitoring',
+    description: 'Service level agreements with automatic failover, edge deployment, and performance monitoring.',
     metrics: ['High availability', 'Low latency']
   },
   {
     icon: Globe,
     title: 'Future-Proof Platform',
-    description: 'Automatic protocol updates, backwards compatibility, and seamless integration with emerging agentic standards.',
+    description: 'Automatic protocol updates, backwards compatibility, and integration with agent standards.',
     metrics: ['Zero Downtime Updates', 'Full Compatibility']
   }
 ]
@@ -237,8 +237,8 @@ export default function PricingPage() {
             <span className="kicker">PRICING</span>
             <h1 className="display">Scale with confidence</h1>
             <p className="sub max-w-4xl mx-auto">
-              Transparent, usage-based pricing designed for enterprises processing billions of agent transactions.
-              Start free, scale infinitely, with dedicated support at every tier.
+              Clear pricing for PEAC protocol implementation and receipt verification.
+              Simple tiers with transparent costs and dedicated support.
             </p>
 
             <div className="hero-metrics grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -486,7 +486,7 @@ export default function PricingPage() {
             <div className="cta-content">
               <div className="cta-main">
                 <h2>Ready to scale your agentic infrastructure?</h2>
-                <p>Join 500+ enterprises processing billions of agent transactions monthly with guaranteed performance, security, and support.</p>
+                <p>Get enterprise-grade infrastructure with dedicated performance monitoring, security, and support.</p>
                 <div className="cta-stats">
                   <div className="stat">
                     <span className="stat-value">

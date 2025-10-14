@@ -8,17 +8,6 @@ import { useEffect } from 'react'
 
 export default function Pricing() {
   useEffect(() => {
-    // Load Razorpay script dynamically
-    const script = document.createElement('script');
-    script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
-    script.setAttribute('data-payment_button_id', 'pl_RK5T4IykFzu0rh');
-    script.async = true;
-
-    const form = document.getElementById('razorpay-form');
-    if (form) {
-      form.appendChild(script);
-    }
-
     // Add Service JSON-LD
     const jsonLd = {
       "@context": "https://schema.org",
@@ -30,7 +19,7 @@ export default function Pricing() {
         "@type": "Offer",
         "price": "1",
         "priceCurrency": "USD",
-        "name": "Developer activation",
+        "name": "Start Plan",
         "availability": "https://schema.org/InStock"
       }
     };
@@ -46,9 +35,9 @@ export default function Pricing() {
       "@type": "OfferCatalog",
       "name": "Originary Plans",
       "itemListElement": [
-        {"@type": "Offer", "name": "Developer", "price": "1", "priceCurrency": "USD", "description": "One-time activation"},
-        {"@type": "Offer", "name": "Professional", "price": "2500", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "2500", "priceCurrency": "USD", "unitText": "MONTH"}},
-        {"@type": "Offer", "name": "Enterprise", "description": "Custom pricing"}
+        {"@type": "Offer", "name": "Start", "price": "1", "priceCurrency": "USD", "description": "30-day developer intro", "availability": "https://schema.org/InStock"},
+        {"@type": "Offer", "name": "Pro", "price": "99", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "99", "priceCurrency": "USD", "unitText": "MONTH"}},
+        {"@type": "Offer", "name": "Enterprise", "price": "2500", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "2500", "priceCurrency": "USD", "unitText": "MONTH"}}
       ],
       "provider": {"@type": "Organization", "name": "Originary"}
     };
@@ -92,75 +81,78 @@ export default function Pricing() {
             <div className="grid grid-3" style={{ gap: 'var(--space-8)', marginBottom: 'var(--space-20)' }}>
               <div className="card" style={{ position: 'relative' }}>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
-                  <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-2)' }}>Developer</h3>
-                  <p style={{ color: 'var(--gray-600)' }}>Activate your developer account</p>
+                  <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-2)' }}>Start</h3>
+                  <p style={{ color: 'var(--gray-600)' }}>Developer intro</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
-                    $1<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}> one-time activation</span>
+                    $1<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}> one-time, 30 days</span>
                   </div>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Includes <code style={{ backgroundColor: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac.txt</code> generator, validator, and edge header snippets</p>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Sandbox access with real verification tools</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['Protocol-compatible tools', 'Policy generator & validator', 'Headers & edge snippets', 'Developer docs', 'Email support'].map((feature) => (
+                  {['1 domain (sandbox) + live Verify API', '100 receipt verifications + sample JWS', '/.well-known/peac.txt validator', 'Gateway 402 demo (x402/Stripe)', 'Email support (48h)'].map((feature) => (
                     <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
                       <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
-                      <span>{feature}</span>
+                      <span style={{ fontSize: 'var(--text-sm)' }}>{feature}</span>
                     </div>
                   ))}
                 </div>
                 <div style={{ width: '100%' }}>
-                  <form id="razorpay-form" style={{ marginBottom: 'var(--space-2)' }} aria-label="Buy Developer activation for $1">
-                  </form>
+                  <Link href="/checkout/start" className="btn btn-primary" style={{ width: '100%', marginBottom: 'var(--space-2)' }}>
+                    Start for $1
+                  </Link>
                   <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center' }}>
-                    By purchasing you agree to our <Link href="/legal/terms" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Terms</Link> and <Link href="/legal/privacy" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Privacy Policy</Link>
+                    Immediate delivery. USD billing. Renews to Free.
                   </p>
                 </div>
               </div>
 
               <div className="card" style={{ position: 'relative' }}>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
-                  <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-2)' }}>Professional</h3>
-                  <p style={{ color: 'var(--gray-600)' }}>For growing teams and production deployments</p>
+                  <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-2)' }}>Pro</h3>
+                  <p style={{ color: 'var(--gray-600)' }}>For production deployments</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
-                    $2,500<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>/month</span>
+                    $99<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>/month</span>
                   </div>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Up to 1M agent transactions/month</p>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Includes <code style={{ backgroundColor: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac.txt</code> generator, validator, and edge header snippets</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['Everything in Developer', 'Settlement gateway (402) access', 'Dashboard', 'Priority support', 'SLA available', 'Analytics'].map((feature) => (
+                  {['Protocol-compatible tools', 'Policy generator & validator', 'Headers & edge snippets', 'Settlement gateway (402) access', 'Dashboard', 'Priority support', 'Developer docs', 'Email support'].map((feature) => (
                     <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
                       <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
-                      <span>{feature}</span>
+                      <span style={{ fontSize: 'var(--text-sm)' }}>{feature}</span>
                     </div>
                   ))}
                 </div>
-                <Link href="/company/contact" className="btn btn-primary" style={{ width: '100%', marginBottom: 'var(--space-2)' }}>
-                  Contact sales
-                </Link>
-                <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center' }}>
-                  By purchasing you agree to our <Link href="/legal/terms" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Terms</Link> and <Link href="/legal/privacy" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Privacy Policy</Link>
-                </p>
+                <div style={{ width: '100%' }}>
+                  <Link href="/company/contact" className="btn btn-primary" style={{ width: '100%', marginBottom: 'var(--space-2)' }}>
+                    Contact sales
+                  </Link>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center' }}>
+                    By purchasing you agree to our <Link href="/legal/terms" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Terms</Link> and <Link href="/legal/privacy" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Privacy Policy</Link>
+                  </p>
+                </div>
               </div>
 
               <div className="card">
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-2)' }}>Enterprise</h3>
-                  <p style={{ color: 'var(--gray-600)' }}>High-volume and regulated workloads</p>
+                  <p style={{ color: 'var(--gray-600)' }}>For growing teams and high-volume workloads</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
-                    Custom
+                    Starting from $2,500<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>/month</span>
                   </div>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>High-volume and regulated workloads</p>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Up to 1M agent transactions/month</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['Everything in Professional', 'Adapter support', 'Team seats', 'Dedicated support engineer', 'Custom integrations', 'On-premises deployment'].map((feature) => (
+                  {['Everything in Pro', 'Adapter support', 'Team seats', 'SLA available', 'Analytics', 'Dedicated support engineer', 'Custom integrations', 'On-premises deployment'].map((feature) => (
                     <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
                       <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
-                      <span>{feature}</span>
+                      <span style={{ fontSize: 'var(--text-sm)' }}>{feature}</span>
                     </div>
                   ))}
                 </div>

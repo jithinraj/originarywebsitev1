@@ -152,7 +152,7 @@ export default function ProductsPage() {
                 description="HTTP 402 payment gateway that transforms any API endpoint into a monetized resource. Handles micropayments, usage tracking, and receipt generation automatically."
                 features={[
                   'Instant micropayment processing',
-                  '40+ currencies supported',
+                  'Multiple currency support',
                   'Usage-based billing',
                   'Automatic receipt generation',
                   'Enterprise billing integration'

@@ -222,7 +222,7 @@ export default function OriginaryAI() {
                   gap: 'var(--space-6)',
                   opacity: 0.8
                 }}>
-                  {['MCP', 'A2A', 'x402', 'Stripe', 'Circle', 'Cloudflare', 'Vercel'].map((tech) => (
+                  {['MCP', 'A2A', 'x402', 'Stripe', 'Cloudflare', 'Vercel'].map((tech) => (
                     <span key={tech} style={{
                       fontSize: 'var(--text-sm)',
                       fontWeight: 500,

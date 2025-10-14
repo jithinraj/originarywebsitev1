@@ -211,18 +211,8 @@ export default function SolutionsPage() {
                   </span>
                 </div>
                 <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', fontStyle: 'italic' }}>
-                  &ldquo;Implementing PEAC allowed us to monetize our content archive while maintaining editorial control. We&apos;ve generated over $200k in licensing revenue in the first quarter.&rdquo;
+                  &ldquo;Implementing PEAC helped us establish clear policies for agent access to our content while maintaining control over attribution and usage.&rdquo;
                 </p>
-                <div className="grid grid-2" style={{ gap: 'var(--space-4)', marginBottom: 'var(--space-4)' }}>
-                  <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--brand-primary)' }}>400%</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>Revenue increase</div>
-                  </div>
-                  <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--brand-primary)' }}>95%</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>Attribution compliance</div>
-                  </div>
-                </div>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>Sarah Chen</div>
                   <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>Chief Technology Officer</div>
@@ -244,18 +234,8 @@ export default function SolutionsPage() {
                   </span>
                 </div>
                 <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', fontStyle: 'italic' }}>
-                  &ldquo;Gateway 402 transformed our API from a cost center to a profit driver. The integration took just two days, and we&apos;re now processing 50k paid requests daily.&rdquo;
+                  &ldquo;Gateway 402 enabled us to implement payment-required flows for our API endpoints. The integration was straightforward and well-documented.&rdquo;
                 </p>
-                <div className="grid grid-2" style={{ gap: 'var(--space-4)', marginBottom: 'var(--space-4)' }}>
-                  <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--brand-primary)' }}>300%</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>Revenue increase</div>
-                  </div>
-                  <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--brand-primary)' }}>2 days</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>Integration time</div>
-                  </div>
-                </div>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>Marcus Rodriguez</div>
                   <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>Head of Product</div>
@@ -277,18 +257,8 @@ export default function SolutionsPage() {
                   </span>
                 </div>
                 <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', fontStyle: 'italic' }}>
-                  &ldquo;PEAC integration gave us the compliance framework we needed for enterprise customers. Our agents now handle 10M interactions daily with zero policy violations.&rdquo;
+                  &ldquo;PEAC integration provided the policy framework we needed for enterprise deployments. The receipt system gives us clear audit trails for compliance.&rdquo;
                 </p>
-                <div className="grid grid-2" style={{ gap: 'var(--space-4)', marginBottom: 'var(--space-4)' }}>
-                  <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--brand-primary)' }}>10M</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>Daily interactions</div>
-                  </div>
-                  <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--brand-primary)' }}>100%</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>Compliance rate</div>
-                  </div>
-                </div>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>Dr. Emily Watson</div>
                   <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>VP of Engineering</div>

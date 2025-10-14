@@ -95,6 +95,26 @@ export default function Developers() {
                   Quick Start Guide
                 </Link>
               </div>
+
+              <p style={{
+                textAlign: 'center',
+                marginTop: 'var(--space-4)',
+                fontSize: 'var(--text-sm)',
+                color: 'var(--gray-600)'
+              }}>
+                Or try our{' '}
+                <Link
+                  href="/checkout/start"
+                  style={{
+                    color: 'var(--brand-primary)',
+                    textDecoration: 'underline',
+                    fontWeight: 600
+                  }}
+                >
+                  $1 Start Plan
+                </Link>
+                {' '}for 30-day sandbox access
+              </p>
             </div>
           </div>
         </section>
@@ -108,7 +128,25 @@ export default function Developers() {
                 marginBottom: 'var(--space-16)'
               }}
             >
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Quick start</h2>
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 'var(--space-2)',
+                  background: 'rgba(99, 91, 255, 0.1)',
+                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  borderRadius: 'var(--radius-full)',
+                  padding: 'var(--space-2) var(--space-4)',
+                  marginBottom: 'var(--space-4)',
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 500,
+                  color: 'var(--brand-primary)'
+                }}
+              >
+                <Sparkles size={16} />
+                <span>5-Minute Quickstart</span>
+              </div>
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>Deploy your first policy in 5 minutes</h2>
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
@@ -118,57 +156,73 @@ export default function Developers() {
                   lineHeight: 1.7
                 }}
               >
-                Get up and running with PEAC in minutes
+                Three simple steps to start accepting agent traffic with verifiable receipts
               </p>
             </div>
 
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
               <QuickStartCard
                 step="1"
-                title="Create policy file"
-                description="Add a peac.txt file to your /.well-known/ directory"
-                code={`preferences: https://originary.xyz/.well-known/aipref.json
-access_control: http-402
-payments: x402, stripe
-provenance: c2pa
-receipts: required
-verify: https://api.originary.xyz/verify
-public_keys:
-  kid=2025-09-key1; alg=Ed25519; key=...   # base64url`}
+                title="Create policy file (2 min)"
+                description="Deploy your Originary policy to /.well-known/peac.txt"
+                code={`# Step 1: Create the file
+echo 'version: 1.0
+access: conditional
+attribution: required
+pricing:
+  model: per-request
+  amount: 0.001
+  currency: USD
+settlement: x402' > peac.txt
+
+# Step 2: Deploy to your domain
+scp peac.txt user@yourdomain.com:/var/www/.well-known/
+
+# Step 3: Verify it's live
+curl https://yourdomain.com/.well-known/peac.txt`}
               />
               <QuickStartCard
                 step="2"
-                title="Install Originary CLI"
-                description="Verify policies with our first-party CLI tool"
-                code={`# macOS/Linux (example)
-./originary --verify /path/to/.well-known/peac.txt
+                title="Test with CLI (1 min)"
+                description="Validate your policy and generate test receipts"
+                code={`# Download CLI (one-time)
+curl -O https://originary.xyz/cli/originary-linux-x64
+chmod +x originary-linux-x64
 
-# Windows (example)
-originary.exe --verify C:\\site\\.well-known\\peac.txt
+# Validate your policy
+./originary-linux-x64 validate https://yourdomain.com
 
-# Download from /downloads with checksums`}
+# Generate a test receipt
+./originary-linux-x64 receipt \\
+  --domain yourdomain.com \\
+  --amount 0.001
+
+✓ Policy valid
+✓ Receipt generated: eyJfdHlwZSI6IlBFQUNS...`}
               />
               <QuickStartCard
                 step="3"
-                title="Send receipts with requests"
-                description="Include PEAC receipts in your HTTP requests"
-                code={`# cURL example
-curl -sS https://publisher.example/api \\
-  -H "PEAC-Receipt: eyJfdHlwZSI6IlBFQUNSZWNlaXB0Iiwi..." \\
-  -H "User-Agent: Originary-AI/1.0"
+                title="Accept traffic (2 min)"
+                description="Start processing agent requests with receipts"
+                code={`// Add to your edge/middleware (Cloudflare example)
+export default {
+  async fetch(request) {
+    const receipt = request.headers.get('PEAC-Receipt');
 
-# Node.js/fetch example
-await fetch("https://publisher.example/api", {
-  headers: {
-    "PEAC-Receipt": receiptToken,
-    "User-Agent": "Originary-AI/1.0"
+    if (!receipt) {
+      return new Response('Payment Required', {
+        status: 402,
+        headers: { 'PEAC-Policy': '/.well-known/peac.txt' }
+      });
+    }
+
+    // Verify receipt (cached for performance)
+    const valid = await verifyReceipt(receipt);
+    if (!valid) return new Response('Invalid', { status: 403 });
+
+    // Process the request
+    return fetch(request);
   }
-});
-
-# Edge verification example
-if (request.headers.get('peac-receipt')) {
-  const isValid = await verifyReceipt(receipt);
-  if (isValid) return fetch(request);
 }`}
               />
             </div>

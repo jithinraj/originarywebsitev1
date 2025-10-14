@@ -199,7 +199,7 @@ export default function Contact() {
                     Enterprise Priority Support
                   </h4>
                   <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', lineHeight: 1.7 }}>
-                    Enterprise customers get dedicated support channels with guaranteed response times
+                    Enterprise customers get dedicated support channels with priority response times
                     and direct access to our engineering team.
                   </p>
                 </div>
@@ -231,26 +231,21 @@ export default function Contact() {
               </p>
             </div>
 
-            <div className="grid grid-auto" style={{ gap: 'var(--space-8)' }}>
+            <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
               <SupportFeature
                 icon={<Clock size={32} style={{ color: 'var(--brand-primary)' }} />}
                 title="Fast Response Times"
-                description="Get answers when you need them with our commitment to quick response times across all channels."
+                description="Get answers when you need them. Start plan users get community support, Pro tier gets responses within 4 hours, Enterprise within 1 hour."
               />
               <SupportFeature
                 icon={<Users size={32} style={{ color: 'var(--brand-secondary)' }} />}
                 title="Expert Team"
-                description="Our support team includes protocol engineers, solution architects, and customer success specialists."
+                description="Our support team includes engineers who built the protocol, solution architects, and dedicated customer success specialists."
               />
               <SupportFeature
                 icon={<Globe size={32} style={{ color: 'var(--brand-accent)' }} />}
                 title="Global Coverage"
-                description="With team members across multiple time zones, we provide comprehensive global support coverage."
-              />
-              <SupportFeature
-                icon={<Shield size={32} style={{ color: 'var(--brand-primary)' }} />}
-                title="Secure Communications"
-                description="All support communications are encrypted and handled with enterprise-grade security protocols."
+                description="Team members across US, Europe, and Asia time zones provide round-the-clock support coverage for enterprise customers."
               />
             </div>
           </div>

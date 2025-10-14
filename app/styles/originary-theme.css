@@ -131,22 +131,31 @@
 
 /* Skip navigation */
 .skip-nav {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
+
+.skip-nav:focus,
+.skip-nav:active {
   position: fixed;
-  top: -40px;
+  top: 6px;
   left: 6px;
-  background: var(--primary);
+  width: auto;
+  height: auto;
+  overflow: visible;
+  z-index: 10000;
+  background: var(--brand-primary, #635bff);
   color: white;
   padding: 8px 16px;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
-  z-index: 1000;
-  transition: top 0.3s;
-}
-
-.skip-nav:focus {
-  top: 6px;
-  outline: 2px solid var(--primary-light);
+  outline: 2px solid rgba(99, 91, 255, 0.3);
   outline-offset: 2px;
 }
 

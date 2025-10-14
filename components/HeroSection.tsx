@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { ArrowRight, Play, Sparkles, Zap, Shield } from 'lucide-react'
+import { ArrowRight, Play, Sparkles } from 'lucide-react'
 
 function SlidingText({
   words,
@@ -138,8 +138,10 @@ export default function HeroSection() {
             }}
           >
             {/* Announcement Badge */}
-            <div
+            <Link
+              href="/docs/receipts"
               className="announcement"
+              aria-label="Learn about PEAC-Receipt (open standard)"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -156,7 +158,8 @@ export default function HeroSection() {
                 transition: 'all var(--duration-200) var(--ease-out)',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(10px)',
-                transitionDelay: '0.2s'
+                transitionDelay: '0.2s',
+                textDecoration: 'none'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(99, 91, 255, 0.15)'
@@ -169,8 +172,15 @@ export default function HeroSection() {
             >
               <Sparkles size={16} />
               <span>Introducing Receipts for the Agentic Web</span>
+              <span style={{
+                fontSize: 'var(--text-xs)',
+                opacity: 0.7,
+                marginLeft: 'var(--space-1)',
+                marginRight: 'var(--space-1)'
+              }}>•</span>
+              <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600 }}>Open standard</span>
               <ArrowRight size={14} />
-            </div>
+            </Link>
 
             {/* Main Headline */}
             <h1
@@ -185,7 +195,7 @@ export default function HeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s'
               }}
             >
-              <span className="text-gradient">Receipts</span> for the Agentic Web
+              Every agent call. <span className="text-gradient">One verifiable receipt.</span>
             </h1>
 
             {/* Subtitle */}
@@ -194,14 +204,30 @@ export default function HeroSection() {
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
                 color: 'var(--gray-600)',
-                marginBottom: 'var(--space-8)',
+                marginBottom: 'var(--space-4)',
                 maxWidth: '90%',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              Publish `peac.txt` to declare <strong style={{ color: 'var(--gray-800)' }}>policies for access, attribution, consent, privacy, and pricing</strong>. Agents settle via <strong style={{ color: 'var(--gray-800)' }}>x402</strong> or Stripe/credits/fiat/stablecoin/on-chain via adapters and present a <strong style={{ color: 'var(--gray-800)' }}>Receipt</strong> on every request - your auditable proof of compliance.
+              Originary adds <strong style={{ color: 'var(--gray-800)' }}>policy discovery</strong>, <strong style={{ color: 'var(--gray-800)' }}>HTTP 402 payments</strong>, and a <strong style={{ color: 'var(--gray-800)' }}>PEAC-Receipt</strong> to every response-so access, settlement, and compliance are provable by design. Go live in 5 minutes.
+            </p>
+
+            {/* Microproof line */}
+            <p
+              style={{
+                fontSize: 'var(--text-sm)',
+                lineHeight: 1.6,
+                color: 'var(--gray-500)',
+                marginBottom: 'var(--space-8)',
+                maxWidth: '90%',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.25s'
+              }}
+            >
+              Works with <strong>x402</strong>, <strong>Stripe</strong>, <strong>AIPREF</strong>. Edge-friendly. No SDK lock-in.
             </p>
 
             {/* CTA Buttons */}
@@ -217,34 +243,62 @@ export default function HeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s'
               }}
             >
-              <Link
-                href="/company/contact"
-                className="btn btn-primary btn-lg"
-                style={{
-                  position: 'relative',
-                  overflow: 'hidden'
-                }}
-              >
-                <span style={{ position: 'relative', zIndex: 2 }}>Start building</span>
-                <ArrowRight size={18} style={{ position: 'relative', zIndex: 2 }} />
-                <div
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                <Link
+                  href="/checkout/start"
+                  className="btn btn-primary btn-lg"
+                  data-analytics-id="hero_cta_start_1usd_clicked"
                   style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: '-100%',
-                    width: '100%',
-                    height: '100%',
-                    background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
-                    transition: 'left 0.6s ease',
-                    zIndex: 1
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}
-                  className="shine-effect"
-                />
-              </Link>
+                >
+                  <span style={{ position: 'relative', zIndex: 2 }}>Start for $1</span>
+                  <ArrowRight size={18} style={{ position: 'relative', zIndex: 2 }} />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: '-100%',
+                      width: '100%',
+                      height: '100%',
+                      background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
+                      transition: 'left 0.6s ease',
+                      zIndex: 1
+                    }}
+                    className="shine-effect"
+                  />
+                </Link>
+                <p style={{
+                  fontSize: 'var(--text-xs)',
+                  color: 'var(--gray-500)',
+                  marginTop: 'var(--space-1)',
+                  textAlign: 'center'
+                }}>
+                  30-day developer access. No auto-renew.
+                </p>
+              </div>
 
               <Link
-                href="/demo"
+                href="#demo"
                 className="btn btn-ghost"
+                data-analytics-id="hero_cta_demo_30s_clicked"
+                onClick={(e) => {
+                  if (window.innerWidth >= 768) {
+                    e.preventDefault()
+                    // Desktop: would open modal (to be implemented)
+                    const demoSection = document.getElementById('demo')
+                    if (demoSection) {
+                      demoSection.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  } else {
+                    e.preventDefault()
+                    const demoSection = document.getElementById('demo')
+                    if (demoSection) {
+                      demoSection.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  }
+                }}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -268,53 +322,8 @@ export default function HeroSection() {
                 >
                   <Play size={16} style={{ marginLeft: '2px' }} />
                 </div>
-                <span>Watch demo</span>
+                <span>See a receipt in 30s</span>
               </Link>
-            </div>
-
-            {/* Trust Indicators */}
-            <div
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s'
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 'var(--text-xs)',
-                  color: 'var(--gray-500)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.1em',
-                  fontWeight: 600,
-                  marginBottom: 'var(--space-3)'
-                }}
-              >
-                Works with
-              </p>
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 'var(--space-6)',
-                  opacity: 0.7
-                }}
-              >
-                {['MCP', 'A2A', 'x402', 'Stripe'].map((tech, index) => (
-                  <div
-                    key={tech}
-                    style={{
-                      fontSize: 'var(--text-sm)',
-                      fontWeight: 600,
-                      color: 'var(--gray-500)',
-                      opacity: isVisible ? 1 : 0,
-                      transition: `opacity 0.6s ease ${0.5 + index * 0.1}s`
-                    }}
-                  >
-                    {tech}
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
 
@@ -337,6 +346,17 @@ export default function HeroSection() {
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @keyframes pulse {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1.5);
+            opacity: 0.5;
+          }
         }
 
         .btn:hover .shine-effect {
@@ -362,12 +382,38 @@ export default function HeroSection() {
 
 function InteractiveReceiptDemo() {
   const [isHovered, setIsHovered] = useState(false)
+  const [currentStep, setCurrentStep] = useState(0)
+  const [hoveredStep, setHoveredStep] = useState<number | null>(null)
+  const [copied, setCopied] = useState(false)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentStep(prev => (prev + 1) % 4)
+    }, 2000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const steps = [
+    { label: 'Policy', icon: '📋', tooltip: 'Reads AIPREF / peac.txt' },
+    { label: 'Access', icon: '🔑', tooltip: 'Gates the request' },
+    { label: 'Payment', icon: '💳', tooltip: 'x402 / Stripe / L402' },
+    { label: 'Receipt', icon: '✅', tooltip: 'Signs PEAC-Receipt (Ed25519)' }
+  ]
+
+  const sampleToken = 'eyJhbGciOiJFZERTQSIsImtpZCI6IjIwMjUtMDktay4xIiwidHlwIjoiSldUIn0...'
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(sampleToken)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
 
   return (
     <div
       style={{
         position: 'relative',
-        maxWidth: '480px',
+        width: '100%',
+        maxWidth: '500px',
         margin: '0 auto'
       }}
     >
@@ -380,7 +426,7 @@ function InteractiveReceiptDemo() {
           borderRadius: 'var(--radius-2xl)',
           padding: 'var(--space-8)',
           boxShadow: isHovered ? 'var(--shadow-2xl)' : 'var(--shadow-xl)',
-          transform: isHovered ? 'translateY(-4px) rotate(1deg)' : 'translateY(0) rotate(0deg)',
+          transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
           transition: 'all var(--duration-500) var(--ease-out)',
           position: 'relative',
           overflow: 'hidden',
@@ -389,204 +435,228 @@ function InteractiveReceiptDemo() {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Animated background gradient */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            height: '4px',
-            background: 'var(--gradient-brand)',
-            transform: isHovered ? 'scaleX(1)' : 'scaleX(0)',
-            transformOrigin: 'left',
-            transition: 'transform var(--duration-500) var(--ease-out)'
-          }}
-        />
+        {/* Animated Flow Visualization */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: 'var(--space-8)',
+          position: 'relative'
+        }}>
+          {steps.map((step, index) => (
+            <div
+              key={step.label}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: 'var(--space-2)',
+                position: 'relative',
+                zIndex: 2
+              }}
+              onMouseEnter={() => setHoveredStep(index)}
+              onMouseLeave={() => setHoveredStep(null)}
+              onTouchStart={() => setHoveredStep(index)}
+            >
+              <div
+                style={{
+                  width: '60px',
+                  height: '60px',
+                  borderRadius: '50%',
+                  background: currentStep === index ? 'var(--gradient-brand)' : 'var(--gray-100)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '24px',
+                  transition: 'all 0.3s ease',
+                  transform: currentStep === index ? 'scale(1.1)' : 'scale(1)',
+                  boxShadow: currentStep === index ? 'var(--shadow-lg)' : 'none'
+                }}
+              >
+                {step.icon}
+              </div>
+              <span
+                style={{
+                  fontSize: 'var(--text-xs)',
+                  color: currentStep === index ? 'var(--brand-primary)' : 'var(--gray-500)',
+                  fontWeight: currentStep === index ? 600 : 400,
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                {step.label}
+              </span>
+              {/* Tooltip */}
+              {hoveredStep === index && (
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: '-60px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    background: 'var(--gray-900)',
+                    color: 'var(--white)',
+                    padding: 'var(--space-2) var(--space-3)',
+                    borderRadius: 'var(--radius-md)',
+                    fontSize: 'var(--text-xs)',
+                    whiteSpace: 'nowrap',
+                    zIndex: 10,
+                    boxShadow: 'var(--shadow-lg)',
+                    pointerEvents: 'none',
+                    minWidth: 'max-content'
+                  }}
+                >
+                  {step.tooltip}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '-4px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      width: 0,
+                      height: 0,
+                      borderLeft: '4px solid transparent',
+                      borderRight: '4px solid transparent',
+                      borderBottom: '4px solid var(--gray-900)'
+                    }}
+                  />
+                </div>
+              )}
+            </div>
+          ))}
 
-        {/* Receipt Header */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: 'var(--space-6)',
-            paddingBottom: 'var(--space-4)',
-            borderBottom: '1px solid var(--gray-100)'
-          }}
-        >
+          {/* Progress Line */}
           <div
             style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 'var(--space-2)'
+              position: 'absolute',
+              top: '30px',
+              left: '30px',
+              right: '30px',
+              height: '2px',
+              background: 'var(--gray-200)',
+              zIndex: 1
             }}
           >
             <div
               style={{
-                width: '8px',
-                height: '8px',
-                borderRadius: '50%',
-                background: 'var(--success)',
-                animation: 'pulse 2s infinite'
+                width: `${(currentStep / 3) * 100}%`,
+                height: '100%',
+                background: 'var(--gradient-brand)',
+                transition: 'width 0.5s ease'
               }}
             />
-            <span
-              style={{
-                fontSize: 'var(--text-xs)',
-                fontWeight: 600,
-                color: 'var(--success)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}
-            >
-              Live Receipt <span style={{
-                marginLeft: '8px',
-                padding: '2px 8px',
-                fontSize: '10px',
-                background: 'var(--gray-100)',
-                borderRadius: 'var(--radius-full)',
-                color: 'var(--gray-600)',
-                fontWeight: 'normal'
-              }}>Demo</span>
-            </span>
           </div>
-          <span
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: 'var(--text-xs)',
-              color: 'var(--gray-500)'
-            }}
-          >
-            #8f2c-45aa-9d1e
-          </span>
         </div>
 
-        {/* Receipt Content */}
-        <div style={{ marginBottom: 'var(--space-6)' }}>
-          <ReceiptRow label="Resource" value="/api/content/atlantic/17" mono />
-          <ReceiptRow label="Requester" value="atlas-agent/2.3.1" />
-          <ReceiptRow label="Policy" value="Active" />
-          <ReceiptRow label="Settlement:" value=" $0.0025 via x402 (primary)" />
-          <ReceiptRow
-            label="Status"
-            value={
-              <span style={{ color: 'var(--success)', fontWeight: 600 }}>
-                <Zap size={14} style={{ display: 'inline', marginRight: '4px' }} />
-                Receipt Ready
-              </span>
-            }
-          />
-        </div>
-
-        {/* Receipt Footer */}
+        {/* Receipt Details */}
         <div
           style={{
-            paddingTop: 'var(--space-4)',
-            borderTop: '1px solid var(--gray-100)',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center'
+            padding: 'var(--space-6)',
+            background: 'var(--gray-50)',
+            borderRadius: 'var(--radius-lg)',
+            fontFamily: 'var(--font-mono)',
+            fontSize: 'var(--text-sm)'
           }}
         >
-          <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-            Cryptographic Proof
-          </span>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-            <Shield size={16} style={{ color: 'var(--brand-primary)' }} />
-            <span
+          <div style={{ marginBottom: 'var(--space-3)', display: 'flex', alignItems: 'center', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
+            <span style={{ color: 'var(--gray-500)' }}>Header:</span>
+            <span style={{ color: 'var(--gray-900)', wordBreak: 'break-all', flex: 1 }}>PEAC-Receipt: {sampleToken.substring(0, 20)}...</span>
+            <button
+              onClick={handleCopy}
+              data-analytics-id="hero_copy_receipt_clicked"
+              aria-label="Copy PEAC-Receipt token"
               style={{
-                fontFamily: 'var(--font-mono)',
+                padding: 'var(--space-1) var(--space-3)',
+                background: 'var(--brand-primary)',
+                color: 'var(--white)',
+                border: 'none',
+                borderRadius: 'var(--radius-md)',
                 fontSize: 'var(--text-xs)',
-                color: 'var(--gray-500)'
+                cursor: 'pointer',
+                fontWeight: 600,
+                transition: 'all 0.2s'
               }}
             >
-              0x94cd...5a9b
+              {copied ? 'Copied!' : 'Copy'}
+            </button>
+          </div>
+          <div style={{ marginBottom: 'var(--space-3)' }}>
+            <span style={{ color: 'var(--gray-500)' }}>Resource:</span>
+            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--gray-900)' }}>/api/content</span>
+          </div>
+          <div style={{ marginBottom: 'var(--space-3)' }}>
+            <span style={{ color: 'var(--gray-500)' }}>Amount:</span>
+            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--gray-900)' }}>$1.00 USD</span>
+          </div>
+          <div style={{ marginBottom: 'var(--space-3)' }}>
+            <span style={{ color: 'var(--gray-500)' }}>Status:</span>
+            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--success)', fontWeight: 600 }}>
+              Verified ✓
             </span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div>
+              <span style={{ color: 'var(--gray-500)' }}>kid:</span>
+              <span style={{ marginLeft: 'var(--space-2)', color: 'var(--gray-900)' }}>2025-09-key1</span>
+            </div>
+            <Link
+              href={`/verify?token=${encodeURIComponent(sampleToken)}`}
+              data-analytics-id="hero_verify_receipt_clicked"
+              style={{
+                padding: 'var(--space-1) var(--space-3)',
+                background: 'var(--white)',
+                color: 'var(--brand-primary)',
+                border: '1px solid var(--brand-primary)',
+                borderRadius: 'var(--radius-md)',
+                fontSize: 'var(--text-xs)',
+                fontWeight: 600,
+                textDecoration: 'none',
+                transition: 'all 0.2s'
+              }}
+            >
+              Verify
+            </Link>
           </div>
         </div>
 
-        {/* Floating indicators */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 'var(--space-4)',
-            right: 'var(--space-4)',
-            width: '12px',
-            height: '12px',
-            borderRadius: '50%',
-            background: 'var(--brand-primary)',
-            opacity: isHovered ? 1 : 0,
-            transform: isHovered ? 'scale(1)' : 'scale(0)',
-            transition: 'all var(--duration-300) var(--ease-out) 0.1s'
-          }}
-        />
+        {/* Copied toast */}
+        {copied && (
+          <div
+            role="status"
+            aria-live="polite"
+            style={{
+              position: 'absolute',
+              bottom: 'var(--space-4)',
+              right: 'var(--space-4)',
+              background: 'var(--gray-900)',
+              color: 'var(--white)',
+              padding: 'var(--space-2) var(--space-4)',
+              borderRadius: 'var(--radius-md)',
+              fontSize: 'var(--text-sm)',
+              boxShadow: 'var(--shadow-lg)',
+              zIndex: 100
+            }}
+          >
+            Copied!
+          </div>
+        )}
+
       </div>
 
-      {/* Background Cards */}
+      {/* Background decorative elements */}
       <div
         style={{
           position: 'absolute',
           top: '20px',
           left: '-20px',
           right: '20px',
-          height: '80%',
-          background: 'var(--white)',
-          border: '1px solid var(--gray-100)',
+          bottom: '-20px',
+          background: 'var(--gradient-mesh)',
+          opacity: 0.3,
           borderRadius: 'var(--radius-2xl)',
           zIndex: -1,
-          transform: 'rotate(-2deg)',
-          opacity: 0.7
+          transform: 'rotate(-2deg)'
         }}
       />
-      <div
-        style={{
-          position: 'absolute',
-          top: '40px',
-          left: '-40px',
-          right: '40px',
-          height: '60%',
-          background: 'var(--white)',
-          border: '1px solid var(--gray-100)',
-          borderRadius: 'var(--radius-2xl)',
-          zIndex: -2,
-          transform: 'rotate(-4deg)',
-          opacity: 0.4
-        }}
-      />
-    </div>
-  )
-}
-
-function ReceiptRow({
-  label,
-  value,
-  mono = false
-}: {
-  label: string;
-  value: React.ReactNode;
-  mono?: boolean
-}) {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 'var(--space-3)',
-        fontSize: 'var(--text-sm)'
-      }}
-    >
-      <span style={{ color: 'var(--gray-600)' }}>{label}</span>
-      <span
-        style={{
-          color: 'var(--gray-900)',
-          fontFamily: mono ? 'var(--font-mono)' : 'inherit',
-          fontSize: mono ? 'var(--text-xs)' : 'inherit'
-        }}
-      >
-        {value}
-      </span>
     </div>
   )
 }
