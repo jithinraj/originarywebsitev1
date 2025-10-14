@@ -2,7 +2,7 @@
 
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { Play, Pause, Copy, Check, ChevronDown, ChevronUp } from 'lucide-react'
 
 export default function DemoPage() {
@@ -18,7 +18,7 @@ export default function DemoPage() {
   const timerRef = useRef<NodeJS.Timeout | null>(null)
   const stepStartTime = useRef<number>(Date.now())
 
-  const STEPS = [
+  const STEPS = useMemo(() => [
     {
       id: 'discover',
       title: 'Discover policy',
@@ -108,7 +108,7 @@ Content-Type: application/json
 }`
       }
     }
-  ]
+  ], [])
 
   const SAMPLE_JWS = `eyJhbGciOiJFZERTQSIsImtpZCI6Im9yaWdpbmFyeS1lZDI1NTE5LTIwMjUifQ.eyJwZWFjIjoiMS4wIiwicmVjZWlwdF9pZCI6InVybjpvcmlnaW5hcnk6cmVjZWlwdDowMUhWN0YyWjBRWDBLNkQzTjZXOCIsImlzc3VlZF9hdCI6IjIwMjUtMTAtMDZUMDg6MTU6MDBaIiwiaXNzdWVyIjp7Im5hbWUiOiJPcmlnaW5hcnkiLCJkb21haW4iOiJvcmlnaW5hcnkueHl6Iiwia2lkIjoib3JpZ2luYXJ5LWVkMjU1MTktMjAyNSIsImFsZyI6IkVkRFNBIn0sInJlc291cmNlIjp7InVybCI6Imh0dHBzOi8veW91cnNpdGUuY29tL2FwaS9jb250ZW50IiwiZmluZ2VycHJpbnQiOnsic2hhMjU2IjoiYTRmMy4uLjJlOTEifX0sImFjdGlvbiI6eyJ0eXBlIjoiYXBpX2FjY2VzcyIsInBvbGljeV9ldmFsdWF0aW9uIjp7InJlc3VsdCI6IkFMTE9XIiwiZXhwbGFuYXRpb24iOiJQYXltZW50IGNvbmZpcm1lZCB2aWEgT3JpZ2luYXJ5IEdhdGV3YXkgKDQwMikifX0sImFpcHJlZl9zbmFwc2hvdCI6eyJ1cmwiOiJodHRwczovL3lvdXJzaXRlLmNvbS8ud2VsbC1rbm93bi9haXByZWYuanNvbiIsImV0YWciOiJXL1wiYWlwcmVmLTdkM2FcIiIsIm1hbmFnZWRfYnkiOiJPcmlnaW5hcnkifSwic2V0dGxlbWVudCI6eyJnYXRld2F5IjoiT3JpZ2luYXJ5IEdhdGV3YXkgKDQwMikiLCJub3JtYWxpemVkIjoiaHR0cC00MDIiLCJwYXltZW50X2lkIjoicGF5X29yaWdfMjAyNV94eXoxMjMiLCJhbW91bnQiOnsidmFsdWUiOjAuMDUsImN1cnJlbmN5IjoiVVNEIn19LCJ2ZXJpZnkiOnsidXJsIjoiaHR0cHM6Ly9hcGkub3JpZ2luYXJ5Lnh5ei92ZXJpZnkiLCJwcm92aWRlciI6Ik9yaWdpbmFyeSBWZXJpZnkgQVBJIiwicHVia2V5cyI6W3sia2lkIjoib3JpZ2luYXJ5LWVkMjU1MTktMjAyNSIsImFsZyI6IkVkRFNBIn1dfX0.signature_placeholder`
 
@@ -301,9 +301,8 @@ Content-Type: application/json
                               <span style={{
                                 fontSize: 'var(--text-xs)',
                                 fontWeight: 700,
-                                color: isActive ? 'var(--brand-primary)' : 'var(--gray-500)',
+                                color: isActive ? 'var(--white)' : 'var(--gray-500)',
                                 background: isActive ? 'var(--brand-primary)' : 'var(--gray-300)',
-                                color: 'var(--white)',
                                 width: '24px',
                                 height: '24px',
                                 borderRadius: '50%',
