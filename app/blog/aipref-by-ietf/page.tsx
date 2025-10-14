@@ -132,12 +132,8 @@ export default function AIPREFArticle() {
                 borderTop: '1px solid var(--gray-200)'
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                  <Calendar size={16} />
-                  <span>October 14, 2025</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                   <User size={16} />
-                  <span>Originary Team</span>
+                  <span>Jithin Raj & Originary Team</span>
                 </div>
               </div>
             </header>
