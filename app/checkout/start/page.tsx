@@ -166,7 +166,7 @@ export default function CheckoutStart() {
                   lineHeight: 1.6,
                   margin: 0
                 }}>
-                  <strong>Immediate delivery.</strong> Access details and login credentials will be sent to your email within minutes. 7-day satisfaction guarantee - full refund available (access continues for 30 days).
+                  <strong>Immediate delivery.</strong> Access details and login credentials will be sent to your email within minutes. Non-refundable. Access continues for 30 days.
                 </p>
               </div>
             </div>

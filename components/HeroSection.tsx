@@ -280,25 +280,9 @@ export default function HeroSection() {
               </div>
 
               <Link
-                href="#demo"
+                href="/demo"
                 className="btn btn-ghost"
                 data-analytics-id="hero_cta_demo_30s_clicked"
-                onClick={(e) => {
-                  if (window.innerWidth >= 768) {
-                    e.preventDefault()
-                    // Desktop: would open modal (to be implemented)
-                    const demoSection = document.getElementById('demo')
-                    if (demoSection) {
-                      demoSection.scrollIntoView({ behavior: 'smooth' })
-                    }
-                  } else {
-                    e.preventDefault()
-                    const demoSection = document.getElementById('demo')
-                    if (demoSection) {
-                      demoSection.scrollIntoView({ behavior: 'smooth' })
-                    }
-                  }
-                }}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
