@@ -48,6 +48,15 @@ export default function BlogPage() {
       category: 'Technical',
       readTime: '15 min read',
       featured: true
+    },
+    {
+      slug: 'robots-txt-rfc-9309',
+      title: 'robots.txt (RFC 9309): The Web\'s Crawl Access Control',
+      description: 'A technical deep dive into RFC 9309, the standardized Robots Exclusion Protocol - matching rules, error handling, caching, and how it relates to AIPREF usage preferences.',
+      author: 'Jithin Raj & Originary Team',
+      category: 'Technical',
+      readTime: '12 min read',
+      featured: false
     }
   ]
 
