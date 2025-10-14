@@ -112,6 +112,8 @@ export default function Footer() {
               { href: '/company/contact', label: 'Contact' },
               { href: '/terms', label: 'Terms' },
               { href: '/privacy', label: 'Privacy' },
+              { href: '/refund', label: 'Refund Policy' },
+              { href: '/shipping', label: 'Shipping & Delivery' },
               { href: '/trademark', label: 'Trademark' },
               { href: '/security', label: 'Security' },
               { href: '/copyright', label: 'Copyright' }
@@ -139,7 +141,7 @@ export default function Footer() {
               }}
               role="contentinfo"
             >
-              © 2025 Originary. All rights reserved.
+              © 2025 CURIOUS EXPLORATIONS PRIVATE LIMITED. All rights reserved.
             </span>
             <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7 }}>
               Powered by an <a
@@ -156,6 +158,9 @@ export default function Footer() {
             </small>
             <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7, marginTop: 'var(--space-1)' }}>
               Originary™ is a trademark of Curious Explorations Private Limited.
+            </small>
+            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7, marginTop: 'var(--space-1)' }}>
+              Available globally and in the US, UK, India, Canada, UAE, and Singapore.
             </small>
           </div>
           <div

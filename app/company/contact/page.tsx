@@ -79,6 +79,89 @@ export default function Contact() {
           </div>
         </section>
 
+        {/* Contact Information */}
+        <section className="section" style={{ paddingTop: 'var(--space-8)', paddingBottom: 'var(--space-8)' }}>
+          <div className="container">
+            <div className="card" style={{
+              background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(0,212,170,0.05) 100%)',
+              border: '2px solid var(--brand-primary)',
+              maxWidth: '900px',
+              margin: '0 auto'
+            }}>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: 'var(--space-8)',
+                textAlign: 'left'
+              }}>
+                {/* Email */}
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)' }}>
+                    <Mail size={24} style={{ color: 'var(--brand-primary)' }} />
+                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600 }}>Email</h3>
+                  </div>
+                  <a
+                    href="mailto:contact@originary.xyz"
+                    style={{
+                      fontSize: 'var(--text-base)',
+                      color: 'var(--brand-primary)',
+                      fontWeight: 600,
+                      textDecoration: 'none'
+                    }}
+                  >
+                    contact@originary.xyz
+                  </a>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginTop: 'var(--space-1)' }}>
+                    For all inquiries
+                  </p>
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)' }}>
+                    <Phone size={24} style={{ color: 'var(--brand-primary)' }} />
+                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600 }}>Phone</h3>
+                  </div>
+                  <a
+                    href="tel:+919686860303"
+                    style={{
+                      fontSize: 'var(--text-base)',
+                      color: 'var(--brand-primary)',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      display: 'block',
+                      marginBottom: 'var(--space-1)'
+                    }}
+                  >
+                    +91 9686860303
+                  </a>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                    India support line
+                  </p>
+                </div>
+
+                {/* Support Hours */}
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)' }}>
+                    <Clock size={24} style={{ color: 'var(--brand-primary)' }} />
+                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600 }}>Support Hours</h3>
+                  </div>
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-700)', lineHeight: 1.8 }}>
+                    <div style={{ marginBottom: 'var(--space-2)' }}>
+                      <strong>India:</strong><br />
+                      Mon-Fri, 10:00 AM - 5:00 PM IST
+                    </div>
+                    <div>
+                      <strong>US:</strong><br />
+                      Mon-Fri, 10:00 AM - 5:00 PM PT
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Contact Options */}
         <section className="section" style={{ background: 'var(--gray-50)' }}>
           <div className="container">

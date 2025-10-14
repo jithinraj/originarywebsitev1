@@ -79,6 +79,30 @@ export default function About() {
             </div>
 
             <div style={{ marginBottom: 'var(--space-20)' }}>
+              <div className="card" style={{
+                textAlign: 'center',
+                padding: 'var(--space-8)',
+                background: 'rgba(99, 91, 255, 0.05)',
+                border: '1px solid rgba(99, 91, 255, 0.2)',
+                marginBottom: 'var(--space-20)'
+              }}>
+                <h3 style={{
+                  fontSize: 'var(--text-lg)',
+                  fontWeight: 600,
+                  marginBottom: 'var(--space-2)',
+                  color: 'var(--gray-900)'
+                }}>
+                  Legal Entity
+                </h3>
+                <p style={{
+                  fontSize: 'var(--text-base)',
+                  color: 'var(--gray-700)',
+                  lineHeight: 1.7
+                }}>
+                  Originary is operated by <strong>CURIOUS EXPLORATIONS PRIVATE LIMITED</strong>, a company incorporated under the laws of India.
+                </p>
+              </div>
+
               <h2 style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>Our mission</h2>
               <div className="card" style={{ textAlign: 'center', padding: 'var(--space-12)' }}>
                 <p style={{

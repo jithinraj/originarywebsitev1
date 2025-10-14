@@ -137,6 +137,24 @@ export default function CheckoutStart() {
                 </form>
               </div>
 
+              <div style={{
+                textAlign: 'center',
+                padding: 'var(--space-3)',
+                background: 'rgba(99, 91, 255, 0.05)',
+                borderRadius: 'var(--radius-md)',
+                marginBottom: 'var(--space-4)'
+              }}>
+                <p style={{
+                  fontSize: 'var(--text-sm)',
+                  color: 'var(--gray-700)',
+                  lineHeight: 1.6,
+                  margin: 0
+                }}>
+                  Payment processed by Razorpay<br />
+                  <strong>Billed by: Originary by Curious Explorations</strong>
+                </p>
+              </div>
+
               <p style={{
                 fontSize: 'var(--text-sm)',
                 color: 'var(--gray-600)',
@@ -145,11 +163,11 @@ export default function CheckoutStart() {
                 marginBottom: 'var(--space-4)'
               }}>
                 By purchasing you agree to our{' '}
-                <Link href="/legal/terms" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>
+                <Link href="/terms" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>
                   Terms of Service
                 </Link>
                 {' '}and{' '}
-                <Link href="/legal/privacy" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>
+                <Link href="/privacy" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>
                   Privacy Policy
                 </Link>
               </p>
