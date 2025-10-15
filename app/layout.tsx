@@ -66,12 +66,12 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://www.originary.xyz'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.originary.xyz',
   },
   openGraph: {
     title: 'Originary : Receipts for the Agentic Web',
     description: 'Publish peac.txt, settle via x402 or your rail, and prove compliance on every request with Receipts. Powered by the PEAC open protocol.',
-    url: 'https://www.originary.xyz/',
+    url: 'https://www.originary.xyz',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',
