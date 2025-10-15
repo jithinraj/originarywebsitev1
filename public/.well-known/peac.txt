@@ -1,8 +1,12 @@
+version: 0.9.13
 preferences: https://www.originary.xyz/.well-known/aipref.json
 access_control: http-402
-payments: x402, stripe
+payments: [x402, stripe, onchain]
 provenance: c2pa
 receipts: required
 verify: https://api.originary.xyz/verify
 public_keys:
-  kid=2025-09-key1; alg=Ed25519; key=...   # base64url
+  - kid: 2025-09-key1
+    alg: EdDSA
+    key: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+contact: contact@originary.xyz

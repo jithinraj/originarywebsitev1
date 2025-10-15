@@ -1,0 +1,45 @@
+{
+  "version": "0.9.13",
+  "usage": "conditional",
+  "purposes": ["indexing", "research", "documentation"],
+  "attribution": {
+    "required": true,
+    "format": "Originary (https://www.originary.xyz)",
+    "placement": "visible"
+  },
+  "consent": "optional",
+  "data_retention": "P30D",
+  "access_control": "http-402",
+  "provenance": "c2pa",
+  "receipts": {
+    "required": true,
+    "format": "peac-receipt",
+    "verify_endpoint": "https://api.originary.xyz/verify"
+  },
+  "payments": {
+    "methods": ["x402", "stripe", "onchain"],
+    "required_for": ["commercial_use", "training", "redistribution"]
+  },
+  "contact": {
+    "email": "contact@originary.xyz",
+    "policy": "https://www.originary.xyz/security"
+  },
+  "public_keys": [
+    {
+      "kid": "2025-09-key1",
+      "alg": "EdDSA",
+      "key": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "use": "sig",
+      "valid_from": "2025-09-01T00:00:00Z"
+    }
+  ],
+  "compliance": {
+    "gdpr": true,
+    "ccpa": true,
+    "pipeda": true
+  },
+  "metadata": {
+    "updated": "2025-10-15",
+    "spec_version": "AIPREF-draft-00"
+  }
+}

@@ -10,5 +10,8 @@ access_control: http-402
 payments: ['x402', 'stripe', 'onchain']
 receipts: required
 verify: https://api.originary.xyz/verify
-public_keys: [{kid: '2025-09-key1', alg: 'EdDSA'}]
+public_keys:
+  - kid: 2025-09-key1
+    alg: EdDSA
+    key: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 contact: contact@originary.xyz
