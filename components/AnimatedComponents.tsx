@@ -37,7 +37,7 @@ import {
 } from 'lucide-react'
 
 // Hook to detect when element is in view
-const useInView = (ref: React.RefObject<HTMLElement>, options = {}) => {
+const useInView = (ref: React.RefObject<HTMLElement | null>, options = {}) => {
   const [isInView, setIsInView] = useState(false)
 
   useEffect(() => {

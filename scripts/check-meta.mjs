@@ -1,10 +1,11 @@
 import fs from 'fs';
 
-const robots = fs.readFileSync('public/robots.txt','utf8');
-const peac = fs.readFileSync('public/peac.txt','utf8');
+// Check built robots.txt (App Router metadata route output)
+const robots = fs.readFileSync('.next/server/app/robots.txt.body','utf8');
+const peac = fs.readFileSync('public/.well-known/peac.txt','utf8');
 
-if (!/^User-agent: \*\nAllow: \/\nSitemap: https:\/\/originary\.xyz\/sitemap\.xml\n?$/.test(robots))
-  throw new Error('robots.txt must be 3-line canonical and point to https://www.originary.xyz/sitemap.xml');
+if (!/^User-Agent: \*\nAllow: \/\n\nSitemap: https:\/\/www\.originary\.xyz\/sitemap\.xml\n?$/.test(robots))
+  throw new Error('robots.txt must point to https://www.originary.xyz/sitemap.xml');
 
 if (!/\n/.test(peac) || peac.split('\n').length < 5)
   throw new Error('peac.txt must be multi-line canonical');

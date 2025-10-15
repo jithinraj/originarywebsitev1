@@ -24,8 +24,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/.well-known/peac.txt',
-        destination: '/peac.txt',
+        source: '/peac.txt',
+        destination: '/.well-known/peac.txt',
         permanent: true,
       },
     ]
@@ -33,10 +33,16 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/(robots\\.txt|peac\\.txt)',
+        source: '/robots\\.txt',
         headers: [
           { key: 'Content-Type', value: 'text/plain; charset=utf-8' },
           { key: 'Cache-Control', value: 'public, max-age=300, s-maxage=300' },
+        ],
+      },
+      {
+        source: '/.well-known/peac.txt',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=0, s-maxage=600, must-revalidate' },
         ],
       },
       {

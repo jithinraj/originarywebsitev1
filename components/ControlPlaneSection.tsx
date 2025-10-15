@@ -3,11 +3,12 @@
 import { useState } from 'react'
 import { Shield, Zap, Database, BarChart, Terminal, FileText, Lock, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
+import type { ReactElement } from 'react'
 
 export default function ControlPlaneSection() {
   const [activeTab, setActiveTab] = useState<'policies' | 'settlement' | 'verification' | 'analytics'>('policies')
 
-  const tabs: Array<{ id: 'policies' | 'settlement' | 'verification' | 'analytics'; label: string; icon: JSX.Element }> = [
+  const tabs: Array<{ id: 'policies' | 'settlement' | 'verification' | 'analytics'; label: string; icon: ReactElement }> = [
     { id: 'policies', label: 'Policies', icon: <FileText size={18} /> },
     { id: 'settlement', label: 'Settlement', icon: <Zap size={18} /> },
     { id: 'verification', label: 'Verification', icon: <Shield size={18} /> },
