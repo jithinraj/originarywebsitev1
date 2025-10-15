@@ -39,7 +39,14 @@ const organizationJsonLd = {
     'https://originaryai.com',
     'https://peacprotocol.org'
   ],
-  logo: 'https://www.originary.xyz/og/originary-logo.png'
+  logo: 'https://www.originary.xyz/og/originary-logo.png',
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      email: 'contact@originary.xyz',
+      contactType: 'sales'
+    }
+  ]
 }
 
 const websiteJsonLd = {
