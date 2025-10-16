@@ -371,7 +371,11 @@ export default function DemoPage() {
                 </p>
               </div>
 
-              <div className="grid grid-2" style={{ gap: 'var(--space-6)' }}>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+                gap: 'var(--space-6)'
+              }}>
                 {/* PEAC-Receipt Header */}
                 <div>
                   <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
@@ -386,11 +390,15 @@ export default function DemoPage() {
                     fontSize: 'var(--text-xs)',
                     lineHeight: 1.6,
                     fontFamily: 'var(--font-mono)',
-                    overflow: 'auto'
+                    overflow: 'auto',
+                    whiteSpace: 'pre-wrap',
+                    wordBreak: 'break-all',
+                    maxHeight: '400px'
                   }}>
 {`HTTP/1.1 200 OK
 Content-Type: application/json
-PEAC-Receipt: eyJhbGciOiJFZERTQSIsImtpZCI6Im9yaWdpbmFyeS1lZDI1NTE5LTIwMjUifQ.eyJwZWFjIjoiMS4wIiwicmVjZWlwdF9pZCI6InVybjpvcmlnaW5hcnk6cmVjZWlwdDowMUhWN0YyWjBRWDBLNkQzTjZXOCIsImlzc3VlZF9hdCI6IjIwMjUtMTAtMDZUMDg6MTU6MDBaIiwiaXNzdWVyIjp7Im5hbWUiOiJPcmlnaW5hcnkiLCJkb21haW4iOiJvcmlnaW5hcnkueHl6Iiwia2lkIjoib3JpZ2luYXJ5LWVkMjU1MTktMjAyNSJ9LCJyZXNvdXJjZSI6eyJ1cmwiOiJodHRwczovL3lvdXJzaXRlLmNvbS9hcGkvY29udGVudCJ9LCJhY3Rpb24iOnsidHlwZSI6ImFwaV9hY2Nlc3MiLCJwb2xpY3lfZXZhbHVhdGlvbiI6eyJyZXN1bHQiOiJBTExPVyIsImV4cGxhbmF0aW9uIjoiUGF5bWVudCBjb25maXJtZWQifX0sInNldHRsZW1lbnQiOnsiZ2F0ZXdheSI6Ik9yaWdpbmFyeSBHYXRld2F5ICg0MDIpIiwicGF5bWVudF9pZCI6InBheV9vcmlnXzIwMjVfeHl6MTIzIiwiYW1vdW50Ijp7InZhbHVlIjowLjA1LCJjdXJyZW5jeSI6IlVTRCJ9fX0.k9fR3mX7pQ2nY6jL8vW4tZ1cH5sA0bN9oE4qI6dF3gU2wP7hT8xM1kJ5rC3yV6nB4lG0sD9fE2mA7jK8uN1oP
+PEAC-Receipt: eyJhbGciOiJFZERTQSIsImt...
+...pQ2nY6jL8vW4tZ1cH5sA0bN9oE4qI6dF3gU2wP7hT8xM
 
 {"status": "success", "data": {...}}`}
                   </pre>
@@ -410,20 +418,19 @@ PEAC-Receipt: eyJhbGciOiJFZERTQSIsImtpZCI6Im9yaWdpbmFyeS1lZDI1NTE5LTIwMjUifQ.eyJ
                     fontSize: 'var(--text-xs)',
                     lineHeight: 1.6,
                     fontFamily: 'var(--font-mono)',
-                    overflow: 'auto'
+                    overflow: 'auto',
+                    maxHeight: '400px'
                   }}>
 {`POST https://api.originary.xyz/verify
 Content-Type: application/json
 
-{
-  "receipt": "eyJhbGciOiJFZERTQSI..."
-}
+{"receipt": "eyJhbGciOiJFZERTQSI..."}
 
 → Response:
 
 {
   "valid": true,
-  "receipt_id": "urn:originary:receipt:01HV7F2Z0QX0K6D3N6W8",
+  "receipt_id": "urn:originary:...",
   "issued_at": "2025-10-06T08:15:00Z",
   "issuer": {
     "name": "Originary",
@@ -433,10 +440,7 @@ Content-Type: application/json
   "settlement": {
     "gateway": "Originary Gateway (402)",
     "payment_id": "pay_orig_2025_xyz123",
-    "amount": {
-      "value": 0.05,
-      "currency": "USD"
-    },
+    "amount": {"value": 0.05, "currency": "USD"},
     "status": "confirmed"
   },
   "signature_verified": true,
@@ -460,7 +464,11 @@ Content-Type: application/json
             </div>
 
             {/* Two-column demo */}
-            <div className="grid grid-2" style={{ gap: 'var(--space-8)' }}>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+              gap: 'var(--space-8)'
+            }}>
               {/* Left: peac.txt advertises */}
               <div className="card">
                 <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
