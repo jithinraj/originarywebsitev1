@@ -356,6 +356,109 @@ export default function DemoPage() {
               <CircularFlowchart />
             </div>
 
+            {/* PEAC-Receipt Header Example */}
+            <div className="card" style={{
+              marginBottom: 'var(--space-12)',
+              background: 'var(--white)',
+              padding: 'var(--space-8)'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
+                <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
+                  PEAC-Receipt header and verification
+                </h2>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                  Cryptographically signed proof of transaction with instant verification
+                </p>
+              </div>
+
+              <div className="grid grid-2" style={{ gap: 'var(--space-6)' }}>
+                {/* PEAC-Receipt Header */}
+                <div>
+                  <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                    Response with PEAC-Receipt
+                  </h3>
+                  <pre style={{
+                    margin: 0,
+                    background: 'var(--gray-900)',
+                    padding: 'var(--space-4)',
+                    borderRadius: 'var(--radius-lg)',
+                    color: 'var(--gray-100)',
+                    fontSize: 'var(--text-xs)',
+                    lineHeight: 1.6,
+                    fontFamily: 'var(--font-mono)',
+                    overflow: 'auto'
+                  }}>
+{`HTTP/1.1 200 OK
+Content-Type: application/json
+PEAC-Receipt: eyJhbGciOiJFZERTQSIsImtpZCI6Im9yaWdpbmFyeS1lZDI1NTE5LTIwMjUifQ.eyJwZWFjIjoiMS4wIiwicmVjZWlwdF9pZCI6InVybjpvcmlnaW5hcnk6cmVjZWlwdDowMUhWN0YyWjBRWDBLNkQzTjZXOCIsImlzc3VlZF9hdCI6IjIwMjUtMTAtMDZUMDg6MTU6MDBaIiwiaXNzdWVyIjp7Im5hbWUiOiJPcmlnaW5hcnkiLCJkb21haW4iOiJvcmlnaW5hcnkueHl6Iiwia2lkIjoib3JpZ2luYXJ5LWVkMjU1MTktMjAyNSJ9LCJyZXNvdXJjZSI6eyJ1cmwiOiJodHRwczovL3lvdXJzaXRlLmNvbS9hcGkvY29udGVudCJ9LCJhY3Rpb24iOnsidHlwZSI6ImFwaV9hY2Nlc3MiLCJwb2xpY3lfZXZhbHVhdGlvbiI6eyJyZXN1bHQiOiJBTExPVyIsImV4cGxhbmF0aW9uIjoiUGF5bWVudCBjb25maXJtZWQifX0sInNldHRsZW1lbnQiOnsiZ2F0ZXdheSI6Ik9yaWdpbmFyeSBHYXRld2F5ICg0MDIpIiwicGF5bWVudF9pZCI6InBheV9vcmlnXzIwMjVfeHl6MTIzIiwiYW1vdW50Ijp7InZhbHVlIjowLjA1LCJjdXJyZW5jeSI6IlVTRCJ9fX0.k9fR3mX7pQ2nY6jL8vW4tZ1cH5sA0bN9oE4qI6dF3gU2wP7hT8xM1kJ5rC3yV6nB4lG0sD9fE2mA7jK8uN1oP
+
+{"status": "success", "data": {...}}`}
+                  </pre>
+                </div>
+
+                {/* Verify Result */}
+                <div>
+                  <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                    Originary Verify API result
+                  </h3>
+                  <pre style={{
+                    margin: 0,
+                    background: 'var(--gray-900)',
+                    padding: 'var(--space-4)',
+                    borderRadius: 'var(--radius-lg)',
+                    color: 'var(--gray-100)',
+                    fontSize: 'var(--text-xs)',
+                    lineHeight: 1.6,
+                    fontFamily: 'var(--font-mono)',
+                    overflow: 'auto'
+                  }}>
+{`POST https://api.originary.xyz/verify
+Content-Type: application/json
+
+{
+  "receipt": "eyJhbGciOiJFZERTQSI..."
+}
+
+→ Response:
+
+{
+  "valid": true,
+  "receipt_id": "urn:originary:receipt:01HV7F2Z0QX0K6D3N6W8",
+  "issued_at": "2025-10-06T08:15:00Z",
+  "issuer": {
+    "name": "Originary",
+    "domain": "originary.xyz",
+    "verified": true
+  },
+  "settlement": {
+    "gateway": "Originary Gateway (402)",
+    "payment_id": "pay_orig_2025_xyz123",
+    "amount": {
+      "value": 0.05,
+      "currency": "USD"
+    },
+    "status": "confirmed"
+  },
+  "signature_verified": true,
+  "timestamp_valid": true
+}`}
+                  </pre>
+                </div>
+              </div>
+
+              <div style={{
+                marginTop: 'var(--space-6)',
+                padding: 'var(--space-4)',
+                background: 'rgba(0, 212, 170, 0.05)',
+                border: '1px solid rgba(0, 212, 170, 0.2)',
+                borderRadius: 'var(--radius-lg)',
+                fontSize: 'var(--text-sm)',
+                color: 'var(--gray-700)'
+              }}>
+                <strong style={{ color: 'var(--brand-secondary)' }}>✓ Cryptographic proof:</strong> Each PEAC-Receipt is signed with EdDSA (Ed25519) and can be independently verified via Originary Verify API or the open PEAC protocol specification.
+              </div>
+            </div>
+
             {/* Two-column demo */}
             <div className="grid grid-2" style={{ gap: 'var(--space-8)' }}>
               {/* Left: peac.txt advertises */}
@@ -371,7 +474,7 @@ export default function DemoPage() {
                   {[
                     { key: 'prefs', label: 'preferences', value: 'AIPREF URL' },
                     { key: 'access_control', label: 'access_control', value: 'http-402' },
-                    { key: 'payments', label: 'payments', value: '["payment-processor"]' },
+                    { key: 'payments', label: 'payments', value: '[x402]' },
                     { key: 'provenance', label: 'provenance', value: 'c2pa' },
                     { key: 'receipts', label: 'receipts', value: 'required, verify' },
                     { key: 'public_keys', label: 'public_keys', value: '[ {kid, alg, key} ]' }
