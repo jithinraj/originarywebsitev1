@@ -39,7 +39,7 @@ export default function DemoPage() {
     { key: 'verify', title: 'Verify receipt', subtitle: 'Originary Verify API confirms authenticity' },
   ], [])
 
-  const SAMPLE_RECEIPT = {
+  const SAMPLE_RECEIPT = useMemo(() => ({
     peac: '1.0',
     receipt_id: 'urn:originary:receipt:01HV7F2Z0QX0K6D3N6W8',
     issued_at: '2025-10-06T08:15:00Z',
@@ -76,7 +76,7 @@ export default function DemoPage() {
       provider: 'Originary Verify API',
       pubkeys: [{ kid: 'originary-ed25519-2025', alg: 'EdDSA' }]
     },
-  }
+  }), [])
 
   const highlightMap: Record<string, string[]> = {
     prefs: ['prefs'],
@@ -140,7 +140,7 @@ export default function DemoPage() {
     } else {
       setReceiptText('')
     }
-  }, [demoIdx])
+  }, [demoIdx, STEPS, SAMPLE_RECEIPT])
 
   // Respect reduced motion
   useEffect(() => {
