@@ -5,10 +5,13 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 import { useEffect } from 'react'
+import { useCurrency } from '@/hooks/useCurrency'
 
 export default function Pricing() {
+  const pricing = useCurrency()
+
   useEffect(() => {
-    // Add Service JSON-LD
+    // Add Service JSON-LD (will update dynamically based on currency)
     const jsonLd = {
       "@context": "https://schema.org",
       "@type": "Service",
@@ -17,8 +20,8 @@ export default function Pricing() {
       "provider": { "@type": "Organization", "name": "Originary" },
       "offers": {
         "@type": "Offer",
-        "price": "1",
-        "priceCurrency": "USD",
+        "price": pricing.start.amount.toString(),
+        "priceCurrency": pricing.currency,
         "name": "Start Plan",
         "availability": "https://schema.org/InStock"
       }
@@ -27,6 +30,7 @@ export default function Pricing() {
     const scriptTag = document.createElement('script');
     scriptTag.type = 'application/ld+json';
     scriptTag.text = JSON.stringify(jsonLd);
+    scriptTag.id = 'pricing-jsonld';
     document.head.appendChild(scriptTag);
 
     // Add OfferCatalog JSON-LD
@@ -35,9 +39,9 @@ export default function Pricing() {
       "@type": "OfferCatalog",
       "name": "Originary Plans",
       "itemListElement": [
-        {"@type": "Offer", "name": "Start", "price": "1", "priceCurrency": "USD", "description": "30-day developer intro", "availability": "https://schema.org/InStock"},
-        {"@type": "Offer", "name": "Pro", "price": "99", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "99", "priceCurrency": "USD", "unitText": "MONTH"}},
-        {"@type": "Offer", "name": "Enterprise", "price": "2500", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "2500", "priceCurrency": "USD", "unitText": "MONTH"}}
+        {"@type": "Offer", "name": "Start", "price": pricing.start.amount.toString(), "priceCurrency": pricing.currency, "description": "30-day developer intro", "availability": "https://schema.org/InStock"},
+        {"@type": "Offer", "name": "Pro", "price": pricing.pro.amount.toString(), "priceCurrency": pricing.currency, "priceSpecification": {"@type": "UnitPriceSpecification", "price": pricing.pro.amount.toString(), "priceCurrency": pricing.currency, "unitText": "MONTH"}},
+        {"@type": "Offer", "name": "Enterprise", "price": pricing.enterprise.amount.toString(), "priceCurrency": pricing.currency, "priceSpecification": {"@type": "UnitPriceSpecification", "price": pricing.enterprise.amount.toString(), "priceCurrency": pricing.currency, "unitText": "MONTH"}}
       ],
       "provider": {"@type": "Organization", "name": "Originary"}
     };
@@ -45,8 +49,15 @@ export default function Pricing() {
     const catalogScript = document.createElement('script');
     catalogScript.type = 'application/ld+json';
     catalogScript.text = JSON.stringify(offerCatalog);
+    catalogScript.id = 'catalog-jsonld';
     document.head.appendChild(catalogScript);
-  }, []);
+
+    return () => {
+      // Cleanup on unmount
+      document.getElementById('pricing-jsonld')?.remove()
+      document.getElementById('catalog-jsonld')?.remove()
+    }
+  }, [pricing]);
 
   return (
     <div className="wrap">
@@ -86,7 +97,7 @@ export default function Pricing() {
                 </div>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
-                    $1<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}> one-time, 30 days</span>
+                    {pricing.isLoading ? '...' : pricing.start.formatted}<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}> one-time, 30 days</span>
                   </div>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Sandbox access with real verification tools</p>
                 </div>
@@ -100,10 +111,10 @@ export default function Pricing() {
                 </div>
                 <div style={{ width: '100%' }}>
                   <Link href="/checkout/start" className="btn btn-primary" style={{ width: '100%', marginBottom: 'var(--space-2)' }}>
-                    Start for $1
+                    Start for {pricing.isLoading ? '...' : pricing.start.formatted}
                   </Link>
                   <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center' }}>
-                    Immediate delivery. USD billing. Renews to Free.
+                    Immediate delivery. {pricing.currency} billing. Renews to Free.
                   </p>
                 </div>
               </div>
@@ -115,7 +126,7 @@ export default function Pricing() {
                 </div>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
-                    $99<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>/month</span>
+                    {pricing.isLoading ? '...' : pricing.pro.formatted}<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>/month</span>
                   </div>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Includes <code style={{ backgroundColor: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac.txt</code> generator, validator, and edge header snippets</p>
                 </div>
@@ -144,7 +155,7 @@ export default function Pricing() {
                 </div>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
-                    Starting from $2,500<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>/month</span>
+                    Starting from {pricing.isLoading ? '...' : pricing.enterprise.formatted}<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>/month</span>
                   </div>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Up to 1M agent transactions/month</p>
                 </div>

@@ -5,8 +5,11 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { CheckCircle, ShoppingCart } from 'lucide-react'
 import { useEffect } from 'react'
+import { useCurrency } from '@/hooks/useCurrency'
 
 export default function CheckoutStart() {
+  const pricing = useCurrency()
+
   useEffect(() => {
     // Load Razorpay script dynamically
     const script = document.createElement('script');
@@ -118,7 +121,9 @@ export default function CheckoutStart() {
                   marginBottom: 'var(--space-4)'
                 }}>
                   <span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-700)' }}>Price</span>
-                  <span style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--gray-900)' }}>$1.00 <span style={{ fontSize: 'var(--text-sm)', fontWeight: 400 }}>USD</span></span>
+                  <span style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--gray-900)' }}>
+                    {pricing.isLoading ? '...' : pricing.start.formatted} <span style={{ fontSize: 'var(--text-sm)', fontWeight: 400 }}>{pricing.currency}</span>
+                  </span>
                 </div>
                 <div style={{
                   display: 'flex',
@@ -128,7 +133,9 @@ export default function CheckoutStart() {
                   borderTop: '1px solid var(--gray-200)'
                 }}>
                   <span style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--gray-900)' }}>Total</span>
-                  <span style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--brand-primary)' }}>$1.00 <span style={{ fontSize: 'var(--text-sm)', fontWeight: 400 }}>USD</span></span>
+                  <span style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--brand-primary)' }}>
+                    {pricing.isLoading ? '...' : pricing.start.formatted} <span style={{ fontSize: 'var(--text-sm)', fontWeight: 400 }}>{pricing.currency}</span>
+                  </span>
                 </div>
               </div>
 
