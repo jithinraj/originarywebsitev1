@@ -7,24 +7,24 @@ interface RazorpayButtonProps {
 }
 
 export default function RazorpayButton({ paymentButtonId = "pl_RVciupBc6OhCa6" }: RazorpayButtonProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const formRef = useRef<HTMLFormElement>(null)
 
   useEffect(() => {
-    const container = containerRef.current
-    if (!container) return
+    const form = formRef.current
+    if (!form) return
 
     const script = document.createElement('script')
     script.src = 'https://checkout.razorpay.com/v1/payment-button.js'
     script.async = true
-    script.dataset.payment_button_id = paymentButtonId
-    container.appendChild(script)
+    script.setAttribute('data-payment_button_id', paymentButtonId)
+    form.appendChild(script)
 
     return () => {
-      while (container.firstChild) {
-        container.removeChild(container.firstChild)
+      while (form.firstChild) {
+        form.removeChild(form.firstChild)
       }
     }
   }, [paymentButtonId])
 
-  return <div className="payment-button" ref={containerRef} />
+  return <form ref={formRef} />
 }
