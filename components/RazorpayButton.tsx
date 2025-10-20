@@ -3,10 +3,10 @@
 import { useEffect, useRef } from 'react'
 
 interface RazorpayButtonProps {
-  paymentButtonId: string
+  paymentButtonId?: string
 }
 
-export default function RazorpayButton({ paymentButtonId }: RazorpayButtonProps) {
+export default function RazorpayButton({ paymentButtonId = "pl_RVciupBc6OhCa6" }: RazorpayButtonProps) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
