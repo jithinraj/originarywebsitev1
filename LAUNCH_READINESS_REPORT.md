@@ -48,7 +48,7 @@ The Originary website has passed comprehensive quality checks and is ready for p
 ### 6. Payment Integration ✅
 - **Status**: READY
 - $1 starter fee implemented for all plans
-- Razorpay payment button integrated (pl_RK5T4IykFzu0rh)
+- Razorpay payment button integrated (pl_RVciupBc6OhCa6 - Live Mode)
 - Clear messaging about contacting team for additional credits
 - Secure implementation without exposed keys
 
