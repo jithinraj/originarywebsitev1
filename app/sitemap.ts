@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // Home
     {
-      url: `${base}/`,
+      url: base,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 1.0,
@@ -15,55 +15,55 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Main pages
     {
-      url: `${base}/originary-ai/`,
+      url: `${base}/originary-ai`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.95,
     },
     {
-      url: `${base}/products/`,
+      url: `${base}/products`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.95,
     },
     {
-      url: `${base}/receipts/`,
+      url: `${base}/receipts`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.95,
     },
     {
-      url: `${base}/developers/`,
+      url: `${base}/developers`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${base}/demo/`,
+      url: `${base}/demo`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${base}/pricing/`,
+      url: `${base}/pricing`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${base}/verify/`,
+      url: `${base}/verify`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${base}/services/`,
+      url: `${base}/services`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${base}/changelog/`,
+      url: `${base}/changelog`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.8,
@@ -71,19 +71,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Blog
     {
-      url: `${base}/blog/`,
+      url: `${base}/blog`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${base}/blog/aipref-by-ietf/`,
+      url: `${base}/blog/aipref-by-ietf`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${base}/blog/robots-txt-rfc-9309/`,
+      url: `${base}/blog/robots-txt-rfc-9309`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.9,
@@ -91,43 +91,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Documentation
     {
-      url: `${base}/docs/receipts/`,
+      url: `${base}/docs/receipts`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${base}/docs/payments/x402/`,
+      url: `${base}/docs/payments/x402`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.85,
     },
     {
-      url: `${base}/docs/payments/stripe/`,
+      url: `${base}/docs/payments/stripe`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.85,
     },
     {
-      url: `${base}/docs/mcp/receipts/`,
+      url: `${base}/docs/mcp/receipts`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.85,
     },
     {
-      url: `${base}/docs/a2a/attach-points/`,
+      url: `${base}/docs/a2a/attach-points`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.85,
     },
     {
-      url: `${base}/docs/deploy/cloudflare-worker/`,
+      url: `${base}/docs/deploy/cloudflare-worker`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.85,
     },
     {
-      url: `${base}/docs/deploy/vercel/`,
+      url: `${base}/docs/deploy/vercel`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.85,
@@ -135,31 +135,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Products
     {
-      url: `${base}/products/peac/`,
+      url: `${base}/products/peac`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${base}/products/verify/`,
+      url: `${base}/products/verify`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${base}/products/gateway-402/`,
+      url: `${base}/products/gateway-402`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${base}/products/studio/`,
+      url: `${base}/products/studio`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${base}/products/adapters/`,
+      url: `${base}/products/adapters`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
@@ -167,31 +167,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Solutions
     {
-      url: `${base}/solutions/`,
+      url: `${base}/solutions`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
-      url: `${base}/solutions/api-providers/`,
+      url: `${base}/solutions/api-providers`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
-      url: `${base}/solutions/ai-builders/`,
+      url: `${base}/solutions/ai-builders`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
-      url: `${base}/solutions/enterprises/`,
+      url: `${base}/solutions/enterprises`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
-      url: `${base}/solutions/publishers/`,
+      url: `${base}/solutions/publishers`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.7,
@@ -199,13 +199,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Checkout
     {
-      url: `${base}/checkout/start/`,
+      url: `${base}/checkout/start`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${base}/checkout/confirmation/`,
+      url: `${base}/checkout/confirmation`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.6,
@@ -213,25 +213,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Company
     {
-      url: `${base}/downloads/`,
+      url: `${base}/downloads`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
-      url: `${base}/company/`,
+      url: `${base}/company`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
-      url: `${base}/company/about/`,
+      url: `${base}/company/about`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
-      url: `${base}/company/contact/`,
+      url: `${base}/company/contact`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.7,
@@ -239,31 +239,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Legal
     {
-      url: `${base}/terms/`,
+      url: `${base}/terms`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
-      url: `${base}/privacy/`,
+      url: `${base}/privacy`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
-      url: `${base}/security/`,
+      url: `${base}/security`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
-      url: `${base}/trademark/`,
+      url: `${base}/trademark`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
-      url: `${base}/copyright/`,
+      url: `${base}/copyright`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.5,
@@ -271,19 +271,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Resources & Dashboard
     {
-      url: `${base}/resources/`,
+      url: `${base}/resources`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.6,
     },
     {
-      url: `${base}/dashboard/`,
+      url: `${base}/dashboard`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
-      url: `${base}/signin/`,
+      url: `${base}/signin`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.4,
