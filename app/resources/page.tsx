@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Resources : Originary',
     description: 'Resources, documentation, and insights for building with the receipts protocol for the agentic web.',
-    url: 'https://www.originary.xyz/resources/',
+    url: 'https://www.originary.xyz/resources',
     siteName: 'Originary',
     images: [{ url: 'https://www.originary.xyz/og.jpg' }],
     type: 'website',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     images: ['https://www.originary.xyz/og.jpg'],
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/resources/',
+    canonical: 'https://www.originary.xyz/resources',
   },
 }
 

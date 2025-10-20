@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cryptographic Receipts - Originary',
     description: 'Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Transparent AI operations for leading companies.',
-    url: 'https://www.originary.xyz/receipts/',
+    url: 'https://www.originary.xyz/receipts',
     siteName: 'Originary',
     images: [{ url: 'https://www.originary.xyz/og.jpg' }],
     type: 'website',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     images: ['https://www.originary.xyz/og.jpg'],
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/receipts/',
+    canonical: 'https://www.originary.xyz/receipts',
   },
 }
 

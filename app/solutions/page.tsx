@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Solutions : Originary',
     description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
-    url: 'https://www.originary.xyz/solutions/',
+    url: 'https://www.originary.xyz/solutions',
     siteName: 'Originary',
     images: [{ url: 'https://www.originary.xyz/og.jpg' }],
     type: 'website',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     images: ['https://www.originary.xyz/og.jpg'],
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/solutions/',
+    canonical: 'https://www.originary.xyz/solutions',
   },
 }
 

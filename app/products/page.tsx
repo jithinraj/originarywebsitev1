@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Products : Originary',
     description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters-everything you need to power autonomous AI coordination.',
-    url: 'https://www.originary.xyz/products/',
+    url: 'https://www.originary.xyz/products',
     siteName: 'Originary',
     images: [{ url: 'https://www.originary.xyz/og.jpg' }],
     type: 'website',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     images: ['https://www.originary.xyz/og.jpg'],
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/products/',
+    canonical: 'https://www.originary.xyz/products',
   },
 }
 

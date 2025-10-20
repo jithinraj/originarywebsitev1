@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Company : Originary',
     description: 'Originary is a product company building orchestration for the agentic web.',
-    url: 'https://www.originary.xyz/company/',
+    url: 'https://www.originary.xyz/company',
     siteName: 'Originary',
     images: [{ url: 'https://www.originary.xyz/og.jpg' }],
     type: 'website',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     images: ['https://www.originary.xyz/og.jpg'],
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/company/',
+    canonical: 'https://www.originary.xyz/company',
   },
 }
 
