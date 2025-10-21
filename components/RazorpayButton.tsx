@@ -1,50 +1,52 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-
 interface RazorpayButtonProps {
   paymentButtonId?: string
 }
 
 export default function RazorpayButton({ paymentButtonId = "pl_RK5T4IykFzu0rh" }: RazorpayButtonProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const scriptLoadedRef = useRef(false)
-
-  useEffect(() => {
-    if (!containerRef.current || scriptLoadedRef.current) return
-
-    // Clear any existing content
-    containerRef.current.innerHTML = ''
-
-    // Create form element
-    const form = document.createElement('form')
-
-    // Create script element exactly as working plain HTML
-    const script = document.createElement('script')
-    script.src = 'https://checkout.razorpay.com/v1/payment-button.js'
-    script.setAttribute('data-payment_button_id', paymentButtonId)
-    script.async = true
-
-    // Append script to form
-    form.appendChild(script)
-
-    // Append form to container
-    containerRef.current.appendChild(form)
-
-    // Mark as loaded to prevent re-initialization
-    scriptLoadedRef.current = true
-
-    // Log for debugging
-    console.log('Razorpay button initialized with ID:', paymentButtonId)
-  }, [paymentButtonId])
+  // Create iframe content with the Razorpay button
+  // This isolates the script from React context and prevents test mode detection
+  const iframeContent = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <style>
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: system-ui, -apple-system, sans-serif;
+          background: transparent;
+        }
+        form {
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+    </head>
+    <body>
+      <form>
+        <script src="https://checkout.razorpay.com/v1/payment-button.js"
+          data-payment_button_id="${paymentButtonId}"
+          async>
+        </script>
+      </form>
+    </body>
+    </html>
+  `
 
   return (
-    <div
-      ref={containerRef}
+    <iframe
+      srcDoc={iframeContent}
       style={{
         width: '100%',
-        minHeight: '60px'
+        height: '60px',
+        border: 'none',
+        overflow: 'hidden',
+        display: 'block'
       }}
+      sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-top-navigation"
+      title="Razorpay Payment Button"
     />
   )
 }
