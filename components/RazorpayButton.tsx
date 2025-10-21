@@ -8,13 +8,14 @@ interface RazorpayButtonProps {
 
 export default function RazorpayButton({ paymentButtonId = "pl_RK5T4IykFzu0rh" }: RazorpayButtonProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null)
-  const [iframeHeight, setIframeHeight] = useState(150) // Increased default height
+  const [iframeHeight, setIframeHeight] = useState(600) // Much higher default for payment form
 
   useEffect(() => {
     // Listen for resize messages from iframe
     const handleMessage = (event: MessageEvent) => {
       if (event.data?.type === 'resize' && event.data?.height) {
-        setIframeHeight(Math.max(event.data.height, 100))
+        // Add some buffer to ensure everything is visible
+        setIframeHeight(Math.max(event.data.height + 50, 300))
       }
     }
 
@@ -33,15 +34,16 @@ export default function RazorpayButton({ paymentButtonId = "pl_RK5T4IykFzu0rh" }
       style={{
         width: '100%',
         height: `${iframeHeight}px`,
+        minHeight: '300px',
         border: 'none',
-        overflow: 'hidden',
+        overflow: 'visible',
         display: 'block',
         background: 'transparent'
       }}
       sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-modals"
       title="Razorpay Payment Button"
       loading="eager"
-      scrolling="no"
+      scrolling="auto"
     />
   )
 }
