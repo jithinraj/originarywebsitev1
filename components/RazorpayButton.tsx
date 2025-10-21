@@ -1,49 +1,70 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 interface RazorpayButtonProps {
   paymentButtonId?: string
 }
 
 export default function RazorpayButton({ paymentButtonId = "pl_RK5T4IykFzu0rh" }: RazorpayButtonProps) {
-  const iframeRef = useRef<HTMLIFrameElement>(null)
-  const [iframeHeight, setIframeHeight] = useState(600) // Much higher default for payment form
+  const containerRef = useRef<HTMLDivElement>(null)
+  const scriptAddedRef = useRef(false)
 
   useEffect(() => {
-    // Listen for resize messages from iframe
-    const handleMessage = (event: MessageEvent) => {
-      if (event.data?.type === 'resize' && event.data?.height) {
-        // Add some buffer to ensure everything is visible
-        setIframeHeight(Math.max(event.data.height + 50, 300))
-      }
+    if (!containerRef.current || scriptAddedRef.current) return
+
+    // Clean any existing content
+    containerRef.current.innerHTML = ''
+
+    // Inject the Razorpay button HTML directly with inline script
+    containerRef.current.innerHTML = `
+      <form style="width: 100%; text-align: center;">
+        <script
+          src="https://checkout.razorpay.com/v1/payment-button.js"
+          data-payment_button_id="${paymentButtonId}"
+          async>
+        </script>
+      </form>
+    `
+
+    // Mark as added
+    scriptAddedRef.current = true
+
+    // Re-execute the script tag (needed for innerHTML injection)
+    const script = containerRef.current.querySelector('script')
+    if (script) {
+      const newScript = document.createElement('script')
+      newScript.src = script.src
+      newScript.async = true
+
+      // Copy all data attributes
+      Array.from(script.attributes).forEach(attr => {
+        if (attr.name.startsWith('data-')) {
+          newScript.setAttribute(attr.name, attr.value)
+        }
+      })
+
+      // Replace the old script with the new one
+      script.parentNode?.replaceChild(newScript, script)
     }
 
-    window.addEventListener('message', handleMessage)
-    return () => window.removeEventListener('message', handleMessage)
-  }, [])
-
-  // Load the Razorpay button from a standalone HTML file
-  // This completely isolates it from React/Next.js context
-  const iframeSrc = `/razorpay-button.html?id=${paymentButtonId}`
+    return () => {
+      // Cleanup on unmount
+      if (containerRef.current) {
+        containerRef.current.innerHTML = ''
+      }
+      scriptAddedRef.current = false
+    }
+  }, [paymentButtonId])
 
   return (
-    <iframe
-      ref={iframeRef}
-      src={iframeSrc}
+    <div
+      ref={containerRef}
       style={{
         width: '100%',
-        height: `${iframeHeight}px`,
-        minHeight: '300px',
-        border: 'none',
-        overflow: 'visible',
-        display: 'block',
-        background: 'transparent'
+        minHeight: '60px',
+        padding: '20px 0'
       }}
-      sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-modals"
-      title="Razorpay Payment Button"
-      loading="eager"
-      scrolling="auto"
     />
   )
 }
