@@ -12,6 +12,7 @@ const getCurrentDate = () => {
 const pageConfigs = {
   '/': { priority: 1.0, changefreq: 'weekly' },
   '/originary-ai': { priority: 0.95, changefreq: 'weekly' }, // Top priority after homepage
+  '/ai': { priority: 0.95, changefreq: 'weekly' }, // Originary & AI page - also high priority
   '/pricing': { priority: 0.9, changefreq: 'weekly' },
   '/developers': { priority: 0.9, changefreq: 'weekly' },
   '/products': { priority: 0.8, changefreq: 'weekly' },
@@ -107,11 +108,13 @@ const generateSitemap = () => {
 
   for (const page of sortedPages) {
     const config = pageConfigs[page] || { priority: 0.5, changefreq: 'monthly' };
+    // Add trailing slash to all URLs (except if page already ends with slash)
+    const url = page.endsWith('/') ? `${baseUrl}${page}` : `${baseUrl}${page}/`;
 
     xml += `
   <url>
-    <loc>${baseUrl}${page}</loc>
-    <lastmod>${currentDate}</lastmod>
+    <loc>${url}</loc>
+    <lastmod>${currentDate}T04:30:00+00:00</lastmod>
     <changefreq>${config.changefreq}</changefreq>
     <priority>${config.priority}</priority>
   </url>`;

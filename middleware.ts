@@ -1,20 +1,20 @@
-// Middleware configuration
-// Bypasses discovery, crawl, and Next.js internal endpoints to prevent interference
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
 
 export const config = {
-  // Never intercept:
-  // - /.well-known/* (RFC 8615 discovery endpoints: peac.txt, aipref.json, security.txt)
-  // - /robots.txt (crawler directives)
-  // - /sitemap*.xml (dynamic sitemap routes and potential future index/shards)
-  // - /_next/* (Next.js static assets and internals)
-  // - /favicon.ico, /manifest.webmanifest (PWA and browser assets)
   matcher: [
     '/((?!\\.well-known|robots\\.txt|sitemap\\.xml|sitemap_index\\.xml|sitemaps/|_next/|favicon\\.ico|manifest\\.webmanifest).*)',
   ],
 };
 
-export function middleware() {
-  // No middleware logic currently implemented
-  // This file exists to protect discovery/crawl endpoints from future middleware additions
-  return;
+export function middleware(request: NextRequest) {
+  const url = request.nextUrl
+  const hostname = request.headers.get('host') || ''
+
+  if (hostname === 'originary.xyz') {
+    const redirectUrl = new URL(url.pathname + url.search, 'https://www.originary.xyz')
+    return NextResponse.redirect(redirectUrl, 301)
+  }
+
+  return NextResponse.next()
 }
