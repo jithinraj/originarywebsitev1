@@ -2,4 +2,12 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.originary.xyz/sitemap.xml
+Sitemap: https://www.originary.xyz/sitemap_index.xml
 
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
