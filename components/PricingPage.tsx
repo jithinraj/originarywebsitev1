@@ -372,7 +372,7 @@ export default function PricingPage() {
                           Contact Sales
                         </AnimatedButton>
                       ) : (
-                        <RazorpayButton paymentButtonId="pl_RVciupBc6OhCa6" />
+                        <RazorpayButton paymentButtonId="pl_RK5T4IykFzu0rh" />
                       )}
                       <div className="action-note">
                         {tier.name === 'Enterprise'
@@ -506,7 +506,7 @@ export default function PricingPage() {
               </div>
               <div className="cta-actions">
                 <div className="action-group">
-                  <RazorpayButton paymentButtonId="pl_RVciupBc6OhCa6" />
+                  <RazorpayButton paymentButtonId="pl_RK5T4IykFzu0rh" />
                   <div className="action-note">
                     <strong>$1 gets you started</strong> • Our team will help you integrate & scale
                   </div>

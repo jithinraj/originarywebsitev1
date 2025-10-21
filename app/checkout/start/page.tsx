@@ -4,24 +4,11 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { CheckCircle, ShoppingCart } from 'lucide-react'
-import { useEffect } from 'react'
 import { useCurrency } from '@/hooks/useCurrency'
+import RazorpayButton from '@/components/RazorpayButton'
 
 export default function CheckoutStart() {
   const pricing = useCurrency()
-
-  useEffect(() => {
-    // Load Razorpay script dynamically
-    const script = document.createElement('script');
-    script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
-    script.setAttribute('data-payment_button_id', 'pl_RVciupBc6OhCa6');
-    script.async = true;
-
-    const form = document.getElementById('checkout-razorpay-form');
-    if (form) {
-      form.appendChild(script);
-    }
-  }, []);
 
   return (
     <div className="wrap">
@@ -140,8 +127,7 @@ export default function CheckoutStart() {
               </div>
 
               <div style={{ marginBottom: 'var(--space-4)' }}>
-                <form id="checkout-razorpay-form" style={{ width: '100%' }} aria-label="Complete purchase for Start Plan">
-                </form>
+                <RazorpayButton paymentButtonId="pl_RK5T4IykFzu0rh" />
               </div>
 
               <div style={{
