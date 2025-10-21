@@ -68,8 +68,9 @@ export default function Footer() {
             <div
               style={{
                 display: 'flex',
-                gap: 'var(--space-4)',
-                flexWrap: 'wrap'
+                flexDirection: 'column',
+                gap: 'var(--space-3)',
+                alignItems: 'flex-start'
               }}
             >
               <SocialLink
