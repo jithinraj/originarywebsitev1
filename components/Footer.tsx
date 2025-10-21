@@ -78,6 +78,24 @@ export default function Footer() {
               >
                 Blog
               </SocialLink>
+              <Link
+                href="/ai"
+                style={{
+                  color: 'var(--gray-600)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 500,
+                  transition: 'color var(--duration-200) var(--ease-out)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = 'var(--brand-primary)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'var(--gray-600)'
+                }}
+              >
+                Originary & AI
+              </Link>
             </div>
           </div>
 
