@@ -1,52 +1,47 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
+
 interface RazorpayButtonProps {
   paymentButtonId?: string
 }
 
 export default function RazorpayButton({ paymentButtonId = "pl_RK5T4IykFzu0rh" }: RazorpayButtonProps) {
-  // Create iframe content with the Razorpay button
-  // This isolates the script from React context and prevents test mode detection
-  const iframeContent = `
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        body {
-          margin: 0;
-          padding: 0;
-          font-family: system-ui, -apple-system, sans-serif;
-          background: transparent;
-        }
-        form {
-          margin: 0;
-          padding: 0;
-        }
-      </style>
-    </head>
-    <body>
-      <form>
-        <script src="https://checkout.razorpay.com/v1/payment-button.js"
-          data-payment_button_id="${paymentButtonId}"
-          async>
-        </script>
-      </form>
-    </body>
-    </html>
-  `
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+  const [iframeHeight, setIframeHeight] = useState(150) // Increased default height
+
+  useEffect(() => {
+    // Listen for resize messages from iframe
+    const handleMessage = (event: MessageEvent) => {
+      if (event.data?.type === 'resize' && event.data?.height) {
+        setIframeHeight(Math.max(event.data.height, 100))
+      }
+    }
+
+    window.addEventListener('message', handleMessage)
+    return () => window.removeEventListener('message', handleMessage)
+  }, [])
+
+  // Load the Razorpay button from a standalone HTML file
+  // This completely isolates it from React/Next.js context
+  const iframeSrc = `/razorpay-button.html?id=${paymentButtonId}`
 
   return (
     <iframe
-      srcDoc={iframeContent}
+      ref={iframeRef}
+      src={iframeSrc}
       style={{
         width: '100%',
-        height: '60px',
+        height: `${iframeHeight}px`,
         border: 'none',
         overflow: 'hidden',
-        display: 'block'
+        display: 'block',
+        background: 'transparent'
       }}
-      sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-top-navigation"
+      sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-modals"
       title="Razorpay Payment Button"
+      loading="eager"
+      scrolling="no"
     />
   )
 }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorpay Payment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        #razorpay-container {
+            width: 100%;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        form {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        /* Ensure button is visible and properly sized */
+        .razorpay-payment-button {
+            width: 100% !important;
+            max-width: 300px !important;
+            margin: 0 auto !important;
+            display: block !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="razorpay-container">
+        <form id="razorpay-form">
+            <!-- Script will be inserted here -->
+        </form>
+    </div>
+
+    <script>
+        // Get button ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const buttonId = urlParams.get('id') || 'pl_RK5T4IykFzu0rh';
+
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create the Razorpay script element
+            const script = document.createElement('script');
+            script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
+            script.setAttribute('data-payment_button_id', buttonId);
+            script.async = false; // Load synchronously to ensure proper rendering
+
+            // Append to form
+            const form = document.getElementById('razorpay-form');
+            if (form) {
+                form.appendChild(script);
+
+                // Send height to parent after load
+                script.onload = function() {
+                    setTimeout(() => {
+                        const height = document.body.scrollHeight;
+                        if (window.parent !== window) {
+                            window.parent.postMessage({ type: 'resize', height: height }, '*');
+                        }
+                    }, 500);
+                };
+            }
+        });
+    </script>
+</body>
+</html>
