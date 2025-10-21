@@ -1,42 +1,50 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 interface RazorpayButtonProps {
   paymentButtonId?: string
 }
 
 export default function RazorpayButton({ paymentButtonId = "pl_RK5T4IykFzu0rh" }: RazorpayButtonProps) {
-  const iframeRef = useRef<HTMLIFrameElement>(null)
-  const [height, setHeight] = useState(60)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const scriptLoadedRef = useRef(false)
 
   useEffect(() => {
-    // Listen for messages from iframe to adjust height
-    const handleMessage = (event: MessageEvent) => {
-      if (event.origin !== window.location.origin) return
-      if (event.data.type === 'razorpay-height') {
-        setHeight(event.data.height)
-      }
-    }
+    if (!containerRef.current || scriptLoadedRef.current) return
 
-    window.addEventListener('message', handleMessage)
-    return () => window.removeEventListener('message', handleMessage)
-  }, [])
+    // Clear any existing content
+    containerRef.current.innerHTML = ''
+
+    // Create form element
+    const form = document.createElement('form')
+
+    // Create script element exactly as working plain HTML
+    const script = document.createElement('script')
+    script.src = 'https://checkout.razorpay.com/v1/payment-button.js'
+    script.setAttribute('data-payment_button_id', paymentButtonId)
+    script.async = true
+
+    // Append script to form
+    form.appendChild(script)
+
+    // Append form to container
+    containerRef.current.appendChild(form)
+
+    // Mark as loaded to prevent re-initialization
+    scriptLoadedRef.current = true
+
+    // Log for debugging
+    console.log('Razorpay button initialized with ID:', paymentButtonId)
+  }, [paymentButtonId])
 
   return (
-    <iframe
-      ref={iframeRef}
-      src={`/razorpay-button.html?id=${paymentButtonId}`}
+    <div
+      ref={containerRef}
       style={{
         width: '100%',
-        height: `${height}px`,
-        border: 'none',
-        overflow: 'hidden',
-        display: 'block'
+        minHeight: '60px'
       }}
-      scrolling="no"
-      title="Razorpay Payment Button"
-      allow="payment"
     />
   )
 }
