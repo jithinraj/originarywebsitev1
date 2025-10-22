@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import {
   FadeIn,
   SlideIn,
@@ -59,11 +60,11 @@ const pricingTiers = [
       '100,000 API calls/month',
       '10,000 receipt verifications/month',
       'Advanced Gateway features',
-      'Priority support (< 4h response)',
+      'Priority support',
       'Studio access (5 seats included)',
       'Custom adapter configurations',
       'Advanced analytics & reporting',
-      'High availability SLA',
+      'Service Level Agreement',
       'Webhook integrations'
     ],
     cta: 'Start Professional',
@@ -85,7 +86,7 @@ const pricingTiers = [
       'Multiple Studio seats',
       'Custom protocol integrations',
       'Advanced security & compliance',
-      'Custom SLA terms (up to 99.99%)',
+      'Custom Service Level Agreement',
       'Dedicated customer success manager',
       'Professional services & training'
     ],
@@ -99,8 +100,8 @@ const comparisonFeatures = [
   { name: 'API Calls per month', developer: '1,000', professional: '100,000', enterprise: 'Custom quota' },
   { name: 'Receipt Verifications', developer: '100', professional: '10,000', enterprise: 'Custom quota' },
   { name: 'Studio Seats', developer: '-', professional: '5', enterprise: 'Custom' },
-  { name: 'Support Response Time', developer: 'Community', professional: '< 4 hours', enterprise: '< 1 hour' },
-  { name: 'Uptime SLA', developer: '99%', professional: '99.9%', enterprise: '99.99%' },
+  { name: 'Support Response Time', developer: 'Community', professional: 'Priority support', enterprise: 'Dedicated team' },
+  { name: 'Service Level Agreement', developer: '-', professional: 'Available', enterprise: 'Custom SLA' },
   { name: 'Custom Integrations', developer: '-', professional: 'Limited', enterprise: 'Full' },
   { name: 'On-premises Deployment', developer: '-', professional: '-', enterprise: '✓' }
 ]
@@ -116,7 +117,7 @@ const enterpriseFeatures = [
     icon: Users,
     title: 'Dedicated Support',
     description: 'White-glove support from protocol engineers, solution architects, and customer success managers.',
-    metrics: ['< 1hr Response', '24/7 Availability']
+    metrics: ['Priority Response', '24/7 Availability']
   },
   {
     icon: BarChart,
@@ -182,7 +183,7 @@ const faqItems = [
   },
   {
     question: 'What\'s included in enterprise support?',
-    answer: '24/7 dedicated support team, < 1hr response time, dedicated customer success manager, professional services, and training programs.'
+    answer: '24/7 dedicated support team, priority response, dedicated customer success manager, professional services, and training programs.'
   },
   {
     question: 'Can I deploy on-premises?',
@@ -437,6 +438,144 @@ export default function PricingPage() {
                 )
               })}
             </StaggerChildren>
+          </FadeIn>
+
+          {/* Comparison Section */}
+          <FadeIn className="comparison-section">
+            <div style={{ marginTop: '80px', marginBottom: '80px' }}>
+            <h2 className="text-4xl font-bold text-center mb-4">How Originary Compares</h2>
+            <p className="text-xl text-gray-600 text-center mb-12">
+              Originary complements your existing infrastructure with verifiable receipts
+            </p>
+
+            <div className="comparison-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '24px',
+              marginTop: '48px'
+            }}>
+              {/* Originary vs DIY */}
+              <HoverCard className="comparison-card">
+                <div style={{ padding: '32px', background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px' }}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '16px', color: '#111' }}>
+                  Originary vs. DIY Solution
+                </h3>
+                <div style={{ marginBottom: '16px', color: '#635BFF', fontWeight: 500 }}>
+                  Save 6-12 months of development
+                </div>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
+                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                      Pre-built policy engine with PEAC protocol
+                    </span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
+                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                      Native HTTP 402 payment rails (x402, Stripe)
+                    </span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
+                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                      Cryptographic receipt generation & verification
+                    </span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start' }}>
+                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                      Edge-ready with Cloudflare/Vercel integration
+                    </span>
+                  </li>
+                </ul>
+                </div>
+              </HoverCard>
+
+              {/* Originary vs API Gateways */}
+              <HoverCard className="comparison-card">
+                <div style={{ padding: '32px', background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px' }}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '16px', color: '#111' }}>
+                  Originary vs. API Gateways
+                </h3>
+                <div style={{ marginBottom: '16px', color: '#635BFF', fontWeight: 500 }}>
+                  Adds verifiable proof layer
+                </div>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
+                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                      Works with Kong, Tyk, Apigee, AWS API Gateway
+                    </span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
+                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                      Portable receipts that verify outside platform
+                    </span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
+                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                      Policy discovery via .well-known/peac.txt
+                    </span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start' }}>
+                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                      Payment settlement proof in receipt
+                    </span>
+                  </li>
+                </ul>
+                </div>
+              </HoverCard>
+
+              {/* Originary vs Payment Processors */}
+              <HoverCard className="comparison-card">
+                <div style={{ padding: '32px', background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px' }}>
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '16px', color: '#111' }}>
+                  Originary vs. Payment-Only
+                </h3>
+                <div style={{ marginBottom: '16px', color: '#635BFF', fontWeight: 500 }}>
+                  More than just billing
+                </div>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
+                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                      Complements Stripe, x402, L402 payments
+                    </span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
+                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                      Adds policy enforcement before payment
+                    </span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
+                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                      Cryptographic proof of transaction
+                    </span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start' }}>
+                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
+                      Compliance audit trail built-in
+                    </span>
+                  </li>
+                </ul>
+                </div>
+              </HoverCard>
+            </div>
+
+            <div style={{ textAlign: 'center', marginTop: '48px' }}>
+              <Link href="/docs/receipts" className="btn btn-secondary">
+                Learn About PEAC Receipts
+                <ArrowRight size={16} style={{ marginLeft: '8px' }} />
+              </Link>
+            </div>
+            </div>
           </FadeIn>
 
           {/* Usage-based pricing details */}

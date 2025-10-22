@@ -114,7 +114,8 @@ export default function NavigationHeader() {
               <NavLink href="/developers">Developers</NavLink>
               <NavLink href="/demo">Demo</NavLink>
               <NavLink href="/pricing">Pricing</NavLink>
-              <NavLink href="/resources">Resources</NavLink>
+              <NavLink href="/trust">Trust</NavLink>
+              <NavLink href="/changelog">Changelog</NavLink>
             </div>
 
             <div
@@ -196,8 +197,11 @@ export default function NavigationHeader() {
               <Link href="/pricing" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
                 Pricing
               </Link>
-              <Link href="/resources" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
-                Resources
+              <Link href="/trust" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
+                Trust
+              </Link>
+              <Link href="/changelog" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
+                Changelog
               </Link>
 
               <div style={{

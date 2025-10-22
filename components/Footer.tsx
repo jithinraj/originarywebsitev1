@@ -192,8 +192,14 @@ export default function Footer() {
             <FooterLink href="/robots.txt" label="View robots.txt file">
               robots.txt
             </FooterLink>
-            <FooterLink href="/peac.txt" label="View PEAC policy file">
+            <FooterLink href="/.well-known/peac.txt" label="View PEAC policy file">
               peac.txt
+            </FooterLink>
+            <FooterLink href="/.well-known/aipref.json" label="View AI preferences file">
+              aipref.json
+            </FooterLink>
+            <FooterLink href="/.well-known/security.txt" label="View security.txt file">
+              security.txt
             </FooterLink>
             <FooterLink href="/sitemap.xml" label="View XML sitemap">
               sitemap.xml

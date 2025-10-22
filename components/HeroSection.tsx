@@ -230,6 +230,35 @@ export default function HeroSection() {
               Works with <strong>x402</strong>, <strong>Stripe</strong>, <strong>AIPREF</strong>. Edge-friendly. No SDK lock-in.
             </p>
 
+            {/* Where this fits */}
+            <div
+              style={{
+                background: 'rgba(99, 91, 255, 0.05)',
+                border: '1px solid rgba(99, 91, 255, 0.1)',
+                borderRadius: 'var(--radius-lg)',
+                padding: 'var(--space-4)',
+                marginBottom: 'var(--space-8)',
+                maxWidth: '90%',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.27s'
+              }}
+            >
+              <p style={{
+                fontSize: 'var(--text-sm)',
+                color: 'var(--gray-700)',
+                margin: 0,
+                lineHeight: 1.7
+              }}>
+                <strong style={{ color: 'var(--brand-primary)' }}>Where Originary fits:</strong>{' '}
+                Use <Link href="/docs/deploy/vercel" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>Vercel</Link> to deploy,{' '}
+                <Link href="/docs/deploy/cloudflare-worker" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>Cloudflare</Link> to run at the edge.{' '}
+                Originary adds <Link href="/docs/receipts" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>policy</Link> →{' '}
+                <Link href="/docs/payments/x402" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>HTTP 402</Link> →{' '}
+                <Link href="/verify" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>verifiable receipt</Link>.
+              </p>
+            </div>
+
             {/* CTA Buttons */}
             <div
               className="hero-actions"
