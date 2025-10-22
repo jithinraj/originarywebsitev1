@@ -312,9 +312,10 @@ export default function Studio() {
                 <p style={{
                   fontSize: 'var(--text-xl)',
                   marginBottom: 'var(--space-8)',
-                  opacity: 0.9,
+                  color: 'var(--white)',
                   maxWidth: '700px',
-                  margin: '0 auto var(--space-8) auto'
+                  margin: '0 auto var(--space-8) auto',
+                  lineHeight: 1.6
                 }}>
                   Join enterprise teams managing billions of agent transactions with comprehensive visibility, control, and compliance through Studio&apos;s unified dashboard. Our solution engineers provide white-glove setup and training for rapid deployment.
                 </p>

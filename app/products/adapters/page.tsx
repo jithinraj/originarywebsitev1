@@ -544,9 +544,10 @@ export default function Adapters() {
                 <p style={{
                   fontSize: 'var(--text-xl)',
                   marginBottom: 'var(--space-8)',
-                  opacity: 0.9,
+                  color: 'var(--white)',
                   maxWidth: '700px',
-                  margin: '0 auto var(--space-8) auto'
+                  margin: '0 auto var(--space-8) auto',
+                  lineHeight: 1.6
                 }}>
                   Enable seamless protocol adoption and standards compliance with enterprise-grade adapters. Our engineering team provides comprehensive support from integration to production deployment with guaranteed SLAs.
                 </p>

@@ -331,7 +331,7 @@ public_keys:
               marginTop: 'var(--space-20)'
             }}>
               <h2 style={{ marginBottom: 'var(--space-6)', color: 'white' }}>Deploy PEAC at enterprise scale</h2>
-              <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', opacity: 0.9 }}>
+              <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'var(--white)', lineHeight: 1.6 }}>
                 Large enterprises use PEAC Protocol to govern agent interactions, ensure compliance, and monetize digital resources.
               </p>
               <div style={{

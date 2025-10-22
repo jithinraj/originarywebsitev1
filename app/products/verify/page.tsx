@@ -229,9 +229,10 @@ export default function VerifyAPI() {
                 <p style={{
                   fontSize: 'var(--text-xl)',
                   marginBottom: 'var(--space-8)',
-                  opacity: 0.9,
+                  color: 'var(--white)',
                   maxWidth: '700px',
-                  margin: '0 auto var(--space-8) auto'
+                  margin: '0 auto var(--space-8) auto',
+                  lineHeight: 1.6
                 }}>
                   Join enterprise customers using our verification infrastructure with guaranteed performance and reliability. Our verification engineers provide dedicated support for mission-critical implementations.
                 </p>

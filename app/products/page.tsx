@@ -277,9 +277,10 @@ export default function ProductsPage() {
                   style={{
                     fontSize: 'var(--text-xl)',
                     marginBottom: 'var(--space-8)',
-                    opacity: 0.9,
+                    color: 'var(--white)',
                     maxWidth: '600px',
-                    margin: '0 auto var(--space-8) auto'
+                    margin: '0 auto var(--space-8) auto',
+                    lineHeight: 1.6
                   }}
                 >
                   Choose the products that fit your needs and start building autonomous AI coordination into your platform today.

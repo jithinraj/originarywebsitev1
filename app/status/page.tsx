@@ -1,16 +1,20 @@
 'use client'
 
 import Link from 'next/link'
+import NavigationHeader from '@/components/NavigationHeader'
+import Footer from '@/components/Footer'
 import { Activity, CheckCircle, Clock, ExternalLink } from 'lucide-react'
 
 export default function StatusPage() {
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: 'linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%)',
-      paddingTop: '120px',
-      paddingBottom: '80px'
-    }}>
+    <div className="wrap">
+      <NavigationHeader />
+      <main id="main-content" role="main" style={{ paddingTop: '80px' }}>
+        <section className="section" style={{
+          background: 'linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%)',
+          paddingTop: 'var(--space-24)',
+          paddingBottom: 'var(--space-20)'
+        }}>
       <div className="container" style={{ maxWidth: '900px' }}>
         {/* Hero */}
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
@@ -180,6 +184,9 @@ export default function StatusPage() {
           })}
         </p>
       </div>
+        </section>
+      </main>
+      <Footer />
     </div>
   )
 }

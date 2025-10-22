@@ -482,9 +482,10 @@ export default {
                   style={{
                     fontSize: 'var(--text-xl)',
                     marginBottom: 'var(--space-8)',
-                    opacity: 0.9,
+                    color: 'var(--white)',
                     maxWidth: '600px',
-                    margin: '0 auto var(--space-8) auto'
+                    margin: '0 auto var(--space-8) auto',
+                    lineHeight: 1.6
                   }}
                 >
                   Our developer success team is here to help you integrate PEAC into your applications.

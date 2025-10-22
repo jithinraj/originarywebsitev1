@@ -71,11 +71,11 @@ function VerifyContent() {
   }
 
   return (
-    <>
+    <div className="wrap">
       <NavigationHeader />
-      <main style={{ minHeight: '100vh', background: 'var(--white)' }}>
-        <div className="container" style={{ padding: 'var(--space-32) var(--space-6)' }}>
-          <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+      <main id="main-content" role="main" style={{ paddingTop: '80px' }}>
+        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+          <div className="container" style={{ maxWidth: '700px', margin: '0 auto' }}>
             {/* Badge */}
             <div style={{
               display: 'inline-flex',
@@ -256,10 +256,10 @@ function VerifyContent() {
               </p>
             </div>
           </div>
-        </div>
+        </section>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

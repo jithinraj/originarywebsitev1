@@ -261,7 +261,7 @@ export default function Enterprises() {
           <div className="container">
             <div className="card" style={{ textAlign: 'center', background: 'var(--gradient-brand)', color: 'white' }}>
               <h2 style={{ marginBottom: 'var(--space-6)', color: 'white' }}>Enterprise Deployment</h2>
-              <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', opacity: 0.9 }}>
+              <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'var(--white)', lineHeight: 1.6 }}>
                 Talk to our enterprise team about custom deployment, training, and support options.
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>

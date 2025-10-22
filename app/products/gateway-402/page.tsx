@@ -196,9 +196,10 @@ export default function Gateway402() {
                 <p style={{
                   fontSize: 'var(--text-xl)',
                   marginBottom: 'var(--space-8)',
-                  opacity: 0.9,
+                  color: 'var(--white)',
                   maxWidth: '700px',
-                  margin: '0 auto var(--space-8) auto'
+                  margin: '0 auto var(--space-8) auto',
+                  lineHeight: 1.6
                 }}>
                   Enable autonomous agents to purchase access to your APIs and services through standardized payment infrastructure.
                 </p>
