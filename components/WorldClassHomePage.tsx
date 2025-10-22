@@ -73,7 +73,7 @@ export default function WorldClassHomePage() {
               title="Provable Trust & Analytics"
               description="Every interaction emits a tamper-evident receipt. Stream them into your observability stack or hand to regulators in one click."
               features={[
-                'Cryptographically signed JSON-LD receipts',
+                'Cryptographically signed receipts (JWS; C2PA-compatible)',
                 'Interactive graph explorer for provenance queries',
                 'SIEM & data warehouse connectors out of the box'
               ]}
@@ -133,8 +133,8 @@ export default function WorldClassHomePage() {
               description="Real-time verification and notarization for receipts. Query lineage, revoke access instantly, and anchor proofs where you need them."
               features={[
                 'JWS + C2PA cryptographic signatures',
-                'Selective disclosure tokens',
-                'Immutable audit timeline'
+                'Tamper-evident audit log',
+                'Field-level privacy (selective disclosure planned)'
               ]}
               href="/products/verify"
               delay={0.2}

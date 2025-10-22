@@ -1,5 +1,6 @@
 import NavigationHeader from '@/components/NavigationHeader'
 import HeroSection from '@/components/HeroSection'
+import VerifySection from '@/components/VerifySection'
 import SocialProofSection from '@/components/SocialProofSection'
 import ControlPlaneSection from '@/components/ControlPlaneSection'
 import WorldClassHomePage from '@/components/WorldClassHomePage'
@@ -11,6 +12,7 @@ export default function Page() {
       <NavigationHeader />
       <main id="main-content" role="main">
         <HeroSection />
+        <VerifySection />
         <SocialProofSection />
         <ControlPlaneSection />
         <WorldClassHomePage />

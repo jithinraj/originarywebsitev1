@@ -176,9 +176,54 @@ export default function Pricing() {
               </div>
             </div>
 
+            {/* SLO Section */}
+            <section style={{
+              marginTop: 'var(--space-16)',
+              marginBottom: 'var(--space-8)',
+              padding: 'var(--space-8)',
+              border: '1px solid var(--gray-200)',
+              borderRadius: 'var(--radius-2xl)',
+              background: 'linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%)'
+            }}>
+              <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-6)', textAlign: 'center' }}>
+                Performance & Reliability
+              </h3>
+              <div className="grid grid-3" style={{ gap: 'var(--space-6)', marginBottom: 'var(--space-6)' }}>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>
+                    &lt;10ms
+                  </div>
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                    Sign latency (p95)
+                  </div>
+                </div>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>
+                    &lt;5ms
+                  </div>
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                    Verify latency (p95)
+                  </div>
+                </div>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>
+                    ≥1k rps
+                  </div>
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                    Baseline throughput
+                  </div>
+                </div>
+              </div>
+              <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center', marginTop: 'var(--space-4)' }}>
+                Latency measured at 95th percentile over trailing 30 days, Mumbai edge (IST).
+                Throughput is baseline; higher limits available on request.
+                Pro: <strong>99.9% SLO</strong> (target). Enterprise: <strong>99.99% SLA</strong> (contractual, available in MSA).
+              </p>
+            </section>
+
             {/* OSS Box */}
             <section style={{
-              marginTop: 'var(--space-12)',
+              marginTop: 'var(--space-8)',
               padding: 'var(--space-6)',
               border: '1px solid var(--gray-200)',
               borderRadius: 'var(--radius-2xl)',
