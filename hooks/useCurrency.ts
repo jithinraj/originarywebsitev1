@@ -13,8 +13,8 @@ export interface PriceDisplay {
 const PRICES = {
   USD: {
     start: { amount: 1, formatted: '$1' },
-    pro: { amount: 99, formatted: '$99' },
-    enterprise: { amount: 2500, formatted: '$2,500' }
+    pro: { amount: 199, formatted: '$199' },
+    enterprise: { amount: 0, formatted: 'Custom' }
   }
 }
 

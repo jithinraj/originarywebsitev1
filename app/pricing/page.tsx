@@ -155,7 +155,7 @@ export default function Pricing() {
                 </div>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
-                    Starting from {pricing.isLoading ? '...' : pricing.enterprise.formatted}<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>/month</span>
+                    {pricing.isLoading ? '...' : pricing.enterprise.formatted} pricing
                   </div>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Up to 1M agent transactions/month</p>
                 </div>
