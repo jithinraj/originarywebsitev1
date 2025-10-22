@@ -165,7 +165,7 @@ export default function RazorpayButton({
             <rect x="3" y="5" width="18" height="14" rx="2" />
             <path d="M3 10h18" />
           </svg>
-          Pay ₹1 with Razorpay
+          Pay ${(amount / 100).toFixed(2)} with Razorpay
         </>
       )}
     </button>

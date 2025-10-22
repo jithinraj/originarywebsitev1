@@ -127,7 +127,12 @@ export default function CheckoutStart() {
               </div>
 
               <div style={{ marginBottom: 'var(--space-4)' }}>
-                <RazorpayButton />
+                <RazorpayButton
+                  amount={100}
+                  currency="USD"
+                  name="Originary"
+                  description="Start Plan - 30 day access"
+                />
               </div>
 
               <div style={{
