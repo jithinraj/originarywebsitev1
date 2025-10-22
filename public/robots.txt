@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.originary.xyz/sitemap.xml
+Sitemap: https://www.originary.xyz/sitemap-main.xml
+Sitemap: https://www.originary.xyz/sitemap.txt
 Sitemap: https://www.originary.xyz/sitemap_index.xml
 
 User-agent: Googlebot
