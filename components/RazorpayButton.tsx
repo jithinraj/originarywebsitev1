@@ -1,78 +1,173 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+
 interface RazorpayButtonProps {
-  paymentButtonId?: string
+  amount?: number
+  currency?: string
+  name?: string
+  description?: string
 }
 
-export default function RazorpayButton({ paymentButtonId = "pl_RK5T4IykFzu0rh" }: RazorpayButtonProps) {
-  // Simple button that opens payment page directly - avoids all React detection issues
-  const handlePayment = () => {
-    // Open the standalone HTML file in a popup window
-    const width = 500
-    const height = 700
-    const left = (window.screen.width - width) / 2
-    const top = (window.screen.height - height) / 2
+declare global {
+  interface Window {
+    Razorpay: any
+    process?: any
+    __rzpOriginalProcess?: any
+  }
+}
 
-    window.open(
-      `/razorpay-button.html?id=${paymentButtonId}`,
-      'RazorpayPayment',
-      `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
-    )
+export default function RazorpayButton({
+  amount = 100, // ₹1 = 100 paise
+  currency = 'INR',
+  name = 'Originary',
+  description = 'Start Plan - 30 day access'
+}: RazorpayButtonProps) {
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false)
+  const [isProcessing, setIsProcessing] = useState(false)
+
+  useEffect(() => {
+    // Check if Razorpay is already loaded
+    if (window.Razorpay) {
+      console.log('Razorpay already loaded')
+      setIsScriptLoaded(true)
+      return
+    }
+
+    // CRITICAL FIX: Delete process BEFORE loading the script
+    // Razorpay captures it during initial script parse
+    console.log('Hiding process before loading Razorpay')
+    if (window.process) {
+      window.__rzpOriginalProcess = window.process
+      delete (window as any).process
+      console.log('Process deleted, window.process is now:', window.process)
+    }
+
+    // Load Razorpay script
+    const script = document.createElement('script')
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js'
+    script.async = true
+
+    script.onload = () => {
+      console.log('Razorpay script loaded successfully')
+      console.log('After load, window.process is:', window.process)
+      setIsScriptLoaded(true)
+    }
+
+    script.onerror = () => {
+      console.error('Failed to load Razorpay script')
+      // Restore on error
+      if (window.__rzpOriginalProcess) {
+        window.process = window.__rzpOriginalProcess
+        delete window.__rzpOriginalProcess
+      }
+    }
+
+    document.body.appendChild(script)
+
+    return () => {
+      // Restore process on unmount if needed
+      if (window.__rzpOriginalProcess && !window.process) {
+        window.process = window.__rzpOriginalProcess
+        delete window.__rzpOriginalProcess
+      }
+    }
+  }, [])
+
+  const handlePayment = () => {
+    // Check if Razorpay is loaded
+    if (!window.Razorpay) {
+      console.error('Razorpay not loaded')
+      alert('Payment system is still loading. Please refresh the page and try again.')
+      return
+    }
+
+    const keyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID
+    if (!keyId) {
+      console.error('Razorpay key not configured')
+      alert('Payment is not configured. Please contact support.')
+      return
+    }
+
+    console.log('Opening payment with key:', keyId.substring(0, 10) + '...')
+    console.log('window.process at payment time:', window.process)
+
+    setIsProcessing(true)
+
+    try {
+      const options = {
+        key: keyId,
+        amount: amount,
+        currency: currency,
+        name: name,
+        description: description,
+        handler: function(response: any) {
+          console.log('Payment Success:', response)
+          alert(`Payment successful! ID: ${response.razorpay_payment_id}`)
+          setIsProcessing(false)
+        },
+        modal: {
+          ondismiss: function() {
+            console.log('Payment modal closed')
+            setIsProcessing(false)
+          }
+        },
+        theme: {
+          color: '#635BFF'
+        }
+      }
+
+      const razorpay = new window.Razorpay(options)
+
+      razorpay.on('payment.failed', function(response: any) {
+        console.error('Payment failed:', response.error)
+        alert('Payment failed: ' + (response.error.description || 'Unknown error'))
+        setIsProcessing(false)
+      })
+
+      razorpay.open()
+    } catch (error) {
+      console.error('Error opening Razorpay:', error)
+      alert('Failed to open payment window. Please try again.')
+      setIsProcessing(false)
+    }
   }
 
   return (
-    <div style={{
-      width: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      gap: '12px',
-      padding: '20px 0'
-    }}>
-      <button
-        onClick={handlePayment}
-        style={{
-          backgroundColor: '#3395FF',
-          color: 'white',
-          border: 'none',
-          borderRadius: '4px',
-          padding: '14px 32px',
-          fontSize: '16px',
-          fontWeight: '600',
-          fontFamily: 'system-ui, -apple-system, sans-serif',
-          cursor: 'pointer',
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '8px',
-          transition: 'background-color 0.3s ease',
-          boxShadow: '0 2px 8px rgba(50, 50, 93, 0.1)'
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = '#1a7ff5'
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = '#3395FF'
-        }}
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect x="3" y="6" width="18" height="12" rx="2" />
-          <path d="M3 10h18" />
-        </svg>
-        Pay with Razorpay
-      </button>
-      <div style={{
-        display: 'flex',
+    <button
+      onClick={handlePayment}
+      disabled={!isScriptLoaded || isProcessing}
+      style={{
+        backgroundColor: !isScriptLoaded || isProcessing ? '#999' : '#635BFF',
+        color: 'white',
+        padding: '12px 24px',
+        borderRadius: '6px',
+        border: 'none',
+        fontSize: '16px',
+        fontWeight: '600',
+        cursor: !isScriptLoaded || isProcessing ? 'not-allowed' : 'pointer',
+        opacity: !isScriptLoaded || isProcessing ? 0.7 : 1,
+        transition: 'all 0.2s',
+        display: 'inline-flex',
         alignItems: 'center',
-        gap: '6px',
-        fontSize: '12px',
-        color: '#666',
-        fontFamily: 'system-ui, -apple-system, sans-serif'
-      }}>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        </svg>
-        <span>Secure payment powered by Razorpay</span>
-      </div>
-    </div>
+        justifyContent: 'center',
+        gap: '8px',
+        minWidth: '200px'
+      }}
+    >
+      {!isScriptLoaded ? (
+        'Loading...'
+      ) : isProcessing ? (
+        'Processing...'
+      ) : (
+        <>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="M3 10h18" />
+          </svg>
+          Pay ₹1 with Razorpay
+        </>
+      )}
+    </button>
   )
 }

@@ -127,7 +127,7 @@ export default function CheckoutStart() {
               </div>
 
               <div style={{ marginBottom: 'var(--space-4)' }}>
-                <RazorpayButton paymentButtonId="pl_RK5T4IykFzu0rh" />
+                <RazorpayButton />
               </div>
 
               <div style={{
