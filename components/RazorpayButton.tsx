@@ -26,6 +26,9 @@ export default function RazorpayButton({
   const [isScriptLoaded, setIsScriptLoaded] = useState(false)
   const [isProcessing, setIsProcessing] = useState(false)
 
+  // CRITICAL: Store the key BEFORE deleting process
+  const razorpayKeyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID
+
   useEffect(() => {
     // Check if Razorpay is already loaded
     if (window.Razorpay) {
@@ -82,21 +85,25 @@ export default function RazorpayButton({
       return
     }
 
-    const keyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID
-    if (!keyId) {
-      console.error('Razorpay key not configured')
-      alert('Payment is not configured. Please contact support.')
+    // Use the key we stored BEFORE deleting process
+    console.log('Environment check:', {
+      keyId: razorpayKeyId ? razorpayKeyId.substring(0, 15) + '...' : 'NOT FOUND'
+    })
+
+    if (!razorpayKeyId) {
+      console.error('Razorpay key not configured. Please refresh the page.')
+      alert('Payment is not configured. Please refresh the page and try again.')
       return
     }
 
-    console.log('Opening payment with key:', keyId.substring(0, 10) + '...')
+    console.log('Opening payment with key:', razorpayKeyId.substring(0, 10) + '...')
     console.log('window.process at payment time:', window.process)
 
     setIsProcessing(true)
 
     try {
       const options = {
-        key: keyId,
+        key: razorpayKeyId,
         amount: amount,
         currency: currency,
         name: name,
