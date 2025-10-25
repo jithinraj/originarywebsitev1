@@ -27,6 +27,17 @@ body::after,
   background: transparent !important;
 }
 
+/* Allow Razorpay elements and ALL their children to use natural styles */
+[class*="razorpay"],
+[id*="razorpay"],
+[class*="razorpay"] *,
+[id*="razorpay"] * {
+  opacity: revert !important;
+  visibility: revert !important;
+  color: revert !important;
+  background: revert !important;
+}
+
 /* Container and layout */
 .wrap {
   background: #ffffff !important;

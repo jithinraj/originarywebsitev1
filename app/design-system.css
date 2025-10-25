@@ -614,6 +614,15 @@ p {
   visibility: visible !important;
 }
 
+/* Allow Razorpay elements and ALL their children to use natural opacity */
+[class*="razorpay"],
+[id*="razorpay"],
+[class*="razorpay"] *,
+[id*="razorpay"] * {
+  opacity: revert !important;
+  visibility: revert !important;
+}
+
 .wrap {
   background: var(--white) !important;
   min-height: 100vh;

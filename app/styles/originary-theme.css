@@ -2993,6 +2993,17 @@ a:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="raz
   visibility: visible !important;
 }
 
+/* Allow Razorpay elements and ALL their children to use natural opacity/visibility */
+[class*="razorpay"],
+[id*="razorpay"],
+[class*="razorpay"] *,
+[id*="razorpay"] * {
+  opacity: revert !important;
+  visibility: revert !important;
+  transform: revert !important;
+  display: revert !important;
+}
+
 [style*="transform:translateY"]:not(.payment-page *):not(.payment-page),
 [style*="transform:translateX"]:not(.payment-page *):not(.payment-page),
 [style*="transform: translateY"]:not(.payment-page *):not(.payment-page),
