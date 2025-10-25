@@ -29,6 +29,12 @@ export default function RazorpayButton({
   // CRITICAL: Store the key BEFORE deleting process
   const razorpayKeyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID
 
+  // Debug: Log key prefix to verify it's a live key
+  useEffect(() => {
+    console.log('Razorpay Key Type:', razorpayKeyId?.substring(0, 12) + '...')
+    console.log('Is Live Key:', razorpayKeyId?.startsWith('rzp_live_'))
+  }, [])
+
   useEffect(() => {
     // Check if Razorpay is already loaded
     if (window.Razorpay) {
