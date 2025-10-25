@@ -11,7 +11,7 @@ export default function CheckoutStart() {
   const pricing = useCurrency()
 
   return (
-    <div className="wrap">
+    <div className="wrap payment-page">
       <NavigationHeader />
       <main style={{ paddingTop: '80px', minHeight: '100vh' }}>
         <section className="section" style={{ background: 'var(--gray-50)' }}>
