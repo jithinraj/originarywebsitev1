@@ -2943,8 +2943,8 @@ html {
   background-color: #FAFAFA;
 }
 
-/* CRITICAL: Force all content to be visible (except payment pages and Razorpay elements) */
-*:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]) {
+/* CRITICAL: Force all content to be visible (except payment pages, Razorpay elements + children) */
+*:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *) {
   opacity: 1 !important;
   transform: none !important;
 }
@@ -2968,40 +2968,29 @@ html {
   display: block !important;
 }
 
-/* Critical: Ensure all content is visible (except payment pages and Razorpay) */
-main:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]),
-section:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]),
-div:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]),
-h1:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]),
-h2:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]),
-h3:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]),
-p:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]),
-span:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]),
-button:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]),
-a:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]) {
+/* Critical: Ensure all content is visible (except payment pages, Razorpay + children) */
+main:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
+section:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
+div:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
+h1:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
+h2:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
+h3:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
+p:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
+span:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
+button:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
+a:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *) {
   opacity: 1 !important;
   visibility: visible !important;
 }
 
-/* Force visibility of any hidden elements (except payment pages and Razorpay) */
-[style*="opacity:0"]:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]),
-[style*="opacity: 0"]:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]),
-[style*="display:none"]:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]),
-[style*="display: none"]:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]) {
+/* Force visibility of any hidden elements (except payment pages, Razorpay + children) */
+[style*="opacity:0"]:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
+[style*="opacity: 0"]:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
+[style*="display:none"]:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
+[style*="display: none"]:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *) {
   opacity: 1 !important;
   display: block !important;
   visibility: visible !important;
-}
-
-/* Allow Razorpay elements and ALL their children to use natural opacity/visibility */
-[class*="razorpay"],
-[id*="razorpay"],
-[class*="razorpay"] *,
-[id*="razorpay"] * {
-  opacity: revert !important;
-  visibility: revert !important;
-  transform: revert !important;
-  display: revert !important;
 }
 
 [style*="transform:translateY"]:not(.payment-page *):not(.payment-page),
