@@ -19,8 +19,8 @@ body::after,
   display: none !important;
 }
 
-/* Force all elements to be visible (except on payment pages to allow Razorpay ribbon) */
-*:not(.payment-page *):not(.payment-page) {
+/* Force all elements to be visible (except payment pages and Razorpay elements) */
+*:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]) {
   opacity: 1 !important;
   visibility: visible !important;
   color: inherit !important;
