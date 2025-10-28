@@ -76,3 +76,12 @@ logs/
 
 # Build artifacts
 tsconfig.tsbuildinfo
+
+# Internal development documentation (not for public repo)
+CLAUDE.md
+RAZORPAY_FIX.md
+scripts/capture-specimens.mjs
+scripts/capture-evidence.mjs
+scripts/evidence-urls.json
+evidence/
+specimens/
