@@ -111,6 +111,18 @@ export default function Downloads() {
               }}>
                 <strong>Originary</strong> artifacts are first-party and supported by us. <strong>PEAC</strong> packages are upstream community releases; we link for convenience and compatibility.
               </div>
+
+              <div style={{
+                marginTop: 'var(--space-8)',
+                padding: 'var(--space-4)',
+                textAlign: 'center',
+                fontSize: 'var(--text-xs)',
+                color: 'var(--gray-500)',
+                borderTop: '1px solid var(--gray-200)',
+                paddingTop: 'var(--space-6)'
+              }}>
+                Sold by Poem, Inc., 1111B S Governors Ave, STE 40987, Dover, DE 19904, USA • +1 415 707 0402
+              </div>
             </div>
           </div>
         </section>

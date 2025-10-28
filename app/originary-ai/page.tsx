@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     creator: '@originaryinc'
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/originary-ai'
+    canonical: 'https://www.originary.xyz/ai'
   }
 }
 
@@ -71,7 +71,7 @@ export default function OriginaryAI() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--gray-900)'
               }}>
-                Originary<sup>™</sup> AI - Receipts for the Agentic Web
+                Originary<sup>™</sup> for AI
               </h1>
 
               <p style={{

@@ -116,7 +116,7 @@ export default function Footer() {
           <FooterSection
             title="Solutions"
             links={[
-              { href: '/originary-ai/', label: 'Originary AI' },
+              { href: '/originary-for-ai/', label: 'Originary for AI' },
               { href: '/solutions/enterprises', label: 'Enterprises' },
               { href: '/solutions/ai-builders', label: 'AI Builders' },
               { href: '/solutions/publishers', label: 'Publishers' },
@@ -160,8 +160,20 @@ export default function Footer() {
               }}
               role="contentinfo"
             >
-              © 2025 CURIOUS EXPLORATIONS PRIVATE LIMITED. All rights reserved.
+              © 2025 Poem, Inc. All rights reserved.
             </span>
+            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7 }}>
+              Operated by Poem, Inc.
+            </small>
+            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7 }}>
+              Mailing address: 1111B S Governors Ave, STE 40987, Dover, DE 19904, USA
+            </small>
+            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7 }}>
+              Phone: +1 415 707 0402
+            </small>
+            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7, marginTop: 'var(--space-1)' }}>
+              Originary™ is a trademark of Poem, Inc.
+            </small>
             <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7 }}>
               Powered by an <a
                 href="https://peacprotocol.org"
@@ -172,14 +184,8 @@ export default function Footer() {
                   textDecoration: 'underline'
                 }}
               >
-                open protocol
-              </a>.
-            </small>
-            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7, marginTop: 'var(--space-1)' }}>
-              Originary™ is a trademark of Curious Explorations Private Limited.
-            </small>
-            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7, marginTop: 'var(--space-1)' }}>
-              Available globally and in the US, UK, India, Canada, UAE, and Singapore.
+                open protocol at peacprotocol.org
+              </a>
             </small>
           </div>
           <div

@@ -176,6 +176,16 @@ export default function Pricing() {
               </div>
             </div>
 
+            <div style={{
+              textAlign: 'center',
+              fontSize: 'var(--text-xs)',
+              color: 'var(--gray-500)',
+              marginTop: 'var(--space-4)',
+              marginBottom: 'var(--space-8)'
+            }}>
+              Billing processed by Stripe on behalf of Poem, Inc.
+            </div>
+
             {/* SLO Section */}
             <section style={{
               marginTop: 'var(--space-16)',

@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Cancellation & Refund Policy · Originary',
-  description: 'Cancellation and Refund Policy for Originary services operated by Curious Explorations Private Limited.',
+  description: 'Cancellation and Refund Policy for Originary services operated by Poem, Inc.',
   robots: 'index,follow',
   alternates: {
     canonical: 'https://www.originary.xyz/refund',
@@ -21,8 +21,8 @@ export default function RefundPage() {
     "url": "https://www.originary.xyz/refund",
     "publisher": {
       "@type": "Organization",
-      "name": "Curious Explorations Private Limited",
-      "legalName": "CURIOUS EXPLORATIONS PRIVATE LIMITED"
+      "name": "Poem, Inc.",
+      "alternateName": "Originary"
     }
   }
 
@@ -83,7 +83,7 @@ export default function RefundPage() {
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
-                All sales of Originary services are final and non-refundable. By purchasing any service or product from Originary by CURIOUS EXPLORATIONS PRIVATE LIMITED, you acknowledge and agree that no refunds will be issued under any circumstances.
+                All sales of Originary services are final and non-refundable. By purchasing any service or product from Originary operated by Poem, Inc., you acknowledge and agree that no refunds will be issued under any circumstances.
               </p>
               <p style={{
                 color: 'var(--gray-700)',
@@ -210,8 +210,7 @@ export default function RefundPage() {
                 marginBottom: 'var(--space-4)'
               }}>
                 <li>Email: <a href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>contact@originary.xyz</a></li>
-                <li>Phone: <a href="tel:+919686860303" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>+91 9686860303</a> (India)</li>
-                <li>Support hours: Mon-Fri 10AM-5PM IST / Mon-Fri 10AM-5PM Pacific Time</li>
+                <li>Phone: <a href="tel:+14157070402" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>+1 415 707 0402</a> (US line)</li>
               </ul>
               <p style={{
                 color: 'var(--gray-700)',
@@ -235,7 +234,7 @@ export default function RefundPage() {
                 color: 'var(--gray-700)',
                 lineHeight: 1.7
               }}>
-                Originary services are operated by <strong>CURIOUS EXPLORATIONS PRIVATE LIMITED</strong>, a company incorporated under the laws of India. All payments are processed by Razorpay on behalf of Curious Explorations Private Limited.
+                Originary services are operated by <strong>Poem, Inc.</strong>, a Delaware corporation. All card payments are processed by <strong>Stripe</strong> on behalf of Poem, Inc.
               </p>
             </div>
 
@@ -261,7 +260,7 @@ export default function RefundPage() {
                 lineHeight: 1.7
               }}>
                 <strong>Email:</strong> <a href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>contact@originary.xyz</a><br />
-                <strong>Phone:</strong> <a href="tel:+919686860303" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>+91 9686860303</a>
+                <strong>Phone:</strong> <a href="tel:+14157070402" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>+1 415 707 0402</a>
               </p>
             </div>
 

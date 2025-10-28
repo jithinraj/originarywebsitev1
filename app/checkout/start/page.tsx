@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { CheckCircle, ShoppingCart } from 'lucide-react'
 import { useCurrency } from '@/hooks/useCurrency'
-import RazorpayButton from '@/components/RazorpayButton'
+import StripeCheckoutButton from '@/components/StripeCheckoutButton'
 
 export default function CheckoutStart() {
   const pricing = useCurrency()
@@ -127,11 +127,11 @@ export default function CheckoutStart() {
               </div>
 
               <div style={{ marginBottom: 'var(--space-4)' }}>
-                <RazorpayButton
+                <StripeCheckoutButton
+                  plan="start"
                   amount={100}
-                  currency="USD"
-                  name="Originary"
-                  description="Start Plan - 30 day access"
+                  label="Pay $1 - Start Plan"
+                  className="btn btn-primary"
                 />
               </div>
 
@@ -148,8 +148,8 @@ export default function CheckoutStart() {
                   lineHeight: 1.6,
                   margin: 0
                 }}>
-                  Payment processed by Razorpay<br />
-                  <strong>Billed by: Originary by Curious Explorations</strong>
+                  Payment processed by Stripe<br />
+                  <strong>Billed by: Poem, Inc.</strong>
                 </p>
               </div>
 

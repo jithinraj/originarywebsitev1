@@ -83,7 +83,7 @@ export default function Privacy() {
                   color: 'var(--gray-700)'
                 }}>
               <h2>Controller</h2>
-              <p><strong>Curious Explorations Private Limited</strong> (CEPL). Contact: <Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link></p>
+              <p><strong>Poem, Inc.</strong> (global controller). Contact: <Link href="mailto:privacy@originary.xyz" style={{ color: 'var(--brand-primary)' }}>privacy@originary.xyz</Link></p>
 
               <h2>What we collect</h2>
               <ul>
@@ -110,13 +110,13 @@ export default function Privacy() {
               <p>We use processors for hosting, payments, and support under contractual safeguards.</p>
 
               <h2>International transfers</h2>
-              <p>Data may be processed outside your country with appropriate safeguards.</p>
+              <p>Data may be processed outside your country with appropriate safeguards. Certain support operations may be performed by an India affiliate as a processor under Standard Contractual Clauses (SCCs) and Data Processing Agreements (DPAs).</p>
 
               <h2>Retention</h2>
               <p>We retain data as needed for the above purposes and legal obligations, then delete or anonymize.</p>
 
               <h2>Your rights</h2>
-              <p>Subject to law where you live, you may request access, correction, deletion, or portability, and object to or restrict certain processing. Email <strong><Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link></strong>; we will respond within a reasonable period.</p>
+              <p>Subject to law where you live, you may request access, correction, deletion, or portability, and object to or restrict certain processing. Email <strong><Link href="mailto:privacy@originary.xyz" style={{ color: 'var(--brand-primary)' }}>privacy@originary.xyz</Link></strong>; we will respond within a reasonable period.</p>
 
               <h2>Security</h2>
               <p>We protect data in transit and at rest and publish our coordinated disclosure policy at <Link href="/security" style={{ color: 'var(--brand-primary)' }}>/security</Link>.</p>

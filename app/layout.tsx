@@ -29,22 +29,29 @@ const jetbrainsMono = JetBrains_Mono({
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Originary',
+  name: 'Poem, Inc.',
+  alternateName: 'Originary',
   url: 'https://www.originary.xyz',
-  alternateName: ['Originary AI'],
+  telephone: '+14157070402',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '1111B S Governors Ave, STE 40987',
+    addressLocality: 'Dover',
+    addressRegion: 'DE',
+    postalCode: '19904',
+    addressCountry: 'US'
+  },
   sameAs: [
     'https://x.com/originaryinc',
     'https://www.linkedin.com/company/originary/',
-    'https://github.com/peacprotocol',
-    'https://originaryai.com',
-    'https://peacprotocol.org'
+    'https://github.com/peacprotocol'
   ],
   logo: 'https://www.originary.xyz/og/originary-logo.png',
   contactPoint: [
     {
       '@type': 'ContactPoint',
       email: 'contact@originary.xyz',
-      contactType: 'sales'
+      contactType: 'customer service'
     }
   ]
 }

@@ -22,7 +22,8 @@ const webPageJsonLd = {
   dateModified: '2025-07-27',
   publisher: {
     '@type': 'Organization',
-    name: 'Originary',
+    name: 'Poem, Inc.',
+    alternateName: 'Originary',
     url: 'https://www.originary.xyz'
   }
 }
@@ -82,7 +83,7 @@ export default function Terms() {
                   color: 'var(--gray-700)'
                 }}>
               <h2>Who you&apos;re contracting with</h2>
-              <p>&ldquo;Originary&rdquo;, &ldquo;we&rdquo;, and &ldquo;us&rdquo; mean <strong>Curious Explorations Private Limited</strong> (&ldquo;CEPL&rdquo;), which operates <strong>originary.xyz</strong> and commercial tools that implement <strong>receipts for the agentic web</strong>. A U.S. affiliate may be appointed in the future; until then, these Terms are with CEPL.</p>
+              <p>&ldquo;Originary&rdquo;, &ldquo;we&rdquo;, and &ldquo;us&rdquo; mean <strong>Poem, Inc.</strong>, a Delaware corporation, which operates <strong>originary.xyz</strong> and related commercial tools implementing <strong>receipts for the agentic web</strong>.</p>
 
               <h2>What we provide</h2>
               <ul>
@@ -133,14 +134,15 @@ export default function Terms() {
               <p>If we are involved in a merger, acquisition, financing, or sale of assets, your account information may be transferred as part of that transaction subject to these Terms and the Privacy Policy.</p>
 
               <h2>Governing law &amp; venue</h2>
-              <p>These Terms are governed by the laws of <strong>India</strong>. Courts in <strong>Bengaluru, India</strong> have exclusive jurisdiction. <em>For U.S. enterprise customers, we may mutually agree to U.S. law/venue in your order form.</em></p>
+              <p>These Terms are governed by the laws of <strong>Delaware, USA</strong>. Exclusive venue and jurisdiction lie in <strong>state or federal courts in Delaware, USA</strong>.</p>
 
               <h2>Changes</h2>
               <p>We may update these Terms. We&apos;ll change the &ldquo;Last updated&rdquo; date and, for material changes, provide reasonable notice. Continued use means acceptance.</p>
 
               <h2>Contact</h2>
-              <p><strong>Legal:</strong> <Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link></p>
-              <p><strong>Address:</strong> Curious Explorations Private Limited - Bangalore, Karnataka, India</p>
+              <p><strong>Legal:</strong> <Link href="mailto:legal@originary.xyz" style={{ color: 'var(--brand-primary)' }}>legal@originary.xyz</Link></p>
+              <p><strong>Address:</strong> Poem, Inc., 1111B S Governors Ave, STE 40987, Dover, DE 19904, USA</p>
+              <p><strong>Phone:</strong> +1 415 707 0402</p>
 
                 </div>
               </div>

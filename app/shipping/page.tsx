@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Shipping & Delivery Policy · Originary',
-  description: 'Shipping and Delivery Policy for Originary digital services operated by Curious Explorations Private Limited.',
+  description: 'Shipping and Delivery Policy for Originary digital services operated by Poem, Inc.',
   robots: 'index,follow',
   alternates: {
     canonical: 'https://www.originary.xyz/shipping',
@@ -21,8 +21,8 @@ export default function ShippingPage() {
     "url": "https://www.originary.xyz/shipping",
     "publisher": {
       "@type": "Organization",
-      "name": "Curious Explorations Private Limited",
-      "legalName": "CURIOUS EXPLORATIONS PRIVATE LIMITED"
+      "name": "Poem, Inc.",
+      "alternateName": "Originary"
     }
   }
 
@@ -83,7 +83,7 @@ export default function ShippingPage() {
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
-                Originary by CURIOUS EXPLORATIONS PRIVATE LIMITED provides exclusively digital services. We do not ship any physical products. All services are delivered electronically via email and online dashboard access.
+                Originary by Poem, Inc. provides exclusively digital services. We do not ship any physical products. All services are delivered electronically via email and online dashboard access.
               </p>
               <p style={{
                 color: 'var(--gray-700)',
@@ -262,14 +262,8 @@ export default function ShippingPage() {
                 <p style={{ color: 'var(--gray-700)', lineHeight: 1.7, marginBottom: 'var(--space-2)' }}>
                   <strong>Email:</strong> <a href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>contact@originary.xyz</a>
                 </p>
-                <p style={{ color: 'var(--gray-700)', lineHeight: 1.7, marginBottom: 'var(--space-2)' }}>
-                  <strong>Phone:</strong> <a href="tel:+919686860303" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>+91 9686860303</a>
-                </p>
-                <p style={{ color: 'var(--gray-700)', lineHeight: 1.7, marginBottom: 'var(--space-2)' }}>
-                  <strong>India support hours:</strong> Monday to Friday, 10:00 AM - 5:00 PM IST
-                </p>
                 <p style={{ color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                  <strong>US support hours:</strong> Monday to Friday, 10:00 AM - 5:00 PM Pacific Time
+                  <strong>Phone:</strong> <a href="tel:+14157070402" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>+1 415 707 0402</a>
                 </p>
               </div>
               <p style={{
@@ -294,7 +288,7 @@ export default function ShippingPage() {
                 color: 'var(--gray-700)',
                 lineHeight: 1.7
               }}>
-                Originary services are operated by <strong>CURIOUS EXPLORATIONS PRIVATE LIMITED</strong>, a company incorporated under the laws of India.
+                Originary services are operated by <strong>Poem, Inc.</strong>, a Delaware corporation.
               </p>
             </div>
 

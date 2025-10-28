@@ -75,7 +75,7 @@ export default function Trademark() {
                   lineHeight: 1.7,
                   color: 'var(--gray-700)'
                 }}>
-              <p><strong>&ldquo;Originary&rdquo;</strong> and the Originary logo are trademarks of <strong>Curious Explorations Private Limited</strong>. Proper use:</p>
+              <p><strong>&ldquo;Originary&rdquo;</strong> and the Originary logo are trademarks of <strong>Poem, Inc.</strong> Proper use:</p>
 
               <h2>Permitted use</h2>
               <ul>
@@ -98,7 +98,7 @@ export default function Trademark() {
               </ul>
 
               <h2>Disambiguation</h2>
-              <p>We are not affiliated with any other businesses that may use similar names. This site refers to Originary at <Link href="https://www.originary.xyz" style={{ color: 'var(--brand-primary)' }}>https://www.originary.xyz/</Link>.</p>
+              <p><em>No affiliation with other businesses using similar names.</em> This site refers only to Originary at <Link href="https://www.originary.xyz" style={{ color: 'var(--brand-primary)' }}>https://www.originary.xyz/</Link>.</p>
 
               <h2>Open protocol notice</h2>
               <p>We support the <strong>open-source PEAC protocol</strong>; those assets are governed by their own licenses.</p>

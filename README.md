@@ -1,6 +1,9 @@
-# Originary Website
+# Originary™ Website
 
-Official website for Originary - creators of the PEAC Protocol. Features authentication, payment integration, and developer resources.
+Official website for Originary™ - receipts for the agentic web. Built on the PEAC Protocol.
+
+**Maintained by Poem, Inc.**
+Website: https://www.originary.xyz/
 
 ## Quick Start
 
@@ -81,8 +84,8 @@ npx prisma db push
 - API key generation ready
 
 ✅ **Payment Integration**
-- Razorpay payment button (already configured)
-- Webhook endpoints ready for implementation
+- Stripe checkout integration
+- Webhook endpoints for payment confirmation
 
 ✅ **Existing Design**
 - All your existing CSS preserved
@@ -118,11 +121,26 @@ npx prisma db push
 - `POST /api/auth/signup` - Sign up (server action)
 - `GET /api/auth/session` - Get current session
 
+## Originary™ CLI
+
+Command-line tool for verifying PEAC policy files and generating receipts.
+
+### Downloads
+
+Available at https://www.originary.xyz/downloads or via direct links:
+
+- **macOS (Apple silicon)** - `originary-cli-1.0.0-darwin-arm64.zip`
+- **macOS (Intel)** - `originary-cli-1.0.0-darwin-x64.zip`
+- **Linux** - `originary-cli-1.0.0-linux-x64.tar.gz`
+- **Windows** - `originary-cli-1.0.0-win-x64.zip`
+
+Each build includes SHA-256 checksums for verification.
+
 ## Next Steps
 
 1. **Add more pages** - Convert remaining HTML pages to Next.js
 2. **API key management** - Build API key generation/management
-3. **Payment webhooks** - Handle Razorpay payment confirmations
+3. **Payment webhooks** - Handle Stripe payment confirmations
 4. **Email verification** - Add email verification flow
 5. **Dashboard features** - Add usage analytics, billing, etc.
 

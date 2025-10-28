@@ -97,9 +97,27 @@ export default function About() {
                 <p style={{
                   fontSize: 'var(--text-base)',
                   color: 'var(--gray-700)',
+                  lineHeight: 1.7,
+                  marginBottom: 'var(--space-4)'
+                }}>
+                  Originary is operated by <strong>Poem, Inc.</strong>, a Delaware corporation.
+                </p>
+                <p style={{
+                  fontSize: 'var(--text-sm)',
+                  color: 'var(--gray-600)',
                   lineHeight: 1.7
                 }}>
-                  Originary is operated by <strong>CURIOUS EXPLORATIONS PRIVATE LIMITED</strong>, a company incorporated under the laws of India.
+                  Mailing address: 1111B S Governors Ave, STE 40987, Dover, DE 19904, USA<br />
+                  Phone: +1 415 707 0402
+                </p>
+                <p style={{
+                  fontSize: 'var(--text-xs)',
+                  color: 'var(--gray-500)',
+                  lineHeight: 1.7,
+                  marginTop: 'var(--space-3)',
+                  fontStyle: 'italic'
+                }}>
+                  No affiliation with other businesses using similar names. This site refers only to Originary at https://www.originary.xyz/.
                 </p>
               </div>
 
@@ -123,7 +141,7 @@ export default function About() {
                 <div className="card">
                   <h3 style={{ marginBottom: 'var(--space-4)' }}>PEAC Protocol</h3>
                   <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
-                    We developed the open PEAC protocol for standardized agent–resource interaction with signed receipts.
+                    We developed the open PEAC protocol for standardized agent-resource interaction with signed receipts.
                   </p>
                 </div>
                 <div className="card">

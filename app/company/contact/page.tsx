@@ -123,7 +123,7 @@ export default function Contact() {
                     <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600 }}>Phone</h3>
                   </div>
                   <a
-                    href="tel:+919686860303"
+                    href="tel:+14157070402"
                     style={{
                       fontSize: 'var(--text-base)',
                       color: 'var(--brand-primary)',
@@ -133,28 +133,24 @@ export default function Contact() {
                       marginBottom: 'var(--space-1)'
                     }}
                   >
-                    +91 9686860303
+                    +1 415 707 0402
                   </a>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                    India support line
+                    US line
                   </p>
                 </div>
 
-                {/* Support Hours */}
+                {/* Company Info */}
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)' }}>
-                    <Clock size={24} style={{ color: 'var(--brand-primary)' }} />
-                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600 }}>Support Hours</h3>
+                    <Building size={24} style={{ color: 'var(--brand-primary)' }} />
+                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600 }}>Company</h3>
                   </div>
                   <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-700)', lineHeight: 1.8 }}>
-                    <div style={{ marginBottom: 'var(--space-2)' }}>
-                      <strong>India:</strong><br />
-                      Mon-Fri, 10:00 AM - 5:00 PM IST
-                    </div>
-                    <div>
-                      <strong>US:</strong><br />
-                      Mon-Fri, 10:00 AM - 5:00 PM PT
-                    </div>
+                    <strong>Poem, Inc.</strong><br />
+                    1111B S Governors Ave<br />
+                    STE 40987<br />
+                    Dover, DE 19904, USA
                   </div>
                 </div>
               </div>

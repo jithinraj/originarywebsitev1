@@ -317,7 +317,7 @@ export default function PricingPage() {
               <p>
                 <strong>🚀 Simple Getting Started:</strong> Pay just $1 to get immediate access to any plan.
                 Our team will personally help you integrate, go live, and purchase additional credits as needed.
-                No complex pricing tiers – just pay for what you use.
+                No complex pricing tiers - just pay for what you use.
               </p>
             </div>
           </FadeIn>
