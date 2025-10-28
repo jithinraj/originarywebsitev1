@@ -1,8 +1,28 @@
 'use client'
 
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 
 export default function Footer() {
+  const [analyticsConsent, setAnalyticsConsent] = useState<boolean | null>(null)
+
+  useEffect(() => {
+    // Check existing consent on mount
+    const consent = localStorage.getItem('analytics-consent')
+    setAnalyticsConsent(consent === 'true')
+  }, [])
+
+  const togglePrivacyChoices = () => {
+    const newConsent = !analyticsConsent
+    setAnalyticsConsent(newConsent)
+    localStorage.setItem('analytics-consent', String(newConsent))
+
+    // Reload to apply changes
+    if (typeof window !== 'undefined') {
+      window.location.reload()
+    }
+  }
+
   return (
     <footer
       style={{
@@ -169,7 +189,10 @@ export default function Footer() {
               Mailing address: 1111B S Governors Ave, STE 40987, Dover, DE 19904, USA
             </small>
             <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7 }}>
-              Phone: +1 415 707 0402
+              Phone: <a href="tel:+14157070402" style={{ color: 'inherit', textDecoration: 'underline' }}>+1 415 707 0402</a>
+            </small>
+            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7 }}>
+              Email: <a href="mailto:contact@originary.xyz" style={{ color: 'inherit', textDecoration: 'underline' }}>contact@originary.xyz</a>
             </small>
             <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7, marginTop: 'var(--space-1)' }}>
               Originary™ is a trademark of Poem, Inc.
@@ -187,6 +210,22 @@ export default function Footer() {
                 open protocol at peacprotocol.org
               </a>
             </small>
+            <button
+              onClick={togglePrivacyChoices}
+              style={{
+                color: 'var(--gray-600)',
+                fontSize: 'var(--text-xs)',
+                textDecoration: 'underline',
+                background: 'none',
+                border: 'none',
+                padding: 0,
+                cursor: 'pointer',
+                marginTop: 'var(--space-2)'
+              }}
+              aria-label="Toggle analytics consent"
+            >
+              Privacy choices {analyticsConsent === null ? '' : analyticsConsent ? '(Analytics enabled)' : '(Analytics disabled)'}
+            </button>
           </div>
           <div
             style={{

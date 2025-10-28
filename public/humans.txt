@@ -1,7 +1,7 @@
-Team: Originary (Curious Explorations Private Limited)
+Team: Originary (Poem, Inc.)
 Mission: Receipts for the agentic web - consent, attribution, access, and settlement with proof.
 Founded: 2024
-Location: United States / India
+Location: United States (India affiliate provides support operations)
 Contact: contact@originary.xyz
 
 /* SITE */
@@ -45,11 +45,12 @@ Development Stack:
 
 /* LEGAL */
 
-Copyright: Originary © 2025 Curious Explorations Private Limited
+Copyright: © 2025 Poem, Inc.
+Operator: Poem, Inc. (India affiliate may provide support operations)
 Trade & Product Name: Originary
 License: Proprietary software with open protocol specifications
-Terms: https://www.originary.xyz/legal/terms.html
-Privacy: https://www.originary.xyz/legal/privacy.html
+Terms: https://www.originary.xyz/terms
+Privacy: https://www.originary.xyz/privacy
 Security: https://www.originary.xyz/.well-known/security.txt
 
 Domain:

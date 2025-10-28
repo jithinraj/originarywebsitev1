@@ -61,12 +61,21 @@ export default function DownloadsClient() {
               </h3>
               <p style={{
                 color: 'var(--gray-600)',
-                fontSize: 'var(--text-sm)'
+                fontSize: 'var(--text-sm)',
+                marginBottom: 'var(--space-1)'
               }}>
                 {file.platform === 'Templates'
                   ? 'Ready-to-use policy templates for different use cases'
                   : 'Command-line tool for verifying PEAC policy files'
                 }
+              </p>
+              <p style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: 'var(--text-xs)',
+                color: 'var(--gray-500)',
+                fontWeight: 500
+              }}>
+                {file.filename}
               </p>
             </div>
             <a

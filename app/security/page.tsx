@@ -76,7 +76,7 @@ export default function Security() {
                   lineHeight: 1.7,
                   color: 'var(--gray-700)'
                 }}>
-              <p>We appreciate responsible disclosure. Email <strong><Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link></strong> with details and reproduction steps.</p>
+              <p>We appreciate responsible disclosure. Email <strong><Link href="mailto:security@originary.xyz" style={{ color: 'var(--brand-primary)' }}>security@originary.xyz</Link></strong> or <strong><Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link></strong> with details and reproduction steps.</p>
 
               <h2>Our commitment</h2>
               <ul>

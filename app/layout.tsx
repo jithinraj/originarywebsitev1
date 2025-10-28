@@ -51,7 +51,9 @@ const organizationJsonLd = {
     {
       '@type': 'ContactPoint',
       email: 'contact@originary.xyz',
-      contactType: 'customer service'
+      telephone: '+14157070402',
+      contactType: 'customer support',
+      areaServed: 'US'
     }
   ]
 }

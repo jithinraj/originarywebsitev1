@@ -237,6 +237,25 @@ export default function OriginaryAI() {
             </div>
           </div>
         </section>
+
+        {/* Disclaimer */}
+        <section style={{
+          padding: 'var(--space-8) 0',
+          background: 'var(--gray-50)',
+          borderTop: '1px solid var(--gray-200)'
+        }}>
+          <div className="container">
+            <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+              <p style={{
+                fontSize: 'var(--text-sm)',
+                color: 'var(--gray-500)',
+                lineHeight: 1.6
+              }}>
+                No affiliation with other businesses using similar names.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
