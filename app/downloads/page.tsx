@@ -3,10 +3,8 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Mark from '@/components/Mark'
 import Script from 'next/script'
-import DownloadsClient from './DownloadsClient'
 import DownloadsServer from './DownloadsServer'
 import DownloadCardPEAC from '@/components/DownloadCardPEAC'
-import { Suspense } from 'react'
 
 const softwareJsonLd = {
   '@context': 'https://schema.org',
@@ -95,9 +93,6 @@ export default function Downloads() {
                 Download the Originary CLI and peac.txt templates. Each build includes a checksum for verification.
               </p>
 
-              <Suspense fallback={<DownloadsServer />}>
-                <DownloadsClient />
-              </Suspense>
               <DownloadsServer />
               <DownloadCardPEAC />
 
