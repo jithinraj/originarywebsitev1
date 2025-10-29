@@ -117,19 +117,53 @@ export default function Footer() {
               >
                 Originary & AI
               </Link>
+              <Link
+                href="/receipts"
+                style={{
+                  color: 'var(--gray-600)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 500,
+                  transition: 'color var(--duration-200) var(--ease-out)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = 'var(--brand-primary)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'var(--gray-600)'
+                }}
+              >
+                Receipts
+              </Link>
+              <Link
+                href="/demo"
+                style={{
+                  color: 'var(--gray-600)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 500,
+                  transition: 'color var(--duration-200) var(--ease-out)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = 'var(--brand-primary)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'var(--gray-600)'
+                }}
+              >
+                Interactive Demo
+              </Link>
             </div>
           </div>
 
           <FooterSection
-            title="Product"
+            title="Products"
             links={[
               { href: '/products/peac', label: 'PEAC Core' },
               { href: '/products/verify', label: 'Verify API' },
               { href: '/products/gateway-402', label: 'Gateway 402' },
               { href: '/products/studio', label: 'Studio' },
-              { href: '/products/adapters', label: 'Adapters' },
-              { href: '/receipts', label: 'Receipts' },
-              { href: '/demo', label: 'Interactive Demo' }
+              { href: '/products/adapters', label: 'Adapters' }
             ]}
           />
 
@@ -149,14 +183,7 @@ export default function Footer() {
             title="Company"
             links={[
               { href: '/company/about', label: 'About' },
-              { href: '/company/contact', label: 'Contact' },
-              { href: '/terms', label: 'Terms' },
-              { href: '/privacy', label: 'Privacy' },
-              { href: '/refund', label: 'Refund Policy' },
-              { href: '/shipping', label: 'Shipping & Delivery' },
-              { href: '/trademark', label: 'Trademark' },
-              { href: '/security', label: 'Security' },
-              { href: '/copyright', label: 'Copyright' }
+              { href: '/company/contact', label: 'Contact' }
             ]}
           />
         </div>
@@ -259,6 +286,36 @@ export default function Footer() {
                 </FooterLink>
                 <FooterLink href="/.well-known/security.txt" label="View security.txt file">
                   security.txt
+                </FooterLink>
+              </div>
+            </div>
+
+            {/* Legal */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+              <span
+                style={{
+                  color: 'var(--gray-900)',
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 600
+                }}
+              >
+                Legal
+              </span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                <FooterLink href="/terms" label="Terms of Service">
+                  Terms
+                </FooterLink>
+                <FooterLink href="/privacy" label="Privacy Policy">
+                  Privacy
+                </FooterLink>
+                <FooterLink href="/trademark" label="Trademark">
+                  Trademark
+                </FooterLink>
+                <FooterLink href="/security" label="Security">
+                  Security
+                </FooterLink>
+                <FooterLink href="/copyright" label="Copyright">
+                  Copyright
                 </FooterLink>
               </div>
             </div>
