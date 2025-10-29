@@ -141,7 +141,7 @@ export default function HeroSection() {
             <Link
               href="/docs/receipts"
               className="announcement"
-              aria-label="Learn about PEAC-Receipt (open standard)"
+              aria-label="Learn about PEAC-Receipt (open protocol)"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -178,7 +178,7 @@ export default function HeroSection() {
                 marginLeft: 'var(--space-1)',
                 marginRight: 'var(--space-1)'
               }}>•</span>
-              <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600 }}>Open standard</span>
+              <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600 }}>Open protocol</span>
               <ArrowRight size={14} />
             </Link>
 

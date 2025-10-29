@@ -140,7 +140,8 @@ export default function Footer() {
               { href: '/solutions/enterprises', label: 'Enterprises' },
               { href: '/solutions/ai-builders', label: 'AI Builders' },
               { href: '/solutions/publishers', label: 'Publishers' },
-              { href: '/solutions/api-providers', label: 'API Providers' }
+              { href: '/solutions/api-providers', label: 'API Providers' },
+              { href: '/downloads', label: 'Downloads' }
             ]}
           />
 

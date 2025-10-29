@@ -108,7 +108,8 @@ export default function NavigationHeader() {
                 { href: '/solutions/enterprises', label: 'Enterprises' },
                 { href: '/solutions/ai-builders', label: 'AI Builders' },
                 { href: '/solutions/publishers', label: 'Publishers' },
-                { href: '/solutions/api-providers', label: 'API Providers' }
+                { href: '/solutions/api-providers', label: 'API Providers' },
+                { href: '/downloads', label: 'Downloads' }
               ]} />
 
               <NavLink href="/developers">Developers</NavLink>
@@ -184,7 +185,8 @@ export default function NavigationHeader() {
                 { href: '/solutions/enterprises', label: 'Enterprises' },
                 { href: '/solutions/ai-builders', label: 'AI Builders' },
                 { href: '/solutions/publishers', label: 'Publishers' },
-                { href: '/solutions/api-providers', label: 'API Providers' }
+                { href: '/solutions/api-providers', label: 'API Providers' },
+                { href: '/downloads', label: 'Downloads' }
               ]} />
 
               <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
