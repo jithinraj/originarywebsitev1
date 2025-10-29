@@ -161,98 +161,192 @@ export default function Footer() {
           />
         </div>
 
+        {/* Bottom Section */}
         <div
           style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            paddingTop: 'var(--space-8)',
-            marginTop: 'var(--space-8)',
-            borderTop: '1px solid var(--gray-200)',
-            flexWrap: 'wrap',
-            gap: 'var(--space-4)'
+            paddingTop: 'var(--space-12)',
+            marginTop: 'var(--space-12)',
+            borderTop: '1px solid var(--gray-200)'
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
-            <span
-              style={{
-                color: 'var(--gray-500)',
-                fontSize: 'var(--text-sm)'
-              }}
-              role="contentinfo"
-            >
-              © 2025 Poem, Inc. All rights reserved.
-            </span>
-            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7 }}>
-              Operated by Poem, Inc.
-            </small>
-            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7 }}>
-              Mailing address: 1111B S Governors Ave, STE 40987, Dover, DE 19904, USA
-            </small>
-            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7 }}>
-              Phone: <a href="tel:+14157070402" style={{ color: 'inherit', textDecoration: 'underline' }}>+1 415 707 0402</a>
-            </small>
-            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7 }}>
-              Email: <a href="mailto:contact@originary.xyz" style={{ color: 'inherit', textDecoration: 'underline' }}>contact@originary.xyz</a>
-            </small>
-            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7, marginTop: 'var(--space-1)' }}>
-              Originary™ is a trademark of Poem, Inc.
-            </small>
-            <small style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', opacity: 0.7 }}>
-              Powered by an <a
-                href="https://peacprotocol.org"
-                target="_blank"
-                rel="noopener"
+          {/* Main Bottom Grid */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: 'var(--space-8)',
+              marginBottom: 'var(--space-8)'
+            }}
+          >
+            {/* Company Info */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+              <span
                 style={{
-                  color: 'inherit',
-                  textDecoration: 'underline'
+                  color: 'var(--gray-900)',
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 600
                 }}
               >
-                open protocol at peacprotocol.org
+                Poem, Inc.
+              </span>
+              <span style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', lineHeight: 1.6 }}>
+                Dover, Delaware
+              </span>
+              <span style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', lineHeight: 1.6 }}>
+                United States
+              </span>
+            </div>
+
+            {/* Contact */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+              <span
+                style={{
+                  color: 'var(--gray-900)',
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 600
+                }}
+              >
+                Contact
+              </span>
+              <a
+                href="mailto:contact@originary.xyz"
+                style={{
+                  color: 'var(--gray-600)',
+                  fontSize: 'var(--text-xs)',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--brand-primary)'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--gray-600)'}
+              >
+                contact@originary.xyz
               </a>
-            </small>
-            <button
-              onClick={togglePrivacyChoices}
-              style={{
-                color: 'var(--gray-600)',
-                fontSize: 'var(--text-xs)',
-                textDecoration: 'underline',
-                background: 'none',
-                border: 'none',
-                padding: 0,
-                cursor: 'pointer',
-                marginTop: 'var(--space-2)'
-              }}
-              aria-label="Toggle analytics consent"
-            >
-              Privacy choices {analyticsConsent === null ? '' : analyticsConsent ? '(Analytics enabled)' : '(Analytics disabled)'}
-            </button>
+              <a
+                href="tel:+14157070402"
+                style={{
+                  color: 'var(--gray-600)',
+                  fontSize: 'var(--text-xs)',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--brand-primary)'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--gray-600)'}
+              >
+                +1 415 707 0402
+              </a>
+            </div>
+
+            {/* Technical */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+              <span
+                style={{
+                  color: 'var(--gray-900)',
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 600
+                }}
+              >
+                Technical
+              </span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                <FooterLink href="/robots.txt" label="View robots.txt file">
+                  robots.txt
+                </FooterLink>
+                <FooterLink href="/.well-known/peac.txt" label="View PEAC policy file">
+                  peac.txt
+                </FooterLink>
+                <FooterLink href="/.well-known/aipref.json" label="View AI preferences file">
+                  aipref.json
+                </FooterLink>
+                <FooterLink href="/.well-known/security.txt" label="View security.txt file">
+                  security.txt
+                </FooterLink>
+              </div>
+            </div>
+
+            {/* Resources */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+              <span
+                style={{
+                  color: 'var(--gray-900)',
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 600
+                }}
+              >
+                Resources
+              </span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                <FooterLink href="/sitemap.xml" label="View XML sitemap">
+                  sitemap.xml
+                </FooterLink>
+                <FooterLink href="/humans.txt" label="View humans.txt file">
+                  humans.txt
+                </FooterLink>
+                <button
+                  onClick={togglePrivacyChoices}
+                  style={{
+                    color: 'var(--gray-600)',
+                    fontSize: 'var(--text-xs)',
+                    textDecoration: 'none',
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    transition: 'color 0.2s ease',
+                    fontWeight: 400
+                  }}
+                  aria-label="Toggle analytics consent"
+                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--brand-primary)'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = 'var(--gray-600)'}
+                >
+                  Privacy choices
+                </button>
+              </div>
+            </div>
           </div>
+
+          {/* Bottom Bar */}
           <div
             style={{
               display: 'flex',
-              gap: 'var(--space-6)',
-              flexWrap: 'wrap'
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              paddingTop: 'var(--space-6)',
+              borderTop: '1px solid var(--gray-100)',
+              flexWrap: 'wrap',
+              gap: 'var(--space-4)'
             }}
           >
-            <FooterLink href="/robots.txt" label="View robots.txt file">
-              robots.txt
-            </FooterLink>
-            <FooterLink href="/.well-known/peac.txt" label="View PEAC policy file">
-              peac.txt
-            </FooterLink>
-            <FooterLink href="/.well-known/aipref.json" label="View AI preferences file">
-              aipref.json
-            </FooterLink>
-            <FooterLink href="/.well-known/security.txt" label="View security.txt file">
-              security.txt
-            </FooterLink>
-            <FooterLink href="/sitemap.xml" label="View XML sitemap">
-              sitemap.xml
-            </FooterLink>
-            <FooterLink href="/humans.txt" label="View humans.txt file">
-              humans.txt
-            </FooterLink>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
+              <span
+                style={{
+                  color: 'var(--gray-500)',
+                  fontSize: 'var(--text-xs)'
+                }}
+                role="contentinfo"
+              >
+                © 2025 Poem, Inc.
+              </span>
+              <span style={{ color: 'var(--gray-400)', fontSize: 'var(--text-xs)' }}>•</span>
+              <span style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)' }}>
+                Originary™ is a trademark of Poem, Inc.
+              </span>
+            </div>
+            <a
+              href="https://peacprotocol.org"
+              target="_blank"
+              rel="noopener"
+              style={{
+                color: 'var(--gray-500)',
+                fontSize: 'var(--text-xs)',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.color = 'var(--brand-primary)'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'var(--gray-500)'}
+            >
+              Built on PEAC Protocol
+            </a>
           </div>
         </div>
       </div>
