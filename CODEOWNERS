@@ -1,0 +1,29 @@
+# Code Owners for Originary Website
+# These owners will be requested for review when someone opens a pull request.
+
+# Default owners for everything in the repo
+* @jithinraj
+
+# Legal and compliance files require explicit approval
+/app/terms/ @jithinraj
+/app/privacy/ @jithinraj
+/app/security/ @jithinraj
+/app/copyright/ @jithinraj
+/app/trademark/ @jithinraj
+humans.txt @jithinraj
+.well-known/ @jithinraj
+
+# Payment integration files require careful review
+components/RazorpayButton.tsx @jithinraj
+app/pricing/ @jithinraj
+
+# Build and infrastructure
+package.json @jithinraj
+package-lock.json @jithinraj
+.github/ @jithinraj
+vercel.json @jithinraj
+
+# SEO and metadata
+app/layout.tsx @jithinraj
+app/sitemap.ts @jithinraj
+public/robots.txt @jithinraj

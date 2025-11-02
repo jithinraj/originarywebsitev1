@@ -10,6 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:content": "node scripts/lint-content.js",
     "sitemap": "node scripts/generate-sitemap.js",
     "test:responsive": "node scripts/test-responsive.js",
     "audit:devices": "node scripts/device-compatibility-audit.js",

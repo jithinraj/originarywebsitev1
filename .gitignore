@@ -86,3 +86,10 @@ scripts/capture-evidence.mjs
 scripts/evidence-urls.json
 evidence/
 specimens/
+
+# Strategy and sensitive planning documents
+notes/
+legal-private/
+strategy/
+positioning/
+competitive-analysis/
