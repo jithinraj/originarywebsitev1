@@ -193,7 +193,16 @@ export default function OriginaryAIPage() {
                 color: 'var(--gray-500)',
                 marginBottom: 'var(--space-16)'
               }}>
-                Works with A2A networks, MCP tool calls, and HTTP-402 payment rails out of the box
+                Works with A2A networks, MCP tool calls, and HTTP-402 payment rails out of the box. Learn more about{' '}
+                <Link
+                  href="/integrations/x402/"
+                  style={{
+                    color: 'var(--brand-primary)',
+                    textDecoration: 'underline'
+                  }}
+                >
+                  agent-to-agent transactions with x402
+                </Link>.
               </div>
             </div>
           </div>
