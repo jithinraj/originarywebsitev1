@@ -182,6 +182,7 @@ export default function Footer() {
           <FooterSection
             title="Standards"
             links={[
+              { href: 'https://peacprotocol.org/', label: 'PEAC Protocol' },
               { href: '/docs/standards/x402', label: 'HTTP 402' },
               { href: '/docs/standards/a2a', label: 'Agent-to-Agent' },
               { href: '/docs/standards/mcp', label: 'Model Context Protocol' },

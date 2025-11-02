@@ -5,6 +5,13 @@ import Link from 'next/link'
 export default function StandardsIntegrations() {
   const standards = [
     {
+      title: 'PEAC Protocol',
+      subtitle: 'Receipt Standard',
+      description: 'Open protocol for verifiable receipts in agent-to-agent interactions with cryptographic signatures.',
+      href: 'https://peacprotocol.org/',
+      icon: '🧾'
+    },
+    {
       title: 'HTTP 402',
       subtitle: 'Payment Required',
       description: 'Machine-readable payment flows for API monetization with standardized payment headers.',
