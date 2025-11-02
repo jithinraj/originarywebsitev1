@@ -60,6 +60,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: 'docs/deploy/vercel', priority: 0.7 },
   ]
 
+  // Guide pages
+  const guidePaths = [
+    { path: 'guides/http-402', priority: 0.8 },
+  ]
+
+  // Glossary pages
+  const glossaryPaths = [
+    { path: 'glossary/x402', priority: 0.7 },
+    { path: 'glossary/http-402-payment-required', priority: 0.7 },
+  ]
+
+  // Blog pages
+  const blogPaths = [
+    { path: 'blog', priority: 0.8 },
+    { path: 'blog/aipref-by-ietf', priority: 0.7 },
+    { path: 'blog/http-402-for-apis', priority: 0.7 },
+    { path: 'blog/adding-402-in-15-minutes', priority: 0.7 },
+    { path: 'blog/cloudflare-workers-402', priority: 0.7 },
+    { path: 'blog/robots-txt-rfc-9309', priority: 0.7 },
+  ]
+
   // User pages
   const userPaths = [
     { path: 'dashboard', priority: 0.6 },
@@ -97,6 +118,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...servicePaths,
     ...integrationPaths,
     ...docPaths,
+    ...guidePaths,
+    ...glossaryPaths,
+    ...blogPaths,
     ...userPaths,
     ...checkoutPaths,
     ...companyPaths,

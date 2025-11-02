@@ -50,6 +50,33 @@ export default function BlogPage() {
       featured: true
     },
     {
+      slug: 'http-402-for-apis',
+      title: 'HTTP 402 for APIs: Making Payment-Required Responses Work',
+      description: 'A practical guide to implementing HTTP 402 Payment Required in modern APIs. Learn the anatomy of a 402 response, receipt verification patterns, and how to avoid common pitfalls.',
+      author: 'Jithin Raj & Originary Team',
+      category: 'Technical',
+      readTime: '12 min read',
+      featured: false
+    },
+    {
+      slug: 'adding-402-in-15-minutes',
+      title: 'Add HTTP 402 to Your API in 15 Minutes',
+      description: 'Quick tutorial for adding HTTP 402 Payment Required responses to an existing Express API. No SDK required, just standard HTTP and receipt verification.',
+      author: 'Jithin Raj & Originary Team',
+      category: 'Tutorial',
+      readTime: '8 min read',
+      featured: false
+    },
+    {
+      slug: 'cloudflare-workers-402',
+      title: 'HTTP 402 on Cloudflare Workers: Global Edge Payment Gates',
+      description: 'Deploy HTTP 402 payment-required responses at the edge with Cloudflare Workers. Zero cold starts, global KV storage, Web Crypto API for receipt verification.',
+      author: 'Jithin Raj & Originary Team',
+      category: 'Technical',
+      readTime: '10 min read',
+      featured: false
+    },
+    {
       slug: 'robots-txt-rfc-9309',
       title: 'robots.txt (RFC 9309): The Web\'s Crawl Access Control',
       description: 'A technical deep dive into RFC 9309, the standardized Robots Exclusion Protocol - matching rules, error handling, caching, and how it relates to AIPREF usage preferences.',
