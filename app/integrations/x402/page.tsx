@@ -4,24 +4,24 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'AI Preferences (AIPREF) - Standards Integration',
-  description: 'Originary supports IETF AIPREF for machine-readable AI policy discovery. Enable agents to discover and comply with your AI access preferences automatically.',
+  title: 'HTTP 402 (Payment Required) - Integration',
+  description: 'Originary implements HTTP 402 Payment Required for machine-readable payment flows. Enable API monetization with standardized payment headers and PEAC-Receipt verification.',
   openGraph: {
-    title: 'AI Preferences (AIPREF) - Standards Integration | Originary',
-    description: 'Originary supports IETF AIPREF for machine-readable AI policy discovery. Enable agents to discover and comply with your AI access preferences automatically.',
-    url: 'https://www.originary.xyz/docs/standards/aipref/',
+    title: 'HTTP 402 (Payment Required) - Integration | Originary',
+    description: 'Originary implements HTTP 402 Payment Required for machine-readable payment flows. Enable API monetization with standardized payment headers and PEAC-Receipt verification.',
+    url: 'https://www.originary.xyz/integrations/x402/',
     type: 'article'
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/docs/standards/aipref/'
+    canonical: 'https://www.originary.xyz/integrations/x402/'
   }
 }
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "AI Preferences (AIPREF) Integration",
-  "description": "Technical documentation for implementing IETF AIPREF with Originary policy discovery and verification",
+  "headline": "HTTP 402 (Payment Required) Integration",
+  "description": "Technical documentation for implementing HTTP 402 Payment Required with Originary PEAC-Receipt headers",
   "author": {
     "@type": "Organization",
     "@id": "https://www.originary.xyz/#org"
@@ -30,10 +30,10 @@ const jsonLd = {
     "@type": "Organization",
     "@id": "https://www.originary.xyz/#org"
   },
-  "url": "https://www.originary.xyz/docs/standards/aipref/"
+  "url": "https://www.originary.xyz/integrations/x402/"
 }
 
-export default function AIPREFPage() {
+export default function X402Page() {
   return (
     <>
       <NavigationHeader />
@@ -67,7 +67,7 @@ export default function AIPREFPage() {
             marginBottom: 'var(--space-6)',
             lineHeight: 1.2
           }}>
-            AI Preferences (AIPREF)
+            HTTP 402 (Payment Required)
           </h1>
 
           {/* Subtitle */}
@@ -78,7 +78,7 @@ export default function AIPREFPage() {
             marginBottom: 'var(--space-16)',
             lineHeight: 1.6
           }}>
-            Machine-readable AI access policies for autonomous agents
+            Machine-readable payment flows for API monetization
           </p>
 
           {/* Overview */}
@@ -87,96 +87,47 @@ export default function AIPREFPage() {
               Overview
             </h2>
             <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-              AIPREF is an IETF standard for expressing AI access preferences in machine-readable format. Similar to robots.txt for web crawlers, AIPREF allows websites to declare policies for AI agent access, scraping permissions, and usage terms.
+              HTTP 402 Payment Required is a reserved status code intended for digital payment systems. Originary implements 402 responses with standardized payment headers and PEAC-Receipt verification, enabling agents to autonomously handle API payment flows.
             </p>
             <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
-              Originary extends AIPREF with PEAC-Receipt verification, enabling sites to enforce policies cryptographically. Agents discover policies via <code>/.well-known/aipref.json</code>, and Originary issues receipts proving policy compliance.
+              When an API endpoint requires payment, it returns a 402 status with machine-readable payment instructions. After payment completion, the API issues a PEAC-Receipt that agents can verify and attach to subsequent requests.
             </p>
-          </div>
-
-          {/* File Format */}
-          <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
-            <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
-              AIPREF File Format
-            </h2>
-
-            <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)' }}>
-              Example /.well-known/aipref.json
-            </h3>
-            <pre style={{
-              background: 'var(--gray-50)',
-              padding: 'var(--space-4)',
-              borderRadius: 'var(--radius-md)',
-              overflow: 'auto',
-              fontSize: 'var(--text-sm)',
-              fontFamily: 'var(--font-jetbrains-mono)'
-            }}>
-{`{
-  "version": "1.0",
-  "ai_access": {
-    "scraping": "allowed_with_attribution",
-    "training": "prohibited",
-    "commercial_use": "requires_license"
-  },
-  "rate_limits": {
-    "requests_per_hour": 100
-  },
-  "payment": {
-    "required": true,
-    "endpoint": "https://api.example.com/payment"
-  },
-  "attribution": {
-    "required": true,
-    "format": "Source: example.com"
-  }
-}`}
-            </pre>
-          </div>
-
-          {/* Use Cases */}
-          <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
-            <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
-              Use Cases
-            </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-              <div>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
-                  Content Licensing
-                </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
-                  Publishers declare licensing terms for AI training data. Agents discover terms and obtain licenses before scraping.
-                </p>
-              </div>
-              <div>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
-                  Rate Limiting
-                </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
-                  Sites declare acceptable request rates. Agents respect limits to avoid being blocked or incurring overage fees.
-                </p>
-              </div>
-              <div>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
-                  Attribution Requirements
-                </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
-                  Content creators specify attribution formats. Agents include proper citations when using content.
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Implementation */}
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
-              Implementation with Originary
+              Implementation
             </h2>
-            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-              Originary reads your aipref.json file and enforces policies at the edge. When agents comply with policies (e.g., by paying required fees), Originary issues PEAC-Receipts that prove compliance.
-            </p>
 
             <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)' }}>
-              Agent Request with Policy Compliance
+              402 Response Format
+            </h3>
+            <pre style={{
+              background: 'var(--gray-50)',
+              padding: 'var(--space-4)',
+              borderRadius: 'var(--radius-md)',
+              overflow: 'auto',
+              fontSize: 'var(--text-sm)',
+              fontFamily: 'var(--font-jetbrains-mono)',
+              marginBottom: 'var(--space-4)'
+            }}>
+{`HTTP/1.1 402 Payment Required
+Content-Type: application/json
+Payment-Required: https://api.example.com/checkout
+Accept-Payment: stripe, razorpay
+
+{
+  "error": "payment_required",
+  "message": "This endpoint requires payment",
+  "payment_url": "https://api.example.com/checkout",
+  "amount": 100,
+  "currency": "USD"
+}`}
+            </pre>
+
+            <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', marginTop: 'var(--space-6)' }}>
+              Request with PEAC-Receipt
             </h3>
             <pre style={{
               background: 'var(--gray-50)',
@@ -186,24 +137,24 @@ export default function AIPREFPage() {
               fontSize: 'var(--text-sm)',
               fontFamily: 'var(--font-jetbrains-mono)'
             }}>
-{`GET /content HTTP/1.1
-Host: example.com
-PEAC-Receipt: eyJhbGc...policy-compliance-proof
-User-Agent: MyAgent/1.0`}
+{`GET /api/data HTTP/1.1
+Host: api.example.com
+PEAC-Receipt: eyJhbGc...signature
+Authorization: Bearer token123`}
             </pre>
           </div>
 
           {/* Benefits */}
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
-              Benefits for Publishers
+              Benefits for API Providers
             </h2>
             <ul style={{ color: 'var(--gray-600)', lineHeight: 1.8, paddingLeft: 'var(--space-6)' }}>
-              <li>Machine-readable AI access policies</li>
-              <li>Cryptographic enforcement of licensing terms</li>
-              <li>Automated compliance verification</li>
-              <li>Monetization of AI training data</li>
-              <li>Standards-based approach compatible with IETF specifications</li>
+              <li>Enable pay-per-request monetization for AI agents</li>
+              <li>Standardized payment headers reduce integration complexity</li>
+              <li>PEAC-Receipt verification prevents payment fraud</li>
+              <li>Audit trail of all agent transactions</li>
+              <li>Compatible with existing payment processors</li>
             </ul>
           </div>
 
@@ -213,21 +164,21 @@ User-Agent: MyAgent/1.0`}
               Resources
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-              <Link href="/.well-known/aipref.json" style={{
+              <Link href="/products/gateway-402" style={{
                 color: 'var(--brand-primary)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-base)',
                 fontWeight: 500
               }}>
-                View Originary&apos;s aipref.json →
+                Gateway 402 Product →
               </Link>
-              <Link href="/blog/aipref-by-ietf" style={{
+              <Link href="/docs/payments/x402" style={{
                 color: 'var(--brand-primary)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-base)',
                 fontWeight: 500
               }}>
-                AIPREF by IETF Blog Post →
+                Technical Documentation →
               </Link>
               <a href="https://peacprotocol.org/" target="_blank" rel="noopener" style={{
                 color: 'var(--brand-primary)',
@@ -249,10 +200,10 @@ User-Agent: MyAgent/1.0`}
             marginTop: 'var(--space-12)'
           }}>
             <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
-              Enforce your AI policies
+              Ready to implement HTTP 402?
             </h3>
             <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
-              Implement AIPREF with verifiable compliance receipts
+              Add payment verification to your API with Gateway 402
             </p>
             <Link href="/pricing" className="button-primary">
               View Pricing

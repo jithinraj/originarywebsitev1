@@ -34,6 +34,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: 'status', priority: 0.7 },
   ]
 
+  // Integration pages
+  const integrationPaths = [
+    { path: 'integrations/x402', priority: 0.8 },
+    { path: 'integrations/mcp', priority: 0.8 },
+    { path: 'integrations/acp', priority: 0.8 },
+    { path: 'integrations/a2a', priority: 0.8 },
+    { path: 'integrations/aipref', priority: 0.8 },
+  ]
+
   // Documentation pages
   const docPaths = [
     { path: 'docs', priority: 0.8 },
@@ -83,6 +92,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...corePaths,
     ...productPaths,
     ...servicePaths,
+    ...integrationPaths,
     ...docPaths,
     ...userPaths,
     ...checkoutPaths,

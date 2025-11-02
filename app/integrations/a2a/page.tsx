@@ -4,16 +4,16 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Agent-to-Agent (A2A) Communication - Standards Integration',
+  title: 'Agent-to-Agent (A2A) Communication - Integration',
   description: 'Originary enables secure agent-to-agent communication with PEAC-Receipt verification. Implement trusted A2A workflows with verifiable transaction history and policy enforcement.',
   openGraph: {
-    title: 'Agent-to-Agent (A2A) Communication - Standards Integration | Originary',
+    title: 'Agent-to-Agent (A2A) Communication - Integration | Originary',
     description: 'Originary enables secure agent-to-agent communication with PEAC-Receipt verification. Implement trusted A2A workflows with verifiable transaction history and policy enforcement.',
-    url: 'https://www.originary.xyz/docs/standards/a2a/',
+    url: 'https://www.originary.xyz/integrations/a2a/',
     type: 'article'
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/docs/standards/a2a/'
+    canonical: 'https://www.originary.xyz/integrations/a2a/'
   }
 }
 
@@ -30,7 +30,7 @@ const jsonLd = {
     "@type": "Organization",
     "@id": "https://www.originary.xyz/#org"
   },
-  "url": "https://www.originary.xyz/docs/standards/a2a/"
+  "url": "https://www.originary.xyz/integrations/a2a/"
 }
 
 export default function A2APage() {

@@ -5,6 +5,27 @@ import Link from 'next/link'
 export default function StandardsIntegrations() {
   const standards = [
     {
+      title: 'HTTP 402',
+      subtitle: 'Payment Required',
+      description: 'Machine-readable payment flows for API monetization with standardized payment headers.',
+      href: '/integrations/x402/',
+      icon: '💳'
+    },
+    {
+      title: 'MCP',
+      subtitle: 'Model Context Protocol',
+      description: 'Verifiable receipts for LLM tool calls and context sharing workflows.',
+      href: '/integrations/mcp/',
+      icon: '🔌'
+    },
+    {
+      title: 'ACP',
+      subtitle: 'Agentic Commerce',
+      description: 'Verified transactions for AI agent commerce and purchasing workflows.',
+      href: '/integrations/acp/',
+      icon: '🛒'
+    },
+    {
       title: 'PEAC Protocol',
       subtitle: 'Receipt Standard',
       description: 'Open protocol for verifiable receipts in agent-to-agent interactions with cryptographic signatures.',
@@ -12,38 +33,17 @@ export default function StandardsIntegrations() {
       icon: '🧾'
     },
     {
-      title: 'HTTP 402',
-      subtitle: 'Payment Required',
-      description: 'Machine-readable payment flows for API monetization with standardized payment headers.',
-      href: '/docs/standards/x402/',
-      icon: '💳'
-    },
-    {
       title: 'A2A',
       subtitle: 'Agent-to-Agent',
       description: 'Secure communication between autonomous agents with verifiable transaction history.',
-      href: '/docs/standards/a2a/',
+      href: '/integrations/a2a/',
       icon: '🤝'
-    },
-    {
-      title: 'MCP',
-      subtitle: 'Model Context Protocol',
-      description: 'Verifiable receipts for LLM tool calls and context sharing workflows.',
-      href: '/docs/standards/mcp/',
-      icon: '🔌'
-    },
-    {
-      title: 'ACP',
-      subtitle: 'Agentic Commerce',
-      description: 'Verified transactions for AI agent commerce and purchasing workflows.',
-      href: '/docs/standards/acp/',
-      icon: '🛒'
     },
     {
       title: 'AIPREF',
       subtitle: 'AI Preferences',
       description: 'Machine-readable AI access policies for autonomous agent compliance.',
-      href: '/docs/standards/aipref/',
+      href: '/integrations/aipref/',
       icon: '⚙️'
     }
   ]

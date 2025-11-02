@@ -180,14 +180,14 @@ export default function Footer() {
           />
 
           <FooterSection
-            title="Standards"
+            title="Integrations"
             links={[
+              { href: '/integrations/x402', label: 'HTTP 402' },
+              { href: '/integrations/mcp', label: 'Model Context Protocol' },
+              { href: '/integrations/acp', label: 'Agentic Commerce' },
               { href: 'https://peacprotocol.org/', label: 'PEAC Protocol' },
-              { href: '/docs/standards/x402', label: 'HTTP 402' },
-              { href: '/docs/standards/a2a', label: 'Agent-to-Agent' },
-              { href: '/docs/standards/mcp', label: 'Model Context Protocol' },
-              { href: '/docs/standards/acp', label: 'Agentic Commerce' },
-              { href: '/docs/standards/aipref', label: 'AI Preferences' }
+              { href: '/integrations/a2a', label: 'Agent-to-Agent' },
+              { href: '/integrations/aipref', label: 'AI Preferences' }
             ]}
           />
 

@@ -4,16 +4,16 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Model Context Protocol (MCP) - Standards Integration',
+  title: 'Model Context Protocol (MCP) - Integration',
   description: 'Originary integrates with Model Context Protocol to provide verifiable receipts for LLM tool calls. Enable trusted AI agent workflows with PEAC-Receipt verification for MCP servers.',
   openGraph: {
-    title: 'Model Context Protocol (MCP) - Standards Integration | Originary',
+    title: 'Model Context Protocol (MCP) - Integration | Originary',
     description: 'Originary integrates with Model Context Protocol to provide verifiable receipts for LLM tool calls. Enable trusted AI agent workflows with PEAC-Receipt verification for MCP servers.',
-    url: 'https://www.originary.xyz/docs/standards/mcp/',
+    url: 'https://www.originary.xyz/integrations/mcp/',
     type: 'article'
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/docs/standards/mcp/'
+    canonical: 'https://www.originary.xyz/integrations/mcp/'
   }
 }
 
@@ -30,7 +30,7 @@ const jsonLd = {
     "@type": "Organization",
     "@id": "https://www.originary.xyz/#org"
   },
-  "url": "https://www.originary.xyz/docs/standards/mcp/"
+  "url": "https://www.originary.xyz/integrations/mcp/"
 }
 
 export default function MCPPage() {

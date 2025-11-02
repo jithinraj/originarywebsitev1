@@ -4,16 +4,16 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Agentic Commerce Protocol (ACP) - Standards Integration',
+  title: 'Agentic Commerce Protocol (ACP) - Integration',
   description: 'Originary integrates with Agentic Commerce Protocol for verified AI agent transactions. Enable trusted commerce workflows with PEAC-Receipt verification and payment tracking.',
   openGraph: {
-    title: 'Agentic Commerce Protocol (ACP) - Standards Integration | Originary',
+    title: 'Agentic Commerce Protocol (ACP) - Integration | Originary',
     description: 'Originary integrates with Agentic Commerce Protocol for verified AI agent transactions. Enable trusted commerce workflows with PEAC-Receipt verification and payment tracking.',
-    url: 'https://www.originary.xyz/docs/standards/acp/',
+    url: 'https://www.originary.xyz/integrations/acp/',
     type: 'article'
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/docs/standards/acp/'
+    canonical: 'https://www.originary.xyz/integrations/acp/'
   }
 }
 
@@ -30,7 +30,7 @@ const jsonLd = {
     "@type": "Organization",
     "@id": "https://www.originary.xyz/#org"
   },
-  "url": "https://www.originary.xyz/docs/standards/acp/"
+  "url": "https://www.originary.xyz/integrations/acp/"
 }
 
 export default function ACPPage() {
