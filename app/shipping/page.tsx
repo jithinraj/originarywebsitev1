@@ -6,7 +6,10 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Shipping & Delivery Policy · Originary',
   description: 'Shipping and Delivery Policy for Originary digital services operated by Poem, Inc.',
-  robots: 'index,follow',
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: 'https://www.originary.xyz/shipping',
   },
