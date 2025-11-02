@@ -230,6 +230,34 @@ export default {
             <div style={{
               marginTop: 'var(--space-8)',
               textAlign: 'center',
+              padding: 'var(--space-6)',
+              background: 'rgba(99, 91, 255, 0.05)',
+              borderRadius: 'var(--radius-lg)',
+              border: '1px solid rgba(99, 91, 255, 0.1)'
+            }}>
+              <p style={{
+                fontSize: 'var(--text-sm)',
+                color: 'var(--gray-700)',
+                marginBottom: 'var(--space-2)'
+              }}>
+                For step-by-step implementation guides with Express, Next.js, and Cloudflare Workers, see our{' '}
+                <Link
+                  href="/integrations/x402/"
+                  style={{
+                    color: 'var(--brand-primary)',
+                    textDecoration: 'underline',
+                    fontWeight: 600
+                  }}
+                >
+                  x402 receipts
+                </Link>{' '}
+                documentation.
+              </p>
+            </div>
+
+            <div style={{
+              marginTop: 'var(--space-8)',
+              textAlign: 'center',
               padding: 'var(--space-4)',
               background: 'var(--white)',
               borderRadius: 'var(--radius-lg)',

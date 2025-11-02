@@ -1,0 +1,42 @@
+openapi: 3.0.3
+info:
+  title: Originary x402 Demo
+  version: 1.0.0
+  description: Minimal HTTP 402 payment required demonstration
+servers:
+  - url: https://www.originary.xyz
+    description: Production
+paths:
+  /api/x402-demo:
+    get:
+      summary: Returns an HTTP 402 challenge
+      description: Demonstrates the x402 payment required pattern with a minimal JSON response
+      responses:
+        "402":
+          description: Payment Required
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  detail:
+                    type: string
+                    example: Payment required to access this resource.
+                  payment:
+                    type: object
+                    properties:
+                      protocol:
+                        type: string
+                        example: x402
+                      amount:
+                        type: string
+                        example: "0.10"
+                      currency:
+                        type: string
+                        example: USDC
+                      reference:
+                        type: string
+                        example: demo-402-abc123
+                      instructions:
+                        type: string
+                        example: Pay using your client wallet and present a receipt in the follow-up request.

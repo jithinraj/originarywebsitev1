@@ -1,0 +1,30 @@
+{
+  "info": {
+    "name": "Originary x402 Demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Minimal HTTP 402 payment required demonstration"
+  },
+  "variable": [
+    {
+      "key": "host",
+      "value": "https://www.originary.xyz",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "GET /api/x402-demo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/api/x402-demo",
+          "host": ["{{host}}"],
+          "path": ["api", "x402-demo"]
+        },
+        "description": "Returns an HTTP 402 Payment Required response with a minimal JSON payment hint"
+      },
+      "response": []
+    }
+  ]
+}
