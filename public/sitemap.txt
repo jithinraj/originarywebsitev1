@@ -15,6 +15,7 @@ https://www.originary.xyz/services/
 https://www.originary.xyz/changelog/
 https://www.originary.xyz/trust/
 https://www.originary.xyz/verify/
+https://www.originary.xyz/integrations/
 https://www.originary.xyz/integrations/x402/
 https://www.originary.xyz/integrations/x402/express-node/
 https://www.originary.xyz/integrations/x402/nextjs/

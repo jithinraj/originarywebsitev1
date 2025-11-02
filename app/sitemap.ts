@@ -35,6 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Integration pages
   const integrationPaths = [
+    { path: 'integrations', priority: 0.9 },
     { path: 'integrations/x402', priority: 0.8 },
     { path: 'integrations/x402/express-node', priority: 0.7 },
     { path: 'integrations/x402/nextjs', priority: 0.7 },
