@@ -20,6 +20,11 @@ https://www.originary.xyz/docs/mcp/receipts
 https://www.originary.xyz/docs/a2a/attach-points
 https://www.originary.xyz/docs/deploy/cloudflare-worker
 https://www.originary.xyz/docs/deploy/vercel
+https://www.originary.xyz/integrations/x402
+https://www.originary.xyz/integrations/mcp
+https://www.originary.xyz/integrations/acp
+https://www.originary.xyz/integrations/a2a
+https://www.originary.xyz/integrations/aipref
 https://www.originary.xyz/products/peac
 https://www.originary.xyz/products/verify
 https://www.originary.xyz/products/gateway-402
