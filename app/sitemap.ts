@@ -24,18 +24,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: 'products/studio', priority: 0.8 },
   ]
 
-  // Service pages
+  // Service pages (excluding /status/ - noindex)
   const servicePaths = [
     { path: 'receipts', priority: 0.9 },
     { path: 'services', priority: 0.9 },
     { path: 'changelog', priority: 0.8 },
     { path: 'trust', priority: 0.8 },
     { path: 'verify', priority: 0.8 },
-    { path: 'status', priority: 0.7 },
   ]
 
   // Integration pages
   const integrationPaths = [
+    { path: 'integrations', priority: 0.9 },
     { path: 'integrations/x402', priority: 0.8 },
     { path: 'integrations/x402/express-node', priority: 0.7 },
     { path: 'integrations/x402/nextjs', priority: 0.7 },
@@ -81,37 +81,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: 'blog/robots-txt-rfc-9309', priority: 0.7 },
   ]
 
-  // User pages
-  const userPaths = [
-    { path: 'dashboard', priority: 0.6 },
-    { path: 'signin', priority: 0.4 },
-    { path: 'resources', priority: 0.6 },
-  ]
-
-  // Checkout pages
-  const checkoutPaths = [
-    { path: 'checkout/start', priority: 0.5 },
-    { path: 'checkout/confirmation', priority: 0.5 },
-  ]
-
   // Company pages
   const companyPaths = [
     { path: 'company/about', priority: 0.6 },
     { path: 'company/contact', priority: 0.6 },
   ]
 
-  // Legal pages
+  // Legal pages (only indexable ones: trademark, security, copyright)
+  // Excluded: terms, privacy, refund, shipping (will have noindex meta)
   const legalPaths = [
-    { path: 'terms', priority: 0.5 },
-    { path: 'privacy', priority: 0.5 },
-    { path: 'refund', priority: 0.4 },
-    { path: 'shipping', priority: 0.4 },
     { path: 'trademark', priority: 0.5 },
     { path: 'security', priority: 0.5 },
     { path: 'copyright', priority: 0.4 },
   ]
 
-  // Combine all paths
+  // Combine all paths (excluding userPaths, checkoutPaths, and noindex legal pages)
   const allPaths = [
     ...corePaths,
     ...productPaths,
@@ -121,8 +105,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...guidePaths,
     ...glossaryPaths,
     ...blogPaths,
-    ...userPaths,
-    ...checkoutPaths,
     ...companyPaths,
     ...legalPaths,
   ]

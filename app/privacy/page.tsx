@@ -7,7 +7,10 @@ import Script from 'next/script'
 export const metadata: Metadata = {
   title: 'Privacy Policy : Originary',
   description: 'Privacy Policy for Originary - minimal, consent-first data collection for receipts tooling.',
-  robots: 'index,follow',
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: 'https://www.originary.xyz/privacy',
   },

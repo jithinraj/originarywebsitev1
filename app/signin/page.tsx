@@ -25,7 +25,10 @@ export const metadata: Metadata = {
     site: '@originary',
     creator: '@originary',
   },
-  robots: 'index,follow',
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: 'https://www.originary.xyz/signin',
   },

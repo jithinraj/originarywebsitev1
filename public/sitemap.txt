@@ -15,7 +15,7 @@ https://www.originary.xyz/services/
 https://www.originary.xyz/changelog/
 https://www.originary.xyz/trust/
 https://www.originary.xyz/verify/
-https://www.originary.xyz/status/
+https://www.originary.xyz/integrations/
 https://www.originary.xyz/integrations/x402/
 https://www.originary.xyz/integrations/x402/express-node/
 https://www.originary.xyz/integrations/x402/nextjs/
@@ -43,17 +43,8 @@ https://www.originary.xyz/blog/http-402-for-apis/
 https://www.originary.xyz/blog/adding-402-in-15-minutes/
 https://www.originary.xyz/blog/cloudflare-workers-402/
 https://www.originary.xyz/blog/robots-txt-rfc-9309/
-https://www.originary.xyz/dashboard/
-https://www.originary.xyz/signin/
-https://www.originary.xyz/resources/
-https://www.originary.xyz/checkout/start/
-https://www.originary.xyz/checkout/confirmation/
 https://www.originary.xyz/company/about/
 https://www.originary.xyz/company/contact/
-https://www.originary.xyz/terms/
-https://www.originary.xyz/privacy/
-https://www.originary.xyz/refund/
-https://www.originary.xyz/shipping/
 https://www.originary.xyz/trademark/
 https://www.originary.xyz/security/
 https://www.originary.xyz/copyright/
