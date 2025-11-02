@@ -180,6 +180,17 @@ export default function Footer() {
           />
 
           <FooterSection
+            title="Standards"
+            links={[
+              { href: '/docs/standards/x402', label: 'HTTP 402' },
+              { href: '/docs/standards/a2a', label: 'Agent-to-Agent' },
+              { href: '/docs/standards/mcp', label: 'Model Context Protocol' },
+              { href: '/docs/standards/acp', label: 'Agentic Commerce' },
+              { href: '/docs/standards/aipref', label: 'AI Preferences' }
+            ]}
+          />
+
+          <FooterSection
             title="Company"
             links={[
               { href: '/company/about', label: 'About' },
@@ -225,12 +236,14 @@ export default function Footer() {
             </div>
 
             {/* Contact */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+            <address style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', fontStyle: 'normal' }}>
               <span
                 style={{
                   color: 'var(--gray-900)',
                   fontSize: 'var(--text-sm)',
-                  fontWeight: 600
+                  fontWeight: 600,
+                  display: 'block',
+                  marginBottom: 'var(--space-2)'
                 }}
               >
                 Contact
@@ -241,6 +254,8 @@ export default function Footer() {
                   color: 'var(--gray-600)',
                   fontSize: 'var(--text-xs)',
                   textDecoration: 'none',
+                  display: 'block',
+                  marginBottom: 'var(--space-1)',
                   transition: 'color 0.2s ease'
                 }}
                 onMouseEnter={(e) => e.currentTarget.style.color = 'var(--brand-primary)'}
@@ -254,6 +269,7 @@ export default function Footer() {
                   color: 'var(--gray-600)',
                   fontSize: 'var(--text-xs)',
                   textDecoration: 'none',
+                  display: 'block',
                   transition: 'color 0.2s ease'
                 }}
                 onMouseEnter={(e) => e.currentTarget.style.color = 'var(--brand-primary)'}
@@ -261,7 +277,7 @@ export default function Footer() {
               >
                 +1 415 707 0402
               </a>
-            </div>
+            </address>
 
             {/* Technical */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>

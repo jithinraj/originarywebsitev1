@@ -29,9 +29,11 @@ const jetbrainsMono = JetBrains_Mono({
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Poem, Inc.',
-  alternateName: 'Originary',
-  url: 'https://www.originary.xyz',
+  '@id': 'https://www.originary.xyz/#org',
+  name: 'Originary',
+  legalName: 'Poem, Inc.',
+  alternateName: 'Originary™',
+  url: 'https://www.originary.xyz/',
   telephone: '+14157070402',
   address: {
     '@type': 'PostalAddress',
@@ -44,7 +46,8 @@ const organizationJsonLd = {
   sameAs: [
     'https://x.com/originaryinc',
     'https://www.linkedin.com/company/originary/',
-    'https://github.com/peacprotocol'
+    'https://github.com/peacprotocol',
+    'https://peacprotocol.org/'
   ],
   logo: 'https://www.originary.xyz/og/originary-logo.png',
   contactPoint: [
@@ -55,24 +58,45 @@ const organizationJsonLd = {
       contactType: 'customer support',
       areaServed: 'US'
     }
+  ],
+  knowsAbout: [
+    'Verifiable receipts for AI agents',
+    'PEAC Protocol',
+    'HTTP 402 Payment Required',
+    'Agent-to-Agent communication',
+    'Model Context Protocol',
+    'Agentic Commerce Protocol',
+    'AI Preferences (AIPREF)',
+    'API policy enforcement',
+    'Agent coordination',
+    'Machine-readable payment flows'
   ]
 }
 
 const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': 'https://www.originary.xyz/#website',
+  url: 'https://www.originary.xyz/',
   name: 'Originary',
-  url: 'https://www.originary.xyz'
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://www.originary.xyz/search?q={search_term_string}'
+    },
+    'query-input': 'required name=search_term_string'
+  }
 }
 
 export const metadata: Metadata = {
   title: {
-    default: 'Originary : Receipts for the Agentic Web',
-    template: '%s | Originary'
+    default: 'Originary - Receipts for the Agentic Web',
+    template: '%s | Originary™'
   },
-  description: 'Publish peac.txt, settle via x402 or your rail, and prove compliance on every request with Receipts. Powered by the PEAC open protocol.',
+  description: 'Originary provides verifiable receipts for the agentic web. Add policy discovery, HTTP 402 payments, and PEAC-Receipts to every API response.',
   keywords: ['agentic web', 'orchestration protocol', 'AI coordination', 'PEAC protocol', 'HTTP 402', 'verifiable receipts', 'API policy', 'machine readable payments', 'AI transparency'],
-  authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
+  authors: [{ name: 'Originary', url: 'https://www.originary.xyz/' }],
   creator: 'Originary',
   publisher: 'Originary',
   formatDetection: {
@@ -80,14 +104,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.originary.xyz'),
+  metadataBase: new URL('https://www.originary.xyz/'),
   alternates: {
-    canonical: 'https://www.originary.xyz',
+    canonical: 'https://www.originary.xyz/',
   },
   openGraph: {
-    title: 'Originary : Receipts for the Agentic Web',
-    description: 'Publish peac.txt, settle via x402 or your rail, and prove compliance on every request with Receipts. Powered by the PEAC open protocol.',
-    url: 'https://www.originary.xyz',
+    title: 'Originary - Receipts for the Agentic Web',
+    description: 'Originary provides verifiable receipts for the agentic web. Add policy discovery, HTTP 402 payments, and PEAC-Receipts to every API response.',
+    url: 'https://www.originary.xyz/',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',
@@ -100,8 +124,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary : Receipts for the Agentic Web',
-    description: 'Publish peac.txt, settle via x402 or your rail, and prove compliance on every request with Receipts. Powered by the PEAC open protocol.',
+    title: 'Originary - Receipts for the Agentic Web',
+    description: 'Originary provides verifiable receipts for the agentic web. Add policy discovery, HTTP 402 payments, and PEAC-Receipts to every API response.',
     images: ['/og.jpg'],
     site: '@originaryinc',
     creator: '@originaryinc',

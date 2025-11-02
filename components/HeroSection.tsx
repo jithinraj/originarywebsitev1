@@ -195,6 +195,7 @@ export default function HeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s'
               }}
             >
+              <span className="sr-only">Originary: </span>
               Every agent call. <span className="text-gradient">One verifiable receipt.</span>
             </h1>
 

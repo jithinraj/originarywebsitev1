@@ -1,7 +1,7 @@
 /* TEAM */
 
 Originary Team
-Organization: Curious Explorations Private Limited
+Organization: Poem, Inc.
 Operating As: Originary
 Website: https://www.originary.xyz
 Contact: contact@originary.xyz
@@ -54,8 +54,8 @@ Development Stack:
 
 /* LEGAL */
 
-Copyright: Originary © 2025 Curious Explorations Private Limited
-Trade & Product Name: Originary
+Copyright: © 2025 Poem, Inc.
+Trade & Product Name: Originary™
 License: Proprietary software with open protocol specifications
 Terms: https://www.originary.xyz/legal/terms.html
 Privacy: https://www.originary.xyz/legal/privacy.html

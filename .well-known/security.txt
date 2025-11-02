@@ -9,7 +9,7 @@ Policy: https://www.originary.xyz/security/vulnerability-disclosure.html
 
 # Security Contact Information for Originary
 #
-# Originary (operated by Curious Explorations Private Limited) takes security
+# Originary (operated by Poem, Inc.) takes security
 # seriously and welcomes reports of potential vulnerabilities in our services.
 #
 # Reporting Guidelines:
