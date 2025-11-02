@@ -16,7 +16,8 @@ export async function GET() {
     status: 402,
     headers: {
       "content-type": "application/json; charset=utf-8",
-      "cache-control": "no-store"
+      "cache-control": "no-store",
+      "x-robots-tag": "noindex, nofollow, noarchive"
     }
   });
 }

@@ -7,7 +7,10 @@ import Script from 'next/script'
 export const metadata: Metadata = {
   title: 'Terms of Service : Originary',
   description: 'Terms of Service for Originary - commercial tools implementing receipts for the agentic web.',
-  robots: 'index,follow',
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: 'https://www.originary.xyz/terms',
   },

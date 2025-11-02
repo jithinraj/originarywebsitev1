@@ -3,6 +3,10 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Status : Originary',
   description: 'Real-time service health and performance metrics for Originary Gateway, Verify API, and Policy Engine',
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     title: 'Status : Originary',
     description: 'Real-time service health and performance metrics for Originary',

@@ -6,7 +6,10 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Cancellation & Refund Policy · Originary',
   description: 'Cancellation and Refund Policy for Originary services operated by Poem, Inc.',
-  robots: 'index,follow',
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: 'https://www.originary.xyz/refund',
   },
