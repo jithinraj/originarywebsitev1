@@ -38,13 +38,13 @@ const faqJsonLd = {
 
 export const metadata: Metadata = {
   title: 'Originary & AI - Agent-native trust with PEAC-Receipts',
-  description: 'Build agent-to-agent systems with cryptographic receipts, preference-aware usage, and pay-as-you-go 402 rails. Works with A2A networks, MCP tool calls, and HTTP-402 payment rails.',
-  keywords: 'agent-to-agent, A2A, MCP, PEAC receipts, HTTP 402, agent trust, cryptographic verification, AIPREF, L402, x402',
+  description: 'Build agent-to-agent systems with cryptographic receipts, preference-aware usage, and pay-as-you-go 402 rails. Works with A2A networks, MCP tool calls, ACP, and HTTP 402 payment rails.',
+  keywords: 'agent-to-agent, A2A, MCP, ACP, PEAC receipts, HTTP 402, agent trust, cryptographic verification, AIPREF, L402, x402, agentic commerce',
   robots: 'index,follow',
   openGraph: {
     title: 'Originary & AI - Agent-native trust with PEAC-Receipts',
-    description: 'Build agent-to-agent systems with cryptographic receipts, preference-aware usage, and pay-as-you-go 402 rails.',
-    url: 'https://www.originary.xyz/ai',
+    description: 'Build agent-to-agent systems with cryptographic receipts, preference-aware usage, and pay-as-you-go 402 rails. Works with A2A, MCP, and ACP.',
+    url: 'https://www.originary.xyz/ai/',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Originary & AI - Agent-native trust',
-    description: 'Build agent-to-agent systems with cryptographic receipts, preference-aware usage, and pay-as-you-go 402 rails.',
+    description: 'Build agent-to-agent systems with cryptographic receipts, preference-aware usage, and pay-as-you-go 402 rails. A2A, MCP, ACP support.',
     images: ['/og.jpg'],
     site: '@originaryinc',
     creator: '@originaryinc'
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/ai'
+    canonical: 'https://www.originary.xyz/ai/'
   }
 }
 

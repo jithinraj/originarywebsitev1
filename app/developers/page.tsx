@@ -5,29 +5,29 @@ import Link from 'next/link'
 import { ArrowRight, Code, Download, Sparkles } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Developers : Originary',
-  description: 'Developer tools and CLI for integrating PEAC receipts. Policy generators, validators, and edge verification examples.',
-  keywords: 'developer docs, PEAC protocol, CLI, receipts, policy validation, edge verification',
+  title: 'Developers - API Integration & CLI Tools',
+  description: 'Integrate PEAC-Receipts into your API with Originary developer tools. Add HTTP 402 payment flows, A2A verification, and MCP receipts with CLI tools and edge verification.',
+  keywords: 'developer API, PEAC protocol, CLI tools, HTTP 402, agent receipts, policy validation, edge verification, MCP integration, A2A communication, ACP',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Developers : Originary',
-    description: 'Developer tools and CLI for integrating PEAC receipts. Policy generators, validators, and edge verification examples.',
-    url: 'https://www.originary.xyz/developers',
+    title: 'Developers - API Integration & CLI Tools | Originary',
+    description: 'Integrate PEAC-Receipts into your API with Originary developer tools. Add HTTP 402 payment flows, A2A verification, and MCP receipts with CLI tools and edge verification.',
+    url: 'https://www.originary.xyz/developers/',
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Developers : Originary',
-    description: 'Developer tools and CLI for integrating PEAC receipts. Policy generators, validators, and edge verification examples.',
+    title: 'Developers - API Integration & CLI Tools | Originary',
+    description: 'Integrate PEAC-Receipts into your API with Originary developer tools. Add HTTP 402 payment flows, A2A verification, and MCP receipts.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryinc',
+    creator: '@originaryinc',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/developers',
+    canonical: 'https://www.originary.xyz/developers/',
   },
 }
 

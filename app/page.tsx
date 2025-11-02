@@ -3,6 +3,7 @@ import HeroSection from '@/components/HeroSection'
 import VerifySection from '@/components/VerifySection'
 import SocialProofSection from '@/components/SocialProofSection'
 import ControlPlaneSection from '@/components/ControlPlaneSection'
+import StandardsIntegrations from '@/components/StandardsIntegrations'
 import WorldClassHomePage from '@/components/WorldClassHomePage'
 import Footer from '@/components/Footer'
 
@@ -15,6 +16,7 @@ export default function Page() {
         <VerifySection />
         <SocialProofSection />
         <ControlPlaneSection />
+        <StandardsIntegrations />
         <WorldClassHomePage />
       </main>
       <Footer />
