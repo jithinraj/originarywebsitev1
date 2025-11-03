@@ -4,13 +4,13 @@ import Footer from '@/components/Footer'
 import { Server, Zap, BarChart3, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Monetize agent access - API Providers : Originary',
+  title: 'API Providers | Monetize agent access with HTTP 402 & x402',
   description: 'Enable agents to discover and pay for your APIs through standardized protocols. HTTP 402, x402, PEAC receipts, and enterprise billing with compliance built-in.',
-  keywords: 'API monetization, HTTP 402, x402, agent payments, PEAC protocol, enterprise billing',
+  keywords: 'API monetization, HTTP 402, x402, agent payments, PEAC protocol, enterprise billing, API providers, agent commerce, policy discovery',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Monetize agent access - API Providers : Originary',
+    title: 'API Providers | Monetize agent access with HTTP 402 & x402',
     description: 'Enable agents to discover and pay for your APIs through standardized protocols. HTTP 402, x402, PEAC receipts, and enterprise billing with compliance built-in.',
     url: 'https://www.originary.xyz/solutions/api-providers',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -18,11 +18,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Monetize agent access - API Providers : Originary',
-    description: 'Enable agents to discover and pay for your APIs through standardized protocols. HTTP 402, x402, PEAC receipts, and enterprise billing with compliance built-in.',
+    title: 'API Providers | Monetize agent access with HTTP 402 & x402',
+    description: 'Enable agents to discover and pay for your APIs through standardized protocols. HTTP 402, x402, PEAC receipts, and enterprise billing.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originaryinc',
-    creator: '@originaryinc',
+    site: '@originary',
+    creator: '@originary',
   },
   robots: 'index,follow',
   alternates: {

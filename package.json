@@ -7,7 +7,9 @@
   },
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/gen-sitemap-with-git.mjs",
     "build": "next build",
+    "postbuild": "node scripts/check-titles.mjs",
     "start": "next start",
     "lint": "next lint",
     "lint:content": "node scripts/lint-content.js",
