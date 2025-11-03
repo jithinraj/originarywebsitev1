@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NavigationHeader from "@/components/NavigationHeader";
 import Footer from "@/components/Footer";
+import { FileText, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: "HTTP 402 on Cloudflare Workers: Global Edge Payment Gates - Originary™",
@@ -15,13 +16,19 @@ export const metadata: Metadata = {
     type: "article",
     url: "https://www.originary.xyz/blog/cloudflare-workers-402/",
     publishedTime: "2025-11-03",
-    authors: ["Jithin Raj", "Originary Team"]
+    authors: ["Jithin Raj", "Originary Team"],
+    images: ['https://www.originary.xyz/og.jpg'],
+    siteName: 'Originary',
   },
   twitter: {
     card: "summary_large_image",
     title: "HTTP 402 on Cloudflare Workers: Global Edge Payment Gates",
-    description: "Deploy HTTP 402 payment-required responses at the edge with Cloudflare Workers"
-  }
+    description: "Deploy HTTP 402 payment-required responses at the edge with Cloudflare Workers",
+    images: ['https://www.originary.xyz/og.jpg'],
+    site: '@originary',
+    creator: '@originary',
+  },
+  robots: 'index,follow',
 };
 
 export default function Page() {
@@ -44,105 +51,170 @@ export default function Page() {
         "@type": "ImageObject",
         "url": "https://www.originary.xyz/og/originary-logo.png"
       }
-    }
+    },
+    "mainEntityOfPage": "https://www.originary.xyz/blog/cloudflare-workers-402/",
+    "image": "https://www.originary.xyz/og.jpg"
   };
 
   return (
-    <>
+    <div className="wrap">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <NavigationHeader />
       <main style={{ paddingTop: '80px', minHeight: '100vh' }} id="main-content">
-        <article className="max-w-3xl mx-auto px-4 py-10">
-          <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)', color: 'var(--gray-600)' }}>
-            <Link href="/blog/" style={{ textDecoration: 'none', color: 'var(--gray-600)' }}>Blog</Link>
-            {' '}/{' '}
-            <span style={{ color: 'var(--gray-900)' }}>Cloudflare Workers 402</span>
-          </nav>
+        <article>
+          <div className="container" style={{ maxWidth: '900px', margin: '0 auto', padding: 'var(--space-16) var(--space-6)' }}>
+            {/* Breadcrumbs */}
+            <nav style={{
+              fontSize: 'var(--text-sm)',
+              color: 'var(--gray-600)',
+              marginBottom: 'var(--space-8)'
+            }}>
+              <Link href="/" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>Home</Link>
+              <span style={{ margin: '0 var(--space-2)' }}>/</span>
+              <Link href="/blog" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>Blog</Link>
+              <span style={{ margin: '0 var(--space-2)' }}>/</span>
+              <span style={{ color: 'var(--gray-900)' }}>Cloudflare Workers 402</span>
+            </nav>
 
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 'var(--space-2)',
-            background: 'rgba(99, 91, 255, 0.1)',
-            border: '1px solid rgba(99, 91, 255, 0.2)',
-            borderRadius: 'var(--radius-full)',
-            padding: 'var(--space-2) var(--space-4)',
-            fontSize: 'var(--text-xs)',
-            fontWeight: 600,
-            color: 'var(--brand-primary)',
-            marginBottom: 'var(--space-4)'
-          }}>
-            TECHNICAL
-          </div>
+            {/* Article Header */}
+            <header style={{ marginBottom: 'var(--space-12)' }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 'var(--space-2)',
+                background: 'rgba(99, 91, 255, 0.1)',
+                border: '1px solid rgba(99, 91, 255, 0.2)',
+                borderRadius: 'var(--radius-full)',
+                padding: 'var(--space-2) var(--space-4)',
+                fontSize: 'var(--text-sm)',
+                fontWeight: 600,
+                color: 'var(--brand-primary)',
+                marginBottom: 'var(--space-6)'
+              }}>
+                <FileText size={14} />
+                TECHNICAL
+              </div>
 
-          <h1 style={{
-            fontSize: 'clamp(var(--text-3xl), 5vw, var(--text-5xl))',
-            fontWeight: 700,
-            lineHeight: 1.1,
-            marginBottom: 'var(--space-6)',
-            color: 'var(--gray-900)'
-          }}>
-            HTTP 402 on Cloudflare Workers: Global Edge Payment Gates
-          </h1>
+              <h1 style={{
+                fontSize: 'var(--text-5xl)',
+                fontWeight: 700,
+                lineHeight: 1.1,
+                marginBottom: 'var(--space-6)',
+                color: 'var(--gray-900)'
+              }}>
+                HTTP 402 on Cloudflare Workers: Global Edge Payment Gates
+              </h1>
 
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 'var(--space-4)',
-            fontSize: 'var(--text-sm)',
-            color: 'var(--gray-600)',
-            marginBottom: 'var(--space-8)',
-            paddingBottom: 'var(--space-4)',
-            borderBottom: '1px solid var(--gray-200)'
-          }}>
-            <span>By Jithin Raj & Originary™ Team</span>
-            <span>•</span>
-            <time dateTime="2025-11-03">Nov 3, 2025</time>
-            <span>•</span>
-            <span>10 min read</span>
-          </div>
+              <p style={{
+                fontSize: 'var(--text-xl)',
+                color: 'var(--gray-600)',
+                lineHeight: 1.7,
+                marginBottom: 'var(--space-8)'
+              }}>
+                Want <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>HTTP 402 payment gates</Link> that respond in &lt;50ms worldwide? Deploy them at the edge with Cloudflare Workers. Here&rsquo;s how.
+              </p>
 
-          <div className="prose max-w-none">
-            <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              Want <Link href="/glossary/http-402-payment-required/" className="text-brand-primary underline">HTTP 402 payment gates</Link> that respond in &lt;50ms worldwide? Deploy them at the edge with Cloudflare Workers. Here&rsquo;s how.
-            </p>
+              <div style={{
+                display: 'flex',
+                gap: 'var(--space-6)',
+                fontSize: 'var(--text-sm)',
+                color: 'var(--gray-600)',
+                paddingTop: 'var(--space-6)',
+                borderTop: '1px solid var(--gray-200)'
+              }}>
+                <span>By Jithin Raj & Originary Team</span>
+                <span>•</span>
+                <time dateTime="2025-11-03">Nov 3, 2025</time>
+                <span>•</span>
+                <span>10 min read</span>
+              </div>
+            </header>
 
-            <h2 className="text-2xl font-semibold mb-3 mt-8">Why edge computing for payment gates?</h2>
-            <p className="text-gray-700 leading-relaxed">
-              Traditional server-based APIs have latency problems:
-            </p>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
-              <li><strong>Geographic latency</strong>: Client in Tokyo hits server in Virginia → 200ms+ round-trip</li>
-              <li><strong>Cold starts</strong>: Serverless functions spin up → 500ms-2s delay</li>
-              <li><strong>Single point of failure</strong>: One region down, whole API down</li>
-            </ul>
+            {/* Article Content */}
+            <div style={{
+              fontSize: 'var(--text-base)',
+              lineHeight: 1.8,
+              color: 'var(--gray-700)'
+            }}>
+              {/* Why edge computing */}
+              <section style={{ marginBottom: 'var(--space-12)' }}>
+                <h2 style={{
+                  fontSize: 'var(--text-3xl)',
+                  fontWeight: 700,
+                  marginBottom: 'var(--space-6)',
+                  color: 'var(--gray-900)'
+                }}>
+                  Why edge computing for payment gates?
+                </h2>
 
-            <p className="text-gray-700 leading-relaxed mt-4">
-              Cloudflare Workers solve all three:
-            </p>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
-              <li>Deploy to <strong>300+ edge locations</strong> globally</li>
-              <li><strong>Zero cold starts</strong>: Workers are always warm</li>
-              <li><strong>Automatic failover</strong>: Regional outages don&rsquo;t affect service</li>
-              <li><strong>Web standards</strong>: Request/Response, Web Crypto API, no vendor lock-in</li>
-            </ul>
+                <p style={{ marginBottom: 'var(--space-4)' }}>
+                  Traditional server-based APIs have latency problems:
+                </p>
 
-            <h2 className="text-2xl font-semibold mb-3 mt-8">Architecture: Worker + KV for challenges</h2>
-            <p className="text-gray-700 leading-relaxed">
-              A typical <Link href="/glossary/x402/" className="text-brand-primary underline">x402</Link> flow on Workers:
-            </p>
-            <ol className="list-decimal pl-6 text-gray-700 leading-relaxed space-y-2">
-              <li>Client requests priced resource → Worker checks for <code className="bg-gray-100 px-1.5 py-0.5 rounded">X-Receipt</code> header</li>
-              <li>No receipt? → Generate <code className="bg-gray-100 px-1.5 py-0.5 rounded">reference</code>, store challenge in KV, return 402</li>
-              <li>Receipt present? → Verify signature with Web Crypto API, check KV for challenge, return resource if valid</li>
-            </ol>
+                <ul style={{ paddingLeft: 'var(--space-6)', marginBottom: 'var(--space-6)' }}>
+                  <li style={{ marginBottom: 'var(--space-2)' }}><strong>Geographic latency</strong>: Client in Tokyo hits server in Virginia → 200ms+ round-trip</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}><strong>Cold starts</strong>: Serverless functions spin up → 500ms-2s delay</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}><strong>Single point of failure</strong>: One region down, whole API down</li>
+                </ul>
 
-            <h2 className="text-2xl font-semibold mb-3 mt-8">Full implementation</h2>
-            <p className="text-gray-700 leading-relaxed">
-              Here&rsquo;s a production-ready Worker with receipt verification:
-            </p>
-            <pre className="overflow-x-auto text-sm bg-black/90 text-white rounded-2xl p-4 mt-4">
-              <code>{`// worker.js
-export default {
+                <p style={{ marginBottom: 'var(--space-4)' }}>
+                  Cloudflare Workers solve all three:
+                </p>
+
+                <ul style={{ paddingLeft: 'var(--space-6)', marginBottom: 'var(--space-6)' }}>
+                  <li style={{ marginBottom: 'var(--space-2)' }}>Deploy to <strong>300+ edge locations</strong> globally</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}><strong>Zero cold starts</strong>: Workers are always warm</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}><strong>Automatic failover</strong>: Regional outages don&rsquo;t affect service</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}><strong>Web standards</strong>: Request/Response, Web Crypto API, no vendor lock-in</li>
+                </ul>
+              </section>
+
+              {/* Architecture */}
+              <section style={{ marginBottom: 'var(--space-12)' }}>
+                <h2 style={{
+                  fontSize: 'var(--text-3xl)',
+                  fontWeight: 700,
+                  marginBottom: 'var(--space-6)',
+                  color: 'var(--gray-900)'
+                }}>
+                  Architecture: Worker + KV for challenges
+                </h2>
+
+                <p style={{ marginBottom: 'var(--space-4)' }}>
+                  A typical <Link href="/glossary/x402/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>x402</Link> flow on Workers:
+                </p>
+
+                <ol style={{ paddingLeft: 'var(--space-6)', marginBottom: 'var(--space-6)' }}>
+                  <li style={{ marginBottom: 'var(--space-2)' }}>Client requests priced resource → Worker checks for <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>X-Receipt</code> header</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}>No receipt? → Generate <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>reference</code>, store challenge in KV, return 402</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}>Receipt present? → Verify signature with Web Crypto API, check KV for challenge, return resource if valid</li>
+                </ol>
+              </section>
+
+              {/* Implementation */}
+              <section style={{ marginBottom: 'var(--space-12)' }}>
+                <h2 style={{
+                  fontSize: 'var(--text-3xl)',
+                  fontWeight: 700,
+                  marginBottom: 'var(--space-6)',
+                  color: 'var(--gray-900)'
+                }}>
+                  Full implementation
+                </h2>
+
+                <p style={{ marginBottom: 'var(--space-4)' }}>
+                  Here&rsquo;s a production-ready Worker with receipt verification. See the full code in our{' '}
+                  <Link href="/integrations/x402/cloudflare-workers/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>
+                    Cloudflare Workers x402 Implementation Guide
+                  </Link>.
+                </p>
+
+                <div className="card" style={{ background: 'var(--gray-900)', color: 'var(--white)', marginBottom: 'var(--space-6)' }}>
+                  <p style={{ fontSize: 'var(--text-sm)', fontFamily: 'monospace', margin: 0, whiteSpace: 'pre-wrap', lineHeight: 1.6 }}>
+{`export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
@@ -151,7 +223,7 @@ export default {
     }
 
     return new Response("Not found", { status: 404 });
-  },
+  }
 };
 
 async function handlePriced(request, env) {
@@ -177,304 +249,127 @@ async function handlePriced(request, env) {
     JSON.stringify({ ok: true, data: "edge-secret-data" }),
     { status: 200, headers: { "content-type": "application/json" } }
   );
-}
+}`}
+                  </p>
+                </div>
+              </section>
 
-async function create402Challenge(env, resource, amount, currency) {
-  const reference = crypto.randomUUID();
+              {/* Performance benchmarks */}
+              <section style={{ marginBottom: 'var(--space-12)' }}>
+                <h2 style={{
+                  fontSize: 'var(--text-3xl)',
+                  fontWeight: 700,
+                  marginBottom: 'var(--space-6)',
+                  color: 'var(--gray-900)'
+                }}>
+                  Performance benchmarks
+                </h2>
 
-  // Store challenge in KV (5-minute TTL)
-  await env.CHALLENGES.put(
-    reference,
-    JSON.stringify({ resource, amount, currency, createdAt: Date.now() }),
-    { expirationTtl: 300 }
-  );
+                <p style={{ marginBottom: 'var(--space-4)' }}>
+                  We tested the Worker implementation with 1,000 concurrent requests from 5 global locations:
+                </p>
 
-  const body = {
-    detail: \`Payment required to access \${resource}\`,
-    payment: {
-      protocol: "x402",
-      amount,
-      currency,
-      reference,
-      instructions: "Pay and present receipt in X-Receipt header on retry.",
-    },
-  };
+                <div className="card" style={{ background: 'var(--gray-50)', marginBottom: 'var(--space-6)' }}>
+                  <table style={{ width: '100%', fontSize: 'var(--text-sm)', fontFamily: 'monospace' }}>
+                    <thead>
+                      <tr style={{ borderBottom: '1px solid var(--gray-200)' }}>
+                        <th style={{ padding: 'var(--space-2)', textAlign: 'left' }}>Location</th>
+                        <th style={{ padding: 'var(--space-2)', textAlign: 'left' }}>p50 latency</th>
+                        <th style={{ padding: 'var(--space-2)', textAlign: 'left' }}>p99 latency</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td style={{ padding: 'var(--space-2)' }}>San Francisco</td><td style={{ padding: 'var(--space-2)' }}>12ms</td><td style={{ padding: 'var(--space-2)' }}>35ms</td></tr>
+                      <tr><td style={{ padding: 'var(--space-2)' }}>London</td><td style={{ padding: 'var(--space-2)' }}>18ms</td><td style={{ padding: 'var(--space-2)' }}>42ms</td></tr>
+                      <tr><td style={{ padding: 'var(--space-2)' }}>Singapore</td><td style={{ padding: 'var(--space-2)' }}>22ms</td><td style={{ padding: 'var(--space-2)' }}>48ms</td></tr>
+                      <tr><td style={{ padding: 'var(--space-2)' }}>São Paulo</td><td style={{ padding: 'var(--space-2)' }}>28ms</td><td style={{ padding: 'var(--space-2)' }}>55ms</td></tr>
+                      <tr><td style={{ padding: 'var(--space-2)' }}>Sydney</td><td style={{ padding: 'var(--space-2)' }}>31ms</td><td style={{ padding: 'var(--space-2)' }}>60ms</td></tr>
+                    </tbody>
+                  </table>
+                </div>
 
-  return new Response(JSON.stringify(body), {
-    status: 402,
-    headers: {
-      "content-type": "application/json",
-      "cache-control": "no-store",
-    },
-  });
-}
+                <p style={{ marginBottom: 'var(--space-4)' }}>
+                  Compare to a single-region serverless function (US-East-1): p50 = 180ms, p99 = 850ms (for Tokyo clients).
+                </p>
+              </section>
 
-async function verifyReceipt(receipt, env) {
-  try {
-    // Parse JWT receipt
-    const [headerB64, payloadB64, signatureB64] = receipt.split(".");
-    const payload = JSON.parse(atob(payloadB64));
+              {/* Conclusion */}
+              <section style={{ marginBottom: 'var(--space-12)' }}>
+                <h2 style={{
+                  fontSize: 'var(--text-3xl)',
+                  fontWeight: 700,
+                  marginBottom: 'var(--space-6)',
+                  color: 'var(--gray-900)'
+                }}>
+                  Conclusion
+                </h2>
 
-    // 1. Verify signature with Web Crypto API
-    const publicKey = await crypto.subtle.importKey(
-      "spki",
-      base64ToArrayBuffer(env.RECEIPT_PUBLIC_KEY),
-      { name: "ECDSA", namedCurve: "P-256" },
-      false,
-      ["verify"]
-    );
+                <p style={{ marginBottom: 'var(--space-4)' }}>
+                  Cloudflare Workers + KV give you global, low-latency HTTP 402 payment gates for $5-10/month. No origin servers, no cold starts, no vendor lock-in (Web Crypto API works everywhere).
+                </p>
 
-    const dataToVerify = new TextEncoder().encode(\`\${headerB64}.\${payloadB64}\`);
-    const signature = base64ToArrayBuffer(signatureB64);
+                <p style={{ marginBottom: 'var(--space-4)' }}>
+                  If you&rsquo;re building agent-to-agent commerce systems, edge deployment is the only sane choice. Agents don&rsquo;t wait 500ms for cold starts.
+                </p>
 
-    const valid = await crypto.subtle.verify(
-      { name: "ECDSA", hash: "SHA-256" },
-      publicKey,
-      signature,
-      dataToVerify
-    );
+                <p style={{ marginBottom: 'var(--space-4)' }}>
+                  <strong>Next step</strong>: Deploy the Worker, test with <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>curl</code>, then integrate with your payment provider&rsquo;s receipt system.
+                </p>
+              </section>
 
-    if (!valid) {
-      return { ok: false, error: "Invalid signature", code: "INVALID_SIGNATURE" };
-    }
-
-    // 2. Check timestamp (5-minute expiry)
-    if (Date.now() - payload.timestamp > 5 * 60 * 1000) {
-      return { ok: false, error: "Receipt expired", code: "RECEIPT_EXPIRED" };
-    }
-
-    // 3. Verify challenge exists in KV
-    const challengeData = await env.CHALLENGES.get(payload.reference);
-    if (!challengeData) {
-      return { ok: false, error: "Unknown reference", code: "UNKNOWN_REFERENCE" };
-    }
-
-    // 4. Prevent replay
-    await env.CHALLENGES.delete(payload.reference);
-
-    return { ok: true, payload };
-  } catch (err) {
-    return { ok: false, error: "Malformed receipt", code: "MALFORMED_RECEIPT" };
-  }
-}
-
-function base64ToArrayBuffer(base64) {
-  const binary = atob(base64);
-  const bytes = new Uint8Array(binary.length);
-  for (let i = 0; i < binary.length; i++) {
-    bytes[i] = binary.charCodeAt(i);
-  }
-  return bytes.buffer;
-}`}</code>
-            </pre>
-
-            <h2 className="text-2xl font-semibold mb-3 mt-8">Configuration: wrangler.toml</h2>
-            <pre className="overflow-x-auto text-sm bg-black/90 text-white rounded-2xl p-4 mt-4">
-              <code>{`name = "x402-worker"
-main = "worker.js"
-compatibility_date = "2025-01-01"
-
-[[kv_namespaces]]
-binding = "CHALLENGES"
-id = "your-kv-namespace-id"
-
-[vars]
-RECEIPT_PUBLIC_KEY = "base64-encoded-public-key"`}</code>
-            </pre>
-
-            <h2 className="text-2xl font-semibold mb-3 mt-8">Deploy to edge</h2>
-            <pre className="overflow-x-auto text-sm bg-gray-100 rounded p-2 mt-2">
-              <code>{`npm install -g wrangler
-wrangler kv:namespace create CHALLENGES
-# Copy namespace ID to wrangler.toml
-wrangler deploy`}</code>
-            </pre>
-            <p className="text-gray-700 leading-relaxed mt-3">
-              Your worker is now live on 300+ edge locations. Test it:
-            </p>
-            <pre className="overflow-x-auto text-sm bg-gray-100 rounded p-2 mt-2">
-              <code>curl -i https://your-worker.workers.dev/priced</code>
-            </pre>
-
-            <h2 className="text-2xl font-semibold mb-3 mt-8">Why Web Crypto API?</h2>
-            <p className="text-gray-700 leading-relaxed">
-              Workers don&rsquo;t support Node.js <code className="bg-gray-100 px-1.5 py-0.5 rounded">crypto</code> module. Instead, they provide the <strong>Web Crypto API</strong> (<code className="bg-gray-100 px-1.5 py-0.5 rounded">crypto.subtle</code>), a standard supported by browsers, Deno, and edge runtimes.
-            </p>
-
-            <p className="text-gray-700 leading-relaxed mt-4">
-              Benefits:
-            </p>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
-              <li><strong>Standard API</strong>: Works in Workers, Deno, browsers</li>
-              <li><strong>Hardware-accelerated</strong>: Signature verification is fast</li>
-              <li><strong>No dependencies</strong>: No npm install, smaller bundle</li>
-            </ul>
-
-            <h2 className="text-2xl font-semibold mb-3 mt-8">KV vs Durable Objects for challenges</h2>
-            <p className="text-gray-700 leading-relaxed">
-              Cloudflare offers two storage options:
-            </p>
-
-            <h3 className="text-xl font-semibold mb-2 mt-6">KV (Key-Value)</h3>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
-              <li>✅ <strong>Simple</strong>: get/put/delete API</li>
-              <li>✅ <strong>Cheap</strong>: $0.50/million reads</li>
-              <li>✅ <strong>Global replication</strong>: Eventually consistent (1s-60s)</li>
-              <li>❌ <strong>Not strongly consistent</strong>: Replay attacks possible if client retries too fast</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold mb-2 mt-6">Durable Objects</h3>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
-              <li>✅ <strong>Strongly consistent</strong>: Prevents replay attacks</li>
-              <li>✅ <strong>Stateful</strong>: In-memory Map, SQL storage</li>
-              <li>❌ <strong>More expensive</strong>: $0.15/million requests + $0.20/GB-month</li>
-              <li>❌ <strong>More complex</strong>: Requires class definition and binding</li>
-            </ul>
-
-            <p className="text-gray-700 leading-relaxed mt-4">
-              <strong>Recommendation</strong>: Start with KV for simplicity. Upgrade to Durable Objects if you need stronger consistency (e.g., high-value transactions where replay is a real risk).
-            </p>
-
-            <h2 className="text-2xl font-semibold mb-3 mt-8">Performance benchmarks</h2>
-            <p className="text-gray-700 leading-relaxed">
-              We tested the Worker implementation above with 1,000 concurrent requests from 5 global locations:
-            </p>
-            <pre className="overflow-x-auto text-sm bg-gray-100 rounded p-2 mt-4">
-              <code>{`Location        | p50 latency | p99 latency
-----------------|-------------|------------
-San Francisco   | 12ms        | 35ms
-London          | 18ms        | 42ms
-Singapore       | 22ms        | 48ms
-São Paulo       | 28ms        | 55ms
-Sydney          | 31ms        | 60ms`}</code>
-            </pre>
-            <p className="text-gray-700 leading-relaxed mt-3">
-              Compare to a single-region serverless function (US-East-1): p50 = 180ms, p99 = 850ms (for Tokyo clients).
-            </p>
-
-            <h2 className="text-2xl font-semibold mb-3 mt-8">Cost analysis</h2>
-            <p className="text-gray-700 leading-relaxed">
-              Cloudflare Workers pricing (as of 2025):
-            </p>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
-              <li><strong>Free tier</strong>: 100,000 requests/day</li>
-              <li><strong>Paid</strong>: $5/month for 10M requests, then $0.50/million</li>
-              <li><strong>KV</strong>: $0.50/million reads, $5/million writes</li>
-            </ul>
-
-            <p className="text-gray-700 leading-relaxed mt-4">
-              Example: 1M payment gate checks per month:
-            </p>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-1">
-              <li>Worker requests: $5/month (covered by base plan)</li>
-              <li>KV reads (challenge lookup): $0.50</li>
-              <li>KV writes (challenge creation): $5 (1M writes)</li>
-              <li><strong>Total</strong>: ~$10.50/month</li>
-            </ul>
-
-            <p className="text-gray-700 leading-relaxed mt-4">
-              Compare to AWS Lambda + DynamoDB for same traffic: $25-40/month.
-            </p>
-
-            <h2 className="text-2xl font-semibold mb-3 mt-8">Security considerations</h2>
-
-            <h3 className="text-xl font-semibold mb-2 mt-6">1. Protect your public key</h3>
-            <p className="text-gray-700 leading-relaxed">
-              Store the receipt verification public key in <code className="bg-gray-100 px-1.5 py-0.5 rounded">wrangler.toml</code> as a variable, not hardcoded in the Worker. Use Cloudflare Secrets for production:
-            </p>
-            <pre className="overflow-x-auto text-sm bg-gray-100 rounded p-2 mt-2">
-              <code>wrangler secret put RECEIPT_PUBLIC_KEY</code>
-            </pre>
-
-            <h3 className="text-xl font-semibold mb-2 mt-6">2. Rate limiting</h3>
-            <p className="text-gray-700 leading-relaxed">
-              Add rate limiting to prevent abuse:
-            </p>
-            <pre className="overflow-x-auto text-sm bg-black/90 text-white rounded-2xl p-4 mt-4">
-              <code>{`// Check client IP against rate limit
-const clientIP = request.headers.get("CF-Connecting-IP");
-const rateLimitKey = \`ratelimit:\${clientIP}\`;
-const count = await env.CHALLENGES.get(rateLimitKey);
-
-if (count && parseInt(count) > 100) {
-  return new Response("Too many requests", { status: 429 });
-}
-
-await env.CHALLENGES.put(rateLimitKey, (parseInt(count || 0) + 1).toString(), {
-  expirationTtl: 60, // 1 minute window
-});`}</code>
-            </pre>
-
-            <h3 className="text-xl font-semibold mb-2 mt-6">3. CORS headers</h3>
-            <p className="text-gray-700 leading-relaxed">
-              If your API serves browser clients, add CORS headers:
-            </p>
-            <pre className="overflow-x-auto text-sm bg-black/90 text-white rounded-2xl p-4 mt-4">
-              <code>{`return new Response(JSON.stringify(body), {
-  status: 402,
-  headers: {
-    "content-type": "application/json",
-    "access-control-allow-origin": "*", // or specific domain
-    "access-control-allow-headers": "X-Receipt",
-    "cache-control": "no-store",
-  },
-});`}</code>
-            </pre>
-
-            <h2 className="text-2xl font-semibold mb-3 mt-8">Production checklist</h2>
-            <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
-              <li>✅ Store public key in Cloudflare Secrets</li>
-              <li>✅ Use KV TTL for automatic challenge expiry</li>
-              <li>✅ Add rate limiting per IP</li>
-              <li>✅ Set CORS headers if serving browsers</li>
-              <li>✅ Log verifications to Analytics Engine for audit trails</li>
-              <li>✅ Consider Durable Objects for high-value transactions</li>
-              <li>✅ Add monitoring with Workers Analytics</li>
-            </ul>
-
-            <h2 className="text-2xl font-semibold mb-3 mt-8">Conclusion</h2>
-            <p className="text-gray-700 leading-relaxed">
-              Cloudflare Workers + KV give you global, low-latency HTTP 402 payment gates for $5-10/month. No origin servers, no cold starts, no vendor lock-in (Web Crypto API works everywhere).
-            </p>
-            <p className="text-gray-700 leading-relaxed mt-4">
-              If you&rsquo;re building agent-to-agent commerce systems, edge deployment is the only sane choice. Agents don&rsquo;t wait 500ms for cold starts.
-            </p>
-
-            <p className="text-gray-700 leading-relaxed mt-4">
-              <strong>Next step</strong>: Deploy the Worker above, test with <code className="bg-gray-100 px-1.5 py-0.5 rounded">curl</code>, then integrate with your payment provider&rsquo;s receipt system.
-            </p>
+              {/* Related Reading */}
+              <section style={{ marginTop: 'var(--space-12)', paddingTop: 'var(--space-8)', borderTop: '2px solid var(--gray-200)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+                  Related Reading
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+                  <Link href="/integrations/x402/cloudflare-workers/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                    Cloudflare Workers x402 Implementation Guide
+                  </Link>
+                  <Link href="/blog/adding-402-in-15-minutes/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                    Add HTTP 402 in 15 Minutes (Express)
+                  </Link>
+                  <Link href="/glossary/x402/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                    What is x402?
+                  </Link>
+                </div>
+              </section>
+            </div>
           </div>
 
-          <div style={{
-            marginTop: 'var(--space-12)',
-            paddingTop: 'var(--space-8)',
-            borderTop: '2px solid var(--gray-200)'
-          }}>
-            <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>
-              Related Reading
-            </h3>
-            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-              <li>
-                <Link href="/integrations/x402/cloudflare-workers/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
-                  Cloudflare Workers x402 Implementation Guide
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog/adding-402-in-15-minutes/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
-                  Add HTTP 402 in 15 Minutes (Express)
-                </Link>
-              </li>
-              <li>
-                <Link href="/glossary/x402/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
-                  What is x402?
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* CTA Section */}
+          <section style={{ background: 'var(--gray-50)', borderTop: '1px solid var(--gray-200)' }}>
+            <div className="container" style={{ maxWidth: '900px', margin: '0 auto', padding: 'var(--space-16) var(--space-6)' }}>
+              <div className="card" style={{ background: 'var(--gradient-brand)', color: 'var(--white)', textAlign: 'center' }}>
+                <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--white)' }}>
+                  Ready to deploy edge payment gates?
+                </h2>
+                <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', opacity: 0.9 }}>
+                  Learn how Originary helps build production HTTP 402 flows with receipts, verification, and global edge deployment.
+                </p>
+                <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
+                  <Link
+                    href="/developers"
+                    className="btn btn-lg"
+                    style={{ background: 'var(--white)', color: 'var(--brand-primary)', border: 'none' }}
+                  >
+                    <span>View Documentation</span>
+                    <ArrowRight size={18} />
+                  </Link>
+                  <Link
+                    href="/company/contact"
+                    className="btn btn-lg btn-ghost"
+                    style={{ color: 'var(--white)', border: '1px solid rgba(255,255,255,0.3)' }}
+                  >
+                    <span>Talk to Us</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
         </article>
       </main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <Footer />
-    </>
+    </div>
   );
 }
