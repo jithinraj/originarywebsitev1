@@ -109,7 +109,7 @@ const websiteJsonLd = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Originary – Receipts for the Agentic Web',
+    default: 'Originary - Receipts for the Agentic Web',
     template: '%s | Originary'
   },
   description: 'Originary provides verifiable receipts for the agentic web. Add policy discovery, HTTP 402 payments, and PEAC-Receipts to every API response.',
@@ -127,7 +127,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.originary.xyz/',
   },
   openGraph: {
-    title: 'Originary – Receipts for the Agentic Web',
+    title: 'Originary - Receipts for the Agentic Web',
     description: 'Originary provides verifiable receipts for the agentic web. Add policy discovery, HTTP 402 payments, and PEAC-Receipts to every API response.',
     url: 'https://www.originary.xyz/',
     siteName: 'Originary',
@@ -135,14 +135,14 @@ export const metadata: Metadata = {
       url: '/og.jpg',
       width: 1200,
       height: 630,
-      alt: 'Originary – Receipts for the Agentic Web'
+      alt: 'Originary - Receipts for the Agentic Web'
     }],
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary – Receipts for the Agentic Web',
+    title: 'Originary - Receipts for the Agentic Web',
     description: 'Originary provides verifiable receipts for the agentic web. Add policy discovery, HTTP 402 payments, and PEAC-Receipts to every API response.',
     images: ['/og.jpg'],
     site: '@originary',

@@ -4,7 +4,7 @@ import NavigationHeader from "@/components/NavigationHeader";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "AIPREF – AI Preference File Standard",
+  title: "AIPREF - AI Preference File Standard",
   description: "AIPREF is a structured format for publishers to express preferences about AI training, usage, and attribution. Machine-readable policy discovery for AI agents.",
   alternates: { canonical: "/glossary/aipref/" },
   keywords: "AIPREF, AI preferences, AI training policy, content policy, robots.txt, AI agents, publisher rights",
