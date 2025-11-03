@@ -4,9 +4,9 @@ import NavigationHeader from "@/components/NavigationHeader";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "AIPREF - AI Preference File Standard - Originary",
+  title: "AIPREF – AI Preference File Standard",
   description: "AIPREF is a structured format for publishers to express preferences about AI training, usage, and attribution. Machine-readable policy discovery for AI agents.",
-  alternates: { canonical: "https://www.originary.xyz/glossary/aipref/" },
+  alternates: { canonical: "/glossary/aipref/" },
   keywords: "AIPREF, AI preferences, AI training policy, content policy, robots.txt, AI agents, publisher rights",
   openGraph: {
     title: "AIPREF - AI Preference File Standard",
