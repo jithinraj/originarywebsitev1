@@ -11,6 +11,6 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: "https://www.originary.xyz/sitemap.xml",
+    sitemap: "https://www.originary.xyz/sitemap-main.xml",
   };
 }
