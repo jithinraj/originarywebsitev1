@@ -198,6 +198,18 @@ export default function Footer() {
               { href: '/company/contact', label: 'Contact' }
             ]}
           />
+
+          <FooterSection
+            title="Follow Originary"
+            links={[
+              { href: 'https://twitter.com/originaryai', label: 'X / Twitter', external: true },
+              { href: 'https://www.linkedin.com/company/originary', label: 'LinkedIn', external: true },
+              { href: 'https://bsky.app/profile/originary.bsky.social', label: 'Bluesky', external: true },
+              { href: 'https://warpcast.com/originary', label: 'Farcaster', external: true },
+              { href: 'https://github.com/peacprotocol/peac', label: 'GitHub', external: true },
+              { href: 'https://www.originary.xyz/blog', label: 'Blog' }
+            ]}
+          />
         </div>
 
         {/* Bottom Section */}
@@ -433,7 +445,7 @@ function FooterSection({
   links
 }: {
   title: string;
-  links: Array<{ href: string; label: string }>;
+  links: Array<{ href: string; label: string; external?: boolean }>;
 }) {
   return (
     <div>
@@ -460,27 +472,36 @@ function FooterSection({
         }}
         role="list"
       >
-        {links.map((link) => (
-          <li key={link.href}>
-            <Link
-              href={link.href}
-              style={{
-                color: 'var(--gray-600)',
-                textDecoration: 'none',
-                fontSize: 'var(--text-sm)',
-                transition: 'color var(--duration-200) var(--ease-out)'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = 'var(--gray-900)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = 'var(--gray-600)'
-              }}
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
+        {links.map((link) => {
+          const linkStyle = {
+            color: 'var(--gray-600)',
+            textDecoration: 'none',
+            fontSize: 'var(--text-sm)',
+            transition: 'color var(--duration-200) var(--ease-out)'
+          };
+
+          const linkProps = link.external
+            ? { target: '_blank', rel: 'noopener noreferrer' }
+            : {};
+
+          return (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                {...linkProps}
+                style={linkStyle}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = 'var(--gray-900)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'var(--gray-600)'
+                }}
+              >
+                {link.label}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   )

@@ -32,7 +32,7 @@ const organizationJsonLd = {
   '@id': 'https://www.originary.xyz/#org',
   name: 'Originary',
   legalName: 'Poem, Inc.',
-  alternateName: 'Originary™',
+  alternateName: ['Poem, Inc.', 'Originary™', 'Originary AI', 'Originary Receipts'],
   url: 'https://www.originary.xyz/',
   telephone: '+14157070402',
   address: {
@@ -44,10 +44,13 @@ const organizationJsonLd = {
     addressCountry: 'US'
   },
   sameAs: [
-    'https://x.com/originaryinc',
-    'https://www.linkedin.com/company/originary/',
-    'https://github.com/peacprotocol',
-    'https://peacprotocol.org/'
+    'https://www.linkedin.com/company/originary',
+    'https://twitter.com/originaryai',
+    'https://bsky.app/profile/originary.bsky.social',
+    'https://warpcast.com/originary',
+    'https://github.com/peacprotocol/peac',
+    'https://peacprotocol.substack.com/',
+    'https://www.originary.xyz/blog'
   ],
   logo: 'https://www.originary.xyz/og/originary-logo.png',
   contactPoint: [
@@ -55,18 +58,33 @@ const organizationJsonLd = {
       '@type': 'ContactPoint',
       email: 'contact@originary.xyz',
       telephone: '+14157070402',
-      contactType: 'customer support',
-      areaServed: 'US'
+      contactType: 'sales',
+      areaServed: ['US', 'IN', 'UK', 'CA', 'EU']
     }
   ],
   knowsAbout: [
-    'Verifiable receipts for AI agents',
+    'HTTP 402',
+    'x402',
+    'AIPREF',
     'PEAC Protocol',
+    'MCP',
+    'ACP',
+    'A2A',
+    'Agentic Web',
+    'AI commerce',
+    'AI infrastructure',
+    'AI compliance',
+    'AI Consent',
+    'AI Access',
+    'Ethical crawling',
+    'verifiable receipts',
+    'agent-to-agent transactions',
+    'Verifiable receipts for AI agents',
     'HTTP 402 Payment Required',
     'Agent-to-Agent communication',
     'Model Context Protocol',
     'Agentic Commerce Protocol',
-    'AI Preferences (AIPREF)',
+    'AI Preferences',
     'API policy enforcement',
     'Agent coordination',
     'Machine-readable payment flows'
