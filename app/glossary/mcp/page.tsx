@@ -4,9 +4,9 @@ import NavigationHeader from "@/components/NavigationHeader";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "MCP - Model Context Protocol - Originary",
+  title: "MCP – Model Context Protocol",
   description: "MCP (Model Context Protocol) is an open standard for connecting AI models to data sources, services, and tools. Enables agents to access external context through standardized interfaces.",
-  alternates: { canonical: "https://www.originary.xyz/glossary/mcp/" },
+  alternates: { canonical: "/glossary/mcp/" },
   keywords: "MCP, Model Context Protocol, AI context, agent integrations, data sources, AI tools, context management, agent infrastructure",
   openGraph: {
     title: "MCP - Model Context Protocol",
