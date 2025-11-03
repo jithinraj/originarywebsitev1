@@ -4,13 +4,13 @@ import Footer from '@/components/Footer'
 import Mark from '@/components/Mark'
 
 export const metadata: Metadata = {
-  title: 'Originary for AI Builders - Prove Compliance with Creator Preferences',
+  title: 'AI Builders | Prove compliance with creator preferences',
   description: 'Build AI systems that respect creator rights, maintain consent, and provide verifiable interaction records. Cryptographic receipts for provable compliance.',
-  keywords: 'AI builders, compliance, creator rights, verifiable receipts, consent management, PEAC protocol',
+  keywords: 'AI builders, compliance, creator rights, verifiable receipts, consent management, PEAC protocol, AI compliance, AIPREF, agent commerce',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Originary for AI Builders - Prove Compliance with Creator Preferences',
+    title: 'AI Builders | Prove compliance with creator preferences',
     description: 'Build AI systems that respect creator rights, maintain consent, and provide verifiable interaction records. Cryptographic receipts for provable compliance.',
     url: 'https://www.originary.xyz/solutions/ai-builders',
     images: [{
@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary for AI Builders - Prove Compliance with Creator Preferences',
+    title: 'AI Builders | Prove compliance with creator preferences',
     description: 'Build AI systems that respect creator rights, maintain consent, and provide verifiable interaction records. Cryptographic receipts for provable compliance.',
     images: ['/og.jpg'],
-    site: '@originaryinc',
-    creator: '@originaryinc',
+    site: '@originary',
+    creator: '@originary',
   },
   robots: 'index,follow',
   alternates: {

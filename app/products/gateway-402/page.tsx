@@ -5,22 +5,22 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle, CreditCard, Shield, ExternalLink, Download } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Gateway (402) : Originary',
-  description: 'HTTP 402 Payment Required gateway with x402 protocol support. Enterprise-grade policy enforcement with x402 protocol for authenticated agent transactions.',
-  keywords: 'HTTP 402, x402, payment gateway, policy enforcement, enterprise payments',
+  title: 'Gateway 402 | HTTP 402 & x402 payments for APIs',
+  description: 'Enterprise HTTP 402 Payment Required gateway with x402 protocol support. Enable autonomous agents to securely purchase API access through standardized payment protocols.',
+  keywords: 'HTTP 402, x402, payment gateway, API payments, policy enforcement, enterprise payments, agent commerce',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Gateway (402) : Originary',
-    description: 'HTTP 402 Payment Required gateway with x402 protocol support. Enterprise-grade policy enforcement with x402 protocol for authenticated agent transactions.',
+    title: 'Gateway 402 | HTTP 402 & x402 payments for APIs',
+    description: 'Enterprise HTTP 402 Payment Required gateway with x402 protocol support. Enable autonomous agents to securely purchase API access through standardized payment protocols.',
     url: 'https://www.originary.xyz/products/gateway-402',
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gateway (402) : Originary',
-    description: 'HTTP 402 Payment Required gateway with x402 protocol support. Enterprise-grade policy enforcement with x402 protocol for authenticated agent transactions.',
+    title: 'Gateway 402 | HTTP 402 & x402 payments for APIs',
+    description: 'Enterprise HTTP 402 Payment Required gateway with x402 protocol support. Enable autonomous agents to securely purchase API access.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
@@ -32,8 +32,71 @@ export const metadata: Metadata = {
 }
 
 export default function Gateway402() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is HTTP 402?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HTTP 402 Payment Required is a standard HTTP status code reserved for digital payment systems. When a server returns 402, it indicates that payment is required to access the requested resource. The Gateway 402 implements this standard for API monetization and agent commerce."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is x402?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "x402 is an open protocol specification for HTTP 402 payment flows. It defines how agents discover payment policies, negotiate terms, submit payments, and receive verifiable receipts. x402 enables standardized agent-to-agent commerce through HTTP headers and structured payment challenges."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I get a receipt per call?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Every successful payment through Gateway 402 generates a cryptographic PEAC-Receipt that proves payment, access rights, and compliance. These receipts are signed JWS tokens that can be verified offline and used for audit trails, chargebacks, and regulatory compliance."
+        }
+      }
+    ]
+  };
+
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Enable HTTP 402 on an endpoint",
+    "description": "Configure Gateway 402 to protect your API endpoints with HTTP 402 payment requirements",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Configure payment policy",
+        "text": "Define your pricing model, accepted payment methods, and access rules in the Gateway 402 configuration file."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Deploy Gateway 402",
+        "text": "Deploy the gateway as a reverse proxy in front of your API endpoints using Docker, Kubernetes, or cloud platforms."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Test payment flow",
+        "text": "Send a request without payment to receive a 402 challenge, submit payment, and verify receipt-based access."
+      }
+    ]
+  };
+
   return (
     <div className="wrap">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+      />
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
         <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>

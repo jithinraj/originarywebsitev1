@@ -5,13 +5,13 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle, FileText, Shield, Zap, Download, ExternalLink, Play } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'PEAC Protocol : Originary',
+  title: 'PEAC Protocol | Verifiable Receipts & Policy Discovery',
   description: 'PEAC is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS) as auditable proof of use.',
-  keywords: 'PEAC protocol, file-based policy, verifiable receipts, JWS, agent coordination',
+  keywords: 'PEAC protocol, file-based policy, verifiable receipts, JWS, agent coordination, PEAC-Receipt, policy discovery, .well-known, agent commerce',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'PEAC Protocol : Originary',
+    title: 'PEAC Protocol | Verifiable Receipts & Policy Discovery',
     description: 'PEAC is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS) as auditable proof of use.',
     url: 'https://www.originary.xyz/products/peac',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PEAC Protocol : Originary',
-    description: 'PEAC is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS) as auditable proof of use.',
+    title: 'PEAC Protocol | Verifiable Receipts & Policy Discovery',
+    description: 'PEAC is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS).',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
