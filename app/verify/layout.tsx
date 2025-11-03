@@ -1,0 +1,66 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Verify | Offline JWS signature check',
+  description: 'Verify PEAC-Receipt signatures offline without API calls. Check JWS tokens, validate cryptographic signatures, and audit payment receipts with instant verification.',
+  keywords: 'JWS verification, offline signature check, PEAC-Receipt, receipt verification, cryptographic verification, JWT validation, offline verification',
+  authors: [{ name: 'Originary' }],
+  openGraph: {
+    type: 'website',
+    title: 'Verify | Offline JWS signature check',
+    description: 'Verify PEAC-Receipt signatures offline without API calls. Check JWS tokens, validate cryptographic signatures, and audit payment receipts with instant verification.',
+    url: 'https://www.originary.xyz/verify',
+    images: ['https://www.originary.xyz/og.jpg'],
+    siteName: 'Originary',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Verify | Offline JWS signature check',
+    description: 'Verify PEAC-Receipt signatures offline without API calls. Check JWS tokens, validate cryptographic signatures, and audit payment receipts.',
+    images: ['https://www.originary.xyz/og.jpg'],
+    site: '@originary',
+    creator: '@originary',
+  },
+  robots: 'index,follow',
+  alternates: {
+    canonical: 'https://www.originary.xyz/verify',
+  },
+}
+
+export default function VerifyLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  const softwareAppJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Originary Verify",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "description": "Offline JWS signature verification tool for PEAC-Receipt tokens. Verify cryptographic signatures without API calls.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Offline JWS signature verification",
+      "PEAC-Receipt token validation",
+      "Cryptographic signature checks",
+      "No API calls required",
+      "Instant verification results"
+    ],
+    "url": "https://www.originary.xyz/verify"
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJsonLd) }}
+      />
+      {children}
+    </>
+  )
+}

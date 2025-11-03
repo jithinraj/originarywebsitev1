@@ -3,13 +3,13 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Protect and monetize content - Publishers : Originary',
+  title: 'Publishers | Protect and monetize content with AIPREF & PEAC',
   description: 'Set preferences for AI training and usage. Verify compliance with attribution requirements. Monetize content access through automated licensing and payment.',
-  keywords: 'content protection, AI training preferences, content monetization, automated licensing, attribution requirements',
+  keywords: 'content protection, AI training preferences, content monetization, automated licensing, attribution requirements, AIPREF, PEAC, publishers, content rights',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Protect and monetize content - Publishers : Originary',
+    title: 'Publishers | Protect and monetize content with AIPREF & PEAC',
     description: 'Set preferences for AI training and usage. Verify compliance with attribution requirements. Monetize content access through automated licensing and payment.',
     url: 'https://www.originary.xyz/solutions/publishers',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Protect and monetize content - Publishers : Originary',
+    title: 'Publishers | Protect and monetize content with AIPREF & PEAC',
     description: 'Set preferences for AI training and usage. Verify compliance with attribution requirements. Monetize content access through automated licensing and payment.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',

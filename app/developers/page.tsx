@@ -5,13 +5,13 @@ import Link from 'next/link'
 import { ArrowRight, Code, Download, Sparkles } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Developers - API Integration & CLI Tools',
+  title: 'Developers | Verify API, Gateway 402, Policy APIs',
   description: 'Integrate PEAC-Receipts into your API with Originary developer tools. Add HTTP 402 payment flows, A2A verification, and MCP receipts with CLI tools and edge verification.',
-  keywords: 'developer API, PEAC protocol, CLI tools, HTTP 402, agent receipts, policy validation, edge verification, MCP integration, A2A communication, ACP',
+  keywords: 'developer API, PEAC protocol, CLI tools, HTTP 402, agent receipts, policy validation, edge verification, MCP integration, A2A communication, ACP, Verify API, Gateway 402, Policy APIs',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Developers - API Integration & CLI Tools | Originary',
+    title: 'Developers | Verify API, Gateway 402, Policy APIs',
     description: 'Integrate PEAC-Receipts into your API with Originary developer tools. Add HTTP 402 payment flows, A2A verification, and MCP receipts with CLI tools and edge verification.',
     url: 'https://www.originary.xyz/developers/',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Developers - API Integration & CLI Tools | Originary',
+    title: 'Developers | Verify API, Gateway 402, Policy APIs',
     description: 'Integrate PEAC-Receipts into your API with Originary developer tools. Add HTTP 402 payment flows, A2A verification, and MCP receipts.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originaryinc',
-    creator: '@originaryinc',
+    site: '@originary',
+    creator: '@originary',
   },
   robots: 'index,follow',
   alternates: {

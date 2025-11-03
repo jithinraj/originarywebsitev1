@@ -3,13 +3,13 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Enterprise agentic governance - Enterprises : Originary',
+  title: 'Enterprises | Enterprise agentic governance & policy management',
   description: 'Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. Built for SOC 2, GDPR, and multi-region deployment.',
-  keywords: 'enterprise agentic governance, policy management, compliance reporting, SOC 2, GDPR, security controls',
+  keywords: 'enterprise agentic governance, policy management, compliance reporting, SOC 2, GDPR, security controls, enterprise AI, agent governance',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Enterprise agentic governance - Enterprises : Originary',
+    title: 'Enterprises | Enterprise agentic governance & policy management',
     description: 'Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. Built for SOC 2, GDPR, and multi-region deployment.',
     url: 'https://www.originary.xyz/solutions/enterprises',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enterprise agentic governance - Enterprises : Originary',
+    title: 'Enterprises | Enterprise agentic governance & policy management',
     description: 'Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. Built for SOC 2, GDPR, and multi-region deployment.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',

@@ -1,0 +1,254 @@
+[
+  {
+    "url": "https://www.originary.xyz/",
+    "lastModified": "2025-11-03T01:55:58+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/products",
+    "lastModified": "2025-10-23T00:26:21+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/products/gateway-402",
+    "lastModified": "2025-10-23T00:26:21+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/products/peac",
+    "lastModified": "2025-10-23T00:26:21+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/products/studio",
+    "lastModified": "2025-10-23T00:26:21+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/products/verify",
+    "lastModified": "2025-10-23T00:26:21+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/products/adapters",
+    "lastModified": "2025-10-23T00:26:21+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/developers",
+    "lastModified": "2025-11-03T02:58:45+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/verify",
+    "lastModified": "2025-10-23T00:26:21+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/solutions",
+    "lastModified": "2025-10-23T00:26:21+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/solutions/ai-builders",
+    "lastModified": "2025-10-23T00:26:21+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/solutions/api-providers",
+    "lastModified": "2025-10-14T17:44:49+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/solutions/publishers",
+    "lastModified": "2025-10-23T00:26:21+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/solutions/enterprises",
+    "lastModified": "2025-10-23T00:26:21+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/integrations",
+    "lastModified": "2025-11-03T04:27:52+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/integrations/x402",
+    "lastModified": "2025-11-03T03:57:32+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/integrations/http-402",
+    "lastModified": "2025-11-03"
+  },
+  {
+    "url": "https://www.originary.xyz/integrations/mcp",
+    "lastModified": "2025-11-03T02:34:19+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/integrations/acp",
+    "lastModified": "2025-11-03T02:34:19+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/integrations/a2a",
+    "lastModified": "2025-11-03T02:34:19+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/integrations/aipref",
+    "lastModified": "2025-11-03T02:34:19+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/integrations/x402/cloudflare-workers",
+    "lastModified": "2025-11-03T02:58:45+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/integrations/x402/express-node",
+    "lastModified": "2025-11-03T02:58:45+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/integrations/x402/nextjs",
+    "lastModified": "2025-11-03T02:58:45+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/integrations/x402/python-fastapi",
+    "lastModified": "2025-11-03T02:58:45+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/company/about",
+    "lastModified": "2025-10-29T03:21:12+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/company/contact",
+    "lastModified": "2025-10-29T03:21:12+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/pricing",
+    "lastModified": "2025-10-29T03:21:12+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/ai",
+    "lastModified": "2025-11-03T02:58:45+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/receipts",
+    "lastModified": "2025-10-20T19:14:13+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/demo",
+    "lastModified": "2025-10-16T19:37:26+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/downloads",
+    "lastModified": "2025-10-29T05:30:41+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/blog",
+    "lastModified": "2025-11-03T03:39:48+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/blog/aipref-by-ietf",
+    "lastModified": "2025-10-14T18:29:47+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/blog/robots-txt-rfc-9309",
+    "lastModified": "2025-10-15T00:23:34+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/blog/cloudflare-workers-402",
+    "lastModified": "2025-11-03T23:41:15+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/blog/http-402-for-apis",
+    "lastModified": "2025-11-03T23:41:15+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/blog/adding-402-in-15-minutes",
+    "lastModified": "2025-11-03T23:41:15+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/glossary/http-402-payment-required",
+    "lastModified": "2025-11-03T03:39:48+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/glossary/x402",
+    "lastModified": "2025-11-03T03:39:48+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/glossary/aipref",
+    "lastModified": "2025-11-03"
+  },
+  {
+    "url": "https://www.originary.xyz/glossary/peac",
+    "lastModified": "2025-11-03"
+  },
+  {
+    "url": "https://www.originary.xyz/glossary/agentic-web",
+    "lastModified": "2025-11-03"
+  },
+  {
+    "url": "https://www.originary.xyz/glossary/acp",
+    "lastModified": "2025-11-03"
+  },
+  {
+    "url": "https://www.originary.xyz/glossary/a2a",
+    "lastModified": "2025-11-03"
+  },
+  {
+    "url": "https://www.originary.xyz/glossary/mcp",
+    "lastModified": "2025-11-03"
+  },
+  {
+    "url": "https://www.originary.xyz/guides/http-402",
+    "lastModified": "2025-11-03T03:39:48+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/docs/receipts",
+    "lastModified": "2025-10-14T17:44:49+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/docs/payments/x402",
+    "lastModified": "2025-10-14T17:44:49+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/docs/payments/stripe",
+    "lastModified": "2025-10-14T17:44:49+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/docs/mcp/receipts",
+    "lastModified": "2025-10-14T17:44:49+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/docs/a2a/attach-points",
+    "lastModified": "2025-10-14T17:44:49+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/docs/deploy/cloudflare-worker",
+    "lastModified": "2025-10-14T17:44:49+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/docs/deploy/vercel",
+    "lastModified": "2025-10-14T17:44:49+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/legal/terms",
+    "lastModified": "2025-10-14T17:44:49+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/legal/privacy",
+    "lastModified": "2025-10-14T17:44:49+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/trademark",
+    "lastModified": "2025-10-29T03:21:12+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/privacy",
+    "lastModified": "2025-11-03T04:16:20+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/copyright",
+    "lastModified": "2025-10-14T17:44:49+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/refund",
+    "lastModified": "2025-11-03T04:16:20+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/checkout/start",
+    "lastModified": "2025-10-29T03:21:12+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/checkout/confirmation",
+    "lastModified": "2025-10-14T12:37:56+05:30"
+  },
+  {
+    "url": "https://www.originary.xyz/changelog",
+    "lastModified": "2025-10-14T12:37:56+05:30"
+  }
+]
