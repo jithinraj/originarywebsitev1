@@ -13,7 +13,7 @@ import {
   AnimatedButton,
   icons
 } from './AnimatedComponents'
-import RazorpayButton from './RazorpayButton'
+import StripeButton from './StripeButton'
 
 const {
   Check,
@@ -373,7 +373,7 @@ export default function PricingPage() {
                           Contact Sales
                         </AnimatedButton>
                       ) : (
-                        <RazorpayButton />
+                        <StripeButton plan="start" amount={1} label="Pay $1 to Get Started" />
                       )}
                       <div className="action-note">
                         {tier.name === 'Enterprise'
@@ -645,7 +645,7 @@ export default function PricingPage() {
               </div>
               <div className="cta-actions">
                 <div className="action-group">
-                  <RazorpayButton />
+                  <StripeButton plan="start" amount={1} label="Pay $1 to Get Started" />
                   <div className="action-note">
                     <strong>$1 gets you started</strong> • Our team will help you integrate & scale
                   </div>
