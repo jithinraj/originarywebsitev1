@@ -53,7 +53,7 @@ const pricingTiers = [
   {
     name: 'Professional',
     badge: 'PROFESSIONAL',
-    price: { amount: 1, period: 'to get started' },
+    price: { amount: 100, period: 'per month' },
     description: 'For production applications and growing teams',
     features: [
       'Everything in Developer, plus:',
@@ -372,12 +372,21 @@ export default function PricingPage() {
                         <AnimatedButton variant="secondary" className="w-full">
                           Contact Sales
                         </AnimatedButton>
+                      ) : tier.name === 'Professional' ? (
+                        <StripeButton plan="pro" amount={100} label="Subscribe for $100/month" />
                       ) : (
                         <StripeButton plan="start" amount={1} label="Pay $1 to Get Started" />
                       )}
                       <div className="action-note">
                         {tier.name === 'Enterprise'
                           ? 'Talk to our enterprise team'
+                          : tier.name === 'Professional'
+                          ? (
+                            <>
+                              <strong>$100/month</strong> subscription with full Professional features.<br />
+                              Cancel anytime with no long-term commitment.
+                            </>
+                          )
                           : (
                             <>
                               <strong>$1 starter fee</strong> gets you immediate access.<br />
