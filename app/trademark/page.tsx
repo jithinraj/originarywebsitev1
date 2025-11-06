@@ -98,7 +98,8 @@ export default function Trademark() {
               </ul>
 
               <h2>Disambiguation</h2>
-              <p><em>No affiliation with other businesses using similar names.</em> This site refers only to Originary at <Link href="https://www.originary.xyz" style={{ color: 'var(--brand-primary)' }}>https://www.originary.xyz/</Link>.</p>
+              <p>In the United States, <strong>&ldquo;Originary&rdquo;</strong> is used by <strong>Poem, Inc.</strong> to identify our open software and developer tools; <strong>Poem, Inc. is not affiliated with any other business using a similar name.</strong></p>
+              <p style={{ marginTop: 'var(--space-3)' }}><em>This site refers only to Originary at <Link href="https://www.originary.xyz" style={{ color: 'var(--brand-primary)' }}>https://www.originary.xyz/</Link>.</em></p>
 
               <h2>Open protocol notice</h2>
               <p>We support the <strong>open-source PEAC protocol</strong>; those assets are governed by their own licenses.</p>

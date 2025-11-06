@@ -7,19 +7,9 @@
   },
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/gen-sitemap-with-git.mjs",
     "build": "next build",
-    "postbuild": "node scripts/check-titles.mjs",
     "start": "next start",
-    "lint": "next lint",
-    "lint:content": "node scripts/lint-content.js",
-    "sitemap": "node scripts/generate-sitemap.js",
-    "test:responsive": "node scripts/test-responsive.js",
-    "audit:devices": "node scripts/device-compatibility-audit.js",
-    "check:meta": "node scripts/check-meta.mjs",
-    "check:tm": "node scripts/check-tm.mjs",
-    "capture:specimens": "node scripts/capture-specimens.mjs",
-    "capture:evidence": "node scripts/capture-evidence.mjs"
+    "lint": "next lint"
   },
   "dependencies": {
     "@stripe/stripe-js": "^8.3.0",
