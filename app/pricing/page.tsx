@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 import { useEffect } from 'react'
 import { useCurrency } from '@/hooks/useCurrency'
+import StripeButton from '@/components/StripeButton'
 
 export default function Pricing() {
   const pricing = useCurrency()
@@ -139,9 +140,9 @@ export default function Pricing() {
                   ))}
                 </div>
                 <div style={{ width: '100%' }}>
-                  <Link href="/company/contact" className="btn btn-primary" style={{ width: '100%', marginBottom: 'var(--space-2)' }}>
-                    Contact sales
-                  </Link>
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 'var(--space-2)' }}>
+                    <StripeButton plan="pro" amount={100} label="Get Started with Pro" className="btn btn-primary" />
+                  </div>
                   <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center' }}>
                     By purchasing you agree to our <Link href="/legal/terms" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Terms</Link> and <Link href="/legal/privacy" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Privacy Policy</Link>
                   </p>
