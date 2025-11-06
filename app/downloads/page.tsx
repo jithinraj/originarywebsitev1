@@ -78,22 +78,54 @@ export default function Downloads() {
                 fontWeight: 700,
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
-                marginBottom: 'var(--space-6)',
+                marginBottom: 'var(--space-4)',
                 color: 'var(--gray-900)'
               }}>
-                <Mark>Originary</Mark> Downloads
+                ORIGINARY™ Downloads
               </h1>
 
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
                 color: 'var(--gray-600)',
-                marginBottom: 'var(--space-12)'
+                marginBottom: 'var(--space-4)'
               }}>
-                Download the Originary CLI and peac.txt templates. Each build includes a checksum for verification.
+                Official <strong>Originary</strong> CLI builds. Use to integrate access control, consent, attribution, provenance and cryptographic receipts into your apps.
               </p>
 
-              <DownloadsServer />
+              <div style={{
+                fontSize: 'var(--text-sm)',
+                color: 'var(--gray-500)',
+                marginBottom: 'var(--space-6)',
+                display: 'flex',
+                gap: 'var(--space-4)',
+                flexWrap: 'wrap',
+                paddingBottom: 'var(--space-4)',
+                borderBottom: '1px solid var(--gray-200)'
+              }}>
+                <span><strong>Publisher:</strong> Poem, Inc.</span>
+                <span>•</span>
+                <span><strong>License:</strong> Open source</span>
+                <span>•</span>
+                <span><strong>Latest release:</strong> v1.0.0</span>
+              </div>
+
+              <p style={{
+                fontSize: 'var(--text-base)',
+                lineHeight: 1.6,
+                color: 'var(--gray-700)',
+                marginBottom: 'var(--space-12)'
+              }}>
+                <strong>Get the software:</strong>{' '}
+                <a href="#downloads" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>macOS (.dmg)</a> •{' '}
+                <a href="#downloads" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>Windows (.zip)</a> •{' '}
+                <a href="#downloads" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>Linux (.zip)</a> •{' '}
+                <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>View source on GitHub</a>
+              </p>
+
+              <div id="downloads">
+                <DownloadsServer />
+              </div>
               <DownloadCardPEAC />
 
               <div style={{

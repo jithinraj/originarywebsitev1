@@ -146,40 +146,39 @@ export default function HeroSection() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'rgba(99, 91, 255, 0.06)',
+                border: '1px solid rgba(99, 91, 255, 0.12)',
                 borderRadius: 'var(--radius-full)',
-                padding: 'var(--space-2) var(--space-4)',
+                padding: '6px 14px',
                 marginBottom: 'var(--space-6)',
-                fontSize: 'var(--text-sm)',
-                fontWeight: 500,
-                color: 'var(--brand-primary)',
+                fontSize: '12px',
+                fontWeight: 450,
+                color: 'rgba(99, 91, 255, 0.85)',
                 cursor: 'pointer',
-                transition: 'all var(--duration-200) var(--ease-out)',
+                transition: 'all 0.15s ease',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(10px)',
                 transitionDelay: '0.2s',
                 textDecoration: 'none'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(99, 91, 255, 0.15)'
-                e.currentTarget.style.transform = 'translateY(-1px)'
+                e.currentTarget.style.background = 'rgba(99, 91, 255, 0.1)'
+                e.currentTarget.style.borderColor = 'rgba(99, 91, 255, 0.2)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(99, 91, 255, 0.1)'
-                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.background = 'rgba(99, 91, 255, 0.06)'
+                e.currentTarget.style.borderColor = 'rgba(99, 91, 255, 0.12)'
               }}
             >
-              <Sparkles size={16} />
-              <span>Introducing Receipts for the Agentic Web</span>
+              <span>Receipts for the Agentic Web</span>
               <span style={{
-                fontSize: 'var(--text-xs)',
-                opacity: 0.7,
-                marginLeft: 'var(--space-1)',
-                marginRight: 'var(--space-1)'
-              }}>•</span>
-              <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600 }}>Open protocol</span>
-              <ArrowRight size={14} />
+                fontSize: '11px',
+                opacity: 0.5,
+                marginLeft: '4px',
+                marginRight: '4px'
+              }}>·</span>
+              <span style={{ fontSize: '11px', fontWeight: 500, opacity: 0.7 }}>Open protocol</span>
+              <ArrowRight size={12} style={{ marginLeft: '2px', opacity: 0.6 }} />
             </Link>
 
             {/* Main Headline */}
@@ -218,45 +217,97 @@ export default function HeroSection() {
             {/* Microproof line */}
             <p
               style={{
-                fontSize: 'var(--text-sm)',
-                lineHeight: 1.6,
-                color: 'var(--gray-500)',
-                marginBottom: 'var(--space-8)',
+                fontSize: '11px',
+                lineHeight: 1.7,
+                color: 'var(--gray-400)',
+                marginBottom: 'var(--space-4)',
                 maxWidth: '90%',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.25s'
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.25s',
+                fontWeight: 400
               }}
             >
-              Works with <strong>x402</strong>, <strong>Stripe</strong>, <strong>AIPREF</strong>. Edge-friendly. No SDK lock-in.
+              Works with x402 · Stripe · AIPREF · ERC-8004 · Edge-friendly · No SDK lock-in
             </p>
 
-            {/* Where this fits */}
             <div
               style={{
-                background: 'rgba(99, 91, 255, 0.05)',
-                border: '1px solid rgba(99, 91, 255, 0.1)',
-                borderRadius: 'var(--radius-lg)',
-                padding: 'var(--space-4)',
-                marginBottom: 'var(--space-8)',
-                maxWidth: '90%',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.27s'
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.26s',
+                marginBottom: 'var(--space-8)'
               }}
             >
-              <p style={{
-                fontSize: 'var(--text-sm)',
-                color: 'var(--gray-700)',
-                margin: 0,
-                lineHeight: 1.7
-              }}>
-                <strong style={{ color: 'var(--brand-primary)' }}>Where Originary fits:</strong>{' '}
-                Use <Link href="/docs/deploy/vercel" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>Vercel</Link> to deploy,{' '}
-                <Link href="/docs/deploy/cloudflare-worker" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>Cloudflare</Link> to run at the edge.{' '}
-                Originary adds <Link href="/docs/receipts" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>policy</Link> →{' '}
-                <Link href="/docs/payments/x402" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>HTTP 402</Link> →{' '}
-                <Link href="/verify" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>verifiable receipt</Link>.
+              <p
+                style={{
+                  fontSize: '11px',
+                  lineHeight: 1.8,
+                  color: 'var(--gray-400)',
+                  maxWidth: '90%',
+                  fontWeight: 400,
+                  letterSpacing: '0.01em',
+                  margin: 0
+                }}
+              >
+                <span style={{ color: 'var(--gray-500)' }}>ORIGINARY™</span> — Open software. Available for{' '}
+                <Link
+                  href="/downloads"
+                  style={{
+                    color: 'var(--gray-500)',
+                    textDecoration: 'none',
+                    borderBottom: '1px solid transparent',
+                    transition: 'border-color 0.15s ease'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
+                >
+                  macOS
+                </Link>
+                {', '}
+                <Link
+                  href="/downloads"
+                  style={{
+                    color: 'var(--gray-500)',
+                    textDecoration: 'none',
+                    borderBottom: '1px solid transparent',
+                    transition: 'border-color 0.15s ease'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
+                >
+                  Windows
+                </Link>
+                {', '}
+                <Link
+                  href="/downloads"
+                  style={{
+                    color: 'var(--gray-500)',
+                    textDecoration: 'none',
+                    borderBottom: '1px solid transparent',
+                    transition: 'border-color 0.15s ease'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
+                >
+                  Linux
+                </Link>
+                {' · '}
+                <a
+                  href="https://github.com/peacprotocol/peac"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: 'var(--gray-500)',
+                    textDecoration: 'none',
+                    borderBottom: '1px solid transparent',
+                    transition: 'border-color 0.15s ease'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
+                >
+                  Download source code
+                </a>
               </p>
             </div>
 

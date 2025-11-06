@@ -7,6 +7,7 @@ import { FileCode, Zap, MessageSquare, Settings, Brain, FileText } from 'lucide-
 export const metadata: Metadata = {
   title: 'Integrations : Originary',
   description: 'Browse integrations for x402 payments, A2A attribution, MCP receipts, ACP capabilities, AIPREF preferences, and PEAC protocol.',
+  keywords: 'x402, HTTP 402, MCP, A2A, ACP, AIPREF, ERC-8004, PEAC protocol, agent integrations, payment flows',
   openGraph: {
     title: 'Integrations : Originary',
     description: 'Browse integrations for x402 payments, A2A attribution, MCP receipts, ACP capabilities, AIPREF preferences, and PEAC protocol.',

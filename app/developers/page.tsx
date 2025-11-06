@@ -7,7 +7,7 @@ import { ArrowRight, Code, Download, Sparkles } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Developers | Verify API, Gateway 402, Policy APIs',
   description: 'Integrate PEAC-Receipts into your API with Originary developer tools. Add HTTP 402 payment flows, A2A verification, and MCP receipts with CLI tools and edge verification.',
-  keywords: 'developer API, PEAC protocol, CLI tools, HTTP 402, agent receipts, policy validation, edge verification, MCP integration, A2A communication, ACP, Verify API, Gateway 402, Policy APIs',
+  keywords: 'developer API, PEAC protocol, CLI tools, HTTP 402, agent receipts, policy validation, edge verification, MCP integration, A2A communication, ACP, ERC-8004, Verify API, Gateway 402, Policy APIs',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
