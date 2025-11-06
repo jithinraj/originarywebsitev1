@@ -40,6 +40,17 @@ function LogoIcon({ name }: { name: string }) {
         <rect width="64" height="64" rx="12" fill="#000000"/>
         <path d="M32 22L44 42H20L32 22Z" fill="#ffffff"/>
       </svg>
+    ),
+    'Ethereum': (
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="64" height="64" rx="12" fill="#627EEA"/>
+        <path d="M32 16L31.7 17V36.8L32 37.1L40.5 32L32 16Z" fill="white" fillOpacity="0.6"/>
+        <path d="M32 16L23.5 32L32 37.1V16Z" fill="white"/>
+        <path d="M32 39.6L31.8 39.8V46.3L32 47L40.5 34.5L32 39.6Z" fill="white" fillOpacity="0.6"/>
+        <path d="M32 47V39.6L23.5 34.5L32 47Z" fill="white"/>
+        <path d="M32 37.1L40.5 32L32 27.3V37.1Z" fill="white" fillOpacity="0.2"/>
+        <path d="M23.5 32L32 37.1V27.3L23.5 32Z" fill="white" fillOpacity="0.6"/>
+      </svg>
     )
   }
 
@@ -53,12 +64,14 @@ export default function SocialProofSection() {
     { name: 'x402', label: 'x402', href: '/docs/payments/x402' },
     { name: 'Cloudflare', label: 'Cloudflare', href: '/docs/deploy/cloudflare-worker' },
     { name: 'Stripe', label: 'Stripe', href: '/docs/payments/stripe' },
-    { name: 'Vercel', label: 'Vercel', href: '/docs/deploy/vercel' }
+    { name: 'Vercel', label: 'Vercel', href: '/docs/deploy/vercel' },
+    { name: 'Ethereum', label: 'ERC-8004:', href: 'https://eips.ethereum.org/EIPS/eip-8004' }
   ]
 
   const standards = [
     { name: 'AIPREF', description: 'Reads preferences; snapshots into every receipt.' },
-    { name: 'C2PA', description: 'Optionally links to content provenance manifest.' }
+    { name: 'C2PA', description: 'Optionally links to content provenance manifest.' },
+    { name: 'ERC-8004', description: 'Trustless Agents standard for on-chain AI agent interactions.' }
   ]
 
   return (

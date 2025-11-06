@@ -11,7 +11,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Originary | Receipts for the Agentic Web (HTTP 402, x402, PEAC)',
   description: 'Add policy discovery, HTTP 402/x402 payments, and a cryptographic PEAC-Receipt to every response - provable access, settlement, and compliance.',
-  keywords: 'Originary, PEAC Protocol, HTTP 402, x402, AIPREF, agentic web, AI commerce, verifiable receipts',
+  keywords: 'Originary, PEAC Protocol, HTTP 402, x402, AIPREF, ERC-8004, ACP, MCP, agentic web, AI commerce, verifiable receipts',
   alternates: {
     canonical: 'https://www.originary.xyz/'
   },

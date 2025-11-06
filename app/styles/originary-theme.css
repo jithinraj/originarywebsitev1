@@ -340,107 +340,136 @@ p {
   }
 }
 
-/* Buttons - World-class design */
+/* Buttons - Refined world-class design */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.875rem 2rem;
+  padding: 10px 20px;
   font-size: 0.9375rem;
-  font-weight: 600;
-  line-height: 1;
-  border-radius: var(--radius-xl);
+  font-weight: 500;
+  line-height: 1.2;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
   text-decoration: none;
-  transition: all var(--transition-base);
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
   white-space: nowrap;
   font-family: inherit;
-  backdrop-filter: blur(10px);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  outline: none;
 }
 
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
-}
-
-.btn:hover::before {
-  width: 300px;
-  height: 300px;
-}
-
-.btn.primary {
-  background: var(--gradient-primary);
+.btn.primary,
+.btn-primary {
+  background: linear-gradient(135deg, #635BFF 0%, #5B52F0 100%);
   color: var(--white);
-  box-shadow: var(--shadow-md), var(--shadow-glow);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 1px 2px rgba(99, 91, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(99, 91, 255, 0.2);
 }
 
-.btn.primary:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: var(--shadow-card-hover);
+.btn.primary:hover,
+.btn-primary:hover {
+  background: linear-gradient(135deg, #5B52F0 0%, #524AE0 100%);
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 8px -2px rgba(99, 91, 255, 0.25),
+    0 2px 4px -1px rgba(99, 91, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-.btn.primary:active {
-  transform: translateY(-1px) scale(0.98);
+.btn.primary:active,
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow:
+    0 1px 2px rgba(99, 91, 255, 0.15),
+    inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.btn.secondary {
-  background: var(--gradient-glass);
+.btn.secondary,
+.btn-secondary {
+  background: var(--white);
   color: var(--gray-900);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
-.btn.secondary:hover {
-  background: rgba(255, 255, 255, 0.4);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: var(--shadow-lg);
+.btn.secondary:hover,
+.btn-secondary:hover {
+  background: var(--gray-50);
+  border-color: var(--gray-300);
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 8px -2px rgba(0, 0, 0, 0.08),
+    0 2px 4px -1px rgba(0, 0, 0, 0.04),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.btn.secondary:active,
+.btn-secondary:active {
+  transform: translateY(0);
+  background: var(--gray-100);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    inset 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .btn.outline {
   background: transparent;
   color: var(--gray-700);
   border: 1px solid var(--gray-300);
+  box-shadow: none;
 }
 
 .btn.outline:hover {
   background: var(--gray-50);
   border-color: var(--gray-400);
+  color: var(--gray-900);
+  transform: translateY(-0.5px);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.btn.ghost {
+.btn.outline:active {
+  transform: translateY(0);
+  background: var(--gray-100);
+}
+
+.btn.ghost,
+.btn-ghost {
   background: transparent;
   color: var(--gray-600);
+  border: 1px solid transparent;
+  box-shadow: none;
 }
 
-.btn.ghost:hover {
+.btn.ghost:hover,
+.btn-ghost:hover {
   background: var(--gray-100);
   color: var(--gray-900);
 }
 
-.btn.large {
-  padding: 1rem 2rem;
+.btn.ghost:active,
+.btn-ghost:active {
+  background: var(--gray-200);
+}
+
+.btn.large,
+.btn-lg {
+  padding: 14px 28px;
   font-size: 1rem;
+  border-radius: 10px;
 }
 
 .btn.small {
-  padding: 0.5rem 1rem;
+  padding: 6px 14px;
   font-size: 0.875rem;
+  border-radius: 6px;
 }
 
 /* Header - Modern navigation */
