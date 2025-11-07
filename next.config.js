@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  trailingSlash: false,
   eslint: {
     ignoreDuringBuilds: false,
   },
@@ -8,6 +9,11 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: '/:path*/',
+        destination: '/:path*',
+        permanent: true,
+      },
       {
         source: '/docs',
         destination: '/developers',
@@ -43,8 +49,7 @@ const nextConfig = {
         source: '/sitemap\\.xml',
         headers: [
           { key: 'Content-Type', value: 'application/xml; charset=utf-8' },
-          { key: 'Cache-Control', value: 'public, max-age=0, must-revalidate' },
-          { key: 'X-Robots-Tag', value: 'all' },
+          { key: 'Cache-Control', value: 'public, max-age=3600' },
         ],
       },
       {
