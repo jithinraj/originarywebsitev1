@@ -263,6 +263,124 @@ export default function Pricing() {
               </a>
             </section>
 
+            {/* Who this is for */}
+            <section style={{
+              marginTop: 'var(--space-12)',
+              padding: 'var(--space-8)',
+              border: '1px solid var(--gray-200)',
+              borderRadius: 'var(--radius-2xl)',
+              background: 'var(--white)'
+            }}>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--gray-900)' }}>
+                Who each plan is for
+              </h2>
+              <div style={{ display: 'grid', gap: 'var(--space-6)', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
+                <div>
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--brand-primary)' }}>
+                    Start
+                  </h3>
+                  <p style={{ color: 'var(--gray-700)', lineHeight: 1.7 }}>
+                    Solo builders and fast POCs that need real receipts, not mock data. Perfect for validating your agent architecture before scaling.
+                  </p>
+                </div>
+                <div>
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--brand-primary)' }}>
+                    Pro
+                  </h3>
+                  <p style={{ color: 'var(--gray-700)', lineHeight: 1.7 }}>
+                    Early teams going to production with HTTP 402, policy discovery, and audit logs. Includes SLA and email support for growing products.
+                  </p>
+                </div>
+                <div>
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--brand-primary)' }}>
+                    Enterprise
+                  </h3>
+                  <p style={{ color: 'var(--gray-700)', lineHeight: 1.7 }}>
+                    Regulated or scaled teams that need SSO/SAML, VPC/on-prem deployment, and signed DPA/SLAs. Custom adapters for your infrastructure.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* What is a receipt */}
+            <section style={{
+              marginTop: 'var(--space-12)',
+              padding: 'var(--space-8)',
+              border: '1px solid var(--gray-200)',
+              borderRadius: 'var(--radius-2xl)',
+              background: 'var(--white)'
+            }}>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+                What is a &ldquo;receipt&rdquo;?
+              </h2>
+              <p style={{ color: 'var(--gray-700)', lineHeight: 1.7, fontSize: 'var(--text-base)' }}>
+                A receipt is a verifiable record of usage or access terms for an interaction—e.g., an API call,
+                data fetch, or model inference—signed and auditable. Every verified receipt includes policy,
+                attribution, settlement details, timestamp, and integrity metadata. Receipts are the atomic unit
+                of trust in the agentic web, providing cryptographic proof of compliance and settlement.
+              </p>
+            </section>
+
+            {/* FAQ */}
+            <section style={{
+              marginTop: 'var(--space-12)',
+              padding: 'var(--space-8)',
+              border: '1px solid var(--gray-200)',
+              borderRadius: 'var(--radius-2xl)',
+              background: 'var(--white)'
+            }}>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--gray-900)' }}>
+                Pricing FAQ
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
+                <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-200)' }}>
+                  <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
+                    Can I self-host PEAC?
+                  </summary>
+                  <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
+                    Yes. Originary Cloud is optional. Our open tooling and SDKs work self-hosted; Cloud and Enterprise
+                    add scale, SLAs, and adapters for production environments.
+                  </p>
+                </details>
+                <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-200)' }}>
+                  <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
+                    Which payment rails are supported?
+                  </summary>
+                  <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
+                    Stripe today; adapters for x402, Tempo, and Arc are available for Cloud and Enterprise plans.
+                    We&apos;re continuously expanding payment rail support based on customer demand.
+                  </p>
+                </details>
+                <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-200)' }}>
+                  <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
+                    Is there a free tier?
+                  </summary>
+                  <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
+                    We use a low-cost trial ($1 for 30 days) to unlock the full product with predictable abuse control.
+                    This ensures quality service for all users while keeping barriers to entry minimal.
+                  </p>
+                </details>
+                <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-200)' }}>
+                  <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
+                    Do you support EU AI Act/GDPR workflows?
+                  </summary>
+                  <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
+                    Yes—configurable retention windows, attribution flags, audit exports, and DPA/SCCs are available
+                    for Enterprise plans. We work closely with legal teams to ensure compliance.
+                  </p>
+                </details>
+                <details style={{ padding: 'var(--space-4)' }}>
+                  <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
+                    What counts as a verified receipt?
+                  </summary>
+                  <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
+                    A successful verification of usage/payment terms for a request or batch. This includes policy validation,
+                    signature verification, and audit log creation. Receipts expire after verification for security.
+                  </p>
+                </details>
+              </div>
+            </section>
+
             <div style={{
               textAlign: 'center',
               background: 'var(--gradient-brand)',
