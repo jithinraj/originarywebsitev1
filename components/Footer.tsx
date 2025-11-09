@@ -168,6 +168,14 @@ export default function Footer() {
           />
 
           <FooterSection
+            title="Trace"
+            links={[
+              { href: '/trace', label: 'Overview' },
+              { href: '/trace/pricing', label: 'Pricing' }
+            ]}
+          />
+
+          <FooterSection
             title="Solutions"
             links={[
               { href: '/originary-for-ai/', label: 'Originary for AI' },
@@ -185,7 +193,7 @@ export default function Footer() {
               { href: '/integrations/x402', label: 'HTTP 402' },
               { href: '/integrations/mcp', label: 'Model Context Protocol' },
               { href: '/integrations/acp', label: 'Agentic Commerce' },
-              { href: 'https://peacprotocol.org/', label: 'PEAC Protocol' },
+              { href: 'https://github.com/peacprotocol/peac', label: 'PEAC Protocol', external: true },
               { href: '/integrations/a2a', label: 'Agent-to-Agent' },
               { href: '/integrations/aipref', label: 'AI Preferences' }
             ]}
@@ -202,11 +210,11 @@ export default function Footer() {
           <FooterSection
             title="Follow Originary"
             links={[
-              { href: 'https://twitter.com/originaryai', label: 'X / Twitter', external: true },
+              { href: 'https://x.com/originaryx', label: 'X / Twitter', external: true },
               { href: 'https://www.linkedin.com/company/originary', label: 'LinkedIn', external: true },
               { href: 'https://bsky.app/profile/originary.bsky.social', label: 'Bluesky', external: true },
               { href: 'https://warpcast.com/originary', label: 'Farcaster', external: true },
-              { href: 'https://github.com/peacprotocol/peac', label: 'GitHub', external: true },
+              { href: 'https://github.com/originaryx', label: 'GitHub', external: true },
               { href: 'https://www.originary.xyz/blog', label: 'Blog' }
             ]}
           />

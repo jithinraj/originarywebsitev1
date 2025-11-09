@@ -3,6 +3,8 @@ https://www.originary.xyz/ai
 https://www.originary.xyz/originary-ai
 https://www.originary.xyz/developers
 https://www.originary.xyz/pricing
+https://www.originary.xyz/trace
+https://www.originary.xyz/trace/pricing
 https://www.originary.xyz/products
 https://www.originary.xyz/receipts
 https://www.originary.xyz/company/contact
