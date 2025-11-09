@@ -112,6 +112,11 @@ export default function NavigationHeader() {
                 { href: '/downloads', label: 'Downloads' }
               ]} />
 
+              <NavDropdown label="Trace" items={[
+                { href: '/trace', label: 'Overview' },
+                { href: '/trace/pricing', label: 'Pricing' }
+              ]} />
+
               <NavLink href="/developers">Developers</NavLink>
               <NavLink href="/demo">Demo</NavLink>
               <NavLink href="/pricing">Pricing</NavLink>
@@ -187,6 +192,11 @@ export default function NavigationHeader() {
                 { href: '/solutions/publishers', label: 'Publishers' },
                 { href: '/solutions/api-providers', label: 'API Providers' },
                 { href: '/downloads', label: 'Downloads' }
+              ]} />
+
+              <MobileNavSection title="Trace" items={[
+                { href: '/trace', label: 'Overview' },
+                { href: '/trace/pricing', label: 'Pricing' }
               ]} />
 
               <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
