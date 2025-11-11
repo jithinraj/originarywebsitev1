@@ -187,7 +187,7 @@ export default function CompanyHeroSection() {
                   margin: 0
                 }}
               >
-                <span style={{ color: 'var(--gray-500)' }}>ORIGINARY™</span> — Open software.{' '}
+                <span style={{ color: 'var(--gray-500)' }}>ORIGINARY™</span> - Open software.{' '}
                 <a
                   href="https://github.com/peacprotocol/peac"
                   target="_blank"
