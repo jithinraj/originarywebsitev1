@@ -85,41 +85,20 @@ export default function CompanyHeroSection() {
               transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
           >
-            {/* Announcement Badge */}
+            {/* Company Eyebrow */}
             <div
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 'var(--space-2)',
-                padding: 'var(--space-2) var(--space-4)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
-                borderRadius: 'var(--radius-full)',
-                marginBottom: 'var(--space-6)',
                 fontSize: 'var(--text-sm)',
-                color: 'var(--brand-primary)',
+                color: 'var(--gray-500)',
                 fontWeight: 600,
+                letterSpacing: '0.05em',
+                marginBottom: 'var(--space-4)',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.05s'
               }}
             >
-              Receipts for the Agentic Web •
-              <a
-                href="https://peacprotocol.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: 'inherit',
-                  textDecoration: 'none',
-                  borderBottom: '1px solid transparent',
-                  transition: 'border-color 0.15s ease'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--brand-primary)'}
-                onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
-              >
-                Open protocol
-              </a>
+              ORIGINARY™
             </div>
 
             {/* Main Headline */}
@@ -152,7 +131,7 @@ export default function CompanyHeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              Policy discovery, HTTP 402 payments, and a PEAC-Receipt on every response so access, settlement, and compliance are provable by design.
+              Products and open standards for policy, receipts, and AI-era web economics.
             </p>
 
             {/* Seven Pillars */}
@@ -257,7 +236,7 @@ export default function CompanyHeroSection() {
             >
               <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                 <Link
-                  href="/pricing"
+                  href="/cloud"
                   className="btn btn-primary btn-lg"
                   style={{
                     position: 'relative',
@@ -267,7 +246,7 @@ export default function CompanyHeroSection() {
                     gap: 'var(--space-2)'
                   }}
                 >
-                  <span style={{ position: 'relative', zIndex: 2 }}>Start for $1</span>
+                  <span style={{ position: 'relative', zIndex: 2 }}>Get Trace Cloud</span>
                   <ArrowRight size={18} style={{ position: 'relative', zIndex: 2 }} />
                   <div
                     style={{
@@ -284,8 +263,10 @@ export default function CompanyHeroSection() {
                   />
                 </Link>
 
-                <Link
-                  href="/verify"
+                <a
+                  href="https://github.com/originaryx/trace?utm_source=originary&utm_medium=hero&utm_campaign=trace_oss"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-secondary btn-lg"
                   style={{
                     display: 'inline-flex',
@@ -293,23 +274,26 @@ export default function CompanyHeroSection() {
                     gap: 'var(--space-2)',
                     background: 'var(--white)',
                     border: '1px solid var(--gray-300)',
-                    color: 'var(--gray-700)'
+                    color: 'var(--gray-700)',
+                    textDecoration: 'none'
+                  }}
+                >
+                  Self-host Trace
+                </a>
+
+                <Link
+                  href="/verify"
+                  className="btn btn-ghost btn-lg"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 'var(--space-2)'
                   }}
                 >
                   <span>▶</span>
                   See a receipt in 30s
                 </Link>
               </div>
-              <p
-                style={{
-                  fontSize: 'var(--text-xs)',
-                  color: 'var(--gray-500)',
-                  margin: 0,
-                  lineHeight: 1.5
-                }}
-              >
-                30-day developer access. No auto-renew.
-              </p>
             </div>
           </div>
 
