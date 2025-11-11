@@ -6,12 +6,16 @@ import { ArrowRight, Activity, Shield, Blocks, Sparkles } from 'lucide-react'
 export default function ProductsBand() {
   const products = [
     {
-      name: 'Trace',
-      description: 'AI crawler analytics and compliance evidence for your website',
+      name: 'Originary Trace',
+      description: 'See which AI crawlers access your site, what they took, and generate verifiable evidence. Built on the open PEAC Protocol.',
       href: '/trace',
       icon: Activity,
-      badge: null,
-      featured: true
+      badge: 'Flagship',
+      featured: true,
+      buttons: [
+        { label: 'Get Trace Cloud', href: '/cloud', primary: true },
+        { label: 'Self-host', href: 'https://github.com/originaryx/trace?utm_source=originary&utm_medium=products&utm_campaign=trace_oss', external: true }
+      ]
     },
     {
       name: 'Verify API',
@@ -19,7 +23,10 @@ export default function ProductsBand() {
       href: '/products/verify',
       icon: Shield,
       badge: 'Beta',
-      featured: false
+      featured: false,
+      buttons: [
+        { label: 'Request access', href: '/products/verify' }
+      ]
     },
     {
       name: 'Gateway 402',
@@ -27,7 +34,10 @@ export default function ProductsBand() {
       href: '/products/gateway-402',
       icon: Blocks,
       badge: 'Private beta',
-      featured: false
+      featured: false,
+      buttons: [
+        { label: 'Join waitlist', href: '/products/gateway-402' }
+      ]
     },
     {
       name: 'Studio',
@@ -35,7 +45,10 @@ export default function ProductsBand() {
       href: '/products/studio',
       icon: Sparkles,
       badge: 'Waitlist',
-      featured: false
+      featured: false,
+      buttons: [
+        { label: 'Join waitlist', href: '/products/studio' }
+      ]
     }
   ]
 
@@ -87,20 +100,18 @@ export default function ProductsBand() {
             {products.map((product) => {
               const Icon = product.icon
               return (
-                <Link
+                <div
                   key={product.name}
-                  href={product.href}
                   className="card"
                   style={{
                     padding: 'var(--space-6)',
                     background: product.featured ? 'var(--gradient-brand)' : 'var(--white)',
                     border: product.featured ? 'none' : '1px solid var(--gray-200)',
                     borderRadius: 'var(--radius-xl)',
-                    textDecoration: 'none',
                     transition: 'all 0.2s ease',
                     position: 'relative',
-                    display: 'block',
-                    cursor: 'pointer'
+                    display: 'flex',
+                    flexDirection: 'column'
                   }}
                   onMouseEnter={(e) => {
                     if (!product.featured) {
@@ -130,8 +141,8 @@ export default function ProductsBand() {
                         position: 'absolute',
                         top: 'var(--space-4)',
                         right: 'var(--space-4)',
-                        background: 'rgba(99, 91, 255, 0.1)',
-                        color: 'var(--brand-primary)',
+                        background: product.featured ? 'rgba(255, 255, 255, 0.2)' : 'rgba(99, 91, 255, 0.1)',
+                        color: product.featured ? 'var(--white)' : 'var(--brand-primary)',
                         fontSize: 'var(--text-xs)',
                         fontWeight: 600,
                         padding: '4px 10px',
@@ -181,29 +192,87 @@ export default function ProductsBand() {
                       fontSize: 'var(--text-sm)',
                       color: product.featured ? 'rgba(255, 255, 255, 0.9)' : 'var(--gray-600)',
                       lineHeight: 1.6,
-                      marginBottom: 'var(--space-4)'
+                      marginBottom: 'var(--space-4)',
+                      flex: 1
                     }}
                   >
                     {product.description}
                   </p>
 
-                  {/* Link Arrow */}
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 'var(--space-2)',
-                      fontSize: 'var(--text-sm)',
-                      fontWeight: 600,
-                      color: product.featured ? 'var(--white)' : 'var(--brand-primary)'
-                    }}
-                  >
-                    Learn more
-                    <ArrowRight size={16} />
-                  </div>
-                </Link>
+                  {/* Buttons */}
+                  {product.buttons && product.buttons.length > 0 && (
+                    <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap', marginTop: 'auto' }}>
+                      {product.buttons.map((button, idx) => {
+                        const ButtonComponent = button.external ? 'a' : Link
+                        const buttonProps = button.external
+                          ? { href: button.href, target: '_blank', rel: 'noopener noreferrer' }
+                          : { href: button.href }
+
+                        return (
+                          <ButtonComponent
+                            key={idx}
+                            {...buttonProps}
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: 'var(--space-1)',
+                              padding: 'var(--space-2) var(--space-3)',
+                              fontSize: 'var(--text-sm)',
+                              fontWeight: 600,
+                              borderRadius: 'var(--radius-md)',
+                              textDecoration: 'none',
+                              transition: 'all 0.2s ease',
+                              background: button.primary
+                                ? (product.featured ? 'rgba(255, 255, 255, 0.2)' : 'var(--brand-primary)')
+                                : 'transparent',
+                              color: button.primary
+                                ? (product.featured ? 'var(--white)' : 'var(--white)')
+                                : (product.featured ? 'var(--white)' : 'var(--brand-primary)'),
+                              border: button.primary ? 'none' : `1px solid ${product.featured ? 'rgba(255, 255, 255, 0.3)' : 'var(--brand-primary)'}`
+                            }}
+                          >
+                            {button.label}
+                          </ButtonComponent>
+                        )
+                      })}
+                    </div>
+                  )}
+                </div>
               )
             })}
+          </div>
+
+          {/* Learn PEAC Link */}
+          <div style={{ textAlign: 'center', marginTop: 'var(--space-8)' }}>
+            <Link
+              href="https://peacprotocol.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 'var(--space-2)',
+                color: 'var(--brand-primary)',
+                textDecoration: 'none',
+                fontSize: 'var(--text-sm)',
+                fontWeight: 600,
+                padding: 'var(--space-2) var(--space-4)',
+                borderRadius: 'var(--radius-md)',
+                border: '1px solid var(--gray-200)',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'var(--brand-primary)'
+                e.currentTarget.style.background = 'rgba(99, 91, 255, 0.05)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'var(--gray-200)'
+                e.currentTarget.style.background = 'transparent'
+              }}
+            >
+              Learn PEAC Protocol
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </div>

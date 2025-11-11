@@ -1,446 +1,432 @@
-'use client'
-
-import { useState, useEffect, Suspense } from 'react'
-import { useSearchParams } from 'next/navigation'
+import type { Metadata } from 'next'
+import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
-import Link from 'next/link'
-import { CheckCircle, Github, ArrowRight, Shield, Zap, Users } from 'lucide-react'
+import { CheckCircle, Zap, Shield, Cloud } from 'lucide-react'
 
-function CloudPageContent() {
-  const searchParams = useSearchParams()
-  const [selectedPlan, setSelectedPlan] = useState('starter')
-  const [formData, setFormData] = useState({
-    email: '',
-    company: '',
-    domain: '',
-    plan: 'starter'
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
-  useEffect(() => {
-    const plan = searchParams.get('plan')
-    if (plan && ['starter', 'pro', 'enterprise'].includes(plan)) {
-      setSelectedPlan(plan)
-      setFormData(prev => ({ ...prev, plan }))
-    }
-  }, [searchParams])
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Placeholder for actual submission logic
-    // In production, this would POST to your backend or a service like Mailchimp/ConvertKit
-
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setSubmitStatus('success')
-    }, 1500)
+export const metadata: Metadata = {
+  title: 'Trace Cloud - Managed crawler analytics | Originary',
+  description: 'Managed Trace with attested keys, verifiable compliance bundles, multi-property rollups, and enterprise SLAs.',
+  openGraph: {
+    title: 'Trace Cloud - Managed crawler analytics',
+    description: 'Managed Trace with attested keys, verifiable compliance bundles, multi-property rollups, and enterprise SLAs.',
+    url: 'https://www.originary.xyz/cloud',
+    siteName: 'Originary',
+    type: 'website'
   }
+}
 
-  if (submitStatus === 'success') {
-    return (
-      <div className="wrap">
-        <NavigationHeader />
-        <main style={{ paddingTop: '80px', minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div style={{ textAlign: 'center', maxWidth: '600px', padding: 'var(--space-8)' }}>
-            <div
-              style={{
-                width: '80px',
-                height: '80px',
-                background: 'var(--gradient-brand)',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto var(--space-6)',
-                color: 'var(--white)'
-              }}
-            >
-              <CheckCircle size={40} />
-            </div>
-            <h1 style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
-              You are on the list!
-            </h1>
-            <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)', marginBottom: 'var(--space-8)', lineHeight: 1.7 }}>
-              We will send you an email at <strong>{formData.email}</strong> with your trial access details within 24 hours.
-            </p>
-            <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href="/trace" className="btn btn-primary">
-                Explore Trace
-              </Link>
-              <a
-                href="https://github.com/originaryx/trace"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-secondary"
-              >
-                <Github size={18} />
-                Try OSS version
-              </a>
-            </div>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    )
+export default function CloudPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Originary Trace Cloud",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Web",
+    "brand": {
+      "@type": "Brand",
+      "name": "Originary"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Starter",
+        "price": "29",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "29",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro",
+        "price": "99",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "99",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
+      }
+    ]
   }
 
   return (
-    <div className="wrap">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <NavigationHeader />
-      <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ paddingTop: 'var(--space-24)', paddingBottom: 'var(--space-24)' }}>
+      <main id="main-content" role="main">
+        {/* Hero Section */}
+        <section style={{
+          paddingTop: 'calc(var(--space-32) + 60px)',
+          paddingBottom: 'var(--space-24)',
+          background: 'var(--white)'
+        }}>
           <div className="container">
-            <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-              {/* Hero */}
-              <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-                <h1 style={{
-                  fontSize: 'clamp(var(--text-4xl), 6vw, var(--text-6xl))',
-                  fontWeight: 700,
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.04em',
-                  marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
-                }}>
-                  Get <span className="text-gradient">Trace Cloud</span>
-                </h1>
-                <p style={{
-                  fontSize: 'var(--text-xl)',
-                  lineHeight: 1.7,
-                  color: 'var(--gray-600)',
-                  maxWidth: '700px',
-                  margin: '0 auto',
-                  marginBottom: 'var(--space-12)'
-                }}>
-                  Managed Trace with retention, alerts, signed bundles, and compliance automation. Start your 14-day free trial.
-                </p>
+            <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 'var(--space-2)',
+                background: 'rgba(99, 91, 255, 0.1)',
+                border: '1px solid rgba(99, 91, 255, 0.2)',
+                borderRadius: 'var(--radius-full)',
+                padding: 'var(--space-2) var(--space-4)',
+                marginBottom: 'var(--space-6)',
+                fontSize: 'var(--text-sm)',
+                color: 'var(--brand-primary)',
+                fontWeight: 600
+              }}>
+                <Cloud size={16} />
+                Managed Service
               </div>
 
+              <h1 style={{
+                fontSize: 'clamp(var(--text-4xl), 5vw, var(--text-6xl))',
+                fontWeight: 700,
+                lineHeight: 1.1,
+                letterSpacing: '-0.04em',
+                marginBottom: 'var(--space-6)',
+                color: 'var(--gray-900)'
+              }}>
+                Originary Trace™ Cloud
+              </h1>
+
+              <p style={{
+                fontSize: 'var(--text-xl)',
+                lineHeight: 1.7,
+                color: 'var(--gray-600)',
+                marginBottom: 'var(--space-12)'
+              }}>
+                Managed crawler analytics with attestation, signed bundles, and enterprise SLAs. All the power of Trace without the operational overhead.
+              </p>
+
+              {/* Key Benefits */}
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: 'var(--space-12)',
-                alignItems: 'start'
+                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                gap: 'var(--space-6)',
+                marginBottom: 'var(--space-12)',
+                textAlign: 'left'
               }}>
-                {/* Left: Form */}
-                <div>
-                  <form onSubmit={handleSubmit} style={{
-                    background: 'var(--white)',
-                    border: '1px solid var(--gray-200)',
-                    borderRadius: 'var(--radius-2xl)',
-                    padding: 'var(--space-8)',
-                    boxShadow: 'var(--shadow-xl)'
-                  }}>
-                    <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-6)' }}>
-                      Start your free trial
-                    </h2>
-
-                    {/* Plan Selection */}
-                    <div style={{ marginBottom: 'var(--space-6)' }}>
-                      <label style={{ display: 'block', fontSize: 'var(--text-sm)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-700)' }}>
-                        Select Plan
-                      </label>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-                        {[
-                          { value: 'starter', label: 'Starter', price: '$29/mo', desc: '1 property, 90-day retention' },
-                          { value: 'pro', label: 'Pro', price: '$99/mo', desc: 'Multi-property, 1-year retention', popular: true },
-                          { value: 'enterprise', label: 'Enterprise', price: 'Custom', desc: 'Domain attestation, KMS, SLA' }
-                        ].map((plan) => (
-                          <label
-                            key={plan.value}
-                            style={{
-                              display: 'flex',
-                              alignItems: 'center',
-                              padding: 'var(--space-4)',
-                              border: selectedPlan === plan.value ? '2px solid var(--brand-primary)' : '1px solid var(--gray-300)',
-                              borderRadius: 'var(--radius-lg)',
-                              cursor: 'pointer',
-                              position: 'relative',
-                              background: selectedPlan === plan.value ? 'rgba(99, 91, 255, 0.05)' : 'var(--white)',
-                              transition: 'all 0.2s ease'
-                            }}
-                          >
-                            <input
-                              type="radio"
-                              name="plan"
-                              value={plan.value}
-                              checked={selectedPlan === plan.value}
-                              onChange={(e) => {
-                                setSelectedPlan(e.target.value)
-                                setFormData(prev => ({ ...prev, plan: e.target.value }))
-                              }}
-                              style={{ marginRight: 'var(--space-3)' }}
-                            />
-                            <div style={{ flex: 1 }}>
-                              <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-1)' }}>
-                                <span style={{ fontSize: 'var(--text-base)', fontWeight: 600 }}>{plan.label}</span>
-                                <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>{plan.price}</span>
-                                {plan.popular && (
-                                  <span style={{
-                                    fontSize: 'var(--text-xs)',
-                                    background: 'var(--gradient-brand)',
-                                    color: 'var(--white)',
-                                    padding: '2px 8px',
-                                    borderRadius: 'var(--radius-full)',
-                                    fontWeight: 600,
-                                    textTransform: 'uppercase'
-                                  }}>
-                                    Popular
-                                  </span>
-                                )}
-                              </div>
-                              <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>{plan.desc}</div>
-                            </div>
-                          </label>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Email */}
-                    <div style={{ marginBottom: 'var(--space-4)' }}>
-                      <label htmlFor="email" style={{ display: 'block', fontSize: 'var(--text-sm)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-700)' }}>
-                        Work Email *
-                      </label>
-                      <input
-                        id="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                        placeholder="you@company.com"
-                        style={{
-                          width: '100%',
-                          padding: 'var(--space-3)',
-                          border: '1px solid var(--gray-300)',
-                          borderRadius: 'var(--radius-lg)',
-                          fontSize: 'var(--text-base)'
-                        }}
-                      />
-                    </div>
-
-                    {/* Company */}
-                    <div style={{ marginBottom: 'var(--space-4)' }}>
-                      <label htmlFor="company" style={{ display: 'block', fontSize: 'var(--text-sm)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-700)' }}>
-                        Company
-                      </label>
-                      <input
-                        id="company"
-                        type="text"
-                        value={formData.company}
-                        onChange={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))}
-                        placeholder="Acme Inc"
-                        style={{
-                          width: '100%',
-                          padding: 'var(--space-3)',
-                          border: '1px solid var(--gray-300)',
-                          borderRadius: 'var(--radius-lg)',
-                          fontSize: 'var(--text-base)'
-                        }}
-                      />
-                    </div>
-
-                    {/* Domain */}
-                    <div style={{ marginBottom: 'var(--space-6)' }}>
-                      <label htmlFor="domain" style={{ display: 'block', fontSize: 'var(--text-sm)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-700)' }}>
-                        Domain to Track
-                      </label>
-                      <input
-                        id="domain"
-                        type="text"
-                        value={formData.domain}
-                        onChange={(e) => setFormData(prev => ({ ...prev, domain: e.target.value }))}
-                        placeholder="example.com"
-                        style={{
-                          width: '100%',
-                          padding: 'var(--space-3)',
-                          border: '1px solid var(--gray-300)',
-                          borderRadius: 'var(--radius-lg)',
-                          fontSize: 'var(--text-base)'
-                        }}
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="btn btn-primary"
-                      style={{ width: '100%', marginBottom: 'var(--space-4)' }}
-                    >
-                      {isSubmitting ? 'Processing...' : 'Start 14-day free trial'}
-                    </button>
-
-                    <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center' }}>
-                      No credit card required. By signing up, you agree to our{' '}
-                      <Link href="/terms" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Terms</Link>
-                      {' '}and{' '}
-                      <Link href="/privacy" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Privacy Policy</Link>.
-                    </p>
-                  </form>
-
-                  {/* OSS Alternative */}
-                  <div style={{
-                    marginTop: 'var(--space-6)',
-                    padding: 'var(--space-4)',
-                    background: 'var(--gray-50)',
-                    border: '1px solid var(--gray-200)',
-                    borderRadius: 'var(--radius-lg)',
-                    textAlign: 'center'
-                  }}>
-                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-3)' }}>
-                      Prefer self-hosting?
-                    </p>
-                    <a
-                      href="https://github.com/originaryx/trace"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-secondary btn-sm"
-                      style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}
-                    >
-                      <Github size={16} />
-                      Get Trace OSS (free)
-                    </a>
-                  </div>
-                </div>
-
-                {/* Right: Benefits */}
-                <div>
-                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--gray-900)' }}>
-                    What is included
-                  </h3>
-
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
-                    <div style={{ display: 'flex', gap: 'var(--space-4)' }}>
+                {[
+                  { icon: Shield, title: 'Attested keys and verifiable compliance bundles', desc: 'Cryptographically signed evidence for legal teams' },
+                  { icon: Zap, title: 'Multi-property rollups and benchmarking', desc: 'Aggregate data across sites and compare against peers' },
+                  { icon: CheckCircle, title: 'Alerts, retention, and SLAs', desc: 'Webhooks, Slack integration, and uptime guarantees' }
+                ].map((benefit, idx) => {
+                  const Icon = benefit.icon
+                  return (
+                    <div key={idx} className="card" style={{
+                      padding: 'var(--space-6)',
+                      background: 'var(--white)',
+                      border: '1px solid var(--gray-200)',
+                      borderRadius: 'var(--radius-xl)'
+                    }}>
                       <div style={{
-                        width: '48px',
-                        height: '48px',
+                        width: '40px',
+                        height: '40px',
                         borderRadius: 'var(--radius-lg)',
                         background: 'rgba(99, 91, 255, 0.1)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        flexShrink: 0
+                        marginBottom: 'var(--space-3)',
+                        color: 'var(--brand-primary)'
                       }}>
-                        <Zap size={24} style={{ color: 'var(--brand-primary)' }} />
+                        <Icon size={20} />
                       </div>
-                      <div>
-                        <h4 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
-                          Deploy in Minutes
-                        </h4>
-                        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
-                          Cloudflare Worker, Nginx tailer, Logpush, or Fingerprint webhook. Pick your adapter and start tracking.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div style={{ display: 'flex', gap: 'var(--space-4)' }}>
-                      <div style={{
-                        width: '48px',
-                        height: '48px',
-                        borderRadius: 'var(--radius-lg)',
-                        background: 'rgba(0, 212, 170, 0.1)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
+                      <h3 style={{
+                        fontSize: 'var(--text-base)',
+                        fontWeight: 600,
+                        marginBottom: 'var(--space-2)',
+                        color: 'var(--gray-900)'
                       }}>
-                        <Shield size={24} style={{ color: 'var(--success)' }} />
-                      </div>
-                      <div>
-                        <h4 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
-                          Compliance Evidence
-                        </h4>
-                        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
-                          PEAC receipts, signed monthly bundles, verification endpoint, and policy-violation surfacing.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div style={{ display: 'flex', gap: 'var(--space-4)' }}>
-                      <div style={{
-                        width: '48px',
-                        height: '48px',
-                        borderRadius: 'var(--radius-lg)',
-                        background: 'rgba(255, 107, 107, 0.1)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
+                        {benefit.title}
+                      </h3>
+                      <p style={{
+                        fontSize: 'var(--text-sm)',
+                        color: 'var(--gray-600)',
+                        lineHeight: 1.6,
+                        margin: 0
                       }}>
-                        <Users size={24} style={{ color: 'var(--error)' }} />
-                      </div>
-                      <div>
-                        <h4 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
-                          AI Crawler Analytics
-                        </h4>
-                        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
-                          Identify GPTBot, ClaudeBot, PerplexityBot, search bots, and unknown families. Path and host breakdowns.
-                        </p>
-                      </div>
+                        {benefit.desc}
+                      </p>
                     </div>
-                  </div>
+                  )
+                })}
+              </div>
 
-                  {/* Testimonial placeholder */}
-                  <div style={{
-                    marginTop: 'var(--space-8)',
-                    padding: 'var(--space-6)',
-                    background: 'var(--gray-50)',
-                    borderRadius: 'var(--radius-xl)',
-                    border: '1px solid var(--gray-200)'
-                  }}>
-                    <p style={{ fontSize: 'var(--text-base)', fontStyle: 'italic', color: 'var(--gray-700)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-                      &ldquo;Trace gave us visibility into which AI services were accessing our content. The compliance bundles saved us weeks during our audit.&rdquo;
+              {/* Waitlist Form */}
+              <div className="card" style={{
+                padding: 'var(--space-8)',
+                background: 'var(--gradient-mesh)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-2xl)',
+                maxWidth: '500px',
+                margin: '0 auto'
+              }}>
+                <h2 style={{
+                  fontSize: 'var(--text-2xl)',
+                  fontWeight: 700,
+                  marginBottom: 'var(--space-2)',
+                  color: 'var(--gray-900)'
+                }}>
+                  Join the waitlist
+                </h2>
+                <p style={{
+                  fontSize: 'var(--text-sm)',
+                  color: 'var(--gray-600)',
+                  marginBottom: 'var(--space-6)'
+                }}>
+                  Get early access to Trace Cloud. We'll notify you when we're ready.
+                </p>
+                <form
+                  action="/api/waitlist"
+                  method="POST"
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 'var(--space-4)'
+                  }}
+                >
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                    style={{
+                      padding: 'var(--space-3) var(--space-4)',
+                      border: '1px solid var(--gray-300)',
+                      borderRadius: 'var(--radius-lg)',
+                      fontSize: 'var(--text-base)',
+                      fontFamily: 'inherit'
+                    }}
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    required
+                    style={{
+                      padding: 'var(--space-3) var(--space-4)',
+                      border: '1px solid var(--gray-300)',
+                      borderRadius: 'var(--radius-lg)',
+                      fontSize: 'var(--text-base)',
+                      fontFamily: 'inherit'
+                    }}
+                  />
+                  <input
+                    type="text"
+                    name="domain"
+                    placeholder="yourdomain.com"
+                    required
+                    style={{
+                      padding: 'var(--space-3) var(--space-4)',
+                      border: '1px solid var(--gray-300)',
+                      borderRadius: 'var(--radius-lg)',
+                      fontSize: 'var(--text-base)',
+                      fontFamily: 'inherit'
+                    }}
+                  />
+                  <button
+                    type="submit"
+                    className="btn btn-primary btn-lg"
+                    style={{
+                      width: '100%',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    Join waitlist
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section style={{
+          padding: 'var(--space-24) 0',
+          background: 'var(--gray-50)'
+        }}>
+          <div className="container">
+            <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+              <h2 style={{
+                fontSize: 'var(--text-3xl)',
+                fontWeight: 700,
+                textAlign: 'center',
+                marginBottom: 'var(--space-12)',
+                color: 'var(--gray-900)'
+              }}>
+                How it works
+              </h2>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                gap: 'var(--space-8)'
+              }}>
+                {[
+                  { step: '1', title: 'Deploy integration', desc: 'Add Trace to your CDN, edge worker, or origin server' },
+                  { step: '2', title: 'Ingest events', desc: 'Crawler data flows to Originary Cloud for correlation and attestation' },
+                  { step: '3', title: 'Export evidence', desc: 'Download signed bundles, CSV exports, or query via API' }
+                ].map((item) => (
+                  <div key={item.step} style={{ textAlign: 'center' }}>
+                    <div style={{
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: '50%',
+                      background: 'var(--brand-primary)',
+                      color: 'var(--white)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: 'var(--text-xl)',
+                      fontWeight: 700,
+                      margin: '0 auto var(--space-4)'
+                    }}>
+                      {item.step}
+                    </div>
+                    <h3 style={{
+                      fontSize: 'var(--text-lg)',
+                      fontWeight: 600,
+                      marginBottom: 'var(--space-2)',
+                      color: 'var(--gray-900)'
+                    }}>
+                      {item.title}
+                    </h3>
+                    <p style={{
+                      fontSize: 'var(--text-sm)',
+                      color: 'var(--gray-600)',
+                      lineHeight: 1.6
+                    }}>
+                      {item.desc}
                     </p>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-                      <div style={{
-                        width: '40px',
-                        height: '40px',
-                        borderRadius: '50%',
-                        background: 'var(--gradient-brand)'
-                      }} />
-                      <div>
-                        <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)' }}>
-                          Early Adopter
-                        </div>
-                        <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
-                          Publishing Platform
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Built on PEAC */}
+        <section style={{
+          padding: 'var(--space-24) 0',
+          background: 'var(--white)',
+          borderTop: '1px solid var(--gray-200)'
+        }}>
+          <div className="container">
+            <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
+              <h2 style={{
+                fontSize: 'var(--text-3xl)',
+                fontWeight: 700,
+                marginBottom: 'var(--space-4)',
+                color: 'var(--gray-900)'
+              }}>
+                Built on PEAC Protocol
+              </h2>
+              <p style={{
+                fontSize: 'var(--text-lg)',
+                lineHeight: 1.7,
+                color: 'var(--gray-600)',
+                marginBottom: 'var(--space-6)'
+              }}>
+                Trace Cloud uses the open PEAC (Provenance-Enhanced Access and Consent) protocol for cryptographic receipts, verifiable attestation, and cross-platform compatibility.
+              </p>
+              <Link
+                href="https://peacprotocol.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                Learn about PEAC Protocol
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Compare Cloud vs Self-hosting */}
+        <section style={{
+          padding: 'var(--space-24) 0',
+          background: 'var(--gray-50)'
+        }}>
+          <div className="container">
+            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+              <h2 style={{
+                fontSize: 'var(--text-3xl)',
+                fontWeight: 700,
+                textAlign: 'center',
+                marginBottom: 'var(--space-12)',
+                color: 'var(--gray-900)'
+              }}>
+                Cloud vs Self-hosting
+              </h2>
+              <div className="card" style={{
+                padding: 0,
+                background: 'var(--white)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-xl)',
+                overflow: 'hidden'
+              }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                  <thead>
+                    <tr style={{ background: 'var(--gray-50)', borderBottom: '1px solid var(--gray-200)' }}>
+                      <th style={{ padding: 'var(--space-4)', textAlign: 'left', fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-700)' }}>Feature</th>
+                      <th style={{ padding: 'var(--space-4)', textAlign: 'center', fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-700)' }}>Self-host (OSS)</th>
+                      <th style={{ padding: 'var(--space-4)', textAlign: 'center', fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--brand-primary)' }}>Cloud</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { feature: 'Crawler analytics', oss: true, cloud: true },
+                      { feature: 'PEAC receipts', oss: true, cloud: true },
+                      { feature: 'Attested keys', oss: false, cloud: true },
+                      { feature: 'Signed bundles', oss: false, cloud: true },
+                      { feature: 'Multi-property rollups', oss: false, cloud: true },
+                      { feature: 'Benchmarking', oss: false, cloud: true },
+                      { feature: 'Webhooks / Slack', oss: false, cloud: true },
+                      { feature: 'SLA & support', oss: false, cloud: true }
+                    ].map((row, idx) => (
+                      <tr key={idx} style={{ borderBottom: idx < 7 ? '1px solid var(--gray-100)' : 'none' }}>
+                        <td style={{ padding: 'var(--space-4)', fontSize: 'var(--text-sm)', color: 'var(--gray-900)' }}>{row.feature}</td>
+                        <td style={{ padding: 'var(--space-4)', textAlign: 'center', fontSize: 'var(--text-sm)' }}>
+                          {row.oss ? <CheckCircle size={18} style={{ color: 'var(--success)', margin: '0 auto' }} /> : '—'}
+                        </td>
+                        <td style={{ padding: 'var(--space-4)', textAlign: 'center', fontSize: 'var(--text-sm)' }}>
+                          {row.cloud ? <CheckCircle size={18} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} /> : '—'}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div style={{ textAlign: 'center', marginTop: 'var(--space-8)', display: 'flex', gap: 'var(--space-4)', justifyContent: 'center' }}>
+                <a
+                  href="https://github.com/originaryx/trace?utm_source=originary&utm_medium=cloud&utm_campaign=compare"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                >
+                  Self-host on GitHub
+                </a>
+                <Link
+                  href="/pricing#trace"
+                  className="btn btn-primary"
+                >
+                  Compare pricing
+                </Link>
               </div>
             </div>
           </div>
         </section>
       </main>
       <Footer />
-
-      <style jsx>{`
-        @media (max-width: 968px) {
-          div[style*="grid-template-columns: 1fr 1fr"] {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
-    </div>
-  )
-}
-
-export default function CloudPage() {
-  return (
-    <Suspense fallback={
-      <div className="wrap">
-        <NavigationHeader />
-        <main style={{ paddingTop: '80px', minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div style={{ textAlign: 'center' }}>Loading...</div>
-        </main>
-        <Footer />
-      </div>
-    }>
-      <CloudPageContent />
-    </Suspense>
+    </>
   )
 }
