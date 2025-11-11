@@ -238,7 +238,7 @@ export default function TracePricingPage() {
                     marginBottom: 'var(--space-3)',
                     color: 'white'
                   }}>
-                    Trace OSS – Free Forever
+                    Trace OSS - Free Forever
                   </h2>
                   <p style={{
                     fontSize: 'var(--text-lg)',
@@ -277,7 +277,7 @@ export default function TracePricingPage() {
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)'
               }}>
-                Trace Cloud – Managed & Attested
+                Trace Cloud - Managed & Attested
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',

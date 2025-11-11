@@ -5,8 +5,11 @@ import Footer from '@/components/Footer'
 import { CheckCircle, Zap, Shield, Cloud } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Trace Cloud - Managed crawler analytics | Originary',
+  title: 'Get Trace Cloud | Originary',
   description: 'Managed Trace with attested keys, verifiable compliance bundles, multi-property rollups, and enterprise SLAs.',
+  alternates: {
+    canonical: 'https://www.originary.xyz/cloud'
+  },
   openGraph: {
     title: 'Trace Cloud - Managed crawler analytics',
     description: 'Managed Trace with attested keys, verifiable compliance bundles, multi-property rollups, and enterprise SLAs.',
@@ -103,10 +106,53 @@ export default function CloudPage() {
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
                 color: 'var(--gray-600)',
-                marginBottom: 'var(--space-12)'
+                marginBottom: 'var(--space-6)'
               }}>
                 Managed crawler analytics with attestation, signed bundles, and enterprise SLAs. All the power of Trace without the operational overhead.
               </p>
+
+              {/* Secondary Links */}
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 'var(--space-3)',
+                flexWrap: 'wrap',
+                fontSize: 'var(--text-sm)',
+                marginBottom: 'var(--space-12)'
+              }}>
+                <a
+                  href="https://github.com/originaryx/trace?utm_source=originary&utm_medium=cloud&utm_campaign=secondary_links"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    color: 'var(--brand-primary)',
+                    textDecoration: 'underline'
+                  }}
+                >
+                  Self-host on GitHub
+                </a>
+                <span style={{ color: 'var(--gray-400)' }}>•</span>
+                <Link
+                  href="/developers"
+                  style={{
+                    color: 'var(--brand-primary)',
+                    textDecoration: 'underline'
+                  }}
+                >
+                  Docs / Quickstart
+                </Link>
+                <span style={{ color: 'var(--gray-400)' }}>•</span>
+                <Link
+                  href="/company/contact"
+                  style={{
+                    color: 'var(--brand-primary)',
+                    textDecoration: 'underline'
+                  }}
+                >
+                  Contact sales
+                </Link>
+              </div>
 
               {/* Key Benefits */}
               <div style={{
@@ -396,10 +442,10 @@ export default function CloudPage() {
                       <tr key={idx} style={{ borderBottom: idx < 7 ? '1px solid var(--gray-100)' : 'none' }}>
                         <td style={{ padding: 'var(--space-4)', fontSize: 'var(--text-sm)', color: 'var(--gray-900)' }}>{row.feature}</td>
                         <td style={{ padding: 'var(--space-4)', textAlign: 'center', fontSize: 'var(--text-sm)' }}>
-                          {row.oss ? <CheckCircle size={18} style={{ color: 'var(--success)', margin: '0 auto' }} /> : '—'}
+                          {row.oss ? <CheckCircle size={18} style={{ color: 'var(--success)', margin: '0 auto' }} /> : '-'}
                         </td>
                         <td style={{ padding: 'var(--space-4)', textAlign: 'center', fontSize: 'var(--text-sm)' }}>
-                          {row.cloud ? <CheckCircle size={18} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} /> : '—'}
+                          {row.cloud ? <CheckCircle size={18} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} /> : '-'}
                         </td>
                       </tr>
                     ))}

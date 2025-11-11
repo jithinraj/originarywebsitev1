@@ -12,16 +12,16 @@ import WorldClassHomePage from '@/components/WorldClassHomePage'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Originary | Receipts, policy, and tooling for the agentic web',
+  title: 'Originary | AI infra & tools for AI Commerce & Agentic Web',
   description: 'Originary provides tools and infrastructure for PEAC-enabled applications. Track AI crawlers with Trace, verify receipts, and build for the agentic web.',
   keywords: 'Originary, PEAC Protocol, AI crawler tracking, Trace, HTTP 402, verifiable receipts, agentic web, x402, policy discovery',
   alternates: {
-    canonical: 'https://www.originary.xyz/'
+    canonical: 'https://www.originary.xyz'
   },
   openGraph: {
     title: 'Originary | Receipts, policy, and tooling for the agentic web',
     description: 'Originary provides tools and infrastructure for PEAC-enabled applications. Track AI crawlers with Trace, verify receipts, and build for the agentic web.',
-    url: 'https://www.originary.xyz/',
+    url: 'https://www.originary.xyz',
     type: 'website',
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
