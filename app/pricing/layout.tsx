@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Trace pricing | Cloud and self-host options (OSS, Starter, Pro, Enterprise)',
+  title: 'Trace pricing | Cloud and self-host options',
   description: 'From startups building their first agent to Fortune 500 companies running millions of autonomous transactions. Originary receipts with transparent pricing.',
   keywords: 'pricing, receipts, agentic web, API monetization, x402, transparent pricing',
   robots: 'index,follow',

@@ -214,6 +214,22 @@ export default function HeroSection() {
               Originary adds <strong style={{ color: 'var(--gray-800)' }}>policy discovery</strong>, <strong style={{ color: 'var(--gray-800)' }}>HTTP 402 payments</strong>, and a <strong style={{ color: 'var(--gray-800)' }}>PEAC-Receipt</strong> to every response-so access, settlement, and compliance are provable by design. Go live in 5 minutes.
             </p>
 
+            {/* Brand explainer */}
+            <p
+              style={{
+                fontSize: 'var(--text-base)',
+                lineHeight: 1.7,
+                color: 'var(--gray-600)',
+                marginBottom: 'var(--space-4)',
+                maxWidth: '90%',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.25s'
+              }}
+            >
+              <strong style={{ color: 'var(--gray-800)' }}>Originary™</strong> builds PEAC-compatible tools and standards. <Link href="/trace" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Trace</Link> is our flagship product.
+            </p>
+
             {/* Microproof line */}
             <p
               style={{
@@ -224,7 +240,7 @@ export default function HeroSection() {
                 maxWidth: '90%',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.25s',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s',
                 fontWeight: 400
               }}
             >
@@ -235,7 +251,7 @@ export default function HeroSection() {
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.26s',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.35s',
                 marginBottom: 'var(--space-8)'
               }}
             >
@@ -321,7 +337,7 @@ export default function HeroSection() {
                 marginBottom: 'var(--space-10)',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s'
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s'
               }}
             >
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
