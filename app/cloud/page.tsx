@@ -185,7 +185,7 @@ export default function CloudPage() {
                   color: 'var(--gray-600)',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  Get early access to Trace Cloud. We'll notify you when we're ready.
+                  Get early access to Trace Cloud. We&apos;ll notify you when we&apos;re ready.
                 </p>
                 <form
                   action="/api/waitlist"

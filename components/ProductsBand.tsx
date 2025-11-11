@@ -202,7 +202,7 @@ export default function ProductsBand() {
                   {/* Buttons */}
                   {product.buttons && product.buttons.length > 0 && (
                     <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap', marginTop: 'auto' }}>
-                      {product.buttons.map((button, idx) => {
+                      {product.buttons.map((button: any, idx) => {
                         const ButtonComponent = button.external ? 'a' : Link
                         const buttonProps = button.external
                           ? { href: button.href, target: '_blank', rel: 'noopener noreferrer' }
