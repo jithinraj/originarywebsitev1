@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
-import TraceHeroSection from '@/components/TraceHeroSection'
+import CompanyHeroSection from '@/components/CompanyHeroSection'
+import ProductsBand from '@/components/ProductsBand'
 import PEACBand from '@/components/PEACBand'
 import VerifySection from '@/components/VerifySection'
 import SocialProofSection from '@/components/SocialProofSection'
@@ -10,15 +11,15 @@ import WorldClassHomePage from '@/components/WorldClassHomePage'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Originary Trace | AI crawler analytics and PEAC compliance',
-  description: 'See which AI crawlers access your site, what they took, and generate verifiable evidence. Built on the open PEAC Protocol.',
-  keywords: 'Originary Trace, AI crawler analytics, PEAC Protocol, GPTBot, ClaudeBot, compliance evidence, crawler tracking, HTTP 402, verifiable receipts',
+  title: 'Originary | Receipts, policy, and tooling for the agentic web',
+  description: 'Originary provides tools and infrastructure for PEAC-enabled applications. Track AI crawlers with Trace, verify receipts, and build for the agentic web.',
+  keywords: 'Originary, PEAC Protocol, AI crawler tracking, Trace, HTTP 402, verifiable receipts, agentic web, x402, policy discovery',
   alternates: {
     canonical: 'https://www.originary.xyz/'
   },
   openGraph: {
-    title: 'Originary Trace | AI crawler analytics and PEAC compliance',
-    description: 'See which AI crawlers access your site, what they took, and generate verifiable evidence. Built on the open PEAC Protocol.',
+    title: 'Originary | Receipts, policy, and tooling for the agentic web',
+    description: 'Originary provides tools and infrastructure for PEAC-enabled applications. Track AI crawlers with Trace, verify receipts, and build for the agentic web.',
     url: 'https://www.originary.xyz/',
     type: 'website',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -26,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary Trace | AI crawler analytics',
-    description: 'See which AI crawlers access your site, what they took, and generate verifiable evidence.',
+    title: 'Originary | Tooling for the agentic web',
+    description: 'Originary provides tools and infrastructure for PEAC-enabled applications.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -40,7 +41,8 @@ export default function Page() {
     <>
       <NavigationHeader />
       <main id="main-content" role="main">
-        <TraceHeroSection />
+        <CompanyHeroSection />
+        <ProductsBand />
         <PEACBand />
         <VerifySection />
         <SocialProofSection />
@@ -49,30 +51,6 @@ export default function Page() {
         <WorldClassHomePage />
       </main>
       <Footer />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "Originary Trace",
-            "applicationCategory": "SecurityApplication",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD"
-            },
-            "softwareVersion": "0.1.0",
-            "operatingSystem": "Any",
-            "url": "https://www.originary.xyz/trace",
-            "description": "AI crawler analytics and compliance evidence for your website",
-            "publisher": {
-              "@type": "Organization",
-              "name": "Originary"
-            }
-          })
-        }}
-      />
     </>
   )
 }
