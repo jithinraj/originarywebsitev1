@@ -6,6 +6,34 @@ import Link from 'next/link'
 import { Eye, Shield, Download, Zap, CheckCircle, ArrowRight, Github, Play, Database } from 'lucide-react'
 
 export default function TracePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Originary Trace",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Web",
+    "brand": {
+      "@type": "Brand",
+      "name": "Originary"
+    },
+    "downloadUrl": "https://github.com/originaryx/trace",
+    "isAccessibleForFree": true,
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Starter",
+        "price": "29",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro",
+        "price": "99",
+        "priceCurrency": "USD"
+      }
+    ]
+  }
+
   const features = [
     {
       icon: <Eye size={24} />,
@@ -56,6 +84,10 @@ export default function TracePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
         {/* Hero Section */}
@@ -87,7 +119,8 @@ export default function TracePage() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em'
               }}>
-                Distributed tracing for <span className="text-gradient">your content</span>
+                <span style={{ display: 'block', fontSize: 'var(--text-sm)', color: 'var(--gray-500)', marginBottom: 'var(--space-2)', fontWeight: 600, letterSpacing: '0.05em' }}>ORIGINARY™</span>
+                Trace: Distributed tracing for <span className="text-gradient">your content</span>
               </h1>
               <p style={{
                 fontSize: 'var(--text-xl)',

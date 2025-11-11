@@ -38,8 +38,23 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Originary",
+    "url": "https://www.originary.xyz",
+    "logo": "https://www.originary.xyz/logo.png",
+    "sameAs": [
+      "https://github.com/originaryx"
+    ]
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <NavigationHeader />
       <main id="main-content" role="main">
         <CompanyHeroSection />
