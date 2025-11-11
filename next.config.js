@@ -76,15 +76,16 @@ const nextConfig = {
         source: '/.well-known/aipref.json',
         headers: [
           { key: 'Content-Type', value: 'application/json; charset=utf-8' },
-          { key: 'Cache-Control', value: 'public, max-age=300, s-maxage=300' },
+          { key: 'Cache-Control', value: 'public, max-age=300, immutable' },
+          { key: 'Access-Control-Allow-Origin', value: '*' },
         ],
       },
       {
         source: '/.well-known/jwks.json',
         headers: [
           { key: 'Content-Type', value: 'application/json; charset=utf-8' },
-          { key: 'Cache-Control', value: 'public, max-age=300' },
-          { key: 'ETag', value: 'W/"2025-10-23-ed25519-1"' },
+          { key: 'Cache-Control', value: 'public, max-age=300, immutable' },
+          { key: 'Access-Control-Allow-Origin', value: '*' },
         ],
       },
     ]
