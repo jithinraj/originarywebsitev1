@@ -250,7 +250,7 @@ export default function HeroSection() {
                   margin: 0
                 }}
               >
-                <span style={{ color: 'var(--gray-500)' }}>ORIGINARY™</span> — Open software. Available for{' '}
+                <span style={{ color: 'var(--gray-500)' }}>ORIGINARY™</span> - Open software. Available for{' '}
                 <Link
                   href="/downloads"
                   style={{

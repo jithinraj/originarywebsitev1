@@ -423,7 +423,7 @@ export default function Footer() {
               </span>
               <span style={{ color: 'var(--gray-400)', fontSize: 'var(--text-xs)' }}>•</span>
               <span style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)' }}>
-                Originary™ is a trademark of Poem, Inc.
+                Originary™ and Trace™ are trademarks of Poem, Inc.
               </span>
             </div>
             <a

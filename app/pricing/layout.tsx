@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Transparent Pricing for Every Scale : Originary',
+  title: 'Trace pricing | Cloud and self-host options (OSS, Starter, Pro, Enterprise)',
   description: 'From startups building their first agent to Fortune 500 companies running millions of autonomous transactions. Originary receipts with transparent pricing.',
   keywords: 'pricing, receipts, agentic web, API monetization, x402, transparent pricing',
   robots: 'index,follow',
+  alternates: {
+    canonical: 'https://www.originary.xyz/pricing'
+  },
   openGraph: {
-    title: 'Transparent Pricing for Every Scale : Originary',
+    title: 'Transparent Pricing for Every Scale | Originary',
     description: 'From startups building their first agent to Fortune 500 companies running millions of autonomous transactions. Originary receipts with transparent pricing.',
     url: 'https://www.originary.xyz/pricing',
     siteName: 'Originary',
@@ -20,12 +23,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Transparent Pricing for Every Scale : Originary',
+    title: 'Transparent Pricing for Every Scale | Originary',
     description: 'From startups building their first agent to Fortune 500 companies running millions of autonomous transactions. Originary receipts with transparent pricing.',
     images: ['/og.jpg']
-  },
-  alternates: {
-    canonical: 'https://www.originary.xyz/pricing'
   }
 }
 

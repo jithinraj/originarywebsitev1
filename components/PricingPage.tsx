@@ -171,7 +171,7 @@ const faqItems = [
   },
   {
     question: 'What payment methods do you accept?',
-    answer: 'We accept all major credit cards, debit cards, UPI, net banking, and digital wallets via Razorpay. Enterprise customers can also use wire transfers and purchase orders. Annual plans receive a 20% discount.'
+    answer: 'We accept all major credit cards and digital wallets via Stripe. Enterprise customers can also use wire transfers and purchase orders. Annual plans receive a 20% discount.'
   },
   {
     question: 'Is there a setup fee or long-term contract?',
