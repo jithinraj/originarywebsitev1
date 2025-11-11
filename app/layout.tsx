@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Fraunces, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
 import PerformanceMonitor from '@/components/PerformanceMonitor'
 import SkipNavigation from '@/components/SkipNavigation'
 
@@ -213,6 +214,9 @@ export default function RootLayout({
             gtag('config', 'G-FPG3HTSN2R');
           `}
         </Script>
+
+        {/* Vercel Analytics */}
+        <Analytics />
       </body>
     </html>
   )

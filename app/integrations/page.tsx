@@ -75,7 +75,7 @@ const integrations = [
     id: 'peac',
     title: 'PEAC Protocol',
     description: 'Provenance-Enhanced Access Control protocol for verifiable receipts. The foundation for trusted agent interactions.',
-    href: 'https://peac.dev/',
+    href: 'https://peacprotocol.org/',
     icon: FileText,
     status: 'live' as const,
     color: 'rgba(236, 72, 153, 0.1)',

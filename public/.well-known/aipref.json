@@ -1,27 +1,20 @@
 {
-  "updated_at": "2025-10-23T12:00:00+05:30",
-  "contact": "contact@originary.xyz",
-  "policies": {
-    "access": {
-      "humans": "allow",
-      "search_bots": "allow",
-      "ai_agents": "allow_via_http_402_with_peac_receipt"
-    },
-    "training": {
-      "use_for_model_training": "deny_by_default",
-      "allowed_if": ["explicit_license", "per_request_payment", "publisher_contract"]
-    },
-    "derivatives": {
-      "ai_generated_summaries": "allow_with_attribution",
-      "redistribution": "allow_if_paid_and_watermarked"
-    },
-    "attribution": {
-      "required": true,
-      "format": "link+publisher_name"
-    },
-    "retention": {
-      "ai_agent_cache_ttl": "7d",
-      "logs_ttl": "30d"
-    }
-  }
+  "version": "1.0",
+  "ai_access": {
+    "scraping": "allowed_with_attribution",
+    "training": "prohibited",
+    "commercial_use": "requires_license"
+  },
+  "rate_limits": {
+    "requests_per_hour": 100
+  },
+  "payment": {
+    "required": true,
+    "endpoint": "https://api.originary.xyz/payment"
+  },
+  "attribution": {
+    "required": true,
+    "format": "Source: originary.xyz"
+  },
+  "updated_at": "2025-11-11T00:00:00+05:30"
 }

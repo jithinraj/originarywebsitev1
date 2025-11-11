@@ -3,6 +3,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import CompanyHeroSection from '@/components/CompanyHeroSection'
 import ProductsBand from '@/components/ProductsBand'
 import PEACBand from '@/components/PEACBand'
+import FoundationalRailsSection from '@/components/FoundationalRailsSection'
 import VerifySection from '@/components/VerifySection'
 import SocialProofSection from '@/components/SocialProofSection'
 import ControlPlaneSection from '@/components/ControlPlaneSection'
@@ -44,6 +45,7 @@ export default function Page() {
         <CompanyHeroSection />
         <ProductsBand />
         <PEACBand />
+        <FoundationalRailsSection />
         <VerifySection />
         <SocialProofSection />
         <ControlPlaneSection />
