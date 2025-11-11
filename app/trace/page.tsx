@@ -661,6 +661,72 @@ go install ./tailer
         </section>
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Originary Trace",
+            "applicationCategory": "SecurityApplication",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Trace OSS",
+                "price": "0",
+                "priceCurrency": "USD",
+                "description": "Self-hosted AI crawler analytics",
+                "availability": "https://schema.org/InStock"
+              },
+              {
+                "@type": "Offer",
+                "name": "Trace Cloud Starter",
+                "price": "29",
+                "priceCurrency": "USD",
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": "29",
+                  "priceCurrency": "USD",
+                  "unitText": "MONTH"
+                },
+                "description": "Managed Trace with 90-day retention",
+                "availability": "https://schema.org/InStock"
+              },
+              {
+                "@type": "Offer",
+                "name": "Trace Cloud Pro",
+                "price": "99",
+                "priceCurrency": "USD",
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": "99",
+                  "priceCurrency": "USD",
+                  "unitText": "MONTH"
+                },
+                "description": "Multi-property with 1-year retention and compliance bundles",
+                "availability": "https://schema.org/InStock"
+              }
+            ],
+            "softwareVersion": "0.1.0",
+            "operatingSystem": "Any",
+            "url": "https://www.originary.xyz/trace",
+            "description": "AI crawler analytics and compliance evidence for your website. Track GPTBot, ClaudeBot, and other AI services with PEAC Protocol.",
+            "featureList": [
+              "AI crawler identification",
+              "PEAC receipt generation",
+              "Compliance evidence",
+              "Policy violation detection",
+              "Multi-deployment support"
+            ],
+            "publisher": {
+              "@type": "Organization",
+              "name": "Originary",
+              "url": "https://www.originary.xyz"
+            },
+            "codeRepository": "https://github.com/originaryx/trace"
+          })
+        }}
+      />
     </>
   )
 }

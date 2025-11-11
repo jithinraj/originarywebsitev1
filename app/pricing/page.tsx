@@ -3,69 +3,16 @@
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle } from 'lucide-react'
-import { useEffect } from 'react'
-import { useCurrency } from '@/hooks/useCurrency'
-import StripeButton from '@/components/StripeButton'
+import { ArrowRight, CheckCircle, Github } from 'lucide-react'
 
-export default function Pricing() {
-  const pricing = useCurrency()
-
-  useEffect(() => {
-    // Add Service JSON-LD (will update dynamically based on currency)
-    const jsonLd = {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Originary - PEAC Policy Setup",
-      "serviceType": "peac.txt generation, validation, and edge header snippets",
-      "provider": { "@type": "Organization", "name": "Originary" },
-      "offers": {
-        "@type": "Offer",
-        "price": pricing.start.amount.toString(),
-        "priceCurrency": pricing.currency,
-        "name": "Start Plan",
-        "availability": "https://schema.org/InStock"
-      }
-    };
-
-    const scriptTag = document.createElement('script');
-    scriptTag.type = 'application/ld+json';
-    scriptTag.text = JSON.stringify(jsonLd);
-    scriptTag.id = 'pricing-jsonld';
-    document.head.appendChild(scriptTag);
-
-    // Add OfferCatalog JSON-LD
-    const offerCatalog = {
-      "@context": "https://schema.org",
-      "@type": "OfferCatalog",
-      "name": "Originary Plans",
-      "itemListElement": [
-        {"@type": "Offer", "name": "Start", "price": pricing.start.amount.toString(), "priceCurrency": pricing.currency, "description": "30-day developer intro", "availability": "https://schema.org/InStock"},
-        {"@type": "Offer", "name": "Pro", "price": pricing.pro.amount.toString(), "priceCurrency": pricing.currency, "priceSpecification": {"@type": "UnitPriceSpecification", "price": pricing.pro.amount.toString(), "priceCurrency": pricing.currency, "unitText": "MONTH"}},
-        {"@type": "Offer", "name": "Enterprise", "price": pricing.enterprise.amount.toString(), "priceCurrency": pricing.currency, "priceSpecification": {"@type": "UnitPriceSpecification", "price": pricing.enterprise.amount.toString(), "priceCurrency": pricing.currency, "unitText": "MONTH"}}
-      ],
-      "provider": {"@type": "Organization", "name": "Originary"}
-    };
-
-    const catalogScript = document.createElement('script');
-    catalogScript.type = 'application/ld+json';
-    catalogScript.text = JSON.stringify(offerCatalog);
-    catalogScript.id = 'catalog-jsonld';
-    document.head.appendChild(catalogScript);
-
-    return () => {
-      // Cleanup on unmount
-      document.getElementById('pricing-jsonld')?.remove()
-      document.getElementById('catalog-jsonld')?.remove()
-    }
-  }, [pricing]);
-
+export default function TracePricing() {
   return (
     <div className="wrap">
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
         <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
+            {/* Hero */}
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <h1 style={{
                 fontSize: 'clamp(var(--text-4xl), 6vw, var(--text-6xl))',
@@ -75,7 +22,7 @@ export default function Pricing() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--gray-900)'
               }}>
-                <span className="text-gradient">Transparent pricing</span> for every scale
+                <span className="text-gradient">Trace pricing</span>
               </h1>
 
               <p style={{
@@ -83,305 +30,365 @@ export default function Pricing() {
                 lineHeight: 1.7,
                 color: 'var(--gray-600)',
                 marginBottom: 'var(--space-12)',
-                maxWidth: '800px',
+                maxWidth: '700px',
                 margin: '0 auto var(--space-12) auto'
               }}>
-                From startups building their first agent to large enterprises running autonomous transactions. Scale with confidence.
+                Start free with self-hosted OSS. Upgrade to Cloud for retention, alerts, signed bundles, benchmarking, SSO, and SLAs.
               </p>
             </div>
 
-            <div className="grid grid-3" style={{ gap: 'var(--space-8)', marginBottom: 'var(--space-20)' }}>
-              <div className="card" style={{ position: 'relative' }}>
+            {/* Trace Pricing Table */}
+            <div className="grid grid-4" style={{ gap: 'var(--space-6)', marginBottom: 'var(--space-20)' }}>
+              {/* OSS Plan */}
+              <div className="card" style={{ position: 'relative', background: 'var(--gray-50)' }}>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
-                  <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-2)' }}>Start</h3>
-                  <p style={{ color: 'var(--gray-600)' }}>Developer intro</p>
+                  <div
+                    style={{
+                      display: 'inline-block',
+                      background: 'var(--gray-200)',
+                      color: 'var(--gray-700)',
+                      fontSize: 'var(--text-xs)',
+                      fontWeight: 600,
+                      padding: '4px 10px',
+                      borderRadius: 'var(--radius-full)',
+                      marginBottom: 'var(--space-3)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em'
+                    }}
+                  >
+                    Free forever
+                  </div>
+                  <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-2)' }}>OSS</h3>
+                  <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Self-hosted</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
-                    {pricing.isLoading ? '...' : pricing.start.formatted}<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}> one-time, 30 days</span>
+                    $0
                   </div>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Sandbox access with real verification tools</p>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Self-managed infrastructure</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['1 domain (sandbox) + live Verify API', '100 receipt verifications + sample JWS', '/.well-known/peac.txt validator', 'Gateway 402 demo (x402/Stripe)', 'Email support (48h)'].map((feature) => (
-                    <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
-                      <span style={{ fontSize: 'var(--text-sm)' }}>{feature}</span>
+                  {[
+                    'Single property',
+                    '30-day default retention',
+                    'PEAC receipts (self-managed keys)',
+                    'CSV/JSON export',
+                    'Public badge',
+                    'Basic dashboard',
+                    'Prometheus metrics'
+                  ].map((feature) => (
+                    <div key={feature} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
+                      <CheckCircle size={18} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                      <span style={{ fontSize: 'var(--text-sm)', lineHeight: 1.5 }}>{feature}</span>
                     </div>
                   ))}
                 </div>
-                <div style={{ width: '100%' }}>
-                  <Link href="/checkout/start" className="btn btn-primary" style={{ width: '100%', marginBottom: 'var(--space-2)' }}>
-                    Start for {pricing.isLoading ? '...' : pricing.start.formatted}
-                  </Link>
-                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center' }}>
-                    Immediate delivery. {pricing.currency} billing. Renews to Free.
-                  </p>
-                </div>
+                <a
+                  href="https://github.com/originaryx/trace?utm_source=originary&utm_medium=site&utm_campaign=trace_oss"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                  style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)' }}
+                >
+                  <Github size={18} />
+                  Get on GitHub
+                </a>
               </div>
 
+              {/* Starter Plan */}
               <div className="card" style={{ position: 'relative' }}>
+                <div style={{ marginBottom: 'var(--space-6)' }}>
+                  <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-2)' }}>Starter</h3>
+                  <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Managed Trace Cloud</p>
+                </div>
+                <div style={{ marginBottom: 'var(--space-6)' }}>
+                  <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
+                    $29<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)', fontWeight: 500 }}>/mo</span>
+                  </div>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>14-day free trial</p>
+                </div>
+                <div style={{ marginBottom: 'var(--space-8)' }}>
+                  {[
+                    '90-day retention',
+                    '1 property',
+                    'Email alerts',
+                    'Hosted dashboard',
+                    'Public badge hosting',
+                    'CSV/JSON export',
+                    'On-demand verify API'
+                  ].map((feature) => (
+                    <div key={feature} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
+                      <CheckCircle size={18} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                      <span style={{ fontSize: 'var(--text-sm)', lineHeight: 1.5 }}>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <Link
+                  href="/cloud?plan=starter"
+                  className="btn btn-primary"
+                  style={{ width: '100%' }}
+                >
+                  Start 14-day trial
+                </Link>
+              </div>
+
+              {/* Pro Plan */}
+              <div className="card" style={{ position: 'relative', border: '2px solid var(--brand-primary)', boxShadow: 'var(--shadow-xl)' }}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '-12px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    background: 'var(--gradient-brand)',
+                    color: 'var(--white)',
+                    fontSize: 'var(--text-xs)',
+                    fontWeight: 600,
+                    padding: '4px 12px',
+                    borderRadius: 'var(--radius-full)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em'
+                  }}
+                >
+                  Popular
+                </div>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-2)' }}>Pro</h3>
-                  <p style={{ color: 'var(--gray-600)' }}>For production deployments</p>
+                  <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>For production deployments</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
-                    {pricing.isLoading ? '...' : pricing.pro.formatted}<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>/month</span>
+                    $99<span style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)', fontWeight: 500 }}>/mo</span>
                   </div>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Includes <code style={{ backgroundColor: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac.txt</code> generator, validator, and edge header snippets</p>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>14-day free trial</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['Protocol-compatible tools', 'Policy generator & validator', 'Headers & edge snippets', 'Settlement gateway (402) access', 'Dashboard', 'Priority support', 'Developer docs', 'Email support'].map((feature) => (
-                    <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
-                      <span style={{ fontSize: 'var(--text-sm)' }}>{feature}</span>
+                  {[
+                    'Everything in Starter',
+                    '1-year retention',
+                    'Multi-property rollups',
+                    'Slack/webhook alerts',
+                    'Scheduled compliance bundles',
+                    'Cohort benchmarking',
+                    'SSO (basic)',
+                    '99.9% SLO'
+                  ].map((feature) => (
+                    <div key={feature} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
+                      <CheckCircle size={18} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                      <span style={{ fontSize: 'var(--text-sm)', lineHeight: 1.5 }}>{feature}</span>
                     </div>
                   ))}
                 </div>
-                <div style={{ width: '100%' }}>
-                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 'var(--space-2)' }}>
-                    <StripeButton plan="pro" amount={100} label="Get Started with Pro" className="btn btn-primary" />
-                  </div>
-                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center' }}>
-                    By purchasing you agree to our <Link href="/legal/terms" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Terms</Link> and <Link href="/legal/privacy" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Privacy Policy</Link>
-                  </p>
-                </div>
+                <Link
+                  href="/cloud?plan=pro"
+                  className="btn btn-primary"
+                  style={{ width: '100%' }}
+                >
+                  Start 14-day trial
+                </Link>
               </div>
 
-              <div className="card">
+              {/* Enterprise Plan */}
+              <div className="card" style={{ position: 'relative' }}>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-2)' }}>Enterprise</h3>
-                  <p style={{ color: 'var(--gray-600)' }}>For growing teams and high-volume workloads</p>
+                  <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Custom deployment</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
-                    {pricing.isLoading ? '...' : pricing.enterprise.formatted} pricing
+                    Custom
                   </div>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Up to 1M agent transactions/month</p>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Contact for pricing</p>
                 </div>
                 <div style={{ marginBottom: 'var(--space-8)' }}>
-                  {['Everything in Pro', 'Adapter support', 'Team seats', 'SLA available', 'Analytics', 'Dedicated support engineer', 'Custom integrations', 'On-premises deployment'].map((feature) => (
-                    <div key={feature} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
-                      <span style={{ fontSize: 'var(--text-sm)' }}>{feature}</span>
+                  {[
+                    'Everything in Pro',
+                    'Domain attestation + KMS',
+                    'Legal-ready bundle formatting',
+                    'S3/GCS delivery',
+                    'SCIM provisioning',
+                    'SSO/SAML',
+                    'Dedicated support',
+                    '99.99% SLA'
+                  ].map((feature) => (
+                    <div key={feature} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
+                      <CheckCircle size={18} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                      <span style={{ fontSize: 'var(--text-sm)', lineHeight: 1.5 }}>{feature}</span>
                     </div>
                   ))}
                 </div>
-                <Link href="/company/contact" className="btn btn-secondary" style={{ width: '100%', marginBottom: 'var(--space-2)' }}>
+                <Link
+                  href="/company/contact?topic=enterprise-trace"
+                  className="btn btn-secondary"
+                  style={{ width: '100%' }}
+                >
                   Contact sales
                 </Link>
-                <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center' }}>
-                  By purchasing you agree to our <Link href="/legal/terms" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Terms</Link> and <Link href="/legal/privacy" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Privacy Policy</Link>
+              </div>
+            </div>
+
+            {/* Platform Products Section */}
+            <section style={{
+              marginTop: 'var(--space-24)',
+              paddingTop: 'var(--space-16)',
+              borderTop: '1px solid var(--gray-200)'
+            }}>
+              <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
+                <h2 style={{
+                  fontSize: 'var(--text-3xl)',
+                  fontWeight: 700,
+                  marginBottom: 'var(--space-4)',
+                  color: 'var(--gray-900)'
+                }}>
+                  Originary Platform
+                </h2>
+                <p style={{
+                  fontSize: 'var(--text-lg)',
+                  color: 'var(--gray-600)',
+                  maxWidth: '600px',
+                  margin: '0 auto'
+                }}>
+                  Additional products in beta and private beta. Request access to try early.
                 </p>
               </div>
-            </div>
 
-            <div style={{
-              textAlign: 'center',
-              fontSize: 'var(--text-xs)',
-              color: 'var(--gray-500)',
-              marginTop: 'var(--space-4)',
-              marginBottom: 'var(--space-8)'
-            }}>
-              Billing processed by Stripe on behalf of Poem, Inc.
-            </div>
+              <div className="grid grid-3" style={{ gap: 'var(--space-6)' }}>
+                {/* Verify API */}
+                <div className="card" style={{ textAlign: 'center' }}>
+                  <div
+                    style={{
+                      display: 'inline-block',
+                      background: 'rgba(99, 91, 255, 0.1)',
+                      color: 'var(--brand-primary)',
+                      fontSize: 'var(--text-xs)',
+                      fontWeight: 600,
+                      padding: '4px 10px',
+                      borderRadius: 'var(--radius-full)',
+                      marginBottom: 'var(--space-4)',
+                      textTransform: 'uppercase'
+                    }}
+                  >
+                    Beta
+                  </div>
+                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-3)' }}>
+                    Verify API
+                  </h3>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-6)', lineHeight: 1.6 }}>
+                    PEAC receipt verification and related utilities as an API
+                  </p>
+                  <Link href="/products/verify" className="btn btn-ghost" style={{ width: '100%' }}>
+                    Learn more <ArrowRight size={16} />
+                  </Link>
+                </div>
 
-            {/* SLO Section */}
-            <section style={{
-              marginTop: 'var(--space-16)',
-              marginBottom: 'var(--space-8)',
-              padding: 'var(--space-8)',
-              border: '1px solid var(--gray-200)',
-              borderRadius: 'var(--radius-2xl)',
-              background: 'linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%)'
-            }}>
-              <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-6)', textAlign: 'center' }}>
-                Performance & Reliability
-              </h3>
-              <div className="grid grid-3" style={{ gap: 'var(--space-6)', marginBottom: 'var(--space-6)' }}>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>
-                    &lt;10ms
+                {/* Gateway 402 */}
+                <div className="card" style={{ textAlign: 'center' }}>
+                  <div
+                    style={{
+                      display: 'inline-block',
+                      background: 'rgba(0, 212, 170, 0.1)',
+                      color: 'var(--success)',
+                      fontSize: 'var(--text-xs)',
+                      fontWeight: 600,
+                      padding: '4px 10px',
+                      borderRadius: 'var(--radius-full)',
+                      marginBottom: 'var(--space-4)',
+                      textTransform: 'uppercase'
+                    }}
+                  >
+                    Private beta
                   </div>
-                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                    Sign latency (p95)
-                  </div>
+                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-3)' }}>
+                    Gateway 402
+                  </h3>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-6)', lineHeight: 1.6 }}>
+                    Production-grade HTTP 402 controls and payment adapters
+                  </p>
+                  <Link href="/products/gateway-402" className="btn btn-ghost" style={{ width: '100%' }}>
+                    Request access <ArrowRight size={16} />
+                  </Link>
                 </div>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>
-                    &lt;5ms
+
+                {/* Studio */}
+                <div className="card" style={{ textAlign: 'center' }}>
+                  <div
+                    style={{
+                      display: 'inline-block',
+                      background: 'var(--gray-100)',
+                      color: 'var(--gray-600)',
+                      fontSize: 'var(--text-xs)',
+                      fontWeight: 600,
+                      padding: '4px 10px',
+                      borderRadius: 'var(--radius-full)',
+                      marginBottom: 'var(--space-4)',
+                      textTransform: 'uppercase'
+                    }}
+                  >
+                    Waitlist
                   </div>
-                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                    Verify latency (p95)
-                  </div>
-                </div>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>
-                    ≥1k rps
-                  </div>
-                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                    Baseline throughput
-                  </div>
+                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-3)' }}>
+                    Studio
+                  </h3>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-6)', lineHeight: 1.6 }}>
+                    Content policy design and compliance workflows
+                  </p>
+                  <Link href="/products/studio" className="btn btn-ghost" style={{ width: '100%' }}>
+                    Join waitlist <ArrowRight size={16} />
+                  </Link>
                 </div>
               </div>
-              <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)', textAlign: 'center', marginTop: 'var(--space-4)' }}>
-                Latency measured at 95th percentile over trailing 30 days, Mumbai edge (IST).
-                Throughput is baseline; higher limits available on request.
-                Pro: <strong>99.9% SLO</strong> (target). Enterprise: <strong>99.99% SLA</strong> (contractual, available in MSA).
-              </p>
-            </section>
-
-            {/* OSS Box */}
-            <section style={{
-              marginTop: 'var(--space-8)',
-              padding: 'var(--space-6)',
-              border: '1px solid var(--gray-200)',
-              borderRadius: 'var(--radius-2xl)',
-              background: 'var(--gray-50)'
-            }}>
-              <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
-                Prefer open source?
-              </h3>
-              <p style={{ marginBottom: 'var(--space-4)', color: 'var(--gray-600)' }}>
-                The <a
-                  href="https://peacprotocol.org"
-                  target="_blank"
-                  rel="noopener"
-                  style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}
-                >
-                  PEAC open protocol
-                </a> is free to use and modify. Explore the spec, examples, and reference implementations.
-              </p>
-              <a
-                href="https://peacprotocol.org"
-                target="_blank"
-                rel="noopener"
-                className="btn btn-secondary"
-              >
-                Explore the open protocol ↗
-              </a>
-            </section>
-
-            {/* Who this is for */}
-            <section style={{
-              marginTop: 'var(--space-12)',
-              padding: 'var(--space-8)',
-              border: '1px solid var(--gray-200)',
-              borderRadius: 'var(--radius-2xl)',
-              background: 'var(--white)'
-            }}>
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--gray-900)' }}>
-                Who each plan is for
-              </h2>
-              <div style={{ display: 'grid', gap: 'var(--space-6)', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
-                <div>
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--brand-primary)' }}>
-                    Start
-                  </h3>
-                  <p style={{ color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                    Solo builders and fast POCs that need real receipts, not mock data. Perfect for validating your agent architecture before scaling.
-                  </p>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--brand-primary)' }}>
-                    Pro
-                  </h3>
-                  <p style={{ color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                    Early teams going to production with HTTP 402, policy discovery, and audit logs. Includes SLA and email support for growing products.
-                  </p>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--brand-primary)' }}>
-                    Enterprise
-                  </h3>
-                  <p style={{ color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                    Regulated or scaled teams that need SSO/SAML, VPC/on-prem deployment, and signed DPA/SLAs. Custom adapters for your infrastructure.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* What is a receipt */}
-            <section style={{
-              marginTop: 'var(--space-12)',
-              padding: 'var(--space-8)',
-              border: '1px solid var(--gray-200)',
-              borderRadius: 'var(--radius-2xl)',
-              background: 'var(--white)'
-            }}>
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
-                What is a &ldquo;receipt&rdquo;?
-              </h2>
-              <p style={{ color: 'var(--gray-700)', lineHeight: 1.7, fontSize: 'var(--text-base)' }}>
-                A receipt is a verifiable record of usage or access terms for an interaction—e.g., an API call,
-                data fetch, or model inference—signed and auditable. Every verified receipt includes policy,
-                attribution, settlement details, timestamp, and integrity metadata. Receipts are the atomic unit
-                of trust in the agentic web, providing cryptographic proof of compliance and settlement.
-              </p>
             </section>
 
             {/* FAQ */}
             <section style={{
-              marginTop: 'var(--space-12)',
+              marginTop: 'var(--space-16)',
               padding: 'var(--space-8)',
               border: '1px solid var(--gray-200)',
               borderRadius: 'var(--radius-2xl)',
               background: 'var(--white)'
             }}>
               <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--gray-900)' }}>
-                Pricing FAQ
+                Frequently Asked Questions
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
                 <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-200)' }}>
                   <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
-                    Can I self-host PEAC?
+                    Can I self-host Trace?
                   </summary>
                   <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                    Yes. Originary Cloud is optional. Our open tooling and SDKs work self-hosted; Cloud and Enterprise
-                    add scale, SLAs, and adapters for production environments.
+                    Yes. Trace OSS is free and open source. Cloud and Enterprise add retention, automation, attestation, and managed infrastructure.
                   </p>
                 </details>
                 <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-200)' }}>
                   <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
-                    Which payment rails are supported?
+                    What deployment methods does Trace support?
                   </summary>
                   <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                    Stripe today; adapters for x402, Tempo, and Arc are available for Cloud and Enterprise plans.
-                    We&apos;re continuously expanding payment rail support based on customer demand.
+                    Cloudflare Worker proxy, Nginx access log tailer, Cloudflare Logpush, and Fingerprint webhook. WordPress plugin coming soon.
                   </p>
                 </details>
                 <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-200)' }}>
                   <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
-                    Is there a free tier?
+                    Which AI crawlers does Trace identify?
                   </summary>
                   <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                    We use a low-cost trial ($1 for 30 days) to unlock the full product with predictable abuse control.
-                    This ensures quality service for all users while keeping barriers to entry minimal.
-                  </p>
-                </details>
-                <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-200)' }}>
-                  <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
-                    Do you support EU AI Act/GDPR workflows?
-                  </summary>
-                  <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                    Yes—configurable retention windows, attribution flags, audit exports, and DPA/SCCs are available
-                    for Enterprise plans. We work closely with legal teams to ensure compliance.
+                    GPTBot, ClaudeBot, PerplexityBot, search bots (Googlebot, Bingbot), and unknown families through fingerprinting.
                   </p>
                 </details>
                 <details style={{ padding: 'var(--space-4)' }}>
                   <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
-                    What counts as a verified receipt?
+                    How is Trace related to PEAC Protocol?
                   </summary>
                   <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                    A successful verification of usage/payment terms for a request or batch. This includes policy validation,
-                    signature verification, and audit log creation. Receipts expire after verification for security.
+                    Trace is a PEAC-compatible product and reference implementation. It uses policy discovery (peac.txt), verifiable receipts (JWS), and HTTP 402 semantics.
                   </p>
                 </details>
               </div>
             </section>
 
+            {/* CTA */}
             <div style={{
+              marginTop: 'var(--space-16)',
               textAlign: 'center',
               background: 'var(--gradient-brand)',
               borderRadius: 'var(--radius-3xl)',
@@ -406,7 +413,7 @@ export default function Pricing() {
                   marginBottom: 'var(--space-6)',
                   color: 'var(--white)'
                 }}>
-                  Ready to scale your agentic infrastructure?
+                  Ready to track AI crawlers?
                 </h2>
                 <p style={{
                   fontSize: 'var(--text-xl)',
@@ -416,7 +423,7 @@ export default function Pricing() {
                   margin: '0 auto var(--space-8) auto',
                   lineHeight: 1.6
                 }}>
-                  Join teams building compliant, profitable AI interactions. Start with a free trial or speak with our team.
+                  Start with OSS or try Cloud free for 14 days. No credit card required.
                 </p>
                 <div style={{
                   display: 'flex',
@@ -425,7 +432,7 @@ export default function Pricing() {
                   flexWrap: 'wrap'
                 }}>
                   <Link
-                    href="/company/contact"
+                    href="/cloud"
                     className="btn btn-lg"
                     style={{
                       background: 'var(--white)',
@@ -433,19 +440,22 @@ export default function Pricing() {
                       border: 'none'
                     }}
                   >
-                    <span>Talk to sales</span>
+                    <span>Start free trial</span>
                     <ArrowRight size={18} />
                   </Link>
-                  <Link
-                    href="/developers"
+                  <a
+                    href="https://github.com/originaryx/trace"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn btn-lg btn-ghost"
                     style={{
                       color: 'var(--white)',
                       border: '1px solid rgba(255,255,255,0.2)'
                     }}
                   >
-                    <span>Start building</span>
-                  </Link>
+                    <Github size={18} />
+                    <span>View on GitHub</span>
+                  </a>
                 </div>
               </div>
             </div>

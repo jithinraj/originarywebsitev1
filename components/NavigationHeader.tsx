@@ -96,11 +96,15 @@ export default function NavigationHeader() {
                 gap: 'var(--space-6)'
               }}
             >
+              <NavLink href="/trace">Trace</NavLink>
+
               <NavDropdown label="Products" items={[
-                { href: '/products/peac', label: 'PEAC Core' },
-                { href: '/products/verify', label: 'Verify API' },
-                { href: '/products/gateway-402', label: 'Gateway 402' },
-                { href: '/products/studio', label: 'Studio' }
+                { href: '/products/verify', label: 'Verify API', badge: 'Beta' },
+                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Private beta' },
+                { href: '/products/studio', label: 'Studio', badge: 'Waitlist' },
+                { href: '/products/adapters', label: 'Adapters' },
+                { href: 'separator', label: '' },
+                { href: 'https://peacprotocol.org', label: 'PEAC Core', external: true }
               ]} />
 
               <NavDropdown label="Solutions" items={[
@@ -112,14 +116,9 @@ export default function NavigationHeader() {
                 { href: '/downloads', label: 'Downloads' }
               ]} />
 
-              <NavDropdown label="Trace" items={[
-                { href: '/trace', label: 'Overview' },
-                { href: '/trace/pricing', label: 'Pricing' }
-              ]} />
-
               <NavLink href="/developers">Developers</NavLink>
-              <NavLink href="/demo">Demo</NavLink>
               <NavLink href="/pricing">Pricing</NavLink>
+              <NavLink href="/trace/demo">Demo</NavLink>
               <NavLink href="/trust">Trust</NavLink>
             </div>
 
@@ -178,11 +177,16 @@ export default function NavigationHeader() {
             }}
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
+              <Link href="/trace" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-900)', textDecoration: 'none', fontWeight: 600 }}>
+                Trace
+              </Link>
+
               <MobileNavSection title="Products" items={[
-                { href: '/products/peac', label: 'PEAC Core' },
-                { href: '/products/verify', label: 'Verify API' },
-                { href: '/products/gateway-402', label: 'Gateway 402' },
-                { href: '/products/studio', label: 'Studio' }
+                { href: '/products/verify', label: 'Verify API', badge: 'Beta' },
+                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Private beta' },
+                { href: '/products/studio', label: 'Studio', badge: 'Waitlist' },
+                { href: '/products/adapters', label: 'Adapters' },
+                { href: 'https://peacprotocol.org', label: 'PEAC Core', external: true }
               ]} />
 
               <MobileNavSection title="Solutions" items={[
@@ -194,19 +198,14 @@ export default function NavigationHeader() {
                 { href: '/downloads', label: 'Downloads' }
               ]} />
 
-              <MobileNavSection title="Trace" items={[
-                { href: '/trace', label: 'Overview' },
-                { href: '/trace/pricing', label: 'Pricing' }
-              ]} />
-
               <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
                 Developers
               </Link>
-              <Link href="/demo" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
-                Demo
-              </Link>
               <Link href="/pricing" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
                 Pricing
+              </Link>
+              <Link href="/trace/demo" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
+                Demo
               </Link>
               <Link href="/trust" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
                 Trust
@@ -278,7 +277,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
   )
 }
 
-function NavDropdown({ label, items }: { label: string; items: Array<{ href: string; label: string }> }) {
+function NavDropdown({ label, items }: { label: string; items: Array<{ href: string; label: string; badge?: string; external?: boolean }> }) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -289,8 +288,9 @@ function NavDropdown({ label, items }: { label: string; items: Array<{ href: str
       onMouseLeave={() => setIsOpen(false)}
     >
       <button
+        type="button"
         aria-label={`${label} menu`}
-        aria-expanded={isOpen}
+        aria-expanded={isOpen ? 'true' : 'false'}
         aria-haspopup="true"
         style={{
           display: 'flex',
@@ -330,38 +330,107 @@ function NavDropdown({ label, items }: { label: string; items: Array<{ href: str
             zIndex: 'var(--z-dropdown)'
           }}
         >
-          {items.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              style={{
-                display: 'block',
-                padding: 'var(--space-3) var(--space-4)',
-                color: 'var(--gray-700)',
-                textDecoration: 'none',
-                fontSize: 'var(--text-sm)',
-                borderRadius: 'var(--radius-lg)',
-                transition: 'all var(--duration-200) var(--ease-out)'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--gray-100)'
-                e.currentTarget.style.color = 'var(--gray-900)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent'
-                e.currentTarget.style.color = 'var(--gray-700)'
-              }}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {items.map((item, index) => {
+            // Handle separator
+            if (item.href === 'separator') {
+              return (
+                <div
+                  key={`separator-${index}`}
+                  style={{
+                    height: '1px',
+                    background: 'var(--gray-200)',
+                    margin: 'var(--space-2) 0'
+                  }}
+                />
+              )
+            }
+
+            const linkContent = (
+              <>
+                <span>{item.label}</span>
+                {item.badge && (
+                  <span
+                    style={{
+                      marginLeft: 'auto',
+                      fontSize: 'var(--text-xs)',
+                      color: 'var(--gray-500)',
+                      background: 'var(--gray-100)',
+                      padding: '2px 6px',
+                      borderRadius: 'var(--radius-sm)',
+                      fontWeight: 500
+                    }}
+                  >
+                    {item.badge}
+                  </span>
+                )}
+              </>
+            )
+
+            if (item.external) {
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    padding: 'var(--space-3) var(--space-4)',
+                    color: 'var(--gray-700)',
+                    textDecoration: 'none',
+                    fontSize: 'var(--text-sm)',
+                    borderRadius: 'var(--radius-lg)',
+                    transition: 'all var(--duration-200) var(--ease-out)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--gray-100)'
+                    e.currentTarget.style.color = 'var(--gray-900)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent'
+                    e.currentTarget.style.color = 'var(--gray-700)'
+                  }}
+                >
+                  {linkContent}
+                </a>
+              )
+            }
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  padding: 'var(--space-3) var(--space-4)',
+                  color: 'var(--gray-700)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-sm)',
+                  borderRadius: 'var(--radius-lg)',
+                  transition: 'all var(--duration-200) var(--ease-out)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'var(--gray-100)'
+                  e.currentTarget.style.color = 'var(--gray-900)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent'
+                  e.currentTarget.style.color = 'var(--gray-700)'
+                }}
+              >
+                {linkContent}
+              </Link>
+            )
+          })}
         </div>
       )}
     </div>
   )
 }
 
-function MobileNavSection({ title, items }: { title: string; items: Array<{ href: string; label: string }> }) {
+function MobileNavSection({ title, items }: { title: string; items: Array<{ href: string; label: string; badge?: string; external?: boolean }> }) {
   return (
     <div>
       <h4 style={{
@@ -373,21 +442,65 @@ function MobileNavSection({ title, items }: { title: string; items: Array<{ href
         {title}
       </h4>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
-        {items.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            style={{
-              padding: 'var(--space-2) var(--space-3)',
-              color: 'var(--gray-600)',
-              textDecoration: 'none',
-              fontSize: 'var(--text-sm)',
-              borderRadius: 'var(--radius-md)'
-            }}
-          >
-            {item.label}
-          </Link>
-        ))}
+        {items.map((item) => {
+          const linkContent = (
+            <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+              <span>{item.label}</span>
+              {item.badge && (
+                <span
+                  style={{
+                    fontSize: 'var(--text-xs)',
+                    color: 'var(--gray-500)',
+                    background: 'var(--gray-100)',
+                    padding: '2px 6px',
+                    borderRadius: 'var(--radius-sm)',
+                    fontWeight: 500
+                  }}
+                >
+                  {item.badge}
+                </span>
+              )}
+            </span>
+          )
+
+          if (item.external) {
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  padding: 'var(--space-2) var(--space-3)',
+                  color: 'var(--gray-600)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-sm)',
+                  borderRadius: 'var(--radius-md)',
+                  display: 'block'
+                }}
+              >
+                {linkContent}
+              </a>
+            )
+          }
+
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              style={{
+                padding: 'var(--space-2) var(--space-3)',
+                color: 'var(--gray-600)',
+                textDecoration: 'none',
+                fontSize: 'var(--text-sm)',
+                borderRadius: 'var(--radius-md)',
+                display: 'block'
+              }}
+            >
+              {linkContent}
+            </Link>
+          )
+        })}
       </div>
     </div>
   )
