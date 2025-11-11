@@ -19,7 +19,7 @@ export default function ProductsBand() {
     },
     {
       name: 'Verify API',
-      description: 'Receipt verification and PEAC policy validation',
+      description: 'Receipt verification and PEAC policy validation. Built on PEAC Protocol.',
       href: '/products/verify',
       icon: Shield,
       badge: 'Beta',
@@ -30,7 +30,7 @@ export default function ProductsBand() {
     },
     {
       name: 'Gateway 402',
-      description: 'HTTP 402 payment gateway with PEAC receipts',
+      description: 'HTTP 402 payment gateway with PEAC receipts. Built on PEAC Protocol.',
       href: '/products/gateway-402',
       icon: Blocks,
       badge: 'Private beta',
