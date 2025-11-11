@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
-import HeroSection from '@/components/HeroSection'
+import TraceHeroSection from '@/components/TraceHeroSection'
+import PEACBand from '@/components/PEACBand'
 import VerifySection from '@/components/VerifySection'
 import SocialProofSection from '@/components/SocialProofSection'
 import ControlPlaneSection from '@/components/ControlPlaneSection'
@@ -9,15 +10,15 @@ import WorldClassHomePage from '@/components/WorldClassHomePage'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Originary | Receipts for the Agentic Web (HTTP 402, x402, PEAC)',
-  description: 'Add policy discovery, HTTP 402/x402 payments, and a cryptographic PEAC-Receipt to every response - provable access, settlement, and compliance.',
-  keywords: 'Originary, PEAC Protocol, HTTP 402, x402, AIPREF, ERC-8004, ACP, MCP, agentic web, AI commerce, verifiable receipts',
+  title: 'Originary Trace | AI crawler analytics and PEAC compliance',
+  description: 'See which AI crawlers access your site, what they took, and generate verifiable evidence. Built on the open PEAC Protocol.',
+  keywords: 'Originary Trace, AI crawler analytics, PEAC Protocol, GPTBot, ClaudeBot, compliance evidence, crawler tracking, HTTP 402, verifiable receipts',
   alternates: {
     canonical: 'https://www.originary.xyz/'
   },
   openGraph: {
-    title: 'Originary | Receipts for the Agentic Web',
-    description: 'Add policy discovery, HTTP 402/x402 payments, and a cryptographic PEAC-Receipt to every response - provable access, settlement, and compliance.',
+    title: 'Originary Trace | AI crawler analytics and PEAC compliance',
+    description: 'See which AI crawlers access your site, what they took, and generate verifiable evidence. Built on the open PEAC Protocol.',
     url: 'https://www.originary.xyz/',
     type: 'website',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -25,11 +26,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Receipts for the Agentic Web',
-    description: 'Add policy discovery, HTTP 402/x402 payments, and a cryptographic PEAC-Receipt to every response',
+    title: 'Originary Trace | AI crawler analytics',
+    description: 'See which AI crawlers access your site, what they took, and generate verifiable evidence.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
 }
@@ -39,7 +40,8 @@ export default function Page() {
     <>
       <NavigationHeader />
       <main id="main-content" role="main">
-        <HeroSection />
+        <TraceHeroSection />
+        <PEACBand />
         <VerifySection />
         <SocialProofSection />
         <ControlPlaneSection />
@@ -47,6 +49,30 @@ export default function Page() {
         <WorldClassHomePage />
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Originary Trace",
+            "applicationCategory": "SecurityApplication",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "softwareVersion": "0.1.0",
+            "operatingSystem": "Any",
+            "url": "https://www.originary.xyz/trace",
+            "description": "AI crawler analytics and compliance evidence for your website",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Originary"
+            }
+          })
+        }}
+      />
     </>
   )
 }
