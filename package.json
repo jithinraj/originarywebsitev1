@@ -9,7 +9,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check:emdash": "grep -R \"\\u2014\" app || true && test $(grep -R \"\\u2014\" app | wc -l) -eq 0"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
