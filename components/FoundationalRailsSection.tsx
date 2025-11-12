@@ -41,12 +41,14 @@ export default function FoundationalRailsSection() {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gridTemplateColumns: 'repeat(1, 1fr)',
             gap: 'var(--space-6)',
             marginBottom: 'var(--space-8)'
-          }}>
+          }}
+          className="pillars-grid">
             {pillars.map((pillar, index) => {
               const Icon = pillar.icon
+              const isLastItem = index === pillars.length - 1
               return (
                 <div
                   key={pillar.label}
@@ -58,7 +60,8 @@ export default function FoundationalRailsSection() {
                     borderRadius: 'var(--radius-xl)',
                     textAlign: 'center',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    gridColumn: isLastItem ? 'span 1' : 'auto'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-4px)'
@@ -116,6 +119,33 @@ export default function FoundationalRailsSection() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .pillars-grid {
+          grid-template-columns: repeat(1, 1fr) !important;
+        }
+
+        @media (min-width: 640px) {
+          .pillars-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+
+        @media (min-width: 768px) {
+          .pillars-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .pillars-grid {
+            grid-template-columns: repeat(4, 1fr) !important;
+          }
+          .pillar-card:nth-child(7) {
+            grid-column: 2 / 3;
+          }
+        }
+      `}</style>
     </section>
   )
 }
