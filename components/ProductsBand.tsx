@@ -89,15 +89,143 @@ export default function ProductsBand() {
             </p>
           </div>
 
-          {/* Products Grid */}
+          {/* Featured Product */}
+          {products.filter(p => p.featured).map((product) => {
+            const Icon = product.icon
+            return (
+              <div
+                key={product.name}
+                className="card"
+                style={{
+                  padding: 'var(--space-8)',
+                  background: 'var(--gradient-brand)',
+                  border: 'none',
+                  borderRadius: 'var(--radius-2xl)',
+                  transition: 'all 0.2s ease',
+                  marginBottom: 'var(--space-8)',
+                  display: 'grid',
+                  gridTemplateColumns: '1fr',
+                  gap: 'var(--space-6)',
+                  alignItems: 'center'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)'
+                  e.currentTarget.style.boxShadow = 'var(--shadow-2xl)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)'
+                  e.currentTarget.style.boxShadow = 'none'
+                }}
+              >
+                <div>
+                  {/* Badge */}
+                  {product.badge && (
+                    <div
+                      style={{
+                        display: 'inline-block',
+                        background: 'rgba(255, 255, 255, 0.2)',
+                        color: 'var(--white)',
+                        fontSize: 'var(--text-xs)',
+                        fontWeight: 600,
+                        padding: '4px 10px',
+                        borderRadius: 'var(--radius-full)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em',
+                        marginBottom: 'var(--space-4)'
+                      }}
+                    >
+                      {product.badge}
+                    </div>
+                  )}
+
+                  {/* Icon */}
+                  <div
+                    style={{
+                      width: '64px',
+                      height: '64px',
+                      borderRadius: 'var(--radius-lg)',
+                      background: 'rgba(255, 255, 255, 0.2)',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: 'var(--space-4)'
+                    }}
+                  >
+                    <Icon size={32} style={{ color: 'var(--white)' }} />
+                  </div>
+
+                  {/* Content */}
+                  <h3
+                    style={{
+                      fontSize: 'var(--text-3xl)',
+                      fontWeight: 700,
+                      marginBottom: 'var(--space-3)',
+                      color: 'var(--white)'
+                    }}
+                  >
+                    {product.name}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: 'var(--text-lg)',
+                      color: 'rgba(255, 255, 255, 0.9)',
+                      lineHeight: 1.6,
+                      marginBottom: 'var(--space-6)',
+                      maxWidth: '600px'
+                    }}
+                  >
+                    {product.description}
+                  </p>
+
+                  {/* Buttons */}
+                  {product.buttons && product.buttons.length > 0 && (
+                    <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
+                      {product.buttons.map((button: any, idx) => {
+                        const ButtonComponent = button.external ? 'a' : Link
+                        const buttonProps = button.external
+                          ? { href: button.href, target: '_blank', rel: 'noopener noreferrer' }
+                          : { href: button.href }
+
+                        return (
+                          <ButtonComponent
+                            key={idx}
+                            {...buttonProps}
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: 'var(--space-2)',
+                              padding: 'var(--space-3) var(--space-5)',
+                              fontSize: 'var(--text-base)',
+                              fontWeight: 600,
+                              borderRadius: 'var(--radius-md)',
+                              textDecoration: 'none',
+                              transition: 'all 0.2s ease',
+                              background: button.primary ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
+                              color: button.primary ? 'var(--brand-primary)' : 'var(--white)',
+                              border: button.primary ? 'none' : '1px solid rgba(255, 255, 255, 0.3)'
+                            }}
+                          >
+                            {button.label}
+                          </ButtonComponent>
+                        )
+                      })}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )
+          })}
+
+          {/* Other Products Grid */}
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gridTemplateColumns: 'repeat(1, 1fr)',
               gap: 'var(--space-6)'
             }}
+            className="products-grid"
           >
-            {products.map((product) => {
+            {products.filter(p => !p.featured).map((product) => {
               const Icon = product.icon
               return (
                 <div
@@ -276,6 +404,24 @@ export default function ProductsBand() {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .products-grid {
+          grid-template-columns: repeat(1, 1fr) !important;
+        }
+
+        @media (min-width: 768px) {
+          .products-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .products-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

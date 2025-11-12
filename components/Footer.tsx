@@ -94,13 +94,13 @@ export default function Footer() {
               }}
             >
               <SocialLink
-                href="https://peacprotocol.substack.com/p/building-next-web-together-standards-fair-ai-access"
+                href="/blog"
                 label="Read our blog"
               >
                 Blog
               </SocialLink>
               <Link
-                href="/ai"
+                href="/peac"
                 style={{
                   color: 'var(--gray-600)',
                   textDecoration: 'none',
@@ -115,7 +115,7 @@ export default function Footer() {
                   e.currentTarget.style.color = 'var(--gray-600)'
                 }}
               >
-                Originary & AI
+                PEAC Protocol
               </Link>
               <Link
                 href="/receipts"
@@ -134,24 +134,6 @@ export default function Footer() {
                 }}
               >
                 Receipts
-              </Link>
-              <Link
-                href="/demo"
-                style={{
-                  color: 'var(--gray-600)',
-                  textDecoration: 'none',
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 500,
-                  transition: 'color var(--duration-200) var(--ease-out)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = 'var(--brand-primary)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'var(--gray-600)'
-                }}
-              >
-                Interactive Demo
               </Link>
             </div>
           </div>
@@ -176,46 +158,55 @@ export default function Footer() {
           />
 
           <FooterSection
-            title="Solutions"
-            links={[
-              { href: '/originary-for-ai/', label: 'Originary for AI' },
-              { href: '/solutions/enterprises', label: 'Enterprises' },
-              { href: '/solutions/ai-builders', label: 'AI Builders' },
-              { href: '/solutions/publishers', label: 'Publishers' },
-              { href: '/solutions/api-providers', label: 'API Providers' },
-              { href: '/downloads', label: 'Downloads' }
-            ]}
-          />
-
-          <FooterSection
             title="Integrations"
             links={[
+              { href: '/integrations', label: 'All integrations' },
               { href: '/integrations/x402', label: 'HTTP 402' },
               { href: '/integrations/mcp', label: 'Model Context Protocol' },
               { href: '/integrations/acp', label: 'Agentic Commerce' },
-              { href: 'https://github.com/peacprotocol/peac', label: 'PEAC Protocol', external: true },
               { href: '/integrations/a2a', label: 'Agent-to-Agent' },
               { href: '/integrations/aipref', label: 'AI Preferences' }
             ]}
           />
 
           <FooterSection
-            title="Company"
+            title="Developers"
             links={[
-              { href: '/company/about', label: 'About' },
-              { href: '/company/contact', label: 'Contact' }
+              { href: '/developers', label: 'Documentation' },
+              { href: '/downloads', label: 'Downloads' },
+              { href: '/verify', label: 'Verify Demo' }
             ]}
           />
 
           <FooterSection
-            title="Follow Originary"
+            title="Open Source"
+            links={[
+              { href: '/peac', label: 'PEAC Protocol' },
+              { href: 'https://github.com/peacprotocol/peac', label: 'Spec & SDKs', external: true },
+              { href: 'https://github.com/peacprotocol/peac/blob/main/examples', label: 'Examples', external: true },
+              { href: 'https://github.com/peacprotocol/peac/blob/main/SECURITY.md', label: 'Security', external: true }
+            ]}
+          />
+
+          <FooterSection
+            title="Company"
+            links={[
+              { href: '/about', label: 'About' },
+              { href: '/contact', label: 'Contact' },
+              { href: '/trust', label: 'Trust Center' },
+              { href: '/legal/imprint', label: 'Imprint' }
+            ]}
+          />
+
+          <FooterSection
+            title="Follow"
             links={[
               { href: 'https://x.com/originaryx', label: 'X / Twitter', external: true },
               { href: 'https://www.linkedin.com/company/originary', label: 'LinkedIn', external: true },
-              { href: 'https://bsky.app/profile/originary.bsky.social', label: 'Bluesky', external: true },
-              { href: 'https://warpcast.com/originary', label: 'Farcaster', external: true },
               { href: 'https://github.com/originaryx', label: 'GitHub', external: true },
-              { href: 'https://www.originary.xyz/blog', label: 'Blog' }
+              { href: 'https://bsky.app/profile/originary.bsky.social', label: 'Bluesky', external: true },
+              { href: 'https://peacprotocol.substack.com', label: 'Substack', external: true },
+              { href: '/blog', label: 'Blog' }
             ]}
           />
         </div>
@@ -442,21 +433,6 @@ export default function Footer() {
                 Built on PEAC Protocol
               </a>
             </div>
-            <a
-              href="https://peacprotocol.org"
-              target="_blank"
-              rel="noopener"
-              style={{
-                color: 'var(--gray-500)',
-                fontSize: 'var(--text-xs)',
-                textDecoration: 'none',
-                transition: 'color 0.2s ease'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = 'var(--brand-primary)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'var(--gray-500)'}
-            >
-              Built on PEAC Protocol
-            </a>
           </div>
         </div>
       </div>

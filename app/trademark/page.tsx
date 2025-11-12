@@ -101,11 +101,13 @@ export default function Trademark() {
               <p>In the United States, <strong>&ldquo;Originary&rdquo;</strong> is used by <strong>Poem, Inc.</strong> to identify our open software and developer tools; <strong>Poem, Inc. is not affiliated with any other business using a similar name.</strong></p>
               <p style={{ marginTop: 'var(--space-3)' }}><em>This site refers only to Originary at <Link href="https://www.originary.xyz" style={{ color: 'var(--brand-primary)' }}>https://www.originary.xyz/</Link>.</em></p>
 
-              <h2>Open protocol notice</h2>
-              <p>We support the <strong>open-source PEAC protocol</strong>; those assets are governed by their own licenses.</p>
+              <h2>PEAC Protocol and open source</h2>
+              <p><strong>PEAC Protocol</strong> is an open-source standard (Apache-2.0) stewarded by Originary. <strong>Originary™</strong> is the commercial brand of Poem, Inc.</p>
+              <p style={{ marginTop: 'var(--space-3)' }}>Anyone can implement PEAC Protocol. Originary provides commercial products (Trace, Gateway, Studio, Verify API) built on PEAC.</p>
+              <p style={{ marginTop: 'var(--space-3)' }}>PEAC Protocol assets and specifications are governed by the Apache-2.0 license. See <Link href="/peac" style={{ color: 'var(--brand-primary)' }}>originary.xyz/peac</Link> for details.</p>
 
               <h2>Brand inquiries</h2>
-              <p><Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link></p>
+              <p>For trademark questions or brand partnerships: <Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link></p>
 
                 </div>
               </div>
@@ -114,8 +116,8 @@ export default function Trademark() {
                 <Link href="/terms" className="btn btn-secondary" style={{ marginRight: 'var(--space-4)' }}>
                   Terms of Service
                 </Link>
-                <Link href="/company/contact" className="btn btn-primary">
-                  Contact Us
+                <Link href="/contact" className="btn btn-primary">
+                  Contact us
                 </Link>
               </div>
             </div>

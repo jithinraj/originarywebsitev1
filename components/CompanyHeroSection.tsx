@@ -85,20 +85,21 @@ export default function CompanyHeroSection() {
               transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
           >
-            {/* Company Eyebrow */}
+            {/* Brand Eyebrow */}
             <div
               style={{
-                fontSize: 'var(--text-sm)',
-                color: 'var(--gray-500)',
-                fontWeight: 600,
-                letterSpacing: '0.05em',
-                marginBottom: 'var(--space-4)',
+                fontSize: 'var(--text-base)',
+                lineHeight: 1.7,
+                color: 'var(--gray-600)',
+                fontWeight: 500,
+                marginBottom: 'var(--space-8)',
+                maxWidth: '95%',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.05s'
               }}
             >
-              ORIGINARY™
+              Originary builds infrastructure rails and tools for the agentic web, solving <strong>Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance</strong>.
             </div>
 
             {/* Main Headline */}
@@ -115,7 +116,7 @@ export default function CompanyHeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s'
               }}
             >
-              Prove access, payment, and consent.
+              See every AI crawler on your site.
             </h1>
 
             {/* Subtitle */}
@@ -124,47 +125,14 @@ export default function CompanyHeroSection() {
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
                 color: 'var(--gray-600)',
-                marginBottom: 'var(--space-4)',
-                maxWidth: '90%',
+                marginBottom: 'var(--space-8)',
+                maxWidth: '95%',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              Products and open standards for policy, receipts, and AI-era web economics.
-            </p>
-
-            {/* Seven Pillars */}
-            <p
-              style={{
-                fontSize: 'var(--text-base)',
-                lineHeight: 1.7,
-                color: 'var(--gray-600)',
-                marginBottom: 'var(--space-4)',
-                maxWidth: '90%',
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.25s'
-              }}
-            >
-              PEAC-compatible rails for <strong>Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance</strong>.
-            </p>
-
-            {/* Technical Details Line */}
-            <p
-              style={{
-                fontSize: '11px',
-                lineHeight: 1.7,
-                color: 'var(--gray-400)',
-                marginBottom: 'var(--space-4)',
-                maxWidth: '90%',
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.26s',
-                fontWeight: 400
-              }}
-            >
-              Works with Trace · x402 · Stripe · AIPREF · ERC-8004 · Edge-friendly · No SDK lock-in
+              Originary Trace shows who accessed your content, what they took, and lets you control, block, or charge, built on the open PEAC Protocol.
             </p>
 
             {/* Trademark Proof Section */}

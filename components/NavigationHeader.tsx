@@ -96,30 +96,20 @@ export default function NavigationHeader() {
                 gap: 'var(--space-6)'
               }}
             >
-              <NavLink href="/trace">Trace</NavLink>
-
               <NavDropdown label="Products" items={[
-                { href: '/products/verify', label: 'Verify API', badge: 'Beta' },
-                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Private beta' },
-                { href: '/products/studio', label: 'Studio', badge: 'Waitlist' },
-                { href: '/products/adapters', label: 'Adapters' },
-                { href: 'separator', label: '' },
-                { href: 'https://peacprotocol.org', label: 'PEAC Core', external: true }
+                { href: '/trace', label: 'Trace', badge: 'Flagship' },
+                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Beta' },
+                { href: '/products/studio', label: 'Studio', badge: 'Private Beta' },
+                { href: '/products/verify', label: 'Verify API', badge: 'Waitlist' }
               ]} />
 
-              <NavDropdown label="Solutions" items={[
-                { href: '/originary-ai', label: 'Originary AI' },
-                { href: '/solutions/enterprises', label: 'Enterprises' },
-                { href: '/solutions/ai-builders', label: 'AI Builders' },
-                { href: '/solutions/publishers', label: 'Publishers' },
-                { href: '/solutions/api-providers', label: 'API Providers' },
-                { href: '/downloads', label: 'Downloads' }
-              ]} />
-
-              <NavLink href="/developers">Developers</NavLink>
               <NavLink href="/pricing">Pricing</NavLink>
-              <NavLink href="/trace/demo">Demo</NavLink>
-              <NavLink href="/trust">Trust</NavLink>
+              <NavLink href="/developers">Developers</NavLink>
+              <NavLink href="/peac">Open Source</NavLink>
+              <NavLink href="/integrations">Integrations</NavLink>
+              <NavLink href="/verify">Demo</NavLink>
+              <NavLink href="/blog">Blog</NavLink>
+              <NavLink href="/contact">Contact</NavLink>
             </div>
 
             <div
@@ -130,11 +120,8 @@ export default function NavigationHeader() {
                 gap: 'var(--space-3)'
               }}
             >
-              <Link href="/signin" className="btn btn-ghost">
-                Sign in
-              </Link>
-              <Link href="/company/contact" className="btn btn-primary">
-                Talk to sales
+              <Link href="/cloud" className="btn btn-primary">
+                Get started
               </Link>
             </div>
           </div>
@@ -177,38 +164,33 @@ export default function NavigationHeader() {
             }}
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-              <Link href="/trace" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-900)', textDecoration: 'none', fontWeight: 600 }}>
-                Trace
-              </Link>
-
               <MobileNavSection title="Products" items={[
-                { href: '/products/verify', label: 'Verify API', badge: 'Beta' },
-                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Private beta' },
-                { href: '/products/studio', label: 'Studio', badge: 'Waitlist' },
-                { href: '/products/adapters', label: 'Adapters' },
-                { href: 'https://peacprotocol.org', label: 'PEAC Core', external: true }
+                { href: '/trace', label: 'Trace', badge: 'Flagship' },
+                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Beta' },
+                { href: '/products/studio', label: 'Studio', badge: 'Private Beta' },
+                { href: '/products/verify', label: 'Verify API', badge: 'Waitlist' }
               ]} />
 
-              <MobileNavSection title="Solutions" items={[
-                { href: '/originary-ai', label: 'Originary AI' },
-                { href: '/solutions/enterprises', label: 'Enterprises' },
-                { href: '/solutions/ai-builders', label: 'AI Builders' },
-                { href: '/solutions/publishers', label: 'Publishers' },
-                { href: '/solutions/api-providers', label: 'API Providers' },
-                { href: '/downloads', label: 'Downloads' }
-              ]} />
-
-              <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
-                Developers
-              </Link>
               <Link href="/pricing" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
                 Pricing
               </Link>
-              <Link href="/trace/demo" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
+              <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
+                Developers
+              </Link>
+              <Link href="/peac" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
+                Open Source
+              </Link>
+              <Link href="/integrations" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
+                Integrations
+              </Link>
+              <Link href="/verify" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
                 Demo
               </Link>
-              <Link href="/trust" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
-                Trust
+              <Link href="/blog" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
+                Blog
+              </Link>
+              <Link href="/contact" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
+                Contact
               </Link>
 
               <div style={{
@@ -219,11 +201,11 @@ export default function NavigationHeader() {
                 paddingTop: 'var(--space-4)',
                 borderTop: '1px solid var(--gray-200)'
               }}>
-                <Link href="/signin" className="btn btn-ghost" style={{ justifyContent: 'center' }}>
-                  Sign in
+                <Link href="/cloud" className="btn btn-primary" style={{ justifyContent: 'center' }}>
+                  Get started
                 </Link>
-                <Link href="/company/contact" className="btn btn-primary" style={{ justifyContent: 'center' }}>
-                  Talk to sales
+                <Link href="/contact" className="btn btn-secondary" style={{ justifyContent: 'center' }}>
+                  Contact
                 </Link>
               </div>
             </div>
