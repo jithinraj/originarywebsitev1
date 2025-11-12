@@ -64,7 +64,7 @@ export default function AboutPage() {
                 The web was built for humans clicking links. AI agents need something different: clear policies, verifiable access, machine-readable consent, and economic rails that work at internet scale.
               </p>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-700)', lineHeight: 1.8 }}>
-                We're building that infrastructure—starting with <strong>PEAC Protocol™</strong> (the open standard) and commercial products like <strong>Trace</strong>, <strong>Gateway</strong>, <strong>Verify</strong>, and <strong>Studio</strong>.
+                We're building that infrastructure—starting with <strong>PEAC Protocol</strong> (the open standard) and commercial products like <strong>Trace</strong>, <strong>Gateway</strong>, <strong>Verify</strong>, and <strong>Studio</strong>.
               </p>
             </div>
 

@@ -2,6 +2,7 @@
 
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
+import OpenSourceBanner from '@/components/OpenSourceBanner'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Github } from 'lucide-react'
 
@@ -9,6 +10,7 @@ export default function TracePricing() {
   return (
     <div className="wrap">
       <NavigationHeader />
+      <OpenSourceBanner />
       <main style={{ paddingTop: '80px' }}>
         <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
@@ -218,7 +220,7 @@ export default function TracePricing() {
                   ))}
                 </div>
                 <Link
-                  href="/company/contact?topic=enterprise-trace"
+                  href="/contact"
                   className="btn btn-secondary"
                   style={{ width: '100%' }}
                 >

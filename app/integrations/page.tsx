@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Script from 'next/script'
 import NavigationHeader from '@/components/NavigationHeader'
+import OpenSourceBanner from '@/components/OpenSourceBanner'
 import Footer from '@/components/Footer'
 import { FileCode, Zap, MessageSquare, Settings, Brain, FileText } from 'lucide-react'
 
@@ -113,12 +115,14 @@ export default function IntegrationsPage() {
 
   return (
     <>
-      <NavigationHeader />
-      <script
+      <Script
+        id="integrations-json-ld"
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
+      <NavigationHeader />
+      <OpenSourceBanner />
       <main id="main-content" className="container" style={{ marginTop: 'var(--space-32)', marginBottom: 'var(--space-32)' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           {/* Breadcrumbs */}
@@ -321,14 +325,8 @@ export default function IntegrationsPage() {
               We build protocol integrations for enterprises. Contact us to discuss your requirements.
             </p>
             <Link
-              href="/company/contact/"
-              className="button button-primary"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 'var(--space-2)',
-                textDecoration: 'none',
-              }}
+              href="/contact"
+              className="btn btn-primary"
             >
               Contact us
             </Link>
