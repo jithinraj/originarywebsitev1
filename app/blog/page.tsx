@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Script from 'next/script'
 import NavigationHeader from '@/components/NavigationHeader'
+import OpenSourceBanner from '@/components/OpenSourceBanner'
 import Footer from '@/components/Footer'
 import { Calendar, User, ArrowRight, FileText } from 'lucide-react'
 
@@ -105,11 +107,14 @@ export default function BlogPage() {
 
   return (
     <div className="wrap">
-      <script
+      <Script
+        id="blog-json-ld"
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <NavigationHeader />
+      <OpenSourceBanner />
       <main style={{ paddingTop: '80px', minHeight: '100vh' }} id="main-content">
         {/* Hero Section */}
         <section className="section">
@@ -379,7 +384,7 @@ export default function BlogPage() {
                   <ArrowRight size={18} />
                 </a>
                 <Link
-                  href="/company/contact"
+                  href="/contact"
                   className="btn btn-lg btn-ghost"
                   style={{
                     color: 'var(--white)',

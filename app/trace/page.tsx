@@ -1,6 +1,8 @@
 'use client'
 
+import Script from 'next/script'
 import NavigationHeader from '@/components/NavigationHeader'
+import OpenSourceBanner from '@/components/OpenSourceBanner'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { Eye, Shield, Download, Zap, CheckCircle, ArrowRight, Github, Play, Database } from 'lucide-react'
@@ -84,11 +86,14 @@ export default function TracePage() {
 
   return (
     <>
-      <script
+      <Script
+        id="trace-json-ld"
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <NavigationHeader />
+      <OpenSourceBanner />
       <main style={{ paddingTop: '80px' }}>
         {/* Hero Section */}
         <section className="section" style={{ background: 'var(--gradient-mesh)', paddingTop: 'var(--space-24)', paddingBottom: 'var(--space-24)' }}>
