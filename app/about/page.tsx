@@ -140,7 +140,7 @@ export default function AboutPage() {
                 Company
               </h2>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-700)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
-                Originary™ is a brand of <strong>Poem, Inc.</strong>, a Delaware C-Corporation formed in October 2025.
+                Originary™ is a brand of <strong>Poem, Inc.</strong>
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                 <Link href="/contact" className="btn btn-primary btn-sm">

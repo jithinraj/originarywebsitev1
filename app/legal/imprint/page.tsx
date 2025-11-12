@@ -62,8 +62,7 @@ export default function ImprintPage() {
                     Legal Entity
                   </h3>
                   <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-900)', lineHeight: 1.7 }}>
-                    <strong>Poem, Inc.</strong><br />
-                    Delaware C-Corporation
+                    <strong>Poem, Inc.</strong>
                   </p>
                 </div>
 
