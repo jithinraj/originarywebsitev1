@@ -12,15 +12,15 @@ import WorldClassHomePage from '@/components/WorldClassHomePage'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Originary | AI infra & tools for AI Commerce & Agentic Web',
-  description: 'Originary provides tools and infrastructure for PEAC-enabled applications. Track AI crawlers with Trace, verify receipts, and build for the agentic web.',
-  keywords: 'Originary, PEAC Protocol, AI crawler tracking, Trace, HTTP 402, verifiable receipts, agentic web, x402, policy discovery',
+  title: 'Originary: Infrastructure for the Agentic Web',
+  description: 'Policy, payments, and verifiable receipts for AI agents. Originary builds Trace and commercial services on the open-source PEAC Protocol so you can see access, enforce terms, and get paid.',
+  keywords: 'Originary, PEAC Protocol, AI crawler tracking, Trace, HTTP 402, verifiable receipts, agentic web, policy discovery, agent infrastructure',
   alternates: {
     canonical: 'https://www.originary.xyz'
   },
   openGraph: {
-    title: 'Originary | Receipts, policy, and tooling for the agentic web',
-    description: 'Originary provides tools and infrastructure for PEAC-enabled applications. Track AI crawlers with Trace, verify receipts, and build for the agentic web.',
+    title: 'Originary: Infrastructure for the Agentic Web',
+    description: 'Policy, payments, and verifiable receipts for AI agents. Built on the open-source PEAC Protocol.',
     url: 'https://www.originary.xyz',
     type: 'website',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Tooling for the agentic web',
-    description: 'Originary provides tools and infrastructure for PEAC-enabled applications.',
+    title: 'Originary: Infrastructure for the Agentic Web',
+    description: 'Policy, payments, and verifiable receipts for AI agents. Built on PEAC Protocol.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -44,9 +44,19 @@ export default function Page() {
     "name": "Originary",
     "url": "https://www.originary.xyz",
     "logo": "https://www.originary.xyz/logo.png",
+    "description": "Infrastructure for the agentic web. Policy, payments, and verifiable receipts for AI agents.",
     "sameAs": [
-      "https://github.com/originaryx"
-    ]
+      "https://github.com/originaryx",
+      "https://x.com/originaryx",
+      "https://www.linkedin.com/company/originary",
+      "https://bsky.app/profile/originary.bsky.social",
+      "https://peacprotocol.substack.com"
+    ],
+    "founder": {
+      "@type": "Organization",
+      "name": "Poem, Inc.",
+      "url": "https://www.originary.xyz/legal/imprint"
+    }
   }
 
   return (

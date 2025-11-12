@@ -1,6 +1,15 @@
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+})
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: false,
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   eslint: {
     ignoreDuringBuilds: false,
   },
@@ -18,6 +27,24 @@ const nextConfig = {
         source: '/docs',
         destination: '/developers',
         permanent: true,
+      },
+      {
+        source: '/ai',
+        destination: '/developers',
+        permanent: false,
+        statusCode: 308,
+      },
+      {
+        source: '/open-source',
+        destination: '/peac',
+        permanent: false,
+        statusCode: 308,
+      },
+      {
+        source: '/trace/pricing',
+        destination: '/pricing#trace',
+        permanent: false,
+        statusCode: 308,
       },
       {
         source: '/sitemap_index.xml',
@@ -41,6 +68,7 @@ const nextConfig = {
       {
         source: '/(.*)',
         headers: [
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
         ],
@@ -50,6 +78,7 @@ const nextConfig = {
         headers: [
           { key: 'Content-Type', value: 'application/xml; charset=utf-8' },
           { key: 'Cache-Control', value: 'public, max-age=3600' },
+          { key: 'X-Robots-Tag', value: 'noindex' },
         ],
       },
       {
@@ -60,9 +89,17 @@ const nextConfig = {
         ],
       },
       {
+        source: '/.well-known/(.*)',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex' },
+        ],
+      },
+      {
         source: '/.well-known/peac.txt',
         headers: [
+          { key: 'Content-Type', value: 'text/plain; charset=utf-8' },
           { key: 'Cache-Control', value: 'public, max-age=0, s-maxage=600, must-revalidate' },
+          { key: 'X-Robots-Tag', value: 'noindex' },
         ],
       },
       {
@@ -70,6 +107,7 @@ const nextConfig = {
         headers: [
           { key: 'Content-Type', value: 'text/plain; charset=utf-8' },
           { key: 'Cache-Control', value: 'public, max-age=300, s-maxage=300' },
+          { key: 'X-Robots-Tag', value: 'noindex' },
         ],
       },
       {
@@ -78,6 +116,7 @@ const nextConfig = {
           { key: 'Content-Type', value: 'application/json; charset=utf-8' },
           { key: 'Cache-Control', value: 'public, max-age=300, immutable' },
           { key: 'Access-Control-Allow-Origin', value: '*' },
+          { key: 'X-Robots-Tag', value: 'noindex' },
         ],
       },
       {
@@ -86,10 +125,23 @@ const nextConfig = {
           { key: 'Content-Type', value: 'application/json; charset=utf-8' },
           { key: 'Cache-Control', value: 'public, max-age=300, immutable' },
           { key: 'Access-Control-Allow-Origin', value: '*' },
+          { key: 'X-Robots-Tag', value: 'noindex' },
+        ],
+      },
+      {
+        source: '/aipref.json',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex' },
+        ],
+      },
+      {
+        source: '/security.txt',
+        headers: [
+          { key: 'X-Robots-Tag', value: 'noindex' },
         ],
       },
     ]
   },
 }
 
-module.exports = nextConfig
+module.exports = withMDX(nextConfig)
