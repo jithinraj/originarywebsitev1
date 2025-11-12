@@ -433,21 +433,6 @@ export default function Footer() {
                 Built on PEAC Protocol
               </a>
             </div>
-            <a
-              href="https://peacprotocol.org"
-              target="_blank"
-              rel="noopener"
-              style={{
-                color: 'var(--gray-500)',
-                fontSize: 'var(--text-xs)',
-                textDecoration: 'none',
-                transition: 'color 0.2s ease'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = 'var(--brand-primary)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'var(--gray-500)'}
-            >
-              Built on PEAC Protocol
-            </a>
           </div>
         </div>
       </div>

@@ -127,7 +127,7 @@ export default function IntegrationsPage() {
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" style={{ marginBottom: 'var(--space-8)' }}>
-            <ol style={{ display: 'flex', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+            <ol style={{ display: 'flex', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--gray-600)', listStyle: 'none', padding: 0, margin: 0 }}>
               <li>
                 <Link href="/" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>
                   Home

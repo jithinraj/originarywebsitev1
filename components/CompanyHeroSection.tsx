@@ -99,7 +99,7 @@ export default function CompanyHeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.05s'
               }}
             >
-              Originary builds infrastructure rails and tools for the agentic web—solving <strong>Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance</strong>.
+              Originary builds infrastructure rails and tools for the agentic web, solving <strong>Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance</strong>.
             </div>
 
             {/* Main Headline */}
@@ -132,7 +132,7 @@ export default function CompanyHeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              Originary Trace shows who accessed your content, what they took, and lets you control, block, or charge—built on the open PEAC Protocol.
+              Originary Trace shows who accessed your content, what they took, and lets you control, block, or charge, built on the open PEAC Protocol.
             </p>
 
             {/* Trademark Proof Section */}

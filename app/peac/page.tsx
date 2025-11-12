@@ -337,7 +337,7 @@ export default function PeacPage() {
                   License & Use
                 </h3>
                 <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-                  Apache-2.0. No CLA required for small fixes; DCO accepted. PEAC is neutral and adapter-friendly—Originary is one implementation.
+                  Apache-2.0. No CLA required for small fixes; DCO accepted. PEAC is neutral and adapter-friendly, Originary is one implementation.
                 </p>
                 <a href="https://github.com/peacprotocol/peac/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm">
                   View License
