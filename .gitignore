@@ -81,6 +81,10 @@ tsconfig.tsbuildinfo
 CLAUDE.md
 RAZORPAY_FIX.md
 SECURITY_RAZORPAY.md
+NOTES-LOCAL.md
+CHANGELOG*.md
+scripts/check-meta.mjs
+scripts/check-tm.mjs
 scripts/capture-specimens.mjs
 scripts/capture-evidence.mjs
 scripts/evidence-urls.json
