@@ -109,10 +109,7 @@ const websiteJsonLd = {
 }
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Originary - Receipts for the Agentic Web',
-    template: '%s | Originary'
-  },
+  title: 'Originary: Infrastructure for the Agentic Web',
   description: 'Originary provides verifiable receipts for the agentic web. Add policy discovery, HTTP 402 payments, and PEAC-Receipts to every API response.',
   keywords: ['agentic web', 'orchestration protocol', 'AI coordination', 'PEAC protocol', 'HTTP 402', 'verifiable receipts', 'API policy', 'machine readable payments', 'AI transparency'],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],

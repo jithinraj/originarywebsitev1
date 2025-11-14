@@ -3,22 +3,22 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Publishers | Protect and monetize content with AIPREF & PEAC',
-  description: 'Set preferences for AI training and usage. Verify compliance with attribution requirements. Monetize content access through automated licensing and payment.',
-  keywords: 'content protection, AI training preferences, content monetization, automated licensing, attribution requirements, AIPREF, PEAC, publishers, content rights',
+  title: 'Publishers | AI Compliance and Content Protection with AIPREF | Originary',
+  description: 'AI compliance and AI provenance tracking for publishers. Set AI preferences with AIPREF and AI preference standard, verify AI compliance with attribution requirements, and monetize content through AI licensing and automated payments with PEAC.',
+  keywords: 'AI compliance, AI provenance tracking, AI licensing, content protection, AI preference standard, AIPREF, AI training preferences, content monetization, automated licensing, attribution requirements, PEAC, publishers, content rights',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Publishers | Protect and monetize content with AIPREF & PEAC',
-    description: 'Set preferences for AI training and usage. Verify compliance with attribution requirements. Monetize content access through automated licensing and payment.',
+    title: 'Publishers | AI Compliance and Content Protection | Originary',
+    description: 'AI compliance and AI provenance tracking for publishers. Set AI preferences, verify AI compliance with attribution requirements, and monetize content access through automated licensing.',
     url: 'https://www.originary.xyz/solutions/publishers',
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Publishers | Protect and monetize content with AIPREF & PEAC',
-    description: 'Set preferences for AI training and usage. Verify compliance with attribution requirements. Monetize content access through automated licensing and payment.',
+    title: 'Publishers | AI Compliance and Content Protection | Originary',
+    description: 'AI compliance and AI provenance tracking for publishers. Set AI preferences, verify AI compliance with attribution requirements, and monetize content access.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
@@ -54,7 +54,7 @@ export default function Publishers() {
                 <span className="text-gradient">Protect and Monetize Content</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--gray-600)', maxWidth: '800px', margin: '0 auto' }}>
-                Set preferences for AI training and usage. Verify compliance with attribution requirements. Monetize content access through automated licensing and payment.
+                AI compliance and AI provenance tracking for publishers. Set AI preferences for training and usage, verify AI compliance with attribution requirements, and monetize content access through automated licensing with AIPREF and PEAC.
               </p>
             </div>
           </div>
@@ -64,8 +64,11 @@ export default function Publishers() {
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <h2 style={{ marginBottom: 'var(--space-6)' }}>Content Control</h2>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>
-                Establish clear preferences for how AI systems can access, use, and attribute your content while creating new revenue streams.
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)', marginBottom: 'var(--space-4)' }}>
+                Establish clear preferences for how AI systems can access, use, and attribute your content while creating new revenue streams through AI licensing and AI commerce for publishers.
+              </p>
+              <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)' }}>
+                Use AIPREF and AI preference standard for machine-readable AI access preferences, enabling automated AI licensing and payment flows for your content.
               </p>
             </div>
 
@@ -192,8 +195,11 @@ export default function Publishers() {
                 <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--brand-primary)' }}>
                   Talk to our team
                 </a>
-                <a href="/products/verify/" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
-                  Learn about verification
+                <a href="/trace" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                  AI crawler analytics and bot tracking
+                </a>
+                <a href="/integrations/aipref" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                  AIPREF integration
                 </a>
               </div>
             </div>

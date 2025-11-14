@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import CompanyHeroSection from '@/components/CompanyHeroSection'
 import ProductsBand from '@/components/ProductsBand'
@@ -10,16 +11,17 @@ import ControlPlaneSection from '@/components/ControlPlaneSection'
 import StandardsIntegrations from '@/components/StandardsIntegrations'
 import WorldClassHomePage from '@/components/WorldClassHomePage'
 import Footer from '@/components/Footer'
+import { ArrowRight, BookOpen, Bot, Code, DollarSign } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Originary: Infrastructure for the Agentic Web',
-  description: 'Policy, payments, and verifiable receipts for AI agents. Track, control, and monetize AI access with Originary Trace on PEAC Protocol.',
+  title: 'Originary | Infrastructure for the Agentic Web',
+  description: 'Originary builds infrastructure rails and tools for the agentic web, with PEAC-Receipts, HTTP 402 payments, AI crawler analytics, and policy compliance for autonomous agents.',
   keywords: 'Originary, PEAC Protocol, AI crawler tracking, Trace, HTTP 402, verifiable receipts, agentic web, policy discovery, agent infrastructure',
   alternates: {
     canonical: '/'
   },
   openGraph: {
-    title: 'Originary: Infrastructure for the Agentic Web',
+    title: 'Originary | Infrastructure for the Agentic Web',
     description: 'Policy, payments, and verifiable receipts for AI agents. Built on the open-source PEAC Protocol.',
     url: 'https://www.originary.xyz',
     type: 'website',
@@ -68,6 +70,110 @@ export default function Page() {
       <NavigationHeader />
       <main id="main-content" role="main">
         <CompanyHeroSection />
+
+        {/* What is Originary Section */}
+        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
+          <div className="container">
+            <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+              <h2 style={{
+                fontSize: 'var(--text-3xl)',
+                fontWeight: 700,
+                marginBottom: 'var(--space-4)',
+                color: 'var(--gray-900)'
+              }}>
+                What is Originary
+              </h2>
+              <p style={{
+                fontSize: 'var(--text-lg)',
+                lineHeight: 1.7,
+                color: 'var(--gray-600)',
+                marginBottom: 'var(--space-4)'
+              }}>
+                Originary is AI infrastructure tools for the agentic web. We enable AI commerce and consent tracking, AI provenance tracking, and policy compliance through PEAC-Receipts - verifiable proof for every agent-to-agent transaction and API access.
+              </p>
+              <p style={{
+                fontSize: 'var(--text-lg)',
+                lineHeight: 1.7,
+                color: 'var(--gray-600)'
+              }}>
+                Whether you&rsquo;re building AI agents, running APIs, or managing content, Originary provides the infrastructure rails for agentic commerce and automated economy compliance.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Deep Dives Links Section */}
+        <section className="section" style={{ paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
+          <div className="container">
+            <h2 style={{
+              fontSize: 'var(--text-3xl)',
+              fontWeight: 700,
+              textAlign: 'center',
+              marginBottom: 'var(--space-12)',
+              color: 'var(--gray-900)'
+            }}>
+              Deep dives
+            </h2>
+            <div className="grid grid-2" style={{ gap: 'var(--space-6)', maxWidth: '1000px', margin: '0 auto' }}>
+              <Link href="/peac" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+                <Code size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  PEAC Protocol: open standard for the agentic web
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                  Apache-2.0 licensed protocol for policy, payments, and receipts across agent-to-agent transactions
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                  <span>Learn more</span>
+                  <ArrowRight size={16} />
+                </div>
+              </Link>
+
+              <Link href="/trace" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+                <Bot size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  AI crawler analytics and bot tracking
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                  See every AI bot, enforce policy, and track usage with Originary Trace
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                  <span>Explore Trace</span>
+                  <ArrowRight size={16} />
+                </div>
+              </Link>
+
+              <Link href="/integrations/x402" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+                <DollarSign size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  HTTP 402 and x402 payments
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                  Implement machine-payable APIs with HTTP 402 Payment Required and x402 headers
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                  <span>View integration guide</span>
+                  <ArrowRight size={16} />
+                </div>
+              </Link>
+
+              <Link href="/blog/aipref-by-ietf" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+                <BookOpen size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  AIPREF: AI preferences
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                  Learn about the IETF standard for declaring AI usage preferences and policy
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                  <span>Read article</span>
+                  <ArrowRight size={16} />
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <ProductsBand />
         <PEACBand />
         <FoundationalRailsSection />

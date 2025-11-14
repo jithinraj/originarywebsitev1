@@ -19,8 +19,8 @@ body::after,
   display: none !important;
 }
 
-/* Force all elements to be visible (except payment pages, Razorpay elements + children) */
-*:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *) {
+/* Force all elements to be visible (except payment pages) */
+*:not(.payment-page *):not(.payment-page) {
   opacity: 1 !important;
   visibility: visible !important;
   color: inherit !important;
@@ -444,18 +444,22 @@ p {
 /* Skip navigation */
 .skip-nav {
   position: fixed !important;
-  top: -40px !important;
-  left: 8px !important;
-  background: #2563eb !important;
-  color: #ffffff !important;
-  padding: 8px 16px !important;
-  border-radius: 4px !important;
+  top: 0.75rem !important;
+  left: 50% !important;
+  transform: translate(-50%, -200%) !important;
+  z-index: 9999 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 9999px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  font-size: 0.875rem !important;
+  color: #111827 !important;
   text-decoration: none !important;
   font-weight: 600 !important;
-  z-index: 1000 !important;
-  transition: top 0.3s !important;
+  transition: transform 0.15s ease-out !important;
 }
 
-.skip-nav:focus {
-  top: 8px !important;
+.skip-nav:focus-visible {
+  transform: translate(-50%, 0) !important;
 }

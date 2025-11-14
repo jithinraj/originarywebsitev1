@@ -115,7 +115,7 @@ export default function BlogPage() {
       />
       <NavigationHeader />
       <OpenSourceBanner />
-      <main style={{ paddingTop: '80px', minHeight: '100vh' }} id="main-content">
+      <main style={{ paddingTop: '140px', minHeight: '100vh' }} id="main-content">
         {/* Hero Section */}
         <section className="section">
           <div className="container">

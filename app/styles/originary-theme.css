@@ -131,35 +131,26 @@
 
 /* Skip navigation */
 .skip-nav {
-  position: absolute !important;
-  left: -9999px !important;
-  top: -9999px !important;
-  width: 1px !important;
-  height: 1px !important;
-  overflow: hidden !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  clip-path: inset(50%) !important;
-  white-space: nowrap !important;
-  z-index: -999 !important;
-}
-
-.skip-nav:focus,
-.skip-nav:active {
   position: fixed;
-  top: 6px;
-  left: 6px;
-  width: auto;
-  height: auto;
-  overflow: visible;
-  z-index: 10000;
-  background: var(--brand-primary, #635bff);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 4px;
+  top: 0.75rem;
+  left: 50%;
+  transform: translate(-50%, -200%);
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-size: 0.875rem;
+  color: #111827;
   text-decoration: none;
   font-weight: 600;
-  outline: 2px solid rgba(99, 91, 255, 0.3);
-  outline-offset: 2px;
+  transition: transform 0.15s ease-out;
+}
+
+/* Only show when reachable via keyboard */
+.skip-nav:focus-visible {
+  transform: translate(-50%, 0);
 }
 
 /* Layout wrapper */
@@ -2972,51 +2963,51 @@ html {
   background-color: #FAFAFA;
 }
 
-/* CRITICAL: Force all content to be visible (except payment pages, Razorpay elements + children) */
-*:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *) {
+/* CRITICAL: Force all content to be visible (except payment pages) */
+*:not(.payment-page *):not(.payment-page) {
   opacity: 1 !important;
   transform: none !important;
 }
 
-/* Fallback styles for animations that might not load (except payment pages and Razorpay) */
-.hero-copy:not(.payment-page *):not([class*="razorpay"]),
-.hero-showcase:not(.payment-page *):not([class*="razorpay"]),
-.logo-strip__label:not(.payment-page *):not([class*="razorpay"]),
-.logo-strip__grid:not(.payment-page *):not([class*="razorpay"]),
-.section-header:not(.payment-page *):not([class*="razorpay"]),
-.value-grid:not(.payment-page *):not([class*="razorpay"]),
-.bento-grid:not(.payment-page *):not([class*="razorpay"]),
-.section-lead:not(.payment-page *):not([class*="razorpay"]),
-.hero-content:not(.payment-page *):not([class*="razorpay"]),
-.hero-actions:not(.payment-page *):not([class*="razorpay"]),
-.hero-highlights:not(.payment-page *):not([class*="razorpay"]),
-.hero-metrics:not(.payment-page *):not([class*="razorpay"]) {
+/* Fallback styles for animations that might not load (except payment pages) */
+.hero-copy:not(.payment-page *),
+.hero-showcase:not(.payment-page *),
+.logo-strip__label:not(.payment-page *),
+.logo-strip__grid:not(.payment-page *),
+.section-header:not(.payment-page *),
+.value-grid:not(.payment-page *),
+.bento-grid:not(.payment-page *),
+.section-lead:not(.payment-page *),
+.hero-content:not(.payment-page *),
+.hero-actions:not(.payment-page *),
+.hero-highlights:not(.payment-page *),
+.hero-metrics:not(.payment-page *) {
   opacity: 1 !important;
   transform: none !important;
   visibility: visible !important;
   display: block !important;
 }
 
-/* Critical: Ensure all content is visible (except payment pages, Razorpay + children) */
-main:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
-section:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
-div:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
-h1:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
-h2:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
-h3:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
-p:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
-span:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
-button:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
-a:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *) {
+/* Critical: Ensure all content is visible (except payment pages) */
+main:not(.payment-page *):not(.payment-page),
+section:not(.payment-page *):not(.payment-page),
+div:not(.payment-page *):not(.payment-page),
+h1:not(.payment-page *):not(.payment-page),
+h2:not(.payment-page *):not(.payment-page),
+h3:not(.payment-page *):not(.payment-page),
+p:not(.payment-page *):not(.payment-page),
+span:not(.payment-page *):not(.payment-page),
+button:not(.payment-page *):not(.payment-page),
+a:not(.payment-page *):not(.payment-page) {
   opacity: 1 !important;
   visibility: visible !important;
 }
 
-/* Force visibility of any hidden elements (except payment pages, Razorpay + children) */
-[style*="opacity:0"]:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
-[style*="opacity: 0"]:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
-[style*="display:none"]:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *),
-[style*="display: none"]:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *) {
+/* Force visibility of any hidden elements (except payment pages) */
+[style*="opacity:0"]:not(.payment-page *):not(.payment-page),
+[style*="opacity: 0"]:not(.payment-page *):not(.payment-page),
+[style*="display:none"]:not(.payment-page *):not(.payment-page),
+[style*="display: none"]:not(.payment-page *):not(.payment-page) {
   opacity: 1 !important;
   display: block !important;
   visibility: visible !important;

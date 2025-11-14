@@ -4,11 +4,11 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'x402 Implementation Guide: HTTP 402 Payments for APIs, Apps & AI Agents - Originary',
-  description: 'A practical x402 tutorial with working code for Node, Next.js/Edge, and Cloudflare Workers. Learn the 402 flow, receipts basics, and how x402 compares to L402.',
+  title: 'x402 | HTTP 402 Payments and x402 Commerce Integration | Originary',
+  description: 'HTTP 402 commerce and x402 payments for machine-payable APIs. Implement HTTP 402 Payment Required with working code for Node, Next.js/Edge, and Cloudflare Workers.',
   openGraph: {
-    title: 'x402 (HTTP 402) - Implement Internet-Native Payments | Originary',
-    description: 'A practical x402 tutorial with working code for Node, Next.js/Edge, and Cloudflare Workers',
+    title: 'x402 | HTTP 402 Commerce and Payments Integration | Originary',
+    description: 'HTTP 402 commerce and x402 payments for machine-payable APIs. Practical tutorial with working code for agent-native payments.',
     url: 'https://www.originary.xyz/integrations/x402/',
     type: 'article'
   },
@@ -108,7 +108,7 @@ Cache-Control: no-store
             marginBottom: 'var(--space-16)',
             lineHeight: 1.6
           }}>
-            Implement internet-native payments in minutes
+            HTTP 402 commerce and x402 payments for machine-payable APIs
           </p>
 
           {/* Overview */}

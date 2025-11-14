@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Originary Trace | AI crawler analytics, policy & receipts (Built on PEAC)',
-  description: 'Distributed tracing for your content. Track AI crawler access, ensure PEAC Protocol compliance, and generate verifiable evidence.',
+  title: 'Trace | AI Crawler Analytics and Bot Tracking | Originary',
+  description: 'Track every AI crawler that accesses your content. Use Trace as your bot management and bot protection layer for AI crawlers. See which agents visit, what they take, and when.',
   alternates: {
     canonical: '/trace'
   },
   openGraph: {
-    title: 'Trace - AI Content Tracking | Originary',
-    description: 'Track which AI services accessed your site and what they took. Built on PEAC Protocol.',
+    title: 'Trace | AI Crawler Analytics and Bot Tracking | Originary',
+    description: 'Track every AI crawler that accesses your content. Use Trace as your bot management and bot protection layer for AI crawlers. See which agents visit, what they take, and when.',
     type: 'website',
     url: 'https://www.originary.xyz/trace',
   },

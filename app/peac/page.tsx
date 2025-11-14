@@ -5,14 +5,14 @@ import Footer from '@/components/Footer'
 import { CheckCircle, Github, Download, BookOpen, Code, Shield } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'PEAC Protocol: Open Standard for the Agentic Web | Originary',
-  description: 'Apache-2.0 standard for policy, payments, and verifiable receipts. Built by Originary; usable anywhere. Open source SDKs, spec, and examples.',
+  title: 'PEAC Protocol | Open Standard for the Agentic Web | Originary',
+  description: 'PEAC Protocol is the open standard for policy, payments, and receipts in the agentic web and agentic economy, covering HTTP 402 commerce, agent-to-agent transactions, and AI compliance.',
   alternates: {
     canonical: '/peac'
   },
   openGraph: {
-    title: 'PEAC Protocol: Open Standard for the Agentic Web',
-    description: 'Apache-2.0 standard for policy, payments, and verifiable receipts. Built by Originary; usable anywhere.',
+    title: 'PEAC Protocol | Open Standard for the Agentic Web',
+    description: 'PEAC Protocol is the open standard for policy, payments, and receipts in the agentic web and agentic economy, covering HTTP 402 commerce, agent-to-agent transactions, and AI compliance.',
     url: 'https://www.originary.xyz/peac',
     type: 'website',
   },
@@ -343,6 +343,109 @@ export default function PeacPage() {
                   View License
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Use PEAC with other standards */}
+        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)', background: 'var(--white)' }}>
+          <div className="container">
+            <h2
+              style={{
+                fontSize: 'var(--text-3xl)',
+                fontWeight: 700,
+                textAlign: 'center',
+                marginBottom: 'var(--space-4)',
+                color: 'var(--gray-900)'
+              }}
+            >
+              Use PEAC with other standards
+            </h2>
+            <p
+              style={{
+                textAlign: 'center',
+                fontSize: 'var(--text-lg)',
+                color: 'var(--gray-600)',
+                marginBottom: 'var(--space-16)',
+                maxWidth: '700px',
+                margin: '0 auto var(--space-16) auto'
+              }}
+            >
+              PEAC Protocol integrates with HTTP 402, x402, ACP, AIPREF, MCP, and A2A for seamless agentic commerce and agent-to-agent transactions
+            </p>
+
+            <div className="grid grid-3" style={{ gap: 'var(--space-6)' }}>
+              <Link href="/integrations/x402" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  HTTP 402 & x402
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                  HTTP 402 commerce and x402 receipts for machine-payable APIs
+                </p>
+                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                  View integration →
+                </div>
+              </Link>
+
+              <Link href="/integrations/acp" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  Agentic Commerce Protocol (ACP)
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                  Enable agentic commerce and agentic transactions with ACP
+                </p>
+                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                  View integration →
+                </div>
+              </Link>
+
+              <Link href="/integrations/aipref" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  AIPREF
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                  AI preference standard for policy discovery and consent
+                </p>
+                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                  View integration →
+                </div>
+              </Link>
+
+              <Link href="/integrations/mcp" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  Model Context Protocol (MCP)
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                  MCP receipts and tools for agent coordination
+                </p>
+                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                  View integration →
+                </div>
+              </Link>
+
+              <Link href="/integrations/a2a" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  A2A protocol
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                  Agent-to-agent transactions with verifiable receipts
+                </p>
+                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                  View integration →
+                </div>
+              </Link>
+
+              <Link href="/integrations" className="card" style={{ textDecoration: 'none', display: 'block', border: '2px dashed var(--gray-300)', background: 'transparent' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  View all integrations
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                  Explore all agentic web standards and protocols
+                </p>
+                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                  See more →
+                </div>
+              </Link>
             </div>
           </div>
         </section>

@@ -4,17 +4,23 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'A2A Attach Points : Originary',
-  description: 'Embed PEAC-Receipts in Agent2Agent protocol messages. Add verifiable proofs to agent-to-agent communication.',
+  title: 'A2A Attach Points | A2A Protocol and Agent to Agent Transactions | Originary',
+  description: 'A2A protocol documentation for agent to agent transactions and agent-to-agent communication. Learn how to embed PEAC-Receipts in A2A protocol messages for verifiable agent to agent transactions. Add verifiable proofs to agent-to-agent communication with A2A attach points.',
+  keywords: 'A2A protocol, agent to agent transactions, agent-to-agent communication, A2A attach points, Agent2Agent protocol, PEAC-Receipt, multi-agent systems, agent verification, agent receipts, A2A integration, agentic transactions, Google A2A',
   alternates: {
     canonical: '/docs/a2a/attach-points'
   },
   openGraph: {
-    title: 'A2A Attach Points',
-    description: 'Embed PEAC-Receipts in Agent2Agent protocol messages.',
+    title: 'A2A Attach Points | A2A Protocol and Agent to Agent Transactions',
+    description: 'A2A protocol documentation for agent to agent transactions and agent-to-agent communication. Embed PEAC-Receipts in A2A protocol messages for verifiable agent to agent transactions.',
     url: 'https://www.originary.xyz/docs/a2a/attach-points',
     siteName: 'Originary',
     type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'A2A Attach Points | A2A Protocol and Agent to Agent Transactions',
+    description: 'A2A protocol for agent to agent transactions. Embed PEAC-Receipts in A2A protocol messages for verifiable communication.',
   }
 }
 
@@ -54,7 +60,7 @@ export default function A2AAttachPointsDocPage() {
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
-              Embed PEAC-Receipts in Agent2Agent (A2A) protocol messages to provide verifiable proof of authorization, payment, and policy compliance in multi-agent systems.
+              A2A protocol documentation for agent to agent transactions and agent-to-agent communication. Learn how to embed PEAC-Receipts in A2A protocol messages to provide verifiable proof of authorization, payment, and policy compliance for agent to agent transactions in multi-agent systems.
             </p>
 
             <div className="card" style={{ marginBottom: 'var(--space-8)', textAlign: 'left' }}>
@@ -127,6 +133,52 @@ await originary.verify(message.metadata['peac-receipt'])`}
               </pre>
             </div>
 
+            {/* Related Resources */}
+            <div className="card" style={{ marginBottom: 'var(--space-8)', textAlign: 'left' }}>
+              <h2 style={{
+                fontSize: 'var(--text-2xl)',
+                fontWeight: 600,
+                marginBottom: 'var(--space-4)',
+                color: 'var(--gray-900)'
+              }}>
+                Related Resources
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+                <Link href="/integrations/a2a" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  A2A protocol integration overview →
+                </Link>
+                <Link href="/docs/receipts" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  PEAC-Receipts and AI usage receipts →
+                </Link>
+                <Link href="/peac" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  PEAC Protocol and Policy Layer →
+                </Link>
+                <Link href="/solutions/ai-builders" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  AI infrastructure tools for AI builders →
+                </Link>
+              </div>
+            </div>
+
             <div style={{
               background: 'var(--gray-50)',
               border: '1px solid var(--gray-200)',
@@ -143,7 +195,7 @@ await originary.verify(message.metadata['peac-receipt'])`}
                 Build verifiable agent networks
               </h2>
               <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                Add PEAC-Receipts to your A2A messages with Originary.
+                Add PEAC-Receipts to your A2A protocol messages and enable agent to agent transactions with Originary.
               </p>
               <Link href="/checkout/start" className="btn btn-primary">
                 Get Started for $1

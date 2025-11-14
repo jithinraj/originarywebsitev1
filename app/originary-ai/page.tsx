@@ -12,6 +12,22 @@ const faqJsonLd = {
   mainEntity: [
     {
       '@type': 'Question',
+      name: 'What are PEAC-Receipts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'PEAC-Receipts are cryptographically signed, verifiable proofs of API access, payment, consent, and attribution. Each receipt contains evidence of the transaction terms, payment confirmation, usage scope, and compliance metadata - all in a machine-readable format that AI agents and auditors can verify. They work across HTTP 402, x402, MCP, and A2A protocols.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How does Originary help with AI compliance and provenance?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Originary provides AI provenance tracking and AI compliance infrastructure through PEAC-Receipts. Every access generates a signed receipt containing consent flags, attribution data, retention windows, and payment proof. This creates an audit trail for regulatory compliance, proving what data was accessed, by whom, for what purpose, and under what terms - critical for AI governance and agentic commerce transactions.'
+      }
+    },
+    {
+      '@type': 'Question',
       name: 'Is this the same as originary.ai?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -22,27 +38,27 @@ const faqJsonLd = {
 }
 
 export const metadata: Metadata = {
-  title: 'Originary AI - Receipts for the Agentic Web',
-  description: 'Originary delivers verifiable Receipts for AI agents and APIs. Publish peac.txt, settle via x402 or Stripe/fiat/stablecoin, and prove access, consent, attribution, privacy & payment on every request.',
-  keywords: 'Originary AI, agentic web, AI receipts, x402, PEAC protocol, agent compliance',
+  title: 'Originary AI | Receipts for the Agentic Web',
+  description: 'Originary issues PEAC-Receipts for AI agents and APIs, proving access, consent, attribution, privacy, and payment across HTTP 402, x402, MCP, and A2A.',
+  keywords: 'Originary AI, agentic web, AI receipts, x402, PEAC protocol, agent compliance, agentic commerce, AI consent tracking',
   robots: 'index,follow',
   openGraph: {
-    title: 'Originary AI - Receipts for the Agentic Web',
-    description: 'Originary delivers verifiable Receipts for AI agents and APIs. Publish peac.txt, settle via x402 or Stripe/fiat/stablecoin, and prove access, consent, attribution, privacy & payment on every request.',
+    title: 'Originary AI | Receipts for the Agentic Web',
+    description: 'Originary issues PEAC-Receipts for AI agents and APIs, proving access, consent, attribution, privacy, and payment across HTTP 402, x402, MCP, and A2A.',
     url: 'https://www.originary.xyz/originary-ai',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',
       width: 1200,
       height: 630,
-      alt: 'Originary AI - Receipts for the Agentic Web'
+      alt: 'Originary AI | Receipts for the Agentic Web'
     }],
     type: 'website'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary AI - Receipts for the Agentic Web',
-    description: 'Originary delivers verifiable Receipts for AI agents and APIs. Publish peac.txt, settle via x402 or Stripe/fiat/stablecoin, and prove access, consent, attribution, privacy & payment on every request.',
+    title: 'Originary AI | Receipts for the Agentic Web',
+    description: 'Originary issues PEAC-Receipts for AI agents and APIs, proving access, consent, attribution, privacy, and payment across HTTP 402, x402, MCP, and A2A.',
     images: ['/og.jpg'],
     site: '@originaryinc',
     creator: '@originaryinc'
@@ -78,9 +94,18 @@ export default function OriginaryAI() {
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
                 color: 'var(--gray-600)',
-                marginBottom: 'var(--space-8)'
+                marginBottom: 'var(--space-6)'
               }}>
                 Publish peac.txt, settle via <strong>x402</strong> (or Stripe/credits/fiat/stablecoin/on-chain), and present a <strong>Receipt</strong> on every request - proof of access, consent, attribution, privacy, and payment.
+              </p>
+
+              <p style={{
+                fontSize: 'var(--text-lg)',
+                lineHeight: 1.7,
+                color: 'var(--gray-600)',
+                marginBottom: 'var(--space-8)'
+              }}>
+                Use Originary to instrument agentic commerce, AI consent tracking, and AI provenance tracking for every agent-to-agent transaction. Whether you&rsquo;re enabling agentic transactions or building for the automated economy, PEAC-Receipts provide verifiable proof of every interaction.
               </p>
 
               <div style={{
@@ -234,6 +259,63 @@ export default function OriginaryAI() {
                 </div>
               </div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="section" style={{ paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)', background: 'var(--white)' }}>
+          <div className="container">
+            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+              <h2 style={{
+                fontSize: 'var(--text-3xl)',
+                fontWeight: 700,
+                textAlign: 'center',
+                marginBottom: 'var(--space-12)',
+                color: 'var(--gray-900)'
+              }}>
+                Frequently Asked Questions
+              </h2>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
+                <div className="card">
+                  <h3 style={{
+                    fontSize: 'var(--text-xl)',
+                    fontWeight: 700,
+                    marginBottom: 'var(--space-3)',
+                    color: 'var(--gray-900)'
+                  }}>
+                    What are PEAC-Receipts?
+                  </h3>
+                  <p style={{
+                    fontSize: 'var(--text-base)',
+                    lineHeight: 1.7,
+                    color: 'var(--gray-600)',
+                    margin: 0
+                  }}>
+                    PEAC-Receipts are cryptographically signed, verifiable proofs of API access, payment, consent, and attribution. Each receipt contains evidence of the transaction terms, payment confirmation, usage scope, and compliance metadata - all in a machine-readable format that AI agents and auditors can verify. They work across HTTP 402, x402, MCP, and A2A protocols.
+                  </p>
+                </div>
+
+                <div className="card">
+                  <h3 style={{
+                    fontSize: 'var(--text-xl)',
+                    fontWeight: 700,
+                    marginBottom: 'var(--space-3)',
+                    color: 'var(--gray-900)'
+                  }}>
+                    How does Originary help with AI compliance and provenance?
+                  </h3>
+                  <p style={{
+                    fontSize: 'var(--text-base)',
+                    lineHeight: 1.7,
+                    color: 'var(--gray-600)',
+                    margin: 0
+                  }}>
+                    Originary provides AI provenance tracking and AI compliance infrastructure through PEAC-Receipts. Every access generates a signed receipt containing consent flags, attribution data, retention windows, and payment proof. This creates an audit trail for regulatory compliance, proving what data was accessed, by whom, for what purpose, and under what terms - critical for AI governance and agentic commerce transactions.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

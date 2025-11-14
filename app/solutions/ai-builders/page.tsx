@@ -4,27 +4,27 @@ import Footer from '@/components/Footer'
 import Mark from '@/components/Mark'
 
 export const metadata: Metadata = {
-  title: 'AI Builders | Prove compliance with creator preferences',
-  description: 'Build AI systems that respect creator rights, maintain consent, and provide verifiable interaction records. Cryptographic receipts for provable compliance.',
-  keywords: 'AI builders, compliance, creator rights, verifiable receipts, consent management, PEAC protocol, AI compliance, AIPREF, agent commerce',
+  title: 'AI Builders | AI Compliance and AI Provenance Tracking | Originary',
+  description: 'AI infrastructure tools and AI compliance for AI builders. Build AI systems with AI provenance tracking, AI receipts, verifiable interaction records, consent management, and cryptographic receipts for provable AI compliance.',
+  keywords: 'AI builders, AI compliance, AI provenance tracking, AI infrastructure tools, creator rights, verifiable receipts, consent management, PEAC protocol, AIPREF, agent commerce',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'AI Builders | Prove compliance with creator preferences',
-    description: 'Build AI systems that respect creator rights, maintain consent, and provide verifiable interaction records. Cryptographic receipts for provable compliance.',
+    title: 'AI Builders | AI Compliance and AI Provenance Tracking | Originary',
+    description: 'AI infrastructure tools for AI compliance and AI provenance tracking. Build AI systems with verifiable interaction records and cryptographic receipts.',
     url: 'https://www.originary.xyz/solutions/ai-builders',
     images: [{
       url: '/og.jpg',
       width: 1200,
       height: 630,
-      alt: 'Originary for AI Builders - Prove compliance with creator preferences'
+      alt: 'Originary for AI Builders - AI Compliance and AI Provenance Tracking'
     }],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Builders | Prove compliance with creator preferences',
-    description: 'Build AI systems that respect creator rights, maintain consent, and provide verifiable interaction records. Cryptographic receipts for provable compliance.',
+    title: 'AI Builders | AI Compliance and AI Provenance Tracking | Originary',
+    description: 'AI infrastructure tools for AI compliance and AI provenance tracking. Build AI systems with verifiable interaction records and cryptographic receipts.',
     images: ['/og.jpg'],
     site: '@originary',
     creator: '@originary',
@@ -43,7 +43,7 @@ export default function AIBuilders() {
         "@type": "Service",
         "@id": "https://www.originary.xyz/solutions/ai-builders#service",
         "name": "Originary for AI Builders",
-        "description": "Prove compliance with creator preferences and data policies. Build AI systems that respect rights, maintain consent, and provide verifiable interaction records.",
+        "description": "AI infrastructure tools for AI compliance and AI provenance tracking. Build AI systems that respect creator preferences, maintain consent, and provide verifiable interaction records.",
         "provider": {
           "@type": "Organization",
           "name": "Originary",
@@ -107,7 +107,7 @@ export default function AIBuilders() {
                 <span className="text-gradient"><Mark>Originary</Mark> for AI Builders</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--gray-600)', maxWidth: '800px', margin: '0 auto' }}>
-                Prove compliance with creator preferences and data policies. Build AI systems that respect rights, maintain consent, and provide verifiable interaction records.
+                AI infrastructure tools for AI compliance and AI provenance tracking. Build AI systems that respect creator preferences, maintain consent, and provide verifiable interaction records with cryptographic proof.
               </p>
             </div>
           </div>
@@ -481,11 +481,11 @@ if policy.allows_training():
                 <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--brand-primary)' }}>
                   Talk to our AI team
                 </a>
-                <a href="/downloads" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
-                  Download CLI & tools
+                <a href="/receipts" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                  AI usage receipts
                 </a>
-                <a href="/developers/" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
-                  View integration docs
+                <a href="/developers" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                  Developer tools for Originary and PEAC-Receipts
                 </a>
               </div>
             </div>

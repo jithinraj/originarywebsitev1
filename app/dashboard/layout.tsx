@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Dashboard : Originary',
-  description: 'Manage your Originary account, policies, and receipts',
+  title: 'Dashboard | Originary',
+  description: 'Sign in to your Originary dashboard to manage Trace, receipts, API keys, and agentic web infrastructure.',
   robots: {
     index: false,
     follow: true,

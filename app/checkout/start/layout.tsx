@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Start Plan Checkout : Originary',
-  description: '30-day access to Originary developer sandbox, verification tools, and Gateway 402 demo for $1 USD.',
+  title: 'Checkout | Originary',
+  description: 'Secure checkout to start using Originary Trace and PEAC-based infrastructure. Complete payment to activate your account.',
   robots: 'noindex,nofollow',
   alternates: {
     canonical: '/checkout/start'
