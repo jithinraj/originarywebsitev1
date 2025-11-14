@@ -123,7 +123,7 @@ export default function IntegrationsPage() {
       />
       <NavigationHeader />
       <OpenSourceBanner />
-      <main id="main-content" className="container" style={{ marginTop: 'var(--space-32)', marginBottom: 'var(--space-32)' }}>
+      <main id="main-content" className="container" style={{ paddingTop: '140px', marginBottom: 'var(--space-32)' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" style={{ marginBottom: 'var(--space-8)' }}>

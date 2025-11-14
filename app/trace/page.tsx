@@ -94,7 +94,7 @@ export default function TracePage() {
       />
       <NavigationHeader />
       <OpenSourceBanner />
-      <main style={{ paddingTop: '80px' }}>
+      <main style={{ paddingTop: '140px' }}>
         {/* Hero Section */}
         <section className="section" style={{ background: 'var(--gradient-mesh)', paddingTop: 'var(--space-24)', paddingBottom: 'var(--space-24)' }}>
           <div className="container">
