@@ -6,6 +6,9 @@ import Link from "next/link";
 export const metadata = {
   title: "x402 on FastAPI (Python) - Coming Soon - Originary",
   robots: { index: false, follow: true },
+  alternates: {
+    canonical: '/integrations/x402/python-fastapi'
+  }
 };
 
 export default function Page(){

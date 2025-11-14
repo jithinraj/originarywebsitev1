@@ -3,7 +3,7 @@ import StaticPageLayout from '@/components/StaticPageLayout'
 
 export const metadata: Metadata = {
   title: 'Company : Originary',
-  description: 'Originary is a product company building orchestration for the agentic web.',
+  description: 'Originary is a product company building orchestration for the agentic web. Learn about our infrastructure for intent routing, policy enforcement, and verified receipts across humans, agents, and machines. Contact our team or explore press resources.',
   keywords: 'agentic web, orchestration protocol, AI coordination, PEAC protocol',
   openGraph: {
     title: 'Company : Originary',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     images: ['https://www.originary.xyz/og.jpg'],
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/company',
+    canonical: '/company',
   },
 }
 

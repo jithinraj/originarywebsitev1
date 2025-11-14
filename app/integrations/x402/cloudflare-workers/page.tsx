@@ -10,7 +10,7 @@ import Link from "next/link";
 export const metadata = baseMeta({
   title: "x402 on Cloudflare Workers - Originary",
   description: "A tiny Worker that returns HTTP 402 with a payment hint. Deploy globally in seconds with Cloudflare Workers.",
-  canonical: "https://www.originary.xyz/integrations/x402/cloudflare-workers/"
+  canonical: '/integrations/x402/cloudflare-workers'
 });
 
 export default function Page(){

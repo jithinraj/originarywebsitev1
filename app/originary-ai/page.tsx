@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     creator: '@originaryinc'
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/ai'
+    canonical: '/originary-ai'
   }
 }
 

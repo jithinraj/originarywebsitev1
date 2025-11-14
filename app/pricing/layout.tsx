@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: 'trace pricing, AI crawler tracking, self-hosted, cloud pricing, PEAC Protocol',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/pricing'
+    canonical: '/pricing'
   },
   openGraph: {
     title: 'Pricing : Originary',

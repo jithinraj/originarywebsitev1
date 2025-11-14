@@ -115,7 +115,7 @@ export const metadata: Metadata = {
   },
   description: 'Originary provides verifiable receipts for the agentic web. Add policy discovery, HTTP 402 payments, and PEAC-Receipts to every API response.',
   keywords: ['agentic web', 'orchestration protocol', 'AI coordination', 'PEAC protocol', 'HTTP 402', 'verifiable receipts', 'API policy', 'machine readable payments', 'AI transparency'],
-  authors: [{ name: 'Originary', url: 'https://www.originary.xyz/' }],
+  authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
   formatDetection: {
@@ -123,14 +123,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.originary.xyz/'),
+  metadataBase: new URL('https://www.originary.xyz'),
   alternates: {
-    canonical: 'https://www.originary.xyz/',
+    canonical: '/',
   },
   openGraph: {
     title: 'Originary - Receipts for the Agentic Web',
     description: 'Originary provides verifiable receipts for the agentic web. Add policy discovery, HTTP 402 payments, and PEAC-Receipts to every API response.',
-    url: 'https://www.originary.xyz/',
+    url: 'https://www.originary.xyz',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',

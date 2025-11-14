@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import { Calendar, User, ArrowRight, ExternalLink, FileText, Code, Shield } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'AIPREF: A Common Language for AI Usage Preferences · Originary Blog',
+  title: 'AIPREF: AI Usage Preferences by IETF · Originary',
   description: 'Understanding the IETF AIPREF specification for expressing AI usage preferences through HTTP headers and robots.txt - what it is, how it works, and how to implement it today.',
   keywords: 'AIPREF, IETF, AI preferences, robots.txt, Content-Usage header, AI training, machine learning, content licensing, publisher control',
   authors: [{ name: 'Originary Team' }],
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/blog/aipref-by-ietf',
+    canonical: '/blog/aipref-by-ietf',
   },
 }
 

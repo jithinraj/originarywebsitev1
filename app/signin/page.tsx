@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/signin',
+    canonical: '/signin',
   },
 }
 

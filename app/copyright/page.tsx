@@ -6,10 +6,10 @@ import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Copyright Notice & Takedown : Originary',
-  description: 'Copyright notice and takedown process for Originary services.',
+  description: 'Copyright notice and takedown process for Originary services. Learn how to submit copyright infringement notices, required information for valid takedown requests, and our counter-notice procedures. Contact contact@originary.xyz for copyright matters.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/copyright',
+    canonical: '/copyright',
   },
 }
 

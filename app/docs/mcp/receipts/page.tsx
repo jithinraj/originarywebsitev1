@@ -6,6 +6,9 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'MCP Receipts Integration : Originary',
   description: 'Generate PEAC-Receipts for Model Context Protocol tool calls. Attach verifiable receipts to each MCP operation.',
+  alternates: {
+    canonical: '/docs/mcp/receipts'
+  },
   openGraph: {
     title: 'MCP Receipts Integration',
     description: 'Generate PEAC-Receipts for Model Context Protocol tool calls.',

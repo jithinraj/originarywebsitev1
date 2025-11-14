@@ -1,7 +1,17 @@
+import type { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { CheckCircle, Download, FileText, LayoutDashboard } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Order Confirmation : Originary',
+  description: 'Your order has been confirmed. Thank you for your purchase.',
+  robots: 'noindex,nofollow',
+  alternates: {
+    canonical: '/checkout/confirmation'
+  }
+}
 
 export default function Confirmation() {
   return (

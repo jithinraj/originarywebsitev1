@@ -6,6 +6,9 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Vercel Deployment Guide : Originary',
   description: 'Deploy Originary receipt verification on Vercel Edge Runtime. Use HTTP 402 gateway pattern with PEAC-Receipts on Vercel.',
+  alternates: {
+    canonical: '/docs/deploy/vercel'
+  },
   openGraph: {
     title: 'Vercel Deployment Guide',
     description: 'Deploy Originary on Vercel Edge Runtime with HTTP 402 receipts.',

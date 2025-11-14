@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "x402 - Payment-Required Protocol for APIs - Originary™",
   description: "x402 is a lightweight protocol pattern that uses HTTP 402 Payment Required responses with machine-readable JSON hints to enable agent-to-agent paid transactions.",
-  alternates: { canonical: "https://www.originary.xyz/glossary/x402/" },
+  alternates: { canonical: '/glossary/x402' },
   openGraph: {
     title: "x402 - Payment-Required Protocol for APIs",
     description: "Lightweight protocol pattern using HTTP 402 for agent-to-agent paid transactions",

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Originary terms of service governing your use of our platform and services.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/legal/terms',
+    canonical: '/legal/terms',
   },
 }
 

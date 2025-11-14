@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/trace/pricing',
+    canonical: '/trace/pricing'
   },
 }
 

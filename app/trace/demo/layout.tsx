@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: 'Explore a live Trace dashboard with synthetic AI crawler data. See how Trace identifies GPTBot, ClaudeBot, and other crawlers.',
   keywords: 'Trace demo, AI crawler demo, GPTBot tracking, ClaudeBot analytics, PEAC receipts',
   alternates: {
-    canonical: 'https://www.originary.xyz/trace/demo',
+    canonical: '/trace/demo'
   },
   openGraph: {
     title: 'Trace Demo | Originary',

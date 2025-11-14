@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Originary trademark guidelines and brand use policy for proper usage of our marks.',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/trademark',
+    canonical: '/trademark',
   },
 }
 

@@ -6,6 +6,9 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Cloudflare Workers Deployment : Originary',
   description: 'Deploy Originary PEAC-Receipt verification at the edge with Cloudflare Workers. Challenge with HTTP 402 and verify receipts in under 5ms.',
+  alternates: {
+    canonical: '/docs/deploy/cloudflare-worker'
+  },
   openGraph: {
     title: 'Cloudflare Workers Deployment',
     description: 'Deploy Originary at the edge with Cloudflare Workers.',

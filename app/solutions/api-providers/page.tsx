@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/solutions/api-providers',
+    canonical: '/solutions/api-providers',
   },
 }
 

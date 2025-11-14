@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "PEAC Protocol - Policy, Evidence, Access, Compliance",
   description: "PEAC is an open protocol for policy discovery and verifiable receipts. Enables agents to discover terms via .well-known/peac.txt and prove compliance with cryptographic PEAC-Receipt tokens.",
-  alternates: { canonical: "/glossary/peac/" },
+  alternates: { canonical: "/glossary/peac" },
   keywords: "PEAC protocol, policy discovery, verifiable receipts, PEAC-Receipt, compliance, JWS, agent commerce, .well-known",
   openGraph: {
     title: "PEAC Protocol - Policy, Evidence, Access, Compliance",
