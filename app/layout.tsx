@@ -190,6 +190,15 @@ export default function RootLayout({
         <Script id="originary-website-json-ld" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(websiteJsonLd)}
         </Script>
+        <Script id="microsoft-clarity" strategy="beforeInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "u5xxnbz8pn");
+          `}
+        </Script>
       </head>
       <body>
         <PerformanceMonitor />
@@ -212,17 +221,6 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-FPG3HTSN2R');
-          `}
-        </Script>
-
-        {/* Microsoft Clarity */}
-        <Script id="microsoft-clarity" strategy="afterInteractive">
-          {`
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "u5xxnbz8pn");
           `}
         </Script>
 
