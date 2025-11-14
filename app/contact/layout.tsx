@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Contact | Originary',
-  description: 'Get in touch with the Originary team. General inquiries, partnerships, support, and sales.',
+  description: 'Contact the Originary team for sales, partnerships, support, and press. Talk to us about PEAC Protocol, Trace, and agentic web infrastructure.',
   alternates: {
     canonical: '/contact'
   },
   openGraph: {
     title: 'Contact Originary',
-    description: 'Get in touch with the Originary team.',
+    description: 'Contact the Originary team for sales, partnerships, support, and press. Talk to us about PEAC Protocol, Trace, and agentic web infrastructure.',
     url: 'https://www.originary.xyz/contact',
     type: 'website',
   },

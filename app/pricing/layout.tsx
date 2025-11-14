@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Pricing : Originary',
-  description: 'Trace pricing: Start free with self-hosted OSS. Upgrade to Cloud for retention, alerts, signed bundles, benchmarking, SSO, and SLAs. Built on the open PEAC Protocol.',
+  title: 'Pricing | Originary',
+  description: 'Pricing for Originary Trace and agentic web infrastructure. Start with simple plans for AI crawler analytics, bot tracking, and PEAC-Receipts.',
   keywords: 'trace pricing, AI crawler tracking, self-hosted, cloud pricing, PEAC Protocol',
   robots: 'index,follow',
   alternates: {
     canonical: '/pricing'
   },
   openGraph: {
-    title: 'Pricing : Originary',
-    description: 'Trace pricing: Start free with self-hosted OSS. Upgrade to Cloud for retention, alerts, signed bundles, benchmarking, SSO, and SLAs.',
+    title: 'Pricing | Originary',
+    description: 'Pricing for Originary Trace and agentic web infrastructure. Start with simple plans for AI crawler analytics, bot tracking, and PEAC-Receipts.',
     url: 'https://www.originary.xyz/pricing',
     siteName: 'Originary',
     images: [{
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing : Originary',
-    description: 'Trace pricing: Start free with self-hosted OSS. Upgrade to Cloud for retention, alerts, and SLAs.',
+    title: 'Pricing | Originary',
+    description: 'Pricing for Originary Trace and agentic web infrastructure. Start with simple plans for AI crawler analytics, bot tracking, and PEAC-Receipts.',
     images: ['/og.jpg']
   }
 }

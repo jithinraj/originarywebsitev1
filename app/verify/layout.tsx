@@ -1,22 +1,22 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Verify | Offline JWS signature check',
-  description: 'Verify PEAC-Receipt signatures offline without API calls. Check JWS tokens, validate cryptographic signatures, and audit payment receipts with instant verification.',
+  title: 'Verify PEAC-Receipts | Receipt Verification Tool | Originary',
+  description: 'Verify PEAC-Receipts and Originary receipts. Check signatures, expiry, and policy compliance for AI usage receipts.',
   keywords: 'JWS verification, offline signature check, PEAC-Receipt, receipt verification, cryptographic verification, JWT validation, offline verification',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Verify | Offline JWS signature check',
-    description: 'Verify PEAC-Receipt signatures offline without API calls. Check JWS tokens, validate cryptographic signatures, and audit payment receipts with instant verification.',
+    title: 'Verify PEAC-Receipts | Receipt Verification Tool | Originary',
+    description: 'Verify PEAC-Receipts and Originary receipts. Check signatures, expiry, and policy compliance for AI usage receipts.',
     url: 'https://www.originary.xyz/verify',
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Verify | Offline JWS signature check',
-    description: 'Verify PEAC-Receipt signatures offline without API calls. Check JWS tokens, validate cryptographic signatures, and audit payment receipts.',
+    title: 'Verify PEAC-Receipts | Receipt Verification Tool | Originary',
+    description: 'Verify PEAC-Receipts and Originary receipts. Check signatures, expiry, and policy compliance for AI usage receipts.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
