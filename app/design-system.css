@@ -608,8 +608,8 @@ p {
   }
 }
 
-/* Force all elements to be visible (except payment pages and Razorpay elements + their children) */
-*:not(.payment-page *):not(.payment-page):not([class*="razorpay"]):not([id*="razorpay"]):not([class*="razorpay"] *):not([id*="razorpay"] *) {
+/* Force all elements to be visible (except payment pages) */
+*:not(.payment-page *):not(.payment-page) {
   opacity: 1 !important;
   visibility: visible !important;
 }
