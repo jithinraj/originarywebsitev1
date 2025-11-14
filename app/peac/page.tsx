@@ -411,7 +411,7 @@ export default function PeacPage() {
                 </div>
               </Link>
 
-              <Link href="/integrations/model-context-protocol-mcp" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+              <Link href="/integrations/mcp" className="card" style={{ textDecoration: 'none', display: 'block' }}>
                 <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
                   Model Context Protocol (MCP)
                 </h3>

@@ -4,11 +4,11 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Agent-to-Agent (A2A) Communication - Integration',
-  description: 'Originary enables secure agent-to-agent communication with PEAC-Receipt verification. Implement trusted A2A workflows with verifiable transaction history and policy enforcement.',
+  title: 'A2A Protocol | Agent to Agent Transactions Integration | Originary',
+  description: 'A2A protocol integration for agent to agent transactions and agent-to-agent receipts. Enable agentic transactions with verifiable A2A verification through PEAC-Receipts.',
   openGraph: {
-    title: 'Agent-to-Agent (A2A) Communication - Integration | Originary',
-    description: 'Originary enables secure agent-to-agent communication with PEAC-Receipt verification. Implement trusted A2A workflows with verifiable transaction history and policy enforcement.',
+    title: 'A2A Protocol | Agent-to-Agent Transactions | Originary',
+    description: 'A2A protocol for agent to agent transactions with agent-to-agent receipts. Secure agentic transactions with A2A verification.',
     url: 'https://www.originary.xyz/integrations/a2a/',
     type: 'article'
   },

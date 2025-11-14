@@ -4,11 +4,11 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Model Context Protocol (MCP) - Integration',
-  description: 'Originary integrates with Model Context Protocol to provide verifiable receipts for LLM tool calls. Enable trusted AI agent workflows with PEAC-Receipt verification for MCP servers.',
+  title: 'Model Context Protocol (MCP) | MCP Receipts and Tools Integration | Originary',
+  description: 'Model Context Protocol (MCP) integration with MCP receipts and MCP tools for agent coordination. Verifiable PEAC-Receipts for LLM tool calls and MCP agents in agentic workflows.',
   openGraph: {
-    title: 'Model Context Protocol (MCP) - Integration | Originary',
-    description: 'Originary integrates with Model Context Protocol to provide verifiable receipts for LLM tool calls. Enable trusted AI agent workflows with PEAC-Receipt verification for MCP servers.',
+    title: 'Model Context Protocol (MCP) | MCP Receipts and Agent Coordination | Originary',
+    description: 'MCP integration with MCP receipts, MCP tools, and agent coordination. Verifiable receipts for Model Context Protocol workflows.',
     url: 'https://www.originary.xyz/integrations/mcp/',
     type: 'article'
   },

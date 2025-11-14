@@ -4,11 +4,11 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'AI Preferences (AIPREF) - Integration',
-  description: 'Originary supports IETF AIPREF for machine-readable AI policy discovery. Enable agents to discover and comply with your AI access preferences automatically.',
+  title: 'AIPREF | AI Preferences and AI Preference Standard Integration | Originary',
+  description: 'AIPREF and AI preferences integration for AI preference standard compliance. Implement machine-readable AI preference schema with Originary for agentic web policy discovery.',
   openGraph: {
-    title: 'AI Preferences (AIPREF) - Integration | Originary',
-    description: 'Originary supports IETF AIPREF for machine-readable AI policy discovery. Enable agents to discover and comply with your AI access preferences automatically.',
+    title: 'AIPREF | AI Preferences Standard Integration | Originary',
+    description: 'AIPREF integration for AI preferences and AI preference standard. Machine-readable AI preference schema for the agentic web.',
     url: 'https://www.originary.xyz/integrations/aipref/',
     type: 'article'
   },

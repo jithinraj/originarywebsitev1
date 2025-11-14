@@ -7,12 +7,12 @@ import Footer from '@/components/Footer'
 import { FileCode, Zap, MessageSquare, Settings, Brain, FileText } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Integrations : Originary',
-  description: 'Browse integrations for x402 payments, A2A attribution, MCP receipts, ACP capabilities, AIPREF preferences, and PEAC protocol.',
-  keywords: 'x402, HTTP 402, MCP, A2A, ACP, AIPREF, ERC-8004, PEAC protocol, agent integrations, payment flows',
+  title: 'Integrations | Agentic Web Standards | Originary',
+  description: 'Originary integrations for agentic web standards and agentic commerce standards. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A with open protocols for the agentic web.',
+  keywords: 'x402, HTTP 402, MCP, A2A, ACP, AIPREF, PEAC protocol, agentic web standards, agentic commerce standards, agent integrations',
   openGraph: {
-    title: 'Integrations : Originary',
-    description: 'Browse integrations for x402 payments, A2A attribution, MCP receipts, ACP capabilities, AIPREF preferences, and PEAC protocol.',
+    title: 'Integrations | Agentic Web Standards | Originary',
+    description: 'Originary integrations for agentic web standards and agentic commerce standards. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A.',
     url: 'https://www.originary.xyz/integrations/',
     siteName: 'Originary',
     type: 'website',
@@ -96,8 +96,8 @@ export default function IntegrationsPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Originary Integrations',
-    description: 'Browse integrations for x402 payments, A2A attribution, MCP receipts, ACP capabilities, AIPREF preferences, and PEAC protocol.',
+    name: 'Originary Integrations | Agentic Web Standards',
+    description: 'Originary integrations for agentic web standards and agentic commerce standards including HTTP 402, x402, ACP, AIPREF, MCP, and A2A.',
     itemListElement: integrations.map((integration, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -167,7 +167,7 @@ export default function IntegrationsPage() {
             color: 'var(--gray-900)',
             lineHeight: 1.2,
           }}>
-            Build with Standards
+            Agentic Web Standards
           </h1>
 
           {/* Description */}
@@ -181,7 +181,7 @@ export default function IntegrationsPage() {
             marginRight: 'auto',
             lineHeight: 1.6,
           }}>
-            Originary implements open protocols for the agentic web. Choose from payment protocols, attribution systems, AI preference declarations, and verifiable receipts.
+            Originary implements agentic web standards and agentic commerce standards as open protocols for the agentic web. Choose from HTTP 402 payments, x402 commerce, agentic commerce protocols, AI preferences, agent coordination, and verifiable receipts.
           </p>
 
           {/* Status Legend */}
