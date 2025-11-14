@@ -13,7 +13,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Originary: Infrastructure for the Agentic Web',
-  description: 'Policy, payments, and verifiable receipts for AI agents. Originary builds Trace and commercial services on the open-source PEAC Protocol so you can see access, enforce terms, and get paid.',
+  description: 'Policy, payments, and verifiable receipts for AI agents. Track, control, and monetize AI access with Originary Trace on PEAC Protocol.',
   keywords: 'Originary, PEAC Protocol, AI crawler tracking, Trace, HTTP 402, verifiable receipts, agentic web, policy discovery, agent infrastructure',
   alternates: {
     canonical: 'https://www.originary.xyz'
