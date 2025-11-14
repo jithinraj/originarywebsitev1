@@ -4,22 +4,22 @@ import Footer from '@/components/Footer'
 import { Server, Zap, BarChart3, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'API Providers | Monetize agent access with HTTP 402 & x402',
-  description: 'Enable agents to discover and pay for your APIs through standardized protocols. HTTP 402, x402, PEAC receipts, and enterprise billing with compliance built-in.',
-  keywords: 'API monetization, HTTP 402, x402, agent payments, PEAC protocol, enterprise billing, API providers, agent commerce, policy discovery',
+  title: 'API Providers | AI Commerce and AI Infrastructure Tools with HTTP 402 | Originary',
+  description: 'AI commerce and AI infrastructure tools for API providers. Enable agents to discover and pay for your APIs through HTTP 402 commerce and x402 commerce. Build machine-payable APIs with AI commerce infrastructure, PEAC receipts, and enterprise billing.',
+  keywords: 'AI commerce, AI infrastructure tools, HTTP 402 commerce, x402 commerce, machine-payable APIs, API monetization, HTTP 402, x402, agent payments, PEAC protocol, enterprise billing, API providers, agentic commerce, policy discovery',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'API Providers | Monetize agent access with HTTP 402 & x402',
-    description: 'Enable agents to discover and pay for your APIs through standardized protocols. HTTP 402, x402, PEAC receipts, and enterprise billing with compliance built-in.',
+    title: 'API Providers | AI Commerce and AI Infrastructure Tools | Originary',
+    description: 'AI commerce and AI infrastructure tools for API providers. Enable agents to discover and pay for your APIs through HTTP 402 and x402. AI commerce infrastructure with PEAC receipts.',
     url: 'https://www.originary.xyz/solutions/api-providers',
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'API Providers | Monetize agent access with HTTP 402 & x402',
-    description: 'Enable agents to discover and pay for your APIs through standardized protocols. HTTP 402, x402, PEAC receipts, and enterprise billing.',
+    title: 'API Providers | AI Commerce and AI Infrastructure Tools | Originary',
+    description: 'AI commerce and AI infrastructure tools for API providers. Enable agents to discover and pay for your APIs through HTTP 402 and x402.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
@@ -71,7 +71,7 @@ export default function APIProviders() {
                   marginBottom: 'var(--space-8)'
                 }}
               >
-                Enable agents to discover and pay for your APIs through standardized protocols. HTTP 402, x402, PEAC receipts, and enterprise billing with compliance built-in.
+                AI commerce and AI infrastructure tools for API providers. Enable agents to discover and pay for your APIs through HTTP 402 and x402 commerce for APIs with agent-native payments. Build machine-payable APIs with AI commerce infrastructure, PEAC receipts, and enterprise billing.
               </p>
             </div>
           </div>
@@ -182,7 +182,10 @@ export default function APIProviders() {
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </a>
                 <a href="/products/gateway-402" className="btn btn-ghost">
-                  Learn about Gateway (402)
+                  HTTP 402 and x402 Gateway 402
+                </a>
+                <a href="/integrations/x402" className="btn btn-ghost">
+                  x402 integration guide
                 </a>
               </div>
             </div>

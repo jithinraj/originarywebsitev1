@@ -3,22 +3,22 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Enterprises | Enterprise agentic governance & policy management',
-  description: 'Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. Built for SOC 2, GDPR, and multi-region deployment.',
-  keywords: 'enterprise agentic governance, policy management, compliance reporting, SOC 2, GDPR, security controls, enterprise AI, agent governance',
+  title: 'Enterprises | AI Governance and AI Compliance for Agentic Infrastructure | Originary',
+  description: 'AI governance and AI compliance tools for enterprise agentic infrastructure. Comprehensive policy management, AI compliance reporting, and security controls built for SOC 2, GDPR, and multi-region deployment.',
+  keywords: 'AI governance, AI compliance, enterprise agentic governance, policy management, compliance reporting, SOC 2, GDPR, security controls, enterprise AI, agent governance',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Enterprises | Enterprise agentic governance & policy management',
-    description: 'Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. Built for SOC 2, GDPR, and multi-region deployment.',
+    title: 'Enterprises | AI Governance and AI Compliance | Originary',
+    description: 'AI governance and AI compliance tools for enterprise agentic infrastructure. Comprehensive policy management, AI compliance reporting, and security controls for enterprises.',
     url: 'https://www.originary.xyz/solutions/enterprises',
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enterprises | Enterprise agentic governance & policy management',
-    description: 'Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. Built for SOC 2, GDPR, and multi-region deployment.',
+    title: 'Enterprises | AI Governance and AI Compliance | Originary',
+    description: 'AI governance and AI compliance tools for enterprise agentic infrastructure. Comprehensive policy management, AI compliance reporting, and security controls.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
@@ -51,10 +51,10 @@ export default function Enterprises() {
                 ENTERPRISES
               </div>
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">Enterprise Agentic Governance</span>
+                <span className="text-gradient">AI Governance and AI Compliance for Enterprises</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--gray-600)', maxWidth: '800px', margin: '0 auto' }}>
-                Comprehensive policy management, compliance reporting, and security controls for enterprise agentic infrastructure. Built for SOC 2, GDPR, and multi-region deployment.
+                AI governance and AI compliance tools for enterprise agentic infrastructure. Comprehensive policy management, AI compliance reporting, and security controls built for SOC 2, GDPR, and multi-region deployment.
               </p>
             </div>
           </div>
@@ -268,8 +268,11 @@ export default function Enterprises() {
                 <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--brand-primary)' }}>
                   Contact Enterprise Sales
                 </a>
-                <a href="/products/studio/" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
-                  Explore Studio
+                <a href="/receipts" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                  Audit trails and receipts
+                </a>
+                <a href="/peac" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                  PEAC policy layer
                 </a>
               </div>
             </div>
