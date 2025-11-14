@@ -2,4 +2,3 @@ User-agent: *
 Disallow: /api/
 
 Sitemap: https://www.originary.xyz/sitemap-main.xml
-Sitemap: https://www.originary.xyz/sitemap.xml
