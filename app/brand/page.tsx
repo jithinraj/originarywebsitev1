@@ -51,6 +51,29 @@ export default function Brand() {
                   marginTop: 'var(--space-12)',
                   marginBottom: 'var(--space-6)'
                 }}>
+                  Open Source
+                </h2>
+                <p style={{ marginBottom: 'var(--space-6)' }}>
+                  <a
+                    href="https://github.com/peacprotocol/peac"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: 'var(--brand-primary)',
+                      textDecoration: 'none',
+                      fontWeight: 600
+                    }}
+                  >
+                    Download / View source on GitHub
+                  </a>
+                </p>
+
+                <h2 style={{
+                  fontSize: 'var(--text-2xl)',
+                  fontWeight: 600,
+                  marginTop: 'var(--space-12)',
+                  marginBottom: 'var(--space-6)'
+                }}>
                   Logo Downloads
                 </h2>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
