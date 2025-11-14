@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: 'Imprint | Originary',
   description: 'Company registration, registered agent, and contact information for Originary (Poem, Inc.)',
   robots: 'noindex',
+
+  alternates: {
+    canonical: '/legal/imprint'
+  }
 }
 
 export default function ImprintPage() {

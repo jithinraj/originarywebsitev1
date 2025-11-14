@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Quick tutorial for adding HTTP 402 Payment Required responses to an existing Express API. No SDK required, just standard HTTP and receipt verification.",
   keywords: "HTTP 402, Express.js, API monetization, x402, payment required, tutorial",
   authors: [{ name: "Jithin Raj & Originary Team" }],
-  alternates: { canonical: "https://www.originary.xyz/blog/adding-402-in-15-minutes/" },
+  alternates: { canonical: '/blog/adding-402-in-15-minutes' },
   openGraph: {
     title: "Add HTTP 402 to Your API in 15 Minutes",
     description: "Quick tutorial for adding HTTP 402 Payment Required responses to an existing Express API",

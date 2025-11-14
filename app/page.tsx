@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: 'Policy, payments, and verifiable receipts for AI agents. Track, control, and monetize AI access with Originary Trace on PEAC Protocol.',
   keywords: 'Originary, PEAC Protocol, AI crawler tracking, Trace, HTTP 402, verifiable receipts, agentic web, policy discovery, agent infrastructure',
   alternates: {
-    canonical: 'https://www.originary.xyz'
+    canonical: '/'
   },
   openGraph: {
     title: 'Originary: Infrastructure for the Agentic Web',

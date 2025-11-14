@@ -5,11 +5,11 @@ import Footer from "@/components/Footer";
 import { FileText, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "HTTP 402 for APIs: Making Payment-Required Responses Work - Originary™",
+  title: "HTTP 402 for APIs: Payment Required · Originary",
   description: "A practical guide to implementing HTTP 402 Payment Required in modern APIs. Learn the anatomy of a 402 response, receipt verification patterns, and how to avoid common pitfalls.",
   keywords: "HTTP 402, payment required, API monetization, x402, agent commerce, receipts, web payments",
   authors: [{ name: "Jithin Raj & Originary Team" }],
-  alternates: { canonical: "https://www.originary.xyz/blog/http-402-for-apis/" },
+  alternates: { canonical: '/blog/http-402-for-apis' },
   openGraph: {
     title: "HTTP 402 for APIs: Making Payment-Required Responses Work",
     description: "Practical guide to implementing HTTP 402 Payment Required in modern APIs",

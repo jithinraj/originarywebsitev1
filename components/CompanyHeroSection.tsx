@@ -169,9 +169,9 @@ export default function CompanyHeroSection() {
                   onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
                   onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
                 >
-                  View PEAC Protocol
+                  Learn, view source, explore &amp; download PEAC Protocol
                 </a>
-                {' · '}
+                <br />
                 Available for{' '}
                 <Link
                   href="/downloads"

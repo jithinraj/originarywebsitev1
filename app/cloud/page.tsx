@@ -6,9 +6,9 @@ import { CheckCircle, Zap, Shield, Cloud } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Get Trace Cloud | Originary',
-  description: 'Managed Trace with attested keys, verifiable compliance bundles, multi-property rollups, and enterprise SLAs.',
+  description: 'Managed Trace Cloud with attested keys, verifiable compliance bundles, multi-property rollups, and enterprise SLAs. Get AI crawler analytics without the operational overhead. Built on the open PEAC Protocol with webhooks, Slack integration, and uptime guarantees.',
   alternates: {
-    canonical: 'https://www.originary.xyz/cloud'
+    canonical: '/cloud'
   },
   openGraph: {
     title: 'Trace Cloud - Managed crawler analytics',

@@ -1,3 +1,17 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Performance Methodology : Originary',
+  description: 'Performance testing methodology and benchmarks for Originary services.',
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: '/resources/performance-methodology'
+  }
+}
+
 export default function PerformanceMethodology() {
   return (
     <div className="wrap">

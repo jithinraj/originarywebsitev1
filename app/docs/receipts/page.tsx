@@ -6,6 +6,9 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'PEAC-Receipt Documentation : Originary',
   description: 'Learn about PEAC-Receipt, the open standard for verifiable agent access receipts. Technical specification, implementation guide, and examples.',
+  alternates: {
+    canonical: '/docs/receipts'
+  },
   openGraph: {
     title: 'PEAC-Receipt Documentation',
     description: 'Learn about PEAC-Receipt, the open standard for verifiable agent access receipts.',

@@ -115,7 +115,7 @@ export const metadata: Metadata = {
   },
   description: 'Originary provides verifiable receipts for the agentic web. Add policy discovery, HTTP 402 payments, and PEAC-Receipts to every API response.',
   keywords: ['agentic web', 'orchestration protocol', 'AI coordination', 'PEAC protocol', 'HTTP 402', 'verifiable receipts', 'API policy', 'machine readable payments', 'AI transparency'],
-  authors: [{ name: 'Originary', url: 'https://www.originary.xyz/' }],
+  authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
   formatDetection: {
@@ -123,14 +123,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.originary.xyz/'),
+  metadataBase: new URL('https://www.originary.xyz'),
   alternates: {
-    canonical: 'https://www.originary.xyz/',
+    canonical: '/',
   },
   openGraph: {
     title: 'Originary - Receipts for the Agentic Web',
     description: 'Originary provides verifiable receipts for the agentic web. Add policy discovery, HTTP 402 payments, and PEAC-Receipts to every API response.',
-    url: 'https://www.originary.xyz/',
+    url: 'https://www.originary.xyz',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',
@@ -206,7 +206,7 @@ export default function RootLayout({
           {`
             (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
                 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             })(window, document, "clarity", "script", "u5xxnbz8pn");
           `}

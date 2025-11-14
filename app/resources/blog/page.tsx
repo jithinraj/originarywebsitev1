@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: 'agentic web blog, PEAC protocol insights, autonomous agents, tech updates',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/resources/blog',
+    canonical: '/resources/blog',
   },
 }
 

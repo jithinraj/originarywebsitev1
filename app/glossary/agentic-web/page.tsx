@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Agentic Web - Internet for Autonomous Agents",
   description: "The agentic web is the internet infrastructure optimized for autonomous agents. Machine-readable policies, payment protocols, and verifiable receipts enable agent-to-agent commerce at scale.",
-  alternates: { canonical: "/glossary/agentic-web/" },
+  alternates: { canonical: "/glossary/agentic-web" },
   keywords: "agentic web, autonomous agents, AI agents, agent commerce, machine-readable policies, PEAC, HTTP 402, x402, A2A, MCP",
   openGraph: {
     title: "Agentic Web - Internet for Autonomous Agents",

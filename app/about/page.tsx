@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'About | Originary',
   description: 'Originary builds infrastructure rails and tools for the agentic web, solving Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance.',
   alternates: {
-    canonical: 'https://www.originary.xyz/about'
+    canonical: '/about'
   },
   openGraph: {
     title: 'About Originary',

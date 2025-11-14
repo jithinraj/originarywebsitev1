@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     index: false,
     follow: true,
   },
+  alternates: {
+    canonical: '/status'
+  },
   openGraph: {
     title: 'Status : Originary',
     description: 'Real-time service health and performance metrics for Originary',

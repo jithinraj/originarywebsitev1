@@ -6,13 +6,13 @@ import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy : Originary',
-  description: 'Privacy Policy for Originary - minimal, consent-first data collection for receipts tooling.',
+  description: 'Privacy Policy for Originary - minimal, consent-first data collection for receipts tooling. Learn what data we collect, how we use it, your privacy rights, and our commitment to GPC (Global Privacy Control) support. Effective from 2025-07-27.',
   robots: {
     index: false,
     follow: true,
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/privacy',
+    canonical: '/privacy',
   },
 }
 

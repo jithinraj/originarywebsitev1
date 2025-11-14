@@ -6,6 +6,9 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'A2A Attach Points : Originary',
   description: 'Embed PEAC-Receipts in Agent2Agent protocol messages. Add verifiable proofs to agent-to-agent communication.',
+  alternates: {
+    canonical: '/docs/a2a/attach-points'
+  },
   openGraph: {
     title: 'A2A Attach Points',
     description: 'Embed PEAC-Receipts in Agent2Agent protocol messages.',

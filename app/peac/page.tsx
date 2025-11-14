@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'PEAC Protocol: Open Standard for the Agentic Web | Originary',
   description: 'Apache-2.0 standard for policy, payments, and verifiable receipts. Built by Originary; usable anywhere. Open source SDKs, spec, and examples.',
   alternates: {
-    canonical: 'https://www.originary.xyz/peac'
+    canonical: '/peac'
   },
   openGraph: {
     title: 'PEAC Protocol: Open Standard for the Agentic Web',

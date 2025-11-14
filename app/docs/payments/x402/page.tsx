@@ -6,6 +6,9 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'x402 Payment Integration : Originary',
   description: 'Learn how to integrate x402 stablecoin payments with Originary PEAC-Receipt. HTTP 402 status code for blockchain-based payments.',
+  alternates: {
+    canonical: '/docs/payments/x402'
+  },
   openGraph: {
     title: 'x402 Payment Integration',
     description: 'Integrate x402 stablecoin payments with Originary PEAC-Receipt.',

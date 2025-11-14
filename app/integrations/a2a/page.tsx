@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     type: 'article'
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/integrations/a2a/'
+    canonical: '/integrations/a2a'
   }
 }
 

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/solutions/ai-builders',
+    canonical: '/solutions/ai-builders',
   },
 }
 

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "HTTP 402 Payment Required - a practical guide for APIs - Originary",
   description: "What 402 means in practice, how to design the 402 payload, common pitfalls, and a minimal example.",
-  alternates: { canonical: "https://www.originary.xyz/guides/http-402/" }
+  alternates: { canonical: '/guides/http-402' }
 };
 
 export default function Page() {

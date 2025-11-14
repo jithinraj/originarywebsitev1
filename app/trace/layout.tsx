@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Originary Trace | AI crawler analytics, policy & receipts (Built on PEAC)',
   description: 'Distributed tracing for your content. Track AI crawler access, ensure PEAC Protocol compliance, and generate verifiable evidence.',
   alternates: {
-    canonical: 'https://www.originary.xyz/trace'
+    canonical: '/trace'
   },
   openGraph: {
     title: 'Trace - AI Content Tracking | Originary',

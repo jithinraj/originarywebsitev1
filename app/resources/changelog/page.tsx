@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: 'changelog, product updates, new features, PEAC protocol updates',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/resources/changelog',
+    canonical: '/resources/changelog',
   },
 }
 

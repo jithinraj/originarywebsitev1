@@ -10,7 +10,7 @@ import Link from "next/link";
 export const metadata = baseMeta({
   title: "x402 on Express (Node) - Originary",
   description: "Add HTTP 402 to your Express API in under 15 minutes. Minimal route implementation with verification tips for x402 receipts.",
-  canonical: "https://www.originary.xyz/integrations/x402/express-node/"
+  canonical: '/integrations/x402/express-node'
 });
 
 export default function Page(){

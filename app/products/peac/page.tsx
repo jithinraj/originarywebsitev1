@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/products/peac',
+    canonical: '/products/peac',
   },
 }
 

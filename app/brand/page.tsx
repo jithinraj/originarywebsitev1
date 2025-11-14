@@ -5,8 +5,11 @@ import Mark from '@/components/Mark'
 
 export const metadata: Metadata = {
   title: 'Brand Guidelines : Originary',
-  description: 'Brand guidelines and logo usage for Originary.',
+  description: 'Official Originary brand guidelines, logo downloads, wordmark usage standards, and visual identity resources. Download brand assets for media use and learn proper usage of the Originary trademark across all channels.',
   robots: 'index,follow',
+  alternates: {
+    canonical: '/brand'
+  }
 }
 
 export default function Brand() {
@@ -43,6 +46,29 @@ export default function Brand() {
                 </h2>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
                   Always use &quot;Originary&quot; (not &quot;originary&quot; or &quot;ORIGINARY&quot;) in written communications.
+                </p>
+
+                <h2 style={{
+                  fontSize: 'var(--text-2xl)',
+                  fontWeight: 600,
+                  marginTop: 'var(--space-12)',
+                  marginBottom: 'var(--space-6)'
+                }}>
+                  Open Source
+                </h2>
+                <p style={{ marginBottom: 'var(--space-6)' }}>
+                  <a
+                    href="https://github.com/peacprotocol/peac"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: 'var(--brand-primary)',
+                      textDecoration: 'none',
+                      fontWeight: 600
+                    }}
+                  >
+                    Download / View source on GitHub
+                  </a>
                 </p>
 
                 <h2 style={{

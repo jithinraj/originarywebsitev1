@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     images: ['https://www.originary.xyz/og.jpg'],
   },
   alternates: {
-    canonical: 'https://www.originary.xyz/receipts',
+    canonical: '/receipts',
   },
 }
 

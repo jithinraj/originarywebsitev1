@@ -10,7 +10,7 @@ import Link from "next/link";
 export const metadata = baseMeta({
   title: "x402 on Next.js / Edge Runtime - Originary",
   description: "Use Next.js route handlers to return a 402 challenge and unlock access after receipt verification. Works on Edge and Node runtimes.",
-  canonical: "https://www.originary.xyz/integrations/x402/nextjs/"
+  canonical: '/integrations/x402/nextjs'
 });
 
 export default function Page(){

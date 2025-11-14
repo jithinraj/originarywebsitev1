@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "ACP - Agent Commerce Protocol",
   description: "ACP (Agent Commerce Protocol) defines standards for agent-initiated commerce including pricing discovery, payment negotiation, and settlement. Core protocol for the agentic web economy.",
-  alternates: { canonical: "/glossary/acp/" },
+  alternates: { canonical: "/glossary/acp" },
   keywords: "ACP, Agent Commerce Protocol, agent payments, agent economy, automated commerce, PEAC, HTTP 402, agentic web, autonomous transactions",
   openGraph: {
     title: "ACP - Agent Commerce Protocol",
