@@ -5,12 +5,12 @@ import Link from 'next/link'
 import { ArrowRight, Receipt, Shield, Zap, Globe, BarChart, Scale, CheckCircle, Building, Lock, Clock, Users } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Cryptographic Receipts - Originary',
-  description: 'Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Transparent AI operations for leading companies.',
-  keywords: 'cryptographic receipts, AI verification, proof of use, blockchain receipts, AI transparency, enterprise AI, compliance',
+  title: 'PEAC-Receipts | Originary Receipts for AI Compliance',
+  description: 'PEAC-Receipts and Originary receipts provide AI usage receipts, AI compliance infrastructure, and AI provenance tracking. Verifiable proof for every AI transaction.',
+  keywords: 'PEAC receipts, Originary receipts, AI usage receipts, AI compliance, AI provenance tracking, cryptographic receipts, AI verification, proof of use',
   openGraph: {
-    title: 'Cryptographic Receipts - Originary',
-    description: 'Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Transparent AI operations for leading companies.',
+    title: 'PEAC-Receipts | Originary Receipts for AI Compliance',
+    description: 'PEAC-Receipts and Originary receipts provide AI usage receipts, AI compliance infrastructure, and AI provenance tracking. Verifiable proof for every AI transaction.',
     url: 'https://www.originary.xyz/receipts',
     siteName: 'Originary',
     images: [{ url: 'https://www.originary.xyz/og.jpg' }],
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cryptographic Receipts - Originary',
-    description: 'Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Transparent AI operations for leading companies.',
+    title: 'PEAC-Receipts | Originary Receipts for AI Compliance',
+    description: 'PEAC-Receipts and Originary receipts provide AI usage receipts, AI compliance infrastructure, and AI provenance tracking.',
     images: ['https://www.originary.xyz/og.jpg'],
   },
   alternates: {
@@ -55,20 +55,30 @@ export default function ReceiptsPage() {
                 }}
               >
                 <Receipt className="inline w-4 h-4 mr-1" />
-                CRYPTOGRAPHIC RECEIPTS
+                PEAC-RECEIPTS
               </span>
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">Verifiable AI Interactions</span>
+                <span className="text-gradient">Originary Receipts for AI Compliance</span>
               </h1>
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
                   color: 'var(--gray-600)',
                   lineHeight: 1.7,
+                  marginBottom: 'var(--space-6)'
+                }}
+              >
+                PEAC-Receipts are AI usage receipts that provide verifiable proof for every AI transaction. Enterprise-grade AI compliance infrastructure and AI provenance tracking built on cryptographically signed receipts.
+              </p>
+              <p
+                style={{
+                  fontSize: 'var(--text-lg)',
+                  color: 'var(--gray-600)',
+                  lineHeight: 1.7,
                   marginBottom: 'var(--space-8)'
                 }}
               >
-                Enterprise-grade cryptographic receipts for AI access, usage verification, and compliance. Every interaction generates tamper-proof evidence for transparent operations.
+                Every interaction generates Originary receipts with tamper-proof evidence of consent, attribution, payment, and compliance - critical for AI governance and the agentic web.
               </p>
 
               <div
@@ -102,7 +112,7 @@ export default function ReceiptsPage() {
                 marginBottom: 'var(--space-16)'
               }}
             >
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>How Cryptographic Receipts Work</h2>
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>How PEAC-Receipts Work</h2>
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
@@ -112,7 +122,7 @@ export default function ReceiptsPage() {
                   lineHeight: 1.7
                 }}
               >
-                Every AI interaction generates a cryptographically signed receipt that provides verifiable proof of consent, usage, and compliance.
+                Every AI interaction generates a cryptographically signed PEAC-Receipt that provides verifiable proof of consent, usage, and AI compliance. Originary receipts enable AI provenance tracking across the entire transaction lifecycle.
               </p>
             </div>
 

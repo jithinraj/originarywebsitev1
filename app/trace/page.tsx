@@ -40,7 +40,7 @@ export default function TracePage() {
     {
       icon: <Eye size={24} />,
       title: 'Complete Visibility',
-      description: 'Track every AI crawler that accesses your content. See which agents visit, what they take, and when.'
+      description: 'Track every AI crawler that accesses your content. Use Trace as your bot management and bot protection layer for AI crawlers. See which agents visit, what they take, and when.'
     },
     {
       icon: <Shield size={24} />,
@@ -647,6 +647,63 @@ go install ./tailer
                 <Github size={18} />
                 View full documentation
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="section" style={{ background: 'var(--gray-50)' }}>
+          <div className="container">
+            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+              <h2 style={{
+                fontSize: 'var(--text-3xl)',
+                fontWeight: 700,
+                textAlign: 'center',
+                marginBottom: 'var(--space-12)',
+                color: 'var(--gray-900)'
+              }}>
+                Frequently Asked Questions
+              </h2>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
+                <div className="card">
+                  <h3 style={{
+                    fontSize: 'var(--text-xl)',
+                    fontWeight: 700,
+                    marginBottom: 'var(--space-3)',
+                    color: 'var(--gray-900)'
+                  }}>
+                    Can I use Originary Trace as a bot tracker or bot protection tool?
+                  </h3>
+                  <p style={{
+                    fontSize: 'var(--text-base)',
+                    lineHeight: 1.7,
+                    color: 'var(--gray-600)',
+                    margin: 0
+                  }}>
+                    Yes. Originary Trace functions as comprehensive AI crawler analytics and bot tracking infrastructure. It provides bot management and bot protection capabilities by identifying all AI crawlers accessing your content, enforcing PEAC Protocol policies, and generating verifiable evidence. Use Trace as your bot tracker to monitor AI scraping, detect policy violations, and control access to your data - all while maintaining compliance through PEAC-Receipts.
+                  </p>
+                </div>
+
+                <div className="card">
+                  <h3 style={{
+                    fontSize: 'var(--text-xl)',
+                    fontWeight: 700,
+                    marginBottom: 'var(--space-3)',
+                    color: 'var(--gray-900)'
+                  }}>
+                    What makes Trace different from other bot management tools?
+                  </h3>
+                  <p style={{
+                    fontSize: 'var(--text-base)',
+                    lineHeight: 1.7,
+                    color: 'var(--gray-600)',
+                    margin: 0
+                  }}>
+                    Trace combines AI crawler analytics with verifiable compliance evidence through PEAC Protocol. Unlike traditional bot protection tools, Trace generates cryptographically signed receipts for every access, providing audit trails for AI compliance and bot management. It tracks not just who accessed your content, but what they took, under what terms, and with what consent - critical for the agentic web and AI governance.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

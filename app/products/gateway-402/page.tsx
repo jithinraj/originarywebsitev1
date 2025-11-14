@@ -6,13 +6,13 @@ import { ArrowRight, CheckCircle, CreditCard, Shield, ExternalLink, Download } f
 
 export const metadata: Metadata = {
   title: 'Gateway 402 | HTTP 402 & x402 payments for APIs',
-  description: 'Enterprise HTTP 402 Payment Required gateway with x402 protocol support. Enable autonomous agents to securely purchase API access through standardized payment protocols.',
-  keywords: 'HTTP 402, x402, payment gateway, API payments, policy enforcement, enterprise payments, agent commerce',
+  description: 'HTTP 402 commerce gateway for machine-payable APIs. Enable HTTP 402 payments and x402 commerce for agentic economy use cases with standardized payment protocols.',
+  keywords: 'HTTP 402, x402, payment gateway, API payments, policy enforcement, enterprise payments, agent commerce, HTTP 402 commerce, x402 commerce',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'Gateway 402 | HTTP 402 & x402 payments for APIs',
-    description: 'Enterprise HTTP 402 Payment Required gateway with x402 protocol support. Enable autonomous agents to securely purchase API access through standardized payment protocols.',
+    description: 'HTTP 402 commerce gateway for machine-payable APIs. Enable HTTP 402 payments and x402 commerce for agentic economy use cases.',
     url: 'https://www.originary.xyz/products/gateway-402',
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Gateway 402 | HTTP 402 & x402 payments for APIs',
-    description: 'Enterprise HTTP 402 Payment Required gateway with x402 protocol support. Enable autonomous agents to securely purchase API access.',
+    description: 'HTTP 402 commerce gateway for machine-payable APIs. Enable HTTP 402 payments and x402 commerce for agentic economy use cases.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
@@ -141,11 +141,22 @@ export default function Gateway402() {
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
                 color: 'var(--gray-600)',
+                marginBottom: 'var(--space-6)',
+                maxWidth: '900px',
+                margin: '0 auto var(--space-6) auto'
+              }}>
+                Enterprise-grade HTTP 402 Payment Required gateway with multi-rail settlement support. Enable autonomous agents to securely purchase access to your APIs, content, and services through standardized payment protocols.
+              </p>
+
+              <p style={{
+                fontSize: 'var(--text-lg)',
+                lineHeight: 1.7,
+                color: 'var(--gray-600)',
                 marginBottom: 'var(--space-8)',
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
               }}>
-                Enterprise-grade HTTP 402 Payment Required gateway with multi-rail settlement support. Enable autonomous agents to securely purchase access to your APIs, content, and services through standardized payment protocols.
+                Enable HTTP 402 commerce for AI agents and automated economy use cases. Gateway 402 brings x402 commerce to your infrastructure with machine-payable APIs, agent-native payments, and PEAC-Receipts for every transaction.
               </p>
 
               <div style={{
