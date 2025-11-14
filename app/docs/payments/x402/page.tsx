@@ -4,17 +4,23 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'x402 Payment Integration : Originary',
-  description: 'Learn how to integrate x402 stablecoin payments with Originary PEAC-Receipt. HTTP 402 status code for blockchain-based payments.',
+  title: 'x402 Integration | HTTP 402 Examples and HTTP 402 for APIs | Originary',
+  description: 'HTTP 402 examples and HTTP 402 for APIs with x402 payments and x402 integration. Learn how to implement x402 stablecoin payments with Originary PEAC-Receipts. HTTP 402 payment flows with blockchain-based x402 integration for machine-payable APIs.',
+  keywords: 'HTTP 402 examples, HTTP 402 for APIs, x402 payments, x402 integration, x402 protocol, HTTP 402 status code, stablecoin payments, blockchain payments, PEAC-Receipt, machine-payable APIs, HTTP 402 payment required, agent payments, x402 stablecoin',
   alternates: {
     canonical: '/docs/payments/x402'
   },
   openGraph: {
-    title: 'x402 Payment Integration',
-    description: 'Integrate x402 stablecoin payments with Originary PEAC-Receipt.',
+    title: 'x402 Integration | HTTP 402 Examples and HTTP 402 for APIs',
+    description: 'HTTP 402 examples and HTTP 402 for APIs with x402 payments and x402 integration. Implement x402 stablecoin payments with PEAC-Receipts.',
     url: 'https://www.originary.xyz/docs/payments/x402',
     siteName: 'Originary',
     type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'x402 Integration | HTTP 402 Examples and HTTP 402 for APIs',
+    description: 'HTTP 402 examples and HTTP 402 for APIs with x402 payments. Implement x402 stablecoin payments with PEAC-Receipts.',
   }
 }
 
@@ -54,7 +60,7 @@ export default function X402DocPage() {
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
-              Integrate x402 stablecoin payments with Originary to enable blockchain-based HTTP 402 payments that generate verifiable PEAC-Receipts.
+              HTTP 402 examples and HTTP 402 for APIs using x402 payments and x402 integration. Learn how to implement blockchain-based x402 stablecoin payments with Originary to build machine-payable APIs that generate verifiable PEAC-Receipts.
             </p>
 
             <div className="card" style={{ marginBottom: 'var(--space-8)', textAlign: 'left' }}>
@@ -125,6 +131,52 @@ res.json({ content: protectedData })`}
               </pre>
             </div>
 
+            {/* Related Resources */}
+            <div className="card" style={{ marginBottom: 'var(--space-8)', textAlign: 'left' }}>
+              <h2 style={{
+                fontSize: 'var(--text-2xl)',
+                fontWeight: 600,
+                marginBottom: 'var(--space-4)',
+                color: 'var(--gray-900)'
+              }}>
+                Related Resources
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+                <Link href="/integrations/x402" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  x402 integration guide →
+                </Link>
+                <Link href="/products/gateway-402" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  HTTP 402 and x402 Gateway 402 →
+                </Link>
+                <Link href="/solutions/api-providers" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  HTTP 402 commerce for API providers →
+                </Link>
+                <Link href="/peac" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  PEAC Protocol and Policy Layer →
+                </Link>
+              </div>
+            </div>
+
             <div style={{
               background: 'var(--gray-50)',
               border: '1px solid var(--gray-200)',
@@ -141,7 +193,7 @@ res.json({ content: protectedData })`}
                 Ready to accept stablecoin payments?
               </h2>
               <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                Start accepting x402 payments with Originary today.
+                Start accepting x402 payments and build HTTP 402 for APIs with Originary today.
               </p>
               <Link href="/checkout/start" className="btn btn-primary">
                 Get Started for $1

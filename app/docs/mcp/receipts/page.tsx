@@ -4,17 +4,23 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'MCP Receipts Integration : Originary',
-  description: 'Generate PEAC-Receipts for Model Context Protocol tool calls. Attach verifiable receipts to each MCP operation.',
+  title: 'MCP Receipts | Model Context Protocol and MCP Tools Integration | Originary',
+  description: 'MCP receipts for Model Context Protocol and MCP tools integration. Generate PEAC-Receipts for Model Context Protocol tool calls and MCP operations. Learn how to add verifiable MCP receipts to AI agent tool invocations with audit trails for MCP tools.',
+  keywords: 'MCP receipts, Model Context Protocol, MCP tools, MCP integration, Anthropic MCP, PEAC-Receipt, AI tool receipts, agent tool calls, MCP audit trails, verifiable receipts, AI compliance, tool invocation receipts, MCP server',
   alternates: {
     canonical: '/docs/mcp/receipts'
   },
   openGraph: {
-    title: 'MCP Receipts Integration',
-    description: 'Generate PEAC-Receipts for Model Context Protocol tool calls.',
+    title: 'MCP Receipts | Model Context Protocol and MCP Tools',
+    description: 'MCP receipts for Model Context Protocol and MCP tools integration. Generate PEAC-Receipts for Model Context Protocol tool calls and MCP operations.',
     url: 'https://www.originary.xyz/docs/mcp/receipts',
     siteName: 'Originary',
     type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MCP Receipts | Model Context Protocol and MCP Tools',
+    description: 'MCP receipts for Model Context Protocol and MCP tools. Generate PEAC-Receipts for tool calls with audit trails.',
   }
 }
 
@@ -54,7 +60,7 @@ export default function MCPReceiptsDocPage() {
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
-              Generate a verifiable PEAC-Receipt for each Model Context Protocol (MCP) tool call, providing audit trails for AI agent operations.
+              MCP receipts for Model Context Protocol and MCP tools integration. Generate verifiable PEAC-Receipts for each Model Context Protocol (MCP) tool call, providing audit trails and compliance tracking for AI agent operations with MCP tools.
             </p>
 
             <div className="card" style={{ marginBottom: 'var(--space-8)', textAlign: 'left' }}>
@@ -126,6 +132,52 @@ const server = wrapMCPServer({
               </pre>
             </div>
 
+            {/* Related Resources */}
+            <div className="card" style={{ marginBottom: 'var(--space-8)', textAlign: 'left' }}>
+              <h2 style={{
+                fontSize: 'var(--text-2xl)',
+                fontWeight: 600,
+                marginBottom: 'var(--space-4)',
+                color: 'var(--gray-900)'
+              }}>
+                Related Resources
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+                <Link href="/integrations/mcp" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  Model Context Protocol integration overview →
+                </Link>
+                <Link href="/docs/receipts" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  PEAC-Receipts and AI usage receipts →
+                </Link>
+                <Link href="/peac" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  PEAC Protocol and Policy Layer →
+                </Link>
+                <Link href="/solutions/ai-builders" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  AI infrastructure tools for AI builders →
+                </Link>
+              </div>
+            </div>
+
             <div style={{
               background: 'var(--gray-50)',
               border: '1px solid var(--gray-200)',
@@ -139,10 +191,10 @@ const server = wrapMCPServer({
                 marginBottom: 'var(--space-4)',
                 color: 'var(--gray-900)'
               }}>
-                Add receipts to your MCP tools
+                Add MCP receipts to your MCP tools
               </h2>
               <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                Get audit trails for every AI tool invocation with Originary.
+                Get audit trails for every Model Context Protocol tool invocation with Originary.
               </p>
               <Link href="/checkout/start" className="btn btn-primary">
                 Get Started for $1

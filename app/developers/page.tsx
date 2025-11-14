@@ -5,25 +5,25 @@ import Link from 'next/link'
 import { ArrowRight, Code, Download, Sparkles } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Developer Tools | Originary',
-  description: 'Integrate PEAC-Receipts into your API with Originary developer tools. Add HTTP 402 payment flows, A2A verification, MCP receipts with CLI tools and edge verification. Start with quickstart guides for Cloudflare Workers, Express, and Next.js.',
-  keywords: 'developer API, PEAC protocol, CLI tools, HTTP 402, agent receipts, policy validation, edge verification, MCP integration, A2A communication, ACP, ERC-8004, Verify API, Gateway 402, Policy APIs',
+  title: 'Developers | AI Infrastructure Tools and PEAC Protocol SDK | Originary',
+  description: 'AI infrastructure tools for agentic web development. Integrate PEAC-Receipts with the PEAC Protocol SDK and Originary developer tools. Add HTTP 402 payment flows, x402 integration, MCP receipts, and A2A verification with CLI tools, edge verification, and HTTP 402 examples.',
+  keywords: 'AI infrastructure tools, PEAC Protocol SDK, PEAC SDK, agentic web infrastructure, developer API, PEAC protocol, CLI tools, HTTP 402, HTTP 402 examples, x402 integration, agent receipts, policy validation, edge verification, MCP receipts, MCP integration, A2A communication, ACP, Verify API, Gateway 402, Policy APIs',
   authors: [{ name: 'Originary' }],
   alternates: {
     canonical: '/developers'
   },
   openGraph: {
     type: 'website',
-    title: 'Developers | Verify API, Gateway 402, Policy APIs',
-    description: 'Integrate PEAC-Receipts into your API with Originary developer tools. Add HTTP 402 payment flows, A2A verification, and MCP receipts with CLI tools and edge verification.',
+    title: 'Developers | AI Infrastructure Tools and PEAC Protocol SDK | Originary',
+    description: 'AI infrastructure tools for agentic web development. Integrate PEAC-Receipts with the PEAC Protocol SDK. Add HTTP 402 examples, x402 integration, MCP receipts, and A2A verification.',
     url: 'https://www.originary.xyz/developers',
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Developers | Verify API, Gateway 402, Policy APIs',
-    description: 'Integrate PEAC-Receipts into your API with Originary developer tools. Add HTTP 402 payment flows, A2A verification, and MCP receipts.',
+    title: 'Developers | AI Infrastructure Tools and PEAC Protocol SDK | Originary',
+    description: 'AI infrastructure tools for agentic web development. Integrate PEAC-Receipts with the PEAC Protocol SDK. Add HTTP 402 examples, x402 integration, and MCP receipts.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originary',
     creator: '@originary',
@@ -72,7 +72,7 @@ export default function Developers() {
                   marginBottom: 'var(--space-8)'
                 }}
               >
-                Everything you need to integrate receipts today - start with the Originary CLI and PEAC (open protocol) upstream packages.
+                AI infrastructure tools for building on the agentic web. Everything you need to integrate PEAC-Receipts today - start with the Originary CLI, PEAC Protocol SDK, and PEAC (open protocol) upstream packages.
               </p>
 
               <div

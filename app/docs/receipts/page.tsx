@@ -4,17 +4,23 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'PEAC-Receipt Documentation : Originary',
-  description: 'Learn about PEAC-Receipt, the open standard for verifiable agent access receipts. Technical specification, implementation guide, and examples.',
+  title: 'PEAC-Receipts | AI Usage Receipts and AI Receipts Documentation | Originary',
+  description: 'PEAC-Receipts documentation for AI usage receipts and AI receipts. Learn about the open standard for verifiable agent access receipts with cryptographic proof. Technical specification, implementation guide, and examples for AI receipts.',
+  keywords: 'PEAC-Receipts, AI usage receipts, AI receipts, agent receipts, verifiable receipts, cryptographic receipts, PEAC protocol, agent access receipts, receipt verification, JWT receipts, Ed25519 signatures',
   alternates: {
     canonical: '/docs/receipts'
   },
   openGraph: {
-    title: 'PEAC-Receipt Documentation',
-    description: 'Learn about PEAC-Receipt, the open standard for verifiable agent access receipts.',
+    title: 'PEAC-Receipts | AI Usage Receipts Documentation',
+    description: 'PEAC-Receipts documentation for AI usage receipts and AI receipts. Learn about the open standard for verifiable agent access with cryptographic proof.',
     url: 'https://www.originary.xyz/docs/receipts',
     siteName: 'Originary',
     type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PEAC-Receipts | AI Usage Receipts Documentation',
+    description: 'PEAC-Receipts documentation for AI usage receipts and AI receipts. Open standard for verifiable agent access.',
   }
 }
 
@@ -55,7 +61,7 @@ export default function ReceiptsDocPage() {
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
-              PEAC-Receipt is an open standard for cryptographically signed receipts that prove agent access to resources with verifiable compliance.
+              PEAC-Receipts are AI usage receipts and AI receipts that provide cryptographically signed proof of agent access to resources. These verifiable AI receipts enable compliance tracking, audit trails, and policy enforcement for agentic systems.
             </p>
 
             {/* What is PEAC-Receipt */}
@@ -153,6 +159,52 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
               </p>
             </div>
 
+            {/* Related Resources */}
+            <div className="card" style={{ marginBottom: 'var(--space-8)', textAlign: 'left' }}>
+              <h2 style={{
+                fontSize: 'var(--text-2xl)',
+                fontWeight: 600,
+                marginBottom: 'var(--space-4)',
+                color: 'var(--gray-900)'
+              }}>
+                Related Resources
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+                <Link href="/receipts" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  Receipts Overview and Use Cases →
+                </Link>
+                <Link href="/peac" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  PEAC Protocol and Policy Layer →
+                </Link>
+                <Link href="/trace" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  AI crawler analytics and bot tracking →
+                </Link>
+                <Link href="/docs/mcp/receipts" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  MCP receipts integration →
+                </Link>
+              </div>
+            </div>
+
             {/* Next Steps */}
             <div style={{
               background: 'var(--gray-50)',
@@ -170,7 +222,7 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
                 Ready to implement?
               </h2>
               <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                Start generating receipts with Originary in under 5 minutes.
+                Start generating AI usage receipts with Originary in under 5 minutes.
               </p>
               <Link
                 href="/checkout/start"
