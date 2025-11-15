@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     title: 'Adapters : Originary',
     description: 'Enterprise adapters for AIPREF, HTTP 402/x402, MCP/A2A, robots.txt/llms.txt, and C2PA. Production-ready integrations for policy enforcement and standards compliance in agentic systems.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

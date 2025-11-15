@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     title: 'Contact : Originary',
     description: 'Get in touch with the Originary team. Sales, support, partnerships, and general inquiries welcome.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

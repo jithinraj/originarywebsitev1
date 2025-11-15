@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     title: "A2A - Agent-to-Agent Communication",
     description: "Protocols and patterns for autonomous agents to communicate, negotiate, and transact directly without human intervention",
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
 };

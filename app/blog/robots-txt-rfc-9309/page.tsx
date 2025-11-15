@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     title: 'robots.txt (RFC 9309): The Web\'s Crawl Access Control',
     description: 'Understanding RFC 9309 - the standardized Robots Exclusion Protocol',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

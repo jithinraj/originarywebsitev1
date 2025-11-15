@@ -2,16 +2,15 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
 import NavigationHeader from '@/components/NavigationHeader'
-import OpenSourceBanner from '@/components/OpenSourceBanner'
 import Footer from '@/components/Footer'
 import { FileCode, Zap, MessageSquare, Settings, Brain, FileText } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Integrations | Agentic Web Standards | Originary',
+  title: 'Integrations | Agentic Web Standards',
   description: 'Originary integrations for agentic web standards and agentic commerce standards. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A with open protocols for the agentic web.',
   keywords: 'x402, HTTP 402, MCP, A2A, ACP, AIPREF, PEAC protocol, agentic web standards, agentic commerce standards, agent integrations',
   openGraph: {
-    title: 'Integrations | Agentic Web Standards | Originary',
+    title: 'Integrations | Agentic Web Standards',
     description: 'Originary integrations for agentic web standards and agentic commerce standards. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A.',
     url: 'https://www.originary.xyz/integrations/',
     siteName: 'Originary',
@@ -122,8 +121,7 @@ export default function IntegrationsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <NavigationHeader />
-      <OpenSourceBanner />
-      <main id="main-content" className="container" style={{ paddingTop: '140px', marginBottom: 'var(--space-32)' }}>
+      <main id="main-content" className="container" style={{ paddingTop: '80px', marginBottom: 'var(--space-32)' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" style={{ marginBottom: 'var(--space-8)' }}>

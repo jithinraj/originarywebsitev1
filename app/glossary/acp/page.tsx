@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     title: "ACP - Agent Commerce Protocol",
     description: "Standards for agent-initiated commerce including pricing discovery, payment negotiation, and settlement for the agentic web economy",
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
 };

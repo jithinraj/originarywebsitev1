@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     title: 'Publishers | AI Compliance and Content Protection | Originary',
     description: 'AI compliance and AI provenance tracking for publishers. Set AI preferences, verify AI compliance with attribution requirements, and monetize content access.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

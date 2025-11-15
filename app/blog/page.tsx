@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
 import NavigationHeader from '@/components/NavigationHeader'
-import OpenSourceBanner from '@/components/OpenSourceBanner'
 import Footer from '@/components/Footer'
 import { Calendar, User, ArrowRight, FileText } from 'lucide-react'
 
@@ -31,8 +30,8 @@ export const metadata: Metadata = {
     title: 'Blog · Originary',
     description: 'Technical insights, protocol updates, and best practices for the agentic web',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {
@@ -114,8 +113,7 @@ export default function BlogPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <NavigationHeader />
-      <OpenSourceBanner />
-      <main style={{ paddingTop: '140px', minHeight: '100vh' }} id="main-content">
+      <main style={{ paddingTop: '80px', minHeight: '100vh' }} id="main-content">
         {/* Hero Section */}
         <section className="section">
           <div className="container">

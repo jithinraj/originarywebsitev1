@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     title: 'HTTP 402 Payment Required | API Monetization Standard',
     description: 'Learn about HTTP 402 Payment Required status code for API monetization. Understand how payment-required responses work and integration with modern payment protocols.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

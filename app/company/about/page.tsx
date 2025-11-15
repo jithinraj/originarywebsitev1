@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     title: 'About : Originary',
     description: 'Originary provides orchestration infrastructure for the agentic web, enabling autonomous agents to discover policies, negotiate terms, and complete transactions safely.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

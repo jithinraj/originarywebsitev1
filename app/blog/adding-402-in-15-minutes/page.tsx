@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     title: "Add HTTP 402 to Your API in 15 Minutes",
     description: "Quick tutorial for adding HTTP 402 Payment Required responses to an existing Express API",
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
 };

@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     title: 'Studio : Originary',
     description: 'Enterprise dashboard for managing PEAC policies, signing keys, receipt verification, attribution rules, and compliance reporting. Centralized control for agentic web orchestration.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

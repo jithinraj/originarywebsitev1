@@ -414,7 +414,7 @@ export default function Footer() {
               </span>
               <span style={{ color: 'var(--gray-400)', fontSize: 'var(--text-xs)' }}>•</span>
               <span style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)' }}>
-                In the U.S., &lsquo;Originary&rsquo; identifies our open software/protocol. Poem, Inc. is not affiliated with Originary Inc.
+                In the U.S., &lsquo;Originary&rsquo; is used by Poem, Inc. as a brand for its AI infrastructure software and tools for the agentic web. Poem, Inc. is not affiliated with Originary Inc.
               </span>
               <span style={{ color: 'var(--gray-400)', fontSize: 'var(--text-xs)' }}>•</span>
               <a

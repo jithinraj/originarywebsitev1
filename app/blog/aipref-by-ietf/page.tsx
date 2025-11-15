@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     title: 'AIPREF: A Common Language for AI Usage Preferences',
     description: 'Understanding the IETF AIPREF specification for expressing AI usage preferences',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

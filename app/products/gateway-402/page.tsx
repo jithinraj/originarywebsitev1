@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     title: 'Gateway 402 | HTTP 402 & x402 payments for APIs',
     description: 'HTTP 402 commerce gateway for machine-payable APIs. Enable HTTP 402 payments and x402 commerce for agentic economy use cases.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

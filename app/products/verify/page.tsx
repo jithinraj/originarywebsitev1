@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     title: 'Verify API : Originary',
     description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and analytics.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

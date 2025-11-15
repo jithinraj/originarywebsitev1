@@ -14,15 +14,17 @@ import Footer from '@/components/Footer'
 import { ArrowRight, BookOpen, Bot, Code, DollarSign } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Originary | Infrastructure for the Agentic Web',
-  description: 'Originary builds infrastructure rails and tools for the agentic web, with PEAC-Receipts, HTTP 402 payments, AI crawler analytics, and policy compliance for autonomous agents.',
-  keywords: 'Originary, PEAC Protocol, AI crawler tracking, Trace, HTTP 402, verifiable receipts, agentic web, policy discovery, agent infrastructure',
+  title: {
+    absolute: 'Infrastructure and Tools for the Agentic Web | Originary'
+  },
+  description: 'Originary provides infrastructure for the agentic web, enabling AI commerce, consent and compliance with HTTP 402/x402 payments, PEAC-Receipts, AIPREF and AI crawler analytics.',
+  keywords: 'Originary, PEAC Protocol, AI crawler tracking, Trace, HTTP 402, x402, verifiable receipts, agentic web, policy discovery, agent infrastructure, AI commerce, AIPREF',
   alternates: {
     canonical: '/'
   },
   openGraph: {
-    title: 'Originary | Infrastructure for the Agentic Web',
-    description: 'Policy, payments, and verifiable receipts for AI agents. Built on the open-source PEAC Protocol.',
+    title: 'Infrastructure and Tools for the Agentic Web',
+    description: 'Originary provides infrastructure for the agentic web, enabling AI commerce, consent and compliance with HTTP 402/x402 payments, PEAC-Receipts, AIPREF and AI crawler analytics.',
     url: 'https://www.originary.xyz',
     type: 'website',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -30,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary: Infrastructure for the Agentic Web',
-    description: 'Policy, payments, and verifiable receipts for AI agents. Built on PEAC Protocol.',
+    title: 'Infrastructure and Tools for the Agentic Web',
+    description: 'Originary provides infrastructure for the agentic web, enabling AI commerce, consent and compliance with HTTP 402/x402 payments, PEAC-Receipts and AI crawler analytics.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',

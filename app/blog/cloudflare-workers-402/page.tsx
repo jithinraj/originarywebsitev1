@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     title: "HTTP 402 on Cloudflare Workers: Global Edge Payment Gates",
     description: "Deploy HTTP 402 payment-required responses at the edge with Cloudflare Workers",
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
 };

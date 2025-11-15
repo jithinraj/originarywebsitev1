@@ -46,7 +46,7 @@ const organizationJsonLd = {
   },
   sameAs: [
     'https://www.linkedin.com/company/originary',
-    'https://twitter.com/originaryai',
+    'https://x.com/originaryx',
     'https://bsky.app/profile/originary.bsky.social',
     'https://warpcast.com/originary',
     'https://github.com/peacprotocol/peac',
@@ -109,7 +109,10 @@ const websiteJsonLd = {
 }
 
 export const metadata: Metadata = {
-  title: 'Originary: Infrastructure for the Agentic Web',
+  title: {
+    default: 'Originary: Infrastructure for the Agentic Web',
+    template: '%s | Originary',
+  },
   description: 'Originary provides verifiable receipts for the agentic web. Add policy discovery, HTTP 402 payments, and PEAC-Receipts to every API response.',
   keywords: ['agentic web', 'orchestration protocol', 'AI coordination', 'PEAC protocol', 'HTTP 402', 'verifiable receipts', 'API policy', 'machine readable payments', 'AI transparency'],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
@@ -143,8 +146,8 @@ export const metadata: Metadata = {
     title: 'Originary - Receipts for the Agentic Web',
     description: 'Originary provides verifiable receipts for the agentic web. Add policy discovery, HTTP 402 payments, and PEAC-Receipts to every API response.',
     images: ['/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: {
     index: true,
@@ -156,9 +159,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-verification-code',
   },
 }
 

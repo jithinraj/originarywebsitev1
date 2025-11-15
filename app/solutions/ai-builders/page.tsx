@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     title: 'AI Builders | AI Compliance and AI Provenance Tracking | Originary',
     description: 'AI infrastructure tools for AI compliance and AI provenance tracking. Build AI systems with verifiable interaction records and cryptographic receipts.',
     images: ['/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

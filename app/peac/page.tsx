@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import { CheckCircle, Github, Download, BookOpen, Code, Shield } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'PEAC Protocol | Open Standard for the Agentic Web | Originary',
+  title: 'PEAC Protocol | Open Standard for the Agentic Web',
   description: 'PEAC Protocol is the open standard for policy, payments, and receipts in the agentic web and agentic economy, covering HTTP 402 commerce, agent-to-agent transactions, and AI compliance.',
   alternates: {
     canonical: '/peac'

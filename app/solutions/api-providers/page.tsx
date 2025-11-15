@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     title: 'API Providers | AI Commerce and AI Infrastructure Tools | Originary',
     description: 'AI commerce and AI infrastructure tools for API providers. Enable agents to discover and pay for your APIs through HTTP 402 and x402.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

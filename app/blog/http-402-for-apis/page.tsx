@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     title: "HTTP 402 for APIs: Making Payment-Required Responses Work",
     description: "Practical guide to implementing HTTP 402 Payment Required in modern APIs",
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
 };
