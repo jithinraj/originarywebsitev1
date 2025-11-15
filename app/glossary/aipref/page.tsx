@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     title: "AIPREF - AI Preference File Standard",
     description: "Structured format for publishers to express preferences about AI training, usage, and attribution",
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
 };

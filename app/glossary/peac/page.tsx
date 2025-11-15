@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     title: "PEAC Protocol - Policy, Evidence, Access, Compliance",
     description: "Open protocol for policy discovery and verifiable receipts. Enables agents to discover terms and prove compliance.",
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
 };

@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     title: "Agentic Web - Internet for Autonomous Agents",
     description: "Internet infrastructure optimized for autonomous agents. Machine-readable policies, payment protocols, and verifiable receipts.",
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
 };

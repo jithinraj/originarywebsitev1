@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     title: 'Sign In : Originary',
     description: 'Sign in to your Originary account to access the PEAC protocol dashboard, manage your policies, and view analytics.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: {
     index: false,

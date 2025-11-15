@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     title: 'Demo | Originary',
     description: 'Interactive demo experience for Originary and PEAC-Receipts. Explore how receipts, policy, and HTTP 402 flows work in practice.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

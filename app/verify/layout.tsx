@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     title: 'Verify PEAC-Receipts | Receipt Verification Tool | Originary',
     description: 'Verify PEAC-Receipts and Originary receipts. Check signatures, expiry, and policy compliance for AI usage receipts.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

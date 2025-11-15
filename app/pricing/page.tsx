@@ -2,7 +2,6 @@
 
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
-import OpenSourceBanner from '@/components/OpenSourceBanner'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Github } from 'lucide-react'
 
@@ -36,11 +35,6 @@ export default function TracePricing() {
               }}>
                 Start free with self-hosted OSS. Upgrade to Cloud for retention, alerts, signed bundles, benchmarking, SSO, and SLAs.
               </p>
-
-              {/* Open Source Banner */}
-              <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-                <OpenSourceBanner />
-              </div>
             </div>
 
             {/* Trace Pricing Table */}

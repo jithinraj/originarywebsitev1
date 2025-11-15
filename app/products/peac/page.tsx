@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     title: 'PEAC Protocol | Verifiable Receipts & Policy Discovery',
     description: 'PEAC is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS).',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

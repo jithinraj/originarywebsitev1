@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     title: 'Enterprises | AI Governance and AI Compliance | Originary',
     description: 'AI governance and AI compliance tools for enterprise agentic infrastructure. Comprehensive policy management, AI compliance reporting, and security controls.',
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

@@ -1,6 +1,6 @@
 export const SOCIAL = {
   website: "https://www.originary.xyz",
-  twitter: "https://twitter.com/originaryai",
+  twitter: "https://x.com/originaryx",
   linkedin: "https://www.linkedin.com/company/originary",
   bluesky: "https://bsky.app/profile/originary.bsky.social",
   farcaster: "https://warpcast.com/originary",

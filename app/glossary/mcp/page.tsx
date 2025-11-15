@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     title: "MCP - Model Context Protocol",
     description: "Open standard for connecting AI models to data sources, services, and tools through standardized interfaces",
     images: ['https://www.originary.xyz/og.jpg'],
-    site: '@originary',
-    creator: '@originary',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
 };
