@@ -2,6 +2,12 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "framework": "nextjs",
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  },
+  "ignoreCommand": "bash -c 'if [ \"$VERCEL_GIT_COMMIT_REF\" != \"main\" ]; then exit 0; else exit 1; fi'",
   "headers": [
     {
       "source": "/sitemap.xml",
