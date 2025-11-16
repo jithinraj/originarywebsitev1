@@ -4,11 +4,11 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'AIPREF | AI Preferences and AI Preference Standard Integration | Originary',
-  description: 'AIPREF and AI preferences integration for AI preference standard compliance. Implement machine-readable AI preference schema with Originary for agentic web policy discovery.',
+  title: 'AIPREF Integration | Machine Readable AI Preferences with PEAC',
+  description: 'Integrate the AIPREF standard so AI crawlers can read machine readable preferences, respect AI access rules and combine aipref.json with PEAC policies for safer training and scraping.',
   openGraph: {
-    title: 'AIPREF | AI Preferences Standard Integration | Originary',
-    description: 'AIPREF integration for AI preferences and AI preference standard. Machine-readable AI preference schema for the agentic web.',
+    title: 'AIPREF Integration | Machine Readable AI Preferences with PEAC',
+    description: 'Integrate the AIPREF standard so AI crawlers can read machine readable preferences, respect AI access rules and combine aipref.json with PEAC policies for safer training and scraping.',
     url: 'https://www.originary.xyz/integrations/aipref/',
     type: 'article'
   },
@@ -91,6 +91,22 @@ export default function AIPREFPage() {
             </p>
             <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
               Originary extends AIPREF with PEAC-Receipt verification, enabling sites to enforce policies cryptographically. Agents discover policies via <code>/.well-known/aipref.json</code>, and Originary issues receipts proving policy compliance.
+            </p>
+          </div>
+
+          {/* Getting Started */}
+          <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
+            <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
+              Getting Started with AIPREF
+            </h2>
+            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              Implementing AIPREF on your website starts with creating a machine-readable policy file at <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: '0.9em' }}>/.well-known/aipref.json</code>. This file declares your AI access policies in standardized JSON format, allowing AI agents and crawlers to discover and respect your preferences automatically.
+            </p>
+            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              The AIPREF standard supports multiple policy types: scraping permissions, training data licensing, commercial use restrictions, rate limits, payment requirements, and attribution formats. Agents that support AIPREF will fetch your policy file before accessing content and adjust their behavior accordingly.
+            </p>
+            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+              When combined with Originary, AIPREF policies move from advisory to enforceable. Originary reads your aipref.json configuration and enforces policies at the edge, issuing PEAC-Receipts when agents comply with requirements like payment or attribution. This creates cryptographic proof of compliance that can be audited and verified.
             </p>
           </div>
 

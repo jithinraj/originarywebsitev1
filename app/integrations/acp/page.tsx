@@ -4,11 +4,11 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Agentic Commerce Protocol (ACP) | Agentic Commerce Integration | Originary',
-  description: 'Agentic Commerce Protocol (ACP) integration for agentic commerce and agentic transactions. Enable autonomous agent commerce workflows with verifiable PEAC-Receipts for the agentic economy.',
+  title: 'ACP Integration | Agentic Commerce for AI Agents and APIs',
+  description: 'Use the Agentic Commerce Protocol with PEAC to let AI agents discover prices, execute purchases, get receipts and complete end to end agentic commerce flows across your APIs and services.',
   openGraph: {
-    title: 'Agentic Commerce Protocol (ACP) | Agentic Commerce | Originary',
-    description: 'ACP integration for agentic commerce and agentic transactions. Enable autonomous agents to conduct commerce with verifiable receipts.',
+    title: 'ACP Integration | Agentic Commerce for AI Agents and APIs',
+    description: 'Use the Agentic Commerce Protocol with PEAC to let AI agents discover prices, execute purchases, get receipts and complete end to end agentic commerce flows across your APIs and services.',
     url: 'https://www.originary.xyz/integrations/acp/',
     type: 'article'
   },
@@ -91,6 +91,22 @@ export default function ACPPage() {
             </p>
             <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
               When agents execute purchase flows, service bookings, or payment transactions via ACP, Originary issues PEAC-Receipts that prove transaction completion and can be verified by merchants, platforms, and auditors.
+            </p>
+          </div>
+
+          {/* Getting Started */}
+          <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
+            <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
+              Getting Started with ACP
+            </h2>
+            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              Integrating Agentic Commerce Protocol into your commerce platform enables AI agents to conduct fully autonomous transactions. The protocol standardizes how agents discover products, negotiate terms, execute payments, and receive verifiable proof of purchase - all without human intervention.
+            </p>
+            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              Start by exposing your product catalog in ACP-compatible format. Agents can then browse offerings, compare prices, and initiate purchase flows programmatically. When an agent completes a purchase, Originary issues a PEAC-Receipt containing cryptographic proof of the transaction, payment details, and fulfillment status.
+            </p>
+            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+              For commerce platforms, ACP integration provides immediate benefits: reduced fraud through cryptographic verification, automated reconciliation with machine-readable receipts, and expanded market reach to the growing ecosystem of autonomous AI agents. The protocol works with existing payment rails and can be gradually rolled out alongside traditional checkout flows.
             </p>
           </div>
 
