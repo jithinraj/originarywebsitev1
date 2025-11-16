@@ -159,16 +159,47 @@ export default function Page() {
                 </div>
               </Link>
 
-              <Link href="/blog/aipref-by-ietf" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+              <Link href="/integrations/aipref" className="card" style={{ textDecoration: 'none', display: 'block' }}>
                 <BookOpen size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
                 <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
-                  AIPREF: AI preferences
+                  AIPREF: AI preferences standard
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
-                  Learn about the IETF standard for declaring AI usage preferences and policy
+                  Implement the IETF AIPREF standard for machine-readable AI access policies and content licensing
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--brand-primary)', fontWeight: 600 }}>
-                  <span>Read article</span>
+                  <span>View integration guide</span>
+                  <ArrowRight size={16} />
+                </div>
+              </Link>
+            </div>
+
+            {/* Additional integrations - second row */}
+            <div className="grid grid-2" style={{ gap: 'var(--space-6)', maxWidth: '1000px', margin: 'var(--space-6) auto 0' }}>
+              <Link href="/cloud" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+                <Bot size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  Trace Cloud: Managed bot analytics
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                  Hosted AI crawler tracking with attested keys, compliance bundles, and enterprise SLAs
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                  <span>Learn about Cloud</span>
+                  <ArrowRight size={16} />
+                </div>
+              </Link>
+
+              <Link href="/integrations/acp" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+                <DollarSign size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  Agentic Commerce Protocol (ACP)
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                  Enable autonomous AI agent commerce with verifiable transaction receipts
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                  <span>View integration guide</span>
                   <ArrowRight size={16} />
                 </div>
               </Link>

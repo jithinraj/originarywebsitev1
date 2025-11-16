@@ -5,14 +5,14 @@ import Footer from '@/components/Footer'
 import { CheckCircle, Zap, Shield, Cloud } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Get Trace Cloud | Originary',
-  description: 'Managed Trace Cloud with attested keys, verifiable compliance bundles, multi-property rollups, and enterprise SLAs. Get AI crawler analytics without the operational overhead. Built on the open PEAC Protocol with webhooks, Slack integration, and uptime guarantees.',
+  title: 'Trace Cloud | Managed AI Bot Analytics Service by Originary',
+  description: 'Trace Cloud is the managed service for AI crawler analytics and bot tracking, with hosted dashboards, verifiable receipts and PEAC aligned bot protection without extra infrastructure.',
   alternates: {
     canonical: '/cloud'
   },
   openGraph: {
-    title: 'Trace Cloud - Managed crawler analytics',
-    description: 'Managed Trace with attested keys, verifiable compliance bundles, multi-property rollups, and enterprise SLAs.',
+    title: 'Trace Cloud | Managed AI Bot Analytics Service by Originary',
+    description: 'Trace Cloud is the managed service for AI crawler analytics and bot tracking, with hosted dashboards, verifiable receipts and PEAC aligned bot protection without extra infrastructure.',
     url: 'https://www.originary.xyz/cloud',
     siteName: 'Originary',
     type: 'website'

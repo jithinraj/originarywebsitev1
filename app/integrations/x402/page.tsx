@@ -4,11 +4,11 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'x402 | HTTP 402 Payments and x402 Commerce Integration | Originary',
-  description: 'HTTP 402 commerce and x402 payments for machine-payable APIs. Implement HTTP 402 Payment Required with working code for Node, Next.js/Edge, and Cloudflare Workers.',
+  title: 'x402 Integration | HTTP 402 Payments and Machine Payable APIs with PEAC',
+  description: 'Connect PEAC Protocol with x402 to expose HTTP 402 payment required flows, turn APIs into machine payable endpoints and issue verifiable receipts for AI agents and automated clients.',
   openGraph: {
-    title: 'x402 | HTTP 402 Commerce and Payments Integration | Originary',
-    description: 'HTTP 402 commerce and x402 payments for machine-payable APIs. Practical tutorial with working code for agent-native payments.',
+    title: 'x402 Integration | HTTP 402 Payments and Machine Payable APIs with PEAC',
+    description: 'Connect PEAC Protocol with x402 to expose HTTP 402 payment required flows, turn APIs into machine payable endpoints and issue verifiable receipts for AI agents and automated clients.',
     url: 'https://www.originary.xyz/integrations/x402/',
     type: 'article'
   },
@@ -134,6 +134,22 @@ Cache-Control: no-store
             </p>
             <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
               Treat it like a capability, not a paywall - a programmable way to meter access fairly.
+            </p>
+          </div>
+
+          {/* Getting Started */}
+          <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
+            <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
+              Getting Started with x402
+            </h2>
+            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              Implementing x402 in your API takes three steps: return a 402 response with payment details, accept payment receipts, and verify those receipts before granting access. The protocol is designed to work with any payment rail - from traditional payment gateways to cryptocurrency wallets to stablecoins.
+            </p>
+            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              Start by protecting a single API endpoint with a 402 challenge. When clients request that endpoint without payment, return status code 402 with a JSON payload containing the amount, currency, and a unique reference ID. Clients use this information to complete payment off-band, then retry the request with a verifiable receipt.
+            </p>
+            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+              For AI agents and autonomous systems, x402 enables fully automated payment flows. Agents can parse the 402 response, execute payment through their configured wallet or payment provider, and retry the request - all without human intervention. This makes x402 ideal for agent-to-agent commerce, API marketplaces, and usage-based pricing models in the agentic economy.
             </p>
           </div>
 
