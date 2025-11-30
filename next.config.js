@@ -61,6 +61,27 @@ const nextConfig = {
         destination: '/.well-known/peac.txt',
         permanent: true,
       },
+      // CLI downloads → PEAC Protocol release archives
+      {
+        source: '/downloads/originary-cli-1.0.0-darwin-arm64.zip',
+        destination: 'https://github.com/peacprotocol/peac/archive/refs/tags/v0.9.14.zip',
+        permanent: false,
+      },
+      {
+        source: '/downloads/originary-cli-1.0.0-darwin-x64.zip',
+        destination: 'https://github.com/peacprotocol/peac/archive/refs/tags/v0.9.13.2.zip',
+        permanent: false,
+      },
+      {
+        source: '/downloads/originary-cli-1.0.0-linux-x64.tar.gz',
+        destination: 'https://github.com/peacprotocol/peac/archive/refs/tags/v0.9.13.1.tar.gz',
+        permanent: false,
+      },
+      {
+        source: '/downloads/originary-cli-1.0.0-win-x64.zip',
+        destination: 'https://github.com/peacprotocol/peac/archive/refs/tags/v0.9.13.zip',
+        permanent: false,
+      },
     ]
   },
   async headers() {
