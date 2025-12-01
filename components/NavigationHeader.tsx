@@ -18,7 +18,7 @@ export default function NavigationHeader() {
 
   return (
     <header
-      className={`navigation-header ${isScrolled ? 'scrolled' : ''}`}
+      className={`navigation-header nav-glass ${isScrolled ? 'scrolled' : ''}`}
       style={{
         position: 'fixed',
         top: 0,
@@ -26,12 +26,13 @@ export default function NavigationHeader() {
         right: 0,
         zIndex: 'var(--z-sticky)',
         background: isScrolled
-          ? 'rgba(255, 255, 255, 0.8)'
-          : 'rgba(255, 255, 255, 0.9)',
+          ? 'rgba(255, 255, 255, 0.85)'
+          : 'rgba(255, 255, 255, 0.6)',
         backdropFilter: 'blur(20px) saturate(180%)',
-        borderBottom: `1px solid ${isScrolled ? 'var(--gray-200)' : 'transparent'}`,
+        WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+        borderBottom: `1px solid ${isScrolled ? 'rgba(0, 0, 0, 0.08)' : 'rgba(0, 0, 0, 0.03)'}`,
         transition: 'all var(--duration-300) var(--ease-out)',
-        padding: 'var(--space-4) 0'
+        padding: 'var(--space-3) 0'
       }}
     >
       <div className="container">
@@ -121,8 +122,8 @@ export default function NavigationHeader() {
                 gap: 'var(--space-3)'
               }}
             >
-              <Link href="/declare" className="btn btn-primary">
-                Get Declare
+              <Link href="/declare" className="btn-pill btn-shine">
+                Get Started
               </Link>
             </div>
           </div>

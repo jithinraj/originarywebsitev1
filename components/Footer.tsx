@@ -425,6 +425,47 @@ export default function Footer() {
                 Built on PEAC Protocol
               </a>
             </div>
+
+            {/* System Status Indicator */}
+            <Link
+              href="/status"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '4px 10px',
+                background: 'rgba(0, 217, 36, 0.08)',
+                border: '1px solid rgba(0, 217, 36, 0.15)',
+                borderRadius: 'var(--radius-full)',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(0, 217, 36, 0.12)'
+                e.currentTarget.style.borderColor = 'rgba(0, 217, 36, 0.25)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(0, 217, 36, 0.08)'
+                e.currentTarget.style.borderColor = 'rgba(0, 217, 36, 0.15)'
+              }}
+            >
+              <span
+                className="pulse-dot"
+                style={{
+                  width: '6px',
+                  height: '6px'
+                }}
+              />
+              <span
+                style={{
+                  fontSize: '11px',
+                  fontWeight: 500,
+                  color: 'var(--success)'
+                }}
+              >
+                All Systems Operational
+              </span>
+            </Link>
           </div>
         </div>
       </div>

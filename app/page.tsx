@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
-import CompanyHeroSection from '@/components/CompanyHeroSection'
+import DeveloperLuxuryHero from '@/components/DeveloperLuxuryHero'
+import BentoFeatures from '@/components/BentoFeatures'
 import ProductsBand from '@/components/ProductsBand'
 import PEACBand from '@/components/PEACBand'
 import FoundationalRailsSection from '@/components/FoundationalRailsSection'
@@ -67,38 +68,8 @@ export default function Page() {
     <>
       <NavigationHeader />
       <main id="main-content" role="main">
-        <CompanyHeroSection />
-
-        {/* What is Originary Section */}
-        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
-          <div className="container">
-            <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-              <h2 style={{
-                fontSize: 'var(--text-3xl)',
-                fontWeight: 700,
-                marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
-              }}>
-                What is Originary
-              </h2>
-              <p style={{
-                fontSize: 'var(--text-lg)',
-                lineHeight: 1.7,
-                color: 'var(--gray-600)',
-                marginBottom: 'var(--space-4)'
-              }}>
-                Originary provides infrastructure rails and tools for the agentic web. We enable AI commerce and consent tracking, AI provenance tracking, and policy compliance through PEAC-Receipts - verifiable proof for every agent-to-agent transaction and API access.
-              </p>
-              <p style={{
-                fontSize: 'var(--text-lg)',
-                lineHeight: 1.7,
-                color: 'var(--gray-600)'
-              }}>
-                Whether you&rsquo;re building AI agents, running APIs, or managing content, Originary provides the infrastructure rails for agentic commerce and automated economy compliance.
-              </p>
-            </div>
-          </div>
-        </section>
+        <DeveloperLuxuryHero />
+        <BentoFeatures />
 
         {/* Deep Dives Links Section */}
         <section className="section" style={{ paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
