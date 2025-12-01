@@ -84,11 +84,7 @@ export default function StatusPage() {
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-            <ServiceStatus service="Gateway 402" status="operational" />
-            <ServiceStatus service="Verify API" status="operational" />
             <ServiceStatus service="Policy Engine" status="operational" />
-            <ServiceStatus service="Receipt Generation" status="operational" />
-            <ServiceStatus service="Dashboard" status="operational" />
           </div>
         </div>
 
@@ -122,8 +118,6 @@ export default function StatusPage() {
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
             gap: 'var(--space-6)'
           }}>
-            <UptimeStat service="Gateway 402" uptime="99.98%" />
-            <UptimeStat service="Verify API" uptime="99.99%" />
             <UptimeStat service="Policy Engine" uptime="100%" />
           </div>
         </div>
@@ -180,6 +174,7 @@ export default function StatusPage() {
             year: 'numeric',
             hour: 'numeric',
             minute: '2-digit',
+            timeZone: 'America/Los_Angeles',
             timeZoneName: 'short'
           })}
         </p>

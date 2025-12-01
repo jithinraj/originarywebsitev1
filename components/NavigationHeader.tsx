@@ -122,7 +122,7 @@ export default function NavigationHeader() {
                 gap: 'var(--space-3)'
               }}
             >
-              <Link href="/declare" className="btn-pill btn-shine">
+              <Link href="/declare" className="btn-pill btn-shine" style={{ textDecoration: 'none' }}>
                 Get Started
               </Link>
             </div>
