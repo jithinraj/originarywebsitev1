@@ -83,7 +83,7 @@ export default function Footer() {
                 fontSize: 'var(--text-base)'
               }}
             >
-              Receipts for the Agentic Web.
+              Receipts and policy infrastructure for the agentic web.
             </p>
             <div
               style={{
@@ -141,19 +141,11 @@ export default function Footer() {
           <FooterSection
             title="Products"
             links={[
-              { href: '/products/peac', label: 'PEAC Core' },
-              { href: '/products/verify', label: 'Verify API' },
+              { href: '/declare', label: 'Declare (Policy Kit)' },
+              { href: '/trace', label: 'Trace' },
               { href: '/products/gateway-402', label: 'Gateway 402' },
-              { href: '/products/studio', label: 'Studio' },
-              { href: '/products/adapters', label: 'Adapters' }
-            ]}
-          />
-
-          <FooterSection
-            title="Trace"
-            links={[
-              { href: '/trace', label: 'Overview' },
-              { href: '/trace/pricing', label: 'Pricing' }
+              { href: '/products/verify', label: 'Verify API' },
+              { href: '/products/studio', label: 'Studio' }
             ]}
           />
 

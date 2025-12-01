@@ -1,31 +1,32 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Activity, Shield, Blocks, Sparkles } from 'lucide-react'
+import { ArrowRight, Activity, Shield, Blocks, Sparkles, FileText } from 'lucide-react'
 
 export default function ProductsBand() {
   const products = [
+    {
+      name: 'Originary Declare',
+      description: 'Define your AI policy once, generate all the right signals. A single peac-policy.yaml generates peac.txt, AIPREF headers, robots AI rules and a human-readable policy page.',
+      href: '/declare',
+      icon: FileText,
+      badge: 'Flagship',
+      featured: true,
+      buttons: [
+        { label: 'Get Declare', href: '/declare', primary: true },
+        { label: 'View on GitHub', href: 'https://github.com/peacprotocol/policy-kit', external: true }
+      ]
+    },
     {
       name: 'Originary Trace',
       description: 'See which AI crawlers access your site, what they took, and generate verifiable evidence. Built on the open PEAC Protocol.',
       href: '/trace',
       icon: Activity,
-      badge: 'Flagship',
-      featured: true,
-      buttons: [
-        { label: 'Get Trace Cloud', href: '/cloud', primary: true },
-        { label: 'Self-host', href: 'https://github.com/originaryx/trace?utm_source=originary&utm_medium=products&utm_campaign=trace_oss', external: true }
-      ]
-    },
-    {
-      name: 'Verify API',
-      description: 'Receipt verification and PEAC policy validation. Built on PEAC Protocol.',
-      href: '/products/verify',
-      icon: Shield,
-      badge: 'Beta',
+      badge: 'Coming Soon',
       featured: false,
       buttons: [
-        { label: 'Request access', href: '/products/verify' }
+        { label: 'Learn more', href: '/trace', primary: true },
+        { label: 'View pricing', href: '/trace/pricing' }
       ]
     },
     {
@@ -33,10 +34,21 @@ export default function ProductsBand() {
       description: 'HTTP 402 payment gateway with PEAC receipts. Built on PEAC Protocol.',
       href: '/products/gateway-402',
       icon: Blocks,
-      badge: 'Private beta',
+      badge: 'Waitlist',
       featured: false,
       buttons: [
         { label: 'Join waitlist', href: '/products/gateway-402' }
+      ]
+    },
+    {
+      name: 'Verify API',
+      description: 'Receipt verification and PEAC policy validation. Built on PEAC Protocol.',
+      href: '/products/verify',
+      icon: Shield,
+      badge: 'Waitlist',
+      featured: false,
+      buttons: [
+        { label: 'Join waitlist', href: '/products/verify' }
       ]
     },
     {

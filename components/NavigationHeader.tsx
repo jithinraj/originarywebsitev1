@@ -97,9 +97,10 @@ export default function NavigationHeader() {
               }}
             >
               <NavDropdown label="Products" items={[
-                { href: '/trace', label: 'Trace', badge: 'Flagship' },
-                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Beta' },
-                { href: '/products/studio', label: 'Studio', badge: 'Private Beta' },
+                { href: '/declare', label: 'Declare (Policy Kit)', badge: 'Flagship' },
+                { href: '/trace', label: 'Trace', badge: 'Coming Soon' },
+                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Waitlist' },
+                { href: '/products/studio', label: 'Studio', badge: 'Waitlist' },
                 { href: '/products/verify', label: 'Verify API', badge: 'Waitlist' }
               ]} />
 
@@ -120,8 +121,8 @@ export default function NavigationHeader() {
                 gap: 'var(--space-3)'
               }}
             >
-              <Link href="/cloud" className="btn btn-primary">
-                Get started
+              <Link href="/declare" className="btn btn-primary">
+                Get Declare
               </Link>
             </div>
           </div>
@@ -165,9 +166,10 @@ export default function NavigationHeader() {
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
               <MobileNavSection title="Products" items={[
-                { href: '/trace', label: 'Trace', badge: 'Flagship' },
-                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Beta' },
-                { href: '/products/studio', label: 'Studio', badge: 'Private Beta' },
+                { href: '/declare', label: 'Declare (Policy Kit)', badge: 'Flagship' },
+                { href: '/trace', label: 'Trace', badge: 'Coming Soon' },
+                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Waitlist' },
+                { href: '/products/studio', label: 'Studio', badge: 'Waitlist' },
                 { href: '/products/verify', label: 'Verify API', badge: 'Waitlist' }
               ]} />
 
@@ -201,8 +203,8 @@ export default function NavigationHeader() {
                 paddingTop: 'var(--space-4)',
                 borderTop: '1px solid var(--gray-200)'
               }}>
-                <Link href="/cloud" className="btn btn-primary" style={{ justifyContent: 'center' }}>
-                  Get started
+                <Link href="/declare" className="btn btn-primary" style={{ justifyContent: 'center' }}>
+                  Get Declare
                 </Link>
                 <Link href="/contact" className="btn btn-secondary" style={{ justifyContent: 'center' }}>
                   Contact

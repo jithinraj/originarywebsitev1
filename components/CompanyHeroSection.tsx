@@ -116,7 +116,7 @@ export default function CompanyHeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s'
               }}
             >
-              See every AI crawler on your site.
+              Declare your AI policy once.
             </h1>
 
             {/* Subtitle */}
@@ -132,7 +132,7 @@ export default function CompanyHeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              Originary Trace shows who accessed your content, what they took, and lets you control, block, or charge, built on the open PEAC Protocol.
+              We generate the files that make it visible to AI agents, bots, crawlers, and humans. Originary Declare (PEAC Policy Kit) lets you configure AI crawling, training and usage rules in a single <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px', fontSize: 'var(--text-lg)' }}>peac-policy.yaml</code> and generate peac.txt, AIPREF headers, robots AI rules and a human-readable AI policy page in minutes.
             </p>
 
             {/* Trademark Proof Section */}
@@ -204,7 +204,7 @@ export default function CompanyHeroSection() {
             >
               <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                 <Link
-                  href="/cloud"
+                  href="/declare"
                   className="btn btn-primary btn-lg"
                   style={{
                     position: 'relative',
@@ -214,7 +214,7 @@ export default function CompanyHeroSection() {
                     gap: 'var(--space-2)'
                   }}
                 >
-                  <span style={{ position: 'relative', zIndex: 2 }}>Get Trace Cloud</span>
+                  <span style={{ position: 'relative', zIndex: 2 }}>Get Declare</span>
                   <ArrowRight size={18} style={{ position: 'relative', zIndex: 2 }} />
                   <div
                     style={{
@@ -232,7 +232,7 @@ export default function CompanyHeroSection() {
                 </Link>
 
                 <a
-                  href="https://github.com/originaryx/trace?utm_source=originary&utm_medium=hero&utm_campaign=trace_oss"
+                  href="https://github.com/peacprotocol/policy-kit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-secondary btn-lg"
@@ -246,11 +246,11 @@ export default function CompanyHeroSection() {
                     textDecoration: 'none'
                   }}
                 >
-                  Self-host Trace
+                  View on GitHub
                 </a>
 
                 <Link
-                  href="/verify"
+                  href="/trace"
                   className="btn btn-ghost btn-lg"
                   style={{
                     display: 'inline-flex',
@@ -258,8 +258,8 @@ export default function CompanyHeroSection() {
                     gap: 'var(--space-2)'
                   }}
                 >
-                  <span>▶</span>
-                  See a receipt in 30s
+                  <span>→</span>
+                  See Trace (coming soon)
                 </Link>
               </div>
             </div>
