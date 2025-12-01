@@ -15,7 +15,7 @@ import { ArrowRight, BookOpen, Bot, Code, DollarSign } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Infrastructure & tools for the Agentic Web'
+    absolute: 'Originary | Infrastructure & tools for Agentic Web'
   },
   description: 'Originary builds infra for AI commerce, consent and compliance via HTTP 402/x402 payments, PEAC receipts and AI crawler analytics.',
   keywords: 'Originary, PEAC Policy Kit, Declare, AI policy, peac.txt, AIPREF, AI crawler policy, PEAC Protocol, HTTP 402, x402, verifiable receipts, agentic web, policy discovery, agent infrastructure',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   openGraph: {
-    title: 'Originary | Infrastructure & tools for the Agentic Web',
+    title: 'Originary | Infrastructure & tools for Agentic Web',
     description: 'Originary powers the agentic web with infrastructure for AI commerce, consent and compliance: HTTP 402/x402 payments, PEAC receipts and AI crawler analytics. Start with Originary Declare (PEAC Policy Kit) to define AI policy once across peac.txt, AIPREF and robots.txt.',
     url: 'https://www.originary.xyz',
     type: 'website',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Infrastructure & tools for the Agentic Web',
+    title: 'Originary | Infrastructure & tools for Agentic Web',
     description: 'Originary powers the agentic web with infrastructure for AI commerce, consent and compliance: HTTP 402/x402 payments, PEAC receipts and AI crawler analytics. Start with Originary Declare (PEAC Policy Kit) to define AI policy once across peac.txt, AIPREF and robots.txt.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
@@ -87,7 +87,7 @@ export default function Page() {
                 color: 'var(--gray-600)',
                 marginBottom: 'var(--space-4)'
               }}>
-                Originary is AI infrastructure tools for the agentic web. We enable AI commerce and consent tracking, AI provenance tracking, and policy compliance through PEAC-Receipts - verifiable proof for every agent-to-agent transaction and API access.
+                Originary provides infrastructure rails and tools for the agentic web. We enable AI commerce and consent tracking, AI provenance tracking, and policy compliance through PEAC-Receipts - verifiable proof for every agent-to-agent transaction and API access.
               </p>
               <p style={{
                 fontSize: 'var(--text-lg)',

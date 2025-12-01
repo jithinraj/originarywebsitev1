@@ -111,11 +111,11 @@ const websiteJsonLd = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Originary: Infrastructure rails & tools for the agentic web',
+    default: 'Originary | Infrastructure and tools for the agentic web',
     template: '%s | Originary',
   },
-  description: 'Originary builds infrastructure rails and tools for the agentic web, solving Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance. Start with Originary Declare (PEAC Policy Kit) to define AI policy once and generate peac.txt, AIPREF, robots rules and a human AI policy page.',
-  keywords: ['AI policy', 'AIPREF', 'peac.txt', 'AI crawler policy', 'AI bot detection', 'PEAC Protocol', 'HTTP 402', 'x402', 'crawling protection', 'agentic web', 'AI compliance', 'verifiable receipts'],
+  description: 'Originary builds infrastructure rails and tools for the agentic web, turning AI agent traffic into verified revenue with HTTP 402/x402 payments, PEAC receipts, AI crawler analytics, and policy tools like Originary Declare (PEAC Policy Kit).',
+  keywords: ['Originary', 'PEAC Protocol', 'agentic web', 'AI commerce', 'AI payments', 'HTTP 402', 'x402', 'AI crawler analytics', 'AI policy', 'AIPREF', 'PEAC receipts', 'AI consent', 'AI compliance'],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
@@ -126,23 +126,23 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://www.originary.xyz'),
   openGraph: {
-    title: 'Originary - Infrastructure rails and tools for the agentic web',
-    description: 'Originary builds infrastructure rails and tools for the agentic web, solving Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance.',
+    title: 'Originary | Infrastructure and tools for the agentic web',
+    description: 'Originary builds infrastructure rails and tools for the agentic web, turning AI agent traffic into verified revenue with HTTP 402/x402 payments, PEAC receipts, AI crawler analytics, and policy tools like Originary Declare (PEAC Policy Kit).',
     url: 'https://www.originary.xyz',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',
       width: 1200,
       height: 630,
-      alt: 'Originary - Infrastructure rails and tools for the agentic web'
+      alt: 'Originary - Infrastructure and tools for the agentic web'
     }],
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary - Infrastructure rails and tools for the agentic web',
-    description: 'Originary builds infrastructure rails and tools for the agentic web, solving Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance.',
+    title: 'Originary | Infrastructure and tools for the agentic web',
+    description: 'Originary builds infrastructure rails and tools for the agentic web, turning AI agent traffic into verified revenue with HTTP 402/x402 payments, PEAC receipts, AI crawler analytics, and policy tools like Originary Declare (PEAC Policy Kit).',
     images: ['/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',

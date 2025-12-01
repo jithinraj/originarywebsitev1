@@ -99,7 +99,7 @@ export default function CompanyHeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.05s'
               }}
             >
-              Originary builds infrastructure rails and tools for the agentic web, solving <strong>Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance</strong>.
+              Originary provides infrastructure rails and tools for the agentic web, solving <strong>Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance</strong>.
             </div>
 
             {/* Main Headline */}
@@ -116,7 +116,7 @@ export default function CompanyHeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s'
               }}
             >
-              Declare your AI policy once.
+              Turn AI traffic<br /><span className="text-gradient">into verified revenue.</span>
             </h1>
 
             {/* Subtitle */}
@@ -132,7 +132,7 @@ export default function CompanyHeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              We generate the files that make it visible to AI agents, bots, crawlers, and humans. Originary Declare (PEAC Policy Kit) lets you configure AI crawling, training and usage rules in a single <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px', fontSize: 'var(--text-lg)' }}>peac-policy.yaml</code> and generate peac.txt, AIPREF headers, robots AI rules and a human-readable AI policy page in minutes.
+              Originary is the control plane for the agentic web. Start with <strong>Declare (PEAC Policy Kit)</strong> to define AI access and usage once, then layer in Trace, Gateway&nbsp;402, and Verify to observe, enforce, and monetize every agent hitting your site or API.
             </p>
 
             {/* Trademark Proof Section */}
@@ -214,7 +214,7 @@ export default function CompanyHeroSection() {
                     gap: 'var(--space-2)'
                   }}
                 >
-                  <span style={{ position: 'relative', zIndex: 2 }}>Get Declare</span>
+                  <span style={{ position: 'relative', zIndex: 2 }}>Start with Declare</span>
                   <ArrowRight size={18} style={{ position: 'relative', zIndex: 2 }} />
                   <div
                     style={{
@@ -232,7 +232,7 @@ export default function CompanyHeroSection() {
                 </Link>
 
                 <a
-                  href="https://github.com/peacprotocol/policy-kit"
+                  href="https://github.com/peacprotocol/peac"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-secondary btn-lg"
@@ -246,7 +246,8 @@ export default function CompanyHeroSection() {
                     textDecoration: 'none'
                   }}
                 >
-                  View on GitHub
+                  <Github size={18} />
+                  View the protocol on GitHub
                 </a>
 
                 <Link
@@ -262,6 +263,20 @@ export default function CompanyHeroSection() {
                   See Trace (coming soon)
                 </Link>
               </div>
+
+              {/* Built on line */}
+              <p
+                style={{
+                  fontSize: 'var(--text-xs)',
+                  color: 'var(--gray-500)',
+                  marginTop: 'var(--space-4)',
+                  opacity: isVisible ? 1 : 0,
+                  transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                  transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.35s'
+                }}
+              >
+                Built on HTTP&nbsp;402/x402 payments, PEAC-Receipts, AIPREF policies, and AI crawler analytics.
+              </p>
             </div>
           </div>
 

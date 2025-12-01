@@ -427,10 +427,10 @@ pricing:
             }}
           >
             <Link
-              href="/checkout/start"
+              href="/declare"
               className="btn btn-primary btn-lg"
             >
-              Start for $1
+              Download Declare
             </Link>
             <Link
               href="/developers"

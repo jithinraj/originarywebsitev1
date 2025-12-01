@@ -86,18 +86,18 @@ export default function ProductsBand() {
                 color: 'var(--gray-900)'
               }}
             >
-              Products
+              The agentic control plane
             </h2>
             <p
               style={{
                 fontSize: 'var(--text-lg)',
                 lineHeight: 1.7,
                 color: 'var(--gray-600)',
-                maxWidth: '600px',
+                maxWidth: '700px',
                 margin: '0 auto'
               }}
             >
-              Tools and infrastructure for PEAC-enabled applications
+              Tools and infrastructure for PEAC-enabled applications - start with Declare, then add Trace, Gateway 402, Verify, and Studio as you scale.
             </p>
           </div>
 
