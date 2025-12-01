@@ -11,14 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Core Product Pages (Highest Priority)
     { url: `${baseUrl}/trace`, lastModified, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${baseUrl}/peac`, lastModified, changeFrequency: 'weekly', priority: 0.95 },
-    { url: `${baseUrl}/ai`, lastModified, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${baseUrl}/originary-ai`, lastModified, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${baseUrl}/cloud`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/pricing`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/developers`, lastModified, changeFrequency: 'weekly', priority: 0.9 },
 
     // Trace Sub-pages
-    { url: `${baseUrl}/trace/pricing`, lastModified, changeFrequency: 'weekly', priority: 0.85 },
     { url: `${baseUrl}/trace/demo`, lastModified, changeFrequency: 'weekly', priority: 0.85 },
 
     // Products Section
@@ -46,6 +44,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/changelog`, lastModified, changeFrequency: 'weekly', priority: 0.65 },
 
     // Blog Posts
+    { url: `${baseUrl}/blog/from-detection-to-settlement-ai-paywall-peac-http-402`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${baseUrl}/blog/ai-bot-detection`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${baseUrl}/blog/aipref-by-ietf`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${baseUrl}/blog/http-402-for-apis`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${baseUrl}/blog/adding-402-in-15-minutes`, lastModified, changeFrequency: 'monthly', priority: 0.6 },
