@@ -12,27 +12,13 @@
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, follow" },
         { "key": "Cache-Control", "value": "public, max-age=3600" }
-      ]
-    },
-    {
-      "source": "/sitemap-main.xml",
-      "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, follow" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
-      ]
-    },
-    {
-      "source": "/sitemap.txt",
-      "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, follow" }
       ]
     },
     {
       "source": "/.well-known/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+        { "key": "X-Robots-Tag", "value": "noindex" }
       ]
     }
   ]
