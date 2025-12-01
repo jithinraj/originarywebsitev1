@@ -15,16 +15,16 @@ import { ArrowRight, BookOpen, Bot, Code, DollarSign } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Infrastructure and Tools for the Agentic Web | Originary'
+    absolute: 'Originary | Infrastructure & tools for the Agentic Web'
   },
-  description: 'Originary provides infrastructure for the agentic web, enabling AI commerce, consent and compliance with HTTP 402/x402 payments, PEAC-Receipts, AIPREF and AI crawler analytics.',
-  keywords: 'Originary, PEAC Protocol, AI crawler tracking, Trace, HTTP 402, x402, verifiable receipts, agentic web, policy discovery, agent infrastructure, AI commerce, AIPREF',
+  description: 'Originary builds infra for AI commerce, consent and compliance via HTTP 402/x402 payments, PEAC receipts and AI crawler analytics.',
+  keywords: 'Originary, PEAC Policy Kit, Declare, AI policy, peac.txt, AIPREF, AI crawler policy, PEAC Protocol, HTTP 402, x402, verifiable receipts, agentic web, policy discovery, agent infrastructure',
   alternates: {
     canonical: '/'
   },
   openGraph: {
-    title: 'Infrastructure and Tools for the Agentic Web',
-    description: 'Originary provides infrastructure for the agentic web, enabling AI commerce, consent and compliance with HTTP 402/x402 payments, PEAC-Receipts, AIPREF and AI crawler analytics.',
+    title: 'Originary | Infrastructure & tools for the Agentic Web',
+    description: 'Originary powers the agentic web with infrastructure for AI commerce, consent and compliance: HTTP 402/x402 payments, PEAC receipts and AI crawler analytics. Start with Originary Declare (PEAC Policy Kit) to define AI policy once across peac.txt, AIPREF and robots.txt.',
     url: 'https://www.originary.xyz',
     type: 'website',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Infrastructure and Tools for the Agentic Web',
-    description: 'Originary provides infrastructure for the agentic web, enabling AI commerce, consent and compliance with HTTP 402/x402 payments, PEAC-Receipts and AI crawler analytics.',
+    title: 'Originary | Infrastructure & tools for the Agentic Web',
+    description: 'Originary powers the agentic web with infrastructure for AI commerce, consent and compliance: HTTP 402/x402 payments, PEAC receipts and AI crawler analytics. Start with Originary Declare (PEAC Policy Kit) to define AI policy once across peac.txt, AIPREF and robots.txt.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
