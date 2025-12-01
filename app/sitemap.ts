@@ -10,7 +10,7 @@ interface SitemapEntry {
 export default function sitemap(): MetadataRoute.Sitemap {
   return sitemapData.map((entry: SitemapEntry) => ({
     url: entry.url,
-    lastModified: entry.lastModified,
+    lastModified: new Date(entry.lastModified),
     changeFrequency: "weekly" as const,
     priority: entry.priority ?? 0.7,
   }));
