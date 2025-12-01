@@ -7,7 +7,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/gen-sitemap-with-git.mjs && next build",
+    "build": "next build",
+    "sitemap": "node scripts/gen-sitemap-with-git.mjs",
     "start": "next start",
     "lint": "next lint",
     "check:emdash": "grep -R \"\\u2014\" app || true && test $(grep -R \"\\u2014\" app | wc -l) -eq 0"
