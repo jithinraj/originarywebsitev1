@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { ArrowRight, Github } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export default function CompanyHeroSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -85,21 +85,30 @@ export default function CompanyHeroSection() {
               transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
           >
-            {/* Brand Eyebrow */}
+            {/* Brand Badge */}
             <div
               style={{
-                fontSize: 'var(--text-base)',
-                lineHeight: 1.7,
-                color: 'var(--gray-600)',
-                fontWeight: 500,
-                marginBottom: 'var(--space-8)',
-                maxWidth: '95%',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 'var(--space-2)',
+                background: 'rgba(99, 91, 255, 0.1)',
+                border: '1px solid rgba(99, 91, 255, 0.2)',
+                borderRadius: 'var(--radius-full)',
+                padding: 'var(--space-2) var(--space-4)',
+                marginBottom: 'var(--space-6)',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.05s'
               }}
             >
-              Originary provides infrastructure rails and tools for the agentic web, solving <strong>Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance</strong>.
+              <span style={{
+                fontSize: 'var(--text-sm)',
+                fontWeight: 600,
+                color: 'var(--brand-primary)',
+                letterSpacing: '0.02em'
+              }}>
+                The Agentic Control Plane
+              </span>
             </div>
 
             {/* Main Headline */}
@@ -116,7 +125,7 @@ export default function CompanyHeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s'
               }}
             >
-              Turn AI traffic<br /><span className="text-gradient">into verified revenue.</span>
+              Turn AI Traffic<br /><span className="text-gradient">Into Revenue.</span>
             </h1>
 
             {/* Subtitle */}
@@ -132,7 +141,7 @@ export default function CompanyHeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              Originary is the control plane for the agentic web. Start with <strong>Declare (PEAC Policy Kit)</strong> to define AI access and usage once, then layer in Trace, Gateway&nbsp;402, and Verify to observe, enforce, and monetize every agent hitting your site or API.
+              Don&rsquo;t just block bots - manage them. The complete infrastructure to identify, gate, and charge AI agents for API access.
             </p>
 
             {/* Trademark Proof Section */}
@@ -214,7 +223,7 @@ export default function CompanyHeroSection() {
                     gap: 'var(--space-2)'
                   }}
                 >
-                  <span style={{ position: 'relative', zIndex: 2 }}>Start with Declare</span>
+                  <span style={{ position: 'relative', zIndex: 2 }}>Start Observing (Free)</span>
                   <ArrowRight size={18} style={{ position: 'relative', zIndex: 2 }} />
                   <div
                     style={{
@@ -231,10 +240,8 @@ export default function CompanyHeroSection() {
                   />
                 </Link>
 
-                <a
-                  href="https://github.com/peacprotocol/peac"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/peac"
                   className="btn btn-secondary btn-lg"
                   style={{
                     display: 'inline-flex',
@@ -246,21 +253,7 @@ export default function CompanyHeroSection() {
                     textDecoration: 'none'
                   }}
                 >
-                  <Github size={18} />
-                  View the protocol on GitHub
-                </a>
-
-                <Link
-                  href="/trace"
-                  className="btn btn-ghost btn-lg"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 'var(--space-2)'
-                  }}
-                >
-                  <span>→</span>
-                  See Trace (coming soon)
+                  View Protocol
                 </Link>
               </div>
 
