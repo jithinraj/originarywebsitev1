@@ -1,9 +1,21 @@
-'use client'
-
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Github } from 'lucide-react'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Pricing | Originary',
+  description: 'Simple, transparent pricing for Originary Trace and PEAC Protocol. Start free with self-hosted OSS, upgrade for managed cloud and enterprise features.',
+  alternates: {
+    canonical: '/pricing'
+  },
+  openGraph: {
+    title: 'Pricing | Originary',
+    description: 'Simple, transparent pricing for Originary Trace and PEAC Protocol. Start free with self-hosted OSS, upgrade for managed cloud and enterprise features.',
+    url: 'https://www.originary.xyz/pricing',
+  }
+}
 
 export default function TracePricing() {
   return (

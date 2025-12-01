@@ -29,12 +29,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/ai',
-        destination: '/developers',
-        permanent: false,
-        statusCode: 308,
-      },
-      {
         source: '/open-source',
         destination: '/peac',
         permanent: false,
