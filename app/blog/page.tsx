@@ -42,13 +42,22 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const articles = [
     {
+      slug: 'ai-bot-detection',
+      title: 'AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence',
+      description: 'AI bot detection is more than classifiers. Learn how metadata, fingerprints and PEAC receipts turn AI traffic into verifiable, enforceable evidence.',
+      author: 'Jithin Raj & Originary Team',
+      category: 'Technical',
+      readTime: '15 min read',
+      featured: true
+    },
+    {
       slug: 'aipref-by-ietf',
       title: 'AIPREF: A Common Language for AI Usage Preferences',
       description: 'Understanding the IETF AIPREF specification for expressing AI usage preferences through HTTP headers and robots.txt - what it is, how it works, and how to implement it today.',
       author: 'Jithin Raj & Originary Team',
       category: 'Technical',
       readTime: '15 min read',
-      featured: true
+      featured: false
     },
     {
       slug: 'http-402-for-apis',
