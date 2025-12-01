@@ -125,8 +125,6 @@ export default function Page() {
               }}>
                 <span>By Jithin Raj & Originary Team</span>
                 <span>•</span>
-                <time dateTime="2025-11-03">Nov 3, 2025</time>
-                <span>•</span>
                 <span>8 min read</span>
               </div>
             </header>

@@ -134,8 +134,6 @@ export default function Page() {
               }}>
                 <span style={{ fontWeight: 500, color: 'var(--gray-700)' }}>Jithin Raj & Originary Team</span>
                 <span style={{ color: 'var(--gray-300)' }}>|</span>
-                <time dateTime="2025-12-01">December 1, 2025</time>
-                <span style={{ color: 'var(--gray-300)' }}>|</span>
                 <span>15 min read</span>
               </div>
             </div>

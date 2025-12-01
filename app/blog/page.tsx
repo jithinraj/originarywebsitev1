@@ -42,13 +42,22 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const articles = [
     {
+      slug: 'from-detection-to-settlement-ai-paywall-peac-http-402',
+      title: 'From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance',
+      description: 'How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, L402, x402 and Stripe, with signed receipts for billing, audit and compliance.',
+      author: 'Jithin Raj & Originary Team',
+      category: 'Technical',
+      readTime: '18 min read',
+      featured: true
+    },
+    {
       slug: 'ai-bot-detection',
       title: 'AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence',
       description: 'AI bot detection is more than classifiers. Learn how metadata, fingerprints and PEAC receipts turn AI traffic into verifiable, enforceable evidence.',
       author: 'Jithin Raj & Originary Team',
       category: 'Technical',
       readTime: '15 min read',
-      featured: true
+      featured: false
     },
     {
       slug: 'aipref-by-ietf',
