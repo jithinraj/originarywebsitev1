@@ -179,6 +179,23 @@ export default function Page() {
           </div>
         </section>
 
+        {/* Control Plane Supporting Line */}
+        <div style={{
+          textAlign: 'center',
+          padding: 'var(--space-12) var(--space-4)',
+          background: 'var(--gray-50)'
+        }}>
+          <p style={{
+            fontSize: 'var(--text-lg)',
+            color: 'var(--gray-600)',
+            maxWidth: '700px',
+            margin: '0 auto',
+            fontWeight: 500
+          }}>
+            Originary is the control plane where policy, payments, and receipts come together for the agentic web.
+          </p>
+        </div>
+
         <ProductsBand />
         <StandardsIntegrations />
         <HomePage />

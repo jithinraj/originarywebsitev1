@@ -6,14 +6,16 @@ import Footer from '@/components/Footer'
 import { Calendar, User, ArrowRight, FileText } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Blog · Originary',
-  description: 'Technical insights, protocol updates, and best practices for the agentic web. Learn about AIPREF, PEAC protocol, receipts, and verifiable AI access.',
-  keywords: 'Originary blog, AIPREF, PEAC protocol, AI preferences, receipts, technical blog, agentic web',
+  title: {
+    absolute: 'Originary Blog - AI payments, HTTP 402 and PEAC receipts',
+  },
+  description: 'Originary blog on AI payments, HTTP 402, L402, x402, PEAC receipts, AIPREF and agentic web infrastructure. Technical insights, protocol updates and best practices for AI infrastructure teams.',
+  keywords: 'Originary blog, AIPREF, PEAC protocol, AI payments, HTTP 402, x402, L402, receipts, technical blog, agentic web, AI infrastructure',
   authors: [{ name: 'Originary Team' }],
   openGraph: {
     type: 'website',
-    title: 'Blog · Originary',
-    description: 'Technical insights, protocol updates, and best practices for the agentic web',
+    title: 'Originary Blog - AI payments, HTTP 402 and PEAC receipts',
+    description: 'Technical articles from Originary on HTTP 402, AI payments, PEAC receipts, AIPREF and the agentic web.',
     url: 'https://www.originary.xyz/blog',
     images: [
       {
@@ -27,15 +29,15 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog · Originary',
-    description: 'Technical insights, protocol updates, and best practices for the agentic web',
+    title: 'Originary Blog - AI payments, HTTP 402 and PEAC receipts',
+    description: 'Technical insights from Originary on HTTP 402, AI payments, PEAC receipts and agentic web infrastructure.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: '/blog',
+    canonical: 'https://www.originary.xyz/blog',
   },
 }
 
@@ -128,7 +130,7 @@ export default function BlogPage() {
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "Originary Blog",
-    "description": "Technical insights, protocol updates, and best practices for the agentic web",
+    "description": "Originary blog on AI payments, HTTP 402, L402, x402, PEAC receipts, AIPREF and agentic web infrastructure. Technical insights, protocol updates and best practices for AI infrastructure teams.",
     "url": "https://www.originary.xyz/blog",
     "publisher": {
       "@type": "Organization",
@@ -137,7 +139,16 @@ export default function BlogPage() {
         "@type": "ImageObject",
         "url": "https://www.originary.xyz/og/originary-logo.png"
       }
-    }
+    },
+    "about": [
+      "AI payments",
+      "HTTP 402",
+      "L402",
+      "x402",
+      "PEAC receipts",
+      "AIPREF",
+      "agentic web infrastructure"
+    ]
   }
 
   return (
@@ -180,11 +191,21 @@ export default function BlogPage() {
                 fontSize: 'clamp(var(--text-4xl), 6vw, var(--text-6xl))',
                 fontWeight: 700,
                 lineHeight: 1.1,
-                marginBottom: 'var(--space-6)',
+                marginBottom: 'var(--space-4)',
                 color: 'var(--gray-900)'
               }}>
-                Insights from the <span className="text-gradient">agentic web</span>
+                Originary <span className="text-gradient">blog</span>
               </h1>
+
+              <h2 style={{
+                fontSize: 'var(--text-2xl)',
+                fontWeight: 600,
+                lineHeight: 1.3,
+                marginBottom: 'var(--space-6)',
+                color: 'var(--gray-700)'
+              }}>
+                Insights from the agentic web
+              </h2>
 
               <p style={{
                 fontSize: 'var(--text-xl)',
@@ -192,7 +213,7 @@ export default function BlogPage() {
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-8)'
               }}>
-                Technical insights, protocol updates, and best practices for building responsible AI infrastructure
+                The Originary blog covers HTTP 402, AI payments, PEAC receipts, AIPREF, and the infrastructure needed for the agentic web. Technical articles, protocol updates, and best practices from the Originary team.
               </p>
             </div>
           </div>

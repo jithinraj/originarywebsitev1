@@ -89,7 +89,7 @@ export default function PeacAnimationHero() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              Originary is the control plane for the agentic web. Start with <strong>Declare</strong> to define AI access and usage once, then layer in Trace, Gateway 402, and Verify to observe, enforce, and monetize every agent hitting your site or API.
+              Originary gives you receipts and policy rails for the agentic web. Start with <strong>Declare</strong> to define AI access and usage once, then add Trace, Gateway 402, and Verify to see which agents are hitting your site or API, charge them with HTTP 402, and prove every interaction with cryptographic receipts.
             </p>
 
             {/* Trademark Proof Section */}
