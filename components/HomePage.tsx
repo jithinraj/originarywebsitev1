@@ -1,403 +1,251 @@
 'use client'
 
 import Link from 'next/link'
-import Mark from './Mark'
-import {
-  FadeIn,
-  SlideIn,
-  ScaleIn,
-  StaggerChildren,
-  StaggerItem,
-  AnimatedCounter,
-  HoverCard,
-  FloatingElement,
-  GradientBlob,
-  AnimatedButton,
-  MagneticCard,
-  GlitchText,
-  ParticleField,
-  MorphingShape,
-  icons
-} from './AnimatedComponents'
+import { useState, useEffect } from 'react'
+import { ArrowRight, CheckCircle, Zap, Shield, Database } from 'lucide-react'
+import ServiceOffers from './ServiceOffers'
 
-const {
-  Check,
-  ArrowRight,
-  Zap,
-  Shield,
-  Globe,
-  Database,
-  Lock,
-  TrendingUp,
-  Users,
-  Code,
-  BarChart,
-  Sparkles,
-  Rocket,
-  Award,
-  Clock,
-  CheckCircle
-} = icons
+export default function WorldClassHomePage() {
+  const [isVisible, setIsVisible] = useState(false)
 
-const heroHighlights = [
-  'Machine-readable policy orchestration across content, APIs, and data lakes.',
-  'Dual-rail settlement via x402, Stripe, stablecoins, or enterprise credits.',
-  'Signed receipts that follow every agent request for total accountability.',
-]
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
 
-
-const valueProps = [
-  {
-    icon: Database,
-    title: 'Unified policy graph',
-    copy: 'Publish once, negotiate everywhere. Originary translates PEAC clauses into enforceable controls across agents, APIs, and downstream systems.',
-    bullets: ['Autogenerate variants for agents, crawlers, and humans', 'Versioning with full diff history', 'Multi-tenant isolation and overrides'],
-  },
-  {
-    icon: Zap,
-    title: 'Composable commerce rails',
-    copy: 'Bring your own pricing logic and payment providers. Our gateway brokers credits, fiat, or crypto without refactoring existing endpoints.',
-    bullets: ['Meter usage with policy-aware throttles', 'x402, Stripe, and on-chain adapters', 'Dynamic rate cards per policy segment'],
-  },
-  {
-    icon: Shield,
-    title: 'Provable trust and analytics',
-    copy: 'Every interaction emits a tamper-evident receipt. Stream them into your observability stack or hand to regulators in a click.',
-    bullets: ['JSON-LD receipts signed with rotating keys', 'Graph explorer for provenance queries', 'SIEM & data warehouse connectors out of the box'],
-  },
-]
-
-const productModules = [
-  {
-    icon: Code,
-    name: 'PEAC Core',
-    role: 'Policy intelligence',
-    description: 'Model your access, consent, attribution, and compensation logic once. PEAC Core negotiates clauses per requester profile and governs propagation.',
-    bullets: ['Schema guardrails & linting', 'Sandboxed policy simulations', 'Policy diff approvals for legal & ops'],
-    href: '/products/peac',
-  },
-  {
-    icon: CheckCircle,
-    name: 'Verify API',
-    role: 'Proof engine',
-    description: 'Real-time verification and notarisation for receipts. Query lineage, revoke access instantly, and anchor proofs where you need them.',
-    bullets: ['JWS + C2PA signatures', 'Selective disclosure tokens', 'Immutable audit timeline'],
-    href: '/products/verify',
-  },
-  {
-    icon: TrendingUp,
-    name: 'Gateway 402',
-    role: 'Settlement Gateway',
-    description: 'Drop-in payment gateway that wraps any endpoint in HTTP 402. Charge per request, stream usage events, and reconcile in minutes.',
-    bullets: ['Credit pools & prepaid wallets', 'Adaptive pricing by segment', 'Webhook & ledger integrations'],
-    href: '/products/gateway-402',
-  },
-  {
-    icon: BarChart,
-    name: 'Receipts Graph',
-    role: 'Compliance analytics',
-    description: 'A live system of record for every licensed use. Search who accessed what, under which clause, and when settlement cleared.',
-    bullets: ['Federated search & filtering', 'Automated dispute workflows', 'Exports to legal, finance, and RevOps'],
-    href: '/receipts',
-  },
-]
-
-const testimonials = [
-  {
-    quote: 'Originary gave us a single compliance plane across data APIs, partner agents, and internal copilots. Legal reviews dropped from weeks to hours.',
-    name: 'Leah Ortiz',
-    role: 'Chief Product Officer, Meridian Data Cooperative',
-  },
-  {
-    quote: 'The receipts graph is the missing ledger for the agentic economy. Our auditors can replay every interaction without involving engineering.',
-    name: 'Arjun Mehta',
-    role: 'VP Trust & Safety, Helix Media Group',
-  },
-]
-
-export default function HomePage() {
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="hero home-hero">
-        <ParticleField count={30} />
-        <GradientBlob color1="#2563EB" color2="#7C3AED" size="800px" className="-top-60 -right-60" />
-        <GradientBlob color1="#10B981" color2="#3B82F6" size="600px" className="-bottom-40 -left-40" />
-        <div className="container hero-grid">
-          <SlideIn direction="left" className="hero-copy">
-            <FadeIn delay={0.1}>
-              <span className="kicker">
-                <Sparkles className="inline w-4 h-4 mr-1" />
-                PEAC Orchestration Platform
-              </span>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <h1 className="display">
-                <GlitchText text="Proof-first infrastructure" /> for autonomous commerce
-              </h1>
-            </FadeIn>
-            <FadeIn delay={0.3}>
-              <p className="sub">
-                Publish <code>peac.txt</code> to declare policies for access, attribution, consent, privacy, and pricing. <Mark>Originary</Mark> helps agents settle via x402 or Stripe/credits/fiat/stablecoin/on-chain via adapters and present a Receipt on every request - your auditable proof of compliance.
+    <div style={{ paddingTop: '80px' }}>
+      {/* Value Propositions Section */}
+      <section className="section">
+        <div className="container">
+          <div
+            className="section-header"
+            style={{
+              textAlign: 'center',
+              marginBottom: 'var(--space-16)',
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
+            }}
+          >
+            <h2 style={{ marginBottom: 'var(--space-6)' }}>
+              <span className="text-gradient">Control every policy, payment, and proof</span> from one fabric
+            </h2>
+            <p
+              style={{
+                fontSize: 'var(--text-xl)',
+                color: 'var(--gray-600)',
+                maxWidth: '800px',
+                margin: '0 auto',
+                lineHeight: 1.7
+              }}
+            >
+              Enterprise infrastructure for the agentic economy. Legal, product, and engineering teams get a unified control plane for access and revenue without slowing down innovation.
+            </p>
+          </div>
+
+          <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
+            <ValueCard
+              icon={<Database className="w-8 h-8" style={{ color: 'var(--brand-primary)' }} />}
+              title="Unified Policy Graph"
+              description="Publish once, negotiate everywhere. Originary translates PEAC clauses into enforceable controls across agents, APIs, and downstream systems."
+              features={[
+                'Auto-generate variants for agents, crawlers, and humans',
+                'Version control with full diff history',
+                'Multi-tenant isolation and overrides'
+              ]}
+              delay={0.1}
+            />
+
+            <ValueCard
+              icon={<Zap className="w-8 h-8" style={{ color: 'var(--brand-secondary)' }} />}
+              title="Composable Commerce Rails"
+              description="Bring your pricing logic and payment providers. Our gateway brokers credits, fiat, or crypto without refactoring existing endpoints."
+              features={[
+                'Policy-aware usage metering and throttles',
+                'x402, Stripe, and on-chain settlement adapters',
+                'Dynamic rate cards per policy segment'
+              ]}
+              delay={0.2}
+            />
+
+            <ValueCard
+              icon={<Shield className="w-8 h-8" style={{ color: 'var(--brand-accent)' }} />}
+              title="Provable Trust & Analytics"
+              description="Every interaction emits a tamper-evident receipt. Stream them into your observability stack or hand to regulators in one click."
+              features={[
+                'Cryptographically signed receipts (JWS; C2PA-compatible)',
+                'Interactive graph explorer for provenance queries',
+                'SIEM & data warehouse connectors out of the box'
+              ]}
+              delay={0.3}
+            />
+          </div>
+        </div>
+      </section>
+
+      <ServiceOffers />
+
+      {/* CTA Section */}
+      <section className="section">
+        <div className="container">
+          <div
+            style={{
+              textAlign: 'center',
+              background: 'var(--gradient-brand)',
+              borderRadius: 'var(--radius-3xl)',
+              padding: 'var(--space-16) var(--space-8)',
+              color: 'var(--white)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+          >
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: 'radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 50%)',
+                pointerEvents: 'none'
+              }}
+            />
+            <div style={{ position: 'relative', zIndex: 2 }}>
+              <h2
+                style={{
+                  fontSize: 'var(--text-4xl)',
+                  fontWeight: 700,
+                  marginBottom: 'var(--space-6)',
+                  color: 'var(--white)'
+                }}
+              >
+                Ready to ship Receipts for the agentic web?
+              </h2>
+              <p
+                style={{
+                  fontSize: 'var(--text-xl)',
+                  marginBottom: 'var(--space-8)',
+                  color: 'var(--white)',
+                  maxWidth: '600px',
+                  margin: '0 auto var(--space-8) auto',
+                  lineHeight: 1.6
+                }}
+              >
+                Join the companies building compliant, profitable AI interactions. Powered by an open protocol.
               </p>
-            </FadeIn>
-
-            <FadeIn delay={0.4}>
-              <div className="actions hero-actions">
-                <AnimatedButton variant="primary">
-                  <Link href="/company/contact" className="flex items-center gap-2">
-                    Request a demo
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </AnimatedButton>
-                <AnimatedButton variant="secondary">
-                  <Link href="/developers" className="flex items-center gap-2">
-                    Explore developer docs
-                  </Link>
-                </AnimatedButton>
-              </div>
-            </FadeIn>
-
-            <StaggerChildren className="hero-highlights" staggerDelay={0.1}>
-              {heroHighlights.map((item) => (
-                <StaggerItem key={item}>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                </StaggerItem>
-              ))}
-            </StaggerChildren>
-
-          </SlideIn>
-
-          <SlideIn direction="right" className="hero-showcase">
-            <FloatingElement duration={4}>
-              <div className="hero-card receipt-card">
-                <div className="receipt-card__header">
-                  <span className="badge">Live receipt</span>
-                  <span className="receipt-id">#8f2c-45aa</span>
-                </div>
-                <div className="receipt-row">
-                  <span>Resource</span>
-                  <code>/api/content/atlantic/17</code>
-                </div>
-                <div className="receipt-row">
-                  <span>Requester</span>
-                  <span>atlas-agent/2.3.1</span>
-                </div>
-                <div className="receipt-row">
-                  <span>Clause</span>
-                  <span>peac:v1.6 - attribution + commercial tier</span>
-                </div>
-                <div className="receipt-row">
-                  <span>Settlement:</span>
-                  <span> $0.0025 via x402 (primary)</span>
-                </div>
-                <div className="receipt-row">
-                  <span>Status</span>
-                  <span className="status success">
-                    <CheckCircle className="w-4 h-4" />
-                    Receipt Ready
-                  </span>
-                </div>
-                <div className="receipt-footer">
-                  <span>Signature</span>
-                  <code>0x94cd…5a9b</code>
-                </div>
-                <small style={{
-                  fontSize: 'var(--text-xs)',
-                  color: 'var(--gray-500)',
-                  textAlign: 'center',
-                  display: 'block',
-                  marginTop: 'var(--space-2)',
-                  paddingTop: 'var(--space-2)',
-                  borderTop: '1px solid var(--gray-100)'
-                }}>
-                  Compatibility: PEAC wire <code style={{
-                    background: 'var(--gray-50)',
-                    padding: '1px 3px',
-                    borderRadius: '2px',
-                    fontFamily: 'var(--font-mono)'
-                  }}>0.9.13</code>
-                </small>
-              </div>
-            </FloatingElement>
-
-            <FloatingElement duration={5} className="mt-4">
-              <div className="hero-card policy-card">
-                <div className="policy-card__header">
-                  <span className="badge">Policy diff</span>
-                  <span className="policy-env">Production</span>
-                </div>
-                <pre>
-{`- training: disallowed
-+ training: metered ($0.015 / 100 req)
-  attribution: "© 2025 Meridian Data Co."
-  fallback: x402 -> stablecoin`}
-                </pre>
-                <p className="flex items-center gap-1">
-                  <Clock className="w-3 h-3" />
-                  Approved by Legal • Rollout in 12 minutes
-                </p>
-              </div>
-            </FloatingElement>
-          </SlideIn>
-        </div>
-      </section>
-
-      {/* Logo Strip */}
-      <section className="logo-strip" aria-label="Works with">
-        <div className="container">
-          <FadeIn>
-            <span className="logo-strip__label">Works with</span>
-          </FadeIn>
-          <StaggerChildren className="logo-strip__grid" staggerDelay={0.05}>
-            {['MCP', 'A2A', 'x402', 'Stripe', 'Circle', 'Cloudflare', 'Vercel'].map((marker) => (
-              <StaggerItem key={marker}>
-                <HoverCard className="logo-pill">{marker}</HoverCard>
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
-        </div>
-      </section>
-
-      {/* Value Props Section */}
-      <section className="section value-section">
-        <div className="container">
-          <FadeIn className="section-header">
-            <h2>Operate every policy, payment, and proof from one fabric</h2>
-            <p className="lead">Stripe-level craft for the agentic economy. Originary gives legal, product, and engineering a common system to control access and revenue without slowing teams down.</p>
-          </FadeIn>
-
-          <StaggerChildren className="value-grid" staggerDelay={0.1}>
-            {valueProps.map((prop) => {
-              const IconComponent = prop.icon
-              return (
-                <StaggerItem key={prop.title}>
-                  <MagneticCard className="value-card">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="p-2 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg">
-                        <IconComponent className="w-6 h-6 text-primary" />
-                      </div>
-                      <h3>{prop.title}</h3>
-                    </div>
-                    <p>{prop.copy}</p>
-                    <ul>
-                      {prop.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start gap-2">
-                          <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </MagneticCard>
-                </StaggerItem>
-              )
-            })}
-          </StaggerChildren>
-        </div>
-      </section>
-
-      {/* Product Modules */}
-      <section className="section module-section">
-        <div className="container">
-          <FadeIn className="section-lead">
-            <div>
-              <h2>Composable products that ship together</h2>
-              <p className="lead">Deploy the entire Originary stack or start with the module you need. Every product shares identity, policy, and observability primitives.</p>
-            </div>
-            <AnimatedButton variant="secondary">
-              <Link href="/products" className="flex items-center gap-2">
-                View full product suite
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </AnimatedButton>
-          </FadeIn>
-
-          <StaggerChildren className="bento-grid" staggerDelay={0.1}>
-            {productModules.map((module) => {
-              const IconComponent = module.icon
-              return (
-                <StaggerItem key={module.name}>
-                  <MagneticCard className="bento-card">
-                    <header>
-                      <span className="badge badge--outlined">{module.role}</span>
-                      <div className="flex items-center gap-3 mt-2">
-                        <IconComponent className="w-6 h-6 text-primary" />
-                        <h3>{module.name}</h3>
-                      </div>
-                    </header>
-                    <p>{module.description}</p>
-                    <ul>
-                      {module.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Link href={module.href} className="card-link flex items-center gap-1">
-                      Learn more <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </MagneticCard>
-                </StaggerItem>
-              )
-            })}
-          </StaggerChildren>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section testimonial-section" aria-label="Customer testimonials">
-        <div className="container testimonial-grid">
-          {testimonials.map((item, index) => (
-            <ScaleIn key={item.name} delay={index * 0.1}>
-              <div className="testimonial-card">
-                <p>&ldquo;{item.quote}&rdquo;</p>
-                <footer>
-                  <span className="testimonial-name">{item.name}</span>
-                  <span className="testimonial-role">{item.role}</span>
-                </footer>
-              </div>
-            </ScaleIn>
-          ))}
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="section final-cta">
-        <div className="container final-cta__inner">
-          <FadeIn>
-            <div>
-              <span className="badge badge--outlined">
-                <Rocket className="inline w-4 h-4 mr-1" />
-                Launch in weeks, not quarters
-              </span>
-              <h2>Ready to clear receipts for every intelligent agent?</h2>
-              <p className="lead">Partner with Originary to move from policy PDFs to provable commerce. Our solution engineers migrate your inventory, wire up payments, and hand legal a live control room.</p>
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <div className="final-cta__actions">
-              <AnimatedButton variant="primary">
-                <Link href="/company/contact" className="flex items-center gap-2">
-                  Book an enterprise review
-                  <ArrowRight className="w-4 h-4" />
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  gap: 'var(--space-4)',
+                  flexWrap: 'wrap'
+                }}
+              >
+                <Link
+                  href="/company/contact"
+                  className="btn btn-lg"
+                  style={{
+                    background: 'var(--white)',
+                    color: 'var(--brand-primary)',
+                    border: 'none'
+                  }}
+                >
+                  <span>Start building today</span>
+                  <ArrowRight size={18} />
                 </Link>
-              </AnimatedButton>
-              <AnimatedButton variant="secondary">
-                <Link href="/pricing" className="flex items-center gap-2">
-                  See pricing & limits
+                <Link
+                  href="/developers"
+                  className="btn btn-lg btn-ghost"
+                  style={{
+                    color: 'var(--white)',
+                    border: '1px solid rgba(255,255,255,0.2)'
+                  }}
+                >
+                  <span>Read documentation</span>
                 </Link>
-              </AnimatedButton>
-              <Link href="/products/verify" className="cta-link flex items-center gap-1">
-                Inspect a live receipt <ArrowRight className="w-4 h-4" />
-              </Link>
+              </div>
             </div>
-          </FadeIn>
+          </div>
         </div>
       </section>
-    </main>
+    </div>
   )
 }
+
+function ValueCard({
+  icon,
+  title,
+  description,
+  features,
+  delay = 0
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  features: string[];
+  delay?: number;
+}) {
+  const [isHovered, setIsHovered] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), delay * 1000)
+    return () => clearTimeout(timer)
+  }, [delay])
+
+  return (
+    <div
+      className="card"
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+        transition: `all 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${delay}s`,
+        cursor: 'pointer'
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div
+        style={{
+          marginBottom: 'var(--space-6)',
+          transform: isHovered ? 'scale(1.05)' : 'scale(1)',
+          transition: 'transform var(--duration-300) var(--ease-out)'
+        }}
+      >
+        {icon}
+      </div>
+
+      <h3 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-xl)' }}>
+        {title}
+      </h3>
+
+      <p style={{ marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
+        {description}
+      </p>
+
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {features.map((feature, index) => (
+          <li
+            key={index}
+            style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              gap: 'var(--space-3)',
+              marginBottom: 'var(--space-3)',
+              fontSize: 'var(--text-sm)',
+              color: 'var(--gray-600)'
+            }}
+          >
+            <CheckCircle size={16} style={{
+              color: 'var(--success)',
+              marginTop: '2px',
+              flexShrink: 0
+            }} />
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+

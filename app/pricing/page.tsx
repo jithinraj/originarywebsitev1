@@ -34,7 +34,7 @@ export default function TracePricing() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--gray-900)'
               }}>
-                <span className="text-gradient">Trace pricing</span>
+                <span className="text-gradient">Originary - Pricing</span>
               </h1>
 
               <p style={{

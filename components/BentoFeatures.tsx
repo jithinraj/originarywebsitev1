@@ -116,13 +116,13 @@ export default function BentoFeatures() {
           {/* Small Card - Shield */}
           <BentoCard
             className="bento-small"
-            title="Compliance Ready"
-            description="Built-in audit trails and policy enforcement."
+            title="Evidence-Ready"
+            description="Built-in audit trails and policy hooks so you can prove what happened."
             icon={<Shield size={24} />}
             href="/trust"
             linkText="Trust center"
           >
-            <ComplianceMeter />
+            <ComplianceBadge />
           </BentoCard>
         </div>
       </div>
@@ -500,7 +500,7 @@ function SecurityBadge() {
   )
 }
 
-function ComplianceMeter() {
+function ComplianceBadge() {
   return (
     <div
       style={{
@@ -512,36 +512,24 @@ function ComplianceMeter() {
         padding: 'var(--space-4)'
       }}
     >
-      <div style={{ width: '100%' }}>
-        <div
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 'var(--space-2)'
+        }}
+      >
+        <Shield size={24} style={{ color: 'var(--success)' }} />
+        <span
           style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            marginBottom: 'var(--space-1)',
-            fontSize: '10px'
+            fontFamily: 'var(--font-mono)',
+            fontSize: '10px',
+            color: 'var(--gray-500)'
           }}
         >
-          <span style={{ color: 'var(--gray-500)' }}>Compliance</span>
-          <span style={{ color: 'var(--success)', fontWeight: 600 }}>100%</span>
-        </div>
-        <div
-          style={{
-            width: '100%',
-            height: '6px',
-            background: 'var(--gray-200)',
-            borderRadius: 'var(--radius-full)',
-            overflow: 'hidden'
-          }}
-        >
-          <div
-            style={{
-              width: '100%',
-              height: '100%',
-              background: 'var(--success)',
-              borderRadius: 'var(--radius-full)'
-            }}
-          />
-        </div>
+          Audit trails
+        </span>
       </div>
     </div>
   )

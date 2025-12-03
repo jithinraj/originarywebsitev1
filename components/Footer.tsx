@@ -7,7 +7,6 @@ export default function Footer() {
   const [analyticsConsent, setAnalyticsConsent] = useState<boolean | null>(null)
 
   useEffect(() => {
-    // Check existing consent on mount
     const consent = localStorage.getItem('analytics-consent')
     setAnalyticsConsent(consent === 'true')
   }, [])
@@ -16,8 +15,6 @@ export default function Footer() {
     const newConsent = !analyticsConsent
     setAnalyticsConsent(newConsent)
     localStorage.setItem('analytics-consent', String(newConsent))
-
-    // Reload to apply changes
     if (typeof window !== 'undefined') {
       window.location.reload()
     }
@@ -26,118 +23,86 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: 'var(--gray-50)',
-        borderTop: '1px solid var(--gray-200)',
-        marginTop: 'var(--space-32)',
-        padding: 'var(--space-24) 0'
+        background: 'linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%)',
+        borderTop: '1px solid var(--gray-100)',
+        marginTop: 'var(--space-32)'
       }}
       role="contentinfo"
     >
-      <div className="container">
+      {/* Main Footer Content */}
+      <div className="container" style={{ padding: 'var(--space-20) var(--space-6)' }}>
+        {/* Top Section - Logo and Tagline */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center',
+            marginBottom: 'var(--space-16)',
+            paddingBottom: 'var(--space-12)',
+            borderBottom: '1px solid var(--gray-100)'
+          }}
+        >
+          <Link
+            href="/"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 'var(--space-3)',
+              textDecoration: 'none',
+              marginBottom: 'var(--space-4)'
+            }}
+          >
+            <div
+              style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: 'var(--radius-xl)',
+                background: 'var(--gradient-brand)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontWeight: 'bold',
+                fontSize: 'var(--text-lg)',
+                boxShadow: '0 4px 12px rgba(99, 91, 255, 0.3)'
+              }}
+            >
+              O
+            </div>
+            <span
+              style={{
+                color: 'var(--gray-900)',
+                fontWeight: 700,
+                fontSize: 'var(--text-2xl)',
+                letterSpacing: '-0.02em'
+              }}
+            >
+              Originary
+            </span>
+          </Link>
+          <p
+            style={{
+              color: 'var(--gray-500)',
+              fontSize: 'var(--text-base)',
+              maxWidth: '400px',
+              lineHeight: 1.6
+            }}
+          >
+            Receipts and policy infrastructure for the agentic web.
+          </p>
+        </div>
+
+        {/* Navigation Grid */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: 'var(--space-12)',
+            gridTemplateColumns: 'repeat(6, 1fr)',
+            gap: 'var(--space-8)',
             marginBottom: 'var(--space-16)'
           }}
+          className="footer-nav-grid"
         >
-          <div style={{ maxWidth: '350px' }}>
-            <Link
-              href="/"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 'var(--space-3)',
-                textDecoration: 'none',
-                color: 'var(--gray-900)',
-                fontWeight: 700,
-                fontSize: 'var(--text-xl)',
-                letterSpacing: '-0.02em',
-                marginBottom: 'var(--space-4)'
-              }}
-            >
-              <div
-                style={{
-                  width: '32px',
-                  height: '32px',
-                  borderRadius: 'var(--radius-lg)',
-                  background: 'var(--gradient-brand)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white',
-                  fontWeight: 'bold',
-                  fontSize: 'var(--text-sm)'
-                }}
-              >
-                O
-              </div>
-              <span>Originary</span>
-            </Link>
-            <p
-              style={{
-                color: 'var(--gray-600)',
-                lineHeight: 1.7,
-                marginBottom: 'var(--space-6)',
-                fontSize: 'var(--text-base)'
-              }}
-            >
-              Receipts and policy infrastructure for the agentic web.
-            </p>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 'var(--space-3)',
-                alignItems: 'flex-start'
-              }}
-            >
-              <SocialLink
-                href="/blog"
-                label="Read our blog"
-              >
-                Blog
-              </SocialLink>
-              <Link
-                href="/peac"
-                style={{
-                  color: 'var(--gray-600)',
-                  textDecoration: 'none',
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 500,
-                  transition: 'color var(--duration-200) var(--ease-out)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = 'var(--brand-primary)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'var(--gray-600)'
-                }}
-              >
-                PEAC Protocol
-              </Link>
-              <Link
-                href="/receipts"
-                style={{
-                  color: 'var(--gray-600)',
-                  textDecoration: 'none',
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 500,
-                  transition: 'color var(--duration-200) var(--ease-out)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = 'var(--brand-primary)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'var(--gray-600)'
-                }}
-              >
-                Receipts
-              </Link>
-            </div>
-          </div>
-
           <FooterSection
             title="Products"
             links={[
@@ -154,9 +119,9 @@ export default function Footer() {
             links={[
               { href: '/integrations', label: 'All integrations' },
               { href: '/integrations/x402', label: 'HTTP 402' },
-              { href: '/integrations/mcp', label: 'Model Context Protocol' },
+              { href: '/integrations/mcp', label: 'MCP' },
               { href: '/integrations/acp', label: 'Agentic Commerce' },
-              { href: '/integrations/a2a', label: 'Agent-to-Agent' },
+              { href: '/integrations/a2a', label: 'A2A' },
               { href: '/integrations/aipref', label: 'AI Preferences' }
             ]}
           />
@@ -166,17 +131,9 @@ export default function Footer() {
             links={[
               { href: '/developers', label: 'Documentation' },
               { href: '/downloads', label: 'Downloads' },
-              { href: '/demo', label: 'Demo' }
-            ]}
-          />
-
-          <FooterSection
-            title="Open Source"
-            links={[
+              { href: '/demo', label: 'Demo' },
               { href: '/peac', label: 'PEAC Protocol' },
-              { href: 'https://github.com/peacprotocol/peac', label: 'Spec & SDKs', external: true },
-              { href: 'https://github.com/peacprotocol/peac/blob/main/examples', label: 'Examples', external: true },
-              { href: 'https://github.com/peacprotocol/peac/blob/main/SECURITY.md', label: 'Security', external: true }
+              { href: '/receipts', label: 'Receipts' }
             ]}
           />
 
@@ -184,6 +141,7 @@ export default function Footer() {
             title="Company"
             links={[
               { href: '/about', label: 'About' },
+              { href: '/blog', label: 'Blog' },
               { href: '/contact', label: 'Contact' },
               { href: '/trust', label: 'Trust Center' },
               { href: '/legal/imprint', label: 'Imprint' }
@@ -191,283 +149,172 @@ export default function Footer() {
           />
 
           <FooterSection
-            title="Follow"
+            title="Open Source"
+            links={[
+              { href: 'https://github.com/peacprotocol/peac', label: 'PEAC Protocol', external: true },
+              { href: 'https://github.com/peacprotocol/peac', label: 'Spec & SDKs', external: true },
+              { href: 'https://github.com/peacprotocol/peac/tree/main/examples', label: 'Examples', external: true },
+              { href: 'https://github.com/originaryx', label: 'GitHub', external: true }
+            ]}
+          />
+
+          <FooterSection
+            title="Connect"
             links={[
               { href: 'https://x.com/originaryx', label: 'X / Twitter', external: true },
               { href: 'https://www.linkedin.com/company/originary', label: 'LinkedIn', external: true },
-              { href: 'https://github.com/originaryx', label: 'GitHub', external: true },
               { href: 'https://bsky.app/profile/originary.bsky.social', label: 'Bluesky', external: true },
               { href: 'https://peacprotocol.substack.com', label: 'Substack', external: true }
             ]}
           />
         </div>
 
-        {/* Bottom Section */}
+        {/* Bottom Bar - Clean & Premium */}
         <div
           style={{
-            paddingTop: 'var(--space-12)',
-            marginTop: 'var(--space-12)',
-            borderTop: '1px solid var(--gray-200)'
+            paddingTop: 'var(--space-10)',
+            borderTop: '1px solid var(--gray-100)'
           }}
         >
-          {/* Main Bottom Grid */}
+          {/* Three Column Bottom Layout */}
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gridTemplateColumns: '1fr auto 1fr',
+              alignItems: 'center',
               gap: 'var(--space-8)',
               marginBottom: 'var(--space-8)'
             }}
+            className="footer-bottom-grid"
           >
-            {/* Company Info */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-              <span
-                style={{
-                  color: 'var(--gray-900)',
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 600
-                }}
-              >
-                Poem, Inc.
-              </span>
-              <span style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', lineHeight: 1.6 }}>
-                Dover, Delaware
-              </span>
-              <span style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)', lineHeight: 1.6 }}>
-                United States
-              </span>
+            {/* Left - Legal Links */}
+            <div style={{ display: 'flex', gap: 'var(--space-5)', flexWrap: 'wrap' }}>
+              <FooterBottomLink href="/terms">Terms</FooterBottomLink>
+              <FooterBottomLink href="/privacy">Privacy</FooterBottomLink>
+              <FooterBottomLink href="/security">Security</FooterBottomLink>
+              <FooterBottomLink href="/trademark">Trademark</FooterBottomLink>
             </div>
 
-            {/* Contact */}
-            <address style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', fontStyle: 'normal' }}>
-              <span
-                style={{
-                  color: 'var(--gray-900)',
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 600,
-                  display: 'block',
-                  marginBottom: 'var(--space-2)'
-                }}
-              >
-                Contact
-              </span>
-              <a
-                href="mailto:contact@originary.xyz"
-                style={{
-                  color: 'var(--gray-600)',
-                  fontSize: 'var(--text-xs)',
-                  textDecoration: 'none',
-                  display: 'block',
-                  marginBottom: 'var(--space-1)',
-                  transition: 'color 0.2s ease'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--brand-primary)'}
-                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--gray-600)'}
-              >
-                contact@originary.xyz
-              </a>
-              <a
-                href="tel:+14157070402"
-                style={{
-                  color: 'var(--gray-600)',
-                  fontSize: 'var(--text-xs)',
-                  textDecoration: 'none',
-                  display: 'block',
-                  transition: 'color 0.2s ease'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--brand-primary)'}
-                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--gray-600)'}
-              >
-                +1 415 707 0402
-              </a>
-            </address>
-
-            {/* Technical */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-              <span
-                style={{
-                  color: 'var(--gray-900)',
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 600
-                }}
-              >
-                Technical
-              </span>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                <FooterLink href="/robots.txt" label="View robots.txt file">
-                  robots.txt
-                </FooterLink>
-                <FooterLink href="/.well-known/peac.txt" label="View PEAC policy file">
-                  peac.txt
-                </FooterLink>
-                <FooterLink href="/.well-known/aipref.json" label="View AI preferences file">
-                  aipref.json
-                </FooterLink>
-                <FooterLink href="/.well-known/security.txt" label="View security.txt file">
-                  security.txt
-                </FooterLink>
-              </div>
-            </div>
-
-            {/* Legal */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-              <span
-                style={{
-                  color: 'var(--gray-900)',
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 600
-                }}
-              >
-                Legal
-              </span>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                <FooterLink href="/terms" label="Terms of Service">
-                  Terms
-                </FooterLink>
-                <FooterLink href="/privacy" label="Privacy Policy">
-                  Privacy
-                </FooterLink>
-                <FooterLink href="/trademark" label="Trademark">
-                  Trademark
-                </FooterLink>
-                <FooterLink href="/security" label="Security">
-                  Security
-                </FooterLink>
-                <FooterLink href="/copyright" label="Copyright">
-                  Copyright
-                </FooterLink>
-              </div>
-            </div>
-
-            {/* Resources */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-              <span
-                style={{
-                  color: 'var(--gray-900)',
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 600
-                }}
-              >
-                Resources
-              </span>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                <FooterLink href="/sitemap.xml" label="View XML sitemap">
-                  sitemap.xml
-                </FooterLink>
-                <FooterLink href="/humans.txt" label="View humans.txt file">
-                  humans.txt
-                </FooterLink>
-                <button
-                  onClick={togglePrivacyChoices}
-                  style={{
-                    color: 'var(--gray-600)',
-                    fontSize: 'var(--text-xs)',
-                    textDecoration: 'none',
-                    background: 'none',
-                    border: 'none',
-                    padding: 0,
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                    transition: 'color 0.2s ease',
-                    fontWeight: 400
-                  }}
-                  aria-label="Toggle analytics consent"
-                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--brand-primary)'}
-                  onMouseLeave={(e) => e.currentTarget.style.color = 'var(--gray-600)'}
-                >
-                  Privacy choices
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Bar */}
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              paddingTop: 'var(--space-6)',
-              borderTop: '1px solid var(--gray-100)',
-              flexWrap: 'wrap',
-              gap: 'var(--space-4)'
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
-              <span
-                style={{
-                  color: 'var(--gray-500)',
-                  fontSize: 'var(--text-xs)'
-                }}
-                role="contentinfo"
-              >
-                © 2025 Poem, Inc.
-              </span>
-              <span style={{ color: 'var(--gray-400)', fontSize: 'var(--text-xs)' }}>•</span>
-              <span style={{ color: 'var(--gray-500)', fontSize: 'var(--text-xs)' }}>
-                In the U.S., &lsquo;Originary&rsquo; is used by Poem, Inc. as a brand for its AI infrastructure software and tools for the agentic web. Poem, Inc. is not affiliated with Originary Inc.
-              </span>
-              <span style={{ color: 'var(--gray-400)', fontSize: 'var(--text-xs)' }}>•</span>
-              <a
-                href="https://github.com/peacprotocol/peac"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: 'var(--gray-500)',
-                  fontSize: 'var(--text-xs)',
-                  textDecoration: 'none',
-                  transition: 'color 0.2s ease'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--brand-primary)'}
-                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--gray-500)'}
-              >
-                Built on PEAC Protocol
-              </a>
-            </div>
-
-            {/* System Status Indicator */}
+            {/* Center - Status Badge */}
             <Link
               href="/status"
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '6px',
-                padding: '4px 10px',
-                background: 'rgba(0, 217, 36, 0.08)',
-                border: '1px solid rgba(0, 217, 36, 0.15)',
+                gap: '8px',
+                padding: '8px 16px',
+                background: 'linear-gradient(135deg, rgba(0, 200, 83, 0.06) 0%, rgba(0, 200, 83, 0.02) 100%)',
+                border: '1px solid rgba(0, 200, 83, 0.12)',
                 borderRadius: 'var(--radius-full)',
                 textDecoration: 'none',
                 transition: 'all 0.2s ease'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(0, 217, 36, 0.12)'
-                e.currentTarget.style.borderColor = 'rgba(0, 217, 36, 0.25)'
+                e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0, 200, 83, 0.1) 0%, rgba(0, 200, 83, 0.04) 100%)'
+                e.currentTarget.style.borderColor = 'rgba(0, 200, 83, 0.2)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(0, 217, 36, 0.08)'
-                e.currentTarget.style.borderColor = 'rgba(0, 217, 36, 0.15)'
+                e.currentTarget.style.background = 'linear-gradient(135deg, rgba(0, 200, 83, 0.06) 0%, rgba(0, 200, 83, 0.02) 100%)'
+                e.currentTarget.style.borderColor = 'rgba(0, 200, 83, 0.12)'
               }}
             >
               <span
-                className="pulse-dot"
                 style={{
-                  width: '6px',
-                  height: '6px'
+                  width: '8px',
+                  height: '8px',
+                  background: '#00c853',
+                  borderRadius: '50%',
+                  boxShadow: '0 0 8px rgba(0, 200, 83, 0.6)',
+                  animation: 'pulse 2s infinite'
                 }}
               />
-              <span
-                style={{
-                  fontSize: '11px',
-                  fontWeight: 500,
-                  color: 'var(--success)'
-                }}
-              >
-                All Systems Operational
+              <span style={{ fontSize: '13px', fontWeight: 500, color: '#00a843' }}>
+                All systems operational
               </span>
             </Link>
+
+            {/* Right - Technical Files */}
+            <div style={{ display: 'flex', gap: 'var(--space-5)', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+              <FooterBottomLink href="/robots.txt">robots.txt</FooterBottomLink>
+              <FooterBottomLink href="/.well-known/peac.txt">peac.txt</FooterBottomLink>
+              <FooterBottomLink href="/.well-known/aipref.json">aipref.json</FooterBottomLink>
+              <FooterBottomLink href="/sitemap.xml">sitemap.xml</FooterBottomLink>
+            </div>
+          </div>
+
+          {/* Copyright Row - Centered */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 'var(--space-3)',
+              textAlign: 'center'
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
+              <span style={{ color: 'var(--gray-400)', fontSize: 'var(--text-sm)', fontWeight: 500 }}>
+                © 2025 Poem, Inc.
+              </span>
+              <span style={{ color: 'var(--gray-200)' }}>·</span>
+              <button
+                onClick={togglePrivacyChoices}
+                type="button"
+                style={{
+                  color: 'var(--gray-400)',
+                  fontSize: 'var(--text-sm)',
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  cursor: 'pointer',
+                  transition: 'color 0.15s ease',
+                  fontWeight: 500
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--gray-600)'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--gray-400)'}
+              >
+                Privacy choices
+              </button>
+            </div>
+            <p
+              style={{
+                color: 'var(--gray-500)',
+                fontSize: 'var(--text-sm)',
+                maxWidth: '700px',
+                lineHeight: 1.6
+              }}
+            >
+              In the U.S., &lsquo;Originary&rsquo; is used by Poem, Inc. as a brand for its AI infrastructure software and tools for the agentic web. Poem, Inc. is not affiliated with Originary Inc.
+            </p>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 1200px) {
+          .footer-nav-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+          }
+        }
+        @media (max-width: 900px) {
+          .footer-nav-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+          .footer-bottom-grid {
+            grid-template-columns: 1fr !important;
+            gap: var(--space-6) !important;
+            text-align: center;
+          }
+          .footer-bottom-grid > div {
+            justify-content: center !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .footer-nav-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </footer>
   )
 }
@@ -476,130 +323,73 @@ function FooterSection({
   title,
   links
 }: {
-  title: string;
-  links: Array<{ href: string; label: string; external?: boolean }>;
+  title: string
+  links: Array<{ href: string; label: string; external?: boolean }>
 }) {
   return (
     <div>
       <h4
         style={{
-          fontSize: 'var(--text-sm)',
+          fontSize: 'var(--text-xs)',
           fontWeight: 600,
-          color: 'var(--gray-900)',
+          color: 'var(--gray-400)',
           marginBottom: 'var(--space-4)',
           textTransform: 'uppercase',
-          letterSpacing: '0.05em'
+          letterSpacing: '0.1em'
         }}
       >
         {title}
       </h4>
-      <ul
-        style={{
-          listStyle: 'none',
-          padding: 0,
-          margin: 0,
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 'var(--space-3)'
-        }}
-        role="list"
-      >
-        {links.map((link) => {
-          const linkStyle = {
-            color: 'var(--gray-600)',
-            textDecoration: 'none',
-            fontSize: 'var(--text-sm)',
-            transition: 'color var(--duration-200) var(--ease-out)'
-          };
-
+      <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+        {links.map((link, index) => {
           const linkProps = link.external
             ? { target: '_blank', rel: 'noopener noreferrer' }
-            : {};
+            : {}
 
           return (
-            <li key={link.href}>
+            <li key={`${link.href}-${index}`} style={{ marginBottom: 'var(--space-3)' }}>
               <Link
                 href={link.href}
                 {...linkProps}
-                style={linkStyle}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = 'var(--gray-900)'
+                style={{
+                  color: 'var(--gray-600)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-sm)',
+                  transition: 'color 0.15s ease'
                 }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'var(--gray-600)'
-                }}
+                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--gray-900)'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--gray-600)'}
               >
                 {link.label}
               </Link>
             </li>
-          );
+          )
         })}
       </ul>
     </div>
   )
 }
 
-function SocialLink({
+function FooterBottomLink({
   href,
-  label,
   children
 }: {
-  href: string;
-  label: string;
-  children: React.ReactNode;
+  href: string
+  children: React.ReactNode
 }) {
   return (
-    <a
+    <Link
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={label}
       style={{
-        color: 'var(--gray-600)',
-        textDecoration: 'none',
-        fontSize: 'var(--text-sm)',
-        fontWeight: 500,
-        transition: 'color var(--duration-200) var(--ease-out)'
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.color = 'var(--brand-primary)'
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.color = 'var(--gray-600)'
-      }}
-    >
-      {children}
-    </a>
-  )
-}
-
-function FooterLink({
-  href,
-  label,
-  children
-}: {
-  href: string;
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <a
-      href={href}
-      aria-label={label}
-      style={{
-        color: 'var(--gray-500)',
+        color: 'var(--gray-400)',
         textDecoration: 'none',
         fontSize: 'var(--text-xs)',
-        transition: 'color var(--duration-200) var(--ease-out)'
+        transition: 'color 0.15s ease'
       }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.color = 'var(--gray-700)'
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.color = 'var(--gray-500)'
-      }}
+      onMouseEnter={(e) => e.currentTarget.style.color = 'var(--gray-600)'}
+      onMouseLeave={(e) => e.currentTarget.style.color = 'var(--gray-400)'}
     >
       {children}
-    </a>
+    </Link>
   )
 }

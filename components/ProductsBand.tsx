@@ -26,7 +26,7 @@ export default function ProductsBand() {
       featured: false,
       buttons: [
         { label: 'Learn more', href: '/trace', primary: true },
-        { label: 'View pricing', href: '/trace/pricing' }
+        { label: 'Pricing', href: '/pricing' }
       ]
     },
     {
@@ -335,7 +335,7 @@ export default function ProductsBand() {
                 e.currentTarget.style.background = 'transparent'
               }}
             >
-              Learn PEAC Protocol
+              Explore PEAC Protocol
               <ArrowRight size={16} />
             </Link>
           </div>

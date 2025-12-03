@@ -8,6 +8,7 @@ const withMDX = require('@next/mdx')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  outputFileTracingRoot: __dirname,
   trailingSlash: false,
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   eslint: {

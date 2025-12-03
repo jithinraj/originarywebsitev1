@@ -1,18 +1,12 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import DeveloperLuxuryHero from '@/components/DeveloperLuxuryHero'
 import BentoFeatures from '@/components/BentoFeatures'
 import ProductsBand from '@/components/ProductsBand'
-import PEACBand from '@/components/PEACBand'
-import FoundationalRailsSection from '@/components/FoundationalRailsSection'
-import VerifySection from '@/components/VerifySection'
 import SocialProofSection from '@/components/SocialProofSection'
-import ControlPlaneSection from '@/components/ControlPlaneSection'
 import StandardsIntegrations from '@/components/StandardsIntegrations'
-import WorldClassHomePage from '@/components/WorldClassHomePage'
+import HomePage from '@/components/HomePage'
 import Footer from '@/components/Footer'
-import { ArrowRight, BookOpen, Bot, Code, DollarSign } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: {
@@ -185,165 +179,9 @@ export default function Page() {
           </div>
         </section>
 
-        {/* Deep Dives Links Section - Compact */}
-        <section className="section" style={{ paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)', background: 'var(--gray-50)' }}>
-          <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
-              <h2 style={{
-                fontSize: 'var(--text-2xl)',
-                fontWeight: 700,
-                color: 'var(--gray-900)',
-                marginBottom: 'var(--space-2)'
-              }}>
-                Deep dives
-              </h2>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>
-                Explore protocols, integrations, and tools
-              </p>
-            </div>
-
-            {/* Compact 6-column grid */}
-            <div className="deep-dives-grid" style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(6, 1fr)',
-              gap: 'var(--space-3)'
-            }}>
-              <Link href="/peac" className="deep-dive-card" style={{
-                textDecoration: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                padding: 'var(--space-4)',
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
-                borderRadius: 'var(--radius-xl)',
-                transition: 'all 0.2s ease',
-                textAlign: 'center'
-              }}>
-                <Code size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
-                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
-                  PEAC Protocol
-                </span>
-                <span style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
-                  Open protocol
-                </span>
-              </Link>
-
-              <Link href="/trace" className="deep-dive-card" style={{
-                textDecoration: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                padding: 'var(--space-4)',
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
-                borderRadius: 'var(--radius-xl)',
-                transition: 'all 0.2s ease',
-                textAlign: 'center'
-              }}>
-                <Bot size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
-                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
-                  Trace
-                </span>
-                <span style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
-                  Bot analytics
-                </span>
-              </Link>
-
-              <Link href="/integrations/x402" className="deep-dive-card" style={{
-                textDecoration: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                padding: 'var(--space-4)',
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
-                borderRadius: 'var(--radius-xl)',
-                transition: 'all 0.2s ease',
-                textAlign: 'center'
-              }}>
-                <DollarSign size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
-                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
-                  HTTP 402
-                </span>
-                <span style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
-                  Payments
-                </span>
-              </Link>
-
-              <Link href="/integrations/aipref" className="deep-dive-card" style={{
-                textDecoration: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                padding: 'var(--space-4)',
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
-                borderRadius: 'var(--radius-xl)',
-                transition: 'all 0.2s ease',
-                textAlign: 'center'
-              }}>
-                <BookOpen size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
-                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
-                  AIPREF
-                </span>
-                <span style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
-                  AI preferences
-                </span>
-              </Link>
-
-              <Link href="/cloud" className="deep-dive-card" style={{
-                textDecoration: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                padding: 'var(--space-4)',
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
-                borderRadius: 'var(--radius-xl)',
-                transition: 'all 0.2s ease',
-                textAlign: 'center'
-              }}>
-                <Bot size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
-                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
-                  Trace Cloud
-                </span>
-                <span style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
-                  Managed
-                </span>
-              </Link>
-
-              <Link href="/integrations/acp" className="deep-dive-card" style={{
-                textDecoration: 'none',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                padding: 'var(--space-4)',
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
-                borderRadius: 'var(--radius-xl)',
-                transition: 'all 0.2s ease',
-                textAlign: 'center'
-              }}>
-                <DollarSign size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
-                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
-                  ACP
-                </span>
-                <span style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
-                  Agent commerce
-                </span>
-              </Link>
-            </div>
-          </div>
-        </section>
-
         <ProductsBand />
-        <PEACBand />
-        <FoundationalRailsSection />
-        <VerifySection />
-        <ControlPlaneSection />
         <StandardsIntegrations />
-        <WorldClassHomePage />
+        <HomePage />
       </main>
       <Footer />
     </>

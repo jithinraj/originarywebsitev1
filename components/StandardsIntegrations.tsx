@@ -27,7 +27,7 @@ export default function StandardsIntegrations() {
     },
     {
       title: 'PEAC Protocol',
-      subtitle: 'Receipt Standard',
+      subtitle: 'Open Protocol',
       description: 'Open protocol for verifiable receipts in agent-to-agent interactions with cryptographic signatures.',
       href: 'https://peacprotocol.org/',
       icon: '🧾'
