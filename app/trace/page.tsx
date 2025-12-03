@@ -268,7 +268,7 @@ export default function TracePage() {
                   lineHeight: 1.7,
                   marginBottom: 'var(--space-6)'
                 }}>
-                  Originary Trace is built on the <strong>PEAC Protocol</strong> (Programmable Environment for Agent Coordination) - an open standard for machine-readable policy, compliance tracking, and verifiable receipts.
+                  Originary Trace is built on the <strong>PEAC Protocol</strong> (Programmable Environment for Agent Coordination) - an open protocol for machine-readable policy, compliance tracking, and verifiable receipts.
                 </p>
                 <a
                   href="https://github.com/peacprotocol/peac"

@@ -91,6 +91,38 @@ export default function ProductsPage() {
           </div>
         </section>
 
+        {/* Start with Declare Band */}
+        <section style={{
+          background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.05) 0%, rgba(0, 212, 170, 0.05) 100%)',
+          borderTop: '1px solid var(--gray-100)',
+          borderBottom: '1px solid var(--gray-100)',
+          padding: 'var(--space-8) 0'
+        }}>
+          <div className="container">
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 'var(--space-6)',
+              flexWrap: 'wrap',
+              textAlign: 'center'
+            }}>
+              <p style={{
+                fontSize: 'var(--text-base)',
+                color: 'var(--gray-700)',
+                lineHeight: 1.6,
+                maxWidth: '700px',
+                margin: 0
+              }}>
+                <strong style={{ color: 'var(--brand-primary)' }}>Start with Declare:</strong> Most teams begin with Declare (Policy Kit) to define AI policy and receipts, then add Gateway 402, Verify API, Studio, and Trace as their traffic and compliance needs grow.
+              </p>
+              <Link href="/declare" className="btn btn-primary btn-sm">
+                Get Declare
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Core Products */}
         <section className="section" style={{ background: 'var(--gray-50)' }}>
           <div className="container">
@@ -119,7 +151,7 @@ export default function ProductsPage() {
                 icon={<Database size={32} style={{ color: 'var(--brand-primary)' }} />}
                 title="PEAC Protocol"
                 category="Foundation Layer"
-                description="The open standard for machine-readable policies and consent. Enables autonomous agents to discover access terms, pricing, and attribution requirements automatically."
+                description="The open protocol for machine-readable policies and consent. Enables autonomous agents to discover access terms, pricing, and attribution requirements automatically."
                 features={[
                   'Automated policy discovery',
                   'Standardized consent frameworks',

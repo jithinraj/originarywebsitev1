@@ -27,7 +27,7 @@ const peacSourceCodeJsonLd = {
   codeRepository: 'https://github.com/peacprotocol/peac',
   license: 'https://www.apache.org/licenses/LICENSE-2.0',
   programmingLanguage: 'TypeScript',
-  version: '0.9.13'
+  version: '0.9.14'
 }
 
 export const metadata: Metadata = {
@@ -81,7 +81,7 @@ export default function Downloads() {
                 marginBottom: 'var(--space-4)',
                 color: 'var(--gray-900)'
               }}>
-                ORIGINARY™ Downloads
+                ORIGINARY <span style={{ fontSize: '0.5em', verticalAlign: 'super' }}>™</span> Downloads
               </h1>
 
               <p style={{

@@ -9,7 +9,7 @@ export default function ServiceOffers() {
           textAlign: 'center',
           marginBottom: 'var(--space-16)'
         }}>
-          <h2 style={{ marginBottom: 'var(--space-6)' }}>Our services</h2>
+          <h2 style={{ marginBottom: 'var(--space-6)' }}>Originary solutions</h2>
           <p style={{
             fontSize: 'var(--text-xl)',
             color: 'var(--gray-600)',
@@ -17,7 +17,7 @@ export default function ServiceOffers() {
             margin: '0 auto',
             lineHeight: 1.7
           }}>
-            Get up and running with Receipts faster
+            Implementation and compliance help for Receipts and HTTP 402
           </p>
         </div>
 
@@ -25,14 +25,14 @@ export default function ServiceOffers() {
           <ServiceCard
             icon={<CheckCircle size={32} style={{ color: 'var(--brand-primary)' }} />}
             title="Implement Receipts"
-            description="Publishers/APIs needing lawful access proof."
+            description="Publishers and APIs that need verifiable access and usage proof."
             deliverables={[
               'Authored /.well-known/peac.txt',
-              'x402 hookup (primary) + optional adapters (Stripe/USDC/on-chain)',
+              'x402 hookup (primary) with optional adapters (Stripe/USDC/on-chain)',
               'Edge verification middleware (Cloudflare/Vercel)',
-              'Staging receipt samples, go-live checklist'
+              'Staging receipt samples and a go-live checklist'
             ]}
-            outcome="Non-compliant calls blocked; compliant calls carry a verifiable Receipt."
+            outcome="Compliant calls carry a verifiable Receipt; non-compliant calls can be blocked or flagged."
             ctaText="Contact Sales"
             ctaLink="/company/contact"
             secondaryText="Email Sales"
@@ -42,14 +42,14 @@ export default function ServiceOffers() {
           <ServiceCard
             icon={<Zap size={32} style={{ color: 'var(--brand-secondary)' }} />}
             title="Managed Adapters"
-            description="Teams that want payments without owning the glue."
+            description="Teams that want multi-rail payments without running the plumbing."
             deliverables={[
-              'Deploy & monitor x402',
+              'Deployment and monitoring for x402',
               'Adapters for Stripe/USDC/on-chain',
               'Key/JWKS rotation',
-              'Alerts; dashboards'
+              'Alerts and dashboards'
             ]}
-            outcome="Reliable settlement; single Receipt format across rails."
+            outcome="Managed settlement with a single Receipt format across payment rails."
             ctaText="Request Enterprise Pilot"
             ctaLink="/company/contact"
             secondaryText="Email Sales"
@@ -59,14 +59,14 @@ export default function ServiceOffers() {
           <ServiceCard
             icon={<Shield size={32} style={{ color: 'var(--brand-accent)' }} />}
             title="Compliance & Audits"
-            description="Legal/ENG teams with consent/attribution/retention duties."
+            description="Legal and engineering teams with consent, attribution, or retention duties."
             deliverables={[
               'Receipt schema review',
-              'Purposes/retention mapping',
+              'Purpose and retention mapping',
               'Conformance test run',
-              'Remediation plan; exec read-out'
+              'Remediation plan and executive read-out'
             ]}
-            outcome="Evidence-ready receipts aligned to policy."
+            outcome="Evidence-ready receipts aligned to your documented policy."
             ctaText="Talk to an Expert"
             ctaLink="/company/contact"
             secondaryText="Email Sales"

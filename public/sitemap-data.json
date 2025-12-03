@@ -1,13 +1,13 @@
 [
   {
     "url": "https://www.originary.xyz/",
-    "lastModified": "2025-12-02T00:22:14+05:30",
+    "lastModified": "2025-12-03T17:30:00+05:30",
     "priority": 1
   },
   {
     "url": "https://www.originary.xyz/about",
-    "lastModified": "2025-11-14T20:49:24+05:30",
-    "priority": 0.7
+    "lastModified": "2025-12-03T17:30:00+05:30",
+    "priority": 0.8
   },
   {
     "url": "https://www.originary.xyz/ai",
@@ -161,7 +161,7 @@
   },
   {
     "url": "https://www.originary.xyz/downloads",
-    "lastModified": "2025-11-14T20:49:24+05:30",
+    "lastModified": "2025-12-03T17:30:00+05:30",
     "priority": 0.7
   },
   {
@@ -311,7 +311,7 @@
   },
   {
     "url": "https://www.originary.xyz/pricing",
-    "lastModified": "2025-12-02T00:22:14+05:30",
+    "lastModified": "2025-12-03T17:30:00+05:30",
     "priority": 0.9
   },
   {
@@ -321,7 +321,7 @@
   },
   {
     "url": "https://www.originary.xyz/products",
-    "lastModified": "2025-11-14T20:49:24+05:30",
+    "lastModified": "2025-12-03T17:30:00+05:30",
     "priority": 0.8
   },
   {
@@ -441,7 +441,7 @@
   },
   {
     "url": "https://www.originary.xyz/trace",
-    "lastModified": "2025-11-15T10:28:40+05:30",
+    "lastModified": "2025-12-03T17:30:00+05:30",
     "priority": 0.95
   },
   {

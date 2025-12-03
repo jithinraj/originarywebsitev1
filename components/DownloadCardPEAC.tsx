@@ -97,10 +97,10 @@ npx peac validate peac.txt`}
               padding: '2px 4px',
               borderRadius: 'var(--radius-sm)',
               fontFamily: 'var(--font-mono)'
-            }}>0.9.13</code>
+            }}>0.9.14</code>
           </p>
           <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>
-            Originary is validated against 0.9.13.
+            Originary is validated against 0.9.14.
           </p>
         </div>
       </div>
