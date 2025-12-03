@@ -270,15 +270,173 @@ function TechBadge({ children }: { children: React.ReactNode }) {
   )
 }
 
+// Step content data for each PEAC lifecycle step
+const stepContent = [
+  {
+    badge: 'POLICY',
+    filename: 'peac.txt',
+    codeType: 'txt',
+    code: `# AIPREF snapshot (simplified)
+training:        deny
+rag:             allow-with-attribution
+commercial_use:  negotiate
+inference:       allow
+logging:         minimal`,
+    metaLeft: 'policy_hash: 9f3c...c2ab',
+    metaRight: 'v2025-11-30',
+    caption: 'PEAC-Receipt ready - AIPREF-compatible'
+  },
+  {
+    badge: 'ACCESS',
+    filename: 'peac.txt',
+    codeType: 'txt',
+    code: `# Access control
+version:          0.9.13
+access_control:   http-402
+protected_paths:
+  - /api/
+  - /models/
+  - /agents/
+receipts:         required`,
+    metaLeft: 'challenge: HTTP 402 Payment Required',
+    metaRight: 'method: http-402',
+    caption: 'Access gated with HTTP 402 - ready for CDNs and APIs'
+  },
+  {
+    badge: 'PAYMENT',
+    filename: 'peac.txt',
+    codeType: 'txt',
+    code: `# Payment rails
+payments:        [l402, x402, stripe]
+default_currency: USD
+
+# Example 402 challenge
+HTTP/1.1 402 Payment Required
+WWW-Authenticate: L402 realm="api.example.com"`,
+    metaLeft: 'rails_active: l402 - x402 - stripe',
+    metaRight: 'min_amount: 0.01 USD',
+    caption: 'Multi-rail payments - one normalized payment{} in every receipt'
+  },
+  {
+    badge: 'RECEIPT',
+    filename: 'receipt.json',
+    codeType: 'json',
+    code: `{
+  "subject": "/api/chat",
+  "aipref": {
+    "status": "active",
+    "snapshot": { "train-ai": "N", "ai-use": "Y" }
+  },
+  "enforcement": { "method": "http-402", "status": "fulfilled" },
+  "payment": {
+    "rail": "x402",
+    "amount": { "value": 5, "currency": "USD" },
+    "status": "paid"
+  },
+  "issued_at": "2025-11-30T12:34:56Z",
+  "kid": "2025-11-key1"
+}`,
+    metaLeft: 'PEAC-Receipt: eyJhbGciOiJFZERTQSJ9...',
+    metaRight: '',
+    caption: 'Signed PEAC-Receipt header - verify in <5 ms'
+  },
+  {
+    badge: 'TRACE',
+    filename: 'verify',
+    codeType: 'json',
+    code: `# Verification + keys
+verify: https://api.example.com/peac/verify
+public_keys:
+  kid=2025-11-key1; alg=Ed25519; key=11qY...URo
+
+POST /peac/verify
+{
+  "valid": true,
+  "rail": "x402",
+  "amount": "5 USD"
+}`,
+    metaLeft: 'trace_id: 7f92...ab31',
+    metaRight: 'receipts_valid: 100%',
+    caption: 'Traceable by design - verify via /.well-known/peac.txt'
+  }
+]
+
 function PolicyCard3D() {
   const [isHovered, setIsHovered] = useState(false)
+  const [activeStep, setActiveStep] = useState(0)
+
+  const steps = [
+    { label: 'Policy', icon: '📋' },
+    { label: 'Access', icon: '🔑' },
+    { label: 'Payment', icon: '💳' },
+    { label: 'Receipt', icon: '✅' },
+    { label: 'Trace', icon: '📊' }
+  ]
+
+  // Animate through steps
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep(prev => (prev + 1) % steps.length)
+    }, 3500)
+    return () => clearInterval(interval)
+  }, [steps.length])
+
+  const currentContent = stepContent[activeStep]
+
+  // Render code with syntax highlighting
+  const renderCode = (code: string, type: string) => {
+    if (type === 'json') {
+      // JSON syntax highlighting
+      return code.split('\n').map((line, i) => {
+        // Highlight keys
+        const highlightedLine = line
+          .replace(/"([^"]+)":/g, '<key>"$1"</key>:')
+          .replace(/: "([^"]+)"/g, ': <str>"$1"</str>')
+          .replace(/: (\d+)/g, ': <num>$1</num>')
+          .replace(/: (true|false)/g, ': <bool>$1</bool>')
+        return (
+          <span key={i} dangerouslySetInnerHTML={{
+            __html: highlightedLine
+              .replace(/<key>/g, '<span style="color: #7C75FF">')
+              .replace(/<\/key>/g, '</span>')
+              .replace(/<str>/g, '<span style="color: #22C55E">')
+              .replace(/<\/str>/g, '</span>')
+              .replace(/<num>/g, '<span style="color: #F59E0B">')
+              .replace(/<\/num>/g, '</span>')
+              .replace(/<bool>/g, '<span style="color: #EC4899">')
+              .replace(/<\/bool>/g, '</span>')
+          }} />
+        )
+      }).reduce((acc: React.ReactNode[], curr, i) => [...acc, curr, <br key={`br-${i}`} />], [] as React.ReactNode[])
+    }
+    // YAML/txt syntax highlighting
+    return code.split('\n').map((line, i) => {
+      if (line.startsWith('#')) {
+        return <span key={i}><span style={{ color: '#6B7280' }}>{line}</span><br /></span>
+      }
+      if (line.includes(':')) {
+        const [key, ...rest] = line.split(':')
+        return (
+          <span key={i}>
+            <span style={{ color: '#7C75FF' }}>{key}:</span>
+            {rest.join(':')}
+            <br />
+          </span>
+        )
+      }
+      if (line.startsWith('HTTP/') || line.startsWith('POST ') || line.startsWith('WWW-')) {
+        return <span key={i}><span style={{ color: '#22C55E' }}>{line}</span><br /></span>
+      }
+      return <span key={i}>{line}<br /></span>
+    })
+  }
 
   return (
     <div
       className="receipt-card-inner"
       style={{
         width: '100%',
-        maxWidth: '480px',
+        maxWidth: '520px',
         margin: '0 auto'
       }}
       onMouseEnter={() => setIsHovered(true)}
@@ -302,11 +460,11 @@ function PolicyCard3D() {
 
       {/* Main Card */}
       <div
-        className="gradient-border"
+        className="gradient-border policy-card-main"
         style={{
           background: 'var(--white)',
           borderRadius: 'var(--radius-2xl)',
-          padding: 'var(--space-6)',
+          padding: 'clamp(var(--space-4), 4vw, var(--space-6))',
           boxShadow: isHovered
             ? '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px var(--gray-200)'
             : '0 20px 40px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--gray-200)',
@@ -315,28 +473,37 @@ function PolicyCard3D() {
       >
         {/* Header */}
         <div
+          className="policy-card-header"
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            marginBottom: 'var(--space-4)'
+            marginBottom: 'var(--space-4)',
+            flexWrap: 'wrap',
+            gap: 'var(--space-2)'
           }}
         >
-          <div className="badge-status">
-            POLICY
+          <div
+            className="badge-status"
+            style={{
+              transition: 'all 0.3s ease-out'
+            }}
+          >
+            {currentContent.badge}
           </div>
-          <span className="label-mono">/.well-known/peac.txt</span>
+          <span className="label-mono" style={{ fontSize: 'clamp(9px, 2vw, 11px)' }}>/.well-known/peac.txt</span>
         </div>
 
         {/* Pipeline Steps - Animated Stepper */}
-        <PipelineStepper />
+        <PipelineStepper activeStep={activeStep} steps={steps} />
 
-        {/* Policy Code Block */}
+        {/* Dynamic Code Block */}
         <div
           className="code-block-luxury"
           style={{
             borderRadius: 'var(--radius-xl)',
-            marginBottom: 'var(--space-4)'
+            marginBottom: 'var(--space-4)',
+            overflow: 'hidden'
           }}
         >
           <div className="code-block-header">
@@ -345,69 +512,88 @@ function PolicyCard3D() {
               <span className="code-block-dot code-block-dot-yellow" />
               <span className="code-block-dot code-block-dot-green" />
             </div>
-            <span className="code-block-filename">peac.txt</span>
+            <span
+              className="code-block-filename"
+              style={{ transition: 'all 0.3s ease-out' }}
+            >
+              {currentContent.filename}
+            </span>
           </div>
-          <div className="code-block-body" style={{ fontSize: '12px', padding: 'var(--space-4)' }}>
-            <pre style={{ margin: 0, whiteSpace: 'pre-wrap' }}>
+          <div
+            className="code-block-body"
+            style={{
+              fontSize: 'clamp(10px, 2.5vw, 12px)',
+              padding: 'clamp(var(--space-3), 3vw, var(--space-4))',
+              minHeight: '180px',
+              transition: 'opacity 0.3s ease-out'
+            }}
+          >
+            <pre style={{ margin: 0, whiteSpace: 'pre-wrap', lineHeight: 1.5 }}>
               <code style={{ color: '#A1A1AA' }}>
-{`# AI Agent Policy
-`}<span style={{ color: '#7C75FF' }}>training:</span>{`        deny
-`}<span style={{ color: '#7C75FF' }}>rag:</span>{`             allow-with-attribution
-`}<span style={{ color: '#7C75FF' }}>commercial_use:</span>{`  negotiate
-`}<span style={{ color: '#7C75FF' }}>inference:</span>{`       allow
-`}<span style={{ color: '#7C75FF' }}>logging:</span>{`         minimal`}
+                {renderCode(currentContent.code, currentContent.codeType)}
               </code>
             </pre>
           </div>
         </div>
 
-        {/* Policy Hash */}
+        {/* Dynamic Metadata Row */}
         <div
+          className="policy-meta-row"
           style={{
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            padding: 'var(--space-3)',
+            padding: 'clamp(var(--space-2), 2vw, var(--space-3))',
             background: 'var(--gray-50)',
             borderRadius: 'var(--radius-lg)',
             fontFamily: 'var(--font-mono)',
-            fontSize: '11px',
-            color: 'var(--gray-500)'
+            fontSize: 'clamp(9px, 2vw, 11px)',
+            color: 'var(--gray-500)',
+            flexWrap: 'wrap',
+            gap: 'var(--space-2)',
+            transition: 'all 0.3s ease-out'
           }}
         >
-          <span>policy_hash: 9f3c...c2ab</span>
-          <span>v2025-11-30</span>
+          <span>{currentContent.metaLeft}</span>
+          {currentContent.metaRight && <span>{currentContent.metaRight}</span>}
         </div>
 
         {/* Footer */}
         <div
+          className="policy-card-footer"
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
             marginTop: 'var(--space-4)',
             paddingTop: 'var(--space-4)',
-            borderTop: '1px solid var(--gray-200)'
+            borderTop: '1px solid var(--gray-200)',
+            flexWrap: 'wrap',
+            gap: 'var(--space-3)'
           }}
         >
           <span
             style={{
-              fontSize: '11px',
-              color: 'var(--gray-400)'
+              fontSize: 'clamp(10px, 2vw, 11px)',
+              color: 'var(--gray-400)',
+              transition: 'all 0.3s ease-out',
+              flex: '1 1 auto',
+              minWidth: '150px'
             }}
           >
-            PEAC-Receipt ready - AIPREF-compatible
+            {currentContent.caption}
           </span>
           <Link
             href="/declare"
             style={{
-              fontSize: '12px',
+              fontSize: 'clamp(11px, 2.5vw, 12px)',
               fontWeight: 600,
               color: 'var(--brand-primary)',
               textDecoration: 'none',
               display: 'flex',
               alignItems: 'center',
-              gap: '4px'
+              gap: '4px',
+              whiteSpace: 'nowrap'
             }}
           >
             Try Declare
@@ -415,29 +601,33 @@ function PolicyCard3D() {
           </Link>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 480px) {
+          .policy-card-header {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          .policy-meta-row {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          .policy-card-footer {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+        }
+      `}</style>
     </div>
   )
 }
 
-function PipelineStepper() {
-  const [activeStep, setActiveStep] = useState(0)
+interface Step {
+  label: string
+  icon: string
+}
 
-  const steps = [
-    { label: 'Policy', icon: '📋' },
-    { label: 'Access', icon: '🔑' },
-    { label: 'Payment', icon: '💳' },
-    { label: 'Receipt', icon: '✅' },
-    { label: 'Trace', icon: '📊' }
-  ]
-
-  // Animate through steps
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveStep(prev => (prev + 1) % steps.length)
-    }, 2000)
-    return () => clearInterval(interval)
-  }, [steps.length])
-
+function PipelineStepper({ activeStep, steps }: { activeStep: number; steps: Step[] }) {
   return (
     <div
       style={{

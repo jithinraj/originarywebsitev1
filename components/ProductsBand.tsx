@@ -140,24 +140,9 @@ export default function ProductsBand() {
                 </div>
 
                 <div style={{ flex: 1 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-2)' }}>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--white)' }}>
-                      {product.name}
-                    </h3>
-                    {product.badge && (
-                      <span style={{
-                        background: 'rgba(255, 255, 255, 0.2)',
-                        color: 'var(--white)',
-                        fontSize: 'var(--text-xs)',
-                        fontWeight: 600,
-                        padding: '2px 8px',
-                        borderRadius: 'var(--radius-full)',
-                        textTransform: 'uppercase'
-                      }}>
-                        {product.badge}
-                      </span>
-                    )}
-                  </div>
+                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--white)', marginBottom: 'var(--space-2)' }}>
+                    {product.name}
+                  </h3>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.5 }}>
                     {product.description}
                   </p>
@@ -239,27 +224,6 @@ export default function ProductsBand() {
                     e.currentTarget.style.boxShadow = 'none'
                   }}
                 >
-                  {/* Badge */}
-                  {product.badge && (
-                    <div
-                      style={{
-                        position: 'absolute',
-                        top: 'var(--space-3)',
-                        right: 'var(--space-3)',
-                        background: 'rgba(99, 91, 255, 0.1)',
-                        color: 'var(--brand-primary)',
-                        fontSize: '10px',
-                        fontWeight: 600,
-                        padding: '2px 8px',
-                        borderRadius: 'var(--radius-full)',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.05em'
-                      }}
-                    >
-                      {product.badge}
-                    </div>
-                  )}
-
                   {/* Icon */}
                   <div
                     style={{
