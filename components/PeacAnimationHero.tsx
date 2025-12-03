@@ -277,11 +277,11 @@ const stepContent = [
     filename: 'peac.txt',
     codeType: 'txt',
     code: `# AIPREF snapshot (simplified)
-training:        deny
-rag:             allow-with-attribution
-commercial_use:  negotiate
-inference:       allow
-logging:         minimal`,
+training:       deny
+rag:            allow-with-attribution
+commercial_use: negotiate
+inference:      allow
+logging:        minimal`,
     metaLeft: 'policy_hash: 9f3c...c2ab',
     metaRight: 'v2025-11-30',
     caption: 'PEAC-Receipt ready - AIPREF-compatible'
@@ -291,13 +291,10 @@ logging:         minimal`,
     filename: 'peac.txt',
     codeType: 'txt',
     code: `# Access control
-version:          0.9.13
-access_control:   http-402
-protected_paths:
-  - /api/
-  - /models/
-  - /agents/
-receipts:         required`,
+version:         0.9.13
+access_control:  http-402
+protected_paths: [/api/, /models/, /agents/]
+receipts:        required`,
     metaLeft: 'challenge: HTTP 402 Payment Required',
     metaRight: 'method: http-402',
     caption: 'Access gated with HTTP 402 - ready for CDNs and APIs'
@@ -307,10 +304,10 @@ receipts:         required`,
     filename: 'peac.txt',
     codeType: 'txt',
     code: `# Payment rails
-payments:        [x402, stripe]
+payments:         [x402, stripe]
 default_currency: USD
 
-# Example 402 challenge
+# 402 challenge example
 HTTP/1.1 402 Payment Required
 X-Payment: x402 token="..."`,
     metaLeft: 'rails_active: x402 - stripe',
@@ -334,14 +331,14 @@ X-Payment: x402 token="..."`,
   },
   {
     badge: 'TRACE',
-    filename: 'verify',
+    filename: 'verify.txt',
     codeType: 'txt',
     code: `# Verification endpoint
-verify: /peac/verify
-public_keys:
-  kid=2025-11-key1; alg=Ed25519
+verify:      /peac/verify
+public_keys: kid=2025-11-key1; alg=Ed25519
 
-POST /peac/verify -> { "valid": true }`,
+POST /peac/verify
+{ "valid": true, "rail": "x402" }`,
     metaLeft: 'trace_id: 7f92...ab31',
     metaRight: 'receipts_valid: 100%',
     caption: 'Traceable by design - verify via /.well-known/peac.txt'
