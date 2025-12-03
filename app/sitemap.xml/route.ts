@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server'
 import sitemapData from '@/public/sitemap-data.json'
 
+// Use Edge Runtime to bypass RSC header injection
+export const runtime = 'edge'
+
 interface SitemapEntry {
   url: string
   lastModified: string
