@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { ArrowRight } from 'lucide-react'
 
-export default function DeveloperLuxuryHero() {
+export default function PeacAnimationHero() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -307,13 +307,13 @@ receipts:         required`,
     filename: 'peac.txt',
     codeType: 'txt',
     code: `# Payment rails
-payments:        [l402, x402, stripe]
+payments:        [x402, stripe]
 default_currency: USD
 
 # Example 402 challenge
 HTTP/1.1 402 Payment Required
-WWW-Authenticate: L402 realm="api.example.com"`,
-    metaLeft: 'rails_active: l402 - x402 - stripe',
+X-Payment: x402 token="..."`,
+    metaLeft: 'rails_active: x402 - stripe',
     metaRight: 'min_amount: 0.01 USD',
     caption: 'Multi-rail payments - one normalized payment{} in every receipt'
   },
@@ -323,16 +323,8 @@ WWW-Authenticate: L402 realm="api.example.com"`,
     codeType: 'json',
     code: `{
   "subject": "/api/chat",
-  "aipref": {
-    "status": "active",
-    "snapshot": { "train-ai": "N", "ai-use": "Y" }
-  },
-  "enforcement": { "method": "http-402", "status": "fulfilled" },
-  "payment": {
-    "rail": "x402",
-    "amount": { "value": 5, "currency": "USD" },
-    "status": "paid"
-  },
+  "aipref": { "train-ai": "N", "ai-use": "Y" },
+  "payment": { "rail": "x402", "amount": 5 },
   "issued_at": "2025-11-30T12:34:56Z",
   "kid": "2025-11-key1"
 }`,
@@ -343,18 +335,13 @@ WWW-Authenticate: L402 realm="api.example.com"`,
   {
     badge: 'TRACE',
     filename: 'verify',
-    codeType: 'json',
-    code: `# Verification + keys
-verify: https://api.example.com/peac/verify
+    codeType: 'txt',
+    code: `# Verification endpoint
+verify: /peac/verify
 public_keys:
-  kid=2025-11-key1; alg=Ed25519; key=11qY...URo
+  kid=2025-11-key1; alg=Ed25519
 
-POST /peac/verify
-{
-  "valid": true,
-  "rail": "x402",
-  "amount": "5 USD"
-}`,
+POST /peac/verify -> { "valid": true }`,
     metaLeft: 'trace_id: 7f92...ab31',
     metaRight: 'receipts_valid: 100%',
     caption: 'Traceable by design - verify via /.well-known/peac.txt'
@@ -524,7 +511,8 @@ function PolicyCard3D() {
             style={{
               fontSize: 'clamp(10px, 2.5vw, 12px)',
               padding: 'clamp(var(--space-3), 3vw, var(--space-4))',
-              minHeight: '180px',
+              height: '156px',
+              overflow: 'hidden',
               transition: 'opacity 0.3s ease-out'
             }}
           >
@@ -630,18 +618,20 @@ interface Step {
 function PipelineStepper({ activeStep, steps }: { activeStep: number; steps: Step[] }) {
   return (
     <div
+      className="pipeline-stepper"
       style={{
         display: 'flex',
         alignItems: 'flex-start',
         justifyContent: 'space-between',
-        marginBottom: 'var(--space-6)',
-        padding: 'var(--space-4) 0',
+        marginBottom: 'var(--space-4)',
+        padding: 'var(--space-2) 0',
         position: 'relative'
       }}
     >
       {steps.map((step, index) => (
         <div
           key={step.label}
+          className="pipeline-step"
           style={{
             display: 'flex',
             flexDirection: 'column',
@@ -653,9 +643,10 @@ function PipelineStepper({ activeStep, steps }: { activeStep: number; steps: Ste
           {/* Connecting Line */}
           {index < steps.length - 1 && (
             <div
+              className="pipeline-line"
               style={{
                 position: 'absolute',
-                top: '24px',
+                top: '16px',
                 left: '50%',
                 width: '100%',
                 height: '2px',
@@ -663,7 +654,6 @@ function PipelineStepper({ activeStep, steps }: { activeStep: number; steps: Ste
                 zIndex: 0
               }}
             >
-              {/* Animated progress line */}
               <div
                 style={{
                   position: 'absolute',
@@ -680,19 +670,20 @@ function PipelineStepper({ activeStep, steps }: { activeStep: number; steps: Ste
 
           {/* Icon Circle */}
           <div
+            className="pipeline-icon"
             style={{
-              width: '48px',
-              height: '48px',
+              width: '32px',
+              height: '32px',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '20px',
+              fontSize: '14px',
               background: index === activeStep
                 ? 'linear-gradient(135deg, var(--brand-primary), var(--brand-secondary))'
                 : 'var(--gray-100)',
               boxShadow: index === activeStep
-                ? '0 4px 20px rgba(99, 91, 255, 0.4)'
+                ? '0 4px 12px rgba(99, 91, 255, 0.3)'
                 : 'none',
               transform: index === activeStep ? 'scale(1.1)' : 'scale(1)',
               transition: 'all 0.3s ease-out',
@@ -705,12 +696,14 @@ function PipelineStepper({ activeStep, steps }: { activeStep: number; steps: Ste
 
           {/* Label */}
           <span
+            className="pipeline-label"
             style={{
-              marginTop: 'var(--space-2)',
-              fontSize: '12px',
+              marginTop: 'var(--space-1)',
+              fontSize: 'clamp(9px, 2vw, 11px)',
               fontWeight: index === activeStep ? 600 : 400,
               color: index === activeStep ? 'var(--brand-primary)' : 'var(--gray-500)',
-              transition: 'all 0.3s ease-out'
+              transition: 'all 0.3s ease-out',
+              whiteSpace: 'nowrap'
             }}
           >
             {step.label}

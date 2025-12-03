@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
-import DeveloperLuxuryHero from '@/components/DeveloperLuxuryHero'
+import PeacAnimationHero from '@/components/PeacAnimationHero'
 import BentoFeatures from '@/components/BentoFeatures'
 import ProductsBand from '@/components/ProductsBand'
 import SocialProofSection from '@/components/SocialProofSection'
@@ -62,7 +62,7 @@ export default function Page() {
     <>
       <NavigationHeader />
       <main id="main-content" role="main">
-        <DeveloperLuxuryHero />
+        <PeacAnimationHero />
 
         <BentoFeatures />
 
