@@ -195,8 +195,8 @@ res.json({ content: protectedData })`}
               <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
                 Start accepting x402 payments and build HTTP 402 for APIs with Originary today.
               </p>
-              <Link href="/checkout/start" className="btn btn-primary">
-                Get Started for $1
+              <Link href="/developers" className="btn btn-primary">
+                Get Started
               </Link>
             </div>
           </div>

@@ -527,7 +527,8 @@ function InteractiveFlowDemo() {
           </div>
           <div style={{ marginBottom: 'var(--space-3)' }}>
             <span style={{ color: 'var(--gray-500)' }}>Amount:</span>
-            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--gray-900)' }}>$1.00 USD</span>
+            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--gray-900)' }}>$0.10 USD</span>
+            <span style={{ marginLeft: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--gray-400)' }}>(example)</span>
           </div>
           <div style={{ marginBottom: 'var(--space-3)' }}>
             <span style={{ color: 'var(--gray-500)' }}>Status:</span>

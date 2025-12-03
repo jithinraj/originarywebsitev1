@@ -104,7 +104,7 @@ export default function Terms() {
 
               <h2>Plans, fees &amp; taxes</h2>
               <ul>
-                <li><strong>Developer activation:</strong> one-time <strong>USD $1</strong> purchase. Non-refundable.</li>
+                <li><strong>Developer activation:</strong> one-time activation fee as listed on the pricing page. Non-refundable.</li>
                 <li><strong>Professional / Enterprise:</strong> as listed or quoted; billed in advance. Failure to pay may result in suspension.</li>
                 <li>Prices exclude applicable taxes; you&apos;re responsible for taxes and withholdings.</li>
               </ul>

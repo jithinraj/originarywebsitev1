@@ -157,8 +157,8 @@ export const config = {
               <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
                 Add receipt verification to your Vercel Edge Functions today.
               </p>
-              <Link href="/checkout/start" className="btn btn-primary">
-                Get Started for $1
+              <Link href="/developers" className="btn btn-primary">
+                Get Started
               </Link>
             </div>
           </div>

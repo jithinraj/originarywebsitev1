@@ -225,10 +225,10 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
                 Start generating AI usage receipts with Originary in under 5 minutes.
               </p>
               <Link
-                href="/checkout/start"
+                href="/developers"
                 className="btn btn-primary"
               >
-                Get Started for $1
+                Get Started
               </Link>
             </div>
           </div>

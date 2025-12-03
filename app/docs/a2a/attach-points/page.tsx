@@ -197,8 +197,8 @@ await originary.verify(message.metadata['peac-receipt'])`}
               <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
                 Add PEAC-Receipts to your A2A protocol messages and enable agent to agent transactions with Originary.
               </p>
-              <Link href="/checkout/start" className="btn btn-primary">
-                Get Started for $1
+              <Link href="/developers" className="btn btn-primary">
+                Get Started
               </Link>
             </div>
           </div>

@@ -92,7 +92,7 @@ export default function RefundPage() {
                 color: 'var(--gray-700)',
                 lineHeight: 1.7
               }}>
-                This policy applies to all service tiers including Developer ($1 activation), Professional ($2,500/month), and Enterprise (custom pricing).
+                This policy applies to all service tiers including Developer (activation fee), Professional, and Enterprise (custom pricing). See current pricing for active plans.
               </p>
             </div>
 
@@ -147,7 +147,7 @@ export default function RefundPage() {
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
-                <strong>Developer tier ($1 activation):</strong> Access continues for 30 days from payment date.
+                <strong>Developer tier:</strong> Access continues for the trial or subscription period from activation date.
               </p>
               <p style={{
                 color: 'var(--gray-700)',

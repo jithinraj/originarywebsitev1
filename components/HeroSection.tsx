@@ -342,15 +342,15 @@ export default function HeroSection() {
             >
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
                 <Link
-                  href="/checkout/start"
+                  href="/developers"
                   className="btn btn-primary btn-lg"
-                  data-analytics-id="hero_cta_start_1usd_clicked"
+                  data-analytics-id="hero_cta_declare_free_clicked"
                   style={{
                     position: 'relative',
                     overflow: 'hidden'
                   }}
                 >
-                  <span style={{ position: 'relative', zIndex: 2 }}>Start for $1</span>
+                  <span style={{ position: 'relative', zIndex: 2 }}>Start with Declare (Free)</span>
                   <ArrowRight size={18} style={{ position: 'relative', zIndex: 2 }} />
                   <div
                     style={{
@@ -372,7 +372,7 @@ export default function HeroSection() {
                   marginTop: 'var(--space-1)',
                   textAlign: 'center'
                 }}>
-                  30-day developer access. No auto-renew.
+                  Free OSS tools. No credit card required.
                 </p>
               </div>
 
@@ -666,7 +666,8 @@ function InteractiveReceiptDemo() {
           </div>
           <div style={{ marginBottom: 'var(--space-3)' }}>
             <span style={{ color: 'var(--gray-500)' }}>Amount:</span>
-            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--gray-900)' }}>$1.00 USD</span>
+            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--gray-900)' }}>$0.10 USD</span>
+            <span style={{ marginLeft: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--gray-400)' }}>(example)</span>
           </div>
           <div style={{ marginBottom: 'var(--space-3)' }}>
             <span style={{ color: 'var(--gray-500)' }}>Status:</span>

@@ -102,18 +102,18 @@ export default function Developers() {
                 fontSize: 'var(--text-sm)',
                 color: 'var(--gray-600)'
               }}>
-                Or try our{' '}
+                Or start a{' '}
                 <Link
-                  href="/checkout/start"
+                  href="/pricing"
                   style={{
                     color: 'var(--brand-primary)',
                     textDecoration: 'underline',
                     fontWeight: 600
                   }}
                 >
-                  $1 Start Plan
+                  free 14-day Cloud trial
                 </Link>
-                {' '}for 30-day sandbox access
+                {' '}for sandbox access to verification, x402, and dashboards.
               </p>
             </div>
           </div>

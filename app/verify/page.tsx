@@ -56,7 +56,7 @@ function VerifyContent() {
             keyId: header.kid || '2025-09-key1',
             issuer: 'originary.xyz',
             resource: '/api/content',
-            amount: '$1.00 USD',
+            amount: '$0.10 USD (example)',
             timestamp: new Date().toISOString()
           }
         })

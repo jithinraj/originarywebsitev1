@@ -196,8 +196,8 @@ const server = wrapMCPServer({
               <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
                 Get audit trails for every Model Context Protocol tool invocation with Originary.
               </p>
-              <Link href="/checkout/start" className="btn btn-primary">
-                Get Started for $1
+              <Link href="/developers" className="btn btn-primary">
+                Get Started
               </Link>
             </div>
           </div>

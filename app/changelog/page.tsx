@@ -15,7 +15,8 @@ export default function ChangelogPage() {
       highlights: [
         'Gateway 402 now in public beta with x402 protocol support',
         'Receipt verification 3x faster with caching layer',
-        'New $1 Start plan for developer testing',
+        'New pricing tiers with free Cloud trial',
+        'Legacy: $1 Start plan (no longer available)',
         'Policy A/B testing in control panel'
       ],
       breaking: [],

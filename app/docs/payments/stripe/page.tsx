@@ -147,8 +147,8 @@ res.json({ content: protectedData })`}
               <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
                 Connect Stripe and start generating receipts for every transaction.
               </p>
-              <Link href="/checkout/start" className="btn btn-primary">
-                Get Started for $1
+              <Link href="/developers" className="btn btn-primary">
+                Get Started
               </Link>
             </div>
           </div>

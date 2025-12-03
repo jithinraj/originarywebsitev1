@@ -315,9 +315,9 @@ export default function PricingPage() {
             <p className="text-xl text-gray-600 mb-8">From startup to enterprise, we have the right plan for your agentic infrastructure needs</p>
             <div className="pricing-banner">
               <p>
-                <strong>🚀 Simple Getting Started:</strong> Pay just $1 to get immediate access to any plan.
-                Our team will personally help you integrate, go live, and purchase additional credits as needed.
-                No complex pricing tiers - just pay for what you use.
+                <strong>🚀 Simple Getting Started:</strong> Start with OSS or try Cloud free for 14 days.
+                Our team will personally help you integrate, go live, and scale as needed.
+                No credit card required to get started.
               </p>
             </div>
           </FadeIn>
@@ -375,7 +375,7 @@ export default function PricingPage() {
                       ) : tier.name === 'Professional' ? (
                         <StripeButton plan="pro" amount={100} label="Subscribe for $100/month" />
                       ) : (
-                        <StripeButton plan="start" amount={1} label="Pay $1 to Get Started" />
+                        <a href="/pricing" className="btn btn-primary w-full">Start Free Trial</a>
                       )}
                       <div className="action-note">
                         {tier.name === 'Enterprise'
@@ -389,8 +389,8 @@ export default function PricingPage() {
                           )
                           : (
                             <>
-                              <strong>$1 starter fee</strong> gets you immediate access.<br />
-                              Contact our team for additional credits & integration support.
+                              <strong>Free 14-day trial</strong> with full access.<br />
+                              No credit card required to get started.
                             </>
                           )
                         }
@@ -654,9 +654,9 @@ export default function PricingPage() {
               </div>
               <div className="cta-actions">
                 <div className="action-group">
-                  <StripeButton plan="start" amount={1} label="Pay $1 to Get Started" />
+                  <a href="/pricing" className="btn btn-primary large">Start Free Trial</a>
                   <div className="action-note">
-                    <strong>$1 gets you started</strong> • Our team will help you integrate & scale
+                    <strong>14-day free trial</strong> • Our team will help you integrate & scale
                   </div>
                 </div>
                 <div className="action-group">

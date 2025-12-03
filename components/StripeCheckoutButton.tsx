@@ -46,7 +46,7 @@ export default function StripeCheckoutButton({
   const defaultLabel = amount
     ? `Pay $${(amount / 100).toFixed(2)}`
     : plan === 'dev1' || plan === 'start'
-    ? 'Start for $1'
+    ? 'Get Started'
     : 'Contact sales'
 
   return (
