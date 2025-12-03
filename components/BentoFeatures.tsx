@@ -34,21 +34,21 @@ export default function BentoFeatures() {
               color: 'var(--gray-900)'
             }}
           >
-            Everything you need for the agentic web
+            Everything you need to manage & control your website & app interactions with AI, Agents, Bots, and Crawlers.
           </h2>
           <p
             style={{
               fontSize: 'var(--text-lg)',
               color: 'var(--gray-600)',
-              maxWidth: '600px',
+              maxWidth: '700px',
               margin: '0 auto'
             }}
           >
-            From policy declaration to real-time analytics and payments
+            From policy declaration to real-time analytics to payments to compliance.
           </p>
         </div>
 
-        {/* Bento Grid */}
+        {/* Bento Grid - Main Cards */}
         <div className="bento-grid">
           {/* Large Card - Trace Analytics */}
           <BentoCard
@@ -73,7 +73,10 @@ export default function BentoFeatures() {
           >
             <CodePreview />
           </BentoCard>
+        </div>
 
+        {/* Small Cards Row - 4 in a row */}
+        <div className="bento-small-row">
           {/* Small Card - Global */}
           <BentoCard
             className="bento-small"
@@ -274,7 +277,7 @@ function TrafficGraph() {
           marginBottom: 'var(--space-3)'
         }}
       >
-        <span className="label-mono">LIVE TRAFFIC</span>
+        <span className="label-mono">Live traffic - example</span>
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
           <span className="pulse-dot" />
           <span style={{ fontSize: '11px', color: 'var(--success)', fontWeight: 500 }}>

@@ -165,12 +165,12 @@ export default function PEACBand() {
                 textDecoration: 'none'
               }}
             >
-              Learn the PEAC Protocol
+              Explore PEAC Protocol
               <ArrowRight size={16} />
             </a>
 
             <Link
-              href="/demo"
+              href="/verify"
               className="link"
               style={{
                 display: 'inline-flex',

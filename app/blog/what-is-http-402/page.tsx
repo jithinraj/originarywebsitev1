@@ -1,0 +1,575 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import NavigationHeader from "@/components/NavigationHeader";
+import Footer from "@/components/Footer";
+import { FileText, ArrowRight, Code, DollarSign, Shield, Zap, Clock, CreditCard, Receipt, CheckCircle, AlertCircle, Bot, Lock } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: "What is HTTP 402? How PEAC Uses 402 for Agent Payments | Originary",
+  description: "HTTP 402 Payment Required is an HTTP status code reserved for future digital payments. Learn how PEAC Protocol activates 402 for AI access control, agent payments, and verifiable receipts.",
+  keywords: "HTTP 402, Payment Required, x402, agent payments, AI Access, PEAC Protocol, API monetization, L402, web payments, agentic web",
+  authors: [{ name: "Jithin Raj & Originary Team" }],
+  alternates: { canonical: '/blog/what-is-http-402' },
+  openGraph: {
+    title: "What is HTTP 402? How PEAC Uses 402 for Agent Payments",
+    description: "HTTP 402 Payment Required explained: history, why it matters now, and how PEAC Protocol uses it for agent payments",
+    type: "article",
+    url: "https://www.originary.xyz/blog/what-is-http-402/",
+    publishedTime: "2025-12-03",
+    authors: ["Jithin Raj", "Originary Team"],
+    images: ['https://www.originary.xyz/og.jpg'],
+    siteName: 'Originary',
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "What is HTTP 402? How PEAC Uses 402 for Agent Payments",
+    description: "HTTP 402 Payment Required explained: history and practical implementation with PEAC",
+    images: ['https://www.originary.xyz/og.jpg'],
+    site: '@originaryx',
+    creator: '@originaryx',
+  },
+  robots: 'index,follow',
+};
+
+export default function Page() {
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "What is HTTP 402? How PEAC Uses 402 for Agent Payments",
+    "description": "HTTP 402 Payment Required is an HTTP status code reserved for digital payments. Learn how PEAC Protocol activates 402 for agent payments and receipts.",
+    "author": {
+      "@type": "Organization",
+      "name": "Originary",
+      "url": "https://www.originary.xyz"
+    },
+    "datePublished": "2025-12-03",
+    "dateModified": "2025-12-03",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Originary",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.originary.xyz/og/originary-logo.png"
+      }
+    },
+    "mainEntityOfPage": "https://www.originary.xyz/blog/what-is-http-402/",
+    "image": "https://www.originary.xyz/og.jpg"
+  };
+
+  return (
+    <div className="wrap">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <NavigationHeader />
+      <main style={{ paddingTop: '80px', minHeight: '100vh' }} id="main-content">
+        <article>
+          <div className="container" style={{ maxWidth: '900px', margin: '0 auto', padding: 'var(--space-16) var(--space-6)' }}>
+            {/* Breadcrumbs */}
+            <nav style={{
+              fontSize: 'var(--text-sm)',
+              color: 'var(--gray-600)',
+              marginBottom: 'var(--space-8)'
+            }}>
+              <Link href="/" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>Home</Link>
+              <span style={{ margin: '0 var(--space-2)' }}>/</span>
+              <Link href="/blog" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>Blog</Link>
+              <span style={{ margin: '0 var(--space-2)' }}>/</span>
+              <span style={{ color: 'var(--gray-900)' }}>What is HTTP 402?</span>
+            </nav>
+
+            {/* Article Header */}
+            <header style={{ marginBottom: 'var(--space-12)' }}>
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 'var(--space-2)',
+                background: 'rgba(99, 91, 255, 0.1)',
+                border: '1px solid rgba(99, 91, 255, 0.2)',
+                borderRadius: 'var(--radius-full)',
+                padding: 'var(--space-2) var(--space-4)',
+                fontSize: 'var(--text-sm)',
+                fontWeight: 600,
+                color: 'var(--brand-primary)',
+                marginBottom: 'var(--space-6)'
+              }}>
+                <FileText size={14} />
+                EXPLAINER
+              </div>
+
+              <h1 style={{
+                fontSize: 'clamp(var(--text-3xl), 5vw, var(--text-4xl))',
+                fontWeight: 700,
+                lineHeight: 1.2,
+                letterSpacing: '-0.02em',
+                marginBottom: 'var(--space-6)',
+                color: 'var(--gray-900)'
+              }}>
+                What is HTTP 402?
+              </h1>
+              <p style={{
+                fontSize: 'var(--text-xl)',
+                color: 'var(--gray-600)',
+                lineHeight: 1.7
+              }}>
+                HTTP 402 Payment Required was defined in 1997 and reserved for future digital payments. After decades dormant, it is now being activated for AI agent commerce and machine-payable APIs.
+              </p>
+            </header>
+
+            {/* Article Content */}
+            <div className="article-content" style={{
+              fontSize: 'var(--text-base)',
+              lineHeight: 1.8,
+              color: 'var(--gray-700)'
+            }}>
+
+              {/* Timeline Visual */}
+              <div style={{
+                background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.05), rgba(0, 212, 170, 0.05))',
+                borderRadius: 'var(--radius-xl)',
+                padding: 'var(--space-8)',
+                marginBottom: 'var(--space-12)',
+                border: '1px solid rgba(99, 91, 255, 0.1)'
+              }}>
+                <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                  <Clock size={24} style={{ color: 'var(--brand-primary)' }} />
+                  The History of HTTP 402
+                </h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
+                  <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
+                    <div style={{
+                      background: 'var(--brand-primary)',
+                      color: 'white',
+                      padding: 'var(--space-2) var(--space-3)',
+                      borderRadius: 'var(--radius-md)',
+                      fontSize: 'var(--text-sm)',
+                      fontWeight: 700,
+                      flexShrink: 0
+                    }}>1997</div>
+                    <p style={{ margin: 0 }}>HTTP 402 defined in RFC 2068, marked as &ldquo;reserved for future use&rdquo; for digital payments</p>
+                  </div>
+                  <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
+                    <div style={{
+                      background: 'var(--gray-400)',
+                      color: 'white',
+                      padding: 'var(--space-2) var(--space-3)',
+                      borderRadius: 'var(--radius-md)',
+                      fontSize: 'var(--text-sm)',
+                      fontWeight: 700,
+                      flexShrink: 0
+                    }}>1997-2023</div>
+                    <p style={{ margin: 0 }}>Status code sits unused while web payments evolve through separate channels</p>
+                  </div>
+                  <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
+                    <div style={{
+                      background: 'var(--success)',
+                      color: 'white',
+                      padding: 'var(--space-2) var(--space-3)',
+                      borderRadius: 'var(--radius-md)',
+                      fontSize: 'var(--text-sm)',
+                      fontWeight: 700,
+                      flexShrink: 0
+                    }}>2024+</div>
+                    <p style={{ margin: 0 }}>AI agents need machine-readable payment signals, HTTP 402 finally activated</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Why It Matters Now */}
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-8)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                <Bot size={28} style={{ color: 'var(--brand-primary)' }} />
+                Why HTTP 402 Matters Now
+              </h2>
+              <p style={{ marginBottom: 'var(--space-6)' }}>
+                The rise of AI agents changes everything. Unlike human users who can navigate payment forms, AI agents need machine-readable payment signals.
+              </p>
+
+              {/* Feature Cards */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
+                <div style={{
+                  padding: 'var(--space-5)',
+                  background: 'var(--white)',
+                  borderRadius: 'var(--radius-lg)',
+                  border: '1px solid var(--gray-200)'
+                }}>
+                  <AlertCircle size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
+                  <h4 style={{ fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>Clear Signal</h4>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: 0 }}>HTTP 402 unambiguously signals &ldquo;payment required&rdquo;</p>
+                </div>
+                <div style={{
+                  padding: 'var(--space-5)',
+                  background: 'var(--white)',
+                  borderRadius: 'var(--radius-lg)',
+                  border: '1px solid var(--gray-200)'
+                }}>
+                  <CreditCard size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
+                  <h4 style={{ fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>Payment Instructions</h4>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: 0 }}>Structured data: what to pay, how much, where</p>
+                </div>
+                <div style={{
+                  padding: 'var(--space-5)',
+                  background: 'var(--white)',
+                  borderRadius: 'var(--radius-lg)',
+                  border: '1px solid var(--gray-200)'
+                }}>
+                  <Receipt size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
+                  <h4 style={{ fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>Proof of Payment</h4>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: 0 }}>Receipt proving payment occurred</p>
+                </div>
+              </div>
+
+              {/* How PEAC Uses 402 */}
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                <Shield size={28} style={{ color: 'var(--brand-primary)' }} />
+                How PEAC Uses HTTP 402
+              </h2>
+              <p style={{ marginBottom: 'var(--space-6)' }}>
+                PEAC Protocol builds on HTTP 402 with additional structure for AI access control, payments, and receipts. When a PEAC-enabled endpoint receives a request without valid payment:
+              </p>
+
+              {/* Code Block with Header */}
+              <div style={{ marginBottom: 'var(--space-8)' }}>
+                <div style={{
+                  background: 'var(--gray-800)',
+                  borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0',
+                  padding: 'var(--space-3) var(--space-4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 'var(--space-2)'
+                }}>
+                  <Code size={16} style={{ color: 'var(--gray-400)' }} />
+                  <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-400)' }}>Example 402 Response</span>
+                </div>
+                <div style={{
+                  background: 'var(--gray-900)',
+                  borderRadius: '0 0 var(--radius-lg) var(--radius-lg)',
+                  padding: 'var(--space-6)',
+                  overflow: 'auto'
+                }}>
+                  <pre style={{
+                    margin: 0,
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: 'var(--text-sm)',
+                    color: 'var(--gray-100)',
+                    whiteSpace: 'pre-wrap',
+                    wordBreak: 'break-word'
+                  }}>
+{`HTTP/1.1 402 Payment Required
+Content-Type: application/json
+X-Payment-Hint: x402
+
+{
+  "type": "payment_required",
+  "message": "Access requires payment",
+  "payment": {
+    "amount": "0.01",
+    "currency": "USD",
+    "methods": ["x402", "stripe"],
+    "x402_url": "https://api.example.com/pay"
+  },
+  "policy_url": "https://example.com/.well-known/peac.txt"
+}`}
+                  </pre>
+                </div>
+              </div>
+
+              {/* Response Fields Table */}
+              <div style={{
+                background: 'var(--white)',
+                borderRadius: 'var(--radius-lg)',
+                border: '1px solid var(--gray-200)',
+                overflow: 'hidden',
+                marginBottom: 'var(--space-8)'
+              }}>
+                <div style={{
+                  background: 'var(--gray-50)',
+                  padding: 'var(--space-4)',
+                  borderBottom: '1px solid var(--gray-200)',
+                  fontWeight: 700,
+                  color: 'var(--gray-900)'
+                }}>
+                  Response Fields
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', fontSize: 'var(--text-sm)' }}>
+                  <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', fontWeight: 600, color: 'var(--gray-900)' }}>Payment methods</div>
+                  <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', color: 'var(--gray-600)' }}>x402 for crypto, Stripe for fiat, L402 for Lightning</div>
+                  <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', fontWeight: 600, color: 'var(--gray-900)' }}>Amount & currency</div>
+                  <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', color: 'var(--gray-600)' }}>Clear pricing in machine-readable format</div>
+                  <div style={{ padding: 'var(--space-4)', fontWeight: 600, color: 'var(--gray-900)' }}>AI policy URL</div>
+                  <div style={{ padding: 'var(--space-4)', color: 'var(--gray-600)' }}>Link to crawling policy and usage terms</div>
+                </div>
+              </div>
+
+              {/* x402 Extension */}
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                <DollarSign size={28} style={{ color: 'var(--brand-primary)' }} />
+                x402: The Payment Extension
+              </h2>
+              <p style={{ marginBottom: 'var(--space-6)' }}>
+                x402 is an extension that adds structured payment descriptions to HTTP 402 responses. It works with PEAC to provide:
+              </p>
+              <div style={{ display: 'grid', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
+                  <CheckCircle size={20} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
+                  <span><strong>Payment negotiation</strong> - agents can query acceptable payment methods</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
+                  <CheckCircle size={20} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
+                  <span><strong>Receipt return</strong> - successful payments return PEAC-Receipts</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
+                  <CheckCircle size={20} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
+                  <span><strong>Verification</strong> - receipts can be verified at the domain&apos;s verify endpoint</span>
+                </div>
+              </div>
+              <p style={{ marginBottom: 'var(--space-4)' }}>
+                See the <Link href="/integrations/x402" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>x402 integration guide</Link> for implementation details.
+              </p>
+
+              {/* Testing Section */}
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                <Zap size={28} style={{ color: 'var(--brand-primary)' }} />
+                Testing HTTP 402
+              </h2>
+              <p style={{ marginBottom: 'var(--space-4)' }}>
+                You can test a PEAC-enabled 402 endpoint with curl:
+              </p>
+              <div style={{ marginBottom: 'var(--space-6)' }}>
+                <div style={{
+                  background: 'var(--gray-800)',
+                  borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0',
+                  padding: 'var(--space-3) var(--space-4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 'var(--space-2)'
+                }}>
+                  <Code size={16} style={{ color: 'var(--gray-400)' }} />
+                  <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-400)' }}>Terminal</span>
+                </div>
+                <div style={{
+                  background: 'var(--gray-900)',
+                  borderRadius: '0 0 var(--radius-lg) var(--radius-lg)',
+                  padding: 'var(--space-6)',
+                  overflow: 'auto'
+                }}>
+                  <pre style={{
+                    margin: 0,
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: 'var(--text-sm)',
+                    color: 'var(--gray-100)',
+                    whiteSpace: 'pre-wrap',
+                    wordBreak: 'break-word'
+                  }}>
+{`curl -i https://demo.originary.xyz/api/gated
+
+# Response:
+# HTTP/2 402
+# content-type: application/json
+# x-payment-hint: x402`}
+                  </pre>
+                </div>
+              </div>
+              <p style={{ marginBottom: 'var(--space-4)' }}>
+                Try the <Link href="/verify" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>interactive demo</Link> to see 402 flows in action.
+              </p>
+
+              {/* Beyond Payments */}
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                <Lock size={28} style={{ color: 'var(--brand-primary)' }} />
+                Beyond Payments: Access Control
+              </h2>
+              <p style={{ marginBottom: 'var(--space-6)' }}>
+                HTTP 402 in PEAC isn&apos;t only about money. It can gate access based on:
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
+                <div style={{
+                  padding: 'var(--space-4)',
+                  background: 'var(--gray-50)',
+                  borderRadius: 'var(--radius-lg)',
+                  border: '1px solid var(--gray-200)'
+                }}>
+                  <Bot size={20} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
+                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>AI Bot Policy</h4>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', margin: 0 }}>Require agents to comply with crawling policy</p>
+                </div>
+                <div style={{
+                  padding: 'var(--space-4)',
+                  background: 'var(--gray-50)',
+                  borderRadius: 'var(--radius-lg)',
+                  border: '1px solid var(--gray-200)'
+                }}>
+                  <FileText size={20} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
+                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>Attribution</h4>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', margin: 0 }}>Require agreement to attribution terms</p>
+                </div>
+                <div style={{
+                  padding: 'var(--space-4)',
+                  background: 'var(--gray-50)',
+                  borderRadius: 'var(--radius-lg)',
+                  border: '1px solid var(--gray-200)'
+                }}>
+                  <CheckCircle size={20} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
+                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>Consent</h4>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', margin: 0 }}>Proof of user consent for training use</p>
+                </div>
+                <div style={{
+                  padding: 'var(--space-4)',
+                  background: 'var(--gray-50)',
+                  borderRadius: 'var(--radius-lg)',
+                  border: '1px solid var(--gray-200)'
+                }}>
+                  <Zap size={20} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
+                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>Rate Limiting</h4>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', margin: 0 }}>Premium access for paying agents</p>
+                </div>
+              </div>
+
+              {/* Getting Started Steps */}
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)' }}>
+                Getting Started
+              </h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
+                <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
+                  <div style={{
+                    background: 'var(--brand-primary)',
+                    color: 'white',
+                    width: '28px',
+                    height: '28px',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: 'var(--text-sm)',
+                    fontWeight: 700,
+                    flexShrink: 0
+                  }}>1</div>
+                  <div>
+                    <strong>Define your AI access policy</strong> with <Link href="/declare" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Originary Declare</Link>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
+                  <div style={{
+                    background: 'var(--brand-primary)',
+                    color: 'white',
+                    width: '28px',
+                    height: '28px',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: 'var(--text-sm)',
+                    fontWeight: 700,
+                    flexShrink: 0
+                  }}>2</div>
+                  <div><strong>Add 402 responses</strong> to your API endpoints</div>
+                </div>
+                <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
+                  <div style={{
+                    background: 'var(--brand-primary)',
+                    color: 'white',
+                    width: '28px',
+                    height: '28px',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: 'var(--text-sm)',
+                    fontWeight: 700,
+                    flexShrink: 0
+                  }}>3</div>
+                  <div><strong>Integrate x402 or Stripe</strong> for payment processing</div>
+                </div>
+                <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
+                  <div style={{
+                    background: 'var(--brand-primary)',
+                    color: 'white',
+                    width: '28px',
+                    height: '28px',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: 'var(--text-sm)',
+                    fontWeight: 700,
+                    flexShrink: 0
+                  }}>4</div>
+                  <div><strong>Return PEAC-Receipts</strong> on successful payment</div>
+                </div>
+              </div>
+              <p style={{ marginBottom: 'var(--space-4)' }}>
+                See <Link href="/blog/adding-402-in-15-minutes" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Adding 402 in 15 Minutes</Link> for a step-by-step guide.
+              </p>
+
+              {/* Related Content */}
+              <div style={{
+                marginTop: 'var(--space-16)',
+                padding: 'var(--space-8)',
+                background: 'var(--gray-50)',
+                borderRadius: 'var(--radius-xl)',
+                border: '1px solid var(--gray-200)'
+              }}>
+                <h3 style={{
+                  fontSize: 'var(--text-lg)',
+                  fontWeight: 700,
+                  color: 'var(--gray-900)',
+                  marginBottom: 'var(--space-4)'
+                }}>
+                  Related Resources
+                </h3>
+                <div style={{ display: 'grid', gap: 'var(--space-4)' }}>
+                  <Link href="/integrations/x402" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 'var(--space-3)',
+                    color: 'var(--gray-700)',
+                    textDecoration: 'none',
+                    padding: 'var(--space-3)',
+                    background: 'var(--white)',
+                    borderRadius: 'var(--radius-lg)',
+                    border: '1px solid var(--gray-200)'
+                  }}>
+                    <DollarSign size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <span>x402 Integration Guide</span>
+                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--gray-400)' }} />
+                  </Link>
+                  <Link href="/blog/http-402-for-apis" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 'var(--space-3)',
+                    color: 'var(--gray-700)',
+                    textDecoration: 'none',
+                    padding: 'var(--space-3)',
+                    background: 'var(--white)',
+                    borderRadius: 'var(--radius-lg)',
+                    border: '1px solid var(--gray-200)'
+                  }}>
+                    <Code size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <span>HTTP 402 for APIs: Technical Deep Dive</span>
+                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--gray-400)' }} />
+                  </Link>
+                  <Link href="/peac" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 'var(--space-3)',
+                    color: 'var(--gray-700)',
+                    textDecoration: 'none',
+                    padding: 'var(--space-3)',
+                    background: 'var(--white)',
+                    borderRadius: 'var(--radius-lg)',
+                    border: '1px solid var(--gray-200)'
+                  }}>
+                    <Shield size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <span>PEAC Protocol Overview</span>
+                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--gray-400)' }} />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </main>
+      <Footer />
+    </div>
+  );
+}

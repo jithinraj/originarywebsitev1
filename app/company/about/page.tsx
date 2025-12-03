@@ -141,7 +141,7 @@ export default function About() {
                 <div className="card">
                   <h3 style={{ marginBottom: 'var(--space-4)' }}>PEAC Protocol</h3>
                   <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
-                    We developed the open PEAC protocol for standardized agent-resource interaction with signed receipts.
+                    We developed the open PEAC protocol for structured agent-resource interaction with signed receipts.
                   </p>
                 </div>
                 <div className="card">
@@ -157,7 +157,7 @@ export default function About() {
               <h2 style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>Our values</h2>
               <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
                 <div className="card">
-                  <h3 style={{ marginBottom: 'var(--space-4)' }}>Open Standards</h3>
+                  <h3 style={{ marginBottom: 'var(--space-4)' }}>Open Protocols</h3>
                   <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
                     We believe in open protocols that benefit the entire ecosystem, not just our company.
                   </p>
@@ -185,7 +185,7 @@ export default function About() {
             }}>
               <h2 style={{ marginBottom: 'var(--space-6)', color: 'white' }}>Join us</h2>
               <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', opacity: 0.9 }}>
-                We&apos;re building the future of agentic coordination. Interested in joining our mission?
+                We&apos;re building infrastructure for agentic coordination. Interested in joining our mission?
               </p>
               <div style={{
                 display: 'flex',

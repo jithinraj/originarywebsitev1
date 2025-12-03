@@ -42,13 +42,31 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const articles = [
     {
+      slug: 'what-is-http-402',
+      title: 'What is HTTP 402? How PEAC Uses 402 for Agent Payments',
+      description: 'HTTP 402 Payment Required was defined in 1997 and reserved for digital payments. Learn how PEAC Protocol activates 402 for AI access control, agent payments, and verifiable receipts.',
+      author: 'Jithin Raj & Originary Team',
+      category: 'Explainer',
+      readTime: '10 min read',
+      featured: true
+    },
+    {
+      slug: 'a2a-stack-agent-to-agent-commerce',
+      title: 'The A2A Stack: Agent-to-Agent Commerce',
+      description: 'How AI agents coordinate, transact, and verify interactions with each other. The A2A stack covers AI policy discovery, HTTP 402 payments, PEAC-Receipts, and provenance.',
+      author: 'Jithin Raj & Originary Team',
+      category: 'Vision',
+      readTime: '12 min read',
+      featured: true
+    },
+    {
       slug: 'from-detection-to-settlement-ai-paywall-peac-http-402',
       title: 'From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance',
       description: 'How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, L402, x402 and Stripe, with signed receipts for billing, audit and compliance.',
       author: 'Jithin Raj & Originary Team',
       category: 'Technical',
       readTime: '18 min read',
-      featured: true
+      featured: false
     },
     {
       slug: 'ai-bot-detection',

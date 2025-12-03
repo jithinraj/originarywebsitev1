@@ -118,7 +118,7 @@ export default function ResourcesPage() {
               <ResourceCard
                 icon={<BookOpen size={32} style={{ color: 'var(--brand-primary)' }} />}
                 title="Blog"
-                description="Insights, updates, and thoughts on the future of agentic coordination and AI orchestration."
+                description="Insights, updates, and thoughts on agentic coordination and AI orchestration."
                 href="/resources/blog"
                 linkText="Read posts"
                 category="Articles & Insights"
@@ -290,7 +290,7 @@ export default function ResourcesPage() {
                     margin: '0 auto var(--space-8) auto'
                   }}
                 >
-                  Join the community building the future of autonomous AI coordination.
+                  Join the community building infrastructure for autonomous AI coordination.
                 </p>
                 <div
                   style={{

@@ -1,16 +1,17 @@
 'use client'
 
-import { Shield, Fingerprint, CheckCircle, CreditCard, FileCheck, Lock, FileSignature } from 'lucide-react'
+import { Shield, Fingerprint, CheckCircle, CreditCard, FileCheck, Lock, FileSignature, Receipt } from 'lucide-react'
 
 export default function FoundationalRailsSection() {
   const pillars = [
-    { icon: Shield, label: 'Access', description: 'Policy-aware gating' },
+    { icon: Shield, label: 'Access', description: 'AI Access policy-aware gating' },
     { icon: Fingerprint, label: 'Attribution', description: 'Enforceable flags' },
     { icon: CheckCircle, label: 'Consent', description: 'Purpose-bound usage' },
     { icon: CreditCard, label: 'Commerce', description: 'HTTP 402 settlement' },
     { icon: FileCheck, label: 'Compliance', description: 'Audit bundles' },
     { icon: Lock, label: 'Privacy', description: 'Selective disclosure (planned)' },
-    { icon: FileSignature, label: 'Provenance', description: 'Signed receipts + C2PA' }
+    { icon: Receipt, label: 'Receipts', description: 'Verifiable PEAC-Receipts for each interaction' },
+    { icon: FileSignature, label: 'Provenance', description: 'Signed lineage using receipts + C2PA' }
   ]
 
   return (
@@ -35,7 +36,7 @@ export default function FoundationalRailsSection() {
               maxWidth: '700px',
               margin: '0 auto'
             }}>
-              PEAC-compatible primitives that unify the seven pillars of agent infrastructure
+              PEAC-compatible primitives that unify the core pillars of agent infrastructure
             </p>
           </div>
 
@@ -46,9 +47,8 @@ export default function FoundationalRailsSection() {
             marginBottom: 'var(--space-8)'
           }}
           className="pillars-grid">
-            {pillars.map((pillar, index) => {
+            {pillars.map((pillar) => {
               const Icon = pillar.icon
-              const isLastItem = index === pillars.length - 1
               return (
                 <div
                   key={pillar.label}
@@ -60,8 +60,7 @@ export default function FoundationalRailsSection() {
                     borderRadius: 'var(--radius-xl)',
                     textAlign: 'center',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    cursor: 'pointer',
-                    gridColumn: isLastItem ? 'span 1' : 'auto'
+                    cursor: 'pointer'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-4px)'
@@ -140,9 +139,6 @@ export default function FoundationalRailsSection() {
         @media (min-width: 1024px) {
           .pillars-grid {
             grid-template-columns: repeat(4, 1fr) !important;
-          }
-          .pillar-card:nth-child(7) {
-            grid-column: 2 / 3;
           }
         }
       `}</style>

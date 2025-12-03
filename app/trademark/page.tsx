@@ -102,7 +102,7 @@ export default function Trademark() {
               <p style={{ marginTop: 'var(--space-3)' }}><em>This site refers only to Originary at <Link href="https://www.originary.xyz" style={{ color: 'var(--brand-primary)' }}>https://www.originary.xyz/</Link>.</em></p>
 
               <h2>PEAC Protocol and open source</h2>
-              <p><strong>PEAC Protocol</strong> is an open-source standard (Apache-2.0) stewarded by Originary. <strong>Originary™</strong> is the commercial brand of Poem, Inc.</p>
+              <p><strong>PEAC Protocol</strong> is an open-source protocol (Apache-2.0) stewarded by Originary. <strong>Originary™</strong> is the commercial brand of Poem, Inc.</p>
               <p style={{ marginTop: 'var(--space-3)' }}>Anyone can implement PEAC Protocol. Originary provides commercial products (Trace, Gateway, Studio, Verify API) built on PEAC.</p>
               <p style={{ marginTop: 'var(--space-3)' }}>PEAC Protocol assets and specifications are governed by the Apache-2.0 license. See <Link href="/peac" style={{ color: 'var(--brand-primary)' }}>originary.xyz/peac</Link> for details.</p>
 

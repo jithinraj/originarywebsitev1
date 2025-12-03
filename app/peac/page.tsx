@@ -5,14 +5,14 @@ import Footer from '@/components/Footer'
 import { CheckCircle, Github, Download, BookOpen, Code, Shield } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'PEAC Protocol | Open Standard for the Agentic Web',
-  description: 'PEAC Protocol is the open standard for policy, payments, and receipts in the agentic web and agentic economy, covering HTTP 402 commerce, agent-to-agent transactions, and AI compliance.',
+  title: 'PEAC Protocol | Open Protocol for the Agentic Web',
+  description: 'PEAC Protocol is an open protocol for policy, payments, and receipts in the agentic web and agentic economy, covering HTTP 402 commerce, agent-to-agent transactions, and AI compliance.',
   alternates: {
     canonical: '/peac'
   },
   openGraph: {
-    title: 'PEAC Protocol | Open Standard for the Agentic Web',
-    description: 'PEAC Protocol is the open standard for policy, payments, and receipts in the agentic web and agentic economy, covering HTTP 402 commerce, agent-to-agent transactions, and AI compliance.',
+    title: 'PEAC Protocol | Open Protocol for the Agentic Web',
+    description: 'PEAC Protocol is an open protocol for policy, payments, and receipts in the agentic web and agentic economy, covering HTTP 402 commerce, agent-to-agent transactions, and AI compliance.',
     url: 'https://www.originary.xyz/peac',
     type: 'website',
   },
@@ -23,7 +23,7 @@ export default function PeacPage() {
     "@context": "https://schema.org",
     "@type": "SoftwareSourceCode",
     "name": "PEAC Protocol",
-    "description": "Programmable Environment for Agent Coordination - Open standard for policy, payments, and verifiable receipts",
+    "description": "Programmable Environment for Agent Coordination - Open protocol for policy, payments, and verifiable receipts",
     "codeRepository": "https://github.com/peacprotocol/peac",
     "programmingLanguage": ["TypeScript", "JavaScript"],
     "license": "https://www.apache.org/licenses/LICENSE-2.0",
@@ -76,7 +76,7 @@ export default function PeacPage() {
                   color: 'var(--gray-900)'
                 }}
               >
-                PEAC Protocol: the open standard for policy, payments, and receipts
+                PEAC Protocol: an open protocol for policy, payments, and receipts
               </h1>
 
               <p

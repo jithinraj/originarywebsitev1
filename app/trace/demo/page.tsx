@@ -284,7 +284,7 @@ export default function TraceDemoPage() {
                     Try our interactive receipt verification demo to see how PEAC Protocol receipts work under the hood.
                   </p>
                   <Link
-                    href="/demo"
+                    href="/verify"
                     className="btn btn-lg"
                     style={{
                       display: 'inline-flex',

@@ -8,7 +8,7 @@ import ServiceOffers from '@/components/ServiceOffers'
 export const metadata: Metadata = {
   title: 'Products : Originary',
   description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters-everything you need to power autonomous AI coordination.',
-  keywords: 'PEAC protocol, verify API, Gateway 402, AI orchestration, autonomous agents, policy enforcement',
+  keywords: 'PEAC protocol, AI Access, verify API, Gateway 402, AI orchestration, autonomous agents, policy enforcement',
   openGraph: {
     title: 'Products : Originary',
     description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters-everything you need to power autonomous AI coordination.',

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     absolute: 'Originary | Infrastructure & tools for Agentic Web'
   },
   description: 'Originary builds infra for AI commerce, consent and compliance via HTTP 402/x402 payments, PEAC receipts and AI crawler analytics.',
-  keywords: 'Originary, PEAC Policy Kit, Declare, AI policy, peac.txt, AIPREF, AI crawler policy, PEAC Protocol, HTTP 402, x402, verifiable receipts, agentic web, policy discovery, agent infrastructure',
+  keywords: 'Originary, PEAC Policy Kit, Declare, AI policy, AI Access, peac.txt, AIPREF, AI crawler policy, PEAC Protocol, HTTP 402, x402, verifiable receipts, agentic web, policy discovery, agent infrastructure',
   alternates: {
     canonical: '/'
   },
@@ -69,106 +69,269 @@ export default function Page() {
       <NavigationHeader />
       <main id="main-content" role="main">
         <DeveloperLuxuryHero />
+
         <BentoFeatures />
 
-        {/* Deep Dives Links Section */}
-        <section className="section" style={{ paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
+        <SocialProofSection />
+
+        {/* What is Originary Section - SEO for brand keyword */}
+        <section className="section" style={{
+          paddingTop: 'var(--space-20)',
+          paddingBottom: 'var(--space-20)',
+          background: 'linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%)',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          {/* Subtle background decoration */}
+          <div style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '800px',
+            height: '800px',
+            background: 'radial-gradient(circle, rgba(99, 91, 255, 0.03) 0%, transparent 70%)',
+            pointerEvents: 'none'
+          }} />
+
+          <div className="container" style={{ position: 'relative' }}>
+            <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+              {/* Badge */}
+              <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
+                <span style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 'var(--space-2)',
+                  background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.1), rgba(0, 212, 170, 0.1))',
+                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  borderRadius: 'var(--radius-full)',
+                  padding: 'var(--space-2) var(--space-4)',
+                  fontSize: 'var(--text-xs)',
+                  fontWeight: 600,
+                  color: 'var(--brand-primary)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em'
+                }}>
+                  <span style={{
+                    width: '6px',
+                    height: '6px',
+                    background: 'var(--brand-primary)',
+                    borderRadius: '50%'
+                  }} />
+                  About
+                </span>
+              </div>
+
+              {/* Heading */}
+              <h2 style={{
+                fontSize: 'clamp(var(--text-3xl), 5vw, var(--text-4xl))',
+                fontWeight: 700,
+                marginBottom: 'var(--space-8)',
+                color: 'var(--gray-900)',
+                textAlign: 'center',
+                letterSpacing: '-0.02em'
+              }}>
+                What is Originary?
+              </h2>
+
+              {/* Main content card */}
+              <div style={{
+                background: 'var(--white)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-2xl)',
+                padding: 'var(--space-8)',
+                boxShadow: '0 4px 24px rgba(0, 0, 0, 0.04)'
+              }}>
+                <p style={{
+                  fontSize: 'var(--text-lg)',
+                  color: 'var(--gray-700)',
+                  lineHeight: 1.8,
+                  marginBottom: 'var(--space-6)',
+                  textAlign: 'center'
+                }}>
+                  We build <strong style={{ color: 'var(--gray-900)' }}>receipts and policy infrastructure</strong> for the agentic web. With software and protocol tooling on top of PEAC Protocol, we help you declare AI policy once, gate access with HTTP 402, and issue verifiable receipts for every interaction.
+                </p>
+
+                {/* Visual divider */}
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 'var(--space-4)',
+                  marginBottom: 'var(--space-6)'
+                }}>
+                  <div style={{ flex: 1, height: '1px', background: 'var(--gray-200)' }} />
+                  <span style={{
+                    fontSize: 'var(--text-xs)',
+                    color: 'var(--gray-400)',
+                    fontWeight: 500,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em'
+                  }}>
+                    Our approach
+                  </span>
+                  <div style={{ flex: 1, height: '1px', background: 'var(--gray-200)' }} />
+                </div>
+
+                <p style={{
+                  fontSize: 'var(--text-base)',
+                  color: 'var(--gray-600)',
+                  lineHeight: 1.8,
+                  textAlign: 'center'
+                }}>
+                  Originary brings seven pillars of agent infrastructure onto one set of rails: <strong style={{ color: 'var(--gray-700)' }}>access, attribution, consent, commerce, compliance, privacy, and provenance</strong> - all anchored in receipts. Start with policy using Declare, then layer on analytics with Trace, payments via Gateway 402, verification through Verify API, and day-to-day operations in Studio as your AI traffic grows.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Deep Dives Links Section - Compact */}
+        <section className="section" style={{ paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)', background: 'var(--gray-50)' }}>
           <div className="container">
-            <h2 style={{
-              fontSize: 'var(--text-3xl)',
-              fontWeight: 700,
-              textAlign: 'center',
-              marginBottom: 'var(--space-12)',
-              color: 'var(--gray-900)'
-            }}>
-              Deep dives
-            </h2>
-            <div className="grid grid-2" style={{ gap: 'var(--space-6)', maxWidth: '1000px', margin: '0 auto' }}>
-              <Link href="/peac" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <Code size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
-                  PEAC Protocol: open standard for the agentic web
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
-                  Apache-2.0 licensed protocol for policy, payments, and receipts across agent-to-agent transactions
-                </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--brand-primary)', fontWeight: 600 }}>
-                  <span>Learn more</span>
-                  <ArrowRight size={16} />
-                </div>
-              </Link>
-
-              <Link href="/trace" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <Bot size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
-                  AI crawler analytics and bot tracking
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
-                  See every AI bot, enforce policy, and track usage with Originary Trace
-                </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--brand-primary)', fontWeight: 600 }}>
-                  <span>Explore Trace</span>
-                  <ArrowRight size={16} />
-                </div>
-              </Link>
-
-              <Link href="/integrations/x402" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <DollarSign size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
-                  HTTP 402 and x402 payments
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
-                  Implement machine-payable APIs with HTTP 402 Payment Required and x402 headers
-                </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--brand-primary)', fontWeight: 600 }}>
-                  <span>View integration guide</span>
-                  <ArrowRight size={16} />
-                </div>
-              </Link>
-
-              <Link href="/integrations/aipref" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <BookOpen size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
-                  AIPREF: AI preferences standard
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
-                  Implement the IETF AIPREF standard for machine-readable AI access policies and content licensing
-                </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--brand-primary)', fontWeight: 600 }}>
-                  <span>View integration guide</span>
-                  <ArrowRight size={16} />
-                </div>
-              </Link>
+            <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
+              <h2 style={{
+                fontSize: 'var(--text-2xl)',
+                fontWeight: 700,
+                color: 'var(--gray-900)',
+                marginBottom: 'var(--space-2)'
+              }}>
+                Deep dives
+              </h2>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>
+                Explore protocols, integrations, and tools
+              </p>
             </div>
 
-            {/* Additional integrations - second row */}
-            <div className="grid grid-2" style={{ gap: 'var(--space-6)', maxWidth: '1000px', margin: 'var(--space-6) auto 0' }}>
-              <Link href="/cloud" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <Bot size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
-                  Trace Cloud: Managed bot analytics
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
-                  Hosted AI crawler tracking with attested keys, compliance bundles, and enterprise SLAs
-                </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--brand-primary)', fontWeight: 600 }}>
-                  <span>Learn about Cloud</span>
-                  <ArrowRight size={16} />
-                </div>
+            {/* Compact 6-column grid */}
+            <div className="deep-dives-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(6, 1fr)',
+              gap: 'var(--space-3)'
+            }}>
+              <Link href="/peac" className="deep-dive-card" style={{
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                padding: 'var(--space-4)',
+                background: 'var(--white)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-xl)',
+                transition: 'all 0.2s ease',
+                textAlign: 'center'
+              }}>
+                <Code size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
+                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                  PEAC Protocol
+                </span>
+                <span style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
+                  Open protocol
+                </span>
               </Link>
 
-              <Link href="/integrations/acp" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <DollarSign size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
-                  Agentic Commerce Protocol (ACP)
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
-                  Enable autonomous AI agent commerce with verifiable transaction receipts
-                </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--brand-primary)', fontWeight: 600 }}>
-                  <span>View integration guide</span>
-                  <ArrowRight size={16} />
-                </div>
+              <Link href="/trace" className="deep-dive-card" style={{
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                padding: 'var(--space-4)',
+                background: 'var(--white)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-xl)',
+                transition: 'all 0.2s ease',
+                textAlign: 'center'
+              }}>
+                <Bot size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
+                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                  Trace
+                </span>
+                <span style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
+                  Bot analytics
+                </span>
+              </Link>
+
+              <Link href="/integrations/x402" className="deep-dive-card" style={{
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                padding: 'var(--space-4)',
+                background: 'var(--white)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-xl)',
+                transition: 'all 0.2s ease',
+                textAlign: 'center'
+              }}>
+                <DollarSign size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
+                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                  HTTP 402
+                </span>
+                <span style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
+                  Payments
+                </span>
+              </Link>
+
+              <Link href="/integrations/aipref" className="deep-dive-card" style={{
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                padding: 'var(--space-4)',
+                background: 'var(--white)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-xl)',
+                transition: 'all 0.2s ease',
+                textAlign: 'center'
+              }}>
+                <BookOpen size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
+                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                  AIPREF
+                </span>
+                <span style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
+                  AI preferences
+                </span>
+              </Link>
+
+              <Link href="/cloud" className="deep-dive-card" style={{
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                padding: 'var(--space-4)',
+                background: 'var(--white)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-xl)',
+                transition: 'all 0.2s ease',
+                textAlign: 'center'
+              }}>
+                <Bot size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
+                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                  Trace Cloud
+                </span>
+                <span style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
+                  Managed
+                </span>
+              </Link>
+
+              <Link href="/integrations/acp" className="deep-dive-card" style={{
+                textDecoration: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                padding: 'var(--space-4)',
+                background: 'var(--white)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-xl)',
+                transition: 'all 0.2s ease',
+                textAlign: 'center'
+              }}>
+                <DollarSign size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
+                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                  ACP
+                </span>
+                <span style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
+                  Agent commerce
+                </span>
               </Link>
             </div>
           </div>
@@ -178,7 +341,6 @@ export default function Page() {
         <PEACBand />
         <FoundationalRailsSection />
         <VerifySection />
-        <SocialProofSection />
         <ControlPlaneSection />
         <StandardsIntegrations />
         <WorldClassHomePage />

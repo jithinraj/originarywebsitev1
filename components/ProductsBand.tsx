@@ -67,7 +67,7 @@ export default function ProductsBand() {
   return (
     <section
       style={{
-        padding: 'var(--space-24) 0',
+        padding: 'var(--space-16) 0',
         background: 'var(--white)',
         borderTop: '1px solid var(--gray-200)'
       }}
@@ -75,14 +75,14 @@ export default function ProductsBand() {
       <div className="container">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           {/* Section Header */}
-          <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
+          <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
             <h2
               style={{
-                fontSize: 'clamp(var(--text-3xl), 4vw, var(--text-5xl))',
+                fontSize: 'clamp(var(--text-2xl), 4vw, var(--text-4xl))',
                 fontWeight: 700,
                 lineHeight: 1.2,
                 letterSpacing: '-0.02em',
-                marginBottom: 'var(--space-4)',
+                marginBottom: 'var(--space-3)',
                 color: 'var(--gray-900)'
               }}
             >
@@ -90,14 +90,14 @@ export default function ProductsBand() {
             </h2>
             <p
               style={{
-                fontSize: 'var(--text-lg)',
+                fontSize: 'var(--text-base)',
                 lineHeight: 1.7,
                 color: 'var(--gray-600)',
                 maxWidth: '700px',
                 margin: '0 auto'
               }}
             >
-              Tools and infrastructure for PEAC-enabled applications - start with Declare, then add Trace, Gateway 402, Verify, and Studio as you scale.
+              Tools and infrastructure for PEAC-enabled applications
             </p>
           </div>
 
@@ -109,169 +109,139 @@ export default function ProductsBand() {
                 key={product.name}
                 className="card"
                 style={{
-                  padding: 'var(--space-8)',
+                  padding: 'var(--space-6)',
                   background: 'var(--gradient-brand)',
                   border: 'none',
-                  borderRadius: 'var(--radius-2xl)',
+                  borderRadius: 'var(--radius-xl)',
                   transition: 'all 0.2s ease',
-                  marginBottom: 'var(--space-8)',
-                  display: 'grid',
-                  gridTemplateColumns: '1fr',
-                  gap: 'var(--space-6)',
-                  alignItems: 'center'
+                  marginBottom: 'var(--space-6)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 'var(--space-6)'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-2px)'
-                  e.currentTarget.style.boxShadow = 'var(--shadow-2xl)'
+                  e.currentTarget.style.boxShadow = 'var(--shadow-xl)'
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)'
                   e.currentTarget.style.boxShadow = 'none'
                 }}
               >
-                <div>
-                  {/* Badge */}
-                  {product.badge && (
-                    <div
-                      style={{
-                        display: 'inline-block',
+                {/* Icon */}
+                <div
+                  style={{
+                    width: '56px',
+                    height: '56px',
+                    borderRadius: 'var(--radius-lg)',
+                    background: 'rgba(255, 255, 255, 0.2)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}
+                >
+                  <Icon size={28} style={{ color: 'var(--white)' }} />
+                </div>
+
+                <div style={{ flex: 1 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-2)' }}>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--white)' }}>
+                      {product.name}
+                    </h3>
+                    {product.badge && (
+                      <span style={{
                         background: 'rgba(255, 255, 255, 0.2)',
                         color: 'var(--white)',
                         fontSize: 'var(--text-xs)',
                         fontWeight: 600,
-                        padding: '4px 10px',
+                        padding: '2px 8px',
                         borderRadius: 'var(--radius-full)',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.05em',
-                        marginBottom: 'var(--space-4)'
-                      }}
-                    >
-                      {product.badge}
-                    </div>
-                  )}
-
-                  {/* Icon */}
-                  <div
-                    style={{
-                      width: '64px',
-                      height: '64px',
-                      borderRadius: 'var(--radius-lg)',
-                      background: 'rgba(255, 255, 255, 0.2)',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginBottom: 'var(--space-4)'
-                    }}
-                  >
-                    <Icon size={32} style={{ color: 'var(--white)' }} />
+                        textTransform: 'uppercase'
+                      }}>
+                        {product.badge}
+                      </span>
+                    )}
                   </div>
-
-                  {/* Content */}
-                  <h3
-                    style={{
-                      fontSize: 'var(--text-3xl)',
-                      fontWeight: 700,
-                      marginBottom: 'var(--space-3)',
-                      color: 'var(--white)'
-                    }}
-                  >
-                    {product.name}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 'var(--text-lg)',
-                      color: 'rgba(255, 255, 255, 0.9)',
-                      lineHeight: 1.6,
-                      marginBottom: 'var(--space-6)',
-                      maxWidth: '600px'
-                    }}
-                  >
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.5 }}>
                     {product.description}
                   </p>
-
-                  {/* Buttons */}
-                  {product.buttons && product.buttons.length > 0 && (
-                    <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
-                      {product.buttons.map((button: any, idx) => {
-                        const ButtonComponent = button.external ? 'a' : Link
-                        const buttonProps = button.external
-                          ? { href: button.href, target: '_blank', rel: 'noopener noreferrer' }
-                          : { href: button.href }
-
-                        return (
-                          <ButtonComponent
-                            key={idx}
-                            {...buttonProps}
-                            style={{
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: 'var(--space-2)',
-                              padding: 'var(--space-3) var(--space-5)',
-                              fontSize: 'var(--text-base)',
-                              fontWeight: 600,
-                              borderRadius: 'var(--radius-md)',
-                              textDecoration: 'none',
-                              transition: 'all 0.2s ease',
-                              background: button.primary ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
-                              color: button.primary ? 'var(--brand-primary)' : 'var(--white)',
-                              border: button.primary ? 'none' : '1px solid rgba(255, 255, 255, 0.3)'
-                            }}
-                          >
-                            {button.label}
-                          </ButtonComponent>
-                        )
-                      })}
-                    </div>
-                  )}
                 </div>
+
+                {/* Buttons */}
+                {product.buttons && product.buttons.length > 0 && (
+                  <div style={{ display: 'flex', gap: 'var(--space-2)', flexShrink: 0 }}>
+                    {product.buttons.map((button: any, idx) => {
+                      const ButtonComponent = button.external ? 'a' : Link
+                      const buttonProps = button.external
+                        ? { href: button.href, target: '_blank', rel: 'noopener noreferrer' }
+                        : { href: button.href }
+
+                      return (
+                        <ButtonComponent
+                          key={idx}
+                          {...buttonProps}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: 'var(--space-1)',
+                            padding: 'var(--space-2) var(--space-4)',
+                            fontSize: 'var(--text-sm)',
+                            fontWeight: 600,
+                            borderRadius: 'var(--radius-md)',
+                            textDecoration: 'none',
+                            transition: 'all 0.2s ease',
+                            background: button.primary ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
+                            color: button.primary ? 'var(--brand-primary)' : 'var(--white)',
+                            border: button.primary ? 'none' : '1px solid rgba(255, 255, 255, 0.3)'
+                          }}
+                        >
+                          {button.label}
+                        </ButtonComponent>
+                      )
+                    })}
+                  </div>
+                )}
               </div>
             )
           })}
 
-          {/* Other Products Grid */}
+          {/* Other Products Grid - 4 in a row */}
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(1, 1fr)',
-              gap: 'var(--space-6)'
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: 'var(--space-4)'
             }}
             className="products-grid"
           >
             {products.filter(p => !p.featured).map((product) => {
               const Icon = product.icon
               return (
-                <div
+                <Link
                   key={product.name}
+                  href={product.href}
                   className="card"
                   style={{
-                    padding: 'var(--space-6)',
-                    background: product.featured ? 'var(--gradient-brand)' : 'var(--white)',
-                    border: product.featured ? 'none' : '1px solid var(--gray-200)',
+                    padding: 'var(--space-4)',
+                    background: 'var(--white)',
+                    border: '1px solid var(--gray-200)',
                     borderRadius: 'var(--radius-xl)',
                     transition: 'all 0.2s ease',
                     position: 'relative',
                     display: 'flex',
-                    flexDirection: 'column'
+                    flexDirection: 'column',
+                    textDecoration: 'none'
                   }}
                   onMouseEnter={(e) => {
-                    if (!product.featured) {
-                      e.currentTarget.style.borderColor = 'var(--brand-primary)'
-                      e.currentTarget.style.transform = 'translateY(-2px)'
-                      e.currentTarget.style.boxShadow = 'var(--shadow-lg)'
-                    } else {
-                      e.currentTarget.style.transform = 'translateY(-2px)'
-                      e.currentTarget.style.boxShadow = 'var(--shadow-xl)'
-                    }
+                    e.currentTarget.style.borderColor = 'var(--brand-primary)'
+                    e.currentTarget.style.transform = 'translateY(-2px)'
+                    e.currentTarget.style.boxShadow = 'var(--shadow-md)'
                   }}
                   onMouseLeave={(e) => {
-                    if (!product.featured) {
-                      e.currentTarget.style.borderColor = 'var(--gray-200)'
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = 'none'
-                    } else {
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = 'none'
-                    }
+                    e.currentTarget.style.borderColor = 'var(--gray-200)'
+                    e.currentTarget.style.transform = 'translateY(0)'
+                    e.currentTarget.style.boxShadow = 'none'
                   }}
                 >
                   {/* Badge */}
@@ -279,13 +249,13 @@ export default function ProductsBand() {
                     <div
                       style={{
                         position: 'absolute',
-                        top: 'var(--space-4)',
-                        right: 'var(--space-4)',
-                        background: product.featured ? 'rgba(255, 255, 255, 0.2)' : 'rgba(99, 91, 255, 0.1)',
-                        color: product.featured ? 'var(--white)' : 'var(--brand-primary)',
-                        fontSize: 'var(--text-xs)',
+                        top: 'var(--space-3)',
+                        right: 'var(--space-3)',
+                        background: 'rgba(99, 91, 255, 0.1)',
+                        color: 'var(--brand-primary)',
+                        fontSize: '10px',
                         fontWeight: 600,
-                        padding: '4px 10px',
+                        padding: '2px 8px',
                         borderRadius: 'var(--radius-full)',
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em'
@@ -298,92 +268,47 @@ export default function ProductsBand() {
                   {/* Icon */}
                   <div
                     style={{
-                      width: '48px',
-                      height: '48px',
-                      borderRadius: 'var(--radius-lg)',
-                      background: product.featured ? 'rgba(255, 255, 255, 0.2)' : 'rgba(99, 91, 255, 0.1)',
+                      width: '40px',
+                      height: '40px',
+                      borderRadius: 'var(--radius-md)',
+                      background: 'rgba(99, 91, 255, 0.1)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      marginBottom: 'var(--space-4)'
+                      marginBottom: 'var(--space-3)'
                     }}
                   >
-                    <Icon
-                      size={24}
-                      style={{
-                        color: product.featured ? 'var(--white)' : 'var(--brand-primary)'
-                      }}
-                    />
+                    <Icon size={20} style={{ color: 'var(--brand-primary)' }} />
                   </div>
 
                   {/* Content */}
                   <h3
                     style={{
-                      fontSize: 'var(--text-xl)',
+                      fontSize: 'var(--text-base)',
                       fontWeight: 700,
-                      marginBottom: 'var(--space-2)',
-                      color: product.featured ? 'var(--white)' : 'var(--gray-900)'
+                      marginBottom: 'var(--space-1)',
+                      color: 'var(--gray-900)'
                     }}
                   >
                     {product.name}
                   </h3>
                   <p
                     style={{
-                      fontSize: 'var(--text-sm)',
-                      color: product.featured ? 'rgba(255, 255, 255, 0.9)' : 'var(--gray-600)',
-                      lineHeight: 1.6,
-                      marginBottom: 'var(--space-4)',
+                      fontSize: 'var(--text-xs)',
+                      color: 'var(--gray-600)',
+                      lineHeight: 1.5,
                       flex: 1
                     }}
                   >
                     {product.description}
                   </p>
-
-                  {/* Buttons */}
-                  {product.buttons && product.buttons.length > 0 && (
-                    <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap', marginTop: 'auto' }}>
-                      {product.buttons.map((button: any, idx) => {
-                        const ButtonComponent = button.external ? 'a' : Link
-                        const buttonProps = button.external
-                          ? { href: button.href, target: '_blank', rel: 'noopener noreferrer' }
-                          : { href: button.href }
-
-                        return (
-                          <ButtonComponent
-                            key={idx}
-                            {...buttonProps}
-                            style={{
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: 'var(--space-1)',
-                              padding: 'var(--space-2) var(--space-3)',
-                              fontSize: 'var(--text-sm)',
-                              fontWeight: 600,
-                              borderRadius: 'var(--radius-md)',
-                              textDecoration: 'none',
-                              transition: 'all 0.2s ease',
-                              background: button.primary
-                                ? (product.featured ? 'rgba(255, 255, 255, 0.2)' : 'var(--brand-primary)')
-                                : 'transparent',
-                              color: button.primary
-                                ? (product.featured ? 'var(--white)' : 'var(--white)')
-                                : (product.featured ? 'var(--white)' : 'var(--brand-primary)'),
-                              border: button.primary ? 'none' : `1px solid ${product.featured ? 'rgba(255, 255, 255, 0.3)' : 'var(--brand-primary)'}`
-                            }}
-                          >
-                            {button.label}
-                          </ButtonComponent>
-                        )
-                      })}
-                    </div>
-                  )}
-                </div>
+                </Link>
               )
             })}
           </div>
 
           {/* Learn PEAC Link */}
-          <div style={{ textAlign: 'center', marginTop: 'var(--space-8)' }}>
+          <div style={{ textAlign: 'center', marginTop: 'var(--space-6)' }}>
             <Link
               href="https://peacprotocol.org"
               target="_blank"
@@ -419,7 +344,7 @@ export default function ProductsBand() {
 
       <style jsx>{`
         .products-grid {
-          grid-template-columns: repeat(1, 1fr) !important;
+          grid-template-columns: repeat(2, 1fr) !important;
         }
 
         @media (min-width: 768px) {
@@ -430,7 +355,7 @@ export default function ProductsBand() {
 
         @media (min-width: 1024px) {
           .products-grid {
-            grid-template-columns: repeat(3, 1fr) !important;
+            grid-template-columns: repeat(4, 1fr) !important;
           }
         }
       `}</style>

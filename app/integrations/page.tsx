@@ -6,12 +6,12 @@ import Footer from '@/components/Footer'
 import { FileCode, Zap, MessageSquare, Settings, Brain, FileText } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Integrations | Agentic Web Standards',
-  description: 'Originary integrations for agentic web standards and agentic commerce standards. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A with open protocols for the agentic web.',
-  keywords: 'x402, HTTP 402, MCP, A2A, ACP, AIPREF, PEAC protocol, agentic web standards, agentic commerce standards, agent integrations',
+  title: 'Integrations | Agentic Web Protocols',
+  description: 'Originary integrations for agentic web protocols and agentic commerce. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A with open protocols for the agentic web.',
+  keywords: 'x402, HTTP 402, AI Access, MCP, A2A, ACP, AIPREF, PEAC protocol, agentic web, agentic commerce, agent integrations',
   openGraph: {
-    title: 'Integrations | Agentic Web Standards',
-    description: 'Originary integrations for agentic web standards and agentic commerce standards. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A.',
+    title: 'Integrations | Agentic Web Protocols',
+    description: 'Originary integrations for agentic web protocols and agentic commerce. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A.',
     url: 'https://www.originary.xyz/integrations/',
     siteName: 'Originary',
     type: 'website',

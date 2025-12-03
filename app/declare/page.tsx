@@ -7,7 +7,7 @@ import { ArrowRight, Github, FileText, Shield, Code, Terminal, Globe, CheckCircl
 export const metadata: Metadata = {
   title: 'PEAC Policy Kit | Originary Declare',
   description: 'Originary Declare (PEAC Policy Kit) lets you declare AI crawling, training and usage policy once and generate peac.txt, AIPREF, robots rules and a human policy page in minutes. Built on the open PEAC Protocol with support for HTTP 402, x402 and AI bot protection.',
-  keywords: 'AI policy, AIPREF, peac.txt, AI crawler policy, AI bot detection, PEAC Protocol, HTTP 402, x402, crawling protection, AI policy generator',
+  keywords: 'AI policy, AI Access, AIPREF, peac.txt, AI crawler policy, AI bot detection, PEAC Protocol, HTTP 402, x402, crawling protection, AI policy generator',
   alternates: {
     canonical: '/declare'
   },
@@ -53,22 +53,22 @@ export default function DeclarePage() {
     {
       icon: <FileText size={24} />,
       title: '/.well-known/peac.txt',
-      description: 'Your primary, PEAC-native AI policy surface for agents. The canonical source of truth for AI crawlers.'
+      description: 'A PEAC-compliant discovery file (20 lines or less) that acts as the primary AI policy surface for agents. It advertises your AIPREF URL, 402 access control, accepted payment rails (L402, x402, Stripe), provenance (C2PA), receipt verification endpoint, and public keys.'
     },
     {
       icon: <Shield size={24} />,
       title: 'Robots AI rules',
-      description: 'A block you can append to robots.txt or serve as robots-ai.txt to point AI crawlers at your policy.'
+      description: 'A block you can append to robots.txt or serve as robots-ai.txt to point AI crawlers at /.well-known/peac.txt instead of yet another custom file.'
     },
     {
       icon: <Code size={24} />,
-      title: 'AIPREF-compatible headers',
-      description: 'Copy-pasteable HTTP headers so early AIPREF-compatible crawlers see the same policy.'
+      title: 'AIPREF surfaces',
+      description: 'An AIPREF JSON document and example HTTP headers so AIPREF-compatible crawlers see the same policy that PEAC-Receipts will snapshot later.'
     },
     {
       icon: <Globe size={24} />,
       title: 'Human-readable /ai-policy page',
-      description: 'Markdown or HTML explaining your AI policy in plain language for lawyers, users, and partners.'
+      description: 'Markdown or HTML explaining your AI policy in plain language for lawyers, users, and partners, generated from the same semantics as your machine-readable files.'
     }
   ]
 
@@ -136,8 +136,8 @@ export default function DeclarePage() {
                 letterSpacing: '-0.04em',
                 color: 'var(--gray-900)'
               }}>
-                Define your AI policy once.{' '}
-                <span className="text-gradient">Generate all the right signals.</span>
+                Declare your AI policy once.{' '}
+                <span className="text-gradient">Publish PEAC-native signals everywhere.</span>
               </h1>
 
               <p style={{
@@ -148,7 +148,7 @@ export default function DeclarePage() {
                 maxWidth: '750px',
                 margin: '0 auto var(--space-8) auto'
               }}>
-                Originary Declare (PEAC Policy Kit) lets you configure AI crawling, training and usage rules in a single <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-lg)' }}>peac-policy.yaml</code> and generate peac.txt, AIPREF headers, robots AI rules and a human-readable AI policy page in minutes.
+                PEAC Policy Kit is the canonical way to declare AI policy for PEAC Protocol. Define AI crawling, training, and usage rules once in <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-lg)' }}>peac-policy.yaml</code>, then generate <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-lg)' }}>/.well-known/peac.txt</code>, AIPREF preferences, robots AI rules, and a human-readable AI policy page from the same source file.
               </p>
 
               <p style={{
@@ -156,7 +156,7 @@ export default function DeclarePage() {
                 color: 'var(--gray-500)',
                 marginBottom: 'var(--space-10)'
               }}>
-                So AI bots, platforms and humans all see the same policy, without you hand-editing four different files.
+                Agents, platforms, and humans all see the same policy, without you hand-editing multiple files or dashboards. Everything runs locally in your own repo; no tracking, no SaaS lock-in.
               </p>
 
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -216,11 +216,23 @@ export default function DeclarePage() {
                 color: 'var(--gray-600)',
                 lineHeight: 1.8,
                 textAlign: 'center',
+                marginBottom: 'var(--space-6)',
+                maxWidth: '700px',
+                margin: '0 auto var(--space-6) auto'
+              }}>
+                AI crawlers, LLMs, and agents still look in different places for rules: <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>robots.txt</code>, ad hoc files like <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>ai.txt</code> / <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>llms.txt</code>, and emerging standards like AIPREF. Most sites end up with a tangle of partial signals and no reliable way to keep them in sync.
+              </p>
+
+              <p style={{
+                fontSize: 'var(--text-lg)',
+                color: 'var(--gray-600)',
+                lineHeight: 1.8,
+                textAlign: 'center',
                 marginBottom: 'var(--space-12)',
                 maxWidth: '700px',
                 margin: '0 auto var(--space-12) auto'
               }}>
-                AI crawlers, LLMs, and agents all look in slightly different places for policy: <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>robots.txt</code> rules, ad hoc files like <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>ai.txt</code> and <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>llms.txt</code>, early proposals like AIPREF. Most sites end up with a tangle of partial signals, and no easy way to keep them in sync.
+                PEAC makes <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> the canonical discovery point. It links to your AIPREF URL, 402 access control, payment rails, provenance, receipt verification endpoint, and public keys, in 20 lines or less by design.
               </p>
 
               <div className="card" style={{
@@ -237,18 +249,18 @@ export default function DeclarePage() {
                 }}>
                   PEAC Policy Kit gives you one canonical config, many compatible surfaces.
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', textAlign: 'left', maxWidth: '500px', margin: '0 auto' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', textAlign: 'left', maxWidth: '550px', margin: '0 auto' }}>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
                     <CheckCircle size={20} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
-                    <span style={{ color: 'var(--gray-700)' }}><strong>One file to maintain</strong> - <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>peac-policy.yaml</code> lives in your repo or CMS</span>
+                    <span style={{ color: 'var(--gray-700)' }}><strong>One file to maintain</strong> - <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>peac-policy.yaml</code> lives in your repo or CMS and becomes the single source of truth for AI access, training, and usage rules.</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
                     <CheckCircle size={20} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
-                    <span style={{ color: 'var(--gray-700)' }}><strong>One semantics model</strong> - clear fields like <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>training: deny</code> or <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>rag: allow_with_attribution</code></span>
+                    <span style={{ color: 'var(--gray-700)' }}><strong>One semantics model</strong> - fields like <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>access</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>training</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>rag</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>payments</code>, and <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>consent</code> map directly into <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/.well-known/peac.txt</code> and the PEAC-Receipt schema.</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
                     <CheckCircle size={20} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
-                    <span style={{ color: 'var(--gray-700)' }}><strong>Many outputs</strong> - PEAC-native <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>peac.txt</code> plus robots AI rules, AIPREF headers, and a readable policy page</span>
+                    <span style={{ color: 'var(--gray-700)' }}><strong>Many outputs</strong> - PEAC-native <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/.well-known/peac.txt</code> plus robots AI rules, AIPREF surfaces, and a readable policy page, all generated from the same config.</span>
                   </div>
                 </div>
               </div>
@@ -274,7 +286,7 @@ export default function DeclarePage() {
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
-                From a single <code style={{ background: 'var(--gray-200)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> file, v0.1 outputs:
+                From a single <code style={{ background: 'var(--gray-200)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> file, Policy Kit currently outputs:
               </p>
             </div>
 
@@ -332,7 +344,7 @@ export default function DeclarePage() {
               fontSize: 'var(--text-base)',
               color: 'var(--gray-500)'
             }}>
-              No tracking, no SaaS dependency. Everything runs locally and stays under your control.
+              No tracking, no SaaS dependency. Everything runs locally and stays under your control. Aligned with the current PEAC 0.9.x dev phase; only the latest wire formats are supported.
             </p>
           </div>
         </section>
@@ -468,6 +480,14 @@ peac policy init
                 }}>
 {`peac policy validate`}
                 </pre>
+                <p style={{
+                  fontSize: 'var(--text-sm)',
+                  color: 'var(--gray-400)',
+                  marginTop: 'var(--space-3)',
+                  lineHeight: 1.6
+                }}>
+                  Validates <code style={{ background: 'var(--gray-700)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> and the generated <code style={{ background: 'var(--gray-700)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> against the current PEAC 0.9.x schemas and ABNF. Fails fast if you are not on the latest wire format (no backward compatibility during this dev phase).
+                </p>
               </div>
 
               <div style={{ textAlign: 'center', marginTop: 'var(--space-10)' }}>
@@ -512,11 +532,11 @@ peac policy init
                 textAlign: 'center',
                 marginBottom: 'var(--space-10)'
               }}>
-                PEAC Policy Kit is designed to be small, reliable, and boring.
+                PEAC Policy Kit is designed to be small, reliable, and boring. It tracks the PEAC 0.9.x protocol line: standards alignment, payments/402, compliance and reporting.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-                <div className="card" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
+                <div className="card" style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-4)' }}>
                   <div
                     style={{
                       background: 'var(--success)',
@@ -525,16 +545,17 @@ peac policy init
                       borderRadius: 'var(--radius-md)',
                       fontSize: 'var(--text-xs)',
                       fontWeight: 700,
-                      textTransform: 'uppercase'
+                      textTransform: 'uppercase',
+                      flexShrink: 0
                     }}
                   >
-                    v0.1
+                    Now
                   </div>
                   <div>
-                    <strong>CLI only</strong> - <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>init</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>generate</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>validate</code>
+                    <strong>CLI-only</strong>: <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>init</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>generate</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>validate</code>. Generates <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/.well-known/peac.txt</code>, robots AI rules, AIPREF surfaces, and <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/ai-policy</code> from <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>peac-policy.yaml</code>.
                   </div>
                 </div>
-                <div className="card" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
+                <div className="card" style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-4)' }}>
                   <div
                     style={{
                       background: 'var(--brand-primary)',
@@ -543,16 +564,17 @@ peac policy init
                       borderRadius: 'var(--radius-md)',
                       fontSize: 'var(--text-xs)',
                       fontWeight: 700,
-                      textTransform: 'uppercase'
+                      textTransform: 'uppercase',
+                      flexShrink: 0
                     }}
                   >
-                    v0.2
+                    Next
                   </div>
                   <div>
-                    <strong>Web wizard</strong> - browser-based policy generator + site checker
+                    <strong>Web wizard</strong>: browser-based policy generator and site checker that compares your live <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/.well-known/peac.txt</code> / AIPREF to the config in your repo. Diff view to show exactly what will change before you regenerate policy surfaces.
                   </div>
                 </div>
-                <div className="card" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
+                <div className="card" style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-4)' }}>
                   <div
                     style={{
                       background: 'var(--gray-400)',
@@ -561,25 +583,17 @@ peac policy init
                       borderRadius: 'var(--radius-md)',
                       fontSize: 'var(--text-xs)',
                       fontWeight: 700,
-                      textTransform: 'uppercase'
+                      textTransform: 'uppercase',
+                      flexShrink: 0
                     }}
                   >
                     Later
                   </div>
                   <div>
-                    <strong>Evidence mode</strong> - optional signed audit trails, integrated with Originary Trace
+                    <strong>Evidence mode</strong>: export-ready configs for Gateway 402 and Verify API, so HTTP 402 challenges and PEAC-Receipts can be derived from the same policy. Tight integration with Originary Trace for AI crawler analytics and evidence based on both your declared policy and emitted receipts.
                   </div>
                 </div>
               </div>
-
-              <p style={{
-                textAlign: 'center',
-                marginTop: 'var(--space-8)',
-                fontSize: 'var(--text-base)',
-                color: 'var(--gray-500)'
-              }}>
-                We&apos;re deliberately starting with the basics: one config, many surfaces. Everything else will build on this foundation.
-              </p>
             </div>
           </div>
         </section>
@@ -640,7 +654,7 @@ peac policy init
                     color: 'var(--gray-600)',
                     lineHeight: 1.7
                   }}>
-                    AI crawler analytics and evidence. Trace uses your declared AI policy as context, so violations against <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>peac.txt</code> and robots AI rules are easy to prove.
+                    AI crawler analytics and evidence. Trace uses your declared AI policy and PEAC-Receipts as context, so violations against <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/.well-known/peac.txt</code> and robots AI rules are easy to prove.
                   </p>
                 </div>
 

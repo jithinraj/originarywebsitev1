@@ -166,7 +166,7 @@ export default function Footer() {
             links={[
               { href: '/developers', label: 'Documentation' },
               { href: '/downloads', label: 'Downloads' },
-              { href: '/verify', label: 'Verify Demo' }
+              { href: '/demo', label: 'Demo' }
             ]}
           />
 
@@ -197,8 +197,7 @@ export default function Footer() {
               { href: 'https://www.linkedin.com/company/originary', label: 'LinkedIn', external: true },
               { href: 'https://github.com/originaryx', label: 'GitHub', external: true },
               { href: 'https://bsky.app/profile/originary.bsky.social', label: 'Bluesky', external: true },
-              { href: 'https://peacprotocol.substack.com', label: 'Substack', external: true },
-              { href: '/blog', label: 'Blog' }
+              { href: 'https://peacprotocol.substack.com', label: 'Substack', external: true }
             ]}
           />
         </div>
