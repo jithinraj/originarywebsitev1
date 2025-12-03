@@ -277,11 +277,11 @@ const stepContent = [
     filename: 'peac.txt',
     codeType: 'txt',
     code: `# AIPREF snapshot (simplified)
-training:       deny
-rag:            allow-with-attribution
+training: deny
+rag: allow-with-attribution
 commercial_use: negotiate
-inference:      allow
-logging:        minimal`,
+inference: allow
+logging: minimal`,
     metaLeft: 'policy_hash: 9f3c...c2ab',
     metaRight: 'v2025-11-30',
     caption: 'PEAC-Receipt ready - AIPREF-compatible'
@@ -291,28 +291,28 @@ logging:        minimal`,
     filename: 'peac.txt',
     codeType: 'txt',
     code: `# Access control
-version:         0.9.13
-access_control:  http-402
-protected_paths: [/api/, /models/, /agents/]
-receipts:        required`,
-    metaLeft: 'challenge: HTTP 402 Payment Required',
+version: 0.9.13
+access_control: http-402
+protected_paths: [/api/, /models/]
+receipts: required`,
+    metaLeft: 'challenge: HTTP 402',
     metaRight: 'method: http-402',
-    caption: 'Access gated with HTTP 402 - ready for CDNs and APIs'
+    caption: 'Access gated with HTTP 402'
   },
   {
     badge: 'PAYMENT',
     filename: 'peac.txt',
     codeType: 'txt',
     code: `# Payment rails
-payments:         [x402, stripe]
+payments: [x402, stripe]
 default_currency: USD
 
-# 402 challenge example
+# 402 challenge
 HTTP/1.1 402 Payment Required
 X-Payment: x402 token="..."`,
-    metaLeft: 'rails_active: x402 - stripe',
-    metaRight: 'min_amount: 0.01 USD',
-    caption: 'Multi-rail payments - one normalized payment{} in every receipt'
+    metaLeft: 'rails: x402, stripe',
+    metaRight: 'min: 0.01 USD',
+    caption: 'Multi-rail payments - normalized payment{}'
   },
   {
     badge: 'RECEIPT',
@@ -320,28 +320,28 @@ X-Payment: x402 token="..."`,
     codeType: 'json',
     code: `{
   "subject": "/api/chat",
-  "aipref": { "train-ai": "N", "ai-use": "Y" },
-  "payment": { "rail": "x402", "amount": 5 },
-  "issued_at": "2025-11-30T12:34:56Z",
-  "kid": "2025-11-key1"
+  "aipref": {"train": "N"},
+  "payment": {"rail": "x402"},
+  "issued_at": "2025-11-30",
+  "kid": "2025-key1"
 }`,
-    metaLeft: 'PEAC-Receipt: eyJhbGciOiJFZERTQSJ9...',
+    metaLeft: 'PEAC-Receipt: eyJhbGci...',
     metaRight: '',
-    caption: 'Signed PEAC-Receipt header - verify in <5 ms'
+    caption: 'Signed PEAC-Receipt - verify in <5 ms'
   },
   {
     badge: 'TRACE',
     filename: 'verify.txt',
     codeType: 'txt',
     code: `# Verification endpoint
-verify:      /peac/verify
-public_keys: kid=2025-11-key1; alg=Ed25519
+verify: /peac/verify
+public_keys: kid=2025-key1
 
 POST /peac/verify
 { "valid": true, "rail": "x402" }`,
     metaLeft: 'trace_id: 7f92...ab31',
-    metaRight: 'receipts_valid: 100%',
-    caption: 'Traceable by design - verify via /.well-known/peac.txt'
+    metaRight: 'valid: 100%',
+    caption: 'Verify via /.well-known/peac.txt'
   }
 ]
 
@@ -510,11 +510,12 @@ function PolicyCard3D() {
               padding: 'clamp(var(--space-3), 3vw, var(--space-4))',
               height: '156px',
               overflow: 'hidden',
-              transition: 'opacity 0.3s ease-out'
+              transition: 'opacity 0.3s ease-out',
+              fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace'
             }}
           >
-            <pre style={{ margin: 0, whiteSpace: 'pre-wrap', lineHeight: 1.5 }}>
-              <code style={{ color: '#A1A1AA' }}>
+            <pre style={{ margin: 0, whiteSpace: 'pre', lineHeight: 1.5, overflowX: 'auto' }}>
+              <code style={{ color: '#A1A1AA', fontFamily: 'inherit' }}>
                 {renderCode(currentContent.code, currentContent.codeType)}
               </code>
             </pre>
@@ -596,10 +597,27 @@ function PolicyCard3D() {
           .policy-meta-row {
             flex-direction: column;
             align-items: flex-start;
+            gap: var(--space-1) !important;
           }
           .policy-card-footer {
             flex-direction: column;
             align-items: flex-start;
+          }
+          .code-block-body {
+            font-size: 10px !important;
+            padding: var(--space-2) !important;
+          }
+          .code-block-body pre {
+            font-size: 10px !important;
+          }
+        }
+        @media (max-width: 360px) {
+          .policy-card-main {
+            padding: var(--space-3) !important;
+          }
+          .code-block-body {
+            font-size: 9px !important;
+            height: 140px !important;
           }
         }
       `}</style>
@@ -614,100 +632,113 @@ interface Step {
 
 function PipelineStepper({ activeStep, steps }: { activeStep: number; steps: Step[] }) {
   return (
-    <div
-      className="pipeline-stepper"
-      style={{
-        display: 'flex',
-        alignItems: 'flex-start',
-        justifyContent: 'space-between',
-        marginBottom: 'var(--space-4)',
-        padding: 'var(--space-2) 0',
-        position: 'relative'
-      }}
-    >
-      {steps.map((step, index) => (
-        <div
-          key={step.label}
-          className="pipeline-step"
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            position: 'relative',
-            flex: 1
-          }}
-        >
-          {/* Connecting Line */}
-          {index < steps.length - 1 && (
-            <div
-              className="pipeline-line"
-              style={{
-                position: 'absolute',
-                top: '16px',
-                left: '50%',
-                width: '100%',
-                height: '2px',
-                background: 'var(--gray-200)',
-                zIndex: 0
-              }}
-            >
+    <>
+      <div
+        className="pipeline-stepper"
+        style={{
+          display: 'flex',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+          marginBottom: 'var(--space-4)',
+          padding: 'var(--space-2) 0',
+          position: 'relative'
+        }}
+      >
+        {steps.map((step, index) => (
+          <div
+            key={step.label}
+            className="pipeline-step"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              position: 'relative',
+              flex: 1,
+              minWidth: 0
+            }}
+          >
+            {/* Connecting Line */}
+            {index < steps.length - 1 && (
               <div
+                className="pipeline-line"
                 style={{
                   position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  height: '100%',
-                  background: 'linear-gradient(90deg, var(--brand-primary), var(--brand-secondary))',
-                  width: index < activeStep ? '100%' : index === activeStep ? '50%' : '0%',
-                  transition: 'width 0.5s ease-out'
+                  top: '14px',
+                  left: '50%',
+                  width: '100%',
+                  height: '2px',
+                  background: 'var(--gray-200)',
+                  zIndex: 0
                 }}
-              />
+              >
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    height: '100%',
+                    background: 'linear-gradient(90deg, var(--brand-primary), var(--brand-secondary))',
+                    width: index < activeStep ? '100%' : index === activeStep ? '50%' : '0%',
+                    transition: 'width 0.5s ease-out'
+                  }}
+                />
+              </div>
+            )}
+
+            {/* Icon Circle */}
+            <div
+              className="pipeline-icon"
+              style={{
+                width: 'clamp(26px, 6vw, 32px)',
+                height: 'clamp(26px, 6vw, 32px)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: 'clamp(11px, 3vw, 14px)',
+                background: index === activeStep
+                  ? 'linear-gradient(135deg, var(--brand-primary), var(--brand-secondary))'
+                  : 'var(--gray-100)',
+                boxShadow: index === activeStep
+                  ? '0 4px 12px rgba(99, 91, 255, 0.3)'
+                  : 'none',
+                transform: index === activeStep ? 'scale(1.1)' : 'scale(1)',
+                transition: 'all 0.3s ease-out',
+                zIndex: 1,
+                position: 'relative',
+                flexShrink: 0
+              }}
+            >
+              {step.icon}
             </div>
-          )}
 
-          {/* Icon Circle */}
-          <div
-            className="pipeline-icon"
-            style={{
-              width: '32px',
-              height: '32px',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '14px',
-              background: index === activeStep
-                ? 'linear-gradient(135deg, var(--brand-primary), var(--brand-secondary))'
-                : 'var(--gray-100)',
-              boxShadow: index === activeStep
-                ? '0 4px 12px rgba(99, 91, 255, 0.3)'
-                : 'none',
-              transform: index === activeStep ? 'scale(1.1)' : 'scale(1)',
-              transition: 'all 0.3s ease-out',
-              zIndex: 1,
-              position: 'relative'
-            }}
-          >
-            {step.icon}
+            {/* Label */}
+            <span
+              className="pipeline-label"
+              style={{
+                marginTop: 'var(--space-1)',
+                fontSize: 'clamp(8px, 2vw, 11px)',
+                fontWeight: index === activeStep ? 600 : 400,
+                color: index === activeStep ? 'var(--brand-primary)' : 'var(--gray-500)',
+                transition: 'all 0.3s ease-out',
+                textAlign: 'center',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis'
+              }}
+            >
+              {step.label}
+            </span>
           </div>
-
-          {/* Label */}
-          <span
-            className="pipeline-label"
-            style={{
-              marginTop: 'var(--space-1)',
-              fontSize: 'clamp(9px, 2vw, 11px)',
-              fontWeight: index === activeStep ? 600 : 400,
-              color: index === activeStep ? 'var(--brand-primary)' : 'var(--gray-500)',
-              transition: 'all 0.3s ease-out',
-              whiteSpace: 'nowrap'
-            }}
-          >
-            {step.label}
-          </span>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+      <style jsx>{`
+        @media (max-width: 380px) {
+          .pipeline-line {
+            top: 12px !important;
+          }
+        }
+      `}</style>
+    </>
   )
 }
 

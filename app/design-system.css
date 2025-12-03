@@ -1295,6 +1295,20 @@ table {
   transform: rotateY(0deg) rotateX(0deg);
 }
 
+/* Disable 3D effects on mobile/touch devices */
+@media (max-width: 768px), (hover: none) {
+  .receipt-card-3d {
+    perspective: none;
+  }
+  .receipt-card-inner {
+    transform: none;
+    transform-style: flat;
+  }
+  .receipt-card-3d:hover .receipt-card-inner {
+    transform: none;
+  }
+}
+
 /* === PULSE ANIMATION FOR LIVE INDICATORS === */
 @keyframes pulse {
   0%, 100% {
