@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Status | Originary',
+  title: 'Status',
   description: 'Live service status and incident history for Originary, Trace, and PEAC-based infrastructure.',
   robots: {
     index: false,
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: '/status'
   },
   openGraph: {
-    title: 'Status | Originary',
+    title: 'Status',
     description: 'Live service status and incident history for Originary, Trace, and PEAC-based infrastructure.',
     type: 'website',
   },

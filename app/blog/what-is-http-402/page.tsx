@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { FileText, ArrowRight, Code, DollarSign, Shield, Zap, Clock, CreditCard, Receipt, CheckCircle, AlertCircle, Bot, Lock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "What is HTTP 402? How PEAC Uses 402 for Agent Payments | Originary",
+  title: "What is HTTP 402? How PEAC Uses 402 for Agent Payments",
   description: "HTTP 402 Payment Required is an HTTP status code reserved for future digital payments. Learn how PEAC Protocol activates 402 for AI access control, agent payments, and verifiable receipts.",
   keywords: "HTTP 402, Payment Required, x402, agent payments, AI Access, PEAC Protocol, API monetization, L402, web payments, agentic web",
   authors: [{ name: "Jithin Raj & Originary Team" }],

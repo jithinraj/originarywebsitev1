@@ -4,7 +4,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'x402 Integration | HTTP 402 Examples and HTTP 402 for APIs | Originary',
+  title: 'x402 Integration | HTTP 402 Examples and HTTP 402 for APIs',
   description: 'HTTP 402 examples and HTTP 402 for APIs with x402 payments and x402 integration. Learn how to implement x402 stablecoin payments with Originary PEAC-Receipts. HTTP 402 payment flows with blockchain-based x402 integration for machine-payable APIs.',
   keywords: 'HTTP 402 examples, HTTP 402 for APIs, x402 payments, x402 integration, x402 protocol, HTTP 402 status code, stablecoin payments, blockchain payments, PEAC-Receipt, machine-payable APIs, HTTP 402 payment required, agent payments, x402 stablecoin',
   alternates: {

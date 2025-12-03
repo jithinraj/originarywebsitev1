@@ -110,7 +110,7 @@ export default function SocialProofSection() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: 'var(--space-12)',
+            gap: 'var(--space-8)',
             flexWrap: 'wrap'
           }}
         >
@@ -226,6 +226,14 @@ export default function SocialProofSection() {
         </p>
 
       </div>
+
+      <style jsx>{`
+        @media (max-width: 640px) {
+          .logo-strip {
+            gap: var(--space-4) !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

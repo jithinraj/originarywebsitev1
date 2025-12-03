@@ -4,7 +4,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'PEAC-Receipts | AI Usage Receipts and AI Receipts Documentation | Originary',
+  title: 'PEAC-Receipts | AI Usage Receipts and AI Receipts Documentation',
   description: 'PEAC-Receipts documentation for AI usage receipts and AI receipts. Learn about the open standard for verifiable agent access receipts with cryptographic proof. Technical specification, implementation guide, and examples for AI receipts.',
   keywords: 'PEAC-Receipts, AI usage receipts, AI receipts, agent receipts, verifiable receipts, cryptographic receipts, PEAC protocol, agent access receipts, receipt verification, JWT receipts, Ed25519 signatures',
   alternates: {

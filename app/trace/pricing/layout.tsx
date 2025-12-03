@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Trace Pricing | AI Crawler Analytics Plans | Originary',
+  title: 'Trace Pricing | AI Crawler Analytics Plans',
   description: 'Trace pricing for AI crawler analytics, bot tracking, and policy enforcement. Simple plans suitable for small sites and growing platforms.',
   openGraph: {
-    title: 'Trace Pricing | AI Crawler Analytics Plans | Originary',
+    title: 'Trace Pricing | AI Crawler Analytics Plans',
     description: 'Trace pricing for AI crawler analytics, bot tracking, and policy enforcement. Simple plans suitable for small sites and growing platforms.',
     type: 'website',
     url: 'https://www.originary.xyz/trace/pricing',

@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Demo | Originary',
+  title: 'Demo',
   description: 'Interactive demo experience for Originary and PEAC-Receipts. Explore how receipts, policy, and HTTP 402 flows work in practice.',
   keywords: 'verifiable receipts, policy discovery, payment gateway, receipt verification, cryptographic signatures',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Demo | Originary',
+    title: 'Demo',
     description: 'Interactive demo experience for Originary and PEAC-Receipts. Explore how receipts, policy, and HTTP 402 flows work in practice.',
     url: 'https://www.originary.xyz/demo',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Demo | Originary',
+    title: 'Demo',
     description: 'Interactive demo experience for Originary and PEAC-Receipts. Explore how receipts, policy, and HTTP 402 flows work in practice.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',

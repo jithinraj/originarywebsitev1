@@ -5,13 +5,13 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle, BarChart, Shield, Zap, Settings, Users, FileText } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Studio : Originary',
+  title: 'Studio',
   description: 'Enterprise dashboard for managing PEAC policies, signing keys, receipt verification, attribution rules, and compliance reporting. Centralized control for agentic web orchestration.',
   keywords: 'PEAC dashboard, policy management, receipt verification, compliance reporting, enterprise orchestration',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Studio : Originary',
+    title: 'Studio | Originary',
     description: 'Enterprise dashboard for managing PEAC policies, signing keys, receipt verification, attribution rules, and compliance reporting. Centralized control for agentic web orchestration.',
     url: 'https://www.originary.xyz/products/studio',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Studio : Originary',
+    title: 'Studio | Originary',
     description: 'Enterprise dashboard for managing PEAC policies, signing keys, receipt verification, attribution rules, and compliance reporting. Centralized control for agentic web orchestration.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',

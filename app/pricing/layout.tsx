@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Pricing | Originary',
+  title: 'Pricing',
   description: 'Pricing for Originary Trace and agentic web infrastructure. Start with simple plans for AI crawler analytics, bot tracking, and PEAC-Receipts.',
   keywords: 'trace pricing, AI crawler tracking, self-hosted, cloud pricing, PEAC Protocol',
   robots: 'index,follow',
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     canonical: '/pricing'
   },
   openGraph: {
-    title: 'Pricing | Originary',
+    title: 'Pricing',
     description: 'Pricing for Originary Trace and agentic web infrastructure. Start with simple plans for AI crawler analytics, bot tracking, and PEAC-Receipts.',
     url: 'https://www.originary.xyz/pricing',
     siteName: 'Originary',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing | Originary',
+    title: 'Pricing',
     description: 'Pricing for Originary Trace and agentic web infrastructure. Start with simple plans for AI crawler analytics, bot tracking, and PEAC-Receipts.',
     images: ['/og.jpg']
   }

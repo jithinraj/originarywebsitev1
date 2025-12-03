@@ -4,7 +4,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Imprint | Originary',
+  title: 'Imprint',
   description: 'Company registration, registered agent, and contact information for Originary (Poem, Inc.)',
   robots: 'noindex',
 

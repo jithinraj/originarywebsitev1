@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Verify PEAC-Receipts | Receipt Verification Tool | Originary',
+  title: 'Verify PEAC-Receipts | Receipt Verification Tool',
   description: 'Verify PEAC-Receipts and Originary receipts. Check signatures, expiry, and policy compliance for AI usage receipts.',
   keywords: 'JWS verification, offline signature check, PEAC-Receipt, receipt verification, cryptographic verification, JWT validation, offline verification',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Verify PEAC-Receipts | Receipt Verification Tool | Originary',
+    title: 'Verify PEAC-Receipts | Receipt Verification Tool',
     description: 'Verify PEAC-Receipts and Originary receipts. Check signatures, expiry, and policy compliance for AI usage receipts.',
     url: 'https://www.originary.xyz/verify',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Verify PEAC-Receipts | Receipt Verification Tool | Originary',
+    title: 'Verify PEAC-Receipts | Receipt Verification Tool',
     description: 'Verify PEAC-Receipts and Originary receipts. Check signatures, expiry, and policy compliance for AI usage receipts.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',

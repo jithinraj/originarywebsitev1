@@ -95,12 +95,15 @@ export default function StandardsIntegrations() {
         </div>
 
         {/* Standards Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: 'var(--space-6)',
-          marginBottom: 'var(--space-12)'
-        }}>
+        <div
+          className="standards-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: 'var(--space-6)',
+            marginBottom: 'var(--space-12)'
+          }}
+        >
           {standards.map((standard) => (
             <Link
               key={standard.href}
@@ -196,6 +199,14 @@ export default function StandardsIntegrations() {
           </Link>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 640px) {
+          .standards-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   )
 }

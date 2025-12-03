@@ -5,13 +5,13 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle, Zap, Shield, Settings, Link as LinkIcon, Download } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Adapters : Originary',
+  title: 'Adapters',
   description: 'Enterprise adapters for AIPREF, HTTP 402/x402, MCP/A2A, robots.txt/llms.txt, and C2PA. Production-ready integrations for policy enforcement and standards compliance in agentic systems.',
   keywords: 'AIPREF, HTTP 402, x402, MCP, A2A, C2PA, robots.txt, llms.txt, enterprise adapters',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Adapters : Originary',
+    title: 'Adapters | Originary',
     description: 'Enterprise adapters for AIPREF, HTTP 402/x402, MCP/A2A, robots.txt/llms.txt, and C2PA. Production-ready integrations for policy enforcement and standards compliance in agentic systems.',
     url: 'https://www.originary.xyz/products/adapters',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Adapters : Originary',
+    title: 'Adapters | Originary',
     description: 'Enterprise adapters for AIPREF, HTTP 402/x402, MCP/A2A, robots.txt/llms.txt, and C2PA. Production-ready integrations for policy enforcement and standards compliance in agentic systems.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',

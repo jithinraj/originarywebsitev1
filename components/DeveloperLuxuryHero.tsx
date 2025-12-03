@@ -186,17 +186,19 @@ export default function DeveloperLuxuryHero() {
 
             {/* Tech Stack Badges */}
             <div
+              className="tech-badges"
               style={{
                 display: 'flex',
-                gap: 'var(--space-4)',
+                gap: 'var(--space-3)',
                 flexWrap: 'wrap',
                 alignItems: 'center',
+                justifyContent: 'center',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.35s'
               }}
             >
-              <span style={{ fontSize: '12px', color: 'var(--gray-500)' }}>Built on</span>
+              <span style={{ fontSize: '12px', color: 'var(--gray-500)', width: '100%', textAlign: 'center' }} className="built-on-label">Built on</span>
               <TechBadge>HTTP 402/x402</TechBadge>
               <TechBadge>PEAC-Receipts</TechBadge>
               <TechBadge>AIPREF</TechBadge>
@@ -219,6 +221,15 @@ export default function DeveloperLuxuryHero() {
       </div>
 
       <style jsx>{`
+        .tech-badges {
+          justify-content: flex-start !important;
+        }
+
+        .built-on-label {
+          width: auto !important;
+          text-align: left !important;
+        }
+
         @media (max-width: 1024px) {
           .hero-content {
             grid-template-columns: 1fr !important;
@@ -230,8 +241,12 @@ export default function DeveloperLuxuryHero() {
             flex-direction: column;
             align-items: center;
           }
-          .hero-visual {
-            order: -1;
+          .tech-badges {
+            justify-content: center !important;
+          }
+          .built-on-label {
+            width: 100% !important;
+            text-align: center !important;
           }
         }
       `}</style>

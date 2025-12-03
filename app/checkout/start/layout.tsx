@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Checkout | Originary',
+  title: 'Checkout',
   description: 'Secure checkout to start using Originary Trace and PEAC-based infrastructure. Complete payment to activate your account.',
   robots: 'noindex,nofollow',
   alternates: {

@@ -4,7 +4,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'A2A Attach Points | A2A Protocol and Agent to Agent Transactions | Originary',
+  title: 'A2A Attach Points | A2A Protocol and Agent to Agent Transactions',
   description: 'A2A protocol documentation for agent to agent transactions and agent-to-agent communication. Learn how to embed PEAC-Receipts in A2A protocol messages for verifiable agent to agent transactions. Add verifiable proofs to agent-to-agent communication with A2A attach points.',
   keywords: 'A2A protocol, agent to agent transactions, agent-to-agent communication, A2A attach points, Agent2Agent protocol, PEAC-Receipt, multi-agent systems, agent verification, agent receipts, A2A integration, agentic transactions, Google A2A',
   alternates: {

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { FileText, ArrowRight, Bot, DollarSign, Shield, Receipt, CheckCircle, AlertTriangle, Layers, Eye } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "The A2A Stack: Agent-to-Agent Commerce | Originary",
+  title: "The A2A Stack: Agent-to-Agent Commerce",
   description: "How AI agents coordinate, transact, and verify interactions with each other. The A2A stack covers AI policy discovery, HTTP 402 payments, PEAC-Receipts, and provenance for autonomous agent commerce.",
   keywords: "A2A, agent-to-agent, agent commerce, AI coordination, PEAC Protocol, HTTP 402, agent receipts, MCP, ACP, agentic web, autonomous agents",
   authors: [{ name: "Jithin Raj & Originary Team" }],

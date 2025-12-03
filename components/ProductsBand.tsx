@@ -10,7 +10,6 @@ export default function ProductsBand() {
       description: 'Define your AI policy once, generate all the right signals. A single peac-policy.yaml generates peac.txt, AIPREF headers, robots AI rules and a human-readable policy page.',
       href: '/declare',
       icon: FileText,
-      badge: 'Flagship',
       featured: true,
       buttons: [
         { label: 'Get Declare', href: '/declare', primary: true },
@@ -22,7 +21,6 @@ export default function ProductsBand() {
       description: 'See which AI crawlers access your site, what they took, and generate verifiable evidence. Built on the open PEAC Protocol.',
       href: '/trace',
       icon: Activity,
-      badge: 'Coming Soon',
       featured: false,
       buttons: [
         { label: 'Learn more', href: '/trace', primary: true },
@@ -34,10 +32,9 @@ export default function ProductsBand() {
       description: 'HTTP 402 payment gateway with PEAC receipts. Built on PEAC Protocol.',
       href: '/products/gateway-402',
       icon: Blocks,
-      badge: 'Waitlist',
       featured: false,
       buttons: [
-        { label: 'Join waitlist', href: '/products/gateway-402' }
+        { label: 'Learn more', href: '/products/gateway-402' }
       ]
     },
     {
@@ -45,10 +42,9 @@ export default function ProductsBand() {
       description: 'Receipt verification and PEAC policy validation. Built on PEAC Protocol.',
       href: '/products/verify',
       icon: Shield,
-      badge: 'Waitlist',
       featured: false,
       buttons: [
-        { label: 'Join waitlist', href: '/products/verify' }
+        { label: 'Learn more', href: '/products/verify' }
       ]
     },
     {
@@ -56,10 +52,9 @@ export default function ProductsBand() {
       description: 'Policy editor and receipt management dashboard',
       href: '/products/studio',
       icon: Sparkles,
-      badge: 'Waitlist',
       featured: false,
       buttons: [
-        { label: 'Join waitlist', href: '/products/studio' }
+        { label: 'Learn more', href: '/products/studio' }
       ]
     }
   ]
@@ -107,7 +102,7 @@ export default function ProductsBand() {
             return (
               <div
                 key={product.name}
-                className="card"
+                className="card featured-card"
                 style={{
                   padding: 'var(--space-6)',
                   background: 'var(--gradient-brand)',
@@ -170,7 +165,7 @@ export default function ProductsBand() {
 
                 {/* Buttons */}
                 {product.buttons && product.buttons.length > 0 && (
-                  <div style={{ display: 'flex', gap: 'var(--space-2)', flexShrink: 0 }}>
+                  <div className="featured-buttons" style={{ display: 'flex', gap: 'var(--space-2)', flexShrink: 0, flexWrap: 'wrap', justifyContent: 'center' }}>
                     {product.buttons.map((button: any, idx) => {
                       const ButtonComponent = button.external ? 'a' : Link
                       const buttonProps = button.external
@@ -343,11 +338,41 @@ export default function ProductsBand() {
       </div>
 
       <style jsx>{`
+        .featured-card {
+          flex-direction: column !important;
+          align-items: stretch !important;
+          text-align: center;
+        }
+
+        .featured-card > div:first-child {
+          margin: 0 auto;
+        }
+
         .products-grid {
-          grid-template-columns: repeat(2, 1fr) !important;
+          grid-template-columns: 1fr !important;
+        }
+
+        @media (min-width: 640px) {
+          .products-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
         }
 
         @media (min-width: 768px) {
+          .featured-card {
+            flex-direction: row !important;
+            align-items: center !important;
+            text-align: left;
+          }
+
+          .featured-card > div:first-child {
+            margin: 0;
+          }
+
+          .featured-buttons {
+            justify-content: flex-end !important;
+          }
+
           .products-grid {
             grid-template-columns: repeat(2, 1fr) !important;
           }

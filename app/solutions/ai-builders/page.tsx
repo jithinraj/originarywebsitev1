@@ -4,13 +4,13 @@ import Footer from '@/components/Footer'
 import Mark from '@/components/Mark'
 
 export const metadata: Metadata = {
-  title: 'AI Builders | AI Compliance and AI Provenance Tracking | Originary',
+  title: 'AI Builders | AI Compliance and AI Provenance Tracking',
   description: 'AI infrastructure tools and AI compliance for AI builders. Build AI systems with AI provenance tracking, AI receipts, verifiable interaction records, consent management, and cryptographic receipts for provable AI compliance.',
   keywords: 'AI builders, AI compliance, AI provenance tracking, AI infrastructure tools, creator rights, verifiable receipts, consent management, PEAC protocol, AIPREF, agent commerce',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'AI Builders | AI Compliance and AI Provenance Tracking | Originary',
+    title: 'AI Builders | AI Compliance and AI Provenance Tracking',
     description: 'AI infrastructure tools for AI compliance and AI provenance tracking. Build AI systems with verifiable interaction records and cryptographic receipts.',
     url: 'https://www.originary.xyz/solutions/ai-builders',
     images: [{
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Builders | AI Compliance and AI Provenance Tracking | Originary',
+    title: 'AI Builders | AI Compliance and AI Provenance Tracking',
     description: 'AI infrastructure tools for AI compliance and AI provenance tracking. Build AI systems with verifiable interaction records and cryptographic receipts.',
     images: ['/og.jpg'],
     site: '@originaryx',

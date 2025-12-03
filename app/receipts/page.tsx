@@ -5,11 +5,11 @@ import Link from 'next/link'
 import { ArrowRight, Receipt, Shield, Zap, Globe, BarChart, Scale, CheckCircle, Building, Lock, Clock, Users } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'PEAC-Receipts | Originary Receipts for AI Compliance',
+  title: 'PEAC-Receipts | AI Compliance Receipts',
   description: 'PEAC-Receipts and Originary receipts provide AI usage receipts, AI compliance infrastructure, and AI provenance tracking. Verifiable proof for every AI transaction.',
   keywords: 'PEAC receipts, Originary receipts, AI usage receipts, AI compliance, AI provenance tracking, cryptographic receipts, AI verification, proof of use',
   openGraph: {
-    title: 'PEAC-Receipts | Originary Receipts for AI Compliance',
+    title: 'PEAC-Receipts | AI Compliance Receipts | Originary',
     description: 'PEAC-Receipts and Originary receipts provide AI usage receipts, AI compliance infrastructure, and AI provenance tracking. Verifiable proof for every AI transaction.',
     url: 'https://www.originary.xyz/receipts',
     siteName: 'Originary',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PEAC-Receipts | Originary Receipts for AI Compliance',
+    title: 'PEAC-Receipts | AI Compliance Receipts | Originary',
     description: 'PEAC-Receipts and Originary receipts provide AI usage receipts, AI compliance infrastructure, and AI provenance tracking.',
     images: ['https://www.originary.xyz/og.jpg'],
   },

@@ -4,7 +4,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'MCP Receipts | Model Context Protocol and MCP Tools Integration | Originary',
+  title: 'MCP Receipts | Model Context Protocol and MCP Tools Integration',
   description: 'MCP receipts for Model Context Protocol and MCP tools integration. Generate PEAC-Receipts for Model Context Protocol tool calls and MCP operations. Learn how to add verifiable MCP receipts to AI agent tool invocations with audit trails for MCP tools.',
   keywords: 'MCP receipts, Model Context Protocol, MCP tools, MCP integration, Anthropic MCP, PEAC-Receipt, AI tool receipts, agent tool calls, MCP audit trails, verifiable receipts, AI compliance, tool invocation receipts, MCP server',
   alternates: {
