@@ -1,25 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
 
 export default function Footer() {
-  const [analyticsConsent, setAnalyticsConsent] = useState<boolean | null>(null)
-
-  useEffect(() => {
-    const consent = localStorage.getItem('analytics-consent')
-    setAnalyticsConsent(consent === 'true')
-  }, [])
-
-  const togglePrivacyChoices = () => {
-    const newConsent = !analyticsConsent
-    setAnalyticsConsent(newConsent)
-    localStorage.setItem('analytics-consent', String(newConsent))
-    if (typeof window !== 'undefined') {
-      window.location.reload()
-    }
-  }
-
   return (
     <footer
       style={{
@@ -244,6 +227,7 @@ export default function Footer() {
 
           {/* Copyright Row - Centered */}
           <div
+            className="footer-copyright"
             style={{
               display: 'flex',
               flexDirection: 'column',
@@ -252,36 +236,18 @@ export default function Footer() {
               textAlign: 'center'
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
-              <span style={{ color: 'var(--gray-400)', fontSize: 'var(--text-sm)', fontWeight: 500 }}>
-                © 2025 Poem, Inc.
-              </span>
-              <span style={{ color: 'var(--gray-200)' }}>·</span>
-              <button
-                onClick={togglePrivacyChoices}
-                type="button"
-                style={{
-                  color: 'var(--gray-400)',
-                  fontSize: 'var(--text-sm)',
-                  background: 'none',
-                  border: 'none',
-                  padding: 0,
-                  cursor: 'pointer',
-                  transition: 'color 0.15s ease',
-                  fontWeight: 500
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--gray-600)'}
-                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--gray-400)'}
-              >
-                Privacy choices
-              </button>
-            </div>
+            <span style={{ color: 'var(--gray-400)', fontSize: 'var(--text-sm)', fontWeight: 500 }}>
+              © 2025 Poem, Inc.
+            </span>
             <p
+              className="footer-trademark-notice"
               style={{
                 color: 'var(--gray-500)',
-                fontSize: 'var(--text-sm)',
-                maxWidth: '700px',
-                lineHeight: 1.6
+                fontSize: 'var(--text-xs)',
+                maxWidth: '600px',
+                lineHeight: 1.7,
+                margin: 0,
+                padding: '0 var(--space-4)'
               }}
             >
               In the U.S., &lsquo;Originary&rsquo; is used by Poem, Inc. as a brand for its AI infrastructure software and tools for the agentic web. Poem, Inc. is not affiliated with Originary Inc.

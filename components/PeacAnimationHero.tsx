@@ -44,7 +44,7 @@ export default function PeacAnimationHero() {
               transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
           >
-            {/* Control Plane Badge */}
+            {/* Badge */}
             <div
               className="badge-status"
               style={{
@@ -55,7 +55,7 @@ export default function PeacAnimationHero() {
               }}
             >
               <span className="pulse-dot" style={{ width: '6px', height: '6px' }} />
-              THE AGENTIC CONTROL PLANE
+              POLICY, PAYMENTS, AND RECEIPTS FOR AI INTERACTIONS
             </div>
 
             {/* Main Headline */}
@@ -71,25 +71,41 @@ export default function PeacAnimationHero() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.15s'
               }}
             >
-              Turn AI Traffic
+              Turn AI traffic
               <br />
-              <span className="text-gradient">Into Revenue.</span>
+              <span className="text-gradient">into revenue.</span>
             </h1>
 
-            {/* Subtitle */}
+            {/* Subtitle - Main benefit */}
             <p
               style={{
                 fontSize: 'var(--text-lg)',
                 lineHeight: 1.7,
                 color: 'var(--gray-600)',
-                marginBottom: 'var(--space-6)',
-                maxWidth: '540px',
+                marginBottom: 'var(--space-4)',
+                maxWidth: '480px',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              Originary gives you receipts and policy rails for the agentic web. Start with <strong>Declare</strong> to define AI access and usage once, then add Trace, Gateway 402, and Verify to see which agents are hitting your site or API, charge them with HTTP 402, and prove every interaction with cryptographic receipts.
+              AI scrapers already hit your websites and APIs. Originary gives you receipts and policy controls so you can see those agents, control what they access, and bill them when they use your content.
+            </p>
+
+            {/* How it works */}
+            <p
+              style={{
+                fontSize: 'var(--text-sm)',
+                lineHeight: 1.7,
+                color: 'var(--gray-400)',
+                marginBottom: 'var(--space-6)',
+                maxWidth: '480px',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.22s'
+              }}
+            >
+              Declare AI access and usage once, then use Trace, Gateway 402, and Verify to gate agents with HTTP 402 and issue cryptographic receipts for each paid interaction.
             </p>
 
             {/* Trademark Proof Section */}
@@ -148,6 +164,7 @@ export default function PeacAnimationHero() {
 
             {/* CTA Buttons */}
             <div
+              className="hero-cta-buttons"
               style={{
                 display: 'flex',
                 gap: 'var(--space-3)',
@@ -160,10 +177,11 @@ export default function PeacAnimationHero() {
             >
               <Link
                 href="/declare"
-                className="btn btn-primary btn-lg btn-shine"
+                className="btn btn-primary btn-lg btn-shine hero-cta-primary"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
+                  justifyContent: 'center',
                   gap: 'var(--space-2)'
                 }}
               >
@@ -173,10 +191,11 @@ export default function PeacAnimationHero() {
 
               <Link
                 href="/peac"
-                className="btn btn-secondary btn-lg"
+                className="btn btn-secondary btn-lg hero-cta-secondary"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
+                  justifyContent: 'center',
                   gap: 'var(--space-2)'
                 }}
               >
@@ -247,6 +266,17 @@ export default function PeacAnimationHero() {
           .built-on-label {
             width: 100% !important;
             text-align: center !important;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .hero-cta-buttons {
+            flex-direction: column !important;
+            width: 100% !important;
+          }
+          .hero-cta-primary,
+          .hero-cta-secondary {
+            width: 100% !important;
           }
         }
       `}</style>
@@ -741,4 +771,3 @@ function PipelineStepper({ activeStep, steps }: { activeStep: number; steps: Ste
     </>
   )
 }
-
