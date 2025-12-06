@@ -279,7 +279,7 @@ export default {
                 fontSize: 'var(--text-sm)',
                 marginBottom: 'var(--space-3)'
               }}>
-                pnpm add -g @peacprotocol/cli @peacprotocol/core
+                pnpm add -g @peac/cli && pnpm add @peac/protocol @peac/crypto @peac/schema
               </code>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
                 <Link

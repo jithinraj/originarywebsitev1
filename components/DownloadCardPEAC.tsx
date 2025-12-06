@@ -44,7 +44,8 @@ export default function DownloadCardPEAC() {
             fontFamily: 'var(--font-mono)',
             margin: 'var(--space-2) 0'
           }}>
-{`pnpm add -g @peacprotocol/cli @peacprotocol/core
+{`pnpm add -g @peac/cli
+pnpm add @peac/protocol @peac/crypto @peac/schema
 npx peac init
 npx peac validate peac.txt`}
           </pre>
