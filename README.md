@@ -1,9 +1,31 @@
-# Originary™ Website
+# Originary Website
 
-Official website for Originary™ - receipts for the agentic web. Built on the PEAC Protocol.
+Official website for Originary - receipts for the agentic web. Built on the PEAC Protocol.
 
 **Maintained by Poem, Inc.**
 Website: https://www.originary.xyz/
+
+## About Originary and PEAC
+
+Originary builds infrastructure for the agentic web, including the open PEAC Protocol.
+
+- PEAC Protocol spec and core SDK are open source
+- This repository only hosts the Originary marketing website
+
+## License
+
+This repository is **not** open source.
+
+All contents are proprietary to Poem, Inc. and may only be viewed in read-only form for informational purposes. No copying, modification, redistribution, or reuse of this code, design, or content is permitted without prior written permission from Poem, Inc.
+
+Originary is a trademark of Poem, Inc. All rights reserved.
+
+## Our open source projects
+
+If you are looking for our open source work, see:
+
+- PEAC Protocol core: https://github.com/peacprotocol/peac
+- Trace: https://github.com/originaryx/trace
 
 ## Quick Start
 
@@ -44,7 +66,7 @@ Website: https://www.originary.xyz/
 
 ### Step 2: Set Environment Variables
 
-In Vercel dashboard → Settings → Environment Variables, add:
+In Vercel dashboard > Settings > Environment Variables, add:
 
 ```
 DATABASE_URL=your_postgres_connection_string
@@ -71,57 +93,7 @@ After first deployment, run:
 npx prisma db push
 ```
 
-## Features
-
-✅ **Authentication System**
-- Email/password signup and signin
-- JWT sessions (no database sessions needed)
-- Protected dashboard routes
-
-✅ **Database**
-- Vercel Postgres integration
-- User management with Prisma
-- API key generation ready
-
-✅ **Payment Integration**
-- Stripe checkout integration
-- Webhook endpoints for payment confirmation
-
-✅ **Existing Design**
-- All your existing CSS preserved
-- Responsive design maintained
-- Same visual appearance
-
-## File Structure
-
-```
-├── app/
-│   ├── (auth)/
-│   │   ├── actions.ts          # Server actions for auth
-│   │   ├── signin/page.tsx     # Sign in page
-│   │   └── signup/page.tsx     # Sign up page
-│   ├── api/auth/[...nextauth]/ # NextAuth API routes
-│   ├── dashboard/page.tsx      # Protected dashboard
-│   ├── layout.tsx              # Root layout
-│   └── page.tsx                # Homepage
-├── components/
-│   ├── Header.tsx              # Navigation header
-│   └── Footer.tsx              # Site footer
-├── lib/
-│   ├── auth.ts                 # NextAuth configuration
-│   └── db.ts                   # Prisma client
-├── prisma/
-│   └── schema.prisma           # Database schema
-└── public/assets/              # Your existing CSS/assets
-```
-
-## API Endpoints
-
-- `POST /api/auth/signin` - Sign in
-- `POST /api/auth/signup` - Sign up (server action)
-- `GET /api/auth/session` - Get current session
-
-## Originary™ CLI
+## Originary CLI
 
 Command-line tool for verifying PEAC policy files and generating receipts.
 
@@ -135,14 +107,6 @@ Available at https://www.originary.xyz/downloads or via direct links:
 - **Windows** - `originary-cli-1.0.0-win-x64.zip`
 
 Each build includes SHA-256 checksums for verification.
-
-## Next Steps
-
-1. **Add more pages** - Convert remaining HTML pages to Next.js
-2. **API key management** - Build API key generation/management
-3. **Payment webhooks** - Handle Stripe payment confirmations
-4. **Email verification** - Add email verification flow
-5. **Dashboard features** - Add usage analytics, billing, etc.
 
 ## Development
 
@@ -162,20 +126,3 @@ npm run db:generate  # Generate Prisma client
 npm run build
 npm start
 ```
-
-## Authentication Flow
-
-1. User visits `/signup` → Creates account → Redirected to signin
-2. User visits `/signin` → Authenticates → Redirected to `/dashboard`
-3. Protected routes check authentication automatically
-4. Session persists via JWT (no database sessions)
-
-## Security Features
-
-- Passwords hashed with bcryptjs
-- JWT sessions with NextAuth.js
-- CSRF protection built-in
-- Environment variables for secrets
-- Vercel security headers
-
-Ready to deploy! 🚀
