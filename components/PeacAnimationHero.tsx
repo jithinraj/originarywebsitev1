@@ -58,7 +58,7 @@ export default function PeacAnimationHero() {
               POLICY, PAYMENTS, AND RECEIPTS FOR AI INTERACTIONS
             </div>
 
-            {/* Main Headline */}
+            {/* Main Headline - SEO: H1 must be visible in SSR */}
             <h1
               className="tracking-tighter leading-tight"
               style={{
@@ -66,7 +66,7 @@ export default function PeacAnimationHero() {
                 fontWeight: 700,
                 marginBottom: 'var(--space-6)',
                 color: 'var(--gray-900)',
-                opacity: isVisible ? 1 : 0,
+                opacity: 1,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.15s'
               }}
