@@ -102,18 +102,18 @@ export default function Developers() {
                 fontSize: 'var(--text-sm)',
                 color: 'var(--gray-600)'
               }}>
-                Or start a{' '}
+                Or{' '}
                 <Link
-                  href="/pricing"
+                  href="/cloud"
                   style={{
                     color: 'var(--brand-primary)',
                     textDecoration: 'underline',
                     fontWeight: 600
                   }}
                 >
-                  free 14-day Cloud trial
+                  apply for Cloud access
                 </Link>
-                {' '}for sandbox access to verification, x402, and dashboards.
+                {' '}for hosted verification, x402, and dashboards.
               </p>
             </div>
           </div>

@@ -5,14 +5,14 @@ import Footer from '@/components/Footer'
 import { CheckCircle, Zap, Shield, Cloud } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Trace Cloud | Managed AI Bot Analytics Service by Originary',
-  description: 'Trace Cloud is the managed service for AI crawler analytics and bot tracking, with hosted dashboards, verifiable receipts and PEAC aligned bot protection without extra infrastructure.',
+  title: 'Originary Cloud | Managed PEAC Receipts and Analytics',
+  description: 'Originary Cloud is in private beta. Managed PEAC verification, attested receipts, compliance bundles, and analytics for publishers and API providers.',
   alternates: {
     canonical: '/cloud'
   },
   openGraph: {
-    title: 'Trace Cloud | Managed AI Bot Analytics Service by Originary',
-    description: 'Trace Cloud is the managed service for AI crawler analytics and bot tracking, with hosted dashboards, verifiable receipts and PEAC aligned bot protection without extra infrastructure.',
+    title: 'Originary Cloud | Managed PEAC Receipts and Analytics',
+    description: 'Originary Cloud is in private beta. Managed PEAC verification, attested receipts, compliance bundles, and analytics for publishers and API providers.',
     url: 'https://www.originary.xyz/cloud',
     siteName: 'Originary',
     type: 'website'
@@ -20,50 +20,10 @@ export const metadata: Metadata = {
 }
 
 export default function CloudPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Originary Trace Cloud",
-    "applicationCategory": "SecurityApplication",
-    "operatingSystem": "Web",
-    "brand": {
-      "@type": "Brand",
-      "name": "Originary"
-    },
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Starter",
-        "price": "29",
-        "priceCurrency": "USD",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "29",
-          "priceCurrency": "USD",
-          "billingDuration": "P1M"
-        }
-      },
-      {
-        "@type": "Offer",
-        "name": "Pro",
-        "price": "99",
-        "priceCurrency": "USD",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "99",
-          "priceCurrency": "USD",
-          "billingDuration": "P1M"
-        }
-      }
-    ]
-  }
+  // TODO: Reintroduce pricing JSON-LD once public plans are stable
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <NavigationHeader />
       <main id="main-content" role="main">
         {/* Hero Section */}
@@ -88,7 +48,7 @@ export default function CloudPage() {
                 fontWeight: 600
               }}>
                 <Cloud size={16} />
-                Managed Service
+                Private Beta
               </div>
 
               <h1 style={{
@@ -99,7 +59,7 @@ export default function CloudPage() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--gray-900)'
               }}>
-                Originary Trace™ Cloud
+                Originary Cloud
               </h1>
 
               <p style={{
@@ -108,7 +68,7 @@ export default function CloudPage() {
                 color: 'var(--gray-600)',
                 marginBottom: 'var(--space-6)'
               }}>
-                Managed crawler analytics with attestation, signed bundles, and enterprise SLAs. All the power of Trace without the operational overhead.
+                Managed PEAC verification, attested receipts, and compliance bundles. All the power of the open protocol without the operational overhead.
               </p>
 
               {/* Secondary Links */}
@@ -122,7 +82,7 @@ export default function CloudPage() {
                 marginBottom: 'var(--space-12)'
               }}>
                 <a
-                  href="https://github.com/originaryx/trace?utm_source=originary&utm_medium=cloud&utm_campaign=secondary_links"
+                  href="https://github.com/peacprotocol/peac?utm_source=originary&utm_medium=cloud&utm_campaign=secondary_links"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -134,24 +94,24 @@ export default function CloudPage() {
                 </a>
                 <span style={{ color: 'var(--gray-400)' }}>•</span>
                 <Link
-                  href="/developers"
+                  href="/pricing"
                   style={{
                     color: 'var(--brand-primary)',
                     textDecoration: 'underline'
                   }}
                 >
-                  Docs / Quickstart
+                  View pricing
                 </Link>
                 <span style={{ color: 'var(--gray-400)' }}>•</span>
-                <Link
-                  href="/company/contact"
+                <a
+                  href="mailto:contact@originary.xyz?subject=Cloud%20Inquiry"
                   style={{
                     color: 'var(--brand-primary)',
                     textDecoration: 'underline'
                   }}
                 >
                   Contact sales
-                </Link>
+                </a>
               </div>
 
               {/* Key Benefits */}
@@ -224,14 +184,14 @@ export default function CloudPage() {
                   marginBottom: 'var(--space-2)',
                   color: 'var(--gray-900)'
                 }}>
-                  Join the waitlist
+                  Apply for early access
                 </h2>
                 <p style={{
                   fontSize: 'var(--text-sm)',
                   color: 'var(--gray-600)',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  Get early access to Trace Cloud. We&apos;ll notify you when we&apos;re ready.
+                  We prioritize publishers, API providers, and agent platforms integrating PEAC and x402 / i402.
                 </p>
                 <form
                   action="/api/waitlist"
@@ -319,8 +279,8 @@ export default function CloudPage() {
                 gap: 'var(--space-8)'
               }}>
                 {[
-                  { step: '1', title: 'Deploy integration', desc: 'Add Trace to your CDN, edge worker, or origin server' },
-                  { step: '2', title: 'Ingest events', desc: 'Crawler data flows to Originary Cloud for correlation and attestation' },
+                  { step: '1', title: 'Deploy integration', desc: 'Add Originary to your CDN, edge worker, or origin server' },
+                  { step: '2', title: 'Ingest events', desc: 'Data flows to Originary Cloud for verification and attestation' },
                   { step: '3', title: 'Export evidence', desc: 'Download signed bundles, CSV exports, or query via API' }
                 ].map((item) => (
                   <div key={item.step} style={{ textAlign: 'center' }}>
@@ -383,16 +343,16 @@ export default function CloudPage() {
                 color: 'var(--gray-600)',
                 marginBottom: 'var(--space-6)'
               }}>
-                Trace Cloud uses the open PEAC (Provenance-Enhanced Access and Consent) protocol for cryptographic receipts, verifiable attestation, and cross-platform compatibility.
+                Originary Cloud uses the open PEAC Protocol for cryptographic receipts, verifiable attestation, and cross-platform compatibility.
               </p>
-              <Link
+              <a
                 href="https://peacprotocol.org"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-secondary"
               >
                 Learn about PEAC Protocol
-              </Link>
+              </a>
             </div>
           </div>
         </section>
@@ -430,9 +390,9 @@ export default function CloudPage() {
                   </thead>
                   <tbody>
                     {[
-                      { feature: 'Crawler analytics', oss: true, cloud: true },
                       { feature: 'PEAC receipts', oss: true, cloud: true },
-                      { feature: 'Attested keys', oss: false, cloud: true },
+                      { feature: 'Policy discovery', oss: true, cloud: true },
+                      { feature: 'Attested keys (KMS)', oss: false, cloud: true },
                       { feature: 'Signed bundles', oss: false, cloud: true },
                       { feature: 'Multi-property rollups', oss: false, cloud: true },
                       { feature: 'Benchmarking', oss: false, cloud: true },
@@ -454,7 +414,7 @@ export default function CloudPage() {
               </div>
               <div style={{ textAlign: 'center', marginTop: 'var(--space-8)', display: 'flex', gap: 'var(--space-4)', justifyContent: 'center' }}>
                 <a
-                  href="https://github.com/originaryx/trace?utm_source=originary&utm_medium=cloud&utm_campaign=compare"
+                  href="https://github.com/peacprotocol/peac?utm_source=originary&utm_medium=cloud&utm_campaign=compare"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-secondary"
@@ -462,10 +422,10 @@ export default function CloudPage() {
                   Self-host on GitHub
                 </a>
                 <Link
-                  href="/pricing#trace"
+                  href="/pricing"
                   className="btn btn-primary"
                 >
-                  Compare pricing
+                  View pricing
                 </Link>
               </div>
             </div>

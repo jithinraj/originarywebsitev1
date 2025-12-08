@@ -1,23 +1,32 @@
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Github } from 'lucide-react'
+import { ArrowRight, CheckCircle, Github, Cloud, Building2 } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Pricing',
-  description: 'Simple, transparent pricing for Originary Trace and PEAC Protocol. Start free with self-hosted OSS, upgrade for managed cloud and enterprise features.',
+  title: 'Pricing | Originary',
+  description: 'Open source PEAC Protocol and receipts infrastructure. Self-host for free or talk to us about managed cloud and enterprise deployments.',
+  keywords: 'PEAC Protocol pricing, AI receipts pricing, open source infrastructure, enterprise AI commerce, usage-based pricing',
   alternates: {
     canonical: '/pricing'
   },
   openGraph: {
-    title: 'Pricing',
-    description: 'Simple, transparent pricing for Originary Trace and PEAC Protocol. Start free with self-hosted OSS, upgrade for managed cloud and enterprise features.',
+    title: 'Pricing | Originary',
+    description: 'Open source PEAC Protocol and receipts infrastructure. Self-host for free or talk to us about managed cloud and enterprise deployments.',
     url: 'https://www.originary.xyz/pricing',
-  }
+    type: 'website',
+    siteName: 'Originary',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing | Originary',
+    description: 'Open source PEAC Protocol. Self-host for free or talk to us about managed cloud.',
+  },
+  robots: 'index,follow'
 }
 
-export default function TracePricing() {
+export default function PricingPage() {
   return (
     <div className="wrap">
       <NavigationHeader />
@@ -25,7 +34,7 @@ export default function TracePricing() {
         <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             {/* Hero */}
-            <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
+            <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <h1 style={{
                 fontSize: 'clamp(var(--text-4xl), 6vw, var(--text-6xl))',
                 fontWeight: 700,
@@ -34,1131 +43,273 @@ export default function TracePricing() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--gray-900)'
               }}>
-                <span className="text-gradient">Originary - Pricing</span>
+                <span className="text-gradient">Pricing</span>
               </h1>
 
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
                 color: 'var(--gray-600)',
-                marginBottom: 'var(--space-8)',
+                marginBottom: 'var(--space-4)',
                 maxWidth: '700px',
-                margin: '0 auto var(--space-8) auto'
+                margin: '0 auto var(--space-4) auto'
               }}>
-                Start free with self-hosted OSS. Upgrade to Cloud for retention, alerts, signed bundles, benchmarking, SSO, and SLAs.
+                Open source protocol and infrastructure for AI commerce and receipts.
+              </p>
+              <p style={{
+                fontSize: 'var(--text-lg)',
+                lineHeight: 1.7,
+                color: 'var(--gray-500)',
+                maxWidth: '600px',
+                margin: '0 auto'
+              }}>
+                Self-host for free. Talk to us about managed cloud and enterprise deployments.
               </p>
             </div>
 
-            {/* Trace Pricing Table */}
-            <div style={{ marginTop: 'var(--space-12)', marginBottom: 'var(--space-20)', overflowX: 'auto' }}>
-              <table className="pricing-table" style={{
-                width: '100%',
-                borderCollapse: 'separate',
-                borderSpacing: 0,
-                minWidth: '800px',
+            {/* Pricing Cards */}
+            <div className="grid grid-3" style={{ gap: 'var(--space-6)', marginBottom: 'var(--space-24)', paddingTop: 'var(--space-4)' }}>
+              {/* Open Source */}
+              <div className="card" style={{
+                padding: 'var(--space-8)',
                 background: 'var(--white)',
                 border: '1px solid var(--gray-200)',
                 borderRadius: 'var(--radius-2xl)',
-                overflow: 'hidden'
+                display: 'flex',
+                flexDirection: 'column'
               }}>
-                <thead>
-                  <tr>
-                    <th style={{
-                      textAlign: 'left',
-                      padding: 'var(--space-6)',
-                      background: 'var(--gray-50)',
-                      borderBottom: '2px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 700,
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-700)',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
-                      width: '25%'
-                    }}>
-                      Features
-                    </th>
-                    <th style={{
-                      textAlign: 'center',
-                      padding: 'var(--space-6)',
-                      background: 'var(--gray-50)',
-                      borderBottom: '2px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      width: '18.75%'
-                    }}>
-                      <div style={{ marginBottom: 'var(--space-2)' }}>
-                        <div style={{
-                          display: 'inline-block',
-                          background: 'var(--gray-200)',
-                          color: 'var(--gray-700)',
-                          fontSize: 'var(--text-xs)',
-                          fontWeight: 600,
-                          padding: '3px 8px',
-                          borderRadius: 'var(--radius-full)',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.05em',
-                          marginBottom: 'var(--space-2)'
-                        }}>
-                          Free
-                        </div>
-                      </div>
-                      <div style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-1)' }}>OSS</div>
-                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Self-hosted</div>
-                    </th>
-                    <th style={{
-                      textAlign: 'center',
-                      padding: 'var(--space-6)',
-                      background: 'var(--gray-50)',
-                      borderBottom: '2px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      width: '18.75%'
-                    }}>
-                      <div style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-1)' }}>Starter</div>
-                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Managed Cloud</div>
-                    </th>
-                    <th style={{
-                      textAlign: 'center',
-                      padding: 'var(--space-6)',
-                      background: 'rgba(99, 91, 255, 0.05)',
-                      borderBottom: '2px solid var(--brand-primary)',
-                      borderRight: '1px solid var(--gray-200)',
-                      position: 'relative',
-                      width: '18.75%'
-                    }}>
-                      <div style={{
-                        display: 'inline-block',
-                        background: 'var(--gradient-brand)',
-                        color: 'var(--white)',
-                        fontSize: 'var(--text-xs)',
-                        fontWeight: 600,
-                        padding: '3px 8px',
-                        borderRadius: 'var(--radius-full)',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.05em',
-                        marginBottom: 'var(--space-2)'
-                      }}>
-                        Popular
-                      </div>
-                      <div style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-1)' }}>Pro</div>
-                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Production ready</div>
-                    </th>
-                    <th style={{
-                      textAlign: 'center',
-                      padding: 'var(--space-6)',
-                      background: 'var(--gray-50)',
-                      borderBottom: '2px solid var(--gray-200)',
-                      width: '18.75%'
-                    }}>
-                      <div style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-1)' }}>Enterprise</div>
-                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Custom deployment</div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {/* Pricing Row */}
-                  <tr style={{ background: 'var(--white)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Price
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <div style={{ fontSize: 'var(--text-2xl)', fontWeight: 700 }}>$0</div>
-                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', marginTop: 'var(--space-1)' }}>Forever</div>
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <div style={{ fontSize: 'var(--text-2xl)', fontWeight: 700 }}>$29<span style={{ fontSize: 'var(--text-sm)', fontWeight: 500 }}>/mo</span></div>
-                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', marginTop: 'var(--space-1)' }}>14-day trial</div>
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      <div style={{ fontSize: 'var(--text-2xl)', fontWeight: 700 }}>$99<span style={{ fontSize: 'var(--text-sm)', fontWeight: 500 }}>/mo</span></div>
-                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', marginTop: 'var(--space-1)' }}>14-day trial</div>
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <div style={{ fontSize: 'var(--text-2xl)', fontWeight: 700 }}>Custom</div>
-                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', marginTop: 'var(--space-1)' }}>Contact sales</div>
-                    </td>
-                  </tr>
+                <div style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 'var(--space-2)',
+                  background: 'var(--gray-100)',
+                  borderRadius: 'var(--radius-full)',
+                  padding: 'var(--space-1) var(--space-3)',
+                  marginBottom: 'var(--space-4)',
+                  width: 'fit-content'
+                }}>
+                  <Github size={14} />
+                  <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--gray-700)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Open Source
+                  </span>
+                </div>
 
-                  {/* Data Retention */}
-                  <tr style={{ background: 'var(--gray-50)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Data retention
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      30 days
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      90 days
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      1 year
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Custom
-                    </td>
-                  </tr>
+                <div style={{ marginBottom: 'var(--space-6)' }}>
+                  <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                    $0
+                  </div>
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                    Forever free
+                  </div>
+                </div>
 
-                  {/* Properties */}
-                  <tr style={{ background: 'var(--white)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Properties
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      1
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      1
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      Multi-property
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Unlimited
-                    </td>
-                  </tr>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
+                  Apache 2.0 licensed. Self-host PEAC Protocol and core components on your own infrastructure.
+                </p>
 
-                  {/* Dashboard */}
-                  <tr style={{ background: 'var(--gray-50)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Dashboard
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Basic (self-hosted)
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Hosted
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 var(--space-8) 0', flex: 1 }}>
+                  {[
+                    'PEAC Protocol specification',
+                    'Verifiable receipts (JWS)',
+                    'Policy discovery (peac.txt)',
+                    'Basic attribution',
+                    'Self-managed signing keys',
+                    'Community support'
+                  ].map((feature, idx) => (
+                    <li key={idx} style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: 'var(--space-3)',
+                      marginBottom: 'var(--space-3)',
                       fontSize: 'var(--text-sm)',
-                      background: 'rgba(99, 91, 255, 0.02)'
+                      color: 'var(--gray-700)'
                     }}>
-                      Hosted
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Hosted
-                    </td>
-                  </tr>
+                      <CheckCircle size={16} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
 
-                  {/* PEAC Receipts */}
-                  <tr style={{ background: 'var(--white)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      PEAC receipts
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Self-managed keys
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                  </tr>
+                <a
+                  href="https://github.com/peacprotocol/peac?utm_source=originary&utm_medium=pricing&utm_campaign=oss"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                  style={{ width: '100%', justifyContent: 'center', display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}
+                >
+                  <Github size={18} />
+                  View on GitHub
+                </a>
+              </div>
 
-                  {/* Export */}
-                  <tr style={{ background: 'var(--gray-50)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      CSV/JSON export
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                  </tr>
+              {/* Cloud (Private Beta) */}
+              <div className="card" style={{
+                padding: 'var(--space-8)',
+                background: 'rgba(99, 91, 255, 0.02)',
+                border: '2px solid var(--brand-primary)',
+                borderRadius: 'var(--radius-2xl)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative',
+                overflow: 'visible'
+              }}>
+                <div style={{
+                  position: 'absolute',
+                  top: '-14px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: 'var(--gradient-brand)',
+                  color: 'var(--white)',
+                  fontSize: 'var(--text-xs)',
+                  fontWeight: 600,
+                  padding: '6px 16px',
+                  borderRadius: 'var(--radius-full)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  whiteSpace: 'nowrap',
+                  zIndex: 10
+                }}>
+                  Private Beta
+                </div>
 
-                  {/* Public Badge */}
-                  <tr style={{ background: 'var(--white)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Public badge
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                  </tr>
+                <div style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 'var(--space-2)',
+                  background: 'rgba(99, 91, 255, 0.1)',
+                  borderRadius: 'var(--radius-full)',
+                  padding: 'var(--space-1) var(--space-3)',
+                  marginBottom: 'var(--space-4)',
+                  marginTop: 'var(--space-2)',
+                  width: 'fit-content'
+                }}>
+                  <Cloud size={14} style={{ color: 'var(--brand-primary)' }} />
+                  <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--brand-primary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Cloud
+                  </span>
+                </div>
 
-                  {/* Prometheus Metrics */}
-                  <tr style={{ background: 'var(--gray-50)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Prometheus metrics
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                  </tr>
+                <div style={{ marginBottom: 'var(--space-6)' }}>
+                  <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                    Usage based
+                  </div>
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                    Per receipt and per million events
+                  </div>
+                </div>
 
-                  {/* Email Alerts */}
-                  <tr style={{ background: 'var(--white)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Email alerts
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                  </tr>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
+                  Hosted PEAC verification and receipts. Preferred terms for early design partners.
+                </p>
 
-                  {/* Slack/Webhook Alerts */}
-                  <tr style={{ background: 'var(--gray-50)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Slack/webhook alerts
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 var(--space-8) 0', flex: 1 }}>
+                  {[
+                    'Hosted receipt verification',
+                    'Attested keys (KMS-backed)',
+                    'Event analytics and dashboards',
+                    'Email and webhook alerts',
+                    'Compliance bundles',
+                    'Email support'
+                  ].map((feature, idx) => (
+                    <li key={idx} style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: 'var(--space-3)',
+                      marginBottom: 'var(--space-3)',
                       fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
+                      color: 'var(--gray-700)'
                     }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                  </tr>
+                      <CheckCircle size={16} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
 
-                  {/* Verify API */}
-                  <tr style={{ background: 'var(--white)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Verify API
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      On-demand
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                  </tr>
+                <Link
+                  href="/cloud"
+                  className="btn btn-primary"
+                  style={{ width: '100%', justifyContent: 'center' }}
+                >
+                  Apply for early access
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
 
-                  {/* Compliance Bundles */}
-                  <tr style={{ background: 'var(--gray-50)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Compliance bundles
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      Scheduled
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Scheduled + Legal-ready
-                    </td>
-                  </tr>
+              {/* Enterprise & Network Partners */}
+              <div className="card" style={{
+                padding: 'var(--space-8)',
+                background: 'var(--white)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-2xl)',
+                display: 'flex',
+                flexDirection: 'column'
+              }}>
+                <div style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 'var(--space-2)',
+                  background: 'var(--gray-100)',
+                  borderRadius: 'var(--radius-full)',
+                  padding: 'var(--space-1) var(--space-3)',
+                  marginBottom: 'var(--space-4)',
+                  width: 'fit-content'
+                }}>
+                  <Building2 size={14} />
+                  <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--gray-700)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Enterprise
+                  </span>
+                </div>
 
-                  {/* Benchmarking */}
-                  <tr style={{ background: 'var(--white)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Benchmarking
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      Cohort
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                  </tr>
+                <div style={{ marginBottom: 'var(--space-6)' }}>
+                  <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                    Custom
+                  </div>
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                    Volume-based pricing
+                  </div>
+                </div>
 
-                  {/* SSO */}
-                  <tr style={{ background: 'var(--gray-50)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Single sign-on (SSO)
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      Basic
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      SAML
-                    </td>
-                  </tr>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
+                  Custom deployments, SLAs, and governance for publishers, API providers, and agent platforms.
+                </p>
 
-                  {/* SLO/SLA */}
-                  <tr style={{ background: 'var(--white)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Uptime commitment
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 var(--space-8) 0', flex: 1 }}>
+                  {[
+                    'Everything in Cloud',
+                    'Custom rail adapters (x402, i402, Stripe)',
+                    'Multi-property rollups',
+                    'Domain attestation + KMS',
+                    'Uptime SLA (99.99%)',
+                    'Dedicated support'
+                  ].map((feature, idx) => (
+                    <li key={idx} style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: 'var(--space-3)',
+                      marginBottom: 'var(--space-3)',
                       fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
+                      color: 'var(--gray-700)'
                     }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      99.9% SLO
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      99.99% SLA
-                    </td>
-                  </tr>
+                      <CheckCircle size={16} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
 
-                  {/* Domain Attestation + KMS */}
-                  <tr style={{ background: 'var(--gray-50)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Domain attestation + KMS
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                  </tr>
-
-                  {/* S3/GCS Delivery */}
-                  <tr style={{ background: 'var(--white)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      S3/GCS delivery
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                  </tr>
-
-                  {/* SCIM Provisioning */}
-                  <tr style={{ background: 'var(--gray-50)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      SCIM provisioning
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                  </tr>
-
-                  {/* Dedicated Support */}
-                  <tr style={{ background: 'var(--white)' }}>
-                    <td style={{
-                      padding: 'var(--space-4) var(--space-6)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      fontWeight: 600,
-                      fontSize: 'var(--text-sm)'
-                    }}>
-                      Dedicated support
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      borderRight: '1px solid var(--gray-200)',
-                      textAlign: 'center',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-400)',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      -
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-4)',
-                      borderBottom: '1px solid var(--gray-200)',
-                      textAlign: 'center'
-                    }}>
-                      <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
-                    </td>
-                  </tr>
-
-                  {/* CTA Row */}
-                  <tr style={{ background: 'var(--white)' }}>
-                    <td style={{
-                      padding: 'var(--space-6)',
-                      borderRight: '1px solid var(--gray-200)'
-                    }}>
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-6)',
-                      textAlign: 'center',
-                      borderRight: '1px solid var(--gray-200)'
-                    }}>
-                      <a
-                        href="https://github.com/originaryx/trace?utm_source=originary&utm_medium=site&utm_campaign=trace_oss"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-secondary"
-                        style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-sm)' }}
-                      >
-                        <Github size={16} />
-                        GitHub
-                      </a>
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-6)',
-                      textAlign: 'center',
-                      borderRight: '1px solid var(--gray-200)'
-                    }}>
-                      <Link
-                        href="/cloud?plan=starter"
-                        className="btn btn-primary"
-                        style={{ width: '100%', fontSize: 'var(--text-sm)' }}
-                      >
-                        Start trial
-                      </Link>
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-6)',
-                      textAlign: 'center',
-                      borderRight: '1px solid var(--gray-200)',
-                      background: 'rgba(99, 91, 255, 0.02)'
-                    }}>
-                      <Link
-                        href="/cloud?plan=pro"
-                        className="btn btn-primary"
-                        style={{ width: '100%', fontSize: 'var(--text-sm)' }}
-                      >
-                        Start trial
-                      </Link>
-                    </td>
-                    <td style={{
-                      padding: 'var(--space-6)',
-                      textAlign: 'center'
-                    }}>
-                      <Link
-                        href="/contact"
-                        className="btn btn-secondary"
-                        style={{ width: '100%', fontSize: 'var(--text-sm)' }}
-                      >
-                        Contact sales
-                      </Link>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                <a
+                  href="mailto:contact@originary.xyz?subject=Enterprise%20Inquiry"
+                  className="btn btn-secondary"
+                  style={{ width: '100%', justifyContent: 'center' }}
+                >
+                  Contact sales
+                  <ArrowRight size={18} />
+                </a>
+              </div>
             </div>
 
             {/* Platform Products Section */}
             <section style={{
-              marginTop: 'var(--space-24)',
+              marginTop: 'var(--space-8)',
               paddingTop: 'var(--space-16)',
               borderTop: '1px solid var(--gray-200)'
             }}>
@@ -1282,34 +433,34 @@ export default function TracePricing() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
                 <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-200)' }}>
                   <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
-                    Can I self-host Trace?
+                    Can I self-host everything?
                   </summary>
                   <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                    Yes. Trace OSS is free and open source. Cloud and Enterprise add retention, automation, attestation, and managed infrastructure.
+                    Yes. PEAC Protocol and core components are Apache 2.0 licensed and free to self-host. Cloud adds managed infrastructure, attested keys, and compliance automation.
                   </p>
                 </details>
                 <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-200)' }}>
                   <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
-                    What deployment methods does Trace support?
+                    How does Cloud pricing work?
                   </summary>
                   <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                    Cloudflare Worker proxy, Nginx access log tailer, Cloudflare Logpush, and Fingerprint webhook. WordPress plugin coming soon.
+                    Cloud pricing is usage-based, metered by verified receipts and events. Pricing is negotiated with each design partner based on volume, rails, and retention requirements.
                   </p>
                 </details>
                 <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-200)' }}>
                   <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
-                    Which AI crawlers does Trace identify?
+                    What payment rails do you support?
                   </summary>
                   <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                    GPTBot, ClaudeBot, PerplexityBot, search bots (Googlebot, Bingbot), and unknown families through fingerprinting.
+                    PEAC Protocol is rail-agnostic. Enterprise deployments can integrate x402, i402, Stripe, and other payment rails through Gateway 402 adapters.
                   </p>
                 </details>
                 <details style={{ padding: 'var(--space-4)' }}>
                   <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
-                    How is Trace related to PEAC Protocol?
+                    Who should contact sales?
                   </summary>
                   <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                    Trace is a PEAC-compatible product and reference implementation. It uses policy discovery (peac.txt), verifiable receipts (JWS), and HTTP 402 semantics.
+                    Publishers, API providers, agent platforms, and organizations integrating PEAC receipts at scale. We prioritize design partners building on x402, i402, or similar rails.
                   </p>
                 </details>
               </div>
@@ -1342,7 +493,7 @@ export default function TracePricing() {
                   marginBottom: 'var(--space-6)',
                   color: 'var(--white)'
                 }}>
-                  Ready to track AI crawlers?
+                  Ready to get started?
                 </h2>
                 <p style={{
                   fontSize: 'var(--text-xl)',
@@ -1352,7 +503,7 @@ export default function TracePricing() {
                   margin: '0 auto var(--space-8) auto',
                   lineHeight: 1.6
                 }}>
-                  Start with OSS or try Cloud free for 14 days. No credit card required.
+                  Start with open source or talk to us about your use case.
                 </p>
                 <div style={{
                   display: 'flex',
@@ -1369,11 +520,11 @@ export default function TracePricing() {
                       border: 'none'
                     }}
                   >
-                    <span>Start free trial</span>
+                    <span>Apply for Cloud access</span>
                     <ArrowRight size={18} />
                   </Link>
                   <a
-                    href="https://github.com/originaryx/trace"
+                    href="https://github.com/peacprotocol/peac"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-lg btn-ghost"

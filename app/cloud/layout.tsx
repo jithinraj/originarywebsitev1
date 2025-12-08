@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Get Trace Cloud',
-  description: 'Managed Trace with retention, alerts, signed bundles, and compliance automation. Start your 14-day free trial.',
-  keywords: 'Trace Cloud, AI crawler analytics, managed hosting, compliance automation, PEAC receipts',
+  title: 'Originary Cloud | Private Beta',
+  description: 'Managed PEAC verification, attested receipts, compliance bundles, and analytics. Apply for early access.',
+  keywords: 'Originary Cloud, PEAC receipts, managed hosting, compliance automation, attested receipts',
   alternates: {
     canonical: '/cloud',
   },
   openGraph: {
-    title: 'Get Trace Cloud',
-    description: 'Managed Trace with retention, alerts, signed bundles, and compliance automation.',
+    title: 'Originary Cloud | Private Beta',
+    description: 'Managed PEAC verification, attested receipts, compliance bundles, and analytics. Apply for early access.',
     type: 'website',
     url: 'https://www.originary.xyz/cloud',
   },

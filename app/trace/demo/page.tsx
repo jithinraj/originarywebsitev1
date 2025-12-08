@@ -307,14 +307,14 @@ export default function TraceDemoPage() {
                   Ready to track your AI crawlers?
                 </h2>
                 <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)', marginBottom: 'var(--space-8)', maxWidth: '600px', margin: '0 auto var(--space-8)', lineHeight: 1.6 }}>
-                  Get Trace Cloud with 14-day free trial or self-host the open source version.
+                  Apply for Originary Cloud or self-host the open source version.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
                   <Link href="/cloud" className="btn btn-primary">
-                    Start free trial
+                    Apply for Cloud access
                   </Link>
                   <a
-                    href="https://github.com/originaryx/trace"
+                    href="https://github.com/peacprotocol/peac"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-secondary"
