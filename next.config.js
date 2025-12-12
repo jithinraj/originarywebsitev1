@@ -56,6 +56,11 @@ const nextConfig = {
         destination: '/.well-known/peac.txt',
         permanent: true,
       },
+      {
+        source: '/resources/blog',
+        destination: '/blog',
+        permanent: true,
+      },
       // CLI downloads → PEAC Protocol release archives
       {
         source: '/downloads/originary-cli-1.0.0-darwin-arm64.zip',
