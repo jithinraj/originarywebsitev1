@@ -6,39 +6,43 @@ function LogoIcon({ name }: { name: string }) {
   const logos = {
     'MCP': (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="64" height="64" rx="12" fill="#000000"/>
-        <text x="50%" y="52%" textAnchor="middle" dy=".35em" fill="#ffffff" fontSize="16" fontWeight="600" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">MCP</text>
+        <rect width="64" height="64" rx="12" fill="#CC785C"/>
+        <path d="M32 18L22 24v16l10 6 10-6V24L32 18zm0 3.5l6.5 3.9v7.8L32 37l-6.5-3.8v-7.8L32 21.5z" fill="white"/>
       </svg>
     ),
     'A2A': (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="64" height="64" rx="12" fill="#4285F4"/>
-        <text x="50%" y="52%" textAnchor="middle" dy=".35em" fill="#ffffff" fontSize="16" fontWeight="600" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">A2A</text>
+        <path d="M32 20c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12-5.4-12-12-12zm0 20c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" fill="#EA4335"/>
+        <path d="M32 20c-6.6 0-12 5.4-12 12h4c0-4.4 3.6-8 8-8V20z" fill="#FBBC05"/>
+        <path d="M44 32c0-6.6-5.4-12-12-12v4c4.4 0 8 3.6 8 8h4z" fill="#34A853"/>
+        <circle cx="32" cy="32" r="4" fill="white"/>
       </svg>
     ),
     'x402': (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="64" height="64" rx="12" fill="#0052FF"/>
-        <text x="50%" y="52%" textAnchor="middle" dy=".35em" fill="#ffffff" fontSize="15" fontWeight="600" fontFamily="monospace">x402</text>
+        <circle cx="32" cy="32" r="14" fill="white"/>
+        <path d="M32 22c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10zm0 16c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z" fill="#0052FF"/>
       </svg>
     ),
     'Cloudflare': (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="64" height="64" rx="12" fill="#F38020"/>
-        <path d="M45 37.5C45.5 37 45.8 36.3 45.8 35.5C45.8 34 44.6 32.8 43.1 32.8C43 32.8 42.9 32.8 42.8 32.8C42.5 28.3 38.8 24.7 34.2 24.7C31.4 24.7 28.9 26.1 27.4 28.3C26.7 28 25.9 27.8 25 27.8C21.7 27.8 19 30.5 19 33.8C19 34.2 19 34.6 19.1 35C17.3 35.5 16 37.1 16 39C16 41.2 17.8 43 20 43H43C44.7 43 46 41.7 46 40C46 38.9 45.6 38 45 37.5Z" fill="white"/>
-        <path d="M42 35C42 35 38 32 34 32C30 32 28 35 28 35" stroke="#F38020" strokeWidth="1.5" strokeLinecap="round"/>
+        <rect width="64" height="64" rx="12" fill="#F6821F"/>
+        <path d="M42.8 38.5l1.8-6.2c.3-1 .2-1.9-.3-2.5-.5-.6-1.2-1-2.1-1h-15c-.2 0-.3-.1-.4-.2-.1-.1-.1-.3 0-.4l.4-1.2c.1-.4.5-.7.9-.7h16.2c2.3 0 4.4 1.5 5.1 3.7l1.9 6.5H42.8z" fill="white"/>
+        <path d="M35.7 38.5l1.3-4.4c.2-.7.1-1.3-.2-1.8-.3-.5-.9-.8-1.5-.8H18.5c-.3 0-.5.2-.6.5l-.5 1.6c-.1.3.1.6.4.6h15.3c.3 0 .6.2.7.5l.5 1.7c.1.3.4.5.7.5h.7v1.6z" fill="white" fillOpacity="0.7"/>
       </svg>
     ),
     'Stripe': (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="64" height="64" rx="12" fill="#635BFF"/>
-        <path d="M32 25.5C32 25.5 28.5 26.8 28.5 29.5C28.5 32.2 32 33.5 32 36.2C32 38.9 28.5 40.2 28.5 42.9" stroke="white" strokeWidth="3" strokeLinecap="round" fill="none"/>
+        <path d="M30.3 27.1c0-1.2 1-1.7 2.6-1.7 2.3 0 5.2.7 7.5 2v-7.1c-2.5-1-5-1.4-7.5-1.4-6.1 0-10.2 3.2-10.2 8.5 0 8.3 11.4 7 11.4 10.5 0 1.4-1.2 1.9-2.9 1.9-2.5 0-5.7-.9-8.2-2.3v7.2c2.8 1.2 5.6 1.7 8.2 1.7 6.3 0 10.6-3.1 10.6-8.5 0-9-11.5-7.4-11.5-10.8z" fill="white"/>
       </svg>
     ),
     'Vercel': (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="64" height="64" rx="12" fill="#000000"/>
-        <path d="M32 22L44 42H20L32 22Z" fill="#ffffff"/>
+        <path d="M32 20L48 44H16L32 20Z" fill="white"/>
       </svg>
     ),
     'Ethereum': (
@@ -69,9 +73,10 @@ export default function SocialProofSection() {
   ]
 
   const standards = [
-    { name: 'AIPREF', description: 'Reads preferences; snapshots into every receipt.' },
-    { name: 'C2PA', description: 'Optionally links to content provenance manifest.' },
-    { name: 'ERC-8004', description: 'Trustless Agents standard for on-chain AI agent interactions.' }
+    { name: 'AIPREF', description: 'Reads preferences; snapshots into every receipt.', href: '' },
+    { name: 'C2PA', description: 'Optionally links to content provenance manifest.', href: 'https://c2pa.org' },
+    { name: 'RSL 1', description: 'Receipt Specification Language for structured receipt definitions.', href: 'https://rslstandard.org' },
+    { name: 'ERC-8004', description: 'Trustless Agents standard for on-chain AI agent interactions.', href: 'https://eips.ethereum.org/EIPS/eip-8004' }
   ]
 
   return (
@@ -187,43 +192,61 @@ export default function SocialProofSection() {
           >
             Standards we support:
           </p>
-          {standards.map((standard) => (
-            <div
-              key={standard.name}
-              title={standard.description}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                padding: 'var(--space-2) var(--space-4)',
-                background: 'var(--gray-50)',
-                border: '1px solid var(--gray-200)',
-                borderRadius: 'var(--radius-full)',
-                fontSize: 'var(--text-xs)',
-                fontWeight: 600,
-                color: 'var(--gray-700)',
-                cursor: 'help'
-              }}
-            >
-              {standard.name}
-            </div>
-          ))}
+          {standards.map((standard) =>
+            standard.href ? (
+              <a
+                key={standard.name}
+                href={standard.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={standard.description}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  padding: 'var(--space-2) var(--space-4)',
+                  background: 'var(--gray-50)',
+                  border: '1px solid var(--gray-200)',
+                  borderRadius: 'var(--radius-full)',
+                  fontSize: 'var(--text-xs)',
+                  fontWeight: 600,
+                  color: 'var(--gray-700)',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--brand-primary)'
+                  e.currentTarget.style.color = 'var(--brand-primary)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--gray-200)'
+                  e.currentTarget.style.color = 'var(--gray-700)'
+                }}
+              >
+                {standard.name}
+              </a>
+            ) : (
+              <div
+                key={standard.name}
+                title={standard.description}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  padding: 'var(--space-2) var(--space-4)',
+                  background: 'var(--gray-50)',
+                  border: '1px solid var(--gray-200)',
+                  borderRadius: 'var(--radius-full)',
+                  fontSize: 'var(--text-xs)',
+                  fontWeight: 600,
+                  color: 'var(--gray-700)',
+                  cursor: 'help'
+                }}
+              >
+                {standard.name}
+              </div>
+            )
+          )}
         </div>
 
-        {/* Disclosure */}
-        <p
-          style={{
-            fontSize: 'var(--text-xs)',
-            color: 'var(--gray-400)',
-            textAlign: 'center',
-            marginTop: 'var(--space-8)',
-            maxWidth: '800px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            lineHeight: 1.6
-          }}
-        >
-          Compatibility indicates protocol-level support or deploy patterns. No affiliation or endorsement implied. Logos are trademarks of their owners.
-        </p>
 
       </div>
 

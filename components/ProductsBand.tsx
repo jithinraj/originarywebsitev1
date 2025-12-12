@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Activity, Shield, Blocks, Sparkles, FileText } from 'lucide-react'
+import { ArrowRight, Activity, Blocks, FileText } from 'lucide-react'
 
 export default function ProductsBand() {
   const products = [
@@ -36,26 +36,6 @@ export default function ProductsBand() {
       buttons: [
         { label: 'Learn more', href: '/products/gateway-402' }
       ]
-    },
-    {
-      name: 'Verify API',
-      description: 'Receipt verification and PEAC policy evaluation for every interaction. Built on PEAC Protocol.',
-      href: '/products/verify',
-      icon: Shield,
-      featured: false,
-      buttons: [
-        { label: 'Learn more', href: '/products/verify' }
-      ]
-    },
-    {
-      name: 'Studio',
-      description: 'Policy editor and receipt management dashboard for AI and agent traffic.',
-      href: '/products/studio',
-      icon: Sparkles,
-      featured: false,
-      buttons: [
-        { label: 'Learn more', href: '/products/studio' }
-      ]
     }
   ]
 
@@ -69,33 +49,6 @@ export default function ProductsBand() {
     >
       <div className="container">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          {/* Section Header */}
-          <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
-            <h2
-              style={{
-                fontSize: 'clamp(var(--text-2xl), 4vw, var(--text-4xl))',
-                fontWeight: 700,
-                lineHeight: 1.2,
-                letterSpacing: '-0.02em',
-                marginBottom: 'var(--space-3)',
-                color: 'var(--gray-900)'
-              }}
-            >
-              The agentic control plane
-            </h2>
-            <p
-              style={{
-                fontSize: 'var(--text-base)',
-                lineHeight: 1.7,
-                color: 'var(--gray-600)',
-                maxWidth: '700px',
-                margin: '0 auto'
-              }}
-            >
-              Tools and infrastructure for PEAC-enabled applications
-            </p>
-          </div>
-
           {/* Featured Product */}
           {products.filter(p => p.featured).map((product) => {
             const Icon = product.icon

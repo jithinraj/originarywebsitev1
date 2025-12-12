@@ -13,16 +13,13 @@ export default function PeacAnimationHero() {
 
   return (
     <section
-      className="hero-section mesh-gradient grid-background"
+      className="hero-section"
       style={{
         position: 'relative',
-        paddingTop: 'var(--space-32)',
-        paddingBottom: 'var(--space-24)',
+        paddingTop: 'clamp(100px, 14vh, 160px)',
+        paddingBottom: 'clamp(80px, 10vh, 120px)',
         background: 'var(--white)',
-        overflow: 'hidden',
-        minHeight: '90vh',
-        display: 'flex',
-        alignItems: 'center'
+        overflow: 'hidden'
       }}
     >
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
@@ -30,8 +27,8 @@ export default function PeacAnimationHero() {
           className="hero-content"
           style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: 'var(--space-16)',
+            gridTemplateColumns: '1.1fr 1fr',
+            gap: 'clamp(48px, 8vw, 96px)',
             alignItems: 'center'
           }}
         >
@@ -44,84 +41,59 @@ export default function PeacAnimationHero() {
               transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
           >
-            {/* Badge */}
+            {/* Eyebrow */}
             <div
-              className="badge-status"
               style={{
-                marginBottom: 'var(--space-6)',
+                marginBottom: 'var(--space-5)',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s'
               }}
             >
-              <span className="pulse-dot" style={{ width: '6px', height: '6px' }} />
-              POLICY, PAYMENTS, AND PROOF FOR AI AND AGENTIC INTERACTIONS
+              <span
+                style={{
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 500,
+                  color: 'var(--gray-500)',
+                  letterSpacing: '0.02em'
+                }}
+              >
+                POLICY, PAYMENTS, AND PROOF FOR AI AND AGENTIC INTERACTIONS
+              </span>
             </div>
 
-            {/* Main Headline - SEO: H1 must be visible in SSR */}
+            {/* Main Headline */}
             <h1
-              className="tracking-tighter leading-tight"
+              className="tracking-tight"
               style={{
-                fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
+                fontSize: 'clamp(2.75rem, 5.5vw, 4rem)',
                 fontWeight: 700,
-                marginBottom: 'var(--space-6)',
+                lineHeight: 1.08,
+                marginBottom: 'var(--space-5)',
                 color: 'var(--gray-900)',
                 opacity: 1,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.15s'
               }}
             >
-              Control every AI interaction.
-              <br />
-              <span className="text-gradient">Monetize the ones that matter.</span>
+              Make AI access<br />
+              <span className="text-gradient">paid and provable.</span>
             </h1>
 
-            {/* Subtitle - Main benefit */}
+            {/* Subtitle */}
             <p
               style={{
                 fontSize: 'var(--text-lg)',
-                lineHeight: 1.7,
+                lineHeight: 1.6,
                 color: 'var(--gray-600)',
-                marginBottom: 'var(--space-3)',
-                maxWidth: '480px',
+                marginBottom: 'var(--space-6)',
+                maxWidth: '440px',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              Agents, crawlers, and AI systems are already accessing your content and calling your endpoints. Originary gives you one policy, payments, and receipts layer so you decide who gets what, on which terms and rail, and what you can prove.
-            </p>
-
-            {/* Compliance hook */}
-            <p
-              style={{
-                fontSize: 'var(--text-sm)',
-                lineHeight: 1.7,
-                color: 'var(--gray-500)',
-                marginBottom: 'var(--space-4)',
-                maxWidth: '480px',
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.21s'
-              }}
-            >
-              PEAC receipts help you prepare for emerging AI transparency and provenance rules, including the EU AI Act.
-            </p>
-
-            {/* How it works */}
-            <p
-              style={{
-                fontSize: 'var(--text-sm)',
-                lineHeight: 1.7,
-                color: 'var(--gray-400)',
-                marginBottom: 'var(--space-6)',
-                maxWidth: '480px',
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.22s'
-              }}
-            >
-              Declare AI and agent access once in Declare, then use Trace, Gateway 402, and Verify to gate that traffic with HTTP 402, settle on x402, i402, Stripe, or other rails, and issue cryptographic PEAC receipts for each paid or sensitive interaction.
+              Agents and crawlers already hit your pages and APIs. Set terms, require payment when needed, and verify every outcome with signed receipts.
             </p>
 
             {/* Trademark Proof Section */}
@@ -129,7 +101,7 @@ export default function PeacAnimationHero() {
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.25s',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.22s',
                 marginBottom: 'var(--space-6)'
               }}
             >
@@ -188,74 +160,58 @@ export default function PeacAnimationHero() {
                 marginBottom: 'var(--space-6)',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s'
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.25s'
               }}
             >
               <Link
-                href="/declare"
+                href="/demo"
                 className="btn btn-primary btn-lg btn-shine hero-cta-primary"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  gap: 'var(--space-2)'
+                  gap: 'var(--space-2)',
+                  padding: '14px 28px',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 600
                 }}
               >
-                Start with Declare (Free)
+                View demo
                 <ArrowRight size={18} />
               </Link>
 
               <Link
                 href="/peac"
-                className="btn btn-secondary btn-lg hero-cta-secondary"
+                className="btn btn-ghost hero-cta-secondary"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  gap: 'var(--space-2)'
+                  gap: 'var(--space-2)',
+                  padding: '14px 28px',
+                  fontSize: 'var(--text-base)',
+                  color: 'var(--gray-600)'
                 }}
               >
-                View Protocol
+                Read the spec
               </Link>
             </div>
 
-            {/* Tech Stack Badges */}
-            <div
-              className="tech-badges"
+            {/* Trust line */}
+            <p
               style={{
-                display: 'flex',
-                gap: 'var(--space-3)',
-                flexWrap: 'wrap',
-                alignItems: 'center',
-                justifyContent: 'center',
+                fontSize: 'var(--text-xs)',
+                color: 'var(--gray-400)',
+                fontWeight: 500,
+                letterSpacing: '0.02em',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.35s'
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s'
               }}
             >
-              <span style={{ fontSize: '12px', color: 'var(--gray-500)', width: '100%', textAlign: 'center' }} className="built-on-label">Built on HTTP 402, x402, PEAC receipts, AIPREF, and ready for i402.</span>
-            </div>
+              Open protocol · No lock-in · Deploy at the edge
+            </p>
 
-            {/* Seven pillars micro-band */}
-            <div
-              style={{
-                marginTop: 'var(--space-4)',
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s'
-              }}
-            >
-              <p
-                style={{
-                  fontSize: '11px',
-                  color: 'var(--gray-400)',
-                  textAlign: 'center',
-                  maxWidth: '480px'
-                }}
-              >
-                Seven pillars of agent coordination: access, attribution, consent, commerce, compliance, privacy, and provenance.
-              </p>
-            </div>
           </div>
 
           {/* Hero Visual - 3D Policy Card */}
@@ -274,15 +230,6 @@ export default function PeacAnimationHero() {
       </div>
 
       <style jsx>{`
-        .tech-badges {
-          justify-content: flex-start !important;
-        }
-
-        .built-on-label {
-          width: auto !important;
-          text-align: left !important;
-        }
-
         @media (max-width: 1024px) {
           .hero-content {
             grid-template-columns: 1fr !important;
@@ -293,13 +240,6 @@ export default function PeacAnimationHero() {
             display: flex;
             flex-direction: column;
             align-items: center;
-          }
-          .tech-badges {
-            justify-content: center !important;
-          }
-          .built-on-label {
-            width: 100% !important;
-            text-align: center !important;
           }
         }
 

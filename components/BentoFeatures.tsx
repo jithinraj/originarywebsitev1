@@ -34,7 +34,7 @@ export default function BentoFeatures() {
               color: 'var(--gray-900)'
             }}
           >
-            Everything you need to manage and control AI and agent interactions across websites, APIs, and A2A networks.
+            Policy, payments, and proof in one platform
           </h2>
           <p
             style={{
@@ -44,7 +44,7 @@ export default function BentoFeatures() {
               margin: '0 auto'
             }}
           >
-            From policy declaration and preferences to real time analytics, payments, receipts, and compliance.
+            Declare terms, gate access, and verify every AI interaction with signed receipts.
           </p>
         </div>
 
