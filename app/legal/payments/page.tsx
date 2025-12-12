@@ -2,9 +2,9 @@ import { Metadata } from 'next'
 import StaticPageLayout from '@/components/StaticPageLayout'
 
 export const metadata: Metadata = {
-  title: 'Payment Terms : Originary',
+  title: 'Payment Terms',
   description: 'Payment terms and billing policies for Originary services.',
-  robots: 'index,follow',
+  robots: 'noindex,follow',
   alternates: {
     canonical: '/legal/payments',
   },

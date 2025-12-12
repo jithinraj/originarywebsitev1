@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { FileText, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Add HTTP 402 to Your API in 15 Minutes - Originary™",
+  title: "Add HTTP 402 to Your API in 15 Minutes",
   description: "Quick tutorial for adding HTTP 402 Payment Required responses to an existing Express API. No SDK required, just standard HTTP and receipt verification.",
   keywords: "HTTP 402, Express.js, API monetization, x402, payment required, tutorial",
   authors: [{ name: "Jithin Raj & Originary Team" }],

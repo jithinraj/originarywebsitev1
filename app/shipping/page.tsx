@@ -4,7 +4,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Shipping & Delivery Policy · Originary',
+  title: 'Shipping & Delivery Policy',
   description: 'Shipping and Delivery Policy for Originary digital services operated by Poem, Inc.',
   robots: {
     index: false,

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Declare | PEAC Policy Kit',
   description: 'Originary Declare (PEAC Policy Kit) lets you declare AI crawling, training and usage policy once and generate peac.txt, AIPREF, robots rules and a human policy page in minutes. Built on the open PEAC Protocol with support for HTTP 402, x402 and AI bot protection.',
   keywords: 'AI policy, AI Access, AIPREF, peac.txt, AI crawler policy, AI bot detection, PEAC Protocol, HTTP 402, x402, crawling protection, AI policy generator',
+  robots: 'index,follow',
   alternates: {
     canonical: '/declare'
   },

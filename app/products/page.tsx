@@ -6,9 +6,10 @@ import { ArrowRight, CheckCircle, Zap, Shield, Database, BarChart, Users, Globe,
 import ServiceOffers from '@/components/ServiceOffers'
 
 export const metadata: Metadata = {
-  title: 'Products : Originary',
+  title: 'Products',
   description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters-everything you need to power autonomous AI coordination.',
   keywords: 'PEAC protocol, AI Access, verify API, Gateway 402, AI orchestration, autonomous agents, policy enforcement',
+  robots: 'index,follow',
   openGraph: {
     title: 'Products : Originary',
     description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters-everything you need to power autonomous AI coordination.',

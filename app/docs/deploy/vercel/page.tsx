@@ -4,7 +4,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Vercel Deployment Guide : Originary',
+  title: 'Vercel Deployment Guide',
   description: 'Deploy Originary receipt verification on Vercel Edge Runtime. Use HTTP 402 gateway pattern with PEAC-Receipts on Vercel.',
   alternates: {
     canonical: '/docs/deploy/vercel'

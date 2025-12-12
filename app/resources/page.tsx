@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ArrowRight, BookOpen, FileText, GitBranch, Receipt, Globe, Github, ExternalLink } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Resources : Originary',
+  title: 'Resources',
   description: 'Resources, documentation, and insights for building with the receipts protocol for the agentic web.',
   keywords: 'agentic web, receipts protocol, AI coordination, PEAC protocol',
   openGraph: {

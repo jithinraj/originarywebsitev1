@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata = baseMeta({
-  title: "x402 on Next.js / Edge Runtime - Originary",
+  title: "x402 on Next.js / Edge Runtime",
   description: "Use Next.js route handlers to return a 402 challenge and unlock access after receipt verification. Works on Edge and Node runtimes.",
   canonical: '/integrations/x402/nextjs'
 });

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Trace | AI Crawler Analytics and Bot Tracking by Originary',
+  title: 'Trace | AI Crawler Analytics and Bot Tracking',
   description: 'Trace gives your website real time visibility into AI crawlers, bots and LLM agents, with detailed logs, verifiable receipts and PEAC Protocol based access controls.',
   alternates: {
     canonical: '/trace'

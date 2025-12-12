@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
 
 export const metadata = {
-  title: "x402 on FastAPI (Python) - Coming Soon - Originary",
+  title: "x402 on FastAPI (Python) - Coming Soon",
   description: "x402 on FastAPI (Python) integration guide. Example implementation for HTTP 402 payments and x402 commerce on machine-payable APIs.",
   robots: { index: false, follow: true },
   alternates: {

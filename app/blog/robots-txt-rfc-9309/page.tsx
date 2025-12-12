@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import { User, ArrowRight, ExternalLink, FileText, Code, AlertTriangle, Shield } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'robots.txt (RFC 9309) Deep Dive · Originary',
+  title: 'robots.txt (RFC 9309) Deep Dive',
   description: 'A technical deep dive into RFC 9309, the standardized Robots Exclusion Protocol - matching rules, error handling, caching, and how it relates to AIPREF usage preferences.',
   keywords: 'robots.txt, RFC 9309, robots exclusion protocol, crawl control, web crawlers, IETF, AIPREF, SEO, web standards',
   authors: [{ name: 'Jithin Raj & Originary Team' }],

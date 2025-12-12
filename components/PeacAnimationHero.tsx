@@ -55,7 +55,7 @@ export default function PeacAnimationHero() {
               }}
             >
               <span className="pulse-dot" style={{ width: '6px', height: '6px' }} />
-              POLICY, PAYMENTS, AND RECEIPTS FOR AI INTERACTIONS
+              POLICY, PAYMENTS, AND PROOF FOR AI AND AGENTIC INTERACTIONS
             </div>
 
             {/* Main Headline - SEO: H1 must be visible in SSR */}
@@ -71,9 +71,9 @@ export default function PeacAnimationHero() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.15s'
               }}
             >
-              Turn AI traffic
+              Control every AI interaction.
               <br />
-              <span className="text-gradient">into revenue.</span>
+              <span className="text-gradient">Monetize the ones that matter.</span>
             </h1>
 
             {/* Subtitle - Main benefit */}
@@ -82,14 +82,30 @@ export default function PeacAnimationHero() {
                 fontSize: 'var(--text-lg)',
                 lineHeight: 1.7,
                 color: 'var(--gray-600)',
-                marginBottom: 'var(--space-4)',
+                marginBottom: 'var(--space-3)',
                 maxWidth: '480px',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              AI scrapers already hit your websites and APIs. Originary gives you receipts and policy controls so you can see those agents, control what they access, and bill them when they use your content.
+              Agents, crawlers, and AI systems are already accessing your content and calling your endpoints. Originary gives you one policy, payments, and receipts layer so you decide who gets what, on which terms and rail, and what you can prove.
+            </p>
+
+            {/* Compliance hook */}
+            <p
+              style={{
+                fontSize: 'var(--text-sm)',
+                lineHeight: 1.7,
+                color: 'var(--gray-500)',
+                marginBottom: 'var(--space-4)',
+                maxWidth: '480px',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.21s'
+              }}
+            >
+              PEAC receipts help you prepare for emerging AI transparency and provenance rules, including the EU AI Act.
             </p>
 
             {/* How it works */}
@@ -105,7 +121,7 @@ export default function PeacAnimationHero() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.22s'
               }}
             >
-              Declare AI access and usage once, then use Trace, Gateway 402, and Verify to gate agents with HTTP 402 and issue cryptographic receipts for each paid interaction.
+              Declare AI and agent access once in Declare, then use Trace, Gateway 402, and Verify to gate that traffic with HTTP 402, settle on x402, i402, Stripe, or other rails, and issue cryptographic PEAC receipts for each paid or sensitive interaction.
             </p>
 
             {/* Trademark Proof Section */}
@@ -217,10 +233,28 @@ export default function PeacAnimationHero() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.35s'
               }}
             >
-              <span style={{ fontSize: '12px', color: 'var(--gray-500)', width: '100%', textAlign: 'center' }} className="built-on-label">Built on</span>
-              <TechBadge>HTTP 402/x402</TechBadge>
-              <TechBadge>PEAC-Receipts</TechBadge>
-              <TechBadge>AIPREF</TechBadge>
+              <span style={{ fontSize: '12px', color: 'var(--gray-500)', width: '100%', textAlign: 'center' }} className="built-on-label">Built on HTTP 402, x402, PEAC receipts, AIPREF, and ready for i402.</span>
+            </div>
+
+            {/* Seven pillars micro-band */}
+            <div
+              style={{
+                marginTop: 'var(--space-4)',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s'
+              }}
+            >
+              <p
+                style={{
+                  fontSize: '11px',
+                  color: 'var(--gray-400)',
+                  textAlign: 'center',
+                  maxWidth: '480px'
+                }}
+              >
+                Seven pillars of agent coordination: access, attribution, consent, commerce, compliance, privacy, and provenance.
+              </p>
             </div>
           </div>
 

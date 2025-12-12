@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Services : Originary',
+  title: 'Services',
   description: 'Originary services and solutions for agent coordination and compliance.',
   alternates: {
     canonical: '/services'

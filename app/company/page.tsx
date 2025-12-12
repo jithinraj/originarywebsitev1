@@ -2,9 +2,10 @@ import type { Metadata } from 'next'
 import StaticPageLayout from '@/components/StaticPageLayout'
 
 export const metadata: Metadata = {
-  title: 'Company : Originary',
+  title: 'Company',
   description: 'Originary is a product company building orchestration for the agentic web. Learn about our infrastructure for intent routing, policy enforcement, and verified receipts across humans, agents, and machines. Contact our team or explore press resources.',
   keywords: 'agentic web, orchestration protocol, AI coordination, PEAC protocol',
+  robots: 'noindex,follow',
   openGraph: {
     title: 'Company : Originary',
     description: 'Originary is a product company building orchestration for the agentic web.',

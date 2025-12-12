@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ArrowRight, Mail, Lock, Eye, EyeOff } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Sign In : Originary',
+  title: 'Sign In',
   description: 'Sign in to your Originary account to access the PEAC protocol dashboard, manage your policies, and view analytics.',
   keywords: 'sign in, login, Originary account, PEAC dashboard, user portal',
   authors: [{ name: 'Originary' }],

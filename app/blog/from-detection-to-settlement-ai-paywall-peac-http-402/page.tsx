@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { FileText, ArrowRight, Zap, Shield, CreditCard, FileCheck, List, CheckCircle2, AlertTriangle, DollarSign, Lock, Globe } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance · Originary",
+  title: "From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance",
   description: "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, L402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
   keywords: "AI paywall, HTTP 402, L402, x402, Stripe, PEAC receipts, AI payments, AI bot detection, AI monetization, machine payments",
   authors: [{ name: "Jithin Raj & Originary Team" }],

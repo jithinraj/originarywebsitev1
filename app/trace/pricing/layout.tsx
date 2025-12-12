@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Analytics & Receipts | Originary',
+  title: 'Analytics & Receipts',
   description: 'PEAC receipts and analytics infrastructure. Self-host open source for free or talk to us about managed Originary Cloud with attested receipts and compliance automation.',
   keywords: 'PEAC receipts, AI analytics, crawler tracking, bot detection, compliance automation, attested receipts',
   openGraph: {

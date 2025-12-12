@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { FileText, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "HTTP 402 on Cloudflare Workers · Originary",
+  title: "HTTP 402 on Cloudflare Workers",
   description: "Deploy HTTP 402 payment-required responses at the edge with Cloudflare Workers. Zero cold starts, global KV storage, Web Crypto API for receipt verification.",
   keywords: "Cloudflare Workers, HTTP 402, edge computing, x402, KV storage, Web Crypto API, payment required",
   authors: [{ name: "Jithin Raj & Originary Team" }],

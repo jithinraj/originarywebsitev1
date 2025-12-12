@@ -4,7 +4,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Stripe Payment Integration : Originary',
+  title: 'Stripe Payment Integration',
   description: 'Integrate Stripe card payments with Originary PEAC-Receipt. Map PaymentIntents to verifiable receipts with HTTP 402.',
   alternates: {
     canonical: '/docs/payments/stripe'

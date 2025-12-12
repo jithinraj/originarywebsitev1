@@ -4,7 +4,7 @@ import NavigationHeader from "@/components/NavigationHeader";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "HTTP 402 Payment Required - Status Code Reference - Originary™",
+  title: "HTTP 402 Payment Required - Status Code Reference",
   description: "HTTP 402 Payment Required is a reserved status code revived for digital payments. Signals that a resource is available after payment with machine-readable hints.",
   alternates: { canonical: '/glossary/http-402-payment-required' },
   openGraph: {

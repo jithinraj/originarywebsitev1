@@ -2,9 +2,9 @@ import { Metadata } from 'next'
 import StaticPageLayout from '@/components/StaticPageLayout'
 
 export const metadata: Metadata = {
-  title: 'Data Processing Agreement : Originary',
+  title: 'Data Processing Agreement',
   description: 'Data processing agreement for enterprise customers regarding GDPR compliance and data handling.',
-  robots: 'index,follow',
+  robots: 'noindex,follow',
   alternates: {
     canonical: '/legal/dpa',
   },

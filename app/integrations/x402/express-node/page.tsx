@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata = baseMeta({
-  title: "x402 on Express (Node) - Originary",
+  title: "x402 on Express (Node)",
   description: "Add HTTP 402 to your Express API in under 15 minutes. Minimal route implementation with verification tips for x402 receipts.",
   canonical: '/integrations/x402/express-node'
 });

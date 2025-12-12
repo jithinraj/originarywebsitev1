@@ -37,7 +37,9 @@ const faqJsonLd = {
 }
 
 export const metadata: Metadata = {
-  title: 'Originary & AI - Agent-native trust with PEAC-Receipts',
+  title: {
+    absolute: 'Originary & AI - Agent-native trust with PEAC-Receipts'
+  },
   description: 'Build agent-to-agent systems with cryptographic receipts, preference-aware usage, and pay-as-you-go 402 rails. Works with A2A networks, MCP tool calls, ACP, and HTTP 402 payment rails.',
   keywords: 'agent-to-agent, A2A, MCP, ACP, ERC-8004, PEAC receipts, HTTP 402, agent trust, cryptographic verification, AIPREF, L402, x402, agentic commerce',
   robots: 'index,follow',

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import StaticPageLayout from '@/components/StaticPageLayout'
 
 export const metadata: Metadata = {
-  title: 'Case Studies : Originary',
+  title: 'Case Studies',
   description: 'Real-world implementations of PEAC protocol and Originary platform by enterprise customers.',
   keywords: 'case studies, customer success, PEAC implementation, enterprise deployment',
   robots: 'index,follow',

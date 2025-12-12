@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle, Github, Cloud, Building2 } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Pricing | Originary',
+  title: 'Pricing',
   description: 'Open source PEAC Protocol and receipts infrastructure. Self-host for free or talk to us about managed cloud and enterprise deployments.',
   keywords: 'PEAC Protocol pricing, AI receipts pricing, open source infrastructure, enterprise AI commerce, usage-based pricing',
   alternates: {

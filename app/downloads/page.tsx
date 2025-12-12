@@ -31,7 +31,7 @@ const peacSourceCodeJsonLd = {
 }
 
 export const metadata: Metadata = {
-  title: 'Downloads : Originary',
+  title: 'Downloads',
   description: 'Download the Originary CLI and PEAC policy templates. Verify policy files and implement receipts.',
   keywords: 'downloads, CLI, PEAC templates, policy verification, receipts implementation',
   robots: 'index,follow',

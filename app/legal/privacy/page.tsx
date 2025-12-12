@@ -4,9 +4,9 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy : Originary',
+  title: 'Privacy Policy',
   description: 'Originary privacy policy outlining how we collect, use, and protect your personal information.',
-  robots: 'index,follow',
+  robots: 'noindex,follow',
   alternates: {
     canonical: '/legal/privacy',
   },

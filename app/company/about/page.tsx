@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'About : Originary',
+  title: 'About',
   description: 'Originary provides orchestration infrastructure for the agentic web, enabling autonomous agents to discover policies, negotiate terms, and complete transactions safely.',
   keywords: 'about Originary, agentic web, orchestration infrastructure, autonomous agents, PEAC protocol',
   authors: [{ name: 'Originary' }],

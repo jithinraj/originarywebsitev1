@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Performance Methodology : Originary',
+  title: 'Performance Methodology',
   description: 'Performance testing methodology and benchmarks for Originary services.',
   robots: {
     index: false,

@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 
 export const metadata = baseMeta({
-  title: "x402 on Cloudflare Workers - Originary",
+  title: "x402 on Cloudflare Workers",
   description: "A tiny Worker that returns HTTP 402 with a payment hint. Deploy globally in seconds with Cloudflare Workers.",
   canonical: '/integrations/x402/cloudflare-workers'
 });

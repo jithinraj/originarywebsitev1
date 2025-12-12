@@ -2,10 +2,10 @@ import { Metadata } from 'next'
 import StaticPageLayout from '@/components/StaticPageLayout'
 
 export const metadata: Metadata = {
-  title: 'Changelog : Originary',
+  title: 'Changelog',
   description: 'Product updates, new features, and improvements to the Originary platform and PEAC protocol.',
   keywords: 'changelog, product updates, new features, PEAC protocol updates',
-  robots: 'index,follow',
+  robots: 'noindex,follow',
   alternates: {
     canonical: '/resources/changelog',
   },

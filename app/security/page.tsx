@@ -5,9 +5,9 @@ import Link from 'next/link'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Security Disclosure : Originary',
+  title: 'Security Disclosure',
   description: 'Responsible security disclosure policy for Originary services and infrastructure. Learn how to report security vulnerabilities, our commitment to acknowledging reports within 5 business days, and guidelines for ethical security research. Contact security@originary.xyz.',
-  robots: 'index,follow',
+  robots: 'noindex,follow',
   alternates: {
     canonical: '/security',
   },

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service : Originary',
+  title: 'Terms of Service',
   description: 'Terms of Service for Originary - commercial tools implementing receipts for the agentic web.',
   robots: {
     index: false,

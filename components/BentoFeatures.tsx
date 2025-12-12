@@ -34,7 +34,7 @@ export default function BentoFeatures() {
               color: 'var(--gray-900)'
             }}
           >
-            Everything you need to manage & control your website & app interactions with AI, Agents, Bots, and Crawlers.
+            Everything you need to manage and control AI and agent interactions across websites, APIs, and A2A networks.
           </h2>
           <p
             style={{
@@ -44,7 +44,7 @@ export default function BentoFeatures() {
               margin: '0 auto'
             }}
           >
-            From policy declaration to real-time analytics to payments to compliance.
+            From policy declaration and preferences to real time analytics, payments, receipts, and compliance.
           </p>
         </div>
 
@@ -93,7 +93,7 @@ export default function BentoFeatures() {
           <BentoCard
             className="bento-small"
             title="HTTP 402 Payments"
-            description="Native machine-payable APIs with x402."
+            description="HTTP 402 payments for machine payable APIs with x402 today and i402 on the roadmap."
             icon={<Zap size={24} />}
             href="/integrations/x402"
             linkText="Learn more"

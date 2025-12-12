@@ -3,7 +3,7 @@ import NavigationHeader from "@/components/NavigationHeader";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "HTTP 402 Payment Required - a practical guide for APIs - Originary",
+  title: "HTTP 402 Payment Required - A Practical Guide for APIs",
   description: "What 402 means in practice, how to design the 402 payload, common pitfalls, and a minimal example.",
   alternates: { canonical: '/guides/http-402' }
 };

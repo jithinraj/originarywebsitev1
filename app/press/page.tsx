@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import Mark from '@/components/Mark'
 
 export const metadata: Metadata = {
-  title: 'Press : Originary',
+  title: 'Press',
   description: 'Press information, media resources, and brand assets for Originary. Contact press@originary.xyz for inquiries. Download logos and learn how Originary delivers receipts and policy enforcement for the agentic web.',
   robots: 'index,follow',
   alternates: {

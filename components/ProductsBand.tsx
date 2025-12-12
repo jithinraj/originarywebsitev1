@@ -7,7 +7,7 @@ export default function ProductsBand() {
   const products = [
     {
       name: 'Originary Declare',
-      description: 'Define your AI policy once, generate all the right signals. A single peac-policy.yaml generates peac.txt, AIPREF headers, robots AI rules and a human-readable policy page.',
+      description: 'Define your AI and agent policy once, generate all the right signals. A single peac-policy.yaml generates peac.txt, AIPREF headers, robots AI rules, and a human readable policy page.',
       href: '/declare',
       icon: FileText,
       featured: true,
@@ -18,7 +18,7 @@ export default function ProductsBand() {
     },
     {
       name: 'Originary Trace',
-      description: 'See which AI crawlers access your site, what they took, and generate verifiable evidence. Built on the open PEAC Protocol.',
+      description: 'See which agents, crawlers, and bots access your sites and APIs, what they took, and generate verifiable evidence. Built on the open PEAC Protocol.',
       href: '/trace',
       icon: Activity,
       featured: false,
@@ -29,7 +29,7 @@ export default function ProductsBand() {
     },
     {
       name: 'Gateway 402',
-      description: 'HTTP 402 payment gateway with PEAC receipts. Built on PEAC Protocol.',
+      description: 'HTTP 402 payment gateway with PEAC receipts, supporting x402, i402, Stripe, and other rails. Built on PEAC Protocol.',
       href: '/products/gateway-402',
       icon: Blocks,
       featured: false,
@@ -39,7 +39,7 @@ export default function ProductsBand() {
     },
     {
       name: 'Verify API',
-      description: 'Receipt verification and PEAC policy validation. Built on PEAC Protocol.',
+      description: 'Receipt verification and PEAC policy evaluation for every interaction. Built on PEAC Protocol.',
       href: '/products/verify',
       icon: Shield,
       featured: false,
@@ -49,7 +49,7 @@ export default function ProductsBand() {
     },
     {
       name: 'Studio',
-      description: 'Policy editor and receipt management dashboard',
+      description: 'Policy editor and receipt management dashboard for AI and agent traffic.',
       href: '/products/studio',
       icon: Sparkles,
       featured: false,

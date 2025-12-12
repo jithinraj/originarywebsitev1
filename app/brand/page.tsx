@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 import Mark from '@/components/Mark'
 
 export const metadata: Metadata = {
-  title: 'Brand Guidelines : Originary',
+  title: 'Brand Guidelines',
   description: 'Official Originary brand guidelines, logo downloads, wordmark usage standards, and visual identity resources. Download brand assets for media use and learn proper usage of the Originary trademark across all channels.',
   robots: 'index,follow',
   alternates: {

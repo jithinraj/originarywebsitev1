@@ -4,7 +4,7 @@ import NavigationHeader from "@/components/NavigationHeader";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "x402 - Payment-Required Protocol for APIs - Originary™",
+  title: "x402 - Payment-Required Protocol for APIs",
   description: "x402 is a lightweight protocol pattern that uses HTTP 402 Payment Required responses with machine-readable JSON hints to enable agent-to-agent paid transactions.",
   alternates: { canonical: '/glossary/x402' },
   openGraph: {

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { FileText, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "HTTP 402 for APIs: Payment Required · Originary",
+  title: "HTTP 402 for APIs: Payment Required",
   description: "A practical guide to implementing HTTP 402 Payment Required in modern APIs. Learn the anatomy of a 402 response, receipt verification patterns, and how to avoid common pitfalls.",
   keywords: "HTTP 402, payment required, API monetization, x402, agent commerce, receipts, web payments",
   authors: [{ name: "Jithin Raj & Originary Team" }],

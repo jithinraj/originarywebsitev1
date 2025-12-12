@@ -4,7 +4,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Cancellation & Refund Policy · Originary',
+  title: 'Cancellation & Refund Policy',
   description: 'Cancellation and Refund Policy for Originary services operated by Poem, Inc.',
   robots: {
     index: false,

@@ -2,9 +2,9 @@ import { Metadata } from 'next'
 import StaticPageLayout from '@/components/StaticPageLayout'
 
 export const metadata: Metadata = {
-  title: 'Acceptable Use Policy : Originary',
+  title: 'Acceptable Use Policy',
   description: 'Acceptable use policy outlining permitted and prohibited uses of Originary services.',
-  robots: 'index,follow',
+  robots: 'noindex,follow',
   alternates: {
     canonical: '/legal/acceptable-use',
   },

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'PEAC-Receipts | AI Compliance Receipts',
   description: 'PEAC-Receipts and Originary receipts provide AI usage receipts, AI compliance infrastructure, and AI provenance tracking. Verifiable proof for every AI transaction.',
   keywords: 'PEAC receipts, Originary receipts, AI usage receipts, AI compliance, AI provenance tracking, cryptographic receipts, AI verification, proof of use',
+  robots: 'index,follow',
   openGraph: {
     title: 'PEAC-Receipts | AI Compliance Receipts | Originary',
     description: 'PEAC-Receipts and Originary receipts provide AI usage receipts, AI compliance infrastructure, and AI provenance tracking. Verifiable proof for every AI transaction.',

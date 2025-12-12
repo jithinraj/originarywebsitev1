@@ -3,9 +3,10 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Solutions : Originary',
+  title: 'Solutions',
   description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
   keywords: 'agentic web, orchestration protocol, AI coordination, PEAC protocol',
+  robots: 'index,follow',
   openGraph: {
     title: 'Solutions : Originary',
     description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',

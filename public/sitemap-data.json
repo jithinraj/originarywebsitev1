@@ -1,472 +1,392 @@
 [
   {
     "url": "https://www.originary.xyz/",
-    "lastModified": "2025-12-06T12:00:00.000Z",
+    "lastModified": "2025-12-04T01:41:29+05:30",
     "priority": 1
   },
   {
     "url": "https://www.originary.xyz/about",
-    "lastModified": "2025-12-03T12:00:00.000Z",
-    "priority": 0.8
+    "lastModified": "2025-12-03T19:56:38+05:30",
+    "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/ai",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-14T20:49:24+05:30",
     "priority": 0.9
   },
   {
     "url": "https://www.originary.xyz/blog",
-    "lastModified": "2025-12-01T09:39:24.000Z",
+    "lastModified": "2025-12-04T01:41:29+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/blog/adding-402-in-15-minutes",
-    "lastModified": "2025-12-01T09:39:24.000Z",
+    "lastModified": "2025-12-01T15:09:24+05:30",
     "priority": 0.6
   },
   {
     "url": "https://www.originary.xyz/blog/ai-bot-detection",
-    "lastModified": "2025-12-01T09:39:24.000Z",
+    "lastModified": "2025-12-01T15:09:24+05:30",
     "priority": 0.6
   },
   {
     "url": "https://www.originary.xyz/blog/aipref-by-ietf",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-11-15T10:28:40+05:30",
     "priority": 0.6
   },
   {
     "url": "https://www.originary.xyz/blog/cloudflare-workers-402",
-    "lastModified": "2025-12-01T09:39:24.000Z",
+    "lastModified": "2025-12-01T15:09:24+05:30",
     "priority": 0.6
   },
   {
     "url": "https://www.originary.xyz/blog/from-detection-to-settlement-ai-paywall-peac-http-402",
-    "lastModified": "2025-12-01T09:39:24.000Z",
+    "lastModified": "2025-12-01T15:09:24+05:30",
     "priority": 0.6
   },
   {
     "url": "https://www.originary.xyz/blog/http-402-for-apis",
-    "lastModified": "2025-12-01T09:39:24.000Z",
+    "lastModified": "2025-12-01T15:09:24+05:30",
     "priority": 0.6
   },
   {
     "url": "https://www.originary.xyz/blog/robots-txt-rfc-9309",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-11-15T10:28:40+05:30",
     "priority": 0.6
   },
   {
     "url": "https://www.originary.xyz/brand",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-14T20:49:24+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/changelog",
-    "lastModified": "2025-10-14T07:07:56.000Z",
+    "lastModified": "2025-12-03T19:56:38+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/checkout/confirmation",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-14T20:49:24+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/checkout/start",
-    "lastModified": "2025-10-28T21:51:12.000Z",
+    "lastModified": "2025-12-03T19:56:38+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/cloud",
-    "lastModified": "2025-11-16T18:58:57.000Z",
+    "lastModified": "2025-12-08T22:58:53+05:30",
     "priority": 0.9
   },
   {
-    "url": "https://www.originary.xyz/company",
-    "lastModified": "2025-11-14T15:19:24.000Z",
-    "priority": 0.7
-  },
-  {
     "url": "https://www.originary.xyz/company/about",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-12-03T16:57:34+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/company/contact",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-11-15T10:28:40+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/contact",
-    "lastModified": "2025-11-12T19:27:23.000Z",
-    "priority": 0.7
-  },
-  {
-    "url": "https://www.originary.xyz/copyright",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-13T00:57:23+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/dashboard",
-    "lastModified": "2025-09-21T12:33:54.000Z",
-    "priority": 0.7
-  },
-  {
-    "url": "https://www.originary.xyz/demo",
-    "lastModified": "2025-10-16T14:07:26.000Z",
+    "lastModified": "2025-09-21T18:03:54+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/declare",
-    "lastModified": "2025-12-01T18:30:00.000Z",
-    "priority": 0.95
+    "lastModified": "2025-12-03T23:27:49+05:30",
+    "priority": 0.7
+  },
+  {
+    "url": "https://www.originary.xyz/demo",
+    "lastModified": "2025-10-16T19:37:26+05:30",
+    "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/developers",
-    "lastModified": "2025-12-06T12:00:00.000Z",
+    "lastModified": "2025-12-08T22:58:53+05:30",
     "priority": 0.9
   },
   {
     "url": "https://www.originary.xyz/docs/a2a/attach-points",
-    "lastModified": "2025-11-14T18:43:14.000Z",
+    "lastModified": "2025-12-03T23:27:49+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/docs/deploy/cloudflare-worker",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-12-03T19:56:38+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/docs/deploy/vercel",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-12-03T19:56:38+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/docs/mcp/receipts",
-    "lastModified": "2025-11-14T18:43:14.000Z",
+    "lastModified": "2025-12-03T23:27:49+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/docs/payments/stripe",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-12-03T19:56:38+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/docs/payments/x402",
-    "lastModified": "2025-11-14T18:43:14.000Z",
+    "lastModified": "2025-12-03T23:27:49+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/docs/receipts",
-    "lastModified": "2025-11-14T18:43:14.000Z",
+    "lastModified": "2025-12-03T23:27:49+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/downloads",
-    "lastModified": "2025-12-03T12:00:00.000Z",
+    "lastModified": "2025-12-03T18:17:16+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/glossary/a2a",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-11-15T10:28:40+05:30",
     "priority": 0.5
   },
   {
     "url": "https://www.originary.xyz/glossary/acp",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-11-15T10:28:40+05:30",
     "priority": 0.5
   },
   {
     "url": "https://www.originary.xyz/glossary/agentic-web",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-11-15T10:28:40+05:30",
     "priority": 0.5
   },
   {
     "url": "https://www.originary.xyz/glossary/aipref",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-11-15T10:28:40+05:30",
     "priority": 0.5
   },
   {
     "url": "https://www.originary.xyz/glossary/http-402-payment-required",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-14T20:49:24+05:30",
     "priority": 0.5
   },
   {
     "url": "https://www.originary.xyz/glossary/mcp",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-11-15T10:28:40+05:30",
     "priority": 0.5
   },
   {
     "url": "https://www.originary.xyz/glossary/peac",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-11-15T10:28:40+05:30",
     "priority": 0.5
   },
   {
     "url": "https://www.originary.xyz/glossary/x402",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-14T20:49:24+05:30",
     "priority": 0.5
   },
   {
     "url": "https://www.originary.xyz/guides/http-402",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-14T20:49:24+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/integrations",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-12-03T16:57:34+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/integrations/a2a",
-    "lastModified": "2025-11-14T17:13:11.000Z",
+    "lastModified": "2025-12-03T23:27:49+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/integrations/acp",
-    "lastModified": "2025-11-16T18:58:57.000Z",
+    "lastModified": "2025-11-17T00:28:57+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/integrations/aipref",
-    "lastModified": "2025-11-16T18:58:57.000Z",
+    "lastModified": "2025-11-17T00:28:57+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/integrations/http-402",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-11-15T10:28:40+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/integrations/mcp",
-    "lastModified": "2025-11-14T17:13:11.000Z",
+    "lastModified": "2025-12-03T23:27:49+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/integrations/x402",
-    "lastModified": "2025-11-16T18:58:57.000Z",
+    "lastModified": "2025-11-17T00:28:57+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/integrations/x402/cloudflare-workers",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-14T20:49:24+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/integrations/x402/express-node",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-14T20:49:24+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/integrations/x402/nextjs",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-14T20:49:24+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/integrations/x402/python-fastapi",
-    "lastModified": "2025-11-14T19:39:59.000Z",
+    "lastModified": "2025-11-15T01:09:59+05:30",
     "priority": 0.7
   },
   {
-    "url": "https://www.originary.xyz/legal/acceptable-use",
-    "lastModified": "2025-11-14T15:19:24.000Z",
-    "priority": 0.5
-  },
-  {
-    "url": "https://www.originary.xyz/legal/dpa",
-    "lastModified": "2025-11-14T15:19:24.000Z",
-    "priority": 0.5
-  },
-  {
-    "url": "https://www.originary.xyz/legal/imprint",
-    "lastModified": "2025-11-14T15:19:24.000Z",
-    "priority": 0.5
-  },
-  {
-    "url": "https://www.originary.xyz/legal/payments",
-    "lastModified": "2025-11-14T15:19:24.000Z",
-    "priority": 0.5
-  },
-  {
-    "url": "https://www.originary.xyz/legal/privacy",
-    "lastModified": "2025-11-14T15:19:24.000Z",
-    "priority": 0.5
-  },
-  {
-    "url": "https://www.originary.xyz/legal/terms",
-    "lastModified": "2025-11-14T12:00:00.000Z",
-    "priority": 0.5
-  },
-  {
     "url": "https://www.originary.xyz/llms.txt",
-    "lastModified": "2025-12-06T12:00:00.000Z",
-    "priority": 0.6
+    "lastModified": "2025-12-12",
+    "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/originary-ai",
-    "lastModified": "2025-11-14T16:23:44.000Z",
+    "lastModified": "2025-11-14T21:53:44+05:30",
     "priority": 0.95
   },
   {
     "url": "https://www.originary.xyz/peac",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-12-03T16:57:34+05:30",
     "priority": 0.95
   },
   {
     "url": "https://www.originary.xyz/press",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-14T20:49:24+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/pricing",
-    "lastModified": "2025-12-03T12:00:00.000Z",
+    "lastModified": "2025-12-08T22:58:53+05:30",
     "priority": 0.9
   },
   {
-    "url": "https://www.originary.xyz/privacy",
-    "lastModified": "2025-11-14T15:19:24.000Z",
-    "priority": 0.7
-  },
-  {
     "url": "https://www.originary.xyz/products",
-    "lastModified": "2025-12-03T12:00:00.000Z",
+    "lastModified": "2025-12-03T18:17:16+05:30",
     "priority": 0.8
   },
   {
     "url": "https://www.originary.xyz/products/adapters",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-12-03T23:27:49+05:30",
     "priority": 0.8
   },
   {
     "url": "https://www.originary.xyz/products/gateway-402",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-11-15T10:28:40+05:30",
     "priority": 0.8
   },
   {
     "url": "https://www.originary.xyz/products/peac",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-11-15T10:28:40+05:30",
     "priority": 0.8
   },
   {
     "url": "https://www.originary.xyz/products/studio",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-12-03T23:27:49+05:30",
     "priority": 0.8
   },
   {
     "url": "https://www.originary.xyz/products/verify",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-12-03T23:27:49+05:30",
     "priority": 0.8
   },
   {
     "url": "https://www.originary.xyz/receipts",
-    "lastModified": "2025-11-14T16:46:52.000Z",
-    "priority": 0.7
-  },
-  {
-    "url": "https://www.originary.xyz/refund",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-12-03T23:27:49+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/resources",
-    "lastModified": "2025-11-14T15:19:24.000Z",
-    "priority": 0.7
-  },
-  {
-    "url": "https://www.originary.xyz/resources/blog",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-12-03T16:57:34+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/resources/case-studies",
-    "lastModified": "2025-11-14T15:19:24.000Z",
-    "priority": 0.7
-  },
-  {
-    "url": "https://www.originary.xyz/resources/changelog",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-14T20:49:24+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/resources/performance-methodology",
-    "lastModified": "2025-11-14T15:19:24.000Z",
-    "priority": 0.7
-  },
-  {
-    "url": "https://www.originary.xyz/security",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-14T20:49:24+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/services",
-    "lastModified": "2025-10-14T07:07:56.000Z",
-    "priority": 0.7
-  },
-  {
-    "url": "https://www.originary.xyz/shipping",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-10-14T12:37:56+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/signin",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-11-15T10:28:40+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/solutions",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-14T20:49:24+05:30",
     "priority": 0.8
   },
   {
     "url": "https://www.originary.xyz/solutions/ai-builders",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-12-03T23:27:49+05:30",
     "priority": 0.8
   },
   {
     "url": "https://www.originary.xyz/solutions/api-providers",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-12-03T23:27:49+05:30",
     "priority": 0.8
   },
   {
     "url": "https://www.originary.xyz/solutions/enterprises",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-12-03T23:27:49+05:30",
     "priority": 0.8
   },
   {
     "url": "https://www.originary.xyz/solutions/publishers",
-    "lastModified": "2025-11-15T04:58:40.000Z",
+    "lastModified": "2025-12-03T23:27:49+05:30",
     "priority": 0.8
   },
   {
     "url": "https://www.originary.xyz/status",
-    "lastModified": "2025-10-22T18:56:21.000Z",
-    "priority": 0.7
-  },
-  {
-    "url": "https://www.originary.xyz/terms",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-12-02T04:52:42+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/trace",
-    "lastModified": "2025-12-03T12:00:00.000Z",
+    "lastModified": "2025-12-03T18:17:16+05:30",
     "priority": 0.95
   },
   {
     "url": "https://www.originary.xyz/trace/demo",
-    "lastModified": "2025-11-11T06:10:11.000Z",
-    "priority": 0.7
-  },
-  {
-    "url": "https://www.originary.xyz/trademark",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-12-08T22:58:53+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/trust",
-    "lastModified": "2025-11-14T15:19:24.000Z",
+    "lastModified": "2025-11-14T20:49:24+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/verify",
-    "lastModified": "2025-10-22T18:56:21.000Z",
+    "lastModified": "2025-12-03T19:56:38+05:30",
     "priority": 0.7
   }
 ]

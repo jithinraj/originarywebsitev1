@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'About',
   description: 'We build receipts and policy infrastructure for the agentic web, across Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance.',
+  robots: 'index,follow',
   alternates: {
     canonical: '/about'
   },

@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Originary Cloud | Private Beta',
+  title: {
+    absolute: 'Originary Cloud | Private Beta'
+  },
   description: 'Managed PEAC verification, attested receipts, compliance bundles, and analytics. Apply for early access.',
   keywords: 'Originary Cloud, PEAC receipts, managed hosting, compliance automation, attested receipts',
   alternates: {

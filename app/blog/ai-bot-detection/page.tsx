@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { FileText, ArrowRight, Eye, ShieldCheck, Database, Fingerprint, List, CheckCircle2, AlertTriangle, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence · Originary",
+  title: "AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence",
   description: "AI bot detection is more than classifiers. Learn how metadata, fingerprints and PEAC receipts turn AI traffic into verifiable, enforceable evidence.",
   keywords: "AI bot detection, AI traffic, metadata, model fingerprints, PEAC receipts, agent detection, AI crawlers, verifiable evidence",
   authors: [{ name: "Jithin Raj & Originary Team" }],

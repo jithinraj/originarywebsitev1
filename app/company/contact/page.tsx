@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ArrowRight, Mail, Phone, MessageCircle, Users, Headphones, Building, Clock, Globe, CheckCircle, Zap, Shield } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Contact : Originary',
+  title: 'Contact',
   description: 'Get in touch with the Originary team. Sales, support, partnerships, and general inquiries welcome.',
   keywords: 'contact Originary, sales, support, partnerships, customer service',
   authors: [{ name: 'Originary' }],

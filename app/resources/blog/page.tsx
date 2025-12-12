@@ -2,10 +2,10 @@ import { Metadata } from 'next'
 import StaticPageLayout from '@/components/StaticPageLayout'
 
 export const metadata: Metadata = {
-  title: 'Blog : Originary',
+  title: 'Blog',
   description: 'Insights, updates, and thought leadership on the agentic web, PEAC protocol, and autonomous agent coordination.',
   keywords: 'agentic web blog, PEAC protocol insights, autonomous agents, tech updates',
-  robots: 'index,follow',
+  robots: 'noindex,follow',
   alternates: {
     canonical: '/resources/blog',
   },

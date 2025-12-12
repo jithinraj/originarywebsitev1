@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { CheckCircle, Download, FileText, LayoutDashboard } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Order Confirmation : Originary',
+  title: 'Order Confirmation',
   description: 'Your order has been confirmed. Thank you for your purchase.',
   robots: 'noindex,nofollow',
   alternates: {

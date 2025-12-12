@@ -4,9 +4,9 @@ import Footer from '@/components/Footer'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service : Originary',
+  title: 'Terms of Service',
   description: 'Originary terms of service governing your use of our platform and services.',
-  robots: 'index,follow',
+  robots: 'noindex,follow',
   alternates: {
     canonical: '/legal/terms',
   },

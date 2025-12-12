@@ -24,15 +24,15 @@ export default function ServiceOffers() {
         <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
           <ServiceCard
             icon={<CheckCircle size={32} style={{ color: 'var(--brand-primary)' }} />}
-            title="Implement Receipts"
-            description="Publishers and APIs that need verifiable access and usage proof."
+            title="Pay per AI agent transaction"
+            description="Publishers and APIs that need verifiable access and usage proof and want to gate high value traffic with HTTP 402."
             deliverables={[
               'Authored /.well-known/peac.txt',
-              'x402 hookup (primary) with optional adapters (Stripe/USDC/on-chain)',
+              'x402 hookup (primary) with optional adapters (i402, Stripe, Razorpay, USDC, on chain)',
               'Edge verification middleware (Cloudflare/Vercel)',
               'Staging receipt samples and a go-live checklist'
             ]}
-            outcome="Compliant calls carry a verifiable Receipt; non-compliant calls can be blocked or flagged."
+            outcome="Compliant calls carry a verifiable PEAC receipt. Non compliant calls can be blocked, flagged, or priced differently."
             ctaText="Contact Sales"
             ctaLink="/company/contact"
             secondaryText="Email Sales"
@@ -41,11 +41,11 @@ export default function ServiceOffers() {
 
           <ServiceCard
             icon={<Zap size={32} style={{ color: 'var(--brand-secondary)' }} />}
-            title="Managed Adapters"
+            title="Managed 402 rails"
             description="Teams that want multi-rail payments without running the plumbing."
             deliverables={[
-              'Deployment and monitoring for x402',
-              'Adapters for Stripe/USDC/on-chain',
+              'Deployment and monitoring for x402 and i402',
+              'Adapters for Stripe, Razorpay, USDC, and on chain settlement',
               'Key/JWKS rotation',
               'Alerts and dashboards'
             ]}
@@ -66,7 +66,7 @@ export default function ServiceOffers() {
               'Conformance test run',
               'Remediation plan and executive read-out'
             ]}
-            outcome="Evidence-ready receipts aligned to your documented policy."
+            outcome="Evidence ready receipts aligned to your documented policy and mapped to AI transparency obligations such as the EU AI Act."
             ctaText="Talk to an Expert"
             ctaLink="/company/contact"
             secondaryText="Email Sales"

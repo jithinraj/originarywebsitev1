@@ -5,9 +5,9 @@ import Link from 'next/link'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Trademark & Brand Use : Originary',
+  title: 'Trademark & Brand Use',
   description: 'Originary trademark guidelines and brand use policy for proper usage of our marks.',
-  robots: 'index,follow',
+  robots: 'noindex,follow',
   alternates: {
     canonical: '/trademark',
   },
