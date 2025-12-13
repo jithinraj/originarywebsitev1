@@ -2,713 +2,1386 @@
 
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
+import { Check, Copy, Play, Pause, SkipForward, RotateCcw, ChevronLeft, ChevronRight, Download, ExternalLink } from 'lucide-react'
 
-export default function DemoPage() {
-  // Process flowchart state
-  const [procIdx, setProcIdx] = useState(0)
-  const [isProcessAutoPlaying, setIsProcessAutoPlaying] = useState(true)
+// ============================================================================
+// CONSTANTS & DATA
+// ============================================================================
 
-  // Demo timeline state
-  const [demoIdx, setDemoIdx] = useState(0)
-  const [isDemoAutoPlaying, setIsDemoAutoPlaying] = useState(true)
-  const [receiptText, setReceiptText] = useState('')
-  const [isTyping, setIsTyping] = useState(false)
+const PEAC_TXT_CONTENT = `preferences: https://www.originary.xyz/.well-known/aipref.json
+access_control: http-402
+payments: [l402, x402, stripe]
+provenance: c2pa
+receipts: required
+verify: https://www.originary.xyz/.well-known/jwks.json
+verify_api: https://api.originary.xyz/verify
+public_keys: https://www.originary.xyz/.well-known/jwks.json
+contact: contact@originary.xyz
+updated_at: 2025-12-13T12:00:00+05:30`
 
-  const procTimerRef = useRef<NodeJS.Timeout | null>(null)
-  const demoTimerRef = useRef<NodeJS.Timeout | null>(null)
-  const typeTimerRef = useRef<NodeJS.Timeout | null>(null)
+const HTTP_EXCHANGES = [
+  {
+    title: 'Step 1: Discovery',
+    request: `GET /.well-known/peac.txt HTTP/1.1
+Host: originary.xyz`,
+    response: `HTTP/1.1 200 OK
+Content-Type: text/plain
 
-  const PROCESS = useMemo(() => [
-    { key: 'first', title: 'Agent request', sub: 'Autonomous agent needs your API or content' },
-    { key: 'discover', title: 'Policy discovery', sub: 'Agent reads peac.txt via Originary' },
-    { key: 'prefs', title: 'Terms evaluation', sub: 'Originary evaluates peac.txt and aipref.json' },
-    { key: 'evaluate', title: 'Decision engine', sub: 'Originary determines: allow, deny, or payment required' },
-    { key: 'settle', title: 'Payment gateway', sub: 'Originary Gateway (402) handles settlement' },
-    { key: 'access', title: 'Resource access', sub: 'Agent accesses your resource with authorization' },
-    { key: 'receipt', title: 'PEAC receipt', sub: 'Cryptographically signed proof of transaction' },
-    { key: 'verify', title: 'Receipt verification', sub: 'Originary Verify API validates authenticity' }
-  ], [])
+${PEAC_TXT_CONTENT}`
+  },
+  {
+    title: 'Step 2: 402 Challenge',
+    request: `GET /demo/paid-resource HTTP/1.1
+Host: originary.xyz
+User-Agent: ExampleAgent/1.0`,
+    response: `HTTP/1.1 402 Payment Required
+Content-Type: application/problem+json
+PAYMENT-REQUIRED: <base64url payment requirements>
 
-  const STEPS = useMemo(() => [
-    { key: 'discover', title: 'Policy discovery', subtitle: 'Agent fetches peac.txt via Originary' },
-    { key: 'prefs', title: 'Terms check', subtitle: 'Originary evaluates peac.txt and aipref.json' },
-    { key: 'evaluate', title: 'Policy engine', subtitle: 'Originary decides: allow, deny, or payment' },
-    { key: 'settle', title: 'Payment flow', subtitle: 'Originary Gateway (402) processes payment' },
-    { key: 'receipt', title: 'Generate proof', subtitle: 'Signed PEAC receipt (JWS)' },
-    { key: 'verify', title: 'Verify receipt', subtitle: 'Originary Verify API confirms authenticity' },
-  ], [])
+{
+  "type": "https://peacprotocol.org/problems/payment-required",
+  "title": "Payment required",
+  "status": 402
+}`
+  },
+  {
+    title: 'Step 3: Paid Retry + Receipt',
+    request: `GET /demo/paid-resource HTTP/1.1
+Host: originary.xyz
+User-Agent: ExampleAgent/1.0
+PAYMENT-SIGNATURE: <signed payment payload>`,
+    response: `HTTP/1.1 200 OK
+Content-Type: application/json
+PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6...
 
-  const SAMPLE_RECEIPT = useMemo(() => ({
-    peac: '1.0',
-    receipt_id: 'urn:originary:receipt:01HV7F2Z0QX0K6D3N6W8',
-    issued_at: '2025-10-06T08:15:00Z',
-    issuer: {
-      name: 'Originary',
-      domain: 'originary.xyz',
-      kid: 'originary-ed25519-2025',
-      alg: 'EdDSA'
-    },
-    resource: {
-      url: 'https://yoursite.com/api/content',
-      fingerprint: { sha256: 'a4f3...2e91' }
-    },
-    action: {
-      type: 'api_access',
-      policy_evaluation: {
-        result: 'ALLOW',
-        explanation: 'Payment confirmed via Originary Gateway (402)'
-      },
-    },
-    aipref_snapshot: {
-      url: 'https://yoursite.com/.well-known/aipref.json',
-      etag: 'W/"aipref-7d3a"',
-      managed_by: 'Originary'
-    },
-    settlement: {
-      gateway: 'Originary Gateway (402)',
-      normalized: 'http-402',
-      payment_id: 'pay_orig_2025_xyz123',
-      amount: { value: 0.05, currency: 'USD' }
-    },
-    verify: {
-      url: 'https://api.originary.xyz/verify',
-      provider: 'Originary Verify API',
-      pubkeys: [{ kid: 'originary-ed25519-2025', alg: 'EdDSA' }]
-    },
-  }), [])
-
-  const highlightMap: Record<string, string[]> = {
-    prefs: ['prefs'],
-    discover: ['access_control'],
-    settle: ['access_control', 'payments'],
-    receipt: ['provenance', 'receipts'],
-    verify: ['receipts', 'public_keys']
+{"status":"success","data":{...}}`
   }
+]
 
-  // Typewriter effect
-  const typeText = (text: string) => {
-    if (typeTimerRef.current) clearInterval(typeTimerRef.current)
-    setReceiptText('')
-    setIsTyping(true)
-    let i = 0
-    const step = Math.max(1, Math.floor(text.length / 200))
-    typeTimerRef.current = setInterval(() => {
-      i += step
-      setReceiptText(text.slice(0, i))
-      if (i >= text.length) {
-        if (typeTimerRef.current) clearInterval(typeTimerRef.current)
-        setIsTyping(false)
-      }
-    }, 8)
+const TRACE_STEPS = [
+  { key: 'request', title: 'Agent request', desc: 'Autonomous agent needs your API or content' },
+  { key: 'discover', title: 'Policy discovery', desc: 'Agent fetches peac.txt and learns discovery URLs' },
+  { key: 'prefs', title: 'Preferences check', desc: 'Agent fetches aipref.json (or uses cached snapshot)' },
+  { key: 'evaluate', title: 'Policy evaluation', desc: 'Server decides: allow, deny, or require payment (402)' },
+  { key: 'challenge', title: '402 challenge', desc: 'Server returns 402 with PAYMENT-REQUIRED instructions' },
+  { key: 'payment', title: 'Payment adapter', desc: 'Client retries using a supported adapter (x402/l402/stripe)' },
+  { key: 'access', title: 'Resource access', desc: 'Server returns resource when requirements are satisfied' },
+  { key: 'receipt', title: 'PEAC-Receipt', desc: 'Server attaches signed PEAC-Receipt (JWS) to response' },
+]
+
+const DECODED_RECEIPT = {
+  typ: 'peac.receipt/0.9',
+  iss: 'https://www.originary.xyz',
+  sub: 'https://www.originary.xyz/demo/paid-resource',
+  iat: 1734084000,
+  policy_hash: 'sha256-9f3c8a2b1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a',
+  aipref: {
+    url: 'https://www.originary.xyz/.well-known/aipref.json',
+    retrieved_at: 1734084000,
+    hash: 'sha256-a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2'
+  },
+  payment: {
+    rail: 'x402',
+    currency: 'USD',
+    amount: 5,
+    idempotency_key: 'idem_7f92ab31c4d5e6f7',
+    evidence: {
+      reference: 'x402_pay_2025_abc123'
+    }
   }
+}
 
-  // Process flowchart auto-advance
-  useEffect(() => {
-    if (!isProcessAutoPlaying) return
-    procTimerRef.current = setInterval(() => {
-      setProcIdx(prev => (prev + 1) % PROCESS.length)
-    }, 1400)
-    return () => {
-      if (procTimerRef.current) clearInterval(procTimerRef.current)
-    }
-  }, [isProcessAutoPlaying, PROCESS.length])
+const DISPUTE_PACKET_PREVIEW = `{"ts":"2025-12-13T12:00:00Z","request_hash":"sha256-...","policy_hash":"sha256-...","aipref_hash":"sha256-...","receipt_jws":"eyJhbGci...","payment_reference":"x402_pay_..."}
+{"ts":"2025-12-13T12:01:00Z","request_hash":"sha256-...","policy_hash":"sha256-...","aipref_hash":"sha256-...","receipt_jws":"eyJhbGci...","payment_reference":"x402_pay_..."}
+{"ts":"2025-12-13T12:02:00Z","request_hash":"sha256-...","policy_hash":"sha256-...","aipref_hash":"sha256-...","receipt_jws":"eyJhbGci...","payment_reference":"x402_pay_..."}`
 
-  // Demo timeline auto-advance
-  useEffect(() => {
-    if (!isDemoAutoPlaying) return
-    demoTimerRef.current = setInterval(() => {
-      setDemoIdx(prev => {
-        const next = (prev + 1) % STEPS.length
-        return next
-      })
-    }, 1600)
-    return () => {
-      if (demoTimerRef.current) clearInterval(demoTimerRef.current)
-    }
-  }, [isDemoAutoPlaying, STEPS.length])
+// ============================================================================
+// UTILITY HOOKS
+// ============================================================================
 
-  // Handle demo step changes
+function useReducedMotion() {
+  const [reducedMotion, setReducedMotion] = useState(false)
   useEffect(() => {
-    const currentStep = STEPS[demoIdx]
-    if (currentStep.key === 'receipt') {
-      typeText(JSON.stringify(SAMPLE_RECEIPT, null, 2))
-    } else if (currentStep.key === 'verify') {
-      if (typeTimerRef.current) clearInterval(typeTimerRef.current)
-      setReceiptText(JSON.stringify(SAMPLE_RECEIPT, null, 2))
-      setIsTyping(false)
-    } else {
-      setReceiptText('')
-    }
-  }, [demoIdx, STEPS, SAMPLE_RECEIPT])
-
-  // Respect reduced motion
-  useEffect(() => {
-    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
-    if (media.matches) {
-      setIsProcessAutoPlaying(false)
-      setIsDemoAutoPlaying(false)
-    }
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    setReducedMotion(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
   }, [])
+  return reducedMotion
+}
 
-  const CircularFlowchart = () => {
-    const R = 180
-    const cx = 210
-    const cy = 210
+function useCopyToClipboard() {
+  const [copied, setCopied] = useState(false)
+  const copy = useCallback((text: string) => {
+    navigator.clipboard.writeText(text)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }, [])
+  return { copied, copy }
+}
 
-    return (
-      <div style={{ position: 'relative', width: '420px', height: '420px', margin: '0 auto' }}>
-        {/* Circle border */}
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          borderRadius: '50%',
-          border: '1px solid var(--gray-200)',
-          background: 'radial-gradient(circle at center, var(--gray-50) 0%, var(--white) 70%)',
-        }} />
+// ============================================================================
+// ANIMATION COMPONENTS
+// ============================================================================
+
+function AnimatedGrid() {
+  return (
+    <div className="animated-grid" aria-hidden="true">
+      <div className="grid-layer grid-small" />
+      <div className="grid-layer grid-large" />
+      <style jsx>{`
+        .animated-grid {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          pointer-events: none;
+          z-index: 0;
+        }
+        .grid-layer {
+          position: absolute;
+          inset: -50px;
+          background-repeat: repeat;
+          opacity: 0.03;
+        }
+        .grid-small {
+          background-image:
+            linear-gradient(to right, var(--gray-400) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--gray-400) 1px, transparent 1px);
+          background-size: 24px 24px;
+          animation: gridDrift 18s linear infinite;
+        }
+        .grid-large {
+          background-image:
+            linear-gradient(to right, var(--gray-500) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--gray-500) 1px, transparent 1px);
+          background-size: 96px 96px;
+          animation: gridDrift 24s linear infinite reverse;
+          opacity: 0.02;
+        }
+        @keyframes gridDrift {
+          0% { transform: translate(0, 0); }
+          100% { transform: translate(12px, 12px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .grid-layer { animation: none; }
+        }
+      `}</style>
+    </div>
+  )
+}
+
+// SVG Circular Flowchart with animations
+function CircularFlowchart({
+  activeStep,
+  onStepClick,
+  isPlaying,
+  onPlayPause,
+  onRestart,
+  onPrev,
+  onNext
+}: {
+  activeStep: number
+  onStepClick: (idx: number) => void
+  isPlaying: boolean
+  onPlayPause: () => void
+  onRestart: () => void
+  onPrev: () => void
+  onNext: () => void
+}) {
+  const reducedMotion = useReducedMotion()
+  const steps = TRACE_STEPS
+  const nodeCount = steps.length
+  const cx = 200, cy = 200, r = 140
+
+  // Calculate node positions
+  const nodes = useMemo(() => {
+    return steps.map((step, i) => {
+      const angle = (-90 + (360 / nodeCount) * i) * (Math.PI / 180)
+      return {
+        ...step,
+        x: cx + r * Math.cos(angle),
+        y: cy + r * Math.sin(angle),
+        angle
+      }
+    })
+  }, [nodeCount])
+
+  // Generate edge paths
+  const edges = useMemo(() => {
+    return nodes.map((node, i) => {
+      const next = nodes[(i + 1) % nodeCount]
+      const midX = (node.x + next.x) / 2
+      const midY = (node.y + next.y) / 2
+      const dx = next.x - node.x
+      const dy = next.y - node.y
+      const dist = Math.sqrt(dx * dx + dy * dy)
+      const cpX = midX + (cx - midX) * 0.3
+      const cpY = midY + (cy - midY) * 0.3
+      return {
+        path: `M ${node.x} ${node.y} Q ${cpX} ${cpY} ${next.x} ${next.y}`,
+        length: dist * 1.2
+      }
+    })
+  }, [nodes, nodeCount])
+
+  return (
+    <div className="flowchart-container">
+      <svg viewBox="0 0 400 400" className="flowchart-svg">
+        <defs>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          <linearGradient id="edgeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="var(--brand-primary)" />
+            <stop offset="100%" stopColor="var(--brand-secondary)" />
+          </linearGradient>
+        </defs>
+
+        {/* Background circle */}
+        <circle cx={cx} cy={cy} r={r + 20} fill="none" stroke="var(--gray-200)" strokeWidth="1" strokeDasharray="4 4" />
+
+        {/* Edge paths */}
+        {edges.map((edge, i) => {
+          const isActive = i === activeStep
+          const isPast = i < activeStep
+          return (
+            <g key={`edge-${i}`}>
+              <path d={edge.path} fill="none" stroke="var(--gray-200)" strokeWidth="2" />
+              {(isActive || isPast) && (
+                <path
+                  d={edge.path}
+                  fill="none"
+                  stroke="url(#edgeGradient)"
+                  strokeWidth="2.5"
+                  filter={isActive ? "url(#glow)" : undefined}
+                  className={`edge-path ${isActive && !reducedMotion ? 'edge-active' : ''}`}
+                  style={{
+                    strokeDasharray: edge.length,
+                    strokeDashoffset: isActive && !reducedMotion ? edge.length : 0,
+                    '--edge-length': `${edge.length}px`
+                  } as React.CSSProperties}
+                />
+              )}
+            </g>
+          )
+        })}
 
         {/* Nodes */}
-        {PROCESS.map((step, i) => {
-          const angle = (-90 + (360 / PROCESS.length) * i) * (Math.PI / 180)
-          const x = cx + R * Math.cos(angle)
-          const y = cy + R * Math.sin(angle)
-          const isActive = i === procIdx
-
+        {nodes.map((node, i) => {
+          const isActive = i === activeStep
+          const isPast = i < activeStep
           return (
-            <div key={step.key}>
-              {/* Node dot */}
-              <div
-                onClick={() => {
-                  setProcIdx(i)
-                  setIsProcessAutoPlaying(false)
-                }}
-                style={{
-                  position: 'absolute',
-                  left: x + 'px',
-                  top: y + 'px',
-                  width: '18px',
-                  height: '18px',
-                  borderRadius: '50%',
-                  background: isActive ? 'var(--brand-secondary)' : 'var(--gray-300)',
-                  border: isActive ? '2px solid var(--brand-secondary)' : '1px solid var(--gray-400)',
-                  transform: 'translate(-50%, -50%)',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  boxShadow: isActive ? '0 0 0 8px rgba(0, 212, 170, 0.15)' : 'none',
-                  zIndex: isActive ? 2 : 1
-                }}
+            <g key={node.key} className="node-group" onClick={() => onStepClick(i)} style={{ cursor: 'pointer' }}>
+              {/* Pulse rings - using transform scale instead of r animation */}
+              {isActive && !reducedMotion && (
+                <>
+                  <circle cx={node.x} cy={node.y} r="14" className="pulse-ring pulse-ring-1" />
+                  <circle cx={node.x} cy={node.y} r="14" className="pulse-ring pulse-ring-2" />
+                </>
+              )}
+              {/* Node circle */}
+              <circle
+                cx={node.x}
+                cy={node.y}
+                r="16"
+                fill={isActive ? 'var(--brand-primary)' : isPast ? 'var(--brand-secondary)' : 'var(--gray-100)'}
+                stroke={isActive ? 'var(--brand-primary)' : isPast ? 'var(--brand-secondary)' : 'var(--gray-300)'}
+                strokeWidth="2"
+                className="node-circle"
+                filter={isActive ? "url(#glow)" : undefined}
               />
+              {/* Node number */}
+              <text
+                x={node.x}
+                y={node.y}
+                textAnchor="middle"
+                dominantBaseline="central"
+                fill={isActive || isPast ? 'white' : 'var(--gray-500)'}
+                fontSize="11"
+                fontWeight="600"
+                style={{ pointerEvents: 'none', fontFamily: 'var(--font-mono)' }}
+              >
+                {i + 1}
+              </text>
+            </g>
+          )
+        })}
+      </svg>
 
-              {/* Node label */}
-              <div style={{
-                position: 'absolute',
-                left: x + 'px',
-                top: y + 'px',
-                transform: 'translate(-50%, 24px)',
-                width: '140px',
-                textAlign: 'center',
-                fontSize: 'var(--text-xs)',
-                color: isActive ? 'var(--brand-secondary)' : 'var(--gray-600)',
-                fontWeight: isActive ? 600 : 400,
-                pointerEvents: 'none',
-                transition: 'all 0.3s ease'
-              }}>
-                {step.title}
+      {/* Center info card */}
+      <div className="center-card">
+        <div className="step-badge">{activeStep + 1} / {steps.length}</div>
+        <h4 className="step-title">{steps[activeStep].title}</h4>
+        <p className="step-desc">{steps[activeStep].desc}</p>
+
+        {/* Controls */}
+        <div className="controls">
+          <button type="button" onClick={onPrev} className="ctrl-btn" aria-label="Previous step">
+            <ChevronLeft size={16} />
+          </button>
+          <button type="button" onClick={onPlayPause} className="ctrl-btn ctrl-primary" aria-label={isPlaying ? 'Pause' : 'Play'}>
+            {isPlaying ? <Pause size={16} /> : <Play size={16} />}
+          </button>
+          <button type="button" onClick={onNext} className="ctrl-btn" aria-label="Next step">
+            <ChevronRight size={16} />
+          </button>
+          <button type="button" onClick={onRestart} className="ctrl-btn" aria-label="Restart">
+            <RotateCcw size={14} />
+          </button>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .flowchart-container {
+          position: relative;
+          width: 100%;
+          max-width: 420px;
+          margin: 0 auto;
+          aspect-ratio: 1;
+        }
+        .flowchart-svg {
+          width: 100%;
+          height: 100%;
+        }
+        .node-circle {
+          transition: all 0.2s ease;
+        }
+        .node-group:hover .node-circle {
+          filter: url(#glow);
+        }
+        .edge-path {
+          transition: stroke-dashoffset 0.9s ease-out;
+        }
+        .edge-active {
+          animation: edgeReveal 0.9s ease-out forwards;
+        }
+        @keyframes edgeReveal {
+          from { stroke-dashoffset: var(--edge-length); }
+          to { stroke-dashoffset: 0; }
+        }
+        .pulse-ring {
+          fill: none;
+          stroke: var(--brand-primary);
+          stroke-width: 2;
+          transform-origin: center;
+          opacity: 0;
+        }
+        .pulse-ring-1 {
+          animation: pulseRing 1.4s ease-out infinite;
+        }
+        .pulse-ring-2 {
+          animation: pulseRing 1.4s ease-out 0.3s infinite;
+        }
+        @keyframes pulseRing {
+          0% { transform: scale(1); opacity: 0.5; }
+          100% { transform: scale(2); opacity: 0; }
+        }
+        .center-card {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: clamp(140px, 45%, 180px);
+          padding: var(--space-3);
+          background: var(--white);
+          border: 1px solid var(--gray-200);
+          border-radius: var(--radius-xl);
+          box-shadow: var(--shadow-lg);
+          text-align: center;
+        }
+        .step-badge {
+          font-family: var(--font-mono);
+          font-size: 9px;
+          color: var(--gray-500);
+          margin-bottom: var(--space-1);
+          letter-spacing: 0.05em;
+        }
+        .step-title {
+          font-size: clamp(11px, 2.5vw, 14px);
+          font-weight: 600;
+          color: var(--gray-900);
+          margin-bottom: var(--space-1);
+          line-height: 1.2;
+        }
+        .step-desc {
+          font-size: clamp(9px, 2vw, 11px);
+          color: var(--gray-600);
+          line-height: 1.3;
+          margin-bottom: var(--space-2);
+        }
+        .controls {
+          display: flex;
+          justify-content: center;
+          gap: var(--space-1);
+        }
+        .ctrl-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 28px;
+          height: 28px;
+          border: 1px solid var(--gray-200);
+          border-radius: var(--radius-md);
+          background: var(--white);
+          color: var(--gray-600);
+          cursor: pointer;
+          transition: all 0.12s ease;
+        }
+        .ctrl-btn:hover {
+          background: var(--gray-50);
+          border-color: var(--gray-300);
+          color: var(--gray-900);
+        }
+        .ctrl-btn:active {
+          transform: scale(0.96);
+        }
+        .ctrl-primary {
+          background: var(--brand-primary);
+          border-color: var(--brand-primary);
+          color: white;
+        }
+        .ctrl-primary:hover {
+          background: var(--brand-primary);
+          opacity: 0.9;
+          border-color: var(--brand-primary);
+          color: white;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .edge-path, .pulse-ring, .node-circle {
+            animation: none !important;
+            transition: none !important;
+          }
+          .edge-active {
+            stroke-dashoffset: 0 !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .flowchart-container {
+            max-width: 320px;
+          }
+          .center-card {
+            width: 120px;
+            padding: var(--space-2);
+          }
+          .ctrl-btn {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      `}</style>
+    </div>
+  )
+}
+
+// Code block with line-by-line reveal - fixed to not restart on every render
+function AnimatedCodeBlock({
+  code,
+  reveal = false,
+  revealSpeed = 100,
+  label,
+  codeKey
+}: {
+  code: string
+  reveal?: boolean
+  revealSpeed?: number
+  label?: string
+  codeKey?: string
+}) {
+  const reducedMotion = useReducedMotion()
+  const { copied, copy } = useCopyToClipboard()
+  const lines = useMemo(() => code.split('\n'), [code])
+  const [visibleLines, setVisibleLines] = useState(lines.length)
+  const animationRef = useRef<NodeJS.Timeout | null>(null)
+
+  useEffect(() => {
+    if (animationRef.current) {
+      clearInterval(animationRef.current)
+    }
+
+    if (reducedMotion || !reveal) {
+      setVisibleLines(lines.length)
+      return
+    }
+
+    setVisibleLines(0)
+    let i = 0
+    animationRef.current = setInterval(() => {
+      i++
+      setVisibleLines(i)
+      if (i >= lines.length) {
+        if (animationRef.current) clearInterval(animationRef.current)
+      }
+    }, revealSpeed)
+
+    return () => {
+      if (animationRef.current) clearInterval(animationRef.current)
+    }
+  }, [codeKey, lines.length, reveal, revealSpeed, reducedMotion])
+
+  // Simple syntax highlighting
+  const highlightLine = (line: string, idx: number) => {
+    if (/^(GET|POST|PUT|DELETE|PATCH|HTTP\/\d)/i.test(line)) {
+      return <span key={idx} className="hl-method">{line}</span>
+    }
+    if (/^[A-Za-z-]+:/.test(line)) {
+      const colonIdx = line.indexOf(':')
+      return (
+        <span key={idx}>
+          <span className="hl-key">{line.slice(0, colonIdx + 1)}</span>
+          {line.slice(colonIdx + 1)}
+        </span>
+      )
+    }
+    if (line.includes('"') && line.includes(':')) {
+      const parts = line.split(/(".*?":)/g)
+      return (
+        <span key={idx}>
+          {parts.map((part, j) =>
+            /".*?":/.test(part) ? <span key={j} className="hl-key">{part}</span> : part
+          )}
+        </span>
+      )
+    }
+    return line
+  }
+
+  return (
+    <div className="code-block">
+      {label && <div className="code-label">{label}</div>}
+      <div className="code-header">
+        <div className="code-dots">
+          <span className="dot dot-red" />
+          <span className="dot dot-yellow" />
+          <span className="dot dot-green" />
+        </div>
+        <button type="button" className="copy-btn" onClick={() => copy(code)} aria-label="Copy code">
+          {copied ? <Check size={14} /> : <Copy size={14} />}
+          <span>{copied ? 'Copied' : 'Copy'}</span>
+        </button>
+      </div>
+      <pre className="code-body">
+        <code>
+          {lines.slice(0, visibleLines).map((line, i) => (
+            <div key={i} className="code-line">
+              {highlightLine(line, i)}
+            </div>
+          ))}
+          {visibleLines < lines.length && !reducedMotion && (
+            <span className="cursor">|</span>
+          )}
+        </code>
+      </pre>
+      <style jsx>{`
+        .code-block {
+          background: #0d0d0d;
+          border: 1px solid rgba(255,255,255,0.1);
+          border-radius: var(--radius-xl);
+          overflow: hidden;
+        }
+        .code-label {
+          padding: var(--space-2) var(--space-4);
+          background: rgba(99, 91, 255, 0.15);
+          border-bottom: 1px solid rgba(255,255,255,0.1);
+          font-size: 10px;
+          font-weight: 700;
+          color: var(--brand-primary);
+          font-family: var(--font-mono);
+          letter-spacing: 0.08em;
+        }
+        .code-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: var(--space-2) var(--space-3);
+          background: rgba(255,255,255,0.03);
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .code-dots {
+          display: flex;
+          gap: 5px;
+        }
+        .dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+        }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+        .copy-btn {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          padding: 3px 8px;
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.1);
+          border-radius: var(--radius-sm);
+          color: var(--gray-400);
+          font-size: 10px;
+          cursor: pointer;
+          transition: all 0.15s ease;
+        }
+        .copy-btn:hover {
+          background: rgba(255,255,255,0.1);
+          color: white;
+        }
+        .copy-btn:active {
+          transform: scale(0.96);
+        }
+        .code-body {
+          padding: var(--space-3);
+          margin: 0;
+          overflow-x: auto;
+          font-family: var(--font-mono);
+          font-size: 11px;
+          line-height: 1.5;
+          color: #e4e4e7;
+          min-height: 60px;
+        }
+        .code-line {
+          min-height: 1.5em;
+          white-space: pre;
+        }
+        .code-body :global(.hl-method) {
+          color: #4ade80;
+          font-weight: 600;
+        }
+        .code-body :global(.hl-key) {
+          color: #a78bfa;
+        }
+        .cursor {
+          animation: blink 1s step-end infinite;
+          color: var(--brand-primary);
+        }
+        @keyframes blink {
+          50% { opacity: 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .cursor { animation: none; opacity: 1; }
+        }
+        @media (max-width: 480px) {
+          .code-body {
+            font-size: 10px;
+            padding: var(--space-2);
+          }
+        }
+      `}</style>
+    </div>
+  )
+}
+
+// Receipt typewriter with syntax highlighting
+function ReceiptTypewriter({
+  isActive
+}: {
+  isActive: boolean
+}) {
+  const reducedMotion = useReducedMotion()
+  const [text, setText] = useState('')
+  const [isVerified, setIsVerified] = useState(false)
+  const fullText = JSON.stringify(DECODED_RECEIPT, null, 2)
+  const charSpeed = 25
+  const intervalMs = 1000 / charSpeed
+  const animationRef = useRef<NodeJS.Timeout | null>(null)
+
+  useEffect(() => {
+    if (animationRef.current) {
+      clearInterval(animationRef.current)
+    }
+
+    if (!isActive) {
+      setText('')
+      setIsVerified(false)
+      return
+    }
+
+    if (reducedMotion) {
+      setText(fullText)
+      setTimeout(() => setIsVerified(true), 300)
+      return
+    }
+
+    let i = 0
+    animationRef.current = setInterval(() => {
+      i++
+      setText(fullText.slice(0, i))
+      if (i >= fullText.length) {
+        if (animationRef.current) clearInterval(animationRef.current)
+        setTimeout(() => setIsVerified(true), 200)
+      }
+    }, intervalMs)
+
+    return () => {
+      if (animationRef.current) clearInterval(animationRef.current)
+    }
+  }, [isActive, fullText, intervalMs, reducedMotion])
+
+  // Syntax highlight JSON
+  const highlightJSON = (json: string) => {
+    return json
+      .replace(/"([^"]+)":/g, '<span class="json-key">"$1"</span>:')
+      .replace(/: "([^"]+)"/g, ': <span class="json-string">"$1"</span>')
+      .replace(/: (\d+)/g, ': <span class="json-number">$1</span>')
+  }
+
+  return (
+    <div className="receipt-typewriter">
+      <div className="receipt-header">
+        <span className="receipt-label">DECODED RECEIPT PAYLOAD (v0.9.23)</span>
+        {isVerified && (
+          <span className="verified-badge">
+            <Check size={12} />
+            Signature Verified
+          </span>
+        )}
+      </div>
+      <pre className="receipt-body">
+        <code dangerouslySetInnerHTML={{ __html: highlightJSON(text) }} />
+        {text.length < fullText.length && !reducedMotion && (
+          <span className="cursor">|</span>
+        )}
+      </pre>
+      <p className="receipt-note">
+        This shows why PEAC is proof: the receipt binds the request to a specific policy snapshot and payment evidence.
+      </p>
+      <style jsx>{`
+        .receipt-typewriter {
+          background: #0d0d0d;
+          border: 1px solid rgba(255,255,255,0.1);
+          border-radius: var(--radius-xl);
+          overflow: hidden;
+        }
+        .receipt-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: var(--space-2);
+          padding: var(--space-3) var(--space-4);
+          background: rgba(255,255,255,0.03);
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .receipt-label {
+          font-family: var(--font-mono);
+          font-size: 10px;
+          color: var(--gray-500);
+          letter-spacing: 0.05em;
+        }
+        .verified-badge {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          padding: 4px 10px;
+          background: rgba(0, 212, 170, 0.2);
+          border: 1px solid rgba(0, 212, 170, 0.4);
+          border-radius: var(--radius-full);
+          font-size: 11px;
+          font-weight: 600;
+          color: var(--brand-secondary);
+          animation: verifyPop 0.3s ease;
+        }
+        @keyframes verifyPop {
+          0% { transform: scale(0.9); opacity: 0; }
+          50% { transform: scale(1.05); }
+          100% { transform: scale(1); opacity: 1; }
+        }
+        .receipt-body {
+          padding: var(--space-4);
+          margin: 0;
+          max-height: 350px;
+          overflow: auto;
+          font-family: var(--font-mono);
+          font-size: 11px;
+          line-height: 1.5;
+          color: #e4e4e7;
+        }
+        .receipt-body :global(.json-key) {
+          color: #a78bfa;
+        }
+        .receipt-body :global(.json-string) {
+          color: #4ade80;
+        }
+        .receipt-body :global(.json-number) {
+          color: #fbbf24;
+        }
+        .cursor {
+          animation: blink 1s step-end infinite;
+          color: var(--brand-primary);
+        }
+        @keyframes blink {
+          50% { opacity: 0; }
+        }
+        .receipt-note {
+          padding: var(--space-3) var(--space-4);
+          margin: 0;
+          background: rgba(99, 91, 255, 0.08);
+          border-top: 1px solid rgba(255,255,255,0.06);
+          font-size: 12px;
+          color: var(--gray-400);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .cursor { animation: none; }
+          .verified-badge { animation: none; }
+        }
+        @media (max-width: 480px) {
+          .receipt-body {
+            font-size: 10px;
+            padding: var(--space-3);
+          }
+          .receipt-header {
+            padding: var(--space-2) var(--space-3);
+          }
+        }
+      `}</style>
+    </div>
+  )
+}
+
+// Timeline with traveling packet
+function AnimatedTimeline({
+  activeStep,
+  onStepClick
+}: {
+  activeStep: number
+  onStepClick: (idx: number) => void
+}) {
+  const reducedMotion = useReducedMotion()
+  const steps = TRACE_STEPS
+
+  return (
+    <div className="timeline">
+      {/* Progress line */}
+      <div className="timeline-track">
+        <div
+          className="timeline-progress"
+          style={{ height: `${(activeStep / (steps.length - 1)) * 100}%` }}
+        />
+        {!reducedMotion && (
+          <div
+            className="timeline-packet"
+            style={{ top: `${(activeStep / (steps.length - 1)) * 100}%` }}
+          />
+        )}
+      </div>
+
+      {/* Steps */}
+      <div className="timeline-steps">
+        {steps.map((step, i) => {
+          const isActive = i === activeStep
+          const isPast = i < activeStep
+          return (
+            <div
+              key={step.key}
+              className={`timeline-step ${isActive ? 'active' : ''} ${isPast ? 'past' : ''}`}
+              onClick={() => onStepClick(i)}
+            >
+              <div className="step-dot">
+                {isPast && <Check size={10} />}
+                {isActive && !reducedMotion && (
+                  <>
+                    <div className="dot-pulse dot-pulse-1" />
+                    <div className="dot-pulse dot-pulse-2" />
+                  </>
+                )}
+              </div>
+              <div className="step-content">
+                <div className="step-number">Step {i + 1}</div>
+                <div className="step-title">{step.title}</div>
+                <div className="step-desc">{step.desc}</div>
               </div>
             </div>
           )
         })}
-
-        {/* Center info */}
-        <div style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '240px',
-          padding: 'var(--space-4)',
-          background: 'var(--white)',
-          border: '1px solid var(--gray-200)',
-          borderRadius: 'var(--radius-2xl)',
-          textAlign: 'center',
-          boxShadow: 'var(--shadow-md)'
-        }}>
-          <h4 style={{
-            fontSize: 'var(--text-base)',
-            fontWeight: 600,
-            marginBottom: 'var(--space-2)',
-            color: 'var(--gray-900)'
-          }}>
-            {PROCESS[procIdx].title}
-          </h4>
-          <p style={{
-            fontSize: 'var(--text-sm)',
-            color: 'var(--gray-600)',
-            marginBottom: 'var(--space-4)'
-          }}>
-            {PROCESS[procIdx].sub}
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-2)' }}>
-            <button
-              onClick={() => {
-                setProcIdx(prev => (prev - 1 + PROCESS.length) % PROCESS.length)
-                setIsProcessAutoPlaying(false)
-              }}
-              className="btn btn-ghost"
-              style={{ fontSize: 'var(--text-xs)', padding: 'var(--space-1) var(--space-3)' }}
-            >
-              Prev
-            </button>
-            <button
-              onClick={() => {
-                setProcIdx(prev => (prev + 1) % PROCESS.length)
-                setIsProcessAutoPlaying(false)
-              }}
-              className="btn btn-ghost"
-              style={{ fontSize: 'var(--text-xs)', padding: 'var(--space-1) var(--space-3)' }}
-            >
-              Next
-            </button>
-            <button
-              onClick={() => {
-                setProcIdx(0)
-                setIsProcessAutoPlaying(true)
-              }}
-              className="btn btn-secondary"
-              style={{ fontSize: 'var(--text-xs)', padding: 'var(--space-1) var(--space-3)' }}
-            >
-              Restart
-            </button>
-          </div>
-        </div>
       </div>
-    )
+
+      <style jsx>{`
+        .timeline {
+          position: relative;
+          padding-left: 28px;
+        }
+        .timeline-track {
+          position: absolute;
+          left: 7px;
+          top: 16px;
+          bottom: 16px;
+          width: 2px;
+          background: var(--gray-200);
+          border-radius: 1px;
+        }
+        .timeline-progress {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background: linear-gradient(180deg, var(--brand-primary), var(--brand-secondary));
+          border-radius: 1px;
+          transition: height 0.4s ease-out;
+        }
+        .timeline-packet {
+          position: absolute;
+          left: 50%;
+          width: 8px;
+          height: 8px;
+          margin-left: -4px;
+          margin-top: -4px;
+          background: var(--brand-primary);
+          border-radius: 50%;
+          box-shadow: 0 0 10px var(--brand-primary);
+          transition: top 0.4s ease-out;
+        }
+        .timeline-steps {
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-1);
+        }
+        .timeline-step {
+          position: relative;
+          display: flex;
+          gap: var(--space-2);
+          padding: var(--space-2) var(--space-3);
+          border-radius: var(--radius-lg);
+          cursor: pointer;
+          transition: all 0.15s ease;
+        }
+        .timeline-step:hover {
+          background: var(--gray-50);
+        }
+        .timeline-step.active {
+          background: rgba(99, 91, 255, 0.06);
+          border: 1px solid rgba(99, 91, 255, 0.15);
+          margin: -1px;
+        }
+        .timeline-step.past {
+          opacity: 0.65;
+        }
+        .step-dot {
+          position: absolute;
+          left: -22px;
+          top: 12px;
+          width: 16px;
+          height: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--white);
+          border: 2px solid var(--gray-300);
+          border-radius: 50%;
+          transition: all 0.2s ease;
+          z-index: 1;
+        }
+        .timeline-step.active .step-dot {
+          background: var(--brand-primary);
+          border-color: var(--brand-primary);
+          color: white;
+          transform: scale(1.15);
+        }
+        .timeline-step.past .step-dot {
+          background: var(--brand-secondary);
+          border-color: var(--brand-secondary);
+          color: white;
+        }
+        .dot-pulse {
+          position: absolute;
+          inset: -3px;
+          border: 2px solid var(--brand-primary);
+          border-radius: 50%;
+          opacity: 0;
+        }
+        .dot-pulse-1 {
+          animation: dotPulse 1.4s ease-out infinite;
+        }
+        .dot-pulse-2 {
+          animation: dotPulse 1.4s ease-out 0.3s infinite;
+        }
+        @keyframes dotPulse {
+          0% { transform: scale(1); opacity: 0.5; }
+          100% { transform: scale(2); opacity: 0; }
+        }
+        .step-content {
+          flex: 1;
+          min-width: 0;
+        }
+        .step-number {
+          font-family: var(--font-mono);
+          font-size: 9px;
+          color: var(--gray-400);
+          margin-bottom: 1px;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+        .step-title {
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--gray-900);
+          margin-bottom: 1px;
+        }
+        .timeline-step.active .step-title {
+          color: var(--brand-primary);
+        }
+        .step-desc {
+          font-size: 11px;
+          color: var(--gray-600);
+          line-height: 1.35;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .timeline-step, .timeline-progress, .timeline-packet {
+            animation: none !important;
+            transition: none !important;
+          }
+          .dot-pulse {
+            display: none;
+          }
+        }
+      `}</style>
+    </div>
+  )
+}
+
+// ============================================================================
+// MAIN PAGE COMPONENT
+// ============================================================================
+
+export default function DemoPage() {
+  const reducedMotion = useReducedMotion()
+
+  // Flowchart state
+  const [flowStep, setFlowStep] = useState(0)
+  const [isFlowPlaying, setIsFlowPlaying] = useState(true)
+  const flowTimerRef = useRef<NodeJS.Timeout | null>(null)
+
+  // Timeline state
+  const [timelineStep, setTimelineStep] = useState(0)
+  const [isTimelinePlaying, setIsTimelinePlaying] = useState(true)
+  const timelineTimerRef = useRef<NodeJS.Timeout | null>(null)
+
+  // HTTP exchange state
+  const [exchangeIdx, setExchangeIdx] = useState(0)
+
+  // Receipt state
+  const [showReceipt, setShowReceipt] = useState(false)
+
+  // Copy states
+  const { copied: peacCopied, copy: copyPeac } = useCopyToClipboard()
+  const { copied: disputeCopied, copy: copyDispute } = useCopyToClipboard()
+
+  // Flowchart auto-advance
+  useEffect(() => {
+    if (!isFlowPlaying) return
+    flowTimerRef.current = setInterval(() => {
+      setFlowStep(prev => (prev + 1) % TRACE_STEPS.length)
+    }, reducedMotion ? 1600 : 1200)
+    return () => { if (flowTimerRef.current) clearInterval(flowTimerRef.current) }
+  }, [isFlowPlaying, reducedMotion])
+
+  // Timeline auto-advance
+  useEffect(() => {
+    if (!isTimelinePlaying) return
+    timelineTimerRef.current = setInterval(() => {
+      setTimelineStep(prev => {
+        const next = (prev + 1) % TRACE_STEPS.length
+        if (next === TRACE_STEPS.length - 1) setShowReceipt(true)
+        else if (next === 0) setShowReceipt(false)
+        return next
+      })
+    }, reducedMotion ? 1800 : 1600)
+    return () => { if (timelineTimerRef.current) clearInterval(timelineTimerRef.current) }
+  }, [isTimelinePlaying, reducedMotion])
+
+  const handleFlowStepClick = (idx: number) => {
+    setFlowStep(idx)
+    setIsFlowPlaying(false)
+  }
+
+  const handleTimelineStepClick = (idx: number) => {
+    setTimelineStep(idx)
+    setIsTimelinePlaying(false)
+    setShowReceipt(idx === TRACE_STEPS.length - 1)
   }
 
   return (
     <div className="wrap">
       <NavigationHeader />
-      <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+      <main id="main-content" className="demo-main">
+        <AnimatedGrid />
+
+        {/* Hero Section */}
+        <section className="demo-section">
           <div className="container">
-            {/* Header */}
-            <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 'var(--space-3)',
-                background: 'rgba(0, 212, 170, 0.1)',
-                border: '1px solid rgba(0, 212, 170, 0.2)',
-                borderRadius: 'var(--radius-full)',
-                padding: 'var(--space-2) var(--space-6)',
-                marginBottom: 'var(--space-6)',
-                fontSize: 'var(--text-sm)',
-                fontWeight: 600,
-                color: 'var(--brand-secondary)'
-              }}>
-                <span>INTERACTIVE DEMO</span>
-                <div style={{
-                  width: '8px',
-                  height: '8px',
-                  borderRadius: '50%',
-                  background: 'var(--brand-secondary)',
-                  animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
-                }} />
+            <div className="hero-content">
+              {/* Badge */}
+              <div className="hero-badge">
+                <span>PROTOCOL TRACE</span>
+                <div className="badge-pulse" />
               </div>
 
-              <h1 style={{
-                fontSize: 'clamp(var(--text-4xl), 6vw, var(--text-6xl))',
-                fontWeight: 700,
-                lineHeight: 1.1,
-                letterSpacing: '-0.04em',
-                marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
-              }}>
-                How <span className="text-gradient">Originary</span> works
+              <h1 className="hero-title">
+                PEAC transaction trace
               </h1>
 
-              <p style={{
-                fontSize: 'var(--text-xl)',
-                lineHeight: 1.7,
-                color: 'var(--gray-600)',
-                marginBottom: 'var(--space-8)',
-                maxWidth: '900px',
-                margin: '0 auto var(--space-8) auto'
-              }}>
-                Originary provides enterprise infrastructure for the open PEAC protocol. Watch agents discover your policies via <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontFamily: 'var(--font-mono)' }}>peac.txt</code> and <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontFamily: 'var(--font-mono)' }}>aipref.json</code>, complete transactions through Originary Gateway (402), and generate verifiable receipts.
+              <p className="hero-desc">
+                This page shows a PEAC transaction trace end to end. An agent discovers site policy
+                (<code>peac.txt</code> + <code>aipref.json</code>),
+                receives an HTTP 402 challenge when payment is required, retries using a supported payment adapter,
+                and receives a signed PEAC-Receipt that anyone can verify offline.
+              </p>
+
+              <p className="hero-note">
+                Originary provides optional hosted components (Gateway 402, Verify API), but the core receipt and verification flow is protocol-native and portable.
               </p>
             </div>
 
-            {/* Circular Flowchart */}
-            <div className="card" style={{
-              marginBottom: 'var(--space-12)',
-              background: 'var(--white)',
-              padding: 'var(--space-8)'
-            }}>
-              <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
-                <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
-                  PEAC protocol flow via Originary
-                </h2>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                  From policy discovery to cryptographic proof. Click any step to explore.
-                </p>
+            {/* Animated Circular Flowchart */}
+            <div className="card demo-card">
+              <div className="section-header">
+                <h2>PEAC transaction trace</h2>
+                <p>Click any step to explore. HTTP 402 + PEAC-Receipt flow.</p>
               </div>
-              <CircularFlowchart />
+              <CircularFlowchart
+                activeStep={flowStep}
+                onStepClick={handleFlowStepClick}
+                isPlaying={isFlowPlaying}
+                onPlayPause={() => setIsFlowPlaying(!isFlowPlaying)}
+                onRestart={() => { setFlowStep(0); setIsFlowPlaying(true) }}
+                onPrev={() => { setFlowStep(prev => (prev - 1 + TRACE_STEPS.length) % TRACE_STEPS.length); setIsFlowPlaying(false) }}
+                onNext={() => { setFlowStep(prev => (prev + 1) % TRACE_STEPS.length); setIsFlowPlaying(false) }}
+              />
             </div>
 
-            {/* PEAC-Receipt Header Example */}
-            <div className="card" style={{
-              marginBottom: 'var(--space-12)',
-              background: 'var(--white)',
-              padding: 'var(--space-8)'
-            }}>
-              <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
-                <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
-                  PEAC-Receipt header and verification
-                </h2>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                  Cryptographically signed proof of transaction with instant verification
-                </p>
+            {/* HTTP Exchange Panel */}
+            <div className="card demo-card">
+              <div className="section-header">
+                <h2>HTTP exchange sequence</h2>
+                <p>Real protocol headers. <code>PEAC-Receipt</code> is the canonical header (no X- prefix).</p>
               </div>
 
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-                gap: 'var(--space-6)'
-              }}>
-                {/* PEAC-Receipt Header */}
-                <div>
-                  <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
-                    Response with PEAC-Receipt
-                  </h3>
-                  <pre style={{
-                    margin: 0,
-                    background: 'var(--gray-900)',
-                    padding: 'var(--space-4)',
-                    borderRadius: 'var(--radius-lg)',
-                    color: 'var(--gray-100)',
-                    fontSize: 'var(--text-xs)',
-                    lineHeight: 1.6,
-                    fontFamily: 'var(--font-mono)',
-                    overflow: 'auto',
-                    whiteSpace: 'pre-wrap',
-                    wordBreak: 'break-all',
-                    maxHeight: '400px'
-                  }}>
-{`HTTP/1.1 200 OK
-Content-Type: application/json
-PEAC-Receipt: eyJhbGciOiJFZERTQSIsImt...
-...pQ2nY6jL8vW4tZ1cH5sA0bN9oE4qI6dF3gU2wP7hT8xM
+              {/* Exchange tabs */}
+              <div className="exchange-tabs">
+                {HTTP_EXCHANGES.map((ex, i) => (
+                  <button
+                    type="button"
+                    key={i}
+                    onClick={() => setExchangeIdx(i)}
+                    className={`exchange-tab ${i === exchangeIdx ? 'active' : ''}`}
+                  >
+                    {ex.title}
+                  </button>
+                ))}
+              </div>
 
-{"status": "success", "data": {...}}`}
-                  </pre>
+              <div className="exchange-grid">
+                <AnimatedCodeBlock
+                  code={HTTP_EXCHANGES[exchangeIdx].request}
+                  label="REQUEST"
+                  reveal={true}
+                  revealSpeed={60}
+                  codeKey={`req-${exchangeIdx}`}
+                />
+                <AnimatedCodeBlock
+                  code={HTTP_EXCHANGES[exchangeIdx].response}
+                  label="RESPONSE"
+                  reveal={true}
+                  revealSpeed={40}
+                  codeKey={`res-${exchangeIdx}`}
+                />
+              </div>
+            </div>
+
+            {/* Two-column: Policy file + Timeline */}
+            <div className="two-col-grid">
+              {/* Left: Live peac.txt */}
+              <div className="card">
+                <div className="card-header">
+                  <h3>Live from origin</h3>
+                  <span className="tag">/.well-known/peac.txt</span>
                 </div>
 
-                {/* Verify Result */}
+                <div className="code-preview">
+                  <button
+                    type="button"
+                    onClick={() => copyPeac(PEAC_TXT_CONTENT)}
+                    className="copy-mini"
+                    aria-label="Copy"
+                  >
+                    {peacCopied ? <Check size={12} /> : <Copy size={12} />}
+                  </button>
+                  <pre>{PEAC_TXT_CONTENT}</pre>
+                </div>
+
+                <div className="info-box">
+                  <strong>Rail-neutral:</strong> PEAC supports multiple payment adapters (l402, x402, stripe).
+                  <code>verify</code> points to JWKS for offline verification;
+                  <code>verify_api</code> is optional convenience.
+                </div>
+              </div>
+
+              {/* Right: Animated Timeline */}
+              <div className="card">
+                <div className="card-header">
+                  <h3>Transaction flow</h3>
+                  <div className="header-actions">
+                    <button
+                      type="button"
+                      onClick={() => setIsTimelinePlaying(!isTimelinePlaying)}
+                      className="action-btn"
+                    >
+                      {isTimelinePlaying ? <Pause size={12} /> : <Play size={12} />}
+                      {isTimelinePlaying ? 'Pause' : 'Play'}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => { setTimelineStep(TRACE_STEPS.length - 1); setShowReceipt(true); setIsTimelinePlaying(false) }}
+                      className="action-btn"
+                    >
+                      <SkipForward size={12} />
+                      Skip
+                    </button>
+                  </div>
+                </div>
+                <AnimatedTimeline activeStep={timelineStep} onStepClick={handleTimelineStepClick} />
+              </div>
+            </div>
+
+            {/* Decoded Receipt */}
+            <div className="card demo-card">
+              <div className="section-header">
+                <h2>Receipt anatomy (v0.9.23)</h2>
+                <p>Decoded payload showing aipref snapshot, payment evidence, and policy hash binding.</p>
+              </div>
+              <ReceiptTypewriter isActive={showReceipt || timelineStep >= 6} />
+            </div>
+
+            {/* Verification Section */}
+            <div className="card demo-card">
+              <div className="section-header">
+                <h2>Receipt verification</h2>
+                <p>Offline via JWKS is default. Verify API is optional convenience.</p>
+              </div>
+
+              <div className="verify-grid">
+                {/* Offline verification */}
                 <div>
-                  <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
-                    Originary Verify API result
+                  <h3 className="verify-title">
+                    <span className="tag-default">DEFAULT</span>
+                    Offline verification (JWKS)
                   </h3>
-                  <pre style={{
-                    margin: 0,
-                    background: 'var(--gray-900)',
-                    padding: 'var(--space-4)',
-                    borderRadius: 'var(--radius-lg)',
-                    color: 'var(--gray-100)',
-                    fontSize: 'var(--text-xs)',
-                    lineHeight: 1.6,
-                    fontFamily: 'var(--font-mono)',
-                    overflow: 'auto',
-                    maxHeight: '400px'
-                  }}>
-{`POST https://api.originary.xyz/verify
+                  <AnimatedCodeBlock
+                    code={`# Any PEAC verifier can validate offline
+peac verify "<PEAC-Receipt JWS>" \\
+  --jwks https://www.originary.xyz/.well-known/jwks.json \\
+  --subject https://www.originary.xyz/demo/paid-resource
+
+# Output:
+{
+  "valid": true,
+  "signature_verified": true,
+  "policy_hash_match": true,
+  "aipref_hash_match": true
+}`}
+                  />
+                </div>
+
+                {/* API verification */}
+                <div>
+                  <h3 className="verify-title">
+                    <span className="tag-optional">OPTIONAL</span>
+                    Verify API (hosted helper)
+                  </h3>
+                  <AnimatedCodeBlock
+                    code={`POST https://api.originary.xyz/verify
 Content-Type: application/json
 
 {"receipt": "eyJhbGciOiJFZERTQSI..."}
 
-→ Response:
-
+# Response:
 {
   "valid": true,
-  "receipt_id": "urn:originary:...",
-  "issued_at": "2025-10-06T08:15:00Z",
+  "issued_at": "2025-12-13T12:00:00Z",
   "issuer": {
-    "name": "Originary",
     "domain": "originary.xyz",
-    "verified": true
-  },
-  "settlement": {
-    "gateway": "Originary Gateway (402)",
-    "payment_id": "pay_orig_2025_xyz123",
-    "amount": {"value": 0.05, "currency": "USD"},
-    "status": "confirmed"
+    "kid": "2025-12-13"
   },
   "signature_verified": true,
-  "timestamp_valid": true
+  "policy_hash_match": true,
+  "aipref_hash_match": true
 }`}
-                  </pre>
+                  />
                 </div>
               </div>
 
-              <div style={{
-                marginTop: 'var(--space-6)',
-                padding: 'var(--space-4)',
-                background: 'rgba(0, 212, 170, 0.05)',
-                border: '1px solid rgba(0, 212, 170, 0.2)',
-                borderRadius: 'var(--radius-lg)',
-                fontSize: 'var(--text-sm)',
-                color: 'var(--gray-700)'
-              }}>
-                <strong style={{ color: 'var(--brand-secondary)' }}>✓ Cryptographic proof:</strong> Each PEAC-Receipt is signed with EdDSA (Ed25519) and can be independently verified via Originary Verify API or the open PEAC protocol specification.
+              <div className="proof-box">
+                <strong>✓ Cryptographic proof:</strong> Each PEAC-Receipt is signed (Ed25519) and can be verified offline using the issuer JWKS. A hosted Verify API is optional convenience.
               </div>
             </div>
 
-            {/* Two-column demo */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-              gap: 'var(--space-8)'
-            }}>
-              {/* Left: peac.txt advertises */}
-              <div className="card">
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
-                  PEAC policy file
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
-                  Your <code style={{ fontFamily: 'var(--font-mono)', background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> served by Originary
-                </p>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                  {[
-                    { key: 'prefs', label: 'preferences', value: 'AIPREF URL' },
-                    { key: 'access_control', label: 'access_control', value: 'http-402' },
-                    { key: 'payments', label: 'payments', value: '[x402]' },
-                    { key: 'provenance', label: 'provenance', value: 'c2pa' },
-                    { key: 'receipts', label: 'receipts', value: 'required, verify' },
-                    { key: 'public_keys', label: 'public_keys', value: '[ {kid, alg, key} ]' }
-                  ].map(item => {
-                    const isActive = highlightMap[STEPS[demoIdx]?.key]?.includes(item.key)
-                    return (
-                      <div
-                        key={item.key}
-                        style={{
-                          display: 'grid',
-                          gridTemplateColumns: '140px 1fr',
-                          gap: 'var(--space-3)',
-                          padding: 'var(--space-2) var(--space-3)',
-                          borderRadius: 'var(--radius-lg)',
-                          background: isActive ? 'rgba(0, 212, 170, 0.1)' : 'transparent',
-                          border: isActive ? '1px solid rgba(0, 212, 170, 0.3)' : '1px solid transparent',
-                          transition: 'all 0.3s ease'
-                        }}
-                      >
-                        <code style={{
-                          fontSize: 'var(--text-xs)',
-                          color: 'var(--gray-500)',
-                          fontFamily: 'var(--font-mono)'
-                        }}>
-                          {item.label}
-                        </code>
-                        <code style={{
-                          fontSize: 'var(--text-xs)',
-                          color: 'var(--gray-700)',
-                          fontFamily: 'var(--font-mono)'
-                        }}>
-                          {item.value}
-                        </code>
-                      </div>
-                    )
-                  })}
-                </div>
-
-                <div style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: 'var(--space-2)',
-                  marginTop: 'var(--space-6)'
-                }}>
-                  {['peac.txt', 'aipref.json', 'security.txt', 'robots.txt', 'ads.txt', 'app-ads.txt', 'humans.txt', 'assetlinks.json', 'llms.txt'].map(file => (
-                    <span
-                      key={file}
-                      style={{
-                        padding: 'var(--space-1) var(--space-2)',
-                        background: 'var(--gray-100)',
-                        border: '1px solid var(--gray-200)',
-                        borderRadius: 'var(--radius-full)',
-                        fontSize: 'var(--text-xs)',
-                        color: 'var(--gray-600)',
-                        fontFamily: 'var(--font-mono)'
-                      }}
-                    >
-                      {file}
-                    </span>
-                  ))}
-                </div>
+            {/* Compatibility Section */}
+            <div className="card demo-card">
+              <div className="section-header">
+                <h2>Compatibility with existing signals</h2>
+                <p>PEAC works alongside existing policy and licensing standards.</p>
               </div>
 
-              {/* Right: live flow */}
-              <div className="card">
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
-                  Live transaction flow
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
-                  Watch Originary orchestrate a complete agent transaction
-                </p>
-
-                {/* Timeline */}
-                <div style={{
-                  borderLeft: '2px solid var(--gray-200)',
-                  paddingLeft: 'var(--space-4)',
-                  marginBottom: 'var(--space-6)'
-                }}>
-                  {STEPS.map((step, i) => {
-                    const isActive = i === demoIdx
-                    return (
-                      <div
-                        key={step.key}
-                        style={{
-                          position: 'relative',
-                          padding: 'var(--space-3)',
-                          marginBottom: 'var(--space-2)',
-                          borderRadius: 'var(--radius-lg)',
-                          background: isActive ? 'rgba(99, 91, 255, 0.05)' : 'transparent',
-                          border: isActive ? '1px solid rgba(99, 91, 255, 0.2)' : '1px solid transparent',
-                          transition: 'all 0.3s ease'
-                        }}
-                      >
-                        <div
-                          style={{
-                            position: 'absolute',
-                            left: '-22px',
-                            top: '16px',
-                            width: '12px',
-                            height: '12px',
-                            borderRadius: '50%',
-                            background: isActive ? 'var(--brand-primary)' : 'var(--gray-300)',
-                            border: '2px solid var(--white)',
-                            transition: 'all 0.3s ease',
-                            boxShadow: isActive ? '0 0 0 6px rgba(99, 91, 255, 0.15)' : 'none'
-                          }}
-                        />
-                        <div style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'space-between',
-                          marginBottom: 'var(--space-1)'
-                        }}>
-                          <span style={{
-                            fontSize: 'var(--text-sm)',
-                            fontWeight: 600,
-                            color: isActive ? 'var(--brand-primary)' : 'var(--gray-700)'
-                          }}>
-                            {i + 1}. {step.title}
-                          </span>
-                          <code style={{
-                            fontSize: 'var(--text-xs)',
-                            color: 'var(--gray-500)',
-                            fontFamily: 'var(--font-mono)'
-                          }}>
-                            {step.key}
-                          </code>
-                        </div>
-                        <div style={{
-                          fontSize: 'var(--text-xs)',
-                          color: 'var(--gray-600)'
-                        }}>
-                          {step.subtitle}
-                        </div>
-                      </div>
-                    )
-                  })}
-                </div>
-
-                {/* Receipt display */}
-                <div style={{
-                  background: 'var(--gray-50)',
-                  border: '1px solid var(--gray-200)',
-                  borderRadius: 'var(--radius-xl)',
-                  padding: 'var(--space-4)',
-                  marginBottom: 'var(--space-4)'
-                }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    paddingBottom: 'var(--space-2)',
-                    marginBottom: 'var(--space-3)',
-                    borderBottom: '1px solid var(--gray-200)',
-                    fontSize: 'var(--text-xs)',
-                    color: 'var(--gray-500)',
-                    fontFamily: 'var(--font-mono)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em'
-                  }}>
-                    <span>PEAC Receipt (JWS)</span>
-                    {STEPS[demoIdx]?.key === 'receipt' && (
-                      <span style={{ color: 'var(--brand-secondary)' }}>
-                        Signed by Originary
-                      </span>
-                    )}
+              <div className="compat-grid">
+                {[
+                  {
+                    title: 'AIPREF',
+                    desc: 'Machine-readable AI preferences (IETF WG). This demo snapshots aipref.json into the receipt for auditability.',
+                    link: 'https://datatracker.ietf.org/doc/charter-ietf-aipref/'
+                  },
+                  {
+                    title: 'Content Signals',
+                    desc: 'Cloudflare robots.txt extensions (ai-input, ai-train). Can be ingested as additional inputs to policy snapshots.',
+                    link: 'https://blog.cloudflare.com/content-signals-policy/'
+                  },
+                  {
+                    title: 'RSL',
+                    desc: 'Really Simple Licensing for machine-readable terms. PEAC receipts can bind requests to RSL terms for auditability.',
+                    link: 'https://rslstandard.org/'
+                  }
+                ].map(item => (
+                  <div key={item.title} className="compat-card">
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
+                    <a href={item.link} target="_blank" rel="noopener noreferrer">
+                      Learn more <ExternalLink size={12} />
+                    </a>
                   </div>
-                  <pre style={{
-                    margin: 0,
-                    maxHeight: '280px',
-                    overflow: 'auto',
-                    background: 'var(--gray-900)',
-                    padding: 'var(--space-3)',
-                    borderRadius: 'var(--radius-lg)',
-                    color: 'var(--gray-100)',
-                    fontSize: 'var(--text-xs)',
-                    lineHeight: 1.5,
-                    fontFamily: 'var(--font-mono)'
-                  }}>
-                    {receiptText || '// Cryptographically signed PEAC receipts\n// Receipt will appear during the proof generation step'}
-                  </pre>
-                </div>
+                ))}
+              </div>
+            </div>
 
-                {/* Controls */}
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: 'var(--space-2)'
-                }}>
-                  <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>
-                    Step {demoIdx + 1} / {STEPS.length} - Pace ~1600ms
-                  </div>
-                  <div style={{ display: 'flex', gap: 'var(--space-2)' }}>
-                    <button
-                      onClick={() => {
-                        setDemoIdx(prev => (prev - 1 + STEPS.length) % STEPS.length)
-                        setIsDemoAutoPlaying(false)
-                      }}
-                      className="btn btn-ghost"
-                      style={{ fontSize: 'var(--text-xs)' }}
-                    >
-                      Prev
-                    </button>
-                    <button
-                      onClick={() => {
-                        setDemoIdx(prev => (prev + 1) % STEPS.length)
-                        setIsDemoAutoPlaying(false)
-                      }}
-                      className="btn btn-ghost"
-                      style={{ fontSize: 'var(--text-xs)' }}
-                    >
-                      Next
-                    </button>
-                    <button
-                      onClick={() => {
-                        setDemoIdx(0)
-                        setIsDemoAutoPlaying(true)
-                      }}
-                      className="btn btn-secondary"
-                      style={{ fontSize: 'var(--text-xs)' }}
-                    >
-                      Restart
-                    </button>
-                  </div>
+            {/* Audit Section */}
+            <div className="card demo-card">
+              <div className="section-header">
+                <h2>Audit-ready exports (v0.9.23)</h2>
+                <p>Dispute packet format for compliance and audit trails.</p>
+              </div>
+
+              <div className="code-preview audit-preview">
+                <button
+                  type="button"
+                  onClick={() => copyDispute(DISPUTE_PACKET_PREVIEW)}
+                  className="copy-mini"
+                  aria-label="Copy"
+                >
+                  {disputeCopied ? <Check size={12} /> : <Copy size={12} />}
+                </button>
+                <pre>{DISPUTE_PACKET_PREVIEW}</pre>
+              </div>
+
+              <div className="audit-footer">
+                <div className="audit-contents">
+                  <strong>Contents:</strong> request digest, policy snapshot + hash, aipref snapshot + hash, receipt JWS, payment evidence reference
                 </div>
+                <a href="/demo/dispute-packet.sample.jsonl" download className="download-btn">
+                  <Download size={14} />
+                  Download sample packet
+                </a>
               </div>
             </div>
           </div>
@@ -717,12 +1390,381 @@ Content-Type: application/json
       <Footer />
 
       <style jsx>{`
+        .demo-main {
+          padding-top: 80px;
+          position: relative;
+          overflow: hidden;
+        }
+        .demo-section {
+          background: var(--white);
+          padding: var(--space-16) 0 var(--space-24);
+          position: relative;
+          z-index: 1;
+        }
+        .hero-content {
+          text-align: center;
+          max-width: 800px;
+          margin: 0 auto var(--space-12);
+        }
+        .hero-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: var(--space-2);
+          background: rgba(0, 212, 170, 0.1);
+          border: 1px solid rgba(0, 212, 170, 0.2);
+          border-radius: var(--radius-full);
+          padding: var(--space-1) var(--space-4);
+          margin-bottom: var(--space-4);
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--brand-secondary);
+        }
+        .badge-pulse {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: var(--brand-secondary);
+          animation: pulse 2s ease-in-out infinite;
+        }
         @keyframes pulse {
-          0%, 100% {
-            opacity: 1;
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.5; transform: scale(0.9); }
+        }
+        .hero-title {
+          font-size: clamp(28px, 5vw, 48px);
+          font-weight: 700;
+          line-height: 1.1;
+          letter-spacing: -0.03em;
+          margin-bottom: var(--space-4);
+          color: var(--gray-900);
+        }
+        .hero-desc {
+          font-size: clamp(14px, 2.5vw, 18px);
+          line-height: 1.6;
+          color: var(--gray-600);
+          margin-bottom: var(--space-3);
+        }
+        .hero-desc code {
+          background: var(--gray-100);
+          padding: 2px 6px;
+          border-radius: var(--radius-sm);
+          font-family: var(--font-mono);
+          font-size: 0.9em;
+        }
+        .hero-note {
+          font-size: 13px;
+          color: var(--gray-500);
+          font-style: italic;
+        }
+        .demo-card {
+          margin-bottom: var(--space-8);
+          padding: var(--space-6);
+        }
+        .section-header {
+          text-align: center;
+          margin-bottom: var(--space-6);
+        }
+        .section-header h2 {
+          font-size: clamp(18px, 3vw, 24px);
+          font-weight: 600;
+          margin-bottom: var(--space-1);
+        }
+        .section-header p {
+          font-size: 13px;
+          color: var(--gray-600);
+        }
+        .section-header code {
+          font-family: var(--font-mono);
+          font-size: 0.95em;
+          background: var(--gray-100);
+          padding: 1px 4px;
+          border-radius: var(--radius-sm);
+        }
+        .exchange-tabs {
+          display: flex;
+          gap: var(--space-2);
+          margin-bottom: var(--space-4);
+          flex-wrap: wrap;
+        }
+        .exchange-tab {
+          padding: var(--space-2) var(--space-3);
+          background: var(--gray-100);
+          color: var(--gray-700);
+          border: none;
+          border-radius: var(--radius-md);
+          font-size: 13px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.15s ease;
+        }
+        .exchange-tab:hover {
+          background: var(--gray-200);
+        }
+        .exchange-tab.active {
+          background: var(--brand-primary);
+          color: white;
+        }
+        .exchange-tab:active {
+          transform: scale(0.97);
+        }
+        .exchange-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: var(--space-4);
+        }
+        @media (min-width: 768px) {
+          .exchange-grid {
+            grid-template-columns: 1fr 1fr;
           }
-          50% {
-            opacity: 0.5;
+        }
+        .two-col-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: var(--space-6);
+          margin-bottom: var(--space-8);
+        }
+        @media (min-width: 768px) {
+          .two-col-grid {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+        .card-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: var(--space-4);
+          flex-wrap: wrap;
+          gap: var(--space-2);
+        }
+        .card-header h3 {
+          font-size: 16px;
+          font-weight: 600;
+        }
+        .tag {
+          padding: 3px 8px;
+          background: rgba(0, 212, 170, 0.1);
+          border: 1px solid rgba(0, 212, 170, 0.2);
+          border-radius: var(--radius-full);
+          font-size: 10px;
+          font-family: var(--font-mono);
+          color: var(--brand-secondary);
+        }
+        .code-preview {
+          background: #0d0d0d;
+          border-radius: var(--radius-lg);
+          padding: var(--space-4);
+          margin-bottom: var(--space-4);
+          position: relative;
+          overflow-x: auto;
+        }
+        .code-preview pre {
+          margin: 0;
+          font-family: var(--font-mono);
+          font-size: 11px;
+          line-height: 1.5;
+          color: #e4e4e7;
+          white-space: pre-wrap;
+          word-break: break-word;
+        }
+        .copy-mini {
+          position: absolute;
+          top: var(--space-2);
+          right: var(--space-2);
+          display: flex;
+          align-items: center;
+          padding: 4px 6px;
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.1);
+          border-radius: var(--radius-sm);
+          color: var(--gray-400);
+          cursor: pointer;
+          transition: all 0.15s ease;
+        }
+        .copy-mini:hover {
+          background: rgba(255,255,255,0.1);
+          color: white;
+        }
+        .info-box {
+          padding: var(--space-3);
+          background: var(--gray-50);
+          border-radius: var(--radius-lg);
+          font-size: 12px;
+          color: var(--gray-600);
+          line-height: 1.5;
+        }
+        .info-box code {
+          font-family: var(--font-mono);
+          margin: 0 3px;
+          background: var(--gray-200);
+          padding: 1px 4px;
+          border-radius: var(--radius-sm);
+        }
+        .header-actions {
+          display: flex;
+          gap: var(--space-2);
+        }
+        .action-btn {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          padding: 4px 8px;
+          background: var(--gray-100);
+          border: none;
+          border-radius: var(--radius-md);
+          font-size: 11px;
+          cursor: pointer;
+          transition: all 0.12s ease;
+        }
+        .action-btn:hover {
+          background: var(--gray-200);
+        }
+        .action-btn:active {
+          transform: scale(0.96);
+        }
+        .verify-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: var(--space-6);
+        }
+        @media (min-width: 768px) {
+          .verify-grid {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+        .verify-title {
+          font-size: 14px;
+          font-weight: 600;
+          margin-bottom: var(--space-3);
+          display: flex;
+          align-items: center;
+          gap: var(--space-2);
+          flex-wrap: wrap;
+        }
+        .tag-default {
+          padding: 2px 6px;
+          background: rgba(0, 212, 170, 0.15);
+          border-radius: var(--radius-full);
+          font-size: 9px;
+          font-weight: 700;
+          color: var(--brand-secondary);
+        }
+        .tag-optional {
+          padding: 2px 6px;
+          background: var(--gray-100);
+          border-radius: var(--radius-full);
+          font-size: 9px;
+          font-weight: 700;
+          color: var(--gray-600);
+        }
+        .proof-box {
+          margin-top: var(--space-6);
+          padding: var(--space-4);
+          background: rgba(0, 212, 170, 0.06);
+          border: 1px solid rgba(0, 212, 170, 0.2);
+          border-radius: var(--radius-lg);
+          font-size: 13px;
+          color: var(--gray-700);
+        }
+        .proof-box strong {
+          color: var(--brand-secondary);
+        }
+        .compat-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: var(--space-4);
+        }
+        @media (min-width: 640px) {
+          .compat-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        .compat-card {
+          padding: var(--space-4);
+          background: var(--gray-50);
+          border-radius: var(--radius-lg);
+          border: 1px solid var(--gray-200);
+          transition: all 0.14s ease;
+        }
+        .compat-card:hover {
+          border-color: var(--gray-300);
+          box-shadow: var(--shadow-sm);
+        }
+        .compat-card h4 {
+          font-size: 14px;
+          font-weight: 600;
+          margin-bottom: var(--space-2);
+          color: var(--gray-900);
+        }
+        .compat-card p {
+          font-size: 12px;
+          color: var(--gray-600);
+          margin-bottom: var(--space-3);
+          line-height: 1.45;
+        }
+        .compat-card a {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          font-size: 12px;
+          font-weight: 500;
+          color: var(--brand-primary);
+          text-decoration: none;
+        }
+        .compat-card a:hover {
+          text-decoration: underline;
+        }
+        .audit-preview {
+          margin-bottom: var(--space-4);
+        }
+        .audit-preview pre {
+          font-size: 10px;
+        }
+        .audit-footer {
+          display: flex;
+          flex-wrap: wrap;
+          gap: var(--space-3);
+          align-items: center;
+          justify-content: space-between;
+        }
+        .audit-contents {
+          font-size: 12px;
+          color: var(--gray-600);
+        }
+        .download-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: var(--space-2);
+          padding: var(--space-2) var(--space-4);
+          background: var(--brand-primary);
+          color: white;
+          border-radius: var(--radius-lg);
+          font-size: 13px;
+          font-weight: 500;
+          text-decoration: none;
+          transition: all 0.15s ease;
+        }
+        .download-btn:hover {
+          opacity: 0.9;
+        }
+        .download-btn:active {
+          transform: scale(0.97);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .badge-pulse {
+            animation: none;
+          }
+        }
+        @media (max-width: 480px) {
+          .demo-section {
+            padding: var(--space-8) 0 var(--space-16);
+          }
+          .demo-card {
+            padding: var(--space-4);
+            margin-bottom: var(--space-6);
+          }
+          .exchange-tab {
+            font-size: 11px;
+            padding: var(--space-1) var(--space-2);
           }
         }
       `}</style>
