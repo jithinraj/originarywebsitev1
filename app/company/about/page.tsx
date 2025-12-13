@@ -178,12 +178,8 @@ export default function About() {
             </div>
 
             {/* CTA Section */}
-            <div className="card" style={{
-              textAlign: 'center',
-              background: 'var(--gradient-brand)',
-              color: 'white'
-            }}>
-              <h2 style={{ marginBottom: 'var(--space-6)', color: 'white' }}>Join us</h2>
+            <div className="card cta-card">
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>Join us</h2>
               <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', opacity: 0.9 }}>
                 We&apos;re building infrastructure for agentic coordination. Interested in joining our mission?
               </p>

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
-import Mark from '@/components/Mark'
 import Script from 'next/script'
 import DownloadsServer from './DownloadsServer'
 import DownloadCardPEAC from '@/components/DownloadCardPEAC'
@@ -27,7 +26,7 @@ const peacSourceCodeJsonLd = {
   codeRepository: 'https://github.com/peacprotocol/peac',
   license: 'https://www.apache.org/licenses/LICENSE-2.0',
   programmingLanguage: 'TypeScript',
-  version: '0.9.14'
+  version: '0.9.16'
 }
 
 export const metadata: Metadata = {
@@ -107,7 +106,7 @@ export default function Downloads() {
                 <span>•</span>
                 <span><strong>License:</strong> Open source</span>
                 <span>•</span>
-                <span><strong>Latest release:</strong> v1.0.0</span>
+                <span><strong>Wire format:</strong> PEAC v0.9.16</span>
               </div>
 
               <p style={{
@@ -117,7 +116,7 @@ export default function Downloads() {
                 marginBottom: 'var(--space-12)'
               }}>
                 <strong>Get the software:</strong>{' '}
-                <a href="#downloads" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>macOS (.dmg)</a> •{' '}
+                <a href="#downloads" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>macOS (.zip)</a> •{' '}
                 <a href="#downloads" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>Windows (.zip)</a> •{' '}
                 <a href="#downloads" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>Linux (.zip)</a> •{' '}
                 <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>View source on GitHub</a>

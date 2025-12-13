@@ -679,8 +679,8 @@ Content-Usage: /research/ train-ai=y`}
           {/* CTA Section */}
           <section style={{ background: 'var(--gray-50)', borderTop: '1px solid var(--gray-200)' }}>
             <div className="container" style={{ maxWidth: '900px', margin: '0 auto', padding: 'var(--space-16) var(--space-6)' }}>
-              <div className="card" style={{ background: 'var(--gradient-brand)', color: 'var(--white)', textAlign: 'center' }}>
-                <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--white)' }}>
+              <div className="card cta-card">
+                <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
                   Need help implementing robots.txt and AIPREF?
                 </h2>
                 <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', opacity: 0.9 }}>

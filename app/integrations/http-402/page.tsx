@@ -354,18 +354,13 @@ Cache-Control: no-store
           </section>
 
           {/* CTA Section */}
-          <section style={{
-            background: 'var(--gradient-brand)',
-            borderRadius: 'var(--radius-3xl)',
-            padding: 'var(--space-12) var(--space-8)',
-            textAlign: 'center',
-            color: 'var(--white)'
+          <section className="cta-card" style={{
+            padding: 'var(--space-12) var(--space-8)'
           }}>
             <h2 style={{
               fontSize: 'var(--text-3xl)',
               fontWeight: 700,
-              marginBottom: 'var(--space-4)',
-              color: 'var(--white)'
+              marginBottom: 'var(--space-4)'
             }}>
               Ready to add HTTP 402 to your API?
             </h2>

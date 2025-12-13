@@ -210,12 +210,8 @@ export default function WorldClassHomePage() {
       <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
         <div className="container">
           <div
+            className="cta-card"
             style={{
-              textAlign: 'center',
-              background: 'var(--gradient-brand)',
-              borderRadius: 'var(--radius-3xl)',
-              padding: 'clamp(48px, 8vw, 80px) clamp(24px, 4vw, 48px)',
-              color: 'var(--white)',
               position: 'relative',
               overflow: 'hidden'
             }}

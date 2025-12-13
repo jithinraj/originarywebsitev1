@@ -272,8 +272,8 @@ export default function SolutionsPage() {
         {/* CTA Section */}
         <section className="section">
           <div className="container">
-            <div className="card" style={{ textAlign: 'center', background: 'var(--gradient-brand)', color: 'white' }}>
-              <h2 style={{ marginBottom: 'var(--space-6)', color: 'white' }}>Ready to Get Started?</h2>
+            <div className="card cta-card">
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>Ready to Get Started?</h2>
               <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'var(--white)', lineHeight: 1.6 }}>
                 Join organizations building the future of AI coordination
               </p>

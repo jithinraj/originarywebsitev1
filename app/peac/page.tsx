@@ -318,7 +318,7 @@ export default function PeacPage() {
                   Open Development
                 </h3>
                 <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-                  PEAC is maintained by Originary with community contributions welcome. Development happens in the open on GitHub with semantic versioning and public roadmaps.
+                  Developed in public with community contributions. Originary (Poem, Inc.) is the primary maintainer today. Development happens on GitHub with semantic versioning and public roadmaps.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                   <a href="https://github.com/peacprotocol/peac/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm">

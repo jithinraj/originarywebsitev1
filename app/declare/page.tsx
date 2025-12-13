@@ -703,21 +703,17 @@ peac policy init
         <section className="section">
           <div className="container">
             <div
-              className="card"
+              className="card cta-card"
               style={{
-                textAlign: 'center',
                 padding: 'var(--space-12)',
-                background: 'var(--gradient-brand)',
                 maxWidth: '800px',
-                margin: '0 auto',
-                color: 'white'
+                margin: '0 auto'
               }}
             >
               <h2 style={{
                 fontSize: 'var(--text-3xl)',
                 fontWeight: 700,
-                marginBottom: 'var(--space-4)',
-                color: 'white'
+                marginBottom: 'var(--space-4)'
               }}>
                 Ready to declare your AI policy?
               </h2>

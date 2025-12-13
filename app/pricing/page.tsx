@@ -467,13 +467,8 @@ export default function PricingPage() {
             </section>
 
             {/* CTA */}
-            <div style={{
+            <div className="cta-card" style={{
               marginTop: 'var(--space-16)',
-              textAlign: 'center',
-              background: 'var(--gradient-brand)',
-              borderRadius: 'var(--radius-3xl)',
-              padding: 'var(--space-16) var(--space-8)',
-              color: 'var(--white)',
               position: 'relative',
               overflow: 'hidden'
             }}>

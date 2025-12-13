@@ -514,12 +514,7 @@ export default function Adapters() {
               </div>
             </div>
 
-            <div style={{
-              textAlign: 'center',
-              background: 'var(--gradient-brand)',
-              borderRadius: 'var(--radius-3xl)',
-              padding: 'var(--space-16) var(--space-8)',
-              color: 'var(--white)',
+            <div className="cta-card" style={{
               position: 'relative',
               overflow: 'hidden'
             }}>
