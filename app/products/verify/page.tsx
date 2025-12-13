@@ -3,6 +3,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Zap, Shield, BarChart, ExternalLink, Download } from 'lucide-react'
+import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata: Metadata = {
   title: 'Verify API',
@@ -35,7 +36,13 @@ export default function VerifyAPI() {
   return (
     <div className="wrap">
       <NavigationHeader />
-      <main style={{ paddingTop: '80px' }}>
+      <div className="container" style={{ paddingTop: '100px', paddingBottom: 'var(--space-4)' }}>
+        <Breadcrumb items={[
+          { label: 'Products', href: '/products' },
+          { label: 'Verify API' }
+        ]} />
+      </div>
+      <main style={{ paddingTop: '0' }}>
         <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>

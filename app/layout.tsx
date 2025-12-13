@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/next'
 import PerformanceMonitor from '@/components/PerformanceMonitor'
 import SkipNavigation from '@/components/SkipNavigation'
 import ClarityAnalytics from '@/components/ClarityAnalytics'
+import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
 
 const geistSans = Geist({
   subsets: ['latin'],
@@ -204,6 +205,7 @@ export default function RootLayout({
       <body>
         <PerformanceMonitor />
         <SkipNavigation />
+        <ServiceWorkerRegistration />
         <div className="wrap">
           {/* Texture overlay */}
           <div className="grain" aria-hidden="true"></div>
