@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
-import { Activity, CheckCircle, Clock, ExternalLink } from 'lucide-react'
+import { Activity, Clock, ExternalLink } from 'lucide-react'
 
 export default function StatusPage() {
   return (
@@ -18,25 +18,6 @@ export default function StatusPage() {
       <div className="container" style={{ maxWidth: '900px' }}>
         {/* Hero */}
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 'var(--space-2)',
-            background: 'rgba(16, 185, 129, 0.1)',
-            border: '1px solid rgba(16, 185, 129, 0.2)',
-            borderRadius: 'var(--radius-full)',
-            padding: 'var(--space-2) var(--space-6)',
-            marginBottom: 'var(--space-8)',
-            color: 'rgb(16, 185, 129)',
-            fontSize: 'var(--text-sm)',
-            fontWeight: 600,
-            letterSpacing: '0.05em',
-            textTransform: 'uppercase'
-          }}>
-            <CheckCircle size={16} />
-            All Systems Operational
-          </div>
-
           <h1 style={{
             fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
             fontWeight: 700,
@@ -44,7 +25,7 @@ export default function StatusPage() {
             marginBottom: 'var(--space-6)',
             lineHeight: 1.2
           }}>
-            Originary Status
+            Status Updates
           </h1>
 
           <p style={{
@@ -54,11 +35,11 @@ export default function StatusPage() {
             margin: '0 auto',
             lineHeight: 1.7
           }}>
-            Real-time service health and performance metrics
+            We post status updates and incident notices here. Uptime percentages are not displayed at this time.
           </p>
         </div>
 
-        {/* Current Status */}
+        {/* Status Updates */}
         <div style={{
           background: 'var(--white)',
           border: '1px solid var(--gray-200)',
@@ -79,16 +60,23 @@ export default function StatusPage() {
               fontWeight: 600,
               color: 'var(--gray-900)'
             }}>
-              Service Status
+              Status Updates
             </h2>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-            <ServiceStatus service="Policy Engine" status="operational" />
+          <div style={{
+            padding: 'var(--space-6)',
+            background: 'var(--gray-50)',
+            borderRadius: 'var(--radius-lg)',
+            border: '1px solid var(--gray-200)'
+          }}>
+            <p style={{ margin: 0, color: 'var(--gray-700)' }}>
+              No public incidents to report. We will post maintenance and incident updates here when applicable.
+            </p>
           </div>
         </div>
 
-        {/* Uptime */}
+        {/* Performance Notice */}
         <div style={{
           background: 'var(--white)',
           border: '1px solid var(--gray-200)',
@@ -109,16 +97,24 @@ export default function StatusPage() {
               fontWeight: 600,
               color: 'var(--gray-900)'
             }}>
-              Uptime (Last 30 Days)
+              Recent Activity
             </h2>
           </div>
 
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: 'var(--space-6)'
+            padding: 'var(--space-6)',
+            background: 'var(--gray-50)',
+            borderRadius: 'var(--radius-lg)',
+            border: '1px solid var(--gray-200)',
+            textAlign: 'center'
           }}>
-            <UptimeStat service="Policy Engine" uptime="100%" />
+            <p style={{
+              fontSize: 'var(--text-base)',
+              color: 'var(--gray-600)',
+              margin: 0
+            }}>
+              No incidents reported. Subscribe below for status notifications.
+            </p>
           </div>
         </div>
 
@@ -186,85 +182,4 @@ export default function StatusPage() {
   )
 }
 
-function ServiceStatus({ service, status }: { service: string; status: 'operational' | 'degraded' | 'down' }) {
-  const statusConfig = {
-    operational: {
-      color: 'rgb(16, 185, 129)',
-      bg: 'rgba(16, 185, 129, 0.1)',
-      label: 'Operational'
-    },
-    degraded: {
-      color: 'rgb(245, 158, 11)',
-      bg: 'rgba(245, 158, 11, 0.1)',
-      label: 'Degraded Performance'
-    },
-    down: {
-      color: 'rgb(239, 68, 68)',
-      bg: 'rgba(239, 68, 68, 0.1)',
-      label: 'Service Down'
-    }
-  }
-
-  const config = statusConfig[status]
-
-  return (
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: 'var(--space-4)',
-      background: 'var(--gray-50)',
-      borderRadius: 'var(--radius-lg)',
-      border: '1px solid var(--gray-200)'
-    }}>
-      <span style={{
-        fontSize: 'var(--text-base)',
-        fontWeight: 500,
-        color: 'var(--gray-900)'
-      }}>
-        {service}
-      </span>
-      <div style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: 'var(--space-2)',
-        padding: 'var(--space-1) var(--space-3)',
-        background: config.bg,
-        borderRadius: 'var(--radius-full)',
-        fontSize: 'var(--text-sm)',
-        fontWeight: 600,
-        color: config.color
-      }}>
-        <div style={{
-          width: '8px',
-          height: '8px',
-          borderRadius: '50%',
-          background: config.color
-        }} />
-        {config.label}
-      </div>
-    </div>
-  )
-}
-
-function UptimeStat({ service, uptime }: { service: string; uptime: string }) {
-  return (
-    <div style={{ textAlign: 'center' }}>
-      <div style={{
-        fontSize: 'var(--text-3xl)',
-        fontWeight: 700,
-        color: 'rgb(16, 185, 129)',
-        marginBottom: 'var(--space-2)'
-      }}>
-        {uptime}
-      </div>
-      <div style={{
-        fontSize: 'var(--text-sm)',
-        color: 'var(--gray-600)',
-        fontWeight: 500
-      }}>
-        {service}
-      </div>
-    </div>
-  )
-}
+// Uptime percentages and per-service claims intentionally omitted until a provider is integrated.

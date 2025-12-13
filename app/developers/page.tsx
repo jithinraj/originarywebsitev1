@@ -185,15 +185,11 @@ curl https://yourdomain.com/.well-known/peac.txt`}
                 step="2"
                 title="Test with CLI (1 min)"
                 description="Validate your policy and generate test receipts"
-                code={`# Download CLI (one-time)
-curl -O https://www.originary.xyz/cli/originary-linux-x64
-chmod +x originary-linux-x64
-
-# Validate your policy
-./originary-linux-x64 validate https://yourdomain.com
+                code={`# Run without installing (recommended)
+npx @peac/cli@latest validate https://yourdomain.com
 
 # Generate a test receipt
-./originary-linux-x64 receipt \\
+npx @peac/cli@latest receipt \\
   --domain yourdomain.com \\
   --amount 0.001
 
@@ -279,11 +275,14 @@ export default {
                 fontSize: 'var(--text-sm)',
                 marginBottom: 'var(--space-3)'
               }}>
-                pnpm add -g @peac/cli && pnpm add @peac/protocol @peac/crypto @peac/schema
+                # CLI and libraries (npm)
+                npm i -g @peac/cli && npm i @peac/protocol @peac/crypto @peac/schema
               </code>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
-                <Link
-                  href="/downloads"
+                <a
+                  href="https://www.npmjs.com/package/@peac/cli"
+                  target="_blank"
+                  rel="noreferrer"
                   style={{
                     color: 'var(--brand-primary)',
                     textDecoration: 'underline',
@@ -291,8 +290,8 @@ export default {
                     fontWeight: 600
                   }}
                 >
-                  First-party CLI
-                </Link>
+                  CLI on npm
+                </a>
                 <a
                   href="https://github.com/peacprotocol/peac"
                   target="_blank"
@@ -304,6 +303,18 @@ export default {
                   }}
                 >
                   GitHub
+                </a>
+                <a
+                  href="https://github.com/peacprotocol/peac/releases"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    color: 'var(--brand-primary)',
+                    textDecoration: 'underline',
+                    fontSize: 'var(--text-sm)'
+                  }}
+                >
+                  Releases
                 </a>
                 <a
                   href="https://peacprotocol.org/docs"
@@ -659,4 +670,3 @@ function ApiSection({
     </div>
   )
 }
-

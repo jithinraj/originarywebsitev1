@@ -295,7 +295,7 @@ logging: minimal`,
     filename: 'peac.txt',
     codeType: 'txt',
     code: `# Access control
-version: 0.9.13
+version: 0.9.16
 access_control: http-402
 protected_paths: [/api/, /models/]
 receipts: required`,
