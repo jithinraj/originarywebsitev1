@@ -119,6 +119,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/ai',
     '/originary-ai',
     '/status',
+    '/search',
   ]
 
   const allPages = [
