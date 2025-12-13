@@ -398,11 +398,7 @@ export default function BlogPage() {
         {/* Newsletter CTA */}
         <section className="section">
           <div className="container" style={{ maxWidth: '800px' }}>
-            <div className="card" style={{
-              textAlign: 'center',
-              background: 'var(--gradient-brand)',
-              color: 'var(--white)'
-            }}>
+            <div className="card cta-card">
               <h2 style={{
                 fontSize: 'var(--text-3xl)',
                 fontWeight: 700,

@@ -157,7 +157,7 @@ export default function TrustPage() {
                 title="Infrastructure"
                 description="Service metadata and infrastructure information."
                 links={[
-                  { href: '/sitemap-main.xml', label: 'Sitemap (XML)', external: true },
+                  { href: '/sitemap.xml', label: 'Sitemap (XML)', external: true },
                   { href: '/humans.txt', label: 'humans.txt', external: true },
                   { href: '/status', label: 'Service Status' }
                 ]}

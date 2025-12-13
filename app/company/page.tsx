@@ -424,11 +424,7 @@ export default function CompanyPage() {
         {/* CTA Section */}
         <section className="section" style={{ paddingTop: 0, paddingBottom: 'var(--space-20)' }}>
           <div className="container" style={{ maxWidth: '800px' }}>
-            <div className="card" style={{
-              textAlign: 'center',
-              background: 'var(--gradient-brand)',
-              color: 'var(--white)'
-            }}>
+            <div className="card cta-card">
               <h2 style={{
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,

@@ -274,12 +274,8 @@ export default function ProductsPage() {
         <section className="section">
           <div className="container">
             <div
+              className="cta-card"
               style={{
-                textAlign: 'center',
-                background: 'var(--gradient-brand)',
-                borderRadius: 'var(--radius-3xl)',
-                padding: 'var(--space-16) var(--space-8)',
-                color: 'var(--white)',
                 position: 'relative',
                 overflow: 'hidden'
               }}

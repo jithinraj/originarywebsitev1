@@ -1072,13 +1072,11 @@ Content-Type: application/json
           {/* CTA Section */}
           <section style={{ background: 'var(--gray-50)', borderTop: '1px solid var(--gray-200)', marginTop: 'var(--space-16)' }}>
             <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: 'var(--space-16) var(--space-6)' }}>
-              <div style={{
-                background: 'var(--gradient-brand)',
+              <div className="cta-card" style={{
                 borderRadius: 'var(--radius-xl)',
-                padding: 'var(--space-10)',
-                textAlign: 'center'
+                padding: 'var(--space-10)'
               }}>
-                <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--white)' }}>
+                <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
                   Ready to monetize AI traffic with verifiable receipts?
                 </h2>
                 <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'rgba(255,255,255,0.9)', maxWidth: '500px', margin: '0 auto var(--space-8)' }}>

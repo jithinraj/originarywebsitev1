@@ -80,11 +80,11 @@ export default function BentoFeatures() {
           {/* Small Card - Global */}
           <BentoCard
             className="bento-small"
-            title="Global Network"
-            description="Edge-deployed verification across 300+ locations."
+            title="Edge Deployment"
+            description="Deploy verification at the edge via Cloudflare Workers or Vercel."
             icon={<Globe size={24} />}
             href="/cloud"
-            linkText="View coverage"
+            linkText="View options"
           >
             <GlobalMap />
           </BentoCard>
@@ -277,11 +277,11 @@ function TrafficGraph() {
           marginBottom: 'var(--space-3)'
         }}
       >
-        <span className="label-mono">Live traffic - example</span>
+        <span className="label-mono">Traffic visualization</span>
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
           <span className="pulse-dot" />
           <span style={{ fontSize: '11px', color: 'var(--success)', fontWeight: 500 }}>
-            2.4k req/s
+            Live
           </span>
         </div>
       </div>
@@ -332,7 +332,7 @@ function TrafficGraph() {
           }}
         />
         <span style={{ fontSize: '11px', color: 'var(--error)' }}>
-          142 bots blocked today
+          Policy violations blocked
         </span>
       </div>
     </div>
@@ -411,7 +411,7 @@ function GlobalMap() {
           color: 'var(--gray-500)'
         }}
       >
-        300+ edge locations
+        Edge-ready deployment
       </div>
     </div>
   )

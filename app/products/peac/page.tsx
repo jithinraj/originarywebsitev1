@@ -324,13 +324,10 @@ public_keys:
             </div>
 
             {/* CTA Section */}
-            <div className="card" style={{
-              textAlign: 'center',
-              background: 'var(--gradient-brand)',
-              color: 'white',
+            <div className="card cta-card" style={{
               marginTop: 'var(--space-20)'
             }}>
-              <h2 style={{ marginBottom: 'var(--space-6)', color: 'white' }}>Deploy PEAC at enterprise scale</h2>
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>Deploy PEAC at enterprise scale</h2>
               <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'var(--white)', lineHeight: 1.6 }}>
                 Large enterprises use PEAC Protocol to govern agent interactions, ensure compliance, and monetize digital resources.
               </p>
