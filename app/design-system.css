@@ -514,8 +514,16 @@ p {
 .cta-card h2,
 .cta-card h3,
 .cta-card p,
-.cta-card span {
+.cta-card > span,
+.cta-card > div > span {
   color: white !important;
+}
+
+/* Exclude button spans from white color override - buttons handle their own text color */
+.cta-card .btn span,
+.cta-card a.btn span,
+.cta-card button.btn span {
+  color: inherit !important;
 }
 
 .cta-card h2 {
