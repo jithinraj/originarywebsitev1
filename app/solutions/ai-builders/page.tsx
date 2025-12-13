@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
+import Breadcrumb from '@/components/Breadcrumb'
 import Mark from '@/components/Mark'
 
 export const metadata: Metadata = {
@@ -86,7 +87,13 @@ export default function AIBuilders() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <NavigationHeader />
-      <main style={{ paddingTop: '80px' }}>
+      <div className="container" style={{ paddingTop: '100px', paddingBottom: 'var(--space-4)' }}>
+        <Breadcrumb items={[
+          { label: 'Solutions', href: '/solutions' },
+          { label: 'AI Builders' }
+        ]} />
+      </div>
+      <main style={{ paddingTop: '0' }}>
         <section className="section">
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>

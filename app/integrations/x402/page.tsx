@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
+import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata: Metadata = {
   title: 'x402 Integration | HTTP 402 Payments and Machine Payable APIs with PEAC',
@@ -67,7 +68,13 @@ Cache-Control: no-store
   return (
     <>
       <NavigationHeader />
-      <main id="main-content" className="container" style={{ marginTop: 'var(--space-32)', marginBottom: 'var(--space-32)' }}>
+      <div className="container" style={{ paddingTop: '100px', paddingBottom: 'var(--space-4)' }}>
+        <Breadcrumb items={[
+          { label: 'Integrations', href: '/integrations' },
+          { label: 'x402' }
+        ]} />
+      </div>
+      <main id="main-content" className="container" style={{ marginTop: 'var(--space-8)', marginBottom: 'var(--space-32)' }}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>

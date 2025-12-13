@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'PEAC Protocol Trace : Originary',
+  title: { absolute: 'PEAC Protocol Trace | Originary' },
   description: 'Watch a complete PEAC v0.9.23 transaction end to end. Agent discovers policy via peac.txt, receives HTTP 402 challenge, pays via x402/l402/stripe, and receives a signed PEAC-Receipt verifiable offline with JWKS.',
   keywords: 'PEAC protocol, HTTP 402, verifiable receipts, policy discovery, x402, l402, JWKS verification, agent transactions, aipref, peac.txt',
   authors: [{ name: 'Originary' }],

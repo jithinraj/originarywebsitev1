@@ -1,90 +1,33 @@
-Team: Originary (Poem, Inc.)
-Mission: Receipts for the agentic web - consent, attribution, access, and settlement with proof.
-Founded: 2024
-Location: United States (India affiliate provides support operations)
+/* TEAM */
+
+Operator: Poem, Inc.
 Contact: contact@originary.xyz
+Location: United States
 
 /* SITE */
 
-Standards: HTML5, CSS3, JavaScript ES6+
-Framework: Custom responsive design
-Typography: Inter, Fraunces
-Colors: #FAF8F1, #0B0B0B, #0059FF
-Icons: Custom SVG iconography
-Analytics: Google Analytics (anonymized)
-
-Last Update: July 2025
+Last updated: 2025-12-13
 Language: English
-Doctype: HTML5
-IDE: Various development environments
+Framework: Next.js
+Standards: HTML5, CSS3, ES6+
 
-/* SERVICES */
+/* LINKS */
 
-Products:
-- Receipts (verification and validation)
-- Gateway 402 (HTTP payment-required receipts)
-- Studio (dashboard and management)
-- Adapters (integration tools and connectors)
+Website: https://www.originary.xyz
+GitHub: https://github.com/peacprotocol/peac
+Security: https://www.originary.xyz/.well-known/security.txt
+Policy: https://www.originary.xyz/.well-known/peac.txt
+Preferences: https://www.originary.xyz/.well-known/aipref.json
 
+/* PROTOCOL */
 
-/* TECHNOLOGY */
-
-Infrastructure: Cloud-native architecture
-Security: Designed for SOC 2 Type II, enterprise-grade encryption
-APIs: RESTful design with OpenAPI specifications
-Protocols: HTTP/HTTPS, WebSocket, PEAC Protocol
-Authentication: Multi-factor authentication, OAuth
-Compliance: Designed for GDPR, CCPA, PIPEDA, Privacy Act
-
-Development Stack:
-- Frontend: Modern web standards, progressive enhancement
-- Backend: Scalable microservices architecture
-- Database: Encrypted data storage with backup redundancy
-- Monitoring: 24/7 security and performance monitoring
-- Testing: Comprehensive test coverage and CI/CD
+PEAC wire version: 0.9.16
+Receipt signing: EdDSA (Ed25519)
+JWKS: https://www.originary.xyz/.well-known/jwks.json
 
 /* LEGAL */
 
-Copyright: © 2025 Poem, Inc.
-Operator: Poem, Inc. (India affiliate may provide support operations)
-Trade & Product Name: Originary
-License: Proprietary software with open protocol specifications
+Copyright: 2025 Poem, Inc.
+Trade name: Originary
 Terms: https://www.originary.xyz/terms
 Privacy: https://www.originary.xyz/privacy
-Security: https://www.originary.xyz/.well-known/security.txt
-
-Domain:
-- Primary: www.originary.xyz
-
-/* CREDITS */
-
-Thanks to the open source community for foundational technologies.
-Thanks to early adopters and beta testers of PEAC Protocol.
-Thanks to the developer community contributing to receipts and verification standards.
-
-Special recognition to researchers and security professionals who help
-keep our platform secure through responsible disclosure practices.
-
-/* NOTES */
-
-This humans.txt file follows RFC 2606 recommendations and provides
-information about the humans behind https://www.originary.xyz
-
-For partnership inquiries: contact@originary.xyz
-For media inquiries: contact@originary.xyz
-For developer questions: contact@originary.xyz
-
-We believe in:
-- Transparent communication about our technology
-- Responsible AI receipts and verification practices
-- Privacy-first development approaches
-- Open protocol specifications where appropriate
-- Collaborative development with the community
-
-Site launched: July 2025
-PEAC Protocol v0.9.0 released: July 19, 2025
-Current protocol version: v0.9.13
-Active commercial operations: July 2025 - Present
-
-Effective from July 24, 2025.
-For the most current information, visit https://www.originary.xyz

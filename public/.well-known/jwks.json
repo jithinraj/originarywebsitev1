@@ -1,13 +1,12 @@
 {
   "keys": [
     {
-      "kty": "EC",
-      "crv": "P-256",
+      "kty": "OKP",
+      "crv": "Ed25519",
       "kid": "peac-2025-01",
       "use": "sig",
-      "alg": "ES256",
-      "x": "REPLACE_WITH_ACTUAL_PUBLIC_KEY_X_COORDINATE",
-      "y": "REPLACE_WITH_ACTUAL_PUBLIC_KEY_Y_COORDINATE"
+      "alg": "EdDSA",
+      "x": "11qYAYKxCrfVS_7TyWQHOg7hcvPapiMlrwIaaPcHURo"
     }
   ]
 }
