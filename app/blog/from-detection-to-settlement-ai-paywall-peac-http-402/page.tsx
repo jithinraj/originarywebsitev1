@@ -6,13 +6,13 @@ import { FileText, ArrowRight, Zap, Shield, CreditCard, FileCheck, List, CheckCi
 
 export const metadata: Metadata = {
   title: "From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance",
-  description: "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, L402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
-  keywords: "AI paywall, HTTP 402, L402, x402, Stripe, PEAC receipts, AI payments, AI bot detection, AI monetization, machine payments",
+  description: "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
+  keywords: "AI paywall, HTTP 402, x402, Stripe, PEAC receipts, AI payments, AI bot detection, AI monetization, machine payments",
   authors: [{ name: "Jithin Raj & Originary Team" }],
   alternates: { canonical: '/blog/from-detection-to-settlement-ai-paywall-peac-http-402' },
   openGraph: {
     title: "From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance",
-    description: "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, L402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
+    description: "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
     type: "article",
     url: "https://www.originary.xyz/blog/from-detection-to-settlement-ai-paywall-peac-http-402/",
     publishedTime: "2025-12-01",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance",
-    description: "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, L402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
+    description: "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -36,7 +36,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "headline": "From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance",
-    "description": "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, L402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
+    "description": "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
     "author": {
       "@type": "Organization",
       "name": "Originary™",
@@ -120,7 +120,7 @@ export default function Page() {
                 marginBottom: 'var(--space-8)',
                 maxWidth: '650px'
               }}>
-                How Originary and PEAC Protocol turn AI bot detection into an AI paywall using HTTP 402, L402, x402 and Stripe - with signed receipts for billing, audit and compliance.
+                How Originary and PEAC Protocol turn AI bot detection into an AI paywall using HTTP 402, x402 and Stripe - with signed receipts for billing, audit and compliance.
               </p>
 
               {/* Meta */}
@@ -158,7 +158,7 @@ export default function Page() {
                   { num: '1', title: 'From "is this a bot" to "this bot paid under these terms"' },
                   { num: '2', title: 'HTTP 402 and the rise of the AI paywall' },
                   { num: '3', title: 'The PEAC flow: from detection to 402 to receipt' },
-                  { num: '4', title: 'Concrete flows across L402, x402, and Stripe' },
+                  { num: '4', title: 'Concrete flows across x402 and Stripe' },
                   { num: '5', title: 'What actually ends up in a PEAC-Receipt' },
                   { num: '6', title: 'How this ties back to our roadmap and vision' },
                 ].map((item) => (
@@ -197,7 +197,7 @@ export default function Page() {
                 </p>
 
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  That gap is closing fast. New payment standards built on <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>HTTP 402 Payment Required</a>, like L402 and x402, are turning APIs and web resources into machine readable paywalls that AI agents can clear automatically.
+                  That gap is closing fast. New payment standards built on <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>HTTP 402 Payment Required</a>, like x402, are turning APIs and web resources into machine readable paywalls that AI agents can clear automatically.
                 </p>
 
                 <div style={{
@@ -213,7 +213,7 @@ export default function Page() {
                   <ul style={{ margin: 'var(--space-4) 0 0 0', paddingLeft: 'var(--space-5)' }}>
                     <li style={{ marginBottom: 'var(--space-2)' }}>You detect AI bot traffic</li>
                     <li style={{ marginBottom: 'var(--space-2)' }}>You apply an AI paywall with HTTP 402</li>
-                    <li style={{ marginBottom: 'var(--space-2)' }}>You settle payments over L402, x402, or Stripe</li>
+                    <li style={{ marginBottom: 'var(--space-2)' }}>You settle payments over x402 or Stripe</li>
                     <li>You get a signed PEAC-Receipt for every access event, ready for billing, audit and disputes</li>
                   </ul>
                 </div>
@@ -364,12 +364,6 @@ export default function Page() {
                 <div style={{ display: 'grid', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
                   {[
                     {
-                      title: 'L402 (Lightning HTTP 402)',
-                      desc: 'Combines HTTP 402, macaroons and the Bitcoin Lightning Network so APIs can charge small amounts per request and use the paid token as authentication.',
-                      link: 'https://docs.lightning.engineering/the-lightning-network/l402',
-                      icon: Zap
-                    },
-                    {
                       title: 'x402',
                       desc: 'A chain agnostic HTTP 402 protocol for stablecoin payments. Servers respond with 402 and a machine readable payment challenge; clients pay and retry with proof.',
                       link: 'https://www.x402.org/',
@@ -450,7 +444,7 @@ export default function Page() {
                 </div>
 
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  PEAC does not try to replace L402, x402, or Stripe. Our roadmap is explicit: the protocol is a <strong>universal proof layer</strong> that completes existing payment rails rather than competes with them.
+                  PEAC does not try to replace x402 or Stripe. Our roadmap is explicit: the protocol is a <strong>universal proof layer</strong> that completes existing payment rails rather than competes with them.
                 </p>
 
                 <div style={{ display: 'grid', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
@@ -463,7 +457,7 @@ export default function Page() {
                     {
                       version: 'PEAC 0.9.13',
                       title: 'Economic layer',
-                      items: ['Normalized payment block in the receipt schema', 'Adapters for L402, x402, and Stripe', 'Provenance and consent fields wired into receipts', 'Verification latency budget under 5 ms p95']
+                      items: ['Normalized payment block in the receipt schema', 'Adapters for x402 and Stripe', 'Provenance and consent fields wired into receipts', 'Verification latency budget under 5 ms p95']
                     },
                     {
                       version: 'PEAC 0.9.14',
@@ -557,7 +551,7 @@ export default function Page() {
                     {
                       num: '4',
                       title: 'Settle on the chosen rail',
-                      desc: 'The AI agent uses the L402, x402, or Stripe adapter flow to pay and obtain a proof.'
+                      desc: 'The AI agent uses the x402 or Stripe adapter flow to pay and obtain a proof.'
                     },
                     {
                       num: '5',
@@ -625,90 +619,11 @@ export default function Page() {
                     margin: 0,
                     color: 'var(--gray-900)'
                   }}>
-                    Concrete flows across L402, x402, and Stripe
+                    Concrete flows across x402 and Stripe
                   </h2>
                 </div>
 
-                {/* 4.1 L402 */}
-                <div style={{ marginBottom: 'var(--space-12)' }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 'var(--space-3)',
-                    marginBottom: 'var(--space-4)',
-                    paddingBottom: 'var(--space-4)',
-                    borderBottom: '2px solid var(--gray-100)'
-                  }}>
-                    <div style={{
-                      width: '32px',
-                      height: '32px',
-                      borderRadius: 'var(--radius-md)',
-                      background: 'rgba(99, 91, 255, 0.1)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
-                    }}>
-                      <Zap size={16} style={{ color: 'var(--brand-primary)' }} />
-                    </div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--gray-900)' }}>
-                      4.1 L402: Lightning powered AI payments
-                    </h3>
-                  </div>
-
-                  <p style={{ marginBottom: 'var(--space-4)' }}>
-                    <a href="https://docs.lightning.engineering/the-lightning-network/l402" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>L402</a> uses HTTP 402 plus Lightning invoices and macaroons so services can charge satoshis for API calls and authenticate clients at the same time.
-                  </p>
-
-                  <p style={{ marginBottom: 'var(--space-4)' }}>
-                    In a PEAC integrated L402 setup:
-                  </p>
-
-                  <div style={{
-                    background: 'var(--gray-900)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: 'var(--space-5)',
-                    marginBottom: 'var(--space-4)',
-                    overflow: 'auto'
-                  }}>
-                    <div style={{ color: 'var(--gray-400)', fontSize: 'var(--text-xs)', marginBottom: 'var(--space-2)' }}>HTTP 402 L402 Challenge</div>
-                    <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', color: 'var(--gray-300)', lineHeight: 1.7 }}>
-{`HTTP/1.1 402 Payment Required
-Content-Type: application/json
-
-{
-  "rail": "l402",
-  "price": 100,
-  "currency": "SAT",
-  "invoice": "lnbc1...",
-  "macaroon_hint": "serialized-macaroon-prefix"
-}`}
-                    </pre>
-                  </div>
-
-                  <p style={{ marginBottom: 'var(--space-4)' }}>
-                    The client pays the invoice on the Lightning Network, receives a full macaroon token, then retries:
-                  </p>
-
-                  <div style={{
-                    background: 'var(--gray-900)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: 'var(--space-5)',
-                    marginBottom: 'var(--space-4)',
-                    overflow: 'auto'
-                  }}>
-                    <div style={{ color: 'var(--gray-400)', fontSize: 'var(--text-xs)', marginBottom: 'var(--space-2)' }}>Paid Retry</div>
-                    <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', color: 'var(--gray-300)', lineHeight: 1.7 }}>
-{`GET /api/report HTTP/1.1
-Authorization: L402 <macaroon>:<preimage>`}
-                    </pre>
-                  </div>
-
-                  <p>
-                    The L402 adapter verifies the payment, normalizes it into a <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>payment</code> block, and issues a signed PEAC-Receipt. Every paid L402 call is now a verifiable record, not just a line in a Lightning node log.
-                  </p>
-                </div>
-
-                {/* 4.2 x402 */}
+                {/* 4.1 x402 */}
                 <div style={{ marginBottom: 'var(--space-12)' }}>
                   <div style={{
                     display: 'flex',
@@ -730,7 +645,7 @@ Authorization: L402 <macaroon>:<preimage>`}
                       <Globe size={16} style={{ color: 'var(--brand-primary)' }} />
                     </div>
                     <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--gray-900)' }}>
-                      4.2 x402: Stablecoin AI paywalls over HTTP
+                      4.1 x402: Stablecoin AI paywalls over HTTP
                     </h3>
                   </div>
 
@@ -789,7 +704,7 @@ Content-Type: application/json
                       <CreditCard size={16} style={{ color: 'var(--brand-primary)' }} />
                     </div>
                     <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--gray-900)' }}>
-                      4.3 Stripe: Card rails behind an AI paywall
+                      4.2 Stripe: Card rails behind an AI paywall
                     </h3>
                   </div>
 
@@ -921,7 +836,7 @@ Content-Type: application/json
                   {[
                     { field: 'policy_hash + aipref_snapshot', desc: 'Tell you exactly what rules were in force when this AI paywall was applied' },
                     { field: 'resource', desc: 'Ties things to a concrete path and ETag' },
-                    { field: 'payment', desc: 'Uniform across L402, x402, and Stripe - only the rail and reference semantics differ' },
+                    { field: 'payment', desc: 'Uniform across x402 and Stripe - only the rail and reference semantics differ' },
                     { field: 'proof', desc: 'Binds it all cryptographically so third parties can verify without talking to your servers' }
                   ].map((item, i) => (
                     <div key={i} style={{
@@ -982,7 +897,7 @@ Content-Type: application/json
                     <li>Stay on 0.9.x until we earn 1.0 through an IETF draft and multiple independent implementations</li>
                     <li>Use <strong>PEAC-Receipt</strong> as the primary HTTP field globally, without legacy header aliases</li>
                     <li>Keep the core small and rely on adapters for payment rails and environments</li>
-                    <li>Always embed AIPREF snapshots in receipts when present, and make payment optional but normalized across L402, x402, and Stripe</li>
+                    <li>Always embed AIPREF snapshots in receipts when present, and make payment optional but normalized across x402 and Stripe</li>
                   </ul>
                 </div>
 
@@ -1034,7 +949,7 @@ Content-Type: application/json
                   {[
                     'AI bot detection becomes the front door into a programmable AI paywall',
                     'HTTP 402 becomes the standard control plane for AI payments',
-                    'L402, x402 and Stripe are first class citizens, not competing standards',
+                    'x402 and Stripe are first class citizens, not competing standards',
                     'PEAC-Receipt is the common language between engineering, finance, legal and external partners'
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
@@ -1080,7 +995,7 @@ Content-Type: application/json
                   Ready to monetize AI traffic with verifiable receipts?
                 </h2>
                 <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'rgba(255,255,255,0.9)', maxWidth: '500px', margin: '0 auto var(--space-8)' }}>
-                  Learn how Originary and PEAC Protocol turn AI detection into AI paywalls with L402, x402, and Stripe support.
+                  Learn how Originary and PEAC Protocol turn AI detection into AI paywalls with x402 and Stripe support.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
                   <Link

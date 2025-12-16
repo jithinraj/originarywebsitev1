@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   keywords: 'PEAC protocol, AI Access, verify API, Gateway 402, AI orchestration, autonomous agents, policy enforcement',
   robots: 'index,follow',
   openGraph: {
-    title: 'Products : Originary',
+    title: 'Products',
     description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters-everything you need to power autonomous AI coordination.',
     url: 'https://www.originary.xyz/products',
     siteName: 'Originary',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Products : Originary',
+    title: 'Products',
     description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters-everything you need to power autonomous AI coordination.',
     images: ['https://www.originary.xyz/og.jpg'],
   },

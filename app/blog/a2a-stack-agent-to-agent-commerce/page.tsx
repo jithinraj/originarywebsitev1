@@ -230,7 +230,7 @@ export default function Page() {
                     </div>
                     <strong style={{ color: 'var(--gray-900)' }}>Access Control (HTTP 402)</strong>
                     <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: '4px 0 0' }}>
-                      Gated endpoints return 402 with payment instructions (x402, L402, Stripe)
+                      Gated endpoints return 402 with payment instructions (x402, Stripe)
                     </p>
                   </div>
                 </div>
@@ -314,7 +314,7 @@ export default function Page() {
                   { num: 1, title: 'Policy check', desc: 'Agent A fetches /.well-known/peac.txt to discover crawling policy and payment options' },
                   { num: 2, title: 'Access request', desc: 'Agent A calls Agent B\'s API endpoint' },
                   { num: 3, title: '402 response', desc: 'Agent B returns HTTP 402 with payment details' },
-                  { num: 4, title: 'Payment', desc: 'Agent A pays via configured method (x402/L402/Stripe)' },
+                  { num: 4, title: 'Payment', desc: 'Agent A pays via configured method (x402/Stripe)' },
                   { num: 5, title: 'Receipt', desc: 'Agent B processes request and returns PEAC-Receipt in headers' },
                   { num: 6, title: 'Verification', desc: 'Agent A or operator verifies receipt at verify endpoint' }
                 ].map((step) => (

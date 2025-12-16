@@ -5,16 +5,16 @@ import Footer from '@/components/Footer'
 import { Shield, FileText, CheckCircle, Code, Globe, Users, HelpCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'What is Originary? Verifiable receipts and policy for agent interactions',
-  description: 'Originary builds infrastructure and tools for AI agents. Originary builds and maintains PEAC Protocol, an open protocol for cryptographically signed receipts that prove what happened in an agent interaction.',
+  title: 'What is Originary? AI Receipts & Policy',
+  description: 'Originary builds PEAC Protocol - cryptographic receipts proving what happened in agent interactions. Policy discovery and verification tools.',
   keywords: 'Originary, PEAC Protocol, verifiable receipts, PEAC-Receipt, peac.txt, agent policy, agentic web, HTTP 402, cryptographic receipts, policy discovery, agent compliance',
   robots: 'index,follow',
   alternates: {
     canonical: '/what-is-originary'
   },
   openGraph: {
-    title: 'What is Originary? Verifiable receipts and policy for agent interactions',
-    description: 'Originary builds infrastructure and tools for AI agents. Originary builds and maintains PEAC Protocol, an open protocol for cryptographically signed receipts that prove what happened in an agent interaction.',
+    title: 'What is Originary? AI Receipts & Policy',
+    description: 'Originary builds PEAC Protocol - cryptographic receipts proving what happened in agent interactions.',
     url: 'https://www.originary.xyz/what-is-originary',
     type: 'website',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'What is Originary? Verifiable receipts and policy for agent interactions',
-    description: 'Originary builds infrastructure and tools for AI agents. Originary builds and maintains PEAC Protocol, an open protocol for cryptographically signed receipts that prove what happened in an agent interaction.',
+    title: 'What is Originary? AI Receipts & Policy',
+    description: 'Originary builds PEAC Protocol - cryptographic receipts for agent interactions.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',

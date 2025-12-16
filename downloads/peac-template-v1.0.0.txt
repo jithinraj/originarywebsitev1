@@ -7,7 +7,7 @@ preferences: https://yourdomain.com/.well-known/ai-preferences.txt
 receipts: required
 verify: true
 access_control: http-402
-payments: ['x402', 'l402']
+payments: ['x402', 'stripe']
 provenance: c2pa
 public_keys: [
   {

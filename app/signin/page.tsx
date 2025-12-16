@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Sign In : Originary',
+    title: 'Sign In',
     description: 'Sign in to your Originary account to access the PEAC protocol dashboard, manage your policies, and view analytics.',
     url: 'https://www.originary.xyz/signin',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sign In : Originary',
+    title: 'Sign In',
     description: 'Sign in to your Originary account to access the PEAC protocol dashboard, manage your policies, and view analytics.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
@@ -128,7 +128,7 @@ export default function SignIn() {
 
                 <div style={{
                   display: 'flex',
-                  justifyContent: 'space-between',
+                  justifyContent: 'flex-start',
                   alignItems: 'center',
                   fontSize: 'var(--text-sm)'
                 }}>
@@ -136,9 +136,6 @@ export default function SignIn() {
                     <input type="checkbox" />
                     <span style={{ color: 'var(--gray-600)' }}>Remember me</span>
                   </label>
-                  <Link href="/forgot-password" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>
-                    Forgot password?
-                  </Link>
                 </div>
 
                 <button className="btn btn-primary" style={{ width: '100%' }}>
@@ -154,9 +151,9 @@ export default function SignIn() {
                 borderTop: '1px solid var(--gray-200)'
               }}>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                  Don&apos;t have an account?{' '}
-                  <Link href="/signup" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>
-                    Sign up for free
+                  Need an account?{' '}
+                  <Link href="/pricing" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>
+                    View pricing
                   </Link>
                 </p>
               </div>

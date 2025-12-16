@@ -11,7 +11,7 @@ import { Check, Copy, Play, Pause, SkipForward, RotateCcw, ChevronLeft, ChevronR
 
 const PEAC_TXT_CONTENT = `preferences: https://www.originary.xyz/.well-known/aipref.json
 access_control: http-402
-payments: [l402, x402, stripe]
+payments: [x402, stripe]
 provenance: c2pa
 receipts: required
 verify: https://www.originary.xyz/.well-known/jwks.json
@@ -65,7 +65,7 @@ const TRACE_STEPS = [
   { key: 'prefs', title: 'Preferences check', desc: 'Agent fetches aipref.json (or uses cached snapshot)' },
   { key: 'evaluate', title: 'Policy evaluation', desc: 'Server decides: allow, deny, or require payment (402)' },
   { key: 'challenge', title: '402 challenge', desc: 'Server returns 402 with PAYMENT-REQUIRED instructions' },
-  { key: 'payment', title: 'Payment adapter', desc: 'Client retries using a supported adapter (x402/l402/stripe)' },
+  { key: 'payment', title: 'Payment adapter', desc: 'Client retries using a supported adapter (x402/stripe)' },
   { key: 'access', title: 'Resource access', desc: 'Server returns resource when requirements are satisfied' },
   { key: 'receipt', title: 'PEAC-Receipt', desc: 'Server attaches signed PEAC-Receipt (JWS) to response' },
 ]
@@ -1214,7 +1214,7 @@ export default function DemoPage() {
                 </div>
 
                 <div className="info-box">
-                  <strong>Rail-neutral:</strong> PEAC supports multiple payment adapters (l402, x402, stripe).
+                  <strong>Rail-neutral:</strong> PEAC supports multiple payment adapters (x402, stripe).
                   <code>verify</code> points to JWKS for offline verification;
                   <code>verify_api</code> is optional convenience.
                 </div>

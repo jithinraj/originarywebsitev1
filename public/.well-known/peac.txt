@@ -1,7 +1,7 @@
 version: 0.9.23
 preferences: https://www.originary.xyz/.well-known/aipref.json
 access_control: http-402
-payments: [l402, x402, stripe]
+payments: [x402, stripe]
 provenance: c2pa
 receipts: required
 verify: https://www.originary.xyz/.well-known/jwks.json

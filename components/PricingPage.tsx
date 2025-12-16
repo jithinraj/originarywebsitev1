@@ -552,7 +552,7 @@ export default function PricingPage() {
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
                     <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
-                      Complements Stripe, x402, L402 payments
+                      Complements Stripe and x402 payments
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>

@@ -272,18 +272,6 @@ Cache-Control: no-store
           {/* Comparisons */}
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
-              x402 vs L402
-            </h2>
-            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-              L402 couples Lightning and macaroons for auth and payment in one flow. x402 is HTTP-native and rail-agnostic.
-            </p>
-            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
-              Choose L402 for Lightning-first ecosystems; choose x402 when you want chain/gateway flexibility and simple HTTP semantics.
-            </p>
-          </div>
-
-          <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
-            <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
               Choosing Rails: x402 vs Arc vs Tempo
             </h2>
             <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>

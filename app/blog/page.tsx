@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Originary Blog - AI payments, HTTP 402 and PEAC receipts',
   },
-  description: 'Originary blog on AI payments, HTTP 402, L402, x402, PEAC receipts, AIPREF and agentic web infrastructure. Technical insights, protocol updates and best practices for AI infrastructure teams.',
-  keywords: 'Originary blog, AIPREF, PEAC protocol, AI payments, HTTP 402, x402, L402, receipts, technical blog, agentic web, AI infrastructure',
+  description: 'Originary blog on AI payments, HTTP 402, x402, PEAC receipts, AIPREF and agentic web infrastructure. Technical insights, protocol updates and best practices for AI infrastructure teams.',
+  keywords: 'Originary blog, AIPREF, PEAC protocol, AI payments, HTTP 402, x402, receipts, technical blog, agentic web, AI infrastructure',
   authors: [{ name: 'Originary Team' }],
   openGraph: {
     type: 'website',
@@ -64,7 +64,7 @@ export default function BlogPage() {
     {
       slug: 'from-detection-to-settlement-ai-paywall-peac-http-402',
       title: 'From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance',
-      description: 'How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, L402, x402 and Stripe, with signed receipts for billing, audit and compliance.',
+      description: 'How Originary and PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.',
       author: 'Jithin Raj & Originary Team',
       category: 'Technical',
       readTime: '18 min read',
@@ -130,7 +130,7 @@ export default function BlogPage() {
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "Originary Blog",
-    "description": "Originary blog on AI payments, HTTP 402, L402, x402, PEAC receipts, AIPREF and agentic web infrastructure. Technical insights, protocol updates and best practices for AI infrastructure teams.",
+    "description": "Originary blog on AI payments, HTTP 402, x402, PEAC receipts, AIPREF and agentic web infrastructure. Technical insights, protocol updates and best practices for AI infrastructure teams.",
     "url": "https://www.originary.xyz/blog",
     "publisher": {
       "@type": "Organization",
@@ -143,7 +143,6 @@ export default function BlogPage() {
     "about": [
       "AI payments",
       "HTTP 402",
-      "L402",
       "x402",
       "PEAC receipts",
       "AIPREF",

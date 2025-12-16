@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Contact : Originary',
+    title: 'Contact',
     description: 'Get in touch with the Originary team. Sales, support, partnerships, and general inquiries welcome.',
     url: 'https://www.originary.xyz/company/contact',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact : Originary',
+    title: 'Contact',
     description: 'Get in touch with the Originary team. Sales, support, partnerships, and general inquiries welcome.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',

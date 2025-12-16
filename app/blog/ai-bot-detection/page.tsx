@@ -5,14 +5,14 @@ import Footer from "@/components/Footer";
 import { FileText, ArrowRight, Eye, ShieldCheck, Database, Fingerprint, List, CheckCircle2, AlertTriangle, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence",
-  description: "AI bot detection is more than classifiers. Learn how metadata, fingerprints and PEAC receipts turn AI traffic into verifiable, enforceable evidence.",
+  title: "AI Bot Detection: From Traffic to Evidence",
+  description: "AI bot detection beyond classifiers. Use metadata, fingerprints and PEAC receipts to turn AI traffic into verifiable evidence.",
   keywords: "AI bot detection, AI traffic, metadata, model fingerprints, PEAC receipts, agent detection, AI crawlers, verifiable evidence",
   authors: [{ name: "Jithin Raj & Originary Team" }],
   alternates: { canonical: '/blog/ai-bot-detection' },
   openGraph: {
-    title: "AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence",
-    description: "AI bot detection is more than classifiers. Learn how metadata, fingerprints and PEAC receipts turn AI traffic into verifiable, enforceable evidence.",
+    title: "AI Bot Detection: From Traffic to Evidence",
+    description: "AI bot detection beyond classifiers. Use metadata, fingerprints and PEAC receipts to turn AI traffic into verifiable evidence.",
     type: "article",
     url: "https://www.originary.xyz/blog/ai-bot-detection/",
     publishedTime: "2025-12-01",
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence",
-    description: "AI bot detection is more than classifiers. Learn how metadata, fingerprints and PEAC receipts turn AI traffic into verifiable, enforceable evidence.",
+    title: "AI Bot Detection: From Traffic to Evidence",
+    description: "AI bot detection beyond classifiers. Turn AI traffic into verifiable evidence.",
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',

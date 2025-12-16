@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   keywords: 'agentic web, orchestration protocol, AI coordination, PEAC protocol',
   robots: 'index,follow',
   openGraph: {
-    title: 'Solutions : Originary',
+    title: 'Solutions',
     description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
     url: 'https://www.originary.xyz/solutions',
     siteName: 'Originary',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Solutions : Originary',
+    title: 'Solutions',
     description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
     images: ['https://www.originary.xyz/og.jpg'],
   },

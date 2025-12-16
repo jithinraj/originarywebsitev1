@@ -2,9 +2,32 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Changelog',
-  description: 'Product changelog for Originary and Gateway 402 with performance updates, new features, and improvements to agentic web infrastructure.',
+  description: 'Product updates, new features, and improvements to Originary. Track releases, breaking changes, and upcoming features.',
+  keywords: 'Originary changelog, product updates, release notes, PEAC Protocol updates, new features',
+  robots: 'index,follow',
   alternates: {
     canonical: '/changelog'
+  },
+  openGraph: {
+    title: 'Changelog | Originary',
+    description: 'Product updates, new features, and improvements to Originary. Track releases and upcoming features.',
+    url: 'https://www.originary.xyz/changelog',
+    siteName: 'Originary',
+    images: [{
+      url: 'https://www.originary.xyz/og.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Originary Changelog'
+    }],
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Changelog | Originary',
+    description: 'Product updates, new features, and improvements to Originary.',
+    images: ['/og.jpg'],
+    site: '@originaryx',
+    creator: '@originaryx'
   }
 }
 

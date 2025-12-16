@@ -477,7 +477,7 @@ function InteractiveReceiptDemo() {
   const steps = [
     { label: 'Policy', icon: '📋', tooltip: 'Reads AIPREF / peac.txt' },
     { label: 'Access', icon: '🔑', tooltip: 'Gates the request' },
-    { label: 'Payment', icon: '💳', tooltip: 'x402 / Stripe / L402' },
+    { label: 'Payment', icon: '💳', tooltip: 'x402 / Stripe' },
     { label: 'Receipt', icon: '✅', tooltip: 'Signs PEAC-Receipt (Ed25519)' }
   ]
 
