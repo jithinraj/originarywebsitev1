@@ -2,25 +2,25 @@ import { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, FileText, Shield, Zap, Download, ExternalLink, Play } from 'lucide-react'
+import { ArrowRight, Shield, Zap, Server, LineChart, Clock, Lock, CheckCircle, Settings, Globe, Database, Activity } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'PEAC Protocol | Verifiable Receipts & Policy Discovery',
-  description: 'PEAC is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS) as auditable proof of use.',
-  keywords: 'PEAC protocol, file-based policy, verifiable receipts, JWS, agent coordination, PEAC-Receipt, policy discovery, .well-known, agent commerce',
+  title: 'PEAC in Production | Enterprise Deployment & Operations',
+  description: 'Deploy PEAC Protocol at enterprise scale. Managed infrastructure, real-time monitoring, compliance dashboards, and 24/7 support for mission-critical agent operations.',
+  keywords: 'PEAC enterprise, PEAC deployment, PEAC operations, agent infrastructure, receipt monitoring, compliance dashboard, enterprise support, PEAC scaling',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'PEAC Protocol | Verifiable Receipts & Policy Discovery',
-    description: 'PEAC is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS) as auditable proof of use.',
+    title: 'PEAC in Production | Enterprise Deployment & Operations',
+    description: 'Deploy PEAC Protocol at enterprise scale. Managed infrastructure, real-time monitoring, compliance dashboards, and 24/7 support for mission-critical agent operations.',
     url: 'https://www.originary.xyz/products/peac',
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PEAC Protocol | Verifiable Receipts & Policy Discovery',
-    description: 'PEAC is an open protocol for file-based policy and verifiable receipts. Publish /.well-known/peac.txt so agents can discover your terms and present PEAC-Receipt (JWS).',
+    title: 'PEAC in Production | Enterprise Deployment & Operations',
+    description: 'Deploy PEAC Protocol at enterprise scale. Managed infrastructure, compliance dashboards, and 24/7 support.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -31,11 +31,35 @@ export const metadata: Metadata = {
   },
 }
 
-export default function PEACProtocol() {
+export default function PEACInProduction() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "PEAC in Production",
+    "description": "Enterprise deployment and operations for PEAC Protocol - managed infrastructure, monitoring, and support",
+    "brand": {
+      "@type": "Organization",
+      "name": "Originary"
+    },
+    "category": "Enterprise Software",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "2500",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+
   return (
-    <div className="wrap">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
+        {/* Hero */}
         <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
@@ -52,8 +76,8 @@ export default function PEACProtocol() {
                 fontWeight: 600,
                 color: 'var(--brand-primary)'
               }}>
-                <FileText size={16} />
-                <span>OPEN PROTOCOL</span>
+                <Server size={16} />
+                <span>ENTERPRISE OPERATIONS</span>
               </div>
 
               <h1 style={{
@@ -64,27 +88,28 @@ export default function PEACProtocol() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--gray-900)'
               }}>
-                PEAC: <span className="text-gradient">the receipt protocol</span>
+                PEAC <span className="text-gradient">in production</span>
               </h1>
 
               <p style={{
                 fontSize: 'var(--text-xl)',
-                lineHeight: 1.4,
+                lineHeight: 1.6,
                 letterSpacing: '-0.01em',
                 color: 'var(--gray-600)',
                 marginBottom: 'var(--space-8)',
                 maxWidth: '48rem',
                 margin: '0 auto var(--space-8) auto'
               }}>
-                Agents discover policies via <code style={{
-                  background: 'var(--gray-100)',
-                  padding: 'var(--space-1) var(--space-2)',
-                  borderRadius: 'var(--radius-sm)',
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 'var(--text-base)'
-                }}>/.well-known/peac.txt</code> and send <strong>PEAC-Receipt</strong> on every request.
+                Run PEAC Protocol at enterprise scale with managed infrastructure, real-time monitoring, compliance dashboards, and 24/7 support.
               </p>
 
+              <p style={{
+                fontSize: 'var(--text-base)',
+                color: 'var(--gray-500)',
+                marginBottom: 'var(--space-10)'
+              }}>
+                Looking for the open protocol? See <Link href="/peac" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>PEAC Protocol</Link>
+              </p>
 
               <div style={{
                 display: 'flex',
@@ -93,180 +118,63 @@ export default function PEACProtocol() {
                 gap: 'var(--space-4)',
                 flexWrap: 'wrap'
               }}>
-                <Link href="/company/contact" className="btn btn-primary btn-lg">
-                  <span>Talk to protocol engineer</span>
+                <Link href="/contact" className="btn btn-primary btn-lg">
+                  <span>Talk to sales</span>
                   <ArrowRight size={18} />
                 </Link>
-                <a
-                  href="https://peacprotocol.org/spec"
-                  target="_blank"
-                  rel="noopener"
-                  className="btn btn-secondary btn-lg"
-                >
-                  <span>View specification</span>
-                  <ExternalLink size={18} />
-                </a>
+                <Link href="/pricing" className="btn btn-secondary btn-lg">
+                  <span>View pricing</span>
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section">
+        {/* Key Metrics */}
+        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
           <div className="container">
             <div style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 'var(--space-16)',
-              alignItems: 'center',
-              marginBottom: 'var(--space-20)'
-            }}>
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              gap: 'var(--space-8)',
+              textAlign: 'center'
+            }} className="metrics-grid">
               <div>
-                <h2 style={{ marginBottom: 'var(--space-6)' }}>The protocol</h2>
-                <p style={{
-                  fontSize: 'var(--text-lg)',
-                  lineHeight: 1.7,
-                  color: 'var(--gray-600)',
-                  marginBottom: 'var(--space-8)'
-                }}>
-                  PEAC establishes a standardized method for autonomous agents to discover resource policies, negotiate access terms, and generate cryptographically verifiable receipts. By publishing a machine-readable <code style={{
-                    background: 'var(--gray-100)',
-                    padding: 'var(--space-1) var(--space-2)',
-                    borderRadius: 'var(--radius-sm)',
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: 'var(--text-base)'
-                  }}>/.well-known/peac.txt</code> file, any digital resource becomes discoverable and accessible to agents while maintaining full policy control and attribution tracking.
-                </p>
-
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 'var(--space-6)'
-                }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: 'var(--space-4)'
-                  }}>
-                    <div style={{
-                      width: '48px',
-                      height: '48px',
-                      borderRadius: 'var(--radius-xl)',
-                      background: 'rgba(99, 91, 255, 0.1)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: 'var(--text-xl)',
-                      flexShrink: 0
-                    }}>
-                      <FileText size={24} style={{ color: 'var(--brand-primary)' }} />
-                    </div>
-                    <div>
-                      <h4 style={{ marginBottom: 'var(--space-2)' }}>File-based policies</h4>
-                      <p style={{ color: 'var(--gray-600)' }}>Simple, standardized policy declaration</p>
-                    </div>
-                  </div>
-
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: 'var(--space-4)'
-                  }}>
-                    <div style={{
-                      width: '48px',
-                      height: '48px',
-                      borderRadius: 'var(--radius-xl)',
-                      background: 'rgba(0, 212, 170, 0.1)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: 'var(--text-xl)',
-                      flexShrink: 0
-                    }}>
-                      <Shield size={24} style={{ color: 'var(--brand-secondary)' }} />
-                    </div>
-                    <div>
-                      <h4 style={{ marginBottom: 'var(--space-2)' }}>Cryptographic receipts</h4>
-                      <p style={{ color: 'var(--gray-600)' }}>JWS-signed proof of compliant access</p>
-                    </div>
-                  </div>
-
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: 'var(--space-4)'
-                  }}>
-                    <div style={{
-                      width: '48px',
-                      height: '48px',
-                      borderRadius: 'var(--radius-xl)',
-                      background: 'rgba(255, 107, 53, 0.1)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: 'var(--text-xl)',
-                      flexShrink: 0
-                    }}>
-                      <Zap size={24} style={{ color: 'var(--brand-accent)' }} />
-                    </div>
-                    <div>
-                      <h4 style={{ marginBottom: 'var(--space-2)' }}>Agent coordination</h4>
-                      <p style={{ color: 'var(--gray-600)' }}>Automated discovery and negotiation</p>
-                    </div>
-                  </div>
-                </div>
+                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>99.99%</div>
+                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Uptime SLA</div>
               </div>
-
-              <div className="card" style={{
-                background: 'var(--gray-900)',
-                color: 'var(--white)',
-                overflow: 'hidden'
-              }}>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  marginBottom: 'var(--space-4)',
-                  paddingBottom: 'var(--space-4)',
-                  borderBottom: '1px solid var(--gray-700)'
-                }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 'var(--space-2)'
-                  }}>
-                    <div style={{ width: '12px', height: '12px', background: '#ff5f57', borderRadius: '50%' }}></div>
-                    <div style={{ width: '12px', height: '12px', background: '#ffbd2e', borderRadius: '50%' }}></div>
-                    <div style={{ width: '12px', height: '12px', background: '#28ca42', borderRadius: '50%' }}></div>
-                  </div>
-                  <span style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: 'var(--text-sm)',
-                    color: 'var(--gray-400)'
-                  }}>/.well-known/peac.txt</span>
-                </div>
-                <pre style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 'var(--text-sm)',
-                  lineHeight: 1.6,
-                  margin: 0,
-                  overflow: 'hidden'
-                }}>
-                  <code style={{ color: 'var(--gray-300)' }}>
-{`preferences: https://www.originary.xyz/.well-known/aipref.json
-access_control: http-402
-payments: x402, stripe
-provenance: c2pa
-receipts: required
-verify: https://api.originary.xyz/verify
-public_keys:
-  kid=2025-09-key1; alg=Ed25519; key=...   # base64url`}
-                  </code>
-                </pre>
+              <div>
+                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>&lt;50ms</div>
+                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>P99 latency</div>
+              </div>
+              <div>
+                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>150+</div>
+                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Edge locations</div>
+              </div>
+              <div>
+                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>24/7</div>
+                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Enterprise support</div>
               </div>
             </div>
+          </div>
+        </section>
 
-            <h2 style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>Enterprise benefits</h2>
-            <div className="grid grid-3" style={{ marginBottom: 'var(--space-20)' }}>
+        {/* Enterprise Capabilities */}
+        <section className="section">
+          <div className="container">
+            <h2 style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>Enterprise capabilities</h2>
+            <p style={{
+              textAlign: 'center',
+              fontSize: 'var(--text-lg)',
+              color: 'var(--gray-600)',
+              marginBottom: 'var(--space-16)',
+              maxWidth: '600px',
+              margin: '0 auto var(--space-16) auto'
+            }}>
+              Everything you need to operate PEAC at scale
+            </p>
+
+            <div className="grid grid-3" style={{ marginBottom: 'var(--space-16)' }}>
               <div className="card">
                 <div style={{
                   width: '56px',
@@ -278,13 +186,14 @@ public_keys:
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <Zap size={28} style={{ color: 'var(--brand-primary)' }} />
+                  <Globe size={28} style={{ color: 'var(--brand-primary)' }} />
                 </div>
-                <h3 style={{ marginBottom: 'var(--space-4)' }}>Instant policy discovery</h3>
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Global edge deployment</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Agents automatically discover and respect your usage policies without manual integration or API documentation.
+                  Receipt verification at 150+ edge locations. Sub-50ms latency worldwide with automatic failover.
                 </p>
               </div>
+
               <div className="card">
                 <div style={{
                   width: '56px',
@@ -296,13 +205,14 @@ public_keys:
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <Shield size={28} style={{ color: 'var(--brand-secondary)' }} />
+                  <Activity size={28} style={{ color: 'var(--brand-secondary)' }} />
                 </div>
-                <h3 style={{ marginBottom: 'var(--space-4)' }}>Compliance by design</h3>
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Real-time monitoring</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Built-in attribution, quota enforcement, and audit trails with cryptographically verifiable receipts.
+                  Live dashboards for receipt volume, verification rates, error tracking, and agent activity patterns.
                 </p>
               </div>
+
               <div className="card">
                 <div style={{
                   width: '56px',
@@ -314,57 +224,282 @@ public_keys:
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <CheckCircle size={28} style={{ color: 'var(--brand-accent)' }} />
+                  <Shield size={28} style={{ color: 'var(--brand-accent)' }} />
                 </div>
-                <h3 style={{ marginBottom: 'var(--space-4)' }}>Universal compatibility</h3>
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Compliance dashboards</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Works with existing infrastructure: CDNs, API gateways, auth systems, and payment processors.
+                  Audit trails, policy enforcement reports, and exportable compliance documentation for regulators.
                 </p>
               </div>
-            </div>
 
-            {/* CTA Section */}
-            <div className="card cta-card" style={{
-              marginTop: 'var(--space-20)'
-            }}>
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Deploy PEAC at enterprise scale</h2>
-              <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'var(--white)', lineHeight: 1.6 }}>
-                Large enterprises use PEAC Protocol to govern agent interactions, ensure compliance, and monetize digital resources.
-              </p>
-              <div style={{
-                display: 'flex',
-                gap: 'var(--space-4)',
-                justifyContent: 'center',
-                flexWrap: 'wrap'
-              }}>
-                <Link
-                  href="/company/contact"
-                  className="btn btn-lg"
-                  style={{
-                    background: 'var(--white)',
-                    color: 'var(--brand-primary)',
-                    border: 'none'
-                  }}
-                >
-                  <span>Talk to a protocol engineer</span>
-                  <ArrowRight size={18} />
-                </Link>
-                <Link
-                  href="/developers"
-                  className="btn btn-lg btn-ghost"
-                  style={{
-                    color: 'var(--white)',
-                    border: '1px solid rgba(255,255,255,0.2)'
-                  }}
-                >
-                  <span>View developer docs</span>
-                </Link>
+              <div className="card">
+                <div style={{
+                  width: '56px',
+                  height: '56px',
+                  borderRadius: 'var(--radius-xl)',
+                  background: 'rgba(99, 91, 255, 0.1)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: 'var(--space-6)'
+                }}>
+                  <Database size={28} style={{ color: 'var(--brand-primary)' }} />
+                </div>
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Receipt archive</h3>
+                <p style={{ marginBottom: 'var(--space-4)' }}>
+                  Immutable receipt storage with configurable retention. Query receipts by agent, resource, or time range.
+                </p>
+              </div>
+
+              <div className="card">
+                <div style={{
+                  width: '56px',
+                  height: '56px',
+                  borderRadius: 'var(--radius-xl)',
+                  background: 'rgba(0, 212, 170, 0.1)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: 'var(--space-6)'
+                }}>
+                  <Settings size={28} style={{ color: 'var(--brand-secondary)' }} />
+                </div>
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Policy management</h3>
+                <p style={{ marginBottom: 'var(--space-4)' }}>
+                  Visual policy editor, version control, staging environments, and rollback capabilities.
+                </p>
+              </div>
+
+              <div className="card">
+                <div style={{
+                  width: '56px',
+                  height: '56px',
+                  borderRadius: 'var(--radius-xl)',
+                  background: 'rgba(255, 107, 53, 0.1)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: 'var(--space-6)'
+                }}>
+                  <Lock size={28} style={{ color: 'var(--brand-accent)' }} />
+                </div>
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Key management</h3>
+                <p style={{ marginBottom: 'var(--space-4)' }}>
+                  HSM-backed key storage, automatic rotation, and multi-signature support for high-security deployments.
+                </p>
               </div>
             </div>
           </div>
         </section>
+
+        {/* Deployment Options */}
+        <section className="section" style={{ background: 'var(--gray-50)' }}>
+          <div className="container">
+            <h2 style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>Deployment options</h2>
+            <p style={{
+              textAlign: 'center',
+              fontSize: 'var(--text-lg)',
+              color: 'var(--gray-600)',
+              marginBottom: 'var(--space-16)',
+              maxWidth: '600px',
+              margin: '0 auto var(--space-16) auto'
+            }}>
+              Choose the deployment model that fits your security and compliance requirements
+            </p>
+
+            <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
+              <div className="card" style={{ border: '2px solid var(--gray-200)' }}>
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Originary Cloud</h3>
+                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  Fully managed deployment on our global infrastructure. Fastest time to production.
+                </p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {['Multi-region redundancy', 'Automatic scaling', 'Managed updates', 'Built-in DDoS protection'].map((item) => (
+                    <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)', fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                      <CheckCircle size={16} style={{ color: 'var(--brand-secondary)', flexShrink: 0 }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="card" style={{ border: '2px solid var(--brand-primary)' }}>
+                <div style={{
+                  background: 'var(--brand-primary)',
+                  color: 'white',
+                  fontSize: 'var(--text-xs)',
+                  fontWeight: 600,
+                  padding: 'var(--space-1) var(--space-3)',
+                  borderRadius: 'var(--radius-sm)',
+                  display: 'inline-block',
+                  marginBottom: 'var(--space-4)'
+                }}>
+                  RECOMMENDED
+                </div>
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Hybrid</h3>
+                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  Edge verification in your infrastructure with Originary Cloud for analytics and management.
+                </p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {['Data stays in your VPC', 'Sub-10ms local latency', 'Central management', 'Best of both worlds'].map((item) => (
+                    <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)', fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                      <CheckCircle size={16} style={{ color: 'var(--brand-secondary)', flexShrink: 0 }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="card" style={{ border: '2px solid var(--gray-200)' }}>
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Self-hosted</h3>
+                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  Full control with our enterprise distribution. For air-gapped or highly regulated environments.
+                </p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {['Complete data sovereignty', 'Air-gap compatible', 'Custom integrations', 'Enterprise support'].map((item) => (
+                    <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)', fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                      <CheckCircle size={16} style={{ color: 'var(--brand-secondary)', flexShrink: 0 }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Integration Points */}
+        <section className="section">
+          <div className="container">
+            <h2 style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>Integrates with your stack</h2>
+            <p style={{
+              textAlign: 'center',
+              fontSize: 'var(--text-lg)',
+              color: 'var(--gray-600)',
+              marginBottom: 'var(--space-16)',
+              maxWidth: '600px',
+              margin: '0 auto var(--space-16) auto'
+            }}>
+              Drop-in integration with existing infrastructure
+            </p>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: 'var(--space-8)',
+              maxWidth: '900px',
+              margin: '0 auto'
+            }} className="integration-grid">
+              <div className="card">
+                <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>API Gateways</h4>
+                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
+                  Native plugins for Kong, AWS API Gateway, Cloudflare, Fastly, and NGINX
+                </p>
+              </div>
+              <div className="card">
+                <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>Identity Providers</h4>
+                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
+                  SAML, OIDC, OAuth 2.0 - works with Okta, Auth0, Azure AD, and custom IdPs
+                </p>
+              </div>
+              <div className="card">
+                <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>Observability</h4>
+                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
+                  Export to Datadog, Splunk, New Relic, Grafana, or any OpenTelemetry-compatible system
+                </p>
+              </div>
+              <div className="card">
+                <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>Payment Processors</h4>
+                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
+                  Stripe, Razorpay, and x402 for HTTP 402 machine payments
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Support Tiers */}
+        <section className="section" style={{ background: 'var(--gray-50)' }}>
+          <div className="container">
+            <h2 style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>Enterprise support</h2>
+            <p style={{
+              textAlign: 'center',
+              fontSize: 'var(--text-lg)',
+              color: 'var(--gray-600)',
+              marginBottom: 'var(--space-16)',
+              maxWidth: '600px',
+              margin: '0 auto var(--space-16) auto'
+            }}>
+              Dedicated assistance for mission-critical deployments
+            </p>
+
+            <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
+              <div className="card">
+                <Clock size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+                <h4 style={{ marginBottom: 'var(--space-2)' }}>24/7 Support</h4>
+                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                  Round-the-clock access to our engineering team for critical issues
+                </p>
+              </div>
+              <div className="card">
+                <Zap size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+                <h4 style={{ marginBottom: 'var(--space-2)' }}>Dedicated CSM</h4>
+                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                  Named customer success manager for strategic planning and optimization
+                </p>
+              </div>
+              <div className="card">
+                <LineChart size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+                <h4 style={{ marginBottom: 'var(--space-2)' }}>Quarterly reviews</h4>
+                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                  Regular business reviews with roadmap previews and capacity planning
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <div className="container" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
+          <div className="card cta-card">
+            <h2 style={{ marginBottom: 'var(--space-6)' }}>Ready to deploy PEAC at scale?</h2>
+            <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'var(--white)', lineHeight: 1.6 }}>
+              Our solutions team will help you design the right deployment architecture for your requirements.
+            </p>
+            <div style={{
+              display: 'flex',
+              gap: 'var(--space-4)',
+              justifyContent: 'center',
+              flexWrap: 'wrap'
+            }}>
+              <Link
+                href="/contact"
+                className="btn btn-lg"
+                style={{
+                  background: 'var(--white)',
+                  color: 'var(--brand-primary)',
+                  border: 'none'
+                }}
+              >
+                <span>Schedule a demo</span>
+                <ArrowRight size={18} />
+              </Link>
+              <Link
+                href="/peac"
+                className="btn btn-lg btn-ghost"
+                style={{
+                  color: 'var(--white)',
+                  border: '1px solid rgba(255,255,255,0.2)'
+                }}
+              >
+                <span>View open protocol</span>
+              </Link>
+            </div>
+          </div>
+        </div>
       </main>
       <Footer />
-    </div>
+
+    </>
   )
 }

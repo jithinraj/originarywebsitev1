@@ -209,7 +209,20 @@ export default function PeacAnimationHero() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s'
               }}
             >
-              Open protocol · No lock-in · Deploy at the edge
+              Open protocol · No lock-in · Deploy at the edge ·{' '}
+              <Link
+                href="/what-is-originary"
+                style={{
+                  color: 'var(--gray-500)',
+                  textDecoration: 'none',
+                  borderBottom: '1px solid transparent',
+                  transition: 'border-color 0.15s ease'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
+                onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
+              >
+                What is Originary?
+              </Link>
             </p>
 
           </div>

@@ -444,6 +444,36 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Article layout for Learn pages */
+.article-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-16);
+}
+
+.article-sidebar {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+
+/* Metrics grid for products pages */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.integration-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
 /* Comprehensive responsive grid breakpoints */
 @media (max-width: 479px) {
   .grid {
@@ -451,7 +481,18 @@ p {
   }
   .grid-2,
   .grid-3,
+  .grid-4,
   .grid-auto {
+    grid-template-columns: 1fr;
+  }
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+  .article-sidebar {
+    display: none;
+  }
+  .metrics-grid,
+  .integration-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -460,7 +501,20 @@ p {
   .grid-auto {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
-  .grid-3 {
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+  .article-sidebar {
+    display: none;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .integration-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -469,14 +523,41 @@ p {
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .grid-auto {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+  .article-sidebar {
+    display: none;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .integration-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .grid-auto {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+  .article-sidebar {
+    display: none;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
