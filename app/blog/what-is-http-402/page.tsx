@@ -7,7 +7,7 @@ import { FileText, ArrowRight, Code, DollarSign, Shield, Zap, Clock, CreditCard,
 export const metadata: Metadata = {
   title: "What is HTTP 402? How PEAC Uses 402 for Agent Payments",
   description: "HTTP 402 Payment Required is an HTTP status code reserved for future digital payments. Learn how PEAC Protocol activates 402 for AI access control, agent payments, and verifiable receipts.",
-  keywords: "HTTP 402, Payment Required, x402, agent payments, AI Access, PEAC Protocol, API monetization, L402, web payments, agentic web",
+  keywords: "HTTP 402, Payment Required, x402, agent payments, AI Access, PEAC Protocol, API monetization, web payments, agentic web",
   authors: [{ name: "Jithin Raj & Originary Team" }],
   alternates: { canonical: '/blog/what-is-http-402' },
   openGraph: {
@@ -257,7 +257,6 @@ export default function Page() {
                   }}>
 {`HTTP/1.1 402 Payment Required
 Content-Type: application/json
-X-Payment-Hint: x402
 
 {
   "type": "payment_required",
@@ -265,8 +264,7 @@ X-Payment-Hint: x402
   "payment": {
     "amount": "0.01",
     "currency": "USD",
-    "methods": ["x402", "stripe"],
-    "x402_url": "https://api.example.com/pay"
+    "methods": ["x402", "stripe"]
   },
   "policy_url": "https://example.com/.well-known/peac.txt"
 }`}
@@ -293,7 +291,7 @@ X-Payment-Hint: x402
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', fontSize: 'var(--text-sm)' }}>
                   <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', fontWeight: 600, color: 'var(--gray-900)' }}>Payment methods</div>
-                  <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', color: 'var(--gray-600)' }}>x402 for crypto, Stripe for fiat, L402 for Lightning</div>
+                  <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', color: 'var(--gray-600)' }}>x402 for crypto, Stripe for fiat</div>
                   <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', fontWeight: 600, color: 'var(--gray-900)' }}>Amount & currency</div>
                   <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', color: 'var(--gray-600)' }}>Clear pricing in machine-readable format</div>
                   <div style={{ padding: 'var(--space-4)', fontWeight: 600, color: 'var(--gray-900)' }}>AI policy URL</div>
@@ -365,8 +363,7 @@ X-Payment-Hint: x402
 
 # Response:
 # HTTP/2 402
-# content-type: application/json
-# x-payment-hint: x402`}
+# content-type: application/json`}
                   </pre>
                 </div>
               </div>

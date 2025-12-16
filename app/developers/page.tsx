@@ -6,7 +6,7 @@ import { ArrowRight, Code, Download, Sparkles } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Developers | AI Infrastructure Tools and PEAC Protocol SDK',
-  description: 'AI infrastructure tools for agentic web development. Integrate PEAC-Receipts with the PEAC Protocol SDK and Originary developer tools. Add HTTP 402 payment flows, x402 integration, MCP receipts, and A2A verification with CLI tools, edge verification, and HTTP 402 examples.',
+  description: 'AI infrastructure tools for agentic web development. Integrate PEAC-Receipts, HTTP 402 payments, x402, MCP receipts, and A2A verification.',
   keywords: 'AI infrastructure tools, AI Access, PEAC Protocol SDK, PEAC SDK, agentic web infrastructure, developer API, PEAC protocol, CLI tools, HTTP 402, HTTP 402 examples, x402 integration, agent receipts, policy validation, edge verification, MCP receipts, MCP integration, A2A communication, ACP, Verify API, Gateway 402, Policy APIs',
   authors: [{ name: 'Originary' }],
   alternates: {

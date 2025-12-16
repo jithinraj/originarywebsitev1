@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'About : Originary',
+    title: 'About',
     description: 'Originary provides orchestration infrastructure for the agentic web, enabling autonomous agents to discover policies, negotiate terms, and complete transactions safely.',
     url: 'https://www.originary.xyz/company/about',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About : Originary',
+    title: 'About',
     description: 'Originary provides orchestration infrastructure for the agentic web, enabling autonomous agents to discover policies, negotiate terms, and complete transactions safely.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',

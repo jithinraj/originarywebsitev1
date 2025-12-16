@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Trust & Compliance',
   description: 'Security, compliance, and transparency resources for Originary PEAC protocol orchestration platform. Access security disclosure policy, PEAC protocol specifications, receipt verification tools, terms of service, privacy policy, and infrastructure metadata. Built on open standards with full transparency.',
   openGraph: {
-    title: 'Trust & Compliance : Originary',
+    title: 'Trust & Compliance',
     description: 'Security, compliance, and transparency resources for Originary',
     type: 'website',
     url: 'https://www.originary.xyz/trust',

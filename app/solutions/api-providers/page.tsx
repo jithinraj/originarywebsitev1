@@ -4,22 +4,22 @@ import Footer from '@/components/Footer'
 import { Server, Zap, BarChart3, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'API Providers | AI Commerce and AI Infrastructure Tools with HTTP 402',
-  description: 'AI commerce and AI infrastructure tools for API providers. Enable agents to discover and pay for your APIs through HTTP 402 commerce and x402 commerce. Build machine-payable APIs with AI commerce infrastructure, PEAC receipts, and enterprise billing.',
+  title: 'API Providers | HTTP 402 Monetization',
+  description: 'Enable agents to discover and pay for your APIs through HTTP 402 and x402. Build machine-payable APIs with PEAC receipts.',
   keywords: 'AI commerce, AI infrastructure tools, HTTP 402 commerce, x402 commerce, machine-payable APIs, API monetization, HTTP 402, x402, agent payments, PEAC protocol, enterprise billing, API providers, agentic commerce, policy discovery',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'API Providers | AI Commerce and AI Infrastructure Tools',
-    description: 'AI commerce and AI infrastructure tools for API providers. Enable agents to discover and pay for your APIs through HTTP 402 and x402. AI commerce infrastructure with PEAC receipts.',
+    title: 'API Providers | HTTP 402 Monetization',
+    description: 'Enable agents to discover and pay for your APIs through HTTP 402 and x402. Build machine-payable APIs.',
     url: 'https://www.originary.xyz/solutions/api-providers',
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'API Providers | AI Commerce and AI Infrastructure Tools',
-    description: 'AI commerce and AI infrastructure tools for API providers. Enable agents to discover and pay for your APIs through HTTP 402 and x402.',
+    title: 'API Providers | HTTP 402 Monetization',
+    description: 'Enable agents to discover and pay for your APIs through HTTP 402 and x402.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',

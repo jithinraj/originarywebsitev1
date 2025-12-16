@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     absolute: 'Originary & AI - Agent-native trust with PEAC-Receipts'
   },
   description: 'Build agent-to-agent systems with cryptographic receipts, preference-aware usage, and pay-as-you-go 402 rails. Works with A2A networks, MCP tool calls, ACP, and HTTP 402 payment rails.',
-  keywords: 'agent-to-agent, A2A, MCP, ACP, ERC-8004, PEAC receipts, HTTP 402, agent trust, cryptographic verification, AIPREF, L402, x402, agentic commerce',
+  keywords: 'agent-to-agent, A2A, MCP, ACP, ERC-8004, PEAC receipts, HTTP 402, agent trust, cryptographic verification, AIPREF, x402, agentic commerce',
   robots: 'index,follow',
   openGraph: {
     title: 'Originary & AI - Agent-native trust with PEAC-Receipts',
@@ -89,7 +89,7 @@ export default function OriginaryAIPage() {
     {
       icon: Zap,
       title: 'Pay-as-you-go rails',
-      description: 'Built-in HTTP-402 flows (L402/LSAT, x402, Stripe) so agents can pay and proceed - no accounts, no PDFs.'
+      description: 'Built-in HTTP-402 flows (x402, Stripe) so agents can pay and proceed - no accounts, no PDFs.'
     },
     {
       icon: Shield,
@@ -322,7 +322,7 @@ export default function OriginaryAIPage() {
                   {
                     step: '1',
                     title: 'Challenge/Access (optional)',
-                    description: 'If a resource is gated, we answer with HTTP 402 (Payment Required). Agents respond via L402 (Lightning), x402 (stablecoin), or Stripe.'
+                    description: 'If a resource is gated, we answer with HTTP 402 (Payment Required). Agents respond via x402 (stablecoin) or Stripe.'
                   },
                   {
                     step: '2',
@@ -538,10 +538,6 @@ export default function OriginaryAIPage() {
 
               <div style={{ display: 'grid', gap: 'var(--space-6)' }}>
                 {[
-                  {
-                    title: 'L402 / LSAT',
-                    description: 'Invoice + macaroon; return with preimage → access granted.'
-                  },
                   {
                     title: 'x402',
                     description: 'Stablecoin-backed HTTP-402 for instant settlement in USDC.'

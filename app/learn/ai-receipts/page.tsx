@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Receipt, ArrowLeft, CheckCircle, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'AI Receipts Explained: Cryptographic Proof for Agent Interactions : Originary',
+  title: 'AI Receipts Explained: Cryptographic Proof for Agent Interactions',
   description: 'PEAC-Receipt is the JWS-signed standard for proving AI agent interactions. Learn how cryptographic receipts enable billing, compliance, attribution, and dispute resolution in the agent economy.',
   keywords: 'AI receipts explained, PEAC-Receipt format, verifiable receipts AI, cryptographic proof agents, JWS signed receipts, agent audit trail, AI compliance receipts, digital receipt standard, agent billing proof',
   authors: [{ name: 'Originary' }],
@@ -307,7 +307,7 @@ export default function AIReceiptsPage() {
                   </div>
 
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
-                    The entire payload is signed using JWS (JSON Web Signature), typically with Ed25519. The signature can be verified using the issuer&apos;s public key published at <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>/.well-known/peac.txt</code>.
+                    The entire payload is signed using JWS (JSON Web Signature), typically with Ed25519. The signature can be verified using the issuer&apos;s public key referenced in <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>/.well-known/peac.txt</code> (which points to a JWKS endpoint).
                   </p>
                 </section>
 

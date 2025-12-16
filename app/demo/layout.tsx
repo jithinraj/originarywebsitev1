@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: { absolute: 'PEAC Protocol Trace | Originary' },
-  description: 'Watch a complete PEAC v0.9.23 transaction end to end. Agent discovers policy via peac.txt, receives HTTP 402 challenge, pays via x402/l402/stripe, and receives a signed PEAC-Receipt verifiable offline with JWKS.',
-  keywords: 'PEAC protocol, HTTP 402, verifiable receipts, policy discovery, x402, l402, JWKS verification, agent transactions, aipref, peac.txt',
+  description: 'Watch a complete PEAC v0.9.23 transaction end to end. Agent discovers policy via peac.txt, receives HTTP 402 challenge, pays via x402/stripe, and receives a signed PEAC-Receipt verifiable offline with JWKS.',
+  keywords: 'PEAC protocol, HTTP 402, verifiable receipts, policy discovery, x402, JWKS verification, agent transactions, aipref, peac.txt',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
@@ -58,7 +58,7 @@ const jsonLd = {
     { '@type': 'Thing', name: 'Verifiable Receipts' },
     { '@type': 'Thing', name: 'JWKS Verification' }
   ],
-  keywords: 'PEAC, HTTP 402, x402, l402, JWKS, verifiable receipts, agent transactions'
+  keywords: 'PEAC, HTTP 402, x402, JWKS, verifiable receipts, agent transactions'
 }
 
 export default function DemoLayout({

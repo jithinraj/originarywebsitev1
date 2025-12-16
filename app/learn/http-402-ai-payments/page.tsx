@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { CreditCard, ArrowLeft, CheckCircle, ArrowRight, ExternalLink, BookOpen } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'HTTP 402 Payment Required: The Web Standard for Machine-Payable APIs : Originary',
+  title: 'HTTP 402 Payment Required: The Web Standard for Machine-Payable APIs',
   description: 'HTTP 402 Payment Required is the web standard enabling pay-per-request APIs for AI agents. Learn how x402 headers, instant payments, and PEAC receipts create accountable machine commerce - no subscriptions or API keys required.',
   keywords: 'HTTP 402 Payment Required, x402 protocol, machine-payable APIs, AI agent payments, pay-per-request API, programmatic payments, agent commerce, micropayments API, instant API payments, machine-to-machine payments, HTTP status code 402, web monetization',
   authors: [{ name: 'Originary' }],
@@ -310,8 +310,8 @@ export default function HTTP402Page() {
 
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, marginBottom: 'var(--space-6)' }}>
                     {[
-                      { term: 'X-Price header', def: 'How servers advertise pricing (amount, currency, per-unit)' },
-                      { term: 'X-Payment header', def: 'How agents submit payment proofs' },
+                      { term: '402 response body', def: 'Machine-readable pricing info (amount, currency, accepted methods)' },
+                      { term: 'Payment proof', def: 'Cryptographic proof submitted with the retry request' },
                       { term: 'Payment methods', def: 'Standard identifiers for crypto, Stripe, and other rails' },
                       { term: 'Error codes', def: 'Specific failure modes (insufficient funds, expired proof, etc.)' }
                     ].map((item, i) => (

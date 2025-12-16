@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Resources, documentation, and insights for building with the receipts protocol for the agentic web.',
   keywords: 'agentic web, receipts protocol, AI coordination, PEAC protocol',
   openGraph: {
-    title: 'Resources : Originary',
+    title: 'Resources',
     description: 'Resources, documentation, and insights for building with the receipts protocol for the agentic web.',
     url: 'https://www.originary.xyz/resources',
     siteName: 'Originary',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Resources : Originary',
+    title: 'Resources',
     description: 'Resources, documentation, and insights for building with the receipts protocol for the agentic web.',
     images: ['https://www.originary.xyz/og.jpg'],
   },

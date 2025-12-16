@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ShoppingCart, ArrowLeft, CheckCircle, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'What is Agentic Commerce? The Complete Guide to AI Agent Transactions : Originary',
+  title: 'What is Agentic Commerce? The Complete Guide to AI Agent Transactions',
   description: 'Agentic commerce enables AI agents to autonomously buy, sell, and transact. Learn about machine-readable pricing, programmatic payments, and the infrastructure powering the $1T+ agent economy.',
   keywords: 'agentic commerce definition, agent economy explained, AI agent transactions, autonomous commerce, machine-to-machine payments, AI agents buying selling, agent transactions guide, M2M commerce, programmatic payments',
   authors: [{ name: 'Originary' }],

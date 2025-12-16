@@ -130,7 +130,7 @@ export default function PEACInProduction() {
           </div>
         </section>
 
-        {/* Key Metrics */}
+        {/* Deployment Patterns */}
         <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
           <div className="container">
             <div style={{
@@ -140,20 +140,20 @@ export default function PEACInProduction() {
               textAlign: 'center'
             }} className="metrics-grid">
               <div>
-                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>99.99%</div>
-                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Uptime SLA</div>
+                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>Edge</div>
+                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Verification</div>
               </div>
               <div>
-                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>&lt;50ms</div>
-                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>P99 latency</div>
+                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>Self</div>
+                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Hosted</div>
               </div>
               <div>
-                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>150+</div>
-                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Edge locations</div>
+                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>Managed</div>
+                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Cloud</div>
               </div>
               <div>
-                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>24/7</div>
-                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Enterprise support</div>
+                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>Hybrid</div>
+                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Deployment</div>
               </div>
             </div>
           </div>
@@ -188,9 +188,9 @@ export default function PEACInProduction() {
                 }}>
                   <Globe size={28} style={{ color: 'var(--brand-primary)' }} />
                 </div>
-                <h3 style={{ marginBottom: 'var(--space-4)' }}>Global edge deployment</h3>
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Edge deployment</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Receipt verification at 150+ edge locations. Sub-50ms latency worldwide with automatic failover.
+                  Deploy receipt verification at the edge for low-latency validation. Supports Cloudflare Workers and other edge runtimes.
                 </p>
               </div>
 
@@ -285,7 +285,7 @@ export default function PEACInProduction() {
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Key management</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  HSM-backed key storage, automatic rotation, and multi-signature support for high-security deployments.
+                  EdDSA (Ed25519) signing with configurable key rotation. JWKS endpoint for public key distribution.
                 </p>
               </div>
             </div>
@@ -391,27 +391,27 @@ export default function PEACInProduction() {
               margin: '0 auto'
             }} className="integration-grid">
               <div className="card">
-                <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>API Gateways</h4>
+                <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>Edge Runtimes</h4>
                 <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
-                  Native plugins for Kong, AWS API Gateway, Cloudflare, Fastly, and NGINX
+                  Deploy to Cloudflare Workers, Vercel Edge, or other JavaScript edge runtimes
                 </p>
               </div>
               <div className="card">
-                <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>Identity Providers</h4>
+                <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>Protocol Standards</h4>
                 <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
-                  SAML, OIDC, OAuth 2.0 - works with Okta, Auth0, Azure AD, and custom IdPs
+                  HTTP-native with JWS receipts, JWKS discovery, and robots.txt compatibility
                 </p>
               </div>
               <div className="card">
                 <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>Observability</h4>
                 <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
-                  Export to Datadog, Splunk, New Relic, Grafana, or any OpenTelemetry-compatible system
+                  Structured logging and OpenTelemetry-compatible trace export
                 </p>
               </div>
               <div className="card">
-                <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>Payment Processors</h4>
+                <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>Payment Integration</h4>
                 <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
-                  Stripe, Razorpay, and x402 for HTTP 402 machine payments
+                  x402 for HTTP 402 machine payments. Additional processors via webhook integration.
                 </p>
               </div>
             </div>

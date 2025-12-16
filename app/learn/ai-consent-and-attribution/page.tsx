@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Shield, ArrowLeft, CheckCircle, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'AI Consent & Attribution: Machine-Readable Permissions for the Agentic Web : Originary',
+  title: 'AI Consent & Attribution: Machine-Readable Permissions for the Agentic Web',
   description: 'AI consent must be machine-readable for agents to respect it. Learn how AIPREF declarations, peac.txt policies, and verifiable receipts create auditable attribution chains - the trust infrastructure for responsible AI systems.',
   keywords: 'AI consent, machine-readable consent, AI attribution, AIPREF standard, aipref.json, AI preferences, content licensing AI, agent consent protocol, attribution chain, AI provenance, content permissions AI, opt-out AI training, RAG permissions, responsible AI infrastructure',
   authors: [{ name: 'Originary' }],

@@ -324,9 +324,9 @@ receipts: required`,
 payments: [x402, stripe]
 default_currency: USD
 
-# 402 challenge
+# 402 response
 HTTP/1.1 402 Payment Required
-X-Payment: x402 token="..."`,
+Content-Type: application/json`,
     metaLeft: 'rails: x402, stripe',
     metaRight: 'min: 0.01 USD',
     caption: 'Multi-rail payments - normalized payment{}'

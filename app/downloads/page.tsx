@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   keywords: 'downloads, CLI, PEAC templates, policy verification, receipts implementation',
   robots: 'index,follow',
   openGraph: {
-    title: 'Downloads : Originary',
+    title: 'Downloads',
     description: 'Download the Originary CLI and PEAC policy templates. Verify policy files and implement receipts.',
     url: 'https://www.originary.xyz/downloads',
     siteName: 'Originary',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Downloads : Originary',
+    title: 'Downloads',
     description: 'Download the Originary CLI and PEAC policy templates. Verify policy files and implement receipts.',
     images: ['/og.jpg']
   },
