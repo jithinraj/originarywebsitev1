@@ -9,21 +9,23 @@
 /* CSS Variables - Premium Design Tokens */
 :root {
   /* === COLORS - SOPHISTICATED PALETTE === */
+  /* Rich blacks for that "expensive" look - #050505 instead of muddy grays */
   --white: #ffffff;
-  --black: #000000;
+  --black: #050505;
 
   /* Grays - Carefully crafted with WCAG AA compliance */
+  /* Refined for premium depth and contrast */
   --gray-50: #fafafa;
-  --gray-100: #f5f5f5;
-  --gray-200: #e5e5e5;
-  --gray-300: #d4d4d4;
-  --gray-400: #a3a3a3;
-  --gray-500: #737373;
-  --gray-600: #4a4a4a;  /* Improved contrast ratio */
-  --gray-700: #404040;
-  --gray-800: #262626;
-  --gray-900: #171717;
-  --gray-950: #0a0a0a;
+  --gray-100: #f4f4f5;
+  --gray-200: #e4e4e7;
+  --gray-300: #d4d4d8;
+  --gray-400: #a1a1aa;
+  --gray-500: #71717a;
+  --gray-600: #52525b;  /* Improved contrast ratio */
+  --gray-700: #3f3f46;
+  --gray-800: #27272a;
+  --gray-900: #18181b;
+  --gray-950: #09090b;
 
   /* Brand Colors */
   --brand-primary: #635bff;
@@ -147,10 +149,15 @@
   --breakpoint-2xl: 1536px; /* Desktop monitors */
 
   /* === FLUID RESPONSIVE VALUES === */
+  /* "Expensive" websites are 50% empty space - generous padding creates focus */
   --container-padding: clamp(1rem, 4vw, 3rem);
-  --section-padding: clamp(3rem, 8vh, 8rem);
-  --card-padding: clamp(1.5rem, 4vw, 2rem);
+  --section-padding: clamp(5rem, 12vh, 10rem);  /* Increased from 8rem max to 10rem for premium feel */
+  --section-padding-lg: clamp(6rem, 15vh, 12rem);  /* Extra large section padding */
+  --card-padding: clamp(1.5rem, 4vw, 2.5rem);
   --grid-gap: clamp(1rem, 3vw, 2rem);
+
+  /* Premium border radius - consistent 24px everywhere */
+  --radius-card: 1.5rem;  /* 24px - the "billion dollar" radius */
 }
 
 /* === BASE STYLES - FOUNDATION === */
@@ -193,10 +200,11 @@ body::after,
 }
 
 /* === TYPOGRAPHY SYSTEM === */
+/* Linear/Vercel standard: tight tracking, intentional hierarchy */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
+  line-height: 1.15;
+  letter-spacing: -0.02em;  /* Tighter default tracking */
   color: var(--gray-900);
   margin: 0;
 }
@@ -204,30 +212,34 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: var(--text-5xl);
   font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1.1;
+  letter-spacing: -0.04em;  /* Extra tight for headlines - the "Linear" look */
+  line-height: 1.05;
 }
 
 h2 {
   font-size: var(--text-4xl);
   font-weight: 650;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
 }
 
 h3 {
   font-size: var(--text-2xl);
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 
 h4 {
   font-size: var(--text-xl);
   font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 h5 {
   font-size: var(--text-lg);
   font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 h6 {
@@ -241,8 +253,27 @@ p {
   margin: 0;
 }
 
+/* Premium text utilities */
 .text-balance {
   text-wrap: balance;
+}
+
+/* Labels and caps get widened tracking for contrast */
+.text-label, .label-uppercase {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;  /* Widened for labels/caps */
+  color: var(--gray-500);
+}
+
+/* Secondary text uses gray tones, not smaller sizes */
+.text-secondary {
+  color: var(--gray-500);
+}
+
+.text-muted {
+  color: var(--gray-400);
 }
 
 /* === BUTTON SYSTEM === */
@@ -395,10 +426,11 @@ p {
 }
 
 /* === CARD SYSTEM === */
+/* Premium 24px radius everywhere for the "billion dollar" look */
 .card {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-2xl);
+  border-radius: var(--radius-card);  /* Consistent 24px */
   padding: var(--card-padding);
   box-shadow: var(--shadow-sm);
   transition: all var(--duration-300) var(--ease-out);
@@ -411,19 +443,35 @@ p {
 
 .card:hover {
   box-shadow: var(--shadow-xl);
-  transform: translateY(-2px);
+  transform: translateY(-4px);  /* More pronounced lift */
   border-color: var(--gray-300);
 }
 
 .card-elevated {
   background: var(--gradient-surface);
   backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 0.5px solid rgba(255, 255, 255, 0.15);  /* Ultra-thin border for glassmorphism */
   box-shadow: var(--shadow-elevated);
+  border-radius: var(--radius-card);
 }
 
 .card-glow {
   box-shadow: var(--shadow-glow), var(--shadow-lg);
+}
+
+/* Premium glass card - the "Stripe" look */
+.card-premium {
+  background: var(--white);
+  border: 0.5px solid var(--gray-200);
+  border-radius: var(--radius-card);
+  padding: var(--space-8);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-premium:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--gray-200);
 }
 
 /* === ENHANCED GRID SYSTEMS === */
@@ -1295,15 +1343,16 @@ table {
 .bento-item {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-2xl);
+  border-radius: var(--radius-card);  /* Consistent 24px radius */
   padding: var(--space-6);
-  transition: all var(--duration-300) var(--ease-out);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
 
 .bento-item:hover {
   border-color: var(--gray-300);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
 }
 
 .bento-item:hover .bento-content {
@@ -1764,6 +1813,143 @@ table {
   border-bottom: none;
 }
 
+/* === PREMIUM SCROLL ANIMATIONS === */
+/* Staggered entry animations for that "Linear" feel */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Apply to elements that should animate on scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for children */
+.stagger-children > *:nth-child(1) { transition-delay: 0ms; }
+.stagger-children > *:nth-child(2) { transition-delay: 100ms; }
+.stagger-children > *:nth-child(3) { transition-delay: 200ms; }
+.stagger-children > *:nth-child(4) { transition-delay: 300ms; }
+.stagger-children > *:nth-child(5) { transition-delay: 400ms; }
+.stagger-children > *:nth-child(6) { transition-delay: 500ms; }
+
+/* === MAGNETIC BUTTON EFFECT === */
+/* Buttons subtly follow cursor on hover */
+.btn-magnetic {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-magnetic:hover {
+  transform: scale(1.02);
+}
+
+/* === PREMIUM GRAIN TEXTURE OVERLAY === */
+/* Adds tactile, film-like quality - removes "plastic" digital feel */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;  /* Very subtle */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* === SECTION DIVIDER === */
+/* Subtle gradient divider between sections */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
+  margin: 0;
+  border: none;
+}
+
+/* === HERO GLOW EFFECT === */
+/* Ambient glow behind hero elements */
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(ellipse at center,
+    rgba(99, 91, 255, 0.08) 0%,
+    rgba(0, 212, 170, 0.04) 40%,
+    transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(40px);
+}
+
+/* === SMOOTH SCROLL BEHAVIOR === */
+/* For a gliding feel throughout the page */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* === PREMIUM LINK UNDERLINE ANIMATION === */
+.link-hover-effect {
+  position: relative;
+  text-decoration: none;
+  color: var(--gray-700);
+  transition: color 0.2s ease;
+}
+
+.link-hover-effect::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--brand-primary);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-hover-effect:hover {
+  color: var(--brand-primary);
+}
+
+.link-hover-effect:hover::after {
+  width: 100%;
+}
+
 /* === REDUCED MOTION === */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -1777,5 +1963,15 @@ table {
   .skeleton {
     animation: none;
     background: var(--gray-100);
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .grain-overlay {
+    display: none;
   }
 }
