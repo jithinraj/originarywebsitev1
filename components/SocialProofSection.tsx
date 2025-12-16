@@ -1,67 +1,121 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 function LogoIcon({ name }: { name: string }) {
-  const logos = {
+  // Real logo images with brand-colored backgrounds
+  const logos: Record<string, React.ReactNode> = {
     'MCP': (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="64" height="64" rx="12" fill="#CC785C"/>
-        <path d="M32 18L22 24v16l10 6 10-6V24L32 18zm0 3.5l6.5 3.9v7.8L32 37l-6.5-3.8v-7.8L32 21.5z" fill="white"/>
-      </svg>
+      <div style={{
+        width: '64px',
+        height: '64px',
+        borderRadius: '12px',
+        background: '#CC785C',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontWeight: 700,
+        fontSize: '16px',
+        fontFamily: 'system-ui, sans-serif'
+      }}>
+        MCP
+      </div>
     ),
     'A2A': (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="64" height="64" rx="12" fill="#4285F4"/>
-        <path d="M32 20c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12-5.4-12-12-12zm0 20c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" fill="#EA4335"/>
-        <path d="M32 20c-6.6 0-12 5.4-12 12h4c0-4.4 3.6-8 8-8V20z" fill="#FBBC05"/>
-        <path d="M44 32c0-6.6-5.4-12-12-12v4c4.4 0 8 3.6 8 8h4z" fill="#34A853"/>
-        <circle cx="32" cy="32" r="4" fill="white"/>
-      </svg>
+      <div style={{
+        width: '64px',
+        height: '64px',
+        borderRadius: '12px',
+        background: '#4285F4',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '12px'
+      }}>
+        <Image
+          src="/logos/a2a.svg"
+          alt="A2A"
+          width={40}
+          height={40}
+          style={{
+            width: '100%',
+            height: 'auto',
+            filter: 'brightness(0) invert(1)'
+          }}
+        />
+      </div>
     ),
     'x402': (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="64" height="64" rx="12" fill="#0052FF"/>
-        <circle cx="32" cy="32" r="14" fill="white"/>
-        <path d="M32 22c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10zm0 16c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z" fill="#0052FF"/>
-      </svg>
+      <div style={{
+        width: '64px',
+        height: '64px',
+        borderRadius: '12px',
+        background: '#0052FF',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontWeight: 700,
+        fontSize: '14px',
+        fontFamily: 'system-ui, sans-serif'
+      }}>
+        x402
+      </div>
     ),
     'Cloudflare': (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="64" height="64" rx="12" fill="#FFFFFF"/>
-        <g transform="translate(6, 16)">
-          <path d="M42.9 31.2l.8-2.8c.6-2.1.3-4-.7-5.5-1-1.5-2.6-2.4-4.6-2.5l-26.3-.4c-.3 0-.6-.2-.7-.4-.1-.2-.1-.5.1-.7.2-.3.5-.5.8-.5l26.5-.4c3.7-.2 7.6 2.6 8.9 6.4l1.7 5.3h-6.5z" fill="#F6821F"/>
-          <path d="M35.3 31.2l.6-1.9c.5-1.6.2-3-.5-4-.7-1.1-1.9-1.8-3.4-1.8l-20.7-.3c-.3 0-.5-.1-.6-.3-.1-.2-.1-.4 0-.5.1-.3.4-.5.6-.5l20.8-.3c2.9-.2 6 2 7.1 5l.9 3.2h-4.8z" fill="#FAAD3F"/>
-          <path d="M10.5 31.2c-.5 0-.8-.4-.7-.8l.5-1.7c.4-1.6 2.1-2.9 3.7-3h4.4c.4 0 .6.3.5.7l-.4 1.6c-.5 1.7-2.2 3.1-3.8 3.2h-4.2z" fill="#F6821F"/>
-        </g>
-      </svg>
-    ),
-    'Stripe': (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="64" height="64" rx="12" fill="#635BFF"/>
-        <path d="M30.3 27.1c0-1.2 1-1.7 2.6-1.7 2.3 0 5.2.7 7.5 2v-7.1c-2.5-1-5-1.4-7.5-1.4-6.1 0-10.2 3.2-10.2 8.5 0 8.3 11.4 7 11.4 10.5 0 1.4-1.2 1.9-2.9 1.9-2.5 0-5.7-.9-8.2-2.3v7.2c2.8 1.2 5.6 1.7 8.2 1.7 6.3 0 10.6-3.1 10.6-8.5 0-9-11.5-7.4-11.5-10.8z" fill="white"/>
-      </svg>
+      <Image
+        src="/logos/cloudflare.png"
+        alt="Cloudflare"
+        width={64}
+        height={64}
+        style={{
+          width: '64px',
+          height: '64px',
+          objectFit: 'contain',
+          borderRadius: '12px',
+          background: '#fff',
+          padding: '8px'
+        }}
+      />
     ),
     'Vercel': (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="64" height="64" rx="12" fill="#000000"/>
-        <path d="M32 20L48 44H16L32 20Z" fill="white"/>
-      </svg>
+      <div style={{
+        width: '64px',
+        height: '64px',
+        borderRadius: '12px',
+        background: '#000000',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontWeight: 700,
+        fontSize: '28px'
+      }}>
+        ▲
+      </div>
     ),
     'Ethereum': (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="64" height="64" rx="12" fill="#627EEA"/>
-        <path d="M32 16L31.7 17V36.8L32 37.1L40.5 32L32 16Z" fill="white" fillOpacity="0.6"/>
-        <path d="M32 16L23.5 32L32 37.1V16Z" fill="white"/>
-        <path d="M32 39.6L31.8 39.8V46.3L32 47L40.5 34.5L32 39.6Z" fill="white" fillOpacity="0.6"/>
-        <path d="M32 47V39.6L23.5 34.5L32 47Z" fill="white"/>
-        <path d="M32 37.1L40.5 32L32 27.3V37.1Z" fill="white" fillOpacity="0.2"/>
-        <path d="M23.5 32L32 37.1V27.3L23.5 32Z" fill="white" fillOpacity="0.6"/>
-      </svg>
+      <div style={{
+        width: '64px',
+        height: '64px',
+        borderRadius: '12px',
+        background: '#627EEA',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontWeight: 700,
+        fontSize: '11px',
+        fontFamily: 'system-ui, sans-serif'
+      }}>
+        ERC-8004
+      </div>
     )
   }
 
-  return logos[name as keyof typeof logos] || null
+  return logos[name] || null
 }
 
 export default function SocialProofSection() {
@@ -70,7 +124,6 @@ export default function SocialProofSection() {
     { name: 'A2A', label: 'A2A', href: '/docs/a2a/attach-points' },
     { name: 'x402', label: 'x402', href: '/docs/payments/x402' },
     { name: 'Cloudflare', label: 'Cloudflare', href: '/docs/deploy/cloudflare-worker' },
-    { name: 'Stripe', label: 'Stripe', href: '/docs/payments/stripe' },
     { name: 'Vercel', label: 'Vercel', href: '/docs/deploy/vercel' },
     { name: 'Ethereum', label: 'ERC-8004:', href: 'https://eips.ethereum.org/EIPS/eip-8004' }
   ]
@@ -82,17 +135,68 @@ export default function SocialProofSection() {
     { name: 'ERC-8004', description: 'Trustless Agents standard for on-chain AI agent interactions.', href: 'https://eips.ethereum.org/EIPS/eip-8004' }
   ]
 
+  const metrics = [
+    { value: '<5ms', label: 'Receipt verification' },
+    { value: '100%', label: 'Edge-deployable' },
+    { value: 'Open', label: 'Protocol spec' }
+  ]
+
   return (
     <section
       className="social-proof-section"
       style={{
-        padding: 'var(--space-16) 0',
+        padding: 'var(--section-padding) 0',
         background: 'var(--white)',
         borderTop: '1px solid var(--gray-100)',
         borderBottom: '1px solid var(--gray-100)'
       }}
     >
       <div className="container">
+        {/* Metrics row - creates immediate trust/gravity */}
+        <div
+          className="animate-on-scroll"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 'var(--space-12)',
+            marginBottom: 'var(--space-12)',
+            flexWrap: 'wrap'
+          }}
+        >
+          {metrics.map((metric, index) => (
+            <div
+              key={metric.label}
+              style={{
+                textAlign: 'center',
+                minWidth: '120px'
+              }}
+            >
+              <div
+                style={{
+                  fontSize: 'clamp(2rem, 4vw, 2.5rem)',
+                  fontWeight: 700,
+                  letterSpacing: '-0.03em',
+                  color: 'var(--gray-900)',
+                  lineHeight: 1,
+                  marginBottom: 'var(--space-2)'
+                }}
+              >
+                {metric.value}
+              </div>
+              <div
+                style={{
+                  fontSize: 'var(--text-sm)',
+                  color: 'var(--gray-500)',
+                  fontWeight: 500
+                }}
+              >
+                {metric.label}
+              </div>
+            </div>
+          ))}
+        </div>
+
         <div
           style={{
             textAlign: 'center',
@@ -100,6 +204,7 @@ export default function SocialProofSection() {
           }}
         >
           <p
+            className="text-label"
             style={{
               fontSize: 'var(--text-sm)',
               color: 'var(--gray-500)',
@@ -113,7 +218,7 @@ export default function SocialProofSection() {
         </div>
 
         <div
-          className="logo-strip"
+          className="logo-strip animate-on-scroll"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -134,7 +239,8 @@ export default function SocialProofSection() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 gap: 'var(--space-3)',
-                opacity: 0.6,
+                opacity: 0.5,
+                filter: 'grayscale(100%)',
                 transition: 'all var(--duration-300) var(--ease-out)',
                 cursor: 'pointer',
                 textDecoration: 'none',
@@ -144,10 +250,12 @@ export default function SocialProofSection() {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.opacity = '1'
+                e.currentTarget.style.filter = 'grayscale(0%)'
                 e.currentTarget.style.transform = 'translateY(-2px)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.opacity = '0.6'
+                e.currentTarget.style.opacity = '0.5'
+                e.currentTarget.style.filter = 'grayscale(100%)'
                 e.currentTarget.style.transform = 'translateY(0)'
               }}
             >

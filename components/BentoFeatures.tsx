@@ -17,12 +17,13 @@ export default function BentoFeatures() {
       <div className="container">
         {/* Section Header */}
         <div
+          className="animate-on-scroll"
           style={{
             textAlign: 'center',
             marginBottom: 'var(--space-12)'
           }}
         >
-          <span className="badge-status" style={{ marginBottom: 'var(--space-4)' }}>
+          <span className="badge-status" style={{ marginBottom: 'var(--space-4)', display: 'inline-block' }}>
             FEATURES
           </span>
           <h2
@@ -49,7 +50,7 @@ export default function BentoFeatures() {
         </div>
 
         {/* Bento Grid - Main Cards */}
-        <div className="bento-grid">
+        <div className="bento-grid stagger-children animate-on-scroll">
           {/* Large Card - Trace Analytics */}
           <BentoCard
             className="bento-large"
@@ -76,7 +77,7 @@ export default function BentoFeatures() {
         </div>
 
         {/* Small Cards Row - 4 in a row */}
-        <div className="bento-small-row">
+        <div className="bento-small-row stagger-children animate-on-scroll">
           {/* Small Card - Global */}
           <BentoCard
             className="bento-small"

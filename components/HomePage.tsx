@@ -40,7 +40,7 @@ export default function WorldClassHomePage() {
 
   return (
     <div>
-      {/* Who is Originary for? - Premium Design */}
+      {/* Who is Originary for? */}
       <section
         style={{
           background: 'linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%)',
@@ -112,7 +112,7 @@ export default function WorldClassHomePage() {
             </p>
           </div>
 
-          {/* Audience Cards - Premium Grid */}
+          {/* Audience Cards */}
           <div
             className="audience-grid"
             style={{

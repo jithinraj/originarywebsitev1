@@ -1,20 +1,17 @@
 /* ===== ORIGINARY DESIGN SYSTEM ===== */
-/* World-class design inspired by Stripe, Linear, and Vercel */
 
 /* Font Loading handled by Next.js - removed @import to prevent render blocking */
 
 /* === RESPONSIVE DESIGN FOUNDATION === */
 /* Better Windows font rendering and universal compatibility */
 
-/* CSS Variables - Premium Design Tokens */
+/* CSS Variables */
 :root {
-  /* === COLORS - SOPHISTICATED PALETTE === */
-  /* Rich blacks for that "expensive" look - #050505 instead of muddy grays */
+  /* === COLORS === */
   --white: #ffffff;
   --black: #050505;
 
-  /* Grays - Carefully crafted with WCAG AA compliance */
-  /* Refined for premium depth and contrast */
+  /* Grays - WCAG AA compliant */
   --gray-50: #fafafa;
   --gray-100: #f4f4f5;
   --gray-200: #e4e4e7;
@@ -40,7 +37,7 @@
   --error: #ff4757;
   --info: #635bff;
 
-  /* === GRADIENTS - SOPHISTICATED === */
+  /* === GRADIENTS === */
   --gradient-brand: linear-gradient(135deg, #635bff 0%, #443aff 50%, #00d4aa 100%);
   --gradient-surface: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
   --gradient-mesh: radial-gradient(circle at 25% 25%, rgba(99,91,255,0.08) 0%, transparent 50%),
@@ -58,7 +55,7 @@
   --shadow-elevated: 0 32px 64px -12px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(255, 255, 255, 0.05);
   --shadow-glow: 0 0 32px -8px rgba(99, 91, 255, 0.3);
 
-  /* === TYPOGRAPHY SCALE - MATHEMATICAL PRECISION === */
+  /* === TYPOGRAPHY SCALE === */
   --font-mono: var(--font-jetbrains-mono), 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
   --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe UI Variable', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
@@ -76,7 +73,7 @@
   --text-7xl: 4.5rem;     /* 72px */
   --text-8xl: 6rem;       /* 96px */
 
-  /* === SPACING SYSTEM - PERFECT HARMONY === */
+  /* === SPACING SYSTEM === */
   --space-px: 1px;
   --space-0: 0rem;
   --space-1: 0.25rem;     /* 4px */
@@ -149,15 +146,14 @@
   --breakpoint-2xl: 1536px; /* Desktop monitors */
 
   /* === FLUID RESPONSIVE VALUES === */
-  /* "Expensive" websites are 50% empty space - generous padding creates focus */
   --container-padding: clamp(1rem, 4vw, 3rem);
-  --section-padding: clamp(5rem, 12vh, 10rem);  /* Increased from 8rem max to 10rem for premium feel */
-  --section-padding-lg: clamp(6rem, 15vh, 12rem);  /* Extra large section padding */
+  --section-padding: clamp(5rem, 12vh, 10rem);
+  --section-padding-lg: clamp(6rem, 15vh, 12rem);
   --card-padding: clamp(1.5rem, 4vw, 2.5rem);
   --grid-gap: clamp(1rem, 3vw, 2rem);
 
-  /* Premium border radius - consistent 24px everywhere */
-  --radius-card: 1.5rem;  /* 24px - the "billion dollar" radius */
+  /* Card border radius */
+  --radius-card: 1.5rem;
 }
 
 /* === BASE STYLES - FOUNDATION === */
@@ -200,7 +196,6 @@ body::after,
 }
 
 /* === TYPOGRAPHY SYSTEM === */
-/* Linear/Vercel standard: tight tracking, intentional hierarchy */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.15;
@@ -212,7 +207,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: var(--text-5xl);
   font-weight: 700;
-  letter-spacing: -0.04em;  /* Extra tight for headlines - the "Linear" look */
+  letter-spacing: -0.04em;
   line-height: 1.05;
 }
 
@@ -253,7 +248,6 @@ p {
   margin: 0;
 }
 
-/* Premium text utilities */
 .text-balance {
   text-wrap: balance;
 }
@@ -426,11 +420,10 @@ p {
 }
 
 /* === CARD SYSTEM === */
-/* Premium 24px radius everywhere for the "billion dollar" look */
 .card {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  border-radius: var(--radius-card);  /* Consistent 24px */
+  border-radius: var(--radius-card);
   padding: var(--card-padding);
   box-shadow: var(--shadow-sm);
   transition: all var(--duration-300) var(--ease-out);
@@ -443,14 +436,14 @@ p {
 
 .card:hover {
   box-shadow: var(--shadow-xl);
-  transform: translateY(-4px);  /* More pronounced lift */
+  transform: translateY(-4px);
   border-color: var(--gray-300);
 }
 
 .card-elevated {
   background: var(--gradient-surface);
   backdrop-filter: blur(20px) saturate(180%);
-  border: 0.5px solid rgba(255, 255, 255, 0.15);  /* Ultra-thin border for glassmorphism */
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
   box-shadow: var(--shadow-elevated);
   border-radius: var(--radius-card);
 }
@@ -459,7 +452,6 @@ p {
   box-shadow: var(--shadow-glow), var(--shadow-lg);
 }
 
-/* Premium glass card - the "Stripe" look */
 .card-premium {
   background: var(--white);
   border: 0.5px solid var(--gray-200);
@@ -1091,8 +1083,7 @@ table {
   }
 }
 
-/* ===== DEVELOPER LUXURY DESIGN SYSTEM ===== */
-/* Inspired by Linear, Vercel, Raycast */
+/* ===== EXTENDED DESIGN SYSTEM ===== */
 
 :root {
   /* Geist Sans as primary font */
@@ -1813,8 +1804,7 @@ table {
   border-bottom: none;
 }
 
-/* === PREMIUM SCROLL ANIMATIONS === */
-/* Staggered entry animations for that "Linear" feel */
+/* === SCROLL ANIMATIONS === */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -1859,17 +1849,33 @@ table {
 .stagger-children > *:nth-child(6) { transition-delay: 500ms; }
 
 /* === MAGNETIC BUTTON EFFECT === */
-/* Buttons subtly follow cursor on hover */
 .btn-magnetic {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-magnetic:hover {
-  transform: scale(1.02);
+  transform: translateY(-2px) scale(1.02);
 }
 
-/* === PREMIUM GRAIN TEXTURE OVERLAY === */
-/* Adds tactile, film-like quality - removes "plastic" digital feel */
+.btn-magnetic.btn-primary:hover {
+  box-shadow: 0 8px 25px -5px rgba(99, 91, 255, 0.4),
+              0 4px 10px -5px rgba(99, 91, 255, 0.2);
+}
+
+.btn-magnetic.btn-ghost:hover {
+  background: var(--gray-100);
+}
+
+.btn-magnetic.btn-secondary:hover {
+  box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.15);
+}
+
+.btn-magnetic:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* === GRAIN TEXTURE OVERLAY === */
 .grain-overlay {
   position: fixed;
   top: 0;
@@ -1878,8 +1884,12 @@ table {
   height: 100%;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.03;  /* Very subtle */
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.grain-overlay.grain-subtle {
+  opacity: 0.012;
 }
 
 /* === SECTION DIVIDER === */
@@ -1891,26 +1901,120 @@ table {
   border: none;
 }
 
-/* === HERO GLOW EFFECT === */
-/* Ambient glow behind hero elements */
+/* === ANIMATED GRADIENT MESH === */
 .hero-glow {
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-glow::before,
+.hero-glow::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Primary gradient orb - purple/indigo */
+.hero-glow::before {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(99, 91, 255, 0.15) 0%, rgba(99, 91, 255, 0.05) 50%, transparent 70%);
+  animation: gradientMorph1 8s ease-in-out infinite alternate;
+}
+
+/* Secondary gradient orb - teal/cyan */
+.hero-glow::after {
+  width: 500px;
+  height: 500px;
+  bottom: -150px;
+  left: -50px;
+  background: radial-gradient(circle, rgba(0, 212, 170, 0.12) 0%, rgba(0, 212, 170, 0.04) 50%, transparent 70%);
+  animation: gradientMorph2 10s ease-in-out infinite alternate;
+}
+
+@keyframes gradientMorph1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-30px, 20px) scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(20px, -30px) scale(0.95);
+    opacity: 0.5;
+  }
+}
+
+@keyframes gradientMorph2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(40px, -20px) scale(1.15);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-20px, 40px) scale(0.9);
+    opacity: 0.4;
+  }
+}
+
+/* Third gradient orb - center accent */
+.gradient-orb-3 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 600px;
-  background: radial-gradient(ellipse at center,
-    rgba(99, 91, 255, 0.08) 0%,
-    rgba(0, 212, 170, 0.04) 40%,
-    transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(40px);
+  background: radial-gradient(circle, rgba(99, 91, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.8;
+  animation: gradientMorph3 12s ease-in-out infinite alternate;
+}
+
+@keyframes gradientMorph3 {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-45%, -55%) scale(1.2) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-55%, -45%) scale(0.9) rotate(360deg);
+    opacity: 0.5;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow::before,
+  .hero-glow::after,
+  .gradient-orb-3 {
+    animation: none;
+  }
 }
 
 /* === SMOOTH SCROLL BEHAVIOR === */
-/* For a gliding feel throughout the page */
 html.lenis, html.lenis body {
   height: auto;
 }
@@ -1923,7 +2027,7 @@ html.lenis, html.lenis body {
   overscroll-behavior: contain;
 }
 
-/* === PREMIUM LINK UNDERLINE ANIMATION === */
+/* === LINK UNDERLINE ANIMATION === */
 .link-hover-effect {
   position: relative;
   text-decoration: none;

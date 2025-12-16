@@ -56,7 +56,7 @@ export default function HowItWorksSection() {
     >
       <div className="container">
         {/* Section Header */}
-        <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
+        <div className="animate-on-scroll" style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
           <h2
             style={{
               fontSize: 'clamp(var(--text-2xl), 4vw, var(--text-4xl))',
@@ -82,7 +82,7 @@ export default function HowItWorksSection() {
 
         {/* 4-Step Grid */}
         <div
-          className="how-it-works-grid"
+          className="how-it-works-grid animate-on-scroll stagger-children"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
@@ -98,10 +98,10 @@ export default function HowItWorksSection() {
                 display: 'block',
                 padding: 'var(--space-6)',
                 background: 'var(--white)',
-                borderRadius: 'var(--radius-xl)',
+                borderRadius: 'var(--radius-card)',
                 border: '1px solid var(--gray-200)',
                 textDecoration: 'none',
-                transition: 'all 0.2s ease',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 position: 'relative'
               }}
               onMouseEnter={(e) => {
@@ -192,7 +192,7 @@ export default function HowItWorksSection() {
         >
           <Link
             href="/developers"
-            className="btn btn-primary"
+            className="btn btn-primary btn-magnetic"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -205,7 +205,7 @@ export default function HowItWorksSection() {
 
           <Link
             href="/demo"
-            className="btn btn-secondary"
+            className="btn btn-secondary btn-magnetic"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -218,9 +218,10 @@ export default function HowItWorksSection() {
 
         {/* Seven Pillars of PEAC */}
         <div
+          className="animate-on-scroll"
           style={{
             background: 'var(--gray-900)',
-            borderRadius: 'var(--radius-2xl)',
+            borderRadius: 'var(--radius-card)',
             padding: 'var(--space-8)',
             position: 'relative',
             overflow: 'hidden'
