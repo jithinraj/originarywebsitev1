@@ -80,7 +80,7 @@ export default function Footer() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(6, 1fr)',
+            gridTemplateColumns: 'repeat(7, 1fr)',
             gap: 'var(--space-8)',
             marginBottom: 'var(--space-16)'
           }}
@@ -121,8 +121,20 @@ export default function Footer() {
           />
 
           <FooterSection
+            title="Learn"
+            links={[
+              { href: '/learn', label: 'All guides' },
+              { href: '/learn/what-is-agentic-commerce', label: 'Agentic Commerce' },
+              { href: '/learn/ai-receipts', label: 'AI Receipts' },
+              { href: '/learn/http-402-ai-payments', label: 'HTTP 402 Payments' },
+              { href: '/learn/ai-consent-and-attribution', label: 'Consent & Attribution' }
+            ]}
+          />
+
+          <FooterSection
             title="Company"
             links={[
+              { href: '/what-is-originary', label: 'What is Originary?' },
               { href: '/about', label: 'About' },
               { href: '/blog', label: 'Blog' },
               { href: '/contact', label: 'Contact' },
@@ -257,7 +269,12 @@ export default function Footer() {
       </div>
 
       <style jsx>{`
-        @media (max-width: 1200px) {
+        @media (max-width: 1400px) {
+          .footer-nav-grid {
+            grid-template-columns: repeat(4, 1fr) !important;
+          }
+        }
+        @media (max-width: 1100px) {
           .footer-nav-grid {
             grid-template-columns: repeat(3, 1fr) !important;
           }
