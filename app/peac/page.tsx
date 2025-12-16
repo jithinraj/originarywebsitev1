@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: 'PEAC Protocol | Open Protocol for the Agentic Web',
     description: 'PEAC Protocol is an open protocol for policy, payments, and receipts in the agentic web and agentic economy, covering HTTP 402 commerce, agent-to-agent transactions, and AI compliance.',
     url: 'https://www.originary.xyz/peac',
+    siteName: 'Originary',
     type: 'website',
+    images: ['/og.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PEAC Protocol | Open Protocol for the Agentic Web',
+    description: 'Open protocol for policy, payments, and receipts in the agentic web.',
+    images: ['/og.jpg'],
   },
 }
 

@@ -1,82 +1,151 @@
-# Originary - AI Infrastructure for the Agentic Web
+# Originary | Infrastructure & Tools for the Agentic Web
 
-> Originary builds infrastructure for AI agent transactions: policy discovery, access control, payments, and verifiable receipts.
+> Originary builds infrastructure for AI commerce, consent, and compliance via HTTP 402/x402 payments, PEAC receipts, and AI crawler analytics.
 
-## About
-
-Originary (originary.xyz) is the commercial implementation of PEAC Protocol - an open standard for Policy, Economics, Attribution, and Consent in AI agent interactions. We help API providers and content publishers monetize AI traffic with HTTP 402 paywalls and cryptographically signed receipts.
+Last updated: 2025-12-17
 
 Company: Poem, Inc.
 Location: Delaware, USA
 Contact: contact@originary.xyz
 
-## Core Products
+## Overview
 
-### Trace (/trace)
-AI bot detection and traffic analytics. Identifies AI agents accessing your APIs and web resources.
+- [What is Originary?](/what-is-originary) - Introduction to Originary, its purpose, and infrastructure for AI commerce, consent, and compliance
+- [About](/about) - Company mission, the seven pillars (Access, Attribution, Consent, Commerce, Compliance, Privacy, Provenance), and how we work
 
-### Gateway 402 (/products/gateway-402)
-HTTP 402 paywall for AI traffic. Challenges AI agents with payment requirements and processes payments via x402 (stablecoins) or Stripe.
-
-### Verify (/verify)
-Receipt verification API. Validates PEAC-Receipt signatures offline using JWKS.
+## Products
 
 ### Declare (/declare)
 AI Policy Pack Generator. CLI tool to generate peac.txt, AIPREF headers, and human-readable policy pages from a single YAML config.
 
-## Key Pages
+### Trace (/trace)
+AI bot detection and traffic analytics. Identifies AI agents accessing your APIs and web resources. Export logs and proofs to your stack.
+- [Trace Demo](/trace/demo) - Interactive demonstration
 
-- /pricing - Pricing tiers (Developer $1, Professional $2,500/mo, Enterprise custom)
-- /developers - Technical documentation and CLI quickstart
-- /demo - Interactive PEAC v0.9.23 protocol trace demonstration
-- /peac - PEAC Protocol overview (open source)
-- /integrations - Integration guides for x402, MCP, ACP, A2A
+### Gateway 402 (/products/gateway-402)
+HTTP 402 paywall for AI traffic. Enforce policy at the edge with allow/deny/rate-limit options or HTTP 402 challenges. Process payments via x402 (stablecoins) or Stripe.
 
-## Standards & Protocols
+### Verify (/products/verify)
+Receipt verification API. Validate PEAC-Receipt signatures server-side for billing, disputes, and audits.
 
-### PEAC Protocol
-Open standard for AI agent transactions. Current version: 0.9.23
+### Studio (/products/studio)
+Visual tooling to design, test, and operate policy and receipts with teams.
+
+### Adapters (/products/adapters)
+Pre-built integrations for common platforms and frameworks.
+
+## Receipt Management
+
+- [Ed25519 Cryptographic Receipts](/receipts) - Ed25519 signed proofs for every transaction, ensuring secure and verifiable receipts
+- [Verify](/verify) - Validate signed receipts server-side for billing, disputes, and audits
+
+## Integrations
+
+- [All Integrations](/integrations) - Overview of all supported integrations
+- [HTTP 402 / x402](/integrations/x402) - HTTP 402 payments for machine-payable APIs
+  - [Next.js](/integrations/x402/nextjs)
+  - [Express/Node](/integrations/x402/express-node)
+  - [Cloudflare Workers](/integrations/x402/cloudflare-workers)
+- [MCP](/integrations/mcp) - Model Context Protocol integration for receipts and tools
+- [ACP](/integrations/acp) - Agentic Commerce Protocol for agent transactions
+- [A2A](/integrations/a2a) - Agent-to-Agent communication with verifiable receipts
+- [AIPREF](/integrations/aipref) - AI Preferences signaling standard
+
+## Solutions
+
+- [AI Builders](/solutions/ai-builders) - Infrastructure for AI Agents
+- [API Providers](/solutions/api-providers) - Monetize APIs for AI
+- [Publishers](/solutions/publishers) - Protect and Monetize Content
+- [Enterprises](/solutions/enterprises) - Enterprise Grade AI Governance
+
+## Open Source
+
+### PEAC Protocol (/peac)
+Open standard for AI agent transactions (Apache-2.0). Current version: 0.9.23
 - Policy discovery via /.well-known/peac.txt
 - AI preferences via AIPREF (/.well-known/aipref.json)
 - Payment challenges via HTTP 402
 - Verifiable receipts via PEAC-Receipt header
 
-### Supported Payment Rails
-- x402: Stablecoin payments over HTTP 402
-- Stripe: Card payments behind 402 challenges
+- [GitHub Repository](https://github.com/peacprotocol/peac) - Source code, spec, and SDKs
+- [Examples](https://github.com/peacprotocol/peac/tree/main/examples) - Sample implementations and starter templates
 
-### Related Standards
-- AIPREF: AI Preferences signaling
-- MCP: Model Context Protocol integration
-- ACP: Agentic Commerce Protocol
-- A2A: Agent-to-Agent communication
+## Developer Resources
 
-## Well-Known Files
+- [Developers](/developers) - Technical documentation and CLI quickstart
+- [Downloads](/downloads) - CLI tools and packages
+- [Demo](/demo) - Interactive PEAC v0.9.23 protocol trace demonstration
+- [Pricing](/pricing) - Developer $1, Professional $2,500/mo, Enterprise custom
 
-- /.well-known/peac.txt - PEAC policy file
-- /.well-known/aipref.json - AI preferences
-- /.well-known/jwks.json - Public keys for receipt verification
-- /robots.txt - Crawler directives
-- /sitemap.xml - Site structure
+## Learn
 
-## Blog & Resources
+- [All Guides](/learn) - Educational content on agentic web concepts
+- [What is Agentic Commerce?](/learn/what-is-agentic-commerce) - Agentic Commerce Guide
+- [AI Receipts Explained](/learn/ai-receipts) - Understanding cryptographic receipts
+- [HTTP 402 for AI Payments](/learn/http-402-ai-payments) - HTTP 402 Payment Required for AI
+- [AI Consent & Attribution](/learn/ai-consent-and-attribution) - Consent and attribution in AI systems
 
-- /blog - Technical articles on AI commerce, HTTP 402, and PEAC Protocol
-- /changelog - Product updates and releases
+## Blog
 
-## Legal
+- [All Posts](/blog) - Technical articles on AI commerce, HTTP 402, and PEAC Protocol
+- [Adding 402 in 15 Minutes](/blog/adding-402-in-15-minutes) - Quick start guide
+- [AI Bot Detection](/blog/ai-bot-detection) - Detecting AI crawlers and agents
+- [HTTP 402 for APIs](/blog/http-402-for-apis) - Implementing HTTP 402 in APIs
+- [Robots.txt RFC 9309](/blog/robots-txt-rfc-9309) - Standards compliance
+- [AIPREF by IETF](/blog/aipref-by-ietf) - AI Preferences standard
+- [Cloudflare Workers 402](/blog/cloudflare-workers-402) - Edge deployment guide
+- [From Detection to Settlement](/blog/from-detection-to-settlement-ai-paywall-peac-http-402) - Complete paywall flow
 
-- /terms - Terms of Service
-- /privacy - Privacy Policy
-- /security - Security policy and responsible disclosure
-- /trademark - Brand guidelines
+## Glossary
+
+- [All Terms](/glossary)
+- [HTTP 402 Payment Required](/glossary/http-402-payment-required)
+- [x402](/glossary/x402)
+- [PEAC](/glossary/peac)
+- [AIPREF](/glossary/aipref)
+- [MCP](/glossary/mcp)
+- [ACP](/glossary/acp)
+- [A2A](/glossary/a2a)
+- [Agentic Web](/glossary/agentic-web)
+
+## Deployment
+
+- [Cloud](/cloud) - Edge deployment options
+- [Cloudflare Workers](/docs/deploy/cloudflare-worker) - Deploy verification at the edge
+- [Vercel](/docs/deploy/vercel) - Serverless deployment
+
+## Trust & Compliance
+
+- [Trust Center](/trust) - Built-in audit trails and policy hooks for evidence of transactions
+
+## Company
+
+- [About](/about) - Mission, principles, and team
+- [Contact](/contact) - Sales, partnerships, support inquiries
+- [Changelog](/changelog) - Product updates and releases
+- [Brand](/brand) - Brand guidelines and assets
+
+## Community & Social
+
+- [GitHub](https://github.com/originaryx) - Code and contributions
+- [X / Twitter](https://x.com/originaryx) - Updates and announcements
+- [LinkedIn](https://www.linkedin.com/company/originary) - Professional networking
+- [Bluesky](https://bsky.app/profile/originary.bsky.social) - Discussions and updates
+- [Substack](https://peacprotocol.substack.com/) - Long-form essays about the agentic web
+
+## Technical Files
+
+- [robots.txt](/robots.txt) - Crawler directives
+- [peac.txt](/.well-known/peac.txt) - PEAC policy file
+- [aipref.json](/.well-known/aipref.json) - AI preferences
+- [jwks.json](/.well-known/jwks.json) - Public keys for receipt verification
+- [sitemap.xml](/sitemap.xml) - Site structure
 
 ## For AI Agents
 
-This site supports PEAC Protocol. `llms.txt` is provided as a convenience for inference time tools and agents. Canonical enforcement comes from PEAC receipts and policy validation.
+This site supports PEAC Protocol. This `llms.txt` is provided as a convenience for inference-time tools and agents. Canonical enforcement comes from PEAC receipts and policy validation.
 
 To interact programmatically:
-
 1. Fetch /.well-known/peac.txt for policy discovery
 2. Check /.well-known/aipref.json for usage preferences
 3. Handle HTTP 402 responses with x402 or Stripe payment
@@ -89,32 +158,3 @@ To interact programmatically:
 - RAG/Inference: Permitted with attribution
 - Commercial use: Permitted under terms
 - Attribution: Required for content reproduction
-
-## Source Code
-
-PEAC Protocol: https://github.com/peacprotocol/peac (Apache 2.0)
-
-## Additional Resources
-
-### Solutions
-- /solutions/ai-builders - Infrastructure for AI Agents
-- /solutions/api-providers - Monetize APIs for AI
-- /solutions/publishers - Protect and Monetize Content
-- /solutions/enterprises - Enterprise Grade AI Governance
-
-### Learn
-- /learn/what-is-agentic-commerce - Agentic Commerce Guide
-- /learn/ai-receipts - AI Receipts Explained
-- /learn/http-402-ai-payments - HTTP 402 for AI
-- /learn/ai-consent-and-attribution - Consent & Attribution
-
-### Blog Highlights
-- /blog/adding-402-in-15-minutes - Adding 402 payments
-- /blog/ai-bot-detection - AI Bot Detection
-- /blog/http-402-for-apis - HTTP 402 for APIs
-- /blog/robots-txt-rfc-9309 - Robots.txt Standards
-
-### External Links
-- https://peacprotocol.org - PEAC Protocol documentation and use cases
-- https://peacprotocol.substack.com - Long form essays about the agentic web
-- https://x.com/originaryx - Updates and announcements

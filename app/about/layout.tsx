@@ -11,7 +11,15 @@ export const metadata: Metadata = {
     title: 'About Originary',
     description: 'We build receipts and policy infrastructure for the agentic web. Built on the open-source PEAC Protocol.',
     url: 'https://www.originary.xyz/about',
+    siteName: 'Originary',
     type: 'website',
+    images: ['/og.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About | Originary',
+    description: 'We build receipts and policy infrastructure for the agentic web.',
+    images: ['/og.jpg'],
   },
 }
 
