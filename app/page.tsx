@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import PeacAnimationHero from '@/components/PeacAnimationHero'
+import TrustedByStrip from '@/components/TrustedByStrip'
 import HowItWorksSection from '@/components/HowItWorksSection'
 import BentoFeatures from '@/components/BentoFeatures'
 import SocialProofSection from '@/components/SocialProofSection'
@@ -41,6 +42,9 @@ export default function Page() {
       <NavigationHeader />
       <main id="main-content" role="main">
         <PeacAnimationHero />
+
+        {/* Trust strip immediately after hero */}
+        <TrustedByStrip />
 
         <HowItWorksSection />
 

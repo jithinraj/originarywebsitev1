@@ -6,7 +6,9 @@ import { Analytics } from '@vercel/analytics/next'
 import PerformanceMonitor from '@/components/PerformanceMonitor'
 import SkipNavigation from '@/components/SkipNavigation'
 import ClarityAnalytics from '@/components/ClarityAnalytics'
+import AmplitudeAnalytics from '@/components/AmplitudeAnalytics'
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
+import ScrollAnimationProvider from '@/components/ScrollAnimationProvider'
 
 const geistSans = Geist({
   subsets: ['latin'],
@@ -206,15 +208,16 @@ export default function RootLayout({
         <PerformanceMonitor />
         <SkipNavigation />
         <ServiceWorkerRegistration />
+        <ScrollAnimationProvider />
         <div className="wrap">
-          {/* Texture overlay */}
-          <div className="grain" aria-hidden="true"></div>
-
           {children}
         </div>
 
         {/* Microsoft Clarity */}
         <ClarityAnalytics />
+
+        {/* Amplitude Analytics */}
+        <AmplitudeAnalytics />
 
         {/* Google Analytics */}
         <Script

@@ -15,6 +15,7 @@
     "check:emdash": "grep -R \"\\u2014\" app || true && test $(grep -R \"\\u2014\" app | wc -l) -eq 0"
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "^2.32.2",
     "@mdx-js/loader": "latest",
     "@mdx-js/react": "latest",
     "@microsoft/clarity": "latest",

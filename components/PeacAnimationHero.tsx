@@ -16,12 +16,17 @@ export default function PeacAnimationHero() {
       className="hero-section"
       style={{
         position: 'relative',
-        paddingTop: 'clamp(100px, 14vh, 160px)',
-        paddingBottom: 'clamp(80px, 10vh, 120px)',
+        paddingTop: 'clamp(120px, 16vh, 180px)',
+        paddingBottom: 'clamp(100px, 14vh, 160px)',
         background: 'var(--white)',
         overflow: 'hidden'
       }}
     >
+      {/* Animated gradient mesh background */}
+      <div className="hero-glow" aria-hidden="true">
+        <div className="gradient-orb gradient-orb-3" />
+      </div>
+
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div
           className="hero-content"
@@ -165,7 +170,7 @@ export default function PeacAnimationHero() {
             >
               <Link
                 href="/demo"
-                className="btn btn-primary btn-lg btn-shine hero-cta-primary"
+                className="btn btn-primary btn-lg btn-shine btn-magnetic hero-cta-primary"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -182,7 +187,7 @@ export default function PeacAnimationHero() {
 
               <Link
                 href="/peac"
-                className="btn btn-ghost hero-cta-secondary"
+                className="btn btn-ghost btn-magnetic hero-cta-secondary"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',

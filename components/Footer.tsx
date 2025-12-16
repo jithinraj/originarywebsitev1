@@ -164,7 +164,7 @@ export default function Footer() {
           />
         </div>
 
-        {/* Bottom Bar - Clean & Premium */}
+        {/* Bottom Bar */}
         <div
           style={{
             paddingTop: 'var(--space-10)',
