@@ -7,36 +7,47 @@ import { ArrowRight, Zap, ShieldCheck, BarChart3, Layers } from 'lucide-react'
 const products = [
   {
     id: 'gateway',
-    title: 'Gateway',
-    desc: 'Edge enforcement with x402 payment flows and receipt issuance',
+    title: 'Gateway 402',
+    desc: 'Edge enforcement with HTTP 402 payment flows and cryptographically signed receipt issuance',
     href: '/products/gateway-402',
     icon: Zap,
-    color: '#635bff',
+    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    color: '#667eea',
+    badge: 'Core',
+    features: ['Edge deployment', 'HTTP 402 flows', 'Signed receipts']
   },
   {
     id: 'verify',
     title: 'Verify',
-    desc: 'Offline and hosted receipt verification for policies and evidence',
+    desc: 'Offline and hosted receipt verification for policies and cryptographic evidence',
     href: '/products/verify',
     icon: ShieldCheck,
+    gradient: 'linear-gradient(135deg, #00d4aa 0%, #00a896 100%)',
     color: '#00d4aa',
+    badge: 'Core',
+    features: ['Offline verification', 'JWKS support', 'Policy validation']
   },
   {
     id: 'trace',
     title: 'Trace',
-    desc: 'Audit exports and evidence views derived from receipts',
+    desc: 'Comprehensive audit exports and evidence views derived from PEAC receipts',
     href: '/trace',
     icon: BarChart3,
+    gradient: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
     color: '#f59e0b',
+    badge: 'Core',
+    features: ['Audit exports', 'Evidence views', 'Compliance tools']
   },
   {
     id: 'studio',
     title: 'Studio',
-    desc: 'Monitor and govern receipts at scale',
+    desc: 'Monitor and govern receipts at scale with real-time analytics and compliance tools',
     href: '/products/studio',
     icon: Layers,
+    gradient: 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
     color: '#8b5cf6',
-    preview: true,
+    badge: 'Preview',
+    features: ['Real-time analytics', 'Scale governance', 'Compliance dashboard']
   },
 ]
 
@@ -65,9 +76,12 @@ export default function ProductSuite() {
     <section ref={sectionRef} className="products">
       <div className="products-container">
         <div className="products-header reveal">
-          <h2 className="products-label">Products</h2>
-          <p className="products-title">
-            A protocol, plus production-grade building blocks
+          <span className="products-label">Production Stack</span>
+          <h2 className="products-title">
+            Built for the agentic economy
+          </h2>
+          <p className="products-subtitle">
+            Enterprise-grade components for policy enforcement, payment flows, and cryptographic verification. Deploy on your infrastructure or use managed services.
           </p>
         </div>
 
@@ -76,249 +90,335 @@ export default function ProductSuite() {
             <Link
               key={product.id}
               href={product.href}
-              className={`product-card reveal delay-${i}`}
-              style={{ '--product-color': product.color } as React.CSSProperties}
+              className={`product reveal delay-${i}`}
+              style={{
+                '--accent': product.color,
+                '--gradient': product.gradient
+              } as React.CSSProperties}
             >
-              <div className="product-icon-wrapper">
-                <div className="product-icon-bg" />
-                <product.icon size={24} strokeWidth={2} className="product-icon" />
-              </div>
-              <div className="product-content">
-                <div className="product-header">
-                  <h3 className="product-title">{product.title}</h3>
-                  {product.preview && (
-                    <span className="product-badge">Preview</span>
-                  )}
+              <div className="product-glow"></div>
+
+              <div className="product-header-section">
+                <div className="product-icon-wrapper">
+                  <div className="product-icon">
+                    <product.icon size={28} strokeWidth={2.5} />
+                  </div>
                 </div>
-                <p className="product-desc">{product.desc}</p>
+                <div className="product-badge-wrapper">
+                  <span className="product-badge">{product.badge}</span>
+                </div>
               </div>
-              <span className="product-link">
-                Learn more
-                <ArrowRight size={14} strokeWidth={2} />
-              </span>
+
+              <div className="product-content">
+                <h3 className="product-name">{product.title}</h3>
+                <p className="product-description">{product.desc}</p>
+
+                <ul className="product-features">
+                  {product.features.map((feature, idx) => (
+                    <li key={idx} className="product-feature">
+                      <span className="feature-dot"></span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="product-footer">
+                <span className="product-cta">
+                  Explore {product.title}
+                  <ArrowRight size={16} strokeWidth={2.5} />
+                </span>
+              </div>
             </Link>
           ))}
+        </div>
+
+        <div className="products-footer reveal">
+          <div className="footer-badges">
+            <span className="footer-badge">
+              <span className="badge-icon">✓</span>
+              Open source
+            </span>
+            <span className="footer-badge">
+              <span className="badge-icon">✓</span>
+              Apache-2.0
+            </span>
+            <span className="footer-badge">
+              <span className="badge-icon">✓</span>
+              Self-hostable
+            </span>
+          </div>
         </div>
       </div>
 
       <style jsx>{`
         .products {
           padding: 160px 0;
-          background: linear-gradient(180deg, #fafafa 0%, white 40%, white 100%);
+          background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
           position: relative;
-          overflow: hidden;
-        }
-
-        .products::before {
-          content: '';
-          position: absolute;
-          top: -200px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 1000px;
-          height: 600px;
-          background: radial-gradient(ellipse, rgba(99, 91, 255, 0.04) 0%, transparent 70%);
-          pointer-events: none;
         }
 
         .products-container {
-          max-width: 1200px;
+          max-width: 1280px;
           margin: 0 auto;
-          padding: 0 24px;
-          position: relative;
-          z-index: 1;
+          padding: 0 40px;
         }
 
         .products-header {
           text-align: center;
           margin-bottom: 80px;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .products-label {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 13px;
-          font-weight: 600;
-          letter-spacing: 0.08em;
-          color: var(--brand-primary);
+          display: inline-block;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.15em;
+          color: #635bff;
           text-transform: uppercase;
-          margin: 0 0 20px;
+          margin-bottom: 24px;
           padding: 8px 16px;
-          background: rgba(99, 91, 255, 0.06);
-          border: 1px solid rgba(99, 91, 255, 0.12);
+          background: rgba(99, 91, 255, 0.08);
           border-radius: 100px;
         }
 
         .products-title {
-          font-size: clamp(36px, 5vw, 52px);
+          font-size: 64px;
           font-weight: 700;
-          letter-spacing: -0.035em;
-          color: var(--gray-900);
+          letter-spacing: -0.05em;
+          color: #000000;
+          margin: 0 0 28px;
+          line-height: 1.05;
+        }
+
+        .products-subtitle {
+          font-size: 20px;
+          line-height: 1.7;
+          color: #525252;
           margin: 0;
-          line-height: 1.15;
+          font-weight: 400;
+          max-width: 700px;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .products-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 24px;
+          gap: 32px;
+          margin-bottom: 80px;
         }
 
-        .product-card {
+        .product {
           display: flex;
           flex-direction: column;
-          padding: 32px;
-          background: white;
+          padding: 40px;
+          background: #ffffff;
           border: 1px solid rgba(0, 0, 0, 0.08);
           border-radius: 20px;
           text-decoration: none;
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
-          overflow: hidden;
+          overflow: visible;
+          min-height: 420px;
         }
 
-        .product-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 3px;
-          background: var(--product-color);
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .product-glow {
+          display: none;
         }
 
-        .product-card::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(135deg, color-mix(in srgb, var(--product-color) 5%, transparent) 0%, transparent 60%);
-          opacity: 0;
-          transition: opacity 0.4s ease;
-          pointer-events: none;
+        .product:hover .product-glow {
+          display: none;
         }
 
-        .product-card:hover {
-          border-color: color-mix(in srgb, var(--product-color) 30%, transparent);
-          box-shadow:
-            0 0 0 1px color-mix(in srgb, var(--product-color) 15%, transparent),
-            0 20px 50px -12px rgba(0, 0, 0, 0.15),
-            0 8px 20px -8px color-mix(in srgb, var(--product-color) 20%, transparent);
-          transform: translateY(-6px);
+        .product:hover {
+          border-color: rgba(0, 0, 0, 0.12);
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08),
+                      0 0 0 1px rgba(0, 0, 0, 0.02);
+          transform: translateY(-4px);
         }
 
-        .product-card:hover::before {
-          transform: scaleX(1);
-        }
-
-        .product-card:hover::after {
-          opacity: 1;
+        .product-header-section {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 28px;
         }
 
         .product-icon-wrapper {
           position: relative;
-          width: 56px;
-          height: 56px;
-          margin-bottom: 24px;
-          z-index: 1;
         }
 
-        .product-icon-bg {
-          position: absolute;
-          inset: 0;
-          background: color-mix(in srgb, var(--product-color) 12%, transparent);
-          border-radius: 14px;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .product-icon {
+          width: 64px;
+          height: 64px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #fafafa;
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          border-radius: 16px;
+          color: var(--accent);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .product-card:hover .product-icon-bg {
-          background: color-mix(in srgb, var(--product-color) 18%, transparent);
+        .product-icon::before {
+          display: none;
+        }
+
+        .product:hover .product-icon {
+          background: var(--accent);
+          border-color: var(--accent);
+          color: #ffffff;
           transform: scale(1.05);
         }
 
-        .product-icon-wrapper :global(.product-icon) {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          color: var(--product-color);
-          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .product:hover .product-icon::before {
+          display: none;
         }
 
-        .product-card:hover .product-icon-wrapper :global(.product-icon) {
-          transform: translate(-50%, -50%) scale(1.1);
+        .product:hover .product-icon :global(svg) {
+          color: #ffffff;
+        }
+
+        .product-badge-wrapper {
+          display: flex;
+          align-items: center;
+        }
+
+        .product-badge {
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          color: #525252;
+          text-transform: uppercase;
+          padding: 6px 14px;
+          background: rgba(0, 0, 0, 0.03);
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          border-radius: 100px;
+          transition: all 0.3s ease;
+        }
+
+        .product:hover .product-badge {
+          background: rgba(0, 0, 0, 0.05);
+          border-color: rgba(0, 0, 0, 0.1);
         }
 
         .product-content {
           flex: 1;
-          position: relative;
-          z-index: 1;
+          display: flex;
+          flex-direction: column;
         }
 
-        .product-header {
+        .product-name {
+          font-size: 32px;
+          font-weight: 700;
+          color: #000000;
+          margin: 0 0 16px;
+          letter-spacing: -0.03em;
+          line-height: 1.1;
+        }
+
+        .product-description {
+          font-size: 16px;
+          line-height: 1.7;
+          color: #525252;
+          margin: 0 0 24px;
+          font-weight: 400;
+        }
+
+        .product-features {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .product-feature {
           display: flex;
           align-items: center;
-          gap: 12px;
-          margin-bottom: 10px;
+          gap: 10px;
+          font-size: 14px;
+          font-weight: 500;
+          color: #737373;
         }
 
-        .product-title {
-          font-size: 22px;
-          font-weight: 700;
-          color: var(--gray-900);
-          margin: 0;
-          letter-spacing: -0.02em;
+        .feature-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: var(--accent);
+          flex-shrink: 0;
         }
 
-        .product-badge {
-          font-size: 10px;
-          font-weight: 600;
-          color: var(--gray-500);
-          padding: 4px 8px;
-          background: var(--gray-100);
-          border-radius: 5px;
-          letter-spacing: 0.04em;
-          text-transform: uppercase;
+        .product-footer {
+          margin-top: 32px;
+          padding-top: 28px;
+          border-top: 1px solid rgba(0, 0, 0, 0.06);
         }
 
-        .product-desc {
-          font-size: 15px;
-          line-height: 1.65;
-          color: var(--gray-600);
-          margin: 0 0 24px;
-        }
-
-        .product-link {
+        .product-cta {
           display: inline-flex;
           align-items: center;
-          gap: 6px;
-          font-size: 14px;
+          gap: 8px;
+          font-size: 15px;
           font-weight: 600;
-          color: var(--product-color);
-          transition: all 0.3s ease;
-          position: relative;
-          z-index: 1;
+          color: var(--accent);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .product-card:hover .product-link {
+        .product:hover .product-cta {
+          gap: 12px;
+        }
+
+        .products-footer {
+          text-align: center;
+          padding: 48px 40px;
+          background: rgba(0, 0, 0, 0.02);
+          border: 1px solid rgba(0, 0, 0, 0.04);
+          border-radius: 20px;
+        }
+
+        .footer-badges {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 32px;
+          flex-wrap: wrap;
+        }
+
+        .footer-badge {
+          display: inline-flex;
+          align-items: center;
           gap: 10px;
+          font-size: 15px;
+          color: #525252;
+          font-weight: 500;
         }
 
-        .product-link :global(svg) {
-          transition: transform 0.3s ease;
-        }
-
-        .product-card:hover .product-link :global(svg) {
-          transform: translateX(3px);
+        .badge-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 20px;
+          height: 20px;
+          background: rgba(99, 91, 255, 0.1);
+          color: #635bff;
+          border-radius: 50%;
+          font-size: 12px;
+          font-weight: 700;
         }
 
         .reveal {
           opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.6s ease, transform 0.6s ease;
+          transform: translateY(32px);
+          transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                      transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .reveal.in-view {
@@ -331,9 +431,14 @@ export default function ProductSuite() {
         .delay-2 { transition-delay: 200ms; }
         .delay-3 { transition-delay: 300ms; }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
           .products-grid {
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 24px;
+          }
+
+          .product {
+            min-height: auto;
           }
         }
 
@@ -342,81 +447,53 @@ export default function ProductSuite() {
             padding: 100px 0;
           }
 
+          .products-container {
+            padding: 0 24px;
+          }
+
           .products-header {
-            margin-bottom: 56px;
+            margin-bottom: 60px;
+          }
+
+          .products-title {
+            font-size: 44px;
+          }
+
+          .products-subtitle {
+            font-size: 18px;
           }
 
           .products-grid {
-            grid-template-columns: 1fr;
-            gap: 16px;
+            margin-bottom: 60px;
           }
 
-          .product-card {
-            padding: 28px;
+          .product {
+            padding: 32px 28px;
           }
 
-          .product-icon-wrapper {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 20px;
+          .product-name {
+            font-size: 28px;
           }
 
-          .product-icon-bg {
-            border-radius: 12px;
-          }
-
-          .product-icon-wrapper :global(.product-icon) {
-            width: 20px;
-            height: 20px;
-          }
-
-          .product-title {
-            font-size: 19px;
-          }
-
-          .product-desc {
-            font-size: 14px;
-            margin-bottom: 20px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .products {
-            padding: 80px 0;
-          }
-
-          .products-label {
-            font-size: 11px;
-            padding: 6px 12px;
-          }
-
-          .product-card {
-            padding: 24px;
+          .footer-badges {
+            gap: 20px;
           }
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .reveal {
-            opacity: 1;
-            transform: none;
+          .reveal,
+          .product,
+          .product-icon,
+          .product-cta {
             transition: none;
           }
 
-          .product-card {
-            transition: none;
-          }
-
-          .product-card:hover {
+          .product:hover {
             transform: none;
           }
 
-          .product-card::after {
-            transition: none;
-          }
-
-          .product-link,
-          .product-link svg {
-            transition: none;
+          .product:hover .product-icon {
+            transform: none;
           }
         }
       `}</style>

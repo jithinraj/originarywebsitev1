@@ -57,11 +57,51 @@ export default function NewHero() {
           </p>
 
           <div className="hero-actions">
-            <Link href="/developers" className="hero-btn-primary">
-              <span>Start building</span>
-              <ArrowRight size={16} strokeWidth={2} />
+            <Link
+              href="/developers"
+              className="btn btn-primary btn-lg btn-shine btn-magnetic hero-cta-primary"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 'var(--space-2)',
+                padding: '14px 32px',
+                fontSize: 'var(--text-base)',
+                background: 'var(--gradient-brand)',
+                color: 'var(--white)',
+                border: 'none',
+                borderRadius: 'var(--radius-full)',
+                fontWeight: 600,
+                textDecoration: 'none',
+                transition: 'all var(--duration-300) var(--ease-out)',
+                boxShadow: '0 4px 12px rgba(99, 91, 255, 0.3)'
+              }}
+            >
+              Start building
+              <ArrowRight size={18} strokeWidth={2.5} />
             </Link>
-            <Link href="https://github.com/peacprotocol/peac" className="hero-btn-secondary" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://github.com/peacprotocol/peac"
+              className="btn btn-ghost btn-magnetic"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 'var(--space-2)',
+                padding: '14px 32px',
+                fontSize: 'var(--text-base)',
+                background: 'transparent',
+                color: 'var(--gray-600)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                borderRadius: 'var(--radius-full)',
+                fontWeight: 500,
+                textDecoration: 'none',
+                transition: 'all var(--duration-300) var(--ease-out)',
+                boxShadow: 'none'
+              }}
+            >
               Download on GitHub
             </Link>
           </div>
@@ -72,6 +112,25 @@ export default function NewHero() {
             <span className="feature">Self-hostable</span>
             <span className="feature-sep" />
             <span className="feature">Offline verification</span>
+          </div>
+
+          <div className="hero-trademark">
+            <p className="trademark-text">
+              <span className="trademark-label">ORIGINARY™</span> - Open software.{' '}
+              <a
+                href="https://github.com/peacprotocol/peac"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="trademark-link"
+              >
+                Learn, view source, explore &amp; download PEAC Protocol
+              </a>
+              <br />
+              Available for{' '}
+              <Link href="/downloads" className="trademark-link">
+                macOS, Windows, Linux
+              </Link>
+            </p>
           </div>
         </div>
 
@@ -315,7 +374,9 @@ export default function NewHero() {
           align-items: center;
           gap: 16px;
           margin-top: 8px;
+          margin-bottom: 0;
           padding-top: 24px;
+          padding-bottom: 0;
           border-top: 1px solid var(--gray-200);
         }
 
@@ -330,6 +391,36 @@ export default function NewHero() {
           height: 4px;
           border-radius: 50%;
           background: var(--gray-300);
+        }
+
+        /* Trademark Section */
+        .hero-trademark {
+          margin-top: 0;
+        }
+
+        .trademark-text {
+          font-size: 11px;
+          line-height: 1.4;
+          color: var(--gray-400);
+          max-width: 90%;
+          font-weight: 400;
+          letter-spacing: 0.01em;
+          margin: 0;
+        }
+
+        .trademark-label {
+          color: var(--gray-500);
+        }
+
+        .trademark-link {
+          color: var(--gray-500);
+          text-decoration: none;
+          border-bottom: 1px solid transparent;
+          transition: border-color 0.15s ease;
+        }
+
+        .trademark-link:hover {
+          border-bottom-color: var(--gray-300);
         }
 
         /* Code Window */
@@ -570,6 +661,14 @@ export default function NewHero() {
           .hero-features {
             justify-content: center;
             flex-wrap: wrap;
+          }
+
+          .hero-trademark {
+            text-align: center;
+          }
+
+          .trademark-text {
+            max-width: 100%;
           }
 
           .code-window {

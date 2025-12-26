@@ -85,7 +85,7 @@ export default function PeacAnimationHero() {
               <span className="text-gradient">overview</span>
             </h1>
 
-            {/* Subtitle */}
+            {/* Lead */}
             <p
               style={{
                 fontSize: 'var(--text-lg)',
@@ -101,6 +101,22 @@ export default function PeacAnimationHero() {
               Deploy PEAC terms, enforcement, and receipts in real systems.
             </p>
 
+            {/* Support paragraph */}
+            <p
+              style={{
+                fontSize: 'var(--text-base)',
+                lineHeight: 1.7,
+                color: 'var(--gray-600)',
+                marginBottom: 'var(--space-4)',
+                maxWidth: '440px',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.21s'
+              }}
+            >
+              PEAC is the open standard for portable decision records. Originary is the production stack that helps you publish terms, enforce decisions, and return signed receipts that anyone can verify.
+            </p>
+
             {/* Historical Note */}
             <p
               style={{
@@ -112,13 +128,13 @@ export default function PeacAnimationHero() {
                 fontStyle: 'italic',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.21s'
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.22s'
               }}
             >
               This page describes the platform surface; the homepage explains the standard.
             </p>
 
-            {/* Trademark Proof Section */}
+            {/* Microcopy */}
             <div
               style={{
                 opacity: isVisible ? 1 : 0,
@@ -138,26 +154,10 @@ export default function PeacAnimationHero() {
                   margin: 0
                 }}
               >
-                <span style={{ color: 'var(--gray-500)' }}>ORIGINARY™</span> - Open software.{' '}
-                <a
-                  href="https://github.com/peacprotocol/peac"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    color: 'var(--gray-500)',
-                    textDecoration: 'none',
-                    borderBottom: '1px solid transparent',
-                    transition: 'border-color 0.15s ease'
-                  }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
-                  onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
-                >
-                  Learn, view source, explore &amp; download PEAC Protocol
-                </a>
-                <br />
-                Available for{' '}
+                Open protocol. No lock-in. Edge-ready.<br />
+                Use self-hosted components, or{' '}
                 <Link
-                  href="/downloads"
+                  href="/contact"
                   style={{
                     color: 'var(--gray-500)',
                     textDecoration: 'none',
@@ -167,8 +167,9 @@ export default function PeacAnimationHero() {
                   onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
                   onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
                 >
-                  macOS, Windows, Linux
+                  talk to us
                 </Link>
+                {' '}for managed deployments.
               </p>
             </div>
 
@@ -179,7 +180,7 @@ export default function PeacAnimationHero() {
                 display: 'flex',
                 gap: 'var(--space-3)',
                 flexWrap: 'wrap',
-                marginBottom: 'var(--space-6)',
+                marginBottom: 'var(--space-4)',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.25s'
@@ -217,35 +218,23 @@ export default function PeacAnimationHero() {
               >
                 Read the spec
               </Link>
-            </div>
 
-            {/* Trust line */}
-            <p
-              style={{
-                fontSize: 'var(--text-xs)',
-                color: 'var(--gray-400)',
-                fontWeight: 500,
-                letterSpacing: '0.02em',
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s'
-              }}
-            >
-              Open protocol · No lock-in · Deploy at the edge ·{' '}
               <Link
-                href="/what-is-originary"
+                href="/developers"
+                className="btn btn-ghost btn-magnetic"
                 style={{
-                  color: 'var(--gray-500)',
-                  textDecoration: 'none',
-                  borderBottom: '1px solid transparent',
-                  transition: 'border-color 0.15s ease'
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 'var(--space-2)',
+                  padding: '14px 28px',
+                  fontSize: 'var(--text-base)',
+                  color: 'var(--gray-600)'
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
-                onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
               >
-                What is Originary?
+                Get started in 10 minutes
               </Link>
-            </p>
+            </div>
 
           </div>
 

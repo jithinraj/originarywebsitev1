@@ -1,28 +1,27 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-
 import { FileText, Shield, Receipt } from 'lucide-react'
 
 const steps = [
   {
     num: '01',
     title: 'Publish policy',
-    desc: 'Deploy a machine-readable policy at /.well-known/peac.txt',
+    desc: 'Deploy a machine-readable policy at /.well-known/peac.txt defining access terms and payment requirements',
     icon: FileText,
     color: '#635bff',
   },
   {
     num: '02',
     title: 'Enforce at edge',
-    desc: 'Allow, deny, or request payment before serving the response',
+    desc: 'Allow, deny, or request payment before serving the response with HTTP 402 status codes',
     icon: Shield,
     color: '#00d4aa',
   },
   {
     num: '03',
     title: 'Return receipt',
-    desc: 'Sign and return a PEAC-Receipt that verifies offline',
+    desc: 'Sign and return a cryptographic PEAC-Receipt that verifies offline with your public key',
     icon: Receipt,
     color: '#f59e0b',
   }
@@ -53,10 +52,10 @@ export default function HowItWorksNew() {
     <section ref={sectionRef} className="how">
       <div className="how-container">
         <div className="how-header reveal">
-          <h2 className="how-title">How it works</h2>
-          <p className="how-description">
-            Three steps to verifiable agent interactions
-          </p>
+          <span className="how-label">How it works</span>
+          <h2 className="how-title">
+            Three steps to verifiable interactions
+          </h2>
         </div>
 
         <div className="how-steps">
@@ -64,88 +63,84 @@ export default function HowItWorksNew() {
             <div
               key={step.num}
               className={`step reveal delay-${i}`}
-              style={{ '--step-color': step.color } as React.CSSProperties}
+              style={{ '--accent': step.color } as React.CSSProperties}
             >
-              <div className="step-icon-container">
-                <step.icon size={24} strokeWidth={2} className="step-icon" />
+              <div className="step-number">{step.num}</div>
+
+              <div className="step-icon">
+                <step.icon size={28} strokeWidth={2} />
               </div>
-              <span className="step-num">{step.num}</span>
-              <h3 className="step-title">{step.title}</h3>
-              <p className="step-desc">{step.desc}</p>
+
+              <div className="step-content">
+                <h3 className="step-title">{step.title}</h3>
+                <p className="step-desc">{step.desc}</p>
+              </div>
             </div>
           ))}
+        </div>
+
+        <div className="how-footer reveal delay-3">
+          <p className="footer-note">
+            Works across all protocols and payment rails
+          </p>
         </div>
       </div>
 
       <style jsx>{`
         .how {
-          padding: 160px 0;
-          background: linear-gradient(180deg, white 0%, #f8f9fa 50%, #f5f5f7 100%);
+          padding: 140px 0;
+          background: #fafafa;
           position: relative;
-          overflow: hidden;
-        }
-
-        .how::before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 100%;
-          height: 1px;
-          background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.06), transparent);
         }
 
         .how-container {
-          max-width: 1200px;
+          max-width: 1100px;
           margin: 0 auto;
-          padding: 0 24px;
-          position: relative;
-          z-index: 1;
+          padding: 0 32px;
         }
 
         .how-header {
           text-align: center;
           margin-bottom: 80px;
+          max-width: 700px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .how-label {
+          display: inline-block;
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: 0.12em;
+          color: #737373;
+          text-transform: uppercase;
+          margin-bottom: 20px;
         }
 
         .how-title {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 13px;
+          font-size: 56px;
           font-weight: 600;
-          letter-spacing: 0.08em;
-          color: var(--brand-primary);
-          text-transform: uppercase;
-          margin: 0 0 20px;
-          padding: 8px 16px;
-          background: rgba(99, 91, 255, 0.06);
-          border: 1px solid rgba(99, 91, 255, 0.12);
-          border-radius: 100px;
-        }
-
-        .how-description {
-          font-size: clamp(36px, 5vw, 52px);
-          font-weight: 700;
-          letter-spacing: -0.035em;
-          color: var(--gray-900);
+          letter-spacing: -0.04em;
+          color: #000000;
           margin: 0;
-          line-height: 1.15;
+          line-height: 1.1;
         }
 
         .how-steps {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
+          gap: 20px;
+          margin-bottom: 80px;
         }
 
         .step {
-          padding: 40px 32px;
-          background: white;
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          border-radius: 20px;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          display: flex;
+          align-items: center;
+          gap: 32px;
+          padding: 36px 40px;
+          background: #ffffff;
+          border: 1px solid transparent;
+          border-radius: 16px;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
           overflow: hidden;
         }
@@ -153,108 +148,96 @@ export default function HowItWorksNew() {
         .step::before {
           content: '';
           position: absolute;
-          top: 0;
           left: 0;
-          right: 0;
-          height: 3px;
-          background: var(--step-color);
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: transform 0.4s ease;
-        }
-
-        .step::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(135deg, color-mix(in srgb, var(--step-color) 4%, transparent) 0%, transparent 60%);
+          top: 0;
+          bottom: 0;
+          width: 4px;
+          background: var(--accent);
           opacity: 0;
-          transition: opacity 0.4s ease;
-          pointer-events: none;
+          transition: opacity 0.3s ease;
         }
 
         .step:hover {
-          border-color: color-mix(in srgb, var(--step-color) 25%, transparent);
-          box-shadow:
-            0 0 0 1px color-mix(in srgb, var(--step-color) 12%, transparent),
-            0 20px 50px -12px rgba(0, 0, 0, 0.12),
-            0 8px 20px -8px color-mix(in srgb, var(--step-color) 15%, transparent);
-          transform: translateY(-6px);
+          border-color: rgba(0, 0, 0, 0.08);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
         }
 
         .step:hover::before {
-          transform: scaleX(1);
-        }
-
-        .step:hover::after {
           opacity: 1;
         }
 
-        .step-icon-container {
-          width: 56px;
-          height: 56px;
+        .step-number {
+          flex-shrink: 0;
+          font-family: var(--font-mono);
+          font-size: 32px;
+          font-weight: 700;
+          color: var(--accent);
+          opacity: 0.3;
+          line-height: 1;
+          min-width: 64px;
+        }
+
+        .step-icon {
+          flex-shrink: 0;
+          width: 72px;
+          height: 72px;
           display: flex;
           align-items: center;
           justify-content: center;
-          background: color-mix(in srgb, var(--step-color) 10%, transparent);
+          background: #fafafa;
+          border: 1px solid rgba(0, 0, 0, 0.06);
           border-radius: 14px;
-          margin-bottom: 24px;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          position: relative;
-          z-index: 1;
+          color: var(--accent);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .step:hover .step-icon-container {
-          background: color-mix(in srgb, var(--step-color) 15%, transparent);
+        .step:hover .step-icon {
+          background: var(--accent);
+          border-color: var(--accent);
+          color: #ffffff;
           transform: scale(1.05);
         }
 
-        .step-icon-container :global(.step-icon) {
-          color: var(--step-color);
-          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .step:hover .step-icon-container :global(.step-icon) {
-          transform: scale(1.1);
-        }
-
-        .step-num {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          font-family: var(--font-mono);
-          font-size: 12px;
-          font-weight: 600;
-          color: var(--step-color);
-          margin-bottom: 16px;
-          letter-spacing: 0.05em;
-          position: relative;
-          z-index: 1;
+        .step-content {
+          flex: 1;
+          min-width: 0;
         }
 
         .step-title {
           font-size: 22px;
-          font-weight: 700;
-          color: var(--gray-900);
-          margin: 0 0 12px;
+          font-weight: 600;
+          color: #000000;
+          margin: 0 0 8px;
           letter-spacing: -0.02em;
-          position: relative;
-          z-index: 1;
         }
 
         .step-desc {
           font-size: 15px;
           line-height: 1.7;
-          color: var(--gray-600);
+          color: #525252;
           margin: 0;
-          position: relative;
-          z-index: 1;
+          font-weight: 400;
+        }
+
+        .how-footer {
+          text-align: center;
+          padding: 40px;
+          background: #ffffff;
+          border-radius: 16px;
+        }
+
+        .footer-note {
+          font-size: 15px;
+          color: #737373;
+          margin: 0;
+          font-weight: 500;
         }
 
         .reveal {
           opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.6s ease, transform 0.6s ease;
+          transform: translateY(24px);
+          transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                      transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .reveal.in-view {
@@ -263,101 +246,49 @@ export default function HowItWorksNew() {
         }
 
         .delay-0 { transition-delay: 0ms; }
-        .delay-1 { transition-delay: 100ms; }
-        .delay-2 { transition-delay: 200ms; }
+        .delay-1 { transition-delay: 80ms; }
+        .delay-2 { transition-delay: 160ms; }
+        .delay-3 { transition-delay: 240ms; }
 
-        @media (max-width: 900px) {
-          .how-steps {
-            grid-template-columns: 1fr;
-            gap: 20px;
-          }
-
-          .step {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 24px;
-            padding: 32px;
-          }
-
-          .step-icon-container {
-            flex-shrink: 0;
-            margin-bottom: 0;
-          }
-
-          .step-num {
-            margin-bottom: 8px;
-          }
-        }
-
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .how {
             padding: 100px 0;
           }
 
           .how-header {
-            margin-bottom: 56px;
+            margin-bottom: 60px;
           }
 
           .how-title {
-            font-size: 11px;
-            padding: 6px 12px;
+            font-size: 40px;
+          }
+
+          .how-steps {
+            margin-bottom: 60px;
           }
 
           .step {
-            flex-direction: column;
-            padding: 28px;
-            gap: 0;
+            flex-wrap: wrap;
+            gap: 24px;
+            padding: 32px 28px;
           }
 
-          .step-icon-container {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-          }
-
-          .step-icon-container :global(.step-icon) {
-            width: 20px;
-            height: 20px;
-          }
-
-          .step-title {
-            font-size: 19px;
-          }
-
-          .step-desc {
-            font-size: 14px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .how {
-            padding: 80px 0;
-          }
-
-          .step {
-            padding: 24px;
+          .step-number {
+            order: -1;
+            width: 100%;
+            font-size: 24px;
           }
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .reveal {
-            opacity: 1;
+          .reveal,
+          .step,
+          .step-icon {
+            transition: none;
+          }
+
+          .step:hover .step-icon {
             transform: none;
-            transition: none;
-          }
-
-          .step {
-            transition: none;
-          }
-
-          .step:hover {
-            transform: none;
-          }
-
-          .step::before {
-            transition: none;
           }
         }
       `}</style>
