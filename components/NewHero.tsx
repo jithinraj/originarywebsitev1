@@ -4,40 +4,189 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Shield } from 'lucide-react'
 
+// Agent node positions for the network visualization
+const agentNodes = [
+  { id: 1, x: 15, y: 20, size: 'large', label: 'Agent A' },
+  { id: 2, x: 75, y: 15, size: 'medium', label: 'Agent B' },
+  { id: 3, x: 85, y: 55, size: 'large', label: 'Provider' },
+  { id: 4, x: 25, y: 70, size: 'medium', label: 'Agent C' },
+  { id: 5, x: 50, y: 40, size: 'small', label: 'Gateway' },
+  { id: 6, x: 40, y: 85, size: 'small', label: 'Agent D' },
+  { id: 7, x: 65, y: 75, size: 'medium', label: 'Verifier' },
+  { id: 8, x: 10, y: 50, size: 'small', label: 'Agent E' },
+]
+
+// Connections between nodes
+const connections = [
+  { from: 1, to: 5 },
+  { from: 2, to: 5 },
+  { from: 5, to: 3 },
+  { from: 4, to: 5 },
+  { from: 5, to: 7 },
+  { from: 6, to: 7 },
+  { from: 7, to: 3 },
+  { from: 8, to: 4 },
+  { from: 1, to: 8 },
+  { from: 2, to: 3 },
+]
+
 export default function NewHero() {
   const heroRef = useRef<HTMLElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     setIsLoaded(true)
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view')
-          }
-        })
-      },
-      { threshold: 0.1, rootMargin: '50px' }
-    )
-
-    const elements = heroRef.current?.querySelectorAll('.reveal')
-    elements?.forEach((el) => observer.observe(el))
-
-    return () => observer.disconnect()
   }, [])
 
   return (
     <section ref={heroRef} className="hero">
-      {/* Gradient background */}
+      {/* Animated Background */}
       <div className="hero-bg" aria-hidden="true">
-        <div className="gradient-primary" />
-        <div className="gradient-secondary" />
-        <div className="noise" />
+        <div className="bg-gradient" />
+
+        {/* Animated grid */}
+        <div className="grid-pattern" />
+
+        {/* SVG Network Animation */}
+        <svg className="network-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            {/* Gradient for connections */}
+            <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="rgba(99, 91, 255, 0.3)" />
+              <stop offset="50%" stopColor="rgba(99, 91, 255, 0.6)" />
+              <stop offset="100%" stopColor="rgba(99, 91, 255, 0.3)" />
+            </linearGradient>
+
+            {/* Glow filter */}
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="0.5" result="coloredBlur" />
+              <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+
+            {/* Receipt icon */}
+            <symbol id="receipt" viewBox="0 0 10 12">
+              <rect x="1" y="0" width="8" height="11" rx="1" fill="rgba(74, 222, 128, 0.9)" />
+              <line x1="3" y1="3" x2="7" y2="3" stroke="#0f172a" strokeWidth="0.5" />
+              <line x1="3" y1="5" x2="7" y2="5" stroke="#0f172a" strokeWidth="0.5" />
+              <line x1="3" y1="7" x2="5" y2="7" stroke="#0f172a" strokeWidth="0.5" />
+              <path d="M1 11 L2 10 L3 11 L4 10 L5 11 L6 10 L7 11 L8 10 L9 11" fill="none" stroke="rgba(74, 222, 128, 0.9)" strokeWidth="0.3" />
+            </symbol>
+
+            {/* Payment pulse */}
+            <radialGradient id="pulseGradient">
+              <stop offset="0%" stopColor="rgba(251, 191, 36, 0.8)" />
+              <stop offset="100%" stopColor="rgba(251, 191, 36, 0)" />
+            </radialGradient>
+          </defs>
+
+          {/* Connection lines */}
+          {connections.map((conn, i) => {
+            const fromNode = agentNodes.find(n => n.id === conn.from)!
+            const toNode = agentNodes.find(n => n.id === conn.to)!
+            const midX = (fromNode.x + toNode.x) / 2
+            const midY = (fromNode.y + toNode.y) / 2 - 5
+
+            return (
+              <g key={`conn-${i}`}>
+                <path
+                  className="connection-line"
+                  d={`M ${fromNode.x} ${fromNode.y} Q ${midX} ${midY} ${toNode.x} ${toNode.y}`}
+                  fill="none"
+                  stroke="url(#connectionGradient)"
+                  strokeWidth="0.15"
+                  style={{ animationDelay: `${i * 0.3}s` }}
+                />
+
+                {/* Traveling receipt packet */}
+                <use
+                  href="#receipt"
+                  className="traveling-receipt"
+                  width="2"
+                  height="2.4"
+                  style={{
+                    offsetPath: `path('M ${fromNode.x} ${fromNode.y} Q ${midX} ${midY} ${toNode.x} ${toNode.y}')`,
+                    animationDelay: `${i * 0.8 + 2}s`
+                  }}
+                />
+              </g>
+            )
+          })}
+
+          {/* Agent nodes */}
+          {agentNodes.map((node, i) => {
+            const radius = node.size === 'large' ? 2 : node.size === 'medium' ? 1.5 : 1
+
+            return (
+              <g key={node.id} className="agent-node" style={{ animationDelay: `${i * 0.2}s` }}>
+                {/* Outer pulse ring */}
+                <circle
+                  cx={node.x}
+                  cy={node.y}
+                  r={radius * 2}
+                  fill="none"
+                  stroke="rgba(99, 91, 255, 0.3)"
+                  strokeWidth="0.1"
+                  className="pulse-ring"
+                  style={{ animationDelay: `${i * 0.3}s` }}
+                />
+
+                {/* Main node */}
+                <circle
+                  cx={node.x}
+                  cy={node.y}
+                  r={radius}
+                  fill="rgba(99, 91, 255, 0.8)"
+                  filter="url(#glow)"
+                  className="node-core"
+                />
+
+                {/* Inner glow */}
+                <circle
+                  cx={node.x}
+                  cy={node.y}
+                  r={radius * 0.6}
+                  fill="rgba(139, 131, 255, 0.9)"
+                />
+
+                {/* Payment pulse effect */}
+                <circle
+                  cx={node.x}
+                  cy={node.y}
+                  r={radius}
+                  fill="url(#pulseGradient)"
+                  className="payment-pulse"
+                  style={{ animationDelay: `${i * 1.2 + 3}s` }}
+                />
+              </g>
+            )
+          })}
+
+          {/* Floating particles */}
+          {[...Array(20)].map((_, i) => (
+            <circle
+              key={`particle-${i}`}
+              className="floating-particle"
+              cx={Math.random() * 100}
+              cy={Math.random() * 100}
+              r="0.2"
+              fill="rgba(99, 91, 255, 0.5)"
+              style={{
+                animationDelay: `${i * 0.5}s`,
+                animationDuration: `${8 + Math.random() * 4}s`
+              }}
+            />
+          ))}
+        </svg>
+
+        {/* Overlay gradient for text readability */}
+        <div className="content-overlay" />
       </div>
 
       <div className="hero-container">
-        <div className="hero-content reveal in-view">
+        <div className={`hero-content ${isLoaded ? 'loaded' : ''}`}>
           <div className="hero-badge">
             <CheckCircle size={14} strokeWidth={2} />
             <span>Open source protocol</span>
@@ -59,48 +208,16 @@ export default function NewHero() {
           <div className="hero-actions">
             <Link
               href="/developers"
-              className="btn btn-primary btn-lg btn-shine btn-magnetic hero-cta-primary"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 'var(--space-2)',
-                padding: '14px 32px',
-                fontSize: 'var(--text-base)',
-                background: 'var(--gradient-brand)',
-                color: 'var(--white)',
-                border: 'none',
-                borderRadius: 'var(--radius-full)',
-                fontWeight: 600,
-                textDecoration: 'none',
-                transition: 'all var(--duration-300) var(--ease-out)',
-                boxShadow: '0 4px 12px rgba(99, 91, 255, 0.3)'
-              }}
+              className="hero-btn-primary"
             >
               Start building
               <ArrowRight size={18} strokeWidth={2.5} />
             </Link>
             <Link
               href="https://github.com/peacprotocol/peac"
-              className="btn btn-ghost btn-magnetic"
+              className="hero-btn-secondary"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 'var(--space-2)',
-                padding: '14px 32px',
-                fontSize: 'var(--text-base)',
-                background: 'transparent',
-                color: 'var(--gray-600)',
-                border: '1px solid rgba(0, 0, 0, 0.08)',
-                borderRadius: 'var(--radius-full)',
-                fontWeight: 500,
-                textDecoration: 'none',
-                transition: 'all var(--duration-300) var(--ease-out)',
-                boxShadow: 'none'
-              }}
             >
               Download on GitHub
             </Link>
@@ -116,7 +233,7 @@ export default function NewHero() {
 
           <div className="hero-trademark">
             <p className="trademark-text">
-              <span className="trademark-label">ORIGINARY™</span> - Open software.{' '}
+              <span className="trademark-label">ORIGINARY&#8482;</span> - Open software.{' '}
               <a
                 href="https://github.com/peacprotocol/peac"
                 target="_blank"
@@ -134,7 +251,7 @@ export default function NewHero() {
           </div>
         </div>
 
-        <div className={`hero-visual reveal in-view ${isLoaded ? 'loaded' : ''}`}>
+        <div className={`hero-visual ${isLoaded ? 'loaded' : ''}`}>
           <div className="code-window">
             <div className="code-header">
               <div className="code-dots">
@@ -183,6 +300,7 @@ export default function NewHero() {
           background: #fafafa;
         }
 
+        /* Animated Background */
         .hero-bg {
           position: absolute;
           inset: 0;
@@ -190,30 +308,164 @@ export default function NewHero() {
           overflow: hidden;
         }
 
-        .gradient-primary {
+        .bg-gradient {
           position: absolute;
-          width: 900px;
-          height: 900px;
-          top: -300px;
-          right: -200px;
-          background: radial-gradient(circle, rgba(99, 91, 255, 0.08) 0%, transparent 70%);
-          filter: blur(100px);
+          inset: 0;
+          background:
+            radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 91, 255, 0.08) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0, 212, 170, 0.06) 0%, transparent 50%);
         }
 
-        .gradient-secondary {
+        .grid-pattern {
           position: absolute;
-          width: 700px;
-          height: 700px;
-          bottom: -200px;
-          left: -100px;
-          background: radial-gradient(circle, rgba(0, 212, 170, 0.06) 0%, transparent 70%);
-          filter: blur(100px);
+          inset: 0;
+          background-image:
+            linear-gradient(rgba(99, 91, 255, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(99, 91, 255, 0.04) 1px, transparent 1px);
+          background-size: 50px 50px;
+          mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
         }
 
-        .noise {
-          display: none;
+        .network-svg {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0.6;
         }
 
+        .content-overlay {
+          position: absolute;
+          inset: 0;
+          background:
+            linear-gradient(90deg, rgba(250, 250, 250, 0.95) 0%, rgba(250, 250, 250, 0.8) 40%, rgba(250, 250, 250, 0.6) 100%);
+        }
+
+        /* Connection lines */
+        .connection-line {
+          stroke-dasharray: 100;
+          stroke-dashoffset: 100;
+          animation: drawLine 3s ease forwards;
+        }
+
+        @keyframes drawLine {
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+
+        /* Traveling receipt packets */
+        .traveling-receipt {
+          offset-distance: 0%;
+          opacity: 0;
+          animation: travelReceipt 4s ease-in-out infinite;
+        }
+
+        @keyframes travelReceipt {
+          0% {
+            offset-distance: 0%;
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            offset-distance: 100%;
+            opacity: 0;
+          }
+        }
+
+        /* Agent nodes */
+        .agent-node {
+          opacity: 0;
+          animation: nodeAppear 0.6s ease forwards;
+        }
+
+        @keyframes nodeAppear {
+          to {
+            opacity: 1;
+          }
+        }
+
+        .node-core {
+          animation: nodeGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes nodeGlow {
+          0%, 100% {
+            opacity: 0.8;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+
+        /* Pulse rings */
+        .pulse-ring {
+          transform-origin: center;
+          animation: pulseRing 3s ease-out infinite;
+        }
+
+        @keyframes pulseRing {
+          0% {
+            transform: scale(1);
+            opacity: 0.5;
+          }
+          100% {
+            transform: scale(2.5);
+            opacity: 0;
+          }
+        }
+
+        /* Payment pulse */
+        .payment-pulse {
+          opacity: 0;
+          animation: paymentFlash 5s ease-in-out infinite;
+        }
+
+        @keyframes paymentFlash {
+          0%, 80%, 100% {
+            opacity: 0;
+            transform: scale(1);
+          }
+          85% {
+            opacity: 0.8;
+            transform: scale(1.5);
+          }
+          95% {
+            opacity: 0;
+            transform: scale(2);
+          }
+        }
+
+        /* Floating particles */
+        .floating-particle {
+          animation: floatParticle 10s ease-in-out infinite;
+        }
+
+        @keyframes floatParticle {
+          0%, 100% {
+            transform: translate(0, 0);
+            opacity: 0.3;
+          }
+          25% {
+            transform: translate(10px, -15px);
+            opacity: 0.6;
+          }
+          50% {
+            transform: translate(-5px, -25px);
+            opacity: 0.4;
+          }
+          75% {
+            transform: translate(15px, -10px);
+            opacity: 0.5;
+          }
+        }
+
+        /* Hero Container */
         .hero-container {
           position: relative;
           z-index: 1;
@@ -231,6 +483,14 @@ export default function NewHero() {
           display: flex;
           flex-direction: column;
           gap: 28px;
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .hero-content.loaded {
+          opacity: 1;
+          transform: translateY(0);
         }
 
         .hero-badge {
@@ -310,8 +570,8 @@ export default function NewHero() {
           background: linear-gradient(135deg, var(--brand-primary) 0%, #4f46e5 100%);
           border-radius: 12px;
           box-shadow:
-            0 0 0 1px rgba(99, 91, 255, 0.2),
-            0 4px 16px -2px rgba(99, 91, 255, 0.4),
+            0 0 0 1px rgba(99, 91, 255, 0.3),
+            0 4px 16px -2px rgba(99, 91, 255, 0.5),
             inset 0 1px 0 rgba(255, 255, 255, 0.15);
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
@@ -330,8 +590,8 @@ export default function NewHero() {
         .hero-btn-primary:hover {
           transform: translateY(-2px);
           box-shadow:
-            0 0 0 1px rgba(99, 91, 255, 0.3),
-            0 8px 24px -4px rgba(99, 91, 255, 0.5),
+            0 0 0 1px rgba(99, 91, 255, 0.4),
+            0 8px 24px -4px rgba(99, 91, 255, 0.6),
             inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
@@ -339,11 +599,11 @@ export default function NewHero() {
           opacity: 1;
         }
 
-        .hero-btn-primary svg {
+        .hero-btn-primary :global(svg) {
           transition: transform 0.3s ease;
         }
 
-        .hero-btn-primary:hover svg {
+        .hero-btn-primary:hover :global(svg) {
           transform: translateX(3px);
         }
 
@@ -374,9 +634,7 @@ export default function NewHero() {
           align-items: center;
           gap: 16px;
           margin-top: 8px;
-          margin-bottom: 0;
           padding-top: 24px;
-          padding-bottom: 0;
           border-top: 1px solid var(--gray-200);
         }
 
@@ -393,7 +651,6 @@ export default function NewHero() {
           background: var(--gray-300);
         }
 
-        /* Trademark Section */
         .hero-trademark {
           margin-top: 0;
         }
@@ -428,6 +685,14 @@ export default function NewHero() {
           display: flex;
           justify-content: center;
           position: relative;
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+        }
+
+        .hero-visual.loaded {
+          opacity: 1;
+          transform: translateY(0);
         }
 
         .code-glow {
@@ -436,12 +701,6 @@ export default function NewHero() {
           background: radial-gradient(ellipse at center, rgba(99, 91, 255, 0.15) 0%, transparent 60%);
           filter: blur(40px);
           z-index: -1;
-          opacity: 0;
-          transition: opacity 1s ease;
-        }
-
-        .hero-visual.loaded .code-glow {
-          opacity: 1;
         }
 
         .code-window {
@@ -518,9 +777,9 @@ export default function NewHero() {
           animation: slideIn 0.4s ease forwards;
         }
 
-        .line-1 { animation-delay: 0.3s; }
-        .line-2 { animation-delay: 0.5s; }
-        .line-3 { animation-delay: 0.7s; }
+        .line-1 { animation-delay: 0.8s; }
+        .line-2 { animation-delay: 1s; }
+        .line-3 { animation-delay: 1.2s; }
 
         @keyframes slideIn {
           to {
@@ -590,36 +849,20 @@ export default function NewHero() {
           color: #4ade80;
         }
 
-        .verify-status svg {
+        .verify-status :global(svg) {
           filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.5));
         }
 
         .verify-text {
           opacity: 0;
-          animation: fadeIn 0.5s ease 1s forwards;
+          animation: fadeIn 0.5s ease 1.5s forwards;
         }
 
         @keyframes fadeIn {
           to { opacity: 1; }
         }
 
-        /* Reveal animation */
-        .reveal {
-          opacity: 0;
-          transform: translateY(24px);
-          transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .reveal.in-view {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .hero-visual.reveal {
-          transition-delay: 0.2s;
-        }
-
-        /* Large desktop */
+        /* Responsive */
         @media (max-width: 1440px) {
           .hero-headline-main {
             font-size: clamp(44px, 5.5vw, 64px);
@@ -630,12 +873,16 @@ export default function NewHero() {
           }
         }
 
-        /* Tablet/laptop */
         @media (max-width: 1024px) {
           .hero-container {
             grid-template-columns: 1fr;
             gap: 60px;
             text-align: center;
+          }
+
+          .content-overlay {
+            background:
+              radial-gradient(ellipse 100% 100% at 50% 50%, rgba(250, 250, 250, 0.9) 0%, rgba(250, 250, 250, 0.95) 100%);
           }
 
           .hero-content {
@@ -676,7 +923,6 @@ export default function NewHero() {
           }
         }
 
-        /* Tablet portrait */
         @media (max-width: 768px) {
           .hero {
             padding: 120px 0 80px;
@@ -709,7 +955,6 @@ export default function NewHero() {
           }
         }
 
-        /* Mobile */
         @media (max-width: 640px) {
           .hero {
             padding: 100px 0 60px;
@@ -784,7 +1029,6 @@ export default function NewHero() {
           }
         }
 
-        /* Small mobile */
         @media (max-width: 380px) {
           .hero {
             padding: 90px 0 50px;
@@ -816,20 +1060,45 @@ export default function NewHero() {
           }
         }
 
+        /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
-          .reveal {
+          .hero-content,
+          .hero-visual {
             opacity: 1;
             transform: none;
             transition: none;
           }
 
-          .gradient-primary,
-          .gradient-secondary {
+          .connection-line {
+            stroke-dashoffset: 0;
             animation: none;
           }
 
-          .code-window {
-            transition: none;
+          .traveling-receipt {
+            display: none;
+          }
+
+          .agent-node {
+            opacity: 1;
+            animation: none;
+          }
+
+          .node-core {
+            animation: none;
+          }
+
+          .pulse-ring {
+            animation: none;
+            opacity: 0.3;
+          }
+
+          .payment-pulse {
+            display: none;
+          }
+
+          .floating-particle {
+            animation: none;
+            opacity: 0.3;
           }
 
           .code-line {
@@ -850,7 +1119,6 @@ export default function NewHero() {
 
           .code-glow {
             opacity: 1;
-            transition: none;
           }
 
           .hero-btn-primary,
