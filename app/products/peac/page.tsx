@@ -338,7 +338,7 @@ export default function PEACInProduction() {
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Hybrid</h3>
                 <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
-                  Edge verification in your infrastructure with Originary Cloud for analytics and management.
+                  Edge verification in your infrastructure with Originary Cloud for observability and management.
                 </p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   {['Data stays in your VPC', 'Sub-10ms local latency', 'Central management', 'Best of both worlds'].map((item) => (

@@ -97,18 +97,18 @@ export default function NavigationHeader() {
                 gap: 'var(--space-6)'
               }}
             >
+              <NavLink href="/platform">Platform</NavLink>
               <NavDropdown label="Products" items={[
-                { href: '/declare', label: 'Declare (Policy Kit)', badge: 'Flagship' },
-                { href: '/trace', label: 'Trace', badge: 'Coming Soon' },
-                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Waitlist' },
-                { href: '/products/studio', label: 'Studio', badge: 'Waitlist' },
-                { href: '/products/verify', label: 'Verify API', badge: 'Waitlist' }
+                { href: '/declare', label: 'Declare' },
+                { href: '/trace', label: 'Trace' },
+                { href: '/products/gateway-402', label: 'Gateway 402' },
+                { href: '/products/studio', label: 'Studio' },
+                { href: '/products/verify', label: 'Verify API' }
               ]} />
 
               <NavLink href="/pricing">Pricing</NavLink>
               <NavLink href="/developers">Developers</NavLink>
-              <NavLink href="/peac">Open Source</NavLink>
-              <NavLink href="/integrations">Integrations</NavLink>
+              <NavLink href="/peac">Protocol</NavLink>
               <NavLink href="/demo">Demo</NavLink>
               <NavLink href="/blog">Blog</NavLink>
               <NavLink href="/contact">Contact</NavLink>
@@ -166,12 +166,15 @@ export default function NavigationHeader() {
             }}
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
+              <Link href="/platform" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
+                Platform
+              </Link>
               <MobileNavSection title="Products" items={[
-                { href: '/declare', label: 'Declare (Policy Kit)', badge: 'Flagship' },
-                { href: '/trace', label: 'Trace', badge: 'Coming Soon' },
-                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Waitlist' },
-                { href: '/products/studio', label: 'Studio', badge: 'Waitlist' },
-                { href: '/products/verify', label: 'Verify API', badge: 'Waitlist' }
+                { href: '/declare', label: 'Declare' },
+                { href: '/trace', label: 'Trace' },
+                { href: '/products/gateway-402', label: 'Gateway 402' },
+                { href: '/products/studio', label: 'Studio' },
+                { href: '/products/verify', label: 'Verify API' }
               ]} />
 
               <Link href="/pricing" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
@@ -181,10 +184,7 @@ export default function NavigationHeader() {
                 Developers
               </Link>
               <Link href="/peac" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
-                Open Source
-              </Link>
-              <Link href="/integrations" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
-                Integrations
+                Protocol
               </Link>
               <Link href="/demo" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
                 Demo

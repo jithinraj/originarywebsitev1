@@ -42,7 +42,7 @@ export default function Gateway402() {
         "name": "What is HTTP 402?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "HTTP 402 Payment Required is a standard HTTP status code reserved for digital payment systems. When a server returns 402, it indicates that payment is required to access the requested resource. The Gateway 402 implements this standard for API monetization and agent commerce."
+          "text": "HTTP 402 Payment Required is a standard HTTP status code reserved for digital payment systems. When a server returns 402, it indicates that payment is required to access the requested resource. The Gateway 402 implements this standard for API commerce and agent settlement."
         }
       },
       {

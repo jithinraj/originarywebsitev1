@@ -206,7 +206,7 @@ export default function PricingPage() {
                   {[
                     'Hosted receipt verification',
                     'Attested keys (KMS-backed)',
-                    'Event analytics and dashboards',
+                    'Event observability and dashboards',
                     'Email and webhook alerts',
                     'Compliance bundles',
                     'Email support'

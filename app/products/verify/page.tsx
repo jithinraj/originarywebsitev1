@@ -7,13 +7,13 @@ import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata: Metadata = {
   title: 'Verify API',
-  description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and analytics.',
+  description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and observability.',
   keywords: 'PEAC receipt verification, JWS validation, signature verification API, enterprise authentication, sub-10ms latency',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'Verify API | Originary',
-    description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and analytics.',
+    description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and observability.',
     url: 'https://www.originary.xyz/products/verify',
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Verify API | Originary',
-    description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and analytics.',
+    description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and observability.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -90,7 +90,7 @@ export default function VerifyAPI() {
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
               }}>
-                Enterprise-grade stateless verification for PEAC-Receipts and JWS signatures. Our globally distributed API delivers deterministic validation with normalized metadata for compliance reporting and enterprise analytics.
+                Enterprise-grade stateless verification for PEAC-Receipts and JWS signatures. Our globally distributed API delivers deterministic validation with normalized metadata for compliance reporting and enterprise observability.
               </p>
 
 

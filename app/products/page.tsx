@@ -254,9 +254,9 @@ export default function ProductsPage() {
                 icon={<BarChart size={32} style={{ color: 'var(--brand-accent)' }} />}
                 title="Receipts"
                 category="Audit Layer"
-                description="Comprehensive receipt management and analytics platform. Track usage, monitor compliance, and generate detailed reports for stakeholders."
+                description="Comprehensive receipt management and observability platform. Track usage, monitor compliance, and generate detailed reports for stakeholders."
                 features={[
-                  'Receipt analytics dashboard',
+                  'Receipt observability dashboard',
                   'Compliance reporting',
                   'Revenue tracking',
                   'Custom alert system',

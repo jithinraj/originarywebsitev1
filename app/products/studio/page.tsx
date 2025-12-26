@@ -96,7 +96,7 @@ export default function Studio() {
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
               }}>
-                Enterprise-grade dashboard for comprehensive PEAC orchestration. Centralized policy management, cryptographic key lifecycle, real-time analytics, and compliance reporting through an intuitive interface designed for security teams and DevOps engineers.
+                Enterprise-grade dashboard for comprehensive PEAC orchestration. Centralized policy management, cryptographic key lifecycle, real-time observability, and compliance reporting through an intuitive interface designed for security teams and DevOps engineers.
               </p>
 
               <div style={{
@@ -198,9 +198,9 @@ export default function Studio() {
                 }}>
                   <BarChart size={28} style={{ color: 'var(--brand-accent)' }} />
                 </div>
-                <h3 style={{ marginBottom: 'var(--space-4)' }}>Analytics & Reporting</h3>
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Observability & Reporting</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Comprehensive analytics engine with customizable dashboards, automated alerts, and scheduled reports. Real-time monitoring of agent behavior and system performance.
+                  Comprehensive observability engine with customizable dashboards, automated alerts, and scheduled reports. Real-time monitoring of agent behavior and system performance.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
                   <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Custom dashboards</span>

@@ -4,23 +4,23 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'PEAC-Receipts | AI Usage Receipts and AI Receipts Documentation',
-  description: 'PEAC-Receipts documentation for AI usage receipts and AI receipts. Learn about the open standard for verifiable agent access receipts with cryptographic proof. Technical specification, implementation guide, and examples for AI receipts.',
-  keywords: 'PEAC-Receipts, AI usage receipts, AI receipts, agent receipts, verifiable receipts, cryptographic receipts, PEAC protocol, agent access receipts, receipt verification, JWT receipts, Ed25519 signatures',
+  title: 'PEAC-Receipts | Portable Decision Records Documentation',
+  description: 'PEAC-Receipts documentation for portable decision records. Learn about the open standard for verifiable agent interaction receipts with cryptographic proof. Technical specification, implementation guide, and verification examples.',
+  keywords: 'PEAC-Receipts, decision records, verifiable receipts, cryptographic receipts, PEAC protocol, agent receipts, receipt verification, JWS receipts, Ed25519 signatures, portable evidence',
   alternates: {
     canonical: '/docs/receipts'
   },
   openGraph: {
-    title: 'PEAC-Receipts | AI Usage Receipts Documentation',
-    description: 'PEAC-Receipts documentation for AI usage receipts and AI receipts. Learn about the open standard for verifiable agent access with cryptographic proof.',
+    title: 'PEAC-Receipts | Portable Decision Records Documentation',
+    description: 'PEAC-Receipts documentation for portable decision records. Open standard for verifiable agent interaction receipts with cryptographic proof.',
     url: 'https://www.originary.xyz/docs/receipts',
     siteName: 'Originary',
     type: 'website'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PEAC-Receipts | AI Usage Receipts Documentation',
-    description: 'PEAC-Receipts documentation for AI usage receipts and AI receipts. Open standard for verifiable agent access.',
+    title: 'PEAC-Receipts | Portable Decision Records Documentation',
+    description: 'PEAC-Receipts documentation for portable decision records. Open standard for verifiable agent interaction receipts.',
   }
 }
 
@@ -61,7 +61,7 @@ export default function ReceiptsDocPage() {
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
-              PEAC-Receipts are AI usage receipts and AI receipts that provide cryptographically signed proof of agent access to resources. These verifiable AI receipts enable compliance tracking, audit trails, and policy enforcement for agentic systems.
+              PEAC-Receipts are portable decision records that provide cryptographically signed proof of agent interactions. These verifiable receipts enable compliance tracking, audit trails, dispute resolution, and policy enforcement across the open internet.
             </p>
 
             {/* What is PEAC-Receipt */}
@@ -75,10 +75,10 @@ export default function ReceiptsDocPage() {
                 What is PEAC-Receipt?
               </h2>
               <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-                PEAC-Receipt is a standardized HTTP header containing a cryptographically signed JSON Web Token (JWT) that serves as proof of authorized access. Every response from an Originary-protected resource includes this receipt.
+                PEAC-Receipt is a standardized HTTP header containing a signed JWS (Ed25519) structured as a JWT-compatible envelope. It serves as a portable decision record proving what happened, under what policy, and with what evidence.
               </p>
               <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
-                The receipt contains: resource accessed, timestamp, payment evidence, policy snapshot, and is signed using Ed25519 for fast verification at edge locations.
+                The receipt contains: resource accessed, timestamp, policy snapshot hash, optional payment evidence, and is signed using Ed25519 for fast offline verification.
               </p>
             </div>
 
@@ -170,29 +170,29 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
                 Related Resources
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-                <Link href="/receipts" style={{
-                  color: 'var(--brand-primary)',
-                  textDecoration: 'none',
-                  fontSize: 'var(--text-base)',
-                  fontWeight: 500
-                }}>
-                  Receipts Overview and Use Cases →
-                </Link>
                 <Link href="/peac" style={{
                   color: 'var(--brand-primary)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
                 }}>
-                  PEAC Protocol and Policy Layer →
+                  PEAC Protocol Specification →
                 </Link>
-                <Link href="/trace" style={{
+                <Link href="/developers" style={{
                   color: 'var(--brand-primary)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
                 }}>
-                  AI crawler analytics and bot tracking →
+                  Implementation Quickstart →
+                </Link>
+                <Link href="/conformance" style={{
+                  color: 'var(--brand-primary)',
+                  textDecoration: 'none',
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 500
+                }}>
+                  Conformance Testing →
                 </Link>
                 <Link href="/docs/mcp/receipts" style={{
                   color: 'var(--brand-primary)',
@@ -200,7 +200,7 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
                 }}>
-                  MCP receipts integration →
+                  MCP Integration →
                 </Link>
               </div>
             </div>
@@ -222,13 +222,13 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
                 Ready to implement?
               </h2>
               <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                Start generating AI usage receipts with Originary in under 5 minutes.
+                Deploy PEAC receipts in your infrastructure with the CLI or reference implementation.
               </p>
               <Link
                 href="/developers"
                 className="btn btn-primary"
               >
-                Get Started
+                View Quickstart
               </Link>
             </div>
           </div>

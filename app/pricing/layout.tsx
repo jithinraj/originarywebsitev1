@@ -3,15 +3,15 @@ import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Pricing',
-  description: 'Pricing for Originary Trace and agentic web infrastructure. Start with simple plans for AI crawler analytics, bot tracking, and PEAC-Receipts.',
-  keywords: 'trace pricing, AI crawler tracking, self-hosted, cloud pricing, PEAC Protocol',
+  description: 'Pricing for Originary Trace and decision record infrastructure. Plans for agent observability, interaction tracking, and PEAC-Receipts.',
+  keywords: 'trace pricing, agent interactions, decision records, self-hosted, cloud pricing, PEAC Protocol',
   robots: 'index,follow',
   alternates: {
     canonical: '/pricing'
   },
   openGraph: {
     title: 'Pricing',
-    description: 'Pricing for Originary Trace and agentic web infrastructure. Start with simple plans for AI crawler analytics, bot tracking, and PEAC-Receipts.',
+    description: 'Pricing for Originary Trace and decision record infrastructure. Plans for agent observability, interaction tracking, and PEAC-Receipts.',
     url: 'https://www.originary.xyz/pricing',
     siteName: 'Originary',
     images: [{
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pricing',
-    description: 'Pricing for Originary Trace and agentic web infrastructure. Start with simple plans for AI crawler analytics, bot tracking, and PEAC-Receipts.',
+    description: 'Pricing for Originary Trace and decision record infrastructure. Plans for agent observability, interaction tracking, and PEAC-Receipts.',
     images: ['/og.jpg']
   }
 }
@@ -38,7 +38,7 @@ const offerCatalogJsonLd = {
     {
       '@type': 'Offer',
       'name': 'Trace OSS',
-      'description': 'Self-hosted AI crawler tracking with PEAC receipts',
+      'description': 'Self-hosted agent interaction tracking with PEAC receipts',
       'price': '0',
       'priceCurrency': 'USD',
       'availability': 'https://schema.org/InStock'

@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Trace Demo | AI Crawler Analytics',
-  description: 'Live demo of Originary Trace for AI crawler analytics and bot tracking. See how PEAC-Receipts capture every agent request.',
-  keywords: 'Trace demo, AI crawler demo, GPTBot tracking, ClaudeBot analytics, PEAC receipts',
+  title: 'Trace Demo | Agent Observability',
+  description: 'Live demo of Originary Trace for agent observability and interaction tracking. See how PEAC-Receipts capture every agent request.',
+  keywords: 'Trace demo, agent observability demo, GPTBot tracking, ClaudeBot tracking, PEAC receipts',
   alternates: {
     canonical: '/trace/demo'
   },
   openGraph: {
-    title: 'Trace Demo | AI Crawler Analytics',
-    description: 'Live demo of Originary Trace for AI crawler analytics and bot tracking. See how PEAC-Receipts capture every agent request.',
+    title: 'Trace Demo | Agent Observability',
+    description: 'Live demo of Originary Trace for agent observability and interaction tracking. See how PEAC-Receipts capture every agent request.',
     type: 'website',
     url: 'https://www.originary.xyz/trace/demo',
   },
