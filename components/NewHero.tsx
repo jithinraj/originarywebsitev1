@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useMemo } from 'react'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Shield } from 'lucide-react'
 
@@ -30,37 +30,122 @@ const connections = [
   { from: 2, to: 3 },
 ]
 
+// Floating particles with stable positions
+const generateParticles = () => {
+  return [...Array(30)].map((_, i) => ({
+    id: i,
+    cx: (i * 37 + 13) % 100,
+    cy: (i * 23 + 7) % 100,
+    r: 0.15 + (i % 3) * 0.1,
+    delay: i * 0.4,
+    duration: 8 + (i % 5) * 2
+  }))
+}
+
 export default function NewHero() {
   const heroRef = useRef<HTMLElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [mousePosition, setMousePosition] = useState({ x: 0.5, y: 0.5 })
+  const [scrollY, setScrollY] = useState(0)
+  const particles = useMemo(() => generateParticles(), [])
 
   useEffect(() => {
     setIsLoaded(true)
+
+    const handleScroll = () => {
+      setScrollY(window.scrollY)
+    }
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (heroRef.current) {
+        const rect = heroRef.current.getBoundingClientRect()
+        setMousePosition({
+          x: (e.clientX - rect.left) / rect.width,
+          y: (e.clientY - rect.top) / rect.height
+        })
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
   }, [])
 
-  return (
-    <section ref={heroRef} className="hero">
-      {/* Animated Background */}
-      <div className="hero-bg" aria-hidden="true">
-        <div className="bg-gradient" />
+  const parallaxOffset = scrollY * 0.15
 
-        {/* Animated grid */}
-        <div className="grid-pattern" />
+  return (
+    <section ref={heroRef} className="hero" style={{ background: '#fafafa' }}>
+      {/* Enhanced Animated Background */}
+      <div className="hero-bg" aria-hidden="true" style={{ zIndex: 0 }}>
+        {/* Multi-layer gradient with parallax */}
+        <div
+          className="bg-gradient"
+          style={{ transform: `translateY(${parallaxOffset}px)` }}
+        />
+
+        {/* Animated aurora effect */}
+        <div className="aurora-layer" />
+
+        {/* Enhanced animated grid with perspective */}
+        <div
+          className="grid-pattern"
+          style={{
+            transform: `translateY(${parallaxOffset * 0.5}px)`,
+            backgroundPosition: `${mousePosition.x * 20}px ${mousePosition.y * 20}px`
+          }}
+        />
+
+        {/* Glowing orbs */}
+        <div className="orb orb-1" />
+        <div className="orb orb-2" />
+        <div className="orb orb-3" />
 
         {/* SVG Network Animation */}
-        <svg className="network-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+        <svg
+          className="network-svg"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid slice"
+          style={{ transform: `translateY(${parallaxOffset * 0.3}px)` }}
+        >
           <defs>
-            {/* Gradient for connections */}
+            {/* Enhanced gradient for connections */}
             <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="rgba(99, 91, 255, 0.3)" />
-              <stop offset="50%" stopColor="rgba(99, 91, 255, 0.6)" />
-              <stop offset="100%" stopColor="rgba(99, 91, 255, 0.3)" />
+              <stop offset="0%" stopColor="rgba(99, 91, 255, 0.2)">
+                <animate attributeName="stop-color" values="rgba(99, 91, 255, 0.2);rgba(0, 212, 170, 0.3);rgba(99, 91, 255, 0.2)" dur="4s" repeatCount="indefinite" />
+              </stop>
+              <stop offset="50%" stopColor="rgba(0, 212, 170, 0.5)">
+                <animate attributeName="stop-color" values="rgba(0, 212, 170, 0.5);rgba(99, 91, 255, 0.6);rgba(0, 212, 170, 0.5)" dur="4s" repeatCount="indefinite" />
+              </stop>
+              <stop offset="100%" stopColor="rgba(99, 91, 255, 0.2)">
+                <animate attributeName="stop-color" values="rgba(99, 91, 255, 0.2);rgba(0, 212, 170, 0.3);rgba(99, 91, 255, 0.2)" dur="4s" repeatCount="indefinite" />
+              </stop>
             </linearGradient>
 
+            {/* Node glow gradient */}
+            <radialGradient id="nodeGlow">
+              <stop offset="0%" stopColor="rgba(99, 91, 255, 1)" />
+              <stop offset="50%" stopColor="rgba(99, 91, 255, 0.5)" />
+              <stop offset="100%" stopColor="rgba(99, 91, 255, 0)" />
+            </radialGradient>
+
             {/* Glow filter */}
-            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="0.5" result="coloredBlur" />
+            <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="0.8" result="coloredBlur" />
               <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+
+            {/* Stronger glow for active elements */}
+            <filter id="strongGlow" x="-200%" y="-200%" width="500%" height="500%">
+              <feGaussianBlur stdDeviation="1.5" result="coloredBlur" />
+              <feMerge>
+                <feMergeNode in="coloredBlur" />
                 <feMergeNode in="coloredBlur" />
                 <feMergeNode in="SourceGraphic" />
               </feMerge>
@@ -80,9 +165,15 @@ export default function NewHero() {
               <stop offset="0%" stopColor="rgba(251, 191, 36, 0.8)" />
               <stop offset="100%" stopColor="rgba(251, 191, 36, 0)" />
             </radialGradient>
+
+            {/* Cyan glow for particles */}
+            <radialGradient id="particleGlow">
+              <stop offset="0%" stopColor="rgba(0, 212, 170, 0.8)" />
+              <stop offset="100%" stopColor="rgba(0, 212, 170, 0)" />
+            </radialGradient>
           </defs>
 
-          {/* Connection lines */}
+          {/* Connection lines with enhanced animation */}
           {connections.map((conn, i) => {
             const fromNode = agentNodes.find(n => n.id === conn.from)!
             const toNode = agentNodes.find(n => n.id === conn.to)!
@@ -91,12 +182,22 @@ export default function NewHero() {
 
             return (
               <g key={`conn-${i}`}>
+                {/* Glow layer */}
+                <path
+                  className="connection-glow"
+                  d={`M ${fromNode.x} ${fromNode.y} Q ${midX} ${midY} ${toNode.x} ${toNode.y}`}
+                  fill="none"
+                  stroke="rgba(0, 212, 170, 0.3)"
+                  strokeWidth="0.8"
+                  filter="url(#glow)"
+                  style={{ animationDelay: `${i * 0.3}s` }}
+                />
                 <path
                   className="connection-line"
                   d={`M ${fromNode.x} ${fromNode.y} Q ${midX} ${midY} ${toNode.x} ${toNode.y}`}
                   fill="none"
                   stroke="url(#connectionGradient)"
-                  strokeWidth="0.15"
+                  strokeWidth="0.2"
                   style={{ animationDelay: `${i * 0.3}s` }}
                 />
 
@@ -115,22 +216,44 @@ export default function NewHero() {
             )
           })}
 
-          {/* Agent nodes */}
+          {/* Agent nodes with enhanced effects */}
           {agentNodes.map((node, i) => {
             const radius = node.size === 'large' ? 2 : node.size === 'medium' ? 1.5 : 1
 
             return (
               <g key={node.id} className="agent-node" style={{ animationDelay: `${i * 0.2}s` }}>
+                {/* Outer glow ring */}
+                <circle
+                  cx={node.x}
+                  cy={node.y}
+                  r={radius * 3}
+                  fill="url(#nodeGlow)"
+                  className="node-glow"
+                  style={{ animationDelay: `${i * 0.3}s` }}
+                />
+
                 {/* Outer pulse ring */}
                 <circle
                   cx={node.x}
                   cy={node.y}
                   r={radius * 2}
                   fill="none"
-                  stroke="rgba(99, 91, 255, 0.3)"
-                  strokeWidth="0.1"
+                  stroke="rgba(99, 91, 255, 0.4)"
+                  strokeWidth="0.15"
                   className="pulse-ring"
                   style={{ animationDelay: `${i * 0.3}s` }}
+                />
+
+                {/* Secondary pulse ring */}
+                <circle
+                  cx={node.x}
+                  cy={node.y}
+                  r={radius * 1.5}
+                  fill="none"
+                  stroke="rgba(0, 212, 170, 0.3)"
+                  strokeWidth="0.1"
+                  className="pulse-ring-alt"
+                  style={{ animationDelay: `${i * 0.3 + 0.5}s` }}
                 />
 
                 {/* Main node */}
@@ -138,8 +261,8 @@ export default function NewHero() {
                   cx={node.x}
                   cy={node.y}
                   r={radius}
-                  fill="rgba(99, 91, 255, 0.8)"
-                  filter="url(#glow)"
+                  fill="rgba(99, 91, 255, 0.9)"
+                  filter="url(#strongGlow)"
                   className="node-core"
                 />
 
@@ -148,7 +271,15 @@ export default function NewHero() {
                   cx={node.x}
                   cy={node.y}
                   r={radius * 0.6}
-                  fill="rgba(139, 131, 255, 0.9)"
+                  fill="rgba(139, 131, 255, 0.95)"
+                />
+
+                {/* Center highlight */}
+                <circle
+                  cx={node.x - radius * 0.2}
+                  cy={node.y - radius * 0.2}
+                  r={radius * 0.25}
+                  fill="rgba(255, 255, 255, 0.6)"
                 />
 
                 {/* Payment pulse effect */}
@@ -164,20 +295,32 @@ export default function NewHero() {
             )
           })}
 
-          {/* Floating particles */}
-          {[...Array(20)].map((_, i) => (
-            <circle
-              key={`particle-${i}`}
-              className="floating-particle"
-              cx={Math.random() * 100}
-              cy={Math.random() * 100}
-              r="0.2"
-              fill="rgba(99, 91, 255, 0.5)"
-              style={{
-                animationDelay: `${i * 0.5}s`,
-                animationDuration: `${8 + Math.random() * 4}s`
-              }}
-            />
+          {/* Enhanced floating particles */}
+          {particles.map((particle) => (
+            <g key={`particle-${particle.id}`}>
+              <circle
+                className="floating-particle-glow"
+                cx={particle.cx}
+                cy={particle.cy}
+                r={particle.r * 4}
+                fill="url(#particleGlow)"
+                style={{
+                  animationDelay: `${particle.delay}s`,
+                  animationDuration: `${particle.duration}s`
+                }}
+              />
+              <circle
+                className="floating-particle"
+                cx={particle.cx}
+                cy={particle.cy}
+                r={particle.r}
+                fill="rgba(0, 212, 170, 0.7)"
+                style={{
+                  animationDelay: `${particle.delay}s`,
+                  animationDuration: `${particle.duration}s`
+                }}
+              />
+            </g>
           ))}
         </svg>
 
@@ -185,33 +328,36 @@ export default function NewHero() {
         <div className="content-overlay" />
       </div>
 
-      <div className="hero-container">
+      <div className="hero-container" style={{ position: 'relative', zIndex: 10 }}>
         <div className={`hero-content ${isLoaded ? 'loaded' : ''}`}>
+          {/* Badge */}
           <div className="hero-badge">
             <CheckCircle size={14} strokeWidth={2} />
             <span>Open source protocol</span>
           </div>
 
+          {/* Headline */}
           <h1 className="hero-headline">
             <span className="hero-headline-main">System of record</span>
             <span className="hero-headline-sub">for agent interactions</span>
           </h1>
 
           <p className="hero-description">
-            Originary<span className="tm">™</span> builds and stewards an open standard for publishing terms and verifying receipts as durable evidence for what was accessed, under which preferences, how it was paid for, and by whom, while preserving privacy. This makes AI interactions verifiable and auditable across the open internet.
+            Originary<span className="tm">&#8482;</span> builds and stewards an open standard for publishing terms and verifying receipts as durable evidence for what was accessed, under which preferences, how it was paid for, and by whom, while preserving privacy. This makes AI interactions verifiable and auditable across the open internet.
           </p>
 
           <p className="hero-clarifier">
             Designed for independent implementations and adapter-based interoperability across all protocols and rails.
           </p>
 
+          {/* Enhanced CTAs */}
           <div className="hero-actions">
             <Link
               href="/developers"
               className="hero-btn-primary"
             >
               Start building
-              <ArrowRight size={18} strokeWidth={2.5} />
+              <ArrowRight size={18} strokeWidth={2.5} className="arrow-icon" />
             </Link>
             <Link
               href="https://github.com/peacprotocol/peac"
@@ -223,6 +369,7 @@ export default function NewHero() {
             </Link>
           </div>
 
+          {/* Feature Pills */}
           <div className="hero-features">
             <span className="feature">Apache-2.0 licensed</span>
             <span className="feature-sep" />
@@ -251,41 +398,52 @@ export default function NewHero() {
           </div>
         </div>
 
+        {/* 3D Code Window */}
         <div className={`hero-visual ${isLoaded ? 'loaded' : ''}`}>
-          <div className="code-window">
-            <div className="code-header">
-              <div className="code-dots">
-                <span className="dot dot-red" />
-                <span className="dot dot-yellow" />
-                <span className="dot dot-green" />
+          <div className="code-window-wrapper">
+            <div className="code-window">
+              <div className="code-window-shine" />
+              <div className="code-header">
+                <div className="code-dots">
+                  <span className="dot dot-red" />
+                  <span className="dot dot-yellow" />
+                  <span className="dot dot-green" />
+                </div>
+                <span className="code-title">HTTP Response</span>
               </div>
-              <span className="code-title">HTTP Response</span>
+              <div className="code-body">
+                <div className="code-line line-1">
+                  <span className="code-key">PEAC-Receipt</span>
+                  <span className="code-colon">:</span>
+                  <span className="code-value token">eyJhbGciOiJFZDI1NTE5Iiwi<span className="cursor" /></span>
+                </div>
+                <div className="code-line line-2">
+                  <span className="code-key">PEAC-Policy</span>
+                  <span className="code-colon">:</span>
+                  <span className="code-value">/.well-known/peac.txt</span>
+                </div>
+                <div className="code-line line-3">
+                  <span className="code-key">PEAC-Decision</span>
+                  <span className="code-colon">:</span>
+                  <span className="code-value success">allow</span>
+                </div>
+              </div>
+              <div className="code-footer">
+                <div className="verify-status">
+                  <div className="verify-icon-wrapper">
+                    <Shield size={14} strokeWidth={2} className="verify-shield" />
+                    <div className="verify-pulse" />
+                  </div>
+                  <span className="verify-text">Cryptographically verified</span>
+                  <div className="verify-checkmark">
+                    <CheckCircle size={14} strokeWidth={2.5} />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="code-body">
-              <div className="code-line line-1">
-                <span className="code-key">PEAC-Receipt</span>
-                <span className="code-colon">:</span>
-                <span className="code-value token">eyJhbGciOiJFZDI1NTE5Iiwi<span className="cursor" /></span>
-              </div>
-              <div className="code-line line-2">
-                <span className="code-key">PEAC-Policy</span>
-                <span className="code-colon">:</span>
-                <span className="code-value">/.well-known/peac.txt</span>
-              </div>
-              <div className="code-line line-3">
-                <span className="code-key">PEAC-Decision</span>
-                <span className="code-colon">:</span>
-                <span className="code-value success">allow</span>
-              </div>
-            </div>
-            <div className="code-footer">
-              <div className="verify-status">
-                <Shield size={14} strokeWidth={2} />
-                <span className="verify-text">Cryptographically verified</span>
-              </div>
-            </div>
+            <div className="code-glow" aria-hidden="true" />
+            <div className="code-reflection" aria-hidden="true" />
           </div>
-          <div className="code-glow" aria-hidden="true" />
         </div>
       </div>
 
@@ -297,33 +455,118 @@ export default function NewHero() {
           align-items: center;
           padding: 140px 0 100px;
           overflow: hidden;
-          background: #fafafa;
+          background: linear-gradient(180deg, #fafafa 0%, #f5f5f7 100%);
         }
 
-        /* Animated Background */
+        /* Enhanced Animated Background */
         .hero-bg {
           position: absolute;
           inset: 0;
           pointer-events: none;
           overflow: hidden;
+          z-index: 0;
         }
 
         .bg-gradient {
           position: absolute;
           inset: 0;
           background:
-            radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 91, 255, 0.08) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0, 212, 170, 0.06) 0%, transparent 50%);
+            radial-gradient(ellipse 60% 40% at 30% 20%, rgba(99, 91, 255, 0.08) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 35% at 70% 80%, rgba(0, 212, 170, 0.06) 0%, transparent 50%),
+            radial-gradient(ellipse 80% 50% at 50% 0%, rgba(99, 91, 255, 0.05) 0%, transparent 40%);
+          transition: transform 0.1s ease-out;
+        }
+
+        /* Aurora effect */
+        .aurora-layer {
+          position: absolute;
+          inset: 0;
+          background:
+            linear-gradient(
+              125deg,
+              transparent 0%,
+              rgba(99, 91, 255, 0.02) 20%,
+              transparent 40%,
+              rgba(0, 212, 170, 0.02) 60%,
+              transparent 80%,
+              rgba(99, 91, 255, 0.01) 100%
+            );
+          animation: auroraShift 15s ease-in-out infinite;
+        }
+
+        @keyframes auroraShift {
+          0%, 100% {
+            opacity: 0.5;
+            transform: translateX(0) scale(1);
+          }
+          50% {
+            opacity: 0.8;
+            transform: translateX(5%) scale(1.05);
+          }
+        }
+
+        /* Glowing orbs - positioned on right side only */
+        .orb {
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(80px);
+          animation: orbFloat 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+          width: 300px;
+          height: 300px;
+          top: 20%;
+          right: 15%;
+          left: auto;
+          background: rgba(99, 91, 255, 0.08);
+          animation-delay: 0s;
+        }
+
+        .orb-2 {
+          width: 250px;
+          height: 250px;
+          top: 55%;
+          right: 25%;
+          left: auto;
+          background: rgba(0, 212, 170, 0.06);
+          animation-delay: -7s;
+        }
+
+        .orb-3 {
+          width: 200px;
+          height: 200px;
+          bottom: 25%;
+          right: 5%;
+          left: auto;
+          background: rgba(99, 91, 255, 0.05);
+          animation-delay: -14s;
+        }
+
+        @keyframes orbFloat {
+          0%, 100% {
+            transform: translate(0, 0) scale(1);
+          }
+          25% {
+            transform: translate(15px, -20px) scale(1.05);
+          }
+          50% {
+            transform: translate(-8px, 15px) scale(0.97);
+          }
+          75% {
+            transform: translate(20px, 8px) scale(1.03);
+          }
         }
 
         .grid-pattern {
           position: absolute;
           inset: 0;
           background-image:
-            linear-gradient(rgba(99, 91, 255, 0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(99, 91, 255, 0.04) 1px, transparent 1px);
+            linear-gradient(rgba(99, 91, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(99, 91, 255, 0.03) 1px, transparent 1px);
           background-size: 50px 50px;
-          mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
+          mask-image: radial-gradient(ellipse 70% 50% at 65% 50%, black 20%, transparent 70%);
+          transition: background-position 0.3s ease-out;
         }
 
         .network-svg {
@@ -332,13 +575,15 @@ export default function NewHero() {
           width: 100%;
           height: 100%;
           opacity: 0.6;
+          transition: transform 0.1s ease-out;
         }
 
         .content-overlay {
           position: absolute;
           inset: 0;
           background:
-            linear-gradient(90deg, rgba(250, 250, 250, 0.95) 0%, rgba(250, 250, 250, 0.8) 40%, rgba(250, 250, 250, 0.6) 100%);
+            linear-gradient(90deg, rgba(250, 250, 250, 1) 0%, rgba(250, 250, 250, 0.98) 30%, rgba(250, 250, 250, 0.85) 50%, rgba(250, 250, 250, 0.4) 100%);
+          z-index: 1;
         }
 
         /* Connection lines */
@@ -348,10 +593,33 @@ export default function NewHero() {
           animation: drawLine 3s ease forwards;
         }
 
+        .connection-glow {
+          stroke-dasharray: 100;
+          stroke-dashoffset: 100;
+          animation: drawLine 3s ease forwards, glowPulse 3s ease-in-out infinite 3s;
+          opacity: 0.5;
+        }
+
         @keyframes drawLine {
           to {
             stroke-dashoffset: 0;
           }
+        }
+
+        @keyframes glowPulse {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 0.6; }
+        }
+
+        /* Node glow */
+        .node-glow {
+          opacity: 0.3;
+          animation: nodeGlowPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes nodeGlowPulse {
+          0%, 100% { opacity: 0.2; transform: scale(0.9); }
+          50% { opacity: 0.4; transform: scale(1.1); }
         }
 
         /* Traveling receipt packets */
@@ -359,6 +627,7 @@ export default function NewHero() {
           offset-distance: 0%;
           opacity: 0;
           animation: travelReceipt 4s ease-in-out infinite;
+          filter: drop-shadow(0 0 4px rgba(74, 222, 128, 0.8));
         }
 
         @keyframes travelReceipt {
@@ -381,12 +650,20 @@ export default function NewHero() {
         /* Agent nodes */
         .agent-node {
           opacity: 0;
-          animation: nodeAppear 0.6s ease forwards;
+          animation: nodeAppear 0.8s ease forwards;
         }
 
         @keyframes nodeAppear {
-          to {
+          0% {
+            opacity: 0;
+            transform: scale(0.5);
+          }
+          70% {
+            transform: scale(1.1);
+          }
+          100% {
             opacity: 1;
+            transform: scale(1);
           }
         }
 
@@ -396,7 +673,7 @@ export default function NewHero() {
 
         @keyframes nodeGlow {
           0%, 100% {
-            opacity: 0.8;
+            opacity: 0.9;
           }
           50% {
             opacity: 1;
@@ -405,6 +682,11 @@ export default function NewHero() {
 
         /* Pulse rings */
         .pulse-ring {
+          transform-origin: center;
+          animation: pulseRing 3s ease-out infinite;
+        }
+
+        .pulse-ring-alt {
           transform-origin: center;
           animation: pulseRing 3s ease-out infinite;
         }
@@ -441,34 +723,44 @@ export default function NewHero() {
           }
         }
 
-        /* Floating particles */
+        /* Enhanced floating particles */
         .floating-particle {
           animation: floatParticle 10s ease-in-out infinite;
+        }
+
+        .floating-particle-glow {
+          animation: floatParticle 10s ease-in-out infinite, glowBreath 3s ease-in-out infinite;
+          opacity: 0.5;
         }
 
         @keyframes floatParticle {
           0%, 100% {
             transform: translate(0, 0);
-            opacity: 0.3;
-          }
-          25% {
-            transform: translate(10px, -15px);
-            opacity: 0.6;
-          }
-          50% {
-            transform: translate(-5px, -25px);
             opacity: 0.4;
           }
-          75% {
-            transform: translate(15px, -10px);
+          25% {
+            transform: translate(8px, -12px);
+            opacity: 0.7;
+          }
+          50% {
+            transform: translate(-4px, -20px);
             opacity: 0.5;
           }
+          75% {
+            transform: translate(12px, -8px);
+            opacity: 0.6;
+          }
+        }
+
+        @keyframes glowBreath {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 0.6; }
         }
 
         /* Hero Container */
         .hero-container {
           position: relative;
-          z-index: 1;
+          z-index: 10;
           width: 100%;
           max-width: 1280px;
           margin: 0 auto;
@@ -484,8 +776,8 @@ export default function NewHero() {
           flex-direction: column;
           gap: 28px;
           opacity: 0;
-          transform: translateY(30px);
-          transition: opacity 0.8s ease, transform 0.8s ease;
+          transform: translateY(40px);
+          transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .hero-content.loaded {
@@ -493,6 +785,7 @@ export default function NewHero() {
           transform: translateY(0);
         }
 
+        /* Badge */
         .hero-badge {
           display: inline-flex;
           align-items: center;
@@ -507,6 +800,7 @@ export default function NewHero() {
           width: fit-content;
         }
 
+        /* Headline */
         .hero-headline {
           display: flex;
           flex-direction: column;
@@ -552,83 +846,78 @@ export default function NewHero() {
           font-style: italic;
         }
 
+        /* Enhanced CTAs */
         .hero-actions {
           display: flex;
-          gap: 14px;
-          margin-top: 4px;
+          gap: 16px;
+          margin-top: 8px;
         }
 
         .hero-btn-primary {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          padding: 16px 32px;
+          padding: 18px 36px;
           font-size: 15px;
-          font-weight: 600;
+          font-weight: 650;
           text-decoration: none;
           color: white;
           background: linear-gradient(135deg, var(--brand-primary) 0%, #4f46e5 100%);
-          border-radius: 12px;
+          border-radius: 14px;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           box-shadow:
             0 0 0 1px rgba(99, 91, 255, 0.3),
-            0 4px 16px -2px rgba(99, 91, 255, 0.5),
+            0 4px 20px -4px rgba(99, 91, 255, 0.4),
             inset 0 1px 0 rgba(255, 255, 255, 0.15);
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          position: relative;
-          overflow: hidden;
-        }
-
-        .hero-btn-primary::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
-          opacity: 0;
-          transition: opacity 0.3s ease;
         }
 
         .hero-btn-primary:hover {
-          transform: translateY(-2px);
+          transform: translateY(-3px);
           box-shadow:
             0 0 0 1px rgba(99, 91, 255, 0.4),
-            0 8px 24px -4px rgba(99, 91, 255, 0.6),
+            0 8px 30px -4px rgba(99, 91, 255, 0.5),
+            0 0 40px -10px rgba(99, 91, 255, 0.4),
             inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
-        .hero-btn-primary:hover::before {
-          opacity: 1;
+        .hero-btn-primary :global(.arrow-icon) {
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .hero-btn-primary :global(svg) {
-          transition: transform 0.3s ease;
-        }
-
-        .hero-btn-primary:hover :global(svg) {
-          transform: translateX(3px);
+        .hero-btn-primary:hover :global(.arrow-icon) {
+          transform: translateX(4px);
         }
 
         .hero-btn-secondary {
           display: inline-flex;
           align-items: center;
-          padding: 16px 32px;
+          padding: 18px 36px;
           font-size: 15px;
           font-weight: 600;
           text-decoration: none;
           color: var(--gray-700);
-          background: white;
-          border: 1px solid var(--gray-200);
-          border-radius: 12px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          background: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(99, 91, 255, 0.15);
+          border-radius: 14px;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          box-shadow:
+            0 2px 8px rgba(0, 0, 0, 0.04),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
         }
 
         .hero-btn-secondary:hover {
-          border-color: var(--gray-300);
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-          transform: translateY(-2px);
+          transform: translateY(-3px);
+          border-color: rgba(99, 91, 255, 0.25);
+          box-shadow:
+            0 8px 30px rgba(0, 0, 0, 0.08),
+            0 0 0 1px rgba(99, 91, 255, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9);
           color: var(--gray-900);
         }
 
+        /* Feature Pills */
         .hero-features {
           display: flex;
           align-items: center;
@@ -657,7 +946,7 @@ export default function NewHero() {
 
         .trademark-text {
           font-size: 11px;
-          line-height: 1.4;
+          line-height: 1.5;
           color: var(--gray-400);
           max-width: 90%;
           font-weight: 400;
@@ -667,68 +956,119 @@ export default function NewHero() {
 
         .trademark-label {
           color: var(--gray-500);
+          font-weight: 500;
         }
 
         .trademark-link {
           color: var(--gray-500);
           text-decoration: none;
           border-bottom: 1px solid transparent;
-          transition: border-color 0.15s ease;
+          transition: all 0.2s ease;
         }
 
         .trademark-link:hover {
-          border-bottom-color: var(--gray-300);
+          color: var(--brand-primary);
+          border-bottom-color: rgba(99, 91, 255, 0.3);
         }
 
-        /* Code Window */
+        /* 3D Code Window */
         .hero-visual {
           display: flex;
           justify-content: center;
           position: relative;
           opacity: 0;
-          transform: translateY(30px);
-          transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+          transform: translateY(40px) perspective(1000px) rotateY(-5deg);
+          transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s, transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
         }
 
         .hero-visual.loaded {
           opacity: 1;
-          transform: translateY(0);
+          transform: translateY(0) perspective(1000px) rotateY(0deg);
+        }
+
+        .code-window-wrapper {
+          position: relative;
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+          transform-style: preserve-3d;
+        }
+
+        .code-window-wrapper:hover {
+          transform: translateY(-8px) perspective(1000px) rotateX(2deg) rotateY(-2deg);
         }
 
         .code-glow {
           position: absolute;
-          inset: -40px;
-          background: radial-gradient(ellipse at center, rgba(99, 91, 255, 0.15) 0%, transparent 60%);
-          filter: blur(40px);
+          inset: -60px;
+          background: radial-gradient(ellipse at center, rgba(99, 91, 255, 0.2) 0%, rgba(0, 212, 170, 0.1) 40%, transparent 70%);
+          filter: blur(50px);
+          z-index: -1;
+          transition: all 0.6s ease;
+        }
+
+        .code-window-wrapper:hover .code-glow {
+          inset: -80px;
+          filter: blur(60px);
+          background: radial-gradient(ellipse at center, rgba(99, 91, 255, 0.25) 0%, rgba(0, 212, 170, 0.15) 40%, transparent 70%);
+        }
+
+        .code-reflection {
+          position: absolute;
+          bottom: -50%;
+          left: 5%;
+          right: 5%;
+          height: 50%;
+          background: linear-gradient(180deg, rgba(99, 91, 255, 0.08) 0%, transparent 50%);
+          filter: blur(20px);
+          transform: scaleY(-1);
+          opacity: 0.3;
           z-index: -1;
         }
 
         .code-window {
+          position: relative;
           width: 100%;
           max-width: 520px;
-          background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
-          border-radius: 16px;
+          background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+          border-radius: 20px;
           overflow: hidden;
           box-shadow:
-            0 0 0 1px rgba(255, 255, 255, 0.08),
-            0 4px 16px rgba(0, 0, 0, 0.15),
-            0 20px 50px -10px rgba(0, 0, 0, 0.3);
-          transition: box-shadow 0.3s ease;
+            0 0 0 1px rgba(255, 255, 255, 0.1),
+            0 4px 20px rgba(0, 0, 0, 0.2),
+            0 20px 60px -10px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+          transition: box-shadow 0.4s ease;
         }
 
-        .hero-visual:hover .code-window {
+        .code-window-shine {
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+          animation: windowShine 4s ease-in-out infinite 2s;
+        }
+
+        @keyframes windowShine {
+          0%, 100% { left: -100%; }
+          50% { left: 150%; }
+        }
+
+        .code-window-wrapper:hover .code-window {
           box-shadow:
-            0 0 0 1px rgba(255, 255, 255, 0.1),
-            0 8px 24px rgba(0, 0, 0, 0.2),
-            0 30px 60px -10px rgba(0, 0, 0, 0.35);
+            0 0 0 1px rgba(255, 255, 255, 0.15),
+            0 8px 30px rgba(0, 0, 0, 0.25),
+            0 30px 80px -10px rgba(0, 0, 0, 0.5),
+            0 0 100px -20px rgba(99, 91, 255, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
         }
 
         .code-header {
           display: flex;
           align-items: center;
-          padding: 14px 20px;
-          background: rgba(255, 255, 255, 0.04);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          padding: 16px 22px;
+          background: rgba(255, 255, 255, 0.03);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .code-dots {
@@ -740,46 +1080,55 @@ export default function NewHero() {
           width: 12px;
           height: 12px;
           border-radius: 50%;
-          transition: transform 0.2s ease;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .code-window:hover .dot {
-          transform: scale(1.1);
+        .code-window-wrapper:hover .dot {
+          transform: scale(1.15);
         }
 
-        .dot-red { background: #ff5f57; }
-        .dot-yellow { background: #febc2e; }
-        .dot-green { background: #28c840; }
+        .dot-red {
+          background: linear-gradient(135deg, #ff5f57 0%, #ff3b30 100%);
+          box-shadow: 0 0 8px rgba(255, 95, 87, 0.4);
+        }
+        .dot-yellow {
+          background: linear-gradient(135deg, #febc2e 0%, #ffcc00 100%);
+          box-shadow: 0 0 8px rgba(254, 188, 46, 0.4);
+        }
+        .dot-green {
+          background: linear-gradient(135deg, #28c840 0%, #34c759 100%);
+          box-shadow: 0 0 8px rgba(40, 200, 64, 0.4);
+        }
 
         .code-title {
           margin-left: auto;
           font-family: var(--font-mono);
           font-size: 12px;
           font-weight: 500;
-          color: rgba(255, 255, 255, 0.5);
-          letter-spacing: 0.02em;
+          color: rgba(255, 255, 255, 0.4);
+          letter-spacing: 0.03em;
         }
 
         .code-body {
-          padding: 28px 24px;
+          padding: 28px 26px;
         }
 
         .code-line {
           display: flex;
           align-items: baseline;
           gap: 0;
-          margin-bottom: 14px;
+          margin-bottom: 16px;
           font-family: var(--font-mono);
           font-size: 14px;
           line-height: 1.6;
           opacity: 0;
-          transform: translateX(-10px);
-          animation: slideIn 0.4s ease forwards;
+          transform: translateX(-15px);
+          animation: slideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .line-1 { animation-delay: 0.8s; }
-        .line-2 { animation-delay: 1s; }
-        .line-3 { animation-delay: 1.2s; }
+        .line-1 { animation-delay: 0.9s; }
+        .line-2 { animation-delay: 1.15s; }
+        .line-3 { animation-delay: 1.4s; }
 
         @keyframes slideIn {
           to {
@@ -796,30 +1145,33 @@ export default function NewHero() {
           color: #38bdf8;
           white-space: nowrap;
           font-weight: 500;
+          text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
         }
 
         .code-colon {
-          color: rgba(255, 255, 255, 0.4);
-          margin-right: 8px;
+          color: rgba(255, 255, 255, 0.3);
+          margin-right: 10px;
         }
 
         .code-value {
-          color: rgba(255, 255, 255, 0.75);
+          color: rgba(255, 255, 255, 0.8);
           word-break: break-all;
         }
 
         .code-value.token {
           color: #fbbf24;
+          text-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
         }
 
         .cursor {
           display: inline-block;
           width: 2px;
-          height: 14px;
-          background: #fbbf24;
+          height: 16px;
+          background: linear-gradient(180deg, #fbbf24 0%, #f59e0b 100%);
           margin-left: 2px;
           animation: blink 1s step-end infinite;
           vertical-align: middle;
+          box-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
         }
 
         @keyframes blink {
@@ -830,12 +1182,12 @@ export default function NewHero() {
         .code-value.success {
           color: #4ade80;
           font-weight: 600;
-          text-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+          text-shadow: 0 0 25px rgba(74, 222, 128, 0.5);
         }
 
         .code-footer {
-          padding: 16px 20px;
-          background: rgba(74, 222, 128, 0.05);
+          padding: 18px 22px;
+          background: linear-gradient(90deg, rgba(74, 222, 128, 0.08) 0%, rgba(74, 222, 128, 0.04) 100%);
           border-top: 1px solid rgba(74, 222, 128, 0.15);
         }
 
@@ -849,27 +1201,86 @@ export default function NewHero() {
           color: #4ade80;
         }
 
-        .verify-status :global(svg) {
-          filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.5));
+        .verify-icon-wrapper {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .verify-shield {
+          filter: drop-shadow(0 0 8px rgba(74, 222, 128, 0.6));
+          animation: shieldGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes shieldGlow {
+          0%, 100% { filter: drop-shadow(0 0 8px rgba(74, 222, 128, 0.6)); }
+          50% { filter: drop-shadow(0 0 16px rgba(74, 222, 128, 0.9)); }
+        }
+
+        .verify-pulse {
+          position: absolute;
+          inset: -8px;
+          border: 2px solid rgba(74, 222, 128, 0.4);
+          border-radius: 50%;
+          animation: verifyPulse 2s ease-out infinite 1.8s;
+          opacity: 0;
+        }
+
+        @keyframes verifyPulse {
+          0% {
+            transform: scale(0.5);
+            opacity: 0.8;
+          }
+          100% {
+            transform: scale(2);
+            opacity: 0;
+          }
         }
 
         .verify-text {
           opacity: 0;
-          animation: fadeIn 0.5s ease 1.5s forwards;
+          animation: fadeIn 0.6s ease 1.7s forwards;
         }
 
         @keyframes fadeIn {
           to { opacity: 1; }
         }
 
+        .verify-checkmark {
+          margin-left: auto;
+          color: #4ade80;
+          opacity: 0;
+          transform: scale(0);
+          animation: checkmarkPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 2.2s forwards;
+        }
+
+        @keyframes checkmarkPop {
+          0% {
+            opacity: 0;
+            transform: scale(0) rotate(-10deg);
+          }
+          70% {
+            transform: scale(1.2) rotate(5deg);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1) rotate(0);
+          }
+        }
+
+        .verify-checkmark :global(svg) {
+          filter: drop-shadow(0 0 8px rgba(74, 222, 128, 0.8));
+        }
+
         /* Responsive */
         @media (max-width: 1440px) {
           .hero-headline-main {
-            font-size: clamp(44px, 5.5vw, 64px);
+            font-size: clamp(44px, 5.5vw, 68px);
           }
 
           .hero-headline-sub {
-            font-size: clamp(28px, 3.5vw, 42px);
+            font-size: clamp(28px, 3.5vw, 44px);
           }
         }
 
@@ -882,7 +1293,7 @@ export default function NewHero() {
 
           .content-overlay {
             background:
-              radial-gradient(ellipse 100% 100% at 50% 50%, rgba(250, 250, 250, 0.9) 0%, rgba(250, 250, 250, 0.95) 100%);
+              radial-gradient(ellipse 100% 100% at 50% 50%, rgba(250, 250, 250, 0.92) 0%, rgba(250, 250, 250, 0.97) 100%);
           }
 
           .hero-content {
@@ -907,7 +1318,6 @@ export default function NewHero() {
 
           .hero-features {
             justify-content: center;
-            flex-wrap: wrap;
           }
 
           .hero-trademark {
@@ -920,6 +1330,18 @@ export default function NewHero() {
 
           .code-window {
             max-width: 480px;
+          }
+
+          .hero-visual {
+            transform: translateY(40px) perspective(1000px);
+          }
+
+          .hero-visual.loaded {
+            transform: translateY(0) perspective(1000px);
+          }
+
+          .code-window-wrapper:hover {
+            transform: translateY(-8px);
           }
         }
 
@@ -947,11 +1369,15 @@ export default function NewHero() {
 
           .hero-btn-primary,
           .hero-btn-secondary {
-            padding: 14px 24px;
+            padding: 16px 28px;
           }
 
           .code-window {
             max-width: 100%;
+          }
+
+          .orb {
+            display: none;
           }
         }
 
@@ -990,42 +1416,38 @@ export default function NewHero() {
           .hero-btn-secondary {
             width: 100%;
             justify-content: center;
-            padding: 14px 20px;
+            padding: 16px 24px;
           }
 
           .hero-features {
-            gap: 10px;
-            flex-wrap: wrap;
+            gap: 8px;
           }
 
-          .feature {
+          .feature-pill {
             font-size: 12px;
-          }
-
-          .feature-sep {
-            display: none;
+            padding: 6px 12px;
           }
 
           .code-header {
-            padding: 12px 16px;
+            padding: 14px 18px;
           }
 
           .code-body {
-            padding: 16px;
+            padding: 18px;
           }
 
           .code-line {
-            font-size: 11px;
+            font-size: 12px;
             flex-wrap: wrap;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
           }
 
           .code-footer {
-            padding: 12px 16px;
+            padding: 14px 18px;
           }
 
           .verify-status {
-            font-size: 11px;
+            font-size: 12px;
           }
         }
 
@@ -1048,7 +1470,7 @@ export default function NewHero() {
 
           .hero-badge {
             font-size: 12px;
-            padding: 6px 12px;
+            padding: 8px 14px;
           }
 
           .hero-description {
@@ -1057,6 +1479,11 @@ export default function NewHero() {
 
           .code-line {
             font-size: 10px;
+          }
+
+          .feature-pill {
+            font-size: 11px;
+            padding: 5px 10px;
           }
         }
 
@@ -1069,7 +1496,39 @@ export default function NewHero() {
             transition: none;
           }
 
-          .connection-line {
+          .headline-char,
+          .headline-char-sub {
+            opacity: 1;
+            transform: none;
+            animation: none;
+          }
+
+          .desc-line {
+            background-size: 100% 100%;
+            animation: none;
+          }
+
+          .hero-clarifier {
+            opacity: 1;
+            animation: none;
+          }
+
+          .aurora-layer {
+            animation: none;
+            opacity: 0.6;
+          }
+
+          .orb {
+            animation: none;
+          }
+
+          .badge-glow {
+            animation: none;
+            opacity: 0.6;
+          }
+
+          .connection-line,
+          .connection-glow {
             stroke-dashoffset: 0;
             animation: none;
           }
@@ -1087,7 +1546,13 @@ export default function NewHero() {
             animation: none;
           }
 
-          .pulse-ring {
+          .node-glow {
+            animation: none;
+            opacity: 0.3;
+          }
+
+          .pulse-ring,
+          .pulse-ring-alt {
             animation: none;
             opacity: 0.3;
           }
@@ -1096,9 +1561,10 @@ export default function NewHero() {
             display: none;
           }
 
-          .floating-particle {
+          .floating-particle,
+          .floating-particle-glow {
             animation: none;
-            opacity: 0.3;
+            opacity: 0.4;
           }
 
           .code-line {
@@ -1117,17 +1583,39 @@ export default function NewHero() {
             animation: none;
           }
 
-          .code-glow {
+          .verify-checkmark {
             opacity: 1;
+            transform: none;
+            animation: none;
+          }
+
+          .verify-pulse {
+            display: none;
+          }
+
+          .verify-shield {
+            animation: none;
+          }
+
+          .code-window-shine {
+            display: none;
+          }
+
+          .code-window-wrapper:hover {
+            transform: none;
           }
 
           .hero-btn-primary,
-          .hero-btn-secondary {
+          .hero-btn-secondary,
+          .hero-badge,
+          .feature-pill {
             transition: none;
           }
 
           .hero-btn-primary:hover,
-          .hero-btn-secondary:hover {
+          .hero-btn-secondary:hover,
+          .hero-badge:hover,
+          .feature-pill:hover {
             transform: none;
           }
         }
