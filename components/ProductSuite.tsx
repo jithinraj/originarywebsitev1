@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Zap, ShieldCheck, BarChart3, Layers } from 'lucide-react'
 
@@ -13,7 +12,7 @@ const products = [
     href: '/products/gateway-402',
     icon: Zap,
     color: '#635bff',
-    features: ['Edge deployment', 'HTTP 402 flows', 'Signed receipts', 'Sub-ms latency']
+    features: ['Edge deployment', 'HTTP 402 flows', 'Signed receipts', 'Sub-ms latency'],
   },
   {
     id: 'verify',
@@ -23,7 +22,7 @@ const products = [
     href: '/products/verify',
     icon: ShieldCheck,
     color: '#00d4aa',
-    features: ['Offline verification', 'JWKS support', 'Policy validation', 'Evidence chains']
+    features: ['Offline verification', 'JWKS support', 'Policy validation', 'Evidence chains'],
   },
   {
     id: 'trace',
@@ -33,7 +32,7 @@ const products = [
     href: '/trace',
     icon: BarChart3,
     color: '#f59e0b',
-    features: ['Audit exports', 'Evidence views', 'Compliance tools', 'Dispute resolution']
+    features: ['Audit exports', 'Evidence views', 'Compliance tools', 'Dispute resolution'],
   },
   {
     id: 'studio',
@@ -43,140 +42,141 @@ const products = [
     href: '/products/studio',
     icon: Layers,
     color: '#8b5cf6',
-    features: ['Real-time analytics', 'Scale governance', 'Compliance dashboard', 'Team management']
+    features: ['Real-time analytics', 'Scale governance', 'Compliance dashboard', 'Team management'],
   },
 ]
 
 export default function ProductSuite() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true)
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <section ref={sectionRef} className="products">
+    <section className="products">
+      <div className="section-transition-top" aria-hidden="true" />
+      <div className="section-transition-bottom" aria-hidden="true" />
+
+      <div className="products-bg" aria-hidden="true">
+        <div className="bg-gradient" />
+      </div>
+
       <div className="products-container">
-        {/* Header */}
-        <div className={`products-header ${isVisible ? 'visible' : ''}`}>
-          <span className="products-label">Products</span>
-          <h2 className="products-title">
-            Built for the agentic economy
-          </h2>
+        <div className="products-header">
+          <span className="products-label">Product Suite</span>
+          <h2 className="products-title">Built for the agentic economy</h2>
           <p className="products-subtitle">
             Enterprise-grade infrastructure for policy enforcement, payment flows, and cryptographic verification.
           </p>
         </div>
 
-        {/* Product Grid */}
         <div className="products-grid">
-          {products.map((product, i) => (
-            <Link
-              key={product.id}
-              href={product.href}
-              className={`product ${isVisible ? 'visible' : ''}`}
-              style={{
-                '--accent': product.color,
-                '--delay': `${i * 120 + 150}ms`
-              } as React.CSSProperties}
-            >
-              <div className="product-icon">
-                <product.icon size={26} strokeWidth={2} />
-              </div>
+          {products.map((product) => {
+            const Icon = product.icon
 
-              <div className="product-body">
-                <h3 className="product-title">{product.title}</h3>
-                <p className="product-tagline">{product.tagline}</p>
-                <p className="product-desc">{product.desc}</p>
+            return (
+              <div key={product.id} className="product-card-wrapper" style={{ '--accent': product.color } as React.CSSProperties}>
+                <Link href={product.href} className="product-card">
+                  <div className="card-header">
+                    <div className="card-icon">
+                      <Icon size={22} strokeWidth={2} />
+                    </div>
+                    <div className="card-arrow">
+                      <ArrowRight size={18} strokeWidth={2} />
+                    </div>
+                  </div>
 
-                <ul className="product-features">
-                  {product.features.map((feature, idx) => (
-                    <li key={idx} className="feature-item">
-                      <svg className="feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M3.5 8L6.5 11L12.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                  <div className="card-body">
+                    <h3 className="card-title">{product.title}</h3>
+                    <p className="card-tagline">{product.tagline}</p>
+                    <p className="card-desc">{product.desc}</p>
+                  </div>
 
-              <div className="product-footer">
-                <span className="product-link">
-                  Learn more
-                  <ArrowRight size={16} strokeWidth={2.5} />
-                </span>
+                  <div className="card-features">
+                    {product.features.map((feature, idx) => (
+                      <span key={idx} className="feature-tag">
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="card-indicator" />
+                </Link>
               </div>
-            </Link>
-          ))}
+            )
+          })}
         </div>
 
-        {/* Footer */}
-        <div className={`products-footer ${isVisible ? 'visible' : ''}`}>
+        <div className="products-footer">
           <div className="footer-badges">
-            <div className="footer-badge">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3.5 8L6.5 11L12.5 5" stroke="#635bff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span>Open source</span>
-            </div>
-            <div className="footer-badge">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3.5 8L6.5 11L12.5 5" stroke="#00d4aa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span>Apache-2.0</span>
-            </div>
-            <div className="footer-badge">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3.5 8L6.5 11L12.5 5" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <span>Self-hostable</span>
-            </div>
+            <span className="badge">
+              <span className="badge-dot badge-dot-purple" />
+              Open Protocol
+            </span>
+            <span className="badge-sep" />
+            <span className="badge">
+              <span className="badge-dot badge-dot-green" />
+              Apache-2.0 Licensed
+            </span>
+            <span className="badge-sep" />
+            <span className="badge">
+              <span className="badge-dot badge-dot-orange" />
+              Self-Hostable
+            </span>
           </div>
         </div>
       </div>
 
       <style jsx>{`
         .products {
-          padding: 180px 0;
-          background: #ffffff;
           position: relative;
+          padding: 140px 0;
+          background: linear-gradient(180deg, #f8f8fc 0%, #fafafa 30%, #fafafa 70%, #f8f8fc 100%);
+          overflow: hidden;
+        }
+
+        .section-transition-top {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 80px;
+          background: linear-gradient(180deg, #fafafa 0%, transparent 100%);
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .section-transition-bottom {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 80px;
+          background: linear-gradient(0deg, #fafafa 0%, transparent 100%);
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .products-bg {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+        }
+
+        .bg-gradient {
+          position: absolute;
+          inset: 0;
+          background:
+            radial-gradient(ellipse 60% 40% at 80% 0%, rgba(99, 91, 255, 0.05) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 30% at 20% 100%, rgba(0, 212, 170, 0.04) 0%, transparent 50%);
         }
 
         .products-container {
           max-width: 1200px;
           margin: 0 auto;
           padding: 0 24px;
+          position: relative;
+          z-index: 1;
         }
 
-        /* Header - Theory VC inspired cascade */
         .products-header {
           text-align: center;
-          margin-bottom: 64px;
-          opacity: 0;
-          transform: translateY(40px);
-          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .products-header.visible {
-          opacity: 1;
-          transform: translateY(0);
+          margin-bottom: 56px;
         }
 
         .products-label {
@@ -186,246 +186,201 @@ export default function ProductSuite() {
           letter-spacing: 0.1em;
           color: #6b6b6b;
           text-transform: uppercase;
-          margin-bottom: 20px;
+          margin-bottom: 16px;
         }
 
         .products-title {
-          font-size: clamp(44px, 6vw, 72px);
+          font-size: clamp(36px, 5vw, 56px);
           font-weight: 600;
-          letter-spacing: -0.035em;
+          letter-spacing: -0.03em;
           color: #0a0a0a;
-          margin: 0 0 24px;
-          line-height: 1.05;
+          margin: 0 0 16px;
+          line-height: 1.1;
         }
 
         .products-subtitle {
-          font-size: 20px;
+          font-size: 18px;
           line-height: 1.6;
           color: #525252;
           margin: 0 auto;
-          max-width: 560px;
+          max-width: 540px;
         }
 
-        /* Grid */
         .products-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 32px;
-          margin-bottom: 72px;
+          gap: 20px;
+          margin-bottom: 56px;
         }
 
-        /* Product Card */
-        .product {
+        .product-card-wrapper {
+          position: relative;
+        }
+
+        .product-card-wrapper :global(.product-card) {
+          position: relative;
           display: flex;
           flex-direction: column;
-          padding: 40px;
-          background: #fafafa;
-          border: 1px solid transparent;
-          border-radius: 20px;
+          padding: 28px;
+          background: #ffffff;
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          border-radius: 16px;
           text-decoration: none;
-          opacity: 0;
-          transform: translateY(40px);
-          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          overflow: hidden;
+          transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+          height: 100%;
         }
 
-        .product.visible {
-          opacity: 1;
-          transform: translateY(0);
-          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
-          transition-delay: var(--delay);
+        .product-card-wrapper :global(.product-card:hover) {
+          border-color: rgba(0, 0, 0, 0.12);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+          transform: translateY(-2px);
         }
 
-        .product:hover {
-          border-color: rgba(0, 0, 0, 0.08);
-          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+        .card-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 20px;
         }
 
-        /* Icon */
-        .product-icon {
-          width: 48px;
-          height: 48px;
+        .card-icon {
+          width: 44px;
+          height: 44px;
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #ffffff;
-          border-radius: 12px;
-          color: #0a0a0a;
-          margin-bottom: 28px;
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          transition: border-color 0.2s ease;
+          background: #f5f5f5;
+          border-radius: 10px;
+          color: var(--accent);
+          transition: background 0.2s ease, color 0.2s ease;
         }
 
-        .product:hover .product-icon {
-          border-color: rgba(0, 0, 0, 0.12);
+        .product-card-wrapper :global(.product-card:hover) .card-icon {
+          background: var(--accent);
+          color: white;
         }
 
-        /* Body */
-        .product-body {
+        .card-arrow {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #a3a3a3;
+          transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .product-card-wrapper :global(.product-card:hover) .card-arrow {
+          color: var(--accent);
+          transform: translateX(4px);
+        }
+
+        .card-body {
           flex: 1;
+          margin-bottom: 20px;
         }
 
-        .product-title {
-          font-size: 24px;
+        .card-title {
+          font-size: 22px;
           font-weight: 700;
           color: #0a0a0a;
           margin: 0 0 6px;
           letter-spacing: -0.02em;
         }
 
-        .product-tagline {
-          font-size: 14px;
-          font-weight: 600;
-          color: var(--accent);
-          margin: 0 0 12px;
-        }
-
-        .product-desc {
-          font-size: 15px;
-          line-height: 1.6;
-          color: #525252;
-          margin: 0 0 20px;
-        }
-
-        .product-features {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 10px;
-        }
-
-        .feature-item {
-          display: flex;
-          align-items: center;
-          gap: 8px;
+        .card-tagline {
           font-size: 13px;
-          color: #525252;
-        }
-
-        .feature-check {
-          color: #00d4aa;
-          flex-shrink: 0;
-        }
-
-        /* Footer */
-        .product-footer {
-          margin-top: 24px;
-          padding-top: 20px;
-          border-top: 1px solid #f0f0f0;
-        }
-
-        .product-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 14px;
           font-weight: 600;
           color: var(--accent);
+          margin: 0 0 10px;
         }
 
-        .product:hover .product-link {
-          gap: 12px;
+        .card-desc {
+          font-size: 14px;
+          line-height: 1.55;
+          color: #525252;
+          margin: 0;
         }
 
-        /* Section Footer */
-        .products-footer {
+        .card-features {
           display: flex;
-          justify-content: center;
-          opacity: 0;
-          transform: translateY(40px);
-          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s;
+          flex-wrap: wrap;
+          gap: 6px;
         }
 
-        .products-footer.visible {
-          opacity: 1;
-          transform: translateY(0);
+        .feature-tag {
+          padding: 5px 10px;
+          font-size: 11px;
+          font-weight: 500;
+          color: #525252;
+          background: #f5f5f5;
+          border-radius: 5px;
+        }
+
+        .card-indicator {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: var(--accent);
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s ease;
+        }
+
+        .product-card-wrapper :global(.product-card:hover) .card-indicator {
+          transform: scaleX(1);
+        }
+
+        .products-footer {
+          text-align: center;
         }
 
         .footer-badges {
           display: flex;
+          justify-content: center;
           align-items: center;
-          gap: 32px;
+          gap: 20px;
         }
 
-        .footer-badge {
+        .badge {
           display: flex;
           align-items: center;
           gap: 8px;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 500;
           color: #525252;
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-          .products {
-            padding: 140px 0;
-          }
-
-          .products-title {
-            font-size: clamp(36px, 5vw, 48px);
-          }
-
-          .products-grid {
-            gap: 20px;
-          }
-
-          .product {
-            padding: 28px;
-          }
+        .badge-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
         }
 
-        @media (max-width: 768px) {
+        .badge-dot-purple { background: #635bff; }
+        .badge-dot-green { background: #00d4aa; }
+        .badge-dot-orange { background: #f59e0b; }
+
+        .badge-sep {
+          width: 3px;
+          height: 3px;
+          border-radius: 50%;
+          background: #d4d4d4;
+        }
+
+        @media (max-width: 900px) {
           .products {
             padding: 100px 0;
           }
 
-          .products-container {
-            padding: 0 20px;
-          }
-
-          .products-header {
-            margin-bottom: 40px;
-          }
-
-          .products-title {
-            font-size: clamp(32px, 8vw, 40px);
-          }
-
-          .products-subtitle {
-            font-size: 17px;
-          }
-
           .products-grid {
             grid-template-columns: 1fr;
-            gap: 16px;
-            margin-bottom: 48px;
-          }
-
-          .product {
-            padding: 24px;
-          }
-
-          .product-title {
-            font-size: 20px;
-          }
-
-          .product-desc {
-            font-size: 14px;
-          }
-
-          .product-features {
-            grid-template-columns: 1fr;
-          }
-
-          .footer-badges {
-            flex-direction: column;
             gap: 16px;
           }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
           .products {
             padding: 80px 0;
           }
@@ -435,7 +390,7 @@ export default function ProductSuite() {
           }
 
           .products-header {
-            margin-bottom: 32px;
+            margin-bottom: 40px;
           }
 
           .products-title {
@@ -443,69 +398,28 @@ export default function ProductSuite() {
           }
 
           .products-subtitle {
-            font-size: 15px;
+            font-size: 16px;
           }
 
-          .product {
+          .products-grid {
+            margin-bottom: 40px;
+          }
+
+          .product-card-wrapper :global(.product-card) {
             padding: 20px;
           }
 
-          .product-icon {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 20px;
-          }
-
-          .product-title {
+          .card-title {
             font-size: 18px;
           }
 
-          .product-tagline {
-            font-size: 13px;
+          .footer-badges {
+            flex-direction: column;
+            gap: 10px;
           }
 
-          .product-desc {
-            font-size: 14px;
-            margin-bottom: 16px;
-          }
-
-          .product-footer {
-            margin-top: 20px;
-            padding-top: 16px;
-          }
-
-          .feature-item {
-            font-size: 12px;
-          }
-
-          .footer-badge {
-            font-size: 13px;
-          }
-        }
-
-        /* Reduced Motion */
-        @media (prefers-reduced-motion: reduce) {
-          .products-header,
-          .product,
-          .products-footer,
-          .product-icon,
-          .product-link {
-            transition: none;
-          }
-
-          .products-header,
-          .product,
-          .products-footer {
-            opacity: 1;
-            transform: none;
-          }
-
-          .product:hover {
-            transform: none;
-          }
-
-          .product:hover .product-icon {
-            transform: none;
+          .badge-sep {
+            display: none;
           }
         }
       `}</style>

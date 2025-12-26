@@ -8,7 +8,6 @@ export default function Footer() {
       style={{
         background: 'linear-gradient(180deg, #fafafa 0%, #ffffff 40%, #fafafa 100%)',
         borderTop: '1px solid rgba(0, 0, 0, 0.04)',
-        marginTop: 'var(--space-32)',
         position: 'relative'
       }}
       role="contentinfo"

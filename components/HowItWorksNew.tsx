@@ -59,7 +59,6 @@ export default function HowItWorksNew() {
     return () => observer.disconnect()
   }, [])
 
-  // Auto-advance animation
   useEffect(() => {
     if (!isVisible) return
 
@@ -73,14 +72,13 @@ export default function HowItWorksNew() {
 
   return (
     <section ref={sectionRef} className="how">
-      {/* Background Effects */}
+      <div className="section-transition-top" aria-hidden="true" />
+
       <div className="how-bg">
         <div className="bg-gradient" />
-        <div className="bg-grid" />
       </div>
 
       <div className="how-container">
-        {/* Header */}
         <div className={`how-header ${isVisible ? 'visible' : ''}`}>
           <div className="label-wrapper">
             <span className="how-label">How it works</span>
@@ -88,11 +86,9 @@ export default function HowItWorksNew() {
           <h2 className="how-title">Three steps to verifiable interactions</h2>
         </div>
 
-        {/* Animated Flowchart */}
         <div className={`flowchart ${isVisible ? 'visible' : ''}`}>
           <svg viewBox="0 0 900 300" className="flow-svg" preserveAspectRatio="xMidYMid meet">
             <defs>
-              {/* Gradients */}
               <linearGradient id="line-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#635bff" />
                 <stop offset="100%" stopColor="#00d4aa" />
@@ -103,7 +99,6 @@ export default function HowItWorksNew() {
               </linearGradient>
             </defs>
 
-            {/* Connection Lines (static base) */}
             <path
               d="M200 150 Q 350 150 450 150"
               className="connection-base"
@@ -119,7 +114,6 @@ export default function HowItWorksNew() {
               fill="none"
             />
 
-            {/* Animated Connection Lines */}
             <path
               d="M200 150 Q 350 150 450 150"
               className={`connection-line line-1 ${flowProgress >= 1 ? 'active' : ''}`}
@@ -135,7 +129,6 @@ export default function HowItWorksNew() {
               fill="none"
             />
 
-            {/* Particle trails */}
             <g className="particles">
               {[0, 1, 2, 3, 4].map((i) => (
                 <circle
@@ -157,7 +150,6 @@ export default function HowItWorksNew() {
               ))}
             </g>
 
-            {/* Traveling Receipt Packet */}
             <g className={`receipt-packet ${flowProgress >= 1 ? 'traveling' : ''}`}>
               <rect x="-20" y="-14" width="40" height="28" rx="6" fill="white" stroke="#635bff" strokeWidth="2"/>
               <path d="M-12 -4h24M-12 4h16" stroke="#635bff" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
@@ -165,7 +157,6 @@ export default function HowItWorksNew() {
               <path d="M8 6l2 2 4-4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </g>
 
-            {/* Node 1: Publish */}
             <g className={`node node-1 ${activeStep === 0 ? 'active' : ''}`} onClick={() => setActiveStep(0)}>
               <circle cx="150" cy="150" r="50" className="pulse-ring ring-1" fill="none" stroke="#635bff" strokeWidth="1" opacity="0"/>
               <circle cx="150" cy="150" r="50" className="pulse-ring ring-2" fill="none" stroke="#635bff" strokeWidth="1" opacity="0"/>
@@ -183,7 +174,6 @@ export default function HowItWorksNew() {
               <text x="150" y="220" textAnchor="middle" className="node-label">Publish</text>
             </g>
 
-            {/* Node 2: Enforce */}
             <g className={`node node-2 ${activeStep === 1 ? 'active' : ''}`} onClick={() => setActiveStep(1)}>
               <circle cx="450" cy="150" r="50" className="pulse-ring ring-1" fill="none" stroke="#00d4aa" strokeWidth="1" opacity="0"/>
               <circle cx="450" cy="150" r="50" className="pulse-ring ring-2" fill="none" stroke="#00d4aa" strokeWidth="1" opacity="0"/>
@@ -198,7 +188,6 @@ export default function HowItWorksNew() {
               <text x="450" y="220" textAnchor="middle" className="node-label">Enforce</text>
             </g>
 
-            {/* Node 3: Receipt */}
             <g className={`node node-3 ${activeStep === 2 ? 'active' : ''}`} onClick={() => setActiveStep(2)}>
               <circle cx="750" cy="150" r="50" className="pulse-ring ring-1" fill="none" stroke="#f59e0b" strokeWidth="1" opacity="0"/>
               <circle cx="750" cy="150" r="50" className="pulse-ring ring-2" fill="none" stroke="#f59e0b" strokeWidth="1" opacity="0"/>
@@ -214,7 +203,6 @@ export default function HowItWorksNew() {
               <text x="750" y="220" textAnchor="middle" className="node-label">Receipt</text>
             </g>
 
-            {/* Arrow indicators */}
             <g className="arrows">
               <polygon points="295,145 305,150 295,155" fill="#635bff" className={`arrow arrow-1 ${flowProgress >= 1 ? 'active' : ''}`}/>
               <polygon points="595,145 605,150 595,155" fill="#00d4aa" className={`arrow arrow-2 ${flowProgress >= 2 ? 'active' : ''}`}/>
@@ -222,7 +210,6 @@ export default function HowItWorksNew() {
           </svg>
         </div>
 
-        {/* Step Cards */}
         <div className="steps-grid">
           {steps.map((step, i) => (
             <div
@@ -252,7 +239,6 @@ export default function HowItWorksNew() {
           ))}
         </div>
 
-        {/* Code Snippet */}
         <div className={`code-section ${isVisible ? 'visible' : ''}`}>
           <div className="code-header-bar">
             <div className="code-dots">
@@ -280,7 +266,6 @@ export default function HowItWorksNew() {
           </pre>
         </div>
 
-        {/* CTA */}
         <div className={`how-cta ${isVisible ? 'visible' : ''}`}>
           <Link href="/demo" className="cta-primary">
             See it in action
@@ -291,7 +276,6 @@ export default function HowItWorksNew() {
           </Link>
         </div>
 
-        {/* Footer Note */}
         <div className={`how-footer ${isVisible ? 'visible' : ''}`}>
           <div className="footer-badges">
             <span className="badge">Works with any payment rail</span>
@@ -307,11 +291,21 @@ export default function HowItWorksNew() {
         .how {
           position: relative;
           padding: 180px 0;
-          background: #fafafa;
+          background: linear-gradient(180deg, #fafafa 0%, #f8f8fc 50%, #fafafa 100%);
           overflow: hidden;
         }
 
-        /* Background */
+        .section-transition-top {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 120px;
+          background: linear-gradient(180deg, #fafafa 0%, transparent 100%);
+          pointer-events: none;
+          z-index: 1;
+        }
+
         .how-bg {
           position: absolute;
           inset: 0;
@@ -327,16 +321,6 @@ export default function HowItWorksNew() {
             radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0, 212, 170, 0.04) 0%, transparent 50%);
         }
 
-        .bg-grid {
-          position: absolute;
-          inset: 0;
-          background-image:
-            linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
-          background-size: 60px 60px;
-          mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%);
-        }
-
         .how-container {
           max-width: 1200px;
           margin: 0 auto;
@@ -344,7 +328,6 @@ export default function HowItWorksNew() {
           position: relative;
         }
 
-        /* Header - Theory VC inspired cascade */
         .how-header {
           text-align: center;
           margin-bottom: 60px;
@@ -380,7 +363,6 @@ export default function HowItWorksNew() {
           line-height: 1.05;
         }
 
-        /* Flowchart */
         .flowchart {
           margin-bottom: 60px;
           opacity: 0;
@@ -401,7 +383,6 @@ export default function HowItWorksNew() {
           display: block;
         }
 
-        /* Connection lines */
         .connection-line {
           stroke-dasharray: 300;
           stroke-dashoffset: 300;
@@ -412,7 +393,6 @@ export default function HowItWorksNew() {
           stroke-dashoffset: 0;
         }
 
-        /* Particles */
         .particle {
           opacity: 0;
         }
@@ -445,7 +425,6 @@ export default function HowItWorksNew() {
           100% { transform: translate(700px, 150px); opacity: 0; }
         }
 
-        /* Receipt packet */
         .receipt-packet {
           transform: translate(150px, 150px);
           opacity: 0;
@@ -462,7 +441,6 @@ export default function HowItWorksNew() {
           95%, 100% { transform: translate(750px, 150px); opacity: 0; }
         }
 
-        /* Nodes */
         .node {
           cursor: pointer;
           transition: transform 0.3s ease;
@@ -496,7 +474,6 @@ export default function HowItWorksNew() {
           transform: scale(1.1);
         }
 
-        /* Pulse rings */
         .pulse-ring {
           transform-origin: center;
         }
@@ -520,7 +497,6 @@ export default function HowItWorksNew() {
           fill: #525252;
         }
 
-        /* Arrows */
         .arrow {
           opacity: 0.2;
           transition: opacity 0.3s ease;
@@ -530,7 +506,6 @@ export default function HowItWorksNew() {
           opacity: 1;
         }
 
-        /* Step Cards */
         .steps-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
@@ -542,13 +517,14 @@ export default function HowItWorksNew() {
           position: relative;
           padding: 36px;
           background: #ffffff;
-          border: 1px solid transparent;
+          border: 1px solid rgba(0, 0, 0, 0.06);
           border-radius: 16px;
           cursor: pointer;
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           opacity: 0;
           transform: translateY(40px);
           overflow: hidden;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .step-card.visible {
@@ -560,8 +536,9 @@ export default function HowItWorksNew() {
 
         .step-card:hover,
         .step-card.active {
-          border-color: rgba(0, 0, 0, 0.08);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+          border-color: rgba(0, 0, 0, 0.1);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+          transform: translateY(-2px);
         }
 
         .card-glow {
@@ -590,28 +567,28 @@ export default function HowItWorksNew() {
 
         .step-num {
           font-family: var(--font-mono);
-          font-size: 13px;
-          font-weight: 700;
-          color: var(--accent);
-          opacity: 0.5;
-          letter-spacing: 0.05em;
+          font-size: 12px;
+          font-weight: 600;
+          color: #737373;
+          letter-spacing: 0.08em;
         }
 
         .step-icon {
-          width: 40px;
-          height: 40px;
+          width: 44px;
+          height: 44px;
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #f5f5f5;
+          background: rgba(99, 91, 255, 0.08);
           border-radius: 10px;
-          color: #0a0a0a;
-          transition: background 0.2s ease;
+          color: #635bff;
+          transition: background 0.2s ease, color 0.2s ease;
         }
 
         .step-card:hover .step-icon,
         .step-card.active .step-icon {
-          background: #ebebeb;
+          background: #635bff;
+          color: white;
         }
 
         .card-body {
@@ -619,24 +596,24 @@ export default function HowItWorksNew() {
         }
 
         .step-title {
-          font-size: 22px;
+          font-size: 24px;
           font-weight: 700;
           color: #0a0a0a;
-          margin: 0 0 4px;
+          margin: 0 0 8px;
           letter-spacing: -0.02em;
         }
 
         .step-tagline {
           font-size: 14px;
           font-weight: 600;
-          color: var(--accent);
+          color: #635bff;
           margin: 0 0 12px;
         }
 
         .step-desc {
           font-size: 15px;
-          line-height: 1.6;
-          color: #525252;
+          line-height: 1.7;
+          color: #1a1a1a;
           margin: 0;
         }
 
@@ -646,7 +623,7 @@ export default function HowItWorksNew() {
           left: 0;
           right: 0;
           height: 3px;
-          background: var(--accent);
+          background: #635bff;
           transform: scaleX(0);
           transform-origin: left;
           transition: transform 0.4s ease;
@@ -656,7 +633,6 @@ export default function HowItWorksNew() {
           transform: scaleX(1);
         }
 
-        /* Code Section */
         .code-section {
           max-width: 600px;
           margin: 0 auto 48px;
@@ -721,7 +697,6 @@ export default function HowItWorksNew() {
         .code-number { color: #fcd34d; }
         .code-punct { color: #9ca3af; }
 
-        /* CTA */
         .how-cta {
           display: flex;
           justify-content: center;
@@ -777,7 +752,6 @@ export default function HowItWorksNew() {
           transform: translateY(-2px);
         }
 
-        /* Footer */
         .how-footer {
           text-align: center;
           opacity: 0;
@@ -810,7 +784,6 @@ export default function HowItWorksNew() {
           background: #d4d4d4;
         }
 
-        /* Responsive */
         @media (max-width: 1024px) {
           .how {
             padding: 140px 0;
@@ -891,11 +864,11 @@ export default function HowItWorksNew() {
           }
 
           .step-card {
-            padding: 20px;
+            padding: 24px;
           }
 
           .step-title {
-            font-size: 18px;
+            font-size: 20px;
           }
 
           .step-tagline {
@@ -904,6 +877,7 @@ export default function HowItWorksNew() {
 
           .step-desc {
             font-size: 14px;
+            line-height: 1.65;
           }
 
           .code-section {
@@ -955,7 +929,7 @@ export default function HowItWorksNew() {
           }
 
           .step-card {
-            padding: 18px;
+            padding: 20px;
           }
 
           .card-header {
@@ -963,16 +937,17 @@ export default function HowItWorksNew() {
           }
 
           .step-icon {
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
           }
 
           .step-title {
-            font-size: 17px;
+            font-size: 18px;
           }
 
           .step-desc {
-            font-size: 13px;
+            font-size: 14px;
+            line-height: 1.6;
           }
 
           .code-section {
@@ -996,7 +971,6 @@ export default function HowItWorksNew() {
           }
         }
 
-        /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
           .how-header,
           .flowchart,
