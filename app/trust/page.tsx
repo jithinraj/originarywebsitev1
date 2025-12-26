@@ -197,10 +197,21 @@ export default function TrustPage() {
               <p style={{
                 fontSize: 'var(--text-lg)',
                 color: 'var(--gray-600)',
-                marginBottom: 'var(--space-8)',
+                marginBottom: 'var(--space-6)',
                 lineHeight: 1.7
               }}>
-                The PEAC protocol is an open standard. Originary provides commercial orchestration and tooling built on these open foundations. All protocol specifications and verification endpoints remain publicly accessible.
+                The PEAC protocol is an open standard (Apache-2.0) designed for multiple independent implementations.
+                Originary provides one commercial implementation with managed services and tooling built on these open foundations.
+                All protocol specifications and verification endpoints remain publicly accessible.
+              </p>
+              <p style={{
+                fontSize: 'var(--text-base)',
+                color: 'var(--gray-700)',
+                marginBottom: 'var(--space-8)',
+                lineHeight: 1.6
+              }}>
+                <strong>No vendor lock-in.</strong> We are committed to having multiple conformant implementations before PEAC 1.0.
+                Your policies and receipts work across any PEAC-conformant system.
               </p>
               <div style={{
                 display: 'flex',
@@ -208,16 +219,19 @@ export default function TrustPage() {
                 justifyContent: 'center',
                 flexWrap: 'wrap'
               }}>
-                <Link href="/docs/receipts" className="btn btn-secondary" style={{
+                <Link href="/peac" className="btn btn-secondary" style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)'
                 }}>
-                  Protocol Documentation
+                  Protocol Overview
                   <ExternalLink size={16} />
                 </Link>
-                <Link href="/pricing" className="btn btn-primary">
-                  View Pricing
+                <Link href="/conformance" className="btn btn-secondary">
+                  Conformance Suite
+                </Link>
+                <Link href="/governance" className="btn btn-secondary">
+                  Governance Model
                 </Link>
               </div>
             </div>

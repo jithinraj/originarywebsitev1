@@ -119,6 +119,47 @@ export default function Developers() {
           </div>
         </section>
 
+        {/* Protocol Callout */}
+        <section className="section" style={{ paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)' }}>
+          <div className="container">
+            <div className="card" style={{
+              maxWidth: '800px',
+              margin: '0 auto',
+              padding: 'var(--space-8)',
+              border: '2px solid var(--brand-primary)',
+              borderRadius: 'var(--radius-2xl)',
+              background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.03) 0%, rgba(0, 212, 170, 0.03) 100%)',
+              textAlign: 'center'
+            }}>
+              <h3 style={{
+                fontSize: 'var(--text-2xl)',
+                fontWeight: 700,
+                marginBottom: 'var(--space-4)',
+                color: 'var(--gray-900)'
+              }}>
+                Build on an open protocol
+              </h3>
+              <p style={{
+                fontSize: 'var(--text-lg)',
+                color: 'var(--gray-700)',
+                lineHeight: 1.7,
+                marginBottom: 'var(--space-4)'
+              }}>
+                <strong>No vendor lock-in.</strong> PEAC is an open protocol (Apache-2.0) designed for multiple independent implementations.
+                You can self-host, use Originary's managed services, or build your own conformant implementation.
+              </p>
+              <p style={{
+                fontSize: 'var(--text-base)',
+                color: 'var(--gray-600)',
+                lineHeight: 1.6
+              }}>
+                Your policies, receipts, and verification logic work across any PEAC-conformant system.
+                Switch providers, deploy hybrid architectures, or migrate at any time.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Quick Start Section */}
         <section className="section" id="quickstart" style={{ background: 'var(--gray-50)' }}>
           <div className="container">

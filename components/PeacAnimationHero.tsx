@@ -63,7 +63,7 @@ export default function PeacAnimationHero() {
                   letterSpacing: '0.02em'
                 }}
               >
-                POLICY, PAYMENTS, AND PROOF FOR AI AND AGENTIC INTERACTIONS
+                PLATFORM OVERVIEW
               </span>
             </div>
 
@@ -91,7 +91,7 @@ export default function PeacAnimationHero() {
                 fontSize: 'var(--text-lg)',
                 lineHeight: 1.6,
                 color: 'var(--gray-600)',
-                marginBottom: 'var(--space-6)',
+                marginBottom: 'var(--space-4)',
                 maxWidth: '440px',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -99,6 +99,23 @@ export default function PeacAnimationHero() {
               }}
             >
               Agents and crawlers already hit your pages and APIs. Set terms, require payment when needed, and verify every outcome with signed receipts.
+            </p>
+
+            {/* Clarifier */}
+            <p
+              style={{
+                fontSize: 'var(--text-base)',
+                lineHeight: 1.6,
+                color: 'var(--gray-500)',
+                marginBottom: 'var(--space-6)',
+                maxWidth: '440px',
+                fontStyle: 'italic',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.21s'
+              }}
+            >
+              Originary's commercial implementation of the PEAC protocol. Built for production with managed services and support.
             </p>
 
             {/* Trademark Proof Section */}

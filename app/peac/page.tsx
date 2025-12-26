@@ -121,6 +121,120 @@ export default function PeacPage() {
           </div>
         </section>
 
+        {/* Path to Standard Adoption */}
+        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)', background: 'var(--white)' }}>
+          <div className="container">
+            <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+              <h2
+                style={{
+                  fontSize: 'var(--text-3xl)',
+                  fontWeight: 700,
+                  textAlign: 'center',
+                  marginBottom: 'var(--space-6)',
+                  color: 'var(--gray-900)'
+                }}
+              >
+                Path to Standard Adoption
+              </h2>
+              <p
+                style={{
+                  textAlign: 'center',
+                  fontSize: 'var(--text-lg)',
+                  color: 'var(--gray-600)',
+                  marginBottom: 'var(--space-12)',
+                  maxWidth: '700px',
+                  margin: '0 auto var(--space-12) auto',
+                  lineHeight: 1.7
+                }}
+              >
+                We are working toward multiple independent implementations before 1.0
+              </p>
+
+              {/* Roadmap */}
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 'var(--space-4)',
+                marginBottom: 'var(--space-12)',
+                flexWrap: 'wrap'
+              }}>
+                <div className="card" style={{ flex: '1', minWidth: '200px', textAlign: 'center', background: 'var(--gray-50)' }}>
+                  <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>
+                    Pre-1.0
+                  </div>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                    Originary reference implementation
+                  </p>
+                </div>
+
+                <div style={{ fontSize: 'var(--text-2xl)', color: 'var(--gray-400)' }}>→</div>
+
+                <div className="card" style={{ flex: '1', minWidth: '200px', textAlign: 'center', background: 'var(--gray-50)' }}>
+                  <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>
+                    Multiple implementations
+                  </div>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                    Independent conformant implementations
+                  </p>
+                </div>
+
+                <div style={{ fontSize: 'var(--text-2xl)', color: 'var(--gray-400)' }}>→</div>
+
+                <div className="card" style={{ flex: '1', minWidth: '200px', textAlign: 'center', background: 'var(--gray-50)' }}>
+                  <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>
+                    Post-1.0
+                  </div>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                    Broad adoption and ecosystem
+                  </p>
+                </div>
+              </div>
+
+              {/* Statement */}
+              <div className="card" style={{
+                background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.05) 0%, rgba(0, 212, 170, 0.05) 100%)',
+                border: '1px solid rgba(99, 91, 255, 0.1)',
+                padding: 'var(--space-8)',
+                marginBottom: 'var(--space-8)'
+              }}>
+                <p style={{
+                  fontSize: 'var(--text-base)',
+                  color: 'var(--gray-700)',
+                  lineHeight: 1.7,
+                  textAlign: 'center',
+                  marginBottom: 'var(--space-4)'
+                }}>
+                  <strong>No single implementation has privileged status.</strong> Originary is one implementation; we welcome others.
+                </p>
+                <p style={{
+                  fontSize: 'var(--text-sm)',
+                  color: 'var(--gray-600)',
+                  lineHeight: 1.6,
+                  textAlign: 'center'
+                }}>
+                  PEAC is designed for adapter-based interoperability. Multiple implementations ensure the protocol remains neutral, open, and resilient.
+                </p>
+              </div>
+
+              {/* Links to governance and conformance */}
+              <div style={{
+                display: 'flex',
+                gap: 'var(--space-4)',
+                justifyContent: 'center',
+                flexWrap: 'wrap'
+              }}>
+                <Link href="/conformance" className="btn btn-primary">
+                  View conformance suite
+                </Link>
+                <Link href="/governance" className="btn btn-secondary">
+                  Learn about governance
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Why PEAC */}
         <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">

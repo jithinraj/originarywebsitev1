@@ -162,6 +162,35 @@ export default function GovernancePage() {
                 behave consistently across ecosystems.
               </p>
             </div>
+
+            <div className="card" style={{
+              padding: 'var(--space-8)',
+              border: '2px solid var(--brand-primary)',
+              borderRadius: 'var(--radius-2xl)',
+              background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.03) 0%, rgba(0, 212, 170, 0.03) 100%)',
+              gridColumn: '1 / -1'
+            }}>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                borderRadius: 'var(--radius-xl)',
+                background: 'linear-gradient(135deg, var(--brand-primary), var(--brand-secondary))',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: 'var(--space-4)'
+              }}>
+                <Users size={24} style={{ color: 'white' }} />
+              </div>
+              <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)' }}>
+                Multiple Implementations Before 1.0
+              </h3>
+              <p style={{ color: 'var(--gray-700)', lineHeight: 1.6, fontSize: 'var(--text-base)' }}>
+                We are committed to having multiple independent, conformant implementations before declaring PEAC 1.0.
+                No single implementation has privileged status. Originary is one implementation; we welcome others.
+                This ensures the protocol remains truly open, neutral, and adapter-friendly.
+              </p>
+            </div>
           </div>
 
           <div style={{

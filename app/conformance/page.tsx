@@ -213,6 +213,28 @@ export default function ConformancePage() {
             </div>
           </div>
 
+          {/* Implementation Registry Note */}
+          <div className="card" style={{
+            padding: 'var(--space-8)',
+            border: '2px solid var(--brand-primary)',
+            borderRadius: 'var(--radius-2xl)',
+            background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.03) 0%, rgba(0, 212, 170, 0.03) 100%)',
+            marginBottom: 'var(--space-8)'
+          }}>
+            <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>
+              Building a conformant implementation?
+            </h3>
+            <p style={{ color: 'var(--gray-700)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              We welcome independent implementations of the PEAC protocol. The conformance test suite ensures
+              your implementation behaves consistently with the specification and can interoperate with other
+              PEAC-conformant systems.
+            </p>
+            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, fontSize: 'var(--text-sm)' }}>
+              Multiple implementations strengthen the protocol's neutrality and ensure it remains truly open
+              and adapter-friendly. If you're building an implementation, we'd love to hear from you.
+            </p>
+          </div>
+
           <div style={{
             textAlign: 'center',
             padding: 'var(--space-12)',

@@ -106,7 +106,6 @@ export default function NavigationHeader() {
                 { href: '/products/verify', label: 'Verify API' }
               ]} />
 
-              <NavLink href="/pricing">Pricing</NavLink>
               <NavLink href="/developers">Developers</NavLink>
               <NavLink href="/peac">Protocol</NavLink>
               <NavLink href="/demo">Demo</NavLink>
@@ -177,9 +176,6 @@ export default function NavigationHeader() {
                 { href: '/products/verify', label: 'Verify API' }
               ]} />
 
-              <Link href="/pricing" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
-                Pricing
-              </Link>
               <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
                 Developers
               </Link>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     absolute: 'Originary | AI Agent Tools, Infrastructure & Systems'
   },
   description: 'Originary powers agent economies, AI commerce, and compliance with an open system of record to monitor, manage, and monetize AI interactions and access via PEAC.',
-  keywords: 'Originary, PEAC protocol, system of record, agent interactions, signed receipts, policy enforcement, verifiable outcomes, agentic web',
+  keywords: 'Originary, PEAC protocol, AI agent tools, AI commerce, AI compliance, agent economies, AI infrastructure, HTTP 402, agentic web, agentic economy, AI infrastructure, agent transactions',
   alternates: {
     canonical: '/'
   },

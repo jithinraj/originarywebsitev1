@@ -49,7 +49,11 @@ export default function NewHero() {
           </h1>
 
           <p className="hero-description">
-            Originary<span className="tm">™</span> stewards PEAC, an open standard for publishing terms and verifying receipts as durable evidence for what was accessed, under which preferences, how it was paid for, and by whom, while preserving privacy. Build governance and interoperability into agent-native traffic without central gatekeepers.
+            Originary<span className="tm">™</span> builds and stewards an open standard for publishing terms and verifying receipts as durable evidence for what was accessed, under which preferences, how it was paid for, and by whom, while preserving privacy. This makes AI interactions verifiable and auditable across the open internet.
+          </p>
+
+          <p className="hero-clarifier">
+            Designed for independent implementations and adapter-based interoperability across all protocols and rails.
           </p>
 
           <div className="hero-actions">
@@ -218,6 +222,15 @@ export default function NewHero() {
         .hero-description :global(.tm) {
           font-size: 0.7em;
           vertical-align: super;
+        }
+
+        .hero-clarifier {
+          font-size: 16px;
+          line-height: 1.6;
+          color: var(--gray-500);
+          max-width: 560px;
+          margin: 12px 0 0;
+          font-style: italic;
         }
 
         .hero-actions {
