@@ -6,9 +6,10 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: 'linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%)',
-        borderTop: '1px solid var(--gray-100)',
-        marginTop: 'var(--space-32)'
+        background: 'linear-gradient(180deg, #fafafa 0%, #ffffff 40%, #fafafa 100%)',
+        borderTop: '1px solid rgba(0, 0, 0, 0.04)',
+        marginTop: 'var(--space-32)',
+        position: 'relative'
       }}
       role="contentinfo"
     >
@@ -38,17 +39,16 @@ export default function Footer() {
           >
             <div
               style={{
-                width: '40px',
-                height: '40px',
-                borderRadius: 'var(--radius-xl)',
-                background: 'var(--gradient-brand)',
+                width: '36px',
+                height: '36px',
+                borderRadius: '10px',
+                background: '#0a0a0a',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: 'white',
-                fontWeight: 'bold',
-                fontSize: 'var(--text-lg)',
-                boxShadow: '0 4px 12px rgba(99, 91, 255, 0.3)'
+                fontWeight: '600',
+                fontSize: '16px'
               }}
             >
               O

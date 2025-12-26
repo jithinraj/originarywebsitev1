@@ -31,6 +31,12 @@
   --brand-secondary: #00d4aa;
   --brand-accent: #ff6b35;
 
+  /* Electric Accent - Futuristic AI/Tech Feel */
+  --accent-electric: #00D1FF;
+  --accent-electric-light: #33DBFF;
+  --accent-electric-dim: rgba(0, 209, 255, 0.1);
+  --accent-electric-glow: rgba(0, 209, 255, 0.25);
+
   /* Semantic Colors */
   --success: #00d924;
   --warning: #ffab00;
@@ -54,6 +60,15 @@
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   --shadow-elevated: 0 32px 64px -12px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(255, 255, 255, 0.05);
   --shadow-glow: 0 0 32px -8px rgba(99, 91, 255, 0.3);
+
+  /* Premium Shadows - Apple-like subtle depth */
+  --shadow-premium: 0 2px 4px rgba(0, 0, 0, 0.02), 0 8px 16px rgba(0, 0, 0, 0.04), 0 16px 32px rgba(0, 0, 0, 0.04);
+  --shadow-premium-hover: 0 4px 8px rgba(0, 0, 0, 0.03), 0 12px 24px rgba(0, 0, 0, 0.06), 0 24px 48px rgba(0, 0, 0, 0.06);
+
+  /* Electric Glow Shadows */
+  --shadow-glow-electric: 0 0 20px -4px rgba(0, 209, 255, 0.3), 0 0 40px -8px rgba(0, 209, 255, 0.2);
+  --shadow-glow-electric-intense: 0 0 30px -4px rgba(0, 209, 255, 0.4), 0 0 60px -8px rgba(0, 209, 255, 0.25);
+  --shadow-glow-brand: 0 4px 20px -4px rgba(99, 91, 255, 0.35), 0 8px 40px -8px rgba(99, 91, 255, 0.25);
 
   /* === TYPOGRAPHY SCALE === */
   --font-mono: var(--font-jetbrains-mono), 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
@@ -1135,6 +1150,50 @@ table {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-2xl);
+}
+
+/* Premium Glass - Apple-like creamy frosted effect */
+.glass-premium {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-2xl);
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.02),
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  transition: all var(--duration-300) var(--ease-out);
+}
+
+.glass-premium:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.03),
+    0 8px 16px rgba(0, 0, 0, 0.06),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+/* Electric Glass - Subtle cyan-tinted frosted effect */
+.glass-electric {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(0, 209, 255, 0.12);
+  border-radius: var(--radius-2xl);
+  box-shadow:
+    0 0 0 1px rgba(0, 209, 255, 0.05),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all var(--duration-300) var(--ease-out);
+}
+
+.glass-electric:hover {
+  border-color: rgba(0, 209, 255, 0.2);
+  box-shadow:
+    0 0 0 1px rgba(0, 209, 255, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.06),
+    0 0 20px -4px rgba(0, 209, 255, 0.15);
 }
 
 /* === GRADIENT BORDER UTILITY === */

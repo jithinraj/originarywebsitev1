@@ -93,7 +93,7 @@ export default function ProductSuite() {
               className={`product ${isVisible ? 'visible' : ''}`}
               style={{
                 '--accent': product.color,
-                '--delay': `${i * 100}ms`
+                '--delay': `${i * 120 + 150}ms`
               } as React.CSSProperties}
             >
               <div className="product-icon">
@@ -154,8 +154,9 @@ export default function ProductSuite() {
 
       <style jsx>{`
         .products {
-          padding: 140px 0;
-          background: #fafafa;
+          padding: 180px 0;
+          background: #ffffff;
+          position: relative;
         }
 
         .products-container {
@@ -164,13 +165,13 @@ export default function ProductSuite() {
           padding: 0 24px;
         }
 
-        /* Header */
+        /* Header - Theory VC inspired cascade */
         .products-header {
           text-align: center;
           margin-bottom: 64px;
           opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.6s ease, transform 0.6s ease;
+          transform: translateY(40px);
+          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .products-header.visible {
@@ -180,84 +181,82 @@ export default function ProductSuite() {
 
         .products-label {
           display: inline-block;
-          font-size: 13px;
+          font-size: 12px;
           font-weight: 600;
-          letter-spacing: 0.08em;
-          color: #635bff;
+          letter-spacing: 0.1em;
+          color: #6b6b6b;
           text-transform: uppercase;
-          margin-bottom: 16px;
+          margin-bottom: 20px;
         }
 
         .products-title {
-          font-size: clamp(36px, 5vw, 52px);
-          font-weight: 700;
-          letter-spacing: -0.03em;
+          font-size: clamp(44px, 6vw, 72px);
+          font-weight: 600;
+          letter-spacing: -0.035em;
           color: #0a0a0a;
-          margin: 0 0 16px;
-          line-height: 1.15;
+          margin: 0 0 24px;
+          line-height: 1.05;
         }
 
         .products-subtitle {
-          font-size: 18px;
+          font-size: 20px;
           line-height: 1.6;
           color: #525252;
           margin: 0 auto;
-          max-width: 540px;
+          max-width: 560px;
         }
 
         /* Grid */
         .products-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 24px;
-          margin-bottom: 64px;
+          gap: 32px;
+          margin-bottom: 72px;
         }
 
         /* Product Card */
         .product {
           display: flex;
           flex-direction: column;
-          padding: 32px;
-          background: #ffffff;
-          border: 1px solid #e5e5e5;
-          border-radius: 16px;
+          padding: 40px;
+          background: #fafafa;
+          border: 1px solid transparent;
+          border-radius: 20px;
           text-decoration: none;
           opacity: 0;
-          transform: translateY(20px);
-          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+          transform: translateY(40px);
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .product.visible {
           opacity: 1;
           transform: translateY(0);
-          transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
           transition-delay: var(--delay);
         }
 
         .product:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.12);
-          border-color: var(--accent);
+          border-color: rgba(0, 0, 0, 0.08);
+          box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
         }
 
         /* Icon */
         .product-icon {
-          width: 56px;
-          height: 56px;
+          width: 48px;
+          height: 48px;
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #f5f5f5;
-          border-radius: 14px;
-          color: var(--accent);
-          margin-bottom: 24px;
-          transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+          background: #ffffff;
+          border-radius: 12px;
+          color: #0a0a0a;
+          margin-bottom: 28px;
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          transition: border-color 0.2s ease;
         }
 
         .product:hover .product-icon {
-          background: var(--accent);
-          color: #ffffff;
-          transform: scale(1.05);
+          border-color: rgba(0, 0, 0, 0.12);
         }
 
         /* Body */
@@ -334,8 +333,8 @@ export default function ProductSuite() {
           display: flex;
           justify-content: center;
           opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+          transform: translateY(40px);
+          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s;
         }
 
         .products-footer.visible {
@@ -359,22 +358,61 @@ export default function ProductSuite() {
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+          .products {
+            padding: 140px 0;
+          }
+
+          .products-title {
+            font-size: clamp(36px, 5vw, 48px);
+          }
+
+          .products-grid {
+            gap: 20px;
+          }
+
+          .product {
+            padding: 28px;
+          }
+        }
+
         @media (max-width: 768px) {
           .products {
             padding: 100px 0;
           }
 
+          .products-container {
+            padding: 0 20px;
+          }
+
           .products-header {
-            margin-bottom: 48px;
+            margin-bottom: 40px;
+          }
+
+          .products-title {
+            font-size: clamp(32px, 8vw, 40px);
+          }
+
+          .products-subtitle {
+            font-size: 17px;
           }
 
           .products-grid {
             grid-template-columns: 1fr;
             gap: 16px;
+            margin-bottom: 48px;
           }
 
           .product {
             padding: 24px;
+          }
+
+          .product-title {
+            font-size: 20px;
+          }
+
+          .product-desc {
+            font-size: 14px;
           }
 
           .product-features {
@@ -384,6 +422,64 @@ export default function ProductSuite() {
           .footer-badges {
             flex-direction: column;
             gap: 16px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .products {
+            padding: 80px 0;
+          }
+
+          .products-container {
+            padding: 0 16px;
+          }
+
+          .products-header {
+            margin-bottom: 32px;
+          }
+
+          .products-title {
+            font-size: 28px;
+          }
+
+          .products-subtitle {
+            font-size: 15px;
+          }
+
+          .product {
+            padding: 20px;
+          }
+
+          .product-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 20px;
+          }
+
+          .product-title {
+            font-size: 18px;
+          }
+
+          .product-tagline {
+            font-size: 13px;
+          }
+
+          .product-desc {
+            font-size: 14px;
+            margin-bottom: 16px;
+          }
+
+          .product-footer {
+            margin-top: 20px;
+            padding-top: 16px;
+          }
+
+          .feature-item {
+            font-size: 12px;
+          }
+
+          .footer-badge {
+            font-size: 13px;
           }
         }
 

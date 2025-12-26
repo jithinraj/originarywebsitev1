@@ -27,6 +27,11 @@ export default function FinalCTA() {
 
   return (
     <section ref={sectionRef} className="cta">
+      {/* Background gradient mesh */}
+      <div className="cta-bg">
+        <div className="orb orb-1" />
+        <div className="orb orb-2" />
+      </div>
       <div className="cta-container">
         <div className="cta-content reveal">
           <h2 className="cta-title">Adopt the standard or ship with the stack</h2>
@@ -48,13 +53,29 @@ export default function FinalCTA() {
 
       <style jsx>{`
         .cta {
-          padding: 140px 0;
+          padding: 180px 0;
           background: #fafafa;
           position: relative;
         }
 
+        .cta-bg {
+          display: none;
+        }
+
+        .orb {
+          display: none;
+        }
+
+        .orb-1 {
+          display: none;
+        }
+
+        .orb-2 {
+          display: none;
+        }
+
         .cta-container {
-          max-width: 1100px;
+          max-width: 900px;
           margin: 0 auto;
           padding: 0 32px;
           text-align: center;
@@ -68,19 +89,19 @@ export default function FinalCTA() {
         }
 
         .cta-title {
-          font-size: 56px;
+          font-size: clamp(48px, 7vw, 80px);
           font-weight: 600;
-          letter-spacing: -0.04em;
-          color: #000000;
+          letter-spacing: -0.035em;
+          color: #0a0a0a;
           margin: 0;
-          line-height: 1.1;
+          line-height: 1.02;
         }
 
         .cta-description {
-          font-size: 19px;
+          font-size: 20px;
           line-height: 1.6;
           color: #525252;
-          max-width: 600px;
+          max-width: 520px;
           margin: 0;
           font-weight: 400;
         }
@@ -88,56 +109,54 @@ export default function FinalCTA() {
         .cta-actions {
           display: flex;
           gap: 16px;
-          margin-top: 8px;
+          margin-top: 12px;
         }
 
         .cta-btn-primary {
           display: inline-flex;
           align-items: center;
-          gap: 12px;
-          padding: 16px 32px;
-          font-size: 16px;
+          gap: 10px;
+          padding: 18px 36px;
+          font-size: 15px;
           font-weight: 600;
           text-decoration: none;
-          color: #ffffff;
-          background: #635bff;
-          border: 1px solid #635bff;
+          color: white;
+          background: #0a0a0a;
           border-radius: 12px;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .cta-btn-primary:hover {
-          background: #4f46e5;
-          border-color: #4f46e5;
-          box-shadow: 0 8px 32px rgba(99, 91, 255, 0.2);
+          background: #1a1a1a;
           transform: translateY(-2px);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
 
         .cta-btn-secondary {
           display: inline-flex;
           align-items: center;
-          padding: 16px 32px;
-          font-size: 16px;
+          padding: 18px 36px;
+          font-size: 15px;
           font-weight: 600;
           text-decoration: none;
-          color: #000000;
-          background: #ffffff;
-          border: 1px solid rgba(0, 0, 0, 0.12);
+          color: #0a0a0a;
+          background: transparent;
+          border: 1px solid rgba(0, 0, 0, 0.15);
           border-radius: 12px;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .cta-btn-secondary:hover {
-          border-color: rgba(0, 0, 0, 0.24);
+          border-color: rgba(0, 0, 0, 0.3);
+          background: rgba(0, 0, 0, 0.02);
           transform: translateY(-2px);
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
         }
 
         .reveal {
           opacity: 0;
-          transform: translateY(24px);
-          transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                      transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          transform: translateY(40px);
+          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal.in-view {
@@ -147,11 +166,12 @@ export default function FinalCTA() {
 
         @media (max-width: 768px) {
           .cta {
-            padding: 100px 0;
+            padding: 120px 0;
           }
 
-          .cta-title {
-            font-size: 40px;
+          .orb-1,
+          .orb-2 {
+            display: none;
           }
 
           .cta-description {
@@ -180,6 +200,30 @@ export default function FinalCTA() {
             width: 100%;
             justify-content: center;
             padding: 16px 28px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .cta {
+            padding: 80px 0;
+          }
+
+          .cta-container {
+            padding: 0 16px;
+          }
+
+          .cta-title {
+            font-size: clamp(32px, 10vw, 44px);
+          }
+
+          .cta-description {
+            font-size: 15px;
+          }
+
+          .cta-btn-primary,
+          .cta-btn-secondary {
+            padding: 14px 24px;
+            font-size: 14px;
           }
         }
 

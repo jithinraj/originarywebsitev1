@@ -26,12 +26,12 @@ export default function NavigationHeader() {
         right: 0,
         zIndex: 'var(--z-sticky)',
         background: isScrolled
-          ? 'rgba(255, 255, 255, 0.85)'
-          : 'rgba(255, 255, 255, 0.6)',
-        backdropFilter: 'blur(20px) saturate(180%)',
-        WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-        borderBottom: `1px solid ${isScrolled ? 'rgba(0, 0, 0, 0.08)' : 'rgba(0, 0, 0, 0.03)'}`,
-        transition: 'all var(--duration-300) var(--ease-out)',
+          ? 'rgba(255, 255, 255, 0.95)'
+          : 'rgba(255, 255, 255, 0.8)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        borderBottom: `1px solid ${isScrolled ? 'rgba(0, 0, 0, 0.06)' : 'transparent'}`,
+        transition: 'all 0.2s ease',
         padding: 'var(--space-3) 0'
       }}
     >
@@ -63,16 +63,16 @@ export default function NavigationHeader() {
             <div
               className="logo-mark"
               style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: 'var(--radius-lg)',
-                background: 'var(--gradient-brand)',
+                width: '28px',
+                height: '28px',
+                borderRadius: '8px',
+                background: '#0a0a0a',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: 'white',
-                fontWeight: 'bold',
-                fontSize: 'var(--text-sm)'
+                fontWeight: '600',
+                fontSize: '13px'
               }}
             >
               O

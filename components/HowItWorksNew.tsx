@@ -228,7 +228,7 @@ export default function HowItWorksNew() {
             <div
               key={step.id}
               className={`step-card ${isVisible ? 'visible' : ''} ${activeStep === i ? 'active' : ''}`}
-              style={{ '--accent': step.color, '--delay': `${i * 100 + 200}ms` } as React.CSSProperties}
+              style={{ '--accent': step.color, '--delay': `${i * 120 + 300}ms` } as React.CSSProperties}
               onClick={() => setActiveStep(i)}
               onMouseEnter={() => setActiveStep(i)}
             >
@@ -306,7 +306,7 @@ export default function HowItWorksNew() {
       <style jsx>{`
         .how {
           position: relative;
-          padding: 160px 0;
+          padding: 180px 0;
           background: #fafafa;
           overflow: hidden;
         }
@@ -322,8 +322,9 @@ export default function HowItWorksNew() {
           position: absolute;
           inset: 0;
           background:
-            radial-gradient(ellipse 60% 40% at 20% 0%, rgba(99, 91, 255, 0.06) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0, 212, 170, 0.05) 0%, transparent 50%);
+            radial-gradient(ellipse 60% 40% at 20% 0%, rgba(99, 91, 255, 0.05) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 30% at 50% 30%, rgba(0, 209, 255, 0.04) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0, 212, 170, 0.04) 0%, transparent 50%);
         }
 
         .bg-grid {
@@ -343,13 +344,13 @@ export default function HowItWorksNew() {
           position: relative;
         }
 
-        /* Header */
+        /* Header - Theory VC inspired cascade */
         .how-header {
           text-align: center;
           margin-bottom: 60px;
           opacity: 0;
-          transform: translateY(24px);
-          transition: opacity 0.6s ease, transform 0.6s ease;
+          transform: translateY(40px);
+          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .how-header.visible {
@@ -363,31 +364,28 @@ export default function HowItWorksNew() {
 
         .how-label {
           display: inline-block;
-          font-size: 13px;
+          font-size: 12px;
           font-weight: 600;
-          letter-spacing: 0.08em;
-          color: #635bff;
+          letter-spacing: 0.1em;
+          color: #6b6b6b;
           text-transform: uppercase;
-          padding: 8px 16px;
-          background: rgba(99, 91, 255, 0.08);
-          border-radius: 100px;
         }
 
         .how-title {
-          font-size: clamp(36px, 5vw, 56px);
-          font-weight: 700;
-          letter-spacing: -0.03em;
+          font-size: clamp(44px, 6vw, 72px);
+          font-weight: 600;
+          letter-spacing: -0.035em;
           color: #0a0a0a;
           margin: 0;
-          line-height: 1.15;
+          line-height: 1.05;
         }
 
         /* Flowchart */
         .flowchart {
           margin-bottom: 60px;
           opacity: 0;
-          transform: translateY(24px);
-          transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;
+          transform: translateY(40px);
+          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
         }
 
         .flowchart.visible {
@@ -536,34 +534,34 @@ export default function HowItWorksNew() {
         .steps-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 24px;
-          margin-bottom: 60px;
+          gap: 32px;
+          margin-bottom: 72px;
         }
 
         .step-card {
           position: relative;
-          padding: 32px;
+          padding: 36px;
           background: #ffffff;
-          border: 1px solid #e5e5e5;
-          border-radius: 20px;
+          border: 1px solid transparent;
+          border-radius: 16px;
           cursor: pointer;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           opacity: 0;
-          transform: translateY(24px);
+          transform: translateY(40px);
           overflow: hidden;
         }
 
         .step-card.visible {
           opacity: 1;
           transform: translateY(0);
+          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
           transition-delay: var(--delay);
         }
 
         .step-card:hover,
         .step-card.active {
-          transform: translateY(-6px);
-          border-color: var(--accent);
-          box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+          border-color: rgba(0, 0, 0, 0.08);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         }
 
         .card-glow {
@@ -606,16 +604,14 @@ export default function HowItWorksNew() {
           align-items: center;
           justify-content: center;
           background: #f5f5f5;
-          border-radius: 12px;
-          color: var(--accent);
-          transition: all 0.3s ease;
+          border-radius: 10px;
+          color: #0a0a0a;
+          transition: background 0.2s ease;
         }
 
         .step-card:hover .step-icon,
         .step-card.active .step-icon {
-          background: var(--accent);
-          color: white;
-          transform: scale(1.1);
+          background: #ebebeb;
         }
 
         .card-body {
@@ -671,8 +667,8 @@ export default function HowItWorksNew() {
             0 0 0 1px rgba(255, 255, 255, 0.08),
             0 20px 50px -10px rgba(0, 0, 0, 0.3);
           opacity: 0;
-          transform: translateY(24px);
-          transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+          transform: translateY(40px);
+          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s;
         }
 
         .code-section.visible {
@@ -732,8 +728,8 @@ export default function HowItWorksNew() {
           gap: 16px;
           margin-bottom: 48px;
           opacity: 0;
-          transform: translateY(24px);
-          transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
+          transform: translateY(40px);
+          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s;
         }
 
         .how-cta.visible {
@@ -744,50 +740,49 @@ export default function HowItWorksNew() {
         .cta-primary {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          padding: 16px 32px;
+          gap: 10px;
+          padding: 18px 36px;
           font-size: 15px;
           font-weight: 600;
           color: white;
-          background: linear-gradient(135deg, #635bff 0%, #8b5cf6 100%);
+          background: #0a0a0a;
           border-radius: 12px;
           text-decoration: none;
-          box-shadow: 0 4px 12px rgba(99, 91, 255, 0.3);
-          transition: all 0.3s ease;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .cta-primary:hover {
+          background: #1a1a1a;
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(99, 91, 255, 0.4);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
 
         .cta-secondary {
           display: inline-flex;
           align-items: center;
-          padding: 16px 32px;
+          padding: 18px 36px;
           font-size: 15px;
           font-weight: 600;
-          color: #525252;
-          background: white;
-          border: 1px solid #e5e5e5;
+          color: #0a0a0a;
+          background: transparent;
+          border: 1px solid rgba(0, 0, 0, 0.15);
           border-radius: 12px;
           text-decoration: none;
-          transition: all 0.3s ease;
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .cta-secondary:hover {
-          border-color: #d4d4d4;
-          color: #0a0a0a;
+          border-color: rgba(0, 0, 0, 0.3);
+          background: rgba(0, 0, 0, 0.02);
           transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
 
         /* Footer */
         .how-footer {
           text-align: center;
           opacity: 0;
-          transform: translateY(24px);
-          transition: opacity 0.6s ease 0.6s, transform 0.6s ease 0.6s;
+          transform: translateY(40px);
+          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.85s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.85s;
         }
 
         .how-footer.visible {
@@ -816,9 +811,31 @@ export default function HowItWorksNew() {
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+          .how {
+            padding: 140px 0;
+          }
+
+          .how-title {
+            font-size: clamp(36px, 5vw, 48px);
+          }
+
+          .flow-svg {
+            max-width: 700px;
+          }
+
+          .steps-grid {
+            gap: 20px;
+          }
+        }
+
         @media (max-width: 900px) {
           .how {
             padding: 120px 0;
+          }
+
+          .how-container {
+            padding: 0 20px;
           }
 
           .flowchart {
@@ -857,14 +874,125 @@ export default function HowItWorksNew() {
         }
 
         @media (max-width: 640px) {
+          .how {
+            padding: 100px 0;
+          }
+
+          .how-header {
+            margin-bottom: 40px;
+          }
+
           .how-title {
-            font-size: 32px;
+            font-size: clamp(28px, 8vw, 36px);
+          }
+
+          .steps-grid {
+            margin-bottom: 40px;
+          }
+
+          .step-card {
+            padding: 20px;
+          }
+
+          .step-title {
+            font-size: 18px;
+          }
+
+          .step-tagline {
+            font-size: 13px;
+          }
+
+          .step-desc {
+            font-size: 14px;
           }
 
           .code-section {
-            margin-left: -24px;
-            margin-right: -24px;
+            margin-left: -20px;
+            margin-right: -20px;
+            margin-bottom: 40px;
             border-radius: 0;
+          }
+
+          .code-block {
+            font-size: 11px;
+            padding: 16px;
+          }
+
+          .how-cta {
+            margin-bottom: 40px;
+          }
+
+          .cta-primary,
+          .cta-secondary {
+            padding: 14px 28px;
+            font-size: 14px;
+          }
+
+          .badge {
+            font-size: 13px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .how {
+            padding: 80px 0;
+          }
+
+          .how-container {
+            padding: 0 16px;
+          }
+
+          .how-header {
+            margin-bottom: 32px;
+          }
+
+          .how-label {
+            font-size: 11px;
+          }
+
+          .how-title {
+            font-size: 26px;
+          }
+
+          .step-card {
+            padding: 18px;
+          }
+
+          .card-header {
+            margin-bottom: 16px;
+          }
+
+          .step-icon {
+            width: 36px;
+            height: 36px;
+          }
+
+          .step-title {
+            font-size: 17px;
+          }
+
+          .step-desc {
+            font-size: 13px;
+          }
+
+          .code-section {
+            margin-left: -16px;
+            margin-right: -16px;
+          }
+
+          .code-block {
+            font-size: 10px;
+            padding: 14px;
+          }
+
+          .cta-primary,
+          .cta-secondary {
+            max-width: 100%;
+            padding: 14px 24px;
+          }
+
+          .badge {
+            font-size: 12px;
           }
         }
 

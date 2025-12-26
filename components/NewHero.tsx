@@ -774,15 +774,56 @@ export default function NewHero() {
         .hero-content {
           display: flex;
           flex-direction: column;
-          gap: 28px;
-          opacity: 0;
-          transform: translateY(40px);
-          transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+          gap: 36px;
         }
 
-        .hero-content.loaded {
+        /* Staggered entrance animations - Theory VC inspired */
+        .hero-content > * {
+          opacity: 0;
+          transform: translateY(40px);
+          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-content.loaded > *:nth-child(1) { /* Badge */
           opacity: 1;
           transform: translateY(0);
+          transition-delay: 0.2s;
+        }
+
+        .hero-content.loaded > *:nth-child(2) { /* Headline */
+          opacity: 1;
+          transform: translateY(0);
+          transition-delay: 0.35s;
+        }
+
+        .hero-content.loaded > *:nth-child(3) { /* Description */
+          opacity: 1;
+          transform: translateY(0);
+          transition-delay: 0.5s;
+        }
+
+        .hero-content.loaded > *:nth-child(4) { /* Clarifier */
+          opacity: 1;
+          transform: translateY(0);
+          transition-delay: 0.65s;
+        }
+
+        .hero-content.loaded > *:nth-child(5) { /* Actions */
+          opacity: 1;
+          transform: translateY(0);
+          transition-delay: 0.8s;
+        }
+
+        .hero-content.loaded > *:nth-child(6) { /* Features */
+          opacity: 1;
+          transform: translateY(0);
+          transition-delay: 0.95s;
+        }
+
+        .hero-content.loaded > *:nth-child(7) { /* Trademark */
+          opacity: 1;
+          transform: translateY(0);
+          transition-delay: 1.1s;
         }
 
         /* Badge */
@@ -809,27 +850,28 @@ export default function NewHero() {
         }
 
         .hero-headline-main {
-          font-size: clamp(48px, 6vw, 72px);
-          font-weight: 700;
+          font-size: clamp(60px, 9vw, 110px);
+          font-weight: 650;
           letter-spacing: -0.04em;
-          line-height: 1;
-          color: var(--gray-900);
+          line-height: 0.9;
+          color: #0a0a0a;
         }
 
         .hero-headline-sub {
-          font-size: clamp(32px, 4vw, 48px);
-          font-weight: 600;
-          letter-spacing: -0.02em;
-          line-height: 1.2;
-          color: var(--gray-500);
+          font-size: clamp(38px, 6vw, 68px);
+          font-weight: 500;
+          letter-spacing: -0.025em;
+          line-height: 1.05;
+          color: #6b6b6b;
         }
 
         .hero-description {
-          font-size: 18px;
-          line-height: 1.75;
-          color: var(--gray-600);
-          max-width: 560px;
+          font-size: 19px;
+          line-height: 1.7;
+          color: #525252;
+          max-width: 540px;
           margin: 0;
+          font-weight: 400;
         }
 
         .hero-description :global(.tm) {
@@ -859,25 +901,18 @@ export default function NewHero() {
           gap: 10px;
           padding: 18px 36px;
           font-size: 15px;
-          font-weight: 650;
+          font-weight: 600;
           text-decoration: none;
           color: white;
-          background: linear-gradient(135deg, var(--brand-primary) 0%, #4f46e5 100%);
-          border-radius: 14px;
+          background: #0a0a0a;
+          border-radius: 12px;
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-          box-shadow:
-            0 0 0 1px rgba(99, 91, 255, 0.3),
-            0 4px 20px -4px rgba(99, 91, 255, 0.4),
-            inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
 
         .hero-btn-primary:hover {
-          transform: translateY(-3px);
-          box-shadow:
-            0 0 0 1px rgba(99, 91, 255, 0.4),
-            0 8px 30px -4px rgba(99, 91, 255, 0.5),
-            0 0 40px -10px rgba(99, 91, 255, 0.4),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+          background: #1a1a1a;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
 
         .hero-btn-primary :global(.arrow-icon) {
@@ -895,26 +930,17 @@ export default function NewHero() {
           font-size: 15px;
           font-weight: 600;
           text-decoration: none;
-          color: var(--gray-700);
-          background: rgba(255, 255, 255, 0.9);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          border: 1px solid rgba(99, 91, 255, 0.15);
-          border-radius: 14px;
+          color: #0a0a0a;
+          background: transparent;
+          border: 1px solid rgba(0, 0, 0, 0.15);
+          border-radius: 12px;
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-          box-shadow:
-            0 2px 8px rgba(0, 0, 0, 0.04),
-            inset 0 1px 0 rgba(255, 255, 255, 0.8);
         }
 
         .hero-btn-secondary:hover {
-          transform: translateY(-3px);
-          border-color: rgba(99, 91, 255, 0.25);
-          box-shadow:
-            0 8px 30px rgba(0, 0, 0, 0.08),
-            0 0 0 1px rgba(99, 91, 255, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.9);
-          color: var(--gray-900);
+          border-color: rgba(0, 0, 0, 0.3);
+          background: rgba(0, 0, 0, 0.02);
+          transform: translateY(-2px);
         }
 
         /* Feature Pills */
@@ -993,22 +1019,22 @@ export default function NewHero() {
         }
 
         .code-window-wrapper:hover {
-          transform: translateY(-8px) perspective(1000px) rotateX(2deg) rotateY(-2deg);
+          transform: translateY(-4px) perspective(1000px) rotateX(1.5deg) rotateY(-1.5deg);
         }
 
         .code-glow {
           position: absolute;
           inset: -60px;
-          background: radial-gradient(ellipse at center, rgba(99, 91, 255, 0.2) 0%, rgba(0, 212, 170, 0.1) 40%, transparent 70%);
+          background: radial-gradient(ellipse at center, rgba(99, 91, 255, 0.18) 0%, rgba(0, 209, 255, 0.12) 40%, transparent 70%);
           filter: blur(50px);
           z-index: -1;
           transition: all 0.6s ease;
         }
 
         .code-window-wrapper:hover .code-glow {
-          inset: -80px;
-          filter: blur(60px);
-          background: radial-gradient(ellipse at center, rgba(99, 91, 255, 0.25) 0%, rgba(0, 212, 170, 0.15) 40%, transparent 70%);
+          inset: -70px;
+          filter: blur(55px);
+          background: radial-gradient(ellipse at center, rgba(99, 91, 255, 0.22) 0%, rgba(0, 209, 255, 0.15) 40%, transparent 70%);
         }
 
         .code-reflection {
@@ -1056,11 +1082,11 @@ export default function NewHero() {
 
         .code-window-wrapper:hover .code-window {
           box-shadow:
-            0 0 0 1px rgba(255, 255, 255, 0.15),
-            0 8px 30px rgba(0, 0, 0, 0.25),
-            0 30px 80px -10px rgba(0, 0, 0, 0.5),
-            0 0 100px -20px rgba(99, 91, 255, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            0 0 0 1px rgba(255, 255, 255, 0.12),
+            0 6px 24px rgba(0, 0, 0, 0.22),
+            0 24px 60px -10px rgba(0, 0, 0, 0.45),
+            0 0 80px -20px rgba(0, 209, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.06);
         }
 
         .code-header {
@@ -1489,11 +1515,15 @@ export default function NewHero() {
 
         /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
-          .hero-content,
+          .hero-content > *,
           .hero-visual {
             opacity: 1;
             transform: none;
             transition: none;
+          }
+
+          .hero-content.loaded > * {
+            transition-delay: 0s;
           }
 
           .headline-char,
