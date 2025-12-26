@@ -81,8 +81,7 @@ export default function PeacAnimationHero() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.15s'
               }}
             >
-              Make AI access<br />
-              <span className="text-gradient">paid and provable.</span>
+              Platform overview
             </h1>
 
             {/* Subtitle */}
@@ -98,13 +97,13 @@ export default function PeacAnimationHero() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              Agents and crawlers already hit your pages and APIs. Set terms, require payment when needed, and verify every outcome with signed receipts.
+              Deploy PEAC terms, enforcement, and receipts in real systems.
             </p>
 
-            {/* Clarifier */}
+            {/* Historical Note */}
             <p
               style={{
-                fontSize: 'var(--text-base)',
+                fontSize: 'var(--text-sm)',
                 lineHeight: 1.6,
                 color: 'var(--gray-500)',
                 marginBottom: 'var(--space-6)',
@@ -115,7 +114,7 @@ export default function PeacAnimationHero() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.21s'
               }}
             >
-              Originary's commercial implementation of the PEAC protocol. Built for production with managed services and support.
+              This page describes the platform surface; the homepage explains the standard.
             </p>
 
             {/* Trademark Proof Section */}
