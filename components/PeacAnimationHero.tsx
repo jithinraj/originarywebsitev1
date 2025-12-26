@@ -81,8 +81,8 @@ export default function PeacAnimationHero() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.15s'
               }}
             >
-              Platform<br />
-              <span className="text-gradient">overview</span>
+              Originary<br />
+              <span className="text-gradient">Platform</span>
             </h1>
 
             {/* Lead */}
