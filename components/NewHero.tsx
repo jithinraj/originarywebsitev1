@@ -1,31 +1,13 @@
 'use client'
 
-import { useEffect, useRef, useState, useMemo } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Shield } from 'lucide-react'
-
-function generateAgentNodes() {
-  return [
-    { id: 1, x: 58, y: 30, delay: 0 },
-    { id: 2, x: 55, y: 45, delay: 1.5 },
-    { id: 3, x: 60, y: 58, delay: 3 },
-  ]
-}
-
-function generateFlowPaths() {
-  return [
-    { id: 1, d: 'M 60 30 Q 72 32 78 35', delay: 0 },
-    { id: 2, d: 'M 57 45 Q 70 43 78 40', delay: 1.5 },
-    { id: 3, d: 'M 62 58 Q 72 52 78 45', delay: 3 },
-    { id: 4, d: 'M 82 40 Q 88 42 92 45', delay: 0.8 },
-  ]
-}
+import HeroPeacFlowBg from './HeroPeacFlowBg'
 
 export default function NewHero() {
   const heroRef = useRef<HTMLElement>(null)
   const [isLoaded, setIsLoaded] = useState(false)
-  const agentNodes = useMemo(() => generateAgentNodes(), [])
-  const flowPaths = useMemo(() => generateFlowPaths(), [])
 
   useEffect(() => {
     setIsLoaded(true)
@@ -35,94 +17,7 @@ export default function NewHero() {
     <section ref={heroRef} className="hero">
       <div className="hero-bg" aria-hidden="true">
         <div className="bg-base" />
-        <div className="aurora aurora-1" />
-        <div className="aurora aurora-2" />
-        <div className="aurora aurora-3" />
-
-        <svg className="particle-field" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <filter id="particle-glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="0.5" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-
-            <linearGradient id="flow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="rgba(99, 91, 255, 0)" />
-              <stop offset="50%" stopColor="rgba(99, 91, 255, 0.6)" />
-              <stop offset="100%" stopColor="rgba(0, 212, 170, 0)" />
-            </linearGradient>
-
-            <symbol id="receipt-icon" viewBox="0 0 10 12">
-              <path d="M1 0 L9 0 L9 11 L7 9.5 L5 11 L3 9.5 L1 11 Z" fill="none" stroke="currentColor" strokeWidth="0.5" />
-              <line x1="3" y1="3" x2="7" y2="3" stroke="currentColor" strokeWidth="0.3" />
-              <line x1="3" y1="5" x2="7" y2="5" stroke="currentColor" strokeWidth="0.3" />
-              <line x1="3" y1="7" x2="5" y2="7" stroke="currentColor" strokeWidth="0.3" />
-            </symbol>
-          </defs>
-
-          <g className="flow-lines">
-            {flowPaths.map((path) => (
-              <g key={path.id}>
-                <path
-                  d={path.d}
-                  fill="none"
-                  stroke="rgba(99, 91, 255, 0.06)"
-                  strokeWidth="0.2"
-                />
-                <path
-                  className="flow-pulse"
-                  d={path.d}
-                  fill="none"
-                  stroke="url(#flow-gradient)"
-                  strokeWidth="0.3"
-                  strokeLinecap="round"
-                  style={{ animationDelay: `${path.delay}s` }}
-                />
-              </g>
-            ))}
-          </g>
-
-          <g className="agent-nodes" filter="url(#particle-glow)">
-            {agentNodes.map((agent) => (
-              <g key={agent.id} className="agent-node" style={{ animationDelay: `${agent.delay}s` }}>
-                <circle
-                  cx={agent.x}
-                  cy={agent.y}
-                  r="0.8"
-                  fill="rgba(99, 91, 255, 0.4)"
-                  className="agent-core"
-                />
-                <circle
-                  cx={agent.x}
-                  cy={agent.y}
-                  r="1.5"
-                  fill="none"
-                  stroke="rgba(99, 91, 255, 0.15)"
-                  strokeWidth="0.15"
-                  className="agent-ring"
-                />
-              </g>
-            ))}
-          </g>
-
-          <g className="policy-node">
-            <circle cx="80" cy="40" r="2" fill="rgba(99, 91, 255, 0.12)" className="policy-glow" />
-            <circle cx="80" cy="40" r="1" fill="rgba(99, 91, 255, 0.35)" className="policy-core" />
-          </g>
-
-          <g className="receipts">
-            <use href="#receipt-icon" x="91" y="42" width="2.5" height="3.5" className="receipt" style={{ color: 'rgba(99, 91, 255, 0.2)' }} />
-          </g>
-
-          <g className="verification-pulses">
-            <circle cx="92.5" cy="44" r="0.6" fill="rgba(74, 222, 128, 0.35)" className="verify-pulse" />
-          </g>
-        </svg>
-
-        <div className="mesh-gradient" />
+        <HeroPeacFlowBg className="peac-flow-bg" />
         <div className="content-overlay" />
       </div>
 
@@ -219,7 +114,7 @@ export default function NewHero() {
           align-items: center;
           padding: 140px 0 100px;
           overflow: hidden;
-          background: #fafafa;
+          background: #ffffff;
         }
 
         .hero-bg {
@@ -232,178 +127,24 @@ export default function NewHero() {
         .bg-base {
           position: absolute;
           inset: 0;
-          background: linear-gradient(135deg, #fafafa 0%, #f5f5fa 50%, #fafafa 100%);
+          background: #ffffff;
         }
 
-        .aurora {
-          position: absolute;
-          width: 120%;
-          height: 50%;
-          border-radius: 50%;
-          filter: blur(100px);
-          opacity: 0.3;
-          animation: auroraFloat 40s ease-in-out infinite;
-        }
-
-        .aurora-1 {
-          top: -15%;
-          right: -15%;
-          background: radial-gradient(ellipse at center, rgba(99, 91, 255, 0.08) 0%, transparent 70%);
-        }
-
-        .aurora-2 {
-          top: 35%;
-          right: -5%;
-          background: radial-gradient(ellipse at center, rgba(0, 212, 170, 0.05) 0%, transparent 70%);
-          animation-delay: -15s;
-          animation-duration: 50s;
-        }
-
-        .aurora-3 {
-          bottom: 0%;
-          right: 15%;
-          background: radial-gradient(ellipse at center, rgba(99, 91, 255, 0.04) 0%, transparent 70%);
-          animation-delay: -30s;
-          animation-duration: 45s;
-        }
-
-        @keyframes auroraFloat {
-          0%, 100% {
-            transform: translate(0, 0) scale(1);
-            opacity: 0.25;
-          }
-          50% {
-            transform: translate(-15px, 10px) scale(1.02);
-            opacity: 0.35;
-          }
-        }
-
-        .particle-field {
+        .hero :global(.peac-flow-bg) {
           position: absolute;
           inset: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0.6;
-        }
-
-        .flow-pulse {
-          stroke-dasharray: 15 85;
-          stroke-dashoffset: 100;
-          animation: flowPulse 8s ease-in-out infinite;
-        }
-
-        @keyframes flowPulse {
-          0% {
-            stroke-dashoffset: 100;
-            opacity: 0;
-          }
-          15% {
-            opacity: 0.6;
-          }
-          85% {
-            opacity: 0.6;
-          }
-          100% {
-            stroke-dashoffset: -100;
-            opacity: 0;
-          }
-        }
-
-        .agent-node {
-          animation: agentPulse 6s ease-in-out infinite;
-        }
-
-        .agent-ring {
-          animation: agentRing 6s ease-in-out infinite;
-        }
-
-        @keyframes agentPulse {
-          0%, 100% {
-            opacity: 0.5;
-          }
-          50% {
-            opacity: 0.8;
-          }
-        }
-
-        @keyframes agentRing {
-          0%, 100% {
-            opacity: 0.15;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.25;
-            transform: scale(1.2);
-          }
-        }
-
-        .policy-node {
-          animation: policyGlow 8s ease-in-out infinite;
-        }
-
-        @keyframes policyGlow {
-          0%, 100% {
-            opacity: 0.8;
-          }
-          50% {
-            opacity: 1;
-          }
-        }
-
-        .receipt {
-          animation: receiptAppear 6s ease-in-out infinite;
-        }
-
-        @keyframes receiptAppear {
-          0%, 20% {
-            opacity: 0.1;
-          }
-          40%, 80% {
-            opacity: 0.25;
-          }
-          100% {
-            opacity: 0.1;
-          }
-        }
-
-        .verify-pulse {
-          animation: verifyPulse 6s ease-in-out infinite;
-        }
-
-        @keyframes verifyPulse {
-          0%, 30% {
-            transform: scale(1);
-            opacity: 0;
-          }
-          50% {
-            transform: scale(1);
-            opacity: 0.4;
-          }
-          70% {
-            transform: scale(2);
-            opacity: 0;
-          }
-          100% {
-            opacity: 0;
-          }
-        }
-
-        .mesh-gradient {
-          position: absolute;
-          inset: 0;
-          background:
-            radial-gradient(ellipse 70% 45% at 50% -5%, rgba(99, 91, 255, 0.04) 0%, transparent 50%),
-            radial-gradient(ellipse 40% 35% at 85% 75%, rgba(99, 91, 255, 0.02) 0%, transparent 50%);
+          color: #635bff;
+          opacity: 0.9;
         }
 
         .content-overlay {
           position: absolute;
           inset: 0;
           background: linear-gradient(90deg,
-            rgba(250, 250, 250, 1) 0%,
-            rgba(250, 250, 250, 0.99) 25%,
-            rgba(250, 250, 250, 0.92) 45%,
-            rgba(250, 250, 250, 0.5) 100%);
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.98) 40%,
+            rgba(255, 255, 255, 0.4) 55%,
+            rgba(255, 255, 255, 0) 100%);
         }
 
         .hero-container {
@@ -781,7 +522,7 @@ export default function NewHero() {
           }
 
           .content-overlay {
-            background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(250, 250, 250, 0.95) 0%, rgba(250, 250, 250, 0.98) 100%);
+            background: rgba(255, 255, 255, 0.95);
           }
 
           .hero-description {
@@ -815,12 +556,8 @@ export default function NewHero() {
             gap: 48px;
           }
 
-          .particle-field {
-            opacity: 0.4;
-          }
-
-          .aurora {
-            opacity: 0.3;
+          .hero :global(.peac-flow-bg) {
+            opacity: 0.5;
           }
         }
 
@@ -895,37 +632,6 @@ export default function NewHero() {
             opacity: 1;
             transform: none;
             transition: none;
-          }
-
-          .aurora {
-            animation: none;
-            opacity: 0.2;
-          }
-
-          .agent-node,
-          .agent-ring {
-            animation: none;
-          }
-
-          .policy-node {
-            animation: none;
-          }
-
-          .flow-pulse {
-            animation: none;
-            stroke-dasharray: none;
-            stroke-dashoffset: 0;
-            opacity: 0.4;
-          }
-
-          .receipt {
-            animation: none;
-            opacity: 0.2;
-          }
-
-          .verify-pulse {
-            animation: none;
-            opacity: 0.3;
           }
 
           .code-line {
