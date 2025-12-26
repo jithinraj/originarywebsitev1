@@ -1,25 +1,23 @@
 import type { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
-import PeacAnimationHero from '@/components/PeacAnimationHero'
-import TrustedByStrip from '@/components/TrustedByStrip'
-import HowItWorksSection from '@/components/HowItWorksSection'
-import BentoFeatures from '@/components/BentoFeatures'
-import SocialProofSection from '@/components/SocialProofSection'
-import HomePage from '@/components/HomePage'
+import NewHero from '@/components/NewHero'
+import HowItWorksNew from '@/components/HowItWorksNew'
+import ProductSuite from '@/components/ProductSuite'
+import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Infrastructure & tools for Agentic Web'
+    absolute: 'Originary | AI Agent Tools, Infrastructure & Systems'
   },
-  description: 'Originary builds infra for AI commerce, consent and compliance via HTTP 402/x402 payments, PEAC receipts and AI crawler analytics.',
-  keywords: 'Originary, PEAC Policy Kit, Declare, AI policy, AI Access, peac.txt, AIPREF, AI crawler policy, PEAC Protocol, HTTP 402, x402, verifiable receipts, agentic web, policy discovery, agent infrastructure',
+  description: 'Originary powers agent economies, AI commerce, and compliance with an open system of record to monitor, manage, and monetize AI interactions and access via PEAC.',
+  keywords: 'Originary, PEAC protocol, system of record, agent interactions, signed receipts, policy enforcement, verifiable outcomes, agentic web',
   alternates: {
     canonical: '/'
   },
   openGraph: {
-    title: 'Originary | Infrastructure & tools for Agentic Web',
-    description: 'Originary powers the agentic web with infrastructure for AI commerce, consent and compliance: HTTP 402/x402 payments, PEAC receipts and AI crawler analytics. Start with Originary Declare (PEAC Policy Kit) to define AI policy once across peac.txt, AIPREF and robots.txt.',
+    title: 'Originary | AI Agent Tools, Infrastructure & Systems',
+    description: 'Originary powers agent economies, AI commerce, and compliance with an open system of record to monitor, manage, and monetize AI interactions and access via PEAC.',
     url: 'https://www.originary.xyz',
     type: 'website',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -27,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Infrastructure & tools for Agentic Web',
-    description: 'Originary powers the agentic web with infrastructure for AI commerce, consent and compliance: HTTP 402/x402 payments, PEAC receipts and AI crawler analytics. Start with Originary Declare (PEAC Policy Kit) to define AI policy once across peac.txt, AIPREF and robots.txt.',
+    title: 'Originary | AI Agent Tools, Infrastructure & Systems',
+    description: 'Originary powers agent economies, AI commerce, and compliance with an open system of record to monitor, manage, and monetize AI interactions and access via PEAC.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -41,18 +39,10 @@ export default function Page() {
     <>
       <NavigationHeader />
       <main id="main-content" role="main">
-        <PeacAnimationHero />
-
-        {/* Trust strip immediately after hero */}
-        <TrustedByStrip />
-
-        <HowItWorksSection />
-
-        <BentoFeatures />
-
-        <SocialProofSection />
-
-        <HomePage />
+        <NewHero />
+        <HowItWorksNew />
+        <ProductSuite />
+        <FinalCTA />
       </main>
       <Footer />
     </>
