@@ -1,0 +1,36 @@
+# Search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# SEO Analytics bots
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+# LLM bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# All others
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.originary.xyz/sitemap.xml
+
+# Host
+Host: https://www.originary.xyz
