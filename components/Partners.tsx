@@ -176,6 +176,14 @@ export default function Partners() {
             padding: 0 20px;
           }
 
+          .partners-title {
+            font-size: 28px;
+          }
+
+          .partners-subtitle {
+            font-size: 15px;
+          }
+
           .integrations-grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
@@ -197,6 +205,36 @@ export default function Partners() {
             flex-direction: column;
             gap: 16px;
             text-align: center;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .partners {
+            padding: 50px 0;
+          }
+
+          .partners-container {
+            padding: 0 16px;
+          }
+
+          .partners-title {
+            font-size: 24px;
+          }
+
+          .integrations-grid {
+            gap: 8px;
+          }
+
+          .integration-card {
+            padding: 12px;
+          }
+
+          .integration-name {
+            font-size: 12px;
+          }
+
+          .integration-desc {
+            font-size: 11px;
           }
         }
       `}</style>
