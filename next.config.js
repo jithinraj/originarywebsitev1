@@ -61,6 +61,16 @@ const nextConfig = {
         destination: '/blog',
         permanent: true,
       },
+      {
+        source: '/company/about',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/company/contact',
+        destination: '/contact',
+        permanent: true,
+      },
       // CLI downloads → PEAC Protocol release archives
       {
         source: '/downloads/originary-cli-1.0.0-darwin-arm64.zip',
