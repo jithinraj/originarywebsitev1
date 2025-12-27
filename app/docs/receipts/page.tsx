@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'PEAC-Receipts | Portable Decision Records Documentation',
   description: 'PEAC-Receipts documentation for portable decision records. Learn about the open standard for verifiable agent interaction receipts with cryptographic proof. Technical specification, implementation guide, and verification examples.',
-  keywords: 'PEAC-Receipts, decision records, verifiable receipts, cryptographic receipts, PEAC protocol, agent receipts, receipt verification, JWS receipts, Ed25519 signatures, portable evidence',
+  robots: 'index,follow',
   alternates: {
     canonical: '/docs/receipts'
   },

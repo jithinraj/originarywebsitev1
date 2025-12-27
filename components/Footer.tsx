@@ -248,7 +248,7 @@ export default function Footer() {
             }}
           >
             <span style={{ color: 'var(--gray-400)', fontSize: 'var(--text-sm)', fontWeight: 500 }}>
-              © 2025 Poem, Inc.
+              © 2025 Originary (Poem, Inc.)
             </span>
             <p
               className="footer-trademark-notice"

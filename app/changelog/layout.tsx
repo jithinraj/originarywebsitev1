@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Changelog',
   description: 'Product updates, new features, and improvements to Originary. Track releases, breaking changes, and upcoming features.',
-  keywords: 'Originary changelog, product updates, release notes, PEAC Protocol updates, new features',
   robots: 'index,follow',
   alternates: {
     canonical: '/changelog'

@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: 'Order Confirmation',
   description: 'Your Start Plan purchase is confirmed. Access your developer sandbox and tools.',
   robots: 'noindex,nofollow',
+  alternates: {
+    canonical: '/checkout/confirmation'
+  }
 }
 
 export default function ConfirmationLayout({

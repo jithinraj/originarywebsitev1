@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Originary Receipts | Signed Receipts for AI Interactions',
   description: 'Originary PEAC-Receipts generate tamper-evident proofs of policy, consent, attribution, and payment events. Cryptographically signed receipts for audit trails and dispute resolution.',
-  keywords: 'Originary receipts, PEAC receipts, cryptographic receipts, AI audit trail, verifiable receipts, JWS receipts, signed proofs, AI compliance',
   robots: 'index,follow',
   openGraph: {
     title: 'Originary Receipts | Signed Receipts for AI Interactions',

@@ -18,6 +18,12 @@ export const metadata: Metadata = {
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Research | Originary',
+    description: 'PEAC protocol research and technical specifications. Problem framing, design goals, and threat model.',
+    images: ['/og.jpg'],
+  },
   robots: 'index,follow',
 }
 

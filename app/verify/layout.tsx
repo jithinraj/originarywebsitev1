@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Verify PEAC-Receipts | Receipt Verification Tool',
   description: 'Verify PEAC-Receipts and Originary receipts. Check signatures, expiry, and policy compliance for AI usage receipts.',
-  keywords: 'JWS verification, offline signature check, PEAC-Receipt, receipt verification, cryptographic verification, JWT validation, offline verification',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',

@@ -18,6 +18,12 @@ export const metadata: Metadata = {
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pilots | Originary',
+    description: 'Fixed-scope pilots for production validation. Work with Originary to integrate PEAC decision records.',
+    images: ['/og.jpg'],
+  },
   robots: 'index,follow',
 }
 

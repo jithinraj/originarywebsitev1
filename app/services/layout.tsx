@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Professional Services',
   description: 'Implementation, migration, compliance audits, and custom development for PEAC Protocol. Fixed pricing, clear timelines.',
-  keywords: 'Originary services, PEAC implementation, professional services, integration services, compliance audit',
   robots: 'index,follow',
   alternates: {
     canonical: '/services'

@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Trace Demo | Agent Observability',
   description: 'Live demo of Originary Trace for agent observability and interaction tracking. See how PEAC-Receipts capture every agent request.',
-  keywords: 'Trace demo, agent observability demo, GPTBot tracking, ClaudeBot tracking, PEAC receipts',
   alternates: {
     canonical: '/trace/demo'
   },
@@ -12,6 +11,14 @@ export const metadata: Metadata = {
     description: 'Live demo of Originary Trace for agent observability and interaction tracking. See how PEAC-Receipts capture every agent request.',
     type: 'website',
     url: 'https://www.originary.xyz/trace/demo',
+    images: ['/og.jpg'],
+    siteName: 'Originary',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Trace Demo | Agent Observability',
+    description: 'Live demo of Originary Trace for agent observability and interaction tracking.',
+    images: ['/og.jpg'],
   },
   robots: 'index,follow',
 }

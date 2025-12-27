@@ -51,7 +51,7 @@ const organizationJsonLd = {
   '@id': 'https://www.originary.xyz/#org',
   name: 'Originary',
   legalName: 'Poem, Inc.',
-  alternateName: ['Poem, Inc.', 'Originary™', 'Originary AI', 'Originary Receipts'],
+  alternateName: ['Originary™', 'Originary AI', 'Poem, Inc.', 'Originary PEAC', 'Originary Protocol', 'Originary Receipts'],
   url: 'https://www.originary.xyz/',
   telephone: '+14157070402',
   address: {
@@ -68,8 +68,7 @@ const organizationJsonLd = {
     'https://bsky.app/profile/originary.bsky.social',
     'https://warpcast.com/originary',
     'https://github.com/peacprotocol/peac',
-    'https://peacprotocol.substack.com/',
-    'https://www.originary.xyz/blog'
+    'https://peacprotocol.substack.com/'
   ],
   logo: 'https://www.originary.xyz/og/originary-logo.png',
   contactPoint: [
@@ -132,7 +131,6 @@ export const metadata: Metadata = {
     template: '%s | Originary',
   },
   description: 'Originary builds infrastructure rails and tools for the agentic web, turning AI agent traffic into verified revenue with HTTP 402/x402 payments, PEAC receipts, AI crawler analytics, and policy tools like Originary Declare (PEAC Policy Kit).',
-  keywords: ['Originary', 'PEAC Protocol', 'agentic web', 'AI commerce', 'AI payments', 'HTTP 402', 'x402', 'AI crawler analytics', 'AI policy', 'AIPREF', 'PEAC receipts', 'AI consent', 'AI compliance'],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',

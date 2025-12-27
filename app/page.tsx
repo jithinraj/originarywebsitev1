@@ -9,16 +9,15 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | System of Record for Agent Interactions'
+    absolute: 'Originary | System of Record for AI Agent Interactions'
   },
-  description: 'Originary stewards an open standard for publishing interaction terms and issuing verifiable receipts. Built for agent economies, policy enforcement, and compliance.',
-  keywords: 'Originary, PEAC protocol, agent interactions, agent economies, verifiable receipts, policy enforcement, HTTP 402, agentic web, agentic economy, agent infrastructure',
+  description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agent commerce via HTTP 402.',
   alternates: {
     canonical: '/'
   },
   openGraph: {
-    title: 'Originary | System of Record for Agent Interactions',
-    description: 'Originary stewards an open standard for publishing interaction terms and issuing verifiable receipts. Built for agent economies, policy enforcement, and compliance.',
+    title: 'Originary | System of Record for AI Agent Interactions',
+    description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agent commerce via HTTP 402.',
     url: 'https://www.originary.xyz',
     type: 'website',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -26,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | System of Record for Agent Interactions',
-    description: 'Originary stewards an open standard for publishing interaction terms and issuing verifiable receipts. Built for agent economies, policy enforcement, and compliance.',
+    title: 'Originary | System of Record for AI Agent Interactions',
+    description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agent commerce via HTTP 402.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
