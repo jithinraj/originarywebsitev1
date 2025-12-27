@@ -11,9 +11,15 @@ Contact: contact@originary.xyz
 ## Overview
 
 - [What is Originary?](/what-is-originary) - Introduction to Originary, its purpose, and infrastructure for AI commerce, consent, and compliance
+- [Platform](/platform) - The Originary platform for AI agent interactions
+- [System of Record](/system-of-record) - How Originary serves as the system of record for AI interactions
+- [Context Graphs](/context-graphs) - Understanding context graphs for AI agent transactions
+- [Originary AI](/originary-ai) - AI-specific capabilities and integrations
 - [About](/about) - Company mission, the seven pillars (Access, Attribution, Consent, Commerce, Compliance, Privacy, Provenance), and how we work
 
 ## Products
+
+- [All Products](/products) - Overview of all Originary products
 
 ### Declare (/declare)
 AI Policy Pack Generator. CLI tool to generate peac.txt, AIPREF headers, and human-readable policy pages from a single YAML config.
@@ -42,10 +48,12 @@ Pre-built integrations for common platforms and frameworks.
 ## Integrations
 
 - [All Integrations](/integrations) - Overview of all supported integrations
+- [HTTP 402](/integrations/http-402) - HTTP 402 integration guide
 - [HTTP 402 / x402](/integrations/x402) - HTTP 402 payments for machine-payable APIs
   - [Next.js](/integrations/x402/nextjs)
   - [Express/Node](/integrations/x402/express-node)
   - [Cloudflare Workers](/integrations/x402/cloudflare-workers)
+  - [Python FastAPI](/integrations/x402/python-fastapi)
 - [MCP](/integrations/mcp) - Model Context Protocol integration for receipts and tools
 - [ACP](/integrations/acp) - Agentic Commerce Protocol for agent transactions
 - [A2A](/integrations/a2a) - Agent-to-Agent communication with verifiable receipts
@@ -53,6 +61,7 @@ Pre-built integrations for common platforms and frameworks.
 
 ## Solutions
 
+- [All Solutions](/solutions) - Overview of all solutions
 - [AI Builders](/solutions/ai-builders) - Infrastructure for AI Agents
 - [API Providers](/solutions/api-providers) - Monetize APIs for AI
 - [Publishers](/solutions/publishers) - Protect and Monetize Content
@@ -76,6 +85,11 @@ Open standard for AI agent transactions (Apache-2.0). Current version: 0.9.23
 - [Downloads](/downloads) - CLI tools and packages
 - [Demo](/demo) - Interactive PEAC v0.9.23 protocol trace demonstration
 - [Pricing](/pricing) - Developer $1, Professional $2,500/mo, Enterprise custom
+- [Search](/search) - Site search
+
+## Guides
+
+- [HTTP 402 Guide](/guides/http-402) - Complete HTTP 402 implementation guide
 
 ## Learn
 
@@ -95,6 +109,8 @@ Open standard for AI agent transactions (Apache-2.0). Current version: 0.9.23
 - [AIPREF by IETF](/blog/aipref-by-ietf) - AI Preferences standard
 - [Cloudflare Workers 402](/blog/cloudflare-workers-402) - Edge deployment guide
 - [From Detection to Settlement](/blog/from-detection-to-settlement-ai-paywall-peac-http-402) - Complete paywall flow
+- [What is HTTP 402?](/blog/what-is-http-402) - HTTP 402 Payment Required explained
+- [A2A Stack](/blog/a2a-stack-agent-to-agent-commerce) - Agent-to-Agent commerce stack
 
 ## Glossary
 
@@ -108,6 +124,22 @@ Open standard for AI agent transactions (Apache-2.0). Current version: 0.9.23
 - [A2A](/glossary/a2a)
 - [Agentic Web](/glossary/agentic-web)
 
+## Resources
+
+- [All Resources](/resources) - Guides, case studies, and documentation
+- [Case Studies](/resources/case-studies) - Customer success stories
+- [Performance Methodology](/resources/performance-methodology) - Benchmarking approach
+
+## Research
+
+- [Research](/research) - Research initiatives and publications
+- [Conformance](/conformance) - Protocol conformance testing
+- [Pilots](/pilots) - Pilot programs and partnerships
+
+## Services
+
+- [Services](/services) - Professional services and consulting
+
 ## Deployment
 
 - [Cloud](/cloud) - Edge deployment options
@@ -117,6 +149,15 @@ Open standard for AI agent transactions (Apache-2.0). Current version: 0.9.23
 ## Trust & Compliance
 
 - [Trust Center](/trust) - Built-in audit trails and policy hooks for evidence of transactions
+- [Governance](/governance) - Governance policies and frameworks
+
+## Legal
+
+- [Terms of Service](/legal/terms) - Terms and conditions
+- [Privacy Policy](/legal/privacy) - Privacy practices
+- [Acceptable Use](/legal/acceptable-use) - Usage policies
+- [Payments](/legal/payments) - Payment terms
+- [Imprint](/legal/imprint) - Legal entity information
 
 ## Company
 
@@ -124,6 +165,8 @@ Open standard for AI agent transactions (Apache-2.0). Current version: 0.9.23
 - [Contact](/contact) - Sales, partnerships, support inquiries
 - [Changelog](/changelog) - Product updates and releases
 - [Brand](/brand) - Brand guidelines and assets
+- [Press](/press) - Press releases and media resources
+- [AI](/ai) - Originary AI initiatives
 
 ## Community & Social
 
