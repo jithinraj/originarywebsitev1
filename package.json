@@ -24,6 +24,7 @@
     "@stripe/stripe-js": "latest",
     "@types/mdx": "latest",
     "@vercel/analytics": "latest",
+    "@vercel/og": "^0.8.6",
     "clsx": "latest",
     "framer-motion": "latest",
     "lucide-react": "latest",

@@ -69,7 +69,7 @@ const organizationJsonLd = {
     'https://github.com/peacprotocol/peac',
     'https://peacprotocol.substack.com/'
   ],
-  logo: 'https://www.originary.xyz/og/originary-logo.png',
+  logo: 'https://www.originary.xyz/logo.svg',
   contactPoint: [
     {
       '@type': 'ContactPoint',
@@ -126,10 +126,10 @@ const websiteJsonLd = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Originary | Infrastructure and tools for the agentic web',
+    default: 'Originary | System of Record for AI Agent Interactions',
     template: '%s | Originary',
   },
-  description: 'Originary builds infrastructure rails and tools for the agentic web, turning AI agent traffic into verified revenue with HTTP 402/x402 payments, PEAC receipts, AI crawler analytics, and policy tools like Originary Declare (PEAC Policy Kit).',
+  description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agentic commerce.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
@@ -140,24 +140,24 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://www.originary.xyz'),
   openGraph: {
-    title: 'Originary | Infrastructure and tools for the agentic web',
-    description: 'Originary builds infrastructure rails and tools for the agentic web, turning AI agent traffic into verified revenue with HTTP 402/x402 payments, PEAC receipts, AI crawler analytics, and policy tools like Originary Declare (PEAC Policy Kit).',
+    title: 'Originary | System of Record for AI Agent Interactions',
+    description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agentic commerce.',
     url: 'https://www.originary.xyz',
     siteName: 'Originary',
     images: [{
-      url: '/og.jpg',
+      url: '/og',
       width: 1200,
       height: 630,
-      alt: 'Originary - Infrastructure and tools for the agentic web'
+      alt: 'Originary - System of record for agent interactions'
     }],
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Infrastructure and tools for the agentic web',
-    description: 'Originary builds infrastructure rails and tools for the agentic web, turning AI agent traffic into verified revenue with HTTP 402/x402 payments, PEAC receipts, AI crawler analytics, and policy tools like Originary Declare (PEAC Policy Kit).',
-    images: ['/og.jpg'],
+    title: 'Originary | System of Record for AI Agent Interactions',
+    description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agentic commerce.',
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -192,7 +192,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}>
       <head>
-        <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" rx="64" fill="%23FAF8F1"/><circle cx="128" cy="128" r="78" fill="%230B0B0B"/><circle cx="128" cy="128" r="48" fill="%23FAF8F1"/></svg>' />
+        <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" rx="64" fill="%23ffffff"/><circle cx="128" cy="128" r="78" fill="%23000000"/><circle cx="128" cy="128" r="48" fill="%23ffffff"/></svg>' />
         <link rel="manifest" href="/manifest.json" />
         <Script id="originary-organization-json-ld" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(organizationJsonLd)}

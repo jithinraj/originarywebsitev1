@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="originary-logo-title originary-logo-desc">
+  <title id="originary-logo-title">Originary Logo</title>
+  <desc id="originary-logo-desc">Originary - System of record for AI agent interactions. A circular ring symbol representing verification and trust.</desc>
+  <rect width="256" height="256" rx="64" fill="#ffffff"/>
+  <circle cx="128" cy="128" r="78" fill="#000000"/>
+  <circle cx="128" cy="128" r="48" fill="#ffffff"/>
+</svg>
