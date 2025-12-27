@@ -8,11 +8,11 @@ const products = [
     id: 'gateway',
     title: 'Gateway',
     tagline: 'Edge enforcement for the agentic web',
-    desc: 'Enable HTTP 402 payment flows with instant cryptographic receipt issuance at the network edge.',
+    desc: 'Enable HTTP 402 payment-required flows and issue PEAC receipts at the edge or origin. Designed for fast verification and consistent evidence generation.',
     href: '/products/gateway-402',
     icon: Zap,
     color: '#635bff',
-    features: ['Edge deployment', 'HTTP 402 flows', 'Signed receipts', 'Sub-ms latency'],
+    features: ['Edge deployment', 'HTTP 402 flows', 'Signed receipts', 'Deterministic verification'],
   },
   {
     id: 'verify',
@@ -38,11 +38,11 @@ const products = [
     id: 'studio',
     title: 'Studio',
     tagline: 'Builder dashboard',
-    desc: 'Monitor and govern receipts at scale with real-time analytics and compliance tools.',
+    desc: 'Operate receipts at scale with dashboards, exports, and policy tooling built on top of PEAC evidence.',
     href: '/products/studio',
     icon: Layers,
     color: '#8b5cf6',
-    features: ['Real-time analytics', 'Scale governance', 'Compliance dashboard', 'Team management'],
+    features: ['Operational dashboards', 'Scale governance', 'Compliance tools', 'Team management'],
   },
 ]
 
@@ -61,7 +61,7 @@ export default function ProductSuite() {
           <span className="products-label">Product Suite</span>
           <h2 className="products-title">Built for the agentic economy</h2>
           <p className="products-subtitle">
-            Enterprise-grade infrastructure for policy enforcement, payment flows, and cryptographic verification.
+            Production components for policy enforcement, optional settlement flows, and receipt verification.
           </p>
         </div>
 

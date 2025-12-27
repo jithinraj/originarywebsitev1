@@ -34,11 +34,15 @@ export default function NewHero() {
           </h1>
 
           <p className="hero-description">
-            Originary<span className="tm">&#8482;</span> builds and stewards an open standard for publishing terms and verifying receipts as durable evidence for what was accessed, under which preferences, how it was paid for, and by whom, while preserving privacy. This makes AI interactions verifiable and auditable across the open internet.
+            Originary<span className="tm">&#8482;</span> builds and stewards an open standard for publishing interaction terms and issuing verifiable receipts as durable evidence of what happened under those terms. Receipts can bind policy, consent, attribution, and optional settlement signals while preserving privacy. This makes agent interactions verifiable and auditable across the open internet.
+          </p>
+
+          <p className="hero-clarifier-bold">
+            Not a centralized platform. PEAC records are portable receipts that anyone can verify independently.
           </p>
 
           <p className="hero-clarifier">
-            Designed for independent implementations and adapter-based interoperability across all protocols and rails.
+            Designed for independent implementations and adapter-based interoperability across protocols and rails.
           </p>
 
           <div className="hero-actions">
@@ -178,7 +182,8 @@ export default function NewHero() {
         .hero-content.loaded > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
         .hero-content.loaded > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.35s; }
         .hero-content.loaded > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
-        .hero-content.loaded > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+        .hero-content.loaded > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.45s; }
+        .hero-content.loaded > *:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
 
         .hero-badge {
           display: inline-flex;
@@ -231,12 +236,21 @@ export default function NewHero() {
           color: #737373;
         }
 
+        .hero-clarifier-bold {
+          font-size: 15px;
+          line-height: 1.6;
+          color: #404040;
+          font-weight: 600;
+          max-width: 480px;
+          margin: -16px 0 0 0;
+        }
+
         .hero-clarifier {
           font-size: 15px;
           line-height: 1.6;
           color: #737373;
           max-width: 480px;
-          margin: -16px 0 0 0;
+          margin: -8px 0 0 0;
         }
 
         .hero-actions {
@@ -522,10 +536,14 @@ export default function NewHero() {
           }
 
           .content-overlay {
-            background: rgba(255, 255, 255, 0.95);
+            background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%);
           }
 
           .hero-description {
+            max-width: 560px;
+          }
+
+          .hero-clarifier-bold {
             max-width: 560px;
           }
 
@@ -554,10 +572,6 @@ export default function NewHero() {
 
           .hero-container {
             gap: 48px;
-          }
-
-          .hero :global(.peac-flow-bg) {
-            opacity: 0.5;
           }
         }
 
@@ -619,6 +633,10 @@ export default function NewHero() {
 
           .hero-description {
             font-size: 16px;
+          }
+
+          .hero-clarifier-bold {
+            font-size: 14px;
           }
 
           .hero-clarifier {

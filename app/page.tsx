@@ -8,16 +8,16 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | AI Agent Tools, Infrastructure & Systems'
+    absolute: 'Originary | System of Record for Agent Interactions'
   },
-  description: 'Originary powers agent economies, AI commerce, and compliance with an open system of record to monitor, manage, and monetize AI interactions and access via PEAC.',
-  keywords: 'Originary, PEAC protocol, AI agent tools, AI commerce, AI compliance, agent economies, AI infrastructure, HTTP 402, agentic web, agentic economy, AI infrastructure, agent transactions',
+  description: 'Originary stewards an open standard for publishing interaction terms and issuing verifiable receipts. Built for agent economies, policy enforcement, and compliance.',
+  keywords: 'Originary, PEAC protocol, agent interactions, agent economies, verifiable receipts, policy enforcement, HTTP 402, agentic web, agentic economy, agent infrastructure',
   alternates: {
     canonical: '/'
   },
   openGraph: {
-    title: 'Originary | AI Agent Tools, Infrastructure & Systems',
-    description: 'Originary powers agent economies, AI commerce, and compliance with an open system of record to monitor, manage, and monetize AI interactions and access via PEAC.',
+    title: 'Originary | System of Record for Agent Interactions',
+    description: 'Originary stewards an open standard for publishing interaction terms and issuing verifiable receipts. Built for agent economies, policy enforcement, and compliance.',
     url: 'https://www.originary.xyz',
     type: 'website',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | AI Agent Tools, Infrastructure & Systems',
-    description: 'Originary powers agent economies, AI commerce, and compliance with an open system of record to monitor, manage, and monetize AI interactions and access via PEAC.',
+    title: 'Originary | System of Record for Agent Interactions',
+    description: 'Originary stewards an open standard for publishing interaction terms and issuing verifiable receipts. Built for agent economies, policy enforcement, and compliance.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',

@@ -257,7 +257,7 @@ export default function HowItWorksNew() {
               <span className="code-punct">{`{`}</span>{'\n'}
               {'  '}<span className="code-key">&quot;v&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;0.9.23&quot;</span><span className="code-punct">,</span>{'\n'}
               {'  '}<span className="code-key">&quot;iss&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;api.example.com&quot;</span><span className="code-punct">,</span>{'\n'}
-              {'  '}<span className="code-key">&quot;sub&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;agent:gpt-4-turbo&quot;</span><span className="code-punct">,</span>{'\n'}
+              {'  '}<span className="code-key">&quot;sub&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;agent:example-client&quot;</span><span className="code-punct">,</span>{'\n'}
               {'  '}<span className="code-key">&quot;iat&quot;</span><span className="code-punct">:</span> <span className="code-number">1703894400</span><span className="code-punct">,</span>{'\n'}
               {'  '}<span className="code-key">&quot;action&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;api.query&quot;</span><span className="code-punct">,</span>{'\n'}
               {'  '}<span className="code-key">&quot;status&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;success&quot;</span>{'\n'}
@@ -278,7 +278,7 @@ export default function HowItWorksNew() {
 
         <div className={`how-footer ${isVisible ? 'visible' : ''}`}>
           <div className="footer-badges">
-            <span className="badge">Works with any payment rail</span>
+            <span className="badge">Rail-neutral by design</span>
             <span className="badge-sep" />
             <span className="badge">Protocol agnostic</span>
             <span className="badge-sep" />
