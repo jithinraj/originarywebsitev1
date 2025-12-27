@@ -3,6 +3,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import NewHero from '@/components/NewHero'
 import HowItWorksNew from '@/components/HowItWorksNew'
 import ProductSuite from '@/components/ProductSuite'
+import Partners from '@/components/Partners'
 import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
 
@@ -42,6 +43,7 @@ export default function Page() {
         <NewHero />
         <HowItWorksNew />
         <ProductSuite />
+        <Partners />
         <FinalCTA />
       </main>
       <Footer />
