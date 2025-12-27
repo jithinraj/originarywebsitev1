@@ -218,22 +218,6 @@ export default function PeacAnimationHero() {
               >
                 Read the spec
               </Link>
-
-              <Link
-                href="/developers"
-                className="btn btn-ghost btn-magnetic"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: 'var(--space-2)',
-                  padding: '14px 28px',
-                  fontSize: 'var(--text-base)',
-                  color: 'var(--gray-600)'
-                }}
-              >
-                Get started in 10 minutes
-              </Link>
             </div>
 
           </div>
@@ -279,22 +263,6 @@ export default function PeacAnimationHero() {
         }
       `}</style>
     </section>
-  )
-}
-
-function TechBadge({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      className="label-mono"
-      style={{
-        padding: '4px 8px',
-        background: 'var(--gray-100)',
-        borderRadius: 'var(--radius-md)',
-        border: '1px solid var(--gray-200)'
-      }}
-    >
-      {children}
-    </span>
   )
 }
 
