@@ -173,7 +173,7 @@ export default function FinalCTA() {
           margin-top: 8px;
         }
 
-        .cta-btn-primary {
+        .cta-actions :global(.cta-btn-primary) {
           display: inline-flex;
           align-items: center;
           gap: 10px;
@@ -187,13 +187,13 @@ export default function FinalCTA() {
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .cta-btn-primary:hover {
+        .cta-actions :global(.cta-btn-primary:hover) {
           background: #5349e8;
           transform: translateY(-2px);
           box-shadow: 0 8px 30px rgba(99, 91, 255, 0.25);
         }
 
-        .cta-btn-secondary {
+        .cta-actions :global(.cta-btn-secondary) {
           display: inline-flex;
           align-items: center;
           padding: 18px 36px;
@@ -207,50 +207,10 @@ export default function FinalCTA() {
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .cta-btn-secondary:hover {
+        .cta-actions :global(.cta-btn-secondary:hover) {
           border-color: rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
           transform: translateY(-2px);
-        }
-
-        .cta-trust {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 32px;
-          padding: 32px 48px;
-          background: white;
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          border-radius: 16px;
-          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-        }
-
-        .trust-item {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 4px;
-        }
-
-        .trust-value {
-          font-size: 24px;
-          font-weight: 700;
-          color: #0a0a0a;
-          letter-spacing: -0.02em;
-        }
-
-        .trust-label {
-          font-size: 12px;
-          font-weight: 500;
-          color: #737373;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-        }
-
-        .trust-sep {
-          width: 1px;
-          height: 40px;
-          background: rgba(0, 0, 0, 0.08);
         }
 
         .reveal {
@@ -293,21 +253,10 @@ export default function FinalCTA() {
             max-width: 300px;
           }
 
-          .cta-btn-primary,
-          .cta-btn-secondary {
+          .cta-actions :global(.cta-btn-primary),
+          .cta-actions :global(.cta-btn-secondary) {
             width: 100%;
             justify-content: center;
-          }
-
-          .cta-trust {
-            flex-direction: column;
-            gap: 24px;
-            padding: 24px 32px;
-          }
-
-          .trust-sep {
-            width: 60px;
-            height: 1px;
           }
 
           .orb-1,
@@ -329,14 +278,10 @@ export default function FinalCTA() {
             margin-bottom: 40px;
           }
 
-          .cta-btn-primary,
-          .cta-btn-secondary {
+          .cta-actions :global(.cta-btn-primary),
+          .cta-actions :global(.cta-btn-secondary) {
             padding: 14px 24px;
             font-size: 14px;
-          }
-
-          .trust-value {
-            font-size: 20px;
           }
         }
 
@@ -347,8 +292,8 @@ export default function FinalCTA() {
             transition: none;
           }
 
-          .cta-btn-primary:hover,
-          .cta-btn-secondary:hover {
+          .cta-actions :global(.cta-btn-primary:hover),
+          .cta-actions :global(.cta-btn-secondary:hover) {
             transform: none;
           }
         }

@@ -55,6 +55,17 @@ export default function NewHero() {
             </Link>
           </div>
 
+          <p className="hero-download-strip">
+            <span className="strip-brand">ORIGINARY™</span> - Open software. Available for{' '}
+            <Link href="/downloads" className="strip-link">macOS</Link>,{' '}
+            <Link href="/downloads" className="strip-link">Windows</Link>,{' '}
+            <Link href="/downloads" className="strip-link">Linux</Link>
+            {' · '}
+            <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link">
+              Download source code
+            </a>
+          </p>
+
         </div>
 
         <div className={`hero-visual ${isLoaded ? 'loaded' : ''}`}>
@@ -272,35 +283,30 @@ export default function NewHero() {
           color: #0a0a0a;
         }
 
-        .hero-features {
-          display: flex;
-          align-items: center;
-          gap: 20px;
-          padding-top: 24px;
-          border-top: 1px solid rgba(0, 0, 0, 0.06);
+        .hero-download-strip {
+          font-size: 11px;
+          line-height: 1.8;
+          color: #a3a3a3;
+          font-weight: 400;
+          letter-spacing: 0.01em;
+          margin: 0;
         }
 
-        .feature {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 13px;
+        .hero-download-strip :global(.strip-brand) {
+          color: #737373;
           font-weight: 500;
+        }
+
+        .hero-download-strip :global(.strip-link) {
+          color: #737373;
+          text-decoration: none;
+          border-bottom: 1px solid transparent;
+          transition: border-color 0.15s ease, color 0.15s ease;
+        }
+
+        .hero-download-strip :global(.strip-link:hover) {
+          border-bottom-color: #a3a3a3;
           color: #525252;
-        }
-
-        .feature-dot {
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background: #635bff;
-        }
-
-        .feature-sep {
-          width: 3px;
-          height: 3px;
-          border-radius: 50%;
-          background: #d4d4d4;
         }
 
         .hero-visual {
@@ -528,10 +534,6 @@ export default function NewHero() {
             justify-content: center;
           }
 
-          .hero-features {
-            justify-content: center;
-          }
-
           .code-window {
             max-width: 440px;
           }
@@ -589,10 +591,8 @@ export default function NewHero() {
             min-width: 120px;
           }
 
-          .hero-features {
-            flex-wrap: wrap;
-            gap: 8px 16px;
-            padding-top: 16px;
+          .hero-download-strip {
+            font-size: 10px;
           }
 
           .code-window {
@@ -637,6 +637,10 @@ export default function NewHero() {
 
           .hero-clarifier {
             font-size: 11px;
+          }
+
+          .hero-download-strip {
+            display: none;
           }
 
           .hero-visual {

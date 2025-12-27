@@ -1,0 +1,121 @@
+/**
+ * Archived CSS - Removed from components on 2025-12-28
+ * These styles were defined but never used in their respective components.
+ * Kept here for reference in case they need to be restored.
+ */
+
+/* ============================================
+   FROM: NewHero.tsx
+   Unused feature badges that were never rendered
+   ============================================ */
+
+.hero-features {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.feature {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #525252;
+}
+
+.feature-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #635bff;
+}
+
+.feature-sep {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #d4d4d4;
+}
+
+/* Mobile styles for hero-features */
+@media (max-width: 1024px) {
+  .hero-features {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-features {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    padding-top: 16px;
+  }
+}
+
+/* ============================================
+   FROM: FinalCTA.tsx
+   Unused trust metrics section
+   ============================================ */
+
+.cta-trust {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 32px 48px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.trust-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0a0a0a;
+  letter-spacing: -0.02em;
+}
+
+.trust-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #737373;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.trust-sep {
+  width: 1px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile styles for trust section */
+@media (max-width: 768px) {
+  .cta-trust {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 32px;
+  }
+
+  .trust-sep {
+    width: 60px;
+    height: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-value {
+    font-size: 20px;
+  }
+}

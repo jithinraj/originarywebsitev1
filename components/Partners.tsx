@@ -150,18 +150,24 @@ export default function Partners() {
           margin: 0;
         }
 
-        .footer-link {
+        .partners-footer :global(.footer-link) {
           display: inline-flex;
           align-items: center;
-          gap: 6px;
+          gap: 8px;
+          padding: 10px 18px;
           font-size: 14px;
           font-weight: 500;
-          color: #635bff;
+          color: #525252;
+          background: transparent;
+          border: 1px solid #e5e5e5;
+          border-radius: 8px;
           text-decoration: none;
-          transition: gap 0.2s ease;
+          transition: border-color 0.15s ease, color 0.15s ease, gap 0.15s ease;
         }
 
-        .footer-link:hover {
+        .partners-footer :global(.footer-link:hover) {
+          border-color: #d4d4d4;
+          color: #0a0a0a;
           gap: 10px;
         }
 

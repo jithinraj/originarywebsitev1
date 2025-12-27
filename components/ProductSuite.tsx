@@ -105,17 +105,17 @@ export default function ProductSuite() {
         <div className="products-footer">
           <div className="footer-badges">
             <span className="badge">
-              <span className="badge-dot badge-dot-purple" />
+              <span className="badge-dot" />
               Open Protocol
             </span>
             <span className="badge-sep" />
             <span className="badge">
-              <span className="badge-dot badge-dot-green" />
+              <span className="badge-dot" />
               Apache-2.0 Licensed
             </span>
             <span className="badge-sep" />
             <span className="badge">
-              <span className="badge-dot badge-dot-orange" />
+              <span className="badge-dot" />
               Self-Hostable
             </span>
           </div>
@@ -356,11 +356,8 @@ export default function ProductSuite() {
           width: 6px;
           height: 6px;
           border-radius: 50%;
+          background: #635bff;
         }
-
-        .badge-dot-purple { background: #635bff; }
-        .badge-dot-green { background: #635bff; }
-        .badge-dot-orange { background: #635bff; }
 
         .badge-sep {
           width: 3px;
