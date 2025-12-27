@@ -5,10 +5,6 @@ import Footer from '@/components/Footer'
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { Check, Copy, Play, Pause, SkipForward, RotateCcw, ChevronLeft, ChevronRight, Download, ExternalLink } from 'lucide-react'
 
-// ============================================================================
-// CONSTANTS & DATA
-// ============================================================================
-
 const PEAC_TXT_CONTENT = `preferences: https://www.originary.xyz/.well-known/aipref.json
 access_control: http-402
 payments: [x402, stripe]
@@ -96,10 +92,6 @@ const DISPUTE_PACKET_PREVIEW = `{"ts":"2025-12-13T12:00:00Z","request_hash":"sha
 {"ts":"2025-12-13T12:01:00Z","request_hash":"sha256-...","policy_hash":"sha256-...","aipref_hash":"sha256-...","receipt_jws":"eyJhbGci...","payment_reference":"x402_pay_..."}
 {"ts":"2025-12-13T12:02:00Z","request_hash":"sha256-...","policy_hash":"sha256-...","aipref_hash":"sha256-...","receipt_jws":"eyJhbGci...","payment_reference":"x402_pay_..."}`
 
-// ============================================================================
-// UTILITY HOOKS
-// ============================================================================
-
 function useReducedMotion() {
   const [reducedMotion, setReducedMotion] = useState(false)
   useEffect(() => {
@@ -121,10 +113,6 @@ function useCopyToClipboard() {
   }, [])
   return { copied, copy }
 }
-
-// ============================================================================
-// ANIMATION COMPONENTS
-// ============================================================================
 
 function AnimatedGrid() {
   return (
@@ -1042,10 +1030,6 @@ function AnimatedTimeline({
     </div>
   )
 }
-
-// ============================================================================
-// MAIN PAGE COMPONENT
-// ============================================================================
 
 export default function DemoPage() {
   const reducedMotion = useReducedMotion()

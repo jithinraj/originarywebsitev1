@@ -851,11 +851,6 @@ export default function ContextGraphsPage() {
       <Footer />
 
       <style jsx>{`
-        /* ============================================
-           RESPONSIVE DESIGN - Mobile First Approach
-           Breakpoints: 320px, 480px, 640px, 768px, 1024px, 1100px, 1400px
-           ============================================ */
-
         .content-layout {
           display: flex;
           max-width: 1400px;
@@ -1113,6 +1108,21 @@ export default function ContextGraphsPage() {
           gap: var(--space-4);
         }
 
+        /* Improvement list */
+        .improvement-list {
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-4);
+          margin: var(--space-6) 0;
+        }
+
+        /* Landscape grid */
+        .landscape-grid {
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-4);
+        }
+
         .requirement-card {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
           background: var(--gray-50);
@@ -1353,9 +1363,6 @@ export default function ContextGraphsPage() {
           margin-bottom: 0;
         }
 
-        /* ============================================
-           ACCESSIBILITY - Reduced Motion
-           ============================================ */
         @media (prefers-reduced-motion: reduce) {
           .toc-link,
           .mobile-toc-trigger,
@@ -1364,9 +1371,6 @@ export default function ContextGraphsPage() {
           }
         }
 
-        /* ============================================
-           HIGH CONTRAST MODE
-           ============================================ */
         @media (prefers-contrast: high) {
           .callout,
           .protocol-callout,
@@ -1384,9 +1388,6 @@ export default function ContextGraphsPage() {
           }
         }
 
-        /* ============================================
-           PRINT STYLES
-           ============================================ */
         @media print {
           .desktop-toc,
           .mobile-toc,

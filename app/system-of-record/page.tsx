@@ -857,11 +857,6 @@ Content-Type: application/json`}</code></pre>
       <Footer />
 
       <style jsx>{`
-        /* ============================================
-           RESPONSIVE DESIGN - Mobile First Approach
-           Breakpoints: 320px, 480px, 640px, 768px, 1024px, 1100px, 1400px
-           ============================================ */
-
         .content-layout {
           display: flex;
           max-width: 1400px;
@@ -1492,9 +1487,6 @@ Content-Type: application/json`}</code></pre>
           margin-bottom: 0;
         }
 
-        /* ============================================
-           ACCESSIBILITY - Reduced Motion
-           ============================================ */
         @media (prefers-reduced-motion: reduce) {
           .toc-link,
           .mobile-toc-trigger,
@@ -1503,9 +1495,6 @@ Content-Type: application/json`}</code></pre>
           }
         }
 
-        /* ============================================
-           HIGH CONTRAST MODE
-           ============================================ */
         @media (prefers-contrast: high) {
           .callout,
           .protocol-callout,
@@ -1524,9 +1513,6 @@ Content-Type: application/json`}</code></pre>
           }
         }
 
-        /* ============================================
-           PRINT STYLES
-           ============================================ */
         @media print {
           .desktop-toc,
           .mobile-toc,

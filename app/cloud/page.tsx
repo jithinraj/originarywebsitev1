@@ -23,8 +23,6 @@ export const metadata: Metadata = {
 }
 
 export default function CloudPage() {
-  // TODO: Reintroduce pricing JSON-LD once public plans are stable
-
   return (
     <>
       <NavigationHeader />
