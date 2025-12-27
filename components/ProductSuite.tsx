@@ -21,7 +21,7 @@ const products = [
     desc: 'Offline and hosted receipt verification with JWKS support and policy validation.',
     href: '/products/verify',
     icon: ShieldCheck,
-    color: '#00d4aa',
+    color: '#635bff',
     features: ['Offline verification', 'JWKS support', 'Policy validation', 'Evidence chains'],
   },
   {
@@ -31,7 +31,7 @@ const products = [
     desc: 'Comprehensive audit exports and evidence views derived from PEAC receipts.',
     href: '/trace',
     icon: BarChart3,
-    color: '#f59e0b',
+    color: '#635bff',
     features: ['Audit exports', 'Evidence views', 'Compliance tools', 'Dispute resolution'],
   },
   {
@@ -41,7 +41,7 @@ const products = [
     desc: 'Operate receipts at scale with dashboards, exports, and policy tooling built on top of PEAC evidence.',
     href: '/products/studio',
     icon: Layers,
-    color: '#8b5cf6',
+    color: '#635bff',
     features: ['Operational dashboards', 'Scale governance', 'Compliance tools', 'Team management'],
   },
 ]
@@ -163,7 +163,7 @@ export default function ProductSuite() {
           inset: 0;
           background:
             radial-gradient(ellipse 60% 40% at 80% 0%, rgba(99, 91, 255, 0.05) 0%, transparent 50%),
-            radial-gradient(ellipse 50% 30% at 20% 100%, rgba(0, 212, 170, 0.04) 0%, transparent 50%);
+            radial-gradient(ellipse 50% 30% at 20% 100%, rgba(99, 91, 255, 0.04) 0%, transparent 50%);
         }
 
         .products-container {
@@ -252,12 +252,12 @@ export default function ProductSuite() {
           justify-content: center;
           background: #f5f5f5;
           border-radius: 10px;
-          color: var(--accent);
+          color: #525252;
           transition: background 0.2s ease, color 0.2s ease;
         }
 
         .product-card-wrapper :global(.product-card:hover) .card-icon {
-          background: var(--accent);
+          background: #635bff;
           color: white;
         }
 
@@ -270,7 +270,7 @@ export default function ProductSuite() {
         }
 
         .product-card-wrapper :global(.product-card:hover) .card-arrow {
-          color: var(--accent);
+          color: #635bff;
           transform: translateX(4px);
         }
 
@@ -290,7 +290,7 @@ export default function ProductSuite() {
         .card-tagline {
           font-size: 13px;
           font-weight: 600;
-          color: var(--accent);
+          color: #737373;
           margin: 0 0 10px;
         }
 
@@ -318,18 +318,18 @@ export default function ProductSuite() {
 
         .card-indicator {
           position: absolute;
-          bottom: 0;
+          top: 0;
           left: 0;
-          right: 0;
-          height: 3px;
-          background: var(--accent);
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: transform 0.3s ease;
+          bottom: 0;
+          width: 3px;
+          background: #635bff;
+          border-radius: 3px 0 0 3px;
+          opacity: 0;
+          transition: opacity 0.3s ease;
         }
 
         .product-card-wrapper :global(.product-card:hover) .card-indicator {
-          transform: scaleX(1);
+          opacity: 1;
         }
 
         .products-footer {
@@ -359,8 +359,8 @@ export default function ProductSuite() {
         }
 
         .badge-dot-purple { background: #635bff; }
-        .badge-dot-green { background: #00d4aa; }
-        .badge-dot-orange { background: #f59e0b; }
+        .badge-dot-green { background: #635bff; }
+        .badge-dot-orange { background: #635bff; }
 
         .badge-sep {
           width: 3px;

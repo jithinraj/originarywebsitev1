@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Shield } from 'lucide-react'
+import { CheckCircle, Shield } from 'lucide-react'
 import HeroPeacFlowBg from './HeroPeacFlowBg'
 
 export default function NewHero() {
@@ -25,7 +25,7 @@ export default function NewHero() {
         <div className={`hero-content ${isLoaded ? 'loaded' : ''}`}>
           <div className="hero-badge">
             <CheckCircle size={14} strokeWidth={2} />
-            <span>Open source protocol</span>
+            <span>Originary | Open source PEAC protocol (Apache 2.0)</span>
           </div>
 
           <h1 className="hero-headline">
@@ -34,21 +34,16 @@ export default function NewHero() {
           </h1>
 
           <p className="hero-description">
-            Originary<span className="tm">&#8482;</span> builds and stewards an open standard for publishing interaction terms and issuing verifiable receipts as durable evidence of what happened under those terms. Receipts can bind policy, consent, attribution, and optional settlement signals while preserving privacy. This makes agent interactions verifiable and auditable across the open internet.
-          </p>
-
-          <p className="hero-clarifier-bold">
-            Not a centralized platform. PEAC records are portable receipts that anyone can verify independently.
+            Originary lets you publish clear, machine-readable terms for how agents may access your site or API. Each interaction can return a signed receipt proving what decision was made under which terms, so anyone can verify it later, independently and offline.
           </p>
 
           <p className="hero-clarifier">
-            Designed for independent implementations and adapter-based interoperability across protocols and rails.
+            Not a centralized platform. Receipts are free, open source, portable and self-hostable.
           </p>
 
           <div className="hero-actions">
             <Link href="/developers" className="hero-btn-primary">
               Start building
-              <ArrowRight size={18} strokeWidth={2.5} className="arrow-icon" />
             </Link>
             <Link
               href="https://github.com/peacprotocol/peac"
@@ -56,17 +51,10 @@ export default function NewHero() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Download on GitHub
+              GitHub
             </Link>
           </div>
 
-          <div className="hero-features">
-            <span className="feature">Apache-2.0 licensed</span>
-            <span className="feature-sep" />
-            <span className="feature">Self-hostable</span>
-            <span className="feature-sep" />
-            <span className="feature">Offline verification</span>
-          </div>
         </div>
 
         <div className={`hero-visual ${isLoaded ? 'loaded' : ''}`}>
@@ -74,9 +62,9 @@ export default function NewHero() {
             <div className="code-window">
               <div className="code-header">
                 <div className="code-dots">
-                  <span className="dot dot-red" />
-                  <span className="dot dot-yellow" />
-                  <span className="dot dot-green" />
+                  <span className="dot" />
+                  <span className="dot" />
+                  <span className="dot" />
                 </div>
                 <span className="code-title">HTTP Response</span>
               </div>
@@ -139,6 +127,7 @@ export default function NewHero() {
           inset: 0;
           color: #635bff;
           opacity: 0.9;
+          overflow: hidden;
         }
 
         .content-overlay {
@@ -167,7 +156,7 @@ export default function NewHero() {
         .hero-content {
           display: flex;
           flex-direction: column;
-          gap: 32px;
+          gap: 24px;
         }
 
         .hero-content > * {
@@ -216,113 +205,100 @@ export default function NewHero() {
 
         .hero-headline-sub {
           font-size: clamp(32px, 5vw, 56px);
-          font-weight: 500;
+          font-weight: 550;
           letter-spacing: -0.025em;
           line-height: 1.1;
-          color: #6b6b6b;
+          color: #0a0a0a;
         }
 
         .hero-description {
-          font-size: 18px;
-          line-height: 1.7;
-          color: #404040;
-          max-width: 480px;
+          font-size: 19px;
+          line-height: 1.6;
+          color: #525252;
+          max-width: 520px;
           margin: 0;
         }
 
-        .tm {
-          font-size: 0.6em;
-          vertical-align: super;
-          color: #737373;
-        }
-
-        .hero-clarifier-bold {
-          font-size: 15px;
-          line-height: 1.6;
-          color: #404040;
-          font-weight: 600;
-          max-width: 480px;
-          margin: -16px 0 0 0;
-        }
-
         .hero-clarifier {
-          font-size: 15px;
-          line-height: 1.6;
+          font-size: 13px;
+          font-weight: 500;
+          line-height: 1.5;
           color: #737373;
-          max-width: 480px;
-          margin: -8px 0 0 0;
+          max-width: 560px;
+          margin: 0;
         }
 
         .hero-actions {
           display: flex;
-          gap: 16px;
-        }
-
-        .hero-btn-primary {
-          display: inline-flex;
           align-items: center;
           gap: 10px;
-          padding: 16px 32px;
-          font-size: 15px;
-          font-weight: 600;
-          text-decoration: none;
-          color: white;
-          background: #635bff;
-          border-radius: 12px;
-          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .hero-btn-primary:hover {
-          background: #5349e8;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(99, 91, 255, 0.25);
-        }
-
-        .hero-btn-primary :global(.arrow-icon) {
-          transition: transform 0.3s ease;
-        }
-
-        .hero-btn-primary:hover :global(.arrow-icon) {
-          transform: translateX(4px);
-        }
-
-        .hero-btn-secondary {
+        .hero-actions :global(.hero-btn-primary) {
           display: inline-flex;
           align-items: center;
-          padding: 16px 32px;
-          font-size: 15px;
-          font-weight: 600;
+          justify-content: center;
+          padding: 10px 18px;
+          font-size: 14px;
+          font-weight: 500;
           text-decoration: none;
-          color: #0a0a0a;
-          background: white;
-          border: 1px solid rgba(0, 0, 0, 0.1);
-          border-radius: 12px;
-          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          color: white;
+          background: #0a0a0a;
+          border-radius: 8px;
+          transition: background 0.15s ease;
         }
 
-        .hero-btn-secondary:hover {
-          border-color: rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-          transform: translateY(-2px);
+        .hero-actions :global(.hero-btn-primary:hover) {
+          background: #262626;
+        }
+
+        .hero-actions :global(.hero-btn-secondary) {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 18px;
+          font-size: 14px;
+          font-weight: 500;
+          text-decoration: none;
+          color: #525252;
+          background: transparent;
+          border: 1px solid #e5e5e5;
+          border-radius: 8px;
+          transition: border-color 0.15s ease, color 0.15s ease;
+        }
+
+        .hero-actions :global(.hero-btn-secondary:hover) {
+          border-color: #d4d4d4;
+          color: #0a0a0a;
         }
 
         .hero-features {
           display: flex;
           align-items: center;
-          gap: 16px;
+          gap: 20px;
           padding-top: 24px;
           border-top: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .feature {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
           font-size: 13px;
           font-weight: 500;
-          color: #737373;
+          color: #525252;
+        }
+
+        .feature-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #635bff;
         }
 
         .feature-sep {
-          width: 4px;
-          height: 4px;
+          width: 3px;
+          height: 3px;
           border-radius: 50%;
           background: #d4d4d4;
         }
@@ -400,11 +376,8 @@ export default function NewHero() {
           width: 12px;
           height: 12px;
           border-radius: 50%;
+          background: rgba(255, 255, 255, 0.15);
         }
-
-        .dot-red { background: #ff5f57; }
-        .dot-yellow { background: #febc2e; }
-        .dot-green { background: #28c840; }
 
         .code-title {
           margin-left: auto;
@@ -442,7 +415,7 @@ export default function NewHero() {
         .code-line:last-child { margin-bottom: 0; }
 
         .code-key {
-          color: #60a5fa;
+          color: #a5a0ff;
           white-space: nowrap;
           font-weight: 500;
         }
@@ -453,19 +426,19 @@ export default function NewHero() {
         }
 
         .code-value {
-          color: rgba(255, 255, 255, 0.8);
+          color: rgba(255, 255, 255, 0.7);
           word-break: break-all;
         }
 
         .code-value.token {
-          color: #fbbf24;
+          color: rgba(255, 255, 255, 0.9);
         }
 
         .cursor {
           display: inline-block;
           width: 2px;
           height: 14px;
-          background: #fbbf24;
+          background: #a5a0ff;
           margin-left: 2px;
           animation: blink 1s step-end infinite;
           vertical-align: middle;
@@ -477,14 +450,14 @@ export default function NewHero() {
         }
 
         .code-value.success {
-          color: #4ade80;
+          color: #a5a0ff;
           font-weight: 600;
         }
 
         .code-footer {
           padding: 14px 20px;
-          background: rgba(74, 222, 128, 0.06);
-          border-top: 1px solid rgba(74, 222, 128, 0.12);
+          background: rgba(99, 91, 255, 0.08);
+          border-top: 1px solid rgba(99, 91, 255, 0.15);
         }
 
         .verify-status {
@@ -493,7 +466,7 @@ export default function NewHero() {
           gap: 8px;
           font-family: var(--font-mono);
           font-size: 12px;
-          color: #4ade80;
+          color: #a5a0ff;
         }
 
         .verify-status :global(.verify-shield) {
@@ -573,6 +546,22 @@ export default function NewHero() {
           .hero-container {
             gap: 48px;
           }
+
+          .hero-content {
+            gap: 20px;
+          }
+
+          .hero :global(.peac-flow-bg) {
+            display: none;
+          }
+
+          .hero-description {
+            font-size: 17px;
+          }
+
+          .hero-clarifier {
+            font-size: 12px;
+          }
         }
 
         @media (max-width: 640px) {
@@ -582,22 +571,28 @@ export default function NewHero() {
 
           .hero-container {
             padding: 0 20px;
+            gap: 40px;
+          }
+
+          .hero-content {
+            gap: 16px;
           }
 
           .hero-actions {
-            flex-direction: column;
-            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
           }
 
-          .hero-btn-primary,
-          .hero-btn-secondary {
-            width: 100%;
-            justify-content: center;
+          .hero-actions :global(.hero-btn-primary),
+          .hero-actions :global(.hero-btn-secondary) {
+            flex: 1;
+            min-width: 120px;
           }
 
           .hero-features {
             flex-wrap: wrap;
             gap: 8px 16px;
+            padding-top: 16px;
           }
 
           .code-window {
@@ -621,6 +616,11 @@ export default function NewHero() {
 
           .hero-container {
             padding: 0 16px;
+            gap: 32px;
+          }
+
+          .hero-content {
+            gap: 14px;
           }
 
           .hero-headline-main {
@@ -632,15 +632,15 @@ export default function NewHero() {
           }
 
           .hero-description {
-            font-size: 16px;
-          }
-
-          .hero-clarifier-bold {
-            font-size: 14px;
+            font-size: 15px;
           }
 
           .hero-clarifier {
-            font-size: 14px;
+            font-size: 11px;
+          }
+
+          .hero-visual {
+            display: none;
           }
         }
 
@@ -674,10 +674,6 @@ export default function NewHero() {
             transform: none;
           }
 
-          .hero-btn-primary:hover,
-          .hero-btn-secondary:hover {
-            transform: none;
-          }
         }
       `}</style>
     </section>

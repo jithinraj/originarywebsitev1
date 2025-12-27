@@ -21,7 +21,7 @@ const steps = [
     tagline: 'Control access',
     desc: 'Allow, deny, or request payment before serving the response with HTTP 402 status codes',
     icon: Shield,
-    color: '#00d4aa',
+    color: '#635bff',
   },
   {
     id: 'receipt',
@@ -30,7 +30,7 @@ const steps = [
     tagline: 'Prove it forever',
     desc: 'Sign and return a cryptographic PEAC-Receipt that verifies offline with your public key',
     icon: Receipt,
-    color: '#f59e0b',
+    color: '#635bff',
   }
 ]
 
@@ -91,11 +91,11 @@ export default function HowItWorksNew() {
             <defs>
               <linearGradient id="line-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#635bff" />
-                <stop offset="100%" stopColor="#00d4aa" />
+                <stop offset="100%" stopColor="#635bff" />
               </linearGradient>
               <linearGradient id="line-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#00d4aa" />
-                <stop offset="100%" stopColor="#f59e0b" />
+                <stop offset="0%" stopColor="#635bff" />
+                <stop offset="100%" stopColor="#635bff" />
               </linearGradient>
             </defs>
 
@@ -109,7 +109,7 @@ export default function HowItWorksNew() {
             <path
               d="M450 150 Q 550 150 700 150"
               className="connection-base"
-              stroke="rgba(0, 212, 170, 0.1)"
+              stroke="rgba(99, 91, 255, 0.1)"
               strokeWidth="3"
               fill="none"
             />
@@ -143,7 +143,7 @@ export default function HowItWorksNew() {
                 <circle
                   key={`p2-${i}`}
                   r="3"
-                  fill="#00d4aa"
+                  fill="#635bff"
                   opacity="0.6"
                   className={`particle particle-2 p-${i} ${flowProgress >= 2 ? 'active' : ''}`}
                 />
@@ -153,7 +153,7 @@ export default function HowItWorksNew() {
             <g className={`receipt-packet ${flowProgress >= 1 ? 'traveling' : ''}`}>
               <rect x="-20" y="-14" width="40" height="28" rx="6" fill="white" stroke="#635bff" strokeWidth="2"/>
               <path d="M-12 -4h24M-12 4h16" stroke="#635bff" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
-              <circle cx="10" cy="6" r="4" fill="#00d4aa"/>
+              <circle cx="10" cy="6" r="4" fill="#635bff"/>
               <path d="M8 6l2 2 4-4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </g>
 
@@ -175,13 +175,13 @@ export default function HowItWorksNew() {
             </g>
 
             <g className={`node node-2 ${activeStep === 1 ? 'active' : ''}`} onClick={() => setActiveStep(1)}>
-              <circle cx="450" cy="150" r="50" className="pulse-ring ring-1" fill="none" stroke="#00d4aa" strokeWidth="1" opacity="0"/>
-              <circle cx="450" cy="150" r="50" className="pulse-ring ring-2" fill="none" stroke="#00d4aa" strokeWidth="1" opacity="0"/>
+              <circle cx="450" cy="150" r="50" className="pulse-ring ring-1" fill="none" stroke="#635bff" strokeWidth="1" opacity="0"/>
+              <circle cx="450" cy="150" r="50" className="pulse-ring ring-2" fill="none" stroke="#635bff" strokeWidth="1" opacity="0"/>
               <circle cx="450" cy="150" r="50" className="node-bg" fill="white" stroke="#e5e5e5" strokeWidth="2"/>
-              <circle cx="450" cy="150" r="50" className="node-border" fill="none" stroke="#00d4aa" strokeWidth="3" opacity="0"/>
+              <circle cx="450" cy="150" r="50" className="node-border" fill="none" stroke="#635bff" strokeWidth="3" opacity="0"/>
               <g transform="translate(450, 150)">
-                <circle r="24" fill="rgba(0, 212, 170, 0.1)" className="icon-bg"/>
-                <g transform="translate(-12, -12)" className="icon" stroke="#00d4aa" fill="none" strokeWidth="2">
+                <circle r="24" fill="rgba(99, 91, 255, 0.1)" className="icon-bg"/>
+                <g transform="translate(-12, -12)" className="icon" stroke="#635bff" fill="none" strokeWidth="2">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </g>
               </g>
@@ -189,13 +189,13 @@ export default function HowItWorksNew() {
             </g>
 
             <g className={`node node-3 ${activeStep === 2 ? 'active' : ''}`} onClick={() => setActiveStep(2)}>
-              <circle cx="750" cy="150" r="50" className="pulse-ring ring-1" fill="none" stroke="#f59e0b" strokeWidth="1" opacity="0"/>
-              <circle cx="750" cy="150" r="50" className="pulse-ring ring-2" fill="none" stroke="#f59e0b" strokeWidth="1" opacity="0"/>
+              <circle cx="750" cy="150" r="50" className="pulse-ring ring-1" fill="none" stroke="#635bff" strokeWidth="1" opacity="0"/>
+              <circle cx="750" cy="150" r="50" className="pulse-ring ring-2" fill="none" stroke="#635bff" strokeWidth="1" opacity="0"/>
               <circle cx="750" cy="150" r="50" className="node-bg" fill="white" stroke="#e5e5e5" strokeWidth="2"/>
-              <circle cx="750" cy="150" r="50" className="node-border" fill="none" stroke="#f59e0b" strokeWidth="3" opacity="0"/>
+              <circle cx="750" cy="150" r="50" className="node-border" fill="none" stroke="#635bff" strokeWidth="3" opacity="0"/>
               <g transform="translate(750, 150)">
-                <circle r="24" fill="rgba(245, 158, 11, 0.1)" className="icon-bg"/>
-                <g transform="translate(-12, -12)" className="icon" stroke="#f59e0b" fill="none" strokeWidth="2">
+                <circle r="24" fill="rgba(99, 91, 255, 0.1)" className="icon-bg"/>
+                <g transform="translate(-12, -12)" className="icon" stroke="#635bff" fill="none" strokeWidth="2">
                   <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"/>
                   <path d="M8 10h8M8 14h8"/>
                 </g>
@@ -205,7 +205,7 @@ export default function HowItWorksNew() {
 
             <g className="arrows">
               <polygon points="295,145 305,150 295,155" fill="#635bff" className={`arrow arrow-1 ${flowProgress >= 1 ? 'active' : ''}`}/>
-              <polygon points="595,145 605,150 595,155" fill="#00d4aa" className={`arrow arrow-2 ${flowProgress >= 2 ? 'active' : ''}`}/>
+              <polygon points="595,145 605,150 595,155" fill="#635bff" className={`arrow arrow-2 ${flowProgress >= 2 ? 'active' : ''}`}/>
             </g>
           </svg>
         </div>
@@ -269,7 +269,6 @@ export default function HowItWorksNew() {
         <div className={`how-cta ${isVisible ? 'visible' : ''}`}>
           <Link href="/demo" className="cta-primary">
             See it in action
-            <ArrowRight size={18} strokeWidth={2.5} />
           </Link>
           <Link href="/developers" className="cta-secondary">
             Read the docs
@@ -278,11 +277,20 @@ export default function HowItWorksNew() {
 
         <div className={`how-footer ${isVisible ? 'visible' : ''}`}>
           <div className="footer-badges">
-            <span className="badge">Rail-neutral by design</span>
+            <span className="badge">
+              <span className="badge-dot" />
+              Rail-neutral by design
+            </span>
             <span className="badge-sep" />
-            <span className="badge">Protocol agnostic</span>
+            <span className="badge">
+              <span className="badge-dot" />
+              Protocol agnostic
+            </span>
             <span className="badge-sep" />
-            <span className="badge">Offline verification</span>
+            <span className="badge">
+              <span className="badge-dot" />
+              Offline verification
+            </span>
           </div>
         </div>
       </div>
@@ -317,8 +325,8 @@ export default function HowItWorksNew() {
           inset: 0;
           background:
             radial-gradient(ellipse 60% 40% at 20% 0%, rgba(99, 91, 255, 0.05) 0%, transparent 50%),
-            radial-gradient(ellipse 50% 30% at 50% 30%, rgba(0, 209, 255, 0.04) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0, 212, 170, 0.04) 0%, transparent 50%);
+            radial-gradient(ellipse 50% 30% at 50% 30%, rgba(99, 91, 255, 0.03) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 40% at 80% 100%, rgba(99, 91, 255, 0.04) 0%, transparent 50%);
         }
 
         .how-container {
@@ -542,20 +550,7 @@ export default function HowItWorksNew() {
         }
 
         .card-glow {
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          width: 200%;
-          height: 200%;
-          background: radial-gradient(circle at center, var(--accent) 0%, transparent 70%);
-          opacity: 0;
-          transition: opacity 0.4s ease;
-          pointer-events: none;
-        }
-
-        .step-card:hover .card-glow,
-        .step-card.active .card-glow {
-          opacity: 0.04;
+          display: none;
         }
 
         .card-header {
@@ -579,9 +574,9 @@ export default function HowItWorksNew() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: rgba(99, 91, 255, 0.08);
+          background: #f5f5f5;
           border-radius: 10px;
-          color: #635bff;
+          color: #525252;
           transition: background 0.2s ease, color 0.2s ease;
         }
 
@@ -606,31 +601,32 @@ export default function HowItWorksNew() {
         .step-tagline {
           font-size: 14px;
           font-weight: 600;
-          color: #635bff;
+          color: #737373;
           margin: 0 0 12px;
         }
 
         .step-desc {
           font-size: 15px;
           line-height: 1.7;
-          color: #1a1a1a;
+          color: #525252;
           margin: 0;
         }
 
         .card-indicator {
           position: absolute;
-          bottom: 0;
+          top: 0;
           left: 0;
-          right: 0;
-          height: 3px;
+          bottom: 0;
+          width: 3px;
           background: #635bff;
-          transform: scaleX(0);
-          transform-origin: left;
-          transition: transform 0.4s ease;
+          border-radius: 3px 0 0 3px;
+          opacity: 0;
+          transition: opacity 0.3s ease;
         }
 
+        .step-card:hover .card-indicator,
         .step-card.active .card-indicator {
-          transform: scaleX(1);
+          opacity: 1;
         }
 
         .code-section {
@@ -712,44 +708,42 @@ export default function HowItWorksNew() {
           transform: translateY(0);
         }
 
-        .cta-primary {
+        .how-cta :global(.cta-primary) {
           display: inline-flex;
           align-items: center;
-          gap: 10px;
-          padding: 18px 36px;
-          font-size: 15px;
-          font-weight: 600;
+          justify-content: center;
+          padding: 10px 18px;
+          font-size: 14px;
+          font-weight: 500;
           color: white;
           background: #0a0a0a;
-          border-radius: 12px;
+          border-radius: 8px;
           text-decoration: none;
-          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: background 0.15s ease;
         }
 
-        .cta-primary:hover {
-          background: #1a1a1a;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        .how-cta :global(.cta-primary:hover) {
+          background: #262626;
         }
 
-        .cta-secondary {
+        .how-cta :global(.cta-secondary) {
           display: inline-flex;
           align-items: center;
-          padding: 18px 36px;
-          font-size: 15px;
-          font-weight: 600;
-          color: #0a0a0a;
+          justify-content: center;
+          padding: 10px 18px;
+          font-size: 14px;
+          font-weight: 500;
+          color: #525252;
           background: transparent;
-          border: 1px solid rgba(0, 0, 0, 0.15);
-          border-radius: 12px;
+          border: 1px solid #e5e5e5;
+          border-radius: 8px;
           text-decoration: none;
-          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: border-color 0.15s ease, color 0.15s ease;
         }
 
-        .cta-secondary:hover {
-          border-color: rgba(0, 0, 0, 0.3);
-          background: rgba(0, 0, 0, 0.02);
-          transform: translateY(-2px);
+        .how-cta :global(.cta-secondary:hover) {
+          border-color: #d4d4d4;
+          color: #0a0a0a;
         }
 
         .how-footer {
@@ -772,14 +766,24 @@ export default function HowItWorksNew() {
         }
 
         .badge {
-          font-size: 14px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 13px;
           font-weight: 500;
-          color: #737373;
+          color: #525252;
+        }
+
+        .badge-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #635bff;
         }
 
         .badge-sep {
-          width: 4px;
-          height: 4px;
+          width: 3px;
+          height: 3px;
           border-radius: 50%;
           background: #d4d4d4;
         }
@@ -829,11 +833,10 @@ export default function HowItWorksNew() {
             align-items: center;
           }
 
-          .cta-primary,
-          .cta-secondary {
+          .how-cta :global(.cta-primary),
+          .how-cta :global(.cta-secondary) {
             width: 100%;
             max-width: 300px;
-            justify-content: center;
           }
 
           .footer-badges {
@@ -896,12 +899,6 @@ export default function HowItWorksNew() {
             margin-bottom: 40px;
           }
 
-          .cta-primary,
-          .cta-secondary {
-            padding: 14px 28px;
-            font-size: 14px;
-          }
-
           .badge {
             font-size: 13px;
           }
@@ -960,10 +957,9 @@ export default function HowItWorksNew() {
             padding: 14px;
           }
 
-          .cta-primary,
-          .cta-secondary {
+          .how-cta :global(.cta-primary),
+          .how-cta :global(.cta-secondary) {
             max-width: 100%;
-            padding: 14px 24px;
           }
 
           .badge {

@@ -19,7 +19,9 @@ export default function Partners() {
     <section className="partners">
       <div className="partners-container">
         <div className="partners-header">
-          <span className="partners-label">Adapter Ecosystem</span>
+          <div className="label-wrapper">
+            <span className="partners-label">Adapter Ecosystem</span>
+          </div>
           <h2 className="partners-title">Rail-neutral by design</h2>
           <p className="partners-subtitle">
             PEAC works with multiple protocols via adapters. Settlement is optional.
@@ -49,49 +51,50 @@ export default function Partners() {
 
       <style jsx>{`
         .partners {
-          padding: 100px 0;
-          background: var(--gray-50);
+          padding: 140px 0;
+          background: linear-gradient(180deg, #fafafa 0%, #f8f8fc 50%, #fafafa 100%);
+          position: relative;
+          overflow: hidden;
         }
 
         .partners-container {
-          max-width: 1000px;
+          max-width: 1200px;
           margin: 0 auto;
-          padding: 0 32px;
+          padding: 0 24px;
+          position: relative;
         }
 
         .partners-header {
           text-align: center;
-          margin-bottom: 48px;
+          margin-bottom: 56px;
         }
 
-        .partners-label {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          padding: 6px 14px;
-          background: rgba(99, 91, 255, 0.08);
-          border: 1px solid rgba(99, 91, 255, 0.15);
-          border-radius: 100px;
-          font-size: 12px;
-          font-weight: 600;
-          color: #635bff;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
+        .label-wrapper {
           margin-bottom: 20px;
         }
 
+        .partners-label {
+          display: inline-block;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          color: #6b6b6b;
+          text-transform: uppercase;
+        }
+
         .partners-title {
-          font-size: clamp(28px, 4vw, 40px);
-          font-weight: 700;
+          font-size: clamp(36px, 5vw, 56px);
+          font-weight: 600;
           color: #0a0a0a;
           margin: 0 0 16px;
-          letter-spacing: -0.02em;
+          letter-spacing: -0.03em;
+          line-height: 1.1;
         }
 
         .partners-subtitle {
-          font-size: 17px;
+          font-size: 18px;
           color: #525252;
-          max-width: 500px;
+          max-width: 540px;
           margin: 0 auto;
           line-height: 1.6;
         }
@@ -99,24 +102,25 @@ export default function Partners() {
         .integrations-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 12px;
-          margin-bottom: 48px;
+          gap: 16px;
+          margin-bottom: 56px;
         }
 
         .integration-card {
           background: white;
-          border: 1px solid #e5e5e5;
-          border-radius: 10px;
-          padding: 16px;
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          border-radius: 16px;
+          padding: 20px;
           display: flex;
           flex-direction: column;
-          gap: 4px;
-          transition: border-color 0.2s ease, box-shadow 0.2s ease;
+          gap: 6px;
+          transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
         }
 
         .integration-card:hover {
-          border-color: #d4d4d4;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+          border-color: rgba(0, 0, 0, 0.12);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+          transform: translateY(-2px);
         }
 
         .integration-name {
@@ -162,6 +166,10 @@ export default function Partners() {
         }
 
         @media (max-width: 900px) {
+          .partners {
+            padding: 100px 0;
+          }
+
           .integrations-grid {
             grid-template-columns: repeat(2, 1fr);
           }
@@ -169,11 +177,15 @@ export default function Partners() {
 
         @media (max-width: 640px) {
           .partners {
-            padding: 60px 0;
+            padding: 80px 0;
           }
 
           .partners-container {
             padding: 0 20px;
+          }
+
+          .partners-header {
+            margin-bottom: 40px;
           }
 
           .partners-title {
@@ -181,16 +193,18 @@ export default function Partners() {
           }
 
           .partners-subtitle {
-            font-size: 15px;
+            font-size: 16px;
           }
 
           .integrations-grid {
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            gap: 12px;
+            margin-bottom: 40px;
           }
 
           .integration-card {
-            padding: 14px;
+            padding: 16px;
+            border-radius: 12px;
           }
 
           .integration-name {
@@ -210,7 +224,7 @@ export default function Partners() {
 
         @media (max-width: 380px) {
           .partners {
-            padding: 50px 0;
+            padding: 60px 0;
           }
 
           .partners-container {
@@ -218,15 +232,15 @@ export default function Partners() {
           }
 
           .partners-title {
-            font-size: 24px;
+            font-size: 26px;
           }
 
           .integrations-grid {
-            gap: 8px;
+            gap: 10px;
           }
 
           .integration-card {
-            padding: 12px;
+            padding: 14px;
           }
 
           .integration-name {

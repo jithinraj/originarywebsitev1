@@ -33,10 +33,10 @@ export default function ServiceOffers() {
               'Staging receipt samples and a go-live checklist'
             ]}
             outcome="Compliant calls carry a verifiable PEAC receipt. Non compliant calls can be blocked, flagged, or priced differently."
-            ctaText="Contact Sales"
-            ctaLink="/company/contact"
-            secondaryText="Email Sales"
-            secondaryLink="mailto:sales@originary.xyz"
+            ctaText="Contact"
+            ctaLink="/contact"
+            secondaryText="Email us"
+            secondaryLink="mailto:contact@originary.xyz"
           />
 
           <ServiceCard
@@ -51,9 +51,9 @@ export default function ServiceOffers() {
             ]}
             outcome="Managed settlement with a single Receipt format across payment rails."
             ctaText="Request Enterprise Pilot"
-            ctaLink="/company/contact"
-            secondaryText="Email Sales"
-            secondaryLink="mailto:sales@originary.xyz"
+            ctaLink="/contact"
+            secondaryText="Email us"
+            secondaryLink="mailto:contact@originary.xyz"
           />
 
           <ServiceCard
@@ -67,10 +67,10 @@ export default function ServiceOffers() {
               'Remediation plan and executive read-out'
             ]}
             outcome="Evidence ready receipts aligned to your documented policy and mapped to AI transparency obligations such as the EU AI Act."
-            ctaText="Talk to an Expert"
-            ctaLink="/company/contact"
-            secondaryText="Email Sales"
-            secondaryLink="mailto:sales@originary.xyz"
+            ctaText="Contact"
+            ctaLink="/contact"
+            secondaryText="Email us"
+            secondaryLink="mailto:contact@originary.xyz"
           />
         </div>
       </div>

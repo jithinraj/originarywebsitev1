@@ -294,7 +294,7 @@ export default function WorldClassHomePage() {
                     border: '1px solid rgba(255,255,255,0.3)'
                   }}
                 >
-                  <span>Talk to us</span>
+                  <span>Contact</span>
                 </Link>
               </div>
             </div>

@@ -15,10 +15,11 @@ export default function HeroPeacFlowBg({ className }: HeroPeacFlowBgProps) {
     <svg
       className={className}
       viewBox="0 0 800 400"
+      width="100%"
+      height="100%"
       aria-hidden="true"
       focusable="false"
-      preserveAspectRatio="xMaxYMid meet"
-      style={{ width: '100%', height: '100%' }}
+      preserveAspectRatio="xMidYMid meet"
     >
       <defs>
         <marker

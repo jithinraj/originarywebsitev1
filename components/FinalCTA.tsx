@@ -61,7 +61,7 @@ export default function FinalCTA() {
               <ArrowRight size={18} strokeWidth={2} />
             </Link>
             <Link href="/contact" className="cta-btn-secondary">
-              Talk to sales
+              Contact
             </Link>
           </div>
         </div>

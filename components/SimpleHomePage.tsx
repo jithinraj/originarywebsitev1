@@ -238,7 +238,7 @@ export default function SimpleHomePage() {
                 borderRadius: '8px',
                 fontWeight: '600'
               }}>
-                Talk to sales
+                Contact
               </Link>
               <Link href="/pricing" className="btn secondary" style={{
                 display: 'inline-flex',

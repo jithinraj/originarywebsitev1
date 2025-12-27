@@ -379,7 +379,7 @@ export default function PricingPage() {
                       )}
                       <div className="action-note">
                         {tier.name === 'Enterprise'
-                          ? 'Talk to our enterprise team'
+                          ? 'Contact our enterprise team'
                           : tier.name === 'Professional'
                           ? (
                             <>
@@ -661,7 +661,7 @@ export default function PricingPage() {
                 </div>
                 <div className="action-group">
                   <AnimatedButton variant="secondary" className="large">
-                    Talk to Sales
+                    Contact
                   </AnimatedButton>
                   <div className="action-note">Get custom enterprise pricing</div>
                 </div>
@@ -675,7 +675,7 @@ export default function PricingPage() {
                   <span className="contact-icon">📞</span>
                   <div>
                     <h4>Schedule a call</h4>
-                    <p>Talk to a solution architect about your needs</p>
+                    <p>Speak with a solution architect about your needs</p>
                   </div>
                 </div>
                 <div className="contact-option">

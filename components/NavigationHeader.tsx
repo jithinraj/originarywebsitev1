@@ -117,7 +117,6 @@ export default function NavigationHeader() {
               ]} />
               <NavLink href="/demo">Demo</NavLink>
               <NavLink href="/blog">Blog</NavLink>
-              <NavLink href="/contact">Contact</NavLink>
             </div>
 
             <div
@@ -128,8 +127,30 @@ export default function NavigationHeader() {
                 gap: 'var(--space-3)'
               }}
             >
-              <Link href="/declare" className="btn-pill btn-shine" style={{ textDecoration: 'none' }}>
-                Get Started
+              <Link
+                href="/contact"
+                className="nav-cta-btn"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '8px 16px',
+                  fontSize: '14px',
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                  color: 'white',
+                  background: '#0a0a0a',
+                  borderRadius: '8px',
+                  transition: 'background 0.15s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#262626'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = '#0a0a0a'
+                }}
+              >
+                Contact
               </Link>
             </div>
           </div>
@@ -199,9 +220,6 @@ export default function NavigationHeader() {
               <Link href="/blog" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
                 Blog
               </Link>
-              <Link href="/contact" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
-                Contact
-              </Link>
 
               <div style={{
                 display: 'flex',
@@ -211,10 +229,21 @@ export default function NavigationHeader() {
                 paddingTop: 'var(--space-4)',
                 borderTop: '1px solid var(--gray-200)'
               }}>
-                <Link href="/declare" className="btn btn-primary" style={{ justifyContent: 'center' }}>
-                  Get Declare
-                </Link>
-                <Link href="/contact" className="btn btn-secondary" style={{ justifyContent: 'center' }}>
+                <Link
+                  href="/contact"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '10px 18px',
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    textDecoration: 'none',
+                    color: 'white',
+                    background: '#0a0a0a',
+                    borderRadius: '8px'
+                  }}
+                >
                   Contact
                 </Link>
               </div>
