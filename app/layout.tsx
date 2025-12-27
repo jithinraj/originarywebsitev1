@@ -56,7 +56,6 @@ const organizationJsonLd = {
   telephone: '+14157070402',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '1111B S Governors Ave, STE 40987',
     addressLocality: 'Dover',
     addressRegion: 'DE',
     postalCode: '19904',

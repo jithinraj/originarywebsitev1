@@ -72,6 +72,24 @@ export default function ImprintPage() {
 
                 <div>
                   <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-500)', marginBottom: 'var(--space-2)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Jurisdiction
+                  </h3>
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-900)', lineHeight: 1.7 }}>
+                    Delaware, United States
+                  </p>
+                </div>
+
+                <div>
+                  <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-500)', marginBottom: 'var(--space-2)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Location
+                  </h3>
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-900)', lineHeight: 1.7 }}>
+                    Dover, DE 19904, United States
+                  </p>
+                </div>
+
+                <div>
+                  <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-500)', marginBottom: 'var(--space-2)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Contact
                   </h3>
                   <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-900)', lineHeight: 1.7 }}>

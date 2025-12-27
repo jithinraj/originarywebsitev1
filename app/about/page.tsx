@@ -33,38 +33,38 @@ export default function AboutPage() {
 
   const pillars = [
     { name: 'Access', desc: 'Who can read or call what.', icon: <Shield size={18} /> },
-    { name: 'Attribution', desc: 'Who created the content or data.', icon: <Users size={18} /> },
-    { name: 'Consent', desc: 'What the publisher agreed to.', icon: <FileCheck size={18} /> },
-    { name: 'Commerce', desc: 'How usage is priced and settled.', icon: <CreditCard size={18} /> },
-    { name: 'Compliance', desc: 'How obligations map to controls.', icon: <Scale size={18} /> },
-    { name: 'Privacy', desc: 'How data is scoped and retained.', icon: <Lock size={18} /> },
-    { name: 'Provenance', desc: 'How decisions trace to sources.', icon: <GitBranch size={18} /> },
+    { name: 'Attribution', desc: 'How creators and sources are credited.', icon: <Users size={18} /> },
+    { name: 'Consent', desc: 'What is allowed under stated terms.', icon: <FileCheck size={18} /> },
+    { name: 'Commerce', desc: 'Optional settlement terms and evidence.', icon: <CreditCard size={18} /> },
+    { name: 'Compliance', desc: 'How obligations map to verifiable controls.', icon: <Scale size={18} /> },
+    { name: 'Privacy', desc: 'What is collected, retained, and disclosed.', icon: <Lock size={18} /> },
+    { name: 'Provenance', desc: 'How outputs trace to inputs and decisions.', icon: <GitBranch size={18} /> },
   ]
 
   const products = [
     {
       name: 'Declare (Policy Kit)',
-      desc: 'Define AI policy and receipt requirements once, in a way that is both human-readable and machine-enforceable.',
+      desc: 'Define interaction terms once in a format that is human-readable and machine-enforceable.',
       icon: <FileText size={28} />
     },
     {
       name: 'Trace',
-      desc: 'Observe AI crawlers and agent traffic, tied to receipts and policies.',
+      desc: 'Produce evidence exports and decision views derived from receipts and policy snapshots for audits, disputes, and operations.',
       icon: <Eye size={28} />
     },
     {
       name: 'Gateway 402',
-      desc: 'Payment and HTTP 402 controls so you can turn AI traffic into revenue, not just load.',
+      desc: 'Enforce allow/deny/rate limits and optional HTTP 402 challenges, then issue receipts consistently at the edge or origin.',
       icon: <CreditCard size={28} />
     },
     {
       name: 'Verify API',
-      desc: 'Verification service for PEAC receipts and policy conformance.',
+      desc: 'Verify receipt signatures and bind outcomes to the policy state in force at decision time. Designed to validate receipts from conformant issuers.',
       icon: <CheckCircle size={28} />
     },
     {
       name: 'Studio',
-      desc: 'Visual tooling to design, test, and operate policy and receipts with teams.',
+      desc: 'Collaborative tooling for policy review, testing, and operating evidence workflows.',
       icon: <Layers size={28} />
     },
   ]
@@ -72,17 +72,17 @@ export default function AboutPage() {
   const principles = [
     {
       name: 'Receipts-first',
-      desc: 'Everything we build is anchored in an auditable, cryptographically verifiable record of what happened.',
+      desc: 'We treat receipts as portable decision records: durable evidence that can be verified independently and used across audits, disputes, and partner workflows.',
       icon: <Receipt size={24} />
     },
     {
       name: 'Protocol-driven',
-      desc: 'PEAC evolves in the open, with clear specifications, test vectors, and governance so that anyone can implement it.',
+      desc: 'PEAC evolves in the open with clear specifications, test vectors, and governance so anyone can implement it without permission.',
       icon: <Code size={24} />
     },
     {
       name: 'Developer-led',
-      desc: 'CLI tools, SDKs, and upstream packages are first-class, so you can start with a single file before committing to any hosted service.',
+      desc: 'Start with a single file (peac.txt) and the SDK/CLI. Adopt hosted services only when you need operational support.',
       icon: <Zap size={24} />
     },
   ]
@@ -157,7 +157,7 @@ export default function AboutPage() {
                 }}
               >
                 <Receipt size={16} />
-                Receipts & Policy Infrastructure
+                Receipts and policy infrastructure for the agentic web
               </div>
 
               <p
@@ -169,7 +169,7 @@ export default function AboutPage() {
                   fontWeight: 500
                 }}
               >
-                We build receipts and policy infrastructure for the agentic web, across Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance.
+                Originary builds and stewards PEAC, an open standard for publishing interaction terms and issuing portable, verifiable decision records.
               </p>
 
               <h1
@@ -193,7 +193,7 @@ export default function AboutPage() {
                   marginBottom: 'var(--space-10)'
                 }}
               >
-                Making the web work for both humans and agents
+                Making the open web work for both humans and agents
               </p>
 
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -233,10 +233,10 @@ export default function AboutPage() {
                 }}
               >
                 <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-700)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
-                  The web was built for humans clicking links. AI agents need something different: clear policies, machine-readable consent, economic rails that work at internet scale, and a way to prove what actually happened.
+                  The web was built for humans clicking links. Agents need machine-readable terms, predictable enforcement, and a durable way to verify what happened without relying on a single vendor&apos;s logs.
                 </p>
                 <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-700)', lineHeight: 1.8, marginBottom: 'var(--space-6)' }}>
-                  Our mission is to make every meaningful AI interaction leave a <strong>verifiable receipt</strong> - a cryptographic record of who accessed what, under which policy, using which payment rail, and for which purpose.
+                  Originary&apos;s mission is to make meaningful <strong>agent interactions</strong> verifiable and governable on the open internet through <strong>portable decision records</strong>: signed receipts that bind an outcome to the policy state in force at decision time, with privacy-preserving defaults.
                 </p>
                 <div
                   style={{
@@ -247,14 +247,14 @@ export default function AboutPage() {
                   }}
                 >
                   <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-700)', lineHeight: 1.7, marginBottom: 'var(--space-3)', fontWeight: 600 }}>
-                    We&apos;re building that infrastructure on two foundations:
+                    We build this on two foundations:
                   </p>
                   <ul style={{ fontSize: 'var(--text-base)', color: 'var(--gray-700)', lineHeight: 1.8, paddingLeft: 'var(--space-6)', margin: 0 }}>
                     <li style={{ marginBottom: 'var(--space-2)' }}>
-                      <strong>PEAC Protocol</strong> - an open-source protocol for policy discovery, cryptographic receipts, and HTTP 402 payment semantics
+                      <strong>PEAC Protocol</strong> - the open standard for policy discovery and verifiable receipts (settlement is optional and adapter-based)
                     </li>
                     <li>
-                      <strong>Originary products</strong> - software that lets teams declare policy, gate access, and verify receipts in production
+                      <strong>Originary Platform</strong> - production components that help teams author policy, enforce decisions, and verify receipts in real systems
                     </li>
                   </ul>
                 </div>
@@ -270,8 +270,8 @@ export default function AboutPage() {
               <h2 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
                 The Seven Pillars
               </h2>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                Everything we design is tied together through receipts.
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', maxWidth: '600px', margin: '0 auto' }}>
+                Everything we design is tied together through <strong>decision context</strong>: receipts bind outcomes to the access terms, consent, attribution, and other constraints that were active at decision time.
               </p>
             </div>
 
@@ -343,7 +343,7 @@ export default function AboutPage() {
                   lineHeight: 1.7
                 }}
               >
-                We start with policy and receipts, then add analytics, payments, verification, and operations as traffic grows.
+                We start with policy and receipts, then add verification, enforcement, and operational exports as deployments grow. Products are modular: adopt one surface or deploy the full stack.
               </p>
             </div>
 
@@ -395,7 +395,7 @@ export default function AboutPage() {
             </div>
 
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)', lineHeight: 1.6, textAlign: 'center', maxWidth: '800px', margin: '0 auto var(--space-8) auto' }}>
-              Today, teams typically start with Declare and the developer tools (CLI, SDKs, PEAC upstream packages), then layer on Trace, Gateway 402, Verify API, and Studio as they move from experiments into operational AI traffic.
+              Teams typically start with <strong>Declare + the SDK/CLI</strong>, then add <strong>Gateway</strong> and <strong>Verify</strong> when they need enforcement and third-party verifiability. <strong>Trace</strong> and <strong>Studio</strong> follow when audits, disputes, or scale require structured evidence workflows.
             </p>
 
             <div style={{ textAlign: 'center' }}>
@@ -460,13 +460,13 @@ export default function AboutPage() {
                   <strong>PEAC</strong> (Programmable Environment for Agent Coordination) is the open protocol behind our receipts.
                 </p>
                 <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-700)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
-                  It defines how policies are published (for example at <code style={{ background: 'var(--gray-100)', padding: '2px 8px', borderRadius: '4px', fontSize: 'var(--text-sm)' }}>/.well-known/peac.txt</code>) and how cryptographically signed receipts prove &ldquo;who paid whom, for what, using which rail, under which terms&rdquo; across different payment systems and agent protocols.
+                  It defines how policies are published (for example at <code style={{ background: 'var(--gray-100)', padding: '2px 8px', borderRadius: '4px', fontSize: 'var(--text-sm)' }}>/.well-known/peac.txt</code>) and how cryptographically signed receipts provide portable evidence of an interaction outcome under declared terms. Settlement can be represented when applicable, but PEAC is rail-neutral by design.
                 </p>
                 <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-700)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
-                  PEAC is Apache-2.0 licensed and stewarded in the open on GitHub by contributors from Originary and the broader community. Multiple independent implementations are expected and encouraged. Originary is one implementation and hosting environment, not the protocol itself.
+                  PEAC is Apache-2.0 licensed and stewarded in the open on GitHub by contributors from Originary and the broader community. Multiple independent implementations are expected and encouraged. Originary ships one reference implementation and optional hosted services, but the protocol is not owned by a vendor.
                 </p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
-                  Right now PEAC is in an active 0.9.x development line. Wire formats and APIs are still being refined; receipts and policy concepts are designed to remain stable as the ecosystem converges.
+                  PEAC is currently in a 0.9.x development line. Wire formats and verification rules are converging; core concepts (policy discovery and receipt verification) are designed for long-term stability.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                   <Link href="/peac" className="btn btn-primary">
@@ -599,6 +599,9 @@ export default function AboutPage() {
                   textAlign: 'center'
                 }}
               >
+                <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+                  Originary is the steward and primary implementer of PEAC, operated by Poem, Inc.
+                </p>
                 <p style={{ fontSize: 'var(--text-xl)', color: 'var(--gray-700)', lineHeight: 1.8, marginBottom: 'var(--space-4)', fontWeight: 600 }}>
                   ORIGINARY<sup style={{ fontSize: '0.6em' }}>TM</sup> is a brand of <strong>Poem, Inc.</strong>
                 </p>

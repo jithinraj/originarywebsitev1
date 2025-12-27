@@ -2,14 +2,14 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'We build receipts and policy infrastructure for the agentic web, across Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance.',
+  description: 'Originary builds and stewards PEAC, an open standard for portable decision records for agent interactions. Production components for policy, enforcement, and receipt verification.',
   robots: 'index,follow',
   alternates: {
     canonical: '/about'
   },
   openGraph: {
     title: 'About Originary',
-    description: 'We build receipts and policy infrastructure for the agentic web. Built on the open-source PEAC Protocol.',
+    description: 'Originary builds and stewards PEAC, an open standard for portable decision records for agent interactions.',
     url: 'https://www.originary.xyz/about',
     siteName: 'Originary',
     type: 'website',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'About | Originary',
-    description: 'We build receipts and policy infrastructure for the agentic web.',
+    description: 'Originary builds and stewards PEAC, an open standard for portable decision records for agent interactions.',
     images: ['/og.jpg'],
   },
 }
