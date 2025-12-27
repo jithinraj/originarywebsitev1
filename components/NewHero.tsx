@@ -581,14 +581,17 @@ export default function NewHero() {
           }
 
           .hero-actions {
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            gap: 12px;
           }
 
           .hero-actions :global(.hero-btn-primary),
           .hero-actions :global(.hero-btn-secondary) {
-            flex: 1;
-            min-width: 120px;
+            width: 100%;
+            max-width: 280px;
+            padding: 14px 24px;
+            font-size: 15px;
           }
 
           .hero-download-strip {

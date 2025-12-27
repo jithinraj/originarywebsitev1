@@ -512,6 +512,7 @@ function LayerC() {
           </div>
 
           <p
+            className="brand-band-desc"
             style={{
               maxWidth: '400px',
               fontSize: '13px',
@@ -722,6 +723,21 @@ export default function Footer() {
           }
           .brand-wordmark-large {
             display: none !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .brand-band-inner {
+            padding: 28px 20px !important;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .brand-band-inner {
+            padding: 24px 16px !important;
+          }
+          .brand-band-desc {
+            font-size: 12px !important;
           }
         }
       `}</style>
