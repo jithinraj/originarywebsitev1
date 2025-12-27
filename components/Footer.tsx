@@ -115,6 +115,7 @@ export default function Footer() {
               { href: '/downloads', label: 'Downloads' },
               { href: '/demo', label: 'Demo' },
               { href: '/peac', label: 'PEAC Protocol' },
+              { href: '/system-of-record', label: 'System of Record' },
               { href: '/receipts', label: 'Receipts' }
             ]}
           />

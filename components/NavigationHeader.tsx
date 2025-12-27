@@ -107,7 +107,13 @@ export default function NavigationHeader() {
               ]} />
 
               <NavLink href="/developers">Developers</NavLink>
-              <NavLink href="/peac">Protocol</NavLink>
+              <NavDropdown label="Protocol" items={[
+                { href: '/peac', label: 'PEAC Protocol' },
+                { href: '/system-of-record', label: 'System of Record' },
+                { href: 'separator', label: '' },
+                { href: '/receipts', label: 'Receipts' },
+                { href: '/verify', label: 'Verify' }
+              ]} />
               <NavLink href="/demo">Demo</NavLink>
               <NavLink href="/blog">Blog</NavLink>
               <NavLink href="/contact">Contact</NavLink>
@@ -179,9 +185,12 @@ export default function NavigationHeader() {
               <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
                 Developers
               </Link>
-              <Link href="/peac" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
-                Protocol
-              </Link>
+              <MobileNavSection title="Protocol" items={[
+                { href: '/peac', label: 'PEAC Protocol' },
+                { href: '/system-of-record', label: 'System of Record' },
+                { href: '/receipts', label: 'Receipts' },
+                { href: '/verify', label: 'Verify' }
+              ]} />
               <Link href="/demo" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
                 Demo
               </Link>
