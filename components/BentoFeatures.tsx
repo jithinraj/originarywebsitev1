@@ -35,7 +35,7 @@ export default function BentoFeatures() {
               color: 'var(--gray-900)'
             }}
           >
-            Policy, payments, and proof in one platform
+            Policy, optional settlement, and proof in one platform
           </h2>
           <p
             style={{
@@ -45,7 +45,7 @@ export default function BentoFeatures() {
               margin: '0 auto'
             }}
           >
-            Declare terms, gate access, and verify every AI interaction with signed receipts.
+            Declare terms, enforce decisions, and verify interaction outcomes with signed receipts.
           </p>
         </div>
 
@@ -54,8 +54,8 @@ export default function BentoFeatures() {
           {/* Large Card - Trace Analytics */}
           <BentoCard
             className="bento-large"
-            title="Real-time Bot Analytics"
-            description="See every AI crawler, agent, and bot hitting your endpoints. Filter by type, block bad actors, and analyze traffic patterns."
+            title="Evidence-first operations"
+            description="Understand outcomes as evidence events derived from PEAC receipts, not opaque tracking. Filter by issuer, policy hash, endpoint, and decision, then export for audits, disputes, and incident review."
             icon={<Activity size={24} />}
             href="/trace"
             linkText="Explore Trace"
@@ -66,8 +66,8 @@ export default function BentoFeatures() {
           {/* Medium Card - Declare */}
           <BentoCard
             className="bento-medium"
-            title="Policy as Code"
-            description="Define your AI policy once. Export to AIPREF, peac.txt, and robots.txt automatically."
+            title="Policy as code"
+            description="Define interaction terms once. Optionally export compatible views (AIPREF, peac.txt, robots directives) without changing enforcement semantics."
             icon={<FileCode size={24} />}
             href="/declare"
             linkText="Try Declare"
@@ -81,8 +81,8 @@ export default function BentoFeatures() {
           {/* Small Card - Global */}
           <BentoCard
             className="bento-small"
-            title="Edge Deployment"
-            description="Deploy verification at the edge via Cloudflare Workers or Vercel."
+            title="Edge deployment"
+            description="Deploy enforcement and verification close to ingress using edge runtimes or self-hosted infrastructure."
             icon={<Globe size={24} />}
             href="/cloud"
             linkText="View options"
@@ -93,8 +93,8 @@ export default function BentoFeatures() {
           {/* Small Card - Payments */}
           <BentoCard
             className="bento-small"
-            title="HTTP 402 Payments"
-            description="HTTP 402 payments for machine payable APIs with x402 today and i402 on the roadmap."
+            title="HTTP 402 settlement"
+            description="HTTP 402 settlement for machine-payable APIs with x402 today and additional rails via adapters (including i402 as planned)."
             icon={<Zap size={24} />}
             href="/integrations/x402"
             linkText="Learn more"
@@ -105,8 +105,8 @@ export default function BentoFeatures() {
           {/* Small Card - Security */}
           <BentoCard
             className="bento-small"
-            title="Cryptographic Receipts"
-            description="Ed25519 signed proofs for every transaction."
+            title="Cryptographic receipts"
+            description="Ed25519-signed receipts for interaction outcomes, verifiable offline with issuer public keys."
             icon={<Lock size={24} />}
             href="/receipts"
             linkText="View docs"

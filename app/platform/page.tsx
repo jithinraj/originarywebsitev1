@@ -11,7 +11,7 @@ import Footer from '@/components/Footer'
 import { FileText, Lock, CheckCircle, Activity, Layers, ArrowRight, Code, Cloud, Server } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Platform | Deploy PEAC terms, enforcement, and receipts | Originary',
+  title: 'Platform | Manage & monitor AI Agent Interactions',
   description: 'Deploy the PEAC standard in production: publish terms, enforce decisions, issue signed receipts, and verify outcomes across protocols and rails.',
   keywords: 'PEAC platform, deploy PEAC, policy enforcement, signed receipts, verification, portable decision records, open standard deployment',
   alternates: {
@@ -68,9 +68,9 @@ export default function PlatformPage() {
               margin: '0 auto var(--space-12)',
               textAlign: 'center'
             }}>
-              The PEAC standard defines a complete lifecycle: declare terms, enforce access decisions,
-              settle payments, issue signed receipts, and verify outcomes. Originary provides production-ready
-              components for every step.
+              The PEAC standard defines a lifecycle: declare terms, enforce access decisions,
+              optionally request settlement, issue signed receipts, and verify outcomes. Originary provides modular
+              components for each step.
             </p>
 
             <div style={{
@@ -82,7 +82,7 @@ export default function PlatformPage() {
               {[
                 { label: 'Policy', icon: FileText, desc: 'Declare terms via peac.txt' },
                 { label: 'Access', icon: Lock, desc: 'Enforce with HTTP 402' },
-                { label: 'Settlement', icon: Activity, desc: 'Multi-rail payment support' },
+                { label: 'Settlement (optional)', icon: Activity, desc: 'Adapter-based settlement evidence' },
                 { label: 'Receipt', icon: CheckCircle, desc: 'Signed PEAC-Receipt headers' },
                 { label: 'Trace', icon: Layers, desc: 'Verification endpoints' }
               ].map((step) => (
@@ -149,9 +149,9 @@ export default function PlatformPage() {
                 gap: 'var(--space-4)'
               }}>
                 {[
-                  'Receipts are JWT-signed and verifiable by any party with your public key',
-                  'Policies are published at /.well-known/peac.txt - no proprietary APIs required',
-                  'Multiple payment rails (X402, Stripe, custom) with normalized payment{} objects'
+                  'Receipts are signed JWS (Ed25519) and verifiable offline by any party with issuer public keys',
+                  'Policies are published at /.well-known/peac.txt — no proprietary APIs required',
+                  'Settlement is optional and adapter-based (x402 available; Stripe in preview; custom adapters supported)'
                 ].map((item, i) => (
                   <li key={i} style={{
                     display: 'flex',
@@ -227,7 +227,7 @@ export default function PlatformPage() {
                 {
                   icon: Layers,
                   title: 'Adapters',
-                  desc: 'Connect to payment rails (X402, Stripe), AI preference formats (AIPREF), and verification protocols. Extend with custom adapters.',
+                  desc: 'Connect to payment rails (x402, Stripe), AI preference formats (AIPREF), and verification protocols. Extend with custom adapters.',
                   cta: { label: 'Browse adapters', href: '/integrations' }
                 }
               ].map((module, i) => (
@@ -307,8 +307,8 @@ export default function PlatformPage() {
             }}>
               {[
                 { icon: Code, label: 'Self-hosted', desc: 'Deploy components in your own infrastructure. Full control, zero vendor dependency.' },
-                { icon: Cloud, label: 'Edge functions', desc: 'Run Gateway-402 on Cloudflare Workers, Vercel Edge, or AWS Lambda@Edge.' },
-                { icon: Server, label: 'Managed', desc: 'Originary-hosted components with SLA guarantees. Contact us for enterprise deployments.' }
+                { icon: Cloud, label: 'Edge functions', desc: 'Run Gateway 402 on Cloudflare Workers, Vercel Edge, or AWS Lambda@Edge.' },
+                { icon: Server, label: 'Managed', desc: 'Originary-hosted components for teams that want operational support. Contact us for managed deployments.' }
               ].map((pattern, i) => (
                 <div key={i} style={{
                   background: 'var(--gray-50)',
@@ -350,7 +350,7 @@ export default function PlatformPage() {
             }}>
               {[
                 { num: '1', text: <>Publish your <Link href="/declare" style={{ color: 'var(--brand-primary)', textDecoration: 'none', borderBottom: '1px solid var(--brand-primary)' }}>peac.txt policy</Link> at /.well-known/peac.txt</> },
-                { num: '2', text: <>Deploy <Link href="/products/gateway-402" style={{ color: 'var(--brand-primary)', textDecoration: 'none', borderBottom: '1px solid var(--brand-primary)' }}>Gateway-402</Link> to enforce access decisions and issue receipts</> },
+                { num: '2', text: <>Deploy <Link href="/products/gateway-402" style={{ color: 'var(--brand-primary)', textDecoration: 'none', borderBottom: '1px solid var(--brand-primary)' }}>Gateway 402</Link> to enforce access decisions and issue receipts</> },
                 { num: '3', text: <>Use <Link href="/verify" style={{ color: 'var(--brand-primary)', textDecoration: 'none', borderBottom: '1px solid var(--brand-primary)' }}>Verify</Link> to validate receipts from any PEAC-conformant source</> }
               ].map((step) => (
                 <div key={step.num} style={{

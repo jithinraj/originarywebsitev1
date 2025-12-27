@@ -136,9 +136,9 @@ export default function SocialProofSection() {
   ]
 
   const metrics = [
-    { value: '<5ms', label: 'Receipt verification' },
-    { value: '100%', label: 'Edge-deployable' },
-    { value: 'Open', label: 'Protocol spec' }
+    { value: 'Offline-verifiable', label: 'Receipts' },
+    { value: 'Edge-ready', label: 'Enforcement' },
+    { value: 'Open spec', label: 'Self-hostable' }
   ]
 
   return (

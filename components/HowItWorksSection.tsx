@@ -7,28 +7,28 @@ const steps = [
   {
     number: '1',
     title: 'Declare',
-    description: 'Define terms for agents: access rules, payment requirements, and attribution.',
+    description: 'Define interaction terms: access rules, attribution requirements, and optional settlement conditions.',
     icon: '📋',
     href: '/declare'
   },
   {
     number: '2',
     title: 'Gateway 402',
-    description: 'Enforce policy at the edge with allow/deny/rate-limit or HTTP 402 challenges.',
+    description: 'Enforce decisions at the edge or origin with allow/deny/rate-limit and optional HTTP 402 challenges.',
     icon: '🔐',
     href: '/products/gateway-402'
   },
   {
     number: '3',
     title: 'Verify',
-    description: 'Validate signed receipts server-side for billing, disputes, and audits.',
+    description: 'Verify signed receipts offline (library) or via API for billing, disputes, audits, and partner attestations.',
     icon: '✓',
     href: '/verify'
   },
   {
     number: '4',
     title: 'Trace',
-    description: 'Observe agent traffic and outcomes, export logs and proofs to your stack.',
+    description: 'Observe decisions and outcomes as evidence events, then export for audits and operations.',
     icon: '📊',
     href: '/trace'
   }
@@ -76,7 +76,7 @@ export default function HowItWorksSection() {
               margin: '0 auto'
             }}
           >
-            Deploy policy once. Enforce at the edge. Verify every outcome.
+            Deploy policy once. Enforce anywhere. Verify outcomes independently.
           </p>
         </div>
 

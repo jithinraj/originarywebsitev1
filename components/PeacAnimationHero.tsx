@@ -328,10 +328,10 @@ receipts: required`,
     caption: 'Access gated with HTTP 402'
   },
   {
-    badge: 'PAYMENT',
+    badge: 'SETTLEMENT (OPTIONAL)',
     filename: 'peac.txt',
     codeType: 'txt',
-    code: `# Payment rails
+    code: `# Settlement adapters (optional)
 payments: [x402, stripe]
 default_currency: USD
 
@@ -340,7 +340,7 @@ HTTP/1.1 402 Payment Required
 Content-Type: application/json`,
     metaLeft: 'rails: x402, stripe',
     metaRight: 'min: 0.01 USD',
-    caption: 'Multi-rail payments - normalized payment{}'
+    caption: 'Multi-rail settlement (optional) — normalized settlement evidence'
   },
   {
     badge: 'RECEIPT',
@@ -380,7 +380,7 @@ function PolicyCard3D() {
   const steps = [
     { label: 'Policy', icon: '📋' },
     { label: 'Access', icon: '🔑' },
-    { label: 'Payment', icon: '💳' },
+    { label: 'Settlement (optional)', icon: '💳' },
     { label: 'Receipt', icon: '✅' },
     { label: 'Trace', icon: '📊' }
   ]
