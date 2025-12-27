@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Originary | System of Record for AI Agent Interactions'
   },
-  description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agent commerce via HTTP 402.',
+  description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agentic commerce.',
   alternates: {
     canonical: '/'
   },
   openGraph: {
     title: 'Originary | System of Record for AI Agent Interactions',
-    description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agent commerce via HTTP 402.',
+    description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agentic commerce.',
     url: 'https://www.originary.xyz',
     type: 'website',
     images: ['https://www.originary.xyz/og.jpg'],
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Originary | System of Record for AI Agent Interactions',
-    description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agent commerce via HTTP 402.',
+    description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agentic commerce.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
