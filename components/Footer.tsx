@@ -116,6 +116,7 @@ export default function Footer() {
               { href: '/demo', label: 'Demo' },
               { href: '/peac', label: 'PEAC Protocol' },
               { href: '/system-of-record', label: 'System of Record' },
+              { href: '/context-graphs', label: 'Context Graphs' },
               { href: '/receipts', label: 'Receipts' }
             ]}
           />

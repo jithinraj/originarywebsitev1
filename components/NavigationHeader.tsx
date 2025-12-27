@@ -110,6 +110,7 @@ export default function NavigationHeader() {
               <NavDropdown label="Protocol" items={[
                 { href: '/peac', label: 'PEAC Protocol' },
                 { href: '/system-of-record', label: 'System of Record' },
+                { href: '/context-graphs', label: 'Context Graphs' },
                 { href: 'separator', label: '' },
                 { href: '/receipts', label: 'Receipts' },
                 { href: '/verify', label: 'Verify' }
@@ -188,6 +189,7 @@ export default function NavigationHeader() {
               <MobileNavSection title="Protocol" items={[
                 { href: '/peac', label: 'PEAC Protocol' },
                 { href: '/system-of-record', label: 'System of Record' },
+                { href: '/context-graphs', label: 'Context Graphs' },
                 { href: '/receipts', label: 'Receipts' },
                 { href: '/verify', label: 'Verify' }
               ]} />
