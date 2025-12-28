@@ -6,179 +6,263 @@ interface HeroPeacFlowBgProps {
   className?: string
 }
 
+/**
+ * PEAC Protocol network visualization
+ * Agent-to-agent communication with HTTP 402 enforcement flow
+ */
 export default function HeroPeacFlowBg({ className }: HeroPeacFlowBgProps) {
   const uid = React.useId().replace(/[:]/g, '')
-  const flowId = `flow-${uid}`
-  const arrowId = `arrow-${uid}`
+  const glow = `glow${uid}`
+  const pathGrad = `pathGrad${uid}`
+  const meshGrad = `mesh${uid}`
 
   return (
     <svg
       className={className}
-      viewBox="0 0 800 400"
-      width="100%"
-      height="100%"
+      viewBox="0 0 1000 600"
+      preserveAspectRatio="xMaxYMid slice"
       aria-hidden="true"
-      focusable="false"
-      preserveAspectRatio="xMidYMid meet"
     >
       <defs>
-        <marker
-          id={arrowId}
-          viewBox="0 0 10 10"
-          refX="9"
-          refY="5"
-          markerWidth="6"
-          markerHeight="6"
-          orient="auto-start-reverse"
-        >
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" fillOpacity="0.3" />
-        </marker>
+        <filter id={glow} x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="2" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
 
-        <style>{`
-          .flow-line {
-            fill: none;
-            stroke: currentColor;
-            stroke-opacity: 0.12;
-            stroke-width: 1.5;
-            stroke-dasharray: 8 4;
-          }
+        <linearGradient id={pathGrad} x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#635bff" stopOpacity="0.02" />
+          <stop offset="50%" stopColor="#635bff" stopOpacity="0.12" />
+          <stop offset="100%" stopColor="#635bff" stopOpacity="0.02" />
+        </linearGradient>
 
-          .flow-animated {
-            fill: none;
-            stroke: currentColor;
-            stroke-opacity: 0.35;
-            stroke-width: 2;
-            stroke-dasharray: 12 88;
-            stroke-linecap: round;
-            animation: flow-move 4s linear infinite;
-          }
-
-          .flow-node {
-            fill: rgba(255, 255, 255, 0.9);
-            stroke: currentColor;
-            stroke-opacity: 0.25;
-            stroke-width: 1.5;
-          }
-
-          .flow-node-inner {
-            fill: currentColor;
-            fill-opacity: 0.08;
-          }
-
-          .flow-label {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            font-size: 11px;
-            fill: currentColor;
-            fill-opacity: 0.5;
-            text-anchor: middle;
-          }
-
-          .flow-label-small {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            font-size: 9px;
-            fill: currentColor;
-            fill-opacity: 0.35;
-            text-anchor: middle;
-          }
-
-          .flow-402 {
-            fill: none;
-            stroke: currentColor;
-            stroke-opacity: 0.08;
-            stroke-width: 1.5;
-            stroke-dasharray: 4 4;
-          }
-
-          .flow-402-pulse {
-            fill: none;
-            stroke: currentColor;
-            stroke-opacity: 0;
-            stroke-width: 2;
-            animation: pulse-402 6s ease-in-out infinite;
-          }
-
-          .flow-badge {
-            fill: currentColor;
-            fill-opacity: 0.06;
-          }
-
-          .flow-badge-text {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            font-size: 8px;
-            font-weight: 600;
-            fill: currentColor;
-            fill-opacity: 0.4;
-            text-anchor: middle;
-          }
-
-          @keyframes flow-move {
-            0% { stroke-dashoffset: 100; }
-            100% { stroke-dashoffset: 0; }
-          }
-
-          @keyframes pulse-402 {
-            0%, 40% { stroke-opacity: 0; }
-            50%, 70% { stroke-opacity: 0.25; }
-            80%, 100% { stroke-opacity: 0; }
-          }
-
-          @media (prefers-reduced-motion: reduce) {
-            .flow-animated, .flow-402-pulse { animation: none !important; }
-            .flow-animated { stroke-opacity: 0.2; stroke-dasharray: none; }
-          }
-        `}</style>
+        <radialGradient id={meshGrad} cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stopColor="#635bff" stopOpacity="0.025" />
+          <stop offset="100%" stopColor="#635bff" stopOpacity="0" />
+        </radialGradient>
       </defs>
 
-      <g transform="translate(350, 80)">
-        <line className="flow-line" x1="0" y1="60" x2="120" y2="60" markerEnd={`url(#${arrowId})`} />
-        <line className="flow-animated" x1="0" y1="60" x2="120" y2="60" />
+      {/* ══════════ PROTOCOL PACKET SHAPES ══════════ */}
+      <g opacity="0.06" stroke="#635bff" strokeWidth="0.4" fill="none">
+        {/* Data packet envelopes - network protocol feel */}
+        <path d="M 715 175 L 725 170 L 755 170 L 765 175 L 765 195 L 755 200 L 725 200 L 715 195 Z" />
+        <path d="M 845 235 L 855 230 L 885 230 L 895 235 L 895 255 L 885 260 L 855 260 L 845 255 Z" />
+        <path d="M 790 375 L 800 370 L 830 370 L 840 375 L 840 395 L 830 400 L 800 400 L 790 395 Z" />
 
-        <line className="flow-line" x1="180" y1="60" x2="300" y2="60" markerEnd={`url(#${arrowId})`} />
-        <line className="flow-animated" x1="180" y1="60" x2="300" y2="60" style={{ animationDelay: '1s' }} />
+        {/* Request/response brackets */}
+        <path d="M 920 200 L 910 200 L 910 220 L 920 220" />
+        <path d="M 940 200 L 950 200 L 950 220 L 940 220" />
+        <path d="M 650 310 L 660 310 L 660 330 L 650 330" />
+        <path d="M 670 310 L 680 310 L 680 330 L 670 330" />
 
-        <line className="flow-line" x1="360" y1="60" x2="420" y2="60" markerEnd={`url(#${arrowId})`} />
-        <line className="flow-animated" x1="360" y1="60" x2="420" y2="60" style={{ animationDelay: '2s' }} />
-
-        <path className="flow-402" d="M 330 45 Q 330 -20, 400 -20 Q 470 -20, 470 45" />
-        <path className="flow-402-pulse" d="M 330 45 Q 330 -20, 400 -20 Q 470 -20, 470 45" />
-        <rect className="flow-badge" x="370" y="-35" width="60" height="18" rx="4" />
-        <text className="flow-badge-text" x="400" y="-22">HTTP 402</text>
-
-        <g transform="translate(-30, 40)">
-          <rect className="flow-node" x="-28" y="-18" width="56" height="36" rx="6" />
-          <rect className="flow-node-inner" x="-24" y="-14" width="48" height="28" rx="4" />
-          <text className="flow-label" x="0" y="4">Agent</text>
-          <text className="flow-label-small" x="0" y="38">Request</text>
-        </g>
-
-        <g transform="translate(150, 40)">
-          <rect className="flow-node" x="-40" y="-18" width="80" height="36" rx="6" />
-          <rect className="flow-node-inner" x="-36" y="-14" width="72" height="28" rx="4" />
-          <text className="flow-label" x="0" y="4">Policy</text>
-          <text className="flow-label-small" x="0" y="38">peac.txt</text>
-        </g>
-
-        <g transform="translate(330, 40)">
-          <rect className="flow-node" x="-34" y="-18" width="68" height="36" rx="6" />
-          <rect className="flow-node-inner" x="-30" y="-14" width="60" height="28" rx="4" />
-          <text className="flow-label" x="0" y="4">Gateway</text>
-          <text className="flow-label-small" x="0" y="38">Verify</text>
-        </g>
-
-        <g transform="translate(450, 40)">
-          <rect className="flow-node" x="-28" y="-18" width="56" height="36" rx="6" />
-          <rect className="flow-node-inner" x="-24" y="-14" width="48" height="28" rx="4" />
-          <text className="flow-label" x="0" y="4">Receipt</text>
-          <text className="flow-label-small" x="0" y="38">PEAC-Receipt</text>
-        </g>
+        {/* Arrow connectors */}
+        <path d="M 760 250 L 780 250 L 775 245 M 780 250 L 775 255" />
+        <path d="M 820 350 L 840 350 L 835 345 M 840 350 L 835 355" />
       </g>
 
-      <g transform="translate(350, 220)">
-        <line className="flow-line" x1="420" y1="60" x2="300" y2="60" markerEnd={`url(#${arrowId})`} />
-        <line className="flow-animated" x1="420" y1="60" x2="300" y2="60" style={{ animationDelay: '3s' }} />
+      {/* ══════════ AMBIENT GLOW ══════════ */}
+      <circle cx="880" cy="300" r="120" fill={`url(#${meshGrad})`}>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="8s" repeatCount="indefinite" />
+      </circle>
 
-        <text className="flow-label-small" x="360" y="80">Response + Receipt</text>
+      {/* ══════════ CONNECTION PATHS ══════════ */}
+      <path d="M 680 200 Q 780 230, 876 296" fill="none" stroke={`url(#${pathGrad})`} strokeWidth="1" />
+      <path d="M 700 340 Q 790 320, 876 300" fill="none" stroke={`url(#${pathGrad})`} strokeWidth="1" />
+      <path d="M 740 440 Q 810 390, 876 304" fill="none" stroke={`url(#${pathGrad})`} strokeWidth="1" />
+      <path d="M 780 160 Q 830 200, 876 296" fill="none" stroke={`url(#${pathGrad})`} strokeWidth="1" />
+
+      {/* ══════════ PROTOCOL DATA FLOW ══════════ */}
+      <g fontFamily="'SF Mono', 'Fira Code', monospace" fontSize="5" fill="#635bff" opacity="0.1">
+        {/* Flowing protocol fragments */}
+        <text>
+          <animateMotion path="M 680 200 Q 780 230, 876 296" dur="5s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0;1;1;0" dur="5s" repeatCount="indefinite" />
+          req
+        </text>
+        <text>
+          <animateMotion path="M 700 340 Q 790 320, 876 300" dur="4.5s" repeatCount="indefinite" begin="0.8s" />
+          <animate attributeName="opacity" values="0;1;1;0" dur="4.5s" repeatCount="indefinite" begin="0.8s" />
+          pol
+        </text>
+        <text>
+          <animateMotion path="M 876 300 Q 790 320, 700 340" dur="4.5s" repeatCount="indefinite" begin="2.5s" />
+          <animate attributeName="opacity" values="0;1;1;0" dur="4.5s" repeatCount="indefinite" begin="2.5s" />
+          sig
+        </text>
+        <text>
+          <animateMotion path="M 740 440 Q 810 390, 876 304" dur="5.5s" repeatCount="indefinite" begin="1.2s" />
+          <animate attributeName="opacity" values="0;1;1;0" dur="5.5s" repeatCount="indefinite" begin="1.2s" />
+          jwt
+        </text>
       </g>
+
+      {/* ══════════ NETWORK NODES ══════════ */}
+      {/* Node A */}
+      <g>
+        <circle cx="680" cy="200" r="2" fill="#635bff" opacity="0.35">
+          <animate attributeName="opacity" values="0.35;0.55;0.35" dur="3s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="680" cy="200" r="4" fill="none" stroke="#635bff" strokeWidth="0.3" opacity="0.2">
+          <animate attributeName="r" values="4;8;4" dur="3s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.2;0;0.2" dur="3s" repeatCount="indefinite" />
+        </circle>
+      </g>
+
+      {/* Node B */}
+      <g>
+        <circle cx="700" cy="340" r="2" fill="#635bff" opacity="0.35">
+          <animate attributeName="opacity" values="0.35;0.55;0.35" dur="3.5s" repeatCount="indefinite" begin="0.4s" />
+        </circle>
+        <circle cx="700" cy="340" r="4" fill="none" stroke="#635bff" strokeWidth="0.3" opacity="0.2">
+          <animate attributeName="r" values="4;8;4" dur="3.5s" repeatCount="indefinite" begin="0.4s" />
+          <animate attributeName="opacity" values="0.2;0;0.2" dur="3.5s" repeatCount="indefinite" begin="0.4s" />
+        </circle>
+      </g>
+
+      {/* Node C */}
+      <g>
+        <circle cx="740" cy="440" r="2" fill="#635bff" opacity="0.35">
+          <animate attributeName="opacity" values="0.35;0.55;0.35" dur="4s" repeatCount="indefinite" begin="0.8s" />
+        </circle>
+        <circle cx="740" cy="440" r="4" fill="none" stroke="#635bff" strokeWidth="0.3" opacity="0.2">
+          <animate attributeName="r" values="4;8;4" dur="4s" repeatCount="indefinite" begin="0.8s" />
+          <animate attributeName="opacity" values="0.2;0;0.2" dur="4s" repeatCount="indefinite" begin="0.8s" />
+        </circle>
+      </g>
+
+      {/* Node D */}
+      <g>
+        <circle cx="780" cy="160" r="2" fill="#635bff" opacity="0.35">
+          <animate attributeName="opacity" values="0.35;0.55;0.35" dur="3.2s" repeatCount="indefinite" begin="1.2s" />
+        </circle>
+        <circle cx="780" cy="160" r="4" fill="none" stroke="#635bff" strokeWidth="0.3" opacity="0.2">
+          <animate attributeName="r" values="4;8;4" dur="3.2s" repeatCount="indefinite" begin="1.2s" />
+          <animate attributeName="opacity" values="0.2;0;0.2" dur="3.2s" repeatCount="indefinite" begin="1.2s" />
+        </circle>
+      </g>
+
+      {/* Central Hub */}
+      <g>
+        <circle cx="880" cy="300" r="2.5" fill="#635bff" opacity="0.28">
+          <animate attributeName="opacity" values="0.28;0.4;0.28" dur="2.5s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="880" cy="300" r="5" fill="none" stroke="#635bff" strokeWidth="0.35" opacity="0.15">
+          <animate attributeName="r" values="5;9;5" dur="2.5s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.15;0;0.15" dur="2.5s" repeatCount="indefinite" />
+        </circle>
+      </g>
+
+      {/* ══════════ DATA PACKETS ══════════ */}
+      <circle r="1.5" fill="#635bff" filter={`url(#${glow})`}>
+        <animateMotion path="M 680 200 Q 780 230, 876 296" dur="2.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+        <animate attributeName="opacity" values="0;0.7;0.7;0" dur="2.2s" repeatCount="indefinite" />
+      </circle>
+
+      <circle r="1.5" fill="#635bff" filter={`url(#${glow})`}>
+        <animateMotion path="M 876 296 Q 780 230, 680 200" dur="2.2s" repeatCount="indefinite" begin="1.1s" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+        <animate attributeName="opacity" values="0;0.7;0.7;0" dur="2.2s" repeatCount="indefinite" begin="1.1s" />
+      </circle>
+
+      <circle r="1.5" fill="#635bff" filter={`url(#${glow})`}>
+        <animateMotion path="M 700 340 Q 790 320, 876 300" dur="1.8s" repeatCount="indefinite" begin="0.2s" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+        <animate attributeName="opacity" values="0;0.7;0.7;0" dur="1.8s" repeatCount="indefinite" begin="0.2s" />
+      </circle>
+
+      <circle r="1.5" fill="#635bff" filter={`url(#${glow})`}>
+        <animateMotion path="M 876 300 Q 790 320, 700 340" dur="1.8s" repeatCount="indefinite" begin="1.1s" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+        <animate attributeName="opacity" values="0;0.7;0.7;0" dur="1.8s" repeatCount="indefinite" begin="1.1s" />
+      </circle>
+
+      <circle r="1.5" fill="#635bff" filter={`url(#${glow})`}>
+        <animateMotion path="M 740 440 Q 810 390, 876 304" dur="2.5s" repeatCount="indefinite" begin="0.5s" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+        <animate attributeName="opacity" values="0;0.7;0.7;0" dur="2.5s" repeatCount="indefinite" begin="0.5s" />
+      </circle>
+
+      <circle r="1.5" fill="#635bff" filter={`url(#${glow})`}>
+        <animateMotion path="M 876 304 Q 810 390, 740 440" dur="2.5s" repeatCount="indefinite" begin="1.75s" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+        <animate attributeName="opacity" values="0;0.7;0.7;0" dur="2.5s" repeatCount="indefinite" begin="1.75s" />
+      </circle>
+
+      <circle r="1.5" fill="#635bff" filter={`url(#${glow})`}>
+        <animateMotion path="M 780 160 Q 830 200, 876 296" dur="2s" repeatCount="indefinite" begin="0.8s" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+        <animate attributeName="opacity" values="0;0.7;0.7;0" dur="2s" repeatCount="indefinite" begin="0.8s" />
+      </circle>
+
+      <circle r="1.5" fill="#635bff" filter={`url(#${glow})`}>
+        <animateMotion path="M 876 296 Q 830 200, 780 160" dur="2s" repeatCount="indefinite" begin="1.8s" calcMode="spline" keySplines="0.25 0.1 0.25 1" />
+        <animate attributeName="opacity" values="0;0.7;0.7;0" dur="2s" repeatCount="indefinite" begin="1.8s" />
+      </circle>
+
+      {/* ══════════ PROTOCOL STATUS INDICATORS ══════════ */}
+      <g fontFamily="'SF Mono', 'Fira Code', monospace" fill="#635bff">
+        {/* Centered checkmark at hub */}
+        <text x="880" y="302" fontSize="5" textAnchor="middle" opacity="0.2">
+          <animate attributeName="opacity" values="0.1;0.25;0.1" dur="2.5s" repeatCount="indefinite" />
+          ✓
+        </text>
+        {/* HTTP 402 - PEAC enforcement status */}
+        <text x="895" y="285" fontSize="4" opacity="0.1">
+          <animate attributeName="opacity" values="0;0.15;0.15;0" dur="4s" repeatCount="indefinite" begin="0.5s" />
+          402
+        </text>
+        {/* HTTP 200 - successful after payment */}
+        <text x="895" y="320" fontSize="4" opacity="0.1">
+          <animate attributeName="opacity" values="0;0.15;0.15;0" dur="4s" repeatCount="indefinite" begin="2.5s" />
+          200
+        </text>
+        {/* Receipt indicator */}
+        <text x="850" y="270" fontSize="3.5" opacity="0.08">
+          <animate attributeName="opacity" values="0;0.12;0.12;0" dur="5s" repeatCount="indefinite" begin="1s" />
+          rcpt
+        </text>
+      </g>
+
+      {/* ══════════ PEAC PROTOCOL LABELS ══════════ */}
+      <g fontFamily="'SF Mono', monospace" fontSize="4" fill="#635bff" opacity="0.08">
+        <text x="660" y="195">agent</text>
+        <text x="680" y="335">client</text>
+        <text x="725" y="435">api</text>
+        <text x="765" y="155">host</text>
+      </g>
+
+      {/* ══════════ ALGORITHM FLOW MARKERS ══════════ */}
+      <g opacity="0.05" stroke="#635bff" strokeWidth="0.4" fill="none">
+        {/* Small circuit-like right angles */}
+        <path d="M 820 220 L 840 220 L 840 240" />
+        <path d="M 830 360 L 850 360 L 850 340" />
+        <path d="M 900 250 L 920 250 L 920 270" />
+      </g>
+
+      {/* ══════════ AMBIENT SPARKLES ══════════ */}
+      <g opacity="0.12">
+        <circle cx="920" cy="220" r="0.6" fill="#635bff">
+          <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="950" cy="340" r="0.6" fill="#635bff">
+          <animate attributeName="opacity" values="0.2;0.5;0.2" dur="4s" repeatCount="indefinite" begin="1s" />
+        </circle>
+        <circle cx="660" cy="270" r="0.6" fill="#635bff">
+          <animate attributeName="opacity" values="0.25;0.5;0.25" dur="3.5s" repeatCount="indefinite" begin="0.5s" />
+        </circle>
+        <circle cx="860" cy="140" r="0.6" fill="#635bff">
+          <animate attributeName="opacity" values="0.2;0.45;0.2" dur="4.5s" repeatCount="indefinite" begin="1.5s" />
+        </circle>
+        <circle cx="970" cy="280" r="0.6" fill="#635bff">
+          <animate attributeName="opacity" values="0.3;0.55;0.3" dur="3.2s" repeatCount="indefinite" begin="2s" />
+        </circle>
+        <circle cx="720" cy="380" r="0.6" fill="#635bff">
+          <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite" begin="0.8s" />
+        </circle>
+      </g>
+
+      {/* Reduced motion support */}
+      <style>{`
+        @media (prefers-reduced-motion: reduce) {
+          svg * { animation: none !important; }
+        }
+      `}</style>
     </svg>
   )
 }

@@ -24,8 +24,7 @@ export default function NewHero() {
       <div className="hero-container">
         <div className={`hero-content ${isLoaded ? 'loaded' : ''}`}>
           <div className="hero-badge">
-            <CheckCircle size={14} strokeWidth={2} />
-            <span>Originary | Open source PEAC protocol (Apache 2.0)</span>
+            <span>Originary | PEAC protocol</span>
           </div>
 
           <h1 className="hero-headline">
@@ -197,6 +196,13 @@ export default function NewHero() {
           font-weight: 500;
           color: #635bff;
           width: fit-content;
+          max-width: 100%;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .hero-badge span {
+          white-space: nowrap;
         }
 
         .hero-headline {
@@ -553,6 +559,20 @@ export default function NewHero() {
             gap: 20px;
           }
 
+          .hero-badge {
+            font-size: 11px;
+            padding: 8px 14px;
+            text-align: center;
+            max-width: 100%;
+            border-radius: 16px;
+          }
+
+          .hero-badge span {
+            white-space: normal;
+            text-align: center;
+            line-height: 1.4;
+          }
+
           .hero :global(.peac-flow-bg) {
             display: none;
           }
@@ -578,6 +598,18 @@ export default function NewHero() {
 
           .hero-content {
             gap: 16px;
+          }
+
+          .hero-badge {
+            font-size: 10px;
+            padding: 8px 12px;
+            gap: 6px;
+            border-radius: 12px;
+          }
+
+          .hero-badge span {
+            white-space: normal;
+            line-height: 1.3;
           }
 
           .hero-actions {
@@ -624,6 +656,18 @@ export default function NewHero() {
 
           .hero-content {
             gap: 14px;
+          }
+
+          .hero-badge {
+            font-size: 9px;
+            padding: 6px 10px;
+            gap: 4px;
+            border-radius: 10px;
+          }
+
+          .hero-badge span {
+            white-space: normal;
+            line-height: 1.3;
           }
 
           .hero-headline-main {

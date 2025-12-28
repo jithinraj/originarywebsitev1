@@ -279,35 +279,29 @@ function LayerA() {
 function LayerB() {
   return (
     <div
+      className="footer-utility-wrapper"
       style={{
         marginTop: '40px',
         paddingTop: '20px',
         borderTop: '1px solid var(--gray-200)',
       }}
     >
-      <div
-        className="footer-utility-bar"
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '16px',
-        }}
-      >
-        {/* Legal Links */}
+      {/* Desktop layout */}
+      <div className="footer-utility-desktop">
         <div
-          className="footer-legal-links"
           style={{
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
-            gap: '4px',
+            justifyContent: 'space-between',
+            gap: '16px',
           }}
         >
-          {FOOTER_LEGAL.map((link, index) => (
-            <span key={link.href} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+          {/* Legal Links */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            {FOOTER_LEGAL.map((link) => (
               <Link
+                key={link.href}
                 href={link.href}
                 prefetch={false}
                 style={{
@@ -321,40 +315,22 @@ function LayerB() {
               >
                 {link.label}
               </Link>
-              {index < FOOTER_LEGAL.length - 1 && (
-                <span style={{ color: 'var(--gray-300)', fontSize: '11px' }}>·</span>
-              )}
-            </span>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* Right: Machine-Readable + Social */}
-        <div
-          className="footer-right-links"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '16px',
-          }}
-        >
-          {/* Machine-readable files */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '4px',
-            }}
-          >
-            {FOOTER_MACHINE_READABLE.map((link, index) => (
-              <span key={link.href} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+          {/* Right side */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            {/* Machine-readable */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              {FOOTER_MACHINE_READABLE.map((link) => (
                 <a
+                  key={link.href}
                   href={link.href}
                   style={{
                     color: 'var(--gray-400)',
                     textDecoration: 'none',
                     fontSize: '10px',
                     fontFamily: 'var(--font-jetbrains-mono), ui-monospace, monospace',
-                    letterSpacing: '0',
                     transition: 'color 0.15s ease',
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gray-600)')}
@@ -362,35 +338,16 @@ function LayerB() {
                 >
                   {link.label}
                 </a>
-                {index < FOOTER_MACHINE_READABLE.length - 1 && (
-                  <span style={{ color: 'var(--gray-300)', fontSize: '10px' }}>·</span>
-                )}
-              </span>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          {/* Vertical separator */}
-          <div
-            style={{
-              width: '1px',
-              height: '12px',
-              background: 'var(--gray-200)',
-            }}
-            aria-hidden="true"
-          />
+            <div style={{ width: '1px', height: '12px', background: 'var(--gray-200)' }} aria-hidden="true" />
 
-          {/* Social Links */}
-          <div
-            className="footer-social-links"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '4px',
-            }}
-          >
-            {FOOTER_SOCIAL.map((link, index) => (
-              <span key={link.href} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+            {/* Social */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              {FOOTER_SOCIAL.map((link) => (
                 <a
+                  key={link.href}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -406,10 +363,61 @@ function LayerB() {
                 >
                   {link.label}
                 </a>
-                {index < FOOTER_SOCIAL.length - 1 && (
-                  <span style={{ color: 'var(--gray-300)', fontSize: '11px' }}>·</span>
-                )}
-              </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile layout - completely separate structure */}
+      <div className="footer-utility-mobile">
+        {/* Legal section */}
+        <div className="footer-mobile-section">
+          <span className="footer-mobile-label">Legal</span>
+          <div className="footer-mobile-links">
+            {FOOTER_LEGAL.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                prefetch={false}
+                className="footer-mobile-link"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Machine-readable section */}
+        <div className="footer-mobile-section">
+          <span className="footer-mobile-label">Files</span>
+          <div className="footer-mobile-links">
+            {FOOTER_MACHINE_READABLE.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="footer-mobile-link footer-mobile-link-mono"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Social section */}
+        <div className="footer-mobile-section">
+          <span className="footer-mobile-label">Social</span>
+          <div className="footer-mobile-links">
+            {FOOTER_SOCIAL.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-mobile-link"
+              >
+                {link.label}
+              </a>
             ))}
           </div>
         </div>
@@ -435,6 +443,8 @@ function LayerC() {
         background: '#0a0a0a',
         color: 'white',
         position: 'relative',
+        width: '100%',
+        boxSizing: 'border-box',
       }}
     >
       {/* Noise texture overlay */}
@@ -473,6 +483,8 @@ function LayerC() {
           gap: '40px',
           padding: '48px 40px',
           alignItems: 'end',
+          width: '100%',
+          boxSizing: 'border-box',
         }}
       >
         {/* Left: Content */}
@@ -514,11 +526,13 @@ function LayerC() {
           <p
             className="brand-band-desc"
             style={{
-              maxWidth: '400px',
+              maxWidth: '100%',
               fontSize: '13px',
               lineHeight: 1.6,
               color: 'rgba(255, 255, 255, 0.6)',
               marginBottom: '24px',
+              wordWrap: 'break-word',
+              overflowWrap: 'break-word',
             }}
           >
             Verifiable receipts that prove what happened in an agent interaction: what was accessed,
@@ -544,10 +558,12 @@ function LayerC() {
             <p
               style={{
                 margin: 0,
-                maxWidth: '400px',
+                maxWidth: '100%',
                 fontSize: '10px',
                 lineHeight: 1.5,
                 color: 'rgba(255, 255, 255, 0.3)',
+                wordWrap: 'break-word',
+                overflowWrap: 'break-word',
               }}
             >
               In the U.S., &lsquo;Originary&rsquo; is used by Poem, Inc. as a brand for its AI
@@ -601,7 +617,7 @@ export default function Footer() {
       role="contentinfo"
     >
       <div
-        className="container"
+        className="footer-container"
         style={{
           maxWidth: '1280px',
           margin: '0 auto',
@@ -618,7 +634,7 @@ export default function Footer() {
         <LayerC />
       </div>
 
-      <style jsx>{`
+      <style jsx global>{`
         /* Desktop: 8 columns */
         @media (min-width: 1200px) {
           .footer-nav-grid {
@@ -642,7 +658,7 @@ export default function Footer() {
           }
         }
 
-        /* Desktop: show static, hide accordion */
+        /* Desktop: show static nav, hide accordion */
         .footer-nav-desktop {
           display: block;
         }
@@ -650,8 +666,21 @@ export default function Footer() {
           display: none;
         }
 
-        /* Tablet/Mobile: show accordion, hide static */
+        /* Desktop: show desktop utility, hide mobile utility */
+        .footer-utility-desktop {
+          display: block;
+        }
+        .footer-utility-mobile {
+          display: none;
+        }
+
+        /* Tablet/Mobile breakpoint */
         @media (max-width: 768px) {
+          .footer-container {
+            padding: 32px 20px 32px !important;
+          }
+
+          /* Navigation: accordion mode */
           .footer-nav-desktop {
             display: none !important;
           }
@@ -669,7 +698,6 @@ export default function Footer() {
           .footer-nav-group:first-child {
             border-top: 1px solid var(--gray-200);
           }
-          /* Accordion icon rotation */
           .footer-nav-mobile[open] .footer-accordion-icon {
             transform: rotate(45deg);
           }
@@ -678,66 +706,121 @@ export default function Footer() {
             font-weight: 400;
             transition: transform 0.2s ease;
           }
-          /* Hide default marker */
           .footer-nav-mobile summary::-webkit-details-marker {
             display: none;
           }
-          .footer-utility-bar {
-            flex-direction: column !important;
-            align-items: flex-start !important;
-            gap: 12px !important;
-          }
-          .footer-right-links {
-            flex-direction: column !important;
-            align-items: flex-start !important;
-            gap: 10px !important;
-          }
-          .footer-right-links > div[aria-hidden] {
+
+          /* Utility bar: mobile layout */
+          .footer-utility-desktop {
             display: none !important;
           }
-        }
+          .footer-utility-mobile {
+            display: flex !important;
+            flex-direction: column;
+            gap: 20px;
+          }
+          .footer-mobile-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+          }
+          .footer-mobile-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+          }
+          .footer-mobile-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+          }
+          .footer-mobile-link {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 1.4;
+          }
+          .footer-mobile-link-mono {
+            font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+            font-size: 11px;
+            color: var(--gray-500);
+          }
 
-        /* Small mobile: centered layout */
-        @media (max-width: 399px) {
-          .footer-utility-bar {
-            align-items: center !important;
-            text-align: center;
+          /* Brand band */
+          .brand-band {
+            border-radius: 16px !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            margin-top: 32px !important;
           }
-          .footer-legal-links {
-            justify-content: center !important;
-            flex-wrap: wrap !important;
-          }
-          .footer-right-links {
-            align-items: center !important;
-          }
-          .footer-social-links {
-            justify-content: center !important;
-          }
-        }
-
-        /* Brand band responsive */
-        @media (max-width: 768px) {
           .brand-band-inner {
             grid-template-columns: 1fr !important;
-            padding: 32px 24px !important;
+            padding: 28px 20px !important;
+            gap: 20px !important;
           }
           .brand-wordmark-large {
             display: none !important;
           }
         }
 
+        /* Small mobile */
         @media (max-width: 480px) {
-          .brand-band-inner {
-            padding: 28px 20px !important;
+          .footer-container {
+            padding: 28px 16px 28px !important;
           }
-        }
-
-        @media (max-width: 380px) {
+          .footer-mobile-links {
+            gap: 6px 12px;
+          }
+          .footer-mobile-link {
+            font-size: 12px;
+          }
+          .brand-band {
+            border-radius: 12px !important;
+            margin-top: 28px !important;
+          }
           .brand-band-inner {
-            padding: 24px 16px !important;
+            padding: 24px 18px !important;
           }
           .brand-band-desc {
             font-size: 12px !important;
+            line-height: 1.5 !important;
+          }
+        }
+
+        /* Extra small mobile */
+        @media (max-width: 380px) {
+          .footer-container {
+            padding: 24px 14px 24px !important;
+          }
+          .footer-utility-mobile {
+            gap: 16px;
+          }
+          .footer-mobile-links {
+            gap: 4px 10px;
+          }
+          .footer-mobile-link {
+            font-size: 11px;
+          }
+          .brand-band {
+            border-radius: 10px !important;
+            margin-top: 24px !important;
+          }
+          .brand-band-inner {
+            padding: 20px 16px !important;
+          }
+          .brand-band-desc {
+            font-size: 11px !important;
+          }
+        }
+
+        @media (max-width: 320px) {
+          .brand-band-inner {
+            padding: 16px 12px !important;
+          }
+          .brand-band-desc {
+            font-size: 10px !important;
           }
         }
       `}</style>
