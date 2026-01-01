@@ -1,10 +1,10 @@
 version: 0.9.23
 preferences: https://www.originary.xyz/.well-known/aipref.json
 access_control: http-402
-payments: [x402, stripe]
+payments: [x402]
 provenance: c2pa
 receipts: required
 verify: https://www.originary.xyz/.well-known/jwks.json
 public_keys: https://www.originary.xyz/.well-known/jwks.json
 contact: contact@originary.xyz
-updated_at: 2025-12-13T12:00:00+05:30
+updated_at: 2026-01-02T12:00:00+05:30

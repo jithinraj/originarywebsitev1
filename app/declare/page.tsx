@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
-import { ArrowRight, Github, FileText, Shield, Code, Terminal, Globe, CheckCircle, AlertTriangle, HelpCircle } from 'lucide-react'
+import { ArrowRight, Github, FileText, Shield, Code, Terminal, Globe, CheckCircle, AlertTriangle, HelpCircle, Layers } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Declare | AI Policy Pack Generator',
@@ -46,8 +46,8 @@ export default function DeclarePage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "softwareVersion": "0.1.0",
-    "description": "One config file to declare AI policies for your domain. Generates peac.txt, robots AI rules, AIPREF headers, and a /ai-policy page."
+    "softwareVersion": "0.9.23",
+    "description": "One config file to declare AI policies for your domain. Generates peac.txt, robots AI rules, AIPREF headers, and a /ai-policy page. Includes Policy Profiles for rapid deployment."
   }
 
   const generatedOutputs = [
@@ -78,12 +78,35 @@ export default function DeclarePage() {
   ]
 
   const policyFields = [
-    { field: 'Indexing', description: 'Allow or deny AI search indexing' },
-    { field: 'Training', description: 'Allow or deny use in model training' },
-    { field: 'RAG / Inference', description: 'Allow or deny retrieval-augmented generation' },
-    { field: 'Commercial use', description: 'Allow or restrict commercial applications' },
-    { field: 'Attribution', description: 'Require attribution for usage' },
-    { field: 'Contact', description: 'Licensing and contact information' }
+    { field: 'crawl', description: 'Web crawling and data collection' },
+    { field: 'index', description: 'Search engine indexing' },
+    { field: 'train', description: 'ML/AI model training' },
+    { field: 'inference', description: 'RAG and real-time inference' },
+    { field: 'ai_input', description: 'Direct AI consumption' },
+    { field: 'ai_index', description: 'AI search indexing' }
+  ]
+
+  const policyProfiles = [
+    {
+      name: 'news-media',
+      description: 'Optimized for publishers. Allows indexing and search, requires attribution, restricts training without license.',
+      bestFor: 'News sites, blogs, content publishers'
+    },
+    {
+      name: 'api-provider',
+      description: 'Monetization-focused. Enables 402 payment challenges, receipt requirements, rate limiting.',
+      bestFor: 'SaaS APIs, data providers, AI services'
+    },
+    {
+      name: 'open-source',
+      description: 'Permissive defaults. Allows most uses with attribution, designed for community projects.',
+      bestFor: 'OSS projects, documentation, educational content'
+    },
+    {
+      name: 'saas-docs',
+      description: 'Balanced approach. Allows AI assistance for docs, restricts training on proprietary content.',
+      bestFor: 'Product documentation, help centers, knowledge bases'
+    }
   ]
 
   const faqItems = [
@@ -353,6 +376,107 @@ export default function DeclarePage() {
           </div>
         </section>
 
+        {/* Policy Profiles Section */}
+        <section className="section" style={{ background: 'var(--white)' }}>
+          <div className="container">
+            <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+              <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 'var(--space-2)',
+                    background: 'rgba(99, 91, 255, 0.1)',
+                    border: '1px solid rgba(99, 91, 255, 0.2)',
+                    borderRadius: 'var(--radius-full)',
+                    padding: 'var(--space-2) var(--space-4)',
+                    marginBottom: 'var(--space-4)',
+                    fontSize: 'var(--text-sm)',
+                    fontWeight: 500,
+                    color: 'var(--brand-primary)'
+                  }}
+                >
+                  <Layers size={16} />
+                  <span>New in v0.9.23</span>
+                </div>
+                <h2 style={{
+                  fontSize: 'var(--text-3xl)',
+                  fontWeight: 700,
+                  marginBottom: 'var(--space-4)',
+                  color: 'var(--gray-900)'
+                }}>
+                  Policy Profiles
+                </h2>
+                <p style={{
+                  fontSize: 'var(--text-lg)',
+                  color: 'var(--gray-600)',
+                  maxWidth: '600px',
+                  margin: '0 auto'
+                }}>
+                  Pre-built configurations for common use cases. Start with a profile, customize as needed.
+                </p>
+              </div>
+
+              <div className="grid grid-2" style={{ gap: 'var(--space-6)' }}>
+                {policyProfiles.map((profile, index) => (
+                  <div
+                    key={index}
+                    className="card"
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: 'var(--space-3)'
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                      <code style={{
+                        background: 'var(--brand-primary)',
+                        color: 'white',
+                        padding: 'var(--space-1) var(--space-3)',
+                        borderRadius: 'var(--radius-md)',
+                        fontSize: 'var(--text-sm)',
+                        fontWeight: 600
+                      }}>
+                        {profile.name}
+                      </code>
+                    </div>
+                    <p style={{
+                      fontSize: 'var(--text-sm)',
+                      color: 'var(--gray-600)',
+                      lineHeight: 1.6,
+                      margin: 0
+                    }}>
+                      {profile.description}
+                    </p>
+                    <p style={{
+                      fontSize: 'var(--text-xs)',
+                      color: 'var(--gray-500)',
+                      margin: 0
+                    }}>
+                      <strong>Best for:</strong> {profile.bestFor}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div style={{ textAlign: 'center', marginTop: 'var(--space-8)' }}>
+                <pre style={{
+                  display: 'inline-block',
+                  background: 'var(--gray-100)',
+                  padding: 'var(--space-4) var(--space-6)',
+                  borderRadius: 'var(--radius-lg)',
+                  fontSize: 'var(--text-sm)',
+                  color: 'var(--gray-700)',
+                  textAlign: 'left'
+                }}>
+{`# Initialize with a profile
+peac policy init --profile news-media`}
+                </pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Quickstart Section */}
         <section id="quickstart" className="section" style={{ background: 'var(--gray-900)', color: 'white' }}>
           <div className="container">
@@ -478,7 +602,7 @@ peac policy init
               </div>
 
               {/* Step 4 */}
-              <div>
+              <div style={{ marginBottom: 'var(--space-6)' }}>
                 <h3 style={{
                   fontSize: 'var(--text-lg)',
                   fontWeight: 600,
@@ -505,6 +629,51 @@ peac policy init
                   lineHeight: 1.6
                 }}>
                   Validates <code style={{ background: 'var(--gray-700)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> and generated files against PEAC 0.9.x schemas.
+                </p>
+              </div>
+
+              {/* Step 5 */}
+              <div>
+                <h3 style={{
+                  fontSize: 'var(--text-lg)',
+                  fontWeight: 600,
+                  marginBottom: 'var(--space-3)',
+                  color: 'white',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 'var(--space-2)'
+                }}>
+                  5. Explain rules
+                  <span style={{
+                    background: 'var(--brand-primary)',
+                    color: 'white',
+                    padding: '2px 8px',
+                    borderRadius: 'var(--radius-full)',
+                    fontSize: 'var(--text-xs)',
+                    fontWeight: 600
+                  }}>NEW</span>
+                </h3>
+                <pre style={{
+                  background: 'var(--gray-800)',
+                  padding: 'var(--space-4)',
+                  borderRadius: 'var(--radius-lg)',
+                  fontSize: 'var(--text-sm)',
+                  overflow: 'auto',
+                  color: 'var(--gray-300)',
+                  border: '1px solid var(--gray-700)'
+                }}>
+{`# See effective rule for a specific subject and purpose
+peac policy explain --subject agent:openai --purpose train
+
+# Output: DENY (rule 2: "block-training-bots")`}
+                </pre>
+                <p style={{
+                  fontSize: 'var(--text-sm)',
+                  color: 'var(--gray-400)',
+                  marginTop: 'var(--space-3)',
+                  lineHeight: 1.6
+                }}>
+                  Debug your policy by testing specific subject + purpose combinations. Uses first-match-wins semantics.
                 </p>
               </div>
 
@@ -641,10 +810,10 @@ cp robots-ai-snippet.txt public/`}
                       flexShrink: 0
                     }}
                   >
-                    Now
+                    v0.9.23
                   </div>
                   <div>
-                    <strong>CLI-only</strong>: <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>peac policy init</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>generate</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>validate</code>. Outputs peac.txt, robots-ai-snippet.txt, aipref-headers.json, ai-policy.md.
+                    <strong>Full CLI</strong>: <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>init</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>generate</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>validate</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>explain</code>. Policy Profiles (news-media, api-provider, open-source, saas-docs). CAL semantics with first-match-wins evaluation.
                   </div>
                 </div>
                 <div className="card" style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-4)' }}>

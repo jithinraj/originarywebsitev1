@@ -431,7 +431,7 @@ function LayerB() {
 // ============================================================================
 
 function LayerC() {
-  const year = new Date().getFullYear()
+  const currentYear = new Date().getFullYear()
 
   return (
     <div
@@ -553,7 +553,7 @@ function LayerC() {
                 color: 'rgba(255, 255, 255, 0.5)',
               }}
             >
-              &copy; {year} Originary (Poem, Inc.) &middot; Delaware, USA
+              &copy; 2025 - {currentYear} Originary (Poem, Inc.) &middot; Delaware, USA
             </p>
             <p
               style={{

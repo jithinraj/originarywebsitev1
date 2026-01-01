@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { ArrowRight, Shield, FileText, CheckCircle, Lock, Clock, Key, Zap, Database, Globe } from 'lucide-react'
+import { ArrowRight, Shield, FileText, CheckCircle, Lock, Clock, Key, Zap, Database, Globe, Eye, Fingerprint } from 'lucide-react'
 
 export default function ReceiptsPage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -13,7 +13,7 @@ export default function ReceiptsPage() {
   useEffect(() => {
     setIsVisible(true)
     const interval = setInterval(() => {
-      setActiveFeature(prev => (prev + 1) % 6)
+      setActiveFeature(prev => (prev + 1) % 8)
     }, 4000)
     return () => clearInterval(interval)
   }, [])
@@ -54,6 +54,18 @@ export default function ReceiptsPage() {
       title: 'Audit Ready',
       description: 'Export logs in standard formats for internal review.',
       color: '#F39C12'
+    },
+    {
+      icon: <Eye size={24} />,
+      title: 'Privacy Modes',
+      description: 'Strict, balanced, or custom identifier handling for compliance.',
+      color: '#10B981'
+    },
+    {
+      icon: <Fingerprint size={24} />,
+      title: 'Attestations',
+      description: 'Extensible evidence types for risk, consent, and compliance.',
+      color: '#8B5CF6'
     }
   ]
 
@@ -231,13 +243,13 @@ export default function ReceiptsPage() {
                     <span className="dot green" />
                   </div>
                   <span className="receipts-code-filename">receipt.json</span>
-                  <span className="receipts-code-badge">PEAC v0.9.16</span>
+                  <span className="receipts-code-badge">PEAC v0.9.23</span>
                 </div>
                 <pre className="receipts-code-body">
                   <code>{`{
   `}<span className="code-key">{`"header"`}</span>{`: {
     `}<span className="code-key">{`"alg"`}</span>{`: `}<span className="code-string">{`"EdDSA"`}</span>{`,
-    `}<span className="code-key">{`"typ"`}</span>{`: `}<span className="code-string">{`"peac-receipt+jwt"`}</span>{`,
+    `}<span className="code-key">{`"typ"`}</span>{`: `}<span className="code-string">{`"peac.receipt/0.9"`}</span>{`,
     `}<span className="code-key">{`"kid"`}</span>{`: `}<span className="code-string">{`"originary-2025-01"`}</span>{`
   },
   `}<span className="code-key">{`"payload"`}</span>{`: {
@@ -245,7 +257,7 @@ export default function ReceiptsPage() {
     `}<span className="code-key">{`"iat"`}</span>{`: `}<span className="code-number">{`1734048000`}</span>{`,
     `}<span className="code-key">{`"jti"`}</span>{`: `}<span className="code-string">{`"rcpt_7f92ab31"`}</span>{`,
     `}<span className="code-key">{`"peac"`}</span>{`: {
-      `}<span className="code-key">{`"version"`}</span>{`: `}<span className="code-string">{`"0.9.16"`}</span>{`,
+      `}<span className="code-key">{`"version"`}</span>{`: `}<span className="code-string">{`"0.9.23"`}</span>{`,
       `}<span className="code-key">{`"resource"`}</span>{`: `}<span className="code-string">{`"/api/content"`}</span>{`,
       `}<span className="code-key">{`"policy_hash"`}</span>{`: `}<span className="code-string">{`"sha256:9f3c..."`}</span>{`
     },
@@ -508,7 +520,7 @@ export default function ReceiptsPage() {
 
         .receipts-features-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(4, 1fr);
           gap: var(--space-6);
         }
 
@@ -863,6 +875,7 @@ export default function ReceiptsPage() {
           }
           .receipts-features-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
           }
           .receipts-structure-layout {
             grid-template-columns: 1fr;
@@ -941,7 +954,7 @@ function ReceiptVisual() {
           </div>
           <div className="receipt-row">
             <span className="receipt-key">Timestamp</span>
-            <span className="receipt-value">2025-12-13T12:00:00Z</span>
+            <span className="receipt-value">2026-01-02T12:00:00Z</span>
           </div>
         </div>
 

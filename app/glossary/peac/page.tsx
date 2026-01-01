@@ -4,12 +4,12 @@ import NavigationHeader from "@/components/NavigationHeader";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "PEAC Protocol - Policy, Evidence, Access, Compliance",
-  description: "PEAC is an open protocol for policy discovery and verifiable receipts. Enables agents to discover terms via .well-known/peac.txt and prove compliance with cryptographic PEAC-Receipt tokens.",
+  title: "PEAC Protocol - Open Protocol for Policy, Payments, and Receipts",
+  description: "PEAC Protocol is an open protocol for policy discovery and verifiable receipts. Enables agents to discover terms via .well-known/peac.txt and prove compliance with cryptographic PEAC-Receipt tokens.",
   alternates: { canonical: "/glossary/peac" },
-  keywords: "PEAC protocol, policy discovery, verifiable receipts, PEAC-Receipt, compliance, JWS, agent commerce, .well-known",
+  keywords: "PEAC Protocol, policy discovery, verifiable receipts, PEAC-Receipt, compliance, JWS, agent commerce, .well-known",
   openGraph: {
-    title: "PEAC Protocol - Policy, Evidence, Access, Compliance",
+    title: "PEAC Protocol - Open Protocol for Policy, Payments, and Receipts",
     description: "Open protocol for policy discovery and verifiable receipts. Enables agents to discover terms and prove compliance.",
     type: "article",
     url: "https://www.originary.xyz/glossary/peac/",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PEAC Protocol - Policy, Evidence, Access, Compliance",
+    title: "PEAC Protocol - Open Protocol for Policy, Payments, and Receipts",
     description: "Open protocol for policy discovery and verifiable receipts. Enables agents to discover terms and prove compliance.",
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
@@ -32,7 +32,6 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "DefinedTerm",
     "name": "PEAC Protocol",
-    "alternateName": "Policy, Evidence, Access, Compliance",
     "description": "An open protocol for file-based policy discovery and verifiable receipts. Agents discover policies via .well-known/peac.txt and present PEAC-Receipt JWS tokens as proof of compliance.",
     "inDefinedTermSet": "https://www.originary.xyz/glossary/",
     "url": "https://www.originary.xyz/glossary/peac/"
@@ -72,31 +71,11 @@ export default function Page() {
 
         <div style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-700)' }}>
           <p style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-8)', color: 'var(--gray-600)' }}>
-            <strong>PEAC</strong> (Policy, Evidence, Access, Compliance) is an open protocol for file-based policy discovery and verifiable receipts. Agents discover policies via <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> and present cryptographic PEAC-Receipt tokens as auditable proof of compliance.
+            <strong>PEAC Protocol</strong> is an open protocol for file-based policy discovery and verifiable receipts. Agents discover policies via <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> and present cryptographic PEAC-Receipt tokens as auditable proof of compliance.
           </p>
 
           <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
-            What PEAC stands for
-          </h2>
-          <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
-            <ul style={{ paddingLeft: 0, listStyle: 'none', margin: 0 }}>
-              <li style={{ marginBottom: 'var(--space-4)' }}>
-                <strong style={{ color: 'var(--brand-primary)' }}>P</strong>olicy - Machine-readable terms published at <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code>
-              </li>
-              <li style={{ marginBottom: 'var(--space-4)' }}>
-                <strong style={{ color: 'var(--brand-primary)' }}>E</strong>vidence - Cryptographic receipts proving compliance with policies
-              </li>
-              <li style={{ marginBottom: 'var(--space-4)' }}>
-                <strong style={{ color: 'var(--brand-primary)' }}>A</strong>ccess - Verifiable proof of payment or authorization for resource access
-              </li>
-              <li style={{ marginBottom: 0 }}>
-                <strong style={{ color: 'var(--brand-primary)' }}>C</strong>ompliance - Auditable trail for regulatory and business requirements
-              </li>
-            </ul>
-          </div>
-
-          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
-            How PEAC works
+            How PEAC Protocol works
           </h2>
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <ol style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
@@ -104,7 +83,7 @@ export default function Page() {
                 <strong>Policy discovery</strong> - Agent fetches <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> to discover pricing, terms, and payment methods
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
-                <strong>Payment flow</strong> - Agent makes payment through specified method (HTTP 402, x402, Stripe, etc.)
+                <strong>Payment flow</strong> - Agent makes payment through specified method (HTTP 402, x402, MCP, A2A, etc.)
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
                 <strong>Receipt generation</strong> - Payment provider issues a PEAC-Receipt as a signed JWS token
@@ -132,18 +111,31 @@ export default function Page() {
           }}>
             <pre style={{ margin: 0 }}>
               <code>{`# Example PEAC-Receipt header
-PEAC-Receipt: eyJhbGciOiJFZERTQSIsImtpZCI6IjIwMjUtMDktMS...
+PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6InBlYWMucmVjZWlwdC8wLjkiLCJraWQiOiJvcmlnaW5hcnktMjAyNS0wMSJ9...
 
 # Decoded payload (example)
 {
-  "iss": "originary.xyz",
-  "sub": "client-agent-123",
-  "iat": 1699564800,
-  "exp": 1699568400,
-  "resource": "/api/content",
-  "amount": "1.00",
-  "currency": "USD",
-  "payment_id": "pay_xyz789"
+  "header": {
+    "alg": "EdDSA",
+    "typ": "peac.receipt/0.9",
+    "kid": "originary-2025-01"
+  },
+  "payload": {
+    "iss": "https://originary.xyz",
+    "sub": "agent:client-123",
+    "iat": 1734048000,
+    "jti": "rcpt_xyz789",
+    "peac": {
+      "version": "0.9.23",
+      "resource": "/api/content",
+      "policy_hash": "sha256:9f3c..."
+    },
+    "payment": {
+      "rail": "x402",
+      "amount": "1.00",
+      "currency": "USD"
+    }
+  }
 }`}</code>
             </pre>
           </div>

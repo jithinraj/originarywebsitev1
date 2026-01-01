@@ -1,11 +1,24 @@
 {
-  "type": "peac-receipt",
-  "alg": "EdDSA",
-  "kid": "kid-2025-09",
+  "header": {
+    "alg": "EdDSA",
+    "typ": "peac.receipt/0.9",
+    "kid": "originary-2025-01"
+  },
   "payload": {
-    "resource": "/docs",
-    "policy": "peac.txt",
-    "timestamp": "2025-09-19T00:00:00Z"
+    "iss": "https://originary.xyz",
+    "sub": "/docs",
+    "iat": 1734048000,
+    "jti": "rcpt_example_001",
+    "peac": {
+      "version": "0.9.23",
+      "resource": "/docs",
+      "policy_hash": "sha256:9f3c8a2b..."
+    },
+    "payment": {
+      "rail": "x402",
+      "amount": "0.10",
+      "currency": "USD"
+    }
   },
   "signature": "BASE64URL_SIGNATURE"
 }

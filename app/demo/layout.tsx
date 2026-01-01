@@ -50,8 +50,8 @@ const jsonLd = {
     '@type': 'WebPage',
     '@id': 'https://www.originary.xyz/demo'
   },
-  datePublished: '2025-12-13',
-  dateModified: '2025-12-13',
+  datePublished: '2026-01-02',
+  dateModified: '2026-01-02',
   about: [
     { '@type': 'Thing', name: 'HTTP 402 Payment Required' },
     { '@type': 'Thing', name: 'PEAC Protocol' },

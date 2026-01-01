@@ -7,14 +7,14 @@ import { Check, Copy, Play, Pause, SkipForward, RotateCcw, ChevronLeft, ChevronR
 
 const PEAC_TXT_CONTENT = `preferences: https://www.originary.xyz/.well-known/aipref.json
 access_control: http-402
-payments: [x402, stripe]
+payments: [x402]
 provenance: c2pa
 receipts: required
 verify: https://www.originary.xyz/.well-known/jwks.json
 verify_api: https://api.originary.xyz/verify
 public_keys: https://www.originary.xyz/.well-known/jwks.json
 contact: contact@originary.xyz
-updated_at: 2025-12-13T12:00:00+05:30`
+updated_at: 2026-01-02T12:00:00+05:30`
 
 const HTTP_EXCHANGES = [
   {
@@ -61,7 +61,7 @@ const TRACE_STEPS = [
   { key: 'prefs', title: 'Preferences check', desc: 'Agent fetches aipref.json (or uses cached snapshot)' },
   { key: 'evaluate', title: 'Policy evaluation', desc: 'Server decides: allow, deny, or require payment (402)' },
   { key: 'challenge', title: '402 challenge', desc: 'Server returns 402 with PAYMENT-REQUIRED instructions' },
-  { key: 'payment', title: 'Payment adapter', desc: 'Client retries using a supported adapter (x402/stripe)' },
+  { key: 'payment', title: 'Payment adapter', desc: 'Client retries using a supported adapter (x402)' },
   { key: 'access', title: 'Resource access', desc: 'Server returns resource when requirements are satisfied' },
   { key: 'receipt', title: 'PEAC-Receipt', desc: 'Server attaches signed PEAC-Receipt (JWS) to response' },
 ]
@@ -88,9 +88,9 @@ const DECODED_RECEIPT = {
   }
 }
 
-const DISPUTE_PACKET_PREVIEW = `{"ts":"2025-12-13T12:00:00Z","request_hash":"sha256-...","policy_hash":"sha256-...","aipref_hash":"sha256-...","receipt_jws":"eyJhbGci...","payment_reference":"x402_pay_..."}
-{"ts":"2025-12-13T12:01:00Z","request_hash":"sha256-...","policy_hash":"sha256-...","aipref_hash":"sha256-...","receipt_jws":"eyJhbGci...","payment_reference":"x402_pay_..."}
-{"ts":"2025-12-13T12:02:00Z","request_hash":"sha256-...","policy_hash":"sha256-...","aipref_hash":"sha256-...","receipt_jws":"eyJhbGci...","payment_reference":"x402_pay_..."}`
+const DISPUTE_PACKET_PREVIEW = `{"ts":"2026-01-02T12:00:00Z","request_hash":"sha256-...","policy_hash":"sha256-...","aipref_hash":"sha256-...","receipt_jws":"eyJhbGci...","payment_reference":"x402_pay_..."}
+{"ts":"2026-01-02T12:01:00Z","request_hash":"sha256-...","policy_hash":"sha256-...","aipref_hash":"sha256-...","receipt_jws":"eyJhbGci...","payment_reference":"x402_pay_..."}
+{"ts":"2026-01-02T12:02:00Z","request_hash":"sha256-...","policy_hash":"sha256-...","aipref_hash":"sha256-...","receipt_jws":"eyJhbGci...","payment_reference":"x402_pay_..."}`
 
 function useReducedMotion() {
   const [reducedMotion, setReducedMotion] = useState(false)
@@ -1285,10 +1285,10 @@ Content-Type: application/json
 # Response:
 {
   "valid": true,
-  "issued_at": "2025-12-13T12:00:00Z",
+  "issued_at": "2026-01-02T12:00:00Z",
   "issuer": {
     "domain": "originary.xyz",
-    "kid": "2025-12-13"
+    "kid": "2026-01-02"
   },
   "signature_verified": true,
   "policy_hash_match": true,

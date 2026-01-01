@@ -26,7 +26,7 @@ const peacSourceCodeJsonLd = {
   codeRepository: 'https://github.com/peacprotocol/peac',
   license: 'https://www.apache.org/licenses/LICENSE-2.0',
   programmingLanguage: 'TypeScript',
-  version: '0.9.16'
+  version: '0.9.23'
 }
 
 export const metadata: Metadata = {
@@ -102,11 +102,11 @@ export default function Downloads() {
                 paddingBottom: 'var(--space-4)',
                 borderBottom: '1px solid var(--gray-200)'
               }}>
-                <span><strong>Publisher:</strong> Poem, Inc.</span>
+                <span><strong>Publisher:</strong> Originary (Poem, Inc.)</span>
                 <span>•</span>
                 <span><strong>License:</strong> Open source</span>
                 <span>•</span>
-                <span><strong>Wire format:</strong> PEAC v0.9.16</span>
+                <span><strong>Wire format:</strong> peac.receipt/0.9</span>
               </div>
 
               <p style={{

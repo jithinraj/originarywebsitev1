@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
-import { CheckCircle, Github, Download, BookOpen, Code, Shield } from 'lucide-react'
+import { CheckCircle, Github, Download, BookOpen, Code, Shield, Activity, Layers } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'PEAC Protocol | Open Protocol for the Agentic Web',
@@ -32,7 +32,7 @@ export default function PeacPage() {
     "@context": "https://schema.org",
     "@type": "SoftwareSourceCode",
     "name": "PEAC Protocol",
-    "description": "Programmable Environment for Agent Coordination - Open protocol for policy, payments, and verifiable receipts",
+    "description": "PEAC Protocol - Open protocol for policy, payments, and verifiable receipts in the agentic web",
     "codeRepository": "https://github.com/peacprotocol/peac",
     "programmingLanguage": ["TypeScript", "JavaScript"],
     "license": "https://www.apache.org/licenses/LICENSE-2.0",
@@ -420,8 +420,68 @@ export default function PeacPage() {
           </div>
         </section>
 
-        {/* Governance */}
+        {/* Protocol Capabilities */}
         <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
+          <div className="container">
+            <h2
+              style={{
+                fontSize: 'var(--text-3xl)',
+                fontWeight: 700,
+                textAlign: 'center',
+                marginBottom: 'var(--space-4)',
+                color: 'var(--gray-900)'
+              }}
+            >
+              Protocol Capabilities
+            </h2>
+            <p
+              style={{
+                textAlign: 'center',
+                fontSize: 'var(--text-lg)',
+                color: 'var(--gray-600)',
+                marginBottom: 'var(--space-16)',
+                maxWidth: '700px',
+                margin: '0 auto var(--space-16) auto'
+              }}
+            >
+              Built-in features for privacy, observability, and rapid deployment
+            </p>
+
+            <div className="grid grid-2" style={{ gap: 'var(--space-6)', maxWidth: '900px', margin: '0 auto' }}>
+              <div className="card">
+                <Activity size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  Telemetry
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                  OpenTelemetry integration with privacy-preserving modes. Choose strict, balanced, or custom identifier handling for compliance.
+                </p>
+                <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
+                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--gray-100)', borderRadius: 'var(--radius-full)', color: 'var(--gray-600)' }}>W3C Trace Context</span>
+                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--gray-100)', borderRadius: 'var(--radius-full)', color: 'var(--gray-600)' }}>Privacy modes</span>
+                </div>
+              </div>
+
+              <div className="card">
+                <Layers size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  Policy Profiles
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                  Pre-built policy profiles for common use cases. Start with news-media, api-provider, open-source, or saas-docs and customize from there.
+                </p>
+                <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
+                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--gray-100)', borderRadius: 'var(--radius-full)', color: 'var(--gray-600)' }}>news-media</span>
+                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--gray-100)', borderRadius: 'var(--radius-full)', color: 'var(--gray-600)' }}>api-provider</span>
+                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--gray-100)', borderRadius: 'var(--radius-full)', color: 'var(--gray-600)' }}>+2 more</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Governance */}
+        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)', background: 'var(--gray-50)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h2
