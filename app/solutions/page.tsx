@@ -162,7 +162,7 @@ export default function SolutionsPage() {
                   <h3>Enterprise</h3>
                 </div>
                 <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
-                  Comprehensive governance and compliance for large-scale AI coordination initiatives.
+                  Governance and compliance for AI at scale.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
@@ -190,9 +190,9 @@ export default function SolutionsPage() {
         <section className="section">
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Customer Success Stories</h2>
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>Who's using this</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>
-                Real results from organizations using our solutions in production.
+                Production deployments across publishers, API providers, and agent builders.
               </p>
             </div>
 

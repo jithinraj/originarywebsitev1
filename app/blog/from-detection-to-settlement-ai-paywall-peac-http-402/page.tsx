@@ -462,7 +462,7 @@ export default function Page() {
                     {
                       version: 'PEAC 0.9.14',
                       title: 'Reporting and standards hooks',
-                      items: ['Compliance reports built on top of receipts', 'Internet Draft v00 for open standards process']
+                      items: ['Compliance reports built on top of receipts']
                     }
                   ].map((section, i) => (
                     <div key={i} style={{
@@ -894,7 +894,7 @@ Content-Type: application/json
                   marginBottom: 'var(--space-6)'
                 }}>
                   <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', display: 'grid', gap: 'var(--space-2)' }}>
-                    <li>Stay on 0.9.x until we earn 1.0 through an IETF draft and multiple independent implementations</li>
+                    <li>Continue development at v0.9.27 until earning 1.0 through multiple independent implementations</li>
                     <li>Use <strong>PEAC-Receipt</strong> as the primary HTTP field globally, without legacy header aliases</li>
                     <li>Keep the core small and rely on adapters for payment rails and environments</li>
                     <li>Always embed AIPREF snapshots in receipts when present, and make payment optional but normalized across x402 and Stripe</li>

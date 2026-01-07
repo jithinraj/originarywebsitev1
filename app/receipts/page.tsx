@@ -243,7 +243,7 @@ export default function ReceiptsPage() {
                     <span className="dot green" />
                   </div>
                   <span className="receipts-code-filename">receipt.json</span>
-                  <span className="receipts-code-badge">PEAC v0.9.23</span>
+                  <span className="receipts-code-badge">PEAC v0.9.27</span>
                 </div>
                 <pre className="receipts-code-body">
                   <code>{`{
@@ -257,7 +257,7 @@ export default function ReceiptsPage() {
     `}<span className="code-key">{`"iat"`}</span>{`: `}<span className="code-number">{`1734048000`}</span>{`,
     `}<span className="code-key">{`"jti"`}</span>{`: `}<span className="code-string">{`"rcpt_7f92ab31"`}</span>{`,
     `}<span className="code-key">{`"peac"`}</span>{`: {
-      `}<span className="code-key">{`"version"`}</span>{`: `}<span className="code-string">{`"0.9.23"`}</span>{`,
+      `}<span className="code-key">{`"version"`}</span>{`: `}<span className="code-string">{`"0.9.27"`}</span>{`,
       `}<span className="code-key">{`"resource"`}</span>{`: `}<span className="code-string">{`"/api/content"`}</span>{`,
       `}<span className="code-key">{`"policy_hash"`}</span>{`: `}<span className="code-string">{`"sha256:9f3c..."`}</span>{`
     },

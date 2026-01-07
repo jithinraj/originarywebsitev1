@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: { absolute: 'PEAC Protocol Trace | Originary' },
-  description: 'Watch a complete PEAC v0.9.23 transaction end to end. Agent discovers policy via peac.txt, receives HTTP 402 challenge, pays via x402/stripe, and receives a signed PEAC-Receipt verifiable offline with JWKS.',
+  description: 'Watch a complete PEAC v0.9.27 transaction end to end. Agent discovers policy via peac.txt, receives HTTP 402 challenge, pays via x402/stripe, and receives a signed PEAC-Receipt verifiable offline with JWKS.',
   keywords: 'PEAC protocol, HTTP 402, verifiable receipts, policy discovery, x402, JWKS verification, agent transactions, aipref, peac.txt',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
     title: 'PEAC Protocol Trace - HTTP 402 Transaction Demo',
-    description: 'Watch a complete PEAC v0.9.23 transaction end to end. Agent discovers policy, receives 402 challenge, pays, and receives a signed receipt verifiable offline.',
+    description: 'Watch a complete PEAC v0.9.27 transaction end to end. Agent discovers policy, receives 402 challenge, pays, and receives a signed receipt verifiable offline.',
     url: 'https://www.originary.xyz/demo',
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'PEAC Protocol Trace - HTTP 402 Transaction Demo',
-    description: 'Watch a complete PEAC v0.9.23 transaction end to end. Agent discovers policy, receives 402 challenge, pays, and receives a signed receipt verifiable offline.',
+    description: 'Watch a complete PEAC v0.9.27 transaction end to end. Agent discovers policy, receives 402 challenge, pays, and receives a signed receipt verifiable offline.',
     images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -32,7 +32,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'TechArticle',
   headline: 'PEAC Protocol Transaction Trace',
-  description: 'Interactive demonstration of a complete PEAC v0.9.23 transaction flow including policy discovery, HTTP 402 payment challenge, and receipt verification.',
+  description: 'Interactive demonstration of a complete PEAC v0.9.27 transaction flow including policy discovery, HTTP 402 payment challenge, and receipt verification.',
   author: {
     '@type': 'Organization',
     name: 'Originary',

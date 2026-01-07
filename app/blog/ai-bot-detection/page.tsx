@@ -342,7 +342,7 @@ export default function Page() {
                   marginBottom: 'var(--space-6)'
                 }}>
                   <p style={{ margin: 0, color: 'var(--white)', fontSize: 'var(--text-lg)', fontWeight: 500, lineHeight: 1.6 }}>
-                    &ldquo;You cannot control, license, or monetize AI usage of your data if you cannot see which AI agents are actually accessing it.&rdquo;
+                    &ldquo;You can't control, license, or monetize AI usage of your data if you can't see which AI agents are actually accessing it.&rdquo;
                   </p>
                 </div>
 
@@ -385,18 +385,23 @@ export default function Page() {
                   {[
                     {
                       icon: AlertTriangle,
-                      title: 'It is an arms race',
-                      desc: 'As models improve, naive classifiers become less reliable. A detector that feels strong this quarter may be unreliable next quarter.'
+                      title: 'It&apos;s an arms race',
+                      desc: 'As models improve, naive classifiers become less reliable. A detector that feels strong this quarter may be unreliable next quarter. (We&apos;ve seen 20%+ false positive drops in under 6 months.)'
                     },
                     {
                       icon: AlertTriangle,
-                      title: 'Scores are not proof',
-                      desc: 'A "0.84 likelihood of AI" score is a hint. It is not a signed record that will stand up in an audit, complaint, or legal dispute.'
+                      title: 'Scores aren&apos;t proof',
+                      desc: 'A "0.84 likelihood of AI" score is a hint. It isn&apos;t a signed record that&apos;ll stand up in an audit, complaint, or legal dispute.'
                     },
                     {
                       icon: AlertTriangle,
                       title: 'No policy, no economics',
-                      desc: 'Even if you know something is AI-generated, that does not tell you whether the agent respected your usage policy, paid you for access, or is allowed to keep the data.'
+                      desc: 'Even if you know something&apos;s AI-generated, that doesn&apos;t tell you whether the agent respected your usage policy, paid you for access, or is allowed to keep the data.'
+                    },
+                    {
+                      icon: AlertTriangle,
+                      title: 'Detection lag',
+                      desc: 'By the time you detect unauthorized AI training on your content, the model is already deployed. You can&apos;t un-train it.'
                     }
                   ].map((item, i) => (
                     <div key={i} style={{
@@ -444,9 +449,10 @@ export default function Page() {
                 }}>
                   <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
                     {[
-                      'Clear machine-readable policies that AI agents can understand',
-                      'Verifiable proof that access followed those policies',
-                      'A way to connect a suspicious artifact back to concrete access events'
+                      'Machine-readable policies agents can parse',
+                      'Cryptographic proof access followed those terms',
+                      'Chain linking suspicious outputs back to access events',
+                      'Audit trail that survives legal discovery (not server logs you control)'
                     ].map((item, i) => (
                       <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
                         <CheckCircle2 size={18} style={{ color: 'var(--brand-secondary)', flexShrink: 0, marginTop: '2px' }} />
@@ -567,16 +573,12 @@ export default function Page() {
                   <div style={{ display: 'grid', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                     {[
                       {
-                        title: 'File and media metadata',
-                        items: ['EXIF and container metadata in images, audio, video', 'C2PA provenance tags and content credentials', 'Timestamps, edit history, device hints']
+                        title: 'File/media layer',
+                        items: ['EXIF data, container metadata (images/audio/video)', 'C2PA provenance, content credentials', 'Timestamps, edit history, device hints', 'Gotcha: easily stripped unless embedded + signed']
                       },
                       {
-                        title: 'Transport metadata',
-                        items: ['HTTP headers, TLS fingerprints, IP ranges, ASNs', 'User-Agent strings, model hints, API keys', 'Request rate, timing patterns, geo patterns']
-                      },
-                      {
-                        title: 'Contract metadata',
-                        items: ['Policy fields: allowed usage, price, retention', 'Consent flags and legal basis', 'Links to receipts, licenses, dispute records']
+                        title: 'Transport layer',
+                        items: ['HTTP headers, TLS fingerprints, ASN ranges', 'User-Agent, model hints, API keys', 'Rate patterns, timing, geo']
                       }
                     ].map((section, i) => (
                       <div key={i} style={{
