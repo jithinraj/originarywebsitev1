@@ -314,8 +314,8 @@ export default function Pricing() {
                 What is a &ldquo;receipt&rdquo;?
               </h2>
               <p style={{ color: 'var(--gray-700)', lineHeight: 1.7, fontSize: 'var(--text-base)' }}>
-                A receipt is a verifiable record of usage or access terms for an interaction—e.g., an API call,
-                data fetch, or model inference—signed and auditable. Every verified receipt includes policy,
+                A receipt is a verifiable record of usage or access terms for an interaction (e.g., an API call,
+                data fetch, or model inference) - signed and auditable. Every verified receipt includes policy,
                 attribution, settlement details, timestamp, and integrity metadata. Receipts are the atomic unit
                 of trust in the agentic web, providing cryptographic proof of compliance and settlement.
               </p>
@@ -365,7 +365,7 @@ export default function Pricing() {
                     Do you support EU AI Act/GDPR workflows?
                   </summary>
                   <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                    Yes—configurable retention windows, attribution flags, audit exports, and DPA/SCCs are available
+                    Yes - configurable retention windows, attribution flags, audit exports, and DPA/SCCs are available
                     for Enterprise plans. We work closely with legal teams to ensure compliance.
                   </p>
                 </details>

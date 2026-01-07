@@ -149,9 +149,10 @@ export default function PlatformPage() {
                 gap: 'var(--space-4)'
               }}>
                 {[
-                  'Receipts are signed JWS (Ed25519) and verifiable offline by any party with issuer public keys',
-                  'Policies are published at /.well-known/peac.txt — no proprietary APIs required',
-                  'Settlement is optional and adapter-based (x402 available; Stripe in preview; custom adapters supported)'
+                  'Receipts: signed JWS (Ed25519), verifiable offline with issuer public keys',
+                  'Policies: published at /.well-known/peac.txt. No proprietary APIs.',
+                  'Settlement: optional, adapter-based. x402 live, Stripe in preview, custom adapters supported.',
+                  'Verification: pure cryptography. No phone home to Originary servers.'
                 ].map((item, i) => (
                   <li key={i} style={{
                     display: 'flex',

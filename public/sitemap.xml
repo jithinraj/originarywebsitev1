@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.originary.xyz</loc>
-    <lastmod>2026-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
   </url>
@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://www.originary.xyz/platform</loc>
-    <lastmod>2026-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -50,10 +50,17 @@
   </url>
   <url>
     <loc>https://www.originary.xyz/what-is-originary</loc>
-    <lastmod>2026-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://www.originary.xyz/why-peac</loc>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <url>
     <loc>https://www.originary.xyz/system-of-record</loc>
     <lastmod>2026-01-02T00:00:00+00:00</lastmod>
@@ -74,13 +81,13 @@
   </url>
   <url>
     <loc>https://www.originary.xyz/learn/what-is-agentic-commerce</loc>
-    <lastmod>2026-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://www.originary.xyz/learn/ai-receipts</loc>
-    <lastmod>2026-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -110,7 +117,7 @@
   </url>
   <url>
     <loc>https://www.originary.xyz/receipts</loc>
-    <lastmod>2026-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -182,7 +189,7 @@
   </url>
   <url>
     <loc>https://www.originary.xyz/solutions</loc>
-    <lastmod>2026-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -194,7 +201,7 @@
   </url>
   <url>
     <loc>https://www.originary.xyz/about</loc>
-    <lastmod>2026-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -242,13 +249,13 @@
   </url>
   <url>
     <loc>https://www.originary.xyz/blog/ai-bot-detection</loc>
-    <lastmod>2026-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.originary.xyz/blog/from-detection-to-settlement-ai-paywall-peac-http-402</loc>
-    <lastmod>2026-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -272,7 +279,7 @@
   </url>
   <url>
     <loc>https://www.originary.xyz/demo</loc>
-    <lastmod>2026-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -476,7 +483,7 @@
   </url>
   <url>
     <loc>https://www.originary.xyz/research</loc>
-    <lastmod>2026-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -500,7 +507,7 @@
   </url>
   <url>
     <loc>https://www.originary.xyz/declare</loc>
-    <lastmod>2026-01-02T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
