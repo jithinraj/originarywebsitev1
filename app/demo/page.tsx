@@ -721,7 +721,7 @@ function ReceiptTypewriter({
   return (
     <div className="receipt-typewriter">
       <div className="receipt-header">
-        <span className="receipt-label">DECODED RECEIPT PAYLOAD (v0.9.23)</span>
+        <span className="receipt-label">DECODED RECEIPT PAYLOAD (v0.9.27)</span>
         {isVerified && (
           <span className="verified-badge">
             <Check size={12} />
@@ -1234,7 +1234,7 @@ export default function DemoPage() {
             {/* Decoded Receipt */}
             <div className="card demo-card">
               <div className="section-header">
-                <h2>Receipt anatomy (v0.9.23)</h2>
+                <h2>Receipt anatomy (v0.9.27)</h2>
                 <p>Decoded payload showing aipref snapshot, payment evidence, and policy hash binding.</p>
               </div>
               <ReceiptTypewriter isActive={showReceipt || timelineStep >= 6} />
@@ -1342,7 +1342,7 @@ Content-Type: application/json
             {/* Audit Section */}
             <div className="card demo-card">
               <div className="section-header">
-                <h2>Audit-ready exports (v0.9.23)</h2>
+                <h2>Audit-ready exports (v0.9.27)</h2>
                 <p>Dispute packet format for compliance and audit trails.</p>
               </div>
 

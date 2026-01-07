@@ -181,10 +181,9 @@ export default function AIReceiptsPage() {
                   </h2>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                     {[
-                      'Receipts are JWS-signed JSON proving what happened in an agent interaction',
-                      'Enable billing, compliance, attribution, and dispute resolution',
-                      'Verifiable offline using public keys - no API call required',
-                      'Carried in the PEAC-Receipt HTTP header on every transaction'
+                      'Receipts are JWS-signed JSON proving what happened in an interaction',
+                      'Verifiable offline using public keys. No API callback.',
+                      'Carried in the PEAC-Receipt HTTP header'
                     ].map((takeaway, i) => (
                       <li key={i} style={{
                         display: 'flex',
@@ -233,27 +232,21 @@ export default function AIReceiptsPage() {
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
                     <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Billing & Metering</h4>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Billing proof</h4>
                       <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
-                        Receipts provide irrefutable proof of API consumption. No more &ldquo;he said, she said&rdquo; billing disputes - the cryptographic signature proves exactly what was used.
+                        No more "he said, she said" disputes. The signature proves what was used.
                       </p>
                     </div>
                     <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Compliance & Audit</h4>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Audit trails regulators accept</h4>
                       <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
-                        Regulators increasingly require audit trails for AI systems. Receipts provide timestamped, tamper-evident records of every agent action.
+                        Timestamped, tamper-evident records of every agent action. GDPR, SOC 2, EU AI Act compliance becomes straightforward when you can produce signed receipts on demand.
                       </p>
                     </div>
                     <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Attribution & Provenance</h4>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Attribution chains</h4>
                       <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
-                        When an agent uses content or data, the receipt records proper attribution. Content creators can verify their work was properly credited and compensated.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Dispute Resolution</h4>
-                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
-                        When something goes wrong, receipts provide the evidence chain. Both parties can present their receipts to resolve conflicts objectively.
+                        Content usage gets recorded. Creators verify credit and compensation.
                       </p>
                     </div>
                   </div>
