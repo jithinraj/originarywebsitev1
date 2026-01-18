@@ -20,7 +20,7 @@ const webPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Privacy Policy',
-  url: 'https://www.originary.xyz/privacy',
+  url: '/privacy',
   dateModified: '2025-07-27'
 }
 

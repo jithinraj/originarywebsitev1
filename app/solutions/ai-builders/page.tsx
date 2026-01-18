@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'AI Builders | Compliance & Provenance',
     description: 'Build AI systems with provenance tracking, verifiable records, and cryptographic receipts.',
-    url: 'https://www.originary.xyz/solutions/ai-builders',
+    url: '/solutions/ai-builders',
     images: [{
       url: '/og.jpg',
       width: 1200,

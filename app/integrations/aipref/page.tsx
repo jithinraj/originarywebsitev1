@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AIPREF Integration | Machine Readable AI Preferences with PEAC',
     description: 'Integrate the AIPREF standard so AI crawlers can read machine readable preferences, respect AI access rules and combine aipref.json with PEAC policies for safer training and scraping.',
-    url: 'https://www.originary.xyz/integrations/aipref/',
+    url: '/integrations/aipref',
     type: 'article'
   },
   alternates: {
@@ -21,7 +21,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "AI Preferences (AIPREF) Integration",
-  "description": "Technical documentation for implementing IETF AIPREF with Originary policy discovery and verification",
+  "description": "Technical documentation for implementing AIPREF (IETF Internet-Draft) with Originary policy discovery and verification",
   "author": {
     "@type": "Organization",
     "@id": "https://www.originary.xyz/#org"
@@ -87,7 +87,7 @@ export default function AIPREFPage() {
               Overview
             </h2>
             <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-              AIPREF is an IETF standard for expressing AI access preferences in machine-readable format. Similar to robots.txt for web crawlers, AIPREF allows websites to declare policies for AI agent access, scraping permissions, and usage terms.
+              AIPREF is an <a href="https://datatracker.ietf.org/wg/aipref/" target="_blank" rel="noopener" style={{ color: 'var(--brand-primary)' }}>IETF Internet-Draft</a> for expressing AI access preferences in machine-readable format. Similar to robots.txt for web crawlers, AIPREF allows websites to declare policies for AI agent access, scraping permissions, and usage terms.
             </p>
             <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
               Originary extends AIPREF with PEAC-Receipt verification, enabling sites to enforce policies cryptographically. Agents discover policies via <code>/.well-known/aipref.json</code>, and Originary issues receipts proving policy compliance.
@@ -106,7 +106,7 @@ export default function AIPREFPage() {
               The AIPREF standard supports multiple policy types: scraping permissions, training data licensing, commercial use restrictions, rate limits, payment requirements, and attribution formats. Agents that support AIPREF will fetch your policy file before accessing content and adjust their behavior accordingly.
             </p>
             <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
-              When combined with Originary, AIPREF policies move from advisory to enforceable. Originary reads your aipref.json configuration and enforces policies at the edge, issuing PEAC-Receipts when agents comply with requirements like payment or attribution. This creates cryptographic proof of compliance that can be audited and verified.
+              When combined with Originary, AIPREF policies move from advisory to enforceable. Originary reads your aipref.json configuration and enforces policies at the edge, issuing PEAC-Receipts when agents comply with requirements like payment or attribution. This creates verifiable records of compliance that can be audited offline.
             </p>
           </div>
 
@@ -216,7 +216,7 @@ User-Agent: MyAgent/1.0`}
             </h2>
             <ul style={{ color: 'var(--gray-600)', lineHeight: 1.8, paddingLeft: 'var(--space-6)' }}>
               <li>Machine-readable AI access policies</li>
-              <li>Cryptographic enforcement of licensing terms</li>
+              <li>Verifiable enforcement of licensing terms</li>
               <li>Automated compliance verification</li>
               <li>Monetization of AI training data</li>
               <li>Standards-based approach compatible with IETF specifications</li>

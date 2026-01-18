@@ -21,7 +21,7 @@ const webPageJsonLd = {
   '@type': 'WebPage',
   name: 'Terms of Service',
   description: 'Terms of Service for Originary - commercial tools implementing receipts for the agentic web.',
-  url: 'https://www.originary.xyz/terms',
+  url: '/terms',
   dateModified: '2025-07-27',
   publisher: {
     '@type': 'Organization',

@@ -17,7 +17,7 @@ const webPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Security Disclosure',
-  url: 'https://www.originary.xyz/security',
+  url: '/security',
   dateModified: '2025-07-27'
 }
 

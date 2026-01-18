@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Open System of Record for AI Agents | Originary',
     description: 'Policy + receipts as verifiable evidence for agent interactions. Portable, cryptographic proof for the agentic web.',
-    url: 'https://www.originary.xyz/system-of-record',
+    url: '/system-of-record',
     type: 'website',
     images: ['/og.jpg'],
     siteName: 'Originary',

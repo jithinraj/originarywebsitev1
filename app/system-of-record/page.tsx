@@ -52,7 +52,7 @@ const FAQ_DATA = [
   },
   {
     question: 'What overhead does cryptographic receipt signing add?',
-    answer: 'Cryptographic receipts add overhead, so the format is designed to be compact and the signing/verifying path implementable at the edge. PEAC supports optional delayed or batched issuance where appropriate while keeping verification deterministic.'
+    answer: 'Signed receipts add overhead, so the format is designed to be compact and the signing/verifying path implementable at the edge. PEAC supports optional delayed or batched issuance where appropriate while keeping verification deterministic.'
   },
   {
     question: 'How does PEAC work with AIPREF and C2PA?',
@@ -100,7 +100,7 @@ export default function SystemOfRecordPage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Open System of Record for AI Agents",
-    "description": "Policy + receipts as verifiable evidence for agent interactions. PEAC Protocol creates portable, cryptographic proof of what was accessed, under what terms, and how it was paid.",
+    "description": "Policy + receipts as verifiable evidence for agent interactions. PEAC Protocol creates portable, verifiable records of what was accessed, under what terms, and how it was paid.",
     "url": "https://www.originary.xyz/system-of-record",
     "isPartOf": {
       "@type": "WebSite",
@@ -434,7 +434,7 @@ export default function SystemOfRecordPage() {
                     If proof adds massive latency or cost, it will only be used in high-stakes flows. The winning layer is the one that becomes routine.
                   </p>
                   <p className="requirement-note">
-                    Cryptographic receipts add overhead, so the format must be compact and the signing/verifying path must be implementable at the edge. PEAC is designed so implementations can optimize issuance (including optional delayed or batched issuance where appropriate) while keeping verification deterministic.
+                    Signed receipts add overhead, so the format must be compact and the signing/verifying path must be implementable at the edge. PEAC is designed so implementations can optimize issuance (including optional delayed or batched issuance where appropriate) while keeping verification deterministic.
                   </p>
                 </div>
               </div>
@@ -450,7 +450,7 @@ export default function SystemOfRecordPage() {
 
               <ol className="model-list">
                 <li><strong>A discoverable policy file</strong> that tells agents what is allowed and under what terms.</li>
-                <li><strong>A cryptographic receipt</strong> returned with responses that proves what happened.</li>
+                <li><strong>A signed receipt</strong> returned with responses that proves what happened.</li>
               </ol>
 
               <p>
@@ -802,7 +802,7 @@ Content-Type: application/json`}</code></pre>
                   <strong>Publish a policy file</strong> (<code>peac.txt</code>) that expresses access terms in a machine-readable way.
                 </li>
                 <li>
-                  <strong>Start returning cryptographic receipts</strong> (<code>PEAC-Receipt</code>) for agent interactions.
+                  <strong>Start returning signed receipts</strong> (<code>PEAC-Receipt</code>) for agent interactions.
                 </li>
                 <li>
                   <strong>Verify receipts inside your own systems</strong>, and export them to the places you already trust (SIEM, warehouse, compliance pipelines).

@@ -26,7 +26,7 @@ const peacSourceCodeJsonLd = {
   codeRepository: 'https://github.com/peacprotocol/peac',
   license: 'https://www.apache.org/licenses/LICENSE-2.0',
   programmingLanguage: 'TypeScript',
-  version: '0.9.23'
+  version: '0.10.0'
 }
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Downloads',
     description: 'Download the Originary CLI and PEAC policy templates. Verify policy files and implement receipts.',
-    url: 'https://www.originary.xyz/downloads',
+    url: '/downloads',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',
@@ -89,7 +89,7 @@ export default function Downloads() {
                 color: 'var(--gray-600)',
                 marginBottom: 'var(--space-4)'
               }}>
-                Official <strong>Originary</strong> CLI builds. Use to integrate access control, consent, attribution, provenance and cryptographic receipts into your apps.
+                Official <strong>Originary</strong> CLI builds. Use to integrate access control, consent, attribution, provenance and verifiable receipts into your apps.
               </p>
 
               <div style={{
@@ -106,7 +106,7 @@ export default function Downloads() {
                 <span>•</span>
                 <span><strong>License:</strong> Open source</span>
                 <span>•</span>
-                <span><strong>Wire format:</strong> peac.receipt/0.9</span>
+                <span><strong>Wire format:</strong> peac-receipt/0.1</span>
               </div>
 
               <p style={{

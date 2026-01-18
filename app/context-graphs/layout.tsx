@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Context Graphs & System of Record for AI Agents | Originary',
     description: 'Decision traces are the missing infrastructure for agent autonomy. How context graphs emerge and why the internet needs an open system of record.',
-    url: 'https://www.originary.xyz/context-graphs',
+    url: '/context-graphs',
     type: 'website',
     images: ['/og.jpg'],
     siteName: 'Originary',

@@ -2,29 +2,29 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
-import { Shield, FileText, CheckCircle, Code, Globe, Users, HelpCircle, ExternalLink } from 'lucide-react'
+import { Shield, FileText, CheckCircle, Code, Globe, Users, HelpCircle, ExternalLink, AlertTriangle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'What is Originary? | Open system of record for agent interactions',
+  title: 'What is Originary? | Verification for AI Agents',
   description: 'Originary (Poem, Inc.) builds and stewards PEAC, an open standard for publishing terms and issuing verifiable records for agent interactions.',
-  keywords: 'Originary, PEAC Protocol, verifiable receipts, PEAC-Receipt, peac.txt, agent policy, agentic web, HTTP 402, cryptographic receipts, policy discovery, agent compliance, system of record',
+  keywords: 'Originary, PEAC Protocol, verifiable receipts, PEAC-Receipt, peac.txt, agent policy, agentic web, HTTP 402, signed receipts, policy discovery, agent compliance, verification infrastructure',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/what-is-originary'
+    canonical: '/what-is-originary'
   },
   openGraph: {
-    title: 'What is Originary? | Open system of record for agent interactions',
+    title: 'What is Originary? | Verification for AI Agents',
     description: 'Originary (Poem, Inc.) builds and stewards PEAC, an open standard for publishing terms and issuing verifiable records for agent interactions.',
-    url: 'https://www.originary.xyz/what-is-originary',
+    url: '/what-is-originary',
     type: 'website',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'What is Originary? | Open system of record for agent interactions',
+    title: 'What is Originary? | Verification for AI Agents',
     description: 'Originary builds and stewards PEAC, an open standard for publishing terms and issuing verifiable records for agent interactions.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -60,7 +60,7 @@ export default function WhatIsOriginaryPage() {
     "@type": "WebSite",
     "name": "Originary",
     "url": "https://www.originary.xyz",
-    "description": "Open system of record for agent interactions. Publish terms, enforce decisions, and return verifiable receipts.",
+    "description": "Verification infrastructure for agent interactions. Publish terms, enforce decisions, and return verifiable receipts.",
     "publisher": {
       "@type": "Organization",
       "name": "Originary",
@@ -102,7 +102,7 @@ export default function WhatIsOriginaryPage() {
         "name": "Is PEAC stable?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "PEAC is in an active 0.9.x development line; the goal is to earn 1.0 through multi-implementation, conformance, and standards work."
+          "text": "PEAC is at version 0.9.27; the goal is to earn 1.0 through multi-implementation, conformance, and standards work."
         }
       }
     ]
@@ -173,7 +173,7 @@ export default function WhatIsOriginaryPage() {
                   margin: '0 auto var(--space-4) auto'
                 }}
               >
-                Originary builds and stewards <strong>PEAC</strong>: an open standard for publishing terms and issuing verifiable records for agent interactions.
+                Originary builds <strong>PEAC</strong>: an open standard for publishing terms and issuing verifiable records for agent interactions.
               </p>
               <p
                 style={{
@@ -185,7 +185,7 @@ export default function WhatIsOriginaryPage() {
                   margin: '0 auto var(--space-10) auto'
                 }}
               >
-                It helps the open internet support agents and services without gatekeepers, lock-in, or centralized control.
+                No gatekeepers. No lock-in. No centralized control.
               </p>
 
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap', marginBottom: 'var(--space-8)' }}>
@@ -236,7 +236,7 @@ export default function WhatIsOriginaryPage() {
                   marginBottom: 'var(--space-4)'
                 }}
               >
-                As agents begin to act on the web, the missing primitive is not intelligence, but <strong>accountability</strong>: clear terms, enforceable decisions, and durable evidence of what happened.
+                Agents need <strong>accountability</strong>: clear terms, enforceable decisions, and durable evidence of what happened. As of v0.9.27 (January 2026), PEAC provides this through signed receipts and verifiable policy snapshots.
               </p>
               <p
                 style={{
@@ -246,7 +246,7 @@ export default function WhatIsOriginaryPage() {
                   marginBottom: 'var(--space-4)'
                 }}
               >
-                Without a portable record, compliance becomes screenshots, and disputes become opinions.
+                Without portable records, compliance is screenshots and disputes are opinions. (Common mistake: treating server logs as proof - they&apos;re unilateral and easily altered.)
               </p>
               <p
                 style={{
@@ -256,7 +256,7 @@ export default function WhatIsOriginaryPage() {
                   margin: 0
                 }}
               >
-                Originary exists to make interactions <strong>inspectable</strong>, <strong>auditable</strong>, and <strong>interoperable</strong> by default.
+                PEAC makes interactions inspectable, auditable, and interoperable.
               </p>
             </div>
           </div>
@@ -285,7 +285,7 @@ export default function WhatIsOriginaryPage() {
                   marginBottom: 'var(--space-8)'
                 }}
               >
-                Originary maintains the reference standard and production tooling for turning interaction decisions into verifiable records. You can publish terms, enforce them in real systems, and verify outcomes independently.
+                Originary maintains the reference standard and production tooling for turning decisions into verifiable records. Publish terms, enforce them, verify independently.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
@@ -676,6 +676,35 @@ export default function WhatIsOriginaryPage() {
           </div>
         </section>
 
+        {/* Limitations */}
+        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-10)' }}>
+          <div className="container">
+            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+              <div
+                className="card"
+                style={{
+                  padding: 'var(--space-8)',
+                  border: '1px solid rgba(255, 107, 53, 0.3)',
+                  borderRadius: 'var(--radius-2xl)',
+                  background: 'rgba(255, 107, 53, 0.03)'
+                }}
+              >
+                <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-4)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                  <AlertTriangle size={20} style={{ color: 'var(--brand-accent)' }} />
+                  Limitations
+                </h2>
+                <ul style={{ color: 'var(--gray-700)', lineHeight: 1.8, paddingLeft: 'var(--space-6)', marginBottom: 0 }}>
+                  <li style={{ marginBottom: 'var(--space-2)' }}>PEAC does not enforce compliance. It provides evidence of what the issuer claims occurred.</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}>Receipt contents are issuer-controlled. Verifiers trust the issuer's representation, not an oracle.</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}>Version 0.9.27 wire format may change before 1.0. Cross-version compatibility is not guaranteed.</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}>Key compromise invalidates all receipts signed with that key (standard PKI limitation).</li>
+                  <li>PEAC provides evidence for disputes, not adjudication. Resolution is out of scope.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
@@ -751,7 +780,7 @@ export default function WhatIsOriginaryPage() {
                     Is PEAC stable?
                   </h3>
                   <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
-                    PEAC is in an active <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>0.9.x</code> development line; the goal is to earn <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>1.0</code> through multi-implementation, conformance, and standards work.
+                    PEAC is at version <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>0.9.27</code>; the goal is to earn <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>1.0</code> through multi-implementation, conformance, and standards work.
                   </p>
                 </div>
               </div>

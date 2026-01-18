@@ -15,15 +15,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Declare | AI Policy Pack Generator | Originary',
     description: 'Generate your AI policy pack from one file. Write peac-policy.yaml, generate peac.txt, robots AI directives, AIPREF templates, and a human policy page.',
-    url: 'https://www.originary.xyz/declare',
+    url: '/declare',
     type: 'website',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Declare | AI Policy Pack Generator | Originary',
     description: 'Generate your AI policy pack from one file.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
   }
 }
 
@@ -46,7 +46,7 @@ export default function DeclarePage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "softwareVersion": "0.9.23",
+    "softwareVersion": "0.9.27",
     "description": "One config file to declare AI policies for your domain. Generates peac.txt, robots AI rules, AIPREF headers, and a /ai-policy page. Includes Policy Profiles for rapid deployment."
   }
 
@@ -397,7 +397,7 @@ export default function DeclarePage() {
                   }}
                 >
                   <Layers size={16} />
-                  <span>New in v0.9.23</span>
+                  <span>New in v0.9.27</span>
                 </div>
                 <h2 style={{
                   fontSize: 'var(--text-3xl)',
@@ -628,7 +628,7 @@ peac policy init
                   marginTop: 'var(--space-3)',
                   lineHeight: 1.6
                 }}>
-                  Validates <code style={{ background: 'var(--gray-700)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> and generated files against PEAC 0.9.x schemas.
+                  Validates <code style={{ background: 'var(--gray-700)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> and generated files against PEAC 0.9.27 schemas.
                 </p>
               </div>
 
@@ -793,7 +793,7 @@ cp robots-ai-snippet.txt public/`}
                 textAlign: 'center',
                 marginBottom: 'var(--space-10)'
               }}>
-                Policy Kit tracks the PEAC 0.9.x protocol line. Small, reliable, boring.
+                Policy Kit tracks the PEAC 0.9.27 protocol line. Small, reliable, boring.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
@@ -810,7 +810,7 @@ cp robots-ai-snippet.txt public/`}
                       flexShrink: 0
                     }}
                   >
-                    v0.9.23
+                    v0.9.27
                   </div>
                   <div>
                     <strong>Full CLI</strong>: <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>init</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>generate</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>validate</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>explain</code>. Policy Profiles (news-media, api-provider, open-source, saas-docs). CAL semantics with first-match-wins evaluation.

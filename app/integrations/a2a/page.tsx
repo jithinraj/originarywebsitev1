@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'A2A Protocol | Agent-to-Agent Transactions',
     description: 'A2A protocol for agent to agent transactions with agent-to-agent receipts. Secure agentic transactions with A2A verification.',
-    url: 'https://www.originary.xyz/integrations/a2a/',
+    url: '/integrations/a2a',
     type: 'article'
   },
   alternates: {

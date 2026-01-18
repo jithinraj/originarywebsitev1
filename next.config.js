@@ -11,10 +11,7 @@ const nextConfig = {
   outputFileTracingRoot: __dirname,
   trailingSlash: false,
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
-  typescript: {
+    typescript: {
     ignoreBuildErrors: false,
   },
   async redirects() {
@@ -32,14 +29,12 @@ const nextConfig = {
       {
         source: '/open-source',
         destination: '/peac',
-        permanent: false,
-        statusCode: 308,
+        permanent: true,
       },
       {
         source: '/trace/pricing',
         destination: '/pricing#trace',
-        permanent: false,
-        statusCode: 308,
+        permanent: true,
       },
       {
         source: '/sitemap_index.xml',

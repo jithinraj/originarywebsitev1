@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     description: "Standards for agent-initiated commerce including pricing discovery, payment negotiation, and settlement for the agentic web economy",
     type: "article",
     url: "https://www.originary.xyz/glossary/acp/",
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: "summary_large_image",
     title: "ACP - Agent Commerce Protocol",
     description: "Standards for agent-initiated commerce including pricing discovery, payment negotiation, and settlement for the agentic web economy",
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -223,7 +223,7 @@ export default function Page() {
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
               <li style={{ marginBottom: 'var(--space-3)' }}>
-                <strong>Verifiable receipts</strong> - Cryptographically signed proof of payment preventing disputes
+                <strong>Verifiable receipts</strong> - Signature-verified records of payment preventing disputes
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
                 <strong>Audit trails</strong> - Complete transaction history for regulatory compliance

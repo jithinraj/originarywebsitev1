@@ -11,7 +11,8 @@ export const metadata: Metadata = {
     title: 'Trust & Compliance',
     description: 'Security, compliance, and transparency resources for Originary',
     type: 'website',
-    url: 'https://www.originary.xyz/trust',
+    url: '/trust',
+    images: ['/og.jpg'],
   },
   robots: 'index,follow',
   alternates: {
@@ -174,6 +175,70 @@ export default function TrustPage() {
                   { href: '/company/contact', label: 'Contact Us' }
                 ]}
               />
+            </div>
+
+            {/* Core Principles Grid */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: 'var(--space-6)',
+              marginBottom: '80px'
+            }}>
+              <div style={{
+                background: 'var(--white)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-xl)',
+                padding: 'var(--space-6)'
+              }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                  Portability Pledge
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, margin: 0 }}>
+                  Verify receipts offline using published JWKS. Export-first design with no vendor lock-in. Your data remains portable across any PEAC-conformant system.
+                </p>
+              </div>
+
+              <div style={{
+                background: 'var(--white)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-xl)',
+                padding: 'var(--space-6)'
+              }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                  Security Model
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, margin: 0 }}>
+                  Ed25519 signatures ensure tamper-evident receipts. Public keys at standard JWKS endpoints. No proprietary verification required.
+                </p>
+              </div>
+
+              <div style={{
+                background: 'var(--white)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-xl)',
+                padding: 'var(--space-6)'
+              }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                  Conformance
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, margin: 0 }}>
+                  Test vectors and conformance suite available for implementers. Multiple independent implementations expected before PEAC 1.0.
+                </p>
+              </div>
+
+              <div style={{
+                background: 'var(--white)',
+                border: '1px solid var(--gray-200)',
+                borderRadius: 'var(--radius-xl)',
+                padding: 'var(--space-6)'
+              }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                  Governance
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, margin: 0 }}>
+                  PEAC protocol stewardship is transparent and documented. Specification changes follow an open process with community input.
+                </p>
+              </div>
             </div>
 
             {/* Open Source Commitment Section */}

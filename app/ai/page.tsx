@@ -14,7 +14,7 @@ const faqJsonLd = {
       name: 'Is this another ai.txt?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. ai.txt/robots.txt are intent signals. Originary AI issues evidence (PEAC-Receipts) that can be verified cryptographically.'
+        text: 'No. ai.txt/robots.txt are intent signals. Originary AI issues verifiable evidence (PEAC-Receipts) that can be verified offline.'
       }
     },
     {
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Originary & AI - Agent-native trust with PEAC-Receipts'
   },
-  description: 'Build agent-to-agent systems with cryptographic receipts, preference-aware usage, and pay-as-you-go 402 rails. Works with A2A networks, MCP tool calls, ACP, and HTTP 402 payment rails.',
+  description: 'Build agent-to-agent systems with verifiable interaction records, preference-aware usage, and HTTP 402 flows. Works with A2A networks, MCP tool calls, ACP, and configurable payment adapters.',
   keywords: 'agent-to-agent, A2A, MCP, ACP, ERC-8004, PEAC receipts, HTTP 402, agent trust, cryptographic verification, AIPREF, x402, agentic commerce',
   robots: 'index,follow',
   openGraph: {
     title: 'Originary & AI - Agent-native trust with PEAC-Receipts',
-    description: 'Build agent-to-agent systems with cryptographic receipts, preference-aware usage, and pay-as-you-go 402 rails. Works with A2A, MCP, and ACP.',
-    url: 'https://www.originary.xyz/ai/',
+    description: 'Build agent-to-agent systems with verifiable interaction records, preference-aware usage, and HTTP 402 flows. Works with A2A, MCP, and ACP.',
+    url: '/ai',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Originary & AI - Agent-native trust',
-    description: 'Build agent-to-agent systems with cryptographic receipts, preference-aware usage, and pay-as-you-go 402 rails. A2A, MCP, ACP support.',
+    description: 'Build agent-to-agent systems with verifiable interaction records, preference-aware usage, and HTTP 402 flows. A2A, MCP, ACP support.',
     images: ['/og.jpg'],
     site: '@originaryinc',
     creator: '@originaryinc'
@@ -322,7 +322,7 @@ export default function OriginaryAIPage() {
                   {
                     step: '1',
                     title: 'Challenge/Access (optional)',
-                    description: 'If a resource is gated, we answer with HTTP 402 (Payment Required). Agents respond via x402 (stablecoin) or Stripe.'
+                    description: 'If a resource is gated, we answer with HTTP 402 (Payment Required). Agents respond via configured payment adapters.'
                   },
                   {
                     step: '2',
@@ -540,7 +540,7 @@ export default function OriginaryAIPage() {
                 {[
                   {
                     title: 'x402',
-                    description: 'Stablecoin-backed HTTP-402 for instant settlement in USDC.'
+                    description: 'HTTP 402 payment protocol for programmatic settlement.'
                   },
                   {
                     title: 'Stripe',

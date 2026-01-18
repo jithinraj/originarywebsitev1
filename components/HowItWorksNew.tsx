@@ -2,43 +2,71 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { ArrowRight, FileText, Shield, Receipt } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import { PublishIllustration, EnforceIllustration, ReceiptIllustration } from './illustrations'
 
 const steps = [
   {
     id: 'publish',
     num: '01',
     title: 'Publish policy',
-    tagline: 'Define your terms',
-    desc: 'Deploy a machine-readable policy at /.well-known/peac.txt defining access terms and payment requirements',
-    icon: FileText,
-    color: '#635bff',
+    tagline: 'Machine-readable terms',
+    desc: 'Deploy a policy at /.well-known/peac.txt defining access terms and payment requirements. Agents discover it automatically.',
+    Illustration: PublishIllustration,
+    gradient: 'linear-gradient(135deg, var(--gray-950) 0%, var(--gray-800) 100%)',
+    code: `# /.well-known/peac.txt
+version: peac-policy/0.1
+issuer: api.example.com
+verify: /.well-known/jwks.json
+
+rules:
+  /api/*:
+    access: paid
+    price: 0.001 USD
+    methods: [GET, POST]`,
   },
   {
     id: 'enforce',
     num: '02',
     title: 'Enforce at edge',
-    tagline: 'Control access',
-    desc: 'Allow, deny, or request payment before serving the response with HTTP 402 status codes',
-    icon: Shield,
-    color: '#635bff',
+    tagline: 'Real-time decisions',
+    desc: 'Allow, deny, or request payment before serving responses. HTTP 402 status codes trigger programmatic settlement.',
+    Illustration: EnforceIllustration,
+    gradient: 'linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-light) 100%)',
+    code: `HTTP/1.1 402 Payment Required
+WWW-Authenticate: PEAC realm="api"
+PEAC-Price: 0.001 USD
+PEAC-Accept: x402, invoice
+
+{
+  "error": "payment_required",
+  "price": "0.001 USD"
+}`,
   },
   {
     id: 'receipt',
     num: '03',
     title: 'Return receipt',
-    tagline: 'Prove it forever',
-    desc: 'Sign and return a cryptographic PEAC-Receipt that verifies offline with your public key',
-    icon: Receipt,
-    color: '#635bff',
+    tagline: 'Verified record',
+    desc: 'Sign and return a PEAC-Receipt. Verifies offline with your public key. Portable across any system.',
+    Illustration: ReceiptIllustration,
+    gradient: 'linear-gradient(135deg, var(--gray-600) 0%, var(--gray-500) 100%)',
+    code: `PEAC-Receipt: eyJhbGciOiJFZERTQSJ9...
+
+// Decoded payload
+{
+  "typ": "peac-receipt/0.1",
+  "iss": "api.example.com",
+  "iat": 1737290800,
+  "decision": "allow"
+}`,
   }
 ]
 
 export default function HowItWorksNew() {
   const sectionRef = useRef<HTMLElement>(null)
-  const [activeStep, setActiveStep] = useState(0)
+  const [expandedStep, setExpandedStep] = useState<number | null>(null)
   const [isVisible, setIsVisible] = useState(false)
-  const [flowProgress, setFlowProgress] = useState(0)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -59,23 +87,13 @@ export default function HowItWorksNew() {
     return () => observer.disconnect()
   }, [])
 
-  useEffect(() => {
-    if (!isVisible) return
-
-    const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % 3)
-      setFlowProgress((prev) => (prev + 1) % 4)
-    }, 2500)
-
-    return () => clearInterval(interval)
-  }, [isVisible])
-
   return (
     <section ref={sectionRef} className="how">
       <div className="section-transition-top" aria-hidden="true" />
 
       <div className="how-bg">
         <div className="bg-gradient" />
+        <div className="bg-mesh" />
       </div>
 
       <div className="how-container">
@@ -84,147 +102,23 @@ export default function HowItWorksNew() {
             <span className="how-label">How it works</span>
           </div>
           <h2 className="how-title">Three steps to verifiable interactions</h2>
-        </div>
-
-        <div className={`flowchart ${isVisible ? 'visible' : ''}`}>
-          <svg viewBox="0 0 900 300" className="flow-svg" preserveAspectRatio="xMidYMid meet">
-            <defs>
-              <linearGradient id="line-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#635bff" />
-                <stop offset="100%" stopColor="#635bff" />
-              </linearGradient>
-              <linearGradient id="line-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#635bff" />
-                <stop offset="100%" stopColor="#635bff" />
-              </linearGradient>
-            </defs>
-
-            <path
-              d="M200 150 Q 350 150 450 150"
-              className="connection-base"
-              stroke="rgba(99, 91, 255, 0.1)"
-              strokeWidth="3"
-              fill="none"
-            />
-            <path
-              d="M450 150 Q 550 150 700 150"
-              className="connection-base"
-              stroke="rgba(99, 91, 255, 0.1)"
-              strokeWidth="3"
-              fill="none"
-            />
-
-            <path
-              d="M200 150 Q 350 150 450 150"
-              className={`connection-line line-1 ${flowProgress >= 1 ? 'active' : ''}`}
-              stroke="url(#line-gradient-1)"
-              strokeWidth="3"
-              fill="none"
-            />
-            <path
-              d="M450 150 Q 550 150 700 150"
-              className={`connection-line line-2 ${flowProgress >= 2 ? 'active' : ''}`}
-              stroke="url(#line-gradient-2)"
-              strokeWidth="3"
-              fill="none"
-            />
-
-            <g className="particles">
-              {[0, 1, 2, 3, 4].map((i) => (
-                <circle
-                  key={`p1-${i}`}
-                  r="3"
-                  fill="#635bff"
-                  opacity="0.6"
-                  className={`particle particle-1 p-${i} ${flowProgress >= 1 ? 'active' : ''}`}
-                />
-              ))}
-              {[0, 1, 2, 3, 4].map((i) => (
-                <circle
-                  key={`p2-${i}`}
-                  r="3"
-                  fill="#635bff"
-                  opacity="0.6"
-                  className={`particle particle-2 p-${i} ${flowProgress >= 2 ? 'active' : ''}`}
-                />
-              ))}
-            </g>
-
-            <g className={`receipt-packet ${flowProgress >= 1 ? 'traveling' : ''}`}>
-              <rect x="-20" y="-14" width="40" height="28" rx="6" fill="white" stroke="#635bff" strokeWidth="2"/>
-              <path d="M-12 -4h24M-12 4h16" stroke="#635bff" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
-              <circle cx="10" cy="6" r="4" fill="#635bff"/>
-              <path d="M8 6l2 2 4-4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </g>
-
-            <g className={`node node-1 ${activeStep === 0 ? 'active' : ''}`} onClick={() => setActiveStep(0)}>
-              <circle cx="150" cy="150" r="50" className="pulse-ring ring-1" fill="none" stroke="#635bff" strokeWidth="1" opacity="0"/>
-              <circle cx="150" cy="150" r="50" className="pulse-ring ring-2" fill="none" stroke="#635bff" strokeWidth="1" opacity="0"/>
-              <circle cx="150" cy="150" r="50" className="node-bg" fill="white" stroke="#e5e5e5" strokeWidth="2"/>
-              <circle cx="150" cy="150" r="50" className="node-border" fill="none" stroke="#635bff" strokeWidth="3" opacity="0"/>
-              <g transform="translate(150, 150)">
-                <circle r="24" fill="rgba(99, 91, 255, 0.1)" className="icon-bg"/>
-                <g transform="translate(-12, -12)" className="icon" stroke="#635bff" fill="none" strokeWidth="2">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                  <line x1="16" y1="13" x2="8" y2="13"/>
-                  <line x1="16" y1="17" x2="8" y2="17"/>
-                </g>
-              </g>
-              <text x="150" y="220" textAnchor="middle" className="node-label">Publish</text>
-            </g>
-
-            <g className={`node node-2 ${activeStep === 1 ? 'active' : ''}`} onClick={() => setActiveStep(1)}>
-              <circle cx="450" cy="150" r="50" className="pulse-ring ring-1" fill="none" stroke="#635bff" strokeWidth="1" opacity="0"/>
-              <circle cx="450" cy="150" r="50" className="pulse-ring ring-2" fill="none" stroke="#635bff" strokeWidth="1" opacity="0"/>
-              <circle cx="450" cy="150" r="50" className="node-bg" fill="white" stroke="#e5e5e5" strokeWidth="2"/>
-              <circle cx="450" cy="150" r="50" className="node-border" fill="none" stroke="#635bff" strokeWidth="3" opacity="0"/>
-              <g transform="translate(450, 150)">
-                <circle r="24" fill="rgba(99, 91, 255, 0.1)" className="icon-bg"/>
-                <g transform="translate(-12, -12)" className="icon" stroke="#635bff" fill="none" strokeWidth="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </g>
-              </g>
-              <text x="450" y="220" textAnchor="middle" className="node-label">Enforce</text>
-            </g>
-
-            <g className={`node node-3 ${activeStep === 2 ? 'active' : ''}`} onClick={() => setActiveStep(2)}>
-              <circle cx="750" cy="150" r="50" className="pulse-ring ring-1" fill="none" stroke="#635bff" strokeWidth="1" opacity="0"/>
-              <circle cx="750" cy="150" r="50" className="pulse-ring ring-2" fill="none" stroke="#635bff" strokeWidth="1" opacity="0"/>
-              <circle cx="750" cy="150" r="50" className="node-bg" fill="white" stroke="#e5e5e5" strokeWidth="2"/>
-              <circle cx="750" cy="150" r="50" className="node-border" fill="none" stroke="#635bff" strokeWidth="3" opacity="0"/>
-              <g transform="translate(750, 150)">
-                <circle r="24" fill="rgba(99, 91, 255, 0.1)" className="icon-bg"/>
-                <g transform="translate(-12, -12)" className="icon" stroke="#635bff" fill="none" strokeWidth="2">
-                  <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1z"/>
-                  <path d="M8 10h8M8 14h8"/>
-                </g>
-              </g>
-              <text x="750" y="220" textAnchor="middle" className="node-label">Receipt</text>
-            </g>
-
-            <g className="arrows">
-              <polygon points="295,145 305,150 295,155" fill="#635bff" className={`arrow arrow-1 ${flowProgress >= 1 ? 'active' : ''}`}/>
-              <polygon points="595,145 605,150 595,155" fill="#635bff" className={`arrow arrow-2 ${flowProgress >= 2 ? 'active' : ''}`}/>
-            </g>
-          </svg>
+          <p className="how-subtitle">Publish terms, enforce decisions, prove what happened</p>
         </div>
 
         <div className="steps-grid">
           {steps.map((step, i) => (
             <div
               key={step.id}
-              className={`step-card ${isVisible ? 'visible' : ''} ${activeStep === i ? 'active' : ''}`}
-              style={{ '--accent': step.color, '--delay': `${i * 120 + 300}ms` } as React.CSSProperties}
-              onClick={() => setActiveStep(i)}
-              onMouseEnter={() => setActiveStep(i)}
+              className={`step-card ${isVisible ? 'visible' : ''} ${expandedStep === i ? 'expanded' : ''}`}
+              style={{ '--delay': `${i * 100 + 300}ms` } as React.CSSProperties}
+              onClick={() => setExpandedStep(expandedStep === i ? null : i)}
             >
-              <div className="card-glow" />
+              <div className="card-glow" style={{ background: step.gradient }} />
 
               <div className="card-header">
                 <span className="step-num">{step.num}</span>
-                <div className="step-icon">
-                  <step.icon size={20} strokeWidth={2.5} />
+                <div className="step-illustration">
+                  <step.Illustration size={64} />
                 </div>
               </div>
 
@@ -234,7 +128,25 @@ export default function HowItWorksNew() {
                 <p className="step-desc">{step.desc}</p>
               </div>
 
-              <div className="card-indicator" />
+              {expandedStep === i && (
+                <div className="card-code">
+                  <pre className="step-code-block">
+                    <code>{step.code}</code>
+                  </pre>
+                  {i === 2 && (
+                    <Link href="/verify" className="run-demo-btn">
+                      Run demo
+                      <ArrowRight size={14} strokeWidth={2.5} />
+                    </Link>
+                  )}
+                </div>
+              )}
+
+              <div className="card-expand-hint">
+                {expandedStep === i ? 'Click to collapse' : 'Click to see code'}
+              </div>
+
+              <div className="card-indicator" style={{ background: step.gradient }} />
             </div>
           ))}
         </div>
@@ -242,20 +154,20 @@ export default function HowItWorksNew() {
         <div className={`code-section ${isVisible ? 'visible' : ''}`}>
           <div className="code-header-bar">
             <div className="code-dots">
-              <span className="dot" />
-              <span className="dot" />
-              <span className="dot" />
+              <span className="dot red" />
+              <span className="dot yellow" />
+              <span className="dot green" />
             </div>
             <span className="code-filename">PEAC-Receipt</span>
           </div>
           <pre className="code-block">
             <code>
-              <span className="code-comment">{`// Cryptographic proof of interaction`}</span>{'\n'}
+              <span className="code-comment">{`// Signature-verified record`}</span>{'\n'}
               <span className="code-key">PEAC-Receipt</span><span className="code-punct">:</span> <span className="code-string">eyJhbGciOiJFZDI1NTE5...</span>{'\n'}
               {'\n'}
               <span className="code-comment">{`// Decoded payload`}</span>{'\n'}
               <span className="code-punct">{`{`}</span>{'\n'}
-              {'  '}<span className="code-key">&quot;v&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;0.9.23&quot;</span><span className="code-punct">,</span>{'\n'}
+              {'  '}<span className="code-key">&quot;v&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;0.10.0&quot;</span><span className="code-punct">,</span>{'\n'}
               {'  '}<span className="code-key">&quot;iss&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;api.example.com&quot;</span><span className="code-punct">,</span>{'\n'}
               {'  '}<span className="code-key">&quot;sub&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;agent:example-client&quot;</span><span className="code-punct">,</span>{'\n'}
               {'  '}<span className="code-key">&quot;iat&quot;</span><span className="code-punct">:</span> <span className="code-number">1703894400</span><span className="code-punct">,</span>{'\n'}
@@ -269,6 +181,7 @@ export default function HowItWorksNew() {
         <div className={`how-cta ${isVisible ? 'visible' : ''}`}>
           <Link href="/demo" className="cta-primary">
             See it in action
+            <ArrowRight size={16} strokeWidth={2.5} />
           </Link>
           <Link href="/developers" className="cta-secondary">
             Read the docs
@@ -299,7 +212,7 @@ export default function HowItWorksNew() {
         .how {
           position: relative;
           padding: 180px 0;
-          background: linear-gradient(180deg, #fafafa 0%, #f8f8fc 50%, #fafafa 100%);
+          background: linear-gradient(180deg, var(--gray-50) 0%, var(--gray-100) 50%, var(--gray-50) 100%);
           overflow: hidden;
         }
 
@@ -309,7 +222,7 @@ export default function HowItWorksNew() {
           left: 0;
           right: 0;
           height: 120px;
-          background: linear-gradient(180deg, #fafafa 0%, transparent 100%);
+          background: linear-gradient(180deg, var(--gray-50) 0%, transparent 100%);
           pointer-events: none;
           z-index: 1;
         }
@@ -324,9 +237,19 @@ export default function HowItWorksNew() {
           position: absolute;
           inset: 0;
           background:
-            radial-gradient(ellipse 60% 40% at 20% 0%, rgba(99, 91, 255, 0.05) 0%, transparent 50%),
-            radial-gradient(ellipse 50% 30% at 50% 30%, rgba(99, 91, 255, 0.03) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 40% at 80% 100%, rgba(99, 91, 255, 0.04) 0%, transparent 50%);
+            radial-gradient(ellipse 60% 40% at 20% 0%, rgba(99, 91, 255, 0.06) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 30% at 50% 30%, rgba(99, 91, 255, 0.04) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 40% at 80% 100%, rgba(10, 10, 10, 0.05) 0%, transparent 50%);
+        }
+
+        .bg-mesh {
+          position: absolute;
+          inset: 0;
+          background-image:
+            linear-gradient(rgba(99, 91, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(99, 91, 255, 0.03) 1px, transparent 1px);
+          background-size: 50px 50px;
+          mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 100%);
         }
 
         .how-container {
@@ -338,10 +261,10 @@ export default function HowItWorksNew() {
 
         .how-header {
           text-align: center;
-          margin-bottom: 60px;
+          margin-bottom: 72px;
           opacity: 0;
           transform: translateY(40px);
-          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .how-header.visible {
@@ -355,235 +278,107 @@ export default function HowItWorksNew() {
 
         .how-label {
           display: inline-block;
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          color: #6b6b6b;
+          font-size: var(--text-xs);
+          font-weight: 700;
+          letter-spacing: 0.12em;
+          color: var(--gray-500);
           text-transform: uppercase;
+          background: linear-gradient(135deg, var(--brand-primary) 0%, var(--gray-950) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
 
         .how-title {
           font-size: clamp(44px, 6vw, 72px);
-          font-weight: 600;
-          letter-spacing: -0.035em;
-          color: #0a0a0a;
-          margin: 0;
+          font-weight: 700;
+          letter-spacing: -0.04em;
+          color: var(--gray-950);
+          margin: 0 0 var(--space-4);
           line-height: 1.05;
         }
 
-        .flowchart {
-          margin-bottom: 60px;
-          opacity: 0;
-          transform: translateY(40px);
-          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
-        }
-
-        .flowchart.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .flow-svg {
-          width: 100%;
-          max-width: 900px;
-          height: auto;
-          margin: 0 auto;
-          display: block;
-        }
-
-        .connection-line {
-          stroke-dasharray: 300;
-          stroke-dashoffset: 300;
-          transition: stroke-dashoffset 1s ease;
-        }
-
-        .connection-line.active {
-          stroke-dashoffset: 0;
-        }
-
-        .particle {
-          opacity: 0;
-        }
-
-        .particle-1.active {
-          animation: moveParticle1 2s ease-in-out infinite;
-        }
-
-        .particle-2.active {
-          animation: moveParticle2 2s ease-in-out infinite;
-        }
-
-        .particle.p-0 { animation-delay: 0s; }
-        .particle.p-1 { animation-delay: 0.2s; }
-        .particle.p-2 { animation-delay: 0.4s; }
-        .particle.p-3 { animation-delay: 0.6s; }
-        .particle.p-4 { animation-delay: 0.8s; }
-
-        @keyframes moveParticle1 {
-          0% { transform: translate(200px, 150px); opacity: 0; }
-          10% { opacity: 0.8; }
-          90% { opacity: 0.8; }
-          100% { transform: translate(450px, 150px); opacity: 0; }
-        }
-
-        @keyframes moveParticle2 {
-          0% { transform: translate(450px, 150px); opacity: 0; }
-          10% { opacity: 0.8; }
-          90% { opacity: 0.8; }
-          100% { transform: translate(700px, 150px); opacity: 0; }
-        }
-
-        .receipt-packet {
-          transform: translate(150px, 150px);
-          opacity: 0;
-        }
-
-        .receipt-packet.traveling {
-          animation: travelReceipt 7.5s ease-in-out infinite;
-        }
-
-        @keyframes travelReceipt {
-          0%, 10% { transform: translate(150px, 150px); opacity: 1; }
-          35%, 45% { transform: translate(450px, 150px); opacity: 1; }
-          70%, 80% { transform: translate(750px, 150px); opacity: 1; }
-          95%, 100% { transform: translate(750px, 150px); opacity: 0; }
-        }
-
-        .node {
-          cursor: pointer;
-          transition: transform 0.3s ease;
-        }
-
-        .node:hover {
-          transform: scale(1.05);
-        }
-
-        .node-bg {
-          transition: all 0.3s ease;
-        }
-
-        .node-border {
-          transition: opacity 0.3s ease;
-        }
-
-        .node.active .node-border {
-          opacity: 1;
-        }
-
-        .node.active .node-bg {
-          filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1));
-        }
-
-        .icon-bg {
-          transition: transform 0.3s ease;
-        }
-
-        .node.active .icon-bg {
-          transform: scale(1.1);
-        }
-
-        .pulse-ring {
-          transform-origin: center;
-        }
-
-        .node.active .pulse-ring.ring-1 {
-          animation: pulse 2s ease-out infinite;
-        }
-
-        .node.active .pulse-ring.ring-2 {
-          animation: pulse 2s ease-out infinite 0.5s;
-        }
-
-        @keyframes pulse {
-          0% { transform: scale(1); opacity: 0.6; }
-          100% { transform: scale(1.8); opacity: 0; }
-        }
-
-        .node-label {
-          font-size: 14px;
-          font-weight: 600;
-          fill: #525252;
-        }
-
-        .arrow {
-          opacity: 0.2;
-          transition: opacity 0.3s ease;
-        }
-
-        .arrow.active {
-          opacity: 1;
+        .how-subtitle {
+          font-size: clamp(var(--text-base), 2vw, var(--text-lg));
+          color: var(--gray-600);
+          margin: 0;
+          line-height: 1.5;
         }
 
         .steps-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 32px;
+          gap: 28px;
           margin-bottom: 72px;
         }
 
         .step-card {
           position: relative;
-          padding: 36px;
-          background: #ffffff;
+          padding: var(--space-8);
+          background: var(--white);
           border: 1px solid rgba(0, 0, 0, 0.06);
-          border-radius: 16px;
+          border-radius: var(--radius-2xl);
           cursor: pointer;
-          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: all var(--duration-500) cubic-bezier(0.16, 1, 0.3, 1);
           opacity: 0;
           transform: translateY(40px);
           overflow: hidden;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+          box-shadow: var(--shadow-sm);
         }
 
         .step-card.visible {
           opacity: 1;
           transform: translateY(0);
-          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+          transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s ease, box-shadow 0.5s ease;
           transition-delay: var(--delay);
         }
 
-        .step-card:hover,
-        .step-card.active {
-          border-color: rgba(0, 0, 0, 0.1);
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-          transform: translateY(-2px);
+        .step-card:hover {
+          border-color: rgba(99, 91, 255, 0.15);
+          box-shadow: 0 12px 40px rgba(99, 91, 255, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+          transform: translateY(-4px);
         }
 
         .card-glow {
-          display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          border-radius: 20px 20px 0 0;
+        }
+
+        .step-card:hover .card-glow {
+          opacity: 1;
         }
 
         .card-header {
           display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 20px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+          margin-bottom: 24px;
         }
 
         .step-num {
           font-family: var(--font-mono);
-          font-size: 12px;
-          font-weight: 600;
-          color: #737373;
+          font-size: var(--text-sm);
+          font-weight: 700;
+          color: var(--gray-400);
           letter-spacing: 0.08em;
         }
 
-        .step-icon {
-          width: 44px;
-          height: 44px;
+        .step-illustration {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #f5f5f5;
-          border-radius: 10px;
-          color: #525252;
-          transition: background 0.2s ease, color 0.2s ease;
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .step-card:hover .step-icon,
-        .step-card.active .step-icon {
-          background: #635bff;
-          color: white;
+        .step-card:hover .step-illustration {
+          transform: scale(1.05);
         }
 
         .card-body {
@@ -591,24 +386,25 @@ export default function HowItWorksNew() {
         }
 
         .step-title {
-          font-size: 24px;
+          font-size: var(--text-2xl);
           font-weight: 700;
-          color: #0a0a0a;
-          margin: 0 0 8px;
-          letter-spacing: -0.02em;
+          color: var(--gray-950);
+          margin: 0 0 var(--space-2);
+          letter-spacing: -0.03em;
         }
 
         .step-tagline {
-          font-size: 14px;
+          font-size: var(--text-sm);
           font-weight: 600;
-          color: #737373;
-          margin: 0 0 12px;
+          color: var(--gray-500);
+          margin: 0 0 var(--space-4);
+          letter-spacing: 0.01em;
         }
 
         .step-desc {
-          font-size: 15px;
+          font-size: var(--text-sm);
           line-height: 1.7;
-          color: #525252;
+          color: var(--gray-600);
           margin: 0;
         }
 
@@ -617,30 +413,98 @@ export default function HowItWorksNew() {
           top: 0;
           left: 0;
           bottom: 0;
-          width: 3px;
-          background: #635bff;
-          border-radius: 3px 0 0 3px;
+          width: 4px;
           opacity: 0;
-          transition: opacity 0.3s ease;
+          transition: opacity 0.4s ease;
+          border-radius: 20px 0 0 20px;
         }
 
-        .step-card:hover .card-indicator,
-        .step-card.active .card-indicator {
+        .step-card:hover .card-indicator {
           opacity: 1;
         }
 
+        .card-expand-hint {
+          font-size: var(--text-xs);
+          color: var(--gray-400);
+          text-align: center;
+          margin-top: var(--space-4);
+          opacity: 0;
+          transition: opacity var(--duration-300) ease;
+        }
+
+        .step-card:hover .card-expand-hint {
+          opacity: 1;
+        }
+
+        .step-card.expanded .card-expand-hint {
+          opacity: 0.7;
+        }
+
+        .card-code {
+          margin-top: 20px;
+          padding-top: 20px;
+          border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .step-code-block {
+          background: var(--gray-900);
+          border-radius: var(--radius-lg);
+          padding: var(--space-4);
+          margin: 0 0 var(--space-4);
+          overflow-x: auto;
+          font-family: var(--font-mono);
+          font-size: var(--text-xs);
+          line-height: 1.6;
+          color: var(--gray-200);
+        }
+
+        .step-code-block code {
+          white-space: pre;
+        }
+
+        .step-card :global(.run-demo-btn) {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: var(--space-2);
+          width: 100%;
+          padding: var(--space-3) var(--space-5);
+          font-size: var(--text-sm);
+          font-weight: 600;
+          color: var(--white);
+          background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
+          border-radius: var(--radius-lg);
+          text-decoration: none;
+          transition: all var(--duration-300) ease;
+        }
+
+        .step-card :global(.run-demo-btn:hover) {
+          background: linear-gradient(135deg, var(--brand-primary-dark) 0%, var(--brand-primary-dark) 100%);
+          transform: translateY(-1px);
+        }
+
+        .step-card.expanded {
+          grid-column: span 1;
+        }
+
+        @media (min-width: 901px) {
+          .step-card.expanded {
+            padding-bottom: 36px;
+          }
+        }
+
         .code-section {
-          max-width: 600px;
-          margin: 0 auto 48px;
-          background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
-          border-radius: 16px;
+          max-width: 640px;
+          margin: 0 auto var(--space-12);
+          background: linear-gradient(180deg, var(--gray-900) 0%, var(--gray-950) 100%);
+          border-radius: var(--radius-2xl);
           overflow: hidden;
           box-shadow:
             0 0 0 1px rgba(255, 255, 255, 0.08),
-            0 20px 50px -10px rgba(0, 0, 0, 0.3);
+            var(--shadow-2xl);
           opacity: 0;
           transform: translateY(40px);
-          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.55s;
+          transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.55s, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.55s;
         }
 
         .code-section.visible {
@@ -651,56 +515,60 @@ export default function HowItWorksNew() {
         .code-header-bar {
           display: flex;
           align-items: center;
-          padding: 12px 16px;
+          padding: 14px 18px;
           background: rgba(255, 255, 255, 0.04);
           border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .code-dots {
           display: flex;
-          gap: 6px;
+          gap: 7px;
         }
 
         .dot {
-          width: 10px;
-          height: 10px;
+          width: 12px;
+          height: 12px;
           border-radius: 50%;
           background: rgba(255, 255, 255, 0.15);
         }
 
+        .dot.red { background: #ff5f56; }
+        .dot.yellow { background: #ffbd2e; }
+        .dot.green { background: #27c93f; }
+
         .code-filename {
           flex: 1;
           text-align: center;
-          font-size: 12px;
-          font-weight: 500;
-          color: rgba(255, 255, 255, 0.5);
+          font-size: var(--text-sm);
+          font-weight: 600;
+          color: rgba(255, 255, 255, 0.6);
           font-family: var(--font-mono);
         }
 
         .code-block {
-          padding: 20px;
+          padding: var(--space-6);
           margin: 0;
           font-family: var(--font-mono);
-          font-size: 13px;
+          font-size: var(--text-sm);
           line-height: 1.7;
-          color: #e5e5e5;
+          color: var(--gray-200);
           overflow-x: auto;
         }
 
-        .code-comment { color: #6b7280; }
+        .code-comment { color: var(--gray-500); }
         .code-key { color: #93c5fd; }
         .code-string { color: #86efac; }
         .code-number { color: #fcd34d; }
-        .code-punct { color: #9ca3af; }
+        .code-punct { color: var(--gray-400); }
 
         .how-cta {
           display: flex;
           justify-content: center;
           gap: 16px;
-          margin-bottom: 48px;
+          margin-bottom: 56px;
           opacity: 0;
           transform: translateY(40px);
-          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s;
+          transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.7s, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.7s;
         }
 
         .how-cta.visible {
@@ -712,45 +580,50 @@ export default function HowItWorksNew() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 10px 18px;
-          font-size: 14px;
-          font-weight: 500;
-          color: white;
-          background: #0a0a0a;
-          border-radius: 8px;
+          gap: var(--space-2);
+          padding: var(--space-3) var(--space-6);
+          font-size: var(--text-sm);
+          font-weight: 600;
+          color: var(--white);
+          background: linear-gradient(135deg, var(--gray-950) 0%, var(--gray-800) 100%);
+          border-radius: var(--radius-lg);
           text-decoration: none;
-          transition: background 0.15s ease;
+          transition: all var(--duration-300) var(--ease-out);
+          box-shadow: var(--shadow-md);
         }
 
         .how-cta :global(.cta-primary:hover) {
-          background: #262626;
+          background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-700) 100%);
+          box-shadow: var(--shadow-lg);
+          transform: translateY(-2px);
         }
 
         .how-cta :global(.cta-secondary) {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 10px 18px;
-          font-size: 14px;
-          font-weight: 500;
-          color: #525252;
-          background: transparent;
-          border: 1px solid #e5e5e5;
-          border-radius: 8px;
+          padding: var(--space-3) var(--space-6);
+          font-size: var(--text-sm);
+          font-weight: 600;
+          color: var(--gray-600);
+          background: var(--white);
+          border: 1.5px solid var(--gray-200);
+          border-radius: var(--radius-lg);
           text-decoration: none;
-          transition: border-color 0.15s ease, color 0.15s ease;
+          transition: all var(--duration-300) var(--ease-out);
         }
 
         .how-cta :global(.cta-secondary:hover) {
-          border-color: #d4d4d4;
-          color: #0a0a0a;
+          border-color: var(--gray-300);
+          color: var(--gray-950);
+          box-shadow: var(--shadow-sm);
         }
 
         .how-footer {
           text-align: center;
           opacity: 0;
           transform: translateY(40px);
-          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.85s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.85s;
+          transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.85s, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.85s;
         }
 
         .how-footer.visible {
@@ -768,24 +641,24 @@ export default function HowItWorksNew() {
         .badge {
           display: flex;
           align-items: center;
-          gap: 8px;
-          font-size: 13px;
-          font-weight: 500;
-          color: #525252;
+          gap: var(--space-2);
+          font-size: var(--text-sm);
+          font-weight: 600;
+          color: var(--gray-600);
         }
 
         .badge-dot {
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background: #635bff;
+          width: 7px;
+          height: 7px;
+          border-radius: var(--radius-full);
+          background: linear-gradient(135deg, var(--brand-primary) 0%, var(--gray-950) 100%);
         }
 
         .badge-sep {
           width: 3px;
           height: 3px;
-          border-radius: 50%;
-          background: #d4d4d4;
+          border-radius: var(--radius-full);
+          background: var(--gray-300);
         }
 
         @media (max-width: 1024px) {
@@ -795,10 +668,6 @@ export default function HowItWorksNew() {
 
           .how-title {
             font-size: clamp(36px, 5vw, 48px);
-          }
-
-          .flow-svg {
-            max-width: 700px;
           }
 
           .steps-grid {
@@ -815,17 +684,13 @@ export default function HowItWorksNew() {
             padding: 0 20px;
           }
 
-          .flowchart {
-            display: none;
-          }
-
           .steps-grid {
             grid-template-columns: 1fr;
             gap: 16px;
           }
 
           .step-card {
-            padding: 24px;
+            padding: 28px;
           }
 
           .how-cta {
@@ -855,15 +720,19 @@ export default function HowItWorksNew() {
           }
 
           .how-header {
-            margin-bottom: 40px;
+            margin-bottom: 48px;
           }
 
           .how-title {
             font-size: clamp(28px, 8vw, 36px);
           }
 
+          .how-subtitle {
+            font-size: 15px;
+          }
+
           .steps-grid {
-            margin-bottom: 40px;
+            margin-bottom: 48px;
           }
 
           .step-card {
@@ -871,7 +740,7 @@ export default function HowItWorksNew() {
           }
 
           .step-title {
-            font-size: 20px;
+            font-size: 22px;
           }
 
           .step-tagline {
@@ -886,17 +755,17 @@ export default function HowItWorksNew() {
           .code-section {
             margin-left: -20px;
             margin-right: -20px;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
             border-radius: 0;
           }
 
           .code-block {
-            font-size: 11px;
-            padding: 16px;
+            font-size: 12px;
+            padding: 20px;
           }
 
           .how-cta {
-            margin-bottom: 40px;
+            margin-bottom: 48px;
           }
 
           .badge {
@@ -914,7 +783,7 @@ export default function HowItWorksNew() {
           }
 
           .how-header {
-            margin-bottom: 32px;
+            margin-bottom: 40px;
           }
 
           .how-label {
@@ -930,16 +799,16 @@ export default function HowItWorksNew() {
           }
 
           .card-header {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
           }
 
           .step-icon {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
           }
 
           .step-title {
-            font-size: 18px;
+            font-size: 20px;
           }
 
           .step-desc {
@@ -953,8 +822,8 @@ export default function HowItWorksNew() {
           }
 
           .code-block {
-            font-size: 10px;
-            padding: 14px;
+            font-size: 11px;
+            padding: 16px;
           }
 
           .how-cta :global(.cta-primary),
@@ -969,16 +838,10 @@ export default function HowItWorksNew() {
 
         @media (prefers-reduced-motion: reduce) {
           .how-header,
-          .flowchart,
           .step-card,
           .code-section,
           .how-cta,
           .how-footer,
-          .connection-line,
-          .particle,
-          .receipt-packet,
-          .node,
-          .pulse-ring,
           .step-icon,
           .card-indicator {
             transition: none;
@@ -986,7 +849,6 @@ export default function HowItWorksNew() {
           }
 
           .how-header,
-          .flowchart,
           .step-card,
           .code-section,
           .how-cta,
@@ -995,17 +857,7 @@ export default function HowItWorksNew() {
             transform: none;
           }
 
-          .connection-line {
-            stroke-dashoffset: 0;
-          }
-
-          .receipt-packet {
-            opacity: 1;
-          }
-
-          .step-card:hover,
-          .step-card.active,
-          .node:hover {
+          .step-card:hover {
             transform: none;
           }
         }

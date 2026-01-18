@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     type: 'website',
     title: 'Originary Blog - AI payments, HTTP 402 and PEAC receipts',
     description: 'Technical articles from Originary on HTTP 402, AI payments, PEAC receipts, AIPREF and the agentic web.',
-    url: 'https://www.originary.xyz/blog',
+    url: '/blog',
     images: [
       {
-        url: 'https://www.originary.xyz/og.jpg',
+        url: '/og.jpg',
         width: 1200,
         height: 630,
         alt: 'Originary Blog'
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Originary Blog - AI payments, HTTP 402 and PEAC receipts',
     description: 'Technical insights from Originary on HTTP 402, AI payments, PEAC receipts and agentic web infrastructure.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/blog',
+    canonical: '/blog',
   },
 }
 

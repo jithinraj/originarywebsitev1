@@ -7,22 +7,22 @@ import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata: Metadata = {
   title: 'Verify API',
-  description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and observability.',
+  description: 'Stateless verification for PEAC-Receipts and JWS signatures. Deterministic validation with normalized fields.',
   keywords: 'PEAC receipt verification, JWS validation, signature verification API, enterprise authentication, sub-10ms latency',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'Verify API | Originary',
-    description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and observability.',
-    url: 'https://www.originary.xyz/products/verify',
-    images: ['https://www.originary.xyz/og.jpg'],
+    description: 'Stateless verification for PEAC-Receipts and JWS signatures. Deterministic validation with normalized fields.',
+    url: '/products/verify',
+    images: ['/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Verify API | Originary',
-    description: 'Stateless verification for PEAC-Receipts and JWS signatures. Submit a receipt and get deterministic validation with normalized fields for enterprise logging and observability.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    description: 'Stateless verification for PEAC-Receipts and JWS signatures. Deterministic validation with normalized fields.',
+    images: ['/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },

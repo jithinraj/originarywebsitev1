@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Originary',
     description: 'Originary builds and stewards PEAC, an open standard for portable decision records for agent interactions.',
-    url: 'https://www.originary.xyz/about',
+    url: '/about',
     siteName: 'Originary',
     type: 'website',
     images: ['/og.jpg'],

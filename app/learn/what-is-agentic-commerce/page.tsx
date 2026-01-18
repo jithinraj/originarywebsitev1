@@ -5,23 +5,23 @@ import Link from 'next/link'
 import { ShoppingCart, ArrowLeft, CheckCircle, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'What is Agentic Commerce? The Complete Guide to AI Agent Transactions',
-  description: 'Agentic commerce enables AI agents to autonomously buy, sell, and transact. Learn about machine-readable pricing, programmatic payments, and the infrastructure powering the $1T+ agent economy.',
+  title: 'What is Agentic Commerce? Guide to AI Agent Transactions',
+  description: 'Agentic commerce enables AI agents to autonomously buy, sell, and transact. Learn about machine-readable pricing and programmatic payments.',
   keywords: 'agentic commerce definition, agent economy explained, AI agent transactions, autonomous commerce, machine-to-machine payments, AI agents buying selling, agent transactions guide, M2M commerce, programmatic payments',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
-    title: 'What is Agentic Commerce? The Complete Guide to AI Agent Transactions',
+    title: 'What is Agentic Commerce? Guide to AI Agent Transactions',
     description: 'Agentic commerce enables AI agents to autonomously buy, sell, and transact. The definitive guide to the agent economy.',
-    url: 'https://www.originary.xyz/learn/what-is-agentic-commerce',
-    images: ['https://www.originary.xyz/og.jpg'],
+    url: '/learn/what-is-agentic-commerce',
+    images: ['/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'What is Agentic Commerce? Complete Guide',
     description: 'The economic layer for AI agents - autonomous buying, selling, and transacting. Essential guide for developers.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -182,9 +182,8 @@ export default function AgenticCommercePage() {
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                     {[
                       'Agentic commerce enables AI agents to autonomously buy, sell, and transact',
-                      'Requires machine-readable pricing, programmatic payments, and verifiable receipts',
-                      'Different from traditional e-commerce - no human in the loop for each transaction',
-                      'Built on open protocols like HTTP 402 and PEAC for interoperability'
+                      'Needs machine-readable pricing, programmatic payments, verifiable receipts',
+                      'Different from traditional e-commerce - no human in the loop per transaction'
                     ].map((takeaway, i) => (
                       <li key={i} style={{
                         display: 'flex',
@@ -213,10 +212,10 @@ export default function AgenticCommercePage() {
                     Definition
                   </h2>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-4)' }}>
-                    <strong>Agentic commerce</strong> is the economic layer that enables AI agents to autonomously participate in commercial transactions. Unlike traditional e-commerce where humans initiate and approve purchases, agentic commerce allows machines to discover services, negotiate terms, make payments, and verify delivery - all without human intervention for each transaction.
+                    <strong>Agentic commerce</strong> is the economic layer for AI agents to autonomously participate in commercial transactions. Unlike traditional e-commerce where humans initiate and approve purchases, agentic commerce lets machines discover services, negotiate terms, make payments, and verify delivery - all without human intervention for each transaction.
                   </p>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
-                    Think of it as the difference between a human using a shopping website versus an AI assistant that can autonomously procure resources, pay for API calls, and manage subscriptions on your behalf.
+                    Think of it as the difference between a human using a shopping website versus an AI assistant that can autonomously procure resources, pay for API calls, and manage subscriptions on your behalf. (This isn't theory - we're seeing this in production as of late 2025.)
                   </p>
                 </section>
 
@@ -231,7 +230,7 @@ export default function AgenticCommercePage() {
                     How It Works
                   </h2>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
-                    Agentic commerce requires several infrastructure components working together:
+                    Agentic commerce can't work without these infrastructure components:
                   </p>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
@@ -239,7 +238,8 @@ export default function AgenticCommercePage() {
                       { step: '1', title: 'Policy Discovery', desc: 'Agents discover available services and their terms via machine-readable files like peac.txt' },
                       { step: '2', title: 'Pricing Negotiation', desc: 'Services advertise pricing in HTTP headers; agents evaluate and select based on budget constraints' },
                       { step: '3', title: 'Payment Execution', desc: 'Agents make programmatic payments via HTTP 402, cryptocurrency, or pre-authorized billing' },
-                      { step: '4', title: 'Receipt Generation', desc: 'Every transaction produces a cryptographically signed receipt for audit and dispute resolution' }
+                      { step: '4', title: 'Receipt Generation', desc: 'Every transaction produces a signed receipt for audit and dispute resolution' },
+                      { step: '5', title: 'Verification', desc: 'Receipts can be verified offline using Ed25519 signatures - no callback to the issuer required (watch out: key rotation needs planning)' }
                     ].map((item) => (
                       <div key={item.step} style={{
                         display: 'flex',
@@ -288,11 +288,10 @@ export default function AgenticCommercePage() {
 
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                     {[
-                      { term: 'Machine-readable pricing', def: 'Prices advertised in HTTP headers or structured files, not just HTML for humans' },
-                      { term: 'Programmatic payments', def: 'Payment rails that agents can invoke without human approval (HTTP 402, stablecoins)' },
-                      { term: 'Verifiable receipts', def: 'Cryptographic proof of transactions for billing, compliance, and dispute resolution' },
-                      { term: 'Policy discovery', def: 'Agents can find and understand terms of service before transacting' },
-                      { term: 'Budget constraints', def: 'Guardrails that limit what agents can spend autonomously' }
+                      { term: 'Machine-readable pricing', def: 'Prices in HTTP headers or structured files. Not HTML meant for humans.' },
+                      { term: 'Programmatic payments', def: 'Payment rails agents can invoke without human approval - HTTP 402, pre-auth billing, configured adapters' },
+                      { term: 'Verifiable receipts', def: 'Signature-verified records for billing, compliance, disputes' },
+                      { term: 'Budget constraints', def: 'Guardrails limiting autonomous spend (you set the ceiling, agent stays under it)' }
                     ].map((item, i) => (
                       <li key={i} style={{
                         padding: 'var(--space-4) 0',
@@ -320,19 +319,13 @@ export default function AgenticCommercePage() {
                     <div>
                       <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>API Consumption</h4>
                       <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
-                        Agents autonomously pay for API calls - weather data, translation, image generation - as they execute tasks, without pre-purchasing credits.
+                        Agents pay for API calls on the fly. Weather data, translation, image generation. No credit pre-purchase required - they pay per call as they execute tasks.
                       </p>
                     </div>
                     <div>
                       <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Content Licensing</h4>
                       <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
-                        AI systems pay content creators per-use for training data, stock images, or reference materials with automatic attribution.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Agent-to-Agent Services</h4>
-                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
-                        Specialized agents sell capabilities to generalist agents - a coding agent purchasing compute from an infrastructure agent.
+                        Per-use payments to creators for training data, stock images, reference materials. Attribution included.
                       </p>
                     </div>
                   </div>

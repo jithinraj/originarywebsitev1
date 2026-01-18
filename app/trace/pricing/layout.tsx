@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     title: 'Observability & Receipts | Originary',
     description: 'PEAC receipts and observability infrastructure. Self-host for free or talk to us about managed cloud.',
     type: 'website',
-    url: 'https://www.originary.xyz/trace/pricing',
+    url: '/trace/pricing',
     siteName: 'Originary',
   },
   twitter: {

@@ -13,10 +13,10 @@ export const metadata: Metadata = {
     type: 'article',
     title: 'AIPREF: A Common Language for AI Usage Preferences',
     description: 'Understanding the IETF AIPREF specification for expressing AI usage preferences through HTTP headers and robots.txt',
-    url: 'https://www.originary.xyz/blog/aipref-by-ietf',
+    url: '/blog/aipref-by-ietf',
     images: [
       {
-        url: 'https://www.originary.xyz/og.jpg',
+        url: '/og.jpg',
         width: 1200,
         height: 630,
         alt: 'AIPREF: AI Usage Preferences'
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AIPREF: A Common Language for AI Usage Preferences',
     description: 'Understanding the IETF AIPREF specification for expressing AI usage preferences',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },

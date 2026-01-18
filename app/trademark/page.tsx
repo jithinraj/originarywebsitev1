@@ -17,7 +17,7 @@ const webPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Trademark & Brand Use',
-  url: 'https://www.originary.xyz/trademark',
+  url: '/trademark',
   dateModified: '2025-07-27'
 }
 

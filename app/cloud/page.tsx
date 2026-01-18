@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Originary Cloud | Managed PEAC Receipts and Analytics',
     description: 'Originary Cloud is in private beta. Managed PEAC verification, attested receipts, compliance bundles, and analytics for publishers and API providers.',
-    url: 'https://www.originary.xyz/cloud',
+    url: '/cloud',
     siteName: 'Originary',
     type: 'website'
   }
@@ -124,9 +124,9 @@ export default function CloudPage() {
                 textAlign: 'left'
               }}>
                 {[
-                  { icon: Shield, title: 'Attested keys and verifiable compliance bundles', desc: 'Cryptographically signed evidence for legal teams' },
+                  { icon: Shield, title: 'Attested keys and verifiable compliance bundles', desc: 'Exportable evidence packages for audits and legal teams' },
                   { icon: Zap, title: 'Multi-property rollups and benchmarking', desc: 'Aggregate data across sites and compare against peers' },
-                  { icon: CheckCircle, title: 'Alerts, retention, and SLAs', desc: 'Webhooks, Slack integration, and uptime guarantees' }
+                  { icon: CheckCircle, title: 'Alerts, retention, and SLAs', desc: 'Webhooks, Slack integration, and availability targets' }
                 ].map((benefit, idx) => {
                   const Icon = benefit.icon
                   return (
@@ -344,7 +344,7 @@ export default function CloudPage() {
                 color: 'var(--gray-600)',
                 marginBottom: 'var(--space-6)'
               }}>
-                Originary Cloud uses the open PEAC Protocol for cryptographic receipts, verifiable attestation, and cross-platform compatibility.
+                Originary Cloud uses the open PEAC Protocol for verifiable interaction records, offline verification, and cross-platform compatibility.
               </p>
               <a
                 href="https://peacprotocol.org"

@@ -5,23 +5,23 @@ import Link from 'next/link'
 import { CreditCard, ArrowLeft, CheckCircle, ArrowRight, ExternalLink, BookOpen } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'HTTP 402 Payment Required: The Web Standard for Machine-Payable APIs',
-  description: 'HTTP 402 Payment Required is the web standard enabling pay-per-request APIs for AI agents. Learn how x402 headers, instant payments, and PEAC receipts create accountable machine commerce - no subscriptions or API keys required.',
+  title: 'HTTP 402: The Web Standard for Machine-Payable APIs',
+  description: 'HTTP 402 Payment Required enables pay-per-request APIs for AI agents. Learn about x402 headers, instant payments, and PEAC receipts.',
   keywords: 'HTTP 402 Payment Required, x402 protocol, machine-payable APIs, AI agent payments, pay-per-request API, programmatic payments, agent commerce, micropayments API, instant API payments, machine-to-machine payments, HTTP status code 402, web monetization',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
     title: 'HTTP 402 Payment Required: Machine-Payable APIs',
     description: 'The dormant HTTP status code is finally coming to life. Learn how 402 enables real-time, programmatic payments between AI agents.',
-    url: 'https://www.originary.xyz/learn/http-402-ai-payments',
-    images: ['https://www.originary.xyz/og.jpg'],
+    url: '/learn/http-402-ai-payments',
+    images: ['/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'HTTP 402: Machine-Payable APIs',
     description: 'The dormant HTTP status code enabling real-time AI agent payments - no subscriptions or API keys required.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },

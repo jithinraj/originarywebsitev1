@@ -13,9 +13,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Integrations | Agentic Web Protocols',
     description: 'Originary integrations for agentic web protocols and agentic commerce. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A.',
-    url: 'https://www.originary.xyz/integrations/',
+    url: '/integrations',
     siteName: 'Originary',
     type: 'website',
+    images: ['/og.jpg'],
   },
   alternates: {
     canonical: '/integrations',

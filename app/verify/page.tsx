@@ -263,15 +263,101 @@ function VerifyContent() {
   )
 }
 
+function VerifySkeleton() {
+  return (
+    <div className="wrap">
+      <NavigationHeader />
+      <main role="main" aria-label="Loading" style={{ paddingTop: '80px' }}>
+        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+          <div className="container" style={{ maxWidth: '700px', margin: '0 auto' }}>
+            {/* Badge skeleton */}
+            <div style={{
+              width: '120px',
+              height: '32px',
+              background: 'var(--gray-100)',
+              borderRadius: 'var(--radius-full)',
+              marginBottom: 'var(--space-6)',
+              animation: 'pulse 1.5s ease-in-out infinite'
+            }} />
+
+            {/* Title skeleton */}
+            <div style={{
+              width: '280px',
+              height: '48px',
+              background: 'var(--gray-100)',
+              borderRadius: 'var(--radius-lg)',
+              marginBottom: 'var(--space-6)',
+              animation: 'pulse 1.5s ease-in-out infinite',
+              animationDelay: '0.1s'
+            }} />
+
+            {/* Description skeleton */}
+            <div style={{ marginBottom: 'var(--space-12)' }}>
+              <div style={{
+                width: '100%',
+                height: '24px',
+                background: 'var(--gray-100)',
+                borderRadius: 'var(--radius-md)',
+                marginBottom: 'var(--space-2)',
+                animation: 'pulse 1.5s ease-in-out infinite',
+                animationDelay: '0.2s'
+              }} />
+              <div style={{
+                width: '80%',
+                height: '24px',
+                background: 'var(--gray-100)',
+                borderRadius: 'var(--radius-md)',
+                animation: 'pulse 1.5s ease-in-out infinite',
+                animationDelay: '0.3s'
+              }} />
+            </div>
+
+            {/* Input card skeleton */}
+            <div className="card" style={{ marginBottom: 'var(--space-6)' }}>
+              <div style={{
+                width: '140px',
+                height: '20px',
+                background: 'var(--gray-100)',
+                borderRadius: 'var(--radius-md)',
+                marginBottom: 'var(--space-2)',
+                animation: 'pulse 1.5s ease-in-out infinite',
+                animationDelay: '0.4s'
+              }} />
+              <div style={{
+                width: '100%',
+                height: '120px',
+                background: 'var(--gray-100)',
+                borderRadius: 'var(--radius-lg)',
+                marginBottom: 'var(--space-4)',
+                animation: 'pulse 1.5s ease-in-out infinite',
+                animationDelay: '0.5s'
+              }} />
+              <div style={{
+                width: '140px',
+                height: '44px',
+                background: 'var(--gray-200)',
+                borderRadius: 'var(--radius-lg)',
+                animation: 'pulse 1.5s ease-in-out infinite',
+                animationDelay: '0.6s'
+              }} />
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+      <style jsx>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+      `}</style>
+    </div>
+  )
+}
+
 export default function VerifyPage() {
   return (
-    <Suspense fallback={
-      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ textAlign: 'center' }}>
-          <p style={{ color: 'var(--gray-600)' }}>Loading verification tool...</p>
-        </div>
-      </div>
-    }>
+    <Suspense fallback={<VerifySkeleton />}>
       <VerifyContent />
     </Suspense>
   )

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'Trace | Agent Observability and Decision Records by Originary',
     description: 'Trace gives your website real time visibility into AI agents and automated services, with detailed logs, verifiable receipts and PEAC Protocol based access controls.',
     type: 'website',
-    url: 'https://www.originary.xyz/trace',
+    url: '/trace',
   },
   robots: 'index,follow'
 }

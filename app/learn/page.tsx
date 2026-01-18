@@ -6,22 +6,22 @@ import { BookOpen, ArrowRight, Receipt, CreditCard, Shield, ShoppingCart, Sparkl
 
 export const metadata: Metadata = {
   title: 'Learn: Agentic Commerce, Receipts & Payments',
-  description: 'Guides on agentic commerce, cryptographic receipts, HTTP 402 payments, and AI consent. Essential reading for building autonomous AI systems.',
+  description: 'Guides on agentic commerce, verifiable receipts, HTTP 402 payments, and AI consent. Essential reading for building autonomous AI systems.',
   keywords: 'agentic commerce tutorial, AI receipts explained, HTTP 402 guide, machine payments, AI consent, agent economy, PEAC Protocol guide, autonomous AI transactions, AI infrastructure learning, agent-to-agent payments',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'Learn: Agentic Commerce, Receipts & Payments',
-    description: 'Guides on agentic commerce, cryptographic receipts, HTTP 402 payments, and AI consent.',
-    url: 'https://www.originary.xyz/learn',
-    images: ['https://www.originary.xyz/og.jpg'],
+    description: 'Guides on agentic commerce, verifiable receipts, HTTP 402 payments, and AI consent.',
+    url: '/learn',
+    images: ['/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Learn: Agentic Commerce, Receipts & Payments',
-    description: 'Guides on agentic commerce, cryptographic receipts, HTTP 402 payments, and AI consent.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    description: 'Guides on agentic commerce, verifiable receipts, HTTP 402 payments, and AI consent.',
+    images: ['/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -47,7 +47,7 @@ const learnArticles = [
   {
     slug: 'ai-receipts',
     title: 'AI Receipts Explained',
-    subtitle: 'Cryptographic Proof of Agent Interactions',
+    subtitle: 'Verifiable Records of Agent Interactions',
     description: 'Deep dive into PEAC-Receipt - the JWS-signed JSON format that proves what happened in every agent interaction. Essential for billing, compliance, attribution, and dispute resolution.',
     icon: Receipt,
     color: 'rgba(0, 212, 170, 0.1)',
@@ -106,7 +106,7 @@ export default function LearnPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Learn About AI Infrastructure",
-    "description": "In-depth guides on agentic commerce, cryptographic receipts, HTTP 402 payments, and AI consent infrastructure",
+    "description": "In-depth guides on agentic commerce, verifiable receipts, HTTP 402 payments, and AI consent infrastructure",
     "url": "https://www.originary.xyz/learn",
     "publisher": {
       "@type": "Organization",
@@ -277,7 +277,7 @@ export default function LearnPage() {
                   Market Growth
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)', lineHeight: 1.6 }}>
-                  $1T+ agent transactions projected by 2030
+                  Rapidly growing agent economy
                 </p>
               </div>
 

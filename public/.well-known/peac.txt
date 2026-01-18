@@ -1,4 +1,5 @@
-version: 0.9.23
+# version: policy specification version (not monorepo release)
+version: peac-policy/0.1
 preferences: https://www.originary.xyz/.well-known/aipref.json
 access_control: http-402
 payments: [x402]

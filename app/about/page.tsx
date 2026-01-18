@@ -169,7 +169,7 @@ export default function AboutPage() {
                   fontWeight: 500
                 }}
               >
-                Originary builds and stewards PEAC, an open standard for publishing interaction terms and issuing portable, verifiable decision records.
+                Originary builds PEAC, an open standard for publishing interaction terms and issuing portable, verifiable decision records.
               </p>
 
               <h1
@@ -236,7 +236,7 @@ export default function AboutPage() {
                   The web was built for humans clicking links. Agents need machine-readable terms, predictable enforcement, and a durable way to verify what happened without relying on a single vendor&apos;s logs.
                 </p>
                 <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-700)', lineHeight: 1.8, marginBottom: 'var(--space-6)' }}>
-                  Originary&apos;s mission is to make meaningful <strong>agent interactions</strong> verifiable and governable on the open internet through <strong>portable decision records</strong>: signed receipts that bind an outcome to the policy state in force at decision time, with privacy-preserving defaults.
+                  We make <strong>agent interactions</strong> verifiable through <strong>portable decision records</strong>: signed receipts that bind outcomes to the policy state in force at decision time.
                 </p>
                 <div
                   style={{
@@ -466,7 +466,7 @@ export default function AboutPage() {
                   PEAC is Apache-2.0 licensed and stewarded in the open on GitHub by contributors from Originary and the broader community. Multiple independent implementations are expected and encouraged. Originary ships one reference implementation and optional hosted services, but the protocol is not owned by a vendor.
                 </p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
-                  PEAC is currently in a 0.9.x development line. Wire formats and verification rules are converging; core concepts (policy discovery and receipt verification) are designed for long-term stability.
+                  PEAC is currently at version 0.9.27. Wire formats and verification rules are converging; core concepts (policy discovery and receipt verification) are designed for long-term stability.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                   <Link href="/peac" className="btn btn-primary">
