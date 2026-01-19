@@ -5,22 +5,22 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Agentic Web - Internet for Autonomous Agents",
-  description: "The agentic web is the internet infrastructure optimized for autonomous agents. Machine-readable policies, payment protocols, and verifiable receipts enable agent-to-agent commerce at scale.",
+  description: "The agentic web is internet infrastructure for autonomous agents. Machine-readable policies, payments, and receipts enable agent commerce.",
   alternates: { canonical: "/glossary/agentic-web" },
   keywords: "agentic web, autonomous agents, AI agents, agent commerce, machine-readable policies, PEAC, HTTP 402, x402, A2A, MCP",
   openGraph: {
     title: "Agentic Web - Internet for Autonomous Agents",
     description: "Internet infrastructure optimized for autonomous agents. Machine-readable policies, payment protocols, and verifiable receipts enable agent-to-agent commerce.",
     type: "article",
-    url: "https://www.originary.xyz/glossary/agentic-web/",
-    images: ['/og.jpg'],
+    url: "/glossary/agentic-web/",
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: "summary_large_image",
     title: "Agentic Web - Internet for Autonomous Agents",
     description: "Internet infrastructure optimized for autonomous agents. Machine-readable policies, payment protocols, and verifiable receipts.",
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },

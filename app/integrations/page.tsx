@@ -7,7 +7,7 @@ import { FileCode, Zap, MessageSquare, Settings, Brain, FileText } from 'lucide-
 
 export const metadata: Metadata = {
   title: 'Integrations | Agentic Web Protocols',
-  description: 'Originary integrations for agentic web protocols and agentic commerce. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A with open protocols for the agentic web.',
+  description: 'Originary integrations for agentic web protocols. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A with open standards.',
   keywords: 'x402, HTTP 402, AI Access, MCP, A2A, ACP, AIPREF, PEAC protocol, agentic web, agentic commerce, agent integrations',
   robots: 'index,follow',
   openGraph: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: '/integrations',
     siteName: 'Originary',
     type: 'website',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   alternates: {
     canonical: '/integrations',

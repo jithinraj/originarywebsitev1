@@ -6,7 +6,7 @@ import { User, ArrowRight, ExternalLink, FileText, Code, AlertTriangle, Shield }
 
 export const metadata: Metadata = {
   title: 'robots.txt (RFC 9309) Deep Dive',
-  description: 'A technical deep dive into RFC 9309, the standardized Robots Exclusion Protocol - matching rules, error handling, caching, and how it relates to AIPREF usage preferences.',
+  description: 'Technical deep dive into RFC 9309, the standardized Robots Exclusion Protocol. Matching rules, error handling, and AIPREF integration.',
   keywords: 'robots.txt, RFC 9309, robots exclusion protocol, crawl control, web crawlers, IETF, AIPREF, SEO, web standards',
   authors: [{ name: 'Jithin Raj & Originary Team' }],
   openGraph: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: '/blog/robots-txt-rfc-9309',
     images: [
       {
-        url: '/og.jpg',
+        url: '/og',
         width: 1200,
         height: 630,
         alt: 'robots.txt RFC 9309'
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'robots.txt (RFC 9309): The Web\'s Crawl Access Control',
     description: 'Understanding RFC 9309 - the standardized Robots Exclusion Protocol',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -53,7 +53,7 @@ export default function RobotsTxtRFC9309Article() {
       "name": "Originary",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.originary.xyz/og/originary-logo.png"
+        "url": "https://www.originary.xyz/logo.svg"
       }
     },
     "mainEntityOfPage": "https://www.originary.xyz/blog/robots-txt-rfc-9309",

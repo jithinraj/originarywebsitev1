@@ -6,7 +6,7 @@ import { FileText, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: "HTTP 402 for APIs: Payment Required",
-  description: "A practical guide to implementing HTTP 402 Payment Required in modern APIs. Learn the anatomy of a 402 response, receipt verification patterns, and how to avoid common pitfalls.",
+  description: "Practical guide to implementing HTTP 402 Payment Required in APIs. Learn 402 response anatomy, verification patterns, and common pitfalls.",
   keywords: "HTTP 402, payment required, API monetization, x402, agent commerce, receipts, web payments",
   authors: [{ name: "Jithin Raj & Originary Team" }],
   alternates: { canonical: '/blog/http-402-for-apis' },
@@ -14,17 +14,17 @@ export const metadata: Metadata = {
     title: "HTTP 402 for APIs: Making Payment-Required Responses Work",
     description: "Practical guide to implementing HTTP 402 Payment Required in modern APIs",
     type: "article",
-    url: "https://www.originary.xyz/blog/http-402-for-apis/",
+    url: "/blog/http-402-for-apis/",
     publishedTime: "2025-11-03",
     authors: ["Jithin Raj", "Originary Team"],
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: "summary_large_image",
     title: "HTTP 402 for APIs: Making Payment-Required Responses Work",
     description: "Practical guide to implementing HTTP 402 Payment Required in modern APIs",
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -49,7 +49,7 @@ export default function Page() {
       "name": "Originary™",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.originary.xyz/og/originary-logo.png"
+        "url": "https://www.originary.xyz/logo.svg"
       }
     },
     "mainEntityOfPage": "https://www.originary.xyz/blog/http-402-for-apis/",

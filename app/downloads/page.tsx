@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     url: '/downloads',
     siteName: 'Originary',
     images: [{
-      url: '/og.jpg',
+      url: '/og',
       width: 1200,
       height: 630,
       alt: 'Originary Downloads - CLI and PEAC templates'
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Downloads',
     description: 'Download the Originary CLI and PEAC policy templates. Verify policy files and implement receipts.',
-    images: ['/og.jpg']
+    images: ['/og']
   },
   alternates: {
     canonical: '/downloads'

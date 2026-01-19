@@ -12,14 +12,14 @@ export const metadata: Metadata = {
     description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
     url: '/solutions',
     siteName: 'Originary',
-    images: [{ url: '/og.jpg' }],
+    images: [{ url: '/og' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Solutions',
     description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   alternates: {
     canonical: '/solutions',

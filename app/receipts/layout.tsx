@@ -9,14 +9,14 @@ export const metadata: Metadata = {
     description: 'Originary PEAC-Receipts generate tamper-evident proofs of policy, consent, attribution, and payment events. Cryptographically signed receipts for audit trails.',
     url: '/receipts',
     siteName: 'Originary',
-    images: [{ url: '/og.jpg' }],
+    images: [{ url: '/og' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Originary Receipts | Signed Receipts for AI Interactions',
     description: 'Originary PEAC-Receipts generate tamper-evident proofs of policy, consent, attribution, and payment events.',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   alternates: {
     canonical: '/receipts',

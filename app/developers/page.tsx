@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     title: 'Developers | AI Infrastructure Tools and PEAC Protocol SDK',
     description: 'AI infrastructure tools for agentic web development. Integrate PEAC-Receipts with the PEAC Protocol SDK. Add HTTP 402 examples, x402 integration, MCP receipts, and A2A verification.',
     url: '/developers',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Developers | AI Infrastructure Tools and PEAC Protocol SDK',
     description: 'AI infrastructure tools for agentic web development. Integrate PEAC-Receipts with the PEAC Protocol SDK. Add HTTP 402 examples, x402 integration, and MCP receipts.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -515,7 +515,7 @@ export default {
                 method="GET"
                 endpoint="/v1/policies/{url}"
                 detail="Fetch and validate policy"
-                link="/downloads/policy-api-docs.pdf"
+                link="/declare"
               />
             </div>
           </div>

@@ -6,7 +6,7 @@ import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy Policy for Originary - minimal, consent-first data collection for receipts tooling. Learn what data we collect, how we use it, your privacy rights, and our commitment to GPC (Global Privacy Control) support. Effective from 2025-07-27.',
+  description: 'Originary Privacy Policy: minimal, consent-first data collection. Learn what we collect, your privacy rights, and our GPC support.',
   robots: {
     index: true,
     follow: true,
@@ -24,7 +24,7 @@ const webPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Privacy Policy',
-  url: '/privacy',
+  url: 'https://www.originary.xyz/privacy',
   dateModified: '2025-07-27'
 }
 

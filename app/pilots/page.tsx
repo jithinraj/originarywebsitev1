@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     description: 'Fixed-scope pilots for production validation. Work with Originary to integrate PEAC decision records into your infrastructure.',
     url: '/pilots',
     type: 'website',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Pilots | Originary',
     description: 'Fixed-scope pilots for production validation. Work with Originary to integrate PEAC decision records.',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   robots: 'index,follow',
 }

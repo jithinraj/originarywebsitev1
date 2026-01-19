@@ -5,13 +5,13 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "HTTP 402 Payment Required - Status Code Reference",
-  description: "HTTP 402 Payment Required is a reserved status code revived for digital payments. Signals that a resource is available after payment with machine-readable hints.",
+  description: "HTTP 402 Payment Required is a reserved status code for digital payments. Signals resource availability after payment.",
   alternates: { canonical: '/glossary/http-402-payment-required' },
   openGraph: {
     title: "HTTP 402 Payment Required - Status Code Reference",
     description: "Reserved HTTP status code revived for digital payments and agent-to-agent commerce",
     type: "article",
-    url: "https://www.originary.xyz/glossary/http-402-payment-required/"
+    url: "/glossary/http-402-payment-required/"
   },
   twitter: {
     card: "summary_large_image",

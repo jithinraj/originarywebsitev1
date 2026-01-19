@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, BarChart, Shield, Zap, Settings, Users, FileText } from 'lucide-react'
+import { ArrowRight, CheckCircle, BarChart, Shield, Settings, Users, FileText } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Studio',
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     title: 'Studio | Originary',
     description: 'Enterprise dashboard for managing PEAC policies, signing keys, receipt verification, and compliance reporting.',
     url: '/products/studio',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Studio | Originary',
     description: 'Enterprise dashboard for managing PEAC policies, signing keys, receipt verification, and compliance reporting.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -120,14 +120,10 @@ export default function Studio() {
                   <span>Request enterprise access</span>
                   <ArrowRight size={18} />
                 </Link>
-                <a
-                  href="/downloads/studio-demo.mp4"
-                  download
-                  className="btn btn-secondary btn-lg"
-                >
-                  <span>Watch demo video</span>
+                <Link href="/demo" className="btn btn-secondary btn-lg">
+                  <span>View live demo</span>
                   <Settings size={18} />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -332,17 +328,16 @@ export default function Studio() {
                     <span>Request enterprise demo</span>
                     <ArrowRight size={18} />
                   </Link>
-                  <a
-                    href="/downloads/studio-enterprise-overview.pdf"
-                    download
+                  <Link
+                    href="/platform"
                     className="btn btn-lg btn-ghost"
                     style={{
                       color: 'var(--white)',
                       border: '1px solid rgba(255,255,255,0.2)'
                     }}
                   >
-                    <span>Download overview</span>
-                  </a>
+                    <span>View platform overview</span>
+                  </Link>
                 </div>
               </div>
             </div>

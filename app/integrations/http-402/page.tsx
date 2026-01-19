@@ -6,22 +6,22 @@ import { ArrowRight, CreditCard, CheckCircle, Code } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'HTTP 402 Payment Required | API Monetization Standard',
-  description: 'Learn about HTTP 402 Payment Required status code for API monetization. Understand how payment-required responses work, implementation patterns, and integration with modern payment protocols like x402.',
+  description: 'HTTP 402 Payment Required for API monetization. Payment-required responses, implementation patterns, and x402 integration.',
   keywords: 'HTTP 402, Payment Required, API monetization, payment gateway, x402, PEAC, agent commerce, API payments, HTTP status code',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
     title: 'HTTP 402 Payment Required | API Monetization Standard',
-    description: 'Learn about HTTP 402 Payment Required status code for API monetization. Understand how payment-required responses work, implementation patterns, and integration with modern payment protocols like x402.',
+    description: 'HTTP 402 Payment Required for API monetization. Payment-required responses, implementation patterns, and x402 integration.',
     url: '/integrations/http-402',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'HTTP 402 Payment Required | API Monetization Standard',
     description: 'Learn about HTTP 402 Payment Required status code for API monetization. Understand how payment-required responses work and integration with modern payment protocols.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },

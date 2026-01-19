@@ -14,17 +14,17 @@ export const metadata: Metadata = {
     title: "AI Bot Detection: From Traffic to Evidence",
     description: "AI bot detection beyond classifiers. Use metadata, fingerprints and PEAC receipts to turn AI traffic into verifiable evidence.",
     type: "article",
-    url: "https://www.originary.xyz/blog/ai-bot-detection/",
+    url: "/blog/ai-bot-detection/",
     publishedTime: "2025-12-01",
     authors: ["Jithin Raj", "Originary Team"],
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: "summary_large_image",
     title: "AI Bot Detection: From Traffic to Evidence",
     description: "AI bot detection beyond classifiers. Turn AI traffic into verifiable evidence.",
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -49,7 +49,7 @@ export default function Page() {
       "name": "Originary™",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.originary.xyz/og/originary-logo.png"
+        "url": "https://www.originary.xyz/logo.svg"
       }
     },
     "mainEntityOfPage": "https://www.originary.xyz/blog/ai-bot-detection/",

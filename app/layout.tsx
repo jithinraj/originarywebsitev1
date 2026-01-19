@@ -52,7 +52,7 @@ const organizationJsonLd = {
   name: 'Originary',
   legalName: 'Poem, Inc.',
   alternateName: ['Originary™', 'Originary AI', 'Poem, Inc.', 'Originary PEAC', 'Originary Protocol', 'Originary Receipts'],
-  url: '/',
+  url: 'https://www.originary.xyz',
   telephone: '+14157070402',
   address: {
     '@type': 'PostalAddress',
@@ -112,7 +112,7 @@ const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   '@id': 'https://www.originary.xyz/#website',
-  url: '/',
+  url: 'https://www.originary.xyz',
   name: 'Originary',
   potentialAction: {
     '@type': 'SearchAction',
@@ -126,10 +126,10 @@ const websiteJsonLd = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Originary | System of Record for AI Agent Interactions',
+    default: 'Originary | Verify Agent Interactions Instantly',
     template: '%s | Originary',
   },
-  description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agentic commerce.',
+  description: 'Originary issues signature-verified records you can verify offline and export for audits. Built for policy enforcement, compliance, and agentic commerce.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
@@ -140,23 +140,23 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://www.originary.xyz'),
   openGraph: {
-    title: 'Originary | System of Record for AI Agent Interactions',
-    description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agentic commerce.',
+    title: 'Originary | Verify Agent Interactions Instantly',
+    description: 'Originary issues signature-verified records you can verify offline and export for audits. Built for policy enforcement, compliance, and agentic commerce.',
     url: 'https://www.originary.xyz',
     siteName: 'Originary',
     images: [{
       url: '/og',
       width: 1200,
       height: 630,
-      alt: 'Originary - System of record for agent interactions'
+      alt: 'Originary - Verify agent interactions instantly'
     }],
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | System of Record for AI Agent Interactions',
-    description: 'Originary builds open standards for managing AI interaction terms and issuing proofs. Built for policy enforcement, compliance, and agentic commerce.',
+    title: 'Originary | Verify Agent Interactions Instantly',
+    description: 'Originary issues signature-verified records you can verify offline and export for audits. Built for policy enforcement, compliance, and agentic commerce.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',

@@ -8,7 +8,7 @@ import { declareFaqs } from '@/content/faqs'
 
 export const metadata: Metadata = {
   title: 'Declare | AI Policy Pack Generator',
-  description: 'Generate your AI policy pack from one file. Write peac-policy.yaml, generate peac.txt, robots AI directives, AIPREF templates, and a human policy page. Built on PEAC Protocol.',
+  description: 'Generate your AI policy pack from one file. Create peac.txt, robots directives, AIPREF templates, and human policy pages with PEAC.',
   keywords: 'AI policy, AI Access, AIPREF, peac.txt, AI crawler policy, AI bot detection, PEAC Protocol, HTTP 402, x402, crawling protection, AI policy generator',
   robots: 'index,follow',
   alternates: {
@@ -16,16 +16,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Declare | AI Policy Pack Generator | Originary',
-    description: 'Generate your AI policy pack from one file. Write peac-policy.yaml, generate peac.txt, robots AI directives, AIPREF templates, and a human policy page.',
+    description: 'Generate your AI policy pack from one file. Create peac.txt, robots directives, AIPREF templates, and human policy pages with PEAC.',
     url: '/declare',
     type: 'website',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Declare | AI Policy Pack Generator | Originary',
     description: 'Generate your AI policy pack from one file.',
-    images: ['/og.jpg'],
+    images: ['/og'],
   }
 }
 
@@ -48,7 +48,7 @@ export default function DeclarePage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "softwareVersion": "0.9.27",
+    "softwareVersion": "0.10.0",
     "description": "One config file to declare AI policies for your domain. Generates peac.txt, robots AI rules, AIPREF headers, and a /ai-policy page. Includes Policy Profiles for rapid deployment."
   }
 

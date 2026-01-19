@@ -518,19 +518,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.originary.xyz/integrations/x402/python-fastapi</loc>
-    <lastmod>2026-01-19T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://www.originary.xyz/resources/case-studies</loc>
-    <lastmod>2026-01-19T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.originary.xyz/resources/performance-methodology</loc>
     <lastmod>2026-01-19T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

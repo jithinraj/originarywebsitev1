@@ -5,10 +5,10 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'ACP Integration | Agentic Commerce for AI Agents and APIs',
-  description: 'Use the Agentic Commerce Protocol with PEAC to let AI agents discover prices, execute purchases, get receipts and complete end to end agentic commerce flows across your APIs and services.',
+  description: 'Use the Agentic Commerce Protocol with PEAC for AI agent price discovery, purchases, receipts, and end-to-end commerce flows.',
   openGraph: {
     title: 'ACP Integration | Agentic Commerce for AI Agents and APIs',
-    description: 'Use the Agentic Commerce Protocol with PEAC to let AI agents discover prices, execute purchases, get receipts and complete end to end agentic commerce flows across your APIs and services.',
+    description: 'Use the Agentic Commerce Protocol with PEAC for AI agent price discovery, purchases, receipts, and end-to-end commerce flows.',
     url: '/integrations/acp',
     type: 'article'
   },

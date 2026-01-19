@@ -17,34 +17,34 @@ export async function GET() {
           padding: '60px 80px',
         }}
       >
-        {/* Logo mark */}
+        {/* Logo mark - refined O ring with purple center */}
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            marginBottom: '40px',
+            marginBottom: '48px',
+            gap: '20px',
           }}
         >
           <svg
-            width="80"
-            height="80"
+            width="64"
+            height="64"
             viewBox="0 0 256 256"
-            style={{ marginRight: '20px' }}
           >
-            <rect width="256" height="256" rx="64" fill="#ffffff" />
-            <circle cx="128" cy="128" r="78" fill="#000000" />
-            <circle cx="128" cy="128" r="48" fill="#ffffff" />
+            <rect width="256" height="256" rx="48" fill="#09090b" />
+            <circle cx="128" cy="128" r="72" fill="none" stroke="#ffffff" strokeWidth="24" />
+            <circle cx="128" cy="128" r="24" fill="#635BFF" />
           </svg>
           <span
             style={{
-              fontSize: '42px',
+              fontSize: '48px',
               fontWeight: 600,
-              color: '#000000',
+              color: '#09090b',
               letterSpacing: '-0.02em',
             }}
           >
-            ORIGINARY
+            Originary
           </span>
         </div>
 
@@ -66,7 +66,7 @@ export async function GET() {
               letterSpacing: '-0.03em',
             }}
           >
-            System of record
+            Verify agent interactions.
           </span>
           <span
             style={{
@@ -77,7 +77,7 @@ export async function GET() {
               letterSpacing: '-0.03em',
             }}
           >
-            for agent interactions
+            Instantly.
           </span>
         </div>
 
@@ -92,7 +92,7 @@ export async function GET() {
             maxWidth: '900px',
           }}
         >
-          Open standards for managing AI interaction terms and issuing proofs
+          Signature-verified records you can verify offline and export for audits
         </div>
 
         {/* Footer */}

@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     description: 'Live demo of Originary Trace for agent observability and interaction tracking. See how PEAC-Receipts capture every agent request.',
     type: 'website',
     url: '/trace/demo',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Trace Demo | Agent Observability',
     description: 'Live demo of Originary Trace for agent observability and interaction tracking.',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   robots: 'index,follow',
 }

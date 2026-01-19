@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Context Graphs & System of Record for AI Agents',
-  description: 'Decision traces are the missing infrastructure for agent autonomy. Learn how context graphs emerge, why enterprise systems fall short, and how open policy plus cryptographic receipts create a portable system of record for agent interactions.',
+  description: 'Decision traces are the missing infrastructure for agent autonomy. How context graphs and cryptographic receipts create a system of record.',
   keywords: 'context graphs, decision traces, AI agents, system of record, PEAC protocol, agent autonomy, HTTP 402, cryptographic receipts, agentic web, enterprise AI',
   alternates: {
     canonical: '/context-graphs'
@@ -12,14 +12,14 @@ export const metadata: Metadata = {
     description: 'Decision traces are the missing infrastructure for agent autonomy. How context graphs emerge and why the internet needs an open system of record.',
     url: '/context-graphs',
     type: 'website',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Context Graphs & System of Record for AI Agents | Originary',
     description: 'Decision traces are the missing infrastructure for agent autonomy. How context graphs emerge and why the internet needs an open system of record.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },

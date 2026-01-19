@@ -6,7 +6,7 @@ import { Calendar, User, ArrowRight, ExternalLink, FileText, Code, Shield } from
 
 export const metadata: Metadata = {
   title: 'AIPREF: AI Usage Preferences by IETF',
-  description: 'Understanding the IETF AIPREF specification for expressing AI usage preferences through HTTP headers and robots.txt - what it is, how it works, and how to implement it today.',
+  description: 'Understanding the IETF AIPREF specification for AI usage preferences through HTTP headers and robots.txt. Implementation guide.',
   keywords: 'AIPREF, IETF, AI preferences, robots.txt, Content-Usage header, AI training, machine learning, content licensing, publisher control',
   authors: [{ name: 'Originary Team' }],
   openGraph: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: '/blog/aipref-by-ietf',
     images: [
       {
-        url: '/og.jpg',
+        url: '/og',
         width: 1200,
         height: 630,
         alt: 'AIPREF: AI Usage Preferences'
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AIPREF: A Common Language for AI Usage Preferences',
     description: 'Understanding the IETF AIPREF specification for expressing AI usage preferences',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -53,7 +53,7 @@ export default function AIPREFArticle() {
       "name": "Originary",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.originary.xyz/og/originary-logo.png"
+        "url": "https://www.originary.xyz/logo.svg"
       }
     },
     "datePublished": "2025-10-14",

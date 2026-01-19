@@ -6,7 +6,7 @@ import { CheckCircle, XCircle, ArrowRight, Shield, Zap, Globe, Lock, FileText, C
 
 export const metadata: Metadata = {
   title: 'Why PEAC Protocol | Open Standard for Agentic Commerce',
-  description: 'PEAC Protocol provides verifiable receipts, policy discovery, and payment handling for AI agent interactions. Compare PEAC to alternatives and understand its unique value.',
+  description: 'PEAC Protocol provides verifiable receipts, policy discovery, and payment handling for AI agents. Compare to alternatives.',
   keywords: 'PEAC Protocol, agentic commerce, HTTP 402, verifiable receipts, AI payments, policy discovery, open protocol, x402',
   robots: 'index,follow',
   alternates: {
@@ -15,16 +15,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Why PEAC Protocol | Open Standard for Agentic Commerce',
     description: 'PEAC Protocol provides verifiable receipts, policy discovery, and payment handling for AI agent interactions.',
-    url: 'https://www.originary.xyz/why-peac',
+    url: '/why-peac',
     siteName: 'Originary',
     type: 'website',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Why PEAC Protocol | Open Standard for Agentic Commerce',
     description: 'PEAC Protocol provides verifiable receipts, policy discovery, and payment handling for AI agent interactions.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },

@@ -5,22 +5,22 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "A2A - Agent-to-Agent Communication",
-  description: "A2A (Agent-to-Agent) refers to protocols and patterns for autonomous agents to communicate, negotiate, and transact directly without human intervention. Core to the agentic web.",
+  description: "A2A (Agent-to-Agent) protocols enable autonomous agents to communicate, negotiate, and transact without human intervention.",
   alternates: { canonical: "/glossary/a2a" },
   keywords: "A2A, agent-to-agent, autonomous agents, agent communication, agent commerce, PEAC, HTTP 402, agentic web",
   openGraph: {
     title: "A2A - Agent-to-Agent Communication",
     description: "Protocols and patterns for autonomous agents to communicate, negotiate, and transact directly without human intervention",
     type: "article",
-    url: "https://www.originary.xyz/glossary/a2a/",
-    images: ['/og.jpg'],
+    url: "/glossary/a2a/",
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: "summary_large_image",
     title: "A2A - Agent-to-Agent Communication",
     description: "Protocols and patterns for autonomous agents to communicate, negotiate, and transact directly without human intervention",
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },

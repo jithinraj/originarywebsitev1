@@ -6,7 +6,7 @@ import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Copyright Notice & Takedown',
-  description: 'Copyright notice and takedown process for Originary services. Learn how to submit copyright infringement notices, required information for valid takedown requests, and our counter-notice procedures. Contact contact@originary.xyz for copyright matters.',
+  description: 'Copyright notice and takedown process for Originary. Submit infringement notices and counter-notices to contact@originary.xyz.',
   robots: 'noindex,follow',
   alternates: {
     canonical: '/copyright',
@@ -17,7 +17,7 @@ const webPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Copyright Notice & Takedown',
-  url: '/copyright',
+  url: 'https://www.originary.xyz/copyright',
   dateModified: '2025-07-27'
 }
 

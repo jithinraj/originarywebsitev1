@@ -6,7 +6,7 @@ import { FileText, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: "HTTP 402 on Cloudflare Workers",
-  description: "Deploy HTTP 402 payment-required responses at the edge with Cloudflare Workers. Zero cold starts, global KV storage, Web Crypto API for receipt verification.",
+  description: "Deploy HTTP 402 responses at the edge with Cloudflare Workers. Zero cold starts, KV storage, and Web Crypto API for verification.",
   keywords: "Cloudflare Workers, HTTP 402, edge computing, x402, KV storage, Web Crypto API, payment required",
   authors: [{ name: "Jithin Raj & Originary Team" }],
   alternates: { canonical: '/blog/cloudflare-workers-402' },
@@ -14,17 +14,17 @@ export const metadata: Metadata = {
     title: "HTTP 402 on Cloudflare Workers: Global Edge Payment Gates",
     description: "Deploy HTTP 402 payment-required responses at the edge with Cloudflare Workers",
     type: "article",
-    url: "https://www.originary.xyz/blog/cloudflare-workers-402/",
+    url: "/blog/cloudflare-workers-402/",
     publishedTime: "2025-11-03",
     authors: ["Jithin Raj", "Originary Team"],
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: "summary_large_image",
     title: "HTTP 402 on Cloudflare Workers: Global Edge Payment Gates",
     description: "Deploy HTTP 402 payment-required responses at the edge with Cloudflare Workers",
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -49,7 +49,7 @@ export default function Page() {
       "name": "Originary™",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.originary.xyz/og/originary-logo.png"
+        "url": "https://www.originary.xyz/logo.svg"
       }
     },
     "mainEntityOfPage": "https://www.originary.xyz/blog/cloudflare-workers-402/",

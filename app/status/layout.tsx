@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     url: '/status',
     siteName: 'Originary',
     type: 'website',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Status | Originary',
     description: 'Live service status and incident history for Originary.',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
 }
 

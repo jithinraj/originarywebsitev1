@@ -4,23 +4,23 @@ import NavigationHeader from "@/components/NavigationHeader";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "PEAC Protocol - Open Protocol for Policy, Payments, and Receipts",
-  description: "PEAC Protocol is an open protocol for policy discovery and verifiable receipts. Enables agents to discover terms via .well-known/peac.txt and prove compliance with cryptographic PEAC-Receipt tokens.",
+  title: "PEAC Protocol | Open Policy and Receipts Standard",
+  description: "PEAC Protocol is an open standard for policy discovery and verifiable receipts. Agents discover terms via peac.txt and prove compliance.",
   alternates: { canonical: "/glossary/peac" },
   keywords: "PEAC Protocol, policy discovery, verifiable receipts, PEAC-Receipt, compliance, JWS, agent commerce, .well-known",
   openGraph: {
-    title: "PEAC Protocol - Open Protocol for Policy, Payments, and Receipts",
+    title: "PEAC Protocol | Open Policy and Receipts Standard",
     description: "Open protocol for policy discovery and verifiable receipts. Enables agents to discover terms and prove compliance.",
     type: "article",
-    url: "https://www.originary.xyz/glossary/peac/",
-    images: ['/og.jpg'],
+    url: "/glossary/peac/",
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: "summary_large_image",
-    title: "PEAC Protocol - Open Protocol for Policy, Payments, and Receipts",
+    title: "PEAC Protocol | Open Policy and Receipts Standard",
     description: "Open protocol for policy discovery and verifiable receipts. Enables agents to discover terms and prove compliance.",
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },

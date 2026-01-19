@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'A2A Protocol | Agent to Agent Transactions Integration',
-  description: 'A2A protocol integration for agent to agent transactions and agent-to-agent receipts. Enable agentic transactions with verifiable A2A verification through PEAC-Receipts.',
+  description: 'A2A protocol integration for agent-to-agent transactions and receipts. Enable agentic transactions with PEAC-Receipt verification.',
   openGraph: {
     title: 'A2A Protocol | Agent-to-Agent Transactions',
     description: 'A2A protocol for agent to agent transactions with agent-to-agent receipts. Secure agentic transactions with A2A verification.',

@@ -6,7 +6,7 @@ import Mark from '@/components/Mark'
 
 export const metadata: Metadata = {
   title: 'Press',
-  description: 'Press information, media resources, and brand assets for Originary. Contact press@originary.xyz for inquiries. Download logos and learn how Originary delivers receipts and policy enforcement for the agentic web.',
+  description: 'Press information, media resources, and brand assets for Originary. Contact press@originary.xyz for inquiries.',
   robots: 'index,follow',
   alternates: {
     canonical: '/press'

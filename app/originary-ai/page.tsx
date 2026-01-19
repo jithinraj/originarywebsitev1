@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     url: '/originary-ai',
     siteName: 'Originary',
     images: [{
-      url: '/og.jpg',
+      url: '/og',
       width: 1200,
       height: 630,
       alt: 'Originary AI | Receipts for the Agentic Web'
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Originary AI | Receipts for the Agentic Web',
     description: 'Originary issues PEAC-Receipts for AI agents and APIs, proving access, consent, attribution, privacy, and payment across HTTP 402, x402, MCP, and A2A.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryinc',
     creator: '@originaryinc'
   },

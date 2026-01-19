@@ -5,26 +5,26 @@ import Footer from "@/components/Footer";
 import { FileText, ArrowRight, Zap, Shield, CreditCard, FileCheck, List, CheckCircle2, AlertTriangle, DollarSign, Lock, Globe } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance",
+  title: "AI Detection to Settlement | PEAC HTTP 402 Revenue",
   description: "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
   keywords: "AI paywall, HTTP 402, x402, Stripe, PEAC receipts, AI payments, AI bot detection, AI monetization, machine payments",
   authors: [{ name: "Jithin Raj & Originary Team" }],
   alternates: { canonical: '/blog/from-detection-to-settlement-ai-paywall-peac-http-402' },
   openGraph: {
-    title: "From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance",
+    title: "AI Detection to Settlement | PEAC HTTP 402 Revenue",
     description: "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
     type: "article",
-    url: "https://www.originary.xyz/blog/from-detection-to-settlement-ai-paywall-peac-http-402/",
+    url: "/blog/from-detection-to-settlement-ai-paywall-peac-http-402/",
     publishedTime: "2025-12-01",
     authors: ["Jithin Raj", "Originary Team"],
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: "summary_large_image",
-    title: "From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance",
+    title: "AI Detection to Settlement | PEAC HTTP 402 Revenue",
     description: "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -49,7 +49,7 @@ export default function Page() {
       "name": "Originary™",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.originary.xyz/og/originary-logo.png"
+        "url": "https://www.originary.xyz/logo.svg"
       }
     },
     "mainEntityOfPage": "https://www.originary.xyz/blog/from-detection-to-settlement-ai-paywall-peac-http-402/",

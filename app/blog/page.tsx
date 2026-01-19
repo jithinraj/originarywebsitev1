@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Originary Blog - AI payments, HTTP 402 and PEAC receipts',
   },
-  description: 'Originary blog on AI payments, HTTP 402, x402, PEAC receipts, AIPREF and agentic web infrastructure. Technical insights, protocol updates and best practices for AI infrastructure teams.',
+  description: 'Originary blog on AI payments, HTTP 402, PEAC receipts, and agentic web infrastructure. Technical insights and protocol updates.',
   keywords: 'Originary blog, AIPREF, PEAC protocol, AI payments, HTTP 402, x402, receipts, technical blog, agentic web, AI infrastructure',
   authors: [{ name: 'Originary Team' }],
   openGraph: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: '/blog',
     images: [
       {
-        url: '/og.jpg',
+        url: '/og',
         width: 1200,
         height: 630,
         alt: 'Originary Blog'
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Originary Blog - AI payments, HTTP 402 and PEAC receipts',
     description: 'Technical insights from Originary on HTTP 402, AI payments, PEAC receipts and agentic web infrastructure.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -137,7 +137,7 @@ export default function BlogPage() {
       "name": "Originary",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.originary.xyz/og/originary-logo.png"
+        "url": "https://www.originary.xyz/logo.svg"
       }
     },
     "about": [

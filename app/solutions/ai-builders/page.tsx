@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: 'Build AI systems with provenance tracking, verifiable records, and cryptographic receipts.',
     url: '/solutions/ai-builders',
     images: [{
-      url: '/og.jpg',
+      url: '/og',
       width: 1200,
       height: 630,
       alt: 'Originary for AI Builders - AI Compliance and AI Provenance Tracking'
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AI Builders | Compliance & Provenance',
     description: 'Build AI systems with provenance tracking and cryptographic receipts.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },

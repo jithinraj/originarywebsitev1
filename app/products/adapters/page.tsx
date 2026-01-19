@@ -2,26 +2,26 @@ import { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Zap, Shield, Settings, Link as LinkIcon, Download } from 'lucide-react'
+import { ArrowRight, Zap, Shield, Settings, Link as LinkIcon } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Adapters',
-  description: 'Enterprise adapters for AIPREF, HTTP 402/x402, MCP/A2A, robots.txt/llms.txt, and C2PA. Production-ready integrations for policy enforcement and standards compliance in agentic systems.',
+  description: 'Enterprise adapters for AIPREF, HTTP 402, MCP/A2A, and C2PA. Production-ready integrations for policy enforcement in agentic systems.',
   keywords: 'AIPREF, HTTP 402, x402, MCP, A2A, C2PA, robots.txt, llms.txt, enterprise adapters',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'Adapters | Originary',
-    description: 'Enterprise adapters for AIPREF, HTTP 402/x402, MCP/A2A, robots.txt/llms.txt, and C2PA. Production-ready integrations for policy enforcement and standards compliance in agentic systems.',
+    description: 'Enterprise adapters for AIPREF, HTTP 402, MCP/A2A, and C2PA. Production-ready integrations for policy enforcement in agentic systems.',
     url: '/products/adapters',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Adapters | Originary',
     description: 'Enterprise adapters for AIPREF, HTTP 402/x402, MCP/A2A, robots.txt/llms.txt, and C2PA. Production-ready integrations for policy enforcement and standards compliance in agentic systems.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -178,14 +178,10 @@ export default function Adapters() {
                   <span>Talk to integration engineer</span>
                   <ArrowRight size={18} />
                 </Link>
-                <a
-                  href="/downloads/adapters-reference.pdf"
-                  download
-                  className="btn btn-secondary btn-lg"
-                >
-                  <span>Download reference</span>
-                  <Download size={18} />
-                </a>
+                <Link href="/developers" className="btn btn-secondary btn-lg">
+                  <span>View documentation</span>
+                  <ArrowRight size={18} />
+                </Link>
               </div>
             </div>
           </div>
@@ -564,17 +560,16 @@ export default function Adapters() {
                     <span>Talk to integration engineer</span>
                     <ArrowRight size={18} />
                   </Link>
-                  <a
-                    href="/downloads/adapters-enterprise-guide.pdf"
-                    download
+                  <Link
+                    href="/solutions/enterprises"
                     className="btn btn-lg btn-ghost"
                     style={{
                       color: 'var(--white)',
                       border: '1px solid rgba(255,255,255,0.2)'
                     }}
                   >
-                    <span>Download enterprise guide</span>
-                  </a>
+                    <span>Enterprise solutions</span>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Originary & AI - Agent-native trust with PEAC-Receipts'
   },
-  description: 'Build agent-to-agent systems with verifiable interaction records, preference-aware usage, and HTTP 402 flows. Works with A2A networks, MCP tool calls, ACP, and configurable payment adapters.',
+  description: 'Build agent-to-agent systems with verifiable interaction records and HTTP 402 flows. Works with A2A, MCP, ACP, and payment adapters.',
   keywords: 'agent-to-agent, A2A, MCP, ACP, ERC-8004, PEAC receipts, HTTP 402, agent trust, cryptographic verification, AIPREF, x402, agentic commerce',
   robots: 'index,follow',
   openGraph: {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     url: '/ai',
     siteName: 'Originary',
     images: [{
-      url: '/og.jpg',
+      url: '/og',
       width: 1200,
       height: 630,
       alt: 'Originary & AI - Built for agents, not browsers'
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Originary & AI - Agent-native trust',
     description: 'Build agent-to-agent systems with verifiable interaction records, preference-aware usage, and HTTP 402 flows. A2A, MCP, ACP support.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryinc',
     creator: '@originaryinc'
   },

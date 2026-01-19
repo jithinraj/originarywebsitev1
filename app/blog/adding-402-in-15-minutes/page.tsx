@@ -14,17 +14,17 @@ export const metadata: Metadata = {
     title: "Add HTTP 402 to Your API in 15 Minutes",
     description: "Quick tutorial for adding HTTP 402 Payment Required responses to an existing Express API",
     type: "article",
-    url: "https://www.originary.xyz/blog/adding-402-in-15-minutes/",
+    url: "/blog/adding-402-in-15-minutes/",
     publishedTime: "2025-11-03",
     authors: ["Jithin Raj", "Originary Team"],
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: "summary_large_image",
     title: "Add HTTP 402 to Your API in 15 Minutes",
     description: "Quick tutorial for adding HTTP 402 Payment Required responses to an existing Express API",
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -49,7 +49,7 @@ export default function Page() {
       "name": "Originary™",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.originary.xyz/og/originary-logo.png"
+        "url": "https://www.originary.xyz/logo.svg"
       }
     },
     "mainEntityOfPage": "https://www.originary.xyz/blog/adding-402-in-15-minutes/",

@@ -5,7 +5,7 @@ import Mark from '@/components/Mark'
 
 export const metadata: Metadata = {
   title: 'Brand Guidelines',
-  description: 'Official Originary brand guidelines, logo downloads, wordmark usage standards, and visual identity resources. Download brand assets for media use and learn proper usage of the Originary trademark across all channels.',
+  description: 'Official Originary brand guidelines, logo downloads, wordmark usage, and visual identity resources. Download brand assets for media use.',
   robots: 'index,follow',
   alternates: {
     canonical: '/brand'

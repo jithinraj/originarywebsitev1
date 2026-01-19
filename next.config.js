@@ -66,7 +66,7 @@ const nextConfig = {
         destination: '/contact',
         permanent: true,
       },
-      // CLI downloads → PEAC Protocol release archives
+            // CLI downloads → PEAC Protocol release archives
       {
         source: '/downloads/originary-cli-1.0.0-darwin-arm64.zip',
         destination: 'https://github.com/peacprotocol/peac/archive/refs/tags/v0.9.14.zip',

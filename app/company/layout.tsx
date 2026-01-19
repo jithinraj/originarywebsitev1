@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: '/company',
     siteName: 'Originary',
     images: [{
-      url: '/og.jpg',
+      url: '/og',
       width: 1200,
       height: 630,
       alt: 'Originary Company'
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Company | Originary',
     description: 'Originary builds AI infrastructure and tools for the agentic web, across Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx'
   },

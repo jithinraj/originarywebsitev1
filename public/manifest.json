@@ -1,7 +1,7 @@
 {
   "name": "Originary",
   "short_name": "Originary",
-  "description": "Infrastructure and tools for the agentic web. HTTP 402 payments, PEAC receipts, and AI crawler analytics.",
+  "description": "Verify agent interactions instantly. Signature-verified records you can verify offline and export for audits.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FAF8F1",

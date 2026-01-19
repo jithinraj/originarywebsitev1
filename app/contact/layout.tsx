@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     url: '/contact',
     siteName: 'Originary',
     type: 'website',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Contact | Originary',
     description: 'Contact the Originary team for sales, partnerships, and support.',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
 }
 

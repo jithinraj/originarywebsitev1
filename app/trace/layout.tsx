@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Trace | Agent Observability and Decision Records',
-  description: 'Trace gives your website real time visibility into AI agents and automated services, with detailed logs, verifiable receipts and PEAC Protocol based access controls.',
+  description: 'Trace gives your website visibility into AI agents with detailed logs, verifiable receipts, and PEAC-based access controls.',
   alternates: {
     canonical: '/trace'
   },
   openGraph: {
     title: 'Trace | Agent Observability and Decision Records by Originary',
-    description: 'Trace gives your website real time visibility into AI agents and automated services, with detailed logs, verifiable receipts and PEAC Protocol based access controls.',
+    description: 'Trace gives your website visibility into AI agents with detailed logs, verifiable receipts, and PEAC-based access controls.',
     type: 'website',
     url: '/trace',
   },

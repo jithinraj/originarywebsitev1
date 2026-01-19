@@ -17,7 +17,8 @@
     "check:terms": "node scripts/check-marketing-terms.mjs",
     "check:links": "node scripts/check-links.mjs",
     "check:snippets": "node scripts/check-snippets.mjs",
-    "check:all": "npm run check:terms && npm run check:links && npm run check:snippets"
+    "check:seo": "node scripts/seo-lint.mjs",
+    "check:all": "npm run check:terms && npm run check:links && npm run check:snippets && npm run check:seo"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.32.2",

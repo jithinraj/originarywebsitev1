@@ -4,14 +4,14 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'A2A Attach Points | A2A Protocol and Agent to Agent Transactions',
-  description: 'A2A protocol documentation for agent to agent transactions and agent-to-agent communication. Learn how to embed PEAC-Receipts in A2A protocol messages for verifiable agent to agent transactions. Add verifiable proofs to agent-to-agent communication with A2A attach points.',
+  title: 'A2A Attach Points | Agent-to-Agent Transactions',
+  description: 'Embed PEAC-Receipts in A2A protocol messages for verifiable agent-to-agent transactions. Documentation for A2A attach points and multi-agent workflows.',
   robots: 'index,follow',
   alternates: {
     canonical: '/docs/a2a/attach-points'
   },
   openGraph: {
-    title: 'A2A Attach Points | A2A Protocol and Agent to Agent Transactions',
+    title: 'A2A Attach Points | Agent-to-Agent Transactions',
     description: 'A2A protocol documentation for agent to agent transactions and agent-to-agent communication. Embed PEAC-Receipts in A2A protocol messages for verifiable agent to agent transactions.',
     url: '/docs/a2a/attach-points',
     siteName: 'Originary',

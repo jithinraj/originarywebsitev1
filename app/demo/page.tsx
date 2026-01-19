@@ -73,7 +73,7 @@ const DECODED_RECEIPT = {
   iat: 1734084000,
   policy_hash: 'sha256-9f3c8a2b1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a',
   aipref: {
-    url: 'https://www.originary.xyz/.well-known/aipref.json',
+    url: '/.well-known/aipref.json',
     retrieved_at: 1734084000,
     hash: 'sha256-a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2'
   },

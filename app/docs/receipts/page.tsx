@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'PEAC-Receipts | Portable Decision Records Documentation',
-  description: 'PEAC-Receipts documentation for portable decision records. Learn about the open standard for verifiable agent interaction receipts with cryptographic proof. Technical specification, implementation guide, and verification examples.',
+  description: 'PEAC-Receipts documentation for portable decision records. Open standard for verifiable agent interaction receipts with cryptographic proof.',
   robots: 'index,follow',
   alternates: {
     canonical: '/docs/receipts'

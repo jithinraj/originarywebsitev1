@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     description: 'PEAC protocol research and technical specifications. Problem framing, design goals, threat model, and academic references.',
     url: '/research',
     type: 'website',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Research | Originary',
     description: 'PEAC protocol research and technical specifications. Problem framing, design goals, and threat model.',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   robots: 'index,follow',
 }

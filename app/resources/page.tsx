@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     description: 'Resources, documentation, and insights for building with the receipts protocol for the agentic web.',
     url: '/resources',
     siteName: 'Originary',
-    images: [{ url: '/og.jpg' }],
+    images: [{ url: '/og' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Resources',
     description: 'Resources, documentation, and insights for building with the receipts protocol for the agentic web.',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   alternates: {
     canonical: '/resources',

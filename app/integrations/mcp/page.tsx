@@ -4,10 +4,10 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Model Context Protocol (MCP) | MCP Receipts and Tools Integration',
-  description: 'Model Context Protocol (MCP) integration with MCP receipts and MCP tools for agent coordination. Verifiable PEAC-Receipts for LLM tool calls and MCP agents in agentic workflows.',
+  title: 'MCP Integration | Model Context Protocol Receipts',
+  description: 'MCP integration with receipts and tools for agent coordination. Verifiable PEAC-Receipts for LLM tool calls and MCP agents.',
   openGraph: {
-    title: 'Model Context Protocol (MCP) | MCP Receipts and Agent Coordination',
+    title: 'MCP Integration | Model Context Protocol Receipts',
     description: 'MCP integration with MCP receipts, MCP tools, and agent coordination. Verifiable receipts for Model Context Protocol workflows.',
     url: '/integrations/mcp',
     type: 'article'

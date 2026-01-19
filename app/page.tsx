@@ -14,25 +14,25 @@ import { homeFaqs } from '@/content/faqs'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Verification Infrastructure for Automated Interactions'
+    absolute: 'Originary | Verification for Automated Interactions'
   },
   description: 'Originary provides verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.',
   alternates: {
     canonical: '/'
   },
   openGraph: {
-    title: 'Originary | Verification Infrastructure for Automated Interactions',
+    title: 'Originary | Verification for Automated Interactions',
     description: 'Originary provides verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.',
     url: 'https://www.originary.xyz',
     type: 'website',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Originary | Verification Infrastructure for Automated Interactions',
     description: 'Originary provides verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },

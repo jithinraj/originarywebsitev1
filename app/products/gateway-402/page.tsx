@@ -2,27 +2,27 @@ import { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, CreditCard, Shield, ExternalLink, Download } from 'lucide-react'
+import { ArrowRight, CreditCard, Shield } from 'lucide-react'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata: Metadata = {
   title: 'Gateway 402 | HTTP 402 & x402 payments for APIs',
-  description: 'HTTP 402 commerce gateway for machine-payable APIs. Enable HTTP 402 payments and x402 commerce for agentic economy use cases with standardized payment protocols.',
+  description: 'HTTP 402 commerce gateway for machine-payable APIs. Enable HTTP 402 and x402 payments for agentic economy use cases.',
   keywords: 'HTTP 402, x402, payment gateway, API payments, policy enforcement, enterprise payments, agent commerce, HTTP 402 commerce, x402 commerce',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'Gateway 402 | HTTP 402 & x402 payments for APIs',
-    description: 'HTTP 402 commerce gateway for machine-payable APIs. Enable HTTP 402 payments and x402 commerce for agentic economy use cases.',
+    description: 'HTTP 402 commerce gateway for machine-payable APIs. Enable HTTP 402 and x402 payments for agentic economy use cases.',
     url: '/products/gateway-402',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Gateway 402 | HTTP 402 & x402 payments for APIs',
     description: 'HTTP 402 commerce gateway for machine-payable APIs. Enable HTTP 402 payments and x402 commerce for agentic economy use cases.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -187,14 +187,10 @@ export default function Gateway402() {
                   <span>Talk to payments engineer</span>
                   <ArrowRight size={18} />
                 </Link>
-                <a
-                  href="/downloads/gateway-402-config.yaml"
-                  download
-                  className="btn btn-secondary btn-lg"
-                >
-                  <span>Configuration template</span>
-                  <Download size={18} />
-                </a>
+                <Link href="/integrations/x402" className="btn btn-secondary btn-lg">
+                  <span>View x402 integration</span>
+                  <ArrowRight size={18} />
+                </Link>
               </div>
             </div>
           </div>

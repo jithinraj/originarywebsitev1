@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: '/pricing',
     siteName: 'Originary',
     images: [{
-      url: '/og.jpg',
+      url: '/og',
       width: 1200,
       height: 630,
       alt: 'Originary Pricing'
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Pricing',
     description: 'Pricing for Originary Trace and decision record infrastructure. Plans for agent observability, interaction tracking, and PEAC-Receipts.',
-    images: ['/og.jpg']
+    images: ['/og']
   }
 }
 

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: '/services',
     siteName: 'Originary',
     images: [{
-      url: '/og.jpg',
+      url: '/og',
       width: 1200,
       height: 630,
       alt: 'Originary Professional Services'
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Professional Services | Originary',
     description: 'Implementation, migration, and compliance services for PEAC Protocol.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx'
   }

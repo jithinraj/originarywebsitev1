@@ -8,24 +8,24 @@ import { peacFaqs } from '@/content/faqs'
 
 export const metadata: Metadata = {
   title: 'PEAC Protocol | Open Protocol for the Agentic Web',
-  description: 'PEAC Protocol is an open protocol for policy, payments, and receipts in the agentic web and agentic economy, covering HTTP 402 commerce, agent-to-agent transactions, and AI compliance.',
+  description: 'PEAC Protocol is an open protocol for policy, payments, and receipts in the agentic web. HTTP 402 commerce and AI compliance.',
   robots: 'index,follow',
   alternates: {
     canonical: '/peac'
   },
   openGraph: {
     title: 'PEAC Protocol | Open Protocol for the Agentic Web',
-    description: 'PEAC Protocol is an open protocol for policy, payments, and receipts in the agentic web and agentic economy, covering HTTP 402 commerce, agent-to-agent transactions, and AI compliance.',
+    description: 'PEAC Protocol is an open protocol for policy, payments, and receipts in the agentic web. HTTP 402 commerce and AI compliance.',
     url: '/peac',
     siteName: 'Originary',
     type: 'website',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'PEAC Protocol | Open Protocol for the Agentic Web',
     description: 'Open protocol for policy, payments, and receipts in the agentic web.',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
 }
 

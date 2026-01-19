@@ -7,22 +7,22 @@ import ServiceOffers from '@/components/ServiceOffers'
 
 export const metadata: Metadata = {
   title: 'Products',
-  description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters-everything you need to power autonomous AI coordination.',
+  description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters.',
   keywords: 'PEAC protocol, AI Access, verify API, Gateway 402, AI orchestration, autonomous agents, policy enforcement',
   robots: 'index,follow',
   openGraph: {
     title: 'Products',
-    description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters-everything you need to power autonomous AI coordination.',
+    description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters.',
     url: '/products',
     siteName: 'Originary',
-    images: [{ url: '/og.jpg' }],
+    images: [{ url: '/og' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Products',
-    description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters-everything you need to power autonomous AI coordination.',
-    images: ['/og.jpg'],
+    description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters.',
+    images: ['/og'],
   },
   alternates: {
     canonical: '/products',

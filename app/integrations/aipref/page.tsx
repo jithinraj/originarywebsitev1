@@ -4,11 +4,11 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'AIPREF Integration | Machine Readable AI Preferences with PEAC',
-  description: 'Integrate the AIPREF standard so AI crawlers can read machine readable preferences, respect AI access rules and combine aipref.json with PEAC policies for safer training and scraping.',
+  title: 'AIPREF Integration | Machine Readable AI Preferences',
+  description: 'Integrate AIPREF so AI crawlers can read machine-readable access policies. Combine aipref.json with PEAC for enforceable AI scraping preferences.',
   openGraph: {
-    title: 'AIPREF Integration | Machine Readable AI Preferences with PEAC',
-    description: 'Integrate the AIPREF standard so AI crawlers can read machine readable preferences, respect AI access rules and combine aipref.json with PEAC policies for safer training and scraping.',
+    title: 'AIPREF Integration | Machine Readable AI Preferences',
+    description: 'Integrate AIPREF so AI crawlers can read machine-readable access policies. Combine aipref.json with PEAC for enforceable AI scraping preferences.',
     url: '/integrations/aipref',
     type: 'article'
   },

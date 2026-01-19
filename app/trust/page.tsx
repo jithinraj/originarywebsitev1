@@ -6,13 +6,13 @@ import { Shield, Lock, CheckCircle, FileText, Server, Building2, ExternalLink } 
 
 export const metadata: Metadata = {
   title: 'Trust & Compliance',
-  description: 'Security, compliance, and transparency resources for Originary PEAC protocol orchestration platform. Access security disclosure policy, PEAC protocol specifications, receipt verification tools, terms of service, privacy policy, and infrastructure metadata. Built on open standards with full transparency.',
+  description: 'Security, compliance, and transparency resources for Originary. Access security disclosure, PEAC specs, receipt verification, and legal policies.',
   openGraph: {
     title: 'Trust & Compliance',
     description: 'Security, compliance, and transparency resources for Originary',
     type: 'website',
     url: '/trust',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   robots: 'index,follow',
   alternates: {

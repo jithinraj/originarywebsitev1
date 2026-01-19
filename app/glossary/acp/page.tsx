@@ -5,22 +5,22 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "ACP - Agent Commerce Protocol",
-  description: "ACP (Agent Commerce Protocol) defines standards for agent-initiated commerce including pricing discovery, payment negotiation, and settlement. Core protocol for the agentic web economy.",
+  description: "ACP (Agent Commerce Protocol) defines standards for agent commerce: pricing discovery, payment negotiation, and settlement.",
   alternates: { canonical: "/glossary/acp" },
   keywords: "ACP, Agent Commerce Protocol, agent payments, agent economy, automated commerce, PEAC, HTTP 402, agentic web, autonomous transactions",
   openGraph: {
     title: "ACP - Agent Commerce Protocol",
     description: "Standards for agent-initiated commerce including pricing discovery, payment negotiation, and settlement for the agentic web economy",
     type: "article",
-    url: "https://www.originary.xyz/glossary/acp/",
-    images: ['/og.jpg'],
+    url: "/glossary/acp/",
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: "summary_large_image",
     title: "ACP - Agent Commerce Protocol",
     description: "Standards for agent-initiated commerce including pricing discovery, payment negotiation, and settlement for the agentic web economy",
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },

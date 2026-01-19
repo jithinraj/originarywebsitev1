@@ -6,22 +6,22 @@ import { ArrowRight, Shield, Zap, Server, LineChart, Clock, Lock, CheckCircle, S
 
 export const metadata: Metadata = {
   title: 'PEAC in Production | Enterprise Deployment & Operations',
-  description: 'Deploy PEAC Protocol at enterprise scale. Managed infrastructure, real-time monitoring, compliance dashboards, and 24/7 support for mission-critical agent operations.',
+  description: 'Deploy PEAC Protocol at enterprise scale. Managed infrastructure, monitoring, compliance dashboards, and support.',
   keywords: 'PEAC enterprise, PEAC deployment, PEAC operations, agent infrastructure, receipt monitoring, compliance dashboard, enterprise support, PEAC scaling',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'PEAC in Production | Enterprise Deployment & Operations',
-    description: 'Deploy PEAC Protocol at enterprise scale. Managed infrastructure, real-time monitoring, compliance dashboards, and 24/7 support for mission-critical agent operations.',
+    description: 'Deploy PEAC Protocol at enterprise scale. Managed infrastructure, monitoring, compliance dashboards, and support.',
     url: '/products/peac',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'PEAC in Production | Enterprise Deployment & Operations',
     description: 'Deploy PEAC Protocol at enterprise scale. Managed infrastructure, compliance dashboards, and 24/7 support.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },

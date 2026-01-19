@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Zap, Shield, BarChart, ExternalLink, Download } from 'lucide-react'
+import { ArrowRight, Zap, Shield, BarChart } from 'lucide-react'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata: Metadata = {
@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     title: 'Verify API | Originary',
     description: 'Stateless verification for PEAC-Receipts and JWS signatures. Deterministic validation with normalized fields.',
     url: '/products/verify',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Verify API | Originary',
     description: 'Stateless verification for PEAC-Receipts and JWS signatures. Deterministic validation with normalized fields.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -105,14 +105,10 @@ export default function VerifyAPI() {
                   <span>Talk to verification engineer</span>
                   <ArrowRight size={18} />
                 </Link>
-                <a
-                  href="/downloads/verify-api-docs.pdf"
-                  download
-                  className="btn btn-secondary btn-lg"
-                >
+                <Link href="/docs/receipts" className="btn btn-secondary btn-lg">
                   <span>API documentation</span>
-                  <Download size={18} />
-                </a>
+                  <ArrowRight size={18} />
+                </Link>
               </div>
             </div>
           </div>

@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     description: 'How the PEAC protocol evolves. Governance process, versioning rules, and neutrality guarantees.',
     url: '/governance',
     type: 'website',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Governance | Originary',
     description: 'How the PEAC protocol evolves. Governance process, versioning rules, and neutrality guarantees.',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   robots: 'index,follow',
 }

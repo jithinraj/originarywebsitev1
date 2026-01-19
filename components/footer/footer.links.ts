@@ -49,7 +49,8 @@ export const FOOTER_INTEGRATIONS: FooterGroup = {
   title: 'Integrations',
   links: [
     { label: 'All Integrations', href: '/integrations' },
-    { label: 'HTTP 402 / x402', href: '/integrations/x402' },
+    { label: 'HTTP 402', href: '/integrations/http-402' },
+    { label: 'x402', href: '/integrations/x402' },
     { label: 'MCP', href: '/integrations/mcp' },
     { label: 'A2A', href: '/integrations/a2a' },
     { label: 'Agentic Commerce', href: '/integrations/acp' },
@@ -64,8 +65,10 @@ export const FOOTER_DEVELOPERS: FooterGroup = {
     { label: 'Documentation', href: '/developers' },
     { label: 'Docs: Receipts', href: '/docs/receipts' },
     { label: 'Docs: Payments', href: '/docs/payments/x402' },
+    { label: 'Docs: Stripe', href: '/docs/payments/stripe' },
     { label: 'Downloads', href: '/downloads' },
     { label: 'Demo', href: '/demo' },
+    { label: 'Trace Demo', href: '/trace/demo' },
     { label: 'Verify Tool', href: '/verify' },
   ],
 }
@@ -75,6 +78,7 @@ export const FOOTER_LEARN: FooterGroup = {
   title: 'Learn',
   links: [
     { label: 'All Guides', href: '/learn' },
+    { label: 'Resources', href: '/resources' },
     { label: 'AI Receipts', href: '/learn/ai-receipts' },
     { label: 'HTTP 402 Payments', href: '/learn/http-402-ai-payments' },
     { label: 'Consent & Attribution', href: '/learn/ai-consent-and-attribution' },
@@ -91,6 +95,9 @@ export const FOOTER_SOLUTIONS: FooterGroup = {
     { label: 'API Providers', href: '/solutions/api-providers' },
     { label: 'Publishers', href: '/solutions/publishers' },
     { label: 'Enterprises', href: '/solutions/enterprises' },
+    { label: 'Originary & AI', href: '/ai' },
+    { label: 'Services', href: '/services' },
+    { label: 'Pilots', href: '/pilots' },
   ],
 }
 
@@ -100,10 +107,11 @@ export const FOOTER_COMPANY: FooterGroup = {
   links: [
     { label: 'What is Originary?', href: '/what-is-originary' },
     { label: 'About', href: '/about' },
+    { label: 'Research', href: '/research' },
     { label: 'Blog', href: '/blog' },
     { label: 'Pricing', href: '/pricing' },
     { label: 'Press', href: '/press' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Contact', href: '/company/contact' },
     { label: 'Trust Center', href: '/trust' },
   ],
 }
@@ -113,6 +121,7 @@ export const FOOTER_OPEN_SOURCE: FooterGroup = {
   title: 'Open Source',
   links: [
     { label: 'PEAC Protocol', href: '/peac' },
+    { label: 'Why PEAC', href: '/why-peac' },
     { label: 'Governance', href: '/governance' },
     { label: 'Conformance', href: '/conformance' },
     { label: 'Changelog', href: '/changelog' },

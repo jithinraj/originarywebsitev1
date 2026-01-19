@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: 'Managed PEAC verification, attested receipts, compliance bundles, and analytics. Apply for early access.',
     type: 'website',
     url: '/cloud',
-    images: ['/og.jpg'],
+    images: ['/og'],
   },
   robots: 'index,follow',
 }

@@ -5,15 +5,15 @@ import Link from 'next/link'
 import { Receipt, ArrowLeft, CheckCircle, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'AI Receipts Explained: Cryptographic Proof for Agent Interactions',
-  description: 'PEAC-Receipt is the JWS-signed standard for proving AI agent interactions. Learn how cryptographic receipts enable billing, compliance, attribution, and dispute resolution in the agent economy.',
+  title: 'AI Receipts Explained | Cryptographic Proof for Agents',
+  description: 'PEAC-Receipt is the JWS-signed standard for proving AI agent interactions. Cryptographic receipts for billing, compliance, and dispute resolution.',
   keywords: 'AI receipts explained, PEAC-Receipt format, verifiable receipts AI, cryptographic proof agents, JWS signed receipts, agent audit trail, AI compliance receipts, digital receipt standard, agent billing proof',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
-    title: 'AI Receipts Explained: Cryptographic Proof for Agent Interactions',
+    title: 'AI Receipts Explained | Cryptographic Proof for Agents',
     description: 'PEAC-Receipt is the JWS-signed standard for proving AI agent interactions. The complete guide to cryptographic receipts.',
-    url: 'https://www.originary.xyz/learn/ai-receipts',
+    url: '/learn/ai-receipts',
     images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },

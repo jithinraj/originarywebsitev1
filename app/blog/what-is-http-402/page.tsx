@@ -14,17 +14,17 @@ export const metadata: Metadata = {
     title: "What is HTTP 402? How PEAC Uses 402 for Agent Payments",
     description: "HTTP 402 Payment Required explained: history, why it matters now, and how PEAC Protocol uses it for agent payments",
     type: "article",
-    url: "https://www.originary.xyz/blog/what-is-http-402/",
+    url: "/blog/what-is-http-402/",
     publishedTime: "2025-12-03",
     authors: ["Jithin Raj", "Originary Team"],
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: "summary_large_image",
     title: "What is HTTP 402? How PEAC Uses 402 for Agent Payments",
     description: "HTTP 402 Payment Required explained: history and practical implementation with PEAC",
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -49,7 +49,7 @@ export default function Page() {
       "name": "Originary",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.originary.xyz/og/originary-logo.png"
+        "url": "https://www.originary.xyz/logo.svg"
       }
     },
     "mainEntityOfPage": "https://www.originary.xyz/blog/what-is-http-402/",

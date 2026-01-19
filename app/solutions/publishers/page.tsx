@@ -3,8 +3,8 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Publishers | AI Compliance and Content Protection with AIPREF',
-  description: 'AI compliance and AI provenance tracking for publishers. Set AI preferences with AIPREF and AI preference standard, verify AI compliance with attribution requirements, and monetize content through AI licensing and automated payments with PEAC.',
+  title: 'Publishers | AI Compliance and Content Protection',
+  description: 'AI compliance and provenance tracking for publishers. Set AI preferences with AIPREF, verify compliance, and monetize content with PEAC.',
   keywords: 'AI compliance, AI provenance tracking, AI licensing, content protection, AI preference standard, AIPREF, AI training preferences, content monetization, automated licensing, attribution requirements, PEAC, publishers, content rights',
   authors: [{ name: 'Originary' }],
   openGraph: {
@@ -12,14 +12,14 @@ export const metadata: Metadata = {
     title: 'Publishers | AI Compliance and Content Protection',
     description: 'AI compliance and AI provenance tracking for publishers. Set AI preferences, verify AI compliance with attribution requirements, and monetize content access through automated licensing.',
     url: '/solutions/publishers',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Publishers | AI Compliance and Content Protection',
     description: 'AI compliance and AI provenance tracking for publishers. Set AI preferences, verify AI compliance with attribution requirements, and monetize content access.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },

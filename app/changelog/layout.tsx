@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: '/changelog',
     siteName: 'Originary',
     images: [{
-      url: '/og.jpg',
+      url: '/og',
       width: 1200,
       height: 630,
       alt: 'Originary Changelog'
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Changelog | Originary',
     description: 'Product updates, new features, and improvements to Originary.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx'
   }

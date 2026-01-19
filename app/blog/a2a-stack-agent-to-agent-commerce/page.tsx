@@ -6,7 +6,7 @@ import { FileText, ArrowRight, Bot, DollarSign, Shield, Receipt, CheckCircle, Al
 
 export const metadata: Metadata = {
   title: "The A2A Stack: Agent-to-Agent Commerce",
-  description: "How AI agents coordinate, transact, and verify interactions with each other. The A2A stack covers AI policy discovery, HTTP 402 payments, PEAC-Receipts, and provenance for autonomous agent commerce.",
+  description: "How AI agents coordinate, transact, and verify interactions. The A2A stack covers policy discovery, HTTP 402 payments, and PEAC-Receipts.",
   keywords: "A2A, agent-to-agent, agent commerce, AI coordination, PEAC Protocol, HTTP 402, agent receipts, MCP, ACP, agentic web, autonomous agents",
   authors: [{ name: "Jithin Raj & Originary Team" }],
   alternates: { canonical: '/blog/a2a-stack-agent-to-agent-commerce' },
@@ -14,17 +14,17 @@ export const metadata: Metadata = {
     title: "The A2A Stack: Agent-to-Agent Commerce",
     description: "How AI agents coordinate, transact, and verify interactions using PEAC Protocol",
     type: "article",
-    url: "https://www.originary.xyz/blog/a2a-stack-agent-to-agent-commerce/",
+    url: "/blog/a2a-stack-agent-to-agent-commerce/",
     publishedTime: "2025-12-03",
     authors: ["Jithin Raj", "Originary Team"],
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: "summary_large_image",
     title: "The A2A Stack: Agent-to-Agent Commerce",
     description: "How AI agents coordinate, transact, and verify interactions",
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -49,7 +49,7 @@ export default function Page() {
       "name": "Originary",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.originary.xyz/og/originary-logo.png"
+        "url": "https://www.originary.xyz/logo.svg"
       }
     },
     "mainEntityOfPage": "https://www.originary.xyz/blog/a2a-stack-agent-to-agent-commerce/",

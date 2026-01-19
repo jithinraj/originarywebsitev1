@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     title: 'HTTP 402 Payment Required: Machine-Payable APIs',
     description: 'The dormant HTTP status code is finally coming to life. Learn how 402 enables real-time, programmatic payments between AI agents.',
     url: '/learn/http-402-ai-payments',
-    images: ['/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'HTTP 402: Machine-Payable APIs',
     description: 'The dormant HTTP status code enabling real-time AI agent payments - no subscriptions or API keys required.',
-    images: ['/og.jpg'],
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -355,8 +355,8 @@ export default function HTTP402Page() {
                   </p>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-                    <a
-                      href="/blog/http-402-payment-required-for-machine-apis"
+                    <Link
+                      href="/blog/what-is-http-402"
                       style={{
                         display: 'flex',
                         alignItems: 'center',
@@ -382,17 +382,17 @@ export default function HTTP402Page() {
                       </div>
                       <div style={{ flex: 1 }}>
                         <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
-                          HTTP 402: Payment Required for Machine APIs
+                          What is HTTP 402?
                         </h4>
                         <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>
-                          The history and future of the web&apos;s forgotten status code
+                          How PEAC uses 402 for agent payments
                         </p>
                       </div>
                       <ArrowRight size={16} style={{ color: 'var(--gray-400)' }} />
-                    </a>
+                    </Link>
 
-                    <a
-                      href="/blog/building-payable-apis-with-x402"
+                    <Link
+                      href="/blog/from-detection-to-settlement-ai-paywall-peac-http-402"
                       style={{
                         display: 'flex',
                         alignItems: 'center',
@@ -418,14 +418,14 @@ export default function HTTP402Page() {
                       </div>
                       <div style={{ flex: 1 }}>
                         <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
-                          Building Payable APIs with x402
+                          From Detection to Settlement
                         </h4>
                         <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>
-                          Step-by-step implementation guide
+                          Using PEAC to turn AI traffic into revenue
                         </p>
                       </div>
                       <ArrowRight size={16} style={{ color: 'var(--gray-400)' }} />
-                    </a>
+                    </Link>
 
                     <a
                       href="https://www.x402.org"
