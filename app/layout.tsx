@@ -124,6 +124,62 @@ const websiteJsonLd = {
   }
 }
 
+// SiteNavigationElement to influence Google sitelinks
+const siteNavJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: [
+    {
+      '@type': 'SiteNavigationElement',
+      position: 1,
+      name: 'Platform',
+      url: 'https://www.originary.xyz/platform'
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 2,
+      name: 'PEAC Protocol',
+      url: 'https://www.originary.xyz/peac'
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 3,
+      name: 'Products',
+      url: 'https://www.originary.xyz/products'
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 4,
+      name: 'Developers',
+      url: 'https://www.originary.xyz/developers'
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 5,
+      name: 'Declare',
+      url: 'https://www.originary.xyz/declare'
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 6,
+      name: 'Blog',
+      url: 'https://www.originary.xyz/blog'
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 7,
+      name: 'Verify',
+      url: 'https://www.originary.xyz/verify'
+    },
+    {
+      '@type': 'SiteNavigationElement',
+      position: 8,
+      name: 'About',
+      url: 'https://www.originary.xyz/about'
+    }
+  ]
+}
+
 export const metadata: Metadata = {
   title: {
     default: 'Originary | Verify Agent Interactions Instantly',
@@ -192,13 +248,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}>
       <head>
-        <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" rx="64" fill="%23ffffff"/><circle cx="128" cy="128" r="78" fill="%23000000"/><circle cx="128" cy="128" r="48" fill="%23ffffff"/></svg>' />
+        <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" rx="48" fill="%2309090b"/><circle cx="128" cy="128" r="72" fill="none" stroke="%23ffffff" stroke-width="24"/><circle cx="128" cy="128" r="24" fill="%23635BFF"/></svg>' />
+        <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+        <link rel="apple-touch-icon" href="/assets/img/favicon.svg" />
         <link rel="manifest" href="/manifest.json" />
         <Script id="originary-organization-json-ld" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(organizationJsonLd)}
         </Script>
         <Script id="originary-website-json-ld" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(websiteJsonLd)}
+        </Script>
+        <Script id="originary-sitenav-json-ld" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify(siteNavJsonLd)}
         </Script>
       </head>
       <body>

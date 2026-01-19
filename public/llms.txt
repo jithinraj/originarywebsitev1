@@ -10,12 +10,16 @@ Contact: contact@originary.xyz
 
 ## Overview
 
-- [What is Originary?](/what-is-originary) - Introduction to Originary, its purpose, and infrastructure for AI commerce, consent, and compliance
 - [Platform](/platform) - The Originary platform for AI agent interactions
-- [System of Record](/system-of-record) - How Originary serves as the system of record for AI interactions
-- [Context Graphs](/context-graphs) - Understanding context graphs for AI agent transactions
+- [PEAC Protocol](/peac) - Open standard for policy, payments, and verifiable receipts
+- [Products](/products) - All Originary products for verification infrastructure
+- [Developers](/developers) - Technical documentation and CLI quickstart
+- [Declare](/declare) - AI Policy Pack Generator
+- [Blog](/blog) - Technical articles on AI commerce and PEAC Protocol
+- [Verify](/verify) - Validate signed receipts for billing, disputes, and audits
+- [About](/about) - Company mission and how we work
+- [What is Originary?](/what-is-originary) - Introduction to Originary
 - [Originary AI](/originary-ai) - AI-specific capabilities and integrations
-- [About](/about) - Company mission, the seven pillars (Access, Attribution, Consent, Commerce, Compliance, Privacy, Provenance), and how we work
 
 ## Products
 
