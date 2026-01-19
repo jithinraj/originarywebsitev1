@@ -9,6 +9,8 @@ import ProductSuite from '@/components/ProductSuite'
 import ProofSection from '@/components/ProofSection'
 import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
+import { FaqAccordion, FaqJsonLd } from '@/components/faq'
+import { homeFaqs } from '@/content/faqs'
 
 export const metadata: Metadata = {
   title: {
@@ -93,6 +95,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
       />
+      <FaqJsonLd items={homeFaqs} />
       <NavigationHeader />
       <main id="main-content" role="main">
         <NewHero />
@@ -102,6 +105,9 @@ export default function Page() {
         <HowItWorksNew />
         <ProductSuite />
         <ProofSection />
+        <div className="container">
+          <FaqAccordion items={homeFaqs} />
+        </div>
         <FinalCTA />
       </main>
       <Footer />

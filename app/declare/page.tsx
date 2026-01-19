@@ -2,7 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
-import { ArrowRight, Github, FileText, Shield, Code, Terminal, Globe, CheckCircle, AlertTriangle, HelpCircle, Layers } from 'lucide-react'
+import { ArrowRight, Github, FileText, Shield, Code, Terminal, Globe, CheckCircle, AlertTriangle, Layers } from 'lucide-react'
+import { FaqAccordion, FaqJsonLd } from '@/components/faq'
+import { declareFaqs } from '@/content/faqs'
 
 export const metadata: Metadata = {
   title: 'Declare | AI Policy Pack Generator',
@@ -109,31 +111,13 @@ export default function DeclarePage() {
     }
   ]
 
-  const faqItems = [
-    {
-      question: 'Will OpenAI/Google/Anthropic respect my policy?',
-      answer: 'There is no guarantee. Policy files like robots.txt and peac.txt are advisory signals. Bots may or may not honor them. Your enforceable leverage is what you control: HTTP responses, auth, gating, rate limits, and (eventually) 402 challenges with receipts.'
-    },
-    {
-      question: 'Why publish a policy if compliance is not guaranteed?',
-      answer: 'Consistency, legal clarity, and future enforcement. A declared policy (1) reduces the busywork of maintaining multiple conflicting files, (2) provides documented intent for legal disputes, and (3) positions you for enforcement when receipts and 402 challenges become standard.'
-    },
-    {
-      question: 'Does this replace robots.txt?',
-      answer: 'No. peac.txt complements robots.txt. PEAC docs explicitly position coexistence with robots.txt, ai.txt, and llms.txt. Policy Kit can generate a robots-ai snippet you paste into your existing robots.txt.'
-    },
-    {
-      question: 'What if I already have ai.txt or llms.txt?',
-      answer: 'Policy Kit can output compatibility snippets for multiple formats. The goal is one source of truth (peac-policy.yaml) that generates consistent signals across all surfaces.'
-    }
-  ]
-
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <FaqJsonLd items={declareFaqs} />
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
         {/* Hero Section */}
@@ -863,51 +847,11 @@ cp robots-ai-snippet.txt public/`}
         <section className="section" style={{ background: 'var(--white)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-              <h2 style={{
-                fontSize: 'var(--text-3xl)',
-                fontWeight: 700,
-                textAlign: 'center',
-                marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 'var(--space-3)'
-              }}>
-                <HelpCircle size={28} />
-                FAQ
-              </h2>
-              <p style={{
-                fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
-                textAlign: 'center',
-                marginBottom: 'var(--space-10)'
-              }}>
-                Common questions about AI policy and compliance
-              </p>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-                {faqItems.map((item, index) => (
-                  <div key={index} className="card">
-                    <h3 style={{
-                      fontSize: 'var(--text-lg)',
-                      fontWeight: 700,
-                      marginBottom: 'var(--space-3)',
-                      color: 'var(--gray-900)'
-                    }}>
-                      {item.question}
-                    </h3>
-                    <p style={{
-                      fontSize: 'var(--text-base)',
-                      color: 'var(--gray-600)',
-                      lineHeight: 1.7,
-                      margin: 0
-                    }}>
-                      {item.answer}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              <FaqAccordion
+                items={declareFaqs}
+                title="Policy Kit FAQ"
+                subtitle="Common questions about AI policy and compliance"
+              />
             </div>
           </div>
         </section>

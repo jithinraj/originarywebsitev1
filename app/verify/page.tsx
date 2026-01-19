@@ -6,6 +6,8 @@ import { useSearchParams } from 'next/navigation'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import { CheckCircle2, XCircle, AlertCircle } from 'lucide-react'
+import { FaqAccordion, FaqJsonLd } from '@/components/faq'
+import { verifyFaqs } from '@/content/faqs'
 
 function VerifyContent() {
   const searchParams = useSearchParams()
@@ -255,9 +257,13 @@ function VerifyContent() {
                 Learn more in our <Link href="/docs/receipts" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>documentation</Link>.
               </p>
             </div>
+
+            {/* FAQ Section */}
+            <FaqAccordion items={verifyFaqs} title="Verification FAQ" />
           </div>
         </section>
       </main>
+      <FaqJsonLd items={verifyFaqs} />
       <Footer />
     </div>
   )

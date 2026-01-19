@@ -3,6 +3,8 @@ import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import { CheckCircle, Github, Download, BookOpen, Code, Shield, Activity, Layers } from 'lucide-react'
+import { FaqAccordion, FaqJsonLd } from '@/components/faq'
+import { peacFaqs } from '@/content/faqs'
 
 export const metadata: Metadata = {
   title: 'PEAC Protocol | Open Protocol for the Agentic Web',
@@ -50,6 +52,7 @@ export default function PeacPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <FaqJsonLd items={peacFaqs} />
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
         {/* Hero */}
@@ -629,6 +632,19 @@ export default function PeacPage() {
                   See more →
                 </div>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="section" style={{ background: 'var(--gray-50)' }}>
+          <div className="container">
+            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+              <FaqAccordion
+                items={peacFaqs}
+                title="PEAC Protocol FAQ"
+                subtitle="Common questions about the open standard"
+              />
             </div>
           </div>
         </section>
