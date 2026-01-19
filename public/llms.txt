@@ -99,6 +99,14 @@ Open standard for AI agent transactions (Apache-2.0). Current version: 0.9.27
 - [HTTP 402 for AI Payments](/learn/http-402-ai-payments) - HTTP 402 Payment Required for AI
 - [AI Consent & Attribution](/learn/ai-consent-and-attribution) - Consent and attribution in AI systems
 
+## FAQ Sections
+
+Key pages include FAQ sections with direct answers for common questions:
+- Homepage (/) - What is Originary, PEAC receipts, verification basics
+- Verify (/verify) - Token format, signature meaning, self-hosting
+- Declare (/declare) - Policy Kit, compliance, policy/receipts relationship
+- PEAC (/peac) - Protocol basics, open source, conformance, interoperability
+
 ## Blog
 
 - [All Posts](/blog) - Technical articles on AI commerce, HTTP 402, and PEAC Protocol
