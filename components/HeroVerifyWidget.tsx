@@ -184,7 +184,7 @@ export default function HeroVerifyWidget() {
         </button>
       </div>
 
-      <div aria-live="polite" aria-atomic="true" className="result-region">
+      <div aria-live="polite" aria-atomic="true" className="result-region" data-nosnippet>
         {result.status === 'success' && result.details && (
           <div className="result success" role="status">
             <div className="result-header">

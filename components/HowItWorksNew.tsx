@@ -129,7 +129,7 @@ export default function HowItWorksNew() {
               </div>
 
               {expandedStep === i && (
-                <div className="card-code">
+                <div className="card-code" data-nosnippet>
                   <pre className="step-code-block">
                     <code>{step.code}</code>
                   </pre>
