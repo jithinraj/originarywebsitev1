@@ -169,7 +169,7 @@ function FooterNavGroup({ group }: { group: FooterGroup }) {
     <nav className={`footer-nav-group footer-nav-${group.id}`} aria-label={`${group.title} links`}>
       {/* Desktop: static display */}
       <div className="footer-nav-desktop">
-        <h4 style={titleStyle}>{group.title}</h4>
+        <span style={titleStyle}>{group.title}</span>
         {listContent}
       </div>
       {/* Mobile: collapsible accordion */}

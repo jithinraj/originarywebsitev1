@@ -9,8 +9,8 @@ const standards = [
   { id: 'a2a', label: 'A2A', href: '/integrations/a2a', desc: 'Agent-to-Agent', Icon: ArrowLeftRight },
   { id: 'acp', label: 'ACP', href: '/integrations/acp', desc: 'Agentic Commerce Protocol', Icon: ShoppingCart },
   { id: 'aipref', label: 'AIPREF', href: '/integrations/aipref', desc: 'IETF Internet-Draft', Icon: FileText },
-  { id: 'cloudflare', label: 'Cloudflare', href: '/integrations/cloudflare', desc: 'Edge deployment', Icon: Cloud },
-  { id: 'vercel', label: 'Vercel', href: '/integrations/vercel', desc: 'Edge functions', Icon: Triangle },
+  { id: 'cloudflare', label: 'Cloudflare', href: '/docs/deploy/cloudflare-worker', desc: 'Edge deployment', Icon: Cloud },
+  { id: 'vercel', label: 'Vercel', href: '/docs/deploy/vercel', desc: 'Edge functions', Icon: Triangle },
 ]
 
 export default function StandardsCompatibility() {

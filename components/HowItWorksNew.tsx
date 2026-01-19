@@ -371,12 +371,12 @@ export default function HowItWorksNew() {
           font-family: var(--font-mono);
           font-size: 11px;
           font-weight: 700;
-          color: var(--gray-400);
+          color: var(--gray-600);
           letter-spacing: 0.1em;
           background: var(--white);
           padding: 4px 10px;
           border-radius: var(--radius-full);
-          border: 1px solid var(--gray-100);
+          border: 1px solid var(--gray-200);
         }
 
         .step-illustration {
@@ -433,7 +433,7 @@ export default function HowItWorksNew() {
         .card-expand-hint {
           font-size: var(--text-xs);
           font-weight: 500;
-          color: var(--gray-400);
+          color: var(--gray-600);
           text-align: center;
           padding: var(--space-3) var(--space-6);
           margin: 0;
