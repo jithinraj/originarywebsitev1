@@ -8,8 +8,12 @@ export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'Terms of Service for Originary - commercial tools implementing receipts for the agentic web.',
   robots: {
-    index: false,
+    index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
   alternates: {
     canonical: '/terms',

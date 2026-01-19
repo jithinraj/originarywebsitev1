@@ -35,14 +35,61 @@ export default function HeroVerifyWidget() {
     return () => mediaQuery.removeEventListener('change', handler)
   }, [])
 
-  // Auto-verify the sample receipt on load (only if motion is allowed)
+  // Auto-verify the sample receipt on load with looping (only if motion is allowed)
   useEffect(() => {
     if (prefersReducedMotion) return
 
-    const timer = setTimeout(() => {
-      handleVerify()
-    }, 2000)
-    return () => clearTimeout(timer)
+    let isActive = true
+
+    const runLoop = async () => {
+      // Initial delay before first verification
+      await new Promise(r => setTimeout(r, 2000))
+      if (!isActive) return
+
+      // Run verification loop
+      while (isActive) {
+        // Trigger verification
+        setResult({ status: 'verifying' })
+        await new Promise(r => setTimeout(r, 800))
+        if (!isActive) return
+
+        // Show success
+        try {
+          const parts = SAMPLE_RECEIPT.token.split('.')
+          const header = JSON.parse(atob(parts[0]))
+          const payload = JSON.parse(atob(parts[1]))
+
+          setResult({
+            status: 'success',
+            details: {
+              algorithm: header.alg || 'EdDSA',
+              typ: header.typ || 'peac-receipt/0.1',
+              keyId: header.kid || 'unknown',
+              issuer: payload.iss || 'unknown',
+              resource: payload.resource || 'unknown',
+              decision: payload.decision || 'unknown',
+              timestamp: payload.iat ? new Date(payload.iat * 1000).toISOString() : 'unknown'
+            }
+          })
+        } catch {
+          break
+        }
+
+        // Show success for 6 seconds
+        await new Promise(r => setTimeout(r, 6000))
+        if (!isActive) return
+
+        // Reset to idle
+        setResult({ status: 'idle' })
+
+        // Wait 3 seconds before next loop
+        await new Promise(r => setTimeout(r, 3000))
+      }
+    }
+
+    runLoop()
+
+    return () => { isActive = false }
   }, [prefersReducedMotion])
 
   const handleVerify = () => {

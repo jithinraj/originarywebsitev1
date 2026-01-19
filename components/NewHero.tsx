@@ -44,18 +44,19 @@ export default function NewHero() {
             </Link>
           </div>
 
-          <p className="hero-clarifier">
-            Originary maintains PEAC and ships production tools to issue and verify interaction records.
-          </p>
-
-          <div className="evidence-links">
-            <a href="/peac" className="evidence-link">Spec</a>
-            <span className="evidence-sep" aria-hidden="true" />
-            <a href="/conformance" className="evidence-link">Conformance</a>
-            <span className="evidence-sep" aria-hidden="true" />
-            <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="evidence-link">GitHub</a>
-            <span className="evidence-sep" aria-hidden="true" />
-            <a href="/security" className="evidence-link">Security</a>
+          <div className="hero-footer-strip">
+            <p className="strip-brand">
+              ORIGINARY&trade;
+              <span className="strip-dot">&middot;</span>
+              Open software for macOS, Windows, Linux
+              <span className="strip-dot">&middot;</span>
+              <a href="/downloads" className="strip-link-inline">Download</a>
+              <span className="strip-dot">&middot;</span>
+              <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">Source code</a>
+            </p>
+            <p className="strip-clarifier">
+              Originary maintains PEAC and ships production tools to issue and verify interaction records.
+            </p>
           </div>
 
         </div>
@@ -151,8 +152,7 @@ export default function NewHero() {
         .hero-content > *:nth-child(3) { animation-delay: 0.3s; }  /* Problem */
         .hero-content > *:nth-child(4) { animation-delay: 0.4s; }  /* Solution */
         .hero-content > *:nth-child(5) { animation-delay: 0.5s; }  /* CTAs */
-        .hero-content > *:nth-child(6) { animation-delay: 0.6s; }  /* Clarifier */
-        .hero-content > *:nth-child(7) { animation-delay: 0.7s; }  /* Evidence links */
+        .hero-content > *:nth-child(6) { animation-delay: 0.6s; }  /* Footer strip */
 
         .hero-badge {
           display: inline-flex;
@@ -214,49 +214,40 @@ export default function NewHero() {
           margin: 0;
         }
 
-        .hero-clarifier {
-          font-size: var(--text-sm);
-          font-weight: 500;
-          line-height: 1.5;
-          color: var(--gray-400);
-          max-width: 560px;
-          margin: 0;
+        .hero-footer-strip {
+          margin-top: var(--space-6);
         }
 
-        .hero-clarifier :global(.strip-link) {
-          color: var(--gray-500);
-          text-decoration: none;
-          border-bottom: 1px solid transparent;
-          transition: border-color var(--duration-150) ease, color var(--duration-150) ease;
-        }
-
-        .evidence-links {
+        .strip-brand {
           display: flex;
           align-items: center;
           gap: var(--space-2);
           flex-wrap: wrap;
+          margin: 0;
+          font-size: 11px;
+          color: var(--gray-400);
+          letter-spacing: 0.01em;
         }
 
-        .evidence-links :global(.evidence-link) {
-          font-size: var(--text-xs);
-          font-weight: 500;
+        .strip-dot {
+          color: var(--gray-300);
+        }
+
+        .strip-brand :global(.strip-link-inline) {
           color: var(--gray-500);
           text-decoration: none;
-          padding: var(--space-1) var(--space-2);
-          border-radius: var(--radius-md);
-          transition: color var(--duration-150) ease, background var(--duration-150) ease;
+          transition: color var(--duration-150) ease;
         }
 
-        .evidence-links :global(.evidence-link:hover) {
+        .strip-brand :global(.strip-link-inline:hover) {
           color: var(--gray-700);
-          background: var(--gray-100);
         }
 
-        .evidence-sep {
-          width: 3px;
-          height: 3px;
-          border-radius: var(--radius-full);
-          background: var(--gray-300);
+        .strip-clarifier {
+          font-size: 11px;
+          color: var(--gray-400);
+          margin: var(--space-2) 0 0;
+          line-height: 1.5;
         }
 
         .hero-actions {
@@ -351,9 +342,12 @@ export default function NewHero() {
           }
 
           .hero-problem,
-          .hero-solution,
-          .hero-clarifier {
+          .hero-solution {
             max-width: 560px;
+          }
+
+          .strip-brand {
+            justify-content: center;
           }
 
           .hero-actions {
@@ -406,8 +400,13 @@ export default function NewHero() {
             font-size: 15px;
           }
 
-          .hero-clarifier {
-            font-size: 12px;
+          .strip-brand {
+            font-size: 10px;
+          }
+
+          .strip-clarifier {
+            font-size: 10px;
+            text-align: center;
           }
         }
 
@@ -454,6 +453,14 @@ export default function NewHero() {
 
           .hero-solution {
             font-size: 14px;
+          }
+
+          .strip-brand {
+            font-size: 9px;
+          }
+
+          .strip-clarifier {
+            font-size: 9px;
           }
 
           .widget-wrapper {
@@ -503,8 +510,15 @@ export default function NewHero() {
             font-size: 13px;
           }
 
-          .hero-clarifier {
-            font-size: 11px;
+          .strip-brand {
+            font-size: 9px;
+            flex-direction: column;
+            gap: 4px;
+            text-align: center;
+          }
+
+          .strip-clarifier {
+            font-size: 9px;
           }
 
           .widget-wrapper {

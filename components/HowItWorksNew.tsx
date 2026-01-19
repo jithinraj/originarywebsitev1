@@ -308,35 +308,40 @@ export default function HowItWorksNew() {
         .steps-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 28px;
+          gap: 24px;
           margin-bottom: 72px;
         }
 
         .step-card {
           position: relative;
-          padding: var(--space-8);
+          padding: 0;
           background: var(--white);
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          border-radius: var(--radius-2xl);
+          border: 1px solid var(--gray-100);
+          border-radius: 20px;
           cursor: pointer;
-          transition: all var(--duration-500) cubic-bezier(0.16, 1, 0.3, 1);
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           opacity: 0;
           transform: translateY(40px);
           overflow: hidden;
-          box-shadow: var(--shadow-sm);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
         }
 
         .step-card.visible {
           opacity: 1;
           transform: translateY(0);
-          transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s ease, box-shadow 0.5s ease;
+          transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
           transition-delay: var(--delay);
         }
 
         .step-card:hover {
-          border-color: rgba(99, 91, 255, 0.15);
-          box-shadow: 0 12px 40px rgba(99, 91, 255, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
-          transform: translateY(-4px);
+          border-color: var(--gray-200);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+          transform: translateY(-3px);
+        }
+
+        .step-card:focus-visible {
+          outline: 2px solid var(--brand-primary);
+          outline-offset: 2px;
         }
 
         .card-glow {
@@ -344,10 +349,9 @@ export default function HowItWorksNew() {
           top: 0;
           left: 0;
           right: 0;
-          height: 4px;
+          height: 3px;
           opacity: 0;
-          transition: opacity 0.5s ease;
-          border-radius: 20px 20px 0 0;
+          transition: opacity 0.3s ease;
         }
 
         .step-card:hover .card-glow {
@@ -356,106 +360,116 @@ export default function HowItWorksNew() {
 
         .card-header {
           display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 16px;
-          margin-bottom: 24px;
+          align-items: center;
+          justify-content: space-between;
+          padding: var(--space-5) var(--space-6);
+          background: linear-gradient(180deg, var(--gray-50) 0%, rgba(250, 250, 250, 0) 100%);
+          border-bottom: 1px solid var(--gray-100);
         }
 
         .step-num {
           font-family: var(--font-mono);
-          font-size: var(--text-sm);
+          font-size: 11px;
           font-weight: 700;
           color: var(--gray-400);
-          letter-spacing: 0.08em;
+          letter-spacing: 0.1em;
+          background: var(--white);
+          padding: 4px 10px;
+          border-radius: var(--radius-full);
+          border: 1px solid var(--gray-100);
         }
 
         .step-illustration {
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          width: 56px;
+          height: 56px;
+          border-radius: 14px;
+          background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+          border: 1px solid var(--gray-100);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .step-card:hover .step-illustration {
-          transform: scale(1.05);
+          background: linear-gradient(135deg, rgba(99, 91, 255, 0.06) 0%, rgba(99, 91, 255, 0.1) 100%);
+          border-color: rgba(99, 91, 255, 0.15);
+          transform: scale(1.02);
         }
 
         .card-body {
           position: relative;
+          padding: var(--space-6);
         }
 
         .step-title {
-          font-size: var(--text-2xl);
+          font-size: var(--text-xl);
           font-weight: 700;
           color: var(--gray-950);
-          margin: 0 0 var(--space-2);
-          letter-spacing: -0.03em;
+          margin: 0 0 6px;
+          letter-spacing: -0.02em;
         }
 
         .step-tagline {
-          font-size: var(--text-sm);
+          font-size: var(--text-xs);
           font-weight: 600;
-          color: var(--gray-500);
-          margin: 0 0 var(--space-4);
-          letter-spacing: 0.01em;
+          color: var(--brand-primary);
+          margin: 0 0 var(--space-3);
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
         }
 
         .step-desc {
           font-size: var(--text-sm);
-          line-height: 1.7;
+          line-height: 1.65;
           color: var(--gray-600);
           margin: 0;
         }
 
         .card-indicator {
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          width: 4px;
-          opacity: 0;
-          transition: opacity 0.4s ease;
-          border-radius: 20px 0 0 20px;
-        }
-
-        .step-card:hover .card-indicator {
-          opacity: 1;
+          display: none;
         }
 
         .card-expand-hint {
           font-size: var(--text-xs);
+          font-weight: 500;
           color: var(--gray-400);
           text-align: center;
-          margin-top: var(--space-4);
-          opacity: 0;
-          transition: opacity var(--duration-300) ease;
+          padding: var(--space-3) var(--space-6);
+          margin: 0;
+          background: var(--gray-50);
+          border-top: 1px solid var(--gray-100);
+          opacity: 1;
+          transition: background var(--duration-200) ease, color var(--duration-200) ease;
         }
 
         .step-card:hover .card-expand-hint {
-          opacity: 1;
+          background: linear-gradient(135deg, rgba(99, 91, 255, 0.04) 0%, rgba(99, 91, 255, 0.06) 100%);
+          color: var(--brand-primary);
         }
 
         .step-card.expanded .card-expand-hint {
-          opacity: 0.7;
+          color: var(--gray-500);
         }
 
         .card-code {
-          margin-top: 20px;
-          padding-top: 20px;
-          border-top: 1px solid rgba(0, 0, 0, 0.06);
+          margin: 0;
+          padding: var(--space-5) var(--space-6);
+          background: var(--gray-50);
+          border-top: 1px solid var(--gray-100);
         }
 
         .step-code-block {
-          background: var(--gray-900);
-          border-radius: var(--radius-lg);
+          background: linear-gradient(180deg, var(--gray-900) 0%, var(--gray-950) 100%);
+          border-radius: 12px;
           padding: var(--space-4);
           margin: 0 0 var(--space-4);
           overflow-x: auto;
           font-family: var(--font-mono);
-          font-size: var(--text-xs);
-          line-height: 1.6;
+          font-size: 11px;
+          line-height: 1.7;
           color: var(--gray-200);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
         }
 
         .step-code-block code {
@@ -468,18 +482,18 @@ export default function HowItWorksNew() {
           justify-content: center;
           gap: var(--space-2);
           width: 100%;
-          padding: var(--space-3) var(--space-5);
+          padding: 10px var(--space-5);
           font-size: var(--text-sm);
           font-weight: 600;
           color: var(--white);
-          background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
-          border-radius: var(--radius-lg);
+          background: var(--gray-950);
+          border-radius: 10px;
           text-decoration: none;
-          transition: all var(--duration-300) ease;
+          transition: all var(--duration-200) ease;
         }
 
         .step-card :global(.run-demo-btn:hover) {
-          background: linear-gradient(135deg, var(--brand-primary-dark) 0%, var(--brand-primary-dark) 100%);
+          background: var(--gray-800);
           transform: translateY(-1px);
         }
 
@@ -487,9 +501,14 @@ export default function HowItWorksNew() {
           grid-column: span 1;
         }
 
+        .step-card.expanded .card-expand-hint {
+          background: var(--gray-50);
+          border-top: none;
+        }
+
         @media (min-width: 901px) {
           .step-card.expanded {
-            padding-bottom: 36px;
+            padding-bottom: 0;
           }
         }
 
@@ -689,8 +708,20 @@ export default function HowItWorksNew() {
             gap: 16px;
           }
 
-          .step-card {
-            padding: 28px;
+          .card-header {
+            padding: var(--space-4) var(--space-5);
+          }
+
+          .card-body {
+            padding: var(--space-5);
+          }
+
+          .card-code {
+            padding: var(--space-4) var(--space-5);
+          }
+
+          .card-expand-hint {
+            padding: var(--space-3) var(--space-5);
           }
 
           .how-cta {
@@ -733,23 +764,30 @@ export default function HowItWorksNew() {
 
           .steps-grid {
             margin-bottom: 48px;
+            gap: 12px;
           }
 
-          .step-card {
-            padding: 24px;
+          .step-illustration {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
           }
 
           .step-title {
-            font-size: 22px;
+            font-size: 18px;
           }
 
           .step-tagline {
-            font-size: 13px;
+            font-size: 10px;
           }
 
           .step-desc {
             font-size: 14px;
-            line-height: 1.65;
+            line-height: 1.6;
+          }
+
+          .card-expand-hint {
+            font-size: 11px;
           }
 
           .code-section {
@@ -794,26 +832,41 @@ export default function HowItWorksNew() {
             font-size: 26px;
           }
 
-          .step-card {
-            padding: 20px;
-          }
-
           .card-header {
-            margin-bottom: 20px;
+            padding: var(--space-4);
           }
 
-          .step-icon {
+          .card-body {
+            padding: var(--space-4);
+          }
+
+          .card-code {
+            padding: var(--space-4);
+          }
+
+          .step-num {
+            font-size: 10px;
+            padding: 3px 8px;
+          }
+
+          .step-illustration {
             width: 44px;
             height: 44px;
+            border-radius: 10px;
           }
 
           .step-title {
-            font-size: 20px;
+            font-size: 17px;
           }
 
           .step-desc {
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.6;
+          }
+
+          .step-code-block {
+            font-size: 10px;
+            padding: var(--space-3);
           }
 
           .code-section {
