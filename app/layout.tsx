@@ -252,6 +252,11 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
         <link rel="apple-touch-icon" href="/assets/img/favicon.svg" />
         <link rel="manifest" href="/manifest.json" />
+        {/* Performance: DNS prefetch and preconnect for external resources */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
         <Script id="originary-organization-json-ld" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(organizationJsonLd)}
         </Script>

@@ -1,36 +1,14 @@
-# Search engines
-User-agent: Googlebot
-Allow: /
+# robots.txt - RFC 9309 compliant
+# https://www.originary.xyz
 
-User-agent: Bingbot
-Allow: /
-
-# SEO Analytics bots
-User-agent: AhrefsBot
-Allow: /
-
-User-agent: SemrushBot
-Allow: /
-
-User-agent: DotBot
-Allow: /
-
-# LLM bots
-User-agent: GPTBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-# All others
+# Allow all crawlers full access
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemap location
 Sitemap: https://www.originary.xyz/sitemap.xml
 
-# Host
-Host: https://www.originary.xyz
+# AI agent discovery (emerging standard)
+# Policy: /.well-known/peac.txt
+# Preferences: /.well-known/aipref.json
+# LLM context: /llms.txt
