@@ -8,6 +8,9 @@ Allow: /
 # Sitemap location
 Sitemap: https://www.originary.xyz/sitemap.xml
 
+# IndexNow for instant indexing (Bing, Yandex, Seznam, Naver)
+# Key: /bb3c37e50292044ea1d460e7219610ec.txt
+
 # AI agent discovery (emerging standard)
 # Policy: /.well-known/peac.txt
 # Preferences: /.well-known/aipref.json
