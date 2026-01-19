@@ -2,28 +2,28 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: { absolute: 'PEAC Protocol Trace | Originary' },
-  description: 'Watch a PEAC v0.9.27 transaction: policy discovery, HTTP 402 challenge, payment, and signed receipt verification.',
+  description: 'Watch a complete PEAC v0.9.27 transaction end to end. Agent discovers policy via peac.txt, receives HTTP 402 challenge, pays via x402/stripe, and receives a signed PEAC-Receipt verifiable offline with JWKS.',
   keywords: 'PEAC protocol, HTTP 402, verifiable receipts, policy discovery, x402, JWKS verification, agent transactions, aipref, peac.txt',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
     title: 'PEAC Protocol Trace - HTTP 402 Transaction Demo',
     description: 'Watch a complete PEAC v0.9.27 transaction end to end. Agent discovers policy, receives 402 challenge, pays, and receives a signed receipt verifiable offline.',
-    url: '/demo',
-    images: ['/og.jpg'],
+    url: 'https://www.originary.xyz/demo',
+    images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'PEAC Protocol Trace - HTTP 402 Transaction Demo',
     description: 'Watch a complete PEAC v0.9.27 transaction end to end. Agent discovers policy, receives 402 challenge, pays, and receives a signed receipt verifiable offline.',
-    images: ['/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {
-    canonical: '/demo'
+    canonical: 'https://www.originary.xyz/demo'
   },
 }
 
@@ -43,7 +43,7 @@ const jsonLd = {
     name: 'Originary',
     logo: {
       '@type': 'ImageObject',
-      url: '/og/originary-logo.png'
+      url: 'https://www.originary.xyz/og/originary-logo.png'
     }
   },
   mainEntityOfPage: {

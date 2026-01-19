@@ -21,7 +21,7 @@ export default function ReceiptsPage() {
   const features = [
     {
       icon: <Lock size={24} />,
-      title: 'Signature Verified',
+      title: 'Cryptographically Signed',
       description: 'JWS payloads with Ed25519 signatures. Tamper-evident by design.',
       color: '#635BFF'
     },
@@ -101,7 +101,7 @@ export default function ReceiptsPage() {
                 }}
               >
                 Originary Receipts:
-                <span className="receipts-headline-gradient"> verifiable records for every agent interaction</span>
+                <span className="receipts-headline-gradient"> cryptographic proof for every AI interaction</span>
               </h1>
 
               <p
@@ -112,8 +112,8 @@ export default function ReceiptsPage() {
                   transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
                 }}
               >
-                Originary generates tamper-evident records of policy, consent, attribution, and payment events.
-                Audit usage, resolve disputes, and demonstrate compliance with verifiable evidence.
+                Originary generates tamper-evident proofs of policy, consent, attribution, and payment events.
+                Audit usage, resolve disputes, and demonstrate compliance with cryptographic certainty.
               </p>
 
               <div
@@ -243,13 +243,13 @@ export default function ReceiptsPage() {
                     <span className="dot green" />
                   </div>
                   <span className="receipts-code-filename">receipt.json</span>
-                  <span className="receipts-code-badge">PEAC v0.10.0</span>
+                  <span className="receipts-code-badge">PEAC v0.9.27</span>
                 </div>
                 <pre className="receipts-code-body">
                   <code>{`{
   `}<span className="code-key">{`"header"`}</span>{`: {
     `}<span className="code-key">{`"alg"`}</span>{`: `}<span className="code-string">{`"EdDSA"`}</span>{`,
-    `}<span className="code-key">{`"typ"`}</span>{`: `}<span className="code-string">{`"peac-receipt/0.1"`}</span>{`,
+    `}<span className="code-key">{`"typ"`}</span>{`: `}<span className="code-string">{`"peac.receipt/0.9"`}</span>{`,
     `}<span className="code-key">{`"kid"`}</span>{`: `}<span className="code-string">{`"originary-2025-01"`}</span>{`
   },
   `}<span className="code-key">{`"payload"`}</span>{`: {
@@ -257,7 +257,7 @@ export default function ReceiptsPage() {
     `}<span className="code-key">{`"iat"`}</span>{`: `}<span className="code-number">{`1734048000`}</span>{`,
     `}<span className="code-key">{`"jti"`}</span>{`: `}<span className="code-string">{`"rcpt_7f92ab31"`}</span>{`,
     `}<span className="code-key">{`"peac"`}</span>{`: {
-      `}<span className="code-key">{`"version"`}</span>{`: `}<span className="code-string">{`"0.10.0"`}</span>{`,
+      `}<span className="code-key">{`"version"`}</span>{`: `}<span className="code-string">{`"0.9.27"`}</span>{`,
       `}<span className="code-key">{`"resource"`}</span>{`: `}<span className="code-string">{`"/api/content"`}</span>{`,
       `}<span className="code-key">{`"policy_hash"`}</span>{`: `}<span className="code-string">{`"sha256:9f3c..."`}</span>{`
     },
@@ -358,7 +358,7 @@ export default function ReceiptsPage() {
             <div className="cta-card receipts-cta-card">
               <div className="receipts-cta-glow" />
               <h2>Ready to add Originary Receipts?</h2>
-              <p>Start generating verifiable records for every agent interaction with Originary.</p>
+              <p>Start generating cryptographic proofs for every AI interaction with Originary.</p>
               <div className="receipts-cta-buttons">
                 <Link href="/developers" className="btn btn-lg btn-primary">
                   <span>Start Building</span>

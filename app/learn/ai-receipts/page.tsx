@@ -5,23 +5,23 @@ import Link from 'next/link'
 import { Receipt, ArrowLeft, CheckCircle, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'AI Receipts: Verifiable Records for Agent Interactions',
-  description: 'PEAC-Receipt is the JWS-signed standard for proving AI agent interactions. Learn how verifiable receipts enable billing and compliance.',
-  keywords: 'AI receipts explained, PEAC-Receipt format, verifiable receipts AI, signed receipts agents, JWS signed receipts, agent audit trail, AI compliance receipts, digital receipt standard, agent billing proof',
+  title: 'AI Receipts Explained: Cryptographic Proof for Agent Interactions',
+  description: 'PEAC-Receipt is the JWS-signed standard for proving AI agent interactions. Learn how cryptographic receipts enable billing, compliance, attribution, and dispute resolution in the agent economy.',
+  keywords: 'AI receipts explained, PEAC-Receipt format, verifiable receipts AI, cryptographic proof agents, JWS signed receipts, agent audit trail, AI compliance receipts, digital receipt standard, agent billing proof',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
-    title: 'AI Receipts: Verifiable Records for Agent Interactions',
-    description: 'PEAC-Receipt is the JWS-signed standard for proving AI agent interactions. The complete guide to verifiable receipts.',
-    url: '/learn/ai-receipts',
-    images: ['/og.jpg'],
+    title: 'AI Receipts Explained: Cryptographic Proof for Agent Interactions',
+    description: 'PEAC-Receipt is the JWS-signed standard for proving AI agent interactions. The complete guide to cryptographic receipts.',
+    url: 'https://www.originary.xyz/learn/ai-receipts',
+    images: ['https://www.originary.xyz/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AI Receipts Explained | PEAC-Receipt Guide',
     description: 'The JWS-signed standard for proving AI agent interactions. Essential for billing, compliance, and disputes.',
-    images: ['/og.jpg'],
+    images: ['https://www.originary.xyz/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -46,7 +46,7 @@ export default function AIReceiptsPage() {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "AI Receipts",
-    "description": "Verifiable records of agent interactions - for compliance, billing, and dispute resolution",
+    "description": "Cryptographic proof of agent interactions - for compliance, billing, and dispute resolution",
     "author": { "@type": "Organization", "name": "Originary" },
     "publisher": { "@type": "Organization", "name": "Originary", "url": "https://www.originary.xyz" },
     "mainEntityOfPage": "https://www.originary.xyz/learn/ai-receipts"
@@ -115,7 +115,7 @@ export default function AIReceiptsPage() {
                 color: 'var(--gray-600)',
                 marginBottom: 'var(--space-6)'
               }}>
-                Signed, verifiable records of agent interactions - the foundation for billing, compliance, and dispute resolution.
+                Cryptographically signed proof of agent interactions - the foundation for billing, compliance, and dispute resolution.
               </p>
 
               <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-400)' }}>
@@ -212,7 +212,7 @@ export default function AIReceiptsPage() {
                     What is a Receipt?
                   </h2>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-4)' }}>
-                    An <strong>AI receipt</strong> (or PEAC-Receipt) is a signed JSON object that proves what happened during an agent interaction. Just like a physical receipt from a store, it records who transacted, what was exchanged, when it happened, and under what terms.
+                    An <strong>AI receipt</strong> (or PEAC-Receipt) is a cryptographically signed JSON object that proves what happened during an agent interaction. Just like a physical receipt from a store, it records who transacted, what was exchanged, when it happened, and under what terms.
                   </p>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
                     The key difference: AI receipts are machine-readable, tamper-proof, and verifiable by anyone with the issuer&apos;s public key - no phone call to customer service required.
@@ -240,7 +240,7 @@ export default function AIReceiptsPage() {
                     <div>
                       <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Audit trails regulators accept</h4>
                       <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
-                        Timestamped, tamper-evident records of every agent action. Regulatory audit preparation becomes straightforward when you can produce signed receipts on demand.
+                        Timestamped, tamper-evident records of every agent action. GDPR, SOC 2, EU AI Act compliance becomes straightforward when you can produce signed receipts on demand.
                       </p>
                     </div>
                     <div>
@@ -319,7 +319,7 @@ export default function AIReceiptsPage() {
                     {[
                       { term: 'API providers', def: 'Issue receipts to prove service delivery; resolve billing disputes instantly' },
                       { term: 'Content platforms', def: 'Track AI consumption of licensed content with verifiable attribution' },
-                      { term: 'Enterprise AI', def: 'Maintain audit trails for regulatory review and internal governance' },
+                      { term: 'Enterprise AI', def: 'Maintain audit trails for regulatory compliance (GDPR, SOC2, etc.)' },
                       { term: 'Agent frameworks', def: 'Collect receipts to track costs and prove work completion' }
                     ].map((item, i) => (
                       <li key={i} style={{

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Why PEAC Protocol | Open Standard for Agentic Commerce',
     description: 'PEAC Protocol provides verifiable receipts, policy discovery, and payment handling for AI agent interactions.',
-    url: '/why-peac',
+    url: 'https://www.originary.xyz/why-peac',
     siteName: 'Originary',
     type: 'website',
     images: ['/og.jpg'],
@@ -31,12 +31,7 @@ export const metadata: Metadata = {
 }
 
 export default function WhyPeacPage() {
-  const comparisonData: Array<{
-    feature: string
-    peac: boolean | 'partial'
-    proprietary: boolean | 'partial'
-    custom: boolean | 'partial'
-  }> = [
+  const comparisonData = [
     { feature: 'Open source (Apache-2.0)', peac: true, proprietary: false, custom: false },
     { feature: 'Verifiable receipts (JWS)', peac: true, proprietary: false, custom: 'partial' },
     { feature: 'Offline verification', peac: true, proprietary: false, custom: false },
@@ -225,28 +220,28 @@ export default function WhyPeacPage() {
                         {row.feature}
                       </td>
                       <td style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', background: 'rgba(99, 91, 255, 0.02)' }}>
-                        {row.peac === 'partial' ? (
-                          <span style={{ color: 'var(--gray-400)' }}>Partial</span>
-                        ) : row.peac ? (
+                        {row.peac === true ? (
                           <CheckCircle size={20} style={{ color: '#22C55E' }} />
+                        ) : row.peac === 'partial' ? (
+                          <span style={{ color: 'var(--gray-400)' }}>Partial</span>
                         ) : (
                           <XCircle size={20} style={{ color: 'var(--gray-300)' }} />
                         )}
                       </td>
                       <td style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)' }}>
-                        {row.proprietary === 'partial' ? (
-                          <span style={{ color: 'var(--gray-400)' }}>Partial</span>
-                        ) : row.proprietary ? (
+                        {row.proprietary === true ? (
                           <CheckCircle size={20} style={{ color: '#22C55E' }} />
+                        ) : row.proprietary === 'partial' ? (
+                          <span style={{ color: 'var(--gray-400)' }}>Partial</span>
                         ) : (
                           <XCircle size={20} style={{ color: 'var(--gray-300)' }} />
                         )}
                       </td>
                       <td style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)' }}>
-                        {row.custom === 'partial' ? (
-                          <span style={{ color: 'var(--gray-400)' }}>Partial</span>
-                        ) : row.custom ? (
+                        {row.custom === true ? (
                           <CheckCircle size={20} style={{ color: '#22C55E' }} />
+                        ) : row.custom === 'partial' ? (
+                          <span style={{ color: 'var(--gray-400)' }}>Partial</span>
                         ) : (
                           <XCircle size={20} style={{ color: 'var(--gray-300)' }} />
                         )}

@@ -67,13 +67,13 @@ const TRACE_STEPS = [
 ]
 
 const DECODED_RECEIPT = {
-  typ: 'peac-receipt/0.1',
+  typ: 'peac.receipt/0.9',
   iss: 'https://www.originary.xyz',
   sub: 'https://www.originary.xyz/demo/paid-resource',
   iat: 1734084000,
   policy_hash: 'sha256-9f3c8a2b1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a',
   aipref: {
-    url: '/.well-known/aipref.json',
+    url: 'https://www.originary.xyz/.well-known/aipref.json',
     retrieved_at: 1734084000,
     hash: 'sha256-a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2'
   },
@@ -721,7 +721,7 @@ function ReceiptTypewriter({
   return (
     <div className="receipt-typewriter">
       <div className="receipt-header">
-        <span className="receipt-label">DECODED RECEIPT PAYLOAD (v0.10.0)</span>
+        <span className="receipt-label">DECODED RECEIPT PAYLOAD (v0.9.27)</span>
         {isVerified && (
           <span className="verified-badge">
             <Check size={12} />
@@ -1234,7 +1234,7 @@ export default function DemoPage() {
             {/* Decoded Receipt */}
             <div className="card demo-card">
               <div className="section-header">
-                <h2>Receipt anatomy (v0.10.0)</h2>
+                <h2>Receipt anatomy (v0.9.27)</h2>
                 <p>Decoded payload showing aipref snapshot, payment evidence, and policy hash binding.</p>
               </div>
               <ReceiptTypewriter isActive={showReceipt || timelineStep >= 6} />
@@ -1299,7 +1299,7 @@ Content-Type: application/json
               </div>
 
               <div className="proof-box">
-                <strong>✓ Signature verified:</strong> Each PEAC-Receipt is signed (Ed25519) and can be verified offline using the issuer JWKS. A hosted Verify API is optional convenience.
+                <strong>✓ Cryptographic proof:</strong> Each PEAC-Receipt is signed (Ed25519) and can be verified offline using the issuer JWKS. A hosted Verify API is optional convenience.
               </div>
             </div>
 
@@ -1342,7 +1342,7 @@ Content-Type: application/json
             {/* Audit Section */}
             <div className="card demo-card">
               <div className="section-header">
-                <h2>Audit-ready exports (v0.10.0)</h2>
+                <h2>Audit-ready exports (v0.9.27)</h2>
                 <p>Dispute packet format for compliance and audit trails.</p>
               </div>
 
