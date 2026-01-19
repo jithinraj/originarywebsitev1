@@ -1,6 +1,6 @@
-# Originary | Verification Infrastructure for Automated Interactions
+# Originary | Verify Agent Interactions Instantly
 
-> Originary provides verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.
+> Originary issues signature-verified records you can verify offline and export for audits. Built for policy enforcement, compliance, and agentic commerce.
 
 Last updated: 2026-01-19
 
@@ -70,7 +70,7 @@ Pre-built integrations for common platforms and frameworks.
 ## Open Source
 
 ### PEAC Protocol (/peac)
-Open standard for AI agent transactions (Apache-2.0). Current version: 0.9.27
+Open standard for AI agent transactions (Apache-2.0). Current version: 0.10.0
 - Policy discovery via /.well-known/peac.txt
 - AI preferences via AIPREF (/.well-known/aipref.json)
 - Payment challenges via HTTP 402
@@ -83,7 +83,7 @@ Open standard for AI agent transactions (Apache-2.0). Current version: 0.9.27
 
 - [Developers](/developers) - Technical documentation and CLI quickstart
 - [Downloads](/downloads) - CLI tools and packages
-- [Demo](/demo) - Interactive PEAC v0.9.27 protocol trace demonstration
+- [Demo](/demo) - Interactive PEAC v0.10.0 protocol trace demonstration
 - [Pricing](/pricing) - Developer $1, Professional $2,500/mo, Enterprise custom
 - [Search](/search) - Site search
 
