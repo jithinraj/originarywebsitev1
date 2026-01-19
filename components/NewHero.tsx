@@ -48,11 +48,13 @@ export default function NewHero() {
             <p className="strip-brand">
               <span className="strip-item">ORIGINARY&trade;</span>
               <span className="strip-dot">&middot;</span>
-              <span className="strip-item">Open software for macOS, Windows, Linux</span>
+              <span className="strip-item strip-platforms">Open software for macOS, Windows, Linux</span>
               <span className="strip-dot">&middot;</span>
-              <a href="/downloads" className="strip-link-inline">Download</a>
-              <span className="strip-dot">&middot;</span>
-              <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">Source code</a>
+              <span className="strip-links">
+                <a href="/downloads" className="strip-link-inline">Download</a>
+                <span className="strip-dot-inline">&middot;</span>
+                <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">Source code</a>
+              </span>
             </p>
             <p className="strip-clarifier">
               Originary maintains PEAC and ships production tools to issue and verify interaction records.
@@ -233,8 +235,18 @@ export default function NewHero() {
           color: var(--gray-300);
         }
 
+        .strip-dot-inline {
+          color: var(--gray-300);
+          margin: 0 var(--space-1);
+        }
+
         .strip-item {
           white-space: nowrap;
+        }
+
+        .strip-links {
+          display: inline-flex;
+          align-items: center;
         }
 
         .strip-brand :global(.strip-link-inline) {
@@ -407,6 +419,8 @@ export default function NewHero() {
           .strip-brand {
             font-size: 10px;
             line-height: 1.6;
+            flex-direction: column;
+            gap: 2px;
           }
 
           .strip-clarifier {
@@ -418,9 +432,13 @@ export default function NewHero() {
             display: none;
           }
 
-          .strip-brand {
-            flex-direction: column;
-            gap: 6px;
+          .strip-platforms {
+            font-size: 9px;
+            color: var(--gray-400);
+          }
+
+          .strip-links {
+            margin-top: 4px;
           }
         }
 
@@ -526,12 +544,16 @@ export default function NewHero() {
 
           .strip-brand {
             font-size: 9px;
-            gap: 4px;
+            gap: 2px;
+          }
+
+          .strip-platforms {
+            font-size: 8px;
           }
 
           .strip-clarifier {
             font-size: 9px;
-            max-width: 280px;
+            max-width: 260px;
             margin-left: auto;
             margin-right: auto;
           }
