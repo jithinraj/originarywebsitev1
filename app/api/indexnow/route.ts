@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const INDEXNOW_KEY = 'bb3c37e50292044ea1d460e7219610ec'
+const INDEXNOW_KEY = '3730f721449c4243aba46af9a7c18d71'
 const SITE_HOST = 'www.originary.xyz'
 const SITEMAP_URL = `https://${SITE_HOST}/sitemap.xml`
 
