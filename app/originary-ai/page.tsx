@@ -15,7 +15,7 @@ const faqJsonLd = {
       name: 'What are PEAC-Receipts?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'PEAC-Receipts are cryptographically signed, verifiable proofs of API access, payment, consent, and attribution. Each receipt contains evidence of the transaction terms, payment confirmation, usage scope, and compliance metadata - all in a machine-readable format that AI agents and auditors can verify. They work across HTTP 402, x402, MCP, and A2A protocols.'
+        text: 'PEAC-Receipts are signed, verifiable records of API access, payment, consent, and attribution. Each receipt contains evidence of the transaction terms, payment confirmation, usage scope, and compliance metadata - all in a machine-readable format that AI agents and auditors can verify offline. They work across HTTP 402, x402, MCP, and A2A protocols.'
       }
     },
     {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Originary AI | Receipts for the Agentic Web',
     description: 'Originary issues PEAC-Receipts for AI agents and APIs, proving access, consent, attribution, privacy, and payment across HTTP 402, x402, MCP, and A2A.',
-    url: 'https://www.originary.xyz/originary-ai',
+    url: '/originary-ai',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',
@@ -98,7 +98,7 @@ export default function OriginaryAI() {
                 color: 'var(--gray-600)',
                 marginBottom: 'var(--space-6)'
               }}>
-                Publish peac.txt, settle via <strong>x402</strong> (or Stripe/credits/fiat/stablecoin/on-chain), and present a <strong>Receipt</strong> on every request - proof of access, consent, attribution, privacy, and payment.
+                Publish peac.txt, settle via configured payment adapters, and present a <strong>Receipt</strong> on every request - verifiable proof of access, consent, attribution, privacy, and payment.
               </p>
 
               <p style={{
@@ -145,8 +145,8 @@ export default function OriginaryAI() {
                     description: 'Keep your MCP/A2A tools and orchestrators - Originary adds verifiable Receipts so every access has proof of terms, consent, attribution, privacy, and payment.'
                   },
                   {
-                    title: 'Rail-neutral payments (x402 first).',
-                    description: 'Settle via x402 by default, or Stripe/credits/fiat/stablecoin/on-chain via adapters - no lock-in, same receipt format.'
+                    title: 'Rail-neutral payments.',
+                    description: 'Settle via HTTP 402 flows, Stripe, or other configured adapters - no lock-in, same receipt format.'
                   },
                   {
                     title: 'Compliance by construction.',
@@ -295,7 +295,7 @@ export default function OriginaryAI() {
                     color: 'var(--gray-600)',
                     margin: 0
                   }}>
-                    PEAC-Receipts are cryptographically signed, verifiable proofs of API access, payment, consent, and attribution. Each receipt contains evidence of the transaction terms, payment confirmation, usage scope, and compliance metadata - all in a machine-readable format that AI agents and auditors can verify. They work across HTTP 402, x402, MCP, and A2A protocols.
+                    PEAC-Receipts are signed, verifiable records of API access, payment, consent, and attribution. Each receipt contains evidence of the transaction terms, payment confirmation, usage scope, and compliance metadata - all in a machine-readable format that AI agents and auditors can verify offline. They work across HTTP 402, x402, MCP, and A2A protocols.
                   </p>
                 </div>
 

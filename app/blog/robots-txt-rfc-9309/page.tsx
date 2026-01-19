@@ -13,10 +13,10 @@ export const metadata: Metadata = {
     type: 'article',
     title: 'robots.txt (RFC 9309): The Web\'s Crawl Access Control',
     description: 'Understanding RFC 9309 - the standardized Robots Exclusion Protocol and its relationship to AIPREF',
-    url: 'https://www.originary.xyz/blog/robots-txt-rfc-9309',
+    url: '/blog/robots-txt-rfc-9309',
     images: [
       {
-        url: 'https://www.originary.xyz/og.jpg',
+        url: '/og.jpg',
         width: 1200,
         height: 630,
         alt: 'robots.txt RFC 9309'
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'robots.txt (RFC 9309): The Web\'s Crawl Access Control',
     description: 'Understanding RFC 9309 - the standardized Robots Exclusion Protocol',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },

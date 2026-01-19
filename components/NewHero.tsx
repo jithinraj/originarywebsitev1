@@ -1,17 +1,12 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import Link from 'next/link'
-import { CheckCircle, Shield } from 'lucide-react'
 import HeroPeacFlowBg from './HeroPeacFlowBg'
+import HeroVerifyWidget from './HeroVerifyWidget'
 
 export default function NewHero() {
   const heroRef = useRef<HTMLElement>(null)
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  useEffect(() => {
-    setIsLoaded(true)
-  }, [])
 
   return (
     <section ref={heroRef} className="hero">
@@ -22,88 +17,54 @@ export default function NewHero() {
       </div>
 
       <div className="hero-container">
-        <div className={`hero-content ${isLoaded ? 'loaded' : ''}`}>
+        <div className="hero-content">
           <div className="hero-badge">
-            <span>Originary | PEAC protocol</span>
+            <span>Verification for automated requests</span>
           </div>
 
           <h1 className="hero-headline">
-            <span className="hero-headline-main">System of record</span>
-            <span className="hero-headline-sub">for agent interactions</span>
+            <span className="hero-headline-main">Verify agent interactions.</span>
+            <span className="hero-headline-sub">Instantly.</span>
           </h1>
 
-          <p className="hero-description">
-            Originary lets you publish clear, machine-readable terms for how agents may access your site or API. Each interaction can return a signed receipt proving what decision was made under which terms, so anyone can verify it later, independently and offline.
+          <p className="hero-problem">
+            APIs and sites lack a portable, third-party verifiable way to show what an agent accessed and under which terms.
           </p>
 
-          <p className="hero-clarifier">
-            Not a centralized platform. Receipts are free, open source, portable and self-hostable.
+          <p className="hero-solution">
+            Originary issues signature-verified records you can verify offline and export for audits.
           </p>
 
           <div className="hero-actions">
-            <Link href="/developers" className="hero-btn-primary">
-              Start building
+            <Link href="/verify" className="hero-btn-primary">
+              Try Verify
             </Link>
-            <Link
-              href="https://github.com/peacprotocol/peac"
-              className="hero-btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
+            <Link href="/developers" className="hero-btn-secondary">
+              Documentation
             </Link>
           </div>
 
-          <p className="hero-download-strip">
-            <span className="strip-brand">ORIGINARY™</span> - Open software. Available for{' '}
-            <Link href="/downloads" className="strip-link">macOS</Link>,{' '}
-            <Link href="/downloads" className="strip-link">Windows</Link>,{' '}
-            <Link href="/downloads" className="strip-link">Linux</Link>
-            {' · '}
-            <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link">
-              Download source code
-            </a>
-          </p>
+          <div className="hero-footer-strip">
+            <p className="strip-brand">
+              ORIGINARY&trade;
+              <span className="strip-dot">&middot;</span>
+              Open software for macOS, Windows, Linux
+              <span className="strip-dot">&middot;</span>
+              <a href="/downloads" className="strip-link-inline">Download</a>
+              <span className="strip-dot">&middot;</span>
+              <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">Source code</a>
+            </p>
+            <p className="strip-clarifier">
+              Originary maintains PEAC and ships production tools to issue and verify interaction records.
+            </p>
+          </div>
 
         </div>
 
-        <div className={`hero-visual ${isLoaded ? 'loaded' : ''}`}>
-          <div className="code-window-wrapper">
-            <div className="code-window">
-              <div className="code-header">
-                <div className="code-dots">
-                  <span className="dot" />
-                  <span className="dot" />
-                  <span className="dot" />
-                </div>
-                <span className="code-title">HTTP Response</span>
-              </div>
-              <div className="code-body">
-                <div className="code-line line-1">
-                  <span className="code-key">PEAC-Receipt</span>
-                  <span className="code-colon">:</span>
-                  <span className="code-value token">eyJhbGciOiJFZDI1NTE5Iiwi<span className="cursor" /></span>
-                </div>
-                <div className="code-line line-2">
-                  <span className="code-key">PEAC-Policy</span>
-                  <span className="code-colon">:</span>
-                  <span className="code-value">/.well-known/peac.txt</span>
-                </div>
-                <div className="code-line line-3">
-                  <span className="code-key">PEAC-Decision</span>
-                  <span className="code-colon">:</span>
-                  <span className="code-value success">allow</span>
-                </div>
-              </div>
-              <div className="code-footer">
-                <div className="verify-status">
-                  <Shield size={14} strokeWidth={2} className="verify-shield" />
-                  <span className="verify-text">Cryptographically verified</span>
-                  <CheckCircle size={14} strokeWidth={2.5} className="verify-check" />
-                </div>
-              </div>
-            </div>
-            <div className="code-glow" />
+        <div className="hero-visual">
+          <div className="widget-wrapper">
+            <HeroVerifyWidget />
+            <div className="widget-glow" />
           </div>
         </div>
       </div>
@@ -116,7 +77,7 @@ export default function NewHero() {
           align-items: center;
           padding: 140px 0 100px;
           overflow: hidden;
-          background: #ffffff;
+          background: var(--white);
         }
 
         .hero-bg {
@@ -129,13 +90,13 @@ export default function NewHero() {
         .bg-base {
           position: absolute;
           inset: 0;
-          background: #ffffff;
+          background: var(--white);
         }
 
         .hero :global(.peac-flow-bg) {
           position: absolute;
           inset: 0;
-          color: #635bff;
+          color: var(--brand-primary);
           opacity: 0.9;
           overflow: hidden;
         }
@@ -169,32 +130,41 @@ export default function NewHero() {
           gap: 24px;
         }
 
-        .hero-content > * {
-          opacity: 0;
-          transform: translateY(30px);
-          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        /* CSS-only staggered reveal - no JS required */
+        @keyframes heroReveal {
+          from {
+            opacity: 0;
+            transform: translateY(24px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
 
-        .hero-content.loaded > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
-        .hero-content.loaded > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
-        .hero-content.loaded > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
-        .hero-content.loaded > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.35s; }
-        .hero-content.loaded > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
-        .hero-content.loaded > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.45s; }
-        .hero-content.loaded > *:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+        .hero-content > * {
+          opacity: 0;
+          animation: heroReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }  /* Badge */
+        .hero-content > *:nth-child(2) { animation-delay: 0.2s; }  /* Headline */
+        .hero-content > *:nth-child(3) { animation-delay: 0.3s; }  /* Problem */
+        .hero-content > *:nth-child(4) { animation-delay: 0.4s; }  /* Solution */
+        .hero-content > *:nth-child(5) { animation-delay: 0.5s; }  /* CTAs */
+        .hero-content > *:nth-child(6) { animation-delay: 0.6s; }  /* Footer strip */
 
         .hero-badge {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          padding: 8px 16px;
+          gap: var(--space-2);
+          padding: var(--space-2) var(--space-4);
           background: rgba(99, 91, 255, 0.06);
           border: 1px solid rgba(99, 91, 255, 0.12);
-          border-radius: 100px;
-          font-size: 13px;
+          border-radius: var(--radius-full);
+          font-size: var(--text-sm);
           font-weight: 500;
-          color: #635bff;
+          color: var(--brand-primary);
           width: fit-content;
           max-width: 100%;
           flex-wrap: wrap;
@@ -217,7 +187,7 @@ export default function NewHero() {
           font-weight: 650;
           letter-spacing: -0.04em;
           line-height: 0.95;
-          color: #0a0a0a;
+          color: var(--gray-950);
         }
 
         .hero-headline-sub {
@@ -225,24 +195,59 @@ export default function NewHero() {
           font-weight: 550;
           letter-spacing: -0.025em;
           line-height: 1.1;
-          color: #0a0a0a;
+          color: var(--gray-950);
         }
 
-        .hero-description {
-          font-size: 19px;
+        .hero-problem {
+          font-size: var(--text-lg);
           line-height: 1.6;
-          color: #525252;
-          max-width: 520px;
+          color: var(--gray-600);
+          max-width: 480px;
           margin: 0;
         }
 
-        .hero-clarifier {
-          font-size: 13px;
-          font-weight: 500;
-          line-height: 1.5;
-          color: #737373;
-          max-width: 560px;
+        .hero-solution {
+          font-size: var(--text-base);
+          line-height: 1.6;
+          color: var(--gray-500);
+          max-width: 480px;
           margin: 0;
+        }
+
+        .hero-footer-strip {
+          margin-top: var(--space-6);
+        }
+
+        .strip-brand {
+          display: flex;
+          align-items: center;
+          gap: var(--space-2);
+          flex-wrap: wrap;
+          margin: 0;
+          font-size: 11px;
+          color: var(--gray-400);
+          letter-spacing: 0.01em;
+        }
+
+        .strip-dot {
+          color: var(--gray-300);
+        }
+
+        .strip-brand :global(.strip-link-inline) {
+          color: var(--gray-500);
+          text-decoration: none;
+          transition: color var(--duration-150) ease;
+        }
+
+        .strip-brand :global(.strip-link-inline:hover) {
+          color: var(--gray-700);
+        }
+
+        .strip-clarifier {
+          font-size: 11px;
+          color: var(--gray-400);
+          margin: var(--space-2) 0 0;
+          line-height: 1.5;
         }
 
         .hero-actions {
@@ -255,64 +260,38 @@ export default function NewHero() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 10px 18px;
-          font-size: 14px;
+          padding: var(--space-2) var(--space-4);
+          font-size: var(--text-sm);
           font-weight: 500;
           text-decoration: none;
-          color: white;
-          background: #0a0a0a;
-          border-radius: 8px;
-          transition: background 0.15s ease;
+          color: var(--white);
+          background: var(--gray-950);
+          border-radius: var(--radius-lg);
+          transition: background var(--duration-150) ease;
         }
 
         .hero-actions :global(.hero-btn-primary:hover) {
-          background: #262626;
+          background: var(--gray-800);
         }
 
         .hero-actions :global(.hero-btn-secondary) {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 10px 18px;
-          font-size: 14px;
+          padding: var(--space-2) var(--space-4);
+          font-size: var(--text-sm);
           font-weight: 500;
           text-decoration: none;
-          color: #525252;
+          color: var(--gray-600);
           background: transparent;
-          border: 1px solid #e5e5e5;
-          border-radius: 8px;
-          transition: border-color 0.15s ease, color 0.15s ease;
+          border: 1px solid var(--gray-200);
+          border-radius: var(--radius-lg);
+          transition: border-color var(--duration-150) ease, color var(--duration-150) ease;
         }
 
         .hero-actions :global(.hero-btn-secondary:hover) {
-          border-color: #d4d4d4;
-          color: #0a0a0a;
-        }
-
-        .hero-download-strip {
-          font-size: 11px;
-          line-height: 1.8;
-          color: #a3a3a3;
-          font-weight: 400;
-          letter-spacing: 0.01em;
-          margin: 0;
-        }
-
-        .hero-download-strip :global(.strip-brand) {
-          color: #737373;
-          font-weight: 500;
-        }
-
-        .hero-download-strip :global(.strip-link) {
-          color: #737373;
-          text-decoration: none;
-          border-bottom: 1px solid transparent;
-          transition: border-color 0.15s ease, color 0.15s ease;
-        }
-
-        .hero-download-strip :global(.strip-link:hover) {
-          border-bottom-color: #a3a3a3;
-          color: #525252;
+          border-color: var(--gray-300);
+          color: var(--gray-950);
         }
 
         .hero-visual {
@@ -320,193 +299,31 @@ export default function NewHero() {
           justify-content: center;
           position: relative;
           opacity: 0;
-          transform: translateY(40px);
-          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
-                      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+          animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
         }
 
-        .hero-visual.loaded {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .code-window-wrapper {
+        .widget-wrapper {
           position: relative;
           transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .code-window-wrapper:hover {
+        .widget-wrapper:hover {
           transform: translateY(-4px);
         }
 
-        .code-glow {
+        .widget-glow {
           position: absolute;
           inset: -40px;
           background: radial-gradient(ellipse at center, rgba(99, 91, 255, 0.12) 0%, transparent 70%);
           filter: blur(40px);
           z-index: -1;
-          transition: all 0.4s ease;
+          transition: all var(--duration-500) ease;
+          pointer-events: none;
         }
 
-        .code-window-wrapper:hover .code-glow {
+        .widget-wrapper:hover .widget-glow {
           inset: -50px;
           background: radial-gradient(ellipse at center, rgba(99, 91, 255, 0.15) 0%, transparent 70%);
-        }
-
-        .code-window {
-          width: 100%;
-          max-width: 480px;
-          background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
-          border-radius: 16px;
-          overflow: hidden;
-          box-shadow:
-            0 0 0 1px rgba(255, 255, 255, 0.08),
-            0 20px 50px -10px rgba(0, 0, 0, 0.4);
-          transition: box-shadow 0.4s ease;
-        }
-
-        .code-window-wrapper:hover .code-window {
-          box-shadow:
-            0 0 0 1px rgba(255, 255, 255, 0.1),
-            0 24px 60px -10px rgba(0, 0, 0, 0.5);
-        }
-
-        .code-header {
-          display: flex;
-          align-items: center;
-          padding: 14px 20px;
-          background: rgba(255, 255, 255, 0.03);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .code-dots {
-          display: flex;
-          gap: 8px;
-        }
-
-        .dot {
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.15);
-        }
-
-        .code-title {
-          margin-left: auto;
-          font-family: var(--font-mono);
-          font-size: 12px;
-          color: rgba(255, 255, 255, 0.4);
-        }
-
-        .code-body {
-          padding: 24px 20px;
-        }
-
-        .code-line {
-          display: flex;
-          align-items: baseline;
-          margin-bottom: 14px;
-          font-family: var(--font-mono);
-          font-size: 13px;
-          opacity: 0;
-          transform: translateX(-10px);
-          animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .line-1 { animation-delay: 0.6s; }
-        .line-2 { animation-delay: 0.75s; }
-        .line-3 { animation-delay: 0.9s; }
-
-        @keyframes slideIn {
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        .code-line:last-child { margin-bottom: 0; }
-
-        .code-key {
-          color: #a5a0ff;
-          white-space: nowrap;
-          font-weight: 500;
-        }
-
-        .code-colon {
-          color: rgba(255, 255, 255, 0.3);
-          margin-right: 10px;
-        }
-
-        .code-value {
-          color: rgba(255, 255, 255, 0.7);
-          word-break: break-all;
-        }
-
-        .code-value.token {
-          color: rgba(255, 255, 255, 0.9);
-        }
-
-        .cursor {
-          display: inline-block;
-          width: 2px;
-          height: 14px;
-          background: #a5a0ff;
-          margin-left: 2px;
-          animation: blink 1s step-end infinite;
-          vertical-align: middle;
-        }
-
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
-        }
-
-        .code-value.success {
-          color: #a5a0ff;
-          font-weight: 600;
-        }
-
-        .code-footer {
-          padding: 14px 20px;
-          background: rgba(99, 91, 255, 0.08);
-          border-top: 1px solid rgba(99, 91, 255, 0.15);
-        }
-
-        .verify-status {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          font-family: var(--font-mono);
-          font-size: 12px;
-          color: #a5a0ff;
-        }
-
-        .verify-status :global(.verify-shield) {
-          opacity: 0;
-          animation: fadeIn 0.4s ease 1.1s forwards;
-        }
-
-        .verify-text {
-          opacity: 0;
-          animation: fadeIn 0.4s ease 1.2s forwards;
-        }
-
-        .verify-status :global(.verify-check) {
-          margin-left: auto;
-          opacity: 0;
-          transform: scale(0);
-          animation: pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1.4s forwards;
-        }
-
-        @keyframes fadeIn {
-          to { opacity: 1; }
-        }
-
-        @keyframes pop {
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
         }
 
         @media (max-width: 1024px) {
@@ -524,24 +341,22 @@ export default function NewHero() {
             background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%);
           }
 
-          .hero-description {
+          .hero-problem,
+          .hero-solution {
             max-width: 560px;
           }
 
-          .hero-clarifier-bold {
-            max-width: 560px;
-          }
-
-          .hero-clarifier {
-            max-width: 560px;
+          .strip-brand {
+            justify-content: center;
           }
 
           .hero-actions {
             justify-content: center;
           }
 
-          .code-window {
-            max-width: 440px;
+          .widget-wrapper {
+            max-width: 480px;
+            width: 100%;
           }
         }
 
@@ -574,15 +389,24 @@ export default function NewHero() {
           }
 
           .hero :global(.peac-flow-bg) {
-            display: none;
+            opacity: 0.5;
           }
 
-          .hero-description {
-            font-size: 17px;
+          .hero-problem {
+            font-size: 16px;
           }
 
-          .hero-clarifier {
-            font-size: 12px;
+          .hero-solution {
+            font-size: 15px;
+          }
+
+          .strip-brand {
+            font-size: 10px;
+          }
+
+          .strip-clarifier {
+            font-size: 10px;
+            text-align: center;
           }
         }
 
@@ -613,34 +437,34 @@ export default function NewHero() {
           }
 
           .hero-actions {
-            flex-direction: column;
-            width: 100%;
-            gap: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
           }
 
           .hero-actions :global(.hero-btn-primary),
           .hero-actions :global(.hero-btn-secondary) {
-            width: 100%;
-            max-width: 280px;
-            padding: 14px 24px;
+            padding: 12px 20px;
+            font-size: 14px;
+          }
+
+          .hero-problem {
             font-size: 15px;
           }
 
-          .hero-download-strip {
-            font-size: 10px;
+          .hero-solution {
+            font-size: 14px;
           }
 
-          .code-window {
+          .strip-brand {
+            font-size: 9px;
+          }
+
+          .strip-clarifier {
+            font-size: 9px;
+          }
+
+          .widget-wrapper {
             max-width: 100%;
-          }
-
-          .code-body {
-            padding: 18px 16px;
-          }
-
-          .code-line {
-            font-size: 11px;
-            flex-wrap: wrap;
           }
         }
 
@@ -678,20 +502,28 @@ export default function NewHero() {
             font-size: 24px;
           }
 
-          .hero-description {
-            font-size: 15px;
+          .hero-problem {
+            font-size: 14px;
           }
 
-          .hero-clarifier {
-            font-size: 11px;
+          .hero-solution {
+            font-size: 13px;
           }
 
-          .hero-download-strip {
-            display: none;
+          .strip-brand {
+            font-size: 9px;
+            flex-direction: column;
+            gap: 4px;
+            text-align: center;
           }
 
-          .hero-visual {
-            display: none;
+          .strip-clarifier {
+            font-size: 9px;
+          }
+
+          .widget-wrapper {
+            transform: scale(0.9);
+            transform-origin: center top;
           }
         }
 
@@ -700,31 +532,12 @@ export default function NewHero() {
           .hero-visual {
             opacity: 1;
             transform: none;
-            transition: none;
-          }
-
-          .code-line {
-            opacity: 1;
-            transform: none;
             animation: none;
           }
 
-          .cursor {
-            animation: none;
-          }
-
-          .verify-status :global(.verify-shield),
-          .verify-text,
-          .verify-status :global(.verify-check) {
-            opacity: 1;
-            transform: none;
-            animation: none;
-          }
-
-          .code-window-wrapper:hover {
+          .widget-wrapper:hover {
             transform: none;
           }
-
         }
       `}</style>
     </section>

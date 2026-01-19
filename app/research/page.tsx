@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Research | Originary',
     description: 'PEAC protocol research and technical specifications. Problem framing, design goals, threat model, and academic references.',
-    url: 'https://www.originary.xyz/research',
+    url: '/research',
     type: 'website',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {

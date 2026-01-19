@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Professional Services | Originary',
     description: 'Implementation, migration, compliance audits, and custom development for PEAC Protocol.',
-    url: 'https://www.originary.xyz/services',
+    url: '/services',
     siteName: 'Originary',
     images: [{
-      url: 'https://www.originary.xyz/og.jpg',
+      url: '/og.jpg',
       width: 1200,
       height: 630,
       alt: 'Originary Professional Services'

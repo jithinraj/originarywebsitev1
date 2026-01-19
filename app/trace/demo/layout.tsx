@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: 'Trace Demo | Agent Observability',
     description: 'Live demo of Originary Trace for agent observability and interaction tracking. See how PEAC-Receipts capture every agent request.',
     type: 'website',
-    url: 'https://www.originary.xyz/trace/demo',
+    url: '/trace/demo',
     images: ['/og.jpg'],
     siteName: 'Originary',
   },

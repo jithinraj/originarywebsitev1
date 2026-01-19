@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'MCP Receipts | Model Context Protocol and MCP Tools',
     description: 'MCP receipts for Model Context Protocol and MCP tools integration. Generate PEAC-Receipts for Model Context Protocol tool calls and MCP operations.',
-    url: 'https://www.originary.xyz/docs/mcp/receipts',
+    url: '/docs/mcp/receipts',
     siteName: 'Originary',
     type: 'website'
   },

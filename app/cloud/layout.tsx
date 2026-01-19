@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     title: 'Originary Cloud | Private Beta',
     description: 'Managed PEAC verification, attested receipts, compliance bundles, and analytics. Apply for early access.',
     type: 'website',
-    url: 'https://www.originary.xyz/cloud',
+    url: '/cloud',
+    images: ['/og.jpg'],
   },
   robots: 'index,follow',
 }

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact | Originary',
     description: 'Contact the Originary team for sales, partnerships, support, and press. Talk to us about PEAC Protocol, Trace, and agentic web infrastructure.',
-    url: 'https://www.originary.xyz/contact',
+    url: '/contact',
     siteName: 'Originary',
     type: 'website',
     images: ['/og.jpg'],

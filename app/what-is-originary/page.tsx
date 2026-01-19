@@ -5,26 +5,26 @@ import Footer from '@/components/Footer'
 import { Shield, FileText, CheckCircle, Code, Globe, Users, HelpCircle, ExternalLink, AlertTriangle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'What is Originary? | Open system of record for agent interactions',
+  title: 'What is Originary? | Verification for AI Agents',
   description: 'Originary (Poem, Inc.) builds and stewards PEAC, an open standard for publishing terms and issuing verifiable records for agent interactions.',
-  keywords: 'Originary, PEAC Protocol, verifiable receipts, PEAC-Receipt, peac.txt, agent policy, agentic web, HTTP 402, cryptographic receipts, policy discovery, agent compliance, system of record',
+  keywords: 'Originary, PEAC Protocol, verifiable receipts, PEAC-Receipt, peac.txt, agent policy, agentic web, HTTP 402, signed receipts, policy discovery, agent compliance, verification infrastructure',
   robots: 'index,follow',
   alternates: {
-    canonical: 'https://www.originary.xyz/what-is-originary'
+    canonical: '/what-is-originary'
   },
   openGraph: {
-    title: 'What is Originary? | Open system of record for agent interactions',
+    title: 'What is Originary? | Verification for AI Agents',
     description: 'Originary (Poem, Inc.) builds and stewards PEAC, an open standard for publishing terms and issuing verifiable records for agent interactions.',
-    url: 'https://www.originary.xyz/what-is-originary',
+    url: '/what-is-originary',
     type: 'website',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'What is Originary? | Open system of record for agent interactions',
+    title: 'What is Originary? | Verification for AI Agents',
     description: 'Originary builds and stewards PEAC, an open standard for publishing terms and issuing verifiable records for agent interactions.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -60,7 +60,7 @@ export default function WhatIsOriginaryPage() {
     "@type": "WebSite",
     "name": "Originary",
     "url": "https://www.originary.xyz",
-    "description": "Open system of record for agent interactions. Publish terms, enforce decisions, and return verifiable receipts.",
+    "description": "Verification infrastructure for agent interactions. Publish terms, enforce decisions, and return verifiable receipts.",
     "publisher": {
       "@type": "Organization",
       "name": "Originary",

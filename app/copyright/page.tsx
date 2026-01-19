@@ -17,7 +17,7 @@ const webPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Copyright Notice & Takedown',
-  url: 'https://www.originary.xyz/copyright',
+  url: '/copyright',
   dateModified: '2025-07-27'
 }
 

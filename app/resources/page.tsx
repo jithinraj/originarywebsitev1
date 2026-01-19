@@ -11,16 +11,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Resources',
     description: 'Resources, documentation, and insights for building with the receipts protocol for the agentic web.',
-    url: 'https://www.originary.xyz/resources',
+    url: '/resources',
     siteName: 'Originary',
-    images: [{ url: 'https://www.originary.xyz/og.jpg' }],
+    images: [{ url: '/og.jpg' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Resources',
     description: 'Resources, documentation, and insights for building with the receipts protocol for the agentic web.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
   },
   alternates: {
     canonical: '/resources',

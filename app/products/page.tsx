@@ -13,16 +13,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Products',
     description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters-everything you need to power autonomous AI coordination.',
-    url: 'https://www.originary.xyz/products',
+    url: '/products',
     siteName: 'Originary',
-    images: [{ url: 'https://www.originary.xyz/og.jpg' }],
+    images: [{ url: '/og.jpg' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Products',
     description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters-everything you need to power autonomous AI coordination.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
   },
   alternates: {
     canonical: '/products',
@@ -149,9 +149,41 @@ export default function ProductsPage() {
 
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
               <ProductCard
-                icon={<Database size={32} style={{ color: 'var(--brand-primary)' }} />}
+                icon={<Shield size={32} style={{ color: 'var(--brand-primary)' }} />}
+                title="Verify"
+                category="Verification Layer"
+                description="Deterministic verification for PEAC receipts. Validate signatures offline using published JWKS endpoints. No API callback required."
+                features={[
+                  'JWS signature verification',
+                  'Offline verification support',
+                  'Real-time compliance checking',
+                  'Audit trail generation',
+                  'High availability SLA'
+                ]}
+                href="/verify"
+                status="start-here"
+              />
+
+              <ProductCard
+                icon={<Zap size={32} style={{ color: 'var(--brand-secondary)' }} />}
+                title="Gateway 402"
+                category="Payment Gateway"
+                description="HTTP 402 payment gateway that transforms any API endpoint into a monetized resource. Works with any configured payment adapter."
+                features={[
+                  'Rail-neutral payment processing',
+                  'Multiple adapter support',
+                  'Usage-based billing',
+                  'Automatic receipt generation',
+                  'Enterprise billing integration'
+                ]}
+                href="/products/gateway-402"
+                status="optional"
+              />
+
+              <ProductCard
+                icon={<Database size={32} style={{ color: 'var(--brand-accent)' }} />}
                 title="PEAC Protocol"
-                category="Foundation Layer"
+                category="Specification"
                 description="The open protocol for machine-readable policies and consent. Enables autonomous agents to discover access terms, pricing, and attribution requirements automatically."
                 features={[
                   'Automated policy discovery',
@@ -160,37 +192,8 @@ export default function ProductsPage() {
                   'Cross-platform compatibility',
                   'Open source specification'
                 ]}
-                href="/products/peac"
-              />
-
-              <ProductCard
-                icon={<Shield size={32} style={{ color: 'var(--brand-secondary)' }} />}
-                title="Verify API"
-                category="Verification Layer"
-                description="Cryptographic verification service for PEAC receipts. Provides tamper-proof audit trails and compliance reporting for every AI interaction."
-                features={[
-                  'JWS signature verification',
-                  'Real-time compliance checking',
-                  'Blockchain anchoring',
-                  'Audit trail generation',
-                  'High availability SLA'
-                ]}
-                href="/products/verify"
-              />
-
-              <ProductCard
-                icon={<Zap size={32} style={{ color: 'var(--brand-accent)' }} />}
-                title="Gateway 402"
-                category="Payment Layer"
-                description="HTTP 402 payment gateway that transforms any API endpoint into a monetized resource. Handles micropayments, usage tracking, and receipt generation automatically."
-                features={[
-                  'Instant micropayment processing',
-                  'Multiple currency support',
-                  'Usage-based billing',
-                  'Automatic receipt generation',
-                  'Enterprise billing integration'
-                ]}
-                href="/products/gateway-402"
+                href="/peac"
+                status="open-standard"
               />
             </div>
           </div>
@@ -233,6 +236,7 @@ export default function ProductsPage() {
                   'Deployment automation'
                 ]}
                 href="/products/studio"
+                status="preview"
               />
 
               <ProductCard
@@ -252,7 +256,7 @@ export default function ProductsPage() {
 
               <ProductCard
                 icon={<BarChart size={32} style={{ color: 'var(--brand-accent)' }} />}
-                title="Receipts"
+                title="Trace"
                 category="Audit Layer"
                 description="Comprehensive receipt management and observability platform. Track usage, monitor compliance, and generate detailed reports for stakeholders."
                 features={[
@@ -262,7 +266,8 @@ export default function ProductsPage() {
                   'Custom alert system',
                   'Data export and APIs'
                 ]}
-                href="/receipts"
+                href="/trace"
+                status="preview"
               />
             </div>
           </div>
@@ -361,7 +366,8 @@ function ProductCard({
   category,
   description,
   features,
-  href
+  href,
+  status
 }: {
   icon: React.ReactNode;
   title: string;
@@ -369,11 +375,36 @@ function ProductCard({
   description: string;
   features: string[];
   href: string;
+  status?: 'start-here' | 'optional' | 'preview' | 'open-standard';
 }) {
+  // Brand-accent badge system: featured uses brand, others use neutrals
+  const statusStyles: Record<string, { bg: string; color: string; label: string; border?: string }> = {
+    'start-here': { bg: 'rgba(99, 91, 255, 0.08)', color: 'var(--brand-primary)', label: 'Start here', border: 'rgba(99, 91, 255, 0.25)' },
+    'optional': { bg: 'var(--gray-100)', color: 'var(--gray-600)', label: 'Optional' },
+    'preview': { bg: 'rgba(251, 191, 36, 0.08)', color: 'var(--gray-600)', label: 'Preview' },
+    'open-standard': { bg: 'var(--gray-100)', color: 'var(--gray-600)', label: 'Open Standard' }
+  }
+
   return (
-    <div className="card">
-      <div style={{ marginBottom: 'var(--space-6)' }}>
+    <div className="card" style={status === 'start-here' ? { border: '1px solid rgba(99, 91, 255, 0.2)' } : undefined}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 'var(--space-6)' }}>
         {icon}
+        {status && (
+          <span
+            style={{
+              fontSize: '10px',
+              fontWeight: 600,
+              color: statusStyles[status].color,
+              background: statusStyles[status].bg,
+              padding: '4px 8px',
+              borderRadius: 'var(--radius-full)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em'
+            }}
+          >
+            {statusStyles[status].label}
+          </span>
+        )}
       </div>
 
       <div style={{ marginBottom: 'var(--space-4)' }}>
@@ -381,12 +412,9 @@ function ProductCard({
           style={{
             fontSize: 'var(--text-xs)',
             fontWeight: 600,
-            color: 'var(--brand-primary)',
+            color: 'var(--gray-500)',
             textTransform: 'uppercase',
-            letterSpacing: '0.1em',
-            background: 'rgba(99, 91, 255, 0.1)',
-            padding: 'var(--space-1) var(--space-3)',
-            borderRadius: 'var(--radius-full)'
+            letterSpacing: '0.1em'
           }}
         >
           {category}

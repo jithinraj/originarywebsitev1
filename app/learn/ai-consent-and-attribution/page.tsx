@@ -5,23 +5,23 @@ import Link from 'next/link'
 import { Shield, ArrowLeft, CheckCircle, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'AI Consent & Attribution: Machine-Readable Permissions for the Agentic Web',
-  description: 'AI consent must be machine-readable for agents to respect it. Learn how AIPREF declarations, peac.txt policies, and verifiable receipts create auditable attribution chains - the trust infrastructure for responsible AI systems.',
+  title: 'AI Consent & Attribution: Machine-Readable Permissions',
+  description: 'AI consent must be machine-readable for agents to respect it. Learn how AIPREF and peac.txt create auditable attribution chains.',
   keywords: 'AI consent, machine-readable consent, AI attribution, AIPREF standard, aipref.json, AI preferences, content licensing AI, agent consent protocol, attribution chain, AI provenance, content permissions AI, opt-out AI training, RAG permissions, responsible AI infrastructure',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
     title: 'AI Consent & Attribution: Machine-Readable Permissions',
     description: 'Robots.txt wasn\'t designed for AI agents. Learn how AIPREF and PEAC enable granular, machine-readable consent with verifiable attribution.',
-    url: 'https://www.originary.xyz/learn/ai-consent-and-attribution',
-    images: ['https://www.originary.xyz/og.jpg'],
+    url: '/learn/ai-consent-and-attribution',
+    images: ['/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AI Consent & Attribution',
     description: 'Robots.txt wasn\'t designed for AI agents. Learn how AIPREF enables granular, machine-readable consent.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },

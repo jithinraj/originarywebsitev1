@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Stripe Payment Integration',
     description: 'Integrate Stripe card payments with Originary PEAC-Receipt.',
-    url: 'https://www.originary.xyz/docs/payments/stripe',
+    url: '/docs/payments/stripe',
     siteName: 'Originary',
     type: 'website'
   }

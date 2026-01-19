@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Status | Originary',
     description: 'Live service status and incident history for Originary, Trace, and PEAC-based infrastructure.',
-    url: 'https://www.originary.xyz/status',
+    url: '/status',
     siteName: 'Originary',
     type: 'website',
     images: ['/og.jpg'],

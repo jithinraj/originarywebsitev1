@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Model Context Protocol (MCP) | MCP Receipts and Agent Coordination',
     description: 'MCP integration with MCP receipts, MCP tools, and agent coordination. Verifiable receipts for Model Context Protocol workflows.',
-    url: 'https://www.originary.xyz/integrations/mcp/',
+    url: '/integrations/mcp',
     type: 'article'
   },
   alternates: {

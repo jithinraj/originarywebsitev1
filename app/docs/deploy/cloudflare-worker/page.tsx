@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cloudflare Workers Deployment',
     description: 'Deploy Originary at the edge with Cloudflare Workers.',
-    url: 'https://www.originary.xyz/docs/deploy/cloudflare-worker',
+    url: '/docs/deploy/cloudflare-worker',
     siteName: 'Originary',
     type: 'website'
   }

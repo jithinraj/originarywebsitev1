@@ -7,7 +7,14 @@ import Script from 'next/script'
 export const metadata: Metadata = {
   title: 'Security Disclosure',
   description: 'Responsible security disclosure policy for Originary services and infrastructure. Learn how to report security vulnerabilities, our commitment to acknowledging reports within 5 business days, and guidelines for ethical security research. Contact security@originary.xyz.',
-  robots: 'noindex,follow',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   alternates: {
     canonical: '/security',
   },
@@ -17,7 +24,7 @@ const webPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Security Disclosure',
-  url: 'https://www.originary.xyz/security',
+  url: '/security',
   dateModified: '2025-07-27'
 }
 

@@ -10,16 +10,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Solutions',
     description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
-    url: 'https://www.originary.xyz/solutions',
+    url: '/solutions',
     siteName: 'Originary',
-    images: [{ url: 'https://www.originary.xyz/og.jpg' }],
+    images: [{ url: '/og.jpg' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Solutions',
     description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
   },
   alternates: {
     canonical: '/solutions',
@@ -72,7 +72,7 @@ export default function SolutionsPage() {
             {/* Solutions Grid */}
             <div className="grid grid-2" style={{ gap: 'var(--space-12)' }}>
               {/* Publishers */}
-              <div className="card">
+              <div id="publishers" className="card" style={{ scrollMarginTop: '120px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
                   <span style={{ fontSize: '2rem' }}>📰</span>
                   <h3>Content Publishers</h3>
@@ -100,7 +100,7 @@ export default function SolutionsPage() {
               </div>
 
               {/* API Providers */}
-              <div className="card">
+              <div id="api-providers" className="card" style={{ scrollMarginTop: '120px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
                   <span style={{ fontSize: '2rem' }}>🔌</span>
                   <h3>API Providers</h3>
@@ -128,7 +128,7 @@ export default function SolutionsPage() {
               </div>
 
               {/* AI Builders */}
-              <div className="card">
+              <div id="ai-builders" className="card" style={{ scrollMarginTop: '120px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
                   <span style={{ fontSize: '2rem' }}>🤖</span>
                   <h3>AI Builders</h3>
@@ -156,7 +156,7 @@ export default function SolutionsPage() {
               </div>
 
               {/* Enterprise */}
-              <div className="card">
+              <div id="enterprise" className="card" style={{ scrollMarginTop: '120px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
                   <span style={{ fontSize: '2rem' }}>🏢</span>
                   <h3>Enterprise</h3>

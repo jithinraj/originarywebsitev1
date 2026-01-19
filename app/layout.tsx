@@ -52,7 +52,7 @@ const organizationJsonLd = {
   name: 'Originary',
   legalName: 'Poem, Inc.',
   alternateName: ['Originary™', 'Originary AI', 'Poem, Inc.', 'Originary PEAC', 'Originary Protocol', 'Originary Receipts'],
-  url: 'https://www.originary.xyz/',
+  url: '/',
   telephone: '+14157070402',
   address: {
     '@type': 'PostalAddress',
@@ -112,7 +112,7 @@ const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   '@id': 'https://www.originary.xyz/#website',
-  url: 'https://www.originary.xyz/',
+  url: '/',
   name: 'Originary',
   potentialAction: {
     '@type': 'SearchAction',

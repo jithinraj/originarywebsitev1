@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Pricing | Originary',
     description: 'Open source PEAC Protocol and receipts infrastructure. Self-host for free or talk to us about managed cloud and enterprise deployments.',
-    url: 'https://www.originary.xyz/pricing',
+    url: '/pricing',
     type: 'website',
     siteName: 'Originary',
   },

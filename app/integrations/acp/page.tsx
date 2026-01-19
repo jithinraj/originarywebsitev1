@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ACP Integration | Agentic Commerce for AI Agents and APIs',
     description: 'Use the Agentic Commerce Protocol with PEAC to let AI agents discover prices, execute purchases, get receipts and complete end to end agentic commerce flows across your APIs and services.',
-    url: 'https://www.originary.xyz/integrations/acp/',
+    url: '/integrations/acp',
     type: 'article'
   },
   alternates: {

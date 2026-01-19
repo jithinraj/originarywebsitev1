@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Governance | Originary',
     description: 'How the PEAC protocol evolves. Governance process, versioning rules, and neutrality guarantees.',
-    url: 'https://www.originary.xyz/governance',
+    url: '/governance',
     type: 'website',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {

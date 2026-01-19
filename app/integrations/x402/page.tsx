@@ -5,12 +5,12 @@ import Footer from '@/components/Footer'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata: Metadata = {
-  title: 'x402 Integration | HTTP 402 Payments and Machine Payable APIs with PEAC',
-  description: 'Connect PEAC Protocol with x402 to expose HTTP 402 payment required flows, turn APIs into machine payable endpoints and issue verifiable receipts for AI agents and automated clients.',
+  title: 'x402 Integration | HTTP 402 Payments with PEAC',
+  description: 'Connect PEAC with x402 for HTTP 402 payment flows. Turn APIs into machine-payable endpoints with verifiable receipts.',
   openGraph: {
-    title: 'x402 Integration | HTTP 402 Payments and Machine Payable APIs with PEAC',
-    description: 'Connect PEAC Protocol with x402 to expose HTTP 402 payment required flows, turn APIs into machine payable endpoints and issue verifiable receipts for AI agents and automated clients.',
-    url: 'https://www.originary.xyz/integrations/x402/',
+    title: 'x402 Integration | HTTP 402 Payments with PEAC',
+    description: 'Connect PEAC with x402 for HTTP 402 payment flows. Turn APIs into machine-payable endpoints with verifiable receipts.',
+    url: '/integrations/x402',
     type: 'article'
   },
   alternates: {

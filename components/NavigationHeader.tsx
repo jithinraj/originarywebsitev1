@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
 
 export default function NavigationHeader() {
@@ -65,14 +65,14 @@ export default function NavigationHeader() {
               style={{
                 width: '28px',
                 height: '28px',
-                borderRadius: '8px',
-                background: '#0a0a0a',
+                borderRadius: 'var(--radius-lg)',
+                background: 'var(--gray-950)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: 'white',
+                color: 'var(--white)',
                 fontWeight: '600',
-                fontSize: '13px'
+                fontSize: 'var(--text-sm)'
               }}
             >
               O
@@ -115,7 +115,6 @@ export default function NavigationHeader() {
                 { href: '/receipts', label: 'Receipts' },
                 { href: '/verify', label: 'Verify' }
               ]} />
-              <NavLink href="/demo">Demo</NavLink>
               <NavLink href="/blog">Blog</NavLink>
             </div>
 
@@ -128,29 +127,29 @@ export default function NavigationHeader() {
               }}
             >
               <Link
-                href="/contact"
+                href="/verify"
                 className="nav-cta-btn"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  padding: '8px 16px',
-                  fontSize: '14px',
+                  padding: 'var(--space-2) var(--space-4)',
+                  fontSize: 'var(--text-sm)',
                   fontWeight: 500,
                   textDecoration: 'none',
-                  color: 'white',
-                  background: '#0a0a0a',
-                  borderRadius: '8px',
-                  transition: 'background 0.15s ease'
+                  color: 'var(--white)',
+                  background: 'var(--brand-primary)',
+                  borderRadius: 'var(--radius-lg)',
+                  transition: 'background var(--duration-150) ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#262626'
+                  e.currentTarget.style.background = 'var(--brand-primary-dark)'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#0a0a0a'
+                  e.currentTarget.style.background = 'var(--brand-primary)'
                 }}
               >
-                Contact
+                Try Verify
               </Link>
             </div>
           </div>
@@ -214,9 +213,6 @@ export default function NavigationHeader() {
                 { href: '/receipts', label: 'Receipts' },
                 { href: '/verify', label: 'Verify' }
               ]} />
-              <Link href="/demo" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
-                Demo
-              </Link>
               <Link href="/blog" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
                 Blog
               </Link>
@@ -230,21 +226,21 @@ export default function NavigationHeader() {
                 borderTop: '1px solid var(--gray-200)'
               }}>
                 <Link
-                  href="/contact"
+                  href="/verify"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    padding: '10px 18px',
-                    fontSize: '14px',
+                    padding: 'var(--space-2) var(--space-4)',
+                    fontSize: 'var(--text-sm)',
                     fontWeight: 500,
                     textDecoration: 'none',
-                    color: 'white',
-                    background: '#0a0a0a',
-                    borderRadius: '8px'
+                    color: 'var(--white)',
+                    background: 'var(--brand-primary)',
+                    borderRadius: 'var(--radius-lg)'
                   }}
                 >
-                  Contact
+                  Try Verify
                 </Link>
               </div>
             </div>
@@ -300,19 +296,63 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 
 function NavDropdown({ label, items }: { label: string; items: Array<{ href: string; label: string; badge?: string; external?: boolean }> }) {
   const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
+
+  // Close on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false)
+        buttonRef.current?.focus()
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleKeyDown)
+    }
+
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isOpen])
+
+  // Close when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [isOpen])
+
+  const handleButtonKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      setIsOpen(true)
+    }
+  }
 
   return (
     <div
+      ref={dropdownRef}
       className="nav-dropdown"
       style={{ position: 'relative' }}
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
       <button
+        ref={buttonRef}
         type="button"
         aria-label={`${label} menu`}
-        aria-expanded={isOpen ? 'true' : 'false'}
+        aria-expanded={isOpen}
         aria-haspopup="true"
+        onClick={() => setIsOpen(!isOpen)}
+        onKeyDown={handleButtonKeyDown}
         style={{
           display: 'flex',
           alignItems: 'center',

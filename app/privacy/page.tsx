@@ -8,8 +8,12 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Privacy Policy for Originary - minimal, consent-first data collection for receipts tooling. Learn what data we collect, how we use it, your privacy rights, and our commitment to GPC (Global Privacy Control) support. Effective from 2025-07-27.',
   robots: {
-    index: false,
+    index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
   alternates: {
     canonical: '/privacy',
@@ -20,7 +24,7 @@ const webPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Privacy Policy',
-  url: 'https://www.originary.xyz/privacy',
+  url: '/privacy',
   dateModified: '2025-07-27'
 }
 

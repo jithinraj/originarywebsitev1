@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'x402 Integration | Stablecoin Payments',
     description: 'Implement x402 stablecoin payments with PEAC-Receipts. HTTP 402 payment flows for APIs.',
-    url: 'https://www.originary.xyz/docs/payments/x402',
+    url: '/docs/payments/x402',
     siteName: 'Originary',
     type: 'website'
   },

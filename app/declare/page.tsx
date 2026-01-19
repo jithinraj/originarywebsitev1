@@ -15,15 +15,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Declare | AI Policy Pack Generator | Originary',
     description: 'Generate your AI policy pack from one file. Write peac-policy.yaml, generate peac.txt, robots AI directives, AIPREF templates, and a human policy page.',
-    url: 'https://www.originary.xyz/declare',
+    url: '/declare',
     type: 'website',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Declare | AI Policy Pack Generator | Originary',
     description: 'Generate your AI policy pack from one file.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
   }
 }
 

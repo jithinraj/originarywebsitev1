@@ -8,8 +8,12 @@ export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'Terms of Service for Originary - commercial tools implementing receipts for the agentic web.',
   robots: {
-    index: false,
+    index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
   alternates: {
     canonical: '/terms',
@@ -21,7 +25,7 @@ const webPageJsonLd = {
   '@type': 'WebPage',
   name: 'Terms of Service',
   description: 'Terms of Service for Originary - commercial tools implementing receipts for the agentic web.',
-  url: 'https://www.originary.xyz/terms',
+  url: '/terms',
   dateModified: '2025-07-27',
   publisher: {
     '@type': 'Organization',

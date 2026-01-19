@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Pilots | Originary',
     description: 'Fixed-scope pilots for production validation. Work with Originary to integrate PEAC decision records into your infrastructure.',
-    url: 'https://www.originary.xyz/pilots',
+    url: '/pilots',
     type: 'website',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {

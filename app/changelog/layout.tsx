@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Changelog | Originary',
     description: 'Product updates, new features, and improvements to Originary. Track releases and upcoming features.',
-    url: 'https://www.originary.xyz/changelog',
+    url: '/changelog',
     siteName: 'Originary',
     images: [{
-      url: 'https://www.originary.xyz/og.jpg',
+      url: '/og.jpg',
       width: 1200,
       height: 630,
       alt: 'Originary Changelog'

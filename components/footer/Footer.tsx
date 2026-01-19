@@ -25,9 +25,9 @@ function FooterNavLink({
   const baseStyle: React.CSSProperties = {
     color: 'var(--gray-600)',
     textDecoration: 'none',
-    fontSize: '13px',
+    fontSize: 'var(--text-sm)',
     lineHeight: '1.4',
-    transition: 'color 0.15s ease',
+    transition: 'color var(--duration-150) ease',
   }
 
   if (external) {
@@ -64,14 +64,14 @@ function LogoMark() {
       style={{
         width: '28px',
         height: '28px',
-        borderRadius: '7px',
-        background: '#0a0a0a',
+        borderRadius: 'var(--radius-lg)',
+        background: 'var(--gray-950)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'white',
+        color: 'var(--white)',
         fontWeight: 600,
-        fontSize: '13px',
+        fontSize: 'var(--text-sm)',
       }}
       aria-hidden="true"
     >
@@ -93,12 +93,12 @@ function PrimaryCta({
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: '6px',
-    padding: '8px 14px',
-    fontSize: '13px',
+    borderRadius: 'var(--radius-md)',
+    padding: 'var(--space-2) var(--space-3)',
+    fontSize: 'var(--text-sm)',
     fontWeight: 500,
     textDecoration: 'none',
-    transition: 'all 0.2s ease',
+    transition: 'all var(--duration-200) ease',
   }
 
   const variantStyle: React.CSSProperties =
@@ -437,11 +437,11 @@ function LayerC() {
     <div
       className="brand-band"
       style={{
-        marginTop: '48px',
+        marginTop: 'var(--space-12)',
         overflow: 'hidden',
-        borderRadius: '20px',
-        background: '#0a0a0a',
-        color: 'white',
+        borderRadius: 'var(--radius-2xl)',
+        background: 'var(--gray-950)',
+        color: 'var(--white)',
         position: 'relative',
         width: '100%',
         boxSizing: 'border-box',
@@ -502,14 +502,14 @@ function LayerC() {
               style={{
                 width: '32px',
                 height: '32px',
-                borderRadius: '8px',
-                background: 'white',
+                borderRadius: 'var(--radius-lg)',
+                background: 'var(--white)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
             >
-              <span style={{ color: '#0a0a0a', fontWeight: 700, fontSize: '14px' }}>O</span>
+              <span style={{ color: 'var(--gray-950)', fontWeight: 700, fontSize: 'var(--text-sm)' }}>O</span>
             </div>
             <span
               style={{
@@ -610,7 +610,7 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: 'linear-gradient(180deg, #fafafa 0%, #f5f5f7 100%)',
+        background: 'linear-gradient(180deg, var(--gray-50) 0%, var(--gray-100) 100%)',
         borderTop: '1px solid var(--gray-200)',
         position: 'relative',
       }}

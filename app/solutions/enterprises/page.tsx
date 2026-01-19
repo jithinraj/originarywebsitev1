@@ -3,23 +3,23 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Enterprises | AI Governance and AI Compliance for Agentic Infrastructure',
-  description: 'AI governance and AI compliance tools for enterprise agentic infrastructure. Comprehensive policy management, AI compliance reporting, and security controls built for SOC 2, GDPR, and multi-region deployment.',
+  title: 'Enterprises | AI Governance and Compliance',
+  description: 'AI governance and compliance tools for enterprise agentic infrastructure. Policy management, compliance reporting, and security controls.',
   keywords: 'AI governance, AI compliance, enterprise agentic governance, policy management, compliance reporting, SOC 2, GDPR, security controls, enterprise AI, agent governance',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'Enterprises | AI Governance and AI Compliance',
     description: 'AI governance and AI compliance tools for enterprise agentic infrastructure. Comprehensive policy management, AI compliance reporting, and security controls for enterprises.',
-    url: 'https://www.originary.xyz/solutions/enterprises',
-    images: ['https://www.originary.xyz/og.jpg'],
+    url: '/solutions/enterprises',
+    images: ['/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Enterprises | AI Governance and AI Compliance',
     description: 'AI governance and AI compliance tools for enterprise agentic infrastructure. Comprehensive policy management, AI compliance reporting, and security controls.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },

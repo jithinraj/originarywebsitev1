@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     url: "https://www.originary.xyz/blog/ai-bot-detection/",
     publishedTime: "2025-12-01",
     authors: ["Jithin Raj", "Originary Team"],
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     siteName: 'Originary',
   },
   twitter: {
     card: "summary_large_image",
     title: "AI Bot Detection: From Traffic to Evidence",
     description: "AI bot detection beyond classifiers. Turn AI traffic into verifiable evidence.",
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og.jpg'],
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -834,7 +834,7 @@ issued_at        → when the receipt was generated`}
                             When an AI agent hits a protected resource, it receives an <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> response. Once the agent pays or proves entitlement, the PEAC kernel issues a signed receipt binding: what was accessed, who accessed it, which policy applied, and payment details.
                           </p>
                           <p style={{ margin: 0 }}>
-                            AI bot detection becomes not just &ldquo;yes, that looked like a bot&rdquo; but <strong>&ldquo;yes, that bot paid, under these terms, here is the signed proof.&rdquo;</strong>
+                            AI bot detection becomes not just &ldquo;yes, that looked like a bot&rdquo; but <strong>&ldquo;yes, that bot paid, under these terms, here is the verified record.&rdquo;</strong>
                           </p>
                         </>
                       )

@@ -13,7 +13,11 @@
     "start": "next start",
     "lint": "next lint",
     "check:emdash": "grep -R \"\\u2014\" app || true && test $(grep -R \"\\u2014\" app | wc -l) -eq 0",
-    "verify:footer": "node scripts/verify-footer-links.mjs"
+    "verify:footer": "node scripts/verify-footer-links.mjs",
+    "check:terms": "node scripts/check-marketing-terms.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "check:snippets": "node scripts/check-snippets.mjs",
+    "check:all": "npm run check:terms && npm run check:links && npm run check:snippets"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.32.2",

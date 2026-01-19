@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'PEAC-Receipts | Portable Decision Records Documentation',
     description: 'PEAC-Receipts documentation for portable decision records. Open standard for verifiable agent interaction receipts with cryptographic proof.',
-    url: 'https://www.originary.xyz/docs/receipts',
+    url: '/docs/receipts',
     siteName: 'Originary',
     type: 'website'
   },
@@ -61,7 +61,7 @@ export default function ReceiptsDocPage() {
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
-              PEAC-Receipts are portable decision records that provide cryptographically signed proof of agent interactions. These verifiable receipts enable compliance tracking, audit trails, dispute resolution, and policy enforcement across the open internet.
+              PEAC-Receipts are portable decision records that provide signature-verified evidence of agent interactions. These verifiable receipts enable compliance tracking, audit trails, dispute resolution, and policy enforcement across the open internet.
             </p>
 
             {/* What is PEAC-Receipt */}

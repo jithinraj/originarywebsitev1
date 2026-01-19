@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Pricing',
     description: 'Pricing for Originary Trace and decision record infrastructure. Plans for agent observability, interaction tracking, and PEAC-Receipts.',
-    url: 'https://www.originary.xyz/pricing',
+    url: '/pricing',
     siteName: 'Originary',
     images: [{
       url: '/og.jpg',
