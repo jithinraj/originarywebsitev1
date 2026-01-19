@@ -87,7 +87,7 @@ export default function ResearchPage() {
               Abstract
             </h2>
             <p style={{ color: 'var(--gray-700)', lineHeight: 1.8, fontSize: 'var(--text-base)' }}>
-              PEAC (Policy, Evidence, Attribution, Consent) is a protocol for publishing interaction terms and issuing cryptographically verifiable receipts as durable evidence of what occurred under those terms. The protocol enables API providers to declare policies via discoverable policy files, issue signed receipts for each interaction, and support offline verification without centralized infrastructure. PEAC is designed for the agentic web - where autonomous software agents interact with APIs on behalf of users and organizations - requiring verifiable records of policy compliance, consent, attribution, and optional settlement.
+              PEAC (Policy, Evidence, Attribution, Consent) is a protocol for publishing interaction terms and issuing signed, verifiable receipts as durable evidence of what occurred under those terms. The protocol enables API providers to declare policies via discoverable policy files, issue signed receipts for each interaction, and support offline verification without centralized infrastructure. PEAC is designed for the agentic web - where autonomous software agents interact with APIs on behalf of users and organizations - requiring verifiable records of policy compliance, consent, attribution, and optional settlement.
             </p>
           </div>
 

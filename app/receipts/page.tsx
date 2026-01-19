@@ -21,7 +21,7 @@ export default function ReceiptsPage() {
   const features = [
     {
       icon: <Lock size={24} />,
-      title: 'Cryptographically Signed',
+      title: 'Signature-Verified',
       description: 'JWS payloads with Ed25519 signatures. Tamper-evident by design.',
       color: '#635BFF'
     },
@@ -101,7 +101,7 @@ export default function ReceiptsPage() {
                 }}
               >
                 Originary Receipts:
-                <span className="receipts-headline-gradient"> cryptographic proof for every AI interaction</span>
+                <span className="receipts-headline-gradient"> verifiable records for every AI interaction</span>
               </h1>
 
               <p
@@ -113,7 +113,7 @@ export default function ReceiptsPage() {
                 }}
               >
                 Originary generates tamper-evident proofs of policy, consent, attribution, and payment events.
-                Audit usage, resolve disputes, and demonstrate compliance with cryptographic certainty.
+                Audit usage, resolve disputes, and demonstrate compliance with verifiable evidence.
               </p>
 
               <div
@@ -167,7 +167,7 @@ export default function ReceiptsPage() {
             <div className="receipts-section-header">
               <h2 className="receipts-section-title">What receipts provide</h2>
               <p className="receipts-section-subtitle">
-                Cryptographic evidence for every interaction, verifiable against published public keys.
+                Signed records for every interaction, verifiable against published public keys.
               </p>
             </div>
 
@@ -288,7 +288,7 @@ export default function ReceiptsPage() {
               {[
                 { title: 'Internal Audits', desc: 'Detailed records of AI interactions for governance and risk management.' },
                 { title: 'Content Licensing', desc: 'Verify content was accessed according to licensing terms.' },
-                { title: 'Dispute Resolution', desc: 'Cryptographic evidence when disputes arise about terms.' },
+                { title: 'Dispute Resolution', desc: 'Verifiable evidence when disputes arise about terms.' },
                 { title: 'Usage Analytics', desc: 'Track AI access patterns with verifiable records.' },
                 { title: 'Payment Reconciliation', desc: 'Match payments to specific API interactions.' },
                 { title: 'Policy Compliance', desc: 'Demonstrate interactions occurred under specific policies.' }
@@ -343,7 +343,7 @@ export default function ReceiptsPage() {
               <div>
                 <strong>A note on legal interpretation</strong>
                 <p>
-                  PEAC-Receipts provide cryptographic evidence of interactions and policy snapshots.
+                  PEAC-Receipts provide signed evidence of interactions and policy snapshots.
                   How this evidence is interpreted in legal or regulatory contexts depends on jurisdiction
                   and specific circumstances. Consult legal counsel for compliance guidance.
                 </p>
@@ -358,7 +358,7 @@ export default function ReceiptsPage() {
             <div className="cta-card receipts-cta-card">
               <div className="receipts-cta-glow" />
               <h2>Ready to add Originary Receipts?</h2>
-              <p>Start generating cryptographic proofs for every AI interaction with Originary.</p>
+              <p>Start generating verifiable records for every AI interaction with Originary.</p>
               <div className="receipts-cta-buttons">
                 <Link href="/developers" className="btn btn-lg btn-primary">
                   <span>Start Building</span>

@@ -242,6 +242,8 @@ npx @peac/cli@latest receipt \\
                 title="Accept traffic (2 min)"
                 description="Start processing agent requests with receipts"
                 code={`// Add to your edge/middleware (Cloudflare example)
+import { verifyReceipt } from '@peac/verify';
+
 export default {
   async fetch(request) {
     const receipt = request.headers.get('PEAC-Receipt');
@@ -253,7 +255,7 @@ export default {
       });
     }
 
-    // Verify receipt (cached for performance)
+    // Verify receipt against /.well-known/jwks.json
     const valid = await verifyReceipt(receipt);
     if (!valid) return new Response('Invalid', { status: 403 });
 

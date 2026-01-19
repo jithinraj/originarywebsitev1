@@ -267,70 +267,60 @@ function VerifySkeleton() {
   return (
     <div className="wrap">
       <NavigationHeader />
-      <main role="main" aria-label="Loading" style={{ paddingTop: '80px' }}>
+      <main role="main" aria-label="Verify PEAC-Receipt" style={{ paddingTop: '80px' }}>
         <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
           <div className="container" style={{ maxWidth: '700px', margin: '0 auto' }}>
-            {/* Badge skeleton */}
+            {/* Real content for SSR/SEO */}
             <div style={{
-              width: '120px',
-              height: '32px',
-              background: 'var(--gray-100)',
+              display: 'inline-flex',
+              background: 'rgba(99, 91, 255, 0.1)',
+              border: '1px solid rgba(99, 91, 255, 0.2)',
               borderRadius: 'var(--radius-full)',
-              marginBottom: 'var(--space-6)',
-              animation: 'pulse 1.5s ease-in-out infinite'
-            }} />
-
-            {/* Title skeleton */}
-            <div style={{
-              width: '280px',
-              height: '48px',
-              background: 'var(--gray-100)',
-              borderRadius: 'var(--radius-lg)',
-              marginBottom: 'var(--space-6)',
-              animation: 'pulse 1.5s ease-in-out infinite',
-              animationDelay: '0.1s'
-            }} />
-
-            {/* Description skeleton */}
-            <div style={{ marginBottom: 'var(--space-12)' }}>
-              <div style={{
-                width: '100%',
-                height: '24px',
-                background: 'var(--gray-100)',
-                borderRadius: 'var(--radius-md)',
-                marginBottom: 'var(--space-2)',
-                animation: 'pulse 1.5s ease-in-out infinite',
-                animationDelay: '0.2s'
-              }} />
-              <div style={{
-                width: '80%',
-                height: '24px',
-                background: 'var(--gray-100)',
-                borderRadius: 'var(--radius-md)',
-                animation: 'pulse 1.5s ease-in-out infinite',
-                animationDelay: '0.3s'
-              }} />
+              padding: 'var(--space-2) var(--space-6)',
+              color: 'var(--brand-primary)',
+              fontSize: 'var(--text-sm)',
+              fontWeight: 600,
+              marginBottom: 'var(--space-6)'
+            }}>
+              DEMO MODE
             </div>
 
+            <h1 style={{
+              fontSize: 'var(--text-5xl)',
+              fontWeight: 700,
+              marginBottom: 'var(--space-6)',
+              color: 'var(--gray-900)'
+            }}>
+              Verify Receipt
+            </h1>
+
+            <p style={{
+              fontSize: 'var(--text-xl)',
+              color: 'var(--gray-600)',
+              lineHeight: 1.7,
+              marginBottom: 'var(--space-12)'
+            }}>
+              Paste a PEAC-Receipt token to verify its signature and view claims. This demo validates token format and structure.
+            </p>
+
             {/* Input card skeleton */}
-            <div className="card" style={{ marginBottom: 'var(--space-6)' }}>
-              <div style={{
-                width: '140px',
-                height: '20px',
-                background: 'var(--gray-100)',
-                borderRadius: 'var(--radius-md)',
-                marginBottom: 'var(--space-2)',
-                animation: 'pulse 1.5s ease-in-out infinite',
-                animationDelay: '0.4s'
-              }} />
+            <div className="card" style={{ marginBottom: 'var(--space-6)', textAlign: 'left' }}>
+              <label style={{
+                display: 'block',
+                fontSize: 'var(--text-sm)',
+                fontWeight: 600,
+                color: 'var(--gray-700)',
+                marginBottom: 'var(--space-2)'
+              }}>
+                PEAC-Receipt Token
+              </label>
               <div style={{
                 width: '100%',
                 height: '120px',
                 background: 'var(--gray-100)',
                 borderRadius: 'var(--radius-lg)',
                 marginBottom: 'var(--space-4)',
-                animation: 'pulse 1.5s ease-in-out infinite',
-                animationDelay: '0.5s'
+                animation: 'pulse 1.5s ease-in-out infinite'
               }} />
               <div style={{
                 width: '140px',
@@ -338,8 +328,35 @@ function VerifySkeleton() {
                 background: 'var(--gray-200)',
                 borderRadius: 'var(--radius-lg)',
                 animation: 'pulse 1.5s ease-in-out infinite',
-                animationDelay: '0.6s'
+                animationDelay: '0.1s'
               }} />
+            </div>
+
+            {/* SSR-friendly info section */}
+            <div style={{
+              background: 'var(--gray-50)',
+              border: '1px solid var(--gray-200)',
+              borderRadius: 'var(--radius-xl)',
+              padding: 'var(--space-6)'
+            }}>
+              <h3 style={{
+                fontSize: 'var(--text-lg)',
+                fontWeight: 600,
+                marginBottom: 'var(--space-3)',
+                color: 'var(--gray-900)'
+              }}>
+                About Receipt Verification
+              </h3>
+              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-3)' }}>
+                This verification tool validates PEAC-Receipt tokens by checking JWT structure and signature. In production, verification includes:
+              </p>
+              <ul style={{ color: 'var(--gray-600)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
+                <li>Ed25519 signature verification using public keys</li>
+                <li>Issuer domain validation</li>
+                <li>Timestamp freshness checks</li>
+                <li>Payment evidence validation</li>
+                <li>Policy constraint verification</li>
+              </ul>
             </div>
           </div>
         </section>

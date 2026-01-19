@@ -46,9 +46,9 @@ export default function NewHero() {
 
           <div className="hero-footer-strip">
             <p className="strip-brand">
-              ORIGINARY&trade;
+              <span className="strip-item">ORIGINARY&trade;</span>
               <span className="strip-dot">&middot;</span>
-              Open software for macOS, Windows, Linux
+              <span className="strip-item">Open software for macOS, Windows, Linux</span>
               <span className="strip-dot">&middot;</span>
               <a href="/downloads" className="strip-link-inline">Download</a>
               <span className="strip-dot">&middot;</span>
@@ -233,6 +233,10 @@ export default function NewHero() {
           color: var(--gray-300);
         }
 
+        .strip-item {
+          white-space: nowrap;
+        }
+
         .strip-brand :global(.strip-link-inline) {
           color: var(--gray-500);
           text-decoration: none;
@@ -402,11 +406,21 @@ export default function NewHero() {
 
           .strip-brand {
             font-size: 10px;
+            line-height: 1.6;
           }
 
           .strip-clarifier {
             font-size: 10px;
             text-align: center;
+          }
+
+          .strip-dot {
+            display: none;
+          }
+
+          .strip-brand {
+            flex-direction: column;
+            gap: 6px;
           }
         }
 
@@ -512,13 +526,14 @@ export default function NewHero() {
 
           .strip-brand {
             font-size: 9px;
-            flex-direction: column;
             gap: 4px;
-            text-align: center;
           }
 
           .strip-clarifier {
             font-size: 9px;
+            max-width: 280px;
+            margin-left: auto;
+            margin-right: auto;
           }
 
           .widget-wrapper {
