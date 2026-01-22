@@ -60,14 +60,14 @@ export default function WhyPeacPage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-4)',
                   marginBottom: 'var(--space-6)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}
               >
                 WHY PEAC
@@ -80,18 +80,18 @@ export default function WhyPeacPage() {
                   lineHeight: 1.1,
                   letterSpacing: '-0.03em',
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 The open standard for{' '}
-                <span style={{ color: 'var(--brand-primary)' }}>verifiable agent interactions</span>
+                <span style={{ color: 'var(--accent-brand)' }}>verifiable agent interactions</span>
               </h1>
 
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-8)'
                 }}
               >
@@ -113,74 +113,74 @@ export default function WhyPeacPage() {
         </section>
 
         {/* Key Differentiators */}
-        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-              <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+              <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                 What makes PEAC different
               </h2>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)', maxWidth: '600px', margin: '0 auto' }}>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
                 Built for interoperability, privacy, and long-term adoption
               </p>
             </div>
 
             <div className="grid grid-3" style={{ gap: 'var(--space-6)' }}>
               <div className="card">
-                <Shield size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Shield size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Cryptographic Proof
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   Every interaction generates a JWS-signed receipt with Ed25519 signatures. Verify offline against published JWKS endpoints.
                 </p>
               </div>
 
               <div className="card">
-                <Globe size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Globe size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   No Vendor Lock-in
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   Apache-2.0 licensed. Self-host, use Originary Cloud, or build your own conformant implementation. Switch providers anytime.
                 </p>
               </div>
 
               <div className="card">
-                <Zap size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Zap size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Edge-Native
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   Verify receipts in milliseconds at the edge. Works with Cloudflare Workers, Vercel Edge, Fastly Compute, and more.
                 </p>
               </div>
 
               <div className="card">
-                <Lock size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Lock size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Privacy-First
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   Built-in privacy modes (strict, balanced, custom) for identifier handling. Minimal disclosure by default.
                 </p>
               </div>
 
               <div className="card">
-                <FileText size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <FileText size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Policy Discovery
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   Simple /.well-known/peac.txt file declares pricing, terms, and payment methods. Agents discover policies automatically.
                 </p>
               </div>
 
               <div className="card">
-                <Code size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Code size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Multiple Payment Rails
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   Works with x402, MCP, A2A, and traditional payment systems. Adapter-based architecture for any payment rail.
                 </p>
               </div>
@@ -192,10 +192,10 @@ export default function WhyPeacPage() {
         <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-              <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+              <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                 How PEAC compares
               </h2>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)', maxWidth: '600px', margin: '0 auto' }}>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
                 PEAC Protocol vs proprietary solutions vs building from scratch
               </p>
             </div>
@@ -204,16 +204,16 @@ export default function WhyPeacPage() {
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--text-sm)' }}>
                 <thead>
                   <tr>
-                    <th style={{ textAlign: 'left', padding: 'var(--space-4)', borderBottom: '2px solid var(--gray-200)', fontWeight: 600, color: 'var(--gray-900)' }}>
+                    <th style={{ textAlign: 'left', padding: 'var(--space-4)', borderBottom: '2px solid var(--border-default)', fontWeight: 600, color: 'var(--text-primary)' }}>
                       Feature
                     </th>
-                    <th style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '2px solid var(--gray-200)', fontWeight: 600, color: 'var(--brand-primary)', background: 'rgba(99, 91, 255, 0.05)' }}>
+                    <th style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '2px solid var(--border-default)', fontWeight: 600, color: 'var(--accent-brand)', background: 'var(--accent-brand-faint)' }}>
                       PEAC Protocol
                     </th>
-                    <th style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '2px solid var(--gray-200)', fontWeight: 600, color: 'var(--gray-700)' }}>
+                    <th style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '2px solid var(--border-default)', fontWeight: 600, color: 'var(--text-secondary)' }}>
                       Proprietary APIs
                     </th>
-                    <th style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '2px solid var(--gray-200)', fontWeight: 600, color: 'var(--gray-700)' }}>
+                    <th style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '2px solid var(--border-default)', fontWeight: 600, color: 'var(--text-secondary)' }}>
                       Build Your Own
                     </th>
                   </tr>
@@ -221,34 +221,34 @@ export default function WhyPeacPage() {
                 <tbody>
                   {comparisonData.map((row, index) => (
                     <tr key={index}>
-                      <td style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', color: 'var(--gray-700)' }}>
+                      <td style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--border-subtle)', color: 'var(--text-secondary)' }}>
                         {row.feature}
                       </td>
-                      <td style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', background: 'rgba(99, 91, 255, 0.02)' }}>
+                      <td style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '1px solid var(--border-subtle)', background: 'var(--accent-brand-faint)' }}>
                         {row.peac === 'partial' ? (
-                          <span style={{ color: 'var(--gray-400)' }}>Partial</span>
+                          <span style={{ color: 'var(--text-muted)' }}>Partial</span>
                         ) : row.peac ? (
                           <CheckCircle size={20} style={{ color: '#22C55E' }} />
                         ) : (
-                          <XCircle size={20} style={{ color: 'var(--gray-300)' }} />
+                          <XCircle size={20} style={{ color: 'var(--border-default)' }} />
                         )}
                       </td>
-                      <td style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)' }}>
+                      <td style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '1px solid var(--border-subtle)' }}>
                         {row.proprietary === 'partial' ? (
-                          <span style={{ color: 'var(--gray-400)' }}>Partial</span>
+                          <span style={{ color: 'var(--text-muted)' }}>Partial</span>
                         ) : row.proprietary ? (
                           <CheckCircle size={20} style={{ color: '#22C55E' }} />
                         ) : (
-                          <XCircle size={20} style={{ color: 'var(--gray-300)' }} />
+                          <XCircle size={20} style={{ color: 'var(--border-default)' }} />
                         )}
                       </td>
-                      <td style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)' }}>
+                      <td style={{ textAlign: 'center', padding: 'var(--space-4)', borderBottom: '1px solid var(--border-subtle)' }}>
                         {row.custom === 'partial' ? (
-                          <span style={{ color: 'var(--gray-400)' }}>Partial</span>
+                          <span style={{ color: 'var(--text-muted)' }}>Partial</span>
                         ) : row.custom ? (
                           <CheckCircle size={20} style={{ color: '#22C55E' }} />
                         ) : (
-                          <XCircle size={20} style={{ color: 'var(--gray-300)' }} />
+                          <XCircle size={20} style={{ color: 'var(--border-default)' }} />
                         )}
                       </td>
                     </tr>
@@ -260,20 +260,20 @@ export default function WhyPeacPage() {
         </section>
 
         {/* When to Use PEAC */}
-        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-              <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+              <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                 When to use PEAC
               </h2>
             </div>
 
             <div className="grid grid-2" style={{ gap: 'var(--space-8)', maxWidth: '900px', margin: '0 auto' }}>
               <div className="card" style={{ borderLeft: '4px solid #22C55E' }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                   PEAC is ideal when you need:
                 </h3>
-                <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--gray-600)', lineHeight: 1.8 }}>
+                <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
                   <li>Verifiable proof of AI interactions for audits</li>
                   <li>Policy discovery without custom integrations</li>
                   <li>Payment handling across multiple rails</li>
@@ -283,11 +283,11 @@ export default function WhyPeacPage() {
                 </ul>
               </div>
 
-              <div className="card" style={{ borderLeft: '4px solid var(--gray-300)' }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+              <div className="card" style={{ borderLeft: '4px solid var(--border-default)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                   Consider alternatives if:
                 </h3>
-                <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--gray-600)', lineHeight: 1.8 }}>
+                <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
                   <li>You only need simple API key authentication</li>
                   <li>No audit trail or compliance requirements</li>
                   <li>Single vendor ecosystem is acceptable</li>
@@ -302,10 +302,10 @@ export default function WhyPeacPage() {
         <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
-              <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+              <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                 Works with your existing stack
               </h2>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)', maxWidth: '600px', margin: '0 auto' }}>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
                 PEAC integrates with HTTP 402, x402, MCP, A2A, and AIPREF standards
               </p>
             </div>
@@ -331,7 +331,7 @@ export default function WhyPeacPage() {
                 Deploy your first policy in 5 minutes. Self-host or use Originary Cloud.
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link href="/developers" className="btn btn-lg" style={{ background: 'var(--white)', color: 'var(--brand-primary)', border: 'none' }}>
+                <Link href="/developers" className="btn btn-lg" style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}>
                   <span>Quick Start Guide</span>
                   <ArrowRight size={18} />
                 </Link>

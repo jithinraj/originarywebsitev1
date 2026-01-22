@@ -45,11 +45,11 @@ export default function MCPPage() {
           <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
             <div style={{
               display: 'inline-flex',
-              background: 'rgba(99, 91, 255, 0.1)',
-              border: '1px solid rgba(99, 91, 255, 0.2)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-6)',
-              color: 'var(--brand-primary)',
+              color: 'var(--accent-brand)',
               fontSize: 'var(--text-xs)',
               fontWeight: 600,
               textTransform: 'uppercase',
@@ -73,7 +73,7 @@ export default function MCPPage() {
           {/* Subtitle */}
           <p style={{
             fontSize: 'var(--text-xl)',
-            color: 'var(--gray-600)',
+            color: 'var(--text-secondary)',
             textAlign: 'center',
             marginBottom: 'var(--space-16)',
             lineHeight: 1.6
@@ -86,10 +86,10 @@ export default function MCPPage() {
             <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
               Overview
             </h2>
-            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
               Model Context Protocol (MCP) is an open standard for connecting LLMs to external data sources and tools. Originary extends MCP with PEAC-Receipt verification, providing cryptographic proof of tool invocations and policy compliance.
             </p>
-            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
               When an LLM calls an MCP tool that requires payment or policy adherence, Originary issues a signed receipt that can be verified by downstream systems. This enables trusted tool calling workflows with full audit trails.
             </p>
           </div>
@@ -104,7 +104,7 @@ export default function MCPPage() {
                 <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
                   Paid Tool Access
                 </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                   Monetize MCP tools by requiring payment before execution. PEAC-Receipts prove payment completion for downstream verification.
                 </p>
               </div>
@@ -112,7 +112,7 @@ export default function MCPPage() {
                 <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
                   Multi-Tool Workflows
                 </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                   Chain multiple MCP tool calls together with verifiable receipts showing the complete workflow execution path.
                 </p>
               </div>
@@ -120,7 +120,7 @@ export default function MCPPage() {
                 <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
                   Policy Enforcement
                 </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                   Verify that LLMs have obtained necessary permissions before accessing sensitive MCP resources.
                 </p>
               </div>
@@ -137,7 +137,7 @@ export default function MCPPage() {
               MCP Server with PEAC-Receipt
             </h3>
             <pre style={{
-              background: 'var(--gray-50)',
+              background: 'var(--surface-subtle)',
               padding: 'var(--space-4)',
               borderRadius: 'var(--radius-md)',
               overflow: 'auto',
@@ -158,7 +158,7 @@ export default function MCPPage() {
 }`}
             </pre>
 
-            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginTop: 'var(--space-4)' }}>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginTop: 'var(--space-4)' }}>
               MCP servers can verify attached receipts before executing tools, ensuring proper authorization and payment.
             </p>
           </div>
@@ -168,7 +168,7 @@ export default function MCPPage() {
             <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
               Benefits for MCP Providers
             </h2>
-            <ul style={{ color: 'var(--gray-600)', lineHeight: 1.8, paddingLeft: 'var(--space-6)' }}>
+            <ul style={{ color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 'var(--space-6)' }}>
               <li>Monetize MCP tools with pay-per-call pricing</li>
               <li>Cryptographic verification of tool invocations</li>
               <li>Complete audit trail of LLM tool usage</li>
@@ -184,7 +184,7 @@ export default function MCPPage() {
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
               <Link href="/docs/mcp/receipts" style={{
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-base)',
                 fontWeight: 500
@@ -192,7 +192,7 @@ export default function MCPPage() {
                 MCP Receipts Documentation →
               </Link>
               <Link href="/products/adapters" style={{
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-base)',
                 fontWeight: 500
@@ -200,7 +200,7 @@ export default function MCPPage() {
                 Adapters Product →
               </Link>
               <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener" style={{
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-base)',
                 fontWeight: 500
@@ -214,14 +214,14 @@ export default function MCPPage() {
           <div style={{
             textAlign: 'center',
             padding: 'var(--space-12)',
-            background: 'var(--gray-50)',
+            background: 'var(--surface-subtle)',
             borderRadius: 'var(--radius-lg)',
             marginTop: 'var(--space-12)'
           }}>
             <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
               Add receipts to your MCP server
             </h3>
-            <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
               Enable verification and monetization for MCP tools
             </p>
             <Link href="/pricing" className="button-primary">

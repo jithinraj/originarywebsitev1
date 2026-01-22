@@ -71,7 +71,7 @@ export default function ProofSection() {
 
       <style jsx>{`
         .proof {
-          background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
+          background: var(--surface-base);
           padding: var(--space-20) 0;
           position: relative;
         }
@@ -83,7 +83,7 @@ export default function ProofSection() {
           left: 0;
           right: 0;
           height: 1px;
-          background: linear-gradient(90deg, transparent 0%, var(--gray-200) 50%, transparent 100%);
+          background: linear-gradient(90deg, transparent 0%, var(--border-default) 50%, transparent 100%);
         }
 
         .proof-container {
@@ -102,13 +102,13 @@ export default function ProofSection() {
           align-items: center;
           gap: var(--space-2);
           padding: var(--space-1) var(--space-3);
-          background: var(--gray-50);
-          border: 1px solid var(--gray-100);
+          background: var(--surface-subtle);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-full);
           margin-bottom: var(--space-4);
           font-size: var(--text-xs);
           font-weight: 600;
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           text-transform: uppercase;
           letter-spacing: 0.05em;
         }
@@ -117,20 +117,20 @@ export default function ProofSection() {
           width: 6px;
           height: 6px;
           border-radius: var(--radius-full);
-          background: linear-gradient(135deg, var(--brand-primary) 0%, var(--gray-500) 100%);
+          background: linear-gradient(135deg, var(--accent-brand) 0%, var(--text-tertiary) 100%);
         }
 
         .proof-title {
           font-size: clamp(28px, 4vw, 40px);
           font-weight: 700;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin: 0 0 var(--space-3);
           letter-spacing: -0.03em;
         }
 
         .proof-subtitle {
           font-size: var(--text-base);
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           margin: 0;
         }
 
@@ -146,23 +146,23 @@ export default function ProofSection() {
           align-items: center;
           gap: var(--space-4);
           padding: var(--space-6) var(--space-4);
-          background: var(--white);
-          border: 1px solid var(--gray-100);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-xl);
           text-decoration: none;
           text-align: center;
           transition: all var(--duration-200) cubic-bezier(0.4, 0, 0.2, 1);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+          box-shadow: var(--shadow-card);
         }
 
         .proof-grid :global(.proof-card:hover) {
-          border-color: var(--gray-200);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+          border-color: var(--border-hover);
+          box-shadow: var(--shadow-card-hover);
           transform: translateY(-2px);
         }
 
         .proof-grid :global(.proof-card:focus-visible) {
-          outline: 2px solid var(--brand-primary);
+          outline: 2px solid var(--accent-brand);
           outline-offset: 2px;
         }
 
@@ -173,21 +173,21 @@ export default function ProofSection() {
           width: 40px;
           height: 40px;
           border-radius: var(--radius-lg);
-          background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+          background: var(--surface-subtle);
           transition: all var(--duration-200) ease;
         }
 
         .proof-grid :global(.proof-card:hover) .proof-icon-wrapper {
-          background: linear-gradient(135deg, rgba(99, 91, 255, 0.08) 0%, rgba(99, 91, 255, 0.12) 100%);
+          background: var(--accent-brand-muted);
         }
 
         .proof-grid :global(.proof-icon) {
-          color: var(--gray-400);
+          color: var(--text-muted);
           transition: color var(--duration-200) ease;
         }
 
         .proof-grid :global(.proof-card:hover .proof-icon) {
-          color: var(--brand-primary);
+          color: var(--accent-brand);
         }
 
         .proof-content {
@@ -199,12 +199,12 @@ export default function ProofSection() {
         .proof-name {
           font-size: var(--text-sm);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
         }
 
         .proof-desc {
           font-size: var(--text-xs);
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           line-height: 1.4;
         }
 

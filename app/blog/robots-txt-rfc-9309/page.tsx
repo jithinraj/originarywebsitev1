@@ -73,14 +73,14 @@ export default function RobotsTxtRFC9309Article() {
             {/* Breadcrumbs */}
             <nav style={{
               fontSize: 'var(--text-sm)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-8)'
             }}>
-              <Link href="/" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>Home</Link>
+              <Link href="/" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Home</Link>
               <span style={{ margin: '0 var(--space-2)' }}>/</span>
-              <Link href="/blog" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>Blog</Link>
+              <Link href="/blog" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Blog</Link>
               <span style={{ margin: '0 var(--space-2)' }}>/</span>
-              <span style={{ color: 'var(--gray-900)' }}>robots.txt (RFC 9309)</span>
+              <span style={{ color: 'var(--text-primary)' }}>robots.txt (RFC 9309)</span>
             </nav>
 
             {/* Article Header */}
@@ -89,13 +89,13 @@ export default function RobotsTxtRFC9309Article() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 marginBottom: 'var(--space-6)'
               }}>
                 <FileText size={14} />
@@ -107,14 +107,14 @@ export default function RobotsTxtRFC9309Article() {
                 fontWeight: 700,
                 lineHeight: 1.1,
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 robots.txt (RFC 9309): The Web&apos;s Crawl Access Control
               </h1>
 
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-8)'
               }}>
@@ -125,9 +125,9 @@ export default function RobotsTxtRFC9309Article() {
                 display: 'flex',
                 gap: 'var(--space-6)',
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 paddingTop: 'var(--space-6)',
-                borderTop: '1px solid var(--gray-200)'
+                borderTop: '1px solid var(--border-default)'
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                   <User size={16} />
@@ -140,12 +140,12 @@ export default function RobotsTxtRFC9309Article() {
             <div style={{
               fontSize: 'var(--text-base)',
               lineHeight: 1.8,
-              color: 'var(--gray-700)'
+              color: 'var(--text-secondary)'
             }}>
               {/* Summary */}
               <section style={{ marginBottom: 'var(--space-12)' }}>
-                <div className="card" style={{ background: 'rgba(0, 212, 170, 0.05)', border: '1px solid rgba(0, 212, 170, 0.2)' }}>
-                  <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                <div className="card" style={{ background: 'var(--accent-secondary-faint)', border: '1px solid var(--accent-secondary-muted)' }}>
+                  <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                     Summary
                   </h2>
                   <p style={{ marginBottom: 'var(--space-3)' }}>
@@ -166,54 +166,54 @@ export default function RobotsTxtRFC9309Article() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   What RFC 9309 Standardizes
                 </h2>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
                   <div className="card">
-                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                       Location and Format
                     </h3>
-                    <ul style={{ paddingLeft: 'var(--space-6)', margin: 0, color: 'var(--gray-700)', lineHeight: 1.8 }}>
-                      <li>Served at <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/robots.txt</code> from the origin root</li>
+                    <ul style={{ paddingLeft: 'var(--space-6)', margin: 0, color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+                      <li>Served at <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/robots.txt</code> from the origin root</li>
                       <li>Must be UTF-8 encoded</li>
-                      <li>Content-Type must be <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>text/plain</code></li>
+                      <li>Content-Type must be <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>text/plain</code></li>
                       <li>File size should be parseable up to at least 500 kibibytes</li>
-                      <li>The path <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/robots.txt</code> is <strong>always implicitly allowed</strong></li>
+                      <li>The path <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/robots.txt</code> is <strong>always implicitly allowed</strong></li>
                     </ul>
                   </div>
 
                   <div className="card">
-                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                       Groups and Rules
                     </h3>
                     <p style={{ marginBottom: 'var(--space-3)' }}>
                       A robots.txt file consists of one or more <strong>groups</strong>. Each group:
                     </p>
-                    <ul style={{ paddingLeft: 'var(--space-6)', margin: 0, color: 'var(--gray-700)', lineHeight: 1.8 }}>
-                      <li>Begins with one or more <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>User-agent:</code> lines specifying which crawlers the rules apply to</li>
-                      <li>Contains <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Allow:</code> and <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Disallow:</code> rules for URL path patterns</li>
+                    <ul style={{ paddingLeft: 'var(--space-6)', margin: 0, color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+                      <li>Begins with one or more <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>User-agent:</code> lines specifying which crawlers the rules apply to</li>
+                      <li>Contains <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Allow:</code> and <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Disallow:</code> rules for URL path patterns</li>
                       <li>User-agent matching is case-insensitive</li>
                       <li>If no applicable group is found, <strong>all access is allowed by default</strong></li>
                     </ul>
                   </div>
 
                   <div className="card">
-                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                       Matching Rules
                     </h3>
                     <p style={{ marginBottom: 'var(--space-3)' }}>
                       RFC 9309 defines precise matching behavior:
                     </p>
-                    <ul style={{ paddingLeft: 'var(--space-6)', margin: 0, color: 'var(--gray-700)', lineHeight: 1.8 }}>
-                      <li><strong>Case-sensitive path matching:</strong> <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/private</code> ≠ <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/Private</code></li>
+                    <ul style={{ paddingLeft: 'var(--space-6)', margin: 0, color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+                      <li><strong>Case-sensitive path matching:</strong> <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/private</code> ≠ <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/Private</code></li>
                       <li><strong>Longest match wins:</strong> Most specific rule applies when multiple patterns match</li>
-                      <li><strong>Wildcard <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>*</code>:</strong> Matches zero or more characters</li>
-                      <li><strong>End anchor <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>$</code>:</strong> Matches end of URL path</li>
+                      <li><strong>Wildcard <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>*</code>:</strong> Matches zero or more characters</li>
+                      <li><strong>End anchor <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>$</code>:</strong> Matches end of URL path</li>
                       <li><strong>When Allow and Disallow have equal specificity:</strong> Allow takes precedence</li>
-                      <li><strong>Comments:</strong> Lines starting with <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>#</code> are ignored</li>
+                      <li><strong>Comments:</strong> Lines starting with <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>#</code> are ignored</li>
                     </ul>
                   </div>
                 </div>
@@ -225,7 +225,7 @@ export default function RobotsTxtRFC9309Article() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Fetch Errors and Caching
                 </h2>
@@ -237,28 +237,28 @@ export default function RobotsTxtRFC9309Article() {
                 <div className="card" style={{ overflowX: 'auto', marginBottom: 'var(--space-6)' }}>
                   <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--text-sm)' }}>
                     <thead>
-                      <tr style={{ borderBottom: '2px solid var(--gray-200)' }}>
-                        <th style={{ padding: 'var(--space-3)', textAlign: 'left', color: 'var(--gray-900)', fontWeight: 600 }}>Situation</th>
-                        <th style={{ padding: 'var(--space-3)', textAlign: 'left', color: 'var(--gray-900)', fontWeight: 600 }}>Meaning</th>
-                        <th style={{ padding: 'var(--space-3)', textAlign: 'left', color: 'var(--gray-900)', fontWeight: 600 }}>Crawler Behavior</th>
+                      <tr style={{ borderBottom: '2px solid var(--border-default)' }}>
+                        <th style={{ padding: 'var(--space-3)', textAlign: 'left', color: 'var(--text-primary)', fontWeight: 600 }}>Situation</th>
+                        <th style={{ padding: 'var(--space-3)', textAlign: 'left', color: 'var(--text-primary)', fontWeight: 600 }}>Meaning</th>
+                        <th style={{ padding: 'var(--space-3)', textAlign: 'left', color: 'var(--text-primary)', fontWeight: 600 }}>Crawler Behavior</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr style={{ borderBottom: '1px solid var(--gray-200)' }}>
+                      <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                         <td style={{ padding: 'var(--space-3)', verticalAlign: 'top' }}>
-                          <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>4xx</code> status
+                          <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>4xx</code> status
                         </td>
                         <td style={{ padding: 'var(--space-3)', verticalAlign: 'top' }}>File unavailable or doesn&apos;t exist</td>
                         <td style={{ padding: 'var(--space-3)', verticalAlign: 'top' }}>Crawler MAY access any resources (no restrictions)</td>
                       </tr>
-                      <tr style={{ borderBottom: '1px solid var(--gray-200)' }}>
+                      <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                         <td style={{ padding: 'var(--space-3)', verticalAlign: 'top' }}>
-                          <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>5xx</code> status
+                          <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>5xx</code> status
                         </td>
                         <td style={{ padding: 'var(--space-3)', verticalAlign: 'top' }}>Server or network error</td>
                         <td style={{ padding: 'var(--space-3)', verticalAlign: 'top' }}>Treat as complete disallow until reachable</td>
                       </tr>
-                      <tr style={{ borderBottom: '1px solid var(--gray-200)' }}>
+                      <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                         <td style={{ padding: 'var(--space-3)', verticalAlign: 'top' }}>Redirects</td>
                         <td style={{ padding: 'var(--space-3)', verticalAlign: 'top' }}>File has moved</td>
                         <td style={{ padding: 'var(--space-3)', verticalAlign: 'top' }}>Follow up to a reasonable limit, evaluate in origin context</td>
@@ -276,7 +276,7 @@ export default function RobotsTxtRFC9309Article() {
                   <div style={{ display: 'flex', gap: 'var(--space-3)' }}>
                     <AlertTriangle size={24} style={{ color: '#f59e0b', flexShrink: 0 }} />
                     <div>
-                      <h4 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                      <h4 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                         Important: 4xx vs 5xx Semantics
                       </h4>
                       <p style={{ margin: 0, fontSize: 'var(--text-sm)', lineHeight: 1.7 }}>
@@ -293,7 +293,7 @@ export default function RobotsTxtRFC9309Article() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   What robots.txt Does NOT Do
                 </h2>
@@ -302,7 +302,7 @@ export default function RobotsTxtRFC9309Article() {
                   <div style={{ display: 'flex', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
                     <Shield size={32} style={{ color: '#ef4444', flexShrink: 0 }} />
                     <div>
-                      <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                      <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                         Security Warning
                       </h3>
                       <p style={{ marginBottom: 'var(--space-3)' }}>
@@ -331,7 +331,7 @@ export default function RobotsTxtRFC9309Article() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   How AIPREF Complements robots.txt
                 </h2>
@@ -342,25 +342,25 @@ export default function RobotsTxtRFC9309Article() {
 
                 <div style={{ display: 'grid', gap: 'var(--space-6)', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', marginBottom: 'var(--space-6)' }}>
                   <div className="card">
-                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                       robots.txt Role
                     </h3>
-                    <p style={{ margin: 0, fontSize: 'var(--text-sm)', color: 'var(--gray-700)' }}>
+                    <p style={{ margin: 0, fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                       Controls <strong>which URL paths</strong> crawlers may fetch. Binary yes/no decision per path.
                     </p>
                   </div>
 
                   <div className="card">
-                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                       AIPREF Role
                     </h3>
-                    <p style={{ margin: 0, fontSize: 'var(--text-sm)', color: 'var(--gray-700)' }}>
-                      Expresses <strong>how content may be used</strong> after access (training, search, etc.) via <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>Content-Usage</code> headers and robots.txt directives.
+                    <p style={{ margin: 0, fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
+                      Expresses <strong>how content may be used</strong> after access (training, search, etc.) via <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>Content-Usage</code> headers and robots.txt directives.
                     </p>
                   </div>
                 </div>
 
-                <div className="card" style={{ background: 'var(--gray-900)', color: 'var(--white)', marginBottom: 'var(--space-4)' }}>
+                <div className="card" style={{ background: 'var(--text-primary)', color: 'var(--white)', marginBottom: 'var(--space-4)' }}>
                   <h4 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--white)' }}>
                     Combined Example
                   </h4>
@@ -373,8 +373,8 @@ Content-Usage: /public/ train-ai=y`}
                   </pre>
                 </div>
 
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: 0 }}>
-                  This configuration keeps <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/internal/</code> off limits to crawlers (RFC 9309), while expressing usage preferences: default no AI training, but training allowed for <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/public/</code> (AIPREF). The AIPREF draft explicitly <strong>updates RFC 9309</strong> to add the <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>Content-Usage</code> directive.
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: 0 }}>
+                  This configuration keeps <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/internal/</code> off limits to crawlers (RFC 9309), while expressing usage preferences: default no AI training, but training allowed for <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/public/</code> (AIPREF). The AIPREF draft explicitly <strong>updates RFC 9309</strong> to add the <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>Content-Usage</code> directive.
                 </p>
               </section>
 
@@ -384,48 +384,48 @@ Content-Usage: /public/ train-ai=y`}
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Copy-Paste Cookbook
                 </h2>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
                   <div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                       1. Minimal Allow All
                     </h3>
-                    <div className="card" style={{ background: 'var(--gray-900)', color: 'var(--white)' }}>
+                    <div className="card" style={{ background: 'var(--text-primary)', color: 'var(--white)' }}>
                       <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', whiteSpace: 'pre' }}>
 {`User-agent: *
 Allow: /`}
                       </pre>
                     </div>
-                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginTop: 'var(--space-2)', margin: 0 }}>
+                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginTop: 'var(--space-2)', margin: 0 }}>
                       Explicitly allows all crawlers to access all paths.
                     </p>
                   </div>
 
                   <div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                       2. Block Subtree with Carve-Out
                     </h3>
-                    <div className="card" style={{ background: 'var(--gray-900)', color: 'var(--white)' }}>
+                    <div className="card" style={{ background: 'var(--text-primary)', color: 'var(--white)' }}>
                       <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', whiteSpace: 'pre' }}>
 {`User-agent: *
 Disallow: /private/
 Allow: /private/press/`}
                       </pre>
                     </div>
-                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginTop: 'var(--space-2)', margin: 0 }}>
-                      Blocks <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/private/</code> but allows <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/private/press/</code> (longest match wins).
+                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginTop: 'var(--space-2)', margin: 0 }}>
+                      Blocks <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/private/</code> but allows <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/private/press/</code> (longest match wins).
                     </p>
                   </div>
 
                   <div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                       3. Wildcards and End Anchors
                     </h3>
-                    <div className="card" style={{ background: 'var(--gray-900)', color: 'var(--white)' }}>
+                    <div className="card" style={{ background: 'var(--text-primary)', color: 'var(--white)' }}>
                       <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', whiteSpace: 'pre' }}>
 {`User-agent: *
 Disallow: *.bak$
@@ -433,16 +433,16 @@ Disallow: /tmp/*
 Allow: /tmp/public/`}
                       </pre>
                     </div>
-                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginTop: 'var(--space-2)', margin: 0 }}>
-                      <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>*</code> matches any characters, <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>$</code> anchors to end of path.
+                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginTop: 'var(--space-2)', margin: 0 }}>
+                      <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>*</code> matches any characters, <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>$</code> anchors to end of path.
                     </p>
                   </div>
 
                   <div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                       4. Target Specific Crawler
                     </h3>
-                    <div className="card" style={{ background: 'var(--gray-900)', color: 'var(--white)' }}>
+                    <div className="card" style={{ background: 'var(--text-primary)', color: 'var(--white)' }}>
                       <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', whiteSpace: 'pre' }}>
 {`User-agent: GPTBot
 Disallow: /
@@ -451,16 +451,16 @@ User-agent: *
 Allow: /`}
                       </pre>
                     </div>
-                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginTop: 'var(--space-2)', margin: 0 }}>
+                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginTop: 'var(--space-2)', margin: 0 }}>
                       Blocks GPTBot specifically while allowing all other crawlers.
                     </p>
                   </div>
 
                   <div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                       5. Combine Crawl Control with AIPREF Preferences
                     </h3>
-                    <div className="card" style={{ background: 'var(--gray-900)', color: 'var(--white)' }}>
+                    <div className="card" style={{ background: 'var(--text-primary)', color: 'var(--white)' }}>
                       <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', whiteSpace: 'pre' }}>
 {`User-agent: *
 Allow: /
@@ -469,7 +469,7 @@ Content-Usage: train-ai=n, search=y
 Content-Usage: /research/ train-ai=y`}
                       </pre>
                     </div>
-                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginTop: 'var(--space-2)', margin: 0 }}>
+                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginTop: 'var(--space-2)', margin: 0 }}>
                       Combines RFC 9309 crawl rules with AIPREF usage preferences for path-specific control.
                     </p>
                   </div>
@@ -482,7 +482,7 @@ Content-Usage: /research/ train-ai=y`}
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Quick Testing Checklist
                 </h2>
@@ -491,11 +491,11 @@ Content-Usage: /research/ train-ai=y`}
                   <ol style={{ paddingLeft: 'var(--space-6)', margin: 0, lineHeight: 1.8 }}>
                     <li style={{ marginBottom: 'var(--space-3)' }}>
                       <strong>Verify file is accessible:</strong>
-                      <div style={{ marginTop: 'var(--space-2)', background: 'var(--gray-900)', padding: 'var(--space-3)', borderRadius: 'var(--radius-md)', color: 'var(--white)', fontFamily: 'monospace', fontSize: 'var(--text-sm)' }}>
+                      <div style={{ marginTop: 'var(--space-2)', background: 'var(--text-primary)', padding: 'var(--space-3)', borderRadius: 'var(--radius-md)', color: 'var(--white)', fontFamily: 'monospace', fontSize: 'var(--text-sm)' }}>
                         curl -sI https://example.com/robots.txt
                       </div>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginTop: 'var(--space-2)', margin: 0 }}>
-                        Should return <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>200 OK</code> with <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>Content-Type: text/plain</code>
+                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginTop: 'var(--space-2)', margin: 0 }}>
+                        Should return <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>200 OK</code> with <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>Content-Type: text/plain</code>
                       </p>
                     </li>
                     <li style={{ marginBottom: 'var(--space-3)' }}>
@@ -508,7 +508,7 @@ Content-Usage: /research/ train-ai=y`}
                       <strong>Test error scenarios:</strong> Verify 4xx returns allow-all behavior, 5xx returns disallow-all
                     </li>
                     <li style={{ margin: 0 }}>
-                      <strong>If using AIPREF:</strong> Confirm <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Content-Usage</code> lines are within the correct group and properly formatted
+                      <strong>If using AIPREF:</strong> Confirm <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Content-Usage</code> lines are within the correct group and properly formatted
                     </li>
                   </ol>
                 </div>
@@ -520,7 +520,7 @@ Content-Usage: /research/ train-ai=y`}
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Non-Standard Extensions
                 </h2>
@@ -540,7 +540,7 @@ Content-Usage: /research/ train-ai=y`}
                       <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Host:</code> - Preferred host (not standard)
                     </li>
                   </ul>
-                  <p style={{ marginTop: 'var(--space-3)', marginBottom: 0, fontSize: 'var(--text-sm)', color: 'var(--gray-700)' }}>
+                  <p style={{ marginTop: 'var(--space-3)', marginBottom: 0, fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                     Use these with caution. They may be ignored by some crawlers and are not guaranteed to work consistently.
                   </p>
                 </div>
@@ -552,12 +552,12 @@ Content-Usage: /research/ train-ai=y`}
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Bottom Line
                 </h2>
 
-                <div className="card" style={{ background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(0,212,170,0.05) 100%)', border: '2px solid var(--brand-primary)' }}>
+                <div className="card" style={{ background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(0,212,170,0.05) 100%)', border: '2px solid var(--accent-brand)' }}>
                   <p style={{ marginBottom: 'var(--space-3)' }}>
                     Keep robots.txt as your durable control surface for crawler access. RFC 9309 makes the rules predictable under redirects, errors, and caching.
                   </p>
@@ -576,7 +576,7 @@ Content-Usage: /research/ train-ai=y`}
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Further Reading
                 </h2>
@@ -595,14 +595,14 @@ Content-Usage: /research/ train-ai=y`}
                     }}
                   >
                     <div>
-                      <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
+                      <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
                         RFC 9309: Robots Exclusion Protocol
                       </h3>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: 0 }}>
+                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: 0 }}>
                         Official IETF specification (September 2022)
                       </p>
                     </div>
-                    <ExternalLink size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <ExternalLink size={20} style={{ color: 'var(--accent-brand)' }} />
                   </a>
 
                   <a
@@ -618,14 +618,14 @@ Content-Usage: /research/ train-ai=y`}
                     }}
                   >
                     <div>
-                      <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
+                      <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
                         RFC 9309 on IETF Datatracker
                       </h3>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: 0 }}>
+                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: 0 }}>
                         Full text with errata and discussion
                       </p>
                     </div>
-                    <ExternalLink size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <ExternalLink size={20} style={{ color: 'var(--accent-brand)' }} />
                   </a>
 
                   <a
@@ -641,14 +641,14 @@ Content-Usage: /research/ train-ai=y`}
                     }}
                   >
                     <div>
-                      <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
+                      <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
                         AIPREF Attachment Specification
                       </h3>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: 0 }}>
+                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: 0 }}>
                         How AIPREF extends RFC 9309 with Content-Usage
                       </p>
                     </div>
-                    <ExternalLink size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <ExternalLink size={20} style={{ color: 'var(--accent-brand)' }} />
                   </a>
 
                   <Link
@@ -662,14 +662,14 @@ Content-Usage: /research/ train-ai=y`}
                     }}
                   >
                     <div>
-                      <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
+                      <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
                         AIPREF: AI Usage Preferences
                       </h3>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: 0 }}>
+                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: 0 }}>
                         Our comprehensive guide to the AIPREF specification
                       </p>
                     </div>
-                    <ArrowRight size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <ArrowRight size={20} style={{ color: 'var(--accent-brand)' }} />
                   </Link>
                 </div>
               </section>
@@ -677,7 +677,7 @@ Content-Usage: /research/ train-ai=y`}
           </div>
 
           {/* CTA Section */}
-          <section style={{ background: 'var(--gray-50)', borderTop: '1px solid var(--gray-200)' }}>
+          <section style={{ background: 'var(--surface-subtle)', borderTop: '1px solid var(--border-default)' }}>
             <div className="container" style={{ maxWidth: '900px', margin: '0 auto', padding: 'var(--space-16) var(--space-6)' }}>
               <div className="card cta-card">
                 <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
@@ -690,7 +690,7 @@ Content-Usage: /research/ train-ai=y`}
                   <Link
                     href="/developers"
                     className="btn btn-lg"
-                    style={{ background: 'var(--white)', color: 'var(--brand-primary)', border: 'none' }}
+                    style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}
                   >
                     <span>View Documentation</span>
                     <ArrowRight size={18} />

@@ -69,14 +69,14 @@ export default function Page() {
             {/* Breadcrumbs */}
             <nav style={{
               fontSize: 'var(--text-sm)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-8)'
             }}>
-              <Link href="/" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>Home</Link>
+              <Link href="/" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Home</Link>
               <span style={{ margin: '0 var(--space-2)' }}>/</span>
-              <Link href="/blog" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>Blog</Link>
+              <Link href="/blog" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Blog</Link>
               <span style={{ margin: '0 var(--space-2)' }}>/</span>
-              <span style={{ color: 'var(--gray-900)' }}>Cloudflare Workers 402</span>
+              <span style={{ color: 'var(--text-primary)' }}>Cloudflare Workers 402</span>
             </nav>
 
             {/* Article Header */}
@@ -85,13 +85,13 @@ export default function Page() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 marginBottom: 'var(--space-6)'
               }}>
                 <FileText size={14} />
@@ -103,27 +103,27 @@ export default function Page() {
                 fontWeight: 700,
                 lineHeight: 1.1,
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 HTTP 402 on Cloudflare Workers: Global Edge Payment Gates
               </h1>
 
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-8)'
               }}>
-                Want <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>HTTP 402 payment gates</Link> that respond in &lt;50ms worldwide? Deploy them at the edge with Cloudflare Workers. Here&rsquo;s how.
+                Want <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 payment gates</Link> that respond in &lt;50ms worldwide? Deploy them at the edge with Cloudflare Workers. Here&rsquo;s how.
               </p>
 
               <div style={{
                 display: 'flex',
                 gap: 'var(--space-6)',
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 paddingTop: 'var(--space-6)',
-                borderTop: '1px solid var(--gray-200)'
+                borderTop: '1px solid var(--border-default)'
               }}>
                 <span>By Jithin Raj & Originary Team</span>
                 <span>•</span>
@@ -135,7 +135,7 @@ export default function Page() {
             <div style={{
               fontSize: 'var(--text-base)',
               lineHeight: 1.8,
-              color: 'var(--gray-700)'
+              color: 'var(--text-secondary)'
             }}>
               {/* Why edge computing */}
               <section style={{ marginBottom: 'var(--space-12)' }}>
@@ -143,7 +143,7 @@ export default function Page() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Why edge computing for payment gates?
                 </h2>
@@ -176,18 +176,18 @@ export default function Page() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Architecture: Worker + KV for challenges
                 </h2>
 
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  A typical <Link href="/glossary/x402/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>x402</Link> flow on Workers:
+                  A typical <Link href="/glossary/x402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>x402</Link> flow on Workers:
                 </p>
 
                 <ol style={{ paddingLeft: 'var(--space-6)', marginBottom: 'var(--space-6)' }}>
-                  <li style={{ marginBottom: 'var(--space-2)' }}>Client requests priced resource → Worker checks for <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>X-Receipt</code> header</li>
-                  <li style={{ marginBottom: 'var(--space-2)' }}>No receipt? → Generate <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>reference</code>, store challenge in KV, return 402</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}>Client requests priced resource → Worker checks for <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>X-Receipt</code> header</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}>No receipt? → Generate <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>reference</code>, store challenge in KV, return 402</li>
                   <li style={{ marginBottom: 'var(--space-2)' }}>Receipt present? → Verify signature with Web Crypto API, check KV for challenge, return resource if valid</li>
                 </ol>
               </section>
@@ -198,19 +198,19 @@ export default function Page() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Full implementation
                 </h2>
 
                 <p style={{ marginBottom: 'var(--space-4)' }}>
                   Here&rsquo;s a production-ready Worker with receipt verification. See the full code in our{' '}
-                  <Link href="/integrations/x402/cloudflare-workers/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>
+                  <Link href="/integrations/x402/cloudflare-workers/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>
                     Cloudflare Workers x402 Implementation Guide
                   </Link>.
                 </p>
 
-                <div className="card" style={{ background: 'var(--gray-900)', color: 'var(--white)', marginBottom: 'var(--space-6)' }}>
+                <div className="card" style={{ background: 'var(--text-primary)', color: 'var(--white)', marginBottom: 'var(--space-6)' }}>
                   <p style={{ fontSize: 'var(--text-sm)', fontFamily: 'monospace', margin: 0, whiteSpace: 'pre-wrap', lineHeight: 1.6 }}>
 {`export default {
   async fetch(request, env) {
@@ -258,7 +258,7 @@ async function handlePriced(request, env) {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Performance benchmarks
                 </h2>
@@ -267,10 +267,10 @@ async function handlePriced(request, env) {
                   We tested the Worker implementation with 1,000 concurrent requests from 5 global locations:
                 </p>
 
-                <div className="card" style={{ background: 'var(--gray-50)', marginBottom: 'var(--space-6)' }}>
+                <div className="card" style={{ background: 'var(--surface-subtle)', marginBottom: 'var(--space-6)' }}>
                   <table style={{ width: '100%', fontSize: 'var(--text-sm)', fontFamily: 'monospace' }}>
                     <thead>
-                      <tr style={{ borderBottom: '1px solid var(--gray-200)' }}>
+                      <tr style={{ borderBottom: '1px solid var(--border-default)' }}>
                         <th style={{ padding: 'var(--space-2)', textAlign: 'left' }}>Location</th>
                         <th style={{ padding: 'var(--space-2)', textAlign: 'left' }}>p50 latency</th>
                         <th style={{ padding: 'var(--space-2)', textAlign: 'left' }}>p99 latency</th>
@@ -297,7 +297,7 @@ async function handlePriced(request, env) {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Conclusion
                 </h2>
@@ -311,23 +311,23 @@ async function handlePriced(request, env) {
                 </p>
 
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  <strong>Next step</strong>: Deploy the Worker, test with <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>curl</code>, then integrate with your payment provider&rsquo;s receipt system.
+                  <strong>Next step</strong>: Deploy the Worker, test with <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>curl</code>, then integrate with your payment provider&rsquo;s receipt system.
                 </p>
               </section>
 
               {/* Related Reading */}
-              <section style={{ marginTop: 'var(--space-12)', paddingTop: 'var(--space-8)', borderTop: '2px solid var(--gray-200)' }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+              <section style={{ marginTop: 'var(--space-12)', paddingTop: 'var(--space-8)', borderTop: '2px solid var(--border-default)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                   Related Reading
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-                  <Link href="/integrations/x402/cloudflare-workers/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/integrations/x402/cloudflare-workers/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     Cloudflare Workers x402 Implementation Guide
                   </Link>
-                  <Link href="/blog/adding-402-in-15-minutes/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/blog/adding-402-in-15-minutes/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     Add HTTP 402 in 15 Minutes (Express)
                   </Link>
-                  <Link href="/glossary/x402/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/glossary/x402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     What is x402?
                   </Link>
                 </div>
@@ -336,7 +336,7 @@ async function handlePriced(request, env) {
           </div>
 
           {/* CTA Section */}
-          <section style={{ background: 'var(--gray-50)', borderTop: '1px solid var(--gray-200)' }}>
+          <section style={{ background: 'var(--surface-subtle)', borderTop: '1px solid var(--border-default)' }}>
             <div className="container" style={{ maxWidth: '900px', margin: '0 auto', padding: 'var(--space-16) var(--space-6)' }}>
               <div className="card cta-card">
                 <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
@@ -349,7 +349,7 @@ async function handlePriced(request, env) {
                   <Link
                     href="/developers"
                     className="btn btn-lg"
-                    style={{ background: 'var(--white)', color: 'var(--brand-primary)', border: 'none' }}
+                    style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}
                   >
                     <span>View Documentation</span>
                     <ArrowRight size={18} />

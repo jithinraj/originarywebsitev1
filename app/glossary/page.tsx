@@ -98,23 +98,23 @@ export default function GlossaryPage() {
     <div className="wrap">
       <NavigationHeader />
       <main className="container" style={{ maxWidth: '900px', margin: '0 auto', paddingTop: 'var(--space-24)', paddingBottom: 'var(--space-16)' }}>
-        <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-6)', color: 'var(--gray-600)' }}>
-          <Link href="/" style={{ textDecoration: 'none', color: 'var(--gray-600)' }}>Home</Link>
+        <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-6)', color: 'var(--text-secondary)' }}>
+          <Link href="/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Home</Link>
           {' '}/{' '}
-          <span style={{ color: 'var(--gray-900)' }}>Glossary</span>
+          <span style={{ color: 'var(--text-primary)' }}>Glossary</span>
         </nav>
 
         <div style={{
           display: 'inline-flex',
           alignItems: 'center',
           gap: 'var(--space-2)',
-          background: 'rgba(99, 91, 255, 0.1)',
-          border: '1px solid rgba(99, 91, 255, 0.2)',
+          background: 'var(--accent-brand-subtle)',
+          border: '1px solid var(--accent-brand-muted)',
           borderRadius: 'var(--radius-full)',
           padding: 'var(--space-2) var(--space-4)',
           fontSize: 'var(--text-xs)',
           fontWeight: 600,
-          color: 'var(--brand-primary)',
+          color: 'var(--accent-brand)',
           marginBottom: 'var(--space-4)',
           textTransform: 'uppercase',
           letterSpacing: '0.05em'
@@ -123,11 +123,11 @@ export default function GlossaryPage() {
           REFERENCE
         </div>
 
-        <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, marginBottom: 'var(--space-6)', lineHeight: 1.1, color: 'var(--gray-900)' }}>
+        <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, marginBottom: 'var(--space-6)', lineHeight: 1.1, color: 'var(--text-primary)' }}>
           Glossary
         </h1>
 
-        <p style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-12)', color: 'var(--gray-600)', lineHeight: 1.7 }}>
+        <p style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-12)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
           Key terms and protocols for AI infrastructure, agent commerce, and verifiable receipts.
         </p>
 
@@ -139,8 +139,8 @@ export default function GlossaryPage() {
               style={{
                 display: 'block',
                 padding: 'var(--space-6)',
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
+                background: 'var(--surface-elevated)',
+                border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-lg)',
                 textDecoration: 'none',
                 transition: 'all 0.2s ease'
@@ -148,17 +148,17 @@ export default function GlossaryPage() {
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 'var(--space-4)' }}>
                 <div>
-                  <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                  <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
                     {item.term}
                   </h2>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--brand-primary)', marginBottom: 'var(--space-2)', fontWeight: 500 }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--accent-brand)', marginBottom: 'var(--space-2)', fontWeight: 500 }}>
                     {item.short}
                   </p>
-                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', margin: 0, lineHeight: 1.6 }}>
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
                     {item.description}
                   </p>
                 </div>
-                <ArrowRight size={20} style={{ color: 'var(--gray-400)', flexShrink: 0, marginTop: 'var(--space-1)' }} />
+                <ArrowRight size={20} style={{ color: 'var(--text-muted)', flexShrink: 0, marginTop: 'var(--space-1)' }} />
               </div>
             </Link>
           ))}

@@ -69,14 +69,14 @@ export default function Page() {
             {/* Breadcrumbs */}
             <nav style={{
               fontSize: 'var(--text-sm)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-8)'
             }}>
-              <Link href="/" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>Home</Link>
+              <Link href="/" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Home</Link>
               <span style={{ margin: '0 var(--space-2)' }}>/</span>
-              <Link href="/blog" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>Blog</Link>
+              <Link href="/blog" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Blog</Link>
               <span style={{ margin: '0 var(--space-2)' }}>/</span>
-              <span style={{ color: 'var(--gray-900)' }}>A2A Stack</span>
+              <span style={{ color: 'var(--text-primary)' }}>A2A Stack</span>
             </nav>
 
             {/* Article Header */}
@@ -85,13 +85,13 @@ export default function Page() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 marginBottom: 'var(--space-6)'
               }}>
                 <Bot size={14} />
@@ -104,13 +104,13 @@ export default function Page() {
                 lineHeight: 1.2,
                 letterSpacing: '-0.02em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 The A2A Stack: Agent-to-Agent Commerce
               </h1>
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 Agents calling agents, paying for API access, and verifying each other&apos;s outputs. This is agent-to-agent commerce, and it needs new infrastructure.
@@ -121,7 +121,7 @@ export default function Page() {
             <div className="article-content" style={{
               fontSize: 'var(--text-base)',
               lineHeight: 1.8,
-              color: 'var(--gray-700)'
+              color: 'var(--text-secondary)'
             }}>
 
               {/* Problem Statement */}
@@ -132,7 +132,7 @@ export default function Page() {
                 marginBottom: 'var(--space-12)',
                 border: '1px solid rgba(239, 68, 68, 0.1)'
               }}>
-                <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
                   <AlertTriangle size={24} style={{ color: 'var(--error)' }} />
                   The Problem: Agents Can&apos;t Coordinate
                 </h2>
@@ -160,8 +160,8 @@ export default function Page() {
               </div>
 
               {/* The A2A Stack */}
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-8)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-                <Layers size={28} style={{ color: 'var(--brand-primary)' }} />
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginTop: 'var(--space-8)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                <Layers size={28} style={{ color: 'var(--accent-brand)' }} />
                 The A2A Stack
               </h2>
               <p style={{ marginBottom: 'var(--space-6)' }}>
@@ -175,13 +175,13 @@ export default function Page() {
                   alignItems: 'stretch',
                   gap: 'var(--space-4)',
                   padding: 'var(--space-5)',
-                  background: 'var(--white)',
+                  background: 'var(--surface-elevated)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '2px solid var(--brand-primary)',
-                  boxShadow: '0 4px 6px -1px rgba(99, 91, 255, 0.1)'
+                  border: '2px solid var(--accent-brand)',
+                  boxShadow: '0 4px 6px -1px var(--accent-brand-subtle)'
                 }}>
                   <div style={{
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'white',
                     padding: 'var(--space-3)',
                     borderRadius: 'var(--radius-md)',
@@ -194,11 +194,11 @@ export default function Page() {
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-1)' }}>
-                      <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--brand-primary)' }}>LAYER 1</span>
+                      <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--accent-brand)' }}>LAYER 1</span>
                     </div>
-                    <strong style={{ color: 'var(--gray-900)' }}>AI Policy Discovery</strong>
-                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: '4px 0 0' }}>
-                      Agents discover bot policy, crawling rules, and terms at <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px', fontSize: 'var(--text-xs)' }}>/.well-known/peac.txt</code>
+                    <strong style={{ color: 'var(--text-primary)' }}>AI Policy Discovery</strong>
+                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: '4px 0 0' }}>
+                      Agents discover bot policy, crawling rules, and terms at <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px', fontSize: 'var(--text-xs)' }}>/.well-known/peac.txt</code>
                     </p>
                   </div>
                 </div>
@@ -208,13 +208,13 @@ export default function Page() {
                   alignItems: 'stretch',
                   gap: 'var(--space-4)',
                   padding: 'var(--space-5)',
-                  background: 'var(--white)',
+                  background: 'var(--surface-elevated)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)'
+                  border: '1px solid var(--border-default)'
                 }}>
                   <div style={{
-                    background: 'rgba(99, 91, 255, 0.1)',
-                    color: 'var(--brand-primary)',
+                    background: 'var(--accent-brand-subtle)',
+                    color: 'var(--accent-brand)',
                     padding: 'var(--space-3)',
                     borderRadius: 'var(--radius-md)',
                     display: 'flex',
@@ -226,10 +226,10 @@ export default function Page() {
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-1)' }}>
-                      <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--gray-500)' }}>LAYER 2</span>
+                      <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--text-tertiary)' }}>LAYER 2</span>
                     </div>
-                    <strong style={{ color: 'var(--gray-900)' }}>Access Control (HTTP 402)</strong>
-                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: '4px 0 0' }}>
+                    <strong style={{ color: 'var(--text-primary)' }}>Access Control (HTTP 402)</strong>
+                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: '4px 0 0' }}>
                       Gated endpoints return 402 with payment instructions (x402, Stripe)
                     </p>
                   </div>
@@ -240,13 +240,13 @@ export default function Page() {
                   alignItems: 'stretch',
                   gap: 'var(--space-4)',
                   padding: 'var(--space-5)',
-                  background: 'var(--white)',
+                  background: 'var(--surface-elevated)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)'
+                  border: '1px solid var(--border-default)'
                 }}>
                   <div style={{
-                    background: 'rgba(99, 91, 255, 0.1)',
-                    color: 'var(--brand-primary)',
+                    background: 'var(--accent-brand-subtle)',
+                    color: 'var(--accent-brand)',
                     padding: 'var(--space-3)',
                     borderRadius: 'var(--radius-md)',
                     display: 'flex',
@@ -258,10 +258,10 @@ export default function Page() {
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-1)' }}>
-                      <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--gray-500)' }}>LAYER 3</span>
+                      <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--text-tertiary)' }}>LAYER 3</span>
                     </div>
-                    <strong style={{ color: 'var(--gray-900)' }}>Receipts (PEAC-Receipts)</strong>
-                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: '4px 0 0' }}>
+                    <strong style={{ color: 'var(--text-primary)' }}>Receipts (PEAC-Receipts)</strong>
+                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: '4px 0 0' }}>
                       Every transaction returns a signed, verifiable receipt as proof
                     </p>
                   </div>
@@ -272,13 +272,13 @@ export default function Page() {
                   alignItems: 'stretch',
                   gap: 'var(--space-4)',
                   padding: 'var(--space-5)',
-                  background: 'var(--white)',
+                  background: 'var(--surface-elevated)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)'
+                  border: '1px solid var(--border-default)'
                 }}>
                   <div style={{
-                    background: 'rgba(99, 91, 255, 0.1)',
-                    color: 'var(--brand-primary)',
+                    background: 'var(--accent-brand-subtle)',
+                    color: 'var(--accent-brand)',
                     padding: 'var(--space-3)',
                     borderRadius: 'var(--radius-md)',
                     display: 'flex',
@@ -290,10 +290,10 @@ export default function Page() {
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-1)' }}>
-                      <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--gray-500)' }}>LAYER 4</span>
+                      <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--text-tertiary)' }}>LAYER 4</span>
                     </div>
-                    <strong style={{ color: 'var(--gray-900)' }}>Provenance</strong>
-                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: '4px 0 0' }}>
+                    <strong style={{ color: 'var(--text-primary)' }}>Provenance</strong>
+                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: '4px 0 0' }}>
                       Chain of receipts + C2PA creates auditable lineage for compliance
                     </p>
                   </div>
@@ -301,7 +301,7 @@ export default function Page() {
               </div>
 
               {/* Transaction Flow */}
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)' }}>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)' }}>
                 An A2A Transaction Flow
               </h2>
               <p style={{ marginBottom: 'var(--space-4)' }}>
@@ -320,7 +320,7 @@ export default function Page() {
                 ].map((step) => (
                   <div key={step.num} style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
                     <div style={{
-                      background: 'var(--brand-primary)',
+                      background: 'var(--accent-brand)',
                       color: 'white',
                       width: '28px',
                       height: '28px',
@@ -333,15 +333,15 @@ export default function Page() {
                       flexShrink: 0
                     }}>{step.num}</div>
                     <div>
-                      <strong style={{ color: 'var(--gray-900)' }}>{step.title}:</strong> {step.desc}
+                      <strong style={{ color: 'var(--text-primary)' }}>{step.title}:</strong> {step.desc}
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Why Receipts Matter */}
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-                <Receipt size={28} style={{ color: 'var(--brand-primary)' }} />
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                <Receipt size={28} style={{ color: 'var(--accent-brand)' }} />
                 Why Receipts Matter
               </h2>
               <p style={{ marginBottom: 'var(--space-6)' }}>
@@ -351,55 +351,55 @@ export default function Page() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
                 <div style={{
                   padding: 'var(--space-4)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)'
+                  border: '1px solid var(--border-default)'
                 }}>
                   <CheckCircle size={20} style={{ color: 'var(--success)', marginBottom: 'var(--space-2)' }} />
-                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>Proof of Service</h4>
-                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', margin: 0 }}>Cryptographic evidence of work performed</p>
+                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>Proof of Service</h4>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', margin: 0 }}>Cryptographic evidence of work performed</p>
                 </div>
                 <div style={{
                   padding: 'var(--space-4)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)'
+                  border: '1px solid var(--border-default)'
                 }}>
                   <CheckCircle size={20} style={{ color: 'var(--success)', marginBottom: 'var(--space-2)' }} />
-                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>Audit Trail</h4>
-                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', margin: 0 }}>Operators review agent spending</p>
+                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>Audit Trail</h4>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', margin: 0 }}>Operators review agent spending</p>
                 </div>
                 <div style={{
                   padding: 'var(--space-4)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)'
+                  border: '1px solid var(--border-default)'
                 }}>
                   <CheckCircle size={20} style={{ color: 'var(--success)', marginBottom: 'var(--space-2)' }} />
-                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>Dispute Resolution</h4>
-                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', margin: 0 }}>Shows exactly what was delivered</p>
+                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>Dispute Resolution</h4>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', margin: 0 }}>Shows exactly what was delivered</p>
                 </div>
                 <div style={{
                   padding: 'var(--space-4)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)'
+                  border: '1px solid var(--border-default)'
                 }}>
                   <CheckCircle size={20} style={{ color: 'var(--success)', marginBottom: 'var(--space-2)' }} />
-                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>Compliance</h4>
-                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', margin: 0 }}>Bundled for regulatory reporting</p>
+                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>Compliance</h4>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', margin: 0 }}>Bundled for regulatory reporting</p>
                 </div>
               </div>
 
               {/* What's Shipping */}
               <div style={{
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 borderRadius: 'var(--radius-xl)',
                 padding: 'var(--space-6)',
                 marginBottom: 'var(--space-8)',
-                border: '1px solid var(--gray-200)'
+                border: '1px solid var(--border-default)'
               }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-4)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-4)' }}>
                   What&apos;s Shipping vs. Planned
                 </h3>
                 <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
@@ -417,7 +417,7 @@ export default function Page() {
                   </div>
                   <div style={{ display: 'flex', gap: 'var(--space-3)', alignItems: 'flex-start' }}>
                     <span style={{
-                      background: 'var(--brand-primary)',
+                      background: 'var(--accent-brand)',
                       color: 'white',
                       padding: '2px 8px',
                       borderRadius: 'var(--radius-sm)',
@@ -429,7 +429,7 @@ export default function Page() {
                   </div>
                   <div style={{ display: 'flex', gap: 'var(--space-3)', alignItems: 'flex-start' }}>
                     <span style={{
-                      background: 'var(--gray-400)',
+                      background: 'var(--text-muted)',
                       color: 'white',
                       padding: '2px 8px',
                       borderRadius: 'var(--radius-sm)',
@@ -443,7 +443,7 @@ export default function Page() {
               </div>
 
               {/* Getting Started */}
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)' }}>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)' }}>
                 Getting Started
               </h2>
               <p style={{ marginBottom: 'var(--space-4)' }}>
@@ -452,11 +452,11 @@ export default function Page() {
               <div style={{ display: 'grid', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
                   <CheckCircle size={20} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
-                  <span>Start with <Link href="/declare" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Originary Declare</Link> to publish your AI access policy</span>
+                  <span>Start with <Link href="/declare" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Originary Declare</Link> to publish your AI access policy</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
                   <CheckCircle size={20} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
-                  <span>Add HTTP 402 to paid endpoints - see <Link href="/blog/what-is-http-402" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>What is HTTP 402?</Link></span>
+                  <span>Add HTTP 402 to paid endpoints - see <Link href="/blog/what-is-http-402" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>What is HTTP 402?</Link></span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
                   <CheckCircle size={20} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
@@ -464,7 +464,7 @@ export default function Page() {
                 </div>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
                   <CheckCircle size={20} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
-                  <span>Use the <Link href="/products/verify" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Verify API</Link> for receipt verification</span>
+                  <span>Use the <Link href="/products/verify" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Verify API</Link> for receipt verification</span>
                 </div>
               </div>
 
@@ -472,14 +472,14 @@ export default function Page() {
               <div style={{
                 marginTop: 'var(--space-16)',
                 padding: 'var(--space-8)',
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 borderRadius: 'var(--radius-xl)',
-                border: '1px solid var(--gray-200)'
+                border: '1px solid var(--border-default)'
               }}>
                 <h3 style={{
                   fontSize: 'var(--text-lg)',
                   fontWeight: 700,
-                  color: 'var(--gray-900)',
+                  color: 'var(--text-primary)',
                   marginBottom: 'var(--space-4)'
                 }}>
                   Related Resources
@@ -489,46 +489,46 @@ export default function Page() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: 'var(--space-3)',
-                    color: 'var(--gray-700)',
+                    color: 'var(--text-secondary)',
                     textDecoration: 'none',
                     padding: 'var(--space-3)',
-                    background: 'var(--white)',
+                    background: 'var(--surface-elevated)',
                     borderRadius: 'var(--radius-lg)',
-                    border: '1px solid var(--gray-200)'
+                    border: '1px solid var(--border-default)'
                   }}>
-                    <DollarSign size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <DollarSign size={20} style={{ color: 'var(--accent-brand)' }} />
                     <span>What is HTTP 402?</span>
-                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--gray-400)' }} />
+                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--text-muted)' }} />
                   </Link>
                   <Link href="/integrations/a2a" style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: 'var(--space-3)',
-                    color: 'var(--gray-700)',
+                    color: 'var(--text-secondary)',
                     textDecoration: 'none',
                     padding: 'var(--space-3)',
-                    background: 'var(--white)',
+                    background: 'var(--surface-elevated)',
                     borderRadius: 'var(--radius-lg)',
-                    border: '1px solid var(--gray-200)'
+                    border: '1px solid var(--border-default)'
                   }}>
-                    <Bot size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <Bot size={20} style={{ color: 'var(--accent-brand)' }} />
                     <span>A2A Integration Guide</span>
-                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--gray-400)' }} />
+                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--text-muted)' }} />
                   </Link>
                   <Link href="/receipts" style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: 'var(--space-3)',
-                    color: 'var(--gray-700)',
+                    color: 'var(--text-secondary)',
                     textDecoration: 'none',
                     padding: 'var(--space-3)',
-                    background: 'var(--white)',
+                    background: 'var(--surface-elevated)',
                     borderRadius: 'var(--radius-lg)',
-                    border: '1px solid var(--gray-200)'
+                    border: '1px solid var(--border-default)'
                   }}>
-                    <Receipt size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <Receipt size={20} style={{ color: 'var(--accent-brand)' }} />
                     <span>PEAC-Receipts Overview</span>
-                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--gray-400)' }} />
+                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--text-muted)' }} />
                   </Link>
                 </div>
               </div>

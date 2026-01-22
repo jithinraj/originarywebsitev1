@@ -18,7 +18,7 @@ export default function TraceHeroSection() {
         position: 'relative',
         paddingTop: 'var(--space-48)',
         paddingBottom: 'var(--space-32)',
-        background: 'var(--white)',
+        background: 'var(--surface-elevated)',
         overflow: 'hidden'
       }}
     >
@@ -86,14 +86,14 @@ export default function TraceHeroSection() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: 'var(--space-2)',
-              background: 'rgba(99, 91, 255, 0.06)',
-              border: '1px solid rgba(99, 91, 255, 0.12)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: '6px 14px',
               marginBottom: 'var(--space-6)',
               fontSize: '12px',
               fontWeight: 450,
-              color: 'rgba(99, 91, 255, 0.85)',
+              color: 'var(--accent-brand)',
               cursor: 'pointer',
               transition: 'all 0.15s ease',
               opacity: isVisible ? 1 : 0,
@@ -102,12 +102,12 @@ export default function TraceHeroSection() {
               textDecoration: 'none'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(99, 91, 255, 0.1)'
-              e.currentTarget.style.borderColor = 'rgba(99, 91, 255, 0.2)'
+              e.currentTarget.style.background = 'var(--accent-brand-subtle)'
+              e.currentTarget.style.borderColor = 'var(--accent-brand-muted)'
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(99, 91, 255, 0.06)'
-              e.currentTarget.style.borderColor = 'rgba(99, 91, 255, 0.12)'
+              e.currentTarget.style.background = 'var(--accent-brand-subtle)'
+              e.currentTarget.style.borderColor = 'var(--accent-brand-muted)'
             }}
           >
             <span>Built on the open PEAC Protocol</span>
@@ -136,7 +136,7 @@ export default function TraceHeroSection() {
             style={{
               fontSize: 'var(--text-xl)',
               lineHeight: 1.7,
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-8)',
               maxWidth: '700px',
               margin: '0 auto var(--space-8)',
@@ -191,9 +191,9 @@ export default function TraceHeroSection() {
                 fontSize: 'var(--text-base)',
                 fontWeight: 600,
                 textDecoration: 'none',
-                background: 'var(--white)',
-                border: '1px solid var(--gray-300)',
-                color: 'var(--gray-700)'
+                background: 'var(--surface-elevated)',
+                border: '1px solid var(--border-default)',
+                color: 'var(--text-secondary)'
               }}
             >
               <Github size={18} />
@@ -211,7 +211,7 @@ export default function TraceHeroSection() {
                 fontSize: 'var(--text-base)',
                 fontWeight: 600,
                 textDecoration: 'none',
-                color: 'var(--gray-700)'
+                color: 'var(--text-secondary)'
               }}
             >
               <PlayCircle size={18} />
@@ -224,7 +224,7 @@ export default function TraceHeroSection() {
             style={{
               marginTop: 'var(--space-16)',
               padding: 'var(--space-8) 0',
-              borderTop: '1px solid var(--gray-200)',
+              borderTop: '1px solid var(--border-default)',
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
               transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s'
@@ -240,28 +240,28 @@ export default function TraceHeroSection() {
               }}
             >
               <div style={{ textAlign: 'center' }}>
-                <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
+                <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-2)' }}>
                   Crawler Analytics
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                   GPTBot, ClaudeBot, Perplexity, search bots
                 </p>
               </div>
 
               <div style={{ textAlign: 'center' }}>
-                <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
+                <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-2)' }}>
                   Compliance Evidence
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                   PEAC receipts, verification, exports
                 </p>
               </div>
 
               <div style={{ textAlign: 'center' }}>
-                <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
+                <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-2)' }}>
                   Deploy Anywhere
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                   Cloudflare Worker, Nginx, Logpush
                 </p>
               </div>

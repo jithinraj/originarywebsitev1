@@ -64,7 +64,7 @@ export default function AgenticCommercePage() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: 'var(--space-2)',
-            color: 'var(--gray-500)',
+            color: 'var(--text-tertiary)',
             fontSize: 'var(--text-sm)',
             textDecoration: 'none'
           }}>
@@ -77,7 +77,7 @@ export default function AgenticCommercePage() {
         <section className="section" style={{
           paddingTop: 'var(--space-10)',
           paddingBottom: 'var(--space-12)',
-          borderBottom: '1px solid var(--gray-100)'
+          borderBottom: '1px solid var(--border-subtle)'
         }}>
           <div className="container">
             <div style={{ maxWidth: '720px' }}>
@@ -85,14 +85,14 @@ export default function AgenticCommercePage() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
                 marginBottom: 'var(--space-6)',
                 fontSize: 'var(--text-xs)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)'
+                color: 'var(--accent-brand)'
               }}>
                 <ShoppingCart size={14} />
                 <span>LEARN</span>
@@ -104,7 +104,7 @@ export default function AgenticCommercePage() {
                 lineHeight: 1.2,
                 letterSpacing: '-0.03em',
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 What is Agentic Commerce?
               </h1>
@@ -112,13 +112,13 @@ export default function AgenticCommercePage() {
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.6,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-6)'
               }}>
                 The economic layer for AI agents - enabling autonomous buying, selling, and transacting between machines.
               </p>
 
-              <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-400)' }}>
+              <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                 8 min read
               </div>
             </div>
@@ -133,14 +133,14 @@ export default function AgenticCommercePage() {
               <aside style={{ position: 'sticky', top: '100px', alignSelf: 'start' }} className="article-sidebar">
                 <div style={{
                   padding: 'var(--space-6)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-100)'
+                  border: '1px solid var(--border-subtle)'
                 }}>
                   <h4 style={{
                     fontSize: 'var(--text-xs)',
                     fontWeight: 600,
-                    color: 'var(--gray-400)',
+                    color: 'var(--text-muted)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
                     marginBottom: 'var(--space-4)'
@@ -151,7 +151,7 @@ export default function AgenticCommercePage() {
                     {['Key Takeaways', 'Definition', 'How It Works', 'Key Components', 'Use Cases', 'Getting Started'].map((item) => (
                       <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} style={{
                         fontSize: 'var(--text-sm)',
-                        color: 'var(--gray-600)',
+                        color: 'var(--text-secondary)',
                         textDecoration: 'none'
                       }}>
                         {item}
@@ -165,8 +165,8 @@ export default function AgenticCommercePage() {
               <article style={{ maxWidth: '680px' }}>
                 {/* Key Takeaways Box */}
                 <div id="key-takeaways" style={{
-                  background: 'rgba(99, 91, 255, 0.05)',
-                  border: '1px solid rgba(99, 91, 255, 0.15)',
+                  background: 'var(--accent-brand-faint)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-8)',
                   marginBottom: 'var(--space-12)'
@@ -175,7 +175,7 @@ export default function AgenticCommercePage() {
                     fontSize: 'var(--text-lg)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Key Takeaways
                   </h2>
@@ -191,10 +191,10 @@ export default function AgenticCommercePage() {
                         gap: 'var(--space-3)',
                         marginBottom: 'var(--space-3)',
                         fontSize: 'var(--text-base)',
-                        color: 'var(--gray-700)',
+                        color: 'var(--text-secondary)',
                         lineHeight: 1.6
                       }}>
-                        <CheckCircle size={18} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '3px' }} />
+                        <CheckCircle size={18} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '3px' }} />
                         {takeaway}
                       </li>
                     ))}
@@ -207,14 +207,14 @@ export default function AgenticCommercePage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Definition
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-4)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
                     <strong>Agentic commerce</strong> is the economic layer for AI agents to autonomously participate in commercial transactions. Unlike traditional e-commerce where humans initiate and approve purchases, agentic commerce lets machines discover services, negotiate terms, make payments, and verify delivery - all without human intervention for each transaction.
                   </p>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
                     Think of it as the difference between a human using a shopping website versus an AI assistant that can autonomously procure resources, pay for API calls, and manage subscriptions on your behalf. (This isn't theory - we're seeing this in production as of late 2025.)
                   </p>
                 </section>
@@ -225,11 +225,11 @@ export default function AgenticCommercePage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     How It Works
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                     Agentic commerce can't work without these infrastructure components:
                   </p>
 
@@ -245,14 +245,14 @@ export default function AgenticCommercePage() {
                         display: 'flex',
                         gap: 'var(--space-4)',
                         padding: 'var(--space-4)',
-                        background: 'var(--gray-50)',
+                        background: 'var(--surface-subtle)',
                         borderRadius: 'var(--radius-md)'
                       }}>
                         <div style={{
                           width: '32px',
                           height: '32px',
                           borderRadius: '50%',
-                          background: 'var(--brand-primary)',
+                          background: 'var(--accent-brand)',
                           color: 'white',
                           display: 'flex',
                           alignItems: 'center',
@@ -264,8 +264,8 @@ export default function AgenticCommercePage() {
                           {item.step}
                         </div>
                         <div>
-                          <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>{item.title}</h4>
-                          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>{item.desc}</p>
+                          <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>{item.title}</h4>
+                          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{item.desc}</p>
                         </div>
                       </div>
                     ))}
@@ -278,11 +278,11 @@ export default function AgenticCommercePage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Key Components
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                     A complete agentic commerce stack includes:
                   </p>
 
@@ -295,10 +295,10 @@ export default function AgenticCommercePage() {
                     ].map((item, i) => (
                       <li key={i} style={{
                         padding: 'var(--space-4) 0',
-                        borderBottom: i < 4 ? '1px solid var(--gray-100)' : 'none'
+                        borderBottom: i < 4 ? '1px solid var(--border-subtle)' : 'none'
                       }}>
-                        <strong style={{ color: 'var(--gray-900)' }}>{item.term}</strong>
-                        <span style={{ color: 'var(--gray-600)' }}> - {item.def}</span>
+                        <strong style={{ color: 'var(--text-primary)' }}>{item.term}</strong>
+                        <span style={{ color: 'var(--text-secondary)' }}> - {item.def}</span>
                       </li>
                     ))}
                   </ul>
@@ -310,21 +310,21 @@ export default function AgenticCommercePage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Use Cases
                   </h2>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
                     <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>API Consumption</h4>
-                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>API Consumption</h4>
+                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
                         Agents pay for API calls on the fly. Weather data, translation, image generation. No credit pre-purchase required - they pay per call as they execute tasks.
                       </p>
                     </div>
                     <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Content Licensing</h4>
-                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Content Licensing</h4>
+                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
                         Per-use payments to creators for training data, stock images, reference materials. Attribution included.
                       </p>
                     </div>
@@ -337,22 +337,22 @@ export default function AgenticCommercePage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Getting Started
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                     To enable agentic commerce for your service or agent, Originary provides the infrastructure and tools built on open protocols:
                   </p>
 
                   <div className="grid grid-2" style={{ gap: 'var(--space-4)' }}>
                     <Link href="/integrations/acp" className="card" style={{ textDecoration: 'none', padding: 'var(--space-5)' }}>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Agentic Commerce Protocol</h4>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Integration guide for ACP</p>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Agentic Commerce Protocol</h4>
+                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Integration guide for ACP</p>
                     </Link>
                     <Link href="/integrations/x402" className="card" style={{ textDecoration: 'none', padding: 'var(--space-5)' }}>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>HTTP 402 Payments</h4>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Machine-payable APIs</p>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>HTTP 402 Payments</h4>
+                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Machine-payable APIs</p>
                     </Link>
                   </div>
                 </section>
@@ -360,7 +360,7 @@ export default function AgenticCommercePage() {
                 {/* Related */}
                 <section style={{
                   padding: 'var(--space-8)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
                   marginTop: 'var(--space-16)'
                 }}>
@@ -368,7 +368,7 @@ export default function AgenticCommercePage() {
                     fontSize: 'var(--text-lg)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-6)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Related Articles
                   </h3>
@@ -377,21 +377,21 @@ export default function AgenticCommercePage() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      color: 'var(--gray-700)',
+                      color: 'var(--text-secondary)',
                       textDecoration: 'none'
                     }}>
                       <span>HTTP 402 & AI Payments</span>
-                      <ArrowRight size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <ArrowRight size={16} style={{ color: 'var(--accent-brand)' }} />
                     </Link>
                     <Link href="/learn/ai-receipts" style={{
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      color: 'var(--gray-700)',
+                      color: 'var(--text-secondary)',
                       textDecoration: 'none'
                     }}>
                       <span>AI Receipts</span>
-                      <ArrowRight size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <ArrowRight size={16} style={{ color: 'var(--accent-brand)' }} />
                     </Link>
                   </div>
                 </section>

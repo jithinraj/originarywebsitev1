@@ -14,7 +14,7 @@ export default function ServicesPage() {
       duration: '2 weeks',
       description: 'Full deployment of PEAC protocol with custom policy configuration, payment integration, and team training.',
       icon: <Rocket size={32} />,
-      color: 'var(--brand-primary)',
+      color: 'var(--accent-brand)',
       deliverables: [
         'peac.txt configuration and deployment',
         'Payment gateway integration (Stripe/x402)',
@@ -122,14 +122,14 @@ export default function ServicesPage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-4)',
                   marginBottom: 'var(--space-4)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 500,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}
               >
                 <Briefcase size={16} />
@@ -145,7 +145,7 @@ export default function ServicesPage() {
               </h1>
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-8)'
               }}>
@@ -176,7 +176,7 @@ export default function ServicesPage() {
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
@@ -229,13 +229,13 @@ export default function ServicesPage() {
                       <div style={{
                         fontSize: 'var(--text-2xl)',
                         fontWeight: 700,
-                        color: 'var(--gray-900)'
+                        color: 'var(--text-primary)'
                       }}>
                         {service.price}
                       </div>
                       <div style={{
                         fontSize: 'var(--text-sm)',
-                        color: 'var(--gray-500)'
+                        color: 'var(--text-tertiary)'
                       }}>
                         {service.duration}
                       </div>
@@ -245,7 +245,7 @@ export default function ServicesPage() {
                   {/* Service Description */}
                   <p style={{
                     fontSize: 'var(--text-base)',
-                    color: 'var(--gray-600)',
+                    color: 'var(--text-secondary)',
                     lineHeight: 1.6,
                     marginBottom: 'var(--space-6)'
                   }}>
@@ -255,19 +255,19 @@ export default function ServicesPage() {
                   {/* Ideal For */}
                   <div style={{
                     padding: 'var(--space-3)',
-                    background: 'var(--gray-50)',
+                    background: 'var(--surface-subtle)',
                     borderRadius: 'var(--radius-md)',
                     marginBottom: 'var(--space-6)'
                   }}>
                     <span style={{
                       fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-500)'
+                      color: 'var(--text-tertiary)'
                     }}>
                       Ideal for:
                     </span>
                     <span style={{
                       fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-700)',
+                      color: 'var(--text-secondary)',
                       fontWeight: 600,
                       marginLeft: 'var(--space-2)'
                     }}>
@@ -280,7 +280,7 @@ export default function ServicesPage() {
                     <h4 style={{
                       fontSize: 'var(--text-sm)',
                       fontWeight: 600,
-                      color: 'var(--gray-500)',
+                      color: 'var(--text-tertiary)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
                       marginBottom: 'var(--space-3)'
@@ -299,7 +299,7 @@ export default function ServicesPage() {
                           }}
                         >
                           <CheckCircle size={16} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
-                          <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-700)', lineHeight: 1.5 }}>
+                          <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
                             {item}
                           </span>
                         </li>
@@ -329,7 +329,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Process Section */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
               <h2 style={{
@@ -341,7 +341,7 @@ export default function ServicesPage() {
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
@@ -392,7 +392,7 @@ export default function ServicesPage() {
                   </h3>
                   <p style={{
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--gray-600)',
+                    color: 'var(--text-secondary)',
                     lineHeight: 1.5
                   }}>
                     {item.description}
@@ -405,7 +405,7 @@ export default function ServicesPage() {
                         left: 'calc(50% + 24px)',
                         right: 'calc(-50% + 24px)',
                         height: '1px',
-                        background: 'var(--gray-300)',
+                        background: 'var(--border-default)',
                         zIndex: -1
                       }}
                       className="process-connector"
@@ -425,7 +425,7 @@ export default function ServicesPage() {
               style={{
                 textAlign: 'center',
                 padding: 'var(--space-12)',
-                background: 'linear-gradient(135deg, var(--brand-primary)05, var(--brand-secondary)05)',
+                background: 'linear-gradient(135deg, var(--accent-brand)05, var(--accent-secondary)05)',
                 maxWidth: '800px',
                 margin: '0 auto'
               }}
@@ -434,7 +434,7 @@ export default function ServicesPage() {
                 style={{
                   fontSize: 'var(--text-2xl)',
                   lineHeight: 1.6,
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-6)',
                   fontStyle: 'italic'
                 }}
@@ -451,7 +451,7 @@ export default function ServicesPage() {
                 </div>
                 <div style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-500)'
+                  color: 'var(--text-tertiary)'
                 }}>
                   CTO, TechPublisher Inc.
                 </div>
@@ -461,7 +461,7 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ textAlign: 'center' }}>
               <h2 style={{
@@ -473,7 +473,7 @@ export default function ServicesPage() {
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)',
                 maxWidth: '600px',
                 margin: '0 auto var(--space-8) auto'

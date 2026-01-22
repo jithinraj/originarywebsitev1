@@ -91,8 +91,8 @@ export default function TrustedByStrip() {
       <style jsx>{`
         .trusted-by-strip {
           padding: var(--space-6) 0;
-          background: var(--gray-50);
-          border-bottom: 1px solid var(--gray-100);
+          background: var(--surface-subtle);
+          border-bottom: 1px solid var(--border-subtle);
         }
 
         .trusted-by-strip .container {
@@ -112,13 +112,13 @@ export default function TrustedByStrip() {
         .trusted-by-divider {
           width: 1px;
           height: 24px;
-          background: var(--gray-200);
+          background: var(--surface-subtle);
         }
 
         .trusted-by-label {
           font-size: var(--text-xs);
           font-weight: 500;
-          color: var(--gray-400);
+          color: var(--text-muted);
           text-transform: uppercase;
           letter-spacing: 0.1em;
           margin: 0;
@@ -134,7 +134,7 @@ export default function TrustedByStrip() {
         }
 
         .trusted-by-logo {
-          color: var(--gray-400);
+          color: var(--text-muted);
           transition: all var(--duration-300) var(--ease-out);
           display: flex;
           flex-direction: column;
@@ -144,21 +144,21 @@ export default function TrustedByStrip() {
         }
 
         .trusted-by-logo:hover {
-          color: var(--gray-600);
+          color: var(--text-secondary);
         }
 
         .logo-sublabel {
           font-size: 9px;
           font-weight: 500;
-          color: var(--gray-400);
+          color: var(--text-muted);
           text-transform: uppercase;
           letter-spacing: 0.05em;
         }
 
         .protocol-badge {
           padding: var(--space-1) var(--space-3);
-          background: var(--gray-100);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-card);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-md);
           display: flex;
           align-items: center;
@@ -166,8 +166,8 @@ export default function TrustedByStrip() {
         }
 
         .protocol-badge:hover {
-          border-color: var(--gray-300);
-          background: var(--gray-200);
+          border-color: var(--border-default);
+          background: var(--surface-subtle);
         }
 
         .protocol-badge.roadmap {
@@ -179,7 +179,7 @@ export default function TrustedByStrip() {
           font-family: var(--font-mono);
           font-size: 12px;
           font-weight: 600;
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           letter-spacing: 0.02em;
         }
 
@@ -198,8 +198,8 @@ export default function TrustedByStrip() {
         }
 
         .adapter-status.preview {
-          background: rgba(99, 91, 255, 0.1);
-          color: var(--brand-primary);
+          background: var(--accent-brand-subtle);
+          color: var(--accent-brand);
         }
 
         @media (max-width: 768px) {

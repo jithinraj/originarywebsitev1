@@ -87,9 +87,9 @@ export default function TrustPosture() {
       <style jsx>{`
         .trust {
           position: relative;
-          background: var(--gray-50);
-          border-top: 1px solid var(--gray-200);
-          border-bottom: 1px solid var(--gray-200);
+          background: var(--surface-subtle);
+          border-top: 1px solid var(--border-default);
+          border-bottom: 1px solid var(--border-default);
           overflow: hidden;
         }
 
@@ -102,7 +102,7 @@ export default function TrustPosture() {
         }
 
         .dim {
-          color: var(--gray-500);
+          color: var(--text-tertiary);
         }
 
         .trust-grid {
@@ -117,8 +117,8 @@ export default function TrustPosture() {
           position: relative;
           padding: 36px 32px;
           border-radius: 20px;
-          border: 1px solid var(--gray-200);
-          background: var(--white);
+          border: 1px solid var(--border-default);
+          background: var(--surface-elevated);
           display: flex;
           flex-direction: column;
           text-decoration: none;
@@ -127,7 +127,7 @@ export default function TrustPosture() {
         }
 
         .trust-card:hover {
-          border-color: var(--gray-300);
+          border-color: var(--border-default);
           transform: translateY(-4px);
           box-shadow: var(--shadow-lg);
         }
@@ -137,7 +137,7 @@ export default function TrustPosture() {
           inset: 0;
           background: radial-gradient(
             350px circle at var(--mouse-x) var(--mouse-y),
-            rgba(99, 91, 255, 0.05),
+            var(--accent-brand-faint),
             transparent 40%
           );
           opacity: 0;
@@ -161,19 +161,19 @@ export default function TrustPosture() {
           width: 44px;
           height: 44px;
           border-radius: 12px;
-          background: linear-gradient(135deg, rgba(99, 91, 255, 0.1) 0%, rgba(0, 212, 170, 0.05) 100%);
-          border: 1px solid rgba(99, 91, 255, 0.2);
+          background: linear-gradient(135deg, var(--accent-brand-subtle) 0%, var(--accent-secondary-faint) 100%);
+          border: 1px solid var(--accent-brand-muted);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: var(--brand-primary);
+          color: var(--accent-brand);
           margin-bottom: 8px;
         }
 
         .trust-num {
           font-family: var(--font-mono);
           font-size: 11px;
-          color: var(--brand-primary);
+          color: var(--accent-brand);
           opacity: 0.7;
           letter-spacing: 0.1em;
         }
@@ -182,14 +182,14 @@ export default function TrustPosture() {
           margin: 0;
           font-size: 1.25rem;
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           letter-spacing: -0.01em;
         }
 
         .trust-card p {
           margin: 0;
           font-size: 0.9375rem;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           line-height: 1.6;
         }
 
@@ -200,12 +200,12 @@ export default function TrustPosture() {
           width: 36px;
           height: 36px;
           border-radius: 10px;
-          background: var(--gray-50);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-subtle);
+          border: 1px solid var(--border-default);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           opacity: 0;
           transform: translateX(-8px) rotate(-45deg);
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -214,8 +214,8 @@ export default function TrustPosture() {
         .trust-card:hover .card-arrow {
           opacity: 1;
           transform: translateX(0) rotate(0deg);
-          color: var(--brand-primary);
-          border-color: var(--gray-300);
+          color: var(--accent-brand);
+          border-color: var(--border-default);
         }
 
         .card-border {
@@ -228,7 +228,7 @@ export default function TrustPosture() {
             rgba(0, 0, 0, 0.04) 0%,
             transparent 40%,
             transparent 60%,
-            rgba(99, 91, 255, 0.06) 100%
+            var(--accent-brand-subtle) 100%
           );
           -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
           -webkit-mask-composite: xor;

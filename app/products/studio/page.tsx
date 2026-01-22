@@ -36,21 +36,21 @@ export default function Studio() {
     <div className="wrap">
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-3)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-6)',
                 marginBottom: 'var(--space-6)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)'
+                color: 'var(--accent-brand)'
               }}>
                 <BarChart size={16} />
                 <span>ENTERPRISE DASHBOARD</span>
@@ -67,7 +67,7 @@ export default function Studio() {
                     fontWeight: 600
                   }}>OPERATIONAL</div>
                   <div style={{
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'var(--white)',
                     padding: 'var(--space-1) var(--space-2)',
                     borderRadius: 'var(--radius-sm)',
@@ -83,7 +83,7 @@ export default function Studio() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 <span className="text-gradient">Command center</span> for agentic governance
               </h1>
@@ -91,7 +91,7 @@ export default function Studio() {
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)',
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
@@ -138,22 +138,22 @@ export default function Studio() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(99, 91, 255, 0.1)',
+                  background: 'var(--accent-brand-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <FileText size={28} style={{ color: 'var(--brand-primary)' }} />
+                  <FileText size={28} style={{ color: 'var(--accent-brand)' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Policy Management</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
                   Visual policy editor with real-time validation, version control, and automated deployment pipelines. Manage complex multi-tenant policies with inheritance and override rules.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Visual editor</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Git versioning</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Auto testing</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Visual editor</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Git versioning</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Auto testing</span>
                 </div>
               </div>
 
@@ -162,22 +162,22 @@ export default function Studio() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(0, 212, 170, 0.1)',
+                  background: 'var(--accent-secondary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <Shield size={28} style={{ color: 'var(--brand-secondary)' }} />
+                  <Shield size={28} style={{ color: 'var(--accent-secondary)' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Key Lifecycle</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
                   Complete cryptographic key management including generation, rotation, escrow, and secure destruction. Hardware Security Module (HSM) integration for enterprise-grade security.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Auto rotation</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>HSM integration</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Audit trails</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Auto rotation</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>HSM integration</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Audit trails</span>
                 </div>
               </div>
 
@@ -186,7 +186,7 @@ export default function Studio() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(255, 107, 53, 0.1)',
+                  background: 'var(--accent-tertiary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -199,9 +199,9 @@ export default function Studio() {
                   Comprehensive observability engine with customizable dashboards, automated alerts, and scheduled reports. Real-time monitoring of agent behavior and system performance.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Custom dashboards</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Auto alerts</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Data export</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Custom dashboards</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Auto alerts</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Data export</span>
                 </div>
               </div>
 
@@ -210,22 +210,22 @@ export default function Studio() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(99, 91, 255, 0.1)',
+                  background: 'var(--accent-brand-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <Users size={28} style={{ color: 'var(--brand-primary)' }} />
+                  <Users size={28} style={{ color: 'var(--accent-brand)' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Team Management</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
                   Role-based access control with SSO integration, approval workflows, and comprehensive audit logging. Manage team permissions across multiple environments and projects.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>RBAC controls</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>SSO integration</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Approval flows</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>RBAC controls</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>SSO integration</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Approval flows</span>
                 </div>
               </div>
 
@@ -234,22 +234,22 @@ export default function Studio() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(0, 212, 170, 0.1)',
+                  background: 'var(--accent-secondary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <CheckCircle size={28} style={{ color: 'var(--brand-secondary)' }} />
+                  <CheckCircle size={28} style={{ color: 'var(--accent-secondary)' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Receipt Verification</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
                   Real-time verification dashboard with batch processing capabilities. Monitor receipt authenticity, policy compliance, and generate audit reports for regulatory compliance.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Bulk verification</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Compliance scoring</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Fraud detection</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Bulk verification</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Compliance scoring</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Fraud detection</span>
                 </div>
               </div>
 
@@ -258,7 +258,7 @@ export default function Studio() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(255, 107, 53, 0.1)',
+                  background: 'var(--accent-tertiary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -271,9 +271,9 @@ export default function Studio() {
                   Built-in compliance frameworks for SOC 2, GDPR, PCI DSS, and other regulatory requirements. Automated compliance monitoring with detailed audit trails and reporting.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>SOC 2 compliance</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>GDPR support</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Audit trails</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>SOC 2 compliance</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>GDPR support</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Audit trails</span>
                 </div>
               </div>
             </div>
@@ -320,8 +320,8 @@ export default function Studio() {
                     href="/company/contact"
                     className="btn btn-lg"
                     style={{
-                      background: 'var(--white)',
-                      color: 'var(--brand-primary)',
+                      background: 'var(--surface-elevated)',
+                      color: 'var(--accent-brand)',
                       border: 'none'
                     }}
                   >

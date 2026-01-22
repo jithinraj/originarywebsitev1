@@ -78,7 +78,7 @@ export default function OriginaryAI() {
       </Script>
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
               <h1 style={{
@@ -87,7 +87,7 @@ export default function OriginaryAI() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Originary<sup>™</sup> for AI
               </h1>
@@ -95,7 +95,7 @@ export default function OriginaryAI() {
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-6)'
               }}>
                 Publish peac.txt, settle via configured payment adapters, and present a <strong>Receipt</strong> on every request - verifiable proof of access, consent, attribution, privacy, and payment.
@@ -104,7 +104,7 @@ export default function OriginaryAI() {
               <p style={{
                 fontSize: 'var(--text-lg)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)'
               }}>
                 Use Originary to instrument agentic commerce, AI consent tracking, and AI provenance tracking for every agent-to-agent transaction. Whether you&rsquo;re enabling agentic transactions or building for the automated economy, PEAC-Receipts provide verifiable proof of every interaction.
@@ -133,7 +133,7 @@ export default function OriginaryAI() {
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-12)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Why Originary vs generic agent frameworks
               </h2>
@@ -170,22 +170,22 @@ export default function OriginaryAI() {
                     alignItems: 'flex-start',
                     gap: 'var(--space-4)',
                     padding: 'var(--space-6)',
-                    background: 'var(--gray-50)',
+                    background: 'var(--surface-subtle)',
                     borderRadius: 'var(--radius-lg)',
-                    border: '1px solid var(--gray-200)'
+                    border: '1px solid var(--border-default)'
                   }}>
-                    <CheckCircle size={24} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                    <CheckCircle size={24} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '2px' }} />
                     <div>
                       <h3 style={{
                         fontSize: 'var(--text-lg)',
                         fontWeight: 600,
                         marginBottom: 'var(--space-2)',
-                        color: 'var(--gray-900)'
+                        color: 'var(--text-primary)'
                       }}>
                         {item.title}
                       </h3>
                       <p style={{
-                        color: 'var(--gray-700)',
+                        color: 'var(--text-secondary)',
                         lineHeight: 1.6,
                         margin: 0
                       }}>
@@ -197,7 +197,7 @@ export default function OriginaryAI() {
               </div>
 
               <div style={{
-                background: 'var(--brand-primary)',
+                background: 'var(--accent-brand)',
                 color: 'var(--white)',
                 padding: 'var(--space-6)',
                 borderRadius: 'var(--radius-lg)',
@@ -238,7 +238,7 @@ export default function OriginaryAI() {
                   fontSize: 'var(--text-xl)',
                   fontWeight: 600,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Works with
                 </h3>
@@ -253,7 +253,7 @@ export default function OriginaryAI() {
                     <span key={tech} style={{
                       fontSize: 'var(--text-sm)',
                       fontWeight: 500,
-                      color: 'var(--gray-600)'
+                      color: 'var(--text-secondary)'
                     }}>
                       {tech}
                     </span>
@@ -266,7 +266,7 @@ export default function OriginaryAI() {
         </section>
 
         {/* FAQ Section */}
-        <section className="section" style={{ paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)', background: 'var(--white)' }}>
+        <section className="section" style={{ paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)', background: 'var(--surface-elevated)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h2 style={{
@@ -274,7 +274,7 @@ export default function OriginaryAI() {
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-12)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Frequently Asked Questions
               </h2>
@@ -285,14 +285,14 @@ export default function OriginaryAI() {
                     fontSize: 'var(--text-xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-3)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     What are PEAC-Receipts?
                   </h3>
                   <p style={{
                     fontSize: 'var(--text-base)',
                     lineHeight: 1.7,
-                    color: 'var(--gray-600)',
+                    color: 'var(--text-secondary)',
                     margin: 0
                   }}>
                     PEAC-Receipts are signed, verifiable records of API access, payment, consent, and attribution. Each receipt contains evidence of the transaction terms, payment confirmation, usage scope, and compliance metadata - all in a machine-readable format that AI agents and auditors can verify offline. They work across HTTP 402, x402, MCP, and A2A protocols.
@@ -304,14 +304,14 @@ export default function OriginaryAI() {
                     fontSize: 'var(--text-xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-3)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     How does Originary help with AI compliance and provenance?
                   </h3>
                   <p style={{
                     fontSize: 'var(--text-base)',
                     lineHeight: 1.7,
-                    color: 'var(--gray-600)',
+                    color: 'var(--text-secondary)',
                     margin: 0
                   }}>
                     Originary provides AI provenance tracking and AI compliance infrastructure through PEAC-Receipts. Every access generates a signed receipt containing consent flags, attribution data, retention windows, and payment proof. This creates an audit trail for regulatory compliance, proving what data was accessed, by whom, for what purpose, and under what terms - critical for AI governance and agentic commerce transactions.
@@ -325,14 +325,14 @@ export default function OriginaryAI() {
         {/* Disclaimer */}
         <section style={{
           padding: 'var(--space-8) 0',
-          background: 'var(--gray-50)',
-          borderTop: '1px solid var(--gray-200)'
+          background: 'var(--surface-subtle)',
+          borderTop: '1px solid var(--border-default)'
         }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
               <p style={{
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-500)',
+                color: 'var(--text-tertiary)',
                 lineHeight: 1.6
               }}>
                 No affiliation with other businesses using similar names.

@@ -142,14 +142,14 @@ export default function CompanyPage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-6)',
                   marginBottom: 'var(--space-8)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}
               >
                 <Building size={16} />
@@ -163,7 +163,7 @@ export default function CompanyPage() {
                   lineHeight: 1.1,
                   letterSpacing: '-0.04em',
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 About <span className="text-gradient">Originary</span>
@@ -172,7 +172,7 @@ export default function CompanyPage() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.7,
                   marginBottom: 'var(--space-8)'
                 }}
@@ -218,7 +218,7 @@ export default function CompanyPage() {
                     alignItems: 'flex-start',
                     transition: 'all 0.3s ease',
                     cursor: 'pointer',
-                    border: link.featured ? '2px solid var(--brand-primary)' : '1px solid var(--gray-200)',
+                    border: link.featured ? '2px solid var(--accent-brand)' : '1px solid var(--border-default)',
                     background: link.featured ? 'linear-gradient(135deg, rgba(99,91,255,0.03) 0%, rgba(0,212,170,0.03) 100%)' : 'var(--white)'
                   }}
                 >
@@ -229,11 +229,11 @@ export default function CompanyPage() {
                       borderRadius: 'var(--radius-lg)',
                       background: link.featured
                         ? 'var(--gradient-brand)'
-                        : 'linear-gradient(135deg, rgba(99, 91, 255, 0.1) 0%, rgba(0, 212, 170, 0.1) 100%)',
+                        : 'linear-gradient(135deg, var(--accent-brand-subtle) 0%, var(--accent-secondary-subtle) 100%)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: link.featured ? 'var(--white)' : 'var(--brand-primary)',
+                      color: link.featured ? 'var(--white)' : 'var(--accent-brand)',
                       flexShrink: 0
                     }}
                   >
@@ -243,16 +243,16 @@ export default function CompanyPage() {
                     <h3 style={{
                       fontSize: 'var(--text-lg)',
                       fontWeight: 700,
-                      color: 'var(--gray-900)',
+                      color: 'var(--text-primary)',
                       marginBottom: 'var(--space-2)',
                       display: 'flex',
                       alignItems: 'center',
                       gap: 'var(--space-2)'
                     }}>
                       {link.name}
-                      <ArrowRight size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <ArrowRight size={16} style={{ color: 'var(--accent-brand)' }} />
                     </h3>
-                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, margin: 0 }}>
+                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
                       {link.desc}
                     </p>
                   </div>
@@ -263,7 +263,7 @@ export default function CompanyPage() {
         </section>
 
         {/* Resources Section */}
-        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
           <div className="container">
             <div style={{ maxWidth: '900px', margin: '0 auto' }}>
               <div style={{ textAlign: 'center', marginBottom: 'var(--space-10)' }}>
@@ -272,7 +272,7 @@ export default function CompanyPage() {
                     fontSize: 'var(--text-3xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}
                 >
                   Resources
@@ -280,7 +280,7 @@ export default function CompanyPage() {
                 <p
                   style={{
                     fontSize: 'var(--text-lg)',
-                    color: 'var(--gray-600)',
+                    color: 'var(--text-secondary)',
                     lineHeight: 1.7
                   }}
                 >
@@ -315,11 +315,11 @@ export default function CompanyPage() {
                         width: '40px',
                         height: '40px',
                         borderRadius: 'var(--radius-md)',
-                        background: 'rgba(99, 91, 255, 0.1)',
+                        background: 'var(--accent-brand-subtle)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        color: 'var(--brand-primary)',
+                        color: 'var(--accent-brand)',
                         flexShrink: 0
                       }}
                     >
@@ -329,16 +329,16 @@ export default function CompanyPage() {
                       <h3 style={{
                         fontSize: 'var(--text-base)',
                         fontWeight: 600,
-                        color: 'var(--gray-900)',
+                        color: 'var(--text-primary)',
                         marginBottom: '2px'
                       }}>
                         {resource.name}
                       </h3>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)', lineHeight: 1.5, margin: 0 }}>
+                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.5, margin: 0 }}>
                         {resource.desc}
                       </p>
                     </div>
-                    <ArrowRight size={16} style={{ color: 'var(--gray-400)', flexShrink: 0 }} />
+                    <ArrowRight size={16} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
                   </Link>
                 ))}
               </div>
@@ -353,8 +353,8 @@ export default function CompanyPage() {
               <div
                 className="card"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.03) 0%, rgba(0, 212, 170, 0.03) 100%)',
-                  border: '1px solid rgba(99, 91, 255, 0.1)',
+                  background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
+                  border: '1px solid var(--accent-brand-subtle)',
                   textAlign: 'center'
                 }}
               >
@@ -369,17 +369,17 @@ export default function CompanyPage() {
                     justifyContent: 'center',
                     color: 'var(--white)',
                     margin: '0 auto var(--space-6) auto',
-                    boxShadow: '0 8px 32px rgba(99, 91, 255, 0.25)'
+                    boxShadow: '0 8px 32px var(--accent-brand-muted)'
                   }}
                 >
                   <Globe size={28} />
                 </div>
 
-                <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+                <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                   Poem, Inc.
                 </h2>
 
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.8, marginBottom: 'var(--space-6)', maxWidth: '600px', margin: '0 auto var(--space-6) auto' }}>
+                <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-6)', maxWidth: '600px', margin: '0 auto var(--space-6) auto' }}>
                   ORIGINARY<sup style={{ fontSize: '0.6em' }}>TM</sup> is a brand of Poem, Inc. We build AI infrastructure software and tools for the agentic web, maintaining the Originary products that run on PEAC Protocol.
                 </p>
 
@@ -389,7 +389,7 @@ export default function CompanyPage() {
                   justifyContent: 'center',
                   flexWrap: 'wrap',
                   paddingTop: 'var(--space-4)',
-                  borderTop: '1px solid var(--gray-200)'
+                  borderTop: '1px solid var(--border-default)'
                 }}>
                   {legalLinks.map((link) => (
                     <Link
@@ -397,18 +397,18 @@ export default function CompanyPage() {
                       href={link.href}
                       style={{
                         fontSize: 'var(--text-sm)',
-                        color: 'var(--gray-500)',
+                        color: 'var(--text-tertiary)',
                         textDecoration: 'none',
                         padding: 'var(--space-2) var(--space-3)',
                         borderRadius: 'var(--radius-md)',
                         transition: 'all 0.2s ease'
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.color = 'var(--brand-primary)'
-                        e.currentTarget.style.background = 'rgba(99, 91, 255, 0.05)'
+                        e.currentTarget.style.color = 'var(--accent-brand)'
+                        e.currentTarget.style.background = 'var(--accent-brand-faint)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.color = 'var(--gray-500)'
+                        e.currentTarget.style.color = 'var(--text-tertiary)'
                         e.currentTarget.style.background = 'transparent'
                       }}
                     >
@@ -450,8 +450,8 @@ export default function CompanyPage() {
                   href="/developers"
                   className="btn btn-lg"
                   style={{
-                    background: 'var(--white)',
-                    color: 'var(--brand-primary)',
+                    background: 'var(--surface-elevated)',
+                    color: 'var(--accent-brand)',
                     border: 'none'
                   }}
                 >

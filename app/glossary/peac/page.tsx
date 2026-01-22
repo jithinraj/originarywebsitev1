@@ -41,23 +41,23 @@ export default function Page() {
     <div className="wrap">
       <NavigationHeader />
       <main className="container" style={{ maxWidth: '900px', margin: '0 auto', paddingTop: 'var(--space-24)', paddingBottom: 'var(--space-16)' }}>
-        <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-6)', color: 'var(--gray-600)' }}>
-          <Link href="/" style={{ textDecoration: 'none', color: 'var(--gray-600)' }}>Home</Link>
+        <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-6)', color: 'var(--text-secondary)' }}>
+          <Link href="/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Home</Link>
           {' '}/{' '}
-          <Link href="/glossary/" style={{ textDecoration: 'none', color: 'var(--gray-600)' }}>Glossary</Link>
+          <Link href="/glossary/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
           {' '}/{' '}
-          <span style={{ color: 'var(--gray-900)' }}>PEAC</span>
+          <span style={{ color: 'var(--text-primary)' }}>PEAC</span>
         </nav>
 
         <div style={{
           display: 'inline-flex',
-          background: 'rgba(99, 91, 255, 0.1)',
-          border: '1px solid rgba(99, 91, 255, 0.2)',
+          background: 'var(--accent-brand-subtle)',
+          border: '1px solid var(--accent-brand-muted)',
           borderRadius: 'var(--radius-full)',
           padding: 'var(--space-2) var(--space-4)',
           fontSize: 'var(--text-xs)',
           fontWeight: 600,
-          color: 'var(--brand-primary)',
+          color: 'var(--accent-brand)',
           marginBottom: 'var(--space-4)',
           textTransform: 'uppercase',
           letterSpacing: '0.05em'
@@ -65,22 +65,22 @@ export default function Page() {
           GLOSSARY TERM
         </div>
 
-        <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, marginBottom: 'var(--space-6)', lineHeight: 1.1, color: 'var(--gray-900)' }}>
+        <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, marginBottom: 'var(--space-6)', lineHeight: 1.1, color: 'var(--text-primary)' }}>
           PEAC Protocol
         </h1>
 
-        <div style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-700)' }}>
-          <p style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-8)', color: 'var(--gray-600)' }}>
-            <strong>PEAC Protocol</strong> is an open protocol for file-based policy discovery and verifiable receipts. Agents discover policies via <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> and present cryptographic PEAC-Receipt tokens as auditable proof of compliance.
+        <div style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
+          <p style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-8)', color: 'var(--text-secondary)' }}>
+            <strong>PEAC Protocol</strong> is an open protocol for file-based policy discovery and verifiable receipts. Agents discover policies via <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> and present cryptographic PEAC-Receipt tokens as auditable proof of compliance.
           </p>
 
-          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
             How PEAC Protocol works
           </h2>
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <ol style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
               <li style={{ marginBottom: 'var(--space-3)' }}>
-                <strong>Policy discovery</strong> - Agent fetches <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> to discover pricing, terms, and payment methods
+                <strong>Policy discovery</strong> - Agent fetches <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> to discover pricing, terms, and payment methods
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
                 <strong>Payment flow</strong> - Agent makes payment through specified method (HTTP 402, x402, MCP, A2A, etc.)
@@ -89,20 +89,20 @@ export default function Page() {
                 <strong>Receipt generation</strong> - Payment provider issues a PEAC-Receipt as a signed JWS token
               </li>
               <li style={{ marginBottom: 0 }}>
-                <strong>Receipt presentation</strong> - Agent presents receipt in <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>PEAC-Receipt</code> header for verified access
+                <strong>Receipt presentation</strong> - Agent presents receipt in <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>PEAC-Receipt</code> header for verified access
               </li>
             </ol>
           </div>
 
-          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
             PEAC-Receipt format
           </h2>
           <p style={{ marginBottom: 'var(--space-4)' }}>
             A PEAC-Receipt is a JWS (JSON Web Signature) token containing payment proof, access rights, and compliance metadata. It can be verified offline using the issuer&rsquo;s public key.
           </p>
           <div style={{
-            background: 'var(--gray-900)',
-            color: 'var(--gray-100)',
+            background: 'var(--text-primary)',
+            color: 'var(--surface-card)',
             padding: 'var(--space-4)',
             borderRadius: 'var(--radius-lg)',
             overflow: 'auto',
@@ -140,16 +140,16 @@ PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6InBlYWMucmVjZWlwdC8wLjkiLCJraWQiOiJvcm
             </pre>
           </div>
 
-          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
             PEAC vs x402
           </h2>
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <p style={{ marginBottom: 'var(--space-4)' }}>
-              PEAC and <Link href="/glossary/x402/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>x402</Link> are complementary protocols:
+              PEAC and <Link href="/glossary/x402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>x402</Link> are complementary protocols:
             </p>
             <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
               <li style={{ marginBottom: 'var(--space-3)' }}>
-                <strong>PEAC</strong> - File-based policy discovery (<code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code>) and receipt format (PEAC-Receipt JWS)
+                <strong>PEAC</strong> - File-based policy discovery (<code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code>) and receipt format (PEAC-Receipt JWS)
               </li>
               <li style={{ marginBottom: 0 }}>
                 <strong>x402</strong> - HTTP 402-based payment flow with challenge-response pattern for inline payment negotiation
@@ -160,7 +160,7 @@ PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6InBlYWMucmVjZWlwdC8wLjkiLCJraWQiOiJvcm
             </p>
           </div>
 
-          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
             Why verifiable receipts matter
           </h2>
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
@@ -180,21 +180,21 @@ PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6InBlYWMucmVjZWlwdC8wLjkiLCJraWQiOiJvcm
             </ul>
           </div>
 
-          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
             Learn more
           </h2>
           <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/products/peac/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>PEAC Protocol Overview</Link> - Full protocol documentation
+              <Link href="/products/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol Overview</Link> - Full protocol documentation
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/verify/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Verify PEAC-Receipt</Link> - Offline signature verification tool
+              <Link href="/verify/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Verify PEAC-Receipt</Link> - Offline signature verification tool
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> - Status code used with PEAC
+              <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> - Status code used with PEAC
             </li>
             <li style={{ marginBottom: 0 }}>
-              <Link href="/glossary/agentic-web/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure for autonomous agent commerce
+              <Link href="/glossary/agentic-web/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure for autonomous agent commerce
             </li>
           </ul>
         </div>

@@ -12,7 +12,7 @@ export default function ServiceOffers() {
           <h2 style={{ marginBottom: 'var(--space-6)' }}>Originary solutions</h2>
           <p style={{
             fontSize: 'var(--text-xl)',
-            color: 'var(--gray-600)',
+            color: 'var(--text-secondary)',
             maxWidth: '700px',
             margin: '0 auto',
             lineHeight: 1.7
@@ -23,7 +23,7 @@ export default function ServiceOffers() {
 
         <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
           <ServiceCard
-            icon={<CheckCircle size={32} style={{ color: 'var(--brand-primary)' }} />}
+            icon={<CheckCircle size={32} style={{ color: 'var(--accent-brand)' }} />}
             title="Pay per AI agent transaction"
             description="Publishers and APIs that need verifiable access and usage proof and want to gate high value traffic with HTTP 402."
             deliverables={[
@@ -114,7 +114,7 @@ function ServiceCard({
       </h3>
 
       <p style={{
-        color: 'var(--gray-600)',
+        color: 'var(--text-secondary)',
         marginBottom: 'var(--space-4)',
         lineHeight: 1.6
       }}>
@@ -126,13 +126,13 @@ function ServiceCard({
           fontSize: 'var(--text-sm)',
           fontWeight: 500,
           marginBottom: 'var(--space-2)',
-          color: 'var(--gray-900)'
+          color: 'var(--text-primary)'
         }}>
           What you get:
         </p>
         <ul style={{
           fontSize: 'var(--text-sm)',
-          color: 'var(--gray-600)',
+          color: 'var(--text-secondary)',
           lineHeight: 1.6,
           paddingLeft: 'var(--space-4)',
           margin: 0
@@ -147,7 +147,7 @@ function ServiceCard({
 
       <div style={{
         padding: 'var(--space-3)',
-        background: 'var(--gray-50)',
+        background: 'var(--surface-subtle)',
         borderRadius: 'var(--radius-md)',
         marginBottom: 'var(--space-6)'
       }}>
@@ -155,13 +155,13 @@ function ServiceCard({
           fontSize: 'var(--text-sm)',
           fontWeight: 500,
           marginBottom: 'var(--space-1)',
-          color: 'var(--gray-900)'
+          color: 'var(--text-primary)'
         }}>
           Outcome:
         </p>
         <p style={{
           fontSize: 'var(--text-sm)',
-          color: 'var(--gray-700)',
+          color: 'var(--text-secondary)',
           margin: 0,
           lineHeight: 1.5
         }}>
@@ -183,7 +183,7 @@ function ServiceCard({
           href={secondaryLink}
           style={{
             fontSize: 'var(--text-sm)',
-            color: 'var(--brand-primary)',
+            color: 'var(--accent-brand)',
             textDecoration: 'underline',
             textAlign: 'center'
           }}

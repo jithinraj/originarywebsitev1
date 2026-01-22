@@ -78,8 +78,8 @@ export default function VerifyReceiptDemo() {
     <div
       className="rounded-2xl border p-4 md:p-6"
       style={{
-        background: 'var(--white)',
-        borderColor: 'var(--gray-200)'
+        background: 'var(--surface-elevated)',
+        borderColor: 'var(--border-default)'
       }}
     >
       <div className="flex gap-2 mb-3 flex-wrap">
@@ -106,9 +106,9 @@ export default function VerifyReceiptDemo() {
         className="w-full h-40 font-mono text-sm p-3 rounded-lg border"
         placeholder="Paste PEAC-Receipt (JWS format)..."
         style={{
-          background: 'var(--gray-50)',
-          borderColor: 'var(--gray-300)',
-          color: 'var(--gray-900)',
+          background: 'var(--surface-subtle)',
+          borderColor: 'var(--border-default)',
+          color: 'var(--text-primary)',
           resize: 'vertical'
         }}
       />
@@ -151,7 +151,7 @@ export default function VerifyReceiptDemo() {
                       ) : (
                         <XCircle size={16} style={{ color: 'rgb(239, 68, 68)' }} />
                       )}
-                      <span style={{ color: 'var(--gray-700)' }}>
+                      <span style={{ color: 'var(--text-secondary)' }}>
                         {key}: {valid ? 'Present' : 'Missing'}
                       </span>
                     </div>
@@ -162,16 +162,16 @@ export default function VerifyReceiptDemo() {
                   <details className="mt-3">
                     <summary
                       className="cursor-pointer text-sm font-medium mb-2"
-                      style={{ color: 'var(--gray-700)' }}
+                      style={{ color: 'var(--text-secondary)' }}
                     >
                       Show decoded claims
                     </summary>
                     <pre
                       className="overflow-auto text-xs p-3 rounded"
                       style={{
-                        background: 'var(--white)',
-                        border: '1px solid var(--gray-200)',
-                        color: 'var(--gray-800)'
+                        background: 'var(--surface-elevated)',
+                        border: '1px solid var(--border-default)',
+                        color: 'var(--text-primary)'
                       }}
                     >
                       {JSON.stringify(result.decoded, null, 2)}
@@ -196,7 +196,7 @@ export default function VerifyReceiptDemo() {
                     Verification Failed
                   </p>
                 </div>
-                <p className="text-sm mt-2" style={{ color: 'var(--gray-700)' }}>
+                <p className="text-sm mt-2" style={{ color: 'var(--text-secondary)' }}>
                   {result.reason || 'Invalid receipt format'}
                 </p>
               </div>

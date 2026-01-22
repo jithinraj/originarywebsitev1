@@ -26,7 +26,7 @@ export default function TrustPage() {
       <NavigationHeader />
       <main id="main-content" role="main" style={{ paddingTop: '80px' }}>
         <section className="section" style={{
-          background: 'linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%)',
+          background: 'linear-gradient(180deg, var(--surface-subtle) 0%, var(--surface-elevated) 100%)',
           position: 'relative',
           overflow: 'hidden'
         }}>
@@ -62,12 +62,12 @@ export default function TrustPage() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-6)',
                 marginBottom: 'var(--space-8)',
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
                 letterSpacing: '0.05em',
@@ -80,7 +80,7 @@ export default function TrustPage() {
               <h1 style={{
                 fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
                 fontWeight: 700,
-                color: 'var(--gray-900)',
+                color: 'var(--text-primary)',
                 marginBottom: 'var(--space-6)',
                 lineHeight: 1.2,
                 letterSpacing: '-0.02em'
@@ -90,7 +90,7 @@ export default function TrustPage() {
 
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 maxWidth: '700px',
                 margin: '0 auto',
                 lineHeight: 1.7
@@ -185,57 +185,57 @@ export default function TrustPage() {
               marginBottom: '80px'
             }}>
               <div style={{
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
+                background: 'var(--surface-elevated)',
+                border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-xl)',
                 padding: 'var(--space-6)'
               }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                   Portability Pledge
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   Verify receipts offline using published JWKS. Export-first design with no vendor lock-in. Your data remains portable across any PEAC-conformant system.
                 </p>
               </div>
 
               <div style={{
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
+                background: 'var(--surface-elevated)',
+                border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-xl)',
                 padding: 'var(--space-6)'
               }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                   Security Model
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   Ed25519 signatures ensure tamper-evident receipts. Public keys at standard JWKS endpoints. No proprietary verification required.
                 </p>
               </div>
 
               <div style={{
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
+                background: 'var(--surface-elevated)',
+                border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-xl)',
                 padding: 'var(--space-6)'
               }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                   Conformance
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   Test vectors and conformance suite available for implementers. Multiple independent implementations expected before PEAC 1.0.
                 </p>
               </div>
 
               <div style={{
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
+                background: 'var(--surface-elevated)',
+                border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-xl)',
                 padding: 'var(--space-6)'
               }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                   Governance
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   PEAC protocol stewardship is transparent and documented. Specification changes follow an open process with community input.
                 </p>
               </div>
@@ -245,8 +245,8 @@ export default function TrustPage() {
             <div style={{
               maxWidth: '900px',
               margin: '0 auto 80px',
-              background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.05) 0%, rgba(0, 212, 170, 0.05) 100%)',
-              border: '1px solid rgba(99, 91, 255, 0.15)',
+              background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-2xl)',
               padding: 'var(--space-12)',
               textAlign: 'center'
@@ -254,14 +254,14 @@ export default function TrustPage() {
               <h2 style={{
                 fontSize: 'var(--text-3xl)',
                 fontWeight: 700,
-                color: 'var(--gray-900)',
+                color: 'var(--text-primary)',
                 marginBottom: 'var(--space-4)'
               }}>
                 Open Source Commitment
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-6)',
                 lineHeight: 1.7
               }}>
@@ -271,7 +271,7 @@ export default function TrustPage() {
               </p>
               <p style={{
                 fontSize: 'var(--text-base)',
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)',
                 lineHeight: 1.6
               }}>
@@ -305,7 +305,7 @@ export default function TrustPage() {
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <p style={{
                 fontSize: 'var(--text-base)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-3)'
               }}>
                 Questions about security, compliance, or our trust practices?
@@ -314,7 +314,7 @@ export default function TrustPage() {
                 href="mailto:contact@originary.xyz"
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontWeight: 600,
                   transition: 'opacity 0.2s'
@@ -346,8 +346,8 @@ function TrustCard({
     <div
       className="card"
       style={{
-        background: 'var(--white)',
-        border: '1px solid var(--gray-200)',
+        background: 'var(--surface-elevated)',
+        border: '1px solid var(--border-default)',
         borderRadius: 'var(--radius-xl)',
         padding: 'var(--space-8)',
         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -369,8 +369,8 @@ function TrustCard({
           width: '48px',
           height: '48px',
           borderRadius: 'var(--radius-lg)',
-          background: 'rgba(99, 91, 255, 0.1)',
-          color: 'var(--brand-primary)'
+          background: 'var(--accent-brand-subtle)',
+          color: 'var(--accent-brand)'
         }}>
           {icon}
         </div>
@@ -378,14 +378,14 @@ function TrustCard({
           margin: 0,
           fontSize: 'var(--text-xl)',
           fontWeight: 600,
-          color: 'var(--gray-900)'
+          color: 'var(--text-primary)'
         }}>
           {title}
         </h3>
       </div>
 
       <p style={{
-        color: 'var(--gray-600)',
+        color: 'var(--text-secondary)',
         marginBottom: 'var(--space-6)',
         lineHeight: 1.6,
         fontSize: 'var(--text-base)'
@@ -409,7 +409,7 @@ function TrustCard({
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 500,
@@ -426,7 +426,7 @@ function TrustCard({
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 500,

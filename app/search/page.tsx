@@ -26,7 +26,7 @@ export default function SearchPage() {
             </h1>
             <p style={{
               fontSize: 'var(--text-lg)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-8)',
               textAlign: 'center'
             }}>
@@ -38,9 +38,9 @@ export default function SearchPage() {
             <div style={{
               marginTop: 'var(--space-12)',
               padding: 'var(--space-6)',
-              background: 'var(--gray-50)',
+              background: 'var(--surface-subtle)',
               borderRadius: 'var(--radius-lg)',
-              border: '1px solid var(--gray-200)'
+              border: '1px solid var(--border-default)'
             }}>
               <h2 style={{
                 fontSize: 'var(--text-lg)',
@@ -67,10 +67,10 @@ export default function SearchPage() {
                     href={link.href}
                     style={{
                       padding: 'var(--space-3)',
-                      background: 'var(--white)',
-                      border: '1px solid var(--gray-200)',
+                      background: 'var(--surface-elevated)',
+                      border: '1px solid var(--border-default)',
                       borderRadius: 'var(--radius-md)',
-                      color: 'var(--gray-700)',
+                      color: 'var(--text-secondary)',
                       textDecoration: 'none',
                       fontSize: 'var(--text-sm)',
                       fontWeight: 500,

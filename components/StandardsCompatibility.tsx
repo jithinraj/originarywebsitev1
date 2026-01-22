@@ -36,9 +36,9 @@ export default function StandardsCompatibility() {
 
       <style jsx>{`
         .standards {
-          background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
+          background: var(--surface-base);
           padding: var(--space-10) 0;
-          border-bottom: 1px solid var(--gray-100);
+          border-bottom: 1px solid var(--border-default);
           position: relative;
         }
 
@@ -49,7 +49,7 @@ export default function StandardsCompatibility() {
           left: 0;
           right: 0;
           height: 1px;
-          background: linear-gradient(90deg, transparent 0%, var(--gray-200) 50%, transparent 100%);
+          background: linear-gradient(90deg, transparent 0%, var(--border-default) 50%, transparent 100%);
         }
 
         .standards-container {
@@ -73,13 +73,13 @@ export default function StandardsCompatibility() {
           width: 6px;
           height: 6px;
           border-radius: var(--radius-full);
-          background: linear-gradient(135deg, var(--brand-primary) 0%, var(--gray-500) 100%);
+          background: linear-gradient(135deg, var(--accent-brand) 0%, var(--text-tertiary) 100%);
         }
 
         .standards-label {
           font-size: var(--text-xs);
           font-weight: 600;
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           text-transform: uppercase;
           letter-spacing: 0.1em;
           margin: 0;
@@ -97,23 +97,23 @@ export default function StandardsCompatibility() {
           display: flex;
           align-items: center;
           gap: var(--space-2);
-          padding: 6px 12px;
+          padding: var(--space-2) var(--space-3);
           text-decoration: none;
           border-radius: var(--radius-full);
-          background: var(--white);
-          border: 1px solid var(--gray-100);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           transition: all var(--duration-200) cubic-bezier(0.4, 0, 0.2, 1);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+          box-shadow: var(--shadow-card);
         }
 
         .standards-list :global(.standard-item:hover) {
-          border-color: var(--gray-200);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+          border-color: var(--border-hover);
+          box-shadow: var(--shadow-card-hover);
           transform: translateY(-1px);
         }
 
         .standards-list :global(.standard-item:focus-visible) {
-          outline: 2px solid var(--brand-primary);
+          outline: 2px solid var(--accent-brand);
           outline-offset: 2px;
         }
 
@@ -124,27 +124,27 @@ export default function StandardsCompatibility() {
           width: 20px;
           height: 20px;
           border-radius: var(--radius-sm);
-          background: var(--gray-50);
+          background: var(--surface-subtle);
           transition: all var(--duration-200) ease;
         }
 
         .standards-list :global(.standard-item:hover) .standard-icon-wrapper {
-          background: linear-gradient(135deg, rgba(99, 91, 255, 0.08) 0%, rgba(99, 91, 255, 0.12) 100%);
+          background: var(--accent-brand-muted);
         }
 
         .standards-list :global(.standard-icon) {
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           transition: color var(--duration-200) ease;
         }
 
         .standards-list :global(.standard-item:hover .standard-icon) {
-          color: var(--brand-primary);
+          color: var(--accent-brand);
         }
 
         .standard-name {
           font-size: var(--text-sm);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           font-family: var(--font-mono);
           letter-spacing: -0.01em;
         }

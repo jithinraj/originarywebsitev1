@@ -64,7 +64,7 @@ export default function AIReceiptsPage() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: 'var(--space-2)',
-            color: 'var(--gray-500)',
+            color: 'var(--text-tertiary)',
             fontSize: 'var(--text-sm)',
             textDecoration: 'none'
           }}>
@@ -77,7 +77,7 @@ export default function AIReceiptsPage() {
         <section className="section" style={{
           paddingTop: 'var(--space-10)',
           paddingBottom: 'var(--space-12)',
-          borderBottom: '1px solid var(--gray-100)'
+          borderBottom: '1px solid var(--border-subtle)'
         }}>
           <div className="container">
             <div style={{ maxWidth: '720px' }}>
@@ -85,14 +85,14 @@ export default function AIReceiptsPage() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(0, 212, 170, 0.1)',
-                border: '1px solid rgba(0, 212, 170, 0.2)',
+                background: 'var(--accent-secondary-subtle)',
+                border: '1px solid var(--accent-secondary-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
                 marginBottom: 'var(--space-6)',
                 fontSize: 'var(--text-xs)',
                 fontWeight: 600,
-                color: 'var(--brand-secondary)'
+                color: 'var(--accent-secondary)'
               }}>
                 <Receipt size={14} />
                 <span>LEARN</span>
@@ -104,7 +104,7 @@ export default function AIReceiptsPage() {
                 lineHeight: 1.2,
                 letterSpacing: '-0.03em',
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 AI Receipts
               </h1>
@@ -112,13 +112,13 @@ export default function AIReceiptsPage() {
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.6,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-6)'
               }}>
                 Cryptographically signed proof of agent interactions - the foundation for billing, compliance, and dispute resolution.
               </p>
 
-              <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-400)' }}>
+              <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                 6 min read
               </div>
             </div>
@@ -133,14 +133,14 @@ export default function AIReceiptsPage() {
               <aside style={{ position: 'sticky', top: '100px', alignSelf: 'start' }} className="article-sidebar">
                 <div style={{
                   padding: 'var(--space-6)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-100)'
+                  border: '1px solid var(--border-subtle)'
                 }}>
                   <h4 style={{
                     fontSize: 'var(--text-xs)',
                     fontWeight: 600,
-                    color: 'var(--gray-400)',
+                    color: 'var(--text-muted)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
                     marginBottom: 'var(--space-4)'
@@ -151,7 +151,7 @@ export default function AIReceiptsPage() {
                     {['Key Takeaways', 'What is a Receipt?', 'Why Receipts Matter', 'Anatomy of a PEAC-Receipt', 'Use Cases', 'Implementation'].map((item) => (
                       <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} style={{
                         fontSize: 'var(--text-sm)',
-                        color: 'var(--gray-600)',
+                        color: 'var(--text-secondary)',
                         textDecoration: 'none'
                       }}>
                         {item}
@@ -165,8 +165,8 @@ export default function AIReceiptsPage() {
               <article style={{ maxWidth: '680px' }}>
                 {/* Key Takeaways Box */}
                 <div id="key-takeaways" style={{
-                  background: 'rgba(0, 212, 170, 0.05)',
-                  border: '1px solid rgba(0, 212, 170, 0.15)',
+                  background: 'var(--accent-secondary-faint)',
+                  border: '1px solid var(--accent-secondary-muted)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-8)',
                   marginBottom: 'var(--space-12)'
@@ -175,7 +175,7 @@ export default function AIReceiptsPage() {
                     fontSize: 'var(--text-lg)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Key Takeaways
                   </h2>
@@ -191,10 +191,10 @@ export default function AIReceiptsPage() {
                         gap: 'var(--space-3)',
                         marginBottom: 'var(--space-3)',
                         fontSize: 'var(--text-base)',
-                        color: 'var(--gray-700)',
+                        color: 'var(--text-secondary)',
                         lineHeight: 1.6
                       }}>
-                        <CheckCircle size={18} style={{ color: 'var(--brand-secondary)', flexShrink: 0, marginTop: '3px' }} />
+                        <CheckCircle size={18} style={{ color: 'var(--accent-secondary)', flexShrink: 0, marginTop: '3px' }} />
                         {takeaway}
                       </li>
                     ))}
@@ -207,14 +207,14 @@ export default function AIReceiptsPage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     What is a Receipt?
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-4)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
                     An <strong>AI receipt</strong> (or PEAC-Receipt) is a cryptographically signed JSON object that proves what happened during an agent interaction. Just like a physical receipt from a store, it records who transacted, what was exchanged, when it happened, and under what terms.
                   </p>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
                     The key difference: AI receipts are machine-readable, tamper-proof, and verifiable by anyone with the issuer&apos;s public key - no phone call to customer service required.
                   </p>
                 </section>
@@ -225,27 +225,27 @@ export default function AIReceiptsPage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Why Receipts Matter
                   </h2>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
                     <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Billing proof</h4>
-                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Billing proof</h4>
+                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
                         No more "he said, she said" disputes. The signature proves what was used.
                       </p>
                     </div>
                     <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Audit trails regulators accept</h4>
-                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Audit trails regulators accept</h4>
+                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
                         Timestamped, tamper-evident records of every agent action. GDPR, SOC 2, EU AI Act compliance becomes straightforward when you can produce signed receipts on demand.
                       </p>
                     </div>
                     <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Attribution chains</h4>
-                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Attribution chains</h4>
+                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
                         Content usage gets recorded. Creators verify credit and compensation.
                       </p>
                     </div>
@@ -258,16 +258,16 @@ export default function AIReceiptsPage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Anatomy of a PEAC-Receipt
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                     A PEAC-Receipt contains several key fields:
                   </p>
 
                   <div style={{
-                    background: 'var(--gray-900)',
+                    background: 'var(--text-primary)',
                     borderRadius: 'var(--radius-lg)',
                     padding: 'var(--space-6)',
                     marginBottom: 'var(--space-6)',
@@ -276,7 +276,7 @@ export default function AIReceiptsPage() {
                     <pre style={{
                       fontFamily: 'var(--font-mono)',
                       fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-300)',
+                      color: 'var(--border-default)',
                       margin: 0,
                       lineHeight: 1.6
                     }}>
@@ -299,8 +299,8 @@ export default function AIReceiptsPage() {
                     </pre>
                   </div>
 
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
-                    The entire payload is signed using JWS (JSON Web Signature), typically with Ed25519. The signature can be verified using the issuer&apos;s public key referenced in <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>/.well-known/peac.txt</code> (which points to a JWKS endpoint).
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
+                    The entire payload is signed using JWS (JSON Web Signature), typically with Ed25519. The signature can be verified using the issuer&apos;s public key referenced in <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>/.well-known/peac.txt</code> (which points to a JWKS endpoint).
                   </p>
                 </section>
 
@@ -310,7 +310,7 @@ export default function AIReceiptsPage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Use Cases
                   </h2>
@@ -324,10 +324,10 @@ export default function AIReceiptsPage() {
                     ].map((item, i) => (
                       <li key={i} style={{
                         padding: 'var(--space-4) 0',
-                        borderBottom: i < 3 ? '1px solid var(--gray-100)' : 'none'
+                        borderBottom: i < 3 ? '1px solid var(--border-subtle)' : 'none'
                       }}>
-                        <strong style={{ color: 'var(--gray-900)' }}>{item.term}</strong>
-                        <span style={{ color: 'var(--gray-600)' }}> - {item.def}</span>
+                        <strong style={{ color: 'var(--text-primary)' }}>{item.term}</strong>
+                        <span style={{ color: 'var(--text-secondary)' }}> - {item.def}</span>
                       </li>
                     ))}
                   </ul>
@@ -339,22 +339,22 @@ export default function AIReceiptsPage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Implementation
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                     Start working with receipts using Originary&apos;s tools:
                   </p>
 
                   <div className="grid grid-2" style={{ gap: 'var(--space-4)' }}>
                     <Link href="/receipts" className="card" style={{ textDecoration: 'none', padding: 'var(--space-5)' }}>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Receipts Overview</h4>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Product documentation</p>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Receipts Overview</h4>
+                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Product documentation</p>
                     </Link>
                     <Link href="/verify" className="card" style={{ textDecoration: 'none', padding: 'var(--space-5)' }}>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Verify API</h4>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Verify receipts online</p>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Verify API</h4>
+                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Verify receipts online</p>
                     </Link>
                   </div>
                 </section>
@@ -362,7 +362,7 @@ export default function AIReceiptsPage() {
                 {/* Related */}
                 <section style={{
                   padding: 'var(--space-8)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
                   marginTop: 'var(--space-16)'
                 }}>
@@ -370,7 +370,7 @@ export default function AIReceiptsPage() {
                     fontSize: 'var(--text-lg)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-6)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Related Articles
                   </h3>
@@ -379,21 +379,21 @@ export default function AIReceiptsPage() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      color: 'var(--gray-700)',
+                      color: 'var(--text-secondary)',
                       textDecoration: 'none'
                     }}>
                       <span>What is Agentic Commerce?</span>
-                      <ArrowRight size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <ArrowRight size={16} style={{ color: 'var(--accent-brand)' }} />
                     </Link>
                     <Link href="/learn/ai-consent-and-attribution" style={{
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      color: 'var(--gray-700)',
+                      color: 'var(--text-secondary)',
                       textDecoration: 'none'
                     }}>
                       <span>AI Consent & Attribution</span>
-                      <ArrowRight size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <ArrowRight size={16} style={{ color: 'var(--accent-brand)' }} />
                     </Link>
                   </div>
                 </section>

@@ -69,7 +69,7 @@ export default function Downloads() {
       </Script>
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h1 style={{
@@ -78,7 +78,7 @@ export default function Downloads() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 ORIGINARY <span style={{ fontSize: '0.5em', verticalAlign: 'super' }}>™</span> Downloads
               </h1>
@@ -86,7 +86,7 @@ export default function Downloads() {
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-4)'
               }}>
                 Official <strong>Originary</strong> CLI builds. Use to integrate access control, consent, attribution, provenance and verifiable receipts into your apps.
@@ -94,13 +94,13 @@ export default function Downloads() {
 
               <div style={{
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-500)',
+                color: 'var(--text-tertiary)',
                 marginBottom: 'var(--space-6)',
                 display: 'flex',
                 gap: 'var(--space-4)',
                 flexWrap: 'wrap',
                 paddingBottom: 'var(--space-4)',
-                borderBottom: '1px solid var(--gray-200)'
+                borderBottom: '1px solid var(--border-default)'
               }}>
                 <span><strong>Publisher:</strong> Originary (Poem, Inc.)</span>
                 <span>•</span>
@@ -112,14 +112,14 @@ export default function Downloads() {
               <p style={{
                 fontSize: 'var(--text-base)',
                 lineHeight: 1.6,
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-12)'
               }}>
                 <strong>Get the software:</strong>{' '}
-                <a href="#downloads" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>macOS (.zip)</a> •{' '}
-                <a href="#downloads" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>Windows (.zip)</a> •{' '}
-                <a href="#downloads" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>Linux (.zip)</a> •{' '}
-                <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>View source on GitHub</a>
+                <a href="#downloads" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>macOS (.zip)</a> •{' '}
+                <a href="#downloads" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>Windows (.zip)</a> •{' '}
+                <a href="#downloads" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>Linux (.zip)</a> •{' '}
+                <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>View source on GitHub</a>
               </p>
 
               <div id="downloads">
@@ -130,10 +130,10 @@ export default function Downloads() {
               <div style={{
                 marginTop: 'var(--space-12)',
                 padding: 'var(--space-4)',
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 borderRadius: 'var(--radius-lg)',
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-600)'
+                color: 'var(--text-secondary)'
               }}>
                 <strong>Originary</strong> artifacts are first-party and supported by us. <strong>PEAC</strong> packages are upstream community releases; we link for convenience and compatibility.
               </div>
@@ -143,8 +143,8 @@ export default function Downloads() {
                 padding: 'var(--space-4)',
                 textAlign: 'center',
                 fontSize: 'var(--text-xs)',
-                color: 'var(--gray-500)',
-                borderTop: '1px solid var(--gray-200)',
+                color: 'var(--text-tertiary)',
+                borderTop: '1px solid var(--border-default)',
                 paddingTop: 'var(--space-6)'
               }}>
                 Sold by Poem, Inc., 1111B S Governors Ave, STE 40987, Dover, DE 19904, USA • +1 415 707 0402

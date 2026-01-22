@@ -143,7 +143,7 @@ export default function Search({ placeholder = 'Search...', className = '' }: Se
             background: 'none',
             border: 'none',
             cursor: 'pointer',
-            color: 'var(--gray-400)',
+            color: 'var(--text-muted)',
             padding: 'var(--space-1)'
           }}
           aria-label="Clear search"
@@ -162,23 +162,23 @@ export default function Search({ placeholder = 'Search...', className = '' }: Se
               aria-selected={index === selectedIndex}
               onClick={() => handleResultClick(result.href)}
               style={{
-                background: index === selectedIndex ? 'var(--gray-50)' : undefined
+                background: index === selectedIndex ? 'var(--surface-subtle)' : undefined
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <div>
-                  <div style={{ fontWeight: 600, color: 'var(--gray-900)', marginBottom: '2px' }}>
+                  <div style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: '2px' }}>
                     {result.title}
                   </div>
-                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
                     {result.description}
                   </div>
                 </div>
                 <span
                   style={{
                     fontSize: 'var(--text-xs)',
-                    color: 'var(--brand-primary)',
-                    background: 'rgba(99, 91, 255, 0.1)',
+                    color: 'var(--accent-brand)',
+                    background: 'var(--accent-brand-subtle)',
                     padding: '2px 8px',
                     borderRadius: 'var(--radius-full)',
                     whiteSpace: 'nowrap'
@@ -194,7 +194,7 @@ export default function Search({ placeholder = 'Search...', className = '' }: Se
 
       {isOpen && query && results.length === 0 && (
         <div className="search-results" style={{ padding: 'var(--space-6)', textAlign: 'center' }}>
-          <p style={{ color: 'var(--gray-500)', margin: 0 }}>
+          <p style={{ color: 'var(--text-tertiary)', margin: 0 }}>
             No results found for &ldquo;{query}&rdquo;
           </p>
         </div>

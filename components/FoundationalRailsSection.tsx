@@ -15,7 +15,7 @@ export default function FoundationalRailsSection() {
   ]
 
   return (
-    <section style={{ padding: 'var(--space-24) 0', background: 'var(--gray-50)' }}>
+    <section style={{ padding: 'var(--space-24) 0', background: 'var(--surface-subtle)' }}>
       <div className="container">
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
@@ -25,14 +25,14 @@ export default function FoundationalRailsSection() {
               lineHeight: 1.2,
               letterSpacing: '-0.02em',
               marginBottom: 'var(--space-4)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Foundational rails for the agentic web
             </h2>
             <p style={{
               fontSize: 'var(--text-lg)',
               lineHeight: 1.7,
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               maxWidth: '700px',
               margin: '0 auto'
             }}>
@@ -55,8 +55,8 @@ export default function FoundationalRailsSection() {
                   className="card pillar-card"
                   style={{
                     padding: 'var(--space-6)',
-                    background: 'var(--white)',
-                    border: '1px solid var(--gray-200)',
+                    background: 'var(--surface-elevated)',
+                    border: '1px solid var(--border-default)',
                     borderRadius: 'var(--radius-xl)',
                     textAlign: 'center',
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -65,7 +65,7 @@ export default function FoundationalRailsSection() {
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-4px)'
                     e.currentTarget.style.boxShadow = 'var(--shadow-lg)'
-                    e.currentTarget.style.borderColor = 'rgba(99, 91, 255, 0.3)'
+                    e.currentTarget.style.borderColor = 'var(--accent-brand-glow)'
                     const iconDiv = e.currentTarget.querySelector('.icon-container') as HTMLElement
                     if (iconDiv) {
                       iconDiv.style.transform = 'scale(1.1) rotate(5deg)'
@@ -74,7 +74,7 @@ export default function FoundationalRailsSection() {
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)'
                     e.currentTarget.style.boxShadow = 'none'
-                    e.currentTarget.style.borderColor = 'var(--gray-200)'
+                    e.currentTarget.style.borderColor = 'var(--border-default)'
                     const iconDiv = e.currentTarget.querySelector('.icon-container') as HTMLElement
                     if (iconDiv) {
                       iconDiv.style.transform = 'scale(1) rotate(0deg)'
@@ -87,12 +87,12 @@ export default function FoundationalRailsSection() {
                       width: '48px',
                       height: '48px',
                       borderRadius: 'var(--radius-lg)',
-                      background: 'rgba(99, 91, 255, 0.1)',
+                      background: 'var(--accent-brand-subtle)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       margin: '0 auto var(--space-4)',
-                      color: 'var(--brand-primary)',
+                      color: 'var(--accent-brand)',
                       transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
                     }}>
                     <Icon size={24} />
@@ -101,13 +101,13 @@ export default function FoundationalRailsSection() {
                     fontSize: 'var(--text-base)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-2)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     {pillar.label}
                   </h3>
                   <p style={{
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--gray-600)',
+                    color: 'var(--text-secondary)',
                     lineHeight: 1.6
                   }}>
                     {pillar.description}

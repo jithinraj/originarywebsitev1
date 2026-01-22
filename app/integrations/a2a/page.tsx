@@ -45,11 +45,11 @@ export default function A2APage() {
           <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
             <div style={{
               display: 'inline-flex',
-              background: 'rgba(99, 91, 255, 0.1)',
-              border: '1px solid rgba(99, 91, 255, 0.2)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-6)',
-              color: 'var(--brand-primary)',
+              color: 'var(--accent-brand)',
               fontSize: 'var(--text-xs)',
               fontWeight: 600,
               textTransform: 'uppercase',
@@ -73,7 +73,7 @@ export default function A2APage() {
           {/* Subtitle */}
           <p style={{
             fontSize: 'var(--text-xl)',
-            color: 'var(--gray-600)',
+            color: 'var(--text-secondary)',
             textAlign: 'center',
             marginBottom: 'var(--space-16)',
             lineHeight: 1.6
@@ -86,10 +86,10 @@ export default function A2APage() {
             <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
               Overview
             </h2>
-            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
               Agent-to-Agent (A2A) communication enables autonomous agents to interact directly with each other while maintaining verifiable transaction history. Originary provides PEAC-Receipt attach points that allow agents to prove prior interactions and policy compliance.
             </p>
-            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
               When Agent A calls Agent B, Originary issues a signed receipt. Agent B can then attach this receipt when calling Agent C, creating a verifiable chain of agent interactions that can be audited and validated.
             </p>
           </div>
@@ -104,7 +104,7 @@ export default function A2APage() {
                 <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
                   Multi-Agent Workflows
                 </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                   Coordinate complex workflows where multiple agents collaborate, each maintaining receipts of their contributions.
                 </p>
               </div>
@@ -112,7 +112,7 @@ export default function A2APage() {
                 <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
                   Policy Enforcement
                 </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                   Verify that agents have obtained necessary permissions or payments before proceeding with downstream operations.
                 </p>
               </div>
@@ -120,7 +120,7 @@ export default function A2APage() {
                 <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
                   Audit Trails
                 </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                   Maintain complete, verifiable history of agent interactions for compliance and debugging purposes.
                 </p>
               </div>
@@ -137,7 +137,7 @@ export default function A2APage() {
               Attaching PEAC-Receipts
             </h3>
             <pre style={{
-              background: 'var(--gray-50)',
+              background: 'var(--surface-subtle)',
               padding: 'var(--space-4)',
               borderRadius: 'var(--radius-md)',
               overflow: 'auto',
@@ -150,7 +150,7 @@ curl https://agent-c.example.com/api/action \\
   -H "PEAC-Receipt: eyJhbGc...agent-a-to-b-receipt"`}
             </pre>
 
-            <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginTop: 'var(--space-4)' }}>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginTop: 'var(--space-4)' }}>
               Agent C can verify the attached receipt to confirm that Agent B received proper authorization from Agent A before executing the requested action.
             </p>
           </div>
@@ -160,7 +160,7 @@ curl https://agent-c.example.com/api/action \\
             <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
               Benefits
             </h2>
-            <ul style={{ color: 'var(--gray-600)', lineHeight: 1.8, paddingLeft: 'var(--space-6)' }}>
+            <ul style={{ color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 'var(--space-6)' }}>
               <li>Verifiable chain of custody for agent workflows</li>
               <li>Cryptographic proof of policy compliance</li>
               <li>Reduced fraud in multi-agent systems</li>
@@ -176,7 +176,7 @@ curl https://agent-c.example.com/api/action \\
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
               <Link href="/docs/a2a/attach-points" style={{
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-base)',
                 fontWeight: 500
@@ -184,7 +184,7 @@ curl https://agent-c.example.com/api/action \\
                 A2A Attach Points Documentation →
               </Link>
               <Link href="/products/verify" style={{
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-base)',
                 fontWeight: 500
@@ -192,7 +192,7 @@ curl https://agent-c.example.com/api/action \\
                 Verify API Product →
               </Link>
               <a href="https://peacprotocol.org/" target="_blank" rel="noopener" style={{
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-base)',
                 fontWeight: 500
@@ -206,14 +206,14 @@ curl https://agent-c.example.com/api/action \\
           <div style={{
             textAlign: 'center',
             padding: 'var(--space-12)',
-            background: 'var(--gray-50)',
+            background: 'var(--surface-subtle)',
             borderRadius: 'var(--radius-lg)',
             marginTop: 'var(--space-12)'
           }}>
             <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
               Build verifiable agent workflows
             </h3>
-            <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
               Start implementing A2A communication with PEAC-Receipts
             </p>
             <Link href="/pricing" className="button-primary">

@@ -51,8 +51,8 @@ export default function Partners() {
 
       <style jsx>{`
         .partners {
-          padding: 140px 0;
-          background: linear-gradient(180deg, #fafafa 0%, #f8f8fc 50%, #fafafa 100%);
+          padding: var(--section-padding-lg) 0;
+          background: var(--surface-elevated);
           position: relative;
           overflow: hidden;
         }
@@ -60,40 +60,40 @@ export default function Partners() {
         .partners-container {
           max-width: 1200px;
           margin: 0 auto;
-          padding: 0 24px;
+          padding: 0 var(--space-6);
           position: relative;
         }
 
         .partners-header {
           text-align: center;
-          margin-bottom: 56px;
+          margin-bottom: var(--space-12);
         }
 
         .label-wrapper {
-          margin-bottom: 20px;
+          margin-bottom: var(--space-5);
         }
 
         .partners-label {
           display: inline-block;
-          font-size: 12px;
+          font-size: var(--text-xs);
           font-weight: 600;
           letter-spacing: 0.1em;
-          color: #6b6b6b;
+          color: var(--text-tertiary);
           text-transform: uppercase;
         }
 
         .partners-title {
-          font-size: clamp(36px, 5vw, 56px);
+          font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
           font-weight: 600;
-          color: #0a0a0a;
-          margin: 0 0 16px;
+          color: var(--text-primary);
+          margin: 0 0 var(--space-4);
           letter-spacing: -0.03em;
           line-height: 1.1;
         }
 
         .partners-subtitle {
-          font-size: 18px;
-          color: #525252;
+          font-size: var(--text-lg);
+          color: var(--text-secondary);
           max-width: 540px;
           margin: 0 auto;
           line-height: 1.6;
@@ -102,36 +102,36 @@ export default function Partners() {
         .integrations-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 16px;
-          margin-bottom: 56px;
+          gap: var(--space-4);
+          margin-bottom: var(--space-12);
         }
 
         .integration-card {
-          background: white;
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          border-radius: 16px;
-          padding: 20px;
+          background: var(--surface-card);
+          border: 1px solid var(--border-default);
+          border-radius: var(--radius-2xl);
+          padding: var(--space-5);
           display: flex;
           flex-direction: column;
-          gap: 6px;
-          transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+          gap: var(--space-2);
+          transition: border-color var(--duration-200) ease, box-shadow var(--duration-200) ease, transform var(--duration-200) ease;
         }
 
         .integration-card:hover {
-          border-color: rgba(0, 0, 0, 0.12);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+          border-color: var(--border-hover);
+          box-shadow: var(--shadow-card-hover);
           transform: translateY(-2px);
         }
 
         .integration-name {
-          font-size: 14px;
+          font-size: var(--text-sm);
           font-weight: 600;
-          color: #0a0a0a;
+          color: var(--text-primary);
         }
 
         .integration-desc {
-          font-size: 13px;
-          color: #737373;
+          font-size: var(--text-sm);
+          color: var(--text-tertiary);
           line-height: 1.4;
         }
 
@@ -139,41 +139,46 @@ export default function Partners() {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 24px;
-          padding-top: 24px;
-          border-top: 1px solid #e5e5e5;
+          gap: var(--space-6);
+          padding-top: var(--space-6);
+          border-top: 1px solid var(--border-default);
         }
 
         .footer-note {
-          font-size: 14px;
-          color: #737373;
+          font-size: var(--text-sm);
+          color: var(--text-tertiary);
           margin: 0;
         }
 
         .partners-footer :global(.footer-link) {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          padding: 10px 18px;
-          font-size: 14px;
+          gap: var(--space-2);
+          padding: var(--space-3) var(--space-5);
+          font-size: var(--text-sm);
           font-weight: 500;
-          color: #525252;
+          color: var(--text-secondary);
           background: transparent;
-          border: 1px solid #e5e5e5;
-          border-radius: 8px;
+          border: 1px solid var(--border-default);
+          border-radius: var(--radius-lg);
           text-decoration: none;
-          transition: border-color 0.15s ease, color 0.15s ease, gap 0.15s ease;
+          transition: border-color var(--duration-150) ease, color var(--duration-150) ease, gap var(--duration-150) ease;
         }
 
         .partners-footer :global(.footer-link:hover) {
-          border-color: #d4d4d4;
-          color: #0a0a0a;
-          gap: 10px;
+          border-color: var(--border-hover);
+          color: var(--text-primary);
+          gap: var(--space-3);
+        }
+
+        .partners-footer :global(.footer-link:focus-visible) {
+          outline: 2px solid var(--accent-brand);
+          outline-offset: 2px;
         }
 
         @media (max-width: 900px) {
           .partners {
-            padding: 100px 0;
+            padding: var(--section-padding) 0;
           }
 
           .integrations-grid {
@@ -183,78 +188,78 @@ export default function Partners() {
 
         @media (max-width: 640px) {
           .partners {
-            padding: 80px 0;
+            padding: var(--space-20) 0;
           }
 
           .partners-container {
-            padding: 0 20px;
+            padding: 0 var(--space-5);
           }
 
           .partners-header {
-            margin-bottom: 40px;
+            margin-bottom: var(--space-10);
           }
 
           .partners-title {
-            font-size: 28px;
+            font-size: var(--text-3xl);
           }
 
           .partners-subtitle {
-            font-size: 16px;
+            font-size: var(--text-base);
           }
 
           .integrations-grid {
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-bottom: 40px;
+            gap: var(--space-3);
+            margin-bottom: var(--space-10);
           }
 
           .integration-card {
-            padding: 16px;
-            border-radius: 12px;
+            padding: var(--space-4);
+            border-radius: var(--radius-xl);
           }
 
           .integration-name {
-            font-size: 13px;
+            font-size: var(--text-sm);
           }
 
           .integration-desc {
-            font-size: 12px;
+            font-size: var(--text-xs);
           }
 
           .partners-footer {
             flex-direction: column;
-            gap: 16px;
+            gap: var(--space-4);
             text-align: center;
           }
         }
 
         @media (max-width: 380px) {
           .partners {
-            padding: 60px 0;
+            padding: var(--space-16) 0;
           }
 
           .partners-container {
-            padding: 0 16px;
+            padding: 0 var(--space-4);
           }
 
           .partners-title {
-            font-size: 26px;
+            font-size: var(--text-2xl);
           }
 
           .integrations-grid {
-            gap: 10px;
+            gap: var(--space-3);
           }
 
           .integration-card {
-            padding: 14px;
+            padding: var(--space-4);
           }
 
           .integration-name {
-            font-size: 12px;
+            font-size: var(--text-xs);
           }
 
           .integration-desc {
-            font-size: 11px;
+            font-size: var(--text-xs);
           }
         }
       `}</style>

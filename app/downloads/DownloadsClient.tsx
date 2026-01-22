@@ -38,10 +38,10 @@ export default function DownloadsClient() {
         <div
           key={file.filename}
           style={{
-            border: '1px solid var(--gray-200)',
+            border: '1px solid var(--border-default)',
             borderRadius: 'var(--radius-lg)',
             padding: 'var(--space-6)',
-            background: 'var(--white)'
+            background: 'var(--surface-elevated)'
           }}
         >
           <div style={{
@@ -60,7 +60,7 @@ export default function DownloadsClient() {
                 {file.platform === 'Templates' ? 'PEAC Templates' : `Originary CLI - ${file.platform}`}
               </h3>
               <p style={{
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 fontSize: 'var(--text-sm)',
                 marginBottom: 'var(--space-1)'
               }}>
@@ -72,7 +72,7 @@ export default function DownloadsClient() {
               <p style={{
                 fontFamily: 'var(--font-mono)',
                 fontSize: 'var(--text-xs)',
-                color: 'var(--gray-500)',
+                color: 'var(--text-tertiary)',
                 fontWeight: 500
               }}>
                 {file.filename}
@@ -86,7 +86,7 @@ export default function DownloadsClient() {
                 alignItems: 'center',
                 gap: 'var(--space-2)',
                 padding: 'var(--space-3) var(--space-4)',
-                background: 'var(--brand-primary)',
+                background: 'var(--accent-brand)',
                 color: 'var(--white)',
                 textDecoration: 'none',
                 borderRadius: 'var(--radius-md)',
@@ -114,7 +114,7 @@ export default function DownloadsClient() {
             gap: 'var(--space-4)',
             alignItems: 'center',
             fontSize: 'var(--text-sm)',
-            color: 'var(--gray-600)'
+            color: 'var(--text-secondary)'
           }}>
             <span>v{manifest.version}</span>
             <span>·</span>
@@ -125,7 +125,7 @@ export default function DownloadsClient() {
               <code style={{
                 fontFamily: 'var(--font-mono)',
                 fontSize: 'var(--text-xs)',
-                background: 'var(--gray-100)',
+                background: 'var(--surface-card)',
                 padding: '2px 4px',
                 borderRadius: 'var(--radius-sm)',
                 wordBreak: 'break-all'
@@ -138,11 +138,11 @@ export default function DownloadsClient() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   padding: '4px',
-                  background: 'var(--gray-100)',
+                  background: 'var(--surface-card)',
                   border: 'none',
                   borderRadius: 'var(--radius-sm)',
                   cursor: 'pointer',
-                  color: 'var(--gray-600)'
+                  color: 'var(--text-secondary)'
                 }}
                 title="Copy hash"
               >

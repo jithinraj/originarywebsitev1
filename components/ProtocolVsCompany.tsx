@@ -198,13 +198,13 @@ export default function ProtocolVsCompany() {
         }
 
         .layer-protocol {
-          border-color: rgba(99, 91, 255, 0.3);
-          background: rgba(99, 91, 255, 0.05);
+          border-color: var(--accent-brand-glow);
+          background: var(--accent-brand-faint);
         }
 
         .layer-originary {
           border-color: rgba(0, 212, 170, 0.3);
-          background: rgba(0, 212, 170, 0.05);
+          background: var(--accent-secondary-faint);
         }
 
         .layer-your {

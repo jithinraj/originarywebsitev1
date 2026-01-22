@@ -42,23 +42,23 @@ export default function Page() {
     <div className="wrap">
       <NavigationHeader />
       <main className="container" style={{ maxWidth: '900px', margin: '0 auto', paddingTop: 'var(--space-24)', paddingBottom: 'var(--space-16)' }}>
-        <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-6)', color: 'var(--gray-600)' }}>
-          <Link href="/" style={{ textDecoration: 'none', color: 'var(--gray-600)' }}>Home</Link>
+        <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-6)', color: 'var(--text-secondary)' }}>
+          <Link href="/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Home</Link>
           {' '}/{' '}
-          <Link href="/glossary/" style={{ textDecoration: 'none', color: 'var(--gray-600)' }}>Glossary</Link>
+          <Link href="/glossary/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
           {' '}/{' '}
-          <span style={{ color: 'var(--gray-900)' }}>MCP</span>
+          <span style={{ color: 'var(--text-primary)' }}>MCP</span>
         </nav>
 
         <div style={{
           display: 'inline-flex',
-          background: 'rgba(99, 91, 255, 0.1)',
-          border: '1px solid rgba(99, 91, 255, 0.2)',
+          background: 'var(--accent-brand-subtle)',
+          border: '1px solid var(--accent-brand-muted)',
           borderRadius: 'var(--radius-full)',
           padding: 'var(--space-2) var(--space-4)',
           fontSize: 'var(--text-xs)',
           fontWeight: 600,
-          color: 'var(--brand-primary)',
+          color: 'var(--accent-brand)',
           marginBottom: 'var(--space-4)',
           textTransform: 'uppercase',
           letterSpacing: '0.05em'
@@ -66,16 +66,16 @@ export default function Page() {
           GLOSSARY TERM
         </div>
 
-        <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, marginBottom: 'var(--space-6)', lineHeight: 1.1, color: 'var(--gray-900)' }}>
-          MCP <span style={{ fontSize: 'var(--text-3xl)', color: 'var(--gray-600)', fontWeight: 400 }}>(Model Context Protocol)</span>
+        <h1 style={{ fontSize: 'var(--text-5xl)', fontWeight: 700, marginBottom: 'var(--space-6)', lineHeight: 1.1, color: 'var(--text-primary)' }}>
+          MCP <span style={{ fontSize: 'var(--text-3xl)', color: 'var(--text-secondary)', fontWeight: 400 }}>(Model Context Protocol)</span>
         </h1>
 
-        <div style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-700)' }}>
-          <p style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-8)', color: 'var(--gray-600)' }}>
-            <strong>MCP</strong> (Model Context Protocol) is an open standard for connecting AI models and agents to data sources, services, and tools. It provides standardized interfaces for agents to access external context, execute actions, and integrate with third-party systems on the <Link href="/glossary/agentic-web/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>agentic web</Link>.
+        <div style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
+          <p style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-8)', color: 'var(--text-secondary)' }}>
+            <strong>MCP</strong> (Model Context Protocol) is an open standard for connecting AI models and agents to data sources, services, and tools. It provides standardized interfaces for agents to access external context, execute actions, and integrate with third-party systems on the <Link href="/glossary/agentic-web/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>agentic web</Link>.
           </p>
 
-          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
             What MCP enables
           </h2>
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
@@ -98,7 +98,7 @@ export default function Page() {
             </ul>
           </div>
 
-          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
             How MCP works
           </h2>
           <p style={{ marginBottom: 'var(--space-4)' }}>
@@ -106,51 +106,51 @@ export default function Page() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-6)', marginBottom: 'var(--space-8)' }}>
             <div className="card">
-              <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+              <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                 Resources
               </h3>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                 Expose data and content to agents (files, database records, API responses, documents)
               </p>
             </div>
             <div className="card">
-              <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+              <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                 Tools
               </h3>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                 Provide callable functions agents can execute (search, calculations, API calls, system commands)
               </p>
             </div>
             <div className="card">
-              <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+              <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                 Prompts
               </h3>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                 Define reusable prompt templates with dynamic context injection
               </p>
             </div>
           </div>
 
-          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
             MCP in the agentic web
           </h2>
           <p style={{ marginBottom: 'var(--space-4)' }}>
-            MCP complements other agentic web protocols by focusing on <em>context access</em> while protocols like <Link href="/glossary/peac/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>PEAC</Link> handle <em>policy enforcement</em> and <Link href="/glossary/a2a/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>A2A</Link> handles <em>agent communication</em>.
+            MCP complements other agentic web protocols by focusing on <em>context access</em> while protocols like <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC</Link> handle <em>policy enforcement</em> and <Link href="/glossary/a2a/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>A2A</Link> handles <em>agent communication</em>.
           </p>
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
-            <p style={{ marginBottom: 'var(--space-3)', fontWeight: 600, color: 'var(--gray-900)' }}>
+            <p style={{ marginBottom: 'var(--space-3)', fontWeight: 600, color: 'var(--text-primary)' }}>
               Example workflow combining MCP + PEAC:
             </p>
-            <ol style={{ paddingLeft: 'var(--space-6)', margin: 0, color: 'var(--gray-600)' }}>
+            <ol style={{ paddingLeft: 'var(--space-6)', margin: 0, color: 'var(--text-secondary)' }}>
               <li style={{ marginBottom: 'var(--space-2)' }}>Agent discovers API through MCP resource registry</li>
-              <li style={{ marginBottom: 'var(--space-2)' }}>Agent fetches <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> to understand pricing</li>
-              <li style={{ marginBottom: 'var(--space-2)' }}>Agent pays using <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>HTTP 402</Link> flow</li>
+              <li style={{ marginBottom: 'var(--space-2)' }}>Agent fetches <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> to understand pricing</li>
+              <li style={{ marginBottom: 'var(--space-2)' }}>Agent pays using <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402</Link> flow</li>
               <li style={{ marginBottom: 'var(--space-2)' }}>Agent receives PEAC-Receipt as proof of payment</li>
               <li style={{ marginBottom: 0 }}>Agent uses MCP to call API tools with receipt-based auth</li>
             </ol>
           </div>
 
-          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
             MCP server architecture
           </h2>
           <p style={{ marginBottom: 'var(--space-4)' }}>
@@ -170,7 +170,7 @@ export default function Page() {
             </ul>
           </div>
 
-          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
             Use cases
           </h2>
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
@@ -193,28 +193,28 @@ export default function Page() {
             </ul>
           </div>
 
-          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
             MCP and receipts
           </h2>
           <p style={{ marginBottom: 'var(--space-8)' }}>
             When MCP servers expose paid resources or tools, they can integrate with PEAC-Receipt verification. Agents present receipts when calling MCP tools, proving they have paid for access. This enables pay-per-use models for MCP resources while maintaining the standardized MCP interface.
           </p>
 
-          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+          <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
             Learn more
           </h2>
           <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/agentic-web/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure for agent-native internet
+              <Link href="/glossary/agentic-web/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure for agent-native internet
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/a2a/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>A2A</Link> - Agent-to-agent communication protocols
+              <Link href="/glossary/a2a/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>A2A</Link> - Agent-to-agent communication protocols
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/peac/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Policy enforcement and verifiable receipts
+              <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Policy enforcement and verifiable receipts
             </li>
             <li style={{ marginBottom: 0 }}>
-              <Link href="/solutions/ai-builders/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>AI Builders solution</Link> - Build compliant agent systems
+              <Link href="/solutions/ai-builders/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AI Builders solution</Link> - Build compliant agent systems
             </li>
           </ul>
         </div>

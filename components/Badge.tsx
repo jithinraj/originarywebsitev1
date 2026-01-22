@@ -14,24 +14,24 @@ interface BadgeProps {
 // Using brand-accent system: featured uses brand, others use neutrals
 const variantStyles: Record<BadgeVariant, { bg: string; color: string; border: string }> = {
   featured: {
-    bg: 'rgba(99, 91, 255, 0.08)',
-    color: 'var(--brand-primary)',
-    border: 'rgba(99, 91, 255, 0.15)'
+    bg: 'var(--accent-brand-subtle)',
+    color: 'var(--accent-brand)',
+    border: 'var(--accent-brand-muted)'
   },
   neutral: {
-    bg: 'var(--gray-100)',
-    color: 'var(--gray-600)',
-    border: 'var(--gray-200)'
+    bg: 'var(--surface-card)',
+    color: 'var(--text-secondary)',
+    border: 'var(--border-default)'
   },
   preview: {
     bg: 'rgba(251, 191, 36, 0.08)',
-    color: 'var(--gray-600)',
+    color: 'var(--text-secondary)',
     border: 'rgba(251, 191, 36, 0.2)'
   },
   standard: {
-    bg: 'var(--gray-100)',
-    color: 'var(--gray-600)',
-    border: 'var(--gray-200)'
+    bg: 'var(--surface-card)',
+    color: 'var(--text-secondary)',
+    border: 'var(--border-default)'
   }
 }
 

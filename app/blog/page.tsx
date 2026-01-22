@@ -173,13 +173,13 @@ export default function BlogPage() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 marginBottom: 'var(--space-6)'
               }}>
                 <FileText size={14} />
@@ -191,7 +191,7 @@ export default function BlogPage() {
                 fontWeight: 700,
                 lineHeight: 1.1,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Originary <span className="text-gradient">blog</span>
               </h1>
@@ -201,14 +201,14 @@ export default function BlogPage() {
                 fontWeight: 600,
                 lineHeight: 1.3,
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-700)'
+                color: 'var(--text-secondary)'
               }}>
                 Insights from the agentic web
               </h2>
 
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-8)'
               }}>
@@ -229,7 +229,7 @@ export default function BlogPage() {
                   textDecoration: 'none',
                   display: 'block',
                   background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(0,212,170,0.05) 100%)',
-                  border: '2px solid var(--brand-primary)',
+                  border: '2px solid var(--accent-brand)',
                   transition: 'all 0.3s ease',
                   cursor: 'pointer'
                 }}
@@ -238,7 +238,7 @@ export default function BlogPage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'var(--brand-primary)',
+                  background: 'var(--accent-brand)',
                   color: 'var(--white)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-4)',
@@ -256,14 +256,14 @@ export default function BlogPage() {
                   fontWeight: 700,
                   lineHeight: 1.2,
                   marginBottom: 'var(--space-4)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   {article.title}
                 </h2>
 
                 <p style={{
                   fontSize: 'var(--text-lg)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.7,
                   marginBottom: 'var(--space-6)'
                 }}>
@@ -275,10 +275,10 @@ export default function BlogPage() {
                   alignItems: 'center',
                   gap: 'var(--space-6)',
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   flexWrap: 'wrap',
                   paddingTop: 'var(--space-4)',
-                  borderTop: '1px solid var(--gray-200)'
+                  borderTop: '1px solid var(--border-default)'
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <User size={16} />
@@ -287,16 +287,16 @@ export default function BlogPage() {
                   <div style={{
                     display: 'inline-flex',
                     padding: 'var(--space-1) var(--space-3)',
-                    background: 'rgba(99, 91, 255, 0.1)',
+                    background: 'var(--accent-brand-subtle)',
                     borderRadius: 'var(--radius-full)',
                     fontSize: 'var(--text-xs)',
                     fontWeight: 600,
-                    color: 'var(--brand-primary)'
+                    color: 'var(--accent-brand)'
                   }}>
                     {article.category}
                   </div>
-                  <span style={{ color: 'var(--gray-500)' }}>{article.readTime}</span>
-                  <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                  <span style={{ color: 'var(--text-tertiary)' }}>{article.readTime}</span>
+                  <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', fontWeight: 600 }}>
                     <span>Read article</span>
                     <ArrowRight size={16} />
                   </div>
@@ -307,13 +307,13 @@ export default function BlogPage() {
         ))}
 
         {/* All Articles */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container" style={{ maxWidth: '1200px' }}>
             <h2 style={{
               fontSize: 'var(--text-3xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-12)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               All Articles
             </h2>
@@ -343,11 +343,11 @@ export default function BlogPage() {
                     gap: 'var(--space-2)',
                     alignSelf: 'flex-start',
                     padding: 'var(--space-1) var(--space-3)',
-                    background: 'rgba(99, 91, 255, 0.1)',
+                    background: 'var(--accent-brand-subtle)',
                     borderRadius: 'var(--radius-full)',
                     fontSize: 'var(--text-xs)',
                     fontWeight: 600,
-                    color: 'var(--brand-primary)',
+                    color: 'var(--accent-brand)',
                     marginBottom: 'var(--space-4)'
                   }}>
                     {article.category}
@@ -358,14 +358,14 @@ export default function BlogPage() {
                     fontWeight: 600,
                     lineHeight: 1.3,
                     marginBottom: 'var(--space-3)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     {article.title}
                   </h3>
 
                   <p style={{
                     fontSize: 'var(--text-base)',
-                    color: 'var(--gray-600)',
+                    color: 'var(--text-secondary)',
                     lineHeight: 1.7,
                     marginBottom: 'var(--space-4)',
                     flex: 1
@@ -378,13 +378,13 @@ export default function BlogPage() {
                     alignItems: 'center',
                     gap: 'var(--space-4)',
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--gray-600)',
+                    color: 'var(--text-secondary)',
                     paddingTop: 'var(--space-4)',
-                    borderTop: '1px solid var(--gray-200)',
+                    borderTop: '1px solid var(--border-default)',
                     flexWrap: 'wrap'
                   }}>
                     <span>{article.readTime}</span>
-                    <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                    <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', fontWeight: 600 }}>
                       <ArrowRight size={14} />
                     </div>
                   </div>
@@ -425,8 +425,8 @@ export default function BlogPage() {
                   rel="noopener noreferrer"
                   className="btn btn-lg"
                   style={{
-                    background: 'var(--white)',
-                    color: 'var(--brand-primary)',
+                    background: 'var(--surface-elevated)',
+                    color: 'var(--accent-brand)',
                     border: 'none'
                   }}
                 >

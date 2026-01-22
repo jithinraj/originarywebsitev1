@@ -9,7 +9,7 @@ export default function BentoFeatures() {
     <section
       className="section"
       style={{
-        background: 'var(--gray-50)',
+        background: 'var(--surface-subtle)',
         paddingTop: 'var(--space-20)',
         paddingBottom: 'var(--space-20)'
       }}
@@ -32,7 +32,7 @@ export default function BentoFeatures() {
               fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
               fontWeight: 700,
               marginBottom: 'var(--space-4)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}
           >
             Policy, optional settlement, and proof in one platform
@@ -40,7 +40,7 @@ export default function BentoFeatures() {
           <p
             style={{
               fontSize: 'var(--text-lg)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               maxWidth: '700px',
               margin: '0 auto'
             }}
@@ -172,7 +172,7 @@ function BentoCard({
             marginBottom: 'var(--space-4)',
             borderRadius: 'var(--radius-xl)',
             overflow: 'hidden',
-            background: 'var(--gray-100)',
+            background: 'var(--surface-card)',
             minHeight: className.includes('large') ? '240px' : className.includes('medium') ? '180px' : '100px'
           }}
         >
@@ -188,7 +188,7 @@ function BentoCard({
             alignItems: 'center',
             gap: 'var(--space-2)',
             marginBottom: 'var(--space-2)',
-            color: 'var(--brand-primary)'
+            color: 'var(--accent-brand)'
           }}
         >
           {icon}
@@ -196,7 +196,7 @@ function BentoCard({
             style={{
               fontSize: 'var(--text-lg)',
               fontWeight: 600,
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}
           >
             {title}
@@ -206,7 +206,7 @@ function BentoCard({
         <p
           style={{
             fontSize: 'var(--text-sm)',
-            color: 'var(--gray-600)',
+            color: 'var(--text-secondary)',
             lineHeight: 1.6,
             marginBottom: 'var(--space-3)'
           }}
@@ -221,7 +221,7 @@ function BentoCard({
             gap: '4px',
             fontSize: 'var(--text-sm)',
             fontWeight: 600,
-            color: 'var(--brand-primary)',
+            color: 'var(--accent-brand)',
             transition: 'gap 0.2s ease'
           }}
         >
@@ -303,8 +303,8 @@ function TrafficGraph() {
               flex: 1,
               height: `${value}%`,
               background: i === data.length - 1
-                ? 'var(--brand-primary)'
-                : 'var(--gray-300)',
+                ? 'var(--accent-brand)'
+                : 'var(--border-default)',
               borderRadius: '2px 2px 0 0',
               transition: 'height 0.3s ease'
             }}
@@ -378,7 +378,7 @@ function GlobalMap() {
         height: '100%',
         position: 'relative',
         overflow: 'hidden',
-        background: 'linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%)'
+        background: 'linear-gradient(135deg, var(--border-subtle) 0%, var(--border-default) 100%)'
       }}
     >
       {/* Simplified world map dots */}
@@ -397,7 +397,7 @@ function GlobalMap() {
             top: `${pos.y}%`,
             width: '8px',
             height: '8px',
-            background: 'var(--brand-primary)',
+            background: 'var(--accent-brand)',
             borderRadius: '50%',
             animationDelay: `${i * 0.2}s`
           }}
@@ -409,7 +409,7 @@ function GlobalMap() {
           bottom: 'var(--space-2)',
           left: 'var(--space-2)',
           fontSize: '10px',
-          color: 'var(--gray-500)'
+          color: 'var(--text-tertiary)'
         }}
       >
         Edge-ready deployment
@@ -440,7 +440,7 @@ function PaymentFlow() {
         <div
           style={{
             padding: 'var(--space-2)',
-            background: 'var(--white)',
+            background: 'var(--surface-elevated)',
             borderRadius: 'var(--radius-md)',
             fontSize: '12px',
             fontWeight: 600
@@ -448,7 +448,7 @@ function PaymentFlow() {
         >
           402
         </div>
-        <ArrowRight size={16} style={{ color: 'var(--gray-400)' }} />
+        <ArrowRight size={16} style={{ color: 'var(--text-muted)' }} />
         <div
           style={{
             padding: 'var(--space-2)',
@@ -486,12 +486,12 @@ function SecurityBadge() {
           gap: 'var(--space-2)'
         }}
       >
-        <Lock size={24} style={{ color: 'var(--brand-primary)' }} />
+        <Lock size={24} style={{ color: 'var(--accent-brand)' }} />
         <span
           style={{
             fontFamily: 'var(--font-mono)',
             fontSize: '10px',
-            color: 'var(--gray-500)'
+            color: 'var(--text-tertiary)'
           }}
         >
           Ed25519
@@ -526,7 +526,7 @@ function ComplianceBadge() {
           style={{
             fontFamily: 'var(--font-mono)',
             fontSize: '10px',
-            color: 'var(--gray-500)'
+            color: 'var(--text-tertiary)'
           }}
         >
           Audit trails

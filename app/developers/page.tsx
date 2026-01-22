@@ -50,7 +50,7 @@ export default function Developers() {
               <span
                 style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
                   fontWeight: 600,
@@ -67,7 +67,7 @@ export default function Developers() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.7,
                   marginBottom: 'var(--space-8)'
                 }}
@@ -100,13 +100,13 @@ export default function Developers() {
                 textAlign: 'center',
                 marginTop: 'var(--space-4)',
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-600)'
+                color: 'var(--text-secondary)'
               }}>
                 Or{' '}
                 <Link
                   href="/cloud"
                   style={{
-                    color: 'var(--brand-primary)',
+                    color: 'var(--accent-brand)',
                     textDecoration: 'underline',
                     fontWeight: 600
                   }}
@@ -126,22 +126,22 @@ export default function Developers() {
               maxWidth: '800px',
               margin: '0 auto',
               padding: 'var(--space-8)',
-              border: '2px solid var(--brand-primary)',
+              border: '2px solid var(--accent-brand)',
               borderRadius: 'var(--radius-2xl)',
-              background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.03) 0%, rgba(0, 212, 170, 0.03) 100%)',
+              background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
               textAlign: 'center'
             }}>
               <h3 style={{
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Build on an open protocol
               </h3>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
@@ -150,7 +150,7 @@ export default function Developers() {
               </p>
               <p style={{
                 fontSize: 'var(--text-base)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.6
               }}>
                 Your policies, receipts, and verification logic work across any PEAC-conformant system.
@@ -161,7 +161,7 @@ export default function Developers() {
         </section>
 
         {/* Quick Start Section */}
-        <section className="section" id="quickstart" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" id="quickstart" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div
               style={{
@@ -174,14 +174,14 @@ export default function Developers() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-4)',
                   marginBottom: 'var(--space-4)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 500,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}
               >
                 <Sparkles size={16} />
@@ -191,7 +191,7 @@ export default function Developers() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   maxWidth: '700px',
                   margin: '0 auto',
                   lineHeight: 1.7
@@ -270,20 +270,20 @@ export default {
               marginTop: 'var(--space-8)',
               textAlign: 'center',
               padding: 'var(--space-6)',
-              background: 'rgba(99, 91, 255, 0.05)',
+              background: 'var(--accent-brand-faint)',
               borderRadius: 'var(--radius-lg)',
-              border: '1px solid rgba(99, 91, 255, 0.1)'
+              border: '1px solid var(--accent-brand-subtle)'
             }}>
               <p style={{
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-2)'
               }}>
                 For step-by-step implementation guides with Express, Next.js, and Cloudflare Workers, see our{' '}
                 <Link
                   href="/integrations/x402/"
                   style={{
-                    color: 'var(--brand-primary)',
+                    color: 'var(--accent-brand)',
                     textDecoration: 'underline',
                     fontWeight: 600
                   }}
@@ -298,20 +298,20 @@ export default {
               marginTop: 'var(--space-8)',
               textAlign: 'center',
               padding: 'var(--space-4)',
-              background: 'var(--white)',
+              background: 'var(--surface-elevated)',
               borderRadius: 'var(--radius-lg)',
-              border: '1px solid var(--gray-200)'
+              border: '1px solid var(--border-default)'
             }}>
               <p style={{
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-3)'
               }}>
                 Open Protocol (PEAC) - Upstream (link out):
               </p>
               <code style={{
                 display: 'block',
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 padding: 'var(--space-2)',
                 borderRadius: 'var(--radius-sm)',
                 fontFamily: 'var(--font-mono)',
@@ -327,7 +327,7 @@ export default {
                   target="_blank"
                   rel="noreferrer"
                   style={{
-                    color: 'var(--brand-primary)',
+                    color: 'var(--accent-brand)',
                     textDecoration: 'underline',
                     fontSize: 'var(--text-sm)',
                     fontWeight: 600
@@ -340,7 +340,7 @@ export default {
                   target="_blank"
                   rel="noreferrer"
                   style={{
-                    color: 'var(--brand-primary)',
+                    color: 'var(--accent-brand)',
                     textDecoration: 'underline',
                     fontSize: 'var(--text-sm)'
                   }}
@@ -352,7 +352,7 @@ export default {
                   target="_blank"
                   rel="noreferrer"
                   style={{
-                    color: 'var(--brand-primary)',
+                    color: 'var(--accent-brand)',
                     textDecoration: 'underline',
                     fontSize: 'var(--text-sm)'
                   }}
@@ -364,7 +364,7 @@ export default {
                   target="_blank"
                   rel="noreferrer"
                   style={{
-                    color: 'var(--brand-primary)',
+                    color: 'var(--accent-brand)',
                     textDecoration: 'underline',
                     fontSize: 'var(--text-sm)'
                   }}
@@ -377,33 +377,33 @@ export default {
         </section>
 
         {/* Wire Accuracy Callout */}
-        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)' }}>
           <div className="container">
             <div style={{
               maxWidth: '600px',
               margin: '0 auto',
               padding: 'var(--space-6)',
-              background: 'var(--white)',
-              border: '1px solid var(--gray-200)',
+              background: 'var(--surface-elevated)',
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-lg)'
             }}>
               <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>
                 Wire accuracy
               </h3>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-3)' }}>
-                <div style={{ color: 'var(--gray-600)' }}>Header:</div>
-                <div style={{ color: 'var(--gray-900)' }}>PEAC-Receipt: &lt;detached-JWS&gt;</div>
+                <div style={{ color: 'var(--text-secondary)' }}>Header:</div>
+                <div style={{ color: 'var(--text-primary)' }}>PEAC-Receipt: &lt;detached-JWS&gt;</div>
               </div>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
-                <div style={{ color: 'var(--gray-600)' }}>Policy discovery:</div>
-                <div style={{ color: 'var(--gray-900)' }}>/.well-known/peac.txt</div>
+                <div style={{ color: 'var(--text-secondary)' }}>Policy discovery:</div>
+                <div style={{ color: 'var(--text-primary)' }}>/.well-known/peac.txt</div>
               </div>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                 Learn more in the <a
                   href="https://peacprotocol.org"
                   target="_blank"
                   rel="noopener"
-                  style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}
+                  style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}
                 >
                   open protocol ↗
                 </a>.
@@ -413,14 +413,14 @@ export default {
         </section>
 
         {/* Raw HTTP Example */}
-        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)' }}>
           <div className="container">
             <div style={{
               maxWidth: '600px',
               margin: '0 auto',
               padding: 'var(--space-6)',
-              background: 'var(--white)',
-              border: '1px solid var(--gray-200)',
+              background: 'var(--surface-elevated)',
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-lg)'
             }}>
               <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>
@@ -429,8 +429,8 @@ export default {
               <pre style={{
                 fontFamily: 'var(--font-mono)',
                 fontSize: 'var(--text-sm)',
-                background: 'var(--gray-900)',
-                color: 'var(--gray-100)',
+                background: 'var(--text-primary)',
+                color: 'var(--surface-card)',
                 padding: 'var(--space-4)',
                 borderRadius: 'var(--radius-md)',
                 overflowX: 'auto',
@@ -457,7 +457,7 @@ export default {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   maxWidth: '700px',
                   margin: '0 auto',
                   lineHeight: 1.7
@@ -470,7 +470,7 @@ export default {
         </section>
 
         {/* API Reference */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div
               style={{
@@ -482,7 +482,7 @@ export default {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   maxWidth: '700px',
                   margin: '0 auto',
                   lineHeight: 1.7
@@ -580,8 +580,8 @@ export default {
                     href="mailto:contact@originary.xyz"
                     className="btn btn-lg"
                     style={{
-                      background: 'var(--white)',
-                      color: 'var(--brand-primary)',
+                      background: 'var(--surface-elevated)',
+                      color: 'var(--accent-brand)',
                       border: 'none'
                     }}
                   >
@@ -640,11 +640,11 @@ function QuickStartCard({
         </div>
         <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600 }}>{title}</h3>
       </div>
-      <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-4)', lineHeight: 1.7 }}>{description}</p>
+      <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-4)', lineHeight: 1.7 }}>{description}</p>
       <pre
         style={{
-          background: 'var(--gray-900)',
-          color: 'var(--gray-100)',
+          background: 'var(--text-primary)',
+          color: 'var(--surface-card)',
           padding: 'var(--space-4)',
           borderRadius: 'var(--radius-lg)',
           fontSize: 'var(--text-sm)',
@@ -678,14 +678,14 @@ function ApiSection({
       <div style={{ display: 'flex', alignItems: 'start', justifyContent: 'space-between' }}>
         <div style={{ flex: 1 }}>
           <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>{title}</h3>
-          <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-4)', lineHeight: 1.7 }}>{description}</p>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-4)', lineHeight: 1.7 }}>{description}</p>
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: 'var(--space-4)',
               padding: 'var(--space-3)',
-              background: 'var(--gray-50)',
+              background: 'var(--surface-subtle)',
               borderRadius: 'var(--radius-lg)'
             }}
           >
@@ -695,14 +695,14 @@ function ApiSection({
                 borderRadius: 'var(--radius-sm)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 500,
-                background: method === 'POST' ? 'rgba(0, 217, 36, 0.1)' : 'rgba(99, 91, 255, 0.1)',
-                color: method === 'POST' ? 'var(--success)' : 'var(--brand-primary)'
+                background: method === 'POST' ? 'rgba(0, 217, 36, 0.1)' : 'var(--accent-brand-subtle)',
+                color: method === 'POST' ? 'var(--success)' : 'var(--accent-brand)'
               }}
             >
               {method}
             </span>
             <code style={{ flex: 1, fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)' }}>{endpoint}</code>
-            <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>{detail}</span>
+            <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>{detail}</span>
           </div>
         </div>
         <a href={link} className="btn btn-ghost">

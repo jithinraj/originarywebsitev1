@@ -43,7 +43,7 @@ export default function WorldClassHomePage() {
       {/* Who is Originary for? */}
       <section
         style={{
-          background: 'linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%)',
+          background: 'linear-gradient(180deg, var(--white) 0%, var(--surface-subtle) 100%)',
           paddingTop: 'var(--space-20)',
           paddingBottom: 'var(--space-20)',
           position: 'relative',
@@ -58,7 +58,7 @@ export default function WorldClassHomePage() {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: 'radial-gradient(circle at 1px 1px, var(--gray-200) 1px, transparent 0)',
+            backgroundImage: 'radial-gradient(circle at 1px 1px, var(--border-default) 1px, transparent 0)',
             backgroundSize: '48px 48px',
             opacity: 0.5,
             pointerEvents: 'none'
@@ -81,7 +81,7 @@ export default function WorldClassHomePage() {
                 display: 'inline-block',
                 fontSize: '11px',
                 fontWeight: 600,
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
                 marginBottom: 'var(--space-4)'
@@ -93,7 +93,7 @@ export default function WorldClassHomePage() {
               style={{
                 fontSize: 'clamp(2rem, 4vw, 3rem)',
                 fontWeight: 700,
-                color: 'var(--gray-900)',
+                color: 'var(--text-primary)',
                 letterSpacing: '-0.02em',
                 marginBottom: 'var(--space-4)'
               }}
@@ -103,7 +103,7 @@ export default function WorldClassHomePage() {
             <p
               style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-500)',
+                color: 'var(--text-tertiary)',
                 maxWidth: '560px',
                 margin: '0 auto'
               }}
@@ -128,10 +128,10 @@ export default function WorldClassHomePage() {
                 key={audience.title}
                 className="audience-card"
                 style={{
-                  background: 'var(--white)',
+                  background: 'var(--surface-elevated)',
                   borderRadius: 'var(--radius-2xl)',
                   padding: 'var(--space-8)',
-                  border: '1px solid var(--gray-100)',
+                  border: '1px solid var(--border-subtle)',
                   boxShadow: '0 4px 24px rgba(0, 0, 0, 0.04)',
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   cursor: 'default',
@@ -147,7 +147,7 @@ export default function WorldClassHomePage() {
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)'
                   e.currentTarget.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.04)'
-                  e.currentTarget.style.borderColor = 'var(--gray-100)'
+                  e.currentTarget.style.borderColor = 'var(--border-subtle)'
                 }}
               >
                 {/* Icon */}
@@ -172,7 +172,7 @@ export default function WorldClassHomePage() {
                   style={{
                     fontSize: 'var(--text-lg)',
                     fontWeight: 700,
-                    color: 'var(--gray-900)',
+                    color: 'var(--text-primary)',
                     marginBottom: 'var(--space-2)'
                   }}
                 >
@@ -181,7 +181,7 @@ export default function WorldClassHomePage() {
                 <p
                   style={{
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--gray-500)',
+                    color: 'var(--text-tertiary)',
                     lineHeight: 1.6
                   }}
                 >
@@ -277,8 +277,8 @@ export default function WorldClassHomePage() {
                   href="/declare"
                   className="btn btn-lg"
                   style={{
-                    background: 'var(--white)',
-                    color: 'var(--brand-primary)',
+                    background: 'var(--surface-elevated)',
+                    color: 'var(--accent-brand)',
                     border: 'none',
                     fontWeight: 600
                   }}

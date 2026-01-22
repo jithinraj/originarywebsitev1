@@ -31,8 +31,8 @@ const integrations = [
     href: '/integrations/x402/',
     icon: Zap,
     status: 'live' as const,
-    color: 'rgba(99, 91, 255, 0.1)',
-    borderColor: 'rgba(99, 91, 255, 0.2)',
+    color: 'var(--accent-brand-subtle)',
+    borderColor: 'var(--accent-brand-muted)',
   },
   {
     id: 'a2a',
@@ -88,7 +88,7 @@ const integrations = [
 ]
 
 const statusBadges = {
-  live: { label: 'Live', color: 'var(--brand-primary)' },
+  live: { label: 'Live', color: 'var(--accent-brand)' },
   'coming-soon': { label: 'Coming soon', color: 'rgba(34, 197, 94, 1)' },
   draft: { label: 'In draft', color: 'rgba(245, 158, 11, 1)' },
 }
@@ -127,15 +127,15 @@ export default function IntegrationsPage() {
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" style={{ marginBottom: 'var(--space-8)' }}>
-            <ol style={{ display: 'flex', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--gray-600)', listStyle: 'none', padding: 0, margin: 0 }}>
+            <ol style={{ display: 'flex', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', listStyle: 'none', padding: 0, margin: 0 }}>
               <li>
-                <Link href="/" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>
+                <Link href="/" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
                   Home
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <span style={{ color: 'var(--gray-900)' }}>Integrations</span>
+                <span style={{ color: 'var(--text-primary)' }}>Integrations</span>
               </li>
             </ol>
           </nav>
@@ -144,11 +144,11 @@ export default function IntegrationsPage() {
           <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
             <div style={{
               display: 'inline-flex',
-              background: 'rgba(99, 91, 255, 0.1)',
-              border: '1px solid rgba(99, 91, 255, 0.2)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-6)',
-              color: 'var(--brand-primary)',
+              color: 'var(--accent-brand)',
               fontSize: 'var(--text-xs)',
               fontWeight: 600,
               textTransform: 'uppercase',
@@ -164,7 +164,7 @@ export default function IntegrationsPage() {
             fontWeight: 800,
             textAlign: 'center',
             marginBottom: 'var(--space-6)',
-            color: 'var(--gray-900)',
+            color: 'var(--text-primary)',
             lineHeight: 1.2,
           }}>
             Agentic Web Standards
@@ -174,7 +174,7 @@ export default function IntegrationsPage() {
           <p style={{
             fontSize: 'var(--text-xl)',
             textAlign: 'center',
-            color: 'var(--gray-600)',
+            color: 'var(--text-secondary)',
             marginBottom: 'var(--space-12)',
             maxWidth: '700px',
             marginLeft: 'auto',
@@ -200,7 +200,7 @@ export default function IntegrationsPage() {
                   borderRadius: '50%',
                   background: color,
                 }} />
-                <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                   {label}
                 </span>
               </div>
@@ -280,7 +280,7 @@ export default function IntegrationsPage() {
                     fontSize: 'var(--text-xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-2)',
-                    color: 'var(--gray-900)',
+                    color: 'var(--text-primary)',
                   }}>
                     {integration.title}
                     {integration.external && (
@@ -291,7 +291,7 @@ export default function IntegrationsPage() {
                   {/* Description */}
                   <p style={{
                     fontSize: 'var(--text-base)',
-                    color: 'var(--gray-600)',
+                    color: 'var(--text-secondary)',
                     lineHeight: 1.6,
                     flex: 1,
                   }}>
@@ -305,20 +305,20 @@ export default function IntegrationsPage() {
           {/* Bottom CTA */}
           <div className="card" style={{
             textAlign: 'center',
-            background: 'rgba(99, 91, 255, 0.05)',
-            border: '1px solid rgba(99, 91, 255, 0.1)',
+            background: 'var(--accent-brand-faint)',
+            border: '1px solid var(--accent-brand-subtle)',
           }}>
             <h2 style={{
               fontSize: 'var(--text-2xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-4)',
-              color: 'var(--gray-900)',
+              color: 'var(--text-primary)',
             }}>
               Need a custom integration?
             </h2>
             <p style={{
               fontSize: 'var(--text-base)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-6)',
               lineHeight: 1.6,
             }}>

@@ -3,7 +3,7 @@ export default function DownloadCardPEAC() {
     <section style={{
       marginTop: 'var(--space-8)',
       borderRadius: 'var(--radius-2xl)',
-      border: '1px solid var(--gray-200)',
+      border: '1px solid var(--border-default)',
       padding: 'var(--space-6)'
     }}>
       <h3 style={{
@@ -15,7 +15,7 @@ export default function DownloadCardPEAC() {
       </h3>
       <p style={{
         fontSize: 'var(--text-sm)',
-        color: 'var(--gray-600)',
+        color: 'var(--text-secondary)',
         marginBottom: 'var(--space-4)'
       }}>
         PEAC is the open protocol behind Originary&apos;s receipts. Install from the official upstream packages and repository.
@@ -29,7 +29,7 @@ export default function DownloadCardPEAC() {
       }}>
         <div style={{
           borderRadius: 'var(--radius-lg)',
-          border: '1px solid var(--gray-200)',
+          border: '1px solid var(--border-default)',
           padding: 'var(--space-4)'
         }}>
           <div style={{ fontWeight: 500, marginBottom: 'var(--space-2)' }}>
@@ -38,7 +38,7 @@ export default function DownloadCardPEAC() {
           <pre style={{
             overflow: 'auto',
             borderRadius: 'var(--radius-md)',
-            background: 'var(--gray-50)',
+            background: 'var(--surface-subtle)',
             padding: 'var(--space-3)',
             fontSize: 'var(--text-xs)',
             fontFamily: 'var(--font-mono)',
@@ -51,7 +51,7 @@ npx peac validate peac.txt`}
           </pre>
           <p style={{
             fontSize: 'var(--text-xs)',
-            color: 'var(--gray-600)',
+            color: 'var(--text-secondary)',
             marginBottom: 'var(--space-3)'
           }}>
             Requires Node 18+; see upstream docs.
@@ -60,7 +60,7 @@ npx peac validate peac.txt`}
             <a
               style={{
                 textDecoration: 'underline',
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 fontSize: 'var(--text-sm)'
               }}
               href="https://github.com/peacprotocol/peac"
@@ -72,7 +72,7 @@ npx peac validate peac.txt`}
             <a
               style={{
                 textDecoration: 'underline',
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 fontSize: 'var(--text-sm)'
               }}
               href="https://peacprotocol.org/docs"
@@ -86,7 +86,7 @@ npx peac validate peac.txt`}
 
         <div style={{
           borderRadius: 'var(--radius-lg)',
-          border: '1px solid var(--gray-200)',
+          border: '1px solid var(--border-default)',
           padding: 'var(--space-4)'
         }}>
           <div style={{ fontWeight: 500, marginBottom: 'var(--space-2)' }}>
@@ -94,13 +94,13 @@ npx peac validate peac.txt`}
           </div>
           <p style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-2)' }}>
             Current PEAC wire: <code style={{
-              background: 'var(--gray-50)',
+              background: 'var(--surface-subtle)',
               padding: '2px 4px',
               borderRadius: 'var(--radius-sm)',
               fontFamily: 'var(--font-mono)'
             }}>0.9.16</code>
           </p>
-          <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>
+          <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>
             Originary is validated against 0.9.16.
           </p>
         </div>
@@ -108,7 +108,7 @@ npx peac validate peac.txt`}
 
       <p style={{
         fontSize: 'var(--text-xs)',
-        color: 'var(--gray-600)'
+        color: 'var(--text-secondary)'
       }}>
         Upstream licensing: Apache-2.0. Use at your own discretion; see the repository for details.
       </p>

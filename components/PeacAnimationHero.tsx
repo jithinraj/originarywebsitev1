@@ -18,7 +18,7 @@ export default function PeacAnimationHero() {
         position: 'relative',
         paddingTop: 'clamp(120px, 16vh, 180px)',
         paddingBottom: 'clamp(100px, 14vh, 160px)',
-        background: 'var(--white)',
+        background: 'var(--surface-elevated)',
         overflow: 'hidden'
       }}
     >
@@ -59,7 +59,7 @@ export default function PeacAnimationHero() {
                 style={{
                   fontSize: 'var(--text-sm)',
                   fontWeight: 500,
-                  color: 'var(--gray-500)',
+                  color: 'var(--text-tertiary)',
                   letterSpacing: '0.02em'
                 }}
               >
@@ -75,7 +75,7 @@ export default function PeacAnimationHero() {
                 fontWeight: 700,
                 lineHeight: 1.08,
                 marginBottom: 'var(--space-5)',
-                color: 'var(--gray-900)',
+                color: 'var(--text-primary)',
                 opacity: 1,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.15s'
@@ -90,7 +90,7 @@ export default function PeacAnimationHero() {
               style={{
                 fontSize: 'var(--text-lg)',
                 lineHeight: 1.6,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-4)',
                 maxWidth: '440px',
                 opacity: isVisible ? 1 : 0,
@@ -106,7 +106,7 @@ export default function PeacAnimationHero() {
               style={{
                 fontSize: 'var(--text-base)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-4)',
                 maxWidth: '440px',
                 opacity: isVisible ? 1 : 0,
@@ -122,7 +122,7 @@ export default function PeacAnimationHero() {
               style={{
                 fontSize: 'var(--text-sm)',
                 lineHeight: 1.6,
-                color: 'var(--gray-500)',
+                color: 'var(--text-tertiary)',
                 marginBottom: 'var(--space-6)',
                 maxWidth: '440px',
                 fontStyle: 'italic',
@@ -147,7 +147,7 @@ export default function PeacAnimationHero() {
                 style={{
                   fontSize: '11px',
                   lineHeight: 1.8,
-                  color: 'var(--gray-400)',
+                  color: 'var(--text-muted)',
                   maxWidth: '90%',
                   fontWeight: 400,
                   letterSpacing: '0.01em',
@@ -159,12 +159,12 @@ export default function PeacAnimationHero() {
                 <Link
                   href="/contact"
                   style={{
-                    color: 'var(--gray-500)',
+                    color: 'var(--text-tertiary)',
                     textDecoration: 'none',
                     borderBottom: '1px solid transparent',
                     transition: 'border-color 0.15s ease'
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
+                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--border-default)'}
                   onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
                 >
                   talk to us
@@ -213,7 +213,7 @@ export default function PeacAnimationHero() {
                   gap: 'var(--space-2)',
                   padding: '14px 28px',
                   fontSize: 'var(--text-base)',
-                  color: 'var(--gray-600)'
+                  color: 'var(--text-secondary)'
                 }}
               >
                 Read the spec
@@ -431,7 +431,7 @@ function PolicyCard3D() {
           transform: 'translate(-50%, -50%)',
           width: '120%',
           height: '120%',
-          background: 'radial-gradient(circle, rgba(99, 91, 255, 0.15) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, var(--accent-brand-muted) 0%, transparent 70%)',
           opacity: isHovered ? 1 : 0.5,
           transition: 'opacity 0.5s ease',
           zIndex: -1
@@ -442,12 +442,12 @@ function PolicyCard3D() {
       <div
         className="gradient-border policy-card-main"
         style={{
-          background: 'var(--white)',
+          background: 'var(--surface-elevated)',
           borderRadius: 'var(--radius-2xl)',
           padding: 'clamp(var(--space-4), 4vw, var(--space-6))',
           boxShadow: isHovered
-            ? '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px var(--gray-200)'
-            : '0 20px 40px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--gray-200)',
+            ? '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px var(--border-default)'
+            : '0 20px 40px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--border-default)',
           transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
         }}
       >
@@ -526,11 +526,11 @@ function PolicyCard3D() {
             justifyContent: 'space-between',
             alignItems: 'center',
             padding: 'clamp(var(--space-2), 2vw, var(--space-3))',
-            background: 'var(--gray-50)',
+            background: 'var(--surface-subtle)',
             borderRadius: 'var(--radius-lg)',
             fontFamily: 'var(--font-mono)',
             fontSize: 'clamp(9px, 2vw, 11px)',
-            color: 'var(--gray-500)',
+            color: 'var(--text-tertiary)',
             flexWrap: 'wrap',
             gap: 'var(--space-2)',
             transition: 'all 0.3s ease-out'
@@ -549,7 +549,7 @@ function PolicyCard3D() {
             justifyContent: 'space-between',
             marginTop: 'var(--space-4)',
             paddingTop: 'var(--space-4)',
-            borderTop: '1px solid var(--gray-200)',
+            borderTop: '1px solid var(--border-default)',
             flexWrap: 'wrap',
             gap: 'var(--space-3)'
           }}
@@ -557,7 +557,7 @@ function PolicyCard3D() {
           <span
             style={{
               fontSize: 'clamp(10px, 2vw, 11px)',
-              color: 'var(--gray-400)',
+              color: 'var(--text-muted)',
               transition: 'all 0.3s ease-out',
               flex: '1 1 auto',
               minWidth: '150px'
@@ -570,7 +570,7 @@ function PolicyCard3D() {
             style={{
               fontSize: 'clamp(11px, 2.5vw, 12px)',
               fontWeight: 600,
-              color: 'var(--brand-primary)',
+              color: 'var(--accent-brand)',
               textDecoration: 'none',
               display: 'flex',
               alignItems: 'center',
@@ -663,7 +663,7 @@ function PipelineStepper({ activeStep, steps }: { activeStep: number; steps: Ste
                   left: '50%',
                   width: '100%',
                   height: '2px',
-                  background: 'var(--gray-200)',
+                  background: 'var(--border-default)',
                   zIndex: 0
                 }}
               >
@@ -673,7 +673,7 @@ function PipelineStepper({ activeStep, steps }: { activeStep: number; steps: Ste
                     top: 0,
                     left: 0,
                     height: '100%',
-                    background: 'linear-gradient(90deg, var(--brand-primary), var(--brand-secondary))',
+                    background: 'linear-gradient(90deg, var(--accent-brand), var(--brand-secondary))',
                     width: index < activeStep ? '100%' : index === activeStep ? '50%' : '0%',
                     transition: 'width 0.5s ease-out'
                   }}
@@ -693,10 +693,10 @@ function PipelineStepper({ activeStep, steps }: { activeStep: number; steps: Ste
                 justifyContent: 'center',
                 fontSize: 'clamp(11px, 3vw, 14px)',
                 background: index === activeStep
-                  ? 'linear-gradient(135deg, var(--brand-primary), var(--brand-secondary))'
-                  : 'var(--gray-100)',
+                  ? 'linear-gradient(135deg, var(--accent-brand), var(--brand-secondary))'
+                  : 'var(--surface-card)',
                 boxShadow: index === activeStep
-                  ? '0 4px 12px rgba(99, 91, 255, 0.3)'
+                  ? '0 4px 12px var(--accent-brand-glow)'
                   : 'none',
                 transform: index === activeStep ? 'scale(1.1)' : 'scale(1)',
                 transition: 'all 0.3s ease-out',
@@ -715,7 +715,7 @@ function PipelineStepper({ activeStep, steps }: { activeStep: number; steps: Ste
                 marginTop: 'var(--space-1)',
                 fontSize: 'clamp(8px, 2vw, 11px)',
                 fontWeight: index === activeStep ? 600 : 400,
-                color: index === activeStep ? 'var(--brand-primary)' : 'var(--gray-500)',
+                color: index === activeStep ? 'var(--accent-brand)' : 'var(--text-tertiary)',
                 transition: 'all 0.3s ease-out',
                 textAlign: 'center',
                 overflow: 'hidden',

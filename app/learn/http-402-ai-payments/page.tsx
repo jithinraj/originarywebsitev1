@@ -64,7 +64,7 @@ export default function HTTP402Page() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: 'var(--space-2)',
-            color: 'var(--gray-500)',
+            color: 'var(--text-tertiary)',
             fontSize: 'var(--text-sm)',
             textDecoration: 'none'
           }}>
@@ -77,7 +77,7 @@ export default function HTTP402Page() {
         <section className="section" style={{
           paddingTop: 'var(--space-10)',
           paddingBottom: 'var(--space-12)',
-          borderBottom: '1px solid var(--gray-100)'
+          borderBottom: '1px solid var(--border-subtle)'
         }}>
           <div className="container">
             <div style={{ maxWidth: '720px' }}>
@@ -85,7 +85,7 @@ export default function HTTP402Page() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(255, 107, 53, 0.1)',
+                background: 'var(--accent-tertiary-subtle)',
                 border: '1px solid rgba(255, 107, 53, 0.2)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
@@ -104,7 +104,7 @@ export default function HTTP402Page() {
                 lineHeight: 1.2,
                 letterSpacing: '-0.03em',
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 HTTP 402 & AI Payments
               </h1>
@@ -112,13 +112,13 @@ export default function HTTP402Page() {
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.6,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-6)'
               }}>
                 The web standard for machine-payable APIs - enabling real-time, programmatic payments between AI agents.
               </p>
 
-              <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-400)' }}>
+              <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                 10 min read
               </div>
             </div>
@@ -133,14 +133,14 @@ export default function HTTP402Page() {
               <aside style={{ position: 'sticky', top: '100px', alignSelf: 'start' }} className="article-sidebar">
                 <div style={{
                   padding: 'var(--space-6)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-100)'
+                  border: '1px solid var(--border-subtle)'
                 }}>
                   <h4 style={{
                     fontSize: 'var(--text-xs)',
                     fontWeight: 600,
-                    color: 'var(--gray-400)',
+                    color: 'var(--text-muted)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
                     marginBottom: 'var(--space-4)'
@@ -151,7 +151,7 @@ export default function HTTP402Page() {
                     {['Key Takeaways', 'What is HTTP 402?', 'Why It Matters for AI', 'How It Works', 'x402 Protocol', 'Further Reading'].map((item) => (
                       <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} style={{
                         fontSize: 'var(--text-sm)',
-                        color: 'var(--gray-600)',
+                        color: 'var(--text-secondary)',
                         textDecoration: 'none'
                       }}>
                         {item}
@@ -165,7 +165,7 @@ export default function HTTP402Page() {
               <article style={{ maxWidth: '680px' }}>
                 {/* Key Takeaways Box */}
                 <div id="key-takeaways" style={{
-                  background: 'rgba(255, 107, 53, 0.05)',
+                  background: 'var(--accent-tertiary-faint)',
                   border: '1px solid rgba(255, 107, 53, 0.15)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-8)',
@@ -175,7 +175,7 @@ export default function HTTP402Page() {
                     fontSize: 'var(--text-lg)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Key Takeaways
                   </h2>
@@ -192,7 +192,7 @@ export default function HTTP402Page() {
                         gap: 'var(--space-3)',
                         marginBottom: 'var(--space-3)',
                         fontSize: 'var(--text-base)',
-                        color: 'var(--gray-700)',
+                        color: 'var(--text-secondary)',
                         lineHeight: 1.6
                       }}>
                         <CheckCircle size={18} style={{ color: 'var(--brand-accent)', flexShrink: 0, marginTop: '3px' }} />
@@ -208,14 +208,14 @@ export default function HTTP402Page() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     What is HTTP 402?
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-4)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
                     <strong>HTTP 402 Payment Required</strong> is a status code that was defined in HTTP/1.1 back in 1999 but marked as &ldquo;reserved for future use.&rdquo; The web wasn&apos;t ready for native payments then - no infrastructure existed to handle micropayments programmatically.
                   </p>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
                     Today, with AI agents needing to pay for API access in real-time, HTTP 402 has finally found its purpose. When a server returns 402, it&apos;s saying: &ldquo;I can fulfill your request, but you need to pay first.&rdquo;
                   </p>
                 </section>
@@ -226,20 +226,20 @@ export default function HTTP402Page() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Why It Matters for AI
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                     Traditional API monetization requires humans to:
                   </p>
                   <ul style={{ paddingLeft: 'var(--space-6)', marginBottom: 'var(--space-6)' }}>
-                    <li style={{ color: 'var(--gray-600)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>Sign up for an account</li>
-                    <li style={{ color: 'var(--gray-600)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>Enter credit card information</li>
-                    <li style={{ color: 'var(--gray-600)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>Purchase credits or subscribe to a plan</li>
-                    <li style={{ color: 'var(--gray-600)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>Manage API keys</li>
+                    <li style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>Sign up for an account</li>
+                    <li style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>Enter credit card information</li>
+                    <li style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>Purchase credits or subscribe to a plan</li>
+                    <li style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>Manage API keys</li>
                   </ul>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
                     AI agents can&apos;t do any of this. HTTP 402 enables agents to discover pricing, pay instantly, and access resources - all in a single HTTP request/response cycle. No accounts. No subscriptions. No human in the loop.
                   </p>
                 </section>
@@ -250,7 +250,7 @@ export default function HTTP402Page() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     How It Works
                   </h2>
@@ -267,7 +267,7 @@ export default function HTTP402Page() {
                         display: 'flex',
                         gap: 'var(--space-4)',
                         padding: 'var(--space-4)',
-                        background: 'var(--gray-50)',
+                        background: 'var(--surface-subtle)',
                         borderRadius: 'var(--radius-md)'
                       }}>
                         <div style={{
@@ -286,8 +286,8 @@ export default function HTTP402Page() {
                           {item.step}
                         </div>
                         <div>
-                          <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>{item.title}</h4>
-                          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>{item.desc}</p>
+                          <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>{item.title}</h4>
+                          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{item.desc}</p>
                         </div>
                       </div>
                     ))}
@@ -300,11 +300,11 @@ export default function HTTP402Page() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     x402 Protocol
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                     <strong>x402</strong> is the practical implementation of HTTP 402 for machine payments. Originary provides integration tooling for x402, which defines:
                   </p>
 
@@ -317,10 +317,10 @@ export default function HTTP402Page() {
                     ].map((item, i) => (
                       <li key={i} style={{
                         padding: 'var(--space-4) 0',
-                        borderBottom: i < 3 ? '1px solid var(--gray-100)' : 'none'
+                        borderBottom: i < 3 ? '1px solid var(--border-subtle)' : 'none'
                       }}>
-                        <strong style={{ color: 'var(--gray-900)' }}>{item.term}</strong>
-                        <span style={{ color: 'var(--gray-600)' }}> - {item.def}</span>
+                        <strong style={{ color: 'var(--text-primary)' }}>{item.term}</strong>
+                        <span style={{ color: 'var(--text-secondary)' }}> - {item.def}</span>
                       </li>
                     ))}
                   </ul>
@@ -333,10 +333,10 @@ export default function HTTP402Page() {
                     padding: 'var(--space-5)'
                   }}>
                     <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>x402 Integration Guide</h4>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Implement x402 in your API or agent</p>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>x402 Integration Guide</h4>
+                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Implement x402 in your API or agent</p>
                     </div>
-                    <ArrowRight size={18} style={{ color: 'var(--brand-primary)' }} />
+                    <ArrowRight size={18} style={{ color: 'var(--accent-brand)' }} />
                   </Link>
                 </section>
 
@@ -346,11 +346,11 @@ export default function HTTP402Page() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Further Reading
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                     Deep dives into HTTP 402 and machine payments from our blog:
                   </p>
 
@@ -362,8 +362,8 @@ export default function HTTP402Page() {
                         alignItems: 'center',
                         gap: 'var(--space-4)',
                         padding: 'var(--space-5)',
-                        background: 'var(--white)',
-                        border: '1px solid var(--gray-200)',
+                        background: 'var(--surface-elevated)',
+                        border: '1px solid var(--border-default)',
                         borderRadius: 'var(--radius-lg)',
                         textDecoration: 'none'
                       }}
@@ -372,23 +372,23 @@ export default function HTTP402Page() {
                         width: '40px',
                         height: '40px',
                         borderRadius: 'var(--radius-md)',
-                        background: 'rgba(99, 91, 255, 0.1)',
+                        background: 'var(--accent-brand-subtle)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         flexShrink: 0
                       }}>
-                        <BookOpen size={20} style={{ color: 'var(--brand-primary)' }} />
+                        <BookOpen size={20} style={{ color: 'var(--accent-brand)' }} />
                       </div>
                       <div style={{ flex: 1 }}>
-                        <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
+                        <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
                           What is HTTP 402?
                         </h4>
-                        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>
+                        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
                           How PEAC uses 402 for agent payments
                         </p>
                       </div>
-                      <ArrowRight size={16} style={{ color: 'var(--gray-400)' }} />
+                      <ArrowRight size={16} style={{ color: 'var(--text-muted)' }} />
                     </Link>
 
                     <Link
@@ -398,8 +398,8 @@ export default function HTTP402Page() {
                         alignItems: 'center',
                         gap: 'var(--space-4)',
                         padding: 'var(--space-5)',
-                        background: 'var(--white)',
-                        border: '1px solid var(--gray-200)',
+                        background: 'var(--surface-elevated)',
+                        border: '1px solid var(--border-default)',
                         borderRadius: 'var(--radius-lg)',
                         textDecoration: 'none'
                       }}
@@ -408,7 +408,7 @@ export default function HTTP402Page() {
                         width: '40px',
                         height: '40px',
                         borderRadius: 'var(--radius-md)',
-                        background: 'rgba(255, 107, 53, 0.1)',
+                        background: 'var(--accent-tertiary-subtle)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -417,14 +417,14 @@ export default function HTTP402Page() {
                         <BookOpen size={20} style={{ color: 'var(--brand-accent)' }} />
                       </div>
                       <div style={{ flex: 1 }}>
-                        <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
+                        <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
                           From Detection to Settlement
                         </h4>
-                        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>
+                        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
                           Using PEAC to turn AI traffic into revenue
                         </p>
                       </div>
-                      <ArrowRight size={16} style={{ color: 'var(--gray-400)' }} />
+                      <ArrowRight size={16} style={{ color: 'var(--text-muted)' }} />
                     </Link>
 
                     <a
@@ -436,8 +436,8 @@ export default function HTTP402Page() {
                         alignItems: 'center',
                         gap: 'var(--space-4)',
                         padding: 'var(--space-5)',
-                        background: 'var(--white)',
-                        border: '1px solid var(--gray-200)',
+                        background: 'var(--surface-elevated)',
+                        border: '1px solid var(--border-default)',
                         borderRadius: 'var(--radius-lg)',
                         textDecoration: 'none'
                       }}
@@ -446,23 +446,23 @@ export default function HTTP402Page() {
                         width: '40px',
                         height: '40px',
                         borderRadius: 'var(--radius-md)',
-                        background: 'rgba(0, 212, 170, 0.1)',
+                        background: 'var(--accent-secondary-subtle)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         flexShrink: 0
                       }}>
-                        <ExternalLink size={20} style={{ color: 'var(--brand-secondary)' }} />
+                        <ExternalLink size={20} style={{ color: 'var(--accent-secondary)' }} />
                       </div>
                       <div style={{ flex: 1 }}>
-                        <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
+                        <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
                           x402.org - Official Specification
                         </h4>
-                        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>
+                        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
                           Full protocol documentation
                         </p>
                       </div>
-                      <ArrowRight size={16} style={{ color: 'var(--gray-400)' }} />
+                      <ArrowRight size={16} style={{ color: 'var(--text-muted)' }} />
                     </a>
                   </div>
                 </section>
@@ -470,7 +470,7 @@ export default function HTTP402Page() {
                 {/* Related */}
                 <section style={{
                   padding: 'var(--space-8)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
                   marginTop: 'var(--space-16)'
                 }}>
@@ -478,7 +478,7 @@ export default function HTTP402Page() {
                     fontSize: 'var(--text-lg)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-6)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Related Articles
                   </h3>
@@ -487,21 +487,21 @@ export default function HTTP402Page() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      color: 'var(--gray-700)',
+                      color: 'var(--text-secondary)',
                       textDecoration: 'none'
                     }}>
                       <span>What is Agentic Commerce?</span>
-                      <ArrowRight size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <ArrowRight size={16} style={{ color: 'var(--accent-brand)' }} />
                     </Link>
                     <Link href="/learn/ai-receipts" style={{
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      color: 'var(--gray-700)',
+                      color: 'var(--text-secondary)',
                       textDecoration: 'none'
                     }}>
                       <span>AI Receipts</span>
-                      <ArrowRight size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <ArrowRight size={16} style={{ color: 'var(--accent-brand)' }} />
                     </Link>
                   </div>
                 </section>

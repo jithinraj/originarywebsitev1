@@ -89,8 +89,8 @@ export default function CoreInvariants() {
 
       <style jsx>{`
         .invariants {
-          border-top: 1px solid var(--gray-200);
-          border-bottom: 1px solid var(--gray-200);
+          border-top: 1px solid var(--border-default);
+          border-bottom: 1px solid var(--border-default);
         }
 
         .invariants-header {
@@ -102,7 +102,7 @@ export default function CoreInvariants() {
         }
 
         .dim {
-          color: var(--gray-500);
+          color: var(--text-tertiary);
         }
 
         .invariants-grid {
@@ -114,15 +114,15 @@ export default function CoreInvariants() {
         .invariant-card {
           position: relative;
           padding: var(--space-8) var(--space-6);
-          background: var(--white);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-2xl);
           overflow: hidden;
           transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .invariant-card:hover {
-          border-color: var(--gray-300);
+          border-color: var(--border-default);
           box-shadow: var(--shadow-xl);
           transform: translateY(-6px);
         }
@@ -133,7 +133,7 @@ export default function CoreInvariants() {
           right: -50%;
           width: 100%;
           height: 100%;
-          background: radial-gradient(circle, rgba(99, 91, 255, 0.06) 0%, transparent 60%);
+          background: radial-gradient(circle, var(--accent-brand-subtle) 0%, transparent 60%);
           pointer-events: none;
           opacity: 0;
           transition: opacity 0.5s ease;
@@ -144,11 +144,11 @@ export default function CoreInvariants() {
         }
 
         .color-secondary .card-glow {
-          background: radial-gradient(circle, rgba(0, 212, 170, 0.08) 0%, transparent 60%);
+          background: radial-gradient(circle, var(--accent-secondary-subtle) 0%, transparent 60%);
         }
 
         .color-tertiary .card-glow {
-          background: radial-gradient(circle, rgba(99, 91, 255, 0.04) 0%, rgba(0, 212, 170, 0.04) 50%, transparent 70%);
+          background: radial-gradient(circle, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 50%, transparent 70%);
         }
 
         .card-content {
@@ -171,9 +171,9 @@ export default function CoreInvariants() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(135deg, rgba(99, 91, 255, 0.1) 0%, rgba(0, 212, 170, 0.05) 100%);
+          background: linear-gradient(135deg, var(--accent-brand-subtle) 0%, var(--accent-secondary-faint) 100%);
           border-radius: var(--radius-xl);
-          color: var(--brand-primary);
+          color: var(--accent-brand);
           transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -182,30 +182,30 @@ export default function CoreInvariants() {
         }
 
         .color-secondary .card-icon {
-          background: linear-gradient(135deg, rgba(0, 212, 170, 0.1) 0%, rgba(0, 212, 170, 0.05) 100%);
+          background: linear-gradient(135deg, var(--accent-secondary-subtle) 0%, var(--accent-secondary-faint) 100%);
           color: var(--brand-secondary);
         }
 
         .color-tertiary .card-icon {
-          background: linear-gradient(135deg, rgba(99, 91, 255, 0.08) 0%, rgba(0, 212, 170, 0.08) 100%);
-          color: var(--brand-primary);
+          background: linear-gradient(135deg, var(--accent-brand-subtle) 0%, var(--accent-secondary-subtle) 100%);
+          color: var(--accent-brand);
         }
 
         .card-num {
           font-family: var(--font-mono);
           font-size: var(--text-xs);
           font-weight: 500;
-          color: var(--gray-400);
+          color: var(--text-muted);
           letter-spacing: 0.1em;
           padding: 4px 10px;
-          background: var(--gray-100);
+          background: var(--surface-card);
           border-radius: var(--radius-md);
         }
 
         .card-title {
           font-size: var(--text-xl);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin: 0;
           letter-spacing: -0.01em;
         }
@@ -213,7 +213,7 @@ export default function CoreInvariants() {
         .card-text {
           font-size: var(--text-sm);
           line-height: 1.7;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin: 0;
         }
 

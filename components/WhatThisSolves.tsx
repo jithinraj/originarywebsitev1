@@ -59,20 +59,25 @@ export default function WhatThisSolves() {
 
       <style jsx>{`
         .solves {
-          background: var(--gray-50);
-          padding: var(--space-20) 0;
+          background: var(--surface-base);
+          padding: var(--space-24) 0;
           position: relative;
           overflow: hidden;
         }
 
+        /* Gradient mesh background */
         .solves::before {
           content: '';
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 1px;
-          background: linear-gradient(90deg, transparent 0%, var(--gray-200) 50%, transparent 100%);
+          top: -50%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 120%;
+          height: 200%;
+          background:
+            radial-gradient(ellipse 40% 30% at 30% 30%, var(--gradient-mesh-light-purple) 0%, transparent 50%),
+            radial-gradient(ellipse 40% 30% at 70% 70%, var(--gradient-mesh-light-teal) 0%, transparent 50%);
+          pointer-events: none;
         }
 
         .solves::after {
@@ -82,7 +87,7 @@ export default function WhatThisSolves() {
           left: 0;
           right: 0;
           height: 1px;
-          background: linear-gradient(90deg, transparent 0%, var(--gray-200) 50%, transparent 100%);
+          background: linear-gradient(90deg, transparent 0%, var(--border-default) 50%, transparent 100%);
         }
 
         .solves-container {
@@ -97,24 +102,34 @@ export default function WhatThisSolves() {
 
         .solves-column {
           padding: var(--space-8);
-          border-radius: var(--radius-2xl);
-          background: var(--white);
-          border: 1px solid var(--gray-100);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.02);
-          transition: all var(--duration-300) ease;
+          border-radius: var(--radius-3xl);
+          background: var(--glass-card-bg);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid var(--border-default);
+          box-shadow: var(--shadow-card);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          z-index: 1;
         }
 
         .solves-column:hover {
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03), 0 8px 24px rgba(0, 0, 0, 0.04);
+          box-shadow: var(--shadow-card-hover);
+          transform: translateY(-4px);
         }
 
         .solves-column.before {
-          background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+          background: var(--glass-card-bg);
         }
 
         .solves-column.after {
-          background: linear-gradient(135deg, var(--white) 0%, rgba(99, 91, 255, 0.02) 100%);
-          border-color: rgba(99, 91, 255, 0.1);
+          background: linear-gradient(135deg, var(--glass-card-bg) 0%, var(--accent-brand-muted) 100%);
+          border-color: var(--border-brand);
+        }
+
+        .solves-column.after:hover {
+          border-color: var(--accent-brand);
+          box-shadow: var(--glass-card-shadow);
         }
 
         .column-header {
@@ -134,12 +149,12 @@ export default function WhatThisSolves() {
         }
 
         .column-icon-wrapper.before-icon {
-          background: var(--gray-100);
-          color: var(--gray-400);
+          background: var(--surface-subtle);
+          color: var(--text-muted);
         }
 
         .column-icon-wrapper.after-icon {
-          background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
+          background: linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-brand-hover) 100%);
           color: var(--white);
         }
 
@@ -152,11 +167,11 @@ export default function WhatThisSolves() {
         }
 
         .before .column-label {
-          color: var(--gray-400);
+          color: var(--text-muted);
         }
 
         .after .column-label {
-          color: var(--gray-900);
+          color: var(--text-primary);
         }
 
         .column-list {
@@ -176,7 +191,7 @@ export default function WhatThisSolves() {
         }
 
         .before .column-list li {
-          color: var(--gray-500);
+          color: var(--text-tertiary);
         }
 
         .before .column-list li::before {
@@ -187,12 +202,12 @@ export default function WhatThisSolves() {
           width: 6px;
           height: 6px;
           border-radius: var(--radius-full);
-          background: var(--gray-200);
-          border: 1px solid var(--gray-300);
+          background: var(--surface-subtle);
+          border: 1px solid var(--border-default);
         }
 
         .after .column-list li {
-          color: var(--gray-700);
+          color: var(--text-secondary);
           font-weight: 450;
         }
 
@@ -204,8 +219,8 @@ export default function WhatThisSolves() {
           width: 6px;
           height: 6px;
           border-radius: var(--radius-full);
-          background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
-          box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.1);
+          background: linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-brand-hover) 100%);
+          box-shadow: 0 0 0 3px var(--accent-brand-muted);
         }
 
         .solves-divider {
@@ -220,15 +235,15 @@ export default function WhatThisSolves() {
         .divider-line {
           width: 1px;
           height: 32px;
-          background: linear-gradient(180deg, var(--gray-200) 0%, var(--gray-300) 100%);
+          background: linear-gradient(180deg, var(--border-default) 0%, var(--border-hover) 100%);
         }
 
         .divider-line.top {
-          background: linear-gradient(180deg, transparent 0%, var(--gray-300) 100%);
+          background: linear-gradient(180deg, transparent 0%, var(--border-hover) 100%);
         }
 
         .divider-line.bottom {
-          background: linear-gradient(180deg, var(--gray-300) 0%, transparent 100%);
+          background: linear-gradient(180deg, var(--border-hover) 0%, transparent 100%);
         }
 
         .divider-arrow {
@@ -238,10 +253,10 @@ export default function WhatThisSolves() {
           width: 36px;
           height: 36px;
           border-radius: var(--radius-full);
-          background: var(--white);
-          border: 1px solid var(--gray-200);
-          color: var(--gray-400);
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
+          color: var(--text-muted);
+          box-shadow: var(--shadow-card);
         }
 
         @media (max-width: 900px) {
@@ -279,11 +294,11 @@ export default function WhatThisSolves() {
           }
 
           .divider-line.top {
-            background: linear-gradient(90deg, transparent 0%, var(--gray-300) 100%);
+            background: linear-gradient(90deg, transparent 0%, var(--border-hover) 100%);
           }
 
           .divider-line.bottom {
-            background: linear-gradient(90deg, var(--gray-300) 0%, transparent 100%);
+            background: linear-gradient(90deg, var(--border-hover) 0%, transparent 100%);
           }
 
           .divider-arrow {

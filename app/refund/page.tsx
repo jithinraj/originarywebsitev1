@@ -36,17 +36,17 @@ export default function RefundPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <NavigationHeader />
-      <main style={{ minHeight: '100vh', background: 'var(--white)', paddingTop: '80px' }} id="main-content">
+      <main style={{ minHeight: '100vh', background: 'var(--surface-elevated)', paddingTop: '80px' }} id="main-content">
         <div className="container" style={{ padding: 'var(--space-32) var(--space-6)' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             {/* Badge */}
             <div style={{
               display: 'inline-flex',
-              background: 'rgba(99, 91, 255, 0.1)',
-              border: '1px solid rgba(99, 91, 255, 0.2)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-6)',
-              color: 'var(--brand-primary)',
+              color: 'var(--accent-brand)',
               fontSize: 'var(--text-sm)',
               fontWeight: 600,
               marginBottom: 'var(--space-6)'
@@ -58,14 +58,14 @@ export default function RefundPage() {
               fontSize: 'var(--text-5xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-4)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Cancellation &amp; Refund Policy
             </h1>
 
             <p style={{
               fontSize: 'var(--text-lg)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-12)'
             }}>
               Effective from 2025-07-27
@@ -77,19 +77,19 @@ export default function RefundPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 No Refunds Policy
               </h2>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
                 All sales of Originary services are final and non-refundable. By purchasing any service or product from Originary operated by Poem, Inc., you acknowledge and agree that no refunds will be issued under any circumstances.
               </p>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 This policy applies to all service tiers including Developer (activation fee), Professional, and Enterprise (custom pricing). See current pricing for active plans.
@@ -102,19 +102,19 @@ export default function RefundPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Immediate Digital Delivery
               </h2>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
                 Originary provides digital services with immediate delivery. Upon successful payment:
               </p>
               <ul style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 2,
                 paddingLeft: 'var(--space-6)',
                 marginBottom: 'var(--space-4)'
@@ -125,7 +125,7 @@ export default function RefundPage() {
                 <li>All services become accessible upon payment confirmation</li>
               </ul>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 Because digital services are delivered immediately and access cannot be revoked once granted, all purchases are final.
@@ -138,26 +138,26 @@ export default function RefundPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Service Access Period
               </h2>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
                 <strong>Developer tier:</strong> Access continues for the trial or subscription period from activation date.
               </p>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
                 <strong>Professional tier ($2,500/month):</strong> Billed monthly. Service continues until cancellation at end of current billing period.
               </p>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 <strong>Enterprise tier (custom pricing):</strong> As per negotiated agreement terms.
@@ -170,22 +170,22 @@ export default function RefundPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Service Cancellation
               </h2>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
                 For monthly recurring subscriptions (Professional tier), you may cancel your subscription at any time. Cancellation takes effect at the end of your current billing period. No prorated refunds are issued for partial months.
               </p>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
-                To cancel your subscription, contact <a href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>contact@originary.xyz</a> or use the cancellation option in your dashboard.
+                To cancel your subscription, contact <a href="mailto:contact@originary.xyz" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600 }}>contact@originary.xyz</a> or use the cancellation option in your dashboard.
               </p>
             </div>
 
@@ -195,28 +195,28 @@ export default function RefundPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Payment Processing Issues
               </h2>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
                 If you experience technical issues during payment processing (e.g., payment deducted but service not activated), contact our support team immediately:
               </p>
               <ul style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 2,
                 paddingLeft: 'var(--space-6)',
                 marginBottom: 'var(--space-4)'
               }}>
-                <li>Email: <a href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>contact@originary.xyz</a></li>
-                <li>Phone: <a href="tel:+14157070402" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>+1 415 707 0402</a> (US line)</li>
+                <li>Email: <a href="mailto:contact@originary.xyz" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600 }}>contact@originary.xyz</a></li>
+                <li>Phone: <a href="tel:+14157070402" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600 }}>+1 415 707 0402</a> (US line)</li>
               </ul>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 We will investigate and resolve genuine technical issues promptly. This does not constitute a refund policy.
@@ -229,12 +229,12 @@ export default function RefundPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Legal Entity
               </h2>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 Originary services are operated by <strong>Poem, Inc.</strong>, a Delaware corporation. All card payments are processed by <strong>Stripe</strong> on behalf of Poem, Inc.
@@ -247,23 +247,23 @@ export default function RefundPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Questions About This Policy
               </h2>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
                 If you have questions about this refund policy, contact us at:
               </p>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
-                <strong>Email:</strong> <a href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>contact@originary.xyz</a><br />
-                <strong>Phone:</strong> <a href="tel:+14157070402" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>+1 415 707 0402</a>
+                <strong>Email:</strong> <a href="mailto:contact@originary.xyz" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600 }}>contact@originary.xyz</a><br />
+                <strong>Phone:</strong> <a href="tel:+14157070402" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600 }}>+1 415 707 0402</a>
               </p>
             </div>
 
@@ -273,7 +273,7 @@ export default function RefundPage() {
               gap: 'var(--space-4)',
               flexWrap: 'wrap',
               paddingTop: 'var(--space-8)',
-              borderTop: '1px solid var(--gray-200)'
+              borderTop: '1px solid var(--border-default)'
             }}>
               <Link href="/terms" className="btn btn-ghost">Terms of Service</Link>
               <Link href="/privacy" className="btn btn-ghost">Privacy Policy</Link>

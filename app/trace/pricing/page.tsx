@@ -114,14 +114,14 @@ export default function TracePricingPage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-4)',
                   marginBottom: 'var(--space-4)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 500,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}
               >
                 <Database size={16} />
@@ -138,7 +138,7 @@ export default function TracePricingPage() {
               </h1>
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-8)'
               }}>
@@ -167,11 +167,11 @@ export default function TracePricingPage() {
         </section>
 
         {/* OSS Callout */}
-        <section className="section" style={{ background: 'var(--gray-900)', color: 'white', paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)' }}>
+        <section className="section" style={{ background: 'var(--text-primary)', color: 'white', paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)' }}>
           <div className="container">
             <div className="card" style={{
-              background: 'var(--gray-800)',
-              border: '1px solid var(--gray-700)',
+              background: 'var(--text-primary)',
+              border: '1px solid var(--text-secondary)',
               padding: 'var(--space-10)',
               maxWidth: '900px',
               margin: '0 auto'
@@ -182,7 +182,7 @@ export default function TracePricingPage() {
                     width: '80px',
                     height: '80px',
                     borderRadius: 'var(--radius-lg)',
-                    background: 'linear-gradient(135deg, var(--brand-primary), var(--brand-secondary))',
+                    background: 'linear-gradient(135deg, var(--accent-brand), var(--accent-secondary))',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -202,7 +202,7 @@ export default function TracePricingPage() {
                   </h2>
                   <p style={{
                     fontSize: 'var(--text-lg)',
-                    color: 'var(--gray-300)',
+                    color: 'var(--border-default)',
                     marginBottom: 'var(--space-6)',
                     lineHeight: 1.6
                   }}>
@@ -215,7 +215,7 @@ export default function TracePricingPage() {
                     className="btn btn-primary btn-lg"
                     style={{
                       background: 'white',
-                      color: 'var(--gray-900)',
+                      color: 'var(--text-primary)',
                       border: 'none'
                     }}
                   >
@@ -235,8 +235,8 @@ export default function TracePricingPage() {
               <div
                 style={{
                   display: 'inline-block',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  color: 'var(--brand-primary)',
+                  background: 'var(--accent-brand-subtle)',
+                  color: 'var(--accent-brand)',
                   fontSize: 'var(--text-xs)',
                   fontWeight: 600,
                   padding: '4px 12px',
@@ -257,7 +257,7 @@ export default function TracePricingPage() {
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 maxWidth: '600px',
                 margin: '0 auto var(--space-8)'
               }}>
@@ -310,8 +310,8 @@ export default function TracePricingPage() {
                     alignItems: 'center',
                     gap: 'var(--space-3)'
                   }}>
-                    <CheckCircle size={18} style={{ color: 'var(--brand-primary)', flexShrink: 0 }} />
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-700)' }}>{feature}</span>
+                    <CheckCircle size={18} style={{ color: 'var(--accent-brand)', flexShrink: 0 }} />
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>{feature}</span>
                   </div>
                 ))}
               </div>
@@ -320,7 +320,7 @@ export default function TracePricingPage() {
         </section>
 
         {/* Detailed Comparison Table */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
               <h2 style={{
@@ -332,7 +332,7 @@ export default function TracePricingPage() {
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
@@ -343,13 +343,13 @@ export default function TracePricingPage() {
             <div className="card" style={{ overflow: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
-                  <tr style={{ borderBottom: '2px solid var(--gray-200)' }}>
+                  <tr style={{ borderBottom: '2px solid var(--border-default)' }}>
                     <th style={{
                       textAlign: 'left',
                       padding: 'var(--space-4)',
                       fontSize: 'var(--text-sm)',
                       fontWeight: 700,
-                      color: 'var(--gray-900)',
+                      color: 'var(--text-primary)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em'
                     }}>
@@ -360,7 +360,7 @@ export default function TracePricingPage() {
                       padding: 'var(--space-4)',
                       fontSize: 'var(--text-sm)',
                       fontWeight: 700,
-                      color: 'var(--gray-900)',
+                      color: 'var(--text-primary)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em'
                     }}>
@@ -371,7 +371,7 @@ export default function TracePricingPage() {
                       padding: 'var(--space-4)',
                       fontSize: 'var(--text-sm)',
                       fontWeight: 700,
-                      color: 'var(--brand-primary)',
+                      color: 'var(--accent-brand)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em'
                     }}>
@@ -382,14 +382,14 @@ export default function TracePricingPage() {
                 <tbody>
                   {comparisonFeatures.map((category) => (
                     <React.Fragment key={category.category}>
-                      <tr style={{ background: 'var(--gray-100)' }}>
+                      <tr style={{ background: 'var(--surface-card)' }}>
                         <td
                           colSpan={3}
                           style={{
                             padding: 'var(--space-3) var(--space-4)',
                             fontSize: 'var(--text-sm)',
                             fontWeight: 700,
-                            color: 'var(--gray-700)',
+                            color: 'var(--text-secondary)',
                             textTransform: 'uppercase',
                             letterSpacing: '0.05em'
                           }}
@@ -401,13 +401,13 @@ export default function TracePricingPage() {
                         <tr
                           key={`${category.category}-${index}`}
                           style={{
-                            borderBottom: '1px solid var(--gray-200)'
+                            borderBottom: '1px solid var(--border-default)'
                           }}
                         >
                           <td style={{
                             padding: 'var(--space-4)',
                             fontSize: 'var(--text-sm)',
-                            color: 'var(--gray-700)'
+                            color: 'var(--text-secondary)'
                           }}>
                             {feature.name}
                           </td>
@@ -418,7 +418,7 @@ export default function TracePricingPage() {
                             {feature.oss ? (
                               <CheckCircle size={20} style={{ color: 'var(--success)', margin: '0 auto' }} />
                             ) : (
-                              <X size={20} style={{ color: 'var(--gray-300)', margin: '0 auto' }} />
+                              <X size={20} style={{ color: 'var(--border-default)', margin: '0 auto' }} />
                             )}
                           </td>
                           <td style={{
@@ -426,9 +426,9 @@ export default function TracePricingPage() {
                             padding: 'var(--space-4)'
                           }}>
                             {feature.cloud ? (
-                              <CheckCircle size={20} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} />
+                              <CheckCircle size={20} style={{ color: 'var(--accent-brand)', margin: '0 auto' }} />
                             ) : (
-                              <X size={20} style={{ color: 'var(--gray-300)', margin: '0 auto' }} />
+                              <X size={20} style={{ color: 'var(--border-default)', margin: '0 auto' }} />
                             )}
                           </td>
                         </tr>
@@ -465,13 +465,13 @@ export default function TracePricingPage() {
                     fontSize: 'var(--text-lg)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-3)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     {faq.question}
                   </h3>
                   <p style={{
                     fontSize: 'var(--text-base)',
-                    color: 'var(--gray-600)',
+                    color: 'var(--text-secondary)',
                     lineHeight: 1.6
                   }}>
                     {faq.answer}
@@ -495,7 +495,7 @@ export default function TracePricingPage() {
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)',
                 lineHeight: 1.6
               }}>

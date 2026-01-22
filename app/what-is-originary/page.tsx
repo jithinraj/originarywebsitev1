@@ -158,7 +158,7 @@ export default function WhatIsOriginaryPage() {
                 marginBottom: 'var(--space-6)',
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 What is <span className="text-gradient">Originary?</span>
               </h1>
@@ -167,7 +167,7 @@ export default function WhatIsOriginaryPage() {
                 style={{
                   fontSize: 'var(--text-xl)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-4)',
                   maxWidth: '800px',
                   margin: '0 auto var(--space-4) auto'
@@ -179,7 +179,7 @@ export default function WhatIsOriginaryPage() {
                 style={{
                   fontSize: 'var(--text-lg)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-500)',
+                  color: 'var(--text-tertiary)',
                   marginBottom: 'var(--space-10)',
                   maxWidth: '750px',
                   margin: '0 auto var(--space-10) auto'
@@ -203,7 +203,7 @@ export default function WhatIsOriginaryPage() {
               <p
                 style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-500)',
+                  color: 'var(--text-tertiary)',
                   margin: 0
                 }}
               >
@@ -222,7 +222,7 @@ export default function WhatIsOriginaryPage() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 The problem
@@ -232,7 +232,7 @@ export default function WhatIsOriginaryPage() {
                 style={{
                   fontSize: 'var(--text-lg)',
                   lineHeight: 1.8,
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-4)'
                 }}
               >
@@ -242,7 +242,7 @@ export default function WhatIsOriginaryPage() {
                 style={{
                   fontSize: 'var(--text-lg)',
                   lineHeight: 1.8,
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-4)'
                 }}
               >
@@ -252,7 +252,7 @@ export default function WhatIsOriginaryPage() {
                 style={{
                   fontSize: 'var(--text-lg)',
                   lineHeight: 1.8,
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   margin: 0
                 }}
               >
@@ -263,7 +263,7 @@ export default function WhatIsOriginaryPage() {
         </section>
 
         {/* What Originary Does */}
-        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h2
@@ -271,7 +271,7 @@ export default function WhatIsOriginaryPage() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 What Originary does
@@ -281,7 +281,7 @@ export default function WhatIsOriginaryPage() {
                 style={{
                   fontSize: 'var(--text-lg)',
                   lineHeight: 1.8,
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-8)'
                 }}
               >
@@ -295,18 +295,18 @@ export default function WhatIsOriginaryPage() {
                     alignItems: 'flex-start',
                     gap: 'var(--space-4)',
                     padding: 'var(--space-4)',
-                    background: 'var(--white)',
+                    background: 'var(--surface-elevated)',
                     borderRadius: 'var(--radius-lg)',
-                    border: '1px solid var(--gray-200)'
+                    border: '1px solid var(--border-default)'
                   }}
                 >
-                  <CheckCircle size={24} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                  <CheckCircle size={24} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '2px' }} />
                   <div>
-                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
                       Publish terms
                     </h3>
-                    <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.6, margin: 0 }}>
-                      With a machine-readable policy surface (recommended: <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>/.well-known/peac.txt</code>)
+                    <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                      With a machine-readable policy surface (recommended: <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>/.well-known/peac.txt</code>)
                     </p>
                   </div>
                 </div>
@@ -317,17 +317,17 @@ export default function WhatIsOriginaryPage() {
                     alignItems: 'flex-start',
                     gap: 'var(--space-4)',
                     padding: 'var(--space-4)',
-                    background: 'var(--white)',
+                    background: 'var(--surface-elevated)',
                     borderRadius: 'var(--radius-lg)',
-                    border: '1px solid var(--gray-200)'
+                    border: '1px solid var(--border-default)'
                   }}
                 >
-                  <CheckCircle size={24} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                  <CheckCircle size={24} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '2px' }} />
                   <div>
-                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
                       Enforce decisions
                     </h3>
-                    <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.6, margin: 0 }}>
+                    <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
                       Using standard HTTP semantics (allow/deny/conditional requirements, including optional 402 flows)
                     </p>
                   </div>
@@ -339,18 +339,18 @@ export default function WhatIsOriginaryPage() {
                     alignItems: 'flex-start',
                     gap: 'var(--space-4)',
                     padding: 'var(--space-4)',
-                    background: 'var(--white)',
+                    background: 'var(--surface-elevated)',
                     borderRadius: 'var(--radius-lg)',
-                    border: '1px solid var(--gray-200)'
+                    border: '1px solid var(--border-default)'
                   }}
                 >
-                  <CheckCircle size={24} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                  <CheckCircle size={24} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '2px' }} />
                   <div>
-                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
                       Return a record
                     </h3>
-                    <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.6, margin: 0 }}>
-                      As a signed receipt (<code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>PEAC-Receipt</code>) that can be verified offline and stored as evidence
+                    <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                      As a signed receipt (<code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>PEAC-Receipt</code>) that can be verified offline and stored as evidence
                     </p>
                   </div>
                 </div>
@@ -368,7 +368,7 @@ export default function WhatIsOriginaryPage() {
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}
             >
               How PEAC makes records portable
@@ -377,7 +377,7 @@ export default function WhatIsOriginaryPage() {
               style={{
                 textAlign: 'center',
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-6)',
                 maxWidth: '800px',
                 margin: '0 auto var(--space-6) auto'
@@ -389,7 +389,7 @@ export default function WhatIsOriginaryPage() {
               style={{
                 textAlign: 'center',
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-16)',
                 maxWidth: '700px',
                 margin: '0 auto var(--space-16) auto'
@@ -404,7 +404,7 @@ export default function WhatIsOriginaryPage() {
                 style={{
                   textAlign: 'left',
                   padding: 'var(--space-8)',
-                  border: '2px solid var(--gray-200)'
+                  border: '2px solid var(--border-default)'
                 }}
               >
                 <div
@@ -414,7 +414,7 @@ export default function WhatIsOriginaryPage() {
                     justifyContent: 'center',
                     width: '48px',
                     height: '48px',
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     borderRadius: 'var(--radius-lg)',
                     marginBottom: 'var(--space-4)',
                     color: 'white',
@@ -424,10 +424,10 @@ export default function WhatIsOriginaryPage() {
                 >
                   1
                 </div>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                   Policy surface (<code style={{ fontWeight: 400, fontSize: '0.85em' }}>peac.txt</code>)
                 </h3>
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
+                <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                   Publish terms in one place so agents and services can discover requirements before access.
                 </p>
               </div>
@@ -437,7 +437,7 @@ export default function WhatIsOriginaryPage() {
                 style={{
                   textAlign: 'left',
                   padding: 'var(--space-8)',
-                  border: '2px solid var(--gray-200)'
+                  border: '2px solid var(--border-default)'
                 }}
               >
                 <div
@@ -447,7 +447,7 @@ export default function WhatIsOriginaryPage() {
                     justifyContent: 'center',
                     width: '48px',
                     height: '48px',
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     borderRadius: 'var(--radius-lg)',
                     marginBottom: 'var(--space-4)',
                     color: 'white',
@@ -457,10 +457,10 @@ export default function WhatIsOriginaryPage() {
                 >
                   2
                 </div>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                   Receipt format (<code style={{ fontWeight: 400, fontSize: '0.85em' }}>PEAC-Receipt</code>)
                 </h3>
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
+                <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                   Return a signed record with stable claims for what occurred, under which terms, and with what authorization evidence.
                 </p>
               </div>
@@ -470,7 +470,7 @@ export default function WhatIsOriginaryPage() {
                 style={{
                   textAlign: 'left',
                   padding: 'var(--space-8)',
-                  border: '2px solid var(--gray-200)'
+                  border: '2px solid var(--border-default)'
                 }}
               >
                 <div
@@ -480,7 +480,7 @@ export default function WhatIsOriginaryPage() {
                     justifyContent: 'center',
                     width: '48px',
                     height: '48px',
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     borderRadius: 'var(--radius-lg)',
                     marginBottom: 'var(--space-4)',
                     color: 'white',
@@ -490,10 +490,10 @@ export default function WhatIsOriginaryPage() {
                 >
                   3
                 </div>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                   Verification &amp; conformance
                 </h3>
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
+                <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                   Verify receipts offline or via a verification endpoint, and validate policy conformance to reduce ambiguity in audits and disputes.
                 </p>
               </div>
@@ -502,7 +502,7 @@ export default function WhatIsOriginaryPage() {
         </section>
 
         {/* Who This Is For */}
-        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
             <h2
               style={{
@@ -510,7 +510,7 @@ export default function WhatIsOriginaryPage() {
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}
             >
               Who this is for
@@ -519,7 +519,7 @@ export default function WhatIsOriginaryPage() {
               style={{
                 textAlign: 'center',
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-16)',
                 maxWidth: '700px',
                 margin: '0 auto var(--space-16) auto'
@@ -530,41 +530,41 @@ export default function WhatIsOriginaryPage() {
 
             <div className="grid grid-2" style={{ gap: 'var(--space-6)', maxWidth: '900px', margin: '0 auto' }}>
               <div className="card">
-                <Globe size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Globe size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   APIs and SaaS platforms
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   Prove access decisions and delivery outcomes
                 </p>
               </div>
 
               <div className="card">
-                <FileText size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <FileText size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Publishers and data providers
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   Publish clear terms and require verifiable compliance
                 </p>
               </div>
 
               <div className="card">
-                <Code size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Code size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Agent developers
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   Rely on a portable receipt that works across rails and environments
                 </p>
               </div>
 
               <div className="card">
-                <Shield size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Shield size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Security, compliance, and policy teams
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   Get evidence trails that stand up in reviews
                 </p>
               </div>
@@ -581,7 +581,7 @@ export default function WhatIsOriginaryPage() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 Originary and PEAC Protocol
@@ -590,7 +590,7 @@ export default function WhatIsOriginaryPage() {
                 style={{
                   fontSize: 'var(--text-lg)',
                   lineHeight: 1.8,
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-4)'
                 }}
               >
@@ -600,7 +600,7 @@ export default function WhatIsOriginaryPage() {
                 style={{
                   fontSize: 'var(--text-lg)',
                   lineHeight: 1.8,
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-6)'
                 }}
               >
@@ -636,9 +636,9 @@ export default function WhatIsOriginaryPage() {
                 maxWidth: '800px',
                 margin: '0 auto',
                 padding: 'var(--space-6)',
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 borderRadius: 'var(--radius-xl)',
-                border: '1px solid var(--gray-200)'
+                border: '1px solid var(--border-default)'
               }}
             >
               <h3
@@ -646,7 +646,7 @@ export default function WhatIsOriginaryPage() {
                   fontSize: 'var(--text-lg)',
                   fontWeight: 600,
                   marginBottom: 'var(--space-3)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 Name and affiliation
@@ -655,7 +655,7 @@ export default function WhatIsOriginaryPage() {
                 style={{
                   fontSize: 'var(--text-base)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-3)'
                 }}
               >
@@ -665,7 +665,7 @@ export default function WhatIsOriginaryPage() {
                 href="/legal/imprint"
                 style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontWeight: 500
                 }}
@@ -693,7 +693,7 @@ export default function WhatIsOriginaryPage() {
                   <AlertTriangle size={20} style={{ color: 'var(--brand-accent)' }} />
                   Limitations
                 </h2>
-                <ul style={{ color: 'var(--gray-700)', lineHeight: 1.8, paddingLeft: 'var(--space-6)', marginBottom: 0 }}>
+                <ul style={{ color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 'var(--space-6)', marginBottom: 0 }}>
                   <li style={{ marginBottom: 'var(--space-2)' }}>PEAC does not enforce compliance. It provides evidence of what the issuer claims occurred.</li>
                   <li style={{ marginBottom: 'var(--space-2)' }}>Receipt contents are issuer-controlled. Verifiers trust the issuer's representation, not an oracle.</li>
                   <li style={{ marginBottom: 'var(--space-2)' }}>Version 0.9.27 wire format may change before 1.0. Cross-version compatibility is not guaranteed.</li>
@@ -706,16 +706,16 @@ export default function WhatIsOriginaryPage() {
         </section>
 
         {/* FAQ */}
-        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-8)' }}>
-                <HelpCircle size={28} style={{ color: 'var(--brand-primary)' }} />
+                <HelpCircle size={28} style={{ color: 'var(--accent-brand)' }} />
                 <h2
                   style={{
                     fontSize: 'var(--text-3xl)',
                     fontWeight: 700,
-                    color: 'var(--gray-900)',
+                    color: 'var(--text-primary)',
                     margin: 0
                   }}
                 >
@@ -731,10 +731,10 @@ export default function WhatIsOriginaryPage() {
                     padding: 'var(--space-6)'
                   }}
                 >
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                     Do receipts replace payment rails?
                   </h3>
-                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                     No. Rails settle value; receipts are portable records that prove what was authorized and what occurred.
                   </p>
                 </div>
@@ -746,11 +746,11 @@ export default function WhatIsOriginaryPage() {
                     padding: 'var(--space-6)'
                   }}
                 >
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
-                    Is <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>PEAC-Receipt</code> the canonical HTTP header name?
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
+                    Is <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>PEAC-Receipt</code> the canonical HTTP header name?
                   </h3>
-                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
-                    Yes. <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>PEAC-Receipt</code> is the canonical receipt header for PEAC.
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
+                    Yes. <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>PEAC-Receipt</code> is the canonical receipt header for PEAC.
                   </p>
                 </div>
 
@@ -761,10 +761,10 @@ export default function WhatIsOriginaryPage() {
                     padding: 'var(--space-6)'
                   }}
                 >
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                     Does verification require Originary?
                   </h3>
-                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                     No. Receipts are designed for offline verification using public keys and published policy.
                   </p>
                 </div>
@@ -776,11 +776,11 @@ export default function WhatIsOriginaryPage() {
                     padding: 'var(--space-6)'
                   }}
                 >
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                     Is PEAC stable?
                   </h3>
-                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
-                    PEAC is at version <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>0.9.27</code>; the goal is to earn <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>1.0</code> through multi-implementation, conformance, and standards work.
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
+                    PEAC is at version <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>0.9.27</code>; the goal is to earn <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>1.0</code> through multi-implementation, conformance, and standards work.
                   </p>
                 </div>
               </div>
@@ -813,7 +813,7 @@ export default function WhatIsOriginaryPage() {
                 Explore the standard, try the demo, or deploy the reference stack. If you&apos;re integrating at scale, contact us for implementation support and hosted options.
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link href="/developers" className="btn btn-lg" style={{ background: 'var(--white)', color: 'var(--brand-primary)', border: 'none' }}>
+                <Link href="/developers" className="btn btn-lg" style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}>
                   Get started
                 </Link>
                 <Link href="/contact" className="btn btn-lg btn-ghost" style={{ color: 'var(--white)', borderColor: 'rgba(255, 255, 255, 0.3)' }}>

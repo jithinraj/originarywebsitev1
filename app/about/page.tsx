@@ -146,14 +146,14 @@ export default function AboutPage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-6)',
                   marginBottom: 'var(--space-8)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}
               >
                 <Receipt size={16} />
@@ -164,7 +164,7 @@ export default function AboutPage() {
                 style={{
                   fontSize: 'var(--text-lg)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-6)',
                   fontWeight: 500
                 }}
@@ -179,7 +179,7 @@ export default function AboutPage() {
                   lineHeight: 1.1,
                   letterSpacing: '-0.04em',
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 About <span className="text-gradient">Originary</span>
@@ -188,7 +188,7 @@ export default function AboutPage() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.7,
                   marginBottom: 'var(--space-10)'
                 }}
@@ -218,7 +218,7 @@ export default function AboutPage() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)',
+                  color: 'var(--text-primary)',
                   textAlign: 'center'
                 }}
               >
@@ -227,29 +227,29 @@ export default function AboutPage() {
               <div
                 className="card"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.03) 0%, rgba(0, 212, 170, 0.03) 100%)',
-                  border: '1px solid rgba(99, 91, 255, 0.1)',
+                  background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
+                  border: '1px solid var(--accent-brand-subtle)',
                   textAlign: 'left'
                 }}
               >
-                <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-700)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
+                <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
                   The web was built for humans clicking links. Agents need machine-readable terms, predictable enforcement, and a durable way to verify what happened without relying on a single vendor&apos;s logs.
                 </p>
-                <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-700)', lineHeight: 1.8, marginBottom: 'var(--space-6)' }}>
+                <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-6)' }}>
                   We make <strong>agent interactions</strong> verifiable through <strong>portable decision records</strong>: signed receipts that bind outcomes to the policy state in force at decision time.
                 </p>
                 <div
                   style={{
-                    background: 'var(--gray-50)',
+                    background: 'var(--surface-subtle)',
                     borderRadius: 'var(--radius-lg)',
                     padding: 'var(--space-6)',
-                    borderLeft: '4px solid var(--brand-primary)'
+                    borderLeft: '4px solid var(--accent-brand)'
                   }}
                 >
-                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-700)', lineHeight: 1.7, marginBottom: 'var(--space-3)', fontWeight: 600 }}>
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-3)', fontWeight: 600 }}>
                     We build this on two foundations:
                   </p>
-                  <ul style={{ fontSize: 'var(--text-base)', color: 'var(--gray-700)', lineHeight: 1.8, paddingLeft: 'var(--space-6)', margin: 0 }}>
+                  <ul style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 'var(--space-6)', margin: 0 }}>
                     <li style={{ marginBottom: 'var(--space-2)' }}>
                       <strong>PEAC Protocol</strong> - the open standard for policy discovery and verifiable receipts (settlement is optional and adapter-based)
                     </li>
@@ -264,13 +264,13 @@ export default function AboutPage() {
         </section>
 
         {/* Seven Pillars Section - Compact Grid */}
-        <section style={{ background: 'var(--gray-50)', padding: 'var(--space-10) 0' }}>
+        <section style={{ background: 'var(--surface-subtle)', padding: 'var(--space-10) 0' }}>
           <div className="container" style={{ maxWidth: '900px' }}>
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
-              <h2 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
+              <h2 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
                 The Seven Pillars
               </h2>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', maxWidth: '600px', margin: '0 auto' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
                 Everything we design is tied together through <strong>decision context</strong>: receipts bind outcomes to the access terms, consent, attribution, and other constraints that were active at decision time.
               </p>
             </div>
@@ -281,20 +281,20 @@ export default function AboutPage() {
                 <div
                   key={pillar.name}
                   style={{
-                    background: 'var(--white)',
+                    background: 'var(--surface-elevated)',
                     borderRadius: 'var(--radius-lg)',
                     padding: 'var(--space-3) var(--space-4)',
-                    border: '1px solid var(--gray-200)',
+                    border: '1px solid var(--border-default)',
                     boxShadow: '0 1px 2px rgba(0,0,0,0.04)'
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: '4px' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>{pillar.icon}</span>
-                    <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', margin: 0 }}>
+                    <span style={{ color: 'var(--accent-brand)' }}>{pillar.icon}</span>
+                    <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)', margin: 0 }}>
                       {pillar.name}
                     </h3>
                   </div>
-                  <p style={{ fontSize: '12px', color: 'var(--gray-500)', lineHeight: 1.5, margin: 0 }}>
+                  <p style={{ fontSize: '12px', color: 'var(--text-tertiary)', lineHeight: 1.5, margin: 0 }}>
                     {pillar.desc}
                   </p>
                 </div>
@@ -329,7 +329,7 @@ export default function AboutPage() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-4)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 What We&apos;re Building
@@ -337,7 +337,7 @@ export default function AboutPage() {
               <p
                 style={{
                   fontSize: 'var(--text-lg)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   maxWidth: '700px',
                   margin: '0 auto var(--space-12) auto',
                   lineHeight: 1.7
@@ -372,21 +372,21 @@ export default function AboutPage() {
                       width: '56px',
                       height: '56px',
                       borderRadius: 'var(--radius-lg)',
-                      background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.1) 0%, rgba(0, 212, 170, 0.1) 100%)',
+                      background: 'linear-gradient(135deg, var(--accent-brand-subtle) 0%, var(--accent-secondary-subtle) 100%)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: 'var(--brand-primary)',
+                      color: 'var(--accent-brand)',
                       flexShrink: 0
                     }}
                   >
                     {product.icon}
                   </div>
                   <div>
-                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
+                    <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-2)' }}>
                       {product.name}
                     </h3>
-                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                       {product.desc}
                     </p>
                   </div>
@@ -394,7 +394,7 @@ export default function AboutPage() {
               ))}
             </div>
 
-            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)', lineHeight: 1.6, textAlign: 'center', maxWidth: '800px', margin: '0 auto var(--space-8) auto' }}>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.6, textAlign: 'center', maxWidth: '800px', margin: '0 auto var(--space-8) auto' }}>
               Teams typically start with <strong>Declare + the SDK/CLI</strong>, then add <strong>Gateway</strong> and <strong>Verify</strong> when they need enforcement and third-party verifiability. <strong>Trace</strong> and <strong>Studio</strong> follow when audits, disputes, or scale require structured evidence workflows.
             </p>
 
@@ -411,7 +411,7 @@ export default function AboutPage() {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, rgba(99, 91, 255, 0.05) 100%)',
+            background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, var(--accent-brand-faint) 100%)',
             paddingTop: 'var(--space-20)',
             paddingBottom: 'var(--space-20)'
           }}
@@ -442,7 +442,7 @@ export default function AboutPage() {
                     fontSize: 'var(--text-3xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}
                 >
                   PEAC Protocol: Open-Source Foundation
@@ -452,20 +452,20 @@ export default function AboutPage() {
               <div
                 className="card"
                 style={{
-                  background: 'var(--white)',
+                  background: 'var(--surface-elevated)',
                   textAlign: 'left'
                 }}
               >
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-700)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
+                <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
                   <strong>PEAC</strong> (Programmable Environment for Agent Coordination) is the open protocol behind our receipts.
                 </p>
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-700)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
-                  It defines how policies are published (for example at <code style={{ background: 'var(--gray-100)', padding: '2px 8px', borderRadius: '4px', fontSize: 'var(--text-sm)' }}>/.well-known/peac.txt</code>) and how cryptographically signed receipts provide portable evidence of an interaction outcome under declared terms. Settlement can be represented when applicable, but PEAC is rail-neutral by design.
+                <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
+                  It defines how policies are published (for example at <code style={{ background: 'var(--surface-card)', padding: '2px 8px', borderRadius: '4px', fontSize: 'var(--text-sm)' }}>/.well-known/peac.txt</code>) and how cryptographically signed receipts provide portable evidence of an interaction outcome under declared terms. Settlement can be represented when applicable, but PEAC is rail-neutral by design.
                 </p>
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-700)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
+                <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
                   PEAC is Apache-2.0 licensed and stewarded in the open on GitHub by contributors from Originary and the broader community. Multiple independent implementations are expected and encouraged. Originary ships one reference implementation and optional hosted services, but the protocol is not owned by a vendor.
                 </p>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
                   PEAC is currently at version 0.9.27. Wire formats and verification rules are converging; core concepts (policy discovery and receipt verification) are designed for long-term stability.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
@@ -497,7 +497,7 @@ export default function AboutPage() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-4)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 How We Work
@@ -505,7 +505,7 @@ export default function AboutPage() {
               <p
                 style={{
                   fontSize: 'var(--text-lg)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   maxWidth: '600px',
                   margin: '0 auto',
                   lineHeight: 1.7
@@ -537,20 +537,20 @@ export default function AboutPage() {
                       width: '64px',
                       height: '64px',
                       borderRadius: '50%',
-                      background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.1) 0%, rgba(0, 212, 170, 0.1) 100%)',
+                      background: 'linear-gradient(135deg, var(--accent-brand-subtle) 0%, var(--accent-secondary-subtle) 100%)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: 'var(--brand-primary)',
+                      color: 'var(--accent-brand)',
                       margin: '0 auto var(--space-4) auto'
                     }}
                   >
                     {principle.icon}
                   </div>
-                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-3)' }}>
+                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-3)' }}>
                     {principle.name}
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                     {principle.desc}
                   </p>
                 </div>
@@ -560,7 +560,7 @@ export default function AboutPage() {
         </section>
 
         {/* Company Section */}
-        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
@@ -569,13 +569,13 @@ export default function AboutPage() {
                     width: '72px',
                     height: '72px',
                     borderRadius: 'var(--radius-xl)',
-                    background: 'linear-gradient(135deg, var(--brand-primary) 0%, rgba(99, 91, 255, 0.8) 100%)',
+                    background: 'linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-brand) 100%)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: 'var(--white)',
                     margin: '0 auto var(--space-6) auto',
-                    boxShadow: '0 8px 32px rgba(99, 91, 255, 0.25)'
+                    boxShadow: '0 8px 32px var(--accent-brand-muted)'
                   }}
                 >
                   <Building size={32} />
@@ -585,7 +585,7 @@ export default function AboutPage() {
                     fontSize: 'var(--text-3xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}
                 >
                   Company
@@ -595,20 +595,20 @@ export default function AboutPage() {
               <div
                 className="card"
                 style={{
-                  background: 'var(--white)',
+                  background: 'var(--surface-elevated)',
                   textAlign: 'center'
                 }}
               >
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+                <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                   Originary is the steward and primary implementer of PEAC, operated by Poem, Inc.
                 </p>
-                <p style={{ fontSize: 'var(--text-xl)', color: 'var(--gray-700)', lineHeight: 1.8, marginBottom: 'var(--space-4)', fontWeight: 600 }}>
+                <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-4)', fontWeight: 600 }}>
                   ORIGINARY<sup style={{ fontSize: '0.6em' }}>TM</sup> is a brand of <strong>Poem, Inc.</strong>
                 </p>
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.8, marginBottom: 'var(--space-4)', maxWidth: '600px', margin: '0 auto var(--space-4) auto' }}>
+                <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-4)', maxWidth: '600px', margin: '0 auto var(--space-4) auto' }}>
                   Poem, Inc. builds AI infrastructure software and tools for the agentic web, and maintains the Originary products and services that run on top of PEAC Protocol.
                 </p>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)', lineHeight: 1.6, marginBottom: 'var(--space-8)', maxWidth: '600px', margin: '0 auto var(--space-8) auto' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.6, marginBottom: 'var(--space-8)', maxWidth: '600px', margin: '0 auto var(--space-8) auto' }}>
                   In the U.S., &ldquo;Originary&rdquo; is used by Poem, Inc. as a brand for its AI infrastructure software and tools for the agentic web. Poem, Inc. is not affiliated with Originary Inc.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-3)', justifyContent: 'center', flexWrap: 'wrap' }}>

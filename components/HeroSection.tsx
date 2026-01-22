@@ -70,7 +70,7 @@ export default function HeroSection() {
         position: 'relative',
         paddingTop: 'var(--space-48)',
         paddingBottom: 'var(--space-32)',
-        background: 'var(--white)',
+        background: 'var(--surface-elevated)',
         overflow: 'hidden'
       }}
     >
@@ -146,14 +146,14 @@ export default function HeroSection() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.06)',
-                border: '1px solid rgba(99, 91, 255, 0.12)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: '6px 14px',
                 marginBottom: 'var(--space-6)',
                 fontSize: '12px',
                 fontWeight: 450,
-                color: 'rgba(99, 91, 255, 0.85)',
+                color: 'var(--accent-brand)',
                 cursor: 'pointer',
                 transition: 'all 0.15s ease',
                 opacity: isVisible ? 1 : 0,
@@ -162,12 +162,12 @@ export default function HeroSection() {
                 textDecoration: 'none'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(99, 91, 255, 0.1)'
-                e.currentTarget.style.borderColor = 'rgba(99, 91, 255, 0.2)'
+                e.currentTarget.style.background = 'var(--accent-brand-subtle)'
+                e.currentTarget.style.borderColor = 'var(--accent-brand-muted)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(99, 91, 255, 0.06)'
-                e.currentTarget.style.borderColor = 'rgba(99, 91, 255, 0.12)'
+                e.currentTarget.style.background = 'var(--accent-brand-subtle)'
+                e.currentTarget.style.borderColor = 'var(--accent-brand-muted)'
               }}
             >
               <span>Receipts for the Agentic Web</span>
@@ -203,7 +203,7 @@ export default function HeroSection() {
               style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-4)',
                 maxWidth: '90%',
                 opacity: isVisible ? 1 : 0,
@@ -211,7 +211,7 @@ export default function HeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              Originary adds <strong style={{ color: 'var(--gray-800)' }}>policy discovery</strong>, <strong style={{ color: 'var(--gray-800)' }}>HTTP 402 payments</strong>, and a <strong style={{ color: 'var(--gray-800)' }}>PEAC-Receipt</strong> to every response-so access, settlement, and compliance are provable by design. Go live in 5 minutes.
+              Originary adds <strong style={{ color: 'var(--text-primary)' }}>policy discovery</strong>, <strong style={{ color: 'var(--text-primary)' }}>HTTP 402 payments</strong>, and a <strong style={{ color: 'var(--text-primary)' }}>PEAC-Receipt</strong> to every response-so access, settlement, and compliance are provable by design. Go live in 5 minutes.
             </p>
 
             {/* Brand explainer */}
@@ -219,7 +219,7 @@ export default function HeroSection() {
               style={{
                 fontSize: 'var(--text-base)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-4)',
                 maxWidth: '90%',
                 opacity: isVisible ? 1 : 0,
@@ -227,7 +227,7 @@ export default function HeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.25s'
               }}
             >
-              <strong style={{ color: 'var(--gray-800)' }}>Originary™</strong> builds PEAC-compatible tools and standards. <Link href="/trace" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Trace</Link> is our flagship product.
+              <strong style={{ color: 'var(--text-primary)' }}>Originary™</strong> builds PEAC-compatible tools and standards. <Link href="/trace" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Trace</Link> is our flagship product.
             </p>
 
             {/* Microproof line */}
@@ -235,7 +235,7 @@ export default function HeroSection() {
               style={{
                 fontSize: '11px',
                 lineHeight: 1.7,
-                color: 'var(--gray-400)',
+                color: 'var(--text-muted)',
                 marginBottom: 'var(--space-4)',
                 maxWidth: '90%',
                 opacity: isVisible ? 1 : 0,
@@ -259,23 +259,23 @@ export default function HeroSection() {
                 style={{
                   fontSize: '11px',
                   lineHeight: 1.8,
-                  color: 'var(--gray-400)',
+                  color: 'var(--text-muted)',
                   maxWidth: '90%',
                   fontWeight: 400,
                   letterSpacing: '0.01em',
                   margin: 0
                 }}
               >
-                <span style={{ color: 'var(--gray-500)' }}>ORIGINARY™</span> - Open software. Available for{' '}
+                <span style={{ color: 'var(--text-tertiary)' }}>ORIGINARY™</span> - Open software. Available for{' '}
                 <Link
                   href="/downloads"
                   style={{
-                    color: 'var(--gray-500)',
+                    color: 'var(--text-tertiary)',
                     textDecoration: 'none',
                     borderBottom: '1px solid transparent',
                     transition: 'border-color 0.15s ease'
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
+                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--border-default)'}
                   onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
                 >
                   macOS
@@ -284,12 +284,12 @@ export default function HeroSection() {
                 <Link
                   href="/downloads"
                   style={{
-                    color: 'var(--gray-500)',
+                    color: 'var(--text-tertiary)',
                     textDecoration: 'none',
                     borderBottom: '1px solid transparent',
                     transition: 'border-color 0.15s ease'
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
+                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--border-default)'}
                   onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
                 >
                   Windows
@@ -298,12 +298,12 @@ export default function HeroSection() {
                 <Link
                   href="/downloads"
                   style={{
-                    color: 'var(--gray-500)',
+                    color: 'var(--text-tertiary)',
                     textDecoration: 'none',
                     borderBottom: '1px solid transparent',
                     transition: 'border-color 0.15s ease'
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
+                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--border-default)'}
                   onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
                 >
                   Linux
@@ -314,12 +314,12 @@ export default function HeroSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    color: 'var(--gray-500)',
+                    color: 'var(--text-tertiary)',
                     textDecoration: 'none',
                     borderBottom: '1px solid transparent',
                     transition: 'border-color 0.15s ease'
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
+                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--border-default)'}
                   onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
                 >
                   Download source code
@@ -368,7 +368,7 @@ export default function HeroSection() {
                 </Link>
                 <p style={{
                   fontSize: 'var(--text-xs)',
-                  color: 'var(--gray-500)',
+                  color: 'var(--text-tertiary)',
                   marginTop: 'var(--space-1)',
                   textAlign: 'center'
                 }}>
@@ -385,7 +385,7 @@ export default function HeroSection() {
                   alignItems: 'center',
                   gap: 'var(--space-2)',
                   fontSize: 'var(--text-base)',
-                  color: 'var(--gray-700)'
+                  color: 'var(--text-secondary)'
                 }}
               >
                 <div
@@ -393,8 +393,8 @@ export default function HeroSection() {
                     width: '40px',
                     height: '40px',
                     borderRadius: '50%',
-                    background: 'var(--white)',
-                    border: '1px solid var(--gray-200)',
+                    background: 'var(--surface-elevated)',
+                    border: '1px solid var(--border-default)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -502,8 +502,8 @@ function InteractiveReceiptDemo() {
       <div
         className="receipt-card"
         style={{
-          background: 'var(--white)',
-          border: '1px solid var(--gray-200)',
+          background: 'var(--surface-elevated)',
+          border: '1px solid var(--border-default)',
           borderRadius: 'var(--radius-2xl)',
           padding: 'var(--space-8)',
           boxShadow: isHovered ? 'var(--shadow-2xl)' : 'var(--shadow-xl)',
@@ -544,7 +544,7 @@ function InteractiveReceiptDemo() {
                   width: '60px',
                   height: '60px',
                   borderRadius: '50%',
-                  background: currentStep === index ? 'var(--gradient-brand)' : 'var(--gray-100)',
+                  background: currentStep === index ? 'var(--gradient-brand)' : 'var(--surface-card)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -559,7 +559,7 @@ function InteractiveReceiptDemo() {
               <span
                 style={{
                   fontSize: 'var(--text-xs)',
-                  color: currentStep === index ? 'var(--brand-primary)' : 'var(--gray-500)',
+                  color: currentStep === index ? 'var(--accent-brand)' : 'var(--text-tertiary)',
                   fontWeight: currentStep === index ? 600 : 400,
                   transition: 'all 0.3s ease'
                 }}
@@ -574,7 +574,7 @@ function InteractiveReceiptDemo() {
                     bottom: '-60px',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    background: 'var(--gray-900)',
+                    background: 'var(--text-primary)',
                     color: 'var(--white)',
                     padding: 'var(--space-2) var(--space-3)',
                     borderRadius: 'var(--radius-md)',
@@ -597,7 +597,7 @@ function InteractiveReceiptDemo() {
                       height: 0,
                       borderLeft: '4px solid transparent',
                       borderRight: '4px solid transparent',
-                      borderBottom: '4px solid var(--gray-900)'
+                      borderBottom: '4px solid var(--text-primary)'
                     }}
                   />
                 </div>
@@ -613,7 +613,7 @@ function InteractiveReceiptDemo() {
               left: '30px',
               right: '30px',
               height: '2px',
-              background: 'var(--gray-200)',
+              background: 'var(--border-default)',
               zIndex: 1
             }}
           >
@@ -632,22 +632,22 @@ function InteractiveReceiptDemo() {
         <div
           style={{
             padding: 'var(--space-6)',
-            background: 'var(--gray-50)',
+            background: 'var(--surface-subtle)',
             borderRadius: 'var(--radius-lg)',
             fontFamily: 'var(--font-mono)',
             fontSize: 'var(--text-sm)'
           }}
         >
           <div style={{ marginBottom: 'var(--space-3)', display: 'flex', alignItems: 'center', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-            <span style={{ color: 'var(--gray-500)' }}>Header:</span>
-            <span style={{ color: 'var(--gray-900)', wordBreak: 'break-all', flex: 1 }}>PEAC-Receipt: {sampleToken.substring(0, 20)}...</span>
+            <span style={{ color: 'var(--text-tertiary)' }}>Header:</span>
+            <span style={{ color: 'var(--text-primary)', wordBreak: 'break-all', flex: 1 }}>PEAC-Receipt: {sampleToken.substring(0, 20)}...</span>
             <button
               onClick={handleCopy}
               data-analytics-id="hero_copy_receipt_clicked"
               aria-label="Copy PEAC-Receipt token"
               style={{
                 padding: 'var(--space-1) var(--space-3)',
-                background: 'var(--brand-primary)',
+                background: 'var(--accent-brand)',
                 color: 'var(--white)',
                 border: 'none',
                 borderRadius: 'var(--radius-md)',
@@ -661,33 +661,33 @@ function InteractiveReceiptDemo() {
             </button>
           </div>
           <div style={{ marginBottom: 'var(--space-3)' }}>
-            <span style={{ color: 'var(--gray-500)' }}>Resource:</span>
-            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--gray-900)' }}>/api/content</span>
+            <span style={{ color: 'var(--text-tertiary)' }}>Resource:</span>
+            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--text-primary)' }}>/api/content</span>
           </div>
           <div style={{ marginBottom: 'var(--space-3)' }}>
-            <span style={{ color: 'var(--gray-500)' }}>Amount:</span>
-            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--gray-900)' }}>$0.10 USD</span>
-            <span style={{ marginLeft: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--gray-400)' }}>(example)</span>
+            <span style={{ color: 'var(--text-tertiary)' }}>Amount:</span>
+            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--text-primary)' }}>$0.10 USD</span>
+            <span style={{ marginLeft: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}>(example)</span>
           </div>
           <div style={{ marginBottom: 'var(--space-3)' }}>
-            <span style={{ color: 'var(--gray-500)' }}>Status:</span>
+            <span style={{ color: 'var(--text-tertiary)' }}>Status:</span>
             <span style={{ marginLeft: 'var(--space-2)', color: 'var(--success)', fontWeight: 600 }}>
               Verified ✓
             </span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <div>
-              <span style={{ color: 'var(--gray-500)' }}>kid:</span>
-              <span style={{ marginLeft: 'var(--space-2)', color: 'var(--gray-900)' }}>2025-09-key1</span>
+              <span style={{ color: 'var(--text-tertiary)' }}>kid:</span>
+              <span style={{ marginLeft: 'var(--space-2)', color: 'var(--text-primary)' }}>2025-09-key1</span>
             </div>
             <Link
               href={`/verify?token=${encodeURIComponent(sampleToken)}`}
               data-analytics-id="hero_verify_receipt_clicked"
               style={{
                 padding: 'var(--space-1) var(--space-3)',
-                background: 'var(--white)',
-                color: 'var(--brand-primary)',
-                border: '1px solid var(--brand-primary)',
+                background: 'var(--surface-elevated)',
+                color: 'var(--accent-brand)',
+                border: '1px solid var(--accent-brand)',
                 borderRadius: 'var(--radius-md)',
                 fontSize: 'var(--text-xs)',
                 fontWeight: 600,
@@ -709,7 +709,7 @@ function InteractiveReceiptDemo() {
               position: 'absolute',
               bottom: 'var(--space-4)',
               right: 'var(--space-4)',
-              background: 'var(--gray-900)',
+              background: 'var(--text-primary)',
               color: 'var(--white)',
               padding: 'var(--space-2) var(--space-4)',
               borderRadius: 'var(--radius-md)',

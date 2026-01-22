@@ -36,17 +36,17 @@ export default function ShippingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <NavigationHeader />
-      <main style={{ minHeight: '100vh', background: 'var(--white)', paddingTop: '80px' }} id="main-content">
+      <main style={{ minHeight: '100vh', background: 'var(--surface-elevated)', paddingTop: '80px' }} id="main-content">
         <div className="container" style={{ padding: 'var(--space-32) var(--space-6)' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             {/* Badge */}
             <div style={{
               display: 'inline-flex',
-              background: 'rgba(99, 91, 255, 0.1)',
-              border: '1px solid rgba(99, 91, 255, 0.2)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-6)',
-              color: 'var(--brand-primary)',
+              color: 'var(--accent-brand)',
               fontSize: 'var(--text-sm)',
               fontWeight: 600,
               marginBottom: 'var(--space-6)'
@@ -58,14 +58,14 @@ export default function ShippingPage() {
               fontSize: 'var(--text-5xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-4)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Shipping &amp; Delivery Policy
             </h1>
 
             <p style={{
               fontSize: 'var(--text-lg)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-12)'
             }}>
               Effective from 2025-07-27
@@ -77,19 +77,19 @@ export default function ShippingPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Digital Services - No Physical Shipping
               </h2>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
                 Originary by Poem, Inc. provides exclusively digital services. We do not ship any physical products. All services are delivered electronically via email and online dashboard access.
               </p>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 There are no shipping charges, shipping times, or physical delivery addresses required for Originary services.
@@ -102,19 +102,19 @@ export default function ShippingPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Immediate Digital Delivery
               </h2>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
                 Upon successful payment confirmation, you will receive digital delivery within minutes:
               </p>
               <ul style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 2,
                 paddingLeft: 'var(--space-6)',
                 marginBottom: 'var(--space-4)'
@@ -125,7 +125,7 @@ export default function ShippingPage() {
                 <li><strong>Documentation:</strong> Full access to developer documentation and guides</li>
               </ul>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 All digital assets are delivered to the email address provided during purchase. Ensure your email address is correct before completing payment.
@@ -138,26 +138,26 @@ export default function ShippingPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Service Activation Timeline
               </h2>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
                 <strong>Automated activation (typical):</strong> Within 1-5 minutes of payment confirmation
               </p>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
                 <strong>Manual verification (if required):</strong> Up to 24 hours for complex enterprise orders or flagged transactions
               </p>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 If you do not receive access credentials within 24 hours, check your spam folder and contact support immediately.
@@ -170,19 +170,19 @@ export default function ShippingPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Email Delivery Issues
               </h2>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
                 If you do not receive your access credentials:
               </p>
               <ul style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 2,
                 paddingLeft: 'var(--space-6)',
                 marginBottom: 'var(--space-4)'
@@ -193,7 +193,7 @@ export default function ShippingPage() {
                 <li>Contact support with your order ID or payment confirmation</li>
               </ul>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 We are not responsible for delivery failures caused by incorrect email addresses, spam filters, or email service provider issues.
@@ -206,19 +206,19 @@ export default function ShippingPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Global Availability
               </h2>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
                 Originary services are available globally with specific operations in:
               </p>
               <ul style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 2,
                 paddingLeft: 'var(--space-6)',
                 marginBottom: 'var(--space-4)'
@@ -231,7 +231,7 @@ export default function ShippingPage() {
                 <li>Singapore</li>
               </ul>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 Digital services are accessible worldwide via the internet. No geographic restrictions apply to service access after purchase.
@@ -244,33 +244,33 @@ export default function ShippingPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Delivery Support
               </h2>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-4)'
               }}>
                 For issues with digital delivery or service activation, contact our support team:
               </p>
               <div style={{
-                background: 'var(--gray-50)',
-                border: '1px solid var(--gray-200)',
+                background: 'var(--surface-subtle)',
+                border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-lg)',
                 padding: 'var(--space-4)',
                 marginBottom: 'var(--space-4)'
               }}>
-                <p style={{ color: 'var(--gray-700)', lineHeight: 1.7, marginBottom: 'var(--space-2)' }}>
-                  <strong>Email:</strong> <a href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>contact@originary.xyz</a>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-2)' }}>
+                  <strong>Email:</strong> <a href="mailto:contact@originary.xyz" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600 }}>contact@originary.xyz</a>
                 </p>
-                <p style={{ color: 'var(--gray-700)', lineHeight: 1.7 }}>
-                  <strong>Phone:</strong> <a href="tel:+14157070402" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>+1 415 707 0402</a>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+                  <strong>Phone:</strong> <a href="tel:+14157070402" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600 }}>+1 415 707 0402</a>
                 </p>
               </div>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 Include your order ID, payment confirmation, and registered email address when contacting support.
@@ -283,12 +283,12 @@ export default function ShippingPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Legal Entity
               </h2>
               <p style={{
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 Originary services are operated by <strong>Poem, Inc.</strong>, a Delaware corporation.
@@ -301,7 +301,7 @@ export default function ShippingPage() {
               gap: 'var(--space-4)',
               flexWrap: 'wrap',
               paddingTop: 'var(--space-8)',
-              borderTop: '1px solid var(--gray-200)'
+              borderTop: '1px solid var(--border-default)'
             }}>
               <Link href="/terms" className="btn btn-ghost">Terms of Service</Link>
               <Link href="/privacy" className="btn btn-ghost">Privacy Policy</Link>

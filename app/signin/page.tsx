@@ -52,7 +52,7 @@ export default function SignIn() {
             <div className="card" style={{ maxWidth: '480px', margin: '0 auto' }}>
               <div style={{ textAlign: 'center', marginBottom: 'var(--space-8)' }}>
                 <h1 style={{ marginBottom: 'var(--space-4)' }}>Welcome back</h1>
-                <p style={{ color: 'var(--gray-600)' }}>
+                <p style={{ color: 'var(--text-secondary)' }}>
                   Sign in to access your PEAC dashboard and manage your policies
                 </p>
               </div>
@@ -63,7 +63,7 @@ export default function SignIn() {
                     display: 'block',
                     fontSize: 'var(--text-sm)',
                     fontWeight: 600,
-                    color: 'var(--gray-700)',
+                    color: 'var(--text-secondary)',
                     marginBottom: 'var(--space-2)'
                   }}>
                     Email address
@@ -76,7 +76,7 @@ export default function SignIn() {
                         width: '100%',
                         padding: 'var(--space-3) var(--space-4)',
                         paddingLeft: 'var(--space-12)',
-                        border: '1px solid var(--gray-300)',
+                        border: '1px solid var(--border-default)',
                         borderRadius: 'var(--radius-lg)',
                         fontSize: 'var(--text-base)',
                         transition: 'all var(--duration-200) var(--ease-out)'
@@ -87,7 +87,7 @@ export default function SignIn() {
                       left: 'var(--space-4)',
                       top: '50%',
                       transform: 'translateY(-50%)',
-                      color: 'var(--gray-400)'
+                      color: 'var(--text-muted)'
                     }} />
                   </div>
                 </div>
@@ -97,7 +97,7 @@ export default function SignIn() {
                     display: 'block',
                     fontSize: 'var(--text-sm)',
                     fontWeight: 600,
-                    color: 'var(--gray-700)',
+                    color: 'var(--text-secondary)',
                     marginBottom: 'var(--space-2)'
                   }}>
                     Password
@@ -110,7 +110,7 @@ export default function SignIn() {
                         width: '100%',
                         padding: 'var(--space-3) var(--space-4)',
                         paddingLeft: 'var(--space-12)',
-                        border: '1px solid var(--gray-300)',
+                        border: '1px solid var(--border-default)',
                         borderRadius: 'var(--radius-lg)',
                         fontSize: 'var(--text-base)',
                         transition: 'all var(--duration-200) var(--ease-out)'
@@ -121,7 +121,7 @@ export default function SignIn() {
                       left: 'var(--space-4)',
                       top: '50%',
                       transform: 'translateY(-50%)',
-                      color: 'var(--gray-400)'
+                      color: 'var(--text-muted)'
                     }} />
                   </div>
                 </div>
@@ -134,7 +134,7 @@ export default function SignIn() {
                 }}>
                   <label style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <input type="checkbox" />
-                    <span style={{ color: 'var(--gray-600)' }}>Remember me</span>
+                    <span style={{ color: 'var(--text-secondary)' }}>Remember me</span>
                   </label>
                 </div>
 
@@ -148,11 +148,11 @@ export default function SignIn() {
                 textAlign: 'center',
                 marginTop: 'var(--space-6)',
                 paddingTop: 'var(--space-6)',
-                borderTop: '1px solid var(--gray-200)'
+                borderTop: '1px solid var(--border-default)'
               }}>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                   Need an account?{' '}
-                  <Link href="/pricing" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>
+                  <Link href="/pricing" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600 }}>
                     View pricing
                   </Link>
                 </p>
@@ -166,7 +166,7 @@ export default function SignIn() {
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)'
               }}>
                 Manage your agentic infrastructure with enterprise-grade tools and real-time analytics.
@@ -200,7 +200,7 @@ export default function SignIn() {
                       width: '24px',
                       height: '24px',
                       borderRadius: '50%',
-                      background: 'var(--brand-primary)',
+                      background: 'var(--accent-brand)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -211,7 +211,7 @@ export default function SignIn() {
                     </div>
                     <div>
                       <h4 style={{ marginBottom: 'var(--space-1)', fontWeight: 600 }}>{feature.title}</h4>
-                      <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>{feature.description}</p>
+                      <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>{feature.description}</p>
                     </div>
                   </div>
                 ))}

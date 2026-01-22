@@ -31,7 +31,7 @@ export default function CloudPage() {
         <section style={{
           paddingTop: 'calc(var(--space-32) + 60px)',
           paddingBottom: 'var(--space-24)',
-          background: 'var(--white)'
+          background: 'var(--surface-elevated)'
         }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
@@ -39,13 +39,13 @@ export default function CloudPage() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
                 marginBottom: 'var(--space-6)',
                 fontSize: 'var(--text-sm)',
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 fontWeight: 600
               }}>
                 <Cloud size={16} />
@@ -58,7 +58,7 @@ export default function CloudPage() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Originary Cloud
               </h1>
@@ -66,7 +66,7 @@ export default function CloudPage() {
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-6)'
               }}>
                 Managed PEAC verification, attested receipts, and compliance bundles. All the power of the open protocol without the operational overhead.
@@ -87,27 +87,27 @@ export default function CloudPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    color: 'var(--brand-primary)',
+                    color: 'var(--accent-brand)',
                     textDecoration: 'underline'
                   }}
                 >
                   Self-host on GitHub
                 </a>
-                <span style={{ color: 'var(--gray-400)' }}>•</span>
+                <span style={{ color: 'var(--text-muted)' }}>•</span>
                 <Link
                   href="/pricing"
                   style={{
-                    color: 'var(--brand-primary)',
+                    color: 'var(--accent-brand)',
                     textDecoration: 'underline'
                   }}
                 >
                   View pricing
                 </Link>
-                <span style={{ color: 'var(--gray-400)' }}>•</span>
+                <span style={{ color: 'var(--text-muted)' }}>•</span>
                 <a
                   href="mailto:contact@originary.xyz?subject=Cloud%20Inquiry"
                   style={{
-                    color: 'var(--brand-primary)',
+                    color: 'var(--accent-brand)',
                     textDecoration: 'underline'
                   }}
                 >
@@ -132,20 +132,20 @@ export default function CloudPage() {
                   return (
                     <div key={idx} className="card" style={{
                       padding: 'var(--space-6)',
-                      background: 'var(--white)',
-                      border: '1px solid var(--gray-200)',
+                      background: 'var(--surface-elevated)',
+                      border: '1px solid var(--border-default)',
                       borderRadius: 'var(--radius-xl)'
                     }}>
                       <div style={{
                         width: '40px',
                         height: '40px',
                         borderRadius: 'var(--radius-lg)',
-                        background: 'rgba(99, 91, 255, 0.1)',
+                        background: 'var(--accent-brand-subtle)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         marginBottom: 'var(--space-3)',
-                        color: 'var(--brand-primary)'
+                        color: 'var(--accent-brand)'
                       }}>
                         <Icon size={20} />
                       </div>
@@ -153,13 +153,13 @@ export default function CloudPage() {
                         fontSize: 'var(--text-base)',
                         fontWeight: 600,
                         marginBottom: 'var(--space-2)',
-                        color: 'var(--gray-900)'
+                        color: 'var(--text-primary)'
                       }}>
                         {benefit.title}
                       </h3>
                       <p style={{
                         fontSize: 'var(--text-sm)',
-                        color: 'var(--gray-600)',
+                        color: 'var(--text-secondary)',
                         lineHeight: 1.6,
                         margin: 0
                       }}>
@@ -174,7 +174,7 @@ export default function CloudPage() {
               <div className="card" style={{
                 padding: 'var(--space-8)',
                 background: 'var(--gradient-mesh)',
-                border: '1px solid var(--gray-200)',
+                border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-2xl)',
                 maxWidth: '500px',
                 margin: '0 auto'
@@ -183,13 +183,13 @@ export default function CloudPage() {
                   fontSize: 'var(--text-2xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-2)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Apply for early access
                 </h2>
                 <p style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-6)'
                 }}>
                   We prioritize publishers, API providers, and agent platforms integrating PEAC and x402 / i402.
@@ -210,7 +210,7 @@ export default function CloudPage() {
                     required
                     style={{
                       padding: 'var(--space-3) var(--space-4)',
-                      border: '1px solid var(--gray-300)',
+                      border: '1px solid var(--border-default)',
                       borderRadius: 'var(--radius-lg)',
                       fontSize: 'var(--text-base)',
                       fontFamily: 'inherit'
@@ -223,7 +223,7 @@ export default function CloudPage() {
                     required
                     style={{
                       padding: 'var(--space-3) var(--space-4)',
-                      border: '1px solid var(--gray-300)',
+                      border: '1px solid var(--border-default)',
                       borderRadius: 'var(--radius-lg)',
                       fontSize: 'var(--text-base)',
                       fontFamily: 'inherit'
@@ -236,7 +236,7 @@ export default function CloudPage() {
                     required
                     style={{
                       padding: 'var(--space-3) var(--space-4)',
-                      border: '1px solid var(--gray-300)',
+                      border: '1px solid var(--border-default)',
                       borderRadius: 'var(--radius-lg)',
                       fontSize: 'var(--text-base)',
                       fontFamily: 'inherit'
@@ -261,7 +261,7 @@ export default function CloudPage() {
         {/* How It Works */}
         <section style={{
           padding: 'var(--space-24) 0',
-          background: 'var(--gray-50)'
+          background: 'var(--surface-subtle)'
         }}>
           <div className="container">
             <div style={{ maxWidth: '900px', margin: '0 auto' }}>
@@ -270,7 +270,7 @@ export default function CloudPage() {
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-12)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 How it works
               </h2>
@@ -289,7 +289,7 @@ export default function CloudPage() {
                       width: '48px',
                       height: '48px',
                       borderRadius: '50%',
-                      background: 'var(--brand-primary)',
+                      background: 'var(--accent-brand)',
                       color: 'var(--white)',
                       display: 'flex',
                       alignItems: 'center',
@@ -304,13 +304,13 @@ export default function CloudPage() {
                       fontSize: 'var(--text-lg)',
                       fontWeight: 600,
                       marginBottom: 'var(--space-2)',
-                      color: 'var(--gray-900)'
+                      color: 'var(--text-primary)'
                     }}>
                       {item.title}
                     </h3>
                     <p style={{
                       fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-600)',
+                      color: 'var(--text-secondary)',
                       lineHeight: 1.6
                     }}>
                       {item.desc}
@@ -325,8 +325,8 @@ export default function CloudPage() {
         {/* Built on PEAC */}
         <section style={{
           padding: 'var(--space-24) 0',
-          background: 'var(--white)',
-          borderTop: '1px solid var(--gray-200)'
+          background: 'var(--surface-elevated)',
+          borderTop: '1px solid var(--border-default)'
         }}>
           <div className="container">
             <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
@@ -334,14 +334,14 @@ export default function CloudPage() {
                 fontSize: 'var(--text-3xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Built on PEAC Protocol
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-6)'
               }}>
                 Originary Cloud uses the open PEAC Protocol for verifiable interaction records, offline verification, and cross-platform compatibility.
@@ -361,7 +361,7 @@ export default function CloudPage() {
         {/* Compare Cloud vs Self-hosting */}
         <section style={{
           padding: 'var(--space-24) 0',
-          background: 'var(--gray-50)'
+          background: 'var(--surface-subtle)'
         }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -370,23 +370,23 @@ export default function CloudPage() {
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-12)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Cloud vs Self-hosting
               </h2>
               <div className="card" style={{
                 padding: 0,
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
+                background: 'var(--surface-elevated)',
+                border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-xl)',
                 overflow: 'hidden'
               }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                   <thead>
-                    <tr style={{ background: 'var(--gray-50)', borderBottom: '1px solid var(--gray-200)' }}>
-                      <th style={{ padding: 'var(--space-4)', textAlign: 'left', fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-700)' }}>Feature</th>
-                      <th style={{ padding: 'var(--space-4)', textAlign: 'center', fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-700)' }}>Self-host (OSS)</th>
-                      <th style={{ padding: 'var(--space-4)', textAlign: 'center', fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--brand-primary)' }}>Cloud</th>
+                    <tr style={{ background: 'var(--surface-subtle)', borderBottom: '1px solid var(--border-default)' }}>
+                      <th style={{ padding: 'var(--space-4)', textAlign: 'left', fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-secondary)' }}>Feature</th>
+                      <th style={{ padding: 'var(--space-4)', textAlign: 'center', fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-secondary)' }}>Self-host (OSS)</th>
+                      <th style={{ padding: 'var(--space-4)', textAlign: 'center', fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--accent-brand)' }}>Cloud</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -400,13 +400,13 @@ export default function CloudPage() {
                       { feature: 'Webhooks / Slack', oss: false, cloud: true },
                       { feature: 'SLA & support', oss: false, cloud: true }
                     ].map((row, idx) => (
-                      <tr key={idx} style={{ borderBottom: idx < 7 ? '1px solid var(--gray-100)' : 'none' }}>
-                        <td style={{ padding: 'var(--space-4)', fontSize: 'var(--text-sm)', color: 'var(--gray-900)' }}>{row.feature}</td>
+                      <tr key={idx} style={{ borderBottom: idx < 7 ? '1px solid var(--border-subtle)' : 'none' }}>
+                        <td style={{ padding: 'var(--space-4)', fontSize: 'var(--text-sm)', color: 'var(--text-primary)' }}>{row.feature}</td>
                         <td style={{ padding: 'var(--space-4)', textAlign: 'center', fontSize: 'var(--text-sm)' }}>
                           {row.oss ? <CheckCircle size={18} style={{ color: 'var(--success)', margin: '0 auto' }} /> : '-'}
                         </td>
                         <td style={{ padding: 'var(--space-4)', textAlign: 'center', fontSize: 'var(--text-sm)' }}>
-                          {row.cloud ? <CheckCircle size={18} style={{ color: 'var(--brand-primary)', margin: '0 auto' }} /> : '-'}
+                          {row.cloud ? <CheckCircle size={18} style={{ color: 'var(--accent-brand)', margin: '0 auto' }} /> : '-'}
                         </td>
                       </tr>
                     ))}

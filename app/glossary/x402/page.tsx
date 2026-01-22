@@ -34,10 +34,10 @@ export default function Page() {
     <>
       <NavigationHeader />
       <main className="max-w-3xl mx-auto px-4 py-10">
-        <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)', color: 'var(--gray-600)' }}>
-          <Link href="/glossary/" style={{ textDecoration: 'none', color: 'var(--gray-600)' }}>Glossary</Link>
+        <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)', color: 'var(--text-secondary)' }}>
+          <Link href="/glossary/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
           {' '}/{' '}
-          <span style={{ color: 'var(--gray-900)' }}>x402</span>
+          <span style={{ color: 'var(--text-primary)' }}>x402</span>
         </nav>
 
         <h1 className="text-4xl font-bold mb-4">x402</h1>

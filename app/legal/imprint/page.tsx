@@ -24,11 +24,11 @@ export default function ImprintPage() {
               <div
                 style={{
                   display: 'inline-flex',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-6)',
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600,
                   marginBottom: 'var(--space-6)'
@@ -44,78 +44,78 @@ export default function ImprintPage() {
                   lineHeight: 1.1,
                   letterSpacing: '-0.04em',
                   marginBottom: 'var(--space-4)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 Imprint
               </h1>
 
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
                 Company registration and contact information
               </p>
             </div>
 
             <div className="card" style={{ marginBottom: 'var(--space-8)', textAlign: 'left' }}>
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--gray-900)' }}>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--text-primary)' }}>
                 Company Information
               </h2>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
                 <div>
-                  <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-500)', marginBottom: 'var(--space-2)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-tertiary)', marginBottom: 'var(--space-2)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Legal Entity
                   </h3>
-                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-900)', lineHeight: 1.7 }}>
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-primary)', lineHeight: 1.7 }}>
                     <strong>Poem, Inc.</strong>
                   </p>
                 </div>
 
                 <div>
-                  <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-500)', marginBottom: 'var(--space-2)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-tertiary)', marginBottom: 'var(--space-2)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Jurisdiction
                   </h3>
-                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-900)', lineHeight: 1.7 }}>
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-primary)', lineHeight: 1.7 }}>
                     Delaware, United States
                   </p>
                 </div>
 
                 <div>
-                  <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-500)', marginBottom: 'var(--space-2)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-tertiary)', marginBottom: 'var(--space-2)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Location
                   </h3>
-                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-900)', lineHeight: 1.7 }}>
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-primary)', lineHeight: 1.7 }}>
                     Dover, DE 19904, United States
                   </p>
                 </div>
 
                 <div>
-                  <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-500)', marginBottom: 'var(--space-2)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-tertiary)', marginBottom: 'var(--space-2)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Contact
                   </h3>
-                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-900)', lineHeight: 1.7 }}>
-                    Email: <a href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>contact@originary.xyz</a><br />
-                    Phone: <a href="tel:+14157070402" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>+1 415-707-0402</a>
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-primary)', lineHeight: 1.7 }}>
+                    Email: <a href="mailto:contact@originary.xyz" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>contact@originary.xyz</a><br />
+                    Phone: <a href="tel:+14157070402" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>+1 415-707-0402</a>
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="card" style={{ textAlign: 'left', background: 'var(--gray-50)' }}>
-              <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+            <div className="card" style={{ textAlign: 'left', background: 'var(--surface-subtle)' }}>
+              <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                 Brand and trademarks
               </h2>
-              <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-700)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                 <strong>Originary™</strong> is a brand and trademark of Poem, Inc.
               </p>
-              <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
+              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                 <strong>PEAC Protocol</strong> is an open-source standard stewarded by Originary.
               </p>
             </div>
 
             <div style={{ marginTop: 'var(--space-12)', textAlign: 'center' }}>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-4)' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
                 For legal inquiries, please contact us at{' '}
-                <a href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)', textDecoration: 'none' }}>
+                <a href="mailto:contact@originary.xyz" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>
                   contact@originary.xyz
                 </a>
               </p>

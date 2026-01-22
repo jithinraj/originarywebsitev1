@@ -389,7 +389,7 @@ export default function ReceiptsPage() {
         .receipts-hero-bg {
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
+          background: linear-gradient(180deg, var(--surface-subtle) 0%, var(--surface-elevated) 100%);
           z-index: 0;
         }
 
@@ -397,8 +397,8 @@ export default function ReceiptsPage() {
           position: absolute;
           inset: 0;
           background-image:
-            linear-gradient(rgba(99, 91, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(99, 91, 255, 0.03) 1px, transparent 1px);
+            linear-gradient(var(--accent-brand-faint) 1px, transparent 1px),
+            linear-gradient(90deg, var(--accent-brand-faint) 1px, transparent 1px);
           background-size: 60px 60px;
           z-index: 0;
         }
@@ -417,20 +417,20 @@ export default function ReceiptsPage() {
           align-items: center;
           gap: 8px;
           padding: 6px 16px;
-          background: rgba(99, 91, 255, 0.08);
-          border: 1px solid rgba(99, 91, 255, 0.15);
+          background: var(--accent-brand-subtle);
+          border: 1px solid var(--accent-brand-muted);
           border-radius: 100px;
           font-size: 11px;
           font-weight: 600;
           letter-spacing: 0.1em;
-          color: var(--brand-primary);
+          color: var(--accent-brand);
           margin-bottom: var(--space-6);
         }
 
         .receipts-badge-dot {
           width: 6px;
           height: 6px;
-          background: var(--brand-primary);
+          background: var(--accent-brand);
           border-radius: 50%;
           animation: pulse 2s ease-in-out infinite;
         }
@@ -445,12 +445,12 @@ export default function ReceiptsPage() {
           font-weight: 700;
           line-height: 1.1;
           letter-spacing: -0.03em;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-6);
         }
 
         .receipts-headline-gradient {
-          background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+          background: linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-secondary) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -459,7 +459,7 @@ export default function ReceiptsPage() {
         .receipts-subhead {
           font-size: var(--text-lg);
           line-height: 1.7;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin-bottom: var(--space-8);
           max-width: 500px;
         }
@@ -475,14 +475,14 @@ export default function ReceiptsPage() {
           align-items: center;
           gap: var(--space-3);
           font-size: 12px;
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           font-weight: 500;
         }
 
         .receipts-trust-dot {
           width: 3px;
           height: 3px;
-          background: var(--gray-300);
+          background: var(--border-default);
           border-radius: 50%;
         }
 
@@ -494,7 +494,7 @@ export default function ReceiptsPage() {
         /* Features */
         .receipts-features {
           padding: clamp(60px, 10vh, 100px) 0;
-          background: var(--white);
+          background: var(--surface-elevated);
         }
 
         .receipts-section-header {
@@ -505,14 +505,14 @@ export default function ReceiptsPage() {
         .receipts-section-title {
           font-size: clamp(1.75rem, 4vw, 2.5rem);
           font-weight: 700;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-4);
           letter-spacing: -0.02em;
         }
 
         .receipts-section-subtitle {
           font-size: var(--text-lg);
-          color: var(--gray-600);
+          color: var(--text-secondary);
           max-width: 600px;
           margin: 0 auto;
           line-height: 1.7;
@@ -527,8 +527,8 @@ export default function ReceiptsPage() {
         .receipts-feature-card {
           position: relative;
           padding: var(--space-8);
-          background: var(--white);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-2xl);
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           overflow: hidden;
@@ -571,20 +571,20 @@ export default function ReceiptsPage() {
         .receipts-feature-title {
           font-size: var(--text-lg);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-2);
         }
 
         .receipts-feature-desc {
           font-size: var(--text-sm);
-          color: var(--gray-600);
+          color: var(--text-secondary);
           line-height: 1.6;
         }
 
         /* Structure */
         .receipts-structure {
           padding: clamp(60px, 10vh, 100px) 0;
-          background: var(--gray-50);
+          background: var(--surface-subtle);
         }
 
         .receipts-structure-layout {
@@ -623,12 +623,12 @@ export default function ReceiptsPage() {
 
         .receipts-anatomy-item strong {
           font-size: var(--text-base);
-          color: var(--gray-900);
+          color: var(--text-primary);
         }
 
         .receipts-anatomy-item span {
           font-size: var(--text-sm);
-          color: var(--gray-500);
+          color: var(--text-tertiary);
         }
 
         .receipts-code-container {
@@ -672,7 +672,7 @@ export default function ReceiptsPage() {
         .receipts-code-badge {
           font-size: 10px;
           padding: 3px 8px;
-          background: rgba(99, 91, 255, 0.2);
+          background: var(--accent-brand-muted);
           color: #635BFF;
           border-radius: 4px;
           font-weight: 600;
@@ -694,7 +694,7 @@ export default function ReceiptsPage() {
         /* Use Cases */
         .receipts-usecases {
           padding: clamp(60px, 10vh, 100px) 0;
-          background: var(--white);
+          background: var(--surface-elevated);
         }
 
         .receipts-usecases-grid {
@@ -705,38 +705,38 @@ export default function ReceiptsPage() {
 
         .receipts-usecase-card {
           padding: var(--space-6);
-          background: var(--gray-50);
+          background: var(--surface-subtle);
           border-radius: var(--radius-xl);
           transition: all 0.2s ease;
         }
 
         .receipts-usecase-card:hover {
-          background: var(--white);
+          background: var(--surface-elevated);
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
 
         .receipts-usecase-icon {
-          color: var(--brand-primary);
+          color: var(--accent-brand);
           margin-bottom: var(--space-3);
         }
 
         .receipts-usecase-title {
           font-size: var(--text-base);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-2);
         }
 
         .receipts-usecase-desc {
           font-size: var(--text-sm);
-          color: var(--gray-600);
+          color: var(--text-secondary);
           line-height: 1.6;
         }
 
         /* Flow */
         .receipts-flow {
           padding: clamp(60px, 10vh, 100px) 0;
-          background: var(--gray-50);
+          background: var(--surface-subtle);
         }
 
         .receipts-flow-steps {
@@ -757,7 +757,7 @@ export default function ReceiptsPage() {
         .receipts-flow-number {
           width: 48px;
           height: 48px;
-          background: var(--brand-primary);
+          background: var(--accent-brand);
           color: white;
           border-radius: 50%;
           display: flex;
@@ -771,20 +771,20 @@ export default function ReceiptsPage() {
         .receipts-flow-step h3 {
           font-size: var(--text-base);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-2);
         }
 
         .receipts-flow-step p {
           font-size: var(--text-sm);
-          color: var(--gray-600);
+          color: var(--text-secondary);
           line-height: 1.6;
         }
 
         .receipts-flow-connector {
           width: 60px;
           height: 2px;
-          background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+          background: linear-gradient(90deg, var(--accent-brand), var(--accent-secondary));
           margin-top: 24px;
           flex-shrink: 0;
         }
@@ -792,15 +792,15 @@ export default function ReceiptsPage() {
         /* Disclaimer */
         .receipts-disclaimer {
           padding: var(--space-12) 0;
-          background: var(--white);
+          background: var(--surface-elevated);
         }
 
         .receipts-disclaimer-box {
           display: flex;
           gap: var(--space-4);
           padding: var(--space-6);
-          background: var(--gray-50);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-subtle);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-xl);
           max-width: 800px;
           margin: 0 auto;
@@ -808,19 +808,19 @@ export default function ReceiptsPage() {
 
         .receipts-disclaimer-box svg {
           flex-shrink: 0;
-          color: var(--gray-400);
+          color: var(--text-muted);
         }
 
         .receipts-disclaimer-box strong {
           display: block;
           font-size: var(--text-sm);
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-1);
         }
 
         .receipts-disclaimer-box p {
           font-size: var(--text-sm);
-          color: var(--gray-600);
+          color: var(--text-secondary);
           line-height: 1.6;
           margin: 0;
         }
@@ -828,7 +828,7 @@ export default function ReceiptsPage() {
         /* CTA */
         .receipts-cta {
           padding: clamp(60px, 10vh, 100px) 0;
-          background: var(--white);
+          background: var(--surface-elevated);
         }
 
         .receipts-cta-card {
@@ -978,7 +978,7 @@ function ReceiptVisual() {
         .receipt-card {
           position: relative;
           background: white;
-          border: 1px solid var(--gray-200);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-2xl);
           padding: var(--space-6);
           box-shadow:
@@ -993,7 +993,7 @@ function ReceiptVisual() {
           right: -50%;
           width: 200%;
           height: 200%;
-          background: radial-gradient(circle at 30% 30%, rgba(99, 91, 255, 0.08) 0%, transparent 50%);
+          background: radial-gradient(circle at 30% 30%, var(--accent-brand-subtle) 0%, transparent 50%);
           pointer-events: none;
         }
 
@@ -1002,7 +1002,7 @@ function ReceiptVisual() {
           align-items: center;
           gap: var(--space-3);
           padding-bottom: var(--space-4);
-          border-bottom: 1px solid var(--gray-100);
+          border-bottom: 1px solid var(--border-subtle);
           margin-bottom: var(--space-4);
           position: relative;
         }
@@ -1010,7 +1010,7 @@ function ReceiptVisual() {
         .receipt-icon {
           width: 40px;
           height: 40px;
-          background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+          background: linear-gradient(135deg, var(--accent-brand), var(--accent-secondary));
           border-radius: var(--radius-lg);
           display: flex;
           align-items: center;
@@ -1028,7 +1028,7 @@ function ReceiptVisual() {
         .receipt-label {
           font-size: 11px;
           font-weight: 600;
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           text-transform: uppercase;
           letter-spacing: 0.05em;
         }
@@ -1036,7 +1036,7 @@ function ReceiptVisual() {
         .receipt-id {
           font-size: 13px;
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           font-family: var(--font-mono);
         }
 
@@ -1067,18 +1067,18 @@ function ReceiptVisual() {
 
         .receipt-key {
           font-size: 13px;
-          color: var(--gray-500);
+          color: var(--text-tertiary);
         }
 
         .receipt-value {
           font-size: 13px;
           font-weight: 500;
-          color: var(--gray-900);
+          color: var(--text-primary);
           font-family: var(--font-mono);
         }
 
         .receipt-hash {
-          color: var(--brand-primary);
+          color: var(--accent-brand);
         }
 
         .receipt-payment {
@@ -1088,7 +1088,7 @@ function ReceiptVisual() {
         .receipt-footer {
           margin-top: var(--space-4);
           padding-top: var(--space-4);
-          border-top: 1px solid var(--gray-100);
+          border-top: 1px solid var(--border-subtle);
           position: relative;
         }
 
@@ -1097,11 +1097,11 @@ function ReceiptVisual() {
           align-items: center;
           gap: 6px;
           font-size: 11px;
-          color: var(--gray-500);
+          color: var(--text-tertiary);
         }
 
         .receipt-sig svg {
-          color: var(--brand-primary);
+          color: var(--accent-brand);
         }
       `}</style>
     </div>

@@ -146,9 +146,9 @@ export default function SocialProofSection() {
       className="social-proof-section"
       style={{
         padding: 'var(--section-padding) 0',
-        background: 'var(--white)',
-        borderTop: '1px solid var(--gray-100)',
-        borderBottom: '1px solid var(--gray-100)'
+        background: 'var(--surface-elevated)',
+        borderTop: '1px solid var(--border-subtle)',
+        borderBottom: '1px solid var(--border-subtle)'
       }}
     >
       <div className="container">
@@ -177,7 +177,7 @@ export default function SocialProofSection() {
                   fontSize: 'clamp(2rem, 4vw, 2.5rem)',
                   fontWeight: 700,
                   letterSpacing: '-0.03em',
-                  color: 'var(--gray-900)',
+                  color: 'var(--text-primary)',
                   lineHeight: 1,
                   marginBottom: 'var(--space-2)'
                 }}
@@ -187,7 +187,7 @@ export default function SocialProofSection() {
               <div
                 style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-500)',
+                  color: 'var(--text-tertiary)',
                   fontWeight: 500
                 }}
               >
@@ -207,7 +207,7 @@ export default function SocialProofSection() {
             className="text-label"
             style={{
               fontSize: 'var(--text-sm)',
-              color: 'var(--gray-500)',
+              color: 'var(--text-tertiary)',
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
               fontWeight: 600
@@ -269,7 +269,7 @@ export default function SocialProofSection() {
               <span
                 style={{
                   fontSize: 'var(--text-xs)',
-                  color: 'var(--gray-500)',
+                  color: 'var(--text-tertiary)',
                   fontWeight: 600,
                   textTransform: 'uppercase',
                   letterSpacing: '0.05em'
@@ -295,7 +295,7 @@ export default function SocialProofSection() {
           <p
             style={{
               fontSize: 'var(--text-xs)',
-              color: 'var(--gray-500)',
+              color: 'var(--text-tertiary)',
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
               fontWeight: 600
@@ -315,22 +315,22 @@ export default function SocialProofSection() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   padding: 'var(--space-2) var(--space-4)',
-                  background: 'var(--gray-50)',
-                  border: '1px solid var(--gray-200)',
+                  background: 'var(--surface-subtle)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: 'var(--radius-full)',
                   fontSize: 'var(--text-xs)',
                   fontWeight: 600,
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   textDecoration: 'none',
                   transition: 'all 0.2s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--brand-primary)'
-                  e.currentTarget.style.color = 'var(--brand-primary)'
+                  e.currentTarget.style.borderColor = 'var(--accent-brand)'
+                  e.currentTarget.style.color = 'var(--accent-brand)'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--gray-200)'
-                  e.currentTarget.style.color = 'var(--gray-700)'
+                  e.currentTarget.style.borderColor = 'var(--border-default)'
+                  e.currentTarget.style.color = 'var(--text-secondary)'
                 }}
               >
                 {standard.name}
@@ -343,12 +343,12 @@ export default function SocialProofSection() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   padding: 'var(--space-2) var(--space-4)',
-                  background: 'var(--gray-50)',
-                  border: '1px solid var(--gray-200)',
+                  background: 'var(--surface-subtle)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: 'var(--radius-full)',
                   fontSize: 'var(--text-xs)',
                   fontWeight: 600,
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   cursor: 'help'
                 }}
               >

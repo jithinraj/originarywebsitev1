@@ -21,21 +21,21 @@ export default function Dashboard() {
     <div className="wrap">
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-3)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-6)',
                 marginBottom: 'var(--space-6)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)'
+                color: 'var(--accent-brand)'
               }}>
                 <span>DASHBOARD</span>
               </div>
@@ -46,13 +46,13 @@ export default function Dashboard() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Welcome to your Dashboard
               </h1>
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)',
                 maxWidth: '600px',
                 margin: '0 auto var(--space-8) auto',

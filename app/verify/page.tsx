@@ -76,16 +76,16 @@ function VerifyContent() {
     <div className="wrap">
       <NavigationHeader />
       <main id="main-content" role="main" style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container" style={{ maxWidth: '700px', margin: '0 auto' }}>
             {/* Badge */}
             <div style={{
               display: 'inline-flex',
-              background: 'rgba(99, 91, 255, 0.1)',
-              border: '1px solid rgba(99, 91, 255, 0.2)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-6)',
-              color: 'var(--brand-primary)',
+              color: 'var(--accent-brand)',
               fontSize: 'var(--text-sm)',
               fontWeight: 600,
               marginBottom: 'var(--space-6)'
@@ -97,14 +97,14 @@ function VerifyContent() {
               fontSize: 'var(--text-5xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-6)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Verify Receipt
             </h1>
 
             <p style={{
               fontSize: 'var(--text-xl)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
@@ -117,7 +117,7 @@ function VerifyContent() {
                 display: 'block',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-2)'
               }}>
                 PEAC-Receipt Token
@@ -130,7 +130,7 @@ function VerifyContent() {
                   width: '100%',
                   minHeight: '120px',
                   padding: 'var(--space-3)',
-                  border: '1px solid var(--gray-300)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: 'var(--radius-lg)',
                   fontSize: 'var(--text-sm)',
                   fontFamily: 'var(--font-mono)',
@@ -189,7 +189,7 @@ function VerifyContent() {
                     </h3>
 
                     <p style={{
-                      color: 'var(--gray-700)',
+                      color: 'var(--text-secondary)',
                       marginBottom: result.details ? 'var(--space-4)' : 0
                     }}>
                       {result.message}
@@ -197,7 +197,7 @@ function VerifyContent() {
 
                     {result.details && (
                       <div style={{
-                        background: 'var(--white)',
+                        background: 'var(--surface-elevated)',
                         padding: 'var(--space-4)',
                         borderRadius: 'var(--radius-lg)',
                         fontSize: 'var(--text-sm)',
@@ -230,8 +230,8 @@ function VerifyContent() {
 
             {/* Info */}
             <div style={{
-              background: 'var(--gray-50)',
-              border: '1px solid var(--gray-200)',
+              background: 'var(--surface-subtle)',
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-xl)',
               padding: 'var(--space-6)'
             }}>
@@ -239,22 +239,22 @@ function VerifyContent() {
                 fontSize: 'var(--text-lg)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-3)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 About Receipt Verification
               </h3>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-3)' }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-3)' }}>
                 This verification tool validates PEAC-Receipt tokens by checking JWT structure and signature. In production, verification includes:
               </p>
-              <ul style={{ color: 'var(--gray-600)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
+              <ul style={{ color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
                 <li>Ed25519 signature verification using public keys</li>
                 <li>Issuer domain validation</li>
                 <li>Timestamp freshness checks</li>
                 <li>Payment evidence validation</li>
                 <li>Policy constraint verification</li>
               </ul>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginTop: 'var(--space-4)' }}>
-                Learn more in our <Link href="/docs/receipts" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>documentation</Link>.
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginTop: 'var(--space-4)' }}>
+                Learn more in our <Link href="/docs/receipts" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600 }}>documentation</Link>.
               </p>
             </div>
 
@@ -274,16 +274,16 @@ function VerifySkeleton() {
     <div className="wrap">
       <NavigationHeader />
       <main role="main" aria-label="Verify PEAC-Receipt" style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container" style={{ maxWidth: '700px', margin: '0 auto' }}>
             {/* Real content for SSR/SEO */}
             <div style={{
               display: 'inline-flex',
-              background: 'rgba(99, 91, 255, 0.1)',
-              border: '1px solid rgba(99, 91, 255, 0.2)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-6)',
-              color: 'var(--brand-primary)',
+              color: 'var(--accent-brand)',
               fontSize: 'var(--text-sm)',
               fontWeight: 600,
               marginBottom: 'var(--space-6)'
@@ -295,14 +295,14 @@ function VerifySkeleton() {
               fontSize: 'var(--text-5xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-6)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Verify Receipt
             </h1>
 
             <p style={{
               fontSize: 'var(--text-xl)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
@@ -315,7 +315,7 @@ function VerifySkeleton() {
                 display: 'block',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-2)'
               }}>
                 PEAC-Receipt Token
@@ -323,7 +323,7 @@ function VerifySkeleton() {
               <div style={{
                 width: '100%',
                 height: '120px',
-                background: 'var(--gray-100)',
+                background: 'var(--surface-card)',
                 borderRadius: 'var(--radius-lg)',
                 marginBottom: 'var(--space-4)',
                 animation: 'pulse 1.5s ease-in-out infinite'
@@ -331,7 +331,7 @@ function VerifySkeleton() {
               <div style={{
                 width: '140px',
                 height: '44px',
-                background: 'var(--gray-200)',
+                background: 'var(--border-default)',
                 borderRadius: 'var(--radius-lg)',
                 animation: 'pulse 1.5s ease-in-out infinite',
                 animationDelay: '0.1s'
@@ -340,8 +340,8 @@ function VerifySkeleton() {
 
             {/* SSR-friendly info section */}
             <div style={{
-              background: 'var(--gray-50)',
-              border: '1px solid var(--gray-200)',
+              background: 'var(--surface-subtle)',
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-xl)',
               padding: 'var(--space-6)'
             }}>
@@ -349,14 +349,14 @@ function VerifySkeleton() {
                 fontSize: 'var(--text-lg)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-3)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 About Receipt Verification
               </h3>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-3)' }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-3)' }}>
                 This verification tool validates PEAC-Receipt tokens by checking JWT structure and signature. In production, verification includes:
               </p>
-              <ul style={{ color: 'var(--gray-600)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
+              <ul style={{ color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
                 <li>Ed25519 signature verification using public keys</li>
                 <li>Issuer domain validation</li>
                 <li>Timestamp freshness checks</li>

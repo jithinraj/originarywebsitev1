@@ -66,19 +66,19 @@ export default function Page() {
       <main style={{ paddingTop: '80px', minHeight: '100vh' }} id="main-content">
         <article>
           {/* Hero Header */}
-          <div style={{ background: 'linear-gradient(180deg, rgba(99,91,255,0.03) 0%, transparent 100%)', borderBottom: '1px solid var(--gray-100)' }}>
+          <div style={{ background: 'linear-gradient(180deg, rgba(99,91,255,0.03) 0%, transparent 100%)', borderBottom: '1px solid var(--border-subtle)' }}>
             <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: 'var(--space-12) var(--space-6) var(--space-16)' }}>
               {/* Breadcrumbs */}
               <nav style={{
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-500)',
+                color: 'var(--text-tertiary)',
                 marginBottom: 'var(--space-8)'
               }}>
-                <Link href="/" style={{ color: 'var(--gray-500)', textDecoration: 'none' }}>Home</Link>
+                <Link href="/" style={{ color: 'var(--text-tertiary)', textDecoration: 'none' }}>Home</Link>
                 <span style={{ margin: '0 var(--space-2)' }}>/</span>
-                <Link href="/blog" style={{ color: 'var(--gray-500)', textDecoration: 'none' }}>Blog</Link>
+                <Link href="/blog" style={{ color: 'var(--text-tertiary)', textDecoration: 'none' }}>Blog</Link>
                 <span style={{ margin: '0 var(--space-2)' }}>/</span>
-                <span style={{ color: 'var(--gray-700)' }}>From Detection To Settlement</span>
+                <span style={{ color: 'var(--text-secondary)' }}>From Detection To Settlement</span>
               </nav>
 
               {/* Badge */}
@@ -86,13 +86,13 @@ export default function Page() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
                 fontSize: 'var(--text-xs)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 marginBottom: 'var(--space-6)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em'
@@ -107,7 +107,7 @@ export default function Page() {
                 fontWeight: 700,
                 lineHeight: 1.15,
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance
               </h1>
@@ -115,7 +115,7 @@ export default function Page() {
               {/* Subtitle */}
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.6,
                 marginBottom: 'var(--space-8)',
                 maxWidth: '650px'
@@ -129,11 +129,11 @@ export default function Page() {
                 alignItems: 'center',
                 gap: 'var(--space-4)',
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-500)',
+                color: 'var(--text-tertiary)',
                 flexWrap: 'wrap'
               }}>
-                <span style={{ fontWeight: 500, color: 'var(--gray-700)' }}>Jithin Raj & Originary Team</span>
-                <span style={{ color: 'var(--gray-300)' }}>|</span>
+                <span style={{ fontWeight: 500, color: 'var(--text-secondary)' }}>Jithin Raj & Originary Team</span>
+                <span style={{ color: 'var(--border-default)' }}>|</span>
                 <span>18 min read</span>
               </div>
             </div>
@@ -142,16 +142,16 @@ export default function Page() {
           {/* Table of Contents */}
           <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 var(--space-6)' }}>
             <div style={{
-              background: 'var(--gray-50)',
+              background: 'var(--surface-subtle)',
               borderRadius: 'var(--radius-lg)',
               padding: 'var(--space-6)',
               marginTop: 'calc(-1 * var(--space-8))',
               marginBottom: 'var(--space-12)',
-              border: '1px solid var(--gray-200)'
+              border: '1px solid var(--border-default)'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-4)' }}>
-                <List size={16} style={{ color: 'var(--brand-primary)' }} />
-                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-700)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>In This Article</span>
+                <List size={16} style={{ color: 'var(--accent-brand)' }} />
+                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>In This Article</span>
               </div>
               <div style={{ display: 'grid', gap: 'var(--space-2)' }}>
                 {[
@@ -167,7 +167,7 @@ export default function Page() {
                       width: '24px',
                       height: '24px',
                       borderRadius: 'var(--radius-full)',
-                      background: 'var(--brand-primary)',
+                      background: 'var(--accent-brand)',
                       color: 'var(--white)',
                       display: 'flex',
                       alignItems: 'center',
@@ -176,7 +176,7 @@ export default function Page() {
                       fontWeight: 600,
                       flexShrink: 0
                     }}>{item.num}</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-700)' }}>{item.title}</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>{item.title}</span>
                   </div>
                 ))}
               </div>
@@ -188,27 +188,27 @@ export default function Page() {
             <div style={{
               fontSize: 'var(--text-base)',
               lineHeight: 1.9,
-              color: 'var(--gray-700)'
+              color: 'var(--text-secondary)'
             }}>
               {/* Introduction */}
               <section style={{ marginBottom: 'var(--space-16)' }}>
-                <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-6)', color: 'var(--gray-800)' }}>
+                <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-6)', color: 'var(--text-primary)' }}>
                   AI agents can now read, write, call APIs and act on our behalf. The one thing they could not do for a long time was <strong>pay for what they use</strong>.
                 </p>
 
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  That gap is closing fast. New payment standards built on <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>HTTP 402 Payment Required</a>, like x402, are turning APIs and web resources into machine readable paywalls that AI agents can clear automatically.
+                  That gap is closing fast. New payment standards built on <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</a>, like x402, are turning APIs and web resources into machine readable paywalls that AI agents can clear automatically.
                 </p>
 
                 <div style={{
                   background: 'linear-gradient(135deg, rgba(99,91,255,0.08) 0%, rgba(0,212,170,0.08) 100%)',
-                  borderLeft: '4px solid var(--brand-primary)',
+                  borderLeft: '4px solid var(--accent-brand)',
                   borderRadius: '0 var(--radius-md) var(--radius-md) 0',
                   padding: 'var(--space-6)',
                   marginBottom: 'var(--space-8)'
                 }}>
-                  <p style={{ margin: 0, color: 'var(--gray-800)', fontSize: 'var(--text-base)' }}>
-                    At Originary, <Link href="/integrations/acp/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>PEAC Protocol</Link> is our answer to the next step in that story:
+                  <p style={{ margin: 0, color: 'var(--text-primary)', fontSize: 'var(--text-base)' }}>
+                    At Originary, <Link href="/integrations/acp/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>PEAC Protocol</Link> is our answer to the next step in that story:
                   </p>
                   <ul style={{ margin: 'var(--space-4) 0 0 0', paddingLeft: 'var(--space-5)' }}>
                     <li style={{ marginBottom: 'var(--space-2)' }}>You detect AI bot traffic</li>
@@ -226,7 +226,7 @@ export default function Page() {
                     width: '40px',
                     height: '40px',
                     borderRadius: 'var(--radius-full)',
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'var(--white)',
                     display: 'flex',
                     alignItems: 'center',
@@ -239,14 +239,14 @@ export default function Page() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     margin: 0,
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     From &ldquo;is this a bot&rdquo; to &ldquo;this bot paid under these terms&rdquo;
                   </h2>
                 </div>
 
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  In the <Link href="/blog/ai-bot-detection/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>previous piece on AI bot detection</Link> we focused on visibility: spotting AI agents in your traffic, using metadata, fingerprints, and access logs to understand who is calling you and why.
+                  In the <Link href="/blog/ai-bot-detection/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>previous piece on AI bot detection</Link> we focused on visibility: spotting AI agents in your traffic, using metadata, fingerprints, and access logs to understand who is calling you and why.
                 </p>
 
                 <p style={{ marginBottom: 'var(--space-6)' }}>
@@ -260,8 +260,8 @@ export default function Page() {
                     'How do we prove what actually happened'
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
-                      <CheckCircle2 size={18} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
-                      <span style={{ color: 'var(--gray-800)' }}>{item}</span>
+                      <CheckCircle2 size={18} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '2px' }} />
+                      <span style={{ color: 'var(--text-primary)' }}>{item}</span>
                     </div>
                   ))}
                 </div>
@@ -286,7 +286,7 @@ export default function Page() {
                       gap: 'var(--space-3)'
                     }}>
                       <item.icon size={16} style={{ color: '#B8860B', flexShrink: 0 }} />
-                      <span style={{ color: 'var(--gray-800)', fontSize: 'var(--text-sm)' }}>{item.text}</span>
+                      <span style={{ color: 'var(--text-primary)', fontSize: 'var(--text-sm)' }}>{item.text}</span>
                     </div>
                   ))}
                 </div>
@@ -296,7 +296,7 @@ export default function Page() {
                 </p>
 
                 <div style={{
-                  background: 'var(--gray-900)',
+                  background: 'var(--text-primary)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-6)'
                 }}>
@@ -313,7 +313,7 @@ export default function Page() {
                     width: '40px',
                     height: '40px',
                     borderRadius: 'var(--radius-full)',
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'var(--white)',
                     display: 'flex',
                     alignItems: 'center',
@@ -326,7 +326,7 @@ export default function Page() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     margin: 0,
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     HTTP 402 and the rise of the AI paywall
                   </h2>
@@ -339,26 +339,26 @@ export default function Page() {
                   gap: 'var(--space-3)',
                   marginBottom: 'var(--space-4)',
                   paddingBottom: 'var(--space-4)',
-                  borderBottom: '2px solid var(--gray-100)'
+                  borderBottom: '2px solid var(--border-subtle)'
                 }}>
                   <div style={{
                     width: '32px',
                     height: '32px',
                     borderRadius: 'var(--radius-md)',
-                    background: 'rgba(99, 91, 255, 0.1)',
+                    background: 'var(--accent-brand-subtle)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
                   }}>
-                    <Zap size={16} style={{ color: 'var(--brand-primary)' }} />
+                    <Zap size={16} style={{ color: 'var(--accent-brand)' }} />
                   </div>
-                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--gray-900)' }}>
+                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
                     2.1 A dormant status code wakes up
                   </h3>
                 </div>
 
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>HTTP 402 Payment Required</a> has existed in the spec for decades, but as &ldquo;reserved for future use&rdquo;. There was no standard way to use it, so most products ignored it. That is changing:
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</a> has existed in the spec for decades, but as &ldquo;reserved for future use&rdquo;. There was no standard way to use it, so most products ignored it. That is changing:
                 </p>
 
                 <div style={{ display: 'grid', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
@@ -383,8 +383,8 @@ export default function Page() {
                     }
                   ].map((item, i) => (
                     <div key={i} style={{
-                      background: 'var(--white)',
-                      border: '1px solid var(--gray-200)',
+                      background: 'var(--surface-elevated)',
+                      border: '1px solid var(--border-default)',
                       borderRadius: 'var(--radius-lg)',
                       padding: 'var(--space-5)',
                       display: 'flex',
@@ -394,19 +394,19 @@ export default function Page() {
                         width: '40px',
                         height: '40px',
                         borderRadius: 'var(--radius-md)',
-                        background: 'rgba(99, 91, 255, 0.1)',
+                        background: 'var(--accent-brand-subtle)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         flexShrink: 0
                       }}>
-                        <item.icon size={20} style={{ color: 'var(--brand-primary)' }} />
+                        <item.icon size={20} style={{ color: 'var(--accent-brand)' }} />
                       </div>
                       <div>
-                        <h4 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
+                        <h4 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
                           <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>{item.title}</a>
                         </h4>
-                        <p style={{ margin: 0, color: 'var(--gray-600)', fontSize: 'var(--text-sm)', lineHeight: 1.6 }}>
+                        <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.6 }}>
                           {item.desc}
                         </p>
                       </div>
@@ -425,20 +425,20 @@ export default function Page() {
                   gap: 'var(--space-3)',
                   marginBottom: 'var(--space-4)',
                   paddingBottom: 'var(--space-4)',
-                  borderBottom: '2px solid var(--gray-100)'
+                  borderBottom: '2px solid var(--border-subtle)'
                 }}>
                   <div style={{
                     width: '32px',
                     height: '32px',
                     borderRadius: 'var(--radius-md)',
-                    background: 'rgba(99, 91, 255, 0.1)',
+                    background: 'var(--accent-brand-subtle)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
                   }}>
-                    <Lock size={16} style={{ color: 'var(--brand-primary)' }} />
+                    <Lock size={16} style={{ color: 'var(--accent-brand)' }} />
                   </div>
-                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--gray-900)' }}>
+                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
                     2.2 What PEAC adds on top
                   </h3>
                 </div>
@@ -466,22 +466,22 @@ export default function Page() {
                     }
                   ].map((section, i) => (
                     <div key={i} style={{
-                      background: 'var(--gray-50)',
+                      background: 'var(--surface-subtle)',
                       borderRadius: 'var(--radius-lg)',
                       padding: 'var(--space-5)'
                     }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)' }}>
                         <span style={{
-                          background: 'var(--brand-primary)',
+                          background: 'var(--accent-brand)',
                           color: 'var(--white)',
                           padding: 'var(--space-1) var(--space-3)',
                           borderRadius: 'var(--radius-full)',
                           fontSize: 'var(--text-xs)',
                           fontWeight: 600
                         }}>{section.version}</span>
-                        <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)' }}>{section.title}</span>
+                        <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)' }}>{section.title}</span>
                       </div>
-                      <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                      <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                         {section.items.map((item, j) => (
                           <li key={j} style={{ marginBottom: 'var(--space-1)' }}>{item}</li>
                         ))}
@@ -495,7 +495,7 @@ export default function Page() {
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-6)'
                 }}>
-                  <p style={{ margin: 0, fontSize: 'var(--text-base)', color: 'var(--gray-800)', fontWeight: 500, lineHeight: 1.6 }}>
+                  <p style={{ margin: 0, fontSize: 'var(--text-base)', color: 'var(--text-primary)', fontWeight: 500, lineHeight: 1.6 }}>
                     <strong>Integrate PEAC once.</strong> Use whichever AI payment rails you want behind the scenes. Always get the same kind of signed PEAC-Receipt back.
                   </p>
                 </div>
@@ -508,7 +508,7 @@ export default function Page() {
                     width: '40px',
                     height: '40px',
                     borderRadius: 'var(--radius-full)',
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'var(--white)',
                     display: 'flex',
                     alignItems: 'center',
@@ -521,7 +521,7 @@ export default function Page() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     margin: 0,
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     The PEAC flow: from detection to 402 to PEAC-Receipt
                   </h2>
@@ -560,8 +560,8 @@ export default function Page() {
                     }
                   ].map((step, i) => (
                     <div key={i} style={{
-                      background: 'var(--white)',
-                      border: '1px solid var(--gray-200)',
+                      background: 'var(--surface-elevated)',
+                      border: '1px solid var(--border-default)',
                       borderRadius: 'var(--radius-lg)',
                       padding: 'var(--space-5)',
                       display: 'flex',
@@ -571,7 +571,7 @@ export default function Page() {
                         width: '36px',
                         height: '36px',
                         borderRadius: 'var(--radius-full)',
-                        background: 'var(--brand-primary)',
+                        background: 'var(--accent-brand)',
                         color: 'var(--white)',
                         display: 'flex',
                         alignItems: 'center',
@@ -581,10 +581,10 @@ export default function Page() {
                         flexShrink: 0
                       }}>{step.num}</div>
                       <div>
-                        <h4 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
+                        <h4 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
                           {step.title}
                         </h4>
-                        <p style={{ margin: 0, color: 'var(--gray-600)', fontSize: 'var(--text-sm)', lineHeight: 1.6 }}>
+                        <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.6 }}>
                           {step.desc}
                         </p>
                       </div>
@@ -593,7 +593,7 @@ export default function Page() {
                 </div>
 
                 <p>
-                  Receipts always bind to <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>policy_hash</code>, and when an AIPREF policy exists, an <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>aipref_snapshot</code> is embedded so that future audits do not depend on external files. The <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>payment</code> block is optional and only present when a payment adapter was actually used.
+                  Receipts always bind to <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>policy_hash</code>, and when an AIPREF policy exists, an <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>aipref_snapshot</code> is embedded so that future audits do not depend on external files. The <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>payment</code> block is optional and only present when a payment adapter was actually used.
                 </p>
               </section>
 
@@ -604,7 +604,7 @@ export default function Page() {
                     width: '40px',
                     height: '40px',
                     borderRadius: 'var(--radius-full)',
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'var(--white)',
                     display: 'flex',
                     alignItems: 'center',
@@ -617,7 +617,7 @@ export default function Page() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     margin: 0,
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Concrete flows across x402 and Stripe
                   </h2>
@@ -631,37 +631,37 @@ export default function Page() {
                     gap: 'var(--space-3)',
                     marginBottom: 'var(--space-4)',
                     paddingBottom: 'var(--space-4)',
-                    borderBottom: '2px solid var(--gray-100)'
+                    borderBottom: '2px solid var(--border-subtle)'
                   }}>
                     <div style={{
                       width: '32px',
                       height: '32px',
                       borderRadius: 'var(--radius-md)',
-                      background: 'rgba(99, 91, 255, 0.1)',
+                      background: 'var(--accent-brand-subtle)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center'
                     }}>
-                      <Globe size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <Globe size={16} style={{ color: 'var(--accent-brand)' }} />
                     </div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
                       4.1 x402: Stablecoin AI paywalls over HTTP
                     </h3>
                   </div>
 
                   <p style={{ marginBottom: 'var(--space-4)' }}>
-                    <a href="https://www.x402.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>x402</a> activates HTTP 402 for onchain or rollup based stablecoin payments. Servers respond with a 402 and payment requirements; clients pay and retry with proof.
+                    <a href="https://www.x402.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>x402</a> activates HTTP 402 for onchain or rollup based stablecoin payments. Servers respond with a 402 and payment requirements; clients pay and retry with proof.
                   </p>
 
                   <div style={{
-                    background: 'var(--gray-900)',
+                    background: 'var(--text-primary)',
                     borderRadius: 'var(--radius-lg)',
                     padding: 'var(--space-5)',
                     marginBottom: 'var(--space-4)',
                     overflow: 'auto'
                   }}>
-                    <div style={{ color: 'var(--gray-400)', fontSize: 'var(--text-xs)', marginBottom: 'var(--space-2)' }}>HTTP 402 x402 Challenge</div>
-                    <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', color: 'var(--gray-300)', lineHeight: 1.7 }}>
+                    <div style={{ color: 'var(--text-muted)', fontSize: 'var(--text-xs)', marginBottom: 'var(--space-2)' }}>HTTP 402 x402 Challenge</div>
+                    <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', color: 'var(--border-default)', lineHeight: 1.7 }}>
 {`HTTP/1.1 402 Payment Required
 Content-Type: application/json
 
@@ -678,7 +678,7 @@ Content-Type: application/json
                   </div>
 
                   <p>
-                    The agent sends the required USDC transaction, retries with proof, and the x402 adapter normalizes this into the <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>payment</code> block with <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>rail: &quot;x402&quot;</code>. AI paywalls for datasets, prompts, or APIs can now take USDC while your accounting stack only sees standardized PEAC receipts.
+                    The agent sends the required USDC transaction, retries with proof, and the x402 adapter normalizes this into the <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>payment</code> block with <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>rail: &quot;x402&quot;</code>. AI paywalls for datasets, prompts, or APIs can now take USDC while your accounting stack only sees standardized PEAC receipts.
                   </p>
                 </div>
 
@@ -690,37 +690,37 @@ Content-Type: application/json
                     gap: 'var(--space-3)',
                     marginBottom: 'var(--space-4)',
                     paddingBottom: 'var(--space-4)',
-                    borderBottom: '2px solid var(--gray-100)'
+                    borderBottom: '2px solid var(--border-subtle)'
                   }}>
                     <div style={{
                       width: '32px',
                       height: '32px',
                       borderRadius: 'var(--radius-md)',
-                      background: 'rgba(99, 91, 255, 0.1)',
+                      background: 'var(--accent-brand-subtle)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center'
                     }}>
-                      <CreditCard size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <CreditCard size={16} style={{ color: 'var(--accent-brand)' }} />
                     </div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
                       4.2 Stripe: Card rails behind an AI paywall
                     </h3>
                   </div>
 
                   <p style={{ marginBottom: 'var(--space-4)' }}>
-                    <a href="https://docs.stripe.com/changelog/basil/2025-03-31/vault-forward-api-returns-402" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Stripe already uses 402</a> in some scenarios when payment is required or fails.
+                    <a href="https://docs.stripe.com/changelog/basil/2025-03-31/vault-forward-api-returns-402" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Stripe already uses 402</a> in some scenarios when payment is required or fails.
                   </p>
 
                   <div style={{
-                    background: 'var(--gray-900)',
+                    background: 'var(--text-primary)',
                     borderRadius: 'var(--radius-lg)',
                     padding: 'var(--space-5)',
                     marginBottom: 'var(--space-4)',
                     overflow: 'auto'
                   }}>
-                    <div style={{ color: 'var(--gray-400)', fontSize: 'var(--text-xs)', marginBottom: 'var(--space-2)' }}>HTTP 402 Stripe Challenge</div>
-                    <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', color: 'var(--gray-300)', lineHeight: 1.7 }}>
+                    <div style={{ color: 'var(--text-muted)', fontSize: 'var(--text-xs)', marginBottom: 'var(--space-2)' }}>HTTP 402 Stripe Challenge</div>
+                    <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', color: 'var(--border-default)', lineHeight: 1.7 }}>
 {`HTTP/1.1 402 Payment Required
 Content-Type: application/json
 
@@ -735,7 +735,7 @@ Content-Type: application/json
                   </div>
 
                   <p style={{ marginBottom: 'var(--space-4)' }}>
-                    The client uses Stripe Elements to complete the payment, then retries once the intent is <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>succeeded</code>. The Stripe adapter confirms the payment and issues a PEAC-Receipt.
+                    The client uses Stripe Elements to complete the payment, then retries once the intent is <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>succeeded</code>. The Stripe adapter confirms the payment and issues a PEAC-Receipt.
                   </p>
 
                   <div style={{
@@ -747,7 +747,7 @@ Content-Type: application/json
                     gap: 'var(--space-3)'
                   }}>
                     <AlertTriangle size={18} style={{ color: '#B8860B', flexShrink: 0, marginTop: '2px' }} />
-                    <p style={{ margin: 0, color: 'var(--gray-700)', fontSize: 'var(--text-sm)' }}>
+                    <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                       <strong>Note:</strong> The exact header used to relay Stripe payment intent IDs may change as we tighten the adapter spec, but the normalized <code style={{ background: 'rgba(255,255,255,0.7)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>payment</code> block shape and use of PEAC-Receipt remain stable across versions.
                     </p>
                   </div>
@@ -761,7 +761,7 @@ Content-Type: application/json
                     width: '40px',
                     height: '40px',
                     borderRadius: 'var(--radius-full)',
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'var(--white)',
                     display: 'flex',
                     alignItems: 'center',
@@ -774,7 +774,7 @@ Content-Type: application/json
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     margin: 0,
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     What actually ends up in a PEAC-Receipt
                   </h2>
@@ -785,14 +785,14 @@ Content-Type: application/json
                 </p>
 
                 <div style={{
-                  background: 'var(--gray-900)',
+                  background: 'var(--text-primary)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-5)',
                   marginBottom: 'var(--space-6)',
                   overflow: 'auto'
                 }}>
-                  <div style={{ color: 'var(--gray-400)', fontSize: 'var(--text-xs)', marginBottom: 'var(--space-2)' }}>Example PEAC-Receipt (simplified)</div>
-                  <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', color: 'var(--gray-300)', lineHeight: 1.6 }}>
+                  <div style={{ color: 'var(--text-muted)', fontSize: 'var(--text-xs)', marginBottom: 'var(--space-2)' }}>Example PEAC-Receipt (simplified)</div>
+                  <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', color: 'var(--border-default)', lineHeight: 1.6 }}>
 {`{
   "version": "0.9.13",
   "policy_hash": "b64url-sha256-of-canonical-policy",
@@ -840,20 +840,20 @@ Content-Type: application/json
                     { field: 'proof', desc: 'Binds it all cryptographically so third parties can verify without talking to your servers' }
                   ].map((item, i) => (
                     <div key={i} style={{
-                      background: 'var(--gray-50)',
+                      background: 'var(--surface-subtle)',
                       borderRadius: 'var(--radius-md)',
                       padding: 'var(--space-4)',
                       display: 'flex',
                       gap: 'var(--space-3)'
                     }}>
-                      <code style={{ background: 'var(--white)', padding: '2px 8px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--brand-primary)', flexShrink: 0, height: 'fit-content' }}>{item.field}</code>
-                      <span style={{ color: 'var(--gray-700)', fontSize: 'var(--text-sm)' }}>{item.desc}</span>
+                      <code style={{ background: 'var(--surface-elevated)', padding: '2px 8px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--accent-brand)', flexShrink: 0, height: 'fit-content' }}>{item.field}</code>
+                      <span style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>{item.desc}</span>
                     </div>
                   ))}
                 </div>
 
                 <p>
-                  For accounting, you can roll up <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>payment.amount</code> by resource or customer. For compliance, you can prove that specific AI calls were made under specific policies and paid in specific ways.
+                  For accounting, you can roll up <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>payment.amount</code> by resource or customer. For compliance, you can prove that specific AI calls were made under specific policies and paid in specific ways.
                 </p>
               </section>
 
@@ -864,7 +864,7 @@ Content-Type: application/json
                     width: '40px',
                     height: '40px',
                     borderRadius: 'var(--radius-full)',
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'var(--white)',
                     display: 'flex',
                     alignItems: 'center',
@@ -877,7 +877,7 @@ Content-Type: application/json
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     margin: 0,
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     How this ties back to our roadmap and vision
                   </h2>
@@ -888,7 +888,7 @@ Content-Type: application/json
                 </p>
 
                 <div style={{
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-5)',
                   marginBottom: 'var(--space-6)'
@@ -919,19 +919,19 @@ Content-Type: application/json
                   ].map((item, i) => (
                     <div key={i} style={{
                       background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(0,212,170,0.05) 100%)',
-                      border: '1px solid rgba(99, 91, 255, 0.2)',
+                      border: '1px solid var(--accent-brand-muted)',
                       borderRadius: 'var(--radius-md)',
                       padding: 'var(--space-4)',
                       textAlign: 'center'
                     }}>
-                      <div style={{ fontSize: 'var(--text-lg)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-1)' }}>{item.value}</div>
-                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>{item.metric}</div>
+                      <div style={{ fontSize: 'var(--text-lg)', fontWeight: 700, color: 'var(--accent-brand)', marginBottom: 'var(--space-1)' }}>{item.value}</div>
+                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>{item.metric}</div>
                     </div>
                   ))}
                 </div>
 
                 <div style={{
-                  background: 'var(--gray-900)',
+                  background: 'var(--text-primary)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-6)',
                   marginBottom: 'var(--space-6)'
@@ -953,8 +953,8 @@ Content-Type: application/json
                     'PEAC-Receipt is the common language between engineering, finance, legal and external partners'
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
-                      <CheckCircle2 size={18} style={{ color: 'var(--brand-secondary)', flexShrink: 0, marginTop: '2px' }} />
-                      <span style={{ color: 'var(--gray-800)' }}>{item}</span>
+                      <CheckCircle2 size={18} style={{ color: 'var(--accent-secondary)', flexShrink: 0, marginTop: '2px' }} />
+                      <span style={{ color: 'var(--text-primary)' }}>{item}</span>
                     </div>
                   ))}
                 </div>
@@ -965,18 +965,18 @@ Content-Type: application/json
               </section>
 
               {/* Related Reading */}
-              <section style={{ paddingTop: 'var(--space-8)', borderTop: '2px solid var(--gray-200)' }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+              <section style={{ paddingTop: 'var(--space-8)', borderTop: '2px solid var(--border-default)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                   Related Reading
                 </h3>
                 <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
-                  <Link href="/blog/ai-bot-detection/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/blog/ai-bot-detection/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence
                   </Link>
-                  <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     HTTP 402 for APIs: Making Payment-Required Responses Work
                   </Link>
-                  <Link href="/blog/aipref-by-ietf/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/blog/aipref-by-ietf/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     AIPREF: A Common Language for AI Usage Preferences
                   </Link>
                 </div>
@@ -985,7 +985,7 @@ Content-Type: application/json
           </div>
 
           {/* CTA Section */}
-          <section style={{ background: 'var(--gray-50)', borderTop: '1px solid var(--gray-200)', marginTop: 'var(--space-16)' }}>
+          <section style={{ background: 'var(--surface-subtle)', borderTop: '1px solid var(--border-default)', marginTop: 'var(--space-16)' }}>
             <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: 'var(--space-16) var(--space-6)' }}>
               <div className="cta-card" style={{
                 borderRadius: 'var(--radius-xl)',
@@ -1001,7 +1001,7 @@ Content-Type: application/json
                   <Link
                     href="/developers"
                     className="btn btn-lg"
-                    style={{ background: 'var(--white)', color: 'var(--brand-primary)', border: 'none' }}
+                    style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}
                   >
                     <span>View Documentation</span>
                     <ArrowRight size={18} />

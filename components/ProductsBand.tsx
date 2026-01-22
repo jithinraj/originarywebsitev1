@@ -43,8 +43,8 @@ export default function ProductsBand() {
     <section
       style={{
         padding: 'var(--space-16) 0',
-        background: 'var(--white)',
-        borderTop: '1px solid var(--gray-200)'
+        background: 'var(--surface-elevated)',
+        borderTop: '1px solid var(--border-default)'
       }}
     >
       <div className="container">
@@ -125,7 +125,7 @@ export default function ProductsBand() {
                             textDecoration: 'none',
                             transition: 'all 0.2s ease',
                             background: button.primary ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
-                            color: button.primary ? 'var(--brand-primary)' : 'var(--white)',
+                            color: button.primary ? 'var(--accent-brand)' : 'var(--white)',
                             border: button.primary ? 'none' : '1px solid rgba(255, 255, 255, 0.3)'
                           }}
                         >
@@ -157,8 +157,8 @@ export default function ProductsBand() {
                   className="card"
                   style={{
                     padding: 'var(--space-4)',
-                    background: 'var(--white)',
-                    border: '1px solid var(--gray-200)',
+                    background: 'var(--surface-elevated)',
+                    border: '1px solid var(--border-default)',
                     borderRadius: 'var(--radius-xl)',
                     transition: 'all 0.2s ease',
                     position: 'relative',
@@ -167,12 +167,12 @@ export default function ProductsBand() {
                     textDecoration: 'none'
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'var(--brand-primary)'
+                    e.currentTarget.style.borderColor = 'var(--accent-brand)'
                     e.currentTarget.style.transform = 'translateY(-2px)'
                     e.currentTarget.style.boxShadow = 'var(--shadow-md)'
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'var(--gray-200)'
+                    e.currentTarget.style.borderColor = 'var(--border-default)'
                     e.currentTarget.style.transform = 'translateY(0)'
                     e.currentTarget.style.boxShadow = 'none'
                   }}
@@ -183,14 +183,14 @@ export default function ProductsBand() {
                       width: '40px',
                       height: '40px',
                       borderRadius: 'var(--radius-md)',
-                      background: 'rgba(99, 91, 255, 0.1)',
+                      background: 'var(--accent-brand-subtle)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       marginBottom: 'var(--space-3)'
                     }}
                   >
-                    <Icon size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <Icon size={20} style={{ color: 'var(--accent-brand)' }} />
                   </div>
 
                   {/* Content */}
@@ -199,7 +199,7 @@ export default function ProductsBand() {
                       fontSize: 'var(--text-base)',
                       fontWeight: 700,
                       marginBottom: 'var(--space-1)',
-                      color: 'var(--gray-900)'
+                      color: 'var(--text-primary)'
                     }}
                   >
                     {product.name}
@@ -207,7 +207,7 @@ export default function ProductsBand() {
                   <p
                     style={{
                       fontSize: 'var(--text-xs)',
-                      color: 'var(--gray-600)',
+                      color: 'var(--text-secondary)',
                       lineHeight: 1.5,
                       flex: 1
                     }}
@@ -229,21 +229,21 @@ export default function ProductsBand() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
                 padding: 'var(--space-2) var(--space-4)',
                 borderRadius: 'var(--radius-md)',
-                border: '1px solid var(--gray-200)',
+                border: '1px solid var(--border-default)',
                 transition: 'all 0.2s ease'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'var(--brand-primary)'
-                e.currentTarget.style.background = 'rgba(99, 91, 255, 0.05)'
+                e.currentTarget.style.borderColor = 'var(--accent-brand)'
+                e.currentTarget.style.background = 'var(--accent-brand-faint)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'var(--gray-200)'
+                e.currentTarget.style.borderColor = 'var(--border-default)'
                 e.currentTarget.style.background = 'transparent'
               }}
             >

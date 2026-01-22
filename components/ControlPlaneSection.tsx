@@ -116,7 +116,7 @@ pricing:
       className="control-plane-section"
       style={{
         padding: 'var(--space-24) 0',
-        background: 'linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%)'
+        background: 'linear-gradient(180deg, var(--surface-subtle) 0%, var(--surface-elevated) 100%)'
       }}
     >
       <div className="container">
@@ -131,14 +131,14 @@ pricing:
               display: 'inline-flex',
               alignItems: 'center',
               gap: 'var(--space-2)',
-              background: 'rgba(99, 91, 255, 0.1)',
-              border: '1px solid rgba(99, 91, 255, 0.2)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-4)',
               marginBottom: 'var(--space-4)',
               fontSize: 'var(--text-sm)',
               fontWeight: 500,
-              color: 'var(--brand-primary)'
+              color: 'var(--accent-brand)'
             }}
           >
             <Terminal size={16} />
@@ -156,7 +156,7 @@ pricing:
           <p
             style={{
               fontSize: 'var(--text-xl)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               maxWidth: '800px',
               margin: '0 auto',
               lineHeight: 1.7
@@ -179,7 +179,7 @@ pricing:
               display: 'flex',
               gap: 'var(--space-2)',
               marginBottom: 'var(--space-8)',
-              borderBottom: '1px solid var(--gray-200)',
+              borderBottom: '1px solid var(--border-default)',
               justifyContent: 'center'
             }}
           >
@@ -194,7 +194,7 @@ pricing:
                   padding: 'var(--space-3) var(--space-6)',
                   background: 'transparent',
                   border: 'none',
-                  color: activeTab === tab.id ? 'var(--brand-primary)' : 'var(--gray-600)',
+                  color: activeTab === tab.id ? 'var(--accent-brand)' : 'var(--text-secondary)',
                   fontSize: 'var(--text-base)',
                   fontWeight: activeTab === tab.id ? 600 : 500,
                   cursor: 'pointer',
@@ -212,7 +212,7 @@ pricing:
                       left: 0,
                       right: 0,
                       height: '2px',
-                      background: 'var(--brand-primary)'
+                      background: 'var(--accent-brand)'
                     }}
                   />
                 )}
@@ -243,7 +243,7 @@ pricing:
               <p
                 style={{
                   fontSize: 'var(--text-lg)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-6)',
                   lineHeight: 1.6
                 }}
@@ -278,7 +278,7 @@ pricing:
                     <span
                       style={{
                         fontSize: 'var(--text-base)',
-                        color: 'var(--gray-700)'
+                        color: 'var(--text-secondary)'
                       }}
                     >
                       {feature}
@@ -303,7 +303,7 @@ pricing:
             {/* Right: Code Example */}
             <div
               style={{
-                background: 'var(--gray-900)',
+                background: 'var(--text-primary)',
                 borderRadius: 'var(--radius-xl)',
                 padding: 'var(--space-6)',
                 position: 'relative',
@@ -350,7 +350,7 @@ pricing:
                 style={{
                   fontFamily: 'var(--font-mono)',
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-100)',
+                  color: 'var(--surface-card)',
                   lineHeight: 1.6,
                   margin: 0,
                   whiteSpace: 'pre-wrap',
@@ -371,7 +371,7 @@ pricing:
                   background: 'rgba(255, 255, 255, 0.1)',
                   border: '1px solid rgba(255, 255, 255, 0.2)',
                   borderRadius: 'var(--radius-md)',
-                  color: 'var(--gray-300)',
+                  color: 'var(--border-default)',
                   fontSize: 'var(--text-xs)',
                   fontWeight: 500,
                   cursor: 'pointer',
@@ -396,9 +396,9 @@ pricing:
             textAlign: 'center',
             marginTop: 'var(--space-16)',
             padding: 'var(--space-8)',
-            background: 'var(--white)',
+            background: 'var(--surface-elevated)',
             borderRadius: 'var(--radius-2xl)',
-            border: '1px solid var(--gray-200)'
+            border: '1px solid var(--border-default)'
           }}
         >
           <h3
@@ -413,7 +413,7 @@ pricing:
           <p
             style={{
               fontSize: 'var(--text-lg)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-6)'
             }}
           >

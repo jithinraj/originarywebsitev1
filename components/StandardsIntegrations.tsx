@@ -40,9 +40,9 @@ export default function StandardsIntegrations() {
     <section
       style={{
         padding: 'var(--space-8) 0',
-        background: 'var(--gray-50)',
-        borderTop: '1px solid var(--gray-200)',
-        borderBottom: '1px solid var(--gray-200)'
+        background: 'var(--surface-subtle)',
+        borderTop: '1px solid var(--border-default)',
+        borderBottom: '1px solid var(--border-default)'
       }}
     >
       <div className="container">
@@ -57,11 +57,21 @@ export default function StandardsIntegrations() {
         >
           <span style={{
             fontSize: 'var(--text-sm)',
-            color: 'var(--gray-500)',
+            color: 'var(--text-secondary)',
             fontWeight: 500,
-            whiteSpace: 'nowrap'
+            whiteSpace: 'nowrap',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 'var(--space-2)'
           }}>
-            Built on open standards
+            <span style={{
+              width: '6px',
+              height: '6px',
+              borderRadius: '50%',
+              background: 'var(--accent-success)',
+              flexShrink: 0
+            }} />
+            6 open standards
           </span>
 
           <div
@@ -83,7 +93,7 @@ export default function StandardsIntegrations() {
                   alignItems: 'center',
                   gap: 'var(--space-2)',
                   textDecoration: 'none',
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600,
                   padding: 'var(--space-2) var(--space-3)',
@@ -93,11 +103,11 @@ export default function StandardsIntegrations() {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = 'var(--white)'
-                  e.currentTarget.style.color = 'var(--brand-primary)'
+                  e.currentTarget.style.color = 'var(--accent-brand)'
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = 'transparent'
-                  e.currentTarget.style.color = 'var(--gray-700)'
+                  e.currentTarget.style.color = 'var(--text-secondary)'
                 }}
               >
                 <span style={{ fontSize: 'var(--text-base)' }}>{standard.icon}</span>

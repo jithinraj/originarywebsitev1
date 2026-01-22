@@ -8,9 +8,9 @@ export default function PEACBand() {
     <section
       style={{
         padding: 'var(--space-24) 0',
-        background: 'var(--gray-50)',
-        borderTop: '1px solid var(--gray-200)',
-        borderBottom: '1px solid var(--gray-200)'
+        background: 'var(--surface-subtle)',
+        borderTop: '1px solid var(--border-default)',
+        borderBottom: '1px solid var(--border-default)'
       }}
     >
       <div className="container">
@@ -21,14 +21,14 @@ export default function PEACBand() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: 'var(--space-2)',
-              background: 'rgba(99, 91, 255, 0.06)',
-              border: '1px solid rgba(99, 91, 255, 0.12)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: '6px 14px',
               marginBottom: 'var(--space-6)',
               fontSize: '12px',
               fontWeight: 500,
-              color: 'rgba(99, 91, 255, 0.85)'
+              color: 'var(--accent-brand)'
             }}
           >
             <Shield size={14} />
@@ -43,7 +43,7 @@ export default function PEACBand() {
               lineHeight: 1.2,
               letterSpacing: '-0.02em',
               marginBottom: 'var(--space-4)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}
           >
             Built on the Open PEAC Protocol
@@ -54,7 +54,7 @@ export default function PEACBand() {
             style={{
               fontSize: 'var(--text-lg)',
               lineHeight: 1.7,
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-8)',
               maxWidth: '700px',
               margin: '0 auto var(--space-8)'
@@ -63,7 +63,7 @@ export default function PEACBand() {
             Trace is a PEAC reference implementation: policy discovery at{' '}
             <code
               style={{
-                background: 'var(--gray-200)',
+                background: 'var(--border-default)',
                 padding: '2px 6px',
                 borderRadius: 'var(--radius-sm)',
                 fontSize: '0.9em',
@@ -89,16 +89,16 @@ export default function PEACBand() {
               className="card"
               style={{
                 padding: 'var(--space-6)',
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
+                background: 'var(--surface-elevated)',
+                border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-xl)'
               }}
             >
-              <FileCheck size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
-              <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+              <FileCheck size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
+              <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                 Policy Discovery
               </h3>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                 peac.txt generator, policy headers, discovery links, and public badge
               </p>
             </div>
@@ -107,16 +107,16 @@ export default function PEACBand() {
               className="card"
               style={{
                 padding: 'var(--space-6)',
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
+                background: 'var(--surface-elevated)',
+                border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-xl)'
               }}
             >
-              <Shield size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
-              <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+              <Shield size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
+              <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                 Verifiable Receipts
               </h3>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                 JWKS, compact JWS receipts, /v1/verify endpoint with kid lookup
               </p>
             </div>
@@ -125,16 +125,16 @@ export default function PEACBand() {
               className="card"
               style={{
                 padding: 'var(--space-6)',
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
+                background: 'var(--surface-elevated)',
+                border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-xl)'
               }}
             >
-              <Lock size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
-              <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+              <Lock size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
+              <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                 HTTP 402 Semantics
               </h3>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                 Production-grade HTTP 402 controls and payment adapters
               </p>
             </div>
@@ -161,7 +161,7 @@ export default function PEACBand() {
                 gap: 'var(--space-2)',
                 fontSize: 'var(--text-base)',
                 fontWeight: 500,
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 textDecoration: 'none'
               }}
             >
@@ -178,7 +178,7 @@ export default function PEACBand() {
                 gap: 'var(--space-2)',
                 fontSize: 'var(--text-base)',
                 fontWeight: 500,
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 textDecoration: 'none'
               }}
             >

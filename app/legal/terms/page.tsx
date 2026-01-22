@@ -17,7 +17,7 @@ export default function Terms() {
     <div className="wrap">
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
@@ -25,14 +25,14 @@ export default function Terms() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-3)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-6)',
                   marginBottom: 'var(--space-6)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}>
                   <span>LEGAL</span>
                 </div>
@@ -43,20 +43,20 @@ export default function Terms() {
                   lineHeight: 1.1,
                   letterSpacing: '-0.04em',
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Terms of Service
                 </h1>
                 <p style={{
                   fontSize: 'var(--text-lg)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-4)'
                 }}>
                   Terms governing your use of our platform and services.
                 </p>
                 <p style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-500)'
+                  color: 'var(--text-tertiary)'
                 }}>
                   Effective from July 24, 2025.
                 </p>
@@ -68,7 +68,7 @@ export default function Terms() {
                   flexDirection: 'column',
                   gap: 'var(--space-8)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-700)'
+                  color: 'var(--text-secondary)'
                 }}>
               <h2>1. Acceptance of Terms</h2>
               <p>These Terms of Service (&quot;Terms&quot;) govern your access to and use of Originary&rsquo;s services, including our website, APIs, and related platforms (collectively, the &quot;Services&quot;). By accessing or using our Services, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you may not use our Services.</p>
@@ -275,13 +275,13 @@ export default function Terms() {
               <p>If you have questions about these Terms, please contact us:</p>
 
               <div style={{
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 padding: 'var(--space-4)',
                 borderRadius: 'var(--radius-lg)',
                 fontSize: 'var(--text-sm)'
               }}>
                 <p style={{ marginBottom: 'var(--space-2)' }}>
-                  <strong>Contact:</strong> <Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link>
+                  <strong>Contact:</strong> <Link href="mailto:contact@originary.xyz" style={{ color: 'var(--accent-brand)' }}>contact@originary.xyz</Link>
                 </p>
               </div>
 

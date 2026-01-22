@@ -43,7 +43,7 @@ export default function Terms() {
       </Script>
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
@@ -51,14 +51,14 @@ export default function Terms() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-3)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-6)',
                   marginBottom: 'var(--space-6)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}>
                   <span>LEGAL</span>
                 </div>
@@ -69,13 +69,13 @@ export default function Terms() {
                   lineHeight: 1.1,
                   letterSpacing: '-0.04em',
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Terms of Service
                 </h1>
                 <p style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-500)'
+                  color: 'var(--text-tertiary)'
                 }}>
                   Effective from 2025-07-27
                 </p>
@@ -87,7 +87,7 @@ export default function Terms() {
                   flexDirection: 'column',
                   gap: 'var(--space-8)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-700)'
+                  color: 'var(--text-secondary)'
                 }}>
               <h2>Who you&apos;re contracting with</h2>
               <p>&ldquo;Originary&rdquo;, &ldquo;we&rdquo;, and &ldquo;us&rdquo; mean <strong>Poem, Inc.</strong>, a Delaware corporation, which operates <strong>originary.xyz</strong> and related commercial tools implementing <strong>receipts for the agentic web</strong>.</p>
@@ -147,7 +147,7 @@ export default function Terms() {
               <p>We may update these Terms. We&apos;ll change the &ldquo;Last updated&rdquo; date and, for material changes, provide reasonable notice. Continued use means acceptance.</p>
 
               <h2>Contact</h2>
-              <p><strong>Legal:</strong> <Link href="mailto:legal@originary.xyz" style={{ color: 'var(--brand-primary)' }}>legal@originary.xyz</Link></p>
+              <p><strong>Legal:</strong> <Link href="mailto:legal@originary.xyz" style={{ color: 'var(--accent-brand)' }}>legal@originary.xyz</Link></p>
               <p><strong>Address:</strong> Poem, Inc., 1111B S Governors Ave, STE 40987, Dover, DE 19904, USA</p>
               <p><strong>Phone:</strong> +1 415 707 0402</p>
 

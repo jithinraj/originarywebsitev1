@@ -159,7 +159,7 @@ export default function ProblemSection() {
 
         .comparison-item.new {
           border-color: rgba(0, 212, 170, 0.3);
-          background: rgba(0, 212, 170, 0.05);
+          background: var(--accent-secondary-faint);
         }
 
         .item-header {
@@ -201,7 +201,7 @@ export default function ProblemSection() {
         }
 
         .item-status.good {
-          background: rgba(0, 212, 170, 0.15);
+          background: var(--accent-secondary-muted);
           color: #00D4AA;
         }
 

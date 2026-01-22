@@ -84,7 +84,7 @@ export default function PeacVsOriginary() {
 
       <style jsx>{`
         .comparison {
-          border-top: 1px solid var(--gray-200);
+          border-top: 1px solid var(--border-default);
         }
 
         .comparison-header {
@@ -96,7 +96,7 @@ export default function PeacVsOriginary() {
         }
 
         .dim {
-          color: var(--gray-500);
+          color: var(--text-tertiary);
         }
 
         .comparison-grid {
@@ -109,8 +109,8 @@ export default function PeacVsOriginary() {
         .comparison-card {
           padding: 32px;
           border-radius: 16px;
-          border: 1px solid var(--gray-200);
-          background: var(--white);
+          border: 1px solid var(--border-default);
+          background: var(--surface-elevated);
           display: flex;
           flex-direction: column;
           gap: 16px;
@@ -118,7 +118,7 @@ export default function PeacVsOriginary() {
         }
 
         .comparison-card:hover {
-          border-color: var(--gray-300);
+          border-color: var(--border-default);
           box-shadow: var(--shadow-md);
           transform: translateY(-2px);
         }
@@ -131,34 +131,34 @@ export default function PeacVsOriginary() {
           font-weight: 600;
           letter-spacing: 0.08em;
           text-transform: uppercase;
-          color: var(--gray-500);
-          background: var(--gray-100);
-          border: 1px solid var(--gray-200);
+          color: var(--text-tertiary);
+          background: var(--surface-card);
+          border: 1px solid var(--border-default);
         }
 
         .card-label.accent {
-          color: var(--brand-primary);
-          background: linear-gradient(135deg, rgba(99, 91, 255, 0.1) 0%, rgba(0, 212, 170, 0.05) 100%);
-          border-color: rgba(99, 91, 255, 0.2);
+          color: var(--accent-brand);
+          background: linear-gradient(135deg, var(--accent-brand-subtle) 0%, var(--accent-secondary-faint) 100%);
+          border-color: var(--accent-brand-muted);
         }
 
         .comparison-card h3 {
           margin: 0;
           font-size: 1.375rem;
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
         }
 
         .comparison-card p {
           margin: 0;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           line-height: 1.6;
         }
 
         .comparison-card ul {
           margin: 8px 0 0;
           padding-left: 20px;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           line-height: 1.8;
         }
 
@@ -170,28 +170,28 @@ export default function PeacVsOriginary() {
           font-weight: 500;
           font-size: 0.9375rem;
           text-decoration: none;
-          color: var(--gray-900);
+          color: var(--text-primary);
           transition: gap 0.2s ease, color 0.2s ease;
         }
 
         .card-link:hover {
           gap: 10px;
-          color: var(--brand-primary);
+          color: var(--accent-brand);
         }
 
         .card-note {
           margin-top: auto;
           font-weight: 600;
           font-size: 0.9375rem;
-          color: var(--brand-primary);
+          color: var(--accent-brand);
         }
 
         .originary {
-          border-color: rgba(99, 91, 255, 0.2);
+          border-color: var(--accent-brand-muted);
         }
 
         .originary:hover {
-          border-color: var(--brand-primary);
+          border-color: var(--accent-brand);
         }
 
         .comparison-divider {
@@ -205,7 +205,7 @@ export default function PeacVsOriginary() {
         .divider-line {
           width: 1px;
           flex: 1;
-          background: linear-gradient(180deg, transparent, var(--gray-300), transparent);
+          background: linear-gradient(180deg, transparent, var(--border-default), transparent);
         }
 
         .divider-badge {
@@ -215,9 +215,9 @@ export default function PeacVsOriginary() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: var(--white);
-          border: 1px solid var(--gray-300);
-          color: var(--gray-500);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
+          color: var(--text-tertiary);
           font-weight: 600;
           font-size: 14px;
         }
@@ -225,7 +225,7 @@ export default function PeacVsOriginary() {
         .comparison-footer {
           margin-top: 40px;
           text-align: center;
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           font-size: 0.9375rem;
         }
 
@@ -268,7 +268,7 @@ export default function PeacVsOriginary() {
             width: auto;
             height: 1px;
             flex: 1;
-            background: linear-gradient(90deg, transparent, var(--gray-300), transparent);
+            background: linear-gradient(90deg, transparent, var(--border-default), transparent);
           }
         }
 

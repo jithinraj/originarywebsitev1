@@ -125,18 +125,18 @@ export default function OriginaryAIPage() {
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
         {/* Hero Section */}
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
               <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-6)',
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-6)'
@@ -150,7 +150,7 @@ export default function OriginaryAIPage() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Originary &amp; AI
               </h1>
@@ -159,7 +159,7 @@ export default function OriginaryAIPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 lineHeight: 1.4,
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-4)'
               }}>
                 Built for agents, not browsers
@@ -168,7 +168,7 @@ export default function OriginaryAIPage() {
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)'
               }}>
                 Every agent call emits a verifiable PEAC-Receipt. Agent-to-agent (A2A) messages carry proof, payments, and preferences by default.
@@ -192,14 +192,14 @@ export default function OriginaryAIPage() {
 
               <div style={{
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-500)',
+                color: 'var(--text-tertiary)',
                 marginBottom: 'var(--space-16)'
               }}>
                 Works with A2A networks, MCP tool calls, and HTTP-402 payment rails out of the box. Learn more about{' '}
                 <Link
                   href="/integrations/x402/"
                   style={{
-                    color: 'var(--brand-primary)',
+                    color: 'var(--accent-brand)',
                     textDecoration: 'underline'
                   }}
                 >
@@ -211,7 +211,7 @@ export default function OriginaryAIPage() {
         </section>
 
         {/* Value Pillars */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
               <div style={{
@@ -228,24 +228,24 @@ export default function OriginaryAIPage() {
                         width: '48px',
                         height: '48px',
                         borderRadius: 'var(--radius-lg)',
-                        background: 'rgba(99, 91, 255, 0.1)',
+                        background: 'var(--accent-brand-subtle)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         marginBottom: 'var(--space-4)'
                       }}>
-                        <IconComponent size={24} style={{ color: 'var(--brand-primary)' }} />
+                        <IconComponent size={24} style={{ color: 'var(--accent-brand)' }} />
                       </div>
                       <h3 style={{
                         fontSize: 'var(--text-xl)',
                         fontWeight: 600,
                         marginBottom: 'var(--space-3)',
-                        color: 'var(--gray-900)'
+                        color: 'var(--text-primary)'
                       }}>
                         {pillar.title}
                       </h3>
                       <p style={{
-                        color: 'var(--gray-700)',
+                        color: 'var(--text-secondary)',
                         lineHeight: 1.6,
                         margin: 0
                       }}>
@@ -260,14 +260,14 @@ export default function OriginaryAIPage() {
         </section>
 
         {/* Why Agent-First Matters */}
-        <section className="section" style={{ background: 'var(--white)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h2 style={{
                 fontSize: 'var(--text-4xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)',
+                color: 'var(--text-primary)',
                 textAlign: 'center'
               }}>
                 Why &ldquo;agent-first&rdquo; matters
@@ -275,7 +275,7 @@ export default function OriginaryAIPage() {
               <p style={{
                 fontSize: 'var(--text-lg)',
                 lineHeight: 1.7,
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 textAlign: 'center',
                 marginBottom: 'var(--space-12)'
               }}>
@@ -285,7 +285,7 @@ export default function OriginaryAIPage() {
                 <p style={{
                   fontSize: 'var(--text-lg)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-4)'
                 }}>
                   Your graph may include solvers, crawlers, planners, retrievers, and buyers - often from different vendors. We make those hops safe by stapling a cryptographic receipt to each hop.
@@ -293,7 +293,7 @@ export default function OriginaryAIPage() {
                 <p style={{
                   fontSize: 'var(--text-lg)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   margin: 0
                 }}>
                   Any party can verify it offline using your published keys.
@@ -304,14 +304,14 @@ export default function OriginaryAIPage() {
         </section>
 
         {/* How it Works */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ maxWidth: '900px', margin: '0 auto' }}>
               <h2 style={{
                 fontSize: 'var(--text-4xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-12)',
-                color: 'var(--gray-900)',
+                color: 'var(--text-primary)',
                 textAlign: 'center'
               }}>
                 How it works
@@ -339,9 +339,9 @@ export default function OriginaryAIPage() {
                     display: 'flex',
                     gap: 'var(--space-6)',
                     padding: 'var(--space-6)',
-                    background: 'var(--white)',
+                    background: 'var(--surface-elevated)',
                     borderRadius: 'var(--radius-lg)',
-                    border: '1px solid var(--gray-200)'
+                    border: '1px solid var(--border-default)'
                   }}>
                     <div style={{
                       width: '48px',
@@ -363,12 +363,12 @@ export default function OriginaryAIPage() {
                         fontSize: 'var(--text-xl)',
                         fontWeight: 600,
                         marginBottom: 'var(--space-2)',
-                        color: 'var(--gray-900)'
+                        color: 'var(--text-primary)'
                       }}>
                         {item.title}
                       </h3>
                       <p style={{
-                        color: 'var(--gray-700)',
+                        color: 'var(--text-secondary)',
                         lineHeight: 1.6,
                         margin: 0
                       }}>
@@ -383,14 +383,14 @@ export default function OriginaryAIPage() {
         </section>
 
         {/* A2A Networks */}
-        <section className="section" style={{ background: 'var(--white)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h2 style={{
                 fontSize: 'var(--text-4xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)',
+                color: 'var(--text-primary)',
                 textAlign: 'center'
               }}>
                 For agent-to-agent (A2A) networks
@@ -416,22 +416,22 @@ export default function OriginaryAIPage() {
                     alignItems: 'flex-start',
                     gap: 'var(--space-4)',
                     padding: 'var(--space-6)',
-                    background: 'var(--gray-50)',
+                    background: 'var(--surface-subtle)',
                     borderRadius: 'var(--radius-lg)',
-                    border: '1px solid var(--gray-200)'
+                    border: '1px solid var(--border-default)'
                   }}>
-                    <CheckCircle size={24} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                    <CheckCircle size={24} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '2px' }} />
                     <div>
                       <h3 style={{
                         fontSize: 'var(--text-lg)',
                         fontWeight: 600,
                         marginBottom: 'var(--space-2)',
-                        color: 'var(--gray-900)'
+                        color: 'var(--text-primary)'
                       }}>
                         {item.title}
                       </h3>
                       <p style={{
-                        color: 'var(--gray-700)',
+                        color: 'var(--text-secondary)',
                         lineHeight: 1.6,
                         margin: 0
                       }}>
@@ -446,14 +446,14 @@ export default function OriginaryAIPage() {
         </section>
 
         {/* MCP & Tool Calls */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h2 style={{
                 fontSize: 'var(--text-4xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)',
+                color: 'var(--text-primary)',
                 textAlign: 'center'
               }}>
                 For MCP &amp; tool calls
@@ -477,19 +477,19 @@ export default function OriginaryAIPage() {
                   ].map((item, index) => (
                     <div key={index} style={{
                       padding: 'var(--space-4)',
-                      background: 'var(--gray-50)',
+                      background: 'var(--surface-subtle)',
                       borderRadius: 'var(--radius-md)'
                     }}>
                       <h3 style={{
                         fontSize: 'var(--text-lg)',
                         fontWeight: 600,
                         marginBottom: 'var(--space-2)',
-                        color: 'var(--gray-900)'
+                        color: 'var(--text-primary)'
                       }}>
                         {item.title}
                       </h3>
                       <p style={{
-                        color: 'var(--gray-700)',
+                        color: 'var(--text-secondary)',
                         lineHeight: 1.6,
                         margin: 0
                       }}>
@@ -503,13 +503,13 @@ export default function OriginaryAIPage() {
               <div style={{
                 textAlign: 'center',
                 padding: 'var(--space-6)',
-                background: 'var(--white)',
+                background: 'var(--surface-elevated)',
                 borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--gray-200)'
+                border: '1px solid var(--border-default)'
               }}>
                 <p style={{
                   fontSize: 'var(--text-lg)',
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-4)'
                 }}>
                   Learn how to integrate MCP with PEAC-Receipts
@@ -523,14 +523,14 @@ export default function OriginaryAIPage() {
         </section>
 
         {/* Payment Rails */}
-        <section className="section" style={{ background: 'var(--white)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h2 style={{
                 fontSize: 'var(--text-4xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)',
+                color: 'var(--text-primary)',
                 textAlign: 'center'
               }}>
                 Payments that agents understand
@@ -552,12 +552,12 @@ export default function OriginaryAIPage() {
                       fontSize: 'var(--text-xl)',
                       fontWeight: 600,
                       marginBottom: 'var(--space-3)',
-                      color: 'var(--gray-900)'
+                      color: 'var(--text-primary)'
                     }}>
                       {item.title}
                     </h3>
                     <p style={{
-                      color: 'var(--gray-700)',
+                      color: 'var(--text-secondary)',
                       lineHeight: 1.6,
                       margin: 0
                     }}>
@@ -570,17 +570,17 @@ export default function OriginaryAIPage() {
               <div style={{
                 marginTop: 'var(--space-8)',
                 padding: 'var(--space-6)',
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 borderRadius: 'var(--radius-lg)',
                 textAlign: 'center'
               }}>
                 <p style={{
                   fontSize: 'var(--text-base)',
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   margin: 0
                 }}>
                   All rails normalize to a single <code style={{
-                    background: 'var(--gray-200)',
+                    background: 'var(--border-default)',
                     padding: '2px 8px',
                     borderRadius: 'var(--radius-sm)',
                     fontFamily: 'var(--font-jetbrains-mono)'
@@ -592,14 +592,14 @@ export default function OriginaryAIPage() {
         </section>
 
         {/* Use Cases */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
               <h2 style={{
                 fontSize: 'var(--text-4xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)',
+                color: 'var(--text-primary)',
                 textAlign: 'center'
               }}>
                 What you can build
@@ -607,7 +607,7 @@ export default function OriginaryAIPage() {
               <p style={{
                 fontSize: 'var(--text-lg)',
                 textAlign: 'center',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-12)'
               }}>
                 Concrete patterns for agent infrastructure
@@ -624,12 +624,12 @@ export default function OriginaryAIPage() {
                       fontSize: 'var(--text-lg)',
                       fontWeight: 600,
                       marginBottom: 'var(--space-3)',
-                      color: 'var(--gray-900)'
+                      color: 'var(--text-primary)'
                     }}>
                       {useCase.title}
                     </h3>
                     <p style={{
-                      color: 'var(--gray-700)',
+                      color: 'var(--text-secondary)',
                       lineHeight: 1.6,
                       margin: 0
                     }}>
@@ -643,22 +643,22 @@ export default function OriginaryAIPage() {
         </section>
 
         {/* Dev Notes */}
-        <section className="section" style={{ background: 'var(--white)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h2 style={{
                 fontSize: 'var(--text-4xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)',
+                color: 'var(--text-primary)',
                 textAlign: 'center'
               }}>
                 Dev notes
               </h2>
 
               <div style={{
-                background: 'var(--gray-900)',
-                color: 'var(--gray-100)',
+                background: 'var(--text-primary)',
+                color: 'var(--surface-card)',
                 padding: 'var(--space-6)',
                 borderRadius: 'var(--radius-lg)',
                 fontFamily: 'var(--font-jetbrains-mono)',
@@ -687,21 +687,21 @@ export default function OriginaryAIPage() {
         </section>
 
         {/* CTA */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
               <h2 style={{
                 fontSize: 'var(--text-4xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Ship agent-grade trust in a day, not a quarter
               </h2>
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)'
               }}>
                 Every agent step. One verifiable receipt.

@@ -50,7 +50,7 @@ export default function Contact() {
               <span
                 style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
                   fontWeight: 600,
@@ -67,7 +67,7 @@ export default function Contact() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.7,
                   marginBottom: 'var(--space-8)'
                 }}
@@ -84,7 +84,7 @@ export default function Contact() {
           <div className="container">
             <div className="card" style={{
               background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(0,212,170,0.05) 100%)',
-              border: '2px solid var(--brand-primary)',
+              border: '2px solid var(--accent-brand)',
               maxWidth: '900px',
               margin: '0 auto'
             }}>
@@ -97,21 +97,21 @@ export default function Contact() {
                 {/* Email */}
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)' }}>
-                    <Mail size={24} style={{ color: 'var(--brand-primary)' }} />
+                    <Mail size={24} style={{ color: 'var(--accent-brand)' }} />
                     <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600 }}>Email</h3>
                   </div>
                   <a
                     href="mailto:contact@originary.xyz"
                     style={{
                       fontSize: 'var(--text-base)',
-                      color: 'var(--brand-primary)',
+                      color: 'var(--accent-brand)',
                       fontWeight: 600,
                       textDecoration: 'none'
                     }}
                   >
                     contact@originary.xyz
                   </a>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginTop: 'var(--space-1)' }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginTop: 'var(--space-1)' }}>
                     For all inquiries
                   </p>
                 </div>
@@ -119,14 +119,14 @@ export default function Contact() {
                 {/* Phone */}
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)' }}>
-                    <Phone size={24} style={{ color: 'var(--brand-primary)' }} />
+                    <Phone size={24} style={{ color: 'var(--accent-brand)' }} />
                     <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600 }}>Phone</h3>
                   </div>
                   <a
                     href="tel:+14157070402"
                     style={{
                       fontSize: 'var(--text-base)',
-                      color: 'var(--brand-primary)',
+                      color: 'var(--accent-brand)',
                       fontWeight: 600,
                       textDecoration: 'none',
                       display: 'block',
@@ -135,7 +135,7 @@ export default function Contact() {
                   >
                     +1 415 707 0402
                   </a>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                     US line
                   </p>
                 </div>
@@ -143,10 +143,10 @@ export default function Contact() {
                 {/* Company Info */}
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)' }}>
-                    <Building size={24} style={{ color: 'var(--brand-primary)' }} />
+                    <Building size={24} style={{ color: 'var(--accent-brand)' }} />
                     <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600 }}>Company</h3>
                   </div>
-                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-700)', lineHeight: 1.8 }}>
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
                     <strong>Poem, Inc.</strong><br />
                     1111B S Governors Ave<br />
                     STE 40987<br />
@@ -159,7 +159,7 @@ export default function Contact() {
         </section>
 
         {/* Contact Options */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div className="grid grid-2" style={{ gap: 'var(--space-12)', alignItems: 'start' }}>
               {/* Left Column - Contact Options */}
@@ -170,7 +170,7 @@ export default function Contact() {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
                   <ContactOption
-                    icon={<Building size={24} style={{ color: 'var(--brand-primary)' }} />}
+                    icon={<Building size={24} style={{ color: 'var(--accent-brand)' }} />}
                     title="Sales"
                     description="Interested in enterprise deployment? Our sales team can help you get started."
                     action="Contact Sales"
@@ -178,7 +178,7 @@ export default function Contact() {
                     response="< 2 hours during business hours"
                   />
                   <ContactOption
-                    icon={<Headphones size={24} style={{ color: 'var(--brand-secondary)' }} />}
+                    icon={<Headphones size={24} style={{ color: 'var(--accent-secondary)' }} />}
                     title="Support"
                     description="Need help with integration or have technical questions?"
                     action="Get Support"
@@ -194,7 +194,7 @@ export default function Contact() {
                     response="< 24 hours"
                   />
                   <ContactOption
-                    icon={<MessageCircle size={24} style={{ color: 'var(--brand-primary)' }} />}
+                    icon={<MessageCircle size={24} style={{ color: 'var(--accent-brand)' }} />}
                     title="General Inquiries"
                     description="For all other questions and inquiries."
                     action="Contact Us"
@@ -277,7 +277,7 @@ export default function Contact() {
                   <h4 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
                     Enterprise Priority Support
                   </h4>
-                  <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', lineHeight: 1.7 }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.7 }}>
                     Enterprise customers get dedicated support channels with priority response times
                     and direct access to our engineering team.
                   </p>
@@ -300,7 +300,7 @@ export default function Contact() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   maxWidth: '700px',
                   margin: '0 auto',
                   lineHeight: 1.7
@@ -312,12 +312,12 @@ export default function Contact() {
 
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
               <SupportFeature
-                icon={<Clock size={32} style={{ color: 'var(--brand-primary)' }} />}
+                icon={<Clock size={32} style={{ color: 'var(--accent-brand)' }} />}
                 title="Fast Response Times"
                 description="Get answers when you need them. Start plan users get community support, Pro tier gets responses within 4 hours, Enterprise within 1 hour."
               />
               <SupportFeature
-                icon={<Users size={32} style={{ color: 'var(--brand-secondary)' }} />}
+                icon={<Users size={32} style={{ color: 'var(--accent-secondary)' }} />}
                 title="Expert Team"
                 description="Our support team includes engineers who built the protocol, solution architects, and dedicated customer success specialists."
               />
@@ -387,8 +387,8 @@ export default function Contact() {
                     href="mailto:contact@originary.xyz"
                     className="btn btn-lg"
                     style={{
-                      background: 'var(--white)',
-                      color: 'var(--brand-primary)',
+                      background: 'var(--surface-elevated)',
+                      color: 'var(--accent-brand)',
                       border: 'none'
                     }}
                   >
@@ -445,13 +445,13 @@ function ContactOption({
         </div>
         <div style={{ flex: 1 }}>
           <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>{title}</h3>
-          <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-4)', lineHeight: 1.7 }}>{description}</p>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-4)', lineHeight: 1.7 }}>{description}</p>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <a href={`mailto:${email}`} className="btn btn-primary">
               <span>{action}</span>
               <ArrowRight size={16} />
             </a>
-            <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>{response}</span>
+            <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>{response}</span>
           </div>
         </div>
       </div>
@@ -471,18 +471,18 @@ function ResponseMetric({
   return (
     <div
       style={{
-        background: 'var(--white)',
+        background: 'var(--surface-elevated)',
         borderRadius: 'var(--radius-lg)',
         padding: 'var(--space-4)',
-        border: '1px solid var(--gray-200)'
+        border: '1px solid var(--border-default)'
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div>
-          <span style={{ fontWeight: 600, color: 'var(--gray-900)' }}>{type}:</span>
-          <span style={{ marginLeft: 'var(--space-2)', color: 'var(--brand-primary)', fontWeight: 700 }}>{time}</span>
+          <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{type}:</span>
+          <span style={{ marginLeft: 'var(--space-2)', color: 'var(--accent-brand)', fontWeight: 700 }}>{time}</span>
         </div>
-        <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>{description}</span>
+        <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>{description}</span>
       </div>
     </div>
   )
@@ -501,7 +501,7 @@ function SupportFeature({
     <div className="card" style={{ textAlign: 'center' }}>
       <div style={{ marginBottom: 'var(--space-4)' }}>{icon}</div>
       <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)' }}>{title}</h3>
-      <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', lineHeight: 1.7 }}>{description}</p>
+      <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.7 }}>{description}</p>
     </div>
   )
 }

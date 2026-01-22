@@ -64,7 +64,7 @@ export default function AIConsentPage() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: 'var(--space-2)',
-            color: 'var(--gray-500)',
+            color: 'var(--text-tertiary)',
             fontSize: 'var(--text-sm)',
             textDecoration: 'none'
           }}>
@@ -77,7 +77,7 @@ export default function AIConsentPage() {
         <section className="section" style={{
           paddingTop: 'var(--space-10)',
           paddingBottom: 'var(--space-12)',
-          borderBottom: '1px solid var(--gray-100)'
+          borderBottom: '1px solid var(--border-subtle)'
         }}>
           <div className="container">
             <div style={{ maxWidth: '720px' }}>
@@ -85,14 +85,14 @@ export default function AIConsentPage() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
                 marginBottom: 'var(--space-6)',
                 fontSize: 'var(--text-xs)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)'
+                color: 'var(--accent-brand)'
               }}>
                 <Shield size={14} />
                 <span>LEARN</span>
@@ -104,7 +104,7 @@ export default function AIConsentPage() {
                 lineHeight: 1.2,
                 letterSpacing: '-0.03em',
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 AI Consent & Attribution
               </h1>
@@ -112,13 +112,13 @@ export default function AIConsentPage() {
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.6,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-6)'
               }}>
                 Machine-readable consent and proper attribution - the foundation for trust in the agentic web.
               </p>
 
-              <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-400)' }}>
+              <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                 7 min read
               </div>
             </div>
@@ -133,14 +133,14 @@ export default function AIConsentPage() {
               <aside style={{ position: 'sticky', top: '100px', alignSelf: 'start' }} className="article-sidebar">
                 <div style={{
                   padding: 'var(--space-6)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-100)'
+                  border: '1px solid var(--border-subtle)'
                 }}>
                   <h4 style={{
                     fontSize: 'var(--text-xs)',
                     fontWeight: 600,
-                    color: 'var(--gray-400)',
+                    color: 'var(--text-muted)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.1em',
                     marginBottom: 'var(--space-4)'
@@ -151,7 +151,7 @@ export default function AIConsentPage() {
                     {['Key Takeaways', 'The Problem', 'Machine-Readable Consent', 'Attribution in Practice', 'Standards & Protocols', 'Implementation'].map((item) => (
                       <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} style={{
                         fontSize: 'var(--text-sm)',
-                        color: 'var(--gray-600)',
+                        color: 'var(--text-secondary)',
                         textDecoration: 'none'
                       }}>
                         {item}
@@ -165,8 +165,8 @@ export default function AIConsentPage() {
               <article style={{ maxWidth: '680px' }}>
                 {/* Key Takeaways Box */}
                 <div id="key-takeaways" style={{
-                  background: 'rgba(99, 91, 255, 0.05)',
-                  border: '1px solid rgba(99, 91, 255, 0.15)',
+                  background: 'var(--accent-brand-faint)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-8)',
                   marginBottom: 'var(--space-12)'
@@ -175,7 +175,7 @@ export default function AIConsentPage() {
                     fontSize: 'var(--text-lg)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Key Takeaways
                   </h2>
@@ -192,10 +192,10 @@ export default function AIConsentPage() {
                         gap: 'var(--space-3)',
                         marginBottom: 'var(--space-3)',
                         fontSize: 'var(--text-base)',
-                        color: 'var(--gray-700)',
+                        color: 'var(--text-secondary)',
                         lineHeight: 1.6
                       }}>
-                        <CheckCircle size={18} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '3px' }} />
+                        <CheckCircle size={18} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '3px' }} />
                         {takeaway}
                       </li>
                     ))}
@@ -208,21 +208,21 @@ export default function AIConsentPage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     The Problem
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-4)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
                     The web was built for humans browsing with web browsers. Terms of service are written in legal English. robots.txt was designed for search engine crawlers, not AI agents that consume and transform content.
                   </p>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-4)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
                     This creates two problems:
                   </p>
                   <ul style={{ paddingLeft: 'var(--space-6)', marginBottom: 'var(--space-4)' }}>
-                    <li style={{ color: 'var(--gray-600)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>
+                    <li style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>
                       <strong>Content owners can&apos;t express preferences</strong> that agents understand - &ldquo;training: no, RAG: yes, summary: yes with attribution&rdquo; isn&apos;t something robots.txt supports.
                     </li>
-                    <li style={{ color: 'var(--gray-600)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>
+                    <li style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>
                       <strong>Agents can&apos;t prove compliance</strong> - even well-intentioned AI systems have no way to demonstrate they respected consent or provided proper attribution.
                     </li>
                   </ul>
@@ -234,30 +234,30 @@ export default function AIConsentPage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Machine-Readable Consent
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                     Machine-readable consent means expressing permissions in formats that agents can parse and act on automatically. Key formats include:
                   </p>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
                     <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>AIPREF (aipref.json)</h4>
-                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
-                        A JSON file at <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>/.well-known/aipref.json</code> that declares AI interaction preferences - training permissions, RAG access, summarization rights, required attribution, and pricing.
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>AIPREF (aipref.json)</h4>
+                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
+                        A JSON file at <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>/.well-known/aipref.json</code> that declares AI interaction preferences - training permissions, RAG access, summarization rights, required attribution, and pricing.
                       </p>
                     </div>
                     <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>peac.txt</h4>
-                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
-                        The PEAC policy file at <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>/.well-known/peac.txt</code> references aipref.json and adds payment requirements, receipt verification endpoints, and public keys.
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>peac.txt</h4>
+                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
+                        The PEAC policy file at <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>/.well-known/peac.txt</code> references aipref.json and adds payment requirements, receipt verification endpoints, and public keys.
                       </p>
                     </div>
                     <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>HTTP Headers</h4>
-                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)' }}>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>HTTP Headers</h4>
+                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
                         Per-request consent can be signaled via headers, allowing dynamic permissions based on the requesting agent&apos;s identity or payment status.
                       </p>
                     </div>
@@ -270,11 +270,11 @@ export default function AIConsentPage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Attribution in Practice
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                     Attribution answers: &ldquo;Where did this come from?&rdquo; In agentic systems, this is captured through:
                   </p>
 
@@ -287,11 +287,11 @@ export default function AIConsentPage() {
                     ].map((item, i) => (
                       <div key={i} style={{
                         padding: 'var(--space-4)',
-                        background: 'var(--gray-50)',
+                        background: 'var(--surface-subtle)',
                         borderRadius: 'var(--radius-md)'
                       }}>
-                        <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>{item.title}</h4>
-                        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>{item.desc}</p>
+                        <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>{item.title}</h4>
+                        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{item.desc}</p>
                       </div>
                     ))}
                   </div>
@@ -303,11 +303,11 @@ export default function AIConsentPage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Standards & Protocols
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                     The consent and attribution ecosystem includes several complementary standards:
                   </p>
 
@@ -320,10 +320,10 @@ export default function AIConsentPage() {
                     ].map((item, i) => (
                       <li key={i} style={{
                         padding: 'var(--space-4) 0',
-                        borderBottom: i < 3 ? '1px solid var(--gray-100)' : 'none'
+                        borderBottom: i < 3 ? '1px solid var(--border-subtle)' : 'none'
                       }}>
-                        <strong style={{ color: 'var(--gray-900)' }}>{item.term}</strong>
-                        <span style={{ color: 'var(--gray-600)' }}> - {item.def}</span>
+                        <strong style={{ color: 'var(--text-primary)' }}>{item.term}</strong>
+                        <span style={{ color: 'var(--text-secondary)' }}> - {item.def}</span>
                       </li>
                     ))}
                   </ul>
@@ -335,22 +335,22 @@ export default function AIConsentPage() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-4)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Implementation
                   </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                     Get started with consent and attribution using Originary&apos;s tools:
                   </p>
 
                   <div className="grid grid-2" style={{ gap: 'var(--space-4)' }}>
                     <Link href="/integrations/aipref" className="card" style={{ textDecoration: 'none', padding: 'var(--space-5)' }}>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>AIPREF Integration</h4>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Declare your AI preferences</p>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>AIPREF Integration</h4>
+                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Declare your AI preferences</p>
                     </Link>
                     <Link href="/declare" className="card" style={{ textDecoration: 'none', padding: 'var(--space-5)' }}>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>Declare (Policy Kit)</h4>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Generate peac.txt and aipref.json</p>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Declare (Policy Kit)</h4>
+                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Generate peac.txt and aipref.json</p>
                     </Link>
                   </div>
                 </section>
@@ -358,7 +358,7 @@ export default function AIConsentPage() {
                 {/* Related */}
                 <section style={{
                   padding: 'var(--space-8)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
                   marginTop: 'var(--space-16)'
                 }}>
@@ -366,7 +366,7 @@ export default function AIConsentPage() {
                     fontSize: 'var(--text-lg)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-6)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Related Articles
                   </h3>
@@ -375,21 +375,21 @@ export default function AIConsentPage() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      color: 'var(--gray-700)',
+                      color: 'var(--text-secondary)',
                       textDecoration: 'none'
                     }}>
                       <span>AI Receipts</span>
-                      <ArrowRight size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <ArrowRight size={16} style={{ color: 'var(--accent-brand)' }} />
                     </Link>
                     <Link href="/learn/what-is-agentic-commerce" style={{
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      color: 'var(--gray-700)',
+                      color: 'var(--text-secondary)',
                       textDecoration: 'none'
                     }}>
                       <span>What is Agentic Commerce?</span>
-                      <ArrowRight size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <ArrowRight size={16} style={{ color: 'var(--accent-brand)' }} />
                     </Link>
                   </div>
                 </section>

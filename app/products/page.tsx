@@ -48,7 +48,7 @@ export default function ProductsPage() {
               <span
                 style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
                   fontWeight: 600,
@@ -64,7 +64,7 @@ export default function ProductsPage() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.7,
                   marginBottom: 'var(--space-8)'
                 }}
@@ -94,9 +94,9 @@ export default function ProductsPage() {
 
         {/* Start with Declare Band */}
         <section style={{
-          background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.05) 0%, rgba(0, 212, 170, 0.05) 100%)',
-          borderTop: '1px solid var(--gray-100)',
-          borderBottom: '1px solid var(--gray-100)',
+          background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
+          borderTop: '1px solid var(--border-subtle)',
+          borderBottom: '1px solid var(--border-subtle)',
           padding: 'var(--space-8) 0'
         }}>
           <div className="container">
@@ -110,12 +110,12 @@ export default function ProductsPage() {
             }}>
               <p style={{
                 fontSize: 'var(--text-base)',
-                color: 'var(--gray-700)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.6,
                 maxWidth: '700px',
                 margin: 0
               }}>
-                <strong style={{ color: 'var(--brand-primary)' }}>Start with Declare:</strong> Most teams begin with Declare (Policy Kit) to define AI policy and receipts, then add Gateway 402, Verify API, Studio, and Trace as their traffic and compliance needs grow.
+                <strong style={{ color: 'var(--accent-brand)' }}>Start with Declare:</strong> Most teams begin with Declare (Policy Kit) to define AI policy and receipts, then add Gateway 402, Verify API, Studio, and Trace as their traffic and compliance needs grow.
               </p>
               <Link href="/declare" className="btn btn-primary btn-sm">
                 Get Declare
@@ -125,7 +125,7 @@ export default function ProductsPage() {
         </section>
 
         {/* Core Products */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div
               style={{
@@ -137,7 +137,7 @@ export default function ProductsPage() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   maxWidth: '700px',
                   margin: '0 auto',
                   lineHeight: 1.7
@@ -149,7 +149,7 @@ export default function ProductsPage() {
 
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
               <ProductCard
-                icon={<Shield size={32} style={{ color: 'var(--brand-primary)' }} />}
+                icon={<Shield size={32} style={{ color: 'var(--accent-brand)' }} />}
                 title="Verify"
                 category="Verification Layer"
                 description="Deterministic verification for PEAC receipts. Validate signatures offline using published JWKS endpoints. No API callback required."
@@ -165,7 +165,7 @@ export default function ProductsPage() {
               />
 
               <ProductCard
-                icon={<Zap size={32} style={{ color: 'var(--brand-secondary)' }} />}
+                icon={<Zap size={32} style={{ color: 'var(--accent-secondary)' }} />}
                 title="Gateway 402"
                 category="Payment Gateway"
                 description="HTTP 402 payment gateway that transforms any API endpoint into a monetized resource. Works with any configured payment adapter."
@@ -212,7 +212,7 @@ export default function ProductsPage() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   maxWidth: '700px',
                   margin: '0 auto',
                   lineHeight: 1.7
@@ -224,7 +224,7 @@ export default function ProductsPage() {
 
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
               <ProductCard
-                icon={<Code size={32} style={{ color: 'var(--brand-primary)' }} />}
+                icon={<Code size={32} style={{ color: 'var(--accent-brand)' }} />}
                 title="Studio"
                 category="Visual Builder"
                 description="Visual policy builder and testing environment. Create, validate, and deploy PEAC policies with an intuitive drag-and-drop interface."
@@ -240,7 +240,7 @@ export default function ProductsPage() {
               />
 
               <ProductCard
-                icon={<Globe size={32} style={{ color: 'var(--brand-secondary)' }} />}
+                icon={<Globe size={32} style={{ color: 'var(--accent-secondary)' }} />}
                 title="Adapters"
                 category="Integration Layer"
                 description="Pre-built integrations for popular platforms and frameworks. Connect PEAC to existing infrastructure with zero custom development."
@@ -331,8 +331,8 @@ export default function ProductsPage() {
                     href="/developers"
                     className="btn btn-lg"
                     style={{
-                      background: 'var(--white)',
-                      color: 'var(--brand-primary)',
+                      background: 'var(--surface-elevated)',
+                      color: 'var(--accent-brand)',
                       border: 'none'
                     }}
                   >
@@ -379,14 +379,14 @@ function ProductCard({
 }) {
   // Brand-accent badge system: featured uses brand, others use neutrals
   const statusStyles: Record<string, { bg: string; color: string; label: string; border?: string }> = {
-    'start-here': { bg: 'rgba(99, 91, 255, 0.08)', color: 'var(--brand-primary)', label: 'Start here', border: 'rgba(99, 91, 255, 0.25)' },
-    'optional': { bg: 'var(--gray-100)', color: 'var(--gray-600)', label: 'Optional' },
-    'preview': { bg: 'rgba(251, 191, 36, 0.08)', color: 'var(--gray-600)', label: 'Preview' },
-    'open-standard': { bg: 'var(--gray-100)', color: 'var(--gray-600)', label: 'Open Standard' }
+    'start-here': { bg: 'var(--accent-brand-subtle)', color: 'var(--accent-brand)', label: 'Start here', border: 'var(--accent-brand-muted)' },
+    'optional': { bg: 'var(--surface-card)', color: 'var(--text-secondary)', label: 'Optional' },
+    'preview': { bg: 'rgba(251, 191, 36, 0.08)', color: 'var(--text-secondary)', label: 'Preview' },
+    'open-standard': { bg: 'var(--surface-card)', color: 'var(--text-secondary)', label: 'Open Standard' }
   }
 
   return (
-    <div className="card" style={status === 'start-here' ? { border: '1px solid rgba(99, 91, 255, 0.2)' } : undefined}>
+    <div className="card" style={status === 'start-here' ? { border: '1px solid var(--accent-brand-muted)' } : undefined}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 'var(--space-6)' }}>
         {icon}
         {status && (
@@ -412,7 +412,7 @@ function ProductCard({
           style={{
             fontSize: 'var(--text-xs)',
             fontWeight: 600,
-            color: 'var(--gray-500)',
+            color: 'var(--text-tertiary)',
             textTransform: 'uppercase',
             letterSpacing: '0.1em'
           }}
@@ -425,7 +425,7 @@ function ProductCard({
         {title}
       </h3>
 
-      <p style={{ marginBottom: 'var(--space-6)', lineHeight: 1.7, color: 'var(--gray-600)' }}>
+      <p style={{ marginBottom: 'var(--space-6)', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
         {description}
       </p>
 
@@ -439,7 +439,7 @@ function ProductCard({
               gap: 'var(--space-3)',
               marginBottom: 'var(--space-3)',
               fontSize: 'var(--text-sm)',
-              color: 'var(--gray-600)'
+              color: 'var(--text-secondary)'
             }}
           >
             <CheckCircle size={16} style={{
@@ -455,7 +455,7 @@ function ProductCard({
       <Link
         href={href}
         style={{
-          color: 'var(--brand-primary)',
+          color: 'var(--accent-brand)',
           textDecoration: 'none',
           fontSize: 'var(--text-sm)',
           fontWeight: 600,

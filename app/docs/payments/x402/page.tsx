@@ -28,16 +28,16 @@ export default function X402DocPage() {
   return (
     <>
       <NavigationHeader />
-      <main style={{ minHeight: '100vh', background: 'var(--white)' }}>
+      <main style={{ minHeight: '100vh', background: 'var(--surface-elevated)' }}>
         <div className="container" style={{ padding: 'var(--space-32) var(--space-6)' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div style={{
               display: 'inline-flex',
-              background: 'rgba(99, 91, 255, 0.1)',
-              border: '1px solid rgba(99, 91, 255, 0.2)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-6)',
-              color: 'var(--brand-primary)',
+              color: 'var(--accent-brand)',
               fontSize: 'var(--text-sm)',
               fontWeight: 600,
               marginBottom: 'var(--space-6)'
@@ -49,14 +49,14 @@ export default function X402DocPage() {
               fontSize: 'var(--text-5xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-6)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               x402 Integration
             </h1>
 
             <p style={{
               fontSize: 'var(--text-xl)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
@@ -68,14 +68,14 @@ export default function X402DocPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 What is x402?
               </h2>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                 x402 is a protocol built on the HTTP 402 status code that enables instant, blockchain-based payments for web resources and APIs. Developed by Coinbase, x402 allows users to pay for resources via API without registration, emails, OAuth, or complex signatures.
               </p>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                 Originary integrates with x402 to normalize stablecoin payments into standard PEAC-Receipts, providing a unified proof of payment regardless of the payment rail used.
               </p>
             </div>
@@ -85,12 +85,12 @@ export default function X402DocPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 5-Minute Quickstart
               </h2>
-              <ol style={{ color: 'var(--gray-600)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
-                <li>Deploy your <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>peac.txt</code> policy file</li>
+              <ol style={{ color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
+                <li>Deploy your <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>peac.txt</code> policy file</li>
                 <li>Configure x402 payment endpoint in your Originary dashboard</li>
                 <li>Return HTTP 402 with x402 payment challenge when access is gated</li>
                 <li>Verify payment via x402 protocol</li>
@@ -103,13 +103,13 @@ export default function X402DocPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Code Example
               </h2>
               <pre style={{
-                background: 'var(--gray-900)',
-                color: 'var(--gray-100)',
+                background: 'var(--text-primary)',
+                color: 'var(--surface-card)',
                 padding: 'var(--space-4)',
                 borderRadius: 'var(--radius-lg)',
                 fontSize: 'var(--text-sm)',
@@ -137,13 +137,13 @@ res.json({ content: protectedData })`}
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Related Resources
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
                 <Link href="/integrations/x402" style={{
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
@@ -151,7 +151,7 @@ res.json({ content: protectedData })`}
                   x402 integration guide →
                 </Link>
                 <Link href="/products/gateway-402" style={{
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
@@ -159,7 +159,7 @@ res.json({ content: protectedData })`}
                   HTTP 402 and x402 Gateway 402 →
                 </Link>
                 <Link href="/solutions/api-providers" style={{
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
@@ -167,7 +167,7 @@ res.json({ content: protectedData })`}
                   HTTP 402 commerce for API providers →
                 </Link>
                 <Link href="/peac" style={{
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
@@ -178,8 +178,8 @@ res.json({ content: protectedData })`}
             </div>
 
             <div style={{
-              background: 'var(--gray-50)',
-              border: '1px solid var(--gray-200)',
+              background: 'var(--surface-subtle)',
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-xl)',
               padding: 'var(--space-8)',
               marginTop: 'var(--space-12)'
@@ -188,11 +188,11 @@ res.json({ content: protectedData })`}
                 fontSize: 'var(--text-xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Ready to accept stablecoin payments?
               </h2>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
                 Start accepting x402 payments and build HTTP 402 for APIs with Originary today.
               </p>
               <Link href="/developers" className="btn btn-primary">

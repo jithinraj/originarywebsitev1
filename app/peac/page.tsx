@@ -85,7 +85,7 @@ export default function PeacPage() {
                   lineHeight: 1.1,
                   letterSpacing: '-0.04em',
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 PEAC Protocol: an open protocol for policy, payments, and receipts
@@ -95,7 +95,7 @@ export default function PeacPage() {
                 style={{
                   fontSize: 'var(--text-xl)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-12)'
                 }}
               >
@@ -125,7 +125,7 @@ export default function PeacPage() {
         </section>
 
         {/* Path to Standard Adoption */}
-        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)', background: 'var(--white)' }}>
+        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)', background: 'var(--surface-elevated)' }}>
           <div className="container">
             <div style={{ maxWidth: '900px', margin: '0 auto' }}>
               <h2
@@ -134,7 +134,7 @@ export default function PeacPage() {
                   fontWeight: 700,
                   textAlign: 'center',
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 Path to Standard Adoption
@@ -143,7 +143,7 @@ export default function PeacPage() {
                 style={{
                   textAlign: 'center',
                   fontSize: 'var(--text-lg)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-12)',
                   maxWidth: '700px',
                   margin: '0 auto var(--space-12) auto',
@@ -162,33 +162,33 @@ export default function PeacPage() {
                 marginBottom: 'var(--space-12)',
                 flexWrap: 'wrap'
               }}>
-                <div className="card" style={{ flex: '1', minWidth: '200px', textAlign: 'center', background: 'var(--gray-50)' }}>
-                  <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>
+                <div className="card" style={{ flex: '1', minWidth: '200px', textAlign: 'center', background: 'var(--surface-subtle)' }}>
+                  <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--accent-brand)', marginBottom: 'var(--space-2)' }}>
                     Pre-1.0
                   </div>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                     Originary reference implementation
                   </p>
                 </div>
 
-                <div style={{ fontSize: 'var(--text-2xl)', color: 'var(--gray-400)' }}>→</div>
+                <div style={{ fontSize: 'var(--text-2xl)', color: 'var(--text-muted)' }}>→</div>
 
-                <div className="card" style={{ flex: '1', minWidth: '200px', textAlign: 'center', background: 'var(--gray-50)' }}>
-                  <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>
+                <div className="card" style={{ flex: '1', minWidth: '200px', textAlign: 'center', background: 'var(--surface-subtle)' }}>
+                  <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--accent-brand)', marginBottom: 'var(--space-2)' }}>
                     Multiple implementations
                   </div>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                     Independent conformant implementations
                   </p>
                 </div>
 
-                <div style={{ fontSize: 'var(--text-2xl)', color: 'var(--gray-400)' }}>→</div>
+                <div style={{ fontSize: 'var(--text-2xl)', color: 'var(--text-muted)' }}>→</div>
 
-                <div className="card" style={{ flex: '1', minWidth: '200px', textAlign: 'center', background: 'var(--gray-50)' }}>
-                  <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>
+                <div className="card" style={{ flex: '1', minWidth: '200px', textAlign: 'center', background: 'var(--surface-subtle)' }}>
+                  <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--accent-brand)', marginBottom: 'var(--space-2)' }}>
                     Post-1.0
                   </div>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                     Broad adoption and ecosystem
                   </p>
                 </div>
@@ -196,14 +196,14 @@ export default function PeacPage() {
 
               {/* Statement */}
               <div className="card" style={{
-                background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.05) 0%, rgba(0, 212, 170, 0.05) 100%)',
-                border: '1px solid rgba(99, 91, 255, 0.1)',
+                background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
+                border: '1px solid var(--accent-brand-subtle)',
                 padding: 'var(--space-8)',
                 marginBottom: 'var(--space-8)'
               }}>
                 <p style={{
                   fontSize: 'var(--text-base)',
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.7,
                   textAlign: 'center',
                   marginBottom: 'var(--space-4)'
@@ -212,7 +212,7 @@ export default function PeacPage() {
                 </p>
                 <p style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.6,
                   textAlign: 'center'
                 }}>
@@ -239,7 +239,7 @@ export default function PeacPage() {
         </section>
 
         {/* Why PEAC */}
-        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
             <h2
               style={{
@@ -247,7 +247,7 @@ export default function PeacPage() {
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}
             >
               Why PEAC
@@ -256,7 +256,7 @@ export default function PeacPage() {
               style={{
                 textAlign: 'center',
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-16)',
                 maxWidth: '700px',
                 margin: '0 auto var(--space-16) auto'
@@ -276,11 +276,11 @@ export default function PeacPage() {
                 { name: 'Provenance', desc: 'Cryptographic proof of what happened and when' },
               ].map((pillar) => (
                 <div key={pillar.name} className="card">
-                  <CheckCircle size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
-                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  <CheckCircle size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
+                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                     {pillar.name}
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                     {pillar.desc}
                   </p>
                 </div>
@@ -298,7 +298,7 @@ export default function PeacPage() {
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-16)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}
             >
               Spec & Reference
@@ -310,11 +310,11 @@ export default function PeacPage() {
                 className="card"
                 style={{ textDecoration: 'none', display: 'block' }}
               >
-                <BookOpen size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <BookOpen size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   peac.txt Specification
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   Policy discovery format, headers, and machine-readable rules
                 </p>
               </a>
@@ -326,11 +326,11 @@ export default function PeacPage() {
                 className="card"
                 style={{ textDecoration: 'none', display: 'block' }}
               >
-                <Shield size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Shield size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Receipt Schema
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   JWS-based verifiable receipts for audit and compliance
                 </p>
               </a>
@@ -339,7 +339,7 @@ export default function PeacPage() {
         </section>
 
         {/* SDKs & Tools */}
-        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
             <h2
               style={{
@@ -347,7 +347,7 @@ export default function PeacPage() {
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}
             >
               SDKs & Tools
@@ -356,7 +356,7 @@ export default function PeacPage() {
               style={{
                 textAlign: 'center',
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-16)',
                 maxWidth: '700px',
                 margin: '0 auto var(--space-16) auto'
@@ -373,28 +373,28 @@ export default function PeacPage() {
                 className="card"
                 style={{ textDecoration: 'none', display: 'block' }}
               >
-                <Code size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Code size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   peac-core (Node.js)
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
                   TypeScript/JavaScript SDK for parsing, validation, and receipt generation
                 </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>
                   <Github size={14} />
                   <span>View on GitHub →</span>
                 </div>
               </a>
 
               <Link href="/downloads" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <Download size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Download size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   CLI Tools
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
                   Command-line utilities for policy validation and receipt verification
                 </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>
                   <Download size={14} />
                   <span>Download →</span>
                 </div>
@@ -407,14 +407,14 @@ export default function PeacPage() {
                 className="card"
                 style={{ textDecoration: 'none', display: 'block' }}
               >
-                <Code size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Code size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Examples
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
                   Sample implementations, integration patterns, and starter templates
                 </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>
                   <Github size={14} />
                   <span>Browse examples →</span>
                 </div>
@@ -432,7 +432,7 @@ export default function PeacPage() {
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}
             >
               Protocol Capabilities
@@ -441,7 +441,7 @@ export default function PeacPage() {
               style={{
                 textAlign: 'center',
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-16)',
                 maxWidth: '700px',
                 margin: '0 auto var(--space-16) auto'
@@ -452,31 +452,31 @@ export default function PeacPage() {
 
             <div className="grid grid-2" style={{ gap: 'var(--space-6)', maxWidth: '900px', margin: '0 auto' }}>
               <div className="card">
-                <Activity size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Activity size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Telemetry
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
                   OpenTelemetry integration with privacy-preserving modes. Choose strict, balanced, or custom identifier handling for compliance.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--gray-100)', borderRadius: 'var(--radius-full)', color: 'var(--gray-600)' }}>W3C Trace Context</span>
-                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--gray-100)', borderRadius: 'var(--radius-full)', color: 'var(--gray-600)' }}>Privacy modes</span>
+                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', color: 'var(--text-secondary)' }}>W3C Trace Context</span>
+                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', color: 'var(--text-secondary)' }}>Privacy modes</span>
                 </div>
               </div>
 
               <div className="card">
-                <Layers size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Layers size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Policy Profiles
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
                   Pre-built policy profiles for common use cases. Start with news-media, api-provider, open-source, or saas-docs and customize from there.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--gray-100)', borderRadius: 'var(--radius-full)', color: 'var(--gray-600)' }}>news-media</span>
-                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--gray-100)', borderRadius: 'var(--radius-full)', color: 'var(--gray-600)' }}>api-provider</span>
-                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--gray-100)', borderRadius: 'var(--radius-full)', color: 'var(--gray-600)' }}>+2 more</span>
+                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', color: 'var(--text-secondary)' }}>news-media</span>
+                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', color: 'var(--text-secondary)' }}>api-provider</span>
+                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', color: 'var(--text-secondary)' }}>+2 more</span>
                 </div>
               </div>
             </div>
@@ -484,7 +484,7 @@ export default function PeacPage() {
         </section>
 
         {/* Governance */}
-        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)', background: 'var(--gray-50)' }}>
+        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)', background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h2
@@ -492,17 +492,17 @@ export default function PeacPage() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-8)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 Governance & Contributing
               </h2>
 
               <div className="card" style={{ marginBottom: 'var(--space-6)' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                   Open Development
                 </h3>
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+                <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                   Developed in public with community contributions. Originary (Poem, Inc.) is the primary maintainer today. Development happens on GitHub with semantic versioning and public roadmaps.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
@@ -519,10 +519,10 @@ export default function PeacPage() {
               </div>
 
               <div className="card">
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                   License & Use
                 </h3>
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+                <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                   Apache-2.0. No CLA required for small fixes; DCO accepted. PEAC is neutral and adapter-friendly, Originary is one implementation.
                 </p>
                 <a href="https://github.com/peacprotocol/peac/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm">
@@ -534,7 +534,7 @@ export default function PeacPage() {
         </section>
 
         {/* Use PEAC with other standards */}
-        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)', background: 'var(--white)' }}>
+        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)', background: 'var(--surface-elevated)' }}>
           <div className="container">
             <h2
               style={{
@@ -542,7 +542,7 @@ export default function PeacPage() {
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}
             >
               Use PEAC with other standards
@@ -551,7 +551,7 @@ export default function PeacPage() {
               style={{
                 textAlign: 'center',
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-16)',
                 maxWidth: '700px',
                 margin: '0 auto var(--space-16) auto'
@@ -562,73 +562,73 @@ export default function PeacPage() {
 
             <div className="grid grid-3" style={{ gap: 'var(--space-6)' }}>
               <Link href="/integrations/x402" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   HTTP 402 & x402
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
                   HTTP 402 commerce and x402 receipts for machine-payable APIs
                 </p>
-                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--accent-brand)', fontWeight: 600 }}>
                   View integration →
                 </div>
               </Link>
 
               <Link href="/integrations/acp" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Agentic Commerce Protocol (ACP)
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
                   Enable agentic commerce and agentic transactions with ACP
                 </p>
-                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--accent-brand)', fontWeight: 600 }}>
                   View integration →
                 </div>
               </Link>
 
               <Link href="/integrations/aipref" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   AIPREF
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
                   AI preference standard for policy discovery and consent
                 </p>
-                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--accent-brand)', fontWeight: 600 }}>
                   View integration →
                 </div>
               </Link>
 
               <Link href="/integrations/mcp" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Model Context Protocol (MCP)
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
                   MCP receipts and tools for agent coordination
                 </p>
-                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--accent-brand)', fontWeight: 600 }}>
                   View integration →
                 </div>
               </Link>
 
               <Link href="/integrations/a2a" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   A2A protocol
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
                   Agent-to-agent transactions with verifiable receipts
                 </p>
-                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--accent-brand)', fontWeight: 600 }}>
                   View integration →
                 </div>
               </Link>
 
-              <Link href="/integrations" className="card" style={{ textDecoration: 'none', display: 'block', border: '2px dashed var(--gray-300)', background: 'transparent' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+              <Link href="/integrations" className="card" style={{ textDecoration: 'none', display: 'block', border: '2px dashed var(--border-default)', background: 'transparent' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   View all integrations
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
                   Explore all agentic web standards and protocols
                 </p>
-                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                <div style={{ fontSize: 'var(--text-xs)', color: 'var(--accent-brand)', fontWeight: 600 }}>
                   See more →
                 </div>
               </Link>
@@ -637,7 +637,7 @@ export default function PeacPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <FaqAccordion
@@ -674,7 +674,7 @@ export default function PeacPage() {
                 Self-host with the open source stack, or add managed services like Trace, Gateway, Studio, and Verify API.
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link href="/pricing" className="btn btn-lg" style={{ background: 'var(--white)', color: 'var(--brand-primary)', border: 'none' }}>
+                <Link href="/pricing" className="btn btn-lg" style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}>
                   View Pricing
                 </Link>
                 <Link href="/trace" className="btn btn-lg btn-ghost" style={{ color: 'var(--white)', borderColor: 'rgba(255, 255, 255, 0.3)' }}>

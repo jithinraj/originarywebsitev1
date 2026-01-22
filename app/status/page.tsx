@@ -11,7 +11,7 @@ export default function StatusPage() {
       <NavigationHeader />
       <main id="main-content" role="main" style={{ paddingTop: '80px' }}>
         <section className="section" style={{
-          background: 'linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%)',
+          background: 'linear-gradient(180deg, var(--surface-subtle) 0%, var(--surface-elevated) 100%)',
           paddingTop: 'var(--space-24)',
           paddingBottom: 'var(--space-20)'
         }}>
@@ -21,7 +21,7 @@ export default function StatusPage() {
           <h1 style={{
             fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
             fontWeight: 700,
-            color: 'var(--gray-900)',
+            color: 'var(--text-primary)',
             marginBottom: 'var(--space-6)',
             lineHeight: 1.2
           }}>
@@ -30,7 +30,7 @@ export default function StatusPage() {
 
           <p style={{
             fontSize: 'var(--text-xl)',
-            color: 'var(--gray-600)',
+            color: 'var(--text-secondary)',
             maxWidth: '600px',
             margin: '0 auto',
             lineHeight: 1.7
@@ -41,8 +41,8 @@ export default function StatusPage() {
 
         {/* Status Updates */}
         <div style={{
-          background: 'var(--white)',
-          border: '1px solid var(--gray-200)',
+          background: 'var(--surface-elevated)',
+          border: '1px solid var(--border-default)',
           borderRadius: 'var(--radius-xl)',
           padding: 'var(--space-8)',
           marginBottom: 'var(--space-8)'
@@ -53,12 +53,12 @@ export default function StatusPage() {
             gap: 'var(--space-3)',
             marginBottom: 'var(--space-6)'
           }}>
-            <Activity size={24} style={{ color: 'var(--brand-primary)' }} />
+            <Activity size={24} style={{ color: 'var(--accent-brand)' }} />
             <h2 style={{
               margin: 0,
               fontSize: 'var(--text-2xl)',
               fontWeight: 600,
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Status Updates
             </h2>
@@ -66,11 +66,11 @@ export default function StatusPage() {
 
           <div style={{
             padding: 'var(--space-6)',
-            background: 'var(--gray-50)',
+            background: 'var(--surface-subtle)',
             borderRadius: 'var(--radius-lg)',
-            border: '1px solid var(--gray-200)'
+            border: '1px solid var(--border-default)'
           }}>
-            <p style={{ margin: 0, color: 'var(--gray-700)' }}>
+            <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
               No public incidents to report. We will post maintenance and incident updates here when applicable.
             </p>
           </div>
@@ -78,8 +78,8 @@ export default function StatusPage() {
 
         {/* Performance Notice */}
         <div style={{
-          background: 'var(--white)',
-          border: '1px solid var(--gray-200)',
+          background: 'var(--surface-elevated)',
+          border: '1px solid var(--border-default)',
           borderRadius: 'var(--radius-xl)',
           padding: 'var(--space-8)',
           marginBottom: 'var(--space-8)'
@@ -90,12 +90,12 @@ export default function StatusPage() {
             gap: 'var(--space-3)',
             marginBottom: 'var(--space-6)'
           }}>
-            <Clock size={24} style={{ color: 'var(--brand-primary)' }} />
+            <Clock size={24} style={{ color: 'var(--accent-brand)' }} />
             <h2 style={{
               margin: 0,
               fontSize: 'var(--text-2xl)',
               fontWeight: 600,
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Recent Activity
             </h2>
@@ -103,14 +103,14 @@ export default function StatusPage() {
 
           <div style={{
             padding: 'var(--space-6)',
-            background: 'var(--gray-50)',
+            background: 'var(--surface-subtle)',
             borderRadius: 'var(--radius-lg)',
-            border: '1px solid var(--gray-200)',
+            border: '1px solid var(--border-default)',
             textAlign: 'center'
           }}>
             <p style={{
               fontSize: 'var(--text-base)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               margin: 0
             }}>
               No incidents reported. Subscribe below for status notifications.
@@ -120,8 +120,8 @@ export default function StatusPage() {
 
         {/* Subscribe Notice */}
         <div style={{
-          background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.05) 0%, rgba(0, 212, 170, 0.05) 100%)',
-          border: '1px solid rgba(99, 91, 255, 0.15)',
+          background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
+          border: '1px solid var(--accent-brand-muted)',
           borderRadius: 'var(--radius-xl)',
           padding: 'var(--space-8)',
           textAlign: 'center'
@@ -129,14 +129,14 @@ export default function StatusPage() {
           <h3 style={{
             fontSize: 'var(--text-xl)',
             fontWeight: 600,
-            color: 'var(--gray-900)',
+            color: 'var(--text-primary)',
             marginBottom: 'var(--space-4)'
           }}>
             Status Updates via Email
           </h3>
           <p style={{
             fontSize: 'var(--text-base)',
-            color: 'var(--gray-600)',
+            color: 'var(--text-secondary)',
             marginBottom: 'var(--space-6)',
             lineHeight: 1.7
           }}>
@@ -161,7 +161,7 @@ export default function StatusPage() {
         <p style={{
           textAlign: 'center',
           fontSize: 'var(--text-sm)',
-          color: 'var(--gray-500)',
+          color: 'var(--text-tertiary)',
           marginTop: 'var(--space-8)'
         }}>
           Last updated: {new Date().toLocaleString('en-US', {

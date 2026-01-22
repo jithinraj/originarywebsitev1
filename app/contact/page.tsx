@@ -20,12 +20,12 @@ export default function ContactPage() {
                   lineHeight: 1.1,
                   letterSpacing: '-0.04em',
                   marginBottom: 'var(--space-4)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 Get in touch
               </h1>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
                 Questions about products, partnerships, or technical support
               </p>
             </div>
@@ -39,11 +39,11 @@ export default function ContactPage() {
                   display: 'block'
                 }}
               >
-                <Mail size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Mail size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Email
                 </h3>
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                <p style={{ fontSize: 'var(--text-base)', color: 'var(--accent-brand)', fontWeight: 600 }}>
                   contact@originary.xyz
                 </p>
               </a>
@@ -56,58 +56,58 @@ export default function ContactPage() {
                   display: 'block'
                 }}
               >
-                <Phone size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <Phone size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Phone
                 </h3>
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--brand-primary)', fontWeight: 600 }}>
+                <p style={{ fontSize: 'var(--text-base)', color: 'var(--accent-brand)', fontWeight: 600 }}>
                   +1 415-707-0402
                 </p>
               </a>
             </div>
 
             <div className="card" style={{ marginBottom: 'var(--space-12)', textAlign: 'left' }}>
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--gray-900)' }}>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--text-primary)' }}>
                 How we can help
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
                 <div>
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
                     General inquiries
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                     Questions about Originary, PEAC Protocol, or getting started
                   </p>
                 </div>
                 <div>
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
                     Sales and partnerships
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                     Enterprise pricing, custom deployments, and strategic partnerships
                   </p>
                 </div>
                 <div>
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
                     Technical support
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                     Implementation help, integration questions, and troubleshooting
                   </p>
                 </div>
                 <div>
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
                     Legal and compliance
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                     Privacy inquiries, trademark questions, and compliance matters
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="card" style={{ textAlign: 'center', background: 'var(--gray-50)' }}>
-              <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--gray-900)' }}>
+            <div className="card" style={{ textAlign: 'center', background: 'var(--surface-subtle)' }}>
+              <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--text-primary)' }}>
                 Connect with us
               </h2>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -145,7 +145,7 @@ export default function ContactPage() {
             </div>
 
             <div style={{ marginTop: 'var(--space-12)', textAlign: 'center' }}>
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-4)' }}>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
                 Looking for something specific?
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-3)', justifyContent: 'center', flexWrap: 'wrap' }}>

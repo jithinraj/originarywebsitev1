@@ -170,11 +170,11 @@ export default function ContextGraphsPage() {
           <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div style={{
               display: 'inline-flex',
-              background: 'rgba(99, 91, 255, 0.1)',
-              border: '1px solid rgba(99, 91, 255, 0.2)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-6)',
-              color: 'var(--brand-primary)',
+              color: 'var(--accent-brand)',
               fontSize: 'var(--text-xs)',
               fontWeight: 600,
               textTransform: 'uppercase',
@@ -187,7 +187,7 @@ export default function ContextGraphsPage() {
             <h1 style={{
               fontSize: 'clamp(2rem, 5vw, 3rem)',
               fontWeight: 800,
-              color: 'var(--gray-900)',
+              color: 'var(--text-primary)',
               lineHeight: 1.1,
               marginBottom: 'var(--space-6)',
               letterSpacing: '-0.02em'
@@ -197,7 +197,7 @@ export default function ContextGraphsPage() {
 
             <p style={{
               fontSize: 'clamp(1.125rem, 2.5vw, 1.25rem)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               lineHeight: 1.7,
               marginBottom: 'var(--space-8)'
             }}>
@@ -206,12 +206,12 @@ export default function ContextGraphsPage() {
 
             <p className="callout" style={{
               padding: 'var(--space-6)',
-              background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.08) 0%, rgba(0, 212, 170, 0.08) 100%)',
-              border: '1px solid rgba(99, 91, 255, 0.15)',
+              background: 'linear-gradient(135deg, var(--accent-brand-subtle) 0%, var(--accent-secondary-subtle) 100%)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-xl)',
               fontSize: 'clamp(1.125rem, 2.5vw, 1.375rem)',
               fontWeight: 600,
-              color: 'var(--gray-800)',
+              color: 'var(--text-primary)',
               textAlign: 'center'
             }}>
               Can we prove what happened, under which rules, and why it was allowed?
@@ -401,14 +401,14 @@ export default function ContextGraphsPage() {
               <div className="two-col">
                 <div className="model-block">
                   <h4><Database size={20} /> Enterprise Agent Systems of Record</h4>
-                  <p style={{ fontWeight: 500, color: 'var(--gray-500)', marginBottom: 'var(--space-3)' }}>Closed, internal</p>
+                  <p style={{ fontWeight: 500, color: 'var(--text-tertiary)', marginBottom: 'var(--space-3)' }}>Closed, internal</p>
                   <p>Workday, for example, markets an &ldquo;Agent System of Record&rdquo; that centralizes visibility and control over agents, including third-party agents, inside the Workday platform.</p>
                   <p>This class of product is about internal management: onboarding agents, roles/permissions, measurement, and orchestration. It is valuable, but it is inherently platform-centric.</p>
                 </div>
 
                 <div className="model-block">
                   <h4><Globe size={20} /> Open System of Record at the Interaction Boundary</h4>
-                  <p style={{ fontWeight: 500, color: 'var(--gray-500)', marginBottom: 'var(--space-3)' }}>Portable, cross-vendor</p>
+                  <p style={{ fontWeight: 500, color: 'var(--text-tertiary)', marginBottom: 'var(--space-3)' }}>Portable, cross-vendor</p>
                   <p>The internet also needs a system of record for agent interactions that occur across organizations:</p>
                   <ul>
                     <li>agent to publisher</li>
@@ -832,16 +832,16 @@ export default function ContextGraphsPage() {
               </div>
 
               {/* References */}
-              <div style={{ marginTop: 'var(--space-16)', paddingTop: 'var(--space-8)', borderTop: '1px solid var(--gray-200)' }}>
-                <h4 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-500)', marginBottom: 'var(--space-4)' }}>References</h4>
-                <ul style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)', lineHeight: 1.8 }}>
-                  <li><a href="https://foundationcapital.com/context-graphs-ais-trillion-dollar-opportunity/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)' }}>Foundation Capital: Context Graphs - AI&apos;s Trillion-Dollar Opportunity</a></li>
-                  <li><a href="https://www.workday.com/en-us/artificial-intelligence/agent-system-of-record.html" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)' }}>Workday Agent System of Record</a></li>
-                  <li><a href="https://www.cloudflare.com/en-in/press/press-releases/2025/cloudflare-and-coinbase-will-launch-x402-foundation/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)' }}>Cloudflare and Coinbase x402 Foundation</a></li>
-                  <li><a href="https://blog.cloudflare.com/introducing-pay-per-crawl/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)' }}>Cloudflare: Introducing Pay Per Crawl</a></li>
-                  <li><a href="https://www.fastly.com/blog/how-to-control-and-monetize-ai-bot-traffic-using-fastly-and-tollbit" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)' }}>Fastly and TollBit Integration</a></li>
-                  <li><a href="https://www.x402.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)' }}>x402 - Internet-Native Payments Standard</a></li>
-                  <li><a href="https://www.langchain.com/langsmith/observability" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--brand-primary)' }}>LangSmith Observability</a></li>
+              <div style={{ marginTop: 'var(--space-16)', paddingTop: 'var(--space-8)', borderTop: '1px solid var(--border-default)' }}>
+                <h4 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-tertiary)', marginBottom: 'var(--space-4)' }}>References</h4>
+                <ul style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.8 }}>
+                  <li><a href="https://foundationcapital.com/context-graphs-ais-trillion-dollar-opportunity/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)' }}>Foundation Capital: Context Graphs - AI&apos;s Trillion-Dollar Opportunity</a></li>
+                  <li><a href="https://www.workday.com/en-us/artificial-intelligence/agent-system-of-record.html" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)' }}>Workday Agent System of Record</a></li>
+                  <li><a href="https://www.cloudflare.com/en-in/press/press-releases/2025/cloudflare-and-coinbase-will-launch-x402-foundation/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)' }}>Cloudflare and Coinbase x402 Foundation</a></li>
+                  <li><a href="https://blog.cloudflare.com/introducing-pay-per-crawl/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)' }}>Cloudflare: Introducing Pay Per Crawl</a></li>
+                  <li><a href="https://www.fastly.com/blog/how-to-control-and-monetize-ai-bot-traffic-using-fastly-and-tollbit" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)' }}>Fastly and TollBit Integration</a></li>
+                  <li><a href="https://www.x402.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)' }}>x402 - Internet-Native Payments Standard</a></li>
+                  <li><a href="https://www.langchain.com/langsmith/observability" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)' }}>LangSmith Observability</a></li>
                 </ul>
               </div>
             </section>
@@ -883,7 +883,7 @@ export default function ContextGraphsPage() {
         .toc-title {
           font-size: var(--text-xs);
           font-weight: 600;
-          color: var(--gray-400);
+          color: var(--text-muted);
           text-transform: uppercase;
           letter-spacing: 0.1em;
           margin-bottom: var(--space-4);
@@ -893,26 +893,26 @@ export default function ContextGraphsPage() {
           display: block;
           padding: var(--space-2) var(--space-3);
           font-size: var(--text-sm);
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           text-decoration: none;
-          border-left: 2px solid var(--gray-200);
+          border-left: 2px solid var(--border-default);
           margin-left: -2px;
           transition: all 0.15s ease;
         }
 
         .toc-link:hover {
-          color: var(--gray-700);
+          color: var(--text-secondary);
         }
 
         .toc-link:focus {
-          outline: 2px solid var(--brand-primary);
+          outline: 2px solid var(--accent-brand);
           outline-offset: 2px;
           border-radius: var(--radius-sm);
         }
 
         .toc-link.active {
-          color: var(--brand-primary);
-          border-left-color: var(--brand-primary);
+          color: var(--accent-brand);
+          border-left-color: var(--accent-brand);
           font-weight: 500;
         }
 
@@ -935,23 +935,23 @@ export default function ContextGraphsPage() {
           justify-content: space-between;
           width: 100%;
           padding: var(--space-4);
-          background: var(--gray-50);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-subtle);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-lg);
           font-size: var(--text-sm);
           font-weight: 500;
-          color: var(--gray-700);
+          color: var(--text-secondary);
           cursor: pointer;
           min-height: 48px;
           transition: background 0.15s ease;
         }
 
         .mobile-toc-trigger:hover {
-          background: var(--gray-100);
+          background: var(--surface-card);
         }
 
         .mobile-toc-trigger:focus {
-          outline: 2px solid var(--brand-primary);
+          outline: 2px solid var(--accent-brand);
           outline-offset: 2px;
         }
 
@@ -959,8 +959,8 @@ export default function ContextGraphsPage() {
           display: flex;
           flex-direction: column;
           padding: var(--space-3);
-          background: var(--gray-50);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-subtle);
+          border: 1px solid var(--border-default);
           border-top: none;
           border-radius: 0 0 var(--radius-lg) var(--radius-lg);
           max-height: 60vh;
@@ -970,7 +970,7 @@ export default function ContextGraphsPage() {
         .mobile-toc-nav a {
           padding: var(--space-3) var(--space-3);
           font-size: var(--text-sm);
-          color: var(--gray-600);
+          color: var(--text-secondary);
           text-decoration: none;
           border-radius: var(--radius-md);
           min-height: 44px;
@@ -980,12 +980,12 @@ export default function ContextGraphsPage() {
 
         .mobile-toc-nav a:hover,
         .mobile-toc-nav a.active {
-          background: var(--white);
-          color: var(--brand-primary);
+          background: var(--surface-elevated);
+          color: var(--accent-brand);
         }
 
         .mobile-toc-nav a:focus {
-          outline: 2px solid var(--brand-primary);
+          outline: 2px solid var(--accent-brand);
           outline-offset: -2px;
         }
 
@@ -999,7 +999,7 @@ export default function ContextGraphsPage() {
 
         .content-section {
           padding: clamp(var(--space-8), 5vw, var(--space-12)) 0;
-          border-bottom: 1px solid var(--gray-100);
+          border-bottom: 1px solid var(--border-subtle);
           scroll-margin-top: 100px;
         }
 
@@ -1011,14 +1011,14 @@ export default function ContextGraphsPage() {
         .lead {
           font-size: clamp(1.125rem, 2.5vw, 1.25rem);
           line-height: 1.7;
-          color: var(--gray-700);
+          color: var(--text-secondary);
           margin-bottom: var(--space-6);
         }
 
         .main-content p {
           font-size: clamp(0.9375rem, 2vw, 1rem);
           line-height: 1.8;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin-bottom: var(--space-4);
         }
 
@@ -1031,12 +1031,12 @@ export default function ContextGraphsPage() {
         .main-content li {
           font-size: clamp(0.9375rem, 2vw, 1rem);
           line-height: 1.7;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin-bottom: var(--space-2);
         }
 
         .main-content code {
-          background: var(--gray-100);
+          background: var(--surface-card);
           padding: 2px 6px;
           border-radius: var(--radius-sm);
           font-family: var(--font-mono);
@@ -1046,47 +1046,47 @@ export default function ContextGraphsPage() {
 
         .emphasis {
           font-size: clamp(1rem, 2.5vw, 1.125rem);
-          color: var(--gray-700);
+          color: var(--text-secondary);
           font-weight: 500;
         }
 
         .callout {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: linear-gradient(135deg, rgba(99, 91, 255, 0.06) 0%, rgba(0, 212, 170, 0.06) 100%);
-          border: 1px solid rgba(99, 91, 255, 0.15);
+          background: linear-gradient(135deg, var(--accent-brand-subtle) 0%, var(--accent-secondary-faint) 100%);
+          border: 1px solid var(--accent-brand-muted);
           border-radius: var(--radius-xl);
           font-size: clamp(1rem, 2.5vw, 1.125rem);
-          color: var(--gray-700);
+          color: var(--text-secondary);
         }
 
         .protocol-callout {
           padding: var(--space-4) clamp(var(--space-4), 4vw, var(--space-6));
-          background: rgba(0, 212, 170, 0.08);
-          border: 1px solid rgba(0, 212, 170, 0.2);
+          background: var(--accent-secondary-subtle);
+          border: 1px solid var(--accent-secondary-muted);
           border-radius: var(--radius-lg);
           font-size: clamp(0.9375rem, 2vw, 1rem);
-          color: var(--gray-700);
+          color: var(--text-secondary);
           margin-bottom: var(--space-6);
         }
 
         .summary {
           font-size: clamp(1rem, 2.5vw, 1.125rem);
           font-weight: 600;
-          color: var(--gray-800);
+          color: var(--text-primary);
         }
 
         .cta-statement {
           font-size: clamp(1.25rem, 4vw, 1.5rem);
           font-weight: 700;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-8);
         }
 
         /* Problem cards */
         .problem-card {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--white);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-xl);
           margin-bottom: var(--space-4);
         }
@@ -1094,7 +1094,7 @@ export default function ContextGraphsPage() {
         .problem-card h4 {
           font-size: clamp(1rem, 2.5vw, 1.125rem);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-3);
         }
 
@@ -1125,20 +1125,20 @@ export default function ContextGraphsPage() {
 
         .requirement-card {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--gray-50);
+          background: var(--surface-subtle);
           border-radius: var(--radius-xl);
         }
 
         .requirement-card h4 {
           font-size: clamp(1rem, 2.5vw, 1.125rem);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-3);
         }
 
         .requirement-note {
           font-size: var(--text-sm);
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           font-style: italic;
         }
 
@@ -1167,8 +1167,8 @@ export default function ContextGraphsPage() {
 
         .model-block {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--white);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-xl);
         }
 
@@ -1178,13 +1178,13 @@ export default function ContextGraphsPage() {
           gap: var(--space-2);
           font-size: clamp(1rem, 2.5vw, 1.125rem);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-4);
           flex-wrap: wrap;
         }
 
         .model-block h4 :global(svg) {
-          color: var(--brand-primary);
+          color: var(--accent-brand);
           flex-shrink: 0;
         }
 
@@ -1201,7 +1201,7 @@ export default function ContextGraphsPage() {
           background: rgba(255, 255, 255, 0.05);
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           font-size: var(--text-xs);
-          color: var(--gray-400);
+          color: var(--text-muted);
           font-family: var(--font-mono);
         }
 
@@ -1234,11 +1234,11 @@ export default function ContextGraphsPage() {
           gap: var(--space-3);
           padding: var(--space-3) 0;
           font-size: clamp(0.9375rem, 2vw, 1rem);
-          color: var(--gray-700);
+          color: var(--text-secondary);
         }
 
         .proof-list :global(svg) {
-          color: var(--brand-secondary);
+          color: var(--accent-secondary);
           flex-shrink: 0;
           margin-top: 2px;
         }
@@ -1258,7 +1258,7 @@ export default function ContextGraphsPage() {
 
         .build-card {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--gray-50);
+          background: var(--surface-subtle);
           border-radius: var(--radius-xl);
         }
 
@@ -1268,16 +1268,16 @@ export default function ContextGraphsPage() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: rgba(99, 91, 255, 0.1);
+          background: var(--accent-brand-subtle);
           border-radius: var(--radius-lg);
           margin-bottom: var(--space-4);
-          color: var(--brand-primary);
+          color: var(--accent-brand);
         }
 
         .build-card h4 {
           font-size: clamp(1rem, 2.5vw, 1.125rem);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-3);
         }
 
@@ -1301,15 +1301,15 @@ export default function ContextGraphsPage() {
 
         .audience-card {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--white);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-xl);
         }
 
         .audience-card h4 {
           font-size: clamp(0.9375rem, 2vw, 1rem);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-3);
         }
 
@@ -1347,14 +1347,14 @@ export default function ContextGraphsPage() {
 
         .faq-item {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--gray-50);
+          background: var(--surface-subtle);
           border-radius: var(--radius-xl);
         }
 
         .faq-item h4 {
           font-size: clamp(0.9375rem, 2vw, 1rem);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-3);
         }
 
@@ -1415,7 +1415,7 @@ function SectionHeader({ id, title, onCopy, copied }: { id: string; title: strin
       <h2 style={{
         fontSize: 'clamp(1.5rem, 4vw, 1.875rem)',
         fontWeight: 700,
-        color: 'var(--gray-900)',
+        color: 'var(--text-primary)',
         letterSpacing: '-0.02em',
         margin: 0
       }}>
@@ -1430,7 +1430,7 @@ function SectionHeader({ id, title, onCopy, copied }: { id: string; title: strin
           border: 'none',
           cursor: 'pointer',
           padding: 'var(--space-2)',
-          color: copied ? 'var(--brand-secondary)' : 'var(--gray-400)',
+          color: copied ? 'var(--accent-secondary)' : 'var(--text-muted)',
           opacity: 0.6,
           transition: 'all 0.15s ease'
         }}
@@ -1440,11 +1440,11 @@ function SectionHeader({ id, title, onCopy, copied }: { id: string; title: strin
       <style jsx>{`
         .anchor-btn:hover {
           opacity: 1;
-          color: var(--brand-primary);
+          color: var(--accent-brand);
         }
         .anchor-btn:focus {
           opacity: 1;
-          outline: 2px solid var(--brand-primary);
+          outline: 2px solid var(--accent-brand);
           outline-offset: 2px;
         }
       `}</style>

@@ -2,34 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const INDEXNOW_KEY = '3730f721449c4243aba46af9a7c18d71'
 const SITE_HOST = 'www.originary.xyz'
-const SITEMAP_URL = `https://${SITE_HOST}/sitemap.xml`
 
-// Ping all search engines
-async function pingSearchEngines() {
-  const results: Record<string, boolean> = {}
-
-  // 1. Google - Sitemap ping
-  try {
-    const googleResponse = await fetch(
-      `https://www.google.com/ping?sitemap=${encodeURIComponent(SITEMAP_URL)}`
-    )
-    results.google = googleResponse.ok
-  } catch {
-    results.google = false
-  }
-
-  // 2. Bing - Sitemap ping (in addition to IndexNow)
-  try {
-    const bingResponse = await fetch(
-      `https://www.bing.com/ping?sitemap=${encodeURIComponent(SITEMAP_URL)}`
-    )
-    results.bing_sitemap = bingResponse.ok
-  } catch {
-    results.bing_sitemap = false
-  }
-
-  return results
-}
+// IndexNow supports: Bing, Yandex, Seznam, Naver
+// Google: Use Search Console + lastmod in sitemap (ping deprecated June 2023)
 
 export async function POST(request: NextRequest) {
   try {
@@ -60,17 +35,12 @@ export async function POST(request: NextRequest) {
 
     const indexNowSuccess = indexNowResponse.ok || indexNowResponse.status === 202
 
-    // Also ping Google and Bing sitemaps
-    const sitemapResults = await pingSearchEngines()
-
     return NextResponse.json({
       success: true,
-      message: 'URLs submitted to search engines',
+      message: 'URLs submitted to IndexNow (Bing, Yandex, Seznam, Naver)',
       urlCount: urls.length,
-      engines: {
-        indexnow: indexNowSuccess, // Bing, Yandex, Seznam, Naver
-        ...sitemapResults
-      }
+      indexnow: indexNowSuccess,
+      note: 'Google: submit sitemap via Search Console'
     })
   } catch (error) {
     console.error('Search engine ping error:', error)
@@ -96,7 +66,6 @@ export async function GET() {
   ]
 
   try {
-    // 1. IndexNow for Bing, Yandex, Seznam, Naver
     const indexNowResponse = await fetch('https://api.indexnow.org/indexnow', {
       method: 'POST',
       headers: {
@@ -112,17 +81,12 @@ export async function GET() {
 
     const indexNowSuccess = indexNowResponse.ok || indexNowResponse.status === 202
 
-    // 2. Google and Bing sitemap pings
-    const sitemapResults = await pingSearchEngines()
-
     return NextResponse.json({
       success: true,
-      message: 'Submitted to all search engines',
+      message: 'URLs submitted to IndexNow (Bing, Yandex, Seznam, Naver)',
       urls: keyUrls,
-      engines: {
-        indexnow: indexNowSuccess,
-        ...sitemapResults
-      }
+      indexnow: indexNowSuccess,
+      note: 'Google: submit sitemap via Search Console'
     })
   } catch (error) {
     console.error('Search engine ping error:', error)

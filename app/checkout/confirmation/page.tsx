@@ -18,7 +18,7 @@ export default function Confirmation() {
     <div className="wrap">
       <NavigationHeader />
       <main style={{ paddingTop: '80px', minHeight: '100vh' }}>
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div style={{
               textAlign: 'center',
@@ -40,13 +40,13 @@ export default function Confirmation() {
                 fontSize: 'var(--text-4xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 You&rsquo;re in - Start Plan active
               </h1>
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 Your 30-day access is now active. Check your email for login details.
@@ -58,7 +58,7 @@ export default function Confirmation() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Order details
               </h2>
@@ -72,30 +72,30 @@ export default function Confirmation() {
                   display: 'flex',
                   justifyContent: 'space-between',
                   padding: 'var(--space-3)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-md)'
                 }}>
-                  <span style={{ color: 'var(--gray-600)' }}>Plan</span>
-                  <span style={{ fontWeight: 600, color: 'var(--gray-900)' }}>Start (30-day access)</span>
+                  <span style={{ color: 'var(--text-secondary)' }}>Plan</span>
+                  <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Start (30-day access)</span>
                 </div>
                 <div style={{
                   display: 'flex',
                   justifyContent: 'space-between',
                   padding: 'var(--space-3)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-md)'
                 }}>
-                  <span style={{ color: 'var(--gray-600)' }}>Amount</span>
-                  <span style={{ fontWeight: 600, color: 'var(--gray-900)' }}>$1.00 USD</span>
+                  <span style={{ color: 'var(--text-secondary)' }}>Amount</span>
+                  <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>$1.00 USD</span>
                 </div>
                 <div style={{
                   display: 'flex',
                   justifyContent: 'space-between',
                   padding: 'var(--space-3)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-md)'
                 }}>
-                  <span style={{ color: 'var(--gray-600)' }}>Status</span>
+                  <span style={{ color: 'var(--text-secondary)' }}>Status</span>
                   <span style={{
                     fontWeight: 600,
                     color: 'var(--success)',
@@ -162,7 +162,7 @@ export default function Confirmation() {
                 fontSize: 'var(--text-xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Next steps
               </h3>
@@ -193,7 +193,7 @@ export default function Confirmation() {
                     display: 'flex',
                     gap: 'var(--space-4)',
                     padding: 'var(--space-4)',
-                    background: 'var(--gray-50)',
+                    background: 'var(--surface-subtle)',
                     borderRadius: 'var(--radius-md)'
                   }}>
                     <div style={{
@@ -215,13 +215,13 @@ export default function Confirmation() {
                         fontSize: 'var(--text-lg)',
                         fontWeight: 600,
                         marginBottom: 'var(--space-2)',
-                        color: 'var(--gray-900)'
+                        color: 'var(--text-primary)'
                       }}>
                         {item.title}
                       </h4>
                       <p style={{
                         fontSize: 'var(--text-sm)',
-                        color: 'var(--gray-600)',
+                        color: 'var(--text-secondary)',
                         lineHeight: 1.6,
                         margin: 0
                       }}>
@@ -237,13 +237,13 @@ export default function Confirmation() {
               marginTop: 'var(--space-8)',
               textAlign: 'center',
               padding: 'var(--space-6)',
-              background: 'var(--white)',
+              background: 'var(--surface-elevated)',
               borderRadius: 'var(--radius-lg)',
-              border: '1px solid var(--gray-200)'
+              border: '1px solid var(--border-default)'
             }}>
               <p style={{
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-4)'
               }}>
                 Need help getting started?
@@ -251,7 +251,7 @@ export default function Confirmation() {
               <a
                 href="mailto:contact@originary.xyz"
                 style={{
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'underline',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600

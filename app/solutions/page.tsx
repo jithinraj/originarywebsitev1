@@ -36,8 +36,8 @@ export default function SolutionsPage() {
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <div style={{
                 display: 'inline-block',
-                backgroundColor: 'var(--brand-primary-light)',
-                color: 'var(--brand-primary)',
+                backgroundColor: 'var(--accent-brand-muted)',
+                color: 'var(--accent-brand)',
                 padding: 'var(--space-2) var(--space-4)',
                 borderRadius: 'var(--radius-full)',
                 fontSize: 'var(--text-sm)',
@@ -50,7 +50,7 @@ export default function SolutionsPage() {
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
                 <span className="text-gradient">Solutions for Every Role</span>
               </h1>
-              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--gray-600)', marginBottom: 'var(--space-8)' }}>
+              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', marginBottom: 'var(--space-8)' }}>
                 Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.
               </p>
               <a href="mailto:contact@originary.xyz" className="btn btn-primary">
@@ -64,7 +64,7 @@ export default function SolutionsPage() {
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <h2 style={{ marginBottom: 'var(--space-6)' }}>Tailored Solutions for Every Role</h2>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
                 Whether you&apos;re protecting content, monetizing APIs, or building AI systems, our platform provides the tools you need for transparent, verifiable interactions.
               </p>
             </div>
@@ -77,21 +77,21 @@ export default function SolutionsPage() {
                   <span style={{ fontSize: '2rem' }}>📰</span>
                   <h3>Content Publishers</h3>
                 </div>
-                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                   Protect intellectual property while enabling legitimate AI training through verifiable consent and attribution.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>IP Protection & Attribution</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>IP Protection & Attribution</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Usage Tracking & Analytics</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Usage Tracking & Analytics</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Revenue Generation</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Revenue Generation</span>
                   </div>
                 </div>
                 <a href="/solutions/publishers" className="btn btn-secondary" style={{ width: '100%' }}>
@@ -105,21 +105,21 @@ export default function SolutionsPage() {
                   <span style={{ fontSize: '2rem' }}>🔌</span>
                   <h3>API Providers</h3>
                 </div>
-                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                   Transform APIs into revenue-generating assets with automated billing, usage tracking, and compliance.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Instant Monetization</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Instant Monetization</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Zero Refactoring Required</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Zero Refactoring Required</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Global Payment Support</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Global Payment Support</span>
                   </div>
                 </div>
                 <a href="/solutions/api-providers" className="btn btn-secondary" style={{ width: '100%' }}>
@@ -133,21 +133,21 @@ export default function SolutionsPage() {
                   <span style={{ fontSize: '2rem' }}>🤖</span>
                   <h3>AI Builders</h3>
                 </div>
-                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                   Build ethical AI systems that respect policies, maintain consent, and provide verifiable interaction records.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Policy Compliance</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Policy Compliance</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Consent Management</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Consent Management</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Scalable Integration</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Scalable Integration</span>
                   </div>
                 </div>
                 <a href="/solutions/ai-builders" className="btn btn-secondary" style={{ width: '100%' }}>
@@ -161,21 +161,21 @@ export default function SolutionsPage() {
                   <span style={{ fontSize: '2rem' }}>🏢</span>
                   <h3>Enterprise</h3>
                 </div>
-                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                   Governance and compliance for AI at scale.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Centralized Governance</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Centralized Governance</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Security Integration</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Security Integration</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Enterprise Scale</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Enterprise Scale</span>
                   </div>
                 </div>
                 <a href="/solutions/enterprises" className="btn btn-secondary" style={{ width: '100%' }}>
@@ -191,7 +191,7 @@ export default function SolutionsPage() {
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <h2 style={{ marginBottom: 'var(--space-6)' }}>Who's using this</h2>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
                 Production deployments across publishers, API providers, and agent builders.
               </p>
             </div>
@@ -202,8 +202,8 @@ export default function SolutionsPage() {
                   <h3 style={{ marginBottom: 'var(--space-2)' }}>NewsGlobal Media</h3>
                   <span style={{
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--brand-primary)',
-                    backgroundColor: 'var(--brand-primary-light)',
+                    color: 'var(--accent-brand)',
+                    backgroundColor: 'var(--accent-brand-muted)',
                     padding: 'var(--space-1) var(--space-3)',
                     borderRadius: 'var(--radius-full)',
                     fontWeight: 600
@@ -211,12 +211,12 @@ export default function SolutionsPage() {
                     Publisher Solution
                   </span>
                 </div>
-                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', fontStyle: 'italic' }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', fontStyle: 'italic' }}>
                   &ldquo;Implementing PEAC helped us establish clear policies for agent access to our content while maintaining control over attribution and usage.&rdquo;
                 </p>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>Sarah Chen</div>
-                  <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>Chief Technology Officer</div>
+                  <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>Chief Technology Officer</div>
                 </div>
               </div>
 
@@ -225,8 +225,8 @@ export default function SolutionsPage() {
                   <h3 style={{ marginBottom: 'var(--space-2)' }}>DataFlow API</h3>
                   <span style={{
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--brand-primary)',
-                    backgroundColor: 'var(--brand-primary-light)',
+                    color: 'var(--accent-brand)',
+                    backgroundColor: 'var(--accent-brand-muted)',
                     padding: 'var(--space-1) var(--space-3)',
                     borderRadius: 'var(--radius-full)',
                     fontWeight: 600
@@ -234,12 +234,12 @@ export default function SolutionsPage() {
                     API Provider Solution
                   </span>
                 </div>
-                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', fontStyle: 'italic' }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', fontStyle: 'italic' }}>
                   &ldquo;Gateway 402 enabled us to implement payment-required flows for our API endpoints. The integration was straightforward and well-documented.&rdquo;
                 </p>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>Marcus Rodriguez</div>
-                  <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>Head of Product</div>
+                  <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>Head of Product</div>
                 </div>
               </div>
 
@@ -248,8 +248,8 @@ export default function SolutionsPage() {
                   <h3 style={{ marginBottom: 'var(--space-2)' }}>AutoAgent Systems</h3>
                   <span style={{
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--brand-primary)',
-                    backgroundColor: 'var(--brand-primary-light)',
+                    color: 'var(--accent-brand)',
+                    backgroundColor: 'var(--accent-brand-muted)',
                     padding: 'var(--space-1) var(--space-3)',
                     borderRadius: 'var(--radius-full)',
                     fontWeight: 600
@@ -257,12 +257,12 @@ export default function SolutionsPage() {
                     AI Builder Solution
                   </span>
                 </div>
-                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', fontStyle: 'italic' }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', fontStyle: 'italic' }}>
                   &ldquo;PEAC integration provided the policy framework we needed for enterprise deployments. The receipt system gives us clear audit trails for compliance.&rdquo;
                 </p>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>Dr. Emily Watson</div>
-                  <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-500)' }}>VP of Engineering</div>
+                  <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>VP of Engineering</div>
                 </div>
               </div>
             </div>
@@ -278,7 +278,7 @@ export default function SolutionsPage() {
                 Join organizations building the future of AI coordination
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--brand-primary)' }}>
+                <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--accent-brand)' }}>
                   Talk to Sales
                 </a>
                 <a href="/developers" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>

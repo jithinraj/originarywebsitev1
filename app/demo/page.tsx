@@ -135,15 +135,15 @@ function AnimatedGrid() {
         }
         .grid-small {
           background-image:
-            linear-gradient(to right, var(--gray-400) 1px, transparent 1px),
-            linear-gradient(to bottom, var(--gray-400) 1px, transparent 1px);
+            linear-gradient(to right, var(--text-muted) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--text-muted) 1px, transparent 1px);
           background-size: 24px 24px;
           animation: gridDrift 18s linear infinite;
         }
         .grid-large {
           background-image:
-            linear-gradient(to right, var(--gray-500) 1px, transparent 1px),
-            linear-gradient(to bottom, var(--gray-500) 1px, transparent 1px);
+            linear-gradient(to right, var(--text-tertiary) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--text-tertiary) 1px, transparent 1px);
           background-size: 96px 96px;
           animation: gridDrift 24s linear infinite reverse;
           opacity: 0.02;
@@ -226,13 +226,13 @@ function CircularFlowchart({
             </feMerge>
           </filter>
           <linearGradient id="edgeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="var(--brand-primary)" />
-            <stop offset="100%" stopColor="var(--brand-secondary)" />
+            <stop offset="0%" stopColor="var(--accent-brand)" />
+            <stop offset="100%" stopColor="var(--accent-secondary)" />
           </linearGradient>
         </defs>
 
         {/* Background circle */}
-        <circle cx={cx} cy={cy} r={r + 20} fill="none" stroke="var(--gray-200)" strokeWidth="1" strokeDasharray="4 4" />
+        <circle cx={cx} cy={cy} r={r + 20} fill="none" stroke="var(--border-default)" strokeWidth="1" strokeDasharray="4 4" />
 
         {/* Edge paths */}
         {edges.map((edge, i) => {
@@ -240,7 +240,7 @@ function CircularFlowchart({
           const isPast = i < activeStep
           return (
             <g key={`edge-${i}`}>
-              <path d={edge.path} fill="none" stroke="var(--gray-200)" strokeWidth="2" />
+              <path d={edge.path} fill="none" stroke="var(--border-default)" strokeWidth="2" />
               {(isActive || isPast) && (
                 <path
                   d={edge.path}
@@ -278,8 +278,8 @@ function CircularFlowchart({
                 cx={node.x}
                 cy={node.y}
                 r="16"
-                fill={isActive ? 'var(--brand-primary)' : isPast ? 'var(--brand-secondary)' : 'var(--gray-100)'}
-                stroke={isActive ? 'var(--brand-primary)' : isPast ? 'var(--brand-secondary)' : 'var(--gray-300)'}
+                fill={isActive ? 'var(--accent-brand)' : isPast ? 'var(--accent-secondary)' : 'var(--surface-card)'}
+                stroke={isActive ? 'var(--accent-brand)' : isPast ? 'var(--accent-secondary)' : 'var(--border-default)'}
                 strokeWidth="2"
                 className="node-circle"
                 filter={isActive ? "url(#glow)" : undefined}
@@ -290,7 +290,7 @@ function CircularFlowchart({
                 y={node.y}
                 textAnchor="middle"
                 dominantBaseline="central"
-                fill={isActive || isPast ? 'white' : 'var(--gray-500)'}
+                fill={isActive || isPast ? 'white' : 'var(--text-tertiary)'}
                 fontSize="11"
                 fontWeight="600"
                 style={{ pointerEvents: 'none', fontFamily: 'var(--font-mono)' }}
@@ -355,7 +355,7 @@ function CircularFlowchart({
         }
         .pulse-ring {
           fill: none;
-          stroke: var(--brand-primary);
+          stroke: var(--accent-brand);
           stroke-width: 2;
           transform-origin: center;
           opacity: 0;
@@ -377,8 +377,8 @@ function CircularFlowchart({
           transform: translate(-50%, -50%);
           width: clamp(140px, 45%, 180px);
           padding: var(--space-3);
-          background: var(--white);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-xl);
           box-shadow: var(--shadow-lg);
           text-align: center;
@@ -386,20 +386,20 @@ function CircularFlowchart({
         .step-badge {
           font-family: var(--font-mono);
           font-size: 9px;
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           margin-bottom: var(--space-1);
           letter-spacing: 0.05em;
         }
         .step-title {
           font-size: clamp(11px, 2.5vw, 14px);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-1);
           line-height: 1.2;
         }
         .step-desc {
           font-size: clamp(9px, 2vw, 11px);
-          color: var(--gray-600);
+          color: var(--text-secondary);
           line-height: 1.3;
           margin-bottom: var(--space-2);
         }
@@ -414,30 +414,30 @@ function CircularFlowchart({
           justify-content: center;
           width: 28px;
           height: 28px;
-          border: 1px solid var(--gray-200);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-md);
-          background: var(--white);
-          color: var(--gray-600);
+          background: var(--surface-elevated);
+          color: var(--text-secondary);
           cursor: pointer;
           transition: all 0.12s ease;
         }
         .ctrl-btn:hover {
-          background: var(--gray-50);
-          border-color: var(--gray-300);
-          color: var(--gray-900);
+          background: var(--surface-subtle);
+          border-color: var(--border-default);
+          color: var(--text-primary);
         }
         .ctrl-btn:active {
           transform: scale(0.96);
         }
         .ctrl-primary {
-          background: var(--brand-primary);
-          border-color: var(--brand-primary);
+          background: var(--accent-brand);
+          border-color: var(--accent-brand);
           color: white;
         }
         .ctrl-primary:hover {
-          background: var(--brand-primary);
+          background: var(--accent-brand);
           opacity: 0.9;
-          border-color: var(--brand-primary);
+          border-color: var(--accent-brand);
           color: white;
         }
         @media (prefers-reduced-motion: reduce) {
@@ -574,11 +574,11 @@ function AnimatedCodeBlock({
         }
         .code-label {
           padding: var(--space-2) var(--space-4);
-          background: rgba(99, 91, 255, 0.15);
+          background: var(--accent-brand-muted);
           border-bottom: 1px solid rgba(255,255,255,0.1);
           font-size: 10px;
           font-weight: 700;
-          color: var(--brand-primary);
+          color: var(--accent-brand);
           font-family: var(--font-mono);
           letter-spacing: 0.08em;
         }
@@ -610,7 +610,7 @@ function AnimatedCodeBlock({
           background: rgba(255,255,255,0.05);
           border: 1px solid rgba(255,255,255,0.1);
           border-radius: var(--radius-sm);
-          color: var(--gray-400);
+          color: var(--text-muted);
           font-size: 10px;
           cursor: pointer;
           transition: all 0.15s ease;
@@ -645,7 +645,7 @@ function AnimatedCodeBlock({
         }
         .cursor {
           animation: blink 1s step-end infinite;
-          color: var(--brand-primary);
+          color: var(--accent-brand);
         }
         @keyframes blink {
           50% { opacity: 0; }
@@ -758,7 +758,7 @@ function ReceiptTypewriter({
         .receipt-label {
           font-family: var(--font-mono);
           font-size: 10px;
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           letter-spacing: 0.05em;
         }
         .verified-badge {
@@ -766,12 +766,12 @@ function ReceiptTypewriter({
           align-items: center;
           gap: 4px;
           padding: 4px 10px;
-          background: rgba(0, 212, 170, 0.2);
+          background: var(--accent-secondary-muted);
           border: 1px solid rgba(0, 212, 170, 0.4);
           border-radius: var(--radius-full);
           font-size: 11px;
           font-weight: 600;
-          color: var(--brand-secondary);
+          color: var(--accent-secondary);
           animation: verifyPop 0.3s ease;
         }
         @keyframes verifyPop {
@@ -800,7 +800,7 @@ function ReceiptTypewriter({
         }
         .cursor {
           animation: blink 1s step-end infinite;
-          color: var(--brand-primary);
+          color: var(--accent-brand);
         }
         @keyframes blink {
           50% { opacity: 0; }
@@ -808,10 +808,10 @@ function ReceiptTypewriter({
         .receipt-note {
           padding: var(--space-3) var(--space-4);
           margin: 0;
-          background: rgba(99, 91, 255, 0.08);
+          background: var(--accent-brand-subtle);
           border-top: 1px solid rgba(255,255,255,0.06);
           font-size: 12px;
-          color: var(--gray-400);
+          color: var(--text-muted);
         }
         @media (prefers-reduced-motion: reduce) {
           .cursor { animation: none; }
@@ -899,7 +899,7 @@ function AnimatedTimeline({
           top: 16px;
           bottom: 16px;
           width: 2px;
-          background: var(--gray-200);
+          background: var(--surface-subtle);
           border-radius: 1px;
         }
         .timeline-progress {
@@ -907,7 +907,7 @@ function AnimatedTimeline({
           top: 0;
           left: 0;
           width: 100%;
-          background: linear-gradient(180deg, var(--brand-primary), var(--brand-secondary));
+          background: linear-gradient(180deg, var(--accent-brand), var(--accent-secondary));
           border-radius: 1px;
           transition: height 0.4s ease-out;
         }
@@ -918,9 +918,9 @@ function AnimatedTimeline({
           height: 8px;
           margin-left: -4px;
           margin-top: -4px;
-          background: var(--brand-primary);
+          background: var(--accent-brand);
           border-radius: 50%;
-          box-shadow: 0 0 10px var(--brand-primary);
+          box-shadow: 0 0 10px var(--accent-brand);
           transition: top 0.4s ease-out;
         }
         .timeline-steps {
@@ -938,11 +938,11 @@ function AnimatedTimeline({
           transition: all 0.15s ease;
         }
         .timeline-step:hover {
-          background: var(--gray-50);
+          background: var(--surface-subtle);
         }
         .timeline-step.active {
-          background: rgba(99, 91, 255, 0.06);
-          border: 1px solid rgba(99, 91, 255, 0.15);
+          background: var(--accent-brand-subtle);
+          border: 1px solid var(--accent-brand-muted);
           margin: -1px;
         }
         .timeline-step.past {
@@ -957,27 +957,27 @@ function AnimatedTimeline({
           display: flex;
           align-items: center;
           justify-content: center;
-          background: var(--white);
-          border: 2px solid var(--gray-300);
+          background: var(--surface-elevated);
+          border: 2px solid var(--border-default);
           border-radius: 50%;
           transition: all 0.2s ease;
           z-index: 1;
         }
         .timeline-step.active .step-dot {
-          background: var(--brand-primary);
-          border-color: var(--brand-primary);
+          background: var(--accent-brand);
+          border-color: var(--accent-brand);
           color: white;
           transform: scale(1.15);
         }
         .timeline-step.past .step-dot {
-          background: var(--brand-secondary);
-          border-color: var(--brand-secondary);
+          background: var(--accent-secondary);
+          border-color: var(--accent-secondary);
           color: white;
         }
         .dot-pulse {
           position: absolute;
           inset: -3px;
-          border: 2px solid var(--brand-primary);
+          border: 2px solid var(--accent-brand);
           border-radius: 50%;
           opacity: 0;
         }
@@ -998,7 +998,7 @@ function AnimatedTimeline({
         .step-number {
           font-family: var(--font-mono);
           font-size: 9px;
-          color: var(--gray-400);
+          color: var(--text-muted);
           margin-bottom: 1px;
           text-transform: uppercase;
           letter-spacing: 0.05em;
@@ -1006,15 +1006,15 @@ function AnimatedTimeline({
         .step-title {
           font-size: 13px;
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: 1px;
         }
         .timeline-step.active .step-title {
-          color: var(--brand-primary);
+          color: var(--accent-brand);
         }
         .step-desc {
           font-size: 11px;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           line-height: 1.35;
         }
         @media (prefers-reduced-motion: reduce) {
@@ -1380,7 +1380,7 @@ Content-Type: application/json
           overflow: hidden;
         }
         .demo-section {
-          background: var(--white);
+          background: var(--surface-elevated);
           padding: var(--space-16) 0 var(--space-24);
           position: relative;
           z-index: 1;
@@ -1394,20 +1394,20 @@ Content-Type: application/json
           display: inline-flex;
           align-items: center;
           gap: var(--space-2);
-          background: rgba(0, 212, 170, 0.1);
-          border: 1px solid rgba(0, 212, 170, 0.2);
+          background: var(--accent-secondary-subtle);
+          border: 1px solid var(--accent-secondary-muted);
           border-radius: var(--radius-full);
           padding: var(--space-1) var(--space-4);
           margin-bottom: var(--space-4);
           font-size: 12px;
           font-weight: 600;
-          color: var(--brand-secondary);
+          color: var(--accent-secondary);
         }
         .badge-pulse {
           width: 6px;
           height: 6px;
           border-radius: 50%;
-          background: var(--brand-secondary);
+          background: var(--accent-secondary);
           animation: pulse 2s ease-in-out infinite;
         }
         @keyframes pulse {
@@ -1420,16 +1420,16 @@ Content-Type: application/json
           line-height: 1.1;
           letter-spacing: -0.03em;
           margin-bottom: var(--space-4);
-          color: var(--gray-900);
+          color: var(--text-primary);
         }
         .hero-desc {
           font-size: clamp(14px, 2.5vw, 18px);
           line-height: 1.6;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin-bottom: var(--space-3);
         }
         .hero-desc code {
-          background: var(--gray-100);
+          background: var(--surface-card);
           padding: 2px 6px;
           border-radius: var(--radius-sm);
           font-family: var(--font-mono);
@@ -1437,7 +1437,7 @@ Content-Type: application/json
         }
         .hero-note {
           font-size: 13px;
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           font-style: italic;
         }
         .demo-card {
@@ -1455,12 +1455,12 @@ Content-Type: application/json
         }
         .section-header p {
           font-size: 13px;
-          color: var(--gray-600);
+          color: var(--text-secondary);
         }
         .section-header code {
           font-family: var(--font-mono);
           font-size: 0.95em;
-          background: var(--gray-100);
+          background: var(--surface-card);
           padding: 1px 4px;
           border-radius: var(--radius-sm);
         }
@@ -1472,8 +1472,8 @@ Content-Type: application/json
         }
         .exchange-tab {
           padding: var(--space-2) var(--space-3);
-          background: var(--gray-100);
-          color: var(--gray-700);
+          background: var(--surface-card);
+          color: var(--text-secondary);
           border: none;
           border-radius: var(--radius-md);
           font-size: 13px;
@@ -1482,10 +1482,10 @@ Content-Type: application/json
           transition: all 0.15s ease;
         }
         .exchange-tab:hover {
-          background: var(--gray-200);
+          background: var(--surface-subtle);
         }
         .exchange-tab.active {
-          background: var(--brand-primary);
+          background: var(--accent-brand);
           color: white;
         }
         .exchange-tab:active {
@@ -1526,12 +1526,12 @@ Content-Type: application/json
         }
         .tag {
           padding: 3px 8px;
-          background: rgba(0, 212, 170, 0.1);
-          border: 1px solid rgba(0, 212, 170, 0.2);
+          background: var(--accent-secondary-subtle);
+          border: 1px solid var(--accent-secondary-muted);
           border-radius: var(--radius-full);
           font-size: 10px;
           font-family: var(--font-mono);
-          color: var(--brand-secondary);
+          color: var(--accent-secondary);
         }
         .code-preview {
           background: #0d0d0d;
@@ -1560,7 +1560,7 @@ Content-Type: application/json
           background: rgba(255,255,255,0.05);
           border: 1px solid rgba(255,255,255,0.1);
           border-radius: var(--radius-sm);
-          color: var(--gray-400);
+          color: var(--text-muted);
           cursor: pointer;
           transition: all 0.15s ease;
         }
@@ -1570,16 +1570,16 @@ Content-Type: application/json
         }
         .info-box {
           padding: var(--space-3);
-          background: var(--gray-50);
+          background: var(--surface-subtle);
           border-radius: var(--radius-lg);
           font-size: 12px;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           line-height: 1.5;
         }
         .info-box code {
           font-family: var(--font-mono);
           margin: 0 3px;
-          background: var(--gray-200);
+          background: var(--surface-subtle);
           padding: 1px 4px;
           border-radius: var(--radius-sm);
         }
@@ -1592,7 +1592,7 @@ Content-Type: application/json
           align-items: center;
           gap: 4px;
           padding: 4px 8px;
-          background: var(--gray-100);
+          background: var(--surface-card);
           border: none;
           border-radius: var(--radius-md);
           font-size: 11px;
@@ -1600,7 +1600,7 @@ Content-Type: application/json
           transition: all 0.12s ease;
         }
         .action-btn:hover {
-          background: var(--gray-200);
+          background: var(--surface-subtle);
         }
         .action-btn:active {
           transform: scale(0.96);
@@ -1626,31 +1626,31 @@ Content-Type: application/json
         }
         .tag-default {
           padding: 2px 6px;
-          background: rgba(0, 212, 170, 0.15);
+          background: var(--accent-secondary-muted);
           border-radius: var(--radius-full);
           font-size: 9px;
           font-weight: 700;
-          color: var(--brand-secondary);
+          color: var(--accent-secondary);
         }
         .tag-optional {
           padding: 2px 6px;
-          background: var(--gray-100);
+          background: var(--surface-card);
           border-radius: var(--radius-full);
           font-size: 9px;
           font-weight: 700;
-          color: var(--gray-600);
+          color: var(--text-secondary);
         }
         .proof-box {
           margin-top: var(--space-6);
           padding: var(--space-4);
-          background: rgba(0, 212, 170, 0.06);
-          border: 1px solid rgba(0, 212, 170, 0.2);
+          background: var(--accent-secondary-faint);
+          border: 1px solid var(--accent-secondary-muted);
           border-radius: var(--radius-lg);
           font-size: 13px;
-          color: var(--gray-700);
+          color: var(--text-secondary);
         }
         .proof-box strong {
-          color: var(--brand-secondary);
+          color: var(--accent-secondary);
         }
         .compat-grid {
           display: grid;
@@ -1664,24 +1664,24 @@ Content-Type: application/json
         }
         .compat-card {
           padding: var(--space-4);
-          background: var(--gray-50);
+          background: var(--surface-subtle);
           border-radius: var(--radius-lg);
-          border: 1px solid var(--gray-200);
+          border: 1px solid var(--border-default);
           transition: all 0.14s ease;
         }
         .compat-card:hover {
-          border-color: var(--gray-300);
+          border-color: var(--border-default);
           box-shadow: var(--shadow-sm);
         }
         .compat-card h4 {
           font-size: 14px;
           font-weight: 600;
           margin-bottom: var(--space-2);
-          color: var(--gray-900);
+          color: var(--text-primary);
         }
         .compat-card p {
           font-size: 12px;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin-bottom: var(--space-3);
           line-height: 1.45;
         }
@@ -1691,7 +1691,7 @@ Content-Type: application/json
           gap: 4px;
           font-size: 12px;
           font-weight: 500;
-          color: var(--brand-primary);
+          color: var(--accent-brand);
           text-decoration: none;
         }
         .compat-card a:hover {
@@ -1712,14 +1712,14 @@ Content-Type: application/json
         }
         .audit-contents {
           font-size: 12px;
-          color: var(--gray-600);
+          color: var(--text-secondary);
         }
         .download-btn {
           display: inline-flex;
           align-items: center;
           gap: var(--space-2);
           padding: var(--space-2) var(--space-4);
-          background: var(--brand-primary);
+          background: var(--accent-brand);
           color: white;
           border-radius: var(--radius-lg);
           font-size: 13px;

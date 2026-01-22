@@ -43,21 +43,21 @@ export default function VerifyAPI() {
         ]} />
       </div>
       <main style={{ paddingTop: '0' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-3)',
-                background: 'rgba(0, 212, 170, 0.1)',
-                border: '1px solid rgba(0, 212, 170, 0.2)',
+                background: 'var(--accent-secondary-subtle)',
+                border: '1px solid var(--accent-secondary-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-6)',
                 marginBottom: 'var(--space-6)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--brand-secondary)'
+                color: 'var(--accent-secondary)'
               }}>
                 <Zap size={16} />
                 <span>VERIFICATION API</span>
@@ -77,7 +77,7 @@ export default function VerifyAPI() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 <span className="text-gradient">Lightning-fast</span> cryptographic verification
               </h1>
@@ -85,7 +85,7 @@ export default function VerifyAPI() {
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)',
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
@@ -123,33 +123,33 @@ export default function VerifyAPI() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(99, 91, 255, 0.1)',
+                  background: 'var(--accent-brand-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <Zap size={28} style={{ color: 'var(--brand-primary)' }} />
+                  <Zap size={28} style={{ color: 'var(--accent-brand)' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Ultra-low latency</h3>
                 <div style={{
                   fontSize: 'var(--text-2xl)',
                   fontWeight: 700,
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   marginBottom: 'var(--space-2)'
                 }}>&lt; 5ms</div>
                 <div style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-4)'
                 }}>p95 verify latency</div>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
                   Targets: Receipt verification p95 &lt; 5ms, signing p95 &lt; 10ms, ≥5k req/s per edge instance.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Edge caching</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Smart routing</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Parallel processing</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Edge caching</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Smart routing</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Parallel processing</span>
                 </div>
               </div>
 
@@ -158,22 +158,22 @@ export default function VerifyAPI() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(0, 212, 170, 0.1)',
+                  background: 'var(--accent-secondary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <Shield size={28} style={{ color: 'var(--brand-secondary)' }} />
+                  <Shield size={28} style={{ color: 'var(--accent-secondary)' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Enterprise SLA</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
                   Mission-critical availability with redundant infrastructure, automated failover, and 24/7 monitoring.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Auto-failover</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Load balancing</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Health monitoring</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Auto-failover</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Load balancing</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Health monitoring</span>
                 </div>
               </div>
 
@@ -182,7 +182,7 @@ export default function VerifyAPI() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(255, 107, 53, 0.1)',
+                  background: 'var(--accent-tertiary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -195,9 +195,9 @@ export default function VerifyAPI() {
                   Deployed across major cloud providers and edge networks for low-latency performance from any location.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Multi-cloud</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Edge deployment</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Regional compliance</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Multi-cloud</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Edge deployment</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Regional compliance</span>
                 </div>
               </div>
             </div>
@@ -244,8 +244,8 @@ export default function VerifyAPI() {
                     href="/company/contact"
                     className="btn btn-lg"
                     style={{
-                      background: 'var(--white)',
-                      color: 'var(--brand-primary)',
+                      background: 'var(--surface-elevated)',
+                      color: 'var(--accent-brand)',
                       border: 'none'
                     }}
                   >

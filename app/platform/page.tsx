@@ -48,14 +48,14 @@ export default function PlatformPage() {
         <SocialProofSection />
 
         {/* Section 1: From policy to proof */}
-        <section className="section" style={{ background: 'var(--gray-50)', padding: 'clamp(60px, 10vh, 100px) 0' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', padding: 'clamp(60px, 10vh, 100px) 0' }}>
           <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 var(--space-6)' }}>
             <h2 style={{
               fontSize: 'clamp(2rem, 4vw, 2.5rem)',
               fontWeight: 700,
               textAlign: 'center',
               marginBottom: 'var(--space-12)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               From policy to proof
             </h2>
@@ -63,7 +63,7 @@ export default function PlatformPage() {
             <p style={{
               fontSize: 'var(--text-lg)',
               lineHeight: 1.7,
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               maxWidth: '800px',
               margin: '0 auto var(--space-12)',
               textAlign: 'center'
@@ -87,18 +87,18 @@ export default function PlatformPage() {
                 { label: 'Trace', icon: Layers, desc: 'Verification endpoints' }
               ].map((step) => (
                 <div key={step.label} style={{
-                  background: 'var(--white)',
-                  border: '1px solid var(--gray-200)',
+                  background: 'var(--surface-elevated)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: 'var(--radius-xl)',
                   padding: 'var(--space-6)',
                   textAlign: 'center',
                   transition: 'all 0.3s ease'
                 }}>
-                  <step.icon size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
-                  <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  <step.icon size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
+                  <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                     {step.label}
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.5 }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
                     {step.desc}
                   </p>
                 </div>
@@ -108,14 +108,14 @@ export default function PlatformPage() {
         </section>
 
         {/* Section 2: Portable by design */}
-        <section className="section" style={{ background: 'var(--white)', padding: 'clamp(60px, 10vh, 100px) 0' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', padding: 'clamp(60px, 10vh, 100px) 0' }}>
           <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-6)' }}>
             <h2 style={{
               fontSize: 'clamp(2rem, 4vw, 2.5rem)',
               fontWeight: 700,
               textAlign: 'center',
               marginBottom: 'var(--space-8)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Portable by design
             </h2>
@@ -123,7 +123,7 @@ export default function PlatformPage() {
             <p style={{
               fontSize: 'var(--text-lg)',
               lineHeight: 1.7,
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               maxWidth: '800px',
               margin: '0 auto var(--space-8)',
               textAlign: 'center'
@@ -134,8 +134,8 @@ export default function PlatformPage() {
             </p>
 
             <div style={{
-              background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.05) 0%, rgba(0, 212, 170, 0.05) 100%)',
-              border: '1px solid var(--gray-200)',
+              background: 'var(--gradient-section)',
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-2xl)',
               padding: 'var(--space-8)',
               marginBottom: 'var(--space-8)'
@@ -159,10 +159,10 @@ export default function PlatformPage() {
                     alignItems: 'flex-start',
                     gap: 'var(--space-3)',
                     fontSize: 'var(--text-base)',
-                    color: 'var(--gray-700)',
+                    color: 'var(--text-secondary)',
                     lineHeight: 1.6
                   }}>
-                    <CheckCircle size={20} style={{ color: 'var(--brand-primary)', marginTop: '2px', flexShrink: 0 }} />
+                    <CheckCircle size={20} style={{ color: 'var(--accent-brand)', marginTop: '2px', flexShrink: 0 }} />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -172,14 +172,14 @@ export default function PlatformPage() {
         </section>
 
         {/* Section 3: Platform modules */}
-        <section className="section" style={{ background: 'var(--gray-50)', padding: 'clamp(60px, 10vh, 100px) 0' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', padding: 'clamp(60px, 10vh, 100px) 0' }}>
           <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 var(--space-6)' }}>
             <h2 style={{
               fontSize: 'clamp(2rem, 4vw, 2.5rem)',
               fontWeight: 700,
               textAlign: 'center',
               marginBottom: 'var(--space-6)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Production components around the standard
             </h2>
@@ -187,7 +187,7 @@ export default function PlatformPage() {
             <p style={{
               fontSize: 'var(--text-base)',
               lineHeight: 1.6,
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               maxWidth: '700px',
               margin: '0 auto var(--space-12)',
               textAlign: 'center'
@@ -233,8 +233,8 @@ export default function PlatformPage() {
                 }
               ].map((module, i) => (
                 <div key={i} className="card" style={{
-                  background: 'var(--white)',
-                  border: '1px solid var(--gray-200)',
+                  background: 'var(--surface-elevated)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: 'var(--radius-xl)',
                   padding: 'var(--space-8)',
                   display: 'flex',
@@ -245,25 +245,25 @@ export default function PlatformPage() {
                     width: '48px',
                     height: '48px',
                     borderRadius: 'var(--radius-xl)',
-                    background: 'rgba(99, 91, 255, 0.1)',
+                    background: 'var(--accent-brand-subtle)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginBottom: 'var(--space-4)'
                   }}>
-                    <module.icon size={24} style={{ color: 'var(--brand-primary)' }} />
+                    <module.icon size={24} style={{ color: 'var(--accent-brand)' }} />
                   </div>
-                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                     {module.title}
                   </h3>
-                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-4)', flex: 1 }}>
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-4)', flex: 1 }}>
                     {module.desc}
                   </p>
                   <Link href={module.cta.href} style={{
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: 'var(--space-2)',
-                    color: 'var(--brand-primary)',
+                    color: 'var(--accent-brand)',
                     textDecoration: 'none',
                     fontSize: 'var(--text-sm)',
                     fontWeight: 500
@@ -278,14 +278,14 @@ export default function PlatformPage() {
         </section>
 
         {/* Section 4: Deployment patterns */}
-        <section className="section" style={{ background: 'var(--white)', padding: 'clamp(60px, 10vh, 100px) 0' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', padding: 'clamp(60px, 10vh, 100px) 0' }}>
           <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-6)' }}>
             <h2 style={{
               fontSize: 'clamp(2rem, 4vw, 2.5rem)',
               fontWeight: 700,
               textAlign: 'center',
               marginBottom: 'var(--space-8)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Deploy it your way
             </h2>
@@ -293,7 +293,7 @@ export default function PlatformPage() {
             <p style={{
               fontSize: 'var(--text-lg)',
               lineHeight: 1.7,
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               maxWidth: '800px',
               margin: '0 auto var(--space-8)',
               textAlign: 'center'
@@ -312,17 +312,17 @@ export default function PlatformPage() {
                 { icon: Server, label: 'Managed', desc: 'Originary-hosted components for teams that want operational support. Contact us for managed deployments.' }
               ].map((pattern, i) => (
                 <div key={i} style={{
-                  background: 'var(--gray-50)',
-                  border: '1px solid var(--gray-200)',
+                  background: 'var(--surface-subtle)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: 'var(--radius-xl)',
                   padding: 'var(--space-6)',
                   textAlign: 'center'
                 }}>
-                  <pattern.icon size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  <pattern.icon size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                     {pattern.label}
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.5 }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
                     {pattern.desc}
                   </p>
                 </div>
@@ -332,14 +332,14 @@ export default function PlatformPage() {
         </section>
 
         {/* Section 5: Getting started */}
-        <section className="section" style={{ background: 'var(--gray-50)', padding: 'clamp(60px, 10vh, 100px) 0' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', padding: 'clamp(60px, 10vh, 100px) 0' }}>
           <div className="container" style={{ maxWidth: '900px', margin: '0 auto', padding: '0 var(--space-6)' }}>
             <h2 style={{
               fontSize: 'clamp(2rem, 4vw, 2.5rem)',
               fontWeight: 700,
               textAlign: 'center',
               marginBottom: 'var(--space-12)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Integrate in three steps
             </h2>
@@ -350,16 +350,16 @@ export default function PlatformPage() {
               gap: 'var(--space-8)'
             }}>
               {[
-                { num: '1', text: <>Publish your <Link href="/declare" style={{ color: 'var(--brand-primary)', textDecoration: 'none', borderBottom: '1px solid var(--brand-primary)' }}>peac.txt policy</Link> at /.well-known/peac.txt</> },
-                { num: '2', text: <>Deploy <Link href="/products/gateway-402" style={{ color: 'var(--brand-primary)', textDecoration: 'none', borderBottom: '1px solid var(--brand-primary)' }}>Gateway 402</Link> to enforce access decisions and issue receipts</> },
-                { num: '3', text: <>Use <Link href="/verify" style={{ color: 'var(--brand-primary)', textDecoration: 'none', borderBottom: '1px solid var(--brand-primary)' }}>Verify</Link> to validate receipts from any PEAC-conformant source</> }
+                { num: '1', text: <>Publish your <Link href="/declare" style={{ color: 'var(--accent-brand)', textDecoration: 'none', borderBottom: '1px solid var(--accent-brand)' }}>peac.txt policy</Link> at /.well-known/peac.txt</> },
+                { num: '2', text: <>Deploy <Link href="/products/gateway-402" style={{ color: 'var(--accent-brand)', textDecoration: 'none', borderBottom: '1px solid var(--accent-brand)' }}>Gateway 402</Link> to enforce access decisions and issue receipts</> },
+                { num: '3', text: <>Use <Link href="/verify" style={{ color: 'var(--accent-brand)', textDecoration: 'none', borderBottom: '1px solid var(--accent-brand)' }}>Verify</Link> to validate receipts from any PEAC-conformant source</> }
               ].map((step) => (
                 <div key={step.num} style={{
                   display: 'flex',
                   alignItems: 'flex-start',
                   gap: 'var(--space-4)',
-                  background: 'var(--white)',
-                  border: '1px solid var(--gray-200)',
+                  background: 'var(--surface-elevated)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: 'var(--radius-xl)',
                   padding: 'var(--space-6)'
                 }}>
@@ -367,8 +367,8 @@ export default function PlatformPage() {
                     width: '40px',
                     height: '40px',
                     borderRadius: '50%',
-                    background: 'var(--brand-primary)',
-                    color: 'var(--white)',
+                    background: 'var(--accent-brand)',
+                    color: 'white',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -378,7 +378,7 @@ export default function PlatformPage() {
                   }}>
                     {step.num}
                   </div>
-                  <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-700)', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
                     {step.text}
                   </p>
                 </div>
@@ -388,14 +388,14 @@ export default function PlatformPage() {
         </section>
 
         {/* Section 6: Who this is for */}
-        <section className="section" style={{ background: 'var(--white)', padding: 'clamp(60px, 10vh, 100px) 0' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', padding: 'clamp(60px, 10vh, 100px) 0' }}>
           <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 var(--space-6)' }}>
             <h2 style={{
               fontSize: 'clamp(2rem, 4vw, 2.5rem)',
               fontWeight: 700,
               textAlign: 'center',
               marginBottom: 'var(--space-8)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Built for ecosystems, not silos
             </h2>
@@ -403,7 +403,7 @@ export default function PlatformPage() {
             <p style={{
               fontSize: 'var(--text-lg)',
               lineHeight: 1.7,
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               maxWidth: '800px',
               margin: '0 auto',
               textAlign: 'center'
@@ -418,7 +418,7 @@ export default function PlatformPage() {
 
         {/* Final CTA */}
         <section className="section" style={{
-          background: 'linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%)',
+          background: 'linear-gradient(180deg, var(--surface-subtle) 0%, var(--surface-elevated) 100%)',
           padding: 'clamp(80px, 12vh, 120px) 0'
         }}>
           <div className="container" style={{ maxWidth: '900px', margin: '0 auto', padding: '0 var(--space-6)', textAlign: 'center' }}>
@@ -426,7 +426,7 @@ export default function PlatformPage() {
               fontSize: 'clamp(2.5rem, 5vw, 3rem)',
               fontWeight: 700,
               marginBottom: 'var(--space-6)',
-              color: 'var(--gray-900)',
+              color: 'var(--text-primary)',
               lineHeight: 1.2
             }}>
               Ship the standard in production
@@ -435,7 +435,7 @@ export default function PlatformPage() {
             <p style={{
               fontSize: 'var(--text-xl)',
               lineHeight: 1.7,
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               maxWidth: '700px',
               margin: '0 auto var(--space-8)'
             }}>
@@ -467,7 +467,7 @@ export default function PlatformPage() {
 
             <p style={{
               fontSize: 'var(--text-sm)',
-              color: 'var(--gray-500)',
+              color: 'var(--text-tertiary)',
               fontStyle: 'italic'
             }}>
               Open protocol. No lock-in. Multiple implementations welcome.

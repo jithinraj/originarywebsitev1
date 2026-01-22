@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight, Zap, ShieldCheck, BarChart3, Layers } from 'lucide-react'
 
@@ -8,11 +9,11 @@ const products = [
     id: 'gateway',
     title: 'Gateway',
     tagline: 'Edge enforcement for the agentic web',
-    desc: 'Enable HTTP 402 payment-required flows and issue PEAC receipts at the edge or origin. Designed for fast verification and consistent evidence generation.',
+    desc: 'Enable HTTP 402 payment-required flows and issue PEAC receipts at the edge or origin.',
     href: '/products/gateway-402',
     icon: Zap,
-    color: '#635bff',
-    features: ['Edge deployment', 'HTTP 402 flows', 'Signed receipts', 'Deterministic verification'],
+    features: ['Edge deployment', 'HTTP 402 flows', 'Signed receipts'],
+    metric: 'Production ready',
   },
   {
     id: 'verify',
@@ -21,8 +22,8 @@ const products = [
     desc: 'Offline and hosted receipt verification with JWKS support and policy validation.',
     href: '/products/verify',
     icon: ShieldCheck,
-    color: '#635bff',
-    features: ['Offline verification', 'JWKS support', 'Policy validation', 'Evidence chains'],
+    features: ['Offline verification', 'JWKS support', 'Policy validation'],
+    metric: '50ms avg',
   },
   {
     id: 'trace',
@@ -31,33 +32,48 @@ const products = [
     desc: 'Comprehensive audit exports and evidence views derived from PEAC receipts.',
     href: '/trace',
     icon: BarChart3,
-    color: '#635bff',
-    features: ['Audit exports', 'Evidence views', 'Compliance tools', 'Dispute resolution'],
+    features: ['Audit exports', 'Evidence views', 'Compliance tools'],
+    metric: 'Preview',
   },
   {
     id: 'studio',
     title: 'Studio',
     tagline: 'Builder dashboard',
-    desc: 'Operate receipts at scale with dashboards, exports, and policy tooling built on top of PEAC evidence.',
+    desc: 'Operate receipts at scale with dashboards, exports, and policy tooling.',
     href: '/products/studio',
     icon: Layers,
-    color: '#635bff',
-    features: ['Operational dashboards', 'Scale governance', 'Compliance tools', 'Team management'],
+    features: ['Dashboards', 'Scale governance', 'Team management'],
+    metric: 'Preview',
   },
 ]
 
 export default function ProductSuite() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+          }
+        })
+      },
+      { threshold: 0.15 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section className="products">
-      <div className="section-transition-top" aria-hidden="true" />
-      <div className="section-transition-bottom" aria-hidden="true" />
-
-      <div className="products-bg" aria-hidden="true">
-        <div className="bg-gradient" />
-      </div>
-
+    <section ref={sectionRef} className="products">
       <div className="products-container">
-        <div className="products-header">
+        <div className={`products-header ${isVisible ? 'visible' : ''}`}>
           <span className="products-label">Product Suite</span>
           <h2 className="products-title">Built for the agentic economy</h2>
           <p className="products-subtitle">
@@ -66,43 +82,51 @@ export default function ProductSuite() {
         </div>
 
         <div className="products-grid">
-          {products.map((product) => {
+          {products.map((product, i) => {
             const Icon = product.icon
 
             return (
-              <div key={product.id} className="product-card-wrapper" style={{ '--accent': product.color } as React.CSSProperties}>
-                <Link href={product.href} className="product-card">
-                  <div className="card-header">
-                    <div className="card-icon">
-                      <Icon size={22} strokeWidth={2} />
-                    </div>
-                    <div className="card-arrow">
-                      <ArrowRight size={18} strokeWidth={2} />
-                    </div>
-                  </div>
+              <Link
+                key={product.id}
+                href={product.href}
+                className={`product-card ${isVisible ? 'visible' : ''}`}
+                style={{ '--delay': `${i * 100 + 200}ms` } as React.CSSProperties}
+              >
+                <div className="card-icon">
+                  <Icon size={24} strokeWidth={1.5} />
+                </div>
 
-                  <div className="card-body">
+                <div className="card-content">
+                  <div className="card-title-row">
                     <h3 className="card-title">{product.title}</h3>
-                    <p className="card-tagline">{product.tagline}</p>
-                    <p className="card-desc">{product.desc}</p>
+                    <span className={`card-metric ${product.metric === 'Production ready' ? 'live' : ''}`}>
+                      {product.metric}
+                    </span>
                   </div>
+                  <p className="card-tagline">{product.tagline}</p>
+                  <p className="card-desc">{product.desc}</p>
+                </div>
 
-                  <div className="card-features">
-                    {product.features.map((feature, idx) => (
-                      <span key={idx} className="feature-tag">
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
+                <div className="card-features">
+                  {product.features.map((feature, idx) => (
+                    <span key={idx} className="feature-tag">
+                      {feature}
+                    </span>
+                  ))}
+                </div>
 
-                  <div className="card-indicator" />
-                </Link>
-              </div>
+                <div className="card-footer">
+                  <span className="card-link">
+                    Learn more
+                    <ArrowRight size={14} strokeWidth={2} />
+                  </span>
+                </div>
+              </Link>
             )
           })}
         </div>
 
-        <div className="products-footer">
+        <div className={`products-footer ${isVisible ? 'visible' : ''}`}>
           <div className="footer-badges">
             <span className="badge">
               <span className="badge-dot" />
@@ -125,123 +149,94 @@ export default function ProductSuite() {
       <style jsx>{`
         .products {
           position: relative;
-          padding: 140px 0;
-          background: linear-gradient(180deg, #f8f8fc 0%, #fafafa 30%, #fafafa 70%, #f8f8fc 100%);
-          overflow: hidden;
-        }
-
-        .section-transition-top {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 80px;
-          background: linear-gradient(180deg, #fafafa 0%, transparent 100%);
-          pointer-events: none;
-          z-index: 1;
-        }
-
-        .section-transition-bottom {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 80px;
-          background: linear-gradient(0deg, #fafafa 0%, transparent 100%);
-          pointer-events: none;
-          z-index: 1;
-        }
-
-        .products-bg {
-          position: absolute;
-          inset: 0;
-          pointer-events: none;
-        }
-
-        .bg-gradient {
-          position: absolute;
-          inset: 0;
-          background:
-            radial-gradient(ellipse 60% 40% at 80% 0%, rgba(99, 91, 255, 0.05) 0%, transparent 50%),
-            radial-gradient(ellipse 50% 30% at 20% 100%, rgba(99, 91, 255, 0.04) 0%, transparent 50%);
+          padding: var(--section-padding) 0;
+          background: var(--surface-base);
         }
 
         .products-container {
-          max-width: 1200px;
+          max-width: 1100px;
           margin: 0 auto;
-          padding: 0 24px;
-          position: relative;
-          z-index: 1;
+          padding: 0 var(--space-6);
         }
 
         .products-header {
           text-align: center;
-          margin-bottom: 56px;
+          margin-bottom: var(--space-12);
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity var(--duration-700) var(--ease-out), transform var(--duration-700) var(--ease-out);
+        }
+
+        .products-header.visible {
+          opacity: 1;
+          transform: translateY(0);
         }
 
         .products-label {
           display: inline-block;
-          font-size: 12px;
+          font-size: var(--text-xs);
           font-weight: 600;
           letter-spacing: 0.1em;
-          color: #6b6b6b;
+          color: var(--accent-brand);
           text-transform: uppercase;
-          margin-bottom: 16px;
+          margin-bottom: var(--space-4);
         }
 
         .products-title {
-          font-size: clamp(36px, 5vw, 56px);
-          font-weight: 600;
+          font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+          font-weight: 700;
           letter-spacing: -0.03em;
-          color: #0a0a0a;
-          margin: 0 0 16px;
+          color: var(--text-primary);
+          margin: 0 0 var(--space-4);
           line-height: 1.1;
         }
 
         .products-subtitle {
-          font-size: 18px;
+          font-size: var(--text-lg);
           line-height: 1.6;
-          color: #525252;
+          color: var(--text-secondary);
           margin: 0 auto;
-          max-width: 540px;
+          max-width: 500px;
         }
 
         .products-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 20px;
-          margin-bottom: 56px;
+          gap: var(--space-4);
+          margin-bottom: var(--space-12);
         }
 
-        .product-card-wrapper {
-          position: relative;
-        }
-
-        .product-card-wrapper :global(.product-card) {
-          position: relative;
+        .products-grid :global(.product-card) {
           display: flex;
           flex-direction: column;
-          padding: 28px;
-          background: #ffffff;
-          border: 1px solid rgba(0, 0, 0, 0.06);
-          border-radius: 16px;
+          padding: var(--space-7);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
+          border-radius: var(--radius-2xl);
           text-decoration: none;
-          overflow: hidden;
-          transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-          height: 100%;
+          opacity: 0;
+          transform: translateY(20px);
+          transition:
+            opacity var(--duration-500) var(--ease-out),
+            transform var(--duration-500) var(--ease-out),
+            border-color var(--duration-200) ease,
+            box-shadow var(--duration-200) ease;
+          transition-delay: var(--delay);
         }
 
-        .product-card-wrapper :global(.product-card:hover) {
-          border-color: rgba(0, 0, 0, 0.12);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-          transform: translateY(-2px);
+        .products-grid :global(.product-card.visible) {
+          opacity: 1;
+          transform: translateY(0);
         }
 
-        .card-header {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 20px;
+        .products-grid :global(.product-card:hover) {
+          border-color: var(--border-brand);
+          box-shadow: var(--glow-brand);
+        }
+
+        .products-grid :global(.product-card:focus-visible) {
+          outline: 2px solid var(--accent-brand);
+          outline-offset: 2px;
         }
 
         .card-icon {
@@ -250,173 +245,197 @@ export default function ProductSuite() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #f5f5f5;
-          border-radius: 10px;
-          color: #525252;
-          transition: background 0.2s ease, color 0.2s ease;
+          background: var(--accent-brand-muted);
+          border-radius: var(--radius-xl);
+          color: var(--accent-brand);
+          margin-bottom: var(--space-5);
+          transition: all var(--duration-300) ease;
         }
 
-        .product-card-wrapper :global(.product-card:hover) .card-icon {
-          background: #635bff;
+        .products-grid :global(.product-card:hover) .card-icon {
+          background: var(--accent-brand);
           color: white;
         }
 
-        .card-arrow {
+        .card-content {
+          flex: 1;
+          margin-bottom: var(--space-4);
+        }
+
+        .card-title-row {
           display: flex;
           align-items: center;
-          justify-content: center;
-          color: #a3a3a3;
-          transition: color 0.2s ease, transform 0.2s ease;
-        }
-
-        .product-card-wrapper :global(.product-card:hover) .card-arrow {
-          color: #635bff;
-          transform: translateX(4px);
-        }
-
-        .card-body {
-          flex: 1;
-          margin-bottom: 20px;
+          justify-content: space-between;
+          gap: var(--space-3);
+          margin-bottom: var(--space-1);
         }
 
         .card-title {
-          font-size: 22px;
-          font-weight: 700;
-          color: #0a0a0a;
-          margin: 0 0 6px;
-          letter-spacing: -0.02em;
+          font-size: var(--text-xl);
+          font-weight: 600;
+          color: var(--text-primary);
+          margin: 0;
+          letter-spacing: -0.01em;
+        }
+
+        .card-metric {
+          font-size: var(--text-xs);
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          padding: var(--space-1) var(--space-2);
+          border-radius: var(--radius-sm);
+          background: var(--surface-subtle);
+          color: var(--text-tertiary);
+          white-space: nowrap;
+        }
+
+        .card-metric.live {
+          background: var(--accent-success-muted);
+          color: var(--accent-success);
         }
 
         .card-tagline {
-          font-size: 13px;
-          font-weight: 600;
-          color: #737373;
-          margin: 0 0 10px;
+          font-size: var(--text-sm);
+          font-weight: 500;
+          color: var(--text-tertiary);
+          margin: 0 0 var(--space-3);
         }
 
         .card-desc {
-          font-size: 14px;
-          line-height: 1.55;
-          color: #525252;
+          font-size: var(--text-sm);
+          line-height: 1.5;
+          color: var(--text-secondary);
           margin: 0;
         }
 
         .card-features {
           display: flex;
           flex-wrap: wrap;
-          gap: 6px;
+          gap: var(--space-2);
+          margin-bottom: var(--space-4);
         }
 
         .feature-tag {
-          padding: 5px 10px;
-          font-size: 11px;
+          padding: var(--space-1) var(--space-3);
+          font-size: var(--text-xs);
           font-weight: 500;
-          color: #525252;
-          background: #f5f5f5;
-          border-radius: 5px;
+          color: var(--text-tertiary);
+          background: var(--surface-subtle);
+          border-radius: var(--radius-sm);
         }
 
-        .card-indicator {
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          width: 3px;
-          background: #635bff;
-          border-radius: 3px 0 0 3px;
-          opacity: 0;
-          transition: opacity 0.3s ease;
+        .card-footer {
+          padding-top: var(--space-4);
+          border-top: 1px solid var(--border-subtle);
         }
 
-        .product-card-wrapper :global(.product-card:hover) .card-indicator {
-          opacity: 1;
+        .card-link {
+          display: inline-flex;
+          align-items: center;
+          gap: var(--space-2);
+          font-size: var(--text-sm);
+          font-weight: 600;
+          color: var(--text-secondary);
+          transition: color var(--duration-200) ease, gap var(--duration-200) ease;
+        }
+
+        .products-grid :global(.product-card:hover) .card-link {
+          color: var(--accent-brand);
+          gap: var(--space-3);
         }
 
         .products-footer {
           text-align: center;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity var(--duration-700) var(--ease-out) 0.4s, transform var(--duration-700) var(--ease-out) 0.4s;
+        }
+
+        .products-footer.visible {
+          opacity: 1;
+          transform: translateY(0);
         }
 
         .footer-badges {
           display: flex;
           justify-content: center;
           align-items: center;
-          gap: 20px;
+          gap: var(--space-5);
         }
 
         .badge {
           display: flex;
           align-items: center;
-          gap: 8px;
-          font-size: 13px;
+          gap: var(--space-2);
+          font-size: var(--text-sm);
           font-weight: 500;
-          color: #525252;
+          color: var(--text-secondary);
         }
 
         .badge-dot {
           width: 6px;
           height: 6px;
           border-radius: 50%;
-          background: #635bff;
+          background: var(--accent-brand);
         }
 
         .badge-sep {
           width: 3px;
           height: 3px;
           border-radius: 50%;
-          background: #d4d4d4;
+          background: var(--border-default);
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
           .products {
-            padding: 100px 0;
+            padding: var(--space-20) 0;
           }
 
           .products-grid {
             grid-template-columns: 1fr;
-            gap: 16px;
-          }
-        }
-
-        @media (max-width: 600px) {
-          .products {
-            padding: 80px 0;
+            gap: var(--space-3);
           }
 
-          .products-container {
-            padding: 0 16px;
-          }
-
-          .products-header {
-            margin-bottom: 40px;
-          }
-
-          .products-title {
-            font-size: 28px;
-          }
-
-          .products-subtitle {
-            font-size: 16px;
-          }
-
-          .products-grid {
-            margin-bottom: 40px;
-          }
-
-          .product-card-wrapper :global(.product-card) {
-            padding: 20px;
+          .products-grid :global(.product-card) {
+            padding: var(--space-5);
           }
 
           .card-title {
-            font-size: 18px;
+            font-size: var(--text-lg);
+          }
+        }
+
+        @media (max-width: 480px) {
+          .products-container {
+            padding: 0 var(--space-4);
+          }
+
+          .products-title {
+            font-size: var(--text-2xl);
+          }
+
+          .products-subtitle {
+            font-size: var(--text-base);
           }
 
           .footer-badges {
             flex-direction: column;
-            gap: 10px;
+            gap: var(--space-3);
           }
 
           .badge-sep {
             display: none;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .products-header,
+          .products-footer,
+          .products-grid :global(.product-card) {
+            transition: none;
+            opacity: 1;
+            transform: none;
           }
         }
       `}</style>

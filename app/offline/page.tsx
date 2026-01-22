@@ -11,7 +11,7 @@ export default function OfflinePage() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'var(--gray-50)',
+        background: 'var(--surface-subtle)',
         padding: 'var(--space-6)'
       }}
     >
@@ -20,7 +20,7 @@ export default function OfflinePage() {
           maxWidth: '400px',
           textAlign: 'center',
           padding: 'var(--space-8)',
-          background: 'var(--white)',
+          background: 'var(--surface-elevated)',
           borderRadius: 'var(--radius-2xl)',
           boxShadow: 'var(--shadow-lg)'
         }}
@@ -30,14 +30,14 @@ export default function OfflinePage() {
             width: '80px',
             height: '80px',
             borderRadius: '50%',
-            background: 'rgba(99, 91, 255, 0.1)',
+            background: 'var(--accent-brand-subtle)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             margin: '0 auto var(--space-6) auto'
           }}
         >
-          <WifiOff size={40} style={{ color: 'var(--brand-primary)' }} />
+          <WifiOff size={40} style={{ color: 'var(--accent-brand)' }} />
         </div>
 
         <h1
@@ -45,7 +45,7 @@ export default function OfflinePage() {
             fontSize: 'var(--text-2xl)',
             fontWeight: 700,
             marginBottom: 'var(--space-3)',
-            color: 'var(--gray-900)'
+            color: 'var(--text-primary)'
           }}
         >
           You&apos;re Offline
@@ -54,7 +54,7 @@ export default function OfflinePage() {
         <p
           style={{
             fontSize: 'var(--text-base)',
-            color: 'var(--gray-600)',
+            color: 'var(--text-secondary)',
             lineHeight: 1.6,
             marginBottom: 'var(--space-6)'
           }}
@@ -90,7 +90,7 @@ export default function OfflinePage() {
         <p
           style={{
             fontSize: 'var(--text-sm)',
-            color: 'var(--gray-400)',
+            color: 'var(--text-muted)',
             marginTop: 'var(--space-6)'
           }}
         >

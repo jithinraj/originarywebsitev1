@@ -79,8 +79,8 @@ export default function WhyNow() {
 
       <style jsx>{`
         .why {
-          background: var(--gray-50);
-          border-top: 1px solid var(--gray-200);
+          background: var(--surface-subtle);
+          border-top: 1px solid var(--border-default);
         }
 
         .why-layout {
@@ -99,7 +99,7 @@ export default function WhyNow() {
         }
 
         .dim {
-          color: var(--gray-500);
+          color: var(--text-tertiary);
         }
 
         .why-cards {
@@ -110,8 +110,8 @@ export default function WhyNow() {
 
         .problem-card {
           padding: var(--space-6);
-          background: var(--white);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-2xl);
           display: flex;
           flex-direction: column;
@@ -120,7 +120,7 @@ export default function WhyNow() {
         }
 
         .problem-card:hover {
-          border-color: var(--gray-300);
+          border-color: var(--border-default);
           box-shadow: var(--shadow-lg);
           transform: translateY(-2px) translateX(4px);
         }
@@ -139,7 +139,7 @@ export default function WhyNow() {
         .problem-card h3 {
           font-size: var(--text-lg);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin: 0;
           letter-spacing: -0.01em;
         }
@@ -147,7 +147,7 @@ export default function WhyNow() {
         .problem-card p {
           font-size: var(--text-sm);
           line-height: 1.6;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin: 0;
         }
 

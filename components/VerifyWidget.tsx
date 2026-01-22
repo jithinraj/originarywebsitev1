@@ -69,8 +69,8 @@ export default function VerifyWidget() {
 
   return (
     <div style={{
-      background: 'var(--white)',
-      border: '1px solid var(--gray-200)',
+      background: 'var(--surface-elevated)',
+      border: '1px solid var(--border-default)',
       borderRadius: 'var(--radius-xl)',
       padding: 'var(--space-6)',
       maxWidth: '800px',
@@ -81,7 +81,7 @@ export default function VerifyWidget() {
           display: 'block',
           fontSize: 'var(--text-sm)',
           fontWeight: 600,
-          color: 'var(--gray-700)',
+          color: 'var(--text-secondary)',
           marginBottom: 'var(--space-2)'
         }}>
           PEAC-Receipt (JWS)
@@ -94,7 +94,7 @@ export default function VerifyWidget() {
             width: '100%',
             minHeight: '100px',
             padding: 'var(--space-3)',
-            border: '1px solid var(--gray-300)',
+            border: '1px solid var(--border-default)',
             borderRadius: 'var(--radius-lg)',
             fontSize: 'var(--text-sm)',
             fontFamily: 'var(--font-mono)',
@@ -141,13 +141,13 @@ export default function VerifyWidget() {
                 {result.status === 'success' ? '✓ Verified' : '✗ Invalid'}
               </h4>
 
-              <p style={{ color: 'var(--gray-700)', marginBottom: result.details ? 'var(--space-3)' : 0 }}>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: result.details ? 'var(--space-3)' : 0 }}>
                 {result.message}
               </p>
 
               {result.details && (
                 <div style={{
-                  background: 'var(--white)',
+                  background: 'var(--surface-elevated)',
                   padding: 'var(--space-3)',
                   borderRadius: 'var(--radius-lg)',
                   fontSize: 'var(--text-sm)',
@@ -180,7 +180,7 @@ export default function VerifyWidget() {
       <p style={{
         marginTop: 'var(--space-4)',
         fontSize: 'var(--text-xs)',
-        color: 'var(--gray-500)',
+        color: 'var(--text-tertiary)',
         textAlign: 'center'
       }}>
         Verification uses JWKS from /.well-known/jwks.json

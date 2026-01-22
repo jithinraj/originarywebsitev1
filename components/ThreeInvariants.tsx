@@ -78,7 +78,7 @@ export default function ThreeInvariants() {
       <style jsx>{`
         .invariants {
           padding: 140px 0;
-          background: var(--white);
+          background: var(--surface-elevated);
         }
 
         .container {
@@ -107,7 +107,7 @@ export default function ThreeInvariants() {
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.12em;
-          color: var(--brand-primary);
+          color: var(--accent-brand);
           margin-bottom: 16px;
         }
 
@@ -115,14 +115,14 @@ export default function ThreeInvariants() {
           font-size: clamp(2rem, 4vw, 2.5rem);
           font-weight: 700;
           letter-spacing: -0.03em;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: 16px;
         }
 
         .intro {
           font-size: 16px;
           line-height: 1.7;
-          color: var(--gray-600);
+          color: var(--text-secondary);
         }
 
         .cards {
@@ -133,8 +133,8 @@ export default function ThreeInvariants() {
 
         .card {
           padding: 32px 28px;
-          background: var(--gray-50);
-          border: 1px solid var(--gray-100);
+          background: var(--surface-subtle);
+          border: 1px solid var(--border-subtle);
           border-radius: 16px;
           opacity: 0;
           transform: translateY(20px);
@@ -148,8 +148,8 @@ export default function ThreeInvariants() {
         }
 
         .card:hover {
-          background: var(--white);
-          border-color: var(--gray-200);
+          background: var(--surface-elevated);
+          border-color: var(--border-default);
           box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.08);
           transform: translateY(-4px);
         }
@@ -158,33 +158,33 @@ export default function ThreeInvariants() {
           width: 44px;
           height: 44px;
           border-radius: 12px;
-          background: var(--white);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin-bottom: 20px;
           transition: all 0.3s ease;
         }
 
         .card:hover .card-icon {
-          background: var(--brand-primary);
-          border-color: var(--brand-primary);
+          background: var(--accent-brand);
+          border-color: var(--accent-brand);
           color: white;
         }
 
         .card-title {
           font-size: 18px;
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: 10px;
         }
 
         .card-description {
           font-size: 14px;
           line-height: 1.65;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin: 0;
         }
 

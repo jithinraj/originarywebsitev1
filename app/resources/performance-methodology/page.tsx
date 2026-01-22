@@ -16,7 +16,7 @@ export default function PerformanceMethodology() {
   return (
     <div className="wrap">
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h1 style={{
@@ -25,21 +25,21 @@ export default function PerformanceMethodology() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Performance Methodology
               </h1>
 
               <div style={{
                 padding: 'var(--space-8)',
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--gray-200)'
+                border: '1px solid var(--border-default)'
               }}>
                 <p style={{
                   fontSize: 'var(--text-lg)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   margin: 0
                 }}>
                   We&apos;ll publish our test harness, environments, datasets, and p95/p99 definitions here.

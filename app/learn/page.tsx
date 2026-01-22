@@ -38,8 +38,8 @@ const learnArticles = [
     subtitle: 'The Economic Layer for AI Agents',
     description: 'Understand how autonomous AI agents buy, sell, and transact without human intervention. Learn about machine-readable pricing, programmatic payments, and the infrastructure enabling the agent economy.',
     icon: ShoppingCart,
-    color: 'rgba(99, 91, 255, 0.1)',
-    iconColor: 'var(--brand-primary)',
+    color: 'var(--accent-brand-subtle)',
+    iconColor: 'var(--accent-brand)',
     readTime: '8 min read',
     featured: true,
     topics: ['Agent Economy', 'Machine Payments', 'API Monetization']
@@ -50,8 +50,8 @@ const learnArticles = [
     subtitle: 'Verifiable Records of Agent Interactions',
     description: 'Deep dive into PEAC-Receipt - the JWS-signed JSON format that proves what happened in every agent interaction. Essential for billing, compliance, attribution, and dispute resolution.',
     icon: Receipt,
-    color: 'rgba(0, 212, 170, 0.1)',
-    iconColor: 'var(--brand-secondary)',
+    color: 'var(--accent-secondary-subtle)',
+    iconColor: 'var(--accent-secondary)',
     readTime: '6 min read',
     featured: false,
     topics: ['PEAC-Receipt', 'JWS Signatures', 'Audit Trails']
@@ -62,7 +62,7 @@ const learnArticles = [
     subtitle: 'The Web Standard for Machine-Payable APIs',
     description: 'The complete guide to HTTP 402 Payment Required - the dormant web standard now powering real-time agent payments. Includes x402 protocol details and implementation patterns.',
     icon: CreditCard,
-    color: 'rgba(255, 107, 53, 0.1)',
+    color: 'var(--accent-tertiary-subtle)',
     iconColor: 'var(--brand-accent)',
     readTime: '10 min read',
     featured: false,
@@ -74,8 +74,8 @@ const learnArticles = [
     subtitle: 'Machine-Readable Permissions for AI',
     description: 'How content owners declare permissions and how AI systems prove compliance. Covers AIPREF, peac.txt, and the infrastructure for trust in agent interactions.',
     icon: Shield,
-    color: 'rgba(99, 91, 255, 0.1)',
-    iconColor: 'var(--brand-primary)',
+    color: 'var(--accent-brand-subtle)',
+    iconColor: 'var(--accent-brand)',
     readTime: '7 min read',
     featured: false,
     topics: ['AIPREF', 'Content Licensing', 'AI Compliance']
@@ -163,14 +163,14 @@ export default function LearnPage() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-5)',
                 marginBottom: 'var(--space-6)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)'
+                color: 'var(--accent-brand)'
               }}>
                 <BookOpen size={16} />
                 <span>LEARNING CENTER</span>
@@ -182,7 +182,7 @@ export default function LearnPage() {
                 lineHeight: 1.15,
                 letterSpacing: '-0.03em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Master the Building Blocks of the <span className="text-gradient">Agentic Web</span>
               </h1>
@@ -190,7 +190,7 @@ export default function LearnPage() {
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-10)',
                 maxWidth: '650px',
                 margin: '0 auto var(--space-10) auto'
@@ -206,16 +206,16 @@ export default function LearnPage() {
                 flexWrap: 'wrap'
               }}>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--brand-primary)' }}>4</div>
-                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>In-depth guides</div>
+                  <div style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--accent-brand)' }}>4</div>
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>In-depth guides</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--brand-primary)' }}>31 min</div>
-                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>Total read time</div>
+                  <div style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--accent-brand)' }}>31 min</div>
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>Total read time</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--brand-primary)' }}>12</div>
-                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>Key concepts</div>
+                  <div style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--accent-brand)' }}>12</div>
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>Key concepts</div>
                 </div>
               </div>
             </div>
@@ -224,10 +224,10 @@ export default function LearnPage() {
 
         {/* Why Learn This Section */}
         <section className="section" style={{
-          background: 'var(--white)',
+          background: 'var(--surface-elevated)',
           paddingTop: 'var(--space-16)',
           paddingBottom: 'var(--space-16)',
-          borderBottom: '1px solid var(--gray-100)'
+          borderBottom: '1px solid var(--border-subtle)'
         }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
@@ -235,13 +235,13 @@ export default function LearnPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Why This Matters
               </h2>
               <p style={{
                 fontSize: 'var(--text-base)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
@@ -257,26 +257,26 @@ export default function LearnPage() {
               <div style={{
                 textAlign: 'center',
                 padding: 'var(--space-6)',
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 borderRadius: 'var(--radius-xl)',
-                border: '1px solid var(--gray-100)'
+                border: '1px solid var(--border-subtle)'
               }}>
                 <div style={{
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(99, 91, 255, 0.15)',
+                  background: 'var(--accent-brand-muted)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   margin: '0 auto var(--space-4) auto'
                 }}>
-                  <TrendingUp size={28} style={{ color: 'var(--brand-primary)' }} />
+                  <TrendingUp size={28} style={{ color: 'var(--accent-brand)' }} />
                 </div>
-                <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Market Growth
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.6 }}>
                   Rapidly growing agent economy
                 </p>
               </div>
@@ -284,26 +284,26 @@ export default function LearnPage() {
               <div style={{
                 textAlign: 'center',
                 padding: 'var(--space-6)',
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 borderRadius: 'var(--radius-xl)',
-                border: '1px solid var(--gray-100)'
+                border: '1px solid var(--border-subtle)'
               }}>
                 <div style={{
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(0, 212, 170, 0.15)',
+                  background: 'var(--accent-secondary-muted)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   margin: '0 auto var(--space-4) auto'
                 }}>
-                  <Zap size={28} style={{ color: 'var(--brand-secondary)' }} />
+                  <Zap size={28} style={{ color: 'var(--accent-secondary)' }} />
                 </div>
-                <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   First Mover
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.6 }}>
                   Define the standards others will follow
                 </p>
               </div>
@@ -311,9 +311,9 @@ export default function LearnPage() {
               <div style={{
                 textAlign: 'center',
                 padding: 'var(--space-6)',
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 borderRadius: 'var(--radius-xl)',
-                border: '1px solid var(--gray-100)'
+                border: '1px solid var(--border-subtle)'
               }}>
                 <div style={{
                   width: '56px',
@@ -327,10 +327,10 @@ export default function LearnPage() {
                 }}>
                   <Users size={28} style={{ color: 'var(--brand-accent)' }} />
                 </div>
-                <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   High Demand
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.6 }}>
                   AI infrastructure skills are in-demand
                 </p>
               </div>
@@ -338,26 +338,26 @@ export default function LearnPage() {
               <div style={{
                 textAlign: 'center',
                 padding: 'var(--space-6)',
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 borderRadius: 'var(--radius-xl)',
-                border: '1px solid var(--gray-100)'
+                border: '1px solid var(--border-subtle)'
               }}>
                 <div style={{
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(99, 91, 255, 0.15)',
+                  background: 'var(--accent-brand-muted)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   margin: '0 auto var(--space-4) auto'
                 }}>
-                  <Sparkles size={28} style={{ color: 'var(--brand-primary)' }} />
+                  <Sparkles size={28} style={{ color: 'var(--accent-brand)' }} />
                 </div>
-                <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Open Standards
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.6 }}>
                   Built on protocols you can use today
                 </p>
               </div>
@@ -373,13 +373,13 @@ export default function LearnPage() {
                 fontSize: 'var(--text-3xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Start Learning
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 maxWidth: '500px',
                 margin: '0 auto'
               }}>
@@ -400,7 +400,7 @@ export default function LearnPage() {
                       display: 'flex',
                       flexDirection: 'column',
                       transition: 'all 0.25s ease',
-                      border: article.featured ? '2px solid var(--brand-primary)' : '1px solid var(--gray-100)',
+                      border: article.featured ? '2px solid var(--accent-brand)' : '1px solid var(--border-subtle)',
                       position: 'relative',
                       overflow: 'hidden'
                     }}
@@ -410,7 +410,7 @@ export default function LearnPage() {
                         position: 'absolute',
                         top: 'var(--space-4)',
                         right: 'var(--space-4)',
-                        background: 'var(--brand-primary)',
+                        background: 'var(--accent-brand)',
                         color: 'white',
                         fontSize: 'var(--text-xs)',
                         fontWeight: 600,
@@ -438,7 +438,7 @@ export default function LearnPage() {
                       fontSize: 'var(--text-xl)',
                       fontWeight: 700,
                       marginBottom: 'var(--space-1)',
-                      color: 'var(--gray-900)'
+                      color: 'var(--text-primary)'
                     }}>
                       {article.title}
                     </h2>
@@ -446,7 +446,7 @@ export default function LearnPage() {
                     <p style={{
                       fontSize: 'var(--text-sm)',
                       fontWeight: 500,
-                      color: 'var(--brand-primary)',
+                      color: 'var(--accent-brand)',
                       marginBottom: 'var(--space-4)'
                     }}>
                       {article.subtitle}
@@ -455,7 +455,7 @@ export default function LearnPage() {
                     <p style={{
                       fontSize: 'var(--text-base)',
                       lineHeight: 1.7,
-                      color: 'var(--gray-600)',
+                      color: 'var(--text-secondary)',
                       marginBottom: 'var(--space-5)',
                       flex: 1
                     }}>
@@ -474,8 +474,8 @@ export default function LearnPage() {
                           key={topic}
                           style={{
                             fontSize: 'var(--text-xs)',
-                            color: 'var(--gray-500)',
-                            background: 'var(--gray-50)',
+                            color: 'var(--text-tertiary)',
+                            background: 'var(--surface-subtle)',
                             padding: 'var(--space-1) var(--space-3)',
                             borderRadius: 'var(--radius-sm)'
                           }}
@@ -490,11 +490,11 @@ export default function LearnPage() {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       paddingTop: 'var(--space-4)',
-                      borderTop: '1px solid var(--gray-100)'
+                      borderTop: '1px solid var(--border-subtle)'
                     }}>
                       <span style={{
                         fontSize: 'var(--text-sm)',
-                        color: 'var(--gray-400)'
+                        color: 'var(--text-muted)'
                       }}>
                         {article.readTime}
                       </span>
@@ -504,7 +504,7 @@ export default function LearnPage() {
                         gap: 'var(--space-1)',
                         fontSize: 'var(--text-sm)',
                         fontWeight: 600,
-                        color: 'var(--brand-primary)'
+                        color: 'var(--accent-brand)'
                       }}>
                         Read guide
                         <ArrowRight size={14} />
@@ -519,7 +519,7 @@ export default function LearnPage() {
 
         {/* Learning Path */}
         <section className="section" style={{
-          background: 'var(--gray-50)',
+          background: 'var(--surface-subtle)',
           paddingTop: 'var(--space-16)',
           paddingBottom: 'var(--space-16)'
         }}>
@@ -529,14 +529,14 @@ export default function LearnPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)',
+                color: 'var(--text-primary)',
                 textAlign: 'center'
               }}>
                 Recommended Learning Path
               </h2>
               <p style={{
                 fontSize: 'var(--text-base)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 textAlign: 'center',
                 marginBottom: 'var(--space-10)'
               }}>
@@ -553,9 +553,9 @@ export default function LearnPage() {
                       alignItems: 'center',
                       gap: 'var(--space-4)',
                       padding: 'var(--space-5)',
-                      background: 'var(--white)',
+                      background: 'var(--surface-elevated)',
                       borderRadius: 'var(--radius-lg)',
-                      border: '1px solid var(--gray-100)',
+                      border: '1px solid var(--border-subtle)',
                       textDecoration: 'none',
                       transition: 'all 0.2s ease'
                     }}
@@ -564,7 +564,7 @@ export default function LearnPage() {
                       width: '40px',
                       height: '40px',
                       borderRadius: '50%',
-                      background: 'var(--brand-primary)',
+                      background: 'var(--accent-brand)',
                       color: 'white',
                       display: 'flex',
                       alignItems: 'center',
@@ -576,17 +576,17 @@ export default function LearnPage() {
                       {index + 1}
                     </div>
                     <div style={{ flex: 1 }}>
-                      <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                      <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
                         {article.title}
                       </h3>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>
+                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
                         {article.subtitle}
                       </p>
                     </div>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-400)', flexShrink: 0 }}>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)', flexShrink: 0 }}>
                       {article.readTime}
                     </span>
-                    <ArrowRight size={16} style={{ color: 'var(--gray-300)', flexShrink: 0 }} />
+                    <ArrowRight size={16} style={{ color: 'var(--border-default)', flexShrink: 0 }} />
                   </Link>
                 ))}
               </div>
@@ -596,7 +596,7 @@ export default function LearnPage() {
 
         {/* Related Resources */}
         <section className="section" style={{
-          background: 'var(--white)',
+          background: 'var(--surface-elevated)',
           paddingTop: 'var(--space-16)',
           paddingBottom: 'var(--space-16)'
         }}>
@@ -605,7 +605,7 @@ export default function LearnPage() {
               fontSize: 'var(--text-2xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-8)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Continue Your Journey
             </h2>
@@ -614,12 +614,12 @@ export default function LearnPage() {
               <Link
                 href="/what-is-originary"
                 className="card"
-                style={{ textDecoration: 'none', background: 'var(--gray-50)', border: 'none' }}
+                style={{ textDecoration: 'none', background: 'var(--surface-subtle)', border: 'none' }}
               >
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   What is Originary?
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   Understand the company and PEAC Protocol behind these concepts
                 </p>
               </Link>
@@ -627,12 +627,12 @@ export default function LearnPage() {
               <Link
                 href="/peac"
                 className="card"
-                style={{ textDecoration: 'none', background: 'var(--gray-50)', border: 'none' }}
+                style={{ textDecoration: 'none', background: 'var(--surface-subtle)', border: 'none' }}
               >
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   PEAC Protocol
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   Dive into the open protocol specification and reference implementations
                 </p>
               </Link>
@@ -640,12 +640,12 @@ export default function LearnPage() {
               <Link
                 href="/developers"
                 className="card"
-                style={{ textDecoration: 'none', background: 'var(--gray-50)', border: 'none' }}
+                style={{ textDecoration: 'none', background: 'var(--surface-subtle)', border: 'none' }}
               >
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Developer Documentation
                 </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   Start building with receipts, policy files, and payment infrastructure
                 </p>
               </Link>
@@ -681,7 +681,7 @@ export default function LearnPage() {
                 <Link
                   href="/developers"
                   className="btn btn-lg"
-                  style={{ background: 'white', color: 'var(--brand-primary)', border: 'none' }}
+                  style={{ background: 'white', color: 'var(--accent-brand)', border: 'none' }}
                 >
                   Start Building
                 </Link>

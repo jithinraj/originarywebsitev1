@@ -46,7 +46,7 @@ export default function ResourcesPage() {
               <span
                 style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
                   fontWeight: 600,
@@ -63,7 +63,7 @@ export default function ResourcesPage() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.7,
                   marginBottom: 'var(--space-8)'
                 }}
@@ -92,7 +92,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* Learning Resources */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div
               style={{
@@ -104,7 +104,7 @@ export default function ResourcesPage() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   maxWidth: '700px',
                   margin: '0 auto',
                   lineHeight: 1.7
@@ -116,7 +116,7 @@ export default function ResourcesPage() {
 
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
               <ResourceCard
-                icon={<BookOpen size={32} style={{ color: 'var(--brand-primary)' }} />}
+                icon={<BookOpen size={32} style={{ color: 'var(--accent-brand)' }} />}
                 title="Blog"
                 description="Insights, updates, and thoughts on agentic coordination and AI orchestration."
                 href="/resources/blog"
@@ -124,7 +124,7 @@ export default function ResourcesPage() {
                 category="Articles & Insights"
               />
               <ResourceCard
-                icon={<FileText size={32} style={{ color: 'var(--brand-secondary)' }} />}
+                icon={<FileText size={32} style={{ color: 'var(--accent-secondary)' }} />}
                 title="Case Studies"
                 description="Real-world implementations and use cases of the PEAC protocol in production environments."
                 href="/resources/case-studies"
@@ -156,7 +156,7 @@ export default function ResourcesPage() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   maxWidth: '700px',
                   margin: '0 auto',
                   lineHeight: 1.7
@@ -168,7 +168,7 @@ export default function ResourcesPage() {
 
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
               <ResourceCard
-                icon={<Receipt size={32} style={{ color: 'var(--brand-primary)' }} />}
+                icon={<Receipt size={32} style={{ color: 'var(--accent-brand)' }} />}
                 title="Receipts"
                 description="Learn about cryptographic receipts for AI access, usage verification, and compliance reporting."
                 href="/receipts"
@@ -176,7 +176,7 @@ export default function ResourcesPage() {
                 category="Core Concepts"
               />
               <ResourceCard
-                icon={<Globe size={32} style={{ color: 'var(--brand-secondary)' }} />}
+                icon={<Globe size={32} style={{ color: 'var(--accent-secondary)' }} />}
                 title="Protocol Documentation"
                 description="Complete technical documentation and specifications for the PEAC protocol and implementation guides."
                 href="https://peacprotocol.org/"
@@ -198,7 +198,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* Getting Started */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div
               style={{
@@ -210,7 +210,7 @@ export default function ResourcesPage() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   maxWidth: '700px',
                   margin: '0 auto',
                   lineHeight: 1.7
@@ -223,7 +223,7 @@ export default function ResourcesPage() {
             <div className="grid grid-auto" style={{ gap: 'var(--space-8)' }}>
               <div className="card">
                 <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>For Developers</h3>
-                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
                   SDKs, APIs, and code examples to integrate PEAC into your applications.
                 </p>
                 <Link href="/developers" className="btn btn-primary">
@@ -233,7 +233,7 @@ export default function ResourcesPage() {
               </div>
               <div className="card">
                 <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>For Product Teams</h3>
-                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
                   Understanding PEAC benefits, use cases, and implementation strategies.
                 </p>
                 <Link href="/products" className="btn btn-secondary">
@@ -300,8 +300,8 @@ export default function ResourcesPage() {
                     href="/developers"
                     className="btn btn-lg"
                     style={{
-                      background: 'var(--white)',
-                      color: 'var(--brand-primary)',
+                      background: 'var(--surface-elevated)',
+                      color: 'var(--accent-brand)',
                       border: 'none'
                     }}
                   >
@@ -357,10 +357,10 @@ function ResourceCard({
           style={{
             fontSize: 'var(--text-xs)',
             fontWeight: 600,
-            color: 'var(--brand-primary)',
+            color: 'var(--accent-brand)',
             textTransform: 'uppercase',
             letterSpacing: '0.1em',
-            background: 'rgba(99, 91, 255, 0.1)',
+            background: 'var(--accent-brand-subtle)',
             padding: 'var(--space-1) var(--space-3)',
             borderRadius: 'var(--radius-full)'
           }}
@@ -373,13 +373,13 @@ function ResourceCard({
         {title}
       </h3>
 
-      <p style={{ marginBottom: 'var(--space-6)', lineHeight: 1.7, color: 'var(--gray-600)' }}>
+      <p style={{ marginBottom: 'var(--space-6)', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
         {description}
       </p>
 
       <span
         style={{
-          color: 'var(--brand-primary)',
+          color: 'var(--accent-brand)',
           textDecoration: 'none',
           fontSize: 'var(--text-sm)',
           fontWeight: 600,

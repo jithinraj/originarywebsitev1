@@ -36,7 +36,7 @@ export default function Privacy() {
       </Script>
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
@@ -44,14 +44,14 @@ export default function Privacy() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-3)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-6)',
                   marginBottom: 'var(--space-6)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}>
                   <span>LEGAL</span>
                 </div>
@@ -62,20 +62,20 @@ export default function Privacy() {
                   lineHeight: 1.1,
                   letterSpacing: '-0.04em',
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Privacy Policy
                 </h1>
                 <p style={{
                   fontSize: 'var(--text-lg)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-4)'
                 }}>
                   We keep collection <strong>minimal</strong> and <strong>consent-first</strong>.
                 </p>
                 <p style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-500)'
+                  color: 'var(--text-tertiary)'
                 }}>
                   Effective from 2025-07-27
                 </p>
@@ -87,10 +87,10 @@ export default function Privacy() {
                   flexDirection: 'column',
                   gap: 'var(--space-8)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-700)'
+                  color: 'var(--text-secondary)'
                 }}>
               <h2>Controller</h2>
-              <p><strong>Poem, Inc.</strong> (global controller). Contact: <Link href="mailto:privacy@originary.xyz" style={{ color: 'var(--brand-primary)' }}>privacy@originary.xyz</Link></p>
+              <p><strong>Poem, Inc.</strong> (global controller). Contact: <Link href="mailto:privacy@originary.xyz" style={{ color: 'var(--accent-brand)' }}>privacy@originary.xyz</Link></p>
 
               <h2>What we collect</h2>
               <ul>
@@ -123,10 +123,10 @@ export default function Privacy() {
               <p>We retain data as needed for the above purposes and legal obligations, then delete or anonymize.</p>
 
               <h2>Your rights</h2>
-              <p>Subject to law where you live, you may request access, correction, deletion, or portability, and object to or restrict certain processing. Email <strong><Link href="mailto:privacy@originary.xyz" style={{ color: 'var(--brand-primary)' }}>privacy@originary.xyz</Link></strong>; we will respond within a reasonable period.</p>
+              <p>Subject to law where you live, you may request access, correction, deletion, or portability, and object to or restrict certain processing. Email <strong><Link href="mailto:privacy@originary.xyz" style={{ color: 'var(--accent-brand)' }}>privacy@originary.xyz</Link></strong>; we will respond within a reasonable period.</p>
 
               <h2>Security</h2>
-              <p>We protect data in transit and at rest and publish our coordinated disclosure policy at <Link href="/security" style={{ color: 'var(--brand-primary)' }}>/security</Link>.</p>
+              <p>We protect data in transit and at rest and publish our coordinated disclosure policy at <Link href="/security" style={{ color: 'var(--accent-brand)' }}>/security</Link>.</p>
 
               <h2>Children</h2>
               <p>Not for use by children under 16.</p>

@@ -89,7 +89,7 @@ export default function StakeholderFit() {
       <style jsx>{`
         .stakeholder-section {
           padding: var(--space-24) 0;
-          background: var(--white);
+          background: var(--surface-elevated);
           position: relative;
         }
 
@@ -112,9 +112,9 @@ export default function StakeholderFit() {
           font-size: 11px;
           font-weight: 600;
           letter-spacing: 0.12em;
-          color: var(--brand-primary);
-          background: rgba(99, 91, 255, 0.08);
-          border: 1px solid rgba(99, 91, 255, 0.15);
+          color: var(--accent-brand);
+          background: var(--accent-brand-subtle);
+          border: 1px solid var(--accent-brand-muted);
           padding: var(--space-2) var(--space-4);
           border-radius: var(--radius-full);
           margin-bottom: var(--space-4);
@@ -125,14 +125,14 @@ export default function StakeholderFit() {
           font-weight: 600;
           line-height: 1.2;
           letter-spacing: -0.03em;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-4);
         }
 
         .section-description {
           font-size: var(--text-lg);
           line-height: 1.7;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           max-width: 520px;
           margin: 0 auto;
         }
@@ -148,8 +148,8 @@ export default function StakeholderFit() {
 
         /* Card */
         .stakeholder-card {
-          background: var(--white);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           border-radius: 16px;
           padding: var(--space-6);
           opacity: 0;
@@ -191,14 +191,14 @@ export default function StakeholderFit() {
         .card-title {
           font-size: var(--text-base);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-3);
         }
 
         .card-description {
           font-size: var(--text-sm);
           line-height: 1.6;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin: 0;
         }
 

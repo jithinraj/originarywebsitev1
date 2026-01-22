@@ -49,7 +49,7 @@ export function EnforceIllustration({ className, size = 120 }: IllustrationProps
       {/* Shield shape */}
       <path
         d="M60 15L95 30V55C95 80 60 105 60 105S25 80 25 55V30L60 15Z"
-        fill="rgba(99, 91, 255, 0.08)"
+        fill="var(--accent-brand-subtle)"
         stroke="#635bff"
         strokeWidth="2.5"
       />
@@ -57,7 +57,7 @@ export function EnforceIllustration({ className, size = 120 }: IllustrationProps
       {/* Inner shield highlight */}
       <path
         d="M60 28L82 38V55C82 72 60 90 60 90S38 72 38 55V38L60 28Z"
-        fill="rgba(99, 91, 255, 0.12)"
+        fill="var(--accent-brand-muted)"
       />
 
       {/* Lock icon */}
@@ -122,7 +122,7 @@ export function VerifyIllustration({ className, size = 80 }: IllustrationProps) 
       aria-hidden="true"
     >
       {/* Magnifying glass */}
-      <circle cx="35" cy="35" r="20" stroke="#635bff" strokeWidth="3" fill="rgba(99, 91, 255, 0.08)" />
+      <circle cx="35" cy="35" r="20" stroke="#635bff" strokeWidth="3" fill="var(--accent-brand-subtle)" />
       <line x1="50" y1="50" x2="65" y2="65" stroke="#635bff" strokeWidth="4" strokeLinecap="round" />
 
       {/* Check inside */}
@@ -156,7 +156,7 @@ export function GatewayIllustration({ className, size = 80 }: IllustrationProps)
       <rect x="60" y="55" width="8" height="20" rx="2" fill="#00d4aa" />
 
       {/* Center indicator */}
-      <circle cx="40" cy="40" r="8" fill="rgba(0, 212, 170, 0.15)" stroke="#00d4aa" strokeWidth="2" />
+      <circle cx="40" cy="40" r="8" fill="var(--accent-secondary-muted)" stroke="#00d4aa" strokeWidth="2" />
       <circle cx="40" cy="40" r="3" fill="#00d4aa" />
     </svg>
   )

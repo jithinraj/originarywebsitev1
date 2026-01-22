@@ -102,14 +102,14 @@ export default function TracePage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-4)',
                   marginBottom: 'var(--space-4)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 500,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}
               >
                 <Github size={16} />
@@ -122,12 +122,12 @@ export default function TracePage() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em'
               }}>
-                <span style={{ display: 'block', fontSize: 'var(--text-sm)', color: 'var(--gray-500)', marginBottom: 'var(--space-2)', fontWeight: 600, letterSpacing: '0.05em' }}>ORIGINARY™</span>
+                <span style={{ display: 'block', fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-2)', fontWeight: 600, letterSpacing: '0.05em' }}>ORIGINARY™</span>
                 Trace: Distributed tracing for <span className="text-gradient">your content</span>
               </h1>
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-10)',
                 maxWidth: '700px',
@@ -175,7 +175,7 @@ export default function TracePage() {
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
@@ -199,11 +199,11 @@ export default function TracePage() {
                       width: '48px',
                       height: '48px',
                       borderRadius: 'var(--radius-lg)',
-                      background: 'linear-gradient(135deg, var(--brand-primary)20, var(--brand-primary)10)',
+                      background: 'linear-gradient(135deg, var(--accent-brand)20, var(--accent-brand)10)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: 'var(--brand-primary)',
+                      color: 'var(--accent-brand)',
                       flexShrink: 0
                     }}
                   >
@@ -219,7 +219,7 @@ export default function TracePage() {
                     </h3>
                     <p style={{
                       fontSize: 'var(--text-base)',
-                      color: 'var(--gray-600)',
+                      color: 'var(--text-secondary)',
                       lineHeight: 1.6
                     }}>
                       {feature.description}
@@ -232,12 +232,12 @@ export default function TracePage() {
         </section>
 
         {/* Built on PEAC Protocol */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div className="card" style={{
               padding: 'var(--space-12)',
-              background: 'linear-gradient(135deg, var(--brand-primary)05, var(--brand-secondary)05)',
-              border: '1px solid var(--brand-primary)20'
+              background: 'linear-gradient(135deg, var(--accent-brand)05, var(--accent-secondary)05)',
+              border: '1px solid var(--accent-brand)20'
             }}>
               <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
                 <div
@@ -264,7 +264,7 @@ export default function TracePage() {
                 </h2>
                 <p style={{
                   fontSize: 'var(--text-lg)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.7,
                   marginBottom: 'var(--space-6)'
                 }}>
@@ -298,7 +298,7 @@ export default function TracePage() {
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
@@ -315,7 +315,7 @@ export default function TracePage() {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: 'var(--space-2)',
-                      background: 'var(--gray-100)',
+                      background: 'var(--surface-card)',
                       borderRadius: 'var(--radius-full)',
                       padding: 'var(--space-2) var(--space-3)',
                       fontSize: 'var(--text-xs)',
@@ -335,7 +335,7 @@ export default function TracePage() {
                   }}>
                     Trace OSS
                   </h3>
-                  <p style={{ color: 'var(--gray-600)' }}>
+                  <p style={{ color: 'var(--text-secondary)' }}>
                     Self-hosted, complete implementation
                   </p>
                 </div>
@@ -344,14 +344,14 @@ export default function TracePage() {
                   <div style={{
                     fontSize: 'var(--text-4xl)',
                     fontWeight: 700,
-                    color: 'var(--gray-900)',
+                    color: 'var(--text-primary)',
                     marginBottom: 'var(--space-1)'
                   }}>
                     $0
                   </div>
                   <div style={{
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--gray-500)'
+                    color: 'var(--text-tertiary)'
                   }}>
                     Apache 2.0 License
                   </div>
@@ -369,7 +369,7 @@ export default function TracePage() {
                       }}
                     >
                       <CheckCircle size={16} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
-                      <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-700)' }}>
+                      <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                         {feature}
                       </span>
                     </li>
@@ -400,8 +400,8 @@ export default function TracePage() {
                 style={{
                   position: 'relative',
                   overflow: 'visible',
-                  border: '2px solid var(--brand-primary)',
-                  boxShadow: '0 10px 40px rgba(99, 91, 255, 0.15)'
+                  border: '2px solid var(--accent-brand)',
+                  boxShadow: '0 10px 40px var(--accent-brand-muted)'
                 }}
               >
                 <div
@@ -428,7 +428,7 @@ export default function TracePage() {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: 'var(--space-2)',
-                      background: 'linear-gradient(135deg, var(--brand-primary)20, var(--brand-secondary)20)',
+                      background: 'linear-gradient(135deg, var(--accent-brand)20, var(--accent-secondary)20)',
                       borderRadius: 'var(--radius-full)',
                       padding: 'var(--space-2) var(--space-3)',
                       fontSize: 'var(--text-xs)',
@@ -436,7 +436,7 @@ export default function TracePage() {
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
                       marginBottom: 'var(--space-3)',
-                      color: 'var(--brand-primary)'
+                      color: 'var(--accent-brand)'
                     }}
                   >
                     <Zap size={14} />
@@ -449,7 +449,7 @@ export default function TracePage() {
                   }}>
                     Trace Cloud
                   </h3>
-                  <p style={{ color: 'var(--gray-600)' }}>
+                  <p style={{ color: 'var(--text-secondary)' }}>
                     Attested receipts + automation + scale
                   </p>
                 </div>
@@ -458,14 +458,14 @@ export default function TracePage() {
                   <div style={{
                     fontSize: 'var(--text-4xl)',
                     fontWeight: 700,
-                    color: 'var(--gray-900)',
+                    color: 'var(--text-primary)',
                     marginBottom: 'var(--space-1)'
                   }}>
                     Custom
                   </div>
                   <div style={{
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--gray-500)'
+                    color: 'var(--text-tertiary)'
                   }}>
                     Contact for pricing
                   </div>
@@ -482,10 +482,10 @@ export default function TracePage() {
                         marginBottom: 'var(--space-3)'
                       }}
                     >
-                      <CheckCircle size={16} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                      <CheckCircle size={16} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '2px' }} />
                       <span style={{
                         fontSize: 'var(--text-sm)',
-                        color: 'var(--gray-700)',
+                        color: 'var(--text-secondary)',
                         fontWeight: index === 0 ? 600 : 400
                       }}>
                         {feature}
@@ -515,7 +515,7 @@ export default function TracePage() {
         </section>
 
         {/* Quickstart */}
-        <section className="section" style={{ background: 'var(--gray-900)', color: 'white' }}>
+        <section className="section" style={{ background: 'var(--text-primary)', color: 'white' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
               <h2 style={{
@@ -528,7 +528,7 @@ export default function TracePage() {
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-400)',
+                color: 'var(--text-muted)',
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
@@ -540,9 +540,9 @@ export default function TracePage() {
               <div
                 style={{
                   padding: 'var(--space-6)',
-                  background: 'var(--gray-800)',
+                  background: 'var(--text-primary)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-700)'
+                  border: '1px solid var(--text-secondary)'
                 }}
               >
                 <h3 style={{
@@ -554,13 +554,13 @@ export default function TracePage() {
                   1. Cloudflare Worker
                 </h3>
                 <pre style={{
-                  background: 'var(--gray-900)',
+                  background: 'var(--text-primary)',
                   padding: 'var(--space-4)',
                   borderRadius: 'var(--radius-md)',
                   fontSize: 'var(--text-sm)',
                   overflow: 'auto',
-                  color: 'var(--gray-300)',
-                  border: '1px solid var(--gray-700)'
+                  color: 'var(--border-default)',
+                  border: '1px solid var(--text-secondary)'
                 }}>
 {`npm install wrangler -g
 wrangler deploy`}
@@ -570,9 +570,9 @@ wrangler deploy`}
               <div
                 style={{
                   padding: 'var(--space-6)',
-                  background: 'var(--gray-800)',
+                  background: 'var(--text-primary)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-700)'
+                  border: '1px solid var(--text-secondary)'
                 }}
               >
                 <h3 style={{
@@ -584,13 +584,13 @@ wrangler deploy`}
                   2. Nginx + Tailer
                 </h3>
                 <pre style={{
-                  background: 'var(--gray-900)',
+                  background: 'var(--text-primary)',
                   padding: 'var(--space-4)',
                   borderRadius: 'var(--radius-md)',
                   fontSize: 'var(--text-sm)',
                   overflow: 'auto',
-                  color: 'var(--gray-300)',
-                  border: '1px solid var(--gray-700)'
+                  color: 'var(--border-default)',
+                  border: '1px solid var(--text-secondary)'
                 }}>
 {`# Install tailer
 go install ./tailer
@@ -601,9 +601,9 @@ go install ./tailer
               <div
                 style={{
                   padding: 'var(--space-6)',
-                  background: 'var(--gray-800)',
+                  background: 'var(--text-primary)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-700)'
+                  border: '1px solid var(--text-secondary)'
                 }}
               >
                 <h3 style={{
@@ -615,13 +615,13 @@ go install ./tailer
                   3. Docker Compose
                 </h3>
                 <pre style={{
-                  background: 'var(--gray-900)',
+                  background: 'var(--text-primary)',
                   padding: 'var(--space-4)',
                   borderRadius: 'var(--radius-md)',
                   fontSize: 'var(--text-sm)',
                   overflow: 'auto',
-                  color: 'var(--gray-300)',
-                  border: '1px solid var(--gray-700)'
+                  color: 'var(--border-default)',
+                  border: '1px solid var(--text-secondary)'
                 }}>
 {`docker-compose up -d
 # API: localhost:8787
@@ -637,9 +637,9 @@ go install ./tailer
                 rel="noopener noreferrer"
                 className="btn btn-secondary btn-lg"
                 style={{
-                  background: 'var(--gray-800)',
+                  background: 'var(--text-primary)',
                   color: 'white',
-                  border: '1px solid var(--gray-700)'
+                  border: '1px solid var(--text-secondary)'
                 }}
               >
                 <Github size={18} />
@@ -650,7 +650,7 @@ go install ./tailer
         </section>
 
         {/* FAQ Section */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h2 style={{
@@ -658,7 +658,7 @@ go install ./tailer
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-12)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Frequently Asked Questions
               </h2>
@@ -669,14 +669,14 @@ go install ./tailer
                     fontSize: 'var(--text-xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-3)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Can I use Originary Trace as a bot tracker or bot protection tool?
                   </h3>
                   <p style={{
                     fontSize: 'var(--text-base)',
                     lineHeight: 1.7,
-                    color: 'var(--gray-600)',
+                    color: 'var(--text-secondary)',
                     margin: 0
                   }}>
                     Yes. Originary Trace functions as comprehensive AI crawler analytics and bot tracking infrastructure. It provides bot management and bot protection capabilities by identifying all AI crawlers accessing your content, enforcing PEAC Protocol policies, and generating verifiable evidence. Use Trace as your bot tracker to monitor AI scraping, detect policy violations, and control access to your data - all while maintaining compliance through PEAC-Receipts.
@@ -688,14 +688,14 @@ go install ./tailer
                     fontSize: 'var(--text-xl)',
                     fontWeight: 700,
                     marginBottom: 'var(--space-3)',
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     What makes Trace different from other bot management tools?
                   </h3>
                   <p style={{
                     fontSize: 'var(--text-base)',
                     lineHeight: 1.7,
-                    color: 'var(--gray-600)',
+                    color: 'var(--text-secondary)',
                     margin: 0
                   }}>
                     Trace combines AI crawler analytics with verifiable compliance evidence through PEAC Protocol. Unlike traditional bot protection tools, Trace generates cryptographically signed receipts for every access, providing audit trails for AI compliance and bot management. It tracks not just who accessed your content, but what they took, under what terms, and with what consent - critical for the agentic web and AI governance.
@@ -728,7 +728,7 @@ go install ./tailer
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)',
                 maxWidth: '600px',
                 margin: '0 auto var(--space-8) auto'

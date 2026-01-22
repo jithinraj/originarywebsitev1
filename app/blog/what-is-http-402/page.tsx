@@ -69,14 +69,14 @@ export default function Page() {
             {/* Breadcrumbs */}
             <nav style={{
               fontSize: 'var(--text-sm)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-8)'
             }}>
-              <Link href="/" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>Home</Link>
+              <Link href="/" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Home</Link>
               <span style={{ margin: '0 var(--space-2)' }}>/</span>
-              <Link href="/blog" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>Blog</Link>
+              <Link href="/blog" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Blog</Link>
               <span style={{ margin: '0 var(--space-2)' }}>/</span>
-              <span style={{ color: 'var(--gray-900)' }}>What is HTTP 402?</span>
+              <span style={{ color: 'var(--text-primary)' }}>What is HTTP 402?</span>
             </nav>
 
             {/* Article Header */}
@@ -85,13 +85,13 @@ export default function Page() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 marginBottom: 'var(--space-6)'
               }}>
                 <FileText size={14} />
@@ -104,13 +104,13 @@ export default function Page() {
                 lineHeight: 1.2,
                 letterSpacing: '-0.02em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 What is HTTP 402?
               </h1>
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7
               }}>
                 HTTP 402 Payment Required was defined in 1997 and reserved for future digital payments. After decades dormant, it is now being activated for AI agent commerce and machine-payable APIs.
@@ -121,25 +121,25 @@ export default function Page() {
             <div className="article-content" style={{
               fontSize: 'var(--text-base)',
               lineHeight: 1.8,
-              color: 'var(--gray-700)'
+              color: 'var(--text-secondary)'
             }}>
 
               {/* Timeline Visual */}
               <div style={{
-                background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.05), rgba(0, 212, 170, 0.05))',
+                background: 'linear-gradient(135deg, var(--accent-brand-faint), var(--accent-secondary-faint))',
                 borderRadius: 'var(--radius-xl)',
                 padding: 'var(--space-8)',
                 marginBottom: 'var(--space-12)',
-                border: '1px solid rgba(99, 91, 255, 0.1)'
+                border: '1px solid var(--accent-brand-subtle)'
               }}>
-                <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-                  <Clock size={24} style={{ color: 'var(--brand-primary)' }} />
+                <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                  <Clock size={24} style={{ color: 'var(--accent-brand)' }} />
                   The History of HTTP 402
                 </h2>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
                   <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
                     <div style={{
-                      background: 'var(--brand-primary)',
+                      background: 'var(--accent-brand)',
                       color: 'white',
                       padding: 'var(--space-2) var(--space-3)',
                       borderRadius: 'var(--radius-md)',
@@ -151,7 +151,7 @@ export default function Page() {
                   </div>
                   <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
                     <div style={{
-                      background: 'var(--gray-400)',
+                      background: 'var(--text-muted)',
                       color: 'white',
                       padding: 'var(--space-2) var(--space-3)',
                       borderRadius: 'var(--radius-md)',
@@ -177,8 +177,8 @@ export default function Page() {
               </div>
 
               {/* Why It Matters Now */}
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-8)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-                <Bot size={28} style={{ color: 'var(--brand-primary)' }} />
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginTop: 'var(--space-8)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                <Bot size={28} style={{ color: 'var(--accent-brand)' }} />
                 Why HTTP 402 Matters Now
               </h2>
               <p style={{ marginBottom: 'var(--space-6)' }}>
@@ -189,39 +189,39 @@ export default function Page() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
                 <div style={{
                   padding: 'var(--space-5)',
-                  background: 'var(--white)',
+                  background: 'var(--surface-elevated)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)'
+                  border: '1px solid var(--border-default)'
                 }}>
-                  <AlertCircle size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
-                  <h4 style={{ fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>Clear Signal</h4>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: 0 }}>HTTP 402 unambiguously signals &ldquo;payment required&rdquo;</p>
+                  <AlertCircle size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
+                  <h4 style={{ fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-2)' }}>Clear Signal</h4>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: 0 }}>HTTP 402 unambiguously signals &ldquo;payment required&rdquo;</p>
                 </div>
                 <div style={{
                   padding: 'var(--space-5)',
-                  background: 'var(--white)',
+                  background: 'var(--surface-elevated)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)'
+                  border: '1px solid var(--border-default)'
                 }}>
-                  <CreditCard size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
-                  <h4 style={{ fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>Payment Instructions</h4>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: 0 }}>Structured data: what to pay, how much, where</p>
+                  <CreditCard size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
+                  <h4 style={{ fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-2)' }}>Payment Instructions</h4>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: 0 }}>Structured data: what to pay, how much, where</p>
                 </div>
                 <div style={{
                   padding: 'var(--space-5)',
-                  background: 'var(--white)',
+                  background: 'var(--surface-elevated)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)'
+                  border: '1px solid var(--border-default)'
                 }}>
-                  <Receipt size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-3)' }} />
-                  <h4 style={{ fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>Proof of Payment</h4>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', margin: 0 }}>Receipt proving payment occurred</p>
+                  <Receipt size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
+                  <h4 style={{ fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-2)' }}>Proof of Payment</h4>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: 0 }}>Receipt proving payment occurred</p>
                 </div>
               </div>
 
               {/* How PEAC Uses 402 */}
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-                <Shield size={28} style={{ color: 'var(--brand-primary)' }} />
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                <Shield size={28} style={{ color: 'var(--accent-brand)' }} />
                 How PEAC Uses HTTP 402
               </h2>
               <p style={{ marginBottom: 'var(--space-6)' }}>
@@ -231,18 +231,18 @@ export default function Page() {
               {/* Code Block with Header */}
               <div style={{ marginBottom: 'var(--space-8)' }}>
                 <div style={{
-                  background: 'var(--gray-800)',
+                  background: 'var(--text-primary)',
                   borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0',
                   padding: 'var(--space-3) var(--space-4)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)'
                 }}>
-                  <Code size={16} style={{ color: 'var(--gray-400)' }} />
-                  <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-400)' }}>Example 402 Response</span>
+                  <Code size={16} style={{ color: 'var(--text-muted)' }} />
+                  <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>Example 402 Response</span>
                 </div>
                 <div style={{
-                  background: 'var(--gray-900)',
+                  background: 'var(--text-primary)',
                   borderRadius: '0 0 var(--radius-lg) var(--radius-lg)',
                   padding: 'var(--space-6)',
                   overflow: 'auto'
@@ -251,7 +251,7 @@ export default function Page() {
                     margin: 0,
                     fontFamily: 'var(--font-mono)',
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--gray-100)',
+                    color: 'var(--surface-card)',
                     whiteSpace: 'pre-wrap',
                     wordBreak: 'break-word'
                   }}>
@@ -274,34 +274,34 @@ Content-Type: application/json
 
               {/* Response Fields Table */}
               <div style={{
-                background: 'var(--white)',
+                background: 'var(--surface-elevated)',
                 borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--gray-200)',
+                border: '1px solid var(--border-default)',
                 overflow: 'hidden',
                 marginBottom: 'var(--space-8)'
               }}>
                 <div style={{
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   padding: 'var(--space-4)',
-                  borderBottom: '1px solid var(--gray-200)',
+                  borderBottom: '1px solid var(--border-default)',
                   fontWeight: 700,
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Response Fields
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', fontSize: 'var(--text-sm)' }}>
-                  <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', fontWeight: 600, color: 'var(--gray-900)' }}>Payment methods</div>
-                  <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', color: 'var(--gray-600)' }}>x402 for crypto, Stripe for fiat</div>
-                  <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', fontWeight: 600, color: 'var(--gray-900)' }}>Amount & currency</div>
-                  <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-100)', color: 'var(--gray-600)' }}>Clear pricing in machine-readable format</div>
-                  <div style={{ padding: 'var(--space-4)', fontWeight: 600, color: 'var(--gray-900)' }}>AI policy URL</div>
-                  <div style={{ padding: 'var(--space-4)', color: 'var(--gray-600)' }}>Link to crawling policy and usage terms</div>
+                  <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--border-subtle)', fontWeight: 600, color: 'var(--text-primary)' }}>Payment methods</div>
+                  <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--border-subtle)', color: 'var(--text-secondary)' }}>x402 for crypto, Stripe for fiat</div>
+                  <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--border-subtle)', fontWeight: 600, color: 'var(--text-primary)' }}>Amount & currency</div>
+                  <div style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--border-subtle)', color: 'var(--text-secondary)' }}>Clear pricing in machine-readable format</div>
+                  <div style={{ padding: 'var(--space-4)', fontWeight: 600, color: 'var(--text-primary)' }}>AI policy URL</div>
+                  <div style={{ padding: 'var(--space-4)', color: 'var(--text-secondary)' }}>Link to crawling policy and usage terms</div>
                 </div>
               </div>
 
               {/* x402 Extension */}
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-                <DollarSign size={28} style={{ color: 'var(--brand-primary)' }} />
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                <DollarSign size={28} style={{ color: 'var(--accent-brand)' }} />
                 x402: The Payment Extension
               </h2>
               <p style={{ marginBottom: 'var(--space-6)' }}>
@@ -322,12 +322,12 @@ Content-Type: application/json
                 </div>
               </div>
               <p style={{ marginBottom: 'var(--space-4)' }}>
-                See the <Link href="/integrations/x402" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>x402 integration guide</Link> for implementation details.
+                See the <Link href="/integrations/x402" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>x402 integration guide</Link> for implementation details.
               </p>
 
               {/* Testing Section */}
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-                <Zap size={28} style={{ color: 'var(--brand-primary)' }} />
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                <Zap size={28} style={{ color: 'var(--accent-brand)' }} />
                 Testing HTTP 402
               </h2>
               <p style={{ marginBottom: 'var(--space-4)' }}>
@@ -335,18 +335,18 @@ Content-Type: application/json
               </p>
               <div style={{ marginBottom: 'var(--space-6)' }}>
                 <div style={{
-                  background: 'var(--gray-800)',
+                  background: 'var(--text-primary)',
                   borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0',
                   padding: 'var(--space-3) var(--space-4)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)'
                 }}>
-                  <Code size={16} style={{ color: 'var(--gray-400)' }} />
-                  <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-400)' }}>Terminal</span>
+                  <Code size={16} style={{ color: 'var(--text-muted)' }} />
+                  <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>Terminal</span>
                 </div>
                 <div style={{
-                  background: 'var(--gray-900)',
+                  background: 'var(--text-primary)',
                   borderRadius: '0 0 var(--radius-lg) var(--radius-lg)',
                   padding: 'var(--space-6)',
                   overflow: 'auto'
@@ -355,7 +355,7 @@ Content-Type: application/json
                     margin: 0,
                     fontFamily: 'var(--font-mono)',
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--gray-100)',
+                    color: 'var(--surface-card)',
                     whiteSpace: 'pre-wrap',
                     wordBreak: 'break-word'
                   }}>
@@ -368,12 +368,12 @@ Content-Type: application/json
                 </div>
               </div>
               <p style={{ marginBottom: 'var(--space-4)' }}>
-                Try the <Link href="/verify" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>interactive demo</Link> to see 402 flows in action.
+                Try the <Link href="/verify" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>interactive demo</Link> to see 402 flows in action.
               </p>
 
               {/* Beyond Payments */}
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-                <Lock size={28} style={{ color: 'var(--brand-primary)' }} />
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                <Lock size={28} style={{ color: 'var(--accent-brand)' }} />
                 Beyond Payments: Access Control
               </h2>
               <p style={{ marginBottom: 'var(--space-6)' }}>
@@ -382,54 +382,54 @@ Content-Type: application/json
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
                 <div style={{
                   padding: 'var(--space-4)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)'
+                  border: '1px solid var(--border-default)'
                 }}>
-                  <Bot size={20} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
-                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>AI Bot Policy</h4>
-                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', margin: 0 }}>Require agents to comply with crawling policy</p>
+                  <Bot size={20} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-2)' }} />
+                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>AI Bot Policy</h4>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', margin: 0 }}>Require agents to comply with crawling policy</p>
                 </div>
                 <div style={{
                   padding: 'var(--space-4)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)'
+                  border: '1px solid var(--border-default)'
                 }}>
-                  <FileText size={20} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
-                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>Attribution</h4>
-                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', margin: 0 }}>Require agreement to attribution terms</p>
+                  <FileText size={20} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-2)' }} />
+                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>Attribution</h4>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', margin: 0 }}>Require agreement to attribution terms</p>
                 </div>
                 <div style={{
                   padding: 'var(--space-4)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)'
+                  border: '1px solid var(--border-default)'
                 }}>
-                  <CheckCircle size={20} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
-                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>Consent</h4>
-                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', margin: 0 }}>Proof of user consent for training use</p>
+                  <CheckCircle size={20} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-2)' }} />
+                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>Consent</h4>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', margin: 0 }}>Proof of user consent for training use</p>
                 </div>
                 <div style={{
                   padding: 'var(--space-4)',
-                  background: 'var(--gray-50)',
+                  background: 'var(--surface-subtle)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)'
+                  border: '1px solid var(--border-default)'
                 }}>
-                  <Zap size={20} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }} />
-                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>Rate Limiting</h4>
-                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', margin: 0 }}>Premium access for paying agents</p>
+                  <Zap size={20} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-2)' }} />
+                  <h4 style={{ fontWeight: 600, fontSize: 'var(--text-sm)', color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>Rate Limiting</h4>
+                  <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', margin: 0 }}>Premium access for paying agents</p>
                 </div>
               </div>
 
               {/* Getting Started Steps */}
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--gray-900)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)' }}>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginTop: 'var(--space-12)', marginBottom: 'var(--space-6)' }}>
                 Getting Started
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
                 <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
                   <div style={{
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'white',
                     width: '28px',
                     height: '28px',
@@ -442,12 +442,12 @@ Content-Type: application/json
                     flexShrink: 0
                   }}>1</div>
                   <div>
-                    <strong>Define your AI access policy</strong> with <Link href="/declare" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Originary Declare</Link>
+                    <strong>Define your AI access policy</strong> with <Link href="/declare" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Originary Declare</Link>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
                   <div style={{
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'white',
                     width: '28px',
                     height: '28px',
@@ -463,7 +463,7 @@ Content-Type: application/json
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
                   <div style={{
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'white',
                     width: '28px',
                     height: '28px',
@@ -479,7 +479,7 @@ Content-Type: application/json
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
                   <div style={{
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'white',
                     width: '28px',
                     height: '28px',
@@ -495,21 +495,21 @@ Content-Type: application/json
                 </div>
               </div>
               <p style={{ marginBottom: 'var(--space-4)' }}>
-                See <Link href="/blog/adding-402-in-15-minutes" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Adding 402 in 15 Minutes</Link> for a step-by-step guide.
+                See <Link href="/blog/adding-402-in-15-minutes" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Adding 402 in 15 Minutes</Link> for a step-by-step guide.
               </p>
 
               {/* Related Content */}
               <div style={{
                 marginTop: 'var(--space-16)',
                 padding: 'var(--space-8)',
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 borderRadius: 'var(--radius-xl)',
-                border: '1px solid var(--gray-200)'
+                border: '1px solid var(--border-default)'
               }}>
                 <h3 style={{
                   fontSize: 'var(--text-lg)',
                   fontWeight: 700,
-                  color: 'var(--gray-900)',
+                  color: 'var(--text-primary)',
                   marginBottom: 'var(--space-4)'
                 }}>
                   Related Resources
@@ -519,46 +519,46 @@ Content-Type: application/json
                     display: 'flex',
                     alignItems: 'center',
                     gap: 'var(--space-3)',
-                    color: 'var(--gray-700)',
+                    color: 'var(--text-secondary)',
                     textDecoration: 'none',
                     padding: 'var(--space-3)',
-                    background: 'var(--white)',
+                    background: 'var(--surface-elevated)',
                     borderRadius: 'var(--radius-lg)',
-                    border: '1px solid var(--gray-200)'
+                    border: '1px solid var(--border-default)'
                   }}>
-                    <DollarSign size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <DollarSign size={20} style={{ color: 'var(--accent-brand)' }} />
                     <span>x402 Integration Guide</span>
-                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--gray-400)' }} />
+                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--text-muted)' }} />
                   </Link>
                   <Link href="/blog/http-402-for-apis" style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: 'var(--space-3)',
-                    color: 'var(--gray-700)',
+                    color: 'var(--text-secondary)',
                     textDecoration: 'none',
                     padding: 'var(--space-3)',
-                    background: 'var(--white)',
+                    background: 'var(--surface-elevated)',
                     borderRadius: 'var(--radius-lg)',
-                    border: '1px solid var(--gray-200)'
+                    border: '1px solid var(--border-default)'
                   }}>
-                    <Code size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <Code size={20} style={{ color: 'var(--accent-brand)' }} />
                     <span>HTTP 402 for APIs: Technical Deep Dive</span>
-                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--gray-400)' }} />
+                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--text-muted)' }} />
                   </Link>
                   <Link href="/peac" style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: 'var(--space-3)',
-                    color: 'var(--gray-700)',
+                    color: 'var(--text-secondary)',
                     textDecoration: 'none',
                     padding: 'var(--space-3)',
-                    background: 'var(--white)',
+                    background: 'var(--surface-elevated)',
                     borderRadius: 'var(--radius-lg)',
-                    border: '1px solid var(--gray-200)'
+                    border: '1px solid var(--border-default)'
                   }}>
-                    <Shield size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <Shield size={20} style={{ color: 'var(--accent-brand)' }} />
                     <span>PEAC Protocol Overview</span>
-                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--gray-400)' }} />
+                    <ArrowRight size={16} style={{ marginLeft: 'auto', color: 'var(--text-muted)' }} />
                   </Link>
                 </div>
               </div>

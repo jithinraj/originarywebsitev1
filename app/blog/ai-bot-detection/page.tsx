@@ -66,19 +66,19 @@ export default function Page() {
       <main style={{ paddingTop: '80px', minHeight: '100vh' }} id="main-content">
         <article>
           {/* Hero Header */}
-          <div style={{ background: 'linear-gradient(180deg, rgba(99,91,255,0.03) 0%, transparent 100%)', borderBottom: '1px solid var(--gray-100)' }}>
+          <div style={{ background: 'linear-gradient(180deg, rgba(99,91,255,0.03) 0%, transparent 100%)', borderBottom: '1px solid var(--border-subtle)' }}>
             <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: 'var(--space-12) var(--space-6) var(--space-16)' }}>
               {/* Breadcrumbs */}
               <nav style={{
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-500)',
+                color: 'var(--text-tertiary)',
                 marginBottom: 'var(--space-8)'
               }}>
-                <Link href="/" style={{ color: 'var(--gray-500)', textDecoration: 'none' }}>Home</Link>
+                <Link href="/" style={{ color: 'var(--text-tertiary)', textDecoration: 'none' }}>Home</Link>
                 <span style={{ margin: '0 var(--space-2)' }}>/</span>
-                <Link href="/blog" style={{ color: 'var(--gray-500)', textDecoration: 'none' }}>Blog</Link>
+                <Link href="/blog" style={{ color: 'var(--text-tertiary)', textDecoration: 'none' }}>Blog</Link>
                 <span style={{ margin: '0 var(--space-2)' }}>/</span>
-                <span style={{ color: 'var(--gray-700)' }}>AI Bot Detection</span>
+                <span style={{ color: 'var(--text-secondary)' }}>AI Bot Detection</span>
               </nav>
 
               {/* Badge */}
@@ -86,13 +86,13 @@ export default function Page() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
                 fontSize: 'var(--text-xs)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 marginBottom: 'var(--space-6)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em'
@@ -107,7 +107,7 @@ export default function Page() {
                 fontWeight: 700,
                 lineHeight: 1.15,
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence
               </h1>
@@ -115,7 +115,7 @@ export default function Page() {
               {/* Subtitle */}
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.6,
                 marginBottom: 'var(--space-8)',
                 maxWidth: '650px'
@@ -129,11 +129,11 @@ export default function Page() {
                 alignItems: 'center',
                 gap: 'var(--space-4)',
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-500)',
+                color: 'var(--text-tertiary)',
                 flexWrap: 'wrap'
               }}>
-                <span style={{ fontWeight: 500, color: 'var(--gray-700)' }}>Jithin Raj & Originary Team</span>
-                <span style={{ color: 'var(--gray-300)' }}>|</span>
+                <span style={{ fontWeight: 500, color: 'var(--text-secondary)' }}>Jithin Raj & Originary Team</span>
+                <span style={{ color: 'var(--border-default)' }}>|</span>
                 <span>15 min read</span>
               </div>
             </div>
@@ -142,16 +142,16 @@ export default function Page() {
           {/* Table of Contents */}
           <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 var(--space-6)' }}>
             <div style={{
-              background: 'var(--gray-50)',
+              background: 'var(--surface-subtle)',
               borderRadius: 'var(--radius-lg)',
               padding: 'var(--space-6)',
               marginTop: 'calc(-1 * var(--space-8))',
               marginBottom: 'var(--space-12)',
-              border: '1px solid var(--gray-200)'
+              border: '1px solid var(--border-default)'
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-4)' }}>
-                <List size={16} style={{ color: 'var(--brand-primary)' }} />
-                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-700)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>In This Article</span>
+                <List size={16} style={{ color: 'var(--accent-brand)' }} />
+                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>In This Article</span>
               </div>
               <div style={{ display: 'grid', gap: 'var(--space-2)' }}>
                 {[
@@ -166,7 +166,7 @@ export default function Page() {
                       width: '24px',
                       height: '24px',
                       borderRadius: 'var(--radius-full)',
-                      background: 'var(--brand-primary)',
+                      background: 'var(--accent-brand)',
                       color: 'var(--white)',
                       display: 'flex',
                       alignItems: 'center',
@@ -175,7 +175,7 @@ export default function Page() {
                       fontWeight: 600,
                       flexShrink: 0
                     }}>{item.num}</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-700)' }}>{item.title}</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>{item.title}</span>
                   </div>
                 ))}
               </div>
@@ -187,11 +187,11 @@ export default function Page() {
             <div style={{
               fontSize: 'var(--text-base)',
               lineHeight: 1.9,
-              color: 'var(--gray-700)'
+              color: 'var(--text-secondary)'
             }}>
               {/* Introduction */}
               <section style={{ marginBottom: 'var(--space-16)' }}>
-                <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-6)', color: 'var(--gray-800)' }}>
+                <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-6)', color: 'var(--text-primary)' }}>
                   &ldquo;AI detection&rdquo; is having a moment. But most people mean one of two things:
                 </p>
 
@@ -201,17 +201,17 @@ export default function Page() {
                       width: '32px',
                       height: '32px',
                       borderRadius: 'var(--radius-md)',
-                      background: 'rgba(99, 91, 255, 0.1)',
+                      background: 'var(--accent-brand-subtle)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       flexShrink: 0
                     }}>
-                      <Eye size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <Eye size={16} style={{ color: 'var(--accent-brand)' }} />
                     </div>
                     <div>
-                      <strong style={{ color: 'var(--gray-900)' }}>Content authenticity</strong>
-                      <p style={{ margin: 0, color: 'var(--gray-600)' }}>Is this content real, or did an AI model generate or alter it?</p>
+                      <strong style={{ color: 'var(--text-primary)' }}>Content authenticity</strong>
+                      <p style={{ margin: 0, color: 'var(--text-secondary)' }}>Is this content real, or did an AI model generate or alter it?</p>
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
@@ -219,17 +219,17 @@ export default function Page() {
                       width: '32px',
                       height: '32px',
                       borderRadius: 'var(--radius-md)',
-                      background: 'rgba(99, 91, 255, 0.1)',
+                      background: 'var(--accent-brand-subtle)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       flexShrink: 0
                     }}>
-                      <ShieldCheck size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <ShieldCheck size={16} style={{ color: 'var(--accent-brand)' }} />
                     </div>
                     <div>
-                      <strong style={{ color: 'var(--gray-900)' }}>Traffic detection</strong>
-                      <p style={{ margin: 0, color: 'var(--gray-600)' }}>Is this visitor a human, or an AI bot quietly crawling my site or API?</p>
+                      <strong style={{ color: 'var(--text-primary)' }}>Traffic detection</strong>
+                      <p style={{ margin: 0, color: 'var(--text-secondary)' }}>Is this visitor a human, or an AI bot quietly crawling my site or API?</p>
                     </div>
                   </div>
                 </div>
@@ -244,13 +244,13 @@ export default function Page() {
 
                 <div style={{
                   background: 'linear-gradient(135deg, rgba(99,91,255,0.08) 0%, rgba(0,212,170,0.08) 100%)',
-                  borderLeft: '4px solid var(--brand-primary)',
+                  borderLeft: '4px solid var(--accent-brand)',
                   borderRadius: '0 var(--radius-md) var(--radius-md) 0',
                   padding: 'var(--space-6)',
                   marginBottom: 'var(--space-8)'
                 }}>
-                  <p style={{ margin: 0, color: 'var(--gray-800)', fontSize: 'var(--text-base)' }}>
-                    That is exactly what <Link href="/integrations/acp/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>PEAC Protocol</Link> provides - a neutral proof layer for AI interactions that issues cryptographic receipts for access, usage, and payments using a standard <code style={{ background: 'rgba(255,255,255,0.7)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>PEAC-Receipt</code> HTTP header.
+                  <p style={{ margin: 0, color: 'var(--text-primary)', fontSize: 'var(--text-base)' }}>
+                    That is exactly what <Link href="/integrations/acp/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>PEAC Protocol</Link> provides - a neutral proof layer for AI interactions that issues cryptographic receipts for access, usage, and payments using a standard <code style={{ background: 'rgba(255,255,255,0.7)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>PEAC-Receipt</code> HTTP header.
                   </p>
                 </div>
               </section>
@@ -262,7 +262,7 @@ export default function Page() {
                     width: '40px',
                     height: '40px',
                     borderRadius: 'var(--radius-full)',
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'var(--white)',
                     display: 'flex',
                     alignItems: 'center',
@@ -275,7 +275,7 @@ export default function Page() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     margin: 0,
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     What &ldquo;AI bot detection&rdquo; really covers
                   </h2>
@@ -304,8 +304,8 @@ export default function Page() {
                     }
                   ].map((item, i) => (
                     <div key={i} style={{
-                      background: 'var(--white)',
-                      border: '1px solid var(--gray-200)',
+                      background: 'var(--surface-elevated)',
+                      border: '1px solid var(--border-default)',
                       borderRadius: 'var(--radius-lg)',
                       padding: 'var(--space-5)',
                       display: 'flex',
@@ -315,19 +315,19 @@ export default function Page() {
                         width: '40px',
                         height: '40px',
                         borderRadius: 'var(--radius-md)',
-                        background: 'rgba(99, 91, 255, 0.1)',
+                        background: 'var(--accent-brand-subtle)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         flexShrink: 0
                       }}>
-                        <item.icon size={20} style={{ color: 'var(--brand-primary)' }} />
+                        <item.icon size={20} style={{ color: 'var(--accent-brand)' }} />
                       </div>
                       <div>
-                        <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
+                        <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
                           {item.title}
                         </h3>
-                        <p style={{ margin: 0, color: 'var(--gray-600)', fontSize: 'var(--text-sm)', lineHeight: 1.6 }}>
+                        <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.6 }}>
                           {item.desc}
                         </p>
                       </div>
@@ -336,7 +336,7 @@ export default function Page() {
                 </div>
 
                 <div style={{
-                  background: 'var(--gray-900)',
+                  background: 'var(--text-primary)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-6)',
                   marginBottom: 'var(--space-6)'
@@ -358,7 +358,7 @@ export default function Page() {
                     width: '40px',
                     height: '40px',
                     borderRadius: 'var(--radius-full)',
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'var(--white)',
                     display: 'flex',
                     alignItems: 'center',
@@ -371,7 +371,7 @@ export default function Page() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     margin: 0,
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Why &ldquo;detection-only&rdquo; is not enough
                   </h2>
@@ -425,10 +425,10 @@ export default function Page() {
                         <item.icon size={16} style={{ color: '#B8860B' }} />
                       </div>
                       <div>
-                        <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--gray-900)' }}>
+                        <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
                           {item.title}
                         </h3>
-                        <p style={{ margin: 0, color: 'var(--gray-700)', fontSize: 'var(--text-sm)', lineHeight: 1.6 }}>
+                        <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.6 }}>
                           {item.desc}
                         </p>
                       </div>
@@ -441,7 +441,7 @@ export default function Page() {
                 </p>
 
                 <div style={{
-                  background: 'rgba(0, 212, 170, 0.08)',
+                  background: 'var(--accent-secondary-subtle)',
                   border: '1px solid rgba(0, 212, 170, 0.3)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-5)',
@@ -455,15 +455,15 @@ export default function Page() {
                       'Audit trail that survives legal discovery (not server logs you control)'
                     ].map((item, i) => (
                       <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
-                        <CheckCircle2 size={18} style={{ color: 'var(--brand-secondary)', flexShrink: 0, marginTop: '2px' }} />
-                        <span style={{ color: 'var(--gray-800)' }}>{item}</span>
+                        <CheckCircle2 size={18} style={{ color: 'var(--accent-secondary)', flexShrink: 0, marginTop: '2px' }} />
+                        <span style={{ color: 'var(--text-primary)' }}>{item}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 <p>
-                  That is where Originary and PEAC push beyond detection-only to <strong style={{ color: 'var(--brand-primary)' }}>detection + policy + receipts</strong>.
+                  That is where Originary and PEAC push beyond detection-only to <strong style={{ color: 'var(--accent-brand)' }}>detection + policy + receipts</strong>.
                 </p>
               </section>
 
@@ -474,7 +474,7 @@ export default function Page() {
                     width: '40px',
                     height: '40px',
                     borderRadius: 'var(--radius-full)',
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'var(--white)',
                     display: 'flex',
                     alignItems: 'center',
@@ -487,7 +487,7 @@ export default function Page() {
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     margin: 0,
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     The four pillars of useful AI bot detection
                   </h2>
@@ -512,7 +512,7 @@ export default function Page() {
                   ].map((pillar) => (
                     <div key={pillar.num} style={{
                       background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(0,212,170,0.05) 100%)',
-                      border: '1px solid rgba(99, 91, 255, 0.2)',
+                      border: '1px solid var(--accent-brand-muted)',
                       borderRadius: 'var(--radius-lg)',
                       padding: 'var(--space-5)',
                       textAlign: 'center'
@@ -521,7 +521,7 @@ export default function Page() {
                         width: '48px',
                         height: '48px',
                         borderRadius: 'var(--radius-full)',
-                        background: 'var(--brand-primary)',
+                        background: 'var(--accent-brand)',
                         color: 'var(--white)',
                         display: 'flex',
                         alignItems: 'center',
@@ -530,10 +530,10 @@ export default function Page() {
                       }}>
                         <pillar.icon size={24} />
                       </div>
-                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--brand-primary)', fontWeight: 600, marginBottom: 'var(--space-1)' }}>
+                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--accent-brand)', fontWeight: 600, marginBottom: 'var(--space-1)' }}>
                         PILLAR {pillar.num}
                       </div>
-                      <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)' }}>
+                      <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)' }}>
                         {pillar.title}
                       </div>
                     </div>
@@ -548,20 +548,20 @@ export default function Page() {
                     gap: 'var(--space-3)',
                     marginBottom: 'var(--space-4)',
                     paddingBottom: 'var(--space-4)',
-                    borderBottom: '2px solid var(--gray-100)'
+                    borderBottom: '2px solid var(--border-subtle)'
                   }}>
                     <div style={{
                       width: '32px',
                       height: '32px',
                       borderRadius: 'var(--radius-md)',
-                      background: 'rgba(99, 91, 255, 0.1)',
+                      background: 'var(--accent-brand-subtle)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center'
                     }}>
-                      <Database size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <Database size={16} style={{ color: 'var(--accent-brand)' }} />
                     </div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
                       3.1 Metadata: the quiet truth-teller
                     </h3>
                   </div>
@@ -582,14 +582,14 @@ export default function Page() {
                       }
                     ].map((section, i) => (
                       <div key={i} style={{
-                        background: 'var(--gray-50)',
+                        background: 'var(--surface-subtle)',
                         borderRadius: 'var(--radius-md)',
                         padding: 'var(--space-4)'
                       }}>
-                        <h4 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-2)' }}>
+                        <h4 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-2)' }}>
                           {section.title}
                         </h4>
-                        <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                        <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                           {section.items.map((item, j) => (
                             <li key={j} style={{ marginBottom: 'var(--space-1)' }}>{item}</li>
                           ))}
@@ -599,7 +599,7 @@ export default function Page() {
                   </div>
 
                   <p>
-                    On its own, metadata can be spoofed. Combined with cryptographic receipts, it becomes a strong integrity check. In PEAC, metadata is not an afterthought - effective AI preference policies (<Link href="/integrations/aipref/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>AIPREF</Link>) are discovered and snapshotted into every receipt, so audits are self-contained.
+                    On its own, metadata can be spoofed. Combined with cryptographic receipts, it becomes a strong integrity check. In PEAC, metadata is not an afterthought - effective AI preference policies (<Link href="/integrations/aipref/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AIPREF</Link>) are discovered and snapshotted into every receipt, so audits are self-contained.
                   </p>
                 </div>
 
@@ -611,20 +611,20 @@ export default function Page() {
                     gap: 'var(--space-3)',
                     marginBottom: 'var(--space-4)',
                     paddingBottom: 'var(--space-4)',
-                    borderBottom: '2px solid var(--gray-100)'
+                    borderBottom: '2px solid var(--border-subtle)'
                   }}>
                     <div style={{
                       width: '32px',
                       height: '32px',
                       borderRadius: 'var(--radius-md)',
-                      background: 'rgba(99, 91, 255, 0.1)',
+                      background: 'var(--accent-brand-subtle)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center'
                     }}>
-                      <Fingerprint size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <Fingerprint size={16} style={{ color: 'var(--accent-brand)' }} />
                     </div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
                       3.2 Model fingerprints: which model touched this
                     </h3>
                   </div>
@@ -645,15 +645,15 @@ export default function Page() {
                       { title: 'Cross-checking claims', desc: 'Detect mismatches between claims and reality' }
                     ].map((item, i) => (
                       <div key={i} style={{
-                        background: 'var(--white)',
-                        border: '1px solid var(--gray-200)',
+                        background: 'var(--surface-elevated)',
+                        border: '1px solid var(--border-default)',
                         borderRadius: 'var(--radius-md)',
                         padding: 'var(--space-4)'
                       }}>
-                        <h4 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                        <h4 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
                           {item.title}
                         </h4>
-                        <p style={{ margin: 0, fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                        <p style={{ margin: 0, fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                           {item.desc}
                         </p>
                       </div>
@@ -673,20 +673,20 @@ export default function Page() {
                     gap: 'var(--space-3)',
                     marginBottom: 'var(--space-4)',
                     paddingBottom: 'var(--space-4)',
-                    borderBottom: '2px solid var(--gray-100)'
+                    borderBottom: '2px solid var(--border-subtle)'
                   }}>
                     <div style={{
                       width: '32px',
                       height: '32px',
                       borderRadius: 'var(--radius-md)',
-                      background: 'rgba(99, 91, 255, 0.1)',
+                      background: 'var(--accent-brand-subtle)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center'
                     }}>
-                      <Zap size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <Zap size={16} style={{ color: 'var(--accent-brand)' }} />
                     </div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
                       3.3 Access: every AI call as a verifiable event
                     </h3>
                   </div>
@@ -700,13 +700,13 @@ export default function Page() {
                   </p>
 
                   <div style={{
-                    background: 'var(--gray-900)',
+                    background: 'var(--text-primary)',
                     borderRadius: 'var(--radius-lg)',
                     padding: 'var(--space-5)',
                     marginBottom: 'var(--space-6)',
                     overflow: 'auto'
                   }}>
-                    <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', color: 'var(--gray-300)', lineHeight: 1.7 }}>
+                    <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', color: 'var(--border-default)', lineHeight: 1.7 }}>
 {`agent_id         → which agent or client called you
 agent_type       → crawler, copilot, aggregator, training pipeline
 model_id         → declared model family in use
@@ -724,13 +724,13 @@ issued_at        → when the receipt was generated`}
                     padding: 'var(--space-6)',
                     marginBottom: 'var(--space-6)'
                   }}>
-                    <p style={{ margin: 0, fontSize: 'var(--text-lg)', color: 'var(--gray-800)', fontWeight: 500, lineHeight: 1.6 }}>
+                    <p style={{ margin: 0, fontSize: 'var(--text-lg)', color: 'var(--text-primary)', fontWeight: 500, lineHeight: 1.6 }}>
                       Instead of &ldquo;we think an AI scraped our site,&rdquo; you can say: <strong>&ldquo;Agent X, using model Y, accessed resources A, B, C on these dates, under policy Z, via HTTP 402, and paid this amount. Here is the signed receipt.&rdquo;</strong>
                     </p>
                   </div>
 
                   <p>
-                    The PEAC kernel signs receipts using Ed25519 and ships them in a <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>PEAC-Receipt</code> header, ready for offline or online verification.
+                    The PEAC kernel signs receipts using Ed25519 and ships them in a <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>PEAC-Receipt</code> header, ready for offline or online verification.
                   </p>
                 </div>
 
@@ -742,20 +742,20 @@ issued_at        → when the receipt was generated`}
                     gap: 'var(--space-3)',
                     marginBottom: 'var(--space-4)',
                     paddingBottom: 'var(--space-4)',
-                    borderBottom: '2px solid var(--gray-100)'
+                    borderBottom: '2px solid var(--border-subtle)'
                   }}>
                     <div style={{
                       width: '32px',
                       height: '32px',
                       borderRadius: 'var(--radius-md)',
-                      background: 'rgba(99, 91, 255, 0.1)',
+                      background: 'var(--accent-brand-subtle)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center'
                     }}>
-                      <Database size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <Database size={16} style={{ color: 'var(--accent-brand)' }} />
                     </div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--gray-900)' }}>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
                       3.4 Artifact repository: cases, not random files
                     </h3>
                   </div>
@@ -765,7 +765,7 @@ issued_at        → when the receipt was generated`}
                   </p>
 
                   <div style={{
-                    background: 'var(--gray-50)',
+                    background: 'var(--surface-subtle)',
                     borderRadius: 'var(--radius-lg)',
                     padding: 'var(--space-5)',
                     marginBottom: 'var(--space-6)'
@@ -790,7 +790,7 @@ issued_at        → when the receipt was generated`}
                     width: '40px',
                     height: '40px',
                     borderRadius: 'var(--radius-full)',
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'var(--white)',
                     display: 'flex',
                     alignItems: 'center',
@@ -803,7 +803,7 @@ issued_at        → when the receipt was generated`}
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     margin: 0,
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     How Originary + PEAC change AI bot detection in practice
                   </h2>
@@ -817,7 +817,7 @@ issued_at        → when the receipt was generated`}
                       content: (
                         <>
                           <p style={{ marginBottom: 'var(--space-4)' }}>
-                            Every PEAC-aware service exposes a discovery file at <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/.well-known/peac.txt</code> that advertises protocol version, payment rails, receipt requirements, and verification endpoints.
+                            Every PEAC-aware service exposes a discovery file at <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/.well-known/peac.txt</code> that advertises protocol version, payment rails, receipt requirements, and verification endpoints.
                           </p>
                           <p style={{ margin: 0 }}>
                             AIPREF policies describe how your content may be used. These are snapshotted into every receipt. <strong>AI agents can no longer pretend they did not know your terms.</strong>
@@ -831,7 +831,7 @@ issued_at        → when the receipt was generated`}
                       content: (
                         <>
                           <p style={{ marginBottom: 'var(--space-4)' }}>
-                            When an AI agent hits a protected resource, it receives an <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> response. Once the agent pays or proves entitlement, the PEAC kernel issues a signed receipt binding: what was accessed, who accessed it, which policy applied, and payment details.
+                            When an AI agent hits a protected resource, it receives an <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> response. Once the agent pays or proves entitlement, the PEAC kernel issues a signed receipt binding: what was accessed, who accessed it, which policy applied, and payment details.
                           </p>
                           <p style={{ margin: 0 }}>
                             AI bot detection becomes not just &ldquo;yes, that looked like a bot&rdquo; but <strong>&ldquo;yes, that bot paid, under these terms, here is the verified record.&rdquo;</strong>
@@ -845,10 +845,10 @@ issued_at        → when the receipt was generated`}
                       content: (
                         <>
                           <p style={{ marginBottom: 'var(--space-4)' }}>
-                            Most serious AI agents want a clean way to respect content owners. Originary + PEAC give them that path: pre-fetch <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>peac.txt</code>, integrate 402 flows, attach receipts when passing data downstream.
+                            Most serious AI agents want a clean way to respect content owners. Originary + PEAC give them that path: pre-fetch <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>peac.txt</code>, integrate 402 flows, attach receipts when passing data downstream.
                           </p>
                           <p style={{ margin: 0 }}>
-                            That is AI bot detection as <strong style={{ color: 'var(--brand-primary)' }}>positive infrastructure</strong> rather than only defensive heuristics.
+                            That is AI bot detection as <strong style={{ color: 'var(--accent-brand)' }}>positive infrastructure</strong> rather than only defensive heuristics.
                           </p>
                         </>
                       )
@@ -858,14 +858,14 @@ issued_at        → when the receipt was generated`}
                       title: 'Make bad or ambiguous agents stand out',
                       content: (
                         <p style={{ margin: 0 }}>
-                          Once good agents follow rules and produce receipts, what remains is easier to handle: crawlers ignoring <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>peac.txt</code>, tools spoofing user-agents, traffic with no receipts. These become clear anomalies. <strong>You can throttle, block, or litigate based on evidence rather than suspicion.</strong>
+                          Once good agents follow rules and produce receipts, what remains is easier to handle: crawlers ignoring <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>peac.txt</code>, tools spoofing user-agents, traffic with no receipts. These become clear anomalies. <strong>You can throttle, block, or litigate based on evidence rather than suspicion.</strong>
                         </p>
                       )
                     }
                   ].map((item, i) => (
                     <div key={i} style={{
-                      background: 'var(--white)',
-                      border: '1px solid var(--gray-200)',
+                      background: 'var(--surface-elevated)',
+                      border: '1px solid var(--border-default)',
                       borderRadius: 'var(--radius-lg)',
                       padding: 'var(--space-6)'
                     }}>
@@ -876,18 +876,18 @@ issued_at        → when the receipt was generated`}
                         marginBottom: 'var(--space-4)'
                       }}>
                         <span style={{
-                          background: 'var(--brand-primary)',
+                          background: 'var(--accent-brand)',
                           color: 'var(--white)',
                           padding: 'var(--space-1) var(--space-3)',
                           borderRadius: 'var(--radius-full)',
                           fontSize: 'var(--text-xs)',
                           fontWeight: 600
                         }}>{item.num}</span>
-                        <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, margin: 0, color: 'var(--gray-900)' }}>
+                        <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
                           {item.title}
                         </h3>
                       </div>
-                      <div style={{ color: 'var(--gray-700)', lineHeight: 1.7 }}>
+                      <div style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                         {item.content}
                       </div>
                     </div>
@@ -902,7 +902,7 @@ issued_at        → when the receipt was generated`}
                     width: '40px',
                     height: '40px',
                     borderRadius: 'var(--radius-full)',
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'var(--white)',
                     display: 'flex',
                     alignItems: 'center',
@@ -915,7 +915,7 @@ issued_at        → when the receipt was generated`}
                     fontSize: 'var(--text-2xl)',
                     fontWeight: 700,
                     margin: 0,
-                    color: 'var(--gray-900)'
+                    color: 'var(--text-primary)'
                   }}>
                     Where this is going next
                   </h2>
@@ -927,23 +927,23 @@ issued_at        → when the receipt was generated`}
 
                 <div style={{
                   background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(0,212,170,0.05) 100%)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-6)'
                 }}>
-                  <h4 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--gray-900)', marginBottom: 'var(--space-4)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <h4 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-4)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Explore the building blocks
                   </h4>
                   <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
-                    <Link href="/integrations/aipref/" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 500 }}>
+                    <Link href="/integrations/aipref/" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>
                       <ArrowRight size={14} />
                       <span>AIPREF - Machine-readable AI usage preferences</span>
                     </Link>
-                    <Link href="/integrations/x402/" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 500 }}>
+                    <Link href="/integrations/x402/" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>
                       <ArrowRight size={14} />
                       <span>x402 - HTTP 402 payment gating</span>
                     </Link>
-                    <Link href="/receipts/" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 500 }}>
+                    <Link href="/receipts/" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>
                       <ArrowRight size={14} />
                       <span>PEAC receipts - Verifiable access evidence</span>
                     </Link>
@@ -952,18 +952,18 @@ issued_at        → when the receipt was generated`}
               </section>
 
               {/* Related Reading */}
-              <section style={{ paddingTop: 'var(--space-8)', borderTop: '2px solid var(--gray-200)' }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+              <section style={{ paddingTop: 'var(--space-8)', borderTop: '2px solid var(--border-default)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                   Related Reading
                 </h3>
                 <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
-                  <Link href="/blog/aipref-by-ietf/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/blog/aipref-by-ietf/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     AIPREF: A Common Language for AI Usage Preferences
                   </Link>
-                  <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     HTTP 402 for APIs: Making Payment-Required Responses Work
                   </Link>
-                  <Link href="/blog/robots-txt-rfc-9309/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/blog/robots-txt-rfc-9309/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     robots.txt (RFC 9309): The Web&rsquo;s Crawl Access Control
                   </Link>
                 </div>
@@ -972,7 +972,7 @@ issued_at        → when the receipt was generated`}
           </div>
 
           {/* CTA Section */}
-          <section style={{ background: 'var(--gray-50)', borderTop: '1px solid var(--gray-200)', marginTop: 'var(--space-16)' }}>
+          <section style={{ background: 'var(--surface-subtle)', borderTop: '1px solid var(--border-default)', marginTop: 'var(--space-16)' }}>
             <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: 'var(--space-16) var(--space-6)' }}>
               <div className="cta-card" style={{
                 borderRadius: 'var(--radius-xl)',
@@ -988,7 +988,7 @@ issued_at        → when the receipt was generated`}
                   <Link
                     href="/developers"
                     className="btn btn-lg"
-                    style={{ background: 'var(--white)', color: 'var(--brand-primary)', border: 'none' }}
+                    style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}
                   >
                     <span>View Documentation</span>
                     <ArrowRight size={18} />

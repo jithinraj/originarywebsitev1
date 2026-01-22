@@ -17,7 +17,7 @@ export default function Brand() {
     <div className="wrap">
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h1 style={{
@@ -26,12 +26,12 @@ export default function Brand() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Brand Guidelines
               </h1>
 
-              <div style={{ fontSize: 'var(--text-lg)', lineHeight: 1.7, color: 'var(--gray-700)' }}>
+              <div style={{ fontSize: 'var(--text-lg)', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
                   <Mark>Originary</Mark> brand guidelines for consistent use of our wordmark, logo, and visual identity.
                 </p>
@@ -62,7 +62,7 @@ export default function Brand() {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      color: 'var(--brand-primary)',
+                      color: 'var(--accent-brand)',
                       textDecoration: 'none',
                       fontWeight: 600
                     }}
@@ -84,15 +84,15 @@ export default function Brand() {
                 </p>
 
                 <div style={{
-                  background: 'var(--gray-50)',
-                  border: '1px solid var(--gray-200)',
+                  background: 'var(--surface-subtle)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-6)',
                   marginTop: 'var(--space-8)'
                 }}>
-                  <p style={{ margin: 0, fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                  <p style={{ margin: 0, fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                     Contact{' '}
-                    <a href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>
+                    <a href="mailto:contact@originary.xyz" style={{ color: 'var(--accent-brand)' }}>
                       contact@originary.xyz
                     </a>{' '}
                     for logo files and brand assets.

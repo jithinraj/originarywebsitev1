@@ -22,16 +22,16 @@ export default function CloudflareWorkerDocPage() {
   return (
     <>
       <NavigationHeader />
-      <main style={{ minHeight: '100vh', background: 'var(--white)' }}>
+      <main style={{ minHeight: '100vh', background: 'var(--surface-elevated)' }}>
         <div className="container" style={{ padding: 'var(--space-32) var(--space-6)' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div style={{
               display: 'inline-flex',
-              background: 'rgba(99, 91, 255, 0.1)',
-              border: '1px solid rgba(99, 91, 255, 0.2)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-6)',
-              color: 'var(--brand-primary)',
+              color: 'var(--accent-brand)',
               fontSize: 'var(--text-sm)',
               fontWeight: 600,
               marginBottom: 'var(--space-6)'
@@ -43,14 +43,14 @@ export default function CloudflareWorkerDocPage() {
               fontSize: 'var(--text-5xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-6)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Cloudflare Workers
             </h1>
 
             <p style={{
               fontSize: 'var(--text-xl)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
@@ -62,14 +62,14 @@ export default function CloudflareWorkerDocPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Edge Receipt Verification
               </h2>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                 Cloudflare Workers run at 300+ edge locations worldwide, making them ideal for verifying PEAC-Receipts with minimal latency. Gate your origin behind a Worker that challenges agents with HTTP 402 and verifies receipts before forwarding requests.
               </p>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                 Ed25519 signature verification is fast enough to run at the edge, typically completing in under 5ms. This pattern keeps your origin clean while enforcing payment and policy at the network edge.
               </p>
             </div>
@@ -79,14 +79,14 @@ export default function CloudflareWorkerDocPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 5-Minute Quickstart
               </h2>
-              <ol style={{ color: 'var(--gray-600)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
-                <li>Install Originary Worker template: <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>npm create cloudflare@latest -- --template originary/worker</code></li>
+              <ol style={{ color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
+                <li>Install Originary Worker template: <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>npm create cloudflare@latest -- --template originary/worker</code></li>
                 <li>Configure your Originary API key and policy URL</li>
-                <li>Deploy to Cloudflare: <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>wrangler deploy</code></li>
+                <li>Deploy to Cloudflare: <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>wrangler deploy</code></li>
                 <li>Worker intercepts requests, challenges with 402, verifies receipts</li>
                 <li>Valid receipts are forwarded to origin; invalid requests are rejected at edge</li>
               </ol>
@@ -97,13 +97,13 @@ export default function CloudflareWorkerDocPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Code Example
               </h2>
               <pre style={{
-                background: 'var(--gray-900)',
-                color: 'var(--gray-100)',
+                background: 'var(--text-primary)',
+                color: 'var(--surface-card)',
                 padding: 'var(--space-4)',
                 borderRadius: 'var(--radius-lg)',
                 fontSize: 'var(--text-sm)',
@@ -132,8 +132,8 @@ export default function CloudflareWorkerDocPage() {
             </div>
 
             <div style={{
-              background: 'var(--gray-50)',
-              border: '1px solid var(--gray-200)',
+              background: 'var(--surface-subtle)',
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-xl)',
               padding: 'var(--space-8)',
               marginTop: 'var(--space-12)'
@@ -142,11 +142,11 @@ export default function CloudflareWorkerDocPage() {
                 fontSize: 'var(--text-xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Deploy to the edge in minutes
               </h2>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
                 Protect your origin with edge receipt verification using Cloudflare Workers.
               </p>
               <Link href="/developers" className="btn btn-primary">

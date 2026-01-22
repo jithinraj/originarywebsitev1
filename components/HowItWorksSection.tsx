@@ -49,9 +49,9 @@ export default function HowItWorksSection() {
     <section
       style={{
         padding: 'var(--space-20) 0',
-        background: 'var(--gray-50)',
-        borderTop: '1px solid var(--gray-200)',
-        borderBottom: '1px solid var(--gray-200)'
+        background: 'var(--surface-subtle)',
+        borderTop: '1px solid var(--border-default)',
+        borderBottom: '1px solid var(--border-default)'
       }}
     >
       <div className="container">
@@ -61,7 +61,7 @@ export default function HowItWorksSection() {
             style={{
               fontSize: 'clamp(var(--text-2xl), 4vw, var(--text-4xl))',
               fontWeight: 700,
-              color: 'var(--gray-900)',
+              color: 'var(--text-primary)',
               marginBottom: 'var(--space-4)',
               letterSpacing: '-0.02em'
             }}
@@ -71,7 +71,7 @@ export default function HowItWorksSection() {
           <p
             style={{
               fontSize: 'var(--text-lg)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               maxWidth: '600px',
               margin: '0 auto'
             }}
@@ -97,9 +97,9 @@ export default function HowItWorksSection() {
               style={{
                 display: 'block',
                 padding: 'var(--space-6)',
-                background: 'var(--white)',
+                background: 'var(--surface-elevated)',
                 borderRadius: 'var(--radius-card)',
-                border: '1px solid var(--gray-200)',
+                border: '1px solid var(--border-default)',
                 textDecoration: 'none',
                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 position: 'relative'
@@ -107,12 +107,12 @@ export default function HowItWorksSection() {
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)'
                 e.currentTarget.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.08)'
-                e.currentTarget.style.borderColor = 'var(--brand-primary)'
+                e.currentTarget.style.borderColor = 'var(--accent-brand)'
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)'
                 e.currentTarget.style.boxShadow = 'none'
-                e.currentTarget.style.borderColor = 'var(--gray-200)'
+                e.currentTarget.style.borderColor = 'var(--border-default)'
               }}
             >
               {/* Step Number Badge */}
@@ -124,13 +124,13 @@ export default function HowItWorksSection() {
                   width: '24px',
                   height: '24px',
                   borderRadius: '50%',
-                  background: 'var(--gray-100)',
+                  background: 'var(--surface-card)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: 'var(--text-xs)',
                   fontWeight: 600,
-                  color: 'var(--gray-500)'
+                  color: 'var(--text-tertiary)'
                 }}
               >
                 {step.number}
@@ -142,7 +142,7 @@ export default function HowItWorksSection() {
                   width: '48px',
                   height: '48px',
                   borderRadius: 'var(--radius-lg)',
-                  background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.1), rgba(0, 212, 170, 0.1))',
+                  background: 'linear-gradient(135deg, var(--accent-brand-subtle), var(--accent-secondary-subtle))',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -158,7 +158,7 @@ export default function HowItWorksSection() {
                 style={{
                   fontSize: 'var(--text-lg)',
                   fontWeight: 600,
-                  color: 'var(--gray-900)',
+                  color: 'var(--text-primary)',
                   marginBottom: 'var(--space-2)'
                 }}
               >
@@ -169,7 +169,7 @@ export default function HowItWorksSection() {
               <p
                 style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.6,
                   margin: 0
                 }}
@@ -220,7 +220,7 @@ export default function HowItWorksSection() {
         <div
           className="animate-on-scroll"
           style={{
-            background: 'var(--gray-900)',
+            background: 'var(--text-primary)',
             borderRadius: 'var(--radius-card)',
             padding: 'var(--space-8)',
             position: 'relative',
@@ -235,7 +235,7 @@ export default function HowItWorksSection() {
               left: 0,
               right: 0,
               bottom: 0,
-              background: 'linear-gradient(135deg, rgba(99, 91, 255, 0.15) 0%, rgba(0, 212, 170, 0.1) 100%)',
+              background: 'linear-gradient(135deg, var(--accent-brand-muted) 0%, var(--accent-secondary-subtle) 100%)',
               pointerEvents: 'none'
             }}
           />
@@ -292,14 +292,14 @@ export default function HowItWorksSection() {
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)'
-                        e.currentTarget.style.borderColor = 'rgba(99, 91, 255, 0.5)'
+                        e.currentTarget.style.borderColor = 'var(--accent-brand-glow)'
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)'
                         e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'
                       }}
                     >
-                      <Icon size={16} style={{ color: 'var(--brand-primary)' }} />
+                      <Icon size={16} style={{ color: 'var(--accent-brand)' }} />
                       <span
                         style={{
                           fontSize: 'var(--text-sm)',

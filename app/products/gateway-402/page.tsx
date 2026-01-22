@@ -106,14 +106,14 @@ export default function Gateway402() {
         ]} />
       </div>
       <main style={{ paddingTop: '0' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-3)',
-                background: 'rgba(255, 107, 53, 0.1)',
+                background: 'var(--accent-tertiary-subtle)',
                 border: '1px solid rgba(255, 107, 53, 0.2)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-6)',
@@ -128,8 +128,8 @@ export default function Gateway402() {
                   display: 'flex',
                   gap: 'var(--space-2)'
                 }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)', fontWeight: 600 }}>HTTP 402</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)', fontWeight: 600 }}>x402</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)', fontWeight: 600 }}>HTTP 402</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)', fontWeight: 600 }}>x402</span>
                 </div>
               </div>
 
@@ -139,7 +139,7 @@ export default function Gateway402() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 The <span className="text-gradient">payment infrastructure</span> for agents
               </h1>
@@ -147,7 +147,7 @@ export default function Gateway402() {
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-6)',
                 maxWidth: '900px',
                 margin: '0 auto var(--space-6) auto'
@@ -158,7 +158,7 @@ export default function Gateway402() {
               <p style={{
                 fontSize: 'var(--text-lg)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)',
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
@@ -209,7 +209,7 @@ export default function Gateway402() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(255, 107, 53, 0.1)',
+                  background: 'var(--accent-tertiary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -237,8 +237,8 @@ export default function Gateway402() {
                   HTTP 402 compliant protocol with agent-native policy negotiation and verifiable receipts.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>HTTP 402</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Agent-native</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>HTTP 402</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Agent-native</span>
                 </div>
               </div>
             </div>
@@ -285,8 +285,8 @@ export default function Gateway402() {
                     href="/company/contact"
                     className="btn btn-lg"
                     style={{
-                      background: 'var(--white)',
-                      color: 'var(--brand-primary)',
+                      background: 'var(--surface-elevated)',
+                      color: 'var(--accent-brand)',
                       border: 'none'
                     }}
                   >

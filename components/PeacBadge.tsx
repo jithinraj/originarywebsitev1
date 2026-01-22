@@ -6,8 +6,8 @@ export default function PeacBadge() {
       href="/peac"
       className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-sm hover:bg-neutral-50 transition-colors"
       style={{
-        borderColor: 'rgba(99, 91, 255, 0.2)',
-        color: 'var(--brand-primary)'
+        borderColor: 'var(--accent-brand-muted)',
+        color: 'var(--accent-brand)'
       }}
     >
       <span

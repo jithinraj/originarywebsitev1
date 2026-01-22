@@ -85,7 +85,7 @@ Cache-Control: no-store
               display: 'inline-flex',
               alignItems: 'center',
               gap: 'var(--space-2)',
-              background: 'rgba(255, 107, 53, 0.1)',
+              background: 'var(--accent-tertiary-subtle)',
               border: '1px solid rgba(255, 107, 53, 0.2)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-6)',
@@ -107,7 +107,7 @@ Cache-Control: no-store
             textAlign: 'center',
             marginBottom: 'var(--space-6)',
             lineHeight: 1.1,
-            color: 'var(--gray-900)'
+            color: 'var(--text-primary)'
           }}>
             HTTP 402 <span className="text-gradient">Payment Required</span>
           </h1>
@@ -115,7 +115,7 @@ Cache-Control: no-store
           <p style={{
             fontSize: 'var(--text-xl)',
             textAlign: 'center',
-            color: 'var(--gray-600)',
+            color: 'var(--text-secondary)',
             maxWidth: '700px',
             margin: '0 auto var(--space-12)',
             lineHeight: 1.7
@@ -129,7 +129,7 @@ Cache-Control: no-store
               fontSize: 'var(--text-3xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-6)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               What is HTTP 402?
             </h2>
@@ -152,7 +152,7 @@ Cache-Control: no-store
               fontSize: 'var(--text-3xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-6)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               How HTTP 402 works
             </h2>
@@ -174,17 +174,17 @@ Cache-Control: no-store
             </div>
 
             <div style={{
-              background: 'var(--gray-50)',
-              border: '1px solid var(--gray-200)',
+              background: 'var(--surface-subtle)',
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-lg)',
               padding: 'var(--space-6)'
             }}>
-              <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+              <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                 Basic HTTP 402 response
               </h3>
               <pre style={{
-                background: 'var(--gray-900)',
-                color: 'var(--gray-100)',
+                background: 'var(--text-primary)',
+                color: 'var(--surface-card)',
                 padding: 'var(--space-4)',
                 borderRadius: 'var(--radius-md)',
                 overflow: 'auto',
@@ -202,7 +202,7 @@ Cache-Control: no-store
               fontSize: 'var(--text-3xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-6)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               HTTP 402 vs x402
             </h2>
@@ -218,10 +218,10 @@ Cache-Control: no-store
                     <CreditCard size={20} style={{ color: 'var(--brand-accent)' }} />
                     <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, margin: 0 }}>HTTP 402</h3>
                   </div>
-                  <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-3)' }}>
+                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-3)' }}>
                     The HTTP status code itself. Part of the HTTP/1.1 specification.
                   </p>
-                  <ul style={{ paddingLeft: 'var(--space-6)', margin: 0, color: 'var(--gray-600)' }}>
+                  <ul style={{ paddingLeft: 'var(--space-6)', margin: 0, color: 'var(--text-secondary)' }}>
                     <li style={{ marginBottom: 'var(--space-2)' }}>Standard status code</li>
                     <li style={{ marginBottom: 'var(--space-2)' }}>No specific format</li>
                     <li style={{ marginBottom: 0 }}>Implementation-agnostic</li>
@@ -234,13 +234,13 @@ Cache-Control: no-store
                     gap: 'var(--space-2)',
                     marginBottom: 'var(--space-4)'
                   }}>
-                    <Code size={20} style={{ color: 'var(--brand-primary)' }} />
+                    <Code size={20} style={{ color: 'var(--accent-brand)' }} />
                     <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, margin: 0 }}>x402</h3>
                   </div>
-                  <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-3)' }}>
+                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-3)' }}>
                     A protocol specification for implementing HTTP 402 in practice.
                   </p>
-                  <ul style={{ paddingLeft: 'var(--space-6)', margin: 0, color: 'var(--gray-600)' }}>
+                  <ul style={{ paddingLeft: 'var(--space-6)', margin: 0, color: 'var(--text-secondary)' }}>
                     <li style={{ marginBottom: 'var(--space-2)' }}>Standardized headers</li>
                     <li style={{ marginBottom: 'var(--space-2)' }}>Payment challenge format</li>
                     <li style={{ marginBottom: 0 }}>Receipt verification</li>
@@ -256,41 +256,41 @@ Cache-Control: no-store
               fontSize: 'var(--text-3xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-6)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Use cases for HTTP 402
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-6)' }}>
               <div className="card">
                 <div style={{ marginBottom: 'var(--space-4)' }}>
-                  <CheckCircle size={24} style={{ color: 'var(--brand-primary)' }} />
+                  <CheckCircle size={24} style={{ color: 'var(--accent-brand)' }} />
                 </div>
                 <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)' }}>
                   API Monetization
                 </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                   Charge for API access on a per-request or subscription basis. Enable pay-per-use pricing models.
                 </p>
               </div>
               <div className="card">
                 <div style={{ marginBottom: 'var(--space-4)' }}>
-                  <CheckCircle size={24} style={{ color: 'var(--brand-primary)' }} />
+                  <CheckCircle size={24} style={{ color: 'var(--accent-brand)' }} />
                 </div>
                 <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)' }}>
                   Agent Commerce
                 </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                   Enable autonomous agents to discover pricing and pay for services automatically.
                 </p>
               </div>
               <div className="card">
                 <div style={{ marginBottom: 'var(--space-4)' }}>
-                  <CheckCircle size={24} style={{ color: 'var(--brand-primary)' }} />
+                  <CheckCircle size={24} style={{ color: 'var(--accent-brand)' }} />
                 </div>
                 <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)' }}>
                   Content Paywalls
                 </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, margin: 0 }}>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                   Protect premium content behind payment requirements with verifiable receipts.
                 </p>
               </div>
@@ -298,13 +298,13 @@ Cache-Control: no-store
           </section>
 
           {/* Next Steps */}
-          <section style={{ marginTop: 'var(--space-16)', paddingTop: 'var(--space-12)', borderTop: '2px solid var(--gray-200)' }}>
+          <section style={{ marginTop: 'var(--space-16)', paddingTop: 'var(--space-12)', borderTop: '2px solid var(--border-default)' }}>
             <h2 style={{
               fontSize: 'var(--text-3xl)',
               fontWeight: 700,
               textAlign: 'center',
               marginBottom: 'var(--space-8)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Implement HTTP 402 in your application
             </h2>
@@ -315,37 +315,37 @@ Cache-Control: no-store
               marginBottom: 'var(--space-12)'
             }}>
               <Link href="/integrations/x402/" className="card" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                   x402 Protocol Guide
                 </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                   Learn how to implement HTTP 402 using the x402 protocol with standardized headers and receipt formats.
                 </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--brand-primary)', fontWeight: 500 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', fontWeight: 500 }}>
                   <span>View x402 guide</span>
                   <ArrowRight size={16} />
                 </div>
               </Link>
               <Link href="/products/gateway-402" className="card" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                   Gateway 402
                 </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                   Enterprise HTTP 402 payment gateway with multi-rail settlement support and verifiable receipts.
                 </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--brand-primary)', fontWeight: 500 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', fontWeight: 500 }}>
                   <span>Learn about Gateway 402</span>
                   <ArrowRight size={16} />
                 </div>
               </Link>
               <Link href="/glossary/http-402-payment-required/" className="card" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--gray-900)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                   HTTP 402 Glossary
                 </h3>
-                <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                   Detailed explanation of HTTP 402 Payment Required status code and related concepts.
                 </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--brand-primary)', fontWeight: 500 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', fontWeight: 500 }}>
                   <span>Read glossary entry</span>
                   <ArrowRight size={16} />
                 </div>
@@ -381,8 +381,8 @@ Cache-Control: no-store
                 href="/developers"
                 className="btn btn-lg"
                 style={{
-                  background: 'var(--white)',
-                  color: 'var(--brand-primary)',
+                  background: 'var(--surface-elevated)',
+                  color: 'var(--accent-brand)',
                   border: 'none'
                 }}
               >

@@ -29,7 +29,7 @@ export default function Copyright() {
       </Script>
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
@@ -37,14 +37,14 @@ export default function Copyright() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-3)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-6)',
                   marginBottom: 'var(--space-6)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}>
                   <span>LEGAL</span>
                 </div>
@@ -55,20 +55,20 @@ export default function Copyright() {
                   lineHeight: 1.1,
                   letterSpacing: '-0.04em',
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Copyright Notice &amp; Takedown
                 </h1>
                 <p style={{
                   fontSize: 'var(--text-lg)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-4)'
                 }}>
                   Copyright notice and takedown process for our services.
                 </p>
                 <p style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-500)'
+                  color: 'var(--text-tertiary)'
                 }}>
                   Effective from 2025-07-27
                 </p>
@@ -80,9 +80,9 @@ export default function Copyright() {
                   flexDirection: 'column',
                   gap: 'var(--space-8)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-700)'
+                  color: 'var(--text-secondary)'
                 }}>
-              <p>If you believe content available through our services infringes your copyright, email <strong><Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link></strong> with:</p>
+              <p>If you believe content available through our services infringes your copyright, email <strong><Link href="mailto:contact@originary.xyz" style={{ color: 'var(--accent-brand)' }}>contact@originary.xyz</Link></strong> with:</p>
 
               <h2>Required information</h2>
               <ul>
@@ -117,21 +117,21 @@ export default function Copyright() {
               <p>Notices must be submitted in good faith. False or abusive notices may carry legal consequences.</p>
 
               <h2>Contact</h2>
-              <p><Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link></p>
+              <p><Link href="mailto:contact@originary.xyz" style={{ color: 'var(--accent-brand)' }}>contact@originary.xyz</Link></p>
 
                 </div>
               </div>
 
               <div style={{
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 padding: 'var(--space-6)',
                 borderRadius: 'var(--radius-lg)',
                 marginTop: 'var(--space-8)',
                 textAlign: 'center'
               }}>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                   <strong>Contact for copyright matters:</strong><br />
-                  <Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link>
+                  <Link href="mailto:contact@originary.xyz" style={{ color: 'var(--accent-brand)' }}>contact@originary.xyz</Link>
                 </p>
               </div>
 

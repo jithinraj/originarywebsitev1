@@ -146,7 +146,7 @@ export default function SystemOfRecordPage() {
       <NavigationHeader />
       <main id="main-content" role="main" style={{ paddingTop: '80px' }}>
         {/* Hero Section */}
-        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-16)', background: 'linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%)' }}>
+        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-16)', background: 'linear-gradient(180deg, var(--surface-subtle) 0%, var(--surface-elevated) 100%)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
               <div
@@ -154,14 +154,14 @@ export default function SystemOfRecordPage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-6)',
                   marginBottom: 'var(--space-6)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}
               >
                 SoR for Agents | Originary
@@ -174,7 +174,7 @@ export default function SystemOfRecordPage() {
                   lineHeight: 1.1,
                   letterSpacing: '-0.03em',
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 Open System of Record for AI Agents
@@ -184,7 +184,7 @@ export default function SystemOfRecordPage() {
                 style={{
                   fontSize: 'var(--text-xl)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-8)'
                 }}
               >
@@ -889,7 +889,7 @@ Content-Type: application/json`}</code></pre>
         .toc-title {
           font-size: var(--text-xs);
           font-weight: 600;
-          color: var(--gray-400);
+          color: var(--text-muted);
           text-transform: uppercase;
           letter-spacing: 0.1em;
           margin-bottom: var(--space-4);
@@ -899,7 +899,7 @@ Content-Type: application/json`}</code></pre>
           display: block;
           padding: var(--space-2) 0;
           font-size: var(--text-sm);
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           text-decoration: none;
           border-left: 2px solid transparent;
           padding-left: var(--space-3);
@@ -908,18 +908,18 @@ Content-Type: application/json`}</code></pre>
         }
 
         .toc-link:hover {
-          color: var(--gray-700);
+          color: var(--text-secondary);
         }
 
         .toc-link:focus {
-          outline: 2px solid var(--brand-primary);
+          outline: 2px solid var(--accent-brand);
           outline-offset: 2px;
           border-radius: var(--radius-sm);
         }
 
         .toc-link.active {
-          color: var(--brand-primary);
-          border-left-color: var(--brand-primary);
+          color: var(--accent-brand);
+          border-left-color: var(--accent-brand);
           font-weight: 500;
         }
 
@@ -942,23 +942,23 @@ Content-Type: application/json`}</code></pre>
           justify-content: space-between;
           width: 100%;
           padding: var(--space-4);
-          background: var(--gray-50);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-subtle);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-lg);
           font-size: var(--text-sm);
           font-weight: 500;
-          color: var(--gray-700);
+          color: var(--text-secondary);
           cursor: pointer;
           min-height: 48px; /* Touch target */
           transition: background 0.15s ease;
         }
 
         .mobile-toc-trigger:hover {
-          background: var(--gray-100);
+          background: var(--surface-card);
         }
 
         .mobile-toc-trigger:focus {
-          outline: 2px solid var(--brand-primary);
+          outline: 2px solid var(--accent-brand);
           outline-offset: 2px;
         }
 
@@ -966,8 +966,8 @@ Content-Type: application/json`}</code></pre>
           display: flex;
           flex-direction: column;
           padding: var(--space-3);
-          background: var(--gray-50);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-subtle);
+          border: 1px solid var(--border-default);
           border-top: none;
           border-radius: 0 0 var(--radius-lg) var(--radius-lg);
           max-height: 60vh;
@@ -977,7 +977,7 @@ Content-Type: application/json`}</code></pre>
         .mobile-toc-nav a {
           padding: var(--space-3) var(--space-3);
           font-size: var(--text-sm);
-          color: var(--gray-600);
+          color: var(--text-secondary);
           text-decoration: none;
           border-radius: var(--radius-md);
           min-height: 44px; /* Touch target */
@@ -987,12 +987,12 @@ Content-Type: application/json`}</code></pre>
 
         .mobile-toc-nav a:hover,
         .mobile-toc-nav a.active {
-          background: var(--white);
-          color: var(--brand-primary);
+          background: var(--surface-elevated);
+          color: var(--accent-brand);
         }
 
         .mobile-toc-nav a:focus {
-          outline: 2px solid var(--brand-primary);
+          outline: 2px solid var(--accent-brand);
           outline-offset: -2px;
         }
 
@@ -1006,7 +1006,7 @@ Content-Type: application/json`}</code></pre>
 
         .content-section {
           padding: clamp(var(--space-8), 5vw, var(--space-12)) 0;
-          border-bottom: 1px solid var(--gray-100);
+          border-bottom: 1px solid var(--border-subtle);
           scroll-margin-top: 100px; /* For anchor links */
         }
 
@@ -1018,14 +1018,14 @@ Content-Type: application/json`}</code></pre>
         .lead {
           font-size: clamp(1.125rem, 2.5vw, 1.25rem);
           line-height: 1.7;
-          color: var(--gray-700);
+          color: var(--text-secondary);
           margin-bottom: var(--space-6);
         }
 
         .main-content p {
           font-size: clamp(0.9375rem, 2vw, 1rem);
           line-height: 1.8;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin-bottom: var(--space-4);
         }
 
@@ -1038,12 +1038,12 @@ Content-Type: application/json`}</code></pre>
         .main-content li {
           font-size: clamp(0.9375rem, 2vw, 1rem);
           line-height: 1.7;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin-bottom: var(--space-2);
         }
 
         .main-content code {
-          background: var(--gray-100);
+          background: var(--surface-card);
           padding: 2px 6px;
           border-radius: var(--radius-sm);
           font-family: var(--font-mono);
@@ -1053,45 +1053,45 @@ Content-Type: application/json`}</code></pre>
 
         .emphasis {
           font-size: clamp(1rem, 2.5vw, 1.125rem);
-          color: var(--gray-700);
+          color: var(--text-secondary);
           font-weight: 500;
         }
 
         .callout {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: linear-gradient(135deg, rgba(99, 91, 255, 0.06) 0%, rgba(0, 212, 170, 0.06) 100%);
-          border: 1px solid rgba(99, 91, 255, 0.15);
+          background: linear-gradient(135deg, var(--accent-brand-subtle) 0%, var(--accent-secondary-faint) 100%);
+          border: 1px solid var(--accent-brand-muted);
           border-radius: var(--radius-xl);
           font-size: clamp(1rem, 2.5vw, 1.125rem);
-          color: var(--gray-700);
+          color: var(--text-secondary);
         }
 
         .protocol-callout {
           padding: var(--space-4) clamp(var(--space-4), 4vw, var(--space-6));
-          background: rgba(0, 212, 170, 0.08);
-          border: 1px solid rgba(0, 212, 170, 0.2);
+          background: var(--accent-secondary-subtle);
+          border: 1px solid var(--accent-secondary-muted);
           border-radius: var(--radius-lg);
           font-size: clamp(0.9375rem, 2vw, 1rem);
-          color: var(--gray-700);
+          color: var(--text-secondary);
           margin-bottom: var(--space-6);
         }
 
         .summary {
           font-size: clamp(1rem, 2.5vw, 1.125rem);
           font-weight: 600;
-          color: var(--gray-800);
+          color: var(--text-primary);
         }
 
         .final-statement {
           font-size: clamp(1.125rem, 3vw, 1.25rem);
           font-weight: 500;
-          color: var(--gray-700);
+          color: var(--text-secondary);
         }
 
         .cta-statement {
           font-size: clamp(1.25rem, 4vw, 1.5rem);
           font-weight: 700;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-8);
         }
 
@@ -1104,8 +1104,8 @@ Content-Type: application/json`}</code></pre>
 
         .question-list li {
           padding: var(--space-3) clamp(var(--space-3), 3vw, var(--space-4));
-          background: var(--gray-50);
-          border-left: 3px solid var(--brand-primary);
+          background: var(--surface-subtle);
+          border-left: 3px solid var(--accent-brand);
           margin-bottom: var(--space-2);
           border-radius: 0 var(--radius-md) var(--radius-md) 0;
         }
@@ -1113,8 +1113,8 @@ Content-Type: application/json`}</code></pre>
         /* Problem cards */
         .problem-card {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--white);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-xl);
           margin-bottom: var(--space-4);
         }
@@ -1122,7 +1122,7 @@ Content-Type: application/json`}</code></pre>
         .problem-card h4 {
           font-size: clamp(1rem, 2.5vw, 1.125rem);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-3);
         }
 
@@ -1136,10 +1136,10 @@ Content-Type: application/json`}</code></pre>
 
         .problem-note {
           font-size: var(--text-sm);
-          color: var(--brand-primary);
+          color: var(--accent-brand);
           font-style: italic;
           padding-top: var(--space-2);
-          border-top: 1px solid var(--gray-100);
+          border-top: 1px solid var(--border-subtle);
           margin-top: var(--space-3);
         }
 
@@ -1151,20 +1151,20 @@ Content-Type: application/json`}</code></pre>
 
         .requirement-card {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--gray-50);
+          background: var(--surface-subtle);
           border-radius: var(--radius-xl);
         }
 
         .requirement-card h4 {
           font-size: clamp(1rem, 2.5vw, 1.125rem);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-3);
         }
 
         .requirement-note {
           font-size: var(--text-sm);
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           font-style: italic;
           margin-top: var(--space-2);
         }
@@ -1195,8 +1195,8 @@ Content-Type: application/json`}</code></pre>
 
         .model-block {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--white);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-xl);
         }
 
@@ -1206,13 +1206,13 @@ Content-Type: application/json`}</code></pre>
           gap: var(--space-2);
           font-size: clamp(1rem, 2.5vw, 1.125rem);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-4);
           flex-wrap: wrap;
         }
 
         .model-block h4 :global(svg) {
-          color: var(--brand-primary);
+          color: var(--accent-brand);
           flex-shrink: 0;
         }
 
@@ -1229,7 +1229,7 @@ Content-Type: application/json`}</code></pre>
           background: rgba(255, 255, 255, 0.05);
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           font-size: var(--text-xs);
-          color: var(--gray-400);
+          color: var(--text-muted);
           font-family: var(--font-mono);
         }
 
@@ -1260,7 +1260,7 @@ Content-Type: application/json`}</code></pre>
           align-items: flex-start;
           gap: var(--space-3);
           padding: var(--space-3) 0;
-          border-bottom: 1px solid var(--gray-100);
+          border-bottom: 1px solid var(--border-subtle);
         }
 
         .proof-list li:last-child {
@@ -1268,7 +1268,7 @@ Content-Type: application/json`}</code></pre>
         }
 
         .proof-list :global(svg) {
-          color: var(--brand-secondary);
+          color: var(--accent-secondary);
           flex-shrink: 0;
           margin-top: 2px;
         }
@@ -1276,7 +1276,7 @@ Content-Type: application/json`}</code></pre>
         /* Flow diagram - Responsive */
         .flow-diagram {
           padding: clamp(var(--space-4), 4vw, var(--space-8)) clamp(var(--space-2), 2vw, var(--space-4));
-          background: var(--gray-50);
+          background: var(--surface-subtle);
           border-radius: var(--radius-xl);
           margin: var(--space-8) 0;
           overflow-x: auto;
@@ -1319,15 +1319,15 @@ Content-Type: application/json`}</code></pre>
 
         .reason-card {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--white);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-xl);
         }
 
         .reason-card h4 {
           font-size: clamp(1rem, 2.5vw, 1.125rem);
           font-weight: 600;
-          color: var(--brand-primary);
+          color: var(--accent-brand);
           margin-bottom: var(--space-2);
         }
 
@@ -1346,7 +1346,7 @@ Content-Type: application/json`}</code></pre>
 
         .build-card {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--gray-50);
+          background: var(--surface-subtle);
           border-radius: var(--radius-xl);
         }
 
@@ -1356,16 +1356,16 @@ Content-Type: application/json`}</code></pre>
           display: flex;
           align-items: center;
           justify-content: center;
-          background: rgba(99, 91, 255, 0.1);
+          background: var(--accent-brand-subtle);
           border-radius: var(--radius-lg);
           margin-bottom: var(--space-4);
-          color: var(--brand-primary);
+          color: var(--accent-brand);
         }
 
         .build-card h4 {
           font-size: clamp(1rem, 2.5vw, 1.125rem);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-3);
         }
 
@@ -1395,15 +1395,15 @@ Content-Type: application/json`}</code></pre>
 
         .audience-card {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--white);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-xl);
         }
 
         .audience-card h4 {
           font-size: clamp(0.9375rem, 2vw, 1rem);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-3);
         }
 
@@ -1424,7 +1424,7 @@ Content-Type: application/json`}</code></pre>
 
         .future-list li {
           padding: clamp(var(--space-3), 3vw, var(--space-4));
-          background: var(--gray-50);
+          background: var(--surface-subtle);
           border-radius: var(--radius-lg);
           margin-bottom: var(--space-3);
         }
@@ -1433,7 +1433,7 @@ Content-Type: application/json`}</code></pre>
         .start-steps li {
           padding: clamp(var(--space-3), 3vw, var(--space-4));
           margin-bottom: var(--space-3);
-          background: var(--gray-50);
+          background: var(--surface-subtle);
           border-radius: var(--radius-lg);
         }
 
@@ -1471,14 +1471,14 @@ Content-Type: application/json`}</code></pre>
 
         .faq-item {
           padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--gray-50);
+          background: var(--surface-subtle);
           border-radius: var(--radius-xl);
         }
 
         .faq-item h4 {
           font-size: clamp(0.9375rem, 2vw, 1rem);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-3);
         }
 
@@ -1558,7 +1558,7 @@ function SectionHeader({ id, title, onCopy, copied }: { id: string; title: strin
         h2 {
           font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
           font-weight: 700;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin: 0;
         }
 
@@ -1568,10 +1568,10 @@ function SectionHeader({ id, title, onCopy, copied }: { id: string; title: strin
           justify-content: center;
           width: 32px;
           height: 32px;
-          background: var(--gray-100);
+          background: var(--surface-card);
           border: none;
           border-radius: var(--radius-md);
-          color: var(--gray-400);
+          color: var(--text-muted);
           cursor: pointer;
           opacity: 0;
           transition: all 0.15s ease;
@@ -1582,13 +1582,13 @@ function SectionHeader({ id, title, onCopy, copied }: { id: string; title: strin
         }
 
         .anchor-btn:hover {
-          background: var(--gray-200);
-          color: var(--gray-600);
+          background: var(--surface-subtle);
+          color: var(--text-secondary);
         }
 
         .anchor-btn:focus {
           opacity: 1;
-          outline: 2px solid var(--brand-primary);
+          outline: 2px solid var(--accent-brand);
           outline-offset: 2px;
         }
       `}</style>

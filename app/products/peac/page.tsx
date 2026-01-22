@@ -60,21 +60,21 @@ export default function PEACInProduction() {
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
         {/* Hero */}
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-3)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-6)',
                 marginBottom: 'var(--space-6)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)'
+                color: 'var(--accent-brand)'
               }}>
                 <Server size={16} />
                 <span>ENTERPRISE OPERATIONS</span>
@@ -86,7 +86,7 @@ export default function PEACInProduction() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 PEAC <span className="text-gradient">in production</span>
               </h1>
@@ -95,7 +95,7 @@ export default function PEACInProduction() {
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.6,
                 letterSpacing: '-0.01em',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)',
                 maxWidth: '48rem',
                 margin: '0 auto var(--space-8) auto'
@@ -105,10 +105,10 @@ export default function PEACInProduction() {
 
               <p style={{
                 fontSize: 'var(--text-base)',
-                color: 'var(--gray-500)',
+                color: 'var(--text-tertiary)',
                 marginBottom: 'var(--space-10)'
               }}>
-                Looking for the open protocol? See <Link href="/peac" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>PEAC Protocol</Link>
+                Looking for the open protocol? See <Link href="/peac" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link>
               </p>
 
               <div style={{
@@ -131,7 +131,7 @@ export default function PEACInProduction() {
         </section>
 
         {/* Deployment Patterns */}
-        <section className="section" style={{ background: 'var(--gray-50)', paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
           <div className="container">
             <div style={{
               display: 'grid',
@@ -140,20 +140,20 @@ export default function PEACInProduction() {
               textAlign: 'center'
             }} className="metrics-grid">
               <div>
-                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>Edge</div>
-                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Verification</div>
+                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--accent-brand)', marginBottom: 'var(--space-2)' }}>Edge</div>
+                <div style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>Verification</div>
               </div>
               <div>
-                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>Self</div>
-                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Hosted</div>
+                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--accent-brand)', marginBottom: 'var(--space-2)' }}>Self</div>
+                <div style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>Hosted</div>
               </div>
               <div>
-                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>Managed</div>
-                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Cloud</div>
+                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--accent-brand)', marginBottom: 'var(--space-2)' }}>Managed</div>
+                <div style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>Cloud</div>
               </div>
               <div>
-                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--brand-primary)', marginBottom: 'var(--space-2)' }}>Hybrid</div>
-                <div style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>Deployment</div>
+                <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--accent-brand)', marginBottom: 'var(--space-2)' }}>Hybrid</div>
+                <div style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>Deployment</div>
               </div>
             </div>
           </div>
@@ -166,7 +166,7 @@ export default function PEACInProduction() {
             <p style={{
               textAlign: 'center',
               fontSize: 'var(--text-lg)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-16)',
               maxWidth: '600px',
               margin: '0 auto var(--space-16) auto'
@@ -180,13 +180,13 @@ export default function PEACInProduction() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(99, 91, 255, 0.1)',
+                  background: 'var(--accent-brand-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <Globe size={28} style={{ color: 'var(--brand-primary)' }} />
+                  <Globe size={28} style={{ color: 'var(--accent-brand)' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Edge deployment</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
@@ -199,13 +199,13 @@ export default function PEACInProduction() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(0, 212, 170, 0.1)',
+                  background: 'var(--accent-secondary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <Activity size={28} style={{ color: 'var(--brand-secondary)' }} />
+                  <Activity size={28} style={{ color: 'var(--accent-secondary)' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Real-time monitoring</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
@@ -218,7 +218,7 @@ export default function PEACInProduction() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(255, 107, 53, 0.1)',
+                  background: 'var(--accent-tertiary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -237,13 +237,13 @@ export default function PEACInProduction() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(99, 91, 255, 0.1)',
+                  background: 'var(--accent-brand-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <Database size={28} style={{ color: 'var(--brand-primary)' }} />
+                  <Database size={28} style={{ color: 'var(--accent-brand)' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Receipt archive</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
@@ -256,13 +256,13 @@ export default function PEACInProduction() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(0, 212, 170, 0.1)',
+                  background: 'var(--accent-secondary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <Settings size={28} style={{ color: 'var(--brand-secondary)' }} />
+                  <Settings size={28} style={{ color: 'var(--accent-secondary)' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Policy management</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
@@ -275,7 +275,7 @@ export default function PEACInProduction() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(255, 107, 53, 0.1)',
+                  background: 'var(--accent-tertiary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -293,13 +293,13 @@ export default function PEACInProduction() {
         </section>
 
         {/* Deployment Options */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <h2 style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>Deployment options</h2>
             <p style={{
               textAlign: 'center',
               fontSize: 'var(--text-lg)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-16)',
               maxWidth: '600px',
               margin: '0 auto var(--space-16) auto'
@@ -308,24 +308,24 @@ export default function PEACInProduction() {
             </p>
 
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
-              <div className="card" style={{ border: '2px solid var(--gray-200)' }}>
+              <div className="card" style={{ border: '2px solid var(--border-default)' }}>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Originary Cloud</h3>
-                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                   Fully managed deployment on our global infrastructure. Fastest time to production.
                 </p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   {['Multi-region redundancy', 'Automatic scaling', 'Managed updates', 'Built-in DDoS protection'].map((item) => (
-                    <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)', fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                      <CheckCircle size={16} style={{ color: 'var(--brand-secondary)', flexShrink: 0 }} />
+                    <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
+                      <CheckCircle size={16} style={{ color: 'var(--accent-secondary)', flexShrink: 0 }} />
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="card" style={{ border: '2px solid var(--brand-primary)' }}>
+              <div className="card" style={{ border: '2px solid var(--accent-brand)' }}>
                 <div style={{
-                  background: 'var(--brand-primary)',
+                  background: 'var(--accent-brand)',
                   color: 'white',
                   fontSize: 'var(--text-xs)',
                   fontWeight: 600,
@@ -337,28 +337,28 @@ export default function PEACInProduction() {
                   RECOMMENDED
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Hybrid</h3>
-                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                   Edge verification in your infrastructure with Originary Cloud for observability and management.
                 </p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   {['Data stays in your VPC', 'Sub-10ms local latency', 'Central management', 'Best of both worlds'].map((item) => (
-                    <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)', fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                      <CheckCircle size={16} style={{ color: 'var(--brand-secondary)', flexShrink: 0 }} />
+                    <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
+                      <CheckCircle size={16} style={{ color: 'var(--accent-secondary)', flexShrink: 0 }} />
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="card" style={{ border: '2px solid var(--gray-200)' }}>
+              <div className="card" style={{ border: '2px solid var(--border-default)' }}>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Self-hosted</h3>
-                <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)' }}>
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
                   Full control with our enterprise distribution. For air-gapped or highly regulated environments.
                 </p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   {['Complete data sovereignty', 'Air-gap compatible', 'Custom integrations', 'Enterprise support'].map((item) => (
-                    <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)', fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                      <CheckCircle size={16} style={{ color: 'var(--brand-secondary)', flexShrink: 0 }} />
+                    <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
+                      <CheckCircle size={16} style={{ color: 'var(--accent-secondary)', flexShrink: 0 }} />
                       {item}
                     </li>
                   ))}
@@ -375,7 +375,7 @@ export default function PEACInProduction() {
             <p style={{
               textAlign: 'center',
               fontSize: 'var(--text-lg)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-16)',
               maxWidth: '600px',
               margin: '0 auto var(--space-16) auto'
@@ -392,25 +392,25 @@ export default function PEACInProduction() {
             }} className="integration-grid">
               <div className="card">
                 <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>Edge Runtimes</h4>
-                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
                   Deploy to Cloudflare Workers, Vercel Edge, or other JavaScript edge runtimes
                 </p>
               </div>
               <div className="card">
                 <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>Protocol Standards</h4>
-                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
                   HTTP-native with JWS receipts, JWKS discovery, and robots.txt compatibility
                 </p>
               </div>
               <div className="card">
                 <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>Observability</h4>
-                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
                   Structured logging and OpenTelemetry-compatible trace export
                 </p>
               </div>
               <div className="card">
                 <h4 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-lg)' }}>Payment Integration</h4>
-                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
                   x402 for HTTP 402 machine payments. Additional processors via webhook integration.
                 </p>
               </div>
@@ -419,13 +419,13 @@ export default function PEACInProduction() {
         </section>
 
         {/* Support Tiers */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <h2 style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>Enterprise support</h2>
             <p style={{
               textAlign: 'center',
               fontSize: 'var(--text-lg)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-16)',
               maxWidth: '600px',
               margin: '0 auto var(--space-16) auto'
@@ -435,23 +435,23 @@ export default function PEACInProduction() {
 
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
               <div className="card">
-                <Clock size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+                <Clock size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
                 <h4 style={{ marginBottom: 'var(--space-2)' }}>24/7 Support</h4>
-                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                   Round-the-clock access to our engineering team for critical issues
                 </p>
               </div>
               <div className="card">
-                <Zap size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+                <Zap size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
                 <h4 style={{ marginBottom: 'var(--space-2)' }}>Dedicated CSM</h4>
-                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                   Named customer success manager for strategic planning and optimization
                 </p>
               </div>
               <div className="card">
-                <LineChart size={24} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+                <LineChart size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
                 <h4 style={{ marginBottom: 'var(--space-2)' }}>Quarterly reviews</h4>
-                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                   Regular business reviews with roadmap previews and capacity planning
                 </p>
               </div>
@@ -476,8 +476,8 @@ export default function PEACInProduction() {
                 href="/contact"
                 className="btn btn-lg"
                 style={{
-                  background: 'var(--white)',
-                  color: 'var(--brand-primary)',
+                  background: 'var(--surface-elevated)',
+                  color: 'var(--accent-brand)',
                   border: 'none'
                 }}
               >

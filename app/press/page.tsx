@@ -18,7 +18,7 @@ export default function Press() {
     <div className="wrap">
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h1 style={{
@@ -27,12 +27,12 @@ export default function Press() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Press Information
               </h1>
 
-              <div style={{ fontSize: 'var(--text-lg)', lineHeight: 1.7, color: 'var(--gray-700)' }}>
+              <div style={{ fontSize: 'var(--text-lg)', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
                 <h2 style={{
                   fontSize: 'var(--text-2xl)',
                   fontWeight: 600,
@@ -42,7 +42,7 @@ export default function Press() {
                   About <Mark>Originary</Mark>
                 </h2>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  Originary delivers verifiable interaction records for the agentic web. Teams publish peac.txt to declare access, consent, attribution, privacy, and pricing. <Link href="/originary-ai/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>Originary AI</Link> agents settle via configured payment adapters and present a Receipt to prove compliance on every request.
+                  Originary delivers verifiable interaction records for the agentic web. Teams publish peac.txt to declare access, consent, attribution, privacy, and pricing. <Link href="/originary-ai/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Originary AI</Link> agents settle via configured payment adapters and present a Receipt to prove compliance on every request.
                 </p>
 
                 <h2 style={{
@@ -54,15 +54,15 @@ export default function Press() {
                   Media Contact
                 </h2>
                 <div style={{
-                  background: 'var(--gray-50)',
-                  border: '1px solid var(--gray-200)',
+                  background: 'var(--surface-subtle)',
+                  border: '1px solid var(--border-default)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-6)',
                   marginBottom: 'var(--space-8)'
                 }}>
                   <p style={{ margin: 0 }}>
                     For press inquiries, please contact:{' '}
-                    <a href="mailto:press@originary.xyz" style={{ color: 'var(--brand-primary)' }}>
+                    <a href="mailto:press@originary.xyz" style={{ color: 'var(--accent-brand)' }}>
                       press@originary.xyz
                     </a>
                   </p>
@@ -80,7 +80,7 @@ export default function Press() {
                   Download logos and brand assets for media use. Please follow our brand guidelines when using Originary materials.
                 </p>
                 <p>
-                  <a href="/brand" style={{ color: 'var(--brand-primary)' }}>
+                  <a href="/brand" style={{ color: 'var(--accent-brand)' }}>
                     View brand guidelines →
                   </a>
                 </p>

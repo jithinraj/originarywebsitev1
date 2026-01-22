@@ -26,7 +26,7 @@ export default function ChangelogPage() {
       version: 'v1.1.0',
       date: '2025-09-28',
       tag: 'Stable',
-      tagColor: 'var(--brand-primary)',
+      tagColor: 'var(--accent-brand)',
       title: 'Studio Preview & Enhanced Analytics',
       highlights: [
         'Studio visual policy designer (preview)',
@@ -59,7 +59,7 @@ export default function ChangelogPage() {
       version: 'v0.9.0',
       date: '2025-07-27',
       tag: 'Beta',
-      tagColor: 'var(--gray-500)',
+      tagColor: 'var(--text-tertiary)',
       title: 'Public Beta Launch',
       highlights: [
         'Initial PEAC protocol implementation',
@@ -108,14 +108,14 @@ export default function ChangelogPage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-4)',
                   marginBottom: 'var(--space-4)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 500,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}
               >
                 <Calendar size={16} />
@@ -131,7 +131,7 @@ export default function ChangelogPage() {
               </h1>
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-8)'
               }}>
@@ -179,7 +179,7 @@ export default function ChangelogPage() {
                     top: '40px',
                     bottom: '40px',
                     width: '2px',
-                    background: 'var(--gray-200)'
+                    background: 'var(--border-default)'
                   }}
                 />
 
@@ -202,8 +202,8 @@ export default function ChangelogPage() {
                         width: '20px',
                         height: '20px',
                         borderRadius: '50%',
-                        background: index === 0 ? 'var(--brand-primary)' : 'var(--white)',
-                        border: `3px solid ${index === 0 ? 'var(--brand-primary)' : 'var(--gray-300)'}`,
+                        background: index === 0 ? 'var(--accent-brand)' : 'var(--white)',
+                        border: `3px solid ${index === 0 ? 'var(--accent-brand)' : 'var(--border-default)'}`,
                         zIndex: 1
                       }}
                     />
@@ -244,7 +244,7 @@ export default function ChangelogPage() {
                           </div>
                           <p style={{
                             fontSize: 'var(--text-sm)',
-                            color: 'var(--gray-500)'
+                            color: 'var(--text-tertiary)'
                           }}>
                             {release.date}
                           </p>
@@ -273,7 +273,7 @@ export default function ChangelogPage() {
                               }}
                             >
                               <CheckCircle size={16} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
-                              <span style={{ fontSize: 'var(--text-base)', color: 'var(--gray-700)' }}>
+                              <span style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)' }}>
                                 {highlight}
                               </span>
                             </li>
@@ -305,7 +305,7 @@ export default function ChangelogPage() {
                                 key={idx}
                                 style={{
                                   fontSize: 'var(--text-sm)',
-                                  color: 'var(--gray-700)',
+                                  color: 'var(--text-secondary)',
                                   marginBottom: idx < release.breaking.length - 1 ? 'var(--space-1)' : 0
                                 }}
                               >
@@ -316,7 +316,7 @@ export default function ChangelogPage() {
                           {release.migration && (
                             <p style={{
                               fontSize: 'var(--text-sm)',
-                              color: 'var(--gray-600)',
+                              color: 'var(--text-secondary)',
                               marginTop: 'var(--space-2)',
                               fontStyle: 'italic'
                             }}>
@@ -334,7 +334,7 @@ export default function ChangelogPage() {
         </section>
 
         {/* Upcoming Features */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ maxWidth: '900px', margin: '0 auto' }}>
               <h2 style={{
@@ -366,7 +366,7 @@ export default function ChangelogPage() {
                       </h4>
                       <p style={{
                         fontSize: 'var(--text-sm)',
-                        color: 'var(--gray-500)'
+                        color: 'var(--text-tertiary)'
                       }}>
                         {item.quarter}
                       </p>
@@ -374,8 +374,8 @@ export default function ChangelogPage() {
                     <span
                       style={{
                         padding: 'var(--space-1) var(--space-3)',
-                        background: 'var(--gray-100)',
-                        color: 'var(--gray-600)',
+                        background: 'var(--surface-card)',
+                        color: 'var(--text-secondary)',
                         borderRadius: 'var(--radius-full)',
                         fontSize: 'var(--text-xs)',
                         fontWeight: 500
@@ -391,13 +391,13 @@ export default function ChangelogPage() {
                 style={{
                   marginTop: 'var(--space-8)',
                   padding: 'var(--space-6)',
-                  background: 'var(--white)',
+                  background: 'var(--surface-elevated)',
                   borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--gray-200)',
+                  border: '1px solid var(--border-default)',
                   textAlign: 'center'
                 }}
               >
-                <Zap size={32} style={{ color: 'var(--brand-primary)', margin: '0 auto var(--space-4) auto' }} />
+                <Zap size={32} style={{ color: 'var(--accent-brand)', margin: '0 auto var(--space-4) auto' }} />
                 <h3 style={{
                   fontSize: 'var(--text-xl)',
                   fontWeight: 600,
@@ -407,7 +407,7 @@ export default function ChangelogPage() {
                 </h3>
                 <p style={{
                   fontSize: 'var(--text-base)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-4)'
                 }}>
                   We&rsquo;re always looking for feedback on what to build next

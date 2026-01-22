@@ -130,14 +130,14 @@ export default function DeclarePage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-4)',
                   marginBottom: 'var(--space-4)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 500,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}
               >
                 <Github size={16} />
@@ -150,7 +150,7 @@ export default function DeclarePage() {
                 marginBottom: 'var(--space-6)',
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Generate your AI policy pack{' '}
                 <span className="text-gradient">from one file.</span>
@@ -158,13 +158,13 @@ export default function DeclarePage() {
 
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-6)',
                 maxWidth: '750px',
                 margin: '0 auto var(--space-6) auto'
               }}>
-                Write <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-lg)' }}>peac-policy.yaml</code>. Generate <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-lg)' }}>/.well-known/peac.txt</code>, robots AI directives, AIPREF templates, and a human policy page.
+                Write <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-lg)' }}>peac-policy.yaml</code>. Generate <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-lg)' }}>/.well-known/peac.txt</code>, robots AI directives, AIPREF templates, and a human policy page.
               </p>
 
               {/* Proof strip */}
@@ -175,7 +175,7 @@ export default function DeclarePage() {
                 flexWrap: 'wrap',
                 marginBottom: 'var(--space-8)',
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-500)'
+                color: 'var(--text-tertiary)'
               }}>
                 <span>Runs locally. No tracking.</span>
                 <span>Deterministic evaluation.</span>
@@ -208,21 +208,21 @@ export default function DeclarePage() {
                 style={{
                   fontSize: '11px',
                   lineHeight: 1.8,
-                  color: 'var(--gray-400)',
+                  color: 'var(--text-muted)',
                   maxWidth: '500px',
                   margin: 'var(--space-8) auto 0',
                   fontWeight: 400,
                   letterSpacing: '0.01em'
                 }}
               >
-                <span style={{ color: 'var(--gray-500)' }}>ORIGINARY™</span> - Open software. Built on PEAC Protocol.
+                <span style={{ color: 'var(--text-tertiary)' }}>ORIGINARY™</span> - Open software. Built on PEAC Protocol.
               </p>
             </div>
           </div>
         </section>
 
         {/* What This Does Section - Trust Critical */}
-        <section className="section" style={{ background: 'var(--white)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)' }}>
           <div className="container">
             <div style={{ maxWidth: '900px', margin: '0 auto' }}>
               <h2 style={{
@@ -230,19 +230,19 @@ export default function DeclarePage() {
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-8)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 What this does and does not do
               </h2>
 
               <div className="grid grid-2" style={{ gap: 'var(--space-6)', marginBottom: 'var(--space-8)' }}>
                 {/* Does */}
-                <div className="card" style={{ background: 'rgba(0, 212, 170, 0.05)', border: '1px solid rgba(0, 212, 170, 0.2)' }}>
+                <div className="card" style={{ background: 'var(--accent-secondary-faint)', border: '1px solid var(--accent-secondary-muted)' }}>
                   <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--success)', display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <CheckCircle size={20} />
                     What it does
                   </h3>
-                  <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--gray-700)', lineHeight: 1.8 }}>
+                  <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
                     <li>Generates consistent policy surfaces from one source file</li>
                     <li>Reduces the busywork of maintaining multiple conflicting files</li>
                     <li>Provides documented intent for legal clarity</li>
@@ -257,7 +257,7 @@ export default function DeclarePage() {
                     <AlertTriangle size={20} />
                     What it does not do
                   </h3>
-                  <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--gray-700)', lineHeight: 1.8 }}>
+                  <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
                     <li>Guarantee bot compliance (policy files are advisory)</li>
                     <li>Force crawlers to respect your rules</li>
                     <li>Replace your auth, rate limits, or access controls</li>
@@ -268,11 +268,11 @@ export default function DeclarePage() {
 
               <div className="card" style={{
                 padding: 'var(--space-6)',
-                background: 'var(--gray-50)',
-                border: '1px solid var(--gray-200)',
+                background: 'var(--surface-subtle)',
+                border: '1px solid var(--border-default)',
                 textAlign: 'center'
               }}>
-                <p style={{ margin: 0, color: 'var(--gray-700)', lineHeight: 1.7 }}>
+                <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                   <strong>Enforcement requires controls you run:</strong> rate limits, authentication, HTTP 402 challenges, and PEAC receipts. Policy Kit handles the declaration layer - consistent signals across all surfaces. Enforcement comes from your infrastructure.
                 </p>
               </div>
@@ -281,24 +281,24 @@ export default function DeclarePage() {
         </section>
 
         {/* What It Generates Section */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
               <h2 style={{
                 fontSize: 'var(--text-3xl)',
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Output files
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
-                From a single <code style={{ background: 'var(--gray-200)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code>, Policy Kit generates:
+                From a single <code style={{ background: 'var(--surface-subtle)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code>, Policy Kit generates:
               </p>
             </div>
 
@@ -318,11 +318,11 @@ export default function DeclarePage() {
                       width: '48px',
                       height: '48px',
                       borderRadius: 'var(--radius-lg)',
-                      background: 'linear-gradient(135deg, var(--brand-primary)20, var(--brand-primary)10)',
+                      background: 'linear-gradient(135deg, var(--accent-brand)20, var(--accent-brand)10)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: 'var(--brand-primary)',
+                      color: 'var(--accent-brand)',
                       flexShrink: 0
                     }}
                   >
@@ -333,14 +333,14 @@ export default function DeclarePage() {
                       fontSize: 'var(--text-lg)',
                       fontWeight: 700,
                       marginBottom: 'var(--space-2)',
-                      color: 'var(--gray-900)',
+                      color: 'var(--text-primary)',
                       fontFamily: 'var(--font-mono)'
                     }}>
                       {output.title}
                     </h3>
                     <p style={{
                       fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-600)',
+                      color: 'var(--text-secondary)',
                       lineHeight: 1.6,
                       marginBottom: 'var(--space-2)'
                     }}>
@@ -348,7 +348,7 @@ export default function DeclarePage() {
                     </p>
                     <p style={{
                       fontSize: 'var(--text-xs)',
-                      color: 'var(--gray-500)',
+                      color: 'var(--text-tertiary)',
                       margin: 0
                     }}>
                       <strong>Who reads this:</strong> {output.whoReads}
@@ -361,7 +361,7 @@ export default function DeclarePage() {
         </section>
 
         {/* Policy Profiles Section */}
-        <section className="section" style={{ background: 'var(--white)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)' }}>
           <div className="container">
             <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
               <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
@@ -370,14 +370,14 @@ export default function DeclarePage() {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: 'var(--space-2)',
-                    background: 'rgba(99, 91, 255, 0.1)',
-                    border: '1px solid rgba(99, 91, 255, 0.2)',
+                    background: 'var(--accent-brand-subtle)',
+                    border: '1px solid var(--accent-brand-muted)',
                     borderRadius: 'var(--radius-full)',
                     padding: 'var(--space-2) var(--space-4)',
                     marginBottom: 'var(--space-4)',
                     fontSize: 'var(--text-sm)',
                     fontWeight: 500,
-                    color: 'var(--brand-primary)'
+                    color: 'var(--accent-brand)'
                   }}
                 >
                   <Layers size={16} />
@@ -387,13 +387,13 @@ export default function DeclarePage() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-4)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Policy Profiles
                 </h2>
                 <p style={{
                   fontSize: 'var(--text-lg)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   maxWidth: '600px',
                   margin: '0 auto'
                 }}>
@@ -414,7 +414,7 @@ export default function DeclarePage() {
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
                       <code style={{
-                        background: 'var(--brand-primary)',
+                        background: 'var(--accent-brand)',
                         color: 'white',
                         padding: 'var(--space-1) var(--space-3)',
                         borderRadius: 'var(--radius-md)',
@@ -426,7 +426,7 @@ export default function DeclarePage() {
                     </div>
                     <p style={{
                       fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-600)',
+                      color: 'var(--text-secondary)',
                       lineHeight: 1.6,
                       margin: 0
                     }}>
@@ -434,7 +434,7 @@ export default function DeclarePage() {
                     </p>
                     <p style={{
                       fontSize: 'var(--text-xs)',
-                      color: 'var(--gray-500)',
+                      color: 'var(--text-tertiary)',
                       margin: 0
                     }}>
                       <strong>Best for:</strong> {profile.bestFor}
@@ -446,11 +446,11 @@ export default function DeclarePage() {
               <div style={{ textAlign: 'center', marginTop: 'var(--space-8)' }}>
                 <pre style={{
                   display: 'inline-block',
-                  background: 'var(--gray-100)',
+                  background: 'var(--surface-card)',
                   padding: 'var(--space-4) var(--space-6)',
                   borderRadius: 'var(--radius-lg)',
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-700)',
+                  color: 'var(--text-secondary)',
                   textAlign: 'left'
                 }}>
 {`# Initialize with a profile
@@ -462,7 +462,7 @@ peac policy init --profile news-media`}
         </section>
 
         {/* Quickstart Section */}
-        <section id="quickstart" className="section" style={{ background: 'var(--gray-900)', color: 'white' }}>
+        <section id="quickstart" className="section" style={{ background: 'var(--text-primary)', color: 'white' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h2 style={{
@@ -476,7 +476,7 @@ peac policy init --profile news-media`}
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-400)',
+                color: 'var(--text-muted)',
                 textAlign: 'center',
                 marginBottom: 'var(--space-8)'
               }}>
@@ -494,13 +494,13 @@ peac policy init --profile news-media`}
                   1. Install the PEAC CLI
                 </h3>
                 <pre style={{
-                  background: 'var(--gray-800)',
+                  background: 'var(--text-primary)',
                   padding: 'var(--space-4)',
                   borderRadius: 'var(--radius-lg)',
                   fontSize: 'var(--text-sm)',
                   overflow: 'auto',
-                  color: 'var(--gray-300)',
-                  border: '1px solid var(--gray-700)'
+                  color: 'var(--border-default)',
+                  border: '1px solid var(--text-secondary)'
                 }}>
 {`# Using npm
 npm install -g @peac/cli
@@ -521,13 +521,13 @@ pnpm add -g @peac/cli`}
                   2. Initialize your policy file
                 </h3>
                 <pre style={{
-                  background: 'var(--gray-800)',
+                  background: 'var(--text-primary)',
                   padding: 'var(--space-4)',
                   borderRadius: 'var(--radius-lg)',
                   fontSize: 'var(--text-sm)',
                   overflow: 'auto',
-                  color: 'var(--gray-300)',
-                  border: '1px solid var(--gray-700)'
+                  color: 'var(--border-default)',
+                  border: '1px solid var(--text-secondary)'
                 }}>
 {`# Inside your site repo
 peac policy init
@@ -539,16 +539,16 @@ peac policy init
                     <div
                       key={index}
                       style={{
-                        background: 'var(--gray-800)',
+                        background: 'var(--text-primary)',
                         padding: 'var(--space-3)',
                         borderRadius: 'var(--radius-md)',
-                        border: '1px solid var(--gray-700)'
+                        border: '1px solid var(--text-secondary)'
                       }}
                     >
                       <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'white', marginBottom: 'var(--space-1)' }}>
                         {field.field}
                       </div>
-                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-400)' }}>
+                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}>
                         {field.description}
                       </div>
                     </div>
@@ -567,13 +567,13 @@ peac policy init
                   3. Generate your policy surfaces
                 </h3>
                 <pre style={{
-                  background: 'var(--gray-800)',
+                  background: 'var(--text-primary)',
                   padding: 'var(--space-4)',
                   borderRadius: 'var(--radius-lg)',
                   fontSize: 'var(--text-sm)',
                   overflow: 'auto',
-                  color: 'var(--gray-300)',
-                  border: '1px solid var(--gray-700)'
+                  color: 'var(--border-default)',
+                  border: '1px solid var(--text-secondary)'
                 }}>
 {`peac policy generate --out ./public
 
@@ -596,23 +596,23 @@ peac policy init
                   4. Validate anytime
                 </h3>
                 <pre style={{
-                  background: 'var(--gray-800)',
+                  background: 'var(--text-primary)',
                   padding: 'var(--space-4)',
                   borderRadius: 'var(--radius-lg)',
                   fontSize: 'var(--text-sm)',
                   overflow: 'auto',
-                  color: 'var(--gray-300)',
-                  border: '1px solid var(--gray-700)'
+                  color: 'var(--border-default)',
+                  border: '1px solid var(--text-secondary)'
                 }}>
 {`peac policy validate`}
                 </pre>
                 <p style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-400)',
+                  color: 'var(--text-muted)',
                   marginTop: 'var(--space-3)',
                   lineHeight: 1.6
                 }}>
-                  Validates <code style={{ background: 'var(--gray-700)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> and generated files against PEAC 0.9.27 schemas.
+                  Validates <code style={{ background: 'var(--text-secondary)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> and generated files against PEAC 0.9.27 schemas.
                 </p>
               </div>
 
@@ -629,7 +629,7 @@ peac policy init
                 }}>
                   5. Explain rules
                   <span style={{
-                    background: 'var(--brand-primary)',
+                    background: 'var(--accent-brand)',
                     color: 'white',
                     padding: '2px 8px',
                     borderRadius: 'var(--radius-full)',
@@ -638,13 +638,13 @@ peac policy init
                   }}>NEW</span>
                 </h3>
                 <pre style={{
-                  background: 'var(--gray-800)',
+                  background: 'var(--text-primary)',
                   padding: 'var(--space-4)',
                   borderRadius: 'var(--radius-lg)',
                   fontSize: 'var(--text-sm)',
                   overflow: 'auto',
-                  color: 'var(--gray-300)',
-                  border: '1px solid var(--gray-700)'
+                  color: 'var(--border-default)',
+                  border: '1px solid var(--text-secondary)'
                 }}>
 {`# See effective rule for a specific subject and purpose
 peac policy explain --subject agent:openai --purpose train
@@ -653,7 +653,7 @@ peac policy explain --subject agent:openai --purpose train
                 </pre>
                 <p style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--gray-400)',
+                  color: 'var(--text-muted)',
                   marginTop: 'var(--space-3)',
                   lineHeight: 1.6
                 }}>
@@ -668,9 +668,9 @@ peac policy explain --subject agent:openai --purpose train
                   rel="noopener noreferrer"
                   className="btn btn-secondary btn-lg"
                   style={{
-                    background: 'var(--gray-800)',
+                    background: 'var(--text-primary)',
                     color: 'white',
-                    border: '1px solid var(--gray-700)',
+                    border: '1px solid var(--text-secondary)',
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: 'var(--space-2)'
@@ -685,7 +685,7 @@ peac policy explain --subject agent:openai --purpose train
         </section>
 
         {/* Deployment Recipes Section */}
-        <section className="section" style={{ background: 'var(--white)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h2 style={{
@@ -693,13 +693,13 @@ peac policy explain --subject agent:openai --purpose train
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Deployment recipes
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 textAlign: 'center',
                 marginBottom: 'var(--space-10)'
               }}>
@@ -708,49 +708,49 @@ peac policy explain --subject agent:openai --purpose train
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
                 <div className="card">
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                     Static hosting (Vercel, Netlify, GitHub Pages)
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-3)' }}>
-                    Copy generated files to your <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>public/</code> folder. The <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>.well-known/</code> directory is served automatically.
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginBottom: 'var(--space-3)' }}>
+                    Copy generated files to your <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>public/</code> folder. The <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>.well-known/</code> directory is served automatically.
                   </p>
-                  <pre style={{ background: 'var(--gray-100)', padding: 'var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-sm)', margin: 0 }}>
+                  <pre style={{ background: 'var(--surface-card)', padding: 'var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-sm)', margin: 0 }}>
 {`cp -r .well-known public/
 cp robots-ai-snippet.txt public/`}
                   </pre>
                 </div>
 
                 <div className="card">
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                     Next.js
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-3)' }}>
-                    Place files in <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>public/.well-known/</code> or create a route handler for dynamic serving.
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginBottom: 'var(--space-3)' }}>
+                    Place files in <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>public/.well-known/</code> or create a route handler for dynamic serving.
                   </p>
-                  <pre style={{ background: 'var(--gray-100)', padding: 'var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-sm)', margin: 0 }}>
+                  <pre style={{ background: 'var(--surface-card)', padding: 'var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-sm)', margin: 0 }}>
 {`# Static: public/.well-known/peac.txt
 # Dynamic: app/.well-known/peac.txt/route.ts`}
                   </pre>
                 </div>
 
                 <div className="card">
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-900)' }}>
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                     Cloudflare Workers
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-3)' }}>
-                    Serve <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> from a Worker or static assets.
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginBottom: 'var(--space-3)' }}>
+                    Serve <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> from a Worker or static assets.
                   </p>
-                  <pre style={{ background: 'var(--gray-100)', padding: 'var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-sm)', margin: 0 }}>
+                  <pre style={{ background: 'var(--surface-card)', padding: 'var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-sm)', margin: 0 }}>
 {`# wrangler.toml: [site] bucket = "./public"`}
                   </pre>
                 </div>
 
-                <div className="card" style={{ background: 'var(--gray-50)', border: '1px dashed var(--gray-300)' }}>
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--gray-500)' }}>
+                <div className="card" style={{ background: 'var(--surface-subtle)', border: '1px dashed var(--border-default)' }}>
+                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-tertiary)' }}>
                     WordPress plugin (coming soon)
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-500)' }}>
-                    One-click publish of <code style={{ background: 'var(--gray-200)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> + ai-policy page.
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
+                    One-click publish of <code style={{ background: 'var(--surface-subtle)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> + ai-policy page.
                   </p>
                 </div>
               </div>
@@ -759,7 +759,7 @@ cp robots-ai-snippet.txt public/`}
         </section>
 
         {/* Roadmap Section */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <h2 style={{
@@ -767,13 +767,13 @@ cp robots-ai-snippet.txt public/`}
                 fontWeight: 700,
                 textAlign: 'center',
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Roadmap
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 textAlign: 'center',
                 marginBottom: 'var(--space-10)'
               }}>
@@ -797,13 +797,13 @@ cp robots-ai-snippet.txt public/`}
                     v0.9.27
                   </div>
                   <div>
-                    <strong>Full CLI</strong>: <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>init</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>generate</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>validate</code>, <code style={{ background: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>explain</code>. Policy Profiles (news-media, api-provider, open-source, saas-docs). CAL semantics with first-match-wins evaluation.
+                    <strong>Full CLI</strong>: <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>init</code>, <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>generate</code>, <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>validate</code>, <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>explain</code>. Policy Profiles (news-media, api-provider, open-source, saas-docs). CAL semantics with first-match-wins evaluation.
                   </div>
                 </div>
                 <div className="card" style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-4)' }}>
                   <div
                     style={{
-                      background: 'var(--brand-primary)',
+                      background: 'var(--accent-brand)',
                       color: 'white',
                       padding: 'var(--space-2) var(--space-3)',
                       borderRadius: 'var(--radius-md)',
@@ -822,7 +822,7 @@ cp robots-ai-snippet.txt public/`}
                 <div className="card" style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-4)' }}>
                   <div
                     style={{
-                      background: 'var(--gray-400)',
+                      background: 'var(--text-muted)',
                       color: 'white',
                       padding: 'var(--space-2) var(--space-3)',
                       borderRadius: 'var(--radius-md)',
@@ -844,7 +844,7 @@ cp robots-ai-snippet.txt public/`}
         </section>
 
         {/* FAQ Section */}
-        <section className="section" style={{ background: 'var(--white)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <FaqAccordion
@@ -891,7 +891,7 @@ cp robots-ai-snippet.txt public/`}
                   className="btn btn-lg"
                   style={{
                     background: 'white',
-                    color: 'var(--brand-primary)',
+                    color: 'var(--accent-brand)',
                     border: 'none',
                     display: 'inline-flex',
                     alignItems: 'center',

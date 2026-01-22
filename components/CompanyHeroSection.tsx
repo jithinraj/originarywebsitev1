@@ -18,7 +18,7 @@ export default function CompanyHeroSection() {
         position: 'relative',
         paddingTop: 'var(--space-48)',
         paddingBottom: 'var(--space-32)',
-        background: 'var(--white)',
+        background: 'var(--surface-elevated)',
         overflow: 'hidden'
       }}
     >
@@ -91,8 +91,8 @@ export default function CompanyHeroSection() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
                 marginBottom: 'var(--space-6)',
@@ -104,7 +104,7 @@ export default function CompanyHeroSection() {
               <span style={{
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 letterSpacing: '0.02em'
               }}>
                 The Agentic Control Plane
@@ -119,7 +119,7 @@ export default function CompanyHeroSection() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)',
+                color: 'var(--text-primary)',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s'
@@ -133,7 +133,7 @@ export default function CompanyHeroSection() {
               style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)',
                 maxWidth: '95%',
                 opacity: isVisible ? 1 : 0,
@@ -157,25 +157,25 @@ export default function CompanyHeroSection() {
                 style={{
                   fontSize: '11px',
                   lineHeight: 1.8,
-                  color: 'var(--gray-400)',
+                  color: 'var(--text-muted)',
                   maxWidth: '90%',
                   fontWeight: 400,
                   letterSpacing: '0.01em',
                   margin: 0
                 }}
               >
-                <span style={{ color: 'var(--gray-500)' }}>ORIGINARY™</span> - Open software.{' '}
+                <span style={{ color: 'var(--text-tertiary)' }}>ORIGINARY™</span> - Open software.{' '}
                 <a
                   href="https://github.com/peacprotocol/peac"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    color: 'var(--gray-500)',
+                    color: 'var(--text-tertiary)',
                     textDecoration: 'none',
                     borderBottom: '1px solid transparent',
                     transition: 'border-color 0.15s ease'
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
+                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--border-default)'}
                   onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
                 >
                   Learn, view source, explore &amp; download PEAC Protocol
@@ -185,12 +185,12 @@ export default function CompanyHeroSection() {
                 <Link
                   href="/downloads"
                   style={{
-                    color: 'var(--gray-500)',
+                    color: 'var(--text-tertiary)',
                     textDecoration: 'none',
                     borderBottom: '1px solid transparent',
                     transition: 'border-color 0.15s ease'
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--gray-300)'}
+                  onMouseEnter={(e) => e.currentTarget.style.borderBottomColor = 'var(--border-default)'}
                   onMouseLeave={(e) => e.currentTarget.style.borderBottomColor = 'transparent'}
                 >
                   macOS, Windows, Linux
@@ -247,9 +247,9 @@ export default function CompanyHeroSection() {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: 'var(--space-2)',
-                    background: 'var(--white)',
-                    border: '1px solid var(--gray-300)',
-                    color: 'var(--gray-700)',
+                    background: 'var(--surface-elevated)',
+                    border: '1px solid var(--border-default)',
+                    color: 'var(--text-secondary)',
                     textDecoration: 'none'
                   }}
                 >
@@ -261,7 +261,7 @@ export default function CompanyHeroSection() {
               <p
                 style={{
                   fontSize: 'var(--text-xs)',
-                  color: 'var(--gray-500)',
+                  color: 'var(--text-tertiary)',
                   marginTop: 'var(--space-4)',
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -361,8 +361,8 @@ function InteractiveFlowDemo() {
       <div
         className="receipt-card"
         style={{
-          background: 'var(--white)',
-          border: '1px solid var(--gray-200)',
+          background: 'var(--surface-elevated)',
+          border: '1px solid var(--border-default)',
           borderRadius: 'var(--radius-2xl)',
           padding: 'var(--space-8)',
           boxShadow: isHovered ? 'var(--shadow-2xl)' : 'var(--shadow-xl)',
@@ -393,7 +393,7 @@ function InteractiveFlowDemo() {
             left: '25px',
             right: '25px',
             height: '2px',
-            background: 'var(--gray-200)',
+            background: 'var(--border-default)',
             zIndex: 1
           }} />
           {/* Progress Line Fill */}
@@ -428,7 +428,7 @@ function InteractiveFlowDemo() {
                   width: '50px',
                   height: '50px',
                   borderRadius: '50%',
-                  background: currentStep === index ? 'var(--gradient-brand)' : 'var(--gray-100)',
+                  background: currentStep === index ? 'var(--gradient-brand)' : 'var(--surface-card)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -443,7 +443,7 @@ function InteractiveFlowDemo() {
               <span
                 style={{
                   fontSize: 'var(--text-xs)',
-                  color: currentStep === index ? 'var(--brand-primary)' : 'var(--gray-500)',
+                  color: currentStep === index ? 'var(--accent-brand)' : 'var(--text-tertiary)',
                   fontWeight: currentStep === index ? 600 : 400,
                   transition: 'all 0.3s ease'
                 }}
@@ -458,7 +458,7 @@ function InteractiveFlowDemo() {
                     bottom: '-50px',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    background: 'var(--gray-900)',
+                    background: 'var(--text-primary)',
                     color: 'var(--white)',
                     padding: 'var(--space-2) var(--space-3)',
                     borderRadius: 'var(--radius-md)',
@@ -481,7 +481,7 @@ function InteractiveFlowDemo() {
                       height: 0,
                       borderLeft: '4px solid transparent',
                       borderRight: '4px solid transparent',
-                      borderBottom: '4px solid var(--gray-900)'
+                      borderBottom: '4px solid var(--text-primary)'
                     }}
                   />
                 </div>
@@ -494,21 +494,21 @@ function InteractiveFlowDemo() {
         <div
           style={{
             padding: 'var(--space-6)',
-            background: 'var(--gray-50)',
+            background: 'var(--surface-subtle)',
             borderRadius: 'var(--radius-lg)',
             fontFamily: 'var(--font-mono)',
             fontSize: 'var(--text-sm)'
           }}
         >
           <div style={{ marginBottom: 'var(--space-3)', display: 'flex', alignItems: 'center', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-            <span style={{ color: 'var(--gray-500)' }}>Header:</span>
-            <span style={{ color: 'var(--gray-900)', wordBreak: 'break-all', flex: 1 }}>PEAC-Receipt: {sampleToken.substring(0, 20)}...</span>
+            <span style={{ color: 'var(--text-tertiary)' }}>Header:</span>
+            <span style={{ color: 'var(--text-primary)', wordBreak: 'break-all', flex: 1 }}>PEAC-Receipt: {sampleToken.substring(0, 20)}...</span>
             <button
               onClick={handleCopy}
               aria-label="Copy PEAC-Receipt token"
               style={{
                 padding: 'var(--space-1) var(--space-3)',
-                background: 'var(--brand-primary)',
+                background: 'var(--accent-brand)',
                 color: 'var(--white)',
                 border: 'none',
                 borderRadius: 'var(--radius-md)',
@@ -522,32 +522,32 @@ function InteractiveFlowDemo() {
             </button>
           </div>
           <div style={{ marginBottom: 'var(--space-3)' }}>
-            <span style={{ color: 'var(--gray-500)' }}>Resource:</span>
-            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--gray-900)' }}>/api/content</span>
+            <span style={{ color: 'var(--text-tertiary)' }}>Resource:</span>
+            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--text-primary)' }}>/api/content</span>
           </div>
           <div style={{ marginBottom: 'var(--space-3)' }}>
-            <span style={{ color: 'var(--gray-500)' }}>Amount:</span>
-            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--gray-900)' }}>$0.10 USD</span>
-            <span style={{ marginLeft: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--gray-400)' }}>(example)</span>
+            <span style={{ color: 'var(--text-tertiary)' }}>Amount:</span>
+            <span style={{ marginLeft: 'var(--space-2)', color: 'var(--text-primary)' }}>$0.10 USD</span>
+            <span style={{ marginLeft: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}>(example)</span>
           </div>
           <div style={{ marginBottom: 'var(--space-3)' }}>
-            <span style={{ color: 'var(--gray-500)' }}>Status:</span>
+            <span style={{ color: 'var(--text-tertiary)' }}>Status:</span>
             <span style={{ marginLeft: 'var(--space-2)', color: 'var(--success)', fontWeight: 600 }}>
               Verified ✓
             </span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <div>
-              <span style={{ color: 'var(--gray-500)' }}>kid:</span>
-              <span style={{ marginLeft: 'var(--space-2)', color: 'var(--gray-900)' }}>2025-09-key1</span>
+              <span style={{ color: 'var(--text-tertiary)' }}>kid:</span>
+              <span style={{ marginLeft: 'var(--space-2)', color: 'var(--text-primary)' }}>2025-09-key1</span>
             </div>
             <Link
               href={`/verify?token=${encodeURIComponent(sampleToken)}`}
               style={{
                 padding: 'var(--space-1) var(--space-3)',
-                background: 'var(--white)',
-                color: 'var(--brand-primary)',
-                border: '1px solid var(--brand-primary)',
+                background: 'var(--surface-elevated)',
+                color: 'var(--accent-brand)',
+                border: '1px solid var(--accent-brand)',
                 borderRadius: 'var(--radius-md)',
                 fontSize: 'var(--text-xs)',
                 fontWeight: 600,
@@ -566,19 +566,19 @@ function InteractiveFlowDemo() {
             style={{
               marginTop: 'var(--space-4)',
               padding: 'var(--space-4)',
-              background: 'rgba(99, 91, 255, 0.05)',
+              background: 'var(--accent-brand-faint)',
               borderRadius: 'var(--radius-lg)',
-              border: '1px solid rgba(99, 91, 255, 0.1)',
+              border: '1px solid var(--accent-brand-subtle)',
               animation: 'fadeIn 0.3s ease'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)' }}>
               <span style={{ fontSize: '16px' }}>📊</span>
-              <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--brand-primary)' }}>
+              <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--accent-brand)' }}>
                 Tracked in Trace
               </span>
             </div>
-            <p style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', margin: 0 }}>
+            <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', margin: 0 }}>
               This transaction is now visible in your Trace dashboard with full event details.
             </p>
           </div>
@@ -593,7 +593,7 @@ function InteractiveFlowDemo() {
               position: 'absolute',
               bottom: 'var(--space-4)',
               right: 'var(--space-4)',
-              background: 'var(--gray-900)',
+              background: 'var(--text-primary)',
               color: 'var(--white)',
               padding: 'var(--space-2) var(--space-4)',
               borderRadius: 'var(--radius-md)',

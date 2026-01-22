@@ -75,14 +75,14 @@ export default function FaqAccordion({ items, title = 'Frequently Asked Question
         .faq-title {
           font-size: var(--text-3xl);
           font-weight: 700;
-          color: var(--gray-900);
+          color: var(--text-primary);
           margin: 0 0 var(--space-3) 0;
           letter-spacing: -0.02em;
         }
 
         .faq-subtitle {
           font-size: var(--text-lg);
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin: 0;
           max-width: 600px;
           margin-left: auto;
@@ -98,8 +98,8 @@ export default function FaqAccordion({ items, title = 'Frequently Asked Question
         }
 
         .faq-item {
-          background: var(--white);
-          border: 1px solid var(--gray-200);
+          background: var(--surface-elevated);
+          border: 1px solid var(--border-default);
           border-radius: var(--radius-xl);
           overflow: hidden;
           transition: border-color var(--duration-200) var(--ease-out),
@@ -107,7 +107,8 @@ export default function FaqAccordion({ items, title = 'Frequently Asked Question
         }
 
         .faq-item:hover {
-          border-color: var(--gray-300);
+          border-color: var(--border-hover);
+          box-shadow: var(--shadow-card);
         }
 
         .faq-button {
@@ -125,7 +126,7 @@ export default function FaqAccordion({ items, title = 'Frequently Asked Question
         }
 
         .faq-button:focus-visible {
-          outline: 2px solid var(--brand-primary);
+          outline: 2px solid var(--accent-brand);
           outline-offset: -2px;
           border-radius: var(--radius-xl);
         }
@@ -133,14 +134,19 @@ export default function FaqAccordion({ items, title = 'Frequently Asked Question
         .faq-question {
           font-size: var(--text-base);
           font-weight: 600;
-          color: var(--gray-900);
+          color: var(--text-primary);
           line-height: 1.5;
         }
 
         .faq-icon {
           flex-shrink: 0;
-          color: var(--gray-500);
-          transition: transform var(--duration-200) var(--ease-out);
+          color: var(--text-tertiary);
+          transition: transform var(--duration-200) var(--ease-out),
+                      color var(--duration-200) var(--ease-out);
+        }
+
+        .faq-item:hover .faq-icon {
+          color: var(--accent-brand);
         }
 
         .faq-icon-open {
@@ -162,7 +168,7 @@ export default function FaqAccordion({ items, title = 'Frequently Asked Question
           padding: 0 var(--space-6) var(--space-5) var(--space-6);
           margin: 0;
           font-size: var(--text-base);
-          color: var(--gray-600);
+          color: var(--text-secondary);
           line-height: 1.7;
         }
 

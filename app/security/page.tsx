@@ -36,7 +36,7 @@ export default function Security() {
       </Script>
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
               <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
@@ -44,14 +44,14 @@ export default function Security() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-3)',
-                  background: 'rgba(99, 91, 255, 0.1)',
-                  border: '1px solid rgba(99, 91, 255, 0.2)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-6)',
                   marginBottom: 'var(--space-6)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600,
-                  color: 'var(--brand-primary)'
+                  color: 'var(--accent-brand)'
                 }}>
                   <span>SECURITY</span>
                 </div>
@@ -62,13 +62,13 @@ export default function Security() {
                   lineHeight: 1.1,
                   letterSpacing: '-0.04em',
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Security Disclosure
                 </h1>
                 <p style={{
                   fontSize: 'var(--text-lg)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-4)'
                 }}>
                   We appreciate responsible disclosure and take security seriously.
@@ -81,9 +81,9 @@ export default function Security() {
                   flexDirection: 'column',
                   gap: 'var(--space-8)',
                   lineHeight: 1.7,
-                  color: 'var(--gray-700)'
+                  color: 'var(--text-secondary)'
                 }}>
-              <p>We appreciate responsible disclosure. Email <strong><Link href="mailto:security@originary.xyz" style={{ color: 'var(--brand-primary)' }}>security@originary.xyz</Link></strong> or <strong><Link href="mailto:contact@originary.xyz" style={{ color: 'var(--brand-primary)' }}>contact@originary.xyz</Link></strong> with details and reproduction steps.</p>
+              <p>We appreciate responsible disclosure. Email <strong><Link href="mailto:security@originary.xyz" style={{ color: 'var(--accent-brand)' }}>security@originary.xyz</Link></strong> or <strong><Link href="mailto:contact@originary.xyz" style={{ color: 'var(--accent-brand)' }}>contact@originary.xyz</Link></strong> with details and reproduction steps.</p>
 
               <h2>Our commitment</h2>
               <ul>
@@ -135,13 +135,13 @@ export default function Security() {
               </div>
 
               <div style={{
-                background: 'var(--gray-50)',
+                background: 'var(--surface-subtle)',
                 padding: 'var(--space-6)',
                 borderRadius: 'var(--radius-lg)',
                 marginTop: 'var(--space-8)',
                 textAlign: 'center'
               }}>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-4)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
                   Security contact information is also available in our security.txt file
                 </p>
                 <Link href="/.well-known/security.txt" className="btn btn-secondary">

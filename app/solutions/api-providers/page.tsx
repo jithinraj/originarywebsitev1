@@ -49,7 +49,7 @@ export default function APIProviders() {
               <span
                 style={{
                   fontSize: 'var(--text-sm)',
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
                   fontWeight: 600,
@@ -66,7 +66,7 @@ export default function APIProviders() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.7,
                   marginBottom: 'var(--space-8)'
                 }}
@@ -82,7 +82,7 @@ export default function APIProviders() {
           <div className="container">
             <div className="section-header" style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <h2 style={{ marginBottom: 'var(--space-6)' }}>Revenue opportunities</h2>
-              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--gray-600)', maxWidth: '800px', margin: '0 auto', lineHeight: 1.7 }}>
+              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto', lineHeight: 1.7 }}>
                 Transform your APIs into agent-accessible revenue streams with automated discovery, payment processing, and compliance reporting.
               </p>
             </div>
@@ -90,7 +90,7 @@ export default function APIProviders() {
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
               <div className="card">
                 <div style={{ marginBottom: 'var(--space-6)' }}>
-                  <Server className="w-8 h-8" style={{ color: 'var(--brand-primary)' }} />
+                  <Server className="w-8 h-8" style={{ color: 'var(--accent-brand)' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-xl)' }}>Automated discovery</h3>
                 <p style={{ lineHeight: 1.7 }}>
@@ -100,7 +100,7 @@ export default function APIProviders() {
 
               <div className="card">
                 <div style={{ marginBottom: 'var(--space-6)' }}>
-                  <Zap className="w-8 h-8" style={{ color: 'var(--brand-secondary)' }} />
+                  <Zap className="w-8 h-8" style={{ color: 'var(--accent-secondary)' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-xl)' }}>Instant payments</h3>
                 <p style={{ lineHeight: 1.7 }}>
@@ -122,7 +122,7 @@ export default function APIProviders() {
         </section>
 
         {/* Implementation */}
-        <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div className="section-header" style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <h2 style={{ marginBottom: 'var(--space-6)' }}>Implementation</h2>
@@ -160,7 +160,7 @@ export default function APIProviders() {
               <p
                 style={{
                   fontSize: 'var(--text-xl)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.7,
                   marginBottom: 'var(--space-8)'
                 }}

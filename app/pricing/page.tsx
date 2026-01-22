@@ -31,7 +31,7 @@ export default function PricingPage() {
     <div className="wrap">
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             {/* Hero */}
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
@@ -41,7 +41,7 @@ export default function PricingPage() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 <span className="text-gradient">Pricing</span>
               </h1>
@@ -49,7 +49,7 @@ export default function PricingPage() {
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-4)',
                 maxWidth: '700px',
                 margin: '0 auto var(--space-4) auto'
@@ -59,7 +59,7 @@ export default function PricingPage() {
               <p style={{
                 fontSize: 'var(--text-lg)',
                 lineHeight: 1.7,
-                color: 'var(--gray-500)',
+                color: 'var(--text-tertiary)',
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
@@ -69,11 +69,11 @@ export default function PricingPage() {
 
             {/* Pricing Cards */}
             <div className="grid grid-3" style={{ gap: 'var(--space-6)', marginBottom: 'var(--space-24)', paddingTop: 'var(--space-4)' }}>
-              {/* Open Source */}
+              {/* Cloud (Private Beta) */}
               <div className="card" style={{
                 padding: 'var(--space-8)',
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
+                background: 'var(--surface-elevated)',
+                border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-2xl)',
                 display: 'flex',
                 flexDirection: 'column'
@@ -82,39 +82,39 @@ export default function PricingPage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'var(--gray-100)',
+                  background: 'var(--surface-card)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-1) var(--space-3)',
                   marginBottom: 'var(--space-4)',
                   width: 'fit-content'
                 }}>
-                  <Github size={14} />
-                  <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--gray-700)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Open Source
+                  <Cloud size={14} />
+                  <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Cloud
                   </span>
                 </div>
 
                 <div style={{ marginBottom: 'var(--space-6)' }}>
-                  <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
-                    $0
+                  <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
+                    Usage based
                   </div>
-                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                    Forever free
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
+                    Per receipt and per million events
                   </div>
                 </div>
 
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
-                  Apache 2.0 licensed. Self-host PEAC Protocol and core components on your own infrastructure.
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
+                  Hosted PEAC verification and receipts. Preferred terms for early design partners.
                 </p>
 
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 var(--space-8) 0', flex: 1 }}>
                   {[
-                    'PEAC Protocol specification',
-                    'Verifiable receipts (JWS)',
-                    'Policy discovery (peac.txt)',
-                    'Basic attribution',
-                    'Self-managed signing keys',
-                    'Community support'
+                    'Hosted receipt verification',
+                    'Attested keys (KMS-backed)',
+                    'Event observability and dashboards',
+                    'Email and webhook alerts',
+                    'Compliance bundles',
+                    'Email support'
                   ].map((feature, idx) => (
                     <li key={idx} style={{
                       display: 'flex',
@@ -122,31 +122,29 @@ export default function PricingPage() {
                       gap: 'var(--space-3)',
                       marginBottom: 'var(--space-3)',
                       fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-700)'
+                      color: 'var(--text-secondary)'
                     }}>
-                      <CheckCircle size={16} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                      <CheckCircle size={16} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '2px' }} />
                       {feature}
                     </li>
                   ))}
                 </ul>
 
-                <a
-                  href="https://github.com/peacprotocol/peac?utm_source=originary&utm_medium=pricing&utm_campaign=oss"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/cloud"
                   className="btn btn-secondary"
-                  style={{ width: '100%', justifyContent: 'center', display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}
+                  style={{ width: '100%', justifyContent: 'center' }}
                 >
-                  <Github size={18} />
-                  View on GitHub
-                </a>
+                  Apply for early access
+                  <ArrowRight size={18} />
+                </Link>
               </div>
 
-              {/* Cloud (Private Beta) */}
+              {/* Open Source - Featured */}
               <div className="card" style={{
                 padding: 'var(--space-8)',
-                background: 'rgba(99, 91, 255, 0.02)',
-                border: '2px solid var(--brand-primary)',
+                background: 'var(--accent-brand-faint)',
+                border: '2px solid var(--accent-brand)',
                 borderRadius: 'var(--radius-2xl)',
                 display: 'flex',
                 flexDirection: 'column',
@@ -169,47 +167,47 @@ export default function PricingPage() {
                   whiteSpace: 'nowrap',
                   zIndex: 10
                 }}>
-                  Private Beta
+                  Recommended
                 </div>
 
                 <div style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'rgba(99, 91, 255, 0.1)',
+                  background: 'var(--accent-brand-subtle)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-1) var(--space-3)',
                   marginBottom: 'var(--space-4)',
                   marginTop: 'var(--space-2)',
                   width: 'fit-content'
                 }}>
-                  <Cloud size={14} style={{ color: 'var(--brand-primary)' }} />
-                  <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--brand-primary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Cloud
+                  <Github size={14} style={{ color: 'var(--accent-brand)' }} />
+                  <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--accent-brand)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Free
                   </span>
                 </div>
 
                 <div style={{ marginBottom: 'var(--space-6)' }}>
-                  <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
-                    Usage based
+                  <div style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
+                    Open Source
                   </div>
-                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
-                    Per receipt and per million events
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
+                    Apache 2.0 licensed
                   </div>
                 </div>
 
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
-                  Hosted PEAC verification and receipts. Preferred terms for early design partners.
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
+                  Self-host PEAC Protocol and core components on your own infrastructure. No limits, no fees.
                 </p>
 
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 var(--space-8) 0', flex: 1 }}>
                   {[
-                    'Hosted receipt verification',
-                    'Attested keys (KMS-backed)',
-                    'Event observability and dashboards',
-                    'Email and webhook alerts',
-                    'Compliance bundles',
-                    'Email support'
+                    'PEAC Protocol specification',
+                    'Verifiable receipts (JWS)',
+                    'Policy discovery (peac.txt)',
+                    'Basic attribution',
+                    'Self-managed signing keys',
+                    'Community support'
                   ].map((feature, idx) => (
                     <li key={idx} style={{
                       display: 'flex',
@@ -217,29 +215,31 @@ export default function PricingPage() {
                       gap: 'var(--space-3)',
                       marginBottom: 'var(--space-3)',
                       fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-700)'
+                      color: 'var(--text-secondary)'
                     }}>
-                      <CheckCircle size={16} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                      <CheckCircle size={16} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '2px' }} />
                       {feature}
                     </li>
                   ))}
                 </ul>
 
-                <Link
-                  href="/cloud"
+                <a
+                  href="https://github.com/peacprotocol/peac?utm_source=originary&utm_medium=pricing&utm_campaign=oss"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-primary"
-                  style={{ width: '100%', justifyContent: 'center' }}
+                  style={{ width: '100%', justifyContent: 'center', display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}
                 >
-                  Apply for early access
-                  <ArrowRight size={18} />
-                </Link>
+                  <Github size={18} />
+                  Get Started
+                </a>
               </div>
 
               {/* Enterprise & Network Partners */}
               <div className="card" style={{
                 padding: 'var(--space-8)',
-                background: 'var(--white)',
-                border: '1px solid var(--gray-200)',
+                background: 'var(--surface-elevated)',
+                border: '1px solid var(--border-default)',
                 borderRadius: 'var(--radius-2xl)',
                 display: 'flex',
                 flexDirection: 'column'
@@ -248,28 +248,28 @@ export default function PricingPage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'var(--gray-100)',
+                  background: 'var(--surface-card)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-1) var(--space-3)',
                   marginBottom: 'var(--space-4)',
                   width: 'fit-content'
                 }}>
                   <Building2 size={14} />
-                  <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--gray-700)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <span style={{ fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Enterprise
                   </span>
                 </div>
 
                 <div style={{ marginBottom: 'var(--space-6)' }}>
-                  <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--gray-900)', marginBottom: 'var(--space-1)' }}>
+                  <div style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
                     Custom
                   </div>
-                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>
+                  <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                     Volume-based pricing
                   </div>
                 </div>
 
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
                   Custom deployments, SLAs, and governance for publishers, API providers, and agent platforms.
                 </p>
 
@@ -288,9 +288,9 @@ export default function PricingPage() {
                       gap: 'var(--space-3)',
                       marginBottom: 'var(--space-3)',
                       fontSize: 'var(--text-sm)',
-                      color: 'var(--gray-700)'
+                      color: 'var(--text-secondary)'
                     }}>
-                      <CheckCircle size={16} style={{ color: 'var(--brand-primary)', flexShrink: 0, marginTop: '2px' }} />
+                      <CheckCircle size={16} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '2px' }} />
                       {feature}
                     </li>
                   ))}
@@ -311,20 +311,20 @@ export default function PricingPage() {
             <section style={{
               marginTop: 'var(--space-8)',
               paddingTop: 'var(--space-16)',
-              borderTop: '1px solid var(--gray-200)'
+              borderTop: '1px solid var(--border-default)'
             }}>
               <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
                 <h2 style={{
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-4)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Originary Platform
                 </h2>
                 <p style={{
                   fontSize: 'var(--text-lg)',
-                  color: 'var(--gray-600)',
+                  color: 'var(--text-secondary)',
                   maxWidth: '600px',
                   margin: '0 auto'
                 }}>
@@ -338,8 +338,8 @@ export default function PricingPage() {
                   <div
                     style={{
                       display: 'inline-block',
-                      background: 'rgba(99, 91, 255, 0.1)',
-                      color: 'var(--brand-primary)',
+                      background: 'var(--accent-brand-subtle)',
+                      color: 'var(--accent-brand)',
                       fontSize: 'var(--text-xs)',
                       fontWeight: 600,
                       padding: '4px 10px',
@@ -353,7 +353,7 @@ export default function PricingPage() {
                   <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-3)' }}>
                     Verify API
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-6)', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', lineHeight: 1.6 }}>
                     PEAC receipt verification and related utilities as an API
                   </p>
                   <Link href="/products/verify" className="btn btn-ghost" style={{ width: '100%' }}>
@@ -366,7 +366,7 @@ export default function PricingPage() {
                   <div
                     style={{
                       display: 'inline-block',
-                      background: 'rgba(0, 212, 170, 0.1)',
+                      background: 'var(--accent-secondary-subtle)',
                       color: 'var(--success)',
                       fontSize: 'var(--text-xs)',
                       fontWeight: 600,
@@ -381,7 +381,7 @@ export default function PricingPage() {
                   <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-3)' }}>
                     Gateway 402
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-6)', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', lineHeight: 1.6 }}>
                     Production-grade HTTP 402 controls and payment adapters
                   </p>
                   <Link href="/products/gateway-402" className="btn btn-ghost" style={{ width: '100%' }}>
@@ -394,8 +394,8 @@ export default function PricingPage() {
                   <div
                     style={{
                       display: 'inline-block',
-                      background: 'var(--gray-100)',
-                      color: 'var(--gray-600)',
+                      background: 'var(--surface-card)',
+                      color: 'var(--text-secondary)',
                       fontSize: 'var(--text-xs)',
                       fontWeight: 600,
                       padding: '4px 10px',
@@ -409,7 +409,7 @@ export default function PricingPage() {
                   <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-3)' }}>
                     Studio
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)', marginBottom: 'var(--space-6)', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', lineHeight: 1.6 }}>
                     Content policy design and compliance workflows
                   </p>
                   <Link href="/products/studio" className="btn btn-ghost" style={{ width: '100%' }}>
@@ -423,43 +423,43 @@ export default function PricingPage() {
             <section style={{
               marginTop: 'var(--space-16)',
               padding: 'var(--space-8)',
-              border: '1px solid var(--gray-200)',
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-2xl)',
-              background: 'var(--white)'
+              background: 'var(--surface-elevated)'
             }}>
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--gray-900)' }}>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--text-primary)' }}>
                 Frequently Asked Questions
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-                <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-200)' }}>
-                  <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
+                <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--border-default)' }}>
+                  <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--text-primary)' }}>
                     Can I self-host everything?
                   </summary>
-                  <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
+                  <p style={{ marginTop: 'var(--space-3)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                     Yes. PEAC Protocol and core components are Apache 2.0 licensed and free to self-host. Cloud adds managed infrastructure, attested keys, and compliance automation.
                   </p>
                 </details>
-                <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-200)' }}>
-                  <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
+                <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--border-default)' }}>
+                  <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--text-primary)' }}>
                     How does Cloud pricing work?
                   </summary>
-                  <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
+                  <p style={{ marginTop: 'var(--space-3)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                     Cloud pricing is usage-based, metered by verified receipts and events. Pricing is negotiated with each design partner based on volume, rails, and retention requirements.
                   </p>
                 </details>
-                <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--gray-200)' }}>
-                  <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
+                <details style={{ padding: 'var(--space-4)', borderBottom: '1px solid var(--border-default)' }}>
+                  <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--text-primary)' }}>
                     What payment rails do you support?
                   </summary>
-                  <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
+                  <p style={{ marginTop: 'var(--space-3)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                     PEAC Protocol is rail-agnostic. Enterprise deployments can integrate x402, i402, Stripe, and other payment rails through Gateway 402 adapters.
                   </p>
                 </details>
                 <details style={{ padding: 'var(--space-4)' }}>
-                  <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--gray-900)' }}>
+                  <summary style={{ fontSize: 'var(--text-lg)', fontWeight: 600, cursor: 'pointer', color: 'var(--text-primary)' }}>
                     Who should contact sales?
                   </summary>
-                  <p style={{ marginTop: 'var(--space-3)', color: 'var(--gray-700)', lineHeight: 1.7 }}>
+                  <p style={{ marginTop: 'var(--space-3)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                     Publishers, API providers, agent platforms, and organizations integrating PEAC receipts at scale. We prioritize design partners building on x402, i402, or similar rails.
                   </p>
                 </details>
@@ -510,8 +510,8 @@ export default function PricingPage() {
                     href="/cloud"
                     className="btn btn-lg"
                     style={{
-                      background: 'var(--white)',
-                      color: 'var(--brand-primary)',
+                      background: 'var(--surface-elevated)',
+                      color: 'var(--accent-brand)',
                       border: 'none'
                     }}
                   >

@@ -68,14 +68,14 @@ export default function Page() {
           <div className="container" style={{ maxWidth: '900px', margin: '0 auto', padding: 'var(--space-16) var(--space-6)' }}>
             <nav style={{
               fontSize: 'var(--text-sm)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               marginBottom: 'var(--space-8)'
             }}>
-              <Link href="/" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>Home</Link>
+              <Link href="/" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Home</Link>
               <span style={{ margin: '0 var(--space-2)' }}>/</span>
-              <Link href="/blog" style={{ color: 'var(--gray-600)', textDecoration: 'none' }}>Blog</Link>
+              <Link href="/blog" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>Blog</Link>
               <span style={{ margin: '0 var(--space-2)' }}>/</span>
-              <span style={{ color: 'var(--gray-900)' }}>Adding 402 in 15 Minutes</span>
+              <span style={{ color: 'var(--text-primary)' }}>Adding 402 in 15 Minutes</span>
             </nav>
 
             <header style={{ marginBottom: 'var(--space-12)' }}>
@@ -83,13 +83,13 @@ export default function Page() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-2)',
-                background: 'rgba(99, 91, 255, 0.1)',
-                border: '1px solid rgba(99, 91, 255, 0.2)',
+                background: 'var(--accent-brand-subtle)',
+                border: '1px solid var(--accent-brand-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 marginBottom: 'var(--space-6)'
               }}>
                 <FileText size={14} />
@@ -101,27 +101,27 @@ export default function Page() {
                 fontWeight: 700,
                 lineHeight: 1.1,
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Add HTTP 402 to Your API in 15 Minutes
               </h1>
 
               <p style={{
                 fontSize: 'var(--text-xl)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-8)'
               }}>
-                You have an Express API. You want to charge for certain endpoints. Here&rsquo;s how to add <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> responses in 15 minutes, no SDK required.
+                You have an Express API. You want to charge for certain endpoints. Here&rsquo;s how to add <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> responses in 15 minutes, no SDK required.
               </p>
 
               <div style={{
                 display: 'flex',
                 gap: 'var(--space-6)',
                 fontSize: 'var(--text-sm)',
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 paddingTop: 'var(--space-6)',
-                borderTop: '1px solid var(--gray-200)'
+                borderTop: '1px solid var(--border-default)'
               }}>
                 <span>By Jithin Raj & Originary Team</span>
                 <span>•</span>
@@ -132,19 +132,19 @@ export default function Page() {
             <div style={{
               fontSize: 'var(--text-base)',
               lineHeight: 1.8,
-              color: 'var(--gray-700)'
+              color: 'var(--text-secondary)'
             }}>
               <section style={{ marginBottom: 'var(--space-12)' }}>
                 <h2 style={{
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   What you&rsquo;ll build
                 </h2>
                 <ul style={{ paddingLeft: 'var(--space-6)', marginBottom: 'var(--space-6)' }}>
-                  <li style={{ marginBottom: 'var(--space-2)' }}>A <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>GET /priced</code> endpoint that returns 402 if no receipt is present</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}>A <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>GET /priced</code> endpoint that returns 402 if no receipt is present</li>
                   <li style={{ marginBottom: 'var(--space-2)' }}>Receipt verification middleware that checks signatures and timestamps</li>
                   <li style={{ marginBottom: 'var(--space-2)' }}>A helper to generate 402 challenges with references</li>
                 </ul>
@@ -155,12 +155,12 @@ export default function Page() {
                   fontSize: 'var(--text-3xl)',
                   fontWeight: 700,
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--gray-900)'
+                  color: 'var(--text-primary)'
                 }}>
                   Production checklist
                 </h2>
                 <p style={{ marginBottom: 'var(--space-4)' }}>Before shipping to production:</p>
-                <div className="card" style={{ background: 'rgba(0, 212, 170, 0.05)', border: '1px solid rgba(0, 212, 170, 0.2)' }}>
+                <div className="card" style={{ background: 'var(--accent-secondary-faint)', border: '1px solid var(--accent-secondary-muted)' }}>
                   <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
                     <li style={{ marginBottom: 'var(--space-2)' }}>✅ Replace in-memory Map with Redis or database</li>
                     <li style={{ marginBottom: 'var(--space-2)' }}>✅ Use your payment provider&rsquo;s receipt verification SDK</li>
@@ -173,18 +173,18 @@ export default function Page() {
                 </div>
               </section>
 
-              <section style={{ marginTop: 'var(--space-12)', paddingTop: 'var(--space-8)', borderTop: '2px solid var(--gray-200)' }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--gray-900)' }}>
+              <section style={{ marginTop: 'var(--space-12)', paddingTop: 'var(--space-8)', borderTop: '2px solid var(--border-default)' }}>
+                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                   Related Reading
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-                  <Link href="/integrations/x402/express-node/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/integrations/x402/express-node/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     Express/Node.js x402 Implementation Guide
                   </Link>
-                  <Link href="/guides/http-402/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/guides/http-402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     HTTP 402 Practical Guide
                   </Link>
-                  <Link href="/glossary/x402/" style={{ color: 'var(--brand-primary)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/glossary/x402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     What is x402?
                   </Link>
                 </div>
@@ -192,7 +192,7 @@ export default function Page() {
             </div>
           </div>
 
-          <section style={{ background: 'var(--gray-50)', borderTop: '1px solid var(--gray-200)' }}>
+          <section style={{ background: 'var(--surface-subtle)', borderTop: '1px solid var(--border-default)' }}>
             <div className="container" style={{ maxWidth: '900px', margin: '0 auto', padding: 'var(--space-16) var(--space-6)' }}>
               <div className="card cta-card">
                 <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
@@ -205,7 +205,7 @@ export default function Page() {
                   <Link
                     href="/developers"
                     className="btn btn-lg"
-                    style={{ background: 'var(--white)', color: 'var(--brand-primary)', border: 'none' }}
+                    style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}
                   >
                     <span>View Documentation</span>
                     <ArrowRight size={18} />

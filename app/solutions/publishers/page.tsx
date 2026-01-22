@@ -40,7 +40,7 @@ export default function Publishers() {
               <div style={{
                 display: 'inline-block',
                 backgroundColor: 'var(--brand-primary-light)',
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 padding: 'var(--space-2) var(--space-4)',
                 borderRadius: 'var(--radius-full)',
                 fontSize: 'var(--text-sm)',
@@ -53,7 +53,7 @@ export default function Publishers() {
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
                 <span className="text-gradient">Protect and Monetize Content</span>
               </h1>
-              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--gray-600)', maxWidth: '800px', margin: '0 auto' }}>
+              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
                 AI compliance and AI provenance tracking for publishers. Set AI preferences for training and usage, verify AI compliance with attribution requirements, and monetize content access through automated licensing with AIPREF and PEAC.
               </p>
             </div>
@@ -64,10 +64,10 @@ export default function Publishers() {
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <h2 style={{ marginBottom: 'var(--space-6)' }}>Content Control</h2>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)', marginBottom: 'var(--space-4)' }}>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
                 Establish clear preferences for how AI systems can access, use, and attribute your content while creating new revenue streams through AI licensing and AI commerce for publishers.
               </p>
-              <p style={{ fontSize: 'var(--text-base)', color: 'var(--gray-600)' }}>
+              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)' }}>
                 Use AIPREF and AI preference standard for machine-readable AI access preferences, enabling automated AI licensing and payment flows for your content.
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function Publishers() {
                   <span style={{ fontSize: '1.5rem' }}>⚙️</span>
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Usage Preferences</h3>
-                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                   Define how your content can be used for training, fine-tuning, and inference
                 </p>
               </div>
@@ -106,7 +106,7 @@ export default function Publishers() {
                   <span style={{ fontSize: '1.5rem' }}>📝</span>
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Attribution Requirements</h3>
-                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                   Specify citation and credit requirements for all content usage
                 </p>
               </div>
@@ -125,7 +125,7 @@ export default function Publishers() {
                   <span style={{ fontSize: '1.5rem' }}>💰</span>
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Automated Licensing</h3>
-                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                   Enable agents to automatically license content through payment protocols
                 </p>
               </div>
@@ -137,7 +137,7 @@ export default function Publishers() {
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <h2 style={{ marginBottom: 'var(--space-6)' }}>Implementation</h2>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
                 Get started with simple setup and comprehensive monitoring tools.
               </p>
             </div>
@@ -157,8 +157,8 @@ export default function Publishers() {
                   <span style={{ fontSize: '1.5rem' }}>⚡</span>
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Simple Setup</h3>
-                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
-                  Add AIPREF and <code style={{ backgroundColor: 'var(--gray-100)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac.txt</code> files to your website root to declare your preferences.
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
+                  Add AIPREF and <code style={{ backgroundColor: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac.txt</code> files to your website root to declare your preferences.
                 </p>
               </div>
 
@@ -176,7 +176,7 @@ export default function Publishers() {
                   <span style={{ fontSize: '1.5rem' }}>📊</span>
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Verification Dashboard</h3>
-                <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                   Monitor compliance and track usage through our comprehensive analytics platform.
                 </p>
               </div>
@@ -192,7 +192,7 @@ export default function Publishers() {
                 Join publishers who are taking control of their content in the age of AI.
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--brand-primary)' }}>
+                <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--accent-brand)' }}>
                   Talk to our team
                 </a>
                 <a href="/trace" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>

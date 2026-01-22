@@ -36,26 +36,26 @@ export default function Adapters() {
     <div className="wrap">
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--white)', paddingTop: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 'var(--space-3)',
-                background: 'rgba(0, 212, 170, 0.1)',
-                border: '1px solid rgba(0, 212, 170, 0.2)',
+                background: 'var(--accent-secondary-subtle)',
+                border: '1px solid var(--accent-secondary-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-6)',
                 marginBottom: 'var(--space-6)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 600,
-                color: 'var(--brand-secondary)'
+                color: 'var(--accent-secondary)'
               }}>
                 <LinkIcon size={16} />
                 <span>ENTERPRISE ADAPTERS</span>
                 <div style={{
-                  background: 'var(--brand-secondary)',
+                  background: 'var(--accent-secondary)',
                   color: 'var(--white)',
                   padding: 'var(--space-1) var(--space-2)',
                   borderRadius: 'var(--radius-sm)',
@@ -70,7 +70,7 @@ export default function Adapters() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 <span className="text-gradient">Universal connectivity</span> for agentic infrastructure
               </h1>
@@ -78,7 +78,7 @@ export default function Adapters() {
               <p style={{
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
-                color: 'var(--gray-600)',
+                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)',
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
@@ -96,13 +96,13 @@ export default function Adapters() {
               }}>
                 {['AIPREF', 'HTTP 402', 'MCP/A2A', 'C2PA', 'robots.txt', 'llms.txt'].map((protocol) => (
                   <div key={protocol} style={{
-                    background: 'var(--gray-100)',
+                    background: 'var(--surface-card)',
                     padding: 'var(--space-3) var(--space-4)',
                     borderRadius: 'var(--radius-lg)',
                     textAlign: 'center',
                     fontSize: 'var(--text-sm)',
                     fontWeight: 600,
-                    color: 'var(--gray-700)'
+                    color: 'var(--text-secondary)'
                   }}>
                     {protocol}
                   </div>
@@ -121,48 +121,48 @@ export default function Adapters() {
                   <div style={{
                     fontSize: 'var(--text-3xl)',
                     fontWeight: 700,
-                    color: 'var(--brand-secondary)',
+                    color: 'var(--accent-secondary)',
                     marginBottom: 'var(--space-2)'
                   }}>Active</div>
                   <div style={{
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--gray-600)'
+                    color: 'var(--text-secondary)'
                   }}>Adapters deployed</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{
                     fontSize: 'var(--text-3xl)',
                     fontWeight: 700,
-                    color: 'var(--brand-secondary)',
+                    color: 'var(--accent-secondary)',
                     marginBottom: 'var(--space-2)'
                   }}>99.99%</div>
                   <div style={{
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--gray-600)'
+                    color: 'var(--text-secondary)'
                   }}>Protocol compliance</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{
                     fontSize: 'var(--text-3xl)',
                     fontWeight: 700,
-                    color: 'var(--brand-secondary)',
+                    color: 'var(--accent-secondary)',
                     marginBottom: 'var(--space-2)'
                   }}>7</div>
                   <div style={{
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--gray-600)'
+                    color: 'var(--text-secondary)'
                   }}>Standards supported</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{
                     fontSize: 'var(--text-3xl)',
                     fontWeight: 700,
-                    color: 'var(--brand-secondary)',
+                    color: 'var(--accent-secondary)',
                     marginBottom: 'var(--space-2)'
                   }}>&lt; 50ms</div>
                   <div style={{
                     fontSize: 'var(--text-sm)',
-                    color: 'var(--gray-600)'
+                    color: 'var(--text-secondary)'
                   }}>Protocol negotiation</div>
                 </div>
               </div>
@@ -196,13 +196,13 @@ export default function Adapters() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(99, 91, 255, 0.1)',
+                  background: 'var(--accent-brand-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <Settings size={28} style={{ color: 'var(--brand-primary)' }} />
+                  <Settings size={28} style={{ color: 'var(--accent-brand)' }} />
                 </div>
                 <div style={{
                   display: 'flex',
@@ -230,17 +230,17 @@ export default function Adapters() {
                   marginBottom: 'var(--space-4)'
                 }}>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-primary)' }}>&lt; 10ms</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Response time</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-brand)' }}>&lt; 10ms</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Response time</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-primary)' }}>GDPR</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Compliance</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-brand)' }}>GDPR</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Compliance</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Preference collection</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Consent management</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Preference collection</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Consent management</span>
                 </div>
               </div>
 
@@ -249,13 +249,13 @@ export default function Adapters() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(0, 212, 170, 0.1)',
+                  background: 'var(--accent-secondary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <Zap size={28} style={{ color: 'var(--brand-secondary)' }} />
+                  <Zap size={28} style={{ color: 'var(--accent-secondary)' }} />
                 </div>
                 <div style={{
                   display: 'flex',
@@ -283,17 +283,17 @@ export default function Adapters() {
                   marginBottom: 'var(--space-4)'
                 }}>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-secondary)' }}>99.9%</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Success rate</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>99.9%</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Success rate</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-secondary)' }}>&lt; 3s</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Settlement</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>&lt; 3s</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Settlement</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Multi-rail payments</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Auto failover</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Multi-rail payments</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Auto failover</span>
                 </div>
               </div>
 
@@ -302,7 +302,7 @@ export default function Adapters() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(255, 107, 53, 0.1)',
+                  background: 'var(--accent-tertiary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -337,16 +337,16 @@ export default function Adapters() {
                 }}>
                   <div style={{ textAlign: 'center' }}>
                     <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-accent)' }}>MCP/A2A</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Protocols</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Protocols</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
                     <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-accent)' }}>&lt; 20ms</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Latency</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Latency</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Protocol translation</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Capability discovery</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Protocol translation</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Capability discovery</span>
                 </div>
               </div>
 
@@ -355,13 +355,13 @@ export default function Adapters() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(99, 91, 255, 0.1)',
+                  background: 'var(--accent-brand-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <Settings size={28} style={{ color: 'var(--brand-primary)' }} />
+                  <Settings size={28} style={{ color: 'var(--accent-brand)' }} />
                 </div>
                 <div style={{
                   display: 'flex',
@@ -389,17 +389,17 @@ export default function Adapters() {
                   marginBottom: 'var(--space-4)'
                 }}>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-primary)' }}>&lt; 5ms</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Parse time</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-brand)' }}>&lt; 5ms</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Parse time</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-primary)' }}>95%</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Cache hit</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-brand)' }}>95%</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Cache hit</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Policy parsing</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>LLM-specific rules</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Policy parsing</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>LLM-specific rules</span>
                 </div>
               </div>
 
@@ -408,13 +408,13 @@ export default function Adapters() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(0, 212, 170, 0.1)',
+                  background: 'var(--accent-secondary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: 'var(--space-6)'
                 }}>
-                  <Shield size={28} style={{ color: 'var(--brand-secondary)' }} />
+                  <Shield size={28} style={{ color: 'var(--accent-secondary)' }} />
                 </div>
                 <div style={{
                   display: 'flex',
@@ -442,17 +442,17 @@ export default function Adapters() {
                   marginBottom: 'var(--space-4)'
                 }}>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-secondary)' }}>&lt; 100ms</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Verification</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>&lt; 100ms</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Verification</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-secondary)' }}>99.99%</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Accuracy</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>99.99%</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Accuracy</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Content verification</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Provenance tracking</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Content verification</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Provenance tracking</span>
                 </div>
               </div>
 
@@ -461,7 +461,7 @@ export default function Adapters() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(255, 107, 53, 0.1)',
+                  background: 'var(--accent-tertiary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -496,16 +496,16 @@ export default function Adapters() {
                 }}>
                   <div style={{ textAlign: 'center' }}>
                     <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-accent)' }}>4-6 weeks</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Delivery</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Delivery</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
                     <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-accent)' }}>24/7 SLA</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)' }}>Support</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Support</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Custom protocols</span>
-                  <span style={{ background: 'var(--gray-100)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>White-glove support</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Custom protocols</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>White-glove support</span>
                 </div>
               </div>
             </div>
@@ -552,8 +552,8 @@ export default function Adapters() {
                     href="/company/contact"
                     className="btn btn-lg"
                     style={{
-                      background: 'var(--white)',
-                      color: 'var(--brand-primary)',
+                      background: 'var(--surface-elevated)',
+                      color: 'var(--accent-brand)',
                       border: 'none'
                     }}
                   >

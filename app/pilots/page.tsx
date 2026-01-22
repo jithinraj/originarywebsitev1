@@ -39,14 +39,14 @@ export default function PilotsPage() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: 'var(--space-2)',
-              background: 'rgba(99, 91, 255, 0.1)',
-              border: '1px solid rgba(99, 91, 255, 0.2)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-5)',
               marginBottom: 'var(--space-6)',
               fontSize: 'var(--text-sm)',
               fontWeight: 600,
-              color: 'var(--brand-primary)'
+              color: 'var(--accent-brand)'
             }}>
               <Rocket size={16} />
               <span>PILOTS</span>
@@ -58,14 +58,14 @@ export default function PilotsPage() {
               lineHeight: 1.1,
               letterSpacing: '-0.03em',
               marginBottom: 'var(--space-6)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               Fixed-scope pilots for production validation
             </h1>
 
             <p style={{
               fontSize: 'var(--text-lg)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               maxWidth: '600px',
               margin: '0 auto var(--space-8)',
               lineHeight: 1.7
@@ -82,26 +82,26 @@ export default function PilotsPage() {
           }}>
             <div className="card" style={{
               padding: 'var(--space-8)',
-              border: '1px solid var(--gray-200)',
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-2xl)'
             }}>
               <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>
                 Discovery
               </h3>
-              <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-4)', lineHeight: 1.6 }}>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-4)', lineHeight: 1.6 }}>
                 Understand your requirements and map PEAC to your existing infrastructure.
                 Identify integration points and success criteria.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)', color: 'var(--gray-600)' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)', color: 'var(--text-secondary)' }}>
                   <CheckCircle size={16} style={{ color: 'var(--success)' }} />
                   Architecture review
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)', color: 'var(--gray-600)' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)', color: 'var(--text-secondary)' }}>
                   <CheckCircle size={16} style={{ color: 'var(--success)' }} />
                   Integration planning
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--gray-600)' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--text-secondary)' }}>
                   <CheckCircle size={16} style={{ color: 'var(--success)' }} />
                   Success criteria definition
                 </li>
@@ -110,26 +110,26 @@ export default function PilotsPage() {
 
             <div className="card" style={{
               padding: 'var(--space-8)',
-              border: '1px solid var(--gray-200)',
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-2xl)'
             }}>
               <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>
                 Proof of Value
               </h3>
-              <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-4)', lineHeight: 1.6 }}>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-4)', lineHeight: 1.6 }}>
                 Deploy PEAC in a controlled environment. Validate decision records,
                 receipts, and verification flows against your use cases.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)', color: 'var(--gray-600)' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)', color: 'var(--text-secondary)' }}>
                   <CheckCircle size={16} style={{ color: 'var(--success)' }} />
                   Sandbox deployment
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)', color: 'var(--gray-600)' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)', color: 'var(--text-secondary)' }}>
                   <CheckCircle size={16} style={{ color: 'var(--success)' }} />
                   End-to-end testing
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--gray-600)' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--text-secondary)' }}>
                   <CheckCircle size={16} style={{ color: 'var(--success)' }} />
                   Performance validation
                 </li>
@@ -138,26 +138,26 @@ export default function PilotsPage() {
 
             <div className="card" style={{
               padding: 'var(--space-8)',
-              border: '1px solid var(--gray-200)',
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-2xl)'
             }}>
               <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>
                 Production Rollout
               </h3>
-              <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-4)', lineHeight: 1.6 }}>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-4)', lineHeight: 1.6 }}>
                 Move to production with confidence. Gradual rollout, monitoring,
                 and ongoing support as you scale.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)', color: 'var(--gray-600)' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)', color: 'var(--text-secondary)' }}>
                   <CheckCircle size={16} style={{ color: 'var(--success)' }} />
                   Production deployment
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)', color: 'var(--gray-600)' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)', color: 'var(--text-secondary)' }}>
                   <CheckCircle size={16} style={{ color: 'var(--success)' }} />
                   Monitoring setup
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--gray-600)' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--text-secondary)' }}>
                   <CheckCircle size={16} style={{ color: 'var(--success)' }} />
                   Ongoing support
                 </li>
@@ -168,15 +168,15 @@ export default function PilotsPage() {
           <div style={{
             textAlign: 'center',
             padding: 'var(--space-12)',
-            background: 'var(--gray-50)',
+            background: 'var(--surface-subtle)',
             borderRadius: 'var(--radius-2xl)',
             marginBottom: 'var(--space-20)'
           }}>
-            <Calendar size={32} style={{ color: 'var(--brand-primary)', marginBottom: 'var(--space-4)' }} />
+            <Calendar size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
             <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>
               Start a conversation
             </h2>
-            <p style={{ color: 'var(--gray-600)', marginBottom: 'var(--space-6)', maxWidth: '400px', margin: '0 auto var(--space-6)' }}>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', maxWidth: '400px', margin: '0 auto var(--space-6)' }}>
               Tell us about your use case and we will scope a pilot together.
             </p>
             <Link href="/contact" className="btn btn-primary btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}>

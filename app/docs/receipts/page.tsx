@@ -28,17 +28,17 @@ export default function ReceiptsDocPage() {
   return (
     <>
       <NavigationHeader />
-      <main style={{ minHeight: '100vh', background: 'var(--white)' }}>
+      <main style={{ minHeight: '100vh', background: 'var(--surface-elevated)' }}>
         <div className="container" style={{ padding: 'var(--space-32) var(--space-6)' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             {/* Badge */}
             <div style={{
               display: 'inline-flex',
-              background: 'rgba(99, 91, 255, 0.1)',
-              border: '1px solid rgba(99, 91, 255, 0.2)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-6)',
-              color: 'var(--brand-primary)',
+              color: 'var(--accent-brand)',
               fontSize: 'var(--text-sm)',
               fontWeight: 600,
               marginBottom: 'var(--space-6)'
@@ -50,14 +50,14 @@ export default function ReceiptsDocPage() {
               fontSize: 'var(--text-5xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-6)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               PEAC-Receipt
             </h1>
 
             <p style={{
               fontSize: 'var(--text-xl)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
@@ -70,14 +70,14 @@ export default function ReceiptsDocPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 What is PEAC-Receipt?
               </h2>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                 PEAC-Receipt is a standardized HTTP header containing a signed JWS (Ed25519) structured as a JWT-compatible envelope. It serves as a portable decision record proving what happened, under what policy, and with what evidence.
               </p>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                 The receipt contains: resource accessed, timestamp, policy snapshot hash, optional payment evidence, and is signed using Ed25519 for fast offline verification.
               </p>
             </div>
@@ -88,13 +88,13 @@ export default function ReceiptsDocPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Header Format
               </h2>
               <pre style={{
-                background: 'var(--gray-900)',
-                color: 'var(--gray-100)',
+                background: 'var(--text-primary)',
+                color: 'var(--surface-card)',
                 padding: 'var(--space-4)',
                 borderRadius: 'var(--radius-lg)',
                 fontSize: 'var(--text-sm)',
@@ -114,11 +114,11 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Receipt Claims
               </h2>
-              <ul style={{ color: 'var(--gray-600)', lineHeight: 2, listStyle: 'none', padding: 0 }}>
+              <ul style={{ color: 'var(--text-secondary)', lineHeight: 2, listStyle: 'none', padding: 0 }}>
                 <li><strong>iss</strong>: Issuer (domain that signed the receipt)</li>
                 <li><strong>iat</strong>: Issued at (Unix timestamp)</li>
                 <li><strong>resource</strong>: Path or identifier of accessed resource</li>
@@ -133,16 +133,16 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Verification
               </h2>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                 Verify receipts using our API or verify endpoint:
               </p>
               <pre style={{
-                background: 'var(--gray-900)',
-                color: 'var(--gray-100)',
+                background: 'var(--text-primary)',
+                color: 'var(--surface-card)',
                 padding: 'var(--space-4)',
                 borderRadius: 'var(--radius-lg)',
                 fontSize: 'var(--text-sm)',
@@ -154,8 +154,8 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
   -H "Content-Type: application/json" \\
   -d '{"receipt": "eyJhbGci..."}'`}
               </pre>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginTop: 'var(--space-4)' }}>
-                Or use our web interface: <Link href="/verify" style={{ color: 'var(--brand-primary)', textDecoration: 'none', fontWeight: 600 }}>originary.xyz/verify</Link>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginTop: 'var(--space-4)' }}>
+                Or use our web interface: <Link href="/verify" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600 }}>originary.xyz/verify</Link>
               </p>
             </div>
 
@@ -165,13 +165,13 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Related Resources
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
                 <Link href="/peac" style={{
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
@@ -179,7 +179,7 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
                   PEAC Protocol Specification →
                 </Link>
                 <Link href="/developers" style={{
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
@@ -187,7 +187,7 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
                   Implementation Quickstart →
                 </Link>
                 <Link href="/conformance" style={{
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
@@ -195,7 +195,7 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
                   Conformance Testing →
                 </Link>
                 <Link href="/docs/mcp/receipts" style={{
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
@@ -207,8 +207,8 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
 
             {/* Next Steps */}
             <div style={{
-              background: 'var(--gray-50)',
-              border: '1px solid var(--gray-200)',
+              background: 'var(--surface-subtle)',
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-xl)',
               padding: 'var(--space-8)',
               marginTop: 'var(--space-12)'
@@ -217,11 +217,11 @@ r5k2nF8xT3mQwK9LpXvYzJ7dR2sE4gH6tB1cA8oU0fPqN3vM5wJ9eX7lK2yT6uG8hZ4nV1xS3dW0jR6p
                 fontSize: 'var(--text-xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Ready to implement?
               </h2>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
                 Deploy PEAC receipts in your infrastructure with the CLI or reference implementation.
               </p>
               <Link

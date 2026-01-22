@@ -40,7 +40,7 @@ export default function Enterprises() {
               <div style={{
                 display: 'inline-block',
                 backgroundColor: 'var(--brand-primary-light)',
-                color: 'var(--brand-primary)',
+                color: 'var(--accent-brand)',
                 padding: 'var(--space-2) var(--space-4)',
                 borderRadius: 'var(--radius-full)',
                 fontSize: 'var(--text-sm)',
@@ -53,7 +53,7 @@ export default function Enterprises() {
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
                 <span className="text-gradient">AI Governance and AI Compliance for Enterprises</span>
               </h1>
-              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--gray-600)', maxWidth: '800px', margin: '0 auto' }}>
+              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
                 AI governance and AI compliance tools for enterprise agentic infrastructure. Comprehensive policy management, AI compliance reporting, and security controls built for SOC 2, GDPR, and multi-region deployment.
               </p>
             </div>
@@ -64,7 +64,7 @@ export default function Enterprises() {
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <h2 style={{ marginBottom: 'var(--space-6)' }}>Enterprise Requirements</h2>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
                 Meet the most stringent enterprise security, compliance, and governance requirements for agentic infrastructure.
               </p>
             </div>
@@ -88,20 +88,20 @@ export default function Enterprises() {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>SOC 2 Type II compliance support</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>SOC 2 Type II compliance support</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>GDPR and CCPA compliance support</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>GDPR and CCPA compliance support</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>End-to-end encryption</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>End-to-end encryption</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Role-based access controls</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Role-based access controls</span>
                   </div>
                 </div>
               </div>
@@ -124,20 +124,20 @@ export default function Enterprises() {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Centralized policy management</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Centralized policy management</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Approval workflows</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Approval workflows</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Audit trail logging</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Audit trail logging</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Real-time monitoring</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Real-time monitoring</span>
                   </div>
                 </div>
               </div>
@@ -160,20 +160,20 @@ export default function Enterprises() {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Multi-region deployment</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Multi-region deployment</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Enterprise support</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Enterprise support</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>Auto-scaling infrastructure</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Auto-scaling infrastructure</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--brand-primary)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--gray-600)' }}>24/7 enterprise support</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>24/7 enterprise support</span>
                   </div>
                 </div>
               </div>
@@ -185,7 +185,7 @@ export default function Enterprises() {
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <h2 style={{ marginBottom: 'var(--space-6)' }}>Deployment Options</h2>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--gray-600)' }}>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
                 Choose the deployment model that best fits your security and compliance requirements.
               </p>
             </div>
@@ -206,7 +206,7 @@ export default function Enterprises() {
                     <span style={{ fontSize: '1.5rem' }}>☁️</span>
                   </div>
                   <h3 style={{ marginBottom: 'var(--space-4)' }}>Cloud Native</h3>
-                  <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                     Fully managed service on AWS, GCP, or Azure with auto-scaling and monitoring.
                   </p>
                 </div>
@@ -227,7 +227,7 @@ export default function Enterprises() {
                     <span style={{ fontSize: '1.5rem' }}>🏢</span>
                   </div>
                   <h3 style={{ marginBottom: 'var(--space-4)' }}>On-Premises</h3>
-                  <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                     Complete air-gapped deployment for maximum security and control.
                   </p>
                 </div>
@@ -248,7 +248,7 @@ export default function Enterprises() {
                     <span style={{ fontSize: '1.5rem' }}>🔄</span>
                   </div>
                   <h3 style={{ marginBottom: 'var(--space-4)' }}>Hybrid Cloud</h3>
-                  <p style={{ color: 'var(--gray-600)', fontSize: 'var(--text-sm)' }}>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                     Flexible deployment across multiple clouds and on-premises infrastructure.
                   </p>
                 </div>
@@ -265,7 +265,7 @@ export default function Enterprises() {
                 Talk to our enterprise team about custom deployment, training, and support options.
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--brand-primary)' }}>
+                <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--accent-brand)' }}>
                   Contact Enterprise Sales
                 </a>
                 <a href="/receipts" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>

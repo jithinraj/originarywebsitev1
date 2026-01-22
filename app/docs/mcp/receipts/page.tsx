@@ -28,16 +28,16 @@ export default function MCPReceiptsDocPage() {
   return (
     <>
       <NavigationHeader />
-      <main style={{ minHeight: '100vh', background: 'var(--white)' }}>
+      <main style={{ minHeight: '100vh', background: 'var(--surface-elevated)' }}>
         <div className="container" style={{ padding: 'var(--space-32) var(--space-6)' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div style={{
               display: 'inline-flex',
-              background: 'rgba(99, 91, 255, 0.1)',
-              border: '1px solid rgba(99, 91, 255, 0.2)',
+              background: 'var(--accent-brand-subtle)',
+              border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-6)',
-              color: 'var(--brand-primary)',
+              color: 'var(--accent-brand)',
               fontSize: 'var(--text-sm)',
               fontWeight: 600,
               marginBottom: 'var(--space-6)'
@@ -49,14 +49,14 @@ export default function MCPReceiptsDocPage() {
               fontSize: 'var(--text-5xl)',
               fontWeight: 700,
               marginBottom: 'var(--space-6)',
-              color: 'var(--gray-900)'
+              color: 'var(--text-primary)'
             }}>
               MCP Receipts
             </h1>
 
             <p style={{
               fontSize: 'var(--text-xl)',
-              color: 'var(--gray-600)',
+              color: 'var(--text-secondary)',
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
@@ -68,14 +68,14 @@ export default function MCPReceiptsDocPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 MCP + PEAC Integration
               </h2>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                 The Model Context Protocol (MCP) is Anthropic&rsquo;s open standard for connecting AI assistants to external tools and data sources. Originary extends MCP by generating a cryptographically signed receipt for each tool invocation.
               </p>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7 }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                 This provides verifiable proof of which tools were called, when, by whom, and under what policy constraints - essential for compliance and auditing in production AI systems.
               </p>
             </div>
@@ -85,14 +85,14 @@ export default function MCPReceiptsDocPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 5-Minute Quickstart
               </h2>
-              <ol style={{ color: 'var(--gray-600)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
-                <li>Install Originary MCP wrapper: <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>npm install @originary/mcp-wrapper</code></li>
+              <ol style={{ color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
+                <li>Install Originary MCP wrapper: <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>npm install @originary/mcp-wrapper</code></li>
                 <li>Wrap your existing MCP server with Originary middleware</li>
-                <li>Configure policy constraints in <code style={{ background: 'var(--gray-100)', padding: '2px 6px', borderRadius: '4px' }}>peac.txt</code></li>
+                <li>Configure policy constraints in <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>peac.txt</code></li>
                 <li>Each tool call now returns with a PEAC-Receipt header</li>
                 <li>Query receipts via Originary dashboard for audit trails</li>
               </ol>
@@ -103,13 +103,13 @@ export default function MCPReceiptsDocPage() {
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Code Example
               </h2>
               <pre style={{
-                background: 'var(--gray-900)',
-                color: 'var(--gray-100)',
+                background: 'var(--text-primary)',
+                color: 'var(--surface-card)',
                 padding: 'var(--space-4)',
                 borderRadius: 'var(--radius-lg)',
                 fontSize: 'var(--text-sm)',
@@ -138,13 +138,13 @@ const server = wrapMCPServer({
                 fontSize: 'var(--text-2xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Related Resources
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
                 <Link href="/integrations/mcp" style={{
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
@@ -152,7 +152,7 @@ const server = wrapMCPServer({
                   Model Context Protocol integration overview →
                 </Link>
                 <Link href="/docs/receipts" style={{
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
@@ -160,7 +160,7 @@ const server = wrapMCPServer({
                   PEAC-Receipts and AI usage receipts →
                 </Link>
                 <Link href="/peac" style={{
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
@@ -168,7 +168,7 @@ const server = wrapMCPServer({
                   PEAC Protocol and Policy Layer →
                 </Link>
                 <Link href="/solutions/ai-builders" style={{
-                  color: 'var(--brand-primary)',
+                  color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',
                   fontWeight: 500
@@ -179,8 +179,8 @@ const server = wrapMCPServer({
             </div>
 
             <div style={{
-              background: 'var(--gray-50)',
-              border: '1px solid var(--gray-200)',
+              background: 'var(--surface-subtle)',
+              border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-xl)',
               padding: 'var(--space-8)',
               marginTop: 'var(--space-12)'
@@ -189,11 +189,11 @@ const server = wrapMCPServer({
                 fontSize: 'var(--text-xl)',
                 fontWeight: 600,
                 marginBottom: 'var(--space-4)',
-                color: 'var(--gray-900)'
+                color: 'var(--text-primary)'
               }}>
                 Add MCP receipts to your MCP tools
               </h2>
-              <p style={{ color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
+              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
                 Get audit trails for every Model Context Protocol tool invocation with Originary.
               </p>
               <Link href="/developers" className="btn btn-primary">
