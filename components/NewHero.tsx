@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
+import { Github } from 'lucide-react'
 import HeroPeacFlowBg from './HeroPeacFlowBg'
 import HeroVerifyWidget from './HeroVerifyWidget'
 
@@ -48,13 +49,12 @@ export default function NewHero() {
             <p className="strip-brand">
               <span className="strip-item">ORIGINARY&trade;</span>
               <span className="strip-dot">&middot;</span>
-              <span className="strip-item strip-platforms">Open software for macOS, Windows, Linux</span>
+              <a href="/downloads" className="strip-link-inline">Download</a>
               <span className="strip-dot">&middot;</span>
-              <span className="strip-links">
-                <a href="/downloads" className="strip-link-inline">Download</a>
-                <span className="strip-dot-inline">&middot;</span>
-                <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">Source code</a>
-              </span>
+              <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline strip-link-github">
+                <Github size={14} className="github-icon" />
+                <span>We&apos;re open source</span>
+              </a>
             </p>
             <p className="strip-clarifier">
               Originary maintains PEAC and ships production tools to issue and verify interaction records.
@@ -77,9 +77,9 @@ export default function NewHero() {
           min-height: 100vh;
           display: flex;
           align-items: center;
-          padding: 140px 0 100px;
+          padding: 120px 0 80px;
           overflow: hidden;
-          background: var(--white);
+          background: var(--surface-base);
         }
 
         .hero-bg {
@@ -92,25 +92,58 @@ export default function NewHero() {
         .bg-base {
           position: absolute;
           inset: 0;
-          background: var(--white);
+          background: var(--surface-base);
+        }
+
+        /* Subtle gradient mesh - single brand color, reduced intensity */
+        .bg-base::before {
+          content: '';
+          position: absolute;
+          top: -20%;
+          left: -10%;
+          width: 70%;
+          height: 80%;
+          background: radial-gradient(ellipse at center,
+            var(--gradient-mesh-purple) 0%,
+            var(--gradient-mesh-light-purple) 40%,
+            transparent 70%);
+          filter: blur(120px);
+          opacity: 0.6;
+        }
+
+        .bg-base::after {
+          content: '';
+          position: absolute;
+          bottom: -30%;
+          right: -10%;
+          width: 60%;
+          height: 70%;
+          background: radial-gradient(ellipse at center,
+            var(--gradient-mesh-light-purple) 0%,
+            transparent 60%);
+          filter: blur(120px);
+          opacity: 0.4;
         }
 
         .hero :global(.peac-flow-bg) {
           position: absolute;
           inset: 0;
-          color: var(--brand-primary);
-          opacity: 0.9;
+          color: var(--accent-brand);
+          opacity: 1;
           overflow: hidden;
+        }
+
+        :global([data-theme="light"]) .hero :global(.peac-flow-bg) {
+          opacity: 0.5;
         }
 
         .content-overlay {
           position: absolute;
           inset: 0;
           background: linear-gradient(90deg,
-            rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0.98) 40%,
-            rgba(255, 255, 255, 0.4) 55%,
-            rgba(255, 255, 255, 0) 100%);
+            var(--surface-base) 0%,
+            var(--surface-base) 35%,
+            transparent 100%);
         }
 
         .hero-container {
@@ -129,11 +162,11 @@ export default function NewHero() {
         .hero-content {
           display: flex;
           flex-direction: column;
-          gap: 24px;
+          gap: 20px;
         }
 
-        /* CSS-only staggered reveal - no JS required */
-        @keyframes heroReveal {
+        /* Simple, premium staggered entrance */
+        @keyframes heroFadeUp {
           from {
             opacity: 0;
             transform: translateY(24px);
@@ -146,31 +179,32 @@ export default function NewHero() {
 
         .hero-content > * {
           opacity: 0;
-          animation: heroReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          animation: heroFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }  /* Badge */
-        .hero-content > *:nth-child(2) { animation-delay: 0.2s; }  /* Headline */
-        .hero-content > *:nth-child(3) { animation-delay: 0.3s; }  /* Problem */
-        .hero-content > *:nth-child(4) { animation-delay: 0.4s; }  /* Solution */
-        .hero-content > *:nth-child(5) { animation-delay: 0.5s; }  /* CTAs */
-        .hero-content > *:nth-child(6) { animation-delay: 0.6s; }  /* Footer strip */
+        .hero-badge { animation-delay: 0.1s; }
+        .hero-headline { animation-delay: 0.2s; }
+        .hero-problem { animation-delay: 0.3s; }
+        .hero-solution { animation-delay: 0.4s; }
+        .hero-actions { animation-delay: 0.5s; }
+        .hero-footer-strip { animation-delay: 0.6s; }
 
         .hero-badge {
           display: inline-flex;
           align-items: center;
           gap: var(--space-2);
           padding: var(--space-2) var(--space-4);
-          background: rgba(99, 91, 255, 0.06);
-          border: 1px solid rgba(99, 91, 255, 0.12);
+          background: var(--accent-brand-muted);
+          border: 1px solid var(--border-brand);
           border-radius: var(--radius-full);
           font-size: var(--text-sm);
           font-weight: 500;
-          color: var(--brand-primary);
+          color: var(--accent-brand);
           width: fit-content;
           max-width: 100%;
           flex-wrap: wrap;
           justify-content: center;
+          backdrop-filter: blur(8px);
         }
 
         .hero-badge span {
@@ -180,30 +214,36 @@ export default function NewHero() {
         .hero-headline {
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 0;
           margin: 0;
         }
 
         .hero-headline-main {
-          font-size: clamp(48px, 7vw, 88px);
-          font-weight: 650;
-          letter-spacing: -0.04em;
-          line-height: 0.95;
-          color: var(--gray-950);
+          font-size: clamp(56px, 9vw, 104px);
+          font-weight: 700;
+          letter-spacing: -0.05em;
+          line-height: 0.92;
+          background: linear-gradient(180deg, var(--text-primary) 20%, var(--text-tertiary) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
 
         .hero-headline-sub {
-          font-size: clamp(32px, 5vw, 56px);
-          font-weight: 550;
-          letter-spacing: -0.025em;
-          line-height: 1.1;
-          color: var(--gray-950);
+          font-size: clamp(56px, 9vw, 104px);
+          font-weight: 700;
+          letter-spacing: -0.05em;
+          line-height: 0.92;
+          background: linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-brand-hover) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
 
         .hero-problem {
           font-size: var(--text-lg);
           line-height: 1.6;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           max-width: 480px;
           margin: 0;
         }
@@ -211,13 +251,13 @@ export default function NewHero() {
         .hero-solution {
           font-size: var(--text-base);
           line-height: 1.6;
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           max-width: 480px;
           margin: 0;
         }
 
         .hero-footer-strip {
-          margin-top: var(--space-6);
+          margin-top: var(--space-4);
         }
 
         .strip-brand {
@@ -227,16 +267,18 @@ export default function NewHero() {
           flex-wrap: wrap;
           margin: 0;
           font-size: 11px;
-          color: var(--gray-400);
+          color: var(--text-muted);
           letter-spacing: 0.01em;
         }
 
         .strip-dot {
-          color: var(--gray-300);
+          color: var(--text-muted);
+          opacity: 0.4;
         }
 
         .strip-dot-inline {
-          color: var(--gray-300);
+          color: var(--text-muted);
+          opacity: 0.4;
           margin: 0 var(--space-1);
         }
 
@@ -250,64 +292,117 @@ export default function NewHero() {
         }
 
         .strip-brand :global(.strip-link-inline) {
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           text-decoration: none;
           transition: color var(--duration-150) ease;
         }
 
         .strip-brand :global(.strip-link-inline:hover) {
-          color: var(--gray-700);
+          color: var(--text-secondary);
+        }
+
+        .strip-brand :global(.strip-link-github) {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+        }
+
+        .strip-brand :global(.github-icon) {
+          flex-shrink: 0;
         }
 
         .strip-clarifier {
           font-size: 11px;
-          color: var(--gray-400);
-          margin: var(--space-2) 0 0;
+          color: var(--text-muted);
+          margin: var(--space-1) 0 0;
           line-height: 1.5;
         }
 
         .hero-actions {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 16px;
+          margin-top: var(--space-2);
         }
 
         .hero-actions :global(.hero-btn-primary) {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: var(--space-2) var(--space-4);
-          font-size: var(--text-sm);
-          font-weight: 500;
+          gap: var(--space-2);
+          padding: var(--space-4) var(--space-8);
+          font-size: 15px;
+          font-weight: 600;
           text-decoration: none;
           color: var(--white);
-          background: var(--gray-950);
-          border-radius: var(--radius-lg);
-          transition: background var(--duration-150) ease;
+          background: linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-brand-hover) 100%);
+          border-radius: var(--btn-radius);
+          transition: all var(--duration-200) var(--ease-out);
+          box-shadow: var(--glow-brand);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .hero-actions :global(.hero-btn-primary)::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+          transition: left 0.5s ease;
+        }
+
+        .hero-actions :global(.hero-btn-primary:hover)::before {
+          left: 100%;
         }
 
         .hero-actions :global(.hero-btn-primary:hover) {
-          background: var(--gray-800);
+          transform: translateY(-2px);
+          box-shadow: var(--glow-brand-intense);
+        }
+
+        .hero-actions :global(.hero-btn-primary:focus-visible) {
+          outline: 2px solid var(--accent-brand);
+          outline-offset: 2px;
+        }
+
+        .hero-actions :global(.hero-btn-primary:active) {
+          transform: translateY(0);
         }
 
         .hero-actions :global(.hero-btn-secondary) {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: var(--space-2) var(--space-4);
-          font-size: var(--text-sm);
-          font-weight: 500;
+          gap: var(--space-2);
+          padding: var(--space-4) var(--space-8);
+          font-size: 15px;
+          font-weight: 600;
           text-decoration: none;
-          color: var(--gray-600);
-          background: transparent;
-          border: 1px solid var(--gray-200);
-          border-radius: var(--radius-lg);
-          transition: border-color var(--duration-150) ease, color var(--duration-150) ease;
+          color: var(--text-primary);
+          background: var(--surface-subtle);
+          backdrop-filter: blur(8px);
+          border: 1px solid var(--border-default);
+          border-radius: var(--btn-radius);
+          transition: all var(--duration-200) var(--ease-out);
         }
 
         .hero-actions :global(.hero-btn-secondary:hover) {
-          border-color: var(--gray-300);
-          color: var(--gray-950);
+          border-color: var(--border-hover);
+          background: var(--surface-elevated);
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-card);
+        }
+
+        .hero-actions :global(.hero-btn-secondary:focus-visible) {
+          outline: 2px solid var(--accent-brand);
+          outline-offset: 2px;
+        }
+
+        .hero-actions :global(.hero-btn-secondary:active) {
+          transform: translateY(0);
         }
 
         .hero-visual {
@@ -318,28 +413,63 @@ export default function NewHero() {
           animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
         }
 
+        @keyframes heroReveal {
+          from {
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        @keyframes widgetFloat {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-8px);
+          }
+        }
+
+        @keyframes widgetGlowPulse {
+          0%, 100% {
+            opacity: 0.6;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.9;
+            transform: scale(1.05);
+          }
+        }
+
         .widget-wrapper {
           position: relative;
+          animation: widgetFloat 6s ease-in-out infinite;
           transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .widget-wrapper:hover {
-          transform: translateY(-4px);
+          animation-play-state: paused;
+          transform: translateY(-8px) scale(1.02);
         }
 
         .widget-glow {
           position: absolute;
-          inset: -40px;
-          background: radial-gradient(ellipse at center, rgba(99, 91, 255, 0.12) 0%, transparent 70%);
-          filter: blur(40px);
+          inset: -50px;
+          background: radial-gradient(ellipse at center, var(--accent-brand-glow) 0%, transparent 60%);
+          filter: blur(80px);
           z-index: -1;
-          transition: all var(--duration-500) ease;
           pointer-events: none;
+          animation: widgetGlowPulse 4s ease-in-out infinite;
         }
 
         .widget-wrapper:hover .widget-glow {
-          inset: -50px;
-          background: radial-gradient(ellipse at center, rgba(99, 91, 255, 0.15) 0%, transparent 70%);
+          animation-play-state: paused;
+          inset: -70px;
+          opacity: 1;
+          filter: blur(100px);
         }
 
         @media (max-width: 1024px) {
@@ -354,7 +484,7 @@ export default function NewHero() {
           }
 
           .content-overlay {
-            background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%);
+            background: radial-gradient(ellipse 100% 100% at 50% 50%, var(--surface-base) 0%, var(--surface-base) 100%);
           }
 
           .hero-problem,
@@ -419,26 +549,18 @@ export default function NewHero() {
           .strip-brand {
             font-size: 10px;
             line-height: 1.6;
+            justify-content: center;
             flex-direction: column;
             gap: 2px;
-          }
-
-          .strip-clarifier {
-            font-size: 10px;
-            text-align: center;
           }
 
           .strip-dot {
             display: none;
           }
 
-          .strip-platforms {
-            font-size: 9px;
-            color: var(--gray-400);
-          }
-
-          .strip-links {
-            margin-top: 4px;
+          .strip-clarifier {
+            font-size: 10px;
+            text-align: center;
           }
         }
 
@@ -545,10 +667,6 @@ export default function NewHero() {
           .strip-brand {
             font-size: 9px;
             gap: 2px;
-          }
-
-          .strip-platforms {
-            font-size: 8px;
           }
 
           .strip-clarifier {

@@ -23,7 +23,7 @@ function FooterNavLink({
   external?: boolean
 }) {
   const baseStyle: React.CSSProperties = {
-    color: 'var(--gray-600)',
+    color: 'var(--text-secondary)',
     textDecoration: 'none',
     fontSize: 'var(--text-sm)',
     lineHeight: '1.4',
@@ -37,8 +37,8 @@ function FooterNavLink({
         target="_blank"
         rel="noopener noreferrer"
         style={baseStyle}
-        onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gray-900)')}
-        onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--gray-600)')}
+        onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
+        onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
       >
         {children}
       </a>
@@ -50,8 +50,8 @@ function FooterNavLink({
       href={href}
       prefetch={false}
       style={baseStyle}
-      onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gray-900)')}
-      onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--gray-600)')}
+      onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
+      onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
     >
       {children}
     </Link>
@@ -65,13 +65,14 @@ function LogoMark() {
         width: '28px',
         height: '28px',
         borderRadius: 'var(--radius-lg)',
-        background: 'var(--gray-950)',
+        background: 'var(--accent-brand)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         color: 'var(--white)',
         fontWeight: 600,
         fontSize: 'var(--text-sm)',
+        boxShadow: '0 0 20px -5px var(--accent-brand-glow)',
       }}
       aria-hidden="true"
     >
@@ -104,14 +105,15 @@ function PrimaryCta({
   const variantStyle: React.CSSProperties =
     variant === 'solid'
       ? {
-          background: 'var(--gray-900)',
+          background: 'var(--accent-brand)',
           color: 'white',
           border: 'none',
+          boxShadow: '0 0 20px -5px var(--accent-brand-glow)',
         }
       : {
           background: 'transparent',
-          color: 'var(--gray-900)',
-          border: '1px solid var(--gray-200)',
+          color: 'var(--text-primary)',
+          border: '1px solid var(--border-default)',
         }
 
   return (
@@ -121,14 +123,14 @@ function PrimaryCta({
       style={{ ...baseStyle, ...variantStyle }}
       onMouseEnter={(e) => {
         if (variant === 'solid') {
-          e.currentTarget.style.background = 'var(--gray-800)'
+          e.currentTarget.style.background = 'var(--accent-brand-hover)'
         } else {
-          e.currentTarget.style.background = 'var(--gray-50)'
+          e.currentTarget.style.background = 'var(--surface-subtle)'
         }
       }}
       onMouseLeave={(e) => {
         if (variant === 'solid') {
-          e.currentTarget.style.background = 'var(--gray-900)'
+          e.currentTarget.style.background = 'var(--accent-brand)'
         } else {
           e.currentTarget.style.background = 'transparent'
         }
@@ -147,7 +149,7 @@ function FooterNavGroup({ group }: { group: FooterGroup }) {
   const titleStyle: React.CSSProperties = {
     fontSize: '10px',
     fontWeight: 600,
-    color: 'var(--gray-500)',
+    color: 'var(--text-muted)',
     marginBottom: '12px',
     textTransform: 'uppercase',
     letterSpacing: '0.08em',
@@ -206,7 +208,7 @@ function LayerA() {
           textAlign: 'center',
           paddingBottom: '32px',
           marginBottom: '32px',
-          borderBottom: '1px solid var(--gray-200)',
+          borderBottom: '1px solid var(--border-default)',
         }}
       >
         <Link
@@ -224,9 +226,9 @@ function LayerA() {
           <LogoMark />
           <span
             style={{
-              color: 'var(--gray-900)',
+              color: 'var(--text-primary)',
               fontWeight: 600,
-              fontSize: '16px',
+              fontSize: 'var(--text-base)',
               letterSpacing: '-0.01em',
             }}
           >
@@ -235,16 +237,16 @@ function LayerA() {
         </Link>
         <p
           style={{
-            color: 'var(--gray-500)',
-            fontSize: '14px',
+            color: 'var(--text-tertiary)',
+            fontSize: 'var(--text-sm)',
             maxWidth: '400px',
             lineHeight: 1.5,
-            marginBottom: '16px',
+            marginBottom: 'var(--space-4)',
           }}
         >
           Open infrastructure, tools, and systems for the agentic web.
         </p>
-        <div style={{ display: 'flex', gap: '8px' }}>
+        <div style={{ display: 'flex', gap: 'var(--space-2)' }}>
           <PrimaryCta href="/demo">View demo</PrimaryCta>
           <PrimaryCta href="/peac" variant="ghost">
             Read the spec
@@ -283,7 +285,7 @@ function LayerB() {
       style={{
         marginTop: '40px',
         paddingTop: '20px',
-        borderTop: '1px solid var(--gray-200)',
+        borderTop: '1px solid var(--border-default)',
       }}
     >
       {/* Desktop layout */}
@@ -305,13 +307,13 @@ function LayerB() {
                 href={link.href}
                 prefetch={false}
                 style={{
-                  color: 'var(--gray-500)',
+                  color: 'var(--text-tertiary)',
                   textDecoration: 'none',
                   fontSize: '11px',
                   transition: 'color 0.15s ease',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gray-700)')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--gray-500)')}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-tertiary)')}
               >
                 {link.label}
               </Link>
@@ -327,21 +329,21 @@ function LayerB() {
                   key={link.href}
                   href={link.href}
                   style={{
-                    color: 'var(--gray-400)',
+                    color: 'var(--text-muted)',
                     textDecoration: 'none',
                     fontSize: '10px',
                     fontFamily: 'var(--font-jetbrains-mono), ui-monospace, monospace',
                     transition: 'color 0.15s ease',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gray-600)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--gray-400)')}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-tertiary)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
                 >
                   {link.label}
                 </a>
               ))}
             </div>
 
-            <div style={{ width: '1px', height: '12px', background: 'var(--gray-200)' }} aria-hidden="true" />
+            <div style={{ width: '1px', height: '12px', background: 'var(--border-default)' }} aria-hidden="true" />
 
             {/* Social */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -352,14 +354,14 @@ function LayerB() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    color: 'var(--gray-500)',
+                    color: 'var(--text-tertiary)',
                     textDecoration: 'none',
                     fontSize: '11px',
                     fontWeight: 500,
                     transition: 'color 0.15s ease',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gray-800)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--gray-500)')}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-tertiary)')}
                 >
                   {link.label}
                 </a>
@@ -447,27 +449,14 @@ function LayerC() {
         boxSizing: 'border-box',
       }}
     >
-      {/* Noise texture overlay */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          opacity: 0.4,
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-          pointerEvents: 'none',
-          mixBlendMode: 'overlay',
-        }}
-        aria-hidden="true"
-      />
-
       {/* Gradient mesh */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
           background: `
-            radial-gradient(ellipse 80% 50% at 20% 100%, rgba(99, 91, 255, 0.12) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 40% at 80% 0%, rgba(99, 91, 255, 0.08) 0%, transparent 50%)
+            radial-gradient(ellipse 80% 50% at 20% 100%, var(--accent-brand-muted) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 40% at 80% 0%, var(--accent-brand-subtle) 0%, transparent 50%)
           `,
           pointerEvents: 'none',
         }}
@@ -503,7 +492,7 @@ function LayerC() {
                 width: '32px',
                 height: '32px',
                 borderRadius: 'var(--radius-lg)',
-                background: 'var(--white)',
+                background: 'var(--surface-elevated)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -610,8 +599,8 @@ export default function Footer() {
   return (
     <footer
       style={{
-        background: 'linear-gradient(180deg, var(--gray-50) 0%, var(--gray-100) 100%)',
-        borderTop: '1px solid var(--gray-200)',
+        background: 'var(--surface-elevated)',
+        borderTop: '1px solid var(--border-default)',
         position: 'relative',
       }}
       role="contentinfo"
@@ -692,17 +681,17 @@ export default function Footer() {
             gap: 0 !important;
           }
           .footer-nav-group {
-            border-bottom: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--border-default);
             padding: 14px 0;
           }
           .footer-nav-group:first-child {
-            border-top: 1px solid var(--gray-200);
+            border-top: 1px solid var(--border-default);
           }
           .footer-nav-mobile[open] .footer-accordion-icon {
             transform: rotate(45deg);
           }
           .footer-accordion-icon {
-            font-size: 16px;
+            font-size: var(--text-base);
             font-weight: 400;
             transition: transform 0.2s ease;
           }
@@ -727,7 +716,7 @@ export default function Footer() {
           .footer-mobile-label {
             font-size: 10px;
             font-weight: 600;
-            color: var(--gray-400);
+            color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.08em;
           }
@@ -737,7 +726,7 @@ export default function Footer() {
             gap: 8px 16px;
           }
           .footer-mobile-link {
-            color: var(--gray-600);
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 13px;
             line-height: 1.4;
@@ -745,7 +734,7 @@ export default function Footer() {
           .footer-mobile-link-mono {
             font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
             font-size: 11px;
-            color: var(--gray-500);
+            color: var(--text-tertiary);
           }
 
           /* Brand band */

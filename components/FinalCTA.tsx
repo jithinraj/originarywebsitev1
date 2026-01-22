@@ -71,8 +71,8 @@ export default function FinalCTA() {
       <style jsx>{`
         .cta {
           position: relative;
-          padding: 160px 0;
-          background: linear-gradient(180deg, #fafafa 0%, #f0f0f5 50%, #fafafa 100%);
+          padding: var(--section-padding-lg) 0;
+          background: var(--surface-base);
           overflow: hidden;
         }
 
@@ -86,31 +86,41 @@ export default function FinalCTA() {
           position: absolute;
           inset: 0;
           background:
-            radial-gradient(ellipse 50% 40% at 50% 30%, rgba(99, 91, 255, 0.08) 0%, transparent 60%),
-            radial-gradient(ellipse 40% 30% at 30% 70%, rgba(0, 212, 170, 0.05) 0%, transparent 50%),
-            radial-gradient(ellipse 40% 30% at 70% 70%, rgba(99, 91, 255, 0.04) 0%, transparent 50%);
+            radial-gradient(ellipse 60% 50% at 50% 40%, var(--gradient-mesh-purple) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 40% at 25% 60%, var(--gradient-mesh-teal) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 40% at 75% 60%, var(--gradient-mesh-light-purple) 0%, transparent 50%);
         }
 
         .orb {
           position: absolute;
           border-radius: 50%;
-          filter: blur(80px);
+          filter: blur(140px);
+          animation: ctaFloat 30s ease-in-out infinite alternate;
+          opacity: 0.7;
         }
 
         .orb-1 {
-          width: 400px;
-          height: 400px;
-          top: 10%;
-          left: 10%;
-          background: rgba(99, 91, 255, 0.1);
+          width: 450px;
+          height: 450px;
+          top: 5%;
+          left: 5%;
+          background: var(--orb-purple);
+          animation-delay: 0s;
         }
 
         .orb-2 {
-          width: 300px;
-          height: 300px;
-          bottom: 10%;
-          right: 15%;
-          background: rgba(0, 212, 170, 0.08);
+          width: 350px;
+          height: 350px;
+          bottom: 5%;
+          right: 10%;
+          background: var(--orb-teal);
+          animation-delay: -15s;
+        }
+
+        @keyframes ctaFloat {
+          0% { transform: translate(0, 0) scale(1); }
+          50% { transform: translate(15px, 10px) scale(1.03); }
+          100% { transform: translate(-10px, -5px) scale(0.98); }
         }
 
         .cta-container {
@@ -118,106 +128,138 @@ export default function FinalCTA() {
           z-index: 1;
           max-width: 800px;
           margin: 0 auto;
-          padding: 0 24px;
+          padding: 0 var(--space-6);
           text-align: center;
         }
 
         .cta-pills {
           display: flex;
           justify-content: center;
-          gap: 12px;
-          margin-bottom: 40px;
+          gap: var(--space-3);
+          margin-bottom: var(--space-10);
           flex-wrap: wrap;
         }
 
         .pill {
           display: inline-flex;
           align-items: center;
-          gap: 6px;
-          padding: 8px 16px;
-          font-size: 13px;
+          gap: var(--space-2);
+          padding: var(--space-2) var(--space-4);
+          font-size: var(--text-sm);
           font-weight: 500;
-          color: #635bff;
-          background: rgba(99, 91, 255, 0.08);
-          border: 1px solid rgba(99, 91, 255, 0.15);
-          border-radius: 100px;
+          color: var(--accent-brand);
+          background: var(--accent-brand-muted);
+          border: 1px solid var(--border-brand);
+          border-radius: var(--radius-full);
         }
 
         .cta-content {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 24px;
+          gap: var(--space-6);
         }
 
         .cta-title {
-          font-size: clamp(44px, 6vw, 72px);
-          font-weight: 600;
-          letter-spacing: -0.035em;
-          color: #0a0a0a;
+          font-size: clamp(var(--text-5xl), 8vw, var(--text-8xl));
+          font-weight: 700;
+          letter-spacing: -0.04em;
           margin: 0;
-          line-height: 1.05;
+          line-height: 1;
+          background: linear-gradient(180deg, var(--text-primary) 0%, var(--text-tertiary) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
 
         .cta-description {
-          font-size: 18px;
+          font-size: var(--text-xl);
           line-height: 1.6;
-          color: #525252;
-          max-width: 480px;
+          color: var(--text-secondary);
+          max-width: 520px;
           margin: 0;
         }
 
         .cta-actions {
           display: flex;
-          gap: 16px;
-          margin-top: 8px;
+          gap: var(--space-5);
+          margin-top: var(--space-4);
         }
 
         .cta-actions :global(.cta-btn-primary) {
           display: inline-flex;
           align-items: center;
-          gap: 10px;
-          padding: 18px 36px;
-          font-size: 15px;
+          gap: var(--space-3);
+          padding: var(--space-5) var(--space-10);
+          font-size: var(--text-base);
           font-weight: 600;
           text-decoration: none;
           color: white;
-          background: #635bff;
-          border-radius: 12px;
-          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          background: linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-brand-hover) 100%);
+          border-radius: var(--radius-2xl);
+          transition: all var(--duration-300) var(--ease-out);
+          box-shadow: var(--glow-brand);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .cta-actions :global(.cta-btn-primary)::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+          transition: left var(--duration-500) ease;
+        }
+
+        .cta-actions :global(.cta-btn-primary:hover)::before {
+          left: 100%;
         }
 
         .cta-actions :global(.cta-btn-primary:hover) {
-          background: #5349e8;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 30px rgba(99, 91, 255, 0.25);
+          transform: translateY(-4px) scale(1.02);
+          box-shadow: var(--glow-brand-intense);
+        }
+
+        .cta-actions :global(.cta-btn-primary:focus-visible) {
+          outline: 2px solid var(--accent-brand);
+          outline-offset: 2px;
         }
 
         .cta-actions :global(.cta-btn-secondary) {
           display: inline-flex;
           align-items: center;
-          padding: 18px 36px;
-          font-size: 15px;
+          padding: var(--space-5) var(--space-10);
+          font-size: var(--text-base);
           font-weight: 600;
           text-decoration: none;
-          color: #0a0a0a;
-          background: white;
-          border: 1px solid rgba(0, 0, 0, 0.1);
-          border-radius: 12px;
-          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          color: var(--text-primary);
+          background: var(--surface-subtle);
+          backdrop-filter: blur(10px);
+          border: 1px solid var(--border-default);
+          border-radius: var(--radius-2xl);
+          transition: all var(--duration-300) var(--ease-out);
         }
 
         .cta-actions :global(.cta-btn-secondary:hover) {
-          border-color: rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-          transform: translateY(-2px);
+          border-color: var(--border-hover);
+          background: var(--surface-elevated);
+          transform: translateY(-3px);
+          box-shadow: var(--shadow-card);
+        }
+
+        .cta-actions :global(.cta-btn-secondary:focus-visible) {
+          outline: 2px solid var(--accent-brand);
+          outline-offset: 2px;
         }
 
         .reveal {
           opacity: 0;
           transform: translateY(30px);
-          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: opacity var(--duration-700) var(--ease-out),
+                      transform var(--duration-700) var(--ease-out);
         }
 
         .reveal.in-view {
@@ -231,20 +273,20 @@ export default function FinalCTA() {
 
         @media (max-width: 768px) {
           .cta {
-            padding: 120px 0;
+            padding: var(--section-padding) 0;
           }
 
           .cta-pills {
-            margin-bottom: 32px;
+            margin-bottom: var(--space-8);
           }
 
           .pill {
-            font-size: 12px;
-            padding: 6px 12px;
+            font-size: var(--text-xs);
+            padding: var(--space-2) var(--space-3);
           }
 
           .cta-description {
-            font-size: 16px;
+            font-size: var(--text-base);
           }
 
           .cta-actions {
@@ -267,21 +309,21 @@ export default function FinalCTA() {
 
         @media (max-width: 480px) {
           .cta {
-            padding: 80px 0;
+            padding: var(--space-20) 0;
           }
 
           .cta-container {
-            padding: 0 16px;
+            padding: 0 var(--space-4);
           }
 
           .cta-content {
-            margin-bottom: 40px;
+            margin-bottom: var(--space-10);
           }
 
           .cta-actions :global(.cta-btn-primary),
           .cta-actions :global(.cta-btn-secondary) {
-            padding: 14px 24px;
-            font-size: 14px;
+            padding: var(--space-4) var(--space-6);
+            font-size: var(--text-sm);
           }
         }
 

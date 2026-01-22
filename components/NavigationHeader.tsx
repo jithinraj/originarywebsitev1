@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, Github } from 'lucide-react'
 
 export default function NavigationHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -26,12 +26,12 @@ export default function NavigationHeader() {
         right: 0,
         zIndex: 'var(--z-sticky)',
         background: isScrolled
-          ? 'rgba(255, 255, 255, 0.95)'
-          : 'rgba(255, 255, 255, 0.8)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        borderBottom: `1px solid ${isScrolled ? 'rgba(0, 0, 0, 0.06)' : 'transparent'}`,
-        transition: 'all 0.2s ease',
+          ? 'var(--surface-elevated)'
+          : 'transparent',
+        backdropFilter: isScrolled ? 'blur(20px) saturate(180%)' : 'none',
+        WebkitBackdropFilter: isScrolled ? 'blur(20px) saturate(180%)' : 'none',
+        borderBottom: `1px solid ${isScrolled ? 'var(--border-default)' : 'transparent'}`,
+        transition: 'all 0.3s ease',
         padding: 'var(--space-3) 0'
       }}
     >
@@ -54,7 +54,7 @@ export default function NavigationHeader() {
               alignItems: 'center',
               gap: 'var(--space-3)',
               textDecoration: 'none',
-              color: 'var(--gray-900)',
+              color: 'var(--text-primary)',
               fontWeight: 700,
               fontSize: 'var(--text-xl)',
               letterSpacing: '-0.02em'
@@ -66,13 +66,14 @@ export default function NavigationHeader() {
                 width: '28px',
                 height: '28px',
                 borderRadius: 'var(--radius-lg)',
-                background: 'var(--gray-950)',
+                background: 'var(--accent-brand)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: 'var(--white)',
                 fontWeight: '600',
-                fontSize: 'var(--text-sm)'
+                fontSize: 'var(--text-sm)',
+                boxShadow: '0 0 20px -5px var(--accent-brand-glow)'
               }}
             >
               O
@@ -103,7 +104,9 @@ export default function NavigationHeader() {
                 { href: '/trace', label: 'Trace' },
                 { href: '/products/gateway-402', label: 'Gateway 402' },
                 { href: '/products/studio', label: 'Studio' },
-                { href: '/products/verify', label: 'Verify API' }
+                { href: '/products/verify', label: 'Verify API' },
+                { href: 'separator', label: '' },
+                { href: '/downloads', label: 'Downloads' }
               ]} />
 
               <NavLink href="/developers">Developers</NavLink>
@@ -126,28 +129,18 @@ export default function NavigationHeader() {
                 gap: 'var(--space-3)'
               }}
             >
+              <a
+                href="https://github.com/peacprotocol/peac"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-github-btn"
+                aria-label="View on GitHub"
+              >
+                <Github size={18} />
+              </a>
               <Link
                 href="/verify"
                 className="nav-cta-btn"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: 'var(--space-2) var(--space-4)',
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 500,
-                  textDecoration: 'none',
-                  color: 'var(--white)',
-                  background: 'var(--brand-primary)',
-                  borderRadius: 'var(--radius-lg)',
-                  transition: 'background var(--duration-150) ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'var(--brand-primary-dark)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'var(--brand-primary)'
-                }}
               >
                 Try Verify
               </Link>
@@ -164,7 +157,7 @@ export default function NavigationHeader() {
               display: 'none',
               background: 'none',
               border: 'none',
-              color: 'var(--gray-700)',
+              color: 'var(--text-secondary)',
               cursor: 'pointer',
               padding: 'var(--space-2)'
             }}
@@ -182,17 +175,19 @@ export default function NavigationHeader() {
               top: '100%',
               left: 0,
               right: 0,
-              background: 'var(--white)',
-              border: '1px solid var(--gray-200)',
+              background: 'var(--surface-elevated)',
+              border: '1px solid var(--border-default)',
               borderTop: 'none',
               borderRadius: '0 0 var(--radius-2xl) var(--radius-2xl)',
-              boxShadow: 'var(--shadow-xl)',
+              boxShadow: 'var(--shadow-elevated)',
               padding: 'var(--space-6)',
-              margin: '0 var(--space-6)'
+              margin: '0 var(--space-6)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)'
             }}
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-              <Link href="/platform" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
+              <Link href="/platform" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
                 Platform
               </Link>
               <MobileNavSection title="Products" items={[
@@ -200,10 +195,11 @@ export default function NavigationHeader() {
                 { href: '/trace', label: 'Trace' },
                 { href: '/products/gateway-402', label: 'Gateway 402' },
                 { href: '/products/studio', label: 'Studio' },
-                { href: '/products/verify', label: 'Verify API' }
+                { href: '/products/verify', label: 'Verify API' },
+                { href: '/downloads', label: 'Downloads' }
               ]} />
 
-              <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
+              <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
                 Developers
               </Link>
               <MobileNavSection title="Protocol" items={[
@@ -213,7 +209,7 @@ export default function NavigationHeader() {
                 { href: '/receipts', label: 'Receipts' },
                 { href: '/verify', label: 'Verify' }
               ]} />
-              <Link href="/blog" style={{ padding: 'var(--space-3) 0', color: 'var(--gray-700)', textDecoration: 'none' }}>
+              <Link href="/blog" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
                 Blog
               </Link>
 
@@ -223,21 +219,44 @@ export default function NavigationHeader() {
                 gap: 'var(--space-3)',
                 marginTop: 'var(--space-4)',
                 paddingTop: 'var(--space-4)',
-                borderTop: '1px solid var(--gray-200)'
+                borderTop: '1px solid var(--border-default)'
               }}>
+                <a
+                  href="https://github.com/peacprotocol/peac"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 'var(--space-2)',
+                    padding: 'var(--space-3) var(--space-4)',
+                    fontSize: 'var(--text-sm)',
+                    fontWeight: 500,
+                    textDecoration: 'none',
+                    color: 'var(--text-secondary)',
+                    background: 'var(--surface-subtle)',
+                    border: '1px solid var(--border-default)',
+                    borderRadius: 'var(--radius-lg)'
+                  }}
+                >
+                  <Github size={16} />
+                  View on GitHub
+                </a>
                 <Link
                   href="/verify"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    padding: 'var(--space-2) var(--space-4)',
+                    padding: 'var(--space-3) var(--space-4)',
                     fontSize: 'var(--text-sm)',
                     fontWeight: 500,
                     textDecoration: 'none',
                     color: 'var(--white)',
-                    background: 'var(--brand-primary)',
-                    borderRadius: 'var(--radius-lg)'
+                    background: 'var(--accent-brand)',
+                    borderRadius: 'var(--radius-lg)',
+                    boxShadow: '0 0 20px -5px var(--accent-brand-glow)'
                   }}
                 >
                   Try Verify
@@ -249,6 +268,156 @@ export default function NavigationHeader() {
       </div>
 
       <style jsx>{`
+        /* Nav CTA Button */
+        :global(.nav-cta-btn) {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: var(--space-2) var(--space-4);
+          font-size: var(--text-sm);
+          font-weight: 500;
+          text-decoration: none;
+          color: var(--white);
+          background: var(--accent-brand);
+          border-radius: var(--btn-radius);
+          transition: all var(--duration-200) ease;
+          box-shadow: 0 0 20px -5px var(--accent-brand-glow);
+        }
+
+        :global(.nav-cta-btn:hover) {
+          background: var(--accent-brand-hover);
+          transform: translateY(-1px);
+          box-shadow: 0 0 30px -5px var(--accent-brand-glow);
+        }
+
+        :global(.nav-cta-btn:focus-visible) {
+          outline: 2px solid var(--accent-brand);
+          outline-offset: 2px;
+        }
+
+        /* Nav GitHub Button */
+        :global(.nav-github-btn) {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          color: var(--text-secondary);
+          background: transparent;
+          border: 1px solid var(--border-default);
+          border-radius: var(--radius-lg);
+          text-decoration: none;
+          transition: all var(--duration-200) ease;
+        }
+
+        :global(.nav-github-btn:hover) {
+          color: var(--text-primary);
+          border-color: var(--border-hover);
+          background: var(--surface-subtle);
+        }
+
+        :global(.nav-github-btn:focus-visible) {
+          outline: 2px solid var(--accent-brand);
+          outline-offset: 2px;
+        }
+
+        /* Nav Link */
+        :global(.nav-link) {
+          color: var(--text-secondary);
+          text-decoration: none;
+          font-size: var(--text-sm);
+          font-weight: 500;
+          padding: var(--space-2) var(--space-3);
+          border-radius: var(--radius-md);
+          transition: all var(--duration-200) var(--ease-out);
+        }
+
+        :global(.nav-link:hover) {
+          background-color: var(--surface-subtle);
+          color: var(--text-primary);
+        }
+
+        :global(.nav-link:focus-visible) {
+          outline: 2px solid var(--accent-brand);
+          outline-offset: 2px;
+        }
+
+        /* Dropdown Item */
+        :global(.dropdown-item) {
+          display: flex;
+          align-items: center;
+          padding: var(--space-3) var(--space-4);
+          color: var(--text-secondary);
+          text-decoration: none;
+          font-size: var(--text-sm);
+          border-radius: var(--radius-lg);
+          transition: all var(--duration-200) var(--ease-out);
+        }
+
+        :global(.dropdown-item:hover) {
+          background-color: var(--surface-subtle);
+          color: var(--text-primary);
+        }
+
+        :global(.dropdown-item:focus-visible) {
+          outline: 2px solid var(--accent-brand);
+          outline-offset: -2px;
+        }
+
+        /* Mobile Nav Section */
+        :global(.mobile-nav-section) {
+          margin-bottom: var(--space-2);
+        }
+
+        :global(.mobile-nav-title) {
+          font-size: var(--text-sm);
+          font-weight: 600;
+          color: var(--text-primary);
+          margin-bottom: var(--space-2);
+        }
+
+        :global(.mobile-nav-items) {
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-1);
+        }
+
+        :global(.mobile-nav-item) {
+          padding: var(--space-2) var(--space-3);
+          color: var(--text-secondary);
+          text-decoration: none;
+          font-size: var(--text-sm);
+          border-radius: var(--radius-md);
+          display: block;
+          transition: all var(--duration-200) ease;
+        }
+
+        :global(.mobile-nav-item:hover) {
+          background-color: var(--surface-subtle);
+          color: var(--text-primary);
+        }
+
+        :global(.mobile-nav-item:focus-visible) {
+          outline: 2px solid var(--accent-brand);
+          outline-offset: 2px;
+        }
+
+        :global(.mobile-nav-item-content) {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        :global(.mobile-nav-badge) {
+          font-size: var(--text-xs);
+          color: var(--text-tertiary);
+          background: var(--surface-subtle);
+          padding: 2px 6px;
+          border-radius: var(--radius-sm);
+          font-weight: 500;
+        }
+
         @media (max-width: 768px) {
           .desktop-nav {
             display: none !important;
@@ -269,26 +438,7 @@ export default function NavigationHeader() {
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link
-      href={href}
-      style={{
-        color: 'var(--gray-700)',
-        textDecoration: 'none',
-        fontSize: 'var(--text-sm)',
-        fontWeight: 500,
-        padding: 'var(--space-2) var(--space-3)',
-        borderRadius: 'var(--radius-md)',
-        transition: 'all var(--duration-200) var(--ease-out)'
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = 'var(--gray-100)'
-        e.currentTarget.style.color = 'var(--gray-900)'
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = 'transparent'
-        e.currentTarget.style.color = 'var(--gray-700)'
-      }}
-    >
+    <Link href={href} className="nav-link">
       {children}
     </Link>
   )
@@ -359,14 +509,14 @@ function NavDropdown({ label, items }: { label: string; items: Array<{ href: str
           gap: 'var(--space-1)',
           background: 'none',
           border: 'none',
-          color: 'var(--gray-700)',
+          color: 'var(--text-secondary)',
           fontSize: 'var(--text-sm)',
           fontWeight: 500,
           padding: 'var(--space-2) var(--space-3)',
           borderRadius: 'var(--radius-md)',
           cursor: 'pointer',
           transition: 'all var(--duration-200) var(--ease-out)',
-          backgroundColor: isOpen ? 'var(--gray-100)' : 'transparent'
+          backgroundColor: isOpen ? 'var(--surface-subtle)' : 'transparent'
         }}
       >
         {label}
@@ -382,13 +532,15 @@ function NavDropdown({ label, items }: { label: string; items: Array<{ href: str
             position: 'absolute',
             top: '100%',
             left: 0,
-            background: 'var(--white)',
-            border: '1px solid var(--gray-200)',
+            background: 'var(--surface-elevated)',
+            border: '1px solid var(--border-default)',
             borderRadius: 'var(--radius-xl)',
-            boxShadow: 'var(--shadow-xl)',
+            boxShadow: 'var(--shadow-elevated)',
             padding: 'var(--space-2)',
             minWidth: '200px',
-            zIndex: 'var(--z-dropdown)'
+            zIndex: 'var(--z-dropdown)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)'
           }}
         >
           {items.map((item, index) => {
@@ -399,7 +551,7 @@ function NavDropdown({ label, items }: { label: string; items: Array<{ href: str
                   key={`separator-${index}`}
                   style={{
                     height: '1px',
-                    background: 'var(--gray-200)',
+                    background: 'var(--border-default)',
                     margin: 'var(--space-2) 0'
                   }}
                 />
@@ -414,8 +566,8 @@ function NavDropdown({ label, items }: { label: string; items: Array<{ href: str
                     style={{
                       marginLeft: 'auto',
                       fontSize: 'var(--text-xs)',
-                      color: 'var(--gray-500)',
-                      background: 'var(--gray-100)',
+                      color: 'var(--text-tertiary)',
+                      background: 'var(--surface-subtle)',
                       padding: '2px 6px',
                       borderRadius: 'var(--radius-sm)',
                       fontWeight: 500
@@ -434,24 +586,7 @@ function NavDropdown({ label, items }: { label: string; items: Array<{ href: str
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    padding: 'var(--space-3) var(--space-4)',
-                    color: 'var(--gray-700)',
-                    textDecoration: 'none',
-                    fontSize: 'var(--text-sm)',
-                    borderRadius: 'var(--radius-lg)',
-                    transition: 'all var(--duration-200) var(--ease-out)'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--gray-100)'
-                    e.currentTarget.style.color = 'var(--gray-900)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent'
-                    e.currentTarget.style.color = 'var(--gray-700)'
-                  }}
+                  className="dropdown-item"
                 >
                   {linkContent}
                 </a>
@@ -462,24 +597,7 @@ function NavDropdown({ label, items }: { label: string; items: Array<{ href: str
               <Link
                 key={item.href}
                 href={item.href}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  padding: 'var(--space-3) var(--space-4)',
-                  color: 'var(--gray-700)',
-                  textDecoration: 'none',
-                  fontSize: 'var(--text-sm)',
-                  borderRadius: 'var(--radius-lg)',
-                  transition: 'all var(--duration-200) var(--ease-out)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'var(--gray-100)'
-                  e.currentTarget.style.color = 'var(--gray-900)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent'
-                  e.currentTarget.style.color = 'var(--gray-700)'
-                }}
+                className="dropdown-item"
               >
                 {linkContent}
               </Link>
@@ -493,33 +611,15 @@ function NavDropdown({ label, items }: { label: string; items: Array<{ href: str
 
 function MobileNavSection({ title, items }: { title: string; items: Array<{ href: string; label: string; badge?: string; external?: boolean }> }) {
   return (
-    <div>
-      <h4 style={{
-        fontSize: 'var(--text-sm)',
-        fontWeight: 600,
-        color: 'var(--gray-900)',
-        marginBottom: 'var(--space-2)'
-      }}>
-        {title}
-      </h4>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
+    <div className="mobile-nav-section">
+      <h4 className="mobile-nav-title">{title}</h4>
+      <div className="mobile-nav-items">
         {items.map((item) => {
           const linkContent = (
-            <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+            <span className="mobile-nav-item-content">
               <span>{item.label}</span>
               {item.badge && (
-                <span
-                  style={{
-                    fontSize: 'var(--text-xs)',
-                    color: 'var(--gray-500)',
-                    background: 'var(--gray-100)',
-                    padding: '2px 6px',
-                    borderRadius: 'var(--radius-sm)',
-                    fontWeight: 500
-                  }}
-                >
-                  {item.badge}
-                </span>
+                <span className="mobile-nav-badge">{item.badge}</span>
               )}
             </span>
           )
@@ -531,14 +631,7 @@ function MobileNavSection({ title, items }: { title: string; items: Array<{ href
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  padding: 'var(--space-2) var(--space-3)',
-                  color: 'var(--gray-600)',
-                  textDecoration: 'none',
-                  fontSize: 'var(--text-sm)',
-                  borderRadius: 'var(--radius-md)',
-                  display: 'block'
-                }}
+                className="mobile-nav-item"
               >
                 {linkContent}
               </a>
@@ -546,18 +639,7 @@ function MobileNavSection({ title, items }: { title: string; items: Array<{ href
           }
 
           return (
-            <Link
-              key={item.href}
-              href={item.href}
-              style={{
-                padding: 'var(--space-2) var(--space-3)',
-                color: 'var(--gray-600)',
-                textDecoration: 'none',
-                fontSize: 'var(--text-sm)',
-                borderRadius: 'var(--radius-md)',
-                display: 'block'
-              }}
-            >
+            <Link key={item.href} href={item.href} className="mobile-nav-item">
               {linkContent}
             </Link>
           )

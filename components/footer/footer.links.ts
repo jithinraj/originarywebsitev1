@@ -30,6 +30,7 @@ export const FOOTER_PRODUCTS: FooterGroup = {
     { label: 'Verify API', href: '/products/verify' },
     { label: 'Studio', href: '/products/studio' },
     { label: 'Cloud', href: '/cloud' },
+    { label: 'Downloads', href: '/downloads' },
   ],
 }
 

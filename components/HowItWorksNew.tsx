@@ -13,7 +13,7 @@ const steps = [
     tagline: 'Machine-readable terms',
     desc: 'Deploy a policy at /.well-known/peac.txt defining access terms and payment requirements. Agents discover it automatically.',
     Illustration: PublishIllustration,
-    gradient: 'linear-gradient(135deg, var(--gray-950) 0%, var(--gray-800) 100%)',
+    gradient: 'linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%)',
     code: `# /.well-known/peac.txt
 version: peac-policy/0.1
 issuer: api.example.com
@@ -32,7 +32,7 @@ rules:
     tagline: 'Real-time decisions',
     desc: 'Allow, deny, or request payment before serving responses. HTTP 402 status codes trigger programmatic settlement.',
     Illustration: EnforceIllustration,
-    gradient: 'linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-light) 100%)',
+    gradient: 'linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-brand-hover) 100%)',
     code: `HTTP/1.1 402 Payment Required
 WWW-Authenticate: PEAC realm="api"
 PEAC-Price: 0.001 USD
@@ -50,7 +50,7 @@ PEAC-Accept: x402, invoice
     tagline: 'Verified record',
     desc: 'Sign and return a PEAC-Receipt. Verifies offline with your public key. Portable across any system.',
     Illustration: ReceiptIllustration,
-    gradient: 'linear-gradient(135deg, var(--gray-600) 0%, var(--gray-500) 100%)',
+    gradient: 'linear-gradient(135deg, var(--text-secondary) 0%, var(--text-tertiary) 100%)',
     code: `PEAC-Receipt: eyJhbGciOiJFZERTQSJ9...
 
 // Decoded payload
@@ -107,46 +107,58 @@ export default function HowItWorksNew() {
 
         <div className="steps-grid">
           {steps.map((step, i) => (
-            <div
-              key={step.id}
-              className={`step-card ${isVisible ? 'visible' : ''} ${expandedStep === i ? 'expanded' : ''}`}
-              style={{ '--delay': `${i * 100 + 300}ms` } as React.CSSProperties}
-              onClick={() => setExpandedStep(expandedStep === i ? null : i)}
-            >
-              <div className="card-glow" style={{ background: step.gradient }} />
+            <div key={step.id} className="step-wrapper">
+              <div
+                className={`step-card ${isVisible ? 'visible' : ''} ${expandedStep === i ? 'expanded' : ''}`}
+                style={{ '--delay': `${i * 150 + 300}ms` } as React.CSSProperties}
+                onClick={() => setExpandedStep(expandedStep === i ? null : i)}
+              >
+                <div className="card-glow" style={{ background: step.gradient }} />
 
-              <div className="card-header">
-                <span className="step-num">{step.num}</span>
-                <div className="step-illustration">
-                  <step.Illustration size={64} />
+                <div className="card-header">
+                  <div className={`step-num-ring ${isVisible ? 'visible' : ''}`} style={{ '--delay': `${i * 150 + 500}ms` } as React.CSSProperties}>
+                    <span className="step-num">{step.num}</span>
+                  </div>
+                  <div className="step-illustration">
+                    <step.Illustration size={64} />
+                  </div>
                 </div>
+
+                <div className="card-body">
+                  <h3 className="step-title">{step.title}</h3>
+                  <p className="step-tagline">{step.tagline}</p>
+                  <p className="step-desc">{step.desc}</p>
+                </div>
+
+                {expandedStep === i && (
+                  <div className="card-code" data-nosnippet>
+                    <pre className="step-code-block">
+                      <code>{step.code}</code>
+                    </pre>
+                    {i === 2 && (
+                      <Link href="/verify" className="run-demo-btn">
+                        Run demo
+                        <ArrowRight size={14} strokeWidth={2.5} />
+                      </Link>
+                    )}
+                  </div>
+                )}
+
+                <div className="card-expand-hint">
+                  {expandedStep === i ? 'Click to collapse' : 'Click to see code'}
+                </div>
+
+                <div className="card-indicator" style={{ background: step.gradient }} />
               </div>
 
-              <div className="card-body">
-                <h3 className="step-title">{step.title}</h3>
-                <p className="step-tagline">{step.tagline}</p>
-                <p className="step-desc">{step.desc}</p>
-              </div>
-
-              {expandedStep === i && (
-                <div className="card-code" data-nosnippet>
-                  <pre className="step-code-block">
-                    <code>{step.code}</code>
-                  </pre>
-                  {i === 2 && (
-                    <Link href="/verify" className="run-demo-btn">
-                      Run demo
-                      <ArrowRight size={14} strokeWidth={2.5} />
-                    </Link>
-                  )}
+              {/* Flow connector arrow */}
+              {i < steps.length - 1 && (
+                <div className={`flow-connector ${isVisible ? 'visible' : ''}`} style={{ '--delay': `${i * 150 + 700}ms` } as React.CSSProperties}>
+                  <svg width="48" height="24" viewBox="0 0 48 24" fill="none">
+                    <path d="M0 12H40M40 12L30 4M40 12L30 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
               )}
-
-              <div className="card-expand-hint">
-                {expandedStep === i ? 'Click to collapse' : 'Click to see code'}
-              </div>
-
-              <div className="card-indicator" style={{ background: step.gradient }} />
             </div>
           ))}
         </div>
@@ -212,7 +224,7 @@ export default function HowItWorksNew() {
         .how {
           position: relative;
           padding: 180px 0;
-          background: linear-gradient(180deg, var(--gray-50) 0%, var(--gray-100) 50%, var(--gray-50) 100%);
+          background: var(--surface-base);
           overflow: hidden;
         }
 
@@ -222,7 +234,7 @@ export default function HowItWorksNew() {
           left: 0;
           right: 0;
           height: 120px;
-          background: linear-gradient(180deg, var(--gray-50) 0%, transparent 100%);
+          background: linear-gradient(180deg, var(--surface-base) 0%, transparent 100%);
           pointer-events: none;
           z-index: 1;
         }
@@ -237,19 +249,13 @@ export default function HowItWorksNew() {
           position: absolute;
           inset: 0;
           background:
-            radial-gradient(ellipse 60% 40% at 20% 0%, rgba(99, 91, 255, 0.06) 0%, transparent 50%),
-            radial-gradient(ellipse 50% 30% at 50% 30%, rgba(99, 91, 255, 0.04) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 40% at 80% 100%, rgba(10, 10, 10, 0.05) 0%, transparent 50%);
+            radial-gradient(ellipse 60% 40% at 20% 0%, var(--gradient-mesh-purple) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 30% at 50% 30%, var(--gradient-mesh-light-purple) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 40% at 80% 100%, var(--gradient-mesh-light-teal) 0%, transparent 50%);
         }
 
         .bg-mesh {
-          position: absolute;
-          inset: 0;
-          background-image:
-            linear-gradient(rgba(99, 91, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(99, 91, 255, 0.03) 1px, transparent 1px);
-          background-size: 50px 50px;
-          mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 100%);
+          display: none;
         }
 
         .how-container {
@@ -281,9 +287,9 @@ export default function HowItWorksNew() {
           font-size: var(--text-xs);
           font-weight: 700;
           letter-spacing: 0.12em;
-          color: var(--gray-500);
+          color: var(--text-tertiary);
           text-transform: uppercase;
-          background: linear-gradient(135deg, var(--brand-primary) 0%, var(--gray-950) 100%);
+          background: linear-gradient(135deg, var(--accent-brand) 0%, var(--text-primary) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -293,14 +299,14 @@ export default function HowItWorksNew() {
           font-size: clamp(44px, 6vw, 72px);
           font-weight: 700;
           letter-spacing: -0.04em;
-          color: var(--gray-950);
+          color: var(--text-primary);
           margin: 0 0 var(--space-4);
           line-height: 1.05;
         }
 
         .how-subtitle {
           font-size: clamp(var(--text-base), 2vw, var(--text-lg));
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin: 0;
           line-height: 1.5;
         }
@@ -312,18 +318,34 @@ export default function HowItWorksNew() {
           margin-bottom: 72px;
         }
 
+        .step-wrapper {
+          position: relative;
+        }
+
+        .step-num-ring {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .flow-connector {
+          display: none;
+        }
+
         .step-card {
           position: relative;
           padding: 0;
-          background: var(--white);
-          border: 1px solid var(--gray-100);
-          border-radius: 20px;
+          background: var(--glass-card-bg);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid var(--border-default);
+          border-radius: 24px;
           cursor: pointer;
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           opacity: 0;
           transform: translateY(40px);
           overflow: hidden;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+          box-shadow: var(--shadow-card);
         }
 
         .step-card.visible {
@@ -334,28 +356,19 @@ export default function HowItWorksNew() {
         }
 
         .step-card:hover {
-          border-color: var(--gray-200);
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
-          transform: translateY(-3px);
+          border-color: var(--border-brand);
+          transform: translateY(-4px);
+          box-shadow: var(--glass-card-shadow);
         }
 
+
         .step-card:focus-visible {
-          outline: 2px solid var(--brand-primary);
+          outline: 2px solid var(--accent-brand);
           outline-offset: 2px;
         }
 
         .card-glow {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 3px;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
-        .step-card:hover .card-glow {
-          opacity: 1;
+          display: none;
         }
 
         .card-header {
@@ -363,20 +376,21 @@ export default function HowItWorksNew() {
           align-items: center;
           justify-content: space-between;
           padding: var(--space-5) var(--space-6);
-          background: linear-gradient(180deg, var(--gray-50) 0%, rgba(250, 250, 250, 0) 100%);
-          border-bottom: 1px solid var(--gray-100);
+          background: linear-gradient(180deg, var(--surface-subtle) 0%, transparent 100%);
+          border-bottom: 1px solid var(--border-default);
         }
 
         .step-num {
           font-family: var(--font-mono);
           font-size: 11px;
           font-weight: 700;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           letter-spacing: 0.1em;
-          background: var(--white);
+          background: var(--surface-elevated);
           padding: 4px 10px;
           border-radius: var(--radius-full);
-          border: 1px solid var(--gray-200);
+          border: 1px solid var(--border-default);
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .step-illustration {
@@ -386,15 +400,21 @@ export default function HowItWorksNew() {
           width: 56px;
           height: 56px;
           border-radius: 14px;
-          background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
-          border: 1px solid var(--gray-100);
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          background: linear-gradient(135deg, var(--surface-elevated) 0%, var(--surface-subtle) 100%);
+          border: 1px solid var(--border-default);
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .step-card:hover .step-illustration {
-          background: linear-gradient(135deg, rgba(99, 91, 255, 0.06) 0%, rgba(99, 91, 255, 0.1) 100%);
-          border-color: rgba(99, 91, 255, 0.15);
+          background: var(--accent-brand-muted);
+          border-color: var(--border-brand);
           transform: scale(1.02);
+        }
+
+        .step-card:hover .step-num {
+          background: var(--accent-brand-muted);
+          border-color: var(--border-brand);
+          color: var(--accent-brand);
         }
 
         .card-body {
@@ -405,7 +425,7 @@ export default function HowItWorksNew() {
         .step-title {
           font-size: var(--text-xl);
           font-weight: 700;
-          color: var(--gray-950);
+          color: var(--text-primary);
           margin: 0 0 6px;
           letter-spacing: -0.02em;
         }
@@ -413,7 +433,7 @@ export default function HowItWorksNew() {
         .step-tagline {
           font-size: var(--text-xs);
           font-weight: 600;
-          color: var(--brand-primary);
+          color: var(--accent-brand);
           margin: 0 0 var(--space-3);
           letter-spacing: 0.02em;
           text-transform: uppercase;
@@ -422,7 +442,7 @@ export default function HowItWorksNew() {
         .step-desc {
           font-size: var(--text-sm);
           line-height: 1.65;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           margin: 0;
         }
 
@@ -433,43 +453,43 @@ export default function HowItWorksNew() {
         .card-expand-hint {
           font-size: var(--text-xs);
           font-weight: 500;
-          color: var(--gray-600);
+          color: var(--text-secondary);
           text-align: center;
           padding: var(--space-3) var(--space-6);
           margin: 0;
-          background: var(--gray-50);
-          border-top: 1px solid var(--gray-100);
+          background: var(--surface-subtle);
+          border-top: 1px solid var(--border-default);
           opacity: 1;
           transition: background var(--duration-200) ease, color var(--duration-200) ease;
         }
 
         .step-card:hover .card-expand-hint {
-          background: linear-gradient(135deg, rgba(99, 91, 255, 0.04) 0%, rgba(99, 91, 255, 0.06) 100%);
-          color: var(--brand-primary);
+          background: var(--accent-brand-muted);
+          color: var(--accent-brand);
         }
 
         .step-card.expanded .card-expand-hint {
-          color: var(--gray-500);
+          color: var(--text-tertiary);
         }
 
         .card-code {
           margin: 0;
           padding: var(--space-5) var(--space-6);
-          background: var(--gray-50);
-          border-top: 1px solid var(--gray-100);
+          background: var(--surface-subtle);
+          border-top: 1px solid var(--border-default);
         }
 
         .step-code-block {
-          background: linear-gradient(180deg, var(--gray-900) 0%, var(--gray-950) 100%);
-          border-radius: 12px;
+          background: linear-gradient(180deg, var(--code-bg-header) 0%, var(--code-bg) 100%);
+          border-radius: var(--radius-xl);
           padding: var(--space-4);
           margin: 0 0 var(--space-4);
           overflow-x: auto;
           font-family: var(--font-mono);
           font-size: 11px;
           line-height: 1.7;
-          color: var(--gray-200);
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+          color: var(--text-secondary);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--border-default) inset;
         }
 
         .step-code-block code {
@@ -485,15 +505,15 @@ export default function HowItWorksNew() {
           padding: 10px var(--space-5);
           font-size: var(--text-sm);
           font-weight: 600;
-          color: var(--white);
-          background: var(--gray-950);
+          color: var(--text-inverted);
+          background: var(--text-primary);
           border-radius: 10px;
           text-decoration: none;
           transition: all var(--duration-200) ease;
         }
 
         .step-card :global(.run-demo-btn:hover) {
-          background: var(--gray-800);
+          background: var(--text-secondary);
           transform: translateY(-1px);
         }
 
@@ -502,7 +522,7 @@ export default function HowItWorksNew() {
         }
 
         .step-card.expanded .card-expand-hint {
-          background: var(--gray-50);
+          background: var(--surface-subtle);
           border-top: none;
         }
 
@@ -515,12 +535,12 @@ export default function HowItWorksNew() {
         .code-section {
           max-width: 640px;
           margin: 0 auto var(--space-12);
-          background: linear-gradient(180deg, var(--gray-900) 0%, var(--gray-950) 100%);
+          background: linear-gradient(180deg, var(--code-bg-header) 0%, var(--code-bg) 100%);
           border-radius: var(--radius-2xl);
           overflow: hidden;
           box-shadow:
-            0 0 0 1px rgba(255, 255, 255, 0.08),
-            var(--shadow-2xl);
+            0 0 0 1px var(--border-default),
+            var(--shadow-elevated);
           opacity: 0;
           transform: translateY(40px);
           transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.55s, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.55s;
@@ -535,8 +555,8 @@ export default function HowItWorksNew() {
           display: flex;
           align-items: center;
           padding: 14px 18px;
-          background: rgba(255, 255, 255, 0.04);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          background: var(--glass-bg);
+          border-bottom: 1px solid var(--border-default);
         }
 
         .code-dots {
@@ -548,19 +568,19 @@ export default function HowItWorksNew() {
           width: 12px;
           height: 12px;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.15);
+          background: var(--surface-subtle);
         }
 
-        .dot.red { background: #ff5f56; }
-        .dot.yellow { background: #ffbd2e; }
-        .dot.green { background: #27c93f; }
+        .dot.red { background: var(--chrome-red); }
+        .dot.yellow { background: var(--chrome-yellow); }
+        .dot.green { background: var(--chrome-green); }
 
         .code-filename {
           flex: 1;
           text-align: center;
           font-size: var(--text-sm);
           font-weight: 600;
-          color: rgba(255, 255, 255, 0.6);
+          color: var(--text-tertiary);
           font-family: var(--font-mono);
         }
 
@@ -570,15 +590,15 @@ export default function HowItWorksNew() {
           font-family: var(--font-mono);
           font-size: var(--text-sm);
           line-height: 1.7;
-          color: var(--gray-200);
+          color: var(--text-secondary);
           overflow-x: auto;
         }
 
-        .code-comment { color: var(--gray-500); }
-        .code-key { color: #93c5fd; }
-        .code-string { color: #86efac; }
-        .code-number { color: #fcd34d; }
-        .code-punct { color: var(--gray-400); }
+        .code-comment { color: var(--code-color-comment); }
+        .code-key { color: var(--code-color-key); }
+        .code-string { color: var(--code-color-string); }
+        .code-number { color: var(--code-color-number); }
+        .code-punct { color: var(--text-muted); }
 
         .how-cta {
           display: flex;
@@ -603,17 +623,17 @@ export default function HowItWorksNew() {
           padding: var(--space-3) var(--space-6);
           font-size: var(--text-sm);
           font-weight: 600;
-          color: var(--white);
-          background: linear-gradient(135deg, var(--gray-950) 0%, var(--gray-800) 100%);
+          color: var(--text-inverted);
+          background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
           border-radius: var(--radius-lg);
           text-decoration: none;
           transition: all var(--duration-300) var(--ease-out);
-          box-shadow: var(--shadow-md);
+          box-shadow: var(--shadow-card);
         }
 
         .how-cta :global(.cta-primary:hover) {
-          background: linear-gradient(135deg, var(--gray-800) 0%, var(--gray-700) 100%);
-          box-shadow: var(--shadow-lg);
+          background: var(--accent-brand);
+          box-shadow: var(--glow-brand);
           transform: translateY(-2px);
         }
 
@@ -624,18 +644,18 @@ export default function HowItWorksNew() {
           padding: var(--space-3) var(--space-6);
           font-size: var(--text-sm);
           font-weight: 600;
-          color: var(--gray-600);
-          background: var(--white);
-          border: 1.5px solid var(--gray-200);
+          color: var(--text-secondary);
+          background: var(--surface-elevated);
+          border: 1.5px solid var(--border-default);
           border-radius: var(--radius-lg);
           text-decoration: none;
           transition: all var(--duration-300) var(--ease-out);
         }
 
         .how-cta :global(.cta-secondary:hover) {
-          border-color: var(--gray-300);
-          color: var(--gray-950);
-          box-shadow: var(--shadow-sm);
+          border-color: var(--border-hover);
+          color: var(--text-primary);
+          box-shadow: var(--shadow-card);
         }
 
         .how-footer {
@@ -663,21 +683,21 @@ export default function HowItWorksNew() {
           gap: var(--space-2);
           font-size: var(--text-sm);
           font-weight: 600;
-          color: var(--gray-600);
+          color: var(--text-secondary);
         }
 
         .badge-dot {
           width: 7px;
           height: 7px;
           border-radius: var(--radius-full);
-          background: linear-gradient(135deg, var(--brand-primary) 0%, var(--gray-950) 100%);
+          background: linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-electric) 100%);
         }
 
         .badge-sep {
           width: 3px;
           height: 3px;
           border-radius: var(--radius-full);
-          background: var(--gray-300);
+          background: var(--border-default);
         }
 
         @media (max-width: 1024px) {
@@ -894,18 +914,9 @@ export default function HowItWorksNew() {
           .step-card,
           .code-section,
           .how-cta,
-          .how-footer,
-          .step-icon,
-          .card-indicator {
+          .how-footer {
             transition: none;
             animation: none;
-          }
-
-          .how-header,
-          .step-card,
-          .code-section,
-          .how-cta,
-          .how-footer {
             opacity: 1;
             transform: none;
           }
