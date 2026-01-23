@@ -11,7 +11,6 @@ export const config = {
 
 export function middleware(request: NextRequest) {
   const url = request.nextUrl
-  const hostname = request.headers.get('host') || ''
   const pathname = url.pathname
 
   // Sitemap and robots.txt - Force clean headers for crawlers
@@ -44,13 +43,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // Redirect non-www to www
-  if (hostname === 'originary.xyz') {
-    const redirectUrl = new URL(url.pathname + url.search, 'https://www.originary.xyz')
-    return NextResponse.redirect(redirectUrl, 301)
-  }
-
   // Add canonical header for www version
+  // Note: www redirect handled by Vercel edge (DNS settings)
   const response = NextResponse.next()
   response.headers.set('Link', `<https://www.originary.xyz${pathname}>; rel="canonical"`)
 
