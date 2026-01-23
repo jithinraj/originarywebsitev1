@@ -9,7 +9,7 @@ export const config = {
   ],
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const url = request.nextUrl
   const pathname = url.pathname
 
@@ -34,7 +34,7 @@ export function middleware(request: NextRequest) {
     return response
   }
 
-  // Skip middleware for other specific paths
+  // Skip proxy for other specific paths
   if (
     pathname.startsWith('/.well-known') ||
     pathname === '/sitemap_index.xml' ||
