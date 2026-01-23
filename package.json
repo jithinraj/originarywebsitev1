@@ -4,7 +4,7 @@
   "private": true,
   "license": "UNLICENSED",
   "engines": {
-    "node": "22.x"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "next dev",
@@ -43,7 +43,7 @@
     "tailwind-merge": "latest"
   },
   "devDependencies": {
-    "@types/node": "^25.0.9",
+    "@types/node": "^24.10.9",
     "@types/react": "^19.2.8",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
