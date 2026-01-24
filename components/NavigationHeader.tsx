@@ -138,12 +138,15 @@ export default function NavigationHeader() {
               >
                 <Github size={18} />
               </a>
-              <Link
-                href="/verify"
+              <a
+                href="https://github.com/peacprotocol/peac"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="nav-cta-btn"
               >
-                Try Verify
-              </Link>
+                <Github size={16} />
+                Get Started
+              </a>
             </div>
           </div>
 
@@ -243,12 +246,15 @@ export default function NavigationHeader() {
                   <Github size={16} />
                   View on GitHub
                 </a>
-                <Link
-                  href="/verify"
+                <a
+                  href="https://github.com/peacprotocol/peac"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
+                    gap: 'var(--space-2)',
                     padding: 'var(--space-3) var(--space-4)',
                     fontSize: 'var(--text-sm)',
                     fontWeight: 500,
@@ -259,8 +265,9 @@ export default function NavigationHeader() {
                     boxShadow: '0 0 20px -5px var(--accent-brand-glow)'
                   }}
                 >
-                  Try Verify
-                </Link>
+                  <Github size={16} />
+                  Get Started
+                </a>
               </div>
             </div>
           </div>
@@ -273,6 +280,7 @@ export default function NavigationHeader() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
+          gap: var(--space-2);
           padding: var(--space-2) var(--space-4);
           font-size: var(--text-sm);
           font-weight: 500;

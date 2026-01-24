@@ -37,9 +37,15 @@ export default function NewHero() {
           </p>
 
           <div className="hero-actions">
-            <Link href="/verify" className="hero-btn-primary">
-              Try Verify
-            </Link>
+            <a
+              href="https://github.com/peacprotocol/peac"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-btn-primary"
+            >
+              <Github size={18} />
+              Get Started
+            </a>
             <Link href="/developers" className="hero-btn-secondary">
               Documentation
             </Link>
