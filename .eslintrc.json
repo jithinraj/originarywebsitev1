@@ -1,6 +1,7 @@
 {
   "extends": ["next/core-web-vitals"],
   "rules": {
-    "react/jsx-no-bind": "off"
+    "react/jsx-no-bind": "off",
+    "@next/next/no-img-element": "off"
   }
 }
