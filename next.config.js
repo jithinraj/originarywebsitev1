@@ -37,6 +37,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/trace/demo',
+        destination: '/demo',
+        permanent: true,
+      },
+      {
         source: '/sitemap_index.xml',
         destination: '/sitemap.xml',
         permanent: true,
@@ -57,6 +62,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/resources/changelog',
+        destination: '/changelog',
+        permanent: true,
+      },
+      {
         source: '/company/about',
         destination: '/about',
         permanent: true,
@@ -64,6 +74,11 @@ const nextConfig = {
       {
         source: '/company/contact',
         destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/company',
+        destination: '/about',
         permanent: true,
       },
             // CLI downloads → PEAC Protocol release archives

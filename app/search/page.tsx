@@ -59,7 +59,7 @@ export default function SearchPage() {
                   { label: 'Pricing', href: '/pricing' },
                   { label: 'Products', href: '/products' },
                   { label: 'Blog', href: '/blog' },
-                  { label: 'Contact', href: '/company/contact' },
+                  { label: 'Contact', href: '/contact' },
                   { label: 'Status', href: '/status' },
                 ].map(link => (
                   <a

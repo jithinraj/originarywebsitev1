@@ -82,7 +82,7 @@ export default function NotFound() {
               <Link href="/docs/receipts" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontSize: 'var(--text-sm)' }}>
                 Documentation
               </Link>
-              <Link href="/company/contact" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontSize: 'var(--text-sm)' }}>
+              <Link href="/contact" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontSize: 'var(--text-sm)' }}>
                 Contact Sales
             </Link>
             </div>

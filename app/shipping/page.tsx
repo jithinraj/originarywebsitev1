@@ -306,7 +306,7 @@ export default function ShippingPage() {
               <Link href="/terms" className="btn btn-ghost">Terms of Service</Link>
               <Link href="/privacy" className="btn btn-ghost">Privacy Policy</Link>
               <Link href="/refund" className="btn btn-ghost">Refund Policy</Link>
-              <Link href="/company/contact" className="btn btn-ghost">Contact Us</Link>
+              <Link href="/contact" className="btn btn-ghost">Contact Us</Link>
             </div>
           </div>
         </div>

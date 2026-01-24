@@ -2921,3 +2921,45 @@ html.lenis, html.lenis body {
     animation: none;
   }
 }
+
+/* === PERFORMANCE OPTIMIZATIONS === */
+
+/* GPU acceleration hints for frequently animated elements */
+.scroll-fade-up,
+.scroll-fade-scale,
+.scroll-fade-left,
+.scroll-fade-right,
+.animate-on-scroll,
+.reveal,
+.hover-lift,
+.hover-lift-sm {
+  will-change: transform, opacity;
+}
+
+/* Remove will-change after animation completes to free GPU memory */
+.scroll-fade-up.in-view,
+.scroll-fade-scale.in-view,
+.scroll-fade-left.in-view,
+.scroll-fade-right.in-view,
+.animate-on-scroll.in-view,
+.reveal.in-view,
+.reveal.visible {
+  will-change: auto;
+}
+
+/* Content visibility for offscreen sections - improves initial paint */
+.home-section,
+section:not(.hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+/* CSS containment for isolated components */
+.product-card,
+.proof-card,
+.audience-card,
+.standard-item,
+.faq-item,
+.step-card {
+  contain: layout style;
+}

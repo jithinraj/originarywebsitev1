@@ -143,7 +143,7 @@ export default function StatusPage() {
             Subscribe to receive notifications for scheduled maintenance and incidents
           </p>
           <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/company/contact" className="btn btn-primary">
+            <Link href="/contact" className="btn btn-primary">
               Subscribe to Updates
             </Link>
             <a

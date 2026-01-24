@@ -26,7 +26,7 @@ export default function SimpleHomePage() {
               </div>
               <div style={{ opacity: 1, visibility: 'visible', display: 'block' }}>
                 <div className="actions hero-actions" style={{ opacity: 1, visibility: 'visible', display: 'flex', gap: '1rem', marginTop: '2rem' }}>
-                  <Link href="/company/contact" className="btn primary" style={{ opacity: 1, visibility: 'visible', display: 'inline-flex' }}>
+                  <Link href="/contact" className="btn primary" style={{ opacity: 1, visibility: 'visible', display: 'inline-flex' }}>
                     Request a demo
                   </Link>
                   <Link href="/developers" className="btn secondary" style={{ opacity: 1, visibility: 'visible', display: 'inline-flex' }}>
@@ -227,7 +227,7 @@ export default function SimpleHomePage() {
               Join leading enterprises building with PEAC protocol
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href="/company/contact" className="btn primary" style={{
+              <Link href="/contact" className="btn primary" style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',

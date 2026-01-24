@@ -58,7 +58,7 @@ export default function Header() {
           </div>
 
           <div className="nav-actions">
-            <Link href="/company/contact" className="btn secondary" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/contact" className="btn secondary" onClick={() => setIsMenuOpen(false)}>
               Contact
             </Link>
             <Link href="/signin" className="btn primary" onClick={() => setIsMenuOpen(false)}>

@@ -1,5 +1,5 @@
 Contact: mailto:contact@originary.xyz
-Contact: https://www.originary.xyz/company/contact.html
+Contact: https://www.originary.xyz/contact
 Expires: 2026-07-24T23:59:59.000Z
 Encryption: https://www.originary.xyz/.well-known/pgp-key.txt
 Acknowledgments: https://www.originary.xyz/security/hall-of-fame.html

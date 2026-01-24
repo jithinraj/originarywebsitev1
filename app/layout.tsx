@@ -266,8 +266,11 @@ export default function RootLayout({
         {/* Performance: DNS prefetch and preconnect for external resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://sr-client-cfg.amplitude.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://api2.amplitude.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://c.clarity.ms" />
         <Script id="originary-organization-json-ld" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(organizationJsonLd)}
         </Script>

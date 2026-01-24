@@ -141,7 +141,7 @@ export default function Privacy() {
                 <Link href="/terms" className="btn btn-secondary" style={{ marginRight: 'var(--space-4)' }}>
                   Terms of Service
                 </Link>
-                <Link href="/company/contact" className="btn btn-primary">
+                <Link href="/contact" className="btn btn-primary">
                   Contact Us
                 </Link>
               </div>

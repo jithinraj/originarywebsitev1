@@ -168,7 +168,7 @@ export default function Pricing() {
                     </div>
                   ))}
                 </div>
-                <Link href="/company/contact" className="btn btn-secondary" style={{ width: '100%', marginBottom: 'var(--space-2)' }}>
+                <Link href="/contact" className="btn btn-secondary" style={{ width: '100%', marginBottom: 'var(--space-2)' }}>
                   Contact sales
                 </Link>
                 <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)', textAlign: 'center' }}>
@@ -425,7 +425,7 @@ export default function Pricing() {
                   flexWrap: 'wrap'
                 }}>
                   <Link
-                    href="/company/contact"
+                    href="/contact"
                     className="btn btn-lg"
                     style={{
                       background: 'var(--surface-elevated)',

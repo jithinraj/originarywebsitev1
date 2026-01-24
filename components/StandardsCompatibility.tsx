@@ -61,6 +61,8 @@ export default function StandardsCompatibility() {
           justify-content: center;
           gap: var(--space-8);
           flex-wrap: wrap;
+          min-height: 44px;
+          contain: layout style;
         }
 
         .standards-label-wrapper {
