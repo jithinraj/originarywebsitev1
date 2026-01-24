@@ -46,6 +46,9 @@ export default function ContextGraphsPage() {
   const [copiedId, setCopiedId] = useState<string | null>(null)
 
   useEffect(() => {
+    // Guard against SSR and browsers without IntersectionObserver
+    if (typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') return
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

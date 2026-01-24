@@ -4,19 +4,29 @@ import { useEffect } from 'react'
 
 export default function HomeTheme() {
   useEffect(() => {
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view')
-          }
-        })
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
-    )
+    // Guard against SSR
+    if (typeof window === 'undefined' || typeof document === 'undefined') return
 
-    document.querySelectorAll('.reveal, .stagger-reveal').forEach((el) => observer.observe(el))
+    let observer: IntersectionObserver | null = null
+
+    // Intersection Observer for scroll animations
+    if (typeof IntersectionObserver !== 'undefined') {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view')
+            }
+          })
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+      )
+
+      document.querySelectorAll('.reveal, .stagger-reveal').forEach((el) => observer?.observe(el))
+    } else {
+      // Fallback: add class immediately for older browsers
+      document.querySelectorAll('.reveal, .stagger-reveal').forEach((el) => el.classList.add('in-view'))
+    }
 
     // 3D tilt effect for cards
     const cards = document.querySelectorAll('.tilt-card')
@@ -41,7 +51,7 @@ export default function HomeTheme() {
       })
     })
 
-    return () => observer.disconnect()
+    return () => observer?.disconnect()
   }, [])
 
   return (

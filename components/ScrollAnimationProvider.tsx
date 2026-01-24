@@ -22,12 +22,13 @@ import { isBrowser, prefersReducedMotion } from '@/lib/clipboard'
 export default function ScrollAnimationProvider() {
   useEffect(() => {
     if (!isBrowser()) return
-    // Check for reduced motion preference
-    if (prefersReducedMotion()) {
-      // Still add in-view class but immediately for users who prefer reduced motion
-      const allAnimated = document.querySelectorAll(
-        '.animate-on-scroll, .scroll-fade-up, .scroll-fade-scale, .scroll-fade-left, .scroll-fade-right, .reveal, .section-header-animate, .stagger-children, .stagger-fast'
-      )
+
+    const animationSelector = '.animate-on-scroll, .scroll-fade-up, .scroll-fade-scale, .scroll-fade-left, .scroll-fade-right, .reveal, .section-header-animate, .stagger-children, .stagger-fast'
+
+    // Check for reduced motion preference or missing IntersectionObserver
+    if (prefersReducedMotion() || typeof IntersectionObserver === 'undefined') {
+      // Still add in-view class but immediately for users who prefer reduced motion or older browsers
+      const allAnimated = document.querySelectorAll(animationSelector)
       allAnimated.forEach((el) => el.classList.add('in-view'))
       return
     }
@@ -50,21 +51,8 @@ export default function ScrollAnimationProvider() {
 
     const observer = new IntersectionObserver(handleIntersection, observerOptions)
 
-    // All supported animation selectors
-    const animationSelectors = [
-      '.animate-on-scroll',
-      '.scroll-fade-up',
-      '.scroll-fade-scale',
-      '.scroll-fade-left',
-      '.scroll-fade-right',
-      '.reveal',
-      '.section-header-animate',
-      '.stagger-children',
-      '.stagger-fast'
-    ]
-
     // Observe all elements with animation classes
-    const animatedElements = document.querySelectorAll(animationSelectors.join(', '))
+    const animatedElements = document.querySelectorAll(animationSelector)
     animatedElements.forEach((el) => {
       // Only observe elements not already in view
       if (!el.classList.contains('in-view')) {

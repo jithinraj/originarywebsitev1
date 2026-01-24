@@ -41,6 +41,12 @@ const useInView = (ref: React.RefObject<HTMLElement | null>, options = {}) => {
   const [isInView, setIsInView] = useState(false)
 
   useEffect(() => {
+    // Guard against SSR and browsers without IntersectionObserver
+    if (typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') {
+      setIsInView(true) // Fallback: assume visible
+      return
+    }
+
     const element = ref.current
     const observer = new IntersectionObserver(
       ([entry]) => {

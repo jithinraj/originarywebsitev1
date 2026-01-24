@@ -52,6 +52,12 @@ export default function ProductSuite() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    // Guard against SSR and browsers without IntersectionObserver
+    if (typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true) // Fallback: assume visible
+      return
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

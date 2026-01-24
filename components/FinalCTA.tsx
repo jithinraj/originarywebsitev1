@@ -8,6 +8,14 @@ export default function FinalCTA() {
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
+    // Guard against SSR and browsers without IntersectionObserver
+    if (typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') {
+      // Fallback: add class immediately
+      const elements = sectionRef.current?.querySelectorAll('.reveal')
+      elements?.forEach((el) => el.classList.add('in-view'))
+      return
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

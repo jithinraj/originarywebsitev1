@@ -9,9 +9,14 @@
  * @returns Promise that resolves when copy is complete
  */
 export async function copyToClipboard(text: string): Promise<boolean> {
+  // Guard against SSR
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return false
+  }
+
   try {
     // Modern browsers: Use Clipboard API
-    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+    if (typeof navigator !== 'undefined' && navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
       await navigator.clipboard.writeText(text)
       return true
     }
@@ -81,5 +86,5 @@ export function prefersDarkMode(): boolean {
  */
 export function isTouchDevice(): boolean {
   if (!isBrowser()) return false
-  return 'ontouchstart' in window || navigator.maxTouchPoints > 0
+  return 'ontouchstart' in window || (typeof navigator !== 'undefined' && navigator.maxTouchPoints > 0)
 }

@@ -9,6 +9,12 @@ export default function ProtocolVsCompany() {
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
+    // Guard against SSR and browsers without IntersectionObserver
+    if (typeof window === 'undefined' || typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true) // Fallback: assume visible
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

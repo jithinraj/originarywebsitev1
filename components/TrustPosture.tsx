@@ -30,6 +30,9 @@ const items = [
 
 export default function TrustPosture() {
   useEffect(() => {
+    // Guard against SSR
+    if (typeof window === 'undefined' || typeof document === 'undefined') return
+
     const cards = document.querySelectorAll('.trust-card')
     cards.forEach((card) => {
       const el = card as HTMLElement

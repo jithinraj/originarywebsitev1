@@ -4,6 +4,11 @@ import { useEffect } from 'react'
 
 export default function PerformanceMonitor() {
   useEffect(() => {
+    // Guard against SSR and browsers without PerformanceObserver
+    if (typeof window === 'undefined' || typeof PerformanceObserver === 'undefined') {
+      return
+    }
+
     // Monitor custom performance metrics without web-vitals dependency
     const observer = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
@@ -16,7 +21,7 @@ export default function PerformanceMonitor() {
           }
 
           // Send to Google Analytics if available
-          if (typeof window !== 'undefined' && window.gtag) {
+          if (window.gtag) {
             window.gtag('event', 'page_load_time', {
               value: Math.round(loadTime),
               event_category: 'Performance',
@@ -27,14 +32,10 @@ export default function PerformanceMonitor() {
       }
     })
 
-    if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
-      observer.observe({ entryTypes: ['navigation'] })
-    }
+    observer.observe({ entryTypes: ['navigation'] })
 
     return () => {
-      if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
-        observer.disconnect()
-      }
+      observer.disconnect()
     }
   }, [])
 
