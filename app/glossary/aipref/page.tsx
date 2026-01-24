@@ -44,7 +44,7 @@ export default function Page() {
         <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-6)', color: 'var(--text-secondary)' }}>
           <Link href="/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Home</Link>
           {' '}/{' '}
-          <Link href="/glossary" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
+          <Link href="/glossary/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
           {' '}/{' '}
           <span style={{ color: 'var(--text-primary)' }}>AIPREF</span>
         </nav>
@@ -144,7 +144,7 @@ contact: rights@example.com`}</code>
             Relation to PEAC Protocol
           </h2>
           <p style={{ marginBottom: 'var(--space-8)' }}>
-            AIPREF focuses on <em>discovering</em> content policies, while <Link href="/glossary/peac" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC</Link> provides the infrastructure for <em>enforcing</em> those policies through payment flows and verifiable receipts. Together, they enable publishers to express preferences and agents to respect them with proof.
+            AIPREF focuses on <em>discovering</em> content policies, while <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC</Link> provides the infrastructure for <em>enforcing</em> those policies through payment flows and verifiable receipts. Together, they enable publishers to express preferences and agents to respect them with proof.
           </p>
 
           <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
@@ -152,13 +152,13 @@ contact: rights@example.com`}</code>
           </h2>
           <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/solutions/publishers" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Publishers solution</Link> - Protect and monetize content with AIPREF
+              <Link href="/solutions/publishers/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Publishers solution</Link> - Protect and monetize content with AIPREF
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/peac" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Verifiable receipts for policy enforcement
+              <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Verifiable receipts for policy enforcement
             </li>
             <li style={{ marginBottom: 0 }}>
-              <Link href="/glossary/agentic-web" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure for autonomous agents
+              <Link href="/glossary/agentic-web/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure for autonomous agents
             </li>
           </ul>
         </div>

@@ -101,7 +101,7 @@ export default function VerifyAPI() {
                 gap: 'var(--space-4)',
                 flexWrap: 'wrap'
               }}>
-                <Link href="/contact" className="btn btn-primary btn-lg">
+                <Link href="/company/contact" className="btn btn-primary btn-lg">
                   <span>Talk to verification engineer</span>
                   <ArrowRight size={18} />
                 </Link>
@@ -241,7 +241,7 @@ export default function VerifyAPI() {
                   flexWrap: 'wrap'
                 }}>
                   <Link
-                    href="/contact"
+                    href="/company/contact"
                     className="btn btn-lg"
                     style={{
                       background: 'var(--surface-elevated)',

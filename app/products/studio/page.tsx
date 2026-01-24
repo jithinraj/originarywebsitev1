@@ -116,7 +116,7 @@ export default function Studio() {
                 gap: 'var(--space-4)',
                 flexWrap: 'wrap'
               }}>
-                <Link href="/contact" className="btn btn-primary btn-lg">
+                <Link href="/company/contact" className="btn btn-primary btn-lg">
                   <span>Request enterprise access</span>
                   <ArrowRight size={18} />
                 </Link>
@@ -317,7 +317,7 @@ export default function Studio() {
                   flexWrap: 'wrap'
                 }}>
                   <Link
-                    href="/contact"
+                    href="/company/contact"
                     className="btn btn-lg"
                     style={{
                       background: 'var(--surface-elevated)',

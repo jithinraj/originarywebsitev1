@@ -340,7 +340,7 @@ export default function ProductsPage() {
                     <ArrowRight size={18} />
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/company/contact"
                     className="btn btn-lg btn-ghost"
                     style={{
                       color: 'var(--white)',

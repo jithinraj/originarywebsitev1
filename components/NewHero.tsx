@@ -37,10 +37,9 @@ export default function NewHero() {
           </p>
 
           <div className="hero-actions">
-            <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="hero-btn-primary">
-              <Github size={18} />
-              Get Started
-            </a>
+            <Link href="/verify" className="hero-btn-primary">
+              Try Verify
+            </Link>
             <Link href="/developers" className="hero-btn-secondary">
               Documentation
             </Link>
@@ -259,7 +258,6 @@ export default function NewHero() {
 
         .hero-footer-strip {
           margin-top: var(--space-4);
-          min-height: 48px;
         }
 
         .strip-brand {
@@ -325,7 +323,6 @@ export default function NewHero() {
           align-items: center;
           gap: 16px;
           margin-top: var(--space-2);
-          min-height: 52px;
         }
 
         .hero-actions :global(.hero-btn-primary) {

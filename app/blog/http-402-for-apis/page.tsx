@@ -114,7 +114,7 @@ export default function Page() {
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-8)'
               }}>
-                <Link href="/glossary/http-402-payment-required" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> was reserved in 1999 for &ldquo;future digital payments.&rdquo; That future is now. Here&rsquo;s how to implement 402 responses that work for automated agents and human developers alike.
+                <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> was reserved in 1999 for &ldquo;future digital payments.&rdquo; That future is now. Here&rsquo;s how to implement 402 responses that work for automated agents and human developers alike.
               </p>
 
               <div style={{
@@ -304,7 +304,7 @@ Cache-Control: no-store
 
                 <p style={{ marginBottom: 'var(--space-4)' }}>
                   For step-by-step implementation guides with Express, Next.js, and Cloudflare Workers, see our{' '}
-                  <Link href="/integrations/x402" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>
+                  <Link href="/integrations/x402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>
                     x402 integration documentation
                   </Link>.
                 </p>
@@ -316,13 +316,13 @@ Cache-Control: no-store
                   Related Reading
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-                  <Link href="/guides/http-402" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/guides/http-402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     HTTP 402 Payment Required - A Practical Guide
                   </Link>
-                  <Link href="/glossary/x402" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/glossary/x402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     What is x402?
                   </Link>
-                  <Link href="/integrations/x402" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/integrations/x402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     x402 Implementation Guide
                   </Link>
                 </div>
@@ -350,7 +350,7 @@ Cache-Control: no-store
                     <ArrowRight size={18} />
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/company/contact"
                     className="btn btn-lg btn-ghost"
                     style={{ color: 'var(--white)', border: '1px solid rgba(255,255,255,0.3)' }}
                   >

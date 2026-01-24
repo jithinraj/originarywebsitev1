@@ -250,7 +250,7 @@ export default function Page() {
                   marginBottom: 'var(--space-8)'
                 }}>
                   <p style={{ margin: 0, color: 'var(--text-primary)', fontSize: 'var(--text-base)' }}>
-                    That is exactly what <Link href="/integrations/acp" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>PEAC Protocol</Link> provides - a neutral proof layer for AI interactions that issues cryptographic receipts for access, usage, and payments using a standard <code style={{ background: 'rgba(255,255,255,0.7)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>PEAC-Receipt</code> HTTP header.
+                    That is exactly what <Link href="/integrations/acp/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>PEAC Protocol</Link> provides - a neutral proof layer for AI interactions that issues cryptographic receipts for access, usage, and payments using a standard <code style={{ background: 'rgba(255,255,255,0.7)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>PEAC-Receipt</code> HTTP header.
                   </p>
                 </div>
               </section>
@@ -599,7 +599,7 @@ export default function Page() {
                   </div>
 
                   <p>
-                    On its own, metadata can be spoofed. Combined with cryptographic receipts, it becomes a strong integrity check. In PEAC, metadata is not an afterthought - effective AI preference policies (<Link href="/integrations/aipref" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AIPREF</Link>) are discovered and snapshotted into every receipt, so audits are self-contained.
+                    On its own, metadata can be spoofed. Combined with cryptographic receipts, it becomes a strong integrity check. In PEAC, metadata is not an afterthought - effective AI preference policies (<Link href="/integrations/aipref/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AIPREF</Link>) are discovered and snapshotted into every receipt, so audits are self-contained.
                   </p>
                 </div>
 
@@ -831,7 +831,7 @@ issued_at        → when the receipt was generated`}
                       content: (
                         <>
                           <p style={{ marginBottom: 'var(--space-4)' }}>
-                            When an AI agent hits a protected resource, it receives an <Link href="/blog/http-402-for-apis" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> response. Once the agent pays or proves entitlement, the PEAC kernel issues a signed receipt binding: what was accessed, who accessed it, which policy applied, and payment details.
+                            When an AI agent hits a protected resource, it receives an <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> response. Once the agent pays or proves entitlement, the PEAC kernel issues a signed receipt binding: what was accessed, who accessed it, which policy applied, and payment details.
                           </p>
                           <p style={{ margin: 0 }}>
                             AI bot detection becomes not just &ldquo;yes, that looked like a bot&rdquo; but <strong>&ldquo;yes, that bot paid, under these terms, here is the verified record.&rdquo;</strong>
@@ -935,15 +935,15 @@ issued_at        → when the receipt was generated`}
                     Explore the building blocks
                   </h4>
                   <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
-                    <Link href="/integrations/aipref" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>
+                    <Link href="/integrations/aipref/" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>
                       <ArrowRight size={14} />
                       <span>AIPREF - Machine-readable AI usage preferences</span>
                     </Link>
-                    <Link href="/integrations/x402" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>
+                    <Link href="/integrations/x402/" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>
                       <ArrowRight size={14} />
                       <span>x402 - HTTP 402 payment gating</span>
                     </Link>
-                    <Link href="/receipts" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>
+                    <Link href="/receipts/" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>
                       <ArrowRight size={14} />
                       <span>PEAC receipts - Verifiable access evidence</span>
                     </Link>
@@ -957,13 +957,13 @@ issued_at        → when the receipt was generated`}
                   Related Reading
                 </h3>
                 <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
-                  <Link href="/blog/aipref-by-ietf" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/blog/aipref-by-ietf/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     AIPREF: A Common Language for AI Usage Preferences
                   </Link>
-                  <Link href="/blog/http-402-for-apis" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     HTTP 402 for APIs: Making Payment-Required Responses Work
                   </Link>
-                  <Link href="/blog/robots-txt-rfc-9309" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/blog/robots-txt-rfc-9309/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     robots.txt (RFC 9309): The Web&rsquo;s Crawl Access Control
                   </Link>
                 </div>
@@ -994,7 +994,7 @@ issued_at        → when the receipt was generated`}
                     <ArrowRight size={18} />
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/company/contact"
                     className="btn btn-lg btn-ghost"
                     style={{ color: 'var(--white)', border: '1px solid rgba(255,255,255,0.3)' }}
                   >

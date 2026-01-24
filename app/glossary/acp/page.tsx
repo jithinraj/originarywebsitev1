@@ -45,7 +45,7 @@ export default function Page() {
         <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-6)', color: 'var(--text-secondary)' }}>
           <Link href="/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Home</Link>
           {' '}/{' '}
-          <Link href="/glossary" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
+          <Link href="/glossary/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
           {' '}/{' '}
           <span style={{ color: 'var(--text-primary)' }}>ACP</span>
         </nav>
@@ -72,7 +72,7 @@ export default function Page() {
 
         <div style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
           <p style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-8)', color: 'var(--text-secondary)' }}>
-            <strong>ACP</strong> (Agent Commerce Protocol) defines standards and patterns for agent-initiated commerce on the <Link href="/glossary/agentic-web" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>agentic web</Link>. It encompasses pricing discovery, payment negotiation, automated settlement, and verifiable receipts for autonomous economic activity between agents and services.
+            <strong>ACP</strong> (Agent Commerce Protocol) defines standards and patterns for agent-initiated commerce on the <Link href="/glossary/agentic-web/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>agentic web</Link>. It encompasses pricing discovery, payment negotiation, automated settlement, and verifiable receipts for autonomous economic activity between agents and services.
           </p>
 
           <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
@@ -81,10 +81,10 @@ export default function Page() {
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
               <li style={{ marginBottom: 'var(--space-3)' }}>
-                <strong>Pricing discovery</strong> - Machine-readable pricing through <Link href="/glossary/peac" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC</Link> files, <Link href="/glossary/aipref" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AIPREF</Link>, and <Link href="/glossary/http-402-payment-required" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402</Link> responses
+                <strong>Pricing discovery</strong> - Machine-readable pricing through <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC</Link> files, <Link href="/glossary/aipref/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AIPREF</Link>, and <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402</Link> responses
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
-                <strong>Payment protocols</strong> - Standardized flows using HTTP 402, <Link href="/glossary/x402" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>x402</Link>, and multi-rail settlement
+                <strong>Payment protocols</strong> - Standardized flows using HTTP 402, <Link href="/glossary/x402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>x402</Link>, and multi-rail settlement
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
                 <strong>Receipt verification</strong> - Cryptographic PEAC-Receipt tokens as proof of payment and access rights
@@ -245,19 +245,19 @@ export default function Page() {
           </h2>
           <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/products/gateway-402" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Gateway 402</Link> - Enterprise payment infrastructure for ACP
+              <Link href="/products/gateway-402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Gateway 402</Link> - Enterprise payment infrastructure for ACP
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/peac" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Policy and receipt standards used in ACP
+              <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Policy and receipt standards used in ACP
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/a2a" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>A2A</Link> - Agent-to-agent communication patterns
+              <Link href="/glossary/a2a/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>A2A</Link> - Agent-to-agent communication patterns
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/agentic-web" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure enabling agent commerce
+              <Link href="/glossary/agentic-web/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure enabling agent commerce
             </li>
             <li style={{ marginBottom: 0 }}>
-              <Link href="/solutions/api-providers" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>API Providers solution</Link> - Monetize agent access with ACP
+              <Link href="/solutions/api-providers/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>API Providers solution</Link> - Monetize agent access with ACP
             </li>
           </ul>
         </div>

@@ -133,11 +133,17 @@ export default function NavigationHeader() {
                 href="https://github.com/peacprotocol/peac"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="nav-cta-btn"
+                className="nav-github-btn"
+                aria-label="View on GitHub"
               >
                 <Github size={18} />
-                Get Started
               </a>
+              <Link
+                href="/verify"
+                className="nav-cta-btn"
+              >
+                Try Verify
+              </Link>
             </div>
           </div>
 
@@ -228,15 +234,33 @@ export default function NavigationHeader() {
                     fontSize: 'var(--text-sm)',
                     fontWeight: 500,
                     textDecoration: 'none',
+                    color: 'var(--text-secondary)',
+                    background: 'var(--surface-subtle)',
+                    border: '1px solid var(--border-default)',
+                    borderRadius: 'var(--radius-lg)'
+                  }}
+                >
+                  <Github size={16} />
+                  View on GitHub
+                </a>
+                <Link
+                  href="/verify"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: 'var(--space-3) var(--space-4)',
+                    fontSize: 'var(--text-sm)',
+                    fontWeight: 500,
+                    textDecoration: 'none',
                     color: 'var(--white)',
                     background: 'var(--accent-brand)',
                     borderRadius: 'var(--radius-lg)',
                     boxShadow: '0 0 20px -5px var(--accent-brand-glow)'
                   }}
                 >
-                  <Github size={16} />
-                  Get Started
-                </a>
+                  Try Verify
+                </Link>
               </div>
             </div>
           </div>
@@ -249,7 +273,6 @@ export default function NavigationHeader() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          gap: var(--space-2);
           padding: var(--space-2) var(--space-4);
           font-size: var(--text-sm);
           font-weight: 500;
@@ -277,8 +300,7 @@ export default function NavigationHeader() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          gap: var(--space-2);
-          padding: 0 var(--space-3);
+          width: 36px;
           height: 36px;
           color: var(--text-secondary);
           background: transparent;
@@ -297,17 +319,6 @@ export default function NavigationHeader() {
         :global(.nav-github-btn:focus-visible) {
           outline: 2px solid var(--accent-brand);
           outline-offset: 2px;
-        }
-
-        :global(.github-license-badge) {
-          font-size: var(--text-xs);
-          font-weight: 500;
-          color: var(--text-tertiary);
-          white-space: nowrap;
-        }
-
-        :global(.nav-github-btn:hover .github-license-badge) {
-          color: var(--text-secondary);
         }
 
         /* Nav Link */

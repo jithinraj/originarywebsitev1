@@ -208,7 +208,7 @@ export default function Page() {
                   marginBottom: 'var(--space-8)'
                 }}>
                   <p style={{ margin: 0, color: 'var(--text-primary)', fontSize: 'var(--text-base)' }}>
-                    At Originary, <Link href="/integrations/acp" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>PEAC Protocol</Link> is our answer to the next step in that story:
+                    At Originary, <Link href="/integrations/acp/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>PEAC Protocol</Link> is our answer to the next step in that story:
                   </p>
                   <ul style={{ margin: 'var(--space-4) 0 0 0', paddingLeft: 'var(--space-5)' }}>
                     <li style={{ marginBottom: 'var(--space-2)' }}>You detect AI bot traffic</li>
@@ -246,7 +246,7 @@ export default function Page() {
                 </div>
 
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  In the <Link href="/blog/ai-bot-detection" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>previous piece on AI bot detection</Link> we focused on visibility: spotting AI agents in your traffic, using metadata, fingerprints, and access logs to understand who is calling you and why.
+                  In the <Link href="/blog/ai-bot-detection/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>previous piece on AI bot detection</Link> we focused on visibility: spotting AI agents in your traffic, using metadata, fingerprints, and access logs to understand who is calling you and why.
                 </p>
 
                 <p style={{ marginBottom: 'var(--space-6)' }}>
@@ -970,13 +970,13 @@ Content-Type: application/json
                   Related Reading
                 </h3>
                 <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
-                  <Link href="/blog/ai-bot-detection" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/blog/ai-bot-detection/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence
                   </Link>
-                  <Link href="/blog/http-402-for-apis" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     HTTP 402 for APIs: Making Payment-Required Responses Work
                   </Link>
-                  <Link href="/blog/aipref-by-ietf" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
+                  <Link href="/blog/aipref-by-ietf/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     AIPREF: A Common Language for AI Usage Preferences
                   </Link>
                 </div>
@@ -1007,7 +1007,7 @@ Content-Type: application/json
                     <ArrowRight size={18} />
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/company/contact"
                     className="btn btn-lg btn-ghost"
                     style={{ color: 'var(--white)', border: '1px solid rgba(255,255,255,0.3)' }}
                   >

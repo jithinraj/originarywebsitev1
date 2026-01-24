@@ -45,7 +45,7 @@ export default function Page() {
         <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-6)', color: 'var(--text-secondary)' }}>
           <Link href="/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Home</Link>
           {' '}/{' '}
-          <Link href="/glossary" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
+          <Link href="/glossary/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
           {' '}/{' '}
           <span style={{ color: 'var(--text-primary)' }}>Agentic Web</span>
         </nav>
@@ -81,10 +81,10 @@ export default function Page() {
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
               <li style={{ marginBottom: 'var(--space-3)' }}>
-                <strong>Machine-readable policies</strong> - Terms of service, pricing, and usage rules in formats agents can parse (<Link href="/glossary/aipref" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AIPREF</Link>, <Link href="/glossary/peac" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC</Link>)
+                <strong>Machine-readable policies</strong> - Terms of service, pricing, and usage rules in formats agents can parse (<Link href="/glossary/aipref/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AIPREF</Link>, <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC</Link>)
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
-                <strong>Automated payment flows</strong> - Agents discover pricing and pay for services using protocols like <Link href="/glossary/http-402-payment-required" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402</Link> and <Link href="/glossary/x402" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>x402</Link>
+                <strong>Automated payment flows</strong> - Agents discover pricing and pay for services using protocols like <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402</Link> and <Link href="/glossary/x402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>x402</Link>
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
                 <strong>Verifiable receipts</strong> - Cryptographic proof of payment, access, and compliance (PEAC-Receipt JWS tokens)
@@ -134,7 +134,7 @@ export default function Page() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-6)', marginBottom: 'var(--space-8)' }}>
             <div className="card">
               <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
-                <Link href="/glossary/peac" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>PEAC</Link>
+                <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>PEAC</Link>
               </h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                 Policy discovery and verifiable receipts. Agents discover terms and present cryptographic proof of compliance.
@@ -142,7 +142,7 @@ export default function Page() {
             </div>
             <div className="card">
               <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
-                <Link href="/glossary/http-402-payment-required" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>HTTP 402</Link>
+                <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>HTTP 402</Link>
               </h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                 Payment-required status code. Signals that payment is needed to access a resource with inline payment hints.
@@ -150,7 +150,7 @@ export default function Page() {
             </div>
             <div className="card">
               <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
-                <Link href="/glossary/a2a" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>A2A</Link>
+                <Link href="/glossary/a2a/" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>A2A</Link>
               </h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                 Agent-to-agent communication protocols. Standardized patterns for discovery, negotiation, and settlement.
@@ -158,7 +158,7 @@ export default function Page() {
             </div>
             <div className="card">
               <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
-                <Link href="/glossary/mcp" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>MCP</Link>
+                <Link href="/glossary/mcp/" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>MCP</Link>
               </h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
                 Model Context Protocol. Enables agents to connect to data sources and services with standardized interfaces.
@@ -209,16 +209,16 @@ export default function Page() {
           </h2>
           <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/solutions/ai-builders" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AI Builders solution</Link> - Build compliant AI systems for the agentic web
+              <Link href="/solutions/ai-builders/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AI Builders solution</Link> - Build compliant AI systems for the agentic web
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/peac" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Core infrastructure for agentic web
+              <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Core infrastructure for agentic web
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/a2a" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>A2A</Link> - Agent-to-agent communication protocols
+              <Link href="/glossary/a2a/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>A2A</Link> - Agent-to-agent communication protocols
             </li>
             <li style={{ marginBottom: 0 }}>
-              <Link href="/products/gateway-402" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Gateway 402</Link> - Payment infrastructure for agentic web
+              <Link href="/products/gateway-402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Gateway 402</Link> - Payment infrastructure for agentic web
             </li>
           </ul>
         </div>

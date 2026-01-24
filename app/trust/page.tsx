@@ -170,9 +170,9 @@ export default function TrustPage() {
                 title="Company"
                 description="Corporate information and brand guidelines."
                 links={[
-                  { href: '/about', label: 'About Originary' },
+                  { href: '/company/about', label: 'About Originary' },
                   { href: '/trademark', label: 'Trademark Guidelines' },
-                  { href: '/contact', label: 'Contact Us' }
+                  { href: '/company/contact', label: 'Contact Us' }
                 ]}
               />
             </div>

@@ -696,7 +696,7 @@ Content-Usage: /research/ train-ai=y`}
                     <ArrowRight size={18} />
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/company/contact"
                     className="btn btn-lg btn-ghost"
                     style={{ color: 'var(--white)', border: '1px solid rgba(255,255,255,0.3)' }}
                   >

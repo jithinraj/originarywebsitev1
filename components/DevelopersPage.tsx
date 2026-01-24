@@ -119,7 +119,7 @@ const apiSections = [
     method: 'POST',
     endpoint: '/v1/verify',
     detail: 'Verify receipt authenticity',
-    link: '/products/verify'
+    link: '/products/verify/'
   },
   {
     title: 'Gateway API',
@@ -127,7 +127,7 @@ const apiSections = [
     method: 'POST',
     endpoint: '/payment/stripe',
     detail: 'Process payment via Stripe',
-    link: '/products/gateway-402'
+    link: '/products/gateway-402/'
   },
   {
     title: 'Policy API',
@@ -204,7 +204,7 @@ export default function DevelopersPage() {
             <SlideIn direction="up" delay={0.3} className="mt-8">
               <div className="flex flex-wrap justify-center gap-4">
                 <AnimatedButton variant="primary">
-                  <Link href="/contact" className="flex items-center gap-2">
+                  <Link href="/company/contact" className="flex items-center gap-2">
                     Get Started
                     <ArrowRight className="w-4 h-4" />
                   </Link>

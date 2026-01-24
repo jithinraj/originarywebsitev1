@@ -35,7 +35,7 @@ export default function Page() {
       <NavigationHeader />
       <main className="max-w-3xl mx-auto px-4 py-10">
         <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)', color: 'var(--text-secondary)' }}>
-          <Link href="/glossary" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
+          <Link href="/glossary/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
           {' '}/{' '}
           <span style={{ color: 'var(--text-primary)' }}>x402</span>
         </nav>
@@ -44,7 +44,7 @@ export default function Page() {
 
         <div className="prose max-w-none mt-8">
           <p className="text-xl text-gray-700 leading-relaxed mb-6">
-            <strong>x402</strong> is a lightweight protocol pattern that uses <Link href="/glossary/http-402-payment-required" className="text-brand-primary underline">HTTP 402 Payment Required</Link> responses with machine-readable JSON hints to enable agent-to-agent paid transactions.
+            <strong>x402</strong> is a lightweight protocol pattern that uses <Link href="/glossary/http-402-payment-required/" className="text-brand-primary underline">HTTP 402 Payment Required</Link> responses with machine-readable JSON hints to enable agent-to-agent paid transactions.
           </p>
 
           <h2 className="text-2xl font-semibold mb-3 mt-8">How it works</h2>
@@ -89,13 +89,13 @@ Content-Type: application/json
           <h2 className="text-2xl font-semibold mb-3 mt-8">Learn more</h2>
           <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
             <li>
-              <Link href="/integrations/x402" className="text-brand-primary underline">x402 Implementation Guide</Link> - Complete technical documentation with code examples
+              <Link href="/integrations/x402/" className="text-brand-primary underline">x402 Implementation Guide</Link> - Complete technical documentation with code examples
             </li>
             <li>
-              <Link href="/guides/http-402" className="text-brand-primary underline">HTTP 402 Practical Guide</Link> - Design principles and common pitfalls
+              <Link href="/guides/http-402/" className="text-brand-primary underline">HTTP 402 Practical Guide</Link> - Design principles and common pitfalls
             </li>
             <li>
-              <Link href="/blog/http-402-for-apis" className="text-brand-primary underline">HTTP 402 for APIs Blog Post</Link> - Real-world implementation patterns
+              <Link href="/blog/http-402-for-apis/" className="text-brand-primary underline">HTTP 402 for APIs Blog Post</Link> - Real-world implementation patterns
             </li>
           </ul>
         </div>

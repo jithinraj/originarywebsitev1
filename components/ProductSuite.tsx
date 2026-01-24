@@ -13,6 +13,7 @@ const products = [
     href: '/products/gateway-402',
     icon: Zap,
     features: ['Edge deployment', 'HTTP 402 flows', 'Signed receipts'],
+    metric: 'Production ready',
   },
   {
     id: 'verify',
@@ -22,6 +23,7 @@ const products = [
     href: '/products/verify',
     icon: ShieldCheck,
     features: ['Offline verification', 'JWKS support', 'Policy validation'],
+    metric: '50ms avg',
   },
   {
     id: 'trace',
@@ -31,6 +33,7 @@ const products = [
     href: '/trace',
     icon: BarChart3,
     features: ['Audit exports', 'Evidence views', 'Compliance tools'],
+    metric: 'Preview',
   },
   {
     id: 'studio',
@@ -40,6 +43,7 @@ const products = [
     href: '/products/studio',
     icon: Layers,
     features: ['Dashboards', 'Scale governance', 'Team management'],
+    metric: 'Preview',
   },
 ]
 
@@ -93,7 +97,12 @@ export default function ProductSuite() {
                 </div>
 
                 <div className="card-content">
-                  <h3 className="card-title">{product.title}</h3>
+                  <div className="card-title-row">
+                    <h3 className="card-title">{product.title}</h3>
+                    <span className={`card-metric ${product.metric === 'Production ready' ? 'live' : ''}`}>
+                      {product.metric}
+                    </span>
+                  </div>
                   <p className="card-tagline">{product.tagline}</p>
                   <p className="card-desc">{product.desc}</p>
                 </div>
@@ -253,12 +262,37 @@ export default function ProductSuite() {
           margin-bottom: var(--space-4);
         }
 
+        .card-title-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: var(--space-3);
+          margin-bottom: var(--space-1);
+        }
+
         .card-title {
           font-size: var(--text-xl);
           font-weight: 600;
           color: var(--text-primary);
-          margin: 0 0 var(--space-1);
+          margin: 0;
           letter-spacing: -0.01em;
+        }
+
+        .card-metric {
+          font-size: var(--text-xs);
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          padding: var(--space-1) var(--space-2);
+          border-radius: var(--radius-sm);
+          background: var(--surface-subtle);
+          color: var(--text-tertiary);
+          white-space: nowrap;
+        }
+
+        .card-metric.live {
+          background: var(--accent-success-muted);
+          color: var(--accent-success);
         }
 
         .card-tagline {

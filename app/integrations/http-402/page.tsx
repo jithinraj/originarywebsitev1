@@ -314,7 +314,7 @@ Cache-Control: no-store
               gap: 'var(--space-6)',
               marginBottom: 'var(--space-12)'
             }}>
-              <Link href="/integrations/x402" className="card" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
+              <Link href="/integrations/x402/" className="card" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
                 <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                   x402 Protocol Guide
                 </h3>
@@ -338,7 +338,7 @@ Cache-Control: no-store
                   <ArrowRight size={16} />
                 </div>
               </Link>
-              <Link href="/glossary/http-402-payment-required" className="card" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
+              <Link href="/glossary/http-402-payment-required/" className="card" style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
                 <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                   HTTP 402 Glossary
                 </h3>
@@ -390,7 +390,7 @@ Cache-Control: no-store
                 <ArrowRight size={18} />
               </Link>
               <Link
-                href="/contact"
+                href="/company/contact"
                 className="btn btn-lg btn-ghost"
                 style={{
                   color: 'var(--white)',

@@ -19,7 +19,7 @@ export default function Page(){
       <main className="max-w-3xl mx-auto px-4 py-10">
         <Breadcrumbs trail={[
           {href:"/", label:"Home"},
-          {href:"/integrations/x402", label:"x402"},
+          {href:"/integrations/x402/", label:"x402"},
           {href:"/integrations/x402/python-fastapi/", label:"FastAPI"}
         ]}/>
 
@@ -37,14 +37,14 @@ export default function Page(){
         </p>
 
         <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mb-8">
-          <li><Link href="/integrations/x402/express-node" className="text-blue-600 hover:underline font-medium">Express (Node)</Link></li>
+          <li><Link href="/integrations/x402/express-node/" className="text-blue-600 hover:underline font-medium">Express (Node)</Link></li>
           <li><Link href="/integrations/x402/nextjs/" className="text-blue-600 hover:underline font-medium">Next.js / Edge runtime</Link></li>
-          <li><Link href="/integrations/x402/cloudflare-workers" className="text-blue-600 hover:underline font-medium">Cloudflare Workers</Link></li>
+          <li><Link href="/integrations/x402/cloudflare-workers/" className="text-blue-600 hover:underline font-medium">Cloudflare Workers</Link></li>
         </ul>
 
         <div className="p-6 bg-gray-50 rounded-lg border">
           <h3 className="text-xl font-semibold mb-3">Return to x402 guide</h3>
-          <Link href="/integrations/x402" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+          <Link href="/integrations/x402/" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
             x402 Pillar Guide
           </Link>
         </div>

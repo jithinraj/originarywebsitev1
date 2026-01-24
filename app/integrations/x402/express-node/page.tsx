@@ -73,7 +73,7 @@ app.listen(3000, () => {
       <main className="max-w-3xl mx-auto px-4 py-10">
         <Breadcrumbs trail={[
           {href:"/", label:"Home"},
-          {href:"/integrations/x402", label:"x402"},
+          {href:"/integrations/x402/", label:"x402"},
           {href:"/integrations/x402/express-node/", label:"Express"}
         ]}/>
 
@@ -107,9 +107,9 @@ app.listen(3000, () => {
         <div className="my-10 p-6 bg-gray-50 rounded-lg border">
           <h3 className="text-xl font-semibold mb-3">Next steps</h3>
           <p className="text-gray-700 mb-4">
-            Integrate with your payment rail and issue verifiable receipts. See the <Link href="/integrations/x402" className="text-blue-600 hover:underline">x402 pillar guide</Link> for receipt patterns and comparisons.
+            Integrate with your payment rail and issue verifiable receipts. See the <Link href="/integrations/x402/" className="text-blue-600 hover:underline">x402 pillar guide</Link> for receipt patterns and comparisons.
           </p>
-          <Link href="/developers" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+          <Link href="/developers/" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
             Developer Tools
           </Link>
         </div>
