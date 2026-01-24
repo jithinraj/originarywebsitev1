@@ -44,7 +44,7 @@ export default function Page() {
         <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-6)', color: 'var(--text-secondary)' }}>
           <Link href="/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Home</Link>
           {' '}/{' '}
-          <Link href="/glossary/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
+          <Link href="/glossary" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
           {' '}/{' '}
           <span style={{ color: 'var(--text-primary)' }}>PEAC</span>
         </nav>
@@ -145,7 +145,7 @@ PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6InBlYWMucmVjZWlwdC8wLjkiLCJraWQiOiJvcm
           </h2>
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <p style={{ marginBottom: 'var(--space-4)' }}>
-              PEAC and <Link href="/glossary/x402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>x402</Link> are complementary protocols:
+              PEAC and <Link href="/glossary/x402" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>x402</Link> are complementary protocols:
             </p>
             <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
               <li style={{ marginBottom: 'var(--space-3)' }}>
@@ -185,16 +185,16 @@ PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6InBlYWMucmVjZWlwdC8wLjkiLCJraWQiOiJvcm
           </h2>
           <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/products/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol Overview</Link> - Full protocol documentation
+              <Link href="/products/peac" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol Overview</Link> - Full protocol documentation
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/verify/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Verify PEAC-Receipt</Link> - Offline signature verification tool
+              <Link href="/verify" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Verify PEAC-Receipt</Link> - Offline signature verification tool
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> - Status code used with PEAC
+              <Link href="/glossary/http-402-payment-required" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> - Status code used with PEAC
             </li>
             <li style={{ marginBottom: 0 }}>
-              <Link href="/glossary/agentic-web/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure for autonomous agent commerce
+              <Link href="/glossary/agentic-web" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure for autonomous agent commerce
             </li>
           </ul>
         </div>

@@ -35,7 +35,7 @@ export default function Page() {
       <NavigationHeader />
       <main className="max-w-3xl mx-auto px-4 py-10">
         <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)', color: 'var(--text-secondary)' }}>
-          <Link href="/glossary/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
+          <Link href="/glossary" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
           {' '}/{' '}
           <span style={{ color: 'var(--text-primary)' }}>HTTP 402 Payment Required</span>
         </nav>
@@ -60,7 +60,7 @@ export default function Page() {
 
           <h2 className="text-2xl font-semibold mb-3 mt-8">Modern usage with x402</h2>
           <p className="text-gray-700 leading-relaxed">
-            The <Link href="/glossary/x402/" className="text-brand-primary underline">x402 protocol pattern</Link> revives HTTP 402 by pairing it with machine-readable JSON payment hints. This enables automated agents to:
+            The <Link href="/glossary/x402" className="text-brand-primary underline">x402 protocol pattern</Link> revives HTTP 402 by pairing it with machine-readable JSON payment hints. This enables automated agents to:
           </p>
           <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
             <li>Discover pricing programmatically</li>
@@ -105,10 +105,10 @@ Cache-Control: no-store
           <h2 className="text-2xl font-semibold mb-3 mt-8">Learn more</h2>
           <ul className="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
             <li>
-              <Link href="/guides/http-402/" className="text-brand-primary underline">HTTP 402 Practical Guide</Link> - Design principles, flow patterns, and common pitfalls
+              <Link href="/guides/http-402" className="text-brand-primary underline">HTTP 402 Practical Guide</Link> - Design principles, flow patterns, and common pitfalls
             </li>
             <li>
-              <Link href="/integrations/x402/" className="text-brand-primary underline">x402 Implementation Guide</Link> - Step-by-step code examples for Express, Next.js, and Cloudflare Workers
+              <Link href="/integrations/x402" className="text-brand-primary underline">x402 Implementation Guide</Link> - Step-by-step code examples for Express, Next.js, and Cloudflare Workers
             </li>
             <li>
               <a href="https://httpwg.org/specs/rfc9110.html#status.402" target="_blank" rel="noopener" className="text-brand-primary underline">RFC 9110 Section 15.5.3</a> - Official HTTP 402 specification

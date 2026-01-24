@@ -83,7 +83,7 @@ export default function Developers() {
                   flexWrap: 'wrap'
                 }}
               >
-                <Link href="/company/contact" className="btn btn-primary btn-lg">
+                <Link href="/contact" className="btn btn-primary btn-lg">
                   <span>Get Started</span>
                   <ArrowRight size={18} />
                 </Link>
@@ -281,7 +281,7 @@ export default {
               }}>
                 For step-by-step implementation guides with Express, Next.js, and Cloudflare Workers, see our{' '}
                 <Link
-                  href="/integrations/x402/"
+                  href="/integrations/x402"
                   style={{
                     color: 'var(--accent-brand)',
                     textDecoration: 'underline',
@@ -499,7 +499,7 @@ export default {
                 method="POST"
                 endpoint="/v1/verify"
                 detail="Verify receipt authenticity"
-                link="/products/verify/"
+                link="/products/verify"
               />
               <ApiSection
                 title="Gateway API"
@@ -507,7 +507,7 @@ export default {
                 method="POST"
                 endpoint="/payment/stripe"
                 detail="Process payment via Stripe"
-                link="/products/gateway-402/"
+                link="/products/gateway-402"
               />
               <ApiSection
                 title="Policy API"

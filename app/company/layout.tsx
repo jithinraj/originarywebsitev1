@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Company',
   description: 'Originary builds AI infrastructure and tools for the agentic web, across Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance.',
   keywords: 'Originary company, Poem Inc, about Originary, agentic web, PEAC Protocol, AI infrastructure',
-  robots: 'index,follow',
+  robots: 'noindex,follow',
   openGraph: {
     title: 'Company | Originary',
     description: 'Originary builds AI infrastructure and tools for the agentic web, across Access, Attribution, Consent, Commerce, Compliance, Privacy, and Provenance.',
@@ -25,9 +25,6 @@ export const metadata: Metadata = {
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx'
-  },
-  alternates: {
-    canonical: '/company',
   },
 }
 

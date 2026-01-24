@@ -45,7 +45,7 @@ export default function Page() {
         <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-6)', color: 'var(--text-secondary)' }}>
           <Link href="/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Home</Link>
           {' '}/{' '}
-          <Link href="/glossary/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
+          <Link href="/glossary" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
           {' '}/{' '}
           <span style={{ color: 'var(--text-primary)' }}>A2A</span>
         </nav>
@@ -72,7 +72,7 @@ export default function Page() {
 
         <div style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
           <p style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-8)', color: 'var(--text-secondary)' }}>
-            <strong>A2A</strong> (Agent-to-Agent) refers to protocols, standards, and communication patterns that enable autonomous agents to discover, negotiate, transact, and maintain compliance records without human intervention. A2A is fundamental to the <Link href="/glossary/agentic-web/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>agentic web</Link>.
+            <strong>A2A</strong> (Agent-to-Agent) refers to protocols, standards, and communication patterns that enable autonomous agents to discover, negotiate, transact, and maintain compliance records without human intervention. A2A is fundamental to the <Link href="/glossary/agentic-web" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>agentic web</Link>.
           </p>
 
           <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
@@ -81,13 +81,13 @@ export default function Page() {
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
               <li style={{ marginBottom: 'var(--space-3)' }}>
-                <strong>Discovery</strong> - Agents find services, policies, and pricing through machine-readable formats (<code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code>, <Link href="/glossary/aipref/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AIPREF</Link>)
+                <strong>Discovery</strong> - Agents find services, policies, and pricing through machine-readable formats (<code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code>, <Link href="/glossary/aipref" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AIPREF</Link>)
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
                 <strong>Negotiation</strong> - Automated agreement on terms, pricing, and service levels without human approval flows
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
-                <strong>Payment</strong> - Direct agent-initiated payments using protocols like <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402</Link> and <Link href="/glossary/x402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>x402</Link>
+                <strong>Payment</strong> - Direct agent-initiated payments using protocols like <Link href="/glossary/http-402-payment-required" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402</Link> and <Link href="/glossary/x402" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>x402</Link>
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
                 <strong>Verification</strong> - Cryptographic receipts (PEAC-Receipt) proving payment, access rights, and compliance
@@ -168,7 +168,7 @@ export default function Page() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-6)', marginBottom: 'var(--space-8)' }}>
             <div className="card">
               <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
-                <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>PEAC</Link>
+                <Link href="/glossary/peac" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>PEAC</Link>
               </h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0, fontSize: 'var(--text-sm)' }}>
                 Policy discovery + verifiable receipts
@@ -176,7 +176,7 @@ export default function Page() {
             </div>
             <div className="card">
               <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
-                <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>HTTP 402 / x402</Link>
+                <Link href="/glossary/http-402-payment-required" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>HTTP 402 / x402</Link>
               </h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0, fontSize: 'var(--text-sm)' }}>
                 Payment-required signaling + challenge-response
@@ -184,7 +184,7 @@ export default function Page() {
             </div>
             <div className="card">
               <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
-                <Link href="/glossary/mcp/" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>MCP</Link>
+                <Link href="/glossary/mcp" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>MCP</Link>
               </h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0, fontSize: 'var(--text-sm)' }}>
                 Model Context Protocol for agent integrations
@@ -192,7 +192,7 @@ export default function Page() {
             </div>
             <div className="card">
               <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
-                <Link href="/glossary/aipref/" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>AIPREF</Link>
+                <Link href="/glossary/aipref" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>AIPREF</Link>
               </h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0, fontSize: 'var(--text-sm)' }}>
                 AI preference files for content usage policies
@@ -228,16 +228,16 @@ export default function Page() {
           </h2>
           <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/agentic-web/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure enabling A2A communication
+              <Link href="/glossary/agentic-web" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure enabling A2A communication
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/products/gateway-402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Gateway 402</Link> - Payment infrastructure for A2A commerce
+              <Link href="/products/gateway-402" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Gateway 402</Link> - Payment infrastructure for A2A commerce
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/solutions/api-providers/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>API Providers solution</Link> - Monetize agent access with A2A protocols
+              <Link href="/solutions/api-providers" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>API Providers solution</Link> - Monetize agent access with A2A protocols
             </li>
             <li style={{ marginBottom: 0 }}>
-              <Link href="/developers/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Developer Documentation</Link> - Implement A2A in your services
+              <Link href="/developers" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Developer Documentation</Link> - Implement A2A in your services
             </li>
           </ul>
         </div>

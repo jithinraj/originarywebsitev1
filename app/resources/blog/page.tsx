@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: 'agentic web blog, PEAC protocol insights, autonomous agents, tech updates',
   robots: 'noindex,follow',
   alternates: {
-    canonical: '/resources/blog',
+    canonical: '/blog',
   },
 }
 
@@ -36,7 +36,7 @@ export default function Blog() {
                   </div>
                   <h2>PEAC Protocol v1.0: Production Ready</h2>
                   <p>The PEAC protocol reaches production readiness with comprehensive enterprise features and stability guarantees.</p>
-                  <a href="/resources/blog/peac-v1-production-ready" className="btn text">Read more →</a>
+                  <a href="/blog/peac-v1-production-ready" className="btn text">Read more →</a>
                 </article>
 
                 <article className="blog-post">
@@ -46,7 +46,7 @@ export default function Blog() {
                   </div>
                   <h2>Enterprise Agentic Governance Best Practices</h2>
                   <p>Learn how Fortune 500 companies are implementing agentic governance at scale with comprehensive policy management.</p>
-                  <a href="/resources/blog/enterprise-governance-best-practices" className="btn text">Read more →</a>
+                  <a href="/blog/enterprise-governance-best-practices" className="btn text">Read more →</a>
                 </article>
 
                 <article className="blog-post">
@@ -56,7 +56,7 @@ export default function Blog() {
                   </div>
                   <h2>Building PEAC-Compliant Agents</h2>
                   <p>A comprehensive guide to building autonomous agents that respect creator preferences and generate verifiable receipts.</p>
-                  <a href="/resources/blog/building-peac-compliant-agents" className="btn text">Read more →</a>
+                  <a href="/blog/building-peac-compliant-agents" className="btn text">Read more →</a>
                 </article>
               </div>
 

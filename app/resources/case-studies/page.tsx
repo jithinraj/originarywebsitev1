@@ -53,7 +53,7 @@ export default function CaseStudies() {
                         <span className="metric-label">Compliance rate</span>
                       </div>
                     </div>
-                    <a href="/company/contact" className="btn secondary">Request case study</a>
+                    <a href="/contact" className="btn secondary">Request case study</a>
                   </div>
                 </div>
 
@@ -81,7 +81,7 @@ export default function CaseStudies() {
                         <span className="metric-label">Downtime</span>
                       </div>
                     </div>
-                    <a href="/company/contact" className="btn secondary">Request case study</a>
+                    <a href="/contact" className="btn secondary">Request case study</a>
                   </div>
                 </div>
 
@@ -109,7 +109,7 @@ export default function CaseStudies() {
                         <span className="metric-label">Time savings</span>
                       </div>
                     </div>
-                    <a href="/company/contact" className="btn secondary">Request case study</a>
+                    <a href="/contact" className="btn secondary">Request case study</a>
                   </div>
                 </div>
               </div>

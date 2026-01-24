@@ -201,7 +201,7 @@ export default function TraceHeroSection() {
             </a>
 
             <Link
-              href="/trace/demo"
+              href="/demo"
               className="btn btn-ghost"
               style={{
                 display: 'inline-flex',

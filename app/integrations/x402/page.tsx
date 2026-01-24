@@ -215,7 +215,7 @@ Cache-Control: no-store
             </p>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: 'var(--space-3)' }}>
-                <Link href="/integrations/x402/express-node/" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600, fontSize: 'var(--text-base)' }}>
+                <Link href="/integrations/x402/express-node" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600, fontSize: 'var(--text-base)' }}>
                   → Express (Node)
                 </Link>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)', marginLeft: 'var(--space-4)' }}>
@@ -231,7 +231,7 @@ Cache-Control: no-store
                 </p>
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
-                <Link href="/integrations/x402/cloudflare-workers/" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600, fontSize: 'var(--text-base)' }}>
+                <Link href="/integrations/x402/cloudflare-workers" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600, fontSize: 'var(--text-base)' }}>
                   → Cloudflare Workers
                 </Link>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)', marginLeft: 'var(--space-4)' }}>
@@ -265,7 +265,7 @@ Cache-Control: no-store
               Return explicit errors for expired/insufficient proofs.
             </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-              See <Link href="/integrations/mcp/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Model Context Protocol (MCP)</Link>, <Link href="/integrations/acp/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Commerce Protocol (ACP)</Link>, and <Link href="/integrations/a2a/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agent-to-Agent (A2A)</Link> for receipt integration patterns.
+              See <Link href="/integrations/mcp" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Model Context Protocol (MCP)</Link>, <Link href="/integrations/acp" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Commerce Protocol (ACP)</Link>, and <Link href="/integrations/a2a" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agent-to-Agent (A2A)</Link> for receipt integration patterns.
             </p>
           </div>
 
@@ -338,9 +338,9 @@ Cache-Control: no-store
               Ready to implement x402?
             </h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
-              Start with one of our stack guides above, or explore <Link href="/developers/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>developer tools</Link> for x402 receipts and verification.
+              Start with one of our stack guides above, or explore <Link href="/developers" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>developer tools</Link> for x402 receipts and verification.
             </p>
-            <Link href="/pricing/" className="btn btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+            <Link href="/pricing" className="btn btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}>
               View Pricing
             </Link>
           </div>

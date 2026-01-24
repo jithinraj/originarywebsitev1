@@ -15,10 +15,7 @@ export const metadata: Metadata = {
     title: 'Observability & Receipts | Originary',
     description: 'PEAC receipts and observability. Self-host for free or talk to us about managed cloud.',
   },
-  robots: 'index,follow',
-  alternates: {
-    canonical: '/trace/pricing'
-  },
+  robots: 'noindex,follow',
 }
 
 export default function TracePricingLayout({

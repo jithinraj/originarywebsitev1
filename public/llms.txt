@@ -2,7 +2,7 @@
 
 > Originary provides verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.
 
-Last updated: 2026-01-19
+Last updated: 2026-01-24
 
 Company: Poem, Inc.
 Location: Delaware, USA
@@ -30,7 +30,6 @@ AI Policy Pack Generator. CLI tool to generate peac.txt, AIPREF headers, and hum
 
 ### Trace (/trace)
 AI bot detection and traffic analytics. Identifies AI agents accessing your APIs and web resources. Export logs and proofs to your stack.
-- [Trace Demo](/trace/demo) - Interactive demonstration
 
 ### Gateway 402 (/products/gateway-402)
 HTTP 402 paywall for AI traffic. Enforce policy at the edge with allow/deny/rate-limit options or HTTP 402 challenges. Process payments via x402 (stablecoins) or Stripe.
@@ -88,7 +87,7 @@ Open standard for AI agent transactions (Apache-2.0). Current version: 0.10.0
 - [Developers](/developers) - Technical documentation and CLI quickstart
 - [Downloads](/downloads) - CLI tools and packages
 - [Demo](/demo) - Interactive PEAC v0.10.0 protocol trace demonstration
-- [Pricing](/pricing) - Developer $1, Professional $2,500/mo, Enterprise custom
+- [Pricing](/pricing) - Open source (free, Apache 2.0), Cloud (usage-based), Enterprise (custom)
 - [Search](/search) - Site search
 
 ## Guides

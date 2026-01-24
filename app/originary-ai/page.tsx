@@ -121,7 +121,7 @@ export default function OriginaryAI() {
                   <span>See a live receipt</span>
                   <ArrowRight size={18} />
                 </Link>
-                <Link href="/company/contact" className="btn btn-secondary btn-lg">
+                <Link href="/contact" className="btn btn-secondary btn-lg">
                   Get started
                 </Link>
               </div>
@@ -225,7 +225,7 @@ export default function OriginaryAI() {
                 <Link href="/receipts" className="btn btn-primary">
                   See a live receipt
                 </Link>
-                <Link href="/company/contact" className="btn btn-secondary">
+                <Link href="/contact" className="btn btn-secondary">
                   Get started
                 </Link>
                 <Link href="/pricing" className="btn btn-ghost">

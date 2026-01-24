@@ -119,7 +119,7 @@ export default function ResourcesPage() {
                 icon={<BookOpen size={32} style={{ color: 'var(--accent-brand)' }} />}
                 title="Blog"
                 description="Insights, updates, and thoughts on agentic coordination and AI orchestration."
-                href="/resources/blog"
+                href="/blog"
                 linkText="Read posts"
                 category="Articles & Insights"
               />
@@ -309,7 +309,7 @@ export default function ResourcesPage() {
                     <ArrowRight size={18} />
                   </Link>
                   <Link
-                    href="/company/contact"
+                    href="/contact"
                     className="btn btn-lg btn-ghost"
                     style={{
                       color: 'var(--white)',

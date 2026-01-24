@@ -45,7 +45,7 @@ export default function Page() {
         <nav aria-label="Breadcrumb" style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-6)', color: 'var(--text-secondary)' }}>
           <Link href="/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Home</Link>
           {' '}/{' '}
-          <Link href="/glossary/" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
+          <Link href="/glossary" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Glossary</Link>
           {' '}/{' '}
           <span style={{ color: 'var(--text-primary)' }}>MCP</span>
         </nav>
@@ -72,7 +72,7 @@ export default function Page() {
 
         <div style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
           <p style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-8)', color: 'var(--text-secondary)' }}>
-            <strong>MCP</strong> (Model Context Protocol) is an open standard for connecting AI models and agents to data sources, services, and tools. It provides standardized interfaces for agents to access external context, execute actions, and integrate with third-party systems on the <Link href="/glossary/agentic-web/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>agentic web</Link>.
+            <strong>MCP</strong> (Model Context Protocol) is an open standard for connecting AI models and agents to data sources, services, and tools. It provides standardized interfaces for agents to access external context, execute actions, and integrate with third-party systems on the <Link href="/glossary/agentic-web" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>agentic web</Link>.
           </p>
 
           <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
@@ -135,7 +135,7 @@ export default function Page() {
             MCP in the agentic web
           </h2>
           <p style={{ marginBottom: 'var(--space-4)' }}>
-            MCP complements other agentic web protocols by focusing on <em>context access</em> while protocols like <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC</Link> handle <em>policy enforcement</em> and <Link href="/glossary/a2a/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>A2A</Link> handles <em>agent communication</em>.
+            MCP complements other agentic web protocols by focusing on <em>context access</em> while protocols like <Link href="/glossary/peac" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC</Link> handle <em>policy enforcement</em> and <Link href="/glossary/a2a" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>A2A</Link> handles <em>agent communication</em>.
           </p>
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <p style={{ marginBottom: 'var(--space-3)', fontWeight: 600, color: 'var(--text-primary)' }}>
@@ -144,7 +144,7 @@ export default function Page() {
             <ol style={{ paddingLeft: 'var(--space-6)', margin: 0, color: 'var(--text-secondary)' }}>
               <li style={{ marginBottom: 'var(--space-2)' }}>Agent discovers API through MCP resource registry</li>
               <li style={{ marginBottom: 'var(--space-2)' }}>Agent fetches <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> to understand pricing</li>
-              <li style={{ marginBottom: 'var(--space-2)' }}>Agent pays using <Link href="/glossary/http-402-payment-required/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402</Link> flow</li>
+              <li style={{ marginBottom: 'var(--space-2)' }}>Agent pays using <Link href="/glossary/http-402-payment-required" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402</Link> flow</li>
               <li style={{ marginBottom: 'var(--space-2)' }}>Agent receives PEAC-Receipt as proof of payment</li>
               <li style={{ marginBottom: 0 }}>Agent uses MCP to call API tools with receipt-based auth</li>
             </ol>
@@ -205,16 +205,16 @@ export default function Page() {
           </h2>
           <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/agentic-web/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure for agent-native internet
+              <Link href="/glossary/agentic-web" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure for agent-native internet
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/a2a/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>A2A</Link> - Agent-to-agent communication protocols
+              <Link href="/glossary/a2a" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>A2A</Link> - Agent-to-agent communication protocols
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Policy enforcement and verifiable receipts
+              <Link href="/glossary/peac" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Policy enforcement and verifiable receipts
             </li>
             <li style={{ marginBottom: 0 }}>
-              <Link href="/solutions/ai-builders/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AI Builders solution</Link> - Build compliant agent systems
+              <Link href="/solutions/ai-builders" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AI Builders solution</Link> - Build compliant agent systems
             </li>
           </ul>
         </div>

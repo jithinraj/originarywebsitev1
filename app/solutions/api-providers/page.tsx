@@ -177,7 +177,7 @@ export default function APIProviders() {
                   flexWrap: 'wrap'
                 }}
               >
-                <a href="/company/contact" className="btn btn-primary">
+                <a href="/contact" className="btn btn-primary">
                   Talk to sales
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </a>

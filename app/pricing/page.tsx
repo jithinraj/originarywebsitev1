@@ -466,6 +466,52 @@ export default function PricingPage() {
               </div>
             </section>
 
+            {/* Open Source Commitment */}
+            <div style={{
+              marginTop: 'var(--space-12)',
+              padding: 'var(--space-8)',
+              borderRadius: 'var(--radius-2xl)',
+              background: 'var(--surface-card)',
+              border: '1px solid var(--border-default)',
+              textAlign: 'center'
+            }}>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 'var(--space-3)',
+                marginBottom: 'var(--space-4)'
+              }}>
+                <Github size={24} style={{ color: 'var(--accent-brand)' }} />
+                <h3 style={{
+                  fontSize: 'var(--text-xl)',
+                  fontWeight: 700,
+                  color: 'var(--text-primary)',
+                  margin: 0
+                }}>
+                  Open Source First
+                </h3>
+              </div>
+              <p style={{
+                fontSize: 'var(--text-base)',
+                color: 'var(--text-secondary)',
+                lineHeight: 1.7,
+                marginBottom: 'var(--space-4)',
+                maxWidth: '640px',
+                margin: '0 auto var(--space-4) auto'
+              }}>
+                PEAC Protocol is an open standard maintained by Originary and the community. The protocol specification, reference implementations, and core tooling are Apache 2.0 licensed and free to use, modify, and distribute.
+              </p>
+              <p style={{
+                fontSize: 'var(--text-sm)',
+                color: 'var(--text-tertiary)',
+                maxWidth: '480px',
+                margin: '0 auto'
+              }}>
+                Originary&trade; is the commercial steward of PEAC Protocol. We welcome grants, fellowships, and institutional support for open infrastructure.
+              </p>
+            </div>
+
             {/* CTA */}
             <div className="cta-card" style={{
               marginTop: 'var(--space-16)',

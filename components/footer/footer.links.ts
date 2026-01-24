@@ -69,7 +69,6 @@ export const FOOTER_DEVELOPERS: FooterGroup = {
     { label: 'Docs: Stripe', href: '/docs/payments/stripe' },
     { label: 'Downloads', href: '/downloads' },
     { label: 'Demo', href: '/demo' },
-    { label: 'Trace Demo', href: '/trace/demo' },
     { label: 'Verify Tool', href: '/verify' },
   ],
 }
@@ -112,7 +111,7 @@ export const FOOTER_COMPANY: FooterGroup = {
     { label: 'Blog', href: '/blog' },
     { label: 'Pricing', href: '/pricing' },
     { label: 'Press', href: '/press' },
-    { label: 'Contact', href: '/company/contact' },
+    { label: 'Contact', href: '/contact' },
     { label: 'Trust Center', href: '/trust' },
   ],
 }

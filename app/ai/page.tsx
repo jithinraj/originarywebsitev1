@@ -197,7 +197,7 @@ export default function OriginaryAIPage() {
               }}>
                 Works with A2A networks, MCP tool calls, and HTTP-402 payment rails out of the box. Learn more about{' '}
                 <Link
-                  href="/integrations/x402/"
+                  href="/integrations/x402"
                   style={{
                     color: 'var(--accent-brand)',
                     textDecoration: 'underline'
@@ -716,7 +716,7 @@ export default function OriginaryAIPage() {
                 <Link href="/receipts" className="btn btn-primary btn-lg">
                   See a receipt in 30 seconds
                 </Link>
-                <Link href="/company/contact" className="btn btn-secondary btn-lg">
+                <Link href="/contact" className="btn btn-secondary btn-lg">
                   Talk to us about your A2A architecture
                 </Link>
               </div>
