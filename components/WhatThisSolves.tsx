@@ -23,7 +23,7 @@ export default function WhatThisSolves() {
             <span className="column-icon-wrapper before-icon">
               <X size={12} strokeWidth={2.5} />
             </span>
-            <h3 className="column-label">Before</h3>
+            <span className="column-label">Before</span>
           </div>
           <ul className="column-list">
             {beforeItems.map((item, idx) => (
@@ -47,7 +47,7 @@ export default function WhatThisSolves() {
             <span className="column-icon-wrapper after-icon">
               <Check size={12} strokeWidth={2.5} />
             </span>
-            <h3 className="column-label">After</h3>
+            <span className="column-label">After</span>
           </div>
           <ul className="column-list">
             {afterItems.map((item, idx) => (
