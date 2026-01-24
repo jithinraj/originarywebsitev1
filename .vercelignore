@@ -12,7 +12,6 @@ node_modules/
 
 # Old files not needed for deployment
 *.html
-LAUNCH_READINESS_REPORT.md
 
 # Database files
 *.db
