@@ -323,7 +323,7 @@ Content-Type: application/json`,
 }`,
     metaLeft: 'PEAC-Receipt: eyJhbGci...',
     metaRight: '',
-    caption: 'Signed PEAC-Receipt - verify in <5 ms'
+    caption: 'Signed PEAC-Receipt - verifiable proof of transaction'
   },
   {
     badge: 'TRACE',

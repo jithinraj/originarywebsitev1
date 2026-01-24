@@ -13,7 +13,6 @@ const products = [
     href: '/products/gateway-402',
     icon: Zap,
     features: ['Edge deployment', 'HTTP 402 flows', 'Signed receipts'],
-    metric: 'Production ready',
   },
   {
     id: 'verify',
@@ -23,7 +22,6 @@ const products = [
     href: '/products/verify',
     icon: ShieldCheck,
     features: ['Offline verification', 'JWKS support', 'Policy validation'],
-    metric: '50ms avg',
   },
   {
     id: 'trace',
@@ -33,7 +31,6 @@ const products = [
     href: '/trace',
     icon: BarChart3,
     features: ['Audit exports', 'Evidence views', 'Compliance tools'],
-    metric: 'Preview',
   },
   {
     id: 'studio',
@@ -43,7 +40,6 @@ const products = [
     href: '/products/studio',
     icon: Layers,
     features: ['Dashboards', 'Scale governance', 'Team management'],
-    metric: 'Preview',
   },
 ]
 
@@ -105,9 +101,6 @@ export default function ProductSuite() {
                 <div className="card-content">
                   <div className="card-title-row">
                     <h3 className="card-title">{product.title}</h3>
-                    <span className={`card-metric ${product.metric === 'Production ready' ? 'live' : ''}`}>
-                      {product.metric}
-                    </span>
                   </div>
                   <p className="card-tagline">{product.tagline}</p>
                   <p className="card-desc">{product.desc}</p>
