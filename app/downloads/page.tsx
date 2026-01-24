@@ -89,7 +89,7 @@ export default function Downloads() {
                 color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-4)'
               }}>
-                Official <strong>Originary</strong> CLI builds. Use to integrate access control, consent, attribution, provenance and verifiable receipts into your apps.
+                Official <strong>Originary</strong> tools and PEAC Protocol SDKs. Implement access control, consent, attribution, provenance and verifiable receipts.
               </p>
 
               <div style={{
@@ -104,23 +104,135 @@ export default function Downloads() {
               }}>
                 <span><strong>Publisher:</strong> Originary (Poem, Inc.)</span>
                 <span>•</span>
-                <span><strong>License:</strong> Open source</span>
+                <span><strong>Version:</strong> 0.10.0</span>
+                <span>•</span>
+                <span><strong>License:</strong> Apache 2.0</span>
                 <span>•</span>
                 <span><strong>Wire format:</strong> peac-receipt/0.1</span>
               </div>
 
-              <p style={{
-                fontSize: 'var(--text-base)',
-                lineHeight: 1.6,
-                color: 'var(--text-secondary)',
-                marginBottom: 'var(--space-12)'
+              <div style={{
+                marginBottom: 'var(--space-6)',
+                padding: 'var(--space-5)',
+                background: 'var(--surface-card)',
+                borderRadius: 'var(--radius-xl)',
+                border: '1px solid var(--border-default)'
               }}>
-                <strong>Get the software:</strong>{' '}
-                <a href="#downloads" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>macOS (.zip)</a> •{' '}
-                <a href="#downloads" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>Windows (.zip)</a> •{' '}
-                <a href="#downloads" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>Linux (.zip)</a> •{' '}
-                <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)', textDecoration: 'none' }}>View source on GitHub</a>
-              </p>
+                <p style={{
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 600,
+                  color: 'var(--text-primary)',
+                  marginBottom: 'var(--space-3)'
+                }}>
+                  Get the software:
+                </p>
+                <div style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: 'var(--space-2)'
+                }}>
+                  <a
+                    href="https://github.com/peacprotocol/peac"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 'var(--space-2)',
+                      padding: 'var(--space-2) var(--space-4)',
+                      background: 'var(--accent-brand)',
+                      color: 'white',
+                      textDecoration: 'none',
+                      borderRadius: 'var(--radius-md)',
+                      fontSize: 'var(--text-sm)',
+                      fontWeight: 500
+                    }}
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.10.0.zip"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 'var(--space-2)',
+                      padding: 'var(--space-2) var(--space-4)',
+                      background: 'var(--surface-subtle)',
+                      color: 'var(--text-primary)',
+                      textDecoration: 'none',
+                      borderRadius: 'var(--radius-md)',
+                      fontSize: 'var(--text-sm)',
+                      fontWeight: 500,
+                      border: '1px solid var(--border-default)'
+                    }}
+                  >
+                    Source (.zip)
+                  </a>
+                  <a
+                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.10.0.tar.gz"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 'var(--space-2)',
+                      padding: 'var(--space-2) var(--space-4)',
+                      background: 'var(--surface-subtle)',
+                      color: 'var(--text-primary)',
+                      textDecoration: 'none',
+                      borderRadius: 'var(--radius-md)',
+                      fontSize: 'var(--text-sm)',
+                      fontWeight: 500,
+                      border: '1px solid var(--border-default)'
+                    }}
+                  >
+                    Source (.tar.gz)
+                  </a>
+                  <a
+                    href="https://www.npmjs.com/package/@peac/cli"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 'var(--space-2)',
+                      padding: 'var(--space-2) var(--space-4)',
+                      background: 'var(--surface-subtle)',
+                      color: 'var(--text-primary)',
+                      textDecoration: 'none',
+                      borderRadius: 'var(--radius-md)',
+                      fontSize: 'var(--text-sm)',
+                      fontWeight: 500,
+                      border: '1px solid var(--border-default)'
+                    }}
+                  >
+                    npm
+                  </a>
+                </div>
+              </div>
+
+              <div style={{
+                marginBottom: 'var(--space-12)',
+                padding: 'var(--space-4)',
+                background: 'var(--surface-subtle)',
+                borderRadius: 'var(--radius-lg)',
+                border: '1px solid var(--border-default)'
+              }}>
+                <p style={{
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 600,
+                  color: 'var(--text-primary)',
+                  marginBottom: 'var(--space-2)'
+                }}>
+                  Or install via package manager:
+                </p>
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 'var(--space-2)'
+                }}>
+                  <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i -g @peac/cli@next</code>
+                  <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>go get github.com/peacprotocol/peac/sdks/go@v0.10.0</code>
+                </div>
+              </div>
 
               <div id="downloads">
                 <DownloadsServer />

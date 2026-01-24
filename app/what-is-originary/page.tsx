@@ -102,7 +102,7 @@ export default function WhatIsOriginaryPage() {
         "name": "Is PEAC stable?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "PEAC is at version 0.9.27; the goal is to earn 1.0 through multi-implementation, conformance, and standards work."
+          "text": "PEAC is at version 0.10.0; the goal is to earn 1.0 through multi-implementation, conformance, and standards work."
         }
       }
     ]
@@ -236,7 +236,7 @@ export default function WhatIsOriginaryPage() {
                   marginBottom: 'var(--space-4)'
                 }}
               >
-                Agents need <strong>accountability</strong>: clear terms, enforceable decisions, and durable evidence of what happened. As of v0.9.27 (January 2026), PEAC provides this through signed receipts and verifiable policy snapshots.
+                Agents need <strong>accountability</strong>: clear terms, enforceable decisions, and durable evidence of what happened. As of v0.10.0 (January 2026), PEAC provides this through signed receipts and verifiable policy snapshots.
               </p>
               <p
                 style={{
@@ -696,7 +696,7 @@ export default function WhatIsOriginaryPage() {
                 <ul style={{ color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 'var(--space-6)', marginBottom: 0 }}>
                   <li style={{ marginBottom: 'var(--space-2)' }}>PEAC does not enforce compliance. It provides evidence of what the issuer claims occurred.</li>
                   <li style={{ marginBottom: 'var(--space-2)' }}>Receipt contents are issuer-controlled. Verifiers trust the issuer's representation, not an oracle.</li>
-                  <li style={{ marginBottom: 'var(--space-2)' }}>Version 0.9.27 wire format may change before 1.0. Cross-version compatibility is not guaranteed.</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}>Version 0.10.0 wire format may change before 1.0. Cross-version compatibility is not guaranteed.</li>
                   <li style={{ marginBottom: 'var(--space-2)' }}>Key compromise invalidates all receipts signed with that key (standard PKI limitation).</li>
                   <li>PEAC provides evidence for disputes, not adjudication. Resolution is out of scope.</li>
                 </ul>
@@ -780,7 +780,7 @@ export default function WhatIsOriginaryPage() {
                     Is PEAC stable?
                   </h3>
                   <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
-                    PEAC is at version <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>0.9.27</code>; the goal is to earn <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>1.0</code> through multi-implementation, conformance, and standards work.
+                    PEAC is at version <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>0.10.0</code>; the goal is to earn <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>1.0</code> through multi-implementation, conformance, and standards work.
                   </p>
                 </div>
               </div>

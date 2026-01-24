@@ -66,10 +66,8 @@ export const FOOTER_DEVELOPERS: FooterGroup = {
     { label: 'Documentation', href: '/developers' },
     { label: 'Docs: Receipts', href: '/docs/receipts' },
     { label: 'Docs: Payments', href: '/docs/payments/x402' },
-    { label: 'Docs: Stripe', href: '/docs/payments/stripe' },
     { label: 'Downloads', href: '/downloads' },
     { label: 'Demo', href: '/demo' },
-    { label: 'Trace Demo', href: '/trace/demo' },
     { label: 'Verify Tool', href: '/verify' },
   ],
 }

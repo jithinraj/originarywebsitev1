@@ -56,7 +56,7 @@ export default function DeclarePage() {
     {
       icon: <FileText size={24} />,
       title: '.well-known/peac.txt',
-      description: 'The primary AI policy discovery file. Advertises your AIPREF URL, 402 access control, payment rails (x402, Stripe), provenance (C2PA), receipt verification endpoint, and public keys.',
+      description: 'The primary AI policy discovery file. Advertises your AIPREF URL, 402 access control, payment adapters (x402, gateways), provenance (C2PA), receipt verification endpoint, and public keys.',
       whoReads: 'AI agents, crawlers, PEAC-compatible clients'
     },
     {
@@ -381,7 +381,7 @@ export default function DeclarePage() {
                   }}
                 >
                   <Layers size={16} />
-                  <span>New in v0.9.27</span>
+                  <span>Policy Profiles</span>
                 </div>
                 <h2 style={{
                   fontSize: 'var(--text-3xl)',
@@ -612,7 +612,7 @@ peac policy init
                   marginTop: 'var(--space-3)',
                   lineHeight: 1.6
                 }}>
-                  Validates <code style={{ background: 'var(--text-secondary)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> and generated files against PEAC 0.9.27 schemas.
+                  Validates <code style={{ background: 'var(--text-secondary)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> and generated files against PEAC 0.10.0 schemas.
                 </p>
               </div>
 
@@ -777,7 +777,7 @@ cp robots-ai-snippet.txt public/`}
                 textAlign: 'center',
                 marginBottom: 'var(--space-10)'
               }}>
-                Policy Kit tracks the PEAC 0.9.27 protocol line. Small, reliable, boring.
+                Policy Kit tracks the PEAC 0.10.0 protocol line. Small, reliable, boring.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
@@ -794,10 +794,10 @@ cp robots-ai-snippet.txt public/`}
                       flexShrink: 0
                     }}
                   >
-                    v0.9.27
+                    v0.10.0
                   </div>
                   <div>
-                    <strong>Full CLI</strong>: <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>init</code>, <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>generate</code>, <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>validate</code>, <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>explain</code>. Policy Profiles (news-media, api-provider, open-source, saas-docs). CAL semantics with first-match-wins evaluation.
+                    <strong>Full CLI</strong>: <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>policy init</code>, <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>policy generate</code>, <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>policy validate</code>, <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>policy explain</code>. Policy Profiles (news-media, api-provider, open-source, saas-docs). First-match-wins evaluation.
                   </div>
                 </div>
                 <div className="card" style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-4)' }}>

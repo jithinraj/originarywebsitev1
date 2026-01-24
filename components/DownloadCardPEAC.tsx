@@ -24,7 +24,7 @@ export default function DownloadCardPEAC() {
       <div style={{
         display: 'grid',
         gap: 'var(--space-3)',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
         marginBottom: 'var(--space-4)'
       }}>
         <div style={{
@@ -44,17 +44,17 @@ export default function DownloadCardPEAC() {
             fontFamily: 'var(--font-mono)',
             margin: 'var(--space-2) 0'
           }}>
-{`pnpm add -g @peac/cli
-pnpm add @peac/protocol @peac/crypto @peac/schema
-npx peac init
-npx peac validate peac.txt`}
+{`npm i -g @peac/cli
+npm i @peac/protocol @peac/crypto @peac/schema
+peac policy init
+peac policy validate peac-policy.yaml`}
           </pre>
           <p style={{
             fontSize: 'var(--text-xs)',
             color: 'var(--text-secondary)',
             marginBottom: 'var(--space-3)'
           }}>
-            Requires Node 18+; see upstream docs.
+            Requires Node 20+; see upstream docs.
           </p>
           <div style={{ display: 'flex', gap: 'var(--space-3)' }}>
             <a
@@ -90,7 +90,7 @@ npx peac validate peac.txt`}
           padding: 'var(--space-4)'
         }}>
           <div style={{ fontWeight: 500, marginBottom: 'var(--space-2)' }}>
-            Wire Version
+            Wire Format
           </div>
           <p style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-2)' }}>
             Current PEAC wire: <code style={{
@@ -98,10 +98,10 @@ npx peac validate peac.txt`}
               padding: '2px 4px',
               borderRadius: 'var(--radius-sm)',
               fontFamily: 'var(--font-mono)'
-            }}>0.9.16</code>
+            }}>peac-receipt/0.1</code>
           </p>
           <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>
-            Originary is validated against 0.9.16.
+            Originary is validated against peac-receipt/0.1.
           </p>
         </div>
       </div>

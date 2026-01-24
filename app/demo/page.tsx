@@ -5,16 +5,17 @@ import Footer from '@/components/Footer'
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { Check, Copy, Play, Pause, SkipForward, RotateCcw, ChevronLeft, ChevronRight, Download, ExternalLink } from 'lucide-react'
 
-const PEAC_TXT_CONTENT = `preferences: https://www.originary.xyz/.well-known/aipref.json
-access_control: http-402
-payments: [x402]
-provenance: c2pa
+const PEAC_TXT_CONTENT = `# PEAC Policy Document
+version: peac-policy/0.1
+usage: conditional
+purposes: [inference, ai_input]
 receipts: required
-verify: https://www.originary.xyz/.well-known/jwks.json
-verify_api: https://api.originary.xyz/verify
-public_keys: https://www.originary.xyz/.well-known/jwks.json
-contact: contact@originary.xyz
-updated_at: 2026-01-02T12:00:00+05:30`
+attribution: required
+rate_limit: 1000/hour
+payment_methods: [x402, stripe]
+payment_endpoint: https://www.originary.xyz/api/pay
+negotiate: https://www.originary.xyz/api/negotiate
+contact: contact@originary.xyz`
 
 const HTTP_EXCHANGES = [
   {
@@ -67,7 +68,7 @@ const TRACE_STEPS = [
 ]
 
 const DECODED_RECEIPT = {
-  typ: 'peac.receipt/0.9',
+  typ: 'peac-receipt/0.1',
   iss: 'https://www.originary.xyz',
   sub: 'https://www.originary.xyz/demo/paid-resource',
   iat: 1734084000,
@@ -114,51 +115,6 @@ function useCopyToClipboard() {
   return { copied, copy }
 }
 
-function AnimatedGrid() {
-  return (
-    <div className="animated-grid" aria-hidden="true">
-      <div className="grid-layer grid-small" />
-      <div className="grid-layer grid-large" />
-      <style jsx>{`
-        .animated-grid {
-          position: absolute;
-          inset: 0;
-          overflow: hidden;
-          pointer-events: none;
-          z-index: 0;
-        }
-        .grid-layer {
-          position: absolute;
-          inset: -50px;
-          background-repeat: repeat;
-          opacity: 0.03;
-        }
-        .grid-small {
-          background-image:
-            linear-gradient(to right, var(--text-muted) 1px, transparent 1px),
-            linear-gradient(to bottom, var(--text-muted) 1px, transparent 1px);
-          background-size: 24px 24px;
-          animation: gridDrift 18s linear infinite;
-        }
-        .grid-large {
-          background-image:
-            linear-gradient(to right, var(--text-tertiary) 1px, transparent 1px),
-            linear-gradient(to bottom, var(--text-tertiary) 1px, transparent 1px);
-          background-size: 96px 96px;
-          animation: gridDrift 24s linear infinite reverse;
-          opacity: 0.02;
-        }
-        @keyframes gridDrift {
-          0% { transform: translate(0, 0); }
-          100% { transform: translate(12px, 12px); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .grid-layer { animation: none; }
-        }
-      `}</style>
-    </div>
-  )
-}
 
 // SVG Circular Flowchart with animations
 function CircularFlowchart({
@@ -266,13 +222,6 @@ function CircularFlowchart({
           const isPast = i < activeStep
           return (
             <g key={node.key} className="node-group" onClick={() => onStepClick(i)} style={{ cursor: 'pointer' }}>
-              {/* Pulse rings - using transform scale instead of r animation */}
-              {isActive && !reducedMotion && (
-                <>
-                  <circle cx={node.x} cy={node.y} r="14" className="pulse-ring pulse-ring-1" />
-                  <circle cx={node.x} cy={node.y} r="14" className="pulse-ring pulse-ring-2" />
-                </>
-              )}
               {/* Node circle */}
               <circle
                 cx={node.x}
@@ -353,23 +302,6 @@ function CircularFlowchart({
           from { stroke-dashoffset: var(--edge-length); }
           to { stroke-dashoffset: 0; }
         }
-        .pulse-ring {
-          fill: none;
-          stroke: var(--accent-brand);
-          stroke-width: 2;
-          transform-origin: center;
-          opacity: 0;
-        }
-        .pulse-ring-1 {
-          animation: pulseRing 1.4s ease-out infinite;
-        }
-        .pulse-ring-2 {
-          animation: pulseRing 1.4s ease-out 0.3s infinite;
-        }
-        @keyframes pulseRing {
-          0% { transform: scale(1); opacity: 0.5; }
-          100% { transform: scale(2); opacity: 0; }
-        }
         .center-card {
           position: absolute;
           top: 50%;
@@ -441,7 +373,7 @@ function CircularFlowchart({
           color: white;
         }
         @media (prefers-reduced-motion: reduce) {
-          .edge-path, .pulse-ring, .node-circle {
+          .edge-path, .node-circle {
             animation: none !important;
             transition: none !important;
           }
@@ -721,7 +653,7 @@ function ReceiptTypewriter({
   return (
     <div className="receipt-typewriter">
       <div className="receipt-header">
-        <span className="receipt-label">DECODED RECEIPT PAYLOAD (v0.9.27)</span>
+        <span className="receipt-label">DECODED RECEIPT PAYLOAD (v0.10.0)</span>
         {isVerified && (
           <span className="verified-badge">
             <Check size={12} />
@@ -871,12 +803,6 @@ function AnimatedTimeline({
             >
               <div className="step-dot">
                 {isPast && <Check size={10} />}
-                {isActive && !reducedMotion && (
-                  <>
-                    <div className="dot-pulse dot-pulse-1" />
-                    <div className="dot-pulse dot-pulse-2" />
-                  </>
-                )}
               </div>
               <div className="step-content">
                 <div className="step-number">Step {i + 1}</div>
@@ -974,23 +900,6 @@ function AnimatedTimeline({
           border-color: var(--accent-secondary);
           color: white;
         }
-        .dot-pulse {
-          position: absolute;
-          inset: -3px;
-          border: 2px solid var(--accent-brand);
-          border-radius: 50%;
-          opacity: 0;
-        }
-        .dot-pulse-1 {
-          animation: dotPulse 1.4s ease-out infinite;
-        }
-        .dot-pulse-2 {
-          animation: dotPulse 1.4s ease-out 0.3s infinite;
-        }
-        @keyframes dotPulse {
-          0% { transform: scale(1); opacity: 0.5; }
-          100% { transform: scale(2); opacity: 0; }
-        }
         .step-content {
           flex: 1;
           min-width: 0;
@@ -1021,9 +930,6 @@ function AnimatedTimeline({
           .timeline-step, .timeline-progress, .timeline-packet {
             animation: none !important;
             transition: none !important;
-          }
-          .dot-pulse {
-            display: none;
           }
         }
       `}</style>
@@ -1092,8 +998,6 @@ export default function DemoPage() {
     <div className="wrap">
       <NavigationHeader />
       <main id="main-content" className="demo-main">
-        <AnimatedGrid />
-
         {/* Hero Section */}
         <section className="demo-section">
           <div className="container">
@@ -1198,9 +1102,8 @@ export default function DemoPage() {
                 </div>
 
                 <div className="info-box">
-                  <strong>Rail-neutral:</strong> PEAC supports multiple payment adapters (x402, stripe).
-                  <code>verify</code> points to JWKS for offline verification;
-                  <code>verify_api</code> is optional convenience.
+                  <strong>Rail-neutral:</strong> PEAC supports multiple payment adapters via <code>payment_methods</code>.
+                  Receipts are verified offline via <code>/.well-known/jwks.json</code>.
                 </div>
               </div>
 
@@ -1234,7 +1137,7 @@ export default function DemoPage() {
             {/* Decoded Receipt */}
             <div className="card demo-card">
               <div className="section-header">
-                <h2>Receipt anatomy (v0.9.27)</h2>
+                <h2>Receipt anatomy (v0.10.0)</h2>
                 <p>Decoded payload showing aipref snapshot, payment evidence, and policy hash binding.</p>
               </div>
               <ReceiptTypewriter isActive={showReceipt || timelineStep >= 6} />
@@ -1342,7 +1245,7 @@ Content-Type: application/json
             {/* Audit Section */}
             <div className="card demo-card">
               <div className="section-header">
-                <h2>Audit-ready exports (v0.9.27)</h2>
+                <h2>Audit-ready exports (v0.10.0)</h2>
                 <p>Dispute packet format for compliance and audit trails.</p>
               </div>
 

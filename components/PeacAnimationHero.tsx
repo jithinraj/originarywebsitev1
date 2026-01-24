@@ -318,8 +318,8 @@ Content-Type: application/json`,
   "subject": "/api/chat",
   "aipref": {"train": "N"},
   "payment": {"rail": "x402"},
-  "issued_at": "2025-11-30",
-  "kid": "2025-key1"
+  "issued_at": "2026-01-24",
+  "kid": "2026-key1"
 }`,
     metaLeft: 'PEAC-Receipt: eyJhbGci...',
     metaRight: '',
@@ -331,7 +331,7 @@ Content-Type: application/json`,
     codeType: 'txt',
     code: `# Verification endpoint
 verify: /peac/verify
-public_keys: kid=2025-key1
+public_keys: kid=2026-key1
 
 POST /peac/verify
 { "valid": true, "rail": "x402" }`,

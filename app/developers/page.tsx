@@ -204,45 +204,39 @@ export default function Developers() {
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
               <QuickStartCard
                 step="1"
-                title="Create policy file (2 min)"
-                description="Deploy your Originary policy to /.well-known/peac.txt"
-                code={`# Step 1: Create the file
-echo 'version: 1.0
-access: conditional
-attribution: required
-pricing:
-  model: per-request
-  amount: 0.001
-  currency: USD
-settlement: x402' > peac.txt
+                title="Create policy file"
+                description="Initialize and deploy your policy to /.well-known/peac.txt"
+                code={`# Install CLI and init policy
+npm i -g @peac/cli
+peac policy init --profile api-provider
 
-# Step 2: Deploy to your domain
-scp peac.txt user@yourdomain.com:/var/www/.well-known/
+# Generate deployment files
+peac policy generate --out ./public --well-known
 
-# Step 3: Verify it's live
-curl https://yourdomain.com/.well-known/peac.txt`}
+# Deploy to your domain
+scp -r public/.well-known user@yourdomain.com:/var/www/`}
               />
               <QuickStartCard
                 step="2"
-                title="Test with CLI (1 min)"
-                description="Validate your policy and generate test receipts"
-                code={`# Run without installing (recommended)
-npx @peac/cli@latest validate https://yourdomain.com
+                title="Validate policy"
+                description="Validate your policy file and test rule matching"
+                code={`# Validate policy syntax
+peac policy validate peac-policy.yaml
 
-# Generate a test receipt
-npx @peac/cli@latest receipt \\
-  --domain yourdomain.com \\
-  --amount 0.001
+# Explain which rule applies for a context
+peac policy explain peac-policy.yaml \\
+  --purpose train --type agent
 
-✓ Policy valid
-✓ Receipt generated: eyJfdHlwZSI6IlBFQUNS...`}
+# Output:
+# Decision: DENY
+# Matched Rule: block-training`}
               />
               <QuickStartCard
                 step="3"
-                title="Accept traffic (2 min)"
-                description="Start processing agent requests with receipts"
-                code={`// Add to your edge/middleware (Cloudflare example)
-import { verifyReceipt } from '@peac/verify';
+                title="Verify receipts"
+                description="Verify incoming PEAC-Receipt headers in your middleware"
+                code={`// Cloudflare Worker / Edge middleware
+import { verifyReceipt } from '@peac/protocol';
 
 export default {
   async fetch(request) {
@@ -255,11 +249,9 @@ export default {
       });
     }
 
-    // Verify receipt against /.well-known/jwks.json
-    const valid = await verifyReceipt(receipt);
-    if (!valid) return new Response('Invalid', { status: 403 });
+    const result = await verifyReceipt(receipt);
+    if (!result.ok) return new Response('Invalid', { status: 403 });
 
-    // Process the request
     return fetch(request);
   }
 }`}

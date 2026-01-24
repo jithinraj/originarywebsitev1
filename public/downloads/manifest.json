@@ -1,29 +1,25 @@
 {
-  "version": "1.0.0",
+  "version": "0.10.0",
   "files": [
     {
-      "filename": "originary-cli-1.0.0-darwin-arm64.zip",
-      "platform": "macOS (Apple silicon)",
-      "size": 1735,
-      "sha256": "1d771bd8af631ff0854e6302eaa3ac7b0869dd3d84702dd42c2d56f174e34411"
+      "filename": "peac-v0.10.0-source.zip",
+      "platform": "Source Code",
+      "description": "PEAC Protocol source code and SDKs",
+      "url": "https://github.com/peacprotocol/peac/archive/refs/tags/v0.10.0.zip",
+      "size": 0
     },
     {
-      "filename": "originary-cli-1.0.0-darwin-x64.zip",
-      "platform": "macOS (Intel)",
-      "size": 1735,
-      "sha256": "0aa9876246dff6038000c2b0e106cbd7bd3b223f95153d18d113c5df8c55bb48"
-    },
-    {
-      "filename": "originary-cli-1.0.0-linux-x64.tar.gz",
-      "platform": "Linux",
-      "size": 1735,
-      "sha256": "2b28030198b4c9db9e08d7e0c7b343823b4a3663fe552b51ed43a53bcb7ff443"
-    },
-    {
-      "filename": "originary-cli-1.0.0-win-x64.zip",
-      "platform": "Windows",
-      "size": 2215,
-      "sha256": "89dff0463a00981fc2057c22684a7763d4e4f75f72a3eaaed787573fb10f8cf7"
+      "filename": "peac-v0.10.0-source.tar.gz",
+      "platform": "Source Code (tar.gz)",
+      "description": "PEAC Protocol source code and SDKs",
+      "url": "https://github.com/peacprotocol/peac/archive/refs/tags/v0.10.0.tar.gz",
+      "size": 0
     }
-  ]
+  ],
+  "npm": {
+    "cli": "@peac/cli@next",
+    "kernel": "@peac/kernel@next",
+    "protocol": "@peac/protocol@next"
+  },
+  "go": "github.com/peacprotocol/peac/sdks/go@v0.10.0"
 }

@@ -1,11 +1,12 @@
-# version: policy specification version (not monorepo release)
+# PEAC Policy Document - https://peacprotocol.org
 version: peac-policy/0.1
-preferences: https://www.originary.xyz/.well-known/aipref.json
-access_control: http-402
-payments: [x402]
-provenance: c2pa
+usage: conditional
+purposes: [inference, ai_input]
 receipts: required
-verify: https://www.originary.xyz/.well-known/jwks.json
-public_keys: https://www.originary.xyz/.well-known/jwks.json
+attribution: required
+rate_limit: 1000/hour
+payment_methods: [x402, stripe]
+payment_endpoint: https://www.originary.xyz/api/pay
+negotiate: https://www.originary.xyz/api/negotiate
 contact: contact@originary.xyz
-updated_at: 2026-01-02T12:00:00+05:30
+license: Proprietary

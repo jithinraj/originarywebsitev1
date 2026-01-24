@@ -111,13 +111,13 @@ export default function Page() {
           }}>
             <pre style={{ margin: 0 }}>
               <code>{`# Example PEAC-Receipt header
-PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6InBlYWMucmVjZWlwdC8wLjkiLCJraWQiOiJvcmlnaW5hcnktMjAyNS0wMSJ9...
+PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6InBlYWMtcmVjZWlwdC8wLjEiLCJraWQiOiJvcmlnaW5hcnktMjAyNS0wMSJ9...
 
 # Decoded payload (example)
 {
   "header": {
     "alg": "EdDSA",
-    "typ": "peac.receipt/0.9",
+    "typ": "peac-receipt/0.1",
     "kid": "originary-2025-01"
   },
   "payload": {
@@ -126,7 +126,7 @@ PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6InBlYWMucmVjZWlwdC8wLjkiLCJraWQiOiJvcm
     "iat": 1734048000,
     "jti": "rcpt_xyz789",
     "peac": {
-      "version": "0.9.23",
+      "version": "0.10.0",
       "resource": "/api/content",
       "policy_hash": "sha256:9f3c..."
     },

@@ -30,10 +30,9 @@ AI Policy Pack Generator. CLI tool to generate peac.txt, AIPREF headers, and hum
 
 ### Trace (/trace)
 AI bot detection and traffic analytics. Identifies AI agents accessing your APIs and web resources. Export logs and proofs to your stack.
-- [Trace Demo](/trace/demo) - Interactive demonstration
 
 ### Gateway 402 (/products/gateway-402)
-HTTP 402 paywall for AI traffic. Enforce policy at the edge with allow/deny/rate-limit options or HTTP 402 challenges. Process payments via x402 (stablecoins) or Stripe.
+HTTP 402 paywall for AI traffic. Enforce policy at the edge with allow/deny/rate-limit options or HTTP 402 challenges. Process payments via x402 (stablecoins) or payment gateways.
 
 ### Verify (/products/verify)
 Receipt verification API. Validate PEAC-Receipt signatures server-side for billing, disputes, and audits.

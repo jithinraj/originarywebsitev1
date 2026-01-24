@@ -466,7 +466,7 @@ export default function AboutPage() {
                   PEAC is Apache-2.0 licensed and stewarded in the open on GitHub by contributors from Originary and the broader community. Multiple independent implementations are expected and encouraged. Originary ships one reference implementation and optional hosted services, but the protocol is not owned by a vendor.
                 </p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
-                  PEAC is currently at version 0.9.27. Wire formats and verification rules are converging; core concepts (policy discovery and receipt verification) are designed for long-term stability.
+                  PEAC is currently at version 0.10.0 (wire format peac-receipt/0.1). Core concepts (policy discovery and receipt verification) are designed for long-term stability.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                   <Link href="/peac" className="btn btn-primary">

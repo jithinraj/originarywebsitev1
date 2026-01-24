@@ -221,7 +221,7 @@ export default function ResearchPage() {
               Evaluation Plan
             </h2>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
-              PEAC is currently at version 0.9.27. Evaluation milestones before 1.0:
+              PEAC is currently at version 0.10.0 (wire format peac-receipt/0.1). Evaluation milestones before 1.0:
             </p>
             <ul style={{ color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 'var(--space-6)' }}>
               <li style={{ marginBottom: 'var(--space-2)' }}><strong>Multiple implementations:</strong> At least two independent, conformant implementations</li>

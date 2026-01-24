@@ -243,13 +243,13 @@ export default function ReceiptsPage() {
                     <span className="dot green" />
                   </div>
                   <span className="receipts-code-filename">receipt.json</span>
-                  <span className="receipts-code-badge">PEAC v0.9.27</span>
+                  <span className="receipts-code-badge">peac-receipt/0.1</span>
                 </div>
                 <pre className="receipts-code-body">
                   <code>{`{
   `}<span className="code-key">{`"header"`}</span>{`: {
     `}<span className="code-key">{`"alg"`}</span>{`: `}<span className="code-string">{`"EdDSA"`}</span>{`,
-    `}<span className="code-key">{`"typ"`}</span>{`: `}<span className="code-string">{`"peac.receipt/0.9"`}</span>{`,
+    `}<span className="code-key">{`"typ"`}</span>{`: `}<span className="code-string">{`"peac-receipt/0.1"`}</span>{`,
     `}<span className="code-key">{`"kid"`}</span>{`: `}<span className="code-string">{`"originary-2025-01"`}</span>{`
   },
   `}<span className="code-key">{`"payload"`}</span>{`: {
@@ -257,7 +257,7 @@ export default function ReceiptsPage() {
     `}<span className="code-key">{`"iat"`}</span>{`: `}<span className="code-number">{`1734048000`}</span>{`,
     `}<span className="code-key">{`"jti"`}</span>{`: `}<span className="code-string">{`"rcpt_7f92ab31"`}</span>{`,
     `}<span className="code-key">{`"peac"`}</span>{`: {
-      `}<span className="code-key">{`"version"`}</span>{`: `}<span className="code-string">{`"0.9.27"`}</span>{`,
+      `}<span className="code-key">{`"version"`}</span>{`: `}<span className="code-string">{`"0.10.0"`}</span>{`,
       `}<span className="code-key">{`"resource"`}</span>{`: `}<span className="code-string">{`"/api/content"`}</span>{`,
       `}<span className="code-key">{`"policy_hash"`}</span>{`: `}<span className="code-string">{`"sha256:9f3c..."`}</span>{`
     },
