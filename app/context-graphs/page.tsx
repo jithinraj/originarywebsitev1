@@ -69,6 +69,9 @@ export default function ContextGraphsPage() {
   }, [])
 
   const handleCopyLink = async (id: string) => {
+    // Guard against SSR
+    if (typeof window === 'undefined') return
+
     const url = `${window.location.origin}${window.location.pathname}#${id}`
     const success = await copyToClipboard(url)
     if (success) {

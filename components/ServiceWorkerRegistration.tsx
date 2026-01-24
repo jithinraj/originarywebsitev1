@@ -4,6 +4,9 @@ import { useEffect } from 'react'
 
 export default function ServiceWorkerRegistration() {
   useEffect(() => {
+    // Guard against SSR
+    if (typeof window === 'undefined' || typeof navigator === 'undefined') return
+
     if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
       window.addEventListener('load', () => {
         navigator.serviceWorker
