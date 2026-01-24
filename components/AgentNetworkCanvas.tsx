@@ -87,7 +87,7 @@ export default function AgentNetworkCanvas({ className = '' }: AgentNetworkCanva
       from,
       to,
       progress: 0,
-      startTime: performance.now(),
+      startTime: typeof performance !== 'undefined' ? performance.now() : Date.now(),
       duration: 2500 + Math.random() * 1500,
       phase: phases[Math.floor(Math.random() * phases.length)],
     }
@@ -175,6 +175,9 @@ export default function AgentNetworkCanvas({ className = '' }: AgentNetworkCanva
   }, [findConnectedNodes])
 
   useEffect(() => {
+    // Guard against SSR
+    if (typeof window === 'undefined') return
+
     const canvas = canvasRef.current
     const container = containerRef.current
     if (!canvas || !container) return
@@ -221,7 +224,7 @@ export default function AgentNetworkCanvas({ className = '' }: AgentNetworkCanva
         const initialPacket = createPacket(nodesRef.current)
         if (initialPacket) {
           packetsRef.current.push(initialPacket)
-          lastPacketTimeRef.current = performance.now()
+          lastPacketTimeRef.current = typeof performance !== 'undefined' ? performance.now() : Date.now()
         }
       }
     }, 1000)

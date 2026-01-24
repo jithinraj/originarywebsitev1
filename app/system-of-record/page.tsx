@@ -68,6 +68,9 @@ export default function SystemOfRecordPage() {
 
   // Track active section on scroll
   useEffect(() => {
+    // Guard against SSR
+    if (typeof window === 'undefined' || typeof document === 'undefined') return
+
     const handleScroll = () => {
       const sections = SECTIONS.map(s => ({
         id: s.id,
@@ -90,6 +93,9 @@ export default function SystemOfRecordPage() {
   }, [])
 
   const copyAnchorLink = async (id: string) => {
+    // Guard against SSR
+    if (typeof window === 'undefined') return
+
     const url = `${window.location.origin}/system-of-record#${id}`
     const success = await copyToClipboard(url)
     if (success) {

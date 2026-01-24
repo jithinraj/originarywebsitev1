@@ -71,6 +71,9 @@ export default function Search({ placeholder = 'Search...', className = '' }: Se
   }, [query, search])
 
   useEffect(() => {
+    // Guard against SSR
+    if (typeof document === 'undefined') return
+
     const handleClickOutside = (e: MouseEvent) => {
       if (
         resultsRef.current &&

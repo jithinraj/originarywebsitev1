@@ -9,6 +9,9 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
+    // Guard against SSR
+    if (typeof window === 'undefined') return
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
     }

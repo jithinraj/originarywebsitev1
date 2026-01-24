@@ -12,6 +12,9 @@ export default function Pricing() {
   const pricing = useCurrency()
 
   useEffect(() => {
+    // Guard against SSR
+    if (typeof document === 'undefined') return
+
     // Add Service JSON-LD (will update dynamically based on currency)
     const jsonLd = {
       "@context": "https://schema.org",

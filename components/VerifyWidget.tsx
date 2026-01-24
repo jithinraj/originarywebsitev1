@@ -29,7 +29,7 @@ export default function VerifyWidget() {
     }
 
     setVerifying(true)
-    const startTime = performance.now()
+    const startTime = typeof performance !== 'undefined' ? performance.now() : Date.now()
 
     try {
       // Parse JWS compact format
@@ -42,7 +42,7 @@ export default function VerifyWidget() {
       const payload = JSON.parse(atob(parts[1]))
 
       // Simulate verification with JWKS
-      const endTime = performance.now()
+      const endTime = typeof performance !== 'undefined' ? performance.now() : Date.now()
       const latency = Math.round(endTime - startTime)
 
       setResult({

@@ -8,6 +8,9 @@ export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    // Guard against SSR
+    if (typeof window === 'undefined' || typeof localStorage === 'undefined') return
+
     setMounted(true)
     // Check localStorage first, then system preference
     const stored = localStorage.getItem('theme') as 'dark' | 'light' | null
