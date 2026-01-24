@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { safeMatchMedia } from '@/lib/clipboard'
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark')
@@ -19,8 +20,10 @@ export default function ThemeToggle() {
       }
     } else {
       // Respect system preference if no stored preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches
+      const darkQuery = safeMatchMedia('(prefers-color-scheme: dark)')
+      const lightQuery = safeMatchMedia('(prefers-color-scheme: light)')
+      const prefersDark = darkQuery?.matches ?? true
+      const prefersLight = lightQuery?.matches ?? false
       if (prefersLight) {
         setTheme('light')
         document.documentElement.setAttribute('data-theme', 'light')

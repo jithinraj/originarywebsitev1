@@ -5,6 +5,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import { useState, useEffect } from 'react'
 import { ArrowRight, CheckCircle, FileText, Lock, Activity, Shield, Layers, ExternalLink, ChevronDown, Link as LinkIcon } from 'lucide-react'
+import { copyToClipboard } from '@/lib/clipboard'
 
 // Section definitions for TOC
 const SECTIONS = [
@@ -88,11 +89,13 @@ export default function SystemOfRecordPage() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const copyAnchorLink = (id: string) => {
+  const copyAnchorLink = async (id: string) => {
     const url = `${window.location.origin}/system-of-record#${id}`
-    navigator.clipboard.writeText(url)
-    setCopiedAnchor(id)
-    setTimeout(() => setCopiedAnchor(null), 2000)
+    const success = await copyToClipboard(url)
+    if (success) {
+      setCopiedAnchor(id)
+      setTimeout(() => setCopiedAnchor(null), 2000)
+    }
   }
 
   // JSON-LD schemas

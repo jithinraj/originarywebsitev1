@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Download, Copy, Check } from 'lucide-react'
+import { copyToClipboard as copyText } from '@/lib/clipboard'
 
 export default function DownloadsClient() {
   const [manifest, setManifest] = useState<any>(null)
@@ -14,10 +15,12 @@ export default function DownloadsClient() {
       .catch(console.error)
   }, [])
 
-  const copyToClipboard = (text: string, hash: string) => {
-    navigator.clipboard.writeText(text)
-    setCopiedHash(hash)
-    setTimeout(() => setCopiedHash(null), 2000)
+  const handleCopyHash = async (text: string, hash: string) => {
+    const success = await copyText(text)
+    if (success) {
+      setCopiedHash(hash)
+      setTimeout(() => setCopiedHash(null), 2000)
+    }
   }
 
   const formatBytes = (bytes: number) => {
@@ -133,7 +136,8 @@ export default function DownloadsClient() {
                 {file.sha256}
               </code>
               <button
-                onClick={() => copyToClipboard(file.sha256, file.sha256)}
+                type="button"
+                onClick={() => handleCopyHash(file.sha256, file.sha256)}
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',

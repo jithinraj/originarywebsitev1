@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Shield, Zap, Database, BarChart, Terminal, FileText, Lock, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 import type { ReactElement } from 'react'
+import { copyToClipboard } from '@/lib/clipboard'
 
 export default function ControlPlaneSection() {
   const [activeTab, setActiveTab] = useState<'policies' | 'settlement' | 'verification' | 'analytics'>('policies')
@@ -362,7 +363,7 @@ pricing:
 
               {/* Copy Button */}
               <button
-                onClick={() => navigator.clipboard.writeText(tabContent[activeTab].code)}
+                onClick={() => copyToClipboard(tabContent[activeTab].code)}
                 style={{
                   position: 'absolute',
                   top: 'var(--space-4)',

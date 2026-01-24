@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useCallback, useState } from 'react'
+import { safeMatchMedia } from '@/lib/clipboard'
 
 interface Node {
   id: number
@@ -36,7 +37,8 @@ export default function AgentNetworkCanvas({ className = '' }: AgentNetworkCanva
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const mediaQuery = safeMatchMedia('(prefers-reduced-motion: reduce)')
+    if (!mediaQuery) return
     setPrefersReducedMotion(mediaQuery.matches)
     const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches)
     mediaQuery.addEventListener('change', handler)

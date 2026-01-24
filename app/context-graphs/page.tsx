@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
+import { copyToClipboard } from '@/lib/clipboard'
 import {
   ChevronDown,
   ChevronUp,
@@ -64,11 +65,13 @@ export default function ContextGraphsPage() {
     return () => observer.disconnect()
   }, [])
 
-  const handleCopyLink = (id: string) => {
+  const handleCopyLink = async (id: string) => {
     const url = `${window.location.origin}${window.location.pathname}#${id}`
-    navigator.clipboard.writeText(url)
-    setCopiedId(id)
-    setTimeout(() => setCopiedId(null), 2000)
+    const success = await copyToClipboard(url)
+    if (success) {
+      setCopiedId(id)
+      setTimeout(() => setCopiedId(null), 2000)
+    }
   }
 
   // JSON-LD structured data

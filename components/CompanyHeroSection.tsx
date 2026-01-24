@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { ArrowRight } from 'lucide-react'
+import { copyToClipboard } from '@/lib/clipboard'
 
 export default function CompanyHeroSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -342,10 +343,12 @@ function InteractiveFlowDemo() {
 
   const sampleToken = 'eyJhbGciOiJFZERTQSIsImtpZCI6IjIwMjUtMDktay4xIiwidHlwIjoiSldUIn0...'
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(sampleToken)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+  const handleCopy = async () => {
+    const success = await copyToClipboard(sampleToken)
+    if (success) {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    }
   }
 
   return (

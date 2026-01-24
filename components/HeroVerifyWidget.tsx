@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { CheckCircle, AlertCircle, Shield, Copy, ExternalLink } from 'lucide-react'
 import { SAMPLE_RECEIPT } from '@/fixtures/sample-receipt'
+import { copyToClipboard, safeMatchMedia } from '@/lib/clipboard'
 
 interface VerifyResult {
   status: 'idle' | 'verifying' | 'success' | 'error'
@@ -27,7 +28,8 @@ export default function HeroVerifyWidget() {
 
   // Check for reduced motion preference
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const mediaQuery = safeMatchMedia('(prefers-reduced-motion: reduce)')
+    if (!mediaQuery) return
     setPrefersReducedMotion(mediaQuery.matches)
 
     const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches)
@@ -130,9 +132,11 @@ export default function HeroVerifyWidget() {
   }
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(receipt)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    const success = await copyToClipboard(receipt)
+    if (success) {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    }
   }
 
   return (

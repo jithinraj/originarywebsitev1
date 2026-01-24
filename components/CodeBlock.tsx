@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Check, Copy } from "lucide-react";
+import { copyToClipboard } from "@/lib/clipboard";
 
 interface CodeTab {
   label: string;
@@ -23,9 +24,11 @@ export default function CodeBlock({ code, lang = "bash", className = "", tabs }:
   const currentLang = tabs ? tabs[activeTab].lang : lang;
 
   async function onCopy() {
-    await navigator.clipboard.writeText(currentCode);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    const success = await copyToClipboard(currentCode);
+    if (success) {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
   }
 
   return (

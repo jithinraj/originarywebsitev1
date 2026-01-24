@@ -4,6 +4,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { Check, Copy, Play, Pause, SkipForward, RotateCcw, ChevronLeft, ChevronRight, Download, ExternalLink } from 'lucide-react'
+import { copyToClipboard, safeMatchMedia } from '@/lib/clipboard'
 
 const PEAC_TXT_CONTENT = `# PEAC Policy Document
 version: peac-policy/0.1
@@ -96,14 +97,12 @@ const DISPUTE_PACKET_PREVIEW = `{"ts":"2026-01-02T12:00:00Z","request_hash":"sha
 function useReducedMotion() {
   const [reducedMotion, setReducedMotion] = useState(false)
   useEffect(() => {
-    if (typeof window === 'undefined' || !window.matchMedia) return
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const mq = safeMatchMedia('(prefers-reduced-motion: reduce)')
+    if (!mq) return
     setReducedMotion(mq.matches)
     const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches)
-    if (mq.addEventListener) {
-      mq.addEventListener('change', handler)
-      return () => mq.removeEventListener('change', handler)
-    }
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
   }, [])
   return reducedMotion
 }
@@ -111,24 +110,10 @@ function useReducedMotion() {
 function useCopyToClipboard() {
   const [copied, setCopied] = useState(false)
   const copy = useCallback(async (text: string) => {
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(text)
-      } else {
-        // Fallback for older browsers
-        const textArea = document.createElement('textarea')
-        textArea.value = text
-        textArea.style.position = 'fixed'
-        textArea.style.opacity = '0'
-        document.body.appendChild(textArea)
-        textArea.select()
-        document.execCommand('copy')
-        document.body.removeChild(textArea)
-      }
+    const success = await copyToClipboard(text)
+    if (success) {
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
-    } catch {
-      console.error('Failed to copy to clipboard')
     }
   }, [])
   return { copied, copy }

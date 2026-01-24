@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { isBrowser, isTouchDevice, prefersReducedMotion } from '@/lib/clipboard'
 
 /**
  * Subtle cursor glow effect that follows the mouse.
@@ -12,11 +13,10 @@ export default function CursorGlow() {
   const [isMobile, setIsMobile] = useState(true)
 
   useEffect(() => {
+    if (!isBrowser()) return
     // Check for mobile and reduced motion
     const checkDevice = () => {
-      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      setIsMobile(isTouchDevice || prefersReducedMotion || window.innerWidth < 1024)
+      setIsMobile(isTouchDevice() || prefersReducedMotion() || window.innerWidth < 1024)
     }
 
     checkDevice()

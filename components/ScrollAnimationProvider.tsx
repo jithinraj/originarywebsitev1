@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import { isBrowser, prefersReducedMotion } from '@/lib/clipboard'
 
 /**
  * ScrollAnimationProvider - Adds scroll-triggered animations
@@ -20,9 +21,9 @@ import { useEffect } from 'react'
  */
 export default function ScrollAnimationProvider() {
   useEffect(() => {
+    if (!isBrowser()) return
     // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReducedMotion) {
+    if (prefersReducedMotion()) {
       // Still add in-view class but immediately for users who prefer reduced motion
       const allAnimated = document.querySelectorAll(
         '.animate-on-scroll, .scroll-fade-up, .scroll-fade-scale, .scroll-fade-left, .scroll-fade-right, .reveal, .section-header-animate, .stagger-children, .stagger-fast'

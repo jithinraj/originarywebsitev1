@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { ArrowRight, Play, Sparkles } from 'lucide-react'
+import { copyToClipboard } from '@/lib/clipboard'
 
 function SlidingText({
   words,
@@ -483,10 +484,12 @@ function InteractiveReceiptDemo() {
 
   const sampleToken = 'eyJhbGciOiJFZERTQSIsImtpZCI6IjIwMjUtMDktay4xIiwidHlwIjoiSldUIn0...'
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(sampleToken)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+  const handleCopy = async () => {
+    const success = await copyToClipboard(sampleToken)
+    if (success) {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    }
   }
 
   return (
