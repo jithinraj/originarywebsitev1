@@ -35,12 +35,12 @@ export default function NewHero() {
           </p>
 
           <p className="hero-solution">
-            PEAC emits a signed interaction record both sides can keep and verify. Publish terms at <code className="hero-code">/.well-known/peac.txt</code>, then issue a receipt for every call.
+            PEAC is the open standard for verifiable interaction records. Publish terms at <code className="hero-code">/.well-known/peac.txt</code> -- every API call returns a signed receipt both sides can keep and verify.
           </p>
 
           <div className="hero-actions">
             <Link href="/verify" className="hero-btn-primary">
-              Try the Verifier
+              Verify a receipt
             </Link>
             <Link href="/developers" className="hero-btn-secondary">
               Quickstart
@@ -50,17 +50,19 @@ export default function NewHero() {
             </Link>
           </div>
 
+          <p className="hero-micro">Paste any receipt. Verifies locally, no server needed.</p>
+
           <div className="hero-footer-strip">
             <p className="strip-brand">
               <span className="strip-item strip-tm">ORIGINARY&trade;</span>
               <span className="strip-dot">&middot;</span>
-              <a href="https://github.com/peacprotocol/peac/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="strip-link-inline">Apache-2.0</a>
+              <span className="strip-item">Offline verification</span>
               <span className="strip-dot">&middot;</span>
-              <a href="https://github.com/peacprotocol/peac/releases" target="_blank" rel="noopener noreferrer" className="strip-link-inline">v0.10.9</a>
+              <span className="strip-item">Conformance vectors</span>
               <span className="strip-dot">&middot;</span>
-              <a href="https://www.npmjs.com/org/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">SDKs + conformance runner</a>
+              <span className="strip-item">Portable evidence bundles</span>
               <span className="strip-dot">&middot;</span>
-              <span className="strip-item">3,500+ tests</span>
+              <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">Apache-2.0 &middot; v0.10.9</a>
             </p>
           </div>
 
@@ -190,6 +192,7 @@ export default function NewHero() {
         .hero-problem { animation-delay: 0.3s; }
         .hero-solution { animation-delay: 0.35s; }
         .hero-actions { animation-delay: 0.4s; }
+        .hero-micro { animation-delay: 0.45s; }
         .hero-footer-strip { animation-delay: 0.5s; }
 
         .hero-badge {
@@ -278,6 +281,13 @@ export default function NewHero() {
           border-radius: var(--radius-sm);
           color: var(--accent-brand);
           white-space: nowrap;
+        }
+
+        .hero-micro {
+          font-size: 12px;
+          color: var(--text-muted);
+          margin: 0;
+          letter-spacing: 0.01em;
         }
 
         .hero-footer-strip {

@@ -1,39 +1,37 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Globe, Shield, FileCheck, CheckCircle, Users, Key } from 'lucide-react'
+import { Globe, FileCheck, CheckCircle, Key } from 'lucide-react'
 
 /**
- * Hero lifecycle diagram -- animated PEAC flow loop.
+ * Hero lifecycle diagram -- animated PEAC receipt flow (~5s loop).
  *
- * Storyboard (~8s loop):
- *  0) idle -- all dimmed
- *  1) request -- Agent -> Service participants light up
- *  2) policy -- peac.txt discovered (progress dot)
- *  3) decision -- ALLOW stamp (progress dot)
- *  4) receipt -- rec_7f3a issued (progress dot)
- *  5) shared -- chip splits to Agent + Service + Auditor (progress dot)
- *  6) verified -- verifier panel: Verify(rec_7f3a) -> VALID
- *  7) soft reset -> loop
+ * Storyboard:
+ *  1) request -- Agent -> Service lights up
+ *  2) policy -- peac.txt discovered
+ *  3) minted -- receipt artifact appears (pause -- first "aha")
+ *  4) delivered -- same receipt on Agent + Service + Auditor
+ *  5) verified -- offline verification panel (long pause -- main "aha")
  *
  * Design rules:
- *  - Progress dots for intermediate steps, checkmark ONLY for terminal
- *  - LIVE badge appears only at verified phase
+ *  - Receipt shown as tangible artifact card (hash + sig visible)
+ *  - Same receipt ID on all 3 delivery targets
+ *  - "Verified offline" as terminal climax with public key mention
+ *  - Static frame under prefers-reduced-motion shows full story
  *  - All colors from design system tokens
  */
 
-type Phase = 'idle' | 'request' | 'policy' | 'decision' | 'receipt' | 'shared' | 'verified'
+type Phase = 'idle' | 'request' | 'policy' | 'minted' | 'delivered' | 'verified'
 
-const PHASE_ORDER: Phase[] = ['idle', 'request', 'policy', 'decision', 'receipt', 'shared', 'verified']
+const PHASES: Phase[] = ['idle', 'request', 'policy', 'minted', 'delivered', 'verified']
 
-const PHASE_TIMINGS: Record<Phase, number> = {
-  idle: 1200,
-  request: 800,
-  policy: 800,
-  decision: 900,
-  receipt: 900,
-  shared: 1200,
-  verified: 2500,
+const TIMING: Record<Phase, number> = {
+  idle: 500,
+  request: 500,
+  policy: 600,
+  minted: 900,
+  delivered: 800,
+  verified: 2000,
 }
 
 export default function HeroFlowDiagram() {
@@ -45,21 +43,20 @@ export default function HeroFlowDiagram() {
 
     const advance = () => {
       if (!active) return
-      setPhase(PHASE_ORDER[idx])
-      const delay = PHASE_TIMINGS[PHASE_ORDER[idx]]
-      idx = (idx + 1) % PHASE_ORDER.length
+      setPhase(PHASES[idx])
+      const delay = TIMING[PHASES[idx]]
+      idx = (idx + 1) % PHASES.length
       setTimeout(advance, delay)
     }
 
-    const start = setTimeout(advance, 1400)
+    const start = setTimeout(advance, 1200)
     return () => { active = false; clearTimeout(start) }
   }, [])
 
-  const phaseIdx = PHASE_ORDER.indexOf(phase)
-  const atOrPast = (p: Phase) => phaseIdx >= PHASE_ORDER.indexOf(p)
+  const at = (p: Phase) => PHASES.indexOf(phase) >= PHASES.indexOf(p)
 
   return (
-    <div className="flow-diagram" role="img" aria-label="PEAC protocol flow: request, policy discovery, decision, receipt issuance, sharing, verification">
+    <div className="flow-diagram" role="img" aria-label="PEAC receipt flow: request, policy check, receipt signed, delivered to both parties, verified offline with public key">
       {/* Chrome header */}
       <div className="flow-chrome">
         <div className="chrome-dots">
@@ -68,93 +65,74 @@ export default function HeroFlowDiagram() {
           <span className="dot dot-green" />
         </div>
         <span className="chrome-title">peac lifecycle</span>
-        {atOrPast('verified') && <span className="chrome-badge">verified</span>}
+        {at('verified') && <span className="chrome-badge">verified</span>}
       </div>
 
       {/* Participants */}
       <div className="flow-participants">
-        <div className={`participant ${atOrPast('request') ? 'active' : ''}`}>
+        <div className={`participant ${at('request') ? 'active' : ''}`}>
           <span className="participant-dot agent" />
           <span className="participant-label">Agent</span>
         </div>
-        <div className={`flow-arrow ${atOrPast('request') ? 'active' : ''}`}>
+        <div className={`flow-arrow ${at('request') ? 'active' : ''}`}>
           <span className="arrow-line" />
           <span className="arrow-head" />
         </div>
-        <div className={`participant ${atOrPast('request') ? 'active' : ''}`}>
+        <div className={`participant ${at('request') ? 'active' : ''}`}>
           <span className="participant-dot service" />
           <span className="participant-label">Service</span>
         </div>
       </div>
 
-      {/* Steps */}
+      {/* Policy step */}
       <div className="flow-body">
-        {/* Step 1: Policy discovered */}
-        <div className={`flow-step ${atOrPast('policy') ? 'active' : ''} ${phase === 'policy' ? 'current' : ''}`}>
+        <div className={`flow-step ${at('policy') ? 'active' : ''} ${phase === 'policy' ? 'current' : ''}`}>
           <div className="step-icon"><Globe size={15} strokeWidth={1.8} /></div>
           <div className="step-content">
             <span className="step-label">Policy discovered</span>
             <span className="step-mono">/.well-known/peac.txt</span>
           </div>
-          {atOrPast('policy') && <span className="step-progress" />}
-        </div>
-
-        {/* Step 2: Decision enforced */}
-        <div className={`flow-step ${atOrPast('decision') ? 'active' : ''} ${phase === 'decision' ? 'current' : ''}`}>
-          <div className="step-icon"><Shield size={15} strokeWidth={1.8} /></div>
-          <div className="step-content">
-            <span className="step-label">Decision enforced</span>
-            <span className="step-mono">
-              {atOrPast('decision') ? (
-                <span className="decision-allow">ALLOW</span>
-              ) : (
-                'evaluating...'
-              )}
-            </span>
-          </div>
-          {atOrPast('decision') && <span className="step-progress" />}
-        </div>
-
-        {/* Step 3: Receipt issued */}
-        <div className={`flow-step ${atOrPast('receipt') ? 'active' : ''} ${phase === 'receipt' ? 'current' : ''}`}>
-          <div className="step-icon"><FileCheck size={15} strokeWidth={1.8} /></div>
-          <div className="step-content">
-            <span className="step-label">Receipt issued</span>
-            <span className="step-mono">
-              {atOrPast('receipt') ? (
-                <>peac-receipt/0.1 &middot; <span className="receipt-id">rec_7f3a</span></>
-              ) : (
-                'signing...'
-              )}
-            </span>
-          </div>
-          {atOrPast('receipt') && <span className="step-progress" />}
-        </div>
-
-        {/* Step 4: Record shared */}
-        <div className={`flow-step ${atOrPast('shared') ? 'active' : ''} ${phase === 'shared' ? 'current' : ''}`}>
-          <div className="step-icon"><Users size={15} strokeWidth={1.8} /></div>
-          <div className="step-content">
-            <span className="step-label">Record shared</span>
-            {atOrPast('shared') ? (
-              <div className="shared-chips">
-                <span className="chip chip-agent">Agent</span>
-                <span className="chip chip-service">Service</span>
-                <span className="chip chip-auditor">Auditor</span>
-              </div>
-            ) : (
-              <span className="step-mono">distributing...</span>
-            )}
-          </div>
-          {atOrPast('shared') && <span className="step-progress" />}
+          {at('policy') && <span className="step-progress" />}
         </div>
       </div>
 
-      {/* Verifier panel -- the terminal "undeniable" moment */}
-      <div className={`flow-verifier ${atOrPast('verified') ? 'active' : ''}`}>
+      {/* Receipt artifact -- the tangible object */}
+      <div className={`receipt-artifact ${at('minted') ? 'active' : ''}`}>
+        <div className="artifact-icon">
+          <FileCheck size={16} strokeWidth={1.8} />
+        </div>
+        <div className="artifact-content">
+          <span className="artifact-title">Signed Receipt</span>
+          <span className="artifact-id">rec_7f3a</span>
+          <span className="artifact-meta">Ed25519 &middot; peac-receipt/0.1</span>
+        </div>
+      </div>
+
+      {/* Delivery -- same receipt on all sides */}
+      <div className={`delivery-row ${at('delivered') ? 'active' : ''}`}>
+        <div className="delivery-card card-agent">
+          <span className="delivery-dot agent" />
+          <span className="delivery-who">Agent</span>
+          <code className="delivery-hash">rec_7f3a</code>
+        </div>
+        <div className="delivery-card card-service">
+          <span className="delivery-dot service" />
+          <span className="delivery-who">Service</span>
+          <code className="delivery-hash">rec_7f3a</code>
+        </div>
+        <div className="delivery-card card-auditor">
+          <span className="delivery-dot auditor" />
+          <span className="delivery-who">Auditor</span>
+          <code className="delivery-hash">rec_7f3a</code>
+        </div>
+      </div>
+
+      {/* Verified offline -- the climax */}
+      <div className={`flow-verifier ${at('verified') ? 'active' : ''}`}>
         <div className="verifier-header">
           <Key size={12} strokeWidth={2} />
           <span>Verify(rec_7f3a)</span>
+          <span className="verifier-offline">offline</span>
         </div>
         <div className="verifier-results">
           <div className="verifier-row">
@@ -172,6 +150,9 @@ export default function HeroFlowDiagram() {
               VALID
             </span>
           </div>
+        </div>
+        <div className="verifier-footer">
+          public key &middot; no callback required
         </div>
       </div>
 
@@ -296,9 +277,9 @@ export default function HeroFlowDiagram() {
           border-left: 6px solid var(--text-muted);
         }
 
-        /* Steps */
+        /* Policy step */
         .flow-body {
-          padding: 8px 14px 12px;
+          padding: 8px 14px 4px;
           display: flex;
           flex-direction: column;
           gap: 4px;
@@ -373,7 +354,6 @@ export default function HeroFlowDiagram() {
           color: var(--text-tertiary);
         }
 
-        /* Progress dot -- intermediate steps only */
         .step-progress {
           flex-shrink: 0;
           width: 6px;
@@ -389,60 +369,125 @@ export default function HeroFlowDiagram() {
           to { transform: scale(1); opacity: 0.5; }
         }
 
-        /* Decision stamp */
-        .decision-allow {
-          color: var(--accent-success);
-          font-weight: 700;
-          letter-spacing: 0.06em;
-          font-size: 10px;
-        }
-
-        /* Receipt ID */
-        .receipt-id {
-          color: var(--accent-brand);
-          font-weight: 600;
-        }
-
-        /* Shared chips */
-        .shared-chips {
+        /* Receipt artifact -- the product */
+        .receipt-artifact {
+          margin: 4px 14px;
+          padding: 10px 12px;
+          background: var(--surface-base);
+          border: 1px solid var(--border-subtle);
+          border-radius: var(--radius-lg);
           display: flex;
-          gap: 4px;
-          margin-top: 2px;
+          align-items: flex-start;
+          gap: 10px;
+          opacity: 0;
+          transform: scale(0.95);
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .chip {
+        .receipt-artifact.active {
+          opacity: 1;
+          transform: scale(1);
+          border-color: var(--accent-brand);
+          box-shadow: 0 0 0 1px var(--accent-brand-muted);
+        }
+
+        .artifact-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          border-radius: var(--radius-md);
+          background: var(--accent-brand-muted);
+          color: var(--accent-brand);
+          flex-shrink: 0;
+        }
+
+        .artifact-content {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
+
+        .artifact-title {
+          font-size: 11px;
+          font-weight: 600;
+          color: var(--text-secondary);
+          letter-spacing: 0.02em;
+        }
+
+        .artifact-id {
+          font-family: var(--font-mono);
+          font-size: 15px;
+          font-weight: 700;
+          color: var(--accent-brand);
+          letter-spacing: 0.02em;
+        }
+
+        .artifact-meta {
+          font-family: var(--font-mono);
+          font-size: 10px;
+          color: var(--text-muted);
+        }
+
+        /* Delivery -- same receipt on all sides */
+        .delivery-row {
+          display: flex;
+          gap: 6px;
+          padding: 6px 14px 8px;
+        }
+
+        .delivery-card {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 3px;
+          padding: 6px 4px;
+          background: var(--surface-base);
+          border: 1px solid var(--border-subtle);
+          border-radius: var(--radius-md);
+          opacity: 0;
+          transform: translateY(6px);
+          transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .delivery-row.active .delivery-card {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .delivery-row.active .card-agent { transition-delay: 0s; }
+        .delivery-row.active .card-service { transition-delay: 0.1s; }
+        .delivery-row.active .card-auditor { transition-delay: 0.2s; }
+
+        .delivery-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+        }
+
+        .delivery-dot.agent { background: var(--accent-brand); }
+        .delivery-dot.service { background: var(--accent-secondary); }
+        .delivery-dot.auditor { background: var(--accent-warning); }
+
+        .delivery-who {
+          font-size: 9px;
+          font-weight: 600;
+          color: var(--text-secondary);
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+        }
+
+        .delivery-hash {
           font-family: var(--font-mono);
           font-size: 9px;
           font-weight: 600;
-          padding: 1px 6px;
-          border-radius: var(--radius-sm);
-          animation: chipSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1) backwards;
-        }
-
-        .chip-agent {
-          background: var(--accent-brand-muted);
           color: var(--accent-brand);
-          animation-delay: 0s;
+          opacity: 0.8;
         }
 
-        .chip-service {
-          background: var(--accent-secondary-muted);
-          color: var(--accent-secondary);
-          animation-delay: 0.1s;
-        }
-
-        .chip-auditor {
-          background: var(--accent-warning-muted);
-          color: var(--accent-warning);
-          animation-delay: 0.2s;
-        }
-
-        @keyframes chipSlide {
-          from { transform: translateX(-6px); opacity: 0; }
-          to { transform: translateX(0); opacity: 1; }
-        }
-
-        /* Verifier panel -- terminal state */
+        /* Verifier panel -- terminal climax */
         .flow-verifier {
           max-height: 0;
           overflow: hidden;
@@ -451,7 +496,7 @@ export default function HeroFlowDiagram() {
         }
 
         .flow-verifier.active {
-          max-height: 120px;
+          max-height: 160px;
           padding: 10px 14px 12px;
           border-top-color: var(--accent-success-border);
           background: var(--accent-success-muted);
@@ -472,6 +517,19 @@ export default function HeroFlowDiagram() {
 
         .verifier-header :global(svg) {
           color: var(--accent-success);
+        }
+
+        .verifier-offline {
+          font-family: var(--font-mono);
+          font-size: 8px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: var(--accent-success);
+          background: rgba(0, 0, 0, 0.06);
+          padding: 1px 5px;
+          border-radius: var(--radius-sm);
+          margin-left: auto;
         }
 
         .verifier-results {
@@ -520,6 +578,17 @@ export default function HeroFlowDiagram() {
           letter-spacing: 0.04em;
         }
 
+        .verifier-footer {
+          font-family: var(--font-mono);
+          font-size: 9px;
+          color: var(--text-muted);
+          text-align: center;
+          margin-top: 6px;
+          padding-top: 6px;
+          border-top: 1px solid var(--accent-success-border);
+          letter-spacing: 0.02em;
+        }
+
         /* Responsive */
         @media (max-width: 480px) {
           .flow-diagram {
@@ -536,21 +605,33 @@ export default function HeroFlowDiagram() {
           .participant-label { font-size: 10px; }
           .arrow-line { width: 28px; }
 
-          .flow-body { padding: 6px 10px 10px; gap: 3px; }
+          .flow-body { padding: 6px 10px 2px; }
           .flow-step { padding: 6px 8px; gap: 8px; }
           .step-icon { width: 26px; height: 26px; }
           .step-label { font-size: 11px; }
           .step-mono { font-size: 9px; }
-          .chip { font-size: 8px; padding: 1px 4px; }
+
+          .receipt-artifact { margin: 3px 10px; padding: 8px 10px; gap: 8px; }
+          .artifact-icon { width: 28px; height: 28px; }
+          .artifact-id { font-size: 13px; }
+          .artifact-meta { font-size: 9px; }
+
+          .delivery-row { padding: 4px 10px 6px; gap: 4px; }
+          .delivery-card { padding: 5px 3px; }
+          .delivery-who { font-size: 8px; }
+          .delivery-hash { font-size: 8px; }
 
           .flow-verifier.active { padding: 8px 12px 10px; }
           .verifier-header { font-size: 10px; margin-bottom: 6px; }
           .verifier-row { font-size: 9px; }
           .vr-label { font-size: 8px; }
+          .verifier-footer { font-size: 8px; }
         }
 
         @media (prefers-reduced-motion: reduce) {
           .flow-step,
+          .receipt-artifact,
+          .delivery-card,
           .flow-verifier,
           .participant,
           .flow-arrow {
@@ -558,20 +639,18 @@ export default function HeroFlowDiagram() {
           }
 
           .step-progress,
-          .chip,
           .chrome-badge {
             animation: none;
           }
 
-          /* Show final state */
-          .flow-step { opacity: 1; }
-          .flow-step.active {
-            background: var(--surface-base);
-            border-color: var(--border-subtle);
-          }
+          /* Show complete story in static frame */
+          .flow-step { opacity: 1; background: var(--surface-base); border-color: var(--border-subtle); }
+          .receipt-artifact { opacity: 1; transform: none; border-color: var(--accent-brand); box-shadow: 0 0 0 1px var(--accent-brand-muted); }
+          .delivery-card { opacity: 1; transform: none; }
           .participant { opacity: 1; }
           .flow-arrow { opacity: 0.5; }
           .step-progress { opacity: 0.5; }
+          .flow-verifier { max-height: 160px; padding: 10px 14px 12px; border-top-color: var(--accent-success-border); background: var(--accent-success-muted); }
         }
       `}</style>
     </div>
