@@ -20,50 +20,52 @@ export default function NewHero() {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-badge">
-            <span>Verification for automated requests</span>
+            <span>Open standard for verifiable interaction records</span>
           </div>
 
           <h1 className="hero-headline">
-            <span className="hero-headline-main">Verify agent interactions.</span>
-            <span className="hero-headline-sub">Instantly.</span>
+            <span className="hero-headline-main">Every API call.</span>
+            <span className="hero-headline-sub">One verifiable record.</span>
           </h1>
 
           <p className="hero-problem">
-            APIs and sites lack a portable, third-party verifiable way to show what an agent accessed and under which terms.
+            When an AI agent hits your API, the only evidence is a server log no one else can verify. PEAC changes that -- issued as a signed receipt you can verify offline with a public key.
           </p>
 
           <p className="hero-solution">
-            Originary issues signature-verified records you can verify offline and export for audits.
+            Open standard. Apache-2.0. 20 packages on npm.
           </p>
 
           <div className="hero-actions">
+            <Link href="/verify" className="hero-btn-primary">
+              Try the Verifier
+            </Link>
+            <Link href="/developers" className="hero-btn-secondary">
+              Quickstart
+            </Link>
             <a
               href="https://github.com/peacprotocol/peac"
               target="_blank"
               rel="noopener noreferrer"
-              className="hero-btn-primary"
+              className="hero-btn-secondary"
+              style={{ border: 'none', background: 'transparent', padding: '0 var(--space-4)' }}
             >
               <Github size={18} />
-              Get Started
+              GitHub
             </a>
-            <Link href="/developers" className="hero-btn-secondary">
-              Documentation
-            </Link>
           </div>
 
           <div className="hero-footer-strip">
             <p className="strip-brand">
-              <span className="strip-item">ORIGINARY&trade;</span>
+              <a href="https://github.com/peacprotocol/peac/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="strip-link-inline">Apache-2.0</a>
               <span className="strip-dot">&middot;</span>
-              <a href="/downloads" className="strip-link-inline">Download</a>
+              <a href="https://github.com/peacprotocol/peac/releases" target="_blank" rel="noopener noreferrer" className="strip-link-inline">v0.10.9</a>
               <span className="strip-dot">&middot;</span>
-              <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline strip-link-github">
-                <Github size={14} className="github-icon" />
-                <span>We&apos;re open source</span>
-              </a>
-            </p>
-            <p className="strip-clarifier">
-              Originary maintains PEAC and ships production tools to issue and verify interaction records.
+              <a href="https://www.npmjs.com/org/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">20 packages on npm</a>
+              <span className="strip-dot">&middot;</span>
+              <span className="strip-item">3,500+ tests</span>
+              <span className="strip-dot">&middot;</span>
+              <a href="https://github.com/coinbase/x402/pull/1003" target="_blank" rel="noopener noreferrer" className="strip-link-inline">x402 upstream contributor</a>
             </p>
           </div>
 

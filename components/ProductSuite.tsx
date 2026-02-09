@@ -13,15 +13,19 @@ const products = [
     href: '/products/gateway-402',
     icon: Zap,
     features: ['Edge deployment', 'HTTP 402 flows', 'Signed receipts'],
+    status: 'available' as const,
+    npmUrl: 'https://www.npmjs.com/package/@peac/rails-x402',
   },
   {
     id: 'verify',
     title: 'Verify',
-    tagline: 'Cryptographic proof validation',
+    tagline: 'Cryptographic verification',
     desc: 'Offline and hosted receipt verification with JWKS support and policy validation.',
     href: '/products/verify',
     icon: ShieldCheck,
     features: ['Offline verification', 'JWKS support', 'Policy validation'],
+    status: 'available' as const,
+    npmUrl: 'https://www.npmjs.com/package/@peac/protocol',
   },
   {
     id: 'trace',
@@ -31,15 +35,17 @@ const products = [
     href: '/trace',
     icon: BarChart3,
     features: ['Audit exports', 'Evidence views', 'Compliance tools'],
+    status: 'coming-soon' as const,
   },
   {
     id: 'studio',
     title: 'Studio',
-    tagline: 'Builder dashboard',
-    desc: 'Operate receipts at scale with dashboards, exports, and policy tooling.',
+    tagline: 'Policy dashboard',
+    desc: 'Policy management, receipt analytics, and governance views for PEAC deployments.',
     href: '/products/studio',
     icon: Layers,
-    features: ['Dashboards', 'Scale governance', 'Team management'],
+    features: ['Policy editing', 'Receipt analytics', 'Governance views'],
+    status: 'coming-soon' as const,
   },
 ]
 
@@ -79,21 +85,17 @@ export default function ProductSuite() {
           <span className="products-label">Product Suite</span>
           <h2 className="products-title">Built for AI agents</h2>
           <p className="products-subtitle">
-            Production components for policy enforcement, optional settlement flows, and receipt verification.
+            Open-source packages for policy enforcement, optional settlement flows, and receipt verification.
           </p>
         </div>
 
         <div className="products-grid">
           {products.map((product, i) => {
             const Icon = product.icon
+            const isAvailable = product.status === 'available'
 
-            return (
-              <Link
-                key={product.id}
-                href={product.href}
-                className={`product-card ${isVisible ? 'visible' : ''}`}
-                style={{ '--delay': `${i * 100 + 200}ms` } as React.CSSProperties}
-              >
+            const cardContent = (
+              <>
                 <div className="card-icon">
                   <Icon size={24} strokeWidth={1.5} />
                 </div>
@@ -101,6 +103,9 @@ export default function ProductSuite() {
                 <div className="card-content">
                   <div className="card-title-row">
                     <h3 className="card-title">{product.title}</h3>
+                    <span className={`card-status ${product.status}`}>
+                      {isAvailable ? 'Available' : 'Coming Soon'}
+                    </span>
                   </div>
                   <p className="card-tagline">{product.tagline}</p>
                   <p className="card-desc">{product.desc}</p>
@@ -115,12 +120,43 @@ export default function ProductSuite() {
                 </div>
 
                 <div className="card-footer">
-                  <span className="card-link">
-                    Learn more
-                    <ArrowRight size={14} strokeWidth={2} />
-                  </span>
+                  {isAvailable ? (
+                    <span className="card-link">
+                      {product.npmUrl ? 'View on npm' : 'Learn more'}
+                      <ArrowRight size={14} strokeWidth={2} />
+                    </span>
+                  ) : (
+                    <span className="card-link card-link-muted">
+                      In development
+                    </span>
+                  )}
                 </div>
-              </Link>
+              </>
+            )
+
+            if (isAvailable) {
+              return (
+                <a
+                  key={product.id}
+                  href={product.npmUrl || product.href}
+                  target={product.npmUrl ? '_blank' : undefined}
+                  rel={product.npmUrl ? 'noopener noreferrer' : undefined}
+                  className={`product-card ${isVisible ? 'visible' : ''}`}
+                  style={{ '--delay': `${i * 100 + 200}ms` } as React.CSSProperties}
+                >
+                  {cardContent}
+                </a>
+              )
+            }
+
+            return (
+              <div
+                key={product.id}
+                className={`product-card product-card-muted ${isVisible ? 'visible' : ''}`}
+                style={{ '--delay': `${i * 100 + 200}ms` } as React.CSSProperties}
+              >
+                {cardContent}
+              </div>
             )
           })}
         </div>
@@ -277,21 +313,38 @@ export default function ProductSuite() {
           letter-spacing: -0.01em;
         }
 
-        .card-metric {
+        .card-status {
           font-size: var(--text-xs);
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.05em;
           padding: var(--space-1) var(--space-2);
           border-radius: var(--radius-sm);
-          background: var(--surface-subtle);
-          color: var(--text-tertiary);
           white-space: nowrap;
         }
 
-        .card-metric.live {
-          background: var(--accent-success-muted);
-          color: var(--accent-success);
+        .card-status.available {
+          background: var(--accent-success-muted, rgba(34, 197, 94, 0.1));
+          color: var(--accent-success, #22c55e);
+        }
+
+        .card-status.coming-soon {
+          background: var(--surface-subtle);
+          color: var(--text-tertiary);
+        }
+
+        .products-grid :global(.product-card-muted) {
+          opacity: 0.7;
+          cursor: default;
+        }
+
+        .products-grid :global(.product-card-muted:hover) {
+          border-color: var(--border-default);
+          box-shadow: none;
+        }
+
+        .card-link-muted {
+          color: var(--text-tertiary) !important;
         }
 
         .card-tagline {
