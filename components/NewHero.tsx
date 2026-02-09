@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import Link from 'next/link'
 import { Github } from 'lucide-react'
 import HeroPeacFlowBg from './HeroPeacFlowBg'
-import HeroVerifyWidget from './HeroVerifyWidget'
+import HeroFlowDiagram from './HeroFlowDiagram'
 
 export default function NewHero() {
   const heroRef = useRef<HTMLElement>(null)
@@ -79,7 +79,7 @@ export default function NewHero() {
 
         <div className="hero-visual">
           <div className="widget-wrapper">
-            <HeroVerifyWidget />
+            <HeroFlowDiagram />
             <div className="widget-glow" />
           </div>
         </div>
