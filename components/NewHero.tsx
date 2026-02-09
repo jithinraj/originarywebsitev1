@@ -38,12 +38,6 @@ export default function NewHero() {
             PEAC emits a signed interaction record both sides can keep and verify. Publish terms at <code className="hero-code">/.well-known/peac.txt</code>, then issue a receipt for every call.
           </p>
 
-          <ul className="hero-bullets">
-            <li><strong>Portable</strong> -- one signed record both sides can keep, share, and audit</li>
-            <li><strong>Offline-verifiable</strong> -- validate with a public key, no callback required</li>
-            <li><strong>Open standard</strong> -- Apache-2.0, self-hostable, no vendor lock-in</li>
-          </ul>
-
           <div className="hero-actions">
             <Link href="/verify" className="hero-btn-primary">
               Try the Verifier
@@ -51,14 +45,9 @@ export default function NewHero() {
             <Link href="/developers" className="hero-btn-secondary">
               Quickstart
             </Link>
-            <a
-              href="https://www.peacprotocol.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-btn-tertiary"
-            >
-              Read the Spec
-            </a>
+            <Link href="/downloads" className="hero-btn-tertiary">
+              Download
+            </Link>
           </div>
 
           <div className="hero-footer-strip">
@@ -200,9 +189,8 @@ export default function NewHero() {
         .hero-headline { animation-delay: 0.2s; }
         .hero-problem { animation-delay: 0.3s; }
         .hero-solution { animation-delay: 0.35s; }
-        .hero-bullets { animation-delay: 0.4s; }
-        .hero-actions { animation-delay: 0.5s; }
-        .hero-footer-strip { animation-delay: 0.6s; }
+        .hero-actions { animation-delay: 0.4s; }
+        .hero-footer-strip { animation-delay: 0.5s; }
 
         .hero-badge {
           display: inline-flex;
@@ -292,41 +280,6 @@ export default function NewHero() {
           white-space: nowrap;
         }
 
-        .hero-bullets {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          max-width: 500px;
-          display: flex;
-          flex-direction: column;
-          gap: var(--space-2);
-        }
-
-        .hero-bullets li {
-          font-size: var(--text-sm);
-          line-height: 1.5;
-          color: var(--text-secondary);
-          padding-left: var(--space-5);
-          position: relative;
-        }
-
-        .hero-bullets li::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 8px;
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background: var(--accent-brand);
-          opacity: 0.6;
-        }
-
-        .hero-bullets li strong {
-          color: var(--text-primary);
-          font-weight: 600;
-        }
-
         .hero-footer-strip {
           margin-top: var(--space-4);
         }
@@ -337,9 +290,10 @@ export default function NewHero() {
           gap: var(--space-2);
           flex-wrap: wrap;
           margin: 0;
-          font-size: 11px;
+          font-size: 10px;
           color: var(--text-muted);
-          letter-spacing: 0.01em;
+          letter-spacing: 0.02em;
+          opacity: 0.7;
         }
 
         .strip-dot {
@@ -583,8 +537,7 @@ export default function NewHero() {
           }
 
           .hero-problem,
-          .hero-solution,
-          .hero-bullets {
+          .hero-solution {
             max-width: 560px;
           }
 
@@ -644,10 +597,6 @@ export default function NewHero() {
 
           .hero-solution {
             font-size: 15px;
-          }
-
-          .hero-bullets li {
-            font-size: 13px;
           }
 
           .strip-brand {
@@ -716,10 +665,6 @@ export default function NewHero() {
 
           .hero-solution {
             font-size: 14px;
-          }
-
-          .hero-bullets li {
-            font-size: 12px;
           }
 
           .strip-brand {
