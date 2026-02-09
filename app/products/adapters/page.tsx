@@ -505,7 +505,7 @@ export default function Adapters() {
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
                   <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Custom protocols</span>
-                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>White-glove support</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Dedicated support</span>
                 </div>
               </div>
             </div>

@@ -116,7 +116,7 @@ const enterpriseFeatures = [
   {
     icon: Users,
     title: 'Dedicated Support',
-    description: 'White-glove support from protocol engineers, solution architects, and customer success managers.',
+    description: 'Dedicated support from protocol engineers with priority response and integration guidance.',
     metrics: ['Priority Response', '24/7 Availability']
   },
   {
@@ -171,7 +171,7 @@ const faqItems = [
   },
   {
     question: 'What payment methods do you accept?',
-    answer: 'We accept all major credit cards and digital wallets via Stripe. Enterprise customers can also use wire transfers and purchase orders. Annual plans receive a 20% discount.'
+    answer: 'We accept all major credit cards and digital wallets via Stripe. Enterprise deployments can also use wire transfers and purchase orders. Annual plans receive a 20% discount.'
   },
   {
     question: 'Is there a setup fee or long-term contract?',
@@ -191,7 +191,7 @@ const faqItems = [
   },
   {
     question: 'How do volume discounts work?',
-    answer: 'Enterprise customers receive custom pricing based on volume commitments. Contact our sales team for a personalized quote.'
+    answer: 'Enterprise deployments receive custom pricing based on volume commitments. Contact us for a personalized quote.'
   },
   {
     question: 'What about compliance and security?',

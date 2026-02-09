@@ -44,7 +44,7 @@ export default function Payments() {
               <ul>
                 <li>Stripe for credit card processing</li>
                 <li>PayPal for alternative payment methods</li>
-                <li>Bank transfer for enterprise customers</li>
+                <li>Bank transfer for enterprise deployments</li>
                 <li>Cryptocurrency for supported regions</li>
               </ul>
 
@@ -126,7 +126,7 @@ export default function Payments() {
               </ul>
 
               <h3>Enterprise Billing</h3>
-              <p>Enterprise customers may have custom terms including:</p>
+              <p>Enterprise deployments may have custom terms including:</p>
               <ul>
                 <li>Custom billing cycles and payment terms</li>
                 <li>Purchase order support</li>
@@ -228,7 +228,7 @@ export default function Payments() {
               <ul>
                 <li>Updated pricing published on website</li>
                 <li>Changes effective for new usage</li>
-                <li>Enterprise customers have contract protection</li>
+                <li>Enterprise deployments have contract protection</li>
                 <li>Notification via email and dashboard</li>
               </ul>
 

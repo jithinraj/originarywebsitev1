@@ -92,15 +92,11 @@ export default function Studio() {
                 marginBottom: 'var(--space-10)',
               }}
             >
-              We&apos;re building Studio as the operational interface for PEAC deployments.
-              Planned capabilities include policy editing, key management, receipt analytics,
-              and governance views.
+              We&apos;re building Studio as the operational interface for PEAC deployments. Planned capabilities include
+              policy editing, key management, receipt analytics, and governance views.
             </p>
 
-            <Link
-              href="mailto:contact@originary.xyz?subject=Studio%20Waitlist"
-              className="btn btn-primary btn-lg"
-            >
+            <Link href="mailto:contact@originary.xyz?subject=Studio%20Waitlist" className="btn btn-primary btn-lg">
               Join the waitlist
             </Link>
           </div>
