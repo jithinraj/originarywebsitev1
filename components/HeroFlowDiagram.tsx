@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Globe, FileCheck, CheckCircle, Key } from 'lucide-react'
+import { Globe, Shield, FileCheck, CheckCircle, Key } from 'lucide-react'
 
 /**
  * Hero lifecycle diagram -- animated PEAC receipt flow (~5s loop).
@@ -9,9 +9,10 @@ import { Globe, FileCheck, CheckCircle, Key } from 'lucide-react'
  * Storyboard:
  *  1) request -- Agent -> Service lights up
  *  2) policy -- peac.txt discovered
- *  3) minted -- receipt artifact appears (pause -- first "aha")
- *  4) delivered -- same receipt on Agent + Service + Auditor
- *  5) verified -- offline verification panel (long pause -- main "aha")
+ *  3) decision -- ALLOW stamp (policy evaluated)
+ *  4) minted -- receipt artifact appears (pause -- first "aha")
+ *  5) delivered -- same receipt on Agent + Service + Auditor
+ *  6) verified -- offline verification panel (long pause -- main "aha")
  *
  * Design rules:
  *  - Receipt shown as tangible artifact card (hash + sig visible)
@@ -21,17 +22,18 @@ import { Globe, FileCheck, CheckCircle, Key } from 'lucide-react'
  *  - All colors from design system tokens
  */
 
-type Phase = 'idle' | 'request' | 'policy' | 'minted' | 'delivered' | 'verified'
+type Phase = 'idle' | 'request' | 'policy' | 'decision' | 'minted' | 'delivered' | 'verified'
 
-const PHASES: Phase[] = ['idle', 'request', 'policy', 'minted', 'delivered', 'verified']
+const PHASES: Phase[] = ['idle', 'request', 'policy', 'decision', 'minted', 'delivered', 'verified']
 
 const TIMING: Record<Phase, number> = {
   idle: 500,
   request: 500,
-  policy: 600,
-  minted: 900,
-  delivered: 800,
-  verified: 2000,
+  policy: 500,
+  decision: 600,
+  minted: 800,
+  delivered: 700,
+  verified: 1800,
 }
 
 export default function HeroFlowDiagram() {
@@ -84,7 +86,7 @@ export default function HeroFlowDiagram() {
         </div>
       </div>
 
-      {/* Policy step */}
+      {/* Steps */}
       <div className="flow-body">
         <div className={`flow-step ${at('policy') ? 'active' : ''} ${phase === 'policy' ? 'current' : ''}`}>
           <div className="step-icon"><Globe size={15} strokeWidth={1.8} /></div>
@@ -93,6 +95,21 @@ export default function HeroFlowDiagram() {
             <span className="step-mono">/.well-known/peac.txt</span>
           </div>
           {at('policy') && <span className="step-progress" />}
+        </div>
+
+        <div className={`flow-step ${at('decision') ? 'active' : ''} ${phase === 'decision' ? 'current' : ''}`}>
+          <div className="step-icon"><Shield size={15} strokeWidth={1.8} /></div>
+          <div className="step-content">
+            <span className="step-label">Decision enforced</span>
+            <span className="step-mono">
+              {at('decision') ? (
+                <span className="decision-allow">ALLOW</span>
+              ) : (
+                'evaluating...'
+              )}
+            </span>
+          </div>
+          {at('decision') && <span className="step-progress" />}
         </div>
       </div>
 
@@ -352,6 +369,13 @@ export default function HeroFlowDiagram() {
 
         .flow-step.active .step-mono {
           color: var(--text-tertiary);
+        }
+
+        .decision-allow {
+          color: var(--accent-success);
+          font-weight: 700;
+          letter-spacing: 0.06em;
+          font-size: 10px;
         }
 
         .step-progress {
