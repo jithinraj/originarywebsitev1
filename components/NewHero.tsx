@@ -25,7 +25,7 @@ export default function NewHero() {
 
           <h1 className="hero-headline">
             <span className="hero-headline-main">Every API call.</span>
-            <span className="hero-headline-sub">One verifiable record.</span>
+            <span className="hero-headline-sub">One verifiable<br className="hero-br-mobile" /> record.</span>
           </h1>
 
           <p className="hero-problem">
@@ -57,6 +57,8 @@ export default function NewHero() {
 
           <div className="hero-footer-strip">
             <p className="strip-brand">
+              <span className="strip-item strip-tm">ORIGINARY&trade;</span>
+              <span className="strip-dot">&middot;</span>
               <a href="https://github.com/peacprotocol/peac/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="strip-link-inline">Apache-2.0</a>
               <span className="strip-dot">&middot;</span>
               <a href="https://github.com/peacprotocol/peac/releases" target="_blank" rel="noopener noreferrer" className="strip-link-inline">v0.10.9</a>
@@ -64,8 +66,6 @@ export default function NewHero() {
               <a href="https://www.npmjs.com/org/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">20 packages on npm</a>
               <span className="strip-dot">&middot;</span>
               <span className="strip-item">3,500+ tests</span>
-              <span className="strip-dot">&middot;</span>
-              <a href="https://github.com/coinbase/x402/pull/1003" target="_blank" rel="noopener noreferrer" className="strip-link-inline">x402 upstream contributor</a>
             </p>
           </div>
 
@@ -227,10 +227,10 @@ export default function NewHero() {
         }
 
         .hero-headline-main {
-          font-size: clamp(56px, 9vw, 104px);
+          font-size: clamp(44px, 7vw, 80px);
           font-weight: 700;
-          letter-spacing: -0.05em;
-          line-height: 0.92;
+          letter-spacing: -0.04em;
+          line-height: 1;
           background: linear-gradient(180deg, var(--text-primary) 20%, var(--text-tertiary) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -238,14 +238,18 @@ export default function NewHero() {
         }
 
         .hero-headline-sub {
-          font-size: clamp(56px, 9vw, 104px);
+          font-size: clamp(44px, 7vw, 80px);
           font-weight: 700;
-          letter-spacing: -0.05em;
-          line-height: 0.92;
+          letter-spacing: -0.04em;
+          line-height: 1;
           background: linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-brand-hover) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
+        }
+
+        .hero-br-mobile {
+          display: none;
         }
 
         .hero-problem {
@@ -544,6 +548,10 @@ export default function NewHero() {
 
           .hero :global(.peac-flow-bg) {
             opacity: 0.5;
+          }
+
+          .hero-br-mobile {
+            display: inline;
           }
 
           .hero-problem {

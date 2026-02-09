@@ -130,15 +130,6 @@ export default function NavigationHeader() {
                 href="https://github.com/peacprotocol/peac"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="nav-github-btn"
-                aria-label="View on GitHub"
-              >
-                <Github size={18} />
-              </a>
-              <a
-                href="https://github.com/peacprotocol/peac"
-                target="_blank"
-                rel="noopener noreferrer"
                 className="nav-cta-btn"
               >
                 <Github size={16} />
