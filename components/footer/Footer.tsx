@@ -81,68 +81,8 @@ function LogoMark() {
   )
 }
 
-function PrimaryCta({
-  href,
-  children,
-  variant = 'solid',
-}: {
-  href: string
-  children: React.ReactNode
-  variant?: 'solid' | 'ghost'
-}) {
-  const baseStyle: React.CSSProperties = {
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 'var(--radius-md)',
-    padding: 'var(--space-2) var(--space-3)',
-    fontSize: 'var(--text-sm)',
-    fontWeight: 500,
-    textDecoration: 'none',
-    transition: 'all var(--duration-200) ease',
-  }
-
-  const variantStyle: React.CSSProperties =
-    variant === 'solid'
-      ? {
-          background: 'var(--accent-brand)',
-          color: 'white',
-          border: 'none',
-          boxShadow: '0 0 20px -5px var(--accent-brand-glow)',
-        }
-      : {
-          background: 'transparent',
-          color: 'var(--text-primary)',
-          border: '1px solid var(--border-default)',
-        }
-
-  return (
-    <Link
-      href={href}
-      prefetch={false}
-      style={{ ...baseStyle, ...variantStyle }}
-      onMouseEnter={(e) => {
-        if (variant === 'solid') {
-          e.currentTarget.style.background = 'var(--accent-brand-hover)'
-        } else {
-          e.currentTarget.style.background = 'var(--surface-subtle)'
-        }
-      }}
-      onMouseLeave={(e) => {
-        if (variant === 'solid') {
-          e.currentTarget.style.background = 'var(--accent-brand)'
-        } else {
-          e.currentTarget.style.background = 'transparent'
-        }
-      }}
-    >
-      {children}
-    </Link>
-  )
-}
-
 // ============================================================================
-// Layer A: Footer Hero + Navigation Grid
+// Layer A: Logo + 5-column Navigation Grid
 // ============================================================================
 
 function FooterNavGroup({ group }: { group: FooterGroup }) {
@@ -198,17 +138,21 @@ function FooterNavGroup({ group }: { group: FooterGroup }) {
 
 function LayerA() {
   return (
-    <div>
-      {/* Hero Section */}
+    <div
+      className="footer-layer-a"
+      style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr',
+        gap: '32px',
+      }}
+    >
+      {/* Logo + description */}
       <div
+        className="footer-brand-col"
         style={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          textAlign: 'center',
-          paddingBottom: '32px',
-          marginBottom: '32px',
-          borderBottom: '1px solid var(--border-default)',
+          gap: '12px',
         }}
       >
         <Link
@@ -219,7 +163,6 @@ function LayerA() {
             alignItems: 'center',
             gap: '8px',
             textDecoration: 'none',
-            marginBottom: '10px',
           }}
           aria-label="Originary home"
         >
@@ -239,27 +182,35 @@ function LayerA() {
           style={{
             color: 'var(--text-tertiary)',
             fontSize: 'var(--text-sm)',
-            maxWidth: '400px',
+            maxWidth: '320px',
             lineHeight: 1.5,
-            marginBottom: 'var(--space-4)',
+            margin: 0,
           }}
         >
-          Open infrastructure, tools, and systems for AI agents.
+          Open standard for verifiable interaction records.
         </p>
-        <div style={{ display: 'flex', gap: 'var(--space-2)' }}>
-          <PrimaryCta href="/demo">View demo</PrimaryCta>
-          <PrimaryCta href="/peac" variant="ghost">
-            Read the spec
-          </PrimaryCta>
-        </div>
+        <a
+          href="mailto:contact@originary.xyz"
+          style={{
+            color: 'var(--text-secondary)',
+            textDecoration: 'none',
+            fontSize: '13px',
+            fontFamily: 'var(--font-mono)',
+            transition: 'color 0.15s ease',
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
+        >
+          contact@originary.xyz
+        </a>
       </div>
 
-      {/* Navigation Grid - 8 balanced columns */}
+      {/* Navigation Grid - 5 balanced columns */}
       <div
         className="footer-nav-grid"
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(8, minmax(0, 1fr))',
+          gridTemplateColumns: 'repeat(5, minmax(0, 1fr))',
           gap: '20px',
           alignItems: 'start',
         }}
@@ -371,9 +322,8 @@ function LayerB() {
         </div>
       </div>
 
-      {/* Mobile layout - completely separate structure */}
+      {/* Mobile layout */}
       <div className="footer-utility-mobile">
-        {/* Legal section */}
         <div className="footer-mobile-section">
           <span className="footer-mobile-label">Legal</span>
           <div className="footer-mobile-links">
@@ -390,7 +340,6 @@ function LayerB() {
           </div>
         </div>
 
-        {/* Machine-readable section */}
         <div className="footer-mobile-section">
           <span className="footer-mobile-label">Files</span>
           <div className="footer-mobile-links">
@@ -406,7 +355,6 @@ function LayerB() {
           </div>
         </div>
 
-        {/* Social section */}
         <div className="footer-mobile-section">
           <span className="footer-mobile-label">Social</span>
           <div className="footer-mobile-links">
@@ -429,7 +377,7 @@ function LayerB() {
 }
 
 // ============================================================================
-// Layer C: Brand Band
+// Layer C: Brand Band (compact)
 // ============================================================================
 
 function LayerC() {
@@ -467,72 +415,17 @@ function LayerC() {
         className="brand-band-inner"
         style={{
           position: 'relative',
-          display: 'grid',
-          gridTemplateColumns: '1fr auto',
-          gap: '40px',
-          padding: '48px 40px',
-          alignItems: 'end',
+          padding: '32px 32px',
           width: '100%',
           boxSizing: 'border-box',
         }}
       >
-        {/* Left: Content */}
         <div style={{ position: 'relative', zIndex: 1 }}>
-          {/* Brand wordmark */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              marginBottom: '16px',
-            }}
-          >
-            <div
-              style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: 'var(--radius-lg)',
-                background: 'var(--surface-elevated)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <span style={{ color: 'var(--gray-950)', fontWeight: 700, fontSize: 'var(--text-sm)' }}>O</span>
-            </div>
-            <span
-              style={{
-                fontSize: '18px',
-                fontWeight: 600,
-                letterSpacing: '-0.02em',
-                color: 'white',
-              }}
-            >
-              Originary
-            </span>
-          </div>
-
-          <p
-            className="brand-band-desc"
-            style={{
-              maxWidth: '100%',
-              fontSize: '13px',
-              lineHeight: 1.6,
-              color: 'rgba(255, 255, 255, 0.6)',
-              marginBottom: '24px',
-              wordWrap: 'break-word',
-              overflowWrap: 'break-word',
-            }}
-          >
-            Signed interaction records you can verify offline with a public key: what was accessed,
-            under which policy, and what evidence exists for payment and compliance.
-          </p>
-
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: '4px',
+              gap: '6px',
             }}
           >
             <p
@@ -542,7 +435,17 @@ function LayerC() {
                 color: 'rgba(255, 255, 255, 0.5)',
               }}
             >
-              &copy; 2025 - {currentYear} Originary (Poem, Inc.) &middot; Delaware, USA
+              &copy; 2025 - {currentYear} Poem, Inc. &middot; Delaware, USA
+            </p>
+            <p
+              style={{
+                margin: 0,
+                fontSize: '11px',
+                lineHeight: 1.5,
+                color: 'rgba(255, 255, 255, 0.35)',
+              }}
+            >
+              ORIGINARY&trade; is a trademark of Poem, Inc.
             </p>
             <p
               style={{
@@ -550,41 +453,14 @@ function LayerC() {
                 maxWidth: '100%',
                 fontSize: '10px',
                 lineHeight: 1.5,
-                color: 'rgba(255, 255, 255, 0.3)',
+                color: 'rgba(255, 255, 255, 0.25)',
                 wordWrap: 'break-word',
                 overflowWrap: 'break-word',
               }}
             >
-              In the U.S., &lsquo;Originary&rsquo; is used by Poem, Inc. as a brand for its AI
-              infrastructure software and tools for AI agents.
+              PEAC Protocol is an open standard stewarded by Originary and the community. Apache-2.0.
             </p>
           </div>
-        </div>
-
-        {/* Right: Large wordmark */}
-        <div
-          className="brand-wordmark-large"
-          style={{
-            position: 'relative',
-            display: 'flex',
-            alignItems: 'flex-end',
-            justifyContent: 'flex-end',
-          }}
-          aria-hidden="true"
-        >
-          <span
-            style={{
-              fontSize: 'clamp(64px, 9vw, 88px)',
-              fontWeight: 600,
-              letterSpacing: '-0.03em',
-              lineHeight: 0.9,
-              color: 'rgba(255, 255, 255, 0.12)',
-              userSelect: 'none',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            Originary
-          </span>
         </div>
       </div>
     </div>
@@ -613,29 +489,23 @@ export default function Footer() {
           padding: '48px 24px 40px',
         }}
       >
-        {/* Layer A: Hero + Navigation Grid */}
         <LayerA />
-
-        {/* Layer B: Utility Bar */}
         <LayerB />
-
-        {/* Layer C: Brand Band */}
         <LayerC />
       </div>
 
       <style jsx global>{`
-        /* Desktop: 8 columns */
-        @media (min-width: 1200px) {
-          .footer-nav-grid {
-            grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+        /* Desktop: logo left, grid right */
+        @media (min-width: 900px) {
+          .footer-layer-a {
+            grid-template-columns: 240px 1fr !important;
           }
         }
 
-        /* Large desktop: 4 columns */
-        @media (max-width: 1199px) and (min-width: 900px) {
+        /* Desktop: 5 columns */
+        @media (min-width: 900px) {
           .footer-nav-grid {
-            grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-            gap: 28px 20px !important;
+            grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
           }
         }
 
@@ -669,7 +539,10 @@ export default function Footer() {
             padding: 32px 20px 32px !important;
           }
 
-          /* Navigation: accordion mode */
+          .footer-layer-a {
+            gap: 24px !important;
+          }
+
           .footer-nav-desktop {
             display: none !important;
           }
@@ -699,7 +572,6 @@ export default function Footer() {
             display: none;
           }
 
-          /* Utility bar: mobile layout */
           .footer-utility-desktop {
             display: none !important;
           }
@@ -737,20 +609,12 @@ export default function Footer() {
             color: var(--text-tertiary);
           }
 
-          /* Brand band */
           .brand-band {
             border-radius: 16px !important;
-            margin-left: 0 !important;
-            margin-right: 0 !important;
             margin-top: 32px !important;
           }
           .brand-band-inner {
-            grid-template-columns: 1fr !important;
-            padding: 28px 20px !important;
-            gap: 20px !important;
-          }
-          .brand-wordmark-large {
-            display: none !important;
+            padding: 24px 20px !important;
           }
         }
 
@@ -770,11 +634,7 @@ export default function Footer() {
             margin-top: 28px !important;
           }
           .brand-band-inner {
-            padding: 24px 18px !important;
-          }
-          .brand-band-desc {
-            font-size: 12px !important;
-            line-height: 1.5 !important;
+            padding: 20px 16px !important;
           }
         }
 
@@ -797,19 +657,13 @@ export default function Footer() {
             margin-top: 24px !important;
           }
           .brand-band-inner {
-            padding: 20px 16px !important;
-          }
-          .brand-band-desc {
-            font-size: 11px !important;
+            padding: 18px 14px !important;
           }
         }
 
         @media (max-width: 320px) {
           .brand-band-inner {
             padding: 16px 12px !important;
-          }
-          .brand-band-desc {
-            font-size: 10px !important;
           }
         }
       `}</style>

@@ -403,12 +403,14 @@ export default function HeroFlowDiagram() {
           display: flex;
           align-items: flex-start;
           gap: 10px;
-          opacity: 0.2;
+          opacity: 0.12;
+          filter: grayscale(1);
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .receipt-artifact.active {
           opacity: 1;
+          filter: grayscale(0);
           border-color: var(--accent-brand);
           box-shadow: 0 0 0 1px var(--accent-brand-muted);
         }
@@ -469,12 +471,14 @@ export default function HeroFlowDiagram() {
           background: var(--surface-base);
           border: 1px solid var(--border-subtle);
           border-radius: var(--radius-md);
-          opacity: 0.2;
+          opacity: 0.12;
+          filter: grayscale(1);
           transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .delivery-row.active .delivery-card {
           opacity: 1;
+          filter: grayscale(0);
         }
 
         .delivery-row.active .card-agent { transition-delay: 0s; }
@@ -665,8 +669,8 @@ export default function HeroFlowDiagram() {
 
           /* Show complete story in static frame */
           .flow-step { opacity: 1; background: var(--surface-base); border-color: var(--border-subtle); }
-          .receipt-artifact { opacity: 1; border-color: var(--accent-brand); box-shadow: 0 0 0 1px var(--accent-brand-muted); }
-          .delivery-card { opacity: 1; }
+          .receipt-artifact { opacity: 1; filter: grayscale(0); border-color: var(--accent-brand); box-shadow: 0 0 0 1px var(--accent-brand-muted); }
+          .delivery-card { opacity: 1; filter: grayscale(0); }
           .participant { opacity: 1; }
           .flow-arrow { opacity: 0.5; }
           .step-progress { opacity: 0.5; }
