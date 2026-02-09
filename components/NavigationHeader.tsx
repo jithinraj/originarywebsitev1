@@ -127,7 +127,7 @@ export default function NavigationHeader() {
               }}
             >
               <Link href="/developers" className="nav-cta-btn">
-                Quickstart
+                Get Started
               </Link>
               <a
                 href="https://github.com/peacprotocol/peac"
@@ -249,7 +249,7 @@ export default function NavigationHeader() {
                     boxShadow: '0 0 20px -5px var(--accent-brand-glow)'
                   }}
                 >
-                  Quickstart
+                  Get Started
                 </Link>
               </div>
             </div>

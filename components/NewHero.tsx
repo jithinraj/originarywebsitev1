@@ -31,11 +31,11 @@ export default function NewHero() {
           </h1>
 
           <p className="hero-problem">
-            When an agent calls your API, each side keeps private logs no one else can check. PEAC produces one shared interaction record -- signed, portable, and verifiable offline with a public key.
+            Agents cross org boundaries. Logs don&apos;t.
           </p>
 
           <p className="hero-solution">
-            Publish terms at <code className="hero-code">/.well-known/peac.txt</code>, then emit a verifiable record for each call.
+            PEAC emits a signed interaction record both sides can keep and verify. Publish terms at <code className="hero-code">/.well-known/peac.txt</code>, then issue a receipt for every call.
           </p>
 
           <ul className="hero-bullets">
@@ -45,11 +45,11 @@ export default function NewHero() {
           </ul>
 
           <div className="hero-actions">
-            <Link href="/developers" className="hero-btn-primary">
-              Quickstart
-            </Link>
-            <Link href="/verify" className="hero-btn-secondary">
+            <Link href="/verify" className="hero-btn-primary">
               Try the Verifier
+            </Link>
+            <Link href="/developers" className="hero-btn-secondary">
+              Quickstart
             </Link>
             <a
               href="https://www.peacprotocol.org"
@@ -265,17 +265,17 @@ export default function NewHero() {
         }
 
         .hero-problem {
-          font-size: var(--text-lg);
-          line-height: 1.7;
+          font-size: var(--text-xl);
+          line-height: 1.4;
           color: var(--text-primary);
           max-width: 500px;
           margin: 0;
-          opacity: 0.85;
+          font-weight: 500;
         }
 
         .hero-solution {
           font-size: var(--text-base);
-          line-height: 1.6;
+          line-height: 1.7;
           color: var(--text-secondary);
           max-width: 500px;
           margin: 0;
