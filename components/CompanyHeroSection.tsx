@@ -108,7 +108,7 @@ export default function CompanyHeroSection() {
                 color: 'var(--accent-brand)',
                 letterSpacing: '0.02em'
               }}>
-                The Agentic Control Plane
+                The Agent Control Plane
               </span>
             </div>
 

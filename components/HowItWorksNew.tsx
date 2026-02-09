@@ -108,7 +108,7 @@ export default function HowItWorksNew() {
             <span className="how-label">How it works</span>
           </div>
           <h2 className="how-title">Three steps to verifiable interactions</h2>
-          <p className="how-subtitle">Publish terms, enforce decisions, prove what happened</p>
+          <p className="how-subtitle">Publish terms, enforce decisions, verify what happened</p>
         </div>
 
         <div className="steps-grid">

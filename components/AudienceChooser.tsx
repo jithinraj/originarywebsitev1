@@ -13,7 +13,7 @@ const audiences = [
   {
     id: 'ai-builders',
     label: 'AI Builders',
-    desc: 'Prove consent, terms, and attribution for data and tool use.',
+    desc: 'Verify consent, terms, and attribution for data and tool use.',
     Icon: Bot,
   },
   {

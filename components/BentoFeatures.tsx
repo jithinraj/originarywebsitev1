@@ -118,7 +118,7 @@ export default function BentoFeatures() {
           <BentoCard
             className="bento-small"
             title="Evidence-Ready"
-            description="Built-in audit trails and policy hooks so you can prove what happened."
+            description="Built-in audit trails and policy hooks so you can verify what happened."
             icon={<Shield size={24} />}
             href="/trust"
             linkText="Trust center"

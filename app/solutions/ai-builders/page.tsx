@@ -145,7 +145,7 @@ export default function AIBuilders() {
                 }}>
                   ✓
                 </div>
-                <h4 style={{ marginBottom: 'var(--space-3)' }}>Provable</h4>
+                <h4 style={{ marginBottom: 'var(--space-3)' }}>Verifiable</h4>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                   Cryptographic receipts provide verifiable proof of policy compliance and creator consent.
                 </p>

@@ -27,7 +27,7 @@ export default function FoundationalRailsSection() {
               marginBottom: 'var(--space-4)',
               color: 'var(--text-primary)'
             }}>
-              Foundational rails for the agentic web
+              Foundational rails for AI agents
             </h2>
             <p style={{
               fontSize: 'var(--text-lg)',

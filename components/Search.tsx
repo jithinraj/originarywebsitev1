@@ -13,7 +13,7 @@ interface SearchResult {
 
 // Static search index - add more pages as needed
 const searchIndex: SearchResult[] = [
-  { title: 'Home', description: 'Infrastructure and tools for the agentic web', href: '/', category: 'Pages' },
+  { title: 'Home', description: 'Infrastructure and tools for AI agents', href: '/', category: 'Pages' },
   { title: 'Pricing', description: 'Open source and cloud pricing plans', href: '/pricing', category: 'Pages' },
   { title: 'Developers', description: 'AI infrastructure tools and PEAC Protocol SDK', href: '/developers', category: 'Pages' },
   { title: 'Demo', description: 'PEAC Protocol transaction trace', href: '/demo', category: 'Pages' },

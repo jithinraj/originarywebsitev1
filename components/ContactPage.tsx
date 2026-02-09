@@ -122,7 +122,7 @@ export default function ContactPage() {
             </span>
             <h1 className="display">Get in touch</h1>
             <p className="sub">
-              Ready to deploy agentic infrastructure? Have questions about our protocols?
+              Ready to deploy agent infrastructure? Have questions about our protocols?
               We&apos;d love to hear from you and help you get started.
             </p>
           </FadeIn>
@@ -261,7 +261,7 @@ export default function ContactPage() {
               <Building className="w-16 h-16 mx-auto mb-6 opacity-80" />
               <h2 className="text-4xl font-bold mb-4">Ready for enterprise deployment?</h2>
               <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                Let&apos;s discuss how Originary can help scale your agentic infrastructure.
+                Let&apos;s discuss how Originary can help scale your agent infrastructure.
                 Our enterprise team is ready to design a custom solution for your needs.
               </p>
             </FadeIn>

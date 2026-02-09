@@ -244,7 +244,7 @@ function LayerA() {
             marginBottom: 'var(--space-4)',
           }}
         >
-          Open infrastructure, tools, and systems for the agentic web.
+          Open infrastructure, tools, and systems for AI agents.
         </p>
         <div style={{ display: 'flex', gap: 'var(--space-2)' }}>
           <PrimaryCta href="/demo">View demo</PrimaryCta>
@@ -556,7 +556,7 @@ function LayerC() {
               }}
             >
               In the U.S., &lsquo;Originary&rsquo; is used by Poem, Inc. as a brand for its AI
-              infrastructure software and tools for the agentic web.
+              infrastructure software and tools for AI agents.
             </p>
           </div>
         </div>

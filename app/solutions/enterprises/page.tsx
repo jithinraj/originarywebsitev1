@@ -4,13 +4,13 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Enterprises | AI Governance and Compliance',
-  description: 'AI governance and compliance tools for enterprise agentic infrastructure. Policy management, compliance reporting, and security controls.',
+  description: 'AI governance and compliance tools for enterprise AI agent infrastructure. Policy management, compliance reporting, and security controls.',
   keywords: 'AI governance, AI compliance, enterprise AI governance, policy management, compliance reporting, GDPR, security controls, enterprise AI, agent governance',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'Enterprises | AI Governance and AI Compliance',
-    description: 'AI governance and compliance tools for enterprise agentic infrastructure. Policy management, compliance reporting, and security controls.',
+    description: 'AI governance and compliance tools for enterprise AI agent infrastructure. Policy management, compliance reporting, and security controls.',
     url: '/solutions/enterprises',
     images: ['/og'],
     siteName: 'Originary',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Enterprises | AI Governance and AI Compliance',
-    description: 'AI governance and compliance tools for enterprise agentic infrastructure. Policy management, compliance reporting, and security controls.',
+    description: 'AI governance and compliance tools for enterprise AI agent infrastructure. Policy management, compliance reporting, and security controls.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -65,7 +65,7 @@ export default function Enterprises() {
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <h2 style={{ marginBottom: 'var(--space-6)' }}>Enterprise Requirements</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
-                Meet the most stringent enterprise security, compliance, and governance requirements for agentic infrastructure.
+                Meet the most stringent enterprise security, compliance, and governance requirements for AI agent infrastructure.
               </p>
             </div>
 

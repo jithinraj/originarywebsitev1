@@ -31,7 +31,7 @@ export default function Header() {
           <div className="brand-icon"></div>
           <div className="brand-label">
             <strong>Originary</strong>
-            <span>Proof for the agentic web</span>
+            <span>Receipts for AI agents</span>
           </div>
         </Link>
 

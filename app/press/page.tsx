@@ -42,7 +42,7 @@ export default function Press() {
                   About <Mark>Originary</Mark>
                 </h2>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  Originary delivers verifiable interaction records for the agentic web. Teams publish peac.txt to declare access, consent, attribution, privacy, and pricing. <Link href="/originary-ai" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Originary AI</Link> agents settle via configured payment adapters and present a Receipt to prove compliance on every request.
+                  Originary delivers verifiable interaction records for AI agents. Teams publish peac.txt to declare access, consent, attribution, privacy, and pricing. <Link href="/originary-ai" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Originary AI</Link> agents settle via configured payment adapters and present a Receipt to support compliance verification on every request.
                 </p>
 
                 <h2 style={{

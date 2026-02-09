@@ -306,7 +306,7 @@ export default function PricingPage() {
         <div className="container">
           <FadeIn className="pricing-header text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Plans that scale with your growth</h2>
-            <p className="text-xl text-gray-600 mb-8">From startup to enterprise, we have the right plan for your agentic infrastructure needs</p>
+            <p className="text-xl text-gray-600 mb-8">From startup to enterprise, we have the right plan for your AI agent infrastructure</p>
             <div className="pricing-banner">
               <p>
                 <strong>🚀 Simple Getting Started:</strong> Start with OSS or try Cloud free for 14 days.
@@ -627,7 +627,7 @@ export default function PricingPage() {
           <ScaleIn className="enterprise-cta" delay={0.2}>
             <div className="cta-content">
               <div className="cta-main">
-                <h2>Ready to scale your agentic infrastructure?</h2>
+                <h2>Ready to scale your agent infrastructure?</h2>
                 <p>Get enterprise-grade infrastructure with dedicated performance monitoring, security, and support.</p>
                 <div className="cta-stats">
                   <div className="stat">

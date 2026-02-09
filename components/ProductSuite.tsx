@@ -8,7 +8,7 @@ const products = [
   {
     id: 'gateway',
     title: 'Gateway',
-    tagline: 'Edge enforcement for the agentic web',
+    tagline: 'Edge enforcement for AI agents',
     desc: 'Enable HTTP 402 payment-required flows and issue PEAC receipts at the edge or origin.',
     href: '/products/gateway-402',
     icon: Zap,
@@ -77,7 +77,7 @@ export default function ProductSuite() {
       <div className="products-container">
         <div className={`products-header ${isVisible ? 'visible' : ''}`}>
           <span className="products-label">Product Suite</span>
-          <h2 className="products-title">Built for the agentic economy</h2>
+          <h2 className="products-title">Built for AI agents</h2>
           <p className="products-subtitle">
             Production components for policy enforcement, optional settlement flows, and receipt verification.
           </p>

@@ -252,7 +252,7 @@ export default function WorldClassHomePage() {
                   letterSpacing: '-0.02em'
                 }}
               >
-                Ready to make AI access provable?
+                Ready to make AI access verifiable?
               </h2>
               <p
                 style={{

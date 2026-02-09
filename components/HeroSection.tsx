@@ -171,7 +171,7 @@ export default function HeroSection() {
                 e.currentTarget.style.borderColor = 'var(--accent-brand-muted)'
               }}
             >
-              <span>Receipts for the Agentic Web</span>
+              <span>Receipts for AI Agents</span>
               <span style={{
                 fontSize: '11px',
                 opacity: 0.5,
@@ -212,7 +212,7 @@ export default function HeroSection() {
                 transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
               }}
             >
-              Originary adds <strong style={{ color: 'var(--text-primary)' }}>policy discovery</strong>, <strong style={{ color: 'var(--text-primary)' }}>HTTP 402 payments</strong>, and a <strong style={{ color: 'var(--text-primary)' }}>PEAC-Receipt</strong> to every response-so access, settlement, and compliance are provable by design. Go live in 5 minutes.
+              Originary adds <strong style={{ color: 'var(--text-primary)' }}>policy discovery</strong>, <strong style={{ color: 'var(--text-primary)' }}>HTTP 402 payments</strong>, and a <strong style={{ color: 'var(--text-primary)' }}>PEAC-Receipt</strong> to every response-so access, settlement, and compliance are verifiable by design. Go live in 5 minutes.
             </p>
 
             {/* Brand explainer */}

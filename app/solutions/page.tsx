@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Solutions',
   description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
-  keywords: 'agentic web, orchestration protocol, AI coordination, PEAC protocol',
+  keywords: 'AI agents, orchestration protocol, AI coordination, PEAC protocol',
   robots: 'index,follow',
   openGraph: {
     title: 'Solutions',
