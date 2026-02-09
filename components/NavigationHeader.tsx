@@ -113,7 +113,7 @@ export default function NavigationHeader() {
                 { href: 'separator', label: '' },
                 { href: 'https://www.npmjs.com/org/peac', label: 'All 20 packages on npm', external: true },
               ]} />
-              <NavLink href="/developers">Developers</NavLink>
+              <NavLink href="/developers">Docs</NavLink>
               <NavLink href="/pricing">Pricing</NavLink>
               <NavLink href="/blog">Blog</NavLink>
             </div>
@@ -126,14 +126,17 @@ export default function NavigationHeader() {
                 gap: 'var(--space-3)'
               }}
             >
+              <Link href="/developers" className="nav-cta-btn">
+                Quickstart
+              </Link>
               <a
                 href="https://github.com/peacprotocol/peac"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="nav-cta-btn"
+                className="nav-github-btn"
+                aria-label="View on GitHub"
               >
                 <Github size={16} />
-                Get Started
               </a>
             </div>
           </div>
@@ -190,7 +193,7 @@ export default function NavigationHeader() {
                 { href: 'https://www.npmjs.com/org/peac', label: 'All 20 packages on npm', external: true },
               ]} />
               <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
-                Developers
+                Docs
               </Link>
               <Link href="/pricing" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
                 Pricing
@@ -229,10 +232,8 @@ export default function NavigationHeader() {
                   <Github size={16} />
                   View on GitHub
                 </a>
-                <a
-                  href="https://github.com/peacprotocol/peac"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/developers"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -248,9 +249,8 @@ export default function NavigationHeader() {
                     boxShadow: '0 0 20px -5px var(--accent-brand-glow)'
                   }}
                 >
-                  <Github size={16} />
-                  Get Started
-                </a>
+                  Quickstart
+                </Link>
               </div>
             </div>
           </div>

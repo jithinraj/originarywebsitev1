@@ -20,7 +20,9 @@ export default function NewHero() {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-badge">
-            <span>Open standard for verifiable interaction records</span>
+            <span>PEAC Protocol</span>
+            <span className="badge-dot">&middot;</span>
+            <span>stewarded by Originary</span>
           </div>
 
           <h1 className="hero-headline">
@@ -29,29 +31,33 @@ export default function NewHero() {
           </h1>
 
           <p className="hero-problem">
-            When an AI agent hits your API, the only evidence is a server log no one else can verify. PEAC changes that -- issued as a signed receipt you can verify offline with a public key.
+            When an agent calls your API, each side keeps private logs no one else can check. PEAC produces one shared interaction record -- signed, portable, and verifiable offline with a public key.
           </p>
 
           <p className="hero-solution">
-            Open standard. Apache-2.0. 20 packages on npm.
+            Publish terms at <code className="hero-code">/.well-known/peac.txt</code>, then emit a verifiable record for each call.
           </p>
 
+          <ul className="hero-bullets">
+            <li><strong>Portable</strong> -- one signed record both sides can keep, share, and audit</li>
+            <li><strong>Offline-verifiable</strong> -- validate with a public key, no callback required</li>
+            <li><strong>Open standard</strong> -- Apache-2.0, self-hostable, no vendor lock-in</li>
+          </ul>
+
           <div className="hero-actions">
-            <Link href="/verify" className="hero-btn-primary">
-              Try the Verifier
-            </Link>
-            <Link href="/developers" className="hero-btn-secondary">
+            <Link href="/developers" className="hero-btn-primary">
               Quickstart
             </Link>
+            <Link href="/verify" className="hero-btn-secondary">
+              Try the Verifier
+            </Link>
             <a
-              href="https://github.com/peacprotocol/peac"
+              href="https://www.peacprotocol.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="hero-btn-secondary"
-              style={{ border: 'none', background: 'transparent', padding: '0 var(--space-4)' }}
+              className="hero-btn-tertiary"
             >
-              <Github size={18} />
-              GitHub
+              Read the Spec
             </a>
           </div>
 
@@ -63,7 +69,7 @@ export default function NewHero() {
               <span className="strip-dot">&middot;</span>
               <a href="https://github.com/peacprotocol/peac/releases" target="_blank" rel="noopener noreferrer" className="strip-link-inline">v0.10.9</a>
               <span className="strip-dot">&middot;</span>
-              <a href="https://www.npmjs.com/org/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">20 packages on npm</a>
+              <a href="https://www.npmjs.com/org/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">SDKs + conformance runner</a>
               <span className="strip-dot">&middot;</span>
               <span className="strip-item">3,500+ tests</span>
             </p>
@@ -193,7 +199,8 @@ export default function NewHero() {
         .hero-badge { animation-delay: 0.1s; }
         .hero-headline { animation-delay: 0.2s; }
         .hero-problem { animation-delay: 0.3s; }
-        .hero-solution { animation-delay: 0.4s; }
+        .hero-solution { animation-delay: 0.35s; }
+        .hero-bullets { animation-delay: 0.4s; }
         .hero-actions { animation-delay: 0.5s; }
         .hero-footer-strip { animation-delay: 0.6s; }
 
@@ -217,6 +224,11 @@ export default function NewHero() {
 
         .hero-badge span {
           white-space: nowrap;
+        }
+
+        .hero-badge :global(.badge-dot) {
+          color: var(--accent-brand);
+          opacity: 0.5;
         }
 
         .hero-headline {
@@ -254,18 +266,65 @@ export default function NewHero() {
 
         .hero-problem {
           font-size: var(--text-lg);
-          line-height: 1.6;
-          color: var(--text-secondary);
-          max-width: 480px;
+          line-height: 1.7;
+          color: var(--text-primary);
+          max-width: 500px;
           margin: 0;
+          opacity: 0.85;
         }
 
         .hero-solution {
           font-size: var(--text-base);
           line-height: 1.6;
-          color: var(--text-tertiary);
-          max-width: 480px;
+          color: var(--text-secondary);
+          max-width: 500px;
           margin: 0;
+        }
+
+        .hero-solution :global(.hero-code) {
+          font-family: var(--font-mono);
+          font-size: 0.85em;
+          padding: 2px 6px;
+          background: var(--surface-subtle);
+          border: 1px solid var(--border-default);
+          border-radius: var(--radius-sm);
+          color: var(--accent-brand);
+          white-space: nowrap;
+        }
+
+        .hero-bullets {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          max-width: 500px;
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-2);
+        }
+
+        .hero-bullets li {
+          font-size: var(--text-sm);
+          line-height: 1.5;
+          color: var(--text-secondary);
+          padding-left: var(--space-5);
+          position: relative;
+        }
+
+        .hero-bullets li::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 8px;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: var(--accent-brand);
+          opacity: 0.6;
+        }
+
+        .hero-bullets li strong {
+          color: var(--text-primary);
+          font-weight: 600;
         }
 
         .hero-footer-strip {
@@ -417,6 +476,30 @@ export default function NewHero() {
           transform: translateY(0);
         }
 
+        .hero-actions :global(.hero-btn-tertiary) {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: var(--space-4) var(--space-4);
+          font-size: 14px;
+          font-weight: 500;
+          text-decoration: none;
+          color: var(--text-tertiary);
+          background: transparent;
+          border: none;
+          transition: color var(--duration-200) var(--ease-out);
+        }
+
+        .hero-actions :global(.hero-btn-tertiary:hover) {
+          color: var(--text-primary);
+        }
+
+        .hero-actions :global(.hero-btn-tertiary:focus-visible) {
+          outline: 2px solid var(--accent-brand);
+          outline-offset: 2px;
+          border-radius: var(--radius-md);
+        }
+
         .hero-visual {
           display: flex;
           justify-content: center;
@@ -500,7 +583,8 @@ export default function NewHero() {
           }
 
           .hero-problem,
-          .hero-solution {
+          .hero-solution,
+          .hero-bullets {
             max-width: 560px;
           }
 
@@ -562,6 +646,10 @@ export default function NewHero() {
             font-size: 15px;
           }
 
+          .hero-bullets li {
+            font-size: 13px;
+          }
+
           .strip-brand {
             font-size: 10px;
             line-height: 1.6;
@@ -617,12 +705,21 @@ export default function NewHero() {
             font-size: 14px;
           }
 
+          .hero-actions :global(.hero-btn-tertiary) {
+            font-size: 13px;
+            padding: var(--space-3) var(--space-3);
+          }
+
           .hero-problem {
             font-size: 15px;
           }
 
           .hero-solution {
             font-size: 14px;
+          }
+
+          .hero-bullets li {
+            font-size: 12px;
           }
 
           .strip-brand {
