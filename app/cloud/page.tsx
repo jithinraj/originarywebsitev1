@@ -347,7 +347,7 @@ export default function CloudPage() {
                 Originary Cloud uses the open PEAC Protocol for verifiable interaction records, offline verification, and cross-platform compatibility.
               </p>
               <a
-                href="https://peacprotocol.org"
+                href="https://www.peacprotocol.org"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-secondary"

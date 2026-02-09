@@ -248,7 +248,7 @@ export default function Pricing() {
               </h3>
               <p style={{ marginBottom: 'var(--space-4)', color: 'var(--text-secondary)' }}>
                 The <a
-                  href="https://peacprotocol.org"
+                  href="https://www.peacprotocol.org"
                   target="_blank"
                   rel="noopener"
                   style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}
@@ -257,7 +257,7 @@ export default function Pricing() {
                 </a> is free to use and modify. Explore the spec, examples, and reference implementations.
               </p>
               <a
-                href="https://peacprotocol.org"
+                href="https://www.peacprotocol.org"
                 target="_blank"
                 rel="noopener"
                 className="btn btn-secondary"

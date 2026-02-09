@@ -29,7 +29,7 @@ export const SITE_DESCRIPTION = "Publish peac.txt, settle via x402 or your rail,
 
 // Protocol reference
 export const PROTOCOL_NAME = "PEAC Protocol";
-export const PROTOCOL_URL = "https://peacprotocol.org";
+export const PROTOCOL_URL = "https://www.peacprotocol.org";
 export const PROTOCOL_GITHUB = "https://github.com/peacprotocol";
 
 // Trademark usage

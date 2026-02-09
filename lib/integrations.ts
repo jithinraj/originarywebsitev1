@@ -61,7 +61,7 @@ export const INTEGRATIONS: Integration[] = [
     summary:
       'Provenance-Enhanced Access and Consent. The open protocol for receipts, policy, and settlement across the agentic web.',
     status: 'live',
-    specUrl: 'https://peacprotocol.org',
+    specUrl: 'https://www.peacprotocol.org',
     productTags: ['PEAC Core']
   },
   {

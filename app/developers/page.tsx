@@ -352,7 +352,7 @@ export default {
                   Releases
                 </a>
                 <a
-                  href="https://peacprotocol.org/docs"
+                  href="https://www.peacprotocol.org/docs"
                   target="_blank"
                   rel="noreferrer"
                   style={{
@@ -392,7 +392,7 @@ export default {
               </div>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                 Learn more in the <a
-                  href="https://peacprotocol.org"
+                  href="https://www.peacprotocol.org"
                   target="_blank"
                   rel="noopener"
                   style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}

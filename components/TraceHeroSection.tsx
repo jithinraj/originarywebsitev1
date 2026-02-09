@@ -77,7 +77,7 @@ export default function TraceHeroSection() {
         >
           {/* Announcement Badge */}
           <Link
-            href="https://peacprotocol.org"
+            href="https://www.peacprotocol.org"
             className="announcement"
             aria-label="Built on the open PEAC Protocol"
             target="_blank"

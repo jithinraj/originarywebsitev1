@@ -222,7 +222,7 @@ export default function ProductsBand() {
           {/* Learn PEAC Link */}
           <div style={{ textAlign: 'center', marginTop: 'var(--space-6)' }}>
             <Link
-              href="https://peacprotocol.org"
+              href="https://www.peacprotocol.org"
               target="_blank"
               rel="noopener noreferrer"
               style={{

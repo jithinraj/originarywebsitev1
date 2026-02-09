@@ -151,7 +151,7 @@ export default function PEACBand() {
             }}
           >
             <a
-              href="https://peacprotocol.org"
+              href="https://www.peacprotocol.org"
               target="_blank"
               rel="noopener noreferrer"
               className="link"

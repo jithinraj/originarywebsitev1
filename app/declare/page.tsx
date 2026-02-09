@@ -663,7 +663,7 @@ peac policy explain --subject agent:openai --purpose train
 
               <div style={{ textAlign: 'center', marginTop: 'var(--space-10)' }}>
                 <a
-                  href="https://peacprotocol.org/ai-policy-kit"
+                  href="https://www.peacprotocol.org/ai-policy-kit"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-secondary btn-lg"

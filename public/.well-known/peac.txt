@@ -1,4 +1,13 @@
-# PEAC Policy Document - https://peacprotocol.org
+# PEAC Policy Document
+# https://www.peacprotocol.org
+#
+# This file declares how AI agents and automated clients
+# should interact with this domain. It is the machine-readable
+# equivalent of a terms-of-service page.
+#
+# Spec: peac-receipt/0.1 (frozen)
+# Reference: https://github.com/peacprotocol/peac
+
 version: peac-policy/0.1
 usage: conditional
 purposes: [inference, ai_input]

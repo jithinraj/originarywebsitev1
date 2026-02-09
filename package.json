@@ -14,6 +14,7 @@
   ],
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run check:terms",
     "build": "next build",
     "sitemap": "node scripts/gen-sitemap-with-git.mjs",
     "start": "next start",

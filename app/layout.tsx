@@ -88,7 +88,7 @@ const organizationJsonLd = {
     'MCP',
     'ACP',
     'A2A',
-    'Agentic Web',
+    'AI agent interactions',
     'AI commerce',
     'AI infrastructure',
     'AI compliance',
@@ -101,7 +101,7 @@ const organizationJsonLd = {
     'HTTP 402 Payment Required',
     'Agent-to-Agent communication',
     'Model Context Protocol',
-    'Agentic Commerce Protocol',
+    'PEAC receipts',
     'AI Preferences',
     'API policy enforcement',
     'Agent coordination',
@@ -133,48 +133,36 @@ const siteNavJsonLd = {
     {
       '@type': 'SiteNavigationElement',
       position: 1,
-      name: 'Platform',
-      url: 'https://www.originary.xyz/platform'
-    },
-    {
-      '@type': 'SiteNavigationElement',
-      position: 2,
       name: 'PEAC Protocol',
       url: 'https://www.originary.xyz/peac'
     },
     {
       '@type': 'SiteNavigationElement',
-      position: 3,
-      name: 'Products',
-      url: 'https://www.originary.xyz/products'
-    },
-    {
-      '@type': 'SiteNavigationElement',
-      position: 4,
+      position: 2,
       name: 'Developers',
       url: 'https://www.originary.xyz/developers'
     },
     {
       '@type': 'SiteNavigationElement',
-      position: 5,
-      name: 'Declare',
-      url: 'https://www.originary.xyz/declare'
+      position: 3,
+      name: 'Pricing',
+      url: 'https://www.originary.xyz/pricing'
     },
     {
       '@type': 'SiteNavigationElement',
-      position: 6,
+      position: 4,
       name: 'Blog',
       url: 'https://www.originary.xyz/blog'
     },
     {
       '@type': 'SiteNavigationElement',
-      position: 7,
+      position: 5,
       name: 'Verify',
       url: 'https://www.originary.xyz/verify'
     },
     {
       '@type': 'SiteNavigationElement',
-      position: 8,
+      position: 6,
       name: 'About',
       url: 'https://www.originary.xyz/about'
     }
@@ -183,10 +171,10 @@ const siteNavJsonLd = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Originary | Verify Agent Interactions Instantly',
+    default: 'Originary | Signed Receipts for AI Agent Interactions',
     template: '%s | Originary',
   },
-  description: 'Originary issues signature-verified records you can verify offline and export for audits. Built for policy enforcement, compliance, and agentic commerce.',
+  description: 'When an AI agent hits your API, the only record is a server log. PEAC receipts are signed, portable, and verify offline with a public key. Open standard. Apache-2.0.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
@@ -197,23 +185,23 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://www.originary.xyz'),
   openGraph: {
-    title: 'Originary | Verify Agent Interactions Instantly',
-    description: 'Originary issues signature-verified records you can verify offline and export for audits. Built for policy enforcement, compliance, and agentic commerce.',
+    title: 'Originary | Signed Receipts for AI Agent Interactions',
+    description: 'When an AI agent hits your API, the only record is a server log. PEAC receipts are signed, portable, and verify offline with a public key. Open standard. Apache-2.0.',
     url: 'https://www.originary.xyz',
     siteName: 'Originary',
     images: [{
       url: '/og',
       width: 1200,
       height: 630,
-      alt: 'Originary - Verify agent interactions instantly'
+      alt: 'Originary - Signed receipts for AI agent interactions'
     }],
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Verify Agent Interactions Instantly',
-    description: 'Originary issues signature-verified records you can verify offline and export for audits. Built for policy enforcement, compliance, and agentic commerce.',
+    title: 'Originary | Signed Receipts for AI Agent Interactions',
+    description: 'When an AI agent hits your API, the only record is a server log. PEAC receipts are signed, portable, and verify offline with a public key. Open standard. Apache-2.0.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',

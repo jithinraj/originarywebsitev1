@@ -213,7 +213,7 @@ Content-Type: application/json
               }}>
                 Verify API Product →
               </Link>
-              <a href="https://peacprotocol.org/" target="_blank" rel="noopener" style={{
+              <a href="https://www.peacprotocol.org/" target="_blank" rel="noopener" style={{
                 color: 'var(--accent-brand)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-base)',
