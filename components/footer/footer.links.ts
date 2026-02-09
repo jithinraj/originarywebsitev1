@@ -59,7 +59,6 @@ export const FOOTER_COMPANY: FooterGroup = {
   links: [
     { label: 'About', href: '/about' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Pricing', href: '/pricing' },
     { label: 'Contact', href: '/company/contact' },
   ],
 }

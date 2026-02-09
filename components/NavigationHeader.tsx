@@ -114,7 +114,6 @@ export default function NavigationHeader() {
                 { href: 'https://www.npmjs.com/org/peac', label: 'All 20 packages on npm', external: true },
               ]} />
               <NavLink href="/developers">Docs</NavLink>
-              <NavLink href="/pricing">Pricing</NavLink>
               <NavLink href="/blog">Blog</NavLink>
             </div>
 
@@ -194,9 +193,6 @@ export default function NavigationHeader() {
               ]} />
               <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
                 Docs
-              </Link>
-              <Link href="/pricing" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
-                Pricing
               </Link>
               <Link href="/blog" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
                 Blog
