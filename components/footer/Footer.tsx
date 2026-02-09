@@ -524,7 +524,7 @@ function LayerC() {
               overflowWrap: 'break-word',
             }}
           >
-            Verifiable receipts that prove what happened in an agent interaction: what was accessed,
+            Signed interaction records you can verify offline with a public key: what was accessed,
             under which policy, and what evidence exists for payment and compliance.
           </p>
 

@@ -135,11 +135,11 @@ export default function Adapters() {
                     fontWeight: 700,
                     color: 'var(--accent-secondary)',
                     marginBottom: 'var(--space-2)'
-                  }}>99.99%</div>
+                  }}>100%</div>
                   <div style={{
                     fontSize: 'var(--text-sm)',
                     color: 'var(--text-secondary)'
-                  }}>Protocol compliance</div>
+                  }}>Conformance tested</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{
@@ -446,8 +446,8 @@ export default function Adapters() {
                     <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Verification</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>99.99%</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Accuracy</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>Deterministic</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Verification</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>

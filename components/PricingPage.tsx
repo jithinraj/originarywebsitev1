@@ -244,22 +244,16 @@ export default function PricingPage() {
 
             <div className="hero-metrics grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="metric text-center">
-                <span className="metric-value text-4xl font-bold text-gray-900">
-                  <AnimatedCounter value={50} suffix="M+" />
-                </span>
-                <span className="metric-label block text-gray-600 mt-2">Customer transactions processed</span>
+                <span className="metric-value text-4xl font-bold text-gray-900">20</span>
+                <span className="metric-label block text-gray-600 mt-2">npm packages</span>
               </div>
               <div className="metric text-center">
-                <span className="metric-value text-4xl font-bold text-gray-900">
-                  <AnimatedCounter value={500} suffix="+" />
-                </span>
-                <span className="metric-label block text-gray-600 mt-2">Enterprise customers</span>
+                <span className="metric-value text-4xl font-bold text-gray-900">3,500+</span>
+                <span className="metric-label block text-gray-600 mt-2">Tests passing</span>
               </div>
               <div className="metric text-center">
-                <span className="metric-value text-4xl font-bold text-gray-900">
-                  <AnimatedCounter value={99.9} suffix="%" />
-                </span>
-                <span className="metric-label block text-gray-600 mt-2">Customer satisfaction</span>
+                <span className="metric-value text-4xl font-bold text-gray-900">Apache-2.0</span>
+                <span className="metric-label block text-gray-600 mt-2">Open source license</span>
               </div>
             </div>
 
@@ -637,18 +631,16 @@ export default function PricingPage() {
                 <p>Get enterprise-grade infrastructure with dedicated performance monitoring, security, and support.</p>
                 <div className="cta-stats">
                   <div className="stat">
-                    <span className="stat-value">
-                      <AnimatedCounter value={10} suffix="B+" />
-                    </span>
-                    <span className="stat-label">Monthly transactions</span>
+                    <span className="stat-value">20</span>
+                    <span className="stat-label">Published packages</span>
                   </div>
                   <div className="stat">
-                    <span className="stat-value">99.99%</span>
-                    <span className="stat-label">Enterprise uptime</span>
+                    <span className="stat-value">v0.10.9</span>
+                    <span className="stat-label">Latest release</span>
                   </div>
                   <div className="stat">
-                    <span className="stat-value">&lt; 1hr</span>
-                    <span className="stat-label">Support response</span>
+                    <span className="stat-value">Apache-2.0</span>
+                    <span className="stat-label">Open source</span>
                   </div>
                 </div>
               </div>

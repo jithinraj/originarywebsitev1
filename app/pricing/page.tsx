@@ -279,7 +279,7 @@ export default function PricingPage() {
                     'Custom rail adapters (x402, i402, Stripe)',
                     'Multi-property rollups',
                     'Domain attestation + KMS',
-                    'Uptime SLA (99.99%)',
+                    'Availability targets per deployment',
                     'Dedicated support'
                   ].map((feature, idx) => (
                     <li key={idx} style={{

@@ -231,7 +231,7 @@ export default function Pricing() {
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)', textAlign: 'center', marginTop: 'var(--space-4)' }}>
                 Latency measured at 95th percentile over trailing 30 days, Mumbai edge (IST).
                 Throughput is baseline; higher limits available on request.
-                Pro: <strong>99.9% SLO</strong> (target). Enterprise: <strong>99.99% SLA</strong> (contractual, available in MSA).
+                Availability targets negotiated per deployment.
               </p>
             </section>
 

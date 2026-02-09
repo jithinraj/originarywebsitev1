@@ -216,10 +216,10 @@ export default function ContactPage() {
               <ScaleIn delay={0.4} className="mt-8 p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl">
                 <div className="text-center">
                   <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
-                  <h4 className="text-lg font-semibold mb-2">Enterprise Priority Support</h4>
+                  <h4 className="text-lg font-semibold mb-2">Open Source Support</h4>
                   <p className="text-gray-600 text-sm">
-                    Enterprise customers get dedicated support channels with guaranteed response times
-                    and direct access to our engineering team.
+                    PEAC is Apache-2.0 with 20 npm packages.
+                    File issues on GitHub or reach out for integration guidance.
                   </p>
                 </div>
               </ScaleIn>
