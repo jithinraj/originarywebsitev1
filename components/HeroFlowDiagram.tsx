@@ -152,22 +152,33 @@ export default function HeroFlowDiagram() {
           <span>Verify(rec_7f3a)</span>
           <span className="verifier-offline">local (offline)</span>
         </div>
+        <div className="verifier-checks-title">Verifier checks:</div>
         <div className="verifier-results">
           <div className="verifier-row">
-            <span className="vr-label">Signature</span>
-            <span className="vr-value vr-valid">valid</span>
-          </div>
-          <div className="verifier-row">
-            <span className="vr-label">Policy</span>
-            <span className="vr-value vr-valid">peac.txt</span>
-          </div>
-          <div className="verifier-row verifier-result-row">
-            <span className="vr-label">Result</span>
+            <span className="vr-label">signature</span>
             <span className="vr-value vr-valid">
-              <CheckCircle size={12} strokeWidth={2.5} />
-              VALID
+              <CheckCircle size={10} strokeWidth={2.5} />
+              valid (kid: key-2026)
             </span>
           </div>
+          <div className="verifier-row">
+            <span className="vr-label">policy digest</span>
+            <span className="vr-value vr-valid">
+              <CheckCircle size={10} strokeWidth={2.5} />
+              matched
+            </span>
+          </div>
+          <div className="verifier-row">
+            <span className="vr-label">decision</span>
+            <span className="vr-value vr-valid">
+              <CheckCircle size={10} strokeWidth={2.5} />
+              ALLOW
+            </span>
+          </div>
+        </div>
+        <div className="verifier-result-final">
+          <CheckCircle size={14} strokeWidth={2.5} />
+          <span>Portable record created</span>
         </div>
         <div className="verifier-footer">
           public key &middot; no callback required
@@ -590,10 +601,20 @@ export default function HeroFlowDiagram() {
           margin-left: auto;
         }
 
+        .verifier-checks-title {
+          font-family: var(--font-mono);
+          font-size: 9px;
+          font-weight: 600;
+          color: var(--text-secondary);
+          margin-bottom: 6px;
+          letter-spacing: 0.02em;
+        }
+
         .verifier-results {
           display: flex;
           flex-direction: column;
-          gap: 3px;
+          gap: 4px;
+          margin-bottom: 8px;
         }
 
         .verifier-row {
@@ -615,11 +636,38 @@ export default function HeroFlowDiagram() {
         .vr-value {
           color: var(--text-secondary);
           font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 4px;
         }
 
         .vr-valid {
           color: var(--accent-success);
-          font-weight: 700;
+          font-weight: 600;
+        }
+
+        .vr-valid :global(svg) {
+          flex-shrink: 0;
+        }
+
+        .verifier-result-final {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          padding: 6px 10px;
+          background: var(--surface-base);
+          border: 1px solid var(--accent-success-border);
+          border-radius: var(--radius-md);
+          font-family: var(--font-mono);
+          font-size: 10px;
+          font-weight: 600;
+          color: var(--accent-success);
+          letter-spacing: 0.02em;
+        }
+
+        .verifier-result-final :global(svg) {
+          color: var(--accent-success);
         }
 
         .verifier-result-row {

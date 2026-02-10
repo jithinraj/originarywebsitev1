@@ -458,7 +458,7 @@ function LayerC() {
                 overflowWrap: 'break-word',
               }}
             >
-              PEAC Protocol is an open standard. Apache-2.0. Stewardship: Originary + community.
+              PEAC Protocol is an open standard stewarded by Originary and the open-source community.
             </p>
           </div>
         </div>
