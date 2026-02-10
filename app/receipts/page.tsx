@@ -23,49 +23,57 @@ export default function ReceiptsPage() {
       icon: <Lock size={24} />,
       title: 'Signature-Verified',
       description: 'JWS payloads with Ed25519 signatures. Tamper-evident by design.',
-      color: '#635BFF'
+      color: 'var(--accent-brand)',
+      colorMuted: 'var(--accent-brand-subtle)'
     },
     {
       icon: <FileText size={24} />,
       title: 'Policy Binding',
       description: 'Each receipt binds to a specific policy version via SHA-256 hash.',
-      color: '#00D4AA'
+      color: 'var(--accent-secondary)',
+      colorMuted: 'var(--accent-secondary-subtle)'
     },
     {
       icon: <Key size={24} />,
       title: 'Offline Verification',
       description: 'Verify against published JWKS endpoints. No API call required.',
-      color: '#FF6B6B'
+      color: 'var(--accent-error)',
+      colorMuted: 'var(--accent-error-muted)'
     },
     {
       icon: <Clock size={24} />,
       title: 'Timestamped',
       description: 'Precise iat/exp claims establish when interactions occurred.',
-      color: '#4ECDC4'
+      color: 'var(--accent-secondary)',
+      colorMuted: 'var(--accent-secondary-subtle)'
     },
     {
       icon: <Database size={24} />,
       title: 'Payment Evidence',
       description: 'Transaction references and payment rail details included.',
-      color: '#9B59B6'
+      color: 'var(--accent-brand)',
+      colorMuted: 'var(--accent-brand-subtle)'
     },
     {
       icon: <Shield size={24} />,
       title: 'Audit Ready',
       description: 'Export logs in standard formats for internal review.',
-      color: '#F39C12'
+      color: 'var(--accent-warning)',
+      colorMuted: 'var(--accent-warning-muted)'
     },
     {
       icon: <Eye size={24} />,
       title: 'Privacy Modes',
       description: 'Strict, balanced, or custom identifier handling for compliance.',
-      color: '#10B981'
+      color: 'var(--accent-success)',
+      colorMuted: 'var(--accent-success-muted)'
     },
     {
       icon: <Fingerprint size={24} />,
       title: 'Attestations',
       description: 'Extensible evidence types for risk, consent, and compliance.',
-      color: '#8B5CF6'
+      color: 'var(--accent-brand)',
+      colorMuted: 'var(--accent-brand-subtle)'
     }
   ]
 
@@ -181,7 +189,7 @@ export default function ReceiptsPage() {
                     '--feature-color': feature.color
                   } as React.CSSProperties}
                 >
-                  <div className="receipts-feature-icon" style={{ background: `${feature.color}15`, color: feature.color }}>
+                  <div className="receipts-feature-icon" style={{ background: feature.colorMuted, color: feature.color }}>
                     {feature.icon}
                   </div>
                   <h3 className="receipts-feature-title">{feature.title}</h3>
@@ -205,28 +213,28 @@ export default function ReceiptsPage() {
 
                 <div className="receipts-anatomy-list">
                   <div className="receipts-anatomy-item">
-                    <div className="receipts-anatomy-marker" style={{ background: '#635BFF' }} />
+                    <div className="receipts-anatomy-marker" style={{ background: 'var(--accent-brand)' }} />
                     <div>
                       <strong>Header</strong>
                       <span>Algorithm, type, and key identifier</span>
                     </div>
                   </div>
                   <div className="receipts-anatomy-item">
-                    <div className="receipts-anatomy-marker" style={{ background: '#00D4AA' }} />
+                    <div className="receipts-anatomy-marker" style={{ background: 'var(--accent-secondary)' }} />
                     <div>
                       <strong>Claims</strong>
                       <span>Issuer, subject, audience, timestamps</span>
                     </div>
                   </div>
                   <div className="receipts-anatomy-item">
-                    <div className="receipts-anatomy-marker" style={{ background: '#FF6B6B' }} />
+                    <div className="receipts-anatomy-marker" style={{ background: 'var(--accent-error)' }} />
                     <div>
                       <strong>PEAC payload</strong>
                       <span>Version, resource, policy hash, AIPREF snapshot</span>
                     </div>
                   </div>
                   <div className="receipts-anatomy-item">
-                    <div className="receipts-anatomy-marker" style={{ background: '#F39C12' }} />
+                    <div className="receipts-anatomy-marker" style={{ background: 'var(--accent-warning)' }} />
                     <div>
                       <strong>Payment (optional)</strong>
                       <span>Rail, amount, currency, transaction reference</span>
@@ -632,7 +640,7 @@ export default function ReceiptsPage() {
         }
 
         .receipts-code-container {
-          background: #0D0D0D;
+          background: var(--code-bg);
           border-radius: var(--radius-2xl);
           overflow: hidden;
           box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
@@ -643,8 +651,8 @@ export default function ReceiptsPage() {
           align-items: center;
           gap: var(--space-3);
           padding: var(--space-4) var(--space-5);
-          background: #1A1A1A;
-          border-bottom: 1px solid #2A2A2A;
+          background: var(--code-bg-header);
+          border-bottom: 1px solid var(--border-default);
         }
 
         .receipts-code-dots {
@@ -658,14 +666,14 @@ export default function ReceiptsPage() {
           border-radius: 50%;
         }
 
-        .receipts-code-dots .red { background: #FF5F57; }
-        .receipts-code-dots .yellow { background: #FFBD2E; }
-        .receipts-code-dots .green { background: #28CA42; }
+        .receipts-code-dots .red { background: var(--chrome-red); }
+        .receipts-code-dots .yellow { background: var(--chrome-yellow); }
+        .receipts-code-dots .green { background: var(--chrome-green); }
 
         .receipts-code-filename {
           flex: 1;
           font-size: 12px;
-          color: #666;
+          color: var(--text-muted);
           font-family: var(--font-mono);
         }
 
@@ -673,7 +681,7 @@ export default function ReceiptsPage() {
           font-size: 10px;
           padding: 3px 8px;
           background: var(--accent-brand-muted);
-          color: #635BFF;
+          color: var(--accent-brand);
           border-radius: 4px;
           font-weight: 600;
         }
@@ -683,13 +691,13 @@ export default function ReceiptsPage() {
           margin: 0;
           font-size: 13px;
           line-height: 1.7;
-          color: #E0E0E0;
+          color: var(--text-primary);
           overflow-x: auto;
         }
 
-        .receipts-code-body :global(.code-key) { color: #7C75FF; }
-        .receipts-code-body :global(.code-string) { color: #22C55E; }
-        .receipts-code-body :global(.code-number) { color: #F59E0B; }
+        .receipts-code-body :global(.code-key) { color: var(--code-color-key); }
+        .receipts-code-body :global(.code-string) { color: var(--code-color-string); }
+        .receipts-code-body :global(.code-number) { color: var(--code-color-number); }
 
         /* Use Cases */
         .receipts-usecases {
@@ -841,7 +849,7 @@ export default function ReceiptsPage() {
           right: -20%;
           width: 400px;
           height: 400px;
-          background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+          background: radial-gradient(circle, var(--glass-border-hover) 0%, transparent 70%);
           pointer-events: none;
         }
 
@@ -1046,9 +1054,9 @@ function ReceiptVisual() {
           gap: 4px;
           font-size: 12px;
           font-weight: 600;
-          color: #22C55E;
+          color: var(--accent-success);
           padding: 4px 10px;
-          background: rgba(34, 197, 94, 0.1);
+          background: var(--accent-success-muted);
           border-radius: var(--radius-full);
         }
 
@@ -1082,7 +1090,7 @@ function ReceiptVisual() {
         }
 
         .receipt-payment {
-          color: #22C55E;
+          color: var(--accent-success);
         }
 
         .receipt-footer {

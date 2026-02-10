@@ -139,7 +139,7 @@ export default function WhyNow() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(135deg, rgba(255, 171, 0, 0.1) 0%, rgba(255, 100, 0, 0.05) 100%);
+          background: linear-gradient(135deg, var(--accent-warning-subtle) 0%, var(--accent-tertiary-faint) 100%);
           border-radius: var(--radius-xl);
           color: var(--warning);
         }

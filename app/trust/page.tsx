@@ -38,7 +38,7 @@ export default function TrustPage() {
             width: '500px',
             height: '500px',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(99,91,255,0.08) 0%, transparent 70%)',
+            background: 'var(--gradient-orb-purple)',
             pointerEvents: 'none',
             zIndex: 0
           }} />
@@ -50,7 +50,7 @@ export default function TrustPage() {
             width: '400px',
             height: '400px',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(0,212,170,0.06) 0%, transparent 70%)',
+            background: 'var(--gradient-orb-teal)',
             pointerEvents: 'none',
             zIndex: 0
           }} />
@@ -245,7 +245,7 @@ export default function TrustPage() {
             <div style={{
               maxWidth: '900px',
               margin: '0 auto 80px',
-              background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
+              background: 'var(--accent-brand-faint)',
               border: '1px solid var(--accent-brand-muted)',
               borderRadius: 'var(--radius-2xl)',
               padding: 'var(--space-12)',

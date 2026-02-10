@@ -432,20 +432,20 @@ function LayerC() {
               style={{
                 margin: 0,
                 fontSize: '12px',
-                color: 'rgba(255, 255, 255, 0.5)',
+                color: 'var(--text-muted)',
               }}
             >
-              &copy; 2025 - {currentYear} Poem, Inc. &middot; Delaware, USA
+              &copy; 2025 - {currentYear} Originary (Poem, Inc.) &middot; Delaware, USA
             </p>
             <p
               style={{
                 margin: 0,
                 fontSize: '11px',
                 lineHeight: 1.5,
-                color: 'rgba(255, 255, 255, 0.35)',
+                color: 'var(--text-muted)',
               }}
             >
-              ORIGINARY&trade; is a trademark of Poem, Inc.
+              In the U.S., &lsquo;Originary&rsquo; is used by Poem, Inc. as a brand for its AI infrastructure software and tools for AI agents. Poem, Inc. is not affiliated with Originary Inc.
             </p>
             <p
               style={{
@@ -453,7 +453,7 @@ function LayerC() {
                 maxWidth: '100%',
                 fontSize: '10px',
                 lineHeight: 1.5,
-                color: 'rgba(255, 255, 255, 0.25)',
+                color: 'var(--text-muted)',
                 wordWrap: 'break-word',
                 overflowWrap: 'break-word',
               }}

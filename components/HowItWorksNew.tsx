@@ -24,6 +24,7 @@ rules:
     access: paid
     price: 0.001 USD
     methods: [GET, POST]`,
+    cta: { label: 'See template', href: '/peac' },
   },
   {
     id: 'enforce',
@@ -42,6 +43,7 @@ PEAC-Accept: x402, invoice
   "error": "payment_required",
   "price": "0.001 USD"
 }`,
+    cta: { label: 'Add middleware', href: '/developers' },
   },
   {
     id: 'receipt',
@@ -60,6 +62,7 @@ PEAC-Accept: x402, invoice
   "iat": 1737290800,
   "decision": "allow"
 }`,
+    cta: { label: 'Verify a receipt', href: '/verify' },
   }
 ]
 
@@ -99,7 +102,6 @@ export default function HowItWorksNew() {
 
       <div className="how-bg">
         <div className="bg-gradient" />
-        <div className="bg-mesh" />
       </div>
 
       <div className="how-container">
@@ -108,7 +110,7 @@ export default function HowItWorksNew() {
             <span className="how-label">How it works</span>
           </div>
           <h2 className="how-title">Three steps to verifiable interactions</h2>
-          <p className="how-subtitle">Publish terms, enforce decisions, verify what happened</p>
+          <p className="how-subtitle">Publish terms, enforce decisions, verify the record</p>
         </div>
 
         <div className="steps-grid">
@@ -134,6 +136,10 @@ export default function HowItWorksNew() {
                   <h3 className="step-title">{step.title}</h3>
                   <p className="step-tagline">{step.tagline}</p>
                   <p className="step-desc">{step.desc}</p>
+                  <Link href={step.cta.href} className="step-cta-link" onClick={(e) => e.stopPropagation()}>
+                    {step.cta.label}
+                    <ArrowRight size={12} strokeWidth={2.5} />
+                  </Link>
                 </div>
 
                 {expandedStep === i && (
@@ -169,33 +175,6 @@ export default function HowItWorksNew() {
           ))}
         </div>
 
-        <div className={`code-section ${isVisible ? 'visible' : ''}`}>
-          <div className="code-header-bar">
-            <div className="code-dots">
-              <span className="dot red" />
-              <span className="dot yellow" />
-              <span className="dot green" />
-            </div>
-            <span className="code-filename">PEAC-Receipt</span>
-          </div>
-          <pre className="code-block">
-            <code>
-              <span className="code-comment">{`// Signature-verified record`}</span>{'\n'}
-              <span className="code-key">PEAC-Receipt</span><span className="code-punct">:</span> <span className="code-string">eyJhbGciOiJFZDI1NTE5...</span>{'\n'}
-              {'\n'}
-              <span className="code-comment">{`// Decoded payload`}</span>{'\n'}
-              <span className="code-punct">{`{`}</span>{'\n'}
-              {'  '}<span className="code-key">&quot;v&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;0.10.0&quot;</span><span className="code-punct">,</span>{'\n'}
-              {'  '}<span className="code-key">&quot;iss&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;api.example.com&quot;</span><span className="code-punct">,</span>{'\n'}
-              {'  '}<span className="code-key">&quot;sub&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;agent:example-client&quot;</span><span className="code-punct">,</span>{'\n'}
-              {'  '}<span className="code-key">&quot;iat&quot;</span><span className="code-punct">:</span> <span className="code-number">1703894400</span><span className="code-punct">,</span>{'\n'}
-              {'  '}<span className="code-key">&quot;action&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;api.query&quot;</span><span className="code-punct">,</span>{'\n'}
-              {'  '}<span className="code-key">&quot;status&quot;</span><span className="code-punct">:</span> <span className="code-string">&quot;success&quot;</span>{'\n'}
-              <span className="code-punct">{`}`}</span>
-            </code>
-          </pre>
-        </div>
-
         <div className={`how-cta ${isVisible ? 'visible' : ''}`}>
           <Link href="/demo" className="cta-primary">
             See it in action
@@ -206,30 +185,12 @@ export default function HowItWorksNew() {
           </Link>
         </div>
 
-        <div className={`how-footer ${isVisible ? 'visible' : ''}`}>
-          <div className="footer-badges">
-            <span className="badge">
-              <span className="badge-dot" />
-              Rail-neutral by design
-            </span>
-            <span className="badge-sep" />
-            <span className="badge">
-              <span className="badge-dot" />
-              Protocol agnostic
-            </span>
-            <span className="badge-sep" />
-            <span className="badge">
-              <span className="badge-dot" />
-              Offline verification
-            </span>
-          </div>
-        </div>
       </div>
 
       <style jsx>{`
         .how {
           position: relative;
-          padding: 180px 0;
+          padding: 120px 0;
           background: var(--surface-base);
           overflow: hidden;
         }
@@ -258,10 +219,6 @@ export default function HowItWorksNew() {
             radial-gradient(ellipse 60% 40% at 20% 0%, var(--gradient-mesh-purple) 0%, transparent 50%),
             radial-gradient(ellipse 50% 30% at 50% 30%, var(--gradient-mesh-light-purple) 0%, transparent 50%),
             radial-gradient(ellipse 60% 40% at 80% 100%, var(--gradient-mesh-light-teal) 0%, transparent 50%);
-        }
-
-        .bg-mesh {
-          display: none;
         }
 
         .how-container {
@@ -452,6 +409,22 @@ export default function HowItWorksNew() {
           margin: 0;
         }
 
+        .card-body :global(.step-cta-link) {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          margin-top: var(--space-3);
+          font-size: var(--text-xs);
+          font-weight: 600;
+          color: var(--accent-brand);
+          text-decoration: none;
+          transition: gap var(--duration-200) ease;
+        }
+
+        .card-body :global(.step-cta-link:hover) {
+          gap: 10px;
+        }
+
         .card-indicator {
           display: none;
         }
@@ -537,74 +510,6 @@ export default function HowItWorksNew() {
             padding-bottom: 0;
           }
         }
-
-        .code-section {
-          max-width: 640px;
-          margin: 0 auto var(--space-12);
-          background: linear-gradient(180deg, var(--code-bg-header) 0%, var(--code-bg) 100%);
-          border-radius: var(--radius-2xl);
-          overflow: hidden;
-          box-shadow:
-            0 0 0 1px var(--border-default),
-            var(--shadow-elevated);
-          opacity: 0;
-          transform: translateY(40px);
-          transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.55s, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.55s;
-        }
-
-        .code-section.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .code-header-bar {
-          display: flex;
-          align-items: center;
-          padding: 14px 18px;
-          background: var(--glass-bg);
-          border-bottom: 1px solid var(--border-default);
-        }
-
-        .code-dots {
-          display: flex;
-          gap: 7px;
-        }
-
-        .dot {
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          background: var(--surface-subtle);
-        }
-
-        .dot.red { background: var(--chrome-red); }
-        .dot.yellow { background: var(--chrome-yellow); }
-        .dot.green { background: var(--chrome-green); }
-
-        .code-filename {
-          flex: 1;
-          text-align: center;
-          font-size: var(--text-sm);
-          font-weight: 600;
-          color: var(--text-tertiary);
-          font-family: var(--font-mono);
-        }
-
-        .code-block {
-          padding: var(--space-6);
-          margin: 0;
-          font-family: var(--font-mono);
-          font-size: var(--text-sm);
-          line-height: 1.7;
-          color: var(--text-secondary);
-          overflow-x: auto;
-        }
-
-        .code-comment { color: var(--code-color-comment); }
-        .code-key { color: var(--code-color-key); }
-        .code-string { color: var(--code-color-string); }
-        .code-number { color: var(--code-color-number); }
-        .code-punct { color: var(--text-muted); }
 
         .how-cta {
           display: flex;
@@ -708,7 +613,7 @@ export default function HowItWorksNew() {
 
         @media (max-width: 1024px) {
           .how {
-            padding: 140px 0;
+            padding: 100px 0;
           }
 
           .how-title {
@@ -722,7 +627,7 @@ export default function HowItWorksNew() {
 
         @media (max-width: 900px) {
           .how {
-            padding: 120px 0;
+            padding: 80px 0;
           }
 
           .how-container {
@@ -773,7 +678,7 @@ export default function HowItWorksNew() {
 
         @media (max-width: 640px) {
           .how {
-            padding: 100px 0;
+            padding: 64px 0;
           }
 
           .how-header {
@@ -804,7 +709,7 @@ export default function HowItWorksNew() {
           }
 
           .step-tagline {
-            font-size: 10px;
+            font-size: 11px;
           }
 
           .step-desc {
@@ -814,18 +719,6 @@ export default function HowItWorksNew() {
 
           .card-expand-hint {
             font-size: 11px;
-          }
-
-          .code-section {
-            margin-left: -20px;
-            margin-right: -20px;
-            margin-bottom: 48px;
-            border-radius: 0;
-          }
-
-          .code-block {
-            font-size: 12px;
-            padding: 20px;
           }
 
           .how-cta {
@@ -839,7 +732,7 @@ export default function HowItWorksNew() {
 
         @media (max-width: 480px) {
           .how {
-            padding: 80px 0;
+            padding: 48px 0;
           }
 
           .how-container {
@@ -895,15 +788,6 @@ export default function HowItWorksNew() {
             padding: var(--space-3);
           }
 
-          .code-section {
-            margin-left: -16px;
-            margin-right: -16px;
-          }
-
-          .code-block {
-            font-size: 11px;
-            padding: 16px;
-          }
 
           .how-cta :global(.cta-primary),
           .how-cta :global(.cta-secondary) {
@@ -918,7 +802,6 @@ export default function HowItWorksNew() {
         @media (prefers-reduced-motion: reduce) {
           .how-header,
           .step-card,
-          .code-section,
           .how-cta,
           .how-footer {
             transition: none;

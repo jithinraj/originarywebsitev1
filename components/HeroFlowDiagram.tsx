@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { Globe, Shield, FileCheck, CheckCircle, Key } from 'lucide-react'
 
 /**
- * Hero lifecycle diagram -- animated PEAC receipt flow (~5s loop).
+ * Hero lifecycle diagram -- animated PEAC receipt flow (~6.5s loop).
  *
  * Storyboard:
  *  1) request -- Agent -> Service lights up
@@ -13,6 +13,7 @@ import { Globe, Shield, FileCheck, CheckCircle, Key } from 'lucide-react'
  *  4) minted -- receipt artifact appears (pause -- first "aha")
  *  5) delivered -- same receipt on Agent + Service + Auditor
  *  6) verified -- offline verification panel (long pause -- main "aha")
+ *  7) dissolve -- graceful fade-out before loop restart
  *
  * Design rules:
  *  - Receipt shown as tangible artifact card (hash + sig visible)
@@ -22,22 +23,22 @@ import { Globe, Shield, FileCheck, CheckCircle, Key } from 'lucide-react'
  *  - All colors from design system tokens
  */
 
-type Phase = 'idle' | 'request' | 'policy' | 'decision' | 'minted' | 'delivered' | 'verified'
+type Phase = 'request' | 'policy' | 'decision' | 'minted' | 'delivered' | 'verified' | 'dissolve'
 
-const PHASES: Phase[] = ['idle', 'request', 'policy', 'decision', 'minted', 'delivered', 'verified']
+const PHASES: Phase[] = ['request', 'policy', 'decision', 'minted', 'delivered', 'verified', 'dissolve']
 
 const TIMING: Record<Phase, number> = {
-  idle: 500,
   request: 500,
-  policy: 500,
-  decision: 600,
+  policy: 700,
+  decision: 800,
   minted: 800,
   delivered: 700,
-  verified: 1800,
+  verified: 2000,
+  dissolve: 1000,
 }
 
 export default function HeroFlowDiagram() {
-  const [phase, setPhase] = useState<Phase>('idle')
+  const [phase, setPhase] = useState<Phase>('dissolve')
 
   useEffect(() => {
     let active = true
@@ -51,11 +52,11 @@ export default function HeroFlowDiagram() {
       setTimeout(advance, delay)
     }
 
-    const start = setTimeout(advance, 1200)
+    const start = setTimeout(advance, 1600)
     return () => { active = false; clearTimeout(start) }
   }, [])
 
-  const at = (p: Phase) => PHASES.indexOf(phase) >= PHASES.indexOf(p)
+  const at = (p: Phase) => phase !== 'dissolve' && PHASES.indexOf(phase) >= PHASES.indexOf(p)
 
   return (
     <div className="flow-diagram" role="img" aria-label="PEAC receipt flow: request, policy check, receipt signed, delivered to both parties, verified offline with public key">
@@ -66,7 +67,7 @@ export default function HeroFlowDiagram() {
           <span className="dot dot-yellow" />
           <span className="dot dot-green" />
         </div>
-        <span className="chrome-title">peac lifecycle</span>
+        <span className="chrome-title">peac verify rec_7f3a</span>
         {at('verified') && <span className="chrome-badge">verified</span>}
       </div>
 
@@ -149,7 +150,7 @@ export default function HeroFlowDiagram() {
         <div className="verifier-header">
           <Key size={12} strokeWidth={2} />
           <span>Verify(rec_7f3a)</span>
-          <span className="verifier-offline">offline</span>
+          <span className="verifier-offline">local (offline)</span>
         </div>
         <div className="verifier-results">
           <div className="verifier-row">
@@ -158,7 +159,7 @@ export default function HeroFlowDiagram() {
           </div>
           <div className="verifier-row">
             <span className="vr-label">Policy</span>
-            <span className="vr-value">matched</span>
+            <span className="vr-value vr-valid">peac.txt</span>
           </div>
           <div className="verifier-row verifier-result-row">
             <span className="vr-label">Result</span>
@@ -176,7 +177,6 @@ export default function HeroFlowDiagram() {
       <style jsx>{`
         .flow-diagram {
           width: 100%;
-          min-width: 340px;
           max-width: 420px;
           background: var(--surface-elevated);
           border-radius: var(--radius-2xl);
@@ -203,9 +203,9 @@ export default function HeroFlowDiagram() {
 
         .chrome-dots { display: flex; gap: 6px; }
         .dot { width: 10px; height: 10px; border-radius: 50%; }
-        .dot-red { background: #ff5f57; }
-        .dot-yellow { background: #febc2e; }
-        .dot-green { background: #28c840; }
+        .dot-red { background: #ff5f57; opacity: 0.7; }
+        .dot-yellow { background: #febc2e; opacity: 0.7; }
+        .dot-green { background: #28c840; opacity: 0.7; }
 
         .chrome-title {
           flex: 1;
@@ -284,6 +284,28 @@ export default function HeroFlowDiagram() {
           width: 40px;
           height: 1px;
           background: var(--text-muted);
+          position: relative;
+          overflow: visible;
+        }
+
+        .flow-arrow.active .arrow-line::after {
+          content: '';
+          position: absolute;
+          top: -2px;
+          left: 0;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: var(--accent-brand);
+          opacity: 0.8;
+          animation: travelDot 1.4s ease-in-out infinite;
+        }
+
+        @keyframes travelDot {
+          0% { left: -5px; opacity: 0; }
+          15% { opacity: 0.8; }
+          85% { opacity: 0.8; }
+          100% { left: 40px; opacity: 0; }
         }
 
         .arrow-head {
@@ -413,6 +435,12 @@ export default function HeroFlowDiagram() {
           filter: grayscale(0);
           border-color: var(--accent-brand);
           box-shadow: 0 0 0 1px var(--accent-brand-muted);
+          animation: artifactMint 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes artifactMint {
+          from { transform: translateY(-8px) scale(0.96); }
+          to { transform: translateY(0) scale(1); }
         }
 
         .artifact-icon {
@@ -458,7 +486,7 @@ export default function HeroFlowDiagram() {
         .delivery-row {
           display: flex;
           gap: 6px;
-          padding: 6px 14px 8px;
+          padding: 8px 14px 10px;
         }
 
         .delivery-card {
@@ -466,8 +494,8 @@ export default function HeroFlowDiagram() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 3px;
-          padding: 6px 4px;
+          gap: 4px;
+          padding: 8px 6px;
           background: var(--surface-base);
           border: 1px solid var(--border-subtle);
           border-radius: var(--radius-md);
@@ -479,6 +507,12 @@ export default function HeroFlowDiagram() {
         .delivery-row.active .delivery-card {
           opacity: 1;
           filter: grayscale(0);
+          animation: cardDeliver 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes cardDeliver {
+          from { transform: scale(0.92); }
+          to { transform: scale(1); }
         }
 
         .delivery-row.active .card-agent { transition-delay: 0s; }
@@ -496,7 +530,7 @@ export default function HeroFlowDiagram() {
         .delivery-dot.auditor { background: var(--accent-warning); }
 
         .delivery-who {
-          font-size: 9px;
+          font-size: 11px;
           font-weight: 600;
           color: var(--text-secondary);
           text-transform: uppercase;
@@ -505,7 +539,7 @@ export default function HeroFlowDiagram() {
 
         .delivery-hash {
           font-family: var(--font-mono);
-          font-size: 9px;
+          font-size: 11px;
           font-weight: 600;
           color: var(--accent-brand);
           opacity: 0.8;
@@ -550,8 +584,8 @@ export default function HeroFlowDiagram() {
           text-transform: uppercase;
           letter-spacing: 0.08em;
           color: var(--accent-success);
-          background: rgba(0, 0, 0, 0.06);
-          padding: 1px 5px;
+          background: var(--accent-success-muted);
+          padding: 2px 6px;
           border-radius: var(--radius-sm);
           margin-left: auto;
         }
@@ -640,10 +674,10 @@ export default function HeroFlowDiagram() {
           .artifact-id { font-size: 13px; }
           .artifact-meta { font-size: 9px; }
 
-          .delivery-row { padding: 4px 10px 6px; gap: 4px; }
-          .delivery-card { padding: 5px 3px; }
-          .delivery-who { font-size: 8px; }
-          .delivery-hash { font-size: 8px; }
+          .delivery-row { padding: 6px 10px 8px; gap: 4px; }
+          .delivery-card { padding: 6px 4px; }
+          .delivery-who { font-size: 9px; }
+          .delivery-hash { font-size: 9px; }
 
           .flow-verifier.active { padding: 8px 12px 10px; }
           .verifier-header { font-size: 10px; margin-bottom: 6px; }
@@ -663,7 +697,8 @@ export default function HeroFlowDiagram() {
           }
 
           .step-progress,
-          .chrome-badge {
+          .chrome-badge,
+          .flow-arrow.active .arrow-line::after {
             animation: none;
           }
 

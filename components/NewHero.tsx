@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Github } from 'lucide-react'
 import HeroPeacFlowBg from './HeroPeacFlowBg'
 import HeroFlowDiagram from './HeroFlowDiagram'
+import { FACTS } from '@/lib/facts'
 
 export default function NewHero() {
   const heroRef = useRef<HTMLElement>(null)
@@ -35,24 +36,25 @@ export default function NewHero() {
           </p>
 
           <p className="hero-solution">
-            PEAC is the open standard for verifiable interaction records. Publish terms at <code className="hero-code">/.well-known/peac.txt</code> -- every API call returns a signed receipt both sides can keep and verify.
+            PEAC returns a signed interaction record on every response. Both sides can verify it offline and export it for audits. Publish terms at <code className="hero-code">/.well-known/peac.txt</code>.
           </p>
 
           <div className="hero-actions">
-            <Link href="/verify" className="hero-btn-primary">
-              Verify a receipt
-            </Link>
-            <Link href="/developers" className="hero-btn-secondary">
+            <Link href="/developers" className="hero-btn-primary">
               Quickstart
+            </Link>
+            <Link href="/verify" className="hero-btn-secondary">
+              Verify a receipt
             </Link>
             <Link href="/downloads" className="hero-btn-tertiary">
               Download
             </Link>
           </div>
 
-          <p className="hero-micro">Paste any receipt. Verifies locally, no server needed.</p>
+          <p className="hero-proof-line">Verifies locally. No server needed.</p>
 
           <div className="hero-footer-strip">
+            <p className="strip-clarifier">Originary maintains PEAC Protocol and ships production tooling.</p>
             <p className="strip-brand">
               <span className="strip-item strip-tm">ORIGINARY&trade;</span>
               <span className="strip-dot">&middot;</span>
@@ -62,7 +64,7 @@ export default function NewHero() {
               <span className="strip-dot">&middot;</span>
               <span className="strip-item">Portable evidence bundles</span>
               <span className="strip-dot">&middot;</span>
-              <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">Apache-2.0 &middot; v0.10.9</a>
+              <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">{FACTS.license} &middot; {FACTS.protocolVersion}</a>
             </p>
           </div>
 
@@ -192,7 +194,7 @@ export default function NewHero() {
         .hero-problem { animation-delay: 0.3s; }
         .hero-solution { animation-delay: 0.35s; }
         .hero-actions { animation-delay: 0.4s; }
-        .hero-micro { animation-delay: 0.45s; }
+        .hero-proof-line { animation-delay: 0.45s; }
         .hero-footer-strip { animation-delay: 0.5s; }
 
         .hero-badge {
@@ -281,13 +283,15 @@ export default function NewHero() {
           border-radius: var(--radius-sm);
           color: var(--accent-brand);
           white-space: nowrap;
+          overflow-wrap: break-word;
         }
 
-        .hero-micro {
-          font-size: 12px;
-          color: var(--text-muted);
+        .hero-proof-line {
+          font-size: 14px;
+          font-weight: 600;
+          color: var(--text-secondary);
           margin: 0;
-          letter-spacing: 0.01em;
+          letter-spacing: 0.02em;
         }
 
         .hero-footer-strip {
@@ -300,10 +304,9 @@ export default function NewHero() {
           gap: var(--space-2);
           flex-wrap: wrap;
           margin: 0;
-          font-size: 10px;
+          font-size: 11px;
           color: var(--text-muted);
           letter-spacing: 0.02em;
-          opacity: 0.7;
         }
 
         .strip-dot {
@@ -385,7 +388,7 @@ export default function NewHero() {
           left: -100%;
           width: 100%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+          background: linear-gradient(90deg, transparent, var(--border-hover), transparent);
           transition: left 0.5s ease;
         }
 
@@ -483,35 +486,13 @@ export default function NewHero() {
           }
         }
 
-        @keyframes widgetFloat {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-8px);
-          }
-        }
-
-        @keyframes widgetGlowPulse {
-          0%, 100% {
-            opacity: 0.6;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.9;
-            transform: scale(1.05);
-          }
-        }
-
         .widget-wrapper {
           position: relative;
-          animation: widgetFloat 6s ease-in-out infinite;
           transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .widget-wrapper:hover {
-          animation-play-state: paused;
-          transform: translateY(-8px) scale(1.02);
+          transform: translateY(-4px) scale(1.01);
         }
 
         .widget-glow {
@@ -521,13 +502,11 @@ export default function NewHero() {
           filter: blur(80px);
           z-index: -1;
           pointer-events: none;
-          animation: widgetGlowPulse 4s ease-in-out infinite;
+          transition: all 0.6s ease;
         }
 
         .widget-wrapper:hover .widget-glow {
-          animation-play-state: paused;
           inset: -70px;
-          opacity: 1;
           filter: blur(100px);
         }
 
@@ -651,6 +630,11 @@ export default function NewHero() {
           .hero-badge span {
             white-space: normal;
             line-height: 1.3;
+          }
+
+          .hero-solution :global(.hero-code) {
+            white-space: normal;
+            word-break: break-all;
           }
 
           .hero-actions {

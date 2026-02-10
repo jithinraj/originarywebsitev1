@@ -347,7 +347,7 @@ export default function OriginaryAIPage() {
                       width: '48px',
                       height: '48px',
                       borderRadius: 'var(--radius-full)',
-                      background: 'var(--gradient-brand)',
+                      background: 'var(--accent-brand)',
                       color: 'var(--white)',
                       display: 'flex',
                       alignItems: 'center',

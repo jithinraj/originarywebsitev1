@@ -156,7 +156,7 @@ export default function PricingPage() {
                   top: '-14px',
                   left: '50%',
                   transform: 'translateX(-50%)',
-                  background: 'var(--gradient-brand)',
+                  background: 'var(--accent-brand)',
                   color: 'var(--white)',
                   fontSize: 'var(--text-xs)',
                   fontWeight: 600,

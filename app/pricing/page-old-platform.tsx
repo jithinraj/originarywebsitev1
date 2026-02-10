@@ -386,7 +386,7 @@ export default function Pricing() {
 
             <div style={{
               textAlign: 'center',
-              background: 'var(--gradient-brand)',
+              background: 'var(--accent-brand)',
               borderRadius: 'var(--radius-3xl)',
               padding: 'var(--space-16) var(--space-8)',
               color: 'var(--white)',

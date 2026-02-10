@@ -98,7 +98,7 @@ export default function HeroSection() {
           width: '600px',
           height: '600px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(99,91,255,0.1) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, var(--accent-brand-subtle) 0%, transparent 70%)',
           animation: 'float 8s ease-in-out infinite'
         }}
       />
@@ -112,7 +112,7 @@ export default function HeroSection() {
           width: '400px',
           height: '400px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(0,212,170,0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, var(--accent-secondary-faint) 0%, transparent 70%)',
           animation: 'float 6s ease-in-out infinite reverse'
         }}
       />
@@ -360,7 +360,7 @@ export default function HeroSection() {
                       left: '-100%',
                       width: '100%',
                       height: '100%',
-                      background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
+                      background: 'linear-gradient(90deg, transparent, var(--border-hover), transparent)',
                       transition: 'left 0.6s ease',
                       zIndex: 1
                     }}

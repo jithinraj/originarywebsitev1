@@ -13,13 +13,22 @@ export const metadata: Metadata = {
     url: '/about',
     siteName: 'Originary',
     type: 'website',
-    images: ['/og'],
+    images: [
+      {
+        url: '/og',
+        width: 1200,
+        height: 630,
+        alt: 'About Originary',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About | Originary',
     description: 'Originary builds and stewards PEAC, an open standard for portable decision records for agent interactions.',
     images: ['/og'],
+    site: '@originaryx',
+    creator: '@originaryx',
   },
 }
 

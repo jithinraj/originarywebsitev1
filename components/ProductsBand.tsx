@@ -82,7 +82,7 @@ export default function ProductsBand() {
                     width: '56px',
                     height: '56px',
                     borderRadius: 'var(--radius-lg)',
-                    background: 'rgba(255, 255, 255, 0.2)',
+                    background: 'var(--border-hover)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -96,7 +96,7 @@ export default function ProductsBand() {
                   <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--white)', marginBottom: 'var(--space-2)' }}>
                     {product.name}
                   </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'rgba(255, 255, 255, 0.9)', lineHeight: 1.5 }}>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-primary)', lineHeight: 1.5 }}>
                     {product.description}
                   </p>
                 </div>
@@ -124,9 +124,9 @@ export default function ProductsBand() {
                             borderRadius: 'var(--radius-md)',
                             textDecoration: 'none',
                             transition: 'all 0.2s ease',
-                            background: button.primary ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
+                            background: button.primary ? 'var(--text-primary)' : 'transparent',
                             color: button.primary ? 'var(--accent-brand)' : 'var(--white)',
-                            border: button.primary ? 'none' : '1px solid rgba(255, 255, 255, 0.3)'
+                            border: button.primary ? 'none' : '1px solid var(--border-on-brand)'
                           }}
                         >
                           {button.label}

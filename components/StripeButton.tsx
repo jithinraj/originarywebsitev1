@@ -63,12 +63,12 @@ export default function StripeButton({
         disabled={isLoading}
         style={{
           backgroundColor: isLoading
-            ? '#999'
-            : (isPrimary ? '#635BFF' : 'transparent'),
-          color: isPrimary ? 'white' : '#635BFF',
+            ? 'var(--text-muted)'
+            : (isPrimary ? 'var(--accent-brand)' : 'transparent'),
+          color: isPrimary ? 'white' : 'var(--accent-brand)',
           padding: '12px 24px',
           borderRadius: '6px',
-          border: isPrimary ? 'none' : '2px solid #635BFF',
+          border: isPrimary ? 'none' : '2px solid var(--accent-brand)',
           fontSize: '16px',
           fontWeight: '600',
           cursor: isLoading ? 'not-allowed' : 'pointer',
@@ -112,7 +112,7 @@ export default function StripeButton({
       {error && (
         <div
           style={{
-            color: '#EF4444',
+            color: 'var(--accent-error)',
             fontSize: '14px',
             marginTop: '8px',
             textAlign: 'center'

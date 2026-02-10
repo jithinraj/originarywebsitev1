@@ -76,7 +76,7 @@ export default function Enterprises() {
                     width: '48px',
                     height: '48px',
                     borderRadius: 'var(--radius-lg)',
-                    background: 'var(--gradient-brand)',
+                    background: 'var(--accent-brand)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -112,7 +112,7 @@ export default function Enterprises() {
                     width: '48px',
                     height: '48px',
                     borderRadius: 'var(--radius-lg)',
-                    background: 'var(--gradient-brand)',
+                    background: 'var(--accent-brand)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -148,7 +148,7 @@ export default function Enterprises() {
                     width: '48px',
                     height: '48px',
                     borderRadius: 'var(--radius-lg)',
-                    background: 'var(--gradient-brand)',
+                    background: 'var(--accent-brand)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -268,10 +268,10 @@ export default function Enterprises() {
                 <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--accent-brand)' }}>
                   Contact Enterprise Sales
                 </a>
-                <a href="/receipts" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                <a href="/receipts" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid var(--border-hover)' }}>
                   Audit trails and receipts
                 </a>
-                <a href="/peac" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                <a href="/peac" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid var(--border-hover)' }}>
                   PEAC policy layer
                 </a>
               </div>

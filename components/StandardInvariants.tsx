@@ -8,19 +8,19 @@ const cards = [
     icon: FileText,
     title: 'Terms',
     description: 'Publish machine-readable policies via /.well-known/peac.txt',
-    color: '#635BFF'
+    color: 'var(--accent-brand)'
   },
   {
     icon: BadgeCheck,
     title: 'Receipts',
     description: 'Every outcome returns a signed, portable PEAC-Receipt',
-    color: '#00D4AA'
+    color: 'var(--accent-secondary)'
   },
   {
     icon: Layers,
     title: 'Adapters',
     description: 'Works across protocols and payment rails without lock-in',
-    color: '#FFAB00'
+    color: 'var(--accent-warning)'
   }
 ]
 
@@ -116,7 +116,7 @@ export default function StandardInvariants() {
         }
 
         .title-muted {
-          color: rgba(255, 255, 255, 0.4);
+          color: var(--text-muted);
         }
 
         /* Cards */
@@ -127,8 +127,8 @@ export default function StandardInvariants() {
         }
 
         .card {
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: var(--surface-card);
+          border: 1px solid var(--border-default);
           border-radius: 20px;
           padding: 32px;
           opacity: 0;
@@ -143,8 +143,8 @@ export default function StandardInvariants() {
         }
 
         .card:hover {
-          background: rgba(255, 255, 255, 0.05);
-          border-color: rgba(255, 255, 255, 0.12);
+          background: var(--border-subtle);
+          border-color: var(--border-hover);
           transform: translateY(-4px);
         }
 
@@ -152,7 +152,7 @@ export default function StandardInvariants() {
           width: 52px;
           height: 52px;
           border-radius: 14px;
-          background: rgba(255, 255, 255, 0.05);
+          background: var(--border-subtle);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -177,7 +177,7 @@ export default function StandardInvariants() {
         .card-description {
           font-size: 15px;
           line-height: 1.6;
-          color: rgba(255, 255, 255, 0.5);
+          color: var(--text-muted);
           margin: 0;
         }
 

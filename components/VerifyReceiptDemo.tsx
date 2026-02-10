@@ -126,8 +126,8 @@ export default function VerifyReceiptDemo() {
               <div
                 className="rounded-xl border p-4"
                 style={{
-                  background: 'rgba(34, 197, 94, 0.05)',
-                  borderColor: 'rgba(34, 197, 94, 0.2)'
+                  background: 'var(--accent-success-faint)',
+                  borderColor: 'var(--accent-success-muted)'
                 }}
               >
                 <div className="flex items-center gap-2 mb-3">
@@ -183,8 +183,8 @@ export default function VerifyReceiptDemo() {
               <div
                 className="rounded-xl border p-4"
                 style={{
-                  background: 'rgba(239, 68, 68, 0.05)',
-                  borderColor: 'rgba(239, 68, 68, 0.2)'
+                  background: 'var(--accent-error-faint)',
+                  borderColor: 'var(--accent-error-muted)'
                 }}
               >
                 <div className="flex items-center gap-2">

@@ -520,7 +520,7 @@ export default function Adapters() {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                background: 'radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 50%)',
+                background: 'radial-gradient(circle at 30% 40%, var(--glass-border-hover) 0%, transparent 50%)',
                 pointerEvents: 'none'
               }} />
               <div style={{ position: 'relative', zIndex: 2 }}>
@@ -565,7 +565,7 @@ export default function Adapters() {
                     className="btn btn-lg btn-ghost"
                     style={{
                       color: 'var(--white)',
-                      border: '1px solid rgba(255,255,255,0.2)'
+                      border: '1px solid var(--border-hover)'
                     }}
                   >
                     <span>Enterprise solutions</span>

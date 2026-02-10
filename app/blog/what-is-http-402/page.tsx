@@ -126,7 +126,7 @@ export default function Page() {
 
               {/* Timeline Visual */}
               <div style={{
-                background: 'linear-gradient(135deg, var(--accent-brand-faint), var(--accent-secondary-faint))',
+                background: 'var(--accent-brand-faint)',
                 borderRadius: 'var(--radius-xl)',
                 padding: 'var(--space-8)',
                 marginBottom: 'var(--space-12)',

@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
 import StaticPageLayout from '@/components/StaticPageLayout'
+import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
   title: 'Changelog',
-  description: 'Product updates, new features, and improvements to the Originary platform and PEAC protocol.',
-  keywords: 'changelog, product updates, new features, PEAC protocol updates',
+  description: 'Release notes for the PEAC protocol and Originary packages.',
   robots: 'noindex,follow',
   alternates: {
     canonical: '/resources/changelog',
@@ -19,66 +19,52 @@ export default function Changelog() {
           <div className="container">
             <div className="hero-content">
               <span className="kicker">RESOURCES</span>
-              <h1 className="display">Changelog</h1>
-              <p className="sub">Product updates, new features, and improvements to our platform and protocols.</p>
+              <h1 className="display">Release History</h1>
+              <p className="sub">
+                Release notes are published on GitHub alongside each tagged
+                release.
+              </p>
             </div>
           </div>
         </section>
 
         <section className="section">
           <div className="container">
-            <div className="content">
-              <div className="changelog-entries">
-                <div className="changelog-entry">
-                  <div className="entry-header">
-                    <h2>v1.0.0</h2>
-                    <span className="entry-date">January 15, 2025</span>
-                  </div>
-                  <div className="entry-content">
-                    <h3>🚀 New Features</h3>
-                    <ul>
-                      <li>PEAC Protocol v1.0 production release</li>
-                      <li>Enterprise Studio dashboard</li>
-                      <li>Multi-region deployment support</li>
-                    </ul>
-                    <h3>🔧 Improvements</h3>
-                    <ul>
-                      <li>Enhanced verification API performance</li>
-                      <li>Improved SDK documentation</li>
-                    </ul>
-                  </div>
-                </div>
+            <div
+              className="content"
+              style={{
+                maxWidth: '640px',
+                margin: '0 auto',
+                textAlign: 'center',
+              }}
+            >
+              <p
+                style={{
+                  fontSize: 'var(--text-lg)',
+                  color: 'var(--text-secondary)',
+                  lineHeight: 1.8,
+                  marginBottom: 'var(--space-6)',
+                }}
+              >
+                Current version: <strong>{FACTS.protocolVersion}</strong>
+                <br />
+                Wire format: <strong>{FACTS.wireFormat}</strong> (frozen)
+                <br />
+                License: <strong>{FACTS.license}</strong>
+                <br />
+                Packages on npm: <strong>{FACTS.packagesCount}</strong>
+              </p>
 
-                <div className="changelog-entry">
-                  <div className="entry-header">
-                    <h2>v0.9.0</h2>
-                    <span className="entry-date">December 20, 2024</span>
-                  </div>
-                  <div className="entry-content">
-                    <h3>🚀 New Features</h3>
-                    <ul>
-                      <li>Gateway (402) HTTP payment processing</li>
-                      <li>Advanced adapter support</li>
-                      <li>Enterprise billing integration</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="changelog-entry">
-                  <div className="entry-header">
-                    <h2>v0.8.0</h2>
-                    <span className="entry-date">December 1, 2024</span>
-                  </div>
-                  <div className="entry-content">
-                    <h3>🚀 New Features</h3>
-                    <ul>
-                      <li>PEAC Receipt verification API</li>
-                      <li>Policy compliance checking</li>
-                      <li>JavaScript SDK beta release</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              <a
+                href={FACTS.releasesUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+                style={{ display: 'inline-flex', gap: 'var(--space-2)' }}
+              >
+                View releases on GitHub
+                <span aria-hidden="true">&rarr;</span>
+              </a>
             </div>
           </div>
         </section>

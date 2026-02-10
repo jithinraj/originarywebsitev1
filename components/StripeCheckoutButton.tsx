@@ -57,7 +57,7 @@ export default function StripeCheckoutButton({
       style={
         !className
           ? {
-              backgroundColor: isLoading ? '#999' : '#635BFF',
+              backgroundColor: isLoading ? 'var(--text-muted)' : 'var(--accent-brand)',
               color: 'white',
               padding: '12px 24px',
               borderRadius: '6px',

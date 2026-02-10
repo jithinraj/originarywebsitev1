@@ -317,7 +317,7 @@ function TrafficGraph() {
         style={{
           marginTop: 'var(--space-3)',
           padding: 'var(--space-2)',
-          background: 'rgba(255, 71, 87, 0.1)',
+          background: 'var(--accent-error-muted)',
           borderRadius: 'var(--radius-md)',
           display: 'flex',
           alignItems: 'center',

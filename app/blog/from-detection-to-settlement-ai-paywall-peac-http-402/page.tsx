@@ -66,7 +66,7 @@ export default function Page() {
       <main style={{ paddingTop: '80px', minHeight: '100vh' }} id="main-content">
         <article>
           {/* Hero Header */}
-          <div style={{ background: 'linear-gradient(180deg, rgba(99,91,255,0.03) 0%, transparent 100%)', borderBottom: '1px solid var(--border-subtle)' }}>
+          <div style={{ background: 'linear-gradient(180deg, var(--accent-brand-faint) 0%, transparent 100%)', borderBottom: '1px solid var(--border-subtle)' }}>
             <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: 'var(--space-12) var(--space-6) var(--space-16)' }}>
               {/* Breadcrumbs */}
               <nav style={{
@@ -201,7 +201,7 @@ export default function Page() {
                 </p>
 
                 <div style={{
-                  background: 'linear-gradient(135deg, rgba(99,91,255,0.08) 0%, rgba(0,212,170,0.08) 100%)',
+                  background: 'linear-gradient(135deg, var(--accent-brand-subtle) 0%, var(--accent-secondary-subtle) 100%)',
                   borderLeft: '4px solid var(--accent-brand)',
                   borderRadius: '0 var(--radius-md) var(--radius-md) 0',
                   padding: 'var(--space-6)',
@@ -277,15 +277,15 @@ export default function Page() {
                     { icon: AlertTriangle, text: 'A signed record that will hold up in an audit or dispute' }
                   ].map((item, i) => (
                     <div key={i} style={{
-                      background: 'rgba(255, 179, 71, 0.08)',
-                      border: '1px solid rgba(255, 179, 71, 0.3)',
+                      background: 'var(--accent-warning-faint)',
+                      border: '1px solid var(--accent-warning-border)',
                       borderRadius: 'var(--radius-md)',
                       padding: 'var(--space-3) var(--space-4)',
                       display: 'flex',
                       alignItems: 'center',
                       gap: 'var(--space-3)'
                     }}>
-                      <item.icon size={16} style={{ color: '#B8860B', flexShrink: 0 }} />
+                      <item.icon size={16} style={{ color: 'var(--accent-warning)', flexShrink: 0 }} />
                       <span style={{ color: 'var(--text-primary)', fontSize: 'var(--text-sm)' }}>{item.text}</span>
                     </div>
                   ))}
@@ -491,7 +491,7 @@ export default function Page() {
                 </div>
 
                 <div style={{
-                  background: 'linear-gradient(135deg, rgba(0,212,170,0.1) 0%, rgba(99,91,255,0.1) 100%)',
+                  background: 'linear-gradient(135deg, var(--accent-secondary-subtle) 0%, var(--accent-brand-subtle) 100%)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-6)'
                 }}>
@@ -739,16 +739,16 @@ Content-Type: application/json
                   </p>
 
                   <div style={{
-                    background: 'rgba(255, 179, 71, 0.08)',
-                    border: '1px solid rgba(255, 179, 71, 0.3)',
+                    background: 'var(--accent-warning-faint)',
+                    border: '1px solid var(--accent-warning-border)',
                     borderRadius: 'var(--radius-lg)',
                     padding: 'var(--space-4)',
                     display: 'flex',
                     gap: 'var(--space-3)'
                   }}>
-                    <AlertTriangle size={18} style={{ color: '#B8860B', flexShrink: 0, marginTop: '2px' }} />
+                    <AlertTriangle size={18} style={{ color: 'var(--accent-warning)', flexShrink: 0, marginTop: '2px' }} />
                     <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                      <strong>Note:</strong> The exact header used to relay Stripe payment intent IDs may change as we tighten the adapter spec, but the normalized <code style={{ background: 'rgba(255,255,255,0.7)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>payment</code> block shape and use of PEAC-Receipt remain stable across versions.
+                      <strong>Note:</strong> The exact header used to relay Stripe payment intent IDs may change as we tighten the adapter spec, but the normalized <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>payment</code> block shape and use of PEAC-Receipt remain stable across versions.
                     </p>
                   </div>
                 </div>
@@ -894,7 +894,7 @@ Content-Type: application/json
                   marginBottom: 'var(--space-6)'
                 }}>
                   <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', display: 'grid', gap: 'var(--space-2)' }}>
-                    <li>Continue development at v0.9.27 until earning 1.0 through multiple independent implementations</li>
+                    <li>Continue development until earning 1.0 through multiple independent implementations</li>
                     <li>Use <strong>PEAC-Receipt</strong> as the primary HTTP field globally, without legacy header aliases</li>
                     <li>Keep the core small and rely on adapters for payment rails and environments</li>
                     <li>Always embed AIPREF snapshots in receipts when present, and make payment optional but normalized across x402 and Stripe</li>
@@ -918,7 +918,7 @@ Content-Type: application/json
                     { metric: 'Security', value: 'OWASP clean' }
                   ].map((item, i) => (
                     <div key={i} style={{
-                      background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(0,212,170,0.05) 100%)',
+                      background: 'var(--accent-brand-faint)',
                       border: '1px solid var(--accent-brand-muted)',
                       borderRadius: 'var(--radius-md)',
                       padding: 'var(--space-4)',
@@ -994,7 +994,7 @@ Content-Type: application/json
                 <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
                   Ready to monetize AI traffic with verifiable receipts?
                 </h2>
-                <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'rgba(255,255,255,0.9)', maxWidth: '500px', margin: '0 auto var(--space-8)' }}>
+                <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'var(--text-on-brand)', maxWidth: '500px', margin: '0 auto var(--space-8)' }}>
                   Learn how Originary and PEAC Protocol turn AI detection into AI paywalls with x402 and Stripe support.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -1009,7 +1009,7 @@ Content-Type: application/json
                   <Link
                     href="/company/contact"
                     className="btn btn-lg btn-ghost"
-                    style={{ color: 'var(--white)', border: '1px solid rgba(255,255,255,0.3)' }}
+                    style={{ color: 'var(--white)', border: '1px solid var(--border-on-brand)' }}
                   >
                     <span>Talk to Us</span>
                   </Link>

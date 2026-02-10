@@ -173,7 +173,7 @@ Cache-Control: no-store
               <li>Server verifies the receipt and returns the resource with standard <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: '0.9em' }}>2xx</code>.</li>
             </ol>
 
-            <div style={{ marginTop: 'var(--space-6)', padding: 'var(--space-4)', background: 'rgba(251, 191, 36, 0.1)', border: '1px solid rgba(251, 191, 36, 0.3)', borderRadius: 'var(--radius-lg)' }}>
+            <div style={{ marginTop: 'var(--space-6)', padding: 'var(--space-4)', background: 'var(--accent-warning-subtle)', border: '1px solid var(--accent-warning-border)', borderRadius: 'var(--radius-lg)' }}>
               <div style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-2)' }}>💡 Design tip</div>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
                 Keep the 402 payload small and explicit. Include a stable reference the server can match later.
@@ -182,7 +182,7 @@ Cache-Control: no-store
 
             <div style={{ marginTop: 'var(--space-6)' }}>
               <p style={{ fontSize: 'var(--text-sm)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-secondary)' }}>Try it now:</p>
-              <div style={{ position: 'relative', borderRadius: 'var(--radius-lg)', background: 'rgba(0,0,0,0.9)', padding: 'var(--space-4)', overflow: 'auto' }}>
+              <div style={{ position: 'relative', borderRadius: 'var(--radius-lg)', background: 'var(--code-bg)', padding: 'var(--space-4)', overflow: 'auto' }}>
                 <pre style={{ color: 'white', fontSize: 'var(--text-sm)', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
                   <code>curl -i https://www.originary.xyz/api/x402-demo</code>
                 </pre>
@@ -198,7 +198,7 @@ Cache-Control: no-store
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
               A compliant 402 response with a JSON payment hint:
             </p>
-            <div style={{ position: 'relative', borderRadius: 'var(--radius-lg)', background: 'rgba(0,0,0,0.9)', padding: 'var(--space-4)', overflow: 'auto' }}>
+            <div style={{ position: 'relative', borderRadius: 'var(--radius-lg)', background: 'var(--code-bg)', padding: 'var(--space-4)', overflow: 'auto' }}>
               <pre style={{ color: 'white', fontSize: 'var(--text-sm)', margin: 0, whiteSpace: 'pre', overflowX: 'auto' }}>
                 <code>{minimal}</code>
               </pre>

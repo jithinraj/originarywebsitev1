@@ -459,34 +459,34 @@ export default function PricingPage() {
             }}>
               {/* Originary vs DIY */}
               <HoverCard className="comparison-card">
-                <div style={{ padding: '32px', background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px' }}>
+                <div style={{ padding: '32px', background: 'var(--surface-elevated)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '16px', color: '#111' }}>
                   Originary vs. DIY Solution
                 </h3>
-                <div style={{ marginBottom: '16px', color: '#635BFF', fontWeight: 500 }}>
+                <div style={{ marginBottom: '16px', color: 'var(--accent-brand)', fontWeight: 500 }}>
                   Save 6-12 months of development
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Pre-built policy engine with PEAC protocol
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Native HTTP 402 payment rails (x402, Stripe)
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Cryptographic receipt generation & verification
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Edge-ready with Cloudflare/Vercel integration
                     </span>
@@ -497,34 +497,34 @@ export default function PricingPage() {
 
               {/* Originary vs API Gateways */}
               <HoverCard className="comparison-card">
-                <div style={{ padding: '32px', background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px' }}>
+                <div style={{ padding: '32px', background: 'var(--surface-elevated)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '16px', color: '#111' }}>
                   Originary vs. API Gateways
                 </h3>
-                <div style={{ marginBottom: '16px', color: '#635BFF', fontWeight: 500 }}>
+                <div style={{ marginBottom: '16px', color: 'var(--accent-brand)', fontWeight: 500 }}>
                   Adds verifiable proof layer
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Works with Kong, Tyk, Apigee, AWS API Gateway
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Portable receipts that verify outside platform
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Policy discovery via .well-known/peac.txt
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Payment settlement proof in receipt
                     </span>
@@ -535,34 +535,34 @@ export default function PricingPage() {
 
               {/* Originary vs Payment Processors */}
               <HoverCard className="comparison-card">
-                <div style={{ padding: '32px', background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px' }}>
+                <div style={{ padding: '32px', background: 'var(--surface-elevated)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '16px', color: '#111' }}>
                   Originary vs. Payment-Only
                 </h3>
-                <div style={{ marginBottom: '16px', color: '#635BFF', fontWeight: 500 }}>
+                <div style={{ marginBottom: '16px', color: 'var(--accent-brand)', fontWeight: 500 }}>
                   More than just billing
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Complements Stripe and x402 payments
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Adds policy enforcement before payment
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Cryptographic proof of transaction
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Compliance audit trail built-in
                     </span>

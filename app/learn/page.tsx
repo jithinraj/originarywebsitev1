@@ -319,7 +319,7 @@ export default function LearnPage() {
                   width: '56px',
                   height: '56px',
                   borderRadius: 'var(--radius-xl)',
-                  background: 'rgba(255, 107, 53, 0.15)',
+                  background: 'var(--accent-tertiary-subtle)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -655,7 +655,7 @@ export default function LearnPage() {
 
         {/* CTA */}
         <section className="section" style={{
-          background: 'var(--gradient-brand)',
+          background: 'var(--accent-brand)',
           paddingTop: 'var(--space-16)',
           paddingBottom: 'var(--space-16)'
         }}>
@@ -671,7 +671,7 @@ export default function LearnPage() {
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'rgba(255, 255, 255, 0.9)',
+                color: 'var(--text-primary)',
                 marginBottom: 'var(--space-8)',
                 lineHeight: 1.7
               }}>
@@ -688,7 +688,7 @@ export default function LearnPage() {
                 <Link
                   href="/demo"
                   className="btn btn-lg btn-ghost"
-                  style={{ color: 'white', borderColor: 'rgba(255, 255, 255, 0.3)' }}
+                  style={{ color: 'white', borderColor: 'var(--border-on-brand)' }}
                 >
                   See Demo
                 </Link>

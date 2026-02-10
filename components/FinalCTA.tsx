@@ -217,7 +217,7 @@ export default function FinalCTA() {
           left: -100%;
           width: 100%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+          background: linear-gradient(90deg, transparent, var(--border-hover), transparent);
           transition: left var(--duration-500) ease;
         }
 

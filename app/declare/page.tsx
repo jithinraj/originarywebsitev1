@@ -252,7 +252,7 @@ export default function DeclarePage() {
                 </div>
 
                 {/* Does Not */}
-                <div className="card" style={{ background: 'rgba(251, 191, 36, 0.05)', border: '1px solid rgba(251, 191, 36, 0.3)' }}>
+                <div className="card" style={{ background: 'var(--accent-warning-faint)', border: '1px solid var(--accent-warning-border)' }}>
                   <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--warning)', display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <AlertTriangle size={20} />
                     What it does not do
@@ -794,7 +794,7 @@ cp robots-ai-snippet.txt public/`}
                       flexShrink: 0
                     }}
                   >
-                    v0.10.0
+                    Latest
                   </div>
                   <div>
                     <strong>Full CLI</strong>: <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>policy init</code>, <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>policy generate</code>, <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>policy validate</code>, <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>policy explain</code>. Policy Profiles (news-media, api-provider, open-source, saas-docs). First-match-wins evaluation.
@@ -879,7 +879,7 @@ cp robots-ai-snippet.txt public/`}
                 marginBottom: 'var(--space-8)',
                 maxWidth: '600px',
                 margin: '0 auto var(--space-8) auto',
-                color: 'rgba(255, 255, 255, 0.9)'
+                color: 'var(--text-primary)'
               }}>
                 Start with the CLI. Add enforcement (Trace, 402, receipts) when ready.
               </p>
@@ -907,7 +907,7 @@ cp robots-ai-snippet.txt public/`}
                   style={{
                     background: 'transparent',
                     color: 'white',
-                    border: '1px solid rgba(255, 255, 255, 0.3)',
+                    border: '1px solid var(--border-on-brand)',
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: 'var(--space-2)'

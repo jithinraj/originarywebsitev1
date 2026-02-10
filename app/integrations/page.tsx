@@ -41,8 +41,8 @@ const integrations = [
     href: '/integrations/a2a/',
     icon: MessageSquare,
     status: 'coming-soon' as const,
-    color: 'rgba(34, 197, 94, 0.1)',
-    borderColor: 'rgba(34, 197, 94, 0.2)',
+    color: 'var(--accent-secondary-subtle)',
+    borderColor: 'var(--accent-secondary-muted)',
   },
   {
     id: 'mcp',
@@ -51,8 +51,8 @@ const integrations = [
     href: '/integrations/mcp/',
     icon: FileCode,
     status: 'coming-soon' as const,
-    color: 'rgba(59, 130, 246, 0.1)',
-    borderColor: 'rgba(59, 130, 246, 0.2)',
+    color: 'var(--accent-brand-subtle)',
+    borderColor: 'var(--accent-brand-muted)',
   },
   {
     id: 'acp',
@@ -61,8 +61,8 @@ const integrations = [
     href: '/integrations/acp/',
     icon: Settings,
     status: 'draft' as const,
-    color: 'rgba(245, 158, 11, 0.1)',
-    borderColor: 'rgba(245, 158, 11, 0.2)',
+    color: 'var(--accent-tertiary-subtle)',
+    borderColor: 'var(--accent-tertiary-muted)',
   },
   {
     id: 'aipref',
@@ -71,8 +71,8 @@ const integrations = [
     href: '/integrations/aipref/',
     icon: Brain,
     status: 'coming-soon' as const,
-    color: 'rgba(168, 85, 247, 0.1)',
-    borderColor: 'rgba(168, 85, 247, 0.2)',
+    color: 'var(--accent-brand-subtle)',
+    borderColor: 'var(--accent-brand-muted)',
   },
   {
     id: 'peac',
@@ -81,16 +81,16 @@ const integrations = [
     href: 'https://www.peacprotocol.org/',
     icon: FileText,
     status: 'live' as const,
-    color: 'rgba(236, 72, 153, 0.1)',
-    borderColor: 'rgba(236, 72, 153, 0.2)',
+    color: 'var(--accent-brand-subtle)',
+    borderColor: 'var(--accent-brand-muted)',
     external: true,
   },
 ]
 
 const statusBadges = {
   live: { label: 'Live', color: 'var(--accent-brand)' },
-  'coming-soon': { label: 'Coming soon', color: 'rgba(34, 197, 94, 1)' },
-  draft: { label: 'In draft', color: 'rgba(245, 158, 11, 1)' },
+  'coming-soon': { label: 'Coming soon', color: 'var(--accent-secondary)' },
+  draft: { label: 'In draft', color: 'var(--accent-tertiary)' },
 }
 
 export default function IntegrationsPage() {

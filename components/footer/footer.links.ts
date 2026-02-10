@@ -44,7 +44,7 @@ export const FOOTER_DEVELOPERS: FooterGroup = {
 
 export const FOOTER_TOOLS: FooterGroup = {
   id: 'tools',
-  title: 'Tools',
+  title: 'Platform',
   links: [
     { label: 'Verifier', href: '/verify' },
     { label: 'Gateway 402', href: '/products/gateway-402' },
@@ -59,18 +59,18 @@ export const FOOTER_COMPANY: FooterGroup = {
   links: [
     { label: 'About', href: '/about' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Contact', href: '/company/contact' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'Downloads', href: '/downloads' },
   ],
 }
 
 export const FOOTER_TRUST: FooterGroup = {
   id: 'trust',
-  title: 'Trust & Legal',
+  title: 'Legal',
   links: [
     { label: 'Security', href: '/security' },
     { label: 'Privacy', href: '/privacy' },
     { label: 'Terms', href: '/terms' },
-    { label: 'Trademark', href: '/trademark' },
   ],
 }
 
@@ -91,7 +91,6 @@ export const FOOTER_LEGAL: FooterLink[] = [
   { label: 'Terms', href: '/terms' },
   { label: 'Privacy', href: '/privacy' },
   { label: 'Security', href: '/security' },
-  { label: 'Trademark', href: '/trademark' },
 ]
 
 export const FOOTER_MACHINE_READABLE: FooterLink[] = [

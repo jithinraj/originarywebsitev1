@@ -275,9 +275,9 @@ Cache-Control: no-store
 
                 <div className="card" style={{ background: 'var(--accent-secondary-faint)', border: '1px solid var(--accent-secondary-muted)' }}>
                   <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
-                    <li style={{ marginBottom: 'var(--space-2)' }}>✅ Return <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>402</code> with machine-readable JSON hint</li>
-                    <li style={{ marginBottom: 'var(--space-2)' }}>✅ Include <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>reference</code> field mapped to entitlement ledger</li>
-                    <li style={{ marginBottom: 'var(--space-2)' }}>✅ Set <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Cache-Control: no-store</code></li>
+                    <li style={{ marginBottom: 'var(--space-2)' }}>✅ Return <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>402</code> with machine-readable JSON hint</li>
+                    <li style={{ marginBottom: 'var(--space-2)' }}>✅ Include <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>reference</code> field mapped to entitlement ledger</li>
+                    <li style={{ marginBottom: 'var(--space-2)' }}>✅ Set <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Cache-Control: no-store</code></li>
                     <li style={{ marginBottom: 'var(--space-2)' }}>✅ Verify receipt signature, timestamp, reference, replay</li>
                     <li style={{ marginBottom: 'var(--space-2)' }}>✅ Return deterministic error codes for invalid receipts</li>
                     <li style={{ marginBottom: 'var(--space-2)' }}>✅ Centralize challenge creation in middleware</li>
@@ -352,7 +352,7 @@ Cache-Control: no-store
                   <Link
                     href="/company/contact"
                     className="btn btn-lg btn-ghost"
-                    style={{ color: 'var(--white)', border: '1px solid rgba(255,255,255,0.3)' }}
+                    style={{ color: 'var(--white)', border: '1px solid var(--border-on-brand)' }}
                   >
                     <span>Talk to Us</span>
                   </Link>

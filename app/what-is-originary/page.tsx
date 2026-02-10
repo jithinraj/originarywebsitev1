@@ -236,7 +236,7 @@ export default function WhatIsOriginaryPage() {
                   marginBottom: 'var(--space-4)'
                 }}
               >
-                Agents need <strong>accountability</strong>: clear terms, enforceable decisions, and durable evidence of what happened. As of v0.10.0 (January 2026), PEAC provides this through signed receipts and verifiable policy snapshots.
+                Agents need <strong>accountability</strong>: clear terms, enforceable decisions, and durable evidence of what happened. PEAC provides this through signed receipts and verifiable policy snapshots.
               </p>
               <p
                 style={{
@@ -696,7 +696,7 @@ export default function WhatIsOriginaryPage() {
                 <ul style={{ color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 'var(--space-6)', marginBottom: 0 }}>
                   <li style={{ marginBottom: 'var(--space-2)' }}>PEAC does not enforce compliance. It provides evidence of what the issuer claims occurred.</li>
                   <li style={{ marginBottom: 'var(--space-2)' }}>Receipt contents are issuer-controlled. Verifiers trust the issuer's representation, not an oracle.</li>
-                  <li style={{ marginBottom: 'var(--space-2)' }}>Version 0.10.0 wire format may change before 1.0. Cross-version compatibility is not guaranteed.</li>
+                  <li style={{ marginBottom: 'var(--space-2)' }}>The wire format may change before 1.0. Cross-version compatibility is not guaranteed.</li>
                   <li style={{ marginBottom: 'var(--space-2)' }}>Key compromise invalidates all receipts signed with that key (standard PKI limitation).</li>
                   <li>PEAC provides evidence for disputes, not adjudication. Resolution is out of scope.</li>
                 </ul>

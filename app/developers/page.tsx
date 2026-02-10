@@ -128,7 +128,7 @@ export default function Developers() {
               padding: 'var(--space-8)',
               border: '2px solid var(--accent-brand)',
               borderRadius: 'var(--radius-2xl)',
-              background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
+              background: 'var(--accent-brand-faint)',
               textAlign: 'center'
             }}>
               <h3 style={{
@@ -532,7 +532,7 @@ export default {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  background: 'radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 50%)',
+                  background: 'radial-gradient(circle at 30% 40%, var(--glass-border-hover) 0%, transparent 50%)',
                   pointerEvents: 'none'
                 }}
               />
@@ -585,7 +585,7 @@ export default {
                     className="btn btn-lg btn-ghost"
                     style={{
                       color: 'var(--white)',
-                      border: '1px solid rgba(255,255,255,0.2)'
+                      border: '1px solid var(--border-hover)'
                     }}
                   >
                     <span>View Quick Start →</span>
@@ -619,7 +619,7 @@ function QuickStartCard({
           style={{
             width: '32px',
             height: '32px',
-            background: 'var(--gradient-brand)',
+            background: 'var(--accent-brand)',
             borderRadius: 'var(--radius-lg)',
             display: 'flex',
             alignItems: 'center',
@@ -687,7 +687,7 @@ function ApiSection({
                 borderRadius: 'var(--radius-sm)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 500,
-                background: method === 'POST' ? 'rgba(0, 217, 36, 0.1)' : 'var(--accent-brand-subtle)',
+                background: method === 'POST' ? 'var(--accent-success-subtle)' : 'var(--accent-brand-subtle)',
                 color: method === 'POST' ? 'var(--success)' : 'var(--accent-brand)'
               }}
             >

@@ -66,7 +66,7 @@ export default function Page() {
       <main style={{ paddingTop: '80px', minHeight: '100vh' }} id="main-content">
         <article>
           {/* Hero Header */}
-          <div style={{ background: 'linear-gradient(180deg, rgba(99,91,255,0.03) 0%, transparent 100%)', borderBottom: '1px solid var(--border-subtle)' }}>
+          <div style={{ background: 'linear-gradient(180deg, var(--accent-brand-faint) 0%, transparent 100%)', borderBottom: '1px solid var(--border-subtle)' }}>
             <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: 'var(--space-12) var(--space-6) var(--space-16)' }}>
               {/* Breadcrumbs */}
               <nav style={{
@@ -243,14 +243,14 @@ export default function Page() {
                 </p>
 
                 <div style={{
-                  background: 'linear-gradient(135deg, rgba(99,91,255,0.08) 0%, rgba(0,212,170,0.08) 100%)',
+                  background: 'linear-gradient(135deg, var(--accent-brand-subtle) 0%, var(--accent-secondary-subtle) 100%)',
                   borderLeft: '4px solid var(--accent-brand)',
                   borderRadius: '0 var(--radius-md) var(--radius-md) 0',
                   padding: 'var(--space-6)',
                   marginBottom: 'var(--space-8)'
                 }}>
                   <p style={{ margin: 0, color: 'var(--text-primary)', fontSize: 'var(--text-base)' }}>
-                    That is exactly what <Link href="/integrations/acp/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>PEAC Protocol</Link> provides - a neutral proof layer for AI interactions that issues cryptographic receipts for access, usage, and payments using a standard <code style={{ background: 'rgba(255,255,255,0.7)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>PEAC-Receipt</code> HTTP header.
+                    That is exactly what <Link href="/integrations/acp/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>PEAC Protocol</Link> provides - a neutral proof layer for AI interactions that issues cryptographic receipts for access, usage, and payments using a standard <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>PEAC-Receipt</code> HTTP header.
                   </p>
                 </div>
               </section>
@@ -405,8 +405,8 @@ export default function Page() {
                     }
                   ].map((item, i) => (
                     <div key={i} style={{
-                      background: 'rgba(255, 179, 71, 0.08)',
-                      border: '1px solid rgba(255, 179, 71, 0.3)',
+                      background: 'var(--accent-warning-faint)',
+                      border: '1px solid var(--accent-warning-border)',
                       borderRadius: 'var(--radius-lg)',
                       padding: 'var(--space-5)',
                       display: 'flex',
@@ -416,13 +416,13 @@ export default function Page() {
                         width: '32px',
                         height: '32px',
                         borderRadius: 'var(--radius-md)',
-                        background: 'rgba(255, 179, 71, 0.2)',
+                        background: 'var(--accent-warning-muted)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         flexShrink: 0
                       }}>
-                        <item.icon size={16} style={{ color: '#B8860B' }} />
+                        <item.icon size={16} style={{ color: 'var(--accent-warning)' }} />
                       </div>
                       <div>
                         <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
@@ -442,7 +442,7 @@ export default function Page() {
 
                 <div style={{
                   background: 'var(--accent-secondary-subtle)',
-                  border: '1px solid rgba(0, 212, 170, 0.3)',
+                  border: '1px solid var(--accent-secondary-border)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-5)',
                   marginBottom: 'var(--space-6)'
@@ -511,7 +511,7 @@ export default function Page() {
                     { num: '4', title: 'Artifact Repository', icon: Database }
                   ].map((pillar) => (
                     <div key={pillar.num} style={{
-                      background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(0,212,170,0.05) 100%)',
+                      background: 'var(--accent-brand-faint)',
                       border: '1px solid var(--accent-brand-muted)',
                       borderRadius: 'var(--radius-lg)',
                       padding: 'var(--space-5)',
@@ -719,7 +719,7 @@ issued_at        → when the receipt was generated`}
                   </div>
 
                   <div style={{
-                    background: 'linear-gradient(135deg, rgba(0,212,170,0.1) 0%, rgba(99,91,255,0.1) 100%)',
+                    background: 'linear-gradient(135deg, var(--accent-secondary-subtle) 0%, var(--accent-brand-subtle) 100%)',
                     borderRadius: 'var(--radius-lg)',
                     padding: 'var(--space-6)',
                     marginBottom: 'var(--space-6)'
@@ -926,7 +926,7 @@ issued_at        → when the receipt was generated`}
                 </p>
 
                 <div style={{
-                  background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(0,212,170,0.05) 100%)',
+                  background: 'var(--accent-brand-faint)',
                   border: '1px solid var(--accent-brand-muted)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-6)'
@@ -981,7 +981,7 @@ issued_at        → when the receipt was generated`}
                 <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
                   Ready to turn AI traffic into verifiable evidence?
                 </h2>
-                <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'rgba(255,255,255,0.9)', maxWidth: '500px', margin: '0 auto var(--space-8)' }}>
+                <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'var(--text-on-brand)', maxWidth: '500px', margin: '0 auto var(--space-8)' }}>
                   Learn how Originary and PEAC Protocol give you visibility, policy enforcement, and cryptographic receipts for every AI interaction.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -996,7 +996,7 @@ issued_at        → when the receipt was generated`}
                   <Link
                     href="/company/contact"
                     className="btn btn-lg btn-ghost"
-                    style={{ color: 'var(--white)', border: '1px solid rgba(255,255,255,0.3)' }}
+                    style={{ color: 'var(--white)', border: '1px solid var(--border-on-brand)' }}
                   >
                     <span>Talk to Us</span>
                   </Link>

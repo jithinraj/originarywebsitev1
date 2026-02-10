@@ -6,7 +6,7 @@
  * unverifiable claims are structurally prevented.
  */
 export const FACTS = {
-  /** Git tag v0.10.9 at 381a9df6 */
+  /** See github.com/peacprotocol/peac/releases */
   protocolVersion: 'v0.10.9',
 
   /** Frozen until v1.0 -- see docs/specs/PROTOCOL-BEHAVIOR.md */

@@ -27,7 +27,7 @@ export default function Confirmation() {
               <div style={{
                 width: '80px',
                 height: '80px',
-                background: 'var(--gradient-brand)',
+                background: 'var(--accent-brand)',
                 borderRadius: 'var(--radius-full)',
                 display: 'flex',
                 alignItems: 'center',
@@ -199,7 +199,7 @@ export default function Confirmation() {
                     <div style={{
                       width: '32px',
                       height: '32px',
-                      background: 'var(--gradient-brand)',
+                      background: 'var(--accent-brand)',
                       borderRadius: 'var(--radius-lg)',
                       display: 'flex',
                       alignItems: 'center',

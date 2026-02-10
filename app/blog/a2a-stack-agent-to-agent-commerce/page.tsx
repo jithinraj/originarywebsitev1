@@ -126,11 +126,11 @@ export default function Page() {
 
               {/* Problem Statement */}
               <div style={{
-                background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(251, 146, 60, 0.05))',
+                background: 'linear-gradient(135deg, var(--accent-error-faint), var(--accent-tertiary-faint))',
                 borderRadius: 'var(--radius-xl)',
                 padding: 'var(--space-8)',
                 marginBottom: 'var(--space-12)',
-                border: '1px solid rgba(239, 68, 68, 0.1)'
+                border: '1px solid var(--accent-error-subtle)'
               }}>
                 <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-6)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
                   <AlertTriangle size={24} style={{ color: 'var(--error)' }} />

@@ -131,7 +131,7 @@ export default function ProblemSection() {
         }
 
         .title-accent {
-          background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+          background: linear-gradient(135deg, var(--accent-error) 0%, var(--accent-tertiary) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -140,7 +140,7 @@ export default function ProblemSection() {
         .description {
           font-size: 18px;
           line-height: 1.7;
-          color: rgba(255, 255, 255, 0.6);
+          color: var(--text-tertiary);
         }
 
         /* Visual */
@@ -152,19 +152,19 @@ export default function ProblemSection() {
 
         .comparison-item {
           flex: 1;
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: var(--surface-card);
+          border: 1px solid var(--border-default);
           border-radius: 16px;
           padding: 24px;
           backdrop-filter: blur(10px);
         }
 
         .comparison-item.old {
-          border-color: rgba(255, 107, 107, 0.3);
+          border-color: var(--accent-error-border);
         }
 
         .comparison-item.new {
-          border-color: rgba(0, 212, 170, 0.3);
+          border-color: var(--accent-secondary-border);
           background: var(--accent-secondary-faint);
         }
 
@@ -180,17 +180,17 @@ export default function ProblemSection() {
         }
 
         .old .item-icon {
-          color: #ff6b6b;
+          color: var(--accent-error);
         }
 
         .new .item-icon {
-          color: #00D4AA;
+          color: var(--accent-secondary);
         }
 
         .item-label {
           font-size: 14px;
           font-weight: 600;
-          color: rgba(255, 255, 255, 0.8);
+          color: var(--text-secondary);
         }
 
         .item-status {
@@ -202,18 +202,18 @@ export default function ProblemSection() {
         }
 
         .item-status.bad {
-          background: rgba(255, 107, 107, 0.15);
-          color: #ff6b6b;
+          background: var(--accent-error-subtle);
+          color: var(--accent-error);
         }
 
         .item-status.good {
           background: var(--accent-secondary-muted);
-          color: #00D4AA;
+          color: var(--accent-secondary);
         }
 
         .comparison-arrow {
           font-size: 24px;
-          color: rgba(255, 255, 255, 0.3);
+          color: var(--border-on-brand);
           flex-shrink: 0;
         }
 

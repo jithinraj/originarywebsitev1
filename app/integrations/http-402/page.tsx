@@ -86,7 +86,7 @@ Cache-Control: no-store
               alignItems: 'center',
               gap: 'var(--space-2)',
               background: 'var(--accent-tertiary-subtle)',
-              border: '1px solid rgba(255, 107, 53, 0.2)',
+              border: '1px solid var(--accent-tertiary-muted)',
               borderRadius: 'var(--radius-full)',
               padding: 'var(--space-2) var(--space-6)',
               color: 'var(--brand-accent)',
@@ -394,7 +394,7 @@ Cache-Control: no-store
                 className="btn btn-lg btn-ghost"
                 style={{
                   color: 'var(--white)',
-                  border: '1px solid rgba(255,255,255,0.3)'
+                  border: '1px solid var(--border-on-brand)'
                 }}
               >
                 <span>Contact sales</span>

@@ -269,7 +269,7 @@ export default function SolutionsPage() {
                 <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--accent-brand)' }}>
                   Talk to Sales
                 </a>
-                <a href="/developers" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                <a href="/developers" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid var(--border-hover)' }}>
                   Developer Docs
                 </a>
               </div>
