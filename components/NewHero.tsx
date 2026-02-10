@@ -23,7 +23,7 @@ export default function NewHero() {
           <div className="hero-badge">
             <span>PEAC Protocol</span>
             <span className="badge-dot">&middot;</span>
-            <span>stewarded by Originary</span>
+            <span>open standard</span>
           </div>
 
           <h1 className="hero-headline">
