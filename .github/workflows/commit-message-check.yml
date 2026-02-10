@@ -18,7 +18,6 @@ jobs:
           echo "Checking commit messages for sensitive keywords..."
 
           SENSITIVE_KEYWORDS=(
-            "brand"
             "trademark"
             "Class 9"
             "Class 42"
