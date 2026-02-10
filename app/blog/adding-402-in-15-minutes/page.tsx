@@ -213,7 +213,7 @@ export default function Page() {
                   <Link
                     href="/company/contact"
                     className="btn btn-lg btn-ghost"
-                    style={{ color: 'var(--white)', border: '1px solid rgba(255,255,255,0.3)' }}
+                    style={{ color: 'var(--white)', border: '1px solid var(--border-on-brand)' }}
                   >
                     <span>Talk to Us</span>
                   </Link>

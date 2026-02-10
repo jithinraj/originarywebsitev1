@@ -118,7 +118,7 @@ export default function BentoFeatures() {
           <BentoCard
             className="bento-small"
             title="Evidence-Ready"
-            description="Built-in audit trails and policy hooks so you can prove what happened."
+            description="Built-in audit trails and policy hooks so you can verify what happened."
             icon={<Shield size={24} />}
             href="/trust"
             linkText="Trust center"
@@ -317,7 +317,7 @@ function TrafficGraph() {
         style={{
           marginTop: 'var(--space-3)',
           padding: 'var(--space-2)',
-          background: 'rgba(255, 71, 87, 0.1)',
+          background: 'var(--accent-error-muted)',
           borderRadius: 'var(--radius-md)',
           display: 'flex',
           alignItems: 'center',

@@ -240,7 +240,7 @@ export default function AIReceiptsPage() {
                     <div>
                       <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Audit trails regulators accept</h4>
                       <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                        Timestamped, tamper-evident records of every agent action. GDPR, SOC 2, EU AI Act compliance becomes straightforward when you can produce signed receipts on demand.
+                        Timestamped, tamper-evident records of every agent action. Regulatory compliance becomes straightforward when you can produce signed receipts on demand.
                       </p>
                     </div>
                     <div>
@@ -319,7 +319,7 @@ export default function AIReceiptsPage() {
                     {[
                       { term: 'API providers', def: 'Issue receipts to prove service delivery; resolve billing disputes instantly' },
                       { term: 'Content platforms', def: 'Track AI consumption of licensed content with verifiable attribution' },
-                      { term: 'Enterprise AI', def: 'Maintain audit trails for regulatory compliance (GDPR, SOC2, etc.)' },
+                      { term: 'Enterprise AI', def: 'Maintain audit trails for regulatory compliance workflows' },
                       { term: 'Agent frameworks', def: 'Collect receipts to track costs and prove work completion' }
                     ].map((item, i) => (
                       <li key={i} style={{

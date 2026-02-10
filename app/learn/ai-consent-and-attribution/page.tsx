@@ -223,7 +223,7 @@ export default function AIConsentPage() {
                       <strong>Content owners can&apos;t express preferences</strong> that agents understand - &ldquo;training: no, RAG: yes, summary: yes with attribution&rdquo; isn&apos;t something robots.txt supports.
                     </li>
                     <li style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>
-                      <strong>Agents can&apos;t prove compliance</strong> - even well-intentioned AI systems have no way to demonstrate they respected consent or provided proper attribution.
+                      <strong>Agents can&apos;t demonstrate compliance</strong> - even well-intentioned AI systems have no way to show they respected consent or provided proper attribution.
                     </li>
                   </ul>
                 </section>

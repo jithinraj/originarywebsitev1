@@ -231,7 +231,7 @@ export default function Pricing() {
               <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)', textAlign: 'center', marginTop: 'var(--space-4)' }}>
                 Latency measured at 95th percentile over trailing 30 days, Mumbai edge (IST).
                 Throughput is baseline; higher limits available on request.
-                Pro: <strong>99.9% SLO</strong> (target). Enterprise: <strong>99.99% SLA</strong> (contractual, available in MSA).
+                Availability targets negotiated per deployment.
               </p>
             </section>
 
@@ -248,7 +248,7 @@ export default function Pricing() {
               </h3>
               <p style={{ marginBottom: 'var(--space-4)', color: 'var(--text-secondary)' }}>
                 The <a
-                  href="https://peacprotocol.org"
+                  href="https://www.peacprotocol.org"
                   target="_blank"
                   rel="noopener"
                   style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}
@@ -257,7 +257,7 @@ export default function Pricing() {
                 </a> is free to use and modify. Explore the spec, examples, and reference implementations.
               </p>
               <a
-                href="https://peacprotocol.org"
+                href="https://www.peacprotocol.org"
                 target="_blank"
                 rel="noopener"
                 className="btn btn-secondary"
@@ -386,7 +386,7 @@ export default function Pricing() {
 
             <div style={{
               textAlign: 'center',
-              background: 'var(--gradient-brand)',
+              background: 'var(--accent-brand)',
               borderRadius: 'var(--radius-3xl)',
               padding: 'var(--space-16) var(--space-8)',
               color: 'var(--white)',

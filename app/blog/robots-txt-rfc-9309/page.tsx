@@ -272,15 +272,15 @@ export default function RobotsTxtRFC9309Article() {
                   </table>
                 </div>
 
-                <div className="card" style={{ background: 'rgba(255, 193, 7, 0.05)', border: '1px solid rgba(255, 193, 7, 0.2)' }}>
+                <div className="card" style={{ background: 'var(--accent-warning-faint)', border: '1px solid var(--accent-warning-border)' }}>
                   <div style={{ display: 'flex', gap: 'var(--space-3)' }}>
-                    <AlertTriangle size={24} style={{ color: '#f59e0b', flexShrink: 0 }} />
+                    <AlertTriangle size={24} style={{ color: 'var(--accent-warning)', flexShrink: 0 }} />
                     <div>
                       <h4 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                         Important: 4xx vs 5xx Semantics
                       </h4>
                       <p style={{ margin: 0, fontSize: 'var(--text-sm)', lineHeight: 1.7 }}>
-                        A <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>404 Not Found</code> means &quot;no restrictions&quot; - crawlers may proceed. A <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>503 Service Unavailable</code> means &quot;assume everything is disallowed&quot; until the file is reachable. This distinction is critical for proper crawler behavior.
+                        A <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>404 Not Found</code> means &quot;no restrictions&quot; - crawlers may proceed. A <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>503 Service Unavailable</code> means &quot;assume everything is disallowed&quot; until the file is reachable. This distinction is critical for proper crawler behavior.
                       </p>
                     </div>
                   </div>
@@ -298,9 +298,9 @@ export default function RobotsTxtRFC9309Article() {
                   What robots.txt Does NOT Do
                 </h2>
 
-                <div className="card" style={{ background: 'rgba(239, 68, 68, 0.05)', border: '2px solid rgba(239, 68, 68, 0.2)' }}>
+                <div className="card" style={{ background: 'var(--accent-error-faint)', border: '2px solid var(--accent-error-border)' }}>
                   <div style={{ display: 'flex', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
-                    <Shield size={32} style={{ color: '#ef4444', flexShrink: 0 }} />
+                    <Shield size={32} style={{ color: 'var(--accent-error)', flexShrink: 0 }} />
                     <div>
                       <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
                         Security Warning
@@ -316,7 +316,7 @@ export default function RobotsTxtRFC9309Article() {
                       <strong>It does not provide authentication or authorization.</strong> Malicious actors can ignore robots.txt. Use proper authentication (passwords, tokens, sessions) for sensitive resources.
                     </li>
                     <li style={{ marginBottom: 'var(--space-2)' }}>
-                      <strong>Listing paths exposes them publicly.</strong> A line like <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Disallow: /admin/</code> tells everyone your admin panel is at <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/admin/</code>
+                      <strong>Listing paths exposes them publicly.</strong> A line like <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Disallow: /admin/</code> tells everyone your admin panel is at <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/admin/</code>
                     </li>
                     <li style={{ margin: 0 }}>
                       <strong>It does not control usage after access.</strong> robots.txt only controls whether a crawler <em>fetches</em> content. It says nothing about training, indexing, or other downstream usage. That&apos;s where AIPREF comes in.
@@ -525,19 +525,19 @@ Content-Usage: /research/ train-ai=y`}
                   Non-Standard Extensions
                 </h2>
 
-                <div className="card" style={{ background: 'rgba(255, 193, 7, 0.05)', border: '1px solid rgba(255, 193, 7, 0.2)' }}>
+                <div className="card" style={{ background: 'var(--accent-warning-faint)', border: '1px solid var(--accent-warning-border)' }}>
                   <p style={{ marginBottom: 'var(--space-3)' }}>
                     Some crawlers support additional directives that are <strong>not part of RFC 9309</strong>:
                   </p>
                   <ul style={{ paddingLeft: 'var(--space-6)', margin: 0, lineHeight: 1.8 }}>
                     <li style={{ marginBottom: 'var(--space-2)' }}>
-                      <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Crawl-delay:</code> - Rate limiting (supported by some crawlers, not standard)
+                      <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Crawl-delay:</code> - Rate limiting (supported by some crawlers, not standard)
                     </li>
                     <li style={{ marginBottom: 'var(--space-2)' }}>
-                      <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Sitemap:</code> - Sitemap location (widely supported, not in RFC 9309)
+                      <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Sitemap:</code> - Sitemap location (widely supported, not in RFC 9309)
                     </li>
                     <li style={{ margin: 0 }}>
-                      <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Host:</code> - Preferred host (not standard)
+                      <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>Host:</code> - Preferred host (not standard)
                     </li>
                   </ul>
                   <p style={{ marginTop: 'var(--space-3)', marginBottom: 0, fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
@@ -557,7 +557,7 @@ Content-Usage: /research/ train-ai=y`}
                   Bottom Line
                 </h2>
 
-                <div className="card" style={{ background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(0,212,170,0.05) 100%)', border: '2px solid var(--accent-brand)' }}>
+                <div className="card" style={{ background: 'var(--accent-brand-faint)', border: '2px solid var(--accent-brand)' }}>
                   <p style={{ marginBottom: 'var(--space-3)' }}>
                     Keep robots.txt as your durable control surface for crawler access. RFC 9309 makes the rules predictable under redirects, errors, and caching.
                   </p>
@@ -698,7 +698,7 @@ Content-Usage: /research/ train-ai=y`}
                   <Link
                     href="/company/contact"
                     className="btn btn-lg btn-ghost"
-                    style={{ color: 'var(--white)', border: '1px solid rgba(255,255,255,0.3)' }}
+                    style={{ color: 'var(--white)', border: '1px solid var(--border-on-brand)' }}
                   >
                     <span>Talk to Us</span>
                   </Link>

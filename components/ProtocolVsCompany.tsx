@@ -122,7 +122,7 @@ export default function ProtocolVsCompany() {
           font-weight: 600;
           letter-spacing: 0.1em;
           text-transform: uppercase;
-          color: #635BFF;
+          color: var(--accent-brand);
           margin-bottom: 20px;
         }
 
@@ -136,13 +136,13 @@ export default function ProtocolVsCompany() {
         }
 
         .title-accent {
-          color: rgba(255, 255, 255, 0.5);
+          color: var(--text-muted);
         }
 
         .description {
           font-size: 17px;
           line-height: 1.7;
-          color: rgba(255, 255, 255, 0.6);
+          color: var(--text-tertiary);
           margin-bottom: 32px;
         }
 
@@ -174,7 +174,7 @@ export default function ProtocolVsCompany() {
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          color: rgba(255, 255, 255, 0.7);
+          color: var(--text-secondary);
           padding: 12px 24px;
           font-weight: 600;
           font-size: 14px;
@@ -199,8 +199,8 @@ export default function ProtocolVsCompany() {
           align-items: center;
           padding: 20px 24px;
           border-radius: 12px;
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: var(--surface-card);
+          border: 1px solid var(--border-default);
         }
 
         .layer-protocol {
@@ -209,13 +209,13 @@ export default function ProtocolVsCompany() {
         }
 
         .layer-originary {
-          border-color: rgba(0, 212, 170, 0.3);
+          border-color: var(--accent-secondary-border);
           background: var(--accent-secondary-faint);
         }
 
         .layer-your {
-          border-color: rgba(255, 171, 0, 0.3);
-          background: rgba(255, 171, 0, 0.05);
+          border-color: var(--accent-warning-border);
+          background: var(--accent-warning-faint);
         }
 
         .layer-label {
@@ -226,16 +226,16 @@ export default function ProtocolVsCompany() {
 
         .layer-tag {
           font-size: 12px;
-          color: rgba(255, 255, 255, 0.5);
+          color: var(--text-muted);
           padding: 4px 10px;
-          background: rgba(255, 255, 255, 0.05);
+          background: var(--border-subtle);
           border-radius: 6px;
         }
 
         .stack-connector {
           width: 2px;
           height: 16px;
-          background: rgba(255, 255, 255, 0.1);
+          background: var(--glass-border-hover);
           margin-left: 40px;
         }
 

@@ -150,9 +150,9 @@ export default function CodeBlock({ code, lang = "bash", className = "", tabs }:
         }
 
         .copy-btn.copied {
-          color: #22c55e;
-          border-color: rgba(34, 197, 94, 0.3);
-          background: rgba(34, 197, 94, 0.1);
+          color: var(--accent-success);
+          border-color: var(--accent-success-border);
+          background: var(--accent-success-muted);
         }
 
         .code-content {

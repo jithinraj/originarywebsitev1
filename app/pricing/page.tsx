@@ -156,7 +156,7 @@ export default function PricingPage() {
                   top: '-14px',
                   left: '50%',
                   transform: 'translateX(-50%)',
-                  background: 'var(--gradient-brand)',
+                  background: 'var(--accent-brand)',
                   color: 'var(--white)',
                   fontSize: 'var(--text-xs)',
                   fontWeight: 600,
@@ -279,7 +279,7 @@ export default function PricingPage() {
                     'Custom rail adapters (x402, i402, Stripe)',
                     'Multi-property rollups',
                     'Domain attestation + KMS',
-                    'Uptime SLA (99.99%)',
+                    'Availability targets per deployment',
                     'Dedicated support'
                   ].map((feature, idx) => (
                     <li key={idx} style={{

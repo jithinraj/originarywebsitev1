@@ -503,15 +503,15 @@ function AnimatedCodeBlock({
       </pre>
       <style jsx>{`
         .code-block {
-          background: #0d0d0d;
-          border: 1px solid rgba(255,255,255,0.1);
+          background: var(--code-bg);
+          border: 1px solid var(--glass-border-hover);
           border-radius: var(--radius-xl);
           overflow: hidden;
         }
         .code-label {
           padding: var(--space-2) var(--space-4);
           background: var(--accent-brand-muted);
-          border-bottom: 1px solid rgba(255,255,255,0.1);
+          border-bottom: 1px solid var(--glass-border-hover);
           font-size: 10px;
           font-weight: 700;
           color: var(--accent-brand);
@@ -523,8 +523,8 @@ function AnimatedCodeBlock({
           align-items: center;
           justify-content: space-between;
           padding: var(--space-2) var(--space-3);
-          background: rgba(255,255,255,0.03);
-          border-bottom: 1px solid rgba(255,255,255,0.06);
+          background: var(--surface-card);
+          border-bottom: 1px solid var(--glass-border);
         }
         .code-dots {
           display: flex;
@@ -543,8 +543,8 @@ function AnimatedCodeBlock({
           align-items: center;
           gap: 5px;
           padding: 3px 8px;
-          background: rgba(255,255,255,0.05);
-          border: 1px solid rgba(255,255,255,0.1);
+          background: var(--surface-card);
+          border: 1px solid var(--glass-border-hover);
           border-radius: var(--radius-sm);
           color: var(--text-muted);
           font-size: 10px;
@@ -552,7 +552,7 @@ function AnimatedCodeBlock({
           transition: all 0.15s ease;
         }
         .copy-btn:hover {
-          background: rgba(255,255,255,0.1);
+          background: var(--glass-border-hover);
           color: white;
         }
         .copy-btn:active {
@@ -565,7 +565,7 @@ function AnimatedCodeBlock({
           font-family: var(--font-mono);
           font-size: 11px;
           line-height: 1.5;
-          color: #e4e4e7;
+          color: var(--text-primary);
           min-height: 60px;
         }
         .code-line {
@@ -573,11 +573,11 @@ function AnimatedCodeBlock({
           white-space: pre;
         }
         .code-body :global(.hl-method) {
-          color: #4ade80;
+          color: var(--code-color-string);
           font-weight: 600;
         }
         .code-body :global(.hl-key) {
-          color: #a78bfa;
+          color: var(--code-color-function);
         }
         .cursor {
           animation: blink 1s step-end infinite;
@@ -657,7 +657,7 @@ function ReceiptTypewriter({
   return (
     <div className="receipt-typewriter">
       <div className="receipt-header">
-        <span className="receipt-label">DECODED RECEIPT PAYLOAD (v0.10.0)</span>
+        <span className="receipt-label">DECODED RECEIPT PAYLOAD</span>
         {isVerified && (
           <span className="verified-badge">
             <Check size={12} />
@@ -676,8 +676,8 @@ function ReceiptTypewriter({
       </p>
       <style jsx>{`
         .receipt-typewriter {
-          background: #0d0d0d;
-          border: 1px solid rgba(255,255,255,0.1);
+          background: var(--code-bg);
+          border: 1px solid var(--glass-border-hover);
           border-radius: var(--radius-xl);
           overflow: hidden;
         }
@@ -688,8 +688,8 @@ function ReceiptTypewriter({
           flex-wrap: wrap;
           gap: var(--space-2);
           padding: var(--space-3) var(--space-4);
-          background: rgba(255,255,255,0.03);
-          border-bottom: 1px solid rgba(255,255,255,0.06);
+          background: var(--surface-card);
+          border-bottom: 1px solid var(--glass-border);
         }
         .receipt-label {
           font-family: var(--font-mono);
@@ -703,7 +703,7 @@ function ReceiptTypewriter({
           gap: 4px;
           padding: 4px 10px;
           background: var(--accent-secondary-muted);
-          border: 1px solid rgba(0, 212, 170, 0.4);
+          border: 1px solid var(--accent-secondary-muted);
           border-radius: var(--radius-full);
           font-size: 11px;
           font-weight: 600;
@@ -723,16 +723,16 @@ function ReceiptTypewriter({
           font-family: var(--font-mono);
           font-size: 11px;
           line-height: 1.5;
-          color: #e4e4e7;
+          color: var(--text-primary);
         }
         .receipt-body :global(.json-key) {
-          color: #a78bfa;
+          color: var(--code-color-function);
         }
         .receipt-body :global(.json-string) {
-          color: #4ade80;
+          color: var(--code-color-string);
         }
         .receipt-body :global(.json-number) {
-          color: #fbbf24;
+          color: var(--code-color-number);
         }
         .cursor {
           animation: blink 1s step-end infinite;
@@ -745,7 +745,7 @@ function ReceiptTypewriter({
           padding: var(--space-3) var(--space-4);
           margin: 0;
           background: var(--accent-brand-subtle);
-          border-top: 1px solid rgba(255,255,255,0.06);
+          border-top: 1px solid var(--glass-border);
           font-size: 12px;
           color: var(--text-muted);
         }
@@ -1141,7 +1141,7 @@ export default function DemoPage() {
             {/* Decoded Receipt */}
             <div className="card demo-card">
               <div className="section-header">
-                <h2>Receipt anatomy (v0.10.0)</h2>
+                <h2>Receipt anatomy</h2>
                 <p>Decoded payload showing aipref snapshot, payment evidence, and policy hash binding.</p>
               </div>
               <ReceiptTypewriter isActive={showReceipt || timelineStep >= 6} />
@@ -1249,7 +1249,7 @@ Content-Type: application/json
             {/* Audit Section */}
             <div className="card demo-card">
               <div className="section-header">
-                <h2>Audit-ready exports (v0.10.0)</h2>
+                <h2>Audit-ready exports</h2>
                 <p>Dispute packet format for compliance and audit trails.</p>
               </div>
 
@@ -1441,7 +1441,7 @@ Content-Type: application/json
           color: var(--accent-secondary);
         }
         .code-preview {
-          background: #0d0d0d;
+          background: var(--code-bg);
           border-radius: var(--radius-lg);
           padding: var(--space-4);
           margin-bottom: var(--space-4);
@@ -1453,7 +1453,7 @@ Content-Type: application/json
           font-family: var(--font-mono);
           font-size: 11px;
           line-height: 1.5;
-          color: #e4e4e7;
+          color: var(--text-primary);
           white-space: pre-wrap;
           word-break: break-word;
         }
@@ -1464,15 +1464,15 @@ Content-Type: application/json
           display: flex;
           align-items: center;
           padding: 4px 6px;
-          background: rgba(255,255,255,0.05);
-          border: 1px solid rgba(255,255,255,0.1);
+          background: var(--surface-card);
+          border: 1px solid var(--glass-border-hover);
           border-radius: var(--radius-sm);
           color: var(--text-muted);
           cursor: pointer;
           transition: all 0.15s ease;
         }
         .copy-mini:hover {
-          background: rgba(255,255,255,0.1);
+          background: var(--glass-border-hover);
           color: white;
         }
         .info-box {

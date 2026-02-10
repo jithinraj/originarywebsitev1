@@ -174,7 +174,7 @@ export default function ContextGraphsPage() {
         {/* Hero Section */}
         <section style={{
           padding: 'var(--space-16) var(--space-6) var(--space-12)',
-          background: 'linear-gradient(180deg, #fafafa 0%, #ffffff 100%)'
+          background: 'linear-gradient(180deg, var(--surface-subtle) 0%, var(--surface-elevated) 100%)'
         }}>
           <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div style={{
@@ -1199,7 +1199,7 @@ export default function ContextGraphsPage() {
 
         /* Code block */
         .code-block {
-          background: #0d0d0d;
+          background: var(--surface-base);
           border-radius: var(--radius-lg);
           overflow: hidden;
           margin-top: var(--space-4);
@@ -1207,8 +1207,8 @@ export default function ContextGraphsPage() {
 
         .code-header {
           padding: var(--space-2) var(--space-4);
-          background: rgba(255, 255, 255, 0.05);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          background: var(--border-subtle);
+          border-bottom: 1px solid var(--glass-border-hover);
           font-size: var(--text-xs);
           color: var(--text-muted);
           font-family: var(--font-mono);
@@ -1225,7 +1225,7 @@ export default function ContextGraphsPage() {
           font-family: var(--font-mono);
           font-size: clamp(10px, 2vw, 12px);
           line-height: 1.5;
-          color: #e4e4e7;
+          color: var(--text-primary);
           background: transparent;
           padding: 0;
         }

@@ -86,7 +86,7 @@ export default function HTTP402Page() {
                 alignItems: 'center',
                 gap: 'var(--space-2)',
                 background: 'var(--accent-tertiary-subtle)',
-                border: '1px solid rgba(255, 107, 53, 0.2)',
+                border: '1px solid var(--accent-tertiary-muted)',
                 borderRadius: 'var(--radius-full)',
                 padding: 'var(--space-2) var(--space-4)',
                 marginBottom: 'var(--space-6)',
@@ -166,7 +166,7 @@ export default function HTTP402Page() {
                 {/* Key Takeaways Box */}
                 <div id="key-takeaways" style={{
                   background: 'var(--accent-tertiary-faint)',
-                  border: '1px solid rgba(255, 107, 53, 0.15)',
+                  border: '1px solid var(--accent-tertiary-subtle)',
                   borderRadius: 'var(--radius-lg)',
                   padding: 'var(--space-8)',
                   marginBottom: 'var(--space-12)'

@@ -131,7 +131,7 @@ export default function SimpleHomePage() {
               Operate every policy, payment, and proof from one fabric
             </h2>
             <p className="lead" style={{ fontSize: '1.25rem', color: '#6b7280', maxWidth: '800px', margin: '0 auto' }}>
-              Stripe-level craft for the agentic economy. Originary gives legal, product, and engineering a common system to control access and revenue without slowing teams down.
+              Stripe-level craft for AI agents. Originary gives legal, product, and engineering a common system to control access and revenue without slowing teams down.
             </p>
           </div>
           <div className="value-grid" style={{
@@ -196,7 +196,7 @@ export default function SimpleHomePage() {
               padding: '2rem',
               boxShadow: '0 4px 6px rgba(0,0,0,0.05)'
             }}>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '1rem' }}>Provable trust and analytics</h3>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: '600', marginBottom: '1rem' }}>Verifiable trust and analytics</h3>
               <p style={{ color: '#6b7280', lineHeight: '1.6', marginBottom: '1.5rem' }}>
                 Every interaction emits a tamper-evident receipt. Stream them into your observability stack or hand to regulators in a click.
               </p>

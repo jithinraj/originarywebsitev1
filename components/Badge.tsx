@@ -24,9 +24,9 @@ const variantStyles: Record<BadgeVariant, { bg: string; color: string; border: s
     border: 'var(--border-default)'
   },
   preview: {
-    bg: 'rgba(251, 191, 36, 0.08)',
+    bg: 'var(--accent-warning-faint)',
     color: 'var(--text-secondary)',
-    border: 'rgba(251, 191, 36, 0.2)'
+    border: 'var(--accent-warning-muted)'
   },
   standard: {
     bg: 'var(--surface-card)',

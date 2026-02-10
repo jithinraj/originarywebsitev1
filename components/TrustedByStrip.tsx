@@ -193,8 +193,8 @@ export default function TrustedByStrip() {
         }
 
         .adapter-status.available {
-          background: rgba(34, 197, 94, 0.1);
-          color: var(--success);
+          background: var(--accent-success-muted);
+          color: var(--accent-success);
         }
 
         .adapter-status.preview {

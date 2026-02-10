@@ -163,9 +163,9 @@ function VerifyContent() {
                   result.status === 'error' ? 'var(--error)' :
                   'var(--warning)',
                 background:
-                  result.status === 'success' ? 'rgba(34, 197, 94, 0.1)' :
-                  result.status === 'error' ? 'rgba(239, 68, 68, 0.1)' :
-                  'rgba(251, 191, 36, 0.1)',
+                  result.status === 'success' ? 'var(--accent-success-subtle)' :
+                  result.status === 'error' ? 'var(--accent-error-subtle)' :
+                  'var(--accent-warning-subtle)',
                 marginBottom: 'var(--space-8)'
               }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>

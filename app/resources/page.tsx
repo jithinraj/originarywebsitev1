@@ -179,7 +179,7 @@ export default function ResourcesPage() {
                 icon={<Globe size={32} style={{ color: 'var(--accent-secondary)' }} />}
                 title="Protocol Documentation"
                 description="Complete technical documentation and specifications for the PEAC protocol and implementation guides."
-                href="https://peacprotocol.org/"
+                href="https://www.peacprotocol.org/"
                 linkText="Read docs"
                 category="Protocol Specs"
                 external

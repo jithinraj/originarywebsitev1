@@ -369,8 +369,8 @@ pricing:
                   top: 'var(--space-4)',
                   right: 'var(--space-4)',
                   padding: 'var(--space-2) var(--space-3)',
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  background: 'var(--glass-border-hover)',
+                  border: '1px solid var(--border-hover)',
                   borderRadius: 'var(--radius-md)',
                   color: 'var(--border-default)',
                   fontSize: 'var(--text-xs)',
@@ -379,10 +379,10 @@ pricing:
                   transition: 'all var(--duration-200) var(--ease-out)'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)'
+                  e.currentTarget.style.background = 'var(--border-hover)'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)'
+                  e.currentTarget.style.background = 'var(--glass-border-hover)'
                 }}
               >
                 Copy

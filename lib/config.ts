@@ -24,12 +24,12 @@ export const PRICE_PRO = process.env.PRICE_PRO;   // Professional subscription
 // Site configuration
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.originary.xyz";
 export const SITE_NAME = "Originary";
-export const SITE_TAGLINE = "Receipts for the Agentic Web";
-export const SITE_DESCRIPTION = "Publish peac.txt, settle via x402 or your rail, and prove compliance on every request with Receipts. Powered by the PEAC open protocol.";
+export const SITE_TAGLINE = "Verification for Automated Interactions";
+export const SITE_DESCRIPTION = "Originary provides verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.";
 
 // Protocol reference
 export const PROTOCOL_NAME = "PEAC Protocol";
-export const PROTOCOL_URL = "https://peacprotocol.org";
+export const PROTOCOL_URL = "https://www.peacprotocol.org";
 export const PROTOCOL_GITHUB = "https://github.com/peacprotocol";
 
 // Trademark usage

@@ -135,11 +135,11 @@ export default function Adapters() {
                     fontWeight: 700,
                     color: 'var(--accent-secondary)',
                     marginBottom: 'var(--space-2)'
-                  }}>99.99%</div>
+                  }}>100%</div>
                   <div style={{
                     fontSize: 'var(--text-sm)',
                     color: 'var(--text-secondary)'
-                  }}>Protocol compliance</div>
+                  }}>Conformance tested</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{
@@ -446,8 +446,8 @@ export default function Adapters() {
                     <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Verification</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>99.99%</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Accuracy</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>Deterministic</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Verification</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
@@ -505,7 +505,7 @@ export default function Adapters() {
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
                   <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Custom protocols</span>
-                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>White-glove support</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Dedicated support</span>
                 </div>
               </div>
             </div>
@@ -520,7 +520,7 @@ export default function Adapters() {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                background: 'radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 50%)',
+                background: 'radial-gradient(circle at 30% 40%, var(--glass-border-hover) 0%, transparent 50%)',
                 pointerEvents: 'none'
               }} />
               <div style={{ position: 'relative', zIndex: 2 }}>
@@ -565,7 +565,7 @@ export default function Adapters() {
                     className="btn btn-lg btn-ghost"
                     style={{
                       color: 'var(--white)',
-                      border: '1px solid rgba(255,255,255,0.2)'
+                      border: '1px solid var(--border-hover)'
                     }}
                   >
                     <span>Enterprise solutions</span>

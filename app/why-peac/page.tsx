@@ -228,7 +228,7 @@ export default function WhyPeacPage() {
                         {row.peac === 'partial' ? (
                           <span style={{ color: 'var(--text-muted)' }}>Partial</span>
                         ) : row.peac ? (
-                          <CheckCircle size={20} style={{ color: '#22C55E' }} />
+                          <CheckCircle size={20} style={{ color: 'var(--accent-success)' }} />
                         ) : (
                           <XCircle size={20} style={{ color: 'var(--border-default)' }} />
                         )}
@@ -237,7 +237,7 @@ export default function WhyPeacPage() {
                         {row.proprietary === 'partial' ? (
                           <span style={{ color: 'var(--text-muted)' }}>Partial</span>
                         ) : row.proprietary ? (
-                          <CheckCircle size={20} style={{ color: '#22C55E' }} />
+                          <CheckCircle size={20} style={{ color: 'var(--accent-success)' }} />
                         ) : (
                           <XCircle size={20} style={{ color: 'var(--border-default)' }} />
                         )}
@@ -246,7 +246,7 @@ export default function WhyPeacPage() {
                         {row.custom === 'partial' ? (
                           <span style={{ color: 'var(--text-muted)' }}>Partial</span>
                         ) : row.custom ? (
-                          <CheckCircle size={20} style={{ color: '#22C55E' }} />
+                          <CheckCircle size={20} style={{ color: 'var(--accent-success)' }} />
                         ) : (
                           <XCircle size={20} style={{ color: 'var(--border-default)' }} />
                         )}
@@ -269,7 +269,7 @@ export default function WhyPeacPage() {
             </div>
 
             <div className="grid grid-2" style={{ gap: 'var(--space-8)', maxWidth: '900px', margin: '0 auto' }}>
-              <div className="card" style={{ borderLeft: '4px solid #22C55E' }}>
+              <div className="card" style={{ borderLeft: '4px solid var(--accent-success)' }}>
                 <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                   PEAC is ideal when you need:
                 </h3>
@@ -327,7 +327,7 @@ export default function WhyPeacPage() {
               <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--white)' }}>
                 Ready to get started?
               </h2>
-              <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'rgba(255, 255, 255, 0.9)', maxWidth: '500px', margin: '0 auto var(--space-8) auto' }}>
+              <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'var(--text-primary)', maxWidth: '500px', margin: '0 auto var(--space-8) auto' }}>
                 Deploy your first policy in 5 minutes. Self-host or use Originary Cloud.
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -335,7 +335,7 @@ export default function WhyPeacPage() {
                   <span>Quick Start Guide</span>
                   <ArrowRight size={18} />
                 </Link>
-                <a href="mailto:contact@originary.xyz" className="btn btn-lg btn-ghost" style={{ color: 'var(--white)', borderColor: 'rgba(255, 255, 255, 0.3)' }}>
+                <a href="mailto:contact@originary.xyz" className="btn btn-lg btn-ghost" style={{ color: 'var(--white)', borderColor: 'var(--border-brand)' }}>
                   Talk to Sales
                 </a>
               </div>

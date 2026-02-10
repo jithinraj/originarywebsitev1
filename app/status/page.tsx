@@ -1,9 +1,8 @@
 'use client'
 
-import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
-import { Activity, Clock, ExternalLink } from 'lucide-react'
+import { Activity, ExternalLink, Package, GitBranch } from 'lucide-react'
 
 export default function StatusPage() {
   return (
@@ -25,7 +24,7 @@ export default function StatusPage() {
             marginBottom: 'var(--space-6)',
             lineHeight: 1.2
           }}>
-            Status Updates
+            Project Status
           </h1>
 
           <p style={{
@@ -35,11 +34,11 @@ export default function StatusPage() {
             margin: '0 auto',
             lineHeight: 1.7
           }}>
-            We post status updates and incident notices here. Uptime percentages are not displayed at this time.
+            PEAC is an open-source, self-hosted protocol. There is no global uptime to report.
           </p>
         </div>
 
-        {/* Status Updates */}
+        {/* Current State */}
         <div style={{
           background: 'var(--surface-elevated)',
           border: '1px solid var(--border-default)',
@@ -60,119 +59,94 @@ export default function StatusPage() {
               fontWeight: 600,
               color: 'var(--text-primary)'
             }}>
-              Status Updates
+              Protocol State
             </h2>
           </div>
 
           <div style={{
-            padding: 'var(--space-6)',
-            background: 'var(--surface-subtle)',
-            borderRadius: 'var(--radius-lg)',
-            border: '1px solid var(--border-default)'
+            display: 'grid',
+            gap: 'var(--space-4)'
           }}>
-            <p style={{ margin: 0, color: 'var(--text-secondary)' }}>
-              No public incidents to report. We will post maintenance and incident updates here when applicable.
-            </p>
+            {[
+              { label: 'Wire format', value: 'peac-receipt/0.1 (frozen)' },
+              { label: 'Latest release', value: 'v0.10.9' },
+              { label: 'Published packages', value: '20 on npm' },
+              { label: 'License', value: 'Apache-2.0' },
+              { label: 'Release cadence', value: '~weekly during v0.10.x' },
+            ].map((item) => (
+              <div key={item.label} style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: 'var(--space-3) var(--space-4)',
+                background: 'var(--surface-subtle)',
+                borderRadius: 'var(--radius-md)',
+                border: '1px solid var(--border-default)'
+              }}>
+                <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>{item.label}</span>
+                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)' }}>{item.value}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Performance Notice */}
+        {/* Links */}
         <div style={{
-          background: 'var(--surface-elevated)',
-          border: '1px solid var(--border-default)',
-          borderRadius: 'var(--radius-xl)',
-          padding: 'var(--space-8)',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: 'var(--space-4)',
           marginBottom: 'var(--space-8)'
         }}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 'var(--space-3)',
-            marginBottom: 'var(--space-6)'
-          }}>
-            <Clock size={24} style={{ color: 'var(--accent-brand)' }} />
-            <h2 style={{
-              margin: 0,
-              fontSize: 'var(--text-2xl)',
-              fontWeight: 600,
+          <a
+            href="https://github.com/peacprotocol/peac/releases"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 'var(--space-3)',
+              textDecoration: 'none',
               color: 'var(--text-primary)'
-            }}>
-              Recent Activity
-            </h2>
-          </div>
+            }}
+          >
+            <GitBranch size={20} style={{ color: 'var(--accent-brand)' }} />
+            <div>
+              <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>GitHub Releases</div>
+              <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>Tagged releases with changelogs</div>
+            </div>
+            <ExternalLink size={14} style={{ marginLeft: 'auto', color: 'var(--text-tertiary)' }} />
+          </a>
 
-          <div style={{
-            padding: 'var(--space-6)',
-            background: 'var(--surface-subtle)',
-            borderRadius: 'var(--radius-lg)',
-            border: '1px solid var(--border-default)',
-            textAlign: 'center'
-          }}>
-            <p style={{
-              fontSize: 'var(--text-base)',
-              color: 'var(--text-secondary)',
-              margin: 0
-            }}>
-              No incidents reported. Subscribe below for status notifications.
-            </p>
-          </div>
+          <a
+            href="https://www.npmjs.com/org/peac"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 'var(--space-3)',
+              textDecoration: 'none',
+              color: 'var(--text-primary)'
+            }}
+          >
+            <Package size={20} style={{ color: 'var(--accent-secondary)' }} />
+            <div>
+              <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>npm Packages</div>
+              <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>20 packages at @peac/*</div>
+            </div>
+            <ExternalLink size={14} style={{ marginLeft: 'auto', color: 'var(--text-tertiary)' }} />
+          </a>
         </div>
 
-        {/* Subscribe Notice */}
-        <div style={{
-          background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
-          border: '1px solid var(--accent-brand-muted)',
-          borderRadius: 'var(--radius-xl)',
-          padding: 'var(--space-8)',
-          textAlign: 'center'
-        }}>
-          <h3 style={{
-            fontSize: 'var(--text-xl)',
-            fontWeight: 600,
-            color: 'var(--text-primary)',
-            marginBottom: 'var(--space-4)'
-          }}>
-            Status Updates via Email
-          </h3>
-          <p style={{
-            fontSize: 'var(--text-base)',
-            color: 'var(--text-secondary)',
-            marginBottom: 'var(--space-6)',
-            lineHeight: 1.7
-          }}>
-            Subscribe to receive notifications for scheduled maintenance and incidents
-          </p>
-          <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn btn-primary">
-              Subscribe to Updates
-            </Link>
-            <a
-              href="mailto:contact@originary.xyz?subject=Status%20Notifications"
-              className="btn btn-secondary"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}
-            >
-              <ExternalLink size={16} />
-              Email Us
-            </a>
-          </div>
-        </div>
-
-        {/* Historical Note */}
         <p style={{
           textAlign: 'center',
           fontSize: 'var(--text-sm)',
           color: 'var(--text-tertiary)',
           marginTop: 'var(--space-8)'
         }}>
-          Last updated: {new Date().toLocaleString('en-US', {
-            month: 'long',
-            day: 'numeric',
-            year: 'numeric',
-            hour: 'numeric',
-            minute: '2-digit',
-            timeZone: 'America/Los_Angeles',
-            timeZoneName: 'short'
-          })}
+          For deployment-specific status, check with your hosting provider.
         </p>
       </div>
         </section>
@@ -181,5 +155,3 @@ export default function StatusPage() {
     </div>
   )
 }
-
-// Uptime percentages and per-service claims intentionally omitted until a provider is integrated.

@@ -146,13 +146,13 @@ export default function GovernancePage() {
                 width: '48px',
                 height: '48px',
                 borderRadius: 'var(--radius-xl)',
-                background: 'rgba(59, 130, 246, 0.1)',
+                background: 'var(--accent-brand-subtle)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginBottom: 'var(--space-4)'
               }}>
-                <Shield size={24} style={{ color: '#3B82F6' }} />
+                <Shield size={24} style={{ color: 'var(--accent-brand)' }} />
               </div>
               <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)' }}>
                 Conformance
@@ -167,7 +167,7 @@ export default function GovernancePage() {
               padding: 'var(--space-8)',
               border: '2px solid var(--accent-brand)',
               borderRadius: 'var(--radius-2xl)',
-              background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
+              background: 'var(--accent-brand-faint)',
               gridColumn: '1 / -1'
             }}>
               <div style={{

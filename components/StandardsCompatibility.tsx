@@ -7,7 +7,7 @@ const standards = [
   { id: 'x402', label: 'x402', href: '/integrations/x402', desc: 'HTTP 402 payments', Icon: Zap },
   { id: 'mcp', label: 'MCP', href: '/integrations/mcp', desc: 'Model Context Protocol', Icon: Bot },
   { id: 'a2a', label: 'A2A', href: '/integrations/a2a', desc: 'Agent-to-Agent', Icon: ArrowLeftRight },
-  { id: 'acp', label: 'ACP', href: '/integrations/acp', desc: 'Agentic Commerce Protocol', Icon: ShoppingCart },
+  { id: 'acp', label: 'ACP', href: '/integrations/acp', desc: 'Agent Commerce Protocol', Icon: ShoppingCart },
   { id: 'aipref', label: 'AIPREF', href: '/integrations/aipref', desc: 'IETF Internet-Draft', Icon: FileText },
   { id: 'cloudflare', label: 'Cloudflare', href: '/docs/deploy/cloudflare-worker', desc: 'Edge deployment', Icon: Cloud },
   { id: 'vercel', label: 'Vercel', href: '/docs/deploy/vercel', desc: 'Edge functions', Icon: Triangle },

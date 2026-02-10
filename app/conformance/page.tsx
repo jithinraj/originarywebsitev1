@@ -218,7 +218,7 @@ export default function ConformancePage() {
             padding: 'var(--space-8)',
             border: '2px solid var(--accent-brand)',
             borderRadius: 'var(--radius-2xl)',
-            background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
+            background: 'var(--accent-brand-faint)',
             marginBottom: 'var(--space-8)'
           }}>
             <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-4)' }}>

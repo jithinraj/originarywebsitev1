@@ -8,25 +8,25 @@ const stakeholders = [
     icon: Scale,
     title: 'Enterprises & Regulators',
     description: 'Move from "trust our logs" to verifiable decision records. Portable evidence for audits and disputes.',
-    color: '#635BFF'
+    color: 'var(--accent-brand)'
   },
   {
     icon: Bot,
     title: 'AI Platforms & Agents',
     description: 'Clear terms, predictable enforcement, verifiable outcomes. Reduce ambiguity across tool use.',
-    color: '#00D4AA'
+    color: 'var(--accent-secondary)'
   },
   {
     icon: Database,
     title: 'APIs & Data Providers',
     description: 'Make access decisions enforceable and auditable. Optional settlement without platform lock-in.',
-    color: '#FF6B35'
+    color: 'var(--accent-tertiary)'
   },
   {
     icon: Globe,
     title: 'Standards & Ecosystem',
     description: 'Adopt a neutral layer that stays rail-agnostic via adapters. Build without ceding control.',
-    color: '#3B82F6'
+    color: 'var(--accent-brand)'
   }
 ]
 

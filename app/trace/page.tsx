@@ -245,7 +245,7 @@ export default function TracePage() {
                     width: '64px',
                     height: '64px',
                     borderRadius: 'var(--radius-lg)',
-                    background: 'var(--gradient-brand)',
+                    background: 'var(--accent-brand)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -409,7 +409,7 @@ export default function TracePage() {
                     position: 'absolute',
                     top: '-12px',
                     right: 'var(--space-6)',
-                    background: 'var(--gradient-brand)',
+                    background: 'var(--accent-brand)',
                     color: 'white',
                     padding: 'var(--space-1) var(--space-3)',
                     borderRadius: 'var(--radius-full)',
@@ -503,7 +503,7 @@ export default function TracePage() {
                     justifyContent: 'center',
                     gap: 'var(--space-2)',
                     width: '100%',
-                    background: 'var(--gradient-brand)'
+                    background: 'var(--accent-brand)'
                   }}
                 >
                   Get started

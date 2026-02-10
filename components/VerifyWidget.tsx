@@ -122,7 +122,7 @@ export default function VerifyWidget() {
           borderRadius: 'var(--radius-lg)',
           border: '1px solid',
           borderColor: result.status === 'success' ? 'var(--success)' : 'var(--error)',
-          background: result.status === 'success' ? 'rgba(34, 197, 94, 0.1)' : 'rgba(239, 68, 68, 0.1)'
+          background: result.status === 'success' ? 'var(--accent-success-subtle)' : 'var(--accent-error-subtle)'
         }}>
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
             {result.status === 'success' ? (

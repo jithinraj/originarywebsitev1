@@ -45,7 +45,7 @@ export default function TraceHeroSection() {
           width: '600px',
           height: '600px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(99,91,255,0.1) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, var(--accent-brand-subtle) 0%, transparent 70%)',
           animation: 'float 8s ease-in-out infinite'
         }}
       />
@@ -59,7 +59,7 @@ export default function TraceHeroSection() {
           width: '400px',
           height: '400px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(0,212,170,0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, var(--accent-secondary-faint) 0%, transparent 70%)',
           animation: 'float 6s ease-in-out infinite reverse'
         }}
       />
@@ -77,7 +77,7 @@ export default function TraceHeroSection() {
         >
           {/* Announcement Badge */}
           <Link
-            href="https://peacprotocol.org"
+            href="https://www.peacprotocol.org"
             className="announcement"
             aria-label="Built on the open PEAC Protocol"
             target="_blank"

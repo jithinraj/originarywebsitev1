@@ -75,7 +75,7 @@ peac policy validate peac-policy.yaml`}
                 color: 'var(--accent-brand)',
                 fontSize: 'var(--text-sm)'
               }}
-              href="https://peacprotocol.org/docs"
+              href="https://www.peacprotocol.org/docs"
               target="_blank"
               rel="noreferrer"
             >

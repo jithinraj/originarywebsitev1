@@ -1,25 +1,24 @@
 {
-  "version": "0.10.0",
+  "version": "latest",
   "files": [
     {
-      "filename": "peac-v0.10.0-source.zip",
+      "filename": "peac-source.zip",
       "platform": "Source Code",
       "description": "PEAC Protocol source code and SDKs",
-      "url": "https://github.com/peacprotocol/peac/archive/refs/tags/v0.10.0.zip",
+      "url": "https://github.com/peacprotocol/peac/archive/refs/heads/main.zip",
       "size": 0
     },
     {
-      "filename": "peac-v0.10.0-source.tar.gz",
+      "filename": "peac-source.tar.gz",
       "platform": "Source Code (tar.gz)",
       "description": "PEAC Protocol source code and SDKs",
-      "url": "https://github.com/peacprotocol/peac/archive/refs/tags/v0.10.0.tar.gz",
+      "url": "https://github.com/peacprotocol/peac/archive/refs/heads/main.tar.gz",
       "size": 0
     }
   ],
   "npm": {
-    "cli": "@peac/cli@next",
-    "kernel": "@peac/kernel@next",
-    "protocol": "@peac/protocol@next"
-  },
-  "go": "github.com/peacprotocol/peac/sdks/go@v0.10.0"
+    "cli": "@peac/cli@latest",
+    "kernel": "@peac/kernel@latest",
+    "protocol": "@peac/protocol@latest"
+  }
 }

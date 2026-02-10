@@ -106,7 +106,7 @@
   --z-tooltip: 1070;
 }
 
-/* Dark mode */
+/* Dark mode - disabled, light mode enforced via data-theme="light" in layout.tsx
 @media (prefers-color-scheme: dark) {
   :root {
     --gray-50: #18181B;
@@ -121,6 +121,7 @@
     --gray-900: #FAFAFA;
   }
 }
+*/
 
 /* Reset & Base */
 *, *::before, *::after {

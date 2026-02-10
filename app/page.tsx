@@ -105,9 +105,11 @@ export default function Page() {
         <HowItWorksNew />
         <ProductSuite />
         <ProofSection />
-        <div className="container">
-          <FaqAccordion items={homeFaqs} />
-        </div>
+        <section style={{ padding: 'var(--space-20) 0', borderTop: '1px solid var(--border-default)', background: 'var(--surface-base)' }}>
+          <div className="container">
+            <FaqAccordion items={homeFaqs} />
+          </div>
+        </section>
         <FinalCTA />
       </main>
       <Footer />

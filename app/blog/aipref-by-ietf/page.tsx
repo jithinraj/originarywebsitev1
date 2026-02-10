@@ -284,7 +284,7 @@ export default function AIPREFArticle() {
                     Hierarchical Inheritance
                   </h4>
                   <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.7 }}>
-                    Categories inherit from their parents. If you set <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>bots=n</code> but don&apos;t specify <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>search</code>, search will inherit the disallow preference. However, explicit values always override inherited ones - <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>bots=n, search=y</code> allows search while disallowing other automated processing.
+                    Categories inherit from their parents. If you set <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>bots=n</code> but don&apos;t specify <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>search</code>, search will inherit the disallow preference. However, explicit values always override inherited ones - <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>bots=n, search=y</code> allows search while disallowing other automated processing.
                   </p>
                 </div>
               </section>
@@ -394,12 +394,12 @@ Content-Usage: /public-research/ train-ai=y, train-genai=n`}
                   </p>
                 </div>
 
-                <div className="card" style={{ background: 'rgba(255, 193, 7, 0.05)', border: '1px solid rgba(255, 193, 7, 0.2)' }}>
+                <div className="card" style={{ background: 'var(--accent-warning-faint)', border: '1px solid var(--accent-warning-border)' }}>
                   <h4 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                     Path Matching Rules
                   </h4>
                   <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.7 }}>
-                    The robots.txt mechanism uses longest-prefix matching. If a resource path matches multiple <code style={{ background: 'rgba(255,255,255,0.8)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>Content-Usage</code> directives, the one with the longest matching path prefix applies. This allows you to set site-wide defaults and override them for specific paths.
+                    The robots.txt mechanism uses longest-prefix matching. If a resource path matches multiple <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>Content-Usage</code> directives, the one with the longest matching path prefix applies. This allows you to set site-wide defaults and override them for specific paths.
                   </p>
                 </div>
               </section>
@@ -530,13 +530,13 @@ Content-Usage: /public-research/ train-ai=y, train-genai=n`}
                     Example Resolution
                   </h4>
                   <p style={{ marginBottom: 'var(--space-3)', opacity: 0.9, fontSize: 'var(--text-sm)' }}>
-                    Given: <code style={{ background: 'rgba(255,255,255,0.1)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>bots=y, train-ai=n, train-genai=y</code>
+                    Given: <code style={{ background: 'var(--glass-border-hover)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>bots=y, train-ai=n, train-genai=y</code>
                   </p>
                   <ul style={{ paddingLeft: 'var(--space-6)', margin: 0, fontSize: 'var(--text-sm)', lineHeight: 1.8, opacity: 0.9 }}>
-                    <li><code style={{ background: 'rgba(255,255,255,0.1)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>bots</code>: Allow (explicit)</li>
-                    <li><code style={{ background: 'rgba(255,255,255,0.1)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>train-ai</code>: Disallow (explicit, overrides parent)</li>
-                    <li><code style={{ background: 'rgba(255,255,255,0.1)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>train-genai</code>: Allow (explicit, overrides parent train-ai)</li>
-                    <li><code style={{ background: 'rgba(255,255,255,0.1)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>search</code>: Allow (inherits from bots)</li>
+                    <li><code style={{ background: 'var(--glass-border-hover)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>bots</code>: Allow (explicit)</li>
+                    <li><code style={{ background: 'var(--glass-border-hover)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>train-ai</code>: Disallow (explicit, overrides parent)</li>
+                    <li><code style={{ background: 'var(--glass-border-hover)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>train-genai</code>: Allow (explicit, overrides parent train-ai)</li>
+                    <li><code style={{ background: 'var(--glass-border-hover)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>search</code>: Allow (inherits from bots)</li>
                   </ul>
                 </div>
               </section>
@@ -696,7 +696,7 @@ Content-Usage: train-genai=n, search=y`}
                   Originary&apos;s Position
                 </h2>
 
-                <div className="card" style={{ background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(0,212,170,0.05) 100%)', border: '2px solid var(--accent-brand)' }}>
+                <div className="card" style={{ background: 'var(--accent-brand-faint)', border: '2px solid var(--accent-brand)' }}>
                   <div style={{ display: 'flex', alignItems: 'start', gap: 'var(--space-4)' }}>
                     <Shield size={32} style={{ color: 'var(--accent-brand)', flexShrink: 0 }} />
                     <div>
@@ -852,7 +852,7 @@ Content-Usage: train-genai=n, search=y`}
                   <Link
                     href="/company/contact"
                     className="btn btn-lg btn-ghost"
-                    style={{ color: 'var(--white)', border: '1px solid rgba(255,255,255,0.3)' }}
+                    style={{ color: 'var(--white)', border: '1px solid var(--border-on-brand)' }}
                   >
                     <span>Talk to Us</span>
                   </Link>

@@ -72,7 +72,7 @@ export default function PEACBand() {
             >
               /.well-known/peac.txt
             </code>
-            , verifiable receipts, and HTTP 402 semantics for the Agentic Web.
+            , verifiable receipts, and HTTP 402 semantics for AI agents.
           </p>
 
           {/* Feature Grid */}
@@ -151,7 +151,7 @@ export default function PEACBand() {
             }}
           >
             <a
-              href="https://peacprotocol.org"
+              href="https://www.peacprotocol.org"
               target="_blank"
               rel="noopener noreferrer"
               className="link"

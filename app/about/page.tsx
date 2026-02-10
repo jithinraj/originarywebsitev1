@@ -111,7 +111,7 @@ export default function AboutPage() {
               width: '500px',
               height: '500px',
               borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(99,91,255,0.12) 0%, transparent 70%)',
+              background: 'var(--gradient-orb-purple)',
               animation: 'float 8s ease-in-out infinite',
               pointerEvents: 'none'
             }}
@@ -124,7 +124,7 @@ export default function AboutPage() {
               width: '400px',
               height: '400px',
               borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(0,212,170,0.08) 0%, transparent 70%)',
+              background: 'var(--gradient-orb-teal)',
               animation: 'float 6s ease-in-out infinite reverse',
               pointerEvents: 'none'
             }}
@@ -227,7 +227,7 @@ export default function AboutPage() {
               <div
                 className="card"
                 style={{
-                  background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
+                  background: 'var(--accent-brand-faint)',
                   border: '1px solid var(--accent-brand-subtle)',
                   textAlign: 'left'
                 }}
@@ -351,7 +351,7 @@ export default function AboutPage() {
               className="grid"
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))',
                 gap: 'var(--space-6)',
                 marginBottom: 'var(--space-8)'
               }}
@@ -411,7 +411,7 @@ export default function AboutPage() {
         <section
           className="section"
           style={{
-            background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, var(--accent-brand-faint) 100%)',
+            background: 'linear-gradient(135deg, var(--accent-success-faint) 0%, var(--accent-brand-faint) 100%)',
             paddingTop: 'var(--space-20)',
             paddingBottom: 'var(--space-20)'
           }}
@@ -424,17 +424,17 @@ export default function AboutPage() {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: 'var(--space-2)',
-                    background: 'rgba(34, 197, 94, 0.1)',
-                    border: '1px solid rgba(34, 197, 94, 0.2)',
+                    background: 'var(--accent-success-subtle)',
+                    border: '1px solid var(--accent-success-muted)',
                     borderRadius: 'var(--radius-full)',
                     padding: 'var(--space-2) var(--space-6)',
                     marginBottom: 'var(--space-6)',
                     fontSize: 'var(--text-sm)',
                     fontWeight: 600,
-                    color: 'rgb(34, 197, 94)'
+                    color: 'var(--accent-success)'
                   }}
                 >
-                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'rgb(34, 197, 94)' }} />
+                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-success)' }} />
                   Open Source - Apache-2.0
                 </div>
                 <h2
@@ -466,7 +466,7 @@ export default function AboutPage() {
                   PEAC is Apache-2.0 licensed and stewarded in the open on GitHub by contributors from Originary and the broader community. Multiple independent implementations are expected and encouraged. Originary ships one reference implementation and optional hosted services, but the protocol is not owned by a vendor.
                 </p>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.6, marginBottom: 'var(--space-6)' }}>
-                  PEAC is currently at version 0.10.0 (wire format peac-receipt/0.1). Core concepts (policy discovery and receipt verification) are designed for long-term stability.
+                  PEAC uses wire format peac-receipt/0.1 (frozen until 1.0). Core concepts (policy discovery and receipt verification) are designed for long-term stability.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                   <Link href="/peac" className="btn btn-primary">

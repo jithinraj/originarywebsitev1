@@ -62,13 +62,13 @@ export default function VerifyAPI() {
                 <Zap size={16} />
                 <span>VERIFICATION API</span>
                 <div style={{
-                  background: 'var(--success)',
+                  background: 'var(--accent-brand)',
                   color: 'var(--white)',
                   padding: 'var(--space-1) var(--space-2)',
                   borderRadius: 'var(--radius-sm)',
                   fontSize: 'var(--text-xs)',
                   fontWeight: 600
-                }}>OPERATIONAL</div>
+                }}>OPEN SOURCE</div>
               </div>
 
               <h1 style={{
@@ -166,9 +166,9 @@ export default function VerifyAPI() {
                 }}>
                   <Shield size={28} style={{ color: 'var(--accent-secondary)' }} />
                 </div>
-                <h3 style={{ marginBottom: 'var(--space-4)' }}>Enterprise SLA</h3>
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Performance targets</h3>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Mission-critical availability with redundant infrastructure, automated failover, and 24/7 monitoring.
+                  Self-hosted verification with configurable redundancy. Benchmarks based on reference implementation testing.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
                   <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Auto-failover</span>
@@ -212,7 +212,7 @@ export default function VerifyAPI() {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                background: 'radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 50%)',
+                background: 'radial-gradient(circle at 30% 40%, var(--glass-border-hover) 0%, transparent 50%)',
                 pointerEvents: 'none'
               }} />
               <div style={{ position: 'relative', zIndex: 2 }}>
@@ -232,7 +232,7 @@ export default function VerifyAPI() {
                   margin: '0 auto var(--space-8) auto',
                   lineHeight: 1.6
                 }}>
-                  Join enterprise customers using our verification infrastructure with guaranteed performance and reliability. Our verification engineers provide dedicated support for mission-critical implementations.
+                  Start verifying PEAC receipts with the open-source reference implementation. Self-hostable, offline-capable, and backed by 20 npm packages.
                 </p>
                 <div style={{
                   display: 'flex',
@@ -257,7 +257,7 @@ export default function VerifyAPI() {
                     className="btn btn-lg btn-ghost"
                     style={{
                       color: 'var(--white)',
-                      border: '1px solid rgba(255,255,255,0.2)'
+                      border: '1px solid var(--border-hover)'
                     }}
                   >
                     <span>View API documentation</span>

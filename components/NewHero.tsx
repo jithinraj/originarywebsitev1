@@ -4,7 +4,8 @@ import { useRef } from 'react'
 import Link from 'next/link'
 import { Github } from 'lucide-react'
 import HeroPeacFlowBg from './HeroPeacFlowBg'
-import HeroVerifyWidget from './HeroVerifyWidget'
+import HeroFlowDiagram from './HeroFlowDiagram'
+import { FACTS } from '@/lib/facts'
 
 export default function NewHero() {
   const heroRef = useRef<HTMLElement>(null)
@@ -20,50 +21,50 @@ export default function NewHero() {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-badge">
-            <span>Verification for automated requests</span>
+            <span>PEAC Protocol</span>
+            <span className="badge-dot">&middot;</span>
+            <span>stewarded by Originary</span>
           </div>
 
           <h1 className="hero-headline">
-            <span className="hero-headline-main">Verify agent interactions.</span>
-            <span className="hero-headline-sub">Instantly.</span>
+            <span className="hero-headline-main">Every API call.</span>
+            <span className="hero-headline-sub">One verifiable<br className="hero-br-mobile" /> record.</span>
           </h1>
 
           <p className="hero-problem">
-            APIs and sites lack a portable, third-party verifiable way to show what an agent accessed and under which terms.
+            Agents cross org boundaries. Logs don&apos;t.
           </p>
 
           <p className="hero-solution">
-            Originary issues signature-verified records you can verify offline and export for audits.
+            PEAC returns a signed interaction record on every response. Both sides can verify it offline and export it for audits. Publish terms at <code className="hero-code">/.well-known/peac.txt</code>.
           </p>
 
           <div className="hero-actions">
-            <a
-              href="https://github.com/peacprotocol/peac"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-btn-primary"
-            >
-              <Github size={18} />
-              Get Started
-            </a>
-            <Link href="/developers" className="hero-btn-secondary">
-              Documentation
+            <Link href="/developers" className="hero-btn-primary">
+              Quickstart
+            </Link>
+            <Link href="/verify" className="hero-btn-secondary">
+              Verify a receipt
+            </Link>
+            <Link href="/downloads" className="hero-btn-tertiary">
+              Download
             </Link>
           </div>
 
+          <p className="hero-proof-line">Verifies locally. No server needed.</p>
+
           <div className="hero-footer-strip">
+            <p className="strip-clarifier">Originary maintains PEAC Protocol and ships production tooling.</p>
             <p className="strip-brand">
-              <span className="strip-item">ORIGINARY&trade;</span>
+              <span className="strip-item strip-tm">ORIGINARY&trade;</span>
               <span className="strip-dot">&middot;</span>
-              <a href="/downloads" className="strip-link-inline">Download</a>
+              <span className="strip-item">Offline verification</span>
               <span className="strip-dot">&middot;</span>
-              <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline strip-link-github">
-                <Github size={14} className="github-icon" />
-                <span>We&apos;re open source</span>
-              </a>
-            </p>
-            <p className="strip-clarifier">
-              Originary maintains PEAC and ships production tools to issue and verify interaction records.
+              <span className="strip-item">Conformance vectors</span>
+              <span className="strip-dot">&middot;</span>
+              <span className="strip-item">Portable evidence bundles</span>
+              <span className="strip-dot">&middot;</span>
+              <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">{FACTS.license} &middot; {FACTS.protocolVersion}</a>
             </p>
           </div>
 
@@ -71,7 +72,7 @@ export default function NewHero() {
 
         <div className="hero-visual">
           <div className="widget-wrapper">
-            <HeroVerifyWidget />
+            <HeroFlowDiagram />
             <div className="widget-glow" />
           </div>
         </div>
@@ -191,9 +192,10 @@ export default function NewHero() {
         .hero-badge { animation-delay: 0.1s; }
         .hero-headline { animation-delay: 0.2s; }
         .hero-problem { animation-delay: 0.3s; }
-        .hero-solution { animation-delay: 0.4s; }
-        .hero-actions { animation-delay: 0.5s; }
-        .hero-footer-strip { animation-delay: 0.6s; }
+        .hero-solution { animation-delay: 0.35s; }
+        .hero-actions { animation-delay: 0.4s; }
+        .hero-proof-line { animation-delay: 0.45s; }
+        .hero-footer-strip { animation-delay: 0.5s; }
 
         .hero-badge {
           display: inline-flex;
@@ -217,6 +219,11 @@ export default function NewHero() {
           white-space: nowrap;
         }
 
+        .hero-badge :global(.badge-dot) {
+          color: var(--accent-brand);
+          opacity: 0.5;
+        }
+
         .hero-headline {
           display: flex;
           flex-direction: column;
@@ -225,10 +232,10 @@ export default function NewHero() {
         }
 
         .hero-headline-main {
-          font-size: clamp(56px, 9vw, 104px);
+          font-size: clamp(44px, 7vw, 80px);
           font-weight: 700;
-          letter-spacing: -0.05em;
-          line-height: 0.92;
+          letter-spacing: -0.04em;
+          line-height: 1;
           background: linear-gradient(180deg, var(--text-primary) 20%, var(--text-tertiary) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -236,30 +243,55 @@ export default function NewHero() {
         }
 
         .hero-headline-sub {
-          font-size: clamp(56px, 9vw, 104px);
+          font-size: clamp(44px, 7vw, 80px);
           font-weight: 700;
-          letter-spacing: -0.05em;
-          line-height: 0.92;
+          letter-spacing: -0.04em;
+          line-height: 1;
           background: linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-brand-hover) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
         }
 
+        .hero-br-mobile {
+          display: none;
+        }
+
         .hero-problem {
-          font-size: var(--text-lg);
-          line-height: 1.6;
-          color: var(--text-secondary);
-          max-width: 480px;
+          font-size: var(--text-xl);
+          line-height: 1.4;
+          color: var(--text-primary);
+          max-width: 500px;
           margin: 0;
+          font-weight: 500;
         }
 
         .hero-solution {
           font-size: var(--text-base);
-          line-height: 1.6;
-          color: var(--text-tertiary);
-          max-width: 480px;
+          line-height: 1.7;
+          color: var(--text-secondary);
+          max-width: 500px;
           margin: 0;
+        }
+
+        .hero-solution :global(.hero-code) {
+          font-family: var(--font-mono);
+          font-size: 0.85em;
+          padding: 2px 6px;
+          background: var(--surface-subtle);
+          border: 1px solid var(--border-default);
+          border-radius: var(--radius-sm);
+          color: var(--accent-brand);
+          white-space: nowrap;
+          overflow-wrap: break-word;
+        }
+
+        .hero-proof-line {
+          font-size: 14px;
+          font-weight: 600;
+          color: var(--text-secondary);
+          margin: 0;
+          letter-spacing: 0.02em;
         }
 
         .hero-footer-strip {
@@ -274,7 +306,7 @@ export default function NewHero() {
           margin: 0;
           font-size: 11px;
           color: var(--text-muted);
-          letter-spacing: 0.01em;
+          letter-spacing: 0.02em;
         }
 
         .strip-dot {
@@ -356,7 +388,7 @@ export default function NewHero() {
           left: -100%;
           width: 100%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+          background: linear-gradient(90deg, transparent, var(--border-hover), transparent);
           transition: left 0.5s ease;
         }
 
@@ -411,6 +443,30 @@ export default function NewHero() {
           transform: translateY(0);
         }
 
+        .hero-actions :global(.hero-btn-tertiary) {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: var(--space-4) var(--space-4);
+          font-size: 14px;
+          font-weight: 500;
+          text-decoration: none;
+          color: var(--text-tertiary);
+          background: transparent;
+          border: none;
+          transition: color var(--duration-200) var(--ease-out);
+        }
+
+        .hero-actions :global(.hero-btn-tertiary:hover) {
+          color: var(--text-primary);
+        }
+
+        .hero-actions :global(.hero-btn-tertiary:focus-visible) {
+          outline: 2px solid var(--accent-brand);
+          outline-offset: 2px;
+          border-radius: var(--radius-md);
+        }
+
         .hero-visual {
           display: flex;
           justify-content: center;
@@ -430,35 +486,13 @@ export default function NewHero() {
           }
         }
 
-        @keyframes widgetFloat {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-8px);
-          }
-        }
-
-        @keyframes widgetGlowPulse {
-          0%, 100% {
-            opacity: 0.6;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.9;
-            transform: scale(1.05);
-          }
-        }
-
         .widget-wrapper {
           position: relative;
-          animation: widgetFloat 6s ease-in-out infinite;
           transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .widget-wrapper:hover {
-          animation-play-state: paused;
-          transform: translateY(-8px) scale(1.02);
+          transform: translateY(-4px) scale(1.01);
         }
 
         .widget-glow {
@@ -468,13 +502,11 @@ export default function NewHero() {
           filter: blur(80px);
           z-index: -1;
           pointer-events: none;
-          animation: widgetGlowPulse 4s ease-in-out infinite;
+          transition: all 0.6s ease;
         }
 
         .widget-wrapper:hover .widget-glow {
-          animation-play-state: paused;
           inset: -70px;
-          opacity: 1;
           filter: blur(100px);
         }
 
@@ -544,6 +576,10 @@ export default function NewHero() {
             opacity: 0.5;
           }
 
+          .hero-br-mobile {
+            display: inline;
+          }
+
           .hero-problem {
             font-size: 16px;
           }
@@ -596,6 +632,11 @@ export default function NewHero() {
             line-height: 1.3;
           }
 
+          .hero-solution :global(.hero-code) {
+            white-space: normal;
+            word-break: break-all;
+          }
+
           .hero-actions {
             flex-wrap: wrap;
             gap: 10px;
@@ -605,6 +646,11 @@ export default function NewHero() {
           .hero-actions :global(.hero-btn-secondary) {
             padding: 12px 20px;
             font-size: 14px;
+          }
+
+          .hero-actions :global(.hero-btn-tertiary) {
+            font-size: 13px;
+            padding: var(--space-3) var(--space-3);
           }
 
           .hero-problem {

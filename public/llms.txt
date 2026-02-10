@@ -2,7 +2,7 @@
 
 > Originary provides verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.
 
-Last updated: 2026-01-19
+Last updated: 2026-02-09
 
 Company: Poem, Inc.
 Location: Delaware, USA
@@ -29,7 +29,7 @@ Contact: contact@originary.xyz
 AI Policy Pack Generator. CLI tool to generate peac.txt, AIPREF headers, and human-readable policy pages from a single YAML config.
 
 ### Trace (/trace)
-AI bot detection and traffic analytics. Identifies AI agents accessing your APIs and web resources. Export logs and proofs to your stack.
+AI bot detection and traffic analytics. Identifies AI agents accessing your APIs and web resources. Export logs and evidence to your stack.
 
 ### Gateway 402 (/products/gateway-402)
 HTTP 402 paywall for AI traffic. Enforce policy at the edge with allow/deny/rate-limit options or HTTP 402 challenges. Process payments via x402 (stablecoins) or payment gateways.
@@ -38,14 +38,14 @@ HTTP 402 paywall for AI traffic. Enforce policy at the edge with allow/deny/rate
 Receipt verification API. Validate PEAC-Receipt signatures server-side for billing, disputes, and audits.
 
 ### Studio (/products/studio)
-Visual tooling to design, test, and operate policy and receipts with teams.
+Policy management and receipt observability dashboard. Coming soon.
 
 ### Adapters (/products/adapters)
 Pre-built integrations for common platforms and frameworks.
 
 ## Receipt Management
 
-- [Ed25519 Cryptographic Receipts](/receipts) - Ed25519 signed proofs for every transaction, ensuring secure and verifiable receipts
+- [Ed25519 Cryptographic Receipts](/receipts) - Ed25519 signed records for every interaction, providing secure and verifiable receipts
 - [Verify](/verify) - Validate signed receipts server-side for billing, disputes, and audits
 
 ## Integrations
@@ -73,7 +73,7 @@ Pre-built integrations for common platforms and frameworks.
 ## Open Source
 
 ### PEAC Protocol (/peac)
-Open standard for AI agent transactions (Apache-2.0). Current version: 0.10.0
+Open standard for AI agent interactions (Apache-2.0). Current version: 0.10.9
 - Policy discovery via /.well-known/peac.txt
 - AI preferences via AIPREF (/.well-known/aipref.json)
 - Payment challenges via HTTP 402
@@ -86,8 +86,8 @@ Open standard for AI agent transactions (Apache-2.0). Current version: 0.10.0
 
 - [Developers](/developers) - Technical documentation and CLI quickstart
 - [Downloads](/downloads) - CLI tools and packages
-- [Demo](/demo) - Interactive PEAC v0.10.0 protocol trace demonstration
-- [Pricing](/pricing) - Developer $1, Professional $2,500/mo, Enterprise custom
+- [Demo](/demo) - Interactive PEAC v0.10.9 protocol trace demonstration
+- [Pricing](/pricing) - Pricing and plans
 - [Search](/search) - Site search
 
 ## Guides
@@ -96,8 +96,8 @@ Open standard for AI agent transactions (Apache-2.0). Current version: 0.10.0
 
 ## Learn
 
-- [All Guides](/learn) - Educational content on agentic web concepts
-- [What is Agentic Commerce?](/learn/what-is-agentic-commerce) - Agentic Commerce Guide
+- [All Guides](/learn) - Educational content on AI agent interactions
+- [What is Agent Commerce?](/learn/what-is-agentic-commerce) - Agent Commerce Guide
 - [AI Receipts Explained](/learn/ai-receipts) - Understanding cryptographic receipts
 - [HTTP 402 for AI Payments](/learn/http-402-ai-payments) - HTTP 402 Payment Required for AI
 - [AI Consent & Attribution](/learn/ai-consent-and-attribution) - Consent and attribution in AI systems
@@ -149,7 +149,7 @@ Key pages include FAQ sections with direct answers for common questions:
 
 ## Services
 
-- [Services](/services) - Professional services and consulting
+- [Integration Support](/services) - Contact us for integration help
 
 ## Deployment
 
@@ -174,18 +174,18 @@ Key pages include FAQ sections with direct answers for common questions:
 
 - [About](/about) - Mission, principles, and team
 - [Contact](/contact) - Sales, partnerships, support inquiries
-- [Changelog](/changelog) - Product updates and releases
+- [Changelog](/changelog) - Release history (see GitHub Releases)
 - [Brand](/brand) - Brand guidelines and assets
 - [Press](/press) - Press releases and media resources
 - [AI](/ai) - Originary AI initiatives
 
 ## Community & Social
 
-- [GitHub](https://github.com/originaryx) - Code and contributions
+- [GitHub](https://github.com/peacprotocol/peac) - Source code, specs, and SDKs
 - [X / Twitter](https://x.com/originaryx) - Updates and announcements
 - [LinkedIn](https://www.linkedin.com/company/originary) - Professional networking
 - [Bluesky](https://bsky.app/profile/originary.bsky.social) - Discussions and updates
-- [Substack](https://peacprotocol.substack.com/) - Long-form essays about the agentic web
+- [Substack](https://peacprotocol.substack.com/) - Long-form essays on AI agent interactions and the open web
 
 ## Technical Files
 

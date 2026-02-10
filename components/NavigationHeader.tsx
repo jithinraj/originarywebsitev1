@@ -101,26 +101,19 @@ export default function NavigationHeader() {
                 gap: 'var(--space-6)'
               }}
             >
-              <NavLink href="/platform">Platform</NavLink>
-              <NavDropdown label="Products" items={[
-                { href: '/declare', label: 'Declare' },
-                { href: '/trace', label: 'Trace' },
-                { href: '/products/gateway-402', label: 'Gateway 402' },
-                { href: '/products/studio', label: 'Studio' },
-                { href: '/products/verify', label: 'Verify API' },
-                { href: 'separator', label: '' },
-                { href: '/downloads', label: 'Downloads' }
-              ]} />
-
-              <NavLink href="/developers">Developers</NavLink>
               <NavDropdown label="Protocol" items={[
                 { href: '/peac', label: 'PEAC Protocol' },
-                { href: '/system-of-record', label: 'System of Record' },
-                { href: '/context-graphs', label: 'Context Graphs' },
-                { href: 'separator', label: '' },
                 { href: '/receipts', label: 'Receipts' },
-                { href: '/verify', label: 'Verify' }
+                { href: '/verify', label: 'Verify' },
               ]} />
+              <NavDropdown label="Packages" items={[
+                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Available' },
+                { href: '/products/verify', label: 'Verify API', badge: 'Available' },
+                { href: '/products/studio', label: 'Studio', badge: 'Soon' },
+                { href: 'separator', label: '' },
+                { href: 'https://www.npmjs.com/org/peac', label: 'All 20 packages on npm', external: true },
+              ]} />
+              <NavLink href="/developers">Docs</NavLink>
               <NavLink href="/blog">Blog</NavLink>
             </div>
 
@@ -132,6 +125,9 @@ export default function NavigationHeader() {
                 gap: 'var(--space-3)'
               }}
             >
+              <Link href="/developers" className="nav-cta-btn">
+                Docs
+              </Link>
               <a
                 href="https://github.com/peacprotocol/peac"
                 target="_blank"
@@ -139,16 +135,7 @@ export default function NavigationHeader() {
                 className="nav-github-btn"
                 aria-label="View on GitHub"
               >
-                <Github size={18} />
-              </a>
-              <a
-                href="https://github.com/peacprotocol/peac"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-cta-btn"
-              >
                 <Github size={16} />
-                Get Started
               </a>
             </div>
           </div>
@@ -193,28 +180,20 @@ export default function NavigationHeader() {
             }}
           >
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-              <Link href="/platform" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
-                Platform
-              </Link>
-              <MobileNavSection title="Products" items={[
-                { href: '/declare', label: 'Declare' },
-                { href: '/trace', label: 'Trace' },
-                { href: '/products/gateway-402', label: 'Gateway 402' },
-                { href: '/products/studio', label: 'Studio' },
-                { href: '/products/verify', label: 'Verify API' },
-                { href: '/downloads', label: 'Downloads' }
-              ]} />
-
-              <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
-                Developers
-              </Link>
               <MobileNavSection title="Protocol" items={[
                 { href: '/peac', label: 'PEAC Protocol' },
-                { href: '/system-of-record', label: 'System of Record' },
-                { href: '/context-graphs', label: 'Context Graphs' },
                 { href: '/receipts', label: 'Receipts' },
-                { href: '/verify', label: 'Verify' }
+                { href: '/verify', label: 'Verify' },
               ]} />
+              <MobileNavSection title="Packages" items={[
+                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Available' },
+                { href: '/products/verify', label: 'Verify API', badge: 'Available' },
+                { href: '/products/studio', label: 'Studio', badge: 'Soon' },
+                { href: 'https://www.npmjs.com/org/peac', label: 'All 20 packages on npm', external: true },
+              ]} />
+              <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
+                Docs
+              </Link>
               <Link href="/blog" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
                 Blog
               </Link>
@@ -249,10 +228,8 @@ export default function NavigationHeader() {
                   <Github size={16} />
                   View on GitHub
                 </a>
-                <a
-                  href="https://github.com/peacprotocol/peac"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/developers"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -268,9 +245,8 @@ export default function NavigationHeader() {
                     boxShadow: '0 0 20px -5px var(--accent-brand-glow)'
                   }}
                 >
-                  <Github size={16} />
-                  Get Started
-                </a>
+                  Docs
+                </Link>
               </div>
             </div>
           </div>

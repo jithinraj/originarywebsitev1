@@ -60,8 +60,7 @@ export default function FinalCTA() {
         <div className="cta-content reveal">
           <h2 className="cta-title">Ready to build?</h2>
           <p className="cta-description">
-            Deploy the reference stack or use hosted Originary for production SLAs.
-            Open source and self-hostable.
+            PEAC is Apache-2.0, self-hostable, and ships with everything you need to issue and verify receipts.
           </p>
           <div className="cta-actions">
             <Link href="/developers" className="cta-btn-primary">
@@ -218,7 +217,7 @@ export default function FinalCTA() {
           left: -100%;
           width: 100%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+          background: linear-gradient(90deg, transparent, var(--border-hover), transparent);
           transition: left var(--duration-500) ease;
         }
 

@@ -21,7 +21,7 @@ export default function StandardsIntegrations() {
     },
     {
       title: 'PEAC',
-      href: 'https://peacprotocol.org/',
+      href: 'https://www.peacprotocol.org/',
       icon: '🧾'
     },
     {

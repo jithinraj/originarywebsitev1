@@ -122,7 +122,7 @@ export default function ContactPage() {
             </span>
             <h1 className="display">Get in touch</h1>
             <p className="sub">
-              Ready to deploy agentic infrastructure? Have questions about our protocols?
+              Ready to deploy agent infrastructure? Have questions about our protocols?
               We&apos;d love to hear from you and help you get started.
             </p>
           </FadeIn>
@@ -216,10 +216,10 @@ export default function ContactPage() {
               <ScaleIn delay={0.4} className="mt-8 p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl">
                 <div className="text-center">
                   <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
-                  <h4 className="text-lg font-semibold mb-2">Enterprise Priority Support</h4>
+                  <h4 className="text-lg font-semibold mb-2">Open Source Support</h4>
                   <p className="text-gray-600 text-sm">
-                    Enterprise customers get dedicated support channels with guaranteed response times
-                    and direct access to our engineering team.
+                    PEAC is Apache-2.0 with 20 npm packages.
+                    File issues on GitHub or reach out for integration guidance.
                   </p>
                 </div>
               </ScaleIn>
@@ -261,7 +261,7 @@ export default function ContactPage() {
               <Building className="w-16 h-16 mx-auto mb-6 opacity-80" />
               <h2 className="text-4xl font-bold mb-4">Ready for enterprise deployment?</h2>
               <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                Let&apos;s discuss how Originary can help scale your agentic infrastructure.
+                Let&apos;s discuss how Originary can help scale your agent infrastructure.
                 Our enterprise team is ready to design a custom solution for your needs.
               </p>
             </FadeIn>

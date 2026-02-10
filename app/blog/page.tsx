@@ -228,7 +228,7 @@ export default function BlogPage() {
                 style={{
                   textDecoration: 'none',
                   display: 'block',
-                  background: 'linear-gradient(135deg, rgba(99,91,255,0.05) 0%, rgba(0,212,170,0.05) 100%)',
+                  background: 'var(--accent-brand-faint)',
                   border: '2px solid var(--accent-brand)',
                   transition: 'all 0.3s ease',
                   cursor: 'pointer'
@@ -321,7 +321,7 @@ export default function BlogPage() {
             <div style={{
               display: 'grid',
               gap: 'var(--space-8)',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))'
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px, 100%), 1fr))'
             }}>
               {articles.map((article) => (
                 <Link
@@ -438,7 +438,7 @@ export default function BlogPage() {
                   className="btn btn-lg btn-ghost"
                   style={{
                     color: 'var(--white)',
-                    border: '1px solid rgba(255,255,255,0.3)'
+                    border: '1px solid var(--border-on-brand)'
                   }}
                 >
                   <span>Contact Us</span>

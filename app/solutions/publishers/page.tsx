@@ -148,7 +148,7 @@ export default function Publishers() {
                   width: '48px',
                   height: '48px',
                   borderRadius: 'var(--radius-lg)',
-                  background: 'var(--gradient-brand)',
+                  background: 'var(--accent-brand)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -167,7 +167,7 @@ export default function Publishers() {
                   width: '48px',
                   height: '48px',
                   borderRadius: 'var(--radius-lg)',
-                  background: 'var(--gradient-brand)',
+                  background: 'var(--accent-brand)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -195,10 +195,10 @@ export default function Publishers() {
                 <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--accent-brand)' }}>
                   Talk to our team
                 </a>
-                <a href="/trace" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                <a href="/trace" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid var(--border-hover)' }}>
                   AI crawler analytics and bot tracking
                 </a>
-                <a href="/integrations/aipref" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                <a href="/integrations/aipref" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid var(--border-hover)' }}>
                   AIPREF integration
                 </a>
               </div>

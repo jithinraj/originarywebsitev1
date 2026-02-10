@@ -489,7 +489,7 @@ export default function PEACInProduction() {
                 className="btn btn-lg btn-ghost"
                 style={{
                   color: 'var(--white)',
-                  border: '1px solid rgba(255,255,255,0.2)'
+                  border: '1px solid var(--border-hover)'
                 }}
               >
                 <span>View open protocol</span>

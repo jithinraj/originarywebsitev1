@@ -79,7 +79,7 @@ export default function ResearchPage() {
             padding: 'var(--space-8)',
             border: '2px solid var(--accent-brand)',
             borderRadius: 'var(--radius-2xl)',
-            background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
+            background: 'var(--accent-brand-faint)',
             marginBottom: 'var(--space-8)'
           }}>
             <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-4)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
@@ -221,7 +221,7 @@ export default function ResearchPage() {
               Evaluation Plan
             </h2>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
-              PEAC is currently at version 0.10.0 (wire format peac-receipt/0.1). Evaluation milestones before 1.0:
+              PEAC uses wire format peac-receipt/0.1. Evaluation milestones before 1.0:
             </p>
             <ul style={{ color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 'var(--space-6)' }}>
               <li style={{ marginBottom: 'var(--space-2)' }}><strong>Multiple implementations:</strong> At least two independent, conformant implementations</li>

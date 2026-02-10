@@ -94,7 +94,7 @@ export default function ProductsPage() {
 
         {/* Start with Declare Band */}
         <section style={{
-          background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
+          background: 'var(--accent-brand-faint)',
           borderTop: '1px solid var(--border-subtle)',
           borderBottom: '1px solid var(--border-subtle)',
           padding: 'var(--space-8) 0'
@@ -292,7 +292,7 @@ export default function ProductsPage() {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  background: 'radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 50%)',
+                  background: 'radial-gradient(circle at 30% 40%, var(--glass-border-hover) 0%, transparent 50%)',
                   pointerEvents: 'none'
                 }}
               />
@@ -344,7 +344,7 @@ export default function ProductsPage() {
                     className="btn btn-lg btn-ghost"
                     style={{
                       color: 'var(--white)',
-                      border: '1px solid rgba(255,255,255,0.2)'
+                      border: '1px solid var(--border-hover)'
                     }}
                   >
                     <span>Talk to Sales</span>
@@ -381,7 +381,7 @@ function ProductCard({
   const statusStyles: Record<string, { bg: string; color: string; label: string; border?: string }> = {
     'start-here': { bg: 'var(--accent-brand-subtle)', color: 'var(--accent-brand)', label: 'Start here', border: 'var(--accent-brand-muted)' },
     'optional': { bg: 'var(--surface-card)', color: 'var(--text-secondary)', label: 'Optional' },
-    'preview': { bg: 'rgba(251, 191, 36, 0.08)', color: 'var(--text-secondary)', label: 'Preview' },
+    'preview': { bg: 'var(--accent-warning-muted)', color: 'var(--text-secondary)', label: 'Preview' },
     'open-standard': { bg: 'var(--surface-card)', color: 'var(--text-secondary)', label: 'Open Standard' }
   }
 

@@ -64,14 +64,14 @@ export default function PeacPage() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'rgba(34, 197, 94, 0.1)',
-                  border: '1px solid rgba(34, 197, 94, 0.2)',
+                  background: 'var(--accent-success-subtle)',
+                  border: '1px solid var(--accent-success-muted)',
                   borderRadius: 'var(--radius-full)',
                   padding: 'var(--space-2) var(--space-6)',
                   marginBottom: 'var(--space-8)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600,
-                  color: 'rgb(34, 197, 94)'
+                  color: 'var(--accent-success)'
                 }}
               >
                 <span className="h-2 w-2 rounded-full bg-green-500" />
@@ -196,7 +196,7 @@ export default function PeacPage() {
 
               {/* Statement */}
               <div className="card" style={{
-                background: 'linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%)',
+                background: 'var(--accent-brand-faint)',
                 border: '1px solid var(--accent-brand-subtle)',
                 padding: 'var(--space-8)',
                 marginBottom: 'var(--space-8)'
@@ -668,7 +668,7 @@ export default function PeacPage() {
                   fontSize: 'var(--text-lg)',
                   marginBottom: 'var(--space-8)',
                   lineHeight: 1.7,
-                  color: 'rgba(255, 255, 255, 0.9)'
+                  color: 'var(--text-primary)'
                 }}
               >
                 Self-host with the open source stack, or add managed services like Trace, Gateway, Studio, and Verify API.
@@ -677,7 +677,7 @@ export default function PeacPage() {
                 <Link href="/pricing" className="btn btn-lg" style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}>
                   View Pricing
                 </Link>
-                <Link href="/trace" className="btn btn-lg btn-ghost" style={{ color: 'var(--white)', borderColor: 'rgba(255, 255, 255, 0.3)' }}>
+                <Link href="/trace" className="btn btn-lg btn-ghost" style={{ color: 'var(--white)', borderColor: 'var(--border-on-brand)' }}>
                   Explore Trace
                 </Link>
               </div>

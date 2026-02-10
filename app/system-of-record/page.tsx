@@ -564,8 +564,8 @@ Content-Type: application/json`}</code></pre>
                 <svg viewBox="0 0 800 140" className="flow-svg" aria-label="PEAC transaction flow diagram">
                   <defs>
                     <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#635bff" />
-                      <stop offset="100%" stopColor="#00d4aa" />
+                      <stop offset="0%" style={{ stopColor: 'var(--accent-brand)' }} />
+                      <stop offset="100%" style={{ stopColor: 'var(--accent-secondary)' }} />
                     </linearGradient>
                   </defs>
 
@@ -573,39 +573,39 @@ Content-Type: application/json`}</code></pre>
                   <line x1="70" y1="70" x2="730" y2="70" stroke="url(#flowGradient)" strokeWidth="2" strokeDasharray="4 2" />
 
                   {/* Step 1 */}
-                  <circle cx="70" cy="70" r="24" fill="#635bff" />
+                  <circle cx="70" cy="70" r="24" style={{ fill: 'var(--accent-brand)' }} />
                   <text x="70" y="75" textAnchor="middle" fill="white" fontSize="14" fontWeight="600">1</text>
-                  <text x="70" y="110" textAnchor="middle" fill="#525252" fontSize="11">Request</text>
+                  <text x="70" y="110" textAnchor="middle" style={{ fill: 'var(--text-muted)' }} fontSize="11">Request</text>
 
                   {/* Step 2 */}
-                  <circle cx="180" cy="70" r="24" fill="#635bff" />
+                  <circle cx="180" cy="70" r="24" style={{ fill: 'var(--accent-brand)' }} />
                   <text x="180" y="75" textAnchor="middle" fill="white" fontSize="14" fontWeight="600">2</text>
-                  <text x="180" y="110" textAnchor="middle" fill="#525252" fontSize="11">Policy</text>
+                  <text x="180" y="110" textAnchor="middle" style={{ fill: 'var(--text-muted)' }} fontSize="11">Policy</text>
 
                   {/* Step 3 */}
-                  <circle cx="290" cy="70" r="24" fill="#635bff" />
+                  <circle cx="290" cy="70" r="24" style={{ fill: 'var(--accent-brand)' }} />
                   <text x="290" y="75" textAnchor="middle" fill="white" fontSize="14" fontWeight="600">3</text>
-                  <text x="290" y="110" textAnchor="middle" fill="#525252" fontSize="11">Challenge</text>
+                  <text x="290" y="110" textAnchor="middle" style={{ fill: 'var(--text-muted)' }} fontSize="11">Challenge</text>
 
                   {/* Step 4 */}
-                  <circle cx="400" cy="70" r="24" fill="#635bff" />
+                  <circle cx="400" cy="70" r="24" style={{ fill: 'var(--accent-brand)' }} />
                   <text x="400" y="75" textAnchor="middle" fill="white" fontSize="14" fontWeight="600">4</text>
-                  <text x="400" y="110" textAnchor="middle" fill="#525252" fontSize="11">Satisfy</text>
+                  <text x="400" y="110" textAnchor="middle" style={{ fill: 'var(--text-muted)' }} fontSize="11">Satisfy</text>
 
                   {/* Step 5 */}
-                  <circle cx="510" cy="70" r="24" fill="#635bff" />
+                  <circle cx="510" cy="70" r="24" style={{ fill: 'var(--accent-brand)' }} />
                   <text x="510" y="75" textAnchor="middle" fill="white" fontSize="14" fontWeight="600">5</text>
-                  <text x="510" y="110" textAnchor="middle" fill="#525252" fontSize="11">Response</text>
+                  <text x="510" y="110" textAnchor="middle" style={{ fill: 'var(--text-muted)' }} fontSize="11">Response</text>
 
                   {/* Step 6 */}
-                  <circle cx="620" cy="70" r="24" fill="#00d4aa" />
+                  <circle cx="620" cy="70" r="24" style={{ fill: 'var(--accent-secondary)' }} />
                   <text x="620" y="75" textAnchor="middle" fill="white" fontSize="14" fontWeight="600">6</text>
-                  <text x="620" y="110" textAnchor="middle" fill="#525252" fontSize="11">Receipt</text>
+                  <text x="620" y="110" textAnchor="middle" style={{ fill: 'var(--text-muted)' }} fontSize="11">Receipt</text>
 
                   {/* Step 7 - Verify */}
-                  <circle cx="730" cy="70" r="24" fill="#00d4aa" />
+                  <circle cx="730" cy="70" r="24" style={{ fill: 'var(--accent-secondary)' }} />
                   <text x="730" y="75" textAnchor="middle" fill="white" fontSize="14" fontWeight="600">✓</text>
-                  <text x="730" y="110" textAnchor="middle" fill="#525252" fontSize="11">Verify</text>
+                  <text x="730" y="110" textAnchor="middle" style={{ fill: 'var(--text-muted)' }} fontSize="11">Verify</text>
                 </svg>
               </div>
 
@@ -1227,7 +1227,7 @@ Content-Type: application/json`}</code></pre>
 
         /* Code block */
         .code-block {
-          background: #0d0d0d;
+          background: var(--code-bg);
           border-radius: var(--radius-lg);
           overflow: hidden;
           margin-top: var(--space-4);
@@ -1235,8 +1235,8 @@ Content-Type: application/json`}</code></pre>
 
         .code-header {
           padding: var(--space-2) var(--space-4);
-          background: rgba(255, 255, 255, 0.05);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          background: var(--glass-border);
+          border-bottom: 1px solid var(--glass-border-hover);
           font-size: var(--text-xs);
           color: var(--text-muted);
           font-family: var(--font-mono);
@@ -1253,7 +1253,7 @@ Content-Type: application/json`}</code></pre>
           font-family: var(--font-mono);
           font-size: clamp(10px, 2vw, 12px);
           line-height: 1.5;
-          color: #e4e4e7;
+          color: var(--text-primary);
           background: transparent;
           padding: 0;
         }

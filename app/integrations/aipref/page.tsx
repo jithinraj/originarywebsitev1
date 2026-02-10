@@ -245,7 +245,7 @@ User-Agent: MyAgent/1.0`}
               }}>
                 AIPREF by IETF Blog Post →
               </Link>
-              <a href="https://peacprotocol.org/" target="_blank" rel="noopener" style={{
+              <a href="https://www.peacprotocol.org/" target="_blank" rel="noopener" style={{
                 color: 'var(--accent-brand)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-base)',

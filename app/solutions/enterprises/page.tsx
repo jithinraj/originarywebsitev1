@@ -4,13 +4,13 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Enterprises | AI Governance and Compliance',
-  description: 'AI governance and compliance tools for enterprise agentic infrastructure. Policy management, compliance reporting, and security controls.',
-  keywords: 'AI governance, AI compliance, enterprise agentic governance, policy management, compliance reporting, SOC 2, GDPR, security controls, enterprise AI, agent governance',
+  description: 'AI governance and compliance tools for enterprise AI agent infrastructure. Policy management, compliance reporting, and security controls.',
+  keywords: 'AI governance, AI compliance, enterprise AI governance, policy management, compliance reporting, GDPR, security controls, enterprise AI, agent governance',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'Enterprises | AI Governance and AI Compliance',
-    description: 'AI governance and compliance tools for enterprise agentic infrastructure. Policy management, compliance reporting, and security controls.',
+    description: 'AI governance and compliance tools for enterprise AI agent infrastructure. Policy management, compliance reporting, and security controls.',
     url: '/solutions/enterprises',
     images: ['/og'],
     siteName: 'Originary',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Enterprises | AI Governance and AI Compliance',
-    description: 'AI governance and compliance tools for enterprise agentic infrastructure. Policy management, compliance reporting, and security controls.',
+    description: 'AI governance and compliance tools for enterprise AI agent infrastructure. Policy management, compliance reporting, and security controls.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -54,7 +54,7 @@ export default function Enterprises() {
                 <span className="text-gradient">AI Governance and AI Compliance for Enterprises</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
-                AI governance and AI compliance tools for enterprise agentic infrastructure. Comprehensive policy management, AI compliance reporting, and security controls built for SOC 2, GDPR, and multi-region deployment.
+                AI governance and compliance tools for enterprise AI agent infrastructure. Policy management, compliance reporting, and security controls to support GDPR and multi-region deployment requirements.
               </p>
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function Enterprises() {
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <h2 style={{ marginBottom: 'var(--space-6)' }}>Enterprise Requirements</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
-                Meet the most stringent enterprise security, compliance, and governance requirements for agentic infrastructure.
+                Meet the most stringent enterprise security, compliance, and governance requirements for AI agent infrastructure.
               </p>
             </div>
 
@@ -76,7 +76,7 @@ export default function Enterprises() {
                     width: '48px',
                     height: '48px',
                     borderRadius: 'var(--radius-lg)',
-                    background: 'var(--gradient-brand)',
+                    background: 'var(--accent-brand)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -89,7 +89,7 @@ export default function Enterprises() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <span style={{ color: 'var(--accent-brand)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>SOC 2 Type II compliance support</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Audit trail generation for compliance workflows</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <span style={{ color: 'var(--accent-brand)' }}>✓</span>
@@ -112,7 +112,7 @@ export default function Enterprises() {
                     width: '48px',
                     height: '48px',
                     borderRadius: 'var(--radius-lg)',
-                    background: 'var(--gradient-brand)',
+                    background: 'var(--accent-brand)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -148,7 +148,7 @@ export default function Enterprises() {
                     width: '48px',
                     height: '48px',
                     borderRadius: 'var(--radius-lg)',
-                    background: 'var(--gradient-brand)',
+                    background: 'var(--accent-brand)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -268,10 +268,10 @@ export default function Enterprises() {
                 <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--accent-brand)' }}>
                   Contact Enterprise Sales
                 </a>
-                <a href="/receipts" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                <a href="/receipts" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid var(--border-hover)' }}>
                   Audit trails and receipts
                 </a>
-                <a href="/peac" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                <a href="/peac" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid var(--border-hover)' }}>
                   PEAC policy layer
                 </a>
               </div>

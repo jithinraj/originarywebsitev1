@@ -116,7 +116,7 @@ const enterpriseFeatures = [
   {
     icon: Users,
     title: 'Dedicated Support',
-    description: 'White-glove support from protocol engineers, solution architects, and customer success managers.',
+    description: 'Dedicated support from protocol engineers with priority response and integration guidance.',
     metrics: ['Priority Response', '24/7 Availability']
   },
   {
@@ -171,7 +171,7 @@ const faqItems = [
   },
   {
     question: 'What payment methods do you accept?',
-    answer: 'We accept all major credit cards and digital wallets via Stripe. Enterprise customers can also use wire transfers and purchase orders. Annual plans receive a 20% discount.'
+    answer: 'We accept all major credit cards and digital wallets via Stripe. Enterprise deployments can also use wire transfers and purchase orders. Annual plans receive a 20% discount.'
   },
   {
     question: 'Is there a setup fee or long-term contract?',
@@ -191,7 +191,7 @@ const faqItems = [
   },
   {
     question: 'How do volume discounts work?',
-    answer: 'Enterprise customers receive custom pricing based on volume commitments. Contact our sales team for a personalized quote.'
+    answer: 'Enterprise deployments receive custom pricing based on volume commitments. Contact us for a personalized quote.'
   },
   {
     question: 'What about compliance and security?',
@@ -244,22 +244,16 @@ export default function PricingPage() {
 
             <div className="hero-metrics grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="metric text-center">
-                <span className="metric-value text-4xl font-bold text-gray-900">
-                  <AnimatedCounter value={50} suffix="M+" />
-                </span>
-                <span className="metric-label block text-gray-600 mt-2">Customer transactions processed</span>
+                <span className="metric-value text-4xl font-bold text-gray-900">20</span>
+                <span className="metric-label block text-gray-600 mt-2">npm packages</span>
               </div>
               <div className="metric text-center">
-                <span className="metric-value text-4xl font-bold text-gray-900">
-                  <AnimatedCounter value={500} suffix="+" />
-                </span>
-                <span className="metric-label block text-gray-600 mt-2">Enterprise customers</span>
+                <span className="metric-value text-4xl font-bold text-gray-900">3,500+</span>
+                <span className="metric-label block text-gray-600 mt-2">Tests passing</span>
               </div>
               <div className="metric text-center">
-                <span className="metric-value text-4xl font-bold text-gray-900">
-                  <AnimatedCounter value={99.9} suffix="%" />
-                </span>
-                <span className="metric-label block text-gray-600 mt-2">Customer satisfaction</span>
+                <span className="metric-value text-4xl font-bold text-gray-900">Apache-2.0</span>
+                <span className="metric-label block text-gray-600 mt-2">Open source license</span>
               </div>
             </div>
 
@@ -312,7 +306,7 @@ export default function PricingPage() {
         <div className="container">
           <FadeIn className="pricing-header text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Plans that scale with your growth</h2>
-            <p className="text-xl text-gray-600 mb-8">From startup to enterprise, we have the right plan for your agentic infrastructure needs</p>
+            <p className="text-xl text-gray-600 mb-8">From startup to enterprise, we have the right plan for your AI agent infrastructure</p>
             <div className="pricing-banner">
               <p>
                 <strong>🚀 Simple Getting Started:</strong> Start with OSS or try Cloud free for 14 days.
@@ -465,34 +459,34 @@ export default function PricingPage() {
             }}>
               {/* Originary vs DIY */}
               <HoverCard className="comparison-card">
-                <div style={{ padding: '32px', background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px' }}>
+                <div style={{ padding: '32px', background: 'var(--surface-elevated)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '16px', color: '#111' }}>
                   Originary vs. DIY Solution
                 </h3>
-                <div style={{ marginBottom: '16px', color: '#635BFF', fontWeight: 500 }}>
+                <div style={{ marginBottom: '16px', color: 'var(--accent-brand)', fontWeight: 500 }}>
                   Save 6-12 months of development
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Pre-built policy engine with PEAC protocol
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Native HTTP 402 payment rails (x402, Stripe)
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Cryptographic receipt generation & verification
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Edge-ready with Cloudflare/Vercel integration
                     </span>
@@ -503,34 +497,34 @@ export default function PricingPage() {
 
               {/* Originary vs API Gateways */}
               <HoverCard className="comparison-card">
-                <div style={{ padding: '32px', background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px' }}>
+                <div style={{ padding: '32px', background: 'var(--surface-elevated)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '16px', color: '#111' }}>
                   Originary vs. API Gateways
                 </h3>
-                <div style={{ marginBottom: '16px', color: '#635BFF', fontWeight: 500 }}>
+                <div style={{ marginBottom: '16px', color: 'var(--accent-brand)', fontWeight: 500 }}>
                   Adds verifiable proof layer
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Works with Kong, Tyk, Apigee, AWS API Gateway
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Portable receipts that verify outside platform
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Policy discovery via .well-known/peac.txt
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Payment settlement proof in receipt
                     </span>
@@ -541,34 +535,34 @@ export default function PricingPage() {
 
               {/* Originary vs Payment Processors */}
               <HoverCard className="comparison-card">
-                <div style={{ padding: '32px', background: 'white', border: '1px solid #e5e7eb', borderRadius: '12px' }}>
+                <div style={{ padding: '32px', background: 'var(--surface-elevated)', border: '1px solid var(--border-default)', borderRadius: '12px' }}>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '16px', color: '#111' }}>
                   Originary vs. Payment-Only
                 </h3>
-                <div style={{ marginBottom: '16px', color: '#635BFF', fontWeight: 500 }}>
+                <div style={{ marginBottom: '16px', color: 'var(--accent-brand)', fontWeight: 500 }}>
                   More than just billing
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Complements Stripe and x402 payments
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Adds policy enforcement before payment
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Cryptographic proof of transaction
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start' }}>
-                    <Check size={16} style={{ color: '#10B981', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
+                    <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
                       Compliance audit trail built-in
                     </span>
@@ -633,22 +627,20 @@ export default function PricingPage() {
           <ScaleIn className="enterprise-cta" delay={0.2}>
             <div className="cta-content">
               <div className="cta-main">
-                <h2>Ready to scale your agentic infrastructure?</h2>
+                <h2>Ready to scale your agent infrastructure?</h2>
                 <p>Get enterprise-grade infrastructure with dedicated performance monitoring, security, and support.</p>
                 <div className="cta-stats">
                   <div className="stat">
-                    <span className="stat-value">
-                      <AnimatedCounter value={10} suffix="B+" />
-                    </span>
-                    <span className="stat-label">Monthly transactions</span>
+                    <span className="stat-value">20</span>
+                    <span className="stat-label">Published packages</span>
                   </div>
                   <div className="stat">
-                    <span className="stat-value">99.99%</span>
-                    <span className="stat-label">Enterprise uptime</span>
+                    <span className="stat-value">v0.10.9</span>
+                    <span className="stat-label">Latest release</span>
                   </div>
                   <div className="stat">
-                    <span className="stat-value">&lt; 1hr</span>
-                    <span className="stat-label">Support response</span>
+                    <span className="stat-value">Apache-2.0</span>
+                    <span className="stat-label">Open source</span>
                   </div>
                 </div>
               </div>

@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Solutions',
   description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
-  keywords: 'agentic web, orchestration protocol, AI coordination, PEAC protocol',
+  keywords: 'AI agents, orchestration protocol, AI coordination, PEAC protocol',
   robots: 'index,follow',
   openGraph: {
     title: 'Solutions',
@@ -186,20 +186,20 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        {/* Success Stories */}
+        {/* Use Cases */}
         <section className="section">
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Who's using this</h2>
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>Use cases</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
-                Production deployments across publishers, API providers, and agent builders.
+                PEAC receipts apply across publishers, API providers, and agent builders.
               </p>
             </div>
 
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
               <div className="card">
                 <div style={{ marginBottom: 'var(--space-4)' }}>
-                  <h3 style={{ marginBottom: 'var(--space-2)' }}>NewsGlobal Media</h3>
+                  <h3 style={{ marginBottom: 'var(--space-2)' }}>Publishers</h3>
                   <span style={{
                     fontSize: 'var(--text-sm)',
                     color: 'var(--accent-brand)',
@@ -208,21 +208,17 @@ export default function SolutionsPage() {
                     borderRadius: 'var(--radius-full)',
                     fontWeight: 600
                   }}>
-                    Publisher Solution
+                    Content Access
                   </span>
                 </div>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', fontStyle: 'italic' }}>
-                  &ldquo;Implementing PEAC helped us establish clear policies for agent access to our content while maintaining control over attribution and usage.&rdquo;
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
+                  Publish peac.txt to declare access, attribution, and pricing policies. Receive signed receipts when agents access content, creating verifiable evidence of compliance.
                 </p>
-                <div>
-                  <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>Sarah Chen</div>
-                  <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>Chief Technology Officer</div>
-                </div>
               </div>
 
               <div className="card">
                 <div style={{ marginBottom: 'var(--space-4)' }}>
-                  <h3 style={{ marginBottom: 'var(--space-2)' }}>DataFlow API</h3>
+                  <h3 style={{ marginBottom: 'var(--space-2)' }}>API Providers</h3>
                   <span style={{
                     fontSize: 'var(--text-sm)',
                     color: 'var(--accent-brand)',
@@ -231,21 +227,17 @@ export default function SolutionsPage() {
                     borderRadius: 'var(--radius-full)',
                     fontWeight: 600
                   }}>
-                    API Provider Solution
+                    Payment Settlement
                   </span>
                 </div>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', fontStyle: 'italic' }}>
-                  &ldquo;Gateway 402 enabled us to implement payment-required flows for our API endpoints. The integration was straightforward and well-documented.&rdquo;
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
+                  Use Gateway 402 and x402 to implement payment-required API endpoints. Receipts record each transaction for billing reconciliation and dispute resolution.
                 </p>
-                <div>
-                  <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>Marcus Rodriguez</div>
-                  <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>Head of Product</div>
-                </div>
               </div>
 
               <div className="card">
                 <div style={{ marginBottom: 'var(--space-4)' }}>
-                  <h3 style={{ marginBottom: 'var(--space-2)' }}>AutoAgent Systems</h3>
+                  <h3 style={{ marginBottom: 'var(--space-2)' }}>Agent Builders</h3>
                   <span style={{
                     fontSize: 'var(--text-sm)',
                     color: 'var(--accent-brand)',
@@ -254,16 +246,12 @@ export default function SolutionsPage() {
                     borderRadius: 'var(--radius-full)',
                     fontWeight: 600
                   }}>
-                    AI Builder Solution
+                    Audit Trails
                   </span>
                 </div>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', fontStyle: 'italic' }}>
-                  &ldquo;PEAC integration provided the policy framework we needed for enterprise deployments. The receipt system gives us clear audit trails for compliance.&rdquo;
+                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
+                  Collect receipts as agents interact with APIs and content. Build verifiable audit trails for compliance reporting and cost tracking across multi-agent workflows.
                 </p>
-                <div>
-                  <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>Dr. Emily Watson</div>
-                  <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>VP of Engineering</div>
-                </div>
               </div>
             </div>
           </div>
@@ -281,7 +269,7 @@ export default function SolutionsPage() {
                 <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--accent-brand)' }}>
                   Talk to Sales
                 </a>
-                <a href="/developers" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                <a href="/developers" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid var(--border-hover)' }}>
                   Developer Docs
                 </a>
               </div>

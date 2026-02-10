@@ -254,7 +254,7 @@ export default function HowItWorksSection() {
                 style={{
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600,
-                  color: 'rgba(255, 255, 255, 0.6)',
+                  color: 'var(--text-tertiary)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
                   whiteSpace: 'nowrap'
@@ -284,19 +284,19 @@ export default function HowItWorksSection() {
                         alignItems: 'center',
                         gap: 'var(--space-2)',
                         padding: 'var(--space-2) var(--space-3)',
-                        background: 'rgba(255, 255, 255, 0.08)',
+                        background: 'var(--border-default)',
                         borderRadius: 'var(--radius-full)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        border: '1px solid var(--glass-border-hover)',
                         cursor: 'help',
                         transition: 'all 0.2s ease'
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)'
+                        e.currentTarget.style.background = 'var(--border-hover)'
                         e.currentTarget.style.borderColor = 'var(--accent-brand-glow)'
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)'
-                        e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)'
+                        e.currentTarget.style.background = 'var(--border-default)'
+                        e.currentTarget.style.borderColor = 'var(--glass-border-hover)'
                       }}
                     >
                       <Icon size={16} style={{ color: 'var(--accent-brand)' }} />
@@ -304,7 +304,7 @@ export default function HowItWorksSection() {
                         style={{
                           fontSize: 'var(--text-sm)',
                           fontWeight: 500,
-                          color: 'rgba(255, 255, 255, 0.9)'
+                          color: 'var(--text-primary)'
                         }}
                       >
                         {pillar.name}
