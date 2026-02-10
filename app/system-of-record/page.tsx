@@ -463,7 +463,7 @@ export default function SystemOfRecordPage() {
               </ol>
 
               <p>
-                That is the heart of the <strong>PEAC Protocol (Programmable Environment for Agent Coordination)</strong>, stewarded by Originary.
+                That is the heart of the <strong>PEAC Protocol (Programmable Environment for Agent Coordination)</strong>—an open standard.
               </p>
 
               <div className="two-col">

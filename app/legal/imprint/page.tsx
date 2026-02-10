@@ -108,7 +108,7 @@ export default function ImprintPage() {
                 <strong>Originary™</strong> is a brand and trademark of Poem, Inc.
               </p>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                <strong>PEAC Protocol</strong> is an open-source standard stewarded by Originary.
+                <strong>PEAC Protocol</strong> is an open standard. Stewardship: Originary + community.
               </p>
             </div>
 
