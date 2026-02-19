@@ -122,7 +122,7 @@ export async function GET(request: Request) {
         <div className="my-10 p-6 bg-gray-50 rounded-lg border">
           <h3 className="text-xl font-semibold mb-3">Next steps</h3>
           <p className="text-gray-700 mb-4">
-            Deploy to Vercel Edge or Node runtime and integrate with your payment rail. See the <Link href="/integrations/x402/" className="text-blue-600 hover:underline">x402 pillar guide</Link> for receipt patterns.
+            Deploy to Vercel Edge or Node runtime and integrate with your payment rail. See the <Link href="/integrations/x402/" className="text-blue-600 hover:underline">x402 integration guide</Link> for receipt patterns.
           </p>
           <Link href="/developers/" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
             Developer Tools

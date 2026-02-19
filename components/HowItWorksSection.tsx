@@ -34,7 +34,7 @@ const steps = [
   }
 ]
 
-const pillars = [
+const scopeDomains = [
   { icon: Eye, name: 'Access', desc: 'Who can read or call what' },
   { icon: FileCheck, name: 'Attribution', desc: 'Who created the content' },
   { icon: CreditCard, name: 'Commerce', desc: 'How usage is settled' },
@@ -219,7 +219,7 @@ export default function HowItWorksSection() {
           </Link>
         </div>
 
-        {/* Ten Pillars of PEAC */}
+        {/* PEAC Protocol Scope */}
         <div
           className="animate-on-scroll"
           style={{
@@ -263,11 +263,11 @@ export default function HowItWorksSection() {
                   whiteSpace: 'nowrap'
                 }}
               >
-                Ten pillars of PEAC
+                PEAC protocol scope
               </span>
 
               <div
-                className="pillars-row"
+                className="scope-row"
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -276,12 +276,12 @@ export default function HowItWorksSection() {
                   justifyContent: 'center'
                 }}
               >
-                {pillars.map((pillar) => {
-                  const Icon = pillar.icon
+                {scopeDomains.map((domain) => {
+                  const Icon = domain.icon
                   return (
                     <div
-                      key={pillar.name}
-                      title={pillar.desc}
+                      key={domain.name}
+                      title={domain.desc}
                       style={{
                         display: 'flex',
                         alignItems: 'center',
@@ -310,7 +310,7 @@ export default function HowItWorksSection() {
                           color: 'var(--text-primary)'
                         }}
                       >
-                        {pillar.name}
+                        {domain.name}
                       </span>
                     </div>
                   )

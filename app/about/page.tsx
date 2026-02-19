@@ -34,7 +34,7 @@ export default function AboutPage() {
     setIsVisible(true)
   }, [])
 
-  const pillars = [
+  const domains = [
     { name: 'Access', desc: 'Who can read or call what.', icon: <Shield size={18} /> },
     { name: 'Attribution', desc: 'How creators and sources are credited.', icon: <Users size={18} /> },
     { name: 'Commerce', desc: 'Optional settlement terms and evidence.', icon: <CreditCard size={18} /> },
@@ -269,12 +269,12 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Ten Pillars Section - Compact Grid */}
+        {/* Protocol Scope Section - Compact Grid */}
         <section style={{ background: 'var(--surface-subtle)', padding: 'var(--space-10) 0' }}>
           <div className="container" style={{ maxWidth: '900px' }}>
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
               <h2 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
-                The Ten Pillars
+                Protocol Scope
               </h2>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
                 Everything we design is tied together through <strong>decision context</strong>: receipts bind outcomes to the access terms, consent, attribution, safety, identity, and other constraints that were active at decision time.
@@ -282,10 +282,10 @@ export default function AboutPage() {
             </div>
 
             {/* CSS Grid: 4 columns on desktop (4+3 layout), 2 on tablet, 1 on mobile */}
-            <div className="pillars-grid">
-              {pillars.map((pillar) => (
+            <div className="scope-grid">
+              {domains.map((domain) => (
                 <div
-                  key={pillar.name}
+                  key={domain.name}
                   style={{
                     background: 'var(--surface-elevated)',
                     borderRadius: 'var(--radius-lg)',
@@ -295,30 +295,30 @@ export default function AboutPage() {
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: '4px' }}>
-                    <span style={{ color: 'var(--accent-brand)' }}>{pillar.icon}</span>
+                    <span style={{ color: 'var(--accent-brand)' }}>{domain.icon}</span>
                     <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)', margin: 0 }}>
-                      {pillar.name}
+                      {domain.name}
                     </h3>
                   </div>
                   <p style={{ fontSize: '12px', color: 'var(--text-tertiary)', lineHeight: 1.5, margin: 0 }}>
-                    {pillar.desc}
+                    {domain.desc}
                   </p>
                 </div>
               ))}
             </div>
             <style jsx>{`
-              .pillars-grid {
+              .scope-grid {
                 display: grid;
                 gap: 12px;
                 grid-template-columns: 1fr;
               }
               @media (min-width: 640px) {
-                .pillars-grid {
+                .scope-grid {
                   grid-template-columns: repeat(2, 1fr);
                 }
               }
               @media (min-width: 1024px) {
-                .pillars-grid {
+                .scope-grid {
                   grid-template-columns: repeat(5, 1fr);
                 }
               }

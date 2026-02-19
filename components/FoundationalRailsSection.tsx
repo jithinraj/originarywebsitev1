@@ -3,7 +3,7 @@
 import { Shield, Fingerprint, CheckCircle, CreditCard, FileCheck, Lock, FileSignature, ShieldCheck, Target, Users } from 'lucide-react'
 
 export default function FoundationalRailsSection() {
-  const pillars = [
+  const domains = [
     { icon: Shield, label: 'Access', description: 'Policy-aware gating for AI agents' },
     { icon: Users, label: 'Attribution', description: 'Enforceable creator credits' },
     { icon: CreditCard, label: 'Commerce', description: 'HTTP 402 settlement' },
@@ -38,7 +38,7 @@ export default function FoundationalRailsSection() {
               maxWidth: '700px',
               margin: '0 auto'
             }}>
-              PEAC-compatible primitives that unify the core pillars of agent infrastructure
+              PEAC-compatible primitives that unify the core domains of agent infrastructure
             </p>
           </div>
 
@@ -48,13 +48,13 @@ export default function FoundationalRailsSection() {
             gap: 'var(--space-6)',
             marginBottom: 'var(--space-8)'
           }}
-          className="pillars-grid">
-            {pillars.map((pillar) => {
-              const Icon = pillar.icon
+          className="scope-grid">
+            {domains.map((domain) => {
+              const Icon = domain.icon
               return (
                 <div
-                  key={pillar.label}
-                  className="card pillar-card"
+                  key={domain.label}
+                  className="card scope-card"
                   style={{
                     padding: 'var(--space-6)',
                     background: 'var(--surface-elevated)',
@@ -105,14 +105,14 @@ export default function FoundationalRailsSection() {
                     marginBottom: 'var(--space-2)',
                     color: 'var(--text-primary)'
                   }}>
-                    {pillar.label}
+                    {domain.label}
                   </h3>
                   <p style={{
                     fontSize: 'var(--text-sm)',
                     color: 'var(--text-secondary)',
                     lineHeight: 1.6
                   }}>
-                    {pillar.description}
+                    {domain.description}
                   </p>
                 </div>
               )
@@ -122,24 +122,24 @@ export default function FoundationalRailsSection() {
       </div>
 
       <style jsx>{`
-        .pillars-grid {
+        .scope-grid {
           grid-template-columns: repeat(1, 1fr) !important;
         }
 
         @media (min-width: 640px) {
-          .pillars-grid {
+          .scope-grid {
             grid-template-columns: repeat(2, 1fr) !important;
           }
         }
 
         @media (min-width: 768px) {
-          .pillars-grid {
+          .scope-grid {
             grid-template-columns: repeat(3, 1fr) !important;
           }
         }
 
         @media (min-width: 1024px) {
-          .pillars-grid {
+          .scope-grid {
             grid-template-columns: repeat(4, 1fr) !important;
           }
         }

@@ -151,7 +151,7 @@ export function GatewayIllustration({ className, size = 80 }: IllustrationProps)
         fill="none"
       />
 
-      {/* Pillars */}
+      {/* Scope domains */}
       <rect x="12" y="55" width="8" height="20" rx="2" fill="#00d4aa" />
       <rect x="60" y="55" width="8" height="20" rx="2" fill="#00d4aa" />
 
