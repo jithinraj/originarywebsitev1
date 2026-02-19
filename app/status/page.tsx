@@ -69,8 +69,8 @@ export default function StatusPage() {
           }}>
             {[
               { label: 'Wire format', value: 'peac-receipt/0.1 (frozen)' },
-              { label: 'Latest release', value: 'v0.10.9' },
-              { label: 'Published packages', value: '20 on npm' },
+              { label: 'Latest release', value: 'v0.10.13' },
+              { label: 'Published packages', value: '22 on npm' },
               { label: 'License', value: 'Apache-2.0' },
               { label: 'Release cadence', value: '~weekly during v0.10.x' },
             ].map((item) => (
@@ -134,7 +134,7 @@ export default function StatusPage() {
             <Package size={20} style={{ color: 'var(--accent-secondary)' }} />
             <div>
               <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>npm Packages</div>
-              <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>20 packages at @peac/*</div>
+              <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>22 packages at @peac/*</div>
             </div>
             <ExternalLink size={14} style={{ marginLeft: 'auto', color: 'var(--text-tertiary)' }} />
           </a>

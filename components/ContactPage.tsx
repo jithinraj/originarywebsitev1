@@ -218,7 +218,7 @@ export default function ContactPage() {
                   <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
                   <h4 className="text-lg font-semibold mb-2">Open Source Support</h4>
                   <p className="text-gray-600 text-sm">
-                    PEAC is Apache-2.0 with 20 npm packages.
+                    PEAC is Apache-2.0 with 22 npm packages.
                     File issues on GitHub or reach out for integration guidance.
                   </p>
                 </div>

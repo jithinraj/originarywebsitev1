@@ -2,7 +2,7 @@
 
 > Originary provides verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.
 
-Last updated: 2026-02-09
+Last updated: 2026-02-19
 
 Company: Poem, Inc.
 Location: Delaware, USA
@@ -40,6 +40,9 @@ Receipt verification API. Validate PEAC-Receipt signatures server-side for billi
 ### Studio (/products/studio)
 Policy management and receipt observability dashboard. Coming soon.
 
+### MCP Server (/integrations/mcp)
+MCP tool server (@peac/mcp-server) with 5 tools: verify-receipt, inspect-receipt, decode-receipt, issue-receipt, create-bundle. Capability-based access control with structured outputs.
+
 ### Adapters (/products/adapters)
 Pre-built integrations for common platforms and frameworks.
 
@@ -73,7 +76,7 @@ Pre-built integrations for common platforms and frameworks.
 ## Open Source
 
 ### PEAC Protocol (/peac)
-Open standard for AI agent interactions (Apache-2.0). Current version: 0.10.9
+Open standard for AI agent interactions (Apache-2.0). Current version: 0.10.13
 - Policy discovery via /.well-known/peac.txt
 - AI preferences via AIPREF (/.well-known/aipref.json)
 - Payment challenges via HTTP 402
@@ -86,7 +89,7 @@ Open standard for AI agent interactions (Apache-2.0). Current version: 0.10.9
 
 - [Developers](/developers) - Technical documentation and CLI quickstart
 - [Downloads](/downloads) - CLI tools and packages
-- [Demo](/demo) - Interactive PEAC v0.10.9 protocol trace demonstration
+- [Demo](/demo) - Interactive PEAC v0.10.13 protocol trace demonstration
 - [Pricing](/pricing) - Pricing and plans
 - [Search](/search) - Site search
 

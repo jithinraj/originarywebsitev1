@@ -5,7 +5,7 @@
     "kid": "originary-2025-01"
   },
   "payload": {
-    "iss": "https://originary.xyz",
+    "iss": "https://www.originary.xyz",
     "sub": "/docs",
     "iat": 1734048000,
     "jti": "rcpt_example_001",

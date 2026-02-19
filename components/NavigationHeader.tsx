@@ -111,7 +111,7 @@ export default function NavigationHeader() {
                 { href: '/products/verify', label: 'Verify API', badge: 'Available' },
                 { href: '/products/studio', label: 'Studio', badge: 'Soon' },
                 { href: 'separator', label: '' },
-                { href: 'https://www.npmjs.com/org/peac', label: 'All 20 packages on npm', external: true },
+                { href: 'https://www.npmjs.com/org/peac', label: 'All 22 packages on npm', external: true },
               ]} />
               <NavLink href="/developers">Docs</NavLink>
               <NavLink href="/blog">Blog</NavLink>
@@ -189,7 +189,7 @@ export default function NavigationHeader() {
                 { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Available' },
                 { href: '/products/verify', label: 'Verify API', badge: 'Available' },
                 { href: '/products/studio', label: 'Studio', badge: 'Soon' },
-                { href: 'https://www.npmjs.com/org/peac', label: 'All 20 packages on npm', external: true },
+                { href: 'https://www.npmjs.com/org/peac', label: 'All 22 packages on npm', external: true },
               ]} />
               <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
                 Docs

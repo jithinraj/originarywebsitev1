@@ -232,7 +232,7 @@ export default function VerifyAPI() {
                   margin: '0 auto var(--space-8) auto',
                   lineHeight: 1.6
                 }}>
-                  Start verifying PEAC receipts with the open-source reference implementation. Self-hostable, offline-capable, and backed by 20 npm packages.
+                  Start verifying PEAC receipts with the open-source reference implementation. Self-hostable, offline-capable, and backed by 22 npm packages.
                 </p>
                 <div style={{
                   display: 'flex',

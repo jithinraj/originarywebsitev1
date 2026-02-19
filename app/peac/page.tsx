@@ -262,18 +262,21 @@ export default function PeacPage() {
                 margin: '0 auto var(--space-16) auto'
               }}
             >
-              Seven pillars of infrastructure for the agentic web
+              Ten pillars of infrastructure for the agentic web
             </p>
 
             <div className="grid grid-3" style={{ gap: 'var(--space-6)' }}>
               {[
                 { name: 'Access', desc: 'Declare who can use your resources and under what conditions' },
                 { name: 'Attribution', desc: 'Every request carries verifiable identity and intent' },
-                { name: 'Consent', desc: 'Explicit, machine-readable consent before access' },
                 { name: 'Commerce', desc: 'Native payment semantics via HTTP 402 and pricing headers' },
+                { name: 'Consent', desc: 'Explicit, machine-readable consent before access' },
                 { name: 'Compliance', desc: 'Audit trails and receipts for regulatory requirements' },
                 { name: 'Privacy', desc: 'Minimal disclosure and selective transparency' },
                 { name: 'Provenance', desc: 'Cryptographic proof of what happened and when' },
+                { name: 'Safety', desc: 'Defense-in-depth security and safe-by-default configuration' },
+                { name: 'Identity', desc: 'Cryptographic proof-of-control for agents and operators' },
+                { name: 'Purpose', desc: 'Declared intent of each interaction and purpose-driven access' },
               ].map((pillar) => (
                 <div key={pillar.name} className="card">
                   <CheckCircle size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
