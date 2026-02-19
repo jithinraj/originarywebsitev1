@@ -61,7 +61,7 @@ export default function Adapters() {
                   borderRadius: 'var(--radius-sm)',
                   fontSize: 'var(--text-xs)',
                   fontWeight: 600
-                }}>7 STANDARDS</div>
+                }}>8 STANDARDS</div>
               </div>
 
               <h1 style={{
@@ -147,7 +147,7 @@ export default function Adapters() {
                     fontWeight: 700,
                     color: 'var(--accent-secondary)',
                     marginBottom: 'var(--space-2)'
-                  }}>7</div>
+                  }}>8</div>
                   <div style={{
                     fontSize: 'var(--text-sm)',
                     color: 'var(--text-secondary)'
@@ -316,18 +316,18 @@ export default function Adapters() {
                   gap: 'var(--space-3)',
                   marginBottom: 'var(--space-4)'
                 }}>
-                  <h3>MCP/A2A Adapter</h3>
+                  <h3>MCP Server</h3>
                   <span style={{
-                    background: 'var(--warning)',
+                    background: 'var(--success)',
                     color: 'var(--white)',
                     padding: 'var(--space-1) var(--space-2)',
                     borderRadius: 'var(--radius-sm)',
                     fontSize: 'var(--text-xs)',
                     fontWeight: 600
-                  }}>BETA</span>
+                  }}>READY</span>
                 </div>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Model Context Protocol and Agent-to-Agent communication framework for standardized inter-agent messaging, capability discovery, and resource sharing.
+                  Open-source MCP tool server (@peac/mcp-server) with 5 tools: verify, inspect, decode, issue, and bundle. Capability-based access control with structured outputs.
                 </p>
                 <div style={{
                   display: 'grid',
@@ -336,17 +336,17 @@ export default function Adapters() {
                   marginBottom: 'var(--space-4)'
                 }}>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-accent)' }}>MCP/A2A</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Protocols</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-accent)' }}>5 Tools</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Available</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-accent)' }}>&lt; 20ms</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Latency</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--brand-accent)' }}>Offline</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Pure tools</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Protocol translation</span>
-                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Capability discovery</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>@peac/mcp-server</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Capability-based ACL</span>
                 </div>
               </div>
 
@@ -453,6 +453,59 @@ export default function Adapters() {
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
                   <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Content verification</span>
                   <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Provenance tracking</span>
+                </div>
+              </div>
+
+              <div className="card">
+                <div style={{
+                  width: '56px',
+                  height: '56px',
+                  borderRadius: 'var(--radius-xl)',
+                  background: 'var(--accent-brand-subtle)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: 'var(--space-6)'
+                }}>
+                  <Zap size={28} style={{ color: 'var(--accent-brand)' }} />
+                </div>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 'var(--space-3)',
+                  marginBottom: 'var(--space-4)'
+                }}>
+                  <h3>OpenClaw (Cloudflare)</h3>
+                  <span style={{
+                    background: 'var(--success)',
+                    color: 'var(--white)',
+                    padding: 'var(--space-1) var(--space-2)',
+                    borderRadius: 'var(--radius-sm)',
+                    fontSize: 'var(--text-xs)',
+                    fontWeight: 600
+                  }}>READY</span>
+                </div>
+                <p style={{ marginBottom: 'var(--space-4)' }}>
+                  One-call activate() setup for Cloudflare Workers with @peac/rails-openclaw. Includes generateSigningKey() and peac-keygen CLI for key management.
+                </p>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  gap: 'var(--space-4)',
+                  marginBottom: 'var(--space-4)'
+                }}>
+                  <div style={{ textAlign: 'center' }}>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-brand)' }}>1-call</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Setup</div>
+                  </div>
+                  <div style={{ textAlign: 'center' }}>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-brand)' }}>Edge</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Runtime</div>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Cloudflare Workers</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Key generation</span>
                 </div>
               </div>
 

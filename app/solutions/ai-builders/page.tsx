@@ -401,12 +401,12 @@ export default function AIBuilders() {
               </div>
 
               <div className="card">
-                <h3 style={{ marginBottom: 'var(--space-4)' }}>MCP/A2A Compatibility</h3>
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>MCP Server + A2A</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
-                  Native support for Model Context Protocol and Agent-to-Agent communication standards.
+                  Open-source MCP tool server (@peac/mcp-server) with 5 tools for receipt verification, inspection, issuance, and bundling. Works with Claude Desktop, Cursor, and custom agents.
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
-                  <span style={{ backgroundColor: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>MCP</span>
+                  <span style={{ backgroundColor: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>@peac/mcp-server</span>
                   <span style={{ backgroundColor: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>A2A</span>
                 </div>
               </div>

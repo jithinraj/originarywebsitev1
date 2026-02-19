@@ -80,6 +80,80 @@ export default function ChangelogPage() {
                 </a>
               </div>
             </div>
+
+            <div
+              style={{
+                marginTop: 'var(--space-12)',
+                textAlign: 'left',
+                maxWidth: '760px',
+                margin: 'var(--space-12) auto 0 auto',
+              }}
+            >
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-8)', color: 'var(--text-primary)' }}>
+                Recent Highlights
+              </h2>
+
+              {[
+                {
+                  version: 'v0.10.13',
+                  date: 'Feb 19, 2026',
+                  items: [
+                    '@peac/mcp-server -- open-source MCP tool server with 5 tools (verify, inspect, decode, issue, bundle)',
+                    'Capability-based access control with structured outputs',
+                    'Unicode scanner CLI regression tests, audit allowlist hardening, path-safety portable hardening',
+                  ],
+                },
+                {
+                  version: 'v0.10.12',
+                  date: 'Feb 16, 2026',
+                  items: [
+                    '@peac/capture-node -- FileSpoolStore and FileDedupeIndex for durable Node.js capture',
+                    'OpenClaw adapter -- one-call activate() for Cloudflare Workers with generateSigningKey() and peac-keygen CLI',
+                    'RFC 9421 proof capture profile with 5 conformance vectors',
+                  ],
+                },
+                {
+                  version: 'v0.10.11',
+                  date: 'Feb 13, 2026',
+                  items: [
+                    '@peac/rails-stripe -- fromCryptoPaymentIntent() for x402 crypto payments',
+                    'Registry v0.3.0 with interaction extension and toolcall advisory registries',
+                    '@noble/ed25519 v3 upgrade (signAsync/verifyAsync API)',
+                    'Supply chain hardening: SECURITY.md, audit gate, lockfile drift detection',
+                  ],
+                },
+                {
+                  version: 'v0.10.10',
+                  date: 'Feb 11, 2026',
+                  items: [
+                    'Dev toolchain improvements',
+                    'Build system optimization',
+                  ],
+                },
+              ].map((release) => (
+                <div
+                  key={release.version}
+                  style={{
+                    marginBottom: 'var(--space-8)',
+                    padding: 'var(--space-6)',
+                    background: 'var(--surface-elevated)',
+                    border: '1px solid var(--border-default)',
+                    borderRadius: 'var(--radius-lg)',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
+                    <Tag size={16} style={{ color: 'var(--accent-brand)' }} />
+                    <span style={{ fontSize: 'var(--text-lg)', fontWeight: 700, color: 'var(--text-primary)' }}>{release.version}</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>{release.date}</span>
+                  </div>
+                  <ul style={{ paddingLeft: 'var(--space-6)', color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.8, margin: 0 }}>
+                    {release.items.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </main>

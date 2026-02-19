@@ -230,6 +230,7 @@ export default function Downloads() {
                   gap: 'var(--space-2)'
                 }}>
                   <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i -g @peac/cli@next</code>
+                  <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i @peac/mcp-server @peac/capture-node @peac/rails-openclaw @peac/rails-stripe</code>
                   <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>go get github.com/peacprotocol/peac/sdks/go@v0.10.13</code>
                 </div>
               </div>
