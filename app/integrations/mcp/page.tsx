@@ -4,11 +4,11 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'MCP Integration | Model Context Protocol Receipts',
-  description: 'MCP integration with receipts and tools for agent coordination. Verifiable PEAC-Receipts for LLM tool calls and MCP agents.',
+  title: 'MCP Integration | @peac/mcp-server for Model Context Protocol',
+  description: 'Open-source MCP tool server for PEAC-Receipt verification, inspection, issuance, and bundling. 5 tools with capability-based access control.',
   openGraph: {
-    title: 'MCP Integration | Model Context Protocol Receipts',
-    description: 'MCP integration with MCP receipts, MCP tools, and agent coordination. Verifiable receipts for Model Context Protocol workflows.',
+    title: 'MCP Integration | @peac/mcp-server for Model Context Protocol',
+    description: 'Open-source MCP tool server for PEAC-Receipt verification, inspection, issuance, and bundling. 5 tools with capability-based access control.',
     url: '/integrations/mcp',
     type: 'article'
   },
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "Model Context Protocol (MCP) Integration",
-  "description": "Technical documentation for integrating PEAC-Receipts with Model Context Protocol servers and tools",
+  "headline": "MCP Integration -- @peac/mcp-server",
+  "description": "Open-source MCP tool server for PEAC-Receipt verification, inspection, issuance, and bundling",
   "author": {
     "@type": "Organization",
     "@id": "https://www.originary.xyz/#org"
@@ -78,7 +78,7 @@ export default function MCPPage() {
             marginBottom: 'var(--space-16)',
             lineHeight: 1.6
           }}>
-            Verifiable receipts for LLM tool calls and context sharing
+            Open-source MCP tool server for receipt verification, inspection, issuance, and bundling
           </p>
 
           {/* Overview */}
@@ -87,56 +87,81 @@ export default function MCPPage() {
               Overview
             </h2>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-              Model Context Protocol (MCP) is an open standard for connecting LLMs to external data sources and tools. Originary extends MCP with PEAC-Receipt verification, providing cryptographic proof of tool invocations and policy compliance.
+              <code style={{ fontSize: 'var(--text-sm)', background: 'var(--surface-subtle)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>@peac/mcp-server</code> is
+              an open-source MCP tool server that exposes five tools for working with PEAC-Receipts. It ships as a standalone npm package and can be integrated into any MCP-compatible host (Claude Desktop, Cursor, custom agents).
+            </p>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              Three <strong>pure tools</strong> (verify, inspect, decode) require no signing keys and work entirely offline. Two <strong>privileged tools</strong> (issue, bundle) require an issuer signing key and are disabled by default -- enabled only when an explicit capability token is provided.
             </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-              When an LLM calls an MCP tool that requires payment or policy adherence, Originary issues a signed receipt that can be verified by downstream systems. This enables trusted tool calling workflows with full audit trails.
+              All tool responses include structured outputs with metadata (server version, policy hash, protocol version) for downstream automation.
             </p>
           </div>
 
-          {/* Use Cases */}
+          {/* Tools */}
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
-              Use Cases
+              Tools
             </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-              <div>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
-                  Paid Tool Access
-                </h3>
-                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                  Monetize MCP tools by requiring payment before execution. PEAC-Receipts prove payment completion for downstream verification.
-                </p>
+
+            <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Pure (no keys required)
+            </h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
+              <div style={{ padding: 'var(--space-3) var(--space-4)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
+                <code style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>verify-receipt</code>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)' }}>Cryptographically verify a PEAC-Receipt signature and structure. Returns pass/fail with detailed check results.</p>
               </div>
-              <div>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
-                  Multi-Tool Workflows
-                </h3>
-                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                  Chain multiple MCP tool calls together with verifiable receipts showing the complete workflow execution path.
-                </p>
+              <div style={{ padding: 'var(--space-3) var(--space-4)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
+                <code style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>inspect-receipt</code>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)' }}>Parse and display the decoded payload of a receipt -- claims, extensions, timestamps, and issuer info.</p>
               </div>
-              <div>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-2)' }}>
-                  Policy Enforcement
-                </h3>
-                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                  Verify that LLMs have obtained necessary permissions before accessing sensitive MCP resources.
-                </p>
+              <div style={{ padding: 'var(--space-3) var(--space-4)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
+                <code style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>decode-receipt</code>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)' }}>Raw Base64url decode of a compact JWS receipt into its header, payload, and signature components.</p>
+              </div>
+            </div>
+
+            <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-3)', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Privileged (issuer key required)
+            </h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+              <div style={{ padding: 'var(--space-3) var(--space-4)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
+                <code style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>issue-receipt</code>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)' }}>Sign and issue a new PEAC-Receipt with specified claims and extensions. Requires an Ed25519 issuer key.</p>
+              </div>
+              <div style={{ padding: 'var(--space-3) var(--space-4)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
+                <code style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>create-bundle</code>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)' }}>Package receipts and supporting evidence into a portable <code>.peac.tar.gz</code> evidence bundle.</p>
               </div>
             </div>
           </div>
 
-          {/* Implementation */}
+          {/* Getting Started */}
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
-              Implementation
+              Getting Started
             </h2>
 
             <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)' }}>
-              MCP Server with PEAC-Receipt
+              Install
             </h3>
-            <pre style={{
+            <pre aria-label="Installation command" style={{
+              background: 'var(--surface-subtle)',
+              padding: 'var(--space-4)',
+              borderRadius: 'var(--radius-md)',
+              overflow: 'auto',
+              fontSize: 'var(--text-sm)',
+              fontFamily: 'var(--font-jetbrains-mono)',
+              marginBottom: 'var(--space-4)'
+            }}>
+{`npm install @peac/mcp-server`}
+            </pre>
+
+            <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-3)' }}>
+              Claude Desktop Configuration
+            </h3>
+            <pre aria-label="Claude Desktop MCP configuration" style={{
               background: 'var(--surface-subtle)',
               padding: 'var(--space-4)',
               borderRadius: 'var(--radius-md)',
@@ -145,35 +170,36 @@ export default function MCPPage() {
               fontFamily: 'var(--font-jetbrains-mono)'
             }}>
 {`{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "method": "tools/call",
-  "params": {
-    "name": "fetch_data",
-    "arguments": {
-      "url": "https://api.example.com/data"
+  "mcpServers": {
+    "peac": {
+      "command": "npx",
+      "args": ["@peac/mcp-server"],
+      "env": {
+        "PEAC_POLICY_FILE": "./peac.txt"
+      }
     }
-  },
-  "receipt": "eyJhbGc...PEAC-Receipt-signature"
+  }
 }`}
             </pre>
 
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginTop: 'var(--space-4)' }}>
-              MCP servers can verify attached receipts before executing tools, ensuring proper authorization and payment.
+              Pure tools are available immediately. Privileged tools (issue, bundle) require an issuer signing key via the <code style={{ fontSize: 'var(--text-sm)', background: 'var(--surface-subtle)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>PEAC_ISSUER_KEY</code> environment variable and an explicit capability token.
             </p>
           </div>
 
           {/* Benefits */}
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
-              Benefits for MCP Providers
+              Benefits
             </h2>
             <ul style={{ color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 'var(--space-6)' }}>
-              <li>Monetize MCP tools with pay-per-call pricing</li>
-              <li>Cryptographic verification of tool invocations</li>
-              <li>Complete audit trail of LLM tool usage</li>
-              <li>Policy enforcement at the tool level</li>
-              <li>Compatible with standard MCP implementations</li>
+              <li>Offline verification -- pure tools work without network access</li>
+              <li>Capability-based access control -- privileged tools disabled by default</li>
+              <li>Structured outputs with metadata for downstream automation</li>
+              <li>Cryptographic verification of receipt signatures and structure</li>
+              <li>Evidence bundling for portable audit trails</li>
+              <li>Compatible with any MCP host (Claude Desktop, Cursor, custom agents)</li>
+              <li>Open source under Apache 2.0</li>
             </ul>
           </div>
 
@@ -183,23 +209,23 @@ export default function MCPPage() {
               Resources
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-              <Link href="/docs/mcp/receipts" style={{
+              <a href="https://www.npmjs.com/package/@peac/mcp-server" target="_blank" rel="noopener noreferrer" style={{
                 color: 'var(--accent-brand)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-base)',
                 fontWeight: 500
               }}>
-                MCP Receipts Documentation →
-              </Link>
-              <Link href="/products/adapters" style={{
+                @peac/mcp-server on npm →
+              </a>
+              <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" style={{
                 color: 'var(--accent-brand)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-base)',
                 fontWeight: 500
               }}>
-                Adapters Product →
-              </Link>
-              <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener" style={{
+                Source on GitHub →
+              </a>
+              <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer" style={{
                 color: 'var(--accent-brand)',
                 textDecoration: 'none',
                 fontSize: 'var(--text-base)',
@@ -207,6 +233,14 @@ export default function MCPPage() {
               }}>
                 MCP Specification →
               </a>
+              <Link href="/downloads" style={{
+                color: 'var(--accent-brand)',
+                textDecoration: 'none',
+                fontSize: 'var(--text-base)',
+                fontWeight: 500
+              }}>
+                All Downloads →
+              </Link>
             </div>
           </div>
 
@@ -219,13 +253,13 @@ export default function MCPPage() {
             marginTop: 'var(--space-12)'
           }}>
             <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
-              Add receipts to your MCP server
+              Add receipt verification to your MCP workflow
             </h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
-              Enable verification and monetization for MCP tools
+              Install @peac/mcp-server and start verifying receipts in minutes
             </p>
-            <Link href="/pricing" className="button-primary">
-              View Pricing
+            <Link href="/downloads" className="button-primary">
+              Get Started
             </Link>
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 > Originary provides verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.
 
-Last updated: 2026-02-09
+Last updated: 2026-02-19
 
 Company: Poem, Inc.
 Location: Delaware, USA
@@ -40,8 +40,20 @@ Receipt verification API. Validate PEAC-Receipt signatures server-side for billi
 ### Studio (/products/studio)
 Policy management and receipt observability dashboard. Coming soon.
 
+### MCP Server (/integrations/mcp)
+MCP tool server (@peac/mcp-server) with 5 tools: verify-receipt, inspect-receipt, decode-receipt (pure, offline), issue-receipt, create-bundle (privileged, require issuer key). Capability-based access control with structured outputs. Works with Claude Desktop, Cursor, and custom agents.
+
+### Capture Node
+@peac/capture-node provides FileSpoolStore and FileDedupeIndex for durable Node.js receipt capture with structured counters (scanned/exported/skipped).
+
+### OpenClaw Adapter
+@peac/rails-openclaw provides one-call activate() setup for Cloudflare Workers with generateSigningKey() and peac-keygen CLI for key management.
+
+### Stripe x402 Adapter
+@peac/rails-stripe bridges x402 crypto payments with Stripe via fromCryptoPaymentIntent(). Accept USDC, settle in USD.
+
 ### Adapters (/products/adapters)
-Pre-built integrations for common platforms and frameworks.
+Pre-built integrations for common platforms and frameworks. 8 standards supported including AIPREF, HTTP 402/x402, MCP, C2PA, robots.txt/llms.txt, and OpenClaw.
 
 ## Receipt Management
 
@@ -73,11 +85,15 @@ Pre-built integrations for common platforms and frameworks.
 ## Open Source
 
 ### PEAC Protocol (/peac)
-Open standard for AI agent interactions (Apache-2.0). Current version: 0.10.9
+Open standard for AI agent interactions (Apache-2.0). Current version: 0.10.13. 22 packages on npm, 4014 tests.
 - Policy discovery via /.well-known/peac.txt
 - AI preferences via AIPREF (/.well-known/aipref.json)
 - Payment challenges via HTTP 402
 - Verifiable receipts via PEAC-Receipt header
+- Ed25519 cryptographic signing (signAsync/verifyAsync)
+- RFC 9421 proof capture profile with conformance vectors
+- Registry v0.3.0 with interaction extension and toolcall advisory registries
+- Supply chain hardening: SECURITY.md, automated audit gate, lockfile drift detection
 
 - [GitHub Repository](https://github.com/peacprotocol/peac) - Source code, spec, and SDKs
 - [Examples](https://github.com/peacprotocol/peac/tree/main/examples) - Sample implementations and starter templates
@@ -86,7 +102,7 @@ Open standard for AI agent interactions (Apache-2.0). Current version: 0.10.9
 
 - [Developers](/developers) - Technical documentation and CLI quickstart
 - [Downloads](/downloads) - CLI tools and packages
-- [Demo](/demo) - Interactive PEAC v0.10.9 protocol trace demonstration
+- [Demo](/demo) - Interactive PEAC v0.10.13 protocol trace demonstration
 - [Pricing](/pricing) - Pricing and plans
 - [Search](/search) - Site search
 

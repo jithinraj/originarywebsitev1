@@ -1,17 +1,19 @@
 'use client'
 
-import { Shield, Fingerprint, CheckCircle, CreditCard, FileCheck, Lock, FileSignature, Receipt } from 'lucide-react'
+import { Shield, Fingerprint, CheckCircle, CreditCard, FileCheck, Lock, FileSignature, ShieldCheck, Target, Users } from 'lucide-react'
 
 export default function FoundationalRailsSection() {
   const pillars = [
-    { icon: Shield, label: 'Access', description: 'AI Access policy-aware gating' },
-    { icon: Fingerprint, label: 'Attribution', description: 'Enforceable flags' },
-    { icon: CheckCircle, label: 'Consent', description: 'Purpose-bound usage' },
+    { icon: Shield, label: 'Access', description: 'Policy-aware gating for AI agents' },
+    { icon: Users, label: 'Attribution', description: 'Enforceable creator credits' },
     { icon: CreditCard, label: 'Commerce', description: 'HTTP 402 settlement' },
+    { icon: CheckCircle, label: 'Consent', description: 'Purpose-bound usage' },
     { icon: FileCheck, label: 'Compliance', description: 'Audit bundles' },
-    { icon: Lock, label: 'Privacy', description: 'Selective disclosure (planned)' },
-    { icon: Receipt, label: 'Receipts', description: 'Verifiable PEAC-Receipts for each interaction' },
-    { icon: FileSignature, label: 'Provenance', description: 'Signed lineage using receipts + C2PA' }
+    { icon: Lock, label: 'Privacy', description: 'Selective disclosure' },
+    { icon: FileSignature, label: 'Provenance', description: 'Signed lineage and chain of custody' },
+    { icon: ShieldCheck, label: 'Safety', description: 'Defense-in-depth security' },
+    { icon: Fingerprint, label: 'Identity', description: 'Cryptographic proof-of-control' },
+    { icon: Target, label: 'Purpose', description: 'Declared interaction intent' }
   ]
 
   return (

@@ -26,7 +26,7 @@ const peacSourceCodeJsonLd = {
   codeRepository: 'https://github.com/peacprotocol/peac',
   license: 'https://www.apache.org/licenses/LICENSE-2.0',
   programmingLanguage: 'TypeScript',
-  version: '0.10.9'
+  version: '0.10.13'
 }
 
 export const metadata: Metadata = {
@@ -104,7 +104,7 @@ export default function Downloads() {
               }}>
                 <span><strong>Publisher:</strong> Originary (Poem, Inc.)</span>
                 <span>•</span>
-                <span><strong>Version:</strong> 0.10.9</span>
+                <span><strong>Version:</strong> 0.10.13</span>
                 <span>•</span>
                 <span><strong>License:</strong> Apache 2.0</span>
                 <span>•</span>
@@ -151,7 +151,7 @@ export default function Downloads() {
                     GitHub
                   </a>
                   <a
-                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.10.9.zip"
+                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.10.13.zip"
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -169,7 +169,7 @@ export default function Downloads() {
                     Source (.zip)
                   </a>
                   <a
-                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.10.9.tar.gz"
+                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.10.13.tar.gz"
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -230,7 +230,8 @@ export default function Downloads() {
                   gap: 'var(--space-2)'
                 }}>
                   <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i -g @peac/cli@next</code>
-                  <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>go get github.com/peacprotocol/peac/sdks/go@v0.10.9</code>
+                  <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i @peac/mcp-server @peac/capture-node @peac/rails-openclaw @peac/rails-stripe</code>
+                  <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>go get github.com/peacprotocol/peac/sdks/go@v0.10.13</code>
                 </div>
               </div>
 

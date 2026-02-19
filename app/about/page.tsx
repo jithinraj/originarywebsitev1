@@ -21,7 +21,10 @@ import {
   Building,
   FileText,
   Code,
-  Receipt
+  Receipt,
+  ShieldCheck,
+  Fingerprint,
+  Target
 } from 'lucide-react'
 
 export default function AboutPage() {
@@ -34,11 +37,14 @@ export default function AboutPage() {
   const pillars = [
     { name: 'Access', desc: 'Who can read or call what.', icon: <Shield size={18} /> },
     { name: 'Attribution', desc: 'How creators and sources are credited.', icon: <Users size={18} /> },
-    { name: 'Consent', desc: 'What is allowed under stated terms.', icon: <FileCheck size={18} /> },
     { name: 'Commerce', desc: 'Optional settlement terms and evidence.', icon: <CreditCard size={18} /> },
+    { name: 'Consent', desc: 'What is allowed under stated terms.', icon: <FileCheck size={18} /> },
     { name: 'Compliance', desc: 'How obligations map to verifiable controls.', icon: <Scale size={18} /> },
     { name: 'Privacy', desc: 'What is collected, retained, and disclosed.', icon: <Lock size={18} /> },
     { name: 'Provenance', desc: 'How outputs trace to inputs and decisions.', icon: <GitBranch size={18} /> },
+    { name: 'Safety', desc: 'Defense-in-depth security and safe-by-default design.', icon: <ShieldCheck size={18} /> },
+    { name: 'Identity', desc: 'Cryptographic proof-of-control for agents and operators.', icon: <Fingerprint size={18} /> },
+    { name: 'Purpose', desc: 'Declared intent for each interaction.', icon: <Target size={18} /> },
   ]
 
   const products = [
@@ -263,15 +269,15 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Seven Pillars Section - Compact Grid */}
+        {/* Ten Pillars Section - Compact Grid */}
         <section style={{ background: 'var(--surface-subtle)', padding: 'var(--space-10) 0' }}>
           <div className="container" style={{ maxWidth: '900px' }}>
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-6)' }}>
               <h2 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
-                The Seven Pillars
+                The Ten Pillars
               </h2>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
-                Everything we design is tied together through <strong>decision context</strong>: receipts bind outcomes to the access terms, consent, attribution, and other constraints that were active at decision time.
+                Everything we design is tied together through <strong>decision context</strong>: receipts bind outcomes to the access terms, consent, attribution, safety, identity, and other constraints that were active at decision time.
               </p>
             </div>
 
@@ -313,7 +319,7 @@ export default function AboutPage() {
               }
               @media (min-width: 1024px) {
                 .pillars-grid {
-                  grid-template-columns: repeat(4, 1fr);
+                  grid-template-columns: repeat(5, 1fr);
                 }
               }
             `}</style>

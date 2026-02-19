@@ -90,11 +90,11 @@ export default function MCPReceiptsDocPage() {
                 5-Minute Quickstart
               </h2>
               <ol style={{ color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
-                <li>Install Originary MCP wrapper: <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>npm install @originary/mcp-wrapper</code></li>
-                <li>Wrap your existing MCP server with Originary middleware</li>
-                <li>Configure policy constraints in <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>peac.txt</code></li>
-                <li>Each tool call now returns with a PEAC-Receipt header</li>
-                <li>Query receipts via Originary dashboard for audit trails</li>
+                <li>Install the MCP server: <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>npm install @peac/mcp-server</code></li>
+                <li>Add it to your MCP host (Claude Desktop, Cursor, or custom agent)</li>
+                <li>Configure your policy file via <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>PEAC_POLICY_FILE</code> env var</li>
+                <li>Use the 5 built-in tools: verify-receipt, inspect-receipt, decode-receipt, issue-receipt, create-bundle</li>
+                <li>Pure tools work offline; privileged tools require an issuer key via <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>PEAC_ISSUER_KEY</code></li>
               </ol>
             </div>
 
@@ -117,18 +117,21 @@ export default function MCPReceiptsDocPage() {
                 overflow: 'auto',
                 lineHeight: 1.6
               }}>
-{`import { wrapMCPServer } from '@originary/mcp-wrapper'
-
-const server = wrapMCPServer({
-  name: 'my-tool-server',
-  tools: [/* your MCP tools */],
-  originary: {
-    apiKey: process.env.ORIGINARY_API_KEY
+{`// Claude Desktop configuration (claude_desktop_config.json)
+{
+  "mcpServers": {
+    "peac": {
+      "command": "npx",
+      "args": ["@peac/mcp-server"],
+      "env": {
+        "PEAC_POLICY_FILE": "./peac.txt"
+      }
+    }
   }
-})
+}
 
-// Each tool call now includes PEAC-Receipt
-// receipt proves: tool name, params, timestamp, policy`}
+// Tools available: verify-receipt, inspect-receipt,
+// decode-receipt, issue-receipt, create-bundle`}
               </pre>
             </div>
 

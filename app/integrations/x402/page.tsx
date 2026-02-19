@@ -232,10 +232,18 @@ Cache-Control: no-store
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
                 <Link href="/integrations/x402/cloudflare-workers/" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600, fontSize: 'var(--text-base)' }}>
-                  → Cloudflare Workers
+                  → Cloudflare Workers (OpenClaw)
                 </Link>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)', marginLeft: 'var(--space-4)' }}>
-                  Tiny Worker returning HTTP 402
+                  One-call activate() setup via @peac/rails-openclaw with key generation
+                </p>
+              </li>
+              <li style={{ marginBottom: 'var(--space-3)' }}>
+                <span style={{ color: 'var(--accent-brand)', fontWeight: 600, fontSize: 'var(--text-base)' }}>
+                  → Stripe x402 (@peac/rails-stripe)
+                </span>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)', marginLeft: 'var(--space-4)' }}>
+                  Bridge x402 crypto payments with Stripe via fromCryptoPaymentIntent()
                 </p>
               </li>
               <li>

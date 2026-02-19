@@ -134,7 +134,7 @@ export default function ServicesPage() {
               }}
             >
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.7, margin: 0 }}>
-                PEAC is Apache-2.0 and self-hostable. The protocol ships with Express middleware, a conformance runner, and 20 npm
+                PEAC is Apache-2.0 and self-hostable. The protocol ships with Express middleware, a conformance runner, and 22 npm
                 packages. Most integrations start with{' '}
                 <code
                   style={{

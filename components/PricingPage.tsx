@@ -631,11 +631,11 @@ export default function PricingPage() {
                 <p>Get enterprise-grade infrastructure with dedicated performance monitoring, security, and support.</p>
                 <div className="cta-stats">
                   <div className="stat">
-                    <span className="stat-value">20</span>
+                    <span className="stat-value">22</span>
                     <span className="stat-label">Published packages</span>
                   </div>
                   <div className="stat">
-                    <span className="stat-value">v0.10.9</span>
+                    <span className="stat-value">v0.10.13</span>
                     <span className="stat-label">Latest release</span>
                   </div>
                   <div className="stat">

@@ -261,11 +261,11 @@ export default function ReceiptsPage() {
     `}<span className="code-key">{`"kid"`}</span>{`: `}<span className="code-string">{`"originary-2025-01"`}</span>{`
   },
   `}<span className="code-key">{`"payload"`}</span>{`: {
-    `}<span className="code-key">{`"iss"`}</span>{`: `}<span className="code-string">{`"https://originary.xyz"`}</span>{`,
+    `}<span className="code-key">{`"iss"`}</span>{`: `}<span className="code-string">{`"https://www.originary.xyz"`}</span>{`,
     `}<span className="code-key">{`"iat"`}</span>{`: `}<span className="code-number">{`1734048000`}</span>{`,
     `}<span className="code-key">{`"jti"`}</span>{`: `}<span className="code-string">{`"rcpt_7f92ab31"`}</span>{`,
     `}<span className="code-key">{`"peac"`}</span>{`: {
-      `}<span className="code-key">{`"version"`}</span>{`: `}<span className="code-string">{`"0.10.0"`}</span>{`,
+      `}<span className="code-key">{`"version"`}</span>{`: `}<span className="code-string">{`"0.10.13"`}</span>{`,
       `}<span className="code-key">{`"resource"`}</span>{`: `}<span className="code-string">{`"/api/content"`}</span>{`,
       `}<span className="code-key">{`"policy_hash"`}</span>{`: `}<span className="code-string">{`"sha256:9f3c..."`}</span>{`
     },

@@ -38,7 +38,7 @@ Content-Type: application/problem+json
 PAYMENT-REQUIRED: <base64url payment requirements>
 
 {
-  "type": "https://peacprotocol.org/problems/payment-required",
+  "type": "https://www.peacprotocol.org/problems/payment-required",
   "title": "Payment required",
   "status": 402
 }`

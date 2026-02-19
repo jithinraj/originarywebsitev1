@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Eye, FileCheck, Shield, CreditCard, Scale, Lock, Receipt } from 'lucide-react'
+import { ArrowRight, Eye, FileCheck, Shield, CreditCard, Scale, Lock, Receipt, ShieldCheck, Fingerprint, Target } from 'lucide-react'
 
 const steps = [
   {
@@ -37,11 +37,14 @@ const steps = [
 const pillars = [
   { icon: Eye, name: 'Access', desc: 'Who can read or call what' },
   { icon: FileCheck, name: 'Attribution', desc: 'Who created the content' },
-  { icon: Shield, name: 'Consent', desc: 'What terms were agreed to' },
   { icon: CreditCard, name: 'Commerce', desc: 'How usage is settled' },
+  { icon: Shield, name: 'Consent', desc: 'What terms were agreed to' },
   { icon: Scale, name: 'Compliance', desc: 'Regulatory obligations' },
   { icon: Lock, name: 'Privacy', desc: 'Data retention policies' },
-  { icon: Receipt, name: 'Provenance', desc: 'Origin and chain of custody' }
+  { icon: Receipt, name: 'Provenance', desc: 'Origin and chain of custody' },
+  { icon: ShieldCheck, name: 'Safety', desc: 'Defense-in-depth security' },
+  { icon: Fingerprint, name: 'Identity', desc: 'Agent proof-of-control' },
+  { icon: Target, name: 'Purpose', desc: 'Declared interaction intent' }
 ]
 
 export default function HowItWorksSection() {
@@ -216,7 +219,7 @@ export default function HowItWorksSection() {
           </Link>
         </div>
 
-        {/* Seven Pillars of PEAC */}
+        {/* Ten Pillars of PEAC */}
         <div
           className="animate-on-scroll"
           style={{
@@ -260,7 +263,7 @@ export default function HowItWorksSection() {
                   whiteSpace: 'nowrap'
                 }}
               >
-                Seven pillars of PEAC
+                Ten pillars of PEAC
               </span>
 
               <div

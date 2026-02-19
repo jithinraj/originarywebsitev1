@@ -30,7 +30,7 @@ export default function CaseStudies() {
             <div className="content">
               <div className="case-study-cta">
                 <h2>Become an early adopter</h2>
-                <p>PEAC is Apache-2.0 and ships with 20 npm packages, Express middleware, and a conformance runner. If you&rsquo;re integrating signed receipts into your stack, we&rsquo;d like to document the implementation with you.</p>
+                <p>PEAC is Apache-2.0 and ships with 22 npm packages, Express middleware, and a conformance runner. If you&rsquo;re integrating signed receipts into your stack, we&rsquo;d like to document the implementation with you.</p>
                 <a href="mailto:contact@originary.xyz?subject=Case%20Study%20Interest" className="btn primary">Get in touch</a>
               </div>
             </div>

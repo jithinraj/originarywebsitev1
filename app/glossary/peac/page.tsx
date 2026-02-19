@@ -121,12 +121,12 @@ PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6InBlYWMtcmVjZWlwdC8wLjEiLCJraWQiOiJvcm
     "kid": "originary-2025-01"
   },
   "payload": {
-    "iss": "https://originary.xyz",
+    "iss": "https://www.originary.xyz",
     "sub": "agent:client-123",
     "iat": 1734048000,
     "jti": "rcpt_xyz789",
     "peac": {
-      "version": "0.10.0",
+      "version": "0.10.13",
       "resource": "/api/content",
       "policy_hash": "sha256:9f3c..."
     },

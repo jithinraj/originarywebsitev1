@@ -310,8 +310,8 @@ export default {
                 fontSize: 'var(--text-sm)',
                 marginBottom: 'var(--space-3)'
               }}>
-                # CLI and libraries (npm)
-                npm i -g @peac/cli && npm i @peac/protocol @peac/crypto @peac/schema
+                # CLI, libraries, and tools (npm)
+                npm i -g @peac/cli && npm i @peac/protocol @peac/crypto @peac/schema @peac/mcp-server @peac/capture-node
               </code>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
                 <a
@@ -508,6 +508,14 @@ export default {
                 endpoint="/v1/policies/{url}"
                 detail="Fetch and validate policy"
                 link="/declare"
+              />
+              <ApiSection
+                title="MCP Server Tools"
+                description="5 MCP tools via @peac/mcp-server: verify-receipt, inspect-receipt, decode-receipt (pure), issue-receipt, create-bundle (privileged)"
+                method="MCP"
+                endpoint="npx @peac/mcp-server"
+                detail="MCP tool server"
+                link="/integrations/mcp/"
               />
             </div>
           </div>

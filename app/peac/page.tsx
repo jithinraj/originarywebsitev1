@@ -262,18 +262,21 @@ export default function PeacPage() {
                 margin: '0 auto var(--space-16) auto'
               }}
             >
-              Seven pillars of infrastructure for the agentic web
+              Ten pillars of infrastructure for the agentic web
             </p>
 
             <div className="grid grid-3" style={{ gap: 'var(--space-6)' }}>
               {[
                 { name: 'Access', desc: 'Declare who can use your resources and under what conditions' },
                 { name: 'Attribution', desc: 'Every request carries verifiable identity and intent' },
-                { name: 'Consent', desc: 'Explicit, machine-readable consent before access' },
                 { name: 'Commerce', desc: 'Native payment semantics via HTTP 402 and pricing headers' },
+                { name: 'Consent', desc: 'Explicit, machine-readable consent before access' },
                 { name: 'Compliance', desc: 'Audit trails and receipts for regulatory requirements' },
                 { name: 'Privacy', desc: 'Minimal disclosure and selective transparency' },
                 { name: 'Provenance', desc: 'Cryptographic proof of what happened and when' },
+                { name: 'Safety', desc: 'Defense-in-depth security and safe-by-default configuration' },
+                { name: 'Identity', desc: 'Cryptographic proof-of-control for agents and operators' },
+                { name: 'Purpose', desc: 'Declared intent of each interaction and purpose-driven access' },
               ].map((pillar) => (
                 <div key={pillar.name} className="card">
                   <CheckCircle size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
@@ -375,10 +378,10 @@ export default function PeacPage() {
               >
                 <Code size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
                 <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  peac-core (Node.js)
+                  PEAC Core (22 packages)
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
-                  TypeScript/JavaScript SDK for parsing, validation, and receipt generation
+                  TypeScript/JavaScript SDK: protocol, crypto, schema, MCP server, capture-node, OpenClaw adapter, Stripe adapter, and more
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>
                   <Github size={14} />
@@ -468,15 +471,15 @@ export default function PeacPage() {
               <div className="card">
                 <Layers size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
                 <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  Policy Profiles
+                  Profiles & Extensions
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
-                  Pre-built policy profiles for common use cases. Start with news-media, api-provider, open-source, or saas-docs and customize from there.
+                  Pre-built policy profiles (news-media, api-provider, open-source, saas-docs), RFC 9421 proof capture profile, and extensible registry for interaction types and toolcall operations.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
-                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', color: 'var(--text-secondary)' }}>news-media</span>
-                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', color: 'var(--text-secondary)' }}>api-provider</span>
-                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', color: 'var(--text-secondary)' }}>+2 more</span>
+                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', color: 'var(--text-secondary)' }}>Policy profiles</span>
+                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', color: 'var(--text-secondary)' }}>RFC 9421</span>
+                  <span style={{ fontSize: 'var(--text-xs)', padding: '2px 8px', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', color: 'var(--text-secondary)' }}>Registry v0.3</span>
                 </div>
               </div>
             </div>
@@ -503,7 +506,7 @@ export default function PeacPage() {
                   Open Development
                 </h3>
                 <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-                  Developed in public with community contributions. Originary (Poem, Inc.) is the primary maintainer today. Development happens on GitHub with semantic versioning and public roadmaps.
+                  Developed in public with community contributions. Originary (Poem, Inc.) is the primary maintainer today. Development happens on GitHub with semantic versioning and public roadmaps. Supply chain hardening includes automated audit gates, lockfile drift detection, and a published security policy.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                   <a href="https://github.com/peacprotocol/peac/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm">
