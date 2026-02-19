@@ -262,7 +262,7 @@ export default function PeacPage() {
                 margin: '0 auto var(--space-16) auto'
               }}
             >
-              Ten pillars of infrastructure for the agentic web
+              Ten verification domains for the agentic web
             </p>
 
             <div className="grid grid-3" style={{ gap: 'var(--space-6)' }}>
@@ -277,14 +277,14 @@ export default function PeacPage() {
                 { name: 'Safety', desc: 'Defense-in-depth security and safe-by-default configuration' },
                 { name: 'Identity', desc: 'Cryptographic proof-of-control for agents and operators' },
                 { name: 'Purpose', desc: 'Declared intent of each interaction and purpose-driven access' },
-              ].map((pillar) => (
-                <div key={pillar.name} className="card">
+              ].map((domain) => (
+                <div key={domain.name} className="card">
                   <CheckCircle size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-3)' }} />
                   <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                    {pillar.name}
+                    {domain.name}
                   </h3>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    {pillar.desc}
+                    {domain.desc}
                   </p>
                 </div>
               ))}

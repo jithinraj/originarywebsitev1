@@ -70,7 +70,7 @@ export const metadata: Metadata = {
 }
 
 export default function OriginaryAIPage() {
-  const valuePillars = [
+  const valueProps = [
     {
       icon: Lock,
       title: 'Agent-native trust',
@@ -210,7 +210,7 @@ export default function OriginaryAIPage() {
           </div>
         </section>
 
-        {/* Value Pillars */}
+        {/* Value Propositions */}
         <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -220,8 +220,8 @@ export default function OriginaryAIPage() {
                 gap: 'var(--space-8)',
                 marginBottom: 'var(--space-16)'
               }}>
-                {valuePillars.map((pillar, index) => {
-                  const IconComponent = pillar.icon
+                {valueProps.map((prop, index) => {
+                  const IconComponent = prop.icon
                   return (
                     <div key={index} className="card" style={{ textAlign: 'left' }}>
                       <div style={{
@@ -242,14 +242,14 @@ export default function OriginaryAIPage() {
                         marginBottom: 'var(--space-3)',
                         color: 'var(--text-primary)'
                       }}>
-                        {pillar.title}
+                        {prop.title}
                       </h3>
                       <p style={{
                         color: 'var(--text-secondary)',
                         lineHeight: 1.6,
                         margin: 0
                       }}>
-                        {pillar.description}
+                        {prop.description}
                       </p>
                     </div>
                   )
