@@ -98,7 +98,7 @@ export default function ChangelogPage() {
                   version: 'v0.10.13',
                   date: 'Feb 19, 2026',
                   items: [
-                    '@peac/mcp-server -- open-source MCP tool server with 5 tools (verify, inspect, decode, issue, bundle)',
+                    '@peac/mcp-server: open-source MCP tool server with 5 tools (verify, inspect, decode, issue, bundle)',
                     'Capability-based access control with structured outputs',
                     'Unicode scanner CLI regression tests, audit allowlist hardening, path-safety portable hardening',
                   ],
@@ -107,8 +107,8 @@ export default function ChangelogPage() {
                   version: 'v0.10.12',
                   date: 'Feb 16, 2026',
                   items: [
-                    '@peac/capture-node -- FileSpoolStore and FileDedupeIndex for durable Node.js capture',
-                    'OpenClaw adapter -- one-call activate() for Cloudflare Workers with generateSigningKey() and peac-keygen CLI',
+                    '@peac/capture-node: FileSpoolStore and FileDedupeIndex for durable Node.js capture',
+                    'OpenClaw adapter: one-call activate() for Cloudflare Workers with generateSigningKey() and peac-keygen CLI',
                     'RFC 9421 proof capture profile with 5 conformance vectors',
                   ],
                 },
@@ -116,7 +116,7 @@ export default function ChangelogPage() {
                   version: 'v0.10.11',
                   date: 'Feb 13, 2026',
                   items: [
-                    '@peac/rails-stripe -- fromCryptoPaymentIntent() for x402 crypto payments',
+                    '@peac/rails-stripe: fromCryptoPaymentIntent() for x402 crypto payments',
                     'Registry v0.3.0 with interaction extension and toolcall advisory registries',
                     '@noble/ed25519 v3 upgrade (signAsync/verifyAsync API)',
                     'Supply chain hardening: SECURITY.md, audit gate, lockfile drift detection',

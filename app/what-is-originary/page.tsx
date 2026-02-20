@@ -60,7 +60,7 @@ export default function WhatIsOriginaryPage() {
     "@type": "WebSite",
     "name": "Originary",
     "url": "https://www.originary.xyz",
-    "description": "Verification infrastructure for agent interactions. Publish terms, enforce decisions, and return verifiable receipts.",
+    "description": "Verification infrastructure for agent interactions. Publish terms, check requests, and return verifiable records.",
     "publisher": {
       "@type": "Organization",
       "name": "Originary",
@@ -236,7 +236,7 @@ export default function WhatIsOriginaryPage() {
                   marginBottom: 'var(--space-4)'
                 }}
               >
-                Agents need <strong>accountability</strong>: clear terms, enforceable decisions, and durable evidence of what happened. PEAC provides this through signed receipts and verifiable policy snapshots.
+                Agents need <strong>accountability</strong>: clear terms, verifiable decisions, and durable evidence of what happened. PEAC provides this through signed records and verifiable policy snapshots.
               </p>
               <p
                 style={{
@@ -285,7 +285,7 @@ export default function WhatIsOriginaryPage() {
                   marginBottom: 'var(--space-8)'
                 }}
               >
-                Originary maintains the reference standard and production tooling for turning decisions into verifiable records. Publish terms, enforce them, verify independently.
+                Originary maintains the reference standard and production tooling for turning decisions into verifiable records. Publish terms, check requests, verify independently.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>

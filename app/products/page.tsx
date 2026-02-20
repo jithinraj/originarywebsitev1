@@ -6,13 +6,13 @@ import { ArrowRight, CheckCircle, Zap, Shield, Database, BarChart, Users, Globe,
 import ServiceOffers from '@/components/ServiceOffers'
 
 export const metadata: Metadata = {
-  title: 'Products',
-  description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters.',
-  keywords: 'PEAC protocol, AI Access, verify API, Gateway 402, AI orchestration, autonomous agents, policy enforcement',
+  title: 'Products | Verify, Gateway, MCP Server, and More',
+  description: 'Open-source packages for issuing, capturing, and verifying signed interaction records. Gateway, MCP server, Capture, Verify, and Studio.',
+  keywords: 'PEAC protocol, verify API, Gateway 402, MCP server, AI infrastructure, autonomous agents, interaction records',
   robots: 'index,follow',
   openGraph: {
-    title: 'Products',
-    description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters.',
+    title: 'Products | Verify, Gateway, MCP Server, and More',
+    description: 'Open-source packages for issuing, capturing, and verifying signed interaction records. Gateway, MCP server, Capture, Verify, and Studio.',
     url: '/products',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Products',
-    description: 'Complete orchestration infrastructure for the agentic web. PEAC Protocol, Verify API, Gateway 402, Studio, and Adapters.',
+    title: 'Products | Verify, Gateway, MCP Server, and More',
+    description: 'Open-source packages for issuing, capturing, and verifying signed interaction records. Gateway, MCP server, Capture, Verify, and Studio.',
     images: ['/og'],
   },
   alternates: {

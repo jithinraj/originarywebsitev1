@@ -30,27 +30,27 @@ const peacSourceCodeJsonLd = {
 }
 
 export const metadata: Metadata = {
-  title: 'Downloads',
-  description: 'Download the Originary CLI and PEAC policy templates. Verify policy files and implement receipts.',
-  keywords: 'downloads, CLI, PEAC templates, policy verification, receipts implementation',
+  title: 'Downloads | CLI, MCP Server, and Templates',
+  description: 'Download the Originary CLI, MCP server, and PEAC policy templates. npm packages, source archives, and quickstart resources.',
+  keywords: 'downloads, CLI, MCP server, PEAC templates, npm packages, policy verification',
   robots: 'index,follow',
   openGraph: {
-    title: 'Downloads',
-    description: 'Download the Originary CLI and PEAC policy templates. Verify policy files and implement receipts.',
+    title: 'Downloads | CLI, MCP Server, and Templates',
+    description: 'Download the Originary CLI, MCP server, and PEAC policy templates. npm packages, source archives, and quickstart resources.',
     url: '/downloads',
     siteName: 'Originary',
     images: [{
       url: '/og',
       width: 1200,
       height: 630,
-      alt: 'Originary Downloads - CLI and PEAC templates'
+      alt: 'Originary Downloads'
     }],
     type: 'website'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Downloads',
-    description: 'Download the Originary CLI and PEAC policy templates. Verify policy files and implement receipts.',
+    title: 'Downloads | CLI, MCP Server, and Templates',
+    description: 'Download the Originary CLI, MCP server, and PEAC policy templates. npm packages, source archives, and quickstart resources.',
     images: ['/og']
   },
   alternates: {

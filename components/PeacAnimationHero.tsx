@@ -308,7 +308,7 @@ HTTP/1.1 402 Payment Required
 Content-Type: application/json`,
     metaLeft: 'rails: x402, stripe',
     metaRight: 'min: 0.01 USD',
-    caption: 'Multi-rail settlement (optional) — normalized settlement evidence'
+    caption: 'Multi-rail settlement (optional). Normalized settlement evidence.'
   },
   {
     badge: 'RECEIPT',

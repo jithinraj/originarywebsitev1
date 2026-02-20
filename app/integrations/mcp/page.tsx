@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "MCP Integration -- @peac/mcp-server",
+  "headline": "MCP Integration: @peac/mcp-server",
   "description": "Open-source MCP tool server for PEAC-Receipt verification, inspection, issuance, and bundling",
   "author": {
     "@type": "Organization",
@@ -91,7 +91,7 @@ export default function MCPPage() {
               an open-source MCP tool server that exposes five tools for working with PEAC-Receipts. It ships as a standalone npm package and can be integrated into any MCP-compatible host (Claude Desktop, Cursor, custom agents).
             </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-              Three <strong>pure tools</strong> (verify, inspect, decode) require no signing keys and work entirely offline. Two <strong>privileged tools</strong> (issue, bundle) require an issuer signing key and are disabled by default -- enabled only when an explicit capability token is provided.
+              Three <strong>pure tools</strong> (verify, inspect, decode) require no signing keys and work entirely offline. Two <strong>privileged tools</strong> (issue, bundle) require an issuer signing key and are disabled by default and enabled only when an explicit capability token is provided.
             </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
               All tool responses include structured outputs with metadata (server version, policy hash, protocol version) for downstream automation.
@@ -114,7 +114,7 @@ export default function MCPPage() {
               </div>
               <div style={{ padding: 'var(--space-3) var(--space-4)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
                 <code style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>inspect-receipt</code>
-                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)' }}>Parse and display the decoded payload of a receipt -- claims, extensions, timestamps, and issuer info.</p>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)' }}>Parse and display the decoded payload of a receipt, including claims, extensions, timestamps, and issuer info.</p>
               </div>
               <div style={{ padding: 'var(--space-3) var(--space-4)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
                 <code style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>decode-receipt</code>
@@ -193,8 +193,8 @@ export default function MCPPage() {
               Benefits
             </h2>
             <ul style={{ color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 'var(--space-6)' }}>
-              <li>Offline verification -- pure tools work without network access</li>
-              <li>Capability-based access control -- privileged tools disabled by default</li>
+              <li>Offline verification: pure tools work without network access</li>
+              <li>Capability-based access control: privileged tools disabled by default</li>
               <li>Structured outputs with metadata for downstream automation</li>
               <li>Cryptographic verification of receipt signatures and structure</li>
               <li>Evidence bundling for portable audit trails</li>

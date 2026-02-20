@@ -19,7 +19,7 @@ const audiences = [
   {
     id: 'api-providers',
     label: 'API Providers',
-    desc: 'Records and receipts for metered access and accountable usage.',
+    desc: 'Signed records for metered access and accountable usage.',
     Icon: Plug,
   },
   {

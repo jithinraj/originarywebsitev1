@@ -2,17 +2,28 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { ArrowRight, Zap, ShieldCheck, BarChart3, Layers } from 'lucide-react'
+import { ArrowRight, Zap, ShieldCheck, BarChart3, Layers, Server, HardDrive } from 'lucide-react'
 
 const products = [
   {
+    id: 'mcp-server',
+    title: 'MCP Server',
+    tagline: 'AI agent verification tools',
+    desc: 'Five tools for Claude, Cursor, and any MCP client. Verify, inspect, and decode records. Issue and bundle with capability-based access control.',
+    href: '/docs/mcp/receipts',
+    icon: Server,
+    features: ['5 tools', 'Claude / Cursor', 'Capability-based ACL'],
+    status: 'available' as const,
+    npmUrl: 'https://www.npmjs.com/package/@peac/mcp-server',
+  },
+  {
     id: 'gateway',
     title: 'Gateway',
-    tagline: 'Edge enforcement for AI agents',
-    desc: 'Enable HTTP 402 payment-required flows and issue PEAC receipts at the edge or origin.',
+    tagline: 'Edge gateway for AI agents',
+    desc: 'Enable HTTP 402 payment-required flows and issue signed records at the edge or origin.',
     href: '/products/gateway-402',
     icon: Zap,
-    features: ['Edge deployment', 'HTTP 402 flows', 'Signed receipts'],
+    features: ['Edge deployment', 'HTTP 402 flows', 'Signed records'],
     status: 'available' as const,
     npmUrl: 'https://www.npmjs.com/package/@peac/rails-x402',
   },
@@ -20,7 +31,7 @@ const products = [
     id: 'verify',
     title: 'Verify',
     tagline: 'Cryptographic verification',
-    desc: 'Offline and hosted receipt verification with JWKS support and policy validation.',
+    desc: 'Offline and hosted record verification with JWKS support and policy validation.',
     href: '/products/verify',
     icon: ShieldCheck,
     features: ['Offline verification', 'JWKS support', 'Policy validation'],
@@ -28,24 +39,35 @@ const products = [
     npmUrl: 'https://www.npmjs.com/package/@peac/protocol',
   },
   {
+    id: 'capture',
+    title: 'Capture',
+    tagline: 'Durable interaction evidence',
+    desc: 'File-backed spool and deduplication stores for Node.js. Capture interaction evidence with durable, crash-safe storage.',
+    href: '/developers',
+    icon: HardDrive,
+    features: ['File spool store', 'Deduplication', 'Crash-safe'],
+    status: 'available' as const,
+    npmUrl: 'https://www.npmjs.com/package/@peac/capture-node',
+  },
+  {
     id: 'trace',
     title: 'Trace',
     tagline: 'Audit trails and provenance',
-    desc: 'Comprehensive audit exports and evidence views derived from PEAC receipts.',
+    desc: 'Audit exports and evidence views derived from signed interaction records.',
     href: '/trace',
     icon: BarChart3,
     features: ['Audit exports', 'Evidence views', 'Compliance tools'],
-    status: 'coming-soon' as const,
+    status: 'preview' as const,
   },
   {
     id: 'studio',
     title: 'Studio',
     tagline: 'Policy dashboard',
-    desc: 'Policy management, receipt analytics, and governance views for PEAC deployments.',
+    desc: 'Policy management, interaction analytics, and governance views for deployments.',
     href: '/products/studio',
     icon: Layers,
-    features: ['Policy editing', 'Receipt analytics', 'Governance views'],
-    status: 'coming-soon' as const,
+    features: ['Policy editing', 'Interaction analytics', 'Governance views'],
+    status: 'preview' as const,
   },
 ]
 
@@ -83,9 +105,9 @@ export default function ProductSuite() {
       <div className="products-container">
         <div className={`products-header ${isVisible ? 'visible' : ''}`}>
           <span className="products-label">Product Suite</span>
-          <h2 className="products-title">Built for AI agents</h2>
+          <h2 className="products-title">Ship today, verify anywhere</h2>
           <p className="products-subtitle">
-            Open-source packages for policy enforcement, optional settlement flows, and receipt verification.
+            Open-source packages for issuing, capturing, and verifying signed interaction records.
           </p>
         </div>
 
@@ -104,7 +126,7 @@ export default function ProductSuite() {
                   <div className="card-title-row">
                     <h3 className="card-title">{product.title}</h3>
                     <span className={`card-status ${product.status}`}>
-                      {isAvailable ? 'Available' : 'Coming Soon'}
+                      {isAvailable ? 'Available' : 'Preview'}
                     </span>
                   </div>
                   <p className="card-tagline">{product.tagline}</p>
@@ -127,7 +149,7 @@ export default function ProductSuite() {
                     </span>
                   ) : (
                     <span className="card-link card-link-muted">
-                      In development
+                      In preview
                     </span>
                   )}
                 </div>
@@ -236,7 +258,7 @@ export default function ProductSuite() {
 
         .products-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: var(--space-4);
           margin-bottom: var(--space-12);
         }
@@ -328,7 +350,7 @@ export default function ProductSuite() {
           color: var(--accent-success, #22c55e);
         }
 
-        .card-status.coming-soon {
+        .card-status.preview {
           background: var(--surface-subtle);
           color: var(--text-tertiary);
         }
@@ -437,6 +459,12 @@ export default function ProductSuite() {
           height: 3px;
           border-radius: 50%;
           background: var(--border-default);
+        }
+
+        @media (max-width: 1024px) {
+          .products-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
         }
 
         @media (max-width: 768px) {

@@ -101,7 +101,7 @@ export default function HeroFlowDiagram() {
         <div className={`flow-step ${at('decision') ? 'active' : ''} ${phase === 'decision' ? 'current' : ''}`}>
           <div className="step-icon"><Shield size={15} strokeWidth={1.8} /></div>
           <div className="step-content">
-            <span className="step-label">Decision enforced</span>
+            <span className="step-label">Decision recorded</span>
             <span className="step-mono">
               {at('decision') ? (
                 <span className="decision-allow">ALLOW</span>
@@ -162,10 +162,17 @@ export default function HeroFlowDiagram() {
             </span>
           </div>
           <div className="verifier-row">
-            <span className="vr-label">policy digest</span>
+            <span className="vr-label">record intact</span>
             <span className="vr-value vr-valid">
               <CheckCircle size={10} strokeWidth={2.5} />
-              matched
+              hashes match
+            </span>
+          </div>
+          <div className="verifier-row">
+            <span className="vr-label">terms digest</span>
+            <span className="vr-value vr-valid">
+              <CheckCircle size={10} strokeWidth={2.5} />
+              present
             </span>
           </div>
           <div className="verifier-row">
@@ -565,7 +572,7 @@ export default function HeroFlowDiagram() {
         }
 
         .flow-verifier.active {
-          max-height: 160px;
+          max-height: 200px;
           padding: 10px 14px 12px;
           border-top-color: var(--accent-success-border);
           background: var(--accent-success-muted);
@@ -757,7 +764,7 @@ export default function HeroFlowDiagram() {
           .participant { opacity: 1; }
           .flow-arrow { opacity: 0.5; }
           .step-progress { opacity: 0.5; }
-          .flow-verifier { max-height: 160px; padding: 10px 14px 12px; border-top-color: var(--accent-success-border); background: var(--accent-success-muted); }
+          .flow-verifier { max-height: 200px; padding: 10px 14px 12px; border-top-color: var(--accent-success-border); background: var(--accent-success-muted); }
         }
       `}</style>
     </div>

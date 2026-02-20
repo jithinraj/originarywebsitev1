@@ -5,7 +5,7 @@ import { Shield, Fingerprint, CheckCircle, CreditCard, FileCheck, Lock, FileSign
 export default function FoundationalRailsSection() {
   const domains = [
     { icon: Shield, label: 'Access', description: 'Policy-aware gating for AI agents' },
-    { icon: Users, label: 'Attribution', description: 'Enforceable creator credits' },
+    { icon: Users, label: 'Attribution', description: 'Verifiable creator credits' },
     { icon: CreditCard, label: 'Commerce', description: 'HTTP 402 settlement' },
     { icon: CheckCircle, label: 'Consent', description: 'Purpose-bound usage' },
     { icon: FileCheck, label: 'Compliance', description: 'Audit bundles' },
