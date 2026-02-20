@@ -14,14 +14,14 @@ import { homeFaqs } from '@/content/faqs'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Verifiable Records for Automated Interactions'
+    absolute: 'Verifiable Interaction Records for AI Agents and APIs | Originary'
   },
   description: 'Turn API calls, tool runs, and agent handoffs into portable signed records you can verify independently. Open-source packages built on the PEAC standard.',
   alternates: {
     canonical: '/'
   },
   openGraph: {
-    title: 'Originary | Verifiable Records for Automated Interactions',
+    title: 'Verifiable Interaction Records for AI Agents and APIs | Originary',
     description: 'Turn API calls, tool runs, and agent handoffs into portable signed records you can verify independently. Open-source packages built on the PEAC standard.',
     url: 'https://www.originary.xyz',
     type: 'website',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Verifiable Records for Automated Interactions',
+    title: 'Verifiable Interaction Records for AI Agents and APIs | Originary',
     description: 'Turn API calls, tool runs, and agent handoffs into portable signed records you can verify independently. Open-source packages built on the PEAC standard.',
     images: ['/og'],
     site: '@originaryx',

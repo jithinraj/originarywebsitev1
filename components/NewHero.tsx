@@ -25,8 +25,6 @@ export default function NewHero() {
             <span>open standard</span>
           </div>
 
-          <p className="hero-positioning">Originary ships production tooling built on the PEAC open standard.</p>
-
           <h1 className="hero-headline">
             <span className="hero-headline-main">Verifiable records</span>
             <span className="hero-headline-sub">for automated<br className="hero-br-mobile" /> interactions.</span>
@@ -203,7 +201,6 @@ export default function NewHero() {
         }
 
         .hero-badge { animation-delay: 0.1s; }
-        .hero-positioning { animation-delay: 0.15s; }
         .hero-headline { animation-delay: 0.2s; }
         .hero-problem { animation-delay: 0.3s; }
         .hero-solution { animation-delay: 0.35s; }
@@ -237,14 +234,6 @@ export default function NewHero() {
         .hero-badge :global(.badge-dot) {
           color: var(--accent-brand);
           opacity: 0.5;
-        }
-
-        .hero-positioning {
-          font-size: var(--text-sm);
-          color: var(--text-tertiary);
-          margin: 0;
-          font-weight: 500;
-          letter-spacing: 0.01em;
         }
 
         .hero-headline {
