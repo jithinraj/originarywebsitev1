@@ -135,7 +135,7 @@ export default function Page() {
             MCP in the agentic web
           </h2>
           <p style={{ marginBottom: 'var(--space-4)' }}>
-            MCP complements other agentic web protocols by focusing on <em>context access</em> while protocols like <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC</Link> handle <em>policy enforcement</em> and <Link href="/glossary/a2a/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>A2A</Link> handles <em>agent communication</em>.
+            MCP complements other agentic web protocols by focusing on <em>context access</em> while protocols like <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC</Link> handle <em>verifiable interaction records</em> and <Link href="/glossary/a2a/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>A2A</Link> handles <em>agent communication</em>.
           </p>
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <p style={{ marginBottom: 'var(--space-3)', fontWeight: 600, color: 'var(--text-primary)' }}>
@@ -211,7 +211,7 @@ export default function Page() {
               <Link href="/glossary/a2a/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>A2A</Link> - Agent-to-agent communication protocols
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Policy enforcement and verifiable receipts
+              <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Verifiable interaction records
             </li>
             <li style={{ marginBottom: 0 }}>
               <Link href="/solutions/ai-builders/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AI Builders solution</Link> - Build compliant agent systems

@@ -60,7 +60,7 @@ export default function FinalCTA() {
         <div className="cta-content reveal">
           <h2 className="cta-title">Ready to build?</h2>
           <p className="cta-description">
-            PEAC is Apache-2.0, self-hostable, and ships with everything you need to issue and verify receipts.
+            Install the packages, add middleware or MCP tools, and start issuing verifiable records. Open source, self-hostable, Apache-2.0.
           </p>
           <div className="cta-actions">
             <Link href="/developers" className="cta-btn-primary">

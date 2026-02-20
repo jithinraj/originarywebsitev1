@@ -155,7 +155,7 @@ contact: rights@example.com`}</code>
               <Link href="/solutions/publishers/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Publishers solution</Link> - Protect and monetize content with AIPREF
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Verifiable receipts for policy enforcement
+              <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Verifiable records for automated interactions
             </li>
             <li style={{ marginBottom: 0 }}>
               <Link href="/glossary/agentic-web/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure for autonomous agents

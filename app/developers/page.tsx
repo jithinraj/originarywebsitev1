@@ -6,8 +6,8 @@ import { ArrowRight, Code, Download, Sparkles } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Developers | AI Infrastructure Tools and PEAC Protocol SDK',
-  description: 'AI infrastructure tools for agentic web development. Integrate PEAC-Receipts, HTTP 402 payments, x402, MCP receipts, and A2A verification.',
-  keywords: 'AI infrastructure tools, AI Access, PEAC Protocol SDK, PEAC SDK, agentic web infrastructure, developer API, PEAC protocol, CLI tools, HTTP 402, HTTP 402 examples, x402 integration, agent receipts, policy validation, edge verification, MCP receipts, MCP integration, A2A communication, ACP, Verify API, Gateway 402, Policy APIs',
+  description: 'AI infrastructure tools for agentic web development. Issue verifiable records, HTTP 402 payments, x402, MCP server tools, and A2A verification.',
+  keywords: 'AI infrastructure tools, AI Access, PEAC Protocol SDK, PEAC SDK, agentic web infrastructure, developer API, PEAC protocol, CLI tools, HTTP 402, HTTP 402 examples, x402 integration, verifiable records, policy validation, edge verification, MCP server, MCP integration, A2A communication, ACP, Verify API, Gateway 402, Policy APIs',
   authors: [{ name: 'Originary' }],
   alternates: {
     canonical: '/developers'
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'Developers | AI Infrastructure Tools and PEAC Protocol SDK',
-    description: 'AI infrastructure tools for agentic web development. Integrate PEAC-Receipts with the PEAC Protocol SDK. Add HTTP 402 examples, x402 integration, MCP receipts, and A2A verification.',
+    description: 'AI infrastructure tools for agentic web development. Issue verifiable records with the PEAC Protocol SDK. Add HTTP 402 payments, x402 integration, MCP server tools, and A2A verification.',
     url: '/developers',
     images: ['/og'],
     siteName: 'Originary',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Developers | AI Infrastructure Tools and PEAC Protocol SDK',
-    description: 'AI infrastructure tools for agentic web development. Integrate PEAC-Receipts with the PEAC Protocol SDK. Add HTTP 402 examples, x402 integration, and MCP receipts.',
+    description: 'AI infrastructure tools for agentic web development. Issue verifiable records with the PEAC Protocol SDK. Add HTTP 402 payments, x402 integration, and MCP server tools.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',

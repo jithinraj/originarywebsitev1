@@ -95,15 +95,15 @@ const organizationJsonLd = {
     'AI Consent',
     'AI Access',
     'Ethical crawling',
-    'verifiable receipts',
+    'verifiable records',
     'agent-to-agent transactions',
-    'Verifiable receipts for AI agents',
+    'Verifiable records for AI agents',
     'HTTP 402 Payment Required',
     'Agent-to-Agent communication',
     'Model Context Protocol',
-    'PEAC receipts',
+    'PEAC records',
     'AI Preferences',
-    'API policy enforcement',
+    'API policy verification',
     'Agent coordination',
     'Machine-readable payment flows'
   ]
@@ -171,10 +171,10 @@ const siteNavJsonLd = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Originary | Signed Receipts for AI Agent Interactions',
+    default: 'Originary | Verifiable Records for Automated Interactions',
     template: '%s | Originary',
   },
-  description: 'When an AI agent hits your API, the only record is a server log. PEAC receipts are signed, portable, and verify offline with a public key. Open standard. Apache-2.0.',
+  description: 'Turn API calls, tool runs, and agent handoffs into portable signed records you can verify independently. Open-source packages built on the PEAC standard. Apache-2.0.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
@@ -185,23 +185,23 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://www.originary.xyz'),
   openGraph: {
-    title: 'Originary | Signed Receipts for AI Agent Interactions',
-    description: 'When an AI agent hits your API, the only record is a server log. PEAC receipts are signed, portable, and verify offline with a public key. Open standard. Apache-2.0.',
+    title: 'Originary | Verifiable Records for Automated Interactions',
+    description: 'Turn API calls, tool runs, and agent handoffs into portable signed records you can verify independently. Open-source packages built on the PEAC standard. Apache-2.0.',
     url: 'https://www.originary.xyz',
     siteName: 'Originary',
     images: [{
       url: '/og',
       width: 1200,
       height: 630,
-      alt: 'Originary - Signed receipts for AI agent interactions'
+      alt: 'Originary - Verifiable records for automated interactions'
     }],
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Signed Receipts for AI Agent Interactions',
-    description: 'When an AI agent hits your API, the only record is a server log. PEAC receipts are signed, portable, and verify offline with a public key. Open standard. Apache-2.0.',
+    title: 'Originary | Verifiable Records for Automated Interactions',
+    description: 'Turn API calls, tool runs, and agent handoffs into portable signed records you can verify independently. Open-source packages built on the PEAC standard. Apache-2.0.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',

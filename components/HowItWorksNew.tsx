@@ -9,9 +9,9 @@ const steps = [
   {
     id: 'publish',
     num: '01',
-    title: 'Publish policy',
-    tagline: 'Machine-readable terms',
-    desc: 'Deploy a policy at /.well-known/peac.txt defining access terms and payment requirements. Agents discover it automatically.',
+    title: 'Publish terms',
+    tagline: 'Machine-readable policy',
+    desc: 'Add a peac.txt file to your domain. It declares access rules, pricing, and consent terms that agents and MCP clients discover automatically.',
     Illustration: PublishIllustration,
     gradient: 'linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%)',
     code: `# /.well-known/peac.txt
@@ -27,11 +27,11 @@ rules:
     cta: { label: 'See template', href: '/peac' },
   },
   {
-    id: 'enforce',
+    id: 'check',
     num: '02',
-    title: 'Enforce at edge',
-    tagline: 'Real-time decisions',
-    desc: 'Allow, deny, or request payment before serving responses. HTTP 402 status codes trigger programmatic settlement.',
+    title: 'Check requests',
+    tagline: 'Middleware or MCP tools',
+    desc: 'Evaluate each request against your policy. Allow, deny, or return HTTP 402 to request payment. Works at the edge, origin, or inside an MCP tool call.',
     Illustration: EnforceIllustration,
     gradient: 'linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-brand-hover) 100%)',
     code: `HTTP/1.1 402 Payment Required
@@ -46,11 +46,11 @@ PEAC-Accept: x402, invoice
     cta: { label: 'Add middleware', href: '/developers' },
   },
   {
-    id: 'receipt',
+    id: 'record',
     num: '03',
-    title: 'Return receipt',
-    tagline: 'Verified record',
-    desc: 'Sign and return a PEAC-Receipt. Verifies offline with your public key. Portable across any system.',
+    title: 'Return a signed record',
+    tagline: 'Portable proof',
+    desc: 'Every interaction produces a signed record that verifies offline with your public key. Bundle records into evidence archives for audit or handoff.',
     Illustration: ReceiptIllustration,
     gradient: 'linear-gradient(135deg, var(--text-secondary) 0%, var(--text-tertiary) 100%)',
     code: `PEAC-Receipt: eyJhbGciOiJFZERTQSJ9...
@@ -62,7 +62,7 @@ PEAC-Accept: x402, invoice
   "iat": 1737290800,
   "decision": "allow"
 }`,
-    cta: { label: 'Verify a receipt', href: '/verify' },
+    cta: { label: 'Verify a record', href: '/verify' },
   }
 ]
 
@@ -110,7 +110,7 @@ export default function HowItWorksNew() {
             <span className="how-label">How it works</span>
           </div>
           <h2 className="how-title">Three steps to verifiable interactions</h2>
-          <p className="how-subtitle">Publish terms, enforce decisions, verify the record</p>
+          <p className="how-subtitle">Publish terms, check requests, return a signed record</p>
         </div>
 
         <div className="steps-grid">

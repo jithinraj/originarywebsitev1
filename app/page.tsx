@@ -14,15 +14,15 @@ import { homeFaqs } from '@/content/faqs'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Verification for Automated Interactions'
+    absolute: 'Originary | Verifiable Records for Automated Interactions'
   },
-  description: 'Originary provides verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.',
+  description: 'Turn API calls, tool runs, and agent handoffs into portable signed records you can verify independently. Open-source packages built on the PEAC standard.',
   alternates: {
     canonical: '/'
   },
   openGraph: {
-    title: 'Originary | Verification for Automated Interactions',
-    description: 'Originary provides verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.',
+    title: 'Originary | Verifiable Records for Automated Interactions',
+    description: 'Turn API calls, tool runs, and agent handoffs into portable signed records you can verify independently. Open-source packages built on the PEAC standard.',
     url: 'https://www.originary.xyz',
     type: 'website',
     images: ['/og'],
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Verification Infrastructure for Automated Interactions',
-    description: 'Originary provides verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.',
+    title: 'Originary | Verifiable Records for Automated Interactions',
+    description: 'Turn API calls, tool runs, and agent handoffs into portable signed records you can verify independently. Open-source packages built on the PEAC standard.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -49,7 +49,7 @@ const organizationJsonLd = {
     'https://twitter.com/originaryx',
     'https://github.com/peacprotocol',
   ],
-  description: 'Verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.',
+  description: 'Turn API calls, tool runs, and agent handoffs into portable signed records you can verify independently. Open-source packages built on the PEAC standard.',
 }
 
 const webSiteJsonLd = {
@@ -99,12 +99,15 @@ export default function Page() {
       <NavigationHeader />
       <main id="main-content" role="main">
         <NewHero />
-        <StandardsCompatibility />
         <WhatThisSolves />
-        <AudienceChooser />
         <HowItWorksNew />
         <ProductSuite />
         <ProofSection />
+        <p style={{ textAlign: 'center', fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '620px', margin: '0 auto', padding: 'var(--space-12) var(--space-6) var(--space-4)', lineHeight: 1.6, fontWeight: 500 }}>
+          Originary doesn&apos;t replace your agent framework or payment rail. It makes interactions provable and portable.
+        </p>
+        <StandardsCompatibility />
+        <AudienceChooser />
         <section style={{ padding: 'var(--space-20) 0', borderTop: '1px solid var(--border-default)', background: 'var(--surface-base)' }}>
           <div className="container">
             <FaqAccordion items={homeFaqs} />
