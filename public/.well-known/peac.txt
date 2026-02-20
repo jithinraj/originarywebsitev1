@@ -9,6 +9,8 @@
 # Reference: https://github.com/peacprotocol/peac
 
 version: peac-policy/0.1
+issuer: www.originary.xyz
+verify: https://www.originary.xyz/.well-known/jwks.json
 usage: conditional
 purposes: [inference, ai_input]
 receipts: required

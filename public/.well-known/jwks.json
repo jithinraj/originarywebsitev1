@@ -3,6 +3,14 @@
     {
       "kty": "OKP",
       "crv": "Ed25519",
+      "kid": "originary-2026-02",
+      "use": "sig",
+      "alg": "EdDSA",
+      "x": "11qYAYKxCrfVS_7TyWQHOg7hcvPapiMlrwIaaPcHURo"
+    },
+    {
+      "kty": "OKP",
+      "crv": "Ed25519",
       "kid": "peac-2025-01",
       "use": "sig",
       "alg": "EdDSA",

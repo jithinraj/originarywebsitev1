@@ -29,7 +29,7 @@ export default function ReceiptsPage() {
     {
       icon: <FileText size={24} />,
       title: 'Policy Binding',
-      description: 'Each receipt binds to a specific policy version via SHA-256 hash.',
+      description: 'Carries a policy digest. Verifiers confirm binding when the policy snapshot is available (evidence bundle or local cache).',
       color: 'var(--accent-secondary)',
       colorMuted: 'var(--accent-secondary-subtle)'
     },

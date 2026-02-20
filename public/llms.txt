@@ -1,8 +1,8 @@
-# Originary | Verification Infrastructure for Automated Interactions
+# Originary | Verifiable Interaction Records for AI Agents and APIs
 
-> Originary provides verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.
+> Originary ships production tooling for verifiable interaction records. Issue, verify, and handoff signed records for API calls, tool runs, and agent handoffs with the open PEAC standard.
 
-Last updated: 2026-02-19
+Last updated: 2026-02-21
 
 Company: Poem, Inc.
 Location: Delaware, USA
@@ -32,13 +32,13 @@ AI Policy Pack Generator. CLI tool to generate peac.txt, AIPREF headers, and hum
 AI bot detection and traffic analytics. Identifies AI agents accessing your APIs and web resources. Export logs and evidence to your stack.
 
 ### Gateway 402 (/products/gateway-402)
-HTTP 402 paywall for AI traffic. Enforce policy at the edge with allow/deny/rate-limit options or HTTP 402 challenges. Process payments via x402 (stablecoins) or payment gateways.
+HTTP 402 gateway for AI traffic. Check requests at the edge with allow/deny/rate-limit decisions or HTTP 402 challenges. Process payments via x402 (stablecoins) or payment gateways.
 
 ### Verify (/products/verify)
 Receipt verification API. Validate PEAC-Receipt signatures server-side for billing, disputes, and audits.
 
 ### Studio (/products/studio)
-Policy management and receipt observability dashboard. Coming soon.
+Interaction analytics and record observability dashboard. Preview.
 
 ### MCP Server (/integrations/mcp)
 MCP tool server (@peac/mcp-server) with 5 tools: verify-receipt, inspect-receipt, decode-receipt (pure, offline), issue-receipt, create-bundle (privileged, require issuer key). Capability-based access control with structured outputs. Works with Claude Desktop, Cursor, and custom agents.
@@ -213,7 +213,7 @@ Key pages include FAQ sections with direct answers for common questions:
 
 ## For AI Agents
 
-This site supports PEAC Protocol. This `llms.txt` is provided as a convenience for inference-time tools and agents. Canonical enforcement comes from PEAC receipts and policy validation.
+This site supports PEAC Protocol. This `llms.txt` is provided as a convenience for inference-time tools and agents. Canonical verification comes from PEAC-Receipt signatures and policy validation.
 
 To interact programmatically:
 1. Fetch /.well-known/peac.txt for policy discovery
