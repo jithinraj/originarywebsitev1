@@ -2,7 +2,7 @@
 
 > Originary ships production tooling for verifiable interaction records. Issue, verify, and handoff signed records for API calls, tool runs, and agent handoffs with the open PEAC standard.
 
-Last updated: 2026-02-21
+Last updated: 2026-02-23
 
 Company: Poem, Inc.
 Location: Delaware, USA
@@ -17,7 +17,7 @@ Contact: contact@originary.xyz
 - [Declare](/declare) - AI Policy Pack Generator
 - [Blog](/blog) - Technical articles on AI commerce and PEAC Protocol
 - [Verify](/verify) - Validate signed receipts for billing, disputes, and audits
-- [About](/about) - Company mission and how we work
+- [About](/about) - Mission, verification domains, adoption path, and open foundation
 - [What is Originary?](/what-is-originary) - Introduction to Originary
 - [Originary AI](/originary-ai) - AI-specific capabilities and integrations
 
