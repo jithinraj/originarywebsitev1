@@ -491,7 +491,7 @@ export default function SystemOfRecordPage() {
 access_control: http-402
 payments: [x402, stripe]
 receipts: required
-verify: /.well-known/jwks.json`}</code></pre>
+verify: /.well-known/peac-issuer.json`}</code></pre>
                   </div>
                 </div>
 

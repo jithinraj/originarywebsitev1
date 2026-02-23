@@ -7,19 +7,19 @@
  */
 export const FACTS = {
   /** See github.com/peacprotocol/peac/releases */
-  protocolVersion: 'v0.10.13',
+  protocolVersion: 'v0.11.0',
 
   /** Frozen until v1.0 -- see docs/specs/PROTOCOL-BEHAVIOR.md */
   wireFormat: 'peac-receipt/0.1',
 
-  /** 22 packages in @peac/* org on npm */
-  packagesCount: 22,
+  /** 21 packages in @peac/* org on npm (latest + next) */
+  packagesCount: 21,
 
-  /** pnpm test -- 4014 as of v0.10.13 */
-  testsCount: 4014,
+  /** pnpm test -- 4191 as of v0.11.0 */
+  testsCount: 4191,
 
-  /** pnpm build -- 75 as of v0.10.13 */
-  buildTargets: 75,
+  /** pnpm build -- 77 as of v0.11.0 */
+  buildTargets: 77,
 
   license: 'Apache-2.0',
 

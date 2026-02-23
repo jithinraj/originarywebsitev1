@@ -10,7 +10,7 @@
 
 version: peac-policy/0.1
 issuer: www.originary.xyz
-verify: https://www.originary.xyz/.well-known/jwks.json
+verify: https://www.originary.xyz/.well-known/peac-issuer.json
 usage: conditional
 purposes: [inference, ai_input]
 receipts: required
