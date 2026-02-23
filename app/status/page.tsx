@@ -69,8 +69,8 @@ export default function StatusPage() {
           }}>
             {[
               { label: 'Wire format', value: 'peac-receipt/0.1 (frozen)' },
-              { label: 'Latest release', value: 'v0.10.13' },
-              { label: 'Published packages', value: '22 on npm' },
+              { label: 'Latest release', value: 'v0.11.0' },
+              { label: 'Published packages', value: '21 on npm' },
               { label: 'License', value: 'Apache-2.0' },
               { label: 'Release cadence', value: '~weekly during v0.10.x' },
             ].map((item) => (

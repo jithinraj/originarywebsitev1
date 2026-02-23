@@ -43,7 +43,7 @@ export default function ChangelogPage() {
             >
               <div style={{ display: 'grid', gap: 'var(--space-4)' }}>
                 {[
-                  { icon: <Tag size={18} />, label: 'Current version', value: 'v0.10.13' },
+                  { icon: <Tag size={18} />, label: 'Current version', value: 'v0.11.0' },
                   { icon: <GitBranch size={18} />, label: 'Wire format', value: 'peac-receipt/0.1 (frozen)' },
                   { icon: <Package size={18} />, label: 'License', value: 'Apache-2.0' },
                 ].map((row) => (
@@ -94,6 +94,25 @@ export default function ChangelogPage() {
               </h2>
 
               {[
+                {
+                  version: 'v0.11.0',
+                  date: 'Feb 23, 2026',
+                  items: [
+                    'Zod 4 migration (^4.3.6) across all packages',
+                    'MCP Streamable HTTP transport with session isolation (CVE-2026-25536 defense)',
+                    'Kernel constraint enforcement pipeline: fail-closed in issue() and verify()',
+                    'Integrator kit with conformance harness for third-party implementations',
+                  ],
+                },
+                {
+                  version: 'v0.10.14',
+                  date: 'Feb 22, 2026',
+                  items: [
+                    'Conformance fixture versioning with schema_version field',
+                    'Kernel constraints specification (KERNEL-CONSTRAINTS.md)',
+                    'Editorial hygiene sweep and Zod 4 preparation',
+                  ],
+                },
                 {
                   version: 'v0.10.13',
                   date: 'Feb 19, 2026',

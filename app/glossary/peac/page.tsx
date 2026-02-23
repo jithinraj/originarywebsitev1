@@ -126,7 +126,7 @@ PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6InBlYWMtcmVjZWlwdC8wLjEiLCJraWQiOiJvcm
     "iat": 1734048000,
     "jti": "rcpt_xyz789",
     "peac": {
-      "version": "0.10.13",
+      "version": "0.11.0",
       "resource": "/api/content",
       "policy_hash": "sha256:9f3c..."
     },
