@@ -101,7 +101,7 @@ export default function AboutPage() {
           style={{
             position: 'relative',
             background: 'var(--gradient-mesh)',
-            padding: 'var(--space-32) 0 var(--space-24)',
+            padding: 'clamp(4rem, 12vh, 8rem) 0 clamp(4rem, 10vh, 6rem)',
             overflow: 'hidden',
           }}
         >
