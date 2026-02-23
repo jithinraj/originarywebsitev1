@@ -17,7 +17,7 @@ const steps = [
     code: `# /.well-known/peac.txt
 version: peac-policy/0.1
 issuer: api.example.com
-verify: /.well-known/jwks.json
+verify: /.well-known/peac-issuer.json
 
 rules:
   /api/*:

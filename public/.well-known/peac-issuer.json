@@ -1,0 +1,8 @@
+{
+  "version": "peac-issuer/0.1",
+  "issuer": "https://www.originary.xyz",
+  "jwks_uri": "https://www.originary.xyz/.well-known/jwks.json",
+  "receipt_versions": ["peac-receipt/0.1"],
+  "algorithms": ["EdDSA"],
+  "security_contact": "https://www.originary.xyz/.well-known/security.txt"
+}

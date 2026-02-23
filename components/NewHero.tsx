@@ -38,6 +38,10 @@ export default function NewHero() {
             Originary turns API calls, tool runs, and agent handoffs into portable signed records you can verify independently, even offline. Publish terms at <code className="hero-code">/.well-known/peac.txt</code>.
           </p>
 
+          <p className="hero-audience">
+            For API providers, agent platforms, and security/compliance teams operating across org boundaries.
+          </p>
+
           <div className="hero-actions">
             <Link href="/developers" className="hero-btn-primary">
               Quickstart
@@ -59,6 +63,10 @@ export default function NewHero() {
             <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="hero-link">
               Read the spec
             </a>
+            <span className="hero-link-sep">/</span>
+            <Link href="/about" className="hero-link">
+              About Originary
+            </Link>
           </div>
 
           <p className="hero-proof-line">OSS packages. Self-hostable. Verification does not require Originary to be online.</p>
@@ -204,6 +212,7 @@ export default function NewHero() {
         .hero-headline { animation-delay: 0.2s; }
         .hero-problem { animation-delay: 0.3s; }
         .hero-solution { animation-delay: 0.35s; }
+        .hero-audience { animation-delay: 0.37s; }
         .hero-actions { animation-delay: 0.4s; }
         .hero-links { animation-delay: 0.43s; }
         .hero-proof-line { animation-delay: 0.46s; }
@@ -284,6 +293,15 @@ export default function NewHero() {
           color: var(--text-secondary);
           max-width: 500px;
           margin: 0;
+        }
+
+        .hero-audience {
+          font-size: var(--text-sm);
+          line-height: 1.5;
+          color: var(--text-tertiary);
+          max-width: 500px;
+          margin: 0;
+          font-weight: 500;
         }
 
         .hero-solution :global(.hero-code) {

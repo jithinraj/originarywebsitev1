@@ -79,22 +79,22 @@ export default function HeroPeacFlowBg({ className }: HeroPeacFlowBgProps) {
         <text>
           <animateMotion path="M 680 200 Q 780 230, 876 296" dur="5s" repeatCount="indefinite" />
           <animate attributeName="opacity" values="0;1;1;0" dur="5s" repeatCount="indefinite" />
-          req
+          request
         </text>
         <text>
           <animateMotion path="M 700 340 Q 790 320, 876 300" dur="4.5s" repeatCount="indefinite" begin="0.8s" />
           <animate attributeName="opacity" values="0;1;1;0" dur="4.5s" repeatCount="indefinite" begin="0.8s" />
-          pol
+          policy
         </text>
         <text>
           <animateMotion path="M 876 300 Q 790 320, 700 340" dur="4.5s" repeatCount="indefinite" begin="2.5s" />
           <animate attributeName="opacity" values="0;1;1;0" dur="4.5s" repeatCount="indefinite" begin="2.5s" />
-          sig
+          signed
         </text>
         <text>
           <animateMotion path="M 740 440 Q 810 390, 876 304" dur="5.5s" repeatCount="indefinite" begin="1.2s" />
           <animate attributeName="opacity" values="0;1;1;0" dur="5.5s" repeatCount="indefinite" begin="1.2s" />
-          jwt
+          receipt
         </text>
       </g>
 
@@ -215,7 +215,7 @@ export default function HeroPeacFlowBg({ className }: HeroPeacFlowBgProps) {
         {/* Receipt indicator */}
         <text x="850" y="270" fontSize="3.5" opacity="0.08">
           <animate attributeName="opacity" values="0;0.12;0.12;0" dur="5s" repeatCount="indefinite" begin="1s" />
-          rcpt
+          record
         </text>
       </g>
 
