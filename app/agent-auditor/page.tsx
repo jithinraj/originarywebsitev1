@@ -383,7 +383,7 @@ export default function AgentAuditorPage() {
               </div>
               <h2 style={{ marginBottom: 'var(--space-3)' }}>Drop a receipt and see what's inside</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '480px', margin: '0 auto', lineHeight: 1.6 }}>
-                No setup. Drop any receipt file and see it decoded and verified instantly. Nothing is sent anywhere.
+                No setup. Drop any receipt file and see it decoded and verified instantly. Inspection and verification happen locally in your browser or CLI. No outbound verification or artifact fetches.
               </p>
             </div>
 
