@@ -3,29 +3,51 @@ import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import { CheckCircle, Github, Download, BookOpen, Code, Shield, Activity, Layers } from 'lucide-react'
+import { FACTS } from '@/lib/facts'
 import { FaqAccordion, FaqJsonLd } from '@/components/faq'
 import { peacFaqs } from '@/content/faqs'
 
 export const metadata: Metadata = {
-  title: 'PEAC Protocol | Open Protocol for the Agentic Web',
-  description: 'PEAC Protocol is an open protocol for policy, payments, and receipts in the agentic web. HTTP 402 commerce and AI compliance.',
-  robots: 'index,follow',
+  title: 'PEAC Protocol | Open Standard for Verifiable Interaction Records',
+  description: 'PEAC is an open standard for verifiable interaction records. Sign API calls, tool runs, and agent handoffs as portable signed records you can verify independently, offline. Apache-2.0.',
+  keywords: [
+    'PEAC Protocol',
+    'verifiable interaction records',
+    'agent receipts',
+    'open protocol',
+    'Ed25519',
+    'MCP',
+    'A2A',
+    'HTTP 402',
+    'Apache-2.0',
+    'open source',
+    'interaction-record+jwt',
+  ],
+  authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+  },
   alternates: {
     canonical: '/peac'
   },
   openGraph: {
-    title: 'PEAC Protocol | Open Protocol for the Agentic Web',
-    description: 'PEAC Protocol is an open protocol for policy, payments, and receipts in the agentic web. HTTP 402 commerce and AI compliance.',
+    title: 'PEAC Protocol | Open Standard for Verifiable Interaction Records',
+    description: 'PEAC is an open standard for verifiable interaction records. Sign API calls, tool runs, and agent handoffs as portable signed records you can verify independently, offline.',
     url: '/peac',
     siteName: 'Originary',
     type: 'website',
-    images: ['/og'],
+    locale: 'en_US',
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'PEAC Protocol — Open standard for verifiable interaction records' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PEAC Protocol | Open Protocol for the Agentic Web',
-    description: 'Open protocol for policy, payments, and receipts in the agentic web.',
+    title: 'PEAC Protocol | Open Standard for Verifiable Interaction Records',
+    description: 'Open standard for verifiable interaction records. Sign and verify agent receipts independently, offline. Apache-2.0.',
     images: ['/og'],
+    site: '@originaryx',
+    creator: '@originaryx',
   },
 }
 
@@ -33,21 +55,25 @@ export default function PeacPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareSourceCode",
+    "@id": "https://www.originary.xyz/peac#protocol",
     "name": "PEAC Protocol",
-    "description": "PEAC Protocol - Open protocol for policy, payments, and verifiable receipts in the agentic web",
+    "description": "Open standard for verifiable interaction records. Sign API calls, tool runs, and agent handoffs as portable signed records verifiable independently, offline. Apache-2.0.",
     "codeRepository": "https://github.com/peacprotocol/peac",
     "programmingLanguage": ["TypeScript", "JavaScript"],
     "license": "https://www.apache.org/licenses/LICENSE-2.0",
     "isAccessibleForFree": true,
-    "keywords": ["PEAC", "agentic web", "HTTP 402", "receipts", "policy", "payments", "open source"],
+    "version": FACTS.stableVersion,
+    "keywords": ["PEAC Protocol", "verifiable interaction records", "agent receipts", "Ed25519", "MCP", "A2A", "HTTP 402", "open source", "Apache-2.0"],
     "author": {
       "@type": "Organization",
-      "name": "Originary"
+      "@id": "https://www.originary.xyz/#org",
+      "name": "Originary",
+      "url": "https://www.originary.xyz"
     }
   }
 
   return (
-    <>
+    <div className="wrap">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -56,26 +82,28 @@ export default function PeacPage() {
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
         {/* Hero */}
-        <section className="section" style={{ paddingTop: 'var(--space-24)', paddingBottom: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
-            <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto' }}>
               <div
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 'var(--space-2)',
-                  background: 'var(--accent-success-subtle)',
-                  border: '1px solid var(--accent-success-muted)',
+                  background: 'var(--accent-brand-subtle)',
+                  border: '1px solid var(--accent-brand)',
                   borderRadius: 'var(--radius-full)',
-                  padding: 'var(--space-2) var(--space-6)',
-                  marginBottom: 'var(--space-8)',
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 600,
-                  color: 'var(--accent-success)'
+                  padding: 'var(--space-2) var(--space-5)',
+                  marginBottom: 'var(--space-6)',
+                  fontSize: 'var(--text-xs)',
+                  fontWeight: 700,
+                  color: 'var(--accent-brand)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
                 }}
               >
-                <span className="h-2 w-2 rounded-full bg-green-500" />
-                Open Source • Apache-2.0
+                <span style={{ width: 7, height: 7, borderRadius: 'var(--radius-full)', background: 'var(--accent-brand)', display: 'inline-block', flexShrink: 0 }} />
+                Open Source — Apache-2.0
               </div>
 
               <h1
@@ -85,10 +113,11 @@ export default function PeacPage() {
                   lineHeight: 1.1,
                   letterSpacing: '-0.04em',
                   marginBottom: 'var(--space-6)',
-                  color: 'var(--text-primary)'
                 }}
               >
-                PEAC Protocol: an open protocol for policy, payments, and receipts
+                <span className="text-gradient">Open standard</span>
+                <br />
+                <span style={{ color: 'var(--text-primary)' }}>for verifiable interaction records</span>
               </h1>
 
               <p
@@ -99,7 +128,7 @@ export default function PeacPage() {
                   marginBottom: 'var(--space-12)'
                 }}
               >
-                Apache-2.0 licensed. Works anywhere. Adopt just the parts you need.
+                Sign API calls, tool runs, and agent handoffs as portable signed records. Verify them independently, even offline. Apache-2.0.
               </p>
 
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -378,7 +407,7 @@ export default function PeacPage() {
               >
                 <Code size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
                 <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  PEAC Core (22 packages)
+                  PEAC Core ({FACTS.publishedPackageCount} packages)
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
                   TypeScript/JavaScript SDK: protocol, crypto, schema, MCP server, capture-node, OpenClaw adapter, Stripe adapter, and more
@@ -624,7 +653,7 @@ export default function PeacPage() {
                 </div>
               </Link>
 
-              <Link href="/integrations" className="card" style={{ textDecoration: 'none', display: 'block', border: '2px dashed var(--border-default)', background: 'transparent' }}>
+              <Link href="/developers" className="card" style={{ textDecoration: 'none', display: 'block', border: '2px dashed var(--border-default)', background: 'transparent' }}>
                 <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   View all integrations
                 </h3>
@@ -652,43 +681,32 @@ export default function PeacPage() {
           </div>
         </section>
 
-        {/* Commercial Path CTA */}
-        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)', background: 'var(--gradient-brand)' }}>
+        {/* CTA */}
+        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
-            <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center', color: 'var(--white)' }}>
-              <h2
-                style={{
-                  fontSize: 'var(--text-3xl)',
-                  fontWeight: 700,
-                  marginBottom: 'var(--space-4)',
-                  color: 'var(--white)'
-                }}
-              >
-                Deploy PEAC yourself, or use Originary Cloud
-              </h2>
-              <p
-                style={{
-                  fontSize: 'var(--text-lg)',
-                  marginBottom: 'var(--space-8)',
-                  lineHeight: 1.7,
-                  color: 'var(--text-primary)'
-                }}
-              >
-                Self-host with the open source stack, or add managed services like Trace, Gateway, Studio, and Verify API.
-              </p>
-              <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link href="/pricing" className="btn btn-lg" style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}>
-                  View Pricing
-                </Link>
-                <Link href="/trace" className="btn btn-lg btn-ghost" style={{ color: 'var(--white)', borderColor: 'var(--border-on-brand)' }}>
-                  Explore Trace
-                </Link>
+            <div className="cta-card" style={{ position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle at 30% 40%, var(--glass-border-hover) 0%, transparent 50%)', pointerEvents: 'none' }} />
+              <div style={{ position: 'relative', zIndex: 2 }}>
+                <h2 style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--white)' }}>
+                  Start building on PEAC
+                </h2>
+                <p style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-8)', color: 'var(--white)', maxWidth: '480px', margin: '0 auto var(--space-8) auto', lineHeight: 1.6, opacity: 0.9 }}>
+                  Apache-2.0. Self-host everything. No sign-up required.
+                </p>
+                <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
+                  <Link href="/developers" className="btn btn-lg" style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}>
+                    Quickstart
+                  </Link>
+                  <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-ghost" style={{ color: 'var(--white)', border: '1px solid var(--border-hover)' }}>
+                    View on GitHub
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

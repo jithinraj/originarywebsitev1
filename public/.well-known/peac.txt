@@ -5,7 +5,7 @@
 # should interact with this domain. It is the machine-readable
 # equivalent of a terms-of-service page.
 #
-# Spec: peac-receipt/0.1 (frozen)
+# Spec: interaction-record+jwt (Wire 0.2, current stable); peac-receipt/0.1 (Wire 0.1, frozen)
 # Reference: https://github.com/peacprotocol/peac
 
 version: peac-policy/0.1
@@ -20,4 +20,4 @@ payment_methods: [x402, stripe]
 payment_endpoint: https://www.originary.xyz/api/pay
 negotiate: https://www.originary.xyz/api/negotiate
 contact: contact@originary.xyz
-license: Proprietary
+license: Apache-2.0

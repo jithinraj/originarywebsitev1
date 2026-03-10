@@ -26,7 +26,7 @@ export default function ContactPage() {
                 Get in touch
               </h1>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
-                Questions about products, partnerships, or technical support
+                Questions about the protocol, integration support, or commercial deployment
               </p>
             </div>
 
@@ -81,10 +81,10 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
-                    Sales and partnerships
+                    Integration and commercial support
                   </h3>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Enterprise pricing, custom deployments, and strategic partnerships
+                    Guided integration, managed deployments, attested signing keys, and dedicated engineering support
                   </p>
                 </div>
                 <div>
