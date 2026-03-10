@@ -326,7 +326,7 @@ export default function AgentAuditorPage() {
               alignItems: 'center',
             }}>
               {[
-                { icon: Lock, text: 'Nothing leaves your machine' },
+                { icon: Lock, text: 'No outbound requests' },
                 { icon: Shield, text: 'Signature verified locally' },
                 { icon: Terminal, text: 'Browser or CLI' },
                 { icon: FileText, text: '.jws · .json · .zip' },
@@ -382,9 +382,17 @@ export default function AgentAuditorPage() {
                 Live — runs in your browser
               </div>
               <h2 style={{ marginBottom: 'var(--space-3)' }}>Drop a receipt and see what's inside</h2>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '480px', margin: '0 auto', lineHeight: 1.6 }}>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '480px', margin: '0 auto var(--space-4) auto', lineHeight: 1.6 }}>
                 No setup. Drop any receipt file and see it decoded and verified instantly. Inspection and verification happen locally in your browser or CLI. No outbound verification or artifact fetches.
               </p>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', flexWrap: 'wrap', fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>
+                <span style={{ padding: 'var(--space-1) var(--space-3)', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-default)' }}>
+                  Browser: verifies receipt signatures and structure
+                </span>
+                <span style={{ padding: 'var(--space-1) var(--space-3)', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-default)' }}>
+                  CLI: full bundle integrity verification
+                </span>
+              </div>
             </div>
 
             <div style={{
