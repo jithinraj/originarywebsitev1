@@ -48,13 +48,13 @@ const learnArticles = [
     slug: 'ai-receipts',
     title: 'AI Receipts Explained',
     subtitle: 'Verifiable Records of Agent Interactions',
-    description: 'Deep dive into PEAC-Receipt - the JWS-signed JSON format that proves what happened in every agent interaction. Essential for billing, compliance, attribution, and dispute resolution.',
+    description: 'Deep dive into the PEAC interaction record format - the JWS-signed JSON format that proves what happened in every agent interaction. Essential for billing, compliance, attribution, and dispute resolution.',
     icon: Receipt,
     color: 'var(--accent-secondary-subtle)',
     iconColor: 'var(--accent-secondary)',
     readTime: '6 min read',
     featured: false,
-    topics: ['PEAC-Receipt', 'JWS Signatures', 'Audit Trails']
+    topics: ['Interaction Records', 'JWS Signatures', 'Audit Trails']
   },
   {
     slug: 'http-402-ai-payments',
@@ -304,7 +304,7 @@ export default function LearnPage() {
                   First Mover
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.6 }}>
-                  Define the standards others will follow
+                  Build on open protocols others can use
                 </p>
               </div>
 

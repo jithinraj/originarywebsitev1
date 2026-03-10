@@ -215,7 +215,7 @@ export default function AboutPage() {
             >
               Machine-readable terms, predictable enforcement, and a durable way to verify what happened
               without relying on a single vendor&apos;s logs. We make <strong>agent interactions</strong> verifiable
-              through <strong>portable decision records</strong>: cryptographically signed receipts that bind
+              through <strong>interaction records</strong>: cryptographically signed receipts that bind
               outcomes to the policy state in force at decision time.
             </p>
 
@@ -230,7 +230,7 @@ export default function AboutPage() {
                 margin: '0 auto var(--space-12) auto',
               }}
             >
-              A portable decision record can be verified offline by any party, stored independently
+              An interaction record can be verified offline by any party, stored independently
               of the issuing service, and used across audits, disputes, and partner workflows.
             </p>
 
@@ -312,8 +312,8 @@ export default function AboutPage() {
           <div ref={statsSection.ref} className="container stats-grid" style={{ maxWidth: '820px', margin: '0 auto' }}>
             {[
               { value: '10', label: 'Verification Domains' },
-              { value: '21', label: 'npm Packages' },
-              { value: '4,191', label: 'Tests Passing' },
+              { value: '28', label: 'npm Packages' },
+              { value: '5,675', label: 'Tests Passing' },
               { value: 'Apache-2.0', label: 'License' },
             ].map((stat, i) => (
               <div key={stat.label} style={{ ...reveal(statsSection.visible, i * 0.06), textAlign: 'center' }}>
