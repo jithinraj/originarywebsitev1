@@ -1,21 +1,21 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Verify PEAC-Receipts | Receipt Verification Tool',
-  description: 'Verify PEAC-Receipts and Originary receipts. Check signatures, expiry, and policy compliance for AI usage receipts.',
+  title: 'Inspector | Inspect and Validate Interaction Records',
+  description: 'Inspect PEAC interaction records. Parse JWS structure, decode claims, and check token format. Demo mode: validates structure and format; production verification includes full signature checks.',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Verify PEAC-Receipts | Receipt Verification Tool',
-    description: 'Verify PEAC-Receipts and Originary receipts. Check signatures, expiry, and policy compliance for AI usage receipts.',
+    title: 'Inspector | Inspect and Validate Interaction Records',
+    description: 'Inspect PEAC interaction records. Parse JWS structure, decode claims, and check token format.',
     url: '/verify',
     images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Verify PEAC-Receipts | Receipt Verification Tool',
-    description: 'Verify PEAC-Receipts and Originary receipts. Check signatures, expiry, and policy compliance for AI usage receipts.',
+    title: 'Inspector | Inspect and Validate Interaction Records',
+    description: 'Inspect PEAC interaction records. Parse JWS structure, decode claims, and check token format.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -34,21 +34,21 @@ export default function VerifyLayout({
   const softwareAppJsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Originary Verify",
+    "name": "PEAC Inspector",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Any",
-    "description": "Offline JWS signature verification tool for PEAC-Receipt tokens. Verify cryptographic signatures without API calls.",
+    "description": "Inspect and validate PEAC interaction records. Parse JWS structure, decode claims, and check token format.",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
     },
     "featureList": [
-      "Offline JWS signature verification",
-      "PEAC-Receipt token validation",
-      "Cryptographic signature checks",
+      "JWS structure parsing",
+      "Claims decoding",
+      "Token format validation",
       "No API calls required",
-      "Instant verification results"
+      "Instant results"
     ],
     "url": "https://www.originary.xyz/verify"
   };

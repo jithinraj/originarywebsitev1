@@ -2,17 +2,17 @@ import type { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Zap, Shield, Database, BarChart, Users, Globe, Star, Code } from 'lucide-react'
-import ServiceOffers from '@/components/ServiceOffers'
+import { ArrowRight, CheckCircle, Shield, Zap, Server, BarChart3, FileText, HardDrive } from 'lucide-react'
+import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
-  title: 'Products | Verify, Gateway, MCP Server, and More',
-  description: 'Open-source packages for issuing, capturing, and verifying signed interaction records. Gateway, MCP server, Capture, Verify, and Studio.',
-  keywords: 'PEAC protocol, verify API, Gateway 402, MCP server, AI infrastructure, autonomous agents, interaction records',
+  title: 'Product | Verification Tooling Built on PEAC',
+  description: 'Open-source packages for issuing, capturing, and verifying signed interaction records. MCP server, Gateway, Verify, Capture, and Trace.',
+  keywords: 'PEAC protocol, verify API, Gateway 402, MCP server, interaction records, verification',
   robots: 'index,follow',
   openGraph: {
-    title: 'Products | Verify, Gateway, MCP Server, and More',
-    description: 'Open-source packages for issuing, capturing, and verifying signed interaction records. Gateway, MCP server, Capture, Verify, and Studio.',
+    title: 'Product | Verification Tooling Built on PEAC',
+    description: 'Open-source packages for issuing, capturing, and verifying signed interaction records.',
     url: '/products',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Products | Verify, Gateway, MCP Server, and More',
-    description: 'Open-source packages for issuing, capturing, and verifying signed interaction records. Gateway, MCP server, Capture, Verify, and Studio.',
+    title: 'Product | Verification Tooling Built on PEAC',
+    description: 'Open-source packages for issuing, capturing, and verifying signed interaction records.',
     images: ['/og'],
   },
   alternates: {
@@ -29,325 +29,188 @@ export const metadata: Metadata = {
   },
 }
 
+const products = [
+  {
+    icon: Server,
+    title: 'MCP Server',
+    description: 'Five tools for Claude, Cursor, and any MCP client. Verify, inspect, and decode records offline. Issue and bundle with capability-based access control.',
+    features: ['5 MCP tools', 'Offline verification', 'Capability-based ACL', 'Claude Desktop and Cursor'],
+    href: '/integrations/mcp',
+    npm: '@peac/mcp-server',
+    status: 'available' as const,
+  },
+  {
+    icon: Shield,
+    title: 'Verify',
+    description: 'Deterministic verification for PEAC interaction records. Validate signatures offline using published JWKS endpoints. No API callback required.',
+    features: ['Ed25519 signature verification', 'Offline verification', 'JWKS support', 'Policy binding validation'],
+    href: '/products/verify',
+    npm: '@peac/protocol',
+    status: 'available' as const,
+  },
+  {
+    icon: Zap,
+    title: 'Gateway 402',
+    description: 'HTTP 402 gateway for AI traffic. Check requests at the edge with allow/deny/rate-limit decisions. Issue signed records on every response.',
+    features: ['Edge deployment', 'HTTP 402 challenge flows', 'Signed interaction records', 'Rail-neutral design'],
+    href: '/products/gateway-402',
+    npm: '@peac/rails-x402',
+    status: 'available' as const,
+  },
+  {
+    icon: HardDrive,
+    title: 'Capture',
+    description: 'File-backed spool and deduplication stores for Node.js. Capture interaction evidence with durable, crash-safe storage and structured counters.',
+    features: ['File spool store', 'Deduplication index', 'Crash-safe writes', 'Structured counters'],
+    href: '/developers',
+    npm: '@peac/capture-node',
+    status: 'available' as const,
+  },
+  {
+    icon: FileText,
+    title: 'Declare',
+    description: 'Policy Pack Generator. Create peac.txt, AIPREF headers, and human-readable policy pages from a single YAML config. CLI and programmatic API.',
+    features: ['YAML policy authoring', 'peac.txt generation', 'AIPREF header output', 'Validation and rule testing'],
+    href: '/declare',
+    npm: '@peac/cli',
+    status: 'available' as const,
+  },
+  {
+    icon: BarChart3,
+    title: 'Trace',
+    description: 'AI traffic observation and analytics. Identify AI agents accessing your APIs and web resources. Export evidence and audit logs.',
+    features: ['AI agent identification', 'Traffic observation', 'Evidence export', 'Audit log generation'],
+    href: '/trace',
+    status: 'preview' as const,
+  },
+]
+
 export default function ProductsPage() {
   return (
     <div className="wrap">
       <NavigationHeader />
       <main id="main-content" role="main" style={{ paddingTop: '80px' }}>
-        {/* Hero Section */}
+        {/* Hero */}
         <section className="section">
           <div className="container">
-            <div
-              style={{
-                textAlign: 'center',
-                maxWidth: '800px',
-                margin: '0 auto',
-                marginBottom: 'var(--space-16)'
-              }}
-            >
-              <span
-                style={{
-                  fontSize: 'var(--text-sm)',
-                  color: 'var(--accent-brand)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.1em',
-                  fontWeight: 600,
-                  marginBottom: 'var(--space-4)',
-                  display: 'block'
-                }}
-              >
-                Complete Product Suite
-              </span>
+            <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">Infrastructure for the Agentic Web</span>
+                <span className="text-gradient">Verification tooling built on PEAC</span>
               </h1>
-              <p
-                style={{
-                  fontSize: 'var(--text-xl)',
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.7,
-                  marginBottom: 'var(--space-8)'
-                }}
-              >
-                From policy discovery to payment processing, our comprehensive platform provides everything autonomous agents need to interact safely, legally, and profitably across the internet.
+              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
+                Open-source packages for issuing, capturing, and verifying signed interaction records. Self-hostable. Verification does not require Originary to be online.
               </p>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
+                <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
+                  {FACTS.publishedPackageCount} packages on npm
+                </span>
+                <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
+                  {FACTS.testsCount} tests
+                </span>
+                <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
+                  {FACTS.license}
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
 
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  gap: 'var(--space-4)',
-                  flexWrap: 'wrap'
-                }}
-              >
-                <Link href="/developers" className="btn btn-primary btn-lg">
-                  <span>Start Building</span>
-                  <ArrowRight size={18} />
+        {/* Products */}
+        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-16)' }}>
+          <div className="container">
+            <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
+              {products.map((product) => (
+                <div key={product.title} className="card" style={{ display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 'var(--space-4)' }}>
+                    <product.icon size={28} style={{ color: 'var(--accent-brand)' }} />
+                    <span style={{
+                      fontSize: '10px',
+                      fontWeight: 600,
+                      color: product.status === 'preview' ? 'var(--text-tertiary)' : 'var(--accent-brand)',
+                      background: product.status === 'preview' ? 'var(--surface-subtle)' : 'var(--accent-brand-subtle)',
+                      padding: '4px 8px',
+                      borderRadius: 'var(--radius-full)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em'
+                    }}>
+                      {product.status === 'preview' ? 'Preview' : 'Available'}
+                    </span>
+                  </div>
+
+                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-3)' }}>
+                    {product.title}
+                  </h3>
+
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+                    {product.description}
+                  </p>
+
+                  <ul style={{ listStyle: 'none', padding: 0, marginBottom: 'var(--space-4)', flex: 1 }}>
+                    {product.features.map((feature, i) => (
+                      <li key={i} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
+                        <CheckCircle size={14} style={{ color: 'var(--success)', flexShrink: 0 }} />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto', paddingTop: 'var(--space-4)', borderTop: '1px solid var(--border-default)' }}>
+                    <Link href={product.href} style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontSize: 'var(--text-sm)', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+                      Learn more <ArrowRight size={14} />
+                    </Link>
+                    {product.npm && (
+                      <a href={`https://www.npmjs.com/package/${product.npm}`} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)', textDecoration: 'none', fontFamily: 'var(--font-mono)' }}>
+                        {product.npm}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Open protocol callout */}
+        <section className="section" style={{ paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)' }}>
+          <div className="container">
+            <div style={{ maxWidth: '720px', margin: '0 auto', padding: 'var(--space-8)', border: '2px solid var(--accent-brand)', borderRadius: 'var(--radius-2xl)', background: 'var(--accent-brand-faint)', textAlign: 'center' }}>
+              <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
+                Built on PEAC, an open standard
+              </h3>
+              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+                Every product above is built on the PEAC open standard ({FACTS.license}). Self-host the entire stack, use Originary, or build your own conformant implementation. No lock-in.
+              </p>
+              <div style={{ marginTop: 'var(--space-6)', display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
+                <Link href="/peac" className="btn btn-primary btn-sm">
+                  View the protocol
                 </Link>
-                <Link href="/pricing" className="btn btn-secondary btn-lg">
-                  View Pricing
+                <Link href="/developers" className="btn btn-secondary btn-sm">
+                  Quickstart
                 </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Start with Declare Band */}
-        <section style={{
-          background: 'var(--accent-brand-faint)',
-          borderTop: '1px solid var(--border-subtle)',
-          borderBottom: '1px solid var(--border-subtle)',
-          padding: 'var(--space-8) 0'
-        }}>
-          <div className="container">
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 'var(--space-6)',
-              flexWrap: 'wrap',
-              textAlign: 'center'
-            }}>
-              <p style={{
-                fontSize: 'var(--text-base)',
-                color: 'var(--text-secondary)',
-                lineHeight: 1.6,
-                maxWidth: '700px',
-                margin: 0
-              }}>
-                <strong style={{ color: 'var(--accent-brand)' }}>Start with Declare:</strong> Most teams begin with Declare (Policy Kit) to define AI policy and receipts, then add Gateway 402, Verify API, Studio, and Trace as their traffic and compliance needs grow.
-              </p>
-              <Link href="/declare" className="btn btn-primary btn-sm">
-                Get Declare
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Core Products */}
+        {/* CTA */}
         <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
-            <div
-              style={{
-                textAlign: 'center',
-                marginBottom: 'var(--space-16)'
-              }}
-            >
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Core Orchestration Platform</h2>
-              <p
-                style={{
-                  fontSize: 'var(--text-xl)',
-                  color: 'var(--text-secondary)',
-                  maxWidth: '700px',
-                  margin: '0 auto',
-                  lineHeight: 1.7
-                }}
-              >
-                The foundational products that power autonomous AI coordination at scale.
-              </p>
-            </div>
-
-            <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
-              <ProductCard
-                icon={<Shield size={32} style={{ color: 'var(--accent-brand)' }} />}
-                title="Verify"
-                category="Verification Layer"
-                description="Deterministic verification for PEAC receipts. Validate signatures offline using published JWKS endpoints. No API callback required."
-                features={[
-                  'JWS signature verification',
-                  'Offline verification support',
-                  'Real-time compliance checking',
-                  'Audit trail generation',
-                  'High availability SLA'
-                ]}
-                href="/verify"
-                status="start-here"
-              />
-
-              <ProductCard
-                icon={<Zap size={32} style={{ color: 'var(--accent-secondary)' }} />}
-                title="Gateway 402"
-                category="Payment Gateway"
-                description="HTTP 402 payment gateway that transforms any API endpoint into a monetized resource. Works with any configured payment adapter."
-                features={[
-                  'Rail-neutral payment processing',
-                  'Multiple adapter support',
-                  'Usage-based billing',
-                  'Automatic receipt generation',
-                  'Enterprise billing integration'
-                ]}
-                href="/products/gateway-402"
-                status="optional"
-              />
-
-              <ProductCard
-                icon={<Database size={32} style={{ color: 'var(--brand-accent)' }} />}
-                title="PEAC Protocol"
-                category="Specification"
-                description="The open protocol for machine-readable policies and consent. Enables autonomous agents to discover access terms, pricing, and attribution requirements automatically."
-                features={[
-                  'Automated policy discovery',
-                  'Standardized consent frameworks',
-                  'Attribution and licensing rules',
-                  'Cross-platform compatibility',
-                  'Open source specification'
-                ]}
-                href="/peac"
-                status="open-standard"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Development Tools */}
-        <section className="section">
-          <div className="container">
-            <div
-              style={{
-                textAlign: 'center',
-                marginBottom: 'var(--space-16)'
-              }}
-            >
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Development & Management Tools</h2>
-              <p
-                style={{
-                  fontSize: 'var(--text-xl)',
-                  color: 'var(--text-secondary)',
-                  maxWidth: '700px',
-                  margin: '0 auto',
-                  lineHeight: 1.7
-                }}
-              >
-                Visual tools and adapters that accelerate development and simplify operations.
-              </p>
-            </div>
-
-            <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
-              <ProductCard
-                icon={<Code size={32} style={{ color: 'var(--accent-brand)' }} />}
-                title="Studio"
-                category="Visual Builder"
-                description="Visual policy builder and testing environment. Create, validate, and deploy PEAC policies with an intuitive drag-and-drop interface."
-                features={[
-                  'Visual policy editor',
-                  'Real-time validation',
-                  'Policy testing environment',
-                  'Team collaboration',
-                  'Deployment automation'
-                ]}
-                href="/products/studio"
-                status="preview"
-              />
-
-              <ProductCard
-                icon={<Globe size={32} style={{ color: 'var(--accent-secondary)' }} />}
-                title="Adapters"
-                category="Integration Layer"
-                description="Pre-built integrations for popular platforms and frameworks. Connect PEAC to existing infrastructure with zero custom development."
-                features={[
-                  'Express.js & Next.js adapters',
-                  'Cloudflare Workers support',
-                  'CDN and edge integrations',
-                  'Authentication providers',
-                  'Custom adapter framework'
-                ]}
-                href="/products/adapters"
-              />
-
-              <ProductCard
-                icon={<BarChart size={32} style={{ color: 'var(--brand-accent)' }} />}
-                title="Trace"
-                category="Audit Layer"
-                description="Comprehensive receipt management and observability platform. Track usage, monitor compliance, and generate detailed reports for stakeholders."
-                features={[
-                  'Receipt observability dashboard',
-                  'Compliance reporting',
-                  'Revenue tracking',
-                  'Custom alert system',
-                  'Data export and APIs'
-                ]}
-                href="/trace"
-                status="preview"
-              />
-            </div>
-          </div>
-        </section>
-
-        <ServiceOffers />
-
-        {/* CTA Section */}
-        <section className="section">
-          <div className="container">
-            <div
-              className="cta-card"
-              style={{
-                position: 'relative',
-                overflow: 'hidden'
-              }}
-            >
-              <div
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  background: 'radial-gradient(circle at 30% 40%, var(--glass-border-hover) 0%, transparent 50%)',
-                  pointerEvents: 'none'
-                }}
-              />
+            <div className="cta-card" style={{ position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle at 30% 40%, var(--glass-border-hover) 0%, transparent 50%)', pointerEvents: 'none' }} />
               <div style={{ position: 'relative', zIndex: 2 }}>
-                <h2
-                  style={{
-                    fontSize: 'var(--text-4xl)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-6)',
-                    color: 'var(--white)'
-                  }}
-                >
-                  Ready to Get Started?
+                <h2 style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--white)' }}>
+                  Start with the OSS packages
                 </h2>
-                <p
-                  style={{
-                    fontSize: 'var(--text-xl)',
-                    marginBottom: 'var(--space-8)',
-                    color: 'var(--white)',
-                    maxWidth: '600px',
-                    margin: '0 auto var(--space-8) auto',
-                    lineHeight: 1.6
-                  }}
-                >
-                  Choose the products that fit your needs and start building autonomous AI coordination into your platform today.
+                <p style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-8)', color: 'var(--white)', maxWidth: '600px', margin: '0 auto var(--space-8) auto', lineHeight: 1.6 }}>
+                  Install from npm. Deploy to your infrastructure. Reach out when you need design partner access or enterprise support.
                 </p>
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: 'var(--space-4)',
-                    flexWrap: 'wrap'
-                  }}
-                >
-                  <Link
-                    href="/developers"
-                    className="btn btn-lg"
-                    style={{
-                      background: 'var(--surface-elevated)',
-                      color: 'var(--accent-brand)',
-                      border: 'none'
-                    }}
-                  >
-                    <span>Start Building</span>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
+                  <Link href="/developers" className="btn btn-lg" style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}>
+                    <span>Quickstart</span>
                     <ArrowRight size={18} />
                   </Link>
-                  <Link
-                    href="/company/contact"
-                    className="btn btn-lg btn-ghost"
-                    style={{
-                      color: 'var(--white)',
-                      border: '1px solid var(--border-hover)'
-                    }}
-                  >
-                    <span>Talk to Sales</span>
+                  <Link href="/contact" className="btn btn-lg btn-ghost" style={{ color: 'var(--white)', border: '1px solid var(--border-hover)' }}>
+                    Contact us
                   </Link>
                 </div>
               </div>
@@ -356,118 +219,6 @@ export default function ProductsPage() {
         </section>
       </main>
       <Footer />
-    </div>
-  )
-}
-
-function ProductCard({
-  icon,
-  title,
-  category,
-  description,
-  features,
-  href,
-  status
-}: {
-  icon: React.ReactNode;
-  title: string;
-  category: string;
-  description: string;
-  features: string[];
-  href: string;
-  status?: 'start-here' | 'optional' | 'preview' | 'open-standard';
-}) {
-  // Brand-accent badge system: featured uses brand, others use neutrals
-  const statusStyles: Record<string, { bg: string; color: string; label: string; border?: string }> = {
-    'start-here': { bg: 'var(--accent-brand-subtle)', color: 'var(--accent-brand)', label: 'Start here', border: 'var(--accent-brand-muted)' },
-    'optional': { bg: 'var(--surface-card)', color: 'var(--text-secondary)', label: 'Optional' },
-    'preview': { bg: 'var(--accent-warning-muted)', color: 'var(--text-secondary)', label: 'Preview' },
-    'open-standard': { bg: 'var(--surface-card)', color: 'var(--text-secondary)', label: 'Open Standard' }
-  }
-
-  return (
-    <div className="card" style={status === 'start-here' ? { border: '1px solid var(--accent-brand-muted)' } : undefined}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 'var(--space-6)' }}>
-        {icon}
-        {status && (
-          <span
-            style={{
-              fontSize: '10px',
-              fontWeight: 600,
-              color: statusStyles[status].color,
-              background: statusStyles[status].bg,
-              padding: '4px 8px',
-              borderRadius: 'var(--radius-full)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em'
-            }}
-          >
-            {statusStyles[status].label}
-          </span>
-        )}
-      </div>
-
-      <div style={{ marginBottom: 'var(--space-4)' }}>
-        <span
-          style={{
-            fontSize: 'var(--text-xs)',
-            fontWeight: 600,
-            color: 'var(--text-tertiary)',
-            textTransform: 'uppercase',
-            letterSpacing: '0.1em'
-          }}
-        >
-          {category}
-        </span>
-      </div>
-
-      <h3 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-xl)' }}>
-        {title}
-      </h3>
-
-      <p style={{ marginBottom: 'var(--space-6)', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
-        {description}
-      </p>
-
-      <ul style={{ listStyle: 'none', padding: 0, marginBottom: 'var(--space-6)' }}>
-        {features.map((feature, index) => (
-          <li
-            key={index}
-            style={{
-              display: 'flex',
-              alignItems: 'flex-start',
-              gap: 'var(--space-3)',
-              marginBottom: 'var(--space-3)',
-              fontSize: 'var(--text-sm)',
-              color: 'var(--text-secondary)'
-            }}
-          >
-            <CheckCircle size={16} style={{
-              color: 'var(--success)',
-              marginTop: '2px',
-              flexShrink: 0
-            }} />
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
-
-      <Link
-        href={href}
-        style={{
-          color: 'var(--accent-brand)',
-          textDecoration: 'none',
-          fontSize: 'var(--text-sm)',
-          fontWeight: 600,
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 'var(--space-2)'
-        }}
-        aria-label={`Learn more about ${title}`}
-      >
-        <span>Learn more about {title}</span>
-        <ArrowRight size={14} />
-      </Link>
     </div>
   )
 }

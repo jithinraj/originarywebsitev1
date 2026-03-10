@@ -234,7 +234,7 @@ export default function Page() {
               <Link href="/products/gateway-402/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Gateway 402</Link> - Payment infrastructure for A2A commerce
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/solutions/api-providers/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>API Providers solution</Link> - Monetize agent access with A2A protocols
+              <Link href="/developers" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Developer guides</Link> - Build with A2A and PEAC
             </li>
             <li style={{ marginBottom: 0 }}>
               <Link href="/developers/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Developer Documentation</Link> - Implement A2A in your services

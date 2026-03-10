@@ -257,7 +257,7 @@ export default function Page() {
               <Link href="/glossary/agentic-web/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Agentic Web</Link> - Infrastructure enabling agent commerce
             </li>
             <li style={{ marginBottom: 0 }}>
-              <Link href="/solutions/api-providers/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>API Providers solution</Link> - Monetize agent access with ACP
+              <Link href="/developers" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Developer guides</Link> - Build with ACP and PEAC
             </li>
           </ul>
         </div>

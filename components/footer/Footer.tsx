@@ -210,7 +210,7 @@ function LayerA() {
         className="footer-nav-grid"
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(5, minmax(0, 1fr))',
+          gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
           gap: '20px',
           alignItems: 'start',
         }}
@@ -505,7 +505,7 @@ export default function Footer() {
         /* Desktop: 5 columns */
         @media (min-width: 900px) {
           .footer-nav-grid {
-            grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
           }
         }
 

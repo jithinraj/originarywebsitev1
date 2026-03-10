@@ -53,7 +53,7 @@ export default function Header() {
         >
           <div className="nav-links">
             <Link href="/products" onClick={() => setIsMenuOpen(false)}>Products</Link>
-            <Link href="/solutions" onClick={() => setIsMenuOpen(false)}>Solutions</Link>
+            <Link href="/products" onClick={() => setIsMenuOpen(false)}>Products</Link>
             <Link href="/developers" onClick={() => setIsMenuOpen(false)}>Developers</Link>
             <Link href="/resources" onClick={() => setIsMenuOpen(false)}>Resources</Link>
             <Link href="/pricing" onClick={() => setIsMenuOpen(false)}>Pricing</Link>

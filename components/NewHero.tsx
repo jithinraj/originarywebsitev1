@@ -64,8 +64,8 @@ export default function NewHero() {
               Read the spec
             </a>
             <span className="hero-link-sep">/</span>
-            <Link href="/about" className="hero-link">
-              About Originary
+            <Link href="/peac" className="hero-link">
+              About PEAC
             </Link>
           </div>
 
@@ -75,7 +75,7 @@ export default function NewHero() {
             <p className="strip-brand">
               <span className="strip-item strip-tm">ORIGINARY&trade;</span>
               <span className="strip-dot">&middot;</span>
-              <span className="strip-item">{FACTS.packagesCount} packages</span>
+              <span className="strip-item">{FACTS.publishedPackageCount} packages</span>
               <span className="strip-dot">&middot;</span>
               <span className="strip-item">{FACTS.testsCount} tests</span>
               <span className="strip-dot">&middot;</span>
@@ -83,7 +83,7 @@ export default function NewHero() {
               <span className="strip-dot">&middot;</span>
               <span className="strip-item">Evidence bundles</span>
               <span className="strip-dot">&middot;</span>
-              <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">{FACTS.license} &middot; {FACTS.protocolVersion}</a>
+              <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="strip-link-inline">{FACTS.license} &middot; {FACTS.stableVersion}</a>
             </p>
           </div>
 

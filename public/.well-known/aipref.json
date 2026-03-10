@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "peac_version": "0.11.0",
+  "peac_version": "0.11.3",
   "ai_access": {
     "scraping": "allowed_with_attribution",
     "training": "prohibited",

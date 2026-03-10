@@ -152,7 +152,7 @@ contact: rights@example.com`}</code>
           </h2>
           <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
             <li style={{ marginBottom: 'var(--space-3)' }}>
-              <Link href="/solutions/publishers/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Publishers solution</Link> - Protect and monetize content with AIPREF
+              <Link href="/products" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Products</Link> - Declare terms and issue verifiable records
             </li>
             <li style={{ marginBottom: 'var(--space-3)' }}>
               <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Verifiable records for automated interactions

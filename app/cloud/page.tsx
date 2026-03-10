@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     absolute: 'Originary Cloud | Managed PEAC Receipts and Analytics'
   },
   description: 'Originary Cloud is in private beta. Managed PEAC verification, attested receipts, compliance bundles, and analytics for publishers and API providers.',
-  robots: 'index,follow',
+  robots: 'noindex,nofollow',
   alternates: {
     canonical: '/cloud'
   },

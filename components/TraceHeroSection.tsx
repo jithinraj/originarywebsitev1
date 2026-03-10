@@ -162,7 +162,7 @@ export default function TraceHeroSection() {
             }}
           >
             <Link
-              href="/cloud"
+              href="/contact"
               className="btn btn-primary"
               style={{
                 display: 'inline-flex',

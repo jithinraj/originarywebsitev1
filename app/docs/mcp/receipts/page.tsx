@@ -170,7 +170,7 @@ export default function MCPReceiptsDocPage() {
                 }}>
                   PEAC Protocol and Policy Layer →
                 </Link>
-                <Link href="/solutions/ai-builders" style={{
+                <Link href="/developers" style={{
                   color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',

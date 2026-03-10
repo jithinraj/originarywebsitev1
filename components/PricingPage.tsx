@@ -631,12 +631,12 @@ export default function PricingPage() {
                 <p>Get enterprise-grade infrastructure with dedicated performance monitoring, security, and support.</p>
                 <div className="cta-stats">
                   <div className="stat">
-                    <span className="stat-value">21</span>
+                    <span className="stat-value">28</span>
                     <span className="stat-label">Published packages</span>
                   </div>
                   <div className="stat">
-                    <span className="stat-value">v0.11.0</span>
-                    <span className="stat-label">Latest release</span>
+                    <span className="stat-value">v0.11.3</span>
+                    <span className="stat-label">Stable release</span>
                   </div>
                   <div className="stat">
                     <span className="stat-value">Apache-2.0</span>

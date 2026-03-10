@@ -612,7 +612,7 @@ export default function LearnPage() {
 
             <div className="grid grid-3" style={{ gap: 'var(--space-6)' }}>
               <Link
-                href="/what-is-originary"
+                href="/"
                 className="card"
                 style={{ textDecoration: 'none', background: 'var(--surface-subtle)', border: 'none' }}
               >

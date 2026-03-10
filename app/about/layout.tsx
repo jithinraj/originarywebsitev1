@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'About',
   description: 'Originary builds and stewards PEAC, an open standard for portable decision records. Production components for policy and receipt verification.',
-  robots: 'index,follow',
+  robots: 'noindex,nofollow',
   alternates: {
     canonical: '/about'
   },

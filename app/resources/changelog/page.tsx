@@ -46,13 +46,13 @@ export default function Changelog() {
                   marginBottom: 'var(--space-6)',
                 }}
               >
-                Current version: <strong>{FACTS.protocolVersion}</strong>
+                Stable: <strong>{FACTS.stableVersion}</strong>
                 <br />
-                Wire format: <strong>{FACTS.wireFormat}</strong> (frozen)
+                Current wire format: <strong>{FACTS.stableWireFormat}</strong> | Legacy: <strong>{FACTS.legacyWireFormat}</strong> (frozen)
                 <br />
                 License: <strong>{FACTS.license}</strong>
                 <br />
-                Packages on npm: <strong>{FACTS.packagesCount}</strong>
+                Packages on npm: <strong>{FACTS.publishedPackageCount}</strong>
               </p>
 
               <a
