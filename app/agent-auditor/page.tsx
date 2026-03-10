@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ArrowRight, Shield, Terminal, Package, CheckCircle, Lock, Eye, ExternalLink, Zap, FileText } from 'lucide-react'
 
 const PAGE_URL = 'https://www.originary.xyz/agent-auditor'
-const INSPECTOR_URL = 'https://agent-auditor-originary-xyz.vercel.app/'
+const INSPECTOR_URL = 'https://agent-auditor.originary.xyz/'
 const GITHUB_URL = 'https://github.com/originaryx/agent-auditor'
 const NPM_URL = 'https://www.npmjs.com/package/@originaryx/agent-auditor'
 
