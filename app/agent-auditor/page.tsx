@@ -326,7 +326,7 @@ export default function AgentAuditorPage() {
               alignItems: 'center',
             }}>
               {[
-                { icon: Lock, text: 'No outbound requests' },
+                { icon: Lock, text: 'No outbound verification or artifact fetches' },
                 { icon: Shield, text: 'Signature verified locally' },
                 { icon: Terminal, text: 'Browser or CLI' },
                 { icon: FileText, text: '.jws · .json · .zip' },
@@ -607,7 +607,7 @@ agent-auditor demo`}</pre>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
                 {[
                   { text: 'issue or sign receipts.', suffix: 'Use @peac/protocol for that.' },
-                  { text: 'send data anywhere.', suffix: 'All processing is local.' },
+                  { text: 'send data anywhere.', suffix: 'Inspection and verification happen locally.' },
                   { text: 'store keys or state.', suffix: 'No database, no config, no session.' },
                   { text: 'validate business logic.', suffix: 'It checks signature and structure only.' },
                 ].map(({ text, suffix }) => (
