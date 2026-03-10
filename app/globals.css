@@ -1,1 +1,14 @@
 @import url('./design-system.css');
+
+/* Footer desktop/mobile show-hide — must be in globals.css for reliable App Router injection */
+.footer-nav-desktop { display: block; }
+.footer-nav-mobile { display: none; }
+.footer-utility-desktop { display: block; }
+.footer-utility-mobile { display: none; }
+
+@media (max-width: 768px) {
+  .footer-nav-desktop { display: none !important; }
+  .footer-nav-mobile { display: block !important; }
+  .footer-utility-desktop { display: none !important; }
+  .footer-utility-mobile { display: flex !important; }
+}
