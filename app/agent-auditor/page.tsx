@@ -182,7 +182,7 @@ const whatYouSee = [
 
 export default function AgentAuditorPage() {
   return (
-    <div className="wrap">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
@@ -375,17 +375,17 @@ export default function AgentAuditorPage() {
                 fontSize: 'var(--text-xs)',
                 fontWeight: 700,
                 color: 'var(--accent-success, var(--text-secondary))',
-                textTransform: 'uppercase',
+                textTransform: 'uppercase' as const,
                 letterSpacing: '0.06em',
               }}>
                 <span style={{ width: 7, height: 7, borderRadius: 'var(--radius-full)', background: 'var(--accent-success, var(--accent-brand))', display: 'inline-block' }} />
                 Live — runs in your browser
               </div>
-              <h2 style={{ marginBottom: 'var(--space-3)' }}>Drop a receipt and see what's inside</h2>
+              <h2 style={{ marginBottom: 'var(--space-3)' }}>Drop a receipt and see what&apos;s inside</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '480px', margin: '0 auto var(--space-4) auto', lineHeight: 1.6 }}>
                 No setup. Drop any receipt file and see it decoded and verified instantly. Inspection and verification happen locally in your browser or CLI. No outbound verification or artifact fetches.
               </p>
-              <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', flexWrap: 'wrap', fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', flexWrap: 'wrap' as const, fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>
                 <span style={{ padding: 'var(--space-1) var(--space-3)', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-default)' }}>
                   Browser: verifies receipt signatures and structure
                 </span>
@@ -395,13 +395,17 @@ export default function AgentAuditorPage() {
               </div>
             </div>
 
+            {/* App preview mockup + CTA */}
             <div style={{
+              maxWidth: '860px',
+              margin: '0 auto',
               borderRadius: 'var(--radius-2xl)',
               overflow: 'hidden',
               border: '1px solid var(--border-default)',
               background: 'var(--surface-elevated)',
-              boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
+              boxShadow: '0 20px 60px rgba(0,0,0,0.18)',
             }}>
+              {/* Browser chrome */}
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -410,9 +414,9 @@ export default function AgentAuditorPage() {
                 background: 'var(--code-bg-header)',
                 borderBottom: '1px solid var(--border-default)',
               }}>
-                <span style={{ width: 12, height: 12, borderRadius: 'var(--radius-full)', background: 'var(--chrome-red)', display: 'inline-block' }} />
-                <span style={{ width: 12, height: 12, borderRadius: 'var(--radius-full)', background: 'var(--chrome-yellow)', display: 'inline-block' }} />
-                <span style={{ width: 12, height: 12, borderRadius: 'var(--radius-full)', background: 'var(--chrome-green)', display: 'inline-block' }} />
+                <span style={{ width: 12, height: 12, borderRadius: '50%', background: '#ff5f57', display: 'inline-block' }} />
+                <span style={{ width: 12, height: 12, borderRadius: '50%', background: '#febc2e', display: 'inline-block' }} />
+                <span style={{ width: 12, height: 12, borderRadius: '50%', background: '#28c840', display: 'inline-block' }} />
                 <div style={{
                   flex: 1,
                   marginLeft: 'var(--space-3)',
@@ -430,41 +434,49 @@ export default function AgentAuditorPage() {
                   href={INSPECTOR_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{
-                    fontSize: 'var(--text-xs)',
-                    color: 'var(--text-tertiary)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 'var(--space-1)',
-                    textDecoration: 'none',
-                    marginLeft: 'auto',
-                    whiteSpace: 'nowrap',
-                  }}
+                  style={{ fontSize: 'var(--text-xs)', color: 'var(--accent-brand)', display: 'flex', alignItems: 'center', gap: 'var(--space-1)', textDecoration: 'none', marginLeft: 'auto', whiteSpace: 'nowrap' as const, fontWeight: 500 }}
                 >
-                  Full window
-                  <ExternalLink size={12} />
+                  Open <ExternalLink size={11} />
                 </a>
               </div>
-              <iframe
-                src={INSPECTOR_URL}
-                title="Agent Auditor Web Inspector"
-                style={{ width: '100%', height: '720px', border: 'none', display: 'block' }}
-                sandbox="allow-scripts allow-same-origin"
-                loading="lazy"
-              />
-            </div>
 
-            <p style={{ textAlign: 'center', marginTop: 'var(--space-5)', fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
-              Prefer a standalone window?{' '}
-              <a
-                href={INSPECTOR_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}
-              >
-                Open agent-auditor.originary.xyz
-              </a>
-            </p>
+              {/* Mock drop zone */}
+              <div style={{ padding: 'var(--space-12) var(--space-10)', background: 'var(--surface-base)' }}>
+                <div style={{
+                  border: '2px dashed var(--border-hover)',
+                  borderRadius: 'var(--radius-xl)',
+                  padding: 'var(--space-12) var(--space-8)',
+                  textAlign: 'center',
+                  marginBottom: 'var(--space-6)',
+                }}>
+                  <div style={{ fontSize: 'var(--text-3xl)', marginBottom: 'var(--space-3)', opacity: 0.3 }}>↑</div>
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', margin: '0 0 var(--space-1)' }}>Drop a receipt or bundle here</p>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)', margin: 0 }}>or click to browse (.jws, .json, .zip)</p>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-3)', marginBottom: 'var(--space-8)' }}>
+                  {['Valid Receipt', 'Invalid Receipt', 'Bundle'].map((label) => (
+                    <div key={label} style={{ padding: 'var(--space-4)', background: 'var(--surface-elevated)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-default)', textAlign: 'left' }}>
+                      <span style={{ fontSize: 'var(--text-sm)', fontWeight: 500, color: 'var(--text-secondary)', display: 'block' }}>{label}</span>
+                      <span style={{ fontSize: 'var(--text-xs)', color: 'var(--text-muted)', display: 'block', marginTop: 2 }}>Try a sample</span>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ textAlign: 'center' }}>
+                  <a
+                    href={INSPECTOR_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary btn-lg"
+                  >
+                    <span>Open Inspector</span>
+                    <ExternalLink size={17} />
+                  </a>
+                  <p style={{ marginTop: 'var(--space-4)', fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}>
+                    Opens at agent-auditor.originary.xyz — no signup, no backend
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -707,6 +719,6 @@ agent-auditor demo`}</pre>
 
       </main>
       <Footer />
-    </div>
+    </>
   )
 }

@@ -102,6 +102,7 @@ export default function NavigationHeader() {
             >
               <NavLink href="/peac">Protocol</NavLink>
               <NavLink href="/developers">Developers</NavLink>
+              <NavLink href="/agent-auditor">Agent Auditor</NavLink>
             </div>
 
             <div
@@ -170,6 +171,7 @@ export default function NavigationHeader() {
               {[
                 { href: '/peac', label: 'Protocol' },
                 { href: '/developers', label: 'Developers' },
+                { href: '/agent-auditor', label: 'Agent Auditor' },
               ].map((item) => (
                 <Link
                   key={item.href}

@@ -40,6 +40,7 @@ export const FOOTER_DEVELOPERS: FooterGroup = {
     { label: 'SDKs (npm)', href: 'https://www.npmjs.com/org/peac', external: true },
     { label: 'Downloads', href: '/downloads' },
     { label: 'Examples', href: '/demo' },
+    { label: 'Agent Auditor', href: '/agent-auditor' },
     { label: 'Inspector', href: '/verify' },
   ],
 }
