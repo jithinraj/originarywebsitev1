@@ -158,7 +158,7 @@ res.json({ content: protectedData })`}
                 }}>
                   HTTP 402 and x402 Gateway 402 →
                 </Link>
-                <Link href="/solutions/api-providers" style={{
+                <Link href="/developers" style={{
                   color: 'var(--accent-brand)',
                   textDecoration: 'none',
                   fontSize: 'var(--text-base)',

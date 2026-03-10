@@ -9,7 +9,6 @@ export default function NavigationHeader() {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
-    // Guard against SSR
     if (typeof window === 'undefined') return
 
     const handleScroll = () => {
@@ -101,20 +100,8 @@ export default function NavigationHeader() {
                 gap: 'var(--space-6)'
               }}
             >
-              <NavDropdown label="Protocol" items={[
-                { href: '/peac', label: 'PEAC Protocol' },
-                { href: '/receipts', label: 'Receipts' },
-                { href: '/verify', label: 'Verify' },
-              ]} />
-              <NavDropdown label="Packages" items={[
-                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Available' },
-                { href: '/products/verify', label: 'Verify API', badge: 'Available' },
-                { href: '/products/studio', label: 'Studio', badge: 'Soon' },
-                { href: 'separator', label: '' },
-                { href: 'https://www.npmjs.com/org/peac', label: 'All 22 packages on npm', external: true },
-              ]} />
-              <NavLink href="/developers">Docs</NavLink>
-              <NavLink href="/blog">Blog</NavLink>
+              <NavLink href="/peac">Protocol</NavLink>
+              <NavLink href="/developers">Developers</NavLink>
             </div>
 
             <div
@@ -126,7 +113,7 @@ export default function NavigationHeader() {
               }}
             >
               <Link href="/developers" className="nav-cta-btn">
-                Docs
+                Quickstart
               </Link>
               <a
                 href="https://github.com/peacprotocol/peac"
@@ -179,24 +166,29 @@ export default function NavigationHeader() {
               WebkitBackdropFilter: 'blur(20px)'
             }}
           >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-              <MobileNavSection title="Protocol" items={[
-                { href: '/peac', label: 'PEAC Protocol' },
-                { href: '/receipts', label: 'Receipts' },
-                { href: '/verify', label: 'Verify' },
-              ]} />
-              <MobileNavSection title="Packages" items={[
-                { href: '/products/gateway-402', label: 'Gateway 402', badge: 'Available' },
-                { href: '/products/verify', label: 'Verify API', badge: 'Available' },
-                { href: '/products/studio', label: 'Studio', badge: 'Soon' },
-                { href: 'https://www.npmjs.com/org/peac', label: 'All 22 packages on npm', external: true },
-              ]} />
-              <Link href="/developers" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
-                Docs
-              </Link>
-              <Link href="/blog" style={{ padding: 'var(--space-3) 0', color: 'var(--text-secondary)', textDecoration: 'none' }}>
-                Blog
-              </Link>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+              {[
+                { href: '/peac', label: 'Protocol' },
+                { href: '/developers', label: 'Developers' },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="mobile-nav-item"
+                  onClick={() => setIsMenuOpen(false)}
+                  style={{
+                    padding: 'var(--space-3) var(--space-4)',
+                    color: 'var(--text-secondary)',
+                    textDecoration: 'none',
+                    fontSize: 'var(--text-base)',
+                    fontWeight: 500,
+                    borderRadius: 'var(--radius-md)',
+                    transition: 'all var(--duration-200) ease'
+                  }}
+                >
+                  {item.label}
+                </Link>
+              ))}
 
               <div style={{
                 display: 'flex',
@@ -230,6 +222,7 @@ export default function NavigationHeader() {
                 </a>
                 <Link
                   href="/developers"
+                  onClick={() => setIsMenuOpen(false)}
                   style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -245,7 +238,7 @@ export default function NavigationHeader() {
                     boxShadow: '0 0 20px -5px var(--accent-brand-glow)'
                   }}
                 >
-                  Docs
+                  Quickstart
                 </Link>
               </div>
             </div>
@@ -329,56 +322,7 @@ export default function NavigationHeader() {
           outline-offset: 2px;
         }
 
-        /* Dropdown Item */
-        :global(.dropdown-item) {
-          display: flex;
-          align-items: center;
-          padding: var(--space-3) var(--space-4);
-          color: var(--text-secondary);
-          text-decoration: none;
-          font-size: var(--text-sm);
-          border-radius: var(--radius-lg);
-          transition: all var(--duration-200) var(--ease-out);
-        }
-
-        :global(.dropdown-item:hover) {
-          background-color: var(--surface-subtle);
-          color: var(--text-primary);
-        }
-
-        :global(.dropdown-item:focus-visible) {
-          outline: 2px solid var(--accent-brand);
-          outline-offset: -2px;
-        }
-
-        /* Mobile Nav Section */
-        :global(.mobile-nav-section) {
-          margin-bottom: var(--space-2);
-        }
-
-        :global(.mobile-nav-title) {
-          font-size: var(--text-sm);
-          font-weight: 600;
-          color: var(--text-primary);
-          margin-bottom: var(--space-2);
-        }
-
-        :global(.mobile-nav-items) {
-          display: flex;
-          flex-direction: column;
-          gap: var(--space-1);
-        }
-
-        :global(.mobile-nav-item) {
-          padding: var(--space-2) var(--space-3);
-          color: var(--text-secondary);
-          text-decoration: none;
-          font-size: var(--text-sm);
-          border-radius: var(--radius-md);
-          display: block;
-          transition: all var(--duration-200) ease;
-        }
-
+        /* Mobile Nav Item */
         :global(.mobile-nav-item:hover) {
           background-color: var(--surface-subtle);
           color: var(--text-primary);
@@ -387,22 +331,6 @@ export default function NavigationHeader() {
         :global(.mobile-nav-item:focus-visible) {
           outline: 2px solid var(--accent-brand);
           outline-offset: 2px;
-        }
-
-        :global(.mobile-nav-item-content) {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          width: 100%;
-        }
-
-        :global(.mobile-nav-badge) {
-          font-size: var(--text-xs);
-          color: var(--text-tertiary);
-          background: var(--surface-subtle);
-          padding: 2px 6px;
-          border-radius: var(--radius-sm);
-          font-weight: 500;
         }
 
         @media (max-width: 768px) {
@@ -428,210 +356,5 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
     <Link href={href} className="nav-link">
       {children}
     </Link>
-  )
-}
-
-function NavDropdown({ label, items }: { label: string; items: Array<{ href: string; label: string; badge?: string; external?: boolean }> }) {
-  const [isOpen, setIsOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
-  const buttonRef = useRef<HTMLButtonElement>(null)
-
-  // Close on Escape key
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
-        setIsOpen(false)
-        buttonRef.current?.focus()
-      }
-    }
-
-    if (isOpen) {
-      document.addEventListener('keydown', handleKeyDown)
-    }
-
-    return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [isOpen])
-
-  // Close when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setIsOpen(false)
-      }
-    }
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside)
-    }
-
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [isOpen])
-
-  const handleButtonKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault()
-      setIsOpen(true)
-    }
-  }
-
-  return (
-    <div
-      ref={dropdownRef}
-      className="nav-dropdown"
-      style={{ position: 'relative' }}
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
-    >
-      <button
-        ref={buttonRef}
-        type="button"
-        aria-label={`${label} menu`}
-        aria-expanded={isOpen}
-        aria-haspopup="true"
-        onClick={() => setIsOpen(!isOpen)}
-        onKeyDown={handleButtonKeyDown}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 'var(--space-1)',
-          background: 'none',
-          border: 'none',
-          color: 'var(--text-secondary)',
-          fontSize: 'var(--text-sm)',
-          fontWeight: 500,
-          padding: 'var(--space-2) var(--space-3)',
-          borderRadius: 'var(--radius-md)',
-          cursor: 'pointer',
-          transition: 'all var(--duration-200) var(--ease-out)',
-          backgroundColor: isOpen ? 'var(--surface-subtle)' : 'transparent'
-        }}
-      >
-        {label}
-        <ChevronDown size={16} style={{
-          transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-          transition: 'transform var(--duration-200) var(--ease-out)'
-        }} />
-      </button>
-
-      {isOpen && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '100%',
-            left: 0,
-            background: 'var(--surface-elevated)',
-            border: '1px solid var(--border-default)',
-            borderRadius: 'var(--radius-xl)',
-            boxShadow: 'var(--shadow-elevated)',
-            padding: 'var(--space-2)',
-            minWidth: '200px',
-            zIndex: 'var(--z-dropdown)',
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)'
-          }}
-        >
-          {items.map((item, index) => {
-            // Handle separator
-            if (item.href === 'separator') {
-              return (
-                <div
-                  key={`separator-${index}`}
-                  style={{
-                    height: '1px',
-                    background: 'var(--border-default)',
-                    margin: 'var(--space-2) 0'
-                  }}
-                />
-              )
-            }
-
-            const linkContent = (
-              <>
-                <span>{item.label}</span>
-                {item.badge && (
-                  <span
-                    style={{
-                      marginLeft: 'auto',
-                      fontSize: 'var(--text-xs)',
-                      color: 'var(--text-tertiary)',
-                      background: 'var(--surface-subtle)',
-                      padding: '2px 6px',
-                      borderRadius: 'var(--radius-sm)',
-                      fontWeight: 500
-                    }}
-                  >
-                    {item.badge}
-                  </span>
-                )}
-              </>
-            )
-
-            if (item.external) {
-              return (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="dropdown-item"
-                >
-                  {linkContent}
-                </a>
-              )
-            }
-
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="dropdown-item"
-              >
-                {linkContent}
-              </Link>
-            )
-          })}
-        </div>
-      )}
-    </div>
-  )
-}
-
-function MobileNavSection({ title, items }: { title: string; items: Array<{ href: string; label: string; badge?: string; external?: boolean }> }) {
-  return (
-    <div className="mobile-nav-section">
-      <h4 className="mobile-nav-title">{title}</h4>
-      <div className="mobile-nav-items">
-        {items.map((item) => {
-          const linkContent = (
-            <span className="mobile-nav-item-content">
-              <span>{item.label}</span>
-              {item.badge && (
-                <span className="mobile-nav-badge">{item.badge}</span>
-              )}
-            </span>
-          )
-
-          if (item.external) {
-            return (
-              <a
-                key={item.href}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mobile-nav-item"
-              >
-                {linkContent}
-              </a>
-            )
-          }
-
-          return (
-            <Link key={item.href} href={item.href} className="mobile-nav-item">
-              {linkContent}
-            </Link>
-          )
-        })}
-      </div>
-    </div>
   )
 }

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     site: '@originaryx',
     creator: '@originaryx',
   },
-  robots: 'index,follow',
+  robots: 'noindex,nofollow',
   alternates: {
     canonical: '/products/studio',
   },

@@ -614,7 +614,7 @@ export default function Adapters() {
                     <ArrowRight size={18} />
                   </Link>
                   <Link
-                    href="/solutions/enterprises"
+                    href="/products"
                     className="btn btn-lg btn-ghost"
                     style={{
                       color: 'var(--white)',

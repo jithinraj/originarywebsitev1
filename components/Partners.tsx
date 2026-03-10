@@ -42,7 +42,7 @@ export default function Partners() {
           <p className="footer-note">
             Building an adapter? We welcome independent implementations.
           </p>
-          <Link href="/integrations" className="footer-link">
+          <Link href="/developers" className="footer-link">
             View all integrations
             <ArrowRight size={16} />
           </Link>

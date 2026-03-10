@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'What is Originary? | Verification for AI Agents',
   description: 'Originary (Poem, Inc.) builds and stewards PEAC, an open standard for publishing terms and issuing verifiable records for agent interactions.',
   keywords: 'Originary, PEAC Protocol, verifiable receipts, PEAC-Receipt, peac.txt, agent policy, agentic web, HTTP 402, signed receipts, policy discovery, agent compliance, verification infrastructure',
-  robots: 'index,follow',
+  robots: 'noindex,nofollow',
   alternates: {
     canonical: '/what-is-originary'
   },
@@ -102,7 +102,7 @@ export default function WhatIsOriginaryPage() {
         "name": "Is PEAC stable?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "PEAC is at version 0.11.0; the goal is to earn 1.0 through multi-implementation, conformance, and standards work."
+          "text": "PEAC is at version 0.11.3; the goal is to earn 1.0 through multi-implementation, conformance, and standards work."
         }
       }
     ]
@@ -780,7 +780,7 @@ export default function WhatIsOriginaryPage() {
                     Is PEAC stable?
                   </h3>
                   <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
-                    PEAC is at version <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>0.11.0</code>; the goal is to earn <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>1.0</code> through multi-implementation, conformance, and standards work.
+                    PEAC is at version <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>0.11.3</code>; the goal is to earn <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>1.0</code> through multi-implementation, conformance, and standards work.
                   </p>
                 </div>
               </div>

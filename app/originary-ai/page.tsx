@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   description: 'Originary issues PEAC-Receipts for AI agents and APIs, proving access, consent, attribution, privacy, and payment across HTTP 402, x402, MCP, and A2A.',
   keywords: 'Originary AI, agentic web, AI receipts, x402, PEAC protocol, agent compliance, agentic commerce, AI consent tracking',
-  robots: 'index,follow',
+  robots: 'noindex,nofollow',
   openGraph: {
     title: 'Originary AI | Receipts for the Agentic Web',
     description: 'Originary issues PEAC-Receipts for AI agents and APIs, proving access, consent, attribution, privacy, and payment across HTTP 402, x402, MCP, and A2A.',

@@ -90,7 +90,7 @@ function VerifyContent() {
               fontWeight: 600,
               marginBottom: 'var(--space-6)'
             }}>
-              DEMO MODE
+              INSPECTOR (DEMO)
             </div>
 
             <h1 style={{
@@ -99,7 +99,7 @@ function VerifyContent() {
               marginBottom: 'var(--space-6)',
               color: 'var(--text-primary)'
             }}>
-              Verify Receipt
+              Inspect Record
             </h1>
 
             <p style={{
@@ -108,7 +108,7 @@ function VerifyContent() {
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
-              Paste a PEAC-Receipt token to verify its signature and view claims. This demo validates token format and structure.
+              Paste a PEAC interaction record to inspect its structure and decode claims. This inspector validates token format and JWS structure. Production verification includes full cryptographic signature checks via <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85em' }}>verifyLocal()</code>.
             </p>
 
             {/* Input Card */}
@@ -273,7 +273,7 @@ function VerifySkeleton() {
   return (
     <div className="wrap">
       <NavigationHeader />
-      <main role="main" aria-label="Verify PEAC-Receipt" style={{ paddingTop: '80px' }}>
+      <main role="main" aria-label="Inspect PEAC interaction record" style={{ paddingTop: '80px' }}>
         <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container" style={{ maxWidth: '700px', margin: '0 auto' }}>
             {/* Real content for SSR/SEO */}
@@ -288,7 +288,7 @@ function VerifySkeleton() {
               fontWeight: 600,
               marginBottom: 'var(--space-6)'
             }}>
-              DEMO MODE
+              INSPECTOR (DEMO)
             </div>
 
             <h1 style={{
@@ -297,7 +297,7 @@ function VerifySkeleton() {
               marginBottom: 'var(--space-6)',
               color: 'var(--text-primary)'
             }}>
-              Verify Receipt
+              Inspect Record
             </h1>
 
             <p style={{
@@ -306,7 +306,7 @@ function VerifySkeleton() {
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
-              Paste a PEAC-Receipt token to verify its signature and view claims. This demo validates token format and structure.
+              Paste a PEAC interaction record to inspect its structure and decode claims. This inspector validates token format and JWS structure. Production verification includes full cryptographic signature checks via <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85em' }}>verifyLocal()</code>.
             </p>
 
             {/* Input card skeleton */}

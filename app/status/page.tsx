@@ -3,6 +3,7 @@
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import { Activity, ExternalLink, Package, GitBranch } from 'lucide-react'
+import { FACTS } from '@/lib/facts'
 
 export default function StatusPage() {
   return (
@@ -68,11 +69,11 @@ export default function StatusPage() {
             gap: 'var(--space-4)'
           }}>
             {[
-              { label: 'Wire format', value: 'peac-receipt/0.1 (frozen)' },
-              { label: 'Latest release', value: 'v0.11.0' },
-              { label: 'Published packages', value: '21 on npm' },
-              { label: 'License', value: 'Apache-2.0' },
-              { label: 'Release cadence', value: '~weekly during v0.10.x' },
+              { label: 'Current wire format', value: `${FACTS.stableWireFormat} (Wire 0.2)` },
+              { label: 'Legacy wire format', value: `${FACTS.legacyWireFormat} (frozen)` },
+              { label: 'Stable release', value: FACTS.stableVersion },
+              { label: 'Published packages', value: `${FACTS.publishedPackageCount} on npm` },
+              { label: 'License', value: FACTS.license },
             ].map((item) => (
               <div key={item.label} style={{
                 display: 'flex',
@@ -134,7 +135,7 @@ export default function StatusPage() {
             <Package size={20} style={{ color: 'var(--accent-secondary)' }} />
             <div>
               <div style={{ fontWeight: 600, fontSize: 'var(--text-sm)' }}>npm Packages</div>
-              <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>22 packages at @peac/*</div>
+              <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>{FACTS.publishedPackageCount} packages at @peac/*</div>
             </div>
             <ExternalLink size={14} style={{ marginLeft: 'auto', color: 'var(--text-tertiary)' }} />
           </a>

@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   description: 'Build agent-to-agent systems with verifiable interaction records and HTTP 402 flows. Works with A2A, MCP, ACP, and payment adapters.',
   keywords: 'agent-to-agent, A2A, MCP, ACP, ERC-8004, PEAC receipts, HTTP 402, agent trust, cryptographic verification, AIPREF, x402, agentic commerce',
-  robots: 'index,follow',
+  robots: 'noindex,nofollow',
   openGraph: {
     title: 'Originary & AI - Agent-native trust with PEAC-Receipts',
     description: 'Build agent-to-agent systems with verifiable interaction records, preference-aware usage, and HTTP 402 flows. Works with A2A, MCP, and ACP.',

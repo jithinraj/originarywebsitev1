@@ -214,7 +214,7 @@ export default function Page() {
               <Link href="/glossary/peac/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>PEAC Protocol</Link> - Verifiable interaction records
             </li>
             <li style={{ marginBottom: 0 }}>
-              <Link href="/solutions/ai-builders/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AI Builders solution</Link> - Build compliant agent systems
+              <Link href="/developers" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Developer guides</Link> - Build with MCP and PEAC
             </li>
           </ul>
         </div>

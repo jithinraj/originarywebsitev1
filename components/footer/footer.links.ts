@@ -1,7 +1,7 @@
 /**
  * Footer Link Registry
  * Single source of truth for all footer navigation.
- * 5 buckets, <= 18 nav links total. Anything else goes on a dedicated page.
+ * 4 buckets. Anything else goes on a dedicated page.
  */
 
 export type FooterLink = {
@@ -17,7 +17,7 @@ export type FooterGroup = {
 }
 
 // ============================================================================
-// LAYER A: Navigation Grid (5 buckets)
+// LAYER A: Navigation Grid (4 columns)
 // ============================================================================
 
 export const FOOTER_PROTOCOL: FooterGroup = {
@@ -25,8 +25,9 @@ export const FOOTER_PROTOCOL: FooterGroup = {
   title: 'Protocol',
   links: [
     { label: 'Spec', href: '/peac' },
-    { label: 'Receipt format', href: '/docs/receipts' },
+    { label: 'Interaction records', href: '/receipts' },
     { label: 'Conformance', href: '/conformance' },
+    { label: 'Governance', href: '/governance' },
     { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
   ],
 }
@@ -37,19 +38,9 @@ export const FOOTER_DEVELOPERS: FooterGroup = {
   links: [
     { label: 'Quickstart', href: '/developers' },
     { label: 'SDKs (npm)', href: 'https://www.npmjs.com/org/peac', external: true },
-    { label: 'CLI', href: '/downloads' },
+    { label: 'Downloads', href: '/downloads' },
     { label: 'Examples', href: '/demo' },
-  ],
-}
-
-export const FOOTER_TOOLS: FooterGroup = {
-  id: 'tools',
-  title: 'Platform',
-  links: [
-    { label: 'Verifier', href: '/verify' },
-    { label: 'Gateway 402', href: '/products/gateway-402' },
-    { label: 'Trace', href: '/trace' },
-    { label: 'Studio', href: '/products/studio' },
+    { label: 'Inspector', href: '/verify' },
   ],
 }
 
@@ -59,27 +50,27 @@ export const FOOTER_COMPANY: FooterGroup = {
   links: [
     { label: 'About', href: '/about' },
     { label: 'Blog', href: '/blog' },
+    { label: 'Press', href: '/press' },
     { label: 'Contact', href: '/contact' },
-    { label: 'Downloads', href: '/downloads' },
   ],
 }
 
 export const FOOTER_TRUST: FooterGroup = {
   id: 'trust',
-  title: 'Legal',
+  title: 'Trust',
   links: [
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'Trust center', href: '/trust' },
     { label: 'Security', href: '/security' },
     { label: 'Privacy', href: '/privacy' },
     { label: 'Terms', href: '/terms' },
   ],
 }
 
-// Navigation groups for Layer A grid (5 columns)
+// Navigation groups for Layer A grid (3 columns)
 export const FOOTER_NAV_GROUPS: FooterGroup[] = [
   FOOTER_PROTOCOL,
   FOOTER_DEVELOPERS,
-  FOOTER_TOOLS,
-  FOOTER_COMPANY,
   FOOTER_TRUST,
 ]
 

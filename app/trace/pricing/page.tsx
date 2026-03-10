@@ -265,7 +265,7 @@ export default function TracePricingPage() {
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <Link
-                  href="/cloud"
+                  href="/contact"
                   className="btn btn-primary btn-lg"
                 >
                   Apply for early access

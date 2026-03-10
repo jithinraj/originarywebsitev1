@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: '/cloud',
     images: ['/og'],
   },
-  robots: 'index,follow',
+  robots: 'noindex,nofollow',
 }
 
 export default function CloudLayout({

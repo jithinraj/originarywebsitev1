@@ -84,7 +84,7 @@ export default function BentoFeatures() {
             title="Edge deployment"
             description="Deploy enforcement and verification close to ingress using edge runtimes or self-hosted infrastructure."
             icon={<Globe size={24} />}
-            href="/cloud"
+            href="/contact"
             linkText="View options"
           >
             <GlobalMap />

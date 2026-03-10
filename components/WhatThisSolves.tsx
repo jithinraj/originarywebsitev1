@@ -208,7 +208,7 @@ export default function WhatThisSolves() {
 
         .after .column-list li {
           color: var(--text-secondary);
-          font-weight: 450;
+          font-weight: 500;
         }
 
         .after .column-list li::before {

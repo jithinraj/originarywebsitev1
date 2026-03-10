@@ -43,7 +43,7 @@ export default function ChangelogPage() {
             >
               <div style={{ display: 'grid', gap: 'var(--space-4)' }}>
                 {[
-                  { icon: <Tag size={18} />, label: 'Current version', value: 'v0.11.0' },
+                  { icon: <Tag size={18} />, label: 'Stable version', value: 'v0.11.3' },
                   { icon: <GitBranch size={18} />, label: 'Wire format', value: 'peac-receipt/0.1 (frozen)' },
                   { icon: <Package size={18} />, label: 'License', value: 'Apache-2.0' },
                 ].map((row) => (
@@ -94,6 +94,38 @@ export default function ChangelogPage() {
               </h2>
 
               {[
+                {
+                  version: 'v0.11.3',
+                  date: 'Mar 2, 2026',
+                  items: [
+                    'Zero Trust Profile Pack: 7 sub-profiles as document overlays',
+                    'Agent Identity: ActorBinding with 8 proof types and MVIS',
+                    'Key rotation lifecycle: 5-state FSM with 30-day overlap',
+                    'Reconcile CLI: peac reconcile for receipt reconciliation',
+                    'Treaty extension: 4-level commitment_class',
+                  ],
+                },
+                {
+                  version: 'v0.11.2',
+                  date: 'Feb 25, 2026',
+                  items: [
+                    'Error recovery next_action hints: 7-value closed vocabulary',
+                    'Content Signals observation model: 3-state allow/deny/unspecified',
+                    'Evidence Carrier receipt_url locator hint (HTTPS-only)',
+                    'Plugin Pack distribution contract for agent surfaces',
+                    'MCP Registry JSON Schema validation for distribution',
+                  ],
+                },
+                {
+                  version: 'v0.11.1',
+                  date: 'Feb 24, 2026',
+                  items: [
+                    'Evidence Carrier Contract: PeacEvidenceCarrier + CarrierAdapter types',
+                    'Transport size limits: MCP/A2A/UCP 64 KB, ACP/x402/HTTP 8 KB',
+                    'receipt_ref = sha256(receipt_jws) with extraction verification',
+                    '3-step discovery: Agent Card, well-known, header probe',
+                  ],
+                },
                 {
                   version: 'v0.11.0',
                   date: 'Feb 23, 2026',

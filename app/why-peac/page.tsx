@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Why PEAC Protocol | Open Standard for Agentic Commerce',
   description: 'PEAC Protocol provides verifiable receipts, policy discovery, and payment handling for AI agents. Compare to alternatives.',
   keywords: 'PEAC Protocol, agentic commerce, HTTP 402, verifiable receipts, AI payments, policy discovery, open protocol, x402',
-  robots: 'index,follow',
+  robots: 'noindex,nofollow',
   alternates: {
     canonical: '/why-peac'
   },

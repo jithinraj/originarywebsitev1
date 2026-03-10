@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: 'PEAC protocol research and technical specifications. Problem framing, design goals, and threat model.',
     images: ['/og'],
   },
-  robots: 'index,follow',
+  robots: 'noindex,nofollow',
 }
 
 export default function ResearchPage() {
