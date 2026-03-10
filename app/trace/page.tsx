@@ -63,7 +63,7 @@ export default function TracePage() {
     'HMAC authentication + replay protection',
     'Bot detection & classification',
     'Data footprint tracking',
-    'PEAC receipts (self-managed keys)',
+    'Signed interaction records (self-managed keys)',
     'Public badge & stats API',
     'CSV/JSON exports',
     'Cloudflare Worker & Nginx tailer',
@@ -268,7 +268,7 @@ export default function TracePage() {
                   lineHeight: 1.7,
                   marginBottom: 'var(--space-6)'
                 }}>
-                  Originary Trace is built on the <strong>PEAC Protocol</strong> (Programmable Environment for Agent Coordination) - an open protocol for machine-readable policy, compliance tracking, and verifiable receipts.
+                  Originary Trace is built on the <strong>PEAC Protocol</strong> - the open standard for machine-readable policy, compliance tracking, and verifiable interaction records.
                 </p>
                 <a
                   href="https://github.com/peacprotocol/peac"
@@ -679,7 +679,7 @@ go install ./tailer
                     color: 'var(--text-secondary)',
                     margin: 0
                   }}>
-                    Yes. Originary Trace functions as comprehensive AI crawler analytics and bot tracking infrastructure. It provides bot management and bot protection capabilities by identifying all AI crawlers accessing your content, enforcing PEAC Protocol policies, and generating verifiable evidence. Use Trace as your bot tracker to monitor AI scraping, detect policy violations, and control access to your data - all while maintaining compliance through PEAC-Receipts.
+                    Yes. Originary Trace functions as comprehensive AI crawler analytics and bot tracking infrastructure. It provides bot management and bot protection capabilities by identifying all AI crawlers accessing your content, enforcing PEAC Protocol policies, and generating verifiable evidence. Use Trace as your bot tracker to monitor AI scraping, detect policy violations, and control access to your data - all while maintaining compliance through verifiable interaction records.
                   </p>
                 </div>
 
@@ -806,7 +806,7 @@ go install ./tailer
             "description": "AI crawler analytics and compliance evidence for your website. Track GPTBot, ClaudeBot, and other AI services with PEAC Protocol.",
             "featureList": [
               "AI crawler identification",
-              "PEAC receipt generation",
+              "Interaction record generation",
               "Compliance evidence",
               "Policy violation detection",
               "Multi-deployment support"
