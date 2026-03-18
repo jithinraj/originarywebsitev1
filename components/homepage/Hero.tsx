@@ -132,7 +132,8 @@ export function Hero() {
 
         {/* Quick links */}
         <motion.div
-          className="mt-6 flex flex-wrap items-center gap-x-1.5 gap-y-1"
+          className="mt-6"
+          style={{ fontSize: '0.8125rem', lineHeight: 2 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -143,21 +144,21 @@ export function Hero() {
             { label: 'Read the spec', href: 'https://github.com/peacprotocol/peac', external: true },
             { label: 'Downloads', href: '/downloads' },
           ].map((link, i) => (
-            <span key={link.label} className="inline-flex items-center gap-1.5 whitespace-nowrap">
+            <span key={link.label}>
               {i > 0 && (
-                <span style={{ color: 'var(--color-fg-muted)', fontSize: '0.75rem', userSelect: 'none' }}>/</span>
+                <span style={{ color: 'var(--color-fg-muted)', margin: '0 0.375rem', userSelect: 'none' }}>/</span>
               )}
               {link.external ? (
                 <a
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hp-link-muted text-[0.8125rem] sm:text-[0.875rem] font-medium"
+                  className="hp-link-muted font-medium"
                 >
                   {link.label}
                 </a>
               ) : (
-                <Link href={link.href} className="hp-link-muted text-[0.8125rem] sm:text-[0.875rem] font-medium">
+                <Link href={link.href} className="hp-link-muted font-medium">
                   {link.label}
                 </Link>
               )}
@@ -280,18 +281,18 @@ Authorization: Bearer <agent-token>
 
         {/* Stats line */}
         <motion.p
-          className="mt-6 text-[0.6875rem] flex flex-wrap items-center gap-2"
+          className="mt-6 text-[0.6875rem]"
           style={{ color: 'var(--color-fg-muted)' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <span>{FACTS.publishedPackageCount} packages</span>
-          <span className="opacity-40">&#183;</span>
-          <span>{FACTS.testsCount.toLocaleString()} tests</span>
-          <span className="opacity-40">&#183;</span>
-          <span>Apache-2.0</span>
-          <span className="opacity-40">&#183;</span>
+          {FACTS.publishedPackageCount} packages{' '}
+          <span className="opacity-40">&#183;</span>{' '}
+          {FACTS.testsCount.toLocaleString()} tests{' '}
+          <span className="opacity-40">&#183;</span>{' '}
+          Apache-2.0{' '}
+          <span className="opacity-40">&#183;</span>{' '}
           <a
             href="https://github.com/peacprotocol/peac"
             target="_blank"
