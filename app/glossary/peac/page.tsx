@@ -117,7 +117,7 @@ PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6InBlYWMtcmVjZWlwdC8wLjEiLCJraWQiOiJvcm
 {
   "header": {
     "alg": "EdDSA",
-    "typ": "peac-receipt/0.1",
+    "typ": "interaction-record+jwt",
     "kid": "originary-2025-01"
   },
   "payload": {
@@ -126,7 +126,7 @@ PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6InBlYWMtcmVjZWlwdC8wLjEiLCJraWQiOiJvcm
     "iat": 1734048000,
     "jti": "rcpt_xyz789",
     "peac": {
-      "version": "0.11.3",
+      "version": "0.12.3",
       "resource": "/api/content",
       "policy_hash": "sha256:9f3c..."
     },

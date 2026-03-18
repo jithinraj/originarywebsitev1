@@ -221,7 +221,7 @@ export default function ResearchPage() {
               Evaluation Plan
             </h2>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-4)' }}>
-              PEAC uses wire format peac-receipt/0.1. Evaluation milestones before 1.0:
+              The current stable wire format is <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9em', background: 'var(--surface-subtle)', padding: '2px 6px', borderRadius: '4px' }}>interaction-record+jwt</code> (Wire 0.2). The legacy format <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9em', background: 'var(--surface-subtle)', padding: '2px 6px', borderRadius: '4px' }}>peac-receipt/0.1</code> is frozen. Evaluation milestones before 1.0:
             </p>
             <ul style={{ color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 'var(--space-6)' }}>
               <li style={{ marginBottom: 'var(--space-2)' }}><strong>Multiple implementations:</strong> At least two independent, conformant implementations</li>

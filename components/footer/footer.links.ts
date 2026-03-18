@@ -95,7 +95,7 @@ export const FOOTER_SOCIAL: FooterLink[] = [
   { label: 'X', href: 'https://x.com/originaryx', external: true },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/originary', external: true },
   { label: 'Bluesky', href: 'https://bsky.app/profile/originary.bsky.social', external: true },
-  { label: 'Substack', href: 'https://peacprotocol.substack.com', external: true },
+  { label: 'Substack', href: 'https://originary.substack.com', external: true },
 ]
 
 // ============================================================================

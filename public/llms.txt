@@ -44,7 +44,7 @@ Policy Pack Generator. Generate peac.txt, AIPREF headers, and human-readable pol
 MCP tool server (@peac/mcp-server) with 5 tools: verify-receipt, inspect-receipt, decode-receipt (pure, offline), issue-receipt, create-bundle (privileged, require issuer key). Works with Claude Desktop, Cursor, and custom agents.
 
 ### CLI and SDKs (/downloads)
-@peac/cli, @peac/mcp-server, @peac/capture-node, @peac/rails-stripe, Go SDK. npm and source archives.
+@peac/cli, @peac/mcp-server, @peac/capture-node, @peac/rails-stripe. npm and source archives.
 
 ## Developer Resources
 
@@ -123,7 +123,7 @@ PEAC is an open standard (Apache-2.0). 28 packages on npm, 6443 tests, 84 build 
 - [X / Twitter](https://x.com/originaryx)
 - [LinkedIn](https://www.linkedin.com/company/originary)
 - [Bluesky](https://bsky.app/profile/originary.bsky.social)
-- [Substack](https://peacprotocol.substack.com/)
+- [Substack](https://originary.substack.com)
 
 ## Technical Files
 

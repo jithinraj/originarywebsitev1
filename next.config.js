@@ -81,6 +81,21 @@ const nextConfig = {
         destination: '/about',
         permanent: true,
       },
+      {
+        source: '/what-is-originary',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/platform',
+        destination: '/products',
+        permanent: true,
+      },
+      {
+        source: '/why-peac',
+        destination: '/peac',
+        permanent: true,
+      },
             // CLI downloads → PEAC Protocol release archives
       {
         source: '/downloads/originary-cli-1.0.0-darwin-arm64.zip',

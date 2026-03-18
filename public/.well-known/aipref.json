@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "peac_version": "0.11.3",
+  "peac_version": "0.12.3",
   "ai_access": {
     "scraping": "allowed_with_attribution",
     "training": "prohibited",
@@ -20,5 +20,5 @@
   },
   "policy": "https://www.originary.xyz/.well-known/peac.txt",
   "issuer_config": "https://www.originary.xyz/.well-known/peac-issuer.json",
-  "updated_at": "2026-02-23T00:00:00Z"
+  "updated_at": "2026-03-17T00:00:00Z"
 }
