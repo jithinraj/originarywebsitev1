@@ -98,7 +98,7 @@ export default function ConformancePage() {
                   </h3>
                   <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-4)', lineHeight: 1.6 }}>
                     Reference inputs and expected outputs for core protocol operations.
-                    Receipt generation, policy parsing, and verification flows.
+                    Record issuance, policy parsing, and verification flows.
                   </p>
 
                   {/* Command block */}
@@ -118,7 +118,7 @@ export default function ConformancePage() {
                   <div style={{ display: 'flex', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
                     <span style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--text-tertiary)', fontSize: 'var(--text-sm)' }}>
                       <CheckCircle size={14} style={{ color: 'var(--success)' }} />
-                      Receipt signing
+                      Record signing
                     </span>
                     <span style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--text-tertiary)', fontSize: 'var(--text-sm)' }}>
                       <CheckCircle size={14} style={{ color: 'var(--success)' }} />
@@ -161,13 +161,13 @@ export default function ConformancePage() {
                   </p>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
                     <span style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                      <strong>Core:</strong> Receipt verification only
+                      <strong>Core:</strong> Record verification only
                     </span>
                     <span style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
                       <strong>Standard:</strong> Core + policy discovery
                     </span>
                     <span style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                      <strong>Full:</strong> Standard + receipt issuance
+                      <strong>Full:</strong> Standard + record issuance
                     </span>
                   </div>
                 </div>

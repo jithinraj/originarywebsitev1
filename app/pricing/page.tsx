@@ -238,6 +238,30 @@ export default function PricingPage() {
                 </div>
               </div>
 
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', marginBottom: 'var(--space-8)', padding: 'var(--space-5)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-lg)' }}>
+                <p style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-tertiary)', marginBottom: 'var(--space-2)' }}>
+                  Deployment model
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
+                  {[
+                    'Self-hosted with support',
+                    'Managed cloud (private beta)',
+                    'Hybrid: self-host core, managed keys',
+                  ].map((item) => (
+                    <span key={item} style={{
+                      fontSize: 'var(--text-xs)',
+                      color: 'var(--text-secondary)',
+                      padding: '4px 10px',
+                      background: 'var(--surface-elevated)',
+                      border: '1px solid var(--border-default)',
+                      borderRadius: 'var(--radius-full)',
+                    }}>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               <a
                 href="mailto:contact@originary.xyz?subject=Enterprise%20Support"
                 className="btn btn-primary"

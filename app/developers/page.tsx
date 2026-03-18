@@ -6,16 +6,16 @@ import { ArrowRight, Code, Terminal, Shield, Bot, Plug, FileCheck } from 'lucide
 import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
-  title: 'Developers | PEAC Protocol SDK and Integration Guides',
+  title: 'Developers | Build with Originary, powered by PEAC',
   description: 'Add verifiable interaction records to your HTTP API, MCP server, or A2A agent flow. Quickstart, SDKs, and verification guides.',
-  keywords: 'PEAC Protocol SDK, verifiable interaction records, MCP server, A2A integration, HTTP 402, receipt verification, developer tools',
+  keywords: 'Originary SDK, PEAC Protocol, verifiable interaction records, MCP server, A2A integration, HTTP 402, developer tools',
   authors: [{ name: 'Originary' }],
   alternates: {
     canonical: '/developers'
   },
   openGraph: {
     type: 'website',
-    title: 'Developers | PEAC Protocol SDK and Integration Guides',
+    title: 'Developers | Build with Originary, powered by PEAC',
     description: 'Add verifiable interaction records to your HTTP API, MCP server, or A2A agent flow.',
     url: '/developers',
     images: ['/og'],
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Developers | PEAC Protocol SDK and Integration Guides',
+    title: 'Developers | Build with Originary, powered by PEAC',
     description: 'Add verifiable interaction records to your HTTP API, MCP server, or A2A agent flow.',
     images: ['/og'],
     site: '@originaryx',
@@ -42,10 +42,10 @@ export default function Developers() {
           <div className="container">
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">Get started with PEAC</span>
+                <span className="text-gradient">Build with Originary</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                Add verifiable interaction records to your stack. Choose your integration path.
+                Add verifiable interaction records to your stack, powered by PEAC. Choose your integration path.
               </p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>

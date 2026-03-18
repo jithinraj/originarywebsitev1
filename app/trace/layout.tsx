@@ -1,24 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Trace | Agent Observability and Decision Records',
-  description: 'Trace gives your website visibility into AI agents with detailed logs, verifiable receipts, and PEAC-based access controls.',
-  alternates: {
-    canonical: '/trace'
-  },
-  openGraph: {
-    title: 'Trace | Agent Observability and Decision Records by Originary',
-    description: 'Trace gives your website visibility into AI agents with detailed logs, verifiable receipts, and PEAC-based access controls.',
-    type: 'website',
-    url: '/trace',
-  },
-  robots: 'index,follow'
+  robots: 'noindex,nofollow',
 }
 
-export default function TraceLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function TraceLayout({ children }: { children: React.ReactNode }) {
   return children
 }

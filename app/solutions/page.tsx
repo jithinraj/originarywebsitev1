@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Solutions',
   description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
   keywords: 'AI agents, orchestration protocol, AI coordination, PEAC protocol',
-  robots: 'index,follow',
+  robots: 'noindex,nofollow',
   openGraph: {
     title: 'Solutions',
     description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',

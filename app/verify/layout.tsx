@@ -1,65 +1,29 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Inspector | Inspect and Validate Interaction Records',
-  description: 'Inspect PEAC interaction records. Parse JWS structure, decode claims, and check token format. For full receipt verification with evidence bundles, see Agent Auditor.',
-  authors: [{ name: 'Originary' }],
+  title: 'Inspector | Decode and Inspect Signed Interaction Records',
+  description: 'Paste a compact JWS token, upload a file, or load a sample. Decodes JOSE header and claims instantly in the browser. For full cryptographic verification, use Agent Auditor.',
+  keywords: 'JWS inspector, interaction record, PEAC receipt, Ed25519, JOSE header, token decoder',
+  alternates: { canonical: '/verify' },
   openGraph: {
-    type: 'website',
-    title: 'Inspector | Inspect and Validate Interaction Records',
-    description: 'Inspect PEAC interaction records. Parse JWS structure, decode claims, and check token format.',
+    title: 'Inspector | Decode and Inspect Signed Interaction Records',
+    description: 'Browser-based JWS token inspector. Decodes JOSE header and claims instantly.',
     url: '/verify',
+    type: 'website',
     images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Inspector | Inspect and Validate Interaction Records',
-    description: 'Inspect PEAC interaction records. Parse JWS structure, decode claims, and check token format.',
+    title: 'Inspector | Decode and Inspect Signed Interaction Records',
+    description: 'Browser-based JWS token inspector. Decodes JOSE header and claims instantly.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
   robots: 'index,follow',
-  alternates: {
-    canonical: '/verify'
-  },
 }
 
-export default function VerifyLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  const softwareAppJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "PEAC Inspector",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "Any",
-    "description": "Inspect and validate PEAC interaction records. Parse JWS structure, decode claims, and check token format.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "featureList": [
-      "JWS structure parsing",
-      "Claims decoding",
-      "Token format validation",
-      "No API calls required",
-      "Instant results"
-    ],
-    "url": "https://www.originary.xyz/verify"
-  };
-
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJsonLd) }}
-      />
-      {children}
-    </>
-  )
+export default function VerifyLayout({ children }: { children: React.ReactNode }) {
+  return children
 }
