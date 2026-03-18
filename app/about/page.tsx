@@ -87,8 +87,8 @@ export default function AboutPage() {
   const productList = [
     { name: 'Declare', desc: 'Define interaction terms once in a format that is human-readable and machine-enforceable.', icon: <FileText size={22} /> },
     { name: 'Trace', desc: 'Evidence exports and decision views for audits, disputes, and operations.', icon: <Eye size={22} /> },
-    { name: 'Gateway 402', desc: 'Edge enforcement with HTTP 402 challenges and consistent receipt issuance.', icon: <CreditCard size={22} /> },
-    { name: 'Verify API', desc: 'Verify receipt signatures and bind outcomes to the policy state at decision time.', icon: <CheckCircle size={22} /> },
+    { name: 'Gateway 402', desc: 'Edge enforcement with HTTP 402 challenges and signed record issuance.', icon: <CreditCard size={22} /> },
+    { name: 'Verify API', desc: 'Verify signatures and bind outcomes to the policy state at decision time.', icon: <CheckCircle size={22} /> },
     { name: 'Studio', desc: 'Policy review, testing, and evidence workflow tooling.', icon: <Layers size={22} /> },
   ]
 
@@ -101,7 +101,7 @@ export default function AboutPage() {
         <section
           style={{
             position: 'relative',
-            background: 'var(--gradient-mesh)',
+            background: 'var(--surface-elevated)',
             padding: 'clamp(4rem, 12vh, 8rem) 0 clamp(4rem, 10vh, 6rem)',
             overflow: 'hidden',
           }}
@@ -189,8 +189,8 @@ export default function AboutPage() {
             >
               Machine-readable terms, predictable enforcement, and a durable way to verify what happened
               without relying on a single vendor&apos;s logs. We make <strong>agent interactions</strong> verifiable
-              through <strong>interaction records</strong>: cryptographically signed receipts that bind
-              outcomes to the policy state in force at decision time.
+              through <strong>signed interaction records</strong> that bind outcomes to the policy state
+              in force at decision time.
             </p>
 
             <p

@@ -669,47 +669,29 @@ agent-auditor demo`}</pre>
         {/* ── CTA ────────────────────────────────────────────────────────────── */}
         <section className="section">
           <div className="container">
-            <div className="cta-card" style={{ position: 'relative', overflow: 'hidden' }}>
-              <div style={{
-                position: 'absolute',
-                top: 0, left: 0, right: 0, bottom: 0,
-                background: 'radial-gradient(circle at 30% 40%, var(--glass-border-hover) 0%, transparent 50%)',
-                pointerEvents: 'none',
-              }} />
-              <div style={{ position: 'relative', zIndex: 2 }}>
-                <h2 style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--white)' }}>
-                  Got a receipt? Open it.
-                </h2>
-                <p style={{
-                  fontSize: 'var(--text-xl)',
-                  marginBottom: 'var(--space-8)',
-                  color: 'var(--white)',
-                  maxWidth: '440px',
-                  margin: '0 auto var(--space-8) auto',
-                  lineHeight: 1.6,
-                  opacity: 0.9,
-                }}>
-                  No signup. No backend. Drop a file and see what it says.
-                </p>
-                <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
-                  <Link
-                    href="#inspector"
-                    className="btn btn-lg"
-                    style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}
-                  >
-                    <span>Open Inspector</span>
-                    <ArrowRight size={18} />
-                  </Link>
-                  <a
-                    href={GITHUB_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-lg btn-ghost"
-                    style={{ color: 'var(--white)', border: '1px solid var(--border-hover)' }}
-                  >
-                    View source on GitHub
-                  </a>
-                </div>
+            <div style={{
+              maxWidth: '720px',
+              margin: '0 auto',
+              padding: 'var(--space-10)',
+              background: 'var(--surface-elevated)',
+              border: '1px solid var(--border-default)',
+              borderRadius: 'var(--radius-2xl)',
+              textAlign: 'center',
+            }}>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
+                Got a signed record? Open it.
+              </h2>
+              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '440px', margin: '0 auto var(--space-8) auto' }}>
+                No signup. No backend. Drop a file and see what it says.
+              </p>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
+                <Link href="#inspector" className="btn btn-primary btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+                  <span>Open Inspector</span>
+                  <ArrowRight size={18} />
+                </Link>
+                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-lg">
+                  View source on GitHub
+                </a>
               </div>
             </div>
           </div>

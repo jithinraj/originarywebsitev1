@@ -165,114 +165,81 @@ export function Hero() {
           ))}
         </motion.div>
 
-        {/* Code panels */}
+        {/* Verification flow */}
         <motion.div
-          className="mt-10 sm:mt-16 md:mt-20 lg:mt-24 grid md:grid-cols-2 gap-4 md:gap-5"
+          className="mt-10 sm:mt-16 md:mt-20 lg:mt-24"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.7, ease }}
         >
-          {/* Left: request flow (dark) */}
-          <div>
-            <p
-              className="text-[0.6875rem] font-semibold uppercase tracking-[0.08em] mb-3"
-              style={{ color: 'var(--color-fg-muted)' }}
-            >
-              In practice
-            </p>
-            <div
-              className="rounded-xl p-5 md:p-6 overflow-hidden"
-              style={{
-                border: '1px solid var(--color-border)',
-                background: 'var(--color-surface-invert)',
-              }}
-            >
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
-                <span
-                  className="ml-2 text-[0.6875rem] font-mono"
-                  style={{ color: 'rgba(250,250,247,0.5)' }}
-                >
-                  request flow
-                </span>
-              </div>
-              <pre
-                className="text-[0.75rem] md:text-[0.8125rem] leading-relaxed font-mono overflow-x-auto"
-                style={{ color: 'rgba(250,250,247,0.85)' }}
-              >
-                <code>{`// Agent request hits your API
-POST /api/bookings
+          <div
+            className="rounded-xl overflow-hidden"
+            style={{ border: '1px solid var(--color-border)', background: 'var(--color-surface-invert)' }}
+          >
+            {/* Terminal header */}
+            <div className="flex items-center gap-2 px-5 py-3" style={{ borderBottom: '1px solid rgba(250,250,247,0.08)' }}>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
+              <span className="ml-2 text-[0.6875rem] font-mono" style={{ color: 'rgba(250,250,247,0.4)' }}>
+                request &rarr; policy &rarr; signed record &rarr; verify
+              </span>
+            </div>
+
+            <div className="grid md:grid-cols-2">
+              {/* Left: request + policy */}
+              <div className="p-5 md:p-6" style={{ borderRight: '1px solid rgba(250,250,247,0.06)' }}>
+                <pre className="text-[0.75rem] md:text-[0.8125rem] leading-relaxed font-mono overflow-x-auto" style={{ color: 'rgba(250,250,247,0.85)' }}>
+                  <code>{`POST /api/bookings
 Authorization: Bearer <agent-token>
 
-// Originary evaluates the request
--> Verify agent identity
--> Apply booking policy
--> Record the decision`}</code>
-              </pre>
-            </div>
-          </div>
+// Originary evaluates
+-> agent identity: verified
+-> policy matched: bookings.default
+-> decision: allow
 
-          {/* Right: signed record (light) */}
-          <div>
-            <p
-              className="text-[0.6875rem] font-semibold uppercase tracking-[0.08em] mb-3"
-              style={{ color: 'var(--color-fg-muted)' }}
-            >
-              Signed record
-            </p>
-            <div
-              className="rounded-xl p-5 md:p-6 overflow-hidden"
-              style={{
-                border: '1px solid var(--color-border)',
-                background: 'var(--color-surface-elevated)',
-              }}
-            >
-              <div className="flex items-center justify-between mb-5">
-                <span
-                  className="text-[0.6875rem] font-semibold tracking-wide uppercase"
-                  style={{ color: 'var(--color-fg-muted)' }}
-                >
-                  What you get
-                </span>
-                <span
-                  className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[0.625rem] font-semibold uppercase tracking-wide"
-                  style={{
-                    background: 'var(--color-verified-bg)',
-                    color: 'var(--color-verified)',
-                  }}
-                >
-                  <span
-                    className="w-1 h-1 rounded-full"
-                    style={{ background: 'var(--color-verified)' }}
-                  />
-                  Signed
-                </span>
+// Signed record returned
+PEAC-Receipt: eyJhbGciOiJFZERTQ...
+// Ed25519 · portable · offline-verifiable`}</code>
+                </pre>
               </div>
-              <div className="space-y-4">
-                {[
-                  { label: 'Request', value: 'POST /api/bookings' },
-                  { label: 'Agent', value: 'verified (did:key:z6Mkf5r...)' },
-                  { label: 'Decision', value: 'allow' },
-                  { label: 'Policy', value: 'bookings.default' },
-                  { label: 'Record', value: 'signed, exportable' },
-                ].map((row) => (
-                  <div key={row.label} className="flex items-baseline justify-between gap-4">
-                    <span
-                      className="text-[0.75rem] font-medium uppercase tracking-wide"
-                      style={{ color: 'var(--color-fg-muted)' }}
-                    >
-                      {row.label}
-                    </span>
-                    <span
-                      className="text-[0.8125rem] font-mono"
-                      style={{ color: 'var(--color-fg-secondary)' }}
-                    >
-                      {row.value}
-                    </span>
-                  </div>
-                ))}
+
+              {/* Right: verification result */}
+              <div className="p-5 md:p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[0.6875rem] font-semibold tracking-wide uppercase" style={{ color: 'rgba(250,250,247,0.4)' }}>
+                    Local verification
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[0.625rem] font-semibold uppercase tracking-wide" style={{ background: 'rgba(40,200,64,0.15)', color: '#28C840' }}>
+                    <span className="w-1 h-1 rounded-full" style={{ background: '#28C840' }} />
+                    Verified
+                  </span>
+                </div>
+                <div className="space-y-3">
+                  {[
+                    { label: 'Signature', value: 'Ed25519 valid' },
+                    { label: 'Issuer', value: 'https://api.example.com' },
+                    { label: 'Agent', value: 'did:key:z6Mkf5r...' },
+                    { label: 'Decision', value: 'allow' },
+                    { label: 'Resource', value: 'POST /api/bookings' },
+                    { label: 'Policy', value: 'bookings.default' },
+                    { label: 'Record', value: 'portable, exportable' },
+                  ].map((row) => (
+                    <div key={row.label} className="flex items-baseline justify-between gap-4">
+                      <span className="text-[0.6875rem] font-medium uppercase tracking-wide" style={{ color: 'rgba(250,250,247,0.35)' }}>
+                        {row.label}
+                      </span>
+                      <span className="text-[0.8125rem] font-mono" style={{ color: 'rgba(250,250,247,0.75)' }}>
+                        {row.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-5 pt-4" style={{ borderTop: '1px solid rgba(250,250,247,0.08)' }}>
+                  <span className="text-[0.6875rem] font-mono" style={{ color: 'rgba(250,250,247,0.35)' }}>
+                    No network call required. Verified with public key alone.
+                  </span>
+                </div>
               </div>
             </div>
           </div>

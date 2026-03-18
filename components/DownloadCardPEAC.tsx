@@ -18,7 +18,7 @@ export default function DownloadCardPEAC() {
         color: 'var(--text-secondary)',
         marginBottom: 'var(--space-4)'
       }}>
-        PEAC is the open protocol behind Originary&apos;s receipts. Install from the official upstream packages and repository.
+        PEAC is the open protocol behind Originary&apos;s signed interaction records. Install from the official upstream packages and repository.
       </p>
 
       <div style={{
@@ -93,15 +93,15 @@ peac policy validate peac-policy.yaml`}
             Wire Format
           </div>
           <p style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-2)' }}>
-            Current PEAC wire: <code style={{
+            Current stable: <code style={{
               background: 'var(--surface-subtle)',
               padding: '2px 4px',
               borderRadius: 'var(--radius-sm)',
               fontFamily: 'var(--font-mono)'
-            }}>peac-receipt/0.1</code>
+            }}>interaction-record+jwt</code> (Wire 0.2)
           </p>
           <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>
-            Originary is validated against peac-receipt/0.1.
+            Legacy format <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85em' }}>peac-receipt/0.1</code> (Wire 0.1) is frozen.
           </p>
         </div>
       </div>
