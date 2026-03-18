@@ -212,10 +212,10 @@ export default function AIReceiptsPage() {
                     What is a Receipt?
                   </h2>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
-                    An <strong>AI receipt</strong> (or PEAC-Receipt) is a cryptographically signed JSON object that proves what happened during an agent interaction. Just like a physical receipt from a store, it records who transacted, what was exchanged, when it happened, and under what terms.
+                    A <strong>PEAC interaction record</strong> is a JWS-signed JSON payload that records what happened during an agent interaction: who issued it, what resource was accessed, when, under what terms, and with what payment (if any). The signature uses Ed25519.
                   </p>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                    The key difference: AI receipts are machine-readable, tamper-proof, and verifiable by anyone with the issuer&apos;s public key - no phone call to customer service required.
+                    Anyone with the issuer&apos;s public key can verify the record offline. No API callback, no trust in the verifier, no phone call. The record travels in the <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>PEAC-Receipt</code> HTTP header as a compact JWS string.
                   </p>
                 </section>
 
@@ -234,13 +234,13 @@ export default function AIReceiptsPage() {
                     <div>
                       <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Billing proof</h4>
                       <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                        No more "he said, she said" disputes. The signature proves what was used.
+                        The signed record proves which resource was accessed and what was paid. Disputes resolve by checking the signature, not by arguing about server logs.
                       </p>
                     </div>
                     <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Audit trails regulators accept</h4>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Audit trails</h4>
                       <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                        Timestamped, tamper-evident records of every agent action. Regulatory compliance becomes straightforward when you can produce signed receipts on demand.
+                        Timestamped, tamper-evident records of every agent action. When a regulator asks what your agent did, you produce the signed records. They verify independently.
                       </p>
                     </div>
                     <div>

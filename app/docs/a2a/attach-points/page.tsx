@@ -60,7 +60,7 @@ export default function A2AAttachPointsDocPage() {
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
-              A2A protocol documentation for agent to agent transactions and agent-to-agent communication. Learn how to embed PEAC-Receipts in A2A protocol messages to provide verifiable proof of authorization, payment, and policy compliance for agent to agent transactions in multi-agent systems.
+              Attach PEAC interaction records to A2A protocol messages. When agents exchange tasks or data, the receipt proves authorization, payment, and policy compliance for each step.
             </p>
 
             <div className="card" style={{ marginBottom: 'var(--space-8)', textAlign: 'left' }}>
@@ -87,7 +87,7 @@ export default function A2AAttachPointsDocPage() {
                 marginBottom: 'var(--space-4)',
                 color: 'var(--text-primary)'
               }}>
-                5-Minute Quickstart
+                Quickstart
               </h2>
               <ol style={{ color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
                 <li>Configure your A2A agent with Originary middleware</li>

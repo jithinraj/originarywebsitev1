@@ -169,7 +169,7 @@ export default function SignIn() {
                 color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)'
               }}>
-                Manage your agentic infrastructure with enterprise-grade tools and real-time analytics.
+                Manage your infrastructure with production tools and real-time analytics.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>

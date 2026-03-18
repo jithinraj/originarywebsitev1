@@ -8,7 +8,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 export const metadata: Metadata = {
   title: 'Verify API',
   description: 'Stateless verification for interaction records and JWS signatures. Deterministic validation with normalized fields.',
-  keywords: 'PEAC receipt verification, JWS validation, signature verification API, enterprise authentication, sub-10ms latency',
+  keywords: 'PEAC receipt verification, JWS validation, Ed25519 signature verification, offline verification, JWKS',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
@@ -79,7 +79,7 @@ export default function VerifyAPI() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--text-primary)'
               }}>
-                <span className="text-gradient">Lightning-fast</span> cryptographic verification
+                <span className="text-gradient">Deterministic</span> signature verification
               </h1>
 
               <p style={{
@@ -90,7 +90,7 @@ export default function VerifyAPI() {
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
               }}>
-                Enterprise-grade stateless verification for interaction records and JWS signatures. Our globally distributed API delivers deterministic validation with normalized metadata for compliance reporting and enterprise observability.
+                Validate Ed25519 signatures on PEAC interaction records. Stateless, deterministic, and offline-capable. Fetch the issuer&apos;s public key from their JWKS endpoint, verify the signature, check claims. No callback to Originary required.
               </p>
 
 
@@ -232,7 +232,7 @@ export default function VerifyAPI() {
                   margin: '0 auto var(--space-8) auto',
                   lineHeight: 1.6
                 }}>
-                  Start verifying interaction records with the open-source reference implementation. Self-hostable, offline-capable, and backed by 22 npm packages.
+                  Verify interaction records with the open-source reference implementation. Self-hostable and offline-capable. Available as @peac/protocol on npm.
                 </p>
                 <div style={{
                   display: 'flex',

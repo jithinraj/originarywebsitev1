@@ -78,7 +78,7 @@ export default function ACPPage() {
             marginBottom: 'var(--space-16)',
             lineHeight: 1.6
           }}>
-            Agentic commerce and agentic transactions for the agentic economy
+            Protocol support for agent-initiated commerce
           </p>
 
           {/* Overview */}
@@ -100,13 +100,13 @@ export default function ACPPage() {
               Getting Started with ACP
             </h2>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-              Integrating Agentic Commerce Protocol into your commerce platform enables AI agents to conduct fully autonomous transactions. The protocol standardizes how agents discover products, negotiate terms, execute payments, and receive verifiable proof of purchase - all without human intervention.
+              ACP standardizes how agents discover products, negotiate terms, and complete purchases. Originary issues a signed receipt for each transaction, recording what was bought, what was paid, and what terms applied.
             </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
               Start by exposing your product catalog in ACP-compatible format. Agents can then browse offerings, compare prices, and initiate purchase flows programmatically. When an agent completes a purchase, Originary issues a PEAC-Receipt containing cryptographic proof of the transaction, payment details, and fulfillment status.
             </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-              For commerce platforms, ACP integration provides immediate benefits: reduced fraud through cryptographic verification, automated reconciliation with machine-readable receipts, and expanded market reach to the growing ecosystem of autonomous AI agents. The protocol works with existing payment rails and can be gradually rolled out alongside traditional checkout flows.
+              ACP works with existing payment rails and can be adopted incrementally alongside traditional checkout flows. Each receipt is independently verifiable, so reconciliation does not depend on trust between parties.
             </p>
           </div>
 

@@ -148,22 +148,11 @@ export default function Gateway402() {
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
                 color: 'var(--text-secondary)',
-                marginBottom: 'var(--space-6)',
-                maxWidth: '900px',
-                margin: '0 auto var(--space-6) auto'
-              }}>
-                Enterprise-grade HTTP 402 Payment Required gateway with multi-rail settlement support. Enable autonomous agents to securely purchase access to your APIs, content, and services through standardized payment protocols.
-              </p>
-
-              <p style={{
-                fontSize: 'var(--text-lg)',
-                lineHeight: 1.7,
-                color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)',
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
               }}>
-                Enable HTTP 402 commerce for AI agents and automated economy use cases. Gateway 402 brings x402 commerce to your infrastructure with machine-payable APIs, agent-native payments, and PEAC-Receipts for every transaction.
+                An HTTP 402 gateway that sits in front of your API. When a request arrives without payment, it returns a 402 challenge with pricing. When payment proof arrives, it verifies and issues a signed PEAC record. Built on the x402 protocol spec.
               </p>
 
               <div style={{
@@ -234,11 +223,11 @@ export default function Gateway402() {
                   }}>STANDARD</span>
                 </div>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  HTTP 402 compliant protocol with agent-native policy negotiation and verifiable receipts.
+                  Open protocol for HTTP 402 payment flows. Defines challenge headers, payment proof format, and receipt issuance.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
                   <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>HTTP 402</span>
-                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Agent-native</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Signed receipts</span>
                 </div>
               </div>
             </div>
@@ -263,7 +252,7 @@ export default function Gateway402() {
                   marginBottom: 'var(--space-6)',
                   color: 'var(--white)'
                 }}>
-                  Deploy enterprise payment infrastructure
+                  Add HTTP 402 to your API
                 </h2>
                 <p style={{
                   fontSize: 'var(--text-xl)',
@@ -273,7 +262,7 @@ export default function Gateway402() {
                   margin: '0 auto var(--space-8) auto',
                   lineHeight: 1.6
                 }}>
-                  Enable autonomous agents to purchase access to your APIs and services through standardized payment infrastructure.
+                  Deploy as a reverse proxy or middleware. Returns 402 challenges, verifies payment, and issues signed records. Start with the open-source package or talk to us about managed deployment.
                 </p>
                 <div style={{
                   display: 'flex',

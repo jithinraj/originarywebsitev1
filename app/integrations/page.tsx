@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Integrations | Agentic Web Protocols',
   description: 'Originary integrations for agentic web protocols. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A with open standards.',
   keywords: 'x402, HTTP 402, AI Access, MCP, A2A, ACP, AIPREF, PEAC protocol, agentic web, agentic commerce, agent integrations',
-  robots: 'noindex,nofollow',
+  robots: 'index,follow',
   openGraph: {
     title: 'Integrations | Agentic Web Protocols',
     description: 'Originary integrations for agentic web protocols and agentic commerce. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A.',
@@ -181,7 +181,7 @@ export default function IntegrationsPage() {
             marginRight: 'auto',
             lineHeight: 1.6,
           }}>
-            Originary implements agentic web standards and agentic commerce standards as open protocols for the agentic web. Choose from HTTP 402 payments, x402 commerce, agentic commerce protocols, AI preferences, agent coordination, and verifiable receipts.
+            Originary connects to external protocols through adapters. Each integration handles one standard: HTTP 402 for payments, x402 for settlement, AIPREF for publisher preferences, MCP for tool context, A2A for agent coordination.
           </p>
 
           {/* Status Legend */}

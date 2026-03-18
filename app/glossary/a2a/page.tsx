@@ -128,7 +128,7 @@ export default function Page() {
           </div>
 
           <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginTop: 'var(--space-12)', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-            A2A vs traditional APIs
+            How A2A differs from direct API calls
           </h2>
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-8)' }}>

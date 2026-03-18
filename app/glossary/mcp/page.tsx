@@ -176,7 +176,7 @@ export default function Page() {
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <ul style={{ paddingLeft: 'var(--space-6)', margin: 0 }}>
               <li style={{ marginBottom: 'var(--space-3)' }}>
-                <strong>Enterprise integrations</strong> - Connect AI agents to internal databases, CRMs, and business tools
+                <strong>Internal tool access</strong> - Connect AI agents to databases, CRMs, and internal APIs
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
                 <strong>Knowledge bases</strong> - Agents access company wikis, documentation, and institutional knowledge

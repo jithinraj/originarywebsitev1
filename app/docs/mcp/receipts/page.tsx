@@ -60,7 +60,7 @@ export default function MCPReceiptsDocPage() {
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
-              MCP receipts for Model Context Protocol and MCP tools integration. Generate verifiable PEAC-Receipts for each Model Context Protocol (MCP) tool call, providing audit trails and compliance tracking for AI agent operations with MCP tools.
+              Issue a signed PEAC record for each MCP tool call. The @peac/mcp-server generates receipts that prove which tools were invoked, when, and under what policy constraints.
             </p>
 
             <div className="card" style={{ marginBottom: 'var(--space-8)', textAlign: 'left' }}>
@@ -87,7 +87,7 @@ export default function MCPReceiptsDocPage() {
                 marginBottom: 'var(--space-4)',
                 color: 'var(--text-primary)'
               }}>
-                5-Minute Quickstart
+                Quickstart
               </h2>
               <ol style={{ color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
                 <li>Install the MCP server: <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>npm install @peac/mcp-server</code></li>

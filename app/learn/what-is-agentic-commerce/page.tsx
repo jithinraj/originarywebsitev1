@@ -212,10 +212,10 @@ export default function AgenticCommercePage() {
                     Definition
                   </h2>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
-                    <strong>Agentic commerce</strong> is the economic layer for AI agents to autonomously participate in commercial transactions. Unlike traditional e-commerce where humans initiate and approve purchases, agentic commerce lets machines discover services, negotiate terms, make payments, and verify delivery - all without human intervention for each transaction.
+                    <strong>Agentic commerce</strong> is what happens when AI agents need to spend money. An agent calls an API, the API returns a price, the agent pays, and the API delivers the resource with a signed receipt. No human clicks &ldquo;Buy.&rdquo;
                   </p>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                    Think of it as the difference between a human using a shopping website versus an AI assistant that can autonomously procure resources, pay for API calls, and manage subscriptions on your behalf. (This isn't theory - we're seeing this in production as of late 2025.)
+                    This is already happening: agents calling translation APIs, purchasing inference credits, licensing content for RAG pipelines. The infrastructure problem is making these transactions verifiable and auditable without requiring each agent to have a pre-negotiated account with each service.
                   </p>
                 </section>
 
@@ -230,7 +230,7 @@ export default function AgenticCommercePage() {
                     How It Works
                   </h2>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                    Agentic commerce can't work without these infrastructure components:
+                    The flow has five steps. Each one requires protocol support:
                   </p>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>

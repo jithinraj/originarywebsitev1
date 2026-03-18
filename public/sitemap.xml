@@ -178,12 +178,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.55</priority>
   </url>
-  <url>
-    <loc>https://www.originary.xyz/integrations/x402/python-fastapi</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
-  </url>
 
   <!-- Products -->
   <url>
@@ -434,32 +428,7 @@
   </url>
 
   <!-- Informational -->
-  <url>
-    <loc>https://www.originary.xyz/status</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.originary.xyz/what-is-originary</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.originary.xyz/why-peac</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
-  </url>
-
-  <!-- Platform & Research -->
-  <url>
-    <loc>https://www.originary.xyz/platform</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- Research -->
   <url>
     <loc>https://www.originary.xyz/research</loc>
     <lastmod>2026-03-18</lastmod>
@@ -477,26 +446,6 @@
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-
-  <!-- Legal -->
-  <url>
-    <loc>https://www.originary.xyz/copyright</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.originary.xyz/trademark</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.originary.xyz/refund</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 
   <!-- Trust & Legal -->

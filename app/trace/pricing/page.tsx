@@ -89,7 +89,7 @@ export default function TracePricingPage() {
     },
     {
       question: 'Can I migrate from OSS to Cloud later?',
-      answer: 'Yes. Your data and configuration can be migrated to Cloud at any time. We provide migration tools and support to make the transition seamless.'
+      answer: 'Yes. Your data and configuration can be migrated to Cloud at any time. We provide migration tools and support for the transition.'
     },
     {
       question: 'How does Cloud pricing work?',

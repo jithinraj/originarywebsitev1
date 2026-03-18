@@ -275,7 +275,7 @@ export default function AIConsentPage() {
                     Attribution in Practice
                   </h2>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                    Attribution answers: &ldquo;Where did this come from?&rdquo; In agentic systems, this is captured through:
+                    Attribution records where content came from and who produced it. In PEAC, this is captured through:
                   </p>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>

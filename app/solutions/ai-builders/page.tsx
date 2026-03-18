@@ -114,7 +114,7 @@ export default function AIBuilders() {
                 <span className="text-gradient"><Mark>Originary</Mark> for AI Builders</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
-                AI infrastructure tools for AI compliance and AI provenance tracking. Build AI systems that respect creator preferences, maintain consent, and provide verifiable interaction records with cryptographic proof.
+                When your agent accesses content or calls an API, you need proof that it respected the publisher&apos;s terms. Originary checks policies before access and issues a signed record of what happened. That record is portable, offline-verifiable, and yours to keep.
               </p>
             </div>
           </div>
@@ -123,9 +123,9 @@ export default function AIBuilders() {
         <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Why Choose Originary</h2>
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>What you get</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', marginBottom: 'var(--space-12)' }}>
-                Build AI systems that respect creator rights while providing verifiable compliance.
+                Signed proof that your agent checked policies and followed terms. Not just logs; portable records anyone can verify.
               </p>
             </div>
 
@@ -147,7 +147,7 @@ export default function AIBuilders() {
                 </div>
                 <h4 style={{ marginBottom: 'var(--space-3)' }}>Verifiable</h4>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                  Cryptographic receipts provide verifiable proof of policy compliance and creator consent.
+                  Ed25519-signed JWS records. Anyone with the issuer&apos;s public key can verify them offline.
                 </p>
               </div>
 
@@ -168,7 +168,7 @@ export default function AIBuilders() {
                 </div>
                 <h4 style={{ marginBottom: 'var(--space-3)' }}>Neutral</h4>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                  Open protocol standards ensure no vendor lock-in and universal interoperability.
+                  PEAC is an open standard (Apache-2.0). Self-host the entire stack or build your own conformant implementation.
                 </p>
               </div>
 
@@ -189,7 +189,7 @@ export default function AIBuilders() {
                 </div>
                 <h4 style={{ marginBottom: 'var(--space-3)' }}>Practical</h4>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                  Simple integration with existing ML workflows and infrastructure. Production-ready.
+                  npm install, import, call. Works as middleware, MCP tool, or direct API. No complex setup.
                 </p>
               </div>
             </div>
@@ -370,9 +370,9 @@ export default function AIBuilders() {
         <section className="section">
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Technical Integrations</h2>
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>Integration surfaces</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
-                Seamless integration with modern AI infrastructure and frameworks.
+                PEAC works at multiple points in your stack.
               </p>
             </div>
 
@@ -380,7 +380,7 @@ export default function AIBuilders() {
               <div className="card">
                 <h3 style={{ marginBottom: 'var(--space-4)' }}>Training Pipeline Integration</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginBottom: 'var(--space-4)' }}>
-                  Seamless integration with popular ML frameworks including PyTorch, TensorFlow, and JAX. Policy checks run before data ingestion.
+                  Check publisher policies before ingesting training data. Works with PyTorch, TensorFlow, and JAX data loaders.
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
                   <span style={{ backgroundColor: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>PyTorch</span>
@@ -480,9 +480,9 @@ if policy.allows_training():
         <section className="section">
           <div className="container">
             <div className="card cta-card">
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Start Building Responsibly</h2>
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>Get started</h2>
               <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'var(--white)', lineHeight: 1.6 }}>
-                Join AI builders who prioritize creator respect and sustainable data practices. Get started with our free development tier.
+                Install the packages, check a publisher policy, issue your first receipt. The entire stack is open source.
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--accent-brand)' }}>

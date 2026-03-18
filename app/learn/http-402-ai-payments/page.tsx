@@ -213,10 +213,10 @@ export default function HTTP402Page() {
                     What is HTTP 402?
                   </h2>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
-                    <strong>HTTP 402 Payment Required</strong> is a status code that was defined in HTTP/1.1 back in 1999 but marked as &ldquo;reserved for future use.&rdquo; The web wasn&apos;t ready for native payments then - no infrastructure existed to handle micropayments programmatically.
+                    <strong>HTTP 402 Payment Required</strong> is a status code defined in HTTP/1.1 (1999), reserved but unused until recently. The original web had no programmatic payment infrastructure to back it.
                   </p>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                    Today, with AI agents needing to pay for API access in real-time, HTTP 402 has finally found its purpose. When a server returns 402, it&apos;s saying: &ldquo;I can fulfill your request, but you need to pay first.&rdquo;
+                    A 402 response means: this resource exists and is available, but payment is required before access. The response body includes pricing, accepted payment methods, and instructions. The requesting agent pays, retries with proof, and gets the resource plus a signed receipt.
                   </p>
                 </section>
 
@@ -231,16 +231,10 @@ export default function HTTP402Page() {
                     Why It Matters for AI
                   </h2>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                    Traditional API monetization requires humans to:
+                    Most API monetization requires a human to sign up, enter a credit card, buy credits, and manage API keys. An autonomous agent cannot do those things. It needs a payment protocol that works in a single HTTP round-trip.
                   </p>
-                  <ul style={{ paddingLeft: 'var(--space-6)', marginBottom: 'var(--space-6)' }}>
-                    <li style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>Sign up for an account</li>
-                    <li style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>Enter credit card information</li>
-                    <li style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>Purchase credits or subscribe to a plan</li>
-                    <li style={{ color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: 'var(--space-2)' }}>Manage API keys</li>
-                  </ul>
                   <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                    AI agents can&apos;t do any of this. HTTP 402 enables agents to discover pricing, pay instantly, and access resources - all in a single HTTP request/response cycle. No accounts. No subscriptions. No human in the loop.
+                    HTTP 402 provides exactly that: the server describes what payment it needs, the agent pays, and the server returns the resource. One request cycle. No accounts, no subscriptions, no human approval per call.
                   </p>
                 </section>
 
