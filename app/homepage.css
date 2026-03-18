@@ -1,0 +1,500 @@
+/* ─── Homepage Scoped Design System ──────────────────────
+   All classes prefixed with `hp-` to avoid collision with
+   the existing design-system.css. The `.hp-root` container
+   resets body-inherited dark-mode styles.
+   ──────────────────────────────────────────────────────── */
+
+/* ─── Scope container: overrides inherited body styles ── */
+
+/* Force body to match homepage when hp-root is present */
+body:has(.hp-root) {
+  background: var(--surface-base) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Hide cursor glow on homepage - screen blend mode doesn't work on light backgrounds */
+body:has(.hp-root) ~ .cursor-glow,
+body:has(.hp-root) .cursor-glow {
+  display: none !important;
+}
+
+.hp-root {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+
+  /* Alias homepage --color-* tokens to the sitewide design-system.css tokens.
+     This ensures homepage components and sitewide components render identically. */
+  --color-surface: var(--surface-base);
+  --color-surface-secondary: var(--surface-subtle);
+  --color-surface-tertiary: var(--border-subtle, #ECEAE5);
+  --color-surface-invert: var(--text-primary);
+  --color-surface-elevated: var(--surface-elevated);
+
+  --color-border: var(--border-default);
+  --color-border-strong: var(--border-hover);
+  --color-border-subtle: var(--border-subtle);
+
+  --color-fg: var(--text-primary);
+  --color-fg-secondary: var(--text-secondary);
+  --color-fg-muted: var(--text-tertiary);
+  --color-fg-faint: var(--text-muted);
+  --color-fg-inverse: var(--text-inverted);
+
+  --color-accent: var(--accent-brand);
+  --color-accent-hover: var(--accent-brand-hover);
+
+  --color-verified: var(--accent-success);
+  --color-verified-bg: var(--accent-success-faint);
+  --color-verified-border: var(--accent-success-border);
+  --color-policy: var(--accent-warning);
+  --color-policy-bg: var(--accent-warning-muted);
+  --color-policy-border: var(--accent-warning-border);
+  --color-audit: var(--accent-electric, #1E4D8C);
+  --color-audit-bg: #EEF2FA;
+  --color-audit-border: #B4C8E4;
+
+  background: var(--surface-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans, var(--font-inter, 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Typography ───────────────────────────────────────── */
+
+.hp-root .hp-text-hero {
+  font-size: clamp(2.75rem, 5vw + 0.75rem, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  font-weight: 600;
+}
+
+.hp-root .hp-text-display {
+  font-size: clamp(2rem, 4vw + 0.25rem, 3.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+.hp-root .hp-text-display-sm {
+  font-size: clamp(1.5rem, 2.5vw + 0.25rem, 2.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.hp-root .hp-text-heading {
+  font-size: clamp(1.125rem, 0.5vw + 0.875rem, 1.375rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+
+.hp-root .hp-text-subheading {
+  font-size: clamp(1rem, 0.3vw + 0.875rem, 1.1875rem);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
+.hp-root .hp-text-body-lg {
+  font-size: clamp(1rem, 0.15vw + 0.875rem, 1.0625rem);
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+.hp-root .hp-text-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.hp-root .hp-text-body-sm {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.hp-root .hp-text-caption {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.hp-root .hp-text-overline {
+  font-size: 0.6875rem;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ─── Layout ───────────────────────────────────────────── */
+
+.hp-root .hp-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 480px) {
+  .hp-root .hp-container { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+@media (min-width: 768px) {
+  .hp-root .hp-container { padding-left: 2.5rem; padding-right: 2.5rem; }
+}
+@media (min-width: 1024px) {
+  .hp-root .hp-container { padding-left: 3.5rem; padding-right: 3.5rem; }
+}
+@media (min-width: 1280px) {
+  .hp-root .hp-container { padding-left: 4.5rem; padding-right: 4.5rem; }
+}
+
+.hp-root .hp-section {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 640px) {
+  .hp-root .hp-section { padding-top: 5.5rem; padding-bottom: 5.5rem; }
+}
+@media (min-width: 768px) {
+  .hp-root .hp-section { padding-top: 6.5rem; padding-bottom: 6.5rem; }
+}
+@media (min-width: 1024px) {
+  .hp-root .hp-section { padding-top: 8rem; padding-bottom: 8rem; }
+}
+
+/* ─── Section variants ─────────────────────────────────── */
+
+.hp-root .hp-divider {
+  position: relative;
+}
+
+.hp-root .hp-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(calc(100% - 2.5rem), 1280px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border) 15%, var(--color-border) 85%, transparent);
+}
+
+@media (min-width: 768px) {
+  .hp-root .hp-divider::before {
+    width: min(calc(100% - 5rem), 1280px);
+  }
+}
+
+.hp-root .hp-alt {
+  background: var(--color-surface-secondary);
+}
+
+.hp-root .hp-hero-bg {
+  position: relative;
+  background: var(--color-surface);
+}
+
+.hp-root .hp-hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 30% 0%, rgba(22, 22, 20, 0.02), transparent 50%),
+    radial-gradient(ellipse 40% 30% at 70% 5%, rgba(22, 22, 20, 0.015), transparent 50%);
+  pointer-events: none;
+}
+
+/* ─── Cards ────────────────────────────────────────────── */
+
+.hp-root .hp-card {
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hp-root .hp-card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.01),
+    0 2px 4px rgba(0, 0, 0, 0.02),
+    0 8px 16px rgba(0, 0, 0, 0.03),
+    0 24px 64px -16px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
+}
+
+@media (hover: none) {
+  .hp-root .hp-card:hover { transform: none; }
+}
+
+/* ─── Buttons ──────────────────────────────────────────── */
+
+.hp-root .hp-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-fg-inverse);
+  background: var(--color-accent);
+  border-radius: 62px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .hp-root .hp-btn-primary { padding: 1rem 2.25rem; font-size: 0.9375rem; }
+}
+
+.hp-root .hp-btn-primary:hover {
+  background: var(--color-accent-hover);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 12px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.hp-root .hp-btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  transition-duration: 0.1s;
+}
+
+.hp-root .hp-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-fg);
+  background: transparent;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 62px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .hp-root .hp-btn-secondary { padding: 1rem 2.25rem; font-size: 0.9375rem; }
+}
+
+.hp-root .hp-btn-secondary:hover {
+  border-color: var(--color-fg);
+  background: var(--color-surface-elevated);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
+}
+
+.hp-root .hp-btn-secondary:active {
+  transform: translateY(0);
+  transition-duration: 0.1s;
+}
+
+/* ─── Timeline ─────────────────────────────────────────── */
+
+@keyframes hp-timeline-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.hp-root .hp-timeline-line {
+  position: relative;
+}
+
+.hp-root .hp-timeline-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, var(--color-verified) 30%, var(--color-audit) 70%, transparent);
+  background-size: 200% 100%;
+  opacity: 0.35;
+  animation: hp-timeline-shimmer 6s ease-in-out infinite;
+}
+
+/* ─── Reduced motion ───────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .hp-root .hp-timeline-line::after { animation: none; }
+  .hp-root .hp-card:hover { transform: none; }
+  .hp-root .hp-btn-primary:hover,
+  .hp-root .hp-btn-secondary:hover { transform: none; }
+}
+
+/* ─── CTA dark section buttons ─────────────────────────── */
+
+.hp-root .hp-cta-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.75rem;
+  padding: 0 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-fg);
+  background: var(--color-surface-elevated);
+  border-radius: 62px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+@media (min-width: 640px) {
+  .hp-root .hp-cta-light { height: 3rem; padding: 0 2rem; font-size: 0.9375rem; }
+}
+
+.hp-root .hp-cta-light:hover {
+  background: var(--color-surface);
+  box-shadow: 0 4px 24px rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.hp-root .hp-cta-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.75rem;
+  padding: 0 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(250,250,247,0.65);
+  border: 1px solid rgba(250,250,247,0.12);
+  border-radius: 62px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  background: transparent;
+}
+
+@media (min-width: 640px) {
+  .hp-root .hp-cta-outline { height: 3rem; padding: 0 2rem; font-size: 0.9375rem; }
+}
+
+.hp-root .hp-cta-outline:hover {
+  background: rgba(250,250,247,0.05);
+  color: var(--color-fg-inverse);
+  border-color: rgba(250,250,247,0.2);
+}
+
+/* ─── CTA dark section ─────────────────────────────────── */
+
+.hp-root .hp-cta-dark {
+  background: var(--color-fg);
+  color: var(--color-fg-inverse);
+}
+
+/* ─── Interactive hover utilities ───────────────────────── */
+
+.hp-root .hp-link {
+  color: var(--color-fg-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.hp-root .hp-link:hover,
+.hp-root .hp-link:focus-visible {
+  color: var(--color-fg);
+}
+
+.hp-root .hp-link-muted {
+  color: var(--color-fg-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.hp-root .hp-link-muted:hover,
+.hp-root .hp-link-muted:focus-visible {
+  color: var(--color-fg);
+}
+
+.hp-root .hp-social-icon {
+  color: var(--color-fg-muted);
+  transition: color 0.2s ease;
+}
+.hp-root .hp-social-icon:hover,
+.hp-root .hp-social-icon:focus-visible {
+  color: var(--color-fg);
+}
+
+.hp-root .hp-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  height: 2.125rem;
+  padding: 0 1.125rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-fg-inverse);
+  background: var(--color-fg);
+  border-radius: 62px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+.hp-root .hp-nav-cta:hover {
+  background: var(--color-accent-hover);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+
+.hp-root .hp-benefit-card {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-elevated);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hp-root .hp-benefit-card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: 0 2px 12px -4px rgba(0,0,0,0.05);
+  transform: translateY(-2px);
+}
+
+.hp-root .hp-table-row {
+  transition: background-color 0.15s ease;
+}
+.hp-root .hp-table-row:hover {
+  background: rgba(243,242,238,0.3);
+}
+
+/* ─── Focus ─────────────────────────────────────────────── */
+
+.hp-root :focus-visible {
+  outline: 2px solid var(--color-fg);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── Selection ────────────────────────────────────────── */
+
+.hp-root ::selection {
+  background: var(--color-fg);
+  color: var(--color-fg-inverse);
+}
+
+/* ─── Smooth scroll for in-page anchors ────────────────── */
+
+.hp-root {
+  scroll-behavior: smooth;
+}
+
+/* ─── Ensure code blocks don't inherit wrong font ──────── */
+
+.hp-root pre,
+.hp-root code {
+  font-family: var(--font-jetbrains-mono, 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', monospace);
+}
+
+/* ─── Clean link defaults inside hp-root ───────────────── */
+
+.hp-root a {
+  color: inherit;
+  text-decoration: none;
+}

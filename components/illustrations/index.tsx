@@ -50,7 +50,7 @@ export function EnforceIllustration({ className, size = 120 }: IllustrationProps
       <path
         d="M60 15L95 30V55C95 80 60 105 60 105S25 80 25 55V30L60 15Z"
         fill="var(--accent-brand-subtle)"
-        stroke="#635bff"
+        stroke="#161614"
         strokeWidth="2.5"
       />
 
@@ -61,10 +61,10 @@ export function EnforceIllustration({ className, size = 120 }: IllustrationProps
       />
 
       {/* Lock icon */}
-      <rect x="50" y="52" width="20" height="16" rx="3" fill="#635bff" />
+      <rect x="50" y="52" width="20" height="16" rx="3" fill="#161614" />
       <path
         d="M53 52V46C53 42.134 56.134 39 60 39C63.866 39 67 42.134 67 46V52"
-        stroke="#635bff"
+        stroke="#161614"
         strokeWidth="2.5"
         strokeLinecap="round"
         fill="none"
@@ -122,11 +122,11 @@ export function VerifyIllustration({ className, size = 80 }: IllustrationProps) 
       aria-hidden="true"
     >
       {/* Magnifying glass */}
-      <circle cx="35" cy="35" r="20" stroke="#635bff" strokeWidth="3" fill="var(--accent-brand-subtle)" />
-      <line x1="50" y1="50" x2="65" y2="65" stroke="#635bff" strokeWidth="4" strokeLinecap="round" />
+      <circle cx="35" cy="35" r="20" stroke="#161614" strokeWidth="3" fill="var(--accent-brand-subtle)" />
+      <line x1="50" y1="50" x2="65" y2="65" stroke="#161614" strokeWidth="4" strokeLinecap="round" />
 
       {/* Check inside */}
-      <path d="M27 35l6 6 12-12" stroke="#635bff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M27 35l6 6 12-12" stroke="#161614" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -146,18 +146,18 @@ export function GatewayIllustration({ className, size = 80 }: IllustrationProps)
       {/* Gateway arch */}
       <path
         d="M15 65V35C15 21.193 26.193 10 40 10C53.807 10 65 21.193 65 35V65"
-        stroke="#00d4aa"
+        stroke="#2D6A4F"
         strokeWidth="3"
         fill="none"
       />
 
       {/* Scope domains */}
-      <rect x="12" y="55" width="8" height="20" rx="2" fill="#00d4aa" />
-      <rect x="60" y="55" width="8" height="20" rx="2" fill="#00d4aa" />
+      <rect x="12" y="55" width="8" height="20" rx="2" fill="#2D6A4F" />
+      <rect x="60" y="55" width="8" height="20" rx="2" fill="#2D6A4F" />
 
       {/* Center indicator */}
-      <circle cx="40" cy="40" r="8" fill="var(--accent-secondary-muted)" stroke="#00d4aa" strokeWidth="2" />
-      <circle cx="40" cy="40" r="3" fill="#00d4aa" />
+      <circle cx="40" cy="40" r="8" fill="var(--accent-secondary-muted)" stroke="#2D6A4F" strokeWidth="2" />
+      <circle cx="40" cy="40" r="3" fill="#2D6A4F" />
     </svg>
   )
 }
@@ -176,8 +176,8 @@ export function ProtocolIllustration({ className, size = 80 }: IllustrationProps
     >
       {/* Interconnected nodes */}
       <circle cx="40" cy="20" r="8" fill="#0a0a0a" />
-      <circle cx="20" cy="50" r="8" fill="#635bff" />
-      <circle cx="60" cy="50" r="8" fill="#00d4aa" />
+      <circle cx="20" cy="50" r="8" fill="#161614" />
+      <circle cx="60" cy="50" r="8" fill="#2D6A4F" />
       <circle cx="40" cy="70" r="6" fill="#737373" />
 
       {/* Connections */}
@@ -205,14 +205,14 @@ export function FlowLinesBackground({ className }: { className?: string }) {
     >
       <defs>
         <linearGradient id="flow-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#635bff" stopOpacity="0" />
-          <stop offset="50%" stopColor="#635bff" stopOpacity="0.3" />
-          <stop offset="100%" stopColor="#635bff" stopOpacity="0" />
+          <stop offset="0%" stopColor="#161614" stopOpacity="0" />
+          <stop offset="50%" stopColor="#161614" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#161614" stopOpacity="0" />
         </linearGradient>
         <linearGradient id="flow-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#00d4aa" stopOpacity="0" />
-          <stop offset="50%" stopColor="#00d4aa" stopOpacity="0.2" />
-          <stop offset="100%" stopColor="#00d4aa" stopOpacity="0" />
+          <stop offset="0%" stopColor="#2D6A4F" stopOpacity="0" />
+          <stop offset="50%" stopColor="#2D6A4F" stopOpacity="0.2" />
+          <stop offset="100%" stopColor="#2D6A4F" stopOpacity="0" />
         </linearGradient>
       </defs>
 

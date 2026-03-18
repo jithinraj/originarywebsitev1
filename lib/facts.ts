@@ -13,11 +13,11 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   /** Stable release on `latest` npm dist-tag */
-  stableVersion: 'v0.12.0',
+  stableVersion: 'v0.12.3',
 
   /**
    * Current stable wire format (Wire 0.2).
-   * Introduced in v0.12.0. JWS typ: interaction-record+jwt.
+   * Introduced in v0.12.0, stable since v0.12.3. JWS typ: interaction-record+jwt.
    */
   stableWireFormat: 'interaction-record+jwt',
 
@@ -50,10 +50,10 @@ export const FACTS = {
   // Quality metrics (see CI output for latest tag)
   // ---------------------------------------------------------------------------
 
-  /** pnpm test -- passing test count as of v0.12.0 */
-  testsCount: 5675,
+  /** pnpm test -- passing test count as of v0.12.3 */
+  testsCount: 6443,
 
-  /** pnpm build -- build targets as of v0.12.0 */
+  /** pnpm build -- build targets as of v0.12.3 */
   buildTargets: 84,
 
   // ---------------------------------------------------------------------------

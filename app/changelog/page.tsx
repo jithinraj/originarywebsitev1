@@ -43,7 +43,7 @@ export default function ChangelogPage() {
             >
               <div style={{ display: 'grid', gap: 'var(--space-4)' }}>
                 {[
-                  { icon: <Tag size={18} />, label: 'Stable version', value: 'v0.11.3' },
+                  { icon: <Tag size={18} />, label: 'Stable version', value: 'v0.12.3' },
                   { icon: <GitBranch size={18} />, label: 'Wire format', value: 'peac-receipt/0.1 (frozen)' },
                   { icon: <Package size={18} />, label: 'License', value: 'Apache-2.0' },
                 ].map((row) => (

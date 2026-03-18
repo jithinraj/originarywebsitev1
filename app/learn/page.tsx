@@ -671,11 +671,11 @@ export default function LearnPage() {
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
-                color: 'var(--text-primary)',
+                color: 'rgba(255, 255, 255, 0.75)',
                 marginBottom: 'var(--space-8)',
                 lineHeight: 1.7
               }}>
-                Take what you&apos;ve learned and start implementing. Our developer tools make it easy to add receipts, payments, and policy discovery to any application.
+                Take what you&apos;ve learned and start implementing. Our developer tools make it easy to add verification, policy, and signed records to any application.
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <Link

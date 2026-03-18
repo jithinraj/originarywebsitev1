@@ -1,8 +1,8 @@
-# Originary | Verifiable Interaction Records for AI Agents and APIs
+# Originary | Verify agent requests, apply policy, return portable signed records
 
-> Originary builds open-source infrastructure and developer tools for the AI and agentic web. PEAC is the open standard. Issue, verify, and hand off portable signed records for API calls, tool runs, and agent handoffs.
+> Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return portable signed records. Built on PEAC, the open record format. Self-hostable. Offline-verifiable.
 
-Last updated: 2026-03-10
+Last updated: 2026-03-18
 
 Company: Poem, Inc.
 Location: Delaware, USA
@@ -10,7 +10,7 @@ Contact: contact@originary.xyz
 
 ## Overview
 
-- [Home](/) - Verifiable interaction records for automated interactions
+- [Home](/) - Verify agent requests, apply policy, return portable signed records
 - [PEAC Protocol](/peac) - Open standard for verifiable interaction records
 - [Developers](/developers) - Quickstart, SDKs, and integration guides
 - [Downloads](/downloads) - CLI, MCP server, SDKs, and source archives
@@ -20,11 +20,11 @@ Contact: contact@originary.xyz
 
 ## Protocol State
 
-- Stable release: v0.12.0 (latest, Mar 9 2026)
+- Stable release: v0.12.3 (latest, Mar 17 2026)
 - Wire format: interaction-record+jwt (Wire 0.2, current stable)
 - Legacy wire format: peac-receipt/0.1 (Wire 0.1, frozen)
 - Published packages: 28 on npm (@peac/*)
-- Tests: 5675
+- Tests: 6443
 - Build targets: 84
 - License: Apache-2.0
 
@@ -63,7 +63,7 @@ MCP tool server (@peac/mcp-server) with 5 tools: verify-receipt, inspect-receipt
 
 ## Open Source
 
-PEAC is an open standard (Apache-2.0). 28 packages on npm, 5675 tests, 84 build targets.
+PEAC is an open standard (Apache-2.0). 28 packages on npm, 6443 tests, 84 build targets.
 
 - Policy discovery via /.well-known/peac.txt
 - AI preferences via AIPREF (/.well-known/aipref.json)

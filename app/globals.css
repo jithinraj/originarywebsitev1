@@ -1,4 +1,7 @@
 @import url('./design-system.css');
+@import url('./homepage.css');
+
+@tailwind utilities;
 
 /* Footer desktop/mobile show-hide — must be in globals.css for reliable App Router injection */
 .footer-nav-desktop { display: block; }

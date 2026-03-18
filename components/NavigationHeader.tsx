@@ -1,362 +1,196 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useEffect, useRef } from 'react'
-import { Menu, X, ChevronDown, Github } from 'lucide-react'
+import { useState, useEffect } from 'react'
+
+const links = [
+  { label: 'How it works', href: '/#product-flow' },
+  { label: 'Developers', href: '/developers' },
+  { label: 'PEAC', href: '/peac' },
+  { label: 'Trust', href: '/trust' },
+]
 
 export default function NavigationHeader() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    if (typeof window === 'undefined') return
-
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
     <header
-      className={`navigation-header nav-glass ${isScrolled ? 'scrolled' : ''}`}
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
-        zIndex: 'var(--z-sticky)',
-        background: isScrolled
-          ? 'var(--surface-elevated)'
-          : 'transparent',
-        backdropFilter: isScrolled ? 'blur(20px) saturate(180%)' : 'none',
-        WebkitBackdropFilter: isScrolled ? 'blur(20px) saturate(180%)' : 'none',
-        borderBottom: `1px solid ${isScrolled ? 'var(--border-default)' : 'transparent'}`,
-        transition: 'all 0.3s ease',
-        padding: 'var(--space-3) 0'
+        zIndex: 50,
+        transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+        background: scrolled ? 'rgba(250,250,247,0.8)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'none',
+        boxShadow: scrolled ? '0 1px 0 rgba(0,0,0,0.04)' : 'none',
       }}
     >
-      <div className="container">
-        <nav
-          className="nav-container"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            height: '60px'
-          }}
-        >
-          {/* Logo */}
-          <Link
-            href="/"
-            className="brand-logo"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 'var(--space-3)',
-              textDecoration: 'none',
-              color: 'var(--text-primary)',
-              fontWeight: 700,
-              fontSize: 'var(--text-xl)',
-              letterSpacing: '-0.02em'
-            }}
-          >
-            <div
-              className="logo-mark"
+      <nav style={{ maxWidth: 1280, margin: '0 auto', padding: '0 1.25rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '4.25rem' }}>
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', textDecoration: 'none', flexShrink: 0 }}>
+            <div style={{ width: '1.625rem', height: '1.625rem', borderRadius: '0.4375rem', background: 'var(--text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span style={{ fontSize: '0.6875rem', fontWeight: 700, color: 'var(--text-inverted)', lineHeight: 1, letterSpacing: '-0.02em' }}>O</span>
+            </div>
+            <span style={{ fontSize: '0.9375rem', fontWeight: 600, letterSpacing: '-0.025em', color: 'var(--text-primary)' }}>Originary</span>
+          </Link>
+
+          {/* Desktop nav */}
+          <div className="desktop-nav-links" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="nav-link-hover"
+                style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s ease' }}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="desktop-nav-actions" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <Link
+              href="https://github.com/peacprotocol/peac"
+              className="nav-link-hover"
               style={{
-                width: '28px',
-                height: '28px',
-                borderRadius: 'var(--radius-lg)',
-                background: 'var(--accent-brand)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: 'var(--white)',
-                fontWeight: '600',
-                fontSize: 'var(--text-sm)',
-                boxShadow: '0 0 20px -5px var(--accent-brand-glow)'
+                width: '2.125rem',
+                height: '2.125rem',
+                borderRadius: '50%',
+                border: '1px solid var(--border-default)',
+                color: 'var(--text-tertiary)',
+                transition: 'color 0.2s ease, border-color 0.2s ease',
               }}
+              aria-label="GitHub"
             >
-              O
-            </div>
-            <span>Originary</span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div
-            className="desktop-nav"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 'var(--space-8)'
-            }}
-          >
-            <div
-              className="nav-links"
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.167 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.164 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+              </svg>
+            </Link>
+            <Link
+              href="/developers"
+              className="nav-cta-hover"
               style={{
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
-                gap: 'var(--space-6)'
+                height: '2.125rem',
+                padding: '0 1.125rem',
+                fontSize: '0.8125rem',
+                fontWeight: 500,
+                color: 'var(--text-inverted)',
+                background: 'var(--text-primary)',
+                borderRadius: '62px',
+                textDecoration: 'none',
+                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
               }}
             >
-              <NavLink href="/peac">Protocol</NavLink>
-              <NavLink href="/developers">Developers</NavLink>
-              <NavLink href="/agent-auditor">Agent Auditor</NavLink>
-            </div>
-
-            <div
-              className="nav-actions"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 'var(--space-3)'
-              }}
-            >
-              <Link href="/developers" className="nav-cta-btn">
-                Quickstart
-              </Link>
-              <a
-                href="https://github.com/peacprotocol/peac"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-github-btn"
-                aria-label="View on GitHub"
-              >
-                <Github size={16} />
-              </a>
-            </div>
+              Start building
+            </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile hamburger */}
           <button
+            onClick={() => setOpen(!open)}
             className="mobile-menu-btn"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? 'Close mobile menu' : 'Open mobile menu'}
-            aria-expanded={isMenuOpen}
-            style={{
-              display: 'none',
-              background: 'none',
-              border: 'none',
-              color: 'var(--text-secondary)',
-              cursor: 'pointer',
-              padding: 'var(--space-2)'
-            }}
+            style={{ display: 'none', background: 'none', border: 'none', padding: '0.5rem', marginRight: '-0.5rem', cursor: 'pointer', color: 'var(--text-secondary)' }}
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <div style={{ width: 18, height: 14, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <span style={{
+                display: 'block', height: 1.5, background: 'var(--text-primary)', borderRadius: 1,
+                transition: 'all 0.3s ease', transformOrigin: 'center',
+                transform: open ? 'rotate(45deg) translateY(6.25px)' : 'none',
+              }} />
+              <span style={{
+                display: 'block', height: 1.5, background: 'var(--text-primary)', borderRadius: 1,
+                transition: 'all 0.3s ease',
+                opacity: open ? 0 : 1, transform: open ? 'scaleX(0)' : 'none',
+              }} />
+              <span style={{
+                display: 'block', height: 1.5, background: 'var(--text-primary)', borderRadius: 1,
+                transition: 'all 0.3s ease', transformOrigin: 'center',
+                transform: open ? 'rotate(-45deg) translateY(-6.25px)' : 'none',
+              }} />
+            </div>
           </button>
-        </nav>
+        </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div
-            className="mobile-menu"
-            style={{
-              position: 'absolute',
-              top: '100%',
-              left: 0,
-              right: 0,
-              background: 'var(--surface-elevated)',
-              border: '1px solid var(--border-default)',
-              borderTop: 'none',
-              borderRadius: '0 0 var(--radius-2xl) var(--radius-2xl)',
-              boxShadow: 'var(--shadow-elevated)',
-              padding: 'var(--space-6)',
-              margin: '0 var(--space-6)',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)'
-            }}
-          >
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-              {[
-                { href: '/peac', label: 'Protocol' },
-                { href: '/developers', label: 'Developers' },
-                { href: '/agent-auditor', label: 'Agent Auditor' },
-              ].map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="mobile-nav-item"
-                  onClick={() => setIsMenuOpen(false)}
-                  style={{
-                    padding: 'var(--space-3) var(--space-4)',
-                    color: 'var(--text-secondary)',
-                    textDecoration: 'none',
-                    fontSize: 'var(--text-base)',
-                    fontWeight: 500,
-                    borderRadius: 'var(--radius-md)',
-                    transition: 'all var(--duration-200) ease'
-                  }}
-                >
-                  {item.label}
-                </Link>
-              ))}
-
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 'var(--space-3)',
-                marginTop: 'var(--space-4)',
-                paddingTop: 'var(--space-4)',
-                borderTop: '1px solid var(--border-default)'
-              }}>
-                <a
-                  href="https://github.com/peacprotocol/peac"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: 'var(--space-2)',
-                    padding: 'var(--space-3) var(--space-4)',
-                    fontSize: 'var(--text-sm)',
-                    fontWeight: 500,
-                    textDecoration: 'none',
-                    color: 'var(--text-secondary)',
-                    background: 'var(--surface-subtle)',
-                    border: '1px solid var(--border-default)',
-                    borderRadius: 'var(--radius-lg)'
-                  }}
-                >
-                  <Github size={16} />
-                  View on GitHub
-                </a>
-                <Link
-                  href="/developers"
-                  onClick={() => setIsMenuOpen(false)}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: 'var(--space-2)',
-                    padding: 'var(--space-3) var(--space-4)',
-                    fontSize: 'var(--text-sm)',
-                    fontWeight: 500,
-                    textDecoration: 'none',
-                    color: 'var(--white)',
-                    background: 'var(--accent-brand)',
-                    borderRadius: 'var(--radius-lg)',
-                    boxShadow: '0 0 20px -5px var(--accent-brand-glow)'
-                  }}
-                >
-                  Quickstart
-                </Link>
-              </div>
+        {/* Mobile menu */}
+        <div style={{
+          overflow: 'hidden',
+          transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+          maxHeight: open ? 500 : 0,
+          paddingBottom: open ? '2rem' : 0,
+        }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.125rem', paddingTop: '1rem', borderTop: '1px solid var(--border-default)' }}>
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="nav-link-hover"
+                style={{
+                  padding: '0.75rem',
+                  margin: '0 -0.75rem',
+                  borderRadius: '0.75rem',
+                  fontSize: '0.9375rem',
+                  color: 'var(--text-secondary)',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s ease',
+                }}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <div style={{ paddingTop: '1.25rem', marginTop: '0.75rem', borderTop: '1px solid var(--border-default)' }}>
+              <Link
+                href="/developers"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '0.75rem 1rem',
+                  fontSize: '0.875rem',
+                  fontWeight: 500,
+                  color: 'var(--text-inverted)',
+                  background: 'var(--text-primary)',
+                  borderRadius: '62px',
+                  textDecoration: 'none',
+                }}
+              >
+                Start building
+              </Link>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      </nav>
 
       <style jsx>{`
-        /* Nav CTA Button */
-        :global(.nav-cta-btn) {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: var(--space-2);
-          padding: var(--space-2) var(--space-4);
-          font-size: var(--text-sm);
-          font-weight: 500;
-          text-decoration: none;
-          color: var(--white);
-          background: var(--accent-brand);
-          border-radius: var(--btn-radius);
-          transition: all var(--duration-200) ease;
-          box-shadow: 0 0 20px -5px var(--accent-brand-glow);
-        }
-
-        :global(.nav-cta-btn:hover) {
-          background: var(--accent-brand-hover);
+        .nav-link-hover:hover { color: var(--text-primary) !important; border-color: var(--border-hover) !important; }
+        .nav-cta-hover:hover {
+          background: var(--accent-brand-hover) !important;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.12);
           transform: translateY(-1px);
-          box-shadow: 0 0 30px -5px var(--accent-brand-glow);
         }
-
-        :global(.nav-cta-btn:focus-visible) {
-          outline: 2px solid var(--accent-brand);
-          outline-offset: 2px;
-        }
-
-        /* Nav GitHub Button */
-        :global(.nav-github-btn) {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          color: var(--text-secondary);
-          background: transparent;
-          border: 1px solid var(--border-default);
-          border-radius: var(--radius-lg);
-          text-decoration: none;
-          transition: all var(--duration-200) ease;
-        }
-
-        :global(.nav-github-btn:hover) {
-          color: var(--text-primary);
-          border-color: var(--border-hover);
-          background: var(--surface-subtle);
-        }
-
-        :global(.nav-github-btn:focus-visible) {
-          outline: 2px solid var(--accent-brand);
-          outline-offset: 2px;
-        }
-
-        /* Nav Link */
-        :global(.nav-link) {
-          color: var(--text-secondary);
-          text-decoration: none;
-          font-size: var(--text-sm);
-          font-weight: 500;
-          padding: var(--space-2) var(--space-3);
-          border-radius: var(--radius-md);
-          transition: all var(--duration-200) var(--ease-out);
-        }
-
-        :global(.nav-link:hover) {
-          background-color: var(--surface-subtle);
-          color: var(--text-primary);
-        }
-
-        :global(.nav-link:focus-visible) {
-          outline: 2px solid var(--accent-brand);
-          outline-offset: 2px;
-        }
-
-        /* Mobile Nav Item */
-        :global(.mobile-nav-item:hover) {
-          background-color: var(--surface-subtle);
-          color: var(--text-primary);
-        }
-
-        :global(.mobile-nav-item:focus-visible) {
-          outline: 2px solid var(--accent-brand);
-          outline-offset: 2px;
-        }
-
-        @media (max-width: 768px) {
-          .desktop-nav {
-            display: none !important;
-          }
-          .mobile-menu-btn {
-            display: block !important;
-          }
-        }
-        @media (min-width: 769px) {
-          .mobile-menu-btn {
-            display: none !important;
-          }
+        @media (max-width: 1023px) {
+          .desktop-nav-links { display: none !important; }
+          .desktop-nav-actions { display: none !important; }
+          .mobile-menu-btn { display: block !important; }
         }
       `}</style>
     </header>
-  )
-}
-
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link href={href} className="nav-link">
-      {children}
-    </Link>
   )
 }

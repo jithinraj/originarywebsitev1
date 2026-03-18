@@ -85,7 +85,7 @@ export default function Error({
           font-size: 14px;
           font-weight: 600;
           color: white;
-          background: #635bff;
+          background: var(--accent-brand, #161614);
           border: none;
           border-radius: 8px;
           cursor: pointer;
