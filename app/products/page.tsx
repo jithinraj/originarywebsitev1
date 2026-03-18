@@ -6,13 +6,13 @@ import { ArrowRight, CheckCircle, Shield, Zap, Server, BarChart3, FileText, Hard
 import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
-  title: 'Product | Verification Tooling Built on PEAC',
-  description: 'Open-source packages for issuing, capturing, and verifying signed interaction records. MCP server, Gateway, Verify, Capture, and Trace.',
-  keywords: 'PEAC protocol, verify API, Gateway 402, MCP server, interaction records, verification',
+  title: 'Product | Originary Verification Infrastructure',
+  description: 'Verify agent requests, apply policy, and return portable signed records. MCP server, Gateway, Verify, Capture, and policy tools.',
+  keywords: 'Originary products, verify API, Gateway 402, MCP server, interaction records, verification',
   robots: 'index,follow',
   openGraph: {
-    title: 'Product | Verification Tooling Built on PEAC',
-    description: 'Open-source packages for issuing, capturing, and verifying signed interaction records.',
+    title: 'Product | Originary Verification Infrastructure',
+    description: 'Verify agent requests, apply policy, and return portable signed records.',
     url: '/products',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Product | Verification Tooling Built on PEAC',
-    description: 'Open-source packages for issuing, capturing, and verifying signed interaction records.',
+    title: 'Product | Originary Verification Infrastructure',
+    description: 'Verify agent requests, apply policy, and return portable signed records.',
     images: ['/og'],
   },
   alternates: {
@@ -95,10 +95,10 @@ export default function ProductsPage() {
           <div className="container">
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">Verification tooling built on PEAC</span>
+                <span className="text-gradient">Originary products</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                Open-source packages for issuing, capturing, and verifying signed interaction records. Self-hostable. Verification does not require Originary to be online.
+                Verify agent requests, apply policy, and return portable signed records. Self-hostable. Open source. Powered by PEAC.
               </p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
@@ -195,24 +195,29 @@ export default function ProductsPage() {
         {/* CTA */}
         <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
-            <div className="cta-card" style={{ position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle at 30% 40%, var(--glass-border-hover) 0%, transparent 50%)', pointerEvents: 'none' }} />
-              <div style={{ position: 'relative', zIndex: 2 }}>
-                <h2 style={{ fontSize: 'var(--text-4xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--white)' }}>
-                  Start with the OSS packages
-                </h2>
-                <p style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-8)', color: 'var(--white)', maxWidth: '600px', margin: '0 auto var(--space-8) auto', lineHeight: 1.6 }}>
-                  Install from npm. Deploy to your infrastructure. Reach out when you need design partner access or enterprise support.
-                </p>
-                <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
-                  <Link href="/developers" className="btn btn-lg" style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}>
-                    <span>Quickstart</span>
-                    <ArrowRight size={18} />
-                  </Link>
-                  <Link href="/contact" className="btn btn-lg btn-ghost" style={{ color: 'var(--white)', border: '1px solid var(--border-hover)' }}>
-                    Contact us
-                  </Link>
-                </div>
+            <div style={{
+              maxWidth: '720px',
+              margin: '0 auto',
+              padding: 'var(--space-10)',
+              background: 'var(--surface-elevated)',
+              border: '1px solid var(--border-default)',
+              borderRadius: 'var(--radius-2xl)',
+              textAlign: 'center',
+            }}>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
+                Start with the OSS packages
+              </h2>
+              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto var(--space-8) auto' }}>
+                Install from npm. Deploy to your infrastructure. Reach out when you need enterprise support.
+              </p>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
+                <Link href="/developers" className="btn btn-primary btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+                  <span>Quickstart</span>
+                  <ArrowRight size={18} />
+                </Link>
+                <Link href="/contact" className="btn btn-secondary btn-lg">
+                  Contact us
+                </Link>
               </div>
             </div>
           </div>

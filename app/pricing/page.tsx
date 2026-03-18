@@ -186,7 +186,7 @@ export default function PricingPage() {
               </p>
 
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                For organizations that need production deployment support, managed key infrastructure, or compliance evidence for audits and procurement.
+                For organizations that need production deployment support, managed key infrastructure, or compliance evidence for audits and procurement. If you are evaluating Originary for a team deployment or need evidence artifacts for a procurement review, this is the right path.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
