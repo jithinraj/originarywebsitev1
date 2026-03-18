@@ -253,13 +253,14 @@ export default function AgentAuditorPage() {
                 A receipt is a signed record issued when an agent takes an action — a tool call, an API request, a payment, a consent. Agent Auditor opens any receipt file and shows you exactly what it contains, verified against the signature. For raw JWS token inspection, see the <Link href="/verify" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>Inspector</Link>.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" style={{
-                justifyItems: 'center',
-                maxWidth: '480px',
-                margin: '0 auto',
-                marginBottom: 'var(--space-14)',
+              <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                gap: 'var(--space-4)',
+                flexWrap: 'wrap',
+                marginBottom: 'var(--space-10)',
               }}>
-                <Link href="#inspector" className="btn btn-primary btn-lg" style={{ width: '100%', justifyContent: 'center' }}>
+                <Link href="#inspector" className="btn btn-primary btn-lg">
                   <span>Open a receipt now</span>
                   <ArrowRight size={18} />
                 </Link>
@@ -268,7 +269,6 @@ export default function AgentAuditorPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-secondary btn-lg"
-                  style={{ width: '100%', justifyContent: 'center' }}
                 >
                   <span>View on GitHub</span>
                   <ExternalLink size={16} />
@@ -277,7 +277,7 @@ export default function AgentAuditorPage() {
 
               {/* "What is a receipt" plain explainer */}
               <div className="grid grid-cols-1 sm:grid-cols-3" style={{
-                gap: 'var(--space-3)',
+                gap: 'var(--space-4)',
                 maxWidth: '680px',
                 margin: '0 auto',
               }}>
