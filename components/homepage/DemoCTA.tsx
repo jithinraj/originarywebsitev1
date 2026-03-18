@@ -8,7 +8,7 @@ export function DemoCTA() {
     <section className="hp-section">
       <div className="hp-container">
         <motion.div
-          className="relative rounded-2xl px-6 py-12 sm:p-10 md:p-14 lg:p-20 text-center overflow-hidden"
+          className="relative rounded-xl sm:rounded-2xl px-5 py-10 sm:p-10 md:p-14 lg:p-20 text-center overflow-hidden"
           style={{ background: 'var(--color-fg)' }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

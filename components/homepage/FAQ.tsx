@@ -105,7 +105,7 @@ function FAQItem({ q, a, defaultOpen = false }: { q: string; a: string; defaultO
                 lineHeight: 1.7,
                 color: 'var(--color-fg-secondary)',
                 paddingBottom: '1.25rem',
-                paddingRight: '3.5rem',
+                paddingRight: '1rem',
                 margin: 0,
               }}
             >
@@ -122,7 +122,7 @@ export function FAQ() {
   return (
     <section className="hp-section hp-alt">
       <div className="hp-container">
-        <div className="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16">
+        <div className="grid md:grid-cols-[1fr_2fr] gap-6 md:gap-16">
           <AnimateIn>
             <div>
               <span
