@@ -5,7 +5,7 @@ export const SOCIAL = {
   bluesky: "https://bsky.app/profile/originary.bsky.social",
   farcaster: "https://warpcast.com/originary",
   github: "https://github.com/peacprotocol/peac",
-  substack: "https://peacprotocol.substack.com/",
+  substack: "https://originary.substack.com",
   blog: "https://www.originary.xyz/blog"
 } as const;
 

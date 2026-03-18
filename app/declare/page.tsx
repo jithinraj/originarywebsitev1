@@ -49,7 +49,7 @@ export default function DeclarePage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "softwareVersion": "0.11.3",
+    "softwareVersion": "0.12.3",
     "description": "One config file to declare AI policies for your domain. Generates peac.txt, robots AI rules, AIPREF headers, and a /ai-policy page. Includes Policy Profiles for rapid deployment."
   }
 
@@ -613,7 +613,7 @@ peac policy init
                   marginTop: 'var(--space-3)',
                   lineHeight: 1.6
                 }}>
-                  Validates <code style={{ background: 'var(--text-secondary)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> and generated files against PEAC 0.11.x schemas.
+                  Validates <code style={{ background: 'var(--text-secondary)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> and generated files against PEAC 0.12.x schemas.
                 </p>
               </div>
 
@@ -759,7 +759,7 @@ cp robots-ai-snippet.txt public/`}
           </div>
         </section>
 
-        {/* Roadmap Section */}
+        {/* Planned Capabilities Section */}
         <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -770,7 +770,7 @@ cp robots-ai-snippet.txt public/`}
                 marginBottom: 'var(--space-4)',
                 color: 'var(--text-primary)'
               }}>
-                Roadmap
+                Planned capabilities
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
@@ -778,7 +778,7 @@ cp robots-ai-snippet.txt public/`}
                 textAlign: 'center',
                 marginBottom: 'var(--space-10)'
               }}>
-                Policy Kit tracks the PEAC 0.11.x protocol line. Small, reliable, boring.
+                Policy Kit tracks the PEAC 0.12.x protocol line. Small, reliable, boring.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>

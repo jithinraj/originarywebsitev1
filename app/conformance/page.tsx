@@ -44,14 +44,6 @@ export default function ConformancePage() {
             }}>
               <TestTube size={16} />
               <span>CONFORMANCE</span>
-              <span style={{
-                background: 'var(--accent-brand)',
-                color: 'white',
-                padding: '2px 8px',
-                borderRadius: 'var(--radius-full)',
-                fontSize: 'var(--text-xs)',
-                marginLeft: 'var(--space-2)'
-              }}>Preview</span>
             </div>
 
             <h1 style={{

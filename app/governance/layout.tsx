@@ -2,26 +2,18 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Governance',
-  description: 'How the PEAC protocol evolves. Governance process, versioning rules, and neutrality guarantees.',
+  description: 'How PEAC Protocol is governed, maintained, and contributed to. Open development, Apache-2.0 license.',
   alternates: {
     canonical: '/governance'
   },
   openGraph: {
     title: 'Governance | Originary',
-    description: 'How the PEAC protocol evolves. Governance process, versioning rules, and neutrality guarantees.',
+    description: 'How PEAC Protocol is governed, maintained, and contributed to. Open development, Apache-2.0 license.',
     url: '/governance',
     type: 'website',
     images: ['/og'],
     siteName: 'Originary',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Governance | Originary',
-    description: 'How the PEAC protocol evolves. Governance process, versioning rules, and neutrality guarantees.',
-    images: ['/og'],
-    site: '@originaryx',
-  },
-  robots: 'index,follow',
 }
 
 export default function GovernanceLayout({
@@ -29,5 +21,5 @@ export default function GovernanceLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <>{children}</>
+  return children
 }

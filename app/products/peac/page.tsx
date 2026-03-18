@@ -452,7 +452,7 @@ export default function PEACInProduction() {
                 <LineChart size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
                 <h4 style={{ marginBottom: 'var(--space-2)' }}>Quarterly reviews</h4>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                  Regular business reviews with roadmap previews and capacity planning
+                  Regular business reviews with progress updates and capacity planning
                 </p>
               </div>
             </div>
