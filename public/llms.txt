@@ -14,9 +14,10 @@ Contact: contact@originary.xyz
 - [PEAC Protocol](/peac) - Open standard for verifiable interaction records
 - [Developers](/developers) - Quickstart, SDKs, and integration guides
 - [Downloads](/downloads) - CLI, MCP server, SDKs, and source archives
-- [Agent Auditor](/agent-auditor) - Open and verify any receipt file, locally
-- [Verify](/verify) - Inspect and validate signed interaction records
-- [Pricing](/pricing) - Open source, self-hostable, commercial support available
+- [Agent Auditor](/agent-auditor) - Open and verify any signed record locally, with evidence bundles
+- [Verify](/verify) - Inspector: parse JWS structure and decode interaction record claims
+- [Trust Center](/trust) - Verification model, cryptography, data boundaries, portability
+- [Pricing](/pricing) - Open source, self-hostable, enterprise support available
 
 ## Protocol State
 
@@ -33,8 +34,8 @@ Contact: contact@originary.xyz
 ### Agent Auditor (/agent-auditor)
 Open any receipt file (.jws, .json, .zip) and inspect its contents. Verifies Ed25519 signatures locally. No signup, no backend, no data leaves your machine. Apache-2.0.
 
-### Verify (/verify)
-Browser-based receipt inspector. Validate PEAC interaction record signatures client-side for audits, disputes, and compliance evidence.
+### Inspector (/verify)
+Browser-based token structure inspector. Parse JWS structure, decode interaction record claims, and check token format. For full receipt verification with evidence bundles, use Agent Auditor.
 
 ### Declare (/declare)
 Policy Pack Generator. Generate peac.txt, AIPREF headers, and human-readable policy pages from a single YAML config.
@@ -103,11 +104,11 @@ PEAC is an open standard (Apache-2.0). 28 packages on npm, 6443 tests, 84 build 
 
 ## Trust and Legal
 
-- [Trust Center](/trust)
-- [Security](/security)
-- [Privacy](/privacy)
-- [Terms](/terms)
-- [Governance](/governance)
+- [Trust Center](/trust) - Verification model, cryptography, data boundaries, portability, responsible disclosure, stewardship
+- [Security](/security) - Responsible disclosure policy
+- [Privacy](/privacy) - Privacy policy
+- [Terms](/terms) - Terms of service
+- [Governance](/governance) - Protocol governance model
 
 ## Company
 

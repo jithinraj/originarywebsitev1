@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Originary Receipts | Signed Receipts for AI Interactions',
-  description: 'PEAC-Receipts generate tamper-evident proofs of policy, consent, and payment. Signed receipts for audits and disputes.',
+  title: 'Signed Receipts for AI Interactions',
+  description: 'Signed records provide tamper-evident proof of policy, consent, and payment. Verifiable evidence for audits and disputes.',
   robots: 'index,follow',
   openGraph: {
-    title: 'Originary Receipts | Signed Receipts for AI Interactions',
-    description: 'Originary PEAC-Receipts generate tamper-evident proofs of policy, consent, attribution, and payment events. Cryptographically signed receipts for audit trails.',
+    title: 'Signed Receipts for AI Interactions | Originary',
+    description: 'Signed records provide tamper-evident proof of policy, consent, attribution, and payment events. Cryptographically verifiable evidence for audit trails.',
     url: '/receipts',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary Receipts | Signed Receipts for AI Interactions',
-    description: 'Originary PEAC-Receipts generate tamper-evident proofs of policy, consent, attribution, and payment events.',
+    title: 'Signed Receipts for AI Interactions | Originary',
+    description: 'Signed records provide tamper-evident proof of policy, consent, attribution, and payment events.',
     images: ['/og'],
   },
   alternates: {

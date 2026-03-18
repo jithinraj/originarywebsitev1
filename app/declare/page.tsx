@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     description: 'Generate your AI policy pack from one file. Create peac.txt, robots directives, AIPREF templates, and human policy pages with PEAC.',
     url: '/declare',
     type: 'website',
+    siteName: 'Originary',
     images: ['/og'],
   },
   twitter: {

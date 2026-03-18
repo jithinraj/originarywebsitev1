@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import { ArrowRight, Rocket, CheckCircle, Calendar } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Pilots | Originary',
+  title: 'Pilots',
   description: 'Fixed-scope pilots for production validation. Work with Originary to integrate PEAC decision records into your infrastructure.',
   alternates: {
     canonical: '/pilots'
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pilots | Originary',
-    description: 'Fixed-scope pilots for production validation. Work with Originary to integrate PEAC decision records.',
+    description: 'Fixed-scope pilots for production validation. Work with Originary to integrate PEAC decision records into your infrastructure.',
     images: ['/og'],
   },
   robots: 'index,follow',

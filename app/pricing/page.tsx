@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
-  title: 'Pricing | Originary',
+  title: 'Pricing',
   description: 'PEAC Protocol is free and open-source. Apache-2.0. Self-host with no limits, no fees, no sign-up. Commercial support available for teams deploying at scale.',
   keywords: ['PEAC Protocol pricing', 'open source', 'Apache-2.0', 'self-host', 'free'],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pricing | Originary',
-    description: 'PEAC Protocol is free and open-source. Apache-2.0. Self-host with no limits, no fees, no sign-up.',
+    description: 'PEAC Protocol is free and open-source. Apache-2.0. Self-host with no limits, no fees, no sign-up. Commercial support available for teams deploying at scale.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -134,7 +134,7 @@ export default function PricingPage() {
                 {[
                   'Full protocol specification',
                   'Verifiable interaction records (JWS)',
-                  'Wire 0.2 — current stable format',
+                  'Interaction Record format (current stable)',
                   'Policy discovery (peac.txt)',
                   'MCP server — 5 verification tools',
                   'CLI and SDK packages',
@@ -164,45 +164,86 @@ export default function PricingPage() {
           </div>
         </section>
 
-        {/* ── Enterprise callout ────────────────────────────────────────── */}
+        {/* ── Enterprise support ─────────────────────────────────────────── */}
         <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{
-              maxWidth: '680px',
+              maxWidth: '740px',
               margin: '0 auto',
-              padding: 'var(--space-8)',
+              padding: 'var(--space-10)',
               background: 'var(--surface-elevated)',
               border: '1px solid var(--border-default)',
               borderRadius: 'var(--radius-2xl)',
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-2)' }}>
                 <Building2 size={20} style={{ color: 'var(--text-secondary)' }} />
                 <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, margin: 0, color: 'var(--text-primary)' }}>
-                  Commercial support
+                  Enterprise support
                 </h2>
               </div>
-              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                For organizations that need guided integration, managed deployments, attested keys, or dedicated engineering support. Terms are scoped to your use case.
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-6)' }}>
+                Terms scoped to your deployment
               </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)', marginBottom: 'var(--space-6)' }}>
+
+              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
+                For organizations that need production deployment support, managed key infrastructure, or compliance evidence for audits and procurement.
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
                 {[
-                  'Guided integration and deployment support',
-                  'KMS-backed attested signing keys',
-                  'Compliance evidence bundles',
-                  'Dedicated engineering access',
-                ].map((item, idx) => (
-                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
-                    <CheckCircle size={15} style={{ color: 'var(--text-tertiary)', flexShrink: 0, marginTop: '2px' }} />
-                    {item}
+                  { feature: 'Guided integration and deployment support', detail: 'Architecture review, environment setup, and production rollout assistance' },
+                  { feature: 'KMS-backed attested signing keys', detail: 'AWS KMS, GCP Cloud KMS, Azure Key Vault, or HashiCorp Vault' },
+                  { feature: 'Compliance evidence bundles', detail: 'Pre-packaged verification artifacts for audits and procurement reviews' },
+                  { feature: 'Dedicated engineering access', detail: 'Direct channel to the protocol engineering team for troubleshooting and feature requests' },
+                  { feature: 'SLA and priority support', detail: 'Guaranteed response times and escalation paths' },
+                ].map(({ feature, detail }, idx) => (
+                  <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
+                    <CheckCircle size={16} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '2px' }} />
+                    <div>
+                      <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)' }}>{feature}</span>
+                      <br />
+                      <span style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>{detail}</span>
+                    </div>
                   </div>
                 ))}
               </div>
+
+              <div style={{
+                background: 'var(--surface-subtle)',
+                borderRadius: 'var(--radius-lg)',
+                padding: 'var(--space-5)',
+                marginBottom: 'var(--space-8)',
+              }}>
+                <p style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-tertiary)', marginBottom: 'var(--space-3)' }}>
+                  Best for
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
+                  {[
+                    'API platforms handling agent traffic',
+                    'MCP server and tool operators',
+                    'Security and compliance teams',
+                    'Organizations with procurement requirements',
+                  ].map((item) => (
+                    <span key={item} style={{
+                      fontSize: 'var(--text-xs)',
+                      color: 'var(--text-secondary)',
+                      padding: '4px 10px',
+                      background: 'var(--surface-elevated)',
+                      border: '1px solid var(--border-default)',
+                      borderRadius: 'var(--radius-full)',
+                    }}>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               <a
-                href="mailto:contact@originary.xyz?subject=Commercial%20Support"
-                className="btn btn-secondary"
+                href="mailto:contact@originary.xyz?subject=Enterprise%20Support"
+                className="btn btn-primary"
                 style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}
               >
-                Contact us
+                Talk to the team
                 <ArrowRight size={16} />
               </a>
             </div>

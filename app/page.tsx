@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { HomeNav } from '@/components/homepage/HomeNav'
 import { Hero } from '@/components/homepage/Hero'
 import { Problem } from '@/components/homepage/Problem'
+import { WhoIsItFor } from '@/components/homepage/WhoIsItFor'
 import { HowItWorks } from '@/components/homepage/HowItWorks'
 import { TrustProof } from '@/components/homepage/TrustProof'
 import { Comparison } from '@/components/homepage/Comparison'
@@ -47,8 +48,8 @@ export const metadata: Metadata = {
     title: 'Originary | Verify agent requests, apply policy, return portable signed records',
     description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return portable signed records. Built on PEAC. Self-hostable. Offline-verifiable.',
     images: ['/og'],
-    site: '@originaryxyz',
-    creator: '@originaryxyz',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: {
     index: true,
@@ -142,6 +143,7 @@ export default function Page() {
         <main id="main-content" role="main">
           <Hero />
           <Problem />
+          <WhoIsItFor />
           <HowItWorks />
           <TrustProof />
           <Comparison />

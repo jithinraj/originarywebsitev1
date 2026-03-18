@@ -26,7 +26,7 @@ const peacSourceCodeJsonLd = {
   codeRepository: 'https://github.com/peacprotocol/peac',
   license: 'https://www.apache.org/licenses/LICENSE-2.0',
   programmingLanguage: 'TypeScript',
-  version: '0.12.0'
+  version: '0.12.3'
 }
 
 export const metadata: Metadata = {

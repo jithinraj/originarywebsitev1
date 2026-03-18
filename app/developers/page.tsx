@@ -97,7 +97,7 @@ export default function Developers() {
                 icon={<Plug size={24} />}
                 title="Add to an HTTP API"
                 description="Publish a peac.txt policy, add middleware to check requests, and return signed interaction records in response headers."
-                steps={['Deploy /.well-known/peac.txt', 'Add verification middleware', 'Return PEAC-Receipt headers']}
+                steps={['Deploy /.well-known/peac.txt', 'Add verification middleware', 'Return signed record headers']}
                 href="/integrations/x402"
                 code="npm install @peac/protocol @peac/middleware-express"
               />

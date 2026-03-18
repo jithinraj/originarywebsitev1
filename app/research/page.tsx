@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import { ArrowRight, FileText, BookOpen, Shield, AlertTriangle, Target, Quote } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Research | Originary',
+  title: 'Research',
   description: 'PEAC protocol research and technical specifications. Problem framing, design goals, threat model, and academic references.',
   alternates: {
     canonical: '/research'
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Research | Originary',
-    description: 'PEAC protocol research and technical specifications. Problem framing, design goals, and threat model.',
+    description: 'PEAC protocol research and technical specifications. Problem framing, design goals, threat model, and academic references.',
     images: ['/og'],
   },
   robots: 'noindex,nofollow',

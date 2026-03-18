@@ -108,7 +108,7 @@ function VerifyContent() {
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
-              Paste a PEAC interaction record to inspect its structure and decode claims. This inspector validates token format and JWS structure. Production verification includes full cryptographic signature checks via <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85em' }}>verifyLocal()</code>.
+              Paste a PEAC interaction record to inspect its structure and decode claims. This inspector validates token format and JWS structure. For full receipt verification with evidence bundles, use <a href="/agent-auditor" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>Agent Auditor</a>.
             </p>
 
             {/* Input Card */}
@@ -306,7 +306,7 @@ function VerifySkeleton() {
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
-              Paste a PEAC interaction record to inspect its structure and decode claims. This inspector validates token format and JWS structure. Production verification includes full cryptographic signature checks via <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85em' }}>verifyLocal()</code>.
+              Paste a PEAC interaction record to inspect its structure and decode claims. This inspector validates token format and JWS structure. For full receipt verification with evidence bundles, use <a href="/agent-auditor" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>Agent Auditor</a>.
             </p>
 
             {/* Input card skeleton */}

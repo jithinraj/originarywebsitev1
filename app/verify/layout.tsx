@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Inspector | Inspect and Validate Interaction Records',
-  description: 'Inspect PEAC interaction records. Parse JWS structure, decode claims, and check token format. Demo mode: validates structure and format; production verification includes full signature checks.',
+  description: 'Inspect PEAC interaction records. Parse JWS structure, decode claims, and check token format. For full receipt verification with evidence bundles, see Agent Auditor.',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',

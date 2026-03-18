@@ -43,8 +43,8 @@ export function Hero() {
         <motion.h1
           className="hp-text-hero mt-10 md:mt-12 max-w-[52rem]"
           style={{ color: 'var(--color-fg)' }}
-          initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.1, ease }}
         >
           Verify agent requests, apply policy, return portable signed records
