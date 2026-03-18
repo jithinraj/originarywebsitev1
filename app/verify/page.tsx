@@ -197,8 +197,11 @@ function InspectorContent() {
   const searchParams = useSearchParams()
   const tokenFromUrl = searchParams.get('token')
 
-  const [token, setToken] = useState(tokenFromUrl || '')
-  const [result, setResult] = useState<InspectResult | null>(null)
+  const [token, setToken] = useState(tokenFromUrl || SAMPLE_VALID)
+  const [result, setResult] = useState<InspectResult | null>(() => {
+    if (tokenFromUrl) return inspectToken(tokenFromUrl)
+    return inspectToken(SAMPLE_VALID)
+  })
   const [dragOver, setDragOver] = useState(false)
 
   const doInspect = useCallback((raw: string) => {

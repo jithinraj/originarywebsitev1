@@ -5,27 +5,27 @@ import Link from 'next/link'
 import { ArrowRight, Shield, Zap, Server, LineChart, Clock, Lock, CheckCircle, Settings, Globe, Database, Activity } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'PEAC in Production | Enterprise Deployment & Operations',
-  description: 'Deploy PEAC Protocol at enterprise scale. Managed infrastructure, monitoring, compliance dashboards, and support.',
-  keywords: 'PEAC enterprise, PEAC deployment, PEAC operations, agent infrastructure, receipt monitoring, compliance dashboard, enterprise support, PEAC scaling',
+  title: 'Enterprise Deployment | Originary',
+  description: 'Deploy Originary at enterprise scale. Managed infrastructure, monitoring, compliance dashboards, and support. Powered by PEAC Protocol.',
+  keywords: 'enterprise deployment, Originary enterprise, managed infrastructure, compliance dashboard, enterprise support',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'PEAC in Production | Enterprise Deployment & Operations',
-    description: 'Deploy PEAC Protocol at enterprise scale. Managed infrastructure, monitoring, compliance dashboards, and support.',
+    title: 'Enterprise Deployment | Originary',
+    description: 'Deploy Originary at enterprise scale. Managed infrastructure, monitoring, compliance dashboards, and support.',
     url: '/products/peac',
     images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PEAC in Production | Enterprise Deployment & Operations',
-    description: 'Deploy PEAC Protocol at enterprise scale. Managed infrastructure, compliance dashboards, and 24/7 support.',
+    title: 'Enterprise Deployment | Originary',
+    description: 'Deploy Originary at enterprise scale. Managed infrastructure, compliance dashboards, and support.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
-  robots: 'index,follow',
+  robots: 'noindex,nofollow',
   alternates: {
     canonical: '/products/peac',
   },

@@ -103,7 +103,6 @@ export default function ChangelogPage() {
                     'MCP Registry published',
                     'Evaluator quickstarts and integration kits',
                     'AIPREF version constants exported',
-                    'Public surface reconciliation',
                   ],
                 },
                 {
@@ -131,10 +130,9 @@ export default function ChangelogPage() {
                   version: 'v0.12.0',
                   date: 'Mar 9, 2026',
                   items: [
-                    'Wire 0.2 stable release (interaction-record+jwt)',
-                    'All quality gates wired and passing',
+                    'Interaction Record format stable release (interaction-record+jwt)',
                     '28 packages published on npm',
-                    'Versioned gate reports and CodeQL security-extended',
+                    'CodeQL security-extended analysis',
                   ],
                 },
                 {

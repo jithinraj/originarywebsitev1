@@ -80,7 +80,7 @@ export default function Downloads() {
                 marginBottom: 'var(--space-4)',
                 color: 'var(--text-primary)'
               }}>
-                ORIGINARY <span style={{ fontSize: '0.5em', verticalAlign: 'super' }}>™</span> Downloads
+                Downloads
               </h1>
 
               <p style={{
@@ -89,7 +89,7 @@ export default function Downloads() {
                 color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-4)'
               }}>
-                Official <strong>Originary</strong> tools and PEAC Protocol SDKs. Implement access control, consent, attribution, provenance and verifiable receipts.
+                Official <strong>Originary</strong> tools and PEAC Protocol SDKs. Implement access control, consent, attribution, provenance, and signed interaction records.
               </p>
 
               <div style={{
@@ -231,7 +231,6 @@ export default function Downloads() {
                 }}>
                   <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i -g @peac/cli</code>
                   <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i @peac/mcp-server @peac/capture-node @peac/rails-openclaw @peac/rails-stripe</code>
-                  <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>go get github.com/peacprotocol/peac/sdks/go@v0.12.3</code>
                 </div>
               </div>
 

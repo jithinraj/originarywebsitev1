@@ -8,7 +8,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 export const metadata: Metadata = {
   title: 'Verify API',
   description: 'Stateless verification for interaction records and JWS signatures. Deterministic validation with normalized fields.',
-  keywords: 'PEAC receipt verification, JWS validation, Ed25519 signature verification, offline verification, JWKS',
+  keywords: 'interaction record verification, JWS validation, Ed25519 signature verification, offline verification, JWKS',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
