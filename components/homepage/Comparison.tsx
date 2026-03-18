@@ -113,30 +113,62 @@ export function Comparison() {
           </AnimateIn>
 
           <AnimateIn delay={0.2}>
+            {/* Mobile: card layout */}
+            <div className="sm:hidden space-y-3">
+              {rows.map((row) => (
+                <div
+                  key={row.need}
+                  className="rounded-xl p-4"
+                  style={{
+                    border: '1px solid var(--color-border)',
+                    background: 'var(--color-surface-elevated)',
+                  }}
+                >
+                  <p
+                    className="text-[0.8125rem] font-medium mb-3"
+                    style={{ color: 'var(--color-fg)' }}
+                  >
+                    {row.need}
+                  </p>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[0.625rem] font-semibold uppercase tracking-[0.06em]" style={{ color: 'var(--color-fg-muted)' }}>Logs</span>
+                      <Cell value={row.logs} />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[0.625rem] font-semibold uppercase tracking-[0.06em]" style={{ color: 'var(--color-fg-muted)' }}>Originary</span>
+                      <Cell value={row.originary} />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop: table layout */}
             <div
-              className="-mx-1.5 sm:mx-0 overflow-x-auto rounded-2xl shadow-[0_1px_2px_rgba(0,0,0,0.02),0_4px_16px_-4px_rgba(0,0,0,0.03)]"
+              className="hidden sm:block overflow-x-auto rounded-2xl shadow-[0_1px_2px_rgba(0,0,0,0.02),0_4px_16px_-4px_rgba(0,0,0,0.03)]"
               style={{
                 border: '1px solid var(--color-border)',
                 background: 'var(--color-surface-elevated)',
               }}
             >
-              <table className="w-full min-w-[340px]">
+              <table className="w-full">
                 <thead>
                   <tr style={{ borderBottom: '1px solid var(--color-border)', background: 'rgba(243,242,238,0.4)' }}>
                     <th
-                      className="text-left text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-4 py-4 sm:px-5 sm:py-5 md:px-6 md:py-6"
+                      className="text-left text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-5 py-5 md:px-6 md:py-6"
                       style={{ color: 'var(--color-fg-muted)' }}
                     >
                       Need
                     </th>
                     <th
-                      className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-3 py-4 sm:px-5 sm:py-5 md:px-6 md:py-6 w-24 sm:w-28 md:w-32"
+                      className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-5 py-5 md:px-6 md:py-6 w-28 md:w-32"
                       style={{ color: 'var(--color-fg-muted)' }}
                     >
                       Logs / traces
                     </th>
                     <th
-                      className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-3 py-4 sm:px-5 sm:py-5 md:px-6 md:py-6 w-24 sm:w-28 md:w-32"
+                      className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-5 py-5 md:px-6 md:py-6 w-28 md:w-32"
                       style={{ color: 'var(--color-fg)', background: 'rgba(237,245,240,0.3)' }}
                     >
                       Originary
@@ -151,18 +183,18 @@ export function Comparison() {
                       style={i < rows.length - 1 ? { borderBottom: '1px solid var(--color-border-subtle)' } : undefined}
                     >
                       <td
-                        className="text-[0.8125rem] sm:text-[0.875rem] font-medium px-4 py-4 sm:px-5 sm:py-5 md:px-6 md:py-5"
+                        className="text-[0.875rem] font-medium px-5 py-5 md:px-6 md:py-5"
                         style={{ color: 'var(--color-fg)' }}
                       >
                         {row.need}
                       </td>
-                      <td className="text-center px-3 py-4 sm:px-5 sm:py-5 md:px-6 md:py-5">
+                      <td className="text-center px-5 py-5 md:px-6 md:py-5">
                         <div className="flex justify-center">
                           <Cell value={row.logs} />
                         </div>
                       </td>
                       <td
-                        className="text-center px-3 py-4 sm:px-5 sm:py-5 md:px-6 md:py-5"
+                        className="text-center px-5 py-5 md:px-6 md:py-5"
                         style={{ background: 'rgba(237,245,240,0.1)' }}
                       >
                         <div className="flex justify-center">

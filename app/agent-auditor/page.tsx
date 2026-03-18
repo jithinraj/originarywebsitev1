@@ -258,7 +258,7 @@ export default function AgentAuditorPage() {
                 justifyContent: 'center',
                 gap: 'var(--space-4)',
                 flexWrap: 'wrap',
-                marginBottom: 'var(--space-14)',
+                marginBottom: 'var(--space-10)',
               }}>
                 <Link href="#inspector" className="btn btn-primary btn-lg">
                   <span>Open a receipt now</span>
@@ -276,10 +276,8 @@ export default function AgentAuditorPage() {
               </div>
 
               {/* "What is a receipt" plain explainer */}
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: 'var(--space-3)',
+              <div className="grid grid-cols-1 sm:grid-cols-3" style={{
+                gap: 'var(--space-4)',
                 maxWidth: '680px',
                 margin: '0 auto',
               }}>
