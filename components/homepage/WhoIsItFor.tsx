@@ -46,7 +46,7 @@ export function WhoIsItFor() {
           </p>
         </AnimateIn>
 
-        <div className="mt-12 grid sm:grid-cols-2 gap-5">
+        <div className="mt-8 sm:mt-12 grid sm:grid-cols-2 gap-3 sm:gap-5">
           {audiences.map((item, i) => (
             <AnimateIn key={item.label} delay={0.08 * i}>
               <div

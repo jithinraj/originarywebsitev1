@@ -39,7 +39,7 @@ export function TrustProof() {
           </h2>
         </AnimateIn>
 
-        <StaggerContainer delay={0.15} className="mt-12 md:mt-16 grid sm:grid-cols-2 gap-4 md:gap-5">
+        <StaggerContainer delay={0.15} className="mt-8 sm:mt-12 md:mt-16 grid sm:grid-cols-2 gap-3 sm:gap-4 md:gap-5">
           {proofPoints.map((point) => (
             <StaggerItem key={point.title}>
               <div className="hp-card p-7 md:p-8 h-full">

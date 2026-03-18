@@ -14,7 +14,7 @@ export function OpenStandard() {
   return (
     <section className="hp-section hp-divider">
       <div className="hp-container">
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-16 items-start">
           <AnimateIn>
             <div>
               <span

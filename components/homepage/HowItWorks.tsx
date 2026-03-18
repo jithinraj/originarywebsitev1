@@ -64,7 +64,7 @@ export function HowItWorks() {
           </h2>
         </AnimateIn>
 
-        <StaggerContainer delay={0.15} className="mt-12 md:mt-16 grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+        <StaggerContainer delay={0.15} className="mt-8 sm:mt-12 md:mt-16 grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-5">
           {cards.map((card) => (
             <StaggerItem key={card.title}>
               <div className="hp-card p-8 md:p-9 h-full">

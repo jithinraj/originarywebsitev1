@@ -153,11 +153,14 @@ body:has(.hp-root) .cursor-glow {
 }
 
 .hp-root .hp-section {
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+@media (min-width: 480px) {
+  .hp-root .hp-section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
 }
 @media (min-width: 640px) {
-  .hp-root .hp-section { padding-top: 5.5rem; padding-bottom: 5.5rem; }
+  .hp-root .hp-section { padding-top: 5rem; padding-bottom: 5rem; }
 }
 @media (min-width: 768px) {
   .hp-root .hp-section { padding-top: 6.5rem; padding-bottom: 6.5rem; }

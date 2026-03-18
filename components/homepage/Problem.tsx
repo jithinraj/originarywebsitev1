@@ -10,7 +10,7 @@ export function Problem() {
   return (
     <section className="hp-section hp-divider">
       <div className="hp-container">
-        <div className="grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-16 items-start">
+        <div className="grid md:grid-cols-[1.2fr_1fr] gap-6 md:gap-16 items-start">
           <AnimateIn>
             <div>
               <span

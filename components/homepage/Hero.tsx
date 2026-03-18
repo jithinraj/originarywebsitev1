@@ -15,7 +15,7 @@ const proofItems = [
 
 export function Hero() {
   return (
-    <section className="hp-hero-bg pt-36 pb-16 md:pt-48 md:pb-24 lg:pt-56 lg:pb-32">
+    <section className="hp-hero-bg pt-24 pb-12 sm:pt-32 sm:pb-16 md:pt-48 md:pb-24 lg:pt-56 lg:pb-32">
       <div className="hp-container">
         {/* Badge */}
         <motion.div
@@ -41,7 +41,7 @@ export function Hero() {
 
         {/* Headline */}
         <motion.h1
-          className="hp-text-hero mt-10 md:mt-12 max-w-[52rem]"
+          className="hp-text-hero mt-7 sm:mt-10 md:mt-12 max-w-[52rem]"
           style={{ color: 'var(--color-fg)' }}
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export function Hero() {
 
         {/* Subheading */}
         <motion.p
-          className="mt-8 md:mt-10 hp-text-subheading max-w-[38rem]"
+          className="mt-5 sm:mt-8 md:mt-10 hp-text-subheading max-w-[38rem]"
           style={{ color: 'var(--color-fg-secondary)' }}
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export function Hero() {
 
         {/* Tagline - visually distinct */}
         <motion.div
-          className="mt-8 md:mt-10"
+          className="mt-5 sm:mt-8 md:mt-10"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease }}
@@ -79,7 +79,7 @@ export function Hero() {
 
         {/* CTAs */}
         <motion.div
-          className="mt-10 md:mt-12 flex flex-wrap items-center gap-4"
+          className="mt-7 sm:mt-10 md:mt-12 flex flex-wrap items-center gap-3 sm:gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.45, ease }}
@@ -132,7 +132,7 @@ export function Hero() {
 
         {/* Quick links */}
         <motion.div
-          className="mt-6 flex flex-wrap items-center gap-3"
+          className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1.5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -167,7 +167,7 @@ export function Hero() {
 
         {/* Code panels */}
         <motion.div
-          className="mt-16 md:mt-20 lg:mt-24 grid md:grid-cols-2 gap-4 md:gap-5"
+          className="mt-10 sm:mt-16 md:mt-20 lg:mt-24 grid md:grid-cols-2 gap-4 md:gap-5"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.7, ease }}

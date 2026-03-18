@@ -63,7 +63,7 @@ export function Comparison() {
   return (
     <section className="hp-section hp-divider">
       <div className="hp-container">
-        <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-start">
+        <div className="grid md:grid-cols-[1.1fr_1fr] gap-8 md:gap-16 items-start">
           <AnimateIn>
             <div>
               <span
@@ -120,7 +120,7 @@ export function Comparison() {
                 background: 'var(--color-surface-elevated)',
               }}
             >
-              <table className="w-full min-w-[420px]">
+              <table className="w-full min-w-[340px]">
                 <thead>
                   <tr style={{ borderBottom: '1px solid var(--color-border)', background: 'rgba(243,242,238,0.4)' }}>
                     <th
