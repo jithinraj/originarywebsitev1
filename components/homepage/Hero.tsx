@@ -58,8 +58,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease }}
         >
-          Drop-in middleware for any API, tool, or MCP server.
-          No infrastructure changes required.
+          Start with middleware or the MCP server. Keep the rest of your stack.
         </motion.p>
 
         {/* Tagline - visually distinct */}
@@ -96,7 +95,7 @@ export function Hero() {
               />
             </svg>
           </Link>
-          <Link href="/verify" className="hp-btn-secondary">
+          <Link href="/agent-auditor" className="hp-btn-secondary">
             Verify a sample record
           </Link>
         </motion.div>

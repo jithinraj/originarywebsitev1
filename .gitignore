@@ -76,3 +76,4 @@ logs/
 
 # Build artifacts
 tsconfig.tsbuildinfo
+.gstack/

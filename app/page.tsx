@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { HomeNav } from '@/components/homepage/HomeNav'
 import { Hero } from '@/components/homepage/Hero'
-import { Problem } from '@/components/homepage/Problem'
 import { WhoIsItFor } from '@/components/homepage/WhoIsItFor'
 import { HowItWorks } from '@/components/homepage/HowItWorks'
+import { DevProof } from '@/components/homepage/DevProof'
 import { TrustProof } from '@/components/homepage/TrustProof'
 import { Comparison } from '@/components/homepage/Comparison'
 import { OpenStandard } from '@/components/homepage/OpenStandard'
@@ -142,9 +142,9 @@ export default function Page() {
         <HomeNav />
         <main id="main-content" role="main">
           <Hero />
-          <Problem />
           <WhoIsItFor />
           <HowItWorks />
+          <DevProof />
           <TrustProof />
           <Comparison />
           <OpenStandard />

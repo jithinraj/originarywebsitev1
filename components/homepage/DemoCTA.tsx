@@ -28,15 +28,15 @@ export function DemoCTA() {
               className="mt-6 text-[1.0625rem] max-w-md mx-auto leading-relaxed"
               style={{ color: 'rgba(250,250,247,0.55)' }}
             >
-              Walk through a real flow: agent request, policy decision,
-              portable signed record. Takes five minutes.
+              Open a real signed record, inspect the claims, and verify
+              the signature. No account required.
             </p>
             <div className="mt-10 md:mt-12 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
               <Link
-                href="/contact"
+                href="/agent-auditor"
                 className="hp-cta-light"
               >
-                Book a demo
+                Try Agent Auditor
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M3.5 7h7m0 0L7.5 4m3 3l-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -46,6 +46,12 @@ export function DemoCTA() {
                 className="hp-cta-outline"
               >
                 Developer quickstart
+              </Link>
+              <Link
+                href="/contact"
+                className="hp-cta-outline"
+              >
+                Book a demo
               </Link>
             </div>
           </div>
