@@ -96,6 +96,68 @@ export default function ChangelogPage() {
 
               {[
                 {
+                  version: 'v0.12.3',
+                  date: 'Mar 17, 2026',
+                  items: [
+                    'A2A v1.0.0 dual-version transition normalizer',
+                    'MCP Registry published',
+                    'Evaluator quickstarts and integration kits',
+                    'AIPREF version constants exported',
+                    'Public surface reconciliation',
+                  ],
+                },
+                {
+                  version: 'v0.12.2',
+                  date: 'Mar 16, 2026',
+                  items: [
+                    '12 typed extension groups with schema validation',
+                    '10 type-to-extension mappings with strict/interop enforcement',
+                    '9 pillar usage profiles as document overlays',
+                    'Commerce event field (6-value closed enum)',
+                    'Codegen pipeline for registries',
+                  ],
+                },
+                {
+                  version: 'v0.12.1',
+                  date: 'Mar 14, 2026',
+                  items: [
+                    'x402 adapter with four-layer architecture',
+                    '5-layer verification API with opt-in crypto',
+                    'Security dependency updates (undici, hono)',
+                    'README rewrite',
+                  ],
+                },
+                {
+                  version: 'v0.12.0',
+                  date: 'Mar 9, 2026',
+                  items: [
+                    'Wire 0.2 stable release (interaction-record+jwt)',
+                    'All quality gates wired and passing',
+                    '28 packages published on npm',
+                    'Versioned gate reports and CodeQL security-extended',
+                  ],
+                },
+                {
+                  version: 'v0.12.0-preview.2',
+                  date: 'Mar 6, 2026',
+                  items: [
+                    'Release manifest and coherence gate',
+                    'Wire 0.1 isolation',
+                    'EAT passport adapter',
+                    'Quality gates hardening',
+                  ],
+                },
+                {
+                  version: 'v0.12.0-preview.1',
+                  date: 'Mar 3, 2026',
+                  items: [
+                    'Wire 0.2 format (interaction-record+jwt)',
+                    '2-kind architecture (evidence and challenge)',
+                    'JOSE hardening (reject embedded keys, crit, zip)',
+                    'Policy binding with JCS (RFC 8785) and SHA-256',
+                  ],
+                },
+                {
                   version: 'v0.11.3',
                   date: 'Mar 2, 2026',
                   items: [

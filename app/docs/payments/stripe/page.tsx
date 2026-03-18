@@ -81,7 +81,7 @@ export default function StripeDocPage() {
                 marginBottom: 'var(--space-4)',
                 color: 'var(--text-primary)'
               }}>
-                5-Minute Quickstart
+                Quickstart
               </h2>
               <ol style={{ color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
                 <li>Connect your Stripe account in the Originary dashboard</li>

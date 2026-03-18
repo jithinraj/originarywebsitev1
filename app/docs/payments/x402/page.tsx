@@ -60,7 +60,7 @@ export default function X402DocPage() {
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
-              HTTP 402 examples and HTTP 402 for APIs using x402 payments and x402 integration. Learn how to implement blockchain-based x402 stablecoin payments with Originary to build machine-payable APIs that generate verifiable PEAC-Receipts.
+              Implement x402 payment flows with PEAC. When your API returns HTTP 402, the agent pays via x402 (stablecoin or fiat) and receives a signed receipt on success.
             </p>
 
             <div className="card" style={{ marginBottom: 'var(--space-8)', textAlign: 'left' }}>
@@ -87,7 +87,7 @@ export default function X402DocPage() {
                 marginBottom: 'var(--space-4)',
                 color: 'var(--text-primary)'
               }}>
-                5-Minute Quickstart
+                Quickstart
               </h2>
               <ol style={{ color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
                 <li>Deploy your <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>peac.txt</code> policy file</li>

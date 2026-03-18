@@ -36,7 +36,7 @@ const learnArticles = [
     slug: 'what-is-agentic-commerce',
     title: 'What is Agentic Commerce?',
     subtitle: 'The Economic Layer for AI Agents',
-    description: 'Understand how autonomous AI agents buy, sell, and transact without human intervention. Learn about machine-readable pricing, programmatic payments, and the infrastructure enabling the agent economy.',
+    description: 'What happens when machines need to buy API calls, pay for content access, or settle charges with other agents. Covers policy discovery, pricing headers, payment rails, and signed receipts.',
     icon: ShoppingCart,
     color: 'var(--accent-brand-subtle)',
     iconColor: 'var(--accent-brand)',
@@ -48,7 +48,7 @@ const learnArticles = [
     slug: 'ai-receipts',
     title: 'AI Receipts Explained',
     subtitle: 'Verifiable Records of Agent Interactions',
-    description: 'Deep dive into the PEAC interaction record format - the JWS-signed JSON format that proves what happened in every agent interaction. Essential for billing, compliance, attribution, and dispute resolution.',
+    description: 'What a signed interaction record contains, how verification works, and why server logs are not portable proof. Includes the JWS payload structure and Ed25519 verification flow.',
     icon: Receipt,
     color: 'var(--accent-secondary-subtle)',
     iconColor: 'var(--accent-secondary)',
@@ -60,7 +60,7 @@ const learnArticles = [
     slug: 'http-402-ai-payments',
     title: 'HTTP 402 & AI Payments',
     subtitle: 'The Web Standard for Machine-Payable APIs',
-    description: 'The complete guide to HTTP 402 Payment Required - the dormant web standard now powering real-time agent payments. Includes x402 protocol details and implementation patterns.',
+    description: 'How HTTP 402 Payment Required works for machine-to-machine payments. The request/challenge/payment/receipt cycle, x402 protocol headers, and what distinguishes 402 from 401 and 403.',
     icon: CreditCard,
     color: 'var(--accent-tertiary-subtle)',
     iconColor: 'var(--brand-accent)',
@@ -72,7 +72,7 @@ const learnArticles = [
     slug: 'ai-consent-and-attribution',
     title: 'AI Consent & Attribution',
     subtitle: 'Machine-Readable Permissions for AI',
-    description: 'How content owners declare permissions and how AI systems prove compliance. Covers AIPREF, peac.txt, and the infrastructure for trust in agent interactions.',
+    description: 'How publishers declare what agents may do with their content (AIPREF, peac.txt) and how agents prove they followed those terms. The gap between robots.txt and what AI actually needs.',
     icon: Shield,
     color: 'var(--accent-brand-subtle)',
     iconColor: 'var(--accent-brand)',
@@ -184,7 +184,7 @@ export default function LearnPage() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--text-primary)'
               }}>
-                Master the Building Blocks of the <span className="text-gradient">Agentic Web</span>
+                How agents <span className="text-gradient">pay, prove, and comply</span>
               </h1>
 
               <p style={{
@@ -195,7 +195,7 @@ export default function LearnPage() {
                 maxWidth: '650px',
                 margin: '0 auto var(--space-10) auto'
               }}>
-                Deep-dive guides from Originary on the infrastructure powering autonomous AI systems - from commerce and payments to receipts and consent. Essential knowledge for developers building the next generation of intelligent applications.
+                Four guides covering the infrastructure AI agents need to transact, verify, and respect publisher terms. Each one explains a protocol surface, shows what the wire format looks like, and points to working code.
               </p>
 
               {/* Stats Row */}
@@ -222,145 +222,18 @@ export default function LearnPage() {
           </div>
         </section>
 
-        {/* Why Learn This Section */}
+        {/* What these guides cover */}
         <section className="section" style={{
           background: 'var(--surface-elevated)',
-          paddingTop: 'var(--space-16)',
-          paddingBottom: 'var(--space-16)',
+          paddingTop: 'var(--space-12)',
+          paddingBottom: 'var(--space-12)',
           borderBottom: '1px solid var(--border-subtle)'
         }}>
           <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
-              <h2 style={{
-                fontSize: 'var(--text-2xl)',
-                fontWeight: 700,
-                marginBottom: 'var(--space-4)',
-                color: 'var(--text-primary)'
-              }}>
-                Why This Matters
-              </h2>
-              <p style={{
-                fontSize: 'var(--text-base)',
-                color: 'var(--text-secondary)',
-                maxWidth: '600px',
-                margin: '0 auto'
-              }}>
-                AI agents are becoming economic actors. Understanding this infrastructure is essential for anyone building autonomous systems.
+            <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+              <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
+                When an AI agent calls an API, scrapes a page, or uses a tool, three things need to happen: the agent needs to know the terms (policy discovery), it may need to pay (HTTP 402), and both sides need proof of what occurred (signed records). These guides explain each layer, what the protocol messages look like, and how to implement them.
               </p>
-            </div>
-
-            <div className="grid grid-4" style={{
-              gap: 'var(--space-8)',
-              maxWidth: '1000px',
-              margin: '0 auto'
-            }}>
-              <div style={{
-                textAlign: 'center',
-                padding: 'var(--space-6)',
-                background: 'var(--surface-subtle)',
-                borderRadius: 'var(--radius-xl)',
-                border: '1px solid var(--border-subtle)'
-              }}>
-                <div style={{
-                  width: '56px',
-                  height: '56px',
-                  borderRadius: 'var(--radius-xl)',
-                  background: 'var(--accent-brand-muted)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto var(--space-4) auto'
-                }}>
-                  <TrendingUp size={28} style={{ color: 'var(--accent-brand)' }} />
-                </div>
-                <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  Market Growth
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.6 }}>
-                  Rapidly growing agent economy
-                </p>
-              </div>
-
-              <div style={{
-                textAlign: 'center',
-                padding: 'var(--space-6)',
-                background: 'var(--surface-subtle)',
-                borderRadius: 'var(--radius-xl)',
-                border: '1px solid var(--border-subtle)'
-              }}>
-                <div style={{
-                  width: '56px',
-                  height: '56px',
-                  borderRadius: 'var(--radius-xl)',
-                  background: 'var(--accent-secondary-muted)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto var(--space-4) auto'
-                }}>
-                  <Zap size={28} style={{ color: 'var(--accent-secondary)' }} />
-                </div>
-                <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  First Mover
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.6 }}>
-                  Build on open protocols others can use
-                </p>
-              </div>
-
-              <div style={{
-                textAlign: 'center',
-                padding: 'var(--space-6)',
-                background: 'var(--surface-subtle)',
-                borderRadius: 'var(--radius-xl)',
-                border: '1px solid var(--border-subtle)'
-              }}>
-                <div style={{
-                  width: '56px',
-                  height: '56px',
-                  borderRadius: 'var(--radius-xl)',
-                  background: 'var(--accent-tertiary-subtle)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto var(--space-4) auto'
-                }}>
-                  <Users size={28} style={{ color: 'var(--brand-accent)' }} />
-                </div>
-                <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  High Demand
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.6 }}>
-                  AI infrastructure skills are in-demand
-                </p>
-              </div>
-
-              <div style={{
-                textAlign: 'center',
-                padding: 'var(--space-6)',
-                background: 'var(--surface-subtle)',
-                borderRadius: 'var(--radius-xl)',
-                border: '1px solid var(--border-subtle)'
-              }}>
-                <div style={{
-                  width: '56px',
-                  height: '56px',
-                  borderRadius: 'var(--radius-xl)',
-                  background: 'var(--accent-brand-muted)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto var(--space-4) auto'
-                }}>
-                  <Sparkles size={28} style={{ color: 'var(--accent-brand)' }} />
-                </div>
-                <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  Open Standards
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.6 }}>
-                  Built on protocols you can use today
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -607,7 +480,7 @@ export default function LearnPage() {
               marginBottom: 'var(--space-8)',
               color: 'var(--text-primary)'
             }}>
-              Continue Your Journey
+              Related
             </h2>
 
             <div className="grid grid-3" style={{ gap: 'var(--space-6)' }}>

@@ -3,16 +3,17 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { ArrowRight, Zap, Shield, Settings, Link as LinkIcon } from 'lucide-react'
+import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
   title: 'Adapters',
-  description: 'Enterprise adapters for AIPREF, HTTP 402, MCP/A2A, and C2PA. Production-ready integrations for policy enforcement in agentic systems.',
-  keywords: 'AIPREF, HTTP 402, x402, MCP, A2A, C2PA, robots.txt, llms.txt, enterprise adapters',
+  description: 'Protocol adapters for AIPREF, HTTP 402/x402, MCP, A2A, and C2PA. Connect PEAC to external standards.',
+  keywords: 'AIPREF, HTTP 402, x402, MCP, A2A, C2PA, robots.txt, llms.txt, PEAC adapters',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'Adapters | Originary',
-    description: 'Enterprise adapters for AIPREF, HTTP 402, MCP/A2A, and C2PA. Production-ready integrations for policy enforcement in agentic systems.',
+    description: 'Protocol adapters for AIPREF, HTTP 402/x402, MCP, A2A, and C2PA. Connect PEAC to external standards.',
     url: '/products/adapters',
     images: ['/og'],
     siteName: 'Originary',
@@ -53,7 +54,7 @@ export default function Adapters() {
                 color: 'var(--accent-secondary)'
               }}>
                 <LinkIcon size={16} />
-                <span>ENTERPRISE ADAPTERS</span>
+                <span>PROTOCOL ADAPTERS</span>
                 <div style={{
                   background: 'var(--accent-secondary)',
                   color: 'var(--white)',
@@ -72,7 +73,7 @@ export default function Adapters() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--text-primary)'
               }}>
-                <span className="text-gradient">Universal connectivity</span> for agentic infrastructure
+                <span className="text-gradient">Protocol adapters</span> for PEAC
               </h1>
 
               <p style={{
@@ -83,7 +84,7 @@ export default function Adapters() {
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
               }}>
-                Enterprise-grade adapters enabling seamless integration with emerging agentic standards. From AIPREF and HTTP 402 to MCP/A2A and C2PA, our production-ready middleware ensures your infrastructure speaks every protocol agents understand.
+                Each adapter connects PEAC to one external standard: AIPREF for publisher preferences, x402 for payments, MCP for tool context, C2PA for content provenance. They translate between formats so your code stays protocol-neutral.
               </p>
 
               <div style={{
@@ -114,33 +115,9 @@ export default function Adapters() {
                 gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
                 gap: 'var(--space-8)',
                 marginBottom: 'var(--space-10)',
-                maxWidth: '800px',
+                maxWidth: '600px',
                 margin: '0 auto var(--space-10) auto'
               }}>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{
-                    fontSize: 'var(--text-3xl)',
-                    fontWeight: 700,
-                    color: 'var(--accent-secondary)',
-                    marginBottom: 'var(--space-2)'
-                  }}>Active</div>
-                  <div style={{
-                    fontSize: 'var(--text-sm)',
-                    color: 'var(--text-secondary)'
-                  }}>Adapters deployed</div>
-                </div>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{
-                    fontSize: 'var(--text-3xl)',
-                    fontWeight: 700,
-                    color: 'var(--accent-secondary)',
-                    marginBottom: 'var(--space-2)'
-                  }}>100%</div>
-                  <div style={{
-                    fontSize: 'var(--text-sm)',
-                    color: 'var(--text-secondary)'
-                  }}>Conformance tested</div>
-                </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{
                     fontSize: 'var(--text-3xl)',
@@ -151,7 +128,7 @@ export default function Adapters() {
                   <div style={{
                     fontSize: 'var(--text-sm)',
                     color: 'var(--text-secondary)'
-                  }}>Standards supported</div>
+                  }}>Standards covered</div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{
@@ -159,11 +136,11 @@ export default function Adapters() {
                     fontWeight: 700,
                     color: 'var(--accent-secondary)',
                     marginBottom: 'var(--space-2)'
-                  }}>&lt; 50ms</div>
+                  }}>Open</div>
                   <div style={{
                     fontSize: 'var(--text-sm)',
                     color: 'var(--text-secondary)'
-                  }}>Protocol negotiation</div>
+                  }}>Source ({FACTS.license})</div>
                 </div>
               </div>
 
@@ -221,7 +198,7 @@ export default function Adapters() {
                   }}>READY</span>
                 </div>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  AI Preferences standard implementation for collecting and enforcing user preferences across agentic interactions. Supports granular permissions, consent management, and preference inheritance.
+                  Reads AIPREF files (aipref.txt) and maps publisher preferences to PEAC policy fields. Checks training, scraping, and attribution permissions before issuing records.
                 </p>
                 <div style={{
                   display: 'grid',
@@ -230,12 +207,12 @@ export default function Adapters() {
                   marginBottom: 'var(--space-4)'
                 }}>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-brand)' }}>&lt; 10ms</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Response time</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-brand)' }}>IETF</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Draft standard</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-brand)' }}>GDPR</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Compliance</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-brand)' }}>JSON</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Machine-readable</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
@@ -274,7 +251,7 @@ export default function Adapters() {
                   }}>READY</span>
                 </div>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Comprehensive HTTP 402 Payment Required implementation with x402 protocol extensions. Multi-rail payment processing with automatic failover and receipt generation.
+                  Implements the x402 payment challenge flow: returns 402 with pricing headers, verifies payment proof, issues a signed PEAC record on success. Works with Stripe and on-chain rails.
                 </p>
                 <div style={{
                   display: 'grid',
@@ -283,12 +260,12 @@ export default function Adapters() {
                   marginBottom: 'var(--space-4)'
                 }}>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>99.9%</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Success rate</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>x402</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Protocol</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>&lt; 3s</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Settlement</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>Multi-rail</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Stripe + on-chain</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
@@ -380,7 +357,7 @@ export default function Adapters() {
                   }}>READY</span>
                 </div>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Enhanced robots.txt parsing with llms.txt support for AI-specific crawling policies. Intelligent policy interpretation and enforcement for web crawlers and AI agents.
+                  Parses robots.txt (RFC 9309) and llms.txt files to extract crawl and AI-training directives. Maps discovered rules to PEAC content signal fields.
                 </p>
                 <div style={{
                   display: 'grid',
@@ -389,12 +366,12 @@ export default function Adapters() {
                   marginBottom: 'var(--space-4)'
                 }}>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-brand)' }}>&lt; 5ms</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Parse time</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-brand)' }}>RFC 9309</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Compliant</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-brand)' }}>95%</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Cache hit</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-brand)' }}>llms.txt</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Supported</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
@@ -433,7 +410,7 @@ export default function Adapters() {
                   }}>READY</span>
                 </div>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Coalition for Content Provenance and Authenticity standard implementation for digital content verification, provenance tracking, and authenticity validation.
+                  Extracts C2PA content credentials from images and documents, maps provenance claims to PEAC attribution and provenance extension fields.
                 </p>
                 <div style={{
                   display: 'grid',
@@ -442,12 +419,12 @@ export default function Adapters() {
                   marginBottom: 'var(--space-4)'
                 }}>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>&lt; 100ms</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Verification</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>C2PA 2.1</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Standard</div>
                   </div>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>Deterministic</div>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Verification</div>
+                    <div style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--accent-secondary)' }}>Provenance</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>Mapping</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
@@ -539,7 +516,7 @@ export default function Adapters() {
                   }}>ENTERPRISE</span>
                 </div>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Bespoke adapter development for proprietary protocols and emerging standards. Full lifecycle management from specification to production deployment.
+                  Need to connect PEAC to a protocol not listed here? We build custom adapters for proprietary or emerging standards. Contact us with the spec.
                 </p>
                 <div style={{
                   display: 'grid',
@@ -583,7 +560,7 @@ export default function Adapters() {
                   marginBottom: 'var(--space-6)',
                   color: 'var(--white)'
                 }}>
-                  Future-proof your agentic infrastructure
+                  Connect your stack to PEAC
                 </h2>
                 <p style={{
                   fontSize: 'var(--text-xl)',
@@ -593,7 +570,7 @@ export default function Adapters() {
                   margin: '0 auto var(--space-8) auto',
                   lineHeight: 1.6
                 }}>
-                  Enable seamless protocol adoption and standards compliance with enterprise-grade adapters. Our engineering team provides comprehensive support from integration to production deployment with guaranteed SLAs.
+                  All adapters are open source and conformance tested. For custom integrations or deployment support, talk to our engineering team.
                 </p>
                 <div style={{
                   display: 'flex',

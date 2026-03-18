@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Cloudflare Workers Deployment',
-  description: 'Deploy Originary PEAC-Receipt verification at the edge with Cloudflare Workers. Challenge with HTTP 402 and verify receipts in under 5ms.',
+  description: 'Deploy PEAC receipt verification at the edge with Cloudflare Workers. Challenge with HTTP 402 and verify signed records before forwarding to origin.',
   alternates: {
     canonical: '/docs/deploy/cloudflare-worker'
   },
@@ -54,7 +54,7 @@ export default function CloudflareWorkerDocPage() {
               lineHeight: 1.7,
               marginBottom: 'var(--space-12)'
             }}>
-              Deploy Originary receipt verification at the edge with Cloudflare Workers. Challenge requests with HTTP 402 and verify PEAC-Receipts in under 5ms globally.
+              Deploy PEAC receipt verification at the edge with Cloudflare Workers. Challenge requests with HTTP 402 and verify signed records before forwarding to your origin.
             </p>
 
             <div className="card" style={{ marginBottom: 'var(--space-8)', textAlign: 'left' }}>
@@ -70,7 +70,7 @@ export default function CloudflareWorkerDocPage() {
                 Cloudflare Workers run at 300+ edge locations worldwide, making them ideal for verifying PEAC-Receipts with minimal latency. Gate your origin behind a Worker that challenges agents with HTTP 402 and verifies receipts before forwarding requests.
               </p>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                Ed25519 signature verification is fast enough to run at the edge, typically completing in under 5ms. This pattern keeps your origin clean while enforcing payment and policy at the network edge.
+                Ed25519 signature verification is stateless and runs at the edge without network calls. This pattern keeps your origin clean while enforcing payment and policy at the network edge.
               </p>
             </div>
 
@@ -81,7 +81,7 @@ export default function CloudflareWorkerDocPage() {
                 marginBottom: 'var(--space-4)',
                 color: 'var(--text-primary)'
               }}>
-                5-Minute Quickstart
+                Quickstart
               </h2>
               <ol style={{ color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
                 <li>Install Originary Worker template: <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>npm create cloudflare@latest -- --template originary/worker</code></li>

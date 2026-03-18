@@ -76,7 +76,7 @@ const socialLinks = [
   },
   {
     platform: 'X (Twitter)',
-    url: 'https://x.com/originaryinc',
+    url: 'https://x.com/originaryx',
     icon: MessageCircle
   },
   {

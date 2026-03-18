@@ -58,32 +58,6 @@ export const metadata: Metadata = {
   },
 }
 
-const organizationJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  '@id': 'https://www.originary.xyz/#org',
-  name: 'Originary',
-  legalName: 'Poem, Inc.',
-  url: 'https://www.originary.xyz',
-  logo: 'https://www.originary.xyz/logo.svg',
-  sameAs: [
-    'https://x.com/originaryxyz',
-    'https://github.com/peacprotocol/peac',
-    'https://www.linkedin.com/company/originary',
-    'https://bsky.app/profile/originary.bsky.social',
-  ],
-  description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return portable signed records. Steward of the PEAC Protocol open standard.',
-}
-
-const webSiteJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  '@id': 'https://www.originary.xyz/#website',
-  name: 'Originary',
-  url: 'https://www.originary.xyz',
-  description: 'Verify agent requests, apply policy, and return portable signed records. Built on the PEAC Protocol open standard.',
-}
-
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -126,14 +100,6 @@ const faqJsonLd = {
 export default function Page() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

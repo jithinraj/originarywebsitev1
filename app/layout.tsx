@@ -68,7 +68,7 @@ const organizationJsonLd = {
     'https://bsky.app/profile/originary.bsky.social',
     'https://warpcast.com/originary',
     'https://github.com/peacprotocol/peac',
-    'https://peacprotocol.substack.com/'
+    'https://originary.substack.com'
   ],
   logo: 'https://www.originary.xyz/logo.svg',
   contactPoint: [

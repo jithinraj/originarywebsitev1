@@ -106,7 +106,7 @@ export default function AIPREFPage() {
               The AIPREF standard supports multiple policy types: scraping permissions, training data licensing, commercial use restrictions, rate limits, payment requirements, and attribution formats. Agents that support AIPREF will fetch your policy file before accessing content and adjust their behavior accordingly.
             </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-              When combined with Originary, AIPREF policies move from advisory to enforceable. Originary reads your aipref.json configuration and enforces policies at the edge, issuing PEAC-Receipts when agents comply with requirements like payment or attribution. This creates verifiable records of compliance that can be audited offline.
+              Originary reads your aipref.json configuration and maps its fields to PEAC policy checks. When an agent complies with the stated requirements (payment, attribution, usage limits), a signed receipt records the compliance. The receipt can be verified offline by anyone with the issuer&apos;s public key.
             </p>
           </div>
 

@@ -107,7 +107,7 @@ export default function OriginaryAI() {
                 color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-8)'
               }}>
-                Use Originary to instrument agentic commerce, AI consent tracking, and AI provenance tracking for every agent-to-agent transaction. Whether you&rsquo;re enabling agentic transactions or building for the automated economy, PEAC-Receipts provide verifiable proof of every interaction.
+                Use Originary to add signed records to agent transactions: commerce, consent, and provenance tracking. Each interaction produces a PEAC record that can be verified offline.
               </p>
 
               <div style={{

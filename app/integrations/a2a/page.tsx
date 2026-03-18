@@ -161,10 +161,10 @@ curl https://agent-c.example.com/api/action \\
               Benefits
             </h2>
             <ul style={{ color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 'var(--space-6)' }}>
-              <li>Verifiable chain of custody for agent workflows</li>
-              <li>Cryptographic proof of policy compliance</li>
-              <li>Reduced fraud in multi-agent systems</li>
-              <li>Simplified debugging with complete audit trails</li>
+              <li>Each agent-to-agent call produces a signed receipt proving what was requested and delivered</li>
+              <li>Receipts chain together: Agent C can verify the full path back through B to A</li>
+              <li>Offline verification using Ed25519 public keys; no callback to issuer required</li>
+              <li>Receipt fields include resource, timestamp, policy hash, and optional payment evidence</li>
               <li>Standards-based approach compatible with existing protocols</li>
             </ul>
           </div>

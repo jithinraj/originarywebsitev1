@@ -69,7 +69,7 @@ const TRACE_STEPS = [
 ]
 
 const DECODED_RECEIPT = {
-  typ: 'peac-receipt/0.1',
+  typ: 'interaction-record+jwt',
   iss: 'https://www.originary.xyz',
   sub: 'https://www.originary.xyz/demo/paid-resource',
   iat: 1734084000,

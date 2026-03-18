@@ -70,7 +70,7 @@ export default function VercelDocPage() {
                 Vercel Edge Runtime lets you run code at the network edge before requests reach your application. Use Vercel middleware to intercept requests, challenge agents with HTTP 402, and verify PEAC-Receipts before allowing access to protected routes.
               </p>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                This pattern keeps receipt verification logic separate from your application code and ensures sub-10ms verification latency globally.
+                This pattern keeps receipt verification logic separate from your application code. Ed25519 verification is stateless and runs at the edge without network calls.
               </p>
             </div>
 
@@ -81,7 +81,7 @@ export default function VercelDocPage() {
                 marginBottom: 'var(--space-4)',
                 color: 'var(--text-primary)'
               }}>
-                5-Minute Quickstart
+                Quickstart
               </h2>
               <ol style={{ color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-6)' }}>
                 <li>Install Originary SDK: <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>npm install @originary/vercel</code></li>

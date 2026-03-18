@@ -112,7 +112,7 @@ export default function ContactPage() {
               </h2>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <a
-                  href="https://github.com/originaryx"
+                  href="https://github.com/peacprotocol/peac"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-ghost"

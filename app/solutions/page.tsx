@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Solutions',
   description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
   keywords: 'AI agents, orchestration protocol, AI coordination, PEAC protocol',
-  robots: 'noindex,nofollow',
+  robots: 'index,follow',
   openGraph: {
     title: 'Solutions',
     description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
@@ -48,10 +48,10 @@ export default function SolutionsPage() {
                 SOLUTIONS
               </div>
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">Solutions for Every Role</span>
+                <span className="text-gradient">Who uses Originary</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', marginBottom: 'var(--space-8)' }}>
-                Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.
+                Publishers, API providers, AI builders, and compliance teams use Originary to publish machine-readable policies and collect signed records of what happened.
               </p>
               <a href="mailto:contact@originary.xyz" className="btn btn-primary">
                 Talk to us
@@ -63,9 +63,9 @@ export default function SolutionsPage() {
         <section className="section">
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Tailored Solutions for Every Role</h2>
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>By role</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
-                Whether you&apos;re protecting content, monetizing APIs, or building AI systems, our platform provides the tools you need for transparent, verifiable interactions.
+                Each role has a different starting point. Pick yours.
               </p>
             </div>
 
@@ -78,7 +78,7 @@ export default function SolutionsPage() {
                   <h3>Content Publishers</h3>
                 </div>
                 <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                  Protect intellectual property while enabling legitimate AI training through verifiable consent and attribution.
+                  Publish a peac.txt policy file declaring how AI agents may use your content. Collect signed records when agents comply.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
@@ -106,12 +106,12 @@ export default function SolutionsPage() {
                   <h3>API Providers</h3>
                 </div>
                 <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                  Transform APIs into revenue-generating assets with automated billing, usage tracking, and compliance.
+                  Add HTTP 402 payment gates to API endpoints. Agents pay per request and receive a signed receipt. No accounts or subscriptions required.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <span style={{ color: 'var(--accent-brand)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Instant Monetization</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>HTTP 402 Payment Gates</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <span style={{ color: 'var(--accent-brand)' }}>✓</span>
@@ -119,7 +119,7 @@ export default function SolutionsPage() {
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <span style={{ color: 'var(--accent-brand)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Global Payment Support</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Signed Receipt per Request</span>
                   </div>
                 </div>
                 <a href="/solutions/api-providers" className="btn btn-secondary" style={{ width: '100%' }}>
@@ -134,7 +134,7 @@ export default function SolutionsPage() {
                   <h3>AI Builders</h3>
                 </div>
                 <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                  Build ethical AI systems that respect policies, maintain consent, and provide verifiable interaction records.
+                  Check publisher policies before accessing content. Issue receipts that prove your agent respected terms. Audit trails for every interaction.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
@@ -147,7 +147,7 @@ export default function SolutionsPage() {
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <span style={{ color: 'var(--accent-brand)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Scalable Integration</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Offline Verification</span>
                   </div>
                 </div>
                 <a href="/solutions/ai-builders" className="btn btn-secondary" style={{ width: '100%' }}>
@@ -162,7 +162,7 @@ export default function SolutionsPage() {
                   <h3>Enterprise</h3>
                 </div>
                 <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                  Governance and compliance for AI at scale.
+                  Centralized policy management and signed audit trails across AI workloads. Self-hostable or managed.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
@@ -175,7 +175,7 @@ export default function SolutionsPage() {
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                     <span style={{ color: 'var(--accent-brand)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Enterprise Scale</span>
+                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Self-hostable or Managed</span>
                   </div>
                 </div>
                 <a href="/solutions/enterprises" className="btn btn-secondary" style={{ width: '100%' }}>
@@ -261,9 +261,9 @@ export default function SolutionsPage() {
         <section className="section">
           <div className="container">
             <div className="card cta-card">
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Ready to Get Started?</h2>
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>Get started</h2>
               <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'var(--white)', lineHeight: 1.6 }}>
-                Join organizations building the future of AI coordination
+                Install the open-source packages or talk to us about your use case.
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--accent-brand)' }}>

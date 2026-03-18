@@ -341,7 +341,7 @@ export default function PEACInProduction() {
                   Edge verification in your infrastructure with Originary Cloud for observability and management.
                 </p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                  {['Data stays in your VPC', 'Sub-10ms local latency', 'Central management', 'Best of both worlds'].map((item) => (
+                  {['Data stays in your VPC', 'Local verification', 'Central management', 'Cloud control plane'].map((item) => (
                     <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                       <CheckCircle size={16} style={{ color: 'var(--accent-secondary)', flexShrink: 0 }} />
                       {item}
@@ -452,7 +452,7 @@ export default function PEACInProduction() {
                 <LineChart size={24} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
                 <h4 style={{ marginBottom: 'var(--space-2)' }}>Quarterly reviews</h4>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                  Regular business reviews with roadmap previews and capacity planning
+                  Regular business reviews with progress updates and scaling guidance
                 </p>
               </div>
             </div>

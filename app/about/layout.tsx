@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'About',
   description: 'Originary builds middleware, tools, and SDKs for verifiable agent interactions. PEAC is the open protocol underneath.',
-  robots: 'noindex,nofollow',
+  robots: 'index,follow',
   alternates: {
     canonical: '/about'
   },
