@@ -215,8 +215,8 @@ export const metadata: Metadata = {
     title: 'Originary | Verify agent requests, apply policy, return portable signed records',
     description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return portable signed records. Built on PEAC. Self-hostable. Offline-verifiable.',
     images: ['/og'],
-    site: '@originaryxyz',
-    creator: '@originaryxyz',
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: {
     index: true,
@@ -263,23 +263,10 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
         <link rel="apple-touch-icon" href="/assets/img/favicon.svg" />
         <link rel="manifest" href="/manifest.json" />
-        {/* Performance: DNS prefetch and preconnect for external resources */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://sr-client-cfg.amplitude.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://api2.amplitude.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://www.clarity.ms" />
-        <link rel="dns-prefetch" href="https://c.clarity.ms" />
-        <Script id="originary-organization-json-ld" type="application/ld+json" strategy="beforeInteractive">
-          {JSON.stringify(organizationJsonLd)}
-        </Script>
-        <Script id="originary-website-json-ld" type="application/ld+json" strategy="beforeInteractive">
-          {JSON.stringify(websiteJsonLd)}
-        </Script>
-        <Script id="originary-sitenav-json-ld" type="application/ld+json" strategy="beforeInteractive">
-          {JSON.stringify(siteNavJsonLd)}
-        </Script>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavJsonLd) }} />
       </head>
       <body>
         <PerformanceMonitor />

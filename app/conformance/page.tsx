@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import { ArrowRight, TestTube, CheckCircle, Layers, Award } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Conformance | Originary',
+  title: 'Conformance',
   description: 'PEAC protocol conformance testing. Test vectors, validators, and compatibility levels for implementations.',
   alternates: {
     canonical: '/conformance'

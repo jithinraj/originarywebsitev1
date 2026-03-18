@@ -97,7 +97,7 @@ export default function ReceiptsPage() {
                 }}
               >
                 <span className="receipts-badge-dot" />
-                PEAC-RECEIPTS
+                SIGNED RECORDS
               </div>
 
               <h1
@@ -108,8 +108,8 @@ export default function ReceiptsPage() {
                   transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s'
                 }}
               >
-                Originary Receipts:
-                <span className="receipts-headline-gradient"> verifiable records for every AI interaction</span>
+                Signed records
+                <span className="receipts-headline-gradient"> for every AI interaction</span>
               </h1>
 
               <p
@@ -208,7 +208,7 @@ export default function ReceiptsPage() {
               <div className="receipts-structure-info">
                 <h2 className="receipts-section-title">Receipt anatomy</h2>
                 <p className="receipts-section-subtitle" style={{ textAlign: 'left', margin: 0 }}>
-                  Each PEAC-Receipt is a signed JWS payload containing interaction metadata, policy bindings, and optional payment evidence.
+                  Each signed record is a JWS payload containing interaction metadata, policy bindings, and optional payment evidence.
                 </p>
 
                 <div className="receipts-anatomy-list">
@@ -351,7 +351,7 @@ export default function ReceiptsPage() {
               <div>
                 <strong>A note on legal interpretation</strong>
                 <p>
-                  PEAC-Receipts provide signed evidence of interactions and policy snapshots.
+                  Signed records provide evidence of interactions and policy snapshots.
                   How this evidence is interpreted in legal or regulatory contexts depends on jurisdiction
                   and specific circumstances. Consult legal counsel for compliance guidance.
                 </p>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Originary builds and stewards PEAC, an open standard for portable decision records. Production components for policy and receipt verification.',
+  description: 'Originary builds middleware, tools, and SDKs for verifiable agent interactions. PEAC is the open protocol underneath.',
   robots: 'noindex,nofollow',
   alternates: {
     canonical: '/about'
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About | Originary',
+    title: 'About Originary',
     description: 'Originary builds and stewards PEAC, an open standard for portable decision records for agent interactions.',
     images: ['/og'],
     site: '@originaryx',

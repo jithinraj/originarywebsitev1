@@ -250,7 +250,7 @@ export default function AgentAuditorPage() {
                 maxWidth: '620px',
                 margin: '0 auto var(--space-10) auto',
               }}>
-                A receipt is a signed record issued when an agent takes an action — a tool call, an API request, a payment, a consent. Agent Auditor opens any receipt file and shows you exactly what it contains, verified against the signature.
+                A receipt is a signed record issued when an agent takes an action — a tool call, an API request, a payment, a consent. Agent Auditor opens any receipt file and shows you exactly what it contains, verified against the signature. For raw JWS token inspection, see the <Link href="/verify" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>Inspector</Link>.
               </p>
 
               <div style={{

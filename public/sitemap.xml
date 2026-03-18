@@ -433,6 +433,26 @@
     <priority>0.4</priority>
   </url>
 
+  <!-- Informational -->
+  <url>
+    <loc>https://www.originary.xyz/status</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.originary.xyz/what-is-originary</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.originary.xyz/why-peac</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
   <!-- Platform & Research -->
   <url>
     <loc>https://www.originary.xyz/platform</loc>
@@ -484,7 +504,7 @@
     <loc>https://www.originary.xyz/trust</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.originary.xyz/security</loc>

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Governance | Originary',
+  title: 'Governance',
   description: 'How the PEAC protocol evolves. Governance process, versioning rules, and neutrality guarantees.',
   alternates: {
     canonical: '/governance'
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     title: 'Governance | Originary',
     description: 'How the PEAC protocol evolves. Governance process, versioning rules, and neutrality guarantees.',
     images: ['/og'],
+    site: '@originaryx',
   },
   robots: 'index,follow',
 }

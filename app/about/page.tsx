@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
+import { FACTS } from '@/lib/facts'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import {
@@ -106,33 +107,6 @@ export default function AboutPage() {
           }}
         >
           <div
-            style={{
-              position: 'absolute',
-              top: '5%',
-              right: '8%',
-              width: '600px',
-              height: '600px',
-              borderRadius: '50%',
-              background: 'var(--gradient-orb-purple)',
-              animation: 'float 8s ease-in-out infinite',
-              pointerEvents: 'none',
-            }}
-          />
-          <div
-            style={{
-              position: 'absolute',
-              bottom: '5%',
-              left: '3%',
-              width: '500px',
-              height: '500px',
-              borderRadius: '50%',
-              background: 'var(--gradient-orb-teal)',
-              animation: 'float 6s ease-in-out infinite reverse',
-              pointerEvents: 'none',
-            }}
-          />
-
-          <div
             className="container"
             style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '860px', margin: '0 auto' }}
           >
@@ -161,7 +135,7 @@ export default function AboutPage() {
                 fontWeight: 400,
               }}
             >
-              We build the evidence layer for a web where agents act on your behalf: verifiable interaction records for AI agents and APIs.
+              Middleware, tools, and SDKs that make agent interactions verifiable. Built on PEAC, the open protocol for signed interaction records.
             </p>
 
             <div
@@ -234,6 +208,24 @@ export default function AboutPage() {
               of the issuing service, and used across audits, disputes, and partner workflows.
             </p>
 
+            <p
+              style={{
+                ...reveal(mission.visible, 0.15),
+                fontSize: 'var(--text-base)',
+                color: 'var(--text-secondary)',
+                lineHeight: 1.7,
+                textAlign: 'center',
+                maxWidth: '680px',
+                margin: '0 auto var(--space-12) auto',
+                fontStyle: 'italic',
+              }}
+            >
+              Agents are crossing organizational boundaries every day: booking, purchasing,
+              accessing tools, calling APIs. When software acts on behalf of people across
+              trust boundaries, the decisions need to be explicit, verifiable, and portable.
+              That is what Originary builds.
+            </p>
+
             <div
               style={{
                 ...reveal(mission.visible, 0.18),
@@ -266,7 +258,7 @@ export default function AboutPage() {
                   PEAC Protocol
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  The open standard for policy discovery and verifiable receipts. Settlement is optional and adapter-based.
+                  The open format underneath: protocol specification, wire format, conformance suite, and reference implementation. Apache-2.0, no CLA.
                 </p>
               </div>
               <div
@@ -293,7 +285,7 @@ export default function AboutPage() {
                   Originary Platform
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  Production components that help teams author policy, enforce decisions, and verify receipts in real systems.
+                  The product surface: middleware, tools, and SDKs that help teams author policy, enforce decisions, and verify receipts in production.
                 </p>
               </div>
             </div>
@@ -312,9 +304,9 @@ export default function AboutPage() {
           <div ref={statsSection.ref} className="container stats-grid" style={{ maxWidth: '820px', margin: '0 auto' }}>
             {[
               { value: '10', label: 'Verification Domains' },
-              { value: '28', label: 'npm Packages' },
-              { value: '5,675', label: 'Tests Passing' },
-              { value: 'Apache-2.0', label: 'License' },
+              { value: String(FACTS.publishedPackageCount), label: 'npm Packages' },
+              { value: FACTS.testsCount.toLocaleString(), label: 'Tests Passing' },
+              { value: FACTS.license, label: 'License' },
             ].map((stat, i) => (
               <div key={stat.label} style={{ ...reveal(statsSection.visible, i * 0.06), textAlign: 'center' }}>
                 <div
@@ -770,11 +762,11 @@ export default function AboutPage() {
                 }}
               >
                 <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, color: 'var(--accent-success)', marginBottom: 'var(--space-4)' }}>
-                  PEAC Protocol (Open)
+                  PEAC Protocol (Open Format)
                 </h3>
                 <ul style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-5)', margin: 0 }}>
+                  <li>Protocol spec, wire format, and conformance suite</li>
                   <li>Apache-2.0 licensed, no CLA required</li>
-                  <li>Full spec, test vectors, and conformance suite</li>
                   <li>Anyone can implement without permission</li>
                   <li>Wire format frozen until v1.0</li>
                   <li>Independent implementations encouraged</li>
@@ -792,14 +784,14 @@ export default function AboutPage() {
                 }}
               >
                 <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }}>
-                  Originary Platform (Hosted)
+                  Originary Platform (Product Surface)
                 </h3>
                 <ul style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-5)', margin: 0 }}>
+                  <li>Middleware, tools, and SDKs for production use</li>
                   <li>Managed policy authoring and enforcement</li>
                   <li>Evidence export, audit views, dashboards</li>
                   <li>Gateway for edge enforcement and HTTP 402</li>
                   <li>Support, SLAs, and compliance guidance</li>
-                  <li>Interoperable with any conformant issuer</li>
                 </ul>
               </div>
             </div>

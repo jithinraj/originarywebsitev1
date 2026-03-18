@@ -1841,11 +1841,11 @@ table {
   --border-active: #9D9C96;
   --border-brand: rgba(22, 22, 20, 0.2);
 
-  /* Text colors - warm charcoal */
+  /* Text colors - warm charcoal (WCAG AA compliant on #FAFAF7) */
   --text-primary: #161614;
   --text-secondary: #5C5B56;
-  --text-tertiary: #9D9C96;
-  --text-muted: #C9C7C1;
+  --text-tertiary: #767571;
+  --text-muted: #908E88;
   --text-inverted: #FAFAF7;
 
   /* Accent colors - dark charcoal (matches homepage) */
