@@ -15,7 +15,7 @@ const columns = [
     title: 'Standard',
     links: [
       { label: 'PEAC', href: '/peac' },
-      { label: 'Conformance', href: '/conform' },
+      { label: 'Conformance', href: '/conformance' },
       { label: 'Changelog', href: '/changelog' },
       { label: 'GitHub', href: 'https://github.com/peacprotocol/peac' },
     ],
