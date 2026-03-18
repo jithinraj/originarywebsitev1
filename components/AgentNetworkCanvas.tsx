@@ -146,7 +146,7 @@ export default function AgentNetworkCanvas({ className = '' }: AgentNetworkCanva
       const x = packet.from.x + dx * packet.progress
       const y = packet.from.y + dy * packet.progress
 
-      let color = '#635bff'
+      let color = '#161614'
       let label = 'REQ'
 
       if (packet.phase === 'challenge') {

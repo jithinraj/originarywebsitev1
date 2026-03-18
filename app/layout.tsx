@@ -171,10 +171,22 @@ const siteNavJsonLd = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Originary | Verifiable Records for Automated Interactions',
+    default: 'Originary | Verify agent requests, apply policy, return portable signed records',
     template: '%s | Originary',
   },
-  description: 'Turn API calls, tool runs, and agent handoffs into portable signed records you can verify independently. Open-source packages built on the PEAC standard. Apache-2.0.',
+  description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return portable signed records. Built on PEAC. Self-hostable. Offline-verifiable.',
+  keywords: [
+    'agent verification',
+    'API access control',
+    'request evaluation',
+    'signed records',
+    'portable records',
+    'PEAC Protocol',
+    'MCP server',
+    'agent-facing API',
+    'open source',
+    'self-hostable',
+  ],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
@@ -185,26 +197,26 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://www.originary.xyz'),
   openGraph: {
-    title: 'Originary | Verifiable Records for Automated Interactions',
-    description: 'Turn API calls, tool runs, and agent handoffs into portable signed records you can verify independently. Open-source packages built on the PEAC standard. Apache-2.0.',
+    title: 'Originary | Verify agent requests, apply policy, return portable signed records',
+    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return portable signed records. Built on PEAC. Self-hostable. Offline-verifiable.',
     url: 'https://www.originary.xyz',
     siteName: 'Originary',
     images: [{
       url: '/og',
       width: 1200,
       height: 630,
-      alt: 'Originary - Verifiable records for automated interactions'
+      alt: 'Originary: verify agent requests, apply policy, return portable signed records'
     }],
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Verifiable Records for Automated Interactions',
-    description: 'Turn API calls, tool runs, and agent handoffs into portable signed records you can verify independently. Open-source packages built on the PEAC standard. Apache-2.0.',
+    title: 'Originary | Verify agent requests, apply policy, return portable signed records',
+    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return portable signed records. Built on PEAC. Self-hostable. Offline-verifiable.',
     images: ['/og'],
-    site: '@originaryx',
-    creator: '@originaryx',
+    site: '@originaryxyz',
+    creator: '@originaryxyz',
   },
   robots: {
     index: true,
@@ -224,7 +236,7 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: '#ffffff',
+  themeColor: '#FAFAF7',
   colorScheme: 'light',
   viewportFit: 'cover',
 }

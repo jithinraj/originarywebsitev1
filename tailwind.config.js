@@ -9,6 +9,40 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        fg: {
+          DEFAULT: 'var(--color-fg)',
+          secondary: 'var(--color-fg-secondary)',
+          muted: 'var(--color-fg-muted)',
+          faint: 'var(--color-fg-faint)',
+          inverse: 'var(--color-fg-inverse)',
+        },
+        surface: {
+          DEFAULT: 'var(--color-surface)',
+          secondary: 'var(--color-surface-secondary)',
+          tertiary: 'var(--color-surface-tertiary)',
+          elevated: 'var(--color-surface-elevated)',
+          invert: 'var(--color-surface-invert)',
+        },
+        border: {
+          DEFAULT: 'var(--color-border)',
+          strong: 'var(--color-border-strong)',
+          subtle: 'var(--color-border-subtle)',
+        },
+        verified: {
+          DEFAULT: 'var(--color-verified)',
+          bg: 'var(--color-verified-bg)',
+          border: 'var(--color-verified-border)',
+        },
+        policy: {
+          DEFAULT: 'var(--color-policy)',
+          bg: 'var(--color-policy-bg)',
+          border: 'var(--color-policy-border)',
+        },
+        audit: {
+          DEFAULT: 'var(--color-audit)',
+          bg: 'var(--color-audit-bg)',
+          border: 'var(--color-audit-border)',
+        },
         primary: {
           50: '#eff6ff',
           100: '#dbeafe',

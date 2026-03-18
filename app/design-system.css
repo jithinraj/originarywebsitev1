@@ -804,6 +804,13 @@ p {
   background-clip: text;
 }
 
+[data-theme="light"] .text-gradient {
+  background: linear-gradient(135deg, #161614 0%, #5C5B56 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* CTA Card - ensures legibility on gradient backgrounds */
 .cta-card {
   background: var(--gradient-brand);
@@ -1454,14 +1461,14 @@ table {
 
 /* === TEXT GRADIENT ENHANCEMENTS === */
 .text-gradient-hero {
-  background: linear-gradient(180deg, var(--gray-900) 0%, var(--gray-600) 100%);
+  background: linear-gradient(180deg, var(--text-primary) 0%, var(--text-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-shine {
-  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 50%, var(--brand-primary) 100%);
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 50%, var(--text-primary) 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1814,104 +1821,183 @@ table {
 
 /* === LIGHT MODE OVERRIDE === */
 /* Apply [data-theme="light"] to html element for light mode */
+/* Warm cream palette aligned with homepage design */
 [data-theme="light"] {
   color-scheme: light;
 
-  /* Surface colors */
-  --surface-base: #ffffff;
-  --surface-elevated: #fafafa;
+  /* Surface colors - warm cream palette */
+  --surface-base: #FAFAF7;
+  --surface-elevated: #FFFFFF;
   --surface-elevated-translucent: rgba(255, 255, 255, 0.85);
-  --surface-subtle: #f4f4f5;
-  --surface-card: rgba(255, 255, 255, 1);
-  --surface-card-hover: rgba(250, 250, 250, 1);
-  --surface-overlay: rgba(255, 255, 255, 0.9);
+  --surface-subtle: #F3F2EE;
+  --surface-card: #FFFFFF;
+  --surface-card-hover: #FAFAF7;
+  --surface-overlay: rgba(250, 250, 247, 0.9);
 
-  /* Border colors */
-  --border-subtle: rgba(0, 0, 0, 0.04);
-  --border-default: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.12);
-  --border-active: rgba(0, 0, 0, 0.16);
-  --border-brand: rgba(99, 91, 255, 0.3);
+  /* Border colors - warm */
+  --border-subtle: #ECEAE5;
+  --border-default: #E2E0DB;
+  --border-hover: #C9C7C1;
+  --border-active: #9D9C96;
+  --border-brand: rgba(22, 22, 20, 0.2);
 
-  /* Text colors */
-  --text-primary: #09090b;
-  --text-secondary: #3f3f46;
-  --text-tertiary: #71717a;
-  --text-muted: #a1a1aa;
-  --text-inverted: #fafafa;
+  /* Text colors - warm charcoal */
+  --text-primary: #161614;
+  --text-secondary: #5C5B56;
+  --text-tertiary: #9D9C96;
+  --text-muted: #C9C7C1;
+  --text-inverted: #FAFAF7;
 
-  /* Accent colors */
-  --accent-brand: #635bff;
-  --accent-brand-hover: #5248e6;
-  --accent-brand-muted: rgba(99, 91, 255, 0.1);
-  --accent-brand-glow: rgba(99, 91, 255, 0.25);
+  /* Accent colors - dark charcoal (matches homepage) */
+  --accent-brand: #161614;
+  --accent-brand-hover: #2E2E2A;
+  --accent-brand-muted: rgba(22, 22, 20, 0.08);
+  --accent-brand-subtle: rgba(22, 22, 20, 0.06);
+  --accent-brand-faint: rgba(22, 22, 20, 0.03);
+  --accent-brand-glow: rgba(22, 22, 20, 0.15);
 
-  /* Success - Light mode */
-  --accent-success: #16a34a;
-  --accent-success-faint: rgba(22, 163, 74, 0.05);
-  --accent-success-subtle: rgba(22, 163, 74, 0.1);
-  --accent-success-muted: rgba(22, 163, 74, 0.1);
-  --accent-success-border: rgba(22, 163, 74, 0.25);
-  --accent-success-glow: rgba(22, 163, 74, 0.2);
+  /* Success - muted green */
+  --accent-success: #2D6A4F;
+  --accent-success-faint: rgba(45, 106, 79, 0.05);
+  --accent-success-subtle: rgba(45, 106, 79, 0.08);
+  --accent-success-muted: rgba(45, 106, 79, 0.1);
+  --accent-success-border: rgba(45, 106, 79, 0.2);
+  --accent-success-glow: rgba(45, 106, 79, 0.15);
 
-  /* Warning - Light mode */
-  --accent-warning: #d97706;
-  --accent-warning-muted: rgba(217, 119, 6, 0.1);
-  --accent-warning-border: rgba(217, 119, 6, 0.25);
+  /* Warning - warm amber */
+  --accent-warning: #92400E;
+  --accent-warning-muted: rgba(146, 64, 14, 0.1);
+  --accent-warning-border: rgba(146, 64, 14, 0.2);
 
-  /* Error - Light mode */
+  /* Error - warm red */
   --accent-error: #dc2626;
-  --accent-error-muted: rgba(220, 38, 38, 0.1);
-  --accent-error-border: rgba(220, 38, 38, 0.25);
+  --accent-error-muted: rgba(220, 38, 38, 0.08);
+  --accent-error-border: rgba(220, 38, 38, 0.2);
 
-  /* Hero gradient mesh (light mode) */
+  /* Hero gradient mesh (light mode - subtle warm) */
   --gradient-hero-mesh:
-    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(99, 91, 255, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(0, 212, 170, 0.04) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(22, 22, 20, 0.02) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(22, 22, 20, 0.015) 0%, transparent 50%);
 
-  /* Glass effects (light mode) */
-  --glass-bg: rgba(255, 255, 255, 0.7);
+  /* Glass effects (light mode - warm) */
+  --glass-bg: rgba(250, 250, 247, 0.7);
   --glass-bg-hover: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(0, 0, 0, 0.06);
-  --glass-border-hover: rgba(0, 0, 0, 0.1);
+  --glass-border: #E2E0DB;
+  --glass-border-hover: #C9C7C1;
 
-  /* Glassmorphism cards (light mode - solid backgrounds) */
-  --glass-card-bg: #ffffff;
-  --glass-card-bg-hover: #fafafa;
-  --glass-card-border: rgba(0, 0, 0, 0.08);
-  --glass-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.04);
-  --glass-card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  /* Cards (light mode - warm) */
+  --glass-card-bg: #FFFFFF;
+  --glass-card-bg-hover: #FAFAF7;
+  --glass-card-border: #E2E0DB;
+  --glass-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px #E2E0DB;
+  --glass-card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.06), 0 0 0 1px #C9C7C1;
 
-  /* Gradient mesh backgrounds (light mode - disabled) */
+  /* Gradient mesh backgrounds (disabled) */
   --gradient-mesh-purple: transparent;
   --gradient-mesh-teal: transparent;
   --gradient-mesh-light-purple: transparent;
   --gradient-mesh-light-teal: transparent;
 
-  /* Orb colors (light mode - disabled) */
+  /* Orb colors (disabled) */
   --orb-purple: transparent;
   --orb-teal: transparent;
 
-  /* Glow effects (reduced for light mode) */
-  --glow-brand: 0 0 30px -10px rgba(99, 91, 255, 0.3);
+  /* Glow effects (subtle) */
+  --glow-brand: 0 0 30px -10px rgba(22, 22, 20, 0.2);
 
-  /* Code syntax theme (light mode) */
-  --code-bg: #f4f4f5;
-  --code-bg-header: #e4e4e7;
-  --code-color-key: #2563eb;
-  --code-color-string: #16a34a;
-  --code-color-number: #d97706;
-  --code-color-comment: #6b7280;
-  --code-color-function: #7c3aed;
-  --code-color-keyword: #db2777;
-  --glow-brand-intense: 0 0 40px -10px rgba(99, 91, 255, 0.4);
-  --glow-success: 0 0 30px -10px rgba(0, 217, 36, 0.3);
+  /* Code syntax theme */
+  --code-bg: #F3F2EE;
+  --code-bg-header: #E2E0DB;
+  --code-color-key: #1E4D8C;
+  --code-color-string: #2D6A4F;
+  --code-color-number: #92400E;
+  --code-color-comment: #9D9C96;
+  --code-color-function: #5C5B56;
+  --code-color-keyword: #161614;
+  --glow-brand-intense: 0 0 40px -10px rgba(22, 22, 20, 0.3);
+  --glow-success: 0 0 30px -10px rgba(45, 106, 79, 0.2);
 
-  /* Shadows (light mode) */
-  --shadow-card: 0 4px 24px -8px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--border-default);
-  --shadow-card-hover: 0 12px 40px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--border-hover);
-  --shadow-elevated: 0 24px 48px -16px rgba(0, 0, 0, 0.15);
-  --shadow-modal: 0 32px 64px -16px rgba(0, 0, 0, 0.2);
+  /* Shadows - warm (override dark mode purple glow shadows) */
+  --shadow-glow: 0 0 32px -8px rgba(22, 22, 20, 0.15);
+  --shadow-glow-brand: 0 4px 20px -4px rgba(22, 22, 20, 0.2), 0 8px 40px -8px rgba(22, 22, 20, 0.1);
+  --shadow-glow-electric: 0 0 20px -4px rgba(30, 77, 140, 0.15), 0 0 40px -8px rgba(30, 77, 140, 0.1);
+  --shadow-glow-electric-intense: 0 0 30px -4px rgba(30, 77, 140, 0.2), 0 0 60px -8px rgba(30, 77, 140, 0.1);
+
+  /* Secondary accent - warm sage (replaces teal #00d4aa) */
+  --accent-secondary: #2D6A4F;
+  --accent-secondary-muted: rgba(45, 106, 79, 0.15);
+  --accent-secondary-subtle: rgba(45, 106, 79, 0.08);
+  --accent-secondary-faint: rgba(45, 106, 79, 0.04);
+  --accent-secondary-border: rgba(45, 106, 79, 0.2);
+
+  /* Tertiary accent - warm amber (replaces orange #ff6b35) */
+  --accent-tertiary: #92400E;
+  --accent-tertiary-muted: rgba(146, 64, 14, 0.12);
+  --accent-tertiary-subtle: rgba(146, 64, 14, 0.08);
+  --accent-tertiary-faint: rgba(146, 64, 14, 0.04);
+
+  /* Electric accent - disabled in warm theme */
+  --accent-electric: #1E4D8C;
+  --accent-electric-glow: rgba(30, 77, 140, 0.15);
+  --accent-electric-light: #1E4D8C;
+  --accent-electric-dim: rgba(30, 77, 140, 0.08);
+
+  /* Brand colors - warm charcoal */
+  --brand-primary: #161614;
+  --brand-primary-rgb: 22, 22, 20;
+  --brand-primary-light: #2E2E2A;
+  --brand-primary-dark: #0A0A09;
+  --brand-secondary: #2D6A4F;
+  --brand-accent: #92400E;
+  --info: #1E4D8C;
+
+  /* Legacy semantic colors (override dark defaults) */
+  --success: #2D6A4F;
+  --warning: #92400E;
+  --error: #dc2626;
+
+  /* On-brand border (for CTAs on dark backgrounds) */
+  --border-on-brand: rgba(255, 255, 255, 0.25);
+
+  /* Gradients - warm and subtle */
+  --gradient-brand: linear-gradient(135deg, #161614 0%, #2E2E2A 50%, #2D6A4F 100%);
+  --gradient-surface: linear-gradient(135deg, rgba(250,250,247,0.9) 0%, rgba(255,255,255,0.7) 100%);
+  --gradient-mesh: radial-gradient(circle at 25% 25%, rgba(22,22,20,0.02) 0%, transparent 50%),
+                   radial-gradient(circle at 75% 75%, rgba(45,106,79,0.02) 0%, transparent 50%),
+                   radial-gradient(circle at 50% 50%, rgba(146,64,14,0.01) 0%, transparent 50%);
+  --gradient-hero: linear-gradient(180deg, rgba(22,22,20,0.01) 0%, transparent 100%);
+  --gradient-section: linear-gradient(135deg, rgba(22,22,20,0.02) 0%, rgba(45,106,79,0.02) 100%);
+  --gradient-card-featured: linear-gradient(135deg, rgba(22,22,20,0.01) 0%, rgba(45,106,79,0.01) 100%);
+  --gradient-orb-purple: radial-gradient(circle, rgba(22,22,20,0.03) 0%, transparent 70%);
+  --gradient-orb-teal: radial-gradient(circle, rgba(45,106,79,0.02) 0%, transparent 70%);
+  --gradient-overlay-white: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.05) 0%, transparent 50%);
+
+  /* Gradient mesh backgrounds - transparent (disabled) */
+  --gradient-mesh-purple: transparent;
+  --gradient-mesh-teal: transparent;
+  --gradient-mesh-light-purple: transparent;
+  --gradient-mesh-light-teal: transparent;
+
+  /* Orb colors - disabled */
+  --orb-purple: transparent;
+  --orb-teal: transparent;
+
+  /* Glass card shadows - warm */
+  --glass-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px #E2E0DB;
+  --glass-card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.06), 0 0 0 1px #C9C7C1;
+
+  /* Glow effects - warm and subtle */
+  --glow-brand: 0 0 30px -10px rgba(22, 22, 20, 0.2);
+  --glow-brand-intense: 0 0 40px -10px rgba(22, 22, 20, 0.3);
+  --glow-success: 0 0 30px -10px rgba(45, 106, 79, 0.2);
+  --glow-electric: 0 0 30px -10px rgba(30, 77, 140, 0.2);
+  --glow-subtle: 0 0 40px -15px rgba(0, 0, 0, 0.04);
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px -8px rgba(0, 0, 0, 0.06), 0 0 0 1px #E2E0DB;
+  --shadow-card-hover: 0 12px 40px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px #C9C7C1;
+  --shadow-elevated: 0 24px 48px -16px rgba(0, 0, 0, 0.12);
+  --shadow-modal: 0 32px 64px -16px rgba(0, 0, 0, 0.18);
 }
 
 /* === NAV GLASSMORPHISM === */

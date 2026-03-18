@@ -13,11 +13,11 @@ export async function GET() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#ffffff',
+          backgroundColor: '#FAFAF7',
           padding: '60px 80px',
         }}
       >
-        {/* Logo mark - refined O ring with purple center */}
+        {/* Logo mark */}
         <div
           style={{
             display: 'flex',
@@ -27,20 +27,32 @@ export async function GET() {
             gap: '20px',
           }}
         >
-          <svg
-            width="64"
-            height="64"
-            viewBox="0 0 256 256"
+          <div
+            style={{
+              width: '56px',
+              height: '56px',
+              borderRadius: '14px',
+              backgroundColor: '#161614',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
           >
-            <rect width="256" height="256" rx="48" fill="#09090b" />
-            <circle cx="128" cy="128" r="72" fill="none" stroke="#ffffff" strokeWidth="24" />
-            <circle cx="128" cy="128" r="24" fill="#635BFF" />
-          </svg>
+            <span
+              style={{
+                fontSize: '24px',
+                fontWeight: 700,
+                color: '#FAFAF7',
+              }}
+            >
+              O
+            </span>
+          </div>
           <span
             style={{
               fontSize: '48px',
               fontWeight: 600,
-              color: '#09090b',
+              color: '#161614',
               letterSpacing: '-0.02em',
             }}
           >
@@ -59,25 +71,25 @@ export async function GET() {
         >
           <span
             style={{
-              fontSize: '72px',
+              fontSize: '64px',
               fontWeight: 700,
-              color: '#000000',
+              color: '#161614',
               lineHeight: 1.1,
               letterSpacing: '-0.03em',
             }}
           >
-            Verify agent interactions.
+            Verify agent requests.
           </span>
           <span
             style={{
-              fontSize: '72px',
+              fontSize: '64px',
               fontWeight: 700,
-              color: '#635bff',
+              color: '#5C5B56',
               lineHeight: 1.1,
               letterSpacing: '-0.03em',
             }}
           >
-            Instantly.
+            Apply policy. Keep the record.
           </span>
         </div>
 
@@ -87,12 +99,12 @@ export async function GET() {
             display: 'flex',
             marginTop: '40px',
             fontSize: '24px',
-            color: '#52525b',
+            color: '#9D9C96',
             textAlign: 'center',
             maxWidth: '900px',
           }}
         >
-          Signature-verified records you can verify offline and export for audits
+          Portable signed records for APIs, tools, and MCP servers. Built on PEAC. Self-hostable.
         </div>
 
         {/* Footer */}
@@ -102,7 +114,7 @@ export async function GET() {
             position: 'absolute',
             bottom: '40px',
             fontSize: '20px',
-            color: '#a1a1aa',
+            color: '#C9C7C1',
           }}
         >
           originary.xyz
