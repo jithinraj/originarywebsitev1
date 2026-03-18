@@ -158,16 +158,16 @@ export function HowItWorks() {
             </div>
 
             {/* Mobile */}
-            <div className="sm:hidden relative pl-10">
+            <div className="sm:hidden relative pl-14">
               <div
-                className="absolute top-[4px] bottom-[4px] left-[14px] w-px"
+                className="absolute top-[4px] bottom-[4px] left-[18px] w-px"
                 style={{ background: 'var(--color-border)' }}
               />
               <div className="space-y-7">
                 {timelineSteps.map((step, i) => (
                   <div key={step.label} className="relative flex items-start">
                     <div
-                      className="absolute left-[-24px] w-[30px] h-[30px] rounded-full border-2 flex items-center justify-center shadow-sm shrink-0"
+                      className="absolute left-[-40px] w-[30px] h-[30px] rounded-full border-2 flex items-center justify-center shadow-sm shrink-0"
                       style={{
                         borderColor: step.color,
                         background: 'var(--color-surface-elevated)',

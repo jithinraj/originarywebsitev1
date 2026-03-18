@@ -103,7 +103,7 @@ export function Hero() {
 
         {/* Proof strip */}
         <motion.div
-          className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2"
+          className="mt-6 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-1.5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.55 }}
@@ -132,7 +132,7 @@ export function Hero() {
 
         {/* Quick links */}
         <motion.div
-          className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1.5"
+          className="mt-6 flex flex-wrap items-center gap-x-1.5 gap-y-1"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -143,21 +143,21 @@ export function Hero() {
             { label: 'Read the spec', href: 'https://github.com/peacprotocol/peac', external: true },
             { label: 'Downloads', href: '/downloads' },
           ].map((link, i) => (
-            <span key={link.label} className="flex items-center gap-3">
+            <span key={link.label} className="inline-flex items-center gap-1.5 whitespace-nowrap">
               {i > 0 && (
-                <span style={{ color: 'var(--color-fg-muted)', fontSize: '0.8125rem', userSelect: 'none' }}>/</span>
+                <span style={{ color: 'var(--color-fg-muted)', fontSize: '0.75rem', userSelect: 'none' }}>/</span>
               )}
               {link.external ? (
                 <a
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hp-link-muted text-[0.875rem] font-medium"
+                  className="hp-link-muted text-[0.8125rem] sm:text-[0.875rem] font-medium"
                 >
                   {link.label}
                 </a>
               ) : (
-                <Link href={link.href} className="hp-link-muted text-[0.875rem] font-medium">
+                <Link href={link.href} className="hp-link-muted text-[0.8125rem] sm:text-[0.875rem] font-medium">
                   {link.label}
                 </Link>
               )}
