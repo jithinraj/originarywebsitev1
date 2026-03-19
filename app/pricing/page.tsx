@@ -37,9 +37,9 @@ export default function PricingPage() {
       <main style={{ paddingTop: '80px' }}>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)', paddingBottom: 'var(--space-16)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)' }}>
           <div className="container">
-            <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
+            <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
 
               <div style={{
                 display: 'inline-flex',
@@ -285,7 +285,7 @@ export default function PricingPage() {
         {/* ── FAQ ───────────────────────────────────────────────────────── */}
         <section className="section">
           <div className="container">
-            <div style={{ maxWidth: '680px', margin: '0 auto' }}>
+            <div style={{ maxWidth: '720px', margin: '0 auto' }}>
               <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-8)', color: 'var(--text-primary)' }}>
                 Common questions
               </h2>
@@ -343,7 +343,7 @@ export default function PricingPage() {
         <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-8)', paddingBottom: 'var(--space-16)' }}>
           <div className="container">
             <div style={{
-              maxWidth: '680px',
+              maxWidth: '720px',
               margin: '0 auto',
               padding: 'var(--space-8)',
               borderRadius: 'var(--radius-2xl)',

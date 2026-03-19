@@ -16,8 +16,11 @@ Contact: contact@originary.xyz
 - [Downloads](/downloads) - CLI, MCP server, SDKs, and source archives
 - [Agent Auditor](/agent-auditor) - Open and verify any signed record locally, with evidence bundles
 - [Verify](/verify) - Inspector: parse JWS structure and decode interaction record claims
+- [Products](/products) - Agent Auditor, Gateway 402, MCP Server, Verify, Trace
 - [Trust Center](/trust) - Verification model, cryptography, data boundaries, portability
 - [Pricing](/pricing) - Open source, self-hostable, enterprise support available
+- [API Providers](/solutions/api-providers) - Verifiable agent access for HTTP APIs
+- [Publishers](/solutions/publishers) - Content attribution and compliance with signed records
 
 ## Protocol State
 

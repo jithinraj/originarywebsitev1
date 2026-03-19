@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { NARRATIVE } from '@/lib/site-registry'
 
 const columns = [
   {
@@ -85,8 +86,7 @@ export function HomeFooter() {
               className="mt-6 hp-text-body-sm max-w-[20rem] leading-relaxed"
               style={{ color: 'var(--color-fg-muted)' }}
             >
-              Originary helps APIs, tools, and MCP servers verify agent requests,
-              apply policy, and return verifiable interaction records. PEAC is the open standard underneath.
+              {NARRATIVE.plainSentence}
             </p>
             <div className="mt-6 flex items-center gap-4">
               <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="hp-social-icon" aria-label="GitHub">

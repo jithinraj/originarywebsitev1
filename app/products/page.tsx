@@ -3,6 +3,7 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Shield, Zap, Server, BarChart3, FileText, HardDrive, Search } from 'lucide-react'
+import { NARRATIVE } from '@/lib/site-registry'
 
 export const metadata: Metadata = {
   title: 'Products | Originary',
@@ -28,6 +29,8 @@ export const metadata: Metadata = {
   },
 }
 
+// Canonical product labels and statuses live in PRODUCTS (lib/site-registry.ts).
+// This array carries additional detail (icons, features, npm) that the registry does not.
 const primaryProducts = [
   {
     icon: Search,
@@ -112,7 +115,7 @@ export default function ProductsPage() {
         </section>
 
         {/* Primary products */}
-        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-16)' }}>
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
               {primaryProducts.map((product) => (
@@ -167,12 +170,12 @@ export default function ProductsPage() {
         </section>
 
         {/* Building blocks */}
-        <section className="section" style={{ paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-8)' }}>
+        <section className="section">
           <div className="container">
-            <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, textAlign: 'center', marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
+            <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 600, textAlign: 'center', marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
               Building blocks
             </h2>
-            <p style={{ textAlign: 'center', fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-8)' }}>
+            <p style={{ textAlign: 'center', fontSize: 'var(--text-base)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-8)' }}>
               Lower-level packages for custom integrations
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 'var(--space-6)', maxWidth: '640px', margin: '0 auto' }}>
@@ -200,14 +203,14 @@ export default function ProductsPage() {
         </section>
 
         {/* Open protocol callout */}
-        <section className="section" style={{ paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)' }}>
+        <section className="section">
           <div className="container">
             <div style={{ maxWidth: '720px', margin: '0 auto', padding: 'var(--space-8)', border: '2px solid var(--accent-brand)', borderRadius: 'var(--radius-2xl)', background: 'var(--accent-brand-faint)', textAlign: 'center' }}>
               <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
                 Built on PEAC, an open standard
               </h3>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                Every product above is built on the PEAC open standard (Apache-2.0). Self-host the entire stack, use Originary, or build your own conformant implementation. No lock-in.
+                {NARRATIVE.protocolRelation} Every product above uses the PEAC open standard (Apache-2.0). Self-host the entire stack, use Originary, or build your own conformant implementation. No lock-in.
               </p>
               <div style={{ marginTop: 'var(--space-6)', display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
                 <Link href="/peac" className="btn btn-primary btn-sm">

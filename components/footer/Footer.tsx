@@ -7,6 +7,7 @@ import {
   FOOTER_MACHINE_READABLE,
   type FooterLink,
 } from './footer.links'
+import { NARRATIVE } from '@/lib/site-registry'
 
 const navGroups = FOOTER_NAV_GROUPS
 
@@ -60,8 +61,7 @@ export default function Footer() {
               </span>
             </Link>
             <p style={{ marginTop: '1.5rem', fontSize: '0.875rem', lineHeight: 1.65, color: 'var(--text-tertiary)', maxWidth: '20rem' }}>
-              Originary helps APIs, tools, and MCP servers verify agent requests,
-              apply policy, and return verifiable interaction records. PEAC is the open standard underneath.
+              {NARRATIVE.plainSentence}
             </p>
             {/* Social icons */}
             <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
