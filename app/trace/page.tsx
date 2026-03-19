@@ -157,7 +157,7 @@ export default function TracePage() {
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)'
               }}>
-                Everything you need to track AI access
+                Monitor agent access. Export signed evidence.
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',

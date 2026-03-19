@@ -25,7 +25,7 @@ export const NARRATIVE = {
   artifactNoun: 'receipt',
   benefitNoun: 'proof',
   complianceNoun: 'evidence',
-  tagline: 'Turn every agent request into a policy decision you can prove.',
+  tagline: 'Verify every agent request. Prove every decision.',
   companyDescriptor: 'Originary is the verification layer for agent-facing systems.',
   plainSentence:
     'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records for every decision. PEAC is the open standard underneath.',

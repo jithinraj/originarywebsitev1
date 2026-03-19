@@ -3,17 +3,7 @@
 import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
-import { useState, useEffect } from 'react'
-import { ArrowRight, CheckCircle, FileText, Activity, Shield, Layers, ChevronDown, Link as LinkIcon } from 'lucide-react'
-import { copyToClipboard } from '@/lib/clipboard'
-
-// Section definitions for TOC
-const SECTIONS = [
-  { id: 'why-interactions-break', label: 'Why interactions break' },
-  { id: 'policy-receipts', label: 'Policy + receipts' },
-  { id: 'what-receipt-proves', label: 'What a receipt proves' },
-  { id: 'what-originary-builds', label: 'What Originary builds' },
-]
+import { ArrowRight, CheckCircle, FileText, Activity, Shield, Layers } from 'lucide-react'
 
 // FAQ data for schema
 const FAQ_DATA = [
@@ -48,48 +38,6 @@ const FAQ_DATA = [
 ]
 
 export default function SystemOfRecordPage() {
-  const [activeSection, setActiveSection] = useState('introduction')
-  const [isTocOpen, setIsTocOpen] = useState(false)
-  const [copiedAnchor, setCopiedAnchor] = useState<string | null>(null)
-
-  // Track active section on scroll
-  useEffect(() => {
-    // Guard against SSR
-    if (typeof window === 'undefined' || typeof document === 'undefined') return
-
-    const handleScroll = () => {
-      const sections = SECTIONS.map(s => ({
-        id: s.id,
-        el: document.getElementById(s.id)
-      })).filter(s => s.el)
-
-      const scrollPosition = window.scrollY + 120
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i]
-        if (section.el && section.el.offsetTop <= scrollPosition) {
-          setActiveSection(section.id)
-          break
-        }
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const copyAnchorLink = async (id: string) => {
-    // Guard against SSR
-    if (typeof window === 'undefined') return
-
-    const url = `${window.location.origin}/system-of-record#${id}`
-    const success = await copyToClipboard(url)
-    if (success) {
-      setCopiedAnchor(id)
-      setTimeout(() => setCopiedAnchor(null), 2000)
-    }
-  }
-
   // JSON-LD schemas
   const webPageSchema = {
     "@context": "https://schema.org",
@@ -199,58 +147,12 @@ export default function SystemOfRecordPage() {
           </div>
         </section>
 
-        {/* Mobile TOC Accordion */}
-        <div className="mobile-toc">
-          <button
-            type="button"
-            onClick={() => setIsTocOpen(!isTocOpen)}
-            className="mobile-toc-trigger"
-            aria-expanded={isTocOpen}
-          >
-            <span>On this page</span>
-            <ChevronDown size={18} style={{ transform: isTocOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s ease' }} />
-          </button>
-          {isTocOpen && (
-            <nav className="mobile-toc-nav" aria-label="Table of contents">
-              {SECTIONS.map(section => (
-                <a
-                  key={section.id}
-                  href={`#${section.id}`}
-                  onClick={() => setIsTocOpen(false)}
-                  className={activeSection === section.id ? 'active' : ''}
-                >
-                  {section.label}
-                </a>
-              ))}
-            </nav>
-          )}
-        </div>
-
-        {/* Main Content with Desktop Sidebar TOC */}
-        <div className="content-layout">
-          {/* Desktop Sticky TOC */}
-          <aside className="desktop-toc" aria-label="Table of contents">
-            <div className="toc-sticky">
-              <h4 className="toc-title">On this page</h4>
-              <nav>
-                {SECTIONS.map(section => (
-                  <a
-                    key={section.id}
-                    href={`#${section.id}`}
-                    className={`toc-link ${activeSection === section.id ? 'active' : ''}`}
-                  >
-                    {section.label}
-                  </a>
-                ))}
-              </nav>
-            </div>
-          </aside>
-
-          {/* Main Content */}
-          <article className="main-content">
+        {/* Main Content */}
+        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 clamp(var(--space-4), 4vw, var(--space-6))' }}>
+          <article style={{ paddingBottom: 'var(--space-24)' }}>
             {/* Introduction */}
             <section id="introduction" className="content-section">
-              <SectionHeader id="introduction" title="Introduction" onCopy={copyAnchorLink} copied={copiedAnchor === 'introduction'} />
+              <h2 id="introduction-heading" style={{ fontSize: 'clamp(var(--text-2xl), 4vw, var(--text-3xl))', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-6)' }}>Introduction</h2>
 
               <p className="lead">
                 AI agents are becoming a new class of &ldquo;user&rdquo; on the internet. They browse, negotiate, pay, retrieve, transform, and act. They do it fast, at scale, and increasingly without a human watching each step.
@@ -279,13 +181,12 @@ export default function SystemOfRecordPage() {
 
             {/* Why agent interactions break today */}
             <section id="why-interactions-break" className="content-section">
-              <SectionHeader id="why-interactions-break" title="Why agent interactions break today" onCopy={copyAnchorLink} copied={copiedAnchor === 'why-interactions-break'} />
+              <h2 style={{ fontSize: 'clamp(var(--text-2xl), 4vw, var(--text-3xl))', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-6)' }}>Why agent interactions break today</h2>
 
               <p>
                 The current internet was not designed for autonomous clients operating at machine speed. We built strong primitives for transport (HTTP), identity (TLS), and content addressing (URLs). But agent interactions introduce missing primitives:
               </p>
 
-              {/* Edit B - robots.txt comparison */}
               <div className="problem-card">
                 <h4>1. Policy is not machine-enforceable by default</h4>
                 <p>
@@ -303,7 +204,6 @@ export default function SystemOfRecordPage() {
                 </p>
               </div>
 
-              {/* Edit C - Logs rewrite */}
               <div className="problem-card">
                 <h4>3. Audit trails are internal and non-portable</h4>
                 <p>
@@ -325,7 +225,7 @@ export default function SystemOfRecordPage() {
 
             {/* The model: policy + receipts */}
             <section id="policy-receipts" className="content-section">
-              <SectionHeader id="policy-receipts" title="The model: policy + receipts" onCopy={copyAnchorLink} copied={copiedAnchor === 'policy-receipts'} />
+              <h2 style={{ fontSize: 'clamp(var(--text-2xl), 4vw, var(--text-3xl))', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-6)' }}>The model: policy + receipts</h2>
 
               <p>
                 The simplest way to make the web auditable is to standardize two things:
@@ -356,7 +256,6 @@ export default function SystemOfRecordPage() {
                   </ul>
                   <p>This shifts &ldquo;terms&rdquo; from PDFs into a format that agents can actually follow.</p>
 
-                  {/* Code snippet */}
                   <div className="code-block">
                     <div className="code-header">
                       <span>peac.txt</span>
@@ -384,7 +283,6 @@ verify: /.well-known/peac-issuer.json`}</code></pre>
                     Think of it as the missing primitive for the agent web: a portable, verifiable &ldquo;event record&rdquo; for access.
                   </p>
 
-                  {/* Code snippet */}
                   <div className="code-block">
                     <div className="code-header">
                       <span>Response Header</span>
@@ -399,7 +297,7 @@ Content-Type: application/json`}</code></pre>
 
             {/* What does a receipt prove */}
             <section id="what-receipt-proves" className="content-section">
-              <SectionHeader id="what-receipt-proves" title="What does a receipt actually prove?" onCopy={copyAnchorLink} copied={copiedAnchor === 'what-receipt-proves'} />
+              <h2 style={{ fontSize: 'clamp(var(--text-2xl), 4vw, var(--text-3xl))', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-6)' }}>What does a receipt actually prove?</h2>
 
               <p>
                 A well-designed receipt should let a verifier prove statements like:
@@ -427,7 +325,7 @@ Content-Type: application/json`}</code></pre>
 
             {/* End-to-end flow with SVG diagram */}
             <section id="end-to-end-flow" className="content-section">
-              <SectionHeader id="end-to-end-flow" title="A simple end-to-end flow" onCopy={copyAnchorLink} copied={copiedAnchor === 'end-to-end-flow'} />
+              <h2 style={{ fontSize: 'clamp(var(--text-2xl), 4vw, var(--text-3xl))', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-6)' }}>A simple end-to-end flow</h2>
 
               <p>
                 Here is the basic lifecycle that an open system of record enables:
@@ -478,7 +376,7 @@ Content-Type: application/json`}</code></pre>
 
                   {/* Step 7 - Verify */}
                   <circle cx="730" cy="70" r="24" style={{ fill: 'var(--accent-secondary)' }} />
-                  <text x="730" y="75" textAnchor="middle" fill="white" fontSize="14" fontWeight="600">✓</text>
+                  <text x="730" y="75" textAnchor="middle" fill="white" fontSize="14" fontWeight="600">&#x2713;</text>
                   <text x="730" y="110" textAnchor="middle" style={{ fill: 'var(--text-muted)' }} fontSize="11">Verify</text>
                 </svg>
               </div>
@@ -499,9 +397,8 @@ Content-Type: application/json`}</code></pre>
 
             {/* What Originary is building */}
             <section id="what-originary-builds" className="content-section">
-              <SectionHeader id="what-originary-builds" title="What Originary is building" onCopy={copyAnchorLink} copied={copiedAnchor === 'what-originary-builds'} />
+              <h2 style={{ fontSize: 'clamp(var(--text-2xl), 4vw, var(--text-3xl))', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-6)' }}>What Originary is building</h2>
 
-              {/* Edit E - Protocol vs company separation */}
               <p className="protocol-callout">
                 <strong>PEAC is an open protocol.</strong> Originary stewards the spec and builds tools and services, but any team can implement and verify PEAC receipts independently. Openness is non-negotiable: evidence must be portable across vendors, verifiable by multiple parties, and scalable across millions of agent endpoints.
               </p>
@@ -539,7 +436,7 @@ Content-Type: application/json`}</code></pre>
 
             {/* Start here */}
             <section id="start-here" className="content-section">
-              <SectionHeader id="start-here" title="Start here" onCopy={copyAnchorLink} copied={copiedAnchor === 'start-here'} />
+              <h2 style={{ fontSize: 'clamp(var(--text-2xl), 4vw, var(--text-3xl))', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-6)' }}>Start here</h2>
 
               <ol className="start-steps">
                 <li><strong>Publish a policy file</strong> (<code>peac.txt</code>) that expresses access terms in a machine-readable way.</li>
@@ -563,7 +460,7 @@ Content-Type: application/json`}</code></pre>
 
             {/* FAQ Section */}
             <section id="faq" className="content-section">
-              <SectionHeader id="faq" title="Frequently asked questions" onCopy={copyAnchorLink} copied={copiedAnchor === 'faq'} />
+              <h2 style={{ fontSize: 'clamp(var(--text-2xl), 4vw, var(--text-3xl))', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-6)' }}>Frequently asked questions</h2>
 
               <div className="faq-list">
                 {FAQ_DATA.map((faq, index) => (
@@ -580,157 +477,10 @@ Content-Type: application/json`}</code></pre>
       <Footer />
 
       <style jsx>{`
-        .content-layout {
-          display: flex;
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 0 clamp(var(--space-4), 4vw, var(--space-6));
-          gap: var(--space-12);
-        }
-
-        /* Desktop TOC */
-        .desktop-toc {
-          display: none;
-          width: 240px;
-          flex-shrink: 0;
-        }
-
-        @media (min-width: 1100px) {
-          .desktop-toc {
-            display: block;
-          }
-        }
-
-        .toc-sticky {
-          position: sticky;
-          top: 100px;
-          padding: var(--space-6) 0;
-          max-height: calc(100vh - 120px);
-          overflow-y: auto;
-        }
-
-        .toc-title {
-          font-size: var(--text-xs);
-          font-weight: 600;
-          color: var(--text-muted);
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          margin-bottom: var(--space-4);
-        }
-
-        .toc-link {
-          display: block;
-          padding: var(--space-2) 0;
-          font-size: var(--text-sm);
-          color: var(--text-tertiary);
-          text-decoration: none;
-          border-left: 2px solid transparent;
-          padding-left: var(--space-3);
-          margin-left: -2px;
-          transition: all 0.15s ease;
-        }
-
-        .toc-link:hover {
-          color: var(--text-secondary);
-        }
-
-        .toc-link:focus {
-          outline: 2px solid var(--accent-brand);
-          outline-offset: 2px;
-          border-radius: var(--radius-sm);
-        }
-
-        .toc-link.active {
-          color: var(--accent-brand);
-          border-left-color: var(--accent-brand);
-          font-weight: 500;
-        }
-
-        /* Mobile TOC */
-        .mobile-toc {
-          display: block;
-          padding: 0 clamp(var(--space-4), 4vw, var(--space-6));
-          margin-bottom: var(--space-6);
-        }
-
-        @media (min-width: 1100px) {
-          .mobile-toc {
-            display: none;
-          }
-        }
-
-        .mobile-toc-trigger {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          width: 100%;
-          padding: var(--space-4);
-          background: var(--surface-subtle);
-          border: 1px solid var(--border-default);
-          border-radius: var(--radius-lg);
-          font-size: var(--text-sm);
-          font-weight: 500;
-          color: var(--text-secondary);
-          cursor: pointer;
-          min-height: 48px; /* Touch target */
-          transition: background 0.15s ease;
-        }
-
-        .mobile-toc-trigger:hover {
-          background: var(--surface-card);
-        }
-
-        .mobile-toc-trigger:focus {
-          outline: 2px solid var(--accent-brand);
-          outline-offset: 2px;
-        }
-
-        .mobile-toc-nav {
-          display: flex;
-          flex-direction: column;
-          padding: var(--space-3);
-          background: var(--surface-subtle);
-          border: 1px solid var(--border-default);
-          border-top: none;
-          border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-          max-height: 60vh;
-          overflow-y: auto;
-        }
-
-        .mobile-toc-nav a {
-          padding: var(--space-3) var(--space-3);
-          font-size: var(--text-sm);
-          color: var(--text-secondary);
-          text-decoration: none;
-          border-radius: var(--radius-md);
-          min-height: 44px; /* Touch target */
-          display: flex;
-          align-items: center;
-        }
-
-        .mobile-toc-nav a:hover,
-        .mobile-toc-nav a.active {
-          background: var(--surface-elevated);
-          color: var(--accent-brand);
-        }
-
-        .mobile-toc-nav a:focus {
-          outline: 2px solid var(--accent-brand);
-          outline-offset: -2px;
-        }
-
-        /* Main content */
-        .main-content {
-          flex: 1;
-          min-width: 0;
-          max-width: 800px;
-          padding-bottom: var(--space-24);
-        }
-
         .content-section {
           padding: clamp(var(--space-8), 5vw, var(--space-12)) 0;
           border-bottom: 1px solid var(--border-subtle);
-          scroll-margin-top: 100px; /* For anchor links */
+          scroll-margin-top: 100px;
         }
 
         .content-section:last-child {
@@ -745,27 +495,27 @@ Content-Type: application/json`}</code></pre>
           margin-bottom: var(--space-6);
         }
 
-        .main-content p {
+        article p {
           font-size: clamp(0.9375rem, 2vw, 1rem);
           line-height: 1.8;
           color: var(--text-secondary);
           margin-bottom: var(--space-4);
         }
 
-        .main-content ul,
-        .main-content ol {
+        article ul,
+        article ol {
           margin-bottom: var(--space-4);
           padding-left: clamp(var(--space-4), 4vw, var(--space-6));
         }
 
-        .main-content li {
+        article li {
           font-size: clamp(0.9375rem, 2vw, 1rem);
           line-height: 1.7;
           color: var(--text-secondary);
           margin-bottom: var(--space-2);
         }
 
-        .main-content code {
+        article code {
           background: var(--surface-card);
           padding: 2px 6px;
           border-radius: var(--radius-sm);
@@ -803,19 +553,6 @@ Content-Type: application/json`}</code></pre>
           font-size: clamp(1rem, 2.5vw, 1.125rem);
           font-weight: 600;
           color: var(--text-primary);
-        }
-
-        .final-statement {
-          font-size: clamp(1.125rem, 3vw, 1.25rem);
-          font-weight: 500;
-          color: var(--text-secondary);
-        }
-
-        .cta-statement {
-          font-size: clamp(1.25rem, 4vw, 1.5rem);
-          font-weight: 700;
-          color: var(--text-primary);
-          margin-bottom: var(--space-8);
         }
 
         /* Question list */
@@ -1063,7 +800,7 @@ Content-Type: application/json`}</code></pre>
           display: inline-flex;
           align-items: center;
           gap: var(--space-2);
-          min-height: 48px; /* Touch target */
+          min-height: 48px;
         }
 
         @media (max-width: 480px) {
@@ -1102,9 +839,7 @@ Content-Type: application/json`}</code></pre>
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .toc-link,
-          .mobile-toc-trigger,
-          .mobile-toc-nav a {
+          * {
             transition: none;
           }
         }
@@ -1118,15 +853,9 @@ Content-Type: application/json`}</code></pre>
           .faq-item {
             border-width: 2px;
           }
-
-          .toc-link.active {
-            border-left-width: 3px;
-          }
         }
 
         @media print {
-          .desktop-toc,
-          .mobile-toc,
           .cta-buttons {
             display: none !important;
           }
@@ -1134,75 +863,8 @@ Content-Type: application/json`}</code></pre>
           .content-section {
             page-break-inside: avoid;
           }
-
-          .main-content {
-            max-width: 100%;
-          }
         }
       `}</style>
     </>
-  )
-}
-
-// Section header component with anchor link
-function SectionHeader({ id, title, onCopy, copied }: { id: string; title: string; onCopy: (id: string) => void; copied: boolean }) {
-  return (
-    <div className="section-header-wrapper">
-      <h2 id={id} dangerouslySetInnerHTML={{ __html: title }} />
-      <button
-        type="button"
-        onClick={() => onCopy(id)}
-        className="anchor-btn"
-        aria-label={copied ? 'Link copied' : 'Copy link to section'}
-        title={copied ? 'Copied!' : 'Copy link'}
-      >
-        {copied ? <CheckCircle size={16} /> : <LinkIcon size={16} />}
-      </button>
-      <style jsx>{`
-        .section-header-wrapper {
-          display: flex;
-          align-items: center;
-          gap: var(--space-3);
-          margin-bottom: var(--space-6);
-        }
-
-        h2 {
-          font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl));
-          font-weight: 700;
-          color: var(--text-primary);
-          margin: 0;
-        }
-
-        .anchor-btn {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 32px;
-          height: 32px;
-          background: var(--surface-card);
-          border: none;
-          border-radius: var(--radius-md);
-          color: var(--text-muted);
-          cursor: pointer;
-          opacity: 0;
-          transition: all 0.15s ease;
-        }
-
-        .section-header-wrapper:hover .anchor-btn {
-          opacity: 1;
-        }
-
-        .anchor-btn:hover {
-          background: var(--surface-subtle);
-          color: var(--text-secondary);
-        }
-
-        .anchor-btn:focus {
-          opacity: 1;
-          outline: 2px solid var(--accent-brand);
-          outline-offset: 2px;
-        }
-      `}</style>
-    </div>
   )
 }

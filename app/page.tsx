@@ -5,6 +5,7 @@ import { WhoIsItFor } from '@/components/homepage/WhoIsItFor'
 import { Problem } from '@/components/homepage/Problem'
 import { HowItWorks } from '@/components/homepage/HowItWorks'
 import { TrustProof } from '@/components/homepage/TrustProof'
+import { EnterpriseProof } from '@/components/homepage/EnterpriseProof'
 import { Comparison } from '@/components/homepage/Comparison'
 import { OpenStandard } from '@/components/homepage/OpenStandard'
 import { FAQ } from '@/components/homepage/FAQ'
@@ -13,7 +14,7 @@ import { HomeFooter } from '@/components/homepage/HomeFooter'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Turn every agent request into a policy decision you can prove.'
+    absolute: 'Originary | Verify every agent request. Prove every decision.'
   },
   description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records.',
   keywords: [
@@ -110,6 +111,7 @@ export default function Page() {
           <Hero />
           <Problem />
           <TrustProof />
+          <EnterpriseProof />
           <WhoIsItFor />
           <HowItWorks />
           <Comparison />

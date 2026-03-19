@@ -45,7 +45,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.1, ease }}
         >
-          Turn every agent request into a policy decision you can prove.
+          Verify every agent request. Prove every decision.
         </motion.h1>
 
         {/* Subheading */}
