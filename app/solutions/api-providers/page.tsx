@@ -84,7 +84,7 @@ export default function APIProviders() {
 
               <div className="card">
                 <div style={{ marginBottom: 'var(--space-6)' }}>
-                  <Server className="w-8 h-8" style={{ color: 'var(--brand-accent)' }} />
+                  <Server className="w-8 h-8" style={{ color: 'var(--accent-brand)' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-4)', fontSize: 'var(--text-xl)' }}>HTTP 402 flows</h3>
                 <p style={{ lineHeight: 1.7 }}>

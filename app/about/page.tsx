@@ -99,16 +99,16 @@ export default function AboutPage() {
 
         {/* ── Hero ── */}
         <section
+          className="section"
           style={{
             position: 'relative',
             background: 'var(--surface-elevated)',
-            padding: 'clamp(4rem, 12vh, 8rem) 0 clamp(4rem, 10vh, 6rem)',
             overflow: 'hidden',
           }}
         >
           <div
             className="container"
-            style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '860px', margin: '0 auto' }}
+            style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}
           >
             <h1
               style={{
