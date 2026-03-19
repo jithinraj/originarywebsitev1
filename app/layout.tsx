@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Fraunces, JetBrains_Mono, Geist, Geist_Mono } from 'next/font/google'
+import { Inter, Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
@@ -9,7 +9,7 @@ import ClarityAnalytics from '@/components/ClarityAnalytics'
 import AmplitudeAnalytics from '@/components/AmplitudeAnalytics'
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
 import ScrollAnimationProvider from '@/components/ScrollAnimationProvider'
-import CursorGlow from '@/components/CursorGlow'
+// CursorGlow removed: does not work on light backgrounds
 
 const geistSans = Geist({
   subsets: ['latin'],
@@ -32,19 +32,7 @@ const inter = Inter({
   preload: true,
 })
 
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-fraunces',
-  display: 'swap',
-  preload: true,
-})
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains-mono',
-  display: 'swap',
-  preload: true,
-})
+// Fraunces and JetBrains Mono removed: using Geist + Geist Mono only
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
@@ -247,7 +235,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable}`}>
       <head>
         {/* Set light mode as default */}
         <script
@@ -273,7 +261,6 @@ export default function RootLayout({
         <SkipNavigation />
         <ServiceWorkerRegistration />
         <ScrollAnimationProvider />
-        <CursorGlow />
         <div className="wrap">
           {children}
         </div>

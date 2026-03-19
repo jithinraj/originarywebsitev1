@@ -6,13 +6,7 @@
 
 /* ─── Scope container: overrides inherited body styles ── */
 
-/* Force body to match homepage when hp-root is present */
-body:has(.hp-root) {
-  background: var(--surface-base) !important;
-  color: var(--text-primary) !important;
-}
-
-/* Hide cursor glow on homepage - screen blend mode doesn't work on light backgrounds */
+/* Hide cursor glow on homepage */
 body:has(.hp-root) ~ .cursor-glow,
 body:has(.hp-root) .cursor-glow {
   display: none !important;
