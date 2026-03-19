@@ -12,9 +12,17 @@ export const metadata: Metadata = {
     url: '/integrations/mcp',
     type: 'article'
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MCP Integration | @peac/mcp-server',
+    description: 'Open-source MCP tool server for verification, inspection, issuance, and bundling. 5 tools with capability-based access control.',
+    images: ['/og'],
+    site: '@originaryx',
+    creator: '@originaryx',
+  },
   alternates: {
-    canonical: '/integrations/mcp'
-  }
+    canonical: '/integrations/mcp',
+  },
 }
 
 const jsonLd = {

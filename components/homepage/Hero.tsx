@@ -141,7 +141,8 @@ export function Hero() {
             { label: 'Book a demo', href: '/contact' },
             { label: 'Agent Auditor', href: '/agent-auditor' },
             { label: 'Install MCP server', href: '/downloads#mcp-server' },
-            { label: 'Read the spec', href: 'https://github.com/peacprotocol/peac', external: true },
+            { label: 'Spec', href: 'https://github.com/peacprotocol/peac', external: true },
+            { label: 'Downloads', href: '/downloads' },
           ].map((link, i) => (
             <span key={link.label}>
               {i > 0 && (

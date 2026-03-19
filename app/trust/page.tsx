@@ -9,11 +9,20 @@ export const metadata: Metadata = {
   title: 'Trust Center',
   description: 'How Originary handles verification, cryptography, data boundaries, and portability. Independently verifiable signed records, Ed25519 signatures, offline verification, no phone-home.',
   openGraph: {
-    title: 'Trust Center',
+    title: 'Trust Center | Originary',
     description: 'Verification model, cryptography, data boundaries, and portability for Originary and the PEAC protocol.',
     type: 'website',
     url: '/trust',
+    siteName: 'Originary',
+    images: [{ url: '/og' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Trust Center | Originary',
+    description: 'Verification model, cryptography, data boundaries, and portability for Originary and the PEAC protocol.',
     images: ['/og'],
+    site: '@originaryx',
+    creator: '@originaryx',
   },
   robots: 'index,follow',
   alternates: {

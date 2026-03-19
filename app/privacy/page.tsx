@@ -18,6 +18,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/privacy',
   },
+  openGraph: {
+    title: 'Privacy Policy | Originary',
+    description: 'Originary Privacy Policy: minimal, consent-first data collection.',
+    url: '/privacy',
+    siteName: 'Originary',
+    images: [{ url: '/og' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Privacy Policy | Originary',
+    description: 'Originary Privacy Policy: minimal, consent-first data collection.',
+    site: '@originaryx',
+    creator: '@originaryx',
+  },
 }
 
 const webPageJsonLd = {

@@ -12,9 +12,17 @@ export const metadata: Metadata = {
     url: '/integrations/a2a',
     type: 'article'
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'A2A Protocol | Agent-to-Agent Transactions',
+    description: 'A2A protocol integration for agent-to-agent transactions with verifiable interaction records.',
+    images: ['/og'],
+    site: '@originaryx',
+    creator: '@originaryx',
+  },
   alternates: {
-    canonical: '/integrations/a2a'
-  }
+    canonical: '/integrations/a2a',
+  },
 }
 
 const jsonLd = {
