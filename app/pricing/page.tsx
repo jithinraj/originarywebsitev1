@@ -282,6 +282,46 @@ export default function PricingPage() {
           </div>
         </section>
 
+        {/* ── Comparison table ──────────────────────────────────────────── */}
+        <section style={{ borderBottom: '1px solid var(--border-subtle)', padding: 'var(--space-16) 0' }}>
+          <div className="container">
+            <div style={{ maxWidth: '740px', margin: '0 auto' }}>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-8)', color: 'var(--text-primary)', textAlign: 'center' }}>
+                Open source vs enterprise
+              </h2>
+              <div style={{ overflowX: 'auto' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--text-sm)' }}>
+                  <thead>
+                    <tr style={{ borderBottom: '2px solid var(--border-default)' }}>
+                      <th style={{ textAlign: 'left', padding: 'var(--space-3)', color: 'var(--text-tertiary)', fontWeight: 600 }}>&nbsp;</th>
+                      <th style={{ textAlign: 'center', padding: 'var(--space-3)', color: 'var(--text-primary)', fontWeight: 700 }}>Open source</th>
+                      <th style={{ textAlign: 'center', padding: 'var(--space-3)', color: 'var(--text-primary)', fontWeight: 700 }}>Enterprise</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      ['Price', '$0 forever', 'Custom'],
+                      ['License', 'Apache-2.0', 'Apache-2.0 + support terms'],
+                      ['Signing keys', 'Self-managed', 'KMS-backed attested keys'],
+                      ['Deployment', 'Self-hosted', 'Self-hosted, managed, or hybrid'],
+                      ['Verification', 'Offline, no dependency', 'Offline, no dependency'],
+                      ['Support', 'GitHub issues', 'Dedicated engineering access + SLA'],
+                      ['Compliance evidence', 'Self-assembled', 'Pre-packaged bundles'],
+                      ['Architecture review', 'Community docs', 'Guided integration'],
+                    ].map(([feature, oss, ent], idx) => (
+                      <tr key={idx} style={{ borderBottom: '1px solid var(--border-subtle)' }}>
+                        <td style={{ padding: 'var(--space-3)', color: 'var(--text-secondary)', fontWeight: 500 }}>{feature}</td>
+                        <td style={{ padding: 'var(--space-3)', textAlign: 'center', color: 'var(--text-secondary)' }}>{oss}</td>
+                        <td style={{ padding: 'var(--space-3)', textAlign: 'center', color: 'var(--text-secondary)' }}>{ent}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── FAQ ───────────────────────────────────────────────────────── */}
         <section className="section">
           <div className="container">

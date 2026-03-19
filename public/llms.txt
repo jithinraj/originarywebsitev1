@@ -1,8 +1,8 @@
 # Originary | Verify every agent request. Prove every decision.
 
-> Originary is the verification layer for agent-facing systems. Verify every agent request, apply policy, and return signed records you can prove later. Built on PEAC, the open standard. Self-hostable. Offline-verifiable.
+> Originary verifies agent requests, applies policy, and returns signed records you can prove later. PEAC is the open standard underneath. Self-hostable. Offline-verifiable. No lock-in.
 
-Last updated: 2026-03-19
+Last updated: 2026-03-20
 
 Company: Poem, Inc.
 Location: Delaware, USA
@@ -10,7 +10,7 @@ Contact: contact@originary.xyz
 
 ## Overview
 
-- [Home](/) - Verify every agent request. Prove every decision.
+- [Home](/) - Verify every agent request. Prove every decision. Deploy Originary. Keep your records portable.
 - [PEAC Protocol](/peac) - Open standard for verifiable interaction records
 - [Developers](/developers) - Quickstart, SDKs, and integration guides
 - [Downloads](/downloads) - CLI, MCP server, SDKs, and source archives

@@ -25,7 +25,9 @@ import {
   Receipt,
   ShieldCheck,
   Fingerprint,
-  Target
+  Target,
+  Twitter,
+  Linkedin
 } from 'lucide-react'
 
 function useReveal(threshold = 0.12) {
@@ -85,11 +87,9 @@ export default function AboutPage() {
   ]
 
   const productList = [
-    { name: 'Declare', desc: 'Define interaction terms once in a format that is human-readable and machine-enforceable.', icon: <FileText size={22} /> },
-    { name: 'Trace', desc: 'Evidence exports and decision views for audits, disputes, and operations.', icon: <Eye size={22} /> },
+    { name: 'Agent Auditor', desc: 'Open a signed record, inspect every field, verify the signature. The fastest way to see what Originary does.', icon: <Eye size={22} /> },
     { name: 'Gateway 402', desc: 'Edge enforcement with HTTP 402 challenges and signed record issuance.', icon: <CreditCard size={22} /> },
-    { name: 'Verify API', desc: 'Verify signatures and bind outcomes to the policy state at decision time.', icon: <CheckCircle size={22} /> },
-    { name: 'Studio', desc: 'Policy review, testing, and evidence workflow tooling.', icon: <Layers size={22} /> },
+    { name: 'MCP Server', desc: 'Verification middleware for MCP tool endpoints. Signed records travel with the response.', icon: <Code size={22} /> },
   ]
 
   return (
@@ -522,7 +522,7 @@ export default function AboutPage() {
                 What We Build
               </h2>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', maxWidth: '540px', margin: '0 auto', lineHeight: 1.6 }}>
-                Modular surfaces: adopt one or deploy the full stack.
+                Most teams start with Agent Auditor or Gateway 402 and add lower-level building blocks as their verification needs grow.
               </p>
             </div>
 
