@@ -76,7 +76,7 @@ export function Comparison() {
                 className="hp-text-display mt-5 max-w-[28rem]"
                 style={{ color: 'var(--color-fg)' }}
               >
-                Why logs are not enough
+                Logs show what happened. Originary proves it.
               </h2>
               <p
                 className="mt-7 hp-text-body-lg"

@@ -519,7 +519,7 @@ export default function LearnPage() {
                   Developer Documentation
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Start building with receipts, policy files, and payment infrastructure
+                  Start building with signed records, policy files, and payment infrastructure
                 </p>
               </Link>
             </div>

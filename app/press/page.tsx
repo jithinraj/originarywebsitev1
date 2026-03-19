@@ -84,6 +84,85 @@ export default function Press() {
                     View brand guidelines →
                   </a>
                 </p>
+
+                <h2 style={{
+                  fontSize: 'var(--text-2xl)',
+                  fontWeight: 600,
+                  marginTop: 'var(--space-12)',
+                  marginBottom: 'var(--space-6)'
+                }}>
+                  Company Descriptions
+                </h2>
+
+                <div style={{ marginBottom: 'var(--space-6)' }}>
+                  <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
+                    Short (tweet-length)
+                  </h3>
+                  <div style={{
+                    background: 'var(--surface-subtle)',
+                    border: '1px solid var(--border-default)',
+                    borderRadius: 'var(--radius-lg)',
+                    padding: 'var(--space-4)',
+                    marginBottom: 'var(--space-4)',
+                    fontSize: 'var(--text-base)',
+                  }}>
+                    Originary helps APIs, tools, and MCP servers know what agents did, apply policy, and return verifiable interaction records.
+                  </div>
+
+                  <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
+                    Medium (paragraph)
+                  </h3>
+                  <div style={{
+                    background: 'var(--surface-subtle)',
+                    border: '1px solid var(--border-default)',
+                    borderRadius: 'var(--radius-lg)',
+                    padding: 'var(--space-4)',
+                    marginBottom: 'var(--space-4)',
+                    fontSize: 'var(--text-base)',
+                  }}>
+                    Originary is the verification layer for agent-facing systems. Teams publish machine-readable terms, verify agent requests, apply policy, and return portable signed records that can be verified independently, even offline. PEAC is the open standard underneath, licensed Apache-2.0.
+                  </div>
+
+                  <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
+                    Long (full)
+                  </h3>
+                  <div style={{
+                    background: 'var(--surface-subtle)',
+                    border: '1px solid var(--border-default)',
+                    borderRadius: 'var(--radius-lg)',
+                    padding: 'var(--space-4)',
+                    marginBottom: 'var(--space-4)',
+                    fontSize: 'var(--text-base)',
+                  }}>
+                    Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. When an agent calls your system, Originary evaluates who is calling, what policy applies, and returns a signed record of the decision. These records are portable, offline-verifiable, and built on PEAC, the open standard for verifiable interaction records. The protocol is Apache-2.0 licensed, self-hostable, and designed for multiple independent implementations.
+                  </div>
+                </div>
+
+                <h2 style={{
+                  fontSize: 'var(--text-2xl)',
+                  fontWeight: 600,
+                  marginTop: 'var(--space-12)',
+                  marginBottom: 'var(--space-6)'
+                }}>
+                  How to Describe Originary
+                </h2>
+                <div style={{
+                  background: 'var(--surface-subtle)',
+                  border: '1px solid var(--border-default)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: 'var(--space-6)',
+                  marginBottom: 'var(--space-8)',
+                }}>
+                  <p style={{ marginBottom: 'var(--space-4)' }}>
+                    Originary is the verification layer for agent-facing systems. PEAC is the open standard underneath.
+                  </p>
+                  <p style={{ marginBottom: 'var(--space-4)' }}>
+                    Do not describe Originary as a payment protocol, an identity system, or an AI framework.
+                  </p>
+                  <p style={{ margin: 0 }}>
+                    Do not describe PEAC as an Originary product. PEAC is an open standard; Originary is one implementation.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

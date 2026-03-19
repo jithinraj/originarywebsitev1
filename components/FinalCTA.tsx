@@ -64,7 +64,7 @@ export default function FinalCTA() {
           </p>
           <div className="cta-actions">
             <Link href="/developers" className="cta-btn-primary">
-              <span>Start building</span>
+              <span>Start here</span>
               <ArrowRight size={18} strokeWidth={2} />
             </Link>
             <a href="mailto:contact@originary.xyz?subject=Integration%20Support" className="cta-btn-secondary">

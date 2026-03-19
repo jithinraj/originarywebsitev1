@@ -185,17 +185,21 @@ export default function PricingPage() {
                 Terms scoped to your deployment
               </p>
 
-              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
+              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                 For organizations that need production deployment support, managed key infrastructure, or compliance evidence for audits and procurement. If you are evaluating Originary for a team deployment or need evidence artifacts for a procurement review, this is the right path.
+              </p>
+
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
+                Best fit: API platforms handling agent traffic, MCP server operators, security and compliance teams, and organizations with procurement requirements.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
                 {[
-                  { feature: 'Guided integration and deployment support', detail: 'Architecture review, environment setup, and production rollout assistance' },
+                  { feature: 'Guided integration and deployment support', detail: 'Architecture review, environment setup, and production rollout guidance' },
                   { feature: 'KMS-backed attested signing keys', detail: 'AWS KMS, GCP Cloud KMS, Azure Key Vault, or HashiCorp Vault' },
                   { feature: 'Compliance evidence bundles', detail: 'Pre-packaged verification artifacts for audits and procurement reviews' },
                   { feature: 'Dedicated engineering access', detail: 'Direct channel to the protocol engineering team for troubleshooting and feature requests' },
-                  { feature: 'SLA and priority support', detail: 'Guaranteed response times and escalation paths' },
+                  { feature: 'SLA and priority support', detail: 'Defined response windows and escalation paths for production issues' },
                 ].map(({ feature, detail }, idx) => (
                   <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
                     <CheckCircle size={16} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '2px' }} />
@@ -261,6 +265,10 @@ export default function PricingPage() {
                   ))}
                 </div>
               </div>
+
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', lineHeight: 1.7, marginBottom: 'var(--space-8)' }}>
+                Not the right fit yet: If you are still evaluating, start with the open-source packages. They are free and unlimited.
+              </p>
 
               <a
                 href="mailto:contact@originary.xyz?subject=Enterprise%20Support"

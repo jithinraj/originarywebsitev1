@@ -17,13 +17,13 @@ export function Problem() {
                 className="hp-text-overline"
                 style={{ color: 'var(--color-fg-muted)' }}
               >
-                Why teams use Originary
+                The real question
               </span>
               <h2
                 className="hp-text-display mt-5 max-w-[36rem]"
                 style={{ color: 'var(--color-fg)' }}
               >
-                Logs show what happened. Originary records the decision.
+                When an agent calls your API or tool, can you answer who acted, what policy applied, and prove it later?
               </h2>
             </div>
           </AnimateIn>
@@ -35,7 +35,7 @@ export function Problem() {
                 style={{ color: 'var(--color-fg-secondary)' }}
               >
                 Most systems do not make agent request decisions explicit. What
-                teams usually lack is a signed record of how the request was
+                teams usually lack is a verifiable interaction record of how the request was
                 evaluated, what policy was applied, and what decision was made.
               </p>
               <p

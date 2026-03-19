@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 const links = [
-  { label: 'How it works', href: '/#product-flow' },
+  { label: 'Products', href: '/products' },
   { label: 'Developers', href: '/developers' },
-  { label: 'PEAC', href: '/peac' },
-  { label: 'Trust', href: '/trust' },
+  { label: 'Learn', href: '/learn' },
+  { label: 'Pricing', href: '/pricing' },
 ]
 
 export default function NavigationHeader() {
@@ -96,7 +96,7 @@ export default function NavigationHeader() {
                 transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
               }}
             >
-              Start building
+              Start here
             </Link>
           </div>
 
@@ -171,7 +171,7 @@ export default function NavigationHeader() {
                   textDecoration: 'none',
                 }}
               >
-                Start building
+                Start here
               </Link>
             </div>
           </div>

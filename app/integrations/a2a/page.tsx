@@ -78,7 +78,7 @@ export default function A2APage() {
             marginBottom: 'var(--space-16)',
             lineHeight: 1.6
           }}>
-            Secure, verifiable communication between autonomous agents
+            Carry verifiable interaction records through A2A metadata. Prove authorization across agent hops.
           </p>
 
           {/* Overview */}

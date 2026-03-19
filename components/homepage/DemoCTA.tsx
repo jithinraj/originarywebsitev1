@@ -22,14 +22,13 @@ export function DemoCTA() {
               className="hp-text-display max-w-[32rem] mx-auto"
               style={{ color: 'var(--color-fg-inverse)' }}
             >
-              See how a request becomes a signed record
+              See it for yourself
             </h2>
             <p
               className="mt-6 text-[1.0625rem] max-w-md mx-auto leading-relaxed"
               style={{ color: 'rgba(250,250,247,0.55)' }}
             >
-              Open a real signed record, inspect the claims, and verify
-              the signature. No account required.
+              Open a real signed record, inspect every claim, and verify the signature. No account required.
             </p>
             <div className="mt-10 md:mt-12 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
               <Link

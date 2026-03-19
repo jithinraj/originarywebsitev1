@@ -1,19 +1,23 @@
-export default function StatusPill({ status }: { status: 'live' | 'coming_soon' | 'draft' }) {
+import type { ProductStatus } from '@/lib/site-registry'
+
+export default function StatusPill({ status }: { status: ProductStatus }) {
   const style = {
-    live: 'bg-green-100 text-green-800',
-    coming_soon: 'bg-amber-100 text-amber-800',
-    draft: 'bg-slate-100 text-slate-700'
-  }[status];
-  
+    available: 'bg-green-100 text-green-800',
+    preview: 'bg-blue-100 text-blue-800',
+    draft: 'bg-slate-100 text-slate-700',
+    research: 'bg-slate-50 text-slate-500',
+  }[status]
+
   const label = {
-    live: 'Live',
-    coming_soon: 'Coming soon',
-    draft: 'In draft'
-  }[status];
-  
+    available: 'Available',
+    preview: 'Preview',
+    draft: 'Draft',
+    research: 'Research',
+  }[status]
+
   return (
     <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${style}`}>
       {label}
     </span>
-  );
+  )
 }

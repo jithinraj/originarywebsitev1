@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Shield, Zap, Server, BarChart3, FileText, HardDrive } from 'lucide-react'
+import { ArrowRight, CheckCircle, Shield, Zap, Server, BarChart3, FileText, HardDrive, Search } from 'lucide-react'
 import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
@@ -31,9 +31,18 @@ export const metadata: Metadata = {
 
 const products = [
   {
+    icon: Search,
+    title: 'Agent Auditor',
+    description: 'Open any signed interaction record and see who acted, what happened, and whether the proof is genuine. Browser or CLI.',
+    features: ['Visual record inspector', 'Signature verification', 'Browser and CLI', 'Offline capable'],
+    href: '/agent-auditor',
+    npm: '@originaryx/agent-auditor',
+    status: 'available' as const,
+  },
+  {
     icon: Server,
     title: 'MCP Server',
-    description: 'Five tools for Claude, Cursor, and any MCP client. Verify, inspect, and decode records offline. Issue and bundle with capability-based access control.',
+    description: 'Five verification tools for Claude, Cursor, and any MCP client. Verify, inspect, and decode records offline.',
     features: ['5 MCP tools', 'Offline verification', 'Capability-based ACL', 'Claude Desktop and Cursor'],
     href: '/integrations/mcp',
     npm: '@peac/mcp-server',
@@ -42,7 +51,7 @@ const products = [
   {
     icon: Shield,
     title: 'Verify',
-    description: 'Deterministic verification for PEAC interaction records. Validate signatures offline using published JWKS endpoints. No API callback required.',
+    description: 'Validate signatures offline using the issuer\'s public key. No API callback required.',
     features: ['Ed25519 signature verification', 'Offline verification', 'JWKS support', 'Policy binding validation'],
     href: '/products/verify',
     npm: '@peac/protocol',
@@ -51,7 +60,7 @@ const products = [
   {
     icon: Zap,
     title: 'Gateway 402',
-    description: 'HTTP 402 gateway for AI traffic. Check requests at the edge with allow/deny/rate-limit decisions. Issue signed records on every response.',
+    description: 'Enforce access and payment policy at the edge. Issue signed records on every response.',
     features: ['Edge deployment', 'HTTP 402 challenge flows', 'Signed interaction records', 'Rail-neutral design'],
     href: '/products/gateway-402',
     npm: '@peac/rails-x402',
@@ -78,7 +87,7 @@ const products = [
   {
     icon: BarChart3,
     title: 'Trace',
-    description: 'AI traffic observation and analytics. Identify AI agents accessing your APIs and web resources. Export evidence and audit logs.',
+    description: 'Monitor agent traffic accessing your APIs and content. Export signed evidence.',
     features: ['AI agent identification', 'Traffic observation', 'Evidence export', 'Audit log generation'],
     href: '/trace',
     status: 'preview' as const,
@@ -95,10 +104,10 @@ export default function ProductsPage() {
           <div className="container">
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">Originary products</span>
+                <span className="text-gradient">What you can do with Originary</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                Verify agent requests, apply policy, and return portable signed records. Self-hostable. Open source. Powered by PEAC.
+                Inspect, verify, enforce, monitor, and declare. Start with one, add more as your agent traffic grows.
               </p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
@@ -178,7 +187,7 @@ export default function ProductsPage() {
                 Built on PEAC, an open standard
               </h3>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                Every product above is built on the PEAC open standard ({FACTS.license}). Self-host the entire stack, use Originary, or build your own conformant implementation. No lock-in.
+                Every product above is built on the PEAC open standard (Apache-2.0). Self-host the entire stack, use Originary, or build your own conformant implementation. No lock-in.
               </p>
               <div style={{ marginTop: 'var(--space-6)', display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
                 <Link href="/peac" className="btn btn-primary btn-sm">

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { AnimateIn } from './AnimateIn'
 
 const benefits = [
-  'Ed25519 signatures, JWS compact serialization',
+  'Ed25519 signatures, verified offline with a public key',
   '28 packages on npm, 6,443 tests',
   'Offline-verifiable with public key alone',
   'Apache-2.0, self-hostable, vendor-neutral',
@@ -27,14 +27,13 @@ export function OpenStandard() {
                 className="hp-text-display mt-5"
                 style={{ color: 'var(--color-fg)' }}
               >
-                Use the product now. Keep the record portable.
+                Use the product. Keep the record portable.
               </h2>
               <p
                 className="mt-7 hp-text-body-lg"
                 style={{ color: 'var(--color-fg-secondary)' }}
               >
-                Originary is the product. PEAC keeps the record portable
-                across systems and vendors.
+                Originary is the product you deploy. PEAC is the open standard that keeps your records portable across systems and vendors. No lock-in.
               </p>
               <div className="mt-10">
                 <Link href="/peac" className="hp-btn-secondary">

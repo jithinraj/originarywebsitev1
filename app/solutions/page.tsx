@@ -4,12 +4,12 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Solutions',
-  description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
+  description: 'Originary helps publishers and API providers standardize policy and proof.',
   keywords: 'AI agents, orchestration protocol, AI coordination, PEAC protocol',
   robots: 'noindex,nofollow',
   openGraph: {
     title: 'Solutions',
-    description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
+    description: 'Originary helps publishers and API providers standardize policy and proof.',
     url: '/solutions',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Solutions',
-    description: 'Originary helps publishers, API providers, AI builders, and enterprises standardize policy and proof.',
+    description: 'Originary helps publishers and API providers standardize policy and proof.',
     images: ['/og'],
   },
   alternates: {
@@ -51,7 +51,7 @@ export default function SolutionsPage() {
                 <span className="text-gradient">Who uses Originary</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', marginBottom: 'var(--space-8)' }}>
-                Publishers, API providers, AI builders, and compliance teams use Originary to publish machine-readable policies and collect signed records of what happened.
+                Publishers and API providers use Originary to publish machine-readable policies and collect signed records of what happened.
               </p>
               <a href="mailto:contact@originary.xyz" className="btn btn-primary">
                 Talk to us
@@ -127,61 +127,6 @@ export default function SolutionsPage() {
                 </a>
               </div>
 
-              {/* AI Builders */}
-              <div id="ai-builders" className="card" style={{ scrollMarginTop: '120px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
-                  <span style={{ fontSize: '2rem' }}>🤖</span>
-                  <h3>AI Builders</h3>
-                </div>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                  Check publisher policies before accessing content. Issue receipts that prove your agent respected terms. Audit trails for every interaction.
-                </p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Policy Compliance</span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Consent Management</span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Offline Verification</span>
-                  </div>
-                </div>
-                <a href="/solutions/ai-builders" className="btn btn-secondary" style={{ width: '100%' }}>
-                  Learn More
-                </a>
-              </div>
-
-              {/* Enterprise */}
-              <div id="enterprise" className="card" style={{ scrollMarginTop: '120px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
-                  <span style={{ fontSize: '2rem' }}>🏢</span>
-                  <h3>Enterprise</h3>
-                </div>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                  Centralized policy management and signed audit trails across AI workloads. Self-hostable or managed.
-                </p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Centralized Governance</span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Security Integration</span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                    <span style={{ color: 'var(--accent-brand)' }}>✓</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Self-hostable or Managed</span>
-                  </div>
-                </div>
-                <a href="/solutions/enterprises" className="btn btn-secondary" style={{ width: '100%' }}>
-                  Learn More
-                </a>
-              </div>
             </div>
           </div>
         </section>
