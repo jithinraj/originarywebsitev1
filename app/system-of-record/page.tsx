@@ -9,14 +9,10 @@ import { copyToClipboard } from '@/lib/clipboard'
 
 // Section definitions for TOC
 const SECTIONS = [
-  { id: 'introduction', label: 'Introduction' },
   { id: 'why-interactions-break', label: 'Why interactions break' },
   { id: 'policy-receipts', label: 'Policy + receipts' },
   { id: 'what-receipt-proves', label: 'What a receipt proves' },
-  { id: 'end-to-end-flow', label: 'End-to-end flow' },
   { id: 'what-originary-builds', label: 'What Originary builds' },
-  { id: 'start-here', label: 'Start here' },
-  { id: 'faq', label: 'FAQ' },
 ]
 
 // FAQ data for schema

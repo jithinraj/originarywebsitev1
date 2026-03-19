@@ -2,8 +2,6 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { FACTS } from '@/lib/facts'
-
 const ease = [0.16, 1, 0.3, 1] as const
 
 const proofItems = [
@@ -47,7 +45,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.1, ease }}
         >
-          When agents cross your boundary, keep proof.
+          Turn every agent request into a policy decision you can prove.
         </motion.h1>
 
         {/* Subheading */}
@@ -125,30 +123,6 @@ export function Hero() {
               >
                 {item}
               </span>
-            </span>
-          ))}
-        </motion.div>
-
-        {/* Quick links */}
-        <motion.div
-          className="mt-6"
-          style={{ fontSize: '0.8125rem', lineHeight: 2 }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          {[
-            { label: 'Book a demo', href: '/contact' },
-            { label: 'Agent Auditor', href: '/agent-auditor' },
-            { label: 'Downloads', href: '/downloads' },
-          ].map((link, i) => (
-            <span key={link.label}>
-              {i > 0 && (
-                <span style={{ color: 'var(--color-fg-muted)', margin: '0 0.375rem', userSelect: 'none' }}>/</span>
-              )}
-              <Link href={link.href} className="hp-link-muted font-medium">
-                {link.label}
-              </Link>
             </span>
           ))}
         </motion.div>
@@ -233,25 +207,6 @@ PEAC-Receipt: eyJhbGciOiJFZERTQ...
           </div>
         </motion.div>
 
-        {/* Stats - compact */}
-        <motion.p
-          className="mt-6 text-[0.6875rem]"
-          style={{ color: 'var(--color-fg-muted)' }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          Apache-2.0{' '}
-          <span className="opacity-40">&#183;</span>{' '}
-          <a
-            href="https://github.com/peacprotocol/peac"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hp-link-muted"
-          >
-            {FACTS.stableVersion}
-          </a>
-        </motion.p>
       </div>
     </section>
   )

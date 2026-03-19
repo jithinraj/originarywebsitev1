@@ -135,7 +135,7 @@ export default function AboutPage() {
                 fontWeight: 400,
               }}
             >
-              Originary is the verification layer for agent-facing systems. Built on PEAC, the open protocol for signed interaction records.
+              Originary is the verification layer for agent-facing systems. Built on PEAC, the open standard for verifiable interaction records.
             </p>
 
             <div
@@ -189,7 +189,7 @@ export default function AboutPage() {
             >
               Machine-readable terms, predictable enforcement, and a durable way to verify what happened
               without relying on a single vendor&apos;s logs. We make <strong>agent interactions</strong> verifiable
-              through <strong>signed interaction records</strong> that bind outcomes to the policy state
+              through <strong>verifiable interaction records</strong> that bind outcomes to the policy state
               in force at decision time.
             </p>
 

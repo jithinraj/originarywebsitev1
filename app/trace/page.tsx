@@ -4,7 +4,7 @@ import Script from 'next/script'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { Eye, Shield, Download, Zap, CheckCircle, ArrowRight, Github, Play, Database } from 'lucide-react'
+import { Eye, Shield, Download, Zap, CheckCircle, ArrowRight, Github, Database } from 'lucide-react'
 
 export default function TracePage() {
   const jsonLd = {
@@ -105,12 +105,11 @@ export default function TracePage() {
                   padding: 'var(--space-2) var(--space-4)',
                   marginBottom: 'var(--space-4)',
                   fontSize: 'var(--text-sm)',
-                  fontWeight: 500,
+                  fontWeight: 600,
                   color: 'var(--accent-brand)'
                 }}
               >
-                <Github size={16} />
-                <span>Built on PEAC Protocol • Open Source</span>
+                Originary Trace
               </div>
               <h1 style={{
                 fontSize: 'clamp(var(--text-4xl), 6vw, var(--text-6xl))',
@@ -119,7 +118,6 @@ export default function TracePage() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em'
               }}>
-                <span style={{ display: 'block', fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-2)', fontWeight: 600, letterSpacing: '0.05em' }}>Originary Trace</span>
                 Agent access monitoring with <span className="text-gradient">signed evidence</span>
               </h1>
               <p style={{
@@ -142,17 +140,8 @@ export default function TracePage() {
                   <Github size={18} />
                   View on GitHub
                 </a>
-                <a
-                  href="https://trace-demo.originary.xyz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary btn-lg"
-                >
-                  <Play size={18} />
-                  Try the demo
-                </a>
-                <Link href="/trace/pricing" className="btn btn-secondary btn-lg">
-                  View pricing
+                <Link href="/developers" className="btn btn-secondary btn-lg">
+                  Start here
                 </Link>
               </div>
             </div>
