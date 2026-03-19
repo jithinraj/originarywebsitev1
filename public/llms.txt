@@ -1,4 +1,4 @@
-# Originary | Turn every agent request into a policy decision you can prove.
+# Originary | Verify every agent request. Prove every decision.
 
 > Originary is the verification layer for agent-facing systems. Verify agent requests, apply policy, and return verifiable interaction records. Built on PEAC, the open standard. Self-hostable. Offline-verifiable.
 
@@ -10,7 +10,7 @@ Contact: contact@originary.xyz
 
 ## Overview
 
-- [Home](/) - Turn every agent request into a policy decision you can prove.
+- [Home](/) - Verify every agent request. Prove every decision.
 - [PEAC Protocol](/peac) - Open standard for verifiable interaction records
 - [Developers](/developers) - Quickstart, SDKs, and integration guides
 - [Downloads](/downloads) - CLI, MCP server, SDKs, and source archives

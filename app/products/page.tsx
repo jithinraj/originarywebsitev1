@@ -108,7 +108,7 @@ export default function ProductsPage() {
                 <span className="text-gradient">What you can do with Originary</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                Start with Agent Auditor, Gateway 402, or MCP Server. Add building blocks when you need custom flows.
+                Most teams start with Agent Auditor or Gateway 402. Add MCP Server for AI clients, Trace for monitoring, or lower-level building blocks for custom flows.
               </p>
             </div>
           </div>
