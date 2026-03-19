@@ -1,38 +1,38 @@
 /* ===== ORIGINARY DESIGN SYSTEM ===== */
-/* Dark Mode Default - Premium Technical Aesthetic */
+/* Light Mode Default - Premium Technical Aesthetic */
 
 /* Font Loading handled by Next.js - removed @import to prevent render blocking */
 
 /* === RESPONSIVE DESIGN FOUNDATION === */
 /* Better Windows font rendering and universal compatibility */
 
-/* CSS Variables - Dark Mode Default */
+/* CSS Variables - Light Mode Default (matches homepage) */
 :root {
   /* === COLOR SCHEME === */
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* === SEMANTIC SURFACE COLORS (Dark Mode Default) === */
-  --surface-base: #050505;
-  --surface-elevated: #0A0A0A;
-  --surface-elevated-translucent: rgba(10, 10, 10, 0.85);
-  --surface-subtle: #111111;
-  --surface-card: rgba(255, 255, 255, 0.02);
-  --surface-card-hover: rgba(255, 255, 255, 0.04);
-  --surface-overlay: rgba(0, 0, 0, 0.8);
+  /* === SEMANTIC SURFACE COLORS (Light Mode Default) === */
+  --surface-base: #FAFAF7;
+  --surface-elevated: #FFFFFF;
+  --surface-elevated-translucent: rgba(255, 255, 255, 0.92);
+  --surface-subtle: #F5F5F0;
+  --surface-card: rgba(0, 0, 0, 0.02);
+  --surface-card-hover: rgba(0, 0, 0, 0.04);
+  --surface-overlay: rgba(255, 255, 255, 0.8);
 
   /* === SEMANTIC BORDER COLORS === */
-  --border-subtle: rgba(255, 255, 255, 0.04);
-  --border-default: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.12);
-  --border-active: rgba(255, 255, 255, 0.16);
+  --border-subtle: rgba(0, 0, 0, 0.04);
+  --border-default: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.12);
+  --border-active: rgba(0, 0, 0, 0.16);
   --border-brand: rgba(99, 91, 255, 0.3);
 
   /* === SEMANTIC TEXT COLORS (WCAG AA Compliant) === */
-  --text-primary: #FAFAFA;
-  --text-secondary: #A1A1AA;
-  --text-tertiary: #8B8B96;
-  --text-muted: #6B6B76;
-  --text-inverted: #09090b;
+  --text-primary: #1A1A1A;
+  --text-secondary: #5A5A5A;
+  --text-tertiary: #7A7A7A;
+  --text-muted: #9A9A9A;
+  --text-inverted: #FAFAFA;
 
   /* === SEMANTIC ACCENT COLORS === */
   --accent-brand: #635bff;
@@ -83,20 +83,20 @@
     radial-gradient(ellipse 60% 40% at 80% 60%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
     radial-gradient(ellipse 50% 50% at 50% 100%, rgba(99, 91, 255, 0.08) 0%, transparent 50%);
 
-  /* === GLASS EFFECTS (Dark Mode) === */
-  --glass-bg: rgba(255, 255, 255, 0.02);
-  --glass-bg-hover: rgba(255, 255, 255, 0.04);
-  --glass-border: rgba(255, 255, 255, 0.06);
-  --glass-border-hover: rgba(255, 255, 255, 0.1);
+  /* === GLASS EFFECTS (Light Mode) === */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-bg-hover: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-border-hover: rgba(0, 0, 0, 0.1);
   --glass-blur: blur(20px);
   --glass-saturate: saturate(150%);
 
-  /* === GLASSMORPHISM CARDS (Dark Mode) === */
-  --glass-card-bg: rgba(10, 10, 10, 0.6);
-  --glass-card-bg-hover: rgba(15, 15, 15, 0.7);
+  /* === GLASSMORPHISM CARDS (Light Mode) === */
+  --glass-card-bg: rgba(255, 255, 255, 0.7);
+  --glass-card-bg-hover: rgba(255, 255, 255, 0.85);
   --glass-card-border: var(--border-default);
-  --glass-card-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 60px -20px rgba(99, 91, 255, 0.3);
-  --glass-card-shadow-hover: 0 30px 60px -20px rgba(0, 0, 0, 0.6), 0 0 80px -20px rgba(99, 91, 255, 0.4);
+  --glass-card-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--border-default);
+  --glass-card-shadow-hover: 0 12px 40px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--border-hover);
 
   /* === GRADIENT MESH BACKGROUNDS === */
   --gradient-mesh-purple: rgba(99, 91, 255, 0.15);
@@ -108,16 +108,16 @@
   --orb-purple: rgba(99, 91, 255, 0.3);
   --orb-teal: rgba(0, 212, 170, 0.2);
 
-  /* === GLOW EFFECTS === */
-  --glow-brand: 0 0 40px -10px rgba(99, 91, 255, 0.5);
-  --glow-brand-intense: 0 0 60px -10px rgba(99, 91, 255, 0.6), 0 0 100px -20px rgba(99, 91, 255, 0.3);
-  --glow-success: 0 0 40px -10px rgba(0, 217, 36, 0.5);
-  --glow-electric: 0 0 40px -10px rgba(0, 209, 255, 0.5);
-  --glow-subtle: 0 0 60px -15px rgba(255, 255, 255, 0.08);
+  /* === GLOW EFFECTS (Light Mode) === */
+  --glow-brand: 0 0 40px -10px rgba(99, 91, 255, 0.25);
+  --glow-brand-intense: 0 0 60px -10px rgba(99, 91, 255, 0.3), 0 0 100px -20px rgba(99, 91, 255, 0.15);
+  --glow-success: 0 0 40px -10px rgba(0, 217, 36, 0.25);
+  --glow-electric: 0 0 40px -10px rgba(0, 209, 255, 0.25);
+  --glow-subtle: 0 0 60px -15px rgba(0, 0, 0, 0.04);
 
-  /* === CODE SYNTAX THEME (Dark Mode) === */
-  --code-bg: #09090b;
-  --code-bg-header: #18181b;
+  /* === CODE SYNTAX THEME (Dark code blocks on light page) === */
+  --code-bg: #1A1A1A;
+  --code-bg-header: #252525;
   --code-color-key: #93c5fd;
   --code-color-string: #86efac;
   --code-color-number: #fcd34d;
@@ -136,15 +136,15 @@
   --btn-padding-md: 12px 24px;
   --btn-padding-lg: 16px 32px;
 
-  /* === PREMIUM SHADOWS (Dark Mode) === */
-  --shadow-card: 0 4px 24px -8px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--border-default);
-  --shadow-card-hover: 0 12px 40px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-hover);
-  --shadow-elevated: 0 24px 48px -16px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--border-default);
-  --shadow-modal: 0 32px 64px -16px rgba(0, 0, 0, 0.8), 0 0 0 1px var(--border-default);
+  /* === PREMIUM SHADOWS (Light Mode) === */
+  --shadow-card: 0 4px 24px -8px rgba(0, 0, 0, 0.06), 0 0 0 1px var(--border-default);
+  --shadow-card-hover: 0 12px 40px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--border-hover);
+  --shadow-elevated: 0 24px 48px -16px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--border-default);
+  --shadow-modal: 0 32px 64px -16px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--border-default);
 
   /* === RAW COLORS (preserved for compatibility) === */
   --white: #ffffff;
-  --black: #050505;
+  --black: #1A1A1A;
 
   /* Grays - WCAG AA compliant */
   --gray-50: #fafafa;
@@ -214,10 +214,10 @@
   --shadow-glow-brand: 0 4px 20px -4px rgba(99, 91, 255, 0.35), 0 8px 40px -8px rgba(99, 91, 255, 0.25);
 
   /* === TYPOGRAPHY SYSTEM === */
-  --font-display: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-body: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: var(--font-jetbrains-mono), 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
-  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe UI Variable', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: var(--font-geist-sans), var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: var(--font-geist-sans), var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: var(--font-geist-mono), var(--font-jetbrains-mono), 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  --font-sans: var(--font-geist-sans), var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Semantic Type Scale */
   --text-hero: clamp(48px, 6vw, 80px);
@@ -365,13 +365,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Remove all pseudo-elements and overlays */
-body::before,
-body::after,
-*::before,
-*::after {
-  display: none !important;
-}
+/* Pseudo-element reset removed: was hiding homepage dividers and decorative elements */
 
 /* === TYPOGRAPHY SYSTEM === */
 h1, h2, h3, h4, h5, h6 {
@@ -798,13 +792,6 @@ p {
 .font-sans { font-family: var(--font-sans); }
 
 .text-gradient {
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-[data-theme="light"] .text-gradient {
   background: linear-gradient(135deg, #161614 0%, #5C5B56 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1050,10 +1037,8 @@ p {
   padding: 0.875rem 1.5rem;
 }
 
-/* Remove any interfering pseudo-elements */
-.grain,
-body::before,
-body::after {
+/* Grain overlay disabled */
+.grain {
   display: none !important;
 }
 
