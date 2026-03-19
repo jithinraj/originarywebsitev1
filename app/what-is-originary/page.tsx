@@ -800,7 +800,7 @@ export default function WhatIsOriginaryPage() {
                   color: 'var(--white)'
                 }}
               >
-                Start building
+                Start here
               </h2>
               <p
                 style={{

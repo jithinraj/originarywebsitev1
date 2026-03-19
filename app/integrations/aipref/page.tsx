@@ -78,7 +78,7 @@ export default function AIPREFPage() {
             marginBottom: 'var(--space-16)',
             lineHeight: 1.6
           }}>
-            Machine-readable AI access policies for autonomous agents
+            AIPREF declares AI access preferences. Originary makes policy outcomes provable.
           </p>
 
           {/* Overview */}
@@ -87,7 +87,10 @@ export default function AIPREFPage() {
               Overview
             </h2>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-              AIPREF is an <a href="https://datatracker.ietf.org/wg/aipref/" target="_blank" rel="noopener" style={{ color: 'var(--accent-brand)' }}>IETF Internet-Draft</a> for expressing AI access preferences in machine-readable format. Similar to robots.txt for web crawlers, AIPREF allows websites to declare policies for AI agent access, scraping permissions, and usage terms.
+              Publishers declare what agents may do. Originary issues a signed record when agents comply, turning advisory preferences into enforceable, verifiable evidence.
+            </p>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+              <a href="https://datatracker.ietf.org/wg/aipref/" target="_blank" rel="noopener" style={{ color: 'var(--accent-brand)' }}>AIPREF</a> is an IETF Internet-Draft for expressing AI access preferences in machine-readable format. Similar to robots.txt for web crawlers, AIPREF allows websites to declare policies for AI agent access, scraping permissions, and usage terms.
             </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
               Originary extends AIPREF with PEAC-Receipt verification, enabling sites to enforce policies cryptographically. Agents discover policies via <code>/.well-known/aipref.json</code>, and Originary issues receipts proving policy compliance.
@@ -270,8 +273,8 @@ User-Agent: MyAgent/1.0`}
             <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
               Implement AIPREF with verifiable compliance receipts
             </p>
-            <Link href="/pricing" className="button-primary">
-              View Pricing
+            <Link href="/developers" className="button-primary">
+              Start here
             </Link>
           </div>
         </div>

@@ -148,7 +148,7 @@ export default function AboutPage() {
               }}
             >
               <Link href="/developers" className="btn btn-primary btn-lg">
-                Get started
+                Start here
                 <ArrowRight size={18} />
               </Link>
               <Link href="/peac" className="btn btn-secondary btn-lg">
@@ -258,7 +258,7 @@ export default function AboutPage() {
                   PEAC Protocol
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  The open format underneath: protocol specification, wire format, conformance suite, and reference implementation. Apache-2.0, no CLA.
+                  The open standard underneath: protocol specification, wire format, conformance suite, and reference implementation. Apache-2.0, no CLA.
                 </p>
               </div>
               <div

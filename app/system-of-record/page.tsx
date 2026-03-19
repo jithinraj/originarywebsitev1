@@ -4,23 +4,17 @@ import Link from 'next/link'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import { useState, useEffect } from 'react'
-import { ArrowRight, CheckCircle, FileText, Lock, Activity, Shield, Layers, ExternalLink, ChevronDown, Link as LinkIcon } from 'lucide-react'
+import { ArrowRight, CheckCircle, FileText, Activity, Shield, Layers, ChevronDown, Link as LinkIcon } from 'lucide-react'
 import { copyToClipboard } from '@/lib/clipboard'
 
 // Section definitions for TOC
 const SECTIONS = [
   { id: 'introduction', label: 'Introduction' },
-  { id: 'built-to-interoperate', label: 'Built to interoperate' },
-  { id: 'meaning-in-agent-era', label: 'Meaning in the agent era' },
   { id: 'why-interactions-break', label: 'Why interactions break' },
-  { id: 'requirements', label: 'Requirements' },
   { id: 'policy-receipts', label: 'Policy + receipts' },
   { id: 'what-receipt-proves', label: 'What a receipt proves' },
   { id: 'end-to-end-flow', label: 'End-to-end flow' },
-  { id: 'why-open', label: 'Why open matters' },
   { id: 'what-originary-builds', label: 'What Originary builds' },
-  { id: 'who-this-is-for', label: 'Who this is for' },
-  { id: 'what-happens-next', label: 'What happens next' },
   { id: 'get-started', label: 'Get started' },
   { id: 'faq', label: 'FAQ' },
 ]
@@ -287,62 +281,7 @@ export default function SystemOfRecordPage() {
               </p>
 
               <p className="callout">
-                What we need is an <strong>open system of record</strong> for agent interactions. Originary exists to build and steward that layer.
-              </p>
-            </section>
-
-            {/* Built to interoperate - Edit A */}
-            <section id="built-to-interoperate" className="content-section">
-              <SectionHeader id="built-to-interoperate" title="Built to interoperate" onCopy={copyAnchorLink} copied={copiedAnchor === 'built-to-interoperate'} />
-
-              <p>
-                PEAC Protocol (Programmable Environment for Agent Coordination) is designed to sit above payment rails and alongside provenance and preference standards. It does not compete with x402/L402 or any single vendor&apos;s stack; it standardizes the evidence object that can reference those systems.
-              </p>
-
-              <p>
-                PEAC complements payment rails like HTTP 402 patterns and x402/L402, and works alongside standards like C2PA for provenance and AIPREF for AI preferences. The protocol provides the binding layer that creates verifiable proof across these systems.
-              </p>
-            </section>
-
-            {/* System of record changes meaning */}
-            <section id="meaning-in-agent-era" className="content-section">
-              <SectionHeader id="meaning-in-agent-era" title="&ldquo;System of record&rdquo; changes meaning in the agent era" onCopy={copyAnchorLink} copied={copiedAnchor === 'meaning-in-agent-era'} />
-
-              <p>
-                In classic enterprise software, a system of record is where &ldquo;truth&rdquo; lives: customer data, transactions, inventories, ledgers.
-              </p>
-
-              <p>In the agent era, the unit of truth is different.</p>
-
-              <p>
-                It is not &ldquo;a row in a database.&rdquo; It is <strong>a verifiable interaction</strong>:
-              </p>
-
-              <ul>
-                <li>what was requested</li>
-                <li>what policy applied</li>
-                <li>what consent preferences were active</li>
-                <li>what was paid (if anything), via which rail</li>
-                <li>what was returned</li>
-                <li>what attribution/provenance obligations were asserted</li>
-                <li>what identities were involved (without leaking private identity)</li>
-              </ul>
-
-              <p>
-                This is a system of record for <strong>decisions and actions</strong>, not just data.
-              </p>
-
-              <p>And it must be interoperable across:</p>
-
-              <ul>
-                <li>different agent frameworks</li>
-                <li>different payment rails (HTTP 402, x402/L402, Stripe-like flows, etc.)</li>
-                <li>different network surfaces (origin, CDN, gateway, edge workers)</li>
-                <li>different storage backends (centralized logs, SIEMs, data lakes, internal ledgers)</li>
-              </ul>
-
-              <p className="emphasis">
-                If it only works in one vendor&apos;s stack, it is not a system of record. It is a product feature.
+                What we need is an <strong>open system of record</strong> for agent interactions: portable, verifiable evidence that works across payment rails, agent frameworks, and vendor stacks. Originary exists to build and steward that layer.
               </p>
             </section>
 
@@ -397,56 +336,6 @@ export default function SystemOfRecordPage() {
               <p className="summary">
                 In short: agents are arriving with no shared proof layer.
               </p>
-            </section>
-
-            {/* Requirements */}
-            <section id="requirements" className="content-section">
-              <SectionHeader id="requirements" title="The requirements for a real system of record" onCopy={copyAnchorLink} copied={copiedAnchor === 'requirements'} />
-
-              <p>
-                A credible system of record for AI agents must meet requirements that are easy to say and hard to ship.
-              </p>
-
-              <div className="requirements-grid">
-                <div className="requirement-card">
-                  <h4>It must be open</h4>
-                  <p>
-                    If one company controls the format or the verifier, the market will fragment and the incentives will bend toward lock-in. Openness is what lets receipts remain meaningful across vendors.
-                  </p>
-                </div>
-
-                <div className="requirement-card">
-                  <h4>It must be verifiable</h4>
-                  <p>
-                    Evidence cannot rely on &ldquo;trust us.&rdquo; It has to be cryptographically verifiable later, by third parties, without shared secrets.
-                  </p>
-                </div>
-
-                <div className="requirement-card">
-                  <h4>It must be privacy-preserving</h4>
-                  <p>
-                    A system of record cannot become a surveillance layer. It should support selective disclosure and avoid embedding PII in proofs by default.
-                  </p>
-                </div>
-
-                <div className="requirement-card">
-                  <h4>It must be neutral across rails and stacks</h4>
-                  <p>
-                    Agents will pay with different mechanisms. Providers will enforce at different layers. A system of record should unify evidence across these realities.
-                  </p>
-                </div>
-
-                {/* Edit D - Performance acknowledgment */}
-                <div className="requirement-card">
-                  <h4>It must be cheap enough to be default</h4>
-                  <p>
-                    If proof adds massive latency or cost, it will only be used in high-stakes flows. The winning layer is the one that becomes routine.
-                  </p>
-                  <p className="requirement-note">
-                    Signed receipts add overhead, so the format must be compact and the signing/verifying path must be implementable at the edge. PEAC is designed so implementations can optimize issuance (including optional delayed or batched issuance where appropriate) while keeping verification deterministic.
-                  </p>
-                </div>
-              </div>
             </section>
 
             {/* The model: policy + receipts */}
@@ -623,53 +512,13 @@ Content-Type: application/json`}</code></pre>
               </p>
             </section>
 
-            {/* Why "open" is non-negotiable */}
-            <section id="why-open" className="content-section">
-              <SectionHeader id="why-open" title="Why &ldquo;open&rdquo; is non-negotiable" onCopy={copyAnchorLink} copied={copiedAnchor === 'why-open'} />
-
-              <p>
-                Closed systems of record exist today: proprietary logs, proprietary billing dashboards, proprietary bot management platforms.
-              </p>
-
-              <p>They work until they don&apos;t.</p>
-
-              <p>In the agent era, three things make openness mandatory:</p>
-
-              <div className="open-reasons">
-                <div className="reason-card">
-                  <h4>Portability</h4>
-                  <p>
-                    Evidence must survive vendor changes. If a company switches CDNs, gateways, agent frameworks, or payment rails, the proofs must remain meaningful.
-                  </p>
-                </div>
-
-                <div className="reason-card">
-                  <h4>Multiparty verification</h4>
-                  <p>
-                    A single vendor cannot be the only verifier when disputes involve multiple parties. Systems of record are valuable precisely because verification is independent.
-                  </p>
-                </div>
-
-                <div className="reason-card">
-                  <h4>Ecosystem scale</h4>
-                  <p>
-                    Agents will interact with millions of endpoints. The only way this scales is with shared formats and shared verification rules.
-                  </p>
-                </div>
-              </div>
-
-              <p className="callout">
-                If the record layer is proprietary, the internet fragments into walled gardens. That is not the future we want, and it is not the future that wins long-term.
-              </p>
-            </section>
-
             {/* What Originary is building */}
             <section id="what-originary-builds" className="content-section">
               <SectionHeader id="what-originary-builds" title="What Originary is building" onCopy={copyAnchorLink} copied={copiedAnchor === 'what-originary-builds'} />
 
               {/* Edit E - Protocol vs company separation */}
               <p className="protocol-callout">
-                <strong>PEAC is an open protocol.</strong> Originary stewards the spec and builds tools and services, but any team can implement and verify PEAC receipts independently.
+                <strong>PEAC is an open protocol.</strong> Originary stewards the spec and builds tools and services, but any team can implement and verify PEAC receipts independently. Openness is non-negotiable: evidence must be portable across vendors, verifiable by multiple parties, and scalable across millions of agent endpoints.
               </p>
 
               <p>
@@ -727,77 +576,6 @@ Content-Type: application/json`}</code></pre>
               <p>That is what &ldquo;open system of record&rdquo; means in practice.</p>
             </section>
 
-            {/* Who this is for */}
-            <section id="who-this-is-for" className="content-section">
-              <SectionHeader id="who-this-is-for" title="Who this is for" onCopy={copyAnchorLink} copied={copiedAnchor === 'who-this-is-for'} />
-
-              <p>
-                This layer is not just for &ldquo;AI companies.&rdquo; It is for anyone who will be interacted with by agents.
-              </p>
-
-              <div className="audience-grid">
-                <div className="audience-card">
-                  <h4>Publishers and content platforms</h4>
-                  <ul>
-                    <li>prove what was accessed and under what terms</li>
-                    <li>support paid access without losing portability</li>
-                    <li>enforce attribution/provenance expectations</li>
-                  </ul>
-                </div>
-
-                <div className="audience-card">
-                  <h4>API providers and SaaS platforms</h4>
-                  <ul>
-                    <li>make agent access auditable</li>
-                    <li>bind entitlements and payment to responses</li>
-                    <li>reduce disputes and fraud</li>
-                  </ul>
-                </div>
-
-                <div className="audience-card">
-                  <h4>Enterprises deploying agents</h4>
-                  <ul>
-                    <li>enforce preference and compliance constraints</li>
-                    <li>audit agent actions across vendors</li>
-                    <li>produce evidence without relying on internal logs alone</li>
-                  </ul>
-                </div>
-
-                <div className="audience-card">
-                  <h4>CDNs and edge networks</h4>
-                  <ul>
-                    <li>emit verifiable receipts at the enforcement layer</li>
-                    <li>standardize proofs across customer sites and services</li>
-                  </ul>
-                </div>
-              </div>
-
-              <p className="callout">
-                If you are building for the agent economy, you will need a proof layer. The question is whether it is proprietary and fragile, or open and durable.
-              </p>
-            </section>
-
-            {/* What we believe will happen next */}
-            <section id="what-happens-next" className="content-section">
-              <SectionHeader id="what-happens-next" title="What we believe will happen next" onCopy={copyAnchorLink} copied={copiedAnchor === 'what-happens-next'} />
-
-              <p>The agent era will force a new baseline:</p>
-
-              {/* Edit G - Softer TLS claim */}
-              <ul className="future-list">
-                <li><strong>Receipts can become a default expectation</strong> for high-trust agent interactions, similar to how TLS became baseline for secure transport.</li>
-                <li><strong>Policy will be machine-readable</strong>, not buried in documents.</li>
-                <li><strong>Verification will be a standard enterprise requirement</strong>, not a niche security feature.</li>
-                <li><strong>Disputes will be resolved with evidence objects</strong>, not screenshots and vendor dashboards.</li>
-              </ul>
-
-              <p className="emphasis">
-                The system of record for AI agents will not be the company with the most traffic. It will be the layer that makes interactions <em>provable</em> across everyone&apos;s traffic.
-              </p>
-
-              <p>That is the layer Originary is building.</p>
-            </section>
-
             {/* Get started */}
             <section id="get-started" className="content-section">
               <SectionHeader id="get-started" title="Get started" onCopy={copyAnchorLink} copied={copiedAnchor === 'get-started'} />
@@ -836,7 +614,7 @@ Content-Type: application/json`}</code></pre>
                   <ArrowRight size={18} />
                 </Link>
                 <Link href="/developers" className="btn btn-secondary btn-lg">
-                  Developer docs
+                  Start here
                 </Link>
                 <Link href="/peac" className="btn btn-ghost btn-lg">
                   Read the spec
@@ -1152,32 +930,6 @@ Content-Type: application/json`}</code></pre>
           margin-top: var(--space-3);
         }
 
-        /* Requirements grid */
-        .requirements-grid {
-          display: grid;
-          gap: var(--space-4);
-        }
-
-        .requirement-card {
-          padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--surface-subtle);
-          border-radius: var(--radius-xl);
-        }
-
-        .requirement-card h4 {
-          font-size: clamp(1rem, 2.5vw, 1.125rem);
-          font-weight: 600;
-          color: var(--text-primary);
-          margin-bottom: var(--space-3);
-        }
-
-        .requirement-note {
-          font-size: var(--text-sm);
-          color: var(--text-tertiary);
-          font-style: italic;
-          margin-top: var(--space-2);
-        }
-
         /* Model list */
         .model-list {
           margin: var(--space-6) 0;
@@ -1313,33 +1065,6 @@ Content-Type: application/json`}</code></pre>
           padding: var(--space-2) 0;
         }
 
-        /* Open reasons - Responsive grid */
-        .open-reasons {
-          display: grid;
-          gap: var(--space-4);
-          margin: var(--space-8) 0;
-        }
-
-        @media (min-width: 640px) {
-          .open-reasons {
-            grid-template-columns: repeat(3, 1fr);
-          }
-        }
-
-        .reason-card {
-          padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--surface-elevated);
-          border: 1px solid var(--border-default);
-          border-radius: var(--radius-xl);
-        }
-
-        .reason-card h4 {
-          font-size: clamp(1rem, 2.5vw, 1.125rem);
-          font-weight: 600;
-          color: var(--accent-brand);
-          margin-bottom: var(--space-2);
-        }
-
         /* Build grid */
         .build-grid {
           display: grid;
@@ -1380,62 +1105,6 @@ Content-Type: application/json`}</code></pre>
 
         .build-card ul {
           margin-bottom: 0;
-        }
-
-        /* Audience grid - Responsive */
-        .audience-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: var(--space-4);
-          margin: var(--space-8) 0;
-        }
-
-        @media (min-width: 480px) {
-          .audience-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-
-        @media (min-width: 768px) {
-          .audience-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
-
-        .audience-card {
-          padding: clamp(var(--space-4), 4vw, var(--space-6));
-          background: var(--surface-elevated);
-          border: 1px solid var(--border-default);
-          border-radius: var(--radius-xl);
-        }
-
-        .audience-card h4 {
-          font-size: clamp(0.9375rem, 2vw, 1rem);
-          font-weight: 600;
-          color: var(--text-primary);
-          margin-bottom: var(--space-3);
-        }
-
-        .audience-card ul {
-          margin-bottom: 0;
-        }
-
-        .audience-card li {
-          font-size: var(--text-sm);
-        }
-
-        /* Future list */
-        .future-list {
-          list-style: none;
-          padding: 0;
-          margin: var(--space-6) 0;
-        }
-
-        .future-list li {
-          padding: clamp(var(--space-3), 3vw, var(--space-4));
-          background: var(--surface-subtle);
-          border-radius: var(--radius-lg);
-          margin-bottom: var(--space-3);
         }
 
         /* Start steps */
@@ -1508,11 +1177,8 @@ Content-Type: application/json`}</code></pre>
           .callout,
           .protocol-callout,
           .problem-card,
-          .requirement-card,
           .model-block,
-          .reason-card,
           .build-card,
-          .audience-card,
           .faq-item {
             border-width: 2px;
           }

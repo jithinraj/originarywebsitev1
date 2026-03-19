@@ -57,7 +57,7 @@ export default function ReceiptsPage() {
     {
       icon: <Shield size={24} />,
       title: 'Audit Ready',
-      description: 'Export logs in standard formats for internal review.',
+      description: 'Export verifiable records for audit, compliance, and dispute resolution.',
       color: 'var(--accent-warning)',
       colorMuted: 'var(--accent-warning-muted)'
     },
@@ -132,7 +132,7 @@ export default function ReceiptsPage() {
                 }}
               >
                 <Link href="/developers" className="btn btn-primary btn-lg receipts-cta-primary">
-                  <span>Start Building</span>
+                  <span>Start here</span>
                   <ArrowRight size={18} />
                 </Link>
                 <Link href="/demo" className="btn btn-secondary btn-lg">
@@ -250,14 +250,14 @@ export default function ReceiptsPage() {
                     <span className="dot green" />
                   </div>
                   <span className="receipts-code-filename">receipt.json</span>
-                  <span className="receipts-code-badge">peac-receipt/0.1</span>
+                  <span className="receipts-code-badge">interaction-record+jwt</span>
                 </div>
                 <pre className="receipts-code-body">
                   <code>{`{
   `}<span className="code-key">{`"header"`}</span>{`: {
     `}<span className="code-key">{`"alg"`}</span>{`: `}<span className="code-string">{`"EdDSA"`}</span>{`,
-    `}<span className="code-key">{`"typ"`}</span>{`: `}<span className="code-string">{`"peac-receipt/0.1"`}</span>{`,
-    `}<span className="code-key">{`"kid"`}</span>{`: `}<span className="code-string">{`"originary-2025-01"`}</span>{`
+    `}<span className="code-key">{`"typ"`}</span>{`: `}<span className="code-string">{`"interaction-record+jwt"`}</span>{`,
+    `}<span className="code-key">{`"kid"`}</span>{`: `}<span className="code-string">{`"originary-2026-01"`}</span>{`
   },
   `}<span className="code-key">{`"payload"`}</span>{`: {
     `}<span className="code-key">{`"iss"`}</span>{`: `}<span className="code-string">{`"https://www.originary.xyz"`}</span>{`,
@@ -368,7 +368,7 @@ export default function ReceiptsPage() {
               <p>Start generating verifiable records for every AI interaction with Originary.</p>
               <div className="receipts-cta-buttons">
                 <Link href="/developers" className="btn btn-lg btn-primary">
-                  <span>Start Building</span>
+                  <span>Start here</span>
                   <ArrowRight size={18} />
                 </Link>
                 <a href="mailto:contact@originary.xyz" className="btn btn-lg btn-secondary">

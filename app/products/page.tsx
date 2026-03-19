@@ -7,12 +7,12 @@ import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
   title: 'Product | Originary Verification Infrastructure',
-  description: 'Verify agent requests, apply policy, and return portable signed records. MCP server, Gateway, Verify, Capture, and policy tools.',
+  description: 'Verify agent requests, apply policy, and return verifiable interaction records. MCP server, Gateway, Verify, Capture, and policy tools.',
   keywords: 'Originary products, verify API, Gateway 402, MCP server, interaction records, verification',
   robots: 'index,follow',
   openGraph: {
     title: 'Product | Originary Verification Infrastructure',
-    description: 'Verify agent requests, apply policy, and return portable signed records.',
+    description: 'Verify agent requests, apply policy, and return verifiable interaction records.',
     url: '/products',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Product | Originary Verification Infrastructure',
-    description: 'Verify agent requests, apply policy, and return portable signed records.',
+    description: 'Verify agent requests, apply policy, and return verifiable interaction records.',
     images: ['/og'],
   },
   alternates: {

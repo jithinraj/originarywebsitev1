@@ -61,7 +61,7 @@ export default function Footer() {
             </Link>
             <p style={{ marginTop: '1.5rem', fontSize: '0.875rem', lineHeight: 1.65, color: 'var(--text-tertiary)', maxWidth: '20rem' }}>
               Originary helps APIs, tools, and MCP servers verify agent requests,
-              apply policy, and return portable signed records. PEAC is the open format underneath.
+              apply policy, and return verifiable interaction records. PEAC is the open standard underneath.
             </p>
             {/* Social icons */}
             <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>

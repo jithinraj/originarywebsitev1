@@ -12,7 +12,7 @@ const proofPoints = [
   },
   {
     title: 'Exportable records',
-    description: 'Portable signed records your team can inspect, share, archive, and use in disputes.',
+    description: 'Verifiable interaction records your team can inspect, share, archive, and use in disputes.',
   },
   {
     title: 'Open standard, no lock-in',

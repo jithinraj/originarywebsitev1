@@ -1,24 +1,26 @@
 import { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Publishers | AI Compliance and Content Protection',
-  description: 'AI compliance and provenance tracking for publishers. Set AI preferences with AIPREF, verify compliance, and monetize content with PEAC.',
-  keywords: 'AI compliance, AI provenance tracking, AI licensing, content protection, AI preference standard, AIPREF, AI training preferences, content monetization, automated licensing, attribution requirements, PEAC, publishers, content rights',
+  title: 'Publishers | Declare AI Access Terms',
+  description: 'Publish machine-readable AI access preferences with AIPREF and peac.txt. Make policy outcomes provable with verifiable interaction records.',
+  keywords: 'AI compliance, AI provenance, content protection, AIPREF, AI training preferences, publishers, content rights, PEAC protocol',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Publishers | AI Compliance and Content Protection',
-    description: 'AI compliance and AI provenance tracking for publishers. Set AI preferences, verify AI compliance with attribution requirements, and monetize content access through automated licensing.',
+    title: 'Publishers | Declare AI Access Terms',
+    description: 'Publish machine-readable AI access preferences. Make policy outcomes provable with verifiable interaction records.',
     url: '/solutions/publishers',
     images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Publishers | AI Compliance and Content Protection',
-    description: 'AI compliance and AI provenance tracking for publishers. Set AI preferences, verify AI compliance with attribution requirements, and monetize content access.',
+    title: 'Publishers | Declare AI Access Terms',
+    description: 'Publish machine-readable AI access preferences. Make policy outcomes provable.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -33,174 +35,89 @@ export default function Publishers() {
   return (
     <div className="wrap">
       <NavigationHeader />
-      <main style={{ paddingTop: '80px' }}>
+      <main id="main-content" role="main" style={{ paddingTop: '80px' }}>
+        {/* Hero */}
         <section className="section">
           <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-              <div style={{
-                display: 'inline-block',
-                backgroundColor: 'var(--brand-primary-light)',
-                color: 'var(--accent-brand)',
-                padding: 'var(--space-2) var(--space-4)',
-                borderRadius: 'var(--radius-full)',
-                fontSize: 'var(--text-sm)',
-                fontWeight: 600,
-                letterSpacing: '0.05em',
-                marginBottom: 'var(--space-6)'
-              }}>
+            <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
+              <div style={{ display: 'inline-block', backgroundColor: 'var(--brand-primary-light)', color: 'var(--accent-brand)', padding: 'var(--space-2) var(--space-4)', borderRadius: 'var(--radius-full)', fontSize: 'var(--text-sm)', fontWeight: 600, letterSpacing: '0.05em', marginBottom: 'var(--space-6)' }}>
                 PUBLISHERS
               </div>
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">Protect and Monetize Content</span>
+                <span className="text-gradient">Declare your terms. Make compliance provable.</span>
               </h1>
-              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
-                AI compliance and AI provenance tracking for publishers. Set AI preferences for training and usage, verify AI compliance with attribution requirements, and monetize content access through automated licensing with AIPREF and PEAC.
+              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+                Publish machine-readable AI access preferences with AIPREF and peac.txt. When agents comply, Originary issues a verifiable interaction record proving what terms applied and what decision was made.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="section">
+        {/* What you get */}
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Content Control</h2>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
-                Establish clear preferences for how AI systems can access, use, and attribute your content while creating new revenue streams through AI licensing and AI commerce for publishers.
-              </p>
-              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)' }}>
-                Use AIPREF and AI preference standard for machine-readable AI access preferences, enabling automated AI licensing and payment flows for your content.
-              </p>
+            <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
+              <h2 style={{ marginBottom: 'var(--space-4)' }}>What Originary adds for publishers</h2>
             </div>
 
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
               <div className="card">
-                <div style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: 'var(--radius-lg)',
-                  backgroundColor: 'var(--brand-primary-light)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: 'var(--space-4)'
-                }}>
-                  <span style={{ fontSize: '1.5rem' }}>⚙️</span>
-                </div>
-                <h3 style={{ marginBottom: 'var(--space-4)' }}>Usage Preferences</h3>
-                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                  Define how your content can be used for training, fine-tuning, and inference
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Usage preferences</h3>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.7 }}>
+                  Define how your content can be used for training, fine-tuning, search, and inference. Publish preferences at a well-known endpoint using AIPREF and peac.txt.
                 </p>
               </div>
 
               <div className="card">
-                <div style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: 'var(--radius-lg)',
-                  backgroundColor: 'var(--brand-primary-light)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: 'var(--space-4)'
-                }}>
-                  <span style={{ fontSize: '1.5rem' }}>📝</span>
-                </div>
-                <h3 style={{ marginBottom: 'var(--space-4)' }}>Attribution Requirements</h3>
-                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                  Specify citation and credit requirements for all content usage
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Attribution requirements</h3>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.7 }}>
+                  Specify citation and credit requirements. When agents comply, the interaction record captures what attribution terms applied.
                 </p>
               </div>
 
               <div className="card">
-                <div style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: 'var(--radius-lg)',
-                  backgroundColor: 'var(--brand-primary-light)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: 'var(--space-4)'
-                }}>
-                  <span style={{ fontSize: '1.5rem' }}>💰</span>
-                </div>
-                <h3 style={{ marginBottom: 'var(--space-4)' }}>Automated Licensing</h3>
-                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                  Enable agents to automatically license content through payment protocols
+                <h3 style={{ marginBottom: 'var(--space-4)' }}>Provable compliance</h3>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.7 }}>
+                  Each compliant interaction produces a signed record your team can verify offline, export, and use in disputes or audits.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
+        {/* How it works */}
         <section className="section">
-          <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Implementation</h2>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
-                Get started with simple setup and comprehensive monitoring tools.
-              </p>
-            </div>
-
-            <div className="grid grid-2" style={{ gap: 'var(--space-8)' }}>
-              <div className="card">
-                <div style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: 'var(--radius-lg)',
-                  background: 'var(--accent-brand)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: 'var(--space-4)'
-                }}>
-                  <span style={{ fontSize: '1.5rem' }}>⚡</span>
-                </div>
-                <h3 style={{ marginBottom: 'var(--space-4)' }}>Simple Setup</h3>
-                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                  Add AIPREF and <code style={{ backgroundColor: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac.txt</code> files to your website root to declare your preferences.
-                </p>
-              </div>
-
-              <div className="card">
-                <div style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: 'var(--radius-lg)',
-                  background: 'var(--accent-brand)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: 'var(--space-4)'
-                }}>
-                  <span style={{ fontSize: '1.5rem' }}>📊</span>
-                </div>
-                <h3 style={{ marginBottom: 'var(--space-4)' }}>Verification Dashboard</h3>
-                <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                  Monitor compliance and track usage through our comprehensive analytics platform.
-                </p>
-              </div>
-            </div>
+          <div className="container" style={{ maxWidth: '720px' }}>
+            <h2 style={{ marginBottom: 'var(--space-8)', textAlign: 'center' }}>How it works</h2>
+            <ol style={{ listStyle: 'decimal', paddingLeft: 'var(--space-6)', lineHeight: 2, fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
+              <li>Add an <code>aipref.json</code> and <code>peac.txt</code> file to your website root</li>
+              <li>Agents discover your terms before accessing content</li>
+              <li>Originary evaluates compliance against your declared preferences</li>
+              <li>A signed interaction record proves what terms applied and what was allowed</li>
+              <li>Export records for audits, disputes, or licensing verification</li>
+            </ol>
           </div>
         </section>
 
-        <section className="section">
+        {/* CTA */}
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
-            <div className="card cta-card">
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>Protect Your Content</h2>
-              <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'var(--white)', lineHeight: 1.6 }}>
-                Join publishers who are taking control of their content in the age of AI.
+            <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
+              <h2 style={{ marginBottom: 'var(--space-6)' }}>Get started</h2>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-8)' }}>
+                Start with a peac.txt policy file. Add AIPREF preferences when you need finer-grained control.
               </p>
-              <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--accent-brand)' }}>
-                  Talk to our team
-                </a>
-                <a href="/trace" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid var(--border-hover)' }}>
-                  AI crawler analytics and bot tracking
-                </a>
-                <a href="/integrations/aipref" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid var(--border-hover)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Link href="/developers" className="btn btn-primary">
+                  Start here
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+                <Link href="/integrations/aipref" className="btn btn-ghost">
                   AIPREF integration
-                </a>
+                </Link>
+                <Link href="/receipts" className="btn btn-ghost">
+                  Interaction records
+                </Link>
               </div>
             </div>
           </div>

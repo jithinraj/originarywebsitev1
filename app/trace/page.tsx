@@ -39,12 +39,12 @@ export default function TracePage() {
     {
       icon: <Eye size={24} />,
       title: 'Complete Visibility',
-      description: 'Track every AI crawler that accesses your content. Use Trace as your bot management and bot protection layer for AI crawlers. See which agents visit, what they take, and when.'
+      description: 'Identify agents accessing your APIs and content. See what they request and when.'
     },
     {
       icon: <Shield size={24} />,
       title: 'Policy Compliance',
-      description: 'Built on PEAC Protocol. Automatically detect policy violations and generate verifiable evidence.'
+      description: 'Evaluate requests against your declared terms. Issue signed records for compliant interactions.'
     },
     {
       icon: <Download size={24} />,
@@ -73,14 +73,11 @@ export default function TracePage() {
 
   const cloudFeatures = [
     'Everything in OSS',
-    'Attested receipts (KMS-backed)',
     'Automated compliance bundles',
     'Multi-property rollups',
     'Cross-site benchmarking',
     'Email/Slack alerts',
-    'SSO/SCIM',
-    'Priority support',
-    'SLA guarantee'
+    'Priority support'
   ]
 
   return (
@@ -123,7 +120,7 @@ export default function TracePage() {
                 letterSpacing: '-0.04em'
               }}>
                 <span style={{ display: 'block', fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-2)', fontWeight: 600, letterSpacing: '0.05em' }}>ORIGINARY™</span>
-                Trace: Distributed tracing for <span className="text-gradient">your content</span>
+                Trace: agent access monitoring with <span className="text-gradient">signed evidence</span>
               </h1>
               <p style={{
                 fontSize: 'var(--text-xl)',
@@ -133,7 +130,7 @@ export default function TracePage() {
                 maxWidth: '700px',
                 margin: '0 auto var(--space-10) auto'
               }}>
-                See which AI services accessed your site and what they took. Track compliance with PEAC Protocol. Get verifiable evidence.
+                See which agents access your APIs and content. Apply policy. Export verifiable interaction records.
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <a
@@ -268,7 +265,7 @@ export default function TracePage() {
                   lineHeight: 1.7,
                   marginBottom: 'var(--space-6)'
                 }}>
-                  Originary Trace is built on the <strong>PEAC Protocol</strong> - the open standard for machine-readable policy, compliance tracking, and verifiable interaction records.
+                  Originary Trace is built on the PEAC open standard for verifiable interaction records.
                 </p>
                 <a
                   href="https://github.com/peacprotocol/peac"
@@ -679,7 +676,7 @@ go install ./tailer
                     color: 'var(--text-secondary)',
                     margin: 0
                   }}>
-                    Yes. Originary Trace functions as comprehensive AI crawler analytics and bot tracking infrastructure. It provides bot management and bot protection capabilities by identifying all AI crawlers accessing your content, enforcing PEAC Protocol policies, and generating verifiable evidence. Use Trace as your bot tracker to monitor AI scraping, detect policy violations, and control access to your data - all while maintaining compliance through verifiable interaction records.
+                    Yes. Trace identifies AI crawlers and agents accessing your content, applies policy, and generates verifiable interaction records. Use it to monitor AI access and enforce your declared terms.
                   </p>
                 </div>
 
@@ -698,7 +695,7 @@ go install ./tailer
                     color: 'var(--text-secondary)',
                     margin: 0
                   }}>
-                    Trace combines AI crawler analytics with verifiable compliance evidence through PEAC Protocol. Unlike traditional bot protection tools, Trace generates cryptographically signed receipts for every access, providing audit trails for AI compliance and bot management. It tracks not just who accessed your content, but what they took, under what terms, and with what consent - critical for the agentic web and AI governance.
+                    Trace generates signed interaction records for every access, providing verifiable evidence of what was accessed, when, and under what terms.
                   </p>
                 </div>
               </div>
@@ -724,7 +721,7 @@ go install ./tailer
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)'
               }}>
-                Ready to track your AI traffic?
+                Monitor agent access to your content
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',

@@ -136,11 +136,8 @@ Cache-Control: no-store
             <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
               What is x402?
             </h2>
-            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-              x402 standardizes the challenge and the proof so automated clients (including AI agents) can transact without out-of-band flows. HTTP 402 sat unused for decades. Today it&rsquo;s being put to work for APIs and content: a first-class signal that payment is needed before the resource is returned.
-            </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-              Treat it like a capability, not a paywall - a programmable way to meter access fairly.
+              x402 standardizes the HTTP 402 challenge-and-proof flow so automated clients, including AI agents, can pay and access resources without out-of-band flows. Think of it as a programmable way to meter access fairly.
             </p>
           </div>
 
@@ -149,14 +146,8 @@ Cache-Control: no-store
             <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
               Getting Started with x402
             </h2>
-            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-              Implementing x402 in your API takes three steps: return a 402 response with payment details, accept payment receipts, and verify those receipts before granting access. The protocol is designed to work with any payment rail - from traditional payment gateways to cryptocurrency wallets to stablecoins.
-            </p>
-            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-              Start by protecting a single API endpoint with a 402 challenge. When clients request that endpoint without payment, return status code 402 with a JSON payload containing the amount, currency, and a unique reference ID. Clients use this information to complete payment off-band, then retry the request with a verifiable receipt.
-            </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-              For AI agents and autonomous systems, x402 enables fully automated payment flows. Agents can parse the 402 response, execute payment through their configured wallet or payment provider, and retry the request - all without human intervention. This makes x402 ideal for agent-to-agent commerce, API marketplaces, and usage-based pricing models in the agentic economy.
+              Protect an API endpoint with a 402 challenge: return status 402 with amount, currency, and a reference ID. Clients pay, then retry with a verifiable receipt. Works with any payment rail and supports fully automated agent-to-agent payment flows.
             </p>
           </div>
 
@@ -277,16 +268,6 @@ Cache-Control: no-store
             </p>
           </div>
 
-          {/* Comparisons */}
-          <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
-            <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
-              Choosing Rails: x402 vs Arc vs Tempo
-            </h2>
-            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-              The right rail depends on your currency, fee model, and developer footprint. Start with what your customers already hold (e.g., stablecoins), then optimize for verification latency and dispute handling. We will maintain a running comparison as the space evolves.
-            </p>
-          </div>
-
           {/* Downloads */}
           <div className="card" style={{ marginBottom: 'var(--space-8)' }}>
             <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
@@ -348,8 +329,8 @@ Cache-Control: no-store
             <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)', lineHeight: 1.7 }}>
               Start with one of our stack guides above, or explore <Link href="/developers/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>developer tools</Link> for x402 receipts and verification.
             </p>
-            <Link href="/pricing/" className="btn btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-              View Pricing
+            <Link href="/developers/" className="btn btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+              Start here
             </Link>
           </div>
         </div>
