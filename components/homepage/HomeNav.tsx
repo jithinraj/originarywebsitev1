@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 const links = [
-  { label: 'How it works', href: '#product-flow' },
+  { label: 'Products', href: '/products' },
   { label: 'Developers', href: '/developers' },
-  { label: 'PEAC', href: '/peac' },
-  { label: 'Trust', href: '/trust' },
+  { label: 'Learn', href: '/learn' },
+  { label: 'Pricing', href: '/pricing' },
 ]
 
 export function HomeNav() {
@@ -78,7 +78,7 @@ export function HomeNav() {
               </svg>
             </Link>
             <Link href="/developers" className="hp-nav-cta">
-              Start building
+              Start here
             </Link>
           </div>
 
@@ -133,7 +133,7 @@ export function HomeNav() {
             ))}
             <div className="pt-5 mt-3" style={{ borderTop: '1px solid var(--color-border)' }}>
               <Link href="/developers" className="hp-btn-primary w-full text-center">
-                Start building
+                Start here
               </Link>
             </div>
           </div>

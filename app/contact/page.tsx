@@ -73,34 +73,34 @@ export default function ContactPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
                 <div>
                   <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
-                    General inquiries
+                    Integration help
                   </h3>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Questions about Originary, PEAC Protocol, or getting started
+                    Questions about adding Originary to your API, MCP server, or agent flow
                   </p>
                 </div>
                 <div>
                   <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
-                    Integration and commercial support
+                    Enterprise deployment
                   </h3>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Guided integration, managed deployments, attested signing keys, and dedicated engineering support
+                    Production deployment support, managed keys, compliance evidence
                   </p>
                 </div>
                 <div>
                   <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
-                    Technical support
+                    Partnership
                   </h3>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Implementation help, integration questions, and troubleshooting
+                    Standards collaboration, ecosystem integration, research
                   </p>
                 </div>
                 <div>
                   <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
-                    Legal and compliance
+                    Security and legal
                   </h3>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Privacy inquiries, trademark questions, and compliance matters
+                    Vulnerability reports, privacy inquiries, trademark questions
                   </p>
                 </div>
               </div>

@@ -4,37 +4,39 @@ import Link from 'next/link'
 
 const columns = [
   {
-    title: 'Product',
+    title: 'Products',
     links: [
-      { label: 'Developers', href: '/developers' },
-      { label: 'Downloads', href: '/downloads' },
       { label: 'Agent Auditor', href: '/agent-auditor' },
+      { label: 'Gateway 402', href: '/products/gateway-402' },
+      { label: 'Trace', href: '/trace' },
+      { label: 'MCP Server', href: '/integrations/mcp' },
+      { label: 'All products', href: '/products' },
     ],
   },
   {
-    title: 'Standard',
+    title: 'Developers',
     links: [
-      { label: 'PEAC', href: '/peac' },
-      { label: 'Conformance', href: '/conformance' },
-      { label: 'Changelog', href: '/changelog' },
-      { label: 'GitHub', href: 'https://github.com/peacprotocol/peac' },
+      { label: 'Start here', href: '/developers' },
+      { label: 'Downloads', href: '/downloads' },
+      { label: 'Demo', href: '/demo' },
+      { label: 'Verify online', href: '/verify' },
     ],
   },
   {
-    title: 'Trust',
+    title: 'Learn',
     links: [
-      { label: 'Trust Center', href: '/trust' },
-      { label: 'Security', href: '/security' },
-      { label: 'Privacy', href: '/privacy' },
-      { label: 'Terms', href: '/terms' },
-      { label: 'Governance', href: '/governance' },
+      { label: 'Learning center', href: '/learn' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'PEAC Protocol', href: '/peac' },
+      { label: 'Integrations', href: '/integrations' },
     ],
   },
   {
     title: 'Company',
     links: [
       { label: 'About', href: '/about' },
-      { label: 'Blog', href: '/blog' },
+      { label: 'Pricing', href: '/pricing' },
+      { label: 'Press', href: '/press' },
       { label: 'Contact', href: '/contact' },
     ],
   },
@@ -74,7 +76,7 @@ export function HomeFooter() {
               style={{ color: 'var(--color-fg-muted)' }}
             >
               Originary helps APIs, tools, and MCP servers verify agent requests,
-              apply policy, and return portable signed records. PEAC is the open format underneath.
+              apply policy, and return verifiable interaction records. PEAC is the open standard underneath.
             </p>
             <div className="mt-6 flex items-center gap-4">
               <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="hp-social-icon" aria-label="GitHub">

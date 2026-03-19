@@ -171,10 +171,10 @@ const siteNavJsonLd = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Originary | Verify agent requests, apply policy, return portable signed records',
+    default: 'Originary | Know what every agent did. Prove it later.',
     template: '%s | Originary',
   },
-  description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return portable signed records. Built on PEAC. Self-hostable. Offline-verifiable.',
+  description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. PEAC is the open standard underneath.',
   keywords: [
     'agent verification',
     'API access control',
@@ -197,23 +197,23 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://www.originary.xyz'),
   openGraph: {
-    title: 'Originary | Verify agent requests, apply policy, return portable signed records',
-    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return portable signed records. Built on PEAC. Self-hostable. Offline-verifiable.',
+    title: 'Originary | Know what every agent did. Prove it later.',
+    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. PEAC is the open standard underneath.',
     url: 'https://www.originary.xyz',
     siteName: 'Originary',
     images: [{
       url: '/og',
       width: 1200,
       height: 630,
-      alt: 'Originary: verify agent requests, apply policy, return portable signed records'
+      alt: 'Originary: know what every agent did, prove it later'
     }],
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Verify agent requests, apply policy, return portable signed records',
-    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return portable signed records. Built on PEAC. Self-hostable. Offline-verifiable.',
+    title: 'Originary | Know what every agent did. Prove it later.',
+    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. PEAC is the open standard underneath.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',

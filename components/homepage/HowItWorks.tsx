@@ -6,7 +6,7 @@ const cards = [
   {
     number: '01',
     title: 'Evaluate the request',
-    description: 'Classify inbound agent requests before action is taken.',
+    description: 'An agent calls your API or tool. Originary checks who is calling and what they want.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9 12l2 2 4-4" />
@@ -17,7 +17,7 @@ const cards = [
   {
     number: '02',
     title: 'Apply policy',
-    description: 'Allow, deny, review, rate-limit, require approval, or charge based on your rules.',
+    description: 'Your rules decide: allow, deny, rate-limit, charge, or require approval.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="11" width="18" height="11" rx="2" />
@@ -28,7 +28,7 @@ const cards = [
   {
     number: '03',
     title: 'Emit the record',
-    description: 'Create a portable signed record your team can inspect, verify, and export later.',
+    description: 'A portable signed record is returned. Your team can inspect, verify, and export it later.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" />

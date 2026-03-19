@@ -47,7 +47,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.1, ease }}
         >
-          Verify agent requests, apply policy, return portable signed records
+          Know what every agent did. Prove it later.
         </motion.h1>
 
         {/* Subheading */}
@@ -58,7 +58,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease }}
         >
-          Start with middleware or the MCP server. Keep the rest of your stack.
+          Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. PEAC is the open standard underneath.
         </motion.p>
 
         {/* Tagline - visually distinct */}
@@ -72,7 +72,7 @@ export function Hero() {
             className="text-[1.125rem] md:text-[1.25rem] font-semibold tracking-[-0.02em]"
             style={{ color: 'var(--color-fg)' }}
           >
-            Logs stay local. Signed records travel.
+            Logs stay local. Records travel.
           </p>
         </motion.div>
 
@@ -84,7 +84,7 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.45, ease }}
         >
           <Link href="/developers" className="hp-btn-primary">
-            Start building
+            Start here
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
                 d="M3.5 7h7m0 0L7.5 4m3 3l-3 3"
@@ -96,7 +96,7 @@ export function Hero() {
             </svg>
           </Link>
           <Link href="/agent-auditor" className="hp-btn-secondary">
-            Verify a sample record
+            See it in action
           </Link>
         </motion.div>
 
@@ -139,9 +139,9 @@ export function Hero() {
         >
           {[
             { label: 'Book a demo', href: '/contact' },
+            { label: 'Agent Auditor', href: '/agent-auditor' },
             { label: 'Install MCP server', href: '/downloads#mcp-server' },
             { label: 'Read the spec', href: 'https://github.com/peacprotocol/peac', external: true },
-            { label: 'Downloads', href: '/downloads' },
           ].map((link, i) => (
             <span key={link.label}>
               {i > 0 && (

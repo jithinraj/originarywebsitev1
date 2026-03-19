@@ -24,8 +24,8 @@ export const PRICE_PRO = process.env.PRICE_PRO;   // Professional subscription
 // Site configuration
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.originary.xyz";
 export const SITE_NAME = "Originary";
-export const SITE_TAGLINE = "Verification for Automated Interactions";
-export const SITE_DESCRIPTION = "Originary provides verification infrastructure for automated interactions. Issue, verify, and handoff interaction records with the open PEAC standard.";
+export const SITE_TAGLINE = "Know what every agent did. Prove it later.";
+export const SITE_DESCRIPTION = "Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. PEAC is the open standard underneath.";
 
 // Protocol reference
 export const PROTOCOL_NAME = "PEAC Protocol";

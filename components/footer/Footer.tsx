@@ -3,13 +3,12 @@
 import Link from 'next/link'
 import {
   FOOTER_NAV_GROUPS,
-  FOOTER_COMPANY,
   FOOTER_SOCIAL,
   FOOTER_MACHINE_READABLE,
   type FooterLink,
 } from './footer.links'
 
-const navGroups = [...FOOTER_NAV_GROUPS, FOOTER_COMPANY]
+const navGroups = FOOTER_NAV_GROUPS
 
 function FooterNavLink({ href, children, external }: { href: string; children: React.ReactNode; external?: boolean }) {
   const style: React.CSSProperties = {

@@ -108,8 +108,8 @@ export default function ReceiptsPage() {
                   transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s'
                 }}
               >
-                Signed records
-                <span className="receipts-headline-gradient"> for every AI interaction</span>
+                A verifiable interaction record is
+                <span className="receipts-headline-gradient"> portable proof of what an agent did</span>
               </h1>
 
               <p
@@ -120,8 +120,7 @@ export default function ReceiptsPage() {
                   transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s'
                 }}
               >
-                Originary generates tamper-evident proofs of policy, consent, attribution, and payment events.
-                Audit usage, resolve disputes, and demonstrate compliance with verifiable evidence.
+                Each record is a signed artifact containing what happened, what policy applied, and what decision was made. Verify it offline with the public key alone.
               </p>
 
               <div

@@ -130,7 +130,7 @@ export default function PeacPage() {
                   margin: '0 auto var(--space-6) auto',
                 }}
               >
-                PEAC defines how systems publish machine-readable interaction terms and issue portable signed records for automated requests. Verify them independently, even offline.
+                PEAC is the open standard for verifiable interaction records. Originary is one product built on top of it. PEAC defines how systems publish machine-readable interaction terms and issue portable signed records for automated requests. Verify them independently, even offline.
               </p>
 
               <p

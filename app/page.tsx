@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { HomeNav } from '@/components/homepage/HomeNav'
 import { Hero } from '@/components/homepage/Hero'
 import { WhoIsItFor } from '@/components/homepage/WhoIsItFor'
+import { Problem } from '@/components/homepage/Problem'
 import { HowItWorks } from '@/components/homepage/HowItWorks'
 import { TrustProof } from '@/components/homepage/TrustProof'
 import { Comparison } from '@/components/homepage/Comparison'
@@ -12,9 +13,9 @@ import { HomeFooter } from '@/components/homepage/HomeFooter'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Verify agent requests, apply policy, return portable signed records'
+    absolute: 'Originary | Know what every agent did. Prove it later.'
   },
-  description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return portable signed records. Built on PEAC. Self-hostable. Offline-verifiable.',
+  description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. PEAC is the open standard underneath.',
   keywords: [
     'agent verification',
     'API access control',
@@ -34,18 +35,18 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   openGraph: {
-    title: 'Originary | Verify agent requests, apply policy, return portable signed records',
-    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return portable signed records. Built on PEAC. Self-hostable. Offline-verifiable.',
+    title: 'Originary | Know what every agent did. Prove it later.',
+    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. PEAC is the open standard underneath.',
     url: 'https://www.originary.xyz',
     type: 'website',
     locale: 'en_US',
-    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary: verify agent requests, apply policy, return portable signed records' }],
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary: know what every agent did, prove it later' }],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Verify agent requests, apply policy, return portable signed records',
-    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return portable signed records. Built on PEAC. Self-hostable. Offline-verifiable.',
+    title: 'Originary | Know what every agent did. Prove it later.',
+    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. PEAC is the open standard underneath.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -108,6 +109,7 @@ export default function Page() {
         <main id="main-content" role="main">
           <Hero />
           <WhoIsItFor />
+          <Problem />
           <HowItWorks />
           <TrustProof />
           <Comparison />

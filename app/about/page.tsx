@@ -303,7 +303,7 @@ export default function AboutPage() {
         >
           <div ref={statsSection.ref} className="container stats-grid" style={{ maxWidth: '820px', margin: '0 auto' }}>
             {[
-              { value: '10', label: 'Verification Domains' },
+              { value: 'Open source', label: 'Apache-2.0' },
               { value: String(FACTS.publishedPackageCount), label: 'npm Packages' },
               { value: FACTS.testsCount.toLocaleString(), label: 'Tests Passing' },
               { value: FACTS.license, label: 'License' },
@@ -334,87 +334,6 @@ export default function AboutPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* ── Verification Domains ── */}
-        <section style={{ padding: 'var(--space-24) 0' }}>
-          <div ref={domainsSection.ref} className="container" style={{ maxWidth: '960px', margin: '0 auto' }}>
-            <div style={{ ...reveal(domainsSection.visible, 0), textAlign: 'center', marginBottom: 'var(--space-10)' }}>
-              <p
-                style={{
-                  fontSize: 'var(--text-xs)',
-                  fontWeight: 700,
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: 'var(--accent-brand)',
-                  marginBottom: 'var(--space-3)',
-                }}
-              >
-                Scope
-              </p>
-              <h2
-                style={{
-                  fontSize: 'var(--text-3xl)',
-                  fontWeight: 700,
-                  letterSpacing: '-0.02em',
-                  color: 'var(--text-primary)',
-                  marginBottom: 'var(--space-3)',
-                }}
-              >
-                Ten Verification Domains
-              </h2>
-              <p
-                style={{
-                  fontSize: 'var(--text-base)',
-                  color: 'var(--text-secondary)',
-                  maxWidth: '560px',
-                  margin: '0 auto',
-                  lineHeight: 1.6,
-                }}
-              >
-                Every receipt can attest to one or more of these dimensions, ordered from identity establishment through compliance reporting.
-              </p>
-            </div>
-
-            <div className="domain-grid">
-              {domainList.map((d, i) => (
-                <div
-                  key={d.name}
-                  className="domain-card"
-                  style={{
-                    ...reveal(domainsSection.visible, 0.03 * i + 0.1),
-                    background: 'var(--glass-card-bg)',
-                    backdropFilter: 'var(--glass-blur)',
-                    WebkitBackdropFilter: 'var(--glass-blur)',
-                    border: '1px solid var(--glass-card-border)',
-                    borderRadius: 'var(--radius-xl)',
-                    padding: 'var(--space-4)',
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-1)' }}>
-                    <span
-                      style={{
-                        fontSize: '11px',
-                        fontWeight: 700,
-                        color: 'var(--text-muted)',
-                        fontFamily: 'var(--font-mono)',
-                        minWidth: '20px',
-                      }}
-                    >
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <span style={{ color: 'var(--accent-brand)' }}>{d.icon}</span>
-                    <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)', margin: 0 }}>
-                      {d.name}
-                    </h3>
-                  </div>
-                  <p style={{ fontSize: '12px', color: 'var(--text-tertiary)', lineHeight: 1.5, margin: 0, paddingLeft: '20px' }}>
-                    {d.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -902,6 +821,87 @@ export default function AboutPage() {
                   </h3>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
                     {p.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Verification Domains ── */}
+        <section style={{ padding: 'var(--space-24) 0' }}>
+          <div ref={domainsSection.ref} className="container" style={{ maxWidth: '960px', margin: '0 auto' }}>
+            <div style={{ ...reveal(domainsSection.visible, 0), textAlign: 'center', marginBottom: 'var(--space-10)' }}>
+              <p
+                style={{
+                  fontSize: 'var(--text-xs)',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: 'var(--accent-brand)',
+                  marginBottom: 'var(--space-3)',
+                }}
+              >
+                Scope
+              </p>
+              <h2
+                style={{
+                  fontSize: 'var(--text-3xl)',
+                  fontWeight: 700,
+                  letterSpacing: '-0.02em',
+                  color: 'var(--text-primary)',
+                  marginBottom: 'var(--space-3)',
+                }}
+              >
+                Ten Verification Domains
+              </h2>
+              <p
+                style={{
+                  fontSize: 'var(--text-base)',
+                  color: 'var(--text-secondary)',
+                  maxWidth: '560px',
+                  margin: '0 auto',
+                  lineHeight: 1.6,
+                }}
+              >
+                Every receipt can attest to one or more of these dimensions, ordered from identity establishment through compliance reporting.
+              </p>
+            </div>
+
+            <div className="domain-grid">
+              {domainList.map((d, i) => (
+                <div
+                  key={d.name}
+                  className="domain-card"
+                  style={{
+                    ...reveal(domainsSection.visible, 0.03 * i + 0.1),
+                    background: 'var(--glass-card-bg)',
+                    backdropFilter: 'var(--glass-blur)',
+                    WebkitBackdropFilter: 'var(--glass-blur)',
+                    border: '1px solid var(--glass-card-border)',
+                    borderRadius: 'var(--radius-xl)',
+                    padding: 'var(--space-4)',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-1)' }}>
+                    <span
+                      style={{
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        color: 'var(--text-muted)',
+                        fontFamily: 'var(--font-mono)',
+                        minWidth: '20px',
+                      }}
+                    >
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span style={{ color: 'var(--accent-brand)' }}>{d.icon}</span>
+                    <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)', margin: 0 }}>
+                      {d.name}
+                    </h3>
+                  </div>
+                  <p style={{ fontSize: '12px', color: 'var(--text-tertiary)', lineHeight: 1.5, margin: 0, paddingLeft: '20px' }}>
+                    {d.desc}
                   </p>
                 </div>
               ))}

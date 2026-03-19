@@ -1,7 +1,7 @@
 /**
  * Footer Link Registry
  * Single source of truth for all footer navigation.
- * 4 buckets. Anything else goes on a dedicated page.
+ * 5 columns mirroring the site information architecture.
  */
 
 export type FooterLink = {
@@ -17,18 +17,18 @@ export type FooterGroup = {
 }
 
 // ============================================================================
-// LAYER A: Navigation Grid (4 columns)
+// LAYER A: Navigation Grid (5 columns)
 // ============================================================================
 
-export const FOOTER_PROTOCOL: FooterGroup = {
-  id: 'protocol',
-  title: 'Protocol',
+export const FOOTER_PRODUCTS: FooterGroup = {
+  id: 'products',
+  title: 'Products',
   links: [
-    { label: 'Spec', href: '/peac' },
-    { label: 'Interaction records', href: '/receipts' },
-    { label: 'Conformance', href: '/conformance' },
-    { label: 'Governance', href: '/governance' },
-    { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
+    { label: 'Agent Auditor', href: '/agent-auditor' },
+    { label: 'Gateway 402', href: '/products/gateway-402' },
+    { label: 'Trace', href: '/trace' },
+    { label: 'MCP Server', href: '/integrations/mcp' },
+    { label: 'All products', href: '/products' },
   ],
 }
 
@@ -36,12 +36,23 @@ export const FOOTER_DEVELOPERS: FooterGroup = {
   id: 'developers',
   title: 'Developers',
   links: [
-    { label: 'Quickstart', href: '/developers' },
-    { label: 'SDKs (npm)', href: 'https://www.npmjs.com/org/peac', external: true },
+    { label: 'Start here', href: '/developers' },
     { label: 'Downloads', href: '/downloads' },
-    { label: 'Examples', href: '/demo' },
-    { label: 'Agent Auditor', href: '/agent-auditor' },
-    { label: 'Inspector', href: '/verify' },
+    { label: 'Demo', href: '/demo' },
+    { label: 'Conformance', href: '/conformance' },
+    { label: 'Verify online', href: '/verify' },
+  ],
+}
+
+export const FOOTER_LEARN: FooterGroup = {
+  id: 'learn',
+  title: 'Learn',
+  links: [
+    { label: 'Learning center', href: '/learn' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'PEAC Protocol', href: '/peac' },
+    { label: 'Integrations', href: '/integrations' },
+    { label: 'Glossary', href: '/glossary' },
   ],
 }
 
@@ -50,9 +61,10 @@ export const FOOTER_COMPANY: FooterGroup = {
   title: 'Company',
   links: [
     { label: 'About', href: '/about' },
-    { label: 'Blog', href: '/blog' },
+    { label: 'Pricing', href: '/pricing' },
     { label: 'Press', href: '/press' },
     { label: 'Contact', href: '/contact' },
+    { label: 'Governance', href: '/governance' },
   ],
 }
 
@@ -60,18 +72,20 @@ export const FOOTER_TRUST: FooterGroup = {
   id: 'trust',
   title: 'Trust',
   links: [
-    { label: 'Pricing', href: '/pricing' },
     { label: 'Trust center', href: '/trust' },
     { label: 'Security', href: '/security' },
     { label: 'Privacy', href: '/privacy' },
     { label: 'Terms', href: '/terms' },
+    { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
   ],
 }
 
-// Navigation groups for Layer A grid (3 columns)
+// Navigation groups for Layer A grid
 export const FOOTER_NAV_GROUPS: FooterGroup[] = [
-  FOOTER_PROTOCOL,
+  FOOTER_PRODUCTS,
   FOOTER_DEVELOPERS,
+  FOOTER_LEARN,
+  FOOTER_COMPANY,
   FOOTER_TRUST,
 ]
 

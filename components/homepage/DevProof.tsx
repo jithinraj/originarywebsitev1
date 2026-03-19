@@ -36,7 +36,7 @@ export function DevProof() {
               </p>
               <div className="mt-8">
                 <Link href="/developers" className="hp-btn-primary">
-                  Start building
+                  Start here
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M3.5 7h7m0 0L7.5 4m3 3l-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>

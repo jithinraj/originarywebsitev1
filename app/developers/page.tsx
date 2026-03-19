@@ -6,8 +6,8 @@ import { ArrowRight, Code, Terminal, Shield, Bot, Plug, FileCheck } from 'lucide
 import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
-  title: 'Developers | Build with Originary, powered by PEAC',
-  description: 'Add verifiable interaction records to your HTTP API, MCP server, or A2A agent flow. Quickstart, SDKs, and verification guides.',
+  title: 'Start Here | Originary',
+  description: 'Pick your path: API, MCP, verify, or A2A. Add verifiable interaction records to your stack with Originary, powered by PEAC.',
   keywords: 'Originary SDK, PEAC Protocol, verifiable interaction records, MCP server, A2A integration, HTTP 402, developer tools',
   authors: [{ name: 'Originary' }],
   alternates: {
@@ -15,16 +15,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Developers | Build with Originary, powered by PEAC',
-    description: 'Add verifiable interaction records to your HTTP API, MCP server, or A2A agent flow.',
+    title: 'Start Here | Originary',
+    description: 'Pick your path: API, MCP, verify, or A2A. Add verifiable interaction records to your stack.',
     url: '/developers',
     images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Developers | Build with Originary, powered by PEAC',
-    description: 'Add verifiable interaction records to your HTTP API, MCP server, or A2A agent flow.',
+    title: 'Start Here | Originary',
+    description: 'Pick your path: API, MCP, verify, or A2A. Add verifiable interaction records to your stack.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -42,10 +42,10 @@ export default function Developers() {
           <div className="container">
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">Build with Originary</span>
+                <span className="text-gradient">Start here</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                Add verifiable interaction records to your stack, powered by PEAC. Choose your integration path.
+                Pick your path: API, MCP, verify, or A2A.
               </p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
@@ -86,41 +86,41 @@ export default function Developers() {
         <section className="section" id="guides" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
-              <h2 style={{ marginBottom: 'var(--space-4)' }}>How do I...</h2>
+              <h2 style={{ marginBottom: 'var(--space-4)' }}>Choose your path</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
-                Four paths to add verifiable interaction records to your stack.
+                Each path gets you to a working example fast.
               </p>
             </div>
 
             <div className="grid grid-2" style={{ gap: 'var(--space-6)', maxWidth: '960px', margin: '0 auto' }}>
               <GuideCard
                 icon={<Plug size={24} />}
-                title="Add to an HTTP API"
-                description="Publish a peac.txt policy, add middleware to check requests, and return signed interaction records in response headers."
+                title="I have an HTTP API that agents call"
+                description="Publish a peac.txt policy, add middleware, and return verifiable interaction records in response headers."
                 steps={['Deploy /.well-known/peac.txt', 'Add verification middleware', 'Return signed record headers']}
                 href="/integrations/x402"
                 code="npm install @peac/protocol @peac/middleware-express"
               />
               <GuideCard
                 icon={<Bot size={24} />}
-                title="Add to an MCP server"
-                description="Install the PEAC MCP server to give AI agents five verification tools: verify, inspect, decode, issue, and bundle."
+                title="I run an MCP server or tool host"
+                description="Install the MCP server to give AI agents five verification tools: verify, inspect, decode, issue, and bundle."
                 steps={['Install @peac/mcp-server', 'Configure in Claude Desktop or Cursor', 'Agents verify records via tool calls']}
                 href="/integrations/mcp"
                 code="npx @peac/mcp-server --help"
               />
               <GuideCard
                 icon={<ArrowRight size={24} />}
-                title="Add to an A2A flow"
-                description="Attach signed interaction records to agent-to-agent messages using the A2A metadata carrier. Verify at each hop."
+                title="I need to carry proof across agent hops"
+                description="Attach verifiable interaction records to A2A messages. Verify authorization and policy compliance at each hop."
                 steps={['Issue records with @peac/protocol', 'Attach via A2A metadata carrier', 'Verify at receiving agent']}
                 href="/integrations/a2a"
                 code="npm install @peac/protocol"
               />
               <GuideCard
                 icon={<Shield size={24} />}
-                title="Verify a record"
-                description="Validate a PEAC interaction record signature offline using the issuer's public key. No network call required."
+                title="I need to verify a signed record"
+                description="Validate an interaction record signature offline using the issuer's public key. No network call required."
                 steps={['Extract the PEAC-Receipt header', 'Fetch the issuer JWKS (once)', 'Call verifyLocal() with the public key']}
                 href="/verify"
                 code={`import { verifyLocal } from '@peac/protocol'`}

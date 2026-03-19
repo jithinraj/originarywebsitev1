@@ -238,9 +238,9 @@ export default function AgentAuditorPage() {
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
               }}>
-                <span className="text-gradient">Your AI agents act.</span>
+                <span className="text-gradient">What did that agent just do?</span>
                 <br />
-                <span style={{ color: 'var(--text-primary)' }}>This proves what they did.</span>
+                <span style={{ color: 'var(--text-primary)' }}>Open a record. See for yourself.</span>
               </h1>
 
               <p style={{
@@ -250,7 +250,7 @@ export default function AgentAuditorPage() {
                 maxWidth: '620px',
                 margin: '0 auto var(--space-10) auto',
               }}>
-                A receipt is a signed record issued when an agent takes an action — a tool call, an API request, a payment, a consent. Agent Auditor opens any receipt file and shows you exactly what it contains, verified against the signature. For raw JWS token inspection, see the <Link href="/verify" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>Inspector</Link>.
+                Agent Auditor opens any signed interaction record and shows you who acted, what happened, and whether the proof is genuine. Drop a receipt file, and see it decoded and verified instantly. For raw JWS token inspection, see the <Link href="/verify" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>Inspector</Link>.
               </p>
 
               <div style={{

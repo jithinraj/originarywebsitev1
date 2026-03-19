@@ -6,6 +6,10 @@ import { AnimateIn } from './AnimateIn'
 
 const faqs = [
   {
+    q: 'What is a verifiable interaction record?',
+    a: 'A verifiable interaction record is a portable, cryptographically signed artifact that proves what an agent did, what policy applied, and what decision was made. It can be verified by anyone with the public key, with no network call required.',
+  },
+  {
     q: 'Is this only for people building agents?',
     a: 'No. Originary is built first for operators of systems that agents access: APIs, tools, MCP servers, and platforms exposing actions.',
   },

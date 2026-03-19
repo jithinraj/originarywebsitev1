@@ -72,7 +72,8 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   primaryCategory: 'Verifiable interaction records',
-  primaryTagline: 'The production stack for verifiable interaction records.',
+  primaryTagline: 'Know what every agent did. Prove it later.',
+  plainSentence: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. PEAC is the open standard underneath.',
 
   // ---------------------------------------------------------------------------
   // External links
