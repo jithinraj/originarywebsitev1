@@ -519,7 +519,7 @@ export default function LearnPage() {
                   Developer Documentation
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Start building with signed records, policy files, and payment infrastructure
+                  Start here with signed records, policy files, and payment infrastructure
                 </p>
               </Link>
             </div>
@@ -556,7 +556,7 @@ export default function LearnPage() {
                   className="btn btn-lg"
                   style={{ background: 'white', color: 'var(--accent-brand)', border: 'none' }}
                 >
-                  Start Building
+                  Start here
                 </Link>
                 <Link
                   href="/demo"

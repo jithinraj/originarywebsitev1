@@ -542,7 +542,7 @@ export default function PeacPage() {
               textAlign: 'center',
             }}>
               <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-                Start building on PEAC
+                Start here on PEAC
               </h2>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '480px', margin: '0 auto var(--space-8) auto' }}>
                 Apache-2.0. Self-host everything. No sign-up required.

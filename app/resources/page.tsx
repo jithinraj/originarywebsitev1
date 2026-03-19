@@ -80,7 +80,7 @@ export default function ResourcesPage() {
                 }}
               >
                 <Link href="/developers" className="btn btn-primary btn-lg">
-                  <span>Start Building</span>
+                  <span>Start here</span>
                   <ArrowRight size={18} />
                 </Link>
                 <Link href="#documentation" className="btn btn-secondary btn-lg">
@@ -305,7 +305,7 @@ export default function ResourcesPage() {
                       border: 'none'
                     }}
                   >
-                    <span>Start Building</span>
+                    <span>Start here</span>
                     <ArrowRight size={18} />
                   </Link>
                   <Link

@@ -447,7 +447,7 @@ export default function Pricing() {
                       border: '1px solid rgba(255,255,255,0.2)'
                     }}
                   >
-                    <span>Start building</span>
+                    <span>Start here</span>
                   </Link>
                 </div>
               </div>

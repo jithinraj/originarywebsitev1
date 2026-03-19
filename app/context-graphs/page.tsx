@@ -813,7 +813,7 @@ export default function ContextGraphsPage() {
             {/* CTA */}
             <section className="content-section" style={{ borderBottom: 'none' }}>
               <p className="cta-statement">
-                Start building with receipts today.
+                Start here with receipts today.
               </p>
 
               <div className="cta-buttons">
