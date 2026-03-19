@@ -12,9 +12,17 @@ export const metadata: Metadata = {
     url: '/integrations/aipref',
     type: 'article'
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AIPREF Integration | Machine Readable AI Preferences',
+    description: 'Integrate AIPREF so AI crawlers can read machine-readable access policies. Combine with PEAC for enforceable preferences.',
+    images: ['/og'],
+    site: '@originaryx',
+    creator: '@originaryx',
+  },
   alternates: {
-    canonical: '/integrations/aipref'
-  }
+    canonical: '/integrations/aipref',
+  },
 }
 
 const jsonLd = {

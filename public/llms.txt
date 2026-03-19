@@ -1,8 +1,8 @@
-# Originary | Verify agent requests, apply policy, return portable signed records
+# Originary | Know what every agent did. Prove it later.
 
-> Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return portable signed records. Built on PEAC, the open record format. Self-hostable. Offline-verifiable.
+> Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. Built on PEAC, the open standard. Self-hostable. Offline-verifiable.
 
-Last updated: 2026-03-18
+Last updated: 2026-03-19
 
 Company: Poem, Inc.
 Location: Delaware, USA
@@ -10,7 +10,7 @@ Contact: contact@originary.xyz
 
 ## Overview
 
-- [Home](/) - Verify agent requests, apply policy, return portable signed records
+- [Home](/) - Know what every agent did. Prove it later.
 - [PEAC Protocol](/peac) - Open standard for verifiable interaction records
 - [Developers](/developers) - Quickstart, SDKs, and integration guides
 - [Downloads](/downloads) - CLI, MCP server, SDKs, and source archives
@@ -51,7 +51,7 @@ MCP tool server (@peac/mcp-server) with 5 tools: verify-receipt, inspect-receipt
 - [Developers](/developers) - Quickstart and integration guides
 - [Downloads](/downloads) - CLI tools and install instructions
 - [Demo](/demo) - Interactive protocol trace demonstration
-- [Receipts](/receipts) - Interaction record format documentation
+- [Receipts](/receipts) - Verifiable interaction records documentation
 - [Conformance](/conformance) - Protocol conformance vectors
 
 ## Integrations

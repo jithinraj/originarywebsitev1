@@ -13,9 +13,17 @@ export const metadata: Metadata = {
     url: '/integrations/x402',
     type: 'article'
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'x402 Integration | HTTP 402 Payments with PEAC',
+    description: 'Connect PEAC with x402 for HTTP 402 payment flows. Turn APIs into machine-payable endpoints with verifiable receipts.',
+    images: ['/og'],
+    site: '@originaryx',
+    creator: '@originaryx',
+  },
   alternates: {
-    canonical: '/integrations/x402'
-  }
+    canonical: '/integrations/x402',
+  },
 }
 
 const jsonLd = {

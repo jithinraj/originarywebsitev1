@@ -9,8 +9,24 @@ export const metadata: Metadata = {
   description: 'Press information, media resources, and brand assets for Originary. Contact press@originary.xyz for inquiries.',
   robots: 'index,follow',
   alternates: {
-    canonical: '/press'
-  }
+    canonical: '/press',
+  },
+  openGraph: {
+    title: 'Press | Originary',
+    description: 'Press information, media resources, and brand assets for Originary.',
+    url: '/press',
+    siteName: 'Originary',
+    images: [{ url: '/og' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Press | Originary',
+    description: 'Press information, media resources, and brand assets for Originary.',
+    images: ['/og'],
+    site: '@originaryx',
+    creator: '@originaryx',
+  },
 }
 
 export default function Press() {
