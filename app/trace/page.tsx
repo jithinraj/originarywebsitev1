@@ -119,8 +119,8 @@ export default function TracePage() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em'
               }}>
-                <span style={{ display: 'block', fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-2)', fontWeight: 600, letterSpacing: '0.05em' }}>ORIGINARY™</span>
-                Trace: agent access monitoring with <span className="text-gradient">signed evidence</span>
+                <span style={{ display: 'block', fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-2)', fontWeight: 600, letterSpacing: '0.05em' }}>Originary Trace</span>
+                Agent access monitoring with <span className="text-gradient">signed evidence</span>
               </h1>
               <p style={{
                 fontSize: 'var(--text-xl)',
@@ -176,7 +176,7 @@ export default function TracePage() {
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
-                From detection to compliance evidence, all in one platform
+                From detection to evidence export
               </p>
             </div>
 
@@ -299,7 +299,7 @@ export default function TracePage() {
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
-                Choose self-hosted open source or managed cloud with attestation
+                Choose self-hosted open source or managed deployment
               </p>
             </div>
 

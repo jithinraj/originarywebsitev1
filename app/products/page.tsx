@@ -106,7 +106,7 @@ export default function ProductsPage() {
                 <span className="text-gradient">What you can do with Originary</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                Inspect, verify, enforce, monitor, and declare. Start with one, add more as your agent traffic grows.
+                The verification layer for agent-facing systems. Start with one product, add more as your agent traffic grows.
               </p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                 <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>

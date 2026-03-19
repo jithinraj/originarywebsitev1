@@ -7,7 +7,7 @@ import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
   title: 'Trust Center',
-  description: 'How Originary handles verification, cryptography, data boundaries, and portability. Independently verifiable signed records, Ed25519 signatures, offline verification, no phone-home.',
+  description: 'How Originary handles verification, cryptography, data boundaries, and portability. Ed25519 signatures, offline verification, no phone-home.',
   openGraph: {
     title: 'Trust Center | Originary',
     description: 'Verification model, cryptography, data boundaries, and portability for Originary and the PEAC protocol.',

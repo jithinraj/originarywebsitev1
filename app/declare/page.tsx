@@ -748,7 +748,7 @@ cp robots-ai-snippet.txt public/`}
 
                 <div className="card" style={{ background: 'var(--surface-subtle)', border: '1px dashed var(--border-default)' }}>
                   <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-tertiary)' }}>
-                    WordPress plugin (coming soon)
+                    WordPress plugin (available)
                   </h3>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
                     One-click publish of <code style={{ background: 'var(--surface-subtle)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>/.well-known/peac.txt</code> + ai-policy page.

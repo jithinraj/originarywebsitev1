@@ -46,10 +46,6 @@ const FAQ_DATA = [
     answer: 'robots.txt was built for crawling with binary allow/deny. PEAC extends this for the agent economy: instead of just stop/go, it enables "go, under this policy hash, with this entitlement/payment proof."'
   },
   {
-    question: 'What overhead does cryptographic receipt signing add?',
-    answer: 'Signed receipts add overhead, so the format is designed to be compact and the signing/verifying path implementable at the edge. PEAC supports optional delayed or batched issuance where appropriate while keeping verification deterministic.'
-  },
-  {
     question: 'How does PEAC work with AIPREF and C2PA?',
     answer: 'PEAC complements these standards. It can snapshot AIPREF preferences into receipts for auditability, and reference C2PA provenance data. PEAC does not compete with these standards - it provides the evidence binding layer.'
   }
@@ -103,7 +99,7 @@ export default function SystemOfRecordPage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Open System of Record for AI Agents",
-    "description": "Policy + receipts as verifiable evidence for agent interactions. PEAC Protocol creates portable, verifiable records of what was accessed, under what terms, and how it was paid.",
+    "description": "Policy + records as verifiable evidence for agent interactions. PEAC Protocol creates portable, verifiable records of what was accessed, under what terms, and how it was paid.",
     "url": "https://www.originary.xyz/system-of-record",
     "isPartOf": {
       "@type": "WebSite",
@@ -191,7 +187,7 @@ export default function SystemOfRecordPage() {
                   marginBottom: 'var(--space-8)'
                 }}
               >
-                Policy + receipts as verifiable evidence for agent interactions.
+                Policy + records as verifiable evidence for agent interactions.
               </p>
 
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -320,16 +316,9 @@ export default function SystemOfRecordPage() {
               </div>
 
               <div className="problem-card">
-                <h4>4. Consent and preferences are not snapshotted</h4>
+                <h4>4. Consent, provenance, and attribution are not captured</h4>
                 <p>
-                  Agents act under user and enterprise constraints (privacy, retention, purpose limitations, jurisdictional requirements). Without a snapshot, you cannot prove what was agreed to at the time of access.
-                </p>
-              </div>
-
-              <div className="problem-card">
-                <h4>5. Provenance and attribution are ad hoc</h4>
-                <p>
-                  Even when everyone wants &ldquo;responsible AI,&rdquo; the web lacks standard evidence objects linking content access to downstream usage and attribution.
+                  Agents act under constraints (privacy, retention, purpose, jurisdiction) but without a snapshot at access time, you cannot prove what was agreed to. Attribution and provenance remain ad hoc.
                 </p>
               </div>
 
@@ -521,103 +510,54 @@ Content-Type: application/json`}</code></pre>
                 <strong>PEAC is an open protocol.</strong> Originary stewards the spec and builds tools and services, but any team can implement and verify PEAC receipts independently. Openness is non-negotiable: evidence must be portable across vendors, verifiable by multiple parties, and scalable across millions of agent endpoints.
               </p>
 
-              <p>
-                Originary builds and stewards the open standard layer, and also ships production-grade tooling so teams can adopt it without reinventing crypto and policy enforcement.
-              </p>
-
               <div className="build-grid">
                 <div className="build-card">
                   <div className="build-icon">
                     <FileText size={24} />
                   </div>
-                  <h4>1. PEAC Protocol: the open spec</h4>
-                  <ul>
-                    <li>policy discovery conventions</li>
-                    <li>policy hashing and determinism</li>
-                    <li>receipt formats and signing rules</li>
-                    <li>verification rules</li>
-                    <li>integration profiles across rails and transports</li>
-                  </ul>
+                  <h4>PEAC Protocol</h4>
+                  <p>The open spec: policy discovery, receipt formats, signing rules, verification, and integration profiles. Apache-2.0.</p>
                 </div>
 
                 <div className="build-card">
                   <div className="build-icon">
                     <Layers size={24} />
                   </div>
-                  <h4>2. Developer tooling</h4>
-                  <ul>
-                    <li>SDKs to issue and verify receipts</li>
-                    <li>middleware for APIs and gateways</li>
-                    <li>adapters for edge environments</li>
-                    <li>conformance tooling for interoperability</li>
-                  </ul>
+                  <h4>Developer tooling</h4>
+                  <p>SDKs to issue and verify records, middleware for APIs and gateways, edge adapters, and conformance tooling.</p>
                 </div>
 
                 <div className="build-card">
                   <div className="build-icon">
                     <Activity size={24} />
                   </div>
-                  <h4>3. Verification and record services (optional)</h4>
-                  <p>
-                    Open protocols win when they are easy to adopt. Not everyone wants to run verifiers, key infrastructure, and receipt storage on day one.
-                  </p>
-                  <ul>
-                    <li>receipt verification endpoints</li>
-                    <li>receipt storage and export</li>
-                    <li>audit-ready evidence bundles for enterprise workflows</li>
-                  </ul>
+                  <h4>Verification services</h4>
+                  <p>Optional hosted verification, record storage, and audit-ready evidence bundles for teams that do not want to run their own infrastructure.</p>
                 </div>
               </div>
 
               <p className="emphasis">
-                The protocol stays open. Teams choose whether they want to self-host, use Originary, or use any other provider.
+                The protocol stays open. Self-host, use Originary, or use any other provider.
               </p>
-
-              <p>That is what &ldquo;open system of record&rdquo; means in practice.</p>
             </section>
 
             {/* Start here */}
             <section id="start-here" className="content-section">
               <SectionHeader id="start-here" title="Start here" onCopy={copyAnchorLink} copied={copiedAnchor === 'start-here'} />
 
-              <p>
-                If you operate an endpoint that agents will touch, you can begin now:
-              </p>
-
               <ol className="start-steps">
-                <li>
-                  <strong>Publish a policy file</strong> (<code>peac.txt</code>) that expresses access terms in a machine-readable way.
-                </li>
-                <li>
-                  <strong>Start returning signed receipts</strong> (<code>PEAC-Receipt</code>) for agent interactions.
-                </li>
-                <li>
-                  <strong>Verify receipts inside your own systems</strong>, and export them to the places you already trust (SIEM, warehouse, compliance pipelines).
-                </li>
+                <li><strong>Publish a policy file</strong> (<code>peac.txt</code>) that expresses access terms in a machine-readable way.</li>
+                <li><strong>Return signed records</strong> (<code>PEAC-Receipt</code>) for agent interactions.</li>
+                <li><strong>Verify records</strong> inside your own systems and export them to your existing compliance pipelines.</li>
               </ol>
 
-              <p>
-                Originary can help you adopt the open standard quickly, whether you self-host or use managed verification.
-              </p>
-
-              <p className="final-statement">
-                The agent web is arriving. We should build it so it can be trusted.
-              </p>
-
-              <p className="cta-statement">
-                <strong>Originary is building the open system of record for AI agents.</strong>
-              </p>
-
               <div className="cta-buttons">
-                <Link href="/demo" className="btn btn-primary btn-lg">
-                  View demo
+                <Link href="/developers" className="btn btn-primary btn-lg">
+                  Start here
                   <ArrowRight size={18} />
                 </Link>
-                <Link href="/developers" className="btn btn-secondary btn-lg">
-                  Start here
-                </Link>
-                <Link href="/peac" className="btn btn-ghost btn-lg">
-                  Read the spec
+                <Link href="/demo" className="btn btn-secondary btn-lg">
+                  View demo
                 </Link>
                 <Link href="/contact" className="btn btn-ghost btn-lg">
                   Contact us

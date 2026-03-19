@@ -47,7 +47,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.1, ease }}
         >
-          Know what every agent did. Prove it later.
+          When agents cross your boundary, keep proof.
         </motion.h1>
 
         {/* Subheading */}
@@ -58,7 +58,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease }}
         >
-          Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. PEAC is the open standard underneath.
+          Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records for every decision. PEAC is the open standard underneath.
         </motion.p>
 
         {/* Tagline - visually distinct */}
@@ -140,28 +140,15 @@ export function Hero() {
           {[
             { label: 'Book a demo', href: '/contact' },
             { label: 'Agent Auditor', href: '/agent-auditor' },
-            { label: 'Install MCP server', href: '/downloads#mcp-server' },
-            { label: 'Spec', href: 'https://github.com/peacprotocol/peac', external: true },
             { label: 'Downloads', href: '/downloads' },
           ].map((link, i) => (
             <span key={link.label}>
               {i > 0 && (
                 <span style={{ color: 'var(--color-fg-muted)', margin: '0 0.375rem', userSelect: 'none' }}>/</span>
               )}
-              {link.external ? (
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hp-link-muted font-medium"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link href={link.href} className="hp-link-muted font-medium">
-                  {link.label}
-                </Link>
-              )}
+              <Link href={link.href} className="hp-link-muted font-medium">
+                {link.label}
+              </Link>
             </span>
           ))}
         </motion.div>
@@ -246,7 +233,7 @@ PEAC-Receipt: eyJhbGciOiJFZERTQ...
           </div>
         </motion.div>
 
-        {/* Stats line */}
+        {/* Stats - compact */}
         <motion.p
           className="mt-6 text-[0.6875rem]"
           style={{ color: 'var(--color-fg-muted)' }}
@@ -254,10 +241,6 @@ PEAC-Receipt: eyJhbGciOiJFZERTQ...
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          {FACTS.publishedPackageCount} packages{' '}
-          <span className="opacity-40">&#183;</span>{' '}
-          {FACTS.testsCount.toLocaleString()} tests{' '}
-          <span className="opacity-40">&#183;</span>{' '}
           Apache-2.0{' '}
           <span className="opacity-40">&#183;</span>{' '}
           <a

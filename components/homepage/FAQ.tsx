@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: 'Is this just observability?',
-    a: 'No. Observability helps you inspect behavior. Originary adds access-time control and a portable signed record you can use outside one product.',
+    a: 'No. Observability helps you inspect behavior. Originary adds access-time control and a signed interaction record you can use outside one product.',
   },
   {
     q: 'Do I need PEAC to use Originary?',

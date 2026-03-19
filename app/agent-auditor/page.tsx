@@ -10,9 +10,9 @@ const GITHUB_URL = 'https://github.com/originaryx/agent-auditor'
 const NPM_URL = 'https://www.npmjs.com/package/@originaryx/agent-auditor'
 
 export const metadata: Metadata = {
-  title: 'Agent Auditor | Inspect and Verify Signed Interaction Records',
+  title: 'Agent Auditor | Verify Signed Interaction Records',
   description:
-    'What did that agent just do? Agent Auditor opens any signed interaction record and shows you who acted, what happened, and whether the proof is genuine. No backend. No accounts.',
+    'Agent Auditor opens any signed interaction record and shows you who acted, what happened, and whether the proof is genuine. No backend.',
   keywords: [
     'agent auditor',
     'receipt verification',

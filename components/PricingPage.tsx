@@ -110,7 +110,7 @@ const enterpriseFeatures = [
   {
     icon: Shield,
     title: 'Enterprise Security',
-    description: 'End-to-end encryption, role-based access controls, and comprehensive audit trails for enterprise-grade security.',
+    description: 'End-to-end encryption, access controls, and comprehensive audit trails for enterprise-grade security.',
     metrics: ['Bank-Grade Security', '256-bit Encryption']
   },
   {

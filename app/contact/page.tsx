@@ -84,7 +84,7 @@ export default function ContactPage() {
                     Enterprise deployment
                   </h3>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Production deployment support, managed keys, compliance evidence
+                    Production deployment support, key management architecture, compliance evidence
                   </p>
                 </div>
                 <div>

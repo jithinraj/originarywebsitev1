@@ -7,14 +7,14 @@ import { Calendar, User, ArrowRight, FileText } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary Blog - AI payments, HTTP 402 and signed interaction records',
+    absolute: 'Originary Blog | AI Payments and Signed Records',
   },
   description: 'Originary blog on AI payments, HTTP 402, signed interaction records, and agentic web infrastructure. Technical insights and protocol updates.',
   keywords: 'Originary blog, AIPREF, PEAC protocol, AI payments, HTTP 402, x402, signed records, technical blog, agentic web, AI infrastructure',
   authors: [{ name: 'Originary Team' }],
   openGraph: {
     type: 'website',
-    title: 'Originary Blog - AI payments, HTTP 402 and signed interaction records',
+    title: 'Originary Blog | AI Payments and Signed Records',
     description: 'Technical articles from Originary on HTTP 402, AI payments, signed interaction records, AIPREF and the agentic web.',
     url: '/blog',
     images: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary Blog - AI payments, HTTP 402 and signed interaction records',
+    title: 'Originary Blog | AI Payments and Signed Records',
     description: 'Technical insights from Originary on HTTP 402, AI payments, signed interaction records and agentic web infrastructure.',
     images: ['/og'],
     site: '@originaryx',

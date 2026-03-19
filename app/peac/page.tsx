@@ -8,8 +8,8 @@ import { FaqAccordion, FaqJsonLd } from '@/components/faq'
 import { peacFaqs } from '@/content/faqs'
 
 export const metadata: Metadata = {
-  title: 'PEAC Protocol | Open Standard for Verifiable Interaction Records',
-  description: 'PEAC is the open standard for verifiable interaction records. Publish terms, verify agent requests, and issue signed records. Verify independently, even offline. Apache-2.0.',
+  title: 'PEAC Protocol | Verifiable Interaction Records',
+  description: 'PEAC is the open standard for verifiable interaction records. Publish terms, verify agent requests, and issue signed records. Apache-2.0.',
   keywords: [
     'PEAC Protocol',
     'verifiable interaction records',

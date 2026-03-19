@@ -40,6 +40,16 @@ const columns = [
       { label: 'Contact', href: '/contact' },
     ],
   },
+  {
+    title: 'Trust',
+    links: [
+      { label: 'Trust center', href: '/trust' },
+      { label: 'Security', href: '/security' },
+      { label: 'Privacy', href: '/privacy' },
+      { label: 'Terms', href: '/terms' },
+      { label: 'GitHub', href: 'https://github.com/peacprotocol/peac' },
+    ],
+  },
 ]
 
 export function HomeFooter() {
@@ -50,7 +60,7 @@ export function HomeFooter() {
         style={{ background: 'linear-gradient(to right, transparent, var(--color-border), transparent)' }}
       />
       <div className="hp-container py-14 sm:py-20 md:py-24">
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-[2.5fr_1fr_1fr_1fr_1fr] gap-8 md:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-[2.5fr_1fr_1fr_1fr_1fr_1fr] gap-8 md:gap-6">
           <div className="col-span-2 sm:col-span-4 md:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 group">
               <div

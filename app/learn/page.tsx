@@ -5,22 +5,22 @@ import Link from 'next/link'
 import { BookOpen, ArrowRight, Receipt, CreditCard, Shield, ShoppingCart, Sparkles, TrendingUp, Users, Zap } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Learn: Agentic Commerce, Receipts & Payments',
-  description: 'Guides on agentic commerce, verifiable receipts, HTTP 402 payments, and AI consent. Essential reading for building autonomous AI systems.',
+  title: 'Learn: Agentic Commerce, Records & Payments',
+  description: 'Guides on agentic commerce, verifiable records, HTTP 402 payments, and AI consent. Essential reading for building autonomous AI systems.',
   keywords: 'agentic commerce tutorial, AI receipts explained, HTTP 402 guide, machine payments, AI consent, agent economy, PEAC Protocol guide, autonomous AI transactions, AI infrastructure learning, agent-to-agent payments',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Learn: Agentic Commerce, Receipts & Payments',
-    description: 'Guides on agentic commerce, verifiable receipts, HTTP 402 payments, and AI consent.',
+    title: 'Learn: Agentic Commerce, Records & Payments',
+    description: 'Guides on agentic commerce, verifiable records, HTTP 402 payments, and AI consent.',
     url: '/learn',
     images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Learn: Agentic Commerce, Receipts & Payments',
-    description: 'Guides on agentic commerce, verifiable receipts, HTTP 402 payments, and AI consent.',
+    title: 'Learn: Agentic Commerce, Records & Payments',
+    description: 'Guides on agentic commerce, verifiable records, HTTP 402 payments, and AI consent.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -106,7 +106,7 @@ export default function LearnPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Learn About AI Infrastructure",
-    "description": "In-depth guides on agentic commerce, verifiable receipts, HTTP 402 payments, and AI consent infrastructure",
+    "description": "In-depth guides on agentic commerce, verifiable records, HTTP 402 payments, and AI consent infrastructure",
     "url": "https://www.originary.xyz/learn",
     "publisher": {
       "@type": "Organization",
