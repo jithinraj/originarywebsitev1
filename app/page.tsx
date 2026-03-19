@@ -8,6 +8,7 @@ import { HowItWorks } from '@/components/homepage/HowItWorks'
 import { TrustProof } from '@/components/homepage/TrustProof'
 import { EnterpriseProof } from '@/components/homepage/EnterpriseProof'
 import { Comparison } from '@/components/homepage/Comparison'
+import { LogsVsRecords } from '@/components/homepage/LogsVsRecords'
 import { OpenStandard } from '@/components/homepage/OpenStandard'
 import { FAQ } from '@/components/homepage/FAQ'
 import { DemoCTA } from '@/components/homepage/DemoCTA'
@@ -117,6 +118,7 @@ export default function Page() {
           <WhoIsItFor />
           <HowItWorks />
           <Comparison />
+          <LogsVsRecords />
           <OpenStandard />
           <FAQ />
           <DemoCTA />
