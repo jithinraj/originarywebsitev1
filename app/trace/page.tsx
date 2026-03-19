@@ -165,7 +165,7 @@ export default function TracePage() {
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
-                From detection to verifiable evidence
+                Detect, classify, and export signed evidence
               </p>
             </div>
 

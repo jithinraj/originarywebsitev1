@@ -314,12 +314,12 @@ export default function TrustPage() {
 
               <TrustCard
                 icon={<Server size={24} />}
-                title="Infrastructure"
-                description="Service metadata and infrastructure information."
+                title="Security Architecture"
+                description="How the system is built to keep your data and keys safe."
                 links={[
-                  { href: '/sitemap.xml', label: 'Sitemap (XML)', external: true },
-                  { href: '/humans.txt', label: 'humans.txt', external: true },
-                  { href: '/status', label: 'Service Status' }
+                  { href: '/enterprise', label: 'Deployment options and security model' },
+                  { href: '/.well-known/security.txt', label: 'security.txt (RFC 9116)', external: true },
+                  { href: 'https://github.com/peacprotocol/peac/security', label: 'GitHub Security Advisories', external: true }
                 ]}
               />
 

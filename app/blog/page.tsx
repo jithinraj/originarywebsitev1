@@ -48,6 +48,7 @@ export default function BlogPage() {
       title: 'What is HTTP 402? How PEAC Uses 402 for Agent Payments',
       description: 'HTTP 402 Payment Required was defined in 1997 and reserved for digital payments. Learn how PEAC Protocol activates 402 for AI access control, agent payments, and verifiable receipts.',
       author: 'Jithin Raj, Founder',
+      date: '2025-12-03',
       category: 'Explainer',
       readTime: '10 min read',
       featured: true
@@ -57,6 +58,7 @@ export default function BlogPage() {
       title: 'The A2A Stack: Agent-to-Agent Commerce',
       description: 'How AI agents coordinate, transact, and verify interactions with each other. The A2A stack covers AI policy discovery, HTTP 402 payments, PEAC-Receipts, and provenance.',
       author: 'Jithin Raj, Founder',
+      date: '2025-12-03',
       category: 'Vision',
       readTime: '12 min read',
       featured: true
@@ -66,6 +68,7 @@ export default function BlogPage() {
       title: 'From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance',
       description: 'How Originary and PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.',
       author: 'Jithin Raj, Founder',
+      date: '2025-12-01',
       category: 'Technical',
       readTime: '18 min read',
       featured: false
@@ -75,6 +78,7 @@ export default function BlogPage() {
       title: 'AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence',
       description: 'AI bot detection is more than classifiers. Learn how metadata, fingerprints and PEAC receipts turn AI traffic into verifiable, enforceable evidence.',
       author: 'Jithin Raj, Founder',
+      date: '2025-12-01',
       category: 'Technical',
       readTime: '15 min read',
       featured: false
@@ -84,6 +88,7 @@ export default function BlogPage() {
       title: 'AIPREF: A Common Language for AI Usage Preferences',
       description: 'Understanding the IETF AIPREF specification for expressing AI usage preferences through HTTP headers and robots.txt - what it is, how it works, and how to implement it today.',
       author: 'Jithin Raj, Founder',
+      date: '2025-10-14',
       category: 'Technical',
       readTime: '15 min read',
       featured: false
@@ -93,6 +98,7 @@ export default function BlogPage() {
       title: 'HTTP 402 for APIs: Making Payment-Required Responses Work',
       description: 'A practical guide to implementing HTTP 402 Payment Required in modern APIs. Learn the anatomy of a 402 response, receipt verification patterns, and how to avoid common pitfalls.',
       author: 'Jithin Raj, Founder',
+      date: '2025-11-03',
       category: 'Technical',
       readTime: '12 min read',
       featured: false
@@ -102,6 +108,7 @@ export default function BlogPage() {
       title: 'Add HTTP 402 to Your API in 15 Minutes',
       description: 'Quick tutorial for adding HTTP 402 Payment Required responses to an existing Express API. No SDK required, just standard HTTP and receipt verification.',
       author: 'Jithin Raj, Founder',
+      date: '2025-11-03',
       category: 'Tutorial',
       readTime: '8 min read',
       featured: false
@@ -111,6 +118,7 @@ export default function BlogPage() {
       title: 'HTTP 402 on Cloudflare Workers: Global Edge Payment Gates',
       description: 'Deploy HTTP 402 payment-required responses at the edge with Cloudflare Workers. Zero cold starts, global KV storage, Web Crypto API for receipt verification.',
       author: 'Jithin Raj, Founder',
+      date: '2025-11-03',
       category: 'Technical',
       readTime: '10 min read',
       featured: false
@@ -120,6 +128,7 @@ export default function BlogPage() {
       title: 'robots.txt (RFC 9309): The Web\'s Crawl Access Control',
       description: 'A technical deep dive into RFC 9309, the standardized Robots Exclusion Protocol - matching rules, error handling, caching, and how it relates to AIPREF usage preferences.',
       author: 'Jithin Raj, Founder',
+      date: '2025-10-14',
       category: 'Technical',
       readTime: '12 min read',
       featured: false
@@ -284,6 +293,12 @@ export default function BlogPage() {
                     <User size={16} />
                     <span>{article.author}</span>
                   </div>
+                  {article.date && (
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+                      <Calendar size={14} />
+                      <span>{new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                    </div>
+                  )}
                   <div style={{
                     display: 'inline-flex',
                     padding: 'var(--space-1) var(--space-3)',
@@ -383,6 +398,9 @@ export default function BlogPage() {
                     borderTop: '1px solid var(--border-default)',
                     flexWrap: 'wrap'
                   }}>
+                    {article.date && (
+                      <span>{new Date(article.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                    )}
                     <span>{article.readTime}</span>
                     <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', fontWeight: 600 }}>
                       <ArrowRight size={14} />

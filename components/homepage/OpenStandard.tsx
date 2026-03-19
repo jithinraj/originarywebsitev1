@@ -14,7 +14,7 @@ export function OpenStandard() {
   return (
     <section className="hp-section hp-divider">
       <div className="hp-container">
-        <div className="grid md:grid-cols-2 gap-6 md:gap-16 items-start">
+        <div className="grid md:grid-cols-[1fr_1fr] gap-6 md:gap-12 items-start max-w-[56rem] mx-auto">
           <AnimateIn>
             <div>
               <span
@@ -27,7 +27,7 @@ export function OpenStandard() {
                 className="hp-text-display mt-5"
                 style={{ color: 'var(--color-fg)' }}
               >
-                Use the product. Keep the record portable.
+                Deploy Originary. Keep your records portable.
               </h2>
               <p
                 className="mt-7 hp-text-body-lg"

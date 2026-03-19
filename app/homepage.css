@@ -58,15 +58,15 @@ body:has(.hp-root) .cursor-glow {
 /* ─── Typography ───────────────────────────────────────── */
 
 .hp-root .hp-text-hero {
-  font-size: clamp(2.75rem, 5vw + 0.75rem, 6.5rem);
+  font-size: clamp(2.25rem, 5vw + 0.5rem, 6.5rem);
   line-height: 0.95;
   letter-spacing: -0.05em;
   font-weight: 700;
 }
 
 .hp-root .hp-text-display {
-  font-size: clamp(2rem, 4vw + 0.25rem, 3.75rem);
-  line-height: 1.04;
+  font-size: clamp(1.75rem, 4vw + 0.25rem, 3.75rem);
+  line-height: 1.08;
   letter-spacing: -0.04em;
   font-weight: 600;
 }
@@ -147,20 +147,20 @@ body:has(.hp-root) .cursor-glow {
 }
 
 .hp-root .hp-section {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 @media (min-width: 480px) {
-  .hp-root .hp-section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .hp-root .hp-section { padding-top: 3rem; padding-bottom: 3rem; }
 }
 @media (min-width: 640px) {
-  .hp-root .hp-section { padding-top: 5rem; padding-bottom: 5rem; }
+  .hp-root .hp-section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
 }
 @media (min-width: 768px) {
-  .hp-root .hp-section { padding-top: 6.5rem; padding-bottom: 6.5rem; }
+  .hp-root .hp-section { padding-top: 4.5rem; padding-bottom: 4.5rem; }
 }
 @media (min-width: 1024px) {
-  .hp-root .hp-section { padding-top: 8rem; padding-bottom: 8rem; }
+  .hp-root .hp-section { padding-top: 5.5rem; padding-bottom: 5.5rem; }
 }
 
 /* ─── Section variants ─────────────────────────────────── */
@@ -219,9 +219,8 @@ body:has(.hp-root) .cursor-glow {
   box-shadow:
     0 0 0 1px rgba(0, 0, 0, 0.01),
     0 2px 4px rgba(0, 0, 0, 0.02),
-    0 8px 16px rgba(0, 0, 0, 0.03),
-    0 24px 64px -16px rgba(0, 0, 0, 0.06);
-  transform: translateY(-3px);
+    0 8px 16px rgba(0, 0, 0, 0.03);
+  transform: translateY(-2px);
 }
 
 @media (hover: none) {
@@ -445,7 +444,7 @@ body:has(.hp-root) .cursor-glow {
   border: 1px solid var(--color-border);
   background: var(--color-surface-elevated);
   border-radius: 0.75rem;
-  padding: 1.25rem;
+  padding: 0.875rem 1.125rem;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .hp-root .hp-benefit-card:hover {

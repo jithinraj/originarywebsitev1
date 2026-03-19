@@ -129,13 +129,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Legal disclaimer */}
-        <div style={{ paddingTop: '1.5rem', paddingBottom: '2.5rem' }}>
-          <p style={{ fontSize: '0.75rem', lineHeight: 1.7, color: 'var(--text-muted)', margin: 0, maxWidth: '56rem' }}>
-            In the U.S., &lsquo;Originary&rsquo; is used by Poem, Inc. as a brand for its AI infrastructure software and tools for AI agents. Poem, Inc. is not affiliated with Originary Inc.
-          </p>
-          <p style={{ fontSize: '0.75rem', lineHeight: 1.7, color: 'var(--text-muted)', margin: '0.5rem 0 0' }}>
-            PEAC Protocol is an open standard stewarded by Originary and the open-source community.
+        {/* Legal */}
+        <div style={{ paddingTop: '1rem', paddingBottom: '2.5rem' }}>
+          <p style={{ fontSize: '0.6875rem', lineHeight: 1.6, color: 'var(--text-muted)', margin: 0, maxWidth: '56rem', opacity: 0.7 }}>
+            Originary is a brand of Poem, Inc. (Delaware, USA). Not affiliated with Originary Inc. PEAC is an open standard stewarded by Originary and the open-source community. <Link href="/legal/imprint" style={{ color: 'var(--text-muted)', textDecoration: 'underline' }}>Legal info</Link>
           </p>
         </div>
       </div>

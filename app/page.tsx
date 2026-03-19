@@ -1,14 +1,16 @@
 import type { Metadata } from 'next'
 import { HomeNav } from '@/components/homepage/HomeNav'
 import { Hero } from '@/components/homepage/Hero'
-import { TractionStrip } from '@/components/homepage/TractionStrip'
+// import { TractionStrip } from '@/components/homepage/TractionStrip'  // preserved: disabled for now
 import { WhoIsItFor } from '@/components/homepage/WhoIsItFor'
 import { Problem } from '@/components/homepage/Problem'
-import { HowItWorks } from '@/components/homepage/HowItWorks'
+// import { HowItWorks } from '@/components/homepage/HowItWorks'  // preserved: redundant with ArchDiagram
 import { TrustProof } from '@/components/homepage/TrustProof'
-import { EnterpriseProof } from '@/components/homepage/EnterpriseProof'
+// import { EnterpriseProof } from '@/components/homepage/EnterpriseProof'  // preserved: merged into TrustProof
+import { WhyNow } from '@/components/homepage/WhyNow'
+// import { ArchDiagram } from '@/components/homepage/ArchDiagram'  // preserved: disabled for now
 import { Comparison } from '@/components/homepage/Comparison'
-import { LogsVsRecords } from '@/components/homepage/LogsVsRecords'
+// import { LogsVsRecords } from '@/components/homepage/LogsVsRecords'  // preserved: now integrated into Hero
 import { OpenStandard } from '@/components/homepage/OpenStandard'
 import { FAQ } from '@/components/homepage/FAQ'
 import { DemoCTA } from '@/components/homepage/DemoCTA'
@@ -111,14 +113,15 @@ export default function Page() {
         <HomeNav />
         <main id="main-content" role="main">
           <Hero />
-          <TractionStrip />
+          {/* <TractionStrip /> */}
           <Problem />
-          <TrustProof />
-          <EnterpriseProof />
-          <WhoIsItFor />
-          <HowItWorks />
           <Comparison />
-          <LogsVsRecords />
+          <WhoIsItFor />
+          <WhyNow />
+          {/* <ArchDiagram /> */}{/* preserved: disabled for now */}
+          <TrustProof />
+          {/* <EnterpriseProof /> */}{/* merged into TrustProof */}
+          {/* <HowItWorks /> */}{/* redundant with ArchDiagram */}
           <OpenStandard />
           <FAQ />
           <DemoCTA />

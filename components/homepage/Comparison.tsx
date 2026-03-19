@@ -2,6 +2,21 @@
 
 import { AnimateIn } from './AnimateIn'
 
+const logEntries = [
+  { time: '14:23:01', label: 'Agent invoked tool: check_inventory' },
+  { time: '14:23:01', label: 'External API call: GET /api/v2/inventory' },
+  { time: '14:23:02', label: 'Policy: tools.check_inventory → allow' },
+  { time: '14:23:02', label: 'Result returned to agent' },
+]
+
+const recordEntries = [
+  { label: 'Issuer', value: 'tools.vendor.com' },
+  { label: 'Type', value: 'org.peacprotocol/access' },
+  { label: 'Policy', value: 'sha256:3f8a...c7e1 ✓' },
+  { label: 'Signature', value: 'Ed25519, valid' },
+  { label: 'Verify', value: 'local, no callback' },
+]
+
 const rows = [
   { need: 'Debug system behavior', logs: 'Yes', originary: 'Partial' },
   { need: 'Make access decisions', logs: 'Limited', originary: 'Yes' },
@@ -63,73 +78,193 @@ export function Comparison() {
   return (
     <section className="hp-section hp-divider">
       <div className="hp-container">
-        <div className="grid md:grid-cols-[1.1fr_1fr] gap-8 md:gap-16 items-start">
-          <AnimateIn>
-            <div>
-              <span
-                className="hp-text-overline"
-                style={{ color: 'var(--color-fg-muted)' }}
+
+        {/* Header */}
+        <AnimateIn>
+          <div className="text-center mb-10 sm:mb-14">
+            <span
+              className="hp-text-overline"
+              style={{ color: 'var(--color-fg-muted)' }}
+            >
+              Logs vs. decisions
+            </span>
+            <h2
+              className="hp-text-display mt-5 max-w-[32rem] mx-auto"
+              style={{ color: 'var(--color-fg)' }}
+            >
+              Logs show what happened. Originary proves it.
+            </h2>
+            <p
+              className="mt-5 hp-text-body-lg max-w-[34rem] mx-auto"
+              style={{ color: 'var(--color-fg-secondary)' }}
+            >
+              Logs and traces help with debugging. They do not replace
+              explicit policy decisions or exportable records.
+            </p>
+          </div>
+        </AnimateIn>
+
+        {/* Side-by-side panels — static, no toggle */}
+        <AnimateIn delay={0.1}>
+          <div className="max-w-[52rem] mx-auto">
+
+            {/* Desktop: side by side */}
+            <div className="hidden md:grid md:grid-cols-2 gap-3">
+              {/* Logs panel — dimmed */}
+              <div
+                className="rounded-xl p-5"
+                style={{
+                  border: '1px solid var(--color-border)',
+                  background: 'var(--color-surface-elevated)',
+                  opacity: 0.5,
+                }}
               >
-                Logs vs. decisions
-              </span>
-              <h2
-                className="hp-text-display mt-5 max-w-[28rem]"
-                style={{ color: 'var(--color-fg)' }}
-              >
-                Logs show what happened. Originary proves it.
-              </h2>
-              <p
-                className="mt-7 hp-text-body-lg"
-                style={{ color: 'var(--color-fg-secondary)' }}
-              >
-                Logs and traces help with debugging. They do not replace
-                explicit policy decisions or exportable records.
-              </p>
-              <div className="mt-8">
-                <p
-                  className="hp-text-body-sm font-medium mb-3"
-                  style={{ color: 'var(--color-fg)' }}
-                >
-                  Originary adds:
-                </p>
-                <ul className="space-y-2.5">
-                  {adds.map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <span
-                        className="mt-[0.5rem] block w-1.5 h-1.5 rounded-full shrink-0"
-                        style={{ background: 'var(--color-border-strong)' }}
-                      />
-                      <span
-                        className="hp-text-body-sm"
-                        style={{ color: 'var(--color-fg-secondary)' }}
-                      >
-                        {item}
-                      </span>
-                    </li>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[0.6875rem] font-semibold tracking-wide uppercase" style={{ color: 'var(--color-fg-muted)' }}>
+                    Internal logs
+                  </span>
+                  <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'rgba(200,150,50,0.12)', color: 'rgb(180,130,40)' }}>
+                    Local only
+                  </span>
+                </div>
+                <div className="space-y-2.5">
+                  {logEntries.map((row) => (
+                    <div key={row.label} className="flex items-start gap-2.5">
+                      <span className="text-[0.625rem] font-mono shrink-0 mt-0.5" style={{ color: 'var(--color-fg-muted)' }}>{row.time}</span>
+                      <span className="text-[0.75rem] leading-snug" style={{ color: 'var(--color-fg-secondary)' }}>{row.label}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
+                <div
+                  className="mt-4 pt-3 text-[0.6875rem] font-medium"
+                  style={{ borderTop: '1px solid var(--color-border)', color: 'rgb(180,130,40)' }}
+                >
+                  Useful for debugging. Not portable.
+                </div>
+              </div>
+
+              {/* Record panel — highlighted */}
+              <div
+                className="rounded-xl p-5"
+                style={{
+                  border: '1px solid var(--color-verified)',
+                  background: 'var(--color-surface-elevated)',
+                  boxShadow: '0 0 0 1px rgba(40,200,64,0.12)',
+                }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[0.6875rem] font-semibold tracking-wide uppercase" style={{ color: 'var(--color-fg-muted)' }}>
+                    Signed record
+                  </span>
+                  <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'rgba(40,200,64,0.12)', color: '#28C840' }}>
+                    Portable proof
+                  </span>
+                </div>
+                <div className="space-y-2.5">
+                  {recordEntries.map((row) => (
+                    <div key={row.label} className="flex items-start gap-2.5">
+                      <span className="text-[0.625rem] font-semibold shrink-0 mt-0.5 uppercase tracking-wide" style={{ color: '#28C840' }}>&#10003;</span>
+                      <div>
+                        <span className="text-[0.625rem] font-medium uppercase tracking-wide" style={{ color: 'var(--color-fg-muted)' }}>{row.label}: </span>
+                        <span className="text-[0.75rem]" style={{ color: 'var(--color-fg-secondary)' }}>{row.value}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div
+                  className="mt-4 pt-3 text-[0.6875rem] font-medium"
+                  style={{ borderTop: '1px solid var(--color-border)', color: '#28C840' }}
+                >
+                  Verifiable by any party, offline.
+                </div>
               </div>
             </div>
-          </AnimateIn>
 
-          <AnimateIn delay={0.2}>
-            {/* Mobile: card layout */}
+            {/* Mobile: stacked, record first */}
+            <div className="md:hidden space-y-3">
+              <div
+                className="rounded-xl p-5"
+                style={{ border: '1px solid var(--color-verified)', background: 'var(--color-surface-elevated)' }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[0.6875rem] font-semibold tracking-wide uppercase" style={{ color: 'var(--color-fg-muted)' }}>Signed record</span>
+                  <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'rgba(40,200,64,0.12)', color: '#28C840' }}>Portable proof</span>
+                </div>
+                <div className="space-y-2.5">
+                  {recordEntries.map((row) => (
+                    <div key={row.label} className="flex items-start gap-2.5">
+                      <span className="text-[0.625rem] font-semibold shrink-0 mt-0.5 uppercase tracking-wide" style={{ color: '#28C840' }}>&#10003;</span>
+                      <div>
+                        <span className="text-[0.625rem] font-medium uppercase tracking-wide" style={{ color: 'var(--color-fg-muted)' }}>{row.label}: </span>
+                        <span className="text-[0.75rem]" style={{ color: 'var(--color-fg-secondary)' }}>{row.value}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 pt-3 text-[0.6875rem] font-medium" style={{ borderTop: '1px solid var(--color-border)', color: '#28C840' }}>
+                  Verifiable by any party, offline.
+                </div>
+              </div>
+              <div
+                className="rounded-xl p-5"
+                style={{ border: '1px solid var(--color-border)', background: 'var(--color-surface-elevated)', opacity: 0.6 }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[0.6875rem] font-semibold tracking-wide uppercase" style={{ color: 'var(--color-fg-muted)' }}>Internal logs</span>
+                  <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'rgba(200,150,50,0.12)', color: 'rgb(180,130,40)' }}>Local only</span>
+                </div>
+                <div className="space-y-2.5">
+                  {logEntries.map((row) => (
+                    <div key={row.label} className="flex items-start gap-2.5">
+                      <span className="text-[0.625rem] font-mono shrink-0 mt-0.5" style={{ color: 'var(--color-fg-muted)' }}>{row.time}</span>
+                      <span className="text-[0.75rem]" style={{ color: 'var(--color-fg-secondary)' }}>{row.label}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 pt-3 text-[0.6875rem] font-medium" style={{ borderTop: '1px solid var(--color-border)', color: 'rgb(180,130,40)' }}>
+                  Useful for debugging. Not portable.
+                </div>
+              </div>
+            </div>
+          </div>
+        </AnimateIn>
+
+        {/* Comparison table */}
+        <AnimateIn delay={0.2}>
+          <div className="mt-12 sm:mt-16 max-w-[52rem] mx-auto">
+            {/* Desktop table */}
+            <div
+              className="hidden sm:block overflow-x-auto rounded-2xl"
+              style={{
+                border: '1px solid var(--color-border)',
+                background: 'var(--color-surface-elevated)',
+              }}
+            >
+              <table className="w-full">
+                <thead>
+                  <tr style={{ borderBottom: '1px solid var(--color-border)', background: 'rgba(243,242,238,0.4)' }}>
+                    <th className="text-left text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-5 py-5 md:px-6" style={{ color: 'var(--color-fg-muted)' }}>Need</th>
+                    <th className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-5 py-5 md:px-6 w-28 md:w-32" style={{ color: 'var(--color-fg-muted)' }}>Logs / traces</th>
+                    <th className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-5 py-5 md:px-6 w-28 md:w-32" style={{ color: 'var(--color-fg)' }}>Originary</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((row, i) => (
+                    <tr key={row.need} style={i < rows.length - 1 ? { borderBottom: '1px solid var(--color-border-subtle)' } : undefined}>
+                      <td className="text-[0.875rem] font-medium px-5 py-4 md:px-6" style={{ color: 'var(--color-fg)' }}>{row.need}</td>
+                      <td className="text-center px-5 py-4 md:px-6"><div className="flex justify-center"><Cell value={row.logs} /></div></td>
+                      <td className="text-center px-5 py-4 md:px-6"><div className="flex justify-center"><Cell value={row.originary} /></div></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile cards */}
             <div className="sm:hidden space-y-3">
               {rows.map((row) => (
-                <div
-                  key={row.need}
-                  className="rounded-xl p-4"
-                  style={{
-                    border: '1px solid var(--color-border)',
-                    background: 'var(--color-surface-elevated)',
-                  }}
-                >
-                  <p
-                    className="text-[0.8125rem] font-medium mb-3"
-                    style={{ color: 'var(--color-fg)' }}
-                  >
-                    {row.need}
-                  </p>
+                <div key={row.need} className="rounded-xl p-4" style={{ border: '1px solid var(--color-border)', background: 'var(--color-surface-elevated)' }}>
+                  <p className="text-[0.8125rem] font-medium mb-3" style={{ color: 'var(--color-fg)' }}>{row.need}</p>
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center gap-2">
                       <span className="text-[0.625rem] font-semibold uppercase tracking-[0.06em]" style={{ color: 'var(--color-fg-muted)' }}>Logs</span>
@@ -143,71 +278,35 @@ export function Comparison() {
                 </div>
               ))}
             </div>
+          </div>
+        </AnimateIn>
 
-            {/* Desktop: table layout */}
-            <div
-              className="hidden sm:block overflow-x-auto rounded-2xl shadow-[0_1px_2px_rgba(0,0,0,0.02),0_4px_16px_-4px_rgba(0,0,0,0.03)]"
-              style={{
-                border: '1px solid var(--color-border)',
-                background: 'var(--color-surface-elevated)',
-              }}
+        {/* Originary adds */}
+        <AnimateIn delay={0.3}>
+          <div className="mt-10 sm:mt-12 max-w-[36rem] mx-auto text-center">
+            <p
+              className="hp-text-body-sm font-semibold mb-4"
+              style={{ color: 'var(--color-fg)' }}
             >
-              <table className="w-full">
-                <thead>
-                  <tr style={{ borderBottom: '1px solid var(--color-border)', background: 'rgba(243,242,238,0.4)' }}>
-                    <th
-                      className="text-left text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-5 py-5 md:px-6 md:py-6"
-                      style={{ color: 'var(--color-fg-muted)' }}
-                    >
-                      Need
-                    </th>
-                    <th
-                      className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-5 py-5 md:px-6 md:py-6 w-28 md:w-32"
-                      style={{ color: 'var(--color-fg-muted)' }}
-                    >
-                      Logs / traces
-                    </th>
-                    <th
-                      className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-5 py-5 md:px-6 md:py-6 w-28 md:w-32"
-                      style={{ color: 'var(--color-fg)', background: 'rgba(237,245,240,0.3)' }}
-                    >
-                      Originary
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {rows.map((row, i) => (
-                    <tr
-                      key={row.need}
-                      className="hp-table-row"
-                      style={i < rows.length - 1 ? { borderBottom: '1px solid var(--color-border-subtle)' } : undefined}
-                    >
-                      <td
-                        className="text-[0.875rem] font-medium px-5 py-5 md:px-6 md:py-5"
-                        style={{ color: 'var(--color-fg)' }}
-                      >
-                        {row.need}
-                      </td>
-                      <td className="text-center px-5 py-5 md:px-6 md:py-5">
-                        <div className="flex justify-center">
-                          <Cell value={row.logs} />
-                        </div>
-                      </td>
-                      <td
-                        className="text-center px-5 py-5 md:px-6 md:py-5"
-                        style={{ background: 'rgba(237,245,240,0.1)' }}
-                      >
-                        <div className="flex justify-center">
-                          <Cell value={row.originary} />
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              Originary adds:
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+              {adds.map((item) => (
+                <span
+                  key={item}
+                  className="flex items-center gap-2 text-[0.8125rem]"
+                  style={{ color: 'var(--color-fg-secondary)' }}
+                >
+                  <span
+                    className="w-1.5 h-1.5 rounded-full shrink-0"
+                    style={{ background: 'var(--color-verified)' }}
+                  />
+                  {item}
+                </span>
+              ))}
             </div>
-          </AnimateIn>
-        </div>
+          </div>
+        </AnimateIn>
       </div>
     </section>
   )

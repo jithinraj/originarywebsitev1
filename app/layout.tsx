@@ -235,18 +235,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable}`}>
+    <html lang="en" data-theme="light" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable}`}>
       <head>
-        {/* Set light mode as default */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                document.documentElement.setAttribute('data-theme', 'light');
-              })();
-            `,
-          }}
-        />
         <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" rx="48" fill="%2309090b"/><circle cx="128" cy="128" r="72" fill="none" stroke="%23ffffff" stroke-width="24"/><circle cx="128" cy="128" r="24" fill="%23635BFF"/></svg>' />
         <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
         <link rel="apple-touch-icon" href="/assets/img/favicon.svg" />
