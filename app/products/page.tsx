@@ -3,7 +3,6 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Shield, Zap, Server, BarChart3, FileText, HardDrive, Search } from 'lucide-react'
-import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
   title: 'Products | Originary',
@@ -106,19 +105,8 @@ export default function ProductsPage() {
                 <span className="text-gradient">What you can do with Originary</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                The verification layer for agent-facing systems. Start with one product, add more as your agent traffic grows.
+                Start with Agent Auditor, Gateway 402, or MCP Server. Add building blocks when you need custom flows.
               </p>
-              <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
-                  {FACTS.publishedPackageCount} packages on npm
-                </span>
-                <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
-                  {FACTS.testsCount} tests
-                </span>
-                <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
-                  {FACTS.license}
-                </span>
-              </div>
             </div>
           </div>
         </section>
