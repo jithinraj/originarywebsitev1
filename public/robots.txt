@@ -7,7 +7,6 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://www.originary.xyz/sitemap.xml
-Sitemap: https://originary.xyz/sitemap.xml
 
 # IndexNow for instant indexing (Bing, Yandex, Seznam, Naver)
 # Key: /3730f721449c4243aba46af9a7c18d71.txt
