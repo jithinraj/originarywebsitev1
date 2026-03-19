@@ -131,7 +131,7 @@
   --chrome-green: #27c93f;
 
   /* === BUTTON STANDARD === */
-  --btn-radius: 12px;
+  --btn-radius: 10px;
   --btn-padding-sm: 8px 16px;
   --btn-padding-md: 12px 24px;
   --btn-padding-lg: 16px 32px;
@@ -468,13 +468,14 @@ p {
 }
 
 .btn-primary {
-  background: var(--accent-brand);
-  color: var(--white);
+  background: var(--text-primary);
+  color: var(--text-inverted);
   box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:hover {
-  box-shadow: var(--shadow-lg);
+  opacity: 0.85;
+  box-shadow: var(--shadow-md);
   transform: translateY(-1px);
 }
 
@@ -593,34 +594,28 @@ p {
 
 /* === CARD SYSTEM === */
 .card {
-  background: var(--surface-card);
+  background: var(--surface-elevated);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-card);
   padding: var(--card-padding);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-xs);
   transition: all var(--duration-300) var(--ease-out);
   position: relative;
   overflow: hidden;
-  /* Ensure cards don't break on small screens */
   min-width: 0;
   word-wrap: break-word;
-  /* Glass effect for dark mode */
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
 }
 
 .card:hover {
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
   border-color: var(--border-hover);
-  background: var(--surface-card-hover);
 }
 
 .card-elevated {
-  background: var(--gradient-surface);
-  backdrop-filter: blur(20px) saturate(180%);
-  border: 0.5px solid rgba(255, 255, 255, 0.15);
-  box-shadow: var(--shadow-elevated);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-md);
   border-radius: var(--radius-card);
 }
 
@@ -1332,7 +1327,7 @@ table {
   --font-sans: var(--font-geist-sans), var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: var(--font-geist-mono), var(--font-jetbrains-mono), 'SF Mono', Monaco, monospace;
 
-  /* Enhanced dark mode colors */
+  /* Legacy dark-mode aliases (kept for compatibility, not used as defaults) */
   --dark-bg: #050505;
   --dark-bg-elevated: #0A0A0A;
   --dark-bg-subtle: #111111;
@@ -1341,16 +1336,6 @@ table {
   --dark-text: #FAFAFA;
   --dark-text-muted: #A1A1AA;
   --dark-text-subtle: #71717A;
-
-  /* Glass effects */
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-bg-hover: rgba(255, 255, 255, 0.06);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-blur: blur(12px);
-
-  /* Glow effects */
-  --glow-brand: 0 0 40px -10px rgba(99, 91, 255, 0.4);
-  --glow-success: 0 0 40px -10px rgba(0, 217, 36, 0.4);
   --glow-subtle: 0 0 60px -15px rgba(255, 255, 255, 0.1);
 }
 
@@ -2485,8 +2470,8 @@ button:hover svg {
 }
 
 .hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.1);
 }
 
 /* Subtle hover lift for smaller elements */
