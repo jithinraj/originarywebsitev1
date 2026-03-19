@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "AI Detection to Settlement | PEAC HTTP 402 Revenue",
   description: "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
   keywords: "AI paywall, HTTP 402, x402, Stripe, PEAC receipts, AI payments, AI bot detection, AI monetization, machine payments",
-  authors: [{ name: "Jithin Raj & Originary Team" }],
+  authors: [{ name: "Jithin Raj, Founder" }],
   alternates: { canonical: '/blog/from-detection-to-settlement-ai-paywall-peac-http-402' },
   openGraph: {
     title: "AI Detection to Settlement | PEAC HTTP 402 Revenue",
@@ -132,7 +132,7 @@ export default function Page() {
                 color: 'var(--text-tertiary)',
                 flexWrap: 'wrap'
               }}>
-                <span style={{ fontWeight: 500, color: 'var(--text-secondary)' }}>Jithin Raj & Originary Team</span>
+                <span style={{ fontWeight: 500, color: 'var(--text-secondary)' }}>Jithin Raj, Founder</span>
                 <span style={{ color: 'var(--border-default)' }}>|</span>
                 <span>18 min read</span>
               </div>

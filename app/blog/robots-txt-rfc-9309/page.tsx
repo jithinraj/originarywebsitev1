@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'robots.txt (RFC 9309) Deep Dive',
   description: 'Technical deep dive into RFC 9309, the standardized Robots Exclusion Protocol. Matching rules, error handling, and AIPREF integration.',
   keywords: 'robots.txt, RFC 9309, robots exclusion protocol, crawl control, web crawlers, IETF, AIPREF, SEO, web standards',
-  authors: [{ name: 'Jithin Raj & Originary Team' }],
+  authors: [{ name: 'Jithin Raj, Founder' }],
   openGraph: {
     type: 'article',
     title: 'robots.txt (RFC 9309): The Web\'s Crawl Access Control',
@@ -131,7 +131,7 @@ export default function RobotsTxtRFC9309Article() {
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                   <User size={16} />
-                  <span>Jithin Raj & Originary Team</span>
+                  <span>Jithin Raj, Founder</span>
                 </div>
               </div>
             </header>

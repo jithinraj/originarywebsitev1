@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "What is HTTP 402? How PEAC Uses 402 for Agent Payments",
   description: "HTTP 402 Payment Required is reserved for digital payments. Learn how PEAC uses 402 for AI access control and receipts.",
   keywords: "HTTP 402, Payment Required, x402, agent payments, AI Access, PEAC Protocol, API monetization, web payments, agentic web",
-  authors: [{ name: "Jithin Raj & Originary Team" }],
+  authors: [{ name: "Jithin Raj, Founder" }],
   alternates: { canonical: '/blog/what-is-http-402' },
   openGraph: {
     title: "What is HTTP 402? How PEAC Uses 402 for Agent Payments",

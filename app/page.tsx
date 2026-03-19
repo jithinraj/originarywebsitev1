@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { HomeNav } from '@/components/homepage/HomeNav'
 import { Hero } from '@/components/homepage/Hero'
+import { TractionStrip } from '@/components/homepage/TractionStrip'
 import { WhoIsItFor } from '@/components/homepage/WhoIsItFor'
 import { Problem } from '@/components/homepage/Problem'
 import { HowItWorks } from '@/components/homepage/HowItWorks'
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Originary | Verify every agent request. Prove every decision.'
   },
-  description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records.',
+  description: 'Originary verifies agent requests, applies policy, and returns signed records you can prove later. PEAC is the open standard underneath.',
   keywords: [
     'agent verification',
     'API access control',
@@ -36,18 +37,18 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   openGraph: {
-    title: 'Originary | Know what every agent did. Prove it later.',
-    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records.',
+    title: 'Originary | Verify every agent request. Prove every decision.',
+    description: 'Originary verifies agent requests, applies policy, and returns signed records you can prove later.',
     url: 'https://www.originary.xyz',
     type: 'website',
     locale: 'en_US',
-    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary: know what every agent did, prove it later' }],
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary: verify every agent request, prove every decision' }],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Know what every agent did. Prove it later.',
-    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records.',
+    title: 'Originary | Verify every agent request. Prove every decision.',
+    description: 'Originary verifies agent requests, applies policy, and returns signed records you can prove later.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -109,6 +110,7 @@ export default function Page() {
         <HomeNav />
         <main id="main-content" role="main">
           <Hero />
+          <TractionStrip />
           <Problem />
           <TrustProof />
           <EnterpriseProof />

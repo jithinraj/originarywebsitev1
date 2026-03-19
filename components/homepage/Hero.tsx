@@ -33,7 +33,7 @@ export function Hero() {
               className="w-1.5 h-1.5 rounded-full"
               style={{ background: 'var(--color-verified)' }}
             />
-            For teams running agent-facing systems
+            For teams building or operating agent-facing systems
           </span>
         </motion.div>
 
@@ -56,7 +56,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease }}
         >
-          Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records for every decision. PEAC is the open standard underneath.
+          Originary verifies agent requests, applies policy, and returns signed records you can prove later. PEAC is the open standard underneath.
         </motion.p>
 
         {/* Tagline - visually distinct */}

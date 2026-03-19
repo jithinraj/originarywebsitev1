@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "AI Bot Detection: From Traffic to Evidence",
   description: "AI bot detection beyond classifiers. Use metadata, fingerprints and PEAC receipts to turn AI traffic into verifiable evidence.",
   keywords: "AI bot detection, AI traffic, metadata, model fingerprints, PEAC receipts, agent detection, AI crawlers, verifiable evidence",
-  authors: [{ name: "Jithin Raj & Originary Team" }],
+  authors: [{ name: "Jithin Raj, Founder" }],
   alternates: { canonical: '/blog/ai-bot-detection' },
   openGraph: {
     title: "AI Bot Detection: From Traffic to Evidence",
@@ -132,7 +132,7 @@ export default function Page() {
                 color: 'var(--text-tertiary)',
                 flexWrap: 'wrap'
               }}>
-                <span style={{ fontWeight: 500, color: 'var(--text-secondary)' }}>Jithin Raj & Originary Team</span>
+                <span style={{ fontWeight: 500, color: 'var(--text-secondary)' }}>Jithin Raj, Founder</span>
                 <span style={{ color: 'var(--border-default)' }}>|</span>
                 <span>15 min read</span>
               </div>

@@ -7,14 +7,14 @@ import { Calendar, User, ArrowRight, FileText } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary Blog | AI Payments and Signed Records',
+    absolute: 'Originary Blog | Agent Verification and Infrastructure',
   },
-  description: 'Originary blog on AI payments, HTTP 402, signed interaction records, and agentic web infrastructure. Technical insights and protocol updates.',
+  description: 'Technical articles from Originary on agent verification, policy enforcement, signed interaction records, and agentic web infrastructure.',
   keywords: 'Originary blog, AIPREF, PEAC protocol, AI payments, HTTP 402, x402, signed records, technical blog, agentic web, AI infrastructure',
   authors: [{ name: 'Originary Team' }],
   openGraph: {
     type: 'website',
-    title: 'Originary Blog | AI Payments and Signed Records',
+    title: 'Originary Blog | Agent Verification and Infrastructure',
     description: 'Technical articles from Originary on HTTP 402, AI payments, signed interaction records, AIPREF and the agentic web.',
     url: '/blog',
     images: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary Blog | AI Payments and Signed Records',
+    title: 'Originary Blog | Agent Verification and Infrastructure',
     description: 'Technical insights from Originary on HTTP 402, AI payments, signed interaction records and agentic web infrastructure.',
     images: ['/og'],
     site: '@originaryx',
@@ -47,7 +47,7 @@ export default function BlogPage() {
       slug: 'what-is-http-402',
       title: 'What is HTTP 402? How PEAC Uses 402 for Agent Payments',
       description: 'HTTP 402 Payment Required was defined in 1997 and reserved for digital payments. Learn how PEAC Protocol activates 402 for AI access control, agent payments, and verifiable receipts.',
-      author: 'Jithin Raj & Originary Team',
+      author: 'Jithin Raj, Founder',
       category: 'Explainer',
       readTime: '10 min read',
       featured: true
@@ -56,7 +56,7 @@ export default function BlogPage() {
       slug: 'a2a-stack-agent-to-agent-commerce',
       title: 'The A2A Stack: Agent-to-Agent Commerce',
       description: 'How AI agents coordinate, transact, and verify interactions with each other. The A2A stack covers AI policy discovery, HTTP 402 payments, PEAC-Receipts, and provenance.',
-      author: 'Jithin Raj & Originary Team',
+      author: 'Jithin Raj, Founder',
       category: 'Vision',
       readTime: '12 min read',
       featured: true
@@ -65,7 +65,7 @@ export default function BlogPage() {
       slug: 'from-detection-to-settlement-ai-paywall-peac-http-402',
       title: 'From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance',
       description: 'How Originary and PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.',
-      author: 'Jithin Raj & Originary Team',
+      author: 'Jithin Raj, Founder',
       category: 'Technical',
       readTime: '18 min read',
       featured: false
@@ -74,7 +74,7 @@ export default function BlogPage() {
       slug: 'ai-bot-detection',
       title: 'AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence',
       description: 'AI bot detection is more than classifiers. Learn how metadata, fingerprints and PEAC receipts turn AI traffic into verifiable, enforceable evidence.',
-      author: 'Jithin Raj & Originary Team',
+      author: 'Jithin Raj, Founder',
       category: 'Technical',
       readTime: '15 min read',
       featured: false
@@ -83,7 +83,7 @@ export default function BlogPage() {
       slug: 'aipref-by-ietf',
       title: 'AIPREF: A Common Language for AI Usage Preferences',
       description: 'Understanding the IETF AIPREF specification for expressing AI usage preferences through HTTP headers and robots.txt - what it is, how it works, and how to implement it today.',
-      author: 'Jithin Raj & Originary Team',
+      author: 'Jithin Raj, Founder',
       category: 'Technical',
       readTime: '15 min read',
       featured: false
@@ -92,7 +92,7 @@ export default function BlogPage() {
       slug: 'http-402-for-apis',
       title: 'HTTP 402 for APIs: Making Payment-Required Responses Work',
       description: 'A practical guide to implementing HTTP 402 Payment Required in modern APIs. Learn the anatomy of a 402 response, receipt verification patterns, and how to avoid common pitfalls.',
-      author: 'Jithin Raj & Originary Team',
+      author: 'Jithin Raj, Founder',
       category: 'Technical',
       readTime: '12 min read',
       featured: false
@@ -101,7 +101,7 @@ export default function BlogPage() {
       slug: 'adding-402-in-15-minutes',
       title: 'Add HTTP 402 to Your API in 15 Minutes',
       description: 'Quick tutorial for adding HTTP 402 Payment Required responses to an existing Express API. No SDK required, just standard HTTP and receipt verification.',
-      author: 'Jithin Raj & Originary Team',
+      author: 'Jithin Raj, Founder',
       category: 'Tutorial',
       readTime: '8 min read',
       featured: false
@@ -110,7 +110,7 @@ export default function BlogPage() {
       slug: 'cloudflare-workers-402',
       title: 'HTTP 402 on Cloudflare Workers: Global Edge Payment Gates',
       description: 'Deploy HTTP 402 payment-required responses at the edge with Cloudflare Workers. Zero cold starts, global KV storage, Web Crypto API for receipt verification.',
-      author: 'Jithin Raj & Originary Team',
+      author: 'Jithin Raj, Founder',
       category: 'Technical',
       readTime: '10 min read',
       featured: false
@@ -119,7 +119,7 @@ export default function BlogPage() {
       slug: 'robots-txt-rfc-9309',
       title: 'robots.txt (RFC 9309): The Web\'s Crawl Access Control',
       description: 'A technical deep dive into RFC 9309, the standardized Robots Exclusion Protocol - matching rules, error handling, caching, and how it relates to AIPREF usage preferences.',
-      author: 'Jithin Raj & Originary Team',
+      author: 'Jithin Raj, Founder',
       category: 'Technical',
       readTime: '12 min read',
       featured: false

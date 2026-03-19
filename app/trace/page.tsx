@@ -38,8 +38,8 @@ export default function TracePage() {
   const features = [
     {
       icon: <Eye size={24} />,
-      title: 'Complete Visibility',
-      description: 'Identify agents accessing your APIs and content. See what they request and when.'
+      title: 'Agent Visibility',
+      description: 'See which agents access your APIs and content, what they request, and when.'
     },
     {
       icon: <Shield size={24} />,
@@ -54,7 +54,7 @@ export default function TracePage() {
     {
       icon: <Zap size={24} />,
       title: 'Production Ready',
-      description: 'HMAC auth, replay protection, rate limiting. Deploy to Cloudflare Workers, Nginx, or Docker in minutes.'
+      description: 'HMAC auth, replay protection, rate limiting. Deploy to Cloudflare Workers, Nginx, or Docker.'
     }
   ]
 
@@ -165,7 +165,7 @@ export default function TracePage() {
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
-                From detection to evidence export
+                From detection to verifiable evidence
               </p>
             </div>
 

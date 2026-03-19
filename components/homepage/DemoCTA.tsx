@@ -53,6 +53,23 @@ export function DemoCTA() {
                 Book a demo
               </Link>
             </div>
+            <p
+              className="mt-6 text-[0.8125rem]"
+              style={{ color: 'rgba(250,250,247,0.35)' }}
+            >
+              Not a developer?{' '}
+              <Link href="/contact" style={{ color: 'rgba(250,250,247,0.55)', textDecoration: 'underline' }}>
+                Talk to us about enterprise deployment
+              </Link>
+              {' '}&middot;{' '}
+              <Link href="/trust" style={{ color: 'rgba(250,250,247,0.55)', textDecoration: 'underline' }}>
+                Security and procurement
+              </Link>
+              {' '}&middot;{' '}
+              <Link href="/press" style={{ color: 'rgba(250,250,247,0.55)', textDecoration: 'underline' }}>
+                Press
+              </Link>
+            </p>
           </div>
         </motion.div>
       </div>
