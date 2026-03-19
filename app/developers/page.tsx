@@ -44,40 +44,9 @@ export default function Developers() {
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
                 <span className="text-gradient">Start here</span>
               </h1>
-              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
+              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                 Pick your path: API, MCP, verify, or A2A.
               </p>
-              <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
-                  Stable: {FACTS.stableVersion}
-                </span>
-                <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
-                  {FACTS.publishedPackageCount} packages on npm
-                </span>
-                <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', padding: 'var(--space-2) var(--space-3)', background: 'var(--surface-subtle)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
-                  {FACTS.license}
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Install */}
-        <section className="section" style={{ paddingTop: 0, paddingBottom: 'var(--space-12)' }}>
-          <div className="container" style={{ maxWidth: '720px' }}>
-            <div style={{
-              background: 'var(--text-primary)',
-              color: 'var(--surface-card)',
-              padding: 'var(--space-6)',
-              borderRadius: 'var(--radius-xl)',
-              fontFamily: 'var(--font-mono)',
-              fontSize: 'var(--text-sm)',
-              overflowX: 'auto'
-            }}>
-              <code style={{ display: 'block', marginBottom: 'var(--space-2)', color: 'var(--text-muted)' }}># Install core packages</code>
-              <code style={{ display: 'block' }}>npm install @peac/protocol @peac/crypto @peac/schema</code>
-              <code style={{ display: 'block', marginTop: 'var(--space-4)', marginBottom: 'var(--space-2)', color: 'var(--text-muted)' }}># Or install the CLI</code>
-              <code style={{ display: 'block' }}>npm install -g @peac/cli</code>
             </div>
           </div>
         </section>

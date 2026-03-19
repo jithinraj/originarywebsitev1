@@ -135,7 +135,7 @@ export default function AboutPage() {
                 fontWeight: 400,
               }}
             >
-              Middleware, tools, and SDKs that make agent interactions verifiable. Built on PEAC, the open protocol for signed interaction records.
+              Originary is the verification layer for agent-facing systems. Built on PEAC, the open protocol for signed interaction records.
             </p>
 
             <div

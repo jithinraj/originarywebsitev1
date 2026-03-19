@@ -13,7 +13,7 @@ import { HomeFooter } from '@/components/homepage/HomeFooter'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Know what every agent did. Prove it later.'
+    absolute: 'Originary | When agents cross your boundary, keep proof.'
   },
   description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records.',
   keywords: [

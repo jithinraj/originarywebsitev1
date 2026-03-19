@@ -172,7 +172,7 @@ export default function ReceiptsPage() {
         <section className="receipts-features">
           <div className="container">
             <div className="receipts-section-header">
-              <h2 className="receipts-section-title">What receipts provide</h2>
+              <h2 className="receipts-section-title">What records provide</h2>
               <p className="receipts-section-subtitle">
                 Signed records for every interaction, verifiable against published public keys.
               </p>
@@ -205,7 +205,7 @@ export default function ReceiptsPage() {
           <div className="container">
             <div className="receipts-structure-layout">
               <div className="receipts-structure-info">
-                <h2 className="receipts-section-title">Receipt anatomy</h2>
+                <h2 className="receipts-section-title">Record anatomy</h2>
                 <p className="receipts-section-subtitle" style={{ textAlign: 'left', margin: 0 }}>
                   Each signed record is a JWS payload containing interaction metadata, policy bindings, and optional payment evidence.
                 </p>
@@ -287,7 +287,7 @@ export default function ReceiptsPage() {
             <div className="receipts-section-header">
               <h2 className="receipts-section-title">Built for real workflows</h2>
               <p className="receipts-section-subtitle">
-                From internal audits to dispute resolution, receipts provide the evidence trail you need.
+                From internal audits to dispute resolution, records provide the evidence trail you need.
               </p>
             </div>
 
@@ -316,7 +316,7 @@ export default function ReceiptsPage() {
             <div className="receipts-section-header">
               <h2 className="receipts-section-title">Verification in 3 steps</h2>
               <p className="receipts-section-subtitle">
-                Verify any receipt against published keys, no API required.
+                Verify any record against published keys, no API required.
               </p>
             </div>
 
@@ -364,7 +364,7 @@ export default function ReceiptsPage() {
           <div className="container">
             <div className="cta-card receipts-cta-card">
               <div className="receipts-cta-glow" />
-              <h2>Ready to add Originary Receipts?</h2>
+              <h2>Ready to add signed records?</h2>
               <p>Start generating verifiable records for every AI interaction with Originary.</p>
               <div className="receipts-cta-buttons">
                 <Link href="/developers" className="btn btn-lg btn-primary">

@@ -58,7 +58,7 @@ export default function Press() {
                   About <Mark>Originary</Mark>
                 </h2>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  Originary is the production stack for verifiable interaction records. Teams publish peac.txt to declare access, consent, attribution, privacy, and pricing terms. Every API call, tool run, or agent handoff produces a signed interaction record that can be verified independently, even offline. PEAC is the open standard; Originary is a production implementation.
+                  Originary is the verification layer for agent-facing systems. Teams publish peac.txt to declare access, consent, attribution, privacy, and pricing terms. Every API call, tool run, or agent handoff produces a signed interaction record that can be verified independently, even offline. PEAC is the open standard; Originary is a production implementation.
                 </p>
 
                 <h2 style={{
