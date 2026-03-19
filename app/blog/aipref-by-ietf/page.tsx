@@ -133,7 +133,7 @@ export default function AIPREFArticle() {
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                   <User size={16} />
-                  <span>Jithin Raj & Originary Team</span>
+                  <span>Jithin Raj, Founder</span>
                 </div>
               </div>
             </header>

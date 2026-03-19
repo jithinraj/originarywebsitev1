@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "The A2A Stack: Agent-to-Agent Commerce",
   description: "How AI agents coordinate, transact, and verify interactions. The A2A stack covers policy discovery, HTTP 402 payments, and PEAC-Receipts.",
   keywords: "A2A, agent-to-agent, agent commerce, AI coordination, PEAC Protocol, HTTP 402, agent receipts, MCP, ACP, agentic web, autonomous agents",
-  authors: [{ name: "Jithin Raj & Originary Team" }],
+  authors: [{ name: "Jithin Raj, Founder" }],
   alternates: { canonical: '/blog/a2a-stack-agent-to-agent-commerce' },
   openGraph: {
     title: "The A2A Stack: Agent-to-Agent Commerce",

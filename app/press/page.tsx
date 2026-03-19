@@ -58,8 +58,47 @@ export default function Press() {
                   About <Mark>Originary</Mark>
                 </h2>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  Originary is the verification layer for agent-facing systems. Teams verify agent requests, apply policy, and return signed interaction records that can be verified independently, even offline. PEAC is the open standard; Originary is a production implementation.
+                  Originary is the verification layer for agent-facing systems. When an agent calls an API or tool, Originary verifies the request, applies policy, and returns a signed record of the decision. These records are portable, offline-verifiable, and built on PEAC, the open standard for verifiable interaction records.
                 </p>
+
+                <h2 style={{
+                  fontSize: 'var(--text-2xl)',
+                  fontWeight: 600,
+                  marginTop: 'var(--space-12)',
+                  marginBottom: 'var(--space-6)'
+                }}>
+                  Why Now
+                </h2>
+                <p style={{ marginBottom: 'var(--space-6)' }}>
+                  AI agents are crossing organizational boundaries at scale: calling APIs, accessing tools, making purchases, retrieving content. There is no standard way to verify what happened after the fact. Logs stay inside one system. Originary creates portable, cryptographically signed evidence that works across vendors, frameworks, and trust boundaries.
+                </p>
+
+                <h2 style={{
+                  fontSize: 'var(--text-2xl)',
+                  fontWeight: 600,
+                  marginTop: 'var(--space-12)',
+                  marginBottom: 'var(--space-6)'
+                }}>
+                  Company Facts
+                </h2>
+                <div style={{
+                  background: 'var(--surface-subtle)',
+                  border: '1px solid var(--border-default)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: 'var(--space-6)',
+                  marginBottom: 'var(--space-8)',
+                  fontSize: 'var(--text-base)',
+                }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: 'var(--space-3)', lineHeight: 1.8 }}>
+                    <strong>Founded</strong><span>2025</span>
+                    <strong>Founder</strong><span>Jithin Raj</span>
+                    <strong>Product</strong><span>Verification layer for agent-facing systems</span>
+                    <strong>Protocol</strong><span>PEAC (open standard, Apache-2.0)</span>
+                    <strong>Business model</strong><span>Open-source protocol; commercial support, managed infrastructure, and enterprise deployment</span>
+                    <strong>Packages</strong><span>28 on npm</span>
+                    <strong>License</strong><span>Apache-2.0, no CLA</span>
+                  </div>
+                </div>
 
                 <h2 style={{
                   fontSize: 'var(--text-2xl)',

@@ -5,22 +5,22 @@ import Link from 'next/link'
 import { BookOpen, ArrowRight, Receipt, CreditCard, Shield, ShoppingCart, Sparkles, TrendingUp, Users, Zap } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Learn: Agentic Commerce, Records & Payments',
-  description: 'Guides on agentic commerce, verifiable records, HTTP 402 payments, and AI consent. Essential reading for building autonomous AI systems.',
+  title: 'Learn: Agent Verification, Records & Policy',
+  description: 'Guides on agent verification, verifiable interaction records, HTTP 402 payments, and policy enforcement. Essential reading for teams operating agent-facing systems.',
   keywords: 'agentic commerce tutorial, AI receipts explained, HTTP 402 guide, machine payments, AI consent, agent economy, PEAC Protocol guide, autonomous AI transactions, AI infrastructure learning, agent-to-agent payments',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Learn: Agentic Commerce, Records & Payments',
-    description: 'Guides on agentic commerce, verifiable records, HTTP 402 payments, and AI consent.',
+    title: 'Learn: Agent Verification, Records & Policy',
+    description: 'Guides on agent verification, verifiable interaction records, HTTP 402 payments, and policy enforcement.',
     url: '/learn',
     images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Learn: Agentic Commerce, Records & Payments',
-    description: 'Guides on agentic commerce, verifiable records, HTTP 402 payments, and AI consent.',
+    title: 'Learn: Agent Verification, Records & Policy',
+    description: 'Guides on agent verification, verifiable interaction records, HTTP 402 payments, and policy enforcement.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',

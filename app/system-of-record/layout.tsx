@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Open System of Record for AI Agents',
-  description: 'Policy + records as verifiable evidence for agent interactions. PEAC Protocol creates portable, cryptographic proof of access and payment.',
+  description: 'Verifiable evidence of what agents did, under what policy, provable later. PEAC creates portable, cryptographic proof across trust boundaries.',
   keywords: 'system of record, AI agents, PEAC protocol, receipts, policy, verification, agent commerce, HTTP 402, cryptographic proof, agentic web',
   alternates: {
     canonical: '/system-of-record'

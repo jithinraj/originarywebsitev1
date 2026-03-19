@@ -135,7 +135,7 @@ export default function AboutPage() {
                 fontWeight: 400,
               }}
             >
-              Originary is the verification layer for agent-facing systems. Built on PEAC, the open standard for verifiable interaction records.
+              The verification layer for agent-facing systems. Built on PEAC, the open standard for verifiable interaction records.
             </p>
 
             <div
@@ -173,13 +173,13 @@ export default function AboutPage() {
                 marginBottom: 'var(--space-8)',
               }}
             >
-              The web was built for humans clicking links.{' '}
-              <span style={{ color: 'var(--accent-brand)' }}>Agents need something different.</span>
+              When software acts on behalf of people,{' '}
+              <span style={{ color: 'var(--accent-brand)' }}>every decision should be provable.</span>
             </p>
 
             <p
               style={{
-                ...reveal(mission.visible, 0.08),
+                ...reveal(mission.visible, 0.06),
                 fontSize: 'var(--text-lg)',
                 color: 'var(--text-secondary)',
                 lineHeight: 1.8,
@@ -187,15 +187,15 @@ export default function AboutPage() {
                 marginBottom: 'var(--space-4)',
               }}
             >
-              Machine-readable terms, predictable enforcement, and a durable way to verify what happened
-              without relying on a single vendor&apos;s logs. We make <strong>agent interactions</strong> verifiable
-              through <strong>verifiable interaction records</strong> that bind outcomes to the policy state
-              in force at decision time.
+              Originary was founded on a simple observation: agents are crossing organizational
+              boundaries every day, booking, purchasing, calling APIs, accessing tools, but there is
+              no standard way to verify what happened after the fact. Logs stay inside one system.
+              Originary makes agent interactions verifiable across boundaries.
             </p>
 
             <p
               style={{
-                ...reveal(mission.visible, 0.12),
+                ...reveal(mission.visible, 0.1),
                 fontSize: 'var(--text-base)',
                 color: 'var(--text-tertiary)',
                 lineHeight: 1.7,
@@ -204,26 +204,9 @@ export default function AboutPage() {
                 margin: '0 auto var(--space-12) auto',
               }}
             >
-              An interaction record can be verified offline by any party, stored independently
-              of the issuing service, and used across audits, disputes, and partner workflows.
-            </p>
-
-            <p
-              style={{
-                ...reveal(mission.visible, 0.15),
-                fontSize: 'var(--text-base)',
-                color: 'var(--text-secondary)',
-                lineHeight: 1.7,
-                textAlign: 'center',
-                maxWidth: '680px',
-                margin: '0 auto var(--space-12) auto',
-                fontStyle: 'italic',
-              }}
-            >
-              Agents are crossing organizational boundaries every day: booking, purchasing,
-              accessing tools, calling APIs. When software acts on behalf of people across
-              trust boundaries, the decisions need to be explicit, verifiable, and portable.
-              That is what Originary builds.
+              We built PEAC so that any team can publish machine-readable terms, issue verifiable
+              interaction records, and let third parties verify outcomes independently, even offline.
+              Originary is the product surface that makes this practical in production.
             </p>
 
             <div
@@ -285,7 +268,7 @@ export default function AboutPage() {
                   Originary Platform
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  The product surface: middleware, tools, and SDKs that help teams author policy, enforce decisions, and verify receipts in production.
+                  The product surface: middleware, tools, and SDKs that help teams author policy, enforce decisions, and verify interaction records in production.
                 </p>
               </div>
             </div>
@@ -655,7 +638,7 @@ export default function AboutPage() {
                 Built on an Open Foundation
               </h2>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', maxWidth: '620px', margin: '0 auto', lineHeight: 1.7 }}>
-                <strong>PEAC</strong> (Programmable Environment for Agent Coordination) is the open protocol behind our receipts.
+                <strong>PEAC</strong> is the open standard for verifiable interaction records.
                 It defines how policies are published and how cryptographically signed receipts provide portable evidence
                 of an interaction outcome under declared terms.
               </p>

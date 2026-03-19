@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "HTTP 402 on Cloudflare Workers",
   description: "Deploy HTTP 402 responses at the edge with Cloudflare Workers. Zero cold starts, KV storage, and Web Crypto API for verification.",
   keywords: "Cloudflare Workers, HTTP 402, edge computing, x402, KV storage, Web Crypto API, payment required",
-  authors: [{ name: "Jithin Raj & Originary Team" }],
+  authors: [{ name: "Jithin Raj, Founder" }],
   alternates: { canonical: '/blog/cloudflare-workers-402' },
   openGraph: {
     title: "HTTP 402 on Cloudflare Workers: Global Edge Payment Gates",
@@ -125,7 +125,7 @@ export default function Page() {
                 paddingTop: 'var(--space-6)',
                 borderTop: '1px solid var(--border-default)'
               }}>
-                <span>By Jithin Raj & Originary Team</span>
+                <span>By Jithin Raj, Founder</span>
                 <span>•</span>
                 <span>10 min read</span>
               </div>

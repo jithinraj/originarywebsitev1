@@ -131,7 +131,7 @@ export default function SystemOfRecordPage() {
                   marginBottom: 'var(--space-8)'
                 }}
               >
-                Policy + records as verifiable evidence for agent interactions.
+                Verifiable evidence of what agents did, under what policy, provable later.
               </p>
 
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -155,12 +155,8 @@ export default function SystemOfRecordPage() {
               <h2 id="introduction-heading" style={{ fontSize: 'clamp(var(--text-2xl), 4vw, var(--text-3xl))', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-6)' }}>Introduction</h2>
 
               <p className="lead">
-                AI agents are becoming a new class of &ldquo;user&rdquo; on the internet. They browse, negotiate, pay, retrieve, transform, and act. They do it fast, at scale, and increasingly without a human watching each step.
+                AI agents are crossing organizational boundaries at scale: calling APIs, accessing tools, making purchases, retrieving content. The core question is no longer &ldquo;Can the agent do this?&rdquo; but:
               </p>
-
-              <p>That is not just a product shift. It is an infrastructure shift.</p>
-
-              <p>In the agent era, the core question stops being &ldquo;Can the agent do the action?&rdquo; and becomes:</p>
 
               <ul className="question-list">
                 <li><strong>Should it have been allowed to do the action?</strong></li>
@@ -170,12 +166,8 @@ export default function SystemOfRecordPage() {
                 <li><strong>Can we prove it later without trusting a single vendor?</strong></li>
               </ul>
 
-              <p>
-                If we cannot answer those questions with durable evidence, the agent web either centralizes behind gatekeepers or collapses into disputes, fraud, and regulatory dead-ends.
-              </p>
-
               <p className="callout">
-                What we need is an <strong>open system of record</strong> for agent interactions: portable, verifiable evidence that works across payment rails, agent frameworks, and vendor stacks. Originary exists to build and steward that layer.
+                Without durable, portable evidence, the agent web either centralizes behind gatekeepers or collapses into disputes. An <strong>open system of record</strong> provides verifiable evidence that works across vendors, frameworks, and trust boundaries.
               </p>
             </section>
 
