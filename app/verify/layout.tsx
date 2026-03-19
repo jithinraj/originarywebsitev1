@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Inspector | Decode and Inspect Signed Interaction Records',
-  description: 'Paste a compact JWS token, upload a file, or load a sample. Decodes JOSE header and claims instantly in the browser. For full cryptographic verification, use Agent Auditor.',
+  description: 'Paste a compact JWS token, upload a file, or load a sample. Decodes JOSE header and claims instantly in the browser.',
   keywords: 'JWS inspector, interaction record, PEAC receipt, Ed25519, JOSE header, token decoder',
   alternates: { canonical: '/verify' },
   openGraph: {

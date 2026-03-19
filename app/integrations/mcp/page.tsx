@@ -4,10 +4,10 @@ import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'MCP Integration | @peac/mcp-server for Model Context Protocol',
+  title: 'MCP Integration | @peac/mcp-server Tool Server',
   description: 'Open-source MCP tool server for PEAC-Receipt verification, inspection, issuance, and bundling. 5 tools with capability-based access control.',
   openGraph: {
-    title: 'MCP Integration | @peac/mcp-server for Model Context Protocol',
+    title: 'MCP Integration | @peac/mcp-server Tool Server',
     description: 'Open-source MCP tool server for PEAC-Receipt verification, inspection, issuance, and bundling. 5 tools with capability-based access control.',
     url: '/integrations/mcp',
     type: 'article'

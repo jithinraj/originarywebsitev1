@@ -788,7 +788,7 @@ export default function WhatIsOriginaryPage() {
           </div>
         </section>
 
-        {/* Start Building CTA */}
+        {/* CTA */}
         <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)', background: 'var(--gradient-brand)' }}>
           <div className="container">
             <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center', color: 'var(--white)' }}>

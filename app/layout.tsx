@@ -174,7 +174,7 @@ export const metadata: Metadata = {
     default: 'Originary | Know what every agent did. Prove it later.',
     template: '%s | Originary',
   },
-  description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. PEAC is the open standard underneath.',
+  description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records.',
   keywords: [
     'agent verification',
     'API access control',
@@ -198,7 +198,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.originary.xyz'),
   openGraph: {
     title: 'Originary | Know what every agent did. Prove it later.',
-    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. PEAC is the open standard underneath.',
+    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records.',
     url: 'https://www.originary.xyz',
     siteName: 'Originary',
     images: [{
@@ -213,7 +213,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Originary | Know what every agent did. Prove it later.',
-    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. PEAC is the open standard underneath.',
+    description: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',

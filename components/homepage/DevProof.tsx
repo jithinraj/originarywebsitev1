@@ -25,7 +25,7 @@ export function DevProof() {
                 style={{ color: 'var(--color-fg-secondary)' }}
               >
                 An agent request arrives. Originary evaluates it, applies your
-                policy, and returns a portable signed record your team can
+                policy, and returns a verifiable interaction record your team can
                 inspect and export.
               </p>
               <p

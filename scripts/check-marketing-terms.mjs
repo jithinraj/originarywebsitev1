@@ -122,6 +122,21 @@ const INTEGRITY_BANNED = [
   '99.99%',
 ]
 
+// Truth guard -- terms that signal stale or fake content
+const TRUTH_GUARD = [
+  'coming soon',
+  'portable signed record',
+  'portable signed records',
+  'Start building',
+  'SSO/SCIM',
+  'SSO/SAML',
+  'role-based access control',
+  'multi-factor authentication',
+  'Discord community',
+  'Stack Overflow',
+  'Join our Discord',
+]
+
 // Unsourced projections
 const UNSOURCED_PROJECTIONS = [
   /\$\d+T\+?/gi,
@@ -170,6 +185,12 @@ for (const route of filesToCheck) {
     const matches = content.match(pattern)
     if (matches) {
       hardErrors.push(`  [wire-format] "${matches[0]}" in ${route} (use peac-receipt/0.1)`)
+    }
+  }
+
+  for (const term of TRUTH_GUARD) {
+    if (contentLower.includes(term.toLowerCase())) {
+      hardErrors.push(`  [truth-guard] "${term}" in ${route}`)
     }
   }
 

@@ -2,13 +2,9 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { NAV_PRIMARY, NAV_CTA } from '@/lib/site-registry'
 
-const links = [
-  { label: 'Products', href: '/products' },
-  { label: 'Developers', href: '/developers' },
-  { label: 'Learn', href: '/learn' },
-  { label: 'Pricing', href: '/pricing' },
-]
+const links = NAV_PRIMARY.slice(0, 4)
 
 export default function NavigationHeader() {
   const [open, setOpen] = useState(false)
@@ -80,7 +76,7 @@ export default function NavigationHeader() {
               </svg>
             </Link>
             <Link
-              href="/developers"
+              href={NAV_CTA.href}
               className="nav-cta-hover"
               style={{
                 display: 'inline-flex',
@@ -96,7 +92,7 @@ export default function NavigationHeader() {
                 transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
               }}
             >
-              Start here
+              {NAV_CTA.label}
             </Link>
           </div>
 
@@ -157,7 +153,7 @@ export default function NavigationHeader() {
             ))}
             <div style={{ paddingTop: '1.25rem', marginTop: '0.75rem', borderTop: '1px solid var(--border-default)' }}>
               <Link
-                href="/developers"
+                href={NAV_CTA.href}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
