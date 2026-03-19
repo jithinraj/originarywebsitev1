@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Signed Receipts for AI Interactions',
-  description: 'Signed records provide tamper-evident proof of policy, consent, and payment. Verifiable evidence for audits and disputes.',
+  title: 'Verifiable Interaction Records',
+  description: 'A verifiable interaction record is portable proof of what an agent did. Signed, timestamped, and independently verifiable offline. Built on PEAC.',
   robots: 'index,follow',
   openGraph: {
-    title: 'Signed Receipts for AI Interactions | Originary',
-    description: 'Signed records provide tamper-evident proof of policy, consent, attribution, and payment events. Cryptographically verifiable evidence for audit trails.',
+    title: 'Verifiable Interaction Records | Originary',
+    description: 'A verifiable interaction record is portable proof of what an agent did. Signed, timestamped, and independently verifiable offline.',
     url: '/receipts',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Signed Receipts for AI Interactions | Originary',
-    description: 'Signed records provide tamper-evident proof of policy, consent, attribution, and payment events.',
+    title: 'Verifiable Interaction Records | Originary',
+    description: 'A verifiable interaction record is portable proof of what an agent did. Signed, timestamped, and independently verifiable offline.',
     images: ['/og'],
   },
   alternates: {

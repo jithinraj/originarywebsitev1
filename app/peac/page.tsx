@@ -9,7 +9,7 @@ import { peacFaqs } from '@/content/faqs'
 
 export const metadata: Metadata = {
   title: 'PEAC Protocol | Open Standard for Verifiable Interaction Records',
-  description: 'PEAC defines how systems publish machine-readable interaction terms and issue portable signed records for automated requests. Verify them independently, even offline. Apache-2.0.',
+  description: 'PEAC is the open standard for verifiable interaction records. Publish terms, verify agent requests, and issue signed records. Verify independently, even offline. Apache-2.0.',
   keywords: [
     'PEAC Protocol',
     'verifiable interaction records',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'PEAC Protocol | Open Standard for Verifiable Interaction Records',
-    description: 'PEAC defines how systems publish machine-readable interaction terms and issue portable signed records for automated requests. Verify them independently, even offline.',
+    description: 'PEAC is the open standard for verifiable interaction records. Publish terms, verify agent requests, and issue signed records. Verify independently, even offline.',
     url: '/peac',
     siteName: 'Originary',
     type: 'website',
@@ -57,7 +57,7 @@ export default function PeacPage() {
     "@type": "SoftwareSourceCode",
     "@id": "https://www.originary.xyz/peac#protocol",
     "name": "PEAC Protocol",
-    "description": "Open standard for verifiable interaction records. Sign API calls, tool runs, and agent handoffs as portable signed records verifiable independently, offline. Apache-2.0.",
+    "description": "Open standard for verifiable interaction records. Sign API calls, tool runs, and agent handoffs as signed records verifiable independently, offline. Apache-2.0.",
     "codeRepository": "https://github.com/peacprotocol/peac",
     "programmingLanguage": ["TypeScript", "JavaScript"],
     "license": "https://www.apache.org/licenses/LICENSE-2.0",
@@ -130,7 +130,7 @@ export default function PeacPage() {
                   margin: '0 auto var(--space-6) auto',
                 }}
               >
-                PEAC is the open standard for verifiable interaction records. Originary is one product built on top of it. PEAC defines how systems publish machine-readable interaction terms and issue portable signed records for automated requests. Verify them independently, even offline.
+                PEAC is the open standard for verifiable interaction records. Originary is one product built on top of it. PEAC defines how systems publish machine-readable interaction terms and issue signed records for automated requests. Verify them independently, even offline.
               </p>
 
               <p
@@ -155,7 +155,7 @@ export default function PeacPage() {
                   View on GitHub
                 </a>
                 <Link href="/developers" className="btn btn-secondary btn-lg">
-                  Get started
+                  Start here
                 </Link>
                 <Link href="/conformance" className="btn btn-ghost btn-lg">
                   View conformance
@@ -192,7 +192,7 @@ export default function PeacPage() {
                   Interaction record format
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Return portable signed records for automated requests. Ed25519 signatures, compact JWS serialization, and deterministic claim structure.
+                  Issue signed records for automated requests. Ed25519 signatures, compact JWS serialization, and deterministic claim structure.
                 </p>
               </div>
 

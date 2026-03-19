@@ -369,7 +369,7 @@ Cache-Control: no-store
               marginBottom: 'var(--space-8)',
               opacity: 0.9
             }}>
-              Get started with our developer tools and implementation guides.
+              Explore our developer tools and implementation guides.
             </p>
             <div style={{
               display: 'flex',

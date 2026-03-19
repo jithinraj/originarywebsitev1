@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     'API access control',
     'request evaluation',
     'signed records',
-    'portable records',
+    'interaction records',
     'PEAC Protocol',
     'MCP server',
     'agent-facing API',
@@ -83,7 +83,7 @@ const faqJsonLd = {
       name: 'Is Originary just observability?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. Observability helps you inspect behavior. Originary adds access-time control and a portable signed record you can use outside one product.',
+        text: 'No. Observability helps you inspect behavior. Originary adds access-time control and a verifiable interaction record you can use outside one product.',
       },
     },
     {
@@ -108,10 +108,10 @@ export default function Page() {
         <HomeNav />
         <main id="main-content" role="main">
           <Hero />
-          <WhoIsItFor />
           <Problem />
-          <HowItWorks />
           <TrustProof />
+          <WhoIsItFor />
+          <HowItWorks />
           <Comparison />
           <OpenStandard />
           <FAQ />

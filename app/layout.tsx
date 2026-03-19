@@ -180,7 +180,7 @@ export const metadata: Metadata = {
     'API access control',
     'request evaluation',
     'signed records',
-    'portable records',
+    'interaction records',
     'PEAC Protocol',
     'MCP server',
     'agent-facing API',

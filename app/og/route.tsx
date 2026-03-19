@@ -104,7 +104,7 @@ export async function GET() {
             maxWidth: '900px',
           }}
         >
-          Portable signed records for APIs, tools, and MCP servers. Built on PEAC. Self-hostable.
+          Verifiable interaction records for APIs, tools, and MCP servers. Built on PEAC. Self-hostable.
         </div>
 
         {/* Footer */}

@@ -503,7 +503,7 @@ export default function TracePage() {
                     background: 'var(--accent-brand)'
                   }}
                 >
-                  Get started
+                  Start here
                   <ArrowRight size={16} />
                 </Link>
               </div>
@@ -730,7 +730,7 @@ go install ./tailer
                 maxWidth: '600px',
                 margin: '0 auto var(--space-8) auto'
               }}>
-                Start with OSS self-hosted or get managed Cloud with attested receipts
+                Start with OSS self-hosted or contact us about managed deployment
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <a
