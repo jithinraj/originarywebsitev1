@@ -13,9 +13,7 @@ purposes: [inference, ai_input]
 receipts: required
 attribution: required
 rate_limit: 1000/hour
-payment_methods: [x402, stripe]
-payment_endpoint: https://www.originary.xyz/api/pay
-negotiate: https://www.originary.xyz/api/negotiate
+payment_methods: [x402]
 contact: contact@originary.xyz`
 
 const HTTP_EXCHANGES = [
@@ -35,12 +33,12 @@ Host: originary.xyz
 User-Agent: ExampleAgent/1.0`,
     response: `HTTP/1.1 402 Payment Required
 Content-Type: application/problem+json
-PAYMENT-REQUIRED: <base64url payment requirements>
 
 {
   "type": "https://www.peacprotocol.org/problems/payment-required",
   "title": "Payment required",
-  "status": 402
+  "status": 402,
+  "detail": "Payment required to access this resource."
 }`
   },
   {
@@ -48,7 +46,7 @@ PAYMENT-REQUIRED: <base64url payment requirements>
     request: `GET /demo/paid-resource HTTP/1.1
 Host: originary.xyz
 User-Agent: ExampleAgent/1.0
-PAYMENT-SIGNATURE: <signed payment payload>`,
+X-Payment: <x402 payment payload>`,
     response: `HTTP/1.1 200 OK
 Content-Type: application/json
 PEAC-Receipt: eyJhbGciOiJFZERTQSIsInR5cCI6...
@@ -1020,11 +1018,11 @@ export default function DemoPage() {
                 This page shows a PEAC transaction trace end to end. An agent discovers site policy
                 (<code>peac.txt</code> + <code>aipref.json</code>),
                 receives an HTTP 402 challenge when payment is required, retries using a supported payment adapter,
-                and receives a signed PEAC-Receipt that anyone can verify offline.
+                and receives a signed interaction record that anyone can verify offline.
               </p>
 
               <p className="hero-note">
-                Originary provides optional hosted components (Gateway 402, Verify API), but the core receipt and verification flow is protocol-native and portable.
+                Originary provides optional hosted components (Gateway 402, Verify API), but the core record and verification flow is protocol-native and portable.
               </p>
             </div>
 
