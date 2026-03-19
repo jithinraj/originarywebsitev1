@@ -61,7 +61,7 @@ body:has(.hp-root) .cursor-glow {
   font-size: clamp(2.75rem, 5vw + 0.75rem, 6.5rem);
   line-height: 0.95;
   letter-spacing: -0.05em;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .hp-root .hp-text-display {
