@@ -15,7 +15,7 @@ const SECTIONS = [
   { id: 'what-receipt-proves', label: 'What a receipt proves' },
   { id: 'end-to-end-flow', label: 'End-to-end flow' },
   { id: 'what-originary-builds', label: 'What Originary builds' },
-  { id: 'get-started', label: 'Get started' },
+  { id: 'start-here', label: 'Start here' },
   { id: 'faq', label: 'FAQ' },
 ]
 
@@ -576,9 +576,9 @@ Content-Type: application/json`}</code></pre>
               <p>That is what &ldquo;open system of record&rdquo; means in practice.</p>
             </section>
 
-            {/* Get started */}
-            <section id="get-started" className="content-section">
-              <SectionHeader id="get-started" title="Get started" onCopy={copyAnchorLink} copied={copiedAnchor === 'get-started'} />
+            {/* Start here */}
+            <section id="start-here" className="content-section">
+              <SectionHeader id="start-here" title="Start here" onCopy={copyAnchorLink} copied={copiedAnchor === 'start-here'} />
 
               <p>
                 If you operate an endpoint that agents will touch, you can begin now:

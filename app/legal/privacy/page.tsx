@@ -90,8 +90,7 @@ export default function Privacy() {
 
               <h3>Information from Third Parties</h3>
               <ul>
-                <li><strong>Authentication Providers:</strong> Profile information from SSO providers like Google, GitHub, or Microsoft</li>
-                <li><strong>Payment Processors:</strong> Transaction status and payment verification data</li>
+                <li><strong>Authentication Providers:</strong> Profile information from authentication services you use to sign in</li>
                 <li><strong>Integration Partners:</strong> Data from connected services and platforms you authorize</li>
               </ul>
 
@@ -136,10 +135,9 @@ export default function Privacy() {
               <h3>Service Providers</h3>
               <p>We work with trusted third-party service providers who assist us in operating our business:</p>
               <ul>
-                <li><strong>Cloud Hosting:</strong> Vercel, AWS, and other infrastructure providers</li>
-                <li><strong>Payment Processing:</strong> Stripe, PayPal, and other payment processors</li>
-                <li><strong>Analytics:</strong> Google Analytics, Mixpanel, and similar services</li>
-                <li><strong>Customer Support:</strong> Intercom, Zendesk, and communication platforms</li>
+                <li><strong>Cloud Hosting:</strong> Vercel and other infrastructure providers</li>
+                <li><strong>Analytics:</strong> Privacy-respecting analytics services</li>
+                <li><strong>Communication:</strong> Email and support platforms</li>
               </ul>
 
               <h3>Business Transfers</h3>
@@ -156,9 +154,8 @@ export default function Privacy() {
               <p>We implement industry-standard security measures to protect your personal information:</p>
               <ul>
                 <li><strong>Encryption:</strong> Data is encrypted in transit using TLS 1.3 and at rest using AES-256</li>
-                <li><strong>Access Controls:</strong> Strict role-based access controls and multi-factor authentication</li>
-                <li><strong>Monitoring:</strong> Continuous security monitoring and intrusion detection</li>
-                <li><strong>Regular Audits:</strong> Third-party security assessments and penetration testing</li>
+                <li><strong>Access Controls:</strong> Restricted access to personal data on a need-to-know basis</li>
+                <li><strong>Monitoring:</strong> Security monitoring and logging</li>
                 <li><strong>Incident Response:</strong> Comprehensive incident response and breach notification procedures</li>
               </ul>
 

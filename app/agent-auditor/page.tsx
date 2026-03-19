@@ -10,9 +10,9 @@ const GITHUB_URL = 'https://github.com/originaryx/agent-auditor'
 const NPM_URL = 'https://www.npmjs.com/package/@originaryx/agent-auditor'
 
 export const metadata: Metadata = {
-  title: 'Agent Auditor | Inspect and Verify Signed Agent Receipts',
+  title: 'Agent Auditor | Inspect and Verify Signed Interaction Records',
   description:
-    'AI agents act on your behalf. Receipts prove what they did. Agent Auditor opens any signed agent receipt and shows you exactly what happened — decoded, structured, and verified. No backend. No accounts.',
+    'What did that agent just do? Agent Auditor opens any signed interaction record and shows you who acted, what happened, and whether the proof is genuine. No backend. No accounts.',
   keywords: [
     'agent auditor',
     'receipt verification',
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     canonical: '/agent-auditor',
   },
   openGraph: {
-    title: 'Agent Auditor | Inspect and Verify Signed Agent Receipts',
+    title: 'Agent Auditor | Inspect and Verify Signed Interaction Records',
     description:
-      'AI agents act on your behalf. Receipts prove what they did. Open any signed agent receipt and see exactly what happened — verified locally, no backend.',
+      'AI agents act on your behalf. Receipts prove what they did. Open any signed interaction record and see exactly what happened — verified locally, no backend.',
     url: '/agent-auditor',
     siteName: 'Originary',
     images: [
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         url: '/og',
         width: 1200,
         height: 630,
-        alt: 'Agent Auditor — Inspect and verify signed agent receipts offline',
+        alt: 'Agent Auditor — Inspect and verify signed interaction records offline',
       },
     ],
     type: 'website',
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Agent Auditor | Inspect and Verify Signed Agent Receipts',
+    title: 'Agent Auditor | Inspect and Verify Signed Interaction Records',
     description:
-      'AI agents act on your behalf. Receipts prove what they did. Verify any signed agent receipt locally — no backend, no accounts.',
+      'AI agents act on your behalf. Receipts prove what they did. Verify any signed interaction record locally — no backend, no accounts.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -79,7 +79,7 @@ const softwareJsonLd = {
   name: 'Agent Auditor',
   alternateName: '@originaryx/agent-auditor',
   description:
-    'Open-source tool that decodes, displays, and verifies signed agent receipts and evidence bundles issued by AI agents, middleware, and automated systems. Runs offline in the browser or as a CLI.',
+    'Open-source tool that decodes, displays, and verifies signed interaction records and evidence bundles issued by AI agents, middleware, and automated systems. Runs offline in the browser or as a CLI.',
   url: PAGE_URL,
   applicationCategory: 'DeveloperApplication',
   applicationSubCategory: 'Security and Verification Tool',
@@ -124,9 +124,9 @@ const webPageJsonLd = {
   '@type': 'WebPage',
   '@id': PAGE_URL,
   url: PAGE_URL,
-  name: 'Agent Auditor | Inspect and Verify Signed Agent Receipts',
+  name: 'Agent Auditor | Inspect and Verify Signed Interaction Records',
   description:
-    'Open-source tool for inspecting and verifying signed PEAC Protocol agent receipts and evidence bundles. Runs offline in the browser or CLI.',
+    'Open-source tool for inspecting and verifying signed PEAC Protocol interaction records and evidence bundles. Runs offline in the browser or CLI.',
   isPartOf: { '@id': 'https://www.originary.xyz/#website' },
   about: { '@id': `${PAGE_URL}#app` },
   publisher: { '@id': 'https://www.originary.xyz/#org' },

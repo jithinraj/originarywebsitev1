@@ -64,7 +64,7 @@ export default function TracePricingPage() {
         { name: 'Email alerts (self-configured)', oss: true, cloud: false },
         { name: 'Managed email/Slack alerts', oss: false, cloud: true },
         { name: 'Webhook integrations', oss: true, cloud: true },
-        { name: 'SSO/SCIM', oss: false, cloud: true },
+        { name: 'Team management', oss: false, cloud: true },
       ]
     },
     {
@@ -301,7 +301,7 @@ export default function TracePricingPage() {
                   'Automated compliance bundles',
                   'Multi-property rollups',
                   'Email and Slack alerts',
-                  'SSO/SCIM integration',
+                  'Team management',
                   'Priority support',
                   'Uptime SLA'
                 ].map((feature, idx) => (

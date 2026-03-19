@@ -78,7 +78,7 @@ export default function WhatIsOriginaryPage() {
         "name": "Do receipts replace payment rails?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Rails settle value; receipts are portable records that prove what was authorized and what occurred."
+          "text": "No. Rails settle value; receipts are verifiable records that prove what was authorized and what occurred."
         }
       },
       {
@@ -246,7 +246,7 @@ export default function WhatIsOriginaryPage() {
                   marginBottom: 'var(--space-4)'
                 }}
               >
-                Without portable records, compliance is screenshots and disputes are opinions. (Common mistake: treating server logs as proof - they&apos;re unilateral and easily altered.)
+                Without verifiable records, compliance is screenshots and disputes are opinions. (Common mistake: treating server logs as proof - they&apos;re unilateral and easily altered.)
               </p>
               <p
                 style={{
@@ -735,7 +735,7 @@ export default function WhatIsOriginaryPage() {
                     Do receipts replace payment rails?
                   </h3>
                   <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
-                    No. Rails settle value; receipts are portable records that prove what was authorized and what occurred.
+                    No. Rails settle value; receipts are verifiable records that prove what was authorized and what occurred.
                   </p>
                 </div>
 
@@ -814,7 +814,7 @@ export default function WhatIsOriginaryPage() {
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <Link href="/developers" className="btn btn-lg" style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}>
-                  Get started
+                  Start here
                 </Link>
                 <Link href="/contact" className="btn btn-lg btn-ghost" style={{ color: 'var(--white)', borderColor: 'rgba(255, 255, 255, 0.3)' }}>
                   Contact

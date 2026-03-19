@@ -6,12 +6,12 @@ import { ArrowRight, CheckCircle, Shield, Zap, Server, BarChart3, FileText, Hard
 import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
-  title: 'Product | Originary Verification Infrastructure',
-  description: 'Verify agent requests, apply policy, and return verifiable interaction records. MCP server, Gateway, Verify, Capture, and policy tools.',
-  keywords: 'Originary products, verify API, Gateway 402, MCP server, interaction records, verification',
+  title: 'Products | Originary',
+  description: 'Inspect, verify, enforce, and monitor agent interactions. Agent Auditor, Gateway 402, MCP Server, Trace, and more. Built on PEAC, the open standard.',
+  keywords: 'Originary products, Agent Auditor, Gateway 402, MCP server, interaction records, verification',
   robots: 'index,follow',
   openGraph: {
-    title: 'Product | Originary Verification Infrastructure',
+    title: 'Products | Originary',
     description: 'Verify agent requests, apply policy, and return verifiable interaction records.',
     url: '/products',
     siteName: 'Originary',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Product | Originary Verification Infrastructure',
+    title: 'Products | Originary',
     description: 'Verify agent requests, apply policy, and return verifiable interaction records.',
     images: ['/og'],
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
 }
 
-const products = [
+const primaryProducts = [
   {
     icon: Search,
     title: 'Agent Auditor',
@@ -37,6 +37,15 @@ const products = [
     features: ['Visual record inspector', 'Signature verification', 'Browser and CLI', 'Offline capable'],
     href: '/agent-auditor',
     npm: '@originaryx/agent-auditor',
+    status: 'available' as const,
+  },
+  {
+    icon: Zap,
+    title: 'Gateway 402',
+    description: 'Enforce access and payment policy at the edge. Issue signed records on every response.',
+    features: ['Edge deployment', 'HTTP 402 challenge flows', 'Signed interaction records', 'Rail-neutral design'],
+    href: '/products/gateway-402',
+    npm: '@peac/rails-x402',
     status: 'available' as const,
   },
   {
@@ -58,39 +67,29 @@ const products = [
     status: 'available' as const,
   },
   {
-    icon: Zap,
-    title: 'Gateway 402',
-    description: 'Enforce access and payment policy at the edge. Issue signed records on every response.',
-    features: ['Edge deployment', 'HTTP 402 challenge flows', 'Signed interaction records', 'Rail-neutral design'],
-    href: '/products/gateway-402',
-    npm: '@peac/rails-x402',
-    status: 'available' as const,
-  },
-  {
-    icon: HardDrive,
-    title: 'Capture',
-    description: 'File-backed spool and deduplication stores for Node.js. Capture interaction evidence with durable, crash-safe storage and structured counters.',
-    features: ['File spool store', 'Deduplication index', 'Crash-safe writes', 'Structured counters'],
-    href: '/developers',
-    npm: '@peac/capture-node',
-    status: 'available' as const,
-  },
-  {
-    icon: FileText,
-    title: 'Declare',
-    description: 'Policy Pack Generator. Create peac.txt, AIPREF headers, and human-readable policy pages from a single YAML config. CLI and programmatic API.',
-    features: ['YAML policy authoring', 'peac.txt generation', 'AIPREF header output', 'Validation and rule testing'],
-    href: '/declare',
-    npm: '@peac/cli',
-    status: 'available' as const,
-  },
-  {
     icon: BarChart3,
     title: 'Trace',
     description: 'Monitor agent traffic accessing your APIs and content. Export signed evidence.',
     features: ['AI agent identification', 'Traffic observation', 'Evidence export', 'Audit log generation'],
     href: '/trace',
     status: 'preview' as const,
+  },
+]
+
+const buildingBlocks = [
+  {
+    icon: HardDrive,
+    title: 'Capture',
+    description: 'File-backed spool and deduplication stores for Node.js. Durable, crash-safe storage and structured counters.',
+    href: '/developers',
+    npm: '@peac/capture-node',
+  },
+  {
+    icon: FileText,
+    title: 'Declare',
+    description: 'Generate peac.txt, AIPREF headers, and human-readable policy pages from a single YAML config.',
+    href: '/declare',
+    npm: '@peac/cli',
   },
 ]
 
@@ -124,11 +123,11 @@ export default function ProductsPage() {
           </div>
         </section>
 
-        {/* Products */}
+        {/* Primary products */}
         <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-16)' }}>
           <div className="container">
             <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
-              {products.map((product) => (
+              {primaryProducts.map((product) => (
                 <div key={product.title} className="card" style={{ display: 'flex', flexDirection: 'column' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 'var(--space-4)' }}>
                     <product.icon size={28} style={{ color: 'var(--accent-brand)' }} />
@@ -155,7 +154,7 @@ export default function ProductsPage() {
                   </p>
 
                   <ul style={{ listStyle: 'none', padding: 0, marginBottom: 'var(--space-4)', flex: 1 }}>
-                    {product.features.map((feature, i) => (
+                    {product.features.map((feature: string, i: number) => (
                       <li key={i} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
                         <CheckCircle size={14} style={{ color: 'var(--success)', flexShrink: 0 }} />
                         {feature}
@@ -172,6 +171,39 @@ export default function ProductsPage() {
                         {product.npm}
                       </a>
                     )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Building blocks */}
+        <section className="section" style={{ paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-8)' }}>
+          <div className="container">
+            <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, textAlign: 'center', marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
+              Building blocks
+            </h2>
+            <p style={{ textAlign: 'center', fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-8)' }}>
+              Lower-level packages for custom integrations
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 'var(--space-6)', maxWidth: '640px', margin: '0 auto' }}>
+              {buildingBlocks.map((block) => (
+                <div key={block.title} className="card" style={{ padding: 'var(--space-5)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-3)' }}>
+                    <block.icon size={20} style={{ color: 'var(--text-tertiary)' }} />
+                    <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600 }}>{block.title}</h3>
+                  </div>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
+                    {block.description}
+                  </p>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <Link href={block.href} style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontSize: 'var(--text-sm)', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+                      Learn more <ArrowRight size={14} />
+                    </Link>
+                    <a href={`https://www.npmjs.com/package/${block.npm}`} target="_blank" rel="noopener noreferrer" style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)', textDecoration: 'none', fontFamily: 'var(--font-mono)' }}>
+                      {block.npm}
+                    </a>
                   </div>
                 </div>
               ))}
