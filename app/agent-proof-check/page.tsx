@@ -4,7 +4,7 @@ import EvidenceCheckClient from './EvidenceCheckClient'
 const PAGE_URL = 'https://www.originary.xyz/agent-proof-check'
 
 export const metadata: Metadata = {
-  title: 'AI Agent Proof Check | See What Logs Can\'t Prove | Originary',
+  title: 'AI Agent Proof Check | See What Logs Can\'t Prove',
   description:
     'Paste logs, traces, webhooks, signed records, or incident summaries from AI agents, APIs, tool calls, and MCP servers. See what another party can verify, what is missing, and what holds up in a review, dispute, or audit.',
   keywords: [

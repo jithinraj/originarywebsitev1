@@ -72,7 +72,7 @@ const reveal = (visible: boolean, delay = 0): React.CSSProperties => ({
 /* ─── Sample inputs for scenarios ───────────────────────────────────────── */
 
 const SCENARIO_INPUTS: Record<string, string> = {
-  'An AI agent called a tool': `2026-03-25T14:32:01.442Z  INFO  mcp-client  tool_call
+  'An AI agent called our tool': `2026-03-25T14:32:01.442Z  INFO  mcp-client  tool_call
   tool: "search_documents"
   server: "docs-server.internal:8080"
   args: { query: "quarterly revenue", limit: 10 }
@@ -81,7 +81,7 @@ const SCENARIO_INPUTS: Record<string, string> = {
   result_count: 7
   request_id: "req_abc123def456"`,
 
-  'My MCP server handled a request': `2026-03-25T14:32:01.112Z  INFO  mcp-server  request_received
+  'Our MCP server handled a request': `2026-03-25T14:32:01.112Z  INFO  mcp-server  request_received
   method: "tools/call"
   tool: "query_inventory"
   client: "agent-procurement-v2"
@@ -95,7 +95,7 @@ const SCENARIO_INPUTS: Record<string, string> = {
   response_time_ms: 175
   status: "success"`,
 
-  'My API returned a result': `HTTP/1.1 200 OK
+  'Our API returned a result': `HTTP/1.1 200 OK
 Content-Type: application/json
 X-Request-Id: req_7f8a9b2c
 X-Trace-Id: trace_4e5f6a7b8c9d
@@ -118,7 +118,7 @@ but I never got a confirmation. The dashboard shows the order as 'pending'
 but my bank was charged $2,450. Can you confirm what happened and whether
 the order actually went through?"`,
 
-  'My team is reviewing an incident': `Incident Summary - INC-2026-0342
+  'We\'re reviewing an incident': `Incident Summary - INC-2026-0342
 Severity: P2
 Time: 2026-03-24 15:47 UTC to 2026-03-24 16:12 UTC (25 min)
 Impact: Agent "procurement-bot" executed 3 unauthorized purchase orders
@@ -149,7 +149,7 @@ Action items: Add policy TTL hard-stop, require signed policy binding.`,
   "created": 1711374722
 }`,
 
-  'I need an audit trail for agent activity': `Our compliance team needs to verify that:
+  'We need an audit trail for agent activity': `Our compliance team needs to verify that:
 1. Every agent action in the last 30 days was authorized by active policy
 2. Each tool invocation has a record of who called it, what was returned, and what policy applied
 3. Payment-related agent actions have proper authorization evidence
@@ -368,8 +368,8 @@ function analyzeInput(input: string): AnalysisResult {
 
 const WORKED_EXAMPLES = [
   {
-    label: 'MCP tool call',
-    narrative: 'An agent checks inventory through an MCP server.',
+    label: 'AI agent tool call',
+    narrative: 'An AI agent calls a tool through your API or MCP server.',
     mostTeamsHave: [
       'Timestamps, tool name, response status',
       'Internal request ID',
@@ -402,7 +402,7 @@ const WORKED_EXAMPLES = [
 // Wrapped in compact JWS, signed with Ed25519`,
   },
   {
-    label: 'API access',
+    label: 'API access decision',
     narrative: 'An API request is allowed or denied.',
     mostTeamsHave: [
       'Request path, auth check result',
@@ -436,46 +436,47 @@ Authorization: Bearer eyJ...
 // PEAC-Receipt header returned with API response`,
   },
   {
-    label: 'Policy dispute',
-    narrative: 'A partner disputes which policy version applied.',
+    label: 'MCP server request',
+    narrative: 'An MCP server handles a tool call and returns a result.',
     mostTeamsHave: [
-      'Internal policy version log',
-      'Dashboard timestamp, audit trail entry',
+      'Server logs, tool name, session ID',
+      'Internal request trace and response status',
     ],
-    otherPartyCanVerify: ['Nothing independently; ordering is disputable'],
+    otherPartyCanVerify: ['Nothing independently; logs stay inside the server'],
     withSignedRecord: [
-      'Policy state bound to the decision',
-      'Timestamp tied to signed artifact',
+      'Who issued the record and what tool was called',
+      'Policy that applied, timestamp integrity',
     ],
-    log: `Agent "procurement-bot" placed order ORD-9876
-  at 15:47 UTC on 2026-03-24.
-  Policy cache showed "authorized" but had expired
-  at 15:45 UTC (2 min stale).
-  Ops reversed the order manually.`,
+    log: `2026-03-25T14:32:01Z INFO mcp-server request_received
+  method: "tools/call"
+  tool: "query_inventory"
+  client: "agent-procurement-v2"
+  session_id: "sess_9f8e7d6c"
+  result: { available: 142, reserved: 8 }
+  status: success  175ms`,
     signed: `{
-  "iss": "https://gateway.example.com",
-  "sub": "procurement-bot",
-  "type": "org.peacprotocol/commerce",
+  "iss": "https://mcp-server.example.com",
+  "sub": "agent-procurement-v2",
+  "type": "org.peacprotocol/access",
   "kind": "evidence",
-  "iat": 1711375620,
+  "iat": 1711374721,
   "peac": {
     "policy": {
-      "uri": "https://gateway.example.com/.well-known/peac.txt",
+      "uri": "https://mcp-server.example.com/.well-known/peac.txt",
       "digest": "sha256:a1b2c3..."
     }
   },
   "ext": {
-    "commerce": {
-      "event": "authorized",
-      "amount_minor": "245000",
-      "currency": "USD"
+    "access": {
+      "resource": "query_inventory",
+      "action": "tool_call"
     }
   }
 }
-// Policy digest proves which version was active`,
+// Signed at the MCP server, verifiable by any party`,
   },
   {
-    label: 'Settlement event',
+    label: 'Payment or settlement',
     narrative: 'A payment or settlement event needs review.',
     mostTeamsHave: [
       'Payment ID, webhook status, amount',
@@ -514,21 +515,21 @@ Authorization: Bearer eyJ...
 
 const ROLE_VIEWS = [
   {
-    role: 'Builder',
-    icon: Code,
-    problem: 'Other systems need to verify what your API or tool did.',
-    whyLogsFail: 'They stay local and require your dashboard to explain them.',
-    originaryAdds: 'A signed record that can travel with the decision.',
-    cta: 'See how to issue one',
-    ctaHref: '/agent-auditor',
-  },
-  {
     role: 'Operator',
     icon: Terminal,
     problem: 'Your team receives agent traffic you do not fully control.',
     whyLogsFail: 'Observability helps debug but does not travel across boundaries.',
     originaryAdds: 'Captures the decision boundary for later review without replaying the incident.',
     cta: 'See it in action',
+    ctaHref: '/agent-auditor',
+  },
+  {
+    role: 'Builder',
+    icon: Code,
+    problem: 'Other systems need to verify what your API or tool did.',
+    whyLogsFail: 'They stay local and require your dashboard to explain them.',
+    originaryAdds: 'A signed record that can travel with the decision.',
+    cta: 'See how to issue one',
     ctaHref: '/agent-auditor',
   },
   {
@@ -609,17 +610,17 @@ interface TamperToggle {
 const TAMPER_TOGGLES: TamperToggle[] = [
   {
     label: 'Wrong signer',
-    description: 'Change the issuer to a different origin',
+    description: 'Change who appears to have issued the record',
     errorMessage: 'FAIL: Issuer "https://attacker.example.com" does not match the signing key. The key ID resolves to a different origin.',
   },
   {
     label: 'Content changed',
-    description: 'Alter the amount in the commerce extension',
+    description: 'Modify the contents after the record was created',
     errorMessage: 'FAIL: Signature verification failed. The payload has been modified after signing. Ed25519 signature does not match.',
   },
   {
     label: 'Wrong policy version',
-    description: 'Swap the policy digest for a different version',
+    description: 'Make the record point to a different policy than the one that actually applied',
     errorMessage: 'FAIL: Policy binding mismatch. Digest "sha256:9f8e7d..." does not match the expected "sha256:a1b2c3..." for the declared policy URI.',
   },
 ]
@@ -840,6 +841,17 @@ ${analysisResult.reason}`
                   }}
                 >
                   Paste what you already have: a log, trace, webhook, signed record, or plain-English incident summary from an AI agent, API call, tool invocation, or MCP server. See what your team can observe, what another party can verify, and what is still missing.
+                </p>
+
+                <p
+                  style={{
+                    ...reveal(heroReady, 0.22),
+                    fontSize: '0.8125rem',
+                    color: 'var(--text-tertiary)',
+                    marginBottom: 'var(--space-4)',
+                  }}
+                >
+                  Built for API operators, MCP hosts, platform teams, security, support, and compliance.
                 </p>
 
                 {/* Trust line */}
@@ -1148,13 +1160,13 @@ ${analysisResult.reason}`
               }}
             >
               {[
-                { label: 'An AI agent called a tool', icon: Wrench },
-                { label: 'My MCP server handled a request', icon: Terminal },
-                { label: 'My API returned a result', icon: Globe },
+                { label: 'An AI agent called our tool', icon: Wrench },
+                { label: 'Our MCP server handled a request', icon: Terminal },
+                { label: 'Our API returned a result', icon: Globe },
                 { label: 'A customer asked what happened', icon: MessageSquare },
-                { label: 'My team is reviewing an incident', icon: Search },
+                { label: 'We\'re reviewing an incident', icon: Search },
                 { label: 'A payment or authorization happened', icon: CreditCard },
-                { label: 'I need an audit trail for agent activity', icon: Scale },
+                { label: 'We need an audit trail for agent activity', icon: Scale },
               ].map(({ label, icon: Icon }, i) => (
                 <button
                   type="button"
@@ -3168,7 +3180,7 @@ ${analysisResult.reason}`
                       color: 'var(--text-primary)',
                     }}
                   >
-                    See the flow end to end
+                    See how records are issued
                   </div>
                   <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
                     Open and verify a signed record
@@ -3268,7 +3280,7 @@ ${analysisResult.reason}`
                       color: 'var(--text-primary)',
                     }}
                   >
-                    Talk about integration
+                    Talk to an engineer
                   </div>
                   <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
                     Questions about integration
@@ -3280,6 +3292,26 @@ ${analysisResult.reason}`
                 />
               </Link>
             </div>
+            <p
+              style={{
+                textAlign: 'center',
+                marginTop: 'var(--space-6)',
+                fontSize: 'var(--text-sm)',
+                color: 'var(--text-tertiary)',
+              }}
+            >
+              Planning a rollout?{' '}
+              <Link
+                href="/enterprise"
+                style={{
+                  color: 'var(--accent-brand)',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '3px',
+                }}
+              >
+                Talk about enterprise deployment
+              </Link>
+            </p>
           </div>
         </section>
 
@@ -3366,6 +3398,27 @@ ${analysisResult.reason}`
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+        {/* ── FAQ section ──────────────────────────────────────────────── */}
+        <section className="section" style={{ background: 'var(--surface-subtle)', scrollMarginTop: '100px' }}>
+          <div className="container px-5 sm:px-8 md:px-12 lg:px-16" style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', marginBottom: 'var(--space-10)' }}>
+              <div style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }}>Questions</div>
+              <h2 className="text-2xl sm:text-3xl" style={{ fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>Frequently asked</h2>
+            </div>
+            {[
+              { q: 'How is this different from logs and traces?', a: 'Logs and traces help your team debug internally. They do not give another party independent, portable proof of what happened. Signed records do.' },
+              { q: 'Does this work with MCP servers?', a: 'Yes. The same gap shows up in MCP servers as in APIs and tool calls: teams can see what happened internally, but later review still depends on local systems. Originary adds signed, portable records that can be verified without those systems.' },
+              { q: 'Can I use this with AI agent tool calls?', a: 'Yes. When an AI agent invokes a tool through your API or MCP server, Originary can issue a signed record of the decision at the point of action.' },
+              { q: 'What does another party actually verify?', a: 'They verify who issued the record, whether the contents have been modified, what policy was in effect, and when the action occurred. All using the issuer public key, with no dependency on your systems.' },
+              { q: 'Do I need to replace my gateway or observability stack?', a: 'No. Originary works alongside your existing auth, payments, observability, and agent runtimes. It adds signed records that travel outside your system.' },
+            ].map(({ q, a }) => (
+              <div key={q} style={{ borderBottom: '1px solid var(--border-default)', paddingTop: 'var(--space-6)', paddingBottom: 'var(--space-6)' }}>
+                <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-2)' }}>{q}</h3>
+                <p style={{ fontSize: '0.9375rem', lineHeight: 1.7, color: 'var(--text-secondary)' }}>{a}</p>
+              </div>
+            ))}
           </div>
         </section>
       </main>
