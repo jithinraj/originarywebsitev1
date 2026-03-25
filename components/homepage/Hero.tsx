@@ -72,8 +72,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.35, ease }}
         >
-          <Link href="/evidence-check" className="hp-btn-primary">
-            Check your evidence
+          <Link href="/agent-proof-check" className="hp-btn-primary">
+            See what your logs can't prove
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
                 d="M3.5 7h7m0 0L7.5 4m3 3l-3 3"

@@ -14,6 +14,7 @@ Contact: contact@originary.xyz
 - [PEAC Protocol](/peac) - Open standard for verifiable interaction records
 - [Developers](/developers) - Quickstart, SDKs, and integration guides
 - [Downloads](/downloads) - CLI, MCP server, SDKs, and source archives
+- [Proof Check](/agent-proof-check) - Paste logs, traces, or signed records. See what is observable, verifiable, and missing.
 - [Agent Auditor](/agent-auditor) - Open and verify any signed record locally, with evidence bundles
 - [Verify](/verify) - Inspector: parse JWS structure and decode interaction record claims
 - [Products](/products) - Agent Auditor, Gateway 402, MCP Server, Verify, Trace
@@ -35,8 +36,11 @@ Contact: contact@originary.xyz
 
 ## Developer Tools
 
+### Proof Check (/agent-proof-check)
+Paste logs, traces, webhooks, signed records, or incident summaries from AI agents, APIs, tool calls, and MCP servers. See what another party can verify, what is missing, and what holds up in a review, dispute, or audit. Runs in the browser. No signup.
+
 ### Agent Auditor (/agent-auditor)
-Open any receipt file (.jws, .json, .zip) and inspect its contents. Verifies Ed25519 signatures locally. No signup, no backend, no data leaves your machine. Apache-2.0.
+Open any signed record file (.jws, .json, .zip) and inspect its contents. Verifies Ed25519 signatures locally. No signup, no backend, no data leaves your machine. Apache-2.0.
 
 ### Inspector (/verify)
 Browser-based token structure inspector. Parse JWS structure, decode interaction record claims, and check token format. For full receipt verification with evidence bundles, use Agent Auditor.

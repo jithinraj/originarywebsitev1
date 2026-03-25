@@ -32,6 +32,8 @@ import {
   DollarSign,
   Building,
   Users,
+  ChevronDown,
+  ChevronUp,
 } from 'lucide-react'
 
 /* ─── Scroll reveal ─────────────────────────────────────────────────────── */
@@ -70,7 +72,7 @@ const reveal = (visible: boolean, delay = 0): React.CSSProperties => ({
 /* ─── Sample inputs for scenarios ───────────────────────────────────────── */
 
 const SCENARIO_INPUTS: Record<string, string> = {
-  'My agent called a tool': `2026-03-25T14:32:01.442Z  INFO  mcp-client  tool_call
+  'An AI agent called a tool': `2026-03-25T14:32:01.442Z  INFO  mcp-client  tool_call
   tool: "search_documents"
   server: "docs-server.internal:8080"
   args: { query: "quarterly revenue", limit: 10 }
@@ -78,6 +80,20 @@ const SCENARIO_INPUTS: Record<string, string> = {
   status: "success"
   result_count: 7
   request_id: "req_abc123def456"`,
+
+  'My MCP server handled a request': `2026-03-25T14:32:01.112Z  INFO  mcp-server  request_received
+  method: "tools/call"
+  tool: "query_inventory"
+  client: "agent-procurement-v2"
+  session_id: "sess_9f8e7d6c"
+  args: { sku: "SKU-7744", warehouse: "us-east-1" }
+
+2026-03-25T14:32:01.287Z  INFO  mcp-server  tool_executed
+  tool: "query_inventory"
+  session_id: "sess_9f8e7d6c"
+  result: { available: 142, reserved: 8 }
+  response_time_ms: 175
+  status: "success"`,
 
   'My API returned a result': `HTTP/1.1 200 OK
 Content-Type: application/json
@@ -113,7 +129,7 @@ Evidence: CloudWatch logs, API gateway access logs, agent trace spans.
 Status: Resolved. Orders reversed manually by ops team.
 Action items: Add policy TTL hard-stop, require signed policy binding.`,
 
-  'A payment happened': `{
+  'A payment or authorization happened': `{
   "event": "payment_intent.succeeded",
   "id": "evt_3Qx7mN9pR2sT",
   "data": {
@@ -133,14 +149,14 @@ Action items: Add policy TTL hard-stop, require signed policy binding.`,
   "created": 1711374722
 }`,
 
-  'I need audit-ready evidence': `We need to demonstrate to our compliance team that:
-1. Every agent action in the last 30 days was authorized
-2. Payment-related actions had proper policy binding
-3. No agent exceeded its declared scope
-4. All interactions can be independently verified by a third party
+  'I need an audit trail for agent activity': `Our compliance team needs to verify that:
+1. Every agent action in the last 30 days was authorized by active policy
+2. Each tool invocation has a record of who called it, what was returned, and what policy applied
+3. Payment-related agent actions have proper authorization evidence
+4. All agent interactions can be independently verified by a third party without dashboard access
 
-Currently we have: CloudWatch logs, Datadog traces, and Stripe webhooks.
-We do not have signed records or portable evidence bundles.`,
+Currently we have: CloudWatch logs, Datadog traces, MCP server logs, and Stripe webhooks.
+We do not have signed records, portable evidence, or an audit trail that survives handoff.`,
 }
 
 const EXAMPLE_JWS =
@@ -353,6 +369,18 @@ function analyzeInput(input: string): AnalysisResult {
 const WORKED_EXAMPLES = [
   {
     label: 'MCP tool call',
+    narrative: 'An agent checks inventory through an MCP server.',
+    mostTeamsHave: [
+      'Timestamps, tool name, response status',
+      'Internal request ID',
+    ],
+    otherPartyCanVerify: ['Nothing independently'],
+    withSignedRecord: [
+      'Issuer identity',
+      'Policy that applied',
+      'Timestamp integrity',
+      'Portable proof',
+    ],
     log: `2026-03-25T14:32:01Z INFO tool_call
   tool: "search_documents"
   server: docs-server.internal
@@ -375,6 +403,17 @@ const WORKED_EXAMPLES = [
   },
   {
     label: 'API access',
+    narrative: 'An API request is allowed or denied.',
+    mostTeamsHave: [
+      'Request path, auth check result',
+      'Rate limits, status code',
+    ],
+    otherPartyCanVerify: ['Nothing without dashboard access'],
+    withSignedRecord: [
+      'Who authorized it',
+      'What policy applied',
+      'When it happened',
+    ],
     log: `GET /api/v2/reports/q4-2025 HTTP/1.1
 Host: data-api.internal
 X-Request-Id: req_7f8a9b2c
@@ -398,6 +437,16 @@ Authorization: Bearer eyJ...
   },
   {
     label: 'Policy dispute',
+    narrative: 'A partner disputes which policy version applied.',
+    mostTeamsHave: [
+      'Internal policy version log',
+      'Dashboard timestamp, audit trail entry',
+    ],
+    otherPartyCanVerify: ['Nothing independently; ordering is disputable'],
+    withSignedRecord: [
+      'Policy state bound to the decision',
+      'Timestamp tied to signed artifact',
+    ],
     log: `Agent "procurement-bot" placed order ORD-9876
   at 15:47 UTC on 2026-03-24.
   Policy cache showed "authorized" but had expired
@@ -427,6 +476,16 @@ Authorization: Bearer eyJ...
   },
   {
     label: 'Settlement event',
+    narrative: 'A payment or settlement event needs review.',
+    mostTeamsHave: [
+      'Payment ID, webhook status, amount',
+      'Authorization result',
+    ],
+    otherPartyCanVerify: ['Fragments, but not the full decision context'],
+    withSignedRecord: [
+      'Decision boundary linked to event',
+      'Policy and timing',
+    ],
     log: `Stripe webhook: payment_intent.succeeded
   pi_1abc2def3ghi  $2,450.00 USD
   metadata.order_id: ord_98765
@@ -457,68 +516,56 @@ const ROLE_VIEWS = [
   {
     role: 'Builder',
     icon: Code,
-    question: 'How do I add signed records to my API or agent?',
-    points: [
-      'Add @peac/protocol to your service',
-      'Call issue() at the point of action',
-      'Return the signed record in a header or response body',
-      'Your consumers can verify offline with the public key',
-    ],
+    problem: 'Other systems need to verify what your API or tool did.',
+    whyLogsFail: 'They stay local and require your dashboard to explain them.',
+    originaryAdds: 'A signed record that can travel with the decision.',
+    cta: 'See how to issue one',
+    ctaHref: '/agent-auditor',
   },
   {
     role: 'Operator',
     icon: Terminal,
-    question: 'How do I know my agents are acting within policy?',
-    points: [
-      'Each signed record includes a policy binding digest',
-      'Verify the digest matches your declared policy',
-      'Detect stale or missing policy bindings automatically',
-      'Reconstruct the full decision timeline from signed records',
-    ],
+    problem: 'Your team receives agent traffic you do not fully control.',
+    whyLogsFail: 'Observability helps debug but does not travel across boundaries.',
+    originaryAdds: 'Captures the decision boundary for later review without replaying the incident.',
+    cta: 'See it in action',
+    ctaHref: '/agent-auditor',
   },
   {
     role: 'Security',
     icon: Shield,
-    question: 'How do I prove nothing was tampered with?',
-    points: [
-      'Ed25519 signatures on every signed record',
-      'Tamper evidence: any modification invalidates the signature',
-      'Issuer identity bound to each record via JWKS discovery',
-      'Offline verification: no callback to the issuer required',
-    ],
+    problem: 'You need artifacts that survive review, not just screenshots.',
+    whyLogsFail: 'Internal traces do not give counterparties independent verification.',
+    originaryAdds: 'Signed records that are inspectable, exportable, and locally verifiable.',
+    cta: 'Review trust model',
+    ctaHref: '/agent-auditor',
   },
   {
     role: 'Support',
     icon: Headphones,
-    question: 'A customer says something went wrong. How do I check?',
-    points: [
-      'Look up the signed record for the disputed interaction',
-      'Verify the signature to confirm authenticity',
-      'Show the customer the same record they can verify independently',
-      'No "trust us" required: the proof speaks for itself',
-    ],
+    problem: 'A customer asks what happened and you need to explain fast.',
+    whyLogsFail: 'You can describe the event but cannot provide portable proof of the decision.',
+    originaryAdds: 'A durable artifact for escalations and dispute handling.',
+    cta: 'See a customer example',
+    ctaHref: '#examples',
   },
   {
     role: 'Finance',
     icon: DollarSign,
-    question: 'How do I reconcile agent-initiated transactions?',
-    points: [
-      'Commerce extension records amount, currency, and rail',
-      'Each transaction record is signed by the issuing gateway',
-      'Settlement evidence tied to the specific interaction',
-      'Audit trail of every financial action with timestamps',
-    ],
+    problem: 'You need to reconcile authorization and settlement across systems.',
+    whyLogsFail: 'Payment logs show events but not enough decision context for review.',
+    originaryAdds: 'Links decision evidence to operational events.',
+    cta: 'See settlement example',
+    ctaHref: '#examples',
   },
   {
     role: 'Legal / Compliance',
     icon: Scale,
-    question: 'How do I demonstrate compliance to a regulator?',
-    points: [
-      'Signed records constitute independently verifiable evidence',
-      'Policy binding proves which rules were in effect',
-      'Evidence bundles package related records for review',
-      'No infrastructure access needed: hand the bundle to the auditor',
-    ],
+    problem: 'You need reviewable records that stand outside internal tooling.',
+    whyLogsFail: 'Exports and dashboards are hard to treat as durable evidence.',
+    originaryAdds: 'Signed, exportable records for review, procurement, and audit.',
+    cta: 'Talk to us',
+    ctaHref: '/contact',
   },
 ]
 
@@ -545,6 +592,10 @@ const HARD_QUESTIONS = [
     question: 'Can I hand this to an auditor without giving them system access?',
     detail: 'Logs live in your infrastructure. A signed record is a portable file anyone can verify.',
   },
+  {
+    question: 'Can I prove what an MCP server or tool actually returned?',
+    detail: 'Logs may show the call path. They do not give another party a portable record of the decision and result.',
+  },
 ]
 
 /* ─── Break-the-proof toggle data ───────────────────────────────────────── */
@@ -557,17 +608,17 @@ interface TamperToggle {
 
 const TAMPER_TOGGLES: TamperToggle[] = [
   {
-    label: 'Wrong issuer',
+    label: 'Wrong signer',
     description: 'Change the issuer to a different origin',
     errorMessage: 'FAIL: Issuer "https://attacker.example.com" does not match the signing key. The key ID resolves to a different origin.',
   },
   {
-    label: 'Modified payload',
+    label: 'Content changed',
     description: 'Alter the amount in the commerce extension',
     errorMessage: 'FAIL: Signature verification failed. The payload has been modified after signing. Ed25519 signature does not match.',
   },
   {
-    label: 'Mismatched policy',
+    label: 'Wrong policy version',
     description: 'Swap the policy digest for a different version',
     errorMessage: 'FAIL: Policy binding mismatch. Digest "sha256:9f8e7d..." does not match the expected "sha256:a1b2c3..." for the declared policy URI.',
   },
@@ -585,6 +636,7 @@ export default function EvidenceCheckClient() {
   const scenarioSection = useReveal()
   const analyzerSection = useReveal()
   const comparisonSection = useReveal()
+  const builtForSection = useReveal()
   const examplesSection = useReveal()
   const breakSection = useReveal()
   const questionsSection = useReveal()
@@ -602,6 +654,7 @@ export default function EvidenceCheckClient() {
 
   // Worked examples state
   const [activeExample, setActiveExample] = useState(0)
+  const [showDevDetails, setShowDevDetails] = useState(false)
 
   // Break the proof state
   const [tamperStates, setTamperStates] = useState([false, false, false])
@@ -609,22 +662,39 @@ export default function EvidenceCheckClient() {
   // Role-based view state
   const [activeRole, setActiveRole] = useState(0)
 
-  const runAnalysis = useCallback(() => {
-    if (!analyzerInput.trim()) return
-    const result = analyzeInput(analyzerInput)
+  const heroRef = useRef<HTMLElement>(null)
+
+  // Analysis type for dynamic CTAs
+  const [analysisType, setAnalysisType] = useState<string>('')
+
+  const analyzeArtifact = useCallback((input: string) => {
+    if (!input.trim()) return
+    const result = analyzeInput(input)
+    const detectedType = detectInputType(input)
     setAnalysisResult(result)
-  }, [analyzerInput])
+    setAnalysisType(detectedType)
+  }, [])
+
+  const runAnalysis = useCallback(() => {
+    analyzeArtifact(analyzerInput)
+  }, [analyzerInput, analyzeArtifact])
 
   const loadScenario = useCallback((scenario: string) => {
     const input = SCENARIO_INPUTS[scenario]
     if (input) {
       setAnalyzerInput(input)
       setAnalysisResult(null)
-      // scroll to analyzer
-      document.getElementById('analyzer')?.scrollIntoView({ behavior: 'smooth' })
-      setTimeout(() => textareaRef.current?.focus(), 400)
+      analyzeArtifact(input)
+      setTimeout(() => {
+        const resultEl = document.getElementById('analysis-result')
+        if (resultEl) {
+          resultEl.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        } else {
+          document.getElementById('analyzer')?.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 200)
     }
-  }, [])
+  }, [analyzeArtifact])
 
   const loadExample = useCallback(() => {
     setAnalyzerInput(EXAMPLE_JWS)
@@ -635,7 +705,7 @@ export default function EvidenceCheckClient() {
 
   const handleCopyResult = useCallback(() => {
     if (!analysisResult) return
-    const text = `Evidence Check Score: ${analysisResult.score}/100 (${analysisResult.badge})
+    const text = `Proof Check Score: ${analysisResult.score}/100 (${analysisResult.badge})
 Input type: ${analysisResult.inputType}
 
 What your team can see:
@@ -667,6 +737,32 @@ ${analysisResult.reason}`
 
   const activeTamperCount = tamperStates.filter(Boolean).length
 
+  const getResultCTAs = useCallback((type: string) => {
+    switch (type) {
+      case 'log':
+        return {
+          primary: { label: 'See how signed records change this', href: '/agent-auditor', external: false, scroll: false },
+          secondary: { label: 'Compare before and after', href: '#examples', external: false, scroll: true },
+        }
+      case 'json':
+      case 'trace':
+        return {
+          primary: { label: 'Compare before and after', href: '#examples', external: false, scroll: true },
+          secondary: { label: 'See it in action', href: '/agent-auditor', external: false, scroll: false },
+        }
+      case 'jws':
+        return {
+          primary: { label: 'Open in Agent Auditor', href: 'https://agent-auditor.originary.xyz/', external: true, scroll: false },
+          secondary: { label: 'See verification flow', href: '/demo', external: false, scroll: false },
+        }
+      default:
+        return {
+          primary: { label: 'Load a similar example', href: '#examples', external: false, scroll: true },
+          secondary: { label: 'Talk to us', href: '/contact', external: false, scroll: false },
+        }
+    }
+  }, [])
+
   const typeHints = ['Logs', 'Trace', 'Webhook', 'Signed record', 'Plain English']
 
   return (
@@ -675,156 +771,347 @@ ${analysisResult.reason}`
       <main style={{ paddingTop: '80px' }}>
         {/* ── Section 1: Hero ──────────────────────────────────────────────── */}
         <section
+          ref={heroRef}
           className="section pt-24 sm:pt-28 md:pt-36 lg:pt-40 pb-12 sm:pb-16 md:pb-20"
           style={{
             background: 'var(--surface-elevated)',
           }}
         >
           <div className="container px-5 sm:px-8 md:px-12 lg:px-16">
-            <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-              {/* Badge */}
-              <div
-                style={{
-                  ...reveal(heroReady, 0),
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 'var(--space-2)',
-                  marginBottom: 'var(--space-6)',
-                  padding: 'var(--space-2) var(--space-5)',
-                  background: 'var(--accent-success-subtle)',
-                  border: '1px solid var(--accent-success-border)',
-                  borderRadius: 'var(--radius-full)',
-                  fontSize: 'var(--text-xs)',
-                  fontWeight: 700,
-                  color: 'var(--accent-success)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                }}
-              >
-                <span
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+              {/* Left side: headline, subhead, trust, CTAs */}
+              <div className="lg:w-1/2">
+                {/* Badge */}
+                <div
                   style={{
-                    width: 7,
-                    height: 7,
+                    ...reveal(heroReady, 0),
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 'var(--space-2)',
+                    marginBottom: 'var(--space-6)',
+                    padding: 'var(--space-2) var(--space-5)',
+                    background: 'var(--accent-success-subtle)',
+                    border: '1px solid var(--accent-success-border)',
                     borderRadius: 'var(--radius-full)',
-                    background: 'var(--accent-success)',
-                    display: 'inline-block',
-                    flexShrink: 0,
+                    fontSize: 'var(--text-xs)',
+                    fontWeight: 700,
+                    color: 'var(--accent-success)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
                   }}
-                />
-                Evidence Check
+                >
+                  <span
+                    style={{
+                      width: 7,
+                      height: 7,
+                      borderRadius: 'var(--radius-full)',
+                      background: 'var(--accent-success)',
+                      display: 'inline-block',
+                      flexShrink: 0,
+                    }}
+                  />
+                  Proof Check
+                </div>
+
+                {/* H1 */}
+                <h1
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl"
+                  style={{
+                    ...reveal(heroReady, 0.1),
+                    fontWeight: 700,
+                    lineHeight: 1.1,
+                    letterSpacing: '-0.04em',
+                    marginBottom: 'var(--space-6)',
+                    color: 'var(--text-primary)',
+                  }}
+                >
+                  Can you prove what your AI agent did?
+                </h1>
+
+                {/* Subhead */}
+                <p
+                  className="text-base sm:text-lg md:text-xl"
+                  style={{
+                    ...reveal(heroReady, 0.2),
+                    color: 'var(--text-secondary)',
+                    lineHeight: 1.7,
+                    maxWidth: '560px',
+                    marginBottom: 'var(--space-6)',
+                  }}
+                >
+                  Paste what you already have: a log, trace, webhook, signed record, or plain-English incident summary from an AI agent, API call, tool invocation, or MCP server. See what your team can observe, what another party can verify, and what is still missing.
+                </p>
+
+                {/* Trust line */}
+                <p
+                  style={{
+                    ...reveal(heroReady, 0.25),
+                    fontSize: 'var(--text-sm)',
+                    color: 'var(--text-tertiary)',
+                    marginBottom: 'var(--space-6)',
+                  }}
+                >
+                  No signup. Runs in your browser.
+                </p>
+
+                {/* CTAs */}
+                <div
+                  className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4"
+                  style={{
+                    ...reveal(heroReady, 0.3),
+                    marginBottom: 'var(--space-6)',
+                  }}
+                >
+                  <a
+                    href="#analyzer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.5rem',
+                      padding: '1rem 2.25rem',
+                      fontSize: '0.9375rem',
+                      fontWeight: 500,
+                      color: 'var(--text-inverted)',
+                      background: 'var(--accent-brand)',
+                      borderRadius: '62px',
+                      border: 'none',
+                      cursor: 'pointer',
+                      textDecoration: 'none',
+                      transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                      lineHeight: 1,
+                    }}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      document.getElementById('analyzer')?.scrollIntoView({ behavior: 'smooth' })
+                    }}
+                  >
+                    <span>Analyze what happened</span>
+                    <ArrowRight size={18} />
+                  </a>
+                  <button
+                    type="button"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.5rem',
+                      padding: '1rem 2.25rem',
+                      fontSize: '0.9375rem',
+                      fontWeight: 500,
+                      color: 'var(--text-primary)',
+                      background: 'transparent',
+                      border: '1px solid var(--border-hover)',
+                      borderRadius: '62px',
+                      cursor: 'pointer',
+                      textDecoration: 'none',
+                      transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                      lineHeight: 1,
+                      fontFamily: 'inherit',
+                    }}
+                    onClick={loadExample}
+                  >
+                    <span>Try a real example</span>
+                    <FileText size={16} />
+                  </button>
+                </div>
+
+                {/* Trust strip */}
+                <div
+                  className="flex flex-wrap gap-4"
+                  style={{
+                    ...reveal(heroReady, 0.35),
+                  }}
+                >
+                  {['Open source', 'Self-hostable', 'Offline verification', 'No outbound fetches'].map((item) => (
+                    <div
+                      key={item}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 'var(--space-2)',
+                        fontSize: 'var(--text-xs)',
+                        color: 'var(--text-tertiary)',
+                        fontWeight: 500,
+                      }}
+                    >
+                      <span
+                        style={{
+                          width: 6,
+                          height: 6,
+                          borderRadius: 'var(--radius-full)',
+                          background: 'var(--accent-success)',
+                          display: 'inline-block',
+                          flexShrink: 0,
+                        }}
+                      />
+                      {item}
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              {/* H1 */}
-              <h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
-                style={{
-                  ...reveal(heroReady, 0.1),
-                  fontWeight: 700,
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.04em',
-                  marginBottom: 'var(--space-6)',
-                  color: 'var(--text-primary)',
-                }}
-              >
-                Can you prove what your agent did?
-              </h1>
-
-              {/* Subhead */}
-              <p
-                className="text-base sm:text-lg md:text-xl"
-                style={{
-                  ...reveal(heroReady, 0.2),
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.7,
-                  maxWidth: '660px',
-                  margin: '0 auto var(--space-6) auto',
-                }}
-              >
-                Paste a log, trace, webhook, receipt, or plain-English incident summary. See what
-                your team can see, what another party can verify, what is missing, and how to make it
-                portable.
-              </p>
-
-              {/* Trust line */}
-              <p
+              {/* Right side: sample result card */}
+              <div
+                className="lg:w-1/2 w-full"
                 style={{
                   ...reveal(heroReady, 0.25),
-                  fontSize: 'var(--text-sm)',
-                  color: 'var(--text-tertiary)',
-                  marginBottom: 'var(--space-8)',
                 }}
               >
-                No signup. Runs in your browser.
-              </p>
+                <div
+                  style={{
+                    background: 'var(--surface-subtle)',
+                    border: '1px solid var(--border-default)',
+                    borderRadius: '20px',
+                    padding: 'var(--space-6)',
+                    boxShadow: 'var(--shadow-card)',
+                  }}
+                >
+                  {/* Score badge */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-5)' }}>
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'baseline',
+                        gap: 'var(--space-1)',
+                      }}
+                    >
+                      <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Evidence strength</span>
+                    </div>
+                    <span
+                      style={{
+                        padding: 'var(--space-1) var(--space-3)',
+                        borderRadius: 'var(--radius-full)',
+                        background: 'var(--accent-error)',
+                        color: '#fff',
+                        fontSize: 'var(--text-xs)',
+                        fontWeight: 700,
+                      }}
+                    >
+                      14 / 100
+                    </span>
+                    <span
+                      style={{
+                        fontSize: 'var(--text-xs)',
+                        color: 'var(--text-tertiary)',
+                        fontFamily: 'var(--font-mono)',
+                      }}
+                    >
+                      Logs detected
+                    </span>
+                  </div>
 
-              {/* CTAs */}
-              <div
-                className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
-                style={{
-                  ...reveal(heroReady, 0.3),
-                }}
-              >
-                <a
-                  href="#analyzer"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '0.5rem',
-                    padding: '1rem 2.25rem',
-                    fontSize: '0.9375rem',
-                    fontWeight: 500,
-                    color: 'var(--color-fg-inverse)',
-                    background: 'var(--color-accent)',
-                    borderRadius: '62px',
-                    border: 'none',
-                    cursor: 'pointer',
-                    textDecoration: 'none',
-                    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                    lineHeight: 1,
-                  }}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    document.getElementById('analyzer')?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                >
-                  <span>Run the check</span>
-                  <ArrowRight size={18} />
-                </a>
-                <button
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '0.5rem',
-                    padding: '1rem 2.25rem',
-                    fontSize: '0.9375rem',
-                    fontWeight: 500,
-                    color: 'var(--color-fg)',
-                    background: 'transparent',
-                    border: '1px solid var(--color-border-strong)',
-                    borderRadius: '62px',
-                    cursor: 'pointer',
-                    textDecoration: 'none',
-                    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                    lineHeight: 1,
-                    fontFamily: 'inherit',
-                  }}
-                  onClick={loadExample}
-                >
-                  <span>Try an example</span>
-                  <FileText size={16} />
-                </button>
+                  {/* 4 compact items */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+                    {[
+                      { label: 'Observable', value: 'Timestamps and events', color: 'var(--accent-brand)' },
+                      { label: 'Provable', value: 'Nothing independently', color: 'var(--accent-secondary)' },
+                      { label: 'Missing', value: 'Signature, issuer, policy binding', color: 'var(--accent-error)' },
+                      { label: 'Next step', value: 'Add signed records at decision time', color: 'var(--accent-warning)' },
+                    ].map(({ label, value, color }) => (
+                      <div
+                        key={label}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 'var(--space-3)',
+                        }}
+                      >
+                        <span
+                          style={{
+                            fontSize: 'var(--text-xs)',
+                            fontWeight: 700,
+                            color,
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.04em',
+                            minWidth: 72,
+                            flexShrink: 0,
+                          }}
+                        >
+                          {label}
+                        </span>
+                        <span
+                          style={{
+                            fontSize: 'var(--text-sm)',
+                            color: 'var(--text-secondary)',
+                            lineHeight: 1.4,
+                          }}
+                        >
+                          {value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p
+                    style={{
+                      fontSize: 'var(--text-xs)',
+                      color: 'var(--text-muted)',
+                      marginTop: 'var(--space-4)',
+                      marginBottom: 0,
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    Sample result from a typical log excerpt
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* ── Page navigation ─────────────────────────────────────────────── */}
+        <nav
+          aria-label="Page sections"
+          style={{
+            background: 'var(--surface-elevated)',
+            borderTop: '1px solid var(--border-subtle)',
+            borderBottom: '1px solid var(--border-subtle)',
+          }}
+        >
+          <div
+            className="container px-5 sm:px-8 md:px-12 lg:px-16 flex flex-wrap gap-2 justify-center"
+            style={{
+              paddingTop: 'var(--space-4)',
+              paddingBottom: 'var(--space-4)',
+            }}
+          >
+            {[
+              { label: 'Scenarios', href: '#scenarios' },
+              { label: 'Analyzer', href: '#analyzer' },
+              { label: 'Examples', href: '#examples' },
+              { label: 'Compare', href: '#compare' },
+              { label: 'Questions', href: '#questions' },
+              { label: 'By role', href: '#roles' },
+              { label: 'How Originary helps', href: '#gap' },
+            ].map(({ label, href }) => (
+              <a
+                key={label}
+                href={href}
+                style={{
+                  padding: '6px 16px',
+                  borderRadius: '62px',
+                  border: '1px solid var(--border-default)',
+                  fontSize: '0.8125rem',
+                  fontWeight: 500,
+                  color: 'var(--text-secondary)',
+                  textDecoration: 'none',
+                  whiteSpace: 'nowrap',
+                  transition: 'all 0.2s ease',
+                }}
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        </nav>
+
         {/* ── Section 2: Scenario chips ────────────────────────────────────── */}
         <section
+          id="scenarios"
           ref={scenarioSection.ref}
           className="section"
-          style={{ background: 'var(--surface-subtle)' }}
+          style={{ background: 'var(--surface-subtle)', scrollMarginTop: '100px' }}
         >
           <div className="container px-5 sm:px-8 md:px-12 lg:px-16">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-10)' }}>
@@ -861,14 +1148,16 @@ ${analysisResult.reason}`
               }}
             >
               {[
-                { label: 'My agent called a tool', icon: Wrench },
+                { label: 'An AI agent called a tool', icon: Wrench },
+                { label: 'My MCP server handled a request', icon: Terminal },
                 { label: 'My API returned a result', icon: Globe },
                 { label: 'A customer asked what happened', icon: MessageSquare },
                 { label: 'My team is reviewing an incident', icon: Search },
-                { label: 'A payment happened', icon: CreditCard },
-                { label: 'I need audit-ready evidence', icon: Scale },
+                { label: 'A payment or authorization happened', icon: CreditCard },
+                { label: 'I need an audit trail for agent activity', icon: Scale },
               ].map(({ label, icon: Icon }, i) => (
                 <button
+                  type="button"
                   key={label}
                   onClick={() => loadScenario(label)}
                   style={{
@@ -931,6 +1220,7 @@ ${analysisResult.reason}`
             background: 'var(--surface-elevated)',
             paddingTop: 'var(--space-16)',
             paddingBottom: 'var(--space-16)',
+            scrollMarginTop: '100px',
           }}
         >
           <div className="container px-5 sm:px-8 md:px-12 lg:px-16">
@@ -945,7 +1235,7 @@ ${analysisResult.reason}`
                     color: 'var(--text-primary)',
                   }}
                 >
-                  Paste an artifact. See what you can prove.
+                  Start with what you already have
                 </h2>
                 <p
                   style={{
@@ -953,10 +1243,10 @@ ${analysisResult.reason}`
                     fontSize: 'var(--text-lg)',
                     color: 'var(--text-secondary)',
                     maxWidth: '520px',
-                    margin: '0 auto',
+                    margin: '0 auto var(--space-2) auto',
                   }}
                 >
-                  Drop in a log snippet, trace, JSON payload, signed record, or describe an incident in plain English. We analyze what is observable inside your system, what can travel across teams and vendors, and what would still be disputed.
+                  Logs, traces, webhooks, signed records, and short incident summaries all work. Paste an artifact from an AI agent, API request, tool invocation, or MCP server response.
                 </p>
               </div>
 
@@ -968,24 +1258,16 @@ ${analysisResult.reason}`
                   marginBottom: 'var(--space-5)',
                 }}
               >
-                {typeHints.map((hint) => (
+                {typeHints.map((hint, i) => (
                   <span
                     key={hint}
                     style={{
-                      padding: 'var(--space-1) var(--space-3)',
-                      background:
-                        activeTypeHint === hint
-                          ? 'var(--accent-brand-subtle)'
-                          : 'var(--surface-subtle)',
-                      borderRadius: 'var(--radius-full)',
-                      border: `1px solid ${activeTypeHint === hint ? 'var(--accent-brand)' : 'var(--border-default)'}`,
-                      fontSize: 'var(--text-xs)',
-                      color:
-                        activeTypeHint === hint ? 'var(--accent-brand)' : 'var(--text-tertiary)',
-                      fontWeight: 500,
+                      fontSize: '0.8125rem',
+                      color: 'var(--text-muted)',
+                      fontWeight: 400,
                     }}
                   >
-                    {hint}
+                    {hint}{i < typeHints.length - 1 ? ' · ' : ''}
                   </span>
                 ))}
               </div>
@@ -1009,7 +1291,7 @@ ${analysisResult.reason}`
                     }
                     setActiveTypeHint(e.target.value.trim() ? (hintMap[type] ?? null) : null)
                   }}
-                  placeholder="Paste a log excerpt here. Include timestamps, request IDs, policy decisions, or any relevant events."
+                  placeholder="Paste a log excerpt, request trace, webhook payload, tool result, MCP response, or signed record. Include timestamps, request IDs, decisions, and any relevant context."
                   style={{
                     width: '100%',
                     minHeight: '200px',
@@ -1054,6 +1336,7 @@ ${analysisResult.reason}`
                 }}
               >
                 <button
+                  type="button"
                   onClick={runAnalysis}
                   disabled={!analyzerInput.trim()}
                   style={{
@@ -1064,8 +1347,8 @@ ${analysisResult.reason}`
                     padding: '1rem 2.25rem',
                     fontSize: '0.9375rem',
                     fontWeight: 500,
-                    color: 'var(--color-fg-inverse)',
-                    background: 'var(--color-accent)',
+                    color: 'var(--text-inverted)',
+                    background: 'var(--accent-brand)',
                     borderRadius: '62px',
                     border: 'none',
                     cursor: analyzerInput.trim() ? 'pointer' : 'not-allowed',
@@ -1080,6 +1363,7 @@ ${analysisResult.reason}`
                   <Zap size={18} />
                 </button>
                 <button
+                  type="button"
                   onClick={loadExample}
                   style={{
                     background: 'none',
@@ -1094,7 +1378,7 @@ ${analysisResult.reason}`
                     gap: 'var(--space-1)',
                   }}
                 >
-                  Try an example
+                  Try a real example
                   <ArrowRight size={14} />
                 </button>
               </div>
@@ -1130,7 +1414,7 @@ ${analysisResult.reason}`
                       margin: '0 auto',
                     }}
                   >
-                    Logs, traces, webhooks, receipts, and even a short incident summary are enough to begin. The point is not perfect input. The point is to see where proof breaks down.
+                    Logs, traces, webhooks, signed records, and even a short incident summary are enough to begin. The point is not perfect input. The point is to see where proof breaks down.
                   </p>
                 </div>
               )}
@@ -1138,6 +1422,8 @@ ${analysisResult.reason}`
               {/* ── Analysis result ─────────────────────────────────────────── */}
               {analysisResult && (
                 <div
+                  id="analysis-result"
+                  aria-live="polite"
                   className="p-4 sm:p-6 md:p-8"
                   style={{
                     marginTop: 'var(--space-8)',
@@ -1391,6 +1677,7 @@ ${analysisResult.reason}`
                     </p>
                     <div style={{ display: 'flex', gap: 'var(--space-2)' }}>
                       <button
+                        type="button"
                         onClick={handleCopyResult}
                         style={{
                           display: 'inline-flex',
@@ -1400,9 +1687,9 @@ ${analysisResult.reason}`
                           padding: '0.5rem 1rem',
                           fontSize: '0.8125rem',
                           fontWeight: 500,
-                          color: 'var(--color-fg)',
+                          color: 'var(--text-primary)',
                           background: 'transparent',
-                          border: '1px solid var(--color-border-strong)',
+                          border: '1px solid var(--border-hover)',
                           borderRadius: '62px',
                           cursor: 'pointer',
                           textDecoration: 'none',
@@ -1428,6 +1715,143 @@ ${analysisResult.reason}`
                   >
                     Best used as a conversation starter with your engineering, ops, security, or compliance team.
                   </p>
+
+                  {/* Dynamic CTAs based on analysis type */}
+                  {(() => {
+                    const ctas = getResultCTAs(analysisType)
+                    return (
+                      <div
+                        className="flex flex-col sm:flex-row items-center justify-center gap-3"
+                        style={{ marginTop: 'var(--space-6)' }}
+                      >
+                        {ctas.primary.scroll ? (
+                          <a
+                            href={ctas.primary.href}
+                            onClick={(e) => {
+                              e.preventDefault()
+                              document.querySelector(ctas.primary.href)?.scrollIntoView({ behavior: 'smooth' })
+                            }}
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              gap: '0.5rem',
+                              padding: '0.75rem 1.5rem',
+                              fontSize: '0.875rem',
+                              fontWeight: 500,
+                              color: 'var(--text-inverted)',
+                              background: 'var(--accent-brand)',
+                              borderRadius: '62px',
+                              textDecoration: 'none',
+                              transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                              lineHeight: 1,
+                            }}
+                          >
+                            <span>{ctas.primary.label}</span>
+                            <ArrowRight size={16} />
+                          </a>
+                        ) : ctas.primary.external ? (
+                          <a
+                            href={ctas.primary.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              gap: '0.5rem',
+                              padding: '0.75rem 1.5rem',
+                              fontSize: '0.875rem',
+                              fontWeight: 500,
+                              color: 'var(--text-inverted)',
+                              background: 'var(--accent-brand)',
+                              borderRadius: '62px',
+                              textDecoration: 'none',
+                              transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                              lineHeight: 1,
+                            }}
+                          >
+                            <span>{ctas.primary.label}</span>
+                            <ExternalLink size={16} />
+                          </a>
+                        ) : (
+                          <Link
+                            href={ctas.primary.href}
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              gap: '0.5rem',
+                              padding: '0.75rem 1.5rem',
+                              fontSize: '0.875rem',
+                              fontWeight: 500,
+                              color: 'var(--text-inverted)',
+                              background: 'var(--accent-brand)',
+                              borderRadius: '62px',
+                              textDecoration: 'none',
+                              transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                              lineHeight: 1,
+                            }}
+                          >
+                            <span>{ctas.primary.label}</span>
+                            <ArrowRight size={16} />
+                          </Link>
+                        )}
+
+                        {ctas.secondary.scroll ? (
+                          <a
+                            href={ctas.secondary.href}
+                            onClick={(e) => {
+                              e.preventDefault()
+                              document.querySelector(ctas.secondary.href)?.scrollIntoView({ behavior: 'smooth' })
+                            }}
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              gap: '0.5rem',
+                              padding: '0.75rem 1.5rem',
+                              fontSize: '0.875rem',
+                              fontWeight: 500,
+                              color: 'var(--text-primary)',
+                              background: 'transparent',
+                              border: '1px solid var(--border-hover)',
+                              borderRadius: '62px',
+                              textDecoration: 'none',
+                              transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                              lineHeight: 1,
+                            }}
+                          >
+                            <span>{ctas.secondary.label}</span>
+                            <ArrowRight size={14} />
+                          </a>
+                        ) : (
+                          <Link
+                            href={ctas.secondary.href}
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              gap: '0.5rem',
+                              padding: '0.75rem 1.5rem',
+                              fontSize: '0.875rem',
+                              fontWeight: 500,
+                              color: 'var(--text-primary)',
+                              background: 'transparent',
+                              border: '1px solid var(--border-hover)',
+                              borderRadius: '62px',
+                              textDecoration: 'none',
+                              transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                              lineHeight: 1,
+                            }}
+                          >
+                            <span>{ctas.secondary.label}</span>
+                            <ArrowRight size={14} />
+                          </Link>
+                        )}
+                      </div>
+                    )
+                  })()}
                 </div>
               )}
             </div>
@@ -1436,9 +1860,10 @@ ${analysisResult.reason}`
 
         {/* ── Section 4: Side-by-side comparison ──────────────────────────── */}
         <section
+          id="compare"
           ref={comparisonSection.ref}
           className="section"
-          style={{ background: 'var(--surface-subtle)' }}
+          style={{ background: 'var(--surface-subtle)', scrollMarginTop: '100px' }}
         >
           <div className="container px-5 sm:px-8 md:px-12 lg:px-16">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-10)' }}>
@@ -1672,11 +2097,36 @@ ${analysisResult.reason}`
           </div>
         </section>
 
+        {/* ── Built for AI agents, APIs, tools, and MCP servers ───────── */}
+        <section className="section" style={{ background: 'var(--surface-elevated)', scrollMarginTop: '100px' }}>
+          <div className="container px-5 sm:px-8 md:px-12 lg:px-16">
+            <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto', ...reveal(builtForSection.visible, 0) }} ref={builtForSection.ref}>
+              <div style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }}>Where this shows up</div>
+              <h2 className="text-2xl sm:text-3xl" style={{ fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)', marginBottom: 'var(--space-4)' }}>Built for AI agents, APIs, tools, and MCP servers</h2>
+              <p style={{ fontSize: '1.0625rem', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: 'var(--space-10)' }}>If an agent calls a tool, hits your API, triggers a payment, or goes through an MCP server, the same question comes up later: what happened, what was allowed, and what can another party verify without trusting your dashboard?</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" style={{ maxWidth: '1000px', margin: '0 auto' }}>
+              {[
+                { title: 'AI agent calls', desc: 'Track what the agent asked for, what policy applied, and what happened next.' },
+                { title: 'MCP servers', desc: 'Keep a portable record of tool invocations and decisions without changing the developer workflow.' },
+                { title: 'APIs and gateways', desc: 'Make access decisions explicit and keep signed records that survive handoff.' },
+                { title: 'Payments and audits', desc: 'Connect authorizations, outcomes, and review-ready records without exposing internal infrastructure.' },
+              ].map((card) => (
+                <div key={card.title} style={{ background: 'var(--surface-subtle)', border: '1px solid var(--border-default)', borderRadius: '16px', padding: 'var(--space-6)' }}>
+                  <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-2)' }}>{card.title}</h3>
+                  <p style={{ fontSize: '0.875rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>{card.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── Section 5: Worked examples ───────────────────────────────────── */}
         <section
+          id="examples"
           ref={examplesSection.ref}
           className="section"
-          style={{ background: 'var(--surface-elevated)' }}
+          style={{ background: 'var(--surface-elevated)', scrollMarginTop: '100px' }}
         >
           <div className="container px-5 sm:px-8 md:px-12 lg:px-16">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-10)' }}>
@@ -1729,6 +2179,7 @@ ${analysisResult.reason}`
 
             {/* Tabs */}
             <div
+              role="tablist"
               className="flex flex-wrap justify-center gap-2"
               style={{
                 ...reveal(examplesSection.visible, 0.15),
@@ -1737,6 +2188,9 @@ ${analysisResult.reason}`
             >
               {WORKED_EXAMPLES.map((ex, i) => (
                 <button
+                  type="button"
+                  role="tab"
+                  aria-selected={activeExample === i}
                   key={ex.label}
                   onClick={() => setActiveExample(i)}
                   style={{
@@ -1758,74 +2212,216 @@ ${analysisResult.reason}`
               ))}
             </div>
 
-            {/* Example content */}
+            {/* Example content: narrative-first */}
             <div
-              className="grid grid-cols-1 md:grid-cols-2 gap-4"
+              role="tabpanel"
               style={{
-                maxWidth: '960px',
+                maxWidth: '720px',
                 margin: '0 auto',
               }}
             >
-              <div>
+              {/* Narrative */}
+              <p
+                style={{
+                  fontSize: 'var(--text-lg)',
+                  fontWeight: 600,
+                  color: 'var(--text-primary)',
+                  marginBottom: 'var(--space-6)',
+                  textAlign: 'center',
+                }}
+              >
+                {WORKED_EXAMPLES[activeExample].narrative}
+              </p>
+
+              <div
+                className="grid grid-cols-1 sm:grid-cols-3 gap-4"
+                style={{ marginBottom: 'var(--space-6)' }}
+              >
+                {/* What most teams have */}
                 <div
                   style={{
-                    fontSize: 'var(--text-xs)',
-                    fontWeight: 700,
-                    color: 'var(--accent-warning)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.06em',
-                    marginBottom: 'var(--space-2)',
-                  }}
-                >
-                  What most teams have
-                </div>
-                <pre
-                  style={{
-                    background: 'var(--code-bg)',
-                    borderRadius: 'var(--radius-lg)',
                     padding: 'var(--space-5)',
-                    fontSize: 'var(--text-xs)',
-                    fontFamily: 'var(--font-mono)',
-                    color: 'var(--code-color-string)',
-                    margin: 0,
-                    overflowX: 'auto',
-                    lineHeight: 1.7,
-                    minHeight: '200px',
+                    background: 'var(--accent-warning-muted)',
+                    borderRadius: '16px',
+                    border: '1px solid var(--accent-warning)20',
                   }}
                 >
-                  {WORKED_EXAMPLES[activeExample].log}
-                </pre>
-              </div>
-              <div>
+                  <h4
+                    style={{
+                      fontSize: 'var(--text-xs)',
+                      fontWeight: 700,
+                      color: 'var(--accent-warning)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.06em',
+                      marginBottom: 'var(--space-3)',
+                    }}
+                  >
+                    What most teams have
+                  </h4>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                    {WORKED_EXAMPLES[activeExample].mostTeamsHave.map((item) => (
+                      <li key={item} style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* What another party can verify */}
                 <div
                   style={{
-                    fontSize: 'var(--text-xs)',
-                    fontWeight: 700,
-                    color: 'var(--accent-success)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.06em',
-                    marginBottom: 'var(--space-2)',
-                  }}
-                >
-                  What signed records add
-                </div>
-                <pre
-                  style={{
-                    background: 'var(--code-bg)',
-                    borderRadius: 'var(--radius-lg)',
                     padding: 'var(--space-5)',
-                    fontSize: 'var(--text-xs)',
-                    fontFamily: 'var(--font-mono)',
-                    color: 'var(--code-color-key)',
-                    margin: 0,
-                    overflowX: 'auto',
-                    lineHeight: 1.7,
-                    minHeight: '200px',
+                    background: 'var(--accent-error-muted)',
+                    borderRadius: '16px',
+                    border: '1px solid var(--accent-error)20',
                   }}
                 >
-                  {WORKED_EXAMPLES[activeExample].signed}
-                </pre>
+                  <h4
+                    style={{
+                      fontSize: 'var(--text-xs)',
+                      fontWeight: 700,
+                      color: 'var(--accent-error)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.06em',
+                      marginBottom: 'var(--space-3)',
+                    }}
+                  >
+                    Another party can verify
+                  </h4>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                    {WORKED_EXAMPLES[activeExample].otherPartyCanVerify.map((item) => (
+                      <li key={item} style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* What changes with a signed record */}
+                <div
+                  style={{
+                    padding: 'var(--space-5)',
+                    background: 'var(--accent-success-subtle)',
+                    borderRadius: '16px',
+                    border: '1px solid var(--accent-success-border)',
+                  }}
+                >
+                  <h4
+                    style={{
+                      fontSize: 'var(--text-xs)',
+                      fontWeight: 700,
+                      color: 'var(--accent-success)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.06em',
+                      marginBottom: 'var(--space-3)',
+                    }}
+                  >
+                    With a signed record
+                  </h4>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                    {WORKED_EXAMPLES[activeExample].withSignedRecord.map((item) => (
+                      <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                        <CheckCircle size={14} style={{ color: 'var(--accent-success)', flexShrink: 0, marginTop: 2 }} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
+
+              {/* Developer details toggle */}
+              <div style={{ textAlign: 'center' }}>
+                <button
+                  type="button"
+                  onClick={() => setShowDevDetails(!showDevDetails)}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 'var(--space-2)',
+                    padding: 'var(--space-2) var(--space-4)',
+                    background: 'var(--surface-subtle)',
+                    border: '1px solid var(--border-default)',
+                    borderRadius: 'var(--radius-full)',
+                    fontSize: 'var(--text-sm)',
+                    fontWeight: 500,
+                    color: 'var(--text-secondary)',
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  {showDevDetails ? 'Hide' : 'View'} developer details
+                  {showDevDetails ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+                </button>
+              </div>
+
+              {showDevDetails && (
+                <div
+                  className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                  style={{ marginTop: 'var(--space-4)' }}
+                >
+                  <div>
+                    <div
+                      style={{
+                        fontSize: 'var(--text-xs)',
+                        fontWeight: 700,
+                        color: 'var(--accent-warning)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em',
+                        marginBottom: 'var(--space-2)',
+                      }}
+                    >
+                      Raw log / trace
+                    </div>
+                    <pre
+                      style={{
+                        background: 'var(--code-bg)',
+                        borderRadius: 'var(--radius-lg)',
+                        padding: 'var(--space-5)',
+                        fontSize: 'var(--text-xs)',
+                        fontFamily: 'var(--font-mono)',
+                        color: 'var(--code-color-string)',
+                        margin: 0,
+                        overflowX: 'auto',
+                        lineHeight: 1.7,
+                        minHeight: '200px',
+                      }}
+                    >
+                      {WORKED_EXAMPLES[activeExample].log}
+                    </pre>
+                  </div>
+                  <div>
+                    <div
+                      style={{
+                        fontSize: 'var(--text-xs)',
+                        fontWeight: 700,
+                        color: 'var(--accent-success)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em',
+                        marginBottom: 'var(--space-2)',
+                      }}
+                    >
+                      Signed record payload
+                    </div>
+                    <pre
+                      style={{
+                        background: 'var(--code-bg)',
+                        borderRadius: 'var(--radius-lg)',
+                        padding: 'var(--space-5)',
+                        fontSize: 'var(--text-xs)',
+                        fontFamily: 'var(--font-mono)',
+                        color: 'var(--code-color-key)',
+                        margin: 0,
+                        overflowX: 'auto',
+                        lineHeight: 1.7,
+                        minHeight: '200px',
+                      }}
+                    >
+                      {WORKED_EXAMPLES[activeExample].signed}
+                    </pre>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -1893,6 +2489,10 @@ ${analysisResult.reason}`
               >
                 {TAMPER_TOGGLES.map((toggle, i) => (
                   <button
+                    type="button"
+                    role="switch"
+                    aria-checked={tamperStates[i]}
+                    aria-label={`Toggle ${toggle.label}: ${toggle.description}`}
                     key={toggle.label}
                     onClick={() => toggleTamper(i)}
                     style={{
@@ -2023,9 +2623,10 @@ ${analysisResult.reason}`
 
         {/* ── Section 7: The hard questions ─────────────────────────────────── */}
         <section
+          id="questions"
           ref={questionsSection.ref}
           className="section"
-          style={{ background: 'var(--surface-elevated)' }}
+          style={{ background: 'var(--surface-elevated)', scrollMarginTop: '100px' }}
         >
           <div className="container px-5 sm:px-8 md:px-12 lg:px-16">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-10)' }}>
@@ -2134,9 +2735,10 @@ ${analysisResult.reason}`
 
         {/* ── Section 8: Role-based views ──────────────────────────────────── */}
         <section
+          id="roles"
           ref={rolesSection.ref}
           className="section"
-          style={{ background: 'var(--surface-subtle)' }}
+          style={{ background: 'var(--surface-subtle)', scrollMarginTop: '100px' }}
         >
           <div className="container px-5 sm:px-8 md:px-12 lg:px-16">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-10)' }}>
@@ -2162,12 +2764,13 @@ ${analysisResult.reason}`
                   color: 'var(--text-primary)',
                 }}
               >
-                Why this matters for your role
+                What changes for each team
               </h2>
             </div>
 
             {/* Role tabs */}
             <div
+              role="tablist"
               className="flex flex-wrap justify-center gap-2"
               style={{
                 ...reveal(rolesSection.visible, 0.1),
@@ -2178,6 +2781,9 @@ ${analysisResult.reason}`
                 const Icon = view.icon
                 return (
                   <button
+                    type="button"
+                    role="tab"
+                    aria-selected={activeRole === i}
                     key={view.role}
                     onClick={() => setActiveRole(i)}
                     style={{
@@ -2206,6 +2812,7 @@ ${analysisResult.reason}`
 
             {/* Active role content */}
             <div
+              role="tabpanel"
               className="p-5 sm:p-8"
               style={{
                 ...reveal(rolesSection.visible, 0.15),
@@ -2217,59 +2824,64 @@ ${analysisResult.reason}`
                 boxShadow: 'var(--shadow-card)',
               }}
             >
-              <h3
-                style={{
-                  fontSize: 'var(--text-xl)',
-                  fontWeight: 700,
-                  color: 'var(--text-primary)',
-                  marginBottom: 'var(--space-5)',
-                }}
-              >
-                {ROLE_VIEWS[activeRole].question}
-              </h3>
-              <ul
-                style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: 0,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 'var(--space-3)',
-                }}
-              >
-                {ROLE_VIEWS[activeRole].points.map((point) => (
-                  <li
-                    key={point}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-5)' }}>
+                <div>
+                  <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--accent-error)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 'var(--space-2)' }}>
+                    Problem
+                  </div>
+                  <p style={{ fontSize: 'var(--text-base)', fontWeight: 600, color: 'var(--text-primary)', margin: 0, lineHeight: 1.6 }}>
+                    {ROLE_VIEWS[activeRole].problem}
+                  </p>
+                </div>
+                <div>
+                  <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--accent-warning)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 'var(--space-2)' }}>
+                    Why logs fail
+                  </div>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                    {ROLE_VIEWS[activeRole].whyLogsFail}
+                  </p>
+                </div>
+                <div>
+                  <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--accent-success)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 'var(--space-2)' }}>
+                    What Originary adds
+                  </div>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                    {ROLE_VIEWS[activeRole].originaryAdds}
+                  </p>
+                </div>
+                <div>
+                  <Link
+                    href={ROLE_VIEWS[activeRole].ctaHref}
                     style={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: 'var(--space-3)',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      padding: '0.75rem 1.5rem',
                       fontSize: 'var(--text-sm)',
-                      color: 'var(--text-secondary)',
-                      lineHeight: 1.6,
+                      fontWeight: 500,
+                      color: 'var(--text-inverted)',
+                      background: 'var(--accent-brand)',
+                      borderRadius: '62px',
+                      textDecoration: 'none',
+                      transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                      lineHeight: 1,
                     }}
                   >
-                    <CheckCircle
-                      size={16}
-                      style={{
-                        color: 'var(--accent-brand)',
-                        flexShrink: 0,
-                        marginTop: 2,
-                      }}
-                    />
-                    {point}
-                  </li>
-                ))}
-              </ul>
+                    <span>{ROLE_VIEWS[activeRole].cta}</span>
+                    <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* ── Section 9: How Originary closes the gap ──────────────────────── */}
         <section
+          id="gap"
           ref={gapSection.ref}
           className="section"
-          style={{ background: 'var(--surface-elevated)' }}
+          style={{ background: 'var(--surface-elevated)', scrollMarginTop: '100px' }}
         >
           <div className="container px-5 sm:px-8 md:px-12 lg:px-16">
             <div
@@ -2412,8 +3024,8 @@ ${analysisResult.reason}`
                     padding: '1rem 2.25rem',
                     fontSize: '0.9375rem',
                     fontWeight: 500,
-                    color: 'var(--color-fg-inverse)',
-                    background: 'var(--color-accent)',
+                    color: 'var(--text-inverted)',
+                    background: 'var(--accent-brand)',
                     borderRadius: '62px',
                     border: 'none',
                     cursor: 'pointer',
@@ -2437,9 +3049,9 @@ ${analysisResult.reason}`
                     padding: '1rem 2.25rem',
                     fontSize: '0.9375rem',
                     fontWeight: 500,
-                    color: 'var(--color-fg)',
+                    color: 'var(--text-primary)',
                     background: 'transparent',
-                    border: '1px solid var(--color-border-strong)',
+                    border: '1px solid var(--border-hover)',
                     borderRadius: '62px',
                     cursor: 'pointer',
                     textDecoration: 'none',
@@ -2499,6 +3111,17 @@ ${analysisResult.reason}`
               >
                 No account required for the diagnostic or Agent Auditor.
               </p>
+              <p
+                style={{
+                  ...reveal(ctaSection.visible, 0.2),
+                  fontSize: 'var(--text-base)',
+                  fontWeight: 600,
+                  color: 'var(--text-primary)',
+                  marginTop: 'var(--space-4)',
+                }}
+              >
+                For AI agents, MCP servers, APIs, and tool integrations.
+              </p>
             </div>
             <div
               className="grid grid-cols-1 sm:grid-cols-3 gap-4"
@@ -2545,7 +3168,7 @@ ${analysisResult.reason}`
                       color: 'var(--text-primary)',
                     }}
                   >
-                    See it in action
+                    See the flow end to end
                   </div>
                   <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
                     Open and verify a signed record
@@ -2645,7 +3268,7 @@ ${analysisResult.reason}`
                       color: 'var(--text-primary)',
                     }}
                   >
-                    Talk to us
+                    Talk about integration
                   </div>
                   <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
                     Questions about integration
@@ -2716,7 +3339,7 @@ ${analysisResult.reason}`
                       lineHeight: 1.7,
                     }}
                   >
-                    Evidence Check helps you understand whether your current artifacts are enough.
+                    Proof Check helps you understand whether your current artifacts are enough.
                     Agent Auditor is for opening and verifying a signed record once you already have
                     one.
                   </p>
