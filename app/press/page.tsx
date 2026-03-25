@@ -91,11 +91,10 @@ export default function Press() {
                 }}>
                   <div style={{ display: 'grid', gridTemplateColumns: '140px 1fr', gap: 'var(--space-3)', lineHeight: 1.8 }}>
                     <strong>Founded</strong><span>2025</span>
-                    <strong>Founder</strong><span>Jithin Raj</span>
                     <strong>Product</strong><span>Verification layer for agent-facing systems</span>
                     <strong>Protocol</strong><span>PEAC (open standard, Apache-2.0)</span>
                     <strong>Business model</strong><span>Open-source protocol; commercial support, managed infrastructure, and enterprise deployment</span>
-                    <strong>Packages</strong><span>28 on npm</span>
+                    <strong>Packages</strong><span>29 on npm</span>
                     <strong>License</strong><span>Apache-2.0, no CLA</span>
                   </div>
                 </div>

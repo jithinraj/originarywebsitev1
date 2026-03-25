@@ -195,6 +195,7 @@ body:has(.hp-root) .cursor-glow {
   background: var(--color-surface);
 }
 
+
 .hp-root .hp-hero-bg::before {
   content: "";
   position: absolute;

@@ -13,11 +13,11 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   /** Stable release on `latest` npm dist-tag */
-  stableVersion: 'v0.12.3',
+  stableVersion: 'v0.12.4',
 
   /**
    * Current stable wire format (Wire 0.2).
-   * Introduced in v0.12.0, stable since v0.12.3. JWS typ: interaction-record+jwt.
+   * Introduced in v0.12.0, stable since v0.12.4. JWS typ: interaction-record+jwt.
    */
   stableWireFormat: 'interaction-record+jwt',
 
@@ -38,7 +38,7 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   /** Packages in the npm publish manifest (@peac/* on npm) */
-  publishedPackageCount: 28,
+  publishedPackageCount: 29,
 
   /** Public packages in the monorepo (published + internal-public) */
   publicPackageCount: 46,
@@ -50,11 +50,11 @@ export const FACTS = {
   // Quality metrics (see CI output for latest tag)
   // ---------------------------------------------------------------------------
 
-  /** pnpm test -- passing test count as of v0.12.3 */
-  testsCount: 6443,
+  /** pnpm test -- passing test count as of v0.12.4 */
+  testsCount: 6664,
 
-  /** pnpm build -- build targets as of v0.12.3 */
-  buildTargets: 84,
+  /** pnpm build -- build targets as of v0.12.4 */
+  buildTargets: 91,
 
   // ---------------------------------------------------------------------------
   // Licensing and identity

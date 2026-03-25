@@ -36,6 +36,7 @@ export const FOOTER_DEVELOPERS: FooterGroup = {
   id: 'developers',
   title: 'Developers',
   links: [
+    { label: 'Evidence Check', href: '/evidence-check' },
     { label: 'Start here', href: '/developers' },
     { label: 'Downloads', href: '/downloads' },
     { label: 'Demo', href: '/demo' },
