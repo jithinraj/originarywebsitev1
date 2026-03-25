@@ -44,7 +44,7 @@ export function EvidenceTeaser() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.05, ease }}
           >
-            Can you actually prove what happened?
+            What your logs show is not the same as what you can prove
           </motion.h2>
 
           {/* Body */}
@@ -56,7 +56,7 @@ export function EvidenceTeaser() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1, ease }}
           >
-            Paste a log, trace, webhook, receipt, or incident summary. See what another party can verify, what is missing, and how Originary turns local observability into portable evidence.
+            Paste a log, trace, webhook, signed record, or incident summary from an AI agent, API call, tool invocation, or MCP server. See what another party can verify, what is missing, and what would hold up in a review, dispute, or audit.
           </motion.p>
 
           {/* Mock tab labels */}
@@ -114,8 +114,8 @@ export function EvidenceTeaser() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3, ease }}
           >
-            <Link href="/evidence-check" className="hp-btn-primary">
-              Run the evidence check
+            <Link href="/agent-proof-check" className="hp-btn-primary">
+              See what your logs can't prove
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path
                   d="M3.5 7h7m0 0L7.5 4m3 3l-3 3"
@@ -127,11 +127,11 @@ export function EvidenceTeaser() {
               </svg>
             </Link>
             <Link
-              href="/evidence-check#examples"
+              href="/agent-proof-check#examples"
               className="text-[0.8125rem] font-medium"
               style={{ color: 'var(--color-fg-muted)', textDecoration: 'underline', textUnderlineOffset: '3px' }}
             >
-              See an example first
+              Try a real example
             </Link>
           </motion.div>
 

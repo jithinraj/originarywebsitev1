@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import EvidenceCheckClient from './EvidenceCheckClient'
 
-const PAGE_URL = 'https://www.originary.xyz/evidence-check'
+const PAGE_URL = 'https://www.originary.xyz/agent-proof-check'
 
 export const metadata: Metadata = {
-  title: 'Evidence Check | Can you prove what your agent did? | Originary',
+  title: 'AI Agent Proof Check | See What Logs Can\'t Prove | Originary',
   description:
-    'Paste a log, trace, webhook, receipt, or incident summary. See what another party can verify, what is missing, and how to make evidence portable.',
+    'Paste logs, traces, webhooks, signed records, or incident summaries from AI agents, APIs, tool calls, and MCP servers. See what another party can verify, what is missing, and what holds up in a review, dispute, or audit.',
   keywords: [
     'evidence check',
     'agent evidence',
@@ -33,20 +33,20 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: '/evidence-check',
+    canonical: '/agent-proof-check',
   },
   openGraph: {
-    title: 'Evidence Check | Can you prove what your agent did?',
+    title: 'Can you prove what your AI agent did?',
     description:
-      'Paste a log, trace, webhook, receipt, or plain-English incident summary. See what your team can see, what another party can verify, what is missing, and how to make it portable.',
-    url: '/evidence-check',
+      'A browser-based check for AI agent, API, tool, and MCP activity. Compare logs to signed records and see what another party can verify.',
+    url: '/agent-proof-check',
     siteName: 'Originary',
     images: [
       {
         url: '/og',
         width: 1200,
         height: 630,
-        alt: 'Evidence Check: Can you prove what your agent did?',
+        alt: 'Can you prove what your AI agent did?',
       },
     ],
     type: 'website',
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Evidence Check | Can you prove what your agent did?',
+    title: 'Can you prove what your AI agent did?',
     description:
-      'Paste a log, trace, webhook, or receipt. See what another party can verify and what is missing.',
+      'A browser-based check for AI agent, API, tool, and MCP activity. Compare logs to signed records and see what another party can verify.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -68,9 +68,9 @@ const webPageJsonLd = {
   '@type': 'WebPage',
   '@id': PAGE_URL,
   url: PAGE_URL,
-  name: 'Evidence Check | Can you prove what your agent did?',
+  name: 'AI Agent Audit & Proof Check',
   description:
-    'Free diagnostic tool: paste a log, trace, webhook, or receipt and see what another party can verify, what is missing, and how to make evidence portable.',
+    'Paste logs, traces, webhooks, signed records, or incident summaries from AI agents, APIs, tool calls, and MCP servers. See what another party can verify, what is missing, and what holds up in a review, dispute, or audit.',
   isPartOf: { '@id': 'https://www.originary.xyz/#website' },
   publisher: { '@id': 'https://www.originary.xyz/#org' },
   inLanguage: 'en-US',
@@ -90,7 +90,7 @@ const breadcrumbJsonLd = {
     {
       '@type': 'ListItem',
       position: 2,
-      name: 'Evidence Check',
+      name: 'Proof Check',
       item: PAGE_URL,
     },
   ],
@@ -127,10 +127,10 @@ const faqJsonLd = {
     },
     {
       '@type': 'Question',
-      name: 'What is the difference between Evidence Check and Agent Auditor?',
+      name: 'What is the difference between Proof Check and Agent Auditor?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Evidence Check helps you understand whether your current artifacts are strong enough. Agent Auditor is for opening and verifying a signed record once you already have one.',
+        text: 'Proof Check helps you understand whether your current artifacts are strong enough. Agent Auditor is for opening and verifying a signed record once you already have one.',
       },
     },
   ],
