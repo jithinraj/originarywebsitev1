@@ -43,7 +43,7 @@ export default function ChangelogPage() {
             >
               <div style={{ display: 'grid', gap: 'var(--space-4)' }}>
                 {[
-                  { icon: <Tag size={18} />, label: 'Stable version', value: 'v0.12.3' },
+                  { icon: <Tag size={18} />, label: 'Stable version', value: 'v0.12.4' },
                   { icon: <GitBranch size={18} />, label: 'Current wire format', value: 'interaction-record+jwt (stable)' },
                   { icon: <GitBranch size={18} />, label: 'Legacy wire format', value: 'peac-receipt/0.1 (frozen)' },
                   { icon: <Package size={18} />, label: 'License', value: 'Apache-2.0' },
@@ -95,6 +95,18 @@ export default function ChangelogPage() {
               </h2>
 
               {[
+                {
+                  version: 'v0.12.4',
+                  date: 'Mar 25, 2026',
+                  items: [
+                    'Commerce evidence across paymentauth, ACP, x402, and Stripe SPT',
+                    'New package: @peac/mappings-paymentauth',
+                    'x402 v2 dual-header read with upstream artifact separation',
+                    'ACP session lifecycle evidence with explicit payment state',
+                    'Experimental commerce bundle (peac.commerce-bundle/0.1-experimental)',
+                    '29 packages, 6,664 tests, 361 conformance requirements',
+                  ],
+                },
                 {
                   version: 'v0.12.3',
                   date: 'Mar 17, 2026',

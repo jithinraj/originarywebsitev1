@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+// import { HeroBackground } from './HeroBackground'  // preserved: revisiting later
 const ease = [0.16, 1, 0.3, 1] as const
 
 const proofItems = [
@@ -14,6 +15,7 @@ const proofItems = [
 export function Hero() {
   return (
     <section className="hp-hero-bg pt-20 pb-10 sm:pt-28 sm:pb-14 md:pt-36 md:pb-16 lg:pt-40 lg:pb-20">
+      {/* <HeroBackground /> */}{/* preserved: revisiting later */}
       <div className="hp-container">
 
         {/* Badge */}
@@ -70,8 +72,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.35, ease }}
         >
-          <Link href="/developers" className="hp-btn-primary">
-            Start here
+          <Link href="/evidence-check" className="hp-btn-primary">
+            Check your evidence
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
                 d="M3.5 7h7m0 0L7.5 4m3 3l-3 3"
@@ -82,8 +84,24 @@ export function Hero() {
               />
             </svg>
           </Link>
-          <Link href="/agent-auditor" className="hp-btn-secondary">
-            See it in action
+          <Link href="/developers" className="hp-btn-secondary">
+            Start here
+          </Link>
+        </motion.div>
+
+        {/* Tertiary link */}
+        <motion.div
+          className="mt-3 text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.45, ease }}
+        >
+          <Link
+            href="/agent-auditor"
+            className="text-[0.8125rem]"
+            style={{ color: 'var(--color-fg-muted)', textDecoration: 'underline', textUnderlineOffset: '3px' }}
+          >
+            Already have a signed record? Open Agent Auditor
           </Link>
         </motion.div>
 

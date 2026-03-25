@@ -14,6 +14,7 @@ import { Comparison } from '@/components/homepage/Comparison'
 import { OpenStandard } from '@/components/homepage/OpenStandard'
 import { FAQ } from '@/components/homepage/FAQ'
 import { DemoCTA } from '@/components/homepage/DemoCTA'
+import { EvidenceTeaser } from '@/components/homepage/EvidenceTeaser'
 import { HomeFooter } from '@/components/homepage/HomeFooter'
 
 export const metadata: Metadata = {
@@ -113,6 +114,7 @@ export default function Page() {
         <HomeNav />
         <main id="main-content" role="main">
           <Hero />
+          <EvidenceTeaser />
           {/* <TractionStrip /> */}
           <Problem />
           <Comparison />
