@@ -37,7 +37,7 @@ export function Hero() {
               className="w-1.5 h-1.5 rounded-full"
               style={{ background: 'var(--color-verified)' }}
             />
-            For teams running agent-facing systems
+            For APIs, tools, and MCP servers receiving AI agent traffic
           </span>
         </motion.div>
 

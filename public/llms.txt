@@ -2,7 +2,7 @@
 
 > Originary verifies agent requests, applies policy, and returns signed records you can prove later. PEAC is the open standard underneath. Self-hostable. Offline-verifiable. No lock-in.
 
-Last updated: 2026-03-26
+Last updated: 2026-03-27
 
 Company: Poem, Inc.
 Location: Delaware, USA
