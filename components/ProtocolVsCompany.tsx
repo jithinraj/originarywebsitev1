@@ -84,7 +84,7 @@ export default function ProtocolVsCompany() {
       <style jsx>{`
         .section {
           padding: 140px 0;
-          background: #0a0a0b;
+          background: var(--code-bg);
         }
 
         .container {
@@ -156,7 +156,7 @@ export default function ProtocolVsCompany() {
           align-items: center;
           gap: 8px;
           background: white;
-          color: #0a0a0b;
+          color: var(--text-primary);
           padding: 12px 24px;
           border-radius: 10px;
           font-weight: 600;

@@ -425,8 +425,8 @@ export const FloatingElement = ({
 
 // Gradient blob animation
 export const GradientBlob = ({
-  color1 = '#2563EB',
-  color2 = '#7C3AED',
+  color1 = '#2F5BFF',
+  color2 = '#2447F9',
   size = '600px',
   className = ''
 }) => {

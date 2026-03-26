@@ -63,30 +63,28 @@ export default function HomeTheme() {
 
       :root {
         /* Light Theme (Default) */
-        --bg-0: #ffffff;
-        --bg-1: #fafafa;
-        --bg-2: #f5f5f5;
-        --bg-3: #ebebeb;
-        --bg-card: rgba(255, 255, 255, 0.8);
-        --bg-elevated: #ffffff;
+        --bg-0: var(--surface-elevated);
+        --bg-1: var(--surface-base);
+        --bg-2: var(--surface-subtle);
+        --bg-3: var(--border-default);
+        --bg-card: var(--glass-bg);
+        --bg-elevated: var(--surface-elevated);
 
-        --text-0: #0a0a0a;
-        --text-1: #1a1a1a;
-        --text-2: #525252;
-        --text-3: #8a8a8a;
+        --text-0: var(--text-primary);
+        --text-1: var(--text-primary);
+        --text-2: var(--text-secondary);
+        --text-3: var(--text-muted);
 
-        /* Protocol-grade accent - deep blue */
-        --accent: #0066ff;
-        --accent-dim: rgba(0, 102, 255, 0.08);
-        --accent-glow: rgba(0, 102, 255, 0.25);
-        --accent-hover: #0052cc;
+        --accent: var(--accent-brand);
+        --accent-dim: var(--accent-brand-faint);
+        --accent-glow: var(--accent-brand-glow);
+        --accent-hover: var(--accent-brand-hover);
 
-        /* Secondary accents */
-        --success: #00a67e;
-        --warning: #f59e0b;
+        --success: var(--accent-success);
+        --warning: var(--accent-warning);
 
-        --border-subtle: rgba(0, 0, 0, 0.04);
-        --border: rgba(0, 0, 0, 0.08);
+        --border-subtle: var(--border-subtle);
+        --border: var(--border-default);
         --border-strong: rgba(0, 0, 0, 0.12);
 
         --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
@@ -313,16 +311,16 @@ export default function HomeTheme() {
         border-radius: 50%;
       }
 
-      .terminal-dot.red { background: #ff5f57; }
-      .terminal-dot.yellow { background: #febc2e; }
-      .terminal-dot.green { background: #28c840; }
+      .terminal-dot.red { background: var(--chrome-red); }
+      .terminal-dot.yellow { background: var(--chrome-yellow); }
+      .terminal-dot.green { background: var(--chrome-green); }
 
       .terminal-body {
         padding: 20px;
         font-family: var(--font-jetbrains-mono), monospace;
         font-size: 13px;
         line-height: 1.7;
-        color: #e5e5e5;
+        color: var(--text-muted);
       }
 
       /* ============================================

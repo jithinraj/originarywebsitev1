@@ -149,21 +149,21 @@ export function Comparison() {
                 style={{
                   border: '1px solid var(--color-verified)',
                   background: 'var(--color-surface-elevated)',
-                  boxShadow: '0 0 0 1px rgba(40,200,64,0.12)',
+                  boxShadow: '0 0 0 1px var(--accent-success-muted)',
                 }}
               >
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-[0.6875rem] font-semibold tracking-wide uppercase" style={{ color: 'var(--color-fg-muted)' }}>
                     Signed record
                   </span>
-                  <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'rgba(40,200,64,0.12)', color: '#28C840' }}>
+                  <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'var(--accent-success-muted)', color: 'var(--accent-success)' }}>
                     Portable proof
                   </span>
                 </div>
                 <div className="space-y-2.5">
                   {recordEntries.map((row) => (
                     <div key={row.label} className="flex items-start gap-2.5">
-                      <span className="text-[0.625rem] font-semibold shrink-0 mt-0.5 uppercase tracking-wide" style={{ color: '#28C840' }}>&#10003;</span>
+                      <span className="text-[0.625rem] font-semibold shrink-0 mt-0.5 uppercase tracking-wide" style={{ color: 'var(--accent-success)' }}>&#10003;</span>
                       <div>
                         <span className="text-[0.625rem] font-medium uppercase tracking-wide" style={{ color: 'var(--color-fg-muted)' }}>{row.label}: </span>
                         <span className="text-[0.75rem]" style={{ color: 'var(--color-fg-secondary)' }}>{row.value}</span>
@@ -173,7 +173,7 @@ export function Comparison() {
                 </div>
                 <div
                   className="mt-4 pt-3 text-[0.6875rem] font-medium"
-                  style={{ borderTop: '1px solid var(--color-border)', color: '#28C840' }}
+                  style={{ borderTop: '1px solid var(--color-border)', color: 'var(--accent-success)' }}
                 >
                   Verifiable by any party, offline.
                 </div>
@@ -188,12 +188,12 @@ export function Comparison() {
               >
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-[0.6875rem] font-semibold tracking-wide uppercase" style={{ color: 'var(--color-fg-muted)' }}>Signed record</span>
-                  <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'rgba(40,200,64,0.12)', color: '#28C840' }}>Portable proof</span>
+                  <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'var(--accent-success-muted)', color: 'var(--accent-success)' }}>Portable proof</span>
                 </div>
                 <div className="space-y-2.5">
                   {recordEntries.map((row) => (
                     <div key={row.label} className="flex items-start gap-2.5">
-                      <span className="text-[0.625rem] font-semibold shrink-0 mt-0.5 uppercase tracking-wide" style={{ color: '#28C840' }}>&#10003;</span>
+                      <span className="text-[0.625rem] font-semibold shrink-0 mt-0.5 uppercase tracking-wide" style={{ color: 'var(--accent-success)' }}>&#10003;</span>
                       <div>
                         <span className="text-[0.625rem] font-medium uppercase tracking-wide" style={{ color: 'var(--color-fg-muted)' }}>{row.label}: </span>
                         <span className="text-[0.75rem]" style={{ color: 'var(--color-fg-secondary)' }}>{row.value}</span>
@@ -201,7 +201,7 @@ export function Comparison() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 pt-3 text-[0.6875rem] font-medium" style={{ borderTop: '1px solid var(--color-border)', color: '#28C840' }}>
+                <div className="mt-4 pt-3 text-[0.6875rem] font-medium" style={{ borderTop: '1px solid var(--color-border)', color: 'var(--accent-success)' }}>
                   Verifiable by any party, offline.
                 </div>
               </div>

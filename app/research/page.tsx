@@ -192,9 +192,9 @@ export default function ResearchPage() {
           {/* Limitations */}
           <div className="card" style={{
             padding: 'var(--space-8)',
-            border: '1px solid rgba(255, 107, 53, 0.3)',
+            border: '1px solid rgba(245, 158, 11, 0.3)',
             borderRadius: 'var(--radius-2xl)',
-            background: 'rgba(255, 107, 53, 0.03)',
+            background: 'rgba(245, 158, 11, 0.03)',
             marginBottom: 'var(--space-6)'
           }}>
             <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, marginBottom: 'var(--space-4)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>

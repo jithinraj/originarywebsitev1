@@ -8,8 +8,8 @@ const audiences = [
         <path d="M8 21h8M12 17v4" />
       </svg>
     ),
-    accent: '#1E4D8C',
-    accentBg: 'rgba(30,77,140,0.08)',
+    accent: 'var(--accent-brand)',
+    accentBg: 'var(--accent-brand-faint)',
     label: 'An agent books a resource through your API',
     detail: 'You need to know who authorized it, under what policy, and prove the decision later when the charge is disputed.',
     role: 'API operators',
@@ -22,8 +22,8 @@ const audiences = [
         <path d="M2 12l10 5 10-5" />
       </svg>
     ),
-    accent: '#28C840',
-    accentBg: 'rgba(40,200,64,0.08)',
+    accent: 'var(--accent-secondary)',
+    accentBg: 'var(--accent-secondary-faint)',
     label: 'An MCP tool call modifies production data',
     detail: 'The tool host needs a signed record of what was requested, what was allowed, and what the agent actually did.',
     role: 'MCP server hosts',
@@ -36,8 +36,8 @@ const audiences = [
         <path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
       </svg>
     ),
-    accent: '#8B5CF6',
-    accentBg: 'rgba(139,92,246,0.08)',
+    accent: 'var(--text-secondary)',
+    accentBg: 'var(--surface-card)',
     label: 'A partner asks for proof of an agent interaction',
     detail: 'You export a portable record they can verify independently, offline, without calling your systems.',
     role: 'Platform teams',
@@ -49,8 +49,8 @@ const audiences = [
         <path d="M12 3l8 4.5v5c0 4.694-3.298 9.087-8 10.5-4.702-1.413-8-5.806-8-10.5v-5L12 3z" />
       </svg>
     ),
-    accent: '#D97706',
-    accentBg: 'rgba(217,119,6,0.08)',
+    accent: 'var(--accent-warning)',
+    accentBg: 'var(--accent-warning-muted)',
     label: 'An auditor reviews agent-driven transactions',
     detail: 'Compliance needs exportable evidence tied to the policy that applied at decision time, not just logs.',
     role: 'Security and compliance',

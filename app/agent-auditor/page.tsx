@@ -412,9 +412,9 @@ export default function AgentAuditorPage() {
                 background: 'var(--code-bg-header)',
                 borderBottom: '1px solid var(--border-default)',
               }}>
-                <span style={{ width: 12, height: 12, borderRadius: '50%', background: '#ff5f57', display: 'inline-block' }} />
-                <span style={{ width: 12, height: 12, borderRadius: '50%', background: '#febc2e', display: 'inline-block' }} />
-                <span style={{ width: 12, height: 12, borderRadius: '50%', background: '#28c840', display: 'inline-block' }} />
+                <span style={{ width: 12, height: 12, borderRadius: '50%', background: 'var(--chrome-red)', display: 'inline-block' }} />
+                <span style={{ width: 12, height: 12, borderRadius: '50%', background: 'var(--chrome-yellow)', display: 'inline-block' }} />
+                <span style={{ width: 12, height: 12, borderRadius: '50%', background: 'var(--chrome-green)', display: 'inline-block' }} />
                 <div style={{
                   flex: 1,
                   marginLeft: 'var(--space-3)',

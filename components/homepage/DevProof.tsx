@@ -54,9 +54,9 @@ export function DevProof() {
               }}
             >
               <div className="flex items-center gap-2 mb-4">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F57]" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FEBC2E]" />
-                <span className="w-2.5 h-2.5 rounded-full bg-[#28C840]" />
+                <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'var(--chrome-red)' }} />
+                <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'var(--chrome-yellow)' }} />
+                <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'var(--chrome-green)' }} />
                 <span
                   className="ml-2 text-[0.6875rem] font-mono"
                   style={{ color: 'rgba(250,250,247,0.5)' }}

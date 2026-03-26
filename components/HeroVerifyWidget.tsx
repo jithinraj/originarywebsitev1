@@ -294,15 +294,15 @@ export default function HeroVerifyWidget() {
         }
 
         .dot:nth-child(1) {
-          background: linear-gradient(180deg, #ff6b5b 0%, #ff5147 100%);
+          background: linear-gradient(180deg, #DC2626 0%, #B91C1C 100%);
           box-shadow: 0 0 0 0.5px rgba(0,0,0,0.15), inset 0 -1px 2px rgba(0,0,0,0.1);
         }
         .dot:nth-child(2) {
-          background: linear-gradient(180deg, #ffca2c 0%, #e5a800 100%);
+          background: var(--chrome-yellow);
           box-shadow: 0 0 0 0.5px rgba(0,0,0,0.15), inset 0 -1px 2px rgba(0,0,0,0.1);
         }
         .dot:nth-child(3) {
-          background: linear-gradient(180deg, #2ed158 0%, #1db847 100%);
+          background: var(--chrome-green);
           box-shadow: 0 0 0 0.5px rgba(0,0,0,0.15), inset 0 -1px 2px rgba(0,0,0,0.1);
         }
 

@@ -80,7 +80,7 @@ export default function CodeBlock({ code, lang = "bash", className = "", tabs }:
           position: relative;
           border-radius: 12px;
           border: 1px solid var(--border-default);
-          background: var(--surface-code, #0a0a0a);
+          background: var(--surface-code, #111827);
           overflow: hidden;
         }
 

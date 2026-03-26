@@ -2,6 +2,7 @@ import { ImageResponse } from '@vercel/og'
 
 export const runtime = 'edge'
 
+// OG image renderer requires raw hex. Values must match design-system.css
 export async function GET() {
   return new ImageResponse(
     (
@@ -13,7 +14,7 @@ export async function GET() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#FAFAF7',
+          backgroundColor: '#F7F9FC',
           padding: '60px 80px',
         }}
       >
@@ -32,7 +33,7 @@ export async function GET() {
               width: '56px',
               height: '56px',
               borderRadius: '14px',
-              backgroundColor: '#161614',
+              backgroundColor: '#111827',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -42,7 +43,7 @@ export async function GET() {
               style={{
                 fontSize: '24px',
                 fontWeight: 700,
-                color: '#FAFAF7',
+                color: '#F7F9FC',
               }}
             >
               O
@@ -52,7 +53,7 @@ export async function GET() {
             style={{
               fontSize: '48px',
               fontWeight: 600,
-              color: '#161614',
+              color: '#111827',
               letterSpacing: '-0.02em',
             }}
           >
@@ -73,7 +74,7 @@ export async function GET() {
             style={{
               fontSize: '64px',
               fontWeight: 700,
-              color: '#161614',
+              color: '#111827',
               lineHeight: 1.1,
               letterSpacing: '-0.03em',
             }}
@@ -84,7 +85,7 @@ export async function GET() {
             style={{
               fontSize: '64px',
               fontWeight: 700,
-              color: '#5C5B56',
+              color: '#475467',
               lineHeight: 1.1,
               letterSpacing: '-0.03em',
             }}
@@ -99,7 +100,7 @@ export async function GET() {
             display: 'flex',
             marginTop: '40px',
             fontSize: '24px',
-            color: '#9D9C96',
+            color: '#667085',
             textAlign: 'center',
             maxWidth: '900px',
           }}
@@ -114,7 +115,7 @@ export async function GET() {
             position: 'absolute',
             bottom: '40px',
             fontSize: '20px',
-            color: '#C9C7C1',
+            color: '#98A2B3',
           }}
         >
           originary.xyz

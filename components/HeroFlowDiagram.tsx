@@ -221,9 +221,9 @@ export default function HeroFlowDiagram() {
 
         .chrome-dots { display: flex; gap: 6px; }
         .dot { width: 10px; height: 10px; border-radius: 50%; }
-        .dot-red { background: #ff5f57; opacity: 0.7; }
-        .dot-yellow { background: #febc2e; opacity: 0.7; }
-        .dot-green { background: #28c840; opacity: 0.7; }
+        .dot-red { background: var(--chrome-red); opacity: 0.7; }
+        .dot-yellow { background: var(--chrome-yellow); opacity: 0.7; }
+        .dot-green { background: var(--chrome-green); opacity: 0.7; }
 
         .chrome-title {
           flex: 1;

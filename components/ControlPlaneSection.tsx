@@ -325,7 +325,7 @@ pricing:
                     width: '12px',
                     height: '12px',
                     borderRadius: '50%',
-                    background: '#ff5f56'
+                    background: 'var(--chrome-red)'
                   }}
                 />
                 <div
@@ -333,7 +333,7 @@ pricing:
                     width: '12px',
                     height: '12px',
                     borderRadius: '50%',
-                    background: '#ffbd2e'
+                    background: 'var(--chrome-yellow)'
                   }}
                 />
                 <div
@@ -341,7 +341,7 @@ pricing:
                     width: '12px',
                     height: '12px',
                     borderRadius: '50%',
-                    background: '#27c93f'
+                    background: 'var(--chrome-green)'
                   }}
                 />
               </div>
