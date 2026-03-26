@@ -42,10 +42,10 @@ export default function Developers() {
           <div className="container">
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">Start here</span>
+                Choose the fastest path to your first <span className="text-gradient">signed record</span>
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                Pick your path: API, MCP, verify, or A2A.
+                Start from your environment: API, gateway, MCP server, verification workflow, or cross-agent handoff. Every path ends in the same outcome: an interaction record another party can verify.
               </p>
             </div>
           </div>

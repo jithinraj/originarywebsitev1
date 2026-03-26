@@ -141,7 +141,7 @@ export default function Gateway402() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--text-primary)'
               }}>
-                The <span className="text-gradient">payment infrastructure</span> for agents
+                HTTP 402 gateway for <span className="text-gradient">machine-payable APIs</span>
               </h1>
 
               <p style={{
@@ -152,7 +152,7 @@ export default function Gateway402() {
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
               }}>
-                An HTTP 402 gateway that sits in front of your API. When a request arrives without payment, it returns a 402 challenge with pricing. When payment proof arrives, it verifies and issues a signed PEAC record. Built on the x402 protocol spec.
+                Return payment-required challenges, verify payment proof, and issue signed records at the edge.
               </p>
 
               <div style={{

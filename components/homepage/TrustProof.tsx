@@ -25,7 +25,7 @@ const proofPoints = [
   {
     num: '05',
     title: 'Ed25519 signatures',
-    description: 'Every record is cryptographically signed and verifiable.',
+    description: 'Every record is signed with Ed25519 and independently verifiable.',
   },
   {
     num: '06',

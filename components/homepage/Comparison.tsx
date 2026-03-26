@@ -92,14 +92,13 @@ export function Comparison() {
               className="hp-text-display mt-5 max-w-[32rem] mx-auto"
               style={{ color: 'var(--color-fg)' }}
             >
-              Logs show what happened. Originary proves it.
+              Logs explain behavior. Records prove decisions.
             </h2>
             <p
               className="mt-5 hp-text-body-lg max-w-[34rem] mx-auto"
               style={{ color: 'var(--color-fg-secondary)' }}
             >
-              Logs and traces help with debugging. They do not replace
-              explicit policy decisions or exportable records.
+              Logs are useful for debugging inside your systems. They are weak evidence outside them. Originary returns signed records another party can inspect and verify independently.
             </p>
           </div>
         </AnimateIn>

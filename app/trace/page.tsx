@@ -118,7 +118,7 @@ export default function TracePage() {
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em'
               }}>
-                Agent access monitoring with <span className="text-gradient">signed evidence</span>
+                Monitor agent access. Export <span className="text-gradient">signed evidence.</span>
               </h1>
               <p style={{
                 fontSize: 'var(--text-xl)',
@@ -128,7 +128,7 @@ export default function TracePage() {
                 maxWidth: '700px',
                 margin: '0 auto var(--space-10) auto'
               }}>
-                See which agents access your APIs and content. Apply policy. Export verifiable interaction records.
+                See which automated clients touched your APIs and content, what policy applied, and what evidence exists afterward.
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <a

@@ -119,9 +119,9 @@ export default function Page() {
           <Problem />
           <Comparison />
           <WhoIsItFor />
+          <TrustProof />
           <WhyNow />
           {/* <ArchDiagram /> */}{/* preserved: disabled for now */}
-          <TrustProof />
           {/* <EnterpriseProof /> */}{/* merged into TrustProof */}
           {/* <HowItWorks /> */}{/* redundant with ArchDiagram */}
           <OpenStandard />

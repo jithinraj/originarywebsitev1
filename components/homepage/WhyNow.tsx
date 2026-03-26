@@ -9,7 +9,7 @@ const pressures = [
   {
     num: '02',
     label: 'Compliance is catching up',
-    detail: 'EU AI Act transparency obligations apply from August 2, 2026. Auditable records of automated decisions will be expected.',
+    detail: 'Compliance and review expectations for automated decisions are rising. Auditable records will be expected.',
   },
   {
     num: '03',
@@ -36,7 +36,7 @@ export function WhyNow() {
                 className="hp-text-display mt-5"
                 style={{ color: 'var(--color-fg)' }}
               >
-                Automated requests are crossing organizational boundaries faster than evidence standards are spreading
+                Evidence is not keeping up with automation
               </h2>
             </div>
           </AnimateIn>

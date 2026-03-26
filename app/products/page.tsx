@@ -105,10 +105,13 @@ export default function ProductsPage() {
           <div className="container">
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
               <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">What you can do with Originary</span>
+                <span className="text-gradient">Choose the surface that fits your evidence workflow</span>
               </h1>
-              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
+              <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                 Most teams start with Agent Auditor or Gateway 402. Add MCP Server for AI clients, Trace for monitoring, or lower-level building blocks for custom flows.
+              </p>
+              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-tertiary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
+                Each product handles a different stage of the evidence lifecycle.
               </p>
             </div>
           </div>

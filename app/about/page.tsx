@@ -121,7 +121,7 @@ export default function AboutPage() {
                 color: 'var(--text-primary)',
               }}
             >
-              About <span className="text-gradient">Originary</span>
+              We build the production layer for <span className="text-gradient">verifiable interaction records</span>
             </h1>
 
             <p
@@ -135,7 +135,7 @@ export default function AboutPage() {
                 fontWeight: 400,
               }}
             >
-              The verification layer for agent-facing systems. Built on PEAC, the open standard for verifiable interaction records.
+              Originary builds tools and deployment surfaces around PEAC, the open standard for verifiable interaction records.
             </p>
 
             <div

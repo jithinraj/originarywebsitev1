@@ -67,15 +67,12 @@ export function EvidenceTeaser() {
             {mockTabs.map((tab, i) => (
               <span
                 key={tab}
-                className="inline-flex items-center h-8 px-4 rounded-full text-[0.75rem] font-medium"
+                className="text-[0.8125rem]"
                 style={{
-                  border: '1px solid var(--border-default)',
-                  background: i === 0 ? 'var(--surface-elevated)' : 'transparent',
-                  color: i === 0 ? 'var(--text-primary)' : 'var(--text-tertiary)',
-                  boxShadow: i === 0 ? 'var(--shadow-xs)' : 'none',
+                  color: 'var(--text-muted)',
                 }}
               >
-                {tab}
+                {tab}{i < mockTabs.length - 1 ? <span style={{ margin: '0 6px', color: 'var(--border-hover)' }}>&middot;</span> : null}
               </span>
             ))}
           </motion.div>
