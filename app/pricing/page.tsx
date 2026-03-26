@@ -37,7 +37,7 @@ export default function PricingPage() {
       <main style={{ paddingTop: '80px' }}>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="section" style={{ background: 'var(--surface-elevated)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: '120px', paddingBottom: '48px' }}>
           <div className="container">
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
 
@@ -60,16 +60,18 @@ export default function PricingPage() {
                 Free and Open Source
               </div>
 
+              <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 'var(--space-4)' }}>PRICING</div>
               <h1 style={{
                 fontSize: 'clamp(var(--text-4xl), 6vw, var(--text-6xl))',
                 fontWeight: 700,
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
+                color: 'var(--text-primary)',
               }}>
-                <span className="text-gradient">Open protocol.</span>
+                Open protocol.
                 <br />
-                <span style={{ color: 'var(--text-primary)' }}>Commercial deployment when you need it.</span>
+                Commercial deployment when you need it.
               </h1>
 
               <p style={{

@@ -554,7 +554,7 @@ export default function LearnPage() {
                 <Link
                   href="/developers"
                   className="btn btn-lg"
-                  style={{ background: 'white', color: 'var(--accent-brand)', border: 'none' }}
+                  style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}
                 >
                   Start here
                 </Link>

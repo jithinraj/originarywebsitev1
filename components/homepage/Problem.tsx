@@ -76,7 +76,7 @@ export function Problem() {
                 >
                   <div
                     className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3"
-                    style={{ background: 'rgba(40,200,64,0.08)', color: 'var(--color-verified)' }}
+                    style={{ background: 'var(--accent-success-faint)', color: 'var(--color-verified)' }}
                   >
                     {q.icon}
                   </div>

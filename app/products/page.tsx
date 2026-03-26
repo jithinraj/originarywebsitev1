@@ -101,11 +101,12 @@ export default function ProductsPage() {
       <NavigationHeader />
       <main id="main-content" role="main" style={{ paddingTop: '80px' }}>
         {/* Hero */}
-        <section className="section">
+        <section className="section" style={{ paddingTop: '120px', paddingBottom: '48px' }}>
           <div className="container">
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
-              <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">Choose the surface that fits your evidence workflow</span>
+              <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 'var(--space-4)' }}>PRODUCTS</div>
+              <h1 style={{ marginBottom: 'var(--space-6)', color: 'var(--text-primary)', fontWeight: 700, fontSize: 'clamp(2rem, 4.5vw, 3.5rem)' }}>
+                Choose the surface that fits your evidence workflow
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
                 Most teams start with Agent Auditor or Gateway 402. Add MCP Server for AI clients, Trace for monitoring, or lower-level building blocks for custom flows.

@@ -91,34 +91,19 @@ export default function TracePage() {
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
         {/* Hero Section */}
-        <section className="section" style={{ background: 'var(--gradient-mesh)', paddingTop: 'var(--space-24)', paddingBottom: 'var(--space-24)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: '120px', paddingBottom: '48px' }}>
           <div className="container">
             <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 'var(--space-2)',
-                  background: 'var(--accent-brand-subtle)',
-                  border: '1px solid var(--accent-brand-muted)',
-                  borderRadius: 'var(--radius-full)',
-                  padding: 'var(--space-2) var(--space-4)',
-                  marginBottom: 'var(--space-4)',
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 600,
-                  color: 'var(--accent-brand)'
-                }}
-              >
-                Originary Trace
-              </div>
+              <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 'var(--space-4)' }}>TRACE</div>
               <h1 style={{
                 fontSize: 'clamp(var(--text-4xl), 6vw, var(--text-6xl))',
                 fontWeight: 700,
                 marginBottom: 'var(--space-6)',
                 lineHeight: 1.1,
-                letterSpacing: '-0.04em'
+                letterSpacing: '-0.04em',
+                color: 'var(--text-primary)',
               }}>
-                Monitor agent access. Export <span className="text-gradient">signed evidence.</span>
+                Monitor agent access. Export signed evidence.
               </h1>
               <p style={{
                 fontSize: 'var(--text-xl)',

@@ -9,7 +9,7 @@ export function DemoCTA() {
       <div className="hp-container">
         <motion.div
           className="relative rounded-xl sm:rounded-2xl px-5 py-10 sm:p-10 md:p-14 lg:p-20 overflow-hidden"
-          style={{ background: 'var(--color-fg)' }}
+          style={{ background: 'var(--text-primary)' }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -28,18 +28,18 @@ export function DemoCTA() {
               </h2>
               <p
                 className="mt-3 text-[1rem] leading-relaxed"
-                style={{ color: 'rgba(250,250,247,0.55)' }}
+                style={{ color: 'rgba(247,249,252,0.55)' }}
               >
                 Open a signed record or start issuing one
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                <Link href="/agent-auditor" className="hp-cta-light">
+                <Link href="/agent-auditor" className="hp-cta-light whitespace-nowrap">
                   Try Agent Auditor
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M3.5 7h7m0 0L7.5 4m3 3l-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Link>
-                <Link href="/developers" className="hp-cta-outline">
+                <Link href="/developers" className="hp-cta-outline whitespace-nowrap">
                   Start here
                 </Link>
               </div>
@@ -55,19 +55,19 @@ export function DemoCTA() {
               </h2>
               <p
                 className="mt-3 text-[1rem] leading-relaxed"
-                style={{ color: 'rgba(250,250,247,0.55)' }}
+                style={{ color: 'rgba(247,249,252,0.55)' }}
               >
                 Planning a deployment or procurement review?
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                <Link href="/contact" className="hp-cta-light">
-                  Talk to an engineer
+                <Link href="/contact" className="hp-cta-light whitespace-nowrap">
+                  Talk to us
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M3.5 7h7m0 0L7.5 4m3 3l-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Link>
-                <Link href="/trust" className="hp-cta-outline">
-                  Security and procurement
+                <Link href="/trust" className="hp-cta-outline whitespace-nowrap">
+                  Trust and security
                 </Link>
               </div>
             </div>

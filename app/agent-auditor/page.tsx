@@ -205,8 +205,8 @@ export default function AgentAuditorPage() {
           className="section"
           style={{
             background: 'var(--surface-elevated)',
-            paddingTop: 'var(--space-24)',
-            paddingBottom: 'var(--space-20)',
+            paddingTop: '120px',
+            paddingBottom: '48px',
           }}
         >
           <div className="container">
@@ -231,14 +231,16 @@ export default function AgentAuditorPage() {
                 Open Source — Apache-2.0
               </div>
 
+              <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 'var(--space-4)' }}>AGENT AUDITOR</div>
               <h1 style={{
                 fontSize: 'clamp(var(--text-4xl), 6.5vw, var(--text-6xl))',
                 fontWeight: 700,
                 lineHeight: 1.1,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
+                color: 'var(--text-primary)',
               }}>
-                <span className="text-gradient">Open and verify signed interaction records</span>
+                Open and verify signed interaction records
               </h1>
 
               <p style={{

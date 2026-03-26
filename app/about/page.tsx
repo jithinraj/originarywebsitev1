@@ -104,24 +104,27 @@ export default function AboutPage() {
             position: 'relative',
             background: 'var(--surface-elevated)',
             overflow: 'hidden',
+            paddingTop: '120px',
+            paddingBottom: '48px',
           }}
         >
           <div
             className="container"
             style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}
           >
+            <div style={{ ...reveal(heroReady, 0), fontSize: 'var(--text-xs)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 'var(--space-4)' }}>ABOUT</div>
             <h1
               style={{
                 ...reveal(heroReady, 0),
                 fontSize: 'clamp(var(--text-5xl), 8vw, var(--text-8xl))',
-                fontWeight: 800,
+                fontWeight: 700,
                 lineHeight: 1.05,
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
                 color: 'var(--text-primary)',
               }}
             >
-              We build the production layer for <span className="text-gradient">verifiable interaction records</span>
+              We build the production layer for verifiable interaction records
             </h1>
 
             <p
