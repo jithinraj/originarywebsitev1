@@ -104,8 +104,8 @@ export default function AboutPage() {
             position: 'relative',
             background: 'var(--surface-elevated)',
             overflow: 'hidden',
-            paddingTop: '120px',
-            paddingBottom: '48px',
+            paddingTop: '96px',
+            paddingBottom: '40px',
           }}
         >
           <div

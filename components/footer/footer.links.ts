@@ -66,7 +66,6 @@ export const FOOTER_COMPANY: FooterGroup = {
     { label: 'Pricing', href: '/pricing' },
     { label: 'Press', href: '/press' },
     { label: 'Contact', href: '/contact' },
-    { label: 'Governance', href: '/governance' },
   ],
 }
 

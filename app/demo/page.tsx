@@ -1022,7 +1022,7 @@ export default function DemoPage() {
               </p>
 
               <p className="hero-note">
-                Originary provides optional hosted components (Gateway 402, Verify API), but the core record and verification flow is protocol-native and portable.
+                Originary provides optional hosted components (Gateway 402, Verify), but the core record and verification flow is protocol-native and portable.
               </p>
             </div>
 
@@ -1149,7 +1149,7 @@ export default function DemoPage() {
             <div className="card demo-card">
               <div className="section-header">
                 <h2>Receipt verification</h2>
-                <p>Offline via JWKS is default. Verify API is optional convenience.</p>
+                <p>Offline via JWKS is default. Hosted verification is optional.</p>
               </div>
 
               <div className="verify-grid">
@@ -1179,7 +1179,7 @@ peac verify "<PEAC-Receipt JWS>" \\
                 <div>
                   <h3 className="verify-title">
                     <span className="tag-optional">OPTIONAL</span>
-                    Verify API (hosted helper)
+                    Verify (hosted helper)
                   </h3>
                   <AnimatedCodeBlock
                     code={`POST https://api.originary.xyz/verify
@@ -1204,7 +1204,7 @@ Content-Type: application/json
               </div>
 
               <div className="proof-box">
-                <strong>✓ Cryptographic proof:</strong> Each PEAC-Receipt is signed (Ed25519) and can be verified offline using the issuer JWKS. A hosted Verify API is optional convenience.
+                <strong>✓ Cryptographic proof:</strong> Each PEAC-Receipt is signed (Ed25519) and can be verified offline using the issuer JWKS. Hosted verification is optional.
               </div>
             </div>
 

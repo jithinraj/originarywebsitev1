@@ -205,8 +205,8 @@ export default function AgentAuditorPage() {
           className="section"
           style={{
             background: 'var(--surface-elevated)',
-            paddingTop: '120px',
-            paddingBottom: '48px',
+            paddingTop: '96px',
+            paddingBottom: '40px',
           }}
         >
           <div className="container">

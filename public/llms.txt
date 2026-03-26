@@ -1,6 +1,6 @@
-# Originary | Verify every agent request. Prove every decision.
+# Originary | Prove what agents did
 
-> Originary verifies agent requests, applies policy, and returns signed records you can prove later. PEAC is the open standard underneath. Self-hostable. Offline-verifiable. No lock-in.
+> Originary is the production verification and evidence layer for agent-facing systems. It verifies requests, applies policy, and returns signed records you can prove later, across teams, vendors, and audits. PEAC is the open standard underneath. Self-hostable. Offline-verifiable. No lock-in.
 
 Last updated: 2026-03-27
 

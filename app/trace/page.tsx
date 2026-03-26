@@ -91,7 +91,7 @@ export default function TracePage() {
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
         {/* Hero Section */}
-        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: '120px', paddingBottom: '48px' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: '96px', paddingBottom: '40px' }}>
           <div className="container">
             <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
               <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 'var(--space-4)' }}>TRACE</div>

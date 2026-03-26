@@ -8,11 +8,11 @@ import { FileCode, Zap, MessageSquare, Settings, Brain, FileText } from 'lucide-
 export const metadata: Metadata = {
   title: 'Integrations | Agentic Web Protocols',
   description: 'Originary integrations for agentic web protocols. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A with open standards.',
-  keywords: 'x402, HTTP 402, AI Access, MCP, A2A, ACP, AIPREF, PEAC protocol, agentic web, agentic commerce, agent integrations',
+  keywords: 'x402, HTTP 402, AI Access, MCP, A2A, ACP, AIPREF, PEAC protocol, agentic web, agent verification, agent integrations',
   robots: 'index,follow',
   openGraph: {
     title: 'Integrations | Agentic Web Protocols',
-    description: 'Originary integrations for agentic web protocols and agentic commerce. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A.',
+    description: 'Originary integrations for agentic web protocols and agent verification. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A.',
     url: '/integrations',
     siteName: 'Originary',
     type: 'website',
@@ -99,7 +99,7 @@ export default function IntegrationsPage() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Originary Integrations | Agentic Web Standards',
-    description: 'Originary integrations for agentic web standards and agentic commerce standards including HTTP 402, x402, ACP, AIPREF, MCP, and A2A.',
+    description: 'Originary integrations for agentic web standards and agent verification standards including HTTP 402, x402, ACP, AIPREF, MCP, and A2A.',
     itemListElement: integrations.map((integration, index) => ({
       '@type': 'ListItem',
       position: index + 1,

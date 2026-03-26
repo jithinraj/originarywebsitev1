@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { NAV_PRIMARY, NAV_CTA } from '@/lib/site-registry'
 
-const links = NAV_PRIMARY.slice(0, 4)
+const links = NAV_PRIMARY.slice(0, 5)
 
 export default function NavigationHeader() {
   const [open, setOpen] = useState(false)

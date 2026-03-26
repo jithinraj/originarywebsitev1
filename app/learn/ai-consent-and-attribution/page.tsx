@@ -349,7 +349,7 @@ export default function AIConsentPage() {
                       <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Declare your AI preferences</p>
                     </Link>
                     <Link href="/declare" className="card" style={{ textDecoration: 'none', padding: 'var(--space-5)' }}>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Declare (Policy Kit)</h4>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Declare</h4>
                       <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Generate peac.txt and aipref.json</p>
                     </Link>
                   </div>

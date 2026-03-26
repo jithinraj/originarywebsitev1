@@ -6,13 +6,13 @@ import { ArrowRight, Zap, Shield, BarChart } from 'lucide-react'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata: Metadata = {
-  title: 'Verify API',
+  title: 'Verify',
   description: 'Stateless verification for interaction records and JWS signatures. Deterministic validation with normalized fields.',
   keywords: 'interaction record verification, JWS validation, Ed25519 signature verification, offline verification, JWKS',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Verify API | Originary',
+    title: 'Verify | Originary',
     description: 'Stateless verification for interaction records and JWS signatures. Deterministic validation with normalized fields.',
     url: '/products/verify',
     images: ['/og'],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Verify API | Originary',
+    title: 'Verify | Originary',
     description: 'Stateless verification for interaction records and JWS signatures. Deterministic validation with normalized fields.',
     images: ['/og'],
     site: '@originaryx',
@@ -39,7 +39,7 @@ export default function VerifyAPI() {
       <div className="container" style={{ paddingTop: '100px', paddingBottom: 'var(--space-4)' }}>
         <Breadcrumb items={[
           { label: 'Products', href: '/products' },
-          { label: 'Verify API' }
+          { label: 'Verify' }
         ]} />
       </div>
       <main style={{ paddingTop: '0' }}>

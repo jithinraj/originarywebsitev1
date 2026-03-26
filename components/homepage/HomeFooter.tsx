@@ -17,9 +17,11 @@ const columns = [
   {
     title: 'Developers',
     links: [
+      { label: 'Proof Check', href: '/agent-proof-check' },
       { label: 'Start here', href: '/developers' },
       { label: 'Downloads', href: '/downloads' },
       { label: 'Demo', href: '/demo' },
+      { label: 'Conformance', href: '/conformance' },
       { label: 'Verify online', href: '/verify' },
     ],
   },
@@ -30,12 +32,14 @@ const columns = [
       { label: 'Blog', href: '/blog' },
       { label: 'PEAC Protocol', href: '/peac' },
       { label: 'Integrations', href: '/integrations' },
+      { label: 'Glossary', href: '/glossary' },
     ],
   },
   {
     title: 'Company',
     links: [
       { label: 'About', href: '/about' },
+      { label: 'Enterprise', href: '/enterprise' },
       { label: 'Pricing', href: '/pricing' },
       { label: 'Press', href: '/press' },
       { label: 'Contact', href: '/contact' },
