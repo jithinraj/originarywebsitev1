@@ -87,7 +87,7 @@ export default function NavigationHeader() {
                 fontWeight: 500,
                 color: 'var(--text-inverted)',
                 background: 'var(--text-primary)',
-                borderRadius: '62px',
+                borderRadius: '12px',
                 textDecoration: 'none',
                 transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
               }}
@@ -163,7 +163,7 @@ export default function NavigationHeader() {
                   fontWeight: 500,
                   color: 'var(--text-inverted)',
                   background: 'var(--text-primary)',
-                  borderRadius: '62px',
+                  borderRadius: '12px',
                   textDecoration: 'none',
                 }}
               >

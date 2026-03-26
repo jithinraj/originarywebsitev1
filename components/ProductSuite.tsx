@@ -347,7 +347,7 @@ export default function ProductSuite() {
 
         .card-status.available {
           background: var(--accent-success-muted, rgba(34, 197, 94, 0.1));
-          color: var(--accent-success, #22c55e);
+          color: var(--accent-success, #16A34A);
         }
 
         .card-status.preview {

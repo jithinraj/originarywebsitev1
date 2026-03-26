@@ -224,7 +224,7 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: '#FAFAF7',
+  themeColor: '#F7F9FC', // matches var(--surface-base)
   colorScheme: 'light',
   viewportFit: 'cover',
 }

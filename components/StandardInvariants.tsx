@@ -85,7 +85,7 @@ export default function StandardInvariants() {
       <style jsx>{`
         .invariants-section {
           padding: 120px 0;
-          background: #0a0a0b;
+          background: var(--code-bg);
         }
 
         .container {

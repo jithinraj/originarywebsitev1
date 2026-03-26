@@ -533,9 +533,9 @@ function AnimatedCodeBlock({
           height: 8px;
           border-radius: 50%;
         }
-        .dot-red { background: #ff5f56; }
-        .dot-yellow { background: #ffbd2e; }
-        .dot-green { background: #27c93f; }
+        .dot-red { background: var(--chrome-red); }
+        .dot-yellow { background: var(--chrome-yellow); }
+        .dot-green { background: var(--chrome-green); }
         .copy-btn {
           display: flex;
           align-items: center;

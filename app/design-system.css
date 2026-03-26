@@ -12,80 +12,80 @@
   color-scheme: light;
 
   /* === SEMANTIC SURFACE COLORS (Light Mode Default) === */
-  --surface-base: #FAFAF7;
+  --surface-base: #F7F9FC;
   --surface-elevated: #FFFFFF;
   --surface-elevated-translucent: rgba(255, 255, 255, 0.92);
-  --surface-subtle: #F5F5F0;
-  --surface-card: rgba(0, 0, 0, 0.02);
-  --surface-card-hover: rgba(0, 0, 0, 0.04);
+  --surface-subtle: #EEF2F7;
+  --surface-card: rgba(15, 23, 42, 0.02);
+  --surface-card-hover: rgba(15, 23, 42, 0.04);
   --surface-overlay: rgba(255, 255, 255, 0.8);
 
   /* === SEMANTIC BORDER COLORS === */
-  --border-subtle: rgba(0, 0, 0, 0.04);
-  --border-default: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.12);
-  --border-active: rgba(0, 0, 0, 0.16);
-  --border-brand: rgba(99, 91, 255, 0.3);
+  --border-subtle: rgba(15, 23, 42, 0.06);
+  --border-default: rgba(15, 23, 42, 0.10);
+  --border-hover: rgba(15, 23, 42, 0.16);
+  --border-active: rgba(15, 23, 42, 0.20);
+  --border-brand: rgba(47, 91, 255, 0.32);
 
   /* === SEMANTIC TEXT COLORS (WCAG AA Compliant) === */
-  --text-primary: #1A1A1A;
-  --text-secondary: #5A5A5A;
-  --text-tertiary: #7A7A7A;
-  --text-muted: #9A9A9A;
+  --text-primary: #111827;
+  --text-secondary: #475467;
+  --text-tertiary: #667085;
+  --text-muted: #98A2B3;
   --text-inverted: #FAFAFA;
 
   /* === SEMANTIC ACCENT COLORS === */
-  --accent-brand: #635bff;
-  --accent-brand-hover: #7c75ff;
-  --accent-brand-muted: rgba(99, 91, 255, 0.15);
-  --accent-brand-subtle: rgba(99, 91, 255, 0.1);
-  --accent-brand-faint: rgba(99, 91, 255, 0.05);
-  --accent-brand-glow: rgba(99, 91, 255, 0.4);
+  --accent-brand: #2F5BFF;
+  --accent-brand-hover: #2447F9;
+  --accent-brand-muted: rgba(47, 91, 255, 0.15);
+  --accent-brand-subtle: rgba(47, 91, 255, 0.1);
+  --accent-brand-faint: rgba(47, 91, 255, 0.05);
+  --accent-brand-glow: rgba(47, 91, 255, 0.4);
 
   /* Secondary - Teal/Mint for verification, success states */
-  --accent-secondary: #00d4aa;
-  --accent-secondary-muted: rgba(0, 212, 170, 0.15);
-  --accent-secondary-subtle: rgba(0, 212, 170, 0.1);
-  --accent-secondary-faint: rgba(0, 212, 170, 0.05);
-  --accent-secondary-border: rgba(0, 212, 170, 0.3);
+  --accent-secondary: #14B8A6;
+  --accent-secondary-muted: rgba(20, 184, 166, 0.15);
+  --accent-secondary-subtle: rgba(20, 184, 166, 0.1);
+  --accent-secondary-faint: rgba(20, 184, 166, 0.05);
+  --accent-secondary-border: rgba(20, 184, 166, 0.3);
 
   /* Tertiary - Orange for accents, highlights */
-  --accent-tertiary: #ff6b35;
-  --accent-tertiary-muted: rgba(255, 107, 53, 0.15);
-  --accent-tertiary-subtle: rgba(255, 107, 53, 0.1);
-  --accent-tertiary-faint: rgba(255, 107, 53, 0.05);
+  --accent-tertiary: #F59E0B;
+  --accent-tertiary-muted: rgba(245, 158, 11, 0.15);
+  --accent-tertiary-subtle: rgba(245, 158, 11, 0.1);
+  --accent-tertiary-faint: rgba(245, 158, 11, 0.05);
 
   /* Success - Restrained enterprise green */
-  --accent-success: #22c55e;
-  --accent-success-faint: rgba(34, 197, 94, 0.05);
-  --accent-success-subtle: rgba(34, 197, 94, 0.1);
-  --accent-success-muted: rgba(34, 197, 94, 0.12);
-  --accent-success-border: rgba(34, 197, 94, 0.3);
-  --accent-success-glow: rgba(34, 197, 94, 0.4);
+  --accent-success: #16A34A;
+  --accent-success-faint: rgba(22, 163, 74, 0.05);
+  --accent-success-subtle: rgba(22, 163, 74, 0.1);
+  --accent-success-muted: rgba(22, 163, 74, 0.12);
+  --accent-success-border: rgba(22, 163, 74, 0.3);
+  --accent-success-glow: rgba(22, 163, 74, 0.4);
 
   /* Warning */
-  --accent-warning: #f59e0b;
-  --accent-warning-muted: rgba(245, 158, 11, 0.12);
-  --accent-warning-border: rgba(245, 158, 11, 0.3);
+  --accent-warning: #D97706;
+  --accent-warning-muted: rgba(217, 119, 6, 0.12);
+  --accent-warning-border: rgba(217, 119, 6, 0.3);
 
   /* Error */
-  --accent-error: #ef4444;
-  --accent-error-muted: rgba(239, 68, 68, 0.12);
-  --accent-error-border: rgba(239, 68, 68, 0.3);
+  --accent-error: #DC2626;
+  --accent-error-muted: rgba(220, 38, 38, 0.12);
+  --accent-error-border: rgba(220, 38, 38, 0.3);
 
   /* Electric accent - use sparingly */
-  --accent-electric: #00D1FF;
-  --accent-electric-glow: rgba(0, 209, 255, 0.3);
+  --accent-electric: #06B6D4;
+  --accent-electric-glow: rgba(6, 182, 212, 0.3);
 
   /* === HERO GRADIENT MESH === */
   --gradient-hero-mesh:
-    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(99, 91, 255, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse 50% 50% at 50% 100%, rgba(99, 91, 255, 0.08) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(47, 91, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(20, 184, 166, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 50% 100%, rgba(47, 91, 255, 0.06) 0%, transparent 50%);
 
   /* === GLASS EFFECTS (Light Mode) === */
-  --glass-bg: rgba(255, 255, 255, 0.6);
-  --glass-bg-hover: rgba(255, 255, 255, 0.8);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-bg-hover: rgba(255, 255, 255, 0.88);
   --glass-border: rgba(0, 0, 0, 0.06);
   --glass-border-hover: rgba(0, 0, 0, 0.1);
   --glass-blur: blur(20px);
@@ -95,24 +95,24 @@
   --glass-card-bg: rgba(255, 255, 255, 0.7);
   --glass-card-bg-hover: rgba(255, 255, 255, 0.85);
   --glass-card-border: var(--border-default);
-  --glass-card-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--border-default);
-  --glass-card-shadow-hover: 0 12px 40px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--border-hover);
+  --glass-card-shadow: 0 4px 24px -8px rgba(16, 24, 40, 0.08), 0 0 0 1px var(--border-default);
+  --glass-card-shadow-hover: 0 12px 40px -12px rgba(16, 24, 40, 0.12), 0 0 0 1px var(--border-hover);
 
   /* === GRADIENT MESH BACKGROUNDS === */
-  --gradient-mesh-purple: rgba(99, 91, 255, 0.15);
-  --gradient-mesh-teal: rgba(0, 212, 170, 0.1);
-  --gradient-mesh-light-purple: rgba(99, 91, 255, 0.08);
-  --gradient-mesh-light-teal: rgba(0, 212, 170, 0.06);
+  --gradient-mesh-purple: rgba(47, 91, 255, 0.15);
+  --gradient-mesh-teal: rgba(20, 184, 166, 0.1);
+  --gradient-mesh-light-purple: rgba(47, 91, 255, 0.08);
+  --gradient-mesh-light-teal: rgba(20, 184, 166, 0.06);
 
   /* === ORB COLORS === */
-  --orb-purple: rgba(99, 91, 255, 0.3);
-  --orb-teal: rgba(0, 212, 170, 0.2);
+  --orb-purple: rgba(47, 91, 255, 0.3);
+  --orb-teal: rgba(20, 184, 166, 0.2);
 
   /* === GLOW EFFECTS (Light Mode) === */
-  --glow-brand: 0 0 40px -10px rgba(99, 91, 255, 0.25);
-  --glow-brand-intense: 0 0 60px -10px rgba(99, 91, 255, 0.3), 0 0 100px -20px rgba(99, 91, 255, 0.15);
-  --glow-success: 0 0 40px -10px rgba(0, 217, 36, 0.25);
-  --glow-electric: 0 0 40px -10px rgba(0, 209, 255, 0.25);
+  --glow-brand: 0 0 40px -10px rgba(47, 91, 255, 0.25);
+  --glow-brand-intense: 0 0 60px -10px rgba(47, 91, 255, 0.3), 0 0 100px -20px rgba(47, 91, 255, 0.15);
+  --glow-success: 0 0 40px -10px rgba(22, 163, 74, 0.25);
+  --glow-electric: 0 0 40px -10px rgba(6, 182, 212, 0.25);
   --glow-subtle: 0 0 60px -15px rgba(0, 0, 0, 0.04);
 
   /* === CODE SYNTAX THEME (Dark code blocks on light page) === */
@@ -131,16 +131,16 @@
   --chrome-green: #27c93f;
 
   /* === BUTTON STANDARD === */
-  --btn-radius: 10px;
+  --btn-radius: 12px;
   --btn-padding-sm: 8px 16px;
   --btn-padding-md: 12px 24px;
   --btn-padding-lg: 16px 32px;
 
   /* === PREMIUM SHADOWS (Light Mode) === */
-  --shadow-card: 0 4px 24px -8px rgba(0, 0, 0, 0.06), 0 0 0 1px var(--border-default);
-  --shadow-card-hover: 0 12px 40px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--border-hover);
-  --shadow-elevated: 0 24px 48px -16px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--border-default);
-  --shadow-modal: 0 32px 64px -16px rgba(0, 0, 0, 0.12), 0 0 0 1px var(--border-default);
+  --shadow-card: 0 12px 32px -12px rgba(16, 24, 40, 0.10), 0 0 0 1px var(--border-default);
+  --shadow-card-hover: 0 20px 48px -16px rgba(16, 24, 40, 0.14), 0 0 0 1px var(--border-hover);
+  --shadow-elevated: 0 24px 56px -20px rgba(16, 24, 40, 0.14), 0 0 0 1px var(--border-default);
+  --shadow-modal: 0 32px 72px -20px rgba(16, 24, 40, 0.18), 0 0 0 1px var(--border-default);
 
   /* === RAW COLORS (preserved for compatibility) === */
   --white: #ffffff;
@@ -160,58 +160,57 @@
   --gray-950: #09090b;
 
   /* Brand Colors */
-  --brand-primary: #635bff;
-  --brand-primary-rgb: 99, 91, 255;
-  --brand-primary-light: #7c75ff;
-  --brand-primary-dark: #443aff;
-  --brand-secondary: #00d4aa;
-  --brand-accent: #ff6b35;
+  --brand-primary: #2F5BFF;
+  --brand-primary-rgb: 47, 91, 255;
+  --brand-primary-light: #4B73FF;
+  --brand-primary-dark: #1D4ED8;
+  --brand-secondary: #14B8A6;
+  --brand-accent: #F59E0B;
 
   /* Electric Accent - Futuristic AI/Tech Feel */
-  --accent-electric: #00D1FF;
-  --accent-electric-light: #33DBFF;
-  --accent-electric-dim: rgba(0, 209, 255, 0.1);
-  --accent-electric-glow: rgba(0, 209, 255, 0.25);
+  --accent-electric: #06B6D4;
+  --accent-electric-light: #22D3EE;
+  --accent-electric-dim: rgba(6, 182, 212, 0.1);
+  --accent-electric-glow: rgba(6, 182, 212, 0.25);
 
   /* Semantic Colors (legacy - use --accent-* instead) */
-  --success: #22c55e;
-  --warning: #f59e0b;
-  --error: #ef4444;
-  --info: #635bff;
+  --success: #16A34A;
+  --warning: #D97706;
+  --error: #DC2626;
+  --info: #2F5BFF;
 
   /* === GRADIENTS === */
-  --gradient-brand: linear-gradient(135deg, #635bff 0%, #443aff 50%, #00d4aa 100%);
+  --gradient-brand: linear-gradient(135deg, #2F5BFF 0%, #1D4ED8 58%, #14B8A6 100%);
   --gradient-surface: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
-  --gradient-mesh: radial-gradient(circle at 25% 25%, rgba(99,91,255,0.08) 0%, transparent 50%),
-                   radial-gradient(circle at 75% 75%, rgba(0,212,170,0.06) 0%, transparent 50%),
-                   radial-gradient(circle at 50% 50%, rgba(255,107,53,0.04) 0%, transparent 50%);
-  --gradient-hero: linear-gradient(180deg, rgba(99,91,255,0.02) 0%, rgba(255,255,255,0) 100%);
+  --gradient-mesh: radial-gradient(circle at 25% 25%, rgba(47,91,255,0.08) 0%, transparent 50%),
+                   radial-gradient(circle at 75% 75%, rgba(20,184,166,0.06) 0%, transparent 50%);
+  --gradient-hero: linear-gradient(180deg, rgba(47,91,255,0.02) 0%, rgba(255,255,255,0) 100%);
 
   /* Page section gradients */
   --gradient-section: linear-gradient(135deg, var(--accent-brand-faint) 0%, var(--accent-secondary-faint) 100%);
-  --gradient-card-featured: linear-gradient(135deg, rgba(99, 91, 255, 0.03) 0%, rgba(0, 212, 170, 0.03) 100%);
-  --gradient-orb-purple: radial-gradient(circle, rgba(99, 91, 255, 0.12) 0%, transparent 70%);
-  --gradient-orb-teal: radial-gradient(circle, rgba(0, 212, 170, 0.08) 0%, transparent 70%);
+  --gradient-card-featured: linear-gradient(135deg, rgba(47, 91, 255, 0.03) 0%, rgba(20, 184, 166, 0.03) 100%);
+  --gradient-orb-purple: radial-gradient(circle, rgba(47, 91, 255, 0.12) 0%, transparent 70%);
+  --gradient-orb-teal: radial-gradient(circle, rgba(20, 184, 166, 0.08) 0%, transparent 70%);
   --gradient-overlay-white: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 50%);
 
   /* === SHADOWS - DEPTH SYSTEM === */
-  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-xs: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-sm: 0 2px 8px rgba(16, 24, 40, 0.06);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-elevated: 0 32px 64px -12px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(255, 255, 255, 0.05);
-  --shadow-glow: 0 0 32px -8px rgba(99, 91, 255, 0.3);
+  --shadow-elevated: 0 32px 64px -12px rgba(16, 24, 40, 0.14), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --shadow-glow: 0 0 32px -8px rgba(47, 91, 255, 0.3);
 
   /* Premium Shadows - Apple-like subtle depth */
   --shadow-premium: 0 2px 4px rgba(0, 0, 0, 0.02), 0 8px 16px rgba(0, 0, 0, 0.04), 0 16px 32px rgba(0, 0, 0, 0.04);
   --shadow-premium-hover: 0 4px 8px rgba(0, 0, 0, 0.03), 0 12px 24px rgba(0, 0, 0, 0.06), 0 24px 48px rgba(0, 0, 0, 0.06);
 
   /* Electric Glow Shadows */
-  --shadow-glow-electric: 0 0 20px -4px rgba(0, 209, 255, 0.3), 0 0 40px -8px rgba(0, 209, 255, 0.2);
-  --shadow-glow-electric-intense: 0 0 30px -4px rgba(0, 209, 255, 0.4), 0 0 60px -8px rgba(0, 209, 255, 0.25);
-  --shadow-glow-brand: 0 4px 20px -4px rgba(99, 91, 255, 0.35), 0 8px 40px -8px rgba(99, 91, 255, 0.25);
+  --shadow-glow-electric: 0 0 20px -4px rgba(6, 182, 212, 0.3), 0 0 40px -8px rgba(6, 182, 212, 0.2);
+  --shadow-glow-electric-intense: 0 0 30px -4px rgba(6, 182, 212, 0.4), 0 0 60px -8px rgba(6, 182, 212, 0.25);
+  --shadow-glow-brand: 0 4px 20px -4px rgba(47, 91, 255, 0.35), 0 8px 40px -8px rgba(47, 91, 255, 0.25);
 
   /* === TYPOGRAPHY SYSTEM === */
   --font-display: var(--font-geist-sans), var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -1420,7 +1419,7 @@ table {
   position: absolute;
   inset: -1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(99,91,255,0.1) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(47,91,255,0.1) 100%);
   z-index: -1;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
@@ -1489,7 +1488,7 @@ table {
   width: 100%;
   max-width: 1200px;
   height: 600px;
-  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(99, 91, 255, 0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(47, 91, 255, 0.08) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -1515,9 +1514,9 @@ table {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-radius: var(--radius-full);
-  background: rgba(99, 91, 255, 0.1);
+  background: rgba(47, 91, 255, 0.1);
   color: var(--brand-primary);
-  border: 1px solid rgba(99, 91, 255, 0.2);
+  border: 1px solid rgba(47, 91, 255, 0.2);
 }
 
 .badge-success {
@@ -1710,7 +1709,7 @@ table {
 .deep-dive-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(99, 91, 255, 0.3);
+  border-color: rgba(47, 91, 255, 0.3);
 }
 
 @media (max-width: 1024px) {
@@ -1796,12 +1795,12 @@ table {
   color-scheme: light;
 
   /* Surface colors - warm cream palette */
-  --surface-base: #FAFAF7;
+  --surface-base: #F7F9FC;
   --surface-elevated: #FFFFFF;
   --surface-elevated-translucent: rgba(255, 255, 255, 0.85);
   --surface-subtle: #F3F2EE;
   --surface-card: #FFFFFF;
-  --surface-card-hover: #FAFAF7;
+  --surface-card-hover: #F7F9FC;
   --surface-overlay: rgba(250, 250, 247, 0.9);
 
   /* Border colors - warm */
@@ -1811,12 +1810,12 @@ table {
   --border-active: #9D9C96;
   --border-brand: rgba(22, 22, 20, 0.2);
 
-  /* Text colors - warm charcoal (WCAG AA compliant on #FAFAF7) */
+  /* Text colors - warm charcoal (WCAG AA compliant on #F7F9FC) */
   --text-primary: #161614;
   --text-secondary: #5C5B56;
   --text-tertiary: #767571;
   --text-muted: #908E88;
-  --text-inverted: #FAFAF7;
+  --text-inverted: #F7F9FC;
 
   /* Accent colors - dark charcoal (matches homepage) */
   --accent-brand: #161614;
@@ -1857,7 +1856,7 @@ table {
 
   /* Cards (light mode - warm) */
   --glass-card-bg: #FFFFFF;
-  --glass-card-bg-hover: #FAFAF7;
+  --glass-card-bg-hover: #F7F9FC;
   --glass-card-border: #E2E0DB;
   --glass-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px #E2E0DB;
   --glass-card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.06), 0 0 0 1px #C9C7C1;
@@ -2310,7 +2309,7 @@ button:hover svg {
 .search-input:focus {
   outline: none;
   border-color: var(--brand-primary);
-  box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(47, 91, 255, 0.1);
 }
 
 .search-wrapper {
@@ -2553,8 +2552,8 @@ button:hover svg {
 }
 
 .btn-magnetic.btn-primary:hover {
-  box-shadow: 0 8px 25px -5px rgba(99, 91, 255, 0.4),
-              0 4px 10px -5px rgba(99, 91, 255, 0.2);
+  box-shadow: 0 8px 25px -5px rgba(47, 91, 255, 0.4),
+              0 4px 10px -5px rgba(47, 91, 255, 0.2);
 }
 
 .btn-magnetic.btn-ghost:hover {
@@ -2625,7 +2624,7 @@ button:hover svg {
   height: 600px;
   top: -200px;
   right: -100px;
-  background: radial-gradient(circle, rgba(99, 91, 255, 0.15) 0%, rgba(99, 91, 255, 0.05) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(47, 91, 255, 0.15) 0%, rgba(47, 91, 255, 0.05) 50%, transparent 70%);
   animation: gradientMorph1 8s ease-in-out infinite alternate;
 }
 
@@ -2677,7 +2676,7 @@ button:hover svg {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(99, 91, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(47, 91, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
   border-radius: 50%;
   filter: blur(60px);
   opacity: 0.8;
@@ -2807,7 +2806,7 @@ html.lenis, html.lenis body {
   height: 6px;
   border-radius: 50%;
   background: var(--brand-primary);
-  box-shadow: 0 0 8px rgba(99, 91, 255, 0.5);
+  box-shadow: 0 0 8px rgba(47, 91, 255, 0.5);
 }
 
 .home-title {

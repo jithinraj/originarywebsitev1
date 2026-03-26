@@ -104,7 +104,7 @@ export function LogsVsRecords() {
                   <span className="text-[0.75rem] font-semibold tracking-wide uppercase" style={{ color: 'var(--color-fg-muted)' }}>
                     Signed interaction record
                   </span>
-                  <span className="text-[0.625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'rgba(40,200,64,0.12)', color: '#28C840' }}>
+                  <span className="text-[0.625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'var(--accent-success-muted)', color: 'var(--accent-success)' }}>
                     Portable proof
                   </span>
                 </div>
@@ -117,7 +117,7 @@ export function LogsVsRecords() {
                     { label: 'Verification', value: 'passed locally, no callback required' },
                   ].map((row) => (
                     <div key={row.label} className="flex items-start gap-3">
-                      <span className="text-[0.6875rem] font-semibold shrink-0 mt-0.5 uppercase tracking-wide" style={{ color: '#28C840' }}>
+                      <span className="text-[0.6875rem] font-semibold shrink-0 mt-0.5 uppercase tracking-wide" style={{ color: 'var(--accent-success)' }}>
                         &#10003;
                       </span>
                       <div>
@@ -129,7 +129,7 @@ export function LogsVsRecords() {
                 </div>
                 <div
                   className="mt-5 pt-4 text-[0.75rem] font-medium"
-                  style={{ borderTop: '1px solid var(--color-border)', color: '#28C840' }}
+                  style={{ borderTop: '1px solid var(--color-border)', color: 'var(--accent-success)' }}
                 >
                   Portable signed proof. Verifiable by any party, offline.
                 </div>

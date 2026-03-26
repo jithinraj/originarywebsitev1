@@ -42,7 +42,7 @@ export default function Error({
           align-items: center;
           justify-content: center;
           padding: 24px;
-          background: #fafafa;
+          background: var(--surface-base);
         }
 
         .error-container {
@@ -54,20 +54,20 @@ export default function Error({
           font-size: 120px;
           font-weight: 700;
           line-height: 1;
-          color: #e5e5e5;
+          color: var(--text-muted);
           margin-bottom: 16px;
         }
 
         .error-title {
           font-size: 28px;
           font-weight: 600;
-          color: #0a0a0a;
+          color: var(--text-primary);
           margin: 0 0 12px;
         }
 
         .error-description {
           font-size: 16px;
-          color: #737373;
+          color: var(--text-tertiary);
           line-height: 1.6;
           margin: 0 0 32px;
         }
@@ -85,7 +85,7 @@ export default function Error({
           font-size: 14px;
           font-weight: 600;
           color: white;
-          background: var(--accent-brand, #161614);
+          background: var(--accent-brand);
           border: none;
           border-radius: 8px;
           cursor: pointer;
@@ -93,7 +93,7 @@ export default function Error({
         }
 
         .error-btn-primary:hover {
-          background: #5349e8;
+          background: var(--accent-brand-hover);
         }
 
         .error-btn-secondary {
@@ -102,22 +102,22 @@ export default function Error({
           padding: 12px 24px;
           font-size: 14px;
           font-weight: 600;
-          color: #0a0a0a;
+          color: var(--text-primary);
           background: white;
-          border: 1px solid #e5e5e5;
+          border: 1px solid var(--border-default);
           border-radius: 8px;
           text-decoration: none;
           transition: border-color 0.2s;
         }
 
         .error-btn-secondary:hover {
-          border-color: #d4d4d4;
+          border-color: var(--border-hover);
         }
 
         .error-digest {
           margin-top: 24px;
           font-size: 12px;
-          color: #a3a3a3;
+          color: var(--text-muted);
           font-family: ui-monospace, monospace;
         }
 

@@ -137,9 +137,9 @@ function inspectToken(raw: string): InspectResult {
 
 function StatusBadge({ status }: { status: InspectResult['status'] }) {
   const map = {
-    'valid-structure': { label: 'Valid structure', bg: '#EDF5F0', fg: '#2D6A4F' },
-    'incomplete': { label: 'Incomplete', bg: '#FEF3E2', fg: '#92400E' },
-    'malformed': { label: 'Malformed', bg: '#FDECEC', fg: '#B91C1C' },
+    'valid-structure': { label: 'Valid structure', bg: 'var(--accent-success-subtle)', fg: 'var(--accent-success)' },
+    'incomplete': { label: 'Incomplete', bg: 'var(--accent-warning-muted)', fg: 'var(--accent-warning)' },
+    'malformed': { label: 'Malformed', bg: 'var(--accent-error-muted)', fg: 'var(--accent-error)' },
   }
   const s = map[status]
   return (

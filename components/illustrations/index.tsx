@@ -18,17 +18,17 @@ export function PublishIllustration({ className, size = 120 }: IllustrationProps
       aria-hidden="true"
     >
       {/* Document layers */}
-      <rect x="30" y="20" width="60" height="80" rx="4" fill="#f5f5f5" stroke="#e5e5e5" strokeWidth="1.5" />
-      <rect x="35" y="25" width="50" height="70" rx="3" fill="white" stroke="#0a0a0a" strokeWidth="2" />
+      <rect x="30" y="20" width="60" height="80" rx="4" fill="#EEF2F7" stroke="#D5DAE2" strokeWidth="1.5" />
+      <rect x="35" y="25" width="50" height="70" rx="3" fill="white" stroke="#111827" strokeWidth="2" />
 
       {/* Content lines */}
-      <line x1="42" y1="38" x2="78" y2="38" stroke="#0a0a0a" strokeWidth="2" strokeLinecap="round" />
-      <line x1="42" y1="48" x2="70" y2="48" stroke="#d4d4d4" strokeWidth="2" strokeLinecap="round" />
-      <line x1="42" y1="58" x2="74" y2="58" stroke="#d4d4d4" strokeWidth="2" strokeLinecap="round" />
-      <line x1="42" y1="68" x2="66" y2="68" stroke="#d4d4d4" strokeWidth="2" strokeLinecap="round" />
+      <line x1="42" y1="38" x2="78" y2="38" stroke="#111827" strokeWidth="2" strokeLinecap="round" />
+      <line x1="42" y1="48" x2="70" y2="48" stroke="#D5DAE2" strokeWidth="2" strokeLinecap="round" />
+      <line x1="42" y1="58" x2="74" y2="58" stroke="#D5DAE2" strokeWidth="2" strokeLinecap="round" />
+      <line x1="42" y1="68" x2="66" y2="68" stroke="#D5DAE2" strokeWidth="2" strokeLinecap="round" />
 
       {/* Publish indicator */}
-      <circle cx="85" cy="85" r="18" fill="#0a0a0a" />
+      <circle cx="85" cy="85" r="18" fill="#111827" />
       <path d="M79 85l4 4 8-8" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
@@ -50,7 +50,7 @@ export function EnforceIllustration({ className, size = 120 }: IllustrationProps
       <path
         d="M60 15L95 30V55C95 80 60 105 60 105S25 80 25 55V30L60 15Z"
         fill="var(--accent-brand-subtle)"
-        stroke="#161614"
+        stroke="#111827"
         strokeWidth="2.5"
       />
 
@@ -61,10 +61,10 @@ export function EnforceIllustration({ className, size = 120 }: IllustrationProps
       />
 
       {/* Lock icon */}
-      <rect x="50" y="52" width="20" height="16" rx="3" fill="#161614" />
+      <rect x="50" y="52" width="20" height="16" rx="3" fill="#111827" />
       <path
         d="M53 52V46C53 42.134 56.134 39 60 39C63.866 39 67 42.134 67 46V52"
-        stroke="#161614"
+        stroke="#111827"
         strokeWidth="2.5"
         strokeLinecap="round"
         fill="none"
@@ -90,20 +90,20 @@ export function ReceiptIllustration({ className, size = 120 }: IllustrationProps
       <path
         d="M30 15L35 20L40 15L45 20L50 15L55 20L60 15L65 20L70 15L75 20L80 15L85 20L90 15V105L85 100L80 105L75 100L70 105L65 100L60 105L55 100L50 105L45 100L40 105L35 100L30 105V15Z"
         fill="white"
-        stroke="#525252"
+        stroke="#475467"
         strokeWidth="2"
       />
 
       {/* Content lines */}
-      <line x1="40" y1="35" x2="80" y2="35" stroke="#0a0a0a" strokeWidth="2" strokeLinecap="round" />
-      <line x1="40" y1="48" x2="75" y2="48" stroke="#d4d4d4" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="40" y1="58" x2="70" y2="58" stroke="#d4d4d4" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="40" y1="35" x2="80" y2="35" stroke="#111827" strokeWidth="2" strokeLinecap="round" />
+      <line x1="40" y1="48" x2="75" y2="48" stroke="#D5DAE2" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="40" y1="58" x2="70" y2="58" stroke="#D5DAE2" strokeWidth="1.5" strokeLinecap="round" />
 
       {/* Divider */}
-      <line x1="35" y1="70" x2="85" y2="70" stroke="#e5e5e5" strokeWidth="1" strokeDasharray="4 2" />
+      <line x1="35" y1="70" x2="85" y2="70" stroke="#D5DAE2" strokeWidth="1" strokeDasharray="4 2" />
 
       {/* Checkmark circle */}
-      <circle cx="60" cy="85" r="12" fill="#525252" />
+      <circle cx="60" cy="85" r="12" fill="#475467" />
       <path d="M54 85l4 4 8-8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
@@ -122,11 +122,11 @@ export function VerifyIllustration({ className, size = 80 }: IllustrationProps) 
       aria-hidden="true"
     >
       {/* Magnifying glass */}
-      <circle cx="35" cy="35" r="20" stroke="#161614" strokeWidth="3" fill="var(--accent-brand-subtle)" />
-      <line x1="50" y1="50" x2="65" y2="65" stroke="#161614" strokeWidth="4" strokeLinecap="round" />
+      <circle cx="35" cy="35" r="20" stroke="#111827" strokeWidth="3" fill="var(--accent-brand-subtle)" />
+      <line x1="50" y1="50" x2="65" y2="65" stroke="#111827" strokeWidth="4" strokeLinecap="round" />
 
       {/* Check inside */}
-      <path d="M27 35l6 6 12-12" stroke="#161614" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M27 35l6 6 12-12" stroke="#111827" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -146,18 +146,18 @@ export function GatewayIllustration({ className, size = 80 }: IllustrationProps)
       {/* Gateway arch */}
       <path
         d="M15 65V35C15 21.193 26.193 10 40 10C53.807 10 65 21.193 65 35V65"
-        stroke="#2D6A4F"
+        stroke="#16A34A"
         strokeWidth="3"
         fill="none"
       />
 
       {/* Scope domains */}
-      <rect x="12" y="55" width="8" height="20" rx="2" fill="#2D6A4F" />
-      <rect x="60" y="55" width="8" height="20" rx="2" fill="#2D6A4F" />
+      <rect x="12" y="55" width="8" height="20" rx="2" fill="#16A34A" />
+      <rect x="60" y="55" width="8" height="20" rx="2" fill="#16A34A" />
 
       {/* Center indicator */}
-      <circle cx="40" cy="40" r="8" fill="var(--accent-secondary-muted)" stroke="#2D6A4F" strokeWidth="2" />
-      <circle cx="40" cy="40" r="3" fill="#2D6A4F" />
+      <circle cx="40" cy="40" r="8" fill="var(--accent-secondary-muted)" stroke="#16A34A" strokeWidth="2" />
+      <circle cx="40" cy="40" r="3" fill="#16A34A" />
     </svg>
   )
 }
@@ -175,17 +175,17 @@ export function ProtocolIllustration({ className, size = 80 }: IllustrationProps
       aria-hidden="true"
     >
       {/* Interconnected nodes */}
-      <circle cx="40" cy="20" r="8" fill="#0a0a0a" />
-      <circle cx="20" cy="50" r="8" fill="#161614" />
-      <circle cx="60" cy="50" r="8" fill="#2D6A4F" />
-      <circle cx="40" cy="70" r="6" fill="#737373" />
+      <circle cx="40" cy="20" r="8" fill="#111827" />
+      <circle cx="20" cy="50" r="8" fill="#111827" />
+      <circle cx="60" cy="50" r="8" fill="#16A34A" />
+      <circle cx="40" cy="70" r="6" fill="#667085" />
 
       {/* Connections */}
-      <line x1="40" y1="28" x2="25" y2="44" stroke="#d4d4d4" strokeWidth="2" />
-      <line x1="40" y1="28" x2="55" y2="44" stroke="#d4d4d4" strokeWidth="2" />
-      <line x1="28" y1="50" x2="52" y2="50" stroke="#d4d4d4" strokeWidth="2" />
-      <line x1="25" y1="56" x2="36" y2="66" stroke="#d4d4d4" strokeWidth="2" />
-      <line x1="55" y1="56" x2="44" y2="66" stroke="#d4d4d4" strokeWidth="2" />
+      <line x1="40" y1="28" x2="25" y2="44" stroke="#D5DAE2" strokeWidth="2" />
+      <line x1="40" y1="28" x2="55" y2="44" stroke="#D5DAE2" strokeWidth="2" />
+      <line x1="28" y1="50" x2="52" y2="50" stroke="#D5DAE2" strokeWidth="2" />
+      <line x1="25" y1="56" x2="36" y2="66" stroke="#D5DAE2" strokeWidth="2" />
+      <line x1="55" y1="56" x2="44" y2="66" stroke="#D5DAE2" strokeWidth="2" />
     </svg>
   )
 }
@@ -205,14 +205,14 @@ export function FlowLinesBackground({ className }: { className?: string }) {
     >
       <defs>
         <linearGradient id="flow-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#161614" stopOpacity="0" />
-          <stop offset="50%" stopColor="#161614" stopOpacity="0.3" />
-          <stop offset="100%" stopColor="#161614" stopOpacity="0" />
+          <stop offset="0%" stopColor="#111827" stopOpacity="0" />
+          <stop offset="50%" stopColor="#111827" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#111827" stopOpacity="0" />
         </linearGradient>
         <linearGradient id="flow-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#2D6A4F" stopOpacity="0" />
-          <stop offset="50%" stopColor="#2D6A4F" stopOpacity="0.2" />
-          <stop offset="100%" stopColor="#2D6A4F" stopOpacity="0" />
+          <stop offset="0%" stopColor="#16A34A" stopOpacity="0" />
+          <stop offset="50%" stopColor="#16A34A" stopOpacity="0.2" />
+          <stop offset="100%" stopColor="#16A34A" stopOpacity="0" />
         </linearGradient>
       </defs>
 

@@ -78,7 +78,7 @@ export default function ProblemSection() {
         .problem-section {
           position: relative;
           padding: 160px 0 120px;
-          background: #0a0a0b;
+          background: var(--code-bg);
         }
 
         /* Gradient fade from hero */
@@ -88,7 +88,7 @@ export default function ProblemSection() {
           left: 0;
           right: 0;
           height: 200px;
-          background: linear-gradient(180deg, #0a0a0b 0%, transparent 100%);
+          background: linear-gradient(180deg, var(--code-bg) 0%, transparent 100%);
           pointer-events: none;
         }
 
