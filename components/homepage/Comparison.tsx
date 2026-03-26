@@ -122,7 +122,7 @@ export function Comparison() {
                   <span className="text-[0.6875rem] font-semibold tracking-wide uppercase" style={{ color: 'var(--color-fg-muted)' }}>
                     Internal logs
                   </span>
-                  <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'rgba(200,150,50,0.12)', color: 'rgb(180,130,40)' }}>
+                  <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'var(--accent-warning-muted)', color: 'var(--accent-warning)' }}>
                     Local only
                   </span>
                 </div>
@@ -136,7 +136,7 @@ export function Comparison() {
                 </div>
                 <div
                   className="mt-4 pt-3 text-[0.6875rem] font-medium"
-                  style={{ borderTop: '1px solid var(--color-border)', color: 'rgb(180,130,40)' }}
+                  style={{ borderTop: '1px solid var(--color-border)', color: 'var(--accent-warning)' }}
                 >
                   Useful for debugging. Not portable.
                 </div>
@@ -210,7 +210,7 @@ export function Comparison() {
               >
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-[0.6875rem] font-semibold tracking-wide uppercase" style={{ color: 'var(--color-fg-muted)' }}>Internal logs</span>
-                  <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'rgba(200,150,50,0.12)', color: 'rgb(180,130,40)' }}>Local only</span>
+                  <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'var(--accent-warning-muted)', color: 'var(--accent-warning)' }}>Local only</span>
                 </div>
                 <div className="space-y-2.5">
                   {logEntries.map((row) => (
@@ -220,7 +220,7 @@ export function Comparison() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 pt-3 text-[0.6875rem] font-medium" style={{ borderTop: '1px solid var(--color-border)', color: 'rgb(180,130,40)' }}>
+                <div className="mt-4 pt-3 text-[0.6875rem] font-medium" style={{ borderTop: '1px solid var(--color-border)', color: 'var(--accent-warning)' }}>
                   Useful for debugging. Not portable.
                 </div>
               </div>
@@ -241,7 +241,7 @@ export function Comparison() {
             >
               <table className="w-full">
                 <thead>
-                  <tr style={{ borderBottom: '1px solid var(--color-border)', background: 'rgba(243,242,238,0.4)' }}>
+                  <tr style={{ borderBottom: '1px solid var(--color-border)', background: 'var(--surface-subtle)' }}>
                     <th className="text-left text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-5 py-5 md:px-6" style={{ color: 'var(--color-fg-muted)' }}>Need</th>
                     <th className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-5 py-5 md:px-6 w-28 md:w-32" style={{ color: 'var(--color-fg-muted)' }}>Logs / traces</th>
                     <th className="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.08em] px-5 py-5 md:px-6 w-28 md:w-32" style={{ color: 'var(--color-fg)' }}>Originary</th>

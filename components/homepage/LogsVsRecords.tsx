@@ -71,7 +71,7 @@ export function LogsVsRecords() {
                   <span className="text-[0.75rem] font-semibold tracking-wide uppercase" style={{ color: 'var(--color-fg-muted)' }}>
                     Internal observability
                   </span>
-                  <span className="text-[0.625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'rgba(200,150,50,0.12)', color: 'rgb(180,130,40)' }}>
+                  <span className="text-[0.625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'var(--accent-warning-muted)', color: 'var(--accent-warning)' }}>
                     Local only
                   </span>
                 </div>
@@ -90,7 +90,7 @@ export function LogsVsRecords() {
                 </div>
                 <div
                   className="mt-5 pt-4 text-[0.75rem] font-medium"
-                  style={{ borderTop: '1px solid var(--color-border)', color: 'rgb(180,130,40)' }}
+                  style={{ borderTop: '1px solid var(--color-border)', color: 'var(--accent-warning)' }}
                 >
                   Useful for debugging. Not portable proof for another party.
                 </div>

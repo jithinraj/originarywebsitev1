@@ -38,11 +38,12 @@ export default function Developers() {
       <NavigationHeader />
       <main id="main-content" role="main" style={{ paddingTop: '80px' }}>
         {/* Hero */}
-        <section className="section" style={{ background: 'var(--surface-elevated)', paddingBottom: 'var(--space-16)' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: '120px', paddingBottom: '48px' }}>
           <div className="container">
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
-              <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                Choose the fastest path to your first <span className="text-gradient">signed record</span>
+              <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 'var(--space-4)' }}>DEVELOPERS</div>
+              <h1 style={{ marginBottom: 'var(--space-6)', color: 'var(--text-primary)', fontWeight: 700 }}>
+                Choose the fastest path to your first signed record
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                 Start from your environment: API, gateway, MCP server, verification workflow, or cross-agent handoff. Every path ends in the same outcome: an interaction record another party can verify.

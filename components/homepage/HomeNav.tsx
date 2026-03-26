@@ -27,7 +27,7 @@ export function HomeNav() {
           ? 'backdrop-blur-2xl shadow-[0_1px_0_rgba(0,0,0,0.04)]'
           : 'bg-transparent'
       }`}
-      style={scrolled ? { background: 'rgba(250,250,247,0.8)' } : undefined}
+      style={scrolled ? { background: 'rgba(247,249,252,0.8)' } : undefined}
     >
       <nav className="hp-container">
         <div className="flex items-center justify-between h-[4.25rem]">

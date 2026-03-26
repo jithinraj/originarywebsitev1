@@ -103,7 +103,7 @@ export default function Error({
           font-size: 14px;
           font-weight: 600;
           color: var(--text-primary);
-          background: white;
+          background: var(--surface-elevated);
           border: 1px solid var(--border-default);
           border-radius: 8px;
           text-decoration: none;

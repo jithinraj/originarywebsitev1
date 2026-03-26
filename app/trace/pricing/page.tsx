@@ -214,7 +214,7 @@ export default function TracePricingPage() {
                     rel="noopener noreferrer"
                     className="btn btn-primary btn-lg"
                     style={{
-                      background: 'white',
+                      background: 'var(--surface-elevated)',
                       color: 'var(--text-primary)',
                       border: 'none'
                     }}

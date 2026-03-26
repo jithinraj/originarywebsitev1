@@ -31,31 +31,16 @@ export default function SolutionsPage() {
     <div className="wrap">
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section">
+        <section className="section" style={{ paddingTop: '120px', paddingBottom: '48px' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-              <div style={{
-                display: 'inline-block',
-                backgroundColor: 'var(--accent-brand-muted)',
-                color: 'var(--accent-brand)',
-                padding: 'var(--space-2) var(--space-4)',
-                borderRadius: 'var(--radius-full)',
-                fontSize: 'var(--text-sm)',
-                fontWeight: 600,
-                letterSpacing: '0.05em',
-                marginBottom: 'var(--space-6)'
-              }}>
-                SOLUTIONS
-              </div>
-              <h1 style={{ marginBottom: 'var(--space-6)' }}>
-                <span className="text-gradient">Who uses Originary</span>
+              <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 'var(--space-4)' }}>SOLUTIONS</div>
+              <h1 style={{ marginBottom: 'var(--space-6)', color: 'var(--text-primary)', fontWeight: 700 }}>
+                Built for the systems agents touch
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', marginBottom: 'var(--space-8)' }}>
                 Publishers and API providers use Originary to publish machine-readable policies and collect signed records of what happened.
               </p>
-              <a href="mailto:contact@originary.xyz" className="btn btn-primary">
-                Talk to us
-              </a>
             </div>
           </div>
         </section>

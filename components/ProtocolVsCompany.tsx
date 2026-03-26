@@ -155,7 +155,7 @@ export default function ProtocolVsCompany() {
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          background: white;
+          background: var(--surface-elevated);
           color: var(--text-primary);
           padding: 12px 24px;
           border-radius: 10px;

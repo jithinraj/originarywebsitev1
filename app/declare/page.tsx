@@ -891,7 +891,7 @@ cp robots-ai-snippet.txt public/`}
                   rel="noopener noreferrer"
                   className="btn btn-lg"
                   style={{
-                    background: 'white',
+                    background: 'var(--surface-elevated)',
                     color: 'var(--accent-brand)',
                     border: 'none',
                     display: 'inline-flex',

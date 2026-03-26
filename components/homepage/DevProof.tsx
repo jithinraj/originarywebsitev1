@@ -59,14 +59,14 @@ export function DevProof() {
                 <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'var(--chrome-green)' }} />
                 <span
                   className="ml-2 text-[0.6875rem] font-mono"
-                  style={{ color: 'rgba(250,250,247,0.5)' }}
+                  style={{ color: 'rgba(247,249,252,0.5)' }}
                 >
                   request lifecycle
                 </span>
               </div>
               <pre
                 className="text-[0.75rem] md:text-[0.8125rem] leading-relaxed font-mono overflow-x-auto"
-                style={{ color: 'rgba(250,250,247,0.85)' }}
+                style={{ color: 'rgba(247,249,252,0.85)' }}
               >
                 <code>{`// 1. Agent request arrives
 POST /api/bookings

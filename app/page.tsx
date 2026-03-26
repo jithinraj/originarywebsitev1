@@ -114,7 +114,7 @@ export default function Page() {
         <HomeNav />
         <main id="main-content" role="main">
           <Hero />
-          <EvidenceTeaser />
+          {/* EvidenceTeaser removed: redundant with hero artifact card */}
           {/* <TractionStrip /> */}
           <Problem />
           <Comparison />

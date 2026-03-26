@@ -161,7 +161,7 @@
   z-index: 9999;
   border-radius: 9999px;
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-default);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   font-size: 0.875rem;
   color: #111827;
@@ -224,38 +224,7 @@ body {
   overflow-x: hidden;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--gradient-hero);
-  pointer-events: none;
-  z-index: -1;
-  opacity: 1;
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--gradient-mesh);
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.6;
-  animation: mesh-rotate 30s linear infinite;
-}
-
-@keyframes mesh-rotate {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.1); }
-  100% { transform: rotate(360deg) scale(1); }
-}
+/* Body gradient overlays removed: design system controls backgrounds per-section now */
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
@@ -371,12 +340,12 @@ p {
 
 .btn.primary,
 .btn-primary {
-  background: linear-gradient(135deg, #2F5BFF 0%, #2447F9 100%);
+  background: linear-gradient(135deg, var(--accent-brand) 0%, #2447F9 100%);
   color: var(--white);
   box-shadow:
     0 1px 2px rgba(47, 91, 255, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(47, 91, 255, 0.2);
+  border: 1px solid var(--border-brand);
 }
 
 .btn.primary:hover,
@@ -537,7 +506,7 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: var(--text-inverted);
   font-weight: 800;
   font-size: 1.25rem;
 }
@@ -875,7 +844,7 @@ p {
 }
 
 .contact-option {
-  background: white;
+  background: var(--surface-elevated);
   border-radius: var(--radius-xl);
   border: 1px solid var(--gray-200);
   padding: 1.5rem;
@@ -910,7 +879,7 @@ p {
 }
 
 .support-feature {
-  background: white;
+  background: var(--surface-elevated);
   border-radius: var(--radius-xl);
   border: 1px solid var(--gray-200);
   padding: 1.5rem;
@@ -1324,7 +1293,7 @@ p {
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
   background: var(--success);
-  color: white;
+  color: var(--text-inverted);
   border-radius: var(--radius-sm);
   font-weight: 500;
 }
@@ -1378,7 +1347,7 @@ p {
 .logo-pill {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: white;
+  background: var(--surface-elevated);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-full);
   font-size: 0.875rem;
@@ -1592,7 +1561,7 @@ p {
 }
 
 .workflow-card {
-  background: white;
+  background: var(--surface-elevated);
   padding: 1.5rem;
   border-radius: var(--radius-xl);
   border: 1px solid var(--gray-200);
@@ -1659,7 +1628,7 @@ p {
 
 .compliance-cards article {
   padding: 1.5rem;
-  background: white;
+  background: var(--surface-elevated);
   border-radius: var(--radius-lg);
   border-left: 4px solid var(--primary);
   box-shadow: var(--shadow-sm);
@@ -1688,7 +1657,7 @@ p {
 }
 
 .testimonial-card {
-  background: white;
+  background: var(--surface-elevated);
   padding: 2rem;
   border-radius: var(--radius-xl);
   border: 1px solid var(--gray-200);
@@ -1734,7 +1703,7 @@ p {
 /* Final CTA */
 .final-cta {
   background: var(--gray-900);
-  color: white;
+  color: var(--text-inverted);
   padding: 5rem 0;
   margin-top: 0;
 }
@@ -1747,7 +1716,7 @@ p {
 }
 
 .final-cta h2 {
-  color: white;
+  color: var(--text-inverted);
   margin-bottom: 1rem;
 }
 
@@ -1777,7 +1746,7 @@ p {
 }
 
 .cta-link:hover {
-  color: white;
+  color: var(--text-inverted);
 }
 
 /* Form elements */
@@ -1792,7 +1761,7 @@ select {
   font-size: 0.9375rem;
   border: 1px solid var(--gray-300);
   border-radius: var(--radius-md);
-  background: white;
+  background: var(--surface-elevated);
   color: var(--gray-900);
   transition: all var(--transition-fast);
   font-family: inherit;
@@ -1943,7 +1912,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--text-inverted);
   font-weight: 800;
   font-size: 1.5rem;
 }
@@ -2023,7 +1992,7 @@ html {
 }
 
 .architecture-layer {
-  background: white;
+  background: var(--surface-elevated);
   padding: 1.5rem;
   border-radius: var(--radius-xl);
   border: 1px solid var(--gray-200);
@@ -2052,7 +2021,7 @@ html {
 
 .feature-highlight {
   background: var(--gradient-primary);
-  color: white;
+  color: var(--text-inverted);
   padding: 3rem;
   border-radius: var(--radius-2xl);
   text-align: center;
@@ -2060,7 +2029,7 @@ html {
 }
 
 .feature-highlight h3 {
-  color: white;
+  color: var(--text-inverted);
   margin-bottom: 1rem;
 }
 
@@ -2071,7 +2040,7 @@ html {
 }
 
 .comparison-table {
-  background: white;
+  background: var(--surface-elevated);
   border-radius: var(--radius-xl);
   border: 1px solid var(--gray-200);
   overflow: hidden;
@@ -2169,7 +2138,7 @@ html {
 }
 
 .pricing-card {
-  background: white;
+  background: var(--surface-elevated);
   border: 2px solid var(--gray-200);
   border-radius: var(--radius-xl);
   padding: 2rem;
@@ -2196,7 +2165,7 @@ html {
   top: -10px;
   right: 20px;
   background: var(--primary);
-  color: white;
+  color: var(--text-inverted);
   padding: 0.375rem 1rem;
   border-radius: var(--radius-full);
   font-size: 0.75rem;
@@ -2234,7 +2203,7 @@ html {
 
 .tier-badge.enterprise {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  color: white;
+  color: var(--text-inverted);
 }
 
 .price-container {
@@ -2314,7 +2283,7 @@ html {
   font-size: 0.75rem;
   padding: 0.125rem 0.5rem;
   background: var(--success);
-  color: white;
+  color: var(--text-inverted);
   border-radius: var(--radius-sm);
   font-weight: 500;
 }
@@ -2339,7 +2308,7 @@ html {
 /* Feature comparison table */
 .feature-comparison {
   margin: 4rem 0;
-  background: white;
+  background: var(--surface-elevated);
   border-radius: var(--radius-xl);
   border: 1px solid var(--gray-200);
   overflow: hidden;
@@ -2405,7 +2374,7 @@ html {
 .benefit-card {
   text-align: center;
   padding: 2rem;
-  background: white;
+  background: var(--surface-elevated);
   border-radius: var(--radius-xl);
   border: 1px solid var(--gray-200);
   transition: all var(--transition-base);
@@ -2467,7 +2436,7 @@ html {
 .usage-card {
   text-align: center;
   padding: 1.5rem;
-  background: white;
+  background: var(--surface-elevated);
   border-radius: var(--radius-lg);
   border: 1px solid var(--gray-200);
 }
@@ -2539,7 +2508,7 @@ html {
   padding: 4rem;
   border-radius: var(--radius-2xl);
   margin: 4rem 0;
-  color: white;
+  color: var(--text-inverted);
 }
 
 .cta-content {
@@ -2547,7 +2516,7 @@ html {
 }
 
 .cta-main h2 {
-  color: white;
+  color: var(--text-inverted);
   margin-bottom: 1rem;
 }
 
@@ -2607,7 +2576,7 @@ html {
 }
 
 .cta-contact h3 {
-  color: white;
+  color: var(--text-inverted);
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -2644,7 +2613,7 @@ html {
 
 /* Pricing calculator */
 .pricing-calculator {
-  background: white;
+  background: var(--surface-elevated);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-xl);
   padding: 2rem;
@@ -2784,7 +2753,7 @@ html {
 
 /* Developers page styles */
 .quickstart-card {
-  background: white;
+  background: var(--surface-elevated);
   border-radius: var(--radius-xl);
   border: 1px solid var(--gray-200);
   padding: 1.5rem;
@@ -2809,7 +2778,7 @@ html {
 }
 
 .sdk-card {
-  background: white;
+  background: var(--surface-elevated);
   border-radius: var(--radius-xl);
   border: 1px solid var(--gray-200);
   padding: 1.5rem;
@@ -2842,7 +2811,7 @@ html {
 }
 
 .api-section {
-  background: white;
+  background: var(--surface-elevated);
   border-radius: var(--radius-xl);
   border: 1px solid var(--gray-200);
   padding: 1.5rem;
@@ -2879,7 +2848,7 @@ html {
 }
 
 .example-card {
-  background: white;
+  background: var(--surface-elevated);
   border-radius: var(--radius-xl);
   border: 1px solid var(--gray-200);
   padding: 1.5rem;
@@ -2894,7 +2863,7 @@ html {
 }
 
 .community-option {
-  background: white;
+  background: var(--surface-elevated);
   border-radius: var(--radius-xl);
   border: 1px solid var(--gray-200);
   padding: 1.5rem;
@@ -2942,14 +2911,14 @@ html {
 
 .value {
   padding: 1.5rem;
-  background: white;
+  background: var(--surface-elevated);
   border-radius: var(--radius-lg);
   border: 1px solid var(--gray-200);
 }
 
 .cta-section {
   background: var(--gradient-primary);
-  color: white;
+  color: var(--text-inverted);
   padding: 3rem;
   border-radius: var(--radius-2xl);
   text-align: center;
@@ -2957,7 +2926,7 @@ html {
 }
 
 .cta-section h2 {
-  color: white;
+  color: var(--text-inverted);
   margin-bottom: 1rem;
 }
 
