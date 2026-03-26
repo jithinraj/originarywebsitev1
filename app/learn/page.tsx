@@ -7,7 +7,7 @@ import { BookOpen, ArrowRight, Receipt, CreditCard, Shield, ShoppingCart, Sparkl
 export const metadata: Metadata = {
   title: 'Learn: Agent Verification, Records & Policy',
   description: 'Guides on agent verification, verifiable interaction records, HTTP 402 payments, and policy enforcement. Essential reading for teams operating agent-facing systems.',
-  keywords: 'agentic commerce tutorial, AI receipts explained, HTTP 402 guide, machine payments, AI consent, agent economy, PEAC Protocol guide, autonomous AI transactions, AI infrastructure learning, agent-to-agent payments',
+  keywords: 'agent verification tutorial, AI receipts explained, HTTP 402 guide, machine payments, AI consent, agent economy, PEAC Protocol guide, autonomous AI transactions, AI infrastructure learning, agent-to-agent payments',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
@@ -106,7 +106,7 @@ export default function LearnPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Learn About AI Infrastructure",
-    "description": "In-depth guides on agentic commerce, verifiable records, HTTP 402 payments, and AI consent infrastructure",
+    "description": "In-depth guides on agent verification and signed records, verifiable records, HTTP 402 payments, and AI consent infrastructure",
     "url": "https://www.originary.xyz/learn",
     "publisher": {
       "@type": "Organization",

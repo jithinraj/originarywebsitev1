@@ -37,7 +37,7 @@ export default function PricingPage() {
       <main style={{ paddingTop: '80px' }}>
 
         {/* ── Hero ─────────────────────────────────────────────────────── */}
-        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: '120px', paddingBottom: '48px' }}>
+        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: '96px', paddingBottom: '40px' }}>
           <div className="container">
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
 
@@ -70,8 +70,6 @@ export default function PricingPage() {
                 color: 'var(--text-primary)',
               }}>
                 Open protocol.
-                <br />
-                Commercial deployment when you need it.
               </h1>
 
               <p style={{

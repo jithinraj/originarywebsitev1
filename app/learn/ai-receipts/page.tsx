@@ -353,7 +353,7 @@ export default function AIReceiptsPage() {
                       <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Product documentation</p>
                     </Link>
                     <Link href="/verify" className="card" style={{ textDecoration: 'none', padding: 'var(--space-5)' }}>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Verify API</h4>
+                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Verify</h4>
                       <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Verify receipts online</p>
                     </Link>
                   </div>

@@ -264,6 +264,40 @@ body:has(.hp-root) .cursor-glow {
   transition-duration: 0.1s;
 }
 
+.hp-root .hp-btn-ink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-inverted, #F7F9FC);
+  background: var(--text-primary, #111827);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .hp-root .hp-btn-ink { padding: 1rem 2.25rem; font-size: 0.9375rem; }
+}
+
+.hp-root .hp-btn-ink:hover {
+  background: #1E293B;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 12px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.hp-root .hp-btn-ink:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  transition-duration: 0.1s;
+}
+
 .hp-root .hp-btn-secondary {
   display: inline-flex;
   align-items: center;
@@ -326,6 +360,7 @@ body:has(.hp-root) .cursor-glow {
   .hp-root .hp-timeline-line::after { animation: none; }
   .hp-root .hp-card:hover { transform: none; }
   .hp-root .hp-btn-primary:hover,
+  .hp-root .hp-btn-ink:hover,
   .hp-root .hp-btn-secondary:hover { transform: none; }
 }
 

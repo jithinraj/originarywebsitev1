@@ -31,7 +31,7 @@ export default function SolutionsPage() {
     <div className="wrap">
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ paddingTop: '120px', paddingBottom: '48px' }}>
+        <section className="section" style={{ paddingTop: '96px', paddingBottom: '40px' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 'var(--space-4)' }}>SOLUTIONS</div>
