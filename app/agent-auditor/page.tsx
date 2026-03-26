@@ -238,9 +238,7 @@ export default function AgentAuditorPage() {
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
               }}>
-                <span className="text-gradient">What did that agent just do?</span>
-                <br />
-                <span style={{ color: 'var(--text-primary)' }}>Open a record. See for yourself.</span>
+                <span className="text-gradient">Open and verify signed interaction records</span>
               </h1>
 
               <p style={{
@@ -250,7 +248,7 @@ export default function AgentAuditorPage() {
                 maxWidth: '620px',
                 margin: '0 auto var(--space-10) auto',
               }}>
-                Agent Auditor opens any signed interaction record and shows you who acted, what happened, and whether the proof is genuine. Drop a receipt file, and see it decoded and verified instantly. For raw JWS token inspection, see the <Link href="/verify" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>Inspector</Link>.
+                Inspect who acted, what happened, and whether the record is genuine. Local verification in browser or CLI.
               </p>
 
               <div style={{

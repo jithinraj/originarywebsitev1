@@ -67,9 +67,9 @@ export default function PricingPage() {
                 letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)',
               }}>
-                <span className="text-gradient">The protocol is free.</span>
+                <span className="text-gradient">Open protocol.</span>
                 <br />
-                <span style={{ color: 'var(--text-primary)' }}>Always.</span>
+                <span style={{ color: 'var(--text-primary)' }}>Commercial deployment when you need it.</span>
               </h1>
 
               <p style={{

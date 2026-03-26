@@ -52,7 +52,7 @@ export function Problem() {
               className="mt-5 text-[1.0625rem] leading-relaxed max-w-[36rem] mx-auto"
               style={{ color: 'var(--color-fg-secondary)' }}
             >
-              Most systems do not make agent request decisions explicit. What teams usually lack is a verifiable interaction record of how the request was evaluated, what policy was applied, and what decision was made.
+              Most systems can tell you what they observed. Fewer can prove what policy applied, what decision was made, and what record exists afterward. Originary makes that decision boundary explicit.
             </p>
           </AnimateIn>
 

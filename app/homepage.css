@@ -21,7 +21,7 @@ body:has(.hp-root) .cursor-glow {
      This ensures homepage components and sitewide components render identically. */
   --color-surface: var(--surface-base);
   --color-surface-secondary: var(--surface-subtle);
-  --color-surface-tertiary: var(--border-subtle, #ECEAE5);
+  --color-surface-tertiary: var(--border-subtle);
   --color-surface-invert: var(--text-primary);
   --color-surface-elevated: var(--surface-elevated);
 

@@ -10,6 +10,7 @@ const proofItems = [
   { label: 'Self-hostable', href: null },
   { label: 'Offline verification', href: null },
   { label: 'Portable across vendors', href: null },
+  { label: 'Downloads', href: '/downloads' },
 ]
 
 export function Hero() {
