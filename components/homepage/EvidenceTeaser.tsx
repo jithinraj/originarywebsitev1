@@ -20,31 +20,16 @@ export function EvidenceTeaser() {
     >
       <div className="hp-container">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Eyebrow */}
-          <motion.span
-            className="inline-flex items-center gap-2 h-6 px-3 rounded-full text-[0.6875rem] font-semibold tracking-[0.08em] uppercase mb-5"
-            style={{
-              background: 'var(--accent-brand)',
-              color: '#fff',
-            }}
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease }}
-          >
-            New
-          </motion.span>
-
           {/* Headline */}
           <motion.h2
-            className="hp-text-display mt-2"
+            className="hp-text-display"
             style={{ color: 'var(--color-fg)' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.05, ease }}
           >
-            What your logs show is not the same as what you can prove
+            Start with what you already have
           </motion.h2>
 
           {/* Body */}
@@ -56,7 +41,19 @@ export function EvidenceTeaser() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1, ease }}
           >
-            Paste a log, trace, webhook, signed record, or incident summary from an AI agent, API call, tool invocation, or MCP server. See what another party can verify, what is missing, and what would hold up in a review, dispute, or audit.
+            Paste a log, trace, webhook, signed record, or short incident summary. Originary shows what your team can observe, what another party can verify, and what is still missing.
+          </motion.p>
+
+          {/* Microcopy */}
+          <motion.p
+            className="mt-3 text-[0.75rem]"
+            style={{ color: 'var(--text-muted)' }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
+            Runs locally in your browser. No signup. No outbound verification.
           </motion.p>
 
           {/* Mock tab labels */}
@@ -135,17 +132,6 @@ export function EvidenceTeaser() {
             </Link>
           </motion.div>
 
-          {/* Trust note */}
-          <motion.p
-            className="mt-4 text-[0.75rem]"
-            style={{ color: 'var(--text-muted)' }}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            No signup. Runs in your browser.
-          </motion.p>
         </div>
       </div>
     </section>
