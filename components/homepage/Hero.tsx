@@ -9,7 +9,7 @@ const proofItems = [
   { label: 'Open source', href: null },
   { label: 'Self-hostable', href: null },
   { label: 'Offline verification', href: null },
-  { label: 'Downloads', href: '/downloads' },
+  { label: 'Portable across vendors', href: null },
 ]
 
 export function Hero() {
@@ -37,7 +37,7 @@ export function Hero() {
               className="w-1.5 h-1.5 rounded-full"
               style={{ background: 'var(--color-verified)' }}
             />
-            For APIs, tools, and MCP servers receiving AI agent traffic
+            For APIs, tools, gateways, and MCP servers receiving automated traffic
           </span>
         </motion.div>
 
@@ -49,9 +49,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.1, ease }}
         >
-          Verify every agent request.
-          <br />
-          <span style={{ color: 'var(--color-fg-secondary)' }}>Prove every decision.</span>
+          Prove what agents did
         </motion.h1>
 
         {/* Subheading */}
@@ -62,7 +60,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.25, ease }}
         >
-          Originary verifies agent requests, applies policy, and returns signed records you can prove later. PEAC is the open standard underneath.
+          Originary verifies requests, applies policy, and returns signed records you can prove later, across teams, vendors, and audits.
         </motion.p>
 
         {/* CTAs */}

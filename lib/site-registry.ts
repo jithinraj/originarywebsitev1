@@ -70,6 +70,7 @@ export const STATUS_CONFIG: Record<
 // ---------------------------------------------------------------------------
 export const NAV_PRIMARY = [
   { label: 'Products', href: '/products' },
+  { label: 'Solutions', href: '/solutions' },
   { label: 'Developers', href: '/developers' },
   { label: 'Learn', href: '/learn' },
   { label: 'Pricing', href: '/pricing' },

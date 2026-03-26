@@ -73,15 +73,13 @@ export function WhoIsItFor() {
               className="hp-text-display mt-5"
               style={{ color: 'var(--color-fg)' }}
             >
-              Built for operators, not just builders
+              Built for the systems agents touch
             </h2>
             <p
               className="mt-4 hp-text-body-lg"
               style={{ color: 'var(--color-fg-secondary)' }}
             >
-              Originary is built first for teams running the systems that agents
-              access. If your stack receives agent requests, Originary gives you
-              the verification layer.
+              Originary is for teams operating APIs, tools, gateways, MCP servers, and review workflows. If your systems receive automated requests, you need evidence that survives beyond your own dashboards.
             </p>
           </div>
         </AnimateIn>

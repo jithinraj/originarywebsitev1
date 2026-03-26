@@ -36,7 +36,7 @@ export function WhyNow() {
                 className="hp-text-display mt-5"
                 style={{ color: 'var(--color-fg)' }}
               >
-                Agent traffic is exploding. Controls are not.
+                Automated requests are crossing organizational boundaries faster than evidence standards are spreading
               </h2>
             </div>
           </AnimateIn>

@@ -52,13 +52,13 @@ export function TrustProof() {
                 className="hp-text-display mt-5"
                 style={{ color: 'var(--color-fg)' }}
               >
-                Built for verification, not vendor dependency
+                Built to be verified without us
               </h2>
               <p
                 className="mt-4 text-[0.9375rem] leading-relaxed"
                 style={{ color: 'var(--color-fg-secondary)' }}
               >
-                Every record is self-contained. Verification is local. No dependency on Originary at verification time.
+                Every record should survive vendor boundaries. Originary can issue and manage records in production, but verification should remain local, portable, and independent.
               </p>
               <div className="mt-6">
                 <Link href="/trust" className="hp-btn-secondary">
