@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: '/status'
   },
   openGraph: {
-    title: 'Status | Originary',
+    title: 'Status ',
     description: 'Live service status and incident history for Originary, Trace, and PEAC-based infrastructure.',
     url: '/status',
     siteName: 'Originary',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Status | Originary',
+    title: 'Status ',
     description: 'Live service status and incident history for Originary.',
     images: ['/og'],
   },

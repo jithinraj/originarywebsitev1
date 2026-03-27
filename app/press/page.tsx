@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: '/press',
   },
   openGraph: {
-    title: 'Press | Originary',
+    title: 'Press',
     description: 'Press information, media resources, and brand assets for Originary.',
     url: '/press',
     siteName: 'Originary',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Press | Originary',
+    title: 'Press',
     description: 'Press information, media resources, and brand assets for Originary.',
     images: ['/og'],
     site: '@originaryx',

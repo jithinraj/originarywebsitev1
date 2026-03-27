@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     canonical: '/services'
   },
   openGraph: {
-    title: 'Professional Services | Originary',
+    title: 'Professional Services ',
     description: 'Implementation, migration, compliance audits, and custom development for PEAC Protocol.',
     url: '/services',
     siteName: 'Originary',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Professional Services | Originary',
+    title: 'Professional Services ',
     description: 'Implementation, migration, and compliance services for PEAC Protocol.',
     images: ['/og'],
     site: '@originaryx',

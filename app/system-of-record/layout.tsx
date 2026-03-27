@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     canonical: '/system-of-record'
   },
   openGraph: {
-    title: 'Open System of Record for AI Agents | Originary',
+    title: 'Open System of Record for AI Agents ',
     description: 'Policy + records as verifiable evidence for agent interactions. Portable, cryptographic proof for the agentic web.',
     url: '/system-of-record',
     type: 'website',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Open System of Record for AI Agents | Originary',
+    title: 'Open System of Record for AI Agents ',
     description: 'Policy + records as verifiable evidence for agent interactions. Portable, cryptographic proof for the agentic web.',
     images: ['/og'],
     site: '@originaryx',

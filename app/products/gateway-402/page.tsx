@@ -172,8 +172,8 @@ export default function Gateway402() {
                 gap: 'var(--space-4)',
                 flexWrap: 'wrap'
               }}>
-                <Link href="/company/contact" className="btn btn-primary btn-lg">
-                  <span>Talk to payments engineer</span>
+                <Link href="/contact" className="btn btn-primary btn-lg">
+                  <span>Contact us</span>
                   <ArrowRight size={18} />
                 </Link>
                 <Link href="/integrations/x402" className="btn btn-secondary btn-lg">
@@ -279,7 +279,7 @@ export default function Gateway402() {
                       border: 'none'
                     }}
                   >
-                    <span>Talk to payments engineer</span>
+                    <span>Contact us</span>
                     <ArrowRight size={18} />
                   </Link>
                   <Link

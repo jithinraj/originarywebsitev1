@@ -21,7 +21,6 @@ const columns = [
       { label: 'Start here', href: '/developers' },
       { label: 'Downloads', href: '/downloads' },
       { label: 'Demo', href: '/demo' },
-      { label: 'Verify online', href: '/verify' },
     ],
   },
   {
@@ -31,7 +30,6 @@ const columns = [
       { label: 'Blog', href: '/blog' },
       { label: 'PEAC Protocol', href: '/peac' },
       { label: 'Integrations', href: '/integrations' },
-      { label: 'Glossary', href: '/glossary' },
     ],
   },
   {

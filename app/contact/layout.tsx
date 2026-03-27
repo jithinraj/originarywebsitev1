@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     canonical: '/contact'
   },
   openGraph: {
-    title: 'Contact | Originary',
+    title: 'Contact',
     description: 'Contact the Originary team for sales, partnerships, support, and press. Talk to us about PEAC Protocol, Trace, and agentic web infrastructure.',
     url: '/contact',
     siteName: 'Originary',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact | Originary',
+    title: 'Contact',
     description: 'Contact the Originary team for sales, partnerships, and support.',
     images: ['/og'],
   },

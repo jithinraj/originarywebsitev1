@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: 'A verifiable interaction record is portable proof of what an agent did. Signed, timestamped, and independently verifiable offline. Built on PEAC.',
   robots: 'index,follow',
   openGraph: {
-    title: 'Verifiable Interaction Records | Originary',
+    title: 'Verifiable Interaction Records',
     description: 'A verifiable interaction record is portable proof of what an agent did. Signed, timestamped, and independently verifiable offline.',
     url: '/receipts',
     siteName: 'Originary',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Verifiable Interaction Records | Originary',
+    title: 'Verifiable Interaction Records',
     description: 'A verifiable interaction record is portable proof of what an agent did. Signed, timestamped, and independently verifiable offline.',
     images: ['/og'],
   },

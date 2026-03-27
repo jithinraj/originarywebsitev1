@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: 'Monitor which agents access your APIs and content. Apply policy. Export verifiable interaction records. Open source, self-hostable.',
   robots: 'index,follow',
   openGraph: {
-    title: 'Trace | Agent Access Monitoring | Originary',
+    title: 'Trace | Agent Access Monitoring',
     description: 'Monitor which agents access your APIs and content. Apply policy. Export verifiable interaction records.',
     url: '/trace',
     siteName: 'Originary',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Trace | Agent Access Monitoring | Originary',
+    title: 'Trace | Agent Access Monitoring',
     description: 'Monitor which agents access your APIs and content. Apply policy. Export verifiable interaction records.',
     images: ['/og'],
     site: '@originaryx',

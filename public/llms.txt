@@ -16,13 +16,10 @@ Contact: contact@originary.xyz
 - [Downloads](/downloads) - CLI, MCP server, SDKs, and source archives
 - [Proof Check](/agent-proof-check) - Paste logs, traces, or signed records. See what is observable, verifiable, and missing.
 - [Agent Auditor](/agent-auditor) - Open and verify any signed record locally, with evidence bundles
-- [Verify](/verify) - Inspector: parse JWS structure and decode interaction record claims
-- [Products](/products) - Agent Auditor, Gateway 402, MCP Server, Verify, Trace
+- [Products](/products) - Agent Auditor, Gateway 402, MCP Server, Trace
 - [Trust Center](/trust) - Verification model, cryptography, data boundaries, portability
 - [Enterprise](/enterprise) - Deployment options, security model, compliance evidence, worked audit example
 - [Pricing](/pricing) - Open source, self-hostable, enterprise support available
-- [API Providers](/solutions/api-providers) - Verifiable agent access for HTTP APIs
-- [Publishers](/solutions/publishers) - Content attribution and compliance with signed records
 
 ## Protocol State
 
@@ -42,9 +39,6 @@ Paste logs, traces, webhooks, signed records, or incident summaries from AI agen
 ### Agent Auditor (/agent-auditor)
 Open any signed record file (.jws, .json, .zip) and inspect its contents. Verifies Ed25519 signatures locally. No signup, no backend, no data leaves your machine. Apache-2.0.
 
-### Inspector (/verify)
-Browser-based token structure inspector. Parse JWS structure, decode interaction record claims, and check token format. For full receipt verification with evidence bundles, use Agent Auditor.
-
 ### Declare (/declare)
 Policy Pack Generator. Generate peac.txt, AIPREF headers, and human-readable policy pages from a single YAML config.
 
@@ -60,7 +54,6 @@ MCP tool server (@peac/mcp-server) with 5 tools: verify-receipt, inspect-receipt
 - [Downloads](/downloads) - CLI tools and install instructions
 - [Demo](/demo) - Interactive protocol trace demonstration
 - [Receipts](/receipts) - Verifiable interaction records documentation
-- [Conformance](/conformance) - Protocol conformance vectors
 
 ## Integrations
 
@@ -100,30 +93,17 @@ PEAC is an open standard (Apache-2.0). 29 packages on npm, 6664 tests, 91 build 
 - [HTTP 402 for AI Payments](/learn/http-402-ai-payments)
 - [AI Consent and Attribution](/learn/ai-consent-and-attribution)
 
-## Glossary
-
-- [PEAC](/glossary/peac)
-- [HTTP 402](/glossary/http-402-payment-required)
-- [x402](/glossary/x402)
-- [MCP](/glossary/mcp)
-- [A2A](/glossary/a2a)
-- [AIPREF](/glossary/aipref)
-- [Agentic Web](/glossary/agentic-web)
-
 ## Trust and Legal
 
 - [Trust Center](/trust) - Verification model, cryptography, data boundaries, portability, responsible disclosure, stewardship
 - [Security](/security) - Responsible disclosure policy
 - [Privacy](/privacy) - Privacy policy
 - [Terms](/terms) - Terms of service
-- [Governance](/governance) - Protocol governance model
 
 ## Company
 
 - [About](/about) - Mission and principles
 - [Contact](/contact) - Integration support and commercial inquiries
-- [Press](/press) - Press resources
-- [Brand](/brand) - Brand guidelines
 
 ## Community
 

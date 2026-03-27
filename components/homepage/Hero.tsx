@@ -38,7 +38,7 @@ export function Hero() {
                 }}
               >
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--accent-success)' }} />
-                For APIs, tools, and MCP servers
+                For AI agents, APIs, tools, and MCP servers
               </span>
             </motion.div>
 
@@ -124,6 +124,14 @@ export function Hero() {
                 style={{ color: 'var(--text-muted)', textDecoration: 'underline', textUnderlineOffset: '2px' }}
               >
                 Already have a signed record? Open Agent Auditor
+              </Link>
+              <span style={{ margin: '0 6px', color: 'var(--text-muted)' }}>&middot;</span>
+              <Link
+                href="/demo"
+                className="text-[0.75rem]"
+                style={{ color: 'var(--text-muted)', textDecoration: 'underline', textUnderlineOffset: '2px' }}
+              >
+                See a full transaction trace &rarr;
               </Link>
             </motion.div>
           </div>

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Verify | Originary',
+    title: 'Verify',
     description: 'Stateless verification for interaction records and JWS signatures. Deterministic validation with normalized fields.',
     url: '/products/verify',
     images: ['/og'],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Verify | Originary',
+    title: 'Verify',
     description: 'Stateless verification for interaction records and JWS signatures. Deterministic validation with normalized fields.',
     images: ['/og'],
     site: '@originaryx',
@@ -101,8 +101,8 @@ export default function VerifyAPI() {
                 gap: 'var(--space-4)',
                 flexWrap: 'wrap'
               }}>
-                <Link href="/company/contact" className="btn btn-primary btn-lg">
-                  <span>Talk to verification engineer</span>
+                <Link href="/contact" className="btn btn-primary btn-lg">
+                  <span>Contact us</span>
                   <ArrowRight size={18} />
                 </Link>
                 <Link href="/docs/receipts" className="btn btn-secondary btn-lg">
@@ -249,7 +249,7 @@ export default function VerifyAPI() {
                       border: 'none'
                     }}
                   >
-                    <span>Talk to verification engineer</span>
+                    <span>Contact us</span>
                     <ArrowRight size={18} />
                   </Link>
                   <Link

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   robots: 'index,follow',
   alternates: { canonical: '/enterprise' },
   openGraph: {
-    title: 'Enterprise | Originary',
+    title: 'Enterprise',
     description: 'Enterprise deployment guide for Originary. Self-hosted verification, key management, and compliance evidence.',
     url: '/enterprise',
     siteName: 'Originary',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enterprise | Originary',
+    title: 'Enterprise',
     description: 'Enterprise deployment guide for Originary. Self-hosted verification, key management, and compliance evidence.',
     images: ['/og'],
     site: '@originaryx',

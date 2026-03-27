@@ -539,7 +539,7 @@ export default function ContextGraphsPage() {
                 copied={copiedId === 'peac-and-originary'}
               />
 
-              <p>PEAC Protocol (Programmable Environment for Agent Coordination) targets this boundary layer: policy plus cryptographic receipts for agent interactions.</p>
+              <p>PEAC Protocol (Portable Evidence for Agent Coordination) targets this boundary layer: policy plus cryptographic receipts for agent interactions.</p>
 
               <p>The core idea is simple:</p>
 

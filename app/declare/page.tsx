@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     canonical: '/declare'
   },
   openGraph: {
-    title: 'Declare | AI Policy Pack Generator | Originary',
+    title: 'Declare | AI Policy Pack Generator',
     description: 'Generate your AI policy pack from one file. Create peac.txt, robots directives, AIPREF templates, and human policy pages with PEAC.',
     url: '/declare',
     type: 'website',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Declare | AI Policy Pack Generator | Originary',
+    title: 'Declare | AI Policy Pack Generator',
     description: 'Generate your AI policy pack from one file.',
     images: ['/og'],
   }

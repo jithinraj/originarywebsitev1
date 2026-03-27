@@ -32,7 +32,7 @@ const glossaryTerms = [
   {
     slug: "peac",
     term: "PEAC Protocol",
-    short: "Policy, Evidence, Access, Compliance",
+    short: "Portable Evidence for Agent Coordination",
     description: "Open protocol for file-based policy discovery and verifiable receipts."
   },
   {

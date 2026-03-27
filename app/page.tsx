@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Originary | Verify every agent request. Prove every decision.'
   },
-  description: 'Originary verifies agent requests, applies policy, and returns signed records you can prove later. PEAC is the open standard underneath.',
+  description: 'Originary verifies AI agent requests, applies policy, and returns signed records you can prove later. Built on PEAC, the open standard for verifiable interaction records.',
   keywords: [
     'agent verification',
     'API access control',

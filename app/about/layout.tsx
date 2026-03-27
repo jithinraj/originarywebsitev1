@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     canonical: '/about'
   },
   openGraph: {
-    title: 'About Originary',
+    title: 'About',
     description: 'Originary builds and stewards PEAC, an open standard for portable decision records for agent interactions.',
     url: '/about',
     siteName: 'Originary',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Originary',
+    title: 'About',
     description: 'Originary builds and stewards PEAC, an open standard for portable decision records for agent interactions.',
     images: ['/og'],
     site: '@originaryx',
