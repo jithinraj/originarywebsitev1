@@ -6,6 +6,10 @@ import { AnimateIn } from './AnimateIn'
 
 const faqs = [
   {
+    q: 'What\u0027s the difference between a log and a signed record?',
+    a: 'A log is a local observation: your system saw something happen. A signed record is a portable, independently verifiable artifact: it proves what happened, what policy applied, who issued it, and when. Logs help you debug. Signed records help you prove.',
+  },
+  {
     q: 'What is a verifiable interaction record?',
     a: 'A verifiable interaction record is a portable, cryptographically signed artifact that proves what an agent did, what policy applied, and what decision was made. It can be verified by anyone with the public key, with no network call required.',
   },

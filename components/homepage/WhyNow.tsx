@@ -13,8 +13,8 @@ const pressures = [
   },
   {
     num: '03',
-    label: 'Logs are not enough',
-    detail: 'Internal observability helps you debug. It does not help a partner, auditor, or regulator verify what happened.',
+    label: 'Disputes need portable artifacts',
+    detail: 'When an incident involves multiple teams, partners, or vendors, the party with exportable evidence resolves faster than the party with screenshots.',
   },
 ]
 

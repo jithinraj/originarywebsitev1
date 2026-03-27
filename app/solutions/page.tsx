@@ -36,10 +36,10 @@ export default function SolutionsPage() {
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
               <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 'var(--space-4)' }}>SOLUTIONS</div>
               <h1 style={{ marginBottom: 'var(--space-6)', color: 'var(--text-primary)', fontWeight: 700 }}>
-                Built for the systems agents touch
+                Where we think PEAC applies
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', marginBottom: 'var(--space-8)' }}>
-                Publishers and API providers use Originary to publish machine-readable policies and collect signed records of what happened.
+                These are the scenarios we are building for. We are looking for design partners in each area. If your team runs agent-facing APIs, tools, or MCP servers, we would like to work with you.
               </p>
             </div>
           </div>
@@ -59,7 +59,6 @@ export default function SolutionsPage() {
               {/* Publishers */}
               <div id="publishers" className="card" style={{ scrollMarginTop: '120px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
-                  <span style={{ fontSize: '2rem' }}>📰</span>
                   <h3>Content Publishers</h3>
                 </div>
                 <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
@@ -87,7 +86,6 @@ export default function SolutionsPage() {
               {/* API Providers */}
               <div id="api-providers" className="card" style={{ scrollMarginTop: '120px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
-                  <span style={{ fontSize: '2rem' }}>🔌</span>
                   <h3>API Providers</h3>
                 </div>
                 <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>

@@ -69,12 +69,9 @@ export const STATUS_CONFIG: Record<
 // Navigation (canonical, shared across all headers)
 // ---------------------------------------------------------------------------
 export const NAV_PRIMARY = [
-  { label: 'Products', href: '/products' },
-  { label: 'Solutions', href: '/solutions' },
   { label: 'Developers', href: '/developers' },
   { label: 'Learn', href: '/learn' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Company', href: '/about' },
 ] as const
 
 export const NAV_UTILITY = [
@@ -155,7 +152,6 @@ export const FOOTER_GROUPS = [
       { label: 'Start here', href: '/developers' },
       { label: 'Downloads', href: '/downloads' },
       { label: 'Demo', href: '/demo' },
-      { label: 'Conformance', href: '/conformance' },
       { label: 'Verify online', href: '/verify' },
     ],
   },
@@ -174,9 +170,7 @@ export const FOOTER_GROUPS = [
     links: [
       { label: 'About', href: '/about' },
       { label: 'Pricing', href: '/pricing' },
-      { label: 'Press', href: '/press' },
       { label: 'Contact', href: '/contact' },
-      { label: 'Governance', href: '/governance' },
     ],
   },
   {
