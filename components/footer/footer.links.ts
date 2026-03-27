@@ -40,7 +40,6 @@ export const FOOTER_DEVELOPERS: FooterGroup = {
     { label: 'Start here', href: '/developers' },
     { label: 'Downloads', href: '/downloads' },
     { label: 'Demo', href: '/demo' },
-    { label: 'Conformance', href: '/conformance' },
     { label: 'Verify online', href: '/verify' },
   ],
 }
@@ -64,7 +63,6 @@ export const FOOTER_COMPANY: FooterGroup = {
     { label: 'About', href: '/about' },
     { label: 'Enterprise', href: '/enterprise' },
     { label: 'Pricing', href: '/pricing' },
-    { label: 'Press', href: '/press' },
     { label: 'Contact', href: '/contact' },
   ],
 }

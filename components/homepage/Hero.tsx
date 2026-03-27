@@ -81,14 +81,14 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.28, ease }}
             >
-              <Link href="/agent-proof-check" className="hp-btn-ink w-full sm:w-auto text-center whitespace-nowrap">
-                See what your logs can&apos;t prove
+              <Link href="/developers" className="hp-btn-ink w-full sm:w-auto text-center whitespace-nowrap px-6 py-2.5 text-[0.9375rem] font-medium">
+                Start here
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
                   <path d="M3.5 7h7m0 0L7.5 4m3 3l-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </Link>
-              <Link href="/developers" className="hp-btn-secondary w-full sm:w-auto text-center whitespace-nowrap">
-                Start here
+              <Link href="/agent-proof-check" className="hp-btn-secondary w-full sm:w-auto text-center whitespace-nowrap">
+                See what your logs can&apos;t prove
               </Link>
             </motion.div>
 
@@ -135,12 +135,24 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.25, ease }}
           >
-            <div
-              className="rounded-2xl overflow-hidden"
+            <Link
+              href="/agent-auditor"
+              className="block rounded-2xl overflow-hidden transition-all duration-300"
               style={{
                 border: '1px solid var(--border-hover)',
                 background: 'var(--surface-elevated)',
                 boxShadow: '0 12px 40px -12px rgba(16, 24, 40, 0.14)',
+                cursor: 'pointer',
+                textDecoration: 'none',
+                color: 'inherit',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'var(--accent-brand)'
+                e.currentTarget.style.boxShadow = '0 16px 48px -12px rgba(16, 24, 40, 0.22)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'var(--border-hover)'
+                e.currentTarget.style.boxShadow = '0 12px 40px -12px rgba(16, 24, 40, 0.14)'
               }}
             >
               {/* Header */}
@@ -186,11 +198,11 @@ export function Hero() {
                 <span className="text-[0.625rem]" style={{ color: 'var(--text-muted)' }}>
                   No Originary dependency in verification
                 </span>
-                <Link href="/agent-auditor" className="text-[0.625rem] font-medium" style={{ color: 'var(--accent-brand)' }}>
+                <span className="text-[0.625rem] font-medium" style={{ color: 'var(--accent-brand)' }}>
                   Inspect &rarr;
-                </Link>
+                </span>
               </div>
-            </div>
+            </Link>
 
             <p className="mt-2.5 text-center text-[0.625rem]" style={{ color: 'var(--text-muted)' }}>
               Sample record. Verified with issuer public key only.
