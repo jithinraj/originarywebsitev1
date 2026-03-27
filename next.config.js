@@ -98,6 +98,61 @@ const nextConfig = {
       },
             // CLI downloads → PEAC Protocol release archives
       {
+        source: '/solutions',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/solutions/publishers',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/solutions/api-providers',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/products/verify',
+        destination: '/agent-auditor',
+        permanent: true,
+      },
+      {
+        source: '/press',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/governance',
+        destination: '/peac',
+        permanent: true,
+      },
+      {
+        source: '/conformance',
+        destination: '/peac',
+        permanent: true,
+      },
+      {
+        source: '/glossary',
+        destination: '/learn',
+        permanent: true,
+      },
+      {
+        source: '/glossary/:slug',
+        destination: '/learn',
+        permanent: true,
+      },
+      {
+        source: '/brand',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/verify',
+        destination: '/agent-auditor',
+        permanent: true,
+      },
+      {
         source: '/downloads/originary-cli-1.0.0-darwin-arm64.zip',
         destination: 'https://github.com/peacprotocol/peac/archive/refs/tags/v0.9.14.zip',
         permanent: false,

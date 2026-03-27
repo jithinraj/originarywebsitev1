@@ -371,9 +371,9 @@ export default function ReceiptsPage() {
                   <span>Start here</span>
                   <ArrowRight size={18} />
                 </Link>
-                <a href="mailto:contact@originary.xyz" className="btn btn-lg btn-secondary">
-                  Talk to Sales
-                </a>
+                <Link href="/contact" className="btn btn-lg btn-secondary">
+                  Contact us
+                </Link>
               </div>
             </div>
           </div>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     canonical: '/changelog'
   },
   openGraph: {
-    title: 'Changelog | Originary',
+    title: 'Changelog ',
     description: 'Product updates, new features, and improvements to Originary. Track releases and upcoming features.',
     url: '/changelog',
     siteName: 'Originary',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Changelog | Originary',
+    title: 'Changelog ',
     description: 'Product updates, new features, and improvements to Originary.',
     images: ['/og'],
     site: '@originaryx',

@@ -194,8 +194,8 @@ export default function SolutionsPage() {
                 Install the open-source packages or talk to us about your use case.
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a href="mailto:contact@originary.xyz" className="btn" style={{ backgroundColor: 'white', color: 'var(--accent-brand)' }}>
-                  Talk to Sales
+                <a href="/contact" className="btn" style={{ backgroundColor: 'white', color: 'var(--accent-brand)' }}>
+                  Contact us
                 </a>
                 <a href="/developers" className="btn" style={{ backgroundColor: 'transparent', color: 'white', border: '1px solid var(--border-hover)' }}>
                   Developer Docs

@@ -6,7 +6,7 @@ import { ArrowRight, Code, Terminal, Shield, Bot, Plug, FileCheck } from 'lucide
 import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
-  title: 'Start Here | Originary',
+  title: 'Start Here ',
   description: 'Pick your path: API, MCP, verify, or A2A. Add verifiable interaction records to your stack with Originary, powered by PEAC.',
   keywords: 'Originary SDK, PEAC Protocol, verifiable interaction records, MCP server, A2A integration, HTTP 402, developer tools',
   authors: [{ name: 'Originary' }],
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Start Here | Originary',
+    title: 'Start Here ',
     description: 'Pick your path: API, MCP, verify, or A2A. Add verifiable interaction records to your stack.',
     url: '/developers',
     images: ['/og'],
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Start Here | Originary',
+    title: 'Start Here ',
     description: 'Pick your path: API, MCP, verify, or A2A. Add verifiable interaction records to your stack.',
     images: ['/og'],
     site: '@originaryx',
@@ -318,17 +318,49 @@ function QuickStartCard({
   code: string
 }) {
   return (
-    <div className="card">
-      <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
-        <div style={{ width: '32px', height: '32px', background: 'var(--accent-brand)', borderRadius: 'var(--radius-lg)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--white)', fontWeight: 'bold' }}>
+    <div
+      style={{
+        background: 'var(--surface-elevated)',
+        border: '1px solid var(--border-default)',
+        borderRadius: '18px',
+        padding: '24px',
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+      }}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+        <div style={{
+          width: '28px', height: '28px',
+          background: 'var(--accent-brand)',
+          borderRadius: '8px',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          color: 'var(--text-inverted)',
+          fontSize: '0.75rem',
+          fontWeight: 700,
+          flexShrink: 0,
+        }}>
           {step}
         </div>
-        <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600 }}>{title}</h3>
+        <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: 'var(--text-primary)' }}>{title}</h3>
       </div>
-      <p style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-4)', lineHeight: 1.7 }}>{description}</p>
-      <pre style={{ background: 'var(--text-primary)', color: 'var(--surface-card)', padding: 'var(--space-4)', borderRadius: 'var(--radius-lg)', fontSize: 'var(--text-sm)', overflowX: 'auto', fontFamily: 'var(--font-mono)' }}>
-        <code>{code}</code>
-      </pre>
+      <p style={{ color: 'var(--text-secondary)', marginBottom: '16px', lineHeight: 1.6, fontSize: '0.9375rem' }}>{description}</p>
+      <pre
+        style={{
+          background: 'var(--code-bg, #111827)',
+          color: '#E2E8F0',
+          padding: '16px',
+          borderRadius: '12px',
+          fontSize: '0.8125rem',
+          lineHeight: 1.6,
+          overflowX: 'auto',
+          fontFamily: 'var(--font-mono, ui-monospace, monospace)',
+          margin: 0,
+          flex: 1,
+          whiteSpace: 'pre',
+          WebkitOverflowScrolling: 'touch',
+        }}
+      ><code>{code.trim()}</code></pre>
     </div>
   )
 }

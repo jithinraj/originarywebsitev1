@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     canonical: '/privacy',
   },
   openGraph: {
-    title: 'Privacy Policy | Originary',
+    title: 'Privacy Policy',
     description: 'Originary Privacy Policy: minimal, consent-first data collection.',
     url: '/privacy',
     siteName: 'Originary',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Privacy Policy | Originary',
+    title: 'Privacy Policy',
     description: 'Originary Privacy Policy: minimal, consent-first data collection.',
     site: '@originaryx',
     creator: '@originaryx',

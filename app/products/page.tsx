@@ -6,12 +6,12 @@ import { ArrowRight, CheckCircle, Shield, Zap, Server, BarChart3, FileText, Hard
 import { NARRATIVE } from '@/lib/site-registry'
 
 export const metadata: Metadata = {
-  title: 'Products | Originary',
+  title: 'Products',
   description: 'Inspect, verify, enforce, and monitor agent interactions. Agent Auditor, Gateway 402, MCP Server, Trace, and more. Built on PEAC, the open standard.',
   keywords: 'Originary products, Agent Auditor, Gateway 402, MCP server, interaction records, verification',
   robots: 'index,follow',
   openGraph: {
-    title: 'Products | Originary',
+    title: 'Products',
     description: 'Verify agent requests, apply policy, and return verifiable interaction records.',
     url: '/products',
     siteName: 'Originary',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Products | Originary',
+    title: 'Products',
     description: 'Verify agent requests, apply policy, and return verifiable interaction records.',
     images: ['/og'],
   },

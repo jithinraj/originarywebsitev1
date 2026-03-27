@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Adapters | Originary',
+    title: 'Adapters',
     description: 'Protocol adapters for AIPREF, HTTP 402/x402, MCP, A2A, and C2PA. Connect PEAC to external standards.',
     url: '/products/adapters',
     images: ['/og'],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Adapters | Originary',
+    title: 'Adapters',
     description: 'Enterprise adapters for AIPREF, HTTP 402/x402, MCP/A2A, robots.txt/llms.txt, and C2PA. Production-ready integrations for policy enforcement and standards compliance in agentic systems.',
     images: ['/og'],
     site: '@originaryx',

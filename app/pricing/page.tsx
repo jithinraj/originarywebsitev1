@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/pricing' },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Pricing | Originary',
+    title: 'Pricing ',
     description: 'PEAC Protocol is free and open-source. Apache-2.0. Self-host with no limits, no fees, no sign-up.',
     url: '/pricing',
     type: 'website',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing | Originary',
+    title: 'Pricing ',
     description: 'PEAC Protocol is free and open-source. Apache-2.0. Self-host with no limits, no fees, no sign-up. Commercial support available for teams deploying at scale.',
     images: ['/og'],
     site: '@originaryx',

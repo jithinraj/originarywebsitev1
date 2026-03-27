@@ -1101,9 +1101,12 @@ table {
   }
 }
 
-/* Enhanced focus management for all devices */
+/* Focus ring only on keyboard navigation, not mouse clicks */
 *:focus {
-  outline: 2px solid var(--brand-primary);
+  outline: none;
+}
+*:focus-visible {
+  outline: 2px solid var(--border-hover);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }

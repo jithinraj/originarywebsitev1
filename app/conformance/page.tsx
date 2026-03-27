@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     canonical: '/conformance'
   },
   openGraph: {
-    title: 'Conformance | Originary',
+    title: 'Conformance ',
     description: 'PEAC protocol conformance testing. Test vectors, validators, and compatibility levels for implementations.',
     url: '/conformance',
     type: 'website',

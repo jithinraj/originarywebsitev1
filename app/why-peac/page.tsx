@@ -335,9 +335,9 @@ export default function WhyPeacPage() {
                   <span>Quick Start Guide</span>
                   <ArrowRight size={18} />
                 </Link>
-                <a href="mailto:contact@originary.xyz" className="btn btn-lg btn-ghost" style={{ color: 'var(--white)', borderColor: 'var(--border-brand)' }}>
-                  Talk to Sales
-                </a>
+                <Link href="/contact" className="btn btn-lg btn-ghost" style={{ color: 'var(--white)', borderColor: 'var(--border-brand)' }}>
+                  Contact us
+                </Link>
               </div>
             </div>
           </div>

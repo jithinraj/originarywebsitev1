@@ -935,6 +935,7 @@ export default function AboutPage() {
               >
                 Poem, Inc. builds AI infrastructure software and tools for the agentic web, and maintains
                 the Originary products and services that run on top of PEAC Protocol.
+                PEAC's receipt verification model was cited in technical discussions with the Coinbase x402 protocol team.
               </p>
               <p
                 style={{

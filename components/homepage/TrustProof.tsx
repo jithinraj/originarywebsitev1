@@ -32,6 +32,11 @@ const proofPoints = [
     title: 'Audit and dispute ready',
     description: 'Timestamped evidence for compliance and procurement.',
   },
+  {
+    num: '07',
+    title: 'Recognized in x402 ecosystem',
+    description: 'PEAC receipt verification contributed to technical discussions with the Coinbase x402 protocol team.',
+  },
 ]
 
 export function TrustProof() {

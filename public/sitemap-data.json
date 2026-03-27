@@ -39,10 +39,7 @@
     "url": "https://www.originary.xyz/products/gateway-402",
     "lastModified": "2026-03-26"
   },
-  {
-    "url": "https://www.originary.xyz/products/verify",
-    "lastModified": "2026-03-26"
-  },
+
   {
     "url": "https://www.originary.xyz/products/adapters",
     "lastModified": "2026-03-26"
@@ -91,18 +88,7 @@
     "url": "https://www.originary.xyz/integrations/x402/python-fastapi",
     "lastModified": "2026-03-20"
   },
-  {
-    "url": "https://www.originary.xyz/solutions",
-    "lastModified": "2026-03-26"
-  },
-  {
-    "url": "https://www.originary.xyz/solutions/api-providers",
-    "lastModified": "2026-03-26"
-  },
-  {
-    "url": "https://www.originary.xyz/solutions/publishers",
-    "lastModified": "2026-03-26"
-  },
+
   {
     "url": "https://www.originary.xyz/learn",
     "lastModified": "2026-03-26"
@@ -129,14 +115,6 @@
   },
   {
     "url": "https://www.originary.xyz/demo",
-    "lastModified": "2026-03-20"
-  },
-  {
-    "url": "https://www.originary.xyz/verify",
-    "lastModified": "2026-03-20"
-  },
-  {
-    "url": "https://www.originary.xyz/conformance",
     "lastModified": "2026-03-20"
   },
   {
@@ -224,19 +202,11 @@
     "lastModified": "2026-03-20"
   },
   {
-    "url": "https://www.originary.xyz/press",
-    "lastModified": "2026-03-26"
-  },
-  {
     "url": "https://www.originary.xyz/trust",
     "lastModified": "2026-03-20"
   },
   {
     "url": "https://www.originary.xyz/security",
-    "lastModified": "2026-03-20"
-  },
-  {
-    "url": "https://www.originary.xyz/governance",
     "lastModified": "2026-03-20"
   },
   {
@@ -253,46 +223,6 @@
   },
   {
     "url": "https://www.originary.xyz/guides/http-402",
-    "lastModified": "2026-03-20"
-  },
-  {
-    "url": "https://www.originary.xyz/brand",
-    "lastModified": "2026-01-22"
-  },
-  {
-    "url": "https://www.originary.xyz/glossary",
-    "lastModified": "2026-03-20"
-  },
-  {
-    "url": "https://www.originary.xyz/glossary/peac",
-    "lastModified": "2026-03-20"
-  },
-  {
-    "url": "https://www.originary.xyz/glossary/mcp",
-    "lastModified": "2026-03-20"
-  },
-  {
-    "url": "https://www.originary.xyz/glossary/a2a",
-    "lastModified": "2026-03-20"
-  },
-  {
-    "url": "https://www.originary.xyz/glossary/acp",
-    "lastModified": "2026-03-20"
-  },
-  {
-    "url": "https://www.originary.xyz/glossary/aipref",
-    "lastModified": "2026-03-20"
-  },
-  {
-    "url": "https://www.originary.xyz/glossary/http-402-payment-required",
-    "lastModified": "2026-03-20"
-  },
-  {
-    "url": "https://www.originary.xyz/glossary/x402",
-    "lastModified": "2026-03-20"
-  },
-  {
-    "url": "https://www.originary.xyz/glossary/agentic-web",
     "lastModified": "2026-03-20"
   },
   {

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Trust Center',
   description: 'How Originary handles verification, cryptography, data boundaries, and portability. Ed25519 signatures, offline verification, no phone-home.',
   openGraph: {
-    title: 'Trust Center | Originary',
+    title: 'Trust Center ',
     description: 'Verification model, cryptography, data boundaries, and portability for Originary and the PEAC protocol.',
     type: 'website',
     url: '/trust',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Trust Center | Originary',
+    title: 'Trust Center ',
     description: 'Verification model, cryptography, data boundaries, and portability for Originary and the PEAC protocol.',
     images: ['/og'],
     site: '@originaryx',
