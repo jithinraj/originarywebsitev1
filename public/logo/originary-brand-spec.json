@@ -1,0 +1,16 @@
+{
+  "wordmark": "originary",
+  "recommended_master": "originary-canonical.svg",
+  "reverse_master": "originary-reverse.svg",
+  "compact_master": "originary-compact.svg",
+  "colors": {
+    "black": "#0B0B0C",
+    "white": "#FFFFFF"
+  },
+  "recreation_typeface": "Inter Display Medium",
+  "notes": [
+    "Use outlined SVG masters for final brand-critical outputs.",
+    "Lowercase route chosen for a calmer, more current product/platform signal.",
+    "Compact version is only for constrained widths."
+  ]
+}

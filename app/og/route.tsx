@@ -28,36 +28,15 @@ export async function GET() {
             gap: '20px',
           }}
         >
-          <div
-            style={{
-              width: '56px',
-              height: '56px',
-              borderRadius: '14px',
-              backgroundColor: '#111827',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <span
-              style={{
-                fontSize: '24px',
-                fontWeight: 700,
-                color: '#F7F9FC',
-              }}
-            >
-              O
-            </span>
-          </div>
           <span
             style={{
               fontSize: '48px',
-              fontWeight: 600,
-              color: '#111827',
-              letterSpacing: '-0.02em',
+              fontWeight: 500,
+              color: '#0B0B0C',
+              letterSpacing: '-0.025em',
             }}
           >
-            Originary
+            originary
           </span>
         </div>
 
