@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <section className="hp-hero-bg pt-20 pb-10 sm:pt-24 sm:pb-12 md:pt-32 md:pb-14 lg:pt-36 lg:pb-16">
       <div className="hp-container">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16 xl:gap-20">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-14">
 
           {/* ── Left: Copy ── */}
           <div className="lg:w-[54%] shrink-0">
@@ -94,26 +94,45 @@ export function Hero() {
 
             {/* Proof strip */}
             <motion.div
-              className="mt-4 flex flex-wrap items-center gap-x-1.5 gap-y-1"
+              className="mt-5 hidden sm:flex flex-wrap items-center gap-x-1.5 gap-y-1"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.38 }}
             >
               {proofItems.map((item, i) => (
-                <span key={item} className="flex items-center gap-1.5 text-[0.75rem]" style={{ color: 'var(--text-muted)' }}>
-                  {i > 0 && <span style={{ margin: '0 2px' }}>&middot;</span>}
+                <span key={item} className="flex items-center gap-1.5 text-[0.75rem]" style={{ color: 'var(--text-secondary)' }}>
+                  {i > 0 && <span style={{ margin: '0 2px', opacity: 0.4 }}>&middot;</span>}
                   {item}
                 </span>
               ))}
-              <span className="flex items-center gap-1.5 text-[0.75rem]" style={{ color: 'var(--text-muted)' }}>
-                <span style={{ margin: '0 2px' }}>&middot;</span>
-                <Link href="/downloads" style={{ color: 'var(--text-muted)', textDecoration: 'underline', textUnderlineOffset: '2px' }}>Downloads</Link>
+              <span className="flex items-center gap-1.5 text-[0.75rem]" style={{ color: 'var(--text-secondary)' }}>
+                <span style={{ margin: '0 2px', opacity: 0.4 }}>&middot;</span>
+                <Link href="/downloads" style={{ color: 'var(--text-secondary)', textDecoration: 'underline', textUnderlineOffset: '3px', textDecorationColor: 'rgba(0,0,0,0.15)' }}>Downloads</Link>
               </span>
             </motion.div>
 
-            {/* Tertiary */}
+            {/* Proof strip - mobile: stacked for clean wrapping */}
             <motion.div
-              className="mt-2.5"
+              className="mt-5 sm:hidden flex flex-col gap-1.5"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.38 }}
+            >
+              <div className="flex flex-wrap gap-x-3 gap-y-1">
+                {proofItems.map((item) => (
+                  <span key={item} className="text-[0.75rem]" style={{ color: 'var(--text-secondary)' }}>
+                    {item}
+                  </span>
+                ))}
+                <Link href="/downloads" className="text-[0.75rem]" style={{ color: 'var(--text-secondary)', textDecoration: 'underline', textUnderlineOffset: '3px', textDecorationColor: 'rgba(0,0,0,0.15)' }}>
+                  Downloads
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Tertiary links */}
+            <motion.div
+              className="mt-3 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.45 }}
@@ -121,15 +140,15 @@ export function Hero() {
               <Link
                 href="/agent-auditor"
                 className="text-[0.75rem]"
-                style={{ color: 'var(--text-muted)', textDecoration: 'underline', textUnderlineOffset: '2px' }}
+                style={{ color: 'var(--text-secondary)', textDecoration: 'underline', textUnderlineOffset: '3px', textDecorationColor: 'rgba(0,0,0,0.15)' }}
               >
                 Already have a signed record? Open Agent Auditor
               </Link>
-              <span style={{ margin: '0 6px', color: 'var(--text-muted)' }}>&middot;</span>
+              <span className="hidden sm:inline" style={{ margin: '0 6px', color: 'var(--text-muted)', opacity: 0.4 }}>&middot;</span>
               <Link
                 href="/demo"
                 className="text-[0.75rem]"
-                style={{ color: 'var(--text-muted)', textDecoration: 'underline', textUnderlineOffset: '2px' }}
+                style={{ color: 'var(--text-secondary)', textDecoration: 'underline', textUnderlineOffset: '3px', textDecorationColor: 'rgba(0,0,0,0.15)' }}
               >
                 See a full transaction trace &rarr;
               </Link>
@@ -145,22 +164,20 @@ export function Hero() {
           >
             <Link
               href="/agent-auditor"
-              className="block rounded-2xl overflow-hidden transition-all duration-300"
+              className="block rounded-2xl overflow-hidden transition-shadow duration-300"
               style={{
-                border: '1px solid var(--border-hover)',
+                border: '1px solid var(--border-default)',
                 background: 'var(--surface-elevated)',
-                boxShadow: '0 12px 40px -12px rgba(16, 24, 40, 0.14)',
+                boxShadow: '0 8px 32px -8px rgba(16, 24, 40, 0.10), 0 1px 2px rgba(16, 24, 40, 0.04)',
                 cursor: 'pointer',
                 textDecoration: 'none',
                 color: 'inherit',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'var(--accent-brand)'
-                e.currentTarget.style.boxShadow = '0 16px 48px -12px rgba(16, 24, 40, 0.22)'
+                e.currentTarget.style.boxShadow = '0 16px 48px -12px rgba(16, 24, 40, 0.18), 0 1px 2px rgba(16, 24, 40, 0.04)'
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'var(--border-hover)'
-                e.currentTarget.style.boxShadow = '0 12px 40px -12px rgba(16, 24, 40, 0.14)'
+                e.currentTarget.style.boxShadow = '0 8px 32px -8px rgba(16, 24, 40, 0.10), 0 1px 2px rgba(16, 24, 40, 0.04)'
               }}
             >
               {/* Header */}

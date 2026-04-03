@@ -32,16 +32,15 @@ export default function NavigationHeader() {
       }}
     >
       <nav style={{ maxWidth: 1280, margin: '0 auto', padding: '0 1.25rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '4.25rem' }}>
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', textDecoration: 'none', flexShrink: 0 }}>
-            <div style={{ width: '1.625rem', height: '1.625rem', borderRadius: '0.4375rem', background: 'var(--text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="12" height="13" viewBox="67 -24 1011 1104" fill="none">
-                <g transform="translate(0,1056) scale(1,-1)">
-                  <path d="M573 -24C875 -24 1078 201 1078 526C1078 853 875 1080 573 1080C271 1080 67 853 67 526C67 201 271 -24 573 -24ZM573 158C392 158 281 301 281 526C281 753 393 898 573 898C753 898 865 753 865 526C865 302 754 158 573 158Z" fill="var(--text-inverted)" />
-                </g>
-              </svg>
-            </div>
-            <span style={{ fontSize: '0.9375rem', fontWeight: 500, letterSpacing: '-0.025em', color: 'var(--text-primary)' }}>originary</span>
+        <div className="nav-header-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: '5rem' }}>
+          <Link href="/" className="nav-brand-link" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }} aria-label="originary home">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo/originary-wordmark.svg"
+              alt="originary"
+              className="nav-wordmark"
+              style={{ height: '1.875rem', width: 'auto', display: 'block' }}
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -104,25 +103,25 @@ export default function NavigationHeader() {
           <button
             onClick={() => setOpen(!open)}
             className="mobile-menu-btn"
-            style={{ display: 'none', background: 'none', border: 'none', padding: '0.5rem', marginRight: '-0.5rem', cursor: 'pointer', color: 'var(--text-secondary)' }}
+            style={{ display: 'none', background: 'none', border: 'none', padding: '0.625rem', marginRight: '-0.5rem', cursor: 'pointer' }}
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
           >
-            <div style={{ width: 18, height: 14, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div style={{ width: 15, height: 11, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               <span style={{
-                display: 'block', height: 1.5, background: 'var(--text-primary)', borderRadius: 1,
+                display: 'block', height: 1, background: 'var(--text-tertiary)', borderRadius: 1,
                 transition: 'all 0.3s ease', transformOrigin: 'center',
-                transform: open ? 'rotate(45deg) translateY(6.25px)' : 'none',
+                transform: open ? 'rotate(45deg) translateY(5px)' : 'none',
               }} />
               <span style={{
-                display: 'block', height: 1.5, background: 'var(--text-primary)', borderRadius: 1,
+                display: 'block', height: 1, background: 'var(--text-tertiary)', borderRadius: 1,
                 transition: 'all 0.3s ease',
                 opacity: open ? 0 : 1, transform: open ? 'scaleX(0)' : 'none',
               }} />
               <span style={{
-                display: 'block', height: 1.5, background: 'var(--text-primary)', borderRadius: 1,
+                display: 'block', height: 1, background: 'var(--text-tertiary)', borderRadius: 1,
                 transition: 'all 0.3s ease', transformOrigin: 'center',
-                transform: open ? 'rotate(-45deg) translateY(-6.25px)' : 'none',
+                transform: open ? 'rotate(-45deg) translateY(-5px)' : 'none',
               }} />
             </div>
           </button>
@@ -189,6 +188,11 @@ export default function NavigationHeader() {
           .desktop-nav-links { display: none !important; }
           .desktop-nav-actions { display: none !important; }
           .mobile-menu-btn { display: block !important; }
+          .nav-header-row { min-height: 4.5rem !important; }
+          .nav-wordmark { height: 1.5rem !important; }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .nav-wordmark { height: 1.6875rem !important; }
         }
       `}</style>
     </header>

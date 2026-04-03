@@ -63,23 +63,13 @@ export function HomeFooter() {
       <div className="hp-container py-14 sm:py-20 md:py-24">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-[2.5fr_1fr_1fr_1fr_1fr_1fr] gap-8 md:gap-6">
           <div className="col-span-2 sm:col-span-4 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 group">
-              <div
-                className="w-[1.625rem] h-[1.625rem] rounded-[0.4375rem] flex items-center justify-center transition-transform duration-300 group-hover:scale-105"
-                style={{ background: 'var(--color-fg)' }}
-              >
-                <svg width="12" height="13" viewBox="67 -24 1011 1104" fill="none">
-                  <g transform="translate(0,1056) scale(1,-1)">
-                    <path d="M573 -24C875 -24 1078 201 1078 526C1078 853 875 1080 573 1080C271 1080 67 853 67 526C67 201 271 -24 573 -24ZM573 158C392 158 281 301 281 526C281 753 393 898 573 898C753 898 865 753 865 526C865 302 754 158 573 158Z" fill="var(--color-fg-inverse)" />
-                  </g>
-                </svg>
-              </div>
-              <span
-                className="text-[0.9375rem] font-medium tracking-[-0.025em]"
-                style={{ color: 'var(--color-fg)' }}
-              >
-                originary
-              </span>
+            <Link href="/" className="flex items-center group" aria-label="originary home">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo/originary-wordmark.svg"
+                alt="originary"
+                className="h-[1.125rem] w-auto block"
+              />
             </Link>
             <p
               className="mt-6 hp-text-body-sm max-w-[20rem] leading-relaxed"

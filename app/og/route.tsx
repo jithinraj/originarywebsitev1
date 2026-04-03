@@ -1,9 +1,26 @@
 import { ImageResponse } from '@vercel/og'
+import { readFile } from 'fs/promises'
+import { join } from 'path'
 
-export const runtime = 'edge'
+export const runtime = 'nodejs'
+
+// Load Inter Display SemiBold for the brand wordmark
+async function getFont() {
+  // Try loading from the user's local fonts first, fall back to system
+  try {
+    const fontPath = join(process.cwd(), 'public', 'fonts', 'InterDisplay-SemiBold.otf')
+    return await readFile(fontPath)
+  } catch {
+    // Fallback: fetch from CDN
+    const res = await fetch('https://rsms.me/inter/font-files/InterDisplay-SemiBold.otf')
+    return Buffer.from(await res.arrayBuffer())
+  }
+}
 
 // OG image renderer requires raw hex. Values must match design-system.css
 export async function GET() {
+  const fontData = await getFont()
+
   return new ImageResponse(
     (
       <div
@@ -18,22 +35,22 @@ export async function GET() {
           padding: '60px 80px',
         }}
       >
-        {/* Logo mark */}
+        {/* Logo wordmark - rendered with actual Inter Display SemiBold */}
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             marginBottom: '48px',
-            gap: '20px',
           }}
         >
           <span
             style={{
               fontSize: '48px',
-              fontWeight: 500,
+              fontFamily: 'InterDisplay',
+              fontWeight: 600,
               color: '#0B0B0C',
-              letterSpacing: '-0.025em',
+              letterSpacing: '-0.009em',
             }}
           >
             originary
@@ -104,6 +121,14 @@ export async function GET() {
     {
       width: 1200,
       height: 630,
+      fonts: [
+        {
+          name: 'InterDisplay',
+          data: fontData,
+          weight: 600,
+          style: 'normal',
+        },
+      ],
     }
   )
 }

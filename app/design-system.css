@@ -462,7 +462,7 @@ p {
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--accent-brand);
+  outline: 2px solid var(--text-primary, #0B0B0C);
   outline-offset: 2px;
 }
 
