@@ -54,10 +54,14 @@ export default function Footer() {
                 width: '1.625rem', height: '1.625rem', borderRadius: '0.4375rem',
                 background: 'var(--text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center',
               }}>
-                <span style={{ fontSize: '0.6875rem', fontWeight: 700, color: 'var(--text-inverted)', lineHeight: 1 }}>O</span>
+                <svg width="12" height="13" viewBox="67 -24 1011 1104" fill="none">
+                  <g transform="translate(0,1056) scale(1,-1)">
+                    <path d="M573 -24C875 -24 1078 201 1078 526C1078 853 875 1080 573 1080C271 1080 67 853 67 526C67 201 271 -24 573 -24ZM573 158C392 158 281 301 281 526C281 753 393 898 573 898C753 898 865 753 865 526C865 302 754 158 573 158Z" fill="var(--text-inverted)" />
+                  </g>
+                </svg>
               </div>
-              <span style={{ fontSize: '0.9375rem', fontWeight: 600, letterSpacing: '-0.025em', color: 'var(--text-primary)' }}>
-                Originary
+              <span style={{ fontSize: '0.9375rem', fontWeight: 500, letterSpacing: '-0.025em', color: 'var(--text-primary)' }}>
+                originary
               </span>
             </Link>
             <p style={{ marginTop: '1.5rem', fontSize: '0.875rem', lineHeight: 1.65, color: 'var(--text-tertiary)', maxWidth: '20rem' }}>
