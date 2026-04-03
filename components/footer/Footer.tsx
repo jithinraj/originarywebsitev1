@@ -49,20 +49,13 @@ export default function Footer() {
         <div style={{ display: 'grid', gridTemplateColumns: '2.5fr repeat(5, 1fr)', gap: '2rem' }} className="footer-grid">
           {/* Brand column */}
           <div className="footer-brand-col">
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', textDecoration: 'none' }}>
-              <div style={{
-                width: '1.625rem', height: '1.625rem', borderRadius: '0.4375rem',
-                background: 'var(--text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-              }}>
-                <svg width="12" height="13" viewBox="67 -24 1011 1104" fill="none">
-                  <g transform="translate(0,1056) scale(1,-1)">
-                    <path d="M573 -24C875 -24 1078 201 1078 526C1078 853 875 1080 573 1080C271 1080 67 853 67 526C67 201 271 -24 573 -24ZM573 158C392 158 281 301 281 526C281 753 393 898 573 898C753 898 865 753 865 526C865 302 754 158 573 158Z" fill="var(--text-inverted)" />
-                  </g>
-                </svg>
-              </div>
-              <span style={{ fontSize: '0.9375rem', fontWeight: 500, letterSpacing: '-0.025em', color: 'var(--text-primary)' }}>
-                originary
-              </span>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }} aria-label="originary home">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo/originary-wordmark.svg"
+                alt="originary"
+                style={{ height: '1.125rem', width: 'auto', display: 'block' }}
+              />
             </Link>
             <p style={{ marginTop: '1.5rem', fontSize: '0.875rem', lineHeight: 1.65, color: 'var(--text-tertiary)', maxWidth: '20rem' }}>
               {NARRATIVE.plainSentence}

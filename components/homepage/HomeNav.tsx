@@ -29,25 +29,15 @@ export function HomeNav() {
       style={scrolled ? { background: 'rgba(247,249,252,0.8)' } : undefined}
     >
       <nav className="hp-container">
-        <div className="flex items-center justify-between h-[4.25rem]">
+        <div className="flex items-center justify-between min-h-[4.5rem] lg:min-h-[5rem]">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <div
-              className="w-[1.625rem] h-[1.625rem] rounded-[0.4375rem] flex items-center justify-center"
-              style={{ background: 'var(--color-fg)' }}
-            >
-              <svg width="12" height="13" viewBox="67 -24 1011 1104" fill="none">
-                <g transform="translate(0,1056) scale(1,-1)">
-                  <path d="M573 -24C875 -24 1078 201 1078 526C1078 853 875 1080 573 1080C271 1080 67 853 67 526C67 201 271 -24 573 -24ZM573 158C392 158 281 301 281 526C281 753 393 898 573 898C753 898 865 753 865 526C865 302 754 158 573 158Z" fill="var(--color-fg-inverse)" />
-                </g>
-              </svg>
-            </div>
-            <span
-              className="text-[0.9375rem] font-medium tracking-[-0.025em]"
-              style={{ color: 'var(--color-fg)' }}
-            >
-              originary
-            </span>
+          <Link href="/" className="flex items-center shrink-0" aria-label="originary home">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo/originary-wordmark.svg"
+              alt="originary"
+              className="h-6 md:h-[1.6875rem] lg:h-[1.875rem] w-auto block"
+            />
           </Link>
 
           {/* Desktop nav links */}
@@ -83,27 +73,27 @@ export function HomeNav() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-2 -mr-2 rounded-lg transition-colors hover:bg-[rgba(243,242,238,0.8)]"
+            className="lg:hidden p-2.5 -mr-2 rounded-xl transition-colors"
             aria-label={open ? 'Close menu' : 'Open menu'}
           >
-            <div className="w-[18px] h-[14px] flex flex-col justify-between">
+            <div className="w-[15px] h-[11px] flex flex-col justify-between">
               <span
-                className={`block h-[1.5px] rounded-full transition-all duration-300 origin-center ${
-                  open ? 'rotate-45 translate-y-[6.25px]' : ''
+                className={`block h-[1px] rounded-full transition-all duration-300 origin-center ${
+                  open ? 'rotate-45 translate-y-[5px]' : ''
                 }`}
-                style={{ background: 'var(--color-fg)' }}
+                style={{ background: 'var(--color-fg-muted, #6b7280)' }}
               />
               <span
-                className={`block h-[1.5px] rounded-full transition-all duration-300 ${
+                className={`block h-[1px] rounded-full transition-all duration-300 ${
                   open ? 'opacity-0 scale-x-0' : ''
                 }`}
-                style={{ background: 'var(--color-fg)' }}
+                style={{ background: 'var(--color-fg-muted, #6b7280)' }}
               />
               <span
-                className={`block h-[1.5px] rounded-full transition-all duration-300 origin-center ${
-                  open ? '-rotate-45 -translate-y-[6.25px]' : ''
+                className={`block h-[1px] rounded-full transition-all duration-300 origin-center ${
+                  open ? '-rotate-45 -translate-y-[5px]' : ''
                 }`}
-                style={{ background: 'var(--color-fg)' }}
+                style={{ background: 'var(--color-fg-muted, #6b7280)' }}
               />
             </div>
           </button>
