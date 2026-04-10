@@ -43,7 +43,7 @@ export default function SystemOfRecordPage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Open System of Record for AI Agents",
-    "description": "Policy + records as verifiable evidence for agent interactions. PEAC Protocol creates portable, verifiable records of what was accessed, under what terms, and how it was paid.",
+    "description": "Verifiable interaction records as portable, tamper-evident evidence for agent interactions. PEAC Protocol creates signed records of what was accessed, under what terms, and what decision was made.",
     "url": "https://www.originary.xyz/system-of-record",
     "isPartOf": {
       "@type": "WebSite",
@@ -53,7 +53,7 @@ export default function SystemOfRecordPage() {
     "about": {
       "@type": "Thing",
       "name": "PEAC Protocol",
-      "description": "Open protocol for policy, payments, and receipts in the agentic web"
+      "description": "Open protocol for verifiable interaction records and portable evidence"
     },
     "mainEntity": {
       "@type": "SoftwareApplication",

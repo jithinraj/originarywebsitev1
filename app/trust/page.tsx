@@ -294,10 +294,11 @@ export default function TrustPage() {
               <TrustCard
                 icon={<CheckCircle size={24} />}
                 title="Verification"
-                description="Public endpoints for receipt validation and policy verification."
+                description="Tools and services for signature validation and evidence verification."
                 links={[
-                  { href: '/verify', label: 'Receipt Verification Tool' },
-                  { href: '/demo', label: 'Interactive Demo' }
+                  { href: '/products/verify', label: 'Originary Verify' },
+                  { href: '/verify', label: 'Online Verification Tool' },
+                  { href: '/agent-auditor', label: 'Agent Auditor' }
                 ]}
               />
 

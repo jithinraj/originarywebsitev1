@@ -43,7 +43,7 @@ export default function ChangelogPage() {
             >
               <div style={{ display: 'grid', gap: 'var(--space-4)' }}>
                 {[
-                  { icon: <Tag size={18} />, label: 'Stable version', value: 'v0.12.7' },
+                  { icon: <Tag size={18} />, label: 'Stable version', value: 'v0.12.8' },
                   { icon: <GitBranch size={18} />, label: 'Current wire format', value: 'interaction-record+jwt (stable)' },
                   { icon: <GitBranch size={18} />, label: 'Legacy wire format', value: 'peac-receipt/0.1 (frozen)' },
                   { icon: <Package size={18} />, label: 'License', value: 'Apache-2.0' },
@@ -96,23 +96,20 @@ export default function ChangelogPage() {
 
               {[
                 {
-                  version: 'v0.12.7',
-                  date: 'Apr 8, 2026',
+                  version: 'v0.12.8',
+                  date: 'Apr 10, 2026',
                   items: [
-                    'Coherence gate: 9 cross-surface consistency checks',
-                    'verify:distribution (44 checks with tarball smoke testing)',
-                    'verify:release (22 checks with facts.json)',
-                    'REPO_SURFACE_STATUS.json tracking 74 surfaces',
-                    'Enterprise trust posture, security posture, and reference architectures',
-                    'Compatibility matrix, migration guide, deprecation policy',
-                    'Legacy Wire 0.1 quarantine with RFC 8594 deprecation headers',
-                    'GitHub Actions SHA pinning across all workflows',
-                    '35 packages, 7,241 tests, 219 conformance requirement IDs, 96 targets',
+                    'Go 1.26 SDK with Wire 0.2 parity (sign, verify, policy binding)',
+                    'Python API-first proof (FastAPI middleware, evidence endpoints)',
+                    'Hosted Issue alpha (BYO-key, provisional, disabled by default)',
+                    'Managed Agents session evidence summary demo',
+                    'Cross-language conformance vectors and CI parity',
+                    '35 packages, 7,241 tests, 219 conformance requirement IDs, 97 targets',
                   ],
                 },
                 {
-                  version: 'v0.12.6',
-                  date: 'Apr 1, 2026',
+                  version: 'v0.12.7',
+                  date: '',
                   items: [
                     'x402 V2 complete adapter (Layers A+B+C)',
                     'DID resolution adapter (did:key, did:web, caching)',
@@ -127,7 +124,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.12.5',
-                  date: 'Mar 27, 2026',
+                  date: '',
                   items: [
                     'Per-rail conformance parity: 40 execution-backed fixtures, 4 manifests',
                     'Cross-rail settlement equivalence and asymmetric safety invariant',
@@ -140,7 +137,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.12.4',
-                  date: 'Mar 25, 2026',
+                  date: '',
                   items: [
                     'Commerce evidence across paymentauth, ACP, x402, and Stripe SPT',
                     'New package: @peac/mappings-paymentauth',
@@ -152,7 +149,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.12.3',
-                  date: 'Mar 17, 2026',
+                  date: '',
                   items: [
                     'A2A v1.0.0 dual-version transition normalizer',
                     'MCP Registry published',
@@ -162,7 +159,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.12.2',
-                  date: 'Mar 16, 2026',
+                  date: '',
                   items: [
                     '12 typed extension groups with schema validation',
                     '10 type-to-extension mappings with strict/interop enforcement',
@@ -173,7 +170,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.12.1',
-                  date: 'Mar 14, 2026',
+                  date: '',
                   items: [
                     'x402 adapter with four-layer architecture',
                     '5-layer verification API with opt-in crypto',
@@ -183,7 +180,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.12.0',
-                  date: 'Mar 9, 2026',
+                  date: '',
                   items: [
                     'Interaction Record format stable release (interaction-record+jwt)',
                     '28 packages published on npm',
@@ -192,7 +189,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.12.0-preview.2',
-                  date: 'Mar 6, 2026',
+                  date: '',
                   items: [
                     'Release manifest and coherence gate',
                     'Wire 0.1 isolation',
@@ -202,7 +199,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.12.0-preview.1',
-                  date: 'Mar 3, 2026',
+                  date: '',
                   items: [
                     'Wire 0.2 format (interaction-record+jwt)',
                     '2-kind architecture (evidence and challenge)',
@@ -212,7 +209,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.11.3',
-                  date: 'Mar 2, 2026',
+                  date: '',
                   items: [
                     'Zero Trust Profile Pack: 7 sub-profiles as document overlays',
                     'Agent Identity: ActorBinding with 8 proof types and MVIS',
@@ -223,7 +220,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.11.2',
-                  date: 'Feb 25, 2026',
+                  date: '',
                   items: [
                     'Error recovery next_action hints: 7-value closed vocabulary',
                     'Content Signals observation model: 3-state allow/deny/unspecified',
@@ -234,7 +231,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.11.1',
-                  date: 'Feb 24, 2026',
+                  date: '',
                   items: [
                     'Evidence Carrier Contract: PeacEvidenceCarrier + CarrierAdapter types',
                     'Transport size limits: MCP/A2A/UCP 64 KB, ACP/x402/HTTP 8 KB',
@@ -244,7 +241,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.11.0',
-                  date: 'Feb 23, 2026',
+                  date: '',
                   items: [
                     'Zod 4 migration (^4.3.6) across all packages',
                     'MCP Streamable HTTP transport with session isolation (CVE-2026-25536 defense)',
@@ -254,7 +251,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.10.14',
-                  date: 'Feb 22, 2026',
+                  date: '',
                   items: [
                     'Conformance fixture versioning with schema_version field',
                     'Kernel constraints specification (KERNEL-CONSTRAINTS.md)',
@@ -263,7 +260,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.10.13',
-                  date: 'Feb 19, 2026',
+                  date: '',
                   items: [
                     '@peac/mcp-server: open-source MCP tool server with 5 tools (verify, inspect, decode, issue, bundle)',
                     'Capability-based access control with structured outputs',
@@ -272,7 +269,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.10.12',
-                  date: 'Feb 16, 2026',
+                  date: '',
                   items: [
                     '@peac/capture-node: FileSpoolStore and FileDedupeIndex for durable Node.js capture',
                     'OpenClaw adapter: one-call activate() for Cloudflare Workers with generateSigningKey() and peac-keygen CLI',
@@ -281,7 +278,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.10.11',
-                  date: 'Feb 13, 2026',
+                  date: '',
                   items: [
                     '@peac/rails-stripe: fromCryptoPaymentIntent() for x402 crypto payments',
                     'Registry v0.3.0 with interaction extension and toolcall advisory registries',
@@ -291,7 +288,7 @@ export default function ChangelogPage() {
                 },
                 {
                   version: 'v0.10.10',
-                  date: 'Feb 11, 2026',
+                  date: '',
                   items: [
                     'Dev toolchain improvements',
                     'Build system optimization',

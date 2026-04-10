@@ -6,13 +6,13 @@ import Footer from '@/components/Footer'
 import { FileCode, Zap, MessageSquare, Settings, Brain, FileText } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Integrations | Agentic Web Protocols',
-  description: 'Originary integrations for agentic web protocols. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A with open standards.',
-  keywords: 'x402, HTTP 402, AI Access, MCP, A2A, ACP, AIPREF, PEAC protocol, agentic web, agent verification, agent integrations',
+  title: 'Integrations | Protocol Adapters for Verification and Evidence',
+  description: 'Originary connects to the protocols your agents already use. MCP, A2A, x402, AIPREF, ACP adapters around the PEAC evidence layer.',
+  keywords: 'MCP integration, A2A integration, x402, AIPREF, ACP, PEAC protocol, agent verification integrations, MCP security, evidence adapters',
   robots: 'index,follow',
   openGraph: {
-    title: 'Integrations | Agentic Web Protocols',
-    description: 'Originary integrations for agentic web protocols and agent verification. Implement HTTP 402, x402, ACP, AIPREF, MCP, and A2A.',
+    title: 'Integrations | Protocol Adapters for Verification and Evidence',
+    description: 'Originary connects to the protocols your agents already use. MCP, A2A, x402, AIPREF, ACP adapters around the PEAC evidence layer.',
     url: '/integrations',
     siteName: 'Originary',
     type: 'website',
@@ -168,7 +168,7 @@ export default function IntegrationsPage() {
             color: 'var(--text-primary)',
             lineHeight: 1.2,
           }}>
-            Agentic Web Standards
+            Protocol Integrations
           </h1>
 
           {/* Description */}
@@ -182,7 +182,7 @@ export default function IntegrationsPage() {
             marginRight: 'auto',
             lineHeight: 1.6,
           }}>
-            Originary connects to external protocols through adapters. Each integration handles one standard: HTTP 402 for payments, x402 for settlement, AIPREF for publisher preferences, MCP for tool context, A2A for agent coordination.
+            Originary connects to the systems you already use. PEAC stays rail-neutral and runtime-neutral while Originary packages the operational path. Each adapter handles one standard.
           </p>
 
           {/* Status Legend */}

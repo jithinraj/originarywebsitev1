@@ -2,7 +2,7 @@
 
 > Originary builds production surfaces for verification and evidence across AI agent, API, MCP, and automated interaction workflows. Verify requests, apply policy, and return signed records teams can prove later across vendors, audits, disputes, and reviews. PEAC is the open standard underneath. Self-hostable. Offline-verifiable. No lock-in.
 
-Last updated: 2026-04-09
+Last updated: 2026-04-10
 
 Company: Poem, Inc.
 Location: Delaware, USA
@@ -23,13 +23,13 @@ Contact: contact@originary.xyz
 
 ## Protocol State
 
-- Stable release: v0.12.7 (latest, Apr 8 2026)
+- Stable release: v0.12.8 (latest, Apr 10 2026)
 - Wire format: interaction-record+jwt (Wire 0.2, current stable)
 - Legacy wire format: peac-receipt/0.1 (Wire 0.1, frozen)
 - Published packages: 35 on npm (@peac/*)
 - Tests: 7241
 - Conformance requirement IDs: 219
-- Build targets: 96
+- Build targets: 97
 - License: Apache-2.0
 - Node.js: >=22.0.0
 
@@ -68,7 +68,7 @@ Policy Pack Generator. Generate peac.txt, AIPREF headers, and human-readable pol
 
 ## Integrations
 
-- [MCP](/integrations/mcp) - Model Context Protocol: MCP security and governance via signed records
+- [MCP](/integrations/mcp) - Model Context Protocol: MCP security, governance, and verification via signed records
 - [A2A](/integrations/a2a) - Agent-to-Agent communication with verifiable records
 - [x402 / HTTP 402](/integrations/x402) - HTTP 402 payment evidence for machine-payable APIs
 - [ACP](/integrations/acp) - Agentic Commerce Protocol evidence
@@ -76,7 +76,7 @@ Policy Pack Generator. Generate peac.txt, AIPREF headers, and human-readable pol
 
 ## Open Source
 
-PEAC is an open standard (Apache-2.0). 35 packages on npm, 7241 tests, 219 conformance requirement IDs, 96 build targets.
+PEAC is an open standard (Apache-2.0). 35 packages on npm, 7241 tests, 219 conformance requirement IDs, 97 build targets.
 
 - Ed25519 cryptographic signing (RFC 8032)
 - Compact JWS (RFC 7515)
