@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
-const proofItems = ['Open source', 'Self-hostable', 'Offline verification', 'Portable evidence', 'No lock-in']
+const proofItems = ['Offline verification', 'Portable evidence', 'Open standard', 'Self-hostable']
 
 const recordRows = [
   { label: 'ISSUER', value: 'tools.vendor.com' },

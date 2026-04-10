@@ -23,10 +23,10 @@ export default function ContactPage() {
                   color: 'var(--text-primary)'
                 }}
               >
-                Get in touch
+                Talk to Originary
               </h1>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
-                Questions about the protocol, integration support, or commercial deployment
+                Technical review, enterprise deployment, integration support, or partnership inquiry. We typically respond within 2 business days.
               </p>
             </div>
 
@@ -71,38 +71,22 @@ export default function ContactPage() {
                 How we can help
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-                <div>
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
-                    Integration help
-                  </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Questions about adding Originary to your API, MCP server, or agent flow
-                  </p>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
-                    Enterprise deployment
-                  </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Production deployment support, key management architecture, compliance evidence
-                  </p>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
-                    Partnership
-                  </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Standards collaboration, ecosystem integration, research
-                  </p>
-                </div>
-                <div>
-                  <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
-                    Security and legal
-                  </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                    Vulnerability reports, privacy inquiries, trademark questions
-                  </p>
-                </div>
+                {[
+                  { title: 'Book a technical review', desc: 'Architecture walkthrough, integration planning, deployment review', mailto: 'contact@originary.xyz?subject=Technical%20Review' },
+                  { title: 'Enterprise deployment', desc: 'Managed verification, key management, compliance evidence, pilot scope', mailto: 'contact@originary.xyz?subject=Enterprise%20Deployment' },
+                  { title: 'Integration support', desc: 'Adding Originary to your API, MCP server, or agent workflow', mailto: 'contact@originary.xyz?subject=Integration%20Support' },
+                  { title: 'Partnership', desc: 'Standards collaboration, ecosystem integration, research', mailto: 'contact@originary.xyz?subject=Partnership' },
+                  { title: 'Security and legal', desc: 'Vulnerability reports, privacy inquiries, trademark questions', mailto: 'security@originary.xyz?subject=Security%20Inquiry' },
+                ].map((item) => (
+                  <a key={item.title} href={`mailto:${item.mailto}`} style={{ textDecoration: 'none', display: 'block', padding: 'var(--space-4)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-subtle)', transition: 'border-color 0.2s ease' }}>
+                    <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, color: 'var(--accent-brand)', marginBottom: 'var(--space-1)' }}>
+                      {item.title}
+                    </h3>
+                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                      {item.desc}
+                    </p>
+                  </a>
+                ))}
               </div>
             </div>
 

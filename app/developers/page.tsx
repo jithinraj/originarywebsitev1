@@ -64,6 +64,14 @@ export default function Developers() {
 
             <div className="grid grid-2" style={{ gap: 'var(--space-6)', maxWidth: '960px', margin: '0 auto' }}>
               <GuideCard
+                icon={<Shield size={24} />}
+                title="I need to verify a signed record"
+                description="Validate an interaction record signature offline using the issuer's public key. No network call required."
+                steps={['Extract the PEAC-Receipt header', 'Fetch the issuer JWKS (once)', 'Call verifyLocal() with the public key']}
+                href="/verify"
+                code={`import { verifyLocal } from '@peac/protocol'`}
+              />
+              <GuideCard
                 icon={<Plug size={24} />}
                 title="I have an HTTP API that agents call"
                 description="Publish a peac.txt policy, add middleware, and return verifiable interaction records in response headers."
@@ -86,14 +94,6 @@ export default function Developers() {
                 steps={['Issue records with @peac/protocol', 'Attach via A2A metadata carrier', 'Verify at receiving agent']}
                 href="/integrations/a2a"
                 code="npm install @peac/protocol"
-              />
-              <GuideCard
-                icon={<Shield size={24} />}
-                title="I need to verify a signed record"
-                description="Validate an interaction record signature offline using the issuer's public key. No network call required."
-                steps={['Extract the PEAC-Receipt header', 'Fetch the issuer JWKS (once)', 'Call verifyLocal() with the public key']}
-                href="/verify"
-                code={`import { verifyLocal } from '@peac/protocol'`}
               />
             </div>
           </div>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.originary.xyz/</loc><lastmod>2026-04-09</lastmod></url>
-  <url><loc>https://www.originary.xyz/products</loc><lastmod>2026-04-09</lastmod></url>
-  <url><loc>https://www.originary.xyz/products/verify</loc><lastmod>2026-04-09</lastmod></url>
+  <url><loc>https://www.originary.xyz/</loc><lastmod>2026-04-10</lastmod></url>
+  <url><loc>https://www.originary.xyz/products</loc><lastmod>2026-04-10</lastmod></url>
+  <url><loc>https://www.originary.xyz/products/verify</loc><lastmod>2026-04-10</lastmod></url>
   <url><loc>https://www.originary.xyz/products/gateway-402</loc><lastmod>2026-03-26</lastmod></url>
   <url><loc>https://www.originary.xyz/products/adapters</loc><lastmod>2026-03-26</lastmod></url>
   <url><loc>https://www.originary.xyz/agent-proof-check</loc><lastmod>2026-03-26</lastmod></url>
   <url><loc>https://www.originary.xyz/agent-auditor</loc><lastmod>2026-03-26</lastmod></url>
   <url><loc>https://www.originary.xyz/peac</loc><lastmod>2026-03-26</lastmod></url>
-  <url><loc>https://www.originary.xyz/developers</loc><lastmod>2026-03-26</lastmod></url>
-  <url><loc>https://www.originary.xyz/pricing</loc><lastmod>2026-04-09</lastmod></url>
+  <url><loc>https://www.originary.xyz/developers</loc><lastmod>2026-04-10</lastmod></url>
+  <url><loc>https://www.originary.xyz/pricing</loc><lastmod>2026-04-10</lastmod></url>
   <url><loc>https://www.originary.xyz/trace</loc><lastmod>2026-03-26</lastmod></url>
-  <url><loc>https://www.originary.xyz/enterprise</loc><lastmod>2026-04-09</lastmod></url>
-  <url><loc>https://www.originary.xyz/trust</loc><lastmod>2026-03-26</lastmod></url>
+  <url><loc>https://www.originary.xyz/enterprise</loc><lastmod>2026-04-10</lastmod></url>
+  <url><loc>https://www.originary.xyz/trust</loc><lastmod>2026-04-10</lastmod></url>
   <url><loc>https://www.originary.xyz/verify</loc><lastmod>2026-03-26</lastmod></url>
 
-  <url><loc>https://www.originary.xyz/integrations</loc><lastmod>2026-03-26</lastmod></url>
+  <url><loc>https://www.originary.xyz/integrations</loc><lastmod>2026-04-10</lastmod></url>
   <url><loc>https://www.originary.xyz/integrations/mcp</loc><lastmod>2026-03-26</lastmod></url>
   <url><loc>https://www.originary.xyz/integrations/a2a</loc><lastmod>2026-03-26</lastmod></url>
   <url><loc>https://www.originary.xyz/integrations/x402</loc><lastmod>2026-03-26</lastmod></url>
@@ -27,17 +27,17 @@
   <url><loc>https://www.originary.xyz/integrations/x402/nextjs</loc><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://www.originary.xyz/integrations/x402/python-fastapi</loc><lastmod>2026-03-20</lastmod></url>
 
-  <url><loc>https://www.originary.xyz/learn</loc><lastmod>2026-04-09</lastmod></url>
-  <url><loc>https://www.originary.xyz/learn/ai-receipts</loc><lastmod>2026-04-09</lastmod></url>
-  <url><loc>https://www.originary.xyz/learn/ai-consent-and-attribution</loc><lastmod>2026-04-09</lastmod></url>
+  <url><loc>https://www.originary.xyz/learn</loc><lastmod>2026-04-10</lastmod></url>
+  <url><loc>https://www.originary.xyz/learn/ai-receipts</loc><lastmod>2026-04-10</lastmod></url>
+  <url><loc>https://www.originary.xyz/learn/ai-consent-and-attribution</loc><lastmod>2026-04-10</lastmod></url>
   <url><loc>https://www.originary.xyz/learn/http-402-ai-payments</loc><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://www.originary.xyz/learn/what-is-agentic-commerce</loc><lastmod>2026-03-20</lastmod></url>
-  <url><loc>https://www.originary.xyz/downloads</loc><lastmod>2026-04-09</lastmod></url>
+  <url><loc>https://www.originary.xyz/downloads</loc><lastmod>2026-04-10</lastmod></url>
   <url><loc>https://www.originary.xyz/demo</loc><lastmod>2026-03-20</lastmod></url>
 
   <url><loc>https://www.originary.xyz/declare</loc><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://www.originary.xyz/receipts</loc><lastmod>2026-03-26</lastmod></url>
-  <url><loc>https://www.originary.xyz/blog</loc><lastmod>2026-04-09</lastmod></url>
+  <url><loc>https://www.originary.xyz/blog</loc><lastmod>2026-04-10</lastmod></url>
   <url><loc>https://www.originary.xyz/blog/ai-bot-detection</loc><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://www.originary.xyz/blog/a2a-stack-agent-to-agent-commerce</loc><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://www.originary.xyz/blog/what-is-http-402</loc><lastmod>2026-03-20</lastmod></url>
@@ -54,12 +54,12 @@
   <url><loc>https://www.originary.xyz/docs/payments/x402</loc><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://www.originary.xyz/docs/payments/stripe</loc><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://www.originary.xyz/docs/receipts</loc><lastmod>2026-03-20</lastmod></url>
-  <url><loc>https://www.originary.xyz/about</loc><lastmod>2026-04-09</lastmod></url>
-  <url><loc>https://www.originary.xyz/contact</loc><lastmod>2026-03-20</lastmod></url>
+  <url><loc>https://www.originary.xyz/about</loc><lastmod>2026-04-10</lastmod></url>
+  <url><loc>https://www.originary.xyz/contact</loc><lastmod>2026-04-10</lastmod></url>
 
-  <url><loc>https://www.originary.xyz/security</loc><lastmod>2026-04-09</lastmod></url>
+  <url><loc>https://www.originary.xyz/security</loc><lastmod>2026-04-10</lastmod></url>
 
-  <url><loc>https://www.originary.xyz/changelog</loc><lastmod>2026-04-09</lastmod></url>
+  <url><loc>https://www.originary.xyz/changelog</loc><lastmod>2026-04-10</lastmod></url>
   <url><loc>https://www.originary.xyz/system-of-record</loc><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://www.originary.xyz/research</loc><lastmod>2026-03-20</lastmod></url>
   <url><loc>https://www.originary.xyz/guides/http-402</loc><lastmod>2026-03-20</lastmod></url>
