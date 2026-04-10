@@ -5,7 +5,7 @@ import { AnimateIn } from './AnimateIn'
 
 const benefits = [
   'Ed25519 signatures, verified offline with a public key',
-  '29 packages on npm, 6,664 tests',
+  '35 packages on npm, 7,241 tests',
   'Offline-verifiable with public key alone',
   'Apache-2.0, self-hostable, vendor-neutral',
 ]

@@ -25,14 +25,14 @@ export default function NavigationHeader() {
         right: 0,
         zIndex: 50,
         transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-        background: scrolled ? 'rgba(250,250,247,0.8)' : 'transparent',
+        background: scrolled ? 'rgba(247,249,252,0.8)' : 'transparent',
         backdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'none',
         WebkitBackdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'none',
         boxShadow: scrolled ? '0 1px 0 rgba(0,0,0,0.04)' : 'none',
       }}
     >
-      <nav style={{ maxWidth: 1280, margin: '0 auto', padding: '0 1.25rem' }}>
-        <div className="nav-header-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: '5rem' }}>
+      <nav style={{ maxWidth: 1280, margin: '0 auto', padding: '0 clamp(1.25rem, 4vw, 3rem)' }}>
+        <div className="nav-header-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', minHeight: '4.5rem' }}>
           <Link href="/" className="nav-brand-link" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }} aria-label="originary home">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -44,13 +44,13 @@ export default function NavigationHeader() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="desktop-nav-links" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+          <div className="desktop-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(1rem, 2vw, 1.75rem)' }}>
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className="nav-link-hover"
-                style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s ease' }}
+                style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s ease', whiteSpace: 'nowrap' }}
               >
                 {link.label}
               </Link>
@@ -131,7 +131,7 @@ export default function NavigationHeader() {
         <div style={{
           overflow: 'hidden',
           transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-          maxHeight: open ? 500 : 0,
+          maxHeight: open ? '80vh' : 0,
           paddingBottom: open ? '2rem' : 0,
         }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.125rem', paddingTop: '1rem', borderTop: '1px solid var(--border-default)' }}>
@@ -170,7 +170,7 @@ export default function NavigationHeader() {
                   textDecoration: 'none',
                 }}
               >
-                Start here
+                {NAV_CTA.label}
               </Link>
             </div>
           </div>
@@ -184,11 +184,13 @@ export default function NavigationHeader() {
           box-shadow: 0 2px 8px rgba(0,0,0,0.12);
           transform: translateY(-1px);
         }
+        @media (min-width: 1024px) {
+          .nav-header-row { min-height: 5rem !important; }
+        }
         @media (max-width: 1023px) {
           .desktop-nav-links { display: none !important; }
           .desktop-nav-actions { display: none !important; }
           .mobile-menu-btn { display: block !important; }
-          .nav-header-row { min-height: 4.5rem !important; }
           .nav-wordmark { height: 1.5rem !important; }
         }
         @media (min-width: 768px) and (max-width: 1023px) {

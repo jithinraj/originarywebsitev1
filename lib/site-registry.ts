@@ -26,10 +26,12 @@ export const NARRATIVE = {
   benefitNoun: 'proof',
   complianceNoun: 'evidence',
   tagline: 'Verify every agent request. Prove every decision.',
-  companyDescriptor: 'Originary is the verification layer for agent-facing systems.',
+  companyDescriptor: 'Originary builds production surfaces for verification and evidence across agent, API, MCP, and automated interaction workflows.',
   plainSentence:
-    'Originary verifies agent requests, applies policy, and returns signed records you can prove later. PEAC is the open standard underneath.',
+    'Originary verifies automated requests, applies policy, and returns signed records teams can prove later across vendors, audits, disputes, and reviews. Built on PEAC, the open standard for verifiable interaction records.',
   supportLine: 'Logs stay local. Records travel.',
+  flagshipLine: 'Originary Verify is the fastest way to operationalize PEAC in production.',
+  enterpriseLine: 'Enterprise-grade verification for automated interactions.',
   protocolRelation:
     'PEAC is the open standard for verifiable interaction records. Originary is one product built on top of it.',
 } as const
@@ -69,9 +71,11 @@ export const STATUS_CONFIG: Record<
 // Navigation (canonical, shared across all headers)
 // ---------------------------------------------------------------------------
 export const NAV_PRIMARY = [
+  { label: 'Products', href: '/products' },
   { label: 'Developers', href: '/developers' },
   { label: 'Learn', href: '/learn' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Trust', href: '/trust' },
 ] as const
 
 export const NAV_UTILITY = [
@@ -88,23 +92,29 @@ export const NAV_CTA = {
 // Products (canonical labels + statuses)
 // ---------------------------------------------------------------------------
 export const PRODUCTS = {
+  verify: {
+    label: 'Originary Verify',
+    status: 'available' as ProductStatus,
+    href: '/products/verify',
+    tagline: 'Validate signatures and claims offline: the fastest way to operationalize PEAC',
+  },
   agentAuditor: {
     label: 'Agent Auditor',
     status: 'available' as ProductStatus,
     href: '/agent-auditor',
     tagline: 'Inspect what agents did',
   },
-  verify: {
-    label: 'Verify',
-    status: 'available' as ProductStatus,
-    href: '/verify',
-    tagline: 'Confirm signatures and claims offline',
-  },
   gateway402: {
     label: 'Gateway 402',
     status: 'available' as ProductStatus,
     href: '/products/gateway-402',
     tagline: 'Enforce access and payment policy at the edge',
+  },
+  mcpServer: {
+    label: 'MCP Server',
+    status: 'available' as ProductStatus,
+    href: '/integrations/mcp',
+    tagline: 'Give AI clients verification tools',
   },
   trace: {
     label: 'Trace',
@@ -117,12 +127,6 @@ export const PRODUCTS = {
     status: 'available' as ProductStatus,
     href: '/declare',
     tagline: 'Publish machine-readable terms',
-  },
-  mcpServer: {
-    label: 'MCP Server',
-    status: 'available' as ProductStatus,
-    href: '/integrations/mcp',
-    tagline: 'Give AI clients verification tools',
   },
   capture: {
     label: 'Capture',
@@ -139,10 +143,11 @@ export const FOOTER_GROUPS = [
   {
     title: 'Products',
     links: [
+      { label: 'Originary Verify', href: '/products/verify' },
       { label: 'Agent Auditor', href: '/agent-auditor' },
       { label: 'Gateway 402', href: '/products/gateway-402' },
-      { label: 'Trace', href: '/trace' },
       { label: 'MCP Server', href: '/integrations/mcp' },
+      { label: 'Trace', href: '/trace' },
       { label: 'All products', href: '/products' },
     ],
   },
@@ -192,7 +197,7 @@ export const META_DEFAULTS = {
   siteName: 'Originary',
   siteUrl: 'https://www.originary.xyz',
   titleTemplate: '%s | Originary',
-  defaultTitle: 'Originary | Know what every agent did. Prove it later.',
+  defaultTitle: 'Originary | Prove what agents did',
   defaultDescription: NARRATIVE.plainSentence,
   twitterHandle: '@originaryx',
 } as const

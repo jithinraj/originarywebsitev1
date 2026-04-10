@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Originary Blog | Agent Verification and Infrastructure',
   },
-  description: 'Technical articles from Originary on agent verification, policy enforcement, signed interaction records, and agentic web infrastructure.',
-  keywords: 'Originary blog, AIPREF, PEAC protocol, AI payments, HTTP 402, x402, signed records, technical blog, agentic web, AI infrastructure',
+  description: 'The Originary blog covers agent verification, signed records, policy, offline verification, evidence workflows, and the open infrastructure needed for automated interactions.',
+  keywords: 'Originary blog, agent verification, signed records, offline verification, evidence workflows, PEAC protocol, AIPREF, HTTP 402, technical blog',
   authors: [{ name: 'Originary Team' }],
   openGraph: {
     type: 'website',
     title: 'Originary Blog | Agent Verification and Infrastructure',
-    description: 'Technical articles from Originary on HTTP 402, AI payments, signed interaction records, AIPREF and the agentic web.',
+    description: 'Technical articles from Originary on agent verification, signed records, offline verification, evidence workflows, and automated interactions.',
     url: '/blog',
     images: [
       {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Originary Blog | Agent Verification and Infrastructure',
-    description: 'Technical insights from Originary on HTTP 402, AI payments, signed interaction records and agentic web infrastructure.',
+    description: 'Technical insights from Originary on agent verification, signed records, offline verification, and evidence workflows.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -44,6 +44,26 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const articles = [
     {
+      slug: 'ai-bot-detection',
+      title: 'AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence',
+      description: 'AI bot detection is more than classifiers. Learn how metadata, fingerprints and signed records turn AI traffic into verifiable, portable evidence for audits and disputes.',
+      author: 'Jithin Raj, Founder',
+      date: '2025-12-01',
+      category: 'Technical',
+      readTime: '15 min read',
+      featured: true
+    },
+    {
+      slug: 'a2a-stack-agent-to-agent-commerce',
+      title: 'The A2A Stack: Agent-to-Agent Verification and Commerce',
+      description: 'How AI agents coordinate, transact, and verify interactions with each other. The A2A stack covers policy discovery, signed records, and cross-boundary proof.',
+      author: 'Jithin Raj, Founder',
+      date: '2025-12-03',
+      category: 'Vision',
+      readTime: '12 min read',
+      featured: true
+    },
+    {
       slug: 'what-is-http-402',
       title: 'What is HTTP 402? How PEAC Uses 402 for Agent Payments',
       description: 'HTTP 402 Payment Required was defined in 1997 and reserved for digital payments. Learn how PEAC Protocol activates 402 for AI access control, agent payments, and verifiable receipts.',
@@ -51,17 +71,7 @@ export default function BlogPage() {
       date: '2025-12-03',
       category: 'Explainer',
       readTime: '10 min read',
-      featured: true
-    },
-    {
-      slug: 'a2a-stack-agent-to-agent-commerce',
-      title: 'The A2A Stack: Agent-to-Agent Commerce',
-      description: 'How AI agents coordinate, transact, and verify interactions with each other. The A2A stack covers AI policy discovery, HTTP 402 payments, PEAC-Receipts, and provenance.',
-      author: 'Jithin Raj, Founder',
-      date: '2025-12-03',
-      category: 'Vision',
-      readTime: '12 min read',
-      featured: true
+      featured: false
     },
     {
       slug: 'from-detection-to-settlement-ai-paywall-peac-http-402',
@@ -71,16 +81,6 @@ export default function BlogPage() {
       date: '2025-12-01',
       category: 'Technical',
       readTime: '18 min read',
-      featured: false
-    },
-    {
-      slug: 'ai-bot-detection',
-      title: 'AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence',
-      description: 'AI bot detection is more than classifiers. Learn how metadata, fingerprints and PEAC receipts turn AI traffic into verifiable, enforceable evidence.',
-      author: 'Jithin Raj, Founder',
-      date: '2025-12-01',
-      category: 'Technical',
-      readTime: '15 min read',
       featured: false
     },
     {
@@ -139,7 +139,7 @@ export default function BlogPage() {
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "Originary Blog",
-    "description": "Originary blog on AI payments, HTTP 402, x402, signed interaction records, AIPREF and agentic web infrastructure. Technical insights, protocol updates and best practices for AI infrastructure teams.",
+    "description": "Originary blog on agent verification, signed records, offline verification, evidence workflows, and open infrastructure for automated interactions.",
     "url": "https://www.originary.xyz/blog",
     "publisher": {
       "@type": "Organization",
@@ -150,12 +150,12 @@ export default function BlogPage() {
       }
     },
     "about": [
-      "AI payments",
-      "HTTP 402",
-      "x402",
+      "agent verification",
       "signed interaction records",
-      "AIPREF",
-      "agentic web infrastructure"
+      "offline verification",
+      "evidence workflows",
+      "PEAC Protocol",
+      "automated interactions"
     ]
   }
 
@@ -212,7 +212,7 @@ export default function BlogPage() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--text-secondary)'
               }}>
-                Insights from the agentic web
+                Agent verification, evidence, and open infrastructure
               </h2>
 
               <p style={{
@@ -221,7 +221,7 @@ export default function BlogPage() {
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-8)'
               }}>
-                The Originary blog covers HTTP 402, AI payments, signed interaction records, AIPREF, and the infrastructure needed for the agentic web. Technical articles, protocol updates, and best practices from the Originary team.
+                The Originary blog covers agent verification, signed records, policy, offline verification, evidence workflows, and the open infrastructure needed for automated interactions. Technical articles, protocol updates, and best practices from the Originary team.
               </p>
             </div>
           </div>

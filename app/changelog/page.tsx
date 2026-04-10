@@ -43,7 +43,7 @@ export default function ChangelogPage() {
             >
               <div style={{ display: 'grid', gap: 'var(--space-4)' }}>
                 {[
-                  { icon: <Tag size={18} />, label: 'Stable version', value: 'v0.12.4' },
+                  { icon: <Tag size={18} />, label: 'Stable version', value: 'v0.12.7' },
                   { icon: <GitBranch size={18} />, label: 'Current wire format', value: 'interaction-record+jwt (stable)' },
                   { icon: <GitBranch size={18} />, label: 'Legacy wire format', value: 'peac-receipt/0.1 (frozen)' },
                   { icon: <Package size={18} />, label: 'License', value: 'Apache-2.0' },
@@ -95,6 +95,49 @@ export default function ChangelogPage() {
               </h2>
 
               {[
+                {
+                  version: 'v0.12.7',
+                  date: 'Apr 8, 2026',
+                  items: [
+                    'Coherence gate: 9 cross-surface consistency checks',
+                    'verify:distribution (44 checks with tarball smoke testing)',
+                    'verify:release (22 checks with facts.json)',
+                    'REPO_SURFACE_STATUS.json tracking 74 surfaces',
+                    'Enterprise trust posture, security posture, and reference architectures',
+                    'Compatibility matrix, migration guide, deprecation policy',
+                    'Legacy Wire 0.1 quarantine with RFC 8594 deprecation headers',
+                    'GitHub Actions SHA pinning across all workflows',
+                    '35 packages, 7,241 tests, 219 conformance requirement IDs, 96 targets',
+                  ],
+                },
+                {
+                  version: 'v0.12.6',
+                  date: 'Apr 1, 2026',
+                  items: [
+                    'x402 V2 complete adapter (Layers A+B+C)',
+                    'DID resolution adapter (did:key, did:web, caching)',
+                    'A2A OAuth PKCE with Device Code types',
+                    'gRPC carrier adapter with real SHA-256 receipt_ref',
+                    'receipt_url resolution middleware with semaphore',
+                    'in-toto v1.0 and SLSA v1.2 provenance mappings (2 new packages)',
+                    'ERC-8128 conformance fixtures',
+                    '4 spec profile docs, 27 conformance requirement IDs',
+                    '35 packages, 7,241 tests, 219 conformance IDs, 95 targets',
+                  ],
+                },
+                {
+                  version: 'v0.12.5',
+                  date: 'Mar 27, 2026',
+                  items: [
+                    'Per-rail conformance parity: 40 execution-backed fixtures, 4 manifests',
+                    'Cross-rail settlement equivalence and asymmetric safety invariant',
+                    'AmountMinorStringSchema and isValidAmountMinor()',
+                    'Commerce integration matrix',
+                    '59 package READMEs with kernel template',
+                    'Security: path-to-regexp >=8.4.0, handlebars audit allowlist',
+                    '29 packages, 6,915 tests, 92 targets',
+                  ],
+                },
                 {
                   version: 'v0.12.4',
                   date: 'Mar 25, 2026',

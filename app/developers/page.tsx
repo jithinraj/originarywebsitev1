@@ -237,19 +237,22 @@ if (result.verified) {
               textAlign: 'center',
             }}>
               <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-                Need integration support?
+                Need managed verification or integration support?
               </h2>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '520px', margin: '0 auto var(--space-8) auto' }}>
-                Commercial support is available for teams deploying at scale.
+                Originary Verify offers hosted verification, managed keys, and enterprise evidence exports. Commercial support is available for teams deploying at scale.
               </p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
-                <a href="mailto:contact@originary.xyz?subject=Integration%20Support" className="btn btn-primary btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                  <span>Contact us</span>
+                <Link href="/products/verify" className="btn btn-primary btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+                  <span>Originary Verify</span>
                   <ArrowRight size={18} />
-                </a>
-                <a href="#quickstart" className="btn btn-secondary btn-lg">
-                  View quickstart
-                </a>
+                </Link>
+                <Link href="/agent-proof-check" className="btn btn-secondary btn-lg">
+                  Proof Check
+                </Link>
+                <Link href="/agent-auditor" className="btn btn-secondary btn-lg">
+                  Agent Auditor
+                </Link>
               </div>
             </div>
           </div>

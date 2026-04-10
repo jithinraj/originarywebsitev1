@@ -87,6 +87,7 @@ export default function AboutPage() {
   ]
 
   const productList = [
+    { name: 'Originary Verify', desc: 'The fastest way to operationalize PEAC in production. Validate signatures, policy binding, and evidence exports at scale.', icon: <Shield size={22} /> },
     { name: 'Agent Auditor', desc: 'Open a signed record, inspect every field, verify the signature. The fastest way to see what Originary does.', icon: <Eye size={22} /> },
     { name: 'Gateway 402', desc: 'Edge enforcement with HTTP 402 challenges and signed record issuance.', icon: <CreditCard size={22} /> },
     { name: 'MCP Server', desc: 'Verification middleware for MCP tool endpoints. Signed records travel with the response.', icon: <Code size={22} /> },
@@ -124,7 +125,7 @@ export default function AboutPage() {
                 color: 'var(--text-primary)',
               }}
             >
-              We build the production layer for verifiable interaction records
+              We build the production layer for open evidence
             </h1>
 
             <p
@@ -138,7 +139,7 @@ export default function AboutPage() {
                 fontWeight: 400,
               }}
             >
-              Originary builds tools and deployment surfaces around PEAC, the open standard for verifiable interaction records.
+              Originary builds production surfaces for verification and evidence across agent, API, MCP, and automated interaction workflows. PEAC is the open standard underneath.
             </p>
 
             <div
@@ -268,10 +269,10 @@ export default function AboutPage() {
                     marginBottom: 'var(--space-2)',
                   }}
                 >
-                  Originary Platform
+                  Originary Products
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
-                  The product surface: middleware, tools, and SDKs that help teams author policy, enforce decisions, and verify interaction records in production.
+                  Originary Verify, Agent Auditor, Gateway 402, MCP Server, and Trace: production surfaces that help teams verify requests, apply policy, and prove what agents did.
                 </p>
               </div>
             </div>
@@ -933,9 +934,8 @@ export default function AboutPage() {
                   margin: '0 auto var(--space-3) auto',
                 }}
               >
-                Poem, Inc. builds AI infrastructure software and tools for the agentic web, and maintains
+                Poem, Inc. builds verification and evidence infrastructure, and maintains
                 the Originary products and services that run on top of PEAC Protocol.
-                PEAC's receipt verification model was cited in technical discussions with the Coinbase x402 protocol team.
               </p>
               <p
                 style={{

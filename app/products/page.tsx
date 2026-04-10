@@ -6,9 +6,9 @@ import { ArrowRight, CheckCircle, Shield, Zap, Server, BarChart3, FileText, Hard
 import { NARRATIVE } from '@/lib/site-registry'
 
 export const metadata: Metadata = {
-  title: 'Products',
-  description: 'Inspect, verify, enforce, and monitor agent interactions. Agent Auditor, Gateway 402, MCP Server, Trace, and more. Built on PEAC, the open standard.',
-  keywords: 'Originary products, Agent Auditor, Gateway 402, MCP server, interaction records, verification',
+  title: 'Products | Verification and Evidence Tools for AI Agent Interactions',
+  description: 'Originary Verify, Agent Auditor, Gateway 402, MCP Server, and Trace. AI agent verification, tamper-evident audit trails, and portable evidence. Built on PEAC.',
+  keywords: 'Originary Verify, AI agent verification, MCP security, MCP audit trail, Agent Auditor, Gateway 402, tamper-evident audit trail, evidence workflows, offline verification',
   robots: 'index,follow',
   openGraph: {
     title: 'Products',
@@ -32,6 +32,15 @@ export const metadata: Metadata = {
 // Canonical product labels and statuses live in PRODUCTS (lib/site-registry.ts).
 // This array carries additional detail (icons, features, npm) that the registry does not.
 const primaryProducts = [
+  {
+    icon: Shield,
+    title: 'Originary Verify',
+    description: 'The fastest way to operationalize PEAC in production. Validate signatures, key material, policy binding, and evidence exports at scale. Hosted or self-hosted.',
+    features: ['Ed25519 signature verification', 'Offline verification', 'Hosted or self-hosted deployment', 'Enterprise evidence exports'],
+    href: '/products/verify',
+    npm: '@peac/protocol',
+    status: 'available' as const,
+  },
   {
     icon: Search,
     title: 'Agent Auditor',
@@ -57,15 +66,6 @@ const primaryProducts = [
     features: ['5 MCP tools', 'Offline verification', 'Capability-based ACL', 'Claude Desktop and Cursor'],
     href: '/integrations/mcp',
     npm: '@peac/mcp-server',
-    status: 'available' as const,
-  },
-  {
-    icon: Shield,
-    title: 'Verify',
-    description: 'Validate signatures offline using the issuer\'s public key. No API callback required.',
-    features: ['Ed25519 signature verification', 'Offline verification', 'JWKS support', 'Policy binding validation'],
-    href: '/products/verify',
-    npm: '@peac/protocol',
     status: 'available' as const,
   },
   {
@@ -106,13 +106,13 @@ export default function ProductsPage() {
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
               <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 'var(--space-4)' }}>PRODUCTS</div>
               <h1 style={{ marginBottom: 'var(--space-6)', color: 'var(--text-primary)', fontWeight: 700, fontSize: 'clamp(2rem, 4.5vw, 3.5rem)' }}>
-                Choose the surface that fits your evidence workflow
+                AI agent verification and tamper-evident audit trails
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-                Most teams start with Agent Auditor or Gateway 402. Add MCP Server for AI clients, Trace for monitoring, or lower-level building blocks for custom flows.
+                Originary Verify is the flagship. Agent Auditor inspects. Gateway 402 enforces at the edge. MCP Server gives AI clients verification tools. Trace monitors and exports evidence.
               </p>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-tertiary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                Each product handles a different stage of the evidence lifecycle.
+                Each product handles a different stage: inspect, verify, enforce, observe.
               </p>
             </div>
           </div>

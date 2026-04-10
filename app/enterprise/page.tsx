@@ -5,13 +5,13 @@ import Footer from '@/components/Footer'
 import { ArrowRight, Shield, Key, Server, FileCheck, Lock, Download } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Enterprise',
-  description: 'Enterprise deployment guide for Originary. Self-hosted verification, key management, compliance evidence, and deployment options.',
+  title: 'Enterprise Verification for Agent, API, and MCP Interactions',
+  description: 'Enterprise AI agent verification and MCP security. Self-hosted, hybrid, or managed deployment with tamper-evident audit trails, managed keys, and procurement-ready evidence.',
   robots: 'index,follow',
   alternates: { canonical: '/enterprise' },
   openGraph: {
     title: 'Enterprise',
-    description: 'Enterprise deployment guide for Originary. Self-hosted verification, key management, and compliance evidence.',
+    description: 'Enterprise AI agent verification with tamper-evident audit trails, managed keys, and procurement-ready evidence.',
     url: '/enterprise',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Enterprise',
-    description: 'Enterprise deployment guide for Originary. Self-hosted verification, key management, and compliance evidence.',
+    description: 'Enterprise AI agent verification with tamper-evident audit trails, managed keys, and procurement-ready evidence.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -81,7 +81,7 @@ export default function EnterprisePage() {
               marginBottom: 'var(--space-6)',
               color: 'var(--text-primary)',
             }}>
-              Enterprise Deployment
+              Enterprise-Grade Verification
             </h1>
             <p style={{
               fontSize: 'var(--text-lg)',
@@ -91,12 +91,15 @@ export default function EnterprisePage() {
               maxWidth: '600px',
               margin: '0 auto var(--space-10) auto',
             }}>
-              Self-hosted verification, managed key infrastructure, and compliance evidence for teams that need to prove what agents did.
+              Self-hosted, hybrid, or managed deployment for teams that need portable proof, attested keys, and procurement-ready evidence for agent, API, and MCP interactions.
             </p>
             <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href="/contact" className="btn btn-primary btn-lg">
-                Talk to us
+              <Link href="/products/verify" className="btn btn-primary btn-lg">
+                Originary Verify
                 <ArrowRight size={18} />
+              </Link>
+              <Link href="/contact" className="btn btn-secondary btn-lg">
+                Talk to us
               </Link>
               <Link href="/trust" className="btn btn-secondary btn-lg">
                 Trust Center
@@ -193,6 +196,80 @@ export default function EnterprisePage() {
                 Discuss enterprise deployment
                 <ArrowRight size={16} />
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Data boundary table */}
+        <section className="section" style={{ background: 'var(--surface-elevated)' }}>
+          <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', marginBottom: 'var(--space-10)' }}>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-3)' }}>
+                What Leaves Your Environment?
+              </h2>
+              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)' }}>
+                Verification never depends on Originary being online.
+              </p>
+            </div>
+            <div style={{ overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--text-sm)' }}>
+                <thead>
+                  <tr style={{ borderBottom: '2px solid var(--border-default)' }}>
+                    <th style={{ textAlign: 'left', padding: 'var(--space-3)', color: 'var(--text-tertiary)', fontWeight: 600 }}>Data</th>
+                    <th style={{ textAlign: 'center', padding: 'var(--space-3)', color: 'var(--text-primary)', fontWeight: 700 }}>Self-hosted</th>
+                    <th style={{ textAlign: 'center', padding: 'var(--space-3)', color: 'var(--text-primary)', fontWeight: 700 }}>Managed keys</th>
+                    <th style={{ textAlign: 'center', padding: 'var(--space-3)', color: 'var(--text-primary)', fontWeight: 700 }}>Full managed</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Signing keys', 'Stays local', 'Managed by Originary', 'Managed by Originary'],
+                    ['Policy files', 'Stays local', 'Stays local', 'Originary hosts'],
+                    ['Request payloads', 'Never collected', 'Never collected', 'Never collected'],
+                    ['Signed records', 'Stays local', 'Stays local', 'Originary stores'],
+                    ['Verification', 'Local, offline', 'Local, offline', 'Local, offline'],
+                    ['Network calls to Originary', 'None', 'Key lifecycle only', 'Record storage only'],
+                  ].map(([data, self, managed, full], idx) => (
+                    <tr key={idx} style={{ borderBottom: '1px solid var(--border-subtle)' }}>
+                      <td style={{ padding: 'var(--space-3)', color: 'var(--text-secondary)', fontWeight: 500 }}>{data}</td>
+                      <td style={{ padding: 'var(--space-3)', textAlign: 'center', color: 'var(--text-secondary)' }}>{self}</td>
+                      <td style={{ padding: 'var(--space-3)', textAlign: 'center', color: 'var(--text-secondary)' }}>{managed}</td>
+                      <td style={{ padding: 'var(--space-3)', textAlign: 'center', color: 'var(--text-secondary)' }}>{full}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* Procurement CTAs */}
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
+          <div className="container" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+            <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-8)' }}>
+              Ready to Evaluate?
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(220px, 100%), 1fr))', gap: 'var(--space-4)' }}>
+              {[
+                { label: 'Book a technical review', href: '/contact?subject=Technical%20Review' },
+                { label: 'Request architecture walkthrough', href: '/contact?subject=Architecture%20Walkthrough' },
+                { label: 'Discuss pilot scope', href: '/contact?subject=Pilot%20Scope' },
+              ].map((cta) => (
+                <Link
+                  key={cta.label}
+                  href={cta.href}
+                  style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-2)',
+                    padding: 'var(--space-4)', background: 'var(--surface-elevated)',
+                    border: '1px solid var(--border-default)', borderRadius: 'var(--radius-lg)',
+                    fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--accent-brand)',
+                    textDecoration: 'none', transition: 'all 0.2s ease',
+                  }}
+                >
+                  {cta.label}
+                  <ArrowRight size={14} />
+                </Link>
+              ))}
             </div>
           </div>
         </section>

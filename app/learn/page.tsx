@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { BookOpen, ArrowRight, Receipt, CreditCard, Shield, ShoppingCart, Sparkles, TrendingUp, Users, Zap } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Learn: Agent Verification, Records & Policy',
-  description: 'Guides on agent verification, verifiable interaction records, HTTP 402 payments, and policy enforcement. Essential reading for teams operating agent-facing systems.',
-  keywords: 'agent verification tutorial, AI receipts explained, HTTP 402 guide, machine payments, AI consent, agent economy, PEAC Protocol guide, autonomous AI transactions, AI infrastructure learning, agent-to-agent payments',
+  title: 'Learn: AI Agent Verification, Audit Trails & Policy',
+  description: 'Guides on AI agent verification, tamper-evident audit trails, MCP security, signed records, and evidence workflows. Essential reading for teams operating agent-facing systems.',
+  keywords: 'agent verification tutorial, verifiable interaction records, offline verification, signed records, AI consent, policy discovery, PEAC Protocol guide, evidence workflows, agent verification, portable proof',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
@@ -33,52 +33,52 @@ export const metadata: Metadata = {
 
 const learnArticles = [
   {
-    slug: 'what-is-agentic-commerce',
-    title: 'What is Agentic Commerce?',
-    subtitle: 'The Economic Layer for AI Agents',
-    description: 'What happens when machines need to buy API calls, pay for content access, or settle charges with other agents. Covers policy discovery, pricing headers, payment rails, and signed receipts.',
-    icon: ShoppingCart,
+    slug: 'ai-receipts',
+    title: 'Verifiable Interaction Records',
+    subtitle: 'Why Logs Are Not Enough',
+    description: 'What a signed interaction record contains, how offline verification works, and why server logs are not portable proof. Includes the JWS payload structure and Ed25519 verification flow.',
+    icon: Receipt,
     color: 'var(--accent-brand-subtle)',
     iconColor: 'var(--accent-brand)',
-    readTime: '8 min read',
+    readTime: '6 min read',
     featured: true,
-    topics: ['Agent Economy', 'Machine Payments', 'API Monetization']
+    topics: ['Interaction Records', 'Offline Verification', 'Portable Proof']
   },
   {
-    slug: 'ai-receipts',
-    title: 'AI Receipts Explained',
-    subtitle: 'Verifiable Records of Agent Interactions',
-    description: 'What a signed interaction record contains, how verification works, and why server logs are not portable proof. Includes the JWS payload structure and Ed25519 verification flow.',
-    icon: Receipt,
+    slug: 'ai-consent-and-attribution',
+    title: 'Policy, Consent & Attribution',
+    subtitle: 'Machine-Readable Terms for AI',
+    description: 'How publishers declare what agents may do with their content (AIPREF, peac.txt) and how agents prove they followed those terms. The gap between robots.txt and what AI actually needs.',
+    icon: Shield,
     color: 'var(--accent-secondary-subtle)',
     iconColor: 'var(--accent-secondary)',
-    readTime: '6 min read',
+    readTime: '7 min read',
     featured: false,
-    topics: ['Interaction Records', 'JWS Signatures', 'Audit Trails']
+    topics: ['AIPREF', 'Policy Discovery', 'Content Terms']
   },
   {
     slug: 'http-402-ai-payments',
-    title: 'HTTP 402 & AI Payments',
-    subtitle: 'The Web Standard for Machine-Payable APIs',
-    description: 'How HTTP 402 Payment Required works for machine-to-machine payments. The request/challenge/payment/receipt cycle, x402 protocol headers, and what distinguishes 402 from 401 and 403.',
+    title: 'HTTP 402 & Payment Evidence',
+    subtitle: 'Payment Challenges and Settlement Proof',
+    description: 'How HTTP 402 Payment Required works for machine-to-machine interactions. The request/challenge/payment/receipt cycle, x402 protocol headers, and how payment evidence fits into the verification stack.',
     icon: CreditCard,
     color: 'var(--accent-tertiary-subtle)',
     iconColor: 'var(--brand-accent)',
     readTime: '10 min read',
     featured: false,
-    topics: ['HTTP 402', 'x402 Protocol', 'Pay-per-Request']
+    topics: ['HTTP 402', 'Payment Evidence', 'Settlement Proof']
   },
   {
-    slug: 'ai-consent-and-attribution',
-    title: 'AI Consent & Attribution',
-    subtitle: 'Machine-Readable Permissions for AI',
-    description: 'How publishers declare what agents may do with their content (AIPREF, peac.txt) and how agents prove they followed those terms. The gap between robots.txt and what AI actually needs.',
-    icon: Shield,
+    slug: 'what-is-agentic-commerce',
+    title: 'Agentic Commerce',
+    subtitle: 'The Economic Layer for AI Agents',
+    description: 'What happens when machines need to buy API calls, pay for content access, or settle charges with other agents. Covers policy discovery, pricing headers, payment rails, and signed records.',
+    icon: ShoppingCart,
     color: 'var(--accent-brand-subtle)',
     iconColor: 'var(--accent-brand)',
-    readTime: '7 min read',
+    readTime: '8 min read',
     featured: false,
-    topics: ['AIPREF', 'Content Licensing', 'AI Compliance']
+    topics: ['Agent Economy', 'Machine Payments', 'API Monetization']
   }
 ]
 
@@ -106,7 +106,7 @@ export default function LearnPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Learn About AI Infrastructure",
-    "description": "In-depth guides on agent verification and signed records, verifiable records, HTTP 402 payments, and AI consent infrastructure",
+    "description": "In-depth guides on verification, signed records, policy, consent, and evidence for automated interactions",
     "url": "https://www.originary.xyz/learn",
     "publisher": {
       "@type": "Organization",
@@ -184,7 +184,7 @@ export default function LearnPage() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--text-primary)'
               }}>
-                How agents <span className="text-gradient">pay, prove, and comply</span>
+                How automated interactions become <span className="text-gradient">verifiable</span>
               </h1>
 
               <p style={{
@@ -195,7 +195,7 @@ export default function LearnPage() {
                 maxWidth: '650px',
                 margin: '0 auto var(--space-10) auto'
               }}>
-                Four guides covering the infrastructure AI agents need to transact, verify, and respect publisher terms. Each one explains a protocol surface, shows what the wire format looks like, and points to working code.
+                Four guides covering records, verification, policy, and evidence for automated interactions. Each one explains a protocol surface, shows what the wire format looks like, and points to working code.
               </p>
 
               {/* Stats Row */}
@@ -232,7 +232,7 @@ export default function LearnPage() {
           <div className="container">
             <div style={{ maxWidth: '720px', margin: '0 auto' }}>
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                When an AI agent calls an API, scrapes a page, or uses a tool, three things need to happen: the agent needs to know the terms (policy discovery), it may need to pay (HTTP 402), and both sides need proof of what occurred (signed records). These guides explain each layer, what the protocol messages look like, and how to implement them.
+                When an AI agent calls an API, scrapes a page, or uses a tool, both sides need proof of what occurred. Logs explain what your systems observed; they do not create portable proof another party can verify independently. These guides explain how signed records work, how policy and consent fit in, and how payment evidence layers on top.
               </p>
             </div>
           </div>
@@ -256,7 +256,7 @@ export default function LearnPage() {
                 maxWidth: '500px',
                 margin: '0 auto'
               }}>
-                Each guide builds on the others. We recommend starting with Agentic Commerce.
+                Each guide builds on the others. We recommend starting with Verifiable Interaction Records.
               </p>
             </div>
 
@@ -413,7 +413,7 @@ export default function LearnPage() {
                 textAlign: 'center',
                 marginBottom: 'var(--space-10)'
               }}>
-                Follow this sequence to build a complete understanding of AI infrastructure
+                Follow this sequence to build a complete understanding of verification and evidence for automated interactions
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
@@ -519,7 +519,7 @@ export default function LearnPage() {
                   Developer Documentation
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Start here with signed records, policy files, and payment infrastructure
+                  Start here with signed records, policy files, and verification tools
                 </p>
               </Link>
             </div>

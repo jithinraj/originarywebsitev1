@@ -24,10 +24,11 @@ export const FOOTER_PRODUCTS: FooterGroup = {
   id: 'products',
   title: 'Products',
   links: [
+    { label: 'Originary Verify', href: '/products/verify' },
     { label: 'Agent Auditor', href: '/agent-auditor' },
     { label: 'Gateway 402', href: '/products/gateway-402' },
-    { label: 'Trace', href: '/trace' },
     { label: 'MCP Server', href: '/integrations/mcp' },
+    { label: 'Trace', href: '/trace' },
     { label: 'All products', href: '/products' },
   ],
 }

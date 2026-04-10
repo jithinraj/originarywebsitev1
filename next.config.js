@@ -113,11 +113,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/products/verify',
-        destination: '/agent-auditor',
-        permanent: true,
-      },
-      {
         source: '/press',
         destination: '/about',
         permanent: true,
@@ -145,11 +140,6 @@ const nextConfig = {
       {
         source: '/brand',
         destination: '/about',
-        permanent: true,
-      },
-      {
-        source: '/verify',
-        destination: '/agent-auditor',
         permanent: true,
       },
       {

@@ -44,9 +44,9 @@ export default function Footer() {
         background: 'linear-gradient(to right, transparent, var(--border-default), transparent)',
       }} />
 
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '3.5rem 1.25rem 0' }}>
+      <div className="container footer-container">
         {/* Main grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '2.5fr repeat(5, 1fr)', gap: '2rem' }} className="footer-grid">
+        <div className="footer-grid">
           {/* Brand column */}
           <div className="footer-brand-col">
             <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }} aria-label="originary home">
@@ -101,7 +101,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div style={{
-          marginTop: '3.5rem', paddingTop: '2rem',
+          marginTop: 'clamp(2rem, 4vw, 3.5rem)', paddingTop: 'clamp(1.25rem, 3vw, 2rem)',
           position: 'relative',
           display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '1rem',
         }}>
@@ -127,7 +127,7 @@ export default function Footer() {
         </div>
 
         {/* Legal */}
-        <div style={{ paddingTop: '1rem', paddingBottom: '2.5rem' }}>
+        <div style={{ paddingTop: '1rem', paddingBottom: 'clamp(1.5rem, 3vw, 2.5rem)' }}>
           <p style={{ fontSize: '0.6875rem', lineHeight: 1.6, color: 'var(--text-muted)', margin: 0, maxWidth: '56rem', opacity: 0.7 }}>
             Originary is a brand of Poem, Inc. (Delaware, USA). Not affiliated with Originary Inc. PEAC is an open standard stewarded by Originary and the open-source community. <Link href="/legal/imprint" style={{ color: 'var(--text-muted)', textDecoration: 'underline' }}>Legal info</Link>
           </p>
@@ -138,16 +138,37 @@ export default function Footer() {
         .footer-link-hover:hover { color: var(--text-primary) !important; }
         .footer-icon-hover:hover { color: var(--text-primary) !important; }
 
-        @media (max-width: 768px) {
+        .footer-container {
+          padding-top: 2.5rem;
+        }
+        @media (min-width: 768px) {
+          .footer-container { padding-top: 3.5rem; }
+        }
+
+        .footer-grid {
+          display: grid;
+          grid-template-columns: 2.5fr repeat(5, 1fr);
+          gap: 2rem;
+        }
+
+        @media (max-width: 1023px) {
           .footer-grid {
-            grid-template-columns: 1fr 1fr !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 1.5rem !important;
           }
           .footer-brand-col {
             grid-column: 1 / -1;
           }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 639px) {
+          .footer-grid {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 1.25rem !important;
+          }
+        }
+
+        @media (max-width: 399px) {
           .footer-grid {
             grid-template-columns: 1fr !important;
           }
