@@ -69,31 +69,25 @@ const organizationJsonLd = {
     }
   ],
   knowsAbout: [
-    'HTTP 402',
-    'x402',
-    'AIPREF',
+    'agent verification',
+    'verifiable interaction records',
+    'offline verification',
+    'evidence workflows',
     'PEAC Protocol',
+    'signed records',
+    'portable proof',
     'MCP',
-    'ACP',
     'A2A',
     'AI agent interactions',
-    'AI commerce',
-    'AI infrastructure',
-    'AI compliance',
-    'AI Consent',
-    'AI Access',
-    'Ethical crawling',
-    'verifiable records',
-    'agent-to-agent transactions',
-    'Verifiable records for AI agents',
-    'HTTP 402 Payment Required',
-    'Agent-to-Agent communication',
-    'Model Context Protocol',
-    'PEAC records',
-    'AI Preferences',
     'API policy verification',
-    'Agent coordination',
-    'Machine-readable payment flows'
+    'AIPREF',
+    'AI consent',
+    'AI compliance evidence',
+    'Model Context Protocol',
+    'Agent-to-Agent communication',
+    'HTTP 402',
+    'x402',
+    'open evidence'
   ]
 }
 
@@ -121,8 +115,8 @@ const siteNavJsonLd = {
     {
       '@type': 'SiteNavigationElement',
       position: 1,
-      name: 'PEAC Protocol',
-      url: 'https://www.originary.xyz/peac'
+      name: 'Products',
+      url: 'https://www.originary.xyz/products'
     },
     {
       '@type': 'SiteNavigationElement',
@@ -139,14 +133,14 @@ const siteNavJsonLd = {
     {
       '@type': 'SiteNavigationElement',
       position: 4,
-      name: 'Blog',
-      url: 'https://www.originary.xyz/blog'
+      name: 'Trust',
+      url: 'https://www.originary.xyz/trust'
     },
     {
       '@type': 'SiteNavigationElement',
       position: 5,
-      name: 'Verify',
-      url: 'https://www.originary.xyz/verify'
+      name: 'PEAC Protocol',
+      url: 'https://www.originary.xyz/peac'
     },
     {
       '@type': 'SiteNavigationElement',
@@ -159,21 +153,24 @@ const siteNavJsonLd = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Originary | Know what every agent did. Prove it later.',
+    default: 'Originary | Prove what agents did',
     template: '%s | Originary',
   },
-  description: 'Originary is the verification layer for agent-facing systems. Verify agent requests, apply policy, and return signed interaction records.',
+  description: 'Verify AI agent, API, and MCP interactions with signed, portable records. Tamper-evident audit trails teams can prove later across vendors, audits, disputes, and reviews. Built on PEAC.',
   keywords: [
-    'agent verification',
-    'API access control',
-    'request evaluation',
-    'signed records',
-    'interaction records',
+    'AI agent verification',
+    'verify agent actions',
+    'MCP security',
+    'MCP governance',
+    'MCP audit trail',
+    'verifiable audit trail',
+    'tamper-evident audit trail',
+    'signed interaction records',
+    'offline verification',
+    'portable evidence',
     'PEAC Protocol',
-    'MCP server',
-    'agent-facing API',
-    'open source',
-    'self-hostable',
+    'evidence for AI agents',
+    'API request verification',
   ],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',

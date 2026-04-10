@@ -19,20 +19,24 @@ import { HomeFooter } from '@/components/homepage/HomeFooter'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Verify every agent request. Prove every decision.'
+    absolute: 'Originary | Prove what agents did'
   },
-  description: 'Originary verifies AI agent requests, applies policy, and returns signed records you can prove later. Built on PEAC, the open standard for verifiable interaction records.',
+  description: 'Verify AI agent, API, and MCP interactions with signed, portable records. A tamper-evident audit trail teams can prove later across vendors, audits, disputes, and reviews. Built on PEAC, the open standard.',
   keywords: [
-    'agent verification',
-    'API access control',
-    'request evaluation',
-    'signed records',
-    'interaction records',
+    'AI agent verification',
+    'verify agent actions',
+    'MCP security',
+    'MCP governance',
+    'MCP audit trail',
+    'AI agent audit trail',
+    'verifiable audit trail',
+    'tamper-evident audit trail',
+    'signed interaction records',
+    'offline verification',
+    'portable evidence',
     'PEAC Protocol',
-    'MCP server',
-    'agent-facing API',
-    'policy engine',
-    'open source',
+    'API request verification',
+    'evidence for AI agents',
   ],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',

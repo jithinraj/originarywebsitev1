@@ -5,8 +5,8 @@ import Link from 'next/link'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Security Disclosure',
-  description: 'Report security vulnerabilities to security@originary.xyz. We acknowledge reports within 5 business days and follow responsible disclosure guidelines.',
+  title: 'Security Posture and Disclosure',
+  description: 'Originary security posture: supported versions, key management, dependency posture, verification architecture, and responsible disclosure. Report vulnerabilities to security@originary.xyz.',
   robots: {
     index: true,
     follow: true,
@@ -25,7 +25,7 @@ const webPageJsonLd = {
   '@type': 'WebPage',
   name: 'Security Disclosure',
   url: 'https://www.originary.xyz/security',
-  dateModified: '2025-07-27'
+  dateModified: '2026-04-09'
 }
 
 export default function Security() {
@@ -64,16 +64,47 @@ export default function Security() {
                   marginBottom: 'var(--space-6)',
                   color: 'var(--text-primary)'
                 }}>
-                  Security Disclosure
+                  Security Posture
                 </h1>
                 <p style={{
                   fontSize: 'var(--text-lg)',
                   color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-4)'
                 }}>
-                  We appreciate responsible disclosure and take security seriously.
+                  How Originary and PEAC handle verification, key management, dependencies, and security boundaries.
                 </p>
               </div>
+
+              {/* Security posture */}
+              <div className="card" style={{ textAlign: 'left', marginBottom: 'var(--space-8)' }}>
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 'var(--space-6)',
+                  lineHeight: 1.7,
+                  color: 'var(--text-secondary)'
+                }}>
+                  <h2>Supported versions</h2>
+                  <p>Security fixes are applied to the current stable release (v0.12.7) only. Older versions may not receive patches. See the <Link href="/changelog" style={{ color: 'var(--accent-brand)' }}>changelog</Link> for release history.</p>
+
+                  <h2>Verification architecture</h2>
+                  <p>Verification is offline by design. Signed records use Ed25519 (RFC 8032) and compact JWS (RFC 7515). Verifiers need only the issuer&apos;s public key via JWKS. No callback to Originary or any external service is required. No implicit network fetch is performed during verification.</p>
+
+                  <h2>Key management</h2>
+                  <p>Signing keys are Ed25519. In self-hosted mode, keys are generated and stored locally. In managed mode, keys are backed by cloud KMS (AWS KMS, GCP Cloud KMS, Azure Key Vault, or HashiCorp Vault). Key rotation follows a 5-state lifecycle with 30-day overlap. Revoked keys are tracked.</p>
+
+                  <h2>Dependency and supply-chain posture</h2>
+                  <p>All 35 npm packages are published via GitHub OIDC with provenance attestation. CI runs CodeQL security-extended analysis, dependency review, and audit gates. The repository enforces GitHub Actions SHA pinning. No ambient key discovery is performed. All dependencies are lockfile-pinned.</p>
+
+                  <h2>Data boundaries</h2>
+                  <p>Signed records contain policy hashes and decisions, not raw request payloads. In self-hosted mode, no data leaves your environment. In managed mode, only key lifecycle operations or record storage (depending on tier) involve Originary infrastructure. Verification never depends on Originary being online.</p>
+
+                  <h2>Network posture</h2>
+                  <p>No implicit fetch. No SSRF. URL fields in records are locator hints only and are never automatically dereferenced. The MCP server binds to localhost only with CORS deny-all, rate limiting, and size limits.</p>
+                </div>
+              </div>
+
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-6)', color: 'var(--text-primary)' }}>Responsible Disclosure</h2>
 
               <div className="card" style={{ textAlign: 'left' }}>
                 <div style={{

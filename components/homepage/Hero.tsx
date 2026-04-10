@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
-const proofItems = ['Open source', 'Self-hostable', 'Offline verification', 'Portable']
+const proofItems = ['Open source', 'Self-hostable', 'Offline verification', 'Portable evidence', 'No lock-in']
 
 const recordRows = [
   { label: 'ISSUER', value: 'tools.vendor.com' },
@@ -71,7 +71,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.18, ease }}
             >
-              Originary verifies requests, applies policy, and returns signed records you can prove later, across teams, vendors, and audits.
+              Verify AI agent, API, and MCP interactions with signed, portable records another party can inspect and verify offline. A tamper-evident audit trail that works across teams, vendors, and audits.
             </motion.p>
 
             {/* CTAs */}
@@ -129,6 +129,23 @@ export function Hero() {
                 </Link>
               </div>
             </motion.div>
+
+            {/* Flagship line */}
+            <motion.p
+              className="mt-4 text-[0.8125rem]"
+              style={{ color: 'var(--text-tertiary)', lineHeight: 1.6 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.42 }}
+            >
+              <Link
+                href="/products/verify"
+                style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 600 }}
+              >
+                Originary Verify
+              </Link>{' '}
+              is the fastest way to operationalize PEAC in production.
+            </motion.p>
 
             {/* Tertiary links */}
             <motion.div

@@ -646,21 +646,21 @@ agent-auditor demo`}</pre>
               textAlign: 'center',
             }}>
               <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-                Want to issue receipts, not just read them?
+                Want to issue and verify at scale?
               </h3>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: 'var(--space-6)' }}>
-                Agent Auditor reads receipts issued by the PEAC Protocol open standard. If you want to add receipt issuance to your own agent or API, PEAC Protocol is where to start.
+                Agent Auditor inspects individual records. <strong>Originary Verify</strong> operationalizes verification at production scale with managed keys, evidence exports, and enterprise deployment options.
               </p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
-                <Link href="/peac" className="btn btn-primary btn-sm">
-                  PEAC Protocol
+                <Link href="/products/verify" className="btn btn-primary btn-sm">
+                  Originary Verify
                 </Link>
                 <Link href="/developers" className="btn btn-secondary btn-sm">
                   Quickstart
                 </Link>
-                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-sm">
-                  GitHub
-                </a>
+                <Link href="/trust" className="btn btn-secondary btn-sm">
+                  Trust Center
+                </Link>
               </div>
             </div>
           </div>

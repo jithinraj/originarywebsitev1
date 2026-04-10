@@ -6,9 +6,9 @@ import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
-  title: 'Pricing',
-  description: 'PEAC Protocol is free and open-source. Apache-2.0. Self-host with no limits, no fees, no sign-up. Commercial support available for teams deploying at scale.',
-  keywords: ['PEAC Protocol pricing', 'open source', 'Apache-2.0', 'self-host', 'free'],
+  title: 'Pricing | Open Protocol, Commercial Support When You Need It',
+  description: 'Use PEAC free forever. Bring in Originary for managed verification, deployment support, managed keys, and enterprise evidence workflows. OSS, supported self-host, or managed verification.',
+  keywords: ['Originary Verify pricing', 'AI agent verification pricing', 'open source verification', 'Apache-2.0', 'self-host', 'managed verification', 'MCP security'],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   alternates: { canonical: '/pricing' },
   robots: { index: true, follow: true },
@@ -78,7 +78,7 @@ export default function PricingPage() {
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-8)',
               }}>
-                PEAC Protocol is {FACTS.license} licensed. Self-host on your own infrastructure with no limits, no fees, and no sign-up required. Verification does not require Originary to be online.
+                Use PEAC free forever. Bring in Originary when you need managed keys, hosted verification, deployment support, or procurement-ready evidence.
               </p>
 
               <a
@@ -178,15 +178,15 @@ export default function PricingPage() {
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-2)' }}>
                 <Building2 size={20} style={{ color: 'var(--text-secondary)' }} />
                 <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, margin: 0, color: 'var(--text-primary)' }}>
-                  Enterprise support
+                  Originary Verify &amp; Enterprise Support
                 </h2>
               </div>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-6)' }}>
-                Terms scoped to your deployment
+                Managed verification, attested keys, and procurement-ready evidence
               </p>
 
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-                For organizations that need production deployment support, managed key infrastructure, or compliance evidence for audits and procurement. If you are evaluating Originary for a team deployment or need evidence artifacts for a procurement review, this is the right path.
+                For organizations that need managed verification, attested key infrastructure, or procurement-ready evidence for audits and reviews. If you are evaluating Originary for a team deployment or need evidence artifacts for a procurement review, this is the right path.
               </p>
 
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
@@ -223,10 +223,10 @@ export default function PricingPage() {
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
                   {[
-                    'API platforms handling agent traffic',
-                    'MCP server and tool operators',
-                    'Security and compliance teams',
-                    'Organizations with procurement requirements',
+                    'Enterprise AI platform teams',
+                    'API operators and MCP hosts',
+                    'Security and procurement review teams',
+                    'Teams needing audit-ready evidence',
                   ].map((item) => (
                     <span key={item} style={{
                       fontSize: 'var(--text-xs)',
@@ -248,8 +248,8 @@ export default function PricingPage() {
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
                   {[
-                    'Self-hosted with support',
-                    'Managed cloud (private beta)',
+                    'Supported self-host',
+                    'Managed verification (Originary Verify)',
                     'Hybrid: self-host core, managed keys',
                   ].map((item) => (
                     <span key={item} style={{
@@ -287,32 +287,34 @@ export default function PricingPage() {
           <div className="container">
             <div style={{ maxWidth: '740px', margin: '0 auto' }}>
               <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-8)', color: 'var(--text-primary)', textAlign: 'center' }}>
-                Open source vs enterprise
+                Three ways to deploy
               </h2>
               <div style={{ overflowX: 'auto' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'var(--text-sm)' }}>
                   <thead>
                     <tr style={{ borderBottom: '2px solid var(--border-default)' }}>
                       <th style={{ textAlign: 'left', padding: 'var(--space-3)', color: 'var(--text-tertiary)', fontWeight: 600 }}>&nbsp;</th>
-                      <th style={{ textAlign: 'center', padding: 'var(--space-3)', color: 'var(--text-primary)', fontWeight: 700 }}>Open source</th>
-                      <th style={{ textAlign: 'center', padding: 'var(--space-3)', color: 'var(--text-primary)', fontWeight: 700 }}>Enterprise</th>
+                      <th style={{ textAlign: 'center', padding: 'var(--space-3)', color: 'var(--text-primary)', fontWeight: 700 }}>OSS only</th>
+                      <th style={{ textAlign: 'center', padding: 'var(--space-3)', color: 'var(--text-primary)', fontWeight: 700 }}>Supported self-host</th>
+                      <th style={{ textAlign: 'center', padding: 'var(--space-3)', color: 'var(--text-primary)', fontWeight: 700 }}>Managed verification</th>
                     </tr>
                   </thead>
                   <tbody>
                     {[
-                      ['Price', '$0 forever', 'Custom'],
-                      ['License', 'Apache-2.0', 'Apache-2.0 + support terms'],
-                      ['Signing keys', 'Self-managed', 'KMS-backed attested keys'],
-                      ['Deployment', 'Self-hosted', 'Self-hosted, managed, or hybrid'],
-                      ['Verification', 'Offline, no dependency', 'Offline, no dependency'],
-                      ['Support', 'GitHub issues', 'Dedicated engineering access + SLA'],
-                      ['Compliance evidence', 'Self-assembled', 'Pre-packaged bundles'],
-                      ['Architecture review', 'Community docs', 'Guided integration'],
-                    ].map(([feature, oss, ent], idx) => (
+                      ['Price', '$0 forever', 'Custom', 'Custom'],
+                      ['License', 'Apache-2.0', 'Apache-2.0 + support terms', 'Apache-2.0 + support terms'],
+                      ['Signing keys', 'Self-managed', 'Self-managed or KMS-backed', 'KMS-backed attested keys'],
+                      ['Deployment', 'Self-hosted', 'Self-hosted with guidance', 'Originary operates'],
+                      ['Verification', 'Offline, no dependency', 'Offline, no dependency', 'Offline, no dependency'],
+                      ['Support', 'GitHub issues', 'Dedicated engineering + SLA', 'Dedicated engineering + SLA'],
+                      ['Evidence exports', 'Self-assembled', 'Guided', 'Pre-packaged bundles'],
+                      ['Architecture review', 'Community docs', 'Guided integration', 'Full review included'],
+                    ].map(([feature, oss, supported, managed], idx) => (
                       <tr key={idx} style={{ borderBottom: '1px solid var(--border-subtle)' }}>
                         <td style={{ padding: 'var(--space-3)', color: 'var(--text-secondary)', fontWeight: 500 }}>{feature}</td>
                         <td style={{ padding: 'var(--space-3)', textAlign: 'center', color: 'var(--text-secondary)' }}>{oss}</td>
-                        <td style={{ padding: 'var(--space-3)', textAlign: 'center', color: 'var(--text-secondary)' }}>{ent}</td>
+                        <td style={{ padding: 'var(--space-3)', textAlign: 'center', color: 'var(--text-secondary)' }}>{supported}</td>
+                        <td style={{ padding: 'var(--space-3)', textAlign: 'center', color: 'var(--text-secondary)' }}>{managed}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -344,8 +346,8 @@ export default function PricingPage() {
                     a: 'PEAC is rail-neutral. It produces verifiable records of interactions, not payment mandates. HTTP 402 adapters are available for teams that need challenge/response payment flows.',
                   },
                   {
-                    q: 'Who should contact you about commercial support?',
-                    a: 'API providers, agent platforms, and security or compliance teams that need managed deployments, attested signing infrastructure, or dedicated integration support.',
+                    q: 'Who should contact you about Originary Verify or commercial support?',
+                    a: 'Enterprise AI platform teams, API operators, MCP hosts, and security or procurement review teams that need managed verification, attested signing infrastructure, or procurement-ready evidence.',
                   },
                 ].map(({ q, a }) => (
                   <details

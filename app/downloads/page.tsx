@@ -11,7 +11,7 @@ const softwareJsonLd = {
   name: 'Originary CLI',
   operatingSystem: 'Windows, macOS, Linux',
   applicationCategory: 'DeveloperApplication',
-  downloadUrl: '/downloads/',
+  downloadUrl: 'https://www.originary.xyz/downloads/',
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -26,7 +26,7 @@ const peacSourceCodeJsonLd = {
   codeRepository: 'https://github.com/peacprotocol/peac',
   license: 'https://www.apache.org/licenses/LICENSE-2.0',
   programmingLanguage: 'TypeScript',
-  version: '0.12.4'
+  version: '0.12.7'
 }
 
 export const metadata: Metadata = {
@@ -89,7 +89,7 @@ export default function Downloads() {
                 color: 'var(--text-secondary)',
                 marginBottom: 'var(--space-4)'
               }}>
-                Official <strong>Originary</strong> tools and PEAC Protocol SDKs. Implement access control, consent, attribution, provenance, and signed interaction records.
+                Official tools from <strong>Originary</strong> and the upstream PEAC open-standard packages. Implement verification, evidence workflows, policy, and signed interaction records.
               </p>
 
               <div style={{
@@ -104,7 +104,7 @@ export default function Downloads() {
               }}>
                 <span><strong>Publisher:</strong> Originary (Poem, Inc.)</span>
                 <span>•</span>
-                <span><strong>Stable:</strong> v0.12.4</span>
+                <span><strong>Stable:</strong> v0.12.7</span>
                 <span>•</span>
                 <span><strong>License:</strong> Apache 2.0</span>
                 <span>•</span>
@@ -151,7 +151,7 @@ export default function Downloads() {
                     GitHub
                   </a>
                   <a
-                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.12.4.zip"
+                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.12.7.zip"
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -169,7 +169,7 @@ export default function Downloads() {
                     Source (.zip)
                   </a>
                   <a
-                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.12.4.tar.gz"
+                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.12.7.tar.gz"
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',

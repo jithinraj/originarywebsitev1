@@ -13,7 +13,7 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   /** Stable release on `latest` npm dist-tag */
-  stableVersion: 'v0.12.4',
+  stableVersion: 'v0.12.7',
 
   /**
    * Current stable wire format (Wire 0.2).
@@ -38,7 +38,7 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   /** Packages in the npm publish manifest (@peac/* on npm) */
-  publishedPackageCount: 29,
+  publishedPackageCount: 35,
 
   /** Public packages in the monorepo (published + internal-public) */
   publicPackageCount: 46,
@@ -50,11 +50,17 @@ export const FACTS = {
   // Quality metrics (see CI output for latest tag)
   // ---------------------------------------------------------------------------
 
-  /** pnpm test -- passing test count as of v0.12.4 */
-  testsCount: 6664,
+  /** pnpm test -- passing test count as of v0.12.7 */
+  testsCount: 7241,
 
-  /** pnpm build -- build targets as of v0.12.4 */
-  buildTargets: 91,
+  /** pnpm build -- build targets as of v0.12.7 */
+  buildTargets: 96,
+
+  /** Conformance requirement IDs as of v0.12.7 */
+  conformanceRequirements: 219,
+
+  /** Minimum Node.js version required */
+  nodeMinVersion: '22.0.0',
 
   // ---------------------------------------------------------------------------
   // Licensing and identity

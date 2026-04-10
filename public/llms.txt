@@ -1,8 +1,8 @@
 # Originary | Prove what agents did
 
-> Originary is the production verification and evidence layer for agent-facing systems. It verifies requests, applies policy, and returns signed records you can prove later, across teams, vendors, and audits. PEAC is the open standard underneath. Self-hostable. Offline-verifiable. No lock-in.
+> Originary builds production surfaces for verification and evidence across AI agent, API, MCP, and automated interaction workflows. Verify requests, apply policy, and return signed records teams can prove later across vendors, audits, disputes, and reviews. PEAC is the open standard underneath. Self-hostable. Offline-verifiable. No lock-in.
 
-Last updated: 2026-03-27
+Last updated: 2026-04-09
 
 Company: Poem, Inc.
 Location: Delaware, USA
@@ -10,43 +10,54 @@ Contact: contact@originary.xyz
 
 ## Overview
 
-- [Home](/) - Verify every agent request. Prove every decision. Deploy Originary. Keep your records portable.
+- [Home](/) - Prove what agents did. AI agent verification with signed, portable audit trails.
+- [Products](/products) - Originary Verify, Agent Auditor, Gateway 402, MCP Server, Trace
 - [PEAC Protocol](/peac) - Open standard for verifiable interaction records
 - [Developers](/developers) - Quickstart, SDKs, and integration guides
 - [Downloads](/downloads) - CLI, MCP server, SDKs, and source archives
 - [Proof Check](/agent-proof-check) - Paste logs, traces, or signed records. See what is observable, verifiable, and missing.
 - [Agent Auditor](/agent-auditor) - Open and verify any signed record locally, with evidence bundles
-- [Products](/products) - Agent Auditor, Gateway 402, MCP Server, Trace
 - [Trust Center](/trust) - Verification model, cryptography, data boundaries, portability
-- [Enterprise](/enterprise) - Deployment options, security model, compliance evidence, worked audit example
-- [Pricing](/pricing) - Open source, self-hostable, enterprise support available
+- [Enterprise](/enterprise) - Deployment options, security model, data boundaries, procurement evidence
+- [Pricing](/pricing) - OSS only, supported self-host, or managed verification
 
 ## Protocol State
 
-- Stable release: v0.12.4 (latest, Mar 25 2026)
+- Stable release: v0.12.7 (latest, Apr 8 2026)
 - Wire format: interaction-record+jwt (Wire 0.2, current stable)
 - Legacy wire format: peac-receipt/0.1 (Wire 0.1, frozen)
-- Published packages: 29 on npm (@peac/*)
-- Tests: 6664
-- Build targets: 91
+- Published packages: 35 on npm (@peac/*)
+- Tests: 7241
+- Conformance requirement IDs: 219
+- Build targets: 96
 - License: Apache-2.0
+- Node.js: >=22.0.0
 
-## Developer Tools
+## Products
 
-### Proof Check (/agent-proof-check)
-Paste logs, traces, webhooks, signed records, or incident summaries from AI agents, APIs, tool calls, and MCP servers. See what another party can verify, what is missing, and what holds up in a review, dispute, or audit. Runs in the browser. No signup.
+### Originary Verify (/products/verify)
+The fastest way to operationalize PEAC in production. Validate signatures, key material, policy binding, and evidence exports at scale. Hosted or self-hosted deployment paths. Enterprise evidence exports.
 
 ### Agent Auditor (/agent-auditor)
 Open any signed record file (.jws, .json, .zip) and inspect its contents. Verifies Ed25519 signatures locally. No signup, no backend, no data leaves your machine. Apache-2.0.
 
-### Declare (/declare)
-Policy Pack Generator. Generate peac.txt, AIPREF headers, and human-readable policy pages from a single YAML config.
+### Gateway 402 (/products/gateway-402)
+Enforce access and payment policy at the edge. Issue signed records on every response. HTTP 402 challenge flows.
 
 ### MCP Server (/integrations/mcp)
 MCP tool server (@peac/mcp-server) with 5 tools: verify-receipt, inspect-receipt, decode-receipt (pure, offline), issue-receipt, create-bundle (privileged, require issuer key). Works with Claude Desktop, Cursor, and custom agents.
 
+### Trace (/trace)
+Monitor agent traffic accessing your APIs and content. Export signed evidence. Preview.
+
+### Proof Check (/agent-proof-check)
+Paste logs, traces, webhooks, signed records, or incident summaries from AI agents, APIs, tool calls, and MCP servers. See what another party can verify, what is missing, and what holds up in a review, dispute, or audit. Runs in the browser. No signup.
+
+### Declare (/declare)
+Policy Pack Generator. Generate peac.txt, AIPREF headers, and human-readable policy pages from a single YAML config.
+
 ### CLI and SDKs (/downloads)
-@peac/cli, @peac/mcp-server, @peac/capture-node, @peac/rails-stripe. npm and source archives.
+@peac/cli, @peac/mcp-server, @peac/capture-node, @peac/rails-stripe. npm and source archives. Requires Node 22+.
 
 ## Developer Resources
 
@@ -57,52 +68,55 @@ MCP tool server (@peac/mcp-server) with 5 tools: verify-receipt, inspect-receipt
 
 ## Integrations
 
-- [MCP](/integrations/mcp) - Model Context Protocol integration
+- [MCP](/integrations/mcp) - Model Context Protocol: MCP security and governance via signed records
 - [A2A](/integrations/a2a) - Agent-to-Agent communication with verifiable records
-- [x402 / HTTP 402](/integrations/x402) - HTTP 402 payments for machine-payable APIs
-- [ACP](/integrations/acp) - Agent Commerce Protocol
+- [x402 / HTTP 402](/integrations/x402) - HTTP 402 payment evidence for machine-payable APIs
+- [ACP](/integrations/acp) - Agentic Commerce Protocol evidence
 - [AIPREF](/integrations/aipref) - AI Preferences signaling standard
 
 ## Open Source
 
-PEAC is an open standard (Apache-2.0). 29 packages on npm, 6664 tests, 91 build targets.
+PEAC is an open standard (Apache-2.0). 35 packages on npm, 7241 tests, 219 conformance requirement IDs, 96 build targets.
 
+- Ed25519 cryptographic signing (RFC 8032)
+- Compact JWS (RFC 7515)
 - Policy discovery via /.well-known/peac.txt
 - AI preferences via AIPREF (/.well-known/aipref.json)
-- Ed25519 cryptographic signing
 - Self-hostable verification: does not require Originary to be online
+- Offline verification with issuer public key only
 
 - [GitHub Repository](https://github.com/peacprotocol/peac) - Source code, spec, and SDKs
 - [npm](https://www.npmjs.com/org/peac) - Published packages
 
 ## Blog
 
-- [All Posts](/blog) - Technical articles
+- [All Posts](/blog) - Agent verification, evidence, and open infrastructure
+- [AI Bot Detection](/blog/ai-bot-detection) - Turning unknown AI traffic into verifiable evidence
+- [A2A Stack](/blog/a2a-stack-agent-to-agent-commerce) - Agent-to-agent verification and commerce
+- [What is HTTP 402?](/blog/what-is-http-402) - How PEAC uses 402 for agent payments
 - [Adding 402 in 15 Minutes](/blog/adding-402-in-15-minutes)
-- [AI Bot Detection](/blog/ai-bot-detection)
 - [HTTP 402 for APIs](/blog/http-402-for-apis)
 - [Robots.txt RFC 9309](/blog/robots-txt-rfc-9309)
 - [AIPREF by IETF](/blog/aipref-by-ietf)
-- [A2A Stack](/blog/a2a-stack-agent-to-agent-commerce)
-- [What is HTTP 402?](/blog/what-is-http-402)
 
 ## Learn
 
-- [All Guides](/learn)
-- [AI Receipts Explained](/learn/ai-receipts)
-- [HTTP 402 for AI Payments](/learn/http-402-ai-payments)
-- [AI Consent and Attribution](/learn/ai-consent-and-attribution)
+- [All Guides](/learn) - How automated interactions become verifiable
+- [Verifiable Interaction Records](/learn/ai-receipts) - Why logs are not enough
+- [Policy, Consent & Attribution](/learn/ai-consent-and-attribution) - Machine-readable terms for AI
+- [HTTP 402 & Payment Evidence](/learn/http-402-ai-payments) - Payment challenges and settlement proof
+- [Agentic Commerce](/learn/what-is-agentic-commerce) - The economic layer for AI agents
 
 ## Trust and Legal
 
-- [Trust Center](/trust) - Verification model, cryptography, data boundaries, portability, responsible disclosure, stewardship
-- [Security](/security) - Responsible disclosure policy
+- [Trust Center](/trust) - Verify everything yourself: verification model, cryptography, data boundaries, portability
+- [Security](/security) - Security posture and responsible disclosure
 - [Privacy](/privacy) - Privacy policy
 - [Terms](/terms) - Terms of service
 
 ## Company
 
-- [About](/about) - Mission and principles
+- [About](/about) - We build the production layer for open evidence
 - [Contact](/contact) - Integration support and commercial inquiries
 
 ## Community

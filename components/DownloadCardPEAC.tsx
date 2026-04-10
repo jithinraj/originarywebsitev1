@@ -54,7 +54,7 @@ peac policy validate peac-policy.yaml`}
             color: 'var(--text-secondary)',
             marginBottom: 'var(--space-3)'
           }}>
-            Requires Node 20+; see upstream docs.
+            Requires Node 22+; see upstream docs.
           </p>
           <div style={{ display: 'flex', gap: 'var(--space-3)' }}>
             <a
