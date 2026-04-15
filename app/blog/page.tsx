@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Originary Blog | Agent Verification and Infrastructure',
   },
-  description: 'The Originary blog covers agent verification, signed records, policy, offline verification, evidence workflows, and the open infrastructure needed for automated interactions.',
+  description: 'The Originary blog covers signed records, agent verification, offline verification, policy discovery, and the open infrastructure for automated interactions.',
   keywords: 'Originary blog, agent verification, signed records, offline verification, evidence workflows, PEAC protocol, AIPREF, HTTP 402, technical blog',
   authors: [{ name: 'Originary Team' }],
   openGraph: {
@@ -46,7 +46,7 @@ export default function BlogPage() {
     {
       slug: 'ai-bot-detection',
       title: 'AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence',
-      description: 'AI bot detection is more than classifiers. Learn how metadata, fingerprints and signed records turn AI traffic into verifiable, portable evidence for audits and disputes.',
+      description: 'AI bot detection is more than classifiers. Learn how metadata, fingerprints and signed records turn AI traffic into verifiable records for audits and disputes.',
       author: 'Jithin Raj, Founder',
       date: '2025-12-01',
       category: 'Technical',

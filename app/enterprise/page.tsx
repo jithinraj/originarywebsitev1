@@ -5,13 +5,13 @@ import Footer from '@/components/Footer'
 import { ArrowRight, Shield, Key, Server, FileCheck, Lock, Download } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Enterprise Verification for Agent, API, and MCP Interactions',
-  description: 'Enterprise AI agent verification and MCP security. Self-hosted, hybrid, or managed deployment with tamper-evident audit trails, managed keys, and procurement-ready evidence.',
+  title: 'Enterprise | Originary',
+  description: 'Evaluate Originary for enterprise agent, API, MCP, and automated workflows with self-hosted, hybrid, and managed deployment options.',
   robots: 'index,follow',
   alternates: { canonical: '/enterprise' },
   openGraph: {
-    title: 'Enterprise',
-    description: 'Enterprise AI agent verification with tamper-evident audit trails, managed keys, and procurement-ready evidence.',
+    title: 'Enterprise | Originary',
+    description: 'Evaluate Originary for enterprise agent, API, MCP, and automated workflows with self-hosted, hybrid, and managed deployment options.',
     url: '/enterprise',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enterprise',
-    description: 'Enterprise AI agent verification with tamper-evident audit trails, managed keys, and procurement-ready evidence.',
+    title: 'Enterprise | Originary',
+    description: 'Evaluate Originary for enterprise agent, API, MCP, and automated workflows with self-hosted, hybrid, and managed deployment options.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -81,7 +81,7 @@ export default function EnterprisePage() {
               marginBottom: 'var(--space-6)',
               color: 'var(--text-primary)',
             }}>
-              Enterprise-Grade Verification
+              Enterprise deployment for signed records
             </h1>
             <p style={{
               fontSize: 'var(--text-lg)',
@@ -91,7 +91,7 @@ export default function EnterprisePage() {
               maxWidth: '600px',
               margin: '0 auto var(--space-10) auto',
             }}>
-              Self-hosted, hybrid, or managed deployment for teams that need portable proof, attested keys, and procurement-ready evidence for agent, API, and MCP interactions.
+              Deploy Originary for agent, API, MCP, and automated workflows with self-hosted, hybrid, or managed options designed for review, procurement, and high-trust operations.
             </p>
             <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href="/products/verify" className="btn btn-primary btn-lg">
@@ -104,6 +104,48 @@ export default function EnterprisePage() {
               <Link href="/trust" className="btn btn-secondary btn-lg">
                 Trust Center
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Who this is for */}
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
+          <div className="container" style={{ maxWidth: '1000px', margin: '0 auto' }}>
+            <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, textAlign: 'center', marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
+              Who this is for
+            </h2>
+            <p style={{ textAlign: 'center', color: 'var(--text-secondary)', marginBottom: 'var(--space-10)', maxWidth: '560px', margin: '0 auto var(--space-10) auto' }}>
+              Teams that need signed records to survive audits, disputes, partner review, and cross-boundary automated workflows.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(220px, 100%), 1fr))', gap: 'var(--space-5)' }}>
+              {[
+                {
+                  label: 'Enterprise AI platform teams',
+                  detail: 'Give agent-driven actions a signed record that can be reviewed outside the runtime and verified without a callback to a vendor service.',
+                },
+                {
+                  label: 'API operators and tool publishers',
+                  detail: 'Return a signed record on important responses so another party can verify what was authorized, under what terms, and when.',
+                },
+                {
+                  label: 'Security and compliance teams',
+                  detail: 'Export records for audit, review, disputes, and procurement without relying on screenshots or internal dashboards.',
+                },
+                {
+                  label: 'Governed runtime operators',
+                  detail: 'Use signed records to carry runtime decisions, tool actions, and cross-boundary interactions into review workflows that outlive the original system.',
+                },
+              ].map((item) => (
+                <div key={item.label} style={{
+                  background: 'var(--glass-card-bg)',
+                  border: '1px solid var(--glass-card-border)',
+                  borderRadius: 'var(--radius-xl)',
+                  padding: 'var(--space-6)',
+                }}>
+                  <p style={{ fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-3)', fontSize: 'var(--text-sm)' }}>{item.label}</p>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{item.detail}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -240,6 +282,18 @@ export default function EnterprisePage() {
                 </tbody>
               </table>
             </div>
+          </div>
+        </section>
+
+        {/* How evaluation usually starts */}
+        <section className="section">
+          <div className="container" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+            <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-4)' }}>
+              How evaluation usually starts
+            </h2>
+            <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto' }}>
+              Start with a technical review, architecture walkthrough, or pilot scope. Teams usually begin with one workflow where signed records help with review, disputes, audit export, or cross-boundary verification.
+            </p>
           </div>
         </section>
 

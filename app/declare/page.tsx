@@ -49,7 +49,7 @@ export default function DeclarePage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "softwareVersion": "0.12.3",
+    "softwareVersion": "0.12.11",
     "description": "One config file to declare AI policies for your domain. Generates peac.txt, robots AI rules, AIPREF headers, and a /ai-policy page. Includes Policy Profiles for rapid deployment."
   }
 

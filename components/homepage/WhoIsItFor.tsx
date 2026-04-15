@@ -39,7 +39,7 @@ const audiences = [
     accent: 'var(--text-secondary)',
     accentBg: 'var(--surface-card)',
     label: 'A partner asks for proof of an agent interaction',
-    detail: 'You export a portable record they can verify independently, offline, without calling your systems.',
+    detail: 'You export a signed record they can verify independently, offline, without calling your systems.',
     role: 'Platform teams',
   },
   {
@@ -52,7 +52,7 @@ const audiences = [
     accent: 'var(--accent-warning)',
     accentBg: 'var(--accent-warning-muted)',
     label: 'An auditor reviews agent-driven transactions',
-    detail: 'Compliance needs exportable evidence tied to the policy that applied at decision time, not just logs.',
+    detail: 'Compliance needs an exportable record tied to the policy that applied at decision time, not just logs.',
     role: 'Security and compliance',
   },
 ]
@@ -79,7 +79,7 @@ export function WhoIsItFor() {
               className="mt-4 hp-text-body-lg"
               style={{ color: 'var(--color-fg-secondary)' }}
             >
-              Originary is for teams operating APIs, tools, gateways, MCP servers, and review workflows. If your systems receive automated requests, you need evidence that survives beyond your own dashboards.
+              Originary is for teams operating APIs, tools, gateways, MCP servers, priced APIs, and review workflows. If your systems receive automated requests, you need proof that survives beyond your own dashboards.
             </p>
           </div>
         </AnimateIn>

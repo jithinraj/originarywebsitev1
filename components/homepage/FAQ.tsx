@@ -7,31 +7,31 @@ import { AnimateIn } from './AnimateIn'
 const faqs = [
   {
     q: 'What\u0027s the difference between a log and a signed record?',
-    a: 'A log is a local observation: your system saw something happen. A signed record is a portable, independently verifiable artifact: it proves what happened, what policy applied, who issued it, and when. Logs help you debug. Signed records help you prove.',
+    a: 'A log is a local observation inside your system. A signed record is an exportable artifact another party can verify independently. Logs help you debug. Signed records help you prove.',
   },
   {
     q: 'What is a verifiable interaction record?',
-    a: 'A verifiable interaction record is a portable, cryptographically signed artifact that proves what an agent did, what policy applied, and what decision was made. It can be verified by anyone with the public key, with no network call required.',
+    a: 'A signed interaction record captures what happened, what policy or terms applied, who issued the record, and when. Anyone with the issuer\u0027s public key can verify it offline.',
   },
   {
-    q: 'Is this only for people building agents?',
-    a: 'No. Originary is built first for operators of systems that agents access: APIs, tools, MCP servers, and platforms exposing actions.',
+    q: 'Is this only for people building AI agents?',
+    a: 'No. It is also for API publishers, MCP server operators, priced API teams, security reviewers, compliance teams, and any workflow where automated requests cross organizational boundaries.',
   },
   {
     q: 'Does this still work if agents do not comply?',
-    a: 'Yes, partially. Originary can still enforce operator-side policy and generate operator-side records. Full cross-party proof gets stronger when both sides participate.',
+    a: 'Yes. The point is not to assume good behavior. The point is to return records that help you inspect what happened, what was allowed, and what another party can verify later.',
   },
   {
     q: 'What happens if I stop using Originary?',
-    a: 'Your records are portable signed artifacts. They remain valid and verifiable using the public key alone, with no dependency on Originary infrastructure.',
+    a: 'Your records remain valid and verifiable with the issuer\u0027s public key. Verification does not require an Originary callback.',
   },
   {
     q: 'Is this just observability?',
-    a: 'No. Observability helps you inspect behavior. Originary adds access-time control and a signed interaction record you can use outside one product.',
+    a: 'No. Observability helps teams understand internal behavior. Signed records help teams prove what happened across boundaries.',
   },
   {
     q: 'Do I need PEAC to use Originary?',
-    a: 'No. Originary delivers product value directly. PEAC keeps the records portable and standards-aligned.',
+    a: 'Originary is built on PEAC. In practice, you use the product surface while keeping the underlying record format and verification model open.',
   },
 ]
 

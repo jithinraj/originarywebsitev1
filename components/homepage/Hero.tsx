@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
-const proofItems = ['Offline verification', 'Portable evidence', 'Open standard', 'Self-hostable']
+const proofItems = ['Offline verification', 'Signed records', 'Open standard', 'Self-hostable']
 
 const recordRows = [
   { label: 'ISSUER', value: 'tools.vendor.com' },
@@ -71,7 +71,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.18, ease }}
             >
-              Verify AI agent, API, and MCP interactions with signed, portable records another party can inspect and verify offline. A tamper-evident audit trail that works across teams, vendors, and audits.
+              Originary helps teams return signed records for AI agents, APIs, MCP, and automated workflows, so another party can verify what happened without trusting a dashboard.
             </motion.p>
 
             {/* CTAs */}
@@ -81,14 +81,14 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.28, ease }}
             >
-              <Link href="/developers" className="hp-btn-ink w-full sm:w-auto text-center whitespace-nowrap px-6 py-2.5 text-[0.9375rem] font-medium">
-                Start here
+              <Link href="/products/verify" className="hp-btn-ink w-full sm:w-auto text-center whitespace-nowrap px-6 py-2.5 text-[0.9375rem] font-medium">
+                See Originary Verify
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
                   <path d="M3.5 7h7m0 0L7.5 4m3 3l-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </Link>
-              <Link href="/agent-proof-check" className="hp-btn-secondary w-full sm:w-auto text-center whitespace-nowrap">
-                See what your logs can&apos;t prove
+              <Link href="/developers" className="hp-btn-secondary w-full sm:w-auto text-center whitespace-nowrap">
+                Start here
               </Link>
             </motion.div>
 
@@ -180,7 +180,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.25, ease }}
           >
             <Link
-              href="/agent-auditor"
+              href="/products/verify"
               className="block rounded-2xl overflow-hidden transition-shadow duration-300"
               style={{
                 border: '1px solid var(--border-default)',

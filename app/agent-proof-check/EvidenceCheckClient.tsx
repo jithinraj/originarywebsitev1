@@ -221,7 +221,7 @@ function analyzeInput(input: string): AnalysisResult {
         'Originary gives teams a consistent way to issue, inspect, export, and operationalize these records across products and workflows',
       ],
       reason:
-        'This is close to portable evidence.',
+        'This is close to a signed record.',
     }
   }
 
@@ -379,7 +379,7 @@ const WORKED_EXAMPLES = [
       'Issuer identity',
       'Policy that applied',
       'Timestamp integrity',
-      'Portable proof',
+      'Verifiable offline',
     ],
     log: `2026-03-25T14:32:01Z INFO tool_call
   tool: "search_documents"
@@ -840,7 +840,7 @@ ${analysisResult.reason}`
                     marginBottom: 'var(--space-6)',
                   }}
                 >
-                  Paste what you already have: a log, trace, webhook, signed record, or plain-English incident summary from an AI agent, API call, tool invocation, or MCP server. See what your team can observe, what another party can verify, and what is still missing.
+                  Paste what you already have: a log, trace, webhook, signed record, or incident summary from an AI agent, API call, tool invocation, MCP server, or automated payment flow. See what your team can observe, what another party can verify, and what is still missing.
                 </p>
 
                 <p
@@ -2004,7 +2004,7 @@ ${analysisResult.reason}`
                 </p>
               </div>
 
-              {/* Portable evidence */}
+              {/* Signed record another party can verify */}
               <div
                 style={{
                   padding: 'var(--space-8)',
@@ -2043,7 +2043,7 @@ ${analysisResult.reason}`
                       margin: 0,
                     }}
                   >
-                    Portable evidence
+                    Signed record another party can verify
                   </h3>
                 </div>
                 <ul
@@ -2115,7 +2115,8 @@ ${analysisResult.reason}`
             <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto', ...reveal(builtForSection.visible, 0) }} ref={builtForSection.ref}>
               <div style={{ fontSize: '0.6875rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }}>Where this shows up</div>
               <h2 className="text-2xl sm:text-3xl" style={{ fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)', marginBottom: 'var(--space-4)' }}>Built for AI agents, APIs, tools, and MCP servers</h2>
-              <p style={{ fontSize: '1.0625rem', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: 'var(--space-10)' }}>If an agent calls a tool, hits your API, triggers a payment, or goes through an MCP server, the same question comes up later: what happened, what was allowed, and what can another party verify without trusting your dashboard?</p>
+              <p style={{ fontSize: '1.0625rem', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>If an AI agent calls a tool, hits your API, triggers a payment, or goes through an MCP server, the same question comes up later: what happened, what was allowed, and what can another party verify without trusting your dashboard?</p>
+              <p style={{ fontSize: '0.9375rem', lineHeight: 1.7, color: 'var(--text-tertiary)', marginBottom: 'var(--space-10)' }}>This is especially useful for API publishers, MCP teams, priced API operators, and enterprise review workflows.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" style={{ maxWidth: '1000px', margin: '0 auto' }}>
               {[
@@ -2627,7 +2628,7 @@ ${analysisResult.reason}`
                   fontStyle: 'italic',
                 }}
               >
-                Portable evidence should fail loudly when key trust assumptions are broken.
+                Signed records should fail loudly when key trust assumptions are broken.
               </p>
             </div>
           </div>
@@ -3385,13 +3386,13 @@ ${analysisResult.reason}`
                   >
                     Need to inspect a raw JWS instead?{' '}
                     <Link
-                      href="/inspector"
+                      href="/agent-auditor"
                       style={{
                         color: 'var(--accent-brand)',
                         textDecoration: 'underline',
                       }}
                     >
-                      Use Inspector
+                      Use Agent Auditor
                     </Link>
                     .
                   </p>
@@ -3409,7 +3410,7 @@ ${analysisResult.reason}`
             </div>
             {[
               { q: 'How is this different from logs and traces?', a: 'Logs and traces help your team debug internally. They do not give another party independent, portable proof of what happened. Signed records do.' },
-              { q: 'Does this work with MCP servers?', a: 'Yes. The same gap shows up in MCP servers as in APIs and tool calls: teams can see what happened internally, but later review still depends on local systems. Originary adds signed, portable records that can be verified without those systems.' },
+              { q: 'Does this work with MCP servers?', a: 'Yes. The same gap shows up in MCP servers as in APIs and tool calls: teams can see what happened internally, but later review still depends on local systems. Originary adds signed records that can be verified without those systems.' },
               { q: 'Can I use this with AI agent tool calls?', a: 'Yes. When an AI agent invokes a tool through your API or MCP server, Originary can issue a signed record of the decision at the point of action.' },
               { q: 'What does another party actually verify?', a: 'They verify who issued the record, whether the contents have been modified, what policy was in effect, and when the action occurred. All using the issuer public key, with no dependency on your systems.' },
               { q: 'Do I need to replace my gateway or observability stack?', a: 'No. Originary works alongside your existing auth, payments, observability, and agent runtimes. It adds signed records that travel outside your system.' },

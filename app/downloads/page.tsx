@@ -26,17 +26,17 @@ const peacSourceCodeJsonLd = {
   codeRepository: 'https://github.com/peacprotocol/peac',
   license: 'https://www.apache.org/licenses/LICENSE-2.0',
   programmingLanguage: 'TypeScript',
-  version: '0.12.7'
+  version: '0.12.11'
 }
 
 export const metadata: Metadata = {
-  title: 'Downloads | CLI, MCP Server, and Templates',
-  description: 'Download the Originary CLI, MCP server, and PEAC policy templates. npm packages, source archives, and quickstart resources.',
+  title: 'Downloads | Originary',
+  description: 'Download the Originary and PEAC tools for signed records, including the CLI, MCP Server, Agent Auditor, and source packages.',
   keywords: 'downloads, CLI, MCP server, PEAC templates, npm packages, policy verification',
   robots: 'index,follow',
   openGraph: {
-    title: 'Downloads | CLI, MCP Server, and Templates',
-    description: 'Download the Originary CLI, MCP server, and PEAC policy templates. npm packages, source archives, and quickstart resources.',
+    title: 'Downloads | Originary',
+    description: 'Download the Originary and PEAC tools for signed records, including the CLI, MCP Server, Agent Auditor, and source packages.',
     url: '/downloads',
     siteName: 'Originary',
     images: [{
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Downloads | CLI, MCP Server, and Templates',
-    description: 'Download the Originary CLI, MCP server, and PEAC policy templates. npm packages, source archives, and quickstart resources.',
+    title: 'Downloads | Originary',
+    description: 'Download the Originary and PEAC tools for signed records, including the CLI, MCP Server, Agent Auditor, and source packages.',
     images: ['/og']
   },
   alternates: {
@@ -87,9 +87,17 @@ export default function Downloads() {
                 fontSize: 'var(--text-xl)',
                 lineHeight: 1.7,
                 color: 'var(--text-secondary)',
+                marginBottom: 'var(--space-3)'
+              }}>
+                Official Originary tools and upstream PEAC packages for signed records, verification, and developer workflows.
+              </p>
+              <p style={{
+                fontSize: 'var(--text-base)',
+                lineHeight: 1.7,
+                color: 'var(--text-tertiary)',
                 marginBottom: 'var(--space-4)'
               }}>
-                Official tools from <strong>Originary</strong> and the upstream PEAC open-standard packages. Implement verification, evidence workflows, policy, and signed interaction records.
+                Built for API publishers, MCP developers, agent builders, and teams evaluating verification in browser, CLI, middleware, or self-hosted deployments.
               </p>
 
               <div style={{
@@ -104,7 +112,7 @@ export default function Downloads() {
               }}>
                 <span><strong>Publisher:</strong> Originary (Poem, Inc.)</span>
                 <span>•</span>
-                <span><strong>Stable:</strong> v0.12.7</span>
+                <span><strong>Stable:</strong> v0.12.11</span>
                 <span>•</span>
                 <span><strong>License:</strong> Apache 2.0</span>
                 <span>•</span>
@@ -124,7 +132,7 @@ export default function Downloads() {
                   color: 'var(--text-primary)',
                   marginBottom: 'var(--space-3)'
                 }}>
-                  Get the software:
+                  Choose your distribution
                 </p>
                 <div style={{
                   display: 'flex',
@@ -151,7 +159,7 @@ export default function Downloads() {
                     GitHub
                   </a>
                   <a
-                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.12.7.zip"
+                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.12.11.zip"
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -169,7 +177,7 @@ export default function Downloads() {
                     Source (.zip)
                   </a>
                   <a
-                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.12.7.tar.gz"
+                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.12.11.tar.gz"
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -222,7 +230,7 @@ export default function Downloads() {
                   color: 'var(--text-primary)',
                   marginBottom: 'var(--space-2)'
                 }}>
-                  Or install via package manager:
+                  Install with your package manager:
                 </p>
                 <div style={{
                   display: 'flex',

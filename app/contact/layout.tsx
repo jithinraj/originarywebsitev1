@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contact',
-  description: 'Contact the Originary team for sales, partnerships, support, and press. Talk to us about PEAC Protocol, Trace, and agentic web infrastructure.',
+  title: 'Contact | Originary',
+  description: 'Talk to Originary about technical review, enterprise deployment, pilots, integration support, security, or partnerships.',
   robots: 'index,follow',
   alternates: {
     canonical: '/contact'
   },
   openGraph: {
-    title: 'Contact',
-    description: 'Contact the Originary team for sales, partnerships, support, and press. Talk to us about PEAC Protocol, Trace, and agentic web infrastructure.',
+    title: 'Contact | Originary',
+    description: 'Talk to Originary about technical review, enterprise deployment, pilots, integration support, security, or partnerships.',
     url: '/contact',
     siteName: 'Originary',
     type: 'website',
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact',
-    description: 'Contact the Originary team for sales, partnerships, and support.',
+    title: 'Contact | Originary',
+    description: 'Talk to Originary about technical review, enterprise deployment, pilots, integration support, security, or partnerships.',
     images: ['/og'],
   },
 }

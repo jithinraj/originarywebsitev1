@@ -6,11 +6,11 @@ import { Shield, Lock, CheckCircle, FileText, Server, Building2, ExternalLink, K
 import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
-  title: 'Trust Center',
-  description: 'How Originary handles verification, cryptography, data boundaries, and portability. Ed25519 signatures, offline verification, no phone-home.',
+  title: 'Trust Center | Originary',
+  description: 'See how Originary handles verification, keys, portability, and offline validation for signed records across agent, API, MCP, and automated workflows.',
   openGraph: {
-    title: 'Trust Center ',
-    description: 'Verification model, cryptography, data boundaries, and portability for Originary and the PEAC protocol.',
+    title: 'Trust Center | Originary',
+    description: 'See how Originary handles verification, keys, portability, and offline validation for signed records across agent, API, MCP, and automated workflows.',
     type: 'website',
     url: '/trust',
     siteName: 'Originary',
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Trust Center ',
-    description: 'Verification model, cryptography, data boundaries, and portability for Originary and the PEAC protocol.',
+    title: 'Trust Center | Originary',
+    description: 'See how Originary handles verification, keys, portability, and offline validation for signed records across agent, API, MCP, and automated workflows.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -70,18 +70,87 @@ export default function TrustPage() {
                 lineHeight: 1.2,
                 letterSpacing: '-0.02em'
               }}>
-                Verify Everything Yourself
+                Trust Center
               </h1>
 
               <p style={{
                 fontSize: 'var(--text-xl)',
                 color: 'var(--text-secondary)',
                 maxWidth: '720px',
-                margin: '0 auto',
+                margin: '0 auto var(--space-4) auto',
                 lineHeight: 1.7
               }}>
-                Every signed record is independently verifiable. No phone-home, no proprietary tooling, no Originary dependency. Here is exactly how the system works and what you can audit.
+                How Originary handles verification, keys, portability, and offline validation for signed records.
               </p>
+              <p style={{
+                fontSize: 'var(--text-sm)',
+                color: 'var(--text-tertiary)',
+                maxWidth: '640px',
+                margin: '0 auto',
+                lineHeight: 1.6
+              }}>
+                Relevant for AI agent workflows, APIs, MCP systems, enterprise reviews, and any workflow where verification must survive beyond the original vendor boundary.
+              </p>
+            </div>
+
+            {/* Artifact grid — quick confidence scan */}
+            <div style={{
+              maxWidth: '880px',
+              margin: '0 auto var(--space-16) auto',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(160px, 100%), 1fr))',
+              gap: 'var(--space-3)',
+            }}>
+              {[
+                { label: 'Security', href: '/security' },
+                { label: 'Privacy', href: '/privacy' },
+                { label: 'Terms', href: '/terms' },
+                { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
+                { label: 'Deployment model', href: '/enterprise' },
+                { label: 'PEAC protocol', href: '/peac' },
+                { label: 'security.txt', href: '/.well-known/security.txt', external: true },
+                { label: 'Contact', href: '/contact' },
+              ].map((item) => (
+                item.external ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      padding: 'var(--space-3) var(--space-4)',
+                      background: 'var(--glass-card-bg)',
+                      border: '1px solid var(--glass-card-border)',
+                      borderRadius: 'var(--radius-lg)',
+                      fontSize: 'var(--text-sm)', fontWeight: 500,
+                      color: 'var(--text-secondary)', textDecoration: 'none',
+                      textAlign: 'center',
+                      transition: 'color 0.15s, border-color 0.15s',
+                    }}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    style={{
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      padding: 'var(--space-3) var(--space-4)',
+                      background: 'var(--glass-card-bg)',
+                      border: '1px solid var(--glass-card-border)',
+                      borderRadius: 'var(--radius-lg)',
+                      fontSize: 'var(--text-sm)', fontWeight: 500,
+                      color: 'var(--text-secondary)', textDecoration: 'none',
+                      textAlign: 'center',
+                      transition: 'color 0.15s, border-color 0.15s',
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              ))}
             </div>
 
             {/* Assurance Sections */}

@@ -26,7 +26,7 @@ export default function ContactPage() {
                 Talk to Originary
               </h1>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
-                Technical review, enterprise deployment, integration support, or partnership inquiry. We typically respond within 2 business days.
+                Technical review, enterprise deployment, pilot planning, integration support, or partnership inquiry.
               </p>
             </div>
 

@@ -4,10 +4,9 @@ import Link from 'next/link'
 import { AnimateIn } from './AnimateIn'
 
 const benefits = [
-  'Ed25519 signatures, verified offline with a public key',
-  '35 packages on npm, 7,241 tests',
-  'Offline-verifiable with public key alone',
-  'Apache-2.0, self-hostable, vendor-neutral',
+  'Offline-verifiable with a public key alone',
+  'Apache-2.0 and self-hostable',
+  'Built for APIs, MCP, and automated workflows',
 ]
 
 export function OpenStandard() {
@@ -33,14 +32,17 @@ export function OpenStandard() {
                 className="mt-7 hp-text-body-lg"
                 style={{ color: 'var(--color-fg-secondary)' }}
               >
-                Originary is the product you deploy. PEAC is the open standard that keeps your records portable across systems and vendors. No lock-in.
+                Originary is the production product surface. PEAC is the open standard underneath. You can self-host, verify offline, and keep your records portable across teams and vendors.
               </p>
-              <div className="mt-10">
+              <div className="mt-10 flex flex-col sm:flex-row gap-3">
                 <Link href="/peac" className="hp-btn-secondary">
                   Learn about PEAC
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M3 7h8m0 0L8 4.5M11 7L8 9.5" />
                   </svg>
+                </Link>
+                <Link href="/developers" className="hp-btn-secondary">
+                  Start here
                 </Link>
               </div>
             </div>

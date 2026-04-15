@@ -1,6 +1,6 @@
 # Originary | Prove what agents did
 
-> Originary builds production surfaces for verification and evidence across AI agent, API, MCP, and automated interaction workflows. Verify requests, apply policy, and return signed records teams can prove later across vendors, audits, disputes, and reviews. PEAC is the open standard underneath. Self-hostable. Offline-verifiable. No lock-in.
+> Originary builds production products for signed interaction records across AI agents, APIs, MCP, and cross-runtime workflows. Return signed records that another party can verify without trusting a dashboard. PEAC is the open standard underneath. Self-hostable. Offline-verifiable. No lock-in.
 
 Last updated: 2026-04-10
 
@@ -76,7 +76,7 @@ Policy Pack Generator. Generate peac.txt, AIPREF headers, and human-readable pol
 
 ## Open Source
 
-PEAC is an open standard (Apache-2.0). 35 packages on npm, 7241 tests, 219 conformance requirement IDs, 97 build targets.
+PEAC is an open standard (Apache-2.0). 37 packages on npm, 7392 tests, 224 conformance requirement IDs, 105 build targets.
 
 - Ed25519 cryptographic signing (RFC 8032)
 - Compact JWS (RFC 7515)
@@ -116,7 +116,7 @@ PEAC is an open standard (Apache-2.0). 35 packages on npm, 7241 tests, 219 confo
 
 ## Company
 
-- [About](/about) - We build the production layer for open evidence
+- [About](/about) - Production products for signed interaction records
 - [Contact](/contact) - Integration support and commercial inquiries
 
 ## Community

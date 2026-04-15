@@ -6,15 +6,15 @@ import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
-  title: 'Pricing | Open Protocol, Commercial Support When You Need It',
-  description: 'Use PEAC free forever. Bring in Originary for managed verification, deployment support, managed keys, and enterprise evidence workflows. OSS, supported self-host, or managed verification.',
+  title: 'Pricing | Originary',
+  description: 'Use PEAC free and self-hosted. Bring in Originary for managed verification, deployment support, enterprise exports, and procurement-ready trust surfaces.',
   keywords: ['Originary Verify pricing', 'AI agent verification pricing', 'open source verification', 'Apache-2.0', 'self-host', 'managed verification', 'MCP security'],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   alternates: { canonical: '/pricing' },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Pricing ',
-    description: 'PEAC Protocol is free and open-source. Apache-2.0. Self-host with no limits, no fees, no sign-up.',
+    title: 'Pricing | Originary',
+    description: 'Use PEAC free and self-hosted. Bring in Originary for managed verification, deployment support, enterprise exports, and procurement-ready trust surfaces.',
     url: '/pricing',
     type: 'website',
     siteName: 'Originary',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing ',
-    description: 'PEAC Protocol is free and open-source. Apache-2.0. Self-host with no limits, no fees, no sign-up. Commercial support available for teams deploying at scale.',
+    title: 'Pricing | Originary',
+    description: 'Use PEAC free and self-hosted. Bring in Originary for managed verification, deployment support, enterprise exports, and procurement-ready trust surfaces.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -69,7 +69,7 @@ export default function PricingPage() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--text-primary)',
               }}>
-                Open protocol.
+                Open protocol. Commercial support when you need it.
               </h1>
 
               <p style={{
@@ -78,7 +78,7 @@ export default function PricingPage() {
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-8)',
               }}>
-                Use PEAC free forever. Bring in Originary when you need managed keys, hosted verification, deployment support, or procurement-ready evidence.
+                Use PEAC free forever. Bring in Originary when you need managed verification, deployment support, enterprise exports, or procurement-ready trust surfaces.
               </p>
 
               <a
@@ -127,7 +127,7 @@ export default function PricingPage() {
                 <span style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>forever</span>
               </div>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-8)' }}>
-                {FACTS.publishedPackageCount} packages on npm · {FACTS.testsCount} tests · Apache-2.0
+                Apache-2.0
               </p>
 
               <div className="grid grid-2" style={{ gap: 'var(--space-3)' }}>
@@ -159,6 +159,26 @@ export default function PricingPage() {
                     {feature}
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── What stays free / What Originary adds ─────────────────────── */}
+        <section className="section">
+          <div className="container">
+            <div style={{ maxWidth: '740px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: 'var(--space-6)' }}>
+              <div style={{ padding: 'var(--space-6)', background: 'var(--surface-elevated)', border: '1px solid var(--border-default)', borderRadius: 'var(--radius-xl)', borderTop: '3px solid var(--accent-success)' }}>
+                <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-3)' }}>What stays free</h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
+                  PEAC Protocol, self-hosted verification, open-source packages, and conformant implementations remain free and portable.
+                </p>
+              </div>
+              <div style={{ padding: 'var(--space-6)', background: 'var(--surface-elevated)', border: '1px solid var(--border-default)', borderRadius: 'var(--radius-xl)', borderTop: '3px solid var(--accent-brand)' }}>
+                <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-3)' }}>What Originary adds</h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
+                  Originary Verify, deployment support, enterprise exports, rollout help, and procurement-friendly trust surfaces for teams that need production readiness.
+                </p>
               </div>
             </div>
           </div>

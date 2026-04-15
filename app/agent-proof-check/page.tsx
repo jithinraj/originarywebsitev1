@@ -4,9 +4,9 @@ import EvidenceCheckClient from './EvidenceCheckClient'
 const PAGE_URL = 'https://www.originary.xyz/agent-proof-check'
 
 export const metadata: Metadata = {
-  title: 'AI Agent Proof Check | See What Logs Can\'t Prove',
+  title: 'Proof Check | Originary',
   description:
-    'Paste logs, traces, webhooks, signed records, or incident summaries from AI agents, APIs, tool calls, and MCP servers. See what another party can verify, what is missing, and what holds up in a review, dispute, or audit.',
+    'Paste a log, trace, webhook, incident summary, or signed record to see what is observable, what is provable, and what is missing.',
   keywords: [
     'evidence check',
     'agent evidence',
@@ -15,7 +15,6 @@ export const metadata: Metadata = {
     'signed receipts',
     'interaction records',
     'agent accountability',
-    'portable evidence',
     'audit trail',
     'verifiable logs',
   ],
@@ -36,9 +35,9 @@ export const metadata: Metadata = {
     canonical: '/agent-proof-check',
   },
   openGraph: {
-    title: 'Can you prove what your AI agent did?',
+    title: 'Proof Check | Originary',
     description:
-      'A browser-based check for AI agent, API, tool, and MCP activity. Compare logs to signed records and see what another party can verify.',
+      'Paste a log, trace, webhook, incident summary, or signed record to see what is observable, what is provable, and what is missing.',
     url: '/agent-proof-check',
     siteName: 'Originary',
     images: [
@@ -46,7 +45,7 @@ export const metadata: Metadata = {
         url: '/og',
         width: 1200,
         height: 630,
-        alt: 'Can you prove what your AI agent did?',
+        alt: 'Proof Check | Originary',
       },
     ],
     type: 'website',
@@ -54,9 +53,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Can you prove what your AI agent did?',
+    title: 'Proof Check | Originary',
     description:
-      'A browser-based check for AI agent, API, tool, and MCP activity. Compare logs to signed records and see what another party can verify.',
+      'Paste a log, trace, webhook, incident summary, or signed record to see what is observable, what is provable, and what is missing.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',

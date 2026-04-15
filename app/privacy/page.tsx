@@ -5,8 +5,8 @@ import Link from 'next/link'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy',
-  description: 'Originary Privacy Policy: minimal, consent-first data collection. Learn what we collect, your privacy rights, and our GPC support.',
+  title: 'Privacy Policy | Originary',
+  description: 'Read how Originary handles personal data, analytics consent, operational logs, processors, transfers, retention, and your rights.',
   robots: {
     index: true,
     follow: true,
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     canonical: '/privacy',
   },
   openGraph: {
-    title: 'Privacy Policy',
-    description: 'Originary Privacy Policy: minimal, consent-first data collection.',
+    title: 'Privacy Policy | Originary',
+    description: 'Read how Originary handles personal data, analytics consent, operational logs, processors, transfers, retention, and your rights.',
     url: '/privacy',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Privacy Policy',
-    description: 'Originary Privacy Policy: minimal, consent-first data collection.',
+    title: 'Privacy Policy | Originary',
+    description: 'Read how Originary handles personal data, analytics consent, operational logs, processors, transfers, retention, and your rights.',
     site: '@originaryx',
     creator: '@originaryx',
   },

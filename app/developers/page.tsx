@@ -6,8 +6,8 @@ import { ArrowRight, Code, Terminal, Shield, Bot, Plug, FileCheck } from 'lucide
 import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
-  title: 'Start Here ',
-  description: 'Pick your path: API, MCP, verify, or A2A. Add verifiable interaction records to your stack with Originary, powered by PEAC.',
+  title: 'Start here | Originary',
+  description: 'Choose the fastest path to your first signed record for APIs, MCP servers, agent workflows, and verification tools.',
   keywords: 'Originary SDK, PEAC Protocol, verifiable interaction records, MCP server, A2A integration, HTTP 402, developer tools',
   authors: [{ name: 'Originary' }],
   alternates: {
@@ -15,16 +15,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Start Here ',
-    description: 'Pick your path: API, MCP, verify, or A2A. Add verifiable interaction records to your stack.',
+    title: 'Start here | Originary',
+    description: 'Choose the fastest path to your first signed record for APIs, MCP servers, agent workflows, and verification tools.',
     url: '/developers',
     images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Start Here ',
-    description: 'Pick your path: API, MCP, verify, or A2A. Add verifiable interaction records to your stack.',
+    title: 'Start here | Originary',
+    description: 'Choose the fastest path to your first signed record for APIs, MCP servers, agent workflows, and verification tools.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -46,7 +46,7 @@ export default function Developers() {
                 Choose the fastest path to your first signed record
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                Start from your environment: API, gateway, MCP server, verification workflow, or cross-agent handoff. Every path ends in the same outcome: an interaction record another party can verify.
+                Start from the workflow you actually run — API publishing, MCP tools, AI agent systems, or local verification. Use the path below to issue, inspect, or verify signed records quickly.
               </p>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function Developers() {
               />
               <GuideCard
                 icon={<ArrowRight size={24} />}
-                title="I need to carry proof across agent hops"
+                title="I need proof across agent hops"
                 description="Attach verifiable interaction records to A2A messages. Verify authorization and policy compliance at each hop."
                 steps={['Issue records with @peac/protocol', 'Attach via A2A metadata carrier', 'Verify at receiving agent']}
                 href="/integrations/a2a"

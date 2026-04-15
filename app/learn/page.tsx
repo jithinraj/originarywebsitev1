@@ -5,22 +5,22 @@ import Link from 'next/link'
 import { BookOpen, ArrowRight, Receipt, CreditCard, Shield, ShoppingCart, Sparkles, TrendingUp, Users, Zap } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Learn: AI Agent Verification, Audit Trails & Policy',
-  description: 'Guides on AI agent verification, tamper-evident audit trails, MCP security, signed records, and evidence workflows. Essential reading for teams operating agent-facing systems.',
+  title: 'Learn | Originary',
+  description: 'Learn how signed records, offline verification, policy discovery, and payment-related record flows work across agent, API, MCP, and cross-runtime interactions.',
   keywords: 'agent verification tutorial, verifiable interaction records, offline verification, signed records, AI consent, policy discovery, PEAC Protocol guide, evidence workflows, agent verification, portable proof',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
-    title: 'Learn: Agent Verification, Records & Policy',
-    description: 'Guides on agent verification, verifiable interaction records, HTTP 402 payments, and policy enforcement.',
+    title: 'Learn | Originary',
+    description: 'Learn how signed records, offline verification, policy discovery, and payment-related record flows work across agent, API, MCP, and cross-runtime interactions.',
     url: '/learn',
     images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Learn: Agent Verification, Records & Policy',
-    description: 'Guides on agent verification, verifiable interaction records, HTTP 402 payments, and policy enforcement.',
+    title: 'Learn | Originary',
+    description: 'Learn how signed records, offline verification, policy discovery, and payment-related record flows work across agent, API, MCP, and cross-runtime interactions.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -184,7 +184,7 @@ export default function LearnPage() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--text-primary)'
               }}>
-                How automated interactions become <span className="text-gradient">verifiable</span>
+                How signed records work
               </h1>
 
               <p style={{
@@ -195,7 +195,7 @@ export default function LearnPage() {
                 maxWidth: '650px',
                 margin: '0 auto var(--space-10) auto'
               }}>
-                Four guides covering records, verification, policy, and evidence for automated interactions. Each one explains a protocol surface, shows what the wire format looks like, and points to working code.
+                Guides covering records, verification, policy discovery, and payment-related record flows for automated interactions.
               </p>
 
               {/* Stats Row */}

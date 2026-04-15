@@ -1,11 +1,11 @@
 import { AnimateIn } from './AnimateIn'
 
 const signals = [
-  { value: '35', label: 'npm packages' },
-  { value: '7,241', label: 'tests passing' },
-  { value: '219', label: 'conformance checks' },
+  { value: '37', label: 'npm packages' },
+  { value: '7,392', label: 'tests passing' },
+  { value: '224', label: 'conformance checks' },
   { value: 'Apache-2.0', label: 'license' },
-  { value: 'v0.12.7', label: 'latest release' },
+  { value: 'v0.12.11', label: 'latest release' },
 ]
 
 export function TractionStrip() {

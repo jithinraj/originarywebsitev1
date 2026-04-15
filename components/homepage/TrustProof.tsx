@@ -5,22 +5,22 @@ const proofPoints = [
   {
     num: '01',
     title: 'Self-hostable',
-    description: 'Run on your own infrastructure. No external dependency.',
+    description: 'Run on your own infrastructure. No external dependency required.',
   },
   {
     num: '02',
     title: 'Offline verification',
-    description: 'Verify with the public key alone. No network required.',
+    description: 'Verify with the public key alone. No network call required.',
   },
   {
     num: '03',
     title: 'Exportable records',
-    description: 'Inspect, share, archive, and use in disputes.',
+    description: 'Inspect, share, archive, and use in disputes, reviews, and audits.',
   },
   {
     num: '04',
     title: 'Open standard',
-    description: 'PEAC Protocol, Apache-2.0. Portable across vendors.',
+    description: 'PEAC Protocol under Apache-2.0. Portable across vendors and implementations.',
   },
   {
     num: '05',
@@ -30,12 +30,12 @@ const proofPoints = [
   {
     num: '06',
     title: 'Audit and dispute ready',
-    description: 'Timestamped evidence for compliance and procurement.',
+    description: 'Timestamped records for compliance, procurement, and incident review.',
   },
   {
     num: '07',
-    title: 'Recognized in x402 ecosystem',
-    description: 'PEAC receipt verification contributed to technical discussions with the Coinbase x402 protocol team.',
+    title: 'Built for real workflows',
+    description: 'Designed for AI agents, APIs, MCP, priced API access, and cross-boundary automated systems.',
   },
 ]
 
@@ -63,7 +63,7 @@ export function TrustProof() {
                 className="mt-4 text-[0.9375rem] leading-relaxed"
                 style={{ color: 'var(--color-fg-secondary)' }}
               >
-                Every record should survive vendor boundaries. Originary can issue and manage records in production, but verification should remain local, portable, and independent.
+                Every record should survive vendor boundaries. Originary can issue and manage records in production, but verification should remain local, offline, and independent.
               </p>
               <div className="mt-6">
                 <Link href="/trust" className="hp-btn-secondary">
