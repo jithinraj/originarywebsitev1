@@ -3,18 +3,18 @@ import { AnimateIn } from './AnimateIn'
 const pressures = [
   {
     num: '01',
-    label: 'Agents are crossing boundaries',
-    detail: 'APIs, tools, and MCP servers handle agent traffic from organizations they do not control. Standard proof is missing.',
+    label: 'Cross-boundary agent activity',
+    detail: 'Agents now act across APIs, tools, and runtimes owned by different teams and vendors. Signed records travel with the action so another party can verify what happened independently.',
   },
   {
     num: '02',
-    label: 'Compliance is catching up',
-    detail: 'Compliance and review expectations for automated decisions are rising. Auditable records will be expected.',
+    label: 'Growing audit and review expectations',
+    detail: 'Teams are increasingly expected to prove what automated systems did. Logs describe behavior. Signed records prove decisions.',
   },
   {
     num: '03',
-    label: 'Disputes need portable artifacts',
-    detail: 'When an incident involves multiple teams, partners, or vendors, the party with exportable evidence resolves faster than the party with screenshots.',
+    label: 'Faster dispute resolution',
+    detail: 'When records are exportable and offline-verifiable, disputes resolve faster than when everyone depends on the dashboard owner to confirm what happened.',
   },
 ]
 
@@ -36,7 +36,7 @@ export function WhyNow() {
                 className="hp-text-display mt-5"
                 style={{ color: 'var(--color-fg)' }}
               >
-                Evidence is not keeping up with automation
+                Records are not keeping up with automation
               </h2>
             </div>
           </AnimateIn>

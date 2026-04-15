@@ -13,7 +13,7 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   /** Stable release on `latest` npm dist-tag */
-  stableVersion: 'v0.12.7',
+  stableVersion: 'v0.12.11',
 
   /**
    * Current stable wire format (Wire 0.2).
@@ -38,26 +38,26 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   /** Packages in the npm publish manifest (@peac/* on npm) */
-  publishedPackageCount: 35,
+  publishedPackageCount: 37,
 
   /** Public packages in the monorepo (published + internal-public) */
-  publicPackageCount: 46,
+  publicPackageCount: 37,
 
   /** Total workspace packages (public + private + examples + apps) */
-  workspacePackageCount: 85,
+  workspacePackageCount: 37,
 
   // ---------------------------------------------------------------------------
   // Quality metrics (see CI output for latest tag)
   // ---------------------------------------------------------------------------
 
-  /** pnpm test -- passing test count as of v0.12.7 */
-  testsCount: 7241,
+  /** pnpm test -- passing test count as of v0.12.11 */
+  testsCount: 7392,
 
-  /** pnpm build -- build targets as of v0.12.7 */
-  buildTargets: 96,
+  /** pnpm build -- build targets as of v0.12.11 */
+  buildTargets: 105,
 
-  /** Conformance requirement IDs as of v0.12.7 */
-  conformanceRequirements: 219,
+  /** Conformance requirement IDs as of v0.12.11 */
+  conformanceRequirements: 224,
 
   /** Minimum Node.js version required */
   nodeMinVersion: '22.0.0',
@@ -77,9 +77,9 @@ export const FACTS = {
   // Category (governs all site copy)
   // ---------------------------------------------------------------------------
 
-  primaryCategory: 'Verifiable interaction records',
-  primaryTagline: 'Know what every agent did. Prove it later.',
-  plainSentence: 'Originary helps APIs, tools, and MCP servers verify agent requests, apply policy, and return verifiable interaction records. PEAC is the open standard underneath.',
+  primaryCategory: 'Signed, portable interaction records',
+  primaryTagline: 'Prove what agents did.',
+  plainSentence: 'Portable signed records for agent, API, MCP, and cross-runtime interactions.',
 
   // ---------------------------------------------------------------------------
   // External links

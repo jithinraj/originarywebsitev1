@@ -10,9 +10,9 @@ const GITHUB_URL = 'https://github.com/originaryx/agent-auditor'
 const NPM_URL = 'https://www.npmjs.com/package/@originaryx/agent-auditor'
 
 export const metadata: Metadata = {
-  title: 'Agent Auditor | Verify Signed Interaction Records',
+  title: 'Agent Auditor | Originary',
   description:
-    'Agent Auditor opens any signed interaction record and shows you who acted, what happened, and whether the proof is genuine. No backend.',
+    'Open and verify signed interaction records locally in your browser or CLI. No outbound verification or artifact fetches required.',
   keywords: [
     'agent auditor',
     'receipt verification',
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     canonical: '/agent-auditor',
   },
   openGraph: {
-    title: 'Agent Auditor | Inspect and Verify Signed Interaction Records',
+    title: 'Agent Auditor | Originary',
     description:
-      'AI agents act on your behalf. Receipts prove what they did. Open any signed interaction record and see exactly what happened — verified locally, no backend.',
+      'Open and verify signed interaction records locally in your browser or CLI. No outbound verification or artifact fetches required.',
     url: '/agent-auditor',
     siteName: 'Originary',
     images: [
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         url: '/og',
         width: 1200,
         height: 630,
-        alt: 'Agent Auditor — Inspect and verify signed interaction records offline',
+        alt: 'Agent Auditor | Originary',
       },
     ],
     type: 'website',
@@ -63,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Agent Auditor | Inspect and Verify Signed Interaction Records',
+    title: 'Agent Auditor | Originary',
     description:
-      'AI agents act on your behalf. Receipts prove what they did. Verify any signed interaction record locally — no backend, no accounts.',
+      'Open and verify signed interaction records locally in your browser or CLI. No outbound verification or artifact fetches required.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -248,9 +248,19 @@ export default function AgentAuditorPage() {
                 color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 maxWidth: '620px',
-                margin: '0 auto var(--space-10) auto',
+                margin: '0 auto var(--space-4) auto',
               }}>
                 Inspect who acted, what happened, and whether the record is genuine. Local verification in browser or CLI.
+              </p>
+
+              <p style={{
+                fontSize: 'var(--text-base)',
+                color: 'var(--text-tertiary)',
+                lineHeight: 1.6,
+                maxWidth: '620px',
+                margin: '0 auto var(--space-10) auto',
+              }}>
+                Best for support, audit, disputes, technical review, and debugging trust boundaries.
               </p>
 
               <div style={{
@@ -261,7 +271,7 @@ export default function AgentAuditorPage() {
                 marginBottom: 'var(--space-10)',
               }}>
                 <Link href="#inspector" className="btn btn-primary btn-lg">
-                  <span>Open a receipt now</span>
+                  <span>Open a signed record now</span>
                   <ArrowRight size={18} />
                 </Link>
                 <a
@@ -693,6 +703,13 @@ agent-auditor demo`}</pre>
                   View source on GitHub
                 </a>
               </div>
+              <p style={{ marginTop: 'var(--space-6)', fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
+                Do not have a signed record yet?{' '}
+                <Link href="/agent-proof-check" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>
+                  Use Proof Check
+                </Link>{' '}
+                to see what your team can observe, what another party can verify, and what is still missing.
+              </p>
             </div>
           </div>
         </section>

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     site: '@originaryx',
     creator: '@originaryx',
   },
-  robots: 'index,follow',
+  robots: 'noindex,nofollow',
 }
 
 export default function SystemOfRecordLayout({

@@ -156,7 +156,7 @@ export function Comparison() {
                     Signed record
                   </span>
                   <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'var(--accent-success-muted)', color: 'var(--accent-success)' }}>
-                    Portable proof
+                    Verifiable offline
                   </span>
                 </div>
                 <div className="space-y-2.5">
@@ -187,7 +187,7 @@ export function Comparison() {
               >
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-[0.6875rem] font-semibold tracking-wide uppercase" style={{ color: 'var(--color-fg-muted)' }}>Signed record</span>
-                  <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'var(--accent-success-muted)', color: 'var(--accent-success)' }}>Portable proof</span>
+                  <span className="text-[0.5625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'var(--accent-success-muted)', color: 'var(--accent-success)' }}>Verifiable offline</span>
                 </div>
                 <div className="space-y-2.5">
                   {recordEntries.map((row) => (

@@ -32,6 +32,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/verify',
+        destination: '/agent-auditor',
+        permanent: true,
+      },
+      {
         source: '/trace/pricing',
         destination: '/pricing#trace',
         permanent: true,

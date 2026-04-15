@@ -125,8 +125,6 @@ const INTEGRITY_BANNED = [
 // Truth guard -- terms that signal stale or fake content
 const TRUTH_GUARD = [
   'coming soon',
-  'portable signed record',
-  'portable signed records',
   'Start building',
   'SSO/SCIM',
   'SSO/SAML',

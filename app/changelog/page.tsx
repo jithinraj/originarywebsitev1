@@ -43,7 +43,7 @@ export default function ChangelogPage() {
             >
               <div style={{ display: 'grid', gap: 'var(--space-4)' }}>
                 {[
-                  { icon: <Tag size={18} />, label: 'Stable version', value: 'v0.12.8' },
+                  { icon: <Tag size={18} />, label: 'Stable version', value: 'v0.12.11' },
                   { icon: <GitBranch size={18} />, label: 'Current wire format', value: 'interaction-record+jwt (stable)' },
                   { icon: <GitBranch size={18} />, label: 'Legacy wire format', value: 'peac-receipt/0.1 (frozen)' },
                   { icon: <Package size={18} />, label: 'License', value: 'Apache-2.0' },
@@ -95,6 +95,31 @@ export default function ChangelogPage() {
               </h2>
 
               {[
+                {
+                  version: 'v0.12.11',
+                  date: 'Apr 15, 2026',
+                  items: [
+                    'Commerce finality guard: assertExplicitFinality, MapperBoundaryError, commerce.finality_synthesis_blocked',
+                    'ACP delegated-payment profile and MPP payment-attempt / settlement mappers',
+                    'x402 settlement proof extractor with dual-header precedence',
+                    'Go middleware production hardening (panic recovery, bounded rate limiter, Logger/Metrics)',
+                    'Cursor, Codex, Claude Code, VS Code plugin packs with pinned MCP server',
+                    'peac doctor CLI, offline verify dashboard, Copilot enterprise compatibility checker',
+                    'Conformance Section 26 commerce fixtures (20 vectors)',
+                    '37 packages, 7,392 tests, 224 conformance IDs, 105 build targets',
+                  ],
+                },
+                {
+                  version: 'v0.12.10',
+                  date: 'Apr 14, 2026',
+                  items: [
+                    'Managed runtime evidence floor: adapter-runtime-governance with AGT mapper',
+                    'Runtime-governance profile and coverage matrix',
+                    'Conformance Section 27 (RTGOV-001 through RTGOV-007)',
+                    'Benchmark SLO publication with regression-based gate',
+                    '37 packages, 7,392 tests, 224 conformance IDs',
+                  ],
+                },
                 {
                   version: 'v0.12.8',
                   date: 'Apr 10, 2026',

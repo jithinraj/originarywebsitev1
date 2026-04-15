@@ -74,7 +74,7 @@ export default function AboutPage() {
   const companySection = useReveal()
 
   const domainList = [
-    { name: 'Identity', desc: 'Cryptographic proof-of-control for agents and operators.', icon: <Fingerprint size={18} /> },
+    { name: 'Identity', desc: 'Verifiable proof-of-control for agents and operators.', icon: <Fingerprint size={18} /> },
     { name: 'Purpose', desc: 'Declared intent for each interaction.', icon: <Target size={18} /> },
     { name: 'Consent', desc: 'What is allowed under stated terms.', icon: <FileCheck size={18} /> },
     { name: 'Privacy', desc: 'What is collected, retained, and disclosed.', icon: <Lock size={18} /> },
@@ -87,10 +87,10 @@ export default function AboutPage() {
   ]
 
   const productList = [
-    { name: 'Originary Verify', desc: 'The fastest way to operationalize PEAC in production. Validate signatures, policy binding, and evidence exports at scale.', icon: <Shield size={22} /> },
-    { name: 'Agent Auditor', desc: 'Open a signed record, inspect every field, verify the signature. The fastest way to see what Originary does.', icon: <Eye size={22} /> },
-    { name: 'Gateway 402', desc: 'Edge enforcement with HTTP 402 challenges and signed record issuance.', icon: <CreditCard size={22} /> },
-    { name: 'MCP Server', desc: 'Verification middleware for MCP tool endpoints. Signed records travel with the response.', icon: <Code size={22} /> },
+    { name: 'Originary Verify', desc: 'Operationalize signed records in production. Validate signatures, policy binding, and exports at scale. Hosted or self-hosted.', icon: <Shield size={22} /> },
+    { name: 'Agent Auditor', desc: 'Open a signed record, inspect every field, and verify the signature locally. No outbound verification required.', icon: <Eye size={22} /> },
+    { name: 'Gateway 402', desc: 'Edge enforcement with signed record issuance on every response for priced APIs, automated payments, and related machine-payment flows.', icon: <CreditCard size={22} /> },
+    { name: 'MCP Server', desc: 'Verification tools for MCP tool endpoints. Signed records travel with the response and remain independently verifiable.', icon: <Code size={22} /> },
   ]
 
   return (
@@ -125,7 +125,7 @@ export default function AboutPage() {
                 color: 'var(--text-primary)',
               }}
             >
-              We build the production layer for open evidence
+              We build software that helps teams prove what AI agents and APIs did.
             </h1>
 
             <p
@@ -139,7 +139,7 @@ export default function AboutPage() {
                 fontWeight: 400,
               }}
             >
-              Originary builds production surfaces for verification and evidence across agent, API, MCP, and automated interaction workflows. PEAC is the open standard underneath.
+              Originary builds verification software for AI agents, APIs, MCP, and automated workflows. PEAC is the open standard underneath.
             </p>
 
             <div
@@ -188,29 +188,12 @@ export default function AboutPage() {
                 color: 'var(--text-secondary)',
                 lineHeight: 1.8,
                 textAlign: 'center',
-                marginBottom: 'var(--space-4)',
-              }}
-            >
-              Originary was founded on a simple observation: agents are crossing organizational
-              boundaries every day, booking, purchasing, calling APIs, accessing tools, but there is
-              no standard way to verify what happened after the fact. Logs stay inside one system.
-              Originary makes agent interactions verifiable across boundaries.
-            </p>
-
-            <p
-              style={{
-                ...reveal(mission.visible, 0.1),
-                fontSize: 'var(--text-base)',
-                color: 'var(--text-tertiary)',
-                lineHeight: 1.7,
-                textAlign: 'center',
+                marginBottom: 'var(--space-12)',
                 maxWidth: '680px',
                 margin: '0 auto var(--space-12) auto',
               }}
             >
-              We built PEAC so that any team can publish machine-readable terms, issue verifiable
-              interaction records, and let third parties verify outcomes independently, even offline.
-              Originary is the product surface that makes this practical in production.
+              When software acts on behalf of people, every important action needs a record another party can verify. Logs help inside your systems. Signed records help across teams, vendors, audits, disputes, and reviews.
             </p>
 
             <div
@@ -642,9 +625,7 @@ export default function AboutPage() {
                 Built on an Open Foundation
               </h2>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', maxWidth: '620px', margin: '0 auto', lineHeight: 1.7 }}>
-                <strong>PEAC</strong> is the open standard for verifiable interaction records.
-                It defines how policies are published and how cryptographically signed receipts provide portable evidence
-                of an interaction outcome under declared terms.
+                Originary is the product company. PEAC is the open protocol underneath. We build the production surfaces that make signed records practical to deploy, verify, inspect, and export in real workflows.
               </p>
             </div>
 
@@ -920,7 +901,7 @@ export default function AboutPage() {
                 Company
               </h2>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-3)' }}>
-                Originary is the steward and primary implementer of PEAC, operated by Poem, Inc.
+                Originary is operated by Poem, Inc., a Delaware corporation. We build practical verification software around PEAC while keeping the protocol open, portable, and implementation-independent.
               </p>
               <p style={{ fontSize: 'var(--text-lg)', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
                 ORIGINARY<sup style={{ fontSize: '0.6em' }}>TM</sup> is a brand of <strong>Poem, Inc.</strong>
@@ -934,7 +915,7 @@ export default function AboutPage() {
                   margin: '0 auto var(--space-3) auto',
                 }}
               >
-                Poem, Inc. builds verification and evidence infrastructure, and maintains
+                Poem, Inc. maintains
                 the Originary products and services that run on top of PEAC Protocol.
               </p>
               <p

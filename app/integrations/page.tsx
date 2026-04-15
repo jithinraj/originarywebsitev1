@@ -6,13 +6,13 @@ import Footer from '@/components/Footer'
 import { FileCode, Zap, MessageSquare, Settings, Brain, FileText } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Integrations | Protocol Adapters for Verification and Evidence',
-  description: 'Originary connects to the protocols your agents already use. MCP, A2A, x402, AIPREF, ACP adapters around the PEAC evidence layer.',
-  keywords: 'MCP integration, A2A integration, x402, AIPREF, ACP, PEAC protocol, agent verification integrations, MCP security, evidence adapters',
+  title: 'Integrations | Originary',
+  description: 'See how Originary and PEAC connect to MCP, A2A, x402, ACP, AIPREF, and related standards for signed records.',
+  keywords: 'MCP integration, A2A integration, x402, AIPREF, ACP, PEAC protocol, agent verification integrations, MCP security, signed records',
   robots: 'index,follow',
   openGraph: {
-    title: 'Integrations | Protocol Adapters for Verification and Evidence',
-    description: 'Originary connects to the protocols your agents already use. MCP, A2A, x402, AIPREF, ACP adapters around the PEAC evidence layer.',
+    title: 'Integrations | Originary',
+    description: 'See how Originary and PEAC connect to MCP, A2A, x402, ACP, AIPREF, and related standards for signed records.',
     url: '/integrations',
     siteName: 'Originary',
     type: 'website',
@@ -21,13 +21,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/integrations',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Integrations | Originary',
+    description: 'See how Originary and PEAC connect to MCP, A2A, x402, ACP, AIPREF, and related standards for signed records.',
+    images: ['/og'],
+  },
 }
 
 const integrations = [
   {
     id: 'x402',
     title: 'x402 (HTTP 402)',
-    description: 'Priced API access with signed records. Challenge with HTTP 402, accept payment on your chosen rail, return a verifiable interaction record.',
+    description: 'Priced API access with signed records. Use HTTP 402 or x402-style challenge-and-payment flows, then return a signed record that another party can verify. Relevant for priced APIs, automated payments, machine payments, and agentic commerce workflows.',
     href: '/integrations/x402/',
     icon: Zap,
     status: 'available' as const,
@@ -37,7 +43,7 @@ const integrations = [
   {
     id: 'a2a',
     title: 'Agent-to-Agent (A2A)',
-    description: 'Carry verifiable interaction records through A2A metadata. Prove authorization and policy compliance across agent hops.',
+    description: 'Carry signed interaction records through A2A metadata so another party can verify authorization and policy handling across agent hops and delegated workflows.',
     href: '/integrations/a2a/',
     icon: MessageSquare,
     status: 'available' as const,
@@ -47,7 +53,7 @@ const integrations = [
   {
     id: 'mcp',
     title: 'MCP Server',
-    description: 'Open-source MCP server with five tools for verifying, inspecting, and issuing interaction records. Works with Claude Desktop, Cursor, and any MCP client.',
+    description: 'Verification, inspection, and issuance tools for MCP workflows, tool calls, and editor integrations. Local verification remains straightforward for developers and evaluators.',
     href: '/integrations/mcp/',
     icon: FileCode,
     status: 'available' as const,
@@ -57,7 +63,7 @@ const integrations = [
   {
     id: 'aipref',
     title: 'AI Preferences (AIPREF)',
-    description: 'Machine-readable AI access policies based on the IETF draft. Publish preferences and enforce them with verifiable interaction records.',
+    description: 'Machine-readable AI agent policy terms can be declared separately from the signed records that prove what happened under those terms.',
     href: '/integrations/aipref/',
     icon: Brain,
     status: 'available' as const,
@@ -67,7 +73,7 @@ const integrations = [
   {
     id: 'acp',
     title: 'Agentic Commerce Protocol (ACP)',
-    description: 'Protocol support for agent-initiated commerce. Verifiable interaction records for agent transactions.',
+    description: 'Structured commerce and discovery flows can emit signed records for downstream review and verification.',
     href: '/integrations/acp/',
     icon: Settings,
     status: 'draft' as const,
@@ -90,8 +96,8 @@ const integrations = [
 const statusBadges = {
   available: { label: 'Available', color: 'var(--accent-brand)' },
   preview: { label: 'Preview', color: 'var(--accent-secondary)' },
-  draft: { label: 'Draft', color: 'var(--accent-tertiary)' },
-  research: { label: 'Research', color: 'var(--text-tertiary)' },
+  draft: { label: 'Planned', color: 'var(--accent-tertiary)' },
+  research: { label: 'Planned', color: 'var(--text-tertiary)' },
 }
 
 export default function IntegrationsPage() {
@@ -168,12 +174,25 @@ export default function IntegrationsPage() {
             color: 'var(--text-primary)',
             lineHeight: 1.2,
           }}>
-            Protocol Integrations
+            Integrations and protocol surfaces
           </h1>
 
           {/* Description */}
           <p style={{
             fontSize: 'var(--text-xl)',
+            textAlign: 'center',
+            color: 'var(--text-secondary)',
+            marginBottom: 'var(--space-4)',
+            maxWidth: '700px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            lineHeight: 1.6,
+          }}>
+            How Originary and PEAC fit with MCP, A2A, x402, ACP, AIPREF, and related standards.
+          </p>
+
+          <p style={{
+            fontSize: 'var(--text-base)',
             textAlign: 'center',
             color: 'var(--text-secondary)',
             marginBottom: 'var(--space-12)',
@@ -182,7 +201,20 @@ export default function IntegrationsPage() {
             marginRight: 'auto',
             lineHeight: 1.6,
           }}>
-            Originary connects to the systems you already use. PEAC stays rail-neutral and runtime-neutral while Originary packages the operational path. Each adapter handles one standard.
+            Originary integrates with the systems teams already use. PEAC stays protocol-neutral while Originary packages the operational path for signed records and verification workflows.
+          </p>
+
+          <p style={{
+            fontSize: 'var(--text-base)',
+            textAlign: 'center',
+            color: 'var(--text-tertiary)',
+            marginBottom: 'var(--space-12)',
+            maxWidth: '700px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            lineHeight: 1.6,
+          }}>
+            This page is for teams evaluating how signed records fit alongside protocols they already use — from MCP and A2A to x402, priced APIs, automated payments, and agentic commerce workflows.
           </p>
 
           {/* Status Legend */}

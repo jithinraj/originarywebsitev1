@@ -5,8 +5,8 @@ import Link from 'next/link'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Security Posture and Disclosure',
-  description: 'Originary security posture: supported versions, key management, dependency posture, verification architecture, and responsible disclosure. Report vulnerabilities to security@originary.xyz.',
+  title: 'Security | Originary',
+  description: "Security posture, verification architecture, responsible disclosure, data boundaries, and key management for Originary products and the PEAC Protocol.",
   robots: {
     index: true,
     follow: true,
@@ -17,6 +17,21 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/security',
+  },
+  openGraph: {
+    title: 'Security | Originary',
+    description: "Security posture, verification architecture, responsible disclosure, data boundaries, and key management for Originary products and the PEAC Protocol.",
+    url: '/security',
+    siteName: 'Originary',
+    images: [{ url: '/og' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Security | Originary',
+    description: "Security posture, verification architecture, responsible disclosure, data boundaries, and key management for Originary products and the PEAC Protocol.",
+    site: '@originaryx',
+    creator: '@originaryx',
   },
 }
 
@@ -64,14 +79,14 @@ export default function Security() {
                   marginBottom: 'var(--space-6)',
                   color: 'var(--text-primary)'
                 }}>
-                  Security Posture
+                  Security
                 </h1>
                 <p style={{
                   fontSize: 'var(--text-lg)',
                   color: 'var(--text-secondary)',
                   marginBottom: 'var(--space-4)'
                 }}>
-                  How Originary and PEAC handle verification, key management, dependencies, and security boundaries.
+                  Security posture, supported versions, responsible disclosure, and verification boundaries for Originary.
                 </p>
               </div>
 
@@ -85,7 +100,7 @@ export default function Security() {
                   color: 'var(--text-secondary)'
                 }}>
                   <h2>Supported versions</h2>
-                  <p>Security fixes are applied to the current stable release (v0.12.7) only. Older versions may not receive patches. See the <Link href="/changelog" style={{ color: 'var(--accent-brand)' }}>changelog</Link> for release history.</p>
+                  <p>Security fixes are applied to the current stable release only. Older versions may not receive patches. See the <Link href="/changelog" style={{ color: 'var(--accent-brand)' }}>changelog</Link> for release history and current release status.</p>
 
                   <h2>Verification architecture</h2>
                   <p>Verification is offline by design. Signed records use Ed25519 (RFC 8032) and compact JWS (RFC 7515). Verifiers need only the issuer&apos;s public key via JWKS. No callback to Originary or any external service is required. No implicit network fetch is performed during verification.</p>
@@ -94,7 +109,7 @@ export default function Security() {
                   <p>Signing keys are Ed25519. In self-hosted mode, keys are generated and stored locally. In managed mode, keys are backed by cloud KMS (AWS KMS, GCP Cloud KMS, Azure Key Vault, or HashiCorp Vault). Key rotation follows a 5-state lifecycle with 30-day overlap. Revoked keys are tracked.</p>
 
                   <h2>Dependency and supply-chain posture</h2>
-                  <p>All 35 npm packages are published via GitHub OIDC with provenance attestation. CI runs CodeQL security-extended analysis, dependency review, and audit gates. The repository enforces GitHub Actions SHA pinning. No ambient key discovery is performed. All dependencies are lockfile-pinned.</p>
+                  <p>All published npm packages are released via GitHub OIDC with provenance attestation. CI runs CodeQL security-extended analysis, dependency review, and audit gates. The repository enforces GitHub Actions SHA pinning. No ambient key discovery is performed. All dependencies are lockfile-pinned.</p>
 
                   <h2>Data boundaries</h2>
                   <p>Signed records contain policy hashes and decisions, not raw request payloads. In self-hosted mode, no data leaves your environment. In managed mode, only key lifecycle operations or record storage (depending on tier) involve Originary infrastructure. Verification never depends on Originary being online.</p>

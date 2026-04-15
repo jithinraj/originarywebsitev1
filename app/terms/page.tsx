@@ -5,8 +5,8 @@ import Link from 'next/link'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service',
-  description: 'Terms of Service for Originary - commercial tools implementing receipts for the agentic web.',
+  title: 'Terms of Service | Originary',
+  description: "Terms of Service for using Originary products, tools, websites, and related services. Includes plans, acceptable use, receipts, and governing law.",
   robots: {
     index: true,
     follow: true,
@@ -18,13 +18,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/terms',
   },
+  openGraph: {
+    title: 'Terms of Service | Originary',
+    description: "Terms of Service for using Originary products, tools, websites, and related services. Includes plans, acceptable use, receipts, and governing law.",
+    url: '/terms',
+    siteName: 'Originary',
+    images: [{ url: '/og' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Terms of Service | Originary',
+    description: "Terms of Service for using Originary products, tools, websites, and related services. Includes plans, acceptable use, receipts, and governing law.",
+    site: '@originaryx',
+    creator: '@originaryx',
+  },
 }
 
 const webPageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Terms of Service',
-  description: 'Terms of Service for Originary - commercial tools implementing receipts for the agentic web.',
+  description: 'Terms of Service for Originary products, tools, websites, and related services.',
   url: 'https://www.originary.xyz/terms',
   dateModified: '2025-07-27',
   publisher: {
@@ -90,7 +105,7 @@ export default function Terms() {
                   color: 'var(--text-secondary)'
                 }}>
               <h2>Who you&apos;re contracting with</h2>
-              <p>&ldquo;Originary&rdquo;, &ldquo;we&rdquo;, and &ldquo;us&rdquo; mean <strong>Poem, Inc.</strong>, a Delaware corporation, which operates <strong>originary.xyz</strong> and related commercial tools implementing <strong>receipts for the agentic web</strong>.</p>
+              <p>&ldquo;Originary&rdquo;, &ldquo;we&rdquo;, and &ldquo;us&rdquo; mean <strong>Poem, Inc.</strong>, a Delaware corporation, which operates <strong>originary.xyz</strong> and related commercial tools implementing <strong>signed, portable records</strong>.</p>
 
               <h2>What we provide</h2>
               <ul>

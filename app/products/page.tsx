@@ -6,13 +6,13 @@ import { ArrowRight, CheckCircle, Shield, Zap, Server, BarChart3, FileText, Hard
 import { NARRATIVE } from '@/lib/site-registry'
 
 export const metadata: Metadata = {
-  title: 'Products | Verification and Evidence Tools for AI Agent Interactions',
-  description: 'Originary Verify, Agent Auditor, Gateway 402, MCP Server, and Trace. AI agent verification, tamper-evident audit trails, and portable evidence. Built on PEAC.',
-  keywords: 'Originary Verify, AI agent verification, MCP security, MCP audit trail, Agent Auditor, Gateway 402, tamper-evident audit trail, evidence workflows, offline verification',
+  title: 'Products | Originary',
+  description: 'Explore Originary Verify, Agent Auditor, Gateway 402, and MCP Server for signed records across AI agents, APIs, MCP, and automated workflows.',
+  keywords: 'Originary Verify, signed interaction records, MCP verification, Agent Auditor, Gateway 402, offline verification, portable records, PEAC Protocol',
   robots: 'index,follow',
   openGraph: {
-    title: 'Products',
-    description: 'Verify agent requests, apply policy, and return verifiable interaction records.',
+    title: 'Products | Originary',
+    description: 'Explore Originary Verify, Agent Auditor, Gateway 402, and MCP Server for signed records across AI agents, APIs, MCP, and automated workflows.',
     url: '/products',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Products',
-    description: 'Verify agent requests, apply policy, and return verifiable interaction records.',
+    title: 'Products | Originary',
+    description: 'Explore Originary Verify, Agent Auditor, Gateway 402, and MCP Server for signed records across AI agents, APIs, MCP, and automated workflows.',
     images: ['/og'],
   },
   alternates: {
@@ -35,7 +35,7 @@ const primaryProducts = [
   {
     icon: Shield,
     title: 'Originary Verify',
-    description: 'The fastest way to operationalize PEAC in production. Validate signatures, key material, policy binding, and evidence exports at scale. Hosted or self-hosted.',
+    description: 'Production verification, exports, and deployment support for teams that need signed records in real workflows. Hosted or self-hosted.',
     features: ['Ed25519 signature verification', 'Offline verification', 'Hosted or self-hosted deployment', 'Enterprise evidence exports'],
     href: '/products/verify',
     npm: '@peac/protocol',
@@ -44,7 +44,7 @@ const primaryProducts = [
   {
     icon: Search,
     title: 'Agent Auditor',
-    description: 'Open any signed interaction record and see who acted, what happened, and whether the proof is genuine. Browser or CLI.',
+    description: 'Open and verify signed interaction records locally in the browser or CLI. No outbound verification required.',
     features: ['Visual record inspector', 'Signature verification', 'Browser and CLI', 'Offline capable'],
     href: '/agent-auditor',
     npm: '@originaryx/agent-auditor',
@@ -53,7 +53,7 @@ const primaryProducts = [
   {
     icon: Zap,
     title: 'Gateway 402',
-    description: 'Enforce access and payment policy at the edge. Issue signed records on every response.',
+    description: 'Apply policy and payment enforcement at the edge while returning signed records on responses for priced APIs, automated payments, and x402-style flows.',
     features: ['Edge deployment', 'HTTP 402 challenge flows', 'Signed interaction records', 'Rail-neutral design'],
     href: '/products/gateway-402',
     npm: '@peac/rails-x402',
@@ -62,8 +62,8 @@ const primaryProducts = [
   {
     icon: Server,
     title: 'MCP Server',
-    description: 'Five verification tools for Claude, Cursor, and any MCP client. Verify, inspect, and decode records offline.',
-    features: ['5 MCP tools', 'Offline verification', 'Capability-based ACL', 'Claude Desktop and Cursor'],
+    description: 'Verification and inspection tools for MCP clients, tool hosts, and editor workflows. Verify, inspect, and decode signed interaction records offline.',
+    features: ['MCP tools', 'Offline verification', 'Capability-based ACL', 'Claude Desktop and Cursor'],
     href: '/integrations/mcp',
     npm: '@peac/mcp-server',
     status: 'available' as const,
@@ -71,7 +71,7 @@ const primaryProducts = [
   {
     icon: BarChart3,
     title: 'Trace',
-    description: 'Monitor agent traffic accessing your APIs and content. Export signed evidence.',
+    description: 'Monitor automated traffic and export signed records for downstream review. Preview and subject to change.',
     features: ['AI agent identification', 'Traffic observation', 'Evidence export', 'Audit log generation'],
     href: '/trace',
     status: 'preview' as const,
@@ -106,13 +106,13 @@ export default function ProductsPage() {
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
               <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 'var(--space-4)' }}>PRODUCTS</div>
               <h1 style={{ marginBottom: 'var(--space-6)', color: 'var(--text-primary)', fontWeight: 700, fontSize: 'clamp(2rem, 4.5vw, 3.5rem)' }}>
-                AI agent verification and tamper-evident audit trails
+                Products for signed records
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-                Originary Verify is the flagship. Agent Auditor inspects. Gateway 402 enforces at the edge. MCP Server gives AI clients verification tools. Trace monitors and exports evidence.
+                Originary Verify operationalizes signed records in production. Agent Auditor inspects them locally. Gateway 402 adds enforcement at the edge. MCP Server brings verification into developer workflows for APIs, MCP servers, and agent runtimes.
               </p>
-              <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-tertiary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                Each product handles a different stage: inspect, verify, enforce, observe.
+              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-tertiary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
+                Built for enterprise AI platform teams, API publishers, MCP developers, priced API operators, and security-conscious teams that need proof beyond local logs.
               </p>
             </div>
           </div>
@@ -241,10 +241,10 @@ export default function ProductsPage() {
               textAlign: 'center',
             }}>
               <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-                Start with the OSS packages
+                Start with signed records
               </h2>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto var(--space-8) auto' }}>
-                Install from npm. Deploy to your infrastructure. Reach out when you need enterprise support.
+                Install from npm. Deploy to your infrastructure. Contact us for enterprise deployment support.
               </p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
                 <Link href="/developers" className="btn btn-primary btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}>

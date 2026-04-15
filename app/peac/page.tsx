@@ -8,8 +8,8 @@ import { FaqAccordion, FaqJsonLd } from '@/components/faq'
 import { peacFaqs } from '@/content/faqs'
 
 export const metadata: Metadata = {
-  title: 'PEAC Protocol | Verifiable Interaction Records',
-  description: 'PEAC is the open standard for verifiable interaction records. Publish terms, verify agent requests, and issue signed records. Apache-2.0.',
+  title: 'PEAC Protocol | Originary',
+  description: 'PEAC is the open standard for verifiable interaction records across AI agents, APIs, MCP, and automated systems. Originary is one product built on top.',
   keywords: [
     'PEAC Protocol',
     'verifiable interaction records',
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     canonical: '/peac'
   },
   openGraph: {
-    title: 'PEAC Protocol | Open Standard for Verifiable Interaction Records',
-    description: 'PEAC is the open standard for verifiable interaction records. Publish terms, verify agent requests, and issue signed records. Verify independently, even offline.',
+    title: 'PEAC Protocol | Originary',
+    description: 'PEAC is the open standard for verifiable interaction records across AI agents, APIs, MCP, and automated systems. Originary is one product built on top.',
     url: '/peac',
     siteName: 'Originary',
     type: 'website',
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PEAC Protocol | Open Standard for Verifiable Interaction Records',
-    description: 'Open standard for verifiable interaction records. Verify independently, offline. Apache-2.0.',
+    title: 'PEAC Protocol | Originary',
+    description: 'PEAC is the open standard for verifiable interaction records across AI agents, APIs, MCP, and automated systems. Originary is one product built on top.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -130,7 +130,7 @@ export default function PeacPage() {
                   margin: '0 auto var(--space-6) auto',
                 }}
               >
-                PEAC is the open standard for verifiable interaction records. Originary is one product built on top of it. PEAC defines how systems publish machine-readable interaction terms and issue signed records for automated requests. Verify them independently, even offline.
+                PEAC defines how systems publish machine-readable interaction terms, issue signed records for automated requests, and verify them independently, even offline. Originary is one product built on top.
               </p>
 
               <p
@@ -246,6 +246,65 @@ export default function PeacPage() {
           </div>
         </section>
 
+        {/* PEAC vs Originary boundary */}
+        <section className="section" style={{ paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
+          <div className="container">
+            <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, textAlign: 'center', marginBottom: 'var(--space-10)', color: 'var(--text-primary)' }}>
+                PEAC vs Originary
+              </h2>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-5)' }}>
+                <div style={{
+                  background: 'var(--glass-card-bg)',
+                  border: '1px solid var(--glass-card-border)',
+                  borderRadius: 'var(--radius-xl)',
+                  padding: 'var(--space-6)',
+                }}>
+                  <p style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }}>PEAC Protocol</p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                    {[
+                      'Open standard',
+                      'Machine-readable interaction terms',
+                      'Signed interaction record format',
+                      'Independent verification',
+                      'Conformance and interoperability',
+                      'Implementation-neutral by design',
+                    ].map((item) => (
+                      <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
+                        <span style={{ color: 'var(--accent-brand)', fontWeight: 700, flexShrink: 0 }}>&#10003;</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div style={{
+                  background: 'var(--glass-card-bg)',
+                  border: '1px solid var(--glass-card-border)',
+                  borderRadius: 'var(--radius-xl)',
+                  padding: 'var(--space-6)',
+                }}>
+                  <p style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-tertiary)', marginBottom: 'var(--space-4)' }}>Originary (product)</p>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
+                    {[
+                      'Production product surface',
+                      'Deployment paths',
+                      'Verification workflows',
+                      'Inspection and export tools',
+                      'Enterprise rollout support',
+                      'Optional, not required for the protocol',
+                    ].map((item) => (
+                      <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
+                        <span style={{ color: 'var(--text-muted)', fontWeight: 700, flexShrink: 0 }}>&#8226;</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Implementation status */}
         <section className="section" style={{ paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
           <div className="container">
@@ -272,10 +331,10 @@ export default function PeacPage() {
         <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
             <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, textAlign: 'center', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-              Ten verification domains
+              Where PEAC works today
             </h2>
             <p style={{ textAlign: 'center', fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', marginBottom: 'var(--space-16)', maxWidth: '600px', margin: '0 auto var(--space-16) auto' }}>
-              Protocol capability map for verifiable automated interactions
+              Protocol capability map for APIs, MCP, A2A, commerce-related workflows, and other verifiable automated interactions
             </p>
 
             <div style={{ maxWidth: '960px', margin: '0 auto' }}>

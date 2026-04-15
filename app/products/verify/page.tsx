@@ -13,7 +13,7 @@ const productJsonLd = {
   name: 'Originary Verify',
   applicationCategory: 'SecurityApplication',
   operatingSystem: 'Cross-platform',
-  description: 'AI agent verification and tamper-evident audit trails. Validate signatures, policy binding, and evidence exports at scale.',
+  description: 'Production verification for signed records. Validate signatures, policy binding, and exports at scale.',
   url: 'https://www.originary.xyz/products/verify',
   provider: {
     '@type': 'Organization',
@@ -29,25 +29,24 @@ const productJsonLd = {
 }
 
 export const metadata: Metadata = {
-  title: 'Originary Verify | AI Agent Verification and Tamper-Evident Audit Trails',
-  description: 'The fastest way to operationalize PEAC in production. Validate signatures, policy binding, and evidence exports at scale. Hosted or self-hosted. Offline verification with no vendor dependency.',
+  title: 'Originary Verify | Production Verification Workflows',
+  description: 'Production verification for signed interaction records. Validate signatures, policy binding, and exports at scale across AI agents, APIs, MCP, and review workflows.',
   keywords: [
     'Originary Verify',
-    'AI agent verification',
-    'MCP security',
-    'MCP governance',
-    'tamper-evident audit trail',
-    'verifiable audit trail',
-    'offline verification',
     'signed interaction records',
-    'portable evidence',
+    'MCP verification',
+    'offline verification',
+    'verifiable interaction records',
+    'portable records',
     'PEAC Protocol',
+    'agent audit trail',
+    'API verification',
   ],
   robots: 'index,follow',
   alternates: { canonical: '/products/verify' },
   openGraph: {
-    title: 'Originary Verify | AI Agent Verification',
-    description: 'Validate signatures, policy binding, and evidence exports at scale. The fastest way to operationalize PEAC in production.',
+    title: 'Originary Verify | Production Verification Workflows',
+    description: 'Operationalize signed records in production. Validate signatures, policy binding, and exports at scale.',
     url: '/products/verify',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -55,8 +54,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary Verify | AI Agent Verification',
-    description: 'Validate signatures, policy binding, and evidence exports at scale. The fastest way to operationalize PEAC in production.',
+    title: 'Originary Verify | Production Verification Workflows',
+    description: 'Operationalize signed records in production. Validate signatures, policy binding, and exports at scale.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -66,7 +65,7 @@ export const metadata: Metadata = {
 const useCases = [
   {
     title: 'Enterprise AI platform teams',
-    description: 'Verify every agent interaction across your platform. Export tamper-evident audit trails for compliance reviews and incident investigations.',
+    description: 'Verify every agent interaction across your platform. Export signed records for compliance reviews and incident investigations.',
     icon: <Server size={20} />,
   },
   {
@@ -186,7 +185,7 @@ export default function OriginaryVerifyPage() {
                 lineHeight: 1.7, marginBottom: 'var(--space-4)',
                 maxWidth: '640px', margin: '0 auto var(--space-4) auto',
               }}>
-                The fastest way to operationalize PEAC in production. Validate signatures, policy binding, and evidence exports at scale.
+                Operationalize signed interaction records in production. Validate signatures, policy binding, and exports at scale. Hosted or self-hosted. Offline verification with no vendor dependency.
               </p>
 
               <p style={{
@@ -194,7 +193,7 @@ export default function OriginaryVerifyPage() {
                 lineHeight: 1.7, marginBottom: 'var(--space-8)',
                 maxWidth: '560px', margin: '0 auto var(--space-8) auto',
               }}>
-                Hosted or self-hosted. Offline verification with no vendor dependency. Tamper-evident audit trails that work across teams, vendors, and audits.
+                Built for enterprise AI platform teams, API publishers, MCP operators, and teams that need deployment-ready verification workflows for audits, disputes, procurement, and technical review.
               </p>
 
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>

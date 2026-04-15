@@ -21,22 +21,17 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Originary | Prove what agents did'
   },
-  description: 'Verify AI agent, API, and MCP interactions with signed, portable records. A tamper-evident audit trail teams can prove later across vendors, audits, disputes, and reviews. Built on PEAC, the open standard.',
+  description: 'Originary helps teams return signed records for AI agents, APIs, MCP, and automated workflows so another party can verify what happened without trusting a dashboard.',
   keywords: [
     'AI agent verification',
-    'verify agent actions',
-    'MCP security',
-    'MCP governance',
-    'MCP audit trail',
-    'AI agent audit trail',
-    'verifiable audit trail',
-    'tamper-evident audit trail',
     'signed interaction records',
+    'MCP verification',
+    'agent audit trail',
+    'API audit trail',
     'offline verification',
-    'portable evidence',
     'PEAC Protocol',
-    'API request verification',
-    'evidence for AI agents',
+    'verifiable interaction records',
+    'cross-runtime verification',
   ],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
@@ -45,18 +40,18 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   openGraph: {
-    title: 'Originary | Verify every agent request. Prove every decision.',
-    description: 'Originary verifies agent requests, applies policy, and returns signed records you can prove later.',
+    title: 'Originary | Prove what agents did',
+    description: 'Originary helps teams return signed records for AI agents, APIs, MCP, and automated workflows so another party can verify what happened without trusting a dashboard.',
     url: 'https://www.originary.xyz',
     type: 'website',
     locale: 'en_US',
-    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary: verify every agent request, prove every decision' }],
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary: prove what agents did' }],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Verify every agent request. Prove every decision.',
-    description: 'Originary verifies agent requests, applies policy, and returns signed records you can prove later.',
+    title: 'Originary | Prove what agents did',
+    description: 'Originary helps teams return signed records for AI agents, APIs, MCP, and automated workflows so another party can verify what happened without trusting a dashboard.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -74,26 +69,26 @@ const faqJsonLd = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Is Originary only for people building agents?',
+      name: 'Is this only for people building AI agents?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. Originary is built first for operators of systems that agents access: APIs, tools, MCP servers, and platforms exposing actions.',
+        text: 'No. It is also for API publishers, MCP server operators, priced API teams, security reviewers, compliance teams, and any workflow where automated requests cross organizational boundaries.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Does Originary still work if agents do not comply?',
+      name: 'Does this still work if agents do not comply?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes, partially. Originary can still enforce operator-side policy and generate operator-side records. Full cross-party proof gets stronger when both sides participate.',
+        text: 'Yes. The point is not to assume good behavior. The point is to return records that help you inspect what happened, what was allowed, and what another party can verify later.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Is Originary just observability?',
+      name: 'Is this just observability?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. Observability helps you inspect behavior. Originary adds access-time control and a verifiable interaction record you can use outside one product.',
+        text: 'No. Observability helps teams understand internal behavior. Signed records help teams prove what happened across boundaries.',
       },
     },
     {
@@ -101,7 +96,7 @@ const faqJsonLd = {
       name: 'Do I need PEAC to use Originary?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. Originary delivers product value directly. PEAC keeps the records portable and standards-aligned.',
+        text: 'Originary is built on PEAC. In practice, you use the product surface while keeping the underlying record format and verification model open.',
       },
     },
   ],

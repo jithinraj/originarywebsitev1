@@ -105,7 +105,7 @@ export function LogsVsRecords() {
                     Signed interaction record
                   </span>
                   <span className="text-[0.625rem] font-semibold px-2 py-0.5 rounded-md" style={{ background: 'var(--accent-success-muted)', color: 'var(--accent-success)' }}>
-                    Portable proof
+                    Verifiable offline
                   </span>
                 </div>
                 <div className="space-y-3">
