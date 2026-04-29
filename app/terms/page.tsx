@@ -140,6 +140,9 @@ export default function Terms() {
               <h2>Third-party rails &amp; OSS</h2>
               <p>Adapters (payment rails, runtimes) and OSS packages are third-party offerings; availability and terms may change. Use them under their respective licenses.</p>
 
+              <h2>Trademark Disclaimer</h2>
+              <p>All trademarks, logos and brand names are the property of their respective owners. All company, product and service names used in this website are for identification purposes only. Use of these names,trademarks and brands does not imply endorsement.</p>
+
               <h2>Service changes</h2>
               <p>We may improve or modify features from time to time. Where a change materially reduces core functionality of a paid plan, we will provide reasonable notice.</p>
 

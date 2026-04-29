@@ -1,37 +1,24 @@
 import type { Metadata } from 'next'
 import { HomeNav } from '@/components/homepage/HomeNav'
 import { Hero } from '@/components/homepage/Hero'
-// import { TractionStrip } from '@/components/homepage/TractionStrip'  // preserved: disabled for now
-import { WhoIsItFor } from '@/components/homepage/WhoIsItFor'
-import { Problem } from '@/components/homepage/Problem'
-// import { HowItWorks } from '@/components/homepage/HowItWorks'  // preserved: redundant with ArchDiagram
-import { TrustProof } from '@/components/homepage/TrustProof'
-// import { EnterpriseProof } from '@/components/homepage/EnterpriseProof'  // preserved: merged into TrustProof
-import { WhyNow } from '@/components/homepage/WhyNow'
-// import { ArchDiagram } from '@/components/homepage/ArchDiagram'  // preserved: disabled for now
-import { Comparison } from '@/components/homepage/Comparison'
-// import { LogsVsRecords } from '@/components/homepage/LogsVsRecords'  // preserved: now integrated into Hero
-import { OpenStandard } from '@/components/homepage/OpenStandard'
-import { FAQ } from '@/components/homepage/FAQ'
-import { DemoCTA } from '@/components/homepage/DemoCTA'
-import { EvidenceTeaser } from '@/components/homepage/EvidenceTeaser'
+import { SinglePageHome } from '@/components/homepage/SinglePageHome'
 import { HomeFooter } from '@/components/homepage/HomeFooter'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Prove what agents did'
+    absolute: 'Originary | Signed records for AI agents, APIs, MCP, and commerce'
   },
-  description: 'Originary helps teams return signed records for AI agents, APIs, MCP, and automated workflows so another party can verify what happened without trusting a dashboard.',
+  description: 'Originary issues portable signed interaction records for AI agents, APIs, MCP tools, and commerce workflows so another party can verify what happened without relying on internal logs.',
   keywords: [
-    'AI agent verification',
+    'portable signed records',
     'signed interaction records',
+    'cross-boundary workflows',
+    'API verification',
     'MCP verification',
-    'agent audit trail',
-    'API audit trail',
+    'agent workflow verification',
+    'commerce workflow proof',
     'offline verification',
     'PEAC Protocol',
-    'verifiable interaction records',
-    'cross-runtime verification',
   ],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
@@ -40,18 +27,18 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   openGraph: {
-    title: 'Originary | Prove what agents did',
-    description: 'Originary helps teams return signed records for AI agents, APIs, MCP, and automated workflows so another party can verify what happened without trusting a dashboard.',
+    title: 'Originary | Signed records for AI agents, APIs, MCP, and commerce',
+    description: 'Originary issues portable signed interaction records for AI agents, APIs, MCP tools, and commerce workflows so another party can verify what happened without relying on internal logs.',
     url: 'https://www.originary.xyz',
     type: 'website',
     locale: 'en_US',
-    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary: prove what agents did' }],
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary: portable signed records for cross-boundary workflows' }],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Prove what agents did',
-    description: 'Originary helps teams return signed records for AI agents, APIs, MCP, and automated workflows so another party can verify what happened without trusting a dashboard.',
+    title: 'Originary | Signed records for AI agents, APIs, MCP, and commerce',
+    description: 'Originary issues portable signed interaction records for AI agents, APIs, MCP tools, and commerce workflows so another party can verify what happened without relying on internal logs.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -69,34 +56,42 @@ const faqJsonLd = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Is this only for people building AI agents?',
+      name: 'What is Originary?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. It is also for API publishers, MCP server operators, priced API teams, security reviewers, compliance teams, and any workflow where automated requests cross organizational boundaries.',
+        text: 'Originary is a production layer for issuing, verifying, and exporting portable signed interaction records for workflows that need to be verified outside your system.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Does this still work if agents do not comply?',
+      name: 'What does Originary create?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The point is not to assume good behavior. The point is to return records that help you inspect what happened, what was allowed, and what another party can verify later.',
+        text: 'Originary creates signed interaction records that bind issuer, timestamp, policy, terms, result, metadata, and signature into a portable artifact.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Is this just observability?',
+      name: 'When do teams need Originary?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. Observability helps teams understand internal behavior. Signed records help teams prove what happened across boundaries.',
+        text: 'Teams need Originary when another party needs proof beyond internal logs for an API, MCP, agent, commerce, or runtime workflow.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Do I need PEAC to use Originary?',
+      name: 'Is verification tied to Originary?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Originary is built on PEAC. In practice, you use the product surface while keeping the underlying record format and verification model open.',
+        text: 'No. Records are portable, verification can stay independent, and self-hosted paths remain available.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where should we start?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'With one workflow where another party needs something stronger than logs.',
       },
     },
   ],
@@ -113,19 +108,7 @@ export default function Page() {
         <HomeNav />
         <main id="main-content" role="main">
           <Hero />
-          {/* EvidenceTeaser removed: redundant with hero artifact card */}
-          {/* <TractionStrip /> */}
-          <Problem />
-          <Comparison />
-          <WhoIsItFor />
-          <TrustProof />
-          <WhyNow />
-          {/* <ArchDiagram /> */}{/* preserved: disabled for now */}
-          {/* <EnterpriseProof /> */}{/* merged into TrustProof */}
-          {/* <HowItWorks /> */}{/* redundant with ArchDiagram */}
-          <OpenStandard />
-          <FAQ />
-          <DemoCTA />
+          <SinglePageHome />
         </main>
         <HomeFooter />
       </div>
