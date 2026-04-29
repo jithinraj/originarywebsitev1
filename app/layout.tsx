@@ -153,10 +153,10 @@ const siteNavJsonLd = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Originary | Prove what agents did',
+    default: 'Originary | Interaction records for AI agents, MCP, & APIs',
     template: '%s | Originary',
   },
-  description: 'Originary helps teams return signed records for AI agents, APIs, MCP, and automated workflows so another party can verify what happened without trusting a dashboard.',
+  description: 'Originary turns API calls, MCP tool use, runtime decisions, and payment events into signed records another party can verify.',
   keywords: [
     'signed interaction records',
     'MCP verification',
@@ -178,23 +178,23 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://www.originary.xyz'),
   openGraph: {
-    title: 'Originary | Prove what agents did',
-    description: 'Originary helps teams return signed records for AI agents, APIs, MCP, and automated workflows so another party can verify what happened without trusting a dashboard.',
+    title: 'Originary | Interaction records for AI agents, MCP, & APIs',
+    description: 'Originary turns API calls, MCP tool use, runtime decisions, and payment events into signed records another party can verify.',
     url: 'https://www.originary.xyz',
     siteName: 'Originary',
     images: [{
       url: '/og',
       width: 1200,
       height: 630,
-      alt: 'Originary: prove what agents did'
+      alt: 'Originary: prove what AI agents and APIs did'
     }],
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Prove what agents did',
-    description: 'Originary helps teams return signed records for AI agents, APIs, MCP, and automated workflows so another party can verify what happened without trusting a dashboard.',
+    title: 'Originary | Interaction records for AI agents, MCP, & APIs',
+    description: 'Originary turns API calls, MCP tool use, runtime decisions, and payment events into signed records another party can verify.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',

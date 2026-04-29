@@ -412,6 +412,21 @@ html:has(.hp-root) {
   box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
 }
 
+.hp-root .hp-hero-architecture-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3.5rem;
+  color: #475569;
+  font-size: 0.98rem;
+  font-weight: 540;
+  text-decoration: none;
+}
+
+.hp-root .hp-hero-architecture-link:hover,
+.hp-root .hp-hero-architecture-link:focus-visible {
+  color: #0f172a;
+}
+
 .hp-root .hp-hero-verify-meta {
   margin: 0.95rem 0 0;
   color: #98a2b3;
@@ -1870,6 +1885,14 @@ html:has(.hp-root) {
 }
 
 @media (max-width: 1180px) {
+  .hp-root .hp-story-card-grid-four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hp-root .hp-story-steps-grid-five {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .hp-root .hp-onepage-footer-links {
     grid-template-columns: repeat(3, minmax(7rem, 1fr));
   }
@@ -1958,6 +1981,11 @@ html:has(.hp-root) {
   .hp-root .hp-onepage-footer-links {
     grid-template-columns: 1fr;
     gap: 1.2rem;
+  }
+
+  .hp-root .hp-story-compare-row {
+    grid-template-columns: 1fr;
+    gap: 0.28rem;
   }
 }
 
@@ -3151,7 +3179,7 @@ html:has(.hp-root) {
 
 .hp-root .hp-hero-verify-inner {
   padding-top: clamp(7.4rem, 10vw, 9.6rem);
-  padding-bottom: clamp(4rem, 7vw, 6.5rem);
+  padding-bottom: clamp(3.4rem, 6vw, 5.4rem);
 }
 
 .hp-root .hp-hero-verify-title {
@@ -3240,7 +3268,7 @@ html:has(.hp-root) {
   grid-template-columns: minmax(245px, 0.88fr) minmax(92px, 0.24fr) minmax(340px, 1.12fr) minmax(92px, 0.24fr) minmax(360px, 1.12fr);
   align-items: center;
   gap: 1.15rem;
-  margin: clamp(3.6rem, 6vw, 5.4rem) auto 0;
+  margin: clamp(3.2rem, 5.4vw, 4.9rem) auto 0;
 }
 
 .hp-root .hp-artifact-column-label,
@@ -3476,6 +3504,63 @@ html:has(.hp-root) {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.15rem;
+}
+
+.hp-root .hp-story-card-grid-four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.hp-root .hp-story-text-centered {
+  max-width: 42rem;
+  margin: 0.8rem auto 0;
+  text-align: center;
+}
+
+.hp-root .hp-proof-mode-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.hp-root .hp-story-compare-table {
+  display: grid;
+  margin-top: 1.1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.88);
+  overflow: hidden;
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.045);
+}
+
+.hp-root .hp-story-compare-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 8rem 8rem;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.hp-root .hp-story-compare-row + .hp-story-compare-row {
+  border-top: 1px solid rgba(15, 23, 42, 0.065);
+}
+
+.hp-root .hp-story-compare-row strong {
+  color: #0f172a;
+  font-weight: 620;
+}
+
+.hp-root .hp-story-compare-head {
+  background: rgba(248, 251, 253, 0.92);
+  color: #0f172a;
+  font-size: 0.72rem;
+  font-weight: 720;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hp-root .hp-story-steps-grid-five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .hp-root .hp-story-micro-row {
@@ -3850,7 +3935,7 @@ html:has(.hp-root) {
 .hp-root .hp-logo-strip {
   position: relative;
   z-index: 1;
-  padding: 0.9rem 0;
+  padding: 0.62rem 0;
   border-top: 1px solid rgba(15, 23, 42, 0.055);
   border-bottom: 1px solid rgba(15, 23, 42, 0.055);
   background: rgba(248, 251, 253, 0.9);
@@ -3858,7 +3943,7 @@ html:has(.hp-root) {
 }
 
 .hp-root .hp-hero-logo-strip {
-  margin-top: 2rem;
+  margin-top: 2.4rem;
   margin-left: calc(50% - min(48vw, 42rem));
   margin-right: calc(50% - min(48vw, 42rem));
   border-radius: 0.85rem;
@@ -3904,12 +3989,12 @@ html:has(.hp-root) {
 }
 
 .hp-root .hp-logo-strip-card {
-  flex: 0 0 8.4rem;
-  width: 8.4rem;
+  flex: 0 0 7.6rem;
+  width: 7.6rem;
   flex-direction: column;
-  min-height: 3.4rem;
-  max-height: 3.9rem;
-  padding: 0.55rem 0.72rem;
+  min-height: 3rem;
+  max-height: 3.45rem;
+  padding: 0.45rem 0.62rem;
   border-color: rgba(15, 23, 42, 0.052);
   border-radius: 0.55rem;
   background: rgba(255, 255, 255, 0.54);
@@ -3926,7 +4011,7 @@ html:has(.hp-root) {
 }
 
 .hp-root .hp-logo-strip-note {
-  margin: 0.5rem auto 0;
+  margin: 0.38rem auto 0;
   max-width: min(calc(100% - 1.5rem), 82rem);
   color: #667085;
   font-size: clamp(0.62rem, 0.72vw, 0.76rem);
@@ -4242,19 +4327,24 @@ html:has(.hp-root) {
     max-width: 46rem;
   }
 
+  .hp-root .hp-artifact-record-card {
+    order: 1;
+  }
+
+  .hp-root .hp-artifact-verifier {
+    order: 2;
+  }
+
+  .hp-root .hp-artifact-events {
+    order: 3;
+  }
+
   .hp-root .hp-artifact-connector {
-    width: 2px;
-    height: 3rem;
-    margin: 0 auto;
-    background-image: linear-gradient(180deg, rgba(154, 163, 176, 0.75) 40%, transparent 0);
-    background-size: 2px 12px;
+    display: none;
   }
 
   .hp-root .hp-artifact-connector::after {
-    width: 100%;
-    height: 44%;
-    background: linear-gradient(180deg, transparent, #1ab8ff, transparent);
-    animation-name: hp-artifact-line-mobile;
+    display: none;
   }
 }
 
@@ -4265,6 +4355,7 @@ html:has(.hp-root) {
   }
 
   .hp-root .hp-story-card-grid-three,
+  .hp-root .hp-story-card-grid-four,
   .hp-root .hp-story-proof-gallery-grid,
   .hp-root .hp-story-logo-grid,
   .hp-root .hp-story-use-case-grid .hp-story-audience-card {
@@ -4273,9 +4364,21 @@ html:has(.hp-root) {
   }
 
   .hp-root .hp-story-card-grid-three,
+  .hp-root .hp-story-card-grid-four,
   .hp-root .hp-story-proof-gallery-grid,
   .hp-root .hp-story-logo-grid {
     display: grid;
+  }
+
+  .hp-root .hp-proof-mode-grid-two,
+  .hp-root .hp-story-steps-grid-five {
+    grid-template-columns: 1fr;
+  }
+
+  .hp-root .hp-story-compare-row {
+    grid-template-columns: minmax(0, 1fr) 4.6rem 5rem;
+    gap: 0.65rem;
+    padding: 0.82rem 0.85rem;
   }
 
   .hp-root .hp-story-proof-gallery-card {
@@ -4284,15 +4387,36 @@ html:has(.hp-root) {
 }
 
 @media (max-width: 640px) {
+  .hp-root .hp-hero-verify-inner {
+    padding-top: clamp(5.6rem, 18vw, 6.7rem);
+    padding-bottom: 2.8rem;
+  }
+
   .hp-root .hp-hero-verify-title {
-    font-size: clamp(2.85rem, 13vw, 4rem);
+    font-size: clamp(2.7rem, 12vw, 3.55rem);
   }
 
   .hp-root .hp-hero-verify-subtitle {
-    font-size: 1.06rem;
+    font-size: 1rem;
+    line-height: 1.48;
+  }
+
+  .hp-root .hp-hero-protocol-line {
+    margin-top: 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  .hp-root .hp-hero-verify-actions {
+    margin-top: 1.45rem;
+  }
+
+  .hp-root .hp-hero-verify-cta,
+  .hp-root .hp-hero-verify-cta-secondary {
+    min-height: 3.25rem;
   }
 
   .hp-root .hp-hero-trust-strip {
+    margin-top: 0.95rem;
     font-size: 0.78rem;
   }
 
@@ -4301,7 +4425,7 @@ html:has(.hp-root) {
   }
 
   .hp-root .hp-artifact-flow {
-    margin-top: 2.7rem;
+    margin-top: 1.8rem;
   }
 
   .hp-root .hp-artifact-event {

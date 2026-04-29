@@ -64,7 +64,7 @@ export function HomeNav() {
               </svg>
             </a>
             <Link href="#pilot" className="hp-nav-cta">
-              Start with one workflow
+              Start a pilot
             </Link>
           </div>
 
@@ -114,7 +114,7 @@ export function HomeNav() {
             ))}
             <div className="pt-5 mt-3" style={{ borderTop: '1px solid var(--color-border)' }}>
               <Link href="#pilot" onClick={() => setOpen(false)} className="hp-btn-primary w-full text-center">
-                Start with one workflow
+                Start a pilot
               </Link>
             </div>
           </div>
