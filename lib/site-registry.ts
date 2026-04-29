@@ -197,7 +197,7 @@ export const META_DEFAULTS = {
   siteName: 'Originary',
   siteUrl: 'https://www.originary.xyz',
   titleTemplate: '%s | Originary',
-  defaultTitle: 'Originary | Prove what agents did',
-  defaultDescription: 'Originary helps teams return signed records for AI agents, APIs, MCP, and automated workflows so another party can verify what happened without trusting a dashboard.',
+  defaultTitle: 'Originary | Interaction records for AI agents, MCP, & APIs',
+  defaultDescription: 'Originary turns API calls, MCP tool use, runtime decisions, and payment events into signed records another party can verify.',
   twitterHandle: '@originaryx',
 } as const

@@ -75,18 +75,18 @@ export async function GET() {
               letterSpacing: '-0.03em',
             }}
           >
-            Verify agent requests.
+            Prove what AI agents
           </span>
           <span
             style={{
               fontSize: '64px',
               fontWeight: 700,
-              color: '#475467',
+              color: '#1E4D8C',
               lineHeight: 1.1,
               letterSpacing: '-0.03em',
             }}
           >
-            Apply policy. Keep the record.
+            and APIs did.
           </span>
         </div>
 
@@ -101,7 +101,7 @@ export async function GET() {
             maxWidth: '900px',
           }}
         >
-          Verifiable interaction records for APIs, tools, and MCP servers. Built on PEAC. Self-hostable.
+          Signed records for API calls, MCP tool use, runtime decisions, and payment events.
         </div>
 
         {/* Footer */}

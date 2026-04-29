@@ -115,13 +115,13 @@ export function Hero() {
         <div className="hp-hero-verify-copy">
           <div className="hp-hero-verify-kicker">
             <span className="hp-hero-verify-kicker-dot" />
-            For APIs, agents, MCP tools, and commerce
+            For AI agents, APIs, tools, and MCP servers
           </div>
 
-          <h1 className="hp-hero-verify-title">Prove what your agents and APIs did.</h1>
+          <h1 className="hp-hero-verify-title">Prove what AI agents and APIs did.</h1>
 
           <p className="hp-hero-verify-subtitle">
-            Originary turns API calls, MCP tool use, runtime decisions, and payment events into signed records another party can verify offline.
+            Originary turns API calls, MCP tool use, runtime decisions, and payment events into signed records another party can verify.
           </p>
 
           <p className="hp-hero-protocol-line">
@@ -134,7 +134,7 @@ export function Hero() {
 
           <div className="hp-hero-verify-actions hp-hero-verify-actions-dual">
             <Link href="#pilot" className="hp-hero-verify-cta">
-              Start with one workflow
+              Start a pilot
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
                 <path d="M7 17L17 7" />
                 <path d="M9 7H17V15" strokeLinejoin="round" />
@@ -143,38 +143,21 @@ export function Hero() {
             <Link href="/verify" className="hp-hero-verify-cta-secondary">
               Verify a sample record
             </Link>
+            <Link href="#how-it-works" className="hp-hero-architecture-link">
+              See architecture
+            </Link>
           </div>
 
           <div className="hp-hero-trust-strip" aria-label="Platform trust signals">
-            <span>Offline-verifiable</span>
-            <span>Hosted or self-hosted</span>
+            <span>Offline verification</span>
+            <span>Signed records</span>
+            <span>Self-hostable</span>
             <span>
               <Link href="/downloads" className="hp-hero-download-link">Downloads</Link>
             </span>
-            <span>No stack replacement</span>
-            <span>Open record format</span>
+            <span>Open standard</span>
+            <span>No vendor callback</span>
           </div>
-        </div>
-
-        <div className="hp-logo-strip hp-hero-logo-strip" aria-label="Supported commerce and infrastructure surfaces">
-          <div className="hp-logo-strip-viewport">
-            <div className="hp-story-logo-grid hp-logo-strip-grid">
-              {[...worksWith, ...worksWith].map((item, index) => (
-                <div
-                  key={`${item.name}-${index}`}
-                  className="hp-story-logo-card hp-logo-strip-card"
-                  aria-hidden={index >= worksWith.length ? 'true' : undefined}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={item.src} alt={index >= worksWith.length ? '' : item.name} className={item.className} />
-                  {item.label ? <span className="hp-logo-strip-card-label">{item.label}</span> : null}
-                </div>
-              ))}
-            </div>
-          </div>
-          <p className="hp-logo-strip-note">
-            Works with x402, MCP, MPP, Stripe, A2A, AP2, Cloudflare, Vercel, Visa, Mastercard, OpenAI, OpenTelemetry, LangChain, Microsoft Agent Governance Toolkit, and Claude Managed Agents.
-          </p>
         </div>
 
         <div className="hp-artifact-flow" aria-label="Input event to signed interaction record to independent verification">
@@ -233,6 +216,27 @@ export function Hero() {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="hp-logo-strip hp-hero-logo-strip" aria-label="Supported commerce and infrastructure surfaces">
+          <div className="hp-logo-strip-viewport">
+            <div className="hp-story-logo-grid hp-logo-strip-grid">
+              {[...worksWith, ...worksWith].map((item, index) => (
+                <div
+                  key={`${item.name}-${index}`}
+                  className="hp-story-logo-card hp-logo-strip-card"
+                  aria-hidden={index >= worksWith.length ? 'true' : undefined}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={item.src} alt={index >= worksWith.length ? '' : item.name} className={item.className} />
+                  {item.label ? <span className="hp-logo-strip-card-label">{item.label}</span> : null}
+                </div>
+              ))}
+            </div>
+          </div>
+          <p className="hp-logo-strip-note">
+            Works with x402, MCP, MPP, Stripe, A2A, AP2, Cloudflare, Vercel, Visa, Mastercard, OpenAI, OpenTelemetry, LangChain, Microsoft Agent Governance Toolkit, and Claude Managed Agents.
+          </p>
         </div>
       </div>
     </section>
