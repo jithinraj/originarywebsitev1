@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { HomeNav } from '@/components/homepage/HomeNav'
 import { Hero } from '@/components/homepage/Hero'
 import { SinglePageHome } from '@/components/homepage/SinglePageHome'
-import { HomeFooter } from '@/components/homepage/HomeFooter'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: {
@@ -136,7 +136,7 @@ export default function Page() {
           <Hero />
           <SinglePageHome />
         </main>
-        <HomeFooter />
+        <Footer />
       </div>
     </>
   )

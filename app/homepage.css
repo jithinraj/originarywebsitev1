@@ -2021,9 +2021,9 @@ html:has(.hp-root) {
   padding: 0.875rem 1.75rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--color-fg-inverse);
-  background: var(--color-accent);
-  border-radius: 12px;
+  color: #09111f;
+  background: linear-gradient(180deg, #51cbff 0%, #39bff8 100%);
+  border-radius: 0.35rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   line-height: 1;
   text-decoration: none;
@@ -2036,9 +2036,12 @@ html:has(.hp-root) {
 }
 
 .hp-root .hp-btn-primary:hover {
-  background: var(--color-accent-hover);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 12px 32px rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
+  background: linear-gradient(180deg, #5ed0ff 0%, #35bdf7 100%);
+  box-shadow:
+    0 16px 30px rgba(34, 184, 255, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  filter: saturate(1.03);
+  transform: translateY(-1px);
 }
 
 .hp-root .hp-btn-primary:active {
@@ -2256,15 +2259,15 @@ html:has(.hp-root) {
   padding: 0 1.125rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--color-fg-inverse);
-  background: var(--color-fg);
-  border-radius: 12px;
+  color: #09111f;
+  background: linear-gradient(180deg, #51cbff 0%, #39bff8 100%);
+  border-radius: 0.35rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
 .hp-root .hp-nav-cta:hover {
-  background: var(--color-accent-hover);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  background: linear-gradient(180deg, #5ed0ff 0%, #35bdf7 100%);
+  box-shadow: 0 12px 24px rgba(34, 184, 255, 0.18);
   transform: translateY(-1px);
 }
 
