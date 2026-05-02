@@ -79,8 +79,11 @@ export default function CodeBlock({ code, lang = "bash", className = "", tabs }:
         .code-block {
           position: relative;
           border-radius: 12px;
-          border: 1px solid var(--border-default);
-          background: var(--surface-code, #111827);
+          border: 1px solid rgba(15, 23, 42, 0.08);
+          background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(250, 252, 255, 0.94)),
+            radial-gradient(circle at top right, rgba(34, 184, 255, 0.06), transparent 42%);
+          box-shadow: 0 22px 52px rgba(15, 23, 42, 0.055);
           overflow: hidden;
         }
 
@@ -89,8 +92,8 @@ export default function CodeBlock({ code, lang = "bash", className = "", tabs }:
           align-items: center;
           justify-content: space-between;
           padding: 8px 12px;
-          background: var(--surface-subtle);
-          border-bottom: 1px solid var(--border-subtle);
+          background: rgba(238, 242, 247, 0.72);
+          border-bottom: 1px solid rgba(15, 23, 42, 0.07);
         }
 
         .code-tabs {
@@ -168,7 +171,7 @@ export default function CodeBlock({ code, lang = "bash", className = "", tabs }:
         }
 
         .code-content code {
-          color: var(--text-code, #e4e4e7);
+          color: var(--text-secondary, #475467);
         }
 
         @media (max-width: 480px) {

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, ReactNode, useState } from 'react'
+import { useEffect, useRef, ReactNode, CSSProperties, useState } from 'react'
 import {
   ChevronRight,
   Check,
@@ -207,11 +207,13 @@ export const SlideIn = ({
 export const ScaleIn = ({
   children,
   delay = 0,
-  className = ''
+  className = '',
+  style
 }: {
   children: ReactNode
   delay?: number
   className?: string
+  style?: CSSProperties
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   const isClient = useIsClient()
@@ -233,7 +235,7 @@ export const ScaleIn = ({
   return (
     <div
       ref={ref}
-      style={isClient ? animationStyle : undefined}
+      style={isClient ? { ...style, ...animationStyle } : style}
       className={className}
     >
       {children}
@@ -425,8 +427,8 @@ export const FloatingElement = ({
 
 // Gradient blob animation
 export const GradientBlob = ({
-  color1 = '#2F5BFF',
-  color2 = '#2447F9',
+  color1 = 'rgba(34, 184, 255, 0.24)',
+  color2 = 'rgba(47, 201, 120, 0.18)',
   size = '600px',
   className = ''
 }) => {
@@ -545,8 +547,11 @@ export const ProgressBar = ({
   return (
     <div ref={ref} className={`w-full bg-gray-200 rounded-full h-2 ${className}`}>
       <div
-        className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transition-all duration-1000 ease-out"
-        style={{ width: `${animatedWidth}%` }}
+        className="h-full rounded-full transition-all duration-1000 ease-out"
+        style={{
+          width: `${animatedWidth}%`,
+          background: 'linear-gradient(90deg, var(--hp-hero-blue, #22b8ff), var(--hp-hero-green, #2fc978))',
+        }}
       />
     </div>
   )
@@ -570,9 +575,13 @@ export const AnimatedTabs = ({
           onClick={() => onTabChange(tab)}
           className={`relative px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
             activeTab === tab
-              ? 'text-white bg-gradient-to-r from-blue-500 to-purple-500'
+              ? 'text-slate-950'
               : 'text-gray-600 hover:text-gray-900 hover:bg-gray-200'
           }`}
+          style={activeTab === tab ? {
+            background: 'linear-gradient(180deg, #51cbff 0%, #39bff8 100%)',
+            boxShadow: '0 10px 22px rgba(34, 184, 255, 0.16)',
+          } : undefined}
         >
           <span className="relative z-10">{tab}</span>
         </button>
@@ -636,8 +645,11 @@ export const RevealWithLine = ({
         {children}
       </div>
       <div
-        className="absolute -left-4 top-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500"
-        style={lineStyle}
+        className="absolute -left-4 top-0 w-1"
+        style={{
+          ...lineStyle,
+          background: 'linear-gradient(180deg, var(--hp-hero-blue, #22b8ff), var(--hp-hero-green, #2fc978))',
+        }}
       />
     </div>
   )
@@ -804,10 +816,11 @@ export const ParticleField = ({
       {particles.map((particle) => (
         <div
           key={particle}
-          className="absolute w-1 h-1 bg-blue-400 rounded-full opacity-30"
+          className="absolute w-1 h-1 rounded-full opacity-30"
           style={{
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
+            background: 'var(--hp-hero-blue, #22b8ff)',
             animation: `float-particles ${Math.random() * 10 + 20}s linear infinite`,
             animationDelay: `${Math.random() * 5}s`
           }}
@@ -855,8 +868,9 @@ export const MorphingShape = ({
 
   return (
     <div
-      className={`w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-600 ${className}`}
+      className={`w-32 h-32 ${className}`}
       style={{
+        background: 'linear-gradient(135deg, var(--hp-hero-blue, #22b8ff), var(--hp-hero-green, #2fc978))',
         animation: 'morph 8s ease-in-out infinite'
       }}
     />
@@ -904,4 +918,3 @@ export const FadeInStagger = ({
     </div>
   )
 }
-

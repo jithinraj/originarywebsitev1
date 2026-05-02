@@ -244,7 +244,7 @@ export default function RootLayout({
         <SkipNavigation />
         <ServiceWorkerRegistration />
         <ScrollAnimationProvider />
-        <div className="wrap">
+        <div className="wrap hp-root site-root">
           {children}
         </div>
 

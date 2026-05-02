@@ -3,6 +3,114 @@
 
 @tailwind utilities;
 
+/* Final site-wide guardrails after Tailwind utilities.
+   Older pages/components may still emit utility gradients; keep them in the
+   homepage cyan/green system instead of the previous blue/purple palette. */
+.site-root .from-blue-400,
+.site-root .from-blue-500,
+.site-root .from-blue-600,
+.site-root .from-indigo-500,
+.site-root .from-violet-500,
+.site-root .from-purple-500 {
+  --tw-gradient-from: #51cbff var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(81 203 255 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+.site-root .to-blue-500,
+.site-root .to-blue-600,
+.site-root .to-indigo-500,
+.site-root .to-violet-500,
+.site-root .to-purple-500,
+.site-root .to-purple-600 {
+  --tw-gradient-to: #2fc978 var(--tw-gradient-to-position) !important;
+}
+
+.site-root .bg-blue-400,
+.site-root .bg-blue-500,
+.site-root .bg-blue-600,
+.site-root .hover\:bg-blue-700:hover,
+.site-root .bg-indigo-500,
+.site-root .bg-violet-500,
+.site-root .bg-purple-500,
+.site-root .bg-purple-600 {
+  background-color: #22b8ff !important;
+}
+
+.site-root .bg-blue-50,
+.site-root .bg-purple-50,
+.site-root .from-blue-50,
+.site-root .to-purple-50,
+.site-root .bg-gray-50,
+.site-root .bg-gray-100,
+.site-root .bg-slate-50,
+.site-root .bg-slate-100,
+.site-root .bg-zinc-50,
+.site-root .bg-zinc-100,
+.site-root .bg-neutral-50,
+.site-root .bg-neutral-100 {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.site-root .bg-black\/90 {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  color: var(--color-fg, #111827) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 22px 52px rgba(15, 23, 42, 0.055) !important;
+}
+
+.site-root .bg-black\/90 code,
+.site-root .bg-black\/90 span {
+  color: var(--color-fg-secondary, #475467) !important;
+}
+
+.site-root .bg-blue-600.text-white,
+.site-root .hover\:bg-blue-700.text-white:hover,
+.site-root a.bg-blue-600,
+.site-root a.hover\:bg-blue-700:hover {
+  color: #09111f !important;
+}
+
+.site-root .text-blue-500,
+.site-root .text-blue-600,
+.site-root .text-indigo-500,
+.site-root .text-violet-500,
+.site-root .text-purple-500 {
+  color: #0879b8 !important;
+}
+
+.site-root section.text-white,
+.site-root div.text-white:not(.bg-black\/90):not(pre):not(code) {
+  color: var(--color-fg, #111827) !important;
+}
+
+.site-root section.text-white p,
+.site-root div.text-white:not(.bg-black\/90):not(pre):not(code) p {
+  color: var(--color-fg-secondary, #475467) !important;
+}
+
+.site-root > main.max-w-3xl,
+.site-root > main.max-w-4xl,
+.site-root .wrap > main.max-w-3xl,
+.site-root .wrap > main.max-w-4xl {
+  padding-top: clamp(6rem, 10vw, 8rem) !important;
+}
+
+.site-root > main.max-w-3xl h1,
+.site-root > main.max-w-4xl h1,
+.site-root .wrap > main.max-w-3xl h1,
+.site-root .wrap > main.max-w-4xl h1 {
+  font-size: clamp(2.25rem, 4.3vw + 0.25rem, 5.25rem) !important;
+  line-height: 1.02 !important;
+}
+
+.site-root .border-blue-500,
+.site-root .border-indigo-500,
+.site-root .border-violet-500,
+.site-root .border-purple-500 {
+  border-color: rgba(34, 184, 255, 0.34) !important;
+}
+
 /* Footer desktop/mobile show-hide — must be in globals.css for reliable App Router injection */
 .footer-nav-desktop { display: block; }
 .footer-nav-mobile { display: none; }

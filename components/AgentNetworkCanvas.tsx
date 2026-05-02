@@ -150,10 +150,10 @@ export default function AgentNetworkCanvas({ className = '' }: AgentNetworkCanva
       let label = 'REQ'
 
       if (packet.phase === 'challenge') {
-        color = '#f59e0b'
+        color = '#22b8ff'
         label = '402'
       } else if (packet.phase === 'receipt') {
-        color = '#14B8A6'
+        color = '#2fc978'
         label = 'RCP'
       }
 

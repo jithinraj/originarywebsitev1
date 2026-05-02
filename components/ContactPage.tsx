@@ -145,7 +145,7 @@ export default function ContactPage() {
                     <StaggerItem key={option.title}>
                       <HoverCard className="contact-option bg-white rounded-xl border border-gray-200 p-6">
                         <div className="flex items-start gap-4">
-                          <div className="p-3 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg">
+                          <div className="p-3 rounded-lg" style={{ background: 'linear-gradient(135deg, rgba(34, 184, 255, 0.1), rgba(47, 201, 120, 0.08))' }}>
                             <IconComponent className="w-6 h-6 text-primary" />
                           </div>
                           <div className="flex-1">
@@ -213,7 +213,11 @@ export default function ContactPage() {
                 </div>
               </FadeIn>
 
-              <ScaleIn delay={0.4} className="mt-8 p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl">
+              <ScaleIn
+                delay={0.4}
+                className="mt-8 p-6 rounded-xl"
+                style={{ background: 'linear-gradient(135deg, rgba(34, 184, 255, 0.1), rgba(47, 201, 120, 0.08))' }}
+              >
                 <div className="text-center">
                   <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
                   <h4 className="text-lg font-semibold mb-2">Open Source Support</h4>
@@ -254,7 +258,13 @@ export default function ContactPage() {
       </section>
 
       {/* Enterprise Contact CTA */}
-      <section className="section bg-gradient-to-br from-blue-600 to-purple-600 text-white">
+      <section
+        className="section"
+        style={{
+          background: 'radial-gradient(620px 260px at 0% 0%, rgba(86, 218, 172, 0.24), transparent 60%), radial-gradient(620px 260px at 100% 0%, rgba(82, 198, 255, 0.24), transparent 62%), linear-gradient(180deg, #fbfcfc 0%, #ffffff 56%, #f7f9fc 100%)',
+          color: 'var(--text-primary)',
+        }}
+      >
         <div className="container">
           <div className="enterprise-contact-cta text-center">
             <FadeIn>

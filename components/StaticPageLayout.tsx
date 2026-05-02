@@ -7,12 +7,12 @@ interface StaticPageLayoutProps {
 
 export default function StaticPageLayout({ children }: StaticPageLayoutProps) {
   return (
-    <div className="wrap">
+    <>
       <NavigationHeader />
       <main style={{ paddingTop: '80px' }}>
         {children}
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
