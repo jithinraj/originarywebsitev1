@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import type { CSSProperties } from 'react'
 
+import { AmbientRecordField } from '@/components/visuals/AmbientRecordField'
+
 const eventCards = [
   { label: 'API call', meta: 'policy + result', tone: 'blue' },
   { label: 'MCP tool call', meta: 'params + output', tone: 'teal' },
@@ -108,6 +110,7 @@ const worksWith = [
 export function Hero() {
   return (
     <section className="hp-hero-verify">
+      <AmbientRecordField />
       <div className="hp-hero-corner hp-hero-corner-left" aria-hidden="true" />
       <div className="hp-hero-corner hp-hero-corner-right" aria-hidden="true" />
 
@@ -181,14 +184,27 @@ export function Hero() {
           <div className="hp-artifact-connector hp-artifact-connector-left" aria-hidden="true" />
 
           <div className="hp-artifact-record-card">
-            <div className="hp-artifact-card-kicker">Signed interaction record</div>
-            <div className="hp-artifact-record-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M8 3h6l5 5v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" />
-                <path d="M14 3v5h5M9 13h6M9 17h6" />
-              </svg>
+            <div className="hp-artifact-record-top">
+              <div>
+                <div className="hp-artifact-card-kicker">Signed interaction record</div>
+                <h2>Signed record</h2>
+              </div>
+              <div className="hp-artifact-record-seal" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3.5 18.5 6v5.3c0 4.2-2.6 7.4-6.5 9.2-3.9-1.8-6.5-5-6.5-9.2V6L12 3.5Z" />
+                  <path d="m8.9 12.1 2.1 2.1 4.2-4.6" />
+                </svg>
+              </div>
             </div>
-            <h2>Signed record</h2>
+
+            <div className="hp-artifact-record-identity" aria-hidden="true">
+              <span>issuer</span>
+              <strong>api.company.com</strong>
+              <i />
+              <span>format</span>
+              <strong>peac.record/0.1</strong>
+            </div>
+
             <div className="hp-artifact-record-fields">
               {recordFields.map(([label, value]) => (
                 <div key={label} className="hp-artifact-record-field">
@@ -196,6 +212,11 @@ export function Hero() {
                   <strong>{value}</strong>
                 </div>
               ))}
+            </div>
+
+            <div className="hp-artifact-record-footer" aria-hidden="true">
+              <span>canonical digest</span>
+              <strong>sha256:b7f4...91ac</strong>
             </div>
           </div>
 
