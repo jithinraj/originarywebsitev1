@@ -233,12 +233,13 @@ html:has(.hp-root) {
 
 .hp-root .hp-hero-verify {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
   min-height: 920px;
   background:
-    radial-gradient(760px 480px at 0% 0%, rgba(86, 218, 172, 0.34), transparent 60%),
-    radial-gradient(780px 500px at 100% 0%, rgba(82, 198, 255, 0.34), transparent 62%),
-    linear-gradient(180deg, #ffffff 0%, #fbfcfd 100%);
+    radial-gradient(920px 520px at 98% 0%, rgba(125, 211, 252, 0.22), transparent 68%),
+    radial-gradient(780px 520px at 0% 4%, rgba(110, 231, 183, 0.12), transparent 66%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 }
 
 .hp-root .hp-hero-verify::before {
@@ -259,20 +260,134 @@ html:has(.hp-root) {
   height: 34rem;
   pointer-events: none;
   filter: blur(42px);
-  opacity: 0.55;
+  opacity: 0.22;
   z-index: 0;
   animation: hp-hero-corner-drift 12s ease-in-out infinite alternate;
 }
 
 .hp-root .hp-hero-corner-left {
   left: -12rem;
-  background: radial-gradient(circle, rgba(47, 207, 146, 0.58), transparent 68%);
+  background: radial-gradient(circle, rgba(110, 231, 183, 0.24), transparent 70%);
 }
 
 .hp-root .hp-hero-corner-right {
   right: -12rem;
-  background: radial-gradient(circle, rgba(48, 184, 255, 0.56), transparent 68%);
+  background: radial-gradient(circle, rgba(125, 211, 252, 0.28), transparent 70%);
   animation-delay: -3s;
+}
+
+.hp-root .ambient-record-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  background: #f8fafc;
+}
+
+.hp-root .ambient-record-field-base {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(820px 520px at 92% 8%, rgba(56, 189, 248, 0.12), transparent 70%),
+    radial-gradient(760px 520px at -4% 9%, rgba(110, 231, 183, 0.08), transparent 68%),
+    radial-gradient(640px 460px at 88% 92%, rgba(167, 139, 250, 0.055), transparent 74%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(248, 250, 252, 0.96));
+}
+
+.hp-root .ambient-record-field-wash {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(74px);
+  opacity: 0.8;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.hp-root .ambient-record-field-wash-blue {
+  top: -17rem;
+  right: -13rem;
+  width: min(58rem, 72vw);
+  height: 40rem;
+  background: rgba(56, 189, 248, 0.18);
+  animation: ambient-record-field-drift var(--ambient-field-drift) ease-in-out infinite alternate;
+}
+
+.hp-root .ambient-record-field-wash-mint {
+  top: 3rem;
+  left: -22rem;
+  width: 42rem;
+  height: 36rem;
+  background: rgba(110, 231, 183, 0.1);
+  animation: ambient-record-field-drift-slow var(--ambient-field-drift-slow) ease-in-out infinite alternate;
+}
+
+.hp-root .ambient-record-field-wash-lavender {
+  right: -14rem;
+  bottom: -19rem;
+  width: 46rem;
+  height: 34rem;
+  background: rgba(167, 139, 250, 0.07);
+  animation: ambient-record-field-drift-lower 54s ease-in-out infinite alternate;
+}
+
+.hp-root .ambient-record-field-svg {
+  position: absolute;
+  inset: 0 -20% -8% auto;
+  width: min(1180px, 82vw);
+  height: 100%;
+  opacity: 0.96;
+}
+
+.hp-root .ambient-record-field-signals {
+  animation: ambient-record-signal-drift var(--ambient-signal-drift) ease-in-out infinite alternate;
+}
+
+.hp-root .ambient-record-signal-path-base {
+  opacity: 0.72;
+}
+
+.hp-root .ambient-record-signal-path {
+  stroke-dasharray: 112 520;
+  animation: ambient-record-signal-trace var(--ambient-signal-trace) linear infinite;
+}
+
+.hp-root .ambient-record-field-points {
+  opacity: 0.9;
+}
+
+.hp-root .ambient-record-field-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(820px 520px at 50% 26%, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.74) 48%, rgba(255, 255, 255, 0.08) 82%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.9) 44%, rgba(255, 255, 255, 0) 84%, rgba(255, 255, 255, 0.3) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0) 52%, rgba(248, 250, 252, 0.82));
+}
+
+@keyframes ambient-record-field-drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(-44px, 22px, 0) scale(1.04); }
+}
+
+@keyframes ambient-record-field-drift-slow {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(34px, -18px, 0) scale(1.035); }
+}
+
+@keyframes ambient-record-field-drift-lower {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(-30px, -24px, 0) scale(1.03); }
+}
+
+@keyframes ambient-record-signal-drift {
+  from { transform: translate3d(0, 0, 0); opacity: 0.72; }
+  to { transform: translate3d(-24px, 12px, 0); opacity: 0.62; }
+}
+
+@keyframes ambient-record-signal-trace {
+  from { stroke-dashoffset: 220; }
+  to { stroke-dashoffset: -560; }
 }
 
 .hp-root .hp-hero-verify-inner {
@@ -320,9 +435,9 @@ html:has(.hp-root) {
   margin: 0 auto;
   color: #070b18;
   font-size: clamp(3.5rem, 7.2vw, 5.8rem);
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: -0.052em;
+  font-weight: 520;
+  line-height: 0.98;
+  letter-spacing: -0.048em;
   text-wrap: balance;
 }
 
@@ -351,7 +466,7 @@ html:has(.hp-root) {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.9rem;
+  gap: 0.8rem;
   flex-wrap: wrap;
 }
 
@@ -361,9 +476,9 @@ html:has(.hp-root) {
   justify-content: center;
   gap: 0.625rem;
   min-height: 3.5rem;
-  padding: 0.875rem 1.7rem;
-  border-radius: 0.35rem;
-  background: linear-gradient(180deg, #51cbff 0%, #39bff8 100%);
+  padding: 0.875rem 1.65rem;
+  border-radius: 0.48rem;
+  background: linear-gradient(180deg, #4cc9fb 0%, #32b8f3 100%);
   color: #09111f;
   font-size: clamp(1rem, 1.2vw, 1.375rem);
   font-weight: 500;
@@ -395,14 +510,14 @@ html:has(.hp-root) {
   justify-content: center;
   min-height: 3.5rem;
   padding: 0.875rem 1.45rem;
-  border-radius: 0.875rem;
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0.48rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.74);
   color: #344054;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: -0.02em;
-  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.035);
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
 
@@ -417,7 +532,7 @@ html:has(.hp-root) {
   align-items: center;
   min-height: 3.5rem;
   color: #475569;
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   font-weight: 540;
   text-decoration: none;
 }
@@ -946,6 +1061,28 @@ html:has(.hp-root) {
     min-height: auto;
   }
 
+  .hp-root .ambient-record-field-svg {
+    inset: 2% -44% 0 auto;
+    width: 1040px;
+    opacity: 0.3;
+  }
+
+  .hp-root .ambient-record-field-wash-blue {
+    right: -22rem;
+    opacity: 0.5;
+  }
+
+  .hp-root .ambient-record-field-wash-mint,
+  .hp-root .ambient-record-field-wash-lavender {
+    opacity: 0.42;
+  }
+
+  .hp-root .ambient-record-field-veil {
+    background:
+      radial-gradient(620px 420px at 50% 23%, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.78) 52%, rgba(255, 255, 255, 0) 78%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.22) 58%, rgba(255, 255, 255, 0.76));
+  }
+
   .hp-root .hp-hero-verify-inner {
     padding-top: 4.25rem;
     padding-bottom: 2.75rem;
@@ -971,6 +1108,15 @@ html:has(.hp-root) {
 }
 
 @media (max-width: 640px) {
+  .hp-root .ambient-record-field-svg {
+    display: none;
+  }
+
+  .hp-root .ambient-record-field-wash {
+    filter: blur(92px);
+    opacity: 0.32;
+  }
+
   .hp-root .hp-hero-verify-inner {
     padding-top: 4rem;
     padding-bottom: 2.5rem;
@@ -1725,7 +1871,7 @@ html:has(.hp-root) {
 }
 
 .hp-root .hp-onepage-footer {
-  padding: 0 0 4rem;
+  padding: 0 0 clamp(2rem, 4vw, 4rem);
 }
 
 .hp-root .hp-onepage-footer-inner {
@@ -1772,24 +1918,25 @@ html:has(.hp-root) {
 
 .hp-root .hp-onepage-footer-link-group p {
   margin: 0 0 0.2rem;
-  color: #0f172a;
+  color: #172033;
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-weight: 760;
+  letter-spacing: 0.1em;
   line-height: 1.2;
   text-transform: uppercase;
 }
 
 .hp-root .hp-onepage-footer-link-group .hp-link {
   color: #475569;
-  font-size: 0.9rem;
-  font-weight: 500;
-  line-height: 1.35;
-  transition: color 0.2s ease;
+  font-size: 0.88rem;
+  font-weight: 520;
+  line-height: 1.3;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .hp-root .hp-onepage-footer-link-group .hp-link:hover {
   color: #0f172a;
+  transform: translateX(2px);
 }
 
 .hp-root .hp-onepage-footer-legal {
@@ -1813,7 +1960,7 @@ html:has(.hp-root) {
 
 .hp-root .hp-onepage-footer-legal-primary {
   color: #475569;
-  font-weight: 560;
+  font-weight: 620;
 }
 
 .hp-root .hp-onepage-footer-legal-notes {
@@ -3224,54 +3371,54 @@ html:has(.hp-root) {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.45rem 0.8rem;
-  margin: 1.15rem auto 0;
-  color: #667085;
-  font-size: 0.86rem;
-  line-height: 1.4;
+  gap: 0.5rem;
+  max-width: 50rem;
+  margin: 1.2rem auto 0;
+  color: #59677c;
+  font-size: 0.78rem;
+  line-height: 1;
 }
 
 .hp-root .hp-hero-trust-strip span {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  min-height: 1.85rem;
+  padding: 0.34rem 0.62rem;
+  border: 1px solid rgba(15, 23, 42, 0.065);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.025);
 }
 
 .hp-root .hp-hero-trust-strip span + span::before {
-  content: "";
-  width: 0.28rem;
-  height: 0.28rem;
-  border-radius: 999px;
-  background: rgba(102, 112, 133, 0.42);
+  content: none;
 }
 
 .hp-root .hp-hero-download-link {
   display: inline-flex;
   align-items: center;
   min-height: 1.55rem;
-  padding: 0.08rem 0.42rem;
-  border: 1px solid rgba(34, 184, 255, 0.12);
+  padding: 0;
+  border: 0;
   border-radius: 999px;
-  background: rgba(34, 184, 255, 0.035);
-  color: #416174;
-  font-weight: 520;
+  background: transparent;
+  color: #255f7a;
+  font-weight: 650;
   text-decoration: none;
 }
 
 .hp-root .hp-hero-download-link:hover,
 .hp-root .hp-hero-download-link:focus-visible {
-  border-color: rgba(34, 184, 255, 0.22);
-  background: rgba(34, 184, 255, 0.07);
   color: #164e63;
 }
 
 .hp-root .hp-artifact-flow {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(245px, 0.88fr) minmax(92px, 0.24fr) minmax(340px, 1.12fr) minmax(92px, 0.24fr) minmax(360px, 1.12fr);
+  grid-template-columns: minmax(220px, 0.72fr) minmax(96px, 0.22fr) minmax(390px, 1.2fr) minmax(96px, 0.22fr) minmax(318px, 0.9fr);
   align-items: center;
-  gap: 1.15rem;
-  margin: clamp(3.2rem, 5.4vw, 4.9rem) auto 0;
+  gap: clamp(0.85rem, 1.25vw, 1.25rem);
+  margin: clamp(3.6rem, 5.8vw, 5.4rem) auto 0;
 }
 
 .hp-root .hp-artifact-column-label,
@@ -3285,20 +3432,21 @@ html:has(.hp-root) {
 
 .hp-root .hp-artifact-events {
   display: grid;
-  gap: 0.85rem;
+  gap: 0.75rem;
+  opacity: 0.82;
 }
 
 .hp-root .hp-artifact-event {
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  min-height: 4.25rem;
-  padding: 0.85rem 1rem;
-  border: 1px solid rgba(15, 23, 42, 0.075);
-  border-radius: 0.75rem;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.055);
-  animation: hp-artifact-event-breathe 6s ease-in-out infinite;
+  min-height: 4rem;
+  padding: 0.78rem 0.92rem;
+  border: 1px solid rgba(15, 23, 42, 0.065);
+  border-radius: 0.65rem;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.036);
+  animation: hp-artifact-event-breathe 8s ease-in-out infinite;
   animation-delay: var(--hp-artifact-delay);
 }
 
@@ -3309,7 +3457,7 @@ html:has(.hp-root) {
 
 .hp-root .hp-artifact-event strong {
   color: #172033;
-  font-size: 0.98rem;
+  font-size: 0.92rem;
   font-weight: 650;
   letter-spacing: -0.02em;
 }
@@ -3317,7 +3465,7 @@ html:has(.hp-root) {
 .hp-root .hp-artifact-event small {
   margin-top: 0.14rem;
   color: #7c8798;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
 }
 
 .hp-root .hp-artifact-event-dot {
@@ -3337,7 +3485,7 @@ html:has(.hp-root) {
   position: relative;
   height: 2px;
   border-radius: 999px;
-  background-image: linear-gradient(90deg, rgba(154, 163, 176, 0.75) 40%, transparent 0);
+  background-image: linear-gradient(90deg, rgba(117, 130, 149, 0.44) 40%, transparent 0);
   background-size: 12px 2px;
   overflow: hidden;
 }
@@ -3347,65 +3495,141 @@ html:has(.hp-root) {
   position: absolute;
   inset: 0;
   width: 44%;
-  background: linear-gradient(90deg, transparent, #1ab8ff, transparent);
-  animation: hp-artifact-line 3.2s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, rgba(26, 184, 255, 0.82), transparent);
+  animation: hp-artifact-line 4.8s ease-in-out infinite;
 }
 
 .hp-root .hp-artifact-record-card {
   position: relative;
   display: grid;
-  justify-items: center;
-  text-align: center;
-  gap: 0.65rem;
-  min-height: 22rem;
-  padding: 1.65rem;
-  border: 1px solid rgba(34, 184, 255, 0.22);
-  border-radius: 1.15rem;
+  gap: 0.82rem;
+  min-height: 24rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(32, 168, 226, 0.2);
+  border-radius: 1rem;
   background:
-    radial-gradient(circle at 50% 0%, rgba(34, 184, 255, 0.12), transparent 46%),
-    rgba(255, 255, 255, 0.95);
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(248, 253, 255, 0.9)),
+    radial-gradient(circle at 78% -10%, rgba(34, 184, 255, 0.16), transparent 44%),
+    rgba(255, 255, 255, 0.96);
   box-shadow:
-    0 0 0 1px rgba(34, 184, 255, 0.06),
-    0 28px 74px rgba(34, 184, 255, 0.13),
-    0 20px 52px rgba(15, 23, 42, 0.07);
+    0 0 0 1px rgba(255, 255, 255, 0.78) inset,
+    0 32px 80px rgba(15, 23, 42, 0.08),
+    0 22px 60px rgba(34, 184, 255, 0.12);
 }
 
-.hp-root .hp-artifact-record-icon {
+.hp-root .hp-artifact-record-card::before {
+  content: "";
+  position: absolute;
+  inset: 0.65rem;
+  border: 1px solid rgba(15, 23, 42, 0.055);
+  border-radius: 0.72rem;
+  pointer-events: none;
+}
+
+.hp-root .hp-artifact-record-card::after {
+  content: "";
+  position: absolute;
+  top: 0.65rem;
+  right: 1.2rem;
+  bottom: 0.65rem;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(34, 184, 255, 0.28), transparent);
+  pointer-events: none;
+}
+
+.hp-root .hp-artifact-record-top {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 1rem;
+  padding: 0.55rem 0.55rem 0;
+}
+
+.hp-root .hp-artifact-record-seal {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 3.25rem;
-  height: 3.25rem;
-  border-radius: 0.9rem;
-  background: rgba(34, 184, 255, 0.11);
-  color: #139fe4;
+  width: 3.15rem;
+  height: 3.15rem;
+  border: 1px solid rgba(34, 184, 255, 0.2);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 20%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.24) 44%, transparent),
+    rgba(230, 248, 255, 0.88);
+  color: #0f94d2;
+  box-shadow:
+    0 0 0 0.42rem rgba(34, 184, 255, 0.04),
+    0 12px 28px rgba(34, 184, 255, 0.11);
 }
 
-.hp-root .hp-artifact-record-icon svg {
-  width: 1.55rem;
-  height: 1.55rem;
+.hp-root .hp-artifact-record-seal svg {
+  width: 1.45rem;
+  height: 1.45rem;
 }
 
-.hp-root .hp-artifact-record-icon svg path {
+.hp-root .hp-artifact-record-seal svg path {
   stroke: currentColor;
-  stroke-width: 1.9;
+  stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .hp-root .hp-artifact-record-card h2 {
-  margin: 0;
+  margin: 0.28rem 0 0;
   color: #101828;
-  font-size: clamp(1.65rem, 1.9vw, 2.28rem);
+  font-size: clamp(1.85rem, 2.18vw, 2.62rem);
   line-height: 1.05;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.048em;
+  text-align: left;
+}
+
+.hp-root .hp-artifact-record-identity {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) 1px auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.72rem 0.82rem;
+  border: 1px solid rgba(15, 23, 42, 0.055);
+  border-radius: 0.68rem;
+  background: rgba(248, 250, 252, 0.68);
+}
+
+.hp-root .hp-artifact-record-identity span,
+.hp-root .hp-artifact-record-footer span {
+  color: #8190a4;
+  font-size: 0.64rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hp-root .hp-artifact-record-identity strong,
+.hp-root .hp-artifact-record-footer strong {
+  color: #172033;
+  font-family: var(--font-jetbrains-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  font-weight: 650;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hp-root .hp-artifact-record-identity i {
+  width: 1px;
+  height: 1.2rem;
+  background: rgba(15, 23, 42, 0.08);
 }
 
 .hp-root .hp-artifact-record-fields {
+  position: relative;
+  z-index: 1;
   display: grid;
   width: 100%;
-  gap: 0.46rem;
-  margin-top: 0.25rem;
+  gap: 0.4rem;
 }
 
 .hp-root .hp-artifact-record-field {
@@ -3414,16 +3638,16 @@ html:has(.hp-root) {
   align-items: center;
   gap: 0.8rem;
   width: 100%;
-  padding: 0.6rem 0.72rem;
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  border-radius: 0.68rem;
-  background: rgba(248, 250, 252, 0.92);
+  padding: 0.54rem 0.72rem;
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  border-radius: 0.56rem;
+  background: rgba(255, 255, 255, 0.72);
   text-align: left;
 }
 
 .hp-root .hp-artifact-record-field span {
   color: #7c8798;
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -3437,14 +3661,26 @@ html:has(.hp-root) {
   word-break: break-word;
 }
 
+.hp-root .hp-artifact-record-footer {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.82rem 0.56rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.07);
+}
+
 .hp-root .hp-artifact-verifier {
   overflow: hidden;
-  border: 1px solid rgba(137, 220, 255, 0.22);
-  border-radius: 1rem;
+  border: 1px solid rgba(137, 220, 255, 0.18);
+  border-radius: 0.82rem;
   background:
-    radial-gradient(circle at 80% 0%, rgba(34, 184, 255, 0.2), transparent 36%),
-    linear-gradient(180deg, #101827 0%, #0a1020 100%);
-  box-shadow: 0 34px 84px rgba(6, 14, 30, 0.25);
+    radial-gradient(circle at 80% 0%, rgba(34, 184, 255, 0.14), transparent 38%),
+    linear-gradient(180deg, #101827 0%, #0b1221 100%);
+  box-shadow: 0 26px 64px rgba(6, 14, 30, 0.2);
+  transform: translateY(0.35rem);
 }
 
 .hp-root .hp-artifact-verifier-top {
@@ -3452,15 +3688,15 @@ html:has(.hp-root) {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 0.65rem;
-  padding: 1rem 1.05rem;
+  padding: 0.88rem 0.95rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   color: rgba(238, 246, 255, 0.72);
   font-size: 0.85rem;
 }
 
 .hp-root .hp-artifact-status-dot {
-  width: 0.65rem;
-  height: 0.65rem;
+  width: 0.58rem;
+  height: 0.58rem;
   border-radius: 999px;
   background: #3de189;
   box-shadow: 0 0 0 0.35rem rgba(61, 225, 137, 0.13), 0 0 18px rgba(61, 225, 137, 0.42);
@@ -3472,17 +3708,17 @@ html:has(.hp-root) {
 
 .hp-root .hp-artifact-verifier-body {
   display: grid;
-  padding: 0.6rem 1.05rem 1rem;
+  padding: 0.54rem 0.95rem 0.9rem;
 }
 
 .hp-root .hp-artifact-verifier-row {
   display: grid;
   grid-template-columns: minmax(8rem, 0.9fr) minmax(0, 1fr);
   gap: 1rem;
-  padding: 0.58rem 0;
+  padding: 0.54rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   color: rgba(238, 246, 255, 0.58);
-  font-size: 0.83rem;
+  font-size: 0.8rem;
 }
 
 .hp-root .hp-artifact-verifier-row:last-child {
@@ -3492,7 +3728,7 @@ html:has(.hp-root) {
 .hp-root .hp-artifact-verifier-row strong {
   color: #f8fbff;
   font-family: var(--font-jetbrains-mono, 'JetBrains Mono', monospace);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 500;
   word-break: break-word;
 }
@@ -4299,11 +4535,11 @@ html:has(.hp-root) {
 
 @keyframes hp-artifact-event-breathe {
   0%, 100% {
-    border-color: rgba(15, 23, 42, 0.075);
+    border-color: rgba(15, 23, 42, 0.065);
     transform: translateY(0);
   }
   42% {
-    border-color: rgba(34, 184, 255, 0.2);
+    border-color: rgba(34, 184, 255, 0.14);
     transform: translateY(-1px);
   }
 }
@@ -4440,6 +4676,26 @@ html:has(.hp-root) {
     padding: 1.2rem;
   }
 
+  .hp-root .hp-artifact-record-top {
+    padding: 0.3rem 0.3rem 0;
+  }
+
+  .hp-root .hp-artifact-record-seal {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
+  .hp-root .hp-artifact-record-identity {
+    grid-template-columns: 1fr;
+    gap: 0.18rem;
+  }
+
+  .hp-root .hp-artifact-record-identity i,
+  .hp-root .hp-artifact-record-identity span:nth-of-type(2),
+  .hp-root .hp-artifact-record-identity strong:nth-of-type(2) {
+    display: none;
+  }
+
   .hp-root .hp-artifact-verifier-row {
     grid-template-columns: 1fr;
     gap: 0.18rem;
@@ -4554,6 +4810,18 @@ html:has(.hp-root) {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hp-root .ambient-record-field-wash,
+  .hp-root .ambient-record-field-signals,
+  .hp-root .ambient-record-signal-path,
+  .hp-root .ambient-record-signal-path-base {
+    animation: none !important;
+    transform: none;
+  }
+
+  .hp-root .ambient-record-field-points {
+    display: none;
+  }
+
   .hp-root .hp-hero-corner,
   .hp-root .hp-artifact-event,
   .hp-root .hp-artifact-connector::after {

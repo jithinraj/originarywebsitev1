@@ -44,6 +44,12 @@ export default function Footer() {
             <p className="hp-onepage-footer-tag">Verifiable records for API, agent, MCP, and commerce flows.</p>
             <p className="hp-onepage-footer-body">{NARRATIVE.plainSentence}</p>
 
+            <div className="site-footer-signals" aria-label="Platform properties">
+              <span>Offline verification</span>
+              <span>Portable records</span>
+              <span>Open standard</span>
+            </div>
+
             <div className="site-footer-social" aria-label="Social links">
               {FOOTER_SOCIAL.map((link) => (
                 <FooterNavLink key={link.label} href={link.href} external={link.external}>
@@ -64,6 +70,10 @@ export default function Footer() {
                 ))}
               </div>
             ))}
+          </div>
+
+          <div className="site-footer-boundary" aria-hidden="true">
+            <span />
           </div>
 
           <div className="hp-onepage-footer-legal site-footer-legal">
@@ -96,9 +106,18 @@ export default function Footer() {
         .site-footer-inner {
           position: relative;
           overflow: hidden;
-          grid-template-columns: minmax(20rem, 0.78fr) minmax(0, 1.22fr);
-          gap: 2.25rem 3rem;
-          padding: clamp(1.5rem, 3vw, 2.5rem);
+          grid-template-columns: minmax(20rem, 0.76fr) minmax(0, 1.24fr);
+          gap: 2.4rem 3.2rem;
+          padding: clamp(1.65rem, 3vw, 2.8rem);
+          border-radius: 1.05rem;
+          border-color: rgba(15, 23, 42, 0.075);
+          background:
+            radial-gradient(640px 340px at 0% 0%, rgba(110, 231, 183, 0.09), transparent 62%),
+            radial-gradient(640px 340px at 100% 6%, rgba(56, 189, 248, 0.12), transparent 60%),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.98));
+          box-shadow:
+            0 1px 0 rgba(255, 255, 255, 0.92) inset,
+            0 24px 70px rgba(15, 23, 42, 0.08);
         }
 
         .site-footer-inner::after {
@@ -107,8 +126,8 @@ export default function Footer() {
           inset: 0;
           pointer-events: none;
           background:
-            radial-gradient(460px 280px at 4% 0%, rgba(34, 184, 255, 0.09), transparent 58%),
-            radial-gradient(420px 260px at 100% 20%, rgba(47, 207, 146, 0.07), transparent 60%);
+            linear-gradient(90deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.08) 52%, rgba(255, 255, 255, 0.36)),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.52), transparent 44%, rgba(255, 255, 255, 0.48));
         }
 
         .site-footer-inner > * {
@@ -117,34 +136,75 @@ export default function Footer() {
         }
 
         .site-footer-links {
-          grid-template-columns: repeat(5, minmax(5.5rem, 1fr));
-          gap: 1.35rem 1.5rem;
+          grid-template-columns: repeat(5, minmax(6.1rem, 1fr));
+          gap: 1.45rem 1.65rem;
           align-items: start;
+        }
+
+        .site-footer-signals {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.45rem;
+          margin-top: 1.25rem;
+        }
+
+        .site-footer-signals span {
+          display: inline-flex;
+          align-items: center;
+          min-height: 1.7rem;
+          padding: 0.3rem 0.58rem;
+          border: 1px solid rgba(15, 23, 42, 0.065);
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.56);
+          color: #526173;
+          font-size: 0.72rem;
+          font-weight: 560;
+          line-height: 1;
         }
 
         .site-footer-social {
           display: flex;
           flex-wrap: wrap;
           gap: 0.55rem;
-          margin-top: 1.25rem;
+          margin-top: 1rem;
         }
 
         .site-footer-social :global(.hp-link) {
           display: inline-flex;
           align-items: center;
           min-height: 2rem;
-          padding: 0.4rem 0.7rem;
-          border: 1px solid rgba(15, 23, 42, 0.07);
-          border-radius: 999px;
-          background: rgba(255, 255, 255, 0.68);
+          padding: 0.4rem 0.72rem;
+          border: 1px solid rgba(15, 23, 42, 0.075);
+          border-radius: 0.5rem;
+          background: rgba(255, 255, 255, 0.7);
           font-size: 0.78rem;
           color: #475569;
+          box-shadow: 0 8px 20px rgba(15, 23, 42, 0.025);
         }
 
         .site-footer-social :global(.hp-link:hover) {
-          border-color: rgba(34, 184, 255, 0.18);
+          border-color: rgba(34, 184, 255, 0.2);
           color: #0f172a;
           background: rgba(255, 255, 255, 0.95);
+          transform: translateY(-1px);
+        }
+
+        .site-footer-boundary {
+          position: relative;
+          grid-column: 1 / -1;
+          height: 1px;
+          margin: -0.45rem 0 -0.55rem;
+          background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.08), transparent);
+        }
+
+        .site-footer-boundary span {
+          position: absolute;
+          top: -1px;
+          left: 0;
+          width: min(24rem, 46%);
+          height: 3px;
+          border-radius: 999px;
+          background: linear-gradient(90deg, transparent, rgba(34, 184, 255, 0.34), transparent);
         }
 
         .site-footer-machine-links {
@@ -160,19 +220,23 @@ export default function Footer() {
           padding: 0.32rem 0.55rem;
           border-radius: 0.45rem;
           border: 1px solid rgba(15, 23, 42, 0.06);
-          background: rgba(255, 255, 255, 0.55);
+          background: rgba(255, 255, 255, 0.62);
           font-family: var(--font-mono);
           font-size: 0.68rem;
           line-height: 1;
         }
 
         .site-footer-legal {
-          align-items: center;
+          align-items: start;
+          padding-top: 0;
+          margin-top: 0;
+          border-top: 0;
         }
 
         @media (max-width: 1100px) {
           .site-footer-inner {
             grid-template-columns: 1fr;
+            gap: 2rem;
           }
 
           .site-footer-links {
@@ -182,14 +246,15 @@ export default function Footer() {
 
         @media (max-width: 700px) {
           .site-footer-inner {
-            padding: 1.15rem;
-            gap: 1.5rem;
+            padding: 1.2rem;
+            gap: 1.55rem;
+            border-radius: 0.9rem;
           }
 
           .site-footer-links {
             grid-template-columns: repeat(2, minmax(7rem, 1fr));
             max-width: none;
-            gap: 1.2rem 1rem;
+            gap: 1.25rem 1rem;
           }
 
           .site-footer-legal {
@@ -198,6 +263,10 @@ export default function Footer() {
 
           .site-footer-social {
             gap: 0.45rem;
+          }
+
+          .site-footer-boundary {
+            margin: -0.25rem 0 -0.35rem;
           }
         }
 
