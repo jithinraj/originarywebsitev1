@@ -2,7 +2,7 @@
 
 > Originary builds production products for signed interaction records across AI agents, APIs, MCP, and cross-runtime workflows. Return signed records that another party can verify without trusting a dashboard. PEAC is the open standard underneath. Self-hostable. Offline-verifiable. No lock-in.
 
-Last updated: 2026-04-10
+Last updated: 2026-05-04
 
 Company: Poem, Inc.
 Location: Delaware, USA
@@ -13,7 +13,7 @@ Contact: contact@originary.xyz
 - [Home](/) - Prove what agents did. AI agent verification with signed, portable audit trails.
 - [Products](/products) - Originary Verify, Agent Auditor, Gateway 402, MCP Server, Trace
 - [PEAC Protocol](/peac) - Open standard for verifiable interaction records
-- [Developers](/developers) - Quickstart, SDKs, and integration guides
+- [Developers](/developers) - v0.14.0 quickstart, SDKs, MCP tooling, paymentauth/MPP, ACP, x402, and runtime integration guides
 - [Downloads](/downloads) - CLI, MCP server, SDKs, and source archives
 - [Proof Check](/agent-proof-check) - Paste logs, traces, or signed records. See what is observable, verifiable, and missing.
 - [Agent Auditor](/agent-auditor) - Open and verify any signed record locally, with evidence bundles
@@ -23,13 +23,13 @@ Contact: contact@originary.xyz
 
 ## Protocol State
 
-- Stable release: v0.12.8 (latest, Apr 10 2026)
+- Latest release: v0.14.0 (May 3 2026)
 - Wire format: interaction-record+jwt (Wire 0.2, current stable)
 - Legacy wire format: peac-receipt/0.1 (Wire 0.1, frozen)
-- Published packages: 35 on npm (@peac/*)
-- Tests: 7241
-- Conformance requirement IDs: 219
-- Build targets: 97
+- Published packages: 36 on npm (@peac/*)
+- Tests: 9214
+- Conformance requirement IDs: 224
+- Build targets: 102
 - License: Apache-2.0
 - Node.js: >=22.0.0
 
@@ -68,20 +68,24 @@ Policy Pack Generator. Generate peac.txt, AIPREF headers, and human-readable pol
 
 ## Integrations
 
-- [MCP](/integrations/mcp) - Model Context Protocol: MCP security, governance, and verification via signed records
+- [MCP](/integrations/mcp) - Model Context Protocol: 5 local verification, inspection, issue, and bundle tools via @peac/mcp-server
 - [A2A](/integrations/a2a) - Agent-to-Agent communication with verifiable records
 - [x402 / HTTP 402](/integrations/x402) - HTTP 402 payment evidence for machine-payable APIs
+- [paymentauth / MPP](/integrations) - HTTP Payment Authentication and MPP payment-attempt or settlement evidence mapped into PEAC records
 - [ACP](/integrations/acp) - Agentic Commerce Protocol evidence
 - [AIPREF](/integrations/aipref) - AI Preferences signaling standard
+- [OpenClaw and managed agents](/integrations) - Runtime event, tool-use, permission, MCP-call, and outcome evidence for managed-agent systems
 
 ## Open Source
 
-PEAC is an open standard (Apache-2.0). 37 packages on npm, 7392 tests, 224 conformance requirement IDs, 105 build targets.
+PEAC is an open standard (Apache-2.0). 36 packages on npm, 9214 tests, 224 conformance requirement IDs, 102 build targets.
 
 - Ed25519 cryptographic signing (RFC 8032)
 - Compact JWS (RFC 7515)
 - Policy discovery via /.well-known/peac.txt
 - AI preferences via AIPREF (/.well-known/aipref.json)
+- MCP server tools for verify, inspect, decode, issue, and bundle
+- paymentauth/MPP, ACP, x402 v1/v2, OpenClaw, managed-agent, in-toto, and SLSA mappings
 - Self-hostable verification: does not require Originary to be online
 - Offline verification with issuer public key only
 

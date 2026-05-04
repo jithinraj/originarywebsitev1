@@ -505,6 +505,8 @@ function AnimatedCodeBlock({
           border: 1px solid var(--glass-border-hover);
           border-radius: var(--radius-xl);
           overflow: hidden;
+          max-width: 100%;
+          min-width: 0;
         }
         .code-label {
           padding: var(--space-2) var(--space-4);
@@ -559,12 +561,17 @@ function AnimatedCodeBlock({
         .code-body {
           padding: var(--space-3);
           margin: 0;
+          max-width: 100%;
           overflow-x: auto;
           font-family: var(--font-mono);
           font-size: 11px;
           line-height: 1.5;
           color: var(--text-primary);
           min-height: 60px;
+        }
+        .code-body code {
+          display: block;
+          min-width: 0;
         }
         .code-line {
           min-height: 1.5em;
@@ -1348,6 +1355,7 @@ Content-Type: application/json
         .demo-card {
           margin-bottom: var(--space-8);
           padding: var(--space-6);
+          min-width: 0;
         }
         .section-header {
           text-align: center;
@@ -1398,23 +1406,23 @@ Content-Type: application/json
         }
         .exchange-grid {
           display: grid;
-          grid-template-columns: 1fr;
+          grid-template-columns: minmax(0, 1fr);
           gap: var(--space-4);
         }
         @media (min-width: 768px) {
           .exchange-grid {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
           }
         }
         .two-col-grid {
           display: grid;
-          grid-template-columns: 1fr;
+          grid-template-columns: minmax(0, 1fr);
           gap: var(--space-6);
           margin-bottom: var(--space-8);
         }
         @media (min-width: 768px) {
           .two-col-grid {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
           }
         }
         .card-header {
@@ -1512,13 +1520,18 @@ Content-Type: application/json
         }
         .verify-grid {
           display: grid;
-          grid-template-columns: 1fr;
+          grid-template-columns: minmax(0, 1fr);
           gap: var(--space-6);
         }
         @media (min-width: 768px) {
           .verify-grid {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
           }
+        }
+        .exchange-grid > *,
+        .two-col-grid > *,
+        .verify-grid > * {
+          min-width: 0;
         }
         .verify-title {
           font-size: 14px;

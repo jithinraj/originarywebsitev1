@@ -168,10 +168,13 @@ export default function CodeBlock({ code, lang = "bash", className = "", tabs }:
           font-family: var(--font-mono);
           font-size: 13px;
           line-height: 1.6;
+          max-width: 100%;
         }
 
         .code-content code {
+          display: block;
           color: var(--text-secondary, #475467);
+          overflow-wrap: anywhere;
         }
 
         @media (max-width: 480px) {
@@ -202,6 +205,11 @@ export default function CodeBlock({ code, lang = "bash", className = "", tabs }:
 
           .code-content pre {
             font-size: 11px;
+            white-space: pre-wrap;
+          }
+
+          .code-content code {
+            white-space: inherit;
           }
         }
       `}</style>

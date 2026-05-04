@@ -71,7 +71,7 @@ export default function StatusPage() {
             {[
               { label: 'Current wire format', value: `${FACTS.stableWireFormat} (Wire 0.2)` },
               { label: 'Legacy wire format', value: `${FACTS.legacyWireFormat} (frozen)` },
-              { label: 'Stable release', value: FACTS.stableVersion },
+              { label: 'Latest release', value: FACTS.currentVersion },
               { label: 'Published packages', value: `${FACTS.publishedPackageCount} on npm` },
               { label: 'License', value: FACTS.license },
             ].map((item) => (

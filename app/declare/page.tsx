@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import { ArrowRight, Github, FileText, Shield, Code, Terminal, Globe, CheckCircle, AlertTriangle, Layers } from 'lucide-react'
 import { FaqAccordion, FaqJsonLd } from '@/components/faq'
 import { declareFaqs } from '@/content/faqs'
+import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
   title: 'Declare | AI Policy Pack Generator',
@@ -49,7 +50,7 @@ export default function DeclarePage() {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "softwareVersion": "0.12.11",
+    "softwareVersion": FACTS.currentVersion.slice(1),
     "description": "One config file to declare AI policies for your domain. Generates peac.txt, robots AI rules, AIPREF headers, and a /ai-policy page. Includes Policy Profiles for rapid deployment."
   }
 
@@ -613,7 +614,7 @@ peac policy init
                   marginTop: 'var(--space-3)',
                   lineHeight: 1.6
                 }}>
-                  Validates <code style={{ background: 'var(--text-secondary)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> and generated files against PEAC 0.12.x schemas.
+                  Validates <code style={{ background: 'var(--text-secondary)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> and generated files against PEAC v0.14.0 schemas.
                 </p>
               </div>
 
@@ -778,7 +779,7 @@ cp robots-ai-snippet.txt public/`}
                 textAlign: 'center',
                 marginBottom: 'var(--space-10)'
               }}>
-                Policy Kit tracks the PEAC 0.12.x protocol line. Small, reliable, boring.
+                Policy Kit tracks the PEAC v0.14.0 protocol line, including current policy discovery, AIPREF, MCP, and payment evidence mappings.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>

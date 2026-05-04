@@ -9,7 +9,7 @@ import { peacFaqs } from '@/content/faqs'
 
 export const metadata: Metadata = {
   title: 'PEAC Protocol | Originary',
-  description: 'PEAC is the open standard for verifiable interaction records across AI agents, APIs, MCP, and automated systems. Originary is one product built on top.',
+  description: 'PEAC v0.14.0 is the open standard for verifiable interaction records across AI agents, APIs, MCP, x402, paymentauth/MPP, ACP, OpenClaw, and automated systems.',
   keywords: [
     'PEAC Protocol',
     'verifiable interaction records',
@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     'MCP',
     'A2A',
     'HTTP 402',
+    'paymentauth',
+    'MPP',
+    'ACP',
+    'OpenClaw',
+    'managed agents',
     'Apache-2.0',
     'open source',
     'interaction-record+jwt',
@@ -34,7 +39,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'PEAC Protocol | Originary',
-    description: 'PEAC is the open standard for verifiable interaction records across AI agents, APIs, MCP, and automated systems. Originary is one product built on top.',
+    description: 'PEAC v0.14.0 is the open standard for verifiable interaction records across AI agents, APIs, MCP, x402, paymentauth/MPP, ACP, OpenClaw, and automated systems.',
     url: '/peac',
     siteName: 'Originary',
     type: 'website',
@@ -44,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'PEAC Protocol | Originary',
-    description: 'PEAC is the open standard for verifiable interaction records across AI agents, APIs, MCP, and automated systems. Originary is one product built on top.',
+    description: 'PEAC v0.14.0 is the open standard for verifiable interaction records across AI agents, APIs, MCP, x402, paymentauth/MPP, ACP, OpenClaw, and automated systems.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -62,8 +67,8 @@ export default function PeacPage() {
     "programmingLanguage": ["TypeScript", "JavaScript"],
     "license": "https://www.apache.org/licenses/LICENSE-2.0",
     "isAccessibleForFree": true,
-    "version": FACTS.stableVersion,
-    "keywords": ["PEAC Protocol", "verifiable interaction records", "signed records", "Ed25519", "MCP", "A2A", "HTTP 402", "open source", "Apache-2.0"],
+    "version": FACTS.currentVersion,
+    "keywords": ["PEAC Protocol", "verifiable interaction records", "signed records", "Ed25519", "MCP", "A2A", "HTTP 402", "paymentauth", "MPP", "ACP", "OpenClaw", "open source", "Apache-2.0"],
     "author": {
       "@type": "Organization",
       "@id": "https://www.originary.xyz/#org",
@@ -103,7 +108,7 @@ export default function PeacPage() {
                 }}
               >
                 <span style={{ width: 7, height: 7, borderRadius: 'var(--radius-full)', background: 'var(--accent-brand)', display: 'inline-block', flexShrink: 0 }} />
-                Open Source &mdash; Apache-2.0
+                Open Source &mdash; Apache-2.0 &mdash; {FACTS.currentVersion}
               </div>
 
               <h1
@@ -130,7 +135,7 @@ export default function PeacPage() {
                   margin: '0 auto var(--space-6) auto',
                 }}
               >
-                PEAC defines how systems publish machine-readable interaction terms, issue signed records for automated requests, and verify them independently, even offline. Originary is one product built on top.
+                PEAC defines how systems publish machine-readable interaction terms, issue signed records for automated requests, and verify them independently, even offline. Version 0.14.0 expands the reference implementation across MCP, A2A, x402, paymentauth/MPP, ACP, OpenClaw, managed agents, and supply-chain evidence.
               </p>
 
               <p
@@ -334,7 +339,7 @@ export default function PeacPage() {
               Where PEAC works today
             </h2>
             <p style={{ textAlign: 'center', fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', marginBottom: 'var(--space-16)', maxWidth: '600px', margin: '0 auto var(--space-16) auto' }}>
-              Protocol capability map for APIs, MCP, A2A, commerce-related workflows, and other verifiable automated interactions
+              Protocol capability map for APIs, MCP, A2A, commerce-related workflows, managed-agent runtimes, and other verifiable automated interactions
             </p>
 
             <div style={{ maxWidth: '960px', margin: '0 auto' }}>
@@ -346,7 +351,7 @@ export default function PeacPage() {
                 <div className="grid grid-3" style={{ gap: 'var(--space-4)' }}>
                   {[
                     { name: 'Access', desc: 'Declare who can use your resources and under what conditions' },
-                    { name: 'Identity', desc: 'Cryptographic proof-of-control for agents and operators' },
+                    { name: 'Identity', desc: 'Signed proof-of-control for agents and operators' },
                     { name: 'Purpose', desc: 'Declared intent of each interaction and purpose-driven access' },
                   ].map((d) => (
                     <div key={d.name} className="card" style={{ padding: 'var(--space-5)' }}>
@@ -385,8 +390,8 @@ export default function PeacPage() {
                 <div className="grid grid-3" style={{ gap: 'var(--space-4)' }}>
                   {[
                     { name: 'Attribution', desc: 'Every request carries verifiable identity and intent' },
-                    { name: 'Provenance', desc: 'Cryptographic proof of what happened and when' },
-                    { name: 'Commerce', desc: 'Payment semantics via HTTP 402 and pricing headers' },
+                    { name: 'Provenance', desc: 'Signed evidence of what happened and when' },
+                    { name: 'Commerce', desc: 'x402 v1/v2, paymentauth/MPP, ACP session evidence, and payment rail mappings' },
                   ].map((d) => (
                     <div key={d.name} className="card" style={{ padding: 'var(--space-5)' }}>
                       <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>{d.name}</h3>
@@ -415,15 +420,57 @@ export default function PeacPage() {
                   Policy discovery format, headers, and machine-readable rules
                 </p>
               </a>
-              <a href="https://github.com/peacprotocol/peac/blob/main/docs/receipts.md" target="_blank" rel="noopener noreferrer" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+              <a href="https://github.com/peacprotocol/peac/blob/main/docs/specs/WIRE-0.2.md" target="_blank" rel="noopener noreferrer" className="card" style={{ textDecoration: 'none', display: 'block' }}>
                 <Shield size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
                 <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Record schema
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  JWS-based verifiable interaction records for audit and compliance
+                  Wire 0.2 interaction-record+jwt format with compact JWS serialization and deterministic claims
                 </p>
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* v0.14.0 implementation surface */}
+        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
+          <div className="container">
+            <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, textAlign: 'center', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
+              v0.14.0 implementation surface
+            </h2>
+            <p style={{ textAlign: 'center', fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', marginBottom: 'var(--space-16)', maxWidth: '680px', margin: '0 auto var(--space-16) auto' }}>
+              The current reference implementation publishes {FACTS.publishedPackageCount} packages with {FACTS.testsCount} tests across core records, commerce mappings, agent runtimes, and evidence exports.
+            </p>
+
+            <div className="grid grid-2" style={{ gap: 'var(--space-6)', maxWidth: '980px', margin: '0 auto' }}>
+              {[
+                {
+                  title: 'Core record and policy stack',
+                  body: '@peac/protocol, @peac/crypto, @peac/schema, @peac/kernel, @peac/control, @peac/audit, @peac/policy-kit, middleware, CLI, API, and verifier surfaces.',
+                },
+                {
+                  title: 'Commerce and payment evidence',
+                  body: '@peac/adapter-x402, x402 v1/v2 carrier parsing, @peac/mappings-paymentauth, MPP mappers, @peac/mappings-acp, UCP, pay402, Stripe, card, and Razorpay rails.',
+                },
+                {
+                  title: 'Agent and runtime governance',
+                  body: '@peac/mcp-server, MCP and A2A carriers, @peac/adapter-openclaw, @peac/adapter-managed-agents, @peac/adapter-runtime-governance, and OpenAI-compatible adapters.',
+                },
+                {
+                  title: 'Provenance, telemetry, and transport',
+                  body: 'in-toto and SLSA mappings, OpenTelemetry support, gRPC transport, DID, HTTP signatures, JWKS cache, receipts, and worker/server packages.',
+                },
+              ].map((item) => (
+                <div key={item.title} className="card" style={{ padding: 'var(--space-6)' }}>
+                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+                    {item.body}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -435,7 +482,7 @@ export default function PeacPage() {
               Reference implementation and tools
             </h2>
             <p style={{ textAlign: 'center', fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', marginBottom: 'var(--space-16)', maxWidth: '600px', margin: '0 auto var(--space-16) auto' }}>
-              Reference implementation, SDKs, and developer tools
+              Reference implementation, SDKs, adapters, mappings, and developer tools
             </p>
 
             <div className="grid grid-3" style={{ gap: 'var(--space-6)' }}>
@@ -445,7 +492,7 @@ export default function PeacPage() {
                   PEAC Core ({FACTS.publishedPackageCount} packages)
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
-                  TypeScript/JavaScript: protocol, crypto, schema, MCP server, adapters, and more
+                  TypeScript/JavaScript: protocol, crypto, schema, MCP server, payment mappings, runtime adapters, and more
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>
                   <Github size={14} />
@@ -473,7 +520,7 @@ export default function PeacPage() {
                   Examples
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
-                  Integration patterns, starter templates, and sample implementations
+                  Integration kits for MCP, A2A, x402, ACP, paymentauth/MPP, runtime governance, and sample implementations
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>
                   <Github size={14} />
@@ -500,16 +547,25 @@ export default function PeacPage() {
                   HTTP 402 and x402
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Commerce and signed records for machine-payable APIs
+                  Commerce and signed records for machine-payable APIs with x402 v1/v2 evidence mapping
                 </p>
               </Link>
+
+              <a href="https://github.com/peacprotocol/peac/tree/main/integrator-kits/paymentauth" target="_blank" rel="noopener noreferrer" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
+                  paymentauth and MPP
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                  HTTP Payment Authentication and MPP payment attempt or settlement events mapped into PEAC evidence
+                </p>
+              </a>
 
               <Link href="/integrations/acp" className="card" style={{ textDecoration: 'none', display: 'block' }}>
                 <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
                   Agentic Commerce Protocol
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Agentic commerce and transaction verification
+                  ACP session and delegated-commerce evidence without replacing ACP state or payment finality semantics
                 </p>
               </Link>
 
@@ -527,7 +583,7 @@ export default function PeacPage() {
                   Model Context Protocol
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  MCP tool verification and signed records for agent coordination
+                  MCP tool verification, _meta carriers, and five local verification tools for agent coordination
                 </p>
               </Link>
 
@@ -536,9 +592,27 @@ export default function PeacPage() {
                   A2A Protocol
                 </h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Agent-to-agent transactions with verifiable interaction records
+                  A2A v1.0.0 metadata carriers with verifiable interaction records across agent hops
                 </p>
               </Link>
+
+              <a href="https://github.com/peacprotocol/peac/tree/main/packages/adapters/openclaw" target="_blank" rel="noopener noreferrer" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
+                  OpenClaw and managed agents
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                  Runtime event capture for tool calls, sessions, tasks, permissions, MCP calls, and outcomes
+                </p>
+              </a>
+
+              <a href="https://github.com/peacprotocol/peac/tree/main/packages/mappings" target="_blank" rel="noopener noreferrer" className="card" style={{ textDecoration: 'none', display: 'block' }}>
+                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
+                  in-toto and SLSA
+                </h3>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                  Supply-chain provenance and attestation mappings for existing build and release systems
+                </p>
+              </a>
 
               <Link href="/developers" className="card" style={{ textDecoration: 'none', display: 'block', border: '2px dashed var(--border-default)', background: 'transparent' }}>
                 <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>

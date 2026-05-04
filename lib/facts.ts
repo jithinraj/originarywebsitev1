@@ -12,8 +12,17 @@ export const FACTS = {
   // Release state (see github.com/peacprotocol/peac/releases)
   // ---------------------------------------------------------------------------
 
-  /** Stable release on `latest` npm dist-tag */
-  stableVersion: 'v0.12.11',
+  /** Latest public release tag. */
+  currentVersion: 'v0.14.0',
+
+  /** Public release date for currentVersion. */
+  currentReleaseDate: '2026-05-03',
+
+  /** npm dist-tag used for currentVersion. */
+  currentDistTag: 'latest',
+
+  /** Stable release on the npm `latest` dist-tag */
+  stableVersion: 'v0.14.0',
 
   /**
    * Current stable wire format (Wire 0.2).
@@ -37,26 +46,26 @@ export const FACTS = {
   // Package counts (see publish-manifest.json + pnpm ls --depth 0)
   // ---------------------------------------------------------------------------
 
-  /** Packages in the npm publish manifest (@peac/* on npm) */
-  publishedPackageCount: 37,
+  /** Packages published to npm for the current release (@peac/* on npm) */
+  publishedPackageCount: 36,
 
   /** Public packages in the monorepo (published + internal-public) */
-  publicPackageCount: 37,
+  publicPackageCount: 36,
 
   /** Total workspace packages (public + private + examples + apps) */
-  workspacePackageCount: 37,
+  workspacePackageCount: 68,
 
   // ---------------------------------------------------------------------------
   // Quality metrics (see CI output for latest tag)
   // ---------------------------------------------------------------------------
 
-  /** pnpm test -- passing test count as of v0.12.11 */
-  testsCount: 7392,
+  /** pnpm test -- passing test count as of v0.14.0 canonical truth */
+  testsCount: 9214,
 
-  /** pnpm build -- build targets as of v0.12.11 */
-  buildTargets: 105,
+  /** pnpm build -- build targets as of v0.14.0 release facts */
+  buildTargets: 102,
 
-  /** Conformance requirement IDs as of v0.12.11 */
+  /** Conformance requirement IDs as of v0.14.0 */
   conformanceRequirements: 224,
 
   /** Minimum Node.js version required */

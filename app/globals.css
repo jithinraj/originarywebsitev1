@@ -111,6 +111,136 @@
   border-color: rgba(34, 184, 255, 0.34) !important;
 }
 
+/* Site-wide reading and code polish.
+   Legacy guide pages use a mix of Tailwind utilities, shared CodeBlock, and
+   local pre/code styles. Keep code readable on small screens without letting
+   long examples visually bleed out of their containers. */
+.site-root pre {
+  max-width: 100%;
+}
+
+.site-root pre code {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .site-root pre {
+    white-space: pre-wrap !important;
+    word-break: normal;
+  }
+
+  .site-root pre code {
+    white-space: inherit !important;
+    word-break: normal;
+  }
+}
+
+/* Shared mobile table-of-contents shell used by long-form pages. Keep this in
+   globals so the control remains polished even when local page styles load late. */
+.site-root .mobile-toc {
+  width: min(100% - 2rem, 46rem);
+  margin: 0 auto var(--space-6);
+}
+
+.site-root .mobile-toc-trigger {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-default);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 650;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.055);
+}
+
+.site-root .mobile-toc-nav {
+  margin-top: 0.5rem;
+  padding: 0.45rem;
+  border: 1px solid var(--border-default);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
+}
+
+.site-root .mobile-toc-nav a {
+  display: flex;
+  align-items: center;
+  min-height: 2.55rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.55rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 560;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+@media (max-width: 1099px) {
+  .site-root .desktop-toc {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1100px) {
+  .site-root .mobile-toc {
+    display: none !important;
+  }
+}
+
+.site-root .desktop-toc {
+  position: sticky;
+  top: calc(var(--nav-height, 72px) + 1.5rem);
+  align-self: start;
+}
+
+.site-root .desktop-toc-card {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.9rem;
+  border: 1px solid var(--border-default);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.055);
+}
+
+.site-root .toc-title {
+  margin: 0 0 0.35rem;
+  color: var(--text-primary);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.site-root .toc-link {
+  display: block;
+  padding: 0.46rem 0.58rem;
+  border-radius: 0.52rem;
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+  font-weight: 560;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.site-root .toc-link:hover,
+.site-root .toc-link:focus-visible,
+.site-root .toc-link.active,
+.site-root .mobile-toc-nav a:hover,
+.site-root .mobile-toc-nav a:focus-visible,
+.site-root .mobile-toc-nav a.active {
+  background: rgba(22, 97, 86, 0.08);
+  color: var(--accent-strong);
+  outline: none;
+}
+
 /* Footer desktop/mobile show-hide — must be in globals.css for reliable App Router injection */
 .footer-nav-desktop { display: block; }
 .footer-nav-mobile { display: none; }

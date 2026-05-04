@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
-import { ArrowRight, Code, Terminal, Shield, Bot, Plug, FileCheck } from 'lucide-react'
+import { Activity, ArrowRight, Bot, CreditCard, GitBranch, PackageCheck, Plug, Shield, ShieldCheck } from 'lucide-react'
 import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
   title: 'Start here | Originary',
-  description: 'Choose the fastest path to your first signed record for APIs, MCP servers, agent workflows, and verification tools.',
-  keywords: 'Originary SDK, PEAC Protocol, verifiable interaction records, MCP server, A2A integration, HTTP 402, developer tools',
+  description: 'Choose the fastest path to your first PEAC v0.14.0 signed record for APIs, MCP servers, paymentauth/MPP, ACP, OpenClaw, managed agents, and verification tools.',
+  keywords: 'Originary SDK, PEAC Protocol, verifiable interaction records, MCP server, A2A integration, HTTP 402, paymentauth, MPP, ACP, OpenClaw, managed agents, developer tools',
   authors: [{ name: 'Originary' }],
   alternates: {
     canonical: '/developers'
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'Start here | Originary',
-    description: 'Choose the fastest path to your first signed record for APIs, MCP servers, agent workflows, and verification tools.',
+    description: 'Choose the fastest path to your first PEAC v0.14.0 signed record for APIs, MCP servers, paymentauth/MPP, ACP, OpenClaw, managed agents, and verification tools.',
     url: '/developers',
     images: ['/og'],
     siteName: 'Originary',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Start here | Originary',
-    description: 'Choose the fastest path to your first signed record for APIs, MCP servers, agent workflows, and verification tools.',
+    description: 'Choose the fastest path to your first PEAC v0.14.0 signed record for APIs, MCP servers, paymentauth/MPP, ACP, OpenClaw, managed agents, and verification tools.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -46,7 +46,7 @@ export default function Developers() {
                 Choose the fastest path to your first signed record
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                Start from the workflow you actually run — API publishing, MCP tools, AI agent systems, or local verification. Use the path below to issue, inspect, or verify signed records quickly.
+                Start from the workflow you actually run — API publishing, MCP tools, paymentauth/MPP, ACP, x402, OpenClaw, managed-agent systems, or local verification. Use the path below to issue, inspect, or verify signed records quickly.
               </p>
             </div>
           </div>
@@ -58,7 +58,7 @@ export default function Developers() {
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
               <h2 style={{ marginBottom: 'var(--space-4)' }}>Choose your path</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
-                Each path gets you to a working example fast.
+                Each path maps to a v0.14.0 package surface in the open PEAC repo.
               </p>
             </div>
 
@@ -74,7 +74,7 @@ export default function Developers() {
               <GuideCard
                 icon={<Plug size={24} />}
                 title="I have an HTTP API that agents call"
-                description="Publish a peac.txt policy, add middleware, and return verifiable interaction records in response headers."
+                description="Publish a peac.txt policy, add middleware, and return verifiable interaction records in PEAC-Receipt headers."
                 steps={['Deploy /.well-known/peac.txt', 'Add verification middleware', 'Return signed record headers']}
                 href="/integrations/x402"
                 code="npm install @peac/protocol @peac/middleware-express"
@@ -90,10 +90,42 @@ export default function Developers() {
               <GuideCard
                 icon={<ArrowRight size={24} />}
                 title="I need proof across agent hops"
-                description="Attach verifiable interaction records to A2A messages. Verify authorization and policy compliance at each hop."
+                description="Attach verifiable interaction records to A2A v1.0.0 metadata. Verify authorization and policy compliance at each hop."
                 steps={['Issue records with @peac/protocol', 'Attach via A2A metadata carrier', 'Verify at receiving agent']}
                 href="/integrations/a2a"
                 code="npm install @peac/protocol"
+              />
+              <GuideCard
+                icon={<CreditCard size={24} />}
+                title="I need paymentauth or MPP evidence"
+                description="Map paymentauth challenges, credentials, receipts, and MPP payment-attempt or settlement events into PEAC evidence."
+                steps={['Parse paymentauth or MPP event data', 'Create PEAC payment evidence', 'Keep payment receipts and PEAC records separate']}
+                href="/integrations"
+                code="npm install @peac/mappings-paymentauth"
+              />
+              <GuideCard
+                icon={<GitBranch size={24} />}
+                title="I need ACP or x402 commerce records"
+                description="Use ACP session evidence or x402 v1/v2 payment evidence without replacing those protocols' native state machines."
+                steps={['Map ACP lifecycle or x402 payment response', 'Preserve native protocol fields', 'Emit a PEAC-Receipt for verification']}
+                href="/integrations/acp"
+                code="npm install @peac/mappings-acp @peac/adapter-x402"
+              />
+              <GuideCard
+                icon={<ShieldCheck size={24} />}
+                title="I use OpenClaw or managed agents"
+                description="Capture tool calls, runtime events, permissions, and outcomes as signed records for later inspection."
+                steps={['Install the runtime adapter', 'Hash inputs and outputs by default', 'Emit records asynchronously or through your control plane']}
+                href="/integrations"
+                code="npm install @peac/adapter-openclaw @peac/adapter-managed-agents"
+              />
+              <GuideCard
+                icon={<PackageCheck size={24} />}
+                title="I need provenance or attestations"
+                description="Connect PEAC records to in-toto and SLSA-style supply-chain evidence while keeping your existing build system."
+                steps={['Capture the interaction or release event', 'Map it into provenance evidence', 'Export or verify through your audit pipeline']}
+                href="/integrations"
+                code="npm install @peac/mappings-intoto @peac/mappings-slsa"
               />
             </div>
           </div>
@@ -109,7 +141,14 @@ export default function Developers() {
               </p>
             </div>
 
-            <div className="grid grid-3" style={{ gap: 'var(--space-8)' }}>
+            <div
+              className="grid"
+              style={{
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
+                gap: 'var(--space-8)',
+                alignItems: 'stretch',
+              }}
+            >
               <QuickStartCard
                 step="1"
                 title="Create policy"
@@ -153,6 +192,56 @@ if (result.verified) {
   console.log('Valid:', result.claims)
 }`}
               />
+            </div>
+          </div>
+        </section>
+
+        {/* v0.14.0 package surface */}
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
+          <div className="container">
+            <div style={{
+              maxWidth: '960px',
+              margin: '0 auto',
+              padding: 'var(--space-8)',
+              background: 'var(--surface-elevated)',
+              border: '1px solid var(--border-default)',
+              borderRadius: 'var(--radius-2xl)',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
+                <Activity size={24} style={{ color: 'var(--accent-brand)', flexShrink: 0 }} />
+                <div>
+                  <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-2)' }}>
+                    v0.14.0 package surface
+                  </h2>
+                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                    Use these package groups when choosing where to start. The current release publishes {FACTS.publishedPackageCount} packages and keeps Wire 0.2 as the stable record format.
+                  </p>
+                </div>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 'var(--space-4)' }}>
+                {[
+                  { label: 'Core', items: ['@peac/protocol', '@peac/crypto', '@peac/schema', '@peac/kernel', '@peac/policy-kit'] },
+                  { label: 'Carriers', items: ['@peac/mcp-server', '@peac/mappings-mcp', '@peac/mappings-a2a', '@peac/middleware-express'] },
+                  { label: 'Commerce', items: ['@peac/adapter-x402', '@peac/mappings-paymentauth', 'MPP mappers', '@peac/mappings-acp', '@peac/pay402'] },
+                  { label: 'Runtimes and audit', items: ['@peac/adapter-openclaw', '@peac/adapter-managed-agents', '@peac/adapter-runtime-governance', '@peac/mappings-intoto', '@peac/mappings-slsa'] },
+                ].map((group) => (
+                  <div key={group.label} style={{
+                    border: '1px solid var(--border-default)',
+                    borderRadius: 'var(--radius-lg)',
+                    padding: 'var(--space-4)',
+                    background: 'var(--surface-subtle)',
+                  }}>
+                    <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-3)' }}>{group.label}</h3>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 'var(--space-2)' }}>
+                      {group.items.map((item) => (
+                        <li key={item} style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', overflowWrap: 'anywhere' }}>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -279,10 +368,10 @@ function GuideCard({
   code: string
 }) {
   return (
-    <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-        <div style={{ color: 'var(--accent-brand)' }}>{icon}</div>
-        <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600 }}>{title}</h3>
+    <div className="card" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', minWidth: 0 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', minWidth: 0 }}>
+        <div style={{ color: 'var(--accent-brand)', flex: '0 0 auto' }}>{icon}</div>
+        <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, lineHeight: 1.2 }}>{title}</h3>
       </div>
       <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, fontSize: 'var(--text-sm)' }}>{description}</p>
       <ol style={{ margin: 0, paddingLeft: 'var(--space-5)', display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
@@ -298,7 +387,8 @@ function GuideCard({
         fontFamily: 'var(--font-mono)',
         fontSize: 'var(--text-xs)',
         color: 'var(--text-secondary)',
-        overflowX: 'auto'
+        overflowWrap: 'anywhere',
+        whiteSpace: 'pre-wrap',
       }}>
         {code}
       </code>
@@ -326,13 +416,16 @@ function QuickStartCard({
         background: 'var(--surface-elevated)',
         border: '1px solid var(--border-default)',
         borderRadius: '18px',
-        padding: '24px',
+        padding: 'clamp(18px, 3vw, 24px)',
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
+        minWidth: 0,
+        boxSizing: 'border-box',
+        overflow: 'hidden',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px', minWidth: 0 }}>
         <div style={{
           width: '28px', height: '28px',
           background: 'var(--accent-brand)',
@@ -345,7 +438,7 @@ function QuickStartCard({
         }}>
           {step}
         </div>
-        <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: 'var(--text-primary)' }}>{title}</h3>
+        <h3 style={{ fontSize: '1.125rem', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.2 }}>{title}</h3>
       </div>
       <p style={{ color: 'var(--text-secondary)', marginBottom: '16px', lineHeight: 1.6, fontSize: '0.9375rem' }}>{description}</p>
       <pre
@@ -356,14 +449,19 @@ function QuickStartCard({
           borderRadius: '12px',
           fontSize: '0.8125rem',
           lineHeight: 1.6,
-          overflowX: 'auto',
+          overflowX: 'hidden',
           fontFamily: 'var(--font-mono, ui-monospace, monospace)',
           margin: 0,
           flex: 1,
-          whiteSpace: 'pre',
+          width: '100%',
+          maxWidth: '100%',
+          minWidth: 0,
+          boxSizing: 'border-box',
+          whiteSpace: 'pre-wrap',
+          overflowWrap: 'anywhere',
           WebkitOverflowScrolling: 'touch',
         }}
-      ><code>{code.trim()}</code></pre>
+      ><code style={{ display: 'block', whiteSpace: 'inherit', overflowWrap: 'inherit' }}>{code.trim()}</code></pre>
     </div>
   )
 }

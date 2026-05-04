@@ -120,9 +120,9 @@ export default function HeroFlowDiagram() {
           <FileCheck size={16} strokeWidth={1.8} />
         </div>
         <div className="artifact-content">
-          <span className="artifact-title">Signed Receipt</span>
+          <span className="artifact-title">Signed Record</span>
           <span className="artifact-id">rec_7f3a</span>
-          <span className="artifact-meta">Ed25519 &middot; peac-receipt/0.1</span>
+          <span className="artifact-meta">Ed25519 &middot; interaction-record+jwt</span>
         </div>
       </div>
 
