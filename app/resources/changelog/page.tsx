@@ -46,7 +46,7 @@ export default function Changelog() {
                   marginBottom: 'var(--space-6)',
                 }}
               >
-                Stable: <strong>{FACTS.stableVersion}</strong>
+                Latest release: <strong>{FACTS.currentVersion}</strong> ({FACTS.currentReleaseDate})
                 <br />
                 Current wire format: <strong>{FACTS.stableWireFormat}</strong> | Legacy: <strong>{FACTS.legacyWireFormat}</strong> (frozen)
                 <br />

@@ -57,7 +57,7 @@ PEAC-Accept: x402, invoice
 
 // Decoded payload
 {
-  "typ": "peac-receipt/0.1",
+  "typ": "interaction-record+jwt",
   "iss": "api.example.com",
   "iat": 1737290800,
   "decision": "allow"

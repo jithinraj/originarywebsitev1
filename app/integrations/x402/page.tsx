@@ -197,9 +197,9 @@ Cache-Control: no-store
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
               A compliant 402 response with a JSON payment hint:
             </p>
-            <div style={{ position: 'relative', borderRadius: 'var(--radius-lg)', background: 'var(--code-bg)', padding: 'var(--space-4)', overflow: 'auto' }}>
-              <pre style={{ color: 'white', fontSize: 'var(--text-sm)', margin: 0, whiteSpace: 'pre', overflowX: 'auto' }}>
-                <code>{minimal}</code>
+            <div style={{ position: 'relative', borderRadius: 'var(--radius-lg)', background: 'var(--code-bg)', padding: 'var(--space-4)', overflow: 'auto', maxWidth: '100%' }}>
+              <pre style={{ color: 'white', fontSize: 'var(--text-sm)', margin: 0, whiteSpace: 'pre-wrap', overflowWrap: 'anywhere', wordBreak: 'break-word', maxWidth: '100%' }}>
+                <code style={{ display: 'block', maxWidth: '100%', whiteSpace: 'inherit' }}>{minimal}</code>
               </pre>
             </div>
           </div>
@@ -234,7 +234,7 @@ Cache-Control: no-store
                   → Cloudflare Workers (OpenClaw)
                 </Link>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)', marginLeft: 'var(--space-4)' }}>
-                  One-call activate() setup via @peac/rails-openclaw with key generation
+                  One-call activate() setup via @peac/adapter-openclaw with key generation
                 </p>
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>

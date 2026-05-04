@@ -3,6 +3,7 @@
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
 import { ExternalLink, GitBranch, Package, Tag } from 'lucide-react'
+import { FACTS } from '@/lib/facts'
 
 export default function ChangelogPage() {
   return (
@@ -43,7 +44,7 @@ export default function ChangelogPage() {
             >
               <div style={{ display: 'grid', gap: 'var(--space-4)' }}>
                 {[
-                  { icon: <Tag size={18} />, label: 'Stable version', value: 'v0.12.11' },
+                  { icon: <Tag size={18} />, label: 'Latest release', value: FACTS.currentVersion },
                   { icon: <GitBranch size={18} />, label: 'Current wire format', value: 'interaction-record+jwt (stable)' },
                   { icon: <GitBranch size={18} />, label: 'Legacy wire format', value: 'peac-receipt/0.1 (frozen)' },
                   { icon: <Package size={18} />, label: 'License', value: 'Apache-2.0' },
@@ -95,6 +96,36 @@ export default function ChangelogPage() {
               </h2>
 
               {[
+                {
+                  version: 'v0.14.0',
+                  date: 'May 3, 2026',
+                  items: [
+                    'Bounded Validation Gate: Wire 0.2 issuance and local verification route through the bounded validation gate',
+                    'Active rollback path documented for operators',
+                    'Published across 36 npm packages',
+                    '9,214 tests across 399 files, 224 conformance IDs, 102 build targets',
+                  ],
+                },
+                {
+                  version: 'v0.13.4',
+                  date: 'May 2, 2026',
+                  items: [
+                    'Validation Readiness and Runtime Invariants release',
+                    'Rollback matrix promoted into the publish gate across Node 22 and Node 24 LTS',
+                    'Internal validation parity coverage expanded for bounded-validator shadow mode',
+                    '36 active npm packages',
+                  ],
+                },
+                {
+                  version: 'v0.13.0',
+                  date: 'Apr 25, 2026',
+                  items: [
+                    'Public Surface Stabilization release',
+                    'Records-first wording across active surfaces; receipt terminology retained for legacy and compatibility anchors',
+                    '@peac/core and @peac/pref archived; @peac/protocol remains the default implementation path',
+                    '37 packages, 7,672 tests, 224 conformance IDs, 99 build targets',
+                  ],
+                },
                 {
                   version: 'v0.12.11',
                   date: 'Apr 15, 2026',

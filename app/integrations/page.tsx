@@ -3,16 +3,16 @@ import Link from 'next/link'
 import Script from 'next/script'
 import NavigationHeader from '@/components/NavigationHeader'
 import Footer from '@/components/Footer'
-import { FileCode, Zap, MessageSquare, Settings, Brain, FileText } from 'lucide-react'
+import { Activity, Bot, Brain, CreditCard, FileCode, FileText, GitBranch, MessageSquare, PackageCheck, Settings, ShieldCheck, Zap } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Integrations | Originary',
-  description: 'See how Originary and PEAC connect to MCP, A2A, x402, ACP, AIPREF, and related standards for signed records.',
-  keywords: 'MCP integration, A2A integration, x402, AIPREF, ACP, PEAC protocol, agent verification integrations, MCP security, signed records',
+  description: 'See how Originary and PEAC v0.14.0 connect to MCP, A2A, x402, paymentauth/MPP, ACP, OpenClaw, managed agents, and supply-chain evidence.',
+  keywords: 'MCP integration, A2A integration, x402, paymentauth, MPP, ACP, OpenClaw, managed agents, runtime governance, PEAC protocol, signed records',
   robots: 'index,follow',
   openGraph: {
     title: 'Integrations | Originary',
-    description: 'See how Originary and PEAC connect to MCP, A2A, x402, ACP, AIPREF, and related standards for signed records.',
+    description: 'See how Originary and PEAC v0.14.0 connect to MCP, A2A, x402, paymentauth/MPP, ACP, OpenClaw, managed agents, and supply-chain evidence.',
     url: '/integrations',
     siteName: 'Originary',
     type: 'website',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Integrations | Originary',
-    description: 'See how Originary and PEAC connect to MCP, A2A, x402, ACP, AIPREF, and related standards for signed records.',
+    description: 'See how Originary and PEAC v0.14.0 connect to MCP, A2A, x402, paymentauth/MPP, ACP, OpenClaw, managed agents, and supply-chain evidence.',
     images: ['/og'],
   },
 }
@@ -33,7 +33,7 @@ const integrations = [
   {
     id: 'x402',
     title: 'x402 (HTTP 402)',
-    description: 'Priced API access with signed records. Use HTTP 402 or x402-style challenge-and-payment flows, then return a signed record that another party can verify. Relevant for priced APIs, automated payments, machine payments, and agentic commerce workflows.',
+    description: 'Priced API access with signed records. PEAC v0.14.0 reads x402 v1 and v2 payment responses, maps offer and receipt evidence, and writes PEAC-Receipt as the verifiable record carrier.',
     href: '/integrations/x402/',
     icon: Zap,
     status: 'available' as const,
@@ -41,9 +41,20 @@ const integrations = [
     borderColor: 'var(--accent-brand-muted)',
   },
   {
+    id: 'paymentauth-mpp',
+    title: 'paymentauth / MPP',
+    description: 'HTTP Payment Authentication and MPP payment-attempt or settlement flows mapped into PEAC evidence. Use it when paymentauth challenges, credentials, receipts, and PEAC records must coexist.',
+    href: 'https://github.com/peacprotocol/peac/tree/main/integrator-kits/paymentauth',
+    icon: CreditCard,
+    status: 'available' as const,
+    color: 'var(--accent-brand-subtle)',
+    borderColor: 'var(--accent-brand-muted)',
+    external: true,
+  },
+  {
     id: 'a2a',
     title: 'Agent-to-Agent (A2A)',
-    description: 'Carry signed interaction records through A2A metadata so another party can verify authorization and policy handling across agent hops and delegated workflows.',
+    description: 'Carry signed interaction records through A2A v1.0.0 metadata so another party can verify authorization and policy handling across agent hops and delegated workflows.',
     href: '/integrations/a2a/',
     icon: MessageSquare,
     status: 'available' as const,
@@ -53,7 +64,7 @@ const integrations = [
   {
     id: 'mcp',
     title: 'MCP Server',
-    description: 'Verification, inspection, and issuance tools for MCP workflows, tool calls, and editor integrations. Local verification remains straightforward for developers and evaluators.',
+    description: 'Five MCP tools for verify, inspect, decode, issue, and bundle. PEAC records can travel through MCP _meta while remaining independently verifiable.',
     href: '/integrations/mcp/',
     icon: FileCode,
     status: 'available' as const,
@@ -73,12 +84,56 @@ const integrations = [
   {
     id: 'acp',
     title: 'Agentic Commerce Protocol (ACP)',
-    description: 'Structured commerce and discovery flows can emit signed records for downstream review and verification.',
+    description: 'ACP delegated commerce sessions mapped into access, session, payment-observation, and capability evidence. ACP state is preserved without treating session evidence as payment finality.',
     href: '/integrations/acp/',
     icon: Settings,
-    status: 'draft' as const,
-    color: 'var(--accent-tertiary-subtle)',
-    borderColor: 'var(--accent-tertiary-muted)',
+    status: 'available' as const,
+    color: 'var(--accent-brand-subtle)',
+    borderColor: 'var(--accent-brand-muted)',
+  },
+  {
+    id: 'managed-agents',
+    title: 'Managed agents',
+    description: 'Managed-agent evidence across session, task, tool-use, MCP-call, permission, and outcome event families. Runtime governance adds observations from managed agent platforms.',
+    href: 'https://github.com/peacprotocol/peac/tree/main/packages/adapters/managed-agents',
+    icon: Bot,
+    status: 'available' as const,
+    color: 'var(--accent-brand-subtle)',
+    borderColor: 'var(--accent-brand-muted)',
+    external: true,
+  },
+  {
+    id: 'openclaw',
+    title: 'OpenClaw',
+    description: 'Adapter support for OpenClaw tool calls with a low-latency capture path and background receipt emitter. Inputs and outputs are hashed by default unless explicitly allowlisted.',
+    href: 'https://github.com/peacprotocol/peac/tree/main/packages/adapters/openclaw',
+    icon: ShieldCheck,
+    status: 'available' as const,
+    color: 'var(--accent-brand-subtle)',
+    borderColor: 'var(--accent-brand-muted)',
+    external: true,
+  },
+  {
+    id: 'x402-adapters',
+    title: 'x402 vertical adapters',
+    description: 'Daydreams inference routing, Fluora MCP marketplace calls, and Pinata private IPFS objects can all map x402 commerce evidence into PEAC records.',
+    href: 'https://github.com/peacprotocol/peac/tree/main/packages/adapters/x402',
+    icon: GitBranch,
+    status: 'available' as const,
+    color: 'var(--accent-brand-subtle)',
+    borderColor: 'var(--accent-brand-muted)',
+    external: true,
+  },
+  {
+    id: 'supply-chain',
+    title: 'in-toto / SLSA',
+    description: 'Supply-chain mappings connect PEAC signed records to provenance and attestation workflows without replacing existing build or release systems.',
+    href: 'https://github.com/peacprotocol/peac/tree/main/packages/mappings',
+    icon: PackageCheck,
+    status: 'available' as const,
+    color: 'var(--accent-brand-subtle)',
+    borderColor: 'var(--accent-brand-muted)',
+    external: true,
   },
   {
     id: 'peac',
@@ -100,12 +155,32 @@ const statusBadges = {
   research: { label: 'Planned', color: 'var(--text-tertiary)' },
 }
 
+const surfaceGroups = [
+  {
+    title: 'Core and carriers',
+    items: ['@peac/protocol', '@peac/crypto', '@peac/schema', '@peac/mappings-mcp', '@peac/mappings-a2a', '@peac/mcp-server'],
+  },
+  {
+    title: 'Commerce',
+    items: ['@peac/adapter-x402', '@peac/mappings-paymentauth', 'MPP mappers', '@peac/mappings-acp', '@peac/rails-stripe', '@peac/pay402'],
+  },
+  {
+    title: 'Agent runtimes',
+    items: ['@peac/adapter-openclaw', '@peac/adapter-managed-agents', '@peac/adapter-runtime-governance', '@peac/adapter-openai-compatible'],
+  },
+  {
+    title: 'Evidence exports',
+    items: ['@peac/mappings-intoto', '@peac/mappings-slsa', '@peac/telemetry-otel', '@peac/transport-grpc'],
+  },
+]
+
 export default function IntegrationsPage() {
+  const visibleStatuses = Array.from(new Set(integrations.map((integration) => integration.status)))
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Originary Integrations | Agentic Web Standards',
-    description: 'Originary integrations for agentic web standards and agent verification standards including HTTP 402, x402, ACP, AIPREF, MCP, and A2A.',
+    description: 'Originary integrations for PEAC v0.14.0 surfaces including MCP, A2A, x402, paymentauth/MPP, ACP, OpenClaw, managed agents, and supply-chain mappings.',
     itemListElement: integrations.map((integration, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -130,10 +205,10 @@ export default function IntegrationsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <NavigationHeader />
-      <main id="main-content" className="container" style={{ paddingTop: '80px', marginBottom: 'var(--space-32)' }}>
-        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+      <main id="main-content" className="integrations-page" style={{ marginBottom: 'var(--space-32)' }}>
+        <div className="container integrations-page-inner" style={{ maxWidth: '1000px', margin: '0 auto' }}>
           {/* Breadcrumbs */}
-          <nav aria-label="Breadcrumb" style={{ marginBottom: 'var(--space-8)' }}>
+          <nav aria-label="Breadcrumb" className="integrations-breadcrumb" style={{ marginBottom: 'var(--space-8)' }}>
             <ol style={{ display: 'flex', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', listStyle: 'none', padding: 0, margin: 0 }}>
               <li>
                 <Link href="/" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
@@ -188,7 +263,7 @@ export default function IntegrationsPage() {
             marginRight: 'auto',
             lineHeight: 1.6,
           }}>
-            How Originary and PEAC fit with MCP, A2A, x402, ACP, AIPREF, and related standards.
+            How Originary and PEAC v0.14.0 fit with MCP, A2A, x402, paymentauth/MPP, ACP, AIPREF, OpenClaw, managed agents, and supply-chain evidence.
           </p>
 
           <p style={{
@@ -201,7 +276,7 @@ export default function IntegrationsPage() {
             marginRight: 'auto',
             lineHeight: 1.6,
           }}>
-            Originary integrates with the systems teams already use. PEAC stays protocol-neutral while Originary packages the operational path for signed records and verification workflows.
+            Originary integrates with the systems teams already use. PEAC stays protocol-neutral while Originary packages the operational path for signed records, carrier mappings, and verification workflows.
           </p>
 
           <p style={{
@@ -214,7 +289,7 @@ export default function IntegrationsPage() {
             marginRight: 'auto',
             lineHeight: 1.6,
           }}>
-            This page is for teams evaluating how signed records fit alongside protocols they already use — from MCP and A2A to x402, priced APIs, automated payments, and agentic commerce workflows.
+            This page is for teams evaluating how signed records fit alongside protocols they already use — from MCP and A2A to x402, paymentauth/MPP, priced APIs, automated payments, managed-agent runtimes, and agentic commerce workflows.
           </p>
 
           {/* Status Legend */}
@@ -225,7 +300,9 @@ export default function IntegrationsPage() {
             marginBottom: 'var(--space-12)',
             flexWrap: 'wrap',
           }}>
-            {Object.entries(statusBadges).map(([key, { label, color }]) => (
+            {visibleStatuses.map((key) => {
+              const { label, color } = statusBadges[key]
+              return (
               <div key={key} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
                 <div style={{
                   width: '8px',
@@ -237,7 +314,8 @@ export default function IntegrationsPage() {
                   {label}
                 </span>
               </div>
-            ))}
+              )
+            })}
           </div>
 
           {/* Integration Cards Grid */}
@@ -246,6 +324,7 @@ export default function IntegrationsPage() {
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: 'var(--space-6)',
             marginBottom: 'var(--space-12)',
+            minWidth: 0,
           }}>
             {integrations.map((integration) => {
               const Icon = integration.icon
@@ -264,6 +343,7 @@ export default function IntegrationsPage() {
                     display: 'flex',
                     flexDirection: 'column',
                     position: 'relative',
+                    minWidth: 0,
                     transition: 'all 0.2s ease',
                     cursor: 'pointer',
                   }}
@@ -304,6 +384,7 @@ export default function IntegrationsPage() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginBottom: 'var(--space-4)',
+                    flex: '0 0 auto',
                   }}>
                     <Icon size={24} style={{ color: status.color }} />
                   </div>
@@ -314,6 +395,8 @@ export default function IntegrationsPage() {
                     fontWeight: 700,
                     marginBottom: 'var(--space-2)',
                     color: 'var(--text-primary)',
+                    paddingRight: '96px',
+                    lineHeight: 1.2,
                   }}>
                     {integration.title}
                     {integration.external && (
@@ -327,12 +410,56 @@ export default function IntegrationsPage() {
                     color: 'var(--text-secondary)',
                     lineHeight: 1.6,
                     flex: 1,
+                    overflowWrap: 'anywhere',
                   }}>
                     {integration.description}
                   </p>
                 </CardComponent>
               )
             })}
+          </div>
+
+          <div className="card" style={{
+            marginBottom: 'var(--space-12)',
+            background: 'var(--surface-elevated)',
+            border: '1px solid var(--border-default)',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-5)' }}>
+              <Activity size={22} style={{ color: 'var(--accent-brand)' }} />
+              <div>
+                <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
+                  v0.14.0 surface map
+                </h2>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                  Current local PEAC source exposes 36 published packages across core verification, commerce mappings, agent runtimes, and evidence export surfaces.
+                </p>
+              </div>
+            </div>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
+              gap: 'var(--space-4)',
+            }}>
+              {surfaceGroups.map((group) => (
+                <div key={group.title} style={{
+                  border: '1px solid var(--border-default)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: 'var(--space-4)',
+                  background: 'var(--surface-subtle)',
+                }}>
+                  <h3 style={{ fontSize: 'var(--text-sm)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-3)' }}>
+                    {group.title}
+                  </h3>
+                  <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 'var(--space-2)' }}>
+                    {group.items.map((item) => (
+                      <li key={item} style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', overflowWrap: 'anywhere' }}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Bottom CTA */}
@@ -367,6 +494,29 @@ export default function IntegrationsPage() {
         </div>
       </main>
       <Footer />
+      <style>{`
+        @media (max-width: 767px) {
+          .site-root > main.integrations-page > .integrations-page-inner:first-child {
+            padding-top: 104px !important;
+          }
+
+          .integrations-breadcrumb {
+            display: none;
+          }
+        }
+
+        @media (min-width: 768px) {
+          .site-root > main.integrations-page > .integrations-page-inner:first-child {
+            padding-top: 112px !important;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .integrations-page [class~="card"] h2 {
+            padding-right: 0 !important;
+          }
+        }
+      `}</style>
     </>
   )
 }

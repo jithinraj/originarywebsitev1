@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import Script from 'next/script'
 import DownloadsServer from './DownloadsServer'
 import DownloadCardPEAC from '@/components/DownloadCardPEAC'
+import { FACTS } from '@/lib/facts'
 
 const softwareJsonLd = {
   '@context': 'https://schema.org',
@@ -26,7 +27,7 @@ const peacSourceCodeJsonLd = {
   codeRepository: 'https://github.com/peacprotocol/peac',
   license: 'https://www.apache.org/licenses/LICENSE-2.0',
   programmingLanguage: 'TypeScript',
-  version: '0.12.11'
+  version: FACTS.currentVersion.slice(1)
 }
 
 export const metadata: Metadata = {
@@ -112,7 +113,7 @@ export default function Downloads() {
               }}>
                 <span><strong>Publisher:</strong> Originary (Poem, Inc.)</span>
                 <span>•</span>
-                <span><strong>Stable:</strong> v0.12.11</span>
+                <span><strong>Latest:</strong> {FACTS.currentVersion}</span>
                 <span>•</span>
                 <span><strong>License:</strong> Apache 2.0</span>
                 <span>•</span>
@@ -159,7 +160,7 @@ export default function Downloads() {
                     GitHub
                   </a>
                   <a
-                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.12.11.zip"
+                    href={`https://github.com/peacprotocol/peac/archive/refs/tags/${FACTS.currentVersion}.zip`}
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -177,7 +178,7 @@ export default function Downloads() {
                     Source (.zip)
                   </a>
                   <a
-                    href="https://github.com/peacprotocol/peac/archive/refs/tags/v0.12.11.tar.gz"
+                    href={`https://github.com/peacprotocol/peac/archive/refs/tags/${FACTS.currentVersion}.tar.gz`}
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
@@ -238,7 +239,7 @@ export default function Downloads() {
                   gap: 'var(--space-2)'
                 }}>
                   <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i -g @peac/cli</code>
-                  <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i @peac/mcp-server @peac/capture-node @peac/rails-openclaw @peac/rails-stripe</code>
+                  <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i @peac/mcp-server @peac/capture-node @peac/adapter-openclaw @peac/rails-stripe</code>
                 </div>
               </div>
 

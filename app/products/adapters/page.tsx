@@ -463,7 +463,7 @@ export default function Adapters() {
                   }}>READY</span>
                 </div>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  One-call activate() setup for Cloudflare Workers with @peac/rails-openclaw. Includes generateSigningKey() and peac-keygen CLI for key management.
+                  One-call activate() setup for Cloudflare Workers with @peac/adapter-openclaw. Includes generateSigningKey() and peac-keygen CLI for key management.
                 </p>
                 <div style={{
                   display: 'grid',

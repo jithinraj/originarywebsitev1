@@ -14,6 +14,7 @@ import {
   icons
 } from './AnimatedComponents'
 import StripeButton from './StripeButton'
+import { FACTS } from '@/lib/facts'
 
 const {
   Check,
@@ -238,17 +239,17 @@ export default function PricingPage() {
             <span className="kicker">PRICING</span>
             <h1 className="display">Scale with confidence</h1>
             <p className="sub max-w-4xl mx-auto">
-              Clear pricing for PEAC protocol implementation and receipt verification.
-              Simple tiers with transparent costs and dedicated support.
+              Clear pricing for PEAC v0.14.0 implementation, signed-record verification,
+              MCP tooling, and enterprise evidence workflows.
             </p>
 
             <div className="hero-metrics grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="metric text-center">
-                <span className="metric-value text-4xl font-bold text-gray-900">20</span>
+                <span className="metric-value text-4xl font-bold text-gray-900">{FACTS.publishedPackageCount}</span>
                 <span className="metric-label block text-gray-600 mt-2">npm packages</span>
               </div>
               <div className="metric text-center">
-                <span className="metric-value text-4xl font-bold text-gray-900">3,500+</span>
+                <span className="metric-value text-4xl font-bold text-gray-900">{FACTS.testsCount.toLocaleString()}</span>
                 <span className="metric-label block text-gray-600 mt-2">Tests passing</span>
               </div>
               <div className="metric text-center">
@@ -306,7 +307,7 @@ export default function PricingPage() {
         <div className="container">
           <FadeIn className="pricing-header text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Plans that scale with your growth</h2>
-            <p className="text-xl text-gray-600 mb-8">From startup to enterprise, we have the right plan for your AI agent infrastructure</p>
+            <p className="text-xl text-gray-600 mb-8">From local verification to enterprise rollout, pick the support level that fits your signed-record workflow</p>
             <div className="pricing-banner">
               <p>
                 <strong>🚀 Simple Getting Started:</strong> Start with OSS or try Cloud free for 14 days.
@@ -476,13 +477,13 @@ export default function PricingPage() {
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
                     <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
-                      Native HTTP 402 payment rails (x402, Stripe)
+                      Native HTTP 402 evidence mapping for x402, paymentauth/MPP, and Stripe
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
                     <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
-                      Cryptographic receipt generation & verification
+                      Cryptographic signed-record generation and verification
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start' }}>
@@ -546,7 +547,7 @@ export default function PricingPage() {
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
                     <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
-                      Complements Stripe and x402 payments
+                      Complements Stripe, x402, paymentauth/MPP, and other payment rails
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
@@ -558,7 +559,7 @@ export default function PricingPage() {
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>
                     <Check size={16} style={{ color: 'var(--accent-success)', marginRight: '8px', marginTop: '2px', flexShrink: 0 }} />
                     <span style={{ fontSize: '0.9rem', lineHeight: 1.5 }}>
-                      Cryptographic proof of transaction
+                      Signed evidence of interaction, policy, and payment context
                     </span>
                   </li>
                   <li style={{ display: 'flex', alignItems: 'flex-start' }}>
@@ -631,12 +632,12 @@ export default function PricingPage() {
                 <p>Get enterprise-grade infrastructure with dedicated performance monitoring, security, and support.</p>
                 <div className="cta-stats">
                   <div className="stat">
-                    <span className="stat-value">28</span>
+                    <span className="stat-value">{FACTS.publishedPackageCount}</span>
                     <span className="stat-label">Published packages</span>
                   </div>
                   <div className="stat">
-                    <span className="stat-value">v0.11.3</span>
-                    <span className="stat-label">Stable release</span>
+                    <span className="stat-value">{FACTS.currentVersion}</span>
+                    <span className="stat-label">Latest release</span>
                   </div>
                   <div className="stat">
                     <span className="stat-value">Apache-2.0</span>

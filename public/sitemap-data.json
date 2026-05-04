@@ -13,15 +13,15 @@
   },
   {
     "url": "https://www.originary.xyz/peac",
-    "lastModified": "2026-03-26"
+    "lastModified": "2026-05-04"
   },
   {
     "url": "https://www.originary.xyz/developers",
-    "lastModified": "2026-03-26"
+    "lastModified": "2026-05-04"
   },
   {
     "url": "https://www.originary.xyz/pricing",
-    "lastModified": "2026-03-26"
+    "lastModified": "2026-05-04"
   },
   {
     "url": "https://www.originary.xyz/trace",
@@ -42,11 +42,11 @@
 
   {
     "url": "https://www.originary.xyz/products/adapters",
-    "lastModified": "2026-03-26"
+    "lastModified": "2026-05-04"
   },
   {
     "url": "https://www.originary.xyz/integrations",
-    "lastModified": "2026-03-26"
+    "lastModified": "2026-05-04"
   },
   {
     "url": "https://www.originary.xyz/integrations/mcp",
@@ -111,15 +111,15 @@
   },
   {
     "url": "https://www.originary.xyz/downloads",
-    "lastModified": "2026-03-26"
+    "lastModified": "2026-05-04"
   },
   {
     "url": "https://www.originary.xyz/demo",
-    "lastModified": "2026-03-20"
+    "lastModified": "2026-05-04"
   },
   {
     "url": "https://www.originary.xyz/declare",
-    "lastModified": "2026-03-20"
+    "lastModified": "2026-05-04"
   },
   {
     "url": "https://www.originary.xyz/receipts",
@@ -195,7 +195,7 @@
   },
   {
     "url": "https://www.originary.xyz/about",
-    "lastModified": "2026-03-20"
+    "lastModified": "2026-05-04"
   },
   {
     "url": "https://www.originary.xyz/contact",
@@ -211,7 +211,15 @@
   },
   {
     "url": "https://www.originary.xyz/changelog",
-    "lastModified": "2026-03-26"
+    "lastModified": "2026-05-04"
+  },
+  {
+    "url": "https://www.originary.xyz/llms.txt",
+    "lastModified": "2026-05-04"
+  },
+  {
+    "url": "https://www.originary.xyz/status",
+    "lastModified": "2026-05-04"
   },
   {
     "url": "https://www.originary.xyz/system-of-record",
