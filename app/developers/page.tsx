@@ -67,7 +67,7 @@ export default function Developers() {
                 icon={<Shield size={24} />}
                 title="I need to verify a signed record"
                 description="Validate an interaction record signature offline using the issuer's public key. No network call required."
-                steps={['Extract the PEAC-Receipt header', 'Fetch the issuer JWKS (once)', 'Call verifyLocal() with the public key']}
+                steps={['Extract the signed record from the PEAC-Receipt header or body carrier', 'Fetch the issuer JWKS (once)', 'Call verifyLocal() with the public key']}
                 href="/verify"
                 code={`import { verifyLocal } from '@peac/protocol'`}
               />

@@ -120,7 +120,7 @@ const deploymentModes = [
     description: 'Originary operates the verification layer. You integrate via SDK or gateway. Evidence exports and key lifecycle included.',
     features: [
       'Originary operates the stack',
-      'KMS-backed attested signing keys',
+      'KMS-backed signing-key operations where required',
       'Pre-packaged evidence bundles',
       'Monitoring and alerting',
       'Full SLA and priority support',

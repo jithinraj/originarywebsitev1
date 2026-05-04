@@ -332,7 +332,7 @@ export default function AboutPage() {
                   marginBottom: 'var(--space-3)',
                 }}
               >
-                Evidence Layer, Not Another Platform
+                Records layer, not another platform.
               </h2>
               <p
                 style={{
@@ -360,7 +360,7 @@ export default function AboutPage() {
               {[
                 { label: 'Not a payment protocol', detail: 'Settlement adapters (Stripe, x402, card networks) plug in; PEAC captures the evidence.' },
                 { label: 'Not an identity system', detail: 'PEAC verifies key control (Ed25519); the identity layer above decides what keys mean.' },
-                { label: 'Not an AI framework', detail: 'PEAC works with any agent stack. Receipts travel alongside tool calls, not inside them.' },
+                { label: 'Not an AI framework', detail: 'PEAC works with any agent stack. Signed records travel with tool calls, API responses, gateway decisions, and audit exports.' },
               ].map((item) => (
                 <div
                   key={item.label}

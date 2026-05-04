@@ -336,7 +336,7 @@ export default function PeacPage() {
         <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
           <div className="container">
             <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, textAlign: 'center', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-              Where PEAC works today
+              Where signed records attach
             </h2>
             <p style={{ textAlign: 'center', fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', marginBottom: 'var(--space-16)', maxWidth: '600px', margin: '0 auto var(--space-16) auto' }}>
               Protocol capability map for APIs, MCP, A2A, commerce-related workflows, managed-agent runtimes, and other verifiable automated interactions

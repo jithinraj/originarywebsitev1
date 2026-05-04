@@ -33,8 +33,16 @@ export const metadata: Metadata = {
 // This array carries additional detail (icons, features, npm) that the registry does not.
 const primaryProducts = [
   {
-    icon: Shield,
-    title: 'Originary Verify',
+    icon: Search,
+    title: 'Proof Check',
+    description: 'Diagnose how verifiable an artifact is, then decide what to fix next.',
+    features: ['Artifact diagnostics', 'Verification readiness', 'Portable-report framing', 'Fast workflow triage'],
+    href: '/agent-proof-check',
+    status: 'available' as const,
+  },
+  {
+    icon: Search,
+    title: 'Agent Auditor',
     description: 'Production verification, exports, and deployment support for teams that need signed records in real workflows. Hosted or self-hosted.',
     features: ['Ed25519 signature verification', 'Offline verification', 'Hosted or self-hosted deployment', 'Enterprise evidence exports'],
     href: '/products/verify',
@@ -42,12 +50,12 @@ const primaryProducts = [
     status: 'available' as const,
   },
   {
-    icon: Search,
-    title: 'Agent Auditor',
-    description: 'Open and verify signed interaction records locally in the browser or CLI. No outbound verification required.',
-    features: ['Visual record inspector', 'Signature verification', 'Browser and CLI', 'Offline capable'],
-    href: '/agent-auditor',
-    npm: '@originaryx/agent-auditor',
+    icon: Shield,
+    title: 'Originary Verify',
+    description: 'Production verification, exports, and deployment support for teams that need signed records in real workflows. Hosted or self-hosted.',
+    features: ['Ed25519 signature verification', 'Offline verification', 'Hosted or self-hosted deployment', 'Enterprise evidence exports'],
+    href: '/products/verify',
+    npm: '@peac/protocol',
     status: 'available' as const,
   },
   {
@@ -106,10 +114,10 @@ export default function ProductsPage() {
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
               <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 'var(--space-4)' }}>PRODUCTS</div>
               <h1 style={{ marginBottom: 'var(--space-6)', color: 'var(--text-primary)', fontWeight: 700, fontSize: 'clamp(2rem, 4.5vw, 3.5rem)' }}>
-                Products for signed records
+                Start with the workflow that needs proof.
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-                Originary Verify operationalizes signed records in production. Agent Auditor inspects them locally. Gateway 402 adds enforcement at the edge. MCP Server brings verification into developer workflows for APIs, MCP servers, and agent runtimes.
+                Originary products help teams issue, inspect, verify, and export signed records from the systems they already run. Start with one workflow: a disputed API call, MCP tool action, gateway decision, payment event, or agent handoff.
               </p>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-tertiary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
                 Built for enterprise AI platform teams, API publishers, MCP developers, priced API operators, and security-conscious teams that need proof beyond local logs.

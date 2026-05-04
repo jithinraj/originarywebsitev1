@@ -141,7 +141,7 @@ export default function Gateway402() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--text-primary)'
               }}>
-                HTTP 402 gateway for <span className="text-gradient">machine-payable APIs</span>
+                Paid API access with <span className="text-gradient">signed records</span>.
               </h1>
 
               <p style={{
@@ -152,7 +152,7 @@ export default function Gateway402() {
                 maxWidth: '900px',
                 margin: '0 auto var(--space-8) auto'
               }}>
-                Return payment-required challenges, verify payment proof, and issue signed records at the edge.
+                Add HTTP 402 or x402-style payment challenges to an API, then return a signed record of the access, terms, payment proof, and result.
               </p>
 
               <div style={{

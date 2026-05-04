@@ -86,7 +86,7 @@ export default function MCPPage() {
             marginBottom: 'var(--space-16)',
             lineHeight: 1.6
           }}>
-            Open-source MCP tool server for receipt verification, inspection, issuance, and bundling
+            Open-source MCP tool server for signed-record verification, inspection, issuance, and bundling
           </p>
 
           {/* Overview */}
@@ -96,7 +96,7 @@ export default function MCPPage() {
             </h2>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
               <code style={{ fontSize: 'var(--text-sm)', background: 'var(--surface-subtle)', padding: '2px 6px', borderRadius: 'var(--radius-sm)' }}>@peac/mcp-server</code> is
-              an open-source MCP tool server that exposes five tools for working with PEAC-Receipts. It ships as a standalone npm package and can be integrated into any MCP-compatible host (Claude Desktop, Cursor, custom agents).
+              an open-source MCP tool server that exposes five tools for working with PEAC signed interaction records. It ships as a standalone npm package and can be integrated into any MCP-compatible host (Claude Desktop, Cursor, custom agents).
             </p>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
               Three <strong>pure tools</strong> (verify, inspect, decode) require no signing keys and work entirely offline. Two <strong>privileged tools</strong> (issue, bundle) require an issuer signing key and are disabled by default and enabled only when an explicit capability token is provided.
@@ -207,7 +207,7 @@ export default function MCPPage() {
               <li>Cryptographic verification of receipt signatures and structure</li>
               <li>Evidence bundling for portable audit trails</li>
               <li>Compatible with any MCP host (Claude Desktop, Cursor, custom agents)</li>
-              <li>Open source under Apache 2.0</li>
+              <li>Open source under Apache-2.0</li>
             </ul>
           </div>
 

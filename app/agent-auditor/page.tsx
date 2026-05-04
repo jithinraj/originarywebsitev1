@@ -458,11 +458,11 @@ export default function AgentAuditorPage() {
                   marginBottom: 'var(--space-6)',
                 }}>
                   <div style={{ fontSize: 'var(--text-3xl)', marginBottom: 'var(--space-3)', opacity: 0.3 }}>↑</div>
-                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', margin: '0 0 var(--space-1)' }}>Drop a receipt or bundle here</p>
+                  <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', margin: '0 0 var(--space-1)' }}>Drop a signed record, JWS, JSON file, or bundle here</p>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)', margin: 0 }}>or click to browse (.jws, .json, .zip)</p>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-3)', marginBottom: 'var(--space-8)' }}>
-                  {['Valid Receipt', 'Invalid Receipt', 'Bundle'].map((label) => (
+                  {['Valid record', 'Invalid record', 'Bundle'].map((label) => (
                     <div key={label} style={{ padding: 'var(--space-4)', background: 'var(--surface-elevated)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-default)', textAlign: 'left' }}>
                       <span style={{ fontSize: 'var(--text-sm)', fontWeight: 500, color: 'var(--text-secondary)', display: 'block' }}>{label}</span>
                       <span style={{ fontSize: 'var(--text-xs)', color: 'var(--text-muted)', display: 'block', marginTop: 2 }}>Try a sample</span>

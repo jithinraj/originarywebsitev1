@@ -79,7 +79,7 @@ const originaryAdds = [
   'Issue records when automated actions happen.',
   'Verify records independently, including offline.',
   'Export records for disputes, audits, procurement, and incident review.',
-  'Optional policy enforcement when deployed at the gateway.',
+  'Gateway integrations that emit records from existing decisions.',
 ]
 
 const workflowChecklist = [
@@ -151,7 +151,7 @@ export function SinglePageHome() {
           <div className="hp-story-head">
             <div className="hp-story-head-copy">
               <StoryEyebrow>Problem</StoryEyebrow>
-              <h2 className="hp-story-title">Who called? What happened? Where&apos;s the proof?</h2>
+              <h2 className="hp-story-title">The action crossed companies. The proof did not.</h2>
             </div>
             <div className="hp-story-head-body">
               <p className="hp-story-text">
@@ -259,7 +259,7 @@ export function SinglePageHome() {
           <div className="hp-story-head hp-story-head-centered">
             <div className="hp-story-head-copy">
               <StoryEyebrow>Product</StoryEyebrow>
-              <h2 className="hp-story-title">Originary is the operating layer for signed records.</h2>
+              <h2 className="hp-story-title">Originary helps teams issue, verify, and export signed records.</h2>
               <p className="hp-story-text hp-story-text-centered">
                 PEAC defines the open standard. Originary helps teams run it in production.
               </p>
