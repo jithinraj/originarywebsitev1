@@ -212,7 +212,7 @@ export default function BlogPage() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--text-secondary)'
               }}>
-                Agent verification, evidence, and open infrastructure
+                Portable records for agents, APIs, and automated work
               </h2>
 
               <p style={{

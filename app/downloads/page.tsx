@@ -113,11 +113,11 @@ export default function Downloads() {
               }}>
                 <span><strong>Publisher:</strong> Originary (Poem, Inc.)</span>
                 <span>•</span>
-                <span><strong>Latest:</strong> {FACTS.currentVersion}</span>
+                <span><strong>Current PEAC release:</strong> {FACTS.currentVersion}</span>
                 <span>•</span>
-                <span><strong>License:</strong> Apache 2.0</span>
+                <span><strong>License:</strong> Apache-2.0</span>
                 <span>•</span>
-                <span><strong>Wire format:</strong> interaction-record+jwt (Wire 0.2)</span>
+                <span><strong>Current taught format:</strong> interaction-record+jwt</span>
               </div>
 
               <div style={{
@@ -239,7 +239,9 @@ export default function Downloads() {
                   gap: 'var(--space-2)'
                 }}>
                   <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i -g @peac/cli</code>
-                  <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i @peac/mcp-server @peac/capture-node @peac/adapter-openclaw @peac/rails-stripe</code>
+                  <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i @peac/protocol @peac/crypto @peac/schema
+npm i -g @peac/cli
+npm i @peac/mcp-server</code>
                 </div>
               </div>
 
@@ -268,7 +270,7 @@ export default function Downloads() {
                 borderTop: '1px solid var(--border-default)',
                 paddingTop: 'var(--space-6)'
               }}>
-                Sold by Poem, Inc., 1111B S Governors Ave, STE 40987, Dover, DE 19904, USA • +1 415 707 0402
+                Published by Poem, Inc. Contact: contact@originary.xyz.
               </div>
             </div>
           </div>

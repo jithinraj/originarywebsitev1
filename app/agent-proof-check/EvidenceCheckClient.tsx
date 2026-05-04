@@ -988,7 +988,7 @@ ${analysisResult.reason}`
                         gap: 'var(--space-1)',
                       }}
                     >
-                      <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Evidence strength</span>
+                      <span style={{ fontSize: 'var(--text-xs)', fontWeight: 700, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Verification strength</span>
                     </div>
                     <span
                       style={{
@@ -1467,7 +1467,7 @@ ${analysisResult.reason}`
                           marginBottom: 'var(--space-1)',
                         }}
                       >
-                        Evidence strength
+                        Verification strength
                       </div>
                       <div
                         className="text-4xl sm:text-5xl md:text-6xl"
@@ -2104,7 +2104,7 @@ ${analysisResult.reason}`
                 marginTop: 'var(--space-8)',
               }}
             >
-              Observability helps you understand. Evidence helps you prove.
+              Observability helps you understand. Signed records help another party verify.
             </p>
           </div>
         </section>

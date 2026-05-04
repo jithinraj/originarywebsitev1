@@ -121,10 +121,10 @@ export function Hero() {
             For AI agents, APIs, tools, and MCP servers
           </div>
 
-          <h1 className="hp-hero-verify-title">Prove what AI agents and APIs did.</h1>
+          <h1 className="hp-hero-verify-title">Proof that leaves the system that made it.</h1>
 
           <p className="hp-hero-verify-subtitle">
-            Originary turns API calls, MCP tool use, runtime decisions, and payment events into signed records another party can verify.
+            Originary helps teams create portable signed records for agent, API, MCP, gateway, A2A, and payment workflows, so another party can verify what happened without trusting your logs.
           </p>
 
           <p className="hp-hero-protocol-line">
@@ -137,7 +137,7 @@ export function Hero() {
 
           <div className="hp-hero-verify-actions hp-hero-verify-actions-dual">
             <Link href="#pilot" className="hp-hero-verify-cta">
-              Start a pilot
+              Start with one workflow
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
                 <path d="M7 17L17 7" />
                 <path d="M9 7H17V15" strokeLinejoin="round" />
@@ -153,7 +153,7 @@ export function Hero() {
 
           <div className="hp-hero-trust-strip" aria-label="Platform trust signals">
             <span>Offline verification</span>
-            <span>Signed records</span>
+            <span>Portable signed records</span>
             <span>Self-hostable</span>
             <span>
               <Link href="/downloads" className="hp-hero-download-link">Downloads</Link>

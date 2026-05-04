@@ -343,7 +343,7 @@ export default function EnterprisePage() {
             }}>
               <div style={{ display: 'grid', gap: 'var(--space-4)' }}>
                 {[
-                  { step: '1', title: 'At request time', detail: 'Originary evaluates the agent request, applies the booking policy, and returns a signed interaction record with the decision, policy hash, and timestamp.' },
+                  { step: '1', title: 'At request time', detail: 'Your existing gateway or runtime evaluates the request. Originary records the selected facts, policy digest, decision, and timestamp as a signed interaction record.' },
                   { step: '2', title: 'Record is stored', detail: 'The signed record is stored by both parties. It is portable: no vendor lock-in, no proprietary format.' },
                   { step: '3', title: 'Dispute arises', detail: 'The partner retrieves the record and verifies the Ed25519 signature using your published JWKS. No callback to Originary. No network required.' },
                   { step: '4', title: 'Evidence holds', detail: 'The record proves: who acted, what policy applied, what decision was made, and when. The policy hash confirms the terms were not changed after the fact.' },

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: {
     absolute: 'Originary | Interaction records for AI agents, MCP, & APIs'
   },
-  description: 'Originary turns API calls, MCP tool use, runtime decisions, and payment events into signed records another party can verify.',
+  description: 'Originary helps teams create portable signed records for agent, API, MCP, gateway, A2A, and payment workflows, so another party can verify what happened without trusting your logs.',
   keywords: [
     'portable signed records',
     'signed interaction records',
@@ -28,17 +28,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Originary | Interaction records for AI agents, MCP, & APIs',
-    description: 'Originary turns API calls, MCP tool use, runtime decisions, and payment events into signed records another party can verify.',
+    description: 'Originary helps teams create portable signed records for agent, API, MCP, gateway, A2A, and payment workflows, so another party can verify what happened without trusting your logs.',
     url: 'https://www.originary.xyz',
     type: 'website',
     locale: 'en_US',
-    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary: prove what AI agents and APIs did' }],
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary: proof that leaves the system that made it' }],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Originary | Interaction records for AI agents, MCP, & APIs',
-    description: 'Originary turns API calls, MCP tool use, runtime decisions, and payment events into signed records another party can verify.',
+    description: 'Originary helps teams create portable signed records for agent, API, MCP, gateway, A2A, and payment workflows, so another party can verify what happened without trusting your logs.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -70,7 +70,7 @@ const structuredData = {
       name: 'Originary',
       url: 'https://www.originary.xyz',
       publisher: { '@id': 'https://www.originary.xyz/#organization' },
-      description: 'Originary turns API calls, MCP tool use, runtime decisions, and payment events into signed records another party can verify.',
+      description: 'Originary helps teams create portable signed records for agent, API, MCP, gateway, A2A, and payment workflows, so another party can verify what happened without trusting your logs.',
     },
     {
       '@type': 'SoftwareApplication',

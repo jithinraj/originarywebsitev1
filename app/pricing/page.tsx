@@ -216,7 +216,7 @@ export default function PricingPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
                 {[
                   { feature: 'Guided integration and deployment support', detail: 'Architecture review, environment setup, and production rollout guidance' },
-                  { feature: 'KMS-backed attested signing keys', detail: 'AWS KMS, GCP Cloud KMS, Azure Key Vault, or HashiCorp Vault' },
+                  { feature: 'KMS-backed signing-key operations where required', detail: 'AWS KMS, GCP Cloud KMS, Azure Key Vault, or HashiCorp Vault' },
                   { feature: 'Compliance evidence bundles', detail: 'Pre-packaged verification artifacts for audits and procurement reviews' },
                   { feature: 'Dedicated engineering access', detail: 'Direct channel to the protocol engineering team for troubleshooting and feature requests' },
                   { feature: 'SLA and priority support', detail: 'Defined response windows and escalation paths for production issues' },

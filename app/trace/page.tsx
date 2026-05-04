@@ -324,7 +324,7 @@ export default function TracePage() {
                     fontSize: 'var(--text-sm)',
                     color: 'var(--text-tertiary)'
                   }}>
-                    Apache 2.0 License
+                    Apache-2.0 License
                   </div>
                 </div>
 
