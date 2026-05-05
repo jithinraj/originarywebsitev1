@@ -343,8 +343,7 @@ export default function AboutPage() {
                   lineHeight: 1.6,
                 }}
               >
-                PEAC sits between application logic and the compliance surface. It does not replace payment rails,
-                identity providers, or AI frameworks: it gives them a shared way to produce and verify interaction evidence.
+                PEAC sits beside the systems that decide, route, pay, observe, or govern. It gives them a shared way to produce records another party can verify.
               </p>
             </div>
 
@@ -358,7 +357,7 @@ export default function AboutPage() {
               }}
             >
               {[
-                { label: 'Not a payment protocol', detail: 'Settlement adapters (Stripe, x402, card networks) plug in; PEAC captures the evidence.' },
+                { label: 'Not a payment protocol', detail: 'Settlement adapters (Stripe, x402, card networks) plug in; PEAC records selected payment context.' },
                 { label: 'Not an identity system', detail: 'PEAC verifies key control (Ed25519); the identity layer above decides what keys mean.' },
                 { label: 'Not an AI framework', detail: 'PEAC works with any agent stack. Signed records travel with tool calls, API responses, gateway decisions, and audit exports.' },
               ].map((item) => (
@@ -675,9 +674,9 @@ export default function AboutPage() {
                 </h3>
                 <ul style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 2, paddingLeft: 'var(--space-5)', margin: 0 }}>
                   <li>Middleware, tools, and SDKs for production use</li>
-                  <li>Managed policy authoring and enforcement</li>
-                  <li>Evidence export, audit views, dashboards</li>
-                  <li>Gateway for edge enforcement and HTTP 402</li>
+                  <li>Production issuance and verification workflows</li>
+                  <li>Record exports and audit bundles</li>
+                  <li>Gateway-adjacent record issuance for HTTP 402 workflows</li>
                   <li>Support, SLAs, and compliance guidance</li>
                 </ul>
               </div>
@@ -753,8 +752,8 @@ export default function AboutPage() {
             <div className="principles-grid">
               {[
                 {
-                  name: 'Receipts-first',
-                  desc: 'Durable evidence that can be verified independently and used across audits, disputes, and partner workflows.',
+                  name: 'Records-first',
+                  desc: 'Durable records that can be verified independently and used across audits, disputes, and partner workflows.',
                   icon: <Receipt size={24} />,
                 },
                 {

@@ -232,7 +232,7 @@ export default function LearnPage() {
           <div className="container">
             <div style={{ maxWidth: '720px', margin: '0 auto' }}>
               <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                When an AI agent calls an API, scrapes a page, or uses a tool, both sides need proof of what occurred. Logs explain what your systems observed; they do not create portable proof another party can verify independently. These guides explain how signed records work, how policy and consent fit in, and how payment evidence layers on top.
+                When an AI agent calls an API, scrapes a page, or uses a tool, both sides need proof of what occurred. Logs explain what your systems observed; they do not create portable proof another party can verify independently. These guides explain how signed records work, how policy and consent fit in, and how payment context layers on top.
               </p>
             </div>
           </div>

@@ -7,14 +7,14 @@ import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
   title: 'Pricing | Originary',
-  description: 'Use PEAC free and self-hosted. Bring in Originary for managed verification, deployment support, enterprise exports, and procurement-ready trust surfaces.',
+  description: 'Use PEAC free and self-hosted. Bring in Originary for managed verification, signing operations, record exports, and one-workflow pilots.',
   keywords: ['Originary Verify pricing', 'AI agent verification pricing', 'open source verification', 'Apache-2.0', 'self-host', 'managed verification', 'MCP security'],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   alternates: { canonical: '/pricing' },
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Pricing | Originary',
-    description: 'Use PEAC free and self-hosted. Bring in Originary for managed verification, deployment support, enterprise exports, and procurement-ready trust surfaces.',
+    description: 'Use PEAC free and self-hosted. Bring in Originary for managed verification, signing operations, record exports, and one-workflow pilots.',
     url: '/pricing',
     type: 'website',
     siteName: 'Originary',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pricing | Originary',
-    description: 'Use PEAC free and self-hosted. Bring in Originary for managed verification, deployment support, enterprise exports, and procurement-ready trust surfaces.',
+    description: 'Use PEAC free and self-hosted. Bring in Originary for managed verification, signing operations, record exports, and one-workflow pilots.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -78,8 +78,18 @@ export default function PricingPage() {
                 lineHeight: 1.7,
                 marginBottom: 'var(--space-8)',
               }}>
-                Use PEAC free forever. Bring in Originary when you need managed verification, deployment support, enterprise exports, or procurement-ready trust surfaces.
+                Use PEAC free forever. Bring in Originary when another party already asked for proof your logs cannot provide.
               </p>
+
+              <div className="card" style={{ textAlign: 'left', padding: 'var(--space-6)', marginBottom: 'var(--space-8)' }}>
+                <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-3)' }}>Most teams start with one workflow.</h2>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
+                  A pilot usually means one API, MCP server, gateway, payment flow, or agent handoff; one signed-record profile; one verifier report or bundle; one integration review; and one rollout recommendation.
+                </p>
+                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
+                  You should contact us if another party already asked for proof your logs cannot provide.
+                </p>
+              </div>
 
               <a
                 href="https://github.com/peacprotocol/peac"
@@ -141,7 +151,7 @@ export default function PricingPage() {
                   'Self-managed signing keys',
                   'Offline verification — no Originary dependency',
                   'Ed25519 signature verification',
-                  'Evidence bundles for disputes',
+                  'Record bundles for disputes',
                   'A2A and HTTP carrier support',
                   'Community support via GitHub',
                 ].map((feature, idx) => (
@@ -177,7 +187,7 @@ export default function PricingPage() {
               <div style={{ padding: 'var(--space-6)', background: 'var(--surface-elevated)', border: '1px solid var(--border-default)', borderRadius: 'var(--radius-xl)', borderTop: '3px solid var(--accent-brand)' }}>
                 <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-3)' }}>What Originary adds</h3>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
-                  Originary Verify, deployment support, enterprise exports, rollout help, and procurement-friendly trust surfaces for teams that need production readiness.
+                  Originary Verify, deployment support, enterprise record exports, rollout help, and procurement-friendly trust surfaces for teams that need production readiness.
                 </p>
               </div>
             </div>
@@ -202,11 +212,11 @@ export default function PricingPage() {
                 </h2>
               </div>
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-6)' }}>
-                Managed verification, attested keys, and procurement-ready evidence
+                Managed verification, signing operations, and procurement-ready record exports
               </p>
 
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-                For organizations that need managed verification, attested key infrastructure, or procurement-ready evidence for audits and reviews. If you are evaluating Originary for a team deployment or need evidence artifacts for a procurement review, this is the right path.
+                For organizations that need managed verification, signing operations, or procurement-ready record exports for audits and reviews. If you are evaluating Originary for a team deployment or need record artifacts for a procurement review, this is the right path.
               </p>
 
               <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
@@ -217,7 +227,7 @@ export default function PricingPage() {
                 {[
                   { feature: 'Guided integration and deployment support', detail: 'Architecture review, environment setup, and production rollout guidance' },
                   { feature: 'KMS-backed signing-key operations where required', detail: 'AWS KMS, GCP Cloud KMS, Azure Key Vault, or HashiCorp Vault' },
-                  { feature: 'Compliance evidence bundles', detail: 'Pre-packaged verification artifacts for audits and procurement reviews' },
+                  { feature: 'Compliance record bundles', detail: 'Pre-packaged verification artifacts for audits and procurement reviews' },
                   { feature: 'Dedicated engineering access', detail: 'Direct channel to the protocol engineering team for troubleshooting and feature requests' },
                   { feature: 'SLA and priority support', detail: 'Defined response windows and escalation paths for production issues' },
                 ].map(({ feature, detail }, idx) => (

@@ -5,14 +5,14 @@ import Footer from "@/components/Footer";
 import { FileText, ArrowRight, Eye, ShieldCheck, Database, Fingerprint, List, CheckCircle2, AlertTriangle, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "AI Bot Detection: From Traffic to Evidence",
-  description: "AI bot detection beyond classifiers. Use metadata, fingerprints and PEAC receipts to turn AI traffic into verifiable evidence.",
-  keywords: "AI bot detection, AI traffic, metadata, model fingerprints, PEAC receipts, agent detection, AI crawlers, verifiable evidence",
+  title: "Agent and Crawler Identification: From Traffic to Evidence",
+  description: "agent and crawler identification beyond classifiers. Use metadata, fingerprints and PEAC receipts to turn AI traffic into verifiable evidence.",
+  keywords: "agent and crawler identification, AI traffic, metadata, model fingerprints, PEAC receipts, agent detection, AI crawlers, verifiable evidence",
   authors: [{ name: "Jithin Raj, Founder" }],
   alternates: { canonical: '/blog/ai-bot-detection' },
   openGraph: {
-    title: "AI Bot Detection: From Traffic to Evidence",
-    description: "AI bot detection beyond classifiers. Use metadata, fingerprints and PEAC receipts to turn AI traffic into verifiable evidence.",
+    title: "Agent and Crawler Identification: From Traffic to Evidence",
+    description: "agent and crawler identification beyond classifiers. Use metadata, fingerprints and PEAC receipts to turn AI traffic into verifiable evidence.",
     type: "article",
     url: "/blog/ai-bot-detection/",
     publishedTime: "2025-12-01",
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Bot Detection: From Traffic to Evidence",
-    description: "AI bot detection beyond classifiers. Turn AI traffic into verifiable evidence.",
+    title: "Agent and Crawler Identification: From Traffic to Evidence",
+    description: "agent and crawler identification beyond classifiers. Turn AI traffic into verifiable evidence.",
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -35,8 +35,8 @@ export default function Page() {
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "headline": "AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence",
-    "description": "AI bot detection is more than classifiers. Learn how metadata, fingerprints and PEAC receipts turn AI traffic into verifiable, enforceable evidence.",
+    "headline": "Agent and Crawler Identification: Turning Unknown AI Traffic Into Verifiable Evidence",
+    "description": "agent and crawler identification is more than classifiers. Learn how metadata, fingerprints and PEAC receipts turn AI traffic into verifiable, enforceable evidence.",
     "author": {
       "@type": "Organization",
       "name": "Originary™",
@@ -78,7 +78,7 @@ export default function Page() {
                 <span style={{ margin: '0 var(--space-2)' }}>/</span>
                 <Link href="/blog" style={{ color: 'var(--text-tertiary)', textDecoration: 'none' }}>Blog</Link>
                 <span style={{ margin: '0 var(--space-2)' }}>/</span>
-                <span style={{ color: 'var(--text-secondary)' }}>AI Bot Detection</span>
+                <span style={{ color: 'var(--text-secondary)' }}>Agent and Crawler Identification</span>
               </nav>
 
               {/* Badge */}
@@ -109,7 +109,7 @@ export default function Page() {
                 marginBottom: 'var(--space-6)',
                 color: 'var(--text-primary)'
               }}>
-                AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence
+                Agent and Crawler Identification: Turning Unknown AI Traffic Into Verifiable Evidence
               </h1>
 
               {/* Subtitle */}
@@ -155,9 +155,9 @@ export default function Page() {
               </div>
               <div style={{ display: 'grid', gap: 'var(--space-2)' }}>
                 {[
-                  { num: '1', title: 'What AI bot detection really covers' },
+                  { num: '1', title: 'What agent and crawler identification really covers' },
                   { num: '2', title: 'Why detection-only is not enough' },
-                  { num: '3', title: 'The four pillars of useful AI bot detection' },
+                  { num: '3', title: 'The four pillars of useful agent and crawler identification' },
                   { num: '4', title: 'How Originary + PEAC change detection in practice' },
                   { num: '5', title: 'Where this is going next' },
                 ].map((item) => (
@@ -277,7 +277,7 @@ export default function Page() {
                     margin: 0,
                     color: 'var(--text-primary)'
                   }}>
-                    What &ldquo;AI bot detection&rdquo; really covers
+                    What &ldquo;agent and crawler identification&rdquo; really covers
                   </h2>
                 </div>
 
@@ -347,7 +347,7 @@ export default function Page() {
                 </div>
 
                 <p>
-                  AI bot detection is that missing visibility layer between your content and the growing universe of AI crawlers, copilots, and headless agents.
+                  agent and crawler identification is that missing visibility layer between your content and the growing universe of AI crawlers, copilots, and headless agents.
                 </p>
               </section>
 
@@ -489,12 +489,12 @@ export default function Page() {
                     margin: 0,
                     color: 'var(--text-primary)'
                   }}>
-                    The four pillars of useful AI bot detection
+                    The four pillars of useful agent and crawler identification
                   </h2>
                 </div>
 
                 <p style={{ marginBottom: 'var(--space-8)' }}>
-                  In practice, AI bot detection becomes powerful when you combine four signal types:
+                  In practice, agent and crawler identification becomes powerful when you combine four signal types:
                 </p>
 
                 {/* Four Pillars Overview */}
@@ -567,7 +567,7 @@ export default function Page() {
                   </div>
 
                   <p style={{ marginBottom: 'var(--space-6)' }}>
-                    Metadata is &ldquo;data about the data.&rdquo; For AI bot detection, you care about at least three layers:
+                    Metadata is &ldquo;data about the data.&rdquo; For agent and crawler identification, you care about at least three layers:
                   </p>
 
                   <div style={{ display: 'grid', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
@@ -778,7 +778,7 @@ issued_at        → when the receipt was generated`}
                   </div>
 
                   <p>
-                    This lets banks, insurers, publishers, and regulators reconstruct what happened, show chain-of-custody evidence for disputes, and re-run analyses when policies change. Originary&rsquo;s goal: your live AI traffic and artifact repository are two views of the same evidence layer.
+                    This lets banks, insurers, publishers, and regulators reconstruct what happened, show chain-of-custody evidence for disputes, and re-run analyses when policies change. Originary&rsquo;s goal: your live AI traffic and artifact repository are two views of the same records layer.
                   </p>
                 </div>
               </section>
@@ -805,7 +805,7 @@ issued_at        → when the receipt was generated`}
                     margin: 0,
                     color: 'var(--text-primary)'
                   }}>
-                    How Originary + PEAC change AI bot detection in practice
+                    How Originary + PEAC change agent and crawler identification in practice
                   </h2>
                 </div>
 
@@ -834,7 +834,7 @@ issued_at        → when the receipt was generated`}
                             When an AI agent hits a protected resource, it receives an <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> response. Once the agent pays or proves entitlement, the PEAC kernel issues a signed receipt binding: what was accessed, who accessed it, which policy applied, and payment details.
                           </p>
                           <p style={{ margin: 0 }}>
-                            AI bot detection becomes not just &ldquo;yes, that looked like a bot&rdquo; but <strong>&ldquo;yes, that bot paid, under these terms, here is the verified record.&rdquo;</strong>
+                            agent and crawler identification becomes not just &ldquo;yes, that looked like a bot&rdquo; but <strong>&ldquo;yes, that bot paid, under these terms, here is the verified record.&rdquo;</strong>
                           </p>
                         </>
                       )
@@ -848,7 +848,7 @@ issued_at        → when the receipt was generated`}
                             Most serious AI agents want a clean way to respect content owners. Originary + PEAC give them that path: pre-fetch <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>peac.txt</code>, integrate 402 flows, attach receipts when passing data downstream.
                           </p>
                           <p style={{ margin: 0 }}>
-                            That is AI bot detection as <strong style={{ color: 'var(--accent-brand)' }}>positive infrastructure</strong> rather than only defensive heuristics.
+                            That is agent and crawler identification as <strong style={{ color: 'var(--accent-brand)' }}>positive infrastructure</strong> rather than only defensive heuristics.
                           </p>
                         </>
                       )

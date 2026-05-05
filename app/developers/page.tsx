@@ -46,7 +46,7 @@ export default function Developers() {
                 Choose the fastest path to your first signed record
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                Start from the workflow you actually run — API publishing, MCP tools, paymentauth/MPP, ACP, x402, OpenClaw, managed-agent systems, or local verification. Use the path below to issue, inspect, or verify signed records quickly.
+                Start from the workflow you actually run. Most teams begin by verifying one record, adding records to one API or MCP response, or exporting records from a gateway, runtime, or payment flow.
               </p>
             </div>
           </div>
@@ -56,7 +56,15 @@ export default function Developers() {
         <section className="section" id="guides" style={{ background: 'var(--surface-subtle)' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
-              <h2 style={{ marginBottom: 'var(--space-4)' }}>Choose your path</h2>
+              <div className="card" style={{ maxWidth: '720px', margin: '0 auto var(--space-8) auto', padding: 'var(--space-6)', textAlign: 'left' }}>
+                <h2 style={{ marginBottom: 'var(--space-4)' }}>Most developers should start with one of three paths</h2>
+                <ol style={{ margin: 0, paddingLeft: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+                  <li>Verify an existing signed record.</li>
+                  <li>Add signed records to one API or MCP response.</li>
+                  <li>Export records from a gateway, runtime, or payment flow.</li>
+                </ol>
+              </div>
+              <h2 style={{ marginBottom: 'var(--space-4)' }}>Advanced integration paths</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
                 Each path maps to a v0.14.0 package surface in the open PEAC repo.
               </p>
@@ -329,7 +337,7 @@ if (result.verified) {
                 Need managed verification or integration support?
               </h2>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '520px', margin: '0 auto var(--space-8) auto' }}>
-                Originary Verify offers hosted verification, managed keys, and enterprise evidence exports. Commercial support is available for teams deploying at scale.
+                Originary Verify offers hosted verification, managed keys, and enterprise record exports. Commercial support is available for teams deploying at scale.
               </p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
                 <Link href="/products/verify" className="btn btn-primary btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)' }}>

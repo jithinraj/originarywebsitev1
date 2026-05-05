@@ -45,8 +45,8 @@ export default function BlogPage() {
   const articles = [
     {
       slug: 'ai-bot-detection',
-      title: 'AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence',
-      description: 'AI bot detection is more than classifiers. Learn how metadata, fingerprints and signed records turn AI traffic into verifiable records for audits and disputes.',
+      title: 'Agent and Crawler Signals: Turning Unknown AI Traffic Into Verifiable Records',
+      description: 'Agent and crawler identification is more than classifiers. Learn how metadata, fingerprints, and signed records turn AI traffic into verifiable records for audits and disputes.',
       author: 'Jithin Raj, Founder',
       date: '2025-12-01',
       category: 'Technical',
@@ -76,7 +76,7 @@ export default function BlogPage() {
     {
       slug: 'from-detection-to-settlement-ai-paywall-peac-http-402',
       title: 'From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance',
-      description: 'How Originary and PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.',
+      description: 'How Originary and PEAC connect agent and crawler identification signals to HTTP 402, x402, and Stripe, with signed records for billing, audit, and compliance.',
       author: 'Jithin Raj, Founder',
       date: '2025-12-01',
       category: 'Technical',

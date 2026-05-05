@@ -105,7 +105,7 @@ const faqJsonLd = {
       name: 'How does the evidence analyzer work?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The analyzer uses client-side heuristics to classify your input and estimate evidence strength. It checks for structural properties like signatures, timestamps, issuer fields, and policy references. Everything runs in your browser.',
+        text: 'The analyzer uses client-side heuristics to classify your input and estimate verification strength. It checks for structural properties like signatures, timestamps, issuer fields, and policy references. Everything runs in your browser.',
       },
     },
     {

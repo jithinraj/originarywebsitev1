@@ -6,13 +6,13 @@ import { FileText, ArrowRight, Zap, Shield, CreditCard, FileCheck, List, CheckCi
 
 export const metadata: Metadata = {
   title: "AI Detection to Settlement | PEAC HTTP 402 Revenue",
-  description: "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
-  keywords: "AI paywall, HTTP 402, x402, Stripe, PEAC receipts, AI payments, AI bot detection, AI monetization, machine payments",
+  description: "How Originary and PEAC connect agent and crawler signals to HTTP 402, x402, Stripe, and signed records for billing, audit, and compliance.",
+  keywords: "AI paywall, HTTP 402, x402, Stripe, PEAC receipts, AI payments, agent and crawler identification, AI monetization, machine payments",
   authors: [{ name: "Jithin Raj, Founder" }],
   alternates: { canonical: '/blog/from-detection-to-settlement-ai-paywall-peac-http-402' },
   openGraph: {
     title: "AI Detection to Settlement | PEAC HTTP 402 Revenue",
-    description: "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
+    description: "How Originary and PEAC connect agent and crawler signals to HTTP 402, x402, Stripe, and signed records for billing, audit, and compliance.",
     type: "article",
     url: "/blog/from-detection-to-settlement-ai-paywall-peac-http-402/",
     publishedTime: "2025-12-01",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AI Detection to Settlement | PEAC HTTP 402 Revenue",
-    description: "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
+    description: "How Originary and PEAC connect agent and crawler signals to HTTP 402, x402, Stripe, and signed records for billing, audit, and compliance.",
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -36,7 +36,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "headline": "From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance",
-    "description": "How Originary & PEAC turns AI bot detection into an AI paywall using HTTP 402, x402 and Stripe, with signed receipts for billing, audit and compliance.",
+    "description": "How Originary and PEAC connect agent and crawler signals to HTTP 402, x402, Stripe, and signed records for billing, audit, and compliance.",
     "author": {
       "@type": "Organization",
       "name": "Originary™",
@@ -120,7 +120,7 @@ export default function Page() {
                 marginBottom: 'var(--space-8)',
                 maxWidth: '650px'
               }}>
-                How Originary and PEAC Protocol turn AI bot detection into an AI paywall using HTTP 402, x402 and Stripe - with signed receipts for billing, audit and compliance.
+                How Originary and PEAC Protocol turn agent and crawler identification into an AI paywall using HTTP 402, x402 and Stripe - with signed receipts for billing, audit and compliance.
               </p>
 
               {/* Meta */}
@@ -246,7 +246,7 @@ export default function Page() {
                 </div>
 
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  In the <Link href="/blog/ai-bot-detection/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>previous piece on AI bot detection</Link> we focused on visibility: spotting AI agents in your traffic, using metadata, fingerprints, and access logs to understand who is calling you and why.
+                  In the <Link href="/blog/ai-bot-detection/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>previous piece on agent and crawler identification</Link> we focused on visibility: spotting AI agents in your traffic, using metadata, fingerprints, and access logs to understand who is calling you and why.
                 </p>
 
                 <p style={{ marginBottom: 'var(--space-6)' }}>
@@ -947,7 +947,7 @@ Content-Type: application/json
 
                 <div style={{ display: 'grid', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                   {[
-                    'AI bot detection becomes the front door into a programmable AI paywall',
+                    'agent and crawler identification becomes the front door into a programmable AI paywall',
                     'HTTP 402 becomes the standard control plane for AI payments',
                     'x402 and Stripe are first class citizens, not competing standards',
                     'PEAC-Receipt is the common language between engineering, finance, legal and external partners'
@@ -971,7 +971,7 @@ Content-Type: application/json
                 </h3>
                 <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
                   <Link href="/blog/ai-bot-detection/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
-                    AI Bot Detection: Turning Unknown AI Traffic Into Verifiable Evidence
+                    Agent and Crawler Identification: Turning Unknown AI Traffic Into Verifiable Evidence
                   </Link>
                   <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
                     HTTP 402 for APIs: Making Payment-Required Responses Work

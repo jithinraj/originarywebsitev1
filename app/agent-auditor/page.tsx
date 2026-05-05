@@ -389,13 +389,13 @@ export default function AgentAuditorPage() {
                 <span style={{ width: 7, height: 7, borderRadius: 'var(--radius-full)', background: 'var(--accent-success, var(--accent-brand))', display: 'inline-block' }} />
                 Live — runs in your browser
               </div>
-              <h2 style={{ marginBottom: 'var(--space-3)' }}>Drop a receipt and see what&apos;s inside</h2>
+              <h2 style={{ marginBottom: 'var(--space-3)' }}>Drop a signed record and see what is inside</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '480px', margin: '0 auto var(--space-4) auto', lineHeight: 1.6 }}>
-                No setup. Drop any receipt file and see it decoded and verified instantly. Inspection and verification happen locally in your browser or CLI. No outbound verification or artifact fetches.
+                No setup. Drop any signed record file and see it decoded and verified instantly. Inspection and verification happen locally in your browser or CLI. No outbound verification or artifact fetches.
               </p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', flexWrap: 'wrap' as const, fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>
                 <span style={{ padding: 'var(--space-1) var(--space-3)', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-default)' }}>
-                  Browser: verifies receipt signatures and structure
+                  Browser: verifies record signatures and structure
                 </span>
                 <span style={{ padding: 'var(--space-1) var(--space-3)', background: 'var(--surface-card)', borderRadius: 'var(--radius-full)', border: '1px solid var(--border-default)' }}>
                   CLI: full bundle integrity verification
@@ -492,7 +492,7 @@ export default function AgentAuditorPage() {
         <section className="section">
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-12)' }}>
-              <h2 style={{ marginBottom: 'var(--space-4)' }}>What you get when you open a receipt</h2>
+              <h2 style={{ marginBottom: 'var(--space-4)' }}>What you get when you open a signed record</h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '480px', margin: '0 auto' }}>
                 Four things, every time.
               </p>
@@ -569,16 +569,16 @@ export default function AgentAuditorPage() {
                   lineHeight: 1.8,
                 }}>{`npm install -g @originaryx/agent-auditor
 
-# inspect a receipt file
-agent-auditor inspect ./receipt.jws
+# inspect a signed record file
+agent-auditor inspect ./record.jws
 
 # verify the signature
-agent-auditor verify ./receipt.jws --key ./public-key.bin
+agent-auditor verify ./record.jws --key ./public-key.bin
 
 # inspect a dispute bundle
 agent-auditor inspect ./bundle.zip
 
-# run the demo with a sample receipt
+# run the demo with a sample record
 agent-auditor demo`}</pre>
                 <a
                   href={NPM_URL}
@@ -614,7 +614,7 @@ agent-auditor demo`}</pre>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
                 {[
-                  { text: 'issue or sign receipts.', suffix: 'Use @peac/protocol for that.' },
+                  { text: 'issue or sign records.', suffix: 'Use @peac/protocol for issuance.' },
                   { text: 'send data anywhere.', suffix: 'Inspection and verification happen locally.' },
                   { text: 'store keys or state.', suffix: 'No database, no config, no session.' },
                   { text: 'validate business logic.', suffix: 'It checks signature and structure only.' },
@@ -659,7 +659,7 @@ agent-auditor demo`}</pre>
                 Want to issue and verify at scale?
               </h3>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: 'var(--space-6)' }}>
-                Agent Auditor inspects individual records. <strong>Originary Verify</strong> operationalizes verification at production scale with managed keys, evidence exports, and enterprise deployment options.
+                Agent Auditor inspects individual records. <strong>Originary Verify</strong> runs verification at production scale with managed keys, record exports, and enterprise deployment options.
               </p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
                 <Link href="/products/verify" className="btn btn-primary btn-sm">

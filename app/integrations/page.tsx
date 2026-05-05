@@ -7,12 +7,12 @@ import { Activity, Bot, Brain, CreditCard, FileCode, FileText, GitBranch, Messag
 
 export const metadata: Metadata = {
   title: 'Integrations | Originary',
-  description: 'See how Originary and PEAC v0.14.0 connect to MCP, A2A, x402, paymentauth/MPP, ACP, OpenClaw, managed agents, and supply-chain evidence.',
+  description: 'Add signed records beside the systems you already use: gateways, MCP servers, APIs, runtimes, payment rails, and audit workflows.',
   keywords: 'MCP integration, A2A integration, x402, paymentauth, MPP, ACP, OpenClaw, managed agents, runtime governance, PEAC protocol, signed records',
   robots: 'index,follow',
   openGraph: {
     title: 'Integrations | Originary',
-    description: 'See how Originary and PEAC v0.14.0 connect to MCP, A2A, x402, paymentauth/MPP, ACP, OpenClaw, managed agents, and supply-chain evidence.',
+    description: 'Add signed records beside the systems you already use: gateways, MCP servers, APIs, runtimes, payment rails, and audit workflows.',
     url: '/integrations',
     siteName: 'Originary',
     type: 'website',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Integrations | Originary',
-    description: 'See how Originary and PEAC v0.14.0 connect to MCP, A2A, x402, paymentauth/MPP, ACP, OpenClaw, managed agents, and supply-chain evidence.',
+    description: 'Add signed records beside the systems you already use: gateways, MCP servers, APIs, runtimes, payment rails, and audit workflows.',
     images: ['/og'],
   },
 }
@@ -162,14 +162,14 @@ const surfaceGroups = [
   },
   {
     title: 'Commerce',
-    items: ['@peac/adapter-x402', '@peac/mappings-paymentauth', 'MPP mappers', '@peac/mappings-acp', '@peac/rails-stripe', '@peac/pay402'],
+    items: ['@peac/adapter-x402', '@peac/mappings-paymentauth', 'MPP mappers', '@peac/mappings-acp', 'Stripe-style event mapper', '@peac/pay402'],
   },
   {
     title: 'Agent runtimes',
     items: ['@peac/adapter-openclaw', '@peac/adapter-managed-agents', '@peac/adapter-runtime-governance', '@peac/adapter-openai-compatible'],
   },
   {
-    title: 'Evidence exports',
+    title: 'Record exports',
     items: ['@peac/mappings-intoto', '@peac/mappings-slsa', '@peac/telemetry-otel', '@peac/transport-grpc'],
   },
 ]
@@ -249,7 +249,7 @@ export default function IntegrationsPage() {
             color: 'var(--text-primary)',
             lineHeight: 1.2,
           }}>
-            Integrations and protocol surfaces
+            Add signed records beside the systems you already use.
           </h1>
 
           {/* Description */}
@@ -263,7 +263,7 @@ export default function IntegrationsPage() {
             marginRight: 'auto',
             lineHeight: 1.6,
           }}>
-            How Originary and PEAC v0.14.0 fit with MCP, A2A, x402, paymentauth/MPP, ACP, AIPREF, OpenClaw, managed agents, and supply-chain evidence.
+            Your gateway, MCP server, API, runtime, or payment rail keeps doing its job. Originary adds a signed record that can be verified outside that system.
           </p>
 
           <p style={{
@@ -276,7 +276,7 @@ export default function IntegrationsPage() {
             marginRight: 'auto',
             lineHeight: 1.6,
           }}>
-            Originary integrates with the systems teams already use. PEAC stays protocol-neutral while Originary packages the operational path for signed records, carrier mappings, and verification workflows.
+            Start with the category that matches your workflow, then use the technical surface map only when you need package-level detail.
           </p>
 
           <p style={{
@@ -289,7 +289,7 @@ export default function IntegrationsPage() {
             marginRight: 'auto',
             lineHeight: 1.6,
           }}>
-            This page is for teams evaluating how signed records fit alongside protocols they already use — from MCP and A2A to x402, paymentauth/MPP, priced APIs, automated payments, managed-agent runtimes, and agentic commerce workflows.
+            Agent and tool workflows: MCP, A2A, managed runtimes, OpenClaw. API and gateway workflows: HTTP APIs, reverse proxies, Gateway 402, Cloudflare/Vercel-style edges. Commerce and payment workflows: x402, paymentauth/MPP, ACP, Stripe-style payment events. Audit and provenance workflows: OpenTelemetry exports, in-toto, SLSA, record bundles.
           </p>
 
           {/* Status Legend */}
@@ -428,10 +428,10 @@ export default function IntegrationsPage() {
               <Activity size={22} style={{ color: 'var(--accent-brand)' }} />
               <div>
                 <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
-                  v0.14.0 surface map
+                  Technical surface map
                 </h2>
                 <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Current local PEAC source exposes 36 published packages across core verification, commerce mappings, agent runtimes, and evidence export surfaces.
+                  Current PEAC source exposes 36 published packages across core verification, commerce mappings, agent runtimes, and record export surfaces.
                 </p>
               </div>
             </div>

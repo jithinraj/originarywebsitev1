@@ -25,12 +25,12 @@ const productJsonLd = {
     { '@type': 'Offer', name: 'Supported Self-Host', price: '0', priceCurrency: 'USD', availability: 'https://schema.org/InStock', priceSpecification: { '@type': 'PriceSpecification', price: 'Custom' } },
     { '@type': 'Offer', name: 'Managed Verification', price: '0', priceCurrency: 'USD', availability: 'https://schema.org/InStock', priceSpecification: { '@type': 'PriceSpecification', price: 'Custom' } },
   ],
-  featureList: 'Ed25519 signature verification, Policy binding, Key management, Evidence exports, Offline verification, Transport support',
+  featureList: 'Ed25519 signature verification, Policy binding, Key management, Record exports, Offline verification, Transport support',
 }
 
 export const metadata: Metadata = {
   title: 'Originary Verify | Production Verification Workflows',
-  description: 'Production verification for signed interaction records. Validate signatures, policy binding, and exports at scale across AI agents, APIs, MCP, and review workflows.',
+  description: 'Run signed-record verification in production for audits, disputes, procurement, and partner workflows. Hosted, self-hosted, or hybrid.',
   keywords: [
     'Originary Verify',
     'signed interaction records',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/products/verify' },
   openGraph: {
     title: 'Originary Verify | Production Verification Workflows',
-    description: 'Operationalize signed records in production. Validate signatures, policy binding, and exports at scale.',
+    description: 'Run signed-record verification in production for audits, disputes, procurement, and partner workflows.',
     url: '/products/verify',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Originary Verify | Production Verification Workflows',
-    description: 'Operationalize signed records in production. Validate signatures, policy binding, and exports at scale.',
+    description: 'Run signed-record verification in production for audits, disputes, procurement, and partner workflows.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -109,7 +109,7 @@ const deploymentModes = [
       'Self-managed or KMS-backed keys',
       'Dedicated engineering access',
       'Defined response windows',
-      'Compliance evidence guidance',
+      'Compliance record-export guidance',
     ],
     cta: { label: 'Talk to us', href: '/contact?subject=Supported%20Self-Host' },
     highlight: false,
@@ -117,11 +117,11 @@ const deploymentModes = [
   {
     name: 'Managed verification',
     price: 'Custom',
-    description: 'Originary operates the verification layer. You integrate via SDK or gateway. Evidence exports and key lifecycle included.',
+    description: 'Originary operates managed verification workflows. You integrate via SDK or gateway-adjacent records. Record exports and key lifecycle included.',
     features: [
       'Originary operates the stack',
       'KMS-backed signing-key operations where required',
-      'Pre-packaged evidence bundles',
+      'Pre-packaged record bundles',
       'Monitoring and alerting',
       'Full SLA and priority support',
     ],
@@ -134,7 +134,7 @@ const capabilities = [
   { label: 'Signature verification', detail: 'Ed25519 (RFC 8032). Compact JWS (RFC 7515). Offline with issuer public key only.' },
   { label: 'Policy binding', detail: 'JCS (RFC 8785) + SHA-256 digest. Three-state result: verified, failed, unavailable.' },
   { label: 'Key management', detail: '5-state rotation lifecycle. 30-day overlap. Revocation tracking. KMS integration.' },
-  { label: 'Evidence exports', detail: 'Signed records, policy hashes, timestamps. Portable across vendors, audits, and disputes.' },
+  { label: 'Record exports', detail: 'Signed records, policy hashes, timestamps. Portable across vendors, audits, and disputes.' },
   { label: 'Offline verification', detail: 'No callback to Originary or any vendor. Verifiers need only the issuer public key via JWKS.' },
   { label: 'Network posture', detail: 'No implicit fetch. No SSRF. URL fields are locator hints only, never auto-dereferenced.' },
   { label: 'Transport support', detail: 'HTTP headers, MCP metadata, A2A envelopes, gRPC carriers. 8 KB header / 64 KB embed limits.' },
@@ -177,7 +177,7 @@ export default function OriginaryVerifyPage() {
                 fontWeight: 700, lineHeight: 1.1, letterSpacing: '-0.04em',
                 marginBottom: 'var(--space-6)', color: 'var(--text-primary)',
               }}>
-                Originary Verify
+                Run signed-record verification in production.
               </h1>
 
               <p style={{
@@ -185,7 +185,7 @@ export default function OriginaryVerifyPage() {
                 lineHeight: 1.7, marginBottom: 'var(--space-4)',
                 maxWidth: '640px', margin: '0 auto var(--space-4) auto',
               }}>
-                Operationalize signed interaction records in production. Validate signatures, policy binding, and exports at scale. Hosted or self-hosted. Offline verification with no vendor dependency.
+                Originary Verify helps teams issue, verify, export, and review signed records for audits, disputes, procurement, and partner workflows. Hosted, self-hosted, or hybrid.
               </p>
 
               <p style={{
@@ -214,10 +214,10 @@ export default function OriginaryVerifyPage() {
           <div className="container" style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: 'var(--space-10)' }}>
               <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, color: 'var(--text-primary)', marginBottom: 'var(--space-3)' }}>
-                Logs explain what your systems observed
+                When another party asks for proof, logs are not enough.
               </h2>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
-                They do not create portable proof another party can verify independently. Originary Verify does.
+                Originary Verify creates portable records another party can verify independently.
               </p>
             </div>
 

@@ -76,12 +76,12 @@ export default function Terms() {
               <h2>2. Description of Services</h2>
               <p>Originary provides infrastructure for agentic web coordination, including:</p>
               <ul>
-                <li><strong>PEAC Protocol:</strong> Programmable Economic Access & Consent (open, receipts-first policy layer)</li>
-                <li><strong>Verify API:</strong> Cryptographic verification services for receipts and policies</li>
-                <li><strong>Gateway (402):</strong> HTTP 402 payment gateway for API monetization</li>
-                <li><strong>Studio:</strong> Visual policy builder and testing environment</li>
+                <li><strong>PEAC Protocol:</strong> Programmable Economic Access & Consent (open, records-first verification standard)</li>
+                <li><strong>Verify API:</strong> Cryptographic verification services for signed records and policies</li>
+                <li><strong>Gateway 402:</strong> Gateway-adjacent record issuance for HTTP 402 workflows</li>
+                <li><strong>Verification workflows:</strong> Record review, export, and testing tools</li>
                 <li><strong>Adapters:</strong> Integration libraries for popular platforms</li>
-                <li><strong>Receipt Services:</strong> Cryptographic receipt generation and management</li>
+                <li><strong>Record Services:</strong> Signed record issuance and management</li>
               </ul>
 
               <h2>3. Account Registration and Security</h2>

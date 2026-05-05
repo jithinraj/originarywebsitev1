@@ -6,9 +6,9 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Interaction records for AI agents, MCP, & APIs'
+    absolute: 'Originary | Prove API and agent actions without sharing logs'
   },
-  description: 'Originary helps teams create portable signed records for agent, API, MCP, gateway, A2A, and payment workflows, so another party can verify what happened without trusting your logs.',
+  description: 'Portable signed records for API, MCP, gateway, A2A, and payment workflows so others can verify what happened without accessing your dashboard.',
   keywords: [
     'portable signed records',
     'signed interaction records',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   openGraph: {
-    title: 'Originary | Interaction records for AI agents, MCP, & APIs',
-    description: 'Originary helps teams create portable signed records for agent, API, MCP, gateway, A2A, and payment workflows, so another party can verify what happened without trusting your logs.',
+    title: 'Originary | Prove API and agent actions without sharing logs',
+    description: 'Portable signed records for API, MCP, gateway, A2A, and payment workflows so others can verify what happened without accessing your dashboard.',
     url: 'https://www.originary.xyz',
     type: 'website',
     locale: 'en_US',
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Interaction records for AI agents, MCP, & APIs',
-    description: 'Originary helps teams create portable signed records for agent, API, MCP, gateway, A2A, and payment workflows, so another party can verify what happened without trusting your logs.',
+    title: 'Originary | Prove API and agent actions without sharing logs',
+    description: 'Portable signed records for API, MCP, gateway, A2A, and payment workflows so others can verify what happened without accessing your dashboard.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -70,7 +70,7 @@ const structuredData = {
       name: 'Originary',
       url: 'https://www.originary.xyz',
       publisher: { '@id': 'https://www.originary.xyz/#organization' },
-      description: 'Originary helps teams create portable signed records for agent, API, MCP, gateway, A2A, and payment workflows, so another party can verify what happened without trusting your logs.',
+      description: 'Portable signed records for API, MCP, gateway, A2A, and payment workflows so others can verify what happened without accessing your dashboard.',
     },
     {
       '@type': 'SoftwareApplication',

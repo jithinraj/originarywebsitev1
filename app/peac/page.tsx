@@ -9,7 +9,7 @@ import { peacFaqs } from '@/content/faqs'
 
 export const metadata: Metadata = {
   title: 'PEAC Protocol | Originary',
-  description: 'PEAC v0.14.0 is the open standard for verifiable interaction records across AI agents, APIs, MCP, x402, paymentauth/MPP, ACP, OpenClaw, and automated systems.',
+  description: 'PEAC defines how systems issue signed records for automated actions, so another party can verify what happened without trusting the original system.',
   keywords: [
     'PEAC Protocol',
     'verifiable interaction records',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'PEAC Protocol | Originary',
-    description: 'PEAC v0.14.0 is the open standard for verifiable interaction records across AI agents, APIs, MCP, x402, paymentauth/MPP, ACP, OpenClaw, and automated systems.',
+    description: 'PEAC defines how systems issue signed records for automated actions, so another party can verify what happened without trusting the original system.',
     url: '/peac',
     siteName: 'Originary',
     type: 'website',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'PEAC Protocol | Originary',
-    description: 'PEAC v0.14.0 is the open standard for verifiable interaction records across AI agents, APIs, MCP, x402, paymentauth/MPP, ACP, OpenClaw, and automated systems.',
+    description: 'PEAC defines how systems issue signed records for automated actions, so another party can verify what happened without trusting the original system.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -122,7 +122,7 @@ export default function PeacPage() {
               >
                 <span className="text-gradient">Open standard</span>
                 <br />
-                <span style={{ color: 'var(--text-primary)' }}>for verifiable interaction records</span>
+                <span style={{ color: 'var(--text-primary)' }}>for verifiable interaction records.</span>
               </h1>
 
               <p
@@ -135,7 +135,7 @@ export default function PeacPage() {
                   margin: '0 auto var(--space-6) auto',
                 }}
               >
-                PEAC defines how systems publish machine-readable interaction terms, issue signed records for automated requests, and verify them independently, even offline. Version 0.14.0 expands the reference implementation across MCP, A2A, x402, paymentauth/MPP, ACP, OpenClaw, managed agents, and supply-chain evidence.
+                PEAC defines how systems issue signed records for automated actions, so another party can verify what happened without trusting the original system.
               </p>
 
               <p
@@ -440,7 +440,7 @@ export default function PeacPage() {
               v0.14.0 implementation surface
             </h2>
             <p style={{ textAlign: 'center', fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', marginBottom: 'var(--space-16)', maxWidth: '680px', margin: '0 auto var(--space-16) auto' }}>
-              The current reference implementation publishes {FACTS.publishedPackageCount} packages with {FACTS.testsCount} tests across core records, commerce mappings, agent runtimes, and evidence exports.
+              The current reference implementation publishes {FACTS.publishedPackageCount} packages with {FACTS.testsCount} tests across core records, commerce mappings, agent runtimes, and record exports.
             </p>
 
             <div className="grid grid-2" style={{ gap: 'var(--space-6)', maxWidth: '980px', margin: '0 auto' }}>

@@ -2104,7 +2104,7 @@ ${analysisResult.reason}`
                 marginTop: 'var(--space-8)',
               }}
             >
-              Observability helps you understand. Signed records help another party verify.
+              Observability helps your team understand. Signed records help another party verify.
             </p>
           </div>
         </section>
@@ -2165,7 +2165,7 @@ ${analysisResult.reason}`
                   color: 'var(--text-primary)',
                 }}
               >
-                See how evidence strength changes by scenario
+                See how verification strength changes by scenario
               </h2>
               <p
                 style={{
@@ -2480,7 +2480,7 @@ ${analysisResult.reason}`
                   margin: '0 auto',
                 }}
               >
-                A dashboard can say anything. Evidence has to survive tampering, disputes, and handoffs.
+                A dashboard can say anything. A signed record has to survive tampering, disputes, and handoffs.
               </p>
             </div>
 
@@ -2935,7 +2935,7 @@ ${analysisResult.reason}`
                   marginBottom: 'var(--space-4)',
                 }}
               >
-                Keep your gateway, auth, payments, and observability stack. Originary adds a verification layer that evaluates requests, applies policy, and returns signed records you can prove later.
+                Originary does not replace your gateway, policy engine, auth layer, payments, or observability stack. It records the decision boundary so another party can verify what happened later.
               </p>
               <p
                 style={{
@@ -2955,17 +2955,17 @@ ${analysisResult.reason}`
               >
                 {[
                   {
-                    text: 'Verifies requests',
+                    text: 'Records the decision',
                     detail:
-                      'Checks every agent request against the active policy before execution.',
+                      'Captures selected facts from decisions your stack already makes.',
                   },
                   {
-                    text: 'Applies policy',
+                    text: 'Binds the policy digest',
                     detail:
                       'Binds the policy digest to the signed record so you can prove which rules applied.',
                   },
                   {
-                    text: 'Returns signed records',
+                    text: 'Issues signed records at the point of action',
                     detail:
                       'Issues a signed, exportable record for every interaction at the point of action.',
                   },

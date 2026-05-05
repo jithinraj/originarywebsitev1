@@ -7,12 +7,12 @@ import { NARRATIVE } from '@/lib/site-registry'
 
 export const metadata: Metadata = {
   title: 'Products | Originary',
-  description: 'Explore Originary Verify, Agent Auditor, Gateway 402, and MCP Server for signed records across AI agents, APIs, MCP, and automated workflows.',
+  description: 'Choose the proof workflow you need: check whether logs are enough, inspect one signed record, or add records to one production workflow.',
   keywords: 'Originary Verify, signed interaction records, MCP verification, Agent Auditor, Gateway 402, offline verification, portable records, PEAC Protocol',
   robots: 'index,follow',
   openGraph: {
     title: 'Products | Originary',
-    description: 'Explore Originary Verify, Agent Auditor, Gateway 402, and MCP Server for signed records across AI agents, APIs, MCP, and automated workflows.',
+    description: 'Choose the proof workflow you need: check whether logs are enough, inspect one signed record, or add records to one production workflow.',
     url: '/products',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Products | Originary',
-    description: 'Explore Originary Verify, Agent Auditor, Gateway 402, and MCP Server for signed records across AI agents, APIs, MCP, and automated workflows.',
+    description: 'Choose the proof workflow you need: check whether logs are enough, inspect one signed record, or add records to one production workflow.',
     images: ['/og'],
   },
   alternates: {
@@ -35,25 +35,24 @@ const primaryProducts = [
   {
     icon: Search,
     title: 'Proof Check',
-    description: 'Diagnose how verifiable an artifact is, then decide what to fix next.',
-    features: ['Artifact diagnostics', 'Verification readiness', 'Portable-report framing', 'Fast workflow triage'],
+    description: 'See whether your current logs, traces, or webhooks are enough.',
+    features: ['Proof-gap review', 'Verification readiness', 'Portable-report framing', 'Fast workflow triage'],
     href: '/agent-proof-check',
     status: 'available' as const,
   },
   {
     icon: Search,
     title: 'Agent Auditor',
-    description: 'Production verification, exports, and deployment support for teams that need signed records in real workflows. Hosted or self-hosted.',
-    features: ['Ed25519 signature verification', 'Offline verification', 'Hosted or self-hosted deployment', 'Enterprise evidence exports'],
-    href: '/products/verify',
-    npm: '@peac/protocol',
+    description: 'Open and verify one signed record locally.',
+    features: ['Local record inspection', 'Signature and issuer checks', 'Policy binding review', 'Offline verification'],
+    href: '/agent-auditor',
     status: 'available' as const,
   },
   {
     icon: Shield,
     title: 'Originary Verify',
-    description: 'Production verification, exports, and deployment support for teams that need signed records in real workflows. Hosted or self-hosted.',
-    features: ['Ed25519 signature verification', 'Offline verification', 'Hosted or self-hosted deployment', 'Enterprise evidence exports'],
+    description: 'Run signed-record verification workflows in production.',
+    features: ['Ed25519 signature verification', 'Offline verification', 'Hosted or self-hosted deployment', 'Procurement-ready record exports'],
     href: '/products/verify',
     npm: '@peac/protocol',
     status: 'available' as const,
@@ -61,8 +60,8 @@ const primaryProducts = [
   {
     icon: Zap,
     title: 'Gateway 402',
-    description: 'Apply policy and payment enforcement at the edge while returning signed records on responses for priced APIs, automated payments, and x402-style flows.',
-    features: ['Edge deployment', 'HTTP 402 challenge flows', 'Signed interaction records', 'Rail-neutral design'],
+    description: 'Add paid API access records to HTTP 402 and x402-style flows.',
+    features: ['HTTP 402 challenge flows', 'Payment proof reference', 'Signed access records', 'Rail-neutral design'],
     href: '/products/gateway-402',
     npm: '@peac/rails-x402',
     status: 'available' as const,
@@ -70,7 +69,7 @@ const primaryProducts = [
   {
     icon: Server,
     title: 'MCP Server',
-    description: 'Verification and inspection tools for MCP clients, tool hosts, and editor workflows. Verify, inspect, and decode signed interaction records offline.',
+    description: 'Bring record verification tools into agent and developer workflows.',
     features: ['MCP tools', 'Offline verification', 'Capability-based ACL', 'Claude Desktop and Cursor'],
     href: '/integrations/mcp',
     npm: '@peac/mcp-server',
@@ -79,8 +78,8 @@ const primaryProducts = [
   {
     icon: BarChart3,
     title: 'Trace',
-    description: 'Monitor automated traffic and export signed records for downstream review. Preview and subject to change.',
-    features: ['AI agent identification', 'Traffic observation', 'Evidence export', 'Audit log generation'],
+    description: 'Export signed records from selected access events.',
+    features: ['Agent and crawler identification signals', 'Selected access events', 'Record export', 'Audit bundle support'],
     href: '/trace',
     status: 'preview' as const,
   },
@@ -114,13 +113,13 @@ export default function ProductsPage() {
             <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto', marginBottom: 'var(--space-16)' }}>
               <div style={{ fontSize: 'var(--text-xs)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 'var(--space-4)' }}>PRODUCTS</div>
               <h1 style={{ marginBottom: 'var(--space-6)', color: 'var(--text-primary)', fontWeight: 700, fontSize: 'clamp(2rem, 4.5vw, 3.5rem)' }}>
-                Start with the workflow that needs proof.
+                Choose the proof workflow you need.
               </h1>
               <p style={{ fontSize: 'var(--text-xl)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-                Originary products help teams issue, inspect, verify, and export signed records from the systems they already run. Start with one workflow: a disputed API call, MCP tool action, gateway decision, payment event, or agent handoff.
+                Start with the smallest useful step: check whether your current artifacts are enough, open one signed record, or add records to one production workflow.
               </p>
               <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-tertiary)', lineHeight: 1.7, marginBottom: 'var(--space-6)' }}>
-                Built for enterprise AI platform teams, API publishers, MCP developers, priced API operators, and security-conscious teams that need proof beyond local logs.
+                Pick one buyer job first: logs are not enough, a customer needs proof, or a production workflow needs a record another party can verify.
               </p>
             </div>
           </div>
