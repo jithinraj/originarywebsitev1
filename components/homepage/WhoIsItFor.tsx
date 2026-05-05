@@ -73,7 +73,7 @@ export function WhoIsItFor() {
               className="hp-text-display mt-5"
               style={{ color: 'var(--color-fg)' }}
             >
-              Built for the systems agents touch
+              Built for teams who need proof outside their own dashboard
             </h2>
             <p
               className="mt-4 hp-text-body-lg"

@@ -171,7 +171,7 @@ export default function TrustPage() {
                   Every interaction record is a signed JSON Web Signature (JWS). When a record is issued, the issuer signs the claims payload with their private key. Any verifier, your code, a third-party auditor, or an offline script, can verify the signature using the issuer's published public key.
                 </p>
                 <p style={proseStyle}>
-                  Verification never calls home. There is no Originary API in the verification path. The verifier fetches the public key from the issuer's standard JWKS endpoint once, then validates signatures locally. If the issuer is offline, cached keys still work. The signed record carries all the evidence needed to confirm what happened, when, and who attested to it.
+                  Verification never calls home. There is no Originary API in the verification path. The verifier fetches the public key from the issuer&apos;s standard JWKS endpoint once, then validates signatures locally. If the issuer is temporarily unreachable, verifiers may use previously cached public keys according to their local trust, expiry, and revocation policy. The signed record carries the fields needed to confirm what happened, when, and who attested to it.
                 </p>
                 <KeyPoint>
                   Records are self-contained. Verification is local. No network dependency on Originary or any third party at verification time.
@@ -185,7 +185,7 @@ export default function TrustPage() {
                 anchor="cryptography"
               >
                 <p style={proseStyle}>
-                  All signatures use Ed25519 (RFC 8032), a modern elliptic-curve algorithm with no known practical attacks and deterministic signing (no nonce reuse risk). Keys are compact (32-byte public keys) and verification is fast.
+                  PEAC uses Ed25519, a widely deployed modern signature scheme standardized in RFC 8032. Keys are compact (32-byte public keys) and verification is fast.
                 </p>
                 <p style={proseStyle}>
                   You bring your own keys. Generate them locally, store them in your KMS (AWS KMS, GCP Cloud KMS, Azure Key Vault, HashiCorp Vault), or use hardware security modules. Originary never holds or accesses your private signing keys. Public keys are published at standard JWKS endpoints (<code style={codeStyle}>/.well-known/jwks.json</code>) so any verifier can resolve them without proprietary tooling.

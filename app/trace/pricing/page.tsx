@@ -81,11 +81,11 @@ export default function TracePricingPage() {
   const faqs = [
     {
       question: 'What is the difference between OSS and Cloud?',
-      answer: 'OSS is self-hosted and includes all core features (ingestion, HMAC auth, bot detection, basic receipts). Cloud adds managed hosting, attested receipts (KMS-backed), automated compliance bundles, multi-property rollups, and enterprise support.'
+      answer: 'OSS is self-hosted and includes core event ingestion, HMAC auth, agent and crawler identification signals, self-managed records, and exports. Managed deployment adds hosting, KMS-backed signing operations where required, record bundles, multi-property rollups, and enterprise support.'
     },
     {
-      question: 'What are attested receipts?',
-      answer: 'Attested receipts are PEAC receipts signed with KMS-backed keys and include domain attestation. They provide stronger legal evidence than self-managed keys and are required for certain compliance use cases.'
+      question: 'What are managed signing operations?',
+      answer: 'Managed signing operations use KMS-backed keys and domain controls where required. They support stronger review posture than ad hoc local keys while keeping records portable.'
     },
     {
       question: 'Can I migrate from OSS to Cloud later?',
@@ -206,7 +206,7 @@ export default function TracePricingPage() {
                     marginBottom: 'var(--space-6)',
                     lineHeight: 1.6
                   }}>
-                    Complete self-hosted implementation. Apache 2.0 license. Deploy to Cloudflare Workers, Nginx, or Docker. Includes event ingestion, HMAC auth, bot detection, PEAC receipts (self-managed keys), and exports.
+                    Complete self-hosted implementation. Apache 2.0 license. Deploy to Cloudflare Workers, Nginx, or Docker. Includes event ingestion, HMAC auth, agent and crawler identification signals, PEAC records with self-managed keys, and exports.
                   </p>
                   <a
                     href="https://github.com/peacprotocol/peac"

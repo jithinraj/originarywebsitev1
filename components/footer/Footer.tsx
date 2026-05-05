@@ -41,7 +41,7 @@ export default function Footer() {
               <img src="/logo/originary-wordmark.svg" alt="originary" className="block h-[1.2rem] w-auto" />
             </Link>
 
-            <p className="hp-onepage-footer-tag">Verifiable records for API, agent, MCP, and commerce flows.</p>
+            <p className="hp-onepage-footer-tag">Portable signed records for API and agent workflows.</p>
             <p className="hp-onepage-footer-body">{NARRATIVE.plainSentence}</p>
 
             <div className="site-footer-signals" aria-label="Platform properties">

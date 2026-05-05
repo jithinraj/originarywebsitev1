@@ -26,7 +26,16 @@ export default function ContactPage() {
                 Talk to Originary
               </h1>
               <p style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
-                Technical review, enterprise deployment, pilot planning, integration support, or partnership inquiry.
+                Tell us the workflow, the system that emits it, who needs to verify it, and why logs are not enough.
+              </p>
+            </div>
+
+            <div className="card" style={{ marginBottom: 'var(--space-8)', background: 'var(--surface-subtle)' }}>
+              <h2 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
+                Best first message
+              </h2>
+              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>
+                Tell us the workflow, the system that emits it, who needs to verify it, and why logs are not enough.
               </p>
             </div>
 
@@ -72,9 +81,9 @@ export default function ContactPage() {
               </h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
                 {[
-                  { title: 'Book a technical review', desc: 'Architecture walkthrough, integration planning, deployment review', mailto: 'contact@originary.xyz?subject=Technical%20Review' },
-                  { title: 'Enterprise deployment', desc: 'Managed verification, key management, compliance evidence, pilot scope', mailto: 'contact@originary.xyz?subject=Enterprise%20Deployment' },
-                  { title: 'Integration support', desc: 'Adding Originary to your API, MCP server, or agent workflow', mailto: 'contact@originary.xyz?subject=Integration%20Support' },
+                  { title: 'I want to check whether my logs are enough.', desc: 'Proof Check, artifact review, and the smallest useful next step', mailto: 'contact@originary.xyz?subject=Proof%20Gap%20Review' },
+                  { title: 'I want to add signed records to one workflow.', desc: 'One API, MCP server, gateway, payment flow, or agent handoff', mailto: 'contact@originary.xyz?subject=One%20Workflow%20Pilot' },
+                  { title: 'I want enterprise deployment or procurement review.', desc: 'Managed verification, signing operations, record exports, and rollout scope', mailto: 'contact@originary.xyz?subject=Enterprise%20Deployment' },
                   { title: 'Partnership', desc: 'Standards collaboration, ecosystem integration, research', mailto: 'contact@originary.xyz?subject=Partnership' },
                   { title: 'Security and legal', desc: 'Vulnerability reports, privacy inquiries, trademark questions', mailto: 'security@originary.xyz?subject=Security%20Inquiry' },
                 ].map((item) => (

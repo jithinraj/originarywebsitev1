@@ -58,7 +58,7 @@ export default function Press() {
                   About <Mark>Originary</Mark>
                 </h2>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  Originary is the verification layer for agent-facing systems. When an agent calls an API or tool, Originary verifies the request, applies policy, and returns a signed record of the decision. These records are portable, offline-verifiable, and built on PEAC, the open standard for verifiable interaction records.
+                  Originary adds signed records beside agent-facing systems. When an agent calls an API or tool, your gateway, runtime, or policy layer makes the decision; Originary records selected facts, policy context, timestamp, issuer, and signature. These records are portable, offline-verifiable, and built on PEAC, the open standard for verifiable interaction records.
                 </p>
 
                 <h2 style={{
@@ -70,7 +70,7 @@ export default function Press() {
                   Why Now
                 </h2>
                 <p style={{ marginBottom: 'var(--space-6)' }}>
-                  AI agents are crossing organizational boundaries at scale: calling APIs, accessing tools, making purchases, retrieving content. There is no standard way to verify what happened after the fact. Logs stay inside one system. Originary creates portable, cryptographically signed evidence that works across vendors, frameworks, and trust boundaries.
+                  AI agents are crossing organizational boundaries at scale: calling APIs, accessing tools, making purchases, retrieving content. There is no standard way to verify what happened after the fact. Logs stay local. Records cross boundaries. Originary creates portable signed records that work across vendors, frameworks, and trust boundaries.
                 </p>
 
                 <h2 style={{

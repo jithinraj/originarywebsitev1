@@ -36,19 +36,19 @@ Contact: contact@originary.xyz
 ## Products
 
 ### Originary Verify (/products/verify)
-The fastest way to operationalize PEAC in production. Validate signatures, key material, policy binding, and evidence exports at scale. Hosted or self-hosted deployment paths. Enterprise evidence exports.
+Run signed-record verification in production. Validate signatures, key material, policy binding, and record exports at scale. Hosted or self-hosted deployment paths. Enterprise record exports.
 
 ### Agent Auditor (/agent-auditor)
 Open any signed record file (.jws, .json, .zip) and inspect its contents. Verifies Ed25519 signatures locally. No signup, no backend, no data leaves your machine. Apache-2.0.
 
 ### Gateway 402 (/products/gateway-402)
-Enforce access and payment policy at the edge. Issue signed records on every response. HTTP 402 challenge flows.
+Add paid API access records to HTTP 402 and x402-style flows. Your stack makes the access and payment decisions; Originary records selected facts.
 
 ### MCP Server (/integrations/mcp)
 MCP tool server (@peac/mcp-server) with 5 tools: verify-receipt, inspect-receipt, decode-receipt (pure, offline), issue-receipt, create-bundle (privileged, require issuer key). Works with Claude Desktop, Cursor, and custom agents.
 
 ### Trace (/trace)
-Monitor agent traffic accessing your APIs and content. Export signed evidence. Preview.
+Record selected access events from APIs and content. Export signed records for later review. Preview.
 
 ### Proof Check (/agent-proof-check)
 Paste logs, traces, webhooks, signed records, or incident summaries from AI agents, APIs, tool calls, and MCP servers. See what another party can verify, what is missing, and what holds up in a review, dispute, or audit. Runs in the browser. No signup.
@@ -57,7 +57,7 @@ Paste logs, traces, webhooks, signed records, or incident summaries from AI agen
 Policy Pack Generator. Generate peac.txt, AIPREF headers, and human-readable policy pages from a single YAML config.
 
 ### CLI and SDKs (/downloads)
-@peac/cli, @peac/mcp-server, @peac/capture-node, @peac/rails-stripe. npm and source archives. Requires Node 22+.
+@peac/cli, @peac/mcp-server, @peac/capture-node, x402 and payment mappings. npm and source archives. Requires Node 22+.
 
 ## Developer Resources
 

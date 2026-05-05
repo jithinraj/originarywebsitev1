@@ -47,6 +47,7 @@ export function PilotForm({ destinationEmail }: { destinationEmail: string }) {
           <option>MCP</option>
           <option>Commerce</option>
           <option>Runtime</option>
+          <option>Not sure. Help us find the proof gap.</option>
           <option>Other</option>
         </select>
       </label>
@@ -66,7 +67,7 @@ export function PilotForm({ destinationEmail }: { destinationEmail: string }) {
         Request pilot review
       </button>
       <p className="hp-story-form-note">
-        Opens an email draft to <a href={`mailto:${destinationEmail}`}>{destinationEmail}</a>. Send it to share the details.
+        Opens an email draft to <a href={`mailto:${destinationEmail}`}>{destinationEmail}</a>. Send the workflow, who needs to verify it, and why logs are not enough.
       </p>
     </form>
   )

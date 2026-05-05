@@ -113,11 +113,15 @@ export default function Downloads() {
               }}>
                 <span><strong>Publisher:</strong> Originary (Poem, Inc.)</span>
                 <span>•</span>
-                <span><strong>Current PEAC release:</strong> {FACTS.currentVersion}</span>
+                <span><strong>Current PEAC release:</strong> {FACTS.currentVersion} on npm next</span>
+                <span>•</span>
+                <span><strong>npm latest:</strong> v0.13.0</span>
                 <span>•</span>
                 <span><strong>License:</strong> Apache-2.0</span>
                 <span>•</span>
                 <span><strong>Current taught format:</strong> interaction-record+jwt</span>
+                <span>•</span>
+                <span><strong>Legacy format:</strong> peac-receipt/0.1</span>
               </div>
 
               <div style={{
@@ -134,6 +138,14 @@ export default function Downloads() {
                   marginBottom: 'var(--space-3)'
                 }}>
                   Choose your distribution
+                </p>
+                <p style={{
+                  fontSize: 'var(--text-sm)',
+                  color: 'var(--text-secondary)',
+                  lineHeight: 1.6,
+                  margin: '0 0 var(--space-4) 0'
+                }}>
+                  Most users should start with Agent Auditor or Proof Check before installing packages.
                 </p>
                 <div style={{
                   display: 'flex',
@@ -238,10 +250,9 @@ export default function Downloads() {
                   flexDirection: 'column',
                   gap: 'var(--space-2)'
                 }}>
-                  <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i -g @peac/cli</code>
-                  <code style={{ background: 'var(--surface-card)', padding: 'var(--space-2) var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', display: 'block' }}>npm i @peac/protocol @peac/crypto @peac/schema
-npm i -g @peac/cli
-npm i @peac/mcp-server</code>
+                  <pre style={{ background: 'var(--surface-card)', padding: 'var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', margin: 0, lineHeight: 1.7 }}>{`npm i -g @peac/cli
+npm i @peac/protocol @peac/crypto @peac/schema
+npm i @peac/mcp-server`}</pre>
                 </div>
               </div>
 

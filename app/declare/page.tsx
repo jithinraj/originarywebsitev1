@@ -10,7 +10,7 @@ import { FACTS } from '@/lib/facts'
 export const metadata: Metadata = {
   title: 'Declare | AI Policy Pack Generator',
   description: 'Generate your AI policy pack from one file. Create peac.txt, robots directives, AIPREF templates, and human policy pages with PEAC.',
-  keywords: 'AI policy, AI Access, AIPREF, peac.txt, AI crawler policy, AI bot detection, PEAC Protocol, HTTP 402, x402, crawling protection, AI policy generator',
+  keywords: 'AI policy, AI Access, AIPREF, peac.txt, AI crawler policy, agent and crawler identification, PEAC Protocol, HTTP 402, x402, crawling protection, AI policy generator',
   robots: 'index,follow',
   alternates: {
     canonical: '/declare'

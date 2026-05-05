@@ -7,13 +7,13 @@ import Breadcrumb from '@/components/Breadcrumb'
 
 export const metadata: Metadata = {
   title: 'Gateway 402 | HTTP 402 & x402 payments for APIs',
-  description: 'HTTP 402 commerce gateway for machine-payable APIs. Enable HTTP 402 and x402 payments for agentic economy use cases.',
-  keywords: 'HTTP 402, x402, payment gateway, API payments, policy enforcement, enterprise payments, agent commerce, HTTP 402 commerce, x402 commerce',
+  description: 'Paid API record layer for HTTP 402 and x402-style flows. Bind access, terms, payment proof, and result context into signed records.',
+  keywords: 'HTTP 402, x402, paid API records, API payments, signed records, enterprise payments, agent commerce, HTTP 402 commerce, x402 commerce',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'website',
     title: 'Gateway 402 | HTTP 402 & x402 payments for APIs',
-    description: 'HTTP 402 commerce gateway for machine-payable APIs. Enable HTTP 402 and x402 payments for agentic economy use cases.',
+    description: 'Paid API record layer for HTTP 402 and x402-style flows. Bind access, terms, payment proof, and result context into signed records.',
     url: '/products/gateway-402',
     images: ['/og'],
     siteName: 'Originary',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Gateway 402 | HTTP 402 & x402 payments for APIs',
-    description: 'HTTP 402 commerce gateway for machine-payable APIs. Enable HTTP 402 payments and x402 commerce for agentic economy use cases.',
+    description: 'Paid API record layer for HTTP 402 and x402-style flows. Bind access, terms, payment proof, and result context into signed records.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -123,7 +123,7 @@ export default function Gateway402() {
                 color: 'var(--brand-accent)'
               }}>
                 <CreditCard size={16} />
-                <span>PAYMENT GATEWAY</span>
+                <span>PAID API RECORD LAYER</span>
                 <div style={{
                   display: 'flex',
                   gap: 'var(--space-2)'
@@ -185,6 +185,43 @@ export default function Gateway402() {
           </div>
         </section>
 
+        <section className="section" style={{ background: 'var(--surface-subtle)' }}>
+          <div className="container">
+            <div style={{ maxWidth: '880px', margin: '0 auto var(--space-12) auto', textAlign: 'center' }}>
+              <h2 style={{ marginBottom: 'var(--space-4)' }}>Use this when paid access needs a record.</h2>
+              <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-lg)', lineHeight: 1.7 }}>
+                Originary does not custody funds, replace payment rails, or settle transactions. It records the paid-access boundary so another party can inspect what happened later.
+              </p>
+            </div>
+            <div className="grid grid-2" style={{ gap: 'var(--space-6)', maxWidth: '900px', margin: '0 auto var(--space-12) auto' }}>
+              {[
+                'You operate a paid API or data endpoint.',
+                'Automated clients create billing or usage disputes.',
+                'You want HTTP 402 or x402-style access without losing audit context.',
+                'A customer needs proof of access, terms, payment proof, and result.',
+              ].map((item) => (
+                <div key={item} className="card" style={{ padding: 'var(--space-5)' }}>
+                  <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.6 }}>{item}</p>
+                </div>
+              ))}
+            </div>
+            <div className="grid grid-3" style={{ gap: 'var(--space-6)' }}>
+              {[
+                ['What your stack does', ['challenges', 'payment validation', 'access decision', 'response']],
+                ['What Originary records', ['terms digest', 'payment proof reference', 'access decision', 'response/result digest', 'issuer, timestamp, signature']],
+                ['What the customer verifies', ['the record came from you', 'the terms matched', 'the action happened in the stated window', 'the record was not modified']],
+              ].map(([title, items]) => (
+                <div key={title as string} className="card" style={{ padding: 'var(--space-6)' }}>
+                  <h3 style={{ marginBottom: 'var(--space-4)' }}>{title}</h3>
+                  <ul style={{ margin: 0, paddingLeft: '1.1rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+                    {(items as string[]).map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="section">
           <div className="container">
             <h2 style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>Protocol specification</h2>
@@ -223,11 +260,11 @@ export default function Gateway402() {
                   }}>STANDARD</span>
                 </div>
                 <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Open protocol for HTTP 402 payment flows. Defines challenge headers, payment proof format, and receipt issuance.
+                  Open protocol for HTTP 402 payment flows. Defines challenge headers, payment proof format, and signed-record issuance.
                 </p>
                 <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
                   <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>HTTP 402</span>
-                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Signed receipts</span>
+                  <span style={{ background: 'var(--surface-card)', padding: 'var(--space-1) var(--space-2)', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>Signed records</span>
                 </div>
               </div>
             </div>

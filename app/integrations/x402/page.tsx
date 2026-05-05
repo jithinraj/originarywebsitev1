@@ -239,10 +239,10 @@ Cache-Control: no-store
               </li>
               <li style={{ marginBottom: 'var(--space-3)' }}>
                 <span style={{ color: 'var(--accent-brand)', fontWeight: 600, fontSize: 'var(--text-base)' }}>
-                  → Stripe x402 (@peac/rails-stripe)
+                  → Stripe-style payment event mapping
                 </span>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)', marginLeft: 'var(--space-4)' }}>
-                  Bridge x402 crypto payments with Stripe via fromCryptoPaymentIntent()
+                  Bridge x402 payment context with Stripe-style payment events
                 </p>
               </li>
               <li>

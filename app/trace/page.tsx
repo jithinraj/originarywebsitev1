@@ -38,13 +38,13 @@ export default function TracePage() {
   const features = [
     {
       icon: <Eye size={24} />,
-      title: 'Agent Visibility',
-      description: 'See which agents access your APIs and content, what they request, and when.'
+      title: 'Access event records',
+      description: 'Record selected API and content access events for later review, disputes, and audits.'
     },
     {
       icon: <Shield size={24} />,
-      title: 'Policy Compliance',
-      description: 'Evaluate requests against your declared terms. Issue signed records for compliant interactions.'
+      title: 'Policy context',
+      description: 'Bind the policy or terms your existing edge, gateway, or runtime applied.'
     },
     {
       icon: <Download size={24} />,
@@ -61,21 +61,19 @@ export default function TracePage() {
   const ossFeatures = [
     'Event ingestion (JSON/NDJSON)',
     'HMAC authentication + replay protection',
-    'Bot detection & classification',
+      'Agent and crawler identification signals',
     'Data footprint tracking',
     'Signed interaction records (self-managed keys)',
-    'Public badge & stats API',
-    'CSV/JSON exports',
-    'Cloudflare Worker & Nginx tailer',
-    'Prometheus metrics',
-    'OpenAPI docs'
+      'CSV/JSON exports',
+      'Cloudflare Worker & Nginx tailer',
+      'OpenAPI docs'
   ]
 
   const cloudFeatures = [
     'Everything in OSS',
-    'Automated compliance bundles',
+    'Automated record bundles',
     'Multi-property rollups',
-    'Cross-site benchmarking',
+    'Multi-property record export',
     'Email/Slack alerts',
     'Priority support'
   ]
@@ -103,7 +101,7 @@ export default function TracePage() {
                 letterSpacing: '-0.04em',
                 color: 'var(--text-primary)',
               }}>
-                Monitor agent access. Export signed evidence.
+                Turn access events into records others can verify.
               </h1>
               <p style={{
                 fontSize: 'var(--text-xl)',
@@ -113,7 +111,7 @@ export default function TracePage() {
                 maxWidth: '700px',
                 margin: '0 auto var(--space-10) auto'
               }}>
-                See which automated clients touched your APIs and content, what policy applied, and what evidence exists afterward.
+                Trace observes selected API and content access events, then exports signed records for review, disputes, and audits.
               </p>
               <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <a
@@ -142,7 +140,7 @@ export default function TracePage() {
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)'
               }}>
-                Monitor agent access. Export signed evidence.
+                Record selected access events.
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
@@ -150,7 +148,7 @@ export default function TracePage() {
                 maxWidth: '600px',
                 margin: '0 auto'
               }}>
-                Detect, classify, and export signed evidence
+                Export signed records for later review.
               </p>
             </div>
 
@@ -418,10 +416,10 @@ export default function TracePage() {
                     fontWeight: 700,
                     marginBottom: 'var(--space-2)'
                   }}>
-                    Trace Cloud
+                    Managed Trace export
                   </h3>
                   <p style={{ color: 'var(--text-secondary)' }}>
-                    Attested receipts + automation + scale
+                    Managed record export, bundles, and rollout support
                   </p>
                 </div>
 
@@ -466,7 +464,7 @@ export default function TracePage() {
                 </ul>
 
                 <Link
-                  href="/trace/pricing"
+                  href="/contact"
                   className="btn btn-primary"
                   style={{
                     display: 'flex',
@@ -650,7 +648,7 @@ go install ./tailer
                     color: 'var(--text-secondary)',
                     margin: 0
                   }}>
-                    Yes. Trace identifies AI crawlers and agents accessing your content, applies policy, and generates verifiable interaction records. Use it to monitor AI access and enforce your declared terms.
+                    Trace can observe selected crawler or agent access events and export signed records. Your existing edge, gateway, or policy layer remains responsible for enforcement.
                   </p>
                 </div>
 
@@ -669,7 +667,7 @@ go install ./tailer
                     color: 'var(--text-secondary)',
                     margin: 0
                   }}>
-                    Trace generates signed interaction records for every access, providing verifiable evidence of what was accessed, when, and under what terms.
+                    Trace exports signed records for selected access events, providing verifiable context about what was accessed, when, and under what terms.
                   </p>
                 </div>
               </div>
@@ -695,7 +693,7 @@ go install ./tailer
                 fontWeight: 700,
                 marginBottom: 'var(--space-4)'
               }}>
-                Monitor agent access to your content
+                Record selected access events from your content
               </h2>
               <p style={{
                 fontSize: 'var(--text-lg)',
@@ -716,8 +714,8 @@ go install ./tailer
                   <Github size={18} />
                   Start with OSS
                 </a>
-                <Link href="/trace/pricing" className="btn btn-secondary btn-lg">
-                  View Cloud pricing
+                <Link href="/contact" className="btn btn-secondary btn-lg">
+                  Discuss deployment
                 </Link>
               </div>
             </div>
@@ -744,7 +742,7 @@ go install ./tailer
               },
               {
                 "@type": "Offer",
-                "name": "Trace Cloud Starter",
+                "name": "Managed Trace Starter",
                 "price": "29",
                 "priceCurrency": "USD",
                 "priceSpecification": {
@@ -758,7 +756,7 @@ go install ./tailer
               },
               {
                 "@type": "Offer",
-                "name": "Trace Cloud Pro",
+                "name": "Managed Trace Pro",
                 "price": "99",
                 "priceCurrency": "USD",
                 "priceSpecification": {
@@ -774,11 +772,11 @@ go install ./tailer
             "softwareVersion": "0.1.0",
             "operatingSystem": "Any",
             "url": "https://www.originary.xyz/trace",
-            "description": "AI crawler analytics and compliance evidence for your website. Track GPTBot, ClaudeBot, and other AI services with PEAC Protocol.",
+            "description": "Selected access-event records for APIs and content. Export signed records for review, disputes, and audits.",
             "featureList": [
               "AI crawler identification",
               "Interaction record generation",
-              "Compliance evidence",
+              "Record export",
               "Policy violation detection",
               "Multi-deployment support"
             ],

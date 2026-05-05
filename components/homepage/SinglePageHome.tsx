@@ -22,29 +22,59 @@ const comparisonRows = [
 
 const productCards = [
   {
-    title: 'Verify API',
-    body: 'Validate signed records, policy bindings, issuer keys, and verification reports.',
+    title: 'Proof Check',
+    body: 'Find the workflows where logs, traces, or webhooks are not enough.',
   },
   {
-    title: 'Issuer operations',
-    body: 'Key rotation, revocation, policy binding, and production-safe record issuance.',
+    title: 'Agent Auditor',
+    body: 'Inspect and verify a signed record locally.',
   },
   {
-    title: 'Audit bundles',
-    body: 'Export a package a counterparty, auditor, or customer can verify independently.',
+    title: 'Originary Verify',
+    body: 'Run signed-record verification workflows in production.',
   },
   {
-    title: 'Dispute workflows',
-    body: 'Turn signed records into reviewable proof for billing, procurement, incident, and compliance questions.',
+    title: 'Gateway 402',
+    body: 'Record paid access decisions and API commerce events.',
+  },
+  {
+    title: 'MCP Server',
+    body: 'Bring signed-record verification into tool and agent workflows.',
+  },
+  {
+    title: 'Trace',
+    body: 'Export records from selected access, runtime, and handoff events.',
+  },
+]
+
+const painCards = [
+  {
+    title: 'Usage dispute',
+    body: 'A customer challenges API usage, pricing, policy, or scope.',
+  },
+  {
+    title: 'Audit or procurement review',
+    body: 'A buyer asks what an agent did, what policy applied, and who can verify it.',
+  },
+  {
+    title: 'Agent or payment handoff',
+    body: 'An MCP, A2A, gateway, or payment flow needs context another party can inspect.',
   },
 ]
 
 const mechanismSteps = [
-  'Service publishes policy or terms.',
-  'Automated action happens.',
-  'Signed record is issued.',
-  'Counterparty verifies offline.',
-  'Audit bundle exports when needed.',
+  {
+    title: 'Your stack decides',
+    body: 'API, gateway, MCP server, runtime, or payment rail approves, denies, routes, settles, or responds.',
+  },
+  {
+    title: 'Originary records',
+    body: 'Selected facts, policy digest, result digest, issuer, timestamp, and signature become a signed record.',
+  },
+  {
+    title: 'Another party verifies',
+    body: 'A customer, partner, auditor, or support team verifies the record without your dashboard.',
+  },
 ]
 
 const trustCards = [
@@ -58,12 +88,12 @@ const trustCards = [
 
 const buyerCards = [
   {
-    title: 'API operators',
+    title: 'API and data providers',
     body: 'Prove usage, policy, and authorization when customers dispute automated traffic.',
   },
   {
-    title: 'MCP server hosts',
-    body: 'Export signed records for tool calls, production changes, and delegated actions.',
+    title: 'MCP and tool hosts',
+    body: 'Export signed records for tool calls, delegated actions, and production-impacting automation.',
   },
   {
     title: 'AI platform teams',
@@ -76,10 +106,21 @@ const buyerCards = [
 ]
 
 const originaryAdds = [
-  'Issue records when automated actions happen.',
-  'Verify records independently, including offline.',
-  'Export records for disputes, audits, procurement, and incident review.',
-  'Gateway integrations that emit records from existing decisions.',
+  'issue records when automated actions happen',
+  'verify records independently, including offline',
+  'export records for disputes, audits, procurement, and incident review',
+  'add gateway-adjacent record issuance without replacing your gateway',
+]
+
+const stackSurfaces = [
+  'APIs',
+  'MCP servers',
+  'Agent gateways',
+  'A2A handoffs',
+  'Payment flows',
+  'Runtime governance',
+  'Observability exports',
+  'Audit workflows',
 ]
 
 const workflowChecklist = [
@@ -103,19 +144,19 @@ const reportFields = [
 const faqs = [
   {
     q: 'Is this observability?',
-    a: 'No. Observability helps your team understand system behavior. Originary creates records another party can verify independently.',
+    a: 'No. Observability helps your team understand what happened inside your systems. Originary creates signed records another party can verify without access to your logs, traces, or dashboard.',
   },
   {
     q: 'Do I need Originary to verify a record?',
-    a: 'No. Verification should work offline with issuer public keys. Originary helps teams run issuance, verification, and export workflows in production.',
+    a: 'No. PEAC records are designed for independent verification. Originary provides product workflows for issuing, managing, reviewing, and exporting records in production.',
   },
   {
     q: 'What happens if I stop using Originary?',
-    a: 'Your records remain portable. PEAC is open, and verification does not require a callback to Originary.',
+    a: 'Records that were already issued remain verifiable according to their issuer keys, expiry, and trust policy. Verification does not depend on an Originary callback.',
   },
   {
     q: 'Is this only for AI agents?',
-    a: 'No. It is for automated actions across APIs, MCP servers, tools, gateways, and agent workflows.',
+    a: 'No. The first use cases are agent, API, MCP, gateway, A2A, and payment workflows, but the primitive is broader: signed records for automated actions that cross boundaries.',
   },
 ]
 
@@ -150,14 +191,24 @@ export function SinglePageHome() {
         <div className="hp-container">
           <div className="hp-story-head">
             <div className="hp-story-head-copy">
-              <StoryEyebrow>Problem</StoryEyebrow>
-              <h2 className="hp-story-title">The action crossed companies. The proof did not.</h2>
+              <StoryEyebrow>Why It Matters</StoryEyebrow>
+              <h2 className="hp-story-title">Logs help your team debug. They do not settle what happened between companies.</h2>
             </div>
             <div className="hp-story-head-body">
               <p className="hp-story-text">
-                An agent running on Company A&apos;s infrastructure calls Company B&apos;s API. The API returns a signed record showing the action, policy, issuer, timestamp, and verification status. Three weeks later, when a billing dispute or audit question appears, both sides can verify the same record offline. No dashboard access. No screenshot. No phone call.
+                When an automated action crosses a company boundary, the proof needs to cross too.
               </p>
             </div>
+          </div>
+
+          <div className="hp-story-card-grid-three">
+            {painCards.map((card) => (
+              <article key={card.title} className="hp-story-card hp-story-product-card">
+                <CheckIcon />
+                <h3>{card.title}</h3>
+                <p>{card.body}</p>
+              </article>
+            ))}
           </div>
 
           <div className="hp-proof-stage" aria-label="Signed record crossing a company boundary">
@@ -168,9 +219,9 @@ export function SinglePageHome() {
               </div>
               <div className="hp-proof-record-body">
                 <div>
-                  <span className="hp-proof-mini-label">Boundary event</span>
-                  <h3>Company A agent called a priced API.</h3>
-                  <p>The record carries the action, policy, issuer, timestamp, verification status, and signature beyond either party&apos;s dashboard.</p>
+                  <span className="hp-proof-mini-label">Shared proof artifact</span>
+                  <h3>Company A&apos;s agent called Company B&apos;s priced API.</h3>
+                  <p>The response included a signed record carrying the action, policy, issuer, timestamp, verification mode, and signature. Three weeks later, both sides can inspect the same artifact.</p>
                 </div>
                 <div className="hp-proof-ledger">
                   {boundaryFields.map(([label, value]) => (
@@ -212,7 +263,7 @@ export function SinglePageHome() {
           <div className="hp-story-head hp-proof-head">
             <div className="hp-story-head-copy">
               <StoryEyebrow>Logs vs Records</StoryEyebrow>
-              <h2 className="hp-story-title">Logs explain behavior. Records prove what crossed the boundary.</h2>
+              <h2 className="hp-story-title">Logs stay inside your system. Records survive the handoff.</h2>
             </div>
             <div className="hp-story-head-body">
               <p className="hp-story-text">
@@ -258,10 +309,10 @@ export function SinglePageHome() {
         <div className="hp-container">
           <div className="hp-story-head hp-story-head-centered">
             <div className="hp-story-head-copy">
-              <StoryEyebrow>Product</StoryEyebrow>
-              <h2 className="hp-story-title">Originary helps teams issue, verify, and export signed records.</h2>
+              <StoryEyebrow>Where To Start</StoryEyebrow>
+              <h2 className="hp-story-title">Add records where proof already matters.</h2>
               <p className="hp-story-text hp-story-text-centered">
-                PEAC defines the open standard. Originary helps teams run it in production.
+                Start with one workflow. Keep your stack. Make selected events signed, verifiable, and exportable.
               </p>
             </div>
           </div>
@@ -277,7 +328,7 @@ export function SinglePageHome() {
           </div>
 
           <div className="hp-story-inline-callout">
-            <strong>Originary adds:</strong>
+            <strong>Originary helps you:</strong>
             <StoryList items={originaryAdds} />
           </div>
         </div>
@@ -287,18 +338,19 @@ export function SinglePageHome() {
         <div className="hp-container">
           <div className="hp-story-head hp-story-head-centered">
             <div className="hp-story-head-copy">
-              <StoryEyebrow>Architecture</StoryEyebrow>
-              <h2 className="hp-story-title">A record that survives the boundary.</h2>
+              <StoryEyebrow>How It Works</StoryEyebrow>
+              <h2 className="hp-story-title">Keep your control plane. Add proof that travels.</h2>
             </div>
           </div>
 
           <div className="hp-story-steps-shell">
             <div className="hp-story-steps-line" aria-hidden="true" />
-            <div className="hp-story-steps-grid hp-story-steps-grid-five">
+            <div className="hp-story-steps-grid">
               {mechanismSteps.map((step, index) => (
-                <article key={step} className="hp-story-card hp-story-step-card">
+                <article key={step.title} className="hp-story-card hp-story-step-card">
                   <span className="hp-story-step-index">0{index + 1}</span>
-                  <p>{step}</p>
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
                 </article>
               ))}
             </div>
@@ -314,10 +366,10 @@ export function SinglePageHome() {
         <div className="hp-container">
           <div className="hp-story-dark-grid">
             <div className="hp-story-dark-copy">
-              <StoryEyebrow>Trust</StoryEyebrow>
+              <StoryEyebrow>Independent Verification</StoryEyebrow>
               <h2 className="hp-story-title hp-story-title-inverse">Built to be verified without us.</h2>
               <p className="hp-story-text hp-story-text-inverse">
-                Originary can help issue, manage, and export records in production. Verification remains local, offline, and independent.
+                Originary can help issue, manage, and export records in production. Verification remains local, offline-capable, and independent.
               </p>
             </div>
 
@@ -354,8 +406,8 @@ export function SinglePageHome() {
         <div className="hp-container">
           <div className="hp-story-head hp-story-head-centered">
             <div className="hp-story-head-copy">
-              <StoryEyebrow>Who It Is For</StoryEyebrow>
-              <h2 className="hp-story-title">Built for the systems agents touch.</h2>
+              <StoryEyebrow>Teams</StoryEyebrow>
+              <h2 className="hp-story-title">Built for teams who need proof outside their own dashboard.</h2>
             </div>
           </div>
 
@@ -371,14 +423,33 @@ export function SinglePageHome() {
         </div>
       </section>
 
+      <section id="stack" className="hp-section hp-story-section hp-story-section-soft">
+        <div className="hp-container">
+          <div className="hp-story-head hp-story-head-centered">
+            <div className="hp-story-head-copy">
+              <StoryEyebrow>Compatibility</StoryEyebrow>
+              <h2 className="hp-story-title">Works beside your stack.</h2>
+              <p className="hp-story-text hp-story-text-centered">
+                Originary does not replace your gateway, runtime, payment rail, observability stack, or policy engine. It records selected facts from them in a format another party can verify.
+              </p>
+            </div>
+          </div>
+          <div className="hp-story-outcome-grid">
+            {stackSurfaces.map((item) => (
+              <div key={item} className="hp-story-outcome-card">{item}</div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="sample-report" className="hp-section hp-story-section hp-story-section-report">
         <div className="hp-container">
           <div className="hp-story-report-layout">
             <div className="hp-story-report-copy">
               <StoryEyebrow>Verifier Report</StoryEyebrow>
-              <h2 className="hp-story-title hp-story-title-inverse">A signed record becomes a report another party can inspect.</h2>
+              <h2 className="hp-story-title hp-story-title-inverse">A signed record becomes a report another party can trust.</h2>
               <p className="hp-story-text hp-story-text-inverse">
-                The report is concrete: issuer, signature, policy binding, terms, record format, and verification mode are visible without relying on your internal dashboard.
+                Issuer, signature, policy binding, terms digest, record format, and verification mode are visible without relying on your internal dashboard.
               </p>
             </div>
             <div className="hp-artifact-verifier hp-story-report-panel">
@@ -407,7 +478,7 @@ export function SinglePageHome() {
               <StoryEyebrow>Pilot</StoryEyebrow>
               <h2 className="hp-story-title hp-story-title-inverse">Start with one workflow where logs already fail.</h2>
               <p className="hp-story-text hp-story-text-inverse">
-                Bring one API, MCP, commerce, or runtime flow. Originary will help make it signed, verifiable, and exportable without replacing your stack.
+                Bring one API, MCP, commerce, or runtime flow. Originary will help make selected events signed, verifiable, and exportable without replacing your stack.
               </p>
               <div className="hp-story-business-divider" />
               <StoryList items={workflowChecklist} />
@@ -435,8 +506,8 @@ export function SinglePageHome() {
             </div>
           </div>
           <div className="hp-story-faq-list hp-story-faq-list-light">
-            {faqs.map((item) => (
-              <details key={item.q} className="hp-story-faq-item">
+            {faqs.map((item, index) => (
+              <details key={item.q} className="hp-story-faq-item" open={index === 0}>
                 <summary>{item.q}</summary>
                 <p>{item.a}</p>
               </details>

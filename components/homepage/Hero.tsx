@@ -94,10 +94,10 @@ const worksWith = [
     className: 'hp-story-logo-langchain',
   },
   {
-    name: 'Microsoft Agent Governance Toolkit',
+    name: 'Microsoft AGT',
     src: '/logos/microsoft-agentic-governance-toolkit.svg',
     className: 'hp-story-logo-agent-governance',
-    label: 'Agent Governance Toolkit',
+    label: 'Microsoft AGT',
   },
   {
     name: 'Claude Managed Agents',
@@ -118,26 +118,22 @@ export function Hero() {
         <div className="hp-hero-verify-copy">
           <div className="hp-hero-verify-kicker">
             <span className="hp-hero-verify-kicker-dot" />
-            For AI agents, APIs, tools, and MCP servers
+            Proof that leaves the system that made it.
           </div>
 
-          <h1 className="hp-hero-verify-title">Proof that leaves the system that made it.</h1>
+          <h1 className="hp-hero-verify-title">Prove API and agent actions without sharing logs.</h1>
 
           <p className="hp-hero-verify-subtitle">
-            Originary helps teams create portable signed records for agent, API, MCP, gateway, A2A, and payment workflows, so another party can verify what happened without trusting your logs.
+            Originary adds portable signed records to API, MCP, gateway, A2A, and payment workflows, so customers, partners, and auditors can verify what happened without accessing your dashboard.
           </p>
 
           <p className="hp-hero-protocol-line">
-            Built on{' '}
-            <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer">
-              PEAC Protocol
-            </a>
-            , the open standard for portable signed interaction records.
+            Start with one API response, MCP tool call, gateway decision, payment event, or agent handoff.
           </p>
 
           <div className="hp-hero-verify-actions hp-hero-verify-actions-dual">
             <Link href="#pilot" className="hp-hero-verify-cta">
-              Start with one workflow
+              Start a pilot
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
                 <path d="M7 17L17 7" />
                 <path d="M9 7H17V15" strokeLinejoin="round" />
@@ -147,7 +143,7 @@ export function Hero() {
               Verify a sample record
             </Link>
             <Link href="#how-it-works" className="hp-hero-architecture-link">
-              See architecture
+              See how it works
             </Link>
           </div>
 
@@ -256,7 +252,7 @@ export function Hero() {
             </div>
           </div>
           <p className="hp-logo-strip-note">
-            Works with x402, MCP, MPP, Stripe, A2A, AP2, Cloudflare, Vercel, Visa, Mastercard, OpenAI, OpenTelemetry, LangChain, Microsoft Agent Governance Toolkit, and Claude Managed Agents.
+            Works with x402, MCP, MPP, Stripe, A2A, AP2, Cloudflare, Vercel, Visa, Mastercard, OpenAI, OpenTelemetry, LangChain, Microsoft AGT, and Claude Managed Agents.
           </p>
         </div>
       </div>

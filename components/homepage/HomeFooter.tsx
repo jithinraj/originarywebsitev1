@@ -42,7 +42,7 @@ export function HomeFooter() {
               />
             </Link>
 
-            <p className="hp-onepage-footer-tag">Verifiable records for API, agent, MCP, and commerce flows.</p>
+            <p className="hp-onepage-footer-tag">Portable signed records for API and agent workflows.</p>
             <p className="hp-onepage-footer-body">
               Originary helps teams issue, verify, and export records for API, MCP, agent, and commerce systems. Built on PEAC Protocol, the open standard underneath.
             </p>
@@ -64,9 +64,7 @@ export function HomeFooter() {
           <div className="hp-onepage-footer-legal">
             <p className="hp-onepage-footer-legal-primary">&copy; 2025 &ndash; 2026 Originary (Poem, Inc.) &middot; Delaware, USA</p>
             <div className="hp-onepage-footer-legal-notes">
-              <p>
-                In the U.S., &lsquo;Originary&rsquo; is used by Poem, Inc. as a brand for its AI infrastructure software and tools for AI agents. Poem, Inc. is not affiliated with Originary Inc.
-              </p>
+              <p>Originary is a brand of Poem, Inc. (Delaware, USA). Not affiliated with Originary Inc.</p>
               <p>PEAC Protocol is an open standard stewarded by Originary and the open-source community.</p>
               <p>All trademarks, logos and brand names are the property of their respective owners.</p>
             </div>
