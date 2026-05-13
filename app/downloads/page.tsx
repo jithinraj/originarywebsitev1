@@ -1,23 +1,30 @@
 import type { Metadata } from 'next'
-import NavigationHeader from '@/components/NavigationHeader'
-import Footer from '@/components/Footer'
 import Script from 'next/script'
 import DownloadsServer from './DownloadsServer'
 import DownloadCardPEAC from '@/components/DownloadCardPEAC'
 import { FACTS } from '@/lib/facts'
+import {
+  PageShell,
+  PageHero,
+  PageSection,
+  Card,
+  Button,
+  PALETTE,
+} from '@/components/home'
+import { Mono } from '@/components/home/atoms/Mono'
 
 const softwareJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: 'Originary CLI',
+  name: 'PEAC Protocol',
   operatingSystem: 'Windows, macOS, Linux',
   applicationCategory: 'DeveloperApplication',
   downloadUrl: 'https://www.originary.xyz/downloads/',
   offers: {
     '@type': 'Offer',
     price: '0',
-    priceCurrency: 'USD'
-  }
+    priceCurrency: 'USD',
+  },
 }
 
 const peacSourceCodeJsonLd = {
@@ -27,267 +34,255 @@ const peacSourceCodeJsonLd = {
   codeRepository: 'https://github.com/peacprotocol/peac',
   license: 'https://www.apache.org/licenses/LICENSE-2.0',
   programmingLanguage: 'TypeScript',
-  version: FACTS.currentVersion.slice(1)
+  version: FACTS.currentVersion.slice(1),
 }
 
 export const metadata: Metadata = {
-  title: 'Downloads | Originary',
-  description: 'Download the Originary and PEAC tools for signed records, including the CLI, MCP Server, Agent Auditor, and source packages.',
-  keywords: 'downloads, CLI, MCP server, PEAC templates, npm packages, policy verification',
+  title: { absolute: 'Downloads | Originary' },
+  description:
+    'Download PEAC Protocol by Originary: open-source software for portable verification of machine actions. Source code, CLI, SDK packages, and tooling.',
+  keywords:
+    'PEAC Protocol, downloads, CLI, MCP server, npm packages, Apache-2.0, open-source',
   robots: 'index,follow',
   openGraph: {
     title: 'Downloads | Originary',
-    description: 'Download the Originary and PEAC tools for signed records, including the CLI, MCP Server, Agent Auditor, and source packages.',
+    description:
+      'Download PEAC Protocol by Originary: open-source software for portable verification of machine actions.',
     url: '/downloads',
     siteName: 'Originary',
-    images: [{
-      url: '/og',
-      width: 1200,
-      height: 630,
-      alt: 'Originary Downloads'
-    }],
-    type: 'website'
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Downloads | Originary' }],
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Downloads | Originary',
-    description: 'Download the Originary and PEAC tools for signed records, including the CLI, MCP Server, Agent Auditor, and source packages.',
-    images: ['/og']
+    description:
+      'Download PEAC Protocol by Originary: open-source software for portable verification of machine actions.',
+    images: ['/og'],
   },
   alternates: {
-    canonical: '/downloads'
-  }
+    canonical: '/downloads',
+  },
 }
 
-export default function Downloads() {
+const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
+const mono = 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace'
+
+export default function DownloadsPage() {
   return (
-    <div className="wrap">
-      <Script id="software-json-ld" type="application/ld+json" strategy="beforeInteractive">
+    <>
+      <Script
+        id="software-json-ld"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+      >
         {JSON.stringify(softwareJsonLd)}
       </Script>
-      <Script id="peac-source-json-ld" type="application/ld+json" strategy="beforeInteractive">
+      <Script
+        id="peac-source-json-ld"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+      >
         {JSON.stringify(peacSourceCodeJsonLd)}
       </Script>
-      <NavigationHeader />
-      <main style={{ paddingTop: '80px' }}>
-        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
-          <div className="container">
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-              <h1 style={{
-                fontSize: 'clamp(var(--text-4xl), 6vw, var(--text-6xl))',
-                fontWeight: 700,
-                lineHeight: 1.1,
-                letterSpacing: '-0.04em',
-                marginBottom: 'var(--space-4)',
-                color: 'var(--text-primary)'
-              }}>
-                Downloads
-              </h1>
+      <PageShell>
+        <PageHero
+          eyebrow="open source"
+          title="Download PEAC Protocol"
+          byline="by Originary"
+          sub="PEAC Protocol is open-source downloadable software published and maintained by Originary. Get the source code, CLI, SDK packages, and verification tooling from the public GitHub repository and package registries."
+          align="center"
+        >
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
+            <Button href="https://github.com/peacprotocol/peac" external primary>
+              View on GitHub
+            </Button>
+            <Button href="https://www.npmjs.com/package/@peac/cli" external>
+              View on npm
+            </Button>
+          </div>
+        </PageHero>
 
-              <p style={{
-                fontSize: 'var(--text-xl)',
-                lineHeight: 1.7,
-                color: 'var(--text-secondary)',
-                marginBottom: 'var(--space-3)'
-              }}>
-                Official Originary tools and upstream PEAC packages for signed records, verification, and developer workflows.
-              </p>
-              <p style={{
-                fontSize: 'var(--text-base)',
-                lineHeight: 1.7,
-                color: 'var(--text-tertiary)',
-                marginBottom: 'var(--space-4)'
-              }}>
-                Built for API publishers, MCP developers, agent builders, and teams evaluating verification in browser, CLI, middleware, or self-hosted deployments.
-              </p>
+        <PageSection paddingTop={16} paddingBottom={48}>
+          <div
+            style={{
+              maxWidth: 760,
+              margin: '0 auto',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: 0,
+              border: `1px solid ${PALETTE.hairline}`,
+              background: PALETTE.paper,
+            }}
+          >
+            <DownloadFact label="publisher" value="Originary (Poem, Inc.)" />
+            <DownloadFact label="primary distribution" value="GitHub" border />
+            <DownloadFact label="license" value={FACTS.license} border />
+          </div>
+          <div
+            style={{
+              maxWidth: 760,
+              margin: '20px auto 0 auto',
+              padding: '16px 20px',
+              fontFamily: mono,
+              fontSize: 12,
+              color: PALETTE.muted,
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: 18,
+              borderTop: `1px solid ${PALETTE.hairline}`,
+            }}
+          >
+            <span>
+              <strong style={{ color: PALETTE.ink }}>Current release:</strong>{' '}
+              {FACTS.currentVersion} on npm {FACTS.currentDistTag}
+            </span>
+            <span style={{ color: PALETTE.faint }}>·</span>
+            <span>
+              <strong style={{ color: PALETTE.ink }}>Current wire format:</strong>{' '}
+              {FACTS.stableWireFormat}
+            </span>
+            <span style={{ color: PALETTE.faint }}>·</span>
+            <span>
+              <strong style={{ color: PALETTE.ink }}>Legacy format:</strong>{' '}
+              {FACTS.legacyWireFormat}
+            </span>
+          </div>
+        </PageSection>
 
-              <div style={{
-                fontSize: 'var(--text-sm)',
-                color: 'var(--text-tertiary)',
-                marginBottom: 'var(--space-6)',
-                display: 'flex',
-                gap: 'var(--space-4)',
-                flexWrap: 'wrap',
-                paddingBottom: 'var(--space-4)',
-                borderBottom: '1px solid var(--border-default)'
-              }}>
-                <span><strong>Publisher:</strong> Originary (Poem, Inc.)</span>
-                <span>•</span>
-                <span><strong>Current PEAC release:</strong> {FACTS.currentVersion} on npm next</span>
-                <span>•</span>
-                <span><strong>npm latest:</strong> v0.13.0</span>
-                <span>•</span>
-                <span><strong>License:</strong> Apache-2.0</span>
-                <span>•</span>
-                <span><strong>Current taught format:</strong> interaction-record+jwt</span>
-                <span>•</span>
-                <span><strong>Legacy format:</strong> peac-receipt/0.1</span>
-              </div>
-
-              <div style={{
-                marginBottom: 'var(--space-6)',
-                padding: 'var(--space-5)',
-                background: 'var(--surface-card)',
-                borderRadius: 'var(--radius-xl)',
-                border: '1px solid var(--border-default)'
-              }}>
-                <p style={{
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 600,
-                  color: 'var(--text-primary)',
-                  marginBottom: 'var(--space-3)'
-                }}>
-                  Choose your distribution
-                </p>
-                <p style={{
-                  fontSize: 'var(--text-sm)',
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.6,
-                  margin: '0 0 var(--space-4) 0'
-                }}>
-                  Most users should start with Agent Auditor or Proof Check before installing packages.
-                </p>
-                <div style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: 'var(--space-2)'
-                }}>
-                  <a
-                    href="https://github.com/peacprotocol/peac"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: 'var(--space-2)',
-                      padding: 'var(--space-2) var(--space-4)',
-                      background: 'var(--accent-brand)',
-                      color: 'white',
-                      textDecoration: 'none',
-                      borderRadius: 'var(--radius-md)',
-                      fontSize: 'var(--text-sm)',
-                      fontWeight: 500
-                    }}
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href={`https://github.com/peacprotocol/peac/archive/refs/tags/${FACTS.currentVersion}.zip`}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: 'var(--space-2)',
-                      padding: 'var(--space-2) var(--space-4)',
-                      background: 'var(--surface-subtle)',
-                      color: 'var(--text-primary)',
-                      textDecoration: 'none',
-                      borderRadius: 'var(--radius-md)',
-                      fontSize: 'var(--text-sm)',
-                      fontWeight: 500,
-                      border: '1px solid var(--border-default)'
-                    }}
-                  >
-                    Source (.zip)
-                  </a>
-                  <a
-                    href={`https://github.com/peacprotocol/peac/archive/refs/tags/${FACTS.currentVersion}.tar.gz`}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: 'var(--space-2)',
-                      padding: 'var(--space-2) var(--space-4)',
-                      background: 'var(--surface-subtle)',
-                      color: 'var(--text-primary)',
-                      textDecoration: 'none',
-                      borderRadius: 'var(--radius-md)',
-                      fontSize: 'var(--text-sm)',
-                      fontWeight: 500,
-                      border: '1px solid var(--border-default)'
-                    }}
-                  >
-                    Source (.tar.gz)
-                  </a>
-                  <a
-                    href="https://www.npmjs.com/package/@peac/cli"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: 'var(--space-2)',
-                      padding: 'var(--space-2) var(--space-4)',
-                      background: 'var(--surface-subtle)',
-                      color: 'var(--text-primary)',
-                      textDecoration: 'none',
-                      borderRadius: 'var(--radius-md)',
-                      fontSize: 'var(--text-sm)',
-                      fontWeight: 500,
-                      border: '1px solid var(--border-default)'
-                    }}
-                  >
-                    npm
-                  </a>
-                </div>
-              </div>
-
-              <div style={{
-                marginBottom: 'var(--space-12)',
-                padding: 'var(--space-4)',
-                background: 'var(--surface-subtle)',
-                borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--border-default)'
-              }}>
-                <p style={{
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 600,
-                  color: 'var(--text-primary)',
-                  marginBottom: 'var(--space-2)'
-                }}>
-                  Install with your package manager:
-                </p>
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 'var(--space-2)'
-                }}>
-                  <pre style={{ background: 'var(--surface-card)', padding: 'var(--space-3)', borderRadius: 'var(--radius-md)', fontSize: 'var(--text-xs)', fontFamily: 'var(--font-mono)', overflowX: 'auto', margin: 0, lineHeight: 1.7 }}>{`npm i -g @peac/cli
+        <PageSection paddingBottom={48}>
+          <Card padding={32} style={{ maxWidth: 760, margin: '0 auto' }}>
+            <Mono
+              size={11}
+              color={PALETTE.muted}
+              style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
+            >
+              install with your package manager
+            </Mono>
+            <pre className="home-code" style={{ marginTop: 12, marginBottom: 0 }}>
+{`npm i -g @peac/cli
 npm i @peac/protocol @peac/crypto @peac/schema
-npm i @peac/mcp-server`}</pre>
-                </div>
-              </div>
+npm i @peac/mcp-server`}
+            </pre>
+            <div
+              style={{
+                marginTop: 18,
+                fontFamily: sans,
+                fontSize: 13,
+                lineHeight: 1.6,
+                color: PALETTE.muted,
+              }}
+            >
+              Verify a signed record locally:
+            </div>
+            <pre className="home-code" style={{ marginTop: 8, marginBottom: 0 }}>
+{`npx -y @peac/cli verify ./record.jws`}
+            </pre>
+          </Card>
+        </PageSection>
 
-              <div id="downloads">
-                <DownloadsServer />
-              </div>
+        <PageSection paddingBottom={48}>
+          <div
+            className="home-downloads-scope"
+            style={{ maxWidth: 760, margin: '0 auto' }}
+          >
+            <Mono
+              size={11}
+              color={PALETTE.muted}
+              style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
+            >
+              available distributions
+            </Mono>
+            <div style={{ marginTop: 16 }}>
+              <DownloadsServer />
+            </div>
+            <div style={{ marginTop: 16 }}>
               <DownloadCardPEAC />
-
-              <div style={{
-                marginTop: 'var(--space-12)',
-                padding: 'var(--space-4)',
-                background: 'var(--surface-subtle)',
-                borderRadius: 'var(--radius-lg)',
-                fontSize: 'var(--text-sm)',
-                color: 'var(--text-secondary)'
-              }}>
-                <strong>Originary</strong> artifacts are first-party and supported by us. <strong>PEAC</strong> packages are upstream community releases; we link for convenience and compatibility.
-              </div>
-
-              <div style={{
-                marginTop: 'var(--space-8)',
-                padding: 'var(--space-4)',
-                textAlign: 'center',
-                fontSize: 'var(--text-xs)',
-                color: 'var(--text-tertiary)',
-                borderTop: '1px solid var(--border-default)',
-                paddingTop: 'var(--space-6)'
-              }}>
-                Published by Poem, Inc. Contact: contact@originary.xyz.
-              </div>
             </div>
           </div>
-        </section>
-      </main>
-      <Footer />
+        </PageSection>
+
+        <PageSection paddingBottom={112}>
+          <Card padding={28} style={{ maxWidth: 760, margin: '0 auto' }}>
+            <p
+              style={{
+                fontFamily: sans,
+                fontSize: 14,
+                lineHeight: 1.65,
+                color: PALETTE.muted,
+                margin: 0,
+              }}
+            >
+              <strong style={{ color: PALETTE.ink }}>
+                PEAC Protocol is published by Originary and distributed through GitHub under {FACTS.license}.
+              </strong>{' '}
+              Originary maintains the protocol specification, reference implementation, CLI, SDK packages, and verification tooling listed above.
+            </p>
+            <p
+              style={{
+                fontFamily: sans,
+                fontSize: 13,
+                lineHeight: 1.65,
+                color: PALETTE.faint,
+                margin: '18px 0 0 0',
+              }}
+            >
+              Published by Poem, Inc. Contact:{' '}
+              <a
+                href="mailto:contact@originary.xyz"
+                style={{
+                  color: PALETTE.ink,
+                  textDecoration: 'underline',
+                  textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+                  textUnderlineOffset: 3,
+                }}
+              >
+                contact@originary.xyz
+              </a>
+              .
+            </p>
+          </Card>
+        </PageSection>
+      </PageShell>
+    </>
+  )
+}
+
+function DownloadFact({
+  label,
+  value,
+  border,
+}: {
+  label: string
+  value: string
+  border?: boolean
+}) {
+  return (
+    <div
+      style={{
+        padding: '20px 24px',
+        borderLeft: border ? `1px solid ${PALETTE.hairline}` : 'none',
+      }}
+    >
+      <Mono
+        size={10}
+        color={PALETTE.faint}
+        style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
+      >
+        {label}
+      </Mono>
+      <div
+        style={{
+          fontFamily: sans,
+          fontSize: 16,
+          fontWeight: 500,
+          color: PALETTE.ink,
+          marginTop: 8,
+          letterSpacing: '-0.005em',
+        }}
+      >
+        {value}
+      </div>
     </div>
-  );
+  )
 }

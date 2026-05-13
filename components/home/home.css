@@ -1,0 +1,382 @@
+/*
+ * Scoped responsive + micro-interaction rules for the Originary homepage and
+ * the /downloads + /pricing pages that share its design system.
+ *
+ * Inline styles on the components handle desktop layout. This file layers
+ * media queries and hover transitions on top.
+ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Nav links: subtle hover into ink. */
+.home-nav-link:hover {
+  color: #14110a !important;
+}
+.home-nav-link:focus-visible,
+.home-nav-cta:focus-visible,
+.home-nav-github:focus-visible {
+  outline: 1px solid rgba(20, 17, 10, 0.45);
+  outline-offset: 2px;
+}
+.home-nav-cta:hover {
+  background: #14110a;
+  color: #fbf9f4;
+}
+.home-nav-github:hover {
+  color: #14110a;
+  border-color: rgba(20, 17, 10, 0.32);
+}
+
+/* Hero animation visibility: desktop animation by default,
+ * static vertical fallback on narrow viewports. */
+.home-hero-anim {
+  width: 100%;
+  min-width: 0;
+}
+.home-hero-anim-desktop {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+.home-hero-anim-mobile {
+  display: none;
+  width: 100%;
+}
+
+/* Animation entrance hint: subtle fade-in on first paint helps the
+ * inline-styled grids settle without flashing unstyled content. */
+.home-section {
+  animation: home-fade-in 320ms ease-out both;
+}
+@keyframes home-fade-in {
+  from { opacity: 0.6; }
+  to   { opacity: 1; }
+}
+
+/* Card lift on hover for tiles and pricing/downloads cards. */
+.home-tile,
+.home-card {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+.home-tile:hover,
+.home-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px -28px rgba(20, 17, 10, 0.35);
+  border-color: rgba(20, 17, 10, 0.18);
+}
+
+/* Subtle pulse on the active dot in the hero card status pill. */
+@keyframes home-pulse {
+  0%   { transform: scale(1);   opacity: 1;   }
+  50%  { transform: scale(1.4); opacity: 0.6; }
+  100% { transform: scale(1);   opacity: 1;   }
+}
+.home-active-dot {
+  animation: home-pulse 1800ms ease-in-out infinite;
+}
+
+/* Code block aesthetic on /downloads */
+.home-code {
+  font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  background: rgba(20, 17, 10, 0.04);
+  border: 1px solid rgba(20, 17, 10, 0.10);
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #14110a;
+  overflow-x: auto;
+}
+
+/* Long-form legal text: gentle heading scale + measured line length. */
+.legal-doc-body {
+  color: #14110a;
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+}
+.legal-doc-body h2 {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #14110a;
+  margin: 28px 0 12px 0;
+}
+.legal-doc-body h2:first-child {
+  margin-top: 0;
+}
+.legal-doc-body h3 {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #14110a;
+  margin: 22px 0 8px 0;
+}
+.legal-doc-body p {
+  margin: 0 0 14px 0;
+  color: #6b6458;
+}
+.legal-doc-body ul {
+  margin: 0 0 14px 0;
+  padding-left: 18px;
+  color: #6b6458;
+}
+.legal-doc-body li {
+  margin-bottom: 6px;
+}
+.legal-doc-body strong {
+  color: #14110a;
+  font-weight: 500;
+}
+.legal-doc-body code {
+  font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.92em;
+  background: rgba(20, 17, 10, 0.04);
+  padding: 2px 5px;
+  border: 1px solid rgba(20, 17, 10, 0.10);
+}
+.legal-doc-body a {
+  color: #14110a;
+  text-decoration: underline;
+  text-decoration-color: rgba(20, 17, 10, 0.30);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 160ms ease;
+}
+.legal-doc-body a:hover {
+  text-decoration-color: rgba(20, 17, 10, 0.80);
+}
+
+/* Downloads scope: remaps shared design tokens to the paper / ink palette so
+ * components rendered inside this wrapper inherit the homepage design system. */
+.home-downloads-scope {
+  --accent-brand: #14110a;
+  --accent-brand-subtle: rgba(20, 17, 10, 0.06);
+  --accent-brand-muted: rgba(20, 17, 10, 0.18);
+  --accent-brand-faint: rgba(20, 17, 10, 0.04);
+  --surface-base: #f4f1ea;
+  --surface-elevated: #fbf9f4;
+  --surface-subtle: #fbf9f4;
+  --surface-card: #fbf9f4;
+  --text-primary: #14110a;
+  --text-secondary: #6b6458;
+  --text-tertiary: #a39d91;
+  --text-muted: #a39d91;
+  --border-default: rgba(20, 17, 10, 0.10);
+  --border-subtle: rgba(20, 17, 10, 0.10);
+  --border-strong: rgba(20, 17, 10, 0.18);
+  --white: #fbf9f4;
+  --success: #4a7459;
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+}
+.home-downloads-scope a {
+  color: #14110a;
+}
+
+/* Demo form inputs */
+.home-demo-input {
+  width: 100%;
+  display: block;
+  padding: 10px 12px;
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #14110a;
+  background: #fbf9f4;
+  border: 1px solid rgba(20, 17, 10, 0.18);
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.home-demo-input:hover {
+  border-color: rgba(20, 17, 10, 0.32);
+}
+.home-demo-input:focus,
+.home-demo-input:focus-visible {
+  border-color: #14110a;
+  box-shadow: 0 0 0 3px rgba(20, 17, 10, 0.08);
+}
+.home-demo-textarea {
+  resize: vertical;
+  min-height: 96px;
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+}
+.home-demo-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6' fill='none'><path d='M1 1l4 4 4-4' stroke='%236b6458' stroke-width='1.25' /></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+.home-demo-submit:hover {
+  opacity: 0.9;
+}
+.home-demo-submit:focus-visible {
+  outline: 2px solid rgba(20, 17, 10, 0.55);
+  outline-offset: 2px;
+}
+
+/* Inline pill */
+.home-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid rgba(20, 17, 10, 0.18);
+  color: #6b6458;
+}
+
+/* ------------------------------------------------------------------ */
+/* Responsive layout                                                  */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 960px) {
+  .home-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  .home-hero-grid > div:last-child {
+    justify-content: flex-start !important;
+  }
+  .home-hero-anim {
+    transform: scale(0.85);
+    transform-origin: top left;
+  }
+  .home-steps-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .home-steps-grid > div:nth-child(2) {
+    border-right: none !important;
+  }
+  .home-steps-grid > div:nth-child(-n+2) {
+    border-bottom: 1px solid rgba(20, 17, 10, 0.10) !important;
+  }
+  .home-cases-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .home-cases-grid > div {
+    border-bottom: 1px solid rgba(20, 17, 10, 0.10) !important;
+  }
+  .home-cases-grid > div:nth-child(2n) {
+    border-right: none !important;
+  }
+  .home-compare-grid {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+  .home-compare-grid > div {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(20, 17, 10, 0.10) !important;
+  }
+  .home-compare-grid > div:last-child {
+    border-bottom: none !important;
+  }
+  .home-ladder-row {
+    grid-template-columns: 50px 1fr !important;
+  }
+  .home-ladder-row > div:last-child {
+    display: none !important;
+  }
+  .home-cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .home-cta-grid > div:last-child {
+    border-left: none !important;
+    border-top: 1px solid rgba(20, 17, 10, 0.10) !important;
+  }
+  .home-cta-anim {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .home-cta-anim .home-cta-arrow {
+    transform: rotate(90deg);
+    margin: 0 auto;
+  }
+  .home-pricing-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .home-downloads-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-nav-links {
+    display: none !important;
+  }
+  .home-nav-cta {
+    display: none !important;
+  }
+  .home-nav-toggle {
+    display: inline-flex !important;
+  }
+  .home-nav-mobile {
+    display: block !important;
+  }
+  .home-hero-anim-desktop {
+    display: none !important;
+  }
+  .home-hero-anim-mobile {
+    display: block !important;
+    width: 100%;
+  }
+  .home-cases-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .home-cases-grid > div {
+    border-right: none !important;
+  }
+  .home-steps-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .home-steps-grid > div {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(20, 17, 10, 0.10) !important;
+  }
+  .home-steps-grid > div:last-child {
+    border-bottom: none !important;
+  }
+  .home-faq-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .home-demo-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .home-demo-grid > div + div {
+    border-left: none !important;
+    border-top: 1px solid rgba(20, 17, 10, 0.10) !important;
+  }
+}
+
+/* Larger tap targets on touch devices. */
+@media (max-width: 768px) {
+  .home-demo-submit,
+  .home-nav-cta,
+  .home-nav-github {
+    min-height: 44px;
+  }
+  .home-demo-input {
+    min-height: 44px;
+    font-size: 16px; /* prevents iOS zoom on focus */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .home-section { animation: none !important; }
+  .home-active-dot { animation: none !important; }
+  .home-tile, .home-card {
+    transition: none !important;
+  }
+  .home-tile:hover, .home-card:hover {
+    transform: none !important;
+  }
+}

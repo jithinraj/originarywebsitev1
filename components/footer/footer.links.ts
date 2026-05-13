@@ -17,74 +17,48 @@ export type FooterGroup = {
 }
 
 // ============================================================================
-// LAYER A: Navigation Grid (5 columns)
+// LAYER A: Navigation Grid
 // ============================================================================
 
 export const FOOTER_PRODUCTS: FooterGroup = {
   id: 'products',
-  title: 'Products',
+  title: 'Originary',
   links: [
-    { label: 'Originary Verify', href: '/products/verify' },
-    { label: 'Agent Auditor', href: '/agent-auditor' },
-    { label: 'Gateway 402', href: '/products/gateway-402' },
-    { label: 'MCP Server', href: '/integrations/mcp' },
-    { label: 'Trace', href: '/trace' },
-    { label: 'All products', href: '/products' },
+    { label: 'Downloads', href: '/downloads' },
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'PEAC Protocol', href: '/peac' },
   ],
 }
 
 export const FOOTER_DEVELOPERS: FooterGroup = {
-  id: 'developers',
-  title: 'Developers',
+  id: 'resources',
+  title: 'Resources',
   links: [
-    { label: 'Proof Check', href: '/agent-proof-check' },
-    { label: 'Start here', href: '/developers' },
-    { label: 'Downloads', href: '/downloads' },
-    { label: 'Demo', href: '/demo' },
+    { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
+    { label: 'Security', href: '/security' },
+    { label: 'Trust', href: '/trust' },
   ],
 }
 
 export const FOOTER_LEARN: FooterGroup = {
-  id: 'learn',
-  title: 'Learn',
+  id: 'legal',
+  title: 'Legal',
   links: [
-    { label: 'Learning center', href: '/learn' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'PEAC Protocol', href: '/peac' },
-    { label: 'Integrations', href: '/integrations' },
-  ],
-}
-
-export const FOOTER_COMPANY: FooterGroup = {
-  id: 'company',
-  title: 'Company',
-  links: [
-    { label: 'About', href: '/about' },
-    { label: 'Enterprise', href: '/enterprise' },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'Contact', href: '/contact' },
-  ],
-}
-
-export const FOOTER_TRUST: FooterGroup = {
-  id: 'trust',
-  title: 'Trust',
-  links: [
-    { label: 'Trust center', href: '/trust' },
-    { label: 'Security', href: '/security' },
     { label: 'Privacy', href: '/privacy' },
     { label: 'Terms', href: '/terms' },
-    { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
   ],
 }
+
+// Kept for backward compatibility with consumers that import these names.
+export const FOOTER_COMPANY: FooterGroup = FOOTER_PRODUCTS
+export const FOOTER_TRUST: FooterGroup = FOOTER_LEARN
 
 // Navigation groups for Layer A grid
 export const FOOTER_NAV_GROUPS: FooterGroup[] = [
   FOOTER_PRODUCTS,
   FOOTER_DEVELOPERS,
   FOOTER_LEARN,
-  FOOTER_COMPANY,
-  FOOTER_TRUST,
 ]
 
 // ============================================================================

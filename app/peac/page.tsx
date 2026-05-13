@@ -1,32 +1,37 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import NavigationHeader from '@/components/NavigationHeader'
-import Footer from '@/components/Footer'
-import { Github, Download, BookOpen, Code, Shield } from 'lucide-react'
 import { FACTS } from '@/lib/facts'
-import { FaqAccordion, FaqJsonLd } from '@/components/faq'
-import { peacFaqs } from '@/content/faqs'
+import {
+  PageShell,
+  PageHero,
+  PageSection,
+  SectionHeading,
+  Card,
+  BulletList,
+  Pill,
+  Button,
+  PALETTE,
+} from '@/components/home'
+import { Mono } from '@/components/home/atoms/Mono'
 
 export const metadata: Metadata = {
-  title: 'PEAC Protocol | Originary',
-  description: 'PEAC defines how systems issue signed records for automated actions, so another party can verify what happened without trusting the original system.',
+  title: { absolute: 'PEAC Protocol | Originary' },
+  description:
+    'PEAC is the open standard for portable signed interaction records. Issue records another party can verify without trusting the original dashboard.',
   keywords: [
     'PEAC Protocol',
+    'portable signed records',
     'verifiable interaction records',
-    'signed records',
-    'open protocol',
+    'open standard',
+    'Apache-2.0',
     'Ed25519',
+    'JWS',
+    'interaction-record+jwt',
     'MCP',
     'A2A',
     'HTTP 402',
     'paymentauth',
-    'MPP',
-    'ACP',
-    'OpenClaw',
-    'managed agents',
-    'Apache-2.0',
-    'open source',
-    'interaction-record+jwt',
+    'provisioning lifecycle',
   ],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   robots: {
@@ -34,665 +39,478 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
   },
-  alternates: {
-    canonical: '/peac'
-  },
+  alternates: { canonical: '/peac' },
   openGraph: {
     title: 'PEAC Protocol | Originary',
-    description: 'PEAC defines how systems issue signed records for automated actions, so another party can verify what happened without trusting the original system.',
+    description:
+      'PEAC is the open standard for portable signed interaction records. Apache-2.0. Self-hostable. Offline-verifiable.',
     url: '/peac',
     siteName: 'Originary',
     type: 'website',
     locale: 'en_US',
-    images: [{ url: '/og', width: 1200, height: 630, alt: 'PEAC Protocol: open standard for verifiable interaction records' }],
+    images: [
+      {
+        url: '/og',
+        width: 1200,
+        height: 630,
+        alt: 'PEAC Protocol | Open standard for portable signed interaction records',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'PEAC Protocol | Originary',
-    description: 'PEAC defines how systems issue signed records for automated actions, so another party can verify what happened without trusting the original system.',
+    description:
+      'PEAC is the open standard for portable signed interaction records. Apache-2.0. Self-hostable. Offline-verifiable.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
 }
 
+const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
+const mono = 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace'
+
 export default function PeacPage() {
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
-    "@id": "https://www.originary.xyz/peac#protocol",
-    "name": "PEAC Protocol",
-    "description": "Open standard for verifiable interaction records. Sign API calls, tool runs, and agent handoffs as signed records verifiable independently, offline. Apache-2.0.",
-    "codeRepository": "https://github.com/peacprotocol/peac",
-    "programmingLanguage": ["TypeScript", "JavaScript"],
-    "license": "https://www.apache.org/licenses/LICENSE-2.0",
-    "isAccessibleForFree": true,
-    "version": FACTS.currentVersion,
-    "keywords": ["PEAC Protocol", "verifiable interaction records", "signed records", "Ed25519", "MCP", "A2A", "HTTP 402", "paymentauth", "MPP", "ACP", "OpenClaw", "open source", "Apache-2.0"],
-    "author": {
-      "@type": "Organization",
-      "@id": "https://www.originary.xyz/#org",
-      "name": "Originary",
-      "url": "https://www.originary.xyz"
-    }
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareSourceCode',
+    '@id': 'https://www.originary.xyz/peac#protocol',
+    name: 'PEAC Protocol',
+    description:
+      'Open standard for portable signed interaction records. Issue, verify, and export records of automated actions across boundaries. Apache-2.0.',
+    codeRepository: 'https://github.com/peacprotocol/peac',
+    programmingLanguage: ['TypeScript', 'JavaScript'],
+    license: 'https://www.apache.org/licenses/LICENSE-2.0',
+    isAccessibleForFree: true,
+    version: FACTS.currentVersion,
+    keywords: [
+      'PEAC Protocol',
+      'portable signed records',
+      'verifiable interaction records',
+      'Ed25519',
+      'JWS',
+      'open standard',
+      'Apache-2.0',
+    ],
+    author: {
+      '@type': 'Organization',
+      '@id': 'https://www.originary.xyz/#org',
+      name: 'Originary',
+      url: 'https://www.originary.xyz',
+    },
   }
 
   return (
-    <div className="wrap">
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <FaqJsonLd items={peacFaqs} />
-      <NavigationHeader />
-      <main style={{ paddingTop: '80px' }}>
-        {/* Hero */}
-        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)', paddingBottom: 'var(--space-20)' }}>
-          <div className="container">
-            <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto' }}>
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 'var(--space-2)',
-                  background: 'var(--accent-brand-subtle)',
-                  border: '1px solid var(--accent-brand)',
-                  borderRadius: 'var(--radius-full)',
-                  padding: 'var(--space-2) var(--space-5)',
-                  marginBottom: 'var(--space-6)',
-                  fontSize: 'var(--text-xs)',
-                  fontWeight: 700,
-                  color: 'var(--accent-brand)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                }}
-              >
-                <span style={{ width: 7, height: 7, borderRadius: 'var(--radius-full)', background: 'var(--accent-brand)', display: 'inline-block', flexShrink: 0 }} />
-                Open Source &mdash; Apache-2.0 &mdash; {FACTS.currentVersion}
-              </div>
+      <PageShell>
+        <PageHero
+          eyebrow="open-source"
+          title="PEAC Protocol"
+          byline="by Originary"
+          sub="Originary publishes and maintains PEAC Protocol, the open standard for issuing signed records another party can verify without trusting the original dashboard. Self-hostable. Apache-2.0. No Originary account required."
+          align="center"
+        >
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+            <Button href="/#demo" primary>
+              Request a demo
+            </Button>
+            <Button href="https://github.com/peacprotocol/peac" external>
+              View on GitHub
+            </Button>
+          </div>
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 24 }}>
+            <Pill>Apache-2.0</Pill>
+            <Pill>Self-hostable</Pill>
+            <Pill>Offline-verifiable</Pill>
+          </div>
+        </PageHero>
 
-              <h1
-                style={{
-                  fontSize: 'clamp(var(--text-4xl), 6vw, var(--text-6xl))',
-                  fontWeight: 700,
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.04em',
-                  marginBottom: 'var(--space-6)',
-                }}
-              >
-                <span className="text-gradient">Open standard</span>
-                <br />
-                <span style={{ color: 'var(--text-primary)' }}>for verifiable interaction records.</span>
-              </h1>
-
-              <p
-                style={{
-                  fontSize: 'var(--text-xl)',
-                  lineHeight: 1.7,
-                  color: 'var(--text-secondary)',
-                  marginBottom: 'var(--space-6)',
-                  maxWidth: '640px',
-                  margin: '0 auto var(--space-6) auto',
-                }}
-              >
-                PEAC defines how systems issue signed records for automated actions, so another party can verify what happened without trusting the original system.
+        {/* Source and distribution: who publishes PEAC, where it lives */}
+        <PageSection paddingTop={24} paddingBottom={64}>
+          <SectionHeading
+            eyebrow="source and distribution"
+            title="PEAC Protocol is open-source software published by Originary."
+            sub="Originary maintains the protocol specification, reference implementation, CLI, SDK packages, conformance fixtures, and verification tooling. The software is distributed through the public PEAC GitHub repository and related package registries under Apache-2.0."
+            align="center"
+          />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                publisher
+              </Mono>
+              <h3 style={subHead}>Originary</h3>
+              <p style={body}>
+                Originary publishes and maintains PEAC Protocol and its reference tooling.
               </p>
-
-              <p
-                style={{
-                  fontSize: 'var(--text-sm)',
-                  color: 'var(--text-tertiary)',
-                  marginBottom: 'var(--space-12)',
-                }}
-              >
-                Originary is one implementation. PEAC remains open, neutral, and implementation-independent.
+            </Card>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                primary distribution
+              </Mono>
+              <h3 style={subHead}>GitHub</h3>
+              <p style={body}>
+                Download PEAC Protocol by Originary from the public GitHub repository and npm package registries.
               </p>
-
-              <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a
-                  href="https://github.com/peacprotocol/peac"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary btn-lg"
-                  style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}
-                >
-                  <Github size={20} />
-                  View on GitHub
-                </a>
-                <Link href="/developers" className="btn btn-secondary btn-lg">
-                  Start here
-                </Link>
-                <Link href="/conformance" className="btn btn-ghost btn-lg">
-                  View conformance
-                </Link>
+              <div style={{ marginTop: 14 }}>
+                <Button href="https://github.com/peacprotocol/peac" external primary>
+                  Download from GitHub
+                </Button>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* What PEAC defines */}
-        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
-          <div className="container">
-            <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, textAlign: 'center', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-              What PEAC defines
-            </h2>
-            <p style={{ textAlign: 'center', fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', marginBottom: 'var(--space-16)', maxWidth: '600px', margin: '0 auto var(--space-16) auto' }}>
-              Three protocol surfaces for verifiable automated interactions
-            </p>
-
-            <div className="grid grid-3" style={{ gap: 'var(--space-6)' }}>
-              <div className="card">
-                <BookOpen size={28} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  Policy discovery
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Publish machine-readable interaction terms and rules at a well-known endpoint. Agents and systems discover your policies before making requests.
-                </p>
-              </div>
-
-              <div className="card">
-                <Shield size={28} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  Interaction record format
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Issue signed records for automated requests. Ed25519 signatures, compact JWS serialization, and deterministic claim structure.
-                </p>
-              </div>
-
-              <div className="card">
-                <Code size={28} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  Verification and conformance
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Verify records independently with the public key alone. Conformance testing ensures cross-implementation compatibility deterministically.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* What PEAC does not replace */}
-        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
-          <div className="container">
-            <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-                What PEAC does not replace
-              </h2>
-              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-8)' }}>
-                PEAC is designed to interoperate with adjacent standards rather than replace them.
+            </Card>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                license
+              </Mono>
+              <h3 style={subHead}>{FACTS.license}</h3>
+              <p style={body}>
+                PEAC Protocol is open-source software. Self-hostable. No Originary account required.
               </p>
-              <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                {[
-                  'Auth and identity systems',
-                  'Payment rails and commerce layers',
-                  'Observability and transport standards',
-                ].map((item) => (
-                  <span key={item} style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 'var(--space-2)',
-                    padding: 'var(--space-2) var(--space-4)',
-                    borderRadius: 'var(--radius-lg)',
-                    background: 'var(--surface-card, var(--surface-elevated))',
-                    border: '1px solid var(--border-default)',
-                    fontSize: 'var(--text-sm)',
-                    color: 'var(--text-secondary)',
-                    fontWeight: 500,
-                  }}>
-                    <span style={{ color: 'var(--accent-brand)' }}>&#10003;</span>
-                    Works with {item.toLowerCase()}
-                  </span>
-                ))}
-              </div>
-            </div>
+            </Card>
           </div>
-        </section>
+        </PageSection>
 
-        {/* PEAC vs Originary boundary */}
-        <section className="section" style={{ paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
-          <div className="container">
-            <div style={{ maxWidth: '860px', margin: '0 auto' }}>
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, textAlign: 'center', marginBottom: 'var(--space-10)', color: 'var(--text-primary)' }}>
-                PEAC vs Originary
-              </h2>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-5)' }}>
-                <div style={{
-                  background: 'var(--glass-card-bg)',
-                  border: '1px solid var(--glass-card-border)',
-                  borderRadius: 'var(--radius-xl)',
-                  padding: 'var(--space-6)',
-                }}>
-                  <p style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }}>PEAC Protocol</p>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                    {[
-                      'Open standard',
-                      'Machine-readable interaction terms',
-                      'Signed interaction record format',
-                      'Independent verification',
-                      'Conformance and interoperability',
-                      'Implementation-neutral by design',
-                    ].map((item) => (
-                      <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
-                        <span style={{ color: 'var(--accent-brand)', fontWeight: 700, flexShrink: 0 }}>&#10003;</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div style={{
-                  background: 'var(--glass-card-bg)',
-                  border: '1px solid var(--glass-card-border)',
-                  borderRadius: 'var(--radius-xl)',
-                  padding: 'var(--space-6)',
-                }}>
-                  <p style={{ fontSize: 'var(--text-xs)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-tertiary)', marginBottom: 'var(--space-4)' }}>Originary (product)</p>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                    {[
-                      'Production product surface',
-                      'Deployment paths',
-                      'Verification workflows',
-                      'Inspection and export tools',
-                      'Enterprise rollout support',
-                      'Optional, not required for the protocol',
-                    ].map((item) => (
-                      <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-2)', fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
-                        <span style={{ color: 'var(--text-muted)', fontWeight: 700, flexShrink: 0 }}>&#8226;</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Implementation status */}
-        <section className="section" style={{ paddingTop: 'var(--space-16)', paddingBottom: 'var(--space-16)' }}>
-          <div className="container">
-            <div className="card" style={{ maxWidth: '800px', margin: '0 auto', background: 'var(--accent-brand-faint)', border: '1px solid var(--accent-brand-subtle)', padding: 'var(--space-8)' }}>
-              <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)', textAlign: 'center' }}>
-                Implementation status
-              </h3>
-              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, textAlign: 'center', marginBottom: 'var(--space-4)' }}>
-                PEAC is an open standard under active development. No single implementation has privileged status. Originary is one implementation; independent implementations are welcome. Conformance testing is the interoperability anchor.
+        {/* 1. What PEAC is */}
+        <PageSection>
+          <SectionHeading
+            eyebrow="what peac is"
+            title="A record that survives the boundary."
+            sub="PEAC defines how a system issues a signed record for an automated action so another party can verify what happened, without trusting the original system or its dashboard."
+          />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                signed
+              </Mono>
+              <h3 style={subHead}>One artifact, many signers</h3>
+              <p style={body}>
+                Every record is signed with Ed25519. Issuers publish their public key once. Verifiers check the
+                signature offline against that key.
               </p>
-              <div style={{ display: 'flex', gap: 'var(--space-3)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link href="/conformance" className="btn btn-primary btn-sm">
-                  View conformance suite
-                </Link>
-                <Link href="/governance" className="btn btn-secondary btn-sm">
-                  Governance
-                </Link>
-              </div>
-            </div>
+            </Card>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                portable
+              </Mono>
+              <h3 style={subHead}>Travels across systems</h3>
+              <p style={body}>
+                Records are carried as compact JWS strings or exported as bundles. They do not depend on the
+                issuer's dashboard, database, or API to stay verifiable.
+              </p>
+            </Card>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                open
+              </Mono>
+              <h3 style={subHead}>Apache-2.0</h3>
+              <p style={body}>
+                Originary publishes the protocol specification, reference implementations, and core tooling
+                publicly on GitHub. Anyone can self-host, issue, and verify records without an Originary account
+                or managed service.
+              </p>
+            </Card>
           </div>
-        </section>
+        </PageSection>
 
-        {/* Verification domains */}
-        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
-          <div className="container">
-            <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, textAlign: 'center', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-              Where signed records attach
-            </h2>
-            <p style={{ textAlign: 'center', fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', marginBottom: 'var(--space-16)', maxWidth: '600px', margin: '0 auto var(--space-16) auto' }}>
-              Protocol capability map for APIs, MCP, A2A, commerce-related workflows, managed-agent runtimes, and other verifiable automated interactions
-            </p>
-
-            <div style={{ maxWidth: '960px', margin: '0 auto' }}>
-              {/* Group 1: Access, Identity, Purpose */}
-              <div style={{ marginBottom: 'var(--space-4)' }}>
-                <p style={{ fontSize: 'var(--text-xs)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-tertiary)', marginBottom: 'var(--space-3)' }}>
-                  Who and why
-                </p>
-                <div className="grid grid-3" style={{ gap: 'var(--space-4)' }}>
-                  {[
-                    { name: 'Access', desc: 'Declare who can use your resources and under what conditions' },
-                    { name: 'Identity', desc: 'Signed proof-of-control for agents and operators' },
-                    { name: 'Purpose', desc: 'Declared intent of each interaction and purpose-driven access' },
-                  ].map((d) => (
-                    <div key={d.name} className="card" style={{ padding: 'var(--space-5)' }}>
-                      <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>{d.name}</h3>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{d.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Group 2: Consent, Privacy, Compliance, Safety */}
-              <div style={{ marginBottom: 'var(--space-4)' }}>
-                <p style={{ fontSize: 'var(--text-xs)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-tertiary)', marginBottom: 'var(--space-3)' }}>
-                  Trust and governance
-                </p>
-                <div className="grid grid-2" style={{ gap: 'var(--space-4)' }}>
-                  {[
-                    { name: 'Consent', desc: 'Explicit, machine-readable consent before access' },
-                    { name: 'Privacy', desc: 'Minimal disclosure and selective transparency' },
-                    { name: 'Compliance', desc: 'Audit trails and records for regulatory requirements' },
-                    { name: 'Safety', desc: 'Defense-in-depth security and safe-by-default configuration' },
-                  ].map((d) => (
-                    <div key={d.name} className="card" style={{ padding: 'var(--space-5)' }}>
-                      <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>{d.name}</h3>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{d.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Group 3: Attribution, Provenance, Commerce */}
-              <div>
-                <p style={{ fontSize: 'var(--text-xs)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-tertiary)', marginBottom: 'var(--space-3)' }}>
-                  Evidence and value
-                </p>
-                <div className="grid grid-3" style={{ gap: 'var(--space-4)' }}>
-                  {[
-                    { name: 'Attribution', desc: 'Every request carries verifiable identity and intent' },
-                    { name: 'Provenance', desc: 'Signed evidence of what happened and when' },
-                    { name: 'Commerce', desc: 'x402 v1/v2, paymentauth/MPP, ACP session evidence, and payment rail mappings' },
-                  ].map((d) => (
-                    <div key={d.name} className="card" style={{ padding: 'var(--space-5)' }}>
-                      <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>{d.name}</h3>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{d.desc}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+        {/* 2. Current state */}
+        <PageSection background={PALETTE.paper} paddingTop={80} paddingBottom={80}>
+          <SectionHeading
+            eyebrow="current state"
+            title={`${FACTS.currentVersion} on npm ${FACTS.currentDistTag}.`}
+            sub={`Released ${FACTS.currentReleaseDate}. Reference implementation, conformance fixtures, and signed-record adapters published in the open.`}
+          />
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+              gap: 0,
+              border: `1px solid ${PALETTE.hairline}`,
+              background: PALETTE.bg,
+            }}
+          >
+            <Stat label="latest release" value={FACTS.currentVersion} note={`released ${FACTS.currentReleaseDate}`} />
+            <Stat label="tests passing" value={FACTS.testsCount.toLocaleString()} note="across all packages" border />
+            <Stat label="conformance ids" value={String(FACTS.conformanceRequirements)} note="across 29 sections" border />
+            <Stat label="published packages" value={String(FACTS.publishedPackageCount)} note={`on npm ${FACTS.currentDistTag}`} border />
           </div>
-        </section>
+        </PageSection>
 
-        {/* Spec & Reference */}
-        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
-          <div className="container">
-            <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, textAlign: 'center', marginBottom: 'var(--space-16)', color: 'var(--text-primary)' }}>
-              Spec and reference
-            </h2>
-            <div className="grid grid-2" style={{ gap: 'var(--space-6)' }}>
-              <a href="/.well-known/peac.txt" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <BookOpen size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  peac.txt specification
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Policy discovery format, headers, and machine-readable rules
-                </p>
-              </a>
-              <a href="https://github.com/peacprotocol/peac/blob/main/docs/specs/WIRE-0.2.md" target="_blank" rel="noopener noreferrer" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <Shield size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  Record schema
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Wire 0.2 interaction-record+jwt format with compact JWS serialization and deterministic claims
-                </p>
-              </a>
-            </div>
+        {/* 3. What a record contains */}
+        <PageSection>
+          <SectionHeading
+            eyebrow="what a record contains"
+            title="One signed artifact. Four bindings."
+            sub="Each record binds the action that happened, the policy that applied, the result that was produced, and the signature that proves the issuer asserted all three."
+          />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                action
+              </Mono>
+              <h3 style={subHead}>What happened</h3>
+              <p style={body}>
+                The boundary action. An API call, MCP tool run, gateway decision, provisioning event, or payment-related
+                machine action. Captured as a typed receipt referencing one of {FACTS.publishedPackageCount}+
+                publishable schemas.
+              </p>
+            </Card>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                policy
+              </Mono>
+              <h3 style={subHead}>Under what terms</h3>
+              <p style={body}>
+                A digest of the policy or terms that applied at issue time. Verifiers can prove a record was issued
+                under a specific version of <code style={code}>peac.txt</code> or another published policy document.
+              </p>
+            </Card>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                result
+              </Mono>
+              <h3 style={subHead}>What returned</h3>
+              <p style={body}>
+                Status, digests, observed outcome. The record commits to what the issuer says happened, so a later
+                review does not depend on log retention.
+              </p>
+            </Card>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                signature
+              </Mono>
+              <h3 style={subHead}>Who asserted it</h3>
+              <p style={body}>
+                Ed25519 signature over the canonical JWS signing input. Issuer key is published once at{' '}
+                <code style={code}>/.well-known/peac-issuer.json</code>. Verification is offline.
+              </p>
+            </Card>
           </div>
-        </section>
+        </PageSection>
 
-        {/* v0.14.0 implementation surface */}
-        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
-          <div className="container">
-            <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, textAlign: 'center', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-              v0.14.0 implementation surface
-            </h2>
-            <p style={{ textAlign: 'center', fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', marginBottom: 'var(--space-16)', maxWidth: '680px', margin: '0 auto var(--space-16) auto' }}>
-              The current reference implementation publishes {FACTS.publishedPackageCount} packages with {FACTS.testsCount} tests across core records, commerce mappings, agent runtimes, and record exports.
-            </p>
-
-            <div className="grid grid-2" style={{ gap: 'var(--space-6)', maxWidth: '980px', margin: '0 auto' }}>
-              {[
-                {
-                  title: 'Core record and policy stack',
-                  body: '@peac/protocol, @peac/crypto, @peac/schema, @peac/kernel, @peac/control, @peac/audit, @peac/policy-kit, middleware, CLI, API, and verifier surfaces.',
-                },
-                {
-                  title: 'Commerce and payment evidence',
-                  body: '@peac/adapter-x402, x402 v1/v2 carrier parsing, @peac/mappings-paymentauth, MPP mappers, @peac/mappings-acp, UCP, pay402, Stripe, card, and Razorpay rails.',
-                },
-                {
-                  title: 'Agent and runtime governance',
-                  body: '@peac/mcp-server, MCP and A2A carriers, @peac/adapter-openclaw, @peac/adapter-managed-agents, @peac/adapter-runtime-governance, and OpenAI-compatible adapters.',
-                },
-                {
-                  title: 'Provenance, telemetry, and transport',
-                  body: 'in-toto and SLSA mappings, OpenTelemetry support, gRPC transport, DID, HTTP signatures, JWKS cache, receipts, and worker/server packages.',
-                },
-              ].map((item) => (
-                <div key={item.title} className="card" style={{ padding: 'var(--space-6)' }}>
-                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                    {item.body}
-                  </p>
-                </div>
-              ))}
-            </div>
+        {/* 4. Workflows */}
+        <PageSection background={PALETTE.paper} paddingTop={80} paddingBottom={80}>
+          <SectionHeading
+            eyebrow="workflows"
+            title="One primitive, many proof workflows."
+            sub="PEAC composes with the systems your stack already uses. Each profile maps an existing surface to a portable signed record without replacing the runtime that produced it."
+          />
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: 0,
+              border: `1px solid ${PALETTE.hairline}`,
+              background: PALETTE.bg,
+            }}
+          >
+            {[
+              ['API requests', 'POST / GET / scoped calls behind an issuer'],
+              ['MCP tool calls', 'Tool name, policy, result digest'],
+              ['A2A handoffs', 'Task ids, parent task, signature observation'],
+              ['Gateway decisions', 'Routed / blocked / decided records'],
+              ['Provisioning lifecycle', 'v0.14.2 - 10 observed event kinds'],
+              ['Runtime governance', 'AGT mapper and lifecycle observation'],
+              ['HTTP 402', 'Challenge / response for paid surfaces'],
+              ['Commerce', 'paymentauth / MPP / ACP / x402 observations'],
+            ].map(([title, sub], i) => (
+              <ProfileCell key={i} title={title} sub={sub} />
+            ))}
           </div>
-        </section>
+        </PageSection>
 
-        {/* Reference implementation and tools */}
-        <section className="section" style={{ background: 'var(--surface-subtle)', paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
-          <div className="container">
-            <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, textAlign: 'center', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-              Reference implementation and tools
-            </h2>
-            <p style={{ textAlign: 'center', fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', marginBottom: 'var(--space-16)', maxWidth: '600px', margin: '0 auto var(--space-16) auto' }}>
-              Reference implementation, SDKs, adapters, mappings, and developer tools
-            </p>
-
-            <div className="grid grid-3" style={{ gap: 'var(--space-6)' }}>
-              <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <Code size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  PEAC Core ({FACTS.publishedPackageCount} packages)
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
-                  TypeScript/JavaScript: protocol, crypto, schema, MCP server, payment mappings, runtime adapters, and more
-                </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>
-                  <Github size={14} />
-                  <span>View on GitHub</span>
-                </div>
-              </a>
-
-              <Link href="/downloads" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <Download size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  CLI tools
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
-                  Command-line utilities for policy validation and record verification
-                </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>
-                  <Download size={14} />
-                  <span>Download</span>
-                </div>
-              </Link>
-
-              <a href="https://github.com/peacprotocol/peac/tree/main/examples" target="_blank" rel="noopener noreferrer" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <Code size={32} style={{ color: 'var(--accent-brand)', marginBottom: 'var(--space-4)' }} />
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  Examples
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 'var(--space-3)' }}>
-                  Integration kits for MCP, A2A, x402, ACP, paymentauth/MPP, runtime governance, and sample implementations
-                </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)' }}>
-                  <Github size={14} />
-                  <span>Browse examples</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* Interoperability */}
-        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)', background: 'var(--surface-elevated)' }}>
-          <div className="container">
-            <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, textAlign: 'center', marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-              Interoperability
-            </h2>
-            <p style={{ textAlign: 'center', fontSize: 'var(--text-lg)', color: 'var(--text-secondary)', marginBottom: 'var(--space-16)', maxWidth: '640px', margin: '0 auto var(--space-16) auto' }}>
-              PEAC is designed to interoperate with adjacent standards rather than replace them
-            </p>
-
-            <div className="grid grid-3" style={{ gap: 'var(--space-6)' }}>
-              <Link href="/integrations/x402" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  HTTP 402 and x402
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Commerce and signed records for machine-payable APIs with x402 v1/v2 evidence mapping
-                </p>
-              </Link>
-
-              <a href="https://github.com/peacprotocol/peac/tree/main/integrator-kits/paymentauth" target="_blank" rel="noopener noreferrer" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  paymentauth and MPP
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  HTTP Payment Authentication and MPP payment attempt or settlement events mapped into PEAC evidence
-                </p>
-              </a>
-
-              <Link href="/integrations/acp" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  Agentic Commerce Protocol
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  ACP session and delegated-commerce evidence without replacing ACP state or payment finality semantics
-                </p>
-              </Link>
-
-              <Link href="/integrations/aipref" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  AIPREF
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  AI preference standard for policy discovery and consent
-                </p>
-              </Link>
-
-              <Link href="/integrations/mcp" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  Model Context Protocol
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  MCP tool verification, _meta carriers, and five local verification tools for agent coordination
-                </p>
-              </Link>
-
-              <Link href="/integrations/a2a" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  A2A Protocol
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  A2A v1.0.0 metadata carriers with verifiable interaction records across agent hops
-                </p>
-              </Link>
-
-              <a href="https://github.com/peacprotocol/peac/tree/main/packages/adapters/openclaw" target="_blank" rel="noopener noreferrer" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  OpenClaw and managed agents
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Runtime event capture for tool calls, sessions, tasks, permissions, MCP calls, and outcomes
-                </p>
-              </a>
-
-              <a href="https://github.com/peacprotocol/peac/tree/main/packages/mappings" target="_blank" rel="noopener noreferrer" className="card" style={{ textDecoration: 'none', display: 'block' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  in-toto and SLSA
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Supply-chain provenance and attestation mappings for existing build and release systems
-                </p>
-              </a>
-
-              <Link href="/developers" className="card" style={{ textDecoration: 'none', display: 'block', border: '2px dashed var(--border-default)', background: 'transparent' }}>
-                <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>
-                  All integrations
-                </h3>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                  Explore all supported standards and protocols
-                </p>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Governance */}
-        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)', background: 'var(--surface-subtle)' }}>
-          <div className="container">
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-              <h2 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, marginBottom: 'var(--space-8)', color: 'var(--text-primary)' }}>
-                Governance and contributing
-              </h2>
-
-              <div className="card" style={{ marginBottom: 'var(--space-6)' }}>
-                <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-                  PEAC is developed in public under the Apache-2.0 license. Originary (Poem, Inc.) is the primary maintainer today. Contributions are welcome. Supply chain hardening includes automated audit gates, lockfile drift detection, and a published security policy.
-                </p>
-                <div style={{ display: 'flex', gap: 'var(--space-3)', flexWrap: 'wrap' }}>
-                  <a href="https://github.com/peacprotocol/peac/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm">Contributing guide</a>
-                  <a href="https://github.com/peacprotocol/peac/blob/main/CODE_OF_CONDUCT.md" target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm">Code of conduct</a>
-                  <a href="https://github.com/peacprotocol/peac/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm">Security policy</a>
-                  <a href="https://github.com/peacprotocol/peac/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-sm">License</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="section" style={{ background: 'var(--surface-elevated)' }}>
-          <div className="container">
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-              <FaqAccordion
-                items={peacFaqs}
-                title="PEAC Protocol FAQ"
-                subtitle="Common questions about the open standard"
+        {/* 5. Use standalone or with Originary */}
+        <PageSection>
+          <SectionHeading
+            eyebrow="how to adopt"
+            title="Self-host the protocol or use it with Originary."
+            sub="Anyone can self-host PEAC Protocol, issue records, and verify them without an Originary account or managed service. Originary publishes and maintains PEAC Protocol and also offers commercial tools, managed verification, and deployment support for teams running it in production."
+          />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                self-host
+              </Mono>
+              <h3 style={subHead}>Apache-2.0</h3>
+              <BulletList
+                items={[
+                  'Full protocol specification',
+                  'Reference TypeScript implementation',
+                  'CLI for issuance and verification',
+                  'MCP server for tool-call records',
+                  'No Originary account or managed service required',
+                ]}
               />
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="section" style={{ paddingTop: 'var(--space-20)', paddingBottom: 'var(--space-20)' }}>
-          <div className="container">
-            <div style={{
-              maxWidth: '720px',
-              margin: '0 auto',
-              padding: 'var(--space-10)',
-              background: 'var(--surface-elevated)',
-              border: '1px solid var(--border-default)',
-              borderRadius: 'var(--radius-2xl)',
-              textAlign: 'center',
-            }}>
-              <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-                Start here on PEAC
-              </h2>
-              <p style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '480px', margin: '0 auto var(--space-8) auto' }}>
-                Apache-2.0. Self-host everything. No sign-up required.
-              </p>
-              <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link href="/developers" className="btn btn-primary btn-lg">
-                  Quickstart
-                </Link>
-                <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-lg">
-                  View on GitHub
-                </a>
+              <div style={{ marginTop: 18 }}>
+                <Button href="/downloads">Get the tools</Button>
               </div>
-            </div>
+            </Card>
+            <Card emphasis>
+              <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                commercial
+              </Mono>
+              <h3 style={subHead}>Originary Verify</h3>
+              <BulletList
+                items={[
+                  'Hosted issuance and verification',
+                  'KMS-backed signing keys',
+                  'Audit bundle export',
+                  'Implementation and rollout support',
+                  'Procurement-ready record artifacts',
+                ]}
+              />
+              <div style={{ marginTop: 18 }}>
+                <Button href="/#demo" primary>
+                  Request a demo
+                </Button>
+              </div>
+            </Card>
           </div>
-        </section>
-      </main>
-      <Footer />
+        </PageSection>
+
+        {/* 6. Install */}
+        <PageSection paddingBottom={112}>
+          <SectionHeading
+            eyebrow="install"
+            title="Two lines to a verifier."
+            sub="Install the public packages from the npm latest dist-tag and verify a signed record locally."
+            align="center"
+          />
+          <Card padding={36} style={{ maxWidth: 760, margin: '0 auto' }}>
+            <pre className="home-code" style={{ margin: 0 }}>
+{`npm i -g @peac/cli
+npx -y @peac/cli verify ./record.jws`}
+            </pre>
+            <p
+              style={{
+                fontFamily: sans,
+                fontSize: 13,
+                color: PALETTE.muted,
+                margin: '18px 0 0 0',
+                lineHeight: 1.6,
+              }}
+            >
+              Or install the libraries:{' '}
+              <code style={code}>@peac/protocol</code>{' '}
+              <code style={code}>@peac/crypto</code>{' '}
+              <code style={code}>@peac/schema</code>{' '}
+              <code style={code}>@peac/mcp-server</code>
+            </p>
+            <div style={{ display: 'flex', gap: 12, marginTop: 24, flexWrap: 'wrap' }}>
+              <Button href="https://github.com/peacprotocol/peac" external primary>
+                View on GitHub
+              </Button>
+              <Button href="/downloads">Downloads page</Button>
+              <Link
+                href="https://github.com/peacprotocol/peac/releases"
+                style={{
+                  fontFamily: mono,
+                  fontSize: 12,
+                  color: PALETTE.muted,
+                  textDecoration: 'underline',
+                  textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+                  textUnderlineOffset: 3,
+                  alignSelf: 'center',
+                }}
+              >
+                {FACTS.currentVersion} release notes
+              </Link>
+            </div>
+          </Card>
+        </PageSection>
+      </PageShell>
+    </>
+  )
+}
+
+const subHead = {
+  fontFamily: sans,
+  fontSize: 18,
+  fontWeight: 500,
+  letterSpacing: '-0.01em',
+  color: PALETTE.ink,
+  margin: '12px 0 8px 0',
+}
+
+const body = {
+  fontFamily: sans,
+  fontSize: 14,
+  lineHeight: 1.65,
+  color: PALETTE.muted,
+  margin: 0,
+}
+
+const code = {
+  fontFamily: mono,
+  fontSize: 13,
+  color: PALETTE.ink,
+  background: 'rgba(20, 17, 10, 0.04)',
+  padding: '2px 6px',
+  border: `1px solid ${PALETTE.hairline}`,
+}
+
+function Stat({
+  label,
+  value,
+  note,
+  border,
+}: {
+  label: string
+  value: string
+  note?: string
+  border?: boolean
+}) {
+  return (
+    <div
+      style={{
+        padding: '24px 24px 22px 24px',
+        borderLeft: border ? `1px solid ${PALETTE.hairline}` : 'none',
+      }}
+    >
+      <Mono size={10} color={PALETTE.faint} style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+        {label}
+      </Mono>
+      <div
+        style={{
+          fontFamily: sans,
+          fontSize: 32,
+          fontWeight: 500,
+          letterSpacing: '-0.025em',
+          color: PALETTE.ink,
+          margin: '10px 0 4px 0',
+          lineHeight: 1,
+        }}
+      >
+        {value}
+      </div>
+      {note ? (
+        <div style={{ fontFamily: sans, fontSize: 12, color: PALETTE.muted }}>{note}</div>
+      ) : null}
+    </div>
+  )
+}
+
+function ProfileCell({ title, sub }: { title: string; sub: string }) {
+  return (
+    <div
+      className="home-tile"
+      style={{
+        padding: '20px 22px',
+        borderRight: `1px solid ${PALETTE.hairline}`,
+        borderBottom: `1px solid ${PALETTE.hairline}`,
+        minHeight: 110,
+        background: PALETTE.paper,
+      }}
+    >
+      <div style={{ fontFamily: sans, fontSize: 14, fontWeight: 500, color: PALETTE.ink, marginBottom: 6 }}>
+        {title}
+      </div>
+      <div style={{ fontFamily: mono, fontSize: 11, color: PALETTE.muted, lineHeight: 1.5 }}>
+        {sub}
+      </div>
     </div>
   )
 }

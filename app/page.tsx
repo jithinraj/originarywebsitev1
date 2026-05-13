@@ -1,44 +1,61 @@
 import type { Metadata } from 'next'
-import { HomeNav } from '@/components/homepage/HomeNav'
-import { Hero } from '@/components/homepage/Hero'
-import { SinglePageHome } from '@/components/homepage/SinglePageHome'
-import Footer from '@/components/Footer'
+import {
+  Nav,
+  HomeFooter,
+  Divider,
+  Hero,
+  Problem,
+  HowItWorks,
+  UseCases,
+  Comparison,
+  Ladder,
+  DemoCTA,
+  PALETTE,
+} from '@/components/home'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Prove API and agent actions without sharing logs'
+    absolute: 'Originary | Portable verification for machine actions',
   },
-  description: 'Portable signed records for API, MCP, gateway, A2A, and payment workflows so others can verify what happened without accessing your dashboard.',
+  description:
+    'Issue and verify portable signed records for agent, API, MCP, gateway, and payment workflows. No shared logs, no dashboard access required.',
   keywords: [
     'portable signed records',
-    'signed interaction records',
-    'cross-boundary workflows',
-    'API verification',
-    'MCP verification',
-    'agent workflow verification',
-    'commerce workflow proof',
+    'machine action verification',
     'offline verification',
     'PEAC Protocol',
+    'agent verification',
+    'API verification',
+    'MCP verification',
   ],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
   alternates: {
-    canonical: '/'
+    canonical: '/',
   },
   openGraph: {
-    title: 'Originary | Prove API and agent actions without sharing logs',
-    description: 'Portable signed records for API, MCP, gateway, A2A, and payment workflows so others can verify what happened without accessing your dashboard.',
+    title: 'Originary | Portable verification for machine actions',
+    description:
+      'Issue and verify portable signed records for agent, API, MCP, gateway, and payment workflows. No shared logs, no dashboard access required.',
     url: 'https://www.originary.xyz',
     type: 'website',
     locale: 'en_US',
-    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary: proof that leaves the system that made it' }],
+    images: [
+      {
+        url: '/og',
+        width: 1200,
+        height: 630,
+        alt: 'Originary | Portable verification for machine actions',
+      },
+    ],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Prove API and agent actions without sharing logs',
-    description: 'Portable signed records for API, MCP, gateway, A2A, and payment workflows so others can verify what happened without accessing your dashboard.',
+    title: 'Originary | Portable verification for machine actions',
+    description:
+      'Issue and verify portable signed records for agent, API, MCP, gateway, and payment workflows. No shared logs, no dashboard access required.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -46,7 +63,12 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
@@ -70,55 +92,8 @@ const structuredData = {
       name: 'Originary',
       url: 'https://www.originary.xyz',
       publisher: { '@id': 'https://www.originary.xyz/#organization' },
-      description: 'Portable signed records for API, MCP, gateway, A2A, and payment workflows so others can verify what happened without accessing your dashboard.',
-    },
-    {
-      '@type': 'SoftwareApplication',
-      '@id': 'https://www.originary.xyz/#software',
-      name: 'Originary',
-      applicationCategory: 'BusinessApplication',
-      operatingSystem: 'Web',
-      url: 'https://www.originary.xyz',
-      publisher: { '@id': 'https://www.originary.xyz/#organization' },
-      description: 'Originary helps teams issue, verify, and export portable signed interaction records for APIs, MCP servers, tools, agent workflows, and commerce events.',
-    },
-    {
-      '@type': 'FAQPage',
-      '@id': 'https://www.originary.xyz/#faq',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'Is this observability?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'No. Observability helps your team understand system behavior. Originary creates records another party can verify independently.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Do I need Originary to verify a record?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'No. Verification should work offline with issuer public keys. Originary helps teams run issuance, verification, and export workflows in production.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'What happens if I stop using Originary?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Your records remain portable. PEAC is open, and verification does not require a callback to Originary.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Is this only for AI agents?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'No. It is for automated actions across APIs, MCP servers, tools, gateways, and agent workflows.',
-          },
-        },
-      ],
+      description:
+        'Issue and verify portable signed records for agent, API, MCP, gateway, and payment workflows. No shared logs, no dashboard access required.',
     },
   ],
 }
@@ -130,13 +105,31 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <div className="hp-root">
-        <HomeNav />
+      <div
+        style={{
+          background: PALETTE.bg,
+          color: PALETTE.ink,
+          fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
+          minHeight: '100vh',
+        }}
+      >
+        <Nav />
         <main id="main-content" role="main">
           <Hero />
-          <SinglePageHome />
+          <Divider eyebrow="the problem" />
+          <Problem />
+          <Divider eyebrow="how it works" />
+          <HowItWorks />
+          <Divider eyebrow="use cases" />
+          <UseCases />
+          <Divider eyebrow="what originary is not" />
+          <Comparison />
+          <Divider eyebrow="get started" />
+          <Ladder />
+          <Divider eyebrow="request a demo" />
+          <DemoCTA />
         </main>
-        <Footer />
+        <HomeFooter />
       </div>
     </>
   )

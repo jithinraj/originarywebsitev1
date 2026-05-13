@@ -13,60 +13,51 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   /** Latest public release tag. */
-  currentVersion: 'v0.14.0',
+  currentVersion: 'v0.14.2',
 
   /** Public release date for currentVersion. */
-  currentReleaseDate: '2026-05-03',
+  currentReleaseDate: '2026-05-11',
 
   /** npm dist-tag used for currentVersion. */
   currentDistTag: 'latest',
 
   /** Stable release on the npm `latest` dist-tag */
-  stableVersion: 'v0.14.0',
+  stableVersion: 'v0.14.2',
 
-  /**
-   * Current stable wire format (Wire 0.2).
-   * Introduced in v0.12.0, stable since v0.12.4. JWS typ: interaction-record+jwt.
-   */
+  /** Current stable wire format. JWS typ: interaction-record+jwt. */
   stableWireFormat: 'interaction-record+jwt',
 
-  /**
-   * Legacy wire format (Wire 0.1). Frozen; decoded but not issued.
-   * JWS typ: peac-receipt/0.1.
-   */
+  /** Legacy wire format. JWS typ: peac-receipt/0.1. */
   legacyWireFormat: 'peac-receipt/0.1',
 
-  /**
-   * @deprecated Use stableWireFormat or legacyWireFormat.
-   * Retained for backward compatibility with existing references.
-   */
+  /** Alias for legacyWireFormat for backward compatibility. */
   wireFormat: 'peac-receipt/0.1',
 
   // ---------------------------------------------------------------------------
-  // Package counts (see publish-manifest.json + pnpm ls --depth 0)
+  // Package counts
   // ---------------------------------------------------------------------------
 
-  /** Packages published to npm for the current release (@peac/* on npm) */
+  /** Packages published to npm for the current release. */
   publishedPackageCount: 36,
 
-  /** Public packages in the monorepo (published + internal-public) */
+  /** Public packages in the monorepo. */
   publicPackageCount: 36,
 
-  /** Total workspace packages (public + private + examples + apps) */
+  /** Total workspace packages. */
   workspacePackageCount: 68,
 
   // ---------------------------------------------------------------------------
-  // Quality metrics (see CI output for latest tag)
+  // Quality metrics
   // ---------------------------------------------------------------------------
 
-  /** pnpm test -- passing test count as of v0.14.0 canonical truth */
-  testsCount: 9214,
+  /** Test count. */
+  testsCount: 10078,
 
-  /** pnpm build -- build targets as of v0.14.0 release facts */
-  buildTargets: 102,
+  /** Build targets. */
+  buildTargets: 103,
 
-  /** Conformance requirement IDs as of v0.14.0 */
-  conformanceRequirements: 224,
+  /** Conformance requirement IDs. */
+  conformanceRequirements: 260,
 
   /** Minimum Node.js version required */
   nodeMinVersion: '22.0.0',

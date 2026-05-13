@@ -71,21 +71,23 @@ export const STATUS_CONFIG: Record<
 // Navigation (canonical, shared across all headers)
 // ---------------------------------------------------------------------------
 export const NAV_PRIMARY = [
-  { label: 'Products', href: '/products' },
-  { label: 'Developers', href: '/developers' },
-  { label: 'Learn', href: '/learn' },
+  { label: 'How it works', href: '/#how-it-works' },
+  { label: 'Downloads', href: '/downloads' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Trust', href: '/trust' },
+  { label: 'PEAC', href: '/peac' },
+  { label: 'Contact', href: '/contact' },
 ] as const
+
+// Public CTA label, used wherever a primary call-to-action appears.
+export const PRIMARY_CTA_LABEL = 'Request a demo'
 
 export const NAV_UTILITY = [
   { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
-  { label: 'Trust', href: '/trust' },
 ] as const
 
 export const NAV_CTA = {
-  label: 'Start here',
-  href: '/developers',
+  label: 'Request a demo',
+  href: '/#demo',
 } as const
 
 // ---------------------------------------------------------------------------

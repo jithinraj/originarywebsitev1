@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Geist, Geist_Mono } from 'next/font/google'
+import { Inter, Geist, Geist_Mono, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
@@ -9,7 +9,6 @@ import ClarityAnalytics from '@/components/ClarityAnalytics'
 import AmplitudeAnalytics from '@/components/AmplitudeAnalytics'
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration'
 import ScrollAnimationProvider from '@/components/ScrollAnimationProvider'
-// CursorGlow removed: does not work on light backgrounds
 
 const geistSans = Geist({
   subsets: ['latin'],
@@ -32,7 +31,21 @@ const inter = Inter({
   preload: true,
 })
 
-// Fraunces and JetBrains Mono removed: using Geist + Geist Mono only
+const plexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  variable: '--font-plex-sans',
+  weight: ['300', '400', '500', '600'],
+  display: 'swap',
+  preload: true,
+})
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  variable: '--font-plex-mono',
+  weight: ['400', '500'],
+  display: 'swap',
+  preload: false,
+})
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
@@ -228,7 +241,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" data-theme="light" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable}`}>
+    <html lang="en" data-theme="light" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${plexSans.variable} ${plexMono.variable}`}>
       <head>
         <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" rx="48" fill="%230B0B0C"/><path d="M573 -24C875 -24 1078 201 1078 526C1078 853 875 1080 573 1080C271 1080 67 853 67 526C67 201 271 -24 573 -24ZM573 158C392 158 281 301 281 526C281 753 393 898 573 898C753 898 865 753 865 526C865 302 754 158 573 158Z" transform="translate(54.9,195.4) scale(0.1277,-0.1277)" fill="%23FFFFFF"/></svg>' />
         <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
