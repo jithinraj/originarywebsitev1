@@ -1,23 +1,17 @@
 # PEAC Policy Document
 # https://www.peacprotocol.org
 #
-# This file declares how AI agents and automated clients
-# should interact with this domain. It is the machine-readable
-# equivalent of a terms-of-service page.
+# Originary publishes PEAC Protocol and related verification software.
+# This file points automated clients to the current public policy and issuer metadata.
 #
-# Spec: interaction-record+jwt (Wire 0.2, current stable); peac-receipt/0.1 (Wire 0.1, frozen)
+# Spec: interaction-record+jwt
+# Legacy: peac-receipt/0.1
 # Reference: https://github.com/peacprotocol/peac
 
 version: peac-policy/0.1
 issuer: www.originary.xyz
 verify: https://www.originary.xyz/.well-known/peac-issuer.json
-usage: conditional
-purposes: [inference, ai_input]
-receipts: required
+usage: informational
 attribution: required
-rate_limit: 1000/hour
-payment_methods: [x402, stripe]
-payment_endpoint: https://www.originary.xyz/api/pay
-negotiate: https://www.originary.xyz/api/negotiate
 contact: contact@originary.xyz
 license: Apache-2.0

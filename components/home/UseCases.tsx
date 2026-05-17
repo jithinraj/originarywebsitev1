@@ -11,8 +11,8 @@ type Tile = { title: string; q: string }
 
 const tiles: Tile[] = [
   {
-    title: 'Paid API usage review',
-    q: 'Was this call in scope and billable?',
+    title: 'Paid API usage',
+    q: 'Was this call authorized, in scope, and billable?',
   },
   {
     title: 'MCP tool calls',
@@ -20,19 +20,19 @@ const tiles: Tile[] = [
   },
   {
     title: 'Gateway decisions',
-    q: 'What decision did the gateway make before the request crossed the boundary?',
+    q: 'What happened before the request crossed the boundary?',
   },
   {
     title: 'Runtime lifecycle',
     q: 'Was this action approved, denied, evaluated, or handed off?',
   },
   {
-    title: 'Provisioning records',
-    q: 'What account, resource, credential, budget, subscription, domain, or deployment event occurred?',
+    title: 'Payment flows',
+    q: 'What happened around authorization, access, settlement, or review?',
   },
   {
-    title: 'Machine-payment flows',
-    q: 'What happened around the payment, mandate, authorization, settlement, or refund?',
+    title: 'Provisioning records',
+    q: 'What account, resource, credential, budget, subscription, domain, or deployment event occurred?',
   },
 ]
 
@@ -50,7 +50,7 @@ export function UseCases() {
     >
       <SectionTitle
         title="One record primitive. Many proof workflows."
-        body="API calls, MCP tools, gateway decisions, runtime lifecycle events, provisioning flows, and machine-payment actions can all produce portable records."
+        body="API calls, MCP tools, agent actions, runtime lifecycle events, gateway decisions, payment flows, and provisioning records can all produce portable signed records."
       />
       <div style={{ marginTop: 48 }}>
         <Grid />
@@ -96,7 +96,7 @@ function Grid() {
           color: PALETTE.muted,
         }}
       >
-        different workflows · same portable proof pattern
+        different workflows · same portable record pattern
       </p>
     </div>
   )

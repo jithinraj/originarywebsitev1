@@ -31,7 +31,7 @@ export function Comparison() {
     >
       <SectionTitle
         title="We do not replace the stack. We verify what leaves it."
-        body="Gateways route. Observability traces. Payment rails settle. Runtimes execute. Originary records selected facts so another party can verify what happened later."
+        body="Gateways route. Observability traces. Payment rails settle. Policy engines decide. Runtimes execute. Originary records selected facts from those systems in a format another party can verify."
       />
       <div style={{ marginTop: 48 }}>
         <ComparisonAnim />

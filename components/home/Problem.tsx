@@ -22,7 +22,7 @@ export function Problem() {
     >
       <SectionTitle
         title="Logs stop at the company boundary."
-        body="An agent paid for an API call. A gateway routed a request. A tool was approved. A provisioned service changed state. Later a billing, audit, abuse, or procurement question appears. Each side has logs. Nobody has a record both sides can verify."
+        body="An agent paid for an API call. A gateway routed a request. A tool was approved. A provisioned resource changed state. Later, another party needs to verify what happened. Each side has logs. Nobody wants to expose their dashboard."
       />
       <div style={{ marginTop: 48 }}>
         <ProblemAnim />
@@ -40,7 +40,7 @@ export function Problem() {
           Logs help operators debug.
         </Mono>
         <Mono size={12} color={PALETTE.ink}>
-          Records give counterparties neutral proof.
+          Records give counterparties something they can verify.
         </Mono>
       </div>
     </section>

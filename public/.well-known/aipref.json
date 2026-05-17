@@ -1,24 +1,16 @@
 {
   "version": "1.0",
-  "peac_version": "0.12.3",
+  "peac_version": "0.14.2",
   "ai_access": {
     "scraping": "allowed_with_attribution",
-    "training": "prohibited",
-    "commercial_use": "requires_license"
-  },
-  "rate_limits": {
-    "requests_per_hour": 100
-  },
-  "payment": {
-    "required": true,
-    "methods": ["x402", "stripe"],
-    "endpoint": "https://www.originary.xyz/api/pay"
+    "training": "requires_permission",
+    "commercial_use": "allowed_with_attribution"
   },
   "attribution": {
     "required": true,
-    "format": "Source: originary.xyz"
+    "format": "Source: https://www.originary.xyz/"
   },
   "policy": "https://www.originary.xyz/.well-known/peac.txt",
   "issuer_config": "https://www.originary.xyz/.well-known/peac-issuer.json",
-  "updated_at": "2026-03-17T00:00:00Z"
+  "updated_at": "2026-05-14T00:00:00Z"
 }

@@ -1,33 +1,34 @@
-# Originary | Portable verification for machine actions
+# Originary
 
-> Originary helps companies issue and verify signed records of what agents, APIs, MCP tools, gateways, and payment flows did, without sharing logs or trusting a dashboard. Built on PEAC Protocol, an open standard for portable signed interaction records.
+Originary helps teams issue and verify portable signed records for machine actions.
 
-Last updated: 2026-05-13
+Last updated: 2026-05-14
 
 Company: Poem, Inc.
 Location: Delaware, USA
 Contact: contact@originary.xyz
 
-## Pages
+## What it is
 
-- [Home](/) - Portable verification for machine actions.
-- [Downloads](/downloads) - Developer tools for verifying portable signed records.
-- [Pricing](/pricing) - OSS only, supported self-host, and managed verification.
-- [Contact](/contact) - Get in touch.
-- [PEAC Protocol](/peac) - The open standard Originary is built on.
-- [Security](/security) - Verification model and security posture.
-- [Trust](/trust) - Cryptography, data boundaries, and portability.
+Portable verification for API, MCP, agent, gateway, payment, and provisioning workflows.
 
-## What Originary does
+Originary helps teams create signed records so another party can verify what happened without internal logs, dashboard access, or vendor runtime.
 
-- Issues signed records for boundary actions on APIs, MCP tools, gateways, provisioning flows, runtime lifecycle events, and machine-payment flows.
-- Verifies records through Hosted Verify, exported bundles, or fully offline.
-- Exports audit bundles for procurement, customer review, and incident reconstruction.
+## Core pages
 
-## What Originary does not do
+- https://www.originary.xyz/
+- https://www.originary.xyz/about
+- https://www.originary.xyz/peac
+- https://www.originary.xyz/downloads
+- https://www.originary.xyz/pricing
+- https://www.originary.xyz/contact
 
-Originary does not replace gateways, observability backends, payment rails, policy engines, identity providers, or agent runtimes. It records selected facts so another party can verify what happened later.
+## Open protocol
 
-## Open standard
+PEAC Protocol is open-source software for portable signed interaction records, published and maintained by Originary.
 
-PEAC Protocol is Apache-2.0 and self-hostable. Verification does not depend on an Originary callback. See https://github.com/peacprotocol/peac.
+- https://github.com/peacprotocol/peac
+
+## Notes
+
+Originary does not replace gateways, observability, payment rails, policy engines, or runtimes. It records selected facts so another party can verify what happened later.

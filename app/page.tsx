@@ -15,18 +15,25 @@ import {
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Portable verification for machine actions',
+    absolute: 'Originary | Verify Machine Actions Across Boundaries',
   },
   description:
-    'Issue and verify portable signed records for agent, API, MCP, gateway, and payment workflows. No shared logs, no dashboard access required.',
+    'Originary helps teams issue signed records for API, MCP, agent, gateway, payment, and provisioning workflows without sharing logs or dashboard access.',
   keywords: [
-    'portable signed records',
-    'machine action verification',
-    'offline verification',
+    'Originary',
     'PEAC Protocol',
-    'agent verification',
+    'signed records',
+    'machine action verification',
+    'verifiable interaction records',
     'API verification',
     'MCP verification',
+    'agent workflows',
+    'gateway decisions',
+    'payment workflows',
+    'provisioning records',
+    'audit bundles',
+    'offline verification',
+    'open-source protocol',
   ],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
@@ -35,9 +42,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Originary | Portable verification for machine actions',
+    title: 'Originary | Verify Machine Actions Across Boundaries',
     description:
-      'Issue and verify portable signed records for agent, API, MCP, gateway, and payment workflows. No shared logs, no dashboard access required.',
+      'Signed records for API, MCP, agent, gateway, payment, and provisioning workflows.',
     url: 'https://www.originary.xyz',
     type: 'website',
     locale: 'en_US',
@@ -46,16 +53,16 @@ export const metadata: Metadata = {
         url: '/og',
         width: 1200,
         height: 630,
-        alt: 'Originary | Portable verification for machine actions',
+        alt: 'Originary | Verify Machine Actions Across Boundaries',
       },
     ],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Portable verification for machine actions',
+    title: 'Originary | Verify Machine Actions Across Boundaries',
     description:
-      'Issue and verify portable signed records for agent, API, MCP, gateway, and payment workflows. No shared logs, no dashboard access required.',
+      'Issue signed records so another party can verify what happened without internal logs or dashboard access.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -77,10 +84,12 @@ const structuredData = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://www.originary.xyz/#organization',
+      '@id': 'https://www.originary.xyz/#org',
       name: 'Originary',
       url: 'https://www.originary.xyz',
       logo: 'https://www.originary.xyz/logo/originary-wordmark.svg',
+      description:
+        'Originary helps teams issue and verify portable signed records for machine actions.',
       sameAs: [
         'https://github.com/peacprotocol/peac',
         'https://x.com/originaryx',
@@ -89,11 +98,22 @@ const structuredData = {
     {
       '@type': 'WebSite',
       '@id': 'https://www.originary.xyz/#website',
-      name: 'Originary',
       url: 'https://www.originary.xyz',
-      publisher: { '@id': 'https://www.originary.xyz/#organization' },
+      name: 'Originary',
+      publisher: { '@id': 'https://www.originary.xyz/#org' },
       description:
-        'Issue and verify portable signed records for agent, API, MCP, gateway, and payment workflows. No shared logs, no dashboard access required.',
+        'Signed records for API, MCP, agent, gateway, payment, and provisioning workflows.',
+    },
+    {
+      '@type': 'SoftwareSourceCode',
+      '@id': 'https://www.originary.xyz/peac#protocol',
+      name: 'PEAC Protocol',
+      description:
+        'Open-source software for portable signed interaction records, published by Originary.',
+      codeRepository: 'https://github.com/peacprotocol/peac',
+      license: 'https://www.apache.org/licenses/LICENSE-2.0',
+      programmingLanguage: ['TypeScript', 'JavaScript'],
+      publisher: { '@id': 'https://www.originary.xyz/#org' },
     },
   ],
 }

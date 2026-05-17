@@ -31,7 +31,7 @@ export function DemoCTA() {
     >
       <SectionTitle
         title="Start with one proof request."
-        body="Originary is for teams whose machine actions cross a boundary and later need proof. Bring one billable, audited, or high-stakes machine action, and turn it into a signed record another party can verify."
+        body="Originary is for teams whose machine actions cross a boundary and later need verification. Bring one billable, audited, or high-stakes machine action, and turn it into a signed record another party can verify."
       />
       <div style={{ marginTop: 56 }}>
         <CTAAnim />

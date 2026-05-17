@@ -8,18 +8,15 @@ import { resolve } from "node:path";
 // just do not appear in the sitemap.
 const routes = [
   "/",
+  "/about",
+  "/peac",
   "/downloads",
   "/pricing",
   "/contact",
-  "/peac",
-  "/security",
   "/trust",
+  "/security",
   "/privacy",
   "/terms",
-  "/legal/privacy",
-  "/legal/terms",
-  "/legal/acceptable-use",
-  "/legal/payments",
   "/legal/imprint",
 ];
 

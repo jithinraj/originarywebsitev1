@@ -8,25 +8,29 @@ const columns: Array<{ h: string; items: Array<{ label: string; href: string; ex
   {
     h: 'Originary',
     items: [
-      { label: 'How it works', href: '/#how-it-works' },
-      { label: 'Use cases', href: '/#use-cases' },
-      { label: 'Pricing', href: '/pricing' },
-    ],
-  },
-  {
-    h: 'Resources',
-    items: [
+      { label: 'Home', href: '/' },
+      { label: 'About', href: '/about' },
+      { label: 'PEAC', href: '/peac' },
       { label: 'Downloads', href: '/downloads' },
-      { label: 'PEAC Protocol', href: '/peac' },
-      { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
+      { label: 'Pricing', href: '/pricing' },
+      { label: 'Contact', href: '/contact' },
     ],
   },
   {
-    h: 'Company',
+    h: 'Trust',
     items: [
-      { label: 'Contact', href: '/contact' },
+      { label: 'Trust', href: '/trust' },
+      { label: 'Security', href: '/security' },
       { label: 'Privacy', href: '/privacy' },
       { label: 'Terms', href: '/terms' },
+      { label: 'Imprint', href: '/legal/imprint' },
+    ],
+  },
+  {
+    h: 'External',
+    items: [
+      { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
+      { label: 'X', href: 'https://x.com/originaryx', external: true },
     ],
   },
 ]
@@ -72,6 +76,7 @@ export function HomeFooter() {
           </p>
         </div>
         <div
+          className="home-footer-cols"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, minmax(120px, auto))',
@@ -95,6 +100,7 @@ export function HomeFooter() {
                         href={it.href}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="home-footer-link"
                         style={{
                           fontFamily: SANS,
                           fontSize: 13,
@@ -107,6 +113,7 @@ export function HomeFooter() {
                     ) : (
                       <Link
                         href={it.href}
+                        className="home-footer-link"
                         style={{
                           fontFamily: SANS,
                           fontSize: 13,

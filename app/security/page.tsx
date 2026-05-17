@@ -54,7 +54,7 @@ export default function Security() {
         {JSON.stringify(webPageJsonLd)}
       </Script>
       <PageShell>
-        <LegalDoc title="Security">
+        <LegalDoc title="Security" eyebrow="security">
           <p>
             Security posture, supported versions, responsible disclosure, and verification boundaries for Originary.
           </p>

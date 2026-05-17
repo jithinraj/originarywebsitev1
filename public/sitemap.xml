@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.originary.xyz/</loc><lastmod>2026-05-05</lastmod></url>
-  <url><loc>https://www.originary.xyz/downloads</loc><lastmod>2026-05-05</lastmod></url>
-  <url><loc>https://www.originary.xyz/pricing</loc><lastmod>2026-05-05</lastmod></url>
-  <url><loc>https://www.originary.xyz/contact</loc><lastmod>2026-05-05</lastmod></url>
-  <url><loc>https://www.originary.xyz/peac</loc><lastmod>2026-05-05</lastmod></url>
-  <url><loc>https://www.originary.xyz/security</loc><lastmod>2026-04-16</lastmod></url>
-  <url><loc>https://www.originary.xyz/trust</loc><lastmod>2026-05-05</lastmod></url>
-  <url><loc>https://www.originary.xyz/privacy</loc><lastmod>2026-04-16</lastmod></url>
-  <url><loc>https://www.originary.xyz/terms</loc><lastmod>2026-04-29</lastmod></url>
-  <url><loc>https://www.originary.xyz/legal/privacy</loc><lastmod>2026-03-19</lastmod></url>
-  <url><loc>https://www.originary.xyz/legal/terms</loc><lastmod>2026-05-05</lastmod></url>
-  <url><loc>https://www.originary.xyz/legal/acceptable-use</loc><lastmod>2025-12-12</lastmod></url>
-  <url><loc>https://www.originary.xyz/legal/payments</loc><lastmod>2026-02-09</lastmod></url>
+  <url><loc>https://www.originary.xyz/</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://www.originary.xyz/about</loc><lastmod>2026-05-05</lastmod></url>
+  <url><loc>https://www.originary.xyz/peac</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://www.originary.xyz/downloads</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://www.originary.xyz/pricing</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://www.originary.xyz/contact</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://www.originary.xyz/trust</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://www.originary.xyz/security</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://www.originary.xyz/privacy</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://www.originary.xyz/terms</loc><lastmod>2026-05-14</lastmod></url>
   <url><loc>https://www.originary.xyz/legal/imprint</loc><lastmod>2026-02-10</lastmod></url>
 </urlset>

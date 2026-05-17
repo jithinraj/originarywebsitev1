@@ -25,25 +25,25 @@ const steps: Step[] = [
   {
     n: '01',
     title: 'Action happens',
-    copy: 'An agent, API, MCP tool, gateway, provisioning flow, or payment flow performs a boundary action.',
+    copy: 'An API, MCP tool, agent, gateway, payment, or provisioning workflow crosses a boundary.',
     glyph: <StepActionGlyph />,
   },
   {
     n: '02',
     title: 'Record issued',
-    copy: 'Originary captures selected facts and binds them to policy, result, time, issuer, and signature.',
+    copy: 'Originary binds selected facts, policy, result, timestamp, issuer, and signature.',
     glyph: <StepRecordGlyph />,
   },
   {
     n: '03',
     title: 'Counterparty verifies',
-    copy: 'The other side verifies the record through Hosted Verify, an exported bundle, or offline verification.',
+    copy: 'Another party verifies what happened without internal logs or dashboard access.',
     glyph: <StepVerifyGlyph />,
   },
   {
     n: '04',
     title: 'Bundle exported',
-    copy: 'Records package with policy digests, document digests, and verification results for audits and reviews.',
+    copy: 'Records can be packaged for customer review, procurement, audit, support, and incident review.',
     glyph: <StepBundleGlyph />,
   },
 ]
@@ -62,7 +62,7 @@ export function HowItWorks() {
     >
       <SectionTitle
         title="A record that survives the boundary."
-        body="Action, record, verify, bundle. A service performs a boundary action. Originary issues a signed record. The counterparty verifies it by API, exported bundle, or offline verification."
+        body="Action happens. Originary issues a signed record. The counterparty verifies it by API, exported bundle, or offline verification."
       />
       <div style={{ marginTop: 48 }}>
         <StepsGrid />
@@ -77,7 +77,7 @@ export function HowItWorks() {
           maxWidth: 640,
         }}
       >
-        The runtime decides. Originary preserves what must be proven later.
+        The runtime decides. Originary preserves what must be verified later.
       </p>
     </section>
   )

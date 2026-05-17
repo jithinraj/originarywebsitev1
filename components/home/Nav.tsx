@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 
@@ -16,6 +16,7 @@ const links: Array<{ label: string; href: string }> = [
 export function Nav() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const toggleRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -23,6 +24,24 @@ export function Nav() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  // Body scroll lock + Escape key while mobile menu is open.
+  useEffect(() => {
+    if (!open) return
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false)
+        toggleRef.current?.focus()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = prevOverflow
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [open])
 
   return (
     <header
@@ -38,6 +57,9 @@ export function Nav() {
         transition: 'background 200ms ease',
       }}
     >
+      <a href="#main-content" className="home-skip-link">
+        Skip to content
+      </a>
       <div
         className="home-nav-inner"
         style={{
@@ -139,10 +161,12 @@ export function Nav() {
             Request a demo
           </Link>
           <button
+            ref={toggleRef}
             type="button"
             className="home-nav-toggle"
             aria-label={open ? 'Close menu' : 'Open menu'}
-            aria-expanded={open}
+            aria-expanded={open ? 'true' : 'false'}
+            aria-controls="home-nav-mobile-menu"
             onClick={() => setOpen((v) => !v)}
             style={{
               display: 'none',
@@ -173,6 +197,7 @@ export function Nav() {
 
       {open ? (
         <div
+          id="home-nav-mobile-menu"
           className="home-nav-mobile"
           style={{
             display: 'none',
