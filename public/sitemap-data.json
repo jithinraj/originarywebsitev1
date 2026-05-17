@@ -1,68 +1,53 @@
 [
   {
     "url": "https://www.originary.xyz/",
-    "lastModified": "2026-05-05T07:12:59+05:30",
+    "lastModified": "2026-05-14T01:50:49+05:30",
     "priority": 1
   },
   {
-    "url": "https://www.originary.xyz/downloads",
-    "lastModified": "2026-05-05T07:12:59+05:30",
-    "priority": 0.7
-  },
-  {
-    "url": "https://www.originary.xyz/pricing",
-    "lastModified": "2026-05-05T07:12:59+05:30",
-    "priority": 0.9
-  },
-  {
-    "url": "https://www.originary.xyz/contact",
+    "url": "https://www.originary.xyz/about",
     "lastModified": "2026-05-05T07:12:59+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/peac",
-    "lastModified": "2026-05-05T07:12:59+05:30",
+    "lastModified": "2026-05-14T01:50:49+05:30",
     "priority": 0.95
   },
   {
-    "url": "https://www.originary.xyz/security",
-    "lastModified": "2026-04-16T02:17:09+05:30",
+    "url": "https://www.originary.xyz/downloads",
+    "lastModified": "2026-05-14T01:50:49+05:30",
+    "priority": 0.7
+  },
+  {
+    "url": "https://www.originary.xyz/pricing",
+    "lastModified": "2026-05-14T01:50:49+05:30",
+    "priority": 0.9
+  },
+  {
+    "url": "https://www.originary.xyz/contact",
+    "lastModified": "2026-05-14T01:50:49+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/trust",
-    "lastModified": "2026-05-05T07:12:59+05:30",
+    "lastModified": "2026-05-14T01:50:49+05:30",
+    "priority": 0.7
+  },
+  {
+    "url": "https://www.originary.xyz/security",
+    "lastModified": "2026-05-14T01:50:49+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/privacy",
-    "lastModified": "2026-04-16T02:17:09+05:30",
+    "lastModified": "2026-05-14T01:50:49+05:30",
     "priority": 0.7
   },
   {
     "url": "https://www.originary.xyz/terms",
-    "lastModified": "2026-04-29T11:32:55+05:30",
+    "lastModified": "2026-05-14T01:50:49+05:30",
     "priority": 0.7
-  },
-  {
-    "url": "https://www.originary.xyz/legal/privacy",
-    "lastModified": "2026-03-19T15:23:09+05:30",
-    "priority": 0.5
-  },
-  {
-    "url": "https://www.originary.xyz/legal/terms",
-    "lastModified": "2026-05-05T07:12:59+05:30",
-    "priority": 0.5
-  },
-  {
-    "url": "https://www.originary.xyz/legal/acceptable-use",
-    "lastModified": "2025-12-12T17:40:07+05:30",
-    "priority": 0.5
-  },
-  {
-    "url": "https://www.originary.xyz/legal/payments",
-    "lastModified": "2026-02-09T19:23:58+05:30",
-    "priority": 0.5
   },
   {
     "url": "https://www.originary.xyz/legal/imprint",

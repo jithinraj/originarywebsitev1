@@ -46,7 +46,7 @@ export function Hero() {
             color={PALETTE.muted}
             style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
           >
-            Prove API and agent actions
+            when logs are not enough
           </Mono>
           <h1
             style={{
@@ -60,28 +60,28 @@ export function Hero() {
               textWrap: 'balance',
             }}
           >
-            Portable verification for machine actions.
+            Verify machine actions across company boundaries.
           </h1>
           <p
             style={{
               fontFamily: SANS,
-              fontSize: 18,
+              fontSize: 17,
               lineHeight: 1.55,
               color: PALETTE.muted,
               margin: '22px 0 0 0',
-              maxWidth: 540,
+              maxWidth: 560,
               textWrap: 'pretty',
             }}
           >
-            Originary helps teams issue and verify portable signed records for
-            agent, API, MCP, gateway, and payment workflows, without sharing
-            logs or trusting a dashboard.
+            Originary helps teams issue signed records for API, MCP, agent,
+            gateway, payment, and provisioning workflows, so another party can
+            verify what happened without internal logs or dashboard access.
           </p>
           <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <HeroLink href="/#demo" primary>
               Request a demo
             </HeroLink>
-            <HeroLink href="/downloads">Verify a sample record</HeroLink>
+            <HeroLink href="/downloads">Verify sample record</HeroLink>
           </div>
           <div style={{ marginTop: 36, display: 'flex', gap: 24, flexWrap: 'wrap' }}>
             {[

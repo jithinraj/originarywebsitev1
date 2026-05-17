@@ -29,6 +29,43 @@ html {
   border-color: rgba(20, 17, 10, 0.32);
 }
 
+/* Footer links: shift to ink on hover, mirroring Nav. */
+.home-footer-link {
+  transition: color 160ms ease;
+}
+.home-footer-link:hover {
+  color: #14110a;
+}
+.home-footer-link:focus-visible {
+  outline: 1px solid rgba(20, 17, 10, 0.45);
+  outline-offset: 2px;
+  color: #14110a;
+}
+
+/* Skip-to-content: visually hidden until focused. */
+.home-skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #14110a;
+  color: #fbf9f4;
+  padding: 8px 14px;
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0;
+  z-index: 100;
+  transform: translateY(-200%);
+  transition: transform 160ms ease;
+}
+.home-skip-link:focus,
+.home-skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid rgba(20, 17, 10, 0.45);
+  outline-offset: 2px;
+}
+
 /* Hero animation visibility: desktop animation by default,
  * static vertical fallback on narrow viewports. */
 .home-hero-anim {
@@ -244,9 +281,12 @@ html {
   .home-hero-grid > div:last-child {
     justify-content: flex-start !important;
   }
-  .home-hero-anim {
-    transform: scale(0.85);
-    transform-origin: top left;
+  /* ResizeObserver in Hero.tsx scales the fixed-pixel canvas to fit its
+   * column. No extra CSS transform here, and reset the wrapper auto-margin
+   * so the canvas starts at the column's left edge on stacked tablet. */
+  .home-hero-canvas-wrapper {
+    margin-left: 0 !important;
+    margin-right: auto !important;
   }
   .home-steps-grid {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -320,6 +360,10 @@ html {
   .home-nav-mobile {
     display: block !important;
   }
+  .home-footer-cols {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px !important;
+  }
   .home-hero-anim-desktop {
     display: none !important;
   }
@@ -366,6 +410,14 @@ html {
   .home-demo-input {
     min-height: 44px;
     font-size: 16px; /* prevents iOS zoom on focus */
+  }
+}
+
+/* Narrow phone: footer to single column. */
+@media (max-width: 480px) {
+  .home-footer-cols {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
   }
 }
 

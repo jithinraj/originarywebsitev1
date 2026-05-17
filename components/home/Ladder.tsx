@@ -21,7 +21,7 @@ const stages: Array<{ n: string; title: string; copy: string }> = [
   {
     n: '03',
     title: 'Record adapters',
-    copy: 'Extend records across API, MCP, gateway, runtime, provisioning, and payment workflows.',
+    copy: 'Extend records across API, MCP, agent, gateway, runtime, payment, and provisioning workflows.',
   },
   {
     n: '04',
@@ -44,7 +44,7 @@ export function Ladder() {
     >
       <SectionTitle
         title="Start with one workflow. Expand when proof matters."
-        body="Add records to one boundary action first: an API call, MCP tool call, gateway decision, provisioning event, or payment-related workflow. Then expand to more teams, record types, and review flows as verification becomes operational."
+        body="Add records to one boundary action first: an API call, MCP tool call, agent action, gateway decision, payment workflow, or provisioning event. Then expand to more teams, record types, and review flows as verification becomes operational."
       />
       <div style={{ marginTop: 48 }}>
         <LadderGrid />

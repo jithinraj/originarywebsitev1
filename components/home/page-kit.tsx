@@ -376,10 +376,12 @@ export function Button({
 export function LegalDoc({
   title,
   effective,
+  eyebrow = 'legal',
   children,
 }: {
   title: string
   effective?: string
+  eyebrow?: string | null
   children: ReactNode
 }) {
   return (
@@ -392,13 +394,15 @@ export function LegalDoc({
       }}
     >
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
-        <Mono
-          size={11}
-          color={PALETTE.muted}
-          style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
-        >
-          legal
-        </Mono>
+        {eyebrow ? (
+          <Mono
+            size={11}
+            color={PALETTE.muted}
+            style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
+          >
+            {eyebrow}
+          </Mono>
+        ) : null}
         <h1
           style={{
             fontFamily: sans,
