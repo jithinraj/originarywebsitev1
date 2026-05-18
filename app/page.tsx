@@ -10,6 +10,7 @@ import {
   Comparison,
   Ladder,
   DemoCTA,
+  Reveal,
   PALETTE,
 } from '@/components/home'
 
@@ -136,18 +137,30 @@ export default function Page() {
         <Nav />
         <main id="main-content" role="main">
           <Hero />
-          <Divider eyebrow="the problem" />
-          <Problem />
-          <Divider eyebrow="how it works" />
-          <HowItWorks />
-          <Divider eyebrow="use cases" />
-          <UseCases />
-          <Divider eyebrow="what originary is not" />
-          <Comparison />
-          <Divider eyebrow="get started" />
-          <Ladder />
-          <Divider eyebrow="request a demo" />
-          <DemoCTA />
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="the problem" />
+            <Problem />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="how it works" />
+            <HowItWorks />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="use cases" />
+            <UseCases />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="what originary is not" />
+            <Comparison />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="get started" />
+            <Ladder />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="request a demo" />
+            <DemoCTA />
+          </Reveal>
         </main>
         <HomeFooter />
       </div>

@@ -431,4 +431,200 @@ html {
   .home-tile:hover, .home-card:hover {
     transform: none !important;
   }
+  .home-arrow-link svg,
+  .home-arrow-button svg {
+    transition: none !important;
+    transform: none !important;
+  }
+  .home-link-underline {
+    transition: none !important;
+  }
+}
+
+/* -----------------------------------------------------------
+ * Micro-interactions: arrow-slide buttons, link-underline grow,
+ * subtle eyebrow rule reveal, refined card hover.
+ * ----------------------------------------------------------- */
+
+/* Any link or button that opts in via class home-arrow-link slides its
+ * trailing arrow on hover. Pair with an inline <svg> sibling. */
+.home-arrow-link {
+  position: relative;
+}
+.home-arrow-link svg,
+.home-arrow-button svg {
+  transition: transform 220ms cubic-bezier(0.2, 0.65, 0.25, 1);
+  will-change: transform;
+}
+.home-arrow-link:hover svg,
+.home-arrow-link:focus-visible svg,
+.home-arrow-button:hover svg,
+.home-arrow-button:focus-visible svg {
+  transform: translate3d(3px, 0, 0);
+}
+
+/* Refined underline-grow for prose links that opt in via home-link-underline.
+ * Uses gradient background sized 0% -> 100% to avoid the underline jump that
+ * text-decoration animation has on Safari. */
+.home-link-underline {
+  position: relative;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 280ms cubic-bezier(0.2, 0.65, 0.25, 1);
+  padding-bottom: 2px;
+}
+.home-link-underline:hover,
+.home-link-underline:focus-visible {
+  background-size: 100% 1px;
+}
+.home-link-underline:focus-visible {
+  outline: 1px solid rgba(20, 17, 10, 0.45);
+  outline-offset: 3px;
+}
+
+/* Eyebrow rule: a 1px line that slides in from the left under a Mono label
+ * the first time it enters the viewport. Opt in via home-eyebrow-rule. */
+.home-eyebrow-rule {
+  position: relative;
+  padding-bottom: 6px;
+}
+.home-eyebrow-rule::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background: rgba(20, 17, 10, 0.32);
+  transition: width 720ms cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+.home-eyebrow-rule.is-in::after {
+  width: 32px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-eyebrow-rule::after { transition: none; width: 32px; }
+}
+
+/* Subtle hairline border-color shift on cards when the parent reveal lands. */
+.home-card.is-in {
+  border-color: rgba(20, 17, 10, 0.14);
+}
+
+/* About page surface: editorial layout helpers. */
+.home-about-eyebrow {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #6b6458;
+  font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+}
+.home-about-h1 {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: clamp(40px, 5.6vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+  color: #14110a;
+  margin: 18px 0 0 0;
+  text-wrap: balance;
+}
+.home-about-lede {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 19px;
+  line-height: 1.55;
+  color: #14110a;
+  margin: 22px 0 0 0;
+  max-width: 640px;
+  text-wrap: pretty;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+.home-about-body {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #6b6458;
+  margin: 14px 0 0 0;
+  max-width: 640px;
+  text-wrap: pretty;
+}
+.home-about-pull {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  color: #14110a;
+  font-weight: 500;
+  margin: 0;
+  padding: 28px 32px;
+  background: #fbf9f4;
+  border-left: 2px solid rgba(20, 17, 10, 0.32);
+  text-wrap: balance;
+}
+.home-about-section-title {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.2;
+  letter-spacing: -0.018em;
+  font-weight: 500;
+  color: #14110a;
+  margin: 0;
+  text-wrap: balance;
+}
+.home-about-divider {
+  height: 1px;
+  background: rgba(20, 17, 10, 0.10);
+  margin: 64px 0;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 760ms cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+.home-about-divider.is-in { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) {
+  .home-about-divider { transition: none; transform: scaleX(1); }
+}
+
+/* Numeric stat strip used on /about and /peac. */
+.home-stat-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0;
+  border: 1px solid rgba(20, 17, 10, 0.10);
+  background: #fbf9f4;
+  margin: 32px 0 0 0;
+}
+.home-stat-cell {
+  padding: 22px 24px;
+  border-right: 1px solid rgba(20, 17, 10, 0.10);
+}
+.home-stat-cell:last-child { border-right: 0; }
+.home-stat-num {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.022em;
+  color: #14110a;
+  line-height: 1;
+}
+.home-stat-label {
+  font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b6458;
+  margin-top: 8px;
+}
+.home-stat-note {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 13px;
+  color: #a39d91;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+@media (max-width: 640px) {
+  .home-stat-cell { border-right: 0; border-bottom: 1px solid rgba(20, 17, 10, 0.10); }
+  .home-stat-cell:last-child { border-bottom: 0; }
 }

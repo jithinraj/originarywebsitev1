@@ -355,14 +355,20 @@ export function Button({
   )
   if (external) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" style={styles}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="home-arrow-link"
+        style={styles}
+      >
         {children}
         {arrow}
       </a>
     )
   }
   return (
-    <Link href={href} style={styles}>
+    <Link href={href} className="home-arrow-link" style={styles}>
       {children}
       {arrow}
     </Link>

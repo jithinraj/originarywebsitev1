@@ -150,6 +150,7 @@ function HeroLink({
   return (
     <a
       href={href}
+      className="home-arrow-link"
       style={{
         display: 'inline-flex',
         alignItems: 'center',
