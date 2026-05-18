@@ -1,667 +1,362 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import NavigationHeader from "@/components/NavigationHeader";
-import Footer from "@/components/Footer";
-import { FileText, ArrowRight, Zap, Shield, CreditCard, FileCheck, List, CheckCircle2, AlertTriangle, DollarSign, Lock, Globe } from 'lucide-react';
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import Script from 'next/script'
+import { PageShell, ArticleDoc, ArticleRelated, PALETTE } from '@/components/home'
 
 export const metadata: Metadata = {
-  title: "AI Detection to Settlement | PEAC HTTP 402 Revenue",
-  description: "How Originary and PEAC connect agent and crawler signals to HTTP 402, x402, Stripe, and signed records for billing, audit, and compliance.",
-  keywords: "AI paywall, HTTP 402, x402, Stripe, PEAC receipts, AI payments, agent and crawler identification, AI monetization, machine payments",
-  authors: [{ name: "Jithin Raj, Founder" }],
-  alternates: { canonical: '/blog/from-detection-to-settlement-ai-paywall-peac-http-402' },
+  title: { absolute: 'AI Paywalls, HTTP 402, and Portable Records | Originary' },
+  description:
+    'How PEAC connects agent and crawler signals to HTTP 402, x402, and Stripe, with signed records for billing, audit, and partner review.',
+  keywords:
+    'AI paywall, HTTP 402, x402, Stripe, signed records, PEAC Protocol, agent payments, AI billing, audit',
+  authors: [{ name: 'Jithin Raj, Founder' }],
   openGraph: {
-    title: "AI Detection to Settlement | PEAC HTTP 402 Revenue",
-    description: "How Originary and PEAC connect agent and crawler signals to HTTP 402, x402, Stripe, and signed records for billing, audit, and compliance.",
-    type: "article",
-    url: "/blog/from-detection-to-settlement-ai-paywall-peac-http-402/",
-    publishedTime: "2025-12-01",
-    authors: ["Jithin Raj", "Originary Team"],
+    type: 'article',
+    title: 'AI Paywall: Detection to Settlement',
+    description:
+      'How Originary and PEAC turn agent and crawler identification into an AI paywall using HTTP 402, x402, and Stripe.',
+    url: '/blog/from-detection-to-settlement-ai-paywall-peac-http-402',
+    publishedTime: '2025-12-01',
+    authors: ['Jithin Raj', 'Originary Team'],
     images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "AI Detection to Settlement | PEAC HTTP 402 Revenue",
-    description: "How Originary and PEAC connect agent and crawler signals to HTTP 402, x402, Stripe, and signed records for billing, audit, and compliance.",
+    card: 'summary_large_image',
+    title: 'AI Paywall: Detection to Settlement',
+    description: 'AI paywall using HTTP 402 with signed records.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
   robots: 'index,follow',
-};
+  alternates: { canonical: '/blog/from-detection-to-settlement-ai-paywall-peac-http-402' },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline:
+    'From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance',
+  description:
+    'How Originary and PEAC Protocol connect agent and crawler identification signals to HTTP 402, x402, and Stripe with signed records.',
+  author: { '@type': 'Organization', name: 'Originary', url: 'https://www.originary.xyz' },
+  datePublished: '2025-12-01',
+  dateModified: '2025-12-01',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Originary',
+    logo: { '@type': 'ImageObject', url: 'https://www.originary.xyz/logo/originary-wordmark.svg' },
+  },
+  mainEntityOfPage:
+    'https://www.originary.xyz/blog/from-detection-to-settlement-ai-paywall-peac-http-402',
+}
+
+const linkStyle = {
+  color: PALETTE.ink,
+  textDecoration: 'underline',
+  textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+  textUnderlineOffset: 3,
+}
+
+const codeBlock = {
+  background: 'rgba(20, 17, 10, 0.04)',
+  border: `1px solid ${PALETTE.hairline}`,
+  padding: '14px 16px',
+  fontSize: 13,
+  lineHeight: 1.6,
+  overflowX: 'auto' as const,
+  color: PALETTE.ink,
+  fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", monospace',
+}
+
+const callout = {
+  marginTop: 8,
+  marginBottom: 14,
+  padding: '14px 18px',
+  background: 'rgba(20, 17, 10, 0.03)',
+  borderLeft: `2px solid ${PALETTE.rule}`,
+  fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
+  fontSize: 14,
+  lineHeight: 1.65,
+  color: PALETTE.muted,
+}
+
+const pullQuote = {
+  marginTop: 14,
+  marginBottom: 14,
+  padding: '18px 22px',
+  background: PALETTE.bg,
+  border: `1px solid ${PALETTE.rule}`,
+  fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
+  fontSize: 17,
+  fontWeight: 500,
+  lineHeight: 1.5,
+  color: PALETTE.ink,
+}
+
+const warning = {
+  marginTop: 8,
+  marginBottom: 14,
+  padding: '14px 18px',
+  background: 'rgba(20, 17, 10, 0.05)',
+  border: `1px solid ${PALETTE.rule}`,
+  fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
+  fontSize: 14,
+  lineHeight: 1.65,
+  color: PALETTE.ink,
+}
 
 export default function Page() {
-  const articleJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "headline": "From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance",
-    "description": "How Originary and PEAC connect agent and crawler signals to HTTP 402, x402, Stripe, and signed records for billing, audit, and compliance.",
-    "author": {
-      "@type": "Organization",
-      "name": "Originary™",
-      "url": "https://www.originary.xyz"
-    },
-    "datePublished": "2025-12-01",
-    "dateModified": "2025-12-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Originary™",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.originary.xyz/logo.svg"
-      }
-    },
-    "mainEntityOfPage": "https://www.originary.xyz/blog/from-detection-to-settlement-ai-paywall-peac-http-402/",
-    "image": "https://www.originary.xyz/og.jpg"
-  };
-
   return (
-    <div className="wrap">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-      />
-      <NavigationHeader />
-      <main style={{ paddingTop: '80px', minHeight: '100vh' }} id="main-content">
-        <article>
-          {/* Hero Header */}
-          <div style={{ background: 'linear-gradient(180deg, var(--accent-brand-faint) 0%, transparent 100%)', borderBottom: '1px solid var(--border-subtle)' }}>
-            <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: 'var(--space-12) var(--space-6) var(--space-16)' }}>
-              {/* Breadcrumbs */}
-              <nav style={{
-                fontSize: 'var(--text-sm)',
-                color: 'var(--text-tertiary)',
-                marginBottom: 'var(--space-8)'
-              }}>
-                <Link href="/" style={{ color: 'var(--text-tertiary)', textDecoration: 'none' }}>Home</Link>
-                <span style={{ margin: '0 var(--space-2)' }}>/</span>
-                <Link href="/blog" style={{ color: 'var(--text-tertiary)', textDecoration: 'none' }}>Blog</Link>
-                <span style={{ margin: '0 var(--space-2)' }}>/</span>
-                <span style={{ color: 'var(--text-secondary)' }}>From Detection To Settlement</span>
-              </nav>
-
-              {/* Badge */}
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 'var(--space-2)',
-                background: 'var(--accent-brand-subtle)',
-                border: '1px solid var(--accent-brand-muted)',
-                borderRadius: 'var(--radius-full)',
-                padding: 'var(--space-2) var(--space-4)',
-                fontSize: 'var(--text-xs)',
-                fontWeight: 600,
-                color: 'var(--accent-brand)',
-                marginBottom: 'var(--space-6)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                <FileText size={12} />
-                Technical Deep Dive
-              </div>
-
-              {/* Title */}
-              <h1 style={{
-                fontSize: 'clamp(1.75rem, 5vw, 2.75rem)',
-                fontWeight: 700,
-                lineHeight: 1.15,
-                marginBottom: 'var(--space-6)',
-                color: 'var(--text-primary)'
-              }}>
-                From Detection To Settlement: Using PEAC To Turn AI Traffic Into Revenue And Compliance
-              </h1>
-
-              {/* Subtitle */}
-              <p style={{
-                fontSize: 'var(--text-xl)',
-                color: 'var(--text-secondary)',
-                lineHeight: 1.6,
-                marginBottom: 'var(--space-8)',
-                maxWidth: '650px'
-              }}>
-                How Originary and PEAC Protocol turn agent and crawler identification into an AI paywall using HTTP 402, x402 and Stripe - with signed receipts for billing, audit and compliance.
-              </p>
-
-              {/* Meta */}
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 'var(--space-4)',
-                fontSize: 'var(--text-sm)',
-                color: 'var(--text-tertiary)',
-                flexWrap: 'wrap'
-              }}>
-                <span style={{ fontWeight: 500, color: 'var(--text-secondary)' }}>Jithin Raj, Founder</span>
-                <span style={{ color: 'var(--border-default)' }}>|</span>
-                <span>18 min read</span>
-              </div>
-            </div>
+    <>
+      <Script id="article-json-ld" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify(jsonLd)}
+      </Script>
+      <PageShell>
+        <ArticleDoc
+          category="technical"
+          title="AI paywalls, HTTP 402, and portable records"
+          sub="How Originary and PEAC Protocol turn agent and crawler identification into an AI paywall using HTTP 402, x402, and Stripe, with signed records for billing, audit, and partner review."
+          author="Jithin Raj, Founder"
+          date="2025-12-01"
+          readTime="7 min read"
+          parent={{ label: 'Blog', href: '/blog' }}
+        >
+          <div style={callout}>
+            <strong>Who this is for.</strong> Product, billing, and platform teams running APIs,
+            content platforms, or developer infrastructure who want to charge agents per request,
+            keep partner billing auditable, and avoid building a settlement layer or replacing the
+            payment rails they already use.
           </div>
 
-          {/* Table of Contents */}
-          <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 var(--space-6)' }}>
-            <div style={{
-              background: 'var(--surface-subtle)',
-              borderRadius: 'var(--radius-lg)',
-              padding: 'var(--space-6)',
-              marginTop: 'calc(-1 * var(--space-8))',
-              marginBottom: 'var(--space-12)',
-              border: '1px solid var(--border-default)'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-4)' }}>
-                <List size={16} style={{ color: 'var(--accent-brand)' }} />
-                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>In This Article</span>
-              </div>
-              <div style={{ display: 'grid', gap: 'var(--space-2)' }}>
-                {[
-                  { num: '1', title: 'From "is this a bot" to "this bot paid under these terms"' },
-                  { num: '2', title: 'HTTP 402 and the rise of the AI paywall' },
-                  { num: '3', title: 'The PEAC flow: from detection to 402 to receipt' },
-                  { num: '4', title: 'Concrete flows across x402 and Stripe' },
-                  { num: '5', title: 'What actually ends up in a PEAC-Receipt' },
-                  { num: '6', title: 'How this ties back to our roadmap and vision' },
-                ].map((item) => (
-                  <div key={item.num} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-                    <span style={{
-                      width: '24px',
-                      height: '24px',
-                      borderRadius: 'var(--radius-full)',
-                      background: 'var(--accent-brand)',
-                      color: 'var(--white)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: 'var(--text-xs)',
-                      fontWeight: 600,
-                      flexShrink: 0
-                    }}>{item.num}</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>{item.title}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <p>
+            AI agents can now read, write, call APIs and act on our behalf. The one thing they
+            could not do for a long time was <strong>pay for what they use</strong>.
+          </p>
+          <p>
+            That gap is closing fast. New payment standards built on{' '}
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={linkStyle}
+            >
+              HTTP 402 Payment Required
+            </a>
+            , like x402, are turning APIs and web resources into machine-readable paywalls that
+            AI agents can clear automatically.
+          </p>
+          <div style={callout}>
+            At Originary,{' '}
+            <Link href="/peac" style={linkStyle}>
+              PEAC Protocol
+            </Link>{' '}
+            is our answer to the next step in that story:
+            <ul style={{ margin: '8px 0 0 0', paddingLeft: 20 }}>
+              <li>You detect AI bot traffic</li>
+              <li>You apply an AI paywall with HTTP 402</li>
+              <li>You settle payments over x402 or Stripe</li>
+              <li>
+                You get a signed PEAC-Receipt for every access event, ready for billing, audit
+                and partner review
+              </li>
+            </ul>
           </div>
 
-          {/* Article Content */}
-          <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 var(--space-6)' }}>
-            <div style={{
-              fontSize: 'var(--text-base)',
-              lineHeight: 1.9,
-              color: 'var(--text-secondary)'
-            }}>
-              {/* Introduction */}
-              <section style={{ marginBottom: 'var(--space-16)' }}>
-                <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-6)', color: 'var(--text-primary)' }}>
-                  AI agents can now read, write, call APIs and act on our behalf. The one thing they could not do for a long time was <strong>pay for what they use</strong>.
-                </p>
+          <h2>1. From &quot;is this a bot&quot; to &quot;this bot paid under these terms&quot;</h2>
+          <p>
+            In the{' '}
+            <Link href="/blog/ai-bot-detection" style={linkStyle}>
+              previous piece on agent and crawler identification
+            </Link>{' '}
+            we focused on visibility: spotting AI agents in your traffic, using metadata,
+            fingerprints, and access logs to understand who is calling you and why.
+          </p>
+          <p>
+            That is necessary, but not sufficient. If you are a publisher, API provider, SaaS
+            platform, or data owner, the key questions are:
+          </p>
+          <ul>
+            <li>Who is allowed to access which resources</li>
+            <li>On what terms and price</li>
+            <li>How do we prove what actually happened</li>
+          </ul>
+          <p>
+            Content-level AI detection tools and forensics answer &quot;what probably
+            happened&quot; on the media side. They do not give you:
+          </p>
+          <ul>
+            <li>A machine-readable policy that agents must follow</li>
+            <li>A native way to charge them</li>
+            <li>A signed record that will hold up in an audit or partner review</li>
+          </ul>
+          <p>
+            PEAC exists to close that gap. The protocol treats every AI access event as something
+            that can be priced, consented, and proven.
+          </p>
+          <div style={pullQuote}>
+            Detection tells you <em>&quot;there is an AI here&quot;</em>. PEAC tells you{' '}
+            <em>
+              &quot;this AI agreed to these terms, paid in this way, and here is the signed
+              record&quot;
+            </em>
+            .
+          </div>
 
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  That gap is closing fast. New payment standards built on <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</a>, like x402, are turning APIs and web resources into machine readable paywalls that AI agents can clear automatically.
-                </p>
+          <h2>2. HTTP 402 and the rise of the AI paywall</h2>
 
-                <div style={{
-                  background: 'linear-gradient(135deg, var(--accent-brand-subtle) 0%, var(--accent-secondary-subtle) 100%)',
-                  borderLeft: '4px solid var(--accent-brand)',
-                  borderRadius: '0 var(--radius-md) var(--radius-md) 0',
-                  padding: 'var(--space-6)',
-                  marginBottom: 'var(--space-8)'
-                }}>
-                  <p style={{ margin: 0, color: 'var(--text-primary)', fontSize: 'var(--text-base)' }}>
-                    At Originary, <Link href="/integrations/acp/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>PEAC Protocol</Link> is our answer to the next step in that story:
-                  </p>
-                  <ul style={{ margin: 'var(--space-4) 0 0 0', paddingLeft: 'var(--space-5)' }}>
-                    <li style={{ marginBottom: 'var(--space-2)' }}>You detect AI bot traffic</li>
-                    <li style={{ marginBottom: 'var(--space-2)' }}>You apply an AI paywall with HTTP 402</li>
-                    <li style={{ marginBottom: 'var(--space-2)' }}>You settle payments over x402 or Stripe</li>
-                    <li>You get a signed PEAC-Receipt for every access event, ready for billing, audit and disputes</li>
-                  </ul>
-                </div>
-              </section>
+          <h3>2.1 A dormant status code wakes up</h3>
+          <p>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={linkStyle}
+            >
+              HTTP 402 Payment Required
+            </a>{' '}
+            has existed in the spec for decades, but is still documented by MDN as nonstandard
+            and reserved for future use. There has been no agreed convention for how clients and
+            servers exchange payment data over 402, so most products ignored it. That is changing
+            through layered specifications such as x402 that define their own headers and bodies
+            above the bare status code:
+          </p>
+          <ul>
+            <li>
+              <strong>
+                <a
+                  href="https://www.x402.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={linkStyle}
+                >
+                  x402
+                </a>
+                .
+              </strong>{' '}
+              A chain-agnostic HTTP 402 protocol for stablecoin payments. Servers respond with
+              402 and a machine-readable payment challenge; clients pay and retry with proof.
+            </li>
+            <li>
+              <strong>Commercial providers.</strong> From Cloudflare to Web3 infra companies, now
+              shipping{' '}
+              <a
+                href="https://blog.cloudflare.com/introducing-pay-per-crawl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={linkStyle}
+              >
+                402-based paywalls
+              </a>{' '}
+              for crawlers and APIs.
+            </li>
+            <li>
+              <strong>Stripe.</strong>{' '}
+              <a
+                href="https://docs.stripe.com/changelog/basil/2025-03-31/vault-forward-api-returns-402"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={linkStyle}
+              >
+                Uses 402 Payment Required
+              </a>{' '}
+              in parts of its API surface when payment issues occur, making 402 a familiar
+              concept in card-based integrations.
+            </li>
+          </ul>
+          <p>
+            In other words,{' '}
+            <strong>
+              HTTP 402 is becoming the native status code for AI paywalls and machine-friendly
+              payments
+            </strong>
+            .
+          </p>
 
-              {/* Section 1 */}
-              <section style={{ marginBottom: 'var(--space-16)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
-                  <span style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'var(--accent-brand)',
-                    color: 'var(--white)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    flexShrink: 0
-                  }}>1</span>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    margin: 0,
-                    color: 'var(--text-primary)'
-                  }}>
-                    From &ldquo;is this a bot&rdquo; to &ldquo;this bot paid under these terms&rdquo;
-                  </h2>
-                </div>
+          <h3>2.2 What PEAC adds on top</h3>
+          <p>
+            PEAC does not try to replace x402 or Stripe. Our direction is explicit: the protocol
+            is a <strong>portable record layer</strong> that completes existing payment rails
+            rather than competes with them.
+          </p>
 
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  In the <Link href="/blog/ai-bot-detection/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>previous piece on agent and crawler identification</Link> we focused on visibility: spotting AI agents in your traffic, using metadata, fingerprints, and access logs to understand who is calling you and why.
-                </p>
+          <h4>PEAC 0.9.12 - Generic HTTP 402 semantics</h4>
+          <ul>
+            <li>How resources advertise that they are 402-gated</li>
+            <li>How policies and AI preferences (AIPREF) are discovered</li>
+            <li>How 402 responses are described in a consistent way</li>
+          </ul>
 
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  That is necessary, but not sufficient. If you are a publisher, API provider, SaaS platform, or data owner, the key questions are:
-                </p>
+          <h4>PEAC 0.9.13 - Economic layer</h4>
+          <ul>
+            <li>Normalized payment block in the record schema</li>
+            <li>Adapters for x402 and Stripe</li>
+            <li>Provenance and consent fields wired into records</li>
+            <li>Verification latency budget under 5 ms p95</li>
+          </ul>
 
-                <div style={{ display: 'grid', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
-                  {[
-                    'Who is allowed to access which resources',
-                    'On what terms and price',
-                    'How do we prove what actually happened'
-                  ].map((item, i) => (
-                    <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
-                      <CheckCircle2 size={18} style={{ color: 'var(--accent-brand)', flexShrink: 0, marginTop: '2px' }} />
-                      <span style={{ color: 'var(--text-primary)' }}>{item}</span>
-                    </div>
-                  ))}
-                </div>
+          <h4>PEAC 0.9.14 - Reporting and standards hooks</h4>
+          <ul>
+            <li>Compliance reports built on top of records</li>
+          </ul>
 
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  Content level AI detection tools and forensics answer &ldquo;what probably happened&rdquo; on the media side. They do not give you:
-                </p>
+          <div style={pullQuote}>
+            <strong>Integrate PEAC once.</strong> Use whichever AI payment rails you want behind
+            the scenes. Always get the same kind of signed PEAC-Receipt back.
+          </div>
 
-                <div style={{ display: 'grid', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
-                  {[
-                    { icon: AlertTriangle, text: 'A machine readable policy that agents must follow' },
-                    { icon: AlertTriangle, text: 'A native way to charge them' },
-                    { icon: AlertTriangle, text: 'A signed record that will hold up in an audit or dispute' }
-                  ].map((item, i) => (
-                    <div key={i} style={{
-                      background: 'var(--accent-warning-faint)',
-                      border: '1px solid var(--accent-warning-border)',
-                      borderRadius: 'var(--radius-md)',
-                      padding: 'var(--space-3) var(--space-4)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 'var(--space-3)'
-                    }}>
-                      <item.icon size={16} style={{ color: 'var(--accent-warning)', flexShrink: 0 }} />
-                      <span style={{ color: 'var(--text-primary)', fontSize: 'var(--text-sm)' }}>{item.text}</span>
-                    </div>
-                  ))}
-                </div>
+          <h2>3. The PEAC flow: from detection to 402 to PEAC-Receipt</h2>
+          <p>At a high level, every PEAC integration follows the same five-step loop:</p>
+          <ol>
+            <li>
+              <strong>Discover.</strong> The AI agent fetches <code>/.well-known/peac.txt</code>{' '}
+              and learns where to fetch AIPREF, how access control works, which payment rails are
+              supported, where to verify records, and which public keys to trust.
+            </li>
+            <li>
+              <strong>Evaluate.</strong> The PEAC kernel merges your AIPREF policy, resource-level
+              rules, and any caller identity into a decision: allow, allow with payment, or deny.
+            </li>
+            <li>
+              <strong>Challenge with HTTP 402.</strong> If payment is required, the server
+              returns HTTP 402 with a machine-readable description of the price and rail, plus
+              enough information for the client to complete payment.
+            </li>
+            <li>
+              <strong>Settle on the chosen rail.</strong> The AI agent uses the x402 or Stripe
+              adapter flow to pay and obtain a proof.
+            </li>
+            <li>
+              <strong>Prove with PEAC-Receipt.</strong> When the client retries, the PEAC kernel
+              verifies the payment proof, recomputes the policy hash, issues a signed record, and
+              sends the resource back with a <code>PEAC-Receipt</code> header.
+            </li>
+          </ol>
+          <p>
+            Records always bind to <code>policy_hash</code>, and when an AIPREF policy exists, an{' '}
+            <code>aipref_snapshot</code> is embedded so that future audits do not depend on
+            external files. The <code>payment</code> block is optional and only present when a
+            payment adapter was actually used.
+          </p>
 
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  PEAC exists to close that gap. The protocol treats every AI access event as something that can be priced, consented, and proven.
-                </p>
+          <h2>4. Concrete flows across x402 and Stripe</h2>
 
-                <div style={{
-                  background: 'var(--text-primary)',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: 'var(--space-6)'
-                }}>
-                  <p style={{ margin: 0, color: 'var(--white)', fontSize: 'var(--text-lg)', fontWeight: 500, lineHeight: 1.6 }}>
-                    Detection tells you <em>&ldquo;there is an AI here&rdquo;</em>. PEAC tells you <em>&ldquo;this AI agreed to these terms, paid in this way, and here is the signed evidence&rdquo;</em>.
-                  </p>
-                </div>
-              </section>
-
-              {/* Section 2 */}
-              <section style={{ marginBottom: 'var(--space-16)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
-                  <span style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'var(--accent-brand)',
-                    color: 'var(--white)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    flexShrink: 0
-                  }}>2</span>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    margin: 0,
-                    color: 'var(--text-primary)'
-                  }}>
-                    HTTP 402 and the rise of the AI paywall
-                  </h2>
-                </div>
-
-                {/* 2.1 */}
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 'var(--space-3)',
-                  marginBottom: 'var(--space-4)',
-                  paddingBottom: 'var(--space-4)',
-                  borderBottom: '2px solid var(--border-subtle)'
-                }}>
-                  <div style={{
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: 'var(--radius-md)',
-                    background: 'var(--accent-brand-subtle)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}>
-                    <Zap size={16} style={{ color: 'var(--accent-brand)' }} />
-                  </div>
-                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
-                    2.1 A dormant status code wakes up
-                  </h3>
-                </div>
-
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</a> has existed in the spec for decades, but as &ldquo;reserved for future use&rdquo;. There was no standard way to use it, so most products ignored it. That is changing:
-                </p>
-
-                <div style={{ display: 'grid', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
-                  {[
-                    {
-                      title: 'x402',
-                      desc: 'A chain agnostic HTTP 402 protocol for stablecoin payments. Servers respond with 402 and a machine readable payment challenge; clients pay and retry with proof.',
-                      link: 'https://www.x402.org/',
-                      icon: Globe
-                    },
-                    {
-                      title: 'Commercial providers',
-                      desc: 'From Cloudflare to Web3 infra companies now ship 402 based paywalls for crawlers and APIs.',
-                      link: 'https://blog.cloudflare.com/introducing-pay-per-crawl/',
-                      icon: Shield
-                    },
-                    {
-                      title: 'Stripe',
-                      desc: 'Uses 402 Payment Required in parts of its API surface when payment issues occur, making 402 a familiar concept in card based integrations.',
-                      link: 'https://docs.stripe.com/changelog/basil/2025-03-31/vault-forward-api-returns-402',
-                      icon: CreditCard
-                    }
-                  ].map((item, i) => (
-                    <div key={i} style={{
-                      background: 'var(--surface-elevated)',
-                      border: '1px solid var(--border-default)',
-                      borderRadius: 'var(--radius-lg)',
-                      padding: 'var(--space-5)',
-                      display: 'flex',
-                      gap: 'var(--space-4)'
-                    }}>
-                      <div style={{
-                        width: '40px',
-                        height: '40px',
-                        borderRadius: 'var(--radius-md)',
-                        background: 'var(--accent-brand-subtle)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
-                      }}>
-                        <item.icon size={20} style={{ color: 'var(--accent-brand)' }} />
-                      </div>
-                      <div>
-                        <h4 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
-                          <a href={item.link} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>{item.title}</a>
-                        </h4>
-                        <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.6 }}>
-                          {item.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <p style={{ marginBottom: 'var(--space-8)' }}>
-                  In other words, <strong>HTTP 402 is becoming the native status code for AI paywalls and machine friendly payments</strong>.
-                </p>
-
-                {/* 2.2 */}
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 'var(--space-3)',
-                  marginBottom: 'var(--space-4)',
-                  paddingBottom: 'var(--space-4)',
-                  borderBottom: '2px solid var(--border-subtle)'
-                }}>
-                  <div style={{
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: 'var(--radius-md)',
-                    background: 'var(--accent-brand-subtle)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}>
-                    <Lock size={16} style={{ color: 'var(--accent-brand)' }} />
-                  </div>
-                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
-                    2.2 What PEAC adds on top
-                  </h3>
-                </div>
-
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  PEAC does not try to replace x402 or Stripe. Our roadmap is explicit: the protocol is a <strong>universal proof layer</strong> that completes existing payment rails rather than competes with them.
-                </p>
-
-                <div style={{ display: 'grid', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
-                  {[
-                    {
-                      version: 'PEAC 0.9.12',
-                      title: 'Generic HTTP 402 semantics',
-                      items: ['How resources advertise that they are 402 gated', 'How policies and AI preferences (AIPREF) are discovered', 'How 402 responses are described in a consistent way']
-                    },
-                    {
-                      version: 'PEAC 0.9.13',
-                      title: 'Economic layer',
-                      items: ['Normalized payment block in the receipt schema', 'Adapters for x402 and Stripe', 'Provenance and consent fields wired into receipts', 'Verification latency budget under 5 ms p95']
-                    },
-                    {
-                      version: 'PEAC 0.9.14',
-                      title: 'Reporting and standards hooks',
-                      items: ['Compliance reports built on top of receipts']
-                    }
-                  ].map((section, i) => (
-                    <div key={i} style={{
-                      background: 'var(--surface-subtle)',
-                      borderRadius: 'var(--radius-lg)',
-                      padding: 'var(--space-5)'
-                    }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-3)' }}>
-                        <span style={{
-                          background: 'var(--accent-brand)',
-                          color: 'var(--white)',
-                          padding: 'var(--space-1) var(--space-3)',
-                          borderRadius: 'var(--radius-full)',
-                          fontSize: 'var(--text-xs)',
-                          fontWeight: 600
-                        }}>{section.version}</span>
-                        <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)' }}>{section.title}</span>
-                      </div>
-                      <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                        {section.items.map((item, j) => (
-                          <li key={j} style={{ marginBottom: 'var(--space-1)' }}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-
-                <div style={{
-                  background: 'linear-gradient(135deg, var(--accent-secondary-subtle) 0%, var(--accent-brand-subtle) 100%)',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: 'var(--space-6)'
-                }}>
-                  <p style={{ margin: 0, fontSize: 'var(--text-base)', color: 'var(--text-primary)', fontWeight: 500, lineHeight: 1.6 }}>
-                    <strong>Integrate PEAC once.</strong> Use whichever AI payment rails you want behind the scenes. Always get the same kind of signed PEAC-Receipt back.
-                  </p>
-                </div>
-              </section>
-
-              {/* Section 3 */}
-              <section style={{ marginBottom: 'var(--space-16)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
-                  <span style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'var(--accent-brand)',
-                    color: 'var(--white)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    flexShrink: 0
-                  }}>3</span>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    margin: 0,
-                    color: 'var(--text-primary)'
-                  }}>
-                    The PEAC flow: from detection to 402 to PEAC-Receipt
-                  </h2>
-                </div>
-
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  At a high level, every PEAC integration follows the same five step loop:
-                </p>
-
-                <div style={{ display: 'grid', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
-                  {[
-                    {
-                      num: '1',
-                      title: 'Discover',
-                      desc: 'The AI agent fetches /.well-known/peac.txt and learns where to fetch AIPREF, how access control works, which payment rails are supported, where to verify receipts, and which public keys to trust.'
-                    },
-                    {
-                      num: '2',
-                      title: 'Evaluate',
-                      desc: 'The PEAC kernel merges your AIPREF policy, resource level rules, and any caller identity into a decision: allow, allow with payment, or deny.'
-                    },
-                    {
-                      num: '3',
-                      title: 'Challenge with HTTP 402',
-                      desc: 'If payment is required, the server returns HTTP 402 with a machine readable description of the price and rail, plus enough information for the client to complete payment.'
-                    },
-                    {
-                      num: '4',
-                      title: 'Settle on the chosen rail',
-                      desc: 'The AI agent uses the x402 or Stripe adapter flow to pay and obtain a proof.'
-                    },
-                    {
-                      num: '5',
-                      title: 'Prove with PEAC-Receipt',
-                      desc: 'When the client retries, the PEAC kernel verifies the payment proof, recomputes the policy hash, issues a signed receipt, and sends the resource back with a PEAC-Receipt header.'
-                    }
-                  ].map((step, i) => (
-                    <div key={i} style={{
-                      background: 'var(--surface-elevated)',
-                      border: '1px solid var(--border-default)',
-                      borderRadius: 'var(--radius-lg)',
-                      padding: 'var(--space-5)',
-                      display: 'flex',
-                      gap: 'var(--space-4)'
-                    }}>
-                      <div style={{
-                        width: '36px',
-                        height: '36px',
-                        borderRadius: 'var(--radius-full)',
-                        background: 'var(--accent-brand)',
-                        color: 'var(--white)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: 'var(--text-base)',
-                        fontWeight: 700,
-                        flexShrink: 0
-                      }}>{step.num}</div>
-                      <div>
-                        <h4 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
-                          {step.title}
-                        </h4>
-                        <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.6 }}>
-                          {step.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <p>
-                  Receipts always bind to <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>policy_hash</code>, and when an AIPREF policy exists, an <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>aipref_snapshot</code> is embedded so that future audits do not depend on external files. The <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>payment</code> block is optional and only present when a payment adapter was actually used.
-                </p>
-              </section>
-
-              {/* Section 4 */}
-              <section style={{ marginBottom: 'var(--space-16)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
-                  <span style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'var(--accent-brand)',
-                    color: 'var(--white)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    flexShrink: 0
-                  }}>4</span>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    margin: 0,
-                    color: 'var(--text-primary)'
-                  }}>
-                    Concrete flows across x402 and Stripe
-                  </h2>
-                </div>
-
-                {/* 4.1 x402 */}
-                <div style={{ marginBottom: 'var(--space-12)' }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 'var(--space-3)',
-                    marginBottom: 'var(--space-4)',
-                    paddingBottom: 'var(--space-4)',
-                    borderBottom: '2px solid var(--border-subtle)'
-                  }}>
-                    <div style={{
-                      width: '32px',
-                      height: '32px',
-                      borderRadius: 'var(--radius-md)',
-                      background: 'var(--accent-brand-subtle)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
-                    }}>
-                      <Globe size={16} style={{ color: 'var(--accent-brand)' }} />
-                    </div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
-                      4.1 x402: Stablecoin AI paywalls over HTTP
-                    </h3>
-                  </div>
-
-                  <p style={{ marginBottom: 'var(--space-4)' }}>
-                    <a href="https://www.x402.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>x402</a> activates HTTP 402 for onchain or rollup based stablecoin payments. Servers respond with a 402 and payment requirements; clients pay and retry with proof.
-                  </p>
-
-                  <div style={{
-                    background: 'var(--text-primary)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: 'var(--space-5)',
-                    marginBottom: 'var(--space-4)',
-                    overflow: 'auto'
-                  }}>
-                    <div style={{ color: 'var(--text-muted)', fontSize: 'var(--text-xs)', marginBottom: 'var(--space-2)' }}>HTTP 402 x402 Challenge</div>
-                    <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', color: 'var(--border-default)', lineHeight: 1.7 }}>
+          <h3>4.1 x402: stablecoin AI paywalls over HTTP</h3>
+          <p>
+            <a
+              href="https://www.x402.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={linkStyle}
+            >
+              x402
+            </a>{' '}
+            activates HTTP 402 for onchain or rollup-based stablecoin payments. Servers respond
+            with a 402 and payment requirements; clients pay and retry with proof.
+          </p>
+          <p><em>HTTP 402 x402 challenge:</em></p>
+          <pre style={codeBlock}>
 {`HTTP/1.1 402 Payment Required
 Content-Type: application/json
 
@@ -674,53 +369,28 @@ Content-Type: application/json
   "destination": "wallet-address",
   "expires_at": "2025-12-01T09:45:00Z"
 }`}
-                    </pre>
-                  </div>
+          </pre>
+          <p>
+            The agent sends the required USDC transaction, retries with proof, and the x402
+            adapter normalizes this into the <code>payment</code> block with{' '}
+            <code>rail: &quot;x402&quot;</code>. AI paywalls for datasets, prompts, or APIs can
+            now take USDC while your accounting stack only sees standardized PEAC records.
+          </p>
 
-                  <p>
-                    The agent sends the required USDC transaction, retries with proof, and the x402 adapter normalizes this into the <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>payment</code> block with <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>rail: &quot;x402&quot;</code>. AI paywalls for datasets, prompts, or APIs can now take USDC while your accounting stack only sees standardized PEAC receipts.
-                  </p>
-                </div>
-
-                {/* 4.3 Stripe */}
-                <div style={{ marginBottom: 'var(--space-8)' }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 'var(--space-3)',
-                    marginBottom: 'var(--space-4)',
-                    paddingBottom: 'var(--space-4)',
-                    borderBottom: '2px solid var(--border-subtle)'
-                  }}>
-                    <div style={{
-                      width: '32px',
-                      height: '32px',
-                      borderRadius: 'var(--radius-md)',
-                      background: 'var(--accent-brand-subtle)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
-                    }}>
-                      <CreditCard size={16} style={{ color: 'var(--accent-brand)' }} />
-                    </div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
-                      4.2 Stripe: Card rails behind an AI paywall
-                    </h3>
-                  </div>
-
-                  <p style={{ marginBottom: 'var(--space-4)' }}>
-                    <a href="https://docs.stripe.com/changelog/basil/2025-03-31/vault-forward-api-returns-402" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>Stripe already uses 402</a> in some scenarios when payment is required or fails.
-                  </p>
-
-                  <div style={{
-                    background: 'var(--text-primary)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: 'var(--space-5)',
-                    marginBottom: 'var(--space-4)',
-                    overflow: 'auto'
-                  }}>
-                    <div style={{ color: 'var(--text-muted)', fontSize: 'var(--text-xs)', marginBottom: 'var(--space-2)' }}>HTTP 402 Stripe Challenge</div>
-                    <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', color: 'var(--border-default)', lineHeight: 1.7 }}>
+          <h3>4.2 Stripe: card rails behind an AI paywall</h3>
+          <p>
+            <a
+              href="https://docs.stripe.com/changelog/basil/2025-03-31/vault-forward-api-returns-402"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={linkStyle}
+            >
+              Stripe already uses 402
+            </a>{' '}
+            in some scenarios when payment is required or fails.
+          </p>
+          <p><em>HTTP 402 Stripe challenge:</em></p>
+          <pre style={codeBlock}>
 {`HTTP/1.1 402 Payment Required
 Content-Type: application/json
 
@@ -731,68 +401,25 @@ Content-Type: application/json
   "payment_intent": "pi_3ZQ...",
   "client_secret": "pi_3ZQ..._secret_..."
 }`}
-                    </pre>
-                  </div>
+          </pre>
+          <p>
+            The client uses Stripe Elements to complete the payment, then retries once the intent
+            is <code>succeeded</code>. The Stripe adapter confirms the payment and issues a
+            PEAC-Receipt.
+          </p>
+          <div style={warning}>
+            <strong>Note:</strong> The exact header used to relay Stripe payment intent IDs may
+            change as we tighten the adapter spec, but the normalized <code>payment</code> block
+            shape and use of <code>PEAC-Receipt</code> remain stable across versions.
+          </div>
 
-                  <p style={{ marginBottom: 'var(--space-4)' }}>
-                    The client uses Stripe Elements to complete the payment, then retries once the intent is <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>succeeded</code>. The Stripe adapter confirms the payment and issues a PEAC-Receipt.
-                  </p>
-
-                  <div style={{
-                    background: 'var(--accent-warning-faint)',
-                    border: '1px solid var(--accent-warning-border)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: 'var(--space-4)',
-                    display: 'flex',
-                    gap: 'var(--space-3)'
-                  }}>
-                    <AlertTriangle size={18} style={{ color: 'var(--accent-warning)', flexShrink: 0, marginTop: '2px' }} />
-                    <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                      <strong>Note:</strong> The exact header used to relay Stripe payment intent IDs may change as we tighten the adapter spec, but the normalized <code style={{ background: 'var(--surface-card)', padding: '2px 4px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)' }}>payment</code> block shape and use of PEAC-Receipt remain stable across versions.
-                    </p>
-                  </div>
-                </div>
-              </section>
-
-              {/* Section 5 */}
-              <section style={{ marginBottom: 'var(--space-16)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
-                  <span style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'var(--accent-brand)',
-                    color: 'var(--white)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    flexShrink: 0
-                  }}>5</span>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    margin: 0,
-                    color: 'var(--text-primary)'
-                  }}>
-                    What actually ends up in a PEAC-Receipt
-                  </h2>
-                </div>
-
-                <p style={{ marginBottom: 'var(--space-4)' }}>
-                  To make the billing, audit and compliance story concrete, here is a simplified example of what a PEAC receipt for a paid AI request might look like:
-                </p>
-
-                <div style={{
-                  background: 'var(--text-primary)',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: 'var(--space-5)',
-                  marginBottom: 'var(--space-6)',
-                  overflow: 'auto'
-                }}>
-                  <div style={{ color: 'var(--text-muted)', fontSize: 'var(--text-xs)', marginBottom: 'var(--space-2)' }}>Example PEAC-Receipt (simplified)</div>
-                  <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', color: 'var(--border-default)', lineHeight: 1.6 }}>
+          <h2>5. What actually ends up in a PEAC-Receipt</h2>
+          <p>
+            To make the billing, audit and compliance story concrete, here is a simplified
+            example of what a PEAC record for a paid AI request might look like:
+          </p>
+          <p><em>Example PEAC-Receipt (simplified):</em></p>
+          <pre style={codeBlock}>
 {`{
   "version": "0.9.13",
   "policy_hash": "b64url-sha256-of-canonical-policy",
@@ -829,197 +456,103 @@ Content-Type: application/json
     "jws": "eyJhbGciOiJFZERTQSIs..."
   }
 }`}
-                  </pre>
-                </div>
+          </pre>
+          <p>Key fields:</p>
+          <ul>
+            <li>
+              <code>policy_hash + aipref_snapshot</code> - tell you exactly what rules were in
+              force when this AI paywall was applied.
+            </li>
+            <li>
+              <code>resource</code> - ties things to a concrete path and ETag.
+            </li>
+            <li>
+              <code>payment</code> - uniform across x402 and Stripe; only the rail and reference
+              semantics differ.
+            </li>
+            <li>
+              <code>proof</code> - binds it all cryptographically so third parties can verify
+              without talking to your servers.
+            </li>
+          </ul>
+          <p>
+            For accounting, you can roll up <code>payment.amount</code> by resource or customer.
+            For compliance, you can prove that specific AI calls were made under specific
+            policies and paid in specific ways.
+          </p>
 
-                <div style={{ display: 'grid', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
-                  {[
-                    { field: 'policy_hash + aipref_snapshot', desc: 'Tell you exactly what rules were in force when this AI paywall was applied' },
-                    { field: 'resource', desc: 'Ties things to a concrete path and ETag' },
-                    { field: 'payment', desc: 'Uniform across x402 and Stripe - only the rail and reference semantics differ' },
-                    { field: 'proof', desc: 'Binds it all cryptographically so third parties can verify without talking to your servers' }
-                  ].map((item, i) => (
-                    <div key={i} style={{
-                      background: 'var(--surface-subtle)',
-                      borderRadius: 'var(--radius-md)',
-                      padding: 'var(--space-4)',
-                      display: 'flex',
-                      gap: 'var(--space-3)'
-                    }}>
-                      <code style={{ background: 'var(--surface-elevated)', padding: '2px 8px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-xs)', fontWeight: 600, color: 'var(--accent-brand)', flexShrink: 0, height: 'fit-content' }}>{item.field}</code>
-                      <span style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>{item.desc}</span>
-                    </div>
-                  ))}
-                </div>
+          <h2>6. What PEAC does not do</h2>
+          <ul>
+            <li>PEAC does not custody funds, settle payments, or replace acquirers and processors.</li>
+            <li>PEAC does not pick the payment rail; it carries a signed record of the exchange whatever rail clears it.</li>
+            <li>PEAC does not enforce pricing or contract terms; it records what was offered and what was accepted.</li>
+            <li>PEAC does not become a billing system; it composes with x402, Stripe, and existing billing stacks.</li>
+            <li>PEAC does not assert chargeback or refund finality; settlement state belongs to the rail.</li>
+          </ul>
 
-                <p>
-                  For accounting, you can roll up <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>payment.amount</code> by resource or customer. For compliance, you can prove that specific AI calls were made under specific policies and paid in specific ways.
-                </p>
-              </section>
-
-              {/* Section 6 */}
-              <section style={{ marginBottom: 'var(--space-12)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
-                  <span style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'var(--accent-brand)',
-                    color: 'var(--white)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    flexShrink: 0
-                  }}>6</span>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    margin: 0,
-                    color: 'var(--text-primary)'
-                  }}>
-                    How this ties back to our roadmap and vision
-                  </h2>
-                </div>
-
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  Within the 0.9.12 to 0.9.21 window, we have set some clear constraints:
-                </p>
-
-                <div style={{
-                  background: 'var(--surface-subtle)',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: 'var(--space-5)',
-                  marginBottom: 'var(--space-6)'
-                }}>
-                  <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', display: 'grid', gap: 'var(--space-2)' }}>
-                    <li>Continue development until earning 1.0 through multiple independent implementations</li>
-                    <li>Use <strong>PEAC-Receipt</strong> as the primary HTTP field globally, without legacy header aliases</li>
-                    <li>Keep the core small and rely on adapters for payment rails and environments</li>
-                    <li>Always embed AIPREF snapshots in receipts when present, and make payment optional but normalized across x402 and Stripe</li>
-                  </ul>
-                </div>
-
-                <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Our performance and security targets are explicit:
-                </p>
-
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-                  gap: 'var(--space-3)',
-                  marginBottom: 'var(--space-6)'
-                }}>
-                  {[
-                    { metric: 'Sign p95', value: '< 10 ms' },
-                    { metric: 'Verify p95', value: '< 5 ms' },
-                    { metric: 'Throughput', value: '1k+ receipts/sec' },
-                    { metric: 'Security', value: 'OWASP clean' }
-                  ].map((item, i) => (
-                    <div key={i} style={{
-                      background: 'var(--accent-brand-faint)',
-                      border: '1px solid var(--accent-brand-muted)',
-                      borderRadius: 'var(--radius-md)',
-                      padding: 'var(--space-4)',
-                      textAlign: 'center'
-                    }}>
-                      <div style={{ fontSize: 'var(--text-lg)', fontWeight: 700, color: 'var(--accent-brand)', marginBottom: 'var(--space-1)' }}>{item.value}</div>
-                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>{item.metric}</div>
-                    </div>
-                  ))}
-                </div>
-
-                <div style={{
-                  background: 'var(--text-primary)',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: 'var(--space-6)',
-                  marginBottom: 'var(--space-6)'
-                }}>
-                  <p style={{ margin: 0, color: 'var(--white)', fontSize: 'var(--text-lg)', fontWeight: 500, lineHeight: 1.6 }}>
-                    Make PEAC the universal proof layer for AI interactions, so that any rail that can clear a payment can plug into AI paywalls and still produce verifiable, portable receipts.
-                  </p>
-                </div>
-
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  For Originary, this means:
-                </p>
-
-                <div style={{ display: 'grid', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
-                  {[
-                    'agent and crawler identification becomes the front door into a programmable AI paywall',
-                    'HTTP 402 becomes the standard control plane for AI payments',
-                    'x402 and Stripe are first class citizens, not competing standards',
-                    'PEAC-Receipt is the common language between engineering, finance, legal and external partners'
-                  ].map((item, i) => (
-                    <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
-                      <CheckCircle2 size={18} style={{ color: 'var(--accent-secondary)', flexShrink: 0, marginTop: '2px' }} />
-                      <span style={{ color: 'var(--text-primary)' }}>{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <p>
-                  If you are thinking about how to charge AI agents for access, or how to show regulators exactly what those agents did with your data, that is the arc we are building toward. In upcoming posts we will share concrete integration guides and reference implementations for each rail.
-                </p>
-              </section>
-
-              {/* Related Reading */}
-              <section style={{ paddingTop: 'var(--space-8)', borderTop: '2px solid var(--border-default)' }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-                  Related Reading
-                </h3>
-                <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
-                  <Link href="/blog/ai-bot-detection/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
-                    Agent and Crawler Identification: Turning Unknown AI Traffic Into Verifiable Evidence
-                  </Link>
-                  <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
-                    HTTP 402 for APIs: Making Payment-Required Responses Work
-                  </Link>
-                  <Link href="/blog/aipref-by-ietf/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
-                    AIPREF: A Common Language for AI Usage Preferences
-                  </Link>
-                </div>
-              </section>
-            </div>
+          <h2>7. How this ties back to our direction and vision</h2>
+          <p>
+            Earlier PEAC releases (the 0.9.12 to 0.9.21 window) set the constraints that shaped
+            this article:
+          </p>
+          <ul>
+            <li>
+              Continue development until earning 1.0 through multiple independent implementations
+            </li>
+            <li>
+              Use <strong>PEAC-Receipt</strong> as the primary HTTP field globally, without
+              legacy header aliases
+            </li>
+            <li>Keep the core small and rely on adapters for payment rails and environments</li>
+            <li>
+              Always embed AIPREF snapshots in records when present, and make payment optional
+              but normalized across x402 and Stripe
+            </li>
+          </ul>
+          <p>
+            Specific numbers and version windows shift over time. For the current PEAC release,
+            SLOs, and supported wire surfaces, see the <Link href="/peac" style={linkStyle}>PEAC
+            Protocol overview</Link> and the <Link href="/downloads" style={linkStyle}>downloads
+            and SDK page</Link>.
+          </p>
+          <div style={pullQuote}>
+            Make PEAC the portable record layer for AI interactions, so any rail that can clear a
+            payment can plug into AI paywalls and still produce verifiable, portable records.
           </div>
+          <p>For Originary, this means:</p>
+          <ul>
+            <li>
+              Agent and crawler identification becomes the front door into a programmable AI
+              paywall
+            </li>
+            <li>HTTP 402 becomes the standard control plane for AI payments</li>
+            <li>x402 and Stripe are first-class citizens, not competing standards</li>
+            <li>
+              <code>PEAC-Receipt</code> is the common language between engineering, finance,
+              partner reviews, and external counterparties
+            </li>
+          </ul>
+          <p>
+            If you are thinking about how to charge AI agents for access, or how to show partners
+            and auditors exactly what those agents did with your data, that is the arc we are
+            building toward. In upcoming posts we will share concrete integration guides and
+            reference implementations for each rail.
+          </p>
+        </ArticleDoc>
 
-          {/* CTA Section */}
-          <section style={{ background: 'var(--surface-subtle)', borderTop: '1px solid var(--border-default)', marginTop: 'var(--space-16)' }}>
-            <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: 'var(--space-16) var(--space-6)' }}>
-              <div className="cta-card" style={{
-                borderRadius: 'var(--radius-xl)',
-                padding: 'var(--space-10)'
-              }}>
-                <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
-                  Ready to monetize AI traffic with verifiable receipts?
-                </h2>
-                <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'var(--text-on-brand)', maxWidth: '500px', margin: '0 auto var(--space-8)' }}>
-                  Learn how Originary and PEAC Protocol turn AI detection into AI paywalls with x402 and Stripe support.
-                </p>
-                <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                  <Link
-                    href="/developers"
-                    className="btn btn-lg"
-                    style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}
-                  >
-                    <span>View Documentation</span>
-                    <ArrowRight size={18} />
-                  </Link>
-                  <Link
-                    href="/company/contact"
-                    className="btn btn-lg btn-ghost"
-                    style={{ color: 'var(--white)', border: '1px solid var(--border-on-brand)' }}
-                  >
-                    <span>Talk to Us</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </section>
-        </article>
-      </main>
-      <Footer />
-    </div>
-  );
+        <ArticleRelated
+          links={[
+            {
+              label: 'Agent and crawler identification',
+              href: '/blog/ai-bot-detection',
+            },
+            { label: 'HTTP 402 for APIs', href: '/blog/http-402-for-apis' },
+            { label: 'What is HTTP 402?', href: '/blog/what-is-http-402' },
+            { label: 'AIPREF: AI Usage Preferences', href: '/blog/aipref-by-ietf' },
+            { label: 'PEAC Protocol overview', href: '/peac' },
+          ]}
+        />
+      </PageShell>
+    </>
+  )
 }

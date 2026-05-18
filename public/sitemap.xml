@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.originary.xyz/</loc><lastmod>2026-05-14</lastmod></url>
-  <url><loc>https://www.originary.xyz/about</loc><lastmod>2026-05-05</lastmod></url>
+  <url><loc>https://www.originary.xyz/</loc><lastmod>2026-05-17</lastmod></url>
+  <url><loc>https://www.originary.xyz/about</loc><lastmod>2026-05-17</lastmod></url>
   <url><loc>https://www.originary.xyz/peac</loc><lastmod>2026-05-14</lastmod></url>
   <url><loc>https://www.originary.xyz/downloads</loc><lastmod>2026-05-14</lastmod></url>
   <url><loc>https://www.originary.xyz/pricing</loc><lastmod>2026-05-14</lastmod></url>
   <url><loc>https://www.originary.xyz/contact</loc><lastmod>2026-05-14</lastmod></url>
   <url><loc>https://www.originary.xyz/trust</loc><lastmod>2026-05-14</lastmod></url>
-  <url><loc>https://www.originary.xyz/security</loc><lastmod>2026-05-14</lastmod></url>
+  <url><loc>https://www.originary.xyz/security</loc><lastmod>2026-05-17</lastmod></url>
   <url><loc>https://www.originary.xyz/privacy</loc><lastmod>2026-05-14</lastmod></url>
   <url><loc>https://www.originary.xyz/terms</loc><lastmod>2026-05-14</lastmod></url>
   <url><loc>https://www.originary.xyz/legal/imprint</loc><lastmod>2026-02-10</lastmod></url>
+  <url><loc>https://www.originary.xyz/blog</loc><lastmod>2026-05-05</lastmod></url>
+  <url><loc>https://www.originary.xyz/blog/verifiable-provisioning-records-agent-infrastructure</loc><lastmod>2026-05-18</lastmod></url>
+  <url><loc>https://www.originary.xyz/blog/ai-bot-detection</loc><lastmod>2026-05-05</lastmod></url>
+  <url><loc>https://www.originary.xyz/blog/a2a-stack-agent-to-agent-commerce</loc><lastmod>2026-03-19</lastmod></url>
+  <url><loc>https://www.originary.xyz/blog/what-is-http-402</loc><lastmod>2026-03-19</lastmod></url>
+  <url><loc>https://www.originary.xyz/blog/from-detection-to-settlement-ai-paywall-peac-http-402</loc><lastmod>2026-05-05</lastmod></url>
+  <url><loc>https://www.originary.xyz/blog/aipref-by-ietf</loc><lastmod>2026-03-19</lastmod></url>
+  <url><loc>https://www.originary.xyz/blog/http-402-for-apis</loc><lastmod>2026-03-19</lastmod></url>
+  <url><loc>https://www.originary.xyz/blog/adding-402-in-15-minutes</loc><lastmod>2026-03-19</lastmod></url>
+  <url><loc>https://www.originary.xyz/blog/cloudflare-workers-402</loc><lastmod>2026-03-19</lastmod></url>
+  <url><loc>https://www.originary.xyz/blog/robots-txt-rfc-9309</loc><lastmod>2026-03-19</lastmod></url>
+  <url><loc>https://www.originary.xyz/learn</loc><lastmod>2026-05-05</lastmod></url>
+  <url><loc>https://www.originary.xyz/learn/ai-receipts</loc><lastmod>2026-03-26</lastmod></url>
+  <url><loc>https://www.originary.xyz/learn/ai-consent-and-attribution</loc><lastmod>2026-03-26</lastmod></url>
+  <url><loc>https://www.originary.xyz/learn/http-402-ai-payments</loc><lastmod>2026-03-18</lastmod></url>
+  <url><loc>https://www.originary.xyz/learn/what-is-agentic-commerce</loc><lastmod>2026-03-18</lastmod></url>
 </urlset>

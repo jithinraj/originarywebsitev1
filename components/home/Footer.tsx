@@ -27,6 +27,13 @@ const columns: Array<{ h: string; items: Array<{ label: string; href: string; ex
     ],
   },
   {
+    h: 'Resources',
+    items: [
+      { label: 'Blog', href: '/blog' },
+      { label: 'Learn', href: '/learn' },
+    ],
+  },
+  {
     h: 'External',
     items: [
       { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
@@ -79,7 +86,7 @@ export function HomeFooter() {
           className="home-footer-cols"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, minmax(120px, auto))',
+            gridTemplateColumns: 'repeat(4, minmax(120px, auto))',
             gap: 48,
           }}
         >

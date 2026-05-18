@@ -18,6 +18,22 @@ const routes = [
   "/privacy",
   "/terms",
   "/legal/imprint",
+  "/blog",
+  "/blog/verifiable-provisioning-records-agent-infrastructure",
+  "/blog/ai-bot-detection",
+  "/blog/a2a-stack-agent-to-agent-commerce",
+  "/blog/what-is-http-402",
+  "/blog/from-detection-to-settlement-ai-paywall-peac-http-402",
+  "/blog/aipref-by-ietf",
+  "/blog/http-402-for-apis",
+  "/blog/adding-402-in-15-minutes",
+  "/blog/cloudflare-workers-402",
+  "/blog/robots-txt-rfc-9309",
+  "/learn",
+  "/learn/ai-receipts",
+  "/learn/ai-consent-and-attribution",
+  "/learn/http-402-ai-payments",
+  "/learn/what-is-agentic-commerce",
 ];
 
 function lastmodForRoute(route) {

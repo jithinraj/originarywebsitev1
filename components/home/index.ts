@@ -10,6 +10,8 @@ export {
   Pill,
   Button,
   LegalDoc,
+  ArticleDoc,
+  ArticleRelated,
 } from './page-kit'
 
 export { DemoRequestForm } from './DemoRequestForm'

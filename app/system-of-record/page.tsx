@@ -190,7 +190,7 @@ export default function SystemOfRecordPage() {
               </div>
 
               <div className="problem-card">
-                <h4>2. Payment evidence is not naturally tied to access</h4>
+                <h4>2. Payment records are not naturally tied to access</h4>
                 <p>
                   Even when something is paid for, the proof is often separated from the request and the response. That separation creates disputes.
                 </p>
@@ -211,7 +211,7 @@ export default function SystemOfRecordPage() {
               </div>
 
               <p className="summary">
-                In short: agents are arriving with no shared proof layer.
+                In short: agents are arriving with no shared record layer.
               </p>
             </section>
 
@@ -299,7 +299,7 @@ Content-Type: application/json`}</code></pre>
                 <li><CheckCircle size={16} /> This response was issued by this service at this time.</li>
                 <li><CheckCircle size={16} /> This request matched policy version X (or policy hash X).</li>
                 <li><CheckCircle size={16} /> This access was allowed under the declared terms.</li>
-                <li><CheckCircle size={16} /> If payment was required, payment evidence exists and is referenced.</li>
+                <li><CheckCircle size={16} /> If payment was required, a payment record exists and is referenced.</li>
                 <li><CheckCircle size={16} /> The response returned was associated with those terms.</li>
                 <li><CheckCircle size={16} /> Optional: an attribution/provenance pointer was asserted.</li>
               </ul>

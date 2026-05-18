@@ -332,7 +332,7 @@ export default function OriginaryAIPage() {
                   {
                     step: '3',
                     title: 'Issue a Receipt',
-                    description: 'We sign a compact JWS (PEAC-Receipt) that binds the result, enforcement method, payment evidence, AIPREF snapshot, timestamp, and key id. It travels with the response - and can be forwarded A2A.'
+                    description: 'We sign a compact JWS (PEAC-Receipt) that binds the result, enforcement method, payment records, AIPREF snapshot, timestamp, and key id. It travels with the response - and can be forwarded A2A.'
                   }
                 ].map((item) => (
                   <div key={item.step} style={{
@@ -472,7 +472,7 @@ export default function OriginaryAIPage() {
                     },
                     {
                       title: 'Drop-in',
-                      description: 'Keep your tool schema; we add the proof layer.'
+                      description: 'Keep your tool schema; we add portable signed records.'
                     }
                   ].map((item, index) => (
                     <div key={index} style={{
