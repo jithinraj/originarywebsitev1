@@ -444,3 +444,202 @@ export function LegalDoc({
     </section>
   )
 }
+
+/**
+ * ArticleDoc renders long-form blog or guide articles in the homepage design
+ * system. Breadcrumb, category eyebrow, headline, sub-headline, byline, and a
+ * prose card. Reuses `.legal-doc-body` typography for readable long-form copy.
+ */
+export function ArticleDoc({
+  category,
+  title,
+  sub,
+  author,
+  date,
+  readTime,
+  parent,
+  children,
+}: {
+  category: string
+  title: string
+  sub?: ReactNode
+  author?: string
+  date?: string
+  readTime?: string
+  parent: { label: string; href: string }
+  children: ReactNode
+}) {
+  return (
+    <article
+      className="home-section"
+      style={{
+        maxWidth: MAX_W,
+        margin: '0 auto',
+        padding: `clamp(40px, 6vh, 72px) ${PAGE_PAD} 96px ${PAGE_PAD}`,
+      }}
+    >
+      <div style={{ maxWidth: 780, margin: '0 auto' }}>
+        <nav
+          aria-label="Breadcrumb"
+          style={{
+            fontFamily: mono,
+            fontSize: 11,
+            letterSpacing: '0.08em',
+            color: PALETTE.faint,
+            marginBottom: 32,
+            textTransform: 'uppercase',
+            display: 'flex',
+            gap: 8,
+            flexWrap: 'wrap',
+          }}
+        >
+          <Link href="/" style={{ color: PALETTE.faint, textDecoration: 'none' }}>
+            Home
+          </Link>
+          <span>/</span>
+          <Link href={parent.href} style={{ color: PALETTE.faint, textDecoration: 'none' }}>
+            {parent.label}
+          </Link>
+        </nav>
+        <Mono
+          size={11}
+          color={PALETTE.muted}
+          style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
+        >
+          {category}
+        </Mono>
+        <h1
+          style={{
+            fontFamily: sans,
+            fontSize: 'clamp(32px, 4.4vw, 48px)',
+            lineHeight: 1.1,
+            fontWeight: 500,
+            letterSpacing: '-0.025em',
+            margin: '14px 0 0 0',
+            color: PALETTE.ink,
+            textWrap: 'balance',
+          }}
+        >
+          {title}
+        </h1>
+        {sub ? (
+          <div
+            style={{
+              fontFamily: sans,
+              fontSize: 18,
+              lineHeight: 1.55,
+              color: PALETTE.muted,
+              margin: '22px 0 0 0',
+              textWrap: 'pretty',
+            }}
+          >
+            {sub}
+          </div>
+        ) : null}
+        {author || date || readTime ? (
+          <div
+            style={{
+              marginTop: 24,
+              paddingTop: 18,
+              borderTop: `1px solid ${PALETTE.hairline}`,
+              display: 'flex',
+              gap: 18,
+              flexWrap: 'wrap',
+              fontFamily: mono,
+              fontSize: 11,
+              letterSpacing: '0.06em',
+              color: PALETTE.faint,
+              textTransform: 'uppercase',
+            }}
+          >
+            {author ? <span>{author}</span> : null}
+            {date ? <span>{date}</span> : null}
+            {readTime ? <span>{readTime}</span> : null}
+          </div>
+        ) : null}
+        <div
+          className="home-card legal-doc-body"
+          style={{
+            marginTop: 32,
+            padding: 36,
+            background: PALETTE.paper,
+            border: `1px solid ${PALETTE.hairline}`,
+          }}
+        >
+          {children}
+        </div>
+      </div>
+    </article>
+  )
+}
+
+/**
+ * ArticleRelated renders a small list of related links at the bottom of an
+ * article. Same column width and typography as ArticleDoc.
+ */
+export function ArticleRelated({
+  links,
+}: {
+  links: Array<{ label: string; href: string; external?: boolean }>
+}) {
+  if (!links.length) return null
+  return (
+    <section
+      className="home-section"
+      style={{
+        maxWidth: MAX_W,
+        margin: '0 auto',
+        padding: `0 ${PAGE_PAD} 96px ${PAGE_PAD}`,
+      }}
+    >
+      <div style={{ maxWidth: 780, margin: '0 auto' }}>
+        <Mono
+          size={11}
+          color={PALETTE.faint}
+          style={{ letterSpacing: '0.18em', textTransform: 'uppercase', marginBottom: 18, display: 'block' }}
+        >
+          related
+        </Mono>
+        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
+          {links.map((l) =>
+            l.external ? (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontFamily: sans,
+                    fontSize: 15,
+                    color: PALETTE.ink,
+                    textDecoration: 'underline',
+                    textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+                    textUnderlineOffset: 3,
+                  }}
+                >
+                  {l.label}
+                </a>
+              </li>
+            ) : (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  style={{
+                    fontFamily: sans,
+                    fontSize: 15,
+                    color: PALETTE.ink,
+                    textDecoration: 'underline',
+                    textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+                    textUnderlineOffset: 3,
+                  }}
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ),
+          )}
+        </ul>
+      </div>
+    </section>
+  )
+}

@@ -1,12 +1,12 @@
 [
   {
     "url": "https://www.originary.xyz/",
-    "lastModified": "2026-05-14T01:50:49+05:30",
+    "lastModified": "2026-05-17T22:28:06+05:30",
     "priority": 1
   },
   {
     "url": "https://www.originary.xyz/about",
-    "lastModified": "2026-05-05T07:12:59+05:30",
+    "lastModified": "2026-05-17T22:28:06+05:30",
     "priority": 0.7
   },
   {
@@ -36,7 +36,7 @@
   },
   {
     "url": "https://www.originary.xyz/security",
-    "lastModified": "2026-05-14T01:50:49+05:30",
+    "lastModified": "2026-05-17T22:28:06+05:30",
     "priority": 0.7
   },
   {
@@ -53,5 +53,85 @@
     "url": "https://www.originary.xyz/legal/imprint",
     "lastModified": "2026-02-10T21:26:02+05:30",
     "priority": 0.5
+  },
+  {
+    "url": "https://www.originary.xyz/blog",
+    "lastModified": "2026-05-05T07:12:59+05:30",
+    "priority": 0.7
+  },
+  {
+    "url": "https://www.originary.xyz/blog/verifiable-provisioning-records-agent-infrastructure",
+    "lastModified": "2026-05-18",
+    "priority": 0.6
+  },
+  {
+    "url": "https://www.originary.xyz/blog/ai-bot-detection",
+    "lastModified": "2026-05-05T07:12:59+05:30",
+    "priority": 0.6
+  },
+  {
+    "url": "https://www.originary.xyz/blog/a2a-stack-agent-to-agent-commerce",
+    "lastModified": "2026-03-19T22:07:35+05:30",
+    "priority": 0.6
+  },
+  {
+    "url": "https://www.originary.xyz/blog/what-is-http-402",
+    "lastModified": "2026-03-19T22:07:35+05:30",
+    "priority": 0.6
+  },
+  {
+    "url": "https://www.originary.xyz/blog/from-detection-to-settlement-ai-paywall-peac-http-402",
+    "lastModified": "2026-05-05T07:12:59+05:30",
+    "priority": 0.6
+  },
+  {
+    "url": "https://www.originary.xyz/blog/aipref-by-ietf",
+    "lastModified": "2026-03-19T22:07:35+05:30",
+    "priority": 0.6
+  },
+  {
+    "url": "https://www.originary.xyz/blog/http-402-for-apis",
+    "lastModified": "2026-03-19T22:07:35+05:30",
+    "priority": 0.6
+  },
+  {
+    "url": "https://www.originary.xyz/blog/adding-402-in-15-minutes",
+    "lastModified": "2026-03-19T22:07:35+05:30",
+    "priority": 0.6
+  },
+  {
+    "url": "https://www.originary.xyz/blog/cloudflare-workers-402",
+    "lastModified": "2026-03-19T22:07:35+05:30",
+    "priority": 0.6
+  },
+  {
+    "url": "https://www.originary.xyz/blog/robots-txt-rfc-9309",
+    "lastModified": "2026-03-19T22:07:35+05:30",
+    "priority": 0.6
+  },
+  {
+    "url": "https://www.originary.xyz/learn",
+    "lastModified": "2026-05-05T07:12:59+05:30",
+    "priority": 0.7
+  },
+  {
+    "url": "https://www.originary.xyz/learn/ai-receipts",
+    "lastModified": "2026-03-26T20:15:25+05:30",
+    "priority": 0.7
+  },
+  {
+    "url": "https://www.originary.xyz/learn/ai-consent-and-attribution",
+    "lastModified": "2026-03-26T20:15:25+05:30",
+    "priority": 0.7
+  },
+  {
+    "url": "https://www.originary.xyz/learn/http-402-ai-payments",
+    "lastModified": "2026-03-18T18:06:18+05:30",
+    "priority": 0.7
+  },
+  {
+    "url": "https://www.originary.xyz/learn/what-is-agentic-commerce",
+    "lastModified": "2026-03-18T18:06:18+05:30",
+    "priority": 0.7
   }
 ]

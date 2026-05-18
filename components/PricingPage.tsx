@@ -503,7 +503,7 @@ export default function PricingPage() {
                   Originary vs. API Gateways
                 </h3>
                 <div style={{ marginBottom: '16px', color: 'var(--accent-brand)', fontWeight: 500 }}>
-                  Adds verifiable proof layer
+                  Adds verifiable record layer
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                   <li style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '12px' }}>

@@ -1,1012 +1,436 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import NavigationHeader from "@/components/NavigationHeader";
-import Footer from "@/components/Footer";
-import { FileText, ArrowRight, Eye, ShieldCheck, Database, Fingerprint, List, CheckCircle2, AlertTriangle, Zap } from 'lucide-react';
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import Script from 'next/script'
+import { PageShell, ArticleDoc, ArticleRelated, PALETTE } from '@/components/home'
 
 export const metadata: Metadata = {
-  title: "Agent and Crawler Identification: From Traffic to Evidence",
-  description: "agent and crawler identification beyond classifiers. Use metadata, fingerprints and PEAC receipts to turn AI traffic into verifiable evidence.",
-  keywords: "agent and crawler identification, AI traffic, metadata, model fingerprints, PEAC receipts, agent detection, AI crawlers, verifiable evidence",
-  authors: [{ name: "Jithin Raj, Founder" }],
-  alternates: { canonical: '/blog/ai-bot-detection' },
+  title: { absolute: 'AI Bot Detection and Crawler Signals | Originary' },
+  description:
+    'How metadata, model fingerprints, and signed records turn AI traffic into verifiable records for audits and partner review.',
+  keywords:
+    'AI bot detection, crawler identification, AI traffic, model fingerprinting, content authenticity, signed records, PEAC Protocol',
+  authors: [{ name: 'Jithin Raj, Founder' }],
   openGraph: {
-    title: "Agent and Crawler Identification: From Traffic to Evidence",
-    description: "agent and crawler identification beyond classifiers. Use metadata, fingerprints and PEAC receipts to turn AI traffic into verifiable evidence.",
-    type: "article",
-    url: "/blog/ai-bot-detection/",
-    publishedTime: "2025-12-01",
-    authors: ["Jithin Raj", "Originary Team"],
+    type: 'article',
+    title: 'Agent and Crawler Signals',
+    description:
+      'Detection alone is not enough. Metadata, model fingerprints, and signed records transform AI traffic into verifiable, enforceable records.',
+    url: '/blog/ai-bot-detection',
+    publishedTime: '2025-12-01',
+    authors: ['Jithin Raj', 'Originary Team'],
     images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Agent and Crawler Identification: From Traffic to Evidence",
-    description: "agent and crawler identification beyond classifiers. Turn AI traffic into verifiable evidence.",
+    card: 'summary_large_image',
+    title: 'Agent and Crawler Signals',
+    description:
+      'How metadata, model fingerprints, and signed records turn AI traffic into verifiable records.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
   robots: 'index,follow',
-};
+  alternates: { canonical: '/blog/ai-bot-detection' },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline:
+    'Agent and Crawler Signals: Turning Unknown AI Traffic Into Verifiable Records',
+  description:
+    'A technical deep dive into AI traffic identification, model fingerprinting, and the four pillars that turn detection into verifiable records.',
+  author: { '@type': 'Organization', name: 'Originary', url: 'https://www.originary.xyz' },
+  datePublished: '2025-12-01',
+  dateModified: '2025-12-01',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Originary',
+    logo: { '@type': 'ImageObject', url: 'https://www.originary.xyz/logo/originary-wordmark.svg' },
+  },
+  mainEntityOfPage: 'https://www.originary.xyz/blog/ai-bot-detection',
+}
+
+const linkStyle = {
+  color: PALETTE.ink,
+  textDecoration: 'underline',
+  textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+  textUnderlineOffset: 3,
+}
+
+const codeBlock = {
+  background: 'rgba(20, 17, 10, 0.04)',
+  border: `1px solid ${PALETTE.hairline}`,
+  padding: '14px 16px',
+  fontSize: 13,
+  lineHeight: 1.6,
+  overflowX: 'auto' as const,
+  color: PALETTE.ink,
+  fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", monospace',
+}
+
+const callout = {
+  marginTop: 8,
+  marginBottom: 14,
+  padding: '14px 18px',
+  background: 'rgba(20, 17, 10, 0.03)',
+  borderLeft: `2px solid ${PALETTE.rule}`,
+  fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
+  fontSize: 14,
+  lineHeight: 1.65,
+  color: PALETTE.muted,
+}
+
+const pullQuote = {
+  marginTop: 14,
+  marginBottom: 14,
+  padding: '18px 22px',
+  background: PALETTE.bg,
+  border: `1px solid ${PALETTE.rule}`,
+  fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
+  fontSize: 17,
+  fontWeight: 500,
+  lineHeight: 1.5,
+  color: PALETTE.ink,
+}
 
 export default function Page() {
-  const articleJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "headline": "Agent and Crawler Identification: Turning Unknown AI Traffic Into Verifiable Evidence",
-    "description": "agent and crawler identification is more than classifiers. Learn how metadata, fingerprints and PEAC receipts turn AI traffic into verifiable, enforceable evidence.",
-    "author": {
-      "@type": "Organization",
-      "name": "Originary™",
-      "url": "https://www.originary.xyz"
-    },
-    "datePublished": "2025-12-01",
-    "dateModified": "2025-12-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Originary™",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.originary.xyz/logo.svg"
-      }
-    },
-    "mainEntityOfPage": "https://www.originary.xyz/blog/ai-bot-detection/",
-    "image": "https://www.originary.xyz/og.jpg"
-  };
-
   return (
-    <div className="wrap">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-      />
-      <NavigationHeader />
-      <main style={{ paddingTop: '80px', minHeight: '100vh' }} id="main-content">
-        <article>
-          {/* Hero Header */}
-          <div style={{ background: 'linear-gradient(180deg, var(--accent-brand-faint) 0%, transparent 100%)', borderBottom: '1px solid var(--border-subtle)' }}>
-            <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: 'var(--space-12) var(--space-6) var(--space-16)' }}>
-              {/* Breadcrumbs */}
-              <nav style={{
-                fontSize: 'var(--text-sm)',
-                color: 'var(--text-tertiary)',
-                marginBottom: 'var(--space-8)'
-              }}>
-                <Link href="/" style={{ color: 'var(--text-tertiary)', textDecoration: 'none' }}>Home</Link>
-                <span style={{ margin: '0 var(--space-2)' }}>/</span>
-                <Link href="/blog" style={{ color: 'var(--text-tertiary)', textDecoration: 'none' }}>Blog</Link>
-                <span style={{ margin: '0 var(--space-2)' }}>/</span>
-                <span style={{ color: 'var(--text-secondary)' }}>Agent and Crawler Identification</span>
-              </nav>
-
-              {/* Badge */}
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 'var(--space-2)',
-                background: 'var(--accent-brand-subtle)',
-                border: '1px solid var(--accent-brand-muted)',
-                borderRadius: 'var(--radius-full)',
-                padding: 'var(--space-2) var(--space-4)',
-                fontSize: 'var(--text-xs)',
-                fontWeight: 600,
-                color: 'var(--accent-brand)',
-                marginBottom: 'var(--space-6)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em'
-              }}>
-                <FileText size={12} />
-                Technical Deep Dive
-              </div>
-
-              {/* Title */}
-              <h1 style={{
-                fontSize: 'clamp(2rem, 5vw, 3rem)',
-                fontWeight: 700,
-                lineHeight: 1.15,
-                marginBottom: 'var(--space-6)',
-                color: 'var(--text-primary)'
-              }}>
-                Agent and Crawler Identification: Turning Unknown AI Traffic Into Verifiable Evidence
-              </h1>
-
-              {/* Subtitle */}
-              <p style={{
-                fontSize: 'var(--text-xl)',
-                color: 'var(--text-secondary)',
-                lineHeight: 1.6,
-                marginBottom: 'var(--space-8)',
-                maxWidth: '650px'
-              }}>
-                Detection alone is not enough. Learn how metadata, model fingerprints, and PEAC receipts transform AI traffic from guesswork into verifiable, enforceable evidence.
-              </p>
-
-              {/* Meta */}
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 'var(--space-4)',
-                fontSize: 'var(--text-sm)',
-                color: 'var(--text-tertiary)',
-                flexWrap: 'wrap'
-              }}>
-                <span style={{ fontWeight: 500, color: 'var(--text-secondary)' }}>Jithin Raj, Founder</span>
-                <span style={{ color: 'var(--border-default)' }}>|</span>
-                <span>15 min read</span>
-              </div>
-            </div>
+    <>
+      <Script id="article-json-ld" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify(jsonLd)}
+      </Script>
+      <PageShell>
+        <ArticleDoc
+          category="technical"
+          title="AI bot detection and crawler signals"
+          sub="Detection alone is not enough. Learn how metadata, model fingerprints, and signed records transform AI traffic from guesswork into verifiable, enforceable records."
+          author="Jithin Raj, Founder"
+          date="2025-12-01"
+          readTime="6 min read"
+          parent={{ label: 'Blog', href: '/blog' }}
+        >
+          <div style={callout}>
+            <strong>Who this is for.</strong> API providers, content platforms, publishers, and
+            security teams who already detect AI traffic and now need a verifiable record of what
+            each agent attested at the boundary, so audit, billing, and partner conversations have
+            something portable to work with.
           </div>
 
-          {/* Table of Contents */}
-          <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 var(--space-6)' }}>
-            <div style={{
-              background: 'var(--surface-subtle)',
-              borderRadius: 'var(--radius-lg)',
-              padding: 'var(--space-6)',
-              marginTop: 'calc(-1 * var(--space-8))',
-              marginBottom: 'var(--space-12)',
-              border: '1px solid var(--border-default)'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-4)' }}>
-                <List size={16} style={{ color: 'var(--accent-brand)' }} />
-                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>In This Article</span>
-              </div>
-              <div style={{ display: 'grid', gap: 'var(--space-2)' }}>
-                {[
-                  { num: '1', title: 'What agent and crawler identification really covers' },
-                  { num: '2', title: 'Why detection-only is not enough' },
-                  { num: '3', title: 'The four pillars of useful agent and crawler identification' },
-                  { num: '4', title: 'How Originary + PEAC change detection in practice' },
-                  { num: '5', title: 'Where this is going next' },
-                ].map((item) => (
-                  <div key={item.num} style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-                    <span style={{
-                      width: '24px',
-                      height: '24px',
-                      borderRadius: 'var(--radius-full)',
-                      background: 'var(--accent-brand)',
-                      color: 'var(--white)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: 'var(--text-xs)',
-                      fontWeight: 600,
-                      flexShrink: 0
-                    }}>{item.num}</span>
-                    <span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>{item.title}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <p>&quot;AI detection&quot; is having a moment. But most people mean one of two things:</p>
+          <ul>
+            <li>
+              <strong>Content authenticity.</strong> Is this content real, or did an AI model
+              generate or alter it?
+            </li>
+            <li>
+              <strong>Traffic detection.</strong> Is this visitor a human, or an AI bot quietly
+              crawling my site or API?
+            </li>
+          </ul>
+          <p>
+            Those are different jobs. Both matter. Both are easy to get wrong if you only rely on
+            classifiers and vibes.
+          </p>
+          <p>
+            Originary takes a different view: <strong>every time an AI system touches your data,
+            there should be a clear, verifiable trail of what happened.</strong> That trail needs
+            to work for developers, auditors, partners, and automated agents at the same time.
+          </p>
+          <div style={callout}>
+            That is exactly what{' '}
+            <Link href="/peac" style={linkStyle}>
+              PEAC Protocol
+            </Link>{' '}
+            provides: a neutral records layer for AI interactions that issues signed records for
+            access, usage, and payments using a standard <code>PEAC-Receipt</code> HTTP header.
           </div>
 
-          {/* Article Content */}
-          <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: '0 var(--space-6)' }}>
-            <div style={{
-              fontSize: 'var(--text-base)',
-              lineHeight: 1.9,
-              color: 'var(--text-secondary)'
-            }}>
-              {/* Introduction */}
-              <section style={{ marginBottom: 'var(--space-16)' }}>
-                <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-6)', color: 'var(--text-primary)' }}>
-                  &ldquo;AI detection&rdquo; is having a moment. But most people mean one of two things:
-                </p>
+          <h2>1. What &quot;agent and crawler identification&quot; really covers</h2>
+          <p>People often bundle three separate capabilities under &quot;AI detection&quot;:</p>
 
-                <div style={{ display: 'grid', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
-                  <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
-                    <div style={{
-                      width: '32px',
-                      height: '32px',
-                      borderRadius: 'var(--radius-md)',
-                      background: 'var(--accent-brand-subtle)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0
-                    }}>
-                      <Eye size={16} style={{ color: 'var(--accent-brand)' }} />
-                    </div>
-                    <div>
-                      <strong style={{ color: 'var(--text-primary)' }}>Content authenticity</strong>
-                      <p style={{ margin: 0, color: 'var(--text-secondary)' }}>Is this content real, or did an AI model generate or alter it?</p>
-                    </div>
-                  </div>
-                  <div style={{ display: 'flex', gap: 'var(--space-4)', alignItems: 'flex-start' }}>
-                    <div style={{
-                      width: '32px',
-                      height: '32px',
-                      borderRadius: 'var(--radius-md)',
-                      background: 'var(--accent-brand-subtle)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0
-                    }}>
-                      <ShieldCheck size={16} style={{ color: 'var(--accent-brand)' }} />
-                    </div>
-                    <div>
-                      <strong style={{ color: 'var(--text-primary)' }}>Traffic detection</strong>
-                      <p style={{ margin: 0, color: 'var(--text-secondary)' }}>Is this visitor a human, or an AI bot quietly crawling my site or API?</p>
-                    </div>
-                  </div>
-                </div>
+          <h3>Fake vs real (content authenticity)</h3>
+          <p>
+            Classifying whether a text, image, audio, or video file was generated or altered by
+            an AI model, usually with a probability score.
+          </p>
 
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  Those are different jobs. Both matter. Both are easy to get wrong if you only rely on classifiers and vibes.
-                </p>
+          <h3>Model fingerprinting (who generated this)</h3>
+          <p>
+            Inferring which model family or vendor likely produced the artifact, or using
+            watermarks and statistical fingerprints to attribute it.
+          </p>
 
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  Originary takes a different view: <strong>every time an AI system touches your data, there should be a clear, verifiable trail of what happened.</strong> That trail needs to work for developers, lawyers, auditors, and automated agents at the same time.
-                </p>
+          <h3>Bot and agent detection (who is calling me)</h3>
+          <p>
+            Detecting that an incoming request is from an AI agent or crawler, not from a person
+            in a browser, and understanding which agent, under what declared purpose.
+          </p>
 
-                <div style={{
-                  background: 'linear-gradient(135deg, var(--accent-brand-subtle) 0%, var(--accent-secondary-subtle) 100%)',
-                  borderLeft: '4px solid var(--accent-brand)',
-                  borderRadius: '0 var(--radius-md) var(--radius-md) 0',
-                  padding: 'var(--space-6)',
-                  marginBottom: 'var(--space-8)'
-                }}>
-                  <p style={{ margin: 0, color: 'var(--text-primary)', fontSize: 'var(--text-base)' }}>
-                    That is exactly what <Link href="/integrations/acp/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>PEAC Protocol</Link> provides - a neutral proof layer for AI interactions that issues cryptographic receipts for access, usage, and payments using a standard <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>PEAC-Receipt</code> HTTP header.
-                  </p>
-                </div>
-              </section>
-
-              {/* Section 1 */}
-              <section style={{ marginBottom: 'var(--space-16)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
-                  <span style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'var(--accent-brand)',
-                    color: 'var(--white)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    flexShrink: 0
-                  }}>1</span>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    margin: 0,
-                    color: 'var(--text-primary)'
-                  }}>
-                    What &ldquo;agent and crawler identification&rdquo; really covers
-                  </h2>
-                </div>
-
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  People often bundle three separate capabilities under &ldquo;AI detection&rdquo;:
-                </p>
-
-                <div style={{ display: 'grid', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
-                  {[
-                    {
-                      title: 'Fake vs real (content authenticity)',
-                      desc: 'Classifying whether a text, image, audio, or video file was generated or altered by an AI model, usually with a probability score.',
-                      icon: Eye
-                    },
-                    {
-                      title: 'Model fingerprinting (who generated this)',
-                      desc: 'Inferring which model family or vendor likely produced the artifact, or using watermarks and statistical fingerprints to attribute it.',
-                      icon: Fingerprint
-                    },
-                    {
-                      title: 'Bot and agent detection (who is calling me)',
-                      desc: 'Detecting that an incoming request is from an AI agent or crawler, not from a person in a browser, and understanding which agent, under what declared purpose.',
-                      icon: ShieldCheck
-                    }
-                  ].map((item, i) => (
-                    <div key={i} style={{
-                      background: 'var(--surface-elevated)',
-                      border: '1px solid var(--border-default)',
-                      borderRadius: 'var(--radius-lg)',
-                      padding: 'var(--space-5)',
-                      display: 'flex',
-                      gap: 'var(--space-4)'
-                    }}>
-                      <div style={{
-                        width: '40px',
-                        height: '40px',
-                        borderRadius: 'var(--radius-md)',
-                        background: 'var(--accent-brand-subtle)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
-                      }}>
-                        <item.icon size={20} style={{ color: 'var(--accent-brand)' }} />
-                      </div>
-                      <div>
-                        <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
-                          {item.title}
-                        </h3>
-                        <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.6 }}>
-                          {item.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div style={{
-                  background: 'var(--text-primary)',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: 'var(--space-6)',
-                  marginBottom: 'var(--space-6)'
-                }}>
-                  <p style={{ margin: 0, color: 'var(--white)', fontSize: 'var(--text-lg)', fontWeight: 500, lineHeight: 1.6 }}>
-                    &ldquo;You can't control, license, or monetize AI usage of your data if you can't see which AI agents are actually accessing it.&rdquo;
-                  </p>
-                </div>
-
-                <p>
-                  agent and crawler identification is that missing visibility layer between your content and the growing universe of AI crawlers, copilots, and headless agents.
-                </p>
-              </section>
-
-              {/* Section 2 */}
-              <section style={{ marginBottom: 'var(--space-16)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
-                  <span style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'var(--accent-brand)',
-                    color: 'var(--white)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    flexShrink: 0
-                  }}>2</span>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    margin: 0,
-                    color: 'var(--text-primary)'
-                  }}>
-                    Why &ldquo;detection-only&rdquo; is not enough
-                  </h2>
-                </div>
-
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  There is real value in content-level detection and model fingerprinting. But they have hard limits:
-                </p>
-
-                <div style={{ display: 'grid', gap: 'var(--space-4)', marginBottom: 'var(--space-8)' }}>
-                  {[
-                    {
-                      icon: AlertTriangle,
-                      title: 'It&apos;s an arms race',
-                      desc: 'As models improve, naive classifiers become less reliable. A detector that feels strong this quarter may be unreliable next quarter. (We&apos;ve seen 20%+ false positive drops in under 6 months.)'
-                    },
-                    {
-                      icon: AlertTriangle,
-                      title: 'Scores aren&apos;t proof',
-                      desc: 'A "0.84 likelihood of AI" score is a hint. It isn&apos;t a signed record that&apos;ll stand up in an audit, complaint, or legal dispute.'
-                    },
-                    {
-                      icon: AlertTriangle,
-                      title: 'No policy, no economics',
-                      desc: 'Even if you know something&apos;s AI-generated, that doesn&apos;t tell you whether the agent respected your usage policy, paid you for access, or is allowed to keep the data.'
-                    },
-                    {
-                      icon: AlertTriangle,
-                      title: 'Detection lag',
-                      desc: 'By the time you detect unauthorized AI training on your content, the model is already deployed. You can&apos;t un-train it.'
-                    }
-                  ].map((item, i) => (
-                    <div key={i} style={{
-                      background: 'var(--accent-warning-faint)',
-                      border: '1px solid var(--accent-warning-border)',
-                      borderRadius: 'var(--radius-lg)',
-                      padding: 'var(--space-5)',
-                      display: 'flex',
-                      gap: 'var(--space-4)'
-                    }}>
-                      <div style={{
-                        width: '32px',
-                        height: '32px',
-                        borderRadius: 'var(--radius-md)',
-                        background: 'var(--accent-warning-muted)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
-                      }}>
-                        <item.icon size={16} style={{ color: 'var(--accent-warning)' }} />
-                      </div>
-                      <div>
-                        <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
-                          {item.title}
-                        </h3>
-                        <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 'var(--text-sm)', lineHeight: 1.6 }}>
-                          {item.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <p style={{ marginBottom: 'var(--space-4)' }}>
-                  Enterprises, regulators, and serious publishers need more than yes/no classification:
-                </p>
-
-                <div style={{
-                  background: 'var(--accent-secondary-subtle)',
-                  border: '1px solid var(--accent-secondary-border)',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: 'var(--space-5)',
-                  marginBottom: 'var(--space-6)'
-                }}>
-                  <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
-                    {[
-                      'Machine-readable policies agents can parse',
-                      'Cryptographic proof access followed those terms',
-                      'Chain linking suspicious outputs back to access events',
-                      'Audit trail that survives legal discovery (not server logs you control)'
-                    ].map((item, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-3)' }}>
-                        <CheckCircle2 size={18} style={{ color: 'var(--accent-secondary)', flexShrink: 0, marginTop: '2px' }} />
-                        <span style={{ color: 'var(--text-primary)' }}>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <p>
-                  That is where Originary and PEAC push beyond detection-only to <strong style={{ color: 'var(--accent-brand)' }}>detection + policy + receipts</strong>.
-                </p>
-              </section>
-
-              {/* Section 3 - The Four Pillars */}
-              <section style={{ marginBottom: 'var(--space-16)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
-                  <span style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'var(--accent-brand)',
-                    color: 'var(--white)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    flexShrink: 0
-                  }}>3</span>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    margin: 0,
-                    color: 'var(--text-primary)'
-                  }}>
-                    The four pillars of useful agent and crawler identification
-                  </h2>
-                </div>
-
-                <p style={{ marginBottom: 'var(--space-8)' }}>
-                  In practice, agent and crawler identification becomes powerful when you combine four signal types:
-                </p>
-
-                {/* Four Pillars Overview */}
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-                  gap: 'var(--space-4)',
-                  marginBottom: 'var(--space-12)'
-                }}>
-                  {[
-                    { num: '1', title: 'Metadata', icon: Database },
-                    { num: '2', title: 'Model Fingerprints', icon: Fingerprint },
-                    { num: '3', title: 'Access Events', icon: Zap },
-                    { num: '4', title: 'Artifact Repository', icon: Database }
-                  ].map((pillar) => (
-                    <div key={pillar.num} style={{
-                      background: 'var(--accent-brand-faint)',
-                      border: '1px solid var(--accent-brand-muted)',
-                      borderRadius: 'var(--radius-lg)',
-                      padding: 'var(--space-5)',
-                      textAlign: 'center'
-                    }}>
-                      <div style={{
-                        width: '48px',
-                        height: '48px',
-                        borderRadius: 'var(--radius-full)',
-                        background: 'var(--accent-brand)',
-                        color: 'var(--white)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        margin: '0 auto var(--space-3)'
-                      }}>
-                        <pillar.icon size={24} />
-                      </div>
-                      <div style={{ fontSize: 'var(--text-xs)', color: 'var(--accent-brand)', fontWeight: 600, marginBottom: 'var(--space-1)' }}>
-                        PILLAR {pillar.num}
-                      </div>
-                      <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)' }}>
-                        {pillar.title}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Pillar 3.1 - Metadata */}
-                <div style={{ marginBottom: 'var(--space-12)' }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 'var(--space-3)',
-                    marginBottom: 'var(--space-4)',
-                    paddingBottom: 'var(--space-4)',
-                    borderBottom: '2px solid var(--border-subtle)'
-                  }}>
-                    <div style={{
-                      width: '32px',
-                      height: '32px',
-                      borderRadius: 'var(--radius-md)',
-                      background: 'var(--accent-brand-subtle)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
-                    }}>
-                      <Database size={16} style={{ color: 'var(--accent-brand)' }} />
-                    </div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
-                      3.1 Metadata: the quiet truth-teller
-                    </h3>
-                  </div>
-
-                  <p style={{ marginBottom: 'var(--space-6)' }}>
-                    Metadata is &ldquo;data about the data.&rdquo; For agent and crawler identification, you care about at least three layers:
-                  </p>
-
-                  <div style={{ display: 'grid', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
-                    {[
-                      {
-                        title: 'File/media layer',
-                        items: ['EXIF data, container metadata (images/audio/video)', 'C2PA provenance, content credentials', 'Timestamps, edit history, device hints', 'Gotcha: easily stripped unless embedded + signed']
-                      },
-                      {
-                        title: 'Transport layer',
-                        items: ['HTTP headers, TLS fingerprints, ASN ranges', 'User-Agent, model hints, API keys', 'Rate patterns, timing, geo']
-                      }
-                    ].map((section, i) => (
-                      <div key={i} style={{
-                        background: 'var(--surface-subtle)',
-                        borderRadius: 'var(--radius-md)',
-                        padding: 'var(--space-4)'
-                      }}>
-                        <h4 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-2)' }}>
-                          {section.title}
-                        </h4>
-                        <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>
-                          {section.items.map((item, j) => (
-                            <li key={j} style={{ marginBottom: 'var(--space-1)' }}>{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </div>
-
-                  <p>
-                    On its own, metadata can be spoofed. Combined with cryptographic receipts, it becomes a strong integrity check. In PEAC, metadata is not an afterthought - effective AI preference policies (<Link href="/integrations/aipref/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>AIPREF</Link>) are discovered and snapshotted into every receipt, so audits are self-contained.
-                  </p>
-                </div>
-
-                {/* Pillar 3.2 - Model Fingerprints */}
-                <div style={{ marginBottom: 'var(--space-12)' }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 'var(--space-3)',
-                    marginBottom: 'var(--space-4)',
-                    paddingBottom: 'var(--space-4)',
-                    borderBottom: '2px solid var(--border-subtle)'
-                  }}>
-                    <div style={{
-                      width: '32px',
-                      height: '32px',
-                      borderRadius: 'var(--radius-md)',
-                      background: 'var(--accent-brand-subtle)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
-                    }}>
-                      <Fingerprint size={16} style={{ color: 'var(--accent-brand)' }} />
-                    </div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
-                      3.2 Model fingerprints: which model touched this
-                    </h3>
-                  </div>
-
-                  <p style={{ marginBottom: 'var(--space-6)' }}>
-                    Model fingerprinting tries to answer: <em>Which model family or vendor produced this artifact?</em>
-                  </p>
-
-                  <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                    gap: 'var(--space-4)',
-                    marginBottom: 'var(--space-6)'
-                  }}>
-                    {[
-                      { title: 'Risk & compliance', desc: 'Some models may be disallowed for regulated data' },
-                      { title: 'Attribution & economics', desc: 'Different pricing for different model types' },
-                      { title: 'Cross-checking claims', desc: 'Detect mismatches between claims and reality' }
-                    ].map((item, i) => (
-                      <div key={i} style={{
-                        background: 'var(--surface-elevated)',
-                        border: '1px solid var(--border-default)',
-                        borderRadius: 'var(--radius-md)',
-                        padding: 'var(--space-4)'
-                      }}>
-                        <h4 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-1)' }}>
-                          {item.title}
-                        </h4>
-                        <p style={{ margin: 0, fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>
-                          {item.desc}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <p>
-                    In Originary&rsquo;s world, model fingerprints feed into policy and receipts: policies can say &ldquo;allow research use from approved models, block others.&rdquo; Receipts include which model was declared at access time.
-                  </p>
-                </div>
-
-                {/* Pillar 3.3 - Access Events */}
-                <div style={{ marginBottom: 'var(--space-12)' }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 'var(--space-3)',
-                    marginBottom: 'var(--space-4)',
-                    paddingBottom: 'var(--space-4)',
-                    borderBottom: '2px solid var(--border-subtle)'
-                  }}>
-                    <div style={{
-                      width: '32px',
-                      height: '32px',
-                      borderRadius: 'var(--radius-md)',
-                      background: 'var(--accent-brand-subtle)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
-                    }}>
-                      <Zap size={16} style={{ color: 'var(--accent-brand)' }} />
-                    </div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
-                      3.3 Access: every AI call as a verifiable event
-                    </h3>
-                  </div>
-
-                  <p style={{ marginBottom: 'var(--space-4)' }}>
-                    This is the most undervalued pillar. Traditional logs tell you IP, path, timestamp. <strong>That is not enough for AI agents and 402-style paid access.</strong>
-                  </p>
-
-                  <p style={{ marginBottom: 'var(--space-4)' }}>
-                    In a PEAC-aware environment, each AI call becomes a structured, signed event:
-                  </p>
-
-                  <div style={{
-                    background: 'var(--text-primary)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: 'var(--space-5)',
-                    marginBottom: 'var(--space-6)',
-                    overflow: 'auto'
-                  }}>
-                    <pre style={{ margin: 0, fontSize: 'var(--text-sm)', fontFamily: 'monospace', color: 'var(--border-default)', lineHeight: 1.7 }}>
-{`agent_id         → which agent or client called you
-agent_type       → crawler, copilot, aggregator, training pipeline
-model_id         → declared model family in use
-policy_version   → which policy applied
-enforcement      → e.g. http-402 for payment-gated access
-payment          → rail, amount, currency, provider evidence
-aipref           → snapshot of AI usage preferences in effect
-issued_at        → when the receipt was generated`}
-                    </pre>
-                  </div>
-
-                  <div style={{
-                    background: 'linear-gradient(135deg, var(--accent-secondary-subtle) 0%, var(--accent-brand-subtle) 100%)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: 'var(--space-6)',
-                    marginBottom: 'var(--space-6)'
-                  }}>
-                    <p style={{ margin: 0, fontSize: 'var(--text-lg)', color: 'var(--text-primary)', fontWeight: 500, lineHeight: 1.6 }}>
-                      Instead of &ldquo;we think an AI scraped our site,&rdquo; you can say: <strong>&ldquo;Agent X, using model Y, accessed resources A, B, C on these dates, under policy Z, via HTTP 402, and paid this amount. Here is the signed receipt.&rdquo;</strong>
-                    </p>
-                  </div>
-
-                  <p>
-                    The PEAC kernel signs receipts using Ed25519 and ships them in a <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>PEAC-Receipt</code> header, ready for offline or online verification.
-                  </p>
-                </div>
-
-                {/* Pillar 3.4 - Artifact Repository */}
-                <div style={{ marginBottom: 'var(--space-8)' }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 'var(--space-3)',
-                    marginBottom: 'var(--space-4)',
-                    paddingBottom: 'var(--space-4)',
-                    borderBottom: '2px solid var(--border-subtle)'
-                  }}>
-                    <div style={{
-                      width: '32px',
-                      height: '32px',
-                      borderRadius: 'var(--radius-md)',
-                      background: 'var(--accent-brand-subtle)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
-                    }}>
-                      <Database size={16} style={{ color: 'var(--accent-brand)' }} />
-                    </div>
-                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
-                      3.4 Artifact repository: cases, not random files
-                    </h3>
-                  </div>
-
-                  <p style={{ marginBottom: 'var(--space-4)' }}>
-                    Once you have detection and rich access events, you need somewhere to put them. An <strong>artifact repository</strong> is:
-                  </p>
-
-                  <div style={{
-                    background: 'var(--surface-subtle)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: 'var(--space-5)',
-                    marginBottom: 'var(--space-6)'
-                  }}>
-                    <ul style={{ margin: 0, paddingLeft: 'var(--space-5)', display: 'grid', gap: 'var(--space-2)' }}>
-                      <li>A structured library of artifacts: requests, responses, media, forensics, and receipts</li>
-                      <li>Grouped into cases or projects: incidents, audits, fraud investigations</li>
-                      <li>Enriched with metadata, fingerprints, and PEAC receipts</li>
-                    </ul>
-                  </div>
-
-                  <p>
-                    This lets banks, insurers, publishers, and regulators reconstruct what happened, show chain-of-custody evidence for disputes, and re-run analyses when policies change. Originary&rsquo;s goal: your live AI traffic and artifact repository are two views of the same records layer.
-                  </p>
-                </div>
-              </section>
-
-              {/* Section 4 */}
-              <section style={{ marginBottom: 'var(--space-16)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
-                  <span style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'var(--accent-brand)',
-                    color: 'var(--white)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    flexShrink: 0
-                  }}>4</span>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    margin: 0,
-                    color: 'var(--text-primary)'
-                  }}>
-                    How Originary + PEAC change agent and crawler identification in practice
-                  </h2>
-                </div>
-
-                <div style={{ display: 'grid', gap: 'var(--space-6)' }}>
-                  {[
-                    {
-                      num: '4.1',
-                      title: 'Publish policies that agents can actually read',
-                      content: (
-                        <>
-                          <p style={{ marginBottom: 'var(--space-4)' }}>
-                            Every PEAC-aware service exposes a discovery file at <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>/.well-known/peac.txt</code> that advertises protocol version, payment rails, receipt requirements, and verification endpoints.
-                          </p>
-                          <p style={{ margin: 0 }}>
-                            AIPREF policies describe how your content may be used. These are snapshotted into every receipt. <strong>AI agents can no longer pretend they did not know your terms.</strong>
-                          </p>
-                        </>
-                      )
-                    },
-                    {
-                      num: '4.2',
-                      title: 'Enforce and measure with HTTP 402 and receipts',
-                      content: (
-                        <>
-                          <p style={{ marginBottom: 'var(--space-4)' }}>
-                            When an AI agent hits a protected resource, it receives an <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline' }}>HTTP 402 Payment Required</Link> response. Once the agent pays or proves entitlement, the PEAC kernel issues a signed receipt binding: what was accessed, who accessed it, which policy applied, and payment details.
-                          </p>
-                          <p style={{ margin: 0 }}>
-                            agent and crawler identification becomes not just &ldquo;yes, that looked like a bot&rdquo; but <strong>&ldquo;yes, that bot paid, under these terms, here is the verified record.&rdquo;</strong>
-                          </p>
-                        </>
-                      )
-                    },
-                    {
-                      num: '4.3',
-                      title: 'Give good agents a way to prove they are good',
-                      content: (
-                        <>
-                          <p style={{ marginBottom: 'var(--space-4)' }}>
-                            Most serious AI agents want a clean way to respect content owners. Originary + PEAC give them that path: pre-fetch <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>peac.txt</code>, integrate 402 flows, attach receipts when passing data downstream.
-                          </p>
-                          <p style={{ margin: 0 }}>
-                            That is agent and crawler identification as <strong style={{ color: 'var(--accent-brand)' }}>positive infrastructure</strong> rather than only defensive heuristics.
-                          </p>
-                        </>
-                      )
-                    },
-                    {
-                      num: '4.4',
-                      title: 'Make bad or ambiguous agents stand out',
-                      content: (
-                        <p style={{ margin: 0 }}>
-                          Once good agents follow rules and produce receipts, what remains is easier to handle: crawlers ignoring <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: 'var(--radius-sm)', fontSize: 'var(--text-sm)' }}>peac.txt</code>, tools spoofing user-agents, traffic with no receipts. These become clear anomalies. <strong>You can throttle, block, or litigate based on evidence rather than suspicion.</strong>
-                        </p>
-                      )
-                    }
-                  ].map((item, i) => (
-                    <div key={i} style={{
-                      background: 'var(--surface-elevated)',
-                      border: '1px solid var(--border-default)',
-                      borderRadius: 'var(--radius-lg)',
-                      padding: 'var(--space-6)'
-                    }}>
-                      <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 'var(--space-3)',
-                        marginBottom: 'var(--space-4)'
-                      }}>
-                        <span style={{
-                          background: 'var(--accent-brand)',
-                          color: 'var(--white)',
-                          padding: 'var(--space-1) var(--space-3)',
-                          borderRadius: 'var(--radius-full)',
-                          fontSize: 'var(--text-xs)',
-                          fontWeight: 600
-                        }}>{item.num}</span>
-                        <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, margin: 0, color: 'var(--text-primary)' }}>
-                          {item.title}
-                        </h3>
-                      </div>
-                      <div style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                        {item.content}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* Section 5 */}
-              <section style={{ marginBottom: 'var(--space-12)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-4)', marginBottom: 'var(--space-6)' }}>
-                  <span style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'var(--accent-brand)',
-                    color: 'var(--white)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    flexShrink: 0
-                  }}>5</span>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    margin: 0,
-                    color: 'var(--text-primary)'
-                  }}>
-                    Where this is going next
-                  </h2>
-                </div>
-
-                <p style={{ marginBottom: 'var(--space-6)' }}>
-                  This post is the high-level overview. We will follow up with a focused series on metadata, access events, fingerprinting, and artifact repositories.
-                </p>
-
-                <div style={{
-                  background: 'var(--accent-brand-faint)',
-                  border: '1px solid var(--accent-brand-muted)',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: 'var(--space-6)'
-                }}>
-                  <h4 style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 'var(--space-4)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                    Explore the building blocks
-                  </h4>
-                  <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
-                    <Link href="/integrations/aipref/" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>
-                      <ArrowRight size={14} />
-                      <span>AIPREF - Machine-readable AI usage preferences</span>
-                    </Link>
-                    <Link href="/integrations/x402/" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>
-                      <ArrowRight size={14} />
-                      <span>x402 - HTTP 402 payment gating</span>
-                    </Link>
-                    <Link href="/receipts/" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--accent-brand)', textDecoration: 'none', fontWeight: 500 }}>
-                      <ArrowRight size={14} />
-                      <span>PEAC receipts - Verifiable access evidence</span>
-                    </Link>
-                  </div>
-                </div>
-              </section>
-
-              {/* Related Reading */}
-              <section style={{ paddingTop: 'var(--space-8)', borderTop: '2px solid var(--border-default)' }}>
-                <h3 style={{ fontSize: 'var(--text-lg)', fontWeight: 600, marginBottom: 'var(--space-4)', color: 'var(--text-primary)' }}>
-                  Related Reading
-                </h3>
-                <div style={{ display: 'grid', gap: 'var(--space-3)' }}>
-                  <Link href="/blog/aipref-by-ietf/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
-                    AIPREF: A Common Language for AI Usage Preferences
-                  </Link>
-                  <Link href="/blog/http-402-for-apis/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
-                    HTTP 402 for APIs: Making Payment-Required Responses Work
-                  </Link>
-                  <Link href="/blog/robots-txt-rfc-9309/" style={{ color: 'var(--accent-brand)', textDecoration: 'underline', fontWeight: 500 }}>
-                    robots.txt (RFC 9309): The Web&rsquo;s Crawl Access Control
-                  </Link>
-                </div>
-              </section>
-            </div>
+          <div style={pullQuote}>
+            &quot;You can&apos;t control, license, or monetize AI usage of your data if you
+            can&apos;t see which AI agents are actually accessing it.&quot;
           </div>
 
-          {/* CTA Section */}
-          <section style={{ background: 'var(--surface-subtle)', borderTop: '1px solid var(--border-default)', marginTop: 'var(--space-16)' }}>
-            <div className="container" style={{ maxWidth: '800px', margin: '0 auto', padding: 'var(--space-16) var(--space-6)' }}>
-              <div className="cta-card" style={{
-                borderRadius: 'var(--radius-xl)',
-                padding: 'var(--space-10)'
-              }}>
-                <h2 style={{ fontSize: 'var(--text-2xl)', fontWeight: 700, marginBottom: 'var(--space-4)' }}>
-                  Ready to turn AI traffic into verifiable evidence?
-                </h2>
-                <p style={{ fontSize: 'var(--text-lg)', marginBottom: 'var(--space-8)', color: 'var(--text-on-brand)', maxWidth: '500px', margin: '0 auto var(--space-8)' }}>
-                  Learn how Originary and PEAC Protocol give you visibility, policy enforcement, and cryptographic receipts for every AI interaction.
-                </p>
-                <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-                  <Link
-                    href="/developers"
-                    className="btn btn-lg"
-                    style={{ background: 'var(--surface-elevated)', color: 'var(--accent-brand)', border: 'none' }}
-                  >
-                    <span>View Documentation</span>
-                    <ArrowRight size={18} />
-                  </Link>
-                  <Link
-                    href="/company/contact"
-                    className="btn btn-lg btn-ghost"
-                    style={{ color: 'var(--white)', border: '1px solid var(--border-on-brand)' }}
-                  >
-                    <span>Talk to Us</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </section>
-        </article>
-      </main>
-      <Footer />
-    </div>
-  );
+          <p>
+            Agent and crawler identification is the missing visibility layer between your content
+            and the growing universe of AI crawlers, copilots, and headless agents.
+          </p>
+
+          <h2>2. Why &quot;detection-only&quot; is not enough</h2>
+          <p>
+            There is real value in content-level detection and model fingerprinting. But they
+            have hard limits:
+          </p>
+          <ul>
+            <li>
+              <strong>It is an arms race.</strong> As models improve, naive classifiers become
+              less reliable. A detector that feels strong this quarter may be unreliable next
+              quarter. (We have seen 20%+ false positive drops in under 6 months.)
+            </li>
+            <li>
+              <strong>Scores are not proof.</strong> A &quot;0.84 likelihood of AI&quot; score is
+              a hint. It is not a signed record that will stand up in an audit, complaint, or
+              partner review.
+            </li>
+            <li>
+              <strong>No policy, no economics.</strong> Even if you know something is
+              AI-generated, that does not tell you whether the agent respected your usage policy,
+              paid you for access, or is allowed to keep the data.
+            </li>
+            <li>
+              <strong>Detection lag.</strong> By the time you detect unauthorized AI training on
+              your content, the model is already deployed. You cannot un-train it.
+            </li>
+          </ul>
+          <p>Enterprises, regulators, and serious publishers need more than yes/no classification:</p>
+          <ul>
+            <li>Machine-readable policies agents can parse</li>
+            <li>Cryptographic proof access followed those terms</li>
+            <li>Chain linking suspicious outputs back to access events</li>
+            <li>Audit trail that survives review (not server logs you control)</li>
+          </ul>
+          <p>
+            That is where Originary and PEAC push beyond detection-only to{' '}
+            <strong>detection + policy + signed records</strong>.
+          </p>
+
+          <h2>3. The four pillars of useful agent and crawler identification</h2>
+          <p>
+            In practice, agent and crawler identification becomes powerful when you combine four
+            signal types:
+          </p>
+          <ul>
+            <li><strong>Pillar 1: metadata</strong></li>
+            <li><strong>Pillar 2: model fingerprints</strong></li>
+            <li><strong>Pillar 3: access events</strong></li>
+            <li><strong>Pillar 4: artifact repository</strong></li>
+          </ul>
+
+          <h3>3.1 Metadata: the quiet truth-teller</h3>
+          <p>
+            Metadata is &quot;data about the data.&quot; For agent and crawler identification,
+            you care about at least three layers:
+          </p>
+
+          <h4>File / media layer</h4>
+          <ul>
+            <li>EXIF data, container metadata (images/audio/video)</li>
+            <li>C2PA provenance, content credentials</li>
+            <li>Timestamps, edit history, device hints</li>
+            <li><em>Gotcha:</em> easily stripped unless embedded + signed</li>
+          </ul>
+
+          <h4>Transport layer</h4>
+          <ul>
+            <li>HTTP headers, TLS fingerprints, ASN ranges</li>
+            <li>User-Agent, model hints, API keys</li>
+            <li>Rate patterns, timing, geo</li>
+          </ul>
+
+          <p>
+            On its own, metadata can be spoofed. Combined with signed records, it becomes a
+            strong integrity check. In PEAC, metadata is not an afterthought - effective AI
+            preference policies (
+            <Link href="/blog/aipref-by-ietf" style={linkStyle}>
+              AIPREF
+            </Link>
+            ) are discovered and snapshotted into every record, so audits are self-contained.
+          </p>
+
+          <h3>3.2 Model fingerprints: which model touched this</h3>
+          <p>
+            Model fingerprinting tries to answer:{' '}
+            <em>which model family or vendor produced this artifact?</em>
+          </p>
+          <ul>
+            <li>
+              <strong>Risk and compliance.</strong> Some models may be disallowed for regulated
+              data.
+            </li>
+            <li>
+              <strong>Attribution and economics.</strong> Different pricing for different model
+              types.
+            </li>
+            <li>
+              <strong>Cross-checking claims.</strong> Detect mismatches between claims and
+              reality.
+            </li>
+          </ul>
+          <p>
+            In Originary&apos;s world, model fingerprints feed into policy and records: policies
+            can say &quot;allow research use from approved models, block others.&quot; Records
+            include which model was declared at access time.
+          </p>
+
+          <h3>3.3 Access: every AI call as a verifiable event</h3>
+          <p>
+            This is the most undervalued pillar. Traditional logs tell you IP, path, timestamp.{' '}
+            <strong>That is not enough for AI agents and 402-style paid access.</strong>
+          </p>
+          <p>In a PEAC-aware environment, each AI call becomes a structured, signed event:</p>
+          <pre style={codeBlock}>
+{`agent_id         -> which agent or client called you
+agent_type       -> crawler, copilot, aggregator, training pipeline
+model_id         -> declared model family in use
+policy_version   -> which policy applied
+enforcement      -> e.g. http-402 for payment-gated access
+payment          -> rail, amount, currency, provider evidence
+aipref           -> snapshot of AI usage preferences in effect
+issued_at        -> when the record was generated`}
+          </pre>
+          <div style={pullQuote}>
+            Instead of &quot;we think an AI scraped our site,&quot; you can say:{' '}
+            <strong>
+              &quot;Agent X, using model Y, accessed resources A, B, C on these dates, under
+              policy Z, via HTTP 402, and paid this amount. Here is the signed record.&quot;
+            </strong>
+          </div>
+          <p>
+            The PEAC kernel signs records using Ed25519 and ships them in a{' '}
+            <code>PEAC-Receipt</code> header, ready for offline or online verification.
+          </p>
+
+          <h3>3.4 Artifact repository: cases, not random files</h3>
+          <p>
+            Once you have detection and rich access events, you need somewhere to put them. An{' '}
+            <strong>artifact repository</strong> is:
+          </p>
+          <ul>
+            <li>
+              A structured library of artifacts: requests, responses, media, forensics, and
+              records.
+            </li>
+            <li>Grouped into cases or projects: incidents, audits, fraud investigations.</li>
+            <li>Enriched with metadata, fingerprints, and PEAC records.</li>
+          </ul>
+          <p>
+            This lets banks, insurers, publishers, and regulators reconstruct what happened, show
+            chain-of-custody evidence for review, and re-run analyses when policies change.
+            Originary&apos;s goal: your live AI traffic and artifact repository are two views of
+            the same records layer.
+          </p>
+
+          <h2>4. How Originary + PEAC change agent and crawler identification in practice</h2>
+
+          <h3>4.1 Publish policies that agents can actually read</h3>
+          <p>
+            Every PEAC-aware service exposes a discovery file at{' '}
+            <code>/.well-known/peac.txt</code> that advertises protocol version, payment rails,
+            record requirements, and verification endpoints.
+          </p>
+          <p>
+            AIPREF policies describe how your content may be used. These are snapshotted into
+            every record.{' '}
+            <strong>AI agents can no longer pretend they did not know your terms.</strong>
+          </p>
+
+          <h3>4.2 Enforce and measure with HTTP 402 and records</h3>
+          <p>
+            When an AI agent hits a protected resource, it receives an{' '}
+            <Link href="/blog/http-402-for-apis" style={linkStyle}>
+              HTTP 402 Payment Required
+            </Link>{' '}
+            response. Once the agent pays or proves entitlement, the PEAC kernel issues a signed
+            record binding: what was accessed, who accessed it, which policy applied, and payment
+            details.
+          </p>
+          <p>
+            Agent and crawler identification becomes not just &quot;yes, that looked like a
+            bot&quot; but{' '}
+            <strong>
+              &quot;yes, that bot paid, under these terms, here is the verified record.&quot;
+            </strong>
+          </p>
+
+          <h3>4.3 Give good agents a way to prove they are good</h3>
+          <p>
+            Most serious AI agents want a clean way to respect content owners. Originary + PEAC
+            give them that path: pre-fetch <code>peac.txt</code>, integrate 402 flows, attach
+            records when passing data downstream.
+          </p>
+          <p>
+            That is agent and crawler identification as{' '}
+            <strong>positive infrastructure</strong> rather than only defensive heuristics.
+          </p>
+
+          <h3>4.4 Make bad or ambiguous agents stand out</h3>
+          <p>
+            Once good agents follow rules and produce records, what remains is easier to handle:
+            crawlers ignoring <code>peac.txt</code>, tools spoofing user-agents, traffic with no
+            records. These become clear anomalies.{' '}
+            <strong>
+              You can throttle, block, or address based on evidence rather than suspicion.
+            </strong>
+          </p>
+
+          <h2>5. What PEAC does not do</h2>
+          <ul>
+            <li>PEAC does not run a model registry, score agents, or rank crawlers.</li>
+            <li>PEAC does not classify traffic; classifiers and fingerprints stay where they are.</li>
+            <li>PEAC does not block, throttle, or enforce; those decisions stay with the operator.</li>
+            <li>PEAC does not assert an agent identity is &quot;real&quot;; it carries a signed record of what each agent attested at the boundary.</li>
+            <li>PEAC does not replace your WAF, edge rules, or fraud platform; it produces a portable signed record alongside them.</li>
+          </ul>
+
+          <h2>6. Where this is going next</h2>
+          <p>
+            This post is the high-level overview. We will follow up with a focused series on
+            metadata, access events, fingerprinting, and artifact repositories.
+          </p>
+          <p><strong>Explore the building blocks:</strong></p>
+          <ul>
+            <li>
+              <Link href="/blog/aipref-by-ietf" style={linkStyle}>
+                AIPREF
+              </Link>{' '}
+              - machine-readable AI usage preferences.
+            </li>
+            <li>
+              <Link href="/blog/what-is-http-402" style={linkStyle}>
+                x402 / HTTP 402
+              </Link>{' '}
+              - payment gating for machine actions.
+            </li>
+            <li>
+              <Link href="/peac" style={linkStyle}>
+                PEAC records
+              </Link>{' '}
+              - verifiable access records.
+            </li>
+          </ul>
+        </ArticleDoc>
+
+        <ArticleRelated
+          links={[
+            { label: 'From detection to settlement', href: '/blog/from-detection-to-settlement-ai-paywall-peac-http-402' },
+            { label: 'AIPREF: AI Usage Preferences', href: '/blog/aipref-by-ietf' },
+            { label: 'HTTP 402 for APIs', href: '/blog/http-402-for-apis' },
+            { label: 'robots.txt (RFC 9309) deep dive', href: '/blog/robots-txt-rfc-9309' },
+          ]}
+        />
+      </PageShell>
+    </>
+  )
 }

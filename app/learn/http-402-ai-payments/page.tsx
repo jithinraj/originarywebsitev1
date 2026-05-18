@@ -1,511 +1,185 @@
-import { Metadata } from 'next'
-import NavigationHeader from '@/components/NavigationHeader'
-import Footer from '@/components/Footer'
+import type { Metadata } from 'next'
 import Link from 'next/link'
-import { CreditCard, ArrowLeft, CheckCircle, ArrowRight, ExternalLink, BookOpen } from 'lucide-react'
+import Script from 'next/script'
+import { PageShell, ArticleDoc, ArticleRelated, PALETTE } from '@/components/home'
 
 export const metadata: Metadata = {
-  title: 'HTTP 402: The Web Standard for Machine-Payable APIs',
-  description: 'HTTP 402 Payment Required enables pay-per-request APIs for AI agents. Learn about x402 headers, instant payments, and PEAC receipts.',
-  keywords: 'HTTP 402 Payment Required, x402 protocol, machine-payable APIs, AI agent payments, pay-per-request API, programmatic payments, agent commerce, micropayments API, instant API payments, machine-to-machine payments, HTTP status code 402, web monetization',
+  title: { absolute: 'HTTP 402 and Payment Records | Originary' },
+  description:
+    'How HTTP 402 Payment Required works for machine-to-machine interactions. The request, challenge, payment, and record cycle, x402, and where payment records fit.',
   authors: [{ name: 'Originary' }],
+  alternates: { canonical: '/learn/http-402-ai-payments' },
   openGraph: {
     type: 'article',
-    title: 'HTTP 402 Payment Required: Machine-Payable APIs',
-    description: 'The dormant HTTP status code is finally coming to life. Learn how 402 enables real-time, programmatic payments between AI agents.',
+    title: 'HTTP 402 and Payment Records',
+    description:
+      'Payment challenges and signed settlement records for machine-to-machine interactions.',
     url: '/learn/http-402-ai-payments',
     images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HTTP 402: Machine-Payable APIs',
-    description: 'The dormant HTTP status code enabling real-time AI agent payments - no subscriptions or API keys required.',
+    title: 'HTTP 402 and Payment Records',
+    description: 'Payment challenges and signed settlement records.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
   robots: 'index,follow',
-  alternates: {
-    canonical: '/learn/http-402-ai-payments',
-  },
 }
 
-export default function HTTP402Page() {
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.originary.xyz" },
-      { "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://www.originary.xyz/learn" },
-      { "@type": "ListItem", "position": 3, "name": "HTTP 402 & AI Payments", "item": "https://www.originary.xyz/learn/http-402-ai-payments" }
-    ]
-  }
+const linkStyle = {
+  color: PALETTE.ink,
+  textDecoration: 'underline',
+  textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+  textUnderlineOffset: 3,
+}
 
-  const articleJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "HTTP 402 & AI Payments",
-    "description": "How HTTP 402 enables real-time, programmatic payments between AI agents",
-    "author": { "@type": "Organization", "name": "Originary" },
-    "publisher": { "@type": "Organization", "name": "Originary", "url": "https://www.originary.xyz" },
-    "mainEntityOfPage": "https://www.originary.xyz/learn/http-402-ai-payments"
-  }
-
+export default function Page() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <NavigationHeader />
-      <main style={{ paddingTop: '80px' }}>
-        {/* Breadcrumb */}
-        <div className="container" style={{ paddingTop: 'var(--space-6)' }}>
-          <Link href="/learn" style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 'var(--space-2)',
-            color: 'var(--text-tertiary)',
-            fontSize: 'var(--text-sm)',
-            textDecoration: 'none'
-          }}>
-            <ArrowLeft size={14} />
-            Back to Learn
-          </Link>
-        </div>
+      <Script id="article-json-ld" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'TechArticle',
+          headline: 'HTTP 402 and Payment Records',
+          description:
+            'How HTTP 402 Payment Required works for machine-to-machine interactions.',
+          author: { '@type': 'Organization', name: 'Originary' },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Originary',
+            logo: { '@type': 'ImageObject', url: 'https://www.originary.xyz/logo/originary-wordmark.svg' },
+          },
+          mainEntityOfPage: 'https://www.originary.xyz/learn/http-402-ai-payments',
+        })}
+      </Script>
+      <PageShell>
+        <ArticleDoc
+          category="learn"
+          title="HTTP 402 and payment records"
+          sub="How HTTP 402 Payment Required works for machine-to-machine interactions. The request, challenge, payment, and record cycle, x402 protocol headers, and how payment records fit into the verification stack."
+          readTime="2 min read"
+          parent={{ label: 'Learn', href: '/learn' }}
+        >
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>HTTP 402 is a standard status code for &quot;Payment Required&quot; reserved since 1999.</li>
+            <li>Enables pay-per-request APIs without subscriptions or pre-purchased credits.</li>
+            <li>x402 is the modern implementation with pricing headers and payment proofs.</li>
+            <li>Combined with PEAC signed records, creates a complete payment + audit trail.</li>
+          </ul>
 
-        {/* Hero */}
-        <section className="section" style={{
-          paddingTop: 'var(--space-10)',
-          paddingBottom: 'var(--space-12)',
-          borderBottom: '1px solid var(--border-subtle)'
-        }}>
-          <div className="container">
-            <div style={{ maxWidth: '720px' }}>
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 'var(--space-2)',
-                background: 'var(--accent-tertiary-subtle)',
-                border: '1px solid var(--accent-tertiary-muted)',
-                borderRadius: 'var(--radius-full)',
-                padding: 'var(--space-2) var(--space-4)',
-                marginBottom: 'var(--space-6)',
-                fontSize: 'var(--text-xs)',
-                fontWeight: 600,
-                color: 'var(--brand-accent)'
-              }}>
-                <CreditCard size={14} />
-                <span>LEARN</span>
-              </div>
+          <h2>What is HTTP 402?</h2>
+          <p>
+            <strong>HTTP 402 Payment Required</strong> is a status code defined in HTTP/1.1
+            (1999) and is currently documented by MDN as <strong>nonstandard</strong>: reserved
+            for future use, with no agreed convention for how clients and servers exchange
+            payment data. The original web had no programmatic payment infrastructure to back it.
+            Recent specifications layered on top of 402 (such as x402) define their own headers
+            and bodies above the bare status code.
+          </p>
+          <p>
+            A 402 response means: this resource exists and is available, but payment is required
+            before access. The response body includes pricing, accepted payment methods, and
+            instructions. The requesting agent pays, retries with proof, and gets the resource
+            plus a signed record.
+          </p>
 
-              <h1 style={{
-                fontSize: 'var(--text-4xl)',
-                fontWeight: 700,
-                lineHeight: 1.2,
-                letterSpacing: '-0.03em',
-                marginBottom: 'var(--space-4)',
-                color: 'var(--text-primary)'
-              }}>
-                HTTP 402 & AI Payments
-              </h1>
+          <h2>Why it matters for AI</h2>
+          <p>
+            Most API monetization requires a human to sign up, enter a credit card, buy credits,
+            and manage API keys. An autonomous agent cannot do those things. It needs a payment
+            protocol that works in a single HTTP round-trip.
+          </p>
+          <p>
+            HTTP 402 provides exactly that: the server describes what payment it needs, the agent
+            pays, and the server returns the resource. One request cycle. No accounts, no
+            subscriptions, no human approval per call.
+          </p>
 
-              <p style={{
-                fontSize: 'var(--text-xl)',
-                lineHeight: 1.6,
-                color: 'var(--text-secondary)',
-                marginBottom: 'var(--space-6)'
-              }}>
-                The web standard for machine-payable APIs - enabling real-time, programmatic payments between AI agents.
-              </p>
+          <h2>How it works</h2>
+          <ol>
+            <li>
+              <strong>Agent makes request.</strong> Agent sends HTTP request to API endpoint
+              without payment.
+            </li>
+            <li>
+              <strong>Server returns 402.</strong> Server responds with pricing info (amount,
+              currency, payment methods).
+            </li>
+            <li>
+              <strong>Agent makes payment.</strong> Agent processes payment via supported method
+              (crypto, Stripe, etc.).
+            </li>
+            <li>
+              <strong>Agent retries with proof.</strong> Agent retries request with payment proof
+              in header.
+            </li>
+            <li>
+              <strong>Server fulfills + record.</strong> Server validates payment, fulfills
+              request, returns signed interaction record.
+            </li>
+          </ol>
 
-              <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
-                10 min read
-              </div>
-            </div>
-          </div>
-        </section>
+          <h2>x402 protocol</h2>
+          <p>
+            <strong>x402</strong> is the practical implementation of HTTP 402 for machine
+            payments. It defines:
+          </p>
+          <ul>
+            <li>
+              <strong>402 response body.</strong> Machine-readable pricing info (amount,
+              currency, accepted methods).
+            </li>
+            <li>
+              <strong>Payment proof.</strong> Cryptographic proof submitted with the retry
+              request.
+            </li>
+            <li>
+              <strong>Payment methods.</strong> Standard identifiers for crypto, Stripe, and
+              other rails.
+            </li>
+            <li>
+              <strong>Error codes.</strong> Specific failure modes (insufficient funds, expired
+              proof, etc.).
+            </li>
+          </ul>
 
-        {/* Content */}
-        <section className="section" style={{ paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)' }}>
-          <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: 'var(--space-16)' }} className="article-layout">
-              {/* Sidebar TOC */}
-              <aside style={{ position: 'sticky', top: '100px', alignSelf: 'start' }} className="article-sidebar">
-                <div style={{
-                  padding: 'var(--space-6)',
-                  background: 'var(--surface-subtle)',
-                  borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--border-subtle)'
-                }}>
-                  <h4 style={{
-                    fontSize: 'var(--text-xs)',
-                    fontWeight: 600,
-                    color: 'var(--text-muted)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
-                    marginBottom: 'var(--space-4)'
-                  }}>
-                    On this page
-                  </h4>
-                  <nav style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-                    {['Key Takeaways', 'What is HTTP 402?', 'Why It Matters for AI', 'How It Works', 'x402 Protocol', 'Further Reading'].map((item) => (
-                      <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} style={{
-                        fontSize: 'var(--text-sm)',
-                        color: 'var(--text-secondary)',
-                        textDecoration: 'none'
-                      }}>
-                        {item}
-                      </a>
-                    ))}
-                  </nav>
-                </div>
-              </aside>
+          <h2>Further reading</h2>
+          <ul>
+            <li>
+              <Link href="/blog/what-is-http-402" style={linkStyle}>
+                What is HTTP 402?
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog/http-402-for-apis" style={linkStyle}>
+                HTTP 402 for APIs: Technical Deep Dive
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog/from-detection-to-settlement-ai-paywall-peac-http-402" style={linkStyle}>
+                From detection to settlement
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog/adding-402-in-15-minutes" style={linkStyle}>
+                Add HTTP 402 to your API in 15 minutes
+              </Link>
+            </li>
+          </ul>
+        </ArticleDoc>
 
-              {/* Main Content */}
-              <article style={{ maxWidth: '680px' }}>
-                {/* Key Takeaways Box */}
-                <div id="key-takeaways" style={{
-                  background: 'var(--accent-tertiary-faint)',
-                  border: '1px solid var(--accent-tertiary-subtle)',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: 'var(--space-8)',
-                  marginBottom: 'var(--space-12)'
-                }}>
-                  <h2 style={{
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-4)',
-                    color: 'var(--text-primary)'
-                  }}>
-                    Key Takeaways
-                  </h2>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                    {[
-                      'HTTP 402 is a standard status code for "Payment Required" - reserved since 1999',
-                      'Enables pay-per-request APIs without subscriptions or pre-purchased credits',
-                      'x402 is the modern implementation with pricing headers and payment proofs',
-                      'Combined with PEAC receipts, creates a complete payment + audit trail'
-                    ].map((takeaway, i) => (
-                      <li key={i} style={{
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: 'var(--space-3)',
-                        marginBottom: 'var(--space-3)',
-                        fontSize: 'var(--text-base)',
-                        color: 'var(--text-secondary)',
-                        lineHeight: 1.6
-                      }}>
-                        <CheckCircle size={18} style={{ color: 'var(--brand-accent)', flexShrink: 0, marginTop: '3px' }} />
-                        {takeaway}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* What is HTTP 402? */}
-                <section id="what-is-http-402?" style={{ marginBottom: 'var(--space-12)' }}>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-4)',
-                    color: 'var(--text-primary)'
-                  }}>
-                    What is HTTP 402?
-                  </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
-                    <strong>HTTP 402 Payment Required</strong> is a status code defined in HTTP/1.1 (1999), reserved but unused until recently. The original web had no programmatic payment infrastructure to back it.
-                  </p>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                    A 402 response means: this resource exists and is available, but payment is required before access. The response body includes pricing, accepted payment methods, and instructions. The requesting agent pays, retries with proof, and gets the resource plus a signed receipt.
-                  </p>
-                </section>
-
-                {/* Why It Matters for AI */}
-                <section id="why-it-matters-for-ai" style={{ marginBottom: 'var(--space-12)' }}>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-4)',
-                    color: 'var(--text-primary)'
-                  }}>
-                    Why It Matters for AI
-                  </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                    Most API monetization requires a human to sign up, enter a credit card, buy credits, and manage API keys. An autonomous agent cannot do those things. It needs a payment protocol that works in a single HTTP round-trip.
-                  </p>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                    HTTP 402 provides exactly that: the server describes what payment it needs, the agent pays, and the server returns the resource. One request cycle. No accounts, no subscriptions, no human approval per call.
-                  </p>
-                </section>
-
-                {/* How It Works */}
-                <section id="how-it-works" style={{ marginBottom: 'var(--space-12)' }}>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-4)',
-                    color: 'var(--text-primary)'
-                  }}>
-                    How It Works
-                  </h2>
-
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-                    {[
-                      { step: '1', title: 'Agent makes request', desc: 'Agent sends HTTP request to API endpoint without payment' },
-                      { step: '2', title: 'Server returns 402', desc: 'Server responds with pricing info in headers (amount, currency, payment methods)' },
-                      { step: '3', title: 'Agent makes payment', desc: 'Agent processes payment via supported method (crypto, Stripe, etc.)' },
-                      { step: '4', title: 'Agent retries with proof', desc: 'Agent retries request with payment proof in header' },
-                      { step: '5', title: 'Server fulfills + receipt', desc: 'Server validates payment, fulfills request, returns PEAC-Receipt' }
-                    ].map((item) => (
-                      <div key={item.step} style={{
-                        display: 'flex',
-                        gap: 'var(--space-4)',
-                        padding: 'var(--space-4)',
-                        background: 'var(--surface-subtle)',
-                        borderRadius: 'var(--radius-md)'
-                      }}>
-                        <div style={{
-                          width: '32px',
-                          height: '32px',
-                          borderRadius: '50%',
-                          background: 'var(--brand-accent)',
-                          color: 'white',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          fontWeight: 700,
-                          fontSize: 'var(--text-sm)',
-                          flexShrink: 0
-                        }}>
-                          {item.step}
-                        </div>
-                        <div>
-                          <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>{item.title}</h4>
-                          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{item.desc}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-
-                {/* x402 Protocol */}
-                <section id="x402-protocol" style={{ marginBottom: 'var(--space-12)' }}>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-4)',
-                    color: 'var(--text-primary)'
-                  }}>
-                    x402 Protocol
-                  </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                    <strong>x402</strong> is the practical implementation of HTTP 402 for machine payments. Originary provides integration tooling for x402, which defines:
-                  </p>
-
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, marginBottom: 'var(--space-6)' }}>
-                    {[
-                      { term: '402 response body', def: 'Machine-readable pricing info (amount, currency, accepted methods)' },
-                      { term: 'Payment proof', def: 'Cryptographic proof submitted with the retry request' },
-                      { term: 'Payment methods', def: 'Standard identifiers for crypto, Stripe, and other rails' },
-                      { term: 'Error codes', def: 'Specific failure modes (insufficient funds, expired proof, etc.)' }
-                    ].map((item, i) => (
-                      <li key={i} style={{
-                        padding: 'var(--space-4) 0',
-                        borderBottom: i < 3 ? '1px solid var(--border-subtle)' : 'none'
-                      }}>
-                        <strong style={{ color: 'var(--text-primary)' }}>{item.term}</strong>
-                        <span style={{ color: 'var(--text-secondary)' }}> - {item.def}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Link href="/integrations/x402" className="card" style={{
-                    textDecoration: 'none',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: 'var(--space-5)'
-                  }}>
-                    <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>x402 Integration Guide</h4>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Implement x402 in your API or agent</p>
-                    </div>
-                    <ArrowRight size={18} style={{ color: 'var(--accent-brand)' }} />
-                  </Link>
-                </section>
-
-                {/* Further Reading - Hub Section */}
-                <section id="further-reading" style={{ marginBottom: 'var(--space-12)' }}>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-4)',
-                    color: 'var(--text-primary)'
-                  }}>
-                    Further Reading
-                  </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                    Deep dives into HTTP 402 and machine payments from our blog:
-                  </p>
-
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-                    <Link
-                      href="/blog/what-is-http-402"
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 'var(--space-4)',
-                        padding: 'var(--space-5)',
-                        background: 'var(--surface-elevated)',
-                        border: '1px solid var(--border-default)',
-                        borderRadius: 'var(--radius-lg)',
-                        textDecoration: 'none'
-                      }}
-                    >
-                      <div style={{
-                        width: '40px',
-                        height: '40px',
-                        borderRadius: 'var(--radius-md)',
-                        background: 'var(--accent-brand-subtle)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
-                      }}>
-                        <BookOpen size={20} style={{ color: 'var(--accent-brand)' }} />
-                      </div>
-                      <div style={{ flex: 1 }}>
-                        <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
-                          What is HTTP 402?
-                        </h4>
-                        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
-                          How PEAC uses 402 for agent payments
-                        </p>
-                      </div>
-                      <ArrowRight size={16} style={{ color: 'var(--text-muted)' }} />
-                    </Link>
-
-                    <Link
-                      href="/blog/from-detection-to-settlement-ai-paywall-peac-http-402"
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 'var(--space-4)',
-                        padding: 'var(--space-5)',
-                        background: 'var(--surface-elevated)',
-                        border: '1px solid var(--border-default)',
-                        borderRadius: 'var(--radius-lg)',
-                        textDecoration: 'none'
-                      }}
-                    >
-                      <div style={{
-                        width: '40px',
-                        height: '40px',
-                        borderRadius: 'var(--radius-md)',
-                        background: 'var(--accent-tertiary-subtle)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
-                      }}>
-                        <BookOpen size={20} style={{ color: 'var(--brand-accent)' }} />
-                      </div>
-                      <div style={{ flex: 1 }}>
-                        <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
-                          From Detection to Settlement
-                        </h4>
-                        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
-                          Using PEAC to turn AI traffic into revenue
-                        </p>
-                      </div>
-                      <ArrowRight size={16} style={{ color: 'var(--text-muted)' }} />
-                    </Link>
-
-                    <a
-                      href="https://www.x402.org"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 'var(--space-4)',
-                        padding: 'var(--space-5)',
-                        background: 'var(--surface-elevated)',
-                        border: '1px solid var(--border-default)',
-                        borderRadius: 'var(--radius-lg)',
-                        textDecoration: 'none'
-                      }}
-                    >
-                      <div style={{
-                        width: '40px',
-                        height: '40px',
-                        borderRadius: 'var(--radius-md)',
-                        background: 'var(--accent-secondary-subtle)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
-                      }}>
-                        <ExternalLink size={20} style={{ color: 'var(--accent-secondary)' }} />
-                      </div>
-                      <div style={{ flex: 1 }}>
-                        <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-1)', color: 'var(--text-primary)' }}>
-                          x402.org - Official Specification
-                        </h4>
-                        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)' }}>
-                          Full protocol documentation
-                        </p>
-                      </div>
-                      <ArrowRight size={16} style={{ color: 'var(--text-muted)' }} />
-                    </a>
-                  </div>
-                </section>
-
-                {/* Related */}
-                <section style={{
-                  padding: 'var(--space-8)',
-                  background: 'var(--surface-subtle)',
-                  borderRadius: 'var(--radius-lg)',
-                  marginTop: 'var(--space-16)'
-                }}>
-                  <h3 style={{
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-6)',
-                    color: 'var(--text-primary)'
-                  }}>
-                    Related Articles
-                  </h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-                    <Link href="/learn/what-is-agentic-commerce" style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      color: 'var(--text-secondary)',
-                      textDecoration: 'none'
-                    }}>
-                      <span>What is Agentic Commerce?</span>
-                      <ArrowRight size={16} style={{ color: 'var(--accent-brand)' }} />
-                    </Link>
-                    <Link href="/learn/ai-receipts" style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      color: 'var(--text-secondary)',
-                      textDecoration: 'none'
-                    }}>
-                      <span>AI Receipts</span>
-                      <ArrowRight size={16} style={{ color: 'var(--accent-brand)' }} />
-                    </Link>
-                  </div>
-                </section>
-              </article>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-
+        <ArticleRelated
+          links={[
+            { label: 'Verifiable interaction records', href: '/learn/ai-receipts' },
+            { label: 'Agentic commerce', href: '/learn/what-is-agentic-commerce' },
+            { label: 'PEAC Protocol overview', href: '/peac' },
+          ]}
+        />
+      </PageShell>
     </>
   )
 }

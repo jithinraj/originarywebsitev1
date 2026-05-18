@@ -1,409 +1,179 @@
-import { Metadata } from 'next'
-import NavigationHeader from '@/components/NavigationHeader'
-import Footer from '@/components/Footer'
+import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Receipt, ArrowLeft, CheckCircle, ArrowRight } from 'lucide-react'
+import Script from 'next/script'
+import { PageShell, ArticleDoc, ArticleRelated, PALETTE } from '@/components/home'
 
 export const metadata: Metadata = {
-  title: 'AI Receipts Explained | Cryptographic Proof for Agents',
-  description: 'PEAC-Receipt is the JWS-signed standard for proving AI agent interactions. Cryptographic receipts for billing, compliance, and dispute resolution.',
-  keywords: 'AI receipts explained, PEAC-Receipt format, verifiable receipts AI, cryptographic proof agents, JWS signed receipts, agent audit trail, AI compliance receipts, digital receipt standard, agent billing proof',
+  title: { absolute: 'Verifiable Interaction Records | Originary' },
+  description:
+    'What a signed interaction record contains, how offline verification works, and why server logs are not portable signed records.',
+  keywords:
+    'PEAC receipts, interaction records, JWS, Ed25519, offline verification, signed records, AI billing',
   authors: [{ name: 'Originary' }],
+  alternates: { canonical: '/learn/ai-receipts' },
   openGraph: {
     type: 'article',
-    title: 'AI Receipts Explained | Cryptographic Proof for Agents',
-    description: 'PEAC-Receipt is the JWS-signed standard for proving AI agent interactions. The complete guide to cryptographic receipts.',
+    title: 'Verifiable Interaction Records',
+    description:
+      'What a signed interaction record contains and how offline verification works.',
     url: '/learn/ai-receipts',
-    images: ['https://www.originary.xyz/og.jpg'],
+    images: ['/og'],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Receipts Explained | PEAC-Receipt Guide',
-    description: 'The JWS-signed standard for proving AI agent interactions. Essential for billing, compliance, and disputes.',
-    images: ['https://www.originary.xyz/og.jpg'],
+    title: 'Verifiable Interaction Records',
+    description: 'JWS-signed records that another party can verify offline.',
+    images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
   },
   robots: 'index,follow',
-  alternates: {
-    canonical: '/learn/ai-receipts',
-  },
 }
 
-export default function AIReceiptsPage() {
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.originary.xyz" },
-      { "@type": "ListItem", "position": 2, "name": "Learn", "item": "https://www.originary.xyz/learn" },
-      { "@type": "ListItem", "position": 3, "name": "AI Receipts", "item": "https://www.originary.xyz/learn/ai-receipts" }
-    ]
-  }
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: 'Verifiable Interaction Records',
+  description:
+    'What a signed interaction record contains, how offline verification works, and why server logs are not portable signed records.',
+  author: { '@type': 'Organization', name: 'Originary' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Originary',
+    logo: { '@type': 'ImageObject', url: 'https://www.originary.xyz/logo/originary-wordmark.svg' },
+  },
+  mainEntityOfPage: 'https://www.originary.xyz/learn/ai-receipts',
+}
 
-  const articleJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "AI Receipts",
-    "description": "Cryptographic proof of agent interactions - for compliance, billing, and dispute resolution",
-    "author": { "@type": "Organization", "name": "Originary" },
-    "publisher": { "@type": "Organization", "name": "Originary", "url": "https://www.originary.xyz" },
-    "mainEntityOfPage": "https://www.originary.xyz/learn/ai-receipts"
-  }
+const codeBlock = {
+  background: 'rgba(20, 17, 10, 0.04)',
+  border: `1px solid ${PALETTE.hairline}`,
+  padding: '14px 16px',
+  fontSize: 13,
+  lineHeight: 1.6,
+  overflowX: 'auto' as const,
+  color: PALETTE.ink,
+  fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", monospace',
+}
 
+export default function Page() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
-      <NavigationHeader />
-      <main style={{ paddingTop: '80px' }}>
-        {/* Breadcrumb */}
-        <div className="container" style={{ paddingTop: 'var(--space-6)' }}>
-          <Link href="/learn" style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 'var(--space-2)',
-            color: 'var(--text-tertiary)',
-            fontSize: 'var(--text-sm)',
-            textDecoration: 'none'
-          }}>
-            <ArrowLeft size={14} />
-            Back to Learn
-          </Link>
-        </div>
+      <Script id="article-json-ld" type="application/ld+json" strategy="beforeInteractive">
+        {JSON.stringify(articleJsonLd)}
+      </Script>
+      <PageShell>
+        <ArticleDoc
+          category="learn"
+          title="Verifiable interaction records"
+          sub="What a signed interaction record contains, how offline verification works, and why server logs are not portable signed records."
+          readTime="2 min read"
+          parent={{ label: 'Learn', href: '/learn' }}
+        >
+          <h2>Key takeaways</h2>
+          <ul>
+            <li>Records are JWS-signed JSON proving what happened in an interaction.</li>
+            <li>Verifiable offline using public keys. No API callback.</li>
+            <li>Carried in the <code>PEAC-Receipt</code> HTTP header.</li>
+          </ul>
 
-        {/* Hero */}
-        <section className="section" style={{
-          paddingTop: 'var(--space-10)',
-          paddingBottom: 'var(--space-12)',
-          borderBottom: '1px solid var(--border-subtle)'
-        }}>
-          <div className="container">
-            <div style={{ maxWidth: '720px' }}>
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 'var(--space-2)',
-                background: 'var(--accent-secondary-subtle)',
-                border: '1px solid var(--accent-secondary-muted)',
-                borderRadius: 'var(--radius-full)',
-                padding: 'var(--space-2) var(--space-4)',
-                marginBottom: 'var(--space-6)',
-                fontSize: 'var(--text-xs)',
-                fontWeight: 600,
-                color: 'var(--accent-secondary)'
-              }}>
-                <Receipt size={14} />
-                <span>LEARN</span>
-              </div>
+          <h2>What is a signed interaction record?</h2>
+          <p>
+            A PEAC interaction record is a JWS-signed JSON payload that records what happened
+            during an agent interaction: who issued it, what resource was accessed, when, under
+            what terms, and with what payment (if any). The signature uses Ed25519.
+          </p>
+          <p>
+            Anyone with the issuer&apos;s public key can verify the record offline. No API
+            callback, no trust in the verifier, no phone call. The record travels in the{' '}
+            <code>PEAC-Receipt</code> HTTP header as a compact JWS string.
+          </p>
 
-              <h1 style={{
-                fontSize: 'var(--text-4xl)',
-                fontWeight: 700,
-                lineHeight: 1.2,
-                letterSpacing: '-0.03em',
-                marginBottom: 'var(--space-4)',
-                color: 'var(--text-primary)'
-              }}>
-                AI Receipts
-              </h1>
+          <h2>Why records matter</h2>
+          <h3>Billing proof</h3>
+          <p>
+            The signed record proves which resource was accessed and what was paid. Reviews
+            resolve by checking the signature, not by arguing about server logs.
+          </p>
+          <h3>Audit trails</h3>
+          <p>
+            Timestamped, tamper-evident records of every agent action. When an auditor or partner
+            asks what your agent did, you produce the signed records. They verify independently.
+          </p>
+          <h3>Attribution chains</h3>
+          <p>Content usage gets recorded. Creators verify credit and compensation.</p>
 
-              <p style={{
-                fontSize: 'var(--text-xl)',
-                lineHeight: 1.6,
-                color: 'var(--text-secondary)',
-                marginBottom: 'var(--space-6)'
-              }}>
-                Cryptographically signed proof of agent interactions - the foundation for billing, compliance, and dispute resolution.
-              </p>
-
-              <div style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
-                6 min read
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Content */}
-        <section className="section" style={{ paddingTop: 'var(--space-12)', paddingBottom: 'var(--space-12)' }}>
-          <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: 'var(--space-16)' }} className="article-layout">
-              {/* Sidebar TOC */}
-              <aside style={{ position: 'sticky', top: '100px', alignSelf: 'start' }} className="article-sidebar">
-                <div style={{
-                  padding: 'var(--space-6)',
-                  background: 'var(--surface-subtle)',
-                  borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--border-subtle)'
-                }}>
-                  <h4 style={{
-                    fontSize: 'var(--text-xs)',
-                    fontWeight: 600,
-                    color: 'var(--text-muted)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em',
-                    marginBottom: 'var(--space-4)'
-                  }}>
-                    On this page
-                  </h4>
-                  <nav style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
-                    {['Key Takeaways', 'What is a Receipt?', 'Why Receipts Matter', 'Anatomy of a PEAC-Receipt', 'Use Cases', 'Implementation'].map((item) => (
-                      <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} style={{
-                        fontSize: 'var(--text-sm)',
-                        color: 'var(--text-secondary)',
-                        textDecoration: 'none'
-                      }}>
-                        {item}
-                      </a>
-                    ))}
-                  </nav>
-                </div>
-              </aside>
-
-              {/* Main Content */}
-              <article style={{ maxWidth: '680px' }}>
-                {/* Key Takeaways Box */}
-                <div id="key-takeaways" style={{
-                  background: 'var(--accent-secondary-faint)',
-                  border: '1px solid var(--accent-secondary-muted)',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: 'var(--space-8)',
-                  marginBottom: 'var(--space-12)'
-                }}>
-                  <h2 style={{
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-4)',
-                    color: 'var(--text-primary)'
-                  }}>
-                    Key Takeaways
-                  </h2>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                    {[
-                      'Receipts are JWS-signed JSON proving what happened in an interaction',
-                      'Verifiable offline using public keys. No API callback.',
-                      'Carried in the PEAC-Receipt HTTP header'
-                    ].map((takeaway, i) => (
-                      <li key={i} style={{
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: 'var(--space-3)',
-                        marginBottom: 'var(--space-3)',
-                        fontSize: 'var(--text-base)',
-                        color: 'var(--text-secondary)',
-                        lineHeight: 1.6
-                      }}>
-                        <CheckCircle size={18} style={{ color: 'var(--accent-secondary)', flexShrink: 0, marginTop: '3px' }} />
-                        {takeaway}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* What is a Receipt? */}
-                <section id="what-is-a-receipt?" style={{ marginBottom: 'var(--space-12)' }}>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-4)',
-                    color: 'var(--text-primary)'
-                  }}>
-                    What is a Receipt?
-                  </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-4)' }}>
-                    A <strong>PEAC interaction record</strong> is a JWS-signed JSON payload that records what happened during an agent interaction: who issued it, what resource was accessed, when, under what terms, and with what payment (if any). The signature uses Ed25519.
-                  </p>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                    Anyone with the issuer&apos;s public key can verify the record offline. No API callback, no trust in the verifier, no phone call. The record travels in the <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>PEAC-Receipt</code> HTTP header as a compact JWS string.
-                  </p>
-                </section>
-
-                {/* Why Receipts Matter */}
-                <section id="why-receipts-matter" style={{ marginBottom: 'var(--space-12)' }}>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-4)',
-                    color: 'var(--text-primary)'
-                  }}>
-                    Why Receipts Matter
-                  </h2>
-
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
-                    <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Billing proof</h4>
-                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                        The signed record proves which resource was accessed and what was paid. Disputes resolve by checking the signature, not by arguing about server logs.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Audit trails</h4>
-                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                        Timestamped, tamper-evident records of every agent action. When a regulator asks what your agent did, you produce the signed records. They verify independently.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Attribution chains</h4>
-                      <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                        Content usage gets recorded. Creators verify credit and compensation.
-                      </p>
-                    </div>
-                  </div>
-                </section>
-
-                {/* Anatomy of a PEAC-Receipt */}
-                <section id="anatomy-of-a-peac-receipt" style={{ marginBottom: 'var(--space-12)' }}>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-4)',
-                    color: 'var(--text-primary)'
-                  }}>
-                    Anatomy of a PEAC-Receipt
-                  </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                    A PEAC-Receipt contains several key fields:
-                  </p>
-
-                  <div style={{
-                    background: 'var(--text-primary)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: 'var(--space-6)',
-                    marginBottom: 'var(--space-6)',
-                    overflow: 'auto'
-                  }}>
-                    <pre style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: 'var(--text-sm)',
-                      color: 'var(--border-default)',
-                      margin: 0,
-                      lineHeight: 1.6
-                    }}>
+          <h2>Anatomy of a signed record</h2>
+          <p>A signed interaction record contains several key fields:</p>
+          <pre style={codeBlock}>
 {`{
   "iss": "api.example.com",        // Issuer
   "sub": "agent-xyz-123",          // Agent ID
   "aud": "originary.xyz",          // Audience
   "iat": 1702834800,               // Issued at
   "exp": 1702921200,               // Expiration
-  "rid": "rcpt_abc123",            // Receipt ID
+  "rid": "rcpt_abc123",            // Record ID
   "resource": "/v1/translate",     // Resource accessed
   "action": "POST",                // HTTP method
   "payment": {
     "amount": "0.001",
     "currency": "USD",
-    "evidence": "pi_xxx"           // Payment proof
+    "evidence": "pi_xxx"
   },
   "aipref_hash": "sha256:abc..."   // Policy snapshot
 }`}
-                    </pre>
-                  </div>
+          </pre>
+          <p>
+            The entire payload is signed using JWS (JSON Web Signature), typically with Ed25519.
+            The signature can be verified using the issuer&apos;s public key referenced in{' '}
+            <code>/.well-known/peac.txt</code> (which points to a JWKS endpoint).
+          </p>
 
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-                    The entire payload is signed using JWS (JSON Web Signature), typically with Ed25519. The signature can be verified using the issuer&apos;s public key referenced in <code style={{ background: 'var(--surface-card)', padding: '2px 6px', borderRadius: '4px' }}>/.well-known/peac.txt</code> (which points to a JWKS endpoint).
-                  </p>
-                </section>
+          <h2>Use cases</h2>
+          <ul>
+            <li>
+              <strong>API providers.</strong> Issue records to prove service delivery; resolve
+              billing reviews instantly.
+            </li>
+            <li>
+              <strong>Content platforms.</strong> Track AI consumption of licensed content with
+              verifiable attribution.
+            </li>
+            <li>
+              <strong>Enterprise AI.</strong> Maintain audit trails for regulatory compliance
+              workflows.
+            </li>
+            <li>
+              <strong>Agent frameworks.</strong> Collect records to track costs and prove work
+              completion.
+            </li>
+          </ul>
 
-                {/* Use Cases */}
-                <section id="use-cases" style={{ marginBottom: 'var(--space-12)' }}>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-4)',
-                    color: 'var(--text-primary)'
-                  }}>
-                    Use Cases
-                  </h2>
+          <h2>Implementation</h2>
+          <p>Start working with signed records using Originary&apos;s tools:</p>
+          <ul>
+            <li>
+              <Link href="/peac" style={{ color: PALETTE.ink, textDecoration: 'underline', textDecorationColor: 'rgba(20, 17, 10, 0.30)', textUnderlineOffset: 3 }}>
+                PEAC Protocol overview
+              </Link>
+            </li>
+            <li>
+              <Link href="/downloads" style={{ color: PALETTE.ink, textDecoration: 'underline', textDecorationColor: 'rgba(20, 17, 10, 0.30)', textUnderlineOffset: 3 }}>
+                Downloads (CLI, SDK)
+              </Link>
+            </li>
+          </ul>
+        </ArticleDoc>
 
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                    {[
-                      { term: 'API providers', def: 'Issue receipts to prove service delivery; resolve billing disputes instantly' },
-                      { term: 'Content platforms', def: 'Track AI consumption of licensed content with verifiable attribution' },
-                      { term: 'Enterprise AI', def: 'Maintain audit trails for regulatory compliance workflows' },
-                      { term: 'Agent frameworks', def: 'Collect receipts to track costs and prove work completion' }
-                    ].map((item, i) => (
-                      <li key={i} style={{
-                        padding: 'var(--space-4) 0',
-                        borderBottom: i < 3 ? '1px solid var(--border-subtle)' : 'none'
-                      }}>
-                        <strong style={{ color: 'var(--text-primary)' }}>{item.term}</strong>
-                        <span style={{ color: 'var(--text-secondary)' }}> - {item.def}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-
-                {/* Implementation */}
-                <section id="implementation" style={{ marginBottom: 'var(--space-12)' }}>
-                  <h2 style={{
-                    fontSize: 'var(--text-2xl)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-4)',
-                    color: 'var(--text-primary)'
-                  }}>
-                    Implementation
-                  </h2>
-                  <p style={{ fontSize: 'var(--text-base)', lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 'var(--space-6)' }}>
-                    Start working with receipts using Originary&apos;s tools:
-                  </p>
-
-                  <div className="grid grid-2" style={{ gap: 'var(--space-4)' }}>
-                    <Link href="/receipts" className="card" style={{ textDecoration: 'none', padding: 'var(--space-5)' }}>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Receipts Overview</h4>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Product documentation</p>
-                    </Link>
-                    <Link href="/verify" className="card" style={{ textDecoration: 'none', padding: 'var(--space-5)' }}>
-                      <h4 style={{ fontWeight: 600, marginBottom: 'var(--space-2)', color: 'var(--text-primary)' }}>Verify</h4>
-                      <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)' }}>Verify receipts online</p>
-                    </Link>
-                  </div>
-                </section>
-
-                {/* Related */}
-                <section style={{
-                  padding: 'var(--space-8)',
-                  background: 'var(--surface-subtle)',
-                  borderRadius: 'var(--radius-lg)',
-                  marginTop: 'var(--space-16)'
-                }}>
-                  <h3 style={{
-                    fontSize: 'var(--text-lg)',
-                    fontWeight: 700,
-                    marginBottom: 'var(--space-6)',
-                    color: 'var(--text-primary)'
-                  }}>
-                    Related Articles
-                  </h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-                    <Link href="/learn/what-is-agentic-commerce" style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      color: 'var(--text-secondary)',
-                      textDecoration: 'none'
-                    }}>
-                      <span>What is Agentic Commerce?</span>
-                      <ArrowRight size={16} style={{ color: 'var(--accent-brand)' }} />
-                    </Link>
-                    <Link href="/learn/ai-consent-and-attribution" style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      color: 'var(--text-secondary)',
-                      textDecoration: 'none'
-                    }}>
-                      <span>AI Consent & Attribution</span>
-                      <ArrowRight size={16} style={{ color: 'var(--accent-brand)' }} />
-                    </Link>
-                  </div>
-                </section>
-              </article>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-
+        <ArticleRelated
+          links={[
+            { label: 'Policy, consent and attribution', href: '/learn/ai-consent-and-attribution' },
+            { label: 'Agentic commerce', href: '/learn/what-is-agentic-commerce' },
+            { label: 'PEAC Protocol overview', href: '/peac' },
+          ]}
+        />
+      </PageShell>
     </>
   )
 }
