@@ -88,7 +88,7 @@ const comparisonRows: Array<[string, string, string, string]> = [
   ['Deployment', 'Self-hosted', 'Self-hosted with guidance', 'Originary operates'],
   ['Verification', 'Offline, no dependency', 'Offline, no dependency', 'Offline, no dependency'],
   ['Support', 'GitHub issues', 'Dedicated engineering + SLA', 'Dedicated engineering + SLA'],
-  ['Evidence exports', 'Self-assembled', 'Guided', 'Pre-packaged bundles'],
+  ['Record exports', 'Self-assembled', 'Guided', 'Pre-packaged bundles'],
   ['Architecture review', 'Community docs', 'Guided integration', 'Full review included'],
 ]
 
@@ -99,7 +99,7 @@ const faqs = [
   },
   {
     q: 'Is the protocol truly open?',
-    a: 'Yes. The protocol specification, all reference implementations, and core tooling are published on GitHub under Apache-2.0. You can build your own conformant implementation without involving Originary.',
+    a: 'Yes. The protocol specification, all reference implementations, and core tooling are published on GitHub under Apache-2.0. You can build your own conformant implementation without an Originary account or managed service.',
   },
   {
     q: 'What payment rails are supported?',
@@ -234,7 +234,7 @@ export default function PricingPage() {
                 textWrap: 'pretty',
               }}
             >
-              Use PEAC Protocol by Originary freely. Bring in Originary for managed verification, deployment support, and evidence exports when another party needs proof your logs cannot provide.
+              Use PEAC Protocol by Originary freely. Bring in Originary for managed verification, deployment support, and record exports when another party needs verification your logs cannot provide.
             </p>
           </div>
 
@@ -259,7 +259,7 @@ export default function PricingPage() {
               A pilot usually means one API, MCP server, gateway, payment flow, or agent handoff; one signed-record profile; one verifier report or bundle; one integration review; and one rollout recommendation.
             </p>
             <p style={{ fontFamily: sans, fontSize: 15, lineHeight: 1.7, color: PALETTE.muted, margin: 0 }}>
-              You should contact us if another party already asked for proof your logs cannot provide.
+              You should contact us if another party already asked for verification your logs cannot provide.
             </p>
             <div style={{ marginTop: 22 }}>
               <a
@@ -688,7 +688,7 @@ export default function PricingPage() {
                 margin: '14px auto 24px auto',
               }}
             >
-              The protocol specification, reference implementations, and all core tooling are {FACTS.license} licensed. Originary is the commercial steward, not a gatekeeper.
+              The protocol specification, reference implementations, and all core tooling are {FACTS.license} licensed. Originary provides commercial tools and support around the open protocol.
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
               <a

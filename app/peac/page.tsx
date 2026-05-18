@@ -109,10 +109,10 @@ export default function PeacPage() {
       />
       <PageShell>
         <PageHero
-          eyebrow="open-source"
+          eyebrow="open source"
           title="PEAC Protocol"
           byline="by Originary"
-          sub="Originary publishes and maintains PEAC Protocol, the open standard for issuing signed records another party can verify without trusting the original dashboard. Self-hostable. Apache-2.0. No Originary account required."
+          sub="PEAC is the open standard for portable signed interaction records. Systems use it to issue records another party can verify without trusting the original dashboard."
           align="center"
         >
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
@@ -127,51 +127,29 @@ export default function PeacPage() {
             <Pill>Apache-2.0</Pill>
             <Pill>Self-hostable</Pill>
             <Pill>Offline-verifiable</Pill>
+            <Pill>No Originary account required</Pill>
           </div>
         </PageHero>
 
-        {/* Source and distribution: who publishes PEAC, where it lives */}
-        <PageSection paddingTop={24} paddingBottom={64}>
-          <SectionHeading
-            eyebrow="source and distribution"
-            title="PEAC Protocol is open-source software published by Originary."
-            sub="Originary maintains the protocol specification, reference implementation, CLI, SDK packages, conformance fixtures, and verification tooling. The software is distributed through the public PEAC GitHub repository and related package registries under Apache-2.0."
-            align="center"
-          />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
-            <Card>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-                publisher
-              </Mono>
-              <h3 style={subHead}>Originary</h3>
-              <p style={body}>
-                Originary publishes and maintains PEAC Protocol and its reference tooling.
-              </p>
-            </Card>
-            <Card>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-                primary distribution
-              </Mono>
-              <h3 style={subHead}>GitHub</h3>
-              <p style={body}>
-                Download PEAC Protocol by Originary from the public GitHub repository and npm package registries.
-              </p>
-              <div style={{ marginTop: 14 }}>
-                <Button href="https://github.com/peacprotocol/peac" external primary>
-                  Download from GitHub
-                </Button>
-              </div>
-            </Card>
-            <Card>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-                license
-              </Mono>
-              <h3 style={subHead}>{FACTS.license}</h3>
-              <p style={body}>
-                PEAC Protocol is open-source software. Self-hostable. No Originary account required.
-              </p>
-            </Card>
-          </div>
+        {/* Source and distribution: condensed to one line under the hero */}
+        <PageSection paddingTop={24} paddingBottom={48}>
+          <p
+            style={{
+              fontFamily: sans,
+              fontSize: 16,
+              lineHeight: 1.65,
+              color: PALETTE.muted,
+              margin: 0,
+              maxWidth: 720,
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              textAlign: 'center',
+              textWrap: 'pretty',
+            }}
+          >
+            PEAC Protocol is published by Originary and distributed through GitHub and package
+            registries under Apache-2.0.
+          </p>
         </PageSection>
 
         {/* 1. What PEAC is */}
@@ -234,7 +212,7 @@ export default function PeacPage() {
           >
             <Stat label="latest release" value={FACTS.currentVersion} note={`released ${FACTS.currentReleaseDate}`} />
             <Stat label="tests passing" value={FACTS.testsCount.toLocaleString()} note="across all packages" border />
-            <Stat label="conformance ids" value={String(FACTS.conformanceRequirements)} note="across 29 sections" border />
+            <Stat label="conformance ids" value={String(FACTS.conformanceRequirements)} note="across 32 sections" border />
             <Stat label="published packages" value={String(FACTS.publishedPackageCount)} note={`on npm ${FACTS.currentDistTag}`} border />
           </div>
         </PageSection>
@@ -312,7 +290,7 @@ export default function PeacPage() {
               ['MCP tool calls', 'Tool name, policy, result digest'],
               ['A2A handoffs', 'Task ids, parent task, signature observation'],
               ['Gateway decisions', 'Routed / blocked / decided records'],
-              ['Provisioning lifecycle', 'v0.14.2 - 10 observed event kinds'],
+              ['Provisioning lifecycle', '10 observed event kinds'],
               ['Runtime governance', 'AGT mapper and lifecycle observation'],
               ['HTTP 402', 'Challenge / response for paid surfaces'],
               ['Commerce', 'paymentauth / MPP / ACP / x402 observations'],

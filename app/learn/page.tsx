@@ -99,7 +99,7 @@ const collectionJsonLd = {
   '@type': 'CollectionPage',
   name: 'Learn',
   description:
-    'In-depth guides on verification, signed records, policy, consent, and evidence for automated interactions.',
+    'In-depth guides on verification, signed records, policy, consent, and verification for automated interactions.',
   url: 'https://www.originary.xyz/learn',
   publisher: {
     '@type': 'Organization',
@@ -246,8 +246,8 @@ export default function LearnPage() {
       <PageShell>
         <PageHero
           eyebrow="learn"
-          title="Learn"
-          sub="Guides on signed records, offline verification, policy discovery, and payment-related record flows across agent, API, MCP, and cross-runtime interactions."
+          title="How signed records work"
+          sub="Guides for developers and platform teams building verification into API, MCP, agent, gateway, payment, and provisioning workflows."
           align="center"
         />
 

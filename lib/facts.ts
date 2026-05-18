@@ -13,16 +13,16 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   /** Latest public release tag. */
-  currentVersion: 'v0.14.2',
+  currentVersion: 'v0.14.3',
 
   /** Public release date for currentVersion. */
-  currentReleaseDate: '2026-05-11',
+  currentReleaseDate: '2026-05-17',
 
   /** npm dist-tag used for currentVersion. */
   currentDistTag: 'latest',
 
   /** Stable release on the npm `latest` dist-tag */
-  stableVersion: 'v0.14.2',
+  stableVersion: 'v0.14.3',
 
   /** Current stable wire format. JWS typ: interaction-record+jwt. */
   stableWireFormat: 'interaction-record+jwt',
@@ -51,13 +51,13 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   /** Test count. */
-  testsCount: 10078,
+  testsCount: 10635,
 
   /** Build targets. */
-  buildTargets: 103,
+  buildTargets: 107,
 
   /** Conformance requirement IDs. */
-  conformanceRequirements: 260,
+  conformanceRequirements: 290,
 
   /** Minimum Node.js version required */
   nodeMinVersion: '22.0.0',

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
-    title: 'When agents provision infrastructure, proof needs to travel',
+    title: 'When agents provision infrastructure, records need to travel',
     description:
       'A PEAC example and integration kit for turning provisioning workflows into signed, offline-verifiable records.',
     url: '/blog/verifiable-provisioning-records-agent-infrastructure',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'When agents provision infrastructure, proof needs to travel',
+    title: 'When agents provision infrastructure, records need to travel',
     description:
       'A PEAC example and integration kit for signed, offline-verifiable provisioning records.',
     images: ['/og'],

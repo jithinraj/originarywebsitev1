@@ -49,9 +49,9 @@ type Article = {
 const articles: Article[] = [
   {
     slug: 'verifiable-provisioning-records-agent-infrastructure',
-    title: 'Verifiable Provisioning Records for Agent-Driven Infrastructure',
+    title: 'Verifiable provisioning records for agent-driven infrastructure',
     description:
-      'PEAC adds signed, portable records to agent-driven provisioning workflows, so teams can verify what changed without owning the runtime or storing credentials.',
+      'When agents and CLIs provision services, credentials, environments, and deploy targets, signed records help teams verify what changed without owning the runtime.',
     author: 'Originary Team',
     date: '2026-05-18',
     category: 'Protocol',
@@ -73,7 +73,7 @@ const articles: Article[] = [
     slug: 'a2a-stack-agent-to-agent-commerce',
     title: 'The A2A Stack: Agent-to-Agent Verification and Commerce',
     description:
-      'How AI agents coordinate, transact, and verify interactions with each other. The A2A stack covers policy discovery, signed records, and cross-boundary proof.',
+      'How AI agents coordinate, transact, and verify interactions with each other. The A2A stack covers policy discovery, signed records, and cross-boundary records.',
     author: 'Jithin Raj, Founder',
     date: '2025-12-03',
     category: 'Vision',
@@ -260,7 +260,6 @@ function ArticleCard({ article, featured }: { article: Article; featured?: boole
           flexWrap: 'wrap',
         }}
       >
-        <span>{formatDate(article.date)}</span>
         <span>{article.readTime}</span>
         <span style={{ marginLeft: 'auto', color: PALETTE.ink, fontFamily: sans, fontWeight: 500, fontSize: 13, letterSpacing: '-0.005em' }}>
           Read &rarr;
@@ -283,7 +282,7 @@ export default function BlogPage() {
         <PageHero
           eyebrow="blog"
           title="Originary blog"
-          sub="Technical articles and protocol notes on agent verification, signed records, policy discovery, offline verification, and the open infrastructure for automated interactions."
+          sub="Originary writes about signed records, verification, policy discovery, payment-related workflows, provisioning records, and open infrastructure for automated interactions."
           align="center"
         />
 
