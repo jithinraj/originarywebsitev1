@@ -1,7 +1,16 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { PageShell, PageHero, PageSection, Card, PALETTE } from '@/components/home'
-import { Mono } from '@/components/home/atoms/Mono'
+import {
+  PageShell,
+  PageSection,
+  Card,
+  Reveal,
+  Stagger,
+  InViewClass,
+  PALETTE,
+  MAX_W,
+  PAGE_PAD,
+} from '@/components/home'
 
 export const metadata: Metadata = {
   title: { absolute: 'Learn | Originary' },
@@ -121,6 +130,13 @@ const collectionJsonLd = {
 
 const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
 
+const learnLabel = {
+  maxWidth: 1080,
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  display: 'block' as const,
+}
+
 function LearnCard({ article, featured }: { article: LearnArticle; featured?: boolean }) {
   return (
     <Link
@@ -137,13 +153,17 @@ function LearnCard({ article, featured }: { article: LearnArticle; featured?: bo
       }}
       className="home-card"
     >
-      <Mono
-        size={11}
-        color={PALETTE.muted}
-        style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
+      <span
+        style={{
+          fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace',
+          fontSize: 11,
+          letterSpacing: '0.16em',
+          textTransform: 'uppercase',
+          color: PALETTE.muted,
+        }}
       >
         {article.subtitle}
-      </Mono>
+      </span>
       <h3
         style={{
           fontFamily: sans,
@@ -244,20 +264,58 @@ export default function LearnPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
       />
       <PageShell>
-        <PageHero
-          eyebrow="learn"
-          title="How signed records work"
-          sub="Guides for developers and platform teams building verification into API, MCP, agent, gateway, payment, and provisioning workflows."
-          align="center"
+        {/* Editorial hero */}
+        <section
+          className="home-section"
+          style={{
+            maxWidth: MAX_W,
+            margin: '0 auto',
+            padding: `clamp(64px, 9vh, 112px) ${PAGE_PAD} clamp(40px, 6vh, 64px) ${PAGE_PAD}`,
+          }}
+        >
+          <Reveal>
+            <InViewClass className="home-eyebrow-rule" as="div">
+              <span className="home-about-eyebrow">learn</span>
+            </InViewClass>
+          </Reveal>
+          <Reveal delay={80}>
+            <h1 className="home-about-h1">How signed records work.</h1>
+          </Reveal>
+          <Reveal delay={180}>
+            <p className="home-about-body" style={{ marginTop: 22, maxWidth: 720 }}>
+              Guides for developers and platform teams building verification into API, MCP, agent,
+              gateway, payment, and provisioning workflows.
+            </p>
+          </Reveal>
+          <Reveal delay={260}>
+            <p className="home-about-body" style={{ maxWidth: 720 }}>
+              When automated systems cross boundaries, logs are useful but not portable. These
+              guides explain how signed records work, how policy discovery fits in, and how
+              payment and provisioning context can be reviewed later.
+            </p>
+          </Reveal>
+        </section>
+
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
         />
 
         {featured.length > 0 ? (
-          <PageSection paddingTop={8} paddingBottom={32}>
-            <div
+          <PageSection paddingTop={32} paddingBottom={56}>
+            <Reveal>
+              <InViewClass className="home-eyebrow-rule" as="div" style={learnLabel}>
+                <span className="home-about-eyebrow">start here</span>
+              </InViewClass>
+            </Reveal>
+            <Stagger
+              step={120}
+              baseDelay={40}
               className="home-blog-featured-grid"
               style={{
                 maxWidth: 1080,
-                margin: '0 auto',
+                margin: '24px auto 0 auto',
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(min(420px, 100%), 1fr))',
                 gap: 24,
@@ -266,16 +324,29 @@ export default function LearnPage() {
               {featured.map((article) => (
                 <LearnCard key={article.slug} article={article} featured />
               ))}
-            </div>
+            </Stagger>
           </PageSection>
         ) : null}
 
-        <PageSection paddingBottom={112}>
-          <div
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+        />
+
+        <PageSection paddingTop={32} paddingBottom={112}>
+          <Reveal>
+            <InViewClass className="home-eyebrow-rule" as="div" style={learnLabel}>
+              <span className="home-about-eyebrow">more guides</span>
+            </InViewClass>
+          </Reveal>
+          <Stagger
+            step={70}
+            baseDelay={40}
             className="home-blog-grid"
             style={{
               maxWidth: 1080,
-              margin: '0 auto',
+              margin: '24px auto 0 auto',
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: 20,
@@ -284,7 +355,7 @@ export default function LearnPage() {
             {rest.map((article) => (
               <LearnCard key={article.slug} article={article} />
             ))}
-          </div>
+          </Stagger>
         </PageSection>
       </PageShell>
     </>

@@ -10,6 +10,7 @@ import {
   BulletList,
   Pill,
   Button,
+  CountUp,
   PALETTE,
 } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
@@ -211,9 +212,9 @@ export default function PeacPage() {
             }}
           >
             <Stat label="latest release" value={FACTS.currentVersion} note={`released ${FACTS.currentReleaseDate}`} />
-            <Stat label="tests passing" value={FACTS.testsCount.toLocaleString()} note="across all packages" border />
-            <Stat label="conformance ids" value={String(FACTS.conformanceRequirements)} note="across 32 sections" border />
-            <Stat label="published packages" value={String(FACTS.publishedPackageCount)} note={`on npm ${FACTS.currentDistTag}`} border />
+            <Stat label="tests passing" value={<CountUp value={FACTS.testsCount} />} note="across all packages" border />
+            <Stat label="conformance ids" value={<CountUp value={FACTS.conformanceRequirements} />} note="across 32 sections" border />
+            <Stat label="published packages" value={<CountUp value={FACTS.publishedPackageCount} />} note={`on npm ${FACTS.currentDistTag}`} border />
           </div>
         </PageSection>
 
@@ -273,7 +274,7 @@ export default function PeacPage() {
         <PageSection background={PALETTE.paper} paddingTop={80} paddingBottom={80}>
           <SectionHeading
             eyebrow="workflows"
-            title="One primitive, many proof workflows."
+            title="One primitive, many record workflows."
             sub="PEAC composes with the systems your stack already uses. Each profile maps an existing surface to a portable signed record without replacing the runtime that produced it."
           />
           <div
@@ -437,7 +438,7 @@ function Stat({
   border,
 }: {
   label: string
-  value: string
+  value: React.ReactNode
   note?: string
   border?: boolean
 }) {

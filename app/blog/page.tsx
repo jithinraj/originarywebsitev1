@@ -1,8 +1,18 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
-import { PageShell, PageHero, PageSection, Card, Button, PALETTE } from '@/components/home'
-import { Mono } from '@/components/home/atoms/Mono'
+import {
+  PageShell,
+  PageSection,
+  Card,
+  Button,
+  Reveal,
+  Stagger,
+  InViewClass,
+  PALETTE,
+  MAX_W,
+  PAGE_PAD,
+} from '@/components/home'
 
 export const metadata: Metadata = {
   title: {
@@ -186,6 +196,13 @@ const jsonLd = {
 
 const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
 
+const blogLabel = {
+  maxWidth: 1080,
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  display: 'block' as const,
+}
+
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString('en-US', {
     month: 'short',
@@ -211,13 +228,17 @@ function ArticleCard({ article, featured }: { article: Article; featured?: boole
       }}
       className="home-card"
     >
-      <Mono
-        size={11}
-        color={PALETTE.muted}
-        style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
+      <span
+        style={{
+          fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace',
+          fontSize: 11,
+          letterSpacing: '0.16em',
+          textTransform: 'uppercase',
+          color: PALETTE.muted,
+        }}
       >
         {article.category}
-      </Mono>
+      </span>
       <h3
         style={{
           fontFamily: sans,
@@ -279,35 +300,52 @@ export default function BlogPage() {
         {JSON.stringify(jsonLd)}
       </Script>
       <PageShell>
-        <PageHero
-          eyebrow="blog"
-          title="Originary blog"
-          sub="Originary writes about signed records, verification, policy discovery, payment-related workflows, provisioning records, and open infrastructure for automated interactions."
-          align="center"
+        {/* Editorial hero */}
+        <section
+          className="home-section"
+          style={{
+            maxWidth: MAX_W,
+            margin: '0 auto',
+            padding: `clamp(64px, 9vh, 112px) ${PAGE_PAD} clamp(40px, 6vh, 64px) ${PAGE_PAD}`,
+          }}
+        >
+          <Reveal>
+            <InViewClass className="home-eyebrow-rule" as="div">
+              <span className="home-about-eyebrow">blog</span>
+            </InViewClass>
+          </Reveal>
+          <Reveal delay={80}>
+            <h1 className="home-about-h1">Originary blog.</h1>
+          </Reveal>
+          <Reveal delay={180}>
+            <p className="home-about-body" style={{ marginTop: 22, maxWidth: 720 }}>
+              Originary writes about signed records, verification, policy discovery,
+              payment-related workflows, provisioning records, and open infrastructure for
+              automated interactions.
+            </p>
+          </Reveal>
+        </section>
+
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
         />
 
         {featured.length > 0 ? (
-          <PageSection paddingTop={8} paddingBottom={48}>
-            <Mono
-              size={11}
-              color={PALETTE.faint}
-              style={{
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-                marginBottom: 24,
-                display: 'block',
-                maxWidth: 1080,
-                marginLeft: 'auto',
-                marginRight: 'auto',
-              }}
-            >
-              featured
-            </Mono>
-            <div
+          <PageSection paddingTop={32} paddingBottom={56}>
+            <Reveal>
+              <InViewClass className="home-eyebrow-rule" as="div" style={blogLabel}>
+                <span className="home-about-eyebrow">featured</span>
+              </InViewClass>
+            </Reveal>
+            <Stagger
+              step={120}
+              baseDelay={40}
               className="home-blog-featured-grid"
               style={{
                 maxWidth: 1080,
-                margin: '0 auto',
+                margin: '24px auto 0 auto',
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(min(420px, 100%), 1fr))',
                 gap: 24,
@@ -316,31 +354,29 @@ export default function BlogPage() {
               {featured.map((article) => (
                 <ArticleCard key={article.slug} article={article} featured />
               ))}
-            </div>
+            </Stagger>
           </PageSection>
         ) : null}
 
-        <PageSection paddingBottom={48}>
-          <Mono
-            size={11}
-            color={PALETTE.faint}
-            style={{
-              letterSpacing: '0.18em',
-              textTransform: 'uppercase',
-              marginBottom: 24,
-              display: 'block',
-              maxWidth: 1080,
-              marginLeft: 'auto',
-              marginRight: 'auto',
-            }}
-          >
-            all articles
-          </Mono>
-          <div
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+        />
+
+        <PageSection paddingTop={32} paddingBottom={56}>
+          <Reveal>
+            <InViewClass className="home-eyebrow-rule" as="div" style={blogLabel}>
+              <span className="home-about-eyebrow">all articles</span>
+            </InViewClass>
+          </Reveal>
+          <Stagger
+            step={70}
+            baseDelay={40}
             className="home-blog-grid"
             style={{
               maxWidth: 1080,
-              margin: '0 auto',
+              margin: '24px auto 0 auto',
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
               gap: 20,
@@ -349,51 +385,43 @@ export default function BlogPage() {
             {rest.map((article) => (
               <ArticleCard key={article.slug} article={article} />
             ))}
-          </div>
+          </Stagger>
         </PageSection>
 
-        <PageSection paddingBottom={112}>
-          <Card padding={32} style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
-            <Mono
-              size={11}
-              color={PALETTE.muted}
-              style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
-            >
-              subscribe
-            </Mono>
-            <h2
-              style={{
-                fontFamily: sans,
-                fontSize: 'clamp(22px, 2.6vw, 28px)',
-                fontWeight: 500,
-                letterSpacing: '-0.02em',
-                color: PALETTE.ink,
-                margin: '12px 0 12px 0',
-                textWrap: 'balance',
-              }}
-            >
-              Stay updated on the agentic web.
-            </h2>
-            <p
-              style={{
-                fontFamily: sans,
-                fontSize: 15,
-                lineHeight: 1.6,
-                color: PALETTE.muted,
-                margin: '0 auto 24px auto',
-                maxWidth: 520,
-                textWrap: 'pretty',
-              }}
-            >
-              Get protocol updates, technical notes, and articles from the Originary team.
-            </p>
-            <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Button href="https://originary.substack.com" external primary>
-                Subscribe on Substack
-              </Button>
-              <Button href="/contact">Contact</Button>
-            </div>
-          </Card>
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+        />
+
+        <PageSection paddingTop={32} paddingBottom={112}>
+          <Reveal>
+            <Card padding={36} style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
+              <span className="home-about-eyebrow">subscribe</span>
+              <h2 className="home-about-section-title" style={{ marginTop: 14 }}>
+                Stay updated on the agentic web.
+              </h2>
+              <p
+                style={{
+                  fontFamily: sans,
+                  fontSize: 15,
+                  lineHeight: 1.6,
+                  color: PALETTE.muted,
+                  margin: '14px auto 24px auto',
+                  maxWidth: 520,
+                  textWrap: 'pretty',
+                }}
+              >
+                Get protocol updates, technical notes, and articles from the Originary team.
+              </p>
+              <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Button href="https://originary.substack.com" external primary>
+                  Subscribe on Substack
+                </Button>
+                <Button href="/contact">Contact</Button>
+              </div>
+            </Card>
+          </Reveal>
         </PageSection>
       </PageShell>
     </>
