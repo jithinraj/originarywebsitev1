@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
+import { OriginaryLogoMotion } from '@/components/brand/OriginaryLogoMotion'
 
 const links: Array<{ label: string; href: string }> = [
   { label: 'How it works', href: '/#how-it-works' },
@@ -272,15 +273,30 @@ export function Nav() {
   )
 }
 
-export function Wordmark() {
+export function Wordmark({
+  height = 28,
+  replayOnHover = true,
+  autoPlay = true,
+}: {
+  height?: number
+  replayOnHover?: boolean
+  autoPlay?: boolean
+}) {
   return (
-    <picture style={{ display: 'inline-flex', alignItems: 'center' }}>
-      <img
-        src="/logo/originary-wordmark.svg"
-        alt="Originary"
-        height={28}
-        style={{ display: 'block', height: 28, width: 'auto' }}
+    <span
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        height,
+      }}
+    >
+      <OriginaryLogoMotion
+        ariaLabel="Originary"
+        fill={PALETTE.ink}
+        replayOnHover={replayOnHover}
+        autoPlay={autoPlay}
+        className="home-wordmark-svg"
       />
-    </picture>
+    </span>
   )
 }

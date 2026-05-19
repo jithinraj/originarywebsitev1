@@ -639,21 +639,60 @@ html {
   }
 }
 
-/* Compact footer at mobile: brand block + 2-col link grid stack vertically;
- * bottom row wraps cleanly. */
-@media (max-width: 640px) {
+/* Footer top grid breakpoints. Default desktop: brand 2fr + 3 link cols.
+ * Tablet: brand spans full width on its own row, link cols share row
+ * below. Mobile: everything stacks. */
+@media (max-width: 900px) {
   .home-footer-top {
-    grid-template-columns: 1fr !important;
-    gap: 32px !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 32px 32px !important;
   }
-  .home-footer-cols {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 24px !important;
-    justify-content: start !important;
+  .home-footer-top > div:first-child {
+    grid-column: 1 / -1 !important;
+  }
+}
+@media (max-width: 540px) {
+  .home-footer-top {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px 24px !important;
   }
   .home-footer-bottom {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 14px !important;
   }
+}
+
+/* Animated Originary wordmark: scales to wrapper height, aspect preserved. */
+.home-wordmark-svg {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  /* The SVG viewBox aspect ratio is preserved via SVG default; pin height. */
+}
+
+/* Icon-only footer social links. 36x36 hit target, hover lifts ink, focus ring. */
+.home-footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: #6b6458;
+  border: 1px solid rgba(20, 17, 10, 0.10);
+  background: transparent;
+  border-radius: 0;
+  text-decoration: none;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+.home-footer-icon:hover {
+  color: #14110a;
+  border-color: rgba(20, 17, 10, 0.32);
+  background: rgba(20, 17, 10, 0.03);
+}
+.home-footer-icon:focus-visible {
+  outline: 1px solid rgba(20, 17, 10, 0.45);
+  outline-offset: 2px;
+  color: #14110a;
 }
