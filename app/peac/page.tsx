@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { FACTS } from '@/lib/facts'
 import {
   PageShell,
-  PageHero,
   PageSection,
   SectionHeading,
   Card,
@@ -11,7 +10,10 @@ import {
   Pill,
   Button,
   CountUp,
+  InViewClass,
   PALETTE,
+  MAX_W,
+  PAGE_PAD,
 } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
 
@@ -109,35 +111,105 @@ export default function PeacPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageShell>
-        <PageHero
-          eyebrow="open source"
-          title="PEAC Protocol"
-          byline="by Originary"
-          sub="PEAC is the open standard for portable signed interaction records. Systems use it to issue records another party can verify without trusting the original dashboard."
-          align="center"
+        {/* Editorial hero: asymmetric two-column layout */}
+        <section
+          className="home-section"
+          style={{
+            maxWidth: MAX_W,
+            margin: '0 auto',
+            padding: `clamp(64px, 9vh, 112px) ${PAGE_PAD} clamp(40px, 6vh, 64px) ${PAGE_PAD}`,
+          }}
         >
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <Button href="/#demo" primary>
-              Request a demo
-            </Button>
-            <Button href="https://github.com/peacprotocol/peac" external>
-              View on GitHub
-            </Button>
-          </div>
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginTop: 24 }}>
-            <Pill>Apache-2.0</Pill>
-            <Pill>Self-hostable</Pill>
-            <Pill>Offline-verifiable</Pill>
-            <Pill>No Originary account required</Pill>
-          </div>
-        </PageHero>
+          <div className="home-peac-hero-grid" style={peacHeroGrid}>
+            <div>
+              <InViewClass className="home-eyebrow-rule" as="div">
+                <span className="home-about-eyebrow">open source</span>
+              </InViewClass>
+              <h1 className="home-about-h1" style={{ marginTop: 18 }}>
+                PEAC Protocol.
+              </h1>
+              <p
+                style={{
+                  fontFamily: mono,
+                  fontSize: 12,
+                  letterSpacing: '0.16em',
+                  textTransform: 'uppercase',
+                  color: PALETTE.muted,
+                  margin: '12px 0 0 0',
+                }}
+              >
+                by Originary
+              </p>
+              <p className="home-about-lede" style={{ marginTop: 24 }}>
+                The open standard for portable signed interaction records.
+              </p>
+              <p className="home-about-body" style={{ marginTop: 14, maxWidth: 560 }}>
+                Systems use PEAC to issue records another party can verify
+                without trusting the original dashboard. Apache-2.0,
+                self-hostable, and offline-verifiable. No Originary account
+                required to issue, verify, or self-host.
+              </p>
 
-        {/* Source and distribution: condensed to one line under the hero */}
+              <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <Button href="/#demo" primary>
+                  Request a demo
+                </Button>
+                <Button href="https://github.com/peacprotocol/peac" external>
+                  View on GitHub
+                </Button>
+              </div>
+              <div style={{ marginTop: 28, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+                <Pill>Apache-2.0</Pill>
+                <Pill>Self-hostable</Pill>
+                <Pill>Offline-verifiable</Pill>
+                <Pill>No Originary account required</Pill>
+              </div>
+            </div>
+
+            {/* Right column: record-shape preview card */}
+            <aside style={peacHeroAside}>
+              <div className="home-card" style={peacHeroCard}>
+                <div style={peacHeroCardLabel}>peac-receipt/0.2 · interaction-record+jwt</div>
+                <div style={peacHeroCardLine}>
+                  <span style={peacHeroCardKey}>iss</span>
+                  <span style={peacHeroCardVal}>https://api.example.com</span>
+                </div>
+                <div style={peacHeroCardLine}>
+                  <span style={peacHeroCardKey}>typ</span>
+                  <span style={peacHeroCardVal}>api.request</span>
+                </div>
+                <div style={peacHeroCardLine}>
+                  <span style={peacHeroCardKey}>policy</span>
+                  <span style={peacHeroCardVal}>sha256:7c1a&hellip;</span>
+                </div>
+                <div style={peacHeroCardLine}>
+                  <span style={peacHeroCardKey}>result</span>
+                  <span style={peacHeroCardVal}>{'{ status: 200 }'}</span>
+                </div>
+                <div style={peacHeroCardLine}>
+                  <span style={peacHeroCardKey}>sig</span>
+                  <span style={peacHeroCardVal}>Ed25519:8b3e&hellip;</span>
+                </div>
+                <div style={peacHeroCardFoot}>
+                  <span style={peacHeroCardDot} className="home-active-dot" />
+                  verified offline · {FACTS.currentVersion}
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+        />
+
         <PageSection paddingTop={24} paddingBottom={48}>
           <p
             style={{
               fontFamily: sans,
-              fontSize: 16,
+              fontSize: 15,
               lineHeight: 1.65,
               color: PALETTE.muted,
               margin: 0,
@@ -152,6 +224,12 @@ export default function PeacPage() {
             registries under Apache-2.0.
           </p>
         </PageSection>
+
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+        />
 
         {/* 1. What PEAC is */}
         <PageSection>
@@ -218,6 +296,13 @@ export default function PeacPage() {
           </div>
         </PageSection>
 
+
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+        />
+
         {/* 3. What a record contains */}
         <PageSection>
           <SectionHeading
@@ -270,6 +355,13 @@ export default function PeacPage() {
           </div>
         </PageSection>
 
+
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+        />
+
         {/* 4. Workflows */}
         <PageSection background={PALETTE.paper} paddingTop={80} paddingBottom={80}>
           <SectionHeading
@@ -300,6 +392,13 @@ export default function PeacPage() {
             ))}
           </div>
         </PageSection>
+
+
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+        />
 
         {/* 5. Use standalone or with Originary */}
         <PageSection>
@@ -349,6 +448,13 @@ export default function PeacPage() {
             </Card>
           </div>
         </PageSection>
+
+
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+        />
 
         {/* 6. Install */}
         <PageSection paddingBottom={112}>
@@ -429,6 +535,82 @@ const code = {
   background: 'rgba(20, 17, 10, 0.04)',
   padding: '2px 6px',
   border: `1px solid ${PALETTE.hairline}`,
+}
+
+const peacHeroGrid = {
+  display: 'grid',
+  gridTemplateColumns: 'minmax(0, 1.1fr) minmax(0, 0.9fr)',
+  gap: 56,
+  alignItems: 'start',
+} as const
+
+const peacHeroAside = {
+  position: 'relative' as const,
+  minWidth: 0,
+}
+
+const peacHeroCard = {
+  position: 'relative' as const,
+  padding: 24,
+  background: PALETTE.paper,
+  border: `1px solid ${PALETTE.rule}`,
+  fontFamily: mono,
+  fontSize: 13,
+  lineHeight: 1.7,
+  color: PALETTE.ink,
+}
+
+const peacHeroCardLabel = {
+  fontFamily: mono,
+  fontSize: 11,
+  letterSpacing: '0.12em',
+  textTransform: 'uppercase' as const,
+  color: PALETTE.faint,
+  paddingBottom: 14,
+  marginBottom: 14,
+  borderBottom: `1px solid ${PALETTE.hairline}`,
+}
+
+const peacHeroCardLine = {
+  display: 'grid',
+  gridTemplateColumns: '64px 1fr',
+  gap: 14,
+  fontFamily: mono,
+  fontSize: 13,
+  lineHeight: 1.75,
+}
+
+const peacHeroCardKey = {
+  color: PALETTE.muted,
+}
+
+const peacHeroCardVal = {
+  color: PALETTE.ink,
+  overflow: 'hidden' as const,
+  textOverflow: 'ellipsis' as const,
+  whiteSpace: 'nowrap' as const,
+}
+
+const peacHeroCardFoot = {
+  marginTop: 18,
+  paddingTop: 14,
+  borderTop: `1px solid ${PALETTE.hairline}`,
+  display: 'flex',
+  alignItems: 'center',
+  gap: 8,
+  fontFamily: mono,
+  fontSize: 11,
+  letterSpacing: '0.08em',
+  textTransform: 'uppercase' as const,
+  color: PALETTE.muted,
+}
+
+const peacHeroCardDot = {
+  width: 6,
+  height: 6,
+  background: PALETTE.ink,
+  borderRadius: '50%' as const,
+  display: 'inline-block',
 }
 
 function Stat({

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
-import { Nav, HomeFooter, PALETTE, MAX_W, PAGE_PAD } from '@/components/home'
+import { Nav, HomeFooter, InViewClass, PALETTE, MAX_W, PAGE_PAD } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
 
 export const metadata: Metadata = {
@@ -171,72 +171,38 @@ export default function PricingPage() {
           style={{
             maxWidth: MAX_W,
             margin: '0 auto',
-            padding: `clamp(48px, 8vh, 96px) ${PAGE_PAD} 40px ${PAGE_PAD}`,
+            padding: `clamp(64px, 9vh, 112px) ${PAGE_PAD} clamp(40px, 6vh, 64px) ${PAGE_PAD}`,
           }}
         >
-          <div style={{ textAlign: 'center', maxWidth: 760, margin: '0 auto' }}>
-            <Mono
-              size={11}
-              color={PALETTE.muted}
-              style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
-            >
-              Originary · pricing
-            </Mono>
-            <h1
-              style={{
-                fontFamily: sans,
-                fontSize: 'clamp(48px, 7vw, 80px)',
-                lineHeight: 1.02,
-                fontWeight: 500,
-                letterSpacing: '-0.03em',
-                margin: '16px 0 0 0',
-                color: PALETTE.ink,
-                textWrap: 'balance',
-              }}
-            >
-              Open protocol.
-            </h1>
-            <p
-              style={{
-                fontFamily: sans,
-                fontSize: 'clamp(20px, 2.4vw, 26px)',
-                lineHeight: 1.25,
-                fontWeight: 400,
-                letterSpacing: '-0.015em',
-                color: PALETTE.muted,
-                margin: '12px 0 0 0',
-                textWrap: 'balance',
-              }}
-            >
-              Commercial support for production verification.
-            </p>
-            <p
-              style={{
-                fontFamily: sans,
-                fontSize: 17,
-                lineHeight: 1.6,
-                color: PALETTE.muted,
-                margin: '24px auto 0 auto',
-                maxWidth: 620,
-                textWrap: 'pretty',
-              }}
-            >
-              Originary publishes PEAC Protocol as open-source software and provides commercial support, managed verification, and deployment help for teams using it in production.
-            </p>
-            <p
-              style={{
-                fontFamily: sans,
-                fontSize: 16,
-                lineHeight: 1.6,
-                color: PALETTE.muted,
-                margin: '12px auto 0 auto',
-                maxWidth: 620,
-                textWrap: 'pretty',
-              }}
-            >
-              Use PEAC Protocol by Originary freely. Bring in Originary for managed verification, deployment support, and record exports when another party needs verification your logs cannot provide.
-            </p>
-          </div>
+          <InViewClass className="home-eyebrow-rule" as="div">
+            <span className="home-about-eyebrow">pricing</span>
+          </InViewClass>
+          <h1 className="home-about-h1">Open protocol.</h1>
+          <p className="home-about-lede" style={{ marginTop: 22 }}>
+            Commercial support for production verification.
+          </p>
+          <p className="home-about-body" style={{ marginTop: 14, maxWidth: 640 }}>
+            Use PEAC Protocol by Originary freely under Apache-2.0. Bring in
+            Originary for managed verification, deployment support, and record
+            exports when another party needs verification your logs cannot
+            provide.
+          </p>
+        </section>
+
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+        />
+
+        <section
+          className="home-section"
+          style={{
+            maxWidth: MAX_W,
+            margin: '0 auto',
+            padding: `clamp(32px, 5vh, 56px) ${PAGE_PAD} 0 ${PAGE_PAD}`,
+          }}
+        >
 
           <div
             className="home-card"

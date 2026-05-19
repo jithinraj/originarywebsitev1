@@ -628,3 +628,32 @@ html {
   .home-stat-cell { border-right: 0; border-bottom: 1px solid rgba(20, 17, 10, 0.10); }
   .home-stat-cell:last-child { border-bottom: 0; }
 }
+
+/* /peac asymmetric hero: stack columns at narrow viewports. The hero card on
+ * the right collapses below the headline + body on mobile so the page never
+ * shows a horizontal scroll. */
+@media (max-width: 880px) {
+  .home-peac-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+/* Compact footer at mobile: brand block + 2-col link grid stack vertically;
+ * bottom row wraps cleanly. */
+@media (max-width: 640px) {
+  .home-footer-top {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .home-footer-cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    justify-content: start !important;
+  }
+  .home-footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+}
