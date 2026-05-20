@@ -1,33 +1,13 @@
 'use client'
 
 /**
- * HeroV2 - explainer flowchart hero.
+ * Hero flowchart.
  *
- *   SYSTEMS THAT ACT  -->  ORIGINARY SIGNED RECORD  -->  ANYONE CAN VERIFY
+ * Stage at >= 1180px is a 1040 x 280 canvas:
+ *   [ LEFT chips 280 | left-svg 100 | DIAMOND 280 | right-svg 100 | RIGHT chips 280 ]
  *
- * Composition goals:
- *   - A visitor understands the story within 5 seconds.
- *   - Records-first framing; no compliance-SaaS aesthetic.
- *   - Sans by default; monospace reserved for protocol tokens.
- *   - Outcome chips (audit, compliance review, dispute evidence, partner handoff)
- *     are secondary aftermath, not primary verification surfaces.
- *
- * Geometry locked to a 1040 x 280 stage at >= 1180px:
- *   [ 280 LEFT chips | 100 LEFT-svg | 280 DIAMOND | 100 RIGHT-svg | 280 RIGHT chips ]
- *   Left chip y-centers (stage coords):  20, 68, 116, 164, 212, 260
- *   Right chip y-centers (stage coords): 92, 140, 188
- *   Diamond left tip:  (380, 140)
- *   Diamond right tip: (660, 140)
- *
- * Animation: calm five-phase loop (~7s).
- *   observe (1.4s) - left chip lights; chip line draws to diamond
- *   sign    (1.0s) - diamond core rotates, mint accent settles
- *   verify  (1.4s) - line draws to active output; cycles through outputs
- *   export  (1.6s) - lands on EXPORTED BUNDLE; outcome chips fade in
- *   rest    (1.2s) - returns to base
- *
- * prefers-reduced-motion -> all transitions removed, dashoffset pinned to 0;
- * the diagram still reads end-to-end as a static explainer.
+ * Reduced-motion: transitions removed and the diagram renders as a static
+ * end-to-end explainer.
  */
 
 import { useEffect, useState, type ReactNode } from 'react'
@@ -63,11 +43,11 @@ const BUNDLE_IDX = 2 // "Exported bundle" is the canonical portable path
 type Phase = 'observe' | 'sign' | 'verify' | 'export' | 'rest'
 const PHASE_ORDER: Phase[] = ['observe', 'sign', 'verify', 'export', 'rest']
 const PHASE_MS: Record<Phase, number> = {
-  observe: 1400,
-  sign: 1000,
-  verify: 1400,
-  export: 1600,
-  rest: 1200,
+  observe: 1600,
+  sign: 1400,
+  verify: 1600,
+  export: 2000,
+  rest: 1400,
 }
 
 function leftPath(i: number) {
@@ -141,7 +121,7 @@ export function HeroV2() {
       <div style={heroTopStyle}>
         <p style={heroEyebrow}>WHEN LOGS ARE NOT ENOUGH</p>
         <h1 id="hero-headline" style={heroHeadline}>
-          Verify agent and API work outside your own systems.
+          Verify what agents and APIs did across company boundaries
         </h1>
         <p style={heroSub}>
           Originary turns API calls, MCP tool runs, agent actions, gateway decisions, payment
@@ -340,7 +320,11 @@ export function HeroV2() {
             </ol>
           </div>
 
-          <p className="home-herov2-tagline">Logs stay local. Signed records travel.</p>
+          <p
+            className={`home-herov2-tagline ${phase === 'export' || phase === 'rest' ? 'is-revealed' : ''}`}
+          >
+            Logs stay local. Signed records travel.
+          </p>
         </div>
 
         {/* Mobile stack fallback */}
@@ -425,7 +409,11 @@ export function HeroV2() {
             ))}
           </ol>
 
-          <p className="home-herov2-tagline">Logs stay local. Signed records travel.</p>
+          <p
+            className={`home-herov2-tagline ${phase === 'export' || phase === 'rest' ? 'is-revealed' : ''}`}
+          >
+            Logs stay local. Signed records travel.
+          </p>
         </div>
       </div>
     </section>

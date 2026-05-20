@@ -115,7 +115,7 @@ export default function About() {
 
         {/* What we build */}
         <PageSection paddingTop={32} paddingBottom={64}>
-          <div style={twoCol}>
+          <div className="home-about-twocol">
             <Reveal>
               <InViewClass className="home-eyebrow-rule" as="div">
                 <span className="home-about-eyebrow">what we build</span>
@@ -167,7 +167,7 @@ export default function About() {
 
         {/* PEAC Protocol */}
         <PageSection paddingTop={32} paddingBottom={64}>
-          <div style={twoCol}>
+          <div className="home-about-twocol">
             <Reveal>
               <InViewClass className="home-eyebrow-rule" as="div">
                 <span className="home-about-eyebrow">open source</span>
@@ -249,7 +249,7 @@ export default function About() {
 
         {/* Company */}
         <PageSection paddingTop={32} paddingBottom={64}>
-          <div style={twoCol}>
+          <div className="home-about-twocol">
             <Reveal>
               <InViewClass className="home-eyebrow-rule" as="div">
                 <span className="home-about-eyebrow">company</span>
@@ -280,7 +280,7 @@ export default function About() {
 
         {/* Contact */}
         <PageSection paddingTop={32} paddingBottom={112}>
-          <div style={twoCol}>
+          <div className="home-about-twocol">
             <Reveal>
               <InViewClass className="home-eyebrow-rule" as="div">
                 <span className="home-about-eyebrow">contact</span>
@@ -352,12 +352,6 @@ export default function About() {
 }
 
 const dividerWrap = { maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }
-const twoCol = {
-  display: 'grid',
-  gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.4fr)',
-  gap: 48,
-  alignItems: 'start',
-} as const
 const linkAction = {
   display: 'inline-flex',
   alignItems: 'center',

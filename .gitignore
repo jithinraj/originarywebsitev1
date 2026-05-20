@@ -81,3 +81,9 @@ logs/
 # Build artifacts
 tsconfig.tsbuildinfo
 .gstack/
+
+# Local audit artifacts
+/snapshots/
+
+# Local scratch helpers
+/_*.mjs
