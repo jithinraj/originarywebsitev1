@@ -30,7 +30,7 @@ const CHIPS: Chip[] = [
 
 const OUTPUTS: Output[] = [
   { id: 'counterparty', label: 'Counterparty verifies', meta: 'online' },
-  { id: 'audit',        label: 'Audit review',          meta: 'reviewer' },
+  { id: 'audit',        label: 'Audit',                 meta: 'review' },
   { id: 'bundle',       label: 'Exported bundle',       meta: 'portable' },
 ]
 

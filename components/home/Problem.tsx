@@ -39,6 +39,7 @@ export function Problem() {
         <Mono size={12} color={PALETTE.muted}>
           Logs help operators debug.
         </Mono>
+        {' '}
         <Mono size={12} color={PALETTE.ink}>
           Records give counterparties something they can verify.
         </Mono>

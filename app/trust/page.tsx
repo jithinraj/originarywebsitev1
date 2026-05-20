@@ -335,11 +335,11 @@ export default function TrustPage() {
               script, can verify the signature using the issuer&apos;s published public key.
             </p>
             <p style={proseStyle}>
-              Verification never calls home. There is no Originary API in the verification path. The verifier fetches
-              the public key from the issuer&apos;s standard JWKS endpoint once, then validates signatures locally. If
-              the issuer is temporarily unreachable, verifiers may use previously cached public keys according to their
-              local trust, expiry, and revocation policy. The signed record carries the fields needed to confirm what
-              happened, when, and who attested to it.
+              Verification does not call Originary. After issuer key resolution, records can be verified locally or
+              offline according to the verifier&apos;s cache, expiry, and revocation policy. The verifier fetches the
+              public key from the issuer&apos;s standard JWKS endpoint once, then validates signatures locally. If the
+              issuer is temporarily unreachable, verifiers may use previously cached public keys. The signed record
+              carries the fields needed to confirm what happened, when, and who attested to it.
             </p>
             <KeyPoint>
               Records are self-contained. Verification is local. No network dependency on Originary or any third party

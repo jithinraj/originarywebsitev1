@@ -318,10 +318,8 @@ html {
     border-bottom: none !important;
   }
   .home-ladder-row {
-    grid-template-columns: 50px 1fr !important;
-  }
-  .home-ladder-row > div:last-child {
-    display: none !important;
+    grid-template-columns: 44px 1fr !important;
+    padding: 18px 20px !important;
   }
   .home-cta-grid {
     grid-template-columns: 1fr !important;
@@ -676,8 +674,8 @@ html {
 }
 @media (max-width: 540px) {
   .home-footer-top {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 28px 24px !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 24px 16px !important;
   }
   .home-footer-bottom {
     flex-direction: column !important;
