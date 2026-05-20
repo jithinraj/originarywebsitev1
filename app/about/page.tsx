@@ -261,15 +261,15 @@ export default function About() {
             <Reveal delay={120}>
               <div>
                 <p className="home-about-body" style={{ marginTop: 0 }}>
-                  Originary is a brand of Poem, Inc., a Delaware corporation.
-                  Poem, Inc. maintains the Originary products and services
-                  built around PEAC Protocol.
+                  Poem, Inc. is a Delaware corporation. Originary is a brand
+                  of Poem, Inc. Poem publishes and maintains Originary
+                  software and documentation for PEAC Protocol.
                 </p>
                 <p className="home-about-body">
                   We are a small team. We work in the open where possible and
-                  ship software under permissive licenses. We are not
-                  affiliated with any other entity that uses similar product
-                  names.
+                  ship software under permissive licenses. Originary is not
+                  affiliated with any other organization using a similar
+                  name.
                 </p>
               </div>
             </Reveal>

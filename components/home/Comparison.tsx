@@ -26,12 +26,12 @@ export function Comparison() {
       style={{
         maxWidth: MAX_W,
         margin: '0 auto',
-        padding: `48px ${PAGE_PAD} 112px ${PAGE_PAD}`,
+        padding: `40px ${PAGE_PAD} 88px ${PAGE_PAD}`,
       }}
     >
       <SectionTitle
         title="We do not replace the stack. We verify what leaves it."
-        body="Gateways route. Observability traces. Payment rails settle. Policy engines decide. Runtimes execute. Originary records selected facts from those systems in a format another party can verify."
+        body="Originary does not replace observability, gateways, policy engines, payment rails, or internal audit tools. It creates portable verification records from the workflows those systems already run."
       />
       <div style={{ marginTop: 48 }}>
         <ComparisonAnim />
@@ -66,11 +66,11 @@ function ComparisonAnim() {
         }}
       >
         <Mono
-          size={10}
-          color={PALETTE.faint}
-          style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
+          size={11}
+          color={PALETTE.muted}
+          style={{ letterSpacing: '0.05em' }}
         >
-          your stack
+          Your stack
         </Mono>
         <div
           style={{
@@ -143,10 +143,10 @@ function ComparisonMiddle({ time }: { time: number }) {
     >
       <Mono
         size={11}
-        color={PALETTE.faint}
-        style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
+        color={PALETTE.ink}
+        style={{ letterSpacing: '0.05em' }}
       >
-        boundary event
+        Originary record
       </Mono>
 
       <div style={{ position: 'relative', marginTop: 32, width: 156, height: 156 }}>
@@ -176,11 +176,11 @@ function ComparisonMiddle({ time }: { time: number }) {
           }}
         >
           <Mono
-            size={10}
+            size={11}
             color={PALETTE.ink}
-            style={{ letterSpacing: '0.18em', textTransform: 'uppercase', fontWeight: 500 }}
+            style={{ letterSpacing: '-0.005em', fontWeight: 500 }}
           >
-            selected fact
+            signed record
           </Mono>
         </div>
       </div>
@@ -201,11 +201,11 @@ function ComparisonRight({ time }: { time: number }) {
   return (
     <div style={{ padding: '28px 28px', display: 'flex', flexDirection: 'column' }}>
       <Mono
-        size={10}
-        color={PALETTE.faint}
-        style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
+        size={11}
+        color={PALETTE.muted}
+        style={{ letterSpacing: '0.05em' }}
       >
-        originary record
+        External verifier
       </Mono>
       <div
         style={{
@@ -229,8 +229,8 @@ function ComparisonRight({ time }: { time: number }) {
           ]}
         />
       </div>
-      <Mono size={10} color={PALETTE.muted} style={{ marginTop: 18, lineHeight: 1.5 }}>
-        Travels outward · independently verifiable
+      <Mono size={11} color={PALETTE.muted} style={{ marginTop: 18, lineHeight: 1.55, letterSpacing: '-0.005em' }}>
+        Customer, auditor, partner, downstream system.
       </Mono>
     </div>
   )

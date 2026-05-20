@@ -66,7 +66,7 @@ export function Nav() {
         style={{
           maxWidth: MAX_W,
           margin: '0 auto',
-          padding: `14px ${PAGE_PAD}`,
+          padding: `18px ${PAGE_PAD}`,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -102,8 +102,8 @@ export function Nav() {
               className="home-nav-link"
               style={{
                 fontFamily: SANS,
-                fontSize: 13,
-                color: PALETTE.muted,
+                fontSize: 13.5,
+                color: '#3a352b',
                 textDecoration: 'none',
                 letterSpacing: '-0.005em',
                 transition: 'color 160ms ease',
@@ -274,7 +274,7 @@ export function Nav() {
 }
 
 export function Wordmark({
-  height = 28,
+  height = 32,
   replayOnHover = true,
   autoPlay = true,
 }: {
@@ -288,6 +288,7 @@ export function Wordmark({
         display: 'inline-flex',
         alignItems: 'center',
         height,
+        overflow: 'visible',
       }}
     >
       <OriginaryLogoMotion

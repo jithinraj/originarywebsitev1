@@ -10,11 +10,11 @@ import { ease, tween } from './motion/easing'
 import { DemoRequestForm } from './DemoRequestForm'
 
 const reasonList = [
-  'Usage review',
-  'Customer audit request',
-  'MCP tool-call review',
-  'Procurement proof',
-  'Incident reconstruction',
+  'Agent action',
+  'Customer dispute',
+  'MCP tool run',
+  'Procurement review',
+  'Payment or gateway event',
 ]
 
 export function DemoCTA() {
@@ -25,23 +25,14 @@ export function DemoCTA() {
       style={{
         maxWidth: MAX_W,
         margin: '0 auto',
-        padding: `48px ${PAGE_PAD} 64px ${PAGE_PAD}`,
+        padding: `40px ${PAGE_PAD} 64px ${PAGE_PAD}`,
         scrollMarginTop: 80,
       }}
     >
-      <SectionTitle
-        title="Start with one proof request."
-        body="Originary is for teams whose machine actions cross a boundary and later need verification. Bring one billable, audited, or high-stakes machine action, and turn it into a signed record another party can verify."
-      />
-      <div style={{ marginTop: 56 }}>
-        <CTAAnim />
-      </div>
-
       <div
         id="demo"
         className="home-cta-grid home-card"
         style={{
-          marginTop: 56,
           display: 'grid',
           gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
           gap: 0,
@@ -56,7 +47,7 @@ export function DemoCTA() {
             color={PALETTE.muted}
             style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
           >
-            demo
+            Get started
           </Mono>
           <h3
             style={{
@@ -70,21 +61,21 @@ export function DemoCTA() {
               textWrap: 'balance',
             }}
           >
-            Start with one workflow where logs already fail.
+            Start with one workflow where proof already matters.
           </h3>
           <p
             style={{
               fontFamily: SANS,
-              fontSize: 15,
+              fontSize: 16,
               lineHeight: 1.6,
-              color: PALETTE.muted,
-              margin: '16px 0 24px 0',
+              color: '#3a352b',
+              margin: '16px 0 22px 0',
               textWrap: 'pretty',
             }}
           >
-            Bring one API, MCP, commerce, or runtime flow. Originary will help
-            make selected events signed, verifiable, and exportable without
-            replacing your stack.
+            Send one API call, MCP tool run, agent action, gateway decision,
+            payment event, or provisioning workflow. We&rsquo;ll show what a
+            signed record could look like.
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {reasonList.map((item) => (
@@ -114,13 +105,14 @@ export function DemoCTA() {
             ))}
           </ul>
           <div style={{ marginTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <CTAButton href="/#demo" primary>
+            <CTAButton href="#demo-form" primary>
               Request a demo
             </CTAButton>
             <CTAButton href="/downloads">Verify a sample record</CTAButton>
           </div>
         </div>
         <div
+          id="demo-form"
           style={{
             padding: '36px 36px 40px 36px',
             borderLeft: `1px solid ${PALETTE.hairline}`,

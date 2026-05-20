@@ -20,9 +20,9 @@ export function Divider({ eyebrow }: { eyebrow: string }) {
         }}
       >
         <Mono
-          size={11}
-          color={PALETTE.faint}
-          style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
+          size={11.5}
+          color="#7a7263"
+          style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
         >
           {eyebrow}
         </Mono>
