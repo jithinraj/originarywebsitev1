@@ -11,22 +11,22 @@ const stages: Array<{ n: string; title: string; copy: string }> = [
   {
     n: '01',
     title: 'One workflow',
-    copy: 'Add signed records to one action that already creates reviews, billing questions, audits, or customer support work.',
+    copy: 'Pick a workflow where another party already asks, "What happened?"',
   },
   {
     n: '02',
-    title: 'Managed issuer',
-    copy: 'Operate signing keys, record retention, trust artifacts, and verifier access without changing your runtime.',
+    title: 'Record issued',
+    copy: 'Originary creates signed records from selected workflow facts.',
   },
   {
     n: '03',
-    title: 'Record adapters',
-    copy: 'Extend records across API, MCP, agent, gateway, runtime, payment, and provisioning workflows.',
+    title: 'Review begins',
+    copy: 'Share records with a customer, auditor, partner, or internal reviewer.',
   },
   {
     n: '04',
-    title: 'Review bundles',
-    copy: 'Export records for customer review, procurement, audit, incident review, and compliance workflows.',
+    title: 'Expand when useful',
+    copy: 'Add more workflows only when the proof boundary matters.',
   },
 ]
 
@@ -39,29 +39,16 @@ export function Ladder() {
       style={{
         maxWidth: MAX_W,
         margin: '0 auto',
-        padding: `48px ${PAGE_PAD} 112px ${PAGE_PAD}`,
+        padding: `40px ${PAGE_PAD} 88px ${PAGE_PAD}`,
       }}
     >
       <SectionTitle
         title="Start with one workflow. Expand when proof matters."
-        body="Add records to one boundary action first: an API call, MCP tool call, agent action, gateway decision, payment workflow, or provisioning event. Then expand to more teams, record types, and review flows as verification becomes operational."
+        body="Most teams start with one workflow where external proof is already painful: a customer-facing API, an agent action, a gateway decision, a payment event, or an audit request."
       />
-      <div style={{ marginTop: 48 }}>
+      <div style={{ marginTop: 40 }}>
         <LadderGrid />
       </div>
-      <p
-        style={{
-          marginTop: 32,
-          fontFamily: SANS,
-          fontSize: 14,
-          lineHeight: 1.65,
-          color: PALETTE.muted,
-          textAlign: 'center',
-          textWrap: 'pretty',
-        }}
-      >
-        Start narrow. Scale only where records already reduce review work.
-      </p>
     </section>
   )
 }
@@ -80,22 +67,21 @@ function LadderGrid() {
       {stages.map((s, i) => {
         const delay = 0.1 + i * 0.18
         const appear = tween(t, delay, delay + 0.6, ease.out)
-        const width = 60 + i * 10
         return (
           <div
             key={s.n}
             className="home-ladder-row home-card"
             style={{
               display: 'grid',
-              gridTemplateColumns: '60px 1fr 240px',
+              gridTemplateColumns: '60px 1fr',
               alignItems: 'center',
-              padding: '22px 28px',
+              padding: '20px 28px',
               borderBottom: i < stages.length - 1 ? `1px solid ${PALETTE.hairline}` : 'none',
               opacity: appear,
               transform: `translateY(${(1 - appear) * 6}px)`,
             }}
           >
-            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.18em' }}>
+            <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.16em' }}>
               {s.n}
             </Mono>
             <div>
@@ -116,21 +102,11 @@ function LadderGrid() {
                   fontSize: 14,
                   color: PALETTE.muted,
                   marginTop: 4,
+                  lineHeight: 1.55,
                 }}
               >
                 {s.copy}
               </div>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-              <div
-                style={{
-                  width: `${width * appear}%`,
-                  height: 6,
-                  background: PALETTE.ink,
-                  transition: 'width 200ms',
-                  maxWidth: 240,
-                }}
-              />
             </div>
           </div>
         )

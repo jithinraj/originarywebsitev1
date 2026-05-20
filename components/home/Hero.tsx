@@ -65,17 +65,33 @@ export function Hero() {
           <p
             style={{
               fontFamily: SANS,
+              fontSize: 19,
+              lineHeight: 1.45,
+              fontWeight: 500,
+              color: PALETTE.ink,
+              margin: '20px 0 0 0',
+              maxWidth: 560,
+              textWrap: 'pretty',
+              letterSpacing: '-0.005em',
+            }}
+          >
+            Signed records for API, MCP, agent, gateway, payment, and
+            provisioning workflows.
+          </p>
+          <p
+            style={{
+              fontFamily: SANS,
               fontSize: 17,
               lineHeight: 1.55,
               color: PALETTE.muted,
-              margin: '22px 0 0 0',
+              margin: '16px 0 0 0',
               maxWidth: 560,
               textWrap: 'pretty',
             }}
           >
-            Originary helps teams issue signed records for API, MCP, agent,
-            gateway, payment, and provisioning workflows, so another party can
-            verify what happened without internal logs or dashboard access.
+            Originary helps teams create signed records so customers, partners,
+            auditors, and internal reviewers can verify what happened without
+            internal logs or dashboard access.
           </p>
           <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <HeroLink href="/#demo" primary>
@@ -134,6 +150,7 @@ function HeroLink({
   return (
     <a
       href={href}
+      className="home-arrow-link"
       style={{
         display: 'inline-flex',
         alignItems: 'center',

@@ -4,16 +4,26 @@ import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { Mono } from './atoms/Mono'
 import { Wordmark } from './Nav'
 
-const columns: Array<{ h: string; items: Array<{ label: string; href: string; external?: boolean }> }> = [
+const columns: Array<{
+  h: string
+  items: Array<{ label: string; href: string; external?: boolean }>
+}> = [
   {
     h: 'Originary',
     items: [
       { label: 'Home', href: '/' },
       { label: 'About', href: '/about' },
-      { label: 'PEAC', href: '/peac' },
-      { label: 'Downloads', href: '/downloads' },
       { label: 'Pricing', href: '/pricing' },
       { label: 'Contact', href: '/contact' },
+    ],
+  },
+  {
+    h: 'Protocol',
+    items: [
+      { label: 'PEAC', href: '/peac' },
+      { label: 'Downloads', href: '/downloads' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'Learn', href: '/learn' },
     ],
   },
   {
@@ -26,21 +36,14 @@ const columns: Array<{ h: string; items: Array<{ label: string; href: string; ex
       { label: 'Imprint', href: '/legal/imprint' },
     ],
   },
-  {
-    h: 'Resources',
-    items: [
-      { label: 'Blog', href: '/blog' },
-      { label: 'Learn', href: '/learn' },
-    ],
-  },
-  {
-    h: 'External',
-    items: [
-      { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
-      { label: 'X', href: 'https://x.com/originaryx', external: true },
-    ],
-  },
 ]
+
+const linkStyle = {
+  fontFamily: SANS,
+  fontSize: 13,
+  color: PALETTE.muted,
+  textDecoration: 'none',
+}
 
 export function HomeFooter() {
   return (
@@ -48,7 +51,7 @@ export function HomeFooter() {
       style={{
         borderTop: `1px solid ${PALETTE.hairline}`,
         marginTop: 0,
-        padding: `40px ${PAGE_PAD}`,
+        padding: `40px ${PAGE_PAD} 28px ${PAGE_PAD}`,
         background: PALETTE.bg,
       }}
     >
@@ -56,19 +59,19 @@ export function HomeFooter() {
         style={{
           maxWidth: MAX_W,
           margin: '0 auto',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'flex-start',
+          display: 'grid',
+          gridTemplateColumns: 'minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr)',
           gap: 48,
-          flexWrap: 'wrap',
+          alignItems: 'start',
         }}
+        className="home-footer-top"
       >
-        <div>
+        <div style={{ minWidth: 0 }}>
           <Wordmark />
           <p
             style={{
               margin: '14px 0 0 0',
-              maxWidth: 460,
+              maxWidth: 440,
               fontFamily: SANS,
               fontSize: 13,
               lineHeight: 1.6,
@@ -76,18 +79,15 @@ export function HomeFooter() {
               textWrap: 'pretty',
             }}
           >
-            Originary helps teams issue, inspect, and verify signed records for
-            APIs, MCP tools, agent actions, gateway events, provisioning
-            workflows, and agent-commerce flows, without exposing private logs
-            or credentials.
+            Originary issues, inspects, and verifies signed records for APIs,
+            MCP tools, agent actions, gateway events, provisioning workflows,
+            and agent-commerce flows.
           </p>
         </div>
         <div
           className="home-footer-cols"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, minmax(120px, auto))',
-            gap: 48,
+            display: 'contents',
           }}
         >
           {columns.map((col) => (
@@ -107,27 +107,13 @@ export function HomeFooter() {
                         href={it.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="home-footer-link"
-                        style={{
-                          fontFamily: SANS,
-                          fontSize: 13,
-                          color: PALETTE.muted,
-                          textDecoration: 'none',
-                        }}
+                        className="home-footer-link home-arrow-link"
+                        style={linkStyle}
                       >
                         {it.label}
                       </a>
                     ) : (
-                      <Link
-                        href={it.href}
-                        className="home-footer-link"
-                        style={{
-                          fontFamily: SANS,
-                          fontSize: 13,
-                          color: PALETTE.muted,
-                          textDecoration: 'none',
-                        }}
-                      >
+                      <Link href={it.href} className="home-footer-link" style={linkStyle}>
                         {it.label}
                       </Link>
                     )}
@@ -138,37 +124,76 @@ export function HomeFooter() {
           ))}
         </div>
       </div>
+
+      {/* Bottom row: copyright left, social right */}
       <div
         style={{
           maxWidth: MAX_W,
-          margin: '40px auto 0 auto',
-          paddingTop: 24,
+          margin: '36px auto 0 auto',
+          paddingTop: 22,
           borderTop: `1px solid ${PALETTE.hairline}`,
           display: 'flex',
-          flexDirection: 'column',
-          gap: 12,
+          flexWrap: 'wrap',
+          gap: 18,
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+        className="home-footer-bottom"
+      >
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 4, minWidth: 0 }}>
+          <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.02em' }}>
+            © 2025-2026 Originary · a brand of Poem, Inc. · Apache-2.0 where applicable
+          </Mono>
+          <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.02em' }}>
+            Examples are interoperability surfaces, not partnership claims.
+          </Mono>
+        </div>
+        <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
+          <a
+            href="https://github.com/peacprotocol/peac"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="home-footer-icon"
+            aria-label="PEAC Protocol on GitHub"
+            title="GitHub"
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden>
+              <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38v-1.34c-2.22.48-2.69-1.07-2.69-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.81.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.13 0 0 .67-.21 2.2.82a7.66 7.66 0 014 0c1.53-1.03 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.74.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+          </a>
+          <a
+            href="https://x.com/originaryx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="home-footer-icon"
+            aria-label="Originary on X"
+            title="X"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div
+        style={{
+          maxWidth: MAX_W,
+          margin: '14px auto 0 auto',
         }}
       >
-        <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.02em' }}>
-          © 2025-2026 Originary, a brand of Poem, Inc. All rights reserved except where otherwise licensed.
-        </Mono>
         <p
           style={{
             margin: 0,
-            maxWidth: 760,
             fontFamily: SANS,
-            fontSize: 13,
-            lineHeight: 1.65,
-            color: PALETTE.muted,
-            textWrap: 'pretty',
+            fontSize: 11.5,
+            lineHeight: 1.55,
+            color: PALETTE.faint,
           }}
         >
-          Originary publishes and maintains PEAC Protocol, open-source software
-          for portable, verifiable interaction records.
+          All product names, logos, brands, and copyrights are property of
+          their respective owners.
         </p>
-        <Mono size={11} color={PALETTE.faint} style={{ marginTop: 4 }}>
-          portable · verifiable · independent
-        </Mono>
       </div>
     </footer>
   )

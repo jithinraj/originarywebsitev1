@@ -11,28 +11,28 @@ type Tile = { title: string; q: string }
 
 const tiles: Tile[] = [
   {
-    title: 'Paid API usage',
-    q: 'Was this call authorized, in scope, and billable?',
+    title: 'Agent actions',
+    q: 'What did the agent decide, and which inputs and policy was that decision bound to?',
   },
   {
-    title: 'MCP tool calls',
-    q: 'What tool was called, under what policy, and what result returned?',
+    title: 'MCP tools',
+    q: 'Which tool was called, under what policy, and what result did the tool return?',
   },
   {
     title: 'Gateway decisions',
-    q: 'What happened before the request crossed the boundary?',
+    q: 'What happened at the boundary before the request was routed, throttled, or refused?',
   },
   {
-    title: 'Runtime lifecycle',
-    q: 'Was this action approved, denied, evaluated, or handed off?',
+    title: 'Payment events',
+    q: 'What was authorized, captured, refunded, or settled, and against which mandate?',
   },
   {
-    title: 'Payment flows',
-    q: 'What happened around authorization, access, settlement, or review?',
+    title: 'Provisioning',
+    q: 'Which account, resource, credential, or subscription event occurred, and who issued it?',
   },
   {
-    title: 'Provisioning records',
-    q: 'What account, resource, credential, budget, subscription, domain, or deployment event occurred?',
+    title: 'Audit and partner review',
+    q: 'Can a customer, auditor, or partner verify what happened without internal access?',
   },
 ]
 
@@ -45,12 +45,12 @@ export function UseCases() {
       style={{
         maxWidth: MAX_W,
         margin: '0 auto',
-        padding: `48px ${PAGE_PAD} 112px ${PAGE_PAD}`,
+        padding: `40px ${PAGE_PAD} 88px ${PAGE_PAD}`,
       }}
     >
       <SectionTitle
-        title="One record primitive. Many proof workflows."
-        body="API calls, MCP tools, agent actions, runtime lifecycle events, gateway decisions, payment flows, and provisioning records can all produce portable signed records."
+        title="One record format. Many places to verify."
+        body="Use the same signed-record primitive across agent actions, MCP tools, gateways, payments, provisioning, audits, and partner reviews."
       />
       <div style={{ marginTop: 48 }}>
         <Grid />
@@ -89,14 +89,14 @@ function Grid() {
         style={{
           marginTop: 28,
           textAlign: 'center',
-          fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", monospace',
-          fontSize: 11,
-          letterSpacing: '0.14em',
-          textTransform: 'uppercase',
-          color: PALETTE.muted,
+          fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
+          fontSize: 14,
+          letterSpacing: '-0.005em',
+          color: PALETTE.ink,
+          fontWeight: 500,
         }}
       >
-        different workflows · same portable record pattern
+        Different workflows. Same portable record format.
       </p>
     </div>
   )

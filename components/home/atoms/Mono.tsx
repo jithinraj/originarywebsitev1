@@ -32,7 +32,7 @@ export function Mono({
 
 export function Eyebrow({
   children,
-  color = PALETTE.muted,
+  color = '#5a5346',
 }: {
   children: ReactNode
   color?: string
@@ -41,9 +41,9 @@ export function Eyebrow({
     <div
       style={{
         fontFamily: MONO,
-        fontSize: 11,
+        fontSize: 11.5,
         color,
-        letterSpacing: '0.14em',
+        letterSpacing: '0.11em',
         textTransform: 'uppercase',
       }}
     >
@@ -95,11 +95,11 @@ export function SectionTitle({
         <p
           style={{
             fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
-            fontSize: 17,
+            fontSize: 18,
             lineHeight: 1.55,
-            color: PALETTE.muted,
+            color: '#3a352b',
             marginTop: 18,
-            maxWidth: 620,
+            maxWidth: 640,
             marginLeft: align === 'center' ? 'auto' : 0,
             marginRight: align === 'center' ? 'auto' : 0,
             textWrap: 'pretty',

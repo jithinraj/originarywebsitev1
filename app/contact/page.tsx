@@ -21,9 +21,9 @@ const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
 
 const helpItems = [
   {
-    title: 'I want to check whether my logs are enough.',
-    desc: 'Proof Check, artifact review, and the smallest useful next step',
-    mailto: 'contact@originary.xyz?subject=Proof%20Gap%20Review',
+    title: 'I want to review a workflow where logs are not enough.',
+    desc: 'Workflow review, record design, and the smallest useful next step',
+    mailto: 'contact@originary.xyz?subject=Workflow%20Review',
   },
   {
     title: 'I want to add signed records to one workflow.',
@@ -185,7 +185,7 @@ export default function ContactPage() {
                 textWrap: 'balance',
               }}
             >
-              Tell us the workflow that needs proof.
+              Tell us the workflow that needs verification.
             </h2>
             <ul style={{ listStyle: 'none', padding: 0, margin: '20px 0 0 0' }}>
               {bestFirstMessage.map((item) => (

@@ -3,13 +3,16 @@ import {
   Nav,
   HomeFooter,
   Divider,
-  Hero,
+  HeroV2,
+  WorksWithStrip,
   Problem,
   HowItWorks,
   UseCases,
+  CategoryMatrix,
   Comparison,
   Ladder,
   DemoCTA,
+  Reveal,
   PALETTE,
 } from '@/components/home'
 
@@ -135,19 +138,36 @@ export default function Page() {
       >
         <Nav />
         <main id="main-content" role="main">
-          <Hero />
-          <Divider eyebrow="the problem" />
-          <Problem />
-          <Divider eyebrow="how it works" />
-          <HowItWorks />
-          <Divider eyebrow="use cases" />
-          <UseCases />
-          <Divider eyebrow="what originary is not" />
-          <Comparison />
-          <Divider eyebrow="get started" />
-          <Ladder />
-          <Divider eyebrow="request a demo" />
-          <DemoCTA />
+          <HeroV2 />
+          <WorksWithStrip />
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="where logs fail" />
+            <Problem />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="how it works" />
+            <HowItWorks />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="where it fits" />
+            <UseCases />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="what stays yours" />
+            <CategoryMatrix />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="what originary is not" />
+            <Comparison />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="start small" />
+            <Ladder />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="see it on your workflow" />
+            <DemoCTA />
+          </Reveal>
         </main>
         <HomeFooter />
       </div>

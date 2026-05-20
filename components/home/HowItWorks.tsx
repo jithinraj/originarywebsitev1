@@ -25,25 +25,25 @@ const steps: Step[] = [
   {
     n: '01',
     title: 'Action happens',
-    copy: 'An API, MCP tool, agent, gateway, payment, or provisioning workflow crosses a boundary.',
+    copy: 'An API, agent, gateway, or tool performs work inside your environment.',
     glyph: <StepActionGlyph />,
   },
   {
     n: '02',
     title: 'Record issued',
-    copy: 'Originary binds selected facts, policy, result, timestamp, issuer, and signature.',
+    copy: 'Originary signs selected facts without exposing private logs.',
     glyph: <StepRecordGlyph />,
   },
   {
     n: '03',
     title: 'Counterparty verifies',
-    copy: 'Another party verifies what happened without internal logs or dashboard access.',
+    copy: 'A customer, auditor, partner, or system checks the record independently.',
     glyph: <StepVerifyGlyph />,
   },
   {
     n: '04',
     title: 'Bundle exported',
-    copy: 'Records can be packaged for customer review, procurement, audit, support, and incident review.',
+    copy: 'Records can be shared for audits, disputes, procurement, or review.',
     glyph: <StepBundleGlyph />,
   },
 ]
@@ -57,28 +57,16 @@ export function HowItWorks() {
       style={{
         maxWidth: MAX_W,
         margin: '0 auto',
-        padding: `48px ${PAGE_PAD} 112px ${PAGE_PAD}`,
+        padding: `40px ${PAGE_PAD} 88px ${PAGE_PAD}`,
       }}
     >
       <SectionTitle
-        title="A record that survives the boundary."
-        body="Action happens. Originary issues a signed record. The counterparty verifies it by API, exported bundle, or offline verification."
+        title="A signed record survives the boundary."
+        body="Originary creates a compact, signed record from the workflow: what happened, which policy applied, what result was returned, when it happened, and who issued the record."
       />
       <div style={{ marginTop: 48 }}>
         <StepsGrid />
       </div>
-      <p
-        style={{
-          marginTop: 32,
-          fontFamily: SANS,
-          fontSize: 16,
-          color: PALETTE.ink,
-          letterSpacing: '-0.005em',
-          maxWidth: 640,
-        }}
-      >
-        The runtime decides. Originary preserves what must be verified later.
-      </p>
     </section>
   )
 }

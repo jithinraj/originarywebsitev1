@@ -100,43 +100,118 @@ export function StepVerifyGlyph({ progress = 1 }: { progress?: number }) {
 }
 
 export function StepBundleGlyph({ progress = 1 }: { progress?: number }) {
-  const collapse = clamp01(progress * 1.2)
+  const stackProg = clamp01(progress * 1.4)
+  const arrowProg = clamp01((progress - 0.4) * 2.2)
+  const bundleProg = clamp01((progress - 0.5) * 2.2)
+  const sealProg = clamp01((progress - 0.78) * 4)
+
   return (
     <svg width="120" height="92" viewBox="0 0 120 92" fill="none">
-      {[0, 1, 2].map((i) => {
-        const oy = lerp(i * 10, 6, collapse)
-        const ox = lerp(i * 14, 0, collapse)
+      {/* LEFT: stacked records collapsing into the stack */}
+      {[2, 1, 0].map((i) => {
+        const ox = lerp(i * 4, i * 1.5, stackProg)
+        const oy = lerp(i * 7, i * 2.5, stackProg)
+        const op = 0.5 + (2 - i) * 0.25
         return (
-          <rect
-            key={i}
-            x={10 + ox}
-            y={10 + oy}
-            width="60"
-            height="22"
-            fill={PALETTE.paper}
-            stroke={PALETTE.hairline}
-          />
+          <g key={i} opacity={op * stackProg}>
+            <rect
+              x={4 + ox}
+              y={20 + oy}
+              width="44"
+              height="22"
+              fill={PALETTE.paper}
+              stroke={PALETTE.hairline}
+              strokeWidth="1"
+            />
+            <line
+              x1={9 + ox}
+              y1={27 + oy}
+              x2={40 + ox}
+              y2={27 + oy}
+              stroke={PALETTE.hairline}
+              strokeWidth="1"
+            />
+            <line
+              x1={9 + ox}
+              y1={33 + oy}
+              x2={33 + ox}
+              y2={33 + oy}
+              stroke={PALETTE.hairline}
+              strokeWidth="1"
+            />
+          </g>
         )
       })}
-      <rect
-        x="78"
-        y={lerp(40, 16, collapse)}
-        width="32"
-        height="62"
-        fill={PALETTE.paper}
-        stroke={PALETTE.rule}
-        opacity={collapse > 0.6 ? 1 : 0}
-      />
-      <text
-        x="82"
-        y={lerp(58, 36, collapse)}
-        fontFamily='"IBM Plex Mono", monospace'
-        fontSize="8"
-        fill={PALETTE.muted}
-        opacity={collapse > 0.7 ? 1 : 0}
+
+      {/* MIDDLE: export arrow */}
+      <g opacity={arrowProg}>
+        <line
+          x1="56"
+          y1="46"
+          x2={56 + 12 * arrowProg}
+          y2="46"
+          stroke={PALETTE.rule}
+          strokeWidth="1"
+          strokeLinecap="round"
+        />
+        <path
+          d="M65 43 L69 46 L65 49"
+          stroke={PALETTE.rule}
+          strokeWidth="1"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          opacity={arrowProg > 0.65 ? 1 : 0}
+        />
+      </g>
+
+      {/* RIGHT: sealed bundle */}
+      <g
+        opacity={bundleProg}
+        transform={`translate(${lerp(82, 76, bundleProg)} ${lerp(28, 18, bundleProg)})`}
       >
-        bundle
-      </text>
+        {/* Outer envelope */}
+        <rect
+          x="0"
+          y="0"
+          width="40"
+          height="58"
+          fill={PALETTE.paper}
+          stroke={PALETTE.rule}
+          strokeWidth="1"
+        />
+        {/* Top tab to suggest envelope */}
+        <path
+          d="M0 0 L20 10 L40 0"
+          stroke={PALETTE.hairline}
+          strokeWidth="1"
+          fill="none"
+        />
+        {/* Content lines inside bundle */}
+        <line x1="6" y1="22" x2="34" y2="22" stroke={PALETTE.hairline} strokeWidth="1" />
+        <line x1="6" y1="28" x2="30" y2="28" stroke={PALETTE.hairline} strokeWidth="1" />
+        <line x1="6" y1="34" x2="34" y2="34" stroke={PALETTE.hairline} strokeWidth="1" />
+        <line x1="6" y1="40" x2="26" y2="40" stroke={PALETTE.hairline} strokeWidth="1" />
+        {/* Seal (signed bundle) at bottom-right */}
+        <g opacity={sealProg}>
+          <circle
+            cx="31"
+            cy="50"
+            r="5"
+            fill={PALETTE.paper}
+            stroke={PALETTE.success}
+            strokeWidth="1.2"
+          />
+          <path
+            d="M28.6 50 L30.4 51.8 L33.4 48.6"
+            stroke={PALETTE.success}
+            strokeWidth="1.2"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </g>
+      </g>
     </svg>
   )
 }

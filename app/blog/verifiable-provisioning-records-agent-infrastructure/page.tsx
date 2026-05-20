@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
-import { PageShell, ArticleDoc, ArticleRelated, PALETTE } from '@/components/home'
+import { PageShell, ArticleDoc, ArticleRelated, Reveal, Stagger, PALETTE } from '@/components/home'
 
 export const metadata: Metadata = {
   title: { absolute: 'Verifiable Provisioning Records for Agent Infrastructure | Originary' },
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
-    title: 'When agents provision infrastructure, proof needs to travel',
+    title: 'When agents provision infrastructure, records need to travel',
     description:
       'A PEAC example and integration kit for turning provisioning workflows into signed, offline-verifiable records.',
     url: '/blog/verifiable-provisioning-records-agent-infrastructure',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'When agents provision infrastructure, proof needs to travel',
+    title: 'When agents provision infrastructure, records need to travel',
     description:
       'A PEAC example and integration kit for signed, offline-verifiable provisioning records.',
     images: ['/og'],
@@ -583,9 +583,9 @@ export default function Page() {
             The examples below are compatibility examples based on the public Stripe Projects
             provider directory. They are not customer, partner, endorsement, or integration claims.
           </div>
-          <ul style={providerGrid}>
+          <Stagger as="ul" step={40} baseDelay={40} style={providerGrid}>
             {PROVIDERS.map((p) => (
-              <li key={p.name} style={providerCard}>
+              <li key={p.name} className="home-card" style={providerCard}>
                 <div style={providerName}>{p.name}</div>
                 <div style={providerMeta}>{p.category}</div>
                 <div style={providerLabel}>Example provisioning event</div>
@@ -594,7 +594,7 @@ export default function Page() {
                 <div>{p.record}</div>
               </li>
             ))}
-          </ul>
+          </Stagger>
           <p>
             Provider names are included to explain where provisioning records can apply. This
             does not imply that any listed provider uses, endorses, or integrates PEAC.

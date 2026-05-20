@@ -51,7 +51,7 @@ export function DemoRequestForm({
           fontWeight: 500,
         }}
       >
-        Tell us the workflow that needs proof.
+        Tell us the workflow that needs verification.
       </div>
 
       <Field label="Work email" htmlFor="demo-email">

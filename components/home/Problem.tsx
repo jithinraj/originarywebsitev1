@@ -17,12 +17,12 @@ export function Problem() {
       style={{
         maxWidth: MAX_W,
         margin: '0 auto',
-        padding: `48px ${PAGE_PAD} 112px ${PAGE_PAD}`,
+        padding: `40px ${PAGE_PAD} 88px ${PAGE_PAD}`,
       }}
     >
       <SectionTitle
-        title="Logs stop at the company boundary."
-        body="An agent paid for an API call. A gateway routed a request. A tool was approved. A provisioned resource changed state. Later, another party needs to verify what happened. Each side has logs. Nobody wants to expose their dashboard."
+        title="Logs stop at your boundary."
+        body="API calls, agent runs, gateway decisions, payments, and provisioning events happen inside your systems. Originary lets you share signed proof without exposing internal logs."
       />
       <div style={{ marginTop: 48 }}>
         <ProblemAnim />
