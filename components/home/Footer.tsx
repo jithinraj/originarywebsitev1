@@ -140,14 +140,9 @@ export function HomeFooter() {
         }}
         className="home-footer-bottom"
       >
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 4, minWidth: 0 }}>
-          <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.02em' }}>
-            © 2025-2026 Originary · a brand of Poem, Inc. · Apache-2.0 where applicable
-          </Mono>
-          <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.02em' }}>
-            Examples are interoperability surfaces, not partnership claims.
-          </Mono>
-        </div>
+        <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.02em', minWidth: 0 }}>
+          © 2025-2026 Originary · a brand of Poem, Inc. · Apache-2.0 where applicable
+        </Mono>
         <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
           <a
             href="https://github.com/peacprotocol/peac"
@@ -191,8 +186,9 @@ export function HomeFooter() {
             color: PALETTE.faint,
           }}
         >
-          All product names, logos, brands, and copyrights are property of
-          their respective owners.
+          Examples are interoperability surfaces, not partnership claims. All
+          product names, logos, brands, and copyrights are property of their
+          respective owners.
         </p>
       </div>
     </footer>

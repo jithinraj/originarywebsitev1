@@ -84,7 +84,7 @@ const enterpriseFeatures = [
 const comparisonRows: Array<[string, string, string, string]> = [
   ['Price', '$0 forever', 'Custom', 'Custom'],
   ['License', 'Apache-2.0', 'Apache-2.0 + support terms', 'Apache-2.0 + support terms'],
-  ['Signing keys', 'Self-managed', 'Self-managed or KMS-backed', 'KMS-backed attested keys'],
+  ['Signing keys', 'Self-managed', 'Self-managed or KMS-backed', 'KMS-backed signing setup where required'],
   ['Deployment', 'Self-hosted', 'Self-hosted with guidance', 'Originary operates'],
   ['Verification', 'Offline, no dependency', 'Offline, no dependency', 'Offline, no dependency'],
   ['Support', 'GitHub issues', 'Dedicated engineering + SLA', 'Dedicated engineering + SLA'],
@@ -512,7 +512,7 @@ export default function PricingPage() {
               href="mailto:contact@originary.xyz?subject=Enterprise%20Support"
               style={btnPrimary}
             >
-              Talk to the team
+              Request a workflow review
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                 <path d="M1 5h8M5.5 1.5L9 5l-3.5 3.5" stroke="currentColor" strokeWidth="1.25" />
               </svg>

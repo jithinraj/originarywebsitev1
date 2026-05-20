@@ -50,7 +50,14 @@ export function WorksWithStrip() {
           <li key={logo.name} className="home-works-with-item" data-logo={logo.name}>
             <div className="home-works-with-mark">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={logo.src} alt="" loading="lazy" decoding="async" />
+              <img
+                src={logo.src}
+                alt=""
+                width={120}
+                height={32}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <span className="home-works-with-label">{logo.name}</span>
           </li>

@@ -37,7 +37,10 @@ export function CountUp({
 }: CountUpProps) {
   const reduced = useReducedMotion()
   const { ref, entered } = useInView<HTMLSpanElement>({ threshold: 0.4, once: true })
-  const [n, setN] = useState(0)
+  // Start at the final value so server-rendered HTML and the first client
+  // paint match the eventual displayed number (avoids placeholder text
+  // appearing in text extraction / search snippets).
+  const [n, setN] = useState(value)
   const finalText = `${prefix}${value.toLocaleString(locale)}${suffix}`
   const liveText = `${prefix}${n.toLocaleString(locale)}${suffix}`
 
@@ -47,6 +50,7 @@ export function CountUp({
       setN(value)
       return
     }
+    setN(0)
     let raf = 0
     const start = performance.now()
     const tick = (now: number) => {
@@ -58,28 +62,15 @@ export function CountUp({
     return () => cancelAnimationFrame(raf)
   }, [entered, reduced, value, duration])
 
-  // Inline-grid layered approach: both the (invisible) placeholder sized to
-  // the final string and the live (animated) value share grid cell (1,1) so
-  // the wrapper width is determined by the placeholder and never reflows.
   const wrapperStyle: CSSProperties = {
-    display: 'inline-grid',
-    gridTemplateColumns: '1fr',
+    display: 'inline-block',
     fontVariantNumeric: 'tabular-nums',
     ...style,
-  }
-  const cellStyle: CSSProperties = {
-    gridColumn: 1,
-    gridRow: 1,
   }
 
   return (
     <span ref={ref} className={className} style={wrapperStyle} aria-label={finalText}>
-      <span aria-hidden style={{ ...cellStyle, visibility: 'hidden' }}>
-        {finalText}
-      </span>
-      <span aria-hidden style={cellStyle}>
-        {entered || reduced ? liveText : `${prefix}0${suffix}`}
-      </span>
+      {liveText}
     </span>
   )
 }

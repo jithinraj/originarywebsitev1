@@ -146,7 +146,7 @@ export default function ContactPage() {
               +1 415-707-0402
             </div>
             <div style={{ fontFamily: sans, fontSize: 13, color: PALETTE.muted, marginTop: 8 }}>
-              Dover, DE, USA.
+              Dover, DE, USA
             </div>
           </a>
         </div>
