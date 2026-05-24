@@ -30,15 +30,15 @@ const CHIPS: Chip[] = [
 
 const OUTPUTS: Output[] = [
   { id: 'counterparty', label: 'Counterparty verifies', meta: 'online' },
-  { id: 'audit',        label: 'Audit',                 meta: 'review' },
-  { id: 'bundle',       label: 'Exported bundle',       meta: 'portable' },
+  { id: 'audit',        label: 'Auditor reviews',       meta: 'compliance' },
+  { id: 'bundle',       label: 'Bundle exports',        meta: 'portable' },
 ]
 
 /* Stage coordinate y-centers - mirrored in CSS chip top offsets. */
 const LEFT_YS = [20, 68, 116, 164, 212, 260]
 const RIGHT_YS = [68, 140, 212]
 const DIAMOND_CY = 140
-const BUNDLE_IDX = 2 // "Exported bundle" is the canonical portable path
+const BUNDLE_IDX = 2 // Bundle exports is the canonical portable path
 
 type Phase = 'observe' | 'sign' | 'verify' | 'export' | 'rest'
 const PHASE_ORDER: Phase[] = ['observe', 'sign', 'verify', 'export', 'rest']
@@ -221,11 +221,11 @@ export function HeroV2() {
                 <div className="home-herov2-diamond-core" aria-hidden>
                   <svg
                     viewBox="0 0 32 32"
-                    width="32"
-                    height="32"
+                    width="24"
+                    height="24"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="1.4"
+                    strokeWidth="1.3"
                     aria-hidden
                   >
                     <circle cx="16" cy="16" r="13" />
@@ -234,15 +234,12 @@ export function HeroV2() {
                     <circle cx="16" cy="16" r="2.4" fill="currentColor" stroke="none" />
                   </svg>
                   <div className="home-herov2-diamond-fields">
-                    <span className="home-herov2-diamond-fields-row">
-                      <span>facts</span>
-                      <span>policy</span>
-                      <span>result</span>
-                      <span>time</span>
-                      <span>issuer</span>
+                    <span className="home-herov2-diamond-fields-row home-herov2-diamond-fields-primary">
+                      <span>facts &middot; policy</span>
+                      <span>result &middot; time</span>
                     </span>
-                    <span className="home-herov2-diamond-fields-row">
-                      <span>signature</span>
+                    <span className="home-herov2-diamond-fields-row home-herov2-diamond-fields-trust">
+                      <span>issuer &middot; signature</span>
                     </span>
                   </div>
                 </div>
@@ -362,11 +359,11 @@ export function HeroV2() {
               <div className="home-herov2-diamond-core" aria-hidden>
                 <svg
                   viewBox="0 0 32 32"
-                  width="28"
-                  height="28"
+                  width="24"
+                  height="24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1.4"
+                  strokeWidth="1.3"
                   aria-hidden
                 >
                   <circle cx="16" cy="16" r="13" />
@@ -375,15 +372,12 @@ export function HeroV2() {
                   <circle cx="16" cy="16" r="2.4" fill="currentColor" stroke="none" />
                 </svg>
                 <div className="home-herov2-diamond-fields">
-                  <span className="home-herov2-diamond-fields-row">
-                    <span>facts</span>
-                    <span>policy</span>
-                    <span>result</span>
-                    <span>time</span>
-                    <span>issuer</span>
+                  <span className="home-herov2-diamond-fields-row home-herov2-diamond-fields-primary">
+                    <span>facts &middot; policy</span>
+                    <span>result &middot; time</span>
                   </span>
-                  <span className="home-herov2-diamond-fields-row">
-                    <span>signature</span>
+                  <span className="home-herov2-diamond-fields-row home-herov2-diamond-fields-trust">
+                    <span>issuer &middot; signature</span>
                   </span>
                 </div>
               </div>
