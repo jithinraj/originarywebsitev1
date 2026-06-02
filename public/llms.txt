@@ -2,7 +2,7 @@
 
 Originary helps teams issue and verify portable signed records for machine actions.
 
-Last updated: 2026-05-19
+Last updated: 2026-06-01
 
 Company: Poem, Inc.
 Location: Delaware, USA
