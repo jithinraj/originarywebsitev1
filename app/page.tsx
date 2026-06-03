@@ -106,6 +106,20 @@ const structuredData = {
         'https://www.crunchbase.com/organization/originary',
         'https://tracxn.com/d/companies/originary/__hozixk1ps7D4a5LcU9JgV4wq9zY0rDHugXaahrTgh0g',
       ],
+      subjectOf: [
+        {
+          '@type': 'SocialMediaPosting',
+          name: 'Jithin Raj, Founder, Originary on CNBC-TV18',
+          url: 'https://x.com/CNBCTV18News/status/2024805869775421702',
+          publisher: { '@type': 'Organization', name: 'CNBC-TV18' },
+        },
+        {
+          '@type': 'VideoObject',
+          name: 'India AI Impact Summit 2026 LIVE | In Conversation Jithin Raj, Founder of Originary',
+          url: 'https://www.youtube.com/watch?v=jaNuIGwAges',
+          publisher: { '@type': 'Organization', name: 'Network18' },
+        },
+      ],
     },
     {
       '@type': 'WebSite',
