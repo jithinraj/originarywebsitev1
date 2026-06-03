@@ -63,7 +63,7 @@ export default function Security() {
           <p>
             Security fixes are applied to the current stable release only. Older versions may not receive patches. See
             the{' '}
-            <Link href="/changelog" style={linkStyle}>
+            <Link href="/peac" style={linkStyle}>
               changelog
             </Link>{' '}
             for release history and current release status.

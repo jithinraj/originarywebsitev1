@@ -103,6 +103,8 @@ const structuredData = {
         'https://github.com/peacprotocol/peac',
         'https://www.npmjs.com/org/peac',
         'https://originary.substack.com',
+        'https://www.crunchbase.com/organization/originary',
+        'https://tracxn.com/d/companies/originary/__hozixk1ps7D4a5LcU9JgV4wq9zY0rDHugXaahrTgh0g',
       ],
     },
     {
