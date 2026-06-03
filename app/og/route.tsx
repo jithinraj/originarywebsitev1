@@ -4,7 +4,6 @@ import { join } from 'path'
 
 export const runtime = 'nodejs'
 
-// Load Inter Display SemiBold for the brand wordmark
 async function getFont() {
   try {
     const fontPath = join(process.cwd(), 'public', 'fonts', 'InterDisplay-SemiBold.otf')
@@ -23,6 +22,8 @@ const FAINT = '#6e6759'
 
 export async function GET() {
   const fontData = await getFont()
+  const wordmark = await readFile(join(process.cwd(), 'public', 'og-wordmark.png'))
+  const wordmarkSrc = `data:image/png;base64,${wordmark.toString('base64')}`
 
   return new ImageResponse(
     (
@@ -38,20 +39,9 @@ export async function GET() {
           padding: '60px 80px',
         }}
       >
-        {/* Brand wordmark */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '44px' }}>
-          <span
-            style={{
-              fontSize: '44px',
-              fontFamily: 'InterDisplay',
-              fontWeight: 600,
-              color: INK,
-              letterSpacing: '-0.009em',
-            }}
-          >
-            originary
-          </span>
-        </div>
+        {/* Brand wordmark (rendered from the canonical logo) */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={wordmarkSrc} width={208} height={73} alt="Originary" style={{ marginBottom: '44px' }} />
 
         {/* Headline (matches homepage H1) */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>

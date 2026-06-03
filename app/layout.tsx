@@ -76,6 +76,20 @@ const organizationJsonLd = {
     'https://www.crunchbase.com/organization/originary',
     'https://tracxn.com/d/companies/originary/__hozixk1ps7D4a5LcU9JgV4wq9zY0rDHugXaahrTgh0g'
   ],
+  subjectOf: [
+    {
+      '@type': 'SocialMediaPosting',
+      name: 'Jithin Raj, Founder, Originary on CNBC-TV18',
+      url: 'https://x.com/CNBCTV18News/status/2024805869775421702',
+      publisher: { '@type': 'Organization', name: 'CNBC-TV18' }
+    },
+    {
+      '@type': 'VideoObject',
+      name: 'India AI Impact Summit 2026 LIVE | In Conversation Jithin Raj, Founder of Originary',
+      url: 'https://www.youtube.com/watch?v=jaNuIGwAges',
+      publisher: { '@type': 'Organization', name: 'Network18' }
+    }
+  ],
   logo: 'https://www.originary.xyz/logo.svg',
   contactPoint: [
     {
@@ -257,7 +271,9 @@ export default function RootLayout({
     <html lang="en" data-theme="light" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${plexSans.variable} ${plexMono.variable}`}>
       <head>
         <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
-        <link rel="apple-touch-icon" href="/assets/img/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
