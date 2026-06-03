@@ -22,41 +22,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/docs',
-        destination: '/peac',
-        permanent: true,
-      },
-      {
-        source: '/docs/:path*',
-        destination: '/peac',
-        permanent: true,
-      },
-      {
-        source: '/open-source',
-        destination: '/peac',
-        permanent: true,
-      },
-      {
-        source: '/verify',
-        destination: '/downloads',
-        permanent: true,
-      },
-      {
-        source: '/trace',
-        destination: '/peac',
-        permanent: true,
-      },
-      {
-        source: '/trace/pricing',
-        destination: '/pricing',
-        permanent: true,
-      },
-      {
-        source: '/trace/demo',
-        destination: '/',
-        permanent: true,
-      },
-      {
         source: '/sitemap_index.xml',
         destination: '/sitemap.xml',
         permanent: true,
@@ -71,137 +36,13 @@ const nextConfig = {
         destination: '/.well-known/peac.txt',
         permanent: true,
       },
-      {
-        source: '/resources/blog',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/resources/changelog',
-        destination: '/peac',
-        permanent: true,
-      },
-      {
-        source: '/company/about',
-        destination: '/about',
-        permanent: true,
-      },
-      {
-        source: '/company/contact',
-        destination: '/contact',
-        permanent: true,
-      },
-      {
-        source: '/company',
-        destination: '/about',
-        permanent: true,
-      },
-      {
-        source: '/what-is-originary',
-        destination: '/about',
-        permanent: true,
-      },
-      {
-        source: '/platform',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/why-peac',
-        destination: '/peac',
-        permanent: true,
-      },
-      {
-        source: '/solutions',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/solutions/:path*',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/press',
-        destination: '/about',
-        permanent: true,
-      },
-      {
-        source: '/governance',
-        destination: '/peac',
-        permanent: true,
-      },
-      {
-        source: '/conformance',
-        destination: '/peac',
-        permanent: true,
-      },
-      {
-        source: '/glossary',
-        destination: '/peac',
-        permanent: true,
-      },
-      {
-        source: '/glossary/:slug',
-        destination: '/peac',
-        permanent: true,
-      },
-      {
-        source: '/brand',
-        destination: '/about',
-        permanent: true,
-      },
-      // ---- 0.14.2 cleanup: collapse legacy product and integration surfaces ----
-      { source: '/products', destination: '/', permanent: true },
-      { source: '/products/verify', destination: '/pricing', permanent: true },
-      { source: '/products/gateway-402', destination: '/pricing', permanent: true },
-      { source: '/products/adapters', destination: '/downloads', permanent: true },
-      { source: '/products/peac', destination: '/peac', permanent: true },
-      { source: '/products/studio', destination: '/pricing', permanent: true },
-      { source: '/products/:path*', destination: '/', permanent: true },
-      { source: '/developers', destination: '/downloads', permanent: true },
-      { source: '/developers/:path*', destination: '/downloads', permanent: true },
-      { source: '/receipts', destination: '/peac', permanent: true },
-      { source: '/declare', destination: '/downloads', permanent: true },
-      { source: '/demo', destination: '/', permanent: true },
-      { source: '/demo/:path*', destination: '/', permanent: true },
-      { source: '/agent-proof-check', destination: '/', permanent: true },
       { source: '/agent-auditor', destination: '/', permanent: true },
       { source: '/agent-auditor/:path*', destination: '/', permanent: true },
-      { source: '/integrations', destination: '/peac', permanent: true },
-      { source: '/integrations/:path*', destination: '/peac', permanent: true },
-      { source: '/guides/http-402', destination: '/peac', permanent: true },
-      { source: '/guides/:path*', destination: '/peac', permanent: true },
-      { source: '/enterprise', destination: '/pricing', permanent: true },
-      { source: '/enterprise/:path*', destination: '/pricing', permanent: true },
-      { source: '/pilots', destination: '/contact', permanent: true },
-      { source: '/services', destination: '/pricing', permanent: true },
+      { source: '/declare', destination: '/downloads', permanent: true },
       { source: '/legal/privacy', destination: '/privacy', permanent: true },
       { source: '/legal/terms', destination: '/terms', permanent: true },
       { source: '/legal/payments', destination: '/pricing', permanent: true },
-      // ---- 0.14.2 cleanup: P1 minor and ops surfaces ----
-      { source: '/dashboard', destination: '/', permanent: true },
-      { source: '/dashboard/:path*', destination: '/', permanent: true },
-      { source: '/signin', destination: '/', permanent: true },
-      { source: '/checkout', destination: '/', permanent: true },
-      { source: '/checkout/:path*', destination: '/', permanent: true },
-      { source: '/refund', destination: '/', permanent: true },
-      { source: '/shipping', destination: '/', permanent: true },
-      { source: '/offline', destination: '/', permanent: true },
-      { source: '/search', destination: '/', permanent: true },
-      { source: '/status', destination: '/', permanent: true },
-      { source: '/cloud', destination: '/', permanent: true },
-      { source: '/ai', destination: '/', permanent: true },
-      { source: '/originary-ai', destination: '/', permanent: true },
-      { source: '/context-graphs', destination: '/peac', permanent: true },
-      { source: '/system-of-record', destination: '/peac', permanent: true },
-      { source: '/research', destination: '/peac', permanent: true },
-      { source: '/research/:path*', destination: '/peac', permanent: true },
-      { source: '/resources', destination: '/', permanent: true },
-      { source: '/resources/:path*', destination: '/', permanent: true },
-      { source: '/changelog', destination: '/peac', permanent: true },
       { source: '/copyright', destination: '/terms', permanent: true },
-      // CLI downloads -> PEAC Protocol release archives
       {
         source: '/downloads/originary-cli-1.0.0-darwin-arm64.zip',
         destination: 'https://github.com/peacprotocol/peac/archive/refs/tags/v0.9.14.zip',
@@ -288,32 +129,6 @@ const nextConfig = {
           { key: 'X-Robots-Tag', value: 'noindex' },
         ],
       },
-      // Auth and transactional pages: noindex
-      {
-        source: '/signin',
-        headers: [
-          { key: 'X-Robots-Tag', value: 'noindex' },
-        ],
-      },
-      {
-        source: '/dashboard',
-        headers: [
-          { key: 'X-Robots-Tag', value: 'noindex' },
-        ],
-      },
-      {
-        source: '/checkout/:path*',
-        headers: [
-          { key: 'X-Robots-Tag', value: 'noindex' },
-        ],
-      },
-      {
-        source: '/status',
-        headers: [
-          { key: 'X-Robots-Tag', value: 'noindex' },
-        ],
-      },
-      // Sitemap & Robots - Fix Vary header for crawlers
       {
         source: '/sitemap.xml',
         headers: [
