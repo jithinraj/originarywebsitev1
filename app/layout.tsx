@@ -68,7 +68,10 @@ const organizationJsonLd = {
     'https://x.com/originaryx',
     'https://bsky.app/profile/originary.bsky.social',
     'https://warpcast.com/originary',
+    'https://github.com/originaryx',
+    'https://github.com/peacprotocol',
     'https://github.com/peacprotocol/peac',
+    'https://www.npmjs.com/org/peac',
     'https://originary.substack.com'
   ],
   logo: 'https://www.originary.xyz/logo.svg',
@@ -199,7 +202,7 @@ export const metadata: Metadata = {
       url: '/og',
       width: 1200,
       height: 630,
-      alt: 'Originary: prove what AI agents and APIs did'
+      alt: 'Originary: verify what agents and APIs did across company boundaries'
     }],
     type: 'website',
     locale: 'en_US',
@@ -223,6 +226,14 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+      : {}),
+    ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { other: { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } }
+      : {}),
+  },
 }
 
 export const viewport = {
@@ -230,7 +241,7 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: '#F7F9FC', // matches var(--surface-base)
+  themeColor: '#f4f1ea', // matches homepage PALETTE.bg
   colorScheme: 'light',
   viewportFit: 'cover',
 }
@@ -243,7 +254,6 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${plexSans.variable} ${plexMono.variable}`}>
       <head>
-        <link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" rx="48" fill="%230B0B0C"/><path d="M573 -24C875 -24 1078 201 1078 526C1078 853 875 1080 573 1080C271 1080 67 853 67 526C67 201 271 -24 573 -24ZM573 158C392 158 281 301 281 526C281 753 393 898 573 898C753 898 865 753 865 526C865 302 754 158 573 158Z" transform="translate(54.9,195.4) scale(0.1277,-0.1277)" fill="%23FFFFFF"/></svg>' />
         <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
         <link rel="apple-touch-icon" href="/assets/img/favicon.svg" />
         <link rel="manifest" href="/manifest.json" />

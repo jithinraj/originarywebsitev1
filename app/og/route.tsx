@@ -6,18 +6,21 @@ export const runtime = 'nodejs'
 
 // Load Inter Display SemiBold for the brand wordmark
 async function getFont() {
-  // Try loading from the user's local fonts first, fall back to system
   try {
     const fontPath = join(process.cwd(), 'public', 'fonts', 'InterDisplay-SemiBold.otf')
     return await readFile(fontPath)
   } catch {
-    // Fallback: fetch from CDN
     const res = await fetch('https://rsms.me/inter/font-files/InterDisplay-SemiBold.otf')
     return Buffer.from(await res.arrayBuffer())
   }
 }
 
-// OG image renderer requires raw hex. Values must match design-system.css
+// Colors mirror the homepage palette in components/home/palette.ts
+const BG = '#f4f1ea'
+const INK = '#14110a'
+const ACCENT = '#4a627c'
+const FAINT = '#6e6759'
+
 export async function GET() {
   const fontData = await getFont()
 
@@ -31,25 +34,18 @@ export async function GET() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#F7F9FC',
+          backgroundColor: BG,
           padding: '60px 80px',
         }}
       >
-        {/* Logo wordmark - rendered with actual Inter Display SemiBold */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginBottom: '48px',
-          }}
-        >
+        {/* Brand wordmark */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '44px' }}>
           <span
             style={{
-              fontSize: '48px',
+              fontSize: '44px',
               fontFamily: 'InterDisplay',
               fontWeight: 600,
-              color: '#0B0B0C',
+              color: INK,
               letterSpacing: '-0.009em',
             }}
           >
@@ -57,36 +53,13 @@ export async function GET() {
           </span>
         </div>
 
-        {/* Main headline */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            textAlign: 'center',
-          }}
-        >
-          <span
-            style={{
-              fontSize: '64px',
-              fontWeight: 700,
-              color: '#111827',
-              lineHeight: 1.1,
-              letterSpacing: '-0.03em',
-            }}
-          >
-            Prove what AI agents
+        {/* Headline (matches homepage H1) */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+          <span style={{ fontSize: '56px', fontWeight: 700, color: INK, lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+            Verify what agents and APIs did
           </span>
-          <span
-            style={{
-              fontSize: '64px',
-              fontWeight: 700,
-              color: '#1E4D8C',
-              lineHeight: 1.1,
-              letterSpacing: '-0.03em',
-            }}
-          >
-            and APIs did.
+          <span style={{ fontSize: '56px', fontWeight: 700, color: ACCENT, lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+            across company boundaries
           </span>
         </div>
 
@@ -94,9 +67,9 @@ export async function GET() {
         <div
           style={{
             display: 'flex',
-            marginTop: '40px',
+            marginTop: '36px',
             fontSize: '24px',
-            color: '#667085',
+            color: FAINT,
             textAlign: 'center',
             maxWidth: '900px',
           }}
@@ -105,15 +78,7 @@ export async function GET() {
         </div>
 
         {/* Footer */}
-        <div
-          style={{
-            display: 'flex',
-            position: 'absolute',
-            bottom: '40px',
-            fontSize: '20px',
-            color: '#98A2B3',
-          }}
-        >
+        <div style={{ display: 'flex', position: 'absolute', bottom: '40px', fontSize: '20px', color: FAINT }}>
           originary.xyz
         </div>
       </div>

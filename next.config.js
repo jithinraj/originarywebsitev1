@@ -317,7 +317,7 @@ const nextConfig = {
       {
         source: '/sitemap.xml',
         headers: [
-          { key: 'Cache-Control', value: 'public, max-age=86400, s-maxage=86400' },
+          { key: 'Cache-Control', value: 'public, max-age=0, s-maxage=600, must-revalidate' },
           { key: 'Vary', value: 'Accept-Encoding' },
           { key: 'Content-Type', value: 'application/xml; charset=utf-8' },
         ],
@@ -325,7 +325,7 @@ const nextConfig = {
       {
         source: '/robots.txt',
         headers: [
-          { key: 'Cache-Control', value: 'public, max-age=86400, s-maxage=86400' },
+          { key: 'Cache-Control', value: 'public, max-age=0, s-maxage=600, must-revalidate' },
           { key: 'Vary', value: 'Accept-Encoding' },
           { key: 'Content-Type', value: 'text/plain; charset=utf-8' },
         ],

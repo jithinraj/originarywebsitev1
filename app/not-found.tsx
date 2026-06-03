@@ -1,95 +1,96 @@
 import Link from 'next/link'
-import NavigationHeader from '@/components/NavigationHeader'
-import Footer from '@/components/Footer'
+import type { CSSProperties } from 'react'
+import { Nav, HomeFooter, PALETTE, PAGE_PAD, SANS, MONO } from '@/components/home'
+
+const btnBase: CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '12px 22px',
+  borderRadius: '8px',
+  fontFamily: SANS,
+  fontSize: '15px',
+  fontWeight: 500,
+  textDecoration: 'none',
+}
+
+const primaryBtn: CSSProperties = {
+  ...btnBase,
+  background: PALETTE.ink,
+  color: PALETTE.paper,
+  border: `1px solid ${PALETTE.ink}`,
+}
+
+const secondaryBtn: CSSProperties = {
+  ...btnBase,
+  background: 'transparent',
+  color: PALETTE.ink,
+  border: `1px solid ${PALETTE.rule}`,
+}
 
 export default function NotFound() {
   return (
-    <div className="wrap">
-      <NavigationHeader />
-      <main style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '80px' }} id="main-content">
-        <div style={{ textAlign: 'center', maxWidth: '600px', padding: 'var(--space-8)' }}>
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '80px',
-            height: '80px',
-            borderRadius: 'var(--radius-2xl)',
-            background: 'var(--accent-brand-subtle)',
-            border: '1px solid var(--accent-brand-muted)',
-            marginBottom: 'var(--space-6)'
-          }}>
-            <span style={{
-              fontSize: 'var(--text-4xl)',
-              fontWeight: 700,
-              color: 'var(--accent-brand)'
-            }}>
-              404
-            </span>
-          </div>
-
-          <h1 style={{
-            fontSize: 'var(--text-4xl)',
-            fontWeight: 700,
-            marginBottom: 'var(--space-4)',
-            color: 'var(--text-primary)'
-          }}>
-            Page not found
-          </h1>
-
-          <p style={{
-            fontSize: 'var(--text-lg)',
-            color: 'var(--text-secondary)',
-            lineHeight: 1.7,
-            marginBottom: 'var(--space-8)'
-          }}>
-            Sorry, we couldn&rsquo;t find the page you&rsquo;re looking for. The page might have been moved or deleted.
-          </p>
-
-          <div style={{ display: 'flex', gap: 'var(--space-3)', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/" className="btn btn-primary">
-              Go to Homepage
-            </Link>
-            <Link href="/developers" className="btn btn-secondary">
-              Developers
-            </Link>
-            <Link href="/demo" className="btn btn-ghost">
-              View Demo
-            </Link>
-          </div>
-
-          <div style={{
-            marginTop: 'var(--space-12)',
-            padding: 'var(--space-6)',
-            background: 'var(--surface-subtle)',
-            border: '1px solid var(--border-default)',
-            borderRadius: 'var(--radius-xl)'
-          }}>
-            <h2 style={{
-              fontSize: 'var(--text-sm)',
-              fontWeight: 600,
-              color: 'var(--text-secondary)',
-              marginBottom: 'var(--space-3)',
+    <div
+      style={{
+        background: PALETTE.bg,
+        color: PALETTE.ink,
+        fontFamily: SANS,
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <Nav />
+      <main
+        id="main-content"
+        role="main"
+        style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: PAGE_PAD }}
+      >
+        <div style={{ maxWidth: '640px', textAlign: 'center', padding: '96px 0' }}>
+          <div
+            style={{
+              fontFamily: MONO,
+              fontSize: '13px',
+              letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              letterSpacing: '0.05em'
-            }}>
-              Popular Pages
-            </h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)', alignItems: 'center' }}>
-              <Link href="/pricing" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontSize: 'var(--text-sm)' }}>
-                Pricing
-              </Link>
-              <Link href="/docs/receipts" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontSize: 'var(--text-sm)' }}>
-                Documentation
-              </Link>
-              <Link href="/contact" style={{ color: 'var(--accent-brand)', textDecoration: 'none', fontSize: 'var(--text-sm)' }}>
-                Contact Sales
+              color: PALETTE.faint,
+              marginBottom: '20px',
+            }}
+          >
+            404
+          </div>
+          <h1
+            style={{
+              fontSize: 'clamp(32px, 5vw, 48px)',
+              fontWeight: 600,
+              lineHeight: 1.1,
+              letterSpacing: '-0.02em',
+              margin: 0,
+              color: PALETTE.ink,
+            }}
+          >
+            This page is not here.
+          </h1>
+          <p style={{ fontSize: '18px', lineHeight: 1.6, color: PALETTE.muted, marginTop: '18px', marginBottom: '36px' }}>
+            The record may have moved, or the link may be outdated.
+          </p>
+          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link href="/" style={primaryBtn}>
+              Go home
             </Link>
-            </div>
+            <Link href="/peac" style={secondaryBtn}>
+              View PEAC
+            </Link>
+            <Link href="/downloads" style={secondaryBtn}>
+              Downloads
+            </Link>
+            <Link href="/contact" style={secondaryBtn}>
+              Contact
+            </Link>
           </div>
         </div>
       </main>
-      <Footer />
+      <HomeFooter />
     </div>
   )
 }

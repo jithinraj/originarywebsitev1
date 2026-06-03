@@ -94,8 +94,15 @@ const structuredData = {
       description:
         'Originary helps teams issue and verify portable signed records for machine actions.',
       sameAs: [
-        'https://github.com/peacprotocol/peac',
+        'https://www.linkedin.com/company/originary',
         'https://x.com/originaryx',
+        'https://bsky.app/profile/originary.bsky.social',
+        'https://warpcast.com/originary',
+        'https://github.com/originaryx',
+        'https://github.com/peacprotocol',
+        'https://github.com/peacprotocol/peac',
+        'https://www.npmjs.com/org/peac',
+        'https://originary.substack.com',
       ],
     },
     {
