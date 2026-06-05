@@ -79,13 +79,21 @@ const organizationJsonLd = {
   subjectOf: [
     {
       '@type': 'SocialMediaPosting',
+      headline: 'Jithin Raj, Founder, Originary on CNBC-TV18',
       name: 'Jithin Raj, Founder, Originary on CNBC-TV18',
       url: 'https://x.com/CNBCTV18News/status/2024805869775421702',
+      datePublished: '2026-02-20',
+      author: { '@type': 'Organization', name: 'CNBC-TV18' },
       publisher: { '@type': 'Organization', name: 'CNBC-TV18' }
     },
     {
       '@type': 'VideoObject',
       name: 'India AI Impact Summit 2026 LIVE | In Conversation Jithin Raj, Founder of Originary',
+      description: 'In conversation with Jithin Raj, Founder of Originary, at the India AI Impact Summit 2026.',
+      thumbnailUrl: 'https://i.ytimg.com/vi/jaNuIGwAges/hqdefault.jpg',
+      uploadDate: '2026-02-20T03:25:42-08:00',
+      contentUrl: 'https://www.youtube.com/watch?v=jaNuIGwAges',
+      embedUrl: 'https://www.youtube.com/embed/jaNuIGwAges',
       url: 'https://www.youtube.com/watch?v=jaNuIGwAges',
       publisher: { '@type': 'Organization', name: 'Network18' }
     }
