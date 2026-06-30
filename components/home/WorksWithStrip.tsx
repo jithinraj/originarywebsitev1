@@ -1,23 +1,24 @@
-'use client'
-
+// Static content: no hooks, state, or browser APIs, so this renders on the server.
 import { MAX_W, PAGE_PAD, PALETTE } from './palette'
 import { MONO } from './typography'
 
 type LogoEntry = {
   name: string
   src: string
+  /** Icon-forward marks that read small at the nominal height and take a larger cap. */
+  icon?: boolean
 }
 
 const LOGOS: LogoEntry[] = [
-  { name: 'MCP', src: '/logos/mcp-algorand.png' },
+  { name: 'MCP', src: '/logos/mcp-algorand.png', icon: true },
   { name: 'x402', src: '/logos/x402.svg' },
   { name: 'Stripe', src: '/logos/stripe-wordmark-slate.svg' },
-  { name: 'A2A', src: '/logos/a2a-algorand.svg' },
+  { name: 'A2A', src: '/logos/a2a-algorand.svg', icon: true },
   { name: 'Cloudflare', src: '/logos/cloudflare-wordmark.png' },
-  { name: 'AP2', src: '/logos/ap2-algorand.svg' },
+  { name: 'AP2', src: '/logos/ap2-algorand.svg', icon: true },
   { name: 'Vercel', src: '/logos/vercel-logotype-light.png' },
-  { name: 'MPP', src: '/logos/mpp-logo-dark.svg' },
-  { name: 'OpenTelemetry', src: '/logos/opentelemetry.svg' },
+  { name: 'MPP', src: '/logos/mpp-logo-dark.svg', icon: true },
+  { name: 'OpenTelemetry', src: '/logos/opentelemetry.svg', icon: true },
   { name: 'LangChain', src: '/logos/langchain-lockup-black.svg' },
 ]
 
@@ -47,12 +48,14 @@ export function WorksWithStrip() {
       </p>
       <ul className="home-works-with-grid" role="list">
         {LOGOS.map((logo) => (
-          <li key={logo.name} className="home-works-with-item" data-logo={logo.name}>
+          <li key={logo.name} className="home-works-with-item" data-icon={logo.icon ? '' : undefined}>
             <div className="home-works-with-mark">
+              {/* Decorative: the visible label below is the accessible name. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={logo.src}
                 alt=""
+                aria-hidden="true"
                 width={120}
                 height={32}
                 loading="lazy"

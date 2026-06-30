@@ -1194,7 +1194,7 @@ html {
   font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
   font-size: 11.5px;
   letter-spacing: -0.003em;
-  color: #5a5346;
+  color: #463f31;
   text-align: center;
   line-height: 1.2;
   transition: color 220ms ease;
@@ -1202,12 +1202,8 @@ html {
 .home-works-with-item:hover .home-works-with-label {
   color: #14110a;
 }
-/* Icon-only marks need more height than wordmarks to balance optically */
-.home-works-with-item[data-logo="OpenTelemetry"] img { max-height: 30px; }
-.home-works-with-item[data-logo="MCP"] img { max-height: 40px; }
-.home-works-with-item[data-logo="A2A"] img { max-height: 40px; }
-.home-works-with-item[data-logo="AP2"] img { max-height: 40px; }
-.home-works-with-item[data-logo="MPP"] img { max-height: 36px; }
+/* Icon-forward marks take one larger, consistent height cap to balance optically with wordmarks. */
+.home-works-with-item[data-icon] img { max-height: 34px; }
 @media (max-width: 1180px) {
   .home-works-with-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -1222,11 +1218,7 @@ html {
   }
   .home-works-with-mark { height: 34px; }
   .home-works-with-item img { max-height: 22px; }
-  .home-works-with-item[data-logo="OpenTelemetry"] img { max-height: 24px; }
-  .home-works-with-item[data-logo="MCP"] img { max-height: 32px; }
-  .home-works-with-item[data-logo="A2A"] img { max-height: 32px; }
-  .home-works-with-item[data-logo="AP2"] img { max-height: 32px; }
-  .home-works-with-item[data-logo="MPP"] img { max-height: 28px; }
+  .home-works-with-item[data-icon] img { max-height: 30px; }
   .home-works-with-label { font-size: 11px; }
 }
 @media (max-width: 420px) {
