@@ -2,7 +2,7 @@
 
 Originary helps teams issue and verify portable signed records for machine actions.
 
-Last updated: 2026-06-01
+Last updated: 2026-06-28
 
 Company: Poem, Inc.
 Location: Delaware, USA
@@ -22,6 +22,13 @@ Originary helps teams create signed records so another party can verify what hap
 - https://www.originary.xyz/downloads
 - https://www.originary.xyz/pricing
 - https://www.originary.xyz/contact
+
+## Product pages
+
+- https://www.originary.xyz/records - gallery of signed record types (API, MCP, agent, gateway, payment, provisioning), each verifiable offline
+- https://www.originary.xyz/verify - verify a signed record by its issuer's public key; offline by design, nothing stored
+- https://www.originary.xyz/mcp - signed records for MCP tool calls, gateway decisions, and result digests
+- https://www.originary.xyz/agentic-commerce - signed records that prove what a paid agent action was for
 
 ## Articles
 

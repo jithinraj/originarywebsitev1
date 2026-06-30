@@ -18,6 +18,15 @@ const columns: Array<{
     ],
   },
   {
+    h: 'Product',
+    items: [
+      { label: 'Records', href: '/records' },
+      { label: 'Verify', href: '/verify' },
+      { label: 'MCP', href: '/mcp' },
+      { label: 'Agentic commerce', href: '/agentic-commerce' },
+    ],
+  },
+  {
     h: 'Protocol',
     items: [
       { label: 'PEAC', href: '/peac' },
@@ -60,7 +69,7 @@ export function HomeFooter() {
           maxWidth: MAX_W,
           margin: '0 auto',
           display: 'grid',
-          gridTemplateColumns: 'minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr)',
+          gridTemplateColumns: 'minmax(0, 1.4fr) repeat(4, minmax(0, 1fr))',
           gap: 48,
           alignItems: 'start',
         }}
