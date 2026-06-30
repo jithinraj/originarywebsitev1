@@ -55,9 +55,7 @@ export default function RecordsPage() {
         sub="Every record below carries the same skeleton: facts, policy, result, time, issuer, signature. Read one and you can read them all, and each verifies offline with a single command."
       >
         <Legend items={['facts', 'policy', 'result', 'time', 'issuer', 'signature']} />
-        <p style={{ marginTop: 26 }}>
-          <AnchorLine>Logs stay local. Signed records travel.</AnchorLine>
-        </p>
+        <AnchorLine style={{ marginTop: 26 }}>Logs stay local. Signed records travel.</AnchorLine>
       </PageHero>
 
       {/* 01 - API call (interactive tamper demo) */}

@@ -52,9 +52,7 @@ export default function VerifyPage() {
         title="Check a record. No account, no chain."
         sub="Paste a record or upload a file. Verification runs against the issuer's published key: it confirms the signature, decodes the claims, and tells you exactly what passed and what it does not prove. Nothing is stored."
       >
-        <p style={{ marginTop: 8 }}>
-          <AnchorLine>Logs stay local. Signed records travel.</AnchorLine>
-        </p>
+        <AnchorLine style={{ marginTop: 8 }}>Logs stay local. Signed records travel.</AnchorLine>
       </PageHero>
 
       {/* Console */}
@@ -226,9 +224,7 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
           </InkButton>
           <InkButton href="/downloads">Get the CLI</InkButton>
         </div>
-        <p style={{ marginTop: 36 }}>
-          <AnchorLine onInk>Logs stay local. Signed records travel.</AnchorLine>
-        </p>
+        <AnchorLine onInk style={{ marginTop: 36 }}>Logs stay local. Signed records travel.</AnchorLine>
       </InkBand>
     </PageShell>
   )

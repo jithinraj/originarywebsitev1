@@ -519,19 +519,29 @@ export function InkButton({
   )
 }
 
-/** Shared anchor line used across the records family. */
-export function AnchorLine({ children, onInk = false }: { children: ReactNode; onInk?: boolean }) {
+/** Shared anchor line used across the records family. Renders a div so it can be
+ * placed anywhere (never nested inside a <p>). */
+export function AnchorLine({
+  children,
+  onInk = false,
+  style = {},
+}: {
+  children: ReactNode
+  onInk?: boolean
+  style?: CSSProperties
+}) {
   return (
-    <p
+    <div
       style={{
         fontFamily: mono,
         fontSize: 12,
         letterSpacing: '0.04em',
         color: onInk ? 'rgba(244,241,234,0.7)' : PALETTE.faint,
         margin: 0,
+        ...style,
       }}
     >
       {children}
-    </p>
+    </div>
   )
 }

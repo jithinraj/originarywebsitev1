@@ -191,9 +191,7 @@ export default function AgenticCommercePage() {
           </InkButton>
           <InkButton href="/records">See the payment record</InkButton>
         </div>
-        <p style={{ marginTop: 36 }}>
-          <AnchorLine onInk>Logs stay local. Signed records travel.</AnchorLine>
-        </p>
+        <AnchorLine onInk style={{ marginTop: 36 }}>Logs stay local. Signed records travel.</AnchorLine>
       </InkBand>
     </PageShell>
   )

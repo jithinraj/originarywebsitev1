@@ -54,7 +54,16 @@
   font-size: 12.5px;
   line-height: 1.5;
   color: #14110a;
+  overflow-wrap: anywhere;
   word-break: break-word;
+}
+
+/* Small phones: give long record values (URLs, digests) more room. */
+@media (max-width: 460px) {
+  .spec-row {
+    grid-template-columns: 68px minmax(0, 1fr);
+    gap: 12px;
+  }
 }
 
 .tamper-btn {

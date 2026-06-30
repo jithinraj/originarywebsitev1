@@ -192,9 +192,7 @@ export default function McpPage() {
           </InkButton>
           <InkButton href="/records">See all record types</InkButton>
         </div>
-        <p style={{ marginTop: 36 }}>
-          <AnchorLine onInk>Logs stay local. Signed records travel.</AnchorLine>
-        </p>
+        <AnchorLine onInk style={{ marginTop: 36 }}>Logs stay local. Signed records travel.</AnchorLine>
       </InkBand>
     </PageShell>
   )
