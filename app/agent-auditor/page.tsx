@@ -83,7 +83,7 @@ const softwareJsonLd = {
   url: PAGE_URL,
   applicationCategory: 'DeveloperApplication',
   applicationSubCategory: 'Security and Verification Tool',
-  operatingSystem: 'Web, Node.js (>=22)',
+  operatingSystem: 'Web, Node.js (>=22.13)',
   softwareVersion: '0.1.0',
   releaseNotes: 'https://github.com/originaryx/agent-auditor/releases',
   downloadUrl: NPM_URL,
@@ -554,7 +554,7 @@ export default function AgentAuditorPage() {
                   </div>
                   <div>
                     <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: 700, margin: 0 }}>CLI</h3>
-                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)', marginTop: 2 }}>Node.js &gt;= 22</div>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)', marginTop: 2 }}>Node.js &gt;= 22.13</div>
                   </div>
                 </div>
                 <pre style={{
