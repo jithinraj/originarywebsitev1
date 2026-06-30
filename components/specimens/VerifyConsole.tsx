@@ -5,13 +5,13 @@ import { PALETTE } from '../home/palette'
 import { SANS, MONO } from '../home/typography'
 import { StatusBadge, type RecordRow } from './parts'
 
-/* Demo record (base64url-shaped placeholder). The shipped console verifies in the
-   browser or via the CLI; this preview demonstrates the result UX for the sample. */
+/* Sample record (base64url-shaped placeholder). This console shows the verification
+   result for the bundled sample; live verification runs in the browser or via the CLI. */
 const SAMPLE_JWS = `eyJhbGciOiJFZERTQSIsImtpZCI6IjIwMjYtMDYta2V5MSIsInR5cCI6ImludGVy
 YWN0aW9uLXJlY29yZCtqd3QifQ.eyJpc3MiOiJodHRwczovL2FwaS52ZW5kb3Iu
 ZXhhbXBsZSIsImFjdGlvbiI6InRvb2xzLmNhbGwgc2VhcmNoX2RvY3MiLCJwb2xp
 Y3kiOnsicmVmIjoidGVybXM6djMifSwicmVzdWx0Ijp7InN0YXR1cyI6MjAwfX0.
-x4mUq2Vh_demo_signature_placeholder_for_preview_only`
+x4mUq2Vh_sample_signature_placeholder`
 
 const RESULT_ROWS: RecordRow[] = [
   { label: 'Signature', value: 'valid (Ed25519)' },
@@ -96,8 +96,8 @@ export function VerifyConsole() {
                 textAlign: 'center',
               }}
             >
-              In the shipped console, drop a {tab === 'Upload .jws' ? '.jws record' : 'dispute bundle'} here. This preview
-              uses the pasted sample.
+              Drag a {tab === 'Upload .jws' ? '.jws record' : 'dispute bundle'} here, or use the pasted sample to see a
+              result.
             </div>
           )}
 
@@ -161,7 +161,7 @@ export function VerifyConsole() {
             Verification result
           </span>
           {state === 'edited' ? (
-            <StatusBadge kind="neutral">preview only</StatusBadge>
+            <StatusBadge kind="neutral">sample only</StatusBadge>
           ) : (
             <StatusBadge kind="verified">valid</StatusBadge>
           )}
@@ -169,7 +169,7 @@ export function VerifyConsole() {
 
         {state === 'edited' ? (
           <div style={{ padding: '18px', fontFamily: SANS, fontSize: 14.5, lineHeight: 1.6, color: PALETTE.muted }}>
-            This preview only verifies the bundled sample. To check your own record, run it offline with{' '}
+            This console verifies the bundled sample. To check your own record, run it offline with{' '}
             <code style={{ fontFamily: MONO, color: PALETTE.ink }}>@peac/cli verify --public-key</code>, or use the
             self-hosted verifier. Nothing you paste here is sent to a server.
           </div>
@@ -205,8 +205,7 @@ export function VerifyConsole() {
       </div>
 
       <p style={{ fontFamily: SANS, fontSize: 12.5, color: PALETTE.faint, marginTop: 16, lineHeight: 1.55 }}>
-        This console is a preview. The shipped version verifies in your browser or via the CLI; records you paste are
-        never sent to a server or stored.
+        Verification runs in your browser or via the CLI. Records you paste are never sent to a server or stored.
       </p>
     </div>
   )
