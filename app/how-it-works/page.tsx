@@ -6,13 +6,21 @@ import { InkBand, InkHeading, InkButton, AnchorLine, CodeBlock } from '@/compone
 import FlowObserver from '@/components/how-it-works/FlowObserver'
 import '@/components/how-it-works/how-it-works.css'
 
-const TITLE = 'How it works | Six surfaces, one signed record primitive'
+const TITLE = 'How signed records work across six surfaces | Originary'
 const DESCRIPTION =
-  'How signed records are issued at six surfaces, API calls, MCP tool runs, agent actions, gateway decisions, payments, and provisioning, and verified offline across boundaries.'
+  'How signed records work at six surfaces: API calls, MCP tool runs, agent actions, gateway decisions, payments, provisioning. One primitive, verified offline.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
+  keywords: [
+    'how signed records work',
+    'verifiable interaction records',
+    'offline record verification',
+    'audit trail for AI systems',
+    'signed receipts for APIs',
+    'PEAC Protocol',
+  ],
   alternates: { canonical: '/how-it-works' },
   openGraph: {
     title: TITLE,
@@ -22,6 +30,34 @@ export const metadata: Metadata = {
     images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary how it works' }],
   },
   twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: ['/og'] },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://www.originary.xyz/how-it-works#webpage',
+      url: 'https://www.originary.xyz/how-it-works',
+      name: TITLE,
+      description: DESCRIPTION,
+      isPartOf: { '@id': 'https://www.originary.xyz/#website' },
+      breadcrumb: { '@id': 'https://www.originary.xyz/how-it-works#breadcrumb' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://www.originary.xyz/how-it-works#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'How it works',
+          item: 'https://www.originary.xyz/how-it-works',
+        },
+      ],
+    },
+  ],
 }
 
 type Beat =
@@ -497,6 +533,7 @@ function JumpIndex({ items }: { items: Array<{ href: string; label: string }> })
 export default function HowItWorksPage() {
   return (
     <PageShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="how it works"
         title="Six surfaces. One primitive."

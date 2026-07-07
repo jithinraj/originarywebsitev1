@@ -15,13 +15,23 @@ import {
   Dim,
 } from '@/components/specimens/parts'
 
-const TITLE = 'MCP signed records | Portable proof for tool calls'
+const TITLE = 'MCP audit trail: signed records for tool calls | Originary'
 const DESCRIPTION =
-  'When an MCP tool runs, the transcript stays inside the server. Originary uses PEAC to issue signed records for tool calls, gateway decisions, and result digests that any client or auditor can verify without your logs.'
+  'Give MCP tool calls a portable audit trail: signed records with tool name, args digest, and result digest that clients and auditors verify without your logs.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
+  keywords: [
+    'MCP audit trail',
+    'MCP tool call logging',
+    'Model Context Protocol security',
+    'MCP observability',
+    'MCP receipts',
+    'MCP server audit',
+    'signed tool call records',
+    'AI tool call verification',
+  ],
   alternates: { canonical: '/mcp' },
   openGraph: {
     title: TITLE,
@@ -33,9 +43,33 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: ['/og'] },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://www.originary.xyz/mcp#webpage',
+      url: 'https://www.originary.xyz/mcp',
+      name: TITLE,
+      description: DESCRIPTION,
+      isPartOf: { '@id': 'https://www.originary.xyz/#website' },
+      breadcrumb: { '@id': 'https://www.originary.xyz/mcp#breadcrumb' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://www.originary.xyz/mcp#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
+        { '@type': 'ListItem', position: 2, name: 'MCP', item: 'https://www.originary.xyz/mcp' },
+      ],
+    },
+  ],
+}
+
 export default function McpPage() {
   return (
     <PageShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="MCP signed records"
         title="When an MCP tool runs, what proof leaves the server?"

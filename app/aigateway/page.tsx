@@ -16,13 +16,23 @@ import {
   Dim,
 } from '@/components/specimens/parts'
 
-const TITLE = 'AI gateway records | Portable proof for gateway decisions'
+const TITLE = 'AI gateway audit trail: signed decision records | Originary'
 const DESCRIPTION =
-  'Your AI gateway already decides: allow, deny, redact, route, meter. Originary uses PEAC to turn each decision into a portable signed record another party can verify offline, without your logs or dashboards.'
+  'Turn AI gateway decisions into portable evidence: signed records for allow, deny, and redaction events, plus agent spend attribution, verifiable offline.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
+  keywords: [
+    'AI gateway',
+    'LLM gateway audit',
+    'AI gateway logging',
+    'LLM proxy audit trail',
+    'model router observability',
+    'gateway decision records',
+    'agent spend attribution',
+    'deny as evidence',
+  ],
   alternates: { canonical: '/aigateway' },
   openGraph: {
     title: TITLE,
@@ -34,9 +44,33 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: ['/og'] },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://www.originary.xyz/aigateway#webpage',
+      url: 'https://www.originary.xyz/aigateway',
+      name: TITLE,
+      description: DESCRIPTION,
+      isPartOf: { '@id': 'https://www.originary.xyz/#website' },
+      breadcrumb: { '@id': 'https://www.originary.xyz/aigateway#breadcrumb' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://www.originary.xyz/aigateway#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
+        { '@type': 'ListItem', position: 2, name: 'AI gateway', item: 'https://www.originary.xyz/aigateway' },
+      ],
+    },
+  ],
+}
+
 export default function AiGatewayPage() {
   return (
     <PageShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="ai gateway"
         title="Your gateway decides. Records make each decision provable."

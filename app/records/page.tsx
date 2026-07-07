@@ -18,13 +18,24 @@ import {
 } from '@/components/specimens/parts'
 import { TamperDemo } from '@/components/specimens/TamperDemo'
 
-const TITLE = 'Records | Six workflows, one signed record primitive'
+const TITLE = 'Signed audit records for AI agents, APIs, and MCP | Originary'
 const DESCRIPTION =
-  'A gallery of portable signed records for API calls, MCP tool runs, agent actions, gateway decisions, payments, and provisioning. Each verifies offline with one command.'
+  'A verifiable audit trail for AI agents, APIs, MCP tool runs, gateway decisions, and payments. Signed records anyone can verify offline in seconds.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
+  keywords: [
+    'AI agent audit trail',
+    'signed audit records',
+    'verifiable audit log',
+    'API audit trail',
+    'tamper-evident records',
+    'MCP tool call records',
+    'AI compliance evidence',
+    'offline verification',
+    'PEAC Protocol',
+  ],
   alternates: { canonical: '/records' },
   openGraph: {
     title: TITLE,
@@ -34,6 +45,29 @@ export const metadata: Metadata = {
     images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary records gallery' }],
   },
   twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: ['/og'] },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://www.originary.xyz/records#webpage',
+      url: 'https://www.originary.xyz/records',
+      name: TITLE,
+      description: DESCRIPTION,
+      isPartOf: { '@id': 'https://www.originary.xyz/#website' },
+      breadcrumb: { '@id': 'https://www.originary.xyz/records#breadcrumb' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://www.originary.xyz/records#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
+        { '@type': 'ListItem', position: 2, name: 'Records', item: 'https://www.originary.xyz/records' },
+      ],
+    },
+  ],
 }
 
 function Specimen({
@@ -125,6 +159,7 @@ function JumpIndex({ items }: { items: Array<{ href: string; label: string }> })
 export default function RecordsPage() {
   return (
     <PageShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Record gallery"
         title="Six workflows. One record primitive."

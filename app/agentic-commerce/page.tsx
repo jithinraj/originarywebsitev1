@@ -15,13 +15,23 @@ import {
   Dim,
 } from '@/components/specimens/parts'
 
-const TITLE = 'Agentic commerce records | Prove what a paid action was for'
+const TITLE = 'Agentic commerce receipts: verify agent payments | Originary'
 const DESCRIPTION =
-  'Payment rails prove value moved. Originary issues signed records that prove what an agent payment was for: the action, the policy or mandate, the result, the issuer, and the time, verifiable without your logs.'
+  'Payment rails prove value moved. Signed records prove what an AI agent payment was for: the action, mandate, result, and time, verifiable offline by any counterparty.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
+  keywords: [
+    'agentic commerce',
+    'AI agent payments',
+    'x402',
+    'agent payment receipts',
+    'verify agent purchases',
+    'payment evidence records',
+    'usage billing disputes',
+    'AI commerce audit trail',
+  ],
   alternates: { canonical: '/agentic-commerce' },
   openGraph: {
     title: TITLE,
@@ -31,6 +41,34 @@ export const metadata: Metadata = {
     images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary agentic commerce records' }],
   },
   twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: ['/og'] },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://www.originary.xyz/agentic-commerce#webpage',
+      url: 'https://www.originary.xyz/agentic-commerce',
+      name: TITLE,
+      description: DESCRIPTION,
+      isPartOf: { '@id': 'https://www.originary.xyz/#website' },
+      breadcrumb: { '@id': 'https://www.originary.xyz/agentic-commerce#breadcrumb' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://www.originary.xyz/agentic-commerce#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Agentic commerce',
+          item: 'https://www.originary.xyz/agentic-commerce',
+        },
+      ],
+    },
+  ],
 }
 
 const FITS = [
@@ -49,6 +87,7 @@ const FITS = [
 export default function AgenticCommercePage() {
   return (
     <PageShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Agentic commerce records"
         title="Payment rails move value. Signed records prove what happened."

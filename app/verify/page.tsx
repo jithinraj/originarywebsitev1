@@ -15,13 +15,22 @@ import {
 } from '@/components/specimens/parts'
 import { VerifyConsole } from '@/components/specimens/VerifyConsole'
 
-const TITLE = 'Verify a record | No account, no chain'
+const TITLE = 'Verify a signed record: offline, no account | Originary'
 const DESCRIPTION =
-  "Paste or upload a signed PEAC record. Verification confirms the signature against the issuer's published key, decodes the claims, and tells you exactly what passed and what it does not prove. Nothing is stored."
+  "Paste a signed record and verify it in your browser. Ed25519 signature check against the issuer's key, offline by design, nothing stored. Try a sample."
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
+  keywords: [
+    'verify signed record',
+    'Ed25519 signature verification',
+    'JWS verification tool',
+    'offline signature check',
+    'verify AI agent record',
+    'record verifier',
+    'signed receipt verification',
+  ],
   alternates: { canonical: '/verify' },
   openGraph: {
     title: TITLE,
@@ -31,6 +40,29 @@ export const metadata: Metadata = {
     images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary verifier' }],
   },
   twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: ['/og'] },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://www.originary.xyz/verify#webpage',
+      url: 'https://www.originary.xyz/verify',
+      name: TITLE,
+      description: DESCRIPTION,
+      isPartOf: { '@id': 'https://www.originary.xyz/#website' },
+      breadcrumb: { '@id': 'https://www.originary.xyz/verify#breadcrumb' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://www.originary.xyz/verify#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
+        { '@type': 'ListItem', position: 2, name: 'Verify', item: 'https://www.originary.xyz/verify' },
+      ],
+    },
+  ],
 }
 
 const SAMPLES: Array<{ name: string; status: string; tone: 'ok' | 'deny' | 'fail'; href: string }> = [
@@ -48,6 +80,7 @@ const toneColor = (t: 'ok' | 'deny' | 'fail') =>
 export default function VerifyPage() {
   return (
     <PageShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Verify"
         title="Check a record. No account, no chain."
