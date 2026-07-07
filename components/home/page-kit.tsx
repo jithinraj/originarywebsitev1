@@ -56,11 +56,12 @@ export function PageHero({
     <section
       className="home-section"
       style={{
-        maxWidth: MAX_W,
-        margin: '0 auto',
         padding: `clamp(40px, 6vh, 72px) ${PAGE_PAD} 24px ${PAGE_PAD}`,
       }}
     >
+      {/* Same content box as PageSection: full-width padding + centered MAX_W inner,
+          so the hero and every section below share one left edge. */}
+      <div style={{ maxWidth: MAX_W, margin: '0 auto' }}>
       <div
         style={{
           maxWidth: 720,
@@ -125,6 +126,7 @@ export function PageHero({
           </p>
         ) : null}
         {children ? <div style={{ marginTop: 22 }}>{children}</div> : null}
+      </div>
       </div>
     </section>
   )

@@ -19,14 +19,17 @@
   color: #4a627c;
 }
 
-.hiw-title {
+/* Doubled selector so legacy global h2 rules (design-system.css) cannot outrank it. */
+.hiw-sdeep h2.hiw-title,
+h2.hiw-title {
   font-family: var(--font-plex-sans), 'IBM Plex Sans', system-ui, sans-serif;
   font-weight: 500;
-  font-size: clamp(1.3rem, 2.6vw, 1.75rem);
-  letter-spacing: -0.015em;
-  line-height: 1.16;
+  font-size: clamp(1.75rem, 2.4vw, 2.125rem);
+  letter-spacing: -0.02em;
+  line-height: 1.12;
   color: #14110a;
-  margin: 10px 0 8px;
+  margin: 12px 0 10px;
+  text-wrap: balance;
 }
 
 .hiw-thesis {
