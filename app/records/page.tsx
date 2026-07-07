@@ -52,7 +52,7 @@ export default function RecordsPage() {
       <PageHero
         eyebrow="Record gallery"
         title="Six workflows. One record primitive."
-        sub="Every record below carries the same skeleton: facts, policy, result, time, issuer, signature. Read one and you can read them all, and each verifies offline with a single command."
+        sub="Every record below carries the same skeleton: facts, policy, result, time, issuer, signature. Read one and you can read them all, and each verifies offline with a single command. Records can also be linked: an approval to the execution it authorized, an acknowledgment to the record it references, a run summary sealing a set, so a sequence becomes verifiable, not just a single event."
       >
         <Legend items={['facts', 'policy', 'result', 'time', 'issuer', 'signature']} />
         <AnchorLine style={{ marginTop: 26 }}>Logs stay local. Signed records travel.</AnchorLine>

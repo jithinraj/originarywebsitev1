@@ -20,9 +20,11 @@ const columns: Array<{
   {
     h: 'Product',
     items: [
+      { label: 'How it works', href: '/how-it-works' },
       { label: 'Records', href: '/records' },
       { label: 'Verify', href: '/verify' },
       { label: 'MCP', href: '/mcp' },
+      { label: 'AI gateway', href: '/aigateway' },
       { label: 'Agentic commerce', href: '/agentic-commerce' },
     ],
   },

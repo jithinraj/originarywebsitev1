@@ -1,0 +1,419 @@
+/* how-it-works.css - animated six-surface explainer for /how-it-works.
+   Adapted from the standalone PEAC explainer kit and re-skinned to the
+   Originary homepage design system (components/home/palette.ts): warm
+   paper/ink tones, IBM Plex, square corners, no em dashes.
+   Every selector is prefixed with "hiw-" so nothing leaks into other pages. */
+
+.hiw-sdeep {
+  margin-top: 54px;
+  padding-top: 38px;
+  border-top: 1px dashed rgba(20, 17, 10, 0.3);
+}
+
+.hiw-sno {
+  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-weight: 600;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #4a627c;
+}
+
+.hiw-title {
+  font-family: var(--font-plex-sans), 'IBM Plex Sans', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.3rem, 2.6vw, 1.75rem);
+  letter-spacing: -0.015em;
+  line-height: 1.16;
+  color: #14110a;
+  margin: 10px 0 8px;
+}
+
+.hiw-thesis {
+  color: #463f31;
+  font-size: 1rem;
+  line-height: 1.55;
+  max-width: 70ch;
+  margin: 0;
+}
+
+/* ---------- walkthrough: text card + flow diagram, side by side ---------- */
+
+.hiw-walk {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 22px;
+  margin-top: 28px;
+  align-items: stretch;
+}
+
+.hiw-wtext {
+  background: #fbf9f4;
+  border: 1px solid rgba(20, 17, 10, 0.18);
+  border-radius: 0;
+  padding: 22px 24px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hiw-wno {
+  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-weight: 600;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #4a627c;
+}
+
+.hiw-intro {
+  font-family: var(--font-plex-sans), 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: #463f31;
+  margin: 10px 0 12px;
+  max-width: none;
+}
+
+.hiw-intro b {
+  color: #14110a;
+}
+
+.hiw-intro code {
+  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.82em;
+  background: #f4f1ea;
+  padding: 0.1em 0.35em;
+  border-radius: 0;
+}
+
+.hiw-wbind {
+  border-top: 1px solid rgba(20, 17, 10, 0.18);
+  padding-top: 12px;
+}
+
+.hiw-label {
+  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-weight: 600;
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6e6759;
+}
+
+.hiw-bindlist {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 9px 0 0;
+  padding: 0;
+}
+
+.hiw-bindlist li {
+  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(20, 17, 10, 0.3);
+  border-radius: 0;
+  padding: 4px 9px;
+  color: #14110a;
+  background: #f4f1ea;
+}
+
+.hiw-wprove {
+  font-family: var(--font-plex-sans), 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #463f31;
+  margin: 14px 0 0;
+  max-width: none;
+}
+
+.hiw-wprove b {
+  color: #4a627c;
+}
+
+.hiw-wtype {
+  margin-top: auto;
+  padding-top: 16px;
+  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.62rem;
+  color: #4a627c;
+  background: none;
+  font-weight: 600;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: block;
+}
+
+.hiw-actors {
+  margin-top: 6px;
+  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  color: #6e6759;
+}
+
+/* ---------- flow diagram (animated sequence panel) ---------- */
+
+.hiw-flow {
+  --hiw-dur: 12s;
+  background: #14110a;
+  border: 1px solid rgba(244, 241, 234, 0.18);
+  border-radius: 0;
+  padding: 18px 20px 20px;
+  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+}
+
+.hiw-factors {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.hiw-fa {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f4f1ea;
+  border: 1px solid rgba(244, 241, 234, 0.18);
+  background: rgba(244, 241, 234, 0.05);
+  padding: 6px 11px;
+  border-radius: 0;
+}
+
+.hiw-fsteps {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+  justify-content: center;
+}
+
+.hiw-fmsg {
+  position: relative;
+  height: 32px;
+}
+
+.hiw-fmsg .hiw-fline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 68%;
+  border-top: 1px dashed rgba(244, 241, 234, 0.4);
+  opacity: 0.5;
+}
+
+.hiw-fmsg .hiw-fhead {
+  position: absolute;
+  top: 68%;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  margin-top: -5px;
+}
+
+.hiw-fmsg.ltr .hiw-fhead {
+  right: -1px;
+  border-right: none;
+  border-left-color: #7fa98c;
+}
+
+.hiw-fmsg.rtl .hiw-fhead {
+  left: -1px;
+  border-left: none;
+  border-right-color: #7fa98c;
+}
+
+.hiw-fmsg .hiw-flabel {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  color: #f4f1ea;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hiw-fmsg .hiw-fdot {
+  position: absolute;
+  top: 68%;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  margin-top: -3.5px;
+  border-radius: 50%;
+  background: #7fa98c;
+  box-shadow: 0 0 9px rgba(127, 169, 140, 0.85);
+  opacity: 0;
+}
+
+.hiw-fmsg.half-l {
+  width: 47%;
+}
+
+.hiw-fmsg.half-r {
+  width: 47%;
+  margin-left: 53%;
+}
+
+.hiw-fevt {
+  text-align: center;
+  font-size: 0.6rem;
+  color: #c9a668;
+  border: 1px dashed rgba(244, 241, 234, 0.4);
+  border-radius: 0;
+  padding: 8px 10px;
+  letter-spacing: 0.05em;
+}
+
+.hiw-fevt.bad {
+  color: #d08b7e;
+}
+
+.hiw-frec .hiw-fchit {
+  display: block;
+  text-align: center;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  color: #0b2c1e;
+  background: #7fa98c;
+  border-radius: 0;
+  padding: 9px 10px;
+  font-weight: 600;
+}
+
+.hiw-fchk {
+  text-align: center;
+  font-size: 0.62rem;
+  color: #7fa98c;
+  letter-spacing: 0.07em;
+}
+
+/* shared animation slots: every element in a flow loops on the same clock */
+.hiw-s1 { animation: hiw-slot1 var(--hiw-dur) linear infinite; }
+.hiw-s2 { animation: hiw-slot2 var(--hiw-dur) linear infinite; }
+.hiw-s3 { animation: hiw-slot3 var(--hiw-dur) linear infinite; }
+.hiw-s4 { animation: hiw-slot4 var(--hiw-dur) linear infinite; }
+.hiw-s5 { animation: hiw-slot5 var(--hiw-dur) linear infinite; }
+.hiw-s6 { animation: hiw-slot6 var(--hiw-dur) linear infinite; }
+
+.hiw-frec.hiw-s3 .hiw-fchit { animation: hiw-slot3 var(--hiw-dur) linear infinite, hiw-pop3 var(--hiw-dur) linear infinite; }
+.hiw-frec.hiw-s4 .hiw-fchit { animation: hiw-slot4 var(--hiw-dur) linear infinite, hiw-pop4 var(--hiw-dur) linear infinite; }
+.hiw-frec.hiw-s5 .hiw-fchit { animation: hiw-slot5 var(--hiw-dur) linear infinite, hiw-pop5 var(--hiw-dur) linear infinite; }
+
+.hiw-s1 .hiw-fdot { animation: hiw-dgo1 var(--hiw-dur) linear infinite; }
+.hiw-s2 .hiw-fdot { animation: hiw-dgo2 var(--hiw-dur) linear infinite; }
+.hiw-s3 .hiw-fdot { animation: hiw-dgo3 var(--hiw-dur) linear infinite; }
+.hiw-s4 .hiw-fdot { animation: hiw-dgo4 var(--hiw-dur) linear infinite; }
+.hiw-fmsg.rtl.hiw-s2 .hiw-fdot { animation: hiw-drt2 var(--hiw-dur) linear infinite; }
+.hiw-fmsg.rtl.hiw-s4 .hiw-fdot { animation: hiw-drt4 var(--hiw-dur) linear infinite; }
+
+@keyframes hiw-slot1 { 0%, 1% { opacity: 0; } 5%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@keyframes hiw-slot2 { 0%, 15% { opacity: 0; } 19%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@keyframes hiw-slot3 { 0%, 29% { opacity: 0; } 33%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@keyframes hiw-slot4 { 0%, 43% { opacity: 0; } 47%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@keyframes hiw-slot5 { 0%, 57% { opacity: 0; } 61%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@keyframes hiw-slot6 { 0%, 71% { opacity: 0; } 75%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
+
+@keyframes hiw-pop3 { 0%, 29% { transform: scale(0.9); } 35% { transform: scale(1.04); } 39%, 100% { transform: scale(1); } }
+@keyframes hiw-pop4 { 0%, 43% { transform: scale(0.9); } 49% { transform: scale(1.04); } 53%, 100% { transform: scale(1); } }
+@keyframes hiw-pop5 { 0%, 57% { transform: scale(0.9); } 63% { transform: scale(1.04); } 67%, 100% { transform: scale(1); } }
+
+@keyframes hiw-dgo1 { 0%, 1% { left: 0; opacity: 0; } 5% { opacity: 1; } 13% { left: calc(100% - 7px); opacity: 1; } 15%, 100% { left: calc(100% - 7px); opacity: 0; } }
+@keyframes hiw-dgo2 { 0%, 15% { left: 0; opacity: 0; } 19% { opacity: 1; } 27% { left: calc(100% - 7px); opacity: 1; } 29%, 100% { left: calc(100% - 7px); opacity: 0; } }
+@keyframes hiw-dgo3 { 0%, 29% { left: 0; opacity: 0; } 33% { opacity: 1; } 41% { left: calc(100% - 7px); opacity: 1; } 43%, 100% { left: calc(100% - 7px); opacity: 0; } }
+@keyframes hiw-dgo4 { 0%, 43% { left: 0; opacity: 0; } 47% { opacity: 1; } 55% { left: calc(100% - 7px); opacity: 1; } 57%, 100% { left: calc(100% - 7px); opacity: 0; } }
+@keyframes hiw-drt2 { 0%, 15% { left: calc(100% - 7px); opacity: 0; } 19% { opacity: 1; } 27% { left: 0; opacity: 1; } 29%, 100% { left: 0; opacity: 0; } }
+@keyframes hiw-drt4 { 0%, 43% { left: calc(100% - 7px); opacity: 0; } 47% { opacity: 1; } 55% { left: 0; opacity: 1; } 57%, 100% { left: 0; opacity: 0; } }
+
+/* paused until scrolled into view; static picture when reduced motion */
+.hiw-flow:not(.play) .hiw-fsteps * {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hiw-fsteps *,
+  .hiw-fmsg .hiw-fdot,
+  .hiw-frec .hiw-fchit {
+    animation: none !important;
+  }
+  .hiw-fsteps .hiw-s1,
+  .hiw-fsteps .hiw-s2,
+  .hiw-fsteps .hiw-s3,
+  .hiw-fsteps .hiw-s4,
+  .hiw-fsteps .hiw-s5,
+  .hiw-fsteps .hiw-s6,
+  .hiw-frec .hiw-fchit {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hiw-fmsg .hiw-fdot {
+    display: none;
+  }
+}
+
+/* ---------- failure cards ---------- */
+
+.hiw-duo {
+  margin-top: 22px;
+}
+
+.hiw-fails {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.hiw-failc {
+  border: 1px solid rgba(20, 17, 10, 0.18);
+  border-left: 3px solid #8a6a3c;
+  border-radius: 0;
+  padding: 12px 15px;
+  background: #fbf9f4;
+  font-size: 0.84rem;
+  color: #463f31;
+}
+
+.hiw-failc b {
+  display: block;
+  color: #14110a;
+  font-size: 0.86rem;
+  margin-bottom: 3px;
+}
+
+.hiw-failc p {
+  margin: 0;
+  max-width: none;
+  font-family: var(--font-plex-sans), 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: #463f31;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+  .hiw-walk {
+    grid-template-columns: 1fr;
+  }
+  .hiw-fails {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .hiw-fails {
+    grid-template-columns: 1fr;
+  }
+}

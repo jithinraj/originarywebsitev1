@@ -42,6 +42,8 @@ const FITS = [
   'Refunds, disputes, and settlement observations',
   'Mandate and terms-version binding',
   'Procurement and audit-review bundles',
+  'Counterparty acknowledgment records',
+  'Agent spend attribution for finance and audit review',
 ]
 
 export default function AgenticCommercePage() {
@@ -114,6 +116,11 @@ export default function AgenticCommercePage() {
                 The payment rail shows a charge was authorized. The signed record shows the endpoint, the terms that
                 applied, the payment reference, the result digest, the issuer, the time, and the signature a counterparty
                 can check.
+              </p>
+              <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, marginTop: 14, maxWidth: '52ch' }}>
+                The record preserves the payment artifact as evidence: a signed settlement receipt travels in the
+                record's proofs, and settlement metadata is carried as a digest by default so raw payment headers never
+                enter the signed payload.
               </p>
               <StepLabel>Verify it</StepLabel>
               <CodeBlock>npx -y @peac/cli verify ./payment-event.jws --public-key ./jwks.json</CodeBlock>

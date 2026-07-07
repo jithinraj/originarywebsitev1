@@ -197,6 +197,11 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
               tag: 'v0.15.2',
               body: 'For request-shaped flows, Originary composes with RFC 9421 HTTP Message Signatures and RFC 9530 content digests computed over the raw body bytes.',
             },
+            {
+              name: 'Inclusion proofs',
+              tag: 'v0.16.2',
+              body: 'A Merkle-style set commitment over a batch of records lets a verifier check inclusion: confirm a record belongs to a published, sealed run without re-checking every other record in the set. A missing record becomes detectable too.',
+            },
           ].map((c) => (
             <Card key={c.name}>
               <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 10 }}>

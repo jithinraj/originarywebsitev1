@@ -98,6 +98,10 @@ export default function McpPage() {
                 Records ride existing MCP response metadata or export as bundles. They travel separately from the server
                 that created them.
               </p>
+              <p style={{ fontSize: 13, color: PALETTE.faint, margin: '10px 0 0', lineHeight: 1.55 }}>
+                Paid MCP tool calls compose the same way: the record binds the tool name, an args digest, and the
+                observed payment receipt digest, and travels in the tool result metadata.
+              </p>
             </div>
             <div>
               <StepLabel>Verify on any machine, later</StepLabel>
