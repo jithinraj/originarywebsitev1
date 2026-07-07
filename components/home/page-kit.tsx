@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { CSSProperties, ReactNode } from 'react'
+import './home.css'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { SANS, MONO } from './typography'
 import { Nav } from './Nav'
@@ -34,8 +35,13 @@ export function PageShell({ children }: { children: ReactNode }) {
 }
 
 /**
- * PageHero is the top section of every non-home page: small eyebrow, large
- * sans heading, optional ink-coloured subhead, optional CTA row.
+ * PageHero is the top section of every non-home page. Two treatments:
+ * - default: eyebrow + heading + sub in a single column (legacy pages).
+ * - plate (`aside` and/or `display`): a full-width paper band bounded by a
+ *   hairline, display-scale headline on the left, and a page-specific
+ *   artifact (record card, terminal, jump index) on the right, so the top
+ *   fold opens with evidence instead of empty margin. `strip` renders a
+ *   mono datasheet row under the band.
  */
 export function PageHero({
   eyebrow,
@@ -43,6 +49,9 @@ export function PageHero({
   byline,
   sub,
   align = 'left',
+  aside,
+  strip,
+  display = false,
   children,
 }: {
   eyebrow?: string
@@ -50,31 +59,40 @@ export function PageHero({
   byline?: string
   sub?: string
   align?: 'left' | 'center'
+  aside?: ReactNode
+  strip?: string[]
+  display?: boolean
   children?: ReactNode
 }) {
+  const plate = Boolean(aside) || display
   return (
+    <>
     <section
       className="home-section"
       style={{
-        padding: `clamp(40px, 6vh, 72px) ${PAGE_PAD} 24px ${PAGE_PAD}`,
+        padding: `clamp(44px, 7vh, 84px) ${PAGE_PAD} ${plate ? 'clamp(40px, 6vh, 64px)' : '24px'} ${PAGE_PAD}`,
+        background: plate ? PALETTE.paper : undefined,
+        borderBottom: plate && !strip ? `1px solid ${PALETTE.hairline}` : undefined,
       }}
     >
       {/* Same content box as PageSection: full-width padding + centered MAX_W inner,
           so the hero and every section below share one left edge. */}
       <div style={{ maxWidth: MAX_W, margin: '0 auto' }}>
+      <div className={aside ? 'pk-hero-grid' : undefined}>
       <div
         style={{
-          maxWidth: 720,
+          maxWidth: aside ? undefined : 720,
           marginLeft: align === 'center' ? 'auto' : 0,
           marginRight: align === 'center' ? 'auto' : 0,
           textAlign: align,
+          minWidth: 0,
         }}
       >
         {eyebrow ? (
           <Mono
             size={11}
             color={PALETTE.muted}
-            style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
+            style={{ letterSpacing: '0.2em', textTransform: 'uppercase' }}
           >
             {eyebrow}
           </Mono>
@@ -82,11 +100,11 @@ export function PageHero({
         <h1
           style={{
             fontFamily: sans,
-            fontSize: 'clamp(32px, 4vw, 44px)',
-            lineHeight: 1.08,
+            fontSize: display ? 'clamp(38px, 4.4vw, 60px)' : 'clamp(32px, 4vw, 44px)',
+            lineHeight: display ? 1.04 : 1.08,
             fontWeight: 500,
-            letterSpacing: '-0.025em',
-            margin: eyebrow ? '14px 0 0 0' : '0',
+            letterSpacing: display ? '-0.03em' : '-0.025em',
+            margin: eyebrow ? '16px 0 0 0' : '0',
             color: PALETTE.ink,
             textWrap: 'balance',
           }}
@@ -127,8 +145,54 @@ export function PageHero({
         ) : null}
         {children ? <div style={{ marginTop: 22 }}>{children}</div> : null}
       </div>
+      {aside ? <div className="pk-hero-aside">{aside}</div> : null}
+      </div>
       </div>
     </section>
+    {strip && strip.length ? (
+      <div
+        style={{
+          borderTop: `1px solid ${PALETTE.hairline}`,
+          borderBottom: `1px solid ${PALETTE.hairline}`,
+          background: PALETTE.bg,
+          padding: `12px ${PAGE_PAD}`,
+        }}
+      >
+        <div
+          className="pk-hero-strip"
+          style={{
+            maxWidth: MAX_W,
+            margin: '0 auto',
+          }}
+        >
+          {strip.map((item, i) => (
+            <span key={item} style={{ display: 'inline-flex', alignItems: 'center' }}>
+              {i > 0 ? (
+                <span
+                  aria-hidden
+                  style={{
+                    display: 'inline-block',
+                    width: 3,
+                    height: 3,
+                    background: PALETTE.rule,
+                    margin: '0 clamp(10px, 1.6vw, 22px)',
+                    flexShrink: 0,
+                  }}
+                />
+              ) : null}
+              <Mono
+                size={10.5}
+                color={PALETTE.muted}
+                style={{ letterSpacing: '0.18em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}
+              >
+                {item}
+              </Mono>
+            </span>
+          ))}
+        </div>
+      </div>
+    ) : null}
+    </>
   )
 }
 

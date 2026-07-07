@@ -11,6 +11,7 @@ import {
   InkHeading,
   InkButton,
   AnchorLine,
+  Terminal,
 } from '@/components/specimens/parts'
 import { VerifyConsole } from '@/components/specimens/VerifyConsole'
 
@@ -51,6 +52,18 @@ export default function VerifyPage() {
         eyebrow="Verify"
         title="Check a record. No account, no chain."
         sub="Paste a record or upload a file. Verification runs against the issuer's published key: it confirms the signature, decodes the claims, and tells you exactly what passed and what it does not prove. Nothing is stored."
+        display
+        aside={
+          <Terminal
+            lines={[
+              { kind: 'out', text: '$ npx -y @peac/cli verify ./record.jws --public-key ./jwks.json' },
+              { kind: 'ok', text: 'Signature valid (offline)' },
+              { kind: 'out', text: 'issuer  https://api.vendor.example' },
+              { kind: 'out', text: 'record  POST /v1/market-data/search - 200' },
+            ]}
+          />
+        }
+        strip={['Public verifier', 'Offline by design', 'Nothing stored', 'PEAC ' + FACTS.currentVersion]}
       >
         <AnchorLine style={{ marginTop: 8 }}>Logs stay local. Signed records travel.</AnchorLine>
       </PageHero>

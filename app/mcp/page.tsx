@@ -40,6 +40,21 @@ export default function McpPage() {
         eyebrow="MCP signed records"
         title="When an MCP tool runs, what proof leaves the server?"
         sub="MCP connects agents to tools. The server sees everything; the transcript stays inside it. Originary uses PEAC to issue signed records for tool calls, gateway decisions, and result digests, so a client, auditor, or partner can verify the run without your logs."
+        display
+        aside={
+          <RecordCard
+            type="mcp-tool-run"
+            badge={{ kind: 'verified', label: 'verified offline' }}
+            rows={[
+              { label: 'Issuer', value: 'https://mcp.vendor.example' },
+              { label: 'Tool', value: 'tools.call search_docs' },
+              { label: 'Result', value: <>ok <Dim>sha256:9a3c1d...</Dim></> },
+              { label: 'Signature', value: 'Ed25519 7d40e2c9...' },
+            ]}
+            foot="sample record - demo signature"
+          />
+        }
+        strip={['MCP tool calls', 'Result digests', 'Deny as evidence', 'Verifies offline']}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <Button href="#specimen" primary>

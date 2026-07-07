@@ -53,6 +53,21 @@ export default function AgenticCommercePage() {
         eyebrow="Agentic commerce records"
         title="Payment rails move value. Signed records prove what happened."
         sub="AI agents call paid APIs, buy data, trigger usage charges, settle invoices, and delegate work. A payment confirmation shows value moved. It rarely shows what the agent was allowed to do, which policy applied, or what result came back. Originary turns those events into signed records another party can verify without your logs."
+        display
+        aside={
+          <RecordCard
+            type="payment-event"
+            badge={{ kind: 'verified', label: 'verified offline' }}
+            rows={[
+              { label: 'Issuer', value: 'https://api.vendor.example' },
+              { label: 'Event', value: 'authorized' },
+              { label: 'Action', value: 'POST /v1/market-data/search' },
+              { label: 'Signature', value: 'Ed25519 30cf81d6...' },
+            ]}
+            foot="observation record - not a payment instruction"
+          />
+        }
+        strip={['Payment context', 'Observed settlement', 'Counterparty acknowledgment', 'Verifies offline']}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <Button href="#example" primary>

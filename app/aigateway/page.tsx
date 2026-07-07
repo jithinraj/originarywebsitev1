@@ -41,6 +41,21 @@ export default function AiGatewayPage() {
         eyebrow="ai gateway"
         title="Your gateway decides. Records make each decision provable."
         sub="An AI gateway, LLM gateway, model router, or egress proxy sits at the boundary where agent and model traffic crosses company lines. Originary uses PEAC to issue a signed record for each decision the gateway already makes, so a client, auditor, or partner can verify it later, without your logs or dashboards."
+        display
+        aside={
+          <RecordCard
+            type="org.peacprotocol/access-decision"
+            badge={{ kind: 'verified', label: 'verified offline' }}
+            rows={[
+              { label: 'Issuer', value: 'https://gateway.vendor.example' },
+              { label: 'Request', value: 'tools.call market_data' },
+              { label: 'Decision', value: 'allow - policy applied' },
+              { label: 'Signature', value: 'Ed25519 e02d7f15...' },
+            ]}
+            foot="sample record - demo signature"
+          />
+        }
+        strip={['Gateway decisions', 'Deny as evidence', 'Redaction digests', 'Spend attribution']}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <Button href="/verify" primary>

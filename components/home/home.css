@@ -1296,3 +1296,26 @@ html {
   .home-category-card { padding: 18px 18px 16px 18px; }
   .home-category-card-title { font-size: 18px; }
 }
+
+/* PageHero plate: display headline left, page artifact right. One shared
+   content edge with PageSection; artifact stacks under the copy on mobile. */
+.pk-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 6.5fr) minmax(0, 5.5fr);
+  gap: clamp(28px, 4.5vw, 64px);
+  align-items: center;
+}
+.pk-hero-aside {
+  min-width: 0;
+}
+.pk-hero-strip {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.pk-hero-strip::-webkit-scrollbar { display: none; }
+@media (max-width: 980px) {
+  .pk-hero-grid { grid-template-columns: 1fr; }
+  .pk-hero-aside { max-width: 560px; margin-top: 6px; }
+}

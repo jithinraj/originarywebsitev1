@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
-import { PageShell, PageHero, PageSection } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, Card } from '@/components/home/page-kit'
+import { PALETTE } from '@/components/home/palette'
 import { InkBand, InkHeading, InkButton, AnchorLine, CodeBlock } from '@/components/specimens/parts'
 import FlowObserver from '@/components/how-it-works/FlowObserver'
 import '@/components/how-it-works/how-it-works.css'
@@ -433,6 +434,66 @@ function SurfaceSection({ s, first = false }: { s: SurfaceData; first?: boolean 
   )
 }
 
+const HOW_IT_WORKS_JUMP = [
+  { href: '#s-api', label: 'API call' },
+  { href: '#s-mcp', label: 'MCP tool run' },
+  { href: '#s-action', label: 'Agent action' },
+  { href: '#s-gateway', label: 'Gateway decision' },
+  { href: '#s-payment', label: 'Payment event' },
+  { href: '#s-provision', label: 'Provisioning event' },
+]
+
+function JumpIndex({ items }: { items: Array<{ href: string; label: string }> }) {
+  return (
+    <Card padding={24}>
+      <span
+        style={{
+          fontFamily: 'var(--font-plex-mono)',
+          fontSize: 10,
+          letterSpacing: '0.2em',
+          textTransform: 'uppercase',
+          color: PALETTE.faint,
+        }}
+      >
+        contents
+      </span>
+      <nav aria-label="Page contents">
+        <ul style={{ listStyle: 'none', margin: '12px 0 0', padding: 0 }}>
+          {items.map((it, i) => (
+            <li key={it.href}>
+              <a
+                href={it.href}
+                className="home-footer-link"
+                style={{
+                  display: 'flex',
+                  alignItems: 'baseline',
+                  gap: 14,
+                  padding: '10px 0',
+                  textDecoration: 'none',
+                  borderTop: i > 0 ? `1px solid ${PALETTE.hairline}` : undefined,
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: 'var(--font-plex-mono)',
+                    fontSize: 11,
+                    color: PALETTE.accent,
+                  }}
+                >
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 14.5, color: PALETTE.ink }}>
+                  {it.label}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </Card>
+  )
+}
+
 export default function HowItWorksPage() {
   return (
     <PageShell>
@@ -440,6 +501,9 @@ export default function HowItWorksPage() {
         eyebrow="how it works"
         title="Six surfaces. One primitive."
         sub="The same signed record structure covers every surface where an agent or automated system acts: one verification path for all of it. Each section below shows what happens, what the record binds, and the failure mode it closes."
+        display
+        aside={<JumpIndex items={HOW_IT_WORKS_JUMP} />}
+        strip={['Six surfaces', 'One primitive', 'One verification path', 'Offline verification']}
       />
 
       {SURFACES.map((s, i) => (

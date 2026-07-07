@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
-import { PageShell, PageHero, PageSection } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, Card } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -36,13 +36,89 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: ['/og'] },
 }
 
-function Specimen({ children, first = false }: { children: React.ReactNode; first?: boolean }) {
+function Specimen({
+  children,
+  first = false,
+  id,
+}: {
+  children: React.ReactNode
+  first?: boolean
+  id?: string
+}) {
   return (
     <PageSection paddingTop={first ? 8 : 0} paddingBottom={0}>
-      <div style={{ borderTop: `1px solid ${PALETTE.hairline}`, paddingTop: 48, paddingBottom: 56 }}>
+      <div
+        id={id}
+        style={{
+          borderTop: `1px solid ${PALETTE.hairline}`,
+          paddingTop: 48,
+          paddingBottom: 56,
+          scrollMarginTop: 96,
+        }}
+      >
         {children}
       </div>
     </PageSection>
+  )
+}
+
+const RECORDS_JUMP = [
+  { href: '#api', label: 'API call' },
+  { href: '#mcp', label: 'MCP tool run' },
+  { href: '#agent', label: 'Agent action' },
+  { href: '#gateway', label: 'Gateway decision' },
+  { href: '#payment', label: 'Payment event' },
+  { href: '#provisioning', label: 'Provisioning event' },
+]
+
+function JumpIndex({ items }: { items: Array<{ href: string; label: string }> }) {
+  return (
+    <Card padding={24}>
+      <span
+        style={{
+          fontFamily: 'var(--font-plex-mono)',
+          fontSize: 10,
+          letterSpacing: '0.2em',
+          textTransform: 'uppercase',
+          color: PALETTE.faint,
+        }}
+      >
+        contents
+      </span>
+      <nav aria-label="Page contents">
+        <ul style={{ listStyle: 'none', margin: '12px 0 0', padding: 0 }}>
+          {items.map((it, i) => (
+            <li key={it.href}>
+              <a
+                href={it.href}
+                className="home-footer-link"
+                style={{
+                  display: 'flex',
+                  alignItems: 'baseline',
+                  gap: 14,
+                  padding: '10px 0',
+                  textDecoration: 'none',
+                  borderTop: i > 0 ? `1px solid ${PALETTE.hairline}` : undefined,
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: 'var(--font-plex-mono)',
+                    fontSize: 11,
+                    color: PALETTE.accent,
+                  }}
+                >
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 14.5, color: PALETTE.ink }}>
+                  {it.label}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </Card>
   )
 }
 
@@ -53,13 +129,16 @@ export default function RecordsPage() {
         eyebrow="Record gallery"
         title="Six workflows. One record primitive."
         sub="Every record below carries the same skeleton: facts, policy, result, time, issuer, signature. Read one and you can read them all, and each verifies offline with a single command. Records can also be linked: an approval to the execution it authorized, an acknowledgment to the record it references, a run summary sealing a set, so a sequence becomes verifiable, not just a single event."
+        display
+        aside={<JumpIndex items={RECORDS_JUMP} />}
+        strip={['Record gallery', '06 workflows', 'One primitive', 'Verifies offline']}
       >
         <Legend items={['facts', 'policy', 'result', 'time', 'issuer', 'signature']} />
         <AnchorLine style={{ marginTop: 26 }}>Logs stay local. Signed records travel.</AnchorLine>
       </PageHero>
 
       {/* 01 - API call (interactive tamper demo) */}
-      <Specimen first>
+      <Specimen first id="api">
         <TamperDemo
           eyebrow="01 - API call"
           title="Prove what your API did, without opening your logs."
@@ -86,7 +165,7 @@ export default function RecordsPage() {
       </Specimen>
 
       {/* 02 - MCP tool run */}
-      <Specimen>
+      <Specimen id="mcp">
         <SpecimenGrid>
           <SpecimenIntro
             eyebrow="02 - MCP tool run"
@@ -126,7 +205,7 @@ export default function RecordsPage() {
       </Specimen>
 
       {/* 03 - Agent action */}
-      <Specimen>
+      <Specimen id="agent">
         <SpecimenGrid>
           <SpecimenIntro
             eyebrow="03 - Agent action"
@@ -159,7 +238,7 @@ export default function RecordsPage() {
       </Specimen>
 
       {/* 04 - Gateway decision (deny as evidence) */}
-      <Specimen>
+      <Specimen id="gateway">
         <SpecimenGrid>
           <SpecimenIntro
             eyebrow="04 - Gateway decision"
@@ -193,7 +272,7 @@ export default function RecordsPage() {
       </Specimen>
 
       {/* 05 - Payment event */}
-      <Specimen>
+      <Specimen id="payment">
         <SpecimenGrid>
           <SpecimenIntro
             eyebrow="05 - Payment event"
@@ -235,7 +314,7 @@ export default function RecordsPage() {
       </Specimen>
 
       {/* 06 - Provisioning event */}
-      <Specimen>
+      <Specimen id="provisioning">
         <SpecimenGrid>
           <SpecimenIntro
             eyebrow="06 - Provisioning event"
