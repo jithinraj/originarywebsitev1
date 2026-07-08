@@ -16,6 +16,7 @@ import {
   AnchorLine,
   Dim,
 } from '@/components/specimens/parts'
+import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { TamperDemo } from '@/components/specimens/TamperDemo'
 
 const TITLE = 'Signed audit records for AI agents, APIs, and MCP | Originary'
@@ -165,7 +166,7 @@ export default function RecordsPage() {
       <PageHero
         eyebrow="Record gallery"
         title="Six workflows. One way to verify them."
-        sub="Every record below carries the same skeleton: facts, policy, result, time, issuer, signature. Read one and you can read them all, and each verifies offline with a single command. Records can also be linked: an approval to the execution it authorized, an acknowledgment to the record it references, a run summary sealing a set, so a sequence becomes verifiable, not just a single event."
+        sub="Every record below carries the same skeleton: facts, policy, result, time, issuer, signature. Read one and you can read them all, and each verifies offline with a single command."
         display
         aside={<JumpIndex items={RECORDS_JUMP} />}
         strip={['Record gallery', '06 workflows', 'One primitive', 'Verifies offline']}
@@ -179,6 +180,20 @@ export default function RecordsPage() {
         <Legend items={['facts', 'policy', 'result', 'time', 'issuer', 'signature']} />
         <AnchorLine style={{ marginTop: 26 }}>Logs stay local. Signed records travel.</AnchorLine>
       </PageHero>
+
+      <PageSection paddingTop={0} paddingBottom={40}>
+        <FlowPanel
+          label="Sequence diagram: six workflows, from API calls to provisioning, all stamp the same record primitive with the same skeleton, records can link into verifiable sequences, and one verify command covers all six."
+          actors={['your workflows', 'one primitive']}
+          beats={[
+            { kind: 'msg', dir: 'ltr', slot: 1, label: 'api call - mcp tool run - agent action' },
+            { kind: 'msg', dir: 'ltr', slot: 2, label: 'gateway decision - payment event - provisioning event' },
+            { kind: 'rec', slot: 3, label: 'same skeleton: facts + policy + result + time + issuer + signature' },
+            { kind: 'evt', slot: 4, label: 'records link: approval -> execution -> run summary sealing a set' },
+            { kind: 'chk', slot: 5, label: 'one verify command for all six' },
+          ]}
+        />
+      </PageSection>
 
       {/* 01 - API call (interactive tamper demo) */}
       <Specimen first id="api">

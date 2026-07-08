@@ -60,6 +60,12 @@ export function Reveal({
     const reveal = () => {
       el.style.opacity = '1'
       el.style.transform = 'translate3d(0, 0, 0)'
+      window.setTimeout(() => {
+        el.style.willChange = ''
+        el.style.transform = ''
+        el.style.transition = ''
+        el.style.opacity = ''
+      }, duration + delay + 80)
     }
 
     el.style.opacity = '0'

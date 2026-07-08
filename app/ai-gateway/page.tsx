@@ -15,6 +15,7 @@ import {
   AnchorLine,
   Dim,
 } from '@/components/specimens/parts'
+import { FlowPanel } from '@/components/specimens/FlowPanel'
 
 const TITLE = 'AI gateway audit trail: signed decision records | Originary'
 const DESCRIPTION =
@@ -123,6 +124,19 @@ export default function AiGatewayPage() {
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
         <div id="specimen" style={{ scrollMarginTop: 96 }}>
           <SectionHeading index="02" eyebrow="The specimen" title="One gateway decision. One signed record." />
+          <FlowPanel
+            label="Sequence diagram: a request passes the gateway, one path is allowed and forwarded, another is denied by policy, and both outcomes become a signed decision record with produced and delivered digests."
+            actors={['app / agent', 'gateway', 'recipient']}
+            beats={[
+              { kind: 'msg', dir: 'ltr', slot: 1, half: 'l', label: 'request tools.call market_data' },
+              { kind: 'msg', dir: 'ltr', slot: 2, half: 'r', label: 'allow - policy applied, forwarded' },
+              { kind: 'evt', slot: 3, bad: true, label: 'deny path: export_billing refused - policy_violation' },
+              { kind: 'evt', slot: 4, label: 'produced + delivered digests recorded at the boundary' },
+              { kind: 'rec', slot: 5, label: 'access-decision record - allow and deny both signed' },
+              { kind: 'chk', slot: 6, label: 'verified without gateway logs or dashboards' },
+            ]}
+            style={{ marginBottom: 22 }}
+          />
           <SpecimenGrid>
             <div>
               <RecordCard

@@ -3,20 +3,22 @@
 import Link from 'next/link'
 import { MAX_W, PAGE_PAD, PALETTE } from './palette'
 import { Mono, SectionTitle } from './atoms/Mono'
+import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
 
 type Category = {
   title: string
   href: string
   examples: string[]
+  mark: MarkName
 }
 
 const CATEGORIES: Category[] = [
-  { title: 'API call records',           href: '/records#api',          examples: ['Stripe', 'Cloudflare', 'Vercel'] },
-  { title: 'MCP tool run records',       href: '/mcp',                  examples: ['MCP', 'Smithery', 'Internal MCP servers'] },
-  { title: 'Agent action records',       href: '/records#agent',        examples: ['OpenAI', 'Anthropic', 'LangChain'] },
-  { title: 'Gateway decision records',   href: '/ai-gateway',           examples: ['Cloudflare', 'Portkey', 'Kong'] },
-  { title: 'Payment event records',      href: '/agentic-commerce',     examples: ['x402', 'Stripe', 'AP2 / MPP'] },
-  { title: 'Provisioning event records', href: '/provisioning-records', examples: ['Vercel', 'GitHub Actions', 'Terraform'] },
+  { title: 'API call records',           href: '/records#api',          examples: ['Stripe', 'Cloudflare', 'Vercel'],               mark: 'ledger' },
+  { title: 'MCP tool run records',       href: '/mcp',                  examples: ['MCP', 'Smithery', 'Internal MCP servers'],      mark: 'link' },
+  { title: 'Agent action records',       href: '/records#agent',        examples: ['OpenAI', 'Anthropic', 'LangChain'],             mark: 'target' },
+  { title: 'Gateway decision records',   href: '/ai-gateway',           examples: ['Cloudflare', 'Portkey', 'Kong'],                mark: 'valve' },
+  { title: 'Payment event records',      href: '/agentic-commerce',     examples: ['x402', 'Stripe', 'AP2 / MPP'],                  mark: 'coin' },
+  { title: 'Provisioning event records', href: '/provisioning-records', examples: ['Vercel', 'GitHub Actions', 'Terraform'],        mark: 'pipeline' },
 ]
 
 export function CategoryMatrix() {
@@ -30,7 +32,6 @@ export function CategoryMatrix() {
       }}
     >
       <SectionTitle
-        eyebrow="ecosystem fit"
         title="Common places Originary records fit."
         body="Examples are interoperability surfaces, not partnership claims. Use the same signed-record format wherever another party needs to verify what happened."
       />
@@ -51,9 +52,14 @@ export function CategoryMatrix() {
               style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}
             >
               <div className="home-category-card-head">
-                <Mono size={11} color="#7a7263" style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-                  {String(CATEGORIES.indexOf(cat) + 1).padStart(2, '0')}
-                </Mono>
+                <span className="home-category-card-meta">
+                  <Mono size={11} color="#7a7263" style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                    {String(CATEGORIES.indexOf(cat) + 1).padStart(2, '0')}
+                  </Mono>
+                  <span className="home-category-card-mark" aria-hidden>
+                    <MarkGlyph name={cat.mark} size={17} />
+                  </span>
+                </span>
                 <h3 className="home-category-card-title">
                   {cat.title}
                   <span aria-hidden style={{ marginLeft: 8, color: PALETTE.faint, fontSize: 13 }}>&rarr;</span>

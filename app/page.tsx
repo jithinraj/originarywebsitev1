@@ -5,6 +5,7 @@ import {
   Divider,
   HeroV2,
   WorksWithStrip,
+  ProofStrip,
   Problem,
   HowItWorks,
   UseCases,
@@ -170,6 +171,7 @@ export default function Page() {
         <Nav />
         <main id="main-content" role="main">
           <HeroV2 />
+          <ProofStrip />
           <WorksWithStrip />
           <Reveal threshold={0.12}>
             <Divider eyebrow="where logs fail" />
@@ -184,7 +186,7 @@ export default function Page() {
             <UseCases />
           </Reveal>
           <Reveal threshold={0.12}>
-            <Divider eyebrow="what stays yours" />
+            <Divider eyebrow="ecosystem fit" />
             <CategoryMatrix />
           </Reveal>
           <Reveal threshold={0.12}>

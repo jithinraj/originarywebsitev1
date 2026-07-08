@@ -3,10 +3,11 @@ import { SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { Mono } from './atoms/Mono'
 import { Wordmark } from './Nav'
+import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
 
 const columns: Array<{
   h: string
-  items: Array<{ label: string; href: string; external?: boolean }>
+  items: Array<{ label: string; href: string; external?: boolean; mark?: MarkName }>
 }> = [
   {
     h: 'Originary',
@@ -22,12 +23,12 @@ const columns: Array<{
   {
     h: 'Solutions',
     items: [
-      { label: 'MCP tool run records', href: '/mcp' },
-      { label: 'AI gateway decision records', href: '/ai-gateway' },
-      { label: 'Agentic commerce records', href: '/agentic-commerce' },
-      { label: 'Provisioning records', href: '/provisioning-records' },
-      { label: 'API call records', href: '/records' },
-      { label: 'Agent action records', href: '/records#agent' },
+      { label: 'MCP tool run records', href: '/mcp', mark: 'link' },
+      { label: 'AI gateway decision records', href: '/ai-gateway', mark: 'valve' },
+      { label: 'Agentic commerce records', href: '/agentic-commerce', mark: 'coin' },
+      { label: 'Provisioning records', href: '/provisioning-records', mark: 'pipeline' },
+      { label: 'API call records', href: '/records', mark: 'ledger' },
+      { label: 'Agent action records', href: '/records#agent', mark: 'target' },
     ],
   },
   {
@@ -128,6 +129,11 @@ export function HomeFooter() {
                       </a>
                     ) : (
                       <Link href={it.href} className="home-footer-link" style={linkStyle}>
+                        {it.mark ? (
+                          <span className="home-footer-linkmark" aria-hidden>
+                            <MarkGlyph name={it.mark} size={13} />
+                          </span>
+                        ) : null}
                         {it.label}
                       </Link>
                     )}

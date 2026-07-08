@@ -14,6 +14,7 @@ import {
   AnchorLine,
   Dim,
 } from '@/components/specimens/parts'
+import { FlowPanel } from '@/components/specimens/FlowPanel'
 
 const TITLE = 'Provisioning records for agent infrastructure | Originary'
 const DESCRIPTION =
@@ -137,6 +138,18 @@ export default function ProvisioningRecordsPage() {
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
         <div id="specimen" style={{ scrollMarginTop: 96 }}>
           <SectionHeading index="02" eyebrow="The specimen" title="One provisioning event. One signed record." />
+          <FlowPanel
+            label="Sequence diagram: a deploy pipeline creates a production resource at a cloud provider, the provisioning event is observed with references and digests only, and a signed record lets anyone verify the change without console access."
+            actors={['deploy pipeline', 'cloud provider']}
+            beats={[
+              { kind: 'msg', dir: 'ltr', slot: 1, label: 'create deployment prj_4fd2 - production' },
+              { kind: 'msg', dir: 'rtl', slot: 2, label: 'created - resource + credential references' },
+              { kind: 'evt', slot: 3, label: 'secrets structurally excluded - reference + digest only' },
+              { kind: 'rec', slot: 4, label: 'provisioning-event record - who, what, when, which policy' },
+              { kind: 'chk', slot: 5, label: 'verified without console access' },
+            ]}
+            style={{ marginBottom: 22 }}
+          />
           <SpecimenGrid>
             <div>
               <RecordCard
@@ -199,9 +212,11 @@ export default function ProvisioningRecordsPage() {
             'It does not manage credentials or secrets.',
             'It does not replace your infrastructure-as-code, CI, or CD.',
             'It does not gate or approve deployments.',
-            'It records what happened, so another party can verify it.',
           ]}
         />
+        <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.ink, marginTop: 24, maxWidth: '54ch' }}>
+          It records what happened, so another party can verify it.
+        </p>
       </PageSection>
 
       {/* Closing */}

@@ -13,6 +13,7 @@ import {
   AnchorLine,
   Terminal,
 } from '@/components/specimens/parts'
+import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { VerifyConsole } from '@/components/specimens/VerifyConsole'
 
 const TITLE = 'Verify a signed record: offline, no account | Originary'
@@ -163,6 +164,18 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
       <PageSection paddingTop={56} paddingBottom={56}>
         <div id="proves" style={{ scrollMarginTop: 96 }}>
           <SectionHeading index="02" eyebrow="What this proves" title="A green check is a precise claim." />
+          <FlowPanel
+            label="Sequence diagram: you paste a record into the verifier, the issuer's published key resolves or you supply one offline, the Ed25519 signature and bound digests are checked, and the result is a precise green check."
+            actors={['you', 'verifier']}
+            beats={[
+              { kind: 'msg', dir: 'ltr', slot: 1, label: 'paste record - or upload .jws / bundle' },
+              { kind: 'evt', slot: 2, label: 'key resolves from issuer config - or you supply it offline' },
+              { kind: 'evt', slot: 3, label: 'Ed25519 signature + bound digests checked - nothing stored' },
+              { kind: 'rec', slot: 4, label: 'valid - issuer signed exactly these claims' },
+              { kind: 'chk', slot: 5, label: 'precise claim: unchanged since signing, key resolves, digests match' },
+            ]}
+            style={{ marginBottom: 22 }}
+          />
           <CompareColumns
             columns={[
               {
@@ -227,7 +240,7 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
           title="What the verifier checks."
           sub={`Current release: PEAC ${FACTS.currentVersion}. These checks compose; the wire format (0.2) and public schema are unchanged.`}
         />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16 }}>
           {[
             {
               name: 'Offline by public key',
