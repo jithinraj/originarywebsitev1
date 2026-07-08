@@ -934,14 +934,12 @@ html {
 }
 .home-herov2-diamond-fields {
   font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
-  line-height: 1.4;
-  letter-spacing: -0.002em;
   color: #14110a;
-  margin: 0;
+  margin: 2px 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(5px, 0.65vw, 8px);
+  gap: 6px;
   width: 100%;
 }
 .home-herov2-diamond-fields-row {
@@ -954,19 +952,19 @@ html {
 }
 .home-herov2-diamond-fields-primary {
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   font-size: 12.5px;
   font-weight: 500;
   color: #14110a;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
 }
 .home-herov2-diamond-fields-trust {
   font-size: 12.5px;
   font-weight: 500;
   color: #6e6759;
-  letter-spacing: 0.01em;
-  line-height: 1.4;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
 }
 
 /* Chip-active small dot - inside the active chip */
@@ -1183,8 +1181,6 @@ html {
   filter: brightness(0) saturate(100%);
   transition: opacity 220ms ease, filter 220ms ease;
 }
-/* Ruled ledger cells: hairline separators carry the alignment so mixed
-   logo lockups read as one organized system. */
 .home-works-with-item {
   border-left: 1px solid rgba(20, 17, 10, 0.14);
 }
@@ -1207,7 +1203,6 @@ html {
 .home-works-with-item:hover .home-works-with-label {
   color: #14110a;
 }
-/* Per-asset optical height caps are data-driven inline (see WorksWithStrip LOGOS). */
 @media (max-width: 1180px) {
   .home-works-with-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -1301,8 +1296,7 @@ html {
   .home-category-card-title { font-size: 18px; }
 }
 
-/* PageHero plate: display headline left, page artifact right. One shared
-   content edge with PageSection; artifact stacks under the copy on mobile. */
+/* PageHero plate layout */
 .pk-hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 6.5fr) minmax(0, 5.5fr);

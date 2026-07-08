@@ -445,8 +445,7 @@ export function DataTable({
   )
 }
 
-/** Ledger-style list: hairline-ruled rows in a paper card, mono index +
- * status glyph, so lists read like record output instead of loose bullets. */
+/** Ruled list: indexed rows in a bordered card. */
 export function MarkerList({
   marker,
   items,
@@ -537,8 +536,7 @@ export function InkButton({
   )
 }
 
-/** Shared anchor line used across the records family. Renders a div so it can be
- * placed anywhere (never nested inside a <p>). */
+/** Shared anchor line; renders a div. */
 export function AnchorLine({
   children,
   onInk = false,

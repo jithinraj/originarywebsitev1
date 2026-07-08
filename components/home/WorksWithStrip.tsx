@@ -1,12 +1,10 @@
-// Static content: no hooks, state, or browser APIs, so this renders on the server.
 import { MAX_W, PAGE_PAD, PALETTE } from './palette'
 import { MONO } from './typography'
 
 type LogoEntry = {
   name: string
   src: string
-  /** Optical height cap in px: tuned per asset so every mark carries equal
-   * visual mass despite different intrinsic padding and lockup styles. */
+  /** Optical height cap in px, tuned per asset. */
   size: number
 }
 
@@ -51,7 +49,6 @@ export function WorksWithStrip() {
         {LOGOS.map((logo) => (
           <li key={logo.name} className="home-works-with-item">
             <div className="home-works-with-mark">
-              {/* Decorative: the visible label below is the accessible name. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={logo.src}

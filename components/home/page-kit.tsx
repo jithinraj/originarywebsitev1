@@ -35,13 +35,9 @@ export function PageShell({ children }: { children: ReactNode }) {
 }
 
 /**
- * PageHero is the top section of every non-home page. Two treatments:
- * - default: eyebrow + heading + sub in a single column (legacy pages).
- * - plate (`aside` and/or `display`): a full-width paper band bounded by a
- *   hairline, display-scale headline on the left, and a page-specific
- *   artifact (record card, terminal, jump index) on the right, so the top
- *   fold opens with evidence instead of empty margin. `strip` renders a
- *   mono datasheet row under the band.
+ * PageHero: page top section. With `aside`/`display` it renders as a paper
+ * plate with a display headline and a page artifact; `strip` adds a mono
+ * metadata row under the band.
  */
 export function PageHero({
   eyebrow,
@@ -75,8 +71,6 @@ export function PageHero({
         borderBottom: plate && !strip ? `1px solid ${PALETTE.hairline}` : undefined,
       }}
     >
-      {/* Same content box as PageSection: full-width padding + centered MAX_W inner,
-          so the hero and every section below share one left edge. */}
       <div style={{ maxWidth: MAX_W, margin: '0 auto' }}>
       <div className={aside ? 'pk-hero-grid' : undefined}>
       <div
@@ -238,7 +232,7 @@ export function SectionHeading({
   title: string
   sub?: string
   align?: 'left' | 'center'
-  /** Mono section index (e.g. "01") rendered before the eyebrow: datasheet numbering. */
+  /** Mono index rendered before the eyebrow. */
   index?: string
 }) {
   return (
