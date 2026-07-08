@@ -458,6 +458,7 @@ export function MarkerList({
   const color = marker === 'cross' ? PALETTE.warn : marker === 'check' ? PALETTE.success : PALETTE.accent
   return (
     <ul
+      className="spec-ledger"
       style={{
         listStyle: 'none',
         margin: 0,
