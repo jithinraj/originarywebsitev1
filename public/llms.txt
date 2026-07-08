@@ -29,7 +29,8 @@ Originary helps teams create signed records so another party can verify what hap
 - https://www.originary.xyz/records - gallery of signed record types (API, MCP, agent, gateway, payment, provisioning), each verifiable offline
 - https://www.originary.xyz/verify - verify a signed record by its issuer's public key; offline by design, nothing stored
 - https://www.originary.xyz/mcp - signed records for MCP tool calls, gateway decisions, and result digests
-- https://www.originary.xyz/aigateway - signed records for AI gateway decisions: allow, deny, redaction digests, and observed spend
+- https://www.originary.xyz/ai-gateway - signed records for AI gateway decisions: allow, deny, redaction digests, and observed spend
+- https://www.originary.xyz/provisioning-records - signed records for deployments, provider setup, credentials, budgets, and resource lifecycle events
 - https://www.originary.xyz/agentic-commerce - signed records that prove what a paid agent action was for
 
 ## Articles

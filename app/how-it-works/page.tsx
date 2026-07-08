@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
-import { PageShell, PageHero, PageSection, Card } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Card } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import { InkBand, InkHeading, InkButton, AnchorLine, CodeBlock } from '@/components/specimens/parts'
 import FlowObserver from '@/components/how-it-works/FlowObserver'
@@ -334,7 +334,14 @@ const SURFACES: SurfaceData[] = [
         and deployments. Each event becomes an <code>*-observed</code> record. The critical property is
         that <b>credential material is never captured</b>. The schema itself rejects secret values, so the
         record carries a reference and a digest, and a leak through the evidence layer is structurally
-        impossible.
+        impossible.{' '}
+        <a
+          href="/provisioning-records"
+          style={{ color: PALETTE.success, textDecoration: 'underline', textUnderlineOffset: 3 }}
+        >
+          See provisioning records
+        </a>
+        .
       </>
     ),
     binds: [
@@ -546,6 +553,23 @@ export default function HowItWorksPage() {
       {SURFACES.map((s, i) => (
         <SurfaceSection s={s} first={i === 0} key={s.id} />
       ))}
+
+      {/* v0.16.2 */}
+      <PageSection paddingTop={0} paddingBottom={64}>
+        <SectionHeading eyebrow="What v0.16.2 adds" title="Broader evidence coverage, same wire format." />
+        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', margin: 0 }}>
+          PEAC v0.16.2 expands the portable evidence surface beyond single signed records.
+        </p>
+        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', marginTop: 14 }}>
+          It adds evidence patterns for paid resources, paid MCP tool records, linked counterparty
+          acknowledgments, Merkle commitment helpers, external evidence anchoring, agent spend attribution,
+          agent run lineage records, consented action records, and runtime lineage exports.
+        </p>
+        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', marginTop: 14 }}>
+          The wire format stays stable. The goal is broader evidence coverage, not a new payment rail,
+          gateway, policy engine, or governance product.
+        </p>
+      </PageSection>
 
       {/* Closing */}
       <InkBand>

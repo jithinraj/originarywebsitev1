@@ -62,6 +62,15 @@ const jsonLd = {
         { '@type': 'ListItem', position: 2, name: 'Verify', item: 'https://www.originary.xyz/verify' },
       ],
     },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': 'https://www.originary.xyz/verify#app',
+      name: 'Originary record verifier',
+      applicationCategory: 'DeveloperApplication',
+      operatingSystem: 'Web',
+      url: 'https://www.originary.xyz/verify',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    },
   ],
 }
 

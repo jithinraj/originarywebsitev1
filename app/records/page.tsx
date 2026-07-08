@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
-import { PageShell, PageHero, PageSection, Card } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Card } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -162,7 +162,7 @@ export default function RecordsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Record gallery"
-        title="Six workflows. One record primitive."
+        title="Six workflows. One way to verify them."
         sub="Every record below carries the same skeleton: facts, policy, result, time, issuer, signature. Read one and you can read them all, and each verifies offline with a single command. Records can also be linked: an approval to the execution it authorized, an acknowledgment to the record it references, a run summary sealing a set, so a sequence becomes verifiable, not just a single event."
         display
         aside={<JumpIndex items={RECORDS_JUMP} />}
@@ -354,7 +354,19 @@ export default function RecordsPage() {
           <SpecimenIntro
             eyebrow="06 - Provisioning event"
             title="Who changed what, and which system says so."
-            answers="Answers which account, resource, credential, or subscription event occurred, and who issued it. Useful long after dashboards and sessions are gone."
+            answers={
+              <>
+                Answers which account, resource, credential, or subscription event occurred, and who issued
+                it. Useful long after dashboards and sessions are gone.{' '}
+                <a
+                  href="/provisioning-records"
+                  style={{ color: PALETTE.success, textDecoration: 'underline', textUnderlineOffset: 3 }}
+                >
+                  Full provisioning page
+                </a>
+                .
+              </>
+            }
           >
             <StepLabel>Verify it</StepLabel>
             <CodeBlock>npx -y @peac/cli verify ./provisioning-event.jws --public-key ./jwks.json</CodeBlock>
@@ -379,6 +391,23 @@ export default function RecordsPage() {
           />
         </SpecimenGrid>
       </Specimen>
+
+      {/* v0.16.2 */}
+      <PageSection paddingTop={0} paddingBottom={64}>
+        <SectionHeading eyebrow="What v0.16.2 adds" title="Broader evidence coverage, same wire format." />
+        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', margin: 0 }}>
+          PEAC v0.16.2 expands the portable evidence surface beyond single signed records.
+        </p>
+        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', marginTop: 14 }}>
+          It adds evidence patterns for paid resources, paid MCP tool records, linked counterparty
+          acknowledgments, Merkle commitment helpers, external evidence anchoring, agent spend attribution,
+          agent run lineage records, consented action records, and runtime lineage exports.
+        </p>
+        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', marginTop: 14 }}>
+          The wire format stays stable. The goal is broader evidence coverage, not a new payment rail,
+          gateway, policy engine, or governance product.
+        </p>
+      </PageSection>
 
       {/* Closing */}
       <InkBand>

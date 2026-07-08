@@ -121,7 +121,7 @@ export function HeroV2() {
       <div style={heroTopStyle}>
         <p style={heroEyebrow}>WHEN LOGS ARE NOT ENOUGH</p>
         <h1 id="hero-headline" style={heroHeadline}>
-          Verify agent and API actions across company boundaries
+          Verify agent, API, and gateway actions across company boundaries
         </h1>
         <p style={heroSub}>
           Originary turns API calls, MCP tool runs, agent actions, gateway decisions, payment
@@ -129,11 +129,11 @@ export function HeroV2() {
           partners can verify without access to your internal logs.
         </p>
         <div style={ctas}>
-          <Link href="/#demo" className="home-arrow-link" style={btnPrimary}>
+          <Link href="/contact" className="home-arrow-link" style={btnPrimary}>
             Request a demo
             <Arrow />
           </Link>
-          <Link href="/downloads" className="home-arrow-link" style={btnSecondary}>
+          <Link href="/verify" className="home-arrow-link" style={btnSecondary}>
             Verify a sample record
             <Arrow />
           </Link>

@@ -33,11 +33,11 @@ export const metadata: Metadata = {
     'agent spend attribution',
     'deny as evidence',
   ],
-  alternates: { canonical: '/aigateway' },
+  alternates: { canonical: '/ai-gateway' },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: 'https://www.originary.xyz/aigateway',
+    url: 'https://www.originary.xyz/ai-gateway',
     type: 'website',
     images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary AI gateway records' }],
   },
@@ -49,19 +49,19 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'WebPage',
-      '@id': 'https://www.originary.xyz/aigateway#webpage',
-      url: 'https://www.originary.xyz/aigateway',
+      '@id': 'https://www.originary.xyz/ai-gateway#webpage',
+      url: 'https://www.originary.xyz/ai-gateway',
       name: TITLE,
       description: DESCRIPTION,
       isPartOf: { '@id': 'https://www.originary.xyz/#website' },
-      breadcrumb: { '@id': 'https://www.originary.xyz/aigateway#breadcrumb' },
+      breadcrumb: { '@id': 'https://www.originary.xyz/ai-gateway#breadcrumb' },
     },
     {
       '@type': 'BreadcrumbList',
-      '@id': 'https://www.originary.xyz/aigateway#breadcrumb',
+      '@id': 'https://www.originary.xyz/ai-gateway#breadcrumb',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
-        { '@type': 'ListItem', position: 2, name: 'AI gateway', item: 'https://www.originary.xyz/aigateway' },
+        { '@type': 'ListItem', position: 2, name: 'AI gateway', item: 'https://www.originary.xyz/ai-gateway' },
       ],
     },
   ],
@@ -103,7 +103,7 @@ export default function AiGatewayPage() {
       <PageSection paddingBottom={64}>
         <SectionHeading
           eyebrow="The problem"
-          title="A gateway log can justify a decision. It cannot prove one."
+          title="Gateway logs explain decisions internally. Signed records let others verify them."
           sub="A gateway log can help you debug a routing or policy decision internally. It cannot be handed to a customer, auditor, or counterparty as independent proof. A signed record answers the questions that cross the boundary:"
         />
         <MarkerList
@@ -224,9 +224,9 @@ export default function AiGatewayPage() {
           marker="number"
           items={[
             <>
-              <b style={{ fontWeight: 600 }}>Trace correlation:</b> records carry W3C trace context, so a gateway
-              decision links to the same trace in your OpenTelemetry backend via the <code>peac.record.ref</code>{' '}
-              span attribute.
+              <b style={{ fontWeight: 600 }}>OpenTelemetry trace correlation:</b> records carry W3C trace
+              context, so a gateway decision links to the same trace in your OpenTelemetry backend via the{' '}
+              <code>peac.record.ref</code> span attribute.
             </>,
             <>
               <b style={{ fontWeight: 600 }}>In front of MCP servers:</b> per-tool-call records travel alongside the
