@@ -14,6 +14,7 @@ import {
   AnchorLine,
   Dim,
 } from '@/components/specimens/parts'
+import { FlowPanel } from '@/components/specimens/FlowPanel'
 
 const TITLE = 'Agentic commerce records: verify agent payments | Originary'
 const DESCRIPTION =
@@ -164,6 +165,18 @@ export default function AgenticCommercePage() {
       <PageSection paddingTop={56} paddingBottom={56}>
         <div id="example" style={{ scrollMarginTop: 96 }}>
           <SectionHeading index="03" eyebrow="Worked example" title="A research agent calls a paid market-data API." />
+          <FlowPanel
+            label="Sequence diagram: a buyer agent calls a paid API, receives a 402 payment challenge, settlement is observed on the rail, and a signed payment-event record binds the action, terms, and payment context for later verification."
+            actors={['buyer agent', 'seller api']}
+            beats={[
+              { kind: 'msg', dir: 'ltr', slot: 1, label: 'POST /v1/market-data/search' },
+              { kind: 'msg', dir: 'rtl', slot: 2, label: '402 payment required - terms:v3' },
+              { kind: 'evt', slot: 3, label: 'settlement observed on the rail - x402-style reference' },
+              { kind: 'rec', slot: 4, label: 'payment-event record - action + terms + rail reference + result' },
+              { kind: 'chk', slot: 5, label: 'counterparty verifies what it was for - offline' },
+            ]}
+            style={{ marginBottom: 22 }}
+          />
           <SpecimenGrid>
             <div>
               <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.muted, margin: 0, maxWidth: '52ch' }}>

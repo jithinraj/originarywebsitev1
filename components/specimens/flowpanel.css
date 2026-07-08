@@ -1,0 +1,239 @@
+/* FlowPanel: animated sequence diagram shared by the solution pages.
+   Same grammar as the how-it-works flow panels (dark plate, message beats,
+   sage record chit, amber event rows) with a fp- scope so both can coexist. */
+
+.fp-flow {
+  --fp-dur: 12s;
+  background: #14110a;
+  border: 1px solid rgba(244, 241, 234, 0.18);
+  border-radius: 0;
+  padding: 18px 20px 20px;
+  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 264px;
+}
+
+.fp-actors {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.fp-actor {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f4f1ea;
+  border: 1px solid rgba(244, 241, 234, 0.18);
+  background: rgba(244, 241, 234, 0.05);
+  padding: 6px 11px;
+  border-radius: 0;
+}
+
+.fp-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+  justify-content: center;
+}
+
+.fp-msg {
+  position: relative;
+  height: 32px;
+}
+
+.fp-msg .fp-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 68%;
+  border-top: 1px dashed rgba(244, 241, 234, 0.4);
+  opacity: 0.5;
+}
+
+.fp-msg .fp-head {
+  position: absolute;
+  top: 68%;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  margin-top: -5px;
+}
+
+.fp-msg.ltr .fp-head {
+  right: -1px;
+  border-right: none;
+  border-left-color: #7fa98c;
+}
+
+.fp-msg.rtl .fp-head {
+  left: -1px;
+  border-left: none;
+  border-right-color: #7fa98c;
+}
+
+.fp-msg .fp-label {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  color: #f4f1ea;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fp-msg .fp-dot {
+  position: absolute;
+  top: 68%;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  margin-top: -3.5px;
+  border-radius: 50%;
+  background: #7fa98c;
+  box-shadow: 0 0 9px rgba(127, 169, 140, 0.85);
+  opacity: 0;
+}
+
+.fp-msg.half-l {
+  width: 47%;
+}
+
+.fp-msg.half-r {
+  width: 47%;
+  margin-left: 53%;
+}
+
+.fp-evt {
+  text-align: center;
+  font-size: 0.6rem;
+  color: #c9a668;
+  border: 1px dashed rgba(244, 241, 234, 0.4);
+  border-radius: 0;
+  padding: 8px 10px;
+  letter-spacing: 0.05em;
+}
+
+.fp-evt.bad {
+  color: #d08b7e;
+}
+
+.fp-rec .fp-chit {
+  display: block;
+  text-align: center;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  color: #0b2c1e;
+  background: #7fa98c;
+  border-radius: 0;
+  padding: 9px 10px;
+  font-weight: 600;
+}
+
+.fp-chk {
+  text-align: center;
+  font-size: 0.62rem;
+  color: #7fa98c;
+  letter-spacing: 0.07em;
+}
+
+/* shared animation slots: every element in a flow loops on the same clock */
+.fp-s1 { animation: fp-slot1 var(--fp-dur) linear infinite; }
+.fp-s2 { animation: fp-slot2 var(--fp-dur) linear infinite; }
+.fp-s3 { animation: fp-slot3 var(--fp-dur) linear infinite; }
+.fp-s4 { animation: fp-slot4 var(--fp-dur) linear infinite; }
+.fp-s5 { animation: fp-slot5 var(--fp-dur) linear infinite; }
+.fp-s6 { animation: fp-slot6 var(--fp-dur) linear infinite; }
+
+.fp-rec.fp-s1 .fp-chit { animation: fp-slot1 var(--fp-dur) linear infinite, fp-pop1 var(--fp-dur) linear infinite; }
+.fp-rec.fp-s2 .fp-chit { animation: fp-slot2 var(--fp-dur) linear infinite, fp-pop2 var(--fp-dur) linear infinite; }
+.fp-rec.fp-s3 .fp-chit { animation: fp-slot3 var(--fp-dur) linear infinite, fp-pop3 var(--fp-dur) linear infinite; }
+.fp-rec.fp-s4 .fp-chit { animation: fp-slot4 var(--fp-dur) linear infinite, fp-pop4 var(--fp-dur) linear infinite; }
+.fp-rec.fp-s5 .fp-chit { animation: fp-slot5 var(--fp-dur) linear infinite, fp-pop5 var(--fp-dur) linear infinite; }
+.fp-rec.fp-s6 .fp-chit { animation: fp-slot6 var(--fp-dur) linear infinite, fp-pop6 var(--fp-dur) linear infinite; }
+
+.fp-msg.ltr.fp-s1 .fp-dot { animation: fp-dgo1 var(--fp-dur) linear infinite; }
+.fp-msg.ltr.fp-s2 .fp-dot { animation: fp-dgo2 var(--fp-dur) linear infinite; }
+.fp-msg.ltr.fp-s3 .fp-dot { animation: fp-dgo3 var(--fp-dur) linear infinite; }
+.fp-msg.ltr.fp-s4 .fp-dot { animation: fp-dgo4 var(--fp-dur) linear infinite; }
+.fp-msg.ltr.fp-s5 .fp-dot { animation: fp-dgo5 var(--fp-dur) linear infinite; }
+.fp-msg.ltr.fp-s6 .fp-dot { animation: fp-dgo6 var(--fp-dur) linear infinite; }
+.fp-msg.rtl.fp-s1 .fp-dot { animation: fp-drt1 var(--fp-dur) linear infinite; }
+.fp-msg.rtl.fp-s2 .fp-dot { animation: fp-drt2 var(--fp-dur) linear infinite; }
+.fp-msg.rtl.fp-s3 .fp-dot { animation: fp-drt3 var(--fp-dur) linear infinite; }
+.fp-msg.rtl.fp-s4 .fp-dot { animation: fp-drt4 var(--fp-dur) linear infinite; }
+.fp-msg.rtl.fp-s5 .fp-dot { animation: fp-drt5 var(--fp-dur) linear infinite; }
+.fp-msg.rtl.fp-s6 .fp-dot { animation: fp-drt6 var(--fp-dur) linear infinite; }
+
+@keyframes fp-slot1 { 0%, 1% { opacity: 0; } 5%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@keyframes fp-slot2 { 0%, 15% { opacity: 0; } 19%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@keyframes fp-slot3 { 0%, 29% { opacity: 0; } 33%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@keyframes fp-slot4 { 0%, 43% { opacity: 0; } 47%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@keyframes fp-slot5 { 0%, 57% { opacity: 0; } 61%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@keyframes fp-slot6 { 0%, 71% { opacity: 0; } 75%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
+
+@keyframes fp-pop1 { 0%, 1% { transform: scale(0.9); } 7% { transform: scale(1.04); } 11%, 100% { transform: scale(1); } }
+@keyframes fp-pop2 { 0%, 15% { transform: scale(0.9); } 21% { transform: scale(1.04); } 25%, 100% { transform: scale(1); } }
+@keyframes fp-pop3 { 0%, 29% { transform: scale(0.9); } 35% { transform: scale(1.04); } 39%, 100% { transform: scale(1); } }
+@keyframes fp-pop4 { 0%, 43% { transform: scale(0.9); } 49% { transform: scale(1.04); } 53%, 100% { transform: scale(1); } }
+@keyframes fp-pop5 { 0%, 57% { transform: scale(0.9); } 63% { transform: scale(1.04); } 67%, 100% { transform: scale(1); } }
+@keyframes fp-pop6 { 0%, 71% { transform: scale(0.9); } 77% { transform: scale(1.04); } 81%, 100% { transform: scale(1); } }
+
+@keyframes fp-dgo1 { 0%, 1% { left: 0; opacity: 0; } 5% { opacity: 1; } 13% { left: calc(100% - 7px); opacity: 1; } 15%, 100% { left: calc(100% - 7px); opacity: 0; } }
+@keyframes fp-dgo2 { 0%, 15% { left: 0; opacity: 0; } 19% { opacity: 1; } 27% { left: calc(100% - 7px); opacity: 1; } 29%, 100% { left: calc(100% - 7px); opacity: 0; } }
+@keyframes fp-dgo3 { 0%, 29% { left: 0; opacity: 0; } 33% { opacity: 1; } 41% { left: calc(100% - 7px); opacity: 1; } 43%, 100% { left: calc(100% - 7px); opacity: 0; } }
+@keyframes fp-dgo4 { 0%, 43% { left: 0; opacity: 0; } 47% { opacity: 1; } 55% { left: calc(100% - 7px); opacity: 1; } 57%, 100% { left: calc(100% - 7px); opacity: 0; } }
+@keyframes fp-dgo5 { 0%, 57% { left: 0; opacity: 0; } 61% { opacity: 1; } 69% { left: calc(100% - 7px); opacity: 1; } 71%, 100% { left: calc(100% - 7px); opacity: 0; } }
+@keyframes fp-dgo6 { 0%, 71% { left: 0; opacity: 0; } 75% { opacity: 1; } 83% { left: calc(100% - 7px); opacity: 1; } 85%, 100% { left: calc(100% - 7px); opacity: 0; } }
+@keyframes fp-drt1 { 0%, 1% { left: calc(100% - 7px); opacity: 0; } 5% { opacity: 1; } 13% { left: 0; opacity: 1; } 15%, 100% { left: 0; opacity: 0; } }
+@keyframes fp-drt2 { 0%, 15% { left: calc(100% - 7px); opacity: 0; } 19% { opacity: 1; } 27% { left: 0; opacity: 1; } 29%, 100% { left: 0; opacity: 0; } }
+@keyframes fp-drt3 { 0%, 29% { left: calc(100% - 7px); opacity: 0; } 33% { opacity: 1; } 41% { left: 0; opacity: 1; } 43%, 100% { left: 0; opacity: 0; } }
+@keyframes fp-drt4 { 0%, 43% { left: calc(100% - 7px); opacity: 0; } 47% { opacity: 1; } 55% { left: 0; opacity: 1; } 57%, 100% { left: 0; opacity: 0; } }
+@keyframes fp-drt5 { 0%, 57% { left: calc(100% - 7px); opacity: 0; } 61% { opacity: 1; } 69% { left: 0; opacity: 1; } 71%, 100% { left: 0; opacity: 0; } }
+@keyframes fp-drt6 { 0%, 71% { left: calc(100% - 7px); opacity: 0; } 75% { opacity: 1; } 83% { left: 0; opacity: 1; } 85%, 100% { left: 0; opacity: 0; } }
+
+/* paused until scrolled into view; static picture when reduced motion */
+.fp-flow:not(.play) .fp-steps * {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fp-steps *,
+  .fp-msg .fp-dot,
+  .fp-rec .fp-chit {
+    animation: none !important;
+  }
+  .fp-steps .fp-s1,
+  .fp-steps .fp-s2,
+  .fp-steps .fp-s3,
+  .fp-steps .fp-s4,
+  .fp-steps .fp-s5,
+  .fp-steps .fp-s6,
+  .fp-rec .fp-chit {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .fp-msg .fp-dot {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .fp-flow {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .fp-actors,
+  .fp-steps {
+    min-width: 500px;
+  }
+}

@@ -14,6 +14,7 @@ import {
   AnchorLine,
   Dim,
 } from '@/components/specimens/parts'
+import { FlowPanel } from '@/components/specimens/FlowPanel'
 
 const TITLE = 'MCP audit trail: signed records for tool calls | Originary'
 const DESCRIPTION =
@@ -122,6 +123,18 @@ export default function McpPage() {
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper} className="" >
         <div id="specimen" style={{ scrollMarginTop: 96 }}>
           <SectionHeading index="02" eyebrow="The specimen" title="One tool run. One signed record." />
+          <FlowPanel
+            label="Sequence diagram: an MCP client calls a tool, the result returns with a signed record riding response metadata, and any party verifies the record offline later."
+            actors={['mcp client', 'tool server']}
+            beats={[
+              { kind: 'msg', dir: 'ltr', slot: 1, label: 'tools.call search_docs - args sha256:c41b09' },
+              { kind: 'msg', dir: 'rtl', slot: 2, label: 'result ok - record rides _meta (receipt_jws)' },
+              { kind: 'rec', slot: 3, label: 'mcp-tool-run record - tool + params digest + result digest' },
+              { kind: 'evt', slot: 4, label: 'record travels separately from the server that created it' },
+              { kind: 'chk', slot: 5, label: 'verified offline - any machine, years later' },
+            ]}
+            style={{ marginBottom: 22 }}
+          />
           <SpecimenGrid>
             <div>
               <RecordCard
