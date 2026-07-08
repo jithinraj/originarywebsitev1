@@ -227,7 +227,7 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
           title="What the verifier checks."
           sub={`Current release: PEAC ${FACTS.currentVersion}. These checks compose; the wire format (0.2) and public schema are unchanged.`}
         />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16 }}>
           {[
             {
               name: 'Offline by public key',

@@ -199,9 +199,11 @@ export default function ProvisioningRecordsPage() {
             'It does not manage credentials or secrets.',
             'It does not replace your infrastructure-as-code, CI, or CD.',
             'It does not gate or approve deployments.',
-            'It records what happened, so another party can verify it.',
           ]}
         />
+        <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.ink, marginTop: 24, maxWidth: '54ch' }}>
+          It records what happened, so another party can verify it.
+        </p>
       </PageSection>
 
       {/* Closing */}

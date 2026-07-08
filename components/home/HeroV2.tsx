@@ -486,7 +486,7 @@ const btnBase = {
   fontWeight: 500,
   letterSpacing: '0.005em',
   textDecoration: 'none' as const,
-  borderRadius: 999,
+  borderRadius: 0,
 }
 const btnPrimary = {
   ...btnBase,

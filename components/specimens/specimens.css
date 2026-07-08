@@ -61,8 +61,11 @@
 /* Small phones: give long record values (URLs, digests) more room. */
 @media (max-width: 460px) {
   .spec-row {
-    grid-template-columns: 68px minmax(0, 1fr);
-    gap: 12px;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 10px;
+  }
+  .spec-row dd {
+    font-size: 12px;
   }
 }
 
@@ -115,4 +118,25 @@
 }
 .spec-ledger li:hover {
   background: rgba(20, 17, 10, 0.025);
+}
+
+/* DataTable: the global stylesheet stacks table cells below 768px; make that
+   stacked mode deliberate so prose wraps at the container width. */
+@media (max-width: 767px) {
+  .pk-datatable {
+    min-width: 0 !important;
+  }
+  .pk-datatable tr {
+    border: none;
+    border-top: 1px solid rgba(20, 17, 10, 0.14);
+    margin: 0;
+    padding: 14px 16px;
+  }
+  .pk-datatable tbody tr:first-child {
+    border-top: none;
+  }
+  .pk-datatable td {
+    border-top: none !important;
+    padding: 2px 0 !important;
+  }
 }

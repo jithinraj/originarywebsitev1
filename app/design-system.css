@@ -2862,14 +2862,6 @@ html.lenis, html.lenis body {
   will-change: auto;
 }
 
-/* Content visibility for legacy animated home sections only. Do not apply this
-   globally to every section: full-page previews and long modern pages need
-   offscreen sections to render normally. */
-.home-section {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 500px;
-}
-
 /* CSS containment for isolated components */
 .product-card,
 .proof-card,

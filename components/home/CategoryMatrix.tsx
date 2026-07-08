@@ -30,7 +30,6 @@ export function CategoryMatrix() {
       }}
     >
       <SectionTitle
-        eyebrow="ecosystem fit"
         title="Common places Originary records fit."
         body="Examples are interoperability surfaces, not partnership claims. Use the same signed-record format wherever another party needs to verify what happened."
       />

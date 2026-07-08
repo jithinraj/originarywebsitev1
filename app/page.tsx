@@ -184,7 +184,7 @@ export default function Page() {
             <UseCases />
           </Reveal>
           <Reveal threshold={0.12}>
-            <Divider eyebrow="what stays yours" />
+            <Divider eyebrow="ecosystem fit" />
             <CategoryMatrix />
           </Reveal>
           <Reveal threshold={0.12}>

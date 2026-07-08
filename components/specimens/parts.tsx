@@ -394,7 +394,7 @@ export function DataTable({
 }) {
   return (
     <div style={{ overflowX: 'auto', border: `1px solid ${PALETTE.hairline}`, background: PALETTE.paper }}>
-      <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 520 }}>
+      <table className="pk-datatable" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 520, margin: 0 }}>
         <thead>
           <tr>
             {head.map((h) => (
