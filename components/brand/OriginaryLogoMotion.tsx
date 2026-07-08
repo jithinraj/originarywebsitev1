@@ -21,12 +21,7 @@
  *   <OriginaryLogoMotion replayKey={replayKey} />      // controlled replay
  */
 
-import {
-  AnimatePresence,
-  motion,
-  useReducedMotion,
-  type Easing,
-} from "framer-motion";
+import { motion, useReducedMotion, type Easing } from "framer-motion";
 import { useCallback, useId, useState } from "react";
 
 // ─── Geometry ───────────────────────────────────────────────────────────────
@@ -186,33 +181,6 @@ export function OriginaryLogoMotion({
       onPointerEnter={handleHover}
       style={{ overflow: "visible" }}
     >
-      {/* Origin pulse — single, restrained */}
-      <AnimatePresence>
-        {!reduced && (
-          <motion.ellipse
-            key="origin-pulse"
-            cx={ORIGIN_X}
-            cy={ORIGIN_Y}
-            rx={430}
-            ry={430}
-            fill="none"
-            stroke={fill}
-            strokeWidth={24}
-            initial={{ opacity: 0, scale: 0.72 }}
-            animate={{
-              opacity: [0, 0.18, 0],
-              scale: [0.72, 1.1, 1.32],
-            }}
-            transition={{
-              duration: 1.1,
-              ease: EASE_OUT,
-              times: [0, 0.38, 1],
-            }}
-            style={{ transformOrigin: `${ORIGIN_X}px ${ORIGIN_Y}px` }}
-          />
-        )}
-      </AnimatePresence>
-
       {/* Stems and bowls */}
       {stems.map((letter) => {
         const isO = letter.id === "O";

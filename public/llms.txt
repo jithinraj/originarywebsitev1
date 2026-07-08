@@ -1,8 +1,9 @@
 # Originary
 
 Originary helps teams issue and verify portable signed records for machine actions.
+Current protocol release: PEAC v0.16.2, which adds evidence patterns for paid resources, paid MCP tool records, linked counterparty acknowledgments, Merkle commitment helpers, external evidence anchoring, agent spend attribution, agent run lineage records, consented action records, and runtime lineage exports. The wire format is unchanged.
 
-Last updated: 2026-06-01
+Last updated: 2026-07-08
 
 Company: Poem, Inc.
 Location: Delaware, USA
@@ -22,6 +23,16 @@ Originary helps teams create signed records so another party can verify what hap
 - https://www.originary.xyz/downloads
 - https://www.originary.xyz/pricing
 - https://www.originary.xyz/contact
+
+## Product pages
+
+- https://www.originary.xyz/how-it-works - how signed records are issued at six surfaces (API, MCP, agent, gateway, payment, provisioning) and verified offline
+- https://www.originary.xyz/records - gallery of signed record types (API, MCP, agent, gateway, payment, provisioning), each verifiable offline
+- https://www.originary.xyz/verify - verify a signed record by its issuer's public key; offline by design, nothing stored
+- https://www.originary.xyz/mcp - signed records for MCP tool calls, gateway decisions, and result digests
+- https://www.originary.xyz/ai-gateway - signed records for AI gateway decisions: allow, deny, redaction digests, and observed spend
+- https://www.originary.xyz/provisioning-records - signed records for deployments, provider setup, credentials, budgets, and resource lifecycle events
+- https://www.originary.xyz/agentic-commerce - signed records that prove what a paid agent action was for
 
 ## Articles
 

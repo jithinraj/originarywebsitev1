@@ -614,7 +614,7 @@ peac policy init
                   marginTop: 'var(--space-3)',
                   lineHeight: 1.6
                 }}>
-                  Validates <code style={{ background: 'var(--text-secondary)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> and generated files against PEAC v0.14.0 schemas.
+                  Validates <code style={{ background: 'var(--text-secondary)', padding: '2px 4px', borderRadius: 'var(--radius-sm)' }}>peac-policy.yaml</code> and generated files against PEAC v0.16.1 schemas.
                 </p>
               </div>
 
@@ -779,7 +779,7 @@ cp robots-ai-snippet.txt public/`}
                 textAlign: 'center',
                 marginBottom: 'var(--space-10)'
               }}>
-                Policy Kit tracks the PEAC v0.14.0 protocol line, including current policy discovery, AIPREF, MCP, and payment evidence mappings.
+                Policy Kit tracks the PEAC v0.16.1 protocol line, including current policy discovery, AIPREF, MCP, and payment evidence mappings.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>

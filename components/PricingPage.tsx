@@ -239,7 +239,7 @@ export default function PricingPage() {
             <span className="kicker">PRICING</span>
             <h1 className="display">Scale with confidence</h1>
             <p className="sub max-w-4xl mx-auto">
-              Clear pricing for PEAC v0.14.0 implementation, signed-record verification,
+              Clear pricing for PEAC v0.16.1 implementation, signed-record verification,
               MCP tooling, and enterprise evidence workflows.
             </p>
 

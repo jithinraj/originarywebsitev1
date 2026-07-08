@@ -16,9 +16,19 @@ async function getFont() {
 
 // Colors mirror the homepage palette in components/home/palette.ts
 const BG = '#f4f1ea'
+const PAPER = '#fbf9f4'
 const INK = '#14110a'
-const ACCENT = '#4a627c'
 const FAINT = '#6e6759'
+const SAGE = '#4a7459'
+const HAIRLINE = 'rgba(20,17,10,0.18)'
+
+const ROWS: Array<[string, string]> = [
+  ['ISSUER', 'https://api.vendor.example'],
+  ['ACTION', 'POST /v1/market-data/search'],
+  ['RESULT', '200 · sha256:9a3c1d...'],
+  ['TIME', '2026-07-08T14:08:11Z'],
+  ['SIGNATURE', 'Ed25519 b2c1a4e8...'],
+]
 
 export async function GET() {
   const fontData = await getFont()
@@ -32,44 +42,95 @@ export async function GET() {
           height: '100%',
           width: '100%',
           display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
           backgroundColor: BG,
-          padding: '60px 80px',
+          padding: '36px',
         }}
       >
-        {/* Brand wordmark (rendered from the canonical logo) */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={wordmarkSrc} width={208} height={73} alt="Originary" style={{ marginBottom: '44px' }} />
-
-        {/* Headline (matches homepage H1) */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-          <span style={{ fontSize: '56px', fontWeight: 700, color: INK, lineHeight: 1.1, letterSpacing: '-0.02em' }}>
-            Verify what agents and APIs did
-          </span>
-          <span style={{ fontSize: '56px', fontWeight: 700, color: ACCENT, lineHeight: 1.1, letterSpacing: '-0.02em' }}>
-            across company boundaries
-          </span>
-        </div>
-
-        {/* Tagline */}
+        {/* Datasheet plate: hairline frame around the whole card */}
         <div
           style={{
             display: 'flex',
-            marginTop: '36px',
-            fontSize: '24px',
-            color: FAINT,
-            textAlign: 'center',
-            maxWidth: '900px',
+            flex: 1,
+            border: `1px solid ${HAIRLINE}`,
+            backgroundColor: BG,
+            padding: '52px 60px',
+            alignItems: 'center',
+            gap: '56px',
           }}
         >
-          Signed records for API calls, MCP tool use, runtime decisions, and payment events.
-        </div>
+          {/* Left: brand + headline + tagline */}
+          <div style={{ display: 'flex', flexDirection: 'column', flex: 1.25 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={wordmarkSrc} width={182} height={64} alt="Originary" />
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                marginTop: '46px',
+              }}
+            >
+              <span style={{ fontSize: '44px', fontWeight: 600, color: INK, lineHeight: 1.14, letterSpacing: '-0.02em' }}>
+                Verify agent, API, and
+              </span>
+              <span style={{ fontSize: '44px', fontWeight: 600, color: INK, lineHeight: 1.14, letterSpacing: '-0.02em' }}>
+                gateway actions across
+              </span>
+              <span style={{ fontSize: '44px', fontWeight: 600, color: INK, lineHeight: 1.14, letterSpacing: '-0.02em' }}>
+                company boundaries
+              </span>
+            </div>
+            <div style={{ display: 'flex', marginTop: '38px', fontSize: '21px', color: SAGE, letterSpacing: '0.02em' }}>
+              Logs stay local. Signed records travel.
+            </div>
+            <div style={{ display: 'flex', marginTop: '14px', fontSize: '19px', color: FAINT }}>
+              originary.xyz
+            </div>
+          </div>
 
-        {/* Footer */}
-        <div style={{ display: 'flex', position: 'absolute', bottom: '40px', fontSize: '20px', color: FAINT }}>
-          originary.xyz
+          {/* Right: the record artifact */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              flex: 1,
+              backgroundColor: PAPER,
+              border: `1px solid ${HAIRLINE}`,
+              padding: '26px 28px',
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span style={{ fontSize: '19px', fontWeight: 600, color: INK }}>signed-record</span>
+              <span
+                style={{
+                  display: 'flex',
+                  fontSize: '14px',
+                  color: SAGE,
+                  border: `1px solid ${SAGE}`,
+                  padding: '5px 10px',
+                  letterSpacing: '0.08em',
+                }}
+              >
+                VERIFIED OFFLINE
+              </span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', marginTop: '18px' }}>
+              {ROWS.map(([label, value], i) => (
+                <div
+                  key={label}
+                  style={{
+                    display: 'flex',
+                    gap: '18px',
+                    padding: '12px 0',
+                    borderTop: i === 0 ? 'none' : `1px solid ${HAIRLINE}`,
+                    alignItems: 'center',
+                  }}
+                >
+                  <span style={{ fontSize: '13px', color: FAINT, letterSpacing: '0.08em', width: '104px' }}>{label}</span>
+                  <span style={{ fontSize: '16px', color: INK }}>{value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     ),

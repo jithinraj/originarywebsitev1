@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { Mono, SectionTitle } from './atoms/Mono'
@@ -48,6 +49,48 @@ export function Ladder() {
       />
       <div style={{ marginTop: 40 }}>
         <LadderGrid />
+      </div>
+      <div style={{ marginTop: 22 }}>
+        <Mono
+          size={10.5}
+          color={PALETTE.faint}
+          style={{ letterSpacing: '0.18em', textTransform: 'uppercase', display: 'block', marginBottom: 12 }}
+        >
+          pick your first workflow
+        </Mono>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+          {[
+            { label: 'One MCP tool', href: '/mcp' },
+            { label: 'One gateway route', href: '/ai-gateway' },
+            { label: 'One paid API call', href: '/agentic-commerce' },
+            { label: 'One provisioning event', href: '/provisioning-records' },
+          ].map((e) => (
+            <Link
+              key={e.href}
+              href={e.href}
+              className="home-arrow-link"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 10,
+                padding: '11px 16px',
+                fontFamily: SANS,
+                fontSize: 14,
+                fontWeight: 500,
+                letterSpacing: '-0.005em',
+                textDecoration: 'none',
+                color: PALETTE.ink,
+                background: PALETTE.paper,
+                border: `1px solid ${PALETTE.rule}`,
+              }}
+            >
+              {e.label}
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden>
+                <path d="M1 5h8M5.5 1.5L9 5l-3.5 3.5" stroke="currentColor" strokeWidth="1.25" />
+              </svg>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   )
