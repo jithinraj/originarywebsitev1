@@ -102,3 +102,17 @@
     transition: none;
   }
 }
+
+/* Card + ledger response */
+.spec-fade {
+  transition: border-color 200ms ease;
+}
+.spec-fade:hover {
+  border-color: rgba(20, 17, 10, 0.32);
+}
+.spec-ledger li {
+  transition: background 160ms ease;
+}
+.spec-ledger li:hover {
+  background: rgba(20, 17, 10, 0.025);
+}

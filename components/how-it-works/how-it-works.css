@@ -407,7 +407,7 @@ h2.hiw-title {
 
 @media (max-width: 900px) {
   .hiw-walk {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .hiw-fails {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -415,6 +415,18 @@ h2.hiw-title {
 }
 
 @media (max-width: 640px) {
+  .hiw-flow {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .hiw-factors,
+  .hiw-fsteps {
+    min-width: 500px;
+  }
+  .hiw-bindlist li {
+    overflow-wrap: anywhere;
+    max-width: 100%;
+  }
   .hiw-fails {
     grid-template-columns: 1fr;
   }
