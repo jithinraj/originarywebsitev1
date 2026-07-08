@@ -101,6 +101,7 @@ export default function McpPage() {
       {/* The problem */}
       <PageSection paddingBottom={64}>
         <SectionHeading
+          index="01"
           eyebrow="The problem"
           title="A transcript is not portable proof."
           sub="An MCP server log can help you debug a tool run. It cannot be handed to another party as something they can independently check. A signed record answers the questions that cross the boundary:"
@@ -120,7 +121,7 @@ export default function McpPage() {
       {/* The specimen */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper} className="" >
         <div id="specimen" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading eyebrow="The specimen" title="One tool run. One signed record." />
+          <SectionHeading index="02" eyebrow="The specimen" title="One tool run. One signed record." />
           <SpecimenGrid>
             <div>
               <RecordCard
@@ -187,7 +188,7 @@ export default function McpPage() {
 
       {/* Deny as evidence */}
       <PageSection paddingTop={56} paddingBottom={56}>
-        <SectionHeading eyebrow="Deny as evidence" title="A refused tool call is still an event." />
+        <SectionHeading index="03" eyebrow="Deny as evidence" title="A refused tool call is still an event." />
         <SpecimenGrid>
           <div>
             <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.muted, margin: 0, maxWidth: '54ch' }}>
@@ -216,8 +217,8 @@ export default function McpPage() {
       </PageSection>
 
       {/* Boundaries */}
-      <PageSection paddingTop={0} paddingBottom={80}>
-        <SectionHeading eyebrow="Boundaries" title="What Originary does not do here." />
+      <PageSection paddingTop={0} paddingBottom={80} background={PALETTE.paper}>
+        <SectionHeading index="04" eyebrow="Boundaries" title="What Originary does not do here." />
         <MarkerList
           marker="cross"
           items={[
@@ -243,7 +244,7 @@ export default function McpPage() {
           <InkButton href="/contact" primary>
             Request a demo
           </InkButton>
-          <InkButton href="/records">See all record types</InkButton>
+          <InkButton href="/verify">Verify a record</InkButton>
         </div>
         <AnchorLine onInk style={{ marginTop: 36 }}>Logs stay local. Signed records travel.</AnchorLine>
       </InkBand>

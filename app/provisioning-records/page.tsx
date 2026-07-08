@@ -116,6 +116,7 @@ export default function ProvisioningRecordsPage() {
       {/* The problem */}
       <PageSection paddingBottom={64}>
         <SectionHeading
+          index="01"
           eyebrow="The problem"
           title="Provisioning happens everywhere. The audit trail does not travel."
           sub="Deployments, provider setup, and credential changes are spread across consoles, CLIs, and CI. Each log is internal. A signed record answers the questions that cross the boundary:"
@@ -135,7 +136,7 @@ export default function ProvisioningRecordsPage() {
       {/* The specimen */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
         <div id="specimen" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading eyebrow="The specimen" title="One provisioning event. One signed record." />
+          <SectionHeading index="02" eyebrow="The specimen" title="One provisioning event. One signed record." />
           <SpecimenGrid>
             <div>
               <RecordCard
@@ -176,7 +177,7 @@ export default function ProvisioningRecordsPage() {
 
       {/* What it covers */}
       <PageSection paddingTop={56} paddingBottom={56}>
-        <SectionHeading eyebrow="What it covers" title="Lifecycle events across the stack you already run." />
+        <SectionHeading index="03" eyebrow="What it covers" title="Lifecycle events across the stack you already run." />
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
           {COVERAGE.map((c) => (
             <Pill key={c}>{c}</Pill>
@@ -189,8 +190,8 @@ export default function ProvisioningRecordsPage() {
       </PageSection>
 
       {/* Boundaries */}
-      <PageSection paddingTop={0} paddingBottom={80}>
-        <SectionHeading eyebrow="Boundaries" title="What Originary does not do here." />
+      <PageSection paddingTop={0} paddingBottom={80} background={PALETTE.paper}>
+        <SectionHeading index="04" eyebrow="Boundaries" title="What Originary does not do here." />
         <MarkerList
           marker="cross"
           items={[
@@ -210,10 +211,10 @@ export default function ProvisioningRecordsPage() {
           <CodeBlock tone="ink">npx -y @peac/cli verify ./provisioning-event.jws --public-key ./jwks.json</CodeBlock>
         </div>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <InkButton href="/verify" primary>
-            Verify a record
+          <InkButton href="/contact" primary>
+            Request a demo
           </InkButton>
-          <InkButton href="/peac">Read the protocol</InkButton>
+          <InkButton href="/verify">Verify a record</InkButton>
         </div>
         <AnchorLine onInk style={{ marginTop: 36 }}>Logs stay local. Signed records travel.</AnchorLine>
       </InkBand>

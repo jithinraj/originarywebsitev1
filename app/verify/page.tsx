@@ -116,8 +116,8 @@ export default function VerifyPage() {
       </PageSection>
 
       {/* Samples */}
-      <PageSection paddingTop={0} paddingBottom={56}>
-        <SectionHeading eyebrow="Try a sample" title="Don't have a record yet? Verify one of ours." />
+      <PageSection paddingTop={0} paddingBottom={56} background={PALETTE.paper}>
+        <SectionHeading index="01" eyebrow="Try a sample" title="Don't have a record yet? Verify one of ours." />
         <div
           style={{
             display: 'grid',
@@ -160,9 +160,9 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
       </PageSection>
 
       {/* What this proves */}
-      <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
+      <PageSection paddingTop={56} paddingBottom={56}>
         <div id="proves" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading eyebrow="What this proves" title="A green check is a precise claim." />
+          <SectionHeading index="02" eyebrow="What this proves" title="A green check is a precise claim." />
           <CompareColumns
             columns={[
               {
@@ -191,8 +191,9 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
       </PageSection>
 
       {/* Network behaviour */}
-      <PageSection paddingTop={56} paddingBottom={80}>
+      <PageSection paddingTop={56} paddingBottom={80} background={PALETTE.paper}>
         <SectionHeading
+          index="03"
           eyebrow="Network behaviour, precisely"
           title="Three ways to verify. Different network rules."
         />
@@ -221,6 +222,7 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
       {/* Verification profile (capabilities) */}
       <PageSection paddingTop={0} paddingBottom={80}>
         <SectionHeading
+          index="04"
           eyebrow="Verification profile"
           title="What the verifier checks."
           sub={`Current release: PEAC ${FACTS.currentVersion}. These checks compose; the wire format (0.2) and public schema are unchanged.`}
@@ -282,7 +284,7 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
           <InkButton href="/records" primary>
             Browse sample records
           </InkButton>
-          <InkButton href="/downloads">Get the CLI</InkButton>
+          <InkButton href="/contact">Request a demo</InkButton>
         </div>
         <AnchorLine onInk style={{ marginTop: 36 }}>Logs stay local. Signed records travel.</AnchorLine>
       </InkBand>

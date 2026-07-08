@@ -102,6 +102,7 @@ export default function AiGatewayPage() {
       {/* The problem */}
       <PageSection paddingBottom={64}>
         <SectionHeading
+          index="01"
           eyebrow="The problem"
           title="Gateway logs explain decisions internally. Signed records let others verify them."
           sub="A gateway log can help you debug a routing or policy decision internally. It cannot be handed to a customer, auditor, or counterparty as independent proof. A signed record answers the questions that cross the boundary:"
@@ -121,7 +122,7 @@ export default function AiGatewayPage() {
       {/* The specimen */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
         <div id="specimen" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading eyebrow="The specimen" title="One gateway decision. One signed record." />
+          <SectionHeading index="02" eyebrow="The specimen" title="One gateway decision. One signed record." />
           <SpecimenGrid>
             <div>
               <RecordCard
@@ -165,7 +166,7 @@ export default function AiGatewayPage() {
 
       {/* Deny as evidence */}
       <PageSection paddingTop={56} paddingBottom={56}>
-        <SectionHeading eyebrow="Deny as evidence" title="A refused or redacted request is still an event." />
+        <SectionHeading index="03" eyebrow="Deny as evidence" title="A refused or redacted request is still an event." />
         <SpecimenGrid>
           <div>
             <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.muted, margin: 0, maxWidth: '54ch' }}>
@@ -196,6 +197,7 @@ export default function AiGatewayPage() {
       {/* Spend attribution */}
       <PageSection paddingTop={0} paddingBottom={64} background={PALETTE.paper}>
         <SectionHeading
+          index="04"
           eyebrow="Spend attribution"
           title="When agent traffic hits a metered or paid endpoint, the record binds who spent what."
           sub="Each call yields a signed record binding the caller identity or agent reference, the action, and the observed payment context. Finance and audit review can reconcile agent spend against signed records instead of one side's counters."
@@ -219,7 +221,7 @@ export default function AiGatewayPage() {
 
       {/* Fits your stack */}
       <PageSection paddingTop={56} paddingBottom={56}>
-        <SectionHeading eyebrow="Fits your stack" title="Records compose with what your gateway already touches." />
+        <SectionHeading index="05" eyebrow="Fits your stack" title="Records compose with what your gateway already touches." />
         <MarkerList
           marker="number"
           items={[
@@ -246,8 +248,8 @@ export default function AiGatewayPage() {
       </PageSection>
 
       {/* Boundaries */}
-      <PageSection paddingTop={0} paddingBottom={80}>
-        <SectionHeading eyebrow="Boundaries" title="What Originary does not do here." />
+      <PageSection paddingTop={0} paddingBottom={80} background={PALETTE.paper}>
+        <SectionHeading index="06" eyebrow="Boundaries" title="What Originary does not do here." />
         <MarkerList
           marker="cross"
           items={[
@@ -284,10 +286,10 @@ export default function AiGatewayPage() {
         </div>
         <CodeBlock tone="ink">npx -y @peac/cli verify ./gateway-decision.jws --public-key ./jwks.json</CodeBlock>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <InkButton href="/verify" primary>
-            Verify a sample record
+          <InkButton href="/contact" primary>
+            Request a demo
           </InkButton>
-          <InkButton href="/records">See all record types</InkButton>
+          <InkButton href="/verify">Verify a record</InkButton>
         </div>
         <AnchorLine onInk style={{ marginTop: 36 }}>Logs stay local. Signed records travel.</AnchorLine>
       </InkBand>

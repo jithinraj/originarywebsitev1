@@ -118,7 +118,7 @@ export default function AgenticCommercePage() {
 
       {/* Two truths */}
       <PageSection paddingBottom={64}>
-        <SectionHeading eyebrow="Two different facts" title="The rail proves the payment. The record proves the context." />
+        <SectionHeading index="01" eyebrow="Two different facts" title="The rail proves the payment. The record proves the context." />
         <SpecimenGrid>
           <Card>
             <div style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: PALETTE.faint }}>
@@ -146,8 +146,8 @@ export default function AgenticCommercePage() {
       </PageSection>
 
       {/* The real questions */}
-      <PageSection paddingTop={0} paddingBottom={64}>
-        <SectionHeading eyebrow="The real questions" title={'When an agent pays, "did money move?" is the easy part.'} />
+      <PageSection paddingTop={0} paddingBottom={64} background={PALETTE.paper}>
+        <SectionHeading index="02" eyebrow="The real questions" title={'When an agent pays, "did money move?" is the easy part.'} />
         <MarkerList
           marker="check"
           items={[
@@ -161,9 +161,9 @@ export default function AgenticCommercePage() {
       </PageSection>
 
       {/* Worked example */}
-      <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
+      <PageSection paddingTop={56} paddingBottom={56}>
         <div id="example" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading eyebrow="Worked example" title="A research agent calls a paid market-data API." />
+          <SectionHeading index="03" eyebrow="Worked example" title="A research agent calls a paid market-data API." />
           <SpecimenGrid>
             <div>
               <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.muted, margin: 0, maxWidth: '52ch' }}>
@@ -212,8 +212,8 @@ export default function AgenticCommercePage() {
       </PageSection>
 
       {/* Where it fits */}
-      <PageSection paddingTop={56} paddingBottom={56}>
-        <SectionHeading eyebrow="Where it fits" title="Records can sit around commerce workflows you already run." />
+      <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
+        <SectionHeading index="04" eyebrow="Where it fits" title="Records can sit around commerce workflows you already run." />
         <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
           {FITS.map((f) => (
             <Pill key={f}>{f}</Pill>
@@ -227,7 +227,7 @@ export default function AgenticCommercePage() {
 
       {/* Boundaries */}
       <PageSection paddingTop={0} paddingBottom={80}>
-        <SectionHeading eyebrow="Boundaries" title="What Originary does not do." />
+        <SectionHeading index="05" eyebrow="Boundaries" title="What Originary does not do." />
         <MarkerList
           marker="cross"
           items={[
@@ -244,20 +244,60 @@ export default function AgenticCommercePage() {
       </PageSection>
 
       {/* v0.16.2 */}
-      <PageSection paddingTop={0} paddingBottom={64}>
-        <SectionHeading eyebrow="What v0.16.2 adds" title="Broader evidence coverage, same wire format." />
-        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', margin: 0 }}>
-          PEAC v0.16.2 expands the portable evidence surface beyond single signed records.
-        </p>
-        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', marginTop: 14 }}>
-          It adds evidence patterns for paid resources, paid MCP tool records, linked counterparty
-          acknowledgments, Merkle commitment helpers, external evidence anchoring, agent spend attribution,
-          agent run lineage records, consented action records, and runtime lineage exports.
-        </p>
-        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', marginTop: 14 }}>
-          The wire format stays stable. The goal is broader evidence coverage, not a new payment rail,
-          gateway, policy engine, or governance product.
-        </p>
+      <PageSection paddingTop={0} paddingBottom={64} background={PALETTE.paper}>
+        <SectionHeading index="06" eyebrow="What v0.16.2 adds" title="Broader evidence coverage, same wire format." />
+        <Card padding={28} style={{ maxWidth: 860 }}>
+          <div
+            style={{
+              fontFamily: 'var(--font-plex-mono)',
+              fontSize: 10.5,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: PALETTE.accent,
+            }}
+          >
+            PEAC v0.16.2
+          </div>
+          <p
+            style={{
+              fontFamily: 'var(--font-plex-sans)',
+              fontSize: 15.5,
+              lineHeight: 1.6,
+              color: PALETTE.ink,
+              margin: '12px 0 16px',
+              maxWidth: '58ch',
+            }}
+          >
+            Portable evidence beyond single signed records: the wire format stays stable while evidence coverage
+            broadens.
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            {[
+              'Paid resource records',
+              'Paid MCP tool records',
+              'Linked counterparty acknowledgments',
+              'Merkle commitment helpers',
+              'External evidence anchoring',
+              'Agent spend attribution',
+              'Agent run lineage records',
+              'Consented action records',
+              'Runtime lineage exports',
+            ].map((c) => (
+              <Pill key={c}>{c}</Pill>
+            ))}
+          </div>
+          <p
+            style={{
+              fontFamily: 'var(--font-plex-sans)',
+              fontSize: 13,
+              lineHeight: 1.6,
+              color: PALETTE.muted,
+              margin: '16px 0 0',
+            }}
+          >
+            Broader evidence coverage, not a new payment rail, gateway, or policy engine.
+          </p>
+        </Card>
       </PageSection>
 
       {/* Closing */}
@@ -271,7 +311,7 @@ export default function AgenticCommercePage() {
           <InkButton href="/contact" primary>
             Request a demo
           </InkButton>
-          <InkButton href="/records">See the payment record</InkButton>
+          <InkButton href="/verify">Verify a record</InkButton>
         </div>
         <AnchorLine onInk style={{ marginTop: 36 }}>Logs stay local. Signed records travel.</AnchorLine>
       </InkBand>

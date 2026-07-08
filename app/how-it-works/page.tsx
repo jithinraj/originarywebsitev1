@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
-import { PageShell, PageHero, PageSection, SectionHeading, Card } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import { InkBand, InkHeading, InkButton, AnchorLine, CodeBlock } from '@/components/specimens/parts'
 import FlowObserver from '@/components/how-it-works/FlowObserver'
@@ -429,9 +429,17 @@ function FlowDiagram({ beats, actors }: { beats: Beat[]; actors: string[] }) {
   )
 }
 
-function SurfaceSection({ s, first = false }: { s: SurfaceData; first?: boolean }) {
+function SurfaceSection({
+  s,
+  first = false,
+  background,
+}: {
+  s: SurfaceData
+  first?: boolean
+  background?: string
+}) {
   return (
-    <PageSection paddingTop={first ? 8 : 0} paddingBottom={0}>
+    <PageSection paddingTop={first ? 8 : 0} paddingBottom={0} background={background}>
       <div
         className="hiw-sdeep"
         id={s.id}
@@ -548,27 +556,74 @@ export default function HowItWorksPage() {
         display
         aside={<JumpIndex items={HOW_IT_WORKS_JUMP} />}
         strip={['Six surfaces', 'One primitive', 'One verification path', 'Offline verification']}
-      />
+      >
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <Button href="/records" primary>
+            See the records
+          </Button>
+          <Button href="/verify">Verify one</Button>
+        </div>
+      </PageHero>
 
       {SURFACES.map((s, i) => (
-        <SurfaceSection s={s} first={i === 0} key={s.id} />
+        <SurfaceSection s={s} first={i === 0} background={i % 2 === 1 ? PALETTE.paper : undefined} key={s.id} />
       ))}
 
       {/* v0.16.2 */}
       <PageSection paddingTop={0} paddingBottom={64}>
-        <SectionHeading eyebrow="What v0.16.2 adds" title="Broader evidence coverage, same wire format." />
-        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', margin: 0 }}>
-          PEAC v0.16.2 expands the portable evidence surface beyond single signed records.
-        </p>
-        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', marginTop: 14 }}>
-          It adds evidence patterns for paid resources, paid MCP tool records, linked counterparty
-          acknowledgments, Merkle commitment helpers, external evidence anchoring, agent spend attribution,
-          agent run lineage records, consented action records, and runtime lineage exports.
-        </p>
-        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', marginTop: 14 }}>
-          The wire format stays stable. The goal is broader evidence coverage, not a new payment rail,
-          gateway, policy engine, or governance product.
-        </p>
+        <SectionHeading index="07" eyebrow="What v0.16.2 adds" title="Broader evidence coverage, same wire format." />
+        <Card padding={28} style={{ maxWidth: 860 }}>
+          <div
+            style={{
+              fontFamily: 'var(--font-plex-mono)',
+              fontSize: 10.5,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: PALETTE.accent,
+            }}
+          >
+            PEAC v0.16.2
+          </div>
+          <p
+            style={{
+              fontFamily: 'var(--font-plex-sans)',
+              fontSize: 15.5,
+              lineHeight: 1.6,
+              color: PALETTE.ink,
+              margin: '12px 0 16px',
+              maxWidth: '58ch',
+            }}
+          >
+            Portable evidence beyond single signed records: the wire format stays stable while evidence coverage
+            broadens.
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            {[
+              'Paid resource records',
+              'Paid MCP tool records',
+              'Linked counterparty acknowledgments',
+              'Merkle commitment helpers',
+              'External evidence anchoring',
+              'Agent spend attribution',
+              'Agent run lineage records',
+              'Consented action records',
+              'Runtime lineage exports',
+            ].map((c) => (
+              <Pill key={c}>{c}</Pill>
+            ))}
+          </div>
+          <p
+            style={{
+              fontFamily: 'var(--font-plex-sans)',
+              fontSize: 13,
+              lineHeight: 1.6,
+              color: PALETTE.muted,
+              margin: '16px 0 0',
+            }}
+          >
+            Broader evidence coverage, not a new payment rail, gateway, or policy engine.
+          </p>
+        </Card>
       </PageSection>
 
       {/* Closing */}
@@ -585,7 +640,7 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
           <InkButton href="/verify" primary>
             Verify a record
           </InkButton>
-          <InkButton href="/records">See all six records</InkButton>
+          <InkButton href="/contact">Request a demo</InkButton>
         </div>
         <AnchorLine onInk style={{ marginTop: 36 }}>
           Logs stay local. Signed records travel.

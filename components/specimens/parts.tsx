@@ -445,10 +445,12 @@ export function DataTable({
   )
 }
 
+/** Ledger-style list: hairline-ruled rows in a paper card, mono index +
+ * status glyph, so lists read like record output instead of loose bullets. */
 export function MarkerList({
   marker,
   items,
-  maxWidth = 660,
+  maxWidth = 720,
 }: {
   marker: 'check' | 'cross' | 'number'
   items: ReactNode[]
@@ -456,29 +458,45 @@ export function MarkerList({
 }) {
   const color = marker === 'cross' ? PALETTE.warn : marker === 'check' ? PALETTE.success : PALETTE.accent
   return (
-    <ul style={{ listStyle: 'none', margin: 0, padding: 0, maxWidth, display: 'flex', flexDirection: 'column', gap: 11 }}>
+    <ul
+      style={{
+        listStyle: 'none',
+        margin: 0,
+        padding: 0,
+        maxWidth,
+        background: PALETTE.paper,
+        border: `1px solid ${PALETTE.hairline}`,
+      }}
+    >
       {items.map((it, i) => (
-        <li key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+        <li
+          key={i}
+          style={{
+            display: 'grid',
+            gridTemplateColumns: marker === 'number' ? '34px minmax(0, 1fr)' : '34px 18px minmax(0, 1fr)',
+            gap: 12,
+            alignItems: 'baseline',
+            padding: '13px 20px',
+            borderTop: i > 0 ? `1px solid ${PALETTE.hairline}` : 'none',
+          }}
+        >
           <span
             aria-hidden="true"
             style={{
-              flexShrink: 0,
-              width: 20,
-              height: 20,
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
               fontFamily: mono,
-              fontSize: marker === 'number' ? 11 : 12,
-              color,
-              border: `1px solid ${color}`,
-              borderRadius: marker === 'number' ? 999 : 3,
-              marginTop: 1,
+              fontSize: 11,
+              letterSpacing: '0.08em',
+              color: PALETTE.faint,
             }}
           >
-            {marker === 'check' ? '✓' : marker === 'cross' ? '×' : i + 1}
+            {String(i + 1).padStart(2, '0')}
           </span>
-          <span style={{ fontFamily: sans, fontSize: 15.5, lineHeight: 1.55, color: PALETTE.ink }}>{it}</span>
+          {marker !== 'number' ? (
+            <span aria-hidden="true" style={{ fontFamily: mono, fontSize: 12.5, color }}>
+              {marker === 'check' ? '✓' : '×'}
+            </span>
+          ) : null}
+          <span style={{ fontFamily: sans, fontSize: 15, lineHeight: 1.55, color: PALETTE.ink }}>{it}</span>
         </li>
       ))}
     </ul>

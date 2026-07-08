@@ -232,11 +232,14 @@ export function SectionHeading({
   title,
   sub,
   align = 'left',
+  index,
 }: {
   eyebrow?: string
   title: string
   sub?: string
   align?: 'left' | 'center'
+  /** Mono section index (e.g. "01") rendered before the eyebrow: datasheet numbering. */
+  index?: string
 }) {
   return (
     <div
@@ -254,6 +257,11 @@ export function SectionHeading({
           color={PALETTE.faint}
           style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
         >
+          {index ? (
+            <span aria-hidden style={{ color: PALETTE.accent, marginRight: 10 }}>
+              {index}
+            </span>
+          ) : null}
           {eyebrow}
         </Mono>
       ) : null}

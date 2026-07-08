@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
-import { PageShell, PageHero, PageSection, SectionHeading, Card } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -74,13 +74,15 @@ function Specimen({
   children,
   first = false,
   id,
+  background,
 }: {
   children: React.ReactNode
   first?: boolean
   id?: string
+  background?: string
 }) {
   return (
-    <PageSection paddingTop={first ? 8 : 0} paddingBottom={0}>
+    <PageSection paddingTop={first ? 8 : 0} paddingBottom={0} background={background}>
       <div
         id={id}
         style={{
@@ -168,6 +170,12 @@ export default function RecordsPage() {
         aside={<JumpIndex items={RECORDS_JUMP} />}
         strip={['Record gallery', '06 workflows', 'One primitive', 'Verifies offline']}
       >
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <Button href="/verify" primary>
+            Verify a sample record
+          </Button>
+          <Button href="/how-it-works">How it works</Button>
+        </div>
         <Legend items={['facts', 'policy', 'result', 'time', 'issuer', 'signature']} />
         <AnchorLine style={{ marginTop: 26 }}>Logs stay local. Signed records travel.</AnchorLine>
       </PageHero>
@@ -200,7 +208,7 @@ export default function RecordsPage() {
       </Specimen>
 
       {/* 02 - MCP tool run */}
-      <Specimen id="mcp">
+      <Specimen id="mcp" background={PALETTE.paper}>
         <SpecimenGrid>
           <SpecimenIntro
             eyebrow="02 - MCP tool run"
@@ -273,7 +281,7 @@ export default function RecordsPage() {
       </Specimen>
 
       {/* 04 - Gateway decision (deny as evidence) */}
-      <Specimen id="gateway">
+      <Specimen id="gateway" background={PALETTE.paper}>
         <SpecimenGrid>
           <SpecimenIntro
             eyebrow="04 - Gateway decision"
@@ -349,7 +357,7 @@ export default function RecordsPage() {
       </Specimen>
 
       {/* 06 - Provisioning event */}
-      <Specimen id="provisioning">
+      <Specimen id="provisioning" background={PALETTE.paper}>
         <SpecimenGrid>
           <SpecimenIntro
             eyebrow="06 - Provisioning event"
@@ -394,19 +402,59 @@ export default function RecordsPage() {
 
       {/* v0.16.2 */}
       <PageSection paddingTop={0} paddingBottom={64}>
-        <SectionHeading eyebrow="What v0.16.2 adds" title="Broader evidence coverage, same wire format." />
-        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', margin: 0 }}>
-          PEAC v0.16.2 expands the portable evidence surface beyond single signed records.
-        </p>
-        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', marginTop: 14 }}>
-          It adds evidence patterns for paid resources, paid MCP tool records, linked counterparty
-          acknowledgments, Merkle commitment helpers, external evidence anchoring, agent spend attribution,
-          agent run lineage records, consented action records, and runtime lineage exports.
-        </p>
-        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, maxWidth: '62ch', marginTop: 14 }}>
-          The wire format stays stable. The goal is broader evidence coverage, not a new payment rail,
-          gateway, policy engine, or governance product.
-        </p>
+        <SectionHeading index="07" eyebrow="What v0.16.2 adds" title="Broader evidence coverage, same wire format." />
+        <Card padding={28} style={{ maxWidth: 860 }}>
+          <div
+            style={{
+              fontFamily: 'var(--font-plex-mono)',
+              fontSize: 10.5,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: PALETTE.accent,
+            }}
+          >
+            PEAC v0.16.2
+          </div>
+          <p
+            style={{
+              fontFamily: 'var(--font-plex-sans)',
+              fontSize: 15.5,
+              lineHeight: 1.6,
+              color: PALETTE.ink,
+              margin: '12px 0 16px',
+              maxWidth: '58ch',
+            }}
+          >
+            Portable evidence beyond single signed records: the wire format stays stable while evidence coverage
+            broadens.
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            {[
+              'Paid resource records',
+              'Paid MCP tool records',
+              'Linked counterparty acknowledgments',
+              'Merkle commitment helpers',
+              'External evidence anchoring',
+              'Agent spend attribution',
+              'Agent run lineage records',
+              'Consented action records',
+              'Runtime lineage exports',
+            ].map((c) => (
+              <Pill key={c}>{c}</Pill>
+            ))}
+          </div>
+          <p
+            style={{
+              fontFamily: 'var(--font-plex-sans)',
+              fontSize: 13,
+              lineHeight: 1.6,
+              color: PALETTE.muted,
+              margin: '16px 0 0',
+            }}
+          >
+            Broader evidence coverage, not a new payment rail, gateway, or policy engine.
+          </p>
+        </Card>
       </PageSection>
 
       {/* Closing */}
@@ -423,7 +471,7 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
           <InkButton href="/verify" primary>
             Verify a record
           </InkButton>
-          <InkButton href="/peac">Read the protocol</InkButton>
+          <InkButton href="/contact">Request a demo</InkButton>
         </div>
       </InkBand>
     </PageShell>

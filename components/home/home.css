@@ -1151,14 +1151,13 @@ html {
 /* WorksWithStrip — restrained, static, labeled logo row */
 .home-works-with-grid {
   list-style: none;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(10, minmax(0, 1fr));
   align-items: start;
   justify-items: center;
   gap: clamp(20px, 2.8vw, 40px) clamp(14px, 1.6vw, 24px);
-  max-width: 1120px;
 }
 .home-works-with-item {
   display: flex;
@@ -1177,7 +1176,6 @@ html {
   width: 100%;
 }
 .home-works-with-item img {
-  max-height: 28px;
   max-width: 100%;
   width: auto;
   height: auto;
@@ -1185,6 +1183,14 @@ html {
   opacity: 0.78;
   filter: brightness(0) saturate(100%);
   transition: opacity 220ms ease, filter 220ms ease;
+}
+/* Ruled ledger cells: hairline separators carry the alignment so mixed
+   logo lockups read as one organized system. */
+.home-works-with-item {
+  border-left: 1px solid rgba(20, 17, 10, 0.14);
+}
+.home-works-with-item:first-child {
+  border-left: none;
 }
 .home-works-with-item:hover img {
   opacity: 1;
@@ -1202,8 +1208,7 @@ html {
 .home-works-with-item:hover .home-works-with-label {
   color: #14110a;
 }
-/* Icon-forward marks take one larger, consistent height cap to balance optically with wordmarks. */
-.home-works-with-item[data-icon] img { max-height: 34px; }
+/* Per-asset optical height caps are data-driven inline (see WorksWithStrip LOGOS). */
 @media (max-width: 1180px) {
   .home-works-with-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -1217,8 +1222,8 @@ html {
     gap: 22px 14px;
   }
   .home-works-with-mark { height: 34px; }
-  .home-works-with-item img { max-height: 22px; }
-  .home-works-with-item[data-icon] img { max-height: 30px; }
+  .home-works-with-item img { transform: scale(0.85); transform-origin: center; }
+  .home-works-with-item:nth-child(5n + 1) { border-left: none; }
   .home-works-with-label { font-size: 11px; }
 }
 @media (max-width: 420px) {
