@@ -46,7 +46,7 @@ export default function ProblemSection() {
             <p className="description">
               As agents interact with services on our behalf, internal logs lose
               credibility in disputes. The missing piece: a neutral, portable record
-              of what happened, under which terms, with cryptographic proof.
+              of what happened, under which terms, with a signature anyone can verify.
             </p>
           </div>
 

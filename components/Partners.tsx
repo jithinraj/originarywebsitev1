@@ -11,7 +11,7 @@ const integrations = [
   { name: 'ACP', description: 'Agentic Commerce Protocol' },
   { name: 'RSL', description: 'Robots Signaling Language' },
   { name: 'C2PA', description: 'Content authenticity' },
-  { name: 'ERC-8004', description: 'On-chain agent identity' },
+  { name: 'ERC-8004', description: 'Agent identity registry' },
 ]
 
 export default function Partners() {

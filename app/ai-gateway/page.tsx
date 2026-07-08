@@ -123,7 +123,7 @@ export default function AiGatewayPage() {
       {/* The specimen */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
         <div id="specimen" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading index="02" eyebrow="The specimen" title="One gateway decision. One signed record." />
+          <SectionHeading index="02" eyebrow="The specimen" title="One gateway decision. One signed record." mark="valve" />
           <FlowPanel
             label="Sequence diagram: a request passes the gateway, one path is allowed and forwarded, another is denied by policy, and both outcomes become a signed decision record with produced and delivered digests."
             actors={['app / agent', 'gateway', 'recipient']}
@@ -263,7 +263,7 @@ export default function AiGatewayPage() {
 
       {/* Boundaries */}
       <PageSection paddingTop={0} paddingBottom={80} background={PALETTE.paper}>
-        <SectionHeading index="06" eyebrow="Boundaries" title="What Originary does not do here." />
+        <SectionHeading index="06" eyebrow="Boundaries" title="What Originary does not do here." mark="diamond" />
         <MarkerList
           marker="cross"
           items={[

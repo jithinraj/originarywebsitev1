@@ -12,7 +12,7 @@ export default function FoundationalRailsSection() {
     { icon: Lock, label: 'Privacy', description: 'Selective disclosure' },
     { icon: FileSignature, label: 'Provenance', description: 'Signed lineage and chain of custody' },
     { icon: ShieldCheck, label: 'Safety', description: 'Defense-in-depth security' },
-    { icon: Fingerprint, label: 'Identity', description: 'Cryptographic proof-of-control' },
+    { icon: Fingerprint, label: 'Identity', description: 'Signed proof-of-control' },
     { icon: Target, label: 'Purpose', description: 'Declared interaction intent' }
   ]
 

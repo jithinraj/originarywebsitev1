@@ -197,12 +197,18 @@ export function HeroV2() {
                 {CHIPS.map((_, i) => {
                   const active = leftLineDrawing && i === chipIdx
                   return (
-                    <path
-                      key={`l-${i}`}
-                      d={leftPath(i)}
-                      className={`home-herov2-line home-herov2-line-left ${active ? 'is-drawing' : ''}`}
-                      vectorEffect="non-scaling-stroke"
-                    />
+                    <g key={`l-${i}`}>
+                      <path
+                        d={leftPath(i)}
+                        className={`home-herov2-line home-herov2-line-left ${active ? 'is-drawing' : ''}`}
+                        vectorEffect="non-scaling-stroke"
+                      />
+                      {active && !reduced ? (
+                        <circle r="2.4" fill="#2c8a55" opacity="0.9">
+                          <animateMotion dur="1.5s" repeatCount="indefinite" path={leftPath(i)} />
+                        </circle>
+                      ) : null}
+                    </g>
                   )
                 })}
               </svg>
@@ -271,12 +277,18 @@ export function HeroV2() {
                 {OUTPUTS.map((_, i) => {
                   const active = rightLineDrawing && (phase === 'export' ? i === BUNDLE_IDX : i === outIdx)
                   return (
-                    <path
-                      key={`r-${i}`}
-                      d={rightPath(i)}
-                      className={`home-herov2-line home-herov2-line-right ${active ? 'is-drawing' : ''}`}
-                      vectorEffect="non-scaling-stroke"
-                    />
+                    <g key={`r-${i}`}>
+                      <path
+                        d={rightPath(i)}
+                        className={`home-herov2-line home-herov2-line-right ${active ? 'is-drawing' : ''}`}
+                        vectorEffect="non-scaling-stroke"
+                      />
+                      {active && !reduced ? (
+                        <circle r="2.4" fill="#2c8a55" opacity="0.9">
+                          <animateMotion dur="1.5s" repeatCount="indefinite" path={rightPath(i)} />
+                        </circle>
+                      ) : null}
+                    </g>
                   )
                 })}
               </svg>

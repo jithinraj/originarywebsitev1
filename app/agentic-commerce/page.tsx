@@ -15,6 +15,7 @@ import {
   Dim,
 } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
+import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 
 const TITLE = 'Agentic commerce records: verify agent payments | Originary'
 const DESCRIPTION =
@@ -72,17 +73,35 @@ const jsonLd = {
   ],
 }
 
-const FITS = [
-  'x402 paid API calls',
-  'Usage-billed API events',
-  'AP2 or MPP payment flows',
-  'Gateway allow, deny, route, or throttle decisions',
-  'Agent-to-agent commerce handoffs',
-  'Refunds, disputes, and settlement observations',
-  'Mandate and terms-version binding',
-  'Procurement and audit-review bundles',
-  'Counterparty acknowledgment records',
-  'Agent spend attribution for finance and audit review',
+const FIT_GROUPS: Array<{ label: string; mark: MarkName; items: string[] }> = [
+  {
+    label: 'Payment flows',
+    mark: 'coin',
+    items: [
+      'x402 paid API calls',
+      'Usage-billed API events',
+      'AP2 or MPP payment flows',
+      'Refunds, disputes, and settlement observations',
+    ],
+  },
+  {
+    label: 'Gateway and agent traffic',
+    mark: 'valve',
+    items: [
+      'Gateway allow, deny, route, or throttle decisions',
+      'Agent-to-agent commerce handoffs',
+      'Agent spend attribution for finance and audit review',
+    ],
+  },
+  {
+    label: 'Review and evidence',
+    mark: 'sealCheck',
+    items: [
+      'Mandate and terms-version binding',
+      'Procurement and audit-review bundles',
+      'Counterparty acknowledgment records',
+    ],
+  },
 ]
 
 export default function AgenticCommercePage() {
@@ -164,7 +183,7 @@ export default function AgenticCommercePage() {
       {/* Worked example */}
       <PageSection paddingTop={56} paddingBottom={56}>
         <div id="example" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading index="03" eyebrow="Worked example" title="A research agent calls a paid market-data API." />
+          <SectionHeading index="03" eyebrow="Worked example" title="A research agent calls a paid market-data API." mark="coin" />
           <FlowPanel
             label="Sequence diagram: a buyer agent calls a paid API, receives a 402 payment challenge, settlement is observed on the rail, and a signed payment-event record binds the action, terms, and payment context for later verification."
             actors={['buyer agent', 'seller api']}
@@ -227,9 +246,19 @@ export default function AgenticCommercePage() {
       {/* Where it fits */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
         <SectionHeading index="04" eyebrow="Where it fits" title="Records can sit around commerce workflows you already run." />
-        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-          {FITS.map((f) => (
-            <Pill key={f}>{f}</Pill>
+        <div className="pk-fit-groups">
+          {FIT_GROUPS.map((g) => (
+            <div key={g.label}>
+              <span className="pk-fit-group-label">
+                <MarkGlyph name={g.mark} size={13} />
+                {g.label}
+              </span>
+              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+                {g.items.map((f) => (
+                  <Pill key={f}>{f}</Pill>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
         <p style={{ fontSize: 12.5, lineHeight: 1.6, color: PALETTE.faint, marginTop: 18, maxWidth: '62ch' }}>
@@ -240,7 +269,7 @@ export default function AgenticCommercePage() {
 
       {/* Boundaries */}
       <PageSection paddingTop={0} paddingBottom={80}>
-        <SectionHeading index="05" eyebrow="Boundaries" title="What Originary does not do." />
+        <SectionHeading index="05" eyebrow="Boundaries" title="What Originary does not do." mark="diamond" />
         <MarkerList
           marker="cross"
           items={[
