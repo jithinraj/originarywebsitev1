@@ -1,8 +1,7 @@
 /* how-it-works.css - animated six-surface explainer for /how-it-works.
-   Adapted from the standalone PEAC explainer kit and re-skinned to the
-   Originary homepage design system (components/home/palette.ts): warm
-   paper/ink tones, IBM Plex, square corners, no em dashes.
-   Every selector is prefixed with "hiw-" so nothing leaks into other pages. */
+   Uses the shared design tokens (components/home/palette.ts): warm paper/ink
+   tones, IBM Plex, square corners. Every selector is prefixed with "hiw-" so
+   the styles stay scoped to this page. */
 
 .hiw-sdeep {
   margin-top: 54px;

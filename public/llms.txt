@@ -1,8 +1,9 @@
 # Originary
 
 Originary helps teams issue and verify portable signed records for machine actions.
+Current protocol release: PEAC v0.16.2, which adds evidence patterns for paid resources, paid MCP tool records, linked counterparty acknowledgments, Merkle commitment helpers, external evidence anchoring, agent spend attribution, agent run lineage records, consented action records, and runtime lineage exports. The wire format is unchanged.
 
-Last updated: 2026-06-28
+Last updated: 2026-07-08
 
 Company: Poem, Inc.
 Location: Delaware, USA

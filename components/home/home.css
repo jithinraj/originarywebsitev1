@@ -954,20 +954,19 @@ html {
 }
 .home-herov2-diamond-fields-primary {
   flex-direction: column;
-  gap: 3px;
-  font-size: 13px;
+  gap: 4px;
+  font-size: 12.5px;
   font-weight: 500;
   color: #14110a;
-  letter-spacing: -0.002em;
+  letter-spacing: 0.01em;
   line-height: 1.2;
 }
 .home-herov2-diamond-fields-trust {
-  font-size: 11px;
-  font-weight: 400;
-  color: #4f4838;
-  opacity: 0.72;
-  letter-spacing: -0.002em;
-  line-height: 1.2;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #6e6759;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
 }
 
 /* Chip-active small dot - inside the active chip */

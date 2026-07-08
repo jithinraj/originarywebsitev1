@@ -7,16 +7,16 @@ const BASE = 'https://www.originary.xyz'
 
 // Canonical URLs. Keep aligned with the live route set.
 const entries: Array<[string, string]> = [
-  ['/', '2026-05-20'],
+  ['/', '2026-07-08'],
   ['/about', '2026-06-01'],
   ['/peac', '2026-06-01'],
-  ['/how-it-works', '2026-07-07'],
-  ['/records', '2026-06-28'],
-  ['/verify', '2026-06-28'],
-  ['/mcp', '2026-06-28'],
-  ['/ai-gateway', '2026-07-07'],
+  ['/how-it-works', '2026-07-08'],
+  ['/records', '2026-07-08'],
+  ['/verify', '2026-07-08'],
+  ['/mcp', '2026-07-08'],
+  ['/ai-gateway', '2026-07-08'],
   ['/provisioning-records', '2026-07-08'],
-  ['/agentic-commerce', '2026-06-28'],
+  ['/agentic-commerce', '2026-07-08'],
   ['/downloads', '2026-06-01'],
   ['/pricing', '2026-05-14'],
   ['/contact', '2026-05-14'],
