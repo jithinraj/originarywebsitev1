@@ -163,7 +163,7 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
       {/* What this proves */}
       <PageSection paddingTop={56} paddingBottom={56}>
         <div id="proves" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading index="02" eyebrow="What this proves" title="A green check is a precise claim." />
+          <SectionHeading index="02" eyebrow="What this proves" title="A green check is a precise claim." mark="sealCheck" />
           <FlowPanel
             label="Sequence diagram: you paste a record into the verifier, the issuer's published key resolves or you supply one offline, the Ed25519 signature and bound digests are checked, and the result is a precise green check."
             actors={['you', 'verifier']}

@@ -122,7 +122,7 @@ export default function McpPage() {
       {/* The specimen */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper} className="" >
         <div id="specimen" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading index="02" eyebrow="The specimen" title="One tool run. One signed record." />
+          <SectionHeading index="02" eyebrow="The specimen" title="One tool run. One signed record." mark="link" />
           <FlowPanel
             label="Sequence diagram: an MCP client calls a tool, the result returns with a signed record riding response metadata, and any party verifies the record offline later."
             actors={['mcp client', 'tool server']}
@@ -231,7 +231,7 @@ export default function McpPage() {
 
       {/* Boundaries */}
       <PageSection paddingTop={0} paddingBottom={80} background={PALETTE.paper}>
-        <SectionHeading index="04" eyebrow="Boundaries" title="What Originary does not do here." />
+        <SectionHeading index="04" eyebrow="Boundaries" title="What Originary does not do here." mark="diamond" />
         <MarkerList
           marker="cross"
           items={[

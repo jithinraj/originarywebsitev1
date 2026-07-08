@@ -4,6 +4,7 @@ import './home.css'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { SANS, MONO } from './typography'
 import { Nav } from './Nav'
+import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
 import { HomeFooter } from './Footer'
 import { Mono } from './atoms/Mono'
 
@@ -227,6 +228,7 @@ export function SectionHeading({
   sub,
   align = 'left',
   index,
+  mark,
 }: {
   eyebrow?: string
   title: string
@@ -234,6 +236,8 @@ export function SectionHeading({
   align?: 'left' | 'center'
   /** Mono index rendered before the eyebrow. */
   index?: string
+  /** Optional mark glyph rendered beside the index numeral. */
+  mark?: MarkName
 }) {
   return (
     <div
@@ -254,6 +258,14 @@ export function SectionHeading({
           {index ? (
             <span aria-hidden style={{ color: PALETTE.accent, marginRight: 10 }}>
               {index}
+            </span>
+          ) : null}
+          {mark ? (
+            <span
+              aria-hidden
+              style={{ display: 'inline-flex', verticalAlign: '-3px', marginRight: 9, color: '#8a8172' }}
+            >
+              <MarkGlyph name={mark} size={14} />
             </span>
           ) : null}
           {eyebrow}

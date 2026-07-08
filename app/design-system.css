@@ -1109,29 +1109,11 @@ img {
   display: block;
 }
 
-/* Responsive table handling */
+/* Responsive table handling. Tables opt in to their own mobile treatment
+   (stacking or horizontal scroll); no global cell re-display. */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: var(--space-4) 0;
-}
-
-@media (max-width: 767px) {
-  table, thead, tbody, th, td, tr {
-    display: block;
-  }
-
-  thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-
-  tr {
-    border: 1px solid var(--gray-200);
-    margin-bottom: var(--space-2);
-    padding: var(--space-2);
-  }
 }
 
 /* Focus ring only on keyboard navigation, not mouse clicks */
@@ -1141,7 +1123,6 @@ table {
 *:focus-visible {
   outline: 2px solid var(--border-hover);
   outline-offset: 2px;
-  border-radius: var(--radius-sm);
 }
 
 /* Windows-specific button improvements */

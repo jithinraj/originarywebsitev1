@@ -120,16 +120,25 @@
   background: rgba(20, 17, 10, 0.025);
 }
 
-/* DataTable: the global stylesheet stacks table cells below 768px; make that
-   stacked mode deliberate so prose wraps at the container width. */
+/* DataTable: self-contained stacked rows below 768px so prose wraps at the
+   container width instead of scrolling behind a 520px min-width. */
 @media (max-width: 767px) {
+  .pk-datatable,
+  .pk-datatable tbody,
+  .pk-datatable tr,
+  .pk-datatable td {
+    display: block;
+  }
   .pk-datatable {
     min-width: 0 !important;
   }
+  .pk-datatable thead {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
   .pk-datatable tr {
-    border: none;
     border-top: 1px solid rgba(20, 17, 10, 0.14);
-    margin: 0;
     padding: 14px 16px;
   }
   .pk-datatable tbody tr:first-child {

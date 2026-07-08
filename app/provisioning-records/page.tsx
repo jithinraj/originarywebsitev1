@@ -15,6 +15,7 @@ import {
   Dim,
 } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
+import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 
 const TITLE = 'Provisioning records for agent infrastructure | Originary'
 const DESCRIPTION =
@@ -67,18 +68,22 @@ const jsonLd = {
   ],
 }
 
-const COVERAGE = [
-  'Vercel deployments',
-  'GitHub Actions runs',
-  'Terraform applies',
-  'Provider setup',
-  'Account creation',
-  'Credential issuance and rotation',
-  'Budgets',
-  'Subscriptions',
-  'Domains',
-  'Deployments',
-  'Resource lifecycle: created, updated, removed',
+const COVERAGE_GROUPS: Array<{ label: string; mark: MarkName; items: string[] }> = [
+  {
+    label: 'Deploys and runs',
+    mark: 'pipeline',
+    items: ['Vercel deployments', 'GitHub Actions runs', 'Terraform applies', 'Deployments'],
+  },
+  {
+    label: 'Accounts and credentials',
+    mark: 'key',
+    items: ['Provider setup', 'Account creation', 'Credential issuance and rotation', 'Domains'],
+  },
+  {
+    label: 'Budgets and lifecycle',
+    mark: 'ledger',
+    items: ['Budgets', 'Subscriptions', 'Resource lifecycle: created, updated, removed'],
+  },
 ]
 
 export default function ProvisioningRecordsPage() {
@@ -137,7 +142,7 @@ export default function ProvisioningRecordsPage() {
       {/* The specimen */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
         <div id="specimen" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading index="02" eyebrow="The specimen" title="One provisioning event. One signed record." />
+          <SectionHeading index="02" eyebrow="The specimen" title="One provisioning event. One signed record." mark="pipeline" />
           <FlowPanel
             label="Sequence diagram: a deploy pipeline creates a production resource at a cloud provider, the provisioning event is observed with references and digests only, and a signed record lets anyone verify the change without console access."
             actors={['deploy pipeline', 'cloud provider']}
@@ -191,9 +196,19 @@ export default function ProvisioningRecordsPage() {
       {/* What it covers */}
       <PageSection paddingTop={56} paddingBottom={56}>
         <SectionHeading index="03" eyebrow="What it covers" title="Lifecycle events across the stack you already run." />
-        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-          {COVERAGE.map((c) => (
-            <Pill key={c}>{c}</Pill>
+        <div className="pk-fit-groups">
+          {COVERAGE_GROUPS.map((g) => (
+            <div key={g.label}>
+              <span className="pk-fit-group-label">
+                <MarkGlyph name={g.mark} size={13} />
+                {g.label}
+              </span>
+              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+                {g.items.map((c) => (
+                  <Pill key={c}>{c}</Pill>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
         <p style={{ fontSize: 14, color: PALETTE.muted, maxWidth: '62ch', marginTop: 18 }}>
@@ -204,7 +219,7 @@ export default function ProvisioningRecordsPage() {
 
       {/* Boundaries */}
       <PageSection paddingTop={0} paddingBottom={80} background={PALETTE.paper}>
-        <SectionHeading index="04" eyebrow="Boundaries" title="What Originary does not do here." />
+        <SectionHeading index="04" eyebrow="Boundaries" title="What Originary does not do here." mark="diamond" />
         <MarkerList
           marker="cross"
           items={[

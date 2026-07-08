@@ -19,7 +19,7 @@ const searchIndex: SearchResult[] = [
   { title: 'Demo', description: 'PEAC Protocol transaction trace', href: '/demo', category: 'Pages' },
   { title: 'Verify', description: 'Verify PEAC-Receipts and signatures', href: '/verify', category: 'Tools' },
   { title: 'Trace', description: 'AI crawler analytics and compliance', href: '/trace', category: 'Products' },
-  { title: 'Receipts', description: 'Cryptographic proof for AI interactions', href: '/receipts', category: 'Products' },
+  { title: 'Receipts', description: 'Signed receipts for AI interactions', href: '/receipts', category: 'Products' },
   { title: 'Gateway 402', description: 'HTTP 402 payment gateway for APIs', href: '/products/gateway-402', category: 'Products' },
   { title: 'Downloads', description: 'CLI and policy templates', href: '/downloads', category: 'Resources' },
   { title: 'Blog', description: 'Latest updates and articles', href: '/blog', category: 'Resources' },

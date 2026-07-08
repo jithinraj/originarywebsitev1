@@ -68,7 +68,7 @@ export default function StakeholderFit() {
           </h2>
           <p className="section-description">
             Different stakeholders, same need: verifiable records of what happened,
-            under which terms, with cryptographic proof.
+            under which terms, with a signature anyone can check.
           </p>
         </div>
 
