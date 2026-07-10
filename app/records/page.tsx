@@ -17,6 +17,7 @@ import {
   Dim,
 } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
+import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 import { TamperDemo } from '@/components/specimens/TamperDemo'
 
 const TITLE = 'Signed audit records for AI agents, APIs, and MCP | Originary'
@@ -99,16 +100,16 @@ function Specimen({
   )
 }
 
-const RECORDS_JUMP = [
-  { href: '#api', label: 'API call' },
-  { href: '#mcp', label: 'MCP tool run' },
-  { href: '#agent', label: 'Agent action' },
-  { href: '#gateway', label: 'Gateway decision' },
-  { href: '#payment', label: 'Payment event' },
-  { href: '#provisioning', label: 'Provisioning event' },
+const RECORDS_JUMP: Array<{ href: string; label: string; mark: MarkName }> = [
+  { href: '#api', label: 'API call', mark: 'ledger' },
+  { href: '#mcp', label: 'MCP tool run', mark: 'link' },
+  { href: '#agent', label: 'Agent action', mark: 'target' },
+  { href: '#gateway', label: 'Gateway decision', mark: 'valve' },
+  { href: '#payment', label: 'Payment event', mark: 'coin' },
+  { href: '#provisioning', label: 'Provisioning event', mark: 'pipeline' },
 ]
 
-function JumpIndex({ items }: { items: Array<{ href: string; label: string }> }) {
+function JumpIndex({ items }: { items: Array<{ href: string; label: string; mark: MarkName }> }) {
   return (
     <Card padding={24}>
       <span
@@ -146,6 +147,12 @@ function JumpIndex({ items }: { items: Array<{ href: string; label: string }> })
                   }}
                 >
                   {String(i + 1).padStart(2, '0')}
+                </span>
+                <span
+                  aria-hidden
+                  style={{ color: '#8a8172', display: 'inline-flex', alignSelf: 'center' }}
+                >
+                  <MarkGlyph name={it.mark} size={14} />
                 </span>
                 <span style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 14.5, color: PALETTE.ink }}>
                   {it.label}

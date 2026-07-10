@@ -64,7 +64,7 @@ export function Nav() {
       <div
         className="home-nav-inner"
         style={{
-          maxWidth: MAX_W,
+          maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
           margin: '0 auto',
           padding: `18px ${PAGE_PAD}`,
           display: 'flex',

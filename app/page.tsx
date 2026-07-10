@@ -16,6 +16,7 @@ import {
   Reveal,
   PALETTE,
 } from '@/components/home'
+import { WordmarkStream } from '@/components/home/motion/WordmarkStream'
 
 export const metadata: Metadata = {
   title: {
@@ -202,6 +203,7 @@ export default function Page() {
             <DemoCTA />
           </Reveal>
         </main>
+        <WordmarkStream />
         <HomeFooter />
       </div>
     </>

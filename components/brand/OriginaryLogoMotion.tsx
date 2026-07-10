@@ -255,3 +255,9 @@ export function OriginaryLogoMotion({
 }
 
 export default OriginaryLogoMotion;
+
+// Geometry export for canvas renderings of the wordmark (giant footer stream).
+export const WORDMARK_GEOMETRY = {
+  viewBox: { x: 48, y: 469, width: 7823, height: 1962 },
+  paths: [...STEM_ORDER, ...PROOF_DOTS].map((p) => p.d),
+}

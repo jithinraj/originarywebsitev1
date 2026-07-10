@@ -55,7 +55,7 @@ export function HowItWorks() {
       className="home-section"
       data-screen-label="03 how it works"
       style={{
-        maxWidth: MAX_W,
+        maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
         margin: '0 auto',
         padding: `40px ${PAGE_PAD} 88px ${PAGE_PAD}`,
       }}

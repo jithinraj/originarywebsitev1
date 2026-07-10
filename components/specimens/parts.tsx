@@ -1,5 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react'
 import { PALETTE, MAX_W, PAGE_PAD } from '../home/palette'
+import { ShaderField } from '../home/motion/ShaderField'
 import { SANS, MONO } from '../home/typography'
 import './specimens.css'
 
@@ -292,13 +293,18 @@ export function SpecimenIntro({
 export function InkBand({ children }: { children: ReactNode }) {
   return (
     <section
+      className="cin-stage"
       style={{
         background: PALETTE.ink,
         color: PALETTE.bg,
         padding: `clamp(56px, 8vh, 88px) ${PAGE_PAD}`,
       }}
     >
-      <div style={{ maxWidth: MAX_W, margin: '0 auto', textAlign: 'center' }}>{children}</div>
+      <div className="cin-ink-wash" aria-hidden />
+      <ShaderField className="cin-stream" tone="paper" />
+      <div style={{ maxWidth: MAX_W, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+        {children}
+      </div>
     </section>
   )
 }

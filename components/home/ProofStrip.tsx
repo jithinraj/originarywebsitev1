@@ -1,12 +1,14 @@
+import type { ReactNode } from 'react'
 import { FACTS } from '@/lib/facts'
 import { MAX_W, PAGE_PAD, PALETTE } from './palette'
 import { MONO } from './typography'
+import { CountUp } from './motion/CountUp'
 
-const ITEMS: Array<{ value: string; label: string }> = [
+const ITEMS: Array<{ value: ReactNode; label: string }> = [
   { value: FACTS.currentVersion, label: 'current release' },
-  { value: FACTS.testsCount.toLocaleString('en-US'), label: 'tests' },
-  { value: String(FACTS.conformanceRequirements), label: 'conformance checks' },
-  { value: String(FACTS.publishedPackageCount), label: 'packages on npm' },
+  { value: <CountUp value={FACTS.testsCount} />, label: 'tests' },
+  { value: <CountUp value={FACTS.conformanceRequirements} />, label: 'conformance checks' },
+  { value: <CountUp value={FACTS.publishedPackageCount} />, label: 'packages on npm' },
   { value: FACTS.license, label: 'licensed' },
 ]
 

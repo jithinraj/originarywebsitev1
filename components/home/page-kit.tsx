@@ -1,10 +1,13 @@
 import Link from 'next/link'
 import type { CSSProperties, ReactNode } from 'react'
 import './home.css'
+import './cinema.css'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { SANS, MONO } from './typography'
 import { Nav } from './Nav'
 import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
+import { ShaderField } from './motion/ShaderField'
+import { WordmarkStream } from './motion/WordmarkStream'
 import { HomeFooter } from './Footer'
 import { Mono } from './atoms/Mono'
 
@@ -30,6 +33,7 @@ export function PageShell({ children }: { children: ReactNode }) {
       <main id="main-content" role="main">
         {children}
       </main>
+      <WordmarkStream />
       <HomeFooter />
     </div>
   )
@@ -65,14 +69,15 @@ export function PageHero({
   return (
     <>
     <section
-      className="home-section"
+      className="home-section cin-stage"
       style={{
         padding: `clamp(44px, 7vh, 84px) ${PAGE_PAD} ${plate ? 'clamp(40px, 6vh, 64px)' : '24px'} ${PAGE_PAD}`,
         background: plate ? PALETTE.paper : undefined,
         borderBottom: plate && !strip ? `1px solid ${PALETTE.hairline}` : undefined,
       }}
     >
-      <div style={{ maxWidth: MAX_W, margin: '0 auto' }}>
+      {display ? <ShaderField className="cin-stream" /> : null}
+      <div style={{ maxWidth: MAX_W, margin: '0 auto', position: 'relative', zIndex: 1 }}>
       <div className={aside ? 'pk-hero-grid' : undefined}>
       <div
         style={{
@@ -87,18 +92,21 @@ export function PageHero({
           <Mono
             size={11}
             color={PALETTE.muted}
-            style={{ letterSpacing: '0.2em', textTransform: 'uppercase' }}
+            className="cin-rise"
+            style={{ letterSpacing: '0.2em', textTransform: 'uppercase', display: 'block' }}
           >
             {eyebrow}
           </Mono>
         ) : null}
         <h1
+          className="cin-rise"
           style={{
+            ['--cin-i' as string]: 1,
             fontFamily: sans,
-            fontSize: display ? 'clamp(38px, 4.4vw, 60px)' : 'clamp(32px, 4vw, 44px)',
+            fontSize: display ? 'clamp(42px, 5.4vw, 76px)' : 'clamp(32px, 4vw, 44px)',
             lineHeight: display ? 1.04 : 1.08,
             fontWeight: 500,
-            letterSpacing: display ? '-0.03em' : '-0.025em',
+            letterSpacing: display ? '-0.033em' : '-0.025em',
             margin: eyebrow ? '16px 0 0 0' : '0',
             color: PALETTE.ink,
             textWrap: 'balance',
@@ -123,7 +131,9 @@ export function PageHero({
         ) : null}
         {sub ? (
           <p
+            className="cin-rise"
             style={{
+              ['--cin-i' as string]: 2,
               fontFamily: sans,
               fontSize: 17,
               lineHeight: 1.6,
@@ -138,7 +148,7 @@ export function PageHero({
             {sub}
           </p>
         ) : null}
-        {children ? <div style={{ marginTop: 22 }}>{children}</div> : null}
+        {children ? <div className="cin-rise" style={{ ['--cin-i' as string]: 3, marginTop: 22 }}>{children}</div> : null}
       </div>
       {aside ? <div className="pk-hero-aside">{aside}</div> : null}
       </div>
@@ -215,9 +225,10 @@ export function PageSection({
       style={{
         background,
         padding: `${paddingTop}px ${PAGE_PAD} ${paddingBottom}px ${PAGE_PAD}`,
+        overflow: 'clip',
       }}
     >
-      <div style={{ maxWidth: MAX_W, margin: '0 auto' }}>{children}</div>
+      <div style={{ maxWidth: MAX_W, margin: '0 auto', position: 'relative' }}>{children}</div>
     </section>
   )
 }
