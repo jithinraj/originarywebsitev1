@@ -7,6 +7,7 @@ type Props = {
   size?: number
   color?: string
   style?: CSSProperties
+  className?: string
 }
 
 export function Mono({
@@ -14,9 +15,11 @@ export function Mono({
   size = 12,
   color = PALETTE.muted,
   style = {},
+  className,
 }: Props) {
   return (
     <span
+      className={className}
       style={{
         fontFamily: MONO,
         fontSize: size,

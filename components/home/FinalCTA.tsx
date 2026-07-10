@@ -6,7 +6,7 @@ export function FinalCTA() {
     <section
       data-screen-label="10 final-cta"
       style={{
-        maxWidth: MAX_W,
+        maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
         margin: '0 auto',
         padding: `48px ${PAGE_PAD} 128px ${PAGE_PAD}`,
       }}

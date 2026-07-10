@@ -26,7 +26,7 @@ export function Hero() {
       className="home-section"
       data-screen-label="01 hero"
       style={{
-        maxWidth: MAX_W,
+        maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
         margin: '0 auto',
         padding: `clamp(48px, 8vh, 96px) ${PAGE_PAD} clamp(64px, 10vh, 112px) ${PAGE_PAD}`,
       }}

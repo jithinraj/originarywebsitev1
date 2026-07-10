@@ -5,7 +5,7 @@ export function Divider({ eyebrow }: { eyebrow: string }) {
   return (
     <div
       style={{
-        maxWidth: MAX_W,
+        maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
         margin: '0 auto',
         padding: `0 ${PAGE_PAD}`,
       }}

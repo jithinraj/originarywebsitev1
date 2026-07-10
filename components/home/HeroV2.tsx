@@ -15,6 +15,7 @@ import Link from 'next/link'
 import { MONO, SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { useReducedMotion } from './motion/useReducedMotion'
+import { ShaderField } from './motion/ShaderField'
 
 type Chip = { id: string; label: string; icon: ReactNode }
 type Output = { id: string; label: string; meta: string }
@@ -109,26 +110,26 @@ export function HeroV2() {
 
   return (
     <section
-      className="home-section"
+      className="home-section cin-stage"
       aria-labelledby="hero-headline"
       style={{
-        maxWidth: MAX_W,
-        margin: '0 auto',
         padding: `clamp(40px, 7vh, 84px) ${PAGE_PAD} clamp(32px, 5vh, 56px) ${PAGE_PAD}`,
       }}
     >
+      <ShaderField className="cin-stream" />
+      <div style={{ maxWidth: MAX_W, margin: '0 auto', position: 'relative', zIndex: 1 }}>
       {/* Top copy */}
       <div style={heroTopStyle}>
-        <p style={heroEyebrow}>WHEN LOGS ARE NOT ENOUGH</p>
-        <h1 id="hero-headline" style={heroHeadline}>
+        <p className="cin-rise" style={heroEyebrow}>WHEN LOGS ARE NOT ENOUGH</p>
+        <h1 id="hero-headline" className="cin-rise cin-display" style={{ ...heroHeadline, ['--cin-i' as string]: 1 }}>
           Verify agent, API, and gateway actions across company boundaries
         </h1>
-        <p style={heroSub}>
+        <p className="cin-rise" style={{ ...heroSub, ['--cin-i' as string]: 2 }}>
           Originary turns API calls, MCP tool runs, agent actions, gateway decisions, payment
           events, and provisioning events into signed records that customers, auditors, and
           partners can verify without access to your internal logs.
         </p>
-        <div style={ctas}>
+        <div className="cin-rise" style={{ ...ctas, ['--cin-i' as string]: 3 }}>
           <Link href="/contact" className="home-arrow-link" style={btnPrimary}>
             Request a demo
             <Arrow />
@@ -421,6 +422,7 @@ export function HeroV2() {
             Logs stay local. Signed records travel.
           </p>
         </div>
+      </div>
       </div>
     </section>
   )

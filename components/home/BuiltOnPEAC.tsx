@@ -8,7 +8,7 @@ export function BuiltOnPEAC() {
       id="peac"
       data-screen-label="08 peac"
       style={{
-        maxWidth: MAX_W,
+        maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
         margin: '0 auto',
         padding: `48px ${PAGE_PAD} 112px ${PAGE_PAD}`,
       }}
