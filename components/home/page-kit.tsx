@@ -33,8 +33,8 @@ export function PageShell({ children }: { children: ReactNode }) {
       <main id="main-content" role="main">
         {children}
       </main>
-      <WordmarkStream />
       <HomeFooter />
+      <WordmarkStream />
     </div>
   )
 }

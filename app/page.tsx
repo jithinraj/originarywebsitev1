@@ -203,8 +203,8 @@ export default function Page() {
             <DemoCTA />
           </Reveal>
         </main>
-        <WordmarkStream />
         <HomeFooter />
+        <WordmarkStream />
       </div>
     </>
   )

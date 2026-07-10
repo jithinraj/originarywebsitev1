@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
 import { Nav, HomeFooter, InViewClass, PALETTE, MAX_W, PAGE_PAD } from '@/components/home'
+import { WordmarkStream } from '@/components/home/motion/WordmarkStream'
 import { Mono } from '@/components/home/atoms/Mono'
 
 export const metadata: Metadata = {
@@ -676,6 +677,7 @@ export default function PricingPage() {
         </section>
       </main>
       <HomeFooter />
+      <WordmarkStream />
     </div>
   )
 }
