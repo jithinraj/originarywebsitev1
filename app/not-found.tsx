@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { CSSProperties } from 'react'
 import { Nav, HomeFooter, PALETTE, PAGE_PAD, SANS, MONO } from '@/components/home'
+import { WordmarkStream } from '@/components/home/motion/WordmarkStream'
 
 const btnBase: CSSProperties = {
   display: 'inline-flex',
@@ -91,6 +92,7 @@ export default function NotFound() {
         </div>
       </main>
       <HomeFooter />
+      <WordmarkStream />
     </div>
   )
 }

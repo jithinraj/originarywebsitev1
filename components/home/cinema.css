@@ -95,6 +95,7 @@
 .cin-wordmark {
   position: relative;
   overflow: clip;
-  margin: clamp(28px, 5vh, 64px) 0 0;
-  border-bottom: 1px solid rgba(20, 17, 10, 0.18);
+  margin: clamp(14px, 2.5vh, 36px) 0 0;
+  border-top: 1px solid rgba(20, 17, 10, 0.12);
+  padding-top: clamp(14px, 2.5vh, 32px);
 }
