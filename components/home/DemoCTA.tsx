@@ -106,7 +106,7 @@ export function DemoCTA() {
           </ul>
           <div style={{ marginTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <CTAButton href="#demo-form" primary>
-              Request a demo
+              Start a pilot
             </CTAButton>
             <CTAButton href="/downloads">Verify a sample record</CTAButton>
           </div>

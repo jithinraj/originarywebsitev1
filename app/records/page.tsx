@@ -493,7 +493,7 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
           <InkButton href="/verify" primary>
             Verify a record
           </InkButton>
-          <InkButton href="/contact">Request a demo</InkButton>
+          <InkButton href="/contact">Start a pilot</InkButton>
         </div>
       </InkBand>
     </PageShell>

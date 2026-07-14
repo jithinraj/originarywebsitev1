@@ -439,7 +439,7 @@ export default function Page() {
             It records what the issuer observed in a provisioning flow, and makes that record
             portable.
           </p>
-          <div style={pullQuote}>Govern locally. Prove across boundaries.</div>
+          <div style={pullQuote}>Record locally. Verify across boundaries.</div>
 
           <h2>The first concrete example: Stripe Projects</h2>
           <p>

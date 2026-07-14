@@ -158,7 +158,7 @@ export default function About() {
         <PageSection paddingTop={32} paddingBottom={64}>
           <Reveal>
             <p className="home-about-pull" style={{ maxWidth: 820, margin: '0 auto' }}>
-              Govern locally. Prove across boundaries.
+              Record locally. Verify across boundaries.
             </p>
           </Reveal>
         </PageSection>

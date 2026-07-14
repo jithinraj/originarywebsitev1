@@ -297,7 +297,7 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
           <InkButton href="/records" primary>
             Browse sample records
           </InkButton>
-          <InkButton href="/contact">Request a demo</InkButton>
+          <InkButton href="/contact">Start a pilot</InkButton>
         </div>
         <AnchorLine onInk style={{ marginTop: 36 }}>Logs stay local. Signed records travel.</AnchorLine>
       </InkBand>
