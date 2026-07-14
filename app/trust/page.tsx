@@ -90,7 +90,7 @@ const artifactGridItems: Array<{ label: string; href: string; external?: boolean
   { label: 'Privacy', href: '/privacy' },
   { label: 'Terms', href: '/terms' },
   { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
-  { label: 'Deployment model', href: '/enterprise' },
+  { label: 'Deployment model', href: '/pricing' },
   { label: 'PEAC protocol', href: '/peac' },
   { label: 'security.txt', href: '/.well-known/security.txt', external: true },
   { label: 'Contact', href: '/contact' },
@@ -126,9 +126,8 @@ const trustCards: Array<{
     title: 'Verification',
     description: 'Tools and services for signature validation and evidence verification.',
     links: [
-      { href: '/products/verify', label: 'Originary Verify' },
       { href: '/verify', label: 'Online Verification Tool' },
-      { href: '/agent-auditor', label: 'Agent Auditor' },
+      { href: '/records', label: 'Record Gallery' },
     ],
   },
   {
@@ -146,7 +145,7 @@ const trustCards: Array<{
     title: 'Security architecture',
     description: 'How the system is built to keep your data and keys safe.',
     links: [
-      { href: '/enterprise', label: 'Deployment options and security model' },
+      { href: '/pricing', label: 'Deployment options and pricing' },
       { href: '/.well-known/security.txt', label: 'security.txt (RFC 9116)', external: true },
       { href: 'https://github.com/peacprotocol/peac/security', label: 'GitHub Security Advisories', external: true },
     ],
@@ -336,8 +335,9 @@ export default function TrustPage() {
             </p>
             <p style={proseStyle}>
               Verification does not call Originary. After issuer key resolution, records can be verified locally or
-              offline according to the verifier&apos;s cache, expiry, and revocation policy. The verifier fetches the
-              public key from the issuer&apos;s standard JWKS endpoint once, then validates signatures locally. If the
+              offline according to the verifier&apos;s cache, expiry, and revocation policy. In explicit-resolution mode
+              the verifier retrieves the issuer&apos;s published JWKS once, only when the caller authorizes it, then
+              validates signatures locally; strict offline mode takes a supplied key and performs no network request. If the
               issuer is temporarily unreachable, verifiers may use previously cached public keys. The signed record
               carries the fields needed to confirm what happened, when, and who attested to it.
             </p>

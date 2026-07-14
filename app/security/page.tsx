@@ -72,8 +72,11 @@ export default function Security() {
           <h2>Verification architecture</h2>
           <p>
             Verification is offline by design. Signed records use Ed25519 (RFC 8032) and compact JWS (RFC 7515).
-            Verifiers need only the issuer&apos;s public key via JWKS. No callback to Originary or any external service
-            is required. No implicit network fetch is performed during verification.
+            Verifiers need only the issuer&apos;s public key. Verification runs in one of three explicit key modes:
+            strict offline (record plus a supplied public key or JWKS, zero network), explicit resolution (the caller
+            authorizes fetching the issuer&apos;s published configuration and JWKS), or cached resolution (a previously
+            resolved key under cache, expiry, and revocation policy). No mode performs an implicit or ambient fetch,
+            and no mode calls back to Originary.
           </p>
 
           <h2>Key management</h2>

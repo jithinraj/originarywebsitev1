@@ -27,20 +27,6 @@ const entries: Array<[string, string]> = [
   ['/legal/imprint', '2026-02-10'],
   ['/blog', '2026-05-05'],
   ['/blog/verifiable-provisioning-records-agent-infrastructure', '2026-05-18'],
-  ['/blog/ai-bot-detection', '2026-05-05'],
-  ['/blog/a2a-stack-agent-to-agent-commerce', '2026-03-19'],
-  ['/blog/what-is-http-402', '2026-03-19'],
-  ['/blog/from-detection-to-settlement-ai-paywall-peac-http-402', '2026-05-05'],
-  ['/blog/aipref-by-ietf', '2026-03-19'],
-  ['/blog/http-402-for-apis', '2026-03-19'],
-  ['/blog/adding-402-in-15-minutes', '2026-03-19'],
-  ['/blog/cloudflare-workers-402', '2026-03-19'],
-  ['/blog/robots-txt-rfc-9309', '2026-03-19'],
-  ['/learn', '2026-05-05'],
-  ['/learn/ai-receipts', '2026-03-26'],
-  ['/learn/ai-consent-and-attribution', '2026-03-26'],
-  ['/learn/http-402-ai-payments', '2026-03-18'],
-  ['/learn/what-is-agentic-commerce', '2026-03-18'],
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

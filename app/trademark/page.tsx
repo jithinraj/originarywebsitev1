@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
-import NavigationHeader from '@/components/NavigationHeader'
-import Footer from '@/components/Footer'
+import StaticPageLayout from '@/components/StaticPageLayout'
 import Link from 'next/link'
 import Script from 'next/script'
 
@@ -27,8 +26,8 @@ export default function Trademark() {
       <Script id="trademark-json-ld" type="application/ld+json" strategy="beforeInteractive">
         {JSON.stringify(webPageJsonLd)}
       </Script>
-      <NavigationHeader />
-      <main style={{ paddingTop: '80px' }}>
+      <StaticPageLayout>
+      <main>
         <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -124,7 +123,7 @@ export default function Trademark() {
           </div>
         </section>
       </main>
-      <Footer />
+      </StaticPageLayout>
     </div>
   )
 }

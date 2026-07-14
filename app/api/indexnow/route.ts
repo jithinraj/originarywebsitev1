@@ -59,7 +59,6 @@ export async function GET() {
     'https://www.originary.xyz/peac',
     'https://www.originary.xyz/products',
     'https://www.originary.xyz/developers',
-    'https://www.originary.xyz/declare',
     'https://www.originary.xyz/blog',
     'https://www.originary.xyz/verify',
     'https://www.originary.xyz/about',
