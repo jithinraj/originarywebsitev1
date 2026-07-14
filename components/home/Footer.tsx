@@ -13,7 +13,9 @@ const columns: Array<{
     h: 'Originary',
     items: [
       { label: 'Home', href: '/' },
+      { label: 'Product', href: '/product' },
       { label: 'About', href: '/about' },
+      { label: 'Press', href: '/press' },
       { label: 'Pricing', href: '/pricing' },
       { label: 'Blog', href: '/blog' },
       { label: 'Downloads', href: '/downloads' },

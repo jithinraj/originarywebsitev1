@@ -1419,3 +1419,35 @@ html {
   color: #6e6759;
   margin-bottom: 12px;
 }
+
+/* ProductSystem: three-module grammar cards */
+.home-prodsys-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.home-prodsys-card {
+  display: block;
+  border: 1px solid rgba(20, 17, 10, 0.14);
+  background: #fbf9f4;
+  padding: 22px 22px 20px;
+  text-decoration: none;
+}
+.home-prodsys-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home-prodsys-mark {
+  color: #8a8172;
+  display: inline-flex;
+  transition: color 220ms ease;
+}
+.home-prodsys-card:hover .home-prodsys-mark {
+  color: #14110a;
+}
+@media (max-width: 900px) {
+  .home-prodsys-grid {
+    grid-template-columns: 1fr;
+  }
+}

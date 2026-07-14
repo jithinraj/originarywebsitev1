@@ -7,7 +7,8 @@ import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { OriginaryLogoMotion } from '@/components/brand/OriginaryLogoMotion'
 
 const links: Array<{ label: string; href: string }> = [
-  { label: 'How it works', href: '/#how-it-works' },
+  { label: 'Product', href: '/product' },
+  { label: 'How it works', href: '/how-it-works' },
   { label: 'Downloads', href: '/downloads' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'PEAC', href: '/peac' },
@@ -159,7 +160,7 @@ export function Nav() {
               transition: 'background 160ms ease, color 160ms ease',
             }}
           >
-            Request a demo
+            Start a pilot
           </Link>
           <button
             ref={toggleRef}
@@ -264,7 +265,7 @@ export function Nav() {
                 border: `1px solid ${PALETTE.ink}`,
               }}
             >
-              Request a demo
+              Start a pilot
             </Link>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { PageShell, PageHero, PageSection, Card, PALETTE } from '@/components/ho
 import { Mono } from '@/components/home/atoms/Mono'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Trust Center | Originary' },
+  title: { absolute: 'Originary Trust Center | Security, Privacy and Deployment' },
   description:
     'See how Originary handles verification, keys, portability, and offline validation for signed records across agent, API, MCP, and automated workflows.',
   openGraph: {
