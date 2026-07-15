@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { PageShell, PageHero, PageSection, SectionHeading, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import { FACTS } from '@/lib/facts'
 import { DataTable, MarkerList, StepLabel, CodeBlock } from '@/components/specimens/parts'
@@ -34,7 +34,7 @@ export default function PressPage() {
       <PageHero
         eyebrow="Press"
         title="Originary press kit."
-        sub="Approved company language, current metrics, brand assets, and how to reach us. Everything on this page may be quoted."
+        sub="Approved company language, current metrics, brand assets, and how to reach us. The boilerplate section may be quoted verbatim."
         strip={['Boilerplate', 'Metrics as of ' + FACTS.currentReleaseDate, 'Brand', 'Contact']}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
@@ -45,12 +45,20 @@ export default function PressPage() {
         </div>
       </PageHero>
 
-      <PageSection paddingBottom={56}>
+      <PullLine accent="made provable.">
+        Machine actions,
+      </PullLine>
+
+      <PageSection paddingTop={56} paddingBottom={56}>
         <SectionHeading index="01" eyebrow="Boilerplate" title="Approved company descriptions." />
-        <StepLabel>50 words</StepLabel>
-        <p style={{ fontSize: 15.5, lineHeight: 1.7, color: PALETTE.ink, maxWidth: '68ch', margin: '0 0 26px' }}>{BOILERPLATE_50}</p>
-        <StepLabel>120 words</StepLabel>
-        <p style={{ fontSize: 15, lineHeight: 1.7, color: PALETTE.muted, maxWidth: '72ch', margin: 0 }}>{BOILERPLATE_120}</p>
+        <StepLabel>Short</StepLabel>
+        <blockquote style={{ borderLeft: `2px solid ${PALETTE.ink}`, margin: '0 0 28px', padding: '4px 0 4px 22px' }}>
+          <p style={{ fontSize: 17, lineHeight: 1.65, color: PALETTE.ink, maxWidth: '64ch', margin: 0 }}>{BOILERPLATE_50}</p>
+        </blockquote>
+        <StepLabel>Extended</StepLabel>
+        <blockquote style={{ borderLeft: `2px solid ${PALETTE.hairline}`, margin: 0, padding: '4px 0 4px 22px' }}>
+          <p style={{ fontSize: 15, lineHeight: 1.7, color: PALETTE.muted, maxWidth: '72ch', margin: 0 }}>{BOILERPLATE_120}</p>
+        </blockquote>
       </PageSection>
 
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>

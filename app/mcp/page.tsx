@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { PageShell, PageHero, PageSection, SectionHeading, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -198,6 +198,10 @@ export default function McpPage() {
           </SpecimenGrid>
         </div>
       </PageSection>
+
+      <PullLine accent="The proof travels.">
+        The transcript stays.
+      </PullLine>
 
       {/* Deny as evidence */}
       <PageSection paddingTop={56} paddingBottom={56}>

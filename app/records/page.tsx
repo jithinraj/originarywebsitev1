@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
-import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button, PullLine } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -201,6 +201,10 @@ export default function RecordsPage() {
           ]}
         />
       </PageSection>
+
+      <PullLine accent="Read them all." rule="top">
+        Read one.
+      </PullLine>
 
       {/* 01 - API call (interactive tamper demo) */}
       <Specimen first id="api">

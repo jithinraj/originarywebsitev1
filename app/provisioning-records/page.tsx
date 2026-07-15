@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { PageShell, PageHero, PageSection, SectionHeading, Pill, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Pill, Button, PullLine } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -192,6 +192,10 @@ export default function ProvisioningRecordsPage() {
           </SpecimenGrid>
         </div>
       </PageSection>
+
+      <PullLine accent="Never the secret.">
+        Prove the change.
+      </PullLine>
 
       {/* What it covers */}
       <PageSection paddingTop={56} paddingBottom={56}>

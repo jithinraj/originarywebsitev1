@@ -277,47 +277,6 @@ export default function About() {
 
         <InViewClass className="home-about-divider" as="div" style={dividerWrap} />
 
-        {/* Team */}
-        <PageSection paddingTop={32} paddingBottom={64}>
-          <div className="home-about-twocol">
-            <Reveal>
-              <InViewClass className="home-eyebrow-rule" as="div">
-                <span className="home-about-eyebrow">team</span>
-              </InViewClass>
-              <h2 className="home-about-section-title" style={{ marginTop: 16 }}>
-                Built by its maintainers.
-              </h2>
-            </Reveal>
-            <Reveal delay={120}>
-              <div>
-                <p className="home-about-body" style={{ marginTop: 0 }}>
-                  <strong>Jithin Raj</strong>, founder. Created PEAC Protocol
-                  and has led every public release; spoke on portable signed
-                  records at MCP Dev Summit and KubeCon India 2026, and has
-                  appeared on CNBC-TV18 and at the India AI Impact Summit
-                  2026.
-                </p>
-                <p className="home-about-body">
-                  <strong>Aritrika</strong>, co-founder. Leads operations and
-                  partner workflows around the protocol and the commercial
-                  product.
-                </p>
-                <p className="home-about-body">
-                  The protocol&apos;s release history, conformance suite, and
-                  test record are public on{' '}
-                  <a href="https://github.com/peacprotocol/peac" style={{ color: 'inherit' }}>
-                    GitHub
-                  </a>
-                  ; every release since v0.13 has shipped with signed tags and
-                  npm provenance.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </PageSection>
-
-        <InViewClass className="home-about-divider" as="div" style={dividerWrap} />
-
         {/* Contact */}
         <PageSection paddingTop={32} paddingBottom={112}>
           <div className="home-about-twocol">

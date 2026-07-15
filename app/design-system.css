@@ -3218,12 +3218,6 @@ html.lenis, html.lenis body {
     linear-gradient(180deg, var(--hp-hero-bg) 0%, #ffffff 54%, var(--surface-base) 100%) !important;
 }
 
-.site-root pre,
-.site-root code,
-.site-root .code-block {
-  border-radius: 0.75rem;
-}
-
 @media (max-width: 640px) {
   .site-root h1 {
     line-height: 1.02;

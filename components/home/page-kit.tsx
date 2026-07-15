@@ -6,7 +6,7 @@ import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { SANS, MONO } from './typography'
 import { Nav } from './Nav'
 import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
-import { ShaderField } from './motion/ShaderField'
+import { BitField } from './motion/BitField'
 import { WordmarkStream } from './motion/WordmarkStream'
 import { HomeFooter } from './Footer'
 import { Mono } from './atoms/Mono'
@@ -76,7 +76,7 @@ export function PageHero({
         borderBottom: plate && !strip ? `1px solid ${PALETTE.hairline}` : undefined,
       }}
     >
-      {display ? <ShaderField className="cin-stream" /> : null}
+      {display ? <BitField className="cin-stream" focus="left" /> : null}
       <div style={{ maxWidth: MAX_W, margin: '0 auto', position: 'relative', zIndex: 1 }}>
       <div className={aside ? 'pk-hero-grid' : undefined}>
       <div
@@ -233,6 +233,70 @@ export function PageSection({
   )
 }
 
+/**
+ * PullLine: a single full-bleed display statement. Use once per page at the
+ * pivot; the scale contrast against quiet sections is the point.
+ */
+export function PullLine({
+  children,
+  accent,
+  kicker,
+  rule = 'both',
+}: {
+  children: ReactNode
+  /** Trailing clause rendered in the verify green. */
+  accent?: ReactNode
+  /** Small mono kicker above the statement. */
+  kicker?: string
+  /** Which hairlines to draw; use 'top' when ruled content follows. */
+  rule?: 'both' | 'top' | 'none'
+}) {
+  return (
+    <section
+      aria-label="Statement"
+      style={{
+        borderTop: rule !== 'none' ? `1px solid ${PALETTE.hairline}` : undefined,
+        borderBottom: rule === 'both' ? `1px solid ${PALETTE.hairline}` : undefined,
+        padding: `clamp(48px, 7vh, 80px) ${PAGE_PAD}`,
+        background: PALETTE.bg,
+      }}
+    >
+      <div style={{ maxWidth: MAX_W, margin: '0 auto' }}>
+        {kicker ? (
+          <p
+            style={{
+              fontFamily: MONO,
+              fontSize: 11,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: PALETTE.faint,
+              margin: '0 0 18px',
+            }}
+          >
+            {kicker}
+          </p>
+        ) : null}
+        <p
+          style={{
+            fontFamily: sans,
+            fontSize: 'clamp(32px, 4.6vw, 58px)',
+            lineHeight: 1.06,
+            letterSpacing: '-0.03em',
+            fontWeight: 500,
+            color: PALETTE.ink,
+            margin: 0,
+            maxWidth: '24ch',
+            textWrap: 'balance',
+          }}
+        >
+          {children}
+          {accent ? <span style={{ color: PALETTE.success }}> {accent}</span> : null}
+        </p>
+      </div>
+    </section>
+  )
+}
+
 export function SectionHeading({
   eyebrow,
   title,
@@ -285,9 +349,9 @@ export function SectionHeading({
       <h2
         style={{
           fontFamily: sans,
-          fontSize: 32,
-          lineHeight: 1.12,
-          letterSpacing: '-0.02em',
+          fontSize: 'clamp(28px, 3.2vw, 40px)',
+          lineHeight: 1.1,
+          letterSpacing: '-0.022em',
           fontWeight: 500,
           color: PALETTE.ink,
           margin: eyebrow ? '12px 0 0 0' : 0,

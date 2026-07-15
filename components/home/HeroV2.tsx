@@ -15,7 +15,7 @@ import Link from 'next/link'
 import { MONO, SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { useReducedMotion } from './motion/useReducedMotion'
-import { ShaderField } from './motion/ShaderField'
+import { BitField } from './motion/BitField'
 
 type Chip = { id: string; label: string; icon: ReactNode }
 type Output = { id: string; label: string; meta: string }
@@ -116,7 +116,7 @@ export function HeroV2() {
         padding: `clamp(40px, 7vh, 84px) ${PAGE_PAD} clamp(32px, 5vh, 56px) ${PAGE_PAD}`,
       }}
     >
-      <ShaderField className="cin-stream" />
+      <BitField className="cin-stream" />
       <div style={{ maxWidth: MAX_W, margin: '0 auto', position: 'relative', zIndex: 1 }}>
       {/* Top copy */}
       <div style={heroTopStyle}>
