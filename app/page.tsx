@@ -7,10 +7,9 @@ import {
   WorksWithStrip,
   ProofStrip,
   Problem,
-  HowItWorks,
+  ProductSystem,
   UseCases,
   CategoryMatrix,
-  Comparison,
   Ladder,
   DemoCTA,
   Reveal,
@@ -20,7 +19,7 @@ import { WordmarkStream } from '@/components/home/motion/WordmarkStream'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Verify Machine Actions Across Boundaries',
+    absolute: 'Originary | Verifiable Records for AI Agents and APIs',
   },
   description:
     'Originary helps teams issue signed records for API, MCP, agent, gateway, payment, and provisioning workflows without sharing logs or dashboard access.',
@@ -47,7 +46,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Originary | Verify Machine Actions Across Boundaries',
+    title: 'Originary | Verifiable Records for AI Agents and APIs',
     description:
       'Signed records for API, MCP, agent, gateway, payment, and provisioning workflows.',
     url: 'https://www.originary.xyz',
@@ -65,7 +64,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Verify Machine Actions Across Boundaries',
+    title: 'Originary | Verifiable Records for AI Agents and APIs',
     description:
       'Issue signed records so another party can verify what happened without internal logs or dashboard access.',
     images: ['/og'],
@@ -179,8 +178,8 @@ export default function Page() {
             <Problem />
           </Reveal>
           <Reveal threshold={0.12}>
-            <Divider eyebrow="how it works" />
-            <HowItWorks />
+            <Divider eyebrow="the product" />
+            <ProductSystem />
           </Reveal>
           <Reveal threshold={0.12}>
             <Divider eyebrow="where it fits" />
@@ -189,10 +188,6 @@ export default function Page() {
           <Reveal threshold={0.12}>
             <Divider eyebrow="ecosystem fit" />
             <CategoryMatrix />
-          </Reveal>
-          <Reveal threshold={0.12}>
-            <Divider eyebrow="what originary is not" />
-            <Comparison />
           </Reveal>
           <Reveal threshold={0.12}>
             <Divider eyebrow="start small" />

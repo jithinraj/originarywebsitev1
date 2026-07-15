@@ -14,7 +14,7 @@ import {
   PAGE_PAD,
 } from '@/components/home'
 export const metadata: Metadata = {
-  title: { absolute: 'About | Originary' },
+  title: { absolute: 'About Originary | Verifiable Infrastructure for Machine Actions' },
   description:
     'Originary builds verification software for machine actions that cross company, vendor, and runtime boundaries. Publishes PEAC Protocol.',
   robots: {
@@ -266,10 +266,50 @@ export default function About() {
                   software and documentation for PEAC Protocol.
                 </p>
                 <p className="home-about-body">
-                  We are a small team. We work in the open where possible and
-                  ship software under permissive licenses. Originary is not
-                  affiliated with any other organization using a similar
-                  name.
+                  We work in the open where possible and ship software under
+                  permissive licenses. Originary is not affiliated with any
+                  other organization using a similar name.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </PageSection>
+
+        <InViewClass className="home-about-divider" as="div" style={dividerWrap} />
+
+        {/* Team */}
+        <PageSection paddingTop={32} paddingBottom={64}>
+          <div className="home-about-twocol">
+            <Reveal>
+              <InViewClass className="home-eyebrow-rule" as="div">
+                <span className="home-about-eyebrow">team</span>
+              </InViewClass>
+              <h2 className="home-about-section-title" style={{ marginTop: 16 }}>
+                Built by its maintainers.
+              </h2>
+            </Reveal>
+            <Reveal delay={120}>
+              <div>
+                <p className="home-about-body" style={{ marginTop: 0 }}>
+                  <strong>Jithin Raj</strong>, founder. Created PEAC Protocol
+                  and has led every public release; spoke on portable signed
+                  records at MCP Dev Summit and KubeCon India 2026, and has
+                  appeared on CNBC-TV18 and at the India AI Impact Summit
+                  2026.
+                </p>
+                <p className="home-about-body">
+                  <strong>Aritrika</strong>, co-founder. Leads operations and
+                  partner workflows around the protocol and the commercial
+                  product.
+                </p>
+                <p className="home-about-body">
+                  The protocol&apos;s release history, conformance suite, and
+                  test record are public on{' '}
+                  <a href="https://github.com/peacprotocol/peac" style={{ color: 'inherit' }}>
+                    GitHub
+                  </a>
+                  ; every release since v0.13 has shipped with signed tags and
+                  npm provenance.
                 </p>
               </div>
             </Reveal>

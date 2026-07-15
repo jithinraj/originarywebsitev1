@@ -18,7 +18,7 @@ import {
 import { Mono } from '@/components/home/atoms/Mono'
 
 export const metadata: Metadata = {
-  title: { absolute: 'PEAC Protocol | Originary' },
+  title: { absolute: 'PEAC Protocol | Open Standard for Verifiable Interaction Records' },
   description:
     'PEAC is the open standard for portable signed interaction records. Issue records another party can verify without trusting the original dashboard.',
   keywords: [

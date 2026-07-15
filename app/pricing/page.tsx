@@ -6,7 +6,7 @@ import { WordmarkStream } from '@/components/home/motion/WordmarkStream'
 import { Mono } from '@/components/home/atoms/Mono'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Pricing | Originary' },
+  title: { absolute: 'Originary Pricing | Open Source PEAC and Enterprise Verification' },
   description:
     'Use PEAC free and self-hosted. Bring in Originary for managed verification, signing operations, record exports, and one-workflow pilots.',
   keywords: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/pricing' },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Pricing | Originary',
+    title: 'Originary Pricing | Open Source PEAC and Enterprise Verification',
     description:
       'Use PEAC free and self-hosted. Bring in Originary for managed verification, signing operations, record exports, and one-workflow pilots.',
     url: '/pricing',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing | Originary',
+    title: 'Originary Pricing | Open Source PEAC and Enterprise Verification',
     description:
       'Use PEAC free and self-hosted. Bring in Originary for managed verification, signing operations, record exports, and one-workflow pilots.',
     images: ['/og'],
@@ -170,7 +170,7 @@ export default function PricingPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `clamp(64px, 9vh, 112px) ${PAGE_PAD} clamp(40px, 6vh, 64px) ${PAGE_PAD}`,
           }}
@@ -193,13 +193,13 @@ export default function PricingPage() {
         <InViewClass
           className="home-about-divider"
           as="div"
-          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+          style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
         />
 
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `clamp(32px, 5vh, 56px) ${PAGE_PAD} 0 ${PAGE_PAD}`,
           }}
@@ -248,7 +248,7 @@ export default function PricingPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `0 ${PAGE_PAD} 80px ${PAGE_PAD}`,
           }}
@@ -344,7 +344,7 @@ export default function PricingPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `0 ${PAGE_PAD} 80px ${PAGE_PAD}`,
           }}
@@ -394,7 +394,7 @@ export default function PricingPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `0 ${PAGE_PAD} 80px ${PAGE_PAD}`,
           }}
@@ -525,11 +525,47 @@ export default function PricingPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `0 ${PAGE_PAD} 80px ${PAGE_PAD}`,
           }}
         >
+          <div id="pilot" style={{ maxWidth: 760, margin: '0 auto 72px', scrollMarginTop: 96 }}>
+            <h2 style={{ ...sectionHead, textAlign: 'center', marginBottom: 12 }}>Portable Proof Pilot</h2>
+            <p style={{ textAlign: 'center', fontSize: 15, lineHeight: 1.6, color: PALETTE.muted, margin: '0 0 28px' }}>
+              A fixed-scope pilot that instruments one production workflow end to end. Three to four weeks, scoped quote.
+            </p>
+            <div className="home-card" style={{ background: PALETTE.paper, border: `1px solid ${PALETTE.hairline}`, padding: '26px 28px' }}>
+              <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '10px 28px' }}>
+                {[
+                  'One production workflow',
+                  'One signed-record profile',
+                  'One issuer and key model',
+                  'One verifier or evidence bundle',
+                  'Integration and threat-boundary review',
+                  'Deployment recommendation',
+                ].map((item) => (
+                  <li key={item} style={{ display: 'flex', gap: 10, alignItems: 'baseline', fontSize: 14.5, lineHeight: 1.55, color: PALETTE.ink }}>
+                    <span aria-hidden style={{ color: PALETTE.success, fontFamily: 'var(--font-plex-mono)', fontSize: 13 }}>+</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, alignItems: 'center', marginTop: 24, paddingTop: 20, borderTop: `1px solid ${PALETTE.hairline}` }}>
+                <a
+                  href="/contact"
+                  className="home-arrow-link"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 18px', background: PALETTE.ink, color: PALETTE.paper, textDecoration: 'none', fontSize: 14, fontWeight: 500 }}
+                >
+                  Start a pilot
+                </a>
+                <span style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 12, color: PALETTE.faint }}>
+                  3-4 weeks · scoped quote · your infrastructure or supported deployment
+                </span>
+              </div>
+            </div>
+          </div>
+
           <div style={{ maxWidth: 760, margin: '0 auto' }}>
             <h2 style={{ ...sectionHead, textAlign: 'center', marginBottom: 32 }}>Three ways to deploy</h2>
             <div
@@ -568,7 +604,7 @@ export default function PricingPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `0 ${PAGE_PAD} 80px ${PAGE_PAD}`,
           }}
@@ -619,7 +655,7 @@ export default function PricingPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `0 ${PAGE_PAD} 112px ${PAGE_PAD}`,
           }}
