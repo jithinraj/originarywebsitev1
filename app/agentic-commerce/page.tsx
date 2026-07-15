@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button, PullLine } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -242,6 +242,10 @@ export default function AgenticCommercePage() {
           </SpecimenGrid>
         </div>
       </PageSection>
+
+      <PullLine accent="The record proves the context.">
+        The rail proves the payment.
+      </PullLine>
 
       {/* Where it fits */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>

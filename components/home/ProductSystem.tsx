@@ -51,7 +51,7 @@ export function ProductSystem() {
       />
       <div className="home-prodsys-grid">
         {MODULES.map((m, i) => (
-          <Link key={m.title} href={m.href} className="home-prodsys-card home-card">
+          <Link key={m.title} href={m.href} className="home-prodsys-card">
             <span className="home-prodsys-meta">
               <Mono size={11} color="#7a7263" style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 {String(i + 1).padStart(2, '0')}

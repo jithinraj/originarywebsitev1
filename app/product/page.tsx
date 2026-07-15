@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { PageShell, PageHero, PageSection, SectionHeading, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Button, PullLine } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import { FACTS } from '@/lib/facts'
 import {
@@ -155,6 +155,10 @@ export default function ProductPage() {
         </div>
       </PageSection>
 
+      <PullLine accent="the system that made it.">
+        Evidence that outlives
+      </PullLine>
+
       {/* Worked flow */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
         <SectionHeading index="02" eyebrow="The worked flow" title="One action, end to end." />
@@ -188,10 +192,14 @@ export default function ProductPage() {
               items={[
                 'The issuer signed exactly these claims.',
                 'The record was not changed after signing.',
-                'Bound digests match the content they cover.',
-                'The stated policy and result are the ones that applied.',
+                'Bound digests match the supplied content they cover.',
+                'The record states which policy and result the issuer reported as applicable.',
               ]}
             />
+            <p style={{ fontSize: 13, lineHeight: 1.6, color: PALETTE.faint, margin: '12px 0 0', maxWidth: '58ch' }}>
+              Verification establishes integrity and internal consistency of the supplied evidence. It does not
+              independently prove omitted events or external real-world truth.
+            </p>
           </div>
         </SpecimenGrid>
       </PageSection>

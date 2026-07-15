@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { PageShell, PageHero, PageSection, SectionHeading, Card } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Card, PullLine } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import { FACTS } from '@/lib/facts'
 import {
@@ -159,6 +159,10 @@ export default function VerifyPage() {
         <CodeBlock>{`pnpm dlx @peac/cli samples generate -o ./s
 pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
       </PageSection>
+
+      <PullLine accent="Nothing stored.">
+        No account. No callback.
+      </PullLine>
 
       {/* What this proves */}
       <PageSection paddingTop={56} paddingBottom={56}>

@@ -3,24 +3,15 @@
 import { useEffect, useRef } from 'react'
 import { useReducedMotion } from './useReducedMotion'
 import { WORDMARK_GEOMETRY } from '../../brand/OriginaryLogoMotion'
-import { drawMark, type MarkShape } from './marks'
 
-type Particle = {
-  x: number
-  y: number
-  vx: number
-  vy: number
-  size: number
-  shape: MarkShape
-  sage: boolean
-  phase: number
-}
+const BINARY = '01101111 01110010 01101001 01100111 01101001 01101110 01100001 01110010 01111001'
 
 /**
- * WordmarkStream: the closing signature. The wordmark set viewport-wide,
- * its letterforms filled with a drifting stream of record marks (dots,
- * squares, seal diamonds, ticks) that part around the cursor. Static single
- * frame under reduced motion; paused off screen.
+ * WordmarkStream: the closing signature. The wordmark set viewport-wide in
+ * the brand letterforms, filled with a precise grid of 0/1 cells seeded from
+ * the word's own 8-bit ASCII. A slow diagonal wave flips bits as it passes and
+ * the cursor acts as a write head, flipping and brightening nearby cells.
+ * Static frame under reduced motion.
  */
 export function WordmarkStream() {
   const reduced = useReducedMotion()
@@ -35,16 +26,39 @@ export function WordmarkStream() {
     if (!ctx) return
 
     const PAPER = '244, 241, 234'
-    const SAGE = '154, 208, 170'
+    const GAP = 16
+    const FONT_PX = 11
+    const BITS = BINARY.replace(/ /g, '')
     let raf = 0
     let running = false
     let last = 0
     let w = 0
     let h = 0
     let dpr = 1
-    let mask: HTMLCanvasElement | null = null
-    let particles: Particle[] = []
+    let letterPath: Path2D | null = null
+    let cols = 0
+    let rows = 0
+    let bits: Uint8Array = new Uint8Array(0)
+    let heat: Float32Array = new Float32Array(0)
+    let phase: Float32Array = new Float32Array(0)
+    let sprites: HTMLCanvasElement[][] = []
     const px = { x: -9999, y: -9999 }
+
+    const makeSprite = (glyph: string, alpha: number) => {
+      const spr = document.createElement('canvas')
+      const size = Math.ceil(FONT_PX * dpr * 1.6)
+      spr.width = size
+      spr.height = size
+      const c = spr.getContext('2d')
+      if (!c) return spr
+      c.scale(dpr, dpr)
+      c.font = `500 ${FONT_PX}px "IBM Plex Mono", ui-monospace, monospace`
+      c.textAlign = 'center'
+      c.textBaseline = 'middle'
+      c.fillStyle = `rgba(${PAPER}, ${alpha})`
+      c.fillText(glyph, size / dpr / 2, size / dpr / 2)
+      return spr
+    }
 
     const buildMask = () => {
       dpr = Math.min(window.devicePixelRatio || 1, 2)
@@ -58,63 +72,69 @@ export function WordmarkStream() {
       canvas.height = Math.round(h * dpr)
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
 
-      mask = document.createElement('canvas')
-      mask.width = canvas.width
-      mask.height = canvas.height
-      const mctx = mask.getContext('2d')
-      if (!mctx) return
-      mctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      mctx.translate(pad, 0)
-      mctx.scale(scale, scale)
-      mctx.translate(-vb.x, -vb.y)
-      mctx.fillStyle = '#14110a'
+      letterPath = new Path2D()
+      const m = new DOMMatrix().translate(pad, 0).scale(scale).translate(-vb.x, -vb.y)
       for (const d of WORDMARK_GEOMETRY.paths) {
-        mctx.fill(new Path2D(d))
+        letterPath.addPath(new Path2D(d), m)
       }
 
-      const count = Math.min(2100, Math.round((w * h) / 330))
-      particles = Array.from({ length: count }, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: 0.16 + Math.random() * 0.34,
-        vy: -(0.06 + Math.random() * 0.18),
-        size: 2.2 + Math.random() * 3,
-        shape: Math.floor(Math.random() * 4) as MarkShape,
-        sage: Math.random() < 0.16,
-        phase: Math.random() * Math.PI * 2,
-      }))
-    }
-
-    const drawParticle = (p: Particle, a: number) => {
-      ctx.fillStyle = p.sage ? `rgba(${SAGE}, ${a})` : `rgba(${PAPER}, ${a})`
-      drawMark(ctx, p.x, p.y, p.size, p.shape)
+      cols = Math.ceil(w / GAP) + 1
+      rows = Math.ceil(h / GAP) + 1
+      const n = cols * rows
+      bits = new Uint8Array(n)
+      heat = new Float32Array(n)
+      phase = new Float32Array(n)
+      for (let gy = 0; gy < rows; gy++) {
+        for (let gx = 0; gx < cols; gx++) {
+          const i = gy * cols + gx
+          // Seed from the word's own encoding so the letters read as binary at rest.
+          bits[i] = BITS.charCodeAt((gx + gy * 7) % BITS.length) === 49 ? 1 : 0
+          const v = Math.sin(gx * 12.9898 + gy * 78.233) * 43758.5453
+          phase[i] = v - Math.floor(v)
+        }
+      }
+      sprites = [0, 1].map((g) => [makeSprite(String(g), 0.09), makeSprite(String(g), 0.3)])
     }
 
     const render = (time: number, step: boolean) => {
-      if (!mask) return
+      if (!letterPath) return
       ctx.clearRect(0, 0, w, h)
-      ctx.drawImage(mask, 0, 0, w, h)
-      ctx.globalCompositeOperation = 'source-atop'
-      for (const p of particles) {
-        if (step) {
-          const dx = p.x - px.x
-          const dy = p.y - px.y
-          const d2 = dx * dx + dy * dy
-          if (d2 < 19600) {
-            const d = Math.max(Math.sqrt(d2), 12)
-            const f = (1 - d / 140) * 1.9
-            p.x += (dx / d) * f
-            p.y += (dy / d) * f
+      ctx.save()
+      ctx.clip(letterPath)
+      ctx.fillStyle = '#14110a'
+      ctx.fillRect(0, 0, w, h)
+      const sprSize = FONT_PX * 1.6
+      for (let gy = 0; gy < rows; gy++) {
+        for (let gx = 0; gx < cols; gx++) {
+          const i = gy * cols + gx
+          const x = gx * GAP + GAP / 2
+          const y = gy * GAP + GAP / 2
+          if (step) {
+            // Slow diagonal write-wave flips bits as it passes.
+            const raw = x * 0.006 + y * 0.004 - time * 0.09 + phase[i]
+            const wavePos = ((raw % 1) + 1) % 1
+            const inWave = wavePos < 0.013
+            const dx = x - px.x
+            const dy = y - px.y
+            const d2 = dx * dx + dy * dy
+            // Cursor write head: gradient influence within ~150px.
+            const near = d2 < 22500 ? 1 - Math.sqrt(d2) / 150 : 0
+            if (inWave || (near > 0 && Math.random() < near * 0.5)) {
+              bits[i] ^= 1
+              heat[i] = Math.max(heat[i], near > 0 ? 0.6 + near * 0.4 : 0.5)
+            }
+            if (near > 0.5) heat[i] = Math.max(heat[i], near)
+            if (heat[i] > 0.004) heat[i] *= 0.94
+            else heat[i] = 0
           }
-          p.x += p.vx + Math.sin(time * 0.8 + p.phase) * 0.08
-          p.y += p.vy
-          if (p.x > w + 6) p.x = -6
-          if (p.y < -6) p.y = h + 6
+          const hot = heat[i]
+          const spr = hot > 0.12 ? sprites[bits[i]][1] : sprites[bits[i]][0]
+          const grow = 1 + hot * 0.3
+          const gs = sprSize * grow
+          ctx.drawImage(spr, x - gs / 2, y - gs / 2, gs, gs)
         }
-        const a = 0.5 + Math.sin(time * 1.1 + p.phase) * 0.22
-        drawParticle(p, Math.max(0.16, a))
       }
-      ctx.globalCompositeOperation = 'source-over'
+      ctx.restore()
     }
 
     const loop = (t: number) => {
