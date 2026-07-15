@@ -53,7 +53,8 @@ export async function POST(request: NextRequest) {
   }
 
   const raw = Array.isArray(body.urls) ? body.urls : []
-  const valid = [...new Set(raw.map((u) => (typeof u === 'string' ? normalize(u) : null)).filter((p): p is string => p !== null))]
+  const normalized = raw.map((u) => (typeof u === 'string' ? normalize(u) : null)).filter((p): p is string => p !== null)
+  const valid = normalized.filter((p, i) => normalized.indexOf(p) === i)
   if (valid.length === 0) {
     return NextResponse.json({ success: false, error: 'no_valid_canonical_urls' }, { status: 400 })
   }

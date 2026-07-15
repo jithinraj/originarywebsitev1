@@ -207,7 +207,7 @@ export default function AiGatewayPage() {
               { label: 'Time', value: '2026-07-02T09:16:04Z' },
               { label: 'Signature', value: <>Ed25519 e02d7f15... <Dim>valid</Dim></> },
             ]}
-            foot="deny-as-evidence - portable proof of a refusal"
+            foot="deny-as-evidence - portable evidence of a refusal"
           />
         </SpecimenGrid>
       </PageSection>

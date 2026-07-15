@@ -23,10 +23,10 @@ export const metadata: Metadata = {
 }
 
 const BOILERPLATE_50 =
-  'Originary turns machine actions into portable signed records that customers, partners, and auditors can verify without access to private logs. It builds Originary Verify, the commercial verification product, and stewards PEAC Protocol, the Apache-2.0 open standard for verifiable interaction records.'
+  'Originary develops software for issuing, verifying, and packaging signed records of machine actions across organizational boundaries. Originary Verify is built on PEAC Protocol, an Apache-2.0 open-source project.'
 
 const BOILERPLATE_120 =
-  'Originary is verifiable infrastructure for machine actions. As agents, APIs, gateways, payments, and provisioning workflows act across company boundaries, internal logs stop being usable proof: they cannot be handed to a customer, auditor, or counterparty. Originary turns those actions into portable signed records that verify offline, without access to the systems that produced them. The company builds Originary Verify, the commercial product for issuing, verifying, and bundling records in production, and stewards PEAC Protocol, the Apache-2.0 open standard that defines the record format and verification model. Records are signed with the issuer\'s own keys, travel in existing carriers, and verify anywhere: no account, no callback, no vendor dependency.'
+  'Originary develops verifiable infrastructure for machine actions. Originary Verify helps teams issue, inspect, and package signed records when APIs, agents, MCP tools, gateways, payment flows, and provisioning systems act. Those records can be verified by another party without access to the original private logs or dashboards. Originary Verify is built on PEAC Protocol, an Apache-2.0 open-source protocol project maintained by Originary. Originary is a brand of Poem, Inc., a Delaware corporation.'
 
 export default function PressPage() {
   return (
@@ -45,7 +45,7 @@ export default function PressPage() {
         </div>
       </PageHero>
 
-      <PullLine accent="made provable.">
+      <PullLine accent="made verifiable.">
         Machine actions,
       </PullLine>
 
@@ -66,14 +66,14 @@ export default function PressPage() {
           index="02"
           eyebrow="The relationship"
           title="Originary and PEAC Protocol."
-          sub="Originary is the company. Originary Verify is the commercial product. PEAC Protocol is the Apache-2.0 open standard Originary publishes and stewards; it works without Originary, and records verify without asking us."
+          sub="Poem, Inc. is the Delaware corporation. Originary is a brand of Poem, Inc. Originary Verify is the commercial product; PEAC Protocol is the Apache-2.0 open-source project Originary maintains. The protocol works without Originary, and records verify without asking us."
         />
         <DataTable
           head={['Name', 'What it is', 'License and model']}
           rows={[
             ['Originary', 'The company: verifiable infrastructure for machine actions', 'Commercial (a brand of Poem, Inc.)'],
             ['Originary Verify', 'The product: issue, verify, and bundle signed records in production', 'Commercial, self-hostable'],
-            ['PEAC Protocol', 'The open standard: record format and verification model', 'Apache-2.0, open source'],
+            ['PEAC Protocol', 'The open-source protocol: record format and verification model', 'Apache-2.0, open source'],
           ]}
         />
       </PageSection>

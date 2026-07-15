@@ -61,7 +61,7 @@ export default function ImprintPage() {
           Protocol.
         </p>
         <p>
-          <strong>PEAC Protocol</strong> is an open standard published and
+          <strong>PEAC Protocol</strong> is an open-source protocol published and
           maintained by Originary under Apache-2.0. The protocol specification,
           reference implementations, and core tooling are open-source.
         </p>

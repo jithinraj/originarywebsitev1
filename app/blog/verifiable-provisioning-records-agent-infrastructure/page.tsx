@@ -413,7 +413,7 @@ export default function Page() {
 
           <h2>What PEAC adds</h2>
           <p>
-            PEAC is the open standard for verifiable interaction records across agent, tool, API,
+            PEAC is an open-source protocol for verifiable interaction records across agent, tool, API,
             and cross-runtime systems.
           </p>
           <p>

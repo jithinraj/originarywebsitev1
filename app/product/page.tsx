@@ -239,7 +239,7 @@ export default function ProductPage() {
           index="04"
           eyebrow="Start"
           title="A fixed-scope pilot, then scale."
-          sub="The Portable Proof Pilot instruments one production workflow end to end in three to four weeks. Scope on the pricing page; records and solutions below."
+          sub="The Originary Verification Pilot instruments one production workflow end to end in three to four weeks. Scope on the pricing page; records and solutions below."
         />
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <Button href="/pricing" primary>
@@ -249,7 +249,7 @@ export default function ProductPage() {
           <Button href="/peac">PEAC Protocol</Button>
         </div>
         <p style={{ fontSize: 13.5, lineHeight: 1.65, color: PALETTE.faint, maxWidth: '62ch', marginTop: 22 }}>
-          Originary is the company. Originary Verify is the commercial product. PEAC Protocol is the Apache-2.0 open
+          Poem, Inc. is the Delaware corporation and Originary is its brand. Originary Verify is the commercial product; PEAC Protocol is the Apache-2.0 open
           standard that defines the record format and verification model; the protocol works without Originary, and
           records verify without asking us.
         </p>
