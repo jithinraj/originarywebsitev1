@@ -27,7 +27,7 @@ export function BuiltOnPEAC() {
             color={PALETTE.faint}
             style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
           >
-            open standard
+            open-source protocol
           </Mono>
           <h2
             style={{
@@ -55,10 +55,10 @@ export function BuiltOnPEAC() {
               textWrap: 'pretty',
             }}
           >
-            PEAC Protocol is the open standard for portable signed interaction
-            records. Originary provides managed issuance, hosted verification,
-            audit bundles, and production support for teams using PEAC in real
-            workflows.
+            PEAC Protocol is the open-source protocol for portable signed interaction
+            records. Originary maintains PEAC Protocol and offers implementation
+            support, record bundles, and deployment help for teams using PEAC in
+            real workflows.
           </p>
           <ul
             style={{

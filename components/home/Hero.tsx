@@ -95,7 +95,7 @@ export function Hero() {
           </p>
           <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <HeroLink href="/#demo" primary>
-              Request a demo
+              Start a pilot
             </HeroLink>
             <HeroLink href="/downloads">Verify sample record</HeroLink>
           </div>

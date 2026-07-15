@@ -48,7 +48,8 @@ export function DemoRequestForm({
         return
       }
       const data = await res.json().catch(() => ({}))
-      if (data?.error === 'unconfigured') {
+      // Delivery not configured or the webhook failed: fall back to an email draft.
+      if (data?.error === 'unconfigured' || data?.error === 'delivery_failed') {
         openMailFallback(fields)
         setState('sent')
         return
@@ -196,7 +197,7 @@ export function DemoRequestForm({
           transition: 'opacity 160ms ease',
         }}
       >
-        {state === 'sending' ? 'Sending...' : 'Request a demo'}
+        {state === 'sending' ? 'Sending...' : 'Send to the team'}
       </button>
 
       <p role="status" aria-live="polite" style={{ margin: '10px 0 0', fontFamily: SANS, fontSize: 13, lineHeight: 1.5, color: state === 'error' ? '#9a3b2e' : PALETTE.success }}>
@@ -228,7 +229,21 @@ export function DemoRequestForm({
         >
           {destinationEmail}
         </a>
-        {' '}if submission is unavailable. Business contact details only; never paste records, JWS strings, or keys.
+        {' '}if submission is unavailable. Business contact details only; never paste records, JWS strings,
+        or keys. We use what you send only to route your message and reply, and retain it no longer than
+        needed for that. See our{' '}
+        <a
+          href="/privacy"
+          style={{
+            color: PALETTE.ink,
+            textDecoration: 'underline',
+            textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+            textUnderlineOffset: 3,
+          }}
+        >
+          privacy policy
+        </a>
+        .
       </p>
     </form>
   )

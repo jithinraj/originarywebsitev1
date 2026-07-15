@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button, PullLine } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -17,23 +17,13 @@ import {
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 
-const TITLE = 'Agentic commerce records: verify agent payments | Originary'
+const TITLE = 'AI agent payment audit records | Originary'
 const DESCRIPTION =
-  'Payment rails prove value moved. Signed records prove what an AI agent payment was for: the action, mandate, result, and time, verifiable offline by any counterparty.'
+  'Preserve payment artifacts and issuer-reported workflow context inside a portable record without replacing the payment rail.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: [
-    'agentic commerce',
-    'AI agent payments',
-    'x402',
-    'agent payment receipts',
-    'verify agent purchases',
-    'payment evidence records',
-    'usage billing disputes',
-    'AI commerce audit trail',
-  ],
   alternates: { canonical: '/agentic-commerce' },
   openGraph: {
     title: TITLE,
@@ -243,6 +233,10 @@ export default function AgenticCommercePage() {
         </div>
       </PageSection>
 
+      <PullLine accent="The record proves the context.">
+        The rail proves the payment.
+      </PullLine>
+
       {/* Where it fits */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
         <SectionHeading index="04" eyebrow="Where it fits" title="Records can sit around commerce workflows you already run." />
@@ -351,7 +345,7 @@ export default function AgenticCommercePage() {
         </p>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <InkButton href="/contact" primary>
-            Request a demo
+            Start a pilot
           </InkButton>
           <InkButton href="/verify">Verify a record</InkButton>
         </div>

@@ -7,8 +7,6 @@ export const metadata: Metadata = {
   title: { absolute: 'Verifiable Provisioning Records for Agent Infrastructure | Originary' },
   description:
     'PEAC adds signed, portable records to agent-driven provisioning workflows, so teams can verify what changed without owning the runtime or storing credentials.',
-  keywords:
-    'verifiable provisioning records, agent-driven provisioning, provisioning audit trail, Stripe Projects provisioning records, signed interaction records, PEAC Protocol',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
@@ -413,7 +411,7 @@ export default function Page() {
 
           <h2>What PEAC adds</h2>
           <p>
-            PEAC is the open standard for verifiable interaction records across agent, tool, API,
+            PEAC is an open-source protocol for verifiable interaction records across agent, tool, API,
             and cross-runtime systems.
           </p>
           <p>
@@ -439,7 +437,7 @@ export default function Page() {
             It records what the issuer observed in a provisioning flow, and makes that record
             portable.
           </p>
-          <div style={pullQuote}>Govern locally. Prove across boundaries.</div>
+          <div style={pullQuote}>Record locally. Verify across boundaries.</div>
 
           <h2>The first concrete example: Stripe Projects</h2>
           <p>

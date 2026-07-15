@@ -15,7 +15,7 @@ import Link from 'next/link'
 import { MONO, SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { useReducedMotion } from './motion/useReducedMotion'
-import { ShaderField } from './motion/ShaderField'
+import { BitField } from './motion/BitField'
 
 type Chip = { id: string; label: string; icon: ReactNode }
 type Output = { id: string; label: string; meta: string }
@@ -116,29 +116,32 @@ export function HeroV2() {
         padding: `clamp(40px, 7vh, 84px) ${PAGE_PAD} clamp(32px, 5vh, 56px) ${PAGE_PAD}`,
       }}
     >
-      <ShaderField className="cin-stream" />
+      <BitField className="cin-stream" />
       <div style={{ maxWidth: MAX_W, margin: '0 auto', position: 'relative', zIndex: 1 }}>
       {/* Top copy */}
       <div style={heroTopStyle}>
-        <p className="cin-rise" style={heroEyebrow}>WHEN LOGS ARE NOT ENOUGH</p>
+        <p className="cin-rise" style={heroEyebrow}>ORIGINARY VERIFY</p>
         <h1 id="hero-headline" className="cin-rise cin-display" style={{ ...heroHeadline, ['--cin-i' as string]: 1 }}>
-          Verify agent, API, and gateway actions across company boundaries
+          Signed records for machine actions across company boundaries.
         </h1>
         <p className="cin-rise" style={{ ...heroSub, ['--cin-i' as string]: 2 }}>
-          Originary turns API calls, MCP tool runs, agent actions, gateway decisions, payment
-          events, and provisioning events into signed records that customers, auditors, and
-          partners can verify without access to your internal logs.
+          Issue portable signed records when APIs, agents, MCP tools, gateways, payment flows, and
+          provisioning systems act. Customers, partners, and auditors can verify those records
+          without access to your private logs or dashboards.
         </p>
         <div className="cin-rise" style={{ ...ctas, ['--cin-i' as string]: 3 }}>
-          <Link href="/contact" className="home-arrow-link" style={btnPrimary}>
-            Request a demo
+          <Link href="/verify" className="home-arrow-link" style={btnPrimary}>
+            Verify a sample
             <Arrow />
           </Link>
-          <Link href="/verify" className="home-arrow-link" style={btnSecondary}>
-            Verify a sample record
+          <Link href="/contact" className="home-arrow-link" style={btnSecondary}>
+            Discuss a workflow
             <Arrow />
           </Link>
         </div>
+        <p className="cin-rise" style={{ ...heroProofLine, ['--cin-i' as string]: 4 }}>
+          Built on PEAC Protocol · Apache-2.0 · Offline verification
+        </p>
       </div>
 
       {/* Three-zone flow */}
@@ -457,6 +460,14 @@ const heroTopStyle = {
   margin: '0 auto',
   textAlign: 'center' as const,
 }
+const heroProofLine = {
+  fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace',
+  fontSize: 11.5,
+  letterSpacing: '0.02em',
+  color: '#6e6759',
+  margin: '18px 0 0',
+} as const
+
 const heroEyebrow = {
   fontFamily: MONO,
   fontSize: 11,

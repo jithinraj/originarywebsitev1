@@ -29,7 +29,7 @@ export default async function DownloadsServer() {
   }
 
   return (
-    <div style={{ display: 'grid', gap: 'var(--space-8)' }}>
+    <div style={{ display: 'grid', gap: 'var(--space-6)', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))' }}>
       {manifest.files.map((file: any) => (
         <div
           key={file.filename}

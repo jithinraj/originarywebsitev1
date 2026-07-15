@@ -41,8 +41,6 @@ export const metadata: Metadata = {
   title: { absolute: 'Downloads | Originary' },
   description:
     'Download PEAC Protocol by Originary: open-source software for portable verification of machine actions. Source code, CLI, SDK packages, and tooling.',
-  keywords:
-    'PEAC Protocol, downloads, CLI, MCP server, npm packages, Apache-2.0, open-source',
   robots: 'index,follow',
   openGraph: {
     title: 'Downloads | Originary',

@@ -9,6 +9,6 @@ export const SOCIAL = {
   blog: "https://www.originary.xyz/blog"
 } as const;
 
-export const SOCIAL_BIO_SHORT = "Originary™ by Poem, Inc. - Receipts for the agentic web: policy → HTTP 402/x402 → PEAC-Receipt.";
+export const SOCIAL_BIO_SHORT = "Originary develops software for issuing, verifying, and packaging signed records of machine actions across organizational boundaries.";
 
-export const SOCIAL_BIO_LONG = "Originary™ (Poem, Inc.) builds the receipt rail for agentic commerce. We add policy discovery, HTTP 402/x402 settlement, and a cryptographic PEAC-Receipt to every response - provable access, attribution, and compliance.";
+export const SOCIAL_BIO_LONG = "Originary Verify helps teams issue, verify, and package signed records when APIs, agents, MCP tools, gateways, payment flows, and provisioning systems act, so another party can verify them without private-log access. Built on PEAC Protocol, an Apache-2.0 open-source project maintained by Originary.";

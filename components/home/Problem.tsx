@@ -22,7 +22,7 @@ export function Problem() {
     >
       <SectionTitle
         title="Logs stop at your boundary."
-        body="API calls, agent runs, gateway decisions, payments, and provisioning events happen inside your systems. Originary lets you share signed proof without exposing internal logs."
+        body="API calls, agent runs, gateway decisions, payments, and provisioning events happen inside your systems. Originary lets you share signed records without exposing internal logs."
       />
       <div style={{ marginTop: 48 }}>
         <ProblemAnim />

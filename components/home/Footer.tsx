@@ -7,50 +7,56 @@ import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
 
 const columns: Array<{
   h: string
-  items: Array<{ label: string; href: string; external?: boolean; mark?: MarkName }>
+  items: Array<{ label: string; href: string; external?: boolean; mark?: MarkName; emphasis?: boolean }>
 }> = [
   {
-    h: 'Originary',
+    h: 'Product',
     items: [
-      { label: 'Home', href: '/' },
-      { label: 'About', href: '/about' },
+      { label: 'Originary Verify', href: '/product' },
+      { label: 'Verify a sample', href: '/verify' },
       { label: 'Pricing', href: '/pricing' },
-      { label: 'Blog', href: '/blog' },
       { label: 'Downloads', href: '/downloads' },
-      { label: 'Contact', href: '/contact' },
+      { label: 'Start a pilot', href: '/contact', emphasis: true },
     ],
   },
   {
     h: 'Solutions',
     items: [
-      { label: 'MCP tool run records', href: '/mcp', mark: 'link' },
-      { label: 'AI gateway decision records', href: '/ai-gateway', mark: 'valve' },
-      { label: 'Agentic commerce records', href: '/agentic-commerce', mark: 'coin' },
-      { label: 'Provisioning records', href: '/provisioning-records', mark: 'pipeline' },
-      { label: 'API call records', href: '/records', mark: 'ledger' },
-      { label: 'Agent action records', href: '/records#agent', mark: 'target' },
+      { label: 'MCP tool runs', href: '/mcp', mark: 'link' },
+      { label: 'AI gateway decisions', href: '/ai-gateway', mark: 'valve' },
+      { label: 'Agentic commerce', href: '/agentic-commerce', mark: 'coin' },
+      { label: 'Provisioning', href: '/provisioning-records', mark: 'pipeline' },
+      { label: 'API calls', href: '/records', mark: 'ledger' },
+      { label: 'Agent actions', href: '/records#agent', mark: 'target' },
     ],
   },
   {
     h: 'Protocol',
     items: [
-      { label: 'PEAC', href: '/peac' },
-      { label: 'Records', href: '/records' },
-      { label: 'Verify', href: '/verify' },
+      { label: 'PEAC Protocol', href: '/peac' },
+      { label: 'Record gallery', href: '/records' },
       { label: 'How it works', href: '/how-it-works' },
-      { label: 'Learn', href: '/learn' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
     ],
   },
   {
-    h: 'Trust',
+    h: 'Company',
     items: [
-      { label: 'Trust', href: '/trust' },
+      { label: 'About', href: '/about' },
+      { label: 'Press', href: '/press' },
+      { label: 'Trust Center', href: '/trust' },
       { label: 'Security', href: '/security' },
-      { label: 'Privacy', href: '/privacy' },
-      { label: 'Terms', href: '/terms' },
-      { label: 'Imprint', href: '/legal/imprint' },
+      { label: 'Contact', href: '/contact' },
     ],
   },
+]
+
+const legalLinks: Array<{ label: string; href: string }> = [
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Terms', href: '/terms' },
+  { label: 'Imprint', href: '/legal/imprint' },
+  { label: 'Trademark', href: '/trademark' },
 ]
 
 const linkStyle = {
@@ -66,7 +72,7 @@ export function HomeFooter() {
       style={{
         borderTop: `1px solid ${PALETTE.hairline}`,
         marginTop: 0,
-        padding: `40px ${PAGE_PAD} 28px ${PAGE_PAD}`,
+        padding: `clamp(48px, 7vh, 72px) ${PAGE_PAD} 32px ${PAGE_PAD}`,
         background: PALETTE.bg,
       }}
     >
@@ -82,11 +88,13 @@ export function HomeFooter() {
         className="home-footer-top"
       >
         <div style={{ minWidth: 0 }}>
-          <Wordmark />
+          <Link href="/" aria-label="Originary home" style={{ display: 'inline-flex', color: 'inherit' }}>
+            <Wordmark />
+          </Link>
           <p
             style={{
               margin: '14px 0 0 0',
-              maxWidth: 440,
+              maxWidth: 400,
               fontFamily: SANS,
               fontSize: 13,
               lineHeight: 1.6,
@@ -94,9 +102,22 @@ export function HomeFooter() {
               textWrap: 'pretty',
             }}
           >
-            Originary issues, inspects, and verifies signed records for APIs,
-            MCP tools, agent actions, gateway events, provisioning workflows,
-            and agent-commerce flows.
+            Originary develops software for issuing, verifying, and packaging
+            signed interaction records across organizational boundaries.
+          </p>
+          <p
+            style={{
+              margin: '16px 0 0 0',
+              maxWidth: 400,
+              fontFamily: SANS,
+              fontSize: 12.5,
+              lineHeight: 1.6,
+              color: PALETTE.faint,
+              textWrap: 'pretty',
+            }}
+          >
+            Originary is a brand of Poem, Inc. Originary Verify is built on PEAC
+            Protocol, an Apache-2.0 open-source project maintained by Originary.
           </p>
         </div>
         <div
@@ -114,9 +135,9 @@ export function HomeFooter() {
               >
                 {col.h}
               </Mono>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '14px 0 0 0' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '18px 0 0 0' }}>
                 {col.items.map((it) => (
-                  <li key={it.label} style={{ marginBottom: 8 }}>
+                  <li key={it.label} style={{ marginBottom: 10 }}>
                     {it.external ? (
                       <a
                         href={it.href}
@@ -128,7 +149,11 @@ export function HomeFooter() {
                         {it.label}
                       </a>
                     ) : (
-                      <Link href={it.href} className="home-footer-link" style={linkStyle}>
+                      <Link
+                        href={it.href}
+                        className="home-footer-link"
+                        style={it.emphasis ? { ...linkStyle, color: PALETTE.ink, fontWeight: 500 } : linkStyle}
+                      >
                         {it.mark ? (
                           <span className="home-footer-linkmark" aria-hidden>
                             <MarkGlyph name={it.mark} size={13} />
@@ -149,8 +174,8 @@ export function HomeFooter() {
       <div
         style={{
           maxWidth: MAX_W,
-          margin: '36px auto 0 auto',
-          paddingTop: 22,
+          margin: '52px auto 0 auto',
+          paddingTop: 24,
           borderTop: `1px solid ${PALETTE.hairline}`,
           display: 'flex',
           flexWrap: 'wrap',
@@ -161,8 +186,15 @@ export function HomeFooter() {
         className="home-footer-bottom"
       >
         <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.02em', minWidth: 0 }}>
-          © 2025-2026 Originary · a brand of Poem, Inc. · Apache-2.0 where applicable
+          © 2025-2026 Poem, Inc. · Originary is a brand of Poem, Inc.
         </Mono>
+        <div style={{ display: 'flex', gap: 18, alignItems: 'center', flexWrap: 'wrap' }}>
+          {legalLinks.map((l) => (
+            <Link key={l.href} href={l.href} className="home-footer-link" style={{ ...linkStyle, fontSize: 12 }}>
+              {l.label}
+            </Link>
+          ))}
+        </div>
         <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
           <a
             href="https://github.com/peacprotocol/peac"

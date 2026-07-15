@@ -31,9 +31,9 @@ const helpItems = [
     mailto: 'contact@originary.xyz?subject=One%20Workflow%20Pilot',
   },
   {
-    title: 'I want enterprise deployment or procurement review.',
-    desc: 'Managed verification, signing operations, record exports, and rollout scope',
-    mailto: 'contact@originary.xyz?subject=Enterprise%20Deployment',
+    title: 'I want deployment or integration support.',
+    desc: 'Scoped verification pilot, signing-key and issuer setup guidance, and rollout scope',
+    mailto: 'contact@originary.xyz?subject=Implementation%20support',
   },
   {
     title: 'Partnership',
@@ -57,7 +57,7 @@ const bestFirstMessage = [
   'What action happened',
   'Who needs to verify it',
   'Why logs are not enough',
-  'Whether you need hosted or self-hosted verification',
+  'Whether you need self-hosted or supported deployment',
 ]
 
 export default function ContactPage() {
@@ -223,7 +223,7 @@ export default function ContactPage() {
                 margin: '24px 0 0 0',
               }}
             >
-              The form opens an email draft so you can send the workflow directly to our team.
+              The form sends straight to the team and is routed by topic. If submission is unavailable it falls back to an email draft.
             </p>
           </div>
           <div

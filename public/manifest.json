@@ -1,7 +1,7 @@
 {
   "name": "Originary",
   "short_name": "Originary",
-  "description": "Verify agent requests, apply policy, and return portable signed records. Built on PEAC. Self-hostable.",
+  "description": "Originary issues, verifies, and packages signed records of machine actions across organizational boundaries. Built on PEAC Protocol.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f4f1ea",
@@ -68,17 +68,17 @@
   ],
   "shortcuts": [
     {
-      "name": "Verify Receipt",
+      "name": "Verify a signed record",
       "short_name": "Verify",
-      "description": "Verify a PEAC-Receipt",
+      "description": "Verify a signed record with the issuer's public key",
       "url": "/verify",
       "icons": [{ "src": "/icons/icon-96x96.svg", "sizes": "96x96", "type": "image/svg+xml" }]
     },
     {
-      "name": "View Demo",
-      "short_name": "Demo",
-      "description": "See PEAC protocol in action",
-      "url": "/demo",
+      "name": "Record types",
+      "short_name": "Records",
+      "description": "Browse signed record types",
+      "url": "/records",
       "icons": [{ "src": "/icons/icon-96x96.svg", "sizes": "96x96", "type": "image/svg+xml" }]
     }
   ],
