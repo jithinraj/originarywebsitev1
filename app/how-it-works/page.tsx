@@ -6,21 +6,13 @@ import { InkBand, InkHeading, InkButton, AnchorLine, CodeBlock } from '@/compone
 import FlowObserver from '@/components/how-it-works/FlowObserver'
 import '@/components/how-it-works/how-it-works.css'
 
-const TITLE = 'How signed records work across six surfaces | Originary'
+const TITLE = 'How portable signed interaction records work | Originary'
 const DESCRIPTION =
-  'How signed records work at six surfaces: API calls, MCP tool runs, agent actions, gateway decisions, payments, provisioning. One primitive, verified offline.'
+  'See how a system issues a signed record, how the record binds selected facts and context, and how another party verifies it.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: [
-    'how signed records work',
-    'verifiable interaction records',
-    'offline record verification',
-    'audit trail for AI systems',
-    'signed receipts for APIs',
-    'PEAC Protocol',
-  ],
   alternates: { canonical: '/how-it-works' },
   openGraph: {
     title: TITLE,
@@ -236,8 +228,8 @@ const SURFACES: SurfaceData[] = [
       <>
         Traffic passes a gateway or guardrail: an AI proxy, an MCP gateway, an egress filter. The gateway
         decides to <b>allow, deny, or route to review</b>, and sometimes <b>redacts</b> on the way through.
-        PEAC records the decision facts: the outcome, a reason code, the digest of the policy that
-        applied, and <b>two content digests</b>, one for what was produced and one for what was
+        PEAC records the decision facts: the outcome, a reason code, the digest of the policy the
+        issuer recorded, and <b>two content digests</b>, one for what was produced and one for what was
         delivered.
       </>
     ),

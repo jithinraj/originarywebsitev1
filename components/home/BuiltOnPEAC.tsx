@@ -56,9 +56,9 @@ export function BuiltOnPEAC() {
             }}
           >
             PEAC Protocol is the open-source protocol for portable signed interaction
-            records. Originary provides managed issuance, hosted verification,
-            audit bundles, and production support for teams using PEAC in real
-            workflows.
+            records. Originary maintains PEAC Protocol and offers implementation
+            support, record bundles, and deployment help for teams using PEAC in
+            real workflows.
           </p>
           <ul
             style={{

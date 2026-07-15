@@ -7,8 +7,6 @@ export const metadata: Metadata = {
   title: { absolute: 'AI Bot Detection and Crawler Signals | Originary' },
   description:
     'How metadata, model fingerprints, and signed records turn AI traffic into verifiable records for audits and partner review.',
-  keywords:
-    'AI bot detection, crawler identification, AI traffic, model fingerprinting, content authenticity, signed records, PEAC Protocol',
   authors: [{ name: 'Jithin Raj, Founder' }],
   openGraph: {
     type: 'article',

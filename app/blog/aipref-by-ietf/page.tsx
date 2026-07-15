@@ -7,8 +7,6 @@ export const metadata: Metadata = {
   title: { absolute: 'AIPREF: AI Usage Preferences by IETF | Originary' },
   description:
     'Understanding the IETF AIPREF specification for AI usage preferences through HTTP headers and robots.txt. Implementation guide.',
-  keywords:
-    'AIPREF, IETF, AI preferences, robots.txt, Content-Usage header, AI training, machine learning, content licensing, publisher control',
   authors: [{ name: 'Originary Team' }],
   openGraph: {
     type: 'article',

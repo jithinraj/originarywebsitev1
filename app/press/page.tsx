@@ -4,9 +4,9 @@ import { PALETTE } from '@/components/home/palette'
 import { FACTS } from '@/lib/facts'
 import { DataTable, MarkerList, StepLabel, CodeBlock } from '@/components/specimens/parts'
 
-const TITLE = 'Press | Originary'
+const TITLE = 'Originary press kit and company information'
 const DESCRIPTION =
-  'Company boilerplate, brand assets, current metrics, and press contact for Originary, the company behind PEAC Protocol.'
+  'Approved Originary boilerplates, founder biography, current metrics, appearances, logos, screenshots, and media contact.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

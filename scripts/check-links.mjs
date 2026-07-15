@@ -1,123 +1,123 @@
 #!/usr/bin/env node
-
 /**
- * Internal Link Checker
- * Verifies all internal hrefs in navigation, footer, and key pages resolve to actual routes
+ * Internal link checker.
  *
- * Run: node scripts/check-links.mjs
+ * Scans every source file under app/, components/, and lib/ (no hardcoded
+ * allowlist, no silent skips) and verifies that each internal href resolves to
+ * a real route, route handler, well-known file, or public asset. Dynamic
+ * segments ([slug], [...rest]) are matched as patterns. Any unresolved internal
+ * link fails the build.
  */
+import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs'
+import { join, dirname, extname } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-import { readFileSync, existsSync, readdirSync, statSync } from 'fs'
-import { join, dirname } from 'path'
-import { fileURLToPath } from 'url'
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
+const SCAN_DIRS = ['app', 'components', 'lib']
+const SRC_EXT = new Set(['.tsx', '.ts', '.jsx', '.js', '.mdx', '.md'])
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const ROOT = join(__dirname, '..')
-
-// Collect all valid routes from app directory
-function getAllRoutes(dir, basePath = '') {
-  const routes = new Set()
-  const items = readdirSync(dir)
-
-  for (const item of items) {
-    const fullPath = join(dir, item)
-    const stat = statSync(fullPath)
-
-    if (stat.isDirectory()) {
-      // Skip route groups (parentheses) and special dirs
-      if (item.startsWith('(') || item.startsWith('_') || item === 'api') {
-        const subRoutes = getAllRoutes(fullPath, basePath)
-        subRoutes.forEach(r => routes.add(r))
-      } else {
-        const subRoutes = getAllRoutes(fullPath, `${basePath}/${item}`)
-        subRoutes.forEach(r => routes.add(r))
-      }
-    } else if (item === 'page.tsx' || item === 'page.js') {
-      routes.add(basePath || '/')
+// Build the set of real routes from app/. page.* -> a page route; route.* -> a
+// route handler (API/OG/etc). Route groups (…) and private _dirs collapse.
+function collectRoutes(dir, base = '') {
+  const staticRoutes = new Set()
+  const dynamicRoutes = [] // regexes
+  const add = (routePath) => {
+    if (/\[/.test(routePath)) {
+      const rx =
+        '^' +
+        routePath
+          .replace(/\[\.\.\..+?\]/g, '.+') // [...catchAll]
+          .replace(/\[.+?\]/g, '[^/]+') // [slug]
+          .replace(/\//g, '\\/') +
+        '$'
+      dynamicRoutes.push(new RegExp(rx))
+    } else {
+      staticRoutes.add(routePath || '/')
     }
   }
-
-  return routes
+  const walk = (d, b) => {
+    for (const item of readdirSync(d)) {
+      const full = join(d, item)
+      const st = statSync(full)
+      if (st.isDirectory()) {
+        const grouped = item.startsWith('(') || item.startsWith('_') || item.startsWith('@')
+        walk(full, grouped ? b : `${b}/${item}`)
+      } else if (/^page\.(tsx|ts|jsx|js|mdx)$/.test(item)) {
+        add(b || '/')
+      } else if (/^route\.(tsx|ts|jsx|js)$/.test(item)) {
+        add(b || '/')
+      }
+    }
+  }
+  walk(dir, base)
+  return { staticRoutes, dynamicRoutes }
 }
 
-// Extract internal hrefs from a file
-function extractHrefs(content) {
+function listFiles(dir, out) {
+  for (const item of readdirSync(dir)) {
+    if (item === 'node_modules' || item.startsWith('.')) continue
+    const full = join(dir, item)
+    const st = statSync(full)
+    if (st.isDirectory()) listFiles(full, out)
+    else if (SRC_EXT.has(extname(item))) out.push(full)
+  }
+}
+
+function extractInternalHrefs(content) {
   const hrefs = []
-  // Match href="/..." or href='/...'
-  const regex = /href=["'](\/?[^"'#?]+)["']/g
-  let match
-  while ((match = regex.exec(content)) !== null) {
-    const href = match[1]
-    // Only internal links starting with /
-    if (href.startsWith('/') && !href.startsWith('//')) {
-      hrefs.push(href)
-    }
+  // href="/..." | href='/...' | href={'/...'} | href={"/..."}
+  const re = /href=\{?["'](\/[^"'`]*)["']\}?/g
+  let m
+  while ((m = re.exec(content)) !== null) {
+    let href = m[1]
+    if (href.startsWith('//')) continue // protocol-relative external
+    href = href.split('#')[0].split('?')[0] // drop fragment/query
+    if (href === '') continue // pure fragment link like "/#foo" -> "/"? keep "/" below
+    hrefs.push(href)
   }
   return hrefs
 }
 
-// Files to check for internal links
-const FILES_TO_CHECK = [
-  'components/NavigationHeader.tsx',
-  'components/footer/footer.links.ts',
-  'components/footer/Footer.tsx',
-  'app/page.tsx',
-  'app/products/page.tsx',
-  'app/developers/page.tsx',
-  'app/trust/page.tsx'
-]
+const { staticRoutes, dynamicRoutes } = collectRoutes(join(ROOT, 'app'))
+for (const wk of [
+  '/.well-known/peac.txt',
+  '/.well-known/aipref.json',
+  '/.well-known/jwks.json',
+  '/.well-known/security.txt',
+]) {
+  staticRoutes.add(wk)
+}
 
-console.log('Checking internal links...\n')
+function resolves(href) {
+  const norm = href.replace(/\/+$/, '') || '/'
+  if (staticRoutes.has(norm) || staticRoutes.has(href)) return true
+  if (dynamicRoutes.some((rx) => rx.test(norm))) return true
+  // A static public asset (e.g. /og-image.png, /icons/x.svg, /robots.txt).
+  if (existsSync(join(ROOT, 'public', norm))) return true
+  return false
+}
 
-const appDir = join(ROOT, 'app')
-const validRoutes = getAllRoutes(appDir)
+const files = []
+for (const d of SCAN_DIRS) {
+  const abs = join(ROOT, d)
+  if (existsSync(abs)) listFiles(abs, files)
+}
 
-// Add well-known files as valid
-validRoutes.add('/.well-known/peac.txt')
-validRoutes.add('/.well-known/aipref.json')
-validRoutes.add('/.well-known/jwks.json')
-validRoutes.add('/.well-known/security.txt')
-
-let hasErrors = false
 const errors = []
-const checkedLinks = new Set()
-
-for (const file of FILES_TO_CHECK) {
-  const filePath = join(ROOT, file)
-
-  if (!existsSync(filePath)) {
-    console.log(`  ⚠ Skipping (not found): ${file}`)
-    continue
-  }
-
-  const content = readFileSync(filePath, 'utf-8')
-  const hrefs = extractHrefs(content)
-
-  for (const href of hrefs) {
-    if (checkedLinks.has(href)) continue
-    checkedLinks.add(href)
-
-    // Normalize href (remove trailing slash)
-    const normalizedHref = href.replace(/\/$/, '') || '/'
-
-    // Check if route exists
-    if (!validRoutes.has(normalizedHref)) {
-      // Check if it's a well-known or public file
-      const publicPath = join(ROOT, 'public', normalizedHref)
-      if (!existsSync(publicPath)) {
-        hasErrors = true
-        errors.push(`  ✗ Broken link "${href}" in ${file}`)
-      }
-    }
+let checked = 0
+for (const file of files) {
+  const rel = file.slice(ROOT.length + 1)
+  const content = readFileSync(file, 'utf8')
+  for (const href of extractInternalHrefs(content)) {
+    checked++
+    if (!resolves(href)) errors.push(`  broken link "${href}" in ${rel}`)
   }
 }
 
-if (hasErrors) {
-  console.log('FAILED - Found broken internal links:\n')
-  errors.forEach(e => console.log(e))
-  console.log('\nFix these links or create the missing pages.')
+if (errors.length) {
+  console.error(`check:links FAILED - ${errors.length} broken internal link(s):`)
+  // De-duplicate identical messages.
+  Array.from(new Set(errors)).forEach((e) => console.error(e))
   process.exit(1)
-} else {
-  console.log(`✓ All ${checkedLinks.size} internal links verified`)
-  process.exit(0)
 }
+console.log(`check:links OK - ${checked} internal href(s) across ${files.length} files resolve.`)

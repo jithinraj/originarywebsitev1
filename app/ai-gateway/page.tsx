@@ -17,23 +17,13 @@ import {
 } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 
-const TITLE = 'AI gateway audit trail: signed decision records | Originary'
+const TITLE = 'AI gateway audit trail and signed decision records | Originary'
 const DESCRIPTION =
-  'Turn AI gateway decisions into portable evidence: signed records for allow, deny, and redaction events, plus agent spend attribution, verifiable offline.'
+  'Bind the gateway-reported decision, policy context, result, and delivered-content digest to an issuer and time.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: [
-    'AI gateway',
-    'LLM gateway audit',
-    'AI gateway logging',
-    'LLM proxy audit trail',
-    'model router observability',
-    'gateway decision records',
-    'agent spend attribution',
-    'deny as evidence',
-  ],
   alternates: { canonical: '/ai-gateway' },
   openGraph: {
     title: TITLE,

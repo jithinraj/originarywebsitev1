@@ -7,8 +7,6 @@ export const metadata: Metadata = {
   title: { absolute: 'AI Paywalls, HTTP 402, and Portable Records | Originary' },
   description:
     'How PEAC connects agent and crawler signals to HTTP 402, x402, and Stripe, with signed records for billing, audit, and partner review.',
-  keywords:
-    'AI paywall, HTTP 402, x402, Stripe, signed records, PEAC Protocol, agent payments, AI billing, audit',
   authors: [{ name: 'Jithin Raj, Founder' }],
   openGraph: {
     type: 'article',

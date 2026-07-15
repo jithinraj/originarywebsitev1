@@ -7,8 +7,6 @@ export const metadata: Metadata = {
   title: { absolute: 'Verifiable Provisioning Records for Agent Infrastructure | Originary' },
   description:
     'PEAC adds signed, portable records to agent-driven provisioning workflows, so teams can verify what changed without owning the runtime or storing credentials.',
-  keywords:
-    'verifiable provisioning records, agent-driven provisioning, provisioning audit trail, Stripe Projects provisioning records, signed interaction records, PEAC Protocol',
   authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',

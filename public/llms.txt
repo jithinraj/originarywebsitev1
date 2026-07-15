@@ -1,57 +1,73 @@
 # Originary
 
-Originary helps teams issue and verify portable signed records for machine actions.
-Current protocol release: PEAC v0.16.2, which adds evidence patterns for paid resources, paid MCP tool records, linked counterparty acknowledgments, Merkle commitment helpers, external evidence anchoring, agent spend attribution, agent run lineage records, consented action records, and runtime lineage exports. The wire format is unchanged.
+Originary develops software for issuing, verifying, and packaging signed
+records of machine actions across organizational boundaries.
 
-Last updated: 2026-07-08
+Originary Verify helps teams create signed records when APIs, agents, MCP
+tools, gateways, payment flows, and provisioning systems act, so another
+party can verify what happened without private-log or dashboard access.
 
-Company: Poem, Inc.
+Current protocol release: PEAC v0.16.2, which adds evidence patterns for
+paid resources, paid MCP tool records, linked counterparty acknowledgments,
+Merkle commitment helpers, external evidence anchoring, agent spend
+attribution, agent run lineage records, consented action records, and
+runtime lineage exports. The wire format is unchanged.
+
+Last updated: 2026-07-15
+
+Organization: Originary (legal entity: Poem, Inc.)
 Location: Delaware, USA
 Contact: contact@originary.xyz
 
 ## What it is
 
-Portable verification for API, MCP, agent, gateway, payment, and provisioning workflows.
-
-Originary helps teams create signed records so another party can verify what happened without internal logs, dashboard access, or vendor runtime.
+Portable verification for API, MCP, agent, gateway, payment, and
+provisioning workflows. Originary Verify creates signed records so another
+party can verify what happened without internal logs, dashboard access, or
+vendor runtime.
 
 ## Core pages
 
 - https://www.originary.xyz/
+- https://www.originary.xyz/product
 - https://www.originary.xyz/about
 - https://www.originary.xyz/peac
 - https://www.originary.xyz/downloads
 - https://www.originary.xyz/pricing
 - https://www.originary.xyz/contact
+- https://www.originary.xyz/trust
 
 ## Product pages
 
 - https://www.originary.xyz/how-it-works - how signed records are issued at six surfaces (API, MCP, agent, gateway, payment, provisioning) and verified offline
 - https://www.originary.xyz/records - gallery of signed record types (API, MCP, agent, gateway, payment, provisioning), each verifiable offline
-- https://www.originary.xyz/verify - verify a signed record by its issuer's public key; offline by design, nothing stored
-- https://www.originary.xyz/mcp - signed records for MCP tool calls, gateway decisions, and result digests
+- https://www.originary.xyz/verify - verify a signed record with the issuer's public key; offline by design, nothing stored
+- https://www.originary.xyz/mcp - signed records for MCP tool calls, inputs, and result digests
 - https://www.originary.xyz/ai-gateway - signed records for AI gateway decisions: allow, deny, redaction digests, and observed spend
 - https://www.originary.xyz/provisioning-records - signed records for deployments, provider setup, credentials, budgets, and resource lifecycle events
-- https://www.originary.xyz/agentic-commerce - signed records that prove what a paid agent action was for
+- https://www.originary.xyz/agentic-commerce - signed records that preserve what a paid agent action reported
 
-## Articles
+## Blog
 
 - https://www.originary.xyz/blog
-- https://www.originary.xyz/learn
 
-## Key articles
+## Current articles
 
 - https://www.originary.xyz/blog/verifiable-provisioning-records-agent-infrastructure
-- https://www.originary.xyz/learn/ai-receipts
-- https://www.originary.xyz/blog/http-402-for-apis
+- https://www.originary.xyz/blog/what-is-http-402
+- https://www.originary.xyz/blog/a2a-stack-agent-to-agent-commerce
 - https://www.originary.xyz/blog/aipref-by-ietf
+- https://www.originary.xyz/blog/robots-txt-rfc-9309
 
 ## Open protocol
 
-PEAC Protocol is open-source software for portable signed interaction records, published and maintained by Originary.
+PEAC Protocol is an Apache-2.0 open-source project for portable signed
+interaction records, maintained by Originary.
 
 - https://github.com/peacprotocol/peac
 
 ## Notes
 
-Originary does not replace gateways, observability, payment rails, policy engines, or runtimes. It records selected facts so another party can verify what happened later.
+Originary does not replace gateways, observability, payment rails, policy
+engines, or runtimes. It records selected facts so another party can verify
+what happened later.
