@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react'
 import { PALETTE, MAX_W, PAGE_PAD } from '../home/palette'
-import { ShaderField } from '../home/motion/ShaderField'
+import { BitField } from '../home/motion/BitField'
 import { SANS, MONO } from '../home/typography'
 import './specimens.css'
 
@@ -301,7 +301,7 @@ export function InkBand({ children }: { children: ReactNode }) {
       }}
     >
       <div className="cin-ink-wash" aria-hidden />
-      <ShaderField className="cin-stream" tone="paper" />
+      <BitField className="cin-stream" tone="paper" />
       <div style={{ maxWidth: MAX_W, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
         {children}
       </div>
@@ -399,7 +399,7 @@ export function DataTable({
   rows: ReactNode[][]
 }) {
   return (
-    <div style={{ overflowX: 'auto', border: `1px solid ${PALETTE.hairline}`, background: PALETTE.paper }}>
+    <div style={{ overflowX: 'auto', borderTop: `2px solid rgba(20, 17, 10, 0.82)` }}>
       <table className="pk-datatable" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 520, margin: 0 }}>
         <thead>
           <tr>
@@ -416,7 +416,6 @@ export function DataTable({
                   fontWeight: 500,
                   padding: '12px 16px',
                   borderBottom: `1px solid ${PALETTE.rule}`,
-                  background: PALETTE.bg,
                 }}
               >
                 {h}
@@ -470,8 +469,7 @@ export function MarkerList({
         margin: 0,
         padding: 0,
         maxWidth,
-        background: PALETTE.paper,
-        border: `1px solid ${PALETTE.hairline}`,
+        borderTop: `2px solid rgba(20, 17, 10, 0.82)`,
       }}
     >
       {items.map((it, i) => (
@@ -482,7 +480,7 @@ export function MarkerList({
             gridTemplateColumns: marker === 'number' ? '34px minmax(0, 1fr)' : '34px 18px minmax(0, 1fr)',
             gap: 12,
             alignItems: 'baseline',
-            padding: '13px 20px',
+            padding: '13px 2px',
             borderTop: i > 0 ? `1px solid ${PALETTE.hairline}` : 'none',
           }}
         >
@@ -565,6 +563,44 @@ export function AnchorLine({
       }}
     >
       {children}
+    </div>
+  )
+}
+
+/**
+ * VerificationBoundary: the canonical two-part statement of what verification
+ * establishes and does not establish. Reused verbatim across /product, /verify,
+ * /peac, and /trust so the proof boundary reads identically everywhere.
+ */
+export function VerificationBoundary() {
+  return (
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))',
+        gap: 'clamp(20px, 3vw, 36px)',
+      }}
+      className="spec-grid"
+    >
+      <div style={{ borderTop: `2px solid ${PALETTE.success}`, paddingTop: 16 }}>
+        <div style={{ fontFamily: mono, fontSize: 10.5, letterSpacing: '0.16em', textTransform: 'uppercase', color: PALETTE.success }}>
+          What verification establishes
+        </div>
+        <p style={{ fontFamily: sans, fontSize: 14.5, lineHeight: 1.6, color: PALETTE.muted, margin: '12px 0 0', maxWidth: '52ch' }}>
+          Verification checks the record&apos;s structure, signature, issuer information, and bound
+          digests against the supplied verification material.
+        </p>
+      </div>
+      <div style={{ borderTop: `2px solid ${PALETTE.hairline}`, paddingTop: 16 }}>
+        <div style={{ fontFamily: mono, fontSize: 10.5, letterSpacing: '0.16em', textTransform: 'uppercase', color: PALETTE.faint }}>
+          What verification does not establish
+        </div>
+        <p style={{ fontFamily: sans, fontSize: 14.5, lineHeight: 1.6, color: PALETTE.muted, margin: '12px 0 0', maxWidth: '52ch' }}>
+          Verification does not independently prove that every relevant real-world event was captured,
+          that the issuer&apos;s statements were truthful, or that an underlying system correctly
+          enforced its policy.
+        </p>
+      </div>
     </div>
   )
 }

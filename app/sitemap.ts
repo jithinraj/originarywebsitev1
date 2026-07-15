@@ -1,37 +1,18 @@
 import type { MetadataRoute } from 'next'
+import { CANONICAL_ROUTES } from '@/lib/routes'
 
 // Short revalidate window so the sitemap is refetched without a long edge cache.
 export const revalidate = 600
 
 const BASE = 'https://www.originary.xyz'
 
-// Canonical URLs. Keep aligned with the live route set.
-const entries: Array<[string, string]> = [
-  ['/', '2026-07-08'],
-  ['/about', '2026-06-01'],
-  ['/peac', '2026-06-01'],
-  ['/how-it-works', '2026-07-08'],
-  ['/records', '2026-07-08'],
-  ['/verify', '2026-07-08'],
-  ['/mcp', '2026-07-08'],
-  ['/ai-gateway', '2026-07-08'],
-  ['/provisioning-records', '2026-07-08'],
-  ['/agentic-commerce', '2026-07-08'],
-  ['/downloads', '2026-06-01'],
-  ['/pricing', '2026-05-14'],
-  ['/contact', '2026-05-14'],
-  ['/trust', '2026-05-14'],
-  ['/security', '2026-05-19'],
-  ['/privacy', '2026-05-14'],
-  ['/terms', '2026-05-14'],
-  ['/legal/imprint', '2026-02-10'],
-  ['/blog', '2026-05-05'],
-  ['/blog/verifiable-provisioning-records-agent-infrastructure', '2026-05-18'],
-]
-
+// Generated from the canonical route registry (static routes + indexable
+// articles). Adding a route or restoring an indexable article updates the
+// sitemap automatically; there is no separate handwritten list to drift.
 export default function sitemap(): MetadataRoute.Sitemap {
-  return entries.map(([path, lastModified]) => ({
-    url: `${BASE}${path}`,
-    lastModified,
+  const now = new Date()
+  return CANONICAL_ROUTES.map((path) => ({
+    url: `${BASE}${path === '/' ? '' : path}`,
+    lastModified: now,
   }))
 }

@@ -3,11 +3,12 @@ import Link from 'next/link'
 import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, Card, PALETTE } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
+import { DataTable, StepLabel, VerificationBoundary } from '@/components/specimens/parts'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Trust Center | Originary' },
+  title: { absolute: 'Originary deployment, verification, and security boundaries' },
   description:
-    'See how Originary handles verification, keys, portability, and offline validation for signed records across agent, API, MCP, and automated workflows.',
+    'Review current key-custody, network, data, retention, telemetry, supply-chain, and support boundaries.',
   openGraph: {
     title: 'Trust Center | Originary',
     description:
@@ -230,9 +231,9 @@ export default function TrustPage() {
     <PageShell>
       <PageHero
         eyebrow="trust center"
-        title="Trust Center"
-        sub="How Originary handles verification, keys, portability, and offline validation for signed records."
-        align="center"
+        title="Clear deployment and verification boundaries."
+        sub="Review current key-custody, network, data, retention, telemetry, supply-chain, and support boundaries. Every claim links to the artifact that backs it."
+        strip={['Deployment modes', 'Key custody', 'Data boundaries', 'PEAC ' + FACTS.currentVersion]}
       >
         <p
           style={{
@@ -240,7 +241,7 @@ export default function TrustPage() {
             fontSize: 14,
             lineHeight: 1.6,
             color: PALETTE.faint,
-            margin: '8px auto 0 auto',
+            margin: '8px 0 0',
             maxWidth: 620,
             textWrap: 'pretty',
           }}
@@ -323,6 +324,29 @@ export default function TrustPage() {
             gap: 24,
           }}
         >
+          <div>
+            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              the matrix
+            </Mono>
+            <h2 style={{ ...headStyle, marginTop: 12 }}>What runs where, and who holds what.</h2>
+            <div style={{ marginTop: 18 }}>
+              <DataTable
+                head={['', 'Open source', 'Supported self-host']}
+                rows={[
+                  ['Where it runs', 'Your infrastructure', 'Your infrastructure'],
+                  ['Key custody', 'You. Local or your KMS.', 'You. Local or your KMS.'],
+                  ['Interaction data', 'Never leaves your environment', 'Never leaves your environment'],
+                  ['Support', 'Community (GitHub)', 'Under agreement'],
+                  ['Verification', 'Offline, no callback', 'Offline, no callback'],
+                ]}
+              />
+            </div>
+            <p style={{ ...proseStyle, fontSize: 13, marginTop: 12 }}>
+              Originary does not host verification, custody keys, or store your records. Anything not listed here is not
+              offered. Verification never requires Originary to be online in any mode.
+            </p>
+          </div>
+
           <Card padding={28}>
             <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
               verification model
@@ -342,10 +366,21 @@ export default function TrustPage() {
               carries the fields needed to confirm what happened, when, and who attested to it.
             </p>
             <KeyPoint>
-              Records are self-contained. Verification is local. No network dependency on Originary or any third party
-              at verification time.
+              Records are portable; verification also requires trusted issuer key material. In strict offline mode
+              that key is supplied and there is no network request; in explicit-resolution mode the caller authorizes
+              the JWKS fetch. No mode calls back to Originary.
             </KeyPoint>
           </Card>
+
+          <div>
+            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              the boundary
+            </Mono>
+            <h2 style={{ ...headStyle, marginTop: 12, marginBottom: 20 }}>
+              What a verified record does and does not establish.
+            </h2>
+            <VerificationBoundary />
+          </div>
 
           <Card padding={28}>
             <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
@@ -427,8 +462,8 @@ export default function TrustPage() {
               />
             </div>
             <p style={proseStyle}>
-              If you use Originary&apos;s optional managed services (hosted verification, dashboards), those services
-              process only the records you explicitly send to them. Managed service data handling is covered in our{' '}
+              Originary does not run a hosted verification service, dashboards, or record storage. If you engage
+              Originary for a scoped pilot or supported self-host, data handling for that engagement is covered in our{' '}
               <Link href="/privacy" style={linkStyle}>
                 Privacy Policy
               </Link>
@@ -468,7 +503,7 @@ export default function TrustPage() {
             </Mono>
             <h2 style={{ ...headStyle, marginTop: 12 }}>Legal identity and stewardship</h2>
             <p style={proseStyle}>
-              Originary is a product of {FACTS.legalEntity}, a Delaware corporation. We are the current steward of the
+              Originary is a brand of {FACTS.legalEntity}, a Delaware corporation. Originary maintains the
               PEAC protocol, not its gatekeeper. The protocol specification, reference implementation, conformance
               suite, and all core tooling are published under the {FACTS.license} license.
             </p>

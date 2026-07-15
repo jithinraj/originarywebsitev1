@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { PageShell, PageHero, PageSection, SectionHeading, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -17,23 +17,13 @@ import {
 } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 
-const TITLE = 'AI gateway audit trail: signed decision records | Originary'
+const TITLE = 'AI gateway audit trail and signed decision records | Originary'
 const DESCRIPTION =
-  'Turn AI gateway decisions into portable evidence: signed records for allow, deny, and redaction events, plus agent spend attribution, verifiable offline.'
+  'Bind the gateway-reported decision, policy context, result, and delivered-content digest to an issuer and time.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: [
-    'AI gateway',
-    'LLM gateway audit',
-    'AI gateway logging',
-    'LLM proxy audit trail',
-    'model router observability',
-    'gateway decision records',
-    'agent spend attribution',
-    'deny as evidence',
-  ],
   alternates: { canonical: '/ai-gateway' },
   openGraph: {
     title: TITLE,
@@ -178,6 +168,10 @@ export default function AiGatewayPage() {
         </div>
       </PageSection>
 
+      <PullLine accent="defensible.">
+        Every decision,
+      </PullLine>
+
       {/* Deny as evidence */}
       <PageSection paddingTop={56} paddingBottom={56}>
         <SectionHeading index="03" eyebrow="Deny as evidence" title="A refused or redacted request is still an event." />
@@ -203,7 +197,7 @@ export default function AiGatewayPage() {
               { label: 'Time', value: '2026-07-02T09:16:04Z' },
               { label: 'Signature', value: <>Ed25519 e02d7f15... <Dim>valid</Dim></> },
             ]}
-            foot="deny-as-evidence - portable proof of a refusal"
+            foot="deny-as-evidence - portable evidence of a refusal"
           />
         </SpecimenGrid>
       </PageSection>
@@ -301,7 +295,7 @@ export default function AiGatewayPage() {
         <CodeBlock tone="ink">npx -y @peac/cli verify ./gateway-decision.jws --public-key ./jwks.json</CodeBlock>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <InkButton href="/contact" primary>
-            Request a demo
+            Start a pilot
           </InkButton>
           <InkButton href="/verify">Verify a record</InkButton>
         </div>

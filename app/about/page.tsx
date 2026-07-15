@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
 import { FACTS } from '@/lib/facts'
+import { ORIGINARY_ORG_ID } from '@/lib/structured-data/entities'
 import {
   PageShell,
   PageSection,
@@ -14,7 +15,7 @@ import {
   PAGE_PAD,
 } from '@/components/home'
 export const metadata: Metadata = {
-  title: { absolute: 'About | Originary' },
+  title: { absolute: 'About Originary | Verifiable Infrastructure for Machine Actions' },
   description:
     'Originary builds verification software for machine actions that cross company, vendor, and runtime boundaries. Publishes PEAC Protocol.',
   robots: {
@@ -47,19 +48,8 @@ const webPageJsonLd = {
   '@type': 'AboutPage',
   name: 'About Originary',
   url: 'https://www.originary.xyz/about',
-  publisher: {
-    '@type': 'Organization',
-    name: 'Originary',
-    url: 'https://www.originary.xyz',
-    description:
-      'Originary builds verification software for machine actions that cross company, vendor, and runtime boundaries.',
-    foundingLocation: 'Delaware, USA',
-    parentOrganization: {
-      '@type': 'Organization',
-      name: 'Poem, Inc.',
-      legalName: 'Poem, Inc.',
-    },
-  },
+  about: { '@id': ORIGINARY_ORG_ID },
+  publisher: { '@id': ORIGINARY_ORG_ID },
 }
 
 const linkStyle = {
@@ -158,7 +148,7 @@ export default function About() {
         <PageSection paddingTop={32} paddingBottom={64}>
           <Reveal>
             <p className="home-about-pull" style={{ maxWidth: 820, margin: '0 auto' }}>
-              Govern locally. Prove across boundaries.
+              Record locally. Verify across boundaries.
             </p>
           </Reveal>
         </PageSection>
@@ -179,7 +169,7 @@ export default function About() {
             <Reveal delay={120}>
               <div>
                 <p className="home-about-body" style={{ marginTop: 0 }}>
-                  PEAC is an open standard for verifiable interaction records.
+                  PEAC is an open-source protocol for verifiable interaction records.
                   Apache-2.0 licensed and implementation-independent. Anyone
                   can self-host, issue, and verify records without an
                   Originary account or managed service.
@@ -261,15 +251,14 @@ export default function About() {
             <Reveal delay={120}>
               <div>
                 <p className="home-about-body" style={{ marginTop: 0 }}>
-                  Poem, Inc. is a Delaware corporation. Originary is a brand
-                  of Poem, Inc. Poem publishes and maintains Originary
-                  software and documentation for PEAC Protocol.
+                  Poem, Inc. is a Delaware corporation. Originary is a brand of
+                  Poem, Inc. Under the Originary brand, Poem develops Originary
+                  Verify and maintains PEAC Protocol, an Apache-2.0 open-source
+                  project.
                 </p>
                 <p className="home-about-body">
                   We are a small team. We work in the open where possible and
-                  ship software under permissive licenses. Originary is not
-                  affiliated with any other organization using a similar
-                  name.
+                  publish software under permissive licenses.
                 </p>
               </div>
             </Reveal>

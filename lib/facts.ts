@@ -30,8 +30,6 @@ export const FACTS = {
   /** Legacy wire format. JWS typ: peac-receipt/0.1. */
   legacyWireFormat: 'peac-receipt/0.1',
 
-  /** Alias for legacyWireFormat for backward compatibility. */
-  wireFormat: 'peac-receipt/0.1',
 
   // ---------------------------------------------------------------------------
   // Package counts

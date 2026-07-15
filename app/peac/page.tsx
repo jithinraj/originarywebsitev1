@@ -16,26 +16,12 @@ import {
   PAGE_PAD,
 } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
+import { VerificationBoundary } from '@/components/specimens/parts'
 
 export const metadata: Metadata = {
-  title: { absolute: 'PEAC Protocol | Originary' },
+  title: { absolute: 'PEAC Protocol | Open-Source Protocol for Verifiable Interaction Records' },
   description:
-    'PEAC is the open standard for portable signed interaction records. Issue records another party can verify without trusting the original dashboard.',
-  keywords: [
-    'PEAC Protocol',
-    'portable signed records',
-    'verifiable interaction records',
-    'open standard',
-    'Apache-2.0',
-    'Ed25519',
-    'JWS',
-    'interaction-record+jwt',
-    'MCP',
-    'A2A',
-    'HTTP 402',
-    'paymentauth',
-    'provisioning lifecycle',
-  ],
+    'PEAC is an open-source protocol for portable signed interaction records. Issue records another party can verify without trusting the original dashboard.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   robots: {
     index: true,
@@ -46,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'PEAC Protocol | Originary',
     description:
-      'PEAC is the open standard for portable signed interaction records. Apache-2.0. Self-hostable. Offline-verifiable.',
+      'PEAC is an open-source protocol for portable signed interaction records. Apache-2.0. Self-hostable. Offline-verifiable.',
     url: '/peac',
     siteName: 'Originary',
     type: 'website',
@@ -56,7 +42,7 @@ export const metadata: Metadata = {
         url: '/og',
         width: 1200,
         height: 630,
-        alt: 'PEAC Protocol | Open standard for portable signed interaction records',
+        alt: 'PEAC Protocol | Open-source protocol for portable signed interaction records',
       },
     ],
   },
@@ -64,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PEAC Protocol | Originary',
     description:
-      'PEAC is the open standard for portable signed interaction records. Apache-2.0. Self-hostable. Offline-verifiable.',
+      'PEAC is an open-source protocol for portable signed interaction records. Apache-2.0. Self-hostable. Offline-verifiable.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -81,21 +67,12 @@ export default function PeacPage() {
     '@id': 'https://www.originary.xyz/peac#protocol',
     name: 'PEAC Protocol',
     description:
-      'Open standard for portable signed interaction records. Issue, verify, and export records of automated actions across boundaries. Apache-2.0.',
+      'Open-source protocol for portable signed interaction records. Issue, verify, and export records of automated actions across boundaries. Apache-2.0.',
     codeRepository: 'https://github.com/peacprotocol/peac',
     programmingLanguage: ['TypeScript', 'JavaScript'],
     license: 'https://www.apache.org/licenses/LICENSE-2.0',
     isAccessibleForFree: true,
     version: FACTS.currentVersion,
-    keywords: [
-      'PEAC Protocol',
-      'portable signed records',
-      'verifiable interaction records',
-      'Ed25519',
-      'JWS',
-      'open standard',
-      'Apache-2.0',
-    ],
     author: {
       '@type': 'Organization',
       '@id': 'https://www.originary.xyz/#org',
@@ -141,7 +118,7 @@ export default function PeacPage() {
                 by Originary
               </p>
               <p className="home-about-lede" style={{ marginTop: 24 }}>
-                The open standard for portable signed interaction records.
+                The open-source protocol for portable signed interaction records.
               </p>
               <p className="home-about-body" style={{ marginTop: 14, maxWidth: 560 }}>
                 Systems use PEAC to issue records another party can verify
@@ -152,7 +129,7 @@ export default function PeacPage() {
 
               <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <Button href="/#demo" primary>
-                  Request a demo
+                  Start a pilot
                 </Button>
                 <Button href="https://github.com/peacprotocol/peac" external>
                   View on GitHub
@@ -307,8 +284,8 @@ export default function PeacPage() {
         <PageSection>
           <SectionHeading
             eyebrow="what a record contains"
-            title="One signed artifact. Four bindings."
-            sub="Each record binds the action that happened, the policy that applied, the result that was produced, and the signature that proves the issuer asserted all three."
+            title="One signed artifact. Six fields."
+            sub="Every record carries the same skeleton: facts, policy, result, time, issuer, signature. The issuer asserts the first four; the last two prove who said so and let anyone check it."
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
             <Card>
@@ -318,8 +295,7 @@ export default function PeacPage() {
               <h3 style={subHead}>What happened</h3>
               <p style={body}>
                 The boundary action. An API call, MCP tool run, gateway decision, provisioning event, or payment-related
-                machine action. Captured as a typed receipt referencing one of {FACTS.publishedPackageCount}+
-                publishable schemas.
+                machine action, captured as a typed signed record with its selected facts.
               </p>
             </Card>
             <Card>
@@ -340,6 +316,26 @@ export default function PeacPage() {
               <p style={body}>
                 Status, digests, observed outcome. The record commits to what the issuer says happened, so a later
                 review does not depend on log retention.
+              </p>
+            </Card>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                time
+              </Mono>
+              <h3 style={subHead}>When it happened</h3>
+              <p style={body}>
+                Issue time and, where relevant, the observed event time. A record is datable evidence: a later review
+                can place the action on a timeline without trusting anyone&apos;s clock retroactively.
+              </p>
+            </Card>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                issuer
+              </Mono>
+              <h3 style={subHead}>Who issued it</h3>
+              <p style={body}>
+                The system that observed the action and signed the record, identified by its issuer URL. Keys resolve
+                from the issuer&apos;s published configuration, so identity is checkable, not asserted.
               </p>
             </Card>
             <Card>
@@ -400,12 +396,27 @@ export default function PeacPage() {
           style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
         />
 
+        {/* Verification boundary */}
+        <PageSection>
+          <SectionHeading
+            eyebrow="the boundary"
+            title="What a verified record does and does not establish."
+          />
+          <VerificationBoundary />
+        </PageSection>
+
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+        />
+
         {/* 5. Use standalone or with Originary */}
         <PageSection>
           <SectionHeading
             eyebrow="how to adopt"
             title="Self-host the protocol or use it with Originary."
-            sub="Anyone can self-host PEAC Protocol, issue records, and verify them without an Originary account or managed service. Originary publishes and maintains PEAC Protocol and also offers commercial tools, managed verification, and deployment support for teams running it in production."
+            sub="Anyone can self-host PEAC Protocol, issue records, and verify them without an Originary account or managed service. Originary publishes and maintains PEAC Protocol and also offers commercial tools and implementation support for teams running it in production."
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
             <Card>
@@ -442,7 +453,7 @@ export default function PeacPage() {
               />
               <div style={{ marginTop: 18 }}>
                 <Button href="/#demo" primary>
-                  Request a demo
+                  Start a pilot
                 </Button>
               </div>
             </Card>

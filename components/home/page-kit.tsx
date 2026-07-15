@@ -6,7 +6,7 @@ import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { SANS, MONO } from './typography'
 import { Nav } from './Nav'
 import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
-import { ShaderField } from './motion/ShaderField'
+import { BitField } from './motion/BitField'
 import { WordmarkStream } from './motion/WordmarkStream'
 import { HomeFooter } from './Footer'
 import { Mono } from './atoms/Mono'
@@ -76,7 +76,7 @@ export function PageHero({
         borderBottom: plate && !strip ? `1px solid ${PALETTE.hairline}` : undefined,
       }}
     >
-      {display ? <ShaderField className="cin-stream" /> : null}
+      {display ? <BitField className="cin-stream" focus="left" /> : null}
       <div style={{ maxWidth: MAX_W, margin: '0 auto', position: 'relative', zIndex: 1 }}>
       <div className={aside ? 'pk-hero-grid' : undefined}>
       <div
@@ -233,6 +233,70 @@ export function PageSection({
   )
 }
 
+/**
+ * PullLine: a single full-bleed display statement. Use once per page at the
+ * pivot; the scale contrast against quiet sections is the point.
+ */
+export function PullLine({
+  children,
+  accent,
+  kicker,
+  rule = 'both',
+}: {
+  children: ReactNode
+  /** Trailing clause rendered in the verify green. */
+  accent?: ReactNode
+  /** Small mono kicker above the statement. */
+  kicker?: string
+  /** Which hairlines to draw; use 'top' when ruled content follows. */
+  rule?: 'both' | 'top' | 'none'
+}) {
+  return (
+    <section
+      aria-label="Statement"
+      style={{
+        borderTop: rule !== 'none' ? `1px solid ${PALETTE.hairline}` : undefined,
+        borderBottom: rule === 'both' ? `1px solid ${PALETTE.hairline}` : undefined,
+        padding: `clamp(48px, 7vh, 80px) ${PAGE_PAD}`,
+        background: PALETTE.bg,
+      }}
+    >
+      <div style={{ maxWidth: MAX_W, margin: '0 auto' }}>
+        {kicker ? (
+          <p
+            style={{
+              fontFamily: MONO,
+              fontSize: 11,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: PALETTE.faint,
+              margin: '0 0 18px',
+            }}
+          >
+            {kicker}
+          </p>
+        ) : null}
+        <p
+          style={{
+            fontFamily: sans,
+            fontSize: 'clamp(32px, 4.6vw, 58px)',
+            lineHeight: 1.06,
+            letterSpacing: '-0.03em',
+            fontWeight: 500,
+            color: PALETTE.ink,
+            margin: 0,
+            maxWidth: '24ch',
+            textWrap: 'balance',
+          }}
+        >
+          {children}
+          {accent ? <span style={{ color: PALETTE.success }}> {accent}</span> : null}
+        </p>
+      </div>
+    </section>
+  )
+}
+
 export function SectionHeading({
   eyebrow,
   title,
@@ -285,9 +349,9 @@ export function SectionHeading({
       <h2
         style={{
           fontFamily: sans,
-          fontSize: 32,
-          lineHeight: 1.12,
-          letterSpacing: '-0.02em',
+          fontSize: 'clamp(28px, 3.2vw, 40px)',
+          lineHeight: 1.1,
+          letterSpacing: '-0.022em',
           fontWeight: 500,
           color: PALETTE.ink,
           margin: eyebrow ? '12px 0 0 0' : 0,
@@ -555,6 +619,7 @@ export function ArticleDoc({
   date,
   readTime,
   parent,
+  status,
   children,
 }: {
   category: string
@@ -564,6 +629,8 @@ export function ArticleDoc({
   date?: string
   readTime?: string
   parent: { label: string; href: string }
+  /** Lifecycle status; 'archived' and 'superseded' render a notice. */
+  status?: 'current' | 'updated' | 'archived' | 'superseded'
   children: ReactNode
 }) {
   return (
@@ -655,10 +722,33 @@ export function ArticleDoc({
             {readTime ? <span>{readTime}</span> : null}
           </div>
         ) : null}
+        {status === 'archived' || status === 'superseded' ? (
+          <div
+            role="note"
+            style={{
+              marginTop: 28,
+              padding: '14px 18px',
+              borderLeft: `3px solid ${PALETTE.warn}`,
+              background: 'rgba(138, 106, 60, 0.06)',
+              fontFamily: sans,
+              fontSize: 14,
+              lineHeight: 1.55,
+              color: PALETTE.muted,
+            }}
+          >
+            <strong style={{ color: PALETTE.ink, fontWeight: 500 }}>Archived.</strong> This piece
+            reflects earlier work and uses legacy terminology and commands. It is kept for the record
+            and is not maintained against the current release. See the{' '}
+            <Link href="/blog" style={{ color: PALETTE.ink }}>
+              current writing
+            </Link>{' '}
+            for up-to-date guidance.
+          </div>
+        ) : null}
         <div
           className="home-card legal-doc-body"
           style={{
-            marginTop: 32,
+            marginTop: status === 'archived' || status === 'superseded' ? 20 : 32,
             padding: 36,
             background: PALETTE.paper,
             border: `1px solid ${PALETTE.hairline}`,

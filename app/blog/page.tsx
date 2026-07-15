@@ -13,15 +13,14 @@ import {
   MAX_W,
   PAGE_PAD,
 } from '@/components/home'
+import { CURRENT_ARTICLES, ARCHIVED_ARTICLES, type Article } from '@/lib/blog'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary Blog | Agent Verification and Infrastructure',
+    absolute: 'Originary blog: signed records for AI agents and APIs',
   },
   description:
-    'The Originary blog covers signed records, agent verification, offline verification, policy discovery, and the open infrastructure for automated interactions.',
-  keywords:
-    'Originary blog, agent verification, signed records, offline verification, verification workflows, PEAC protocol, AIPREF, HTTP 402, technical blog',
+    'Technical guides, worked examples, and source-backed analysis for agent, MCP, gateway, commerce, and provisioning audit workflows.',
   authors: [{ name: 'Originary Team' }],
   openGraph: {
     type: 'website',
@@ -44,31 +43,6 @@ export const metadata: Metadata = {
   robots: 'index,follow',
   alternates: { canonical: '/blog' },
 }
-
-type Article = {
-  slug: string
-  title: string
-  description: string
-  author: string
-  date: string
-  category: string
-  readTime: string
-  featured: boolean
-}
-
-const articles: Article[] = [
-  {
-    slug: 'verifiable-provisioning-records-agent-infrastructure',
-    title: 'Verifiable provisioning records for agent-driven infrastructure',
-    description:
-      'When agents and CLIs provision services, credentials, environments, and deploy targets, signed records help teams verify what changed without owning the runtime.',
-    author: 'Originary Team',
-    date: '2026-05-18',
-    category: 'Protocol',
-    readTime: '11 min read',
-    featured: true,
-  },
-]
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -102,14 +76,6 @@ const blogLabel = {
   marginLeft: 'auto',
   marginRight: 'auto',
   display: 'block' as const,
-}
-
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-  })
 }
 
 function ArticleCard({ article, featured }: { article: Article; featured?: boolean }) {
@@ -192,8 +158,9 @@ function ArticleCard({ article, featured }: { article: Article; featured?: boole
 }
 
 export default function BlogPage() {
-  const featured = articles.filter((a) => a.featured)
-  const rest = articles.filter((a) => !a.featured)
+  const featured = CURRENT_ARTICLES.filter((a) => a.featured)
+  const rest = CURRENT_ARTICLES.filter((a) => !a.featured)
+  const archived = ARCHIVED_ARTICLES
 
   return (
     <>
@@ -265,6 +232,7 @@ export default function BlogPage() {
           style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
         />
 
+        {rest.length > 0 ? (
         <PageSection paddingTop={32} paddingBottom={56}>
           <Reveal>
             <InViewClass className="home-eyebrow-rule" as="div" style={blogLabel}>
@@ -288,6 +256,72 @@ export default function BlogPage() {
             ))}
           </Stagger>
         </PageSection>
+        ) : null}
+
+        {archived.length > 0 ? (
+          <PageSection paddingTop={32} paddingBottom={56}>
+            <Reveal>
+              <InViewClass className="home-eyebrow-rule" as="div" style={blogLabel}>
+                <span className="home-about-eyebrow">archive</span>
+              </InViewClass>
+            </Reveal>
+            <p
+              style={{
+                maxWidth: 1080,
+                margin: '16px auto 0',
+                fontFamily: sans,
+                fontSize: 13.5,
+                lineHeight: 1.6,
+                color: PALETTE.faint,
+              }}
+            >
+              Earlier writing, kept for the record. These pieces use legacy terminology and commands
+              and are not maintained against the current release.
+            </p>
+            <ul
+              role="list"
+              style={{
+                listStyle: 'none',
+                maxWidth: 1080,
+                margin: '20px auto 0',
+                padding: 0,
+                borderTop: `1px solid ${PALETTE.hairline}`,
+              }}
+            >
+              {archived.map((article) => (
+                <li key={article.slug} style={{ borderBottom: `1px solid ${PALETTE.hairline}` }}>
+                  <Link
+                    href={`/blog/${article.slug}`}
+                    className="home-footer-link"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'baseline',
+                      gap: 16,
+                      padding: '15px 2px',
+                      textDecoration: 'none',
+                      color: PALETTE.muted,
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", monospace',
+                        fontSize: 10.5,
+                        letterSpacing: '0.14em',
+                        textTransform: 'uppercase',
+                        color: PALETTE.faint,
+                        flex: 'none',
+                        width: 64,
+                      }}
+                    >
+                      archived
+                    </span>
+                    <span style={{ fontFamily: sans, fontSize: 15, color: PALETTE.ink }}>{article.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </PageSection>
+        ) : null}
 
         <InViewClass
           className="home-about-divider"

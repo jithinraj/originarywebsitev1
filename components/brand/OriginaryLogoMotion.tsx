@@ -10,7 +10,7 @@
  *   2. The remaining letters slide outward from a contracted state, sequenced
  *      by their distance from the origin.
  *   3. The two i-dots fly out from inside the O and land as record markers —
- *      the "portable proof" beat.
+ *      the "portable signed evidence" beat.
  *
  * Stack: React + framer-motion. No other deps. Honours `prefers-reduced-motion`.
  *

@@ -1,3 +1,4 @@
+import { createHmac } from 'node:crypto'
 import { NextResponse } from 'next/server'
 
 export const runtime = 'nodejs'
@@ -10,7 +11,27 @@ const INTENTS = new Set([
   'press_speaking',
 ])
 
-const MAX_LEN = 4000
+const MAX_BODY_BYTES = 16 * 1024
+const MAX_FIELD = 4000
+const MAX_COMPANY = 200
+const ALLOWED_ORIGINS = new Set(['https://www.originary.xyz', 'https://originary.xyz'])
+
+// In-memory fixed-window rate limit. Best-effort per warm instance; a shared
+// store (Upstash/Redis) is the production upgrade documented in the PR notes.
+const RATE = new Map<string, { count: number; reset: number }>()
+const WINDOW_MS = 60_000
+const MAX_PER_WINDOW = 5
+
+function rateLimited(key: string): boolean {
+  const now = Date.now()
+  const e = RATE.get(key)
+  if (!e || now > e.reset) {
+    RATE.set(key, { count: 1, reset: now + WINDOW_MS })
+    return false
+  }
+  e.count += 1
+  return e.count > MAX_PER_WINDOW
+}
 
 /** Reject anything that looks like a record payload, JWS, or key material. */
 function looksLikeSensitiveArtifact(text: string): boolean {
@@ -22,9 +43,35 @@ function looksLikeSensitiveArtifact(text: string): boolean {
 }
 
 export async function POST(request: Request) {
+  // Content-type check.
+  if (!request.headers.get('content-type')?.includes('application/json')) {
+    return NextResponse.json({ ok: false, error: 'invalid_content_type' }, { status: 415 })
+  }
+
+  // Same-origin check (Origin header is set by browsers on POST).
+  const origin = request.headers.get('origin')
+  if (origin && !ALLOWED_ORIGINS.has(origin)) {
+    return NextResponse.json({ ok: false, error: 'forbidden_origin' }, { status: 403 })
+  }
+
+  // Body-size rejection before parsing.
+  const raw = await request.text()
+  if (raw.length > MAX_BODY_BYTES) {
+    return NextResponse.json({ ok: false, error: 'payload_too_large' }, { status: 413 })
+  }
+
+  // Rate limit by client IP.
+  const ip =
+    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    request.headers.get('x-real-ip') ||
+    'unknown'
+  if (rateLimited(ip)) {
+    return NextResponse.json({ ok: false, error: 'rate_limited' }, { status: 429 })
+  }
+
   let body: Record<string, unknown>
   try {
-    body = await request.json()
+    body = JSON.parse(raw)
   } catch {
     return NextResponse.json({ ok: false, error: 'invalid_json' }, { status: 400 })
   }
@@ -47,10 +94,13 @@ export async function POST(request: Request) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) {
     return NextResponse.json({ ok: false, error: 'invalid_email' }, { status: 400 })
   }
-  const combined = [company, message, workflow, deployment].join('\n')
-  if (combined.length > MAX_LEN) {
-    return NextResponse.json({ ok: false, error: 'too_long' }, { status: 400 })
+  if (!company || company.length > MAX_COMPANY) {
+    return NextResponse.json({ ok: false, error: 'invalid_company' }, { status: 400 })
   }
+  if (!message || message.length > MAX_FIELD) {
+    return NextResponse.json({ ok: false, error: 'invalid_message' }, { status: 400 })
+  }
+  const combined = [company, message, workflow, deployment].join('\n')
   if (looksLikeSensitiveArtifact(combined)) {
     return NextResponse.json(
       { ok: false, error: 'sensitive_artifact', detail: 'Do not submit records, JWS strings, or keys.' },
@@ -64,6 +114,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: 'unconfigured' }, { status: 503 })
   }
 
+  // Idempotency key: stable per (email, intent, message) so retries de-dup.
+  const idempotencyKey = createHmac('sha256', process.env.CONTACT_WEBHOOK_SECRET ?? 'unsigned')
+    .update(`${email}|${intent}|${message}`)
+    .digest('hex')
+    .slice(0, 32)
+
+  // Log delivery metadata only, never message contents or PII.
   const payload = {
     source: 'originary.xyz/contact',
     intent,
@@ -72,17 +129,31 @@ export async function POST(request: Request) {
     workflow,
     deployment,
     message,
-    submitted_at: new Date().toISOString(),
+    idempotency_key: idempotencyKey,
+  }
+  const bodyStr = JSON.stringify(payload)
+
+  const headers: Record<string, string> = {
+    'content-type': 'application/json',
+    'idempotency-key': idempotencyKey,
+  }
+  const secret = process.env.CONTACT_WEBHOOK_SECRET
+  if (secret) {
+    const ts = String(Math.floor(Date.now() / 1000))
+    headers['x-originary-timestamp'] = ts
+    headers['x-originary-signature'] = createHmac('sha256', secret).update(`${ts}.${bodyStr}`).digest('hex')
   }
 
   try {
     const res = await fetch(webhook, {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(payload),
+      headers,
+      body: bodyStr,
+      signal: AbortSignal.timeout(8000),
     })
     if (!res.ok) throw new Error(`webhook ${res.status}`)
   } catch {
+    console.error(`contact delivery failed intent=${intent} idem=${idempotencyKey}`)
     return NextResponse.json({ ok: false, error: 'delivery_failed' }, { status: 502 })
   }
 

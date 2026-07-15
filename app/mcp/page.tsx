@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { PageShell, PageHero, PageSection, SectionHeading, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -16,23 +16,13 @@ import {
 } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 
-const TITLE = 'MCP audit trail: signed records for tool calls | Originary'
+const TITLE = 'MCP audit trail and signed tool-call records | Originary'
 const DESCRIPTION =
-  'Give MCP tool calls a portable audit trail: signed records with tool name, args digest, and result digest that clients and auditors verify without your logs.'
+  'Record tool name, input and output digests, result, issuer, and time so another party can verify the server-reported run.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: [
-    'MCP audit trail',
-    'MCP tool call logging',
-    'Model Context Protocol security',
-    'MCP observability',
-    'MCP receipts',
-    'MCP server audit',
-    'signed tool call records',
-    'AI tool call verification',
-  ],
   alternates: { canonical: '/mcp' },
   openGraph: {
     title: TITLE,
@@ -104,7 +94,7 @@ export default function McpPage() {
         <SectionHeading
           index="01"
           eyebrow="The problem"
-          title="A transcript is not portable proof."
+          title="A transcript is not portable evidence."
           sub="An MCP server log can help you debug a tool run. It cannot be handed to another party as something they can independently check. A signed record answers the questions that cross the boundary:"
         />
         <MarkerList
@@ -199,6 +189,10 @@ export default function McpPage() {
         </div>
       </PageSection>
 
+      <PullLine accent="The proof travels.">
+        The transcript stays.
+      </PullLine>
+
       {/* Deny as evidence */}
       <PageSection paddingTop={56} paddingBottom={56}>
         <SectionHeading index="03" eyebrow="Deny as evidence" title="A refused tool call is still an event." />
@@ -224,7 +218,7 @@ export default function McpPage() {
               { label: 'Time', value: '2026-06-12T14:10:40Z' },
               { label: 'Signature', value: <>Ed25519 e02d7f15... <Dim>valid</Dim></> },
             ]}
-            foot="deny-as-evidence - portable proof of a refusal"
+            foot="deny-as-evidence - portable evidence of a refusal"
           />
         </SpecimenGrid>
       </PageSection>
@@ -255,7 +249,7 @@ export default function McpPage() {
         </p>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <InkButton href="/contact" primary>
-            Request a demo
+            Start a pilot
           </InkButton>
           <InkButton href="/verify">Verify a record</InkButton>
         </div>

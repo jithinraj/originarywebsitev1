@@ -1,6 +1,6 @@
 # Originary Website
 
-Official marketing site for Originary - receipts for the agentic web, built on the PEAC Protocol.
+Official marketing site for Originary - portable signed records for machine actions across organizational boundaries, built on the PEAC Protocol.
 
 Maintained by Originary (Poem, Inc.)
 Live site: https://www.originary.xyz/
@@ -28,7 +28,6 @@ Originary is a trademark of Poem, Inc. All rights reserved.
 
 ## Our open source projects
 
-Originary is committed to open protocols and tooling for the agentic web. If you are looking for our open source work, see:
+Originary maintains open protocols and tooling for verifiable machine-to-machine work. If you are looking for our open source work, see:
 
 * PEAC Protocol core and SDK: [https://github.com/peacprotocol/peac](https://github.com/peacprotocol/peac)
-* Trace: [https://github.com/originaryx/trace](https://github.com/originaryx/trace)

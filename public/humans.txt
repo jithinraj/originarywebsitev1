@@ -1,15 +1,15 @@
 /* TEAM */
 
-Operator: Poem, Inc.
+Organization: Originary
+Legal entity: Poem, Inc.
 Contact: contact@originary.xyz
 Location: United States
 
 /* SITE */
 
-Last updated: 2025-12-13
+Last updated: 2026-07-15
 Language: English
 Framework: Next.js
-Standards: HTML5, CSS3, ES6+
 
 /* LINKS */
 
@@ -17,17 +17,16 @@ Website: https://www.originary.xyz
 GitHub: https://github.com/peacprotocol/peac
 Security: https://www.originary.xyz/.well-known/security.txt
 Policy: https://www.originary.xyz/.well-known/peac.txt
-Preferences: https://www.originary.xyz/.well-known/aipref.json
 
 /* PROTOCOL */
 
-PEAC wire version: 0.9.16
-Receipt signing: EdDSA (Ed25519)
+PEAC wire version: 0.2
+Record signing: EdDSA (Ed25519)
 JWKS: https://www.originary.xyz/.well-known/jwks.json
 
 /* LEGAL */
 
-Copyright: 2025 Poem, Inc.
+Copyright: 2025-2026 Poem, Inc.
 Trade name: Originary
 Terms: https://www.originary.xyz/terms
 Privacy: https://www.originary.xyz/privacy

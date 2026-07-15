@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { PageShell, PageHero, PageSection, SectionHeading, Pill, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Pill, Button, PullLine } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -17,23 +17,13 @@ import {
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 
-const TITLE = 'Provisioning records for agent infrastructure | Originary'
+const TITLE = 'Provisioning audit records for agent infrastructure | Originary'
 const DESCRIPTION =
-  'A verifiable audit trail for agent infrastructure: signed records for deployments, provider setup, credentials, budgets, and resource lifecycle events, verifiable offline.'
+  'Bind the request, approval reference, provider operation, resource identifier, result, issuer, and time.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: [
-    'provisioning audit trail',
-    'agent infrastructure records',
-    'deployment audit trail',
-    'credential lifecycle records',
-    'Terraform audit records',
-    'GitHub Actions audit trail',
-    'Vercel deployment records',
-    'infrastructure provenance',
-  ],
   alternates: { canonical: '/provisioning-records' },
   openGraph: {
     title: TITLE,
@@ -193,6 +183,10 @@ export default function ProvisioningRecordsPage() {
         </div>
       </PageSection>
 
+      <PullLine accent="Never the secret.">
+        Prove the change.
+      </PullLine>
+
       {/* What it covers */}
       <PageSection paddingTop={56} paddingBottom={56}>
         <SectionHeading index="03" eyebrow="What it covers" title="Lifecycle events across the stack you already run." />
@@ -242,7 +236,7 @@ export default function ProvisioningRecordsPage() {
         </div>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <InkButton href="/contact" primary>
-            Request a demo
+            Start a pilot
           </InkButton>
           <InkButton href="/verify">Verify a record</InkButton>
         </div>

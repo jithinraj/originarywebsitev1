@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
-import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button, PullLine } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -22,22 +22,11 @@ import { TamperDemo } from '@/components/specimens/TamperDemo'
 
 const TITLE = 'Signed audit records for AI agents, APIs, and MCP | Originary'
 const DESCRIPTION =
-  'A verifiable audit trail for AI agents, APIs, MCP tool runs, gateway decisions, and payments. Signed records anyone can verify offline in seconds.'
+  'Explore issuer-reported record examples for APIs, MCP tools, agent actions, gateways, payments, and provisioning.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: [
-    'AI agent audit trail',
-    'signed audit records',
-    'verifiable audit log',
-    'API audit trail',
-    'tamper-evident records',
-    'MCP tool call records',
-    'AI compliance evidence',
-    'offline verification',
-    'PEAC Protocol',
-  ],
   alternates: { canonical: '/records' },
   openGraph: {
     title: TITLE,
@@ -202,6 +191,10 @@ export default function RecordsPage() {
         />
       </PageSection>
 
+      <PullLine accent="Read them all." rule="top">
+        Read one.
+      </PullLine>
+
       {/* 01 - API call (interactive tamper demo) */}
       <Specimen first id="api">
         <TamperDemo
@@ -331,7 +324,7 @@ export default function RecordsPage() {
               { label: 'Time', value: '2026-06-12T14:10:40Z' },
               { label: 'Signature', value: <>Ed25519 e02d7f15... <Dim>valid</Dim></> },
             ]}
-            foot="deny-as-evidence - the refusal itself is portable proof"
+            foot="deny-as-evidence - the refusal itself is portable evidence"
           />
         </SpecimenGrid>
       </Specimen>
@@ -341,10 +334,10 @@ export default function RecordsPage() {
         <SpecimenGrid>
           <SpecimenIntro
             eyebrow="05 - Payment event"
-            title="Payment rails move value. Records prove context."
+            title="Payment rails move value. Records preserve context."
             answers={
               <>
-                Answers what a payment was tied to. The rail proves value moved; the record binds the action, the
+                Answers what a payment was tied to. The rail establishes value movement; the record binds the action, the
                 mandate, and the observed state to one signed artifact.{' '}
                 <a href="/agentic-commerce" style={{ color: PALETTE.success, textDecoration: 'underline', textUnderlineOffset: 3 }}>
                   Agentic commerce page
@@ -493,7 +486,7 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
           <InkButton href="/verify" primary>
             Verify a record
           </InkButton>
-          <InkButton href="/contact">Request a demo</InkButton>
+          <InkButton href="/contact">Start a pilot</InkButton>
         </div>
       </InkBand>
     </PageShell>

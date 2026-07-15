@@ -6,25 +6,16 @@ import { WordmarkStream } from '@/components/home/motion/WordmarkStream'
 import { Mono } from '@/components/home/atoms/Mono'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Pricing | Originary' },
+  title: { absolute: 'PEAC open source and Originary implementation support' },
   description:
-    'Use PEAC free and self-hosted. Bring in Originary for managed verification, signing operations, record exports, and one-workflow pilots.',
-  keywords: [
-    'Originary Verify pricing',
-    'AI agent verification pricing',
-    'open source verification',
-    'Apache-2.0',
-    'self-host',
-    'managed verification',
-    'MCP security',
-  ],
+    'Use PEAC free and self-hosted, or engage Originary for a scoped verification pilot and implementation support.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   alternates: { canonical: '/pricing' },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Pricing | Originary',
+    title: 'PEAC open source and Originary implementation support',
     description:
-      'Use PEAC free and self-hosted. Bring in Originary for managed verification, signing operations, record exports, and one-workflow pilots.',
+      'Use PEAC free and self-hosted, or engage Originary for a scoped verification pilot and implementation support.',
     url: '/pricing',
     type: 'website',
     siteName: 'Originary',
@@ -32,9 +23,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing | Originary',
+    title: 'PEAC open source and Originary implementation support',
     description:
-      'Use PEAC free and self-hosted. Bring in Originary for managed verification, signing operations, record exports, and one-workflow pilots.',
+      'Use PEAC free and self-hosted, or engage Originary for a scoped verification pilot and implementation support.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -65,32 +56,28 @@ const enterpriseFeatures = [
     detail: 'Architecture review, environment setup, and production rollout guidance',
   },
   {
-    feature: 'KMS-backed signing-key operations where required',
-    detail: 'AWS KMS, GCP Cloud KMS, Azure Key Vault, or HashiCorp Vault',
+    feature: 'Signing-key and issuer setup guidance',
+    detail: 'Help wiring your own signing keys and issuer configuration into your environment',
   },
   {
-    feature: 'Compliance record bundles',
-    detail: 'Pre-packaged verification artifacts for audits and procurement reviews',
+    feature: 'Record export and bundle assistance',
+    detail: 'Help assembling signed records into portable, independently verifiable bundles',
   },
   {
-    feature: 'Dedicated engineering access',
-    detail: 'Direct channel to the protocol engineering team for troubleshooting and feature requests',
-  },
-  {
-    feature: 'SLA and priority support',
-    detail: 'Defined response windows and escalation paths for production issues',
+    feature: 'Direct engineering access during the engagement',
+    detail: 'A direct channel to the engineering team while the pilot is running',
   },
 ]
 
-const comparisonRows: Array<[string, string, string, string]> = [
-  ['Price', '$0 forever', 'Custom', 'Custom'],
-  ['License', 'Apache-2.0', 'Apache-2.0 + support terms', 'Apache-2.0 + support terms'],
-  ['Signing keys', 'Self-managed', 'Self-managed or KMS-backed', 'KMS-backed signing setup where required'],
-  ['Deployment', 'Self-hosted', 'Self-hosted with guidance', 'Originary operates'],
-  ['Verification', 'Offline, no dependency', 'Offline, no dependency', 'Offline, no dependency'],
-  ['Support', 'GitHub issues', 'Dedicated engineering + SLA', 'Dedicated engineering + SLA'],
-  ['Record exports', 'Self-assembled', 'Guided', 'Pre-packaged bundles'],
-  ['Architecture review', 'Community docs', 'Guided integration', 'Full review included'],
+const comparisonRows: Array<[string, string, string]> = [
+  ['Price', '$0 forever', 'Custom, scoped'],
+  ['License', 'Apache-2.0', 'Apache-2.0 + support terms'],
+  ['Signing keys', 'Self-managed', 'Self-managed, with setup guidance'],
+  ['Deployment', 'Self-hosted', 'Self-hosted, with guidance'],
+  ['Verification', 'Offline, no dependency', 'Offline, no dependency'],
+  ['Support', 'GitHub issues', 'Direct engineering during the engagement'],
+  ['Record exports', 'Self-assembled', 'Assembly guidance'],
+  ['Architecture review', 'Community docs', 'Guided integration review'],
 ]
 
 const faqs = [
@@ -107,8 +94,8 @@ const faqs = [
     a: 'PEAC is rail-neutral. It produces verifiable records of interactions, not payment mandates. HTTP 402 adapters are available for teams that need challenge/response payment flows.',
   },
   {
-    q: 'Who should contact you about Originary Verify or commercial support?',
-    a: 'Enterprise AI platform teams, API operators, MCP hosts, and security or procurement review teams that need managed verification, attested signing infrastructure, or procurement-ready evidence.',
+    q: 'Who should contact you about Originary implementation support?',
+    a: 'API platform teams, MCP server operators, gateway and agent-infrastructure teams, and security or engineering reviewers who need help issuing and verifying signed records in a specific production workflow.',
   },
 ]
 
@@ -170,7 +157,7 @@ export default function PricingPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `clamp(64px, 9vh, 112px) ${PAGE_PAD} clamp(40px, 6vh, 64px) ${PAGE_PAD}`,
           }}
@@ -178,28 +165,27 @@ export default function PricingPage() {
           <InViewClass className="home-eyebrow-rule" as="div">
             <span className="home-about-eyebrow">pricing</span>
           </InViewClass>
-          <h1 className="home-about-h1">Open protocol.</h1>
+          <h1 className="home-about-h1">Start with the open protocol.</h1>
           <p className="home-about-lede" style={{ marginTop: 22 }}>
-            Commercial support for production verification.
+            Add support when the workflow matters.
           </p>
           <p className="home-about-body" style={{ marginTop: 14, maxWidth: 640 }}>
-            Use PEAC Protocol by Originary freely under Apache-2.0. Bring in
-            Originary for managed verification, deployment support, and record
-            exports when another party needs verification your logs cannot
-            provide.
+            Use PEAC Protocol by Originary freely under Apache-2.0. Engage
+            Originary for a scoped verification pilot and implementation support
+            when another party needs verification your logs cannot provide.
           </p>
         </section>
 
         <InViewClass
           className="home-about-divider"
           as="div"
-          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+          style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
         />
 
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `clamp(32px, 5vh, 56px) ${PAGE_PAD} 0 ${PAGE_PAD}`,
           }}
@@ -248,7 +234,7 @@ export default function PricingPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `0 ${PAGE_PAD} 80px ${PAGE_PAD}`,
           }}
@@ -344,7 +330,7 @@ export default function PricingPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `0 ${PAGE_PAD} 80px ${PAGE_PAD}`,
           }}
@@ -384,7 +370,7 @@ export default function PricingPage() {
               </Mono>
               <h3 style={{ ...sectionHead, fontSize: 20, marginTop: 12 }}>Originary Verify</h3>
               <p style={{ fontFamily: sans, fontSize: 14, color: PALETTE.muted, lineHeight: 1.7, marginTop: 10, marginBottom: 0 }}>
-                Originary Verify, deployment support, enterprise record exports, rollout help, and procurement-friendly trust surfaces for teams that need production readiness.
+                A scoped verification pilot, deployment and integration support, and help assembling portable record bundles for teams moving one workflow into production.
               </p>
             </div>
           </div>
@@ -394,7 +380,7 @@ export default function PricingPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `0 ${PAGE_PAD} 80px ${PAGE_PAD}`,
           }}
@@ -414,17 +400,17 @@ export default function PricingPage() {
               color={PALETTE.muted}
               style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
             >
-              enterprise support
+              implementation support
             </Mono>
-            <h2 style={{ ...sectionHead, marginTop: 14 }}>Originary Verify & Enterprise Support</h2>
+            <h2 style={{ ...sectionHead, marginTop: 14 }}>Originary Verify and implementation support</h2>
             <p style={{ fontFamily: mono, fontSize: 12, color: PALETTE.faint, marginTop: 8, marginBottom: 24 }}>
-              Managed verification, signing operations, and procurement-ready record exports
+              Scoped pilots and deployment support for self-hosted verification
             </p>
             <p style={{ fontFamily: sans, fontSize: 15, color: PALETTE.ink, lineHeight: 1.7, marginBottom: 14 }}>
-              For organizations that need managed verification, signing operations, or procurement-ready record exports for audits and reviews. If you are evaluating Originary for a team deployment or need record artifacts for a procurement review, this is the right path.
+              For teams that need help issuing and verifying signed records in a specific production workflow. If another party has already asked for verification your logs cannot provide, this is the right path.
             </p>
             <p style={{ fontFamily: sans, fontSize: 14, color: PALETTE.muted, lineHeight: 1.7, marginBottom: 28 }}>
-              Best fit: API platforms handling agent traffic, MCP server operators, security and compliance teams, and organizations with procurement requirements.
+              Best fit: API platforms handling agent traffic, MCP server operators, gateway and agent-infrastructure teams, and security or engineering reviewers.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 32 }}>
@@ -465,10 +451,10 @@ export default function PricingPage() {
               </Mono>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 12 }}>
                 {[
-                  'Enterprise AI platform teams',
-                  'API operators and MCP hosts',
-                  'Security and procurement review teams',
-                  'Teams needing audit-ready evidence',
+                  'API platform teams',
+                  'MCP server operators',
+                  'Gateway and agent-infrastructure teams',
+                  'Security and engineering reviewers',
                 ].map((item) => (
                   <span key={item} style={pill}>
                     {item}
@@ -494,9 +480,8 @@ export default function PricingPage() {
               </Mono>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 12 }}>
                 {[
+                  'Self-hosted (your infrastructure)',
                   'Supported self-host',
-                  'Managed verification (Originary Verify)',
-                  'Hybrid: self-host core, managed keys',
                 ].map((item) => (
                   <span key={item} style={pill}>
                     {item}
@@ -510,10 +495,10 @@ export default function PricingPage() {
             </p>
 
             <a
-              href="mailto:contact@originary.xyz?subject=Enterprise%20Support"
+              href="mailto:contact@originary.xyz?subject=Implementation%20support"
               style={btnPrimary}
             >
-              Request a workflow review
+              Discuss a pilot
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                 <path d="M1 5h8M5.5 1.5L9 5l-3.5 3.5" stroke="currentColor" strokeWidth="1.25" />
               </svg>
@@ -525,13 +510,49 @@ export default function PricingPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `0 ${PAGE_PAD} 80px ${PAGE_PAD}`,
           }}
         >
+          <div id="pilot" style={{ maxWidth: 760, margin: '0 auto 72px', scrollMarginTop: 96 }}>
+            <h2 style={{ ...sectionHead, textAlign: 'center', marginBottom: 12 }}>Originary Verification Pilot</h2>
+            <p style={{ textAlign: 'center', fontSize: 15, lineHeight: 1.6, color: PALETTE.muted, margin: '0 0 28px' }}>
+              A fixed-scope engagement that instruments one production workflow end to end. Scoped quote.
+            </p>
+            <div className="home-card" style={{ background: PALETTE.paper, border: `1px solid ${PALETTE.hairline}`, padding: '26px 28px' }}>
+              <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '10px 28px' }}>
+                {[
+                  'One production workflow',
+                  'One signed-record profile',
+                  'One issuer and key model',
+                  'One verifier or evidence bundle',
+                  'Integration and threat-boundary review',
+                  'Deployment recommendation',
+                ].map((item) => (
+                  <li key={item} style={{ display: 'flex', gap: 10, alignItems: 'baseline', fontSize: 14.5, lineHeight: 1.55, color: PALETTE.ink }}>
+                    <span aria-hidden style={{ color: PALETTE.success, fontFamily: 'var(--font-plex-mono)', fontSize: 13 }}>+</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, alignItems: 'center', marginTop: 24, paddingTop: 20, borderTop: `1px solid ${PALETTE.hairline}` }}>
+                <a
+                  href="/contact"
+                  className="home-arrow-link"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 18px', background: PALETTE.ink, color: PALETTE.paper, textDecoration: 'none', fontSize: 14, fontWeight: 500 }}
+                >
+                  Start a pilot
+                </a>
+                <span style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 12, color: PALETTE.faint }}>
+                  scoped quote · your infrastructure or supported deployment
+                </span>
+              </div>
+            </div>
+          </div>
+
           <div style={{ maxWidth: 760, margin: '0 auto' }}>
-            <h2 style={{ ...sectionHead, textAlign: 'center', marginBottom: 32 }}>Three ways to deploy</h2>
+            <h2 style={{ ...sectionHead, textAlign: 'center', marginBottom: 32 }}>Two ways to deploy</h2>
             <div
               className="home-card"
               style={{
@@ -545,17 +566,15 @@ export default function PricingPage() {
                   <tr style={{ borderBottom: `1px solid ${PALETTE.rule}` }}>
                     <th style={{ textAlign: 'left', padding: 14, color: PALETTE.muted, fontWeight: 500 }}>&nbsp;</th>
                     <th style={{ textAlign: 'center', padding: 14, color: PALETTE.ink, fontWeight: 500 }}>OSS only</th>
-                    <th style={{ textAlign: 'center', padding: 14, color: PALETTE.ink, fontWeight: 500 }}>Supported self-host</th>
-                    <th style={{ textAlign: 'center', padding: 14, color: PALETTE.ink, fontWeight: 500 }}>Managed verification</th>
+                    <th style={{ textAlign: 'center', padding: 14, color: PALETTE.ink, fontWeight: 500 }}>With Originary support</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {comparisonRows.map(([feature, oss, supported, managed], idx) => (
+                  {comparisonRows.map(([feature, oss, supported], idx) => (
                     <tr key={idx} style={{ borderBottom: idx < comparisonRows.length - 1 ? `1px solid ${PALETTE.hairline}` : 'none' }}>
                       <td style={{ padding: 14, color: PALETTE.ink, fontWeight: 500 }}>{feature}</td>
                       <td style={{ padding: 14, textAlign: 'center', color: PALETTE.muted }}>{oss}</td>
                       <td style={{ padding: 14, textAlign: 'center', color: PALETTE.muted }}>{supported}</td>
-                      <td style={{ padding: 14, textAlign: 'center', color: PALETTE.muted }}>{managed}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -568,7 +587,7 @@ export default function PricingPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `0 ${PAGE_PAD} 80px ${PAGE_PAD}`,
           }}
@@ -619,7 +638,7 @@ export default function PricingPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `0 ${PAGE_PAD} 112px ${PAGE_PAD}`,
           }}
