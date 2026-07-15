@@ -20,7 +20,15 @@ scripts/check-security-txt.mjs, scripts/check-marketing-terms.mjs.
 | /trust, /security, /privacy, /terms, /legal/imprint, /legal/acceptable-use, /trademark | Trust and legal |
 | /blog, /blog/verifiable-provisioning-records-agent-infrastructure | Editorial (current era) |
 
-## Removed 2026-07-14 (301 redirects in next.config.js)
+## Blog (2026-07-15)
+
+Articles were restored rather than deleted. `lib/blog.ts` is the content
+registry (status + indexable; dates are intentionally not tracked). Five
+articles are `current` and indexable; five earlier HTTP 402-era tutorials are
+`archived`: reachable, carrying a legacy notice, and `noindex`. The sitemap and
+route registry derive indexable articles from this file automatically.
+
+## Removed 2026-07-15 (permanent 308 migration in next.config.js)
 
 | Legacy route | Destination |
 |---|---|
@@ -54,3 +62,15 @@ PricingPage, Stripe buttons, Search, site-registry, integrations lib.
 
 Rule: no canonical page may link to a removed route; the sitemap lists only
 canonical routes; new routes must be added to this inventory.
+
+
+## Redirect discipline (2026-07-15)
+
+The redirect map was trimmed to exact one-to-one migrations of pages that
+existed. Broad wildcards (`:path*`/`:path+`), article-to-generic redirects, and
+the redundant trailing-slash redirect were removed; unknown legacy slugs now
+404 so broken links surface. Legacy prebuilt-binary paths return 410 (proxy.ts)
+instead of redirecting to unrelated source archives. `permanent: true` emits
+308 (not 301); Google treats them equivalently. `scripts/check-redirects.mjs`
+gates the map: no duplicates, loops, non-canonical destinations, wildcards, or
+article-to-generic redirects. Canonical routes live in `lib/routes.ts`.

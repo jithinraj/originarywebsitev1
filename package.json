@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npm run check:terms && npm run check:truth && npm run check:securitytxt",
+    "prebuild": "npm run check:all",
     "build": "next build",
     "sitemap": "node scripts/gen-sitemap-with-git.mjs",
     "start": "next start",
@@ -27,7 +27,8 @@
     "check:links": "node scripts/check-links.mjs",
     "check:snippets": "node scripts/check-snippets.mjs",
     "check:seo": "node scripts/seo-lint.mjs",
-    "check:all": "npm run check:terms && npm run check:links && npm run check:snippets && npm run check:seo"
+    "check:all": "npm run check:terms && npm run check:truth && npm run check:securitytxt && npm run check:redirects && npm run check:links && npm run check:snippets && npm run check:seo && npm run verify:footer",
+    "check:redirects": "node scripts/check-redirects.mjs"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.35.0",
