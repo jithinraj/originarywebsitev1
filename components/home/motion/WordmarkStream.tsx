@@ -93,7 +93,7 @@ export function WordmarkStream() {
           phase[i] = v - Math.floor(v)
         }
       }
-      sprites = [0, 1].map((g) => [makeSprite(String(g), 0.17), makeSprite(String(g), 0.52)])
+      sprites = [0, 1].map((g) => [makeSprite(String(g), 0.09), makeSprite(String(g), 0.3)])
     }
 
     const render = (time: number, step: boolean) => {
