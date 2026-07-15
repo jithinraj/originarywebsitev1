@@ -196,7 +196,7 @@ export function DemoRequestForm({
           transition: 'opacity 160ms ease',
         }}
       >
-        {state === 'sending' ? 'Sending...' : 'Request a demo'}
+        {state === 'sending' ? 'Sending...' : 'Send to the team'}
       </button>
 
       <p role="status" aria-live="polite" style={{ margin: '10px 0 0', fontFamily: SANS, fontSize: 13, lineHeight: 1.5, color: state === 'error' ? '#9a3b2e' : PALETTE.success }}>

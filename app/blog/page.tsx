@@ -265,6 +265,7 @@ export default function BlogPage() {
           style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
         />
 
+        {rest.length > 0 ? (
         <PageSection paddingTop={32} paddingBottom={56}>
           <Reveal>
             <InViewClass className="home-eyebrow-rule" as="div" style={blogLabel}>
@@ -288,6 +289,7 @@ export default function BlogPage() {
             ))}
           </Stagger>
         </PageSection>
+        ) : null}
 
         <InViewClass
           className="home-about-divider"

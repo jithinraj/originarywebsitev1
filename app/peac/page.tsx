@@ -152,7 +152,7 @@ export default function PeacPage() {
 
               <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <Button href="/#demo" primary>
-                  Request a demo
+                  Start a pilot
                 </Button>
                 <Button href="https://github.com/peacprotocol/peac" external>
                   View on GitHub
@@ -307,8 +307,8 @@ export default function PeacPage() {
         <PageSection>
           <SectionHeading
             eyebrow="what a record contains"
-            title="One signed artifact. Four bindings."
-            sub="Each record binds the action that happened, the policy that applied, the result that was produced, and the signature that proves the issuer asserted all three."
+            title="One signed artifact. Six fields."
+            sub="Every record carries the same skeleton: facts, policy, result, time, issuer, signature. The issuer asserts the first four; the last two prove who said so and let anyone check it."
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
             <Card>
@@ -318,8 +318,7 @@ export default function PeacPage() {
               <h3 style={subHead}>What happened</h3>
               <p style={body}>
                 The boundary action. An API call, MCP tool run, gateway decision, provisioning event, or payment-related
-                machine action. Captured as a typed receipt referencing one of {FACTS.publishedPackageCount}+
-                publishable schemas.
+                machine action, captured as a typed signed record with its selected facts.
               </p>
             </Card>
             <Card>
@@ -340,6 +339,26 @@ export default function PeacPage() {
               <p style={body}>
                 Status, digests, observed outcome. The record commits to what the issuer says happened, so a later
                 review does not depend on log retention.
+              </p>
+            </Card>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                time
+              </Mono>
+              <h3 style={subHead}>When it happened</h3>
+              <p style={body}>
+                Issue time and, where relevant, the observed event time. A record is datable evidence: a later review
+                can place the action on a timeline without trusting anyone&apos;s clock retroactively.
+              </p>
+            </Card>
+            <Card>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+                issuer
+              </Mono>
+              <h3 style={subHead}>Who issued it</h3>
+              <p style={body}>
+                The system that observed the action and signed the record, identified by its issuer URL. Keys resolve
+                from the issuer&apos;s published configuration, so identity is checkable, not asserted.
               </p>
             </Card>
             <Card>
@@ -442,7 +461,7 @@ export default function PeacPage() {
               />
               <div style={{ marginTop: 18 }}>
                 <Button href="/#demo" primary>
-                  Request a demo
+                  Start a pilot
                 </Button>
               </div>
             </Card>

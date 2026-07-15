@@ -223,7 +223,7 @@ export default function ContactPage() {
                 margin: '24px 0 0 0',
               }}
             >
-              The form opens an email draft so you can send the workflow directly to our team.
+              The form sends straight to the team and is routed by topic. If submission is unavailable it falls back to an email draft.
             </p>
           </div>
           <div

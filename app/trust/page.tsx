@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, Card, PALETTE } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
+import { DataTable, StepLabel } from '@/components/specimens/parts'
 
 export const metadata: Metadata = {
   title: { absolute: 'Originary Trust Center | Security, Privacy and Deployment' },
@@ -230,9 +231,9 @@ export default function TrustPage() {
     <PageShell>
       <PageHero
         eyebrow="trust center"
-        title="Trust Center"
-        sub="How Originary handles verification, keys, portability, and offline validation for signed records."
-        align="center"
+        title="Procurement-grade answers, with evidence."
+        sub="How Originary handles verification, keys, portability, and offline validation for signed records. Every claim links to the artifact that backs it."
+        strip={['Deployment modes', 'Key custody', 'Data boundaries', 'PEAC ' + FACTS.currentVersion]}
       >
         <p
           style={{
@@ -240,7 +241,7 @@ export default function TrustPage() {
             fontSize: 14,
             lineHeight: 1.6,
             color: PALETTE.faint,
-            margin: '8px auto 0 auto',
+            margin: '8px 0 0',
             maxWidth: 620,
             textWrap: 'pretty',
           }}
@@ -323,6 +324,29 @@ export default function TrustPage() {
             gap: 24,
           }}
         >
+          <div>
+            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              the matrix
+            </Mono>
+            <h2 style={{ ...headStyle, marginTop: 12 }}>What runs where, and who holds what.</h2>
+            <div style={{ marginTop: 18 }}>
+              <DataTable
+                head={['', 'Open source', 'Supported self-host', 'Managed verification']}
+                rows={[
+                  ['Where it runs', 'Your infrastructure', 'Your infrastructure', 'Scoped by agreement'],
+                  ['Key custody', 'You. Local or your KMS.', 'You. Local or your KMS.', 'Defined per contract'],
+                  ['Interaction data', 'Never leaves your environment', 'Never leaves your environment', 'Only what you explicitly send'],
+                  ['Support', 'Community (GitHub)', 'Under agreement', 'Under agreement'],
+                  ['Verification', 'Offline, no callback', 'Offline, no callback', 'Offline, no callback'],
+                ]}
+              />
+            </div>
+            <p style={{ ...proseStyle, fontSize: 13, marginTop: 12 }}>
+              Managed capabilities are stated only where an agreement defines them; anything not listed here is not
+              offered. Verification never requires Originary to be online in any mode.
+            </p>
+          </div>
+
           <Card padding={28}>
             <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
               verification model

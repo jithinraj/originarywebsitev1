@@ -242,7 +242,7 @@ export default function ProvisioningRecordsPage() {
         </div>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <InkButton href="/contact" primary>
-            Request a demo
+            Start a pilot
           </InkButton>
           <InkButton href="/verify">Verify a record</InkButton>
         </div>
