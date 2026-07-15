@@ -1,169 +1,114 @@
 #!/usr/bin/env node
-
 /**
- * Snippet Compilation Gate
- * Extracts code blocks from dev/docs pages and validates they compile
+ * Snippet compilation gate.
  *
- * Run: node scripts/check-snippets.mjs
+ * Scans every source under app/ and components/ (no hardcoded page list) for
+ * compilable code samples and type-checks them. Two forms are recognized:
+ *   1. Markdown fenced blocks: ```ts | ```tsx | ```js | ```jsx
+ *   2. CodeBlock props: <CodeBlock lang="ts" code={`...`}> and tabs entries
+ *
+ * "Fail on zero when code exists": if the source tree contains a compilable
+ * marker (a ts/js fence, or a CodeBlock with a ts/js lang) but the extractor
+ * validated zero snippets, the gate fails loudly rather than passing vacuously.
+ * A site whose only code is shell/CLI/JSON output has no compilable markers and
+ * passes honestly, reporting why.
  */
+import { readFileSync, existsSync, writeFileSync, unlinkSync, mkdirSync, rmSync, readdirSync, statSync } from 'node:fs'
+import { join, dirname, extname } from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { execSync } from 'node:child_process'
 
-import { readFileSync, existsSync, writeFileSync, unlinkSync, mkdirSync } from 'fs'
-import { join, dirname } from 'path'
-import { fileURLToPath } from 'url'
-import { execSync } from 'child_process'
-
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const ROOT = join(__dirname, '..')
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const TEMP_DIR = join(ROOT, '.snippet-check')
+const SCAN_DIRS = ['app', 'components']
+const SRC_EXT = new Set(['.tsx', '.ts', '.jsx', '.js', '.mdx', '.md'])
+const COMPILABLE = new Set(['ts', 'tsx', 'typescript', 'js', 'jsx', 'javascript'])
 
-// Pages that contain code snippets to validate
-const SNIPPET_PAGES = [
-  'app/developers/page.tsx',
-  'app/docs/page.tsx',
-  'app/docs/quickstart/page.tsx',
-  'app/docs/receipts/page.tsx',
-  'app/docs/payments/page.tsx',
-  'app/docs/payments/x402/page.tsx'
-]
+const FENCE_RE = /```(ts|tsx|typescript|js|jsx|javascript)\b\n([\s\S]*?)```/gi
+// <CodeBlock ... lang="ts" ... code={`...`}> (attributes in any order)
+const CODEBLOCK_RE = /<CodeBlock\b[^>]*?\blang=["'](ts|tsx|typescript|js|jsx|javascript)["'][^>]*?\bcode=\{`([\s\S]*?)`\}/gi
+// A marker that compilable code is *meant* to exist (used for the zero-guard).
+const MARKER_RE = /```(ts|tsx|typescript|js|jsx|javascript)\b|lang=["'](ts|tsx|typescript|js|jsx|javascript)["']/i
 
-// Regex to extract code blocks from JSX
-// Matches: ```typescript ... ```, ```javascript ... ```, ```tsx ... ```, ```js ... ```
-const CODE_BLOCK_REGEX = /```(typescript|javascript|tsx?|jsx?)\n([\s\S]*?)```/gi
+function listFiles(dir, out) {
+  for (const item of readdirSync(dir)) {
+    if (item === 'node_modules' || item.startsWith('.')) continue
+    const full = join(dir, item)
+    const st = statSync(full)
+    if (st.isDirectory()) listFiles(full, out)
+    else if (SRC_EXT.has(extname(item))) out.push(full)
+  }
+}
 
-// Also match template literals with code
-const TEMPLATE_CODE_REGEX = /`(const|let|var|function|import|export|interface|type|class)\s[^`]+`/g
+const files = []
+for (const d of SCAN_DIRS) {
+  const abs = join(ROOT, d)
+  if (existsSync(abs)) listFiles(abs, files)
+}
 
-let hasErrors = false
-const errors = []
 const snippets = []
-
-console.log('Checking code snippets in documentation...\n')
-
-// Create temp directory
-if (!existsSync(TEMP_DIR)) {
-  mkdirSync(TEMP_DIR, { recursive: true })
+let markerFiles = 0
+for (const file of files) {
+  const rel = file.slice(ROOT.length + 1)
+  const content = readFileSync(file, 'utf8')
+  if (MARKER_RE.test(content)) markerFiles++
+  let m
+  while ((m = FENCE_RE.exec(content)) !== null) snippets.push({ file: rel, lang: m[1].toLowerCase(), code: m[2].trim() })
+  while ((m = CODEBLOCK_RE.exec(content)) !== null) snippets.push({ file: rel, lang: m[1].toLowerCase(), code: m[2].trim() })
 }
 
-for (const route of SNIPPET_PAGES) {
-  const filePath = join(ROOT, route)
-
-  if (!existsSync(filePath)) {
-    console.log(`  ⚠ Skipping (not found): ${route}`)
-    continue
+// Zero-guard: markers present but nothing extracted -> the gate would be a no-op.
+if (snippets.length === 0) {
+  if (markerFiles > 0) {
+    console.error(
+      `check:snippets FAILED - ${markerFiles} file(s) contain a compilable code marker (ts/js fence or CodeBlock) but zero snippets were extracted. The extractor is out of sync with how code is authored.`,
+    )
+    process.exit(1)
   }
-
-  const content = readFileSync(filePath, 'utf-8')
-
-  // Extract code blocks
-  let match
-  while ((match = CODE_BLOCK_REGEX.exec(content)) !== null) {
-    const lang = match[1]
-    const code = match[2].trim()
-
-    // Skip very short snippets or shell commands
-    if (code.length < 20 || code.startsWith('npm ') || code.startsWith('curl ')) {
-      continue
-    }
-
-    snippets.push({
-      file: route,
-      lang,
-      code
-    })
-  }
-}
-
-console.log(`Found ${snippets.length} code snippets to validate\n`)
-
-// Validate TypeScript/JavaScript snippets
-let passCount = 0
-let skipCount = 0
-
-for (const snippet of snippets) {
-  const isTypeScript = ['typescript', 'ts', 'tsx'].includes(snippet.lang.toLowerCase())
-  const ext = isTypeScript ? '.ts' : '.js'
-  const tempFile = join(TEMP_DIR, `snippet-${Date.now()}-${Math.random().toString(36).slice(2)}${ext}`)
-
-  try {
-    // Add necessary imports for common patterns
-    let code = snippet.code
-
-    // Skip snippets that are clearly partial/examples
-    if (code.includes('...') || code.includes('// ...') || code.startsWith('// ')) {
-      skipCount++
-      continue
-    }
-
-    // Write temp file
-    writeFileSync(tempFile, code)
-
-    // Try to parse/compile
-    if (isTypeScript) {
-      // Use tsc to check syntax (no emit)
-      execSync(`npx tsc --noEmit --skipLibCheck --allowJs --target ES2020 --module ESNext --moduleResolution node "${tempFile}" 2>&1`, {
-        cwd: ROOT,
-        encoding: 'utf-8',
-        timeout: 10000
-      })
-    } else {
-      // Use node to check syntax
-      execSync(`node --check "${tempFile}" 2>&1`, {
-        cwd: ROOT,
-        encoding: 'utf-8',
-        timeout: 5000
-      })
-    }
-
-    passCount++
-  } catch (error) {
-    // Check if it's a real error or just missing imports
-    const errorMsg = error.message || error.toString()
-
-    // Ignore common "missing module" errors since snippets don't have full context
-    if (
-      errorMsg.includes('Cannot find module') ||
-      errorMsg.includes('Cannot find name') ||
-      errorMsg.includes('is not defined') ||
-      errorMsg.includes("has no exported member")
-    ) {
-      skipCount++
-      continue
-    }
-
-    hasErrors = true
-    errors.push({
-      file: snippet.file,
-      code: snippet.code.slice(0, 100) + (snippet.code.length > 100 ? '...' : ''),
-      error: errorMsg.split('\n')[0]
-    })
-  } finally {
-    // Cleanup temp file
-    try {
-      unlinkSync(tempFile)
-    } catch {
-      // Ignore cleanup errors
-    }
-  }
-}
-
-// Cleanup temp directory
-try {
-  execSync(`rm -rf "${TEMP_DIR}"`, { cwd: ROOT })
-} catch {
-  // Ignore cleanup errors
-}
-
-if (hasErrors) {
-  console.log('FAILED - Found invalid code snippets:\n')
-  for (const err of errors) {
-    console.log(`  ✗ ${err.file}`)
-    console.log(`    Code: ${err.code}`)
-    console.log(`    Error: ${err.error}\n`)
-  }
-  console.log('Fix these snippets before committing.')
-  process.exit(1)
-} else {
-  console.log(`✓ ${passCount} snippets validated successfully`)
-  console.log(`  ${skipCount} snippets skipped (partial examples or missing context)`)
+  console.log('check:snippets OK - no compilable TS/JS snippets on the site (shell/CLI examples only); nothing to type-check.')
   process.exit(0)
 }
+
+if (!existsSync(TEMP_DIR)) mkdirSync(TEMP_DIR, { recursive: true })
+const errors = []
+let pass = 0
+let skip = 0
+let seq = 0
+for (const snip of snippets) {
+  // Partial examples cannot compile in isolation.
+  if (snip.code.includes('...') || snip.code.includes('// ...') || snip.code.length < 20) {
+    skip++
+    continue
+  }
+  const ts = ['ts', 'tsx', 'typescript'].includes(snip.lang)
+  const tempFile = join(TEMP_DIR, `snippet-${seq++}${ts ? '.ts' : '.js'}`)
+  try {
+    writeFileSync(tempFile, snip.code)
+    if (ts) {
+      execSync(`npx tsc --noEmit --skipLibCheck --allowJs --target ES2020 --module ESNext --moduleResolution node "${tempFile}" 2>&1`, {
+        cwd: ROOT, encoding: 'utf8', timeout: 20000,
+      })
+    } else {
+      execSync(`node --check "${tempFile}" 2>&1`, { cwd: ROOT, encoding: 'utf8', timeout: 8000 })
+    }
+    pass++
+  } catch (err) {
+    const msg = (err.message || String(err))
+    // Snippets lack full context; tolerate resolution errors, fail on syntax.
+    if (/Cannot find module|Cannot find name|is not defined|has no exported member/.test(msg)) {
+      skip++
+    } else {
+      errors.push({ file: snip.file, code: snip.code.slice(0, 100), error: msg.split('\n')[0] })
+    }
+  } finally {
+    try { unlinkSync(tempFile) } catch {}
+  }
+}
+try { rmSync(TEMP_DIR, { recursive: true, force: true }) } catch {}
+
+if (errors.length) {
+  console.error(`check:snippets FAILED - ${errors.length} invalid snippet(s):`)
+  for (const e of errors) console.error(`  ${e.file}\n    ${e.code}\n    ${e.error}`)
+  process.exit(1)
+}
+console.log(`check:snippets OK - ${pass} snippet(s) validated, ${skip} skipped (partial/missing context).`)

@@ -16,22 +16,13 @@ import {
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { VerifyConsole } from '@/components/specimens/VerifyConsole'
 
-const TITLE = 'Verify a signed record: offline, no account | Originary'
+const TITLE = 'Verify a signed AI agent record offline | Originary'
 const DESCRIPTION =
-  "Paste a signed record and verify it in your browser. Ed25519 signature check against the issuer's key, offline by design, nothing stored. Try a sample."
+  'Load a current PEAC record, verify it with supplied key material, change one byte, and see deterministic failure.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: [
-    'verify signed record',
-    'Ed25519 signature verification',
-    'JWS verification tool',
-    'offline signature check',
-    'verify AI agent record',
-    'record verifier',
-    'signed receipt verification',
-  ],
   alternates: { canonical: '/verify' },
   openGraph: {
     title: TITLE,

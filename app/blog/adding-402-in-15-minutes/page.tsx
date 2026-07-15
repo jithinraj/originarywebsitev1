@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   title: { absolute: 'Add HTTP 402 to Your API in 15 Minutes | Originary' },
   description:
     'A 15-minute walkthrough for adding HTTP 402 to an Express API: challenge response, header format, receipt verification middleware, and failure modes.',
-  keywords: 'HTTP 402, Express.js, API monetization, x402, payment required, tutorial',
   authors: [{ name: 'Jithin Raj, Founder' }],
   alternates: { canonical: '/blog/adding-402-in-15-minutes' },
   openGraph: {

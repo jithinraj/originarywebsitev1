@@ -17,23 +17,13 @@ import {
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 
-const TITLE = 'Provisioning records for agent infrastructure | Originary'
+const TITLE = 'Provisioning audit records for agent infrastructure | Originary'
 const DESCRIPTION =
-  'A verifiable audit trail for agent infrastructure: signed records for deployments, provider setup, credentials, budgets, and resource lifecycle events, verifiable offline.'
+  'Bind the request, approval reference, provider operation, resource identifier, result, issuer, and time.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: [
-    'provisioning audit trail',
-    'agent infrastructure records',
-    'deployment audit trail',
-    'credential lifecycle records',
-    'Terraform audit records',
-    'GitHub Actions audit trail',
-    'Vercel deployment records',
-    'infrastructure provenance',
-  ],
   alternates: { canonical: '/provisioning-records' },
   openGraph: {
     title: TITLE,

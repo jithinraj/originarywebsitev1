@@ -19,21 +19,13 @@ import {
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { MarkGlyph } from '@/components/home/glyphs/MarkGlyphs'
 
-const TITLE = 'Originary Verify | Verify Machine Actions Without Private Logs'
+const TITLE = 'Signed audit record software for machine actions | Originary'
 const DESCRIPTION =
-  'Originary Verify issues signed records at workflow boundaries, verifies them offline, and bundles them into evidence for disputes, audits, and partner review.'
+  'Originary Verify adds portable signed records and a repeatable verification path to selected production workflows.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: [
-    'Originary Verify',
-    'signed record verification',
-    'verifiable interaction records',
-    'evidence bundle',
-    'offline verification',
-    'machine action audit trail',
-  ],
   alternates: { canonical: '/product' },
   openGraph: {
     title: TITLE,
@@ -186,7 +178,7 @@ export default function ProductPage() {
             />
           </div>
           <div>
-            <StepLabel>What verification proves</StepLabel>
+            <StepLabel>What verification checks</StepLabel>
             <MarkerList
               marker="check"
               items={[
@@ -210,14 +202,13 @@ export default function ProductPage() {
           index="03"
           eyebrow="Deployment and data boundaries"
           title="Your keys, your records, your infrastructure."
-          sub="Open source is free and self-hosted. Supported self-host and managed verification are deployment models under agreement, not data hand-overs."
+          sub="Open source is free and self-hosted. Supported self-host adds integration help under agreement, not a data hand-over."
         />
         <DataTable
           head={['Mode', 'Where it runs', 'What Originary handles']}
           rows={[
             ['Open source', 'Your infrastructure', 'Nothing. Apache-2.0 code, your keys, your records.'],
             ['Supported self-host', 'Your infrastructure', 'Integration guidance, upgrades, and support under agreement.'],
-            ['Managed verification', 'Scoped by agreement', 'Operation of verification surfaces defined in the contract.'],
           ]}
         />
         <div style={{ marginTop: 28 }}>
@@ -249,8 +240,8 @@ export default function ProductPage() {
           <Button href="/peac">PEAC Protocol</Button>
         </div>
         <p style={{ fontSize: 13.5, lineHeight: 1.65, color: PALETTE.faint, maxWidth: '62ch', marginTop: 22 }}>
-          Poem, Inc. is the Delaware corporation and Originary is its brand. Originary Verify is the commercial product; PEAC Protocol is the Apache-2.0 open
-          standard that defines the record format and verification model; the protocol works without Originary, and
+          Poem, Inc. is the Delaware corporation and Originary is its brand. Originary Verify is the commercial product; PEAC Protocol is the Apache-2.0 open-source
+          protocol that defines the record format and verification model; the protocol works without Originary, and
           records verify without asking us.
         </p>
       </PageSection>

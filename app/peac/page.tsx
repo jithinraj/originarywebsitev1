@@ -22,21 +22,6 @@ export const metadata: Metadata = {
   title: { absolute: 'PEAC Protocol | Open-Source Protocol for Verifiable Interaction Records' },
   description:
     'PEAC is an open-source protocol for portable signed interaction records. Issue records another party can verify without trusting the original dashboard.',
-  keywords: [
-    'PEAC Protocol',
-    'portable signed records',
-    'verifiable interaction records',
-    'open-source protocol',
-    'Apache-2.0',
-    'Ed25519',
-    'JWS',
-    'interaction-record+jwt',
-    'MCP',
-    'A2A',
-    'HTTP 402',
-    'paymentauth',
-    'provisioning lifecycle',
-  ],
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   robots: {
     index: true,
@@ -88,15 +73,6 @@ export default function PeacPage() {
     license: 'https://www.apache.org/licenses/LICENSE-2.0',
     isAccessibleForFree: true,
     version: FACTS.currentVersion,
-    keywords: [
-      'PEAC Protocol',
-      'portable signed records',
-      'verifiable interaction records',
-      'Ed25519',
-      'JWS',
-      'open-source protocol',
-      'Apache-2.0',
-    ],
     author: {
       '@type': 'Organization',
       '@id': 'https://www.originary.xyz/#org',
@@ -440,7 +416,7 @@ export default function PeacPage() {
           <SectionHeading
             eyebrow="how to adopt"
             title="Self-host the protocol or use it with Originary."
-            sub="Anyone can self-host PEAC Protocol, issue records, and verify them without an Originary account or managed service. Originary publishes and maintains PEAC Protocol and also offers commercial tools, managed verification, and deployment support for teams running it in production."
+            sub="Anyone can self-host PEAC Protocol, issue records, and verify them without an Originary account or managed service. Originary publishes and maintains PEAC Protocol and also offers commercial tools and implementation support for teams running it in production."
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
             <Card>

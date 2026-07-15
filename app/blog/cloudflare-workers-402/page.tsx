@@ -7,8 +7,6 @@ export const metadata: Metadata = {
   title: { absolute: 'HTTP 402 on Cloudflare Workers | Originary' },
   description:
     'Deploy HTTP 402 responses at the edge with Cloudflare Workers. Zero cold starts, KV storage, and Web Crypto API for verification.',
-  keywords:
-    'Cloudflare Workers, HTTP 402, edge computing, x402, KV storage, Web Crypto API, payment required',
   authors: [{ name: 'Jithin Raj, Founder' }],
   alternates: { canonical: '/blog/cloudflare-workers-402' },
   openGraph: {

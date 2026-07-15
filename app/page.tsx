@@ -16,29 +16,14 @@ import {
   PALETTE,
 } from '@/components/home'
 import { WordmarkStream } from '@/components/home/motion/WordmarkStream'
+import { originaryVerify, peacProtocol } from '@/lib/structured-data/entities'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Verifiable Records for AI Agents and APIs',
+    absolute: 'AI agent audit records and verification software | Originary',
   },
   description:
-    'Originary helps teams issue signed records for API, MCP, agent, gateway, payment, and provisioning workflows without sharing logs or dashboard access.',
-  keywords: [
-    'Originary',
-    'PEAC Protocol',
-    'signed records',
-    'machine action verification',
-    'verifiable interaction records',
-    'API verification',
-    'MCP verification',
-    'agent workflows',
-    'gateway decisions',
-    'payment workflows',
-    'provisioning records',
-    'audit bundles',
-    'offline verification',
-    'open-source protocol',
-  ],
+    'Issue, verify, and package signed records for API, agent, MCP, gateway, payment, and provisioning workflows, without sharing private logs.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
@@ -46,9 +31,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Originary | Verifiable Records for AI Agents and APIs',
+    title: 'AI agent audit records and verification software | Originary',
     description:
-      'Signed records for API, MCP, agent, gateway, payment, and provisioning workflows.',
+      'Signed records for API, MCP, agent, gateway, payment, and provisioning workflows, verifiable without your private logs.',
     url: 'https://www.originary.xyz',
     type: 'website',
     locale: 'en_US',
@@ -64,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Verifiable Records for AI Agents and APIs',
+    title: 'AI agent audit records and verification software | Originary',
     description:
       'Issue signed records so another party can verify what happened without internal logs or dashboard access.',
     images: ['/og'],
@@ -83,60 +68,11 @@ export const metadata: Metadata = {
   },
 }
 
+// The canonical Organization and WebSite render once in the layout. The
+// homepage adds only the product and protocol nodes, referencing that Org @id.
 const structuredData = {
   '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Organization',
-      '@id': 'https://www.originary.xyz/#poem',
-      name: 'Poem, Inc.',
-      legalName: 'Poem, Inc.',
-      url: 'https://www.originary.xyz',
-      sameAs: [
-        'https://www.linkedin.com/company/originary',
-        'https://www.crunchbase.com/organization/originary',
-      ],
-    },
-    {
-      '@type': 'Brand',
-      '@id': 'https://www.originary.xyz/#originary',
-      name: 'Originary',
-      url: 'https://www.originary.xyz',
-      logo: 'https://www.originary.xyz/logo/originary-wordmark.svg',
-    },
-    {
-      '@type': 'WebSite',
-      '@id': 'https://www.originary.xyz/#website',
-      url: 'https://www.originary.xyz',
-      name: 'Originary',
-      publisher: { '@id': 'https://www.originary.xyz/#poem' },
-      description:
-        'Portable signed records for API, MCP, agent, gateway, payment, and provisioning workflows.',
-    },
-    {
-      '@type': 'SoftwareApplication',
-      '@id': 'https://www.originary.xyz/product#verify',
-      name: 'Originary Verify',
-      applicationCategory: 'DeveloperApplication',
-      operatingSystem: 'Cross-platform',
-      url: 'https://www.originary.xyz/product',
-      brand: { '@id': 'https://www.originary.xyz/#originary' },
-      provider: { '@id': 'https://www.originary.xyz/#poem' },
-      description:
-        'Software and support for issuing, verifying, and packaging signed interaction records in production workflows.',
-    },
-    {
-      '@type': 'SoftwareSourceCode',
-      '@id': 'https://www.originary.xyz/peac#protocol',
-      name: 'PEAC Protocol',
-      description:
-        'Apache-2.0 open-source protocol for portable signed interaction records, maintained by Originary.',
-      codeRepository: 'https://github.com/peacprotocol/peac',
-      license: 'https://www.apache.org/licenses/LICENSE-2.0',
-      programmingLanguage: ['TypeScript', 'JavaScript'],
-      maintainer: { '@id': 'https://www.originary.xyz/#poem' },
-    },
-  ],
+  '@graph': [originaryVerify, peacProtocol],
 }
 
 export default function Page() {

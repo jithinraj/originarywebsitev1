@@ -4,7 +4,6 @@ import Script from 'next/script'
 export const metadata: Metadata = {
   title: 'Pricing',
   description: 'PEAC Protocol is free and open-source. Apache-2.0. Self-host with no limits, no fees, no sign-up. Commercial support available for teams deploying at scale.',
-  keywords: 'open source pricing, self-host, Apache-2.0, enterprise support, PEAC Protocol',
   robots: 'index,follow',
   alternates: {
     canonical: '/pricing'

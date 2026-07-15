@@ -7,8 +7,6 @@ export const metadata: Metadata = {
   title: { absolute: 'HTTP 402 for APIs: Request, Challenge, and Record | Originary' },
   description:
     'Practical guide to implementing HTTP 402 Payment Required in APIs. Learn 402 response anatomy, verification patterns, and common pitfalls.',
-  keywords:
-    'HTTP 402, payment required, API monetization, x402, agent commerce, receipts, web payments',
   authors: [{ name: 'Jithin Raj, Founder' }],
   alternates: { canonical: '/blog/http-402-for-apis' },
   openGraph: {

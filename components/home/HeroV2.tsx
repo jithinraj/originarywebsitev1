@@ -122,7 +122,7 @@ export function HeroV2() {
       <div style={heroTopStyle}>
         <p className="cin-rise" style={heroEyebrow}>ORIGINARY VERIFY</p>
         <h1 id="hero-headline" className="cin-rise cin-display" style={{ ...heroHeadline, ['--cin-i' as string]: 1 }}>
-          Machine actions, made verifiable.
+          Signed records for machine actions across company boundaries.
         </h1>
         <p className="cin-rise" style={{ ...heroSub, ['--cin-i' as string]: 2 }}>
           Issue portable signed records when APIs, agents, MCP tools, gateways, payment flows, and
@@ -135,7 +135,7 @@ export function HeroV2() {
             <Arrow />
           </Link>
           <Link href="/contact" className="home-arrow-link" style={btnSecondary}>
-            Start a pilot
+            Discuss a workflow
             <Arrow />
           </Link>
         </div>

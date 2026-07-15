@@ -16,23 +16,13 @@ import {
 } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 
-const TITLE = 'MCP audit trail: signed records for tool calls | Originary'
+const TITLE = 'MCP audit trail and signed tool-call records | Originary'
 const DESCRIPTION =
-  'Give MCP tool calls a portable audit trail: signed records with tool name, args digest, and result digest that clients and auditors verify without your logs.'
+  'Record tool name, input and output digests, result, issuer, and time so another party can verify the server-reported run.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,
-  keywords: [
-    'MCP audit trail',
-    'MCP tool call logging',
-    'Model Context Protocol security',
-    'MCP observability',
-    'MCP receipts',
-    'MCP server audit',
-    'signed tool call records',
-    'AI tool call verification',
-  ],
   alternates: { canonical: '/mcp' },
   openGraph: {
     title: TITLE,

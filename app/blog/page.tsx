@@ -17,12 +17,10 @@ import { CURRENT_ARTICLES, ARCHIVED_ARTICLES, type Article } from '@/lib/blog'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary Blog | Agent Verification and Infrastructure',
+    absolute: 'Originary blog: signed records for AI agents and APIs',
   },
   description:
-    'The Originary blog covers signed records, agent verification, offline verification, policy discovery, and the open infrastructure for automated interactions.',
-  keywords:
-    'Originary blog, agent verification, signed records, offline verification, verification workflows, PEAC protocol, AIPREF, HTTP 402, technical blog',
+    'Technical guides, worked examples, and source-backed analysis for agent, MCP, gateway, commerce, and provisioning audit workflows.',
   authors: [{ name: 'Originary Team' }],
   openGraph: {
     type: 'website',

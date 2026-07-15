@@ -6,9 +6,9 @@ import { Mono } from '@/components/home/atoms/Mono'
 import { DataTable, StepLabel, VerificationBoundary } from '@/components/specimens/parts'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Originary Trust Center | Security, Privacy and Deployment' },
+  title: { absolute: 'Originary deployment, verification, and security boundaries' },
   description:
-    'See how Originary handles verification, keys, portability, and offline validation for signed records across agent, API, MCP, and automated workflows.',
+    'Review current key-custody, network, data, retention, telemetry, supply-chain, and support boundaries.',
   openGraph: {
     title: 'Trust Center | Originary',
     description:
@@ -231,8 +231,8 @@ export default function TrustPage() {
     <PageShell>
       <PageHero
         eyebrow="trust center"
-        title="Procurement-grade answers, with evidence."
-        sub="How Originary handles verification, keys, portability, and offline validation for signed records. Every claim links to the artifact that backs it."
+        title="Clear deployment and verification boundaries."
+        sub="Review current key-custody, network, data, retention, telemetry, supply-chain, and support boundaries. Every claim links to the artifact that backs it."
         strip={['Deployment modes', 'Key custody', 'Data boundaries', 'PEAC ' + FACTS.currentVersion]}
       >
         <p
@@ -331,18 +331,18 @@ export default function TrustPage() {
             <h2 style={{ ...headStyle, marginTop: 12 }}>What runs where, and who holds what.</h2>
             <div style={{ marginTop: 18 }}>
               <DataTable
-                head={['', 'Open source', 'Supported self-host', 'Managed verification']}
+                head={['', 'Open source', 'Supported self-host']}
                 rows={[
-                  ['Where it runs', 'Your infrastructure', 'Your infrastructure', 'Scoped by agreement'],
-                  ['Key custody', 'You. Local or your KMS.', 'You. Local or your KMS.', 'Defined per contract'],
-                  ['Interaction data', 'Never leaves your environment', 'Never leaves your environment', 'Only what you explicitly send'],
-                  ['Support', 'Community (GitHub)', 'Under agreement', 'Under agreement'],
-                  ['Verification', 'Offline, no callback', 'Offline, no callback', 'Offline, no callback'],
+                  ['Where it runs', 'Your infrastructure', 'Your infrastructure'],
+                  ['Key custody', 'You. Local or your KMS.', 'You. Local or your KMS.'],
+                  ['Interaction data', 'Never leaves your environment', 'Never leaves your environment'],
+                  ['Support', 'Community (GitHub)', 'Under agreement'],
+                  ['Verification', 'Offline, no callback', 'Offline, no callback'],
                 ]}
               />
             </div>
             <p style={{ ...proseStyle, fontSize: 13, marginTop: 12 }}>
-              Managed capabilities are stated only where an agreement defines them; anything not listed here is not
+              Originary does not host verification, custody keys, or store your records. Anything not listed here is not
               offered. Verification never requires Originary to be online in any mode.
             </p>
           </div>
@@ -462,8 +462,8 @@ export default function TrustPage() {
               />
             </div>
             <p style={proseStyle}>
-              If you use Originary&apos;s optional managed services (hosted verification, dashboards), those services
-              process only the records you explicitly send to them. Managed service data handling is covered in our{' '}
+              Originary does not run a hosted verification service, dashboards, or record storage. If you engage
+              Originary for a scoped pilot or supported self-host, data handling for that engagement is covered in our{' '}
               <Link href="/privacy" style={linkStyle}>
                 Privacy Policy
               </Link>

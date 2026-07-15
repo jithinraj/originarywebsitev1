@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
 import { FACTS } from '@/lib/facts'
+import { ORIGINARY_ORG_ID } from '@/lib/structured-data/entities'
 import {
   PageShell,
   PageSection,
@@ -47,19 +48,8 @@ const webPageJsonLd = {
   '@type': 'AboutPage',
   name: 'About Originary',
   url: 'https://www.originary.xyz/about',
-  publisher: {
-    '@type': 'Organization',
-    name: 'Originary',
-    url: 'https://www.originary.xyz',
-    description:
-      'Originary builds verification software for machine actions that cross company, vendor, and runtime boundaries.',
-    foundingLocation: 'Delaware, USA',
-    parentOrganization: {
-      '@type': 'Organization',
-      name: 'Poem, Inc.',
-      legalName: 'Poem, Inc.',
-    },
-  },
+  about: { '@id': ORIGINARY_ORG_ID },
+  publisher: { '@id': ORIGINARY_ORG_ID },
 }
 
 const linkStyle = {
