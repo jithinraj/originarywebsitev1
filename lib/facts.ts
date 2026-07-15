@@ -16,7 +16,7 @@ export const FACTS = {
   currentVersion: 'v0.16.2',
 
   /** Public release date for currentVersion. */
-  currentReleaseDate: '2026-07-07',
+  currentReleaseDate: '2026-07-13',
 
   /** npm dist-tag used for currentVersion. */
   currentDistTag: 'latest',
@@ -50,8 +50,20 @@ export const FACTS = {
   // Quality metrics
   // ---------------------------------------------------------------------------
 
+  /** Release public name. */
+  releaseName: 'Portable Evidence Pack',
+
+  /** Test file count. */
+  testFilesCount: 487,
+
+  /** Current Wire 0.2 JWS typ. */
+  currentTyp: 'interaction-record+jwt',
+
+  /** Legacy wire identifier, compatibility contexts only. */
+  legacyTyp: 'peac-receipt/0.1',
+
   /** Test count. */
-  testsCount: 11975,
+  testsCount: 12666,
 
   /** Build targets. */
   buildTargets: 112,

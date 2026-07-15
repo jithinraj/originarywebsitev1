@@ -169,7 +169,7 @@ export default function PeacPage() {
             {/* Right column: record-shape preview card */}
             <aside style={peacHeroAside}>
               <div className="home-card" style={peacHeroCard}>
-                <div style={peacHeroCardLabel}>peac-receipt/0.2 · interaction-record+jwt</div>
+                <div style={peacHeroCardLabel}>wire 0.2 · interaction-record+jwt</div>
                 <div style={peacHeroCardLine}>
                   <span style={peacHeroCardKey}>iss</span>
                   <span style={peacHeroCardVal}>https://api.example.com</span>
