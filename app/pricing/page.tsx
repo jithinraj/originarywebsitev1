@@ -6,7 +6,7 @@ import { WordmarkStream } from '@/components/home/motion/WordmarkStream'
 import { Mono } from '@/components/home/atoms/Mono'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Originary Pricing | Open Source PEAC and Enterprise Verification' },
+  title: { absolute: 'Originary Pricing | Open Source and Enterprise Verification' },
   description:
     'Use PEAC free and self-hosted. Bring in Originary for managed verification, signing operations, record exports, and one-workflow pilots.',
   keywords: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/pricing' },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'Originary Pricing | Open Source PEAC and Enterprise Verification',
+    title: 'Originary Pricing | Open Source and Enterprise Verification',
     description:
       'Use PEAC free and self-hosted. Bring in Originary for managed verification, signing operations, record exports, and one-workflow pilots.',
     url: '/pricing',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary Pricing | Open Source PEAC and Enterprise Verification',
+    title: 'Originary Pricing | Open Source and Enterprise Verification',
     description:
       'Use PEAC free and self-hosted. Bring in Originary for managed verification, signing operations, record exports, and one-workflow pilots.',
     images: ['/og'],

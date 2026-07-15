@@ -619,6 +619,7 @@ export function ArticleDoc({
   date,
   readTime,
   parent,
+  status,
   children,
 }: {
   category: string
@@ -628,6 +629,8 @@ export function ArticleDoc({
   date?: string
   readTime?: string
   parent: { label: string; href: string }
+  /** Lifecycle status; 'archived' and 'superseded' render a notice. */
+  status?: 'current' | 'updated' | 'archived' | 'superseded'
   children: ReactNode
 }) {
   return (
@@ -719,10 +722,33 @@ export function ArticleDoc({
             {readTime ? <span>{readTime}</span> : null}
           </div>
         ) : null}
+        {status === 'archived' || status === 'superseded' ? (
+          <div
+            role="note"
+            style={{
+              marginTop: 28,
+              padding: '14px 18px',
+              borderLeft: `3px solid ${PALETTE.warn}`,
+              background: 'rgba(138, 106, 60, 0.06)',
+              fontFamily: sans,
+              fontSize: 14,
+              lineHeight: 1.55,
+              color: PALETTE.muted,
+            }}
+          >
+            <strong style={{ color: PALETTE.ink, fontWeight: 500 }}>Archived.</strong> This piece
+            reflects earlier work and uses legacy terminology and commands. It is kept for the record
+            and is not maintained against the current release. See the{' '}
+            <Link href="/blog" style={{ color: PALETTE.ink }}>
+              current writing
+            </Link>{' '}
+            for up-to-date guidance.
+          </div>
+        ) : null}
         <div
           className="home-card legal-doc-body"
           style={{
-            marginTop: 32,
+            marginTop: status === 'archived' || status === 'superseded' ? 20 : 32,
             padding: 36,
             background: PALETTE.paper,
             border: `1px solid ${PALETTE.hairline}`,

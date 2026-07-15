@@ -15,94 +15,43 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   async redirects() {
+    // Permanent legacy-route migration map. `permanent: true` emits HTTP 308
+    // (Google treats 308 like 301 for canonicalization). Every entry is an
+    // exact, semantically correct one-to-one migration of a page that existed.
+    // No broad wildcards, no article-to-landing-page redirects; unknown legacy
+    // slugs 404 so broken links surface instead of hiding.
     return [
-      {
-        source: '/:path+/',
-        destination: '/:path+',
-        permanent: true,
-      },
-      {
-        source: '/sitemap-main.xml',
-        destination: '/sitemap.xml',
-        permanent: true,
-      },
-      {
-        source: '/sitemap_index.xml',
-        destination: '/sitemap.xml',
-        permanent: true,
-      },
-      {
-        source: '/wp-sitemap.xml',
-        destination: '/sitemap.xml',
-        permanent: true,
-      },
-      {
-        source: '/peac.txt',
-        destination: '/.well-known/peac.txt',
-        permanent: true,
-      },
-      // Legacy site generation: canonical 301 map (2026-07-14 takedown)
+      // Discovery / sitemap
+      { source: '/sitemap-main.xml', destination: '/sitemap.xml', permanent: true },
+      { source: '/sitemap_index.xml', destination: '/sitemap.xml', permanent: true },
+      { source: '/wp-sitemap.xml', destination: '/sitemap.xml', permanent: true },
+      { source: '/peac.txt', destination: '/.well-known/peac.txt', permanent: true },
+
+      // Legacy product routes -> canonical product surfaces
       { source: '/products/verify', destination: '/verify', permanent: true },
       { source: '/products/gateway-402', destination: '/agentic-commerce', permanent: true },
-      { source: '/products/:path*', destination: '/records', permanent: true },
-      { source: '/products', destination: '/records', permanent: true },
+      { source: '/products', destination: '/product', permanent: true },
       { source: '/integrations/mcp', destination: '/mcp', permanent: true },
-      { source: '/integrations/:path*', destination: '/records', permanent: true },
-      { source: '/integrations', destination: '/records', permanent: true },
       { source: '/enterprise', destination: '/pricing', permanent: true },
       { source: '/trace', destination: '/ai-gateway', permanent: true },
-      { source: '/trace/:path*', destination: '/ai-gateway', permanent: true },
       { source: '/receipts', destination: '/records', permanent: true },
       { source: '/demo', destination: '/verify', permanent: true },
-      { source: '/developers', destination: '/downloads', permanent: true },
-      { source: '/solutions/:path*', destination: '/records', permanent: true },
-      { source: '/glossary/:path*', destination: '/peac', permanent: true },
-      { source: '/what-is-originary', destination: '/about', permanent: true },
       { source: '/proof-check', destination: '/verify', permanent: true },
-      { source: '/docs/mcp/:path*', destination: '/mcp', permanent: true },
-      { source: '/docs/:path*', destination: '/peac', permanent: true },
-      { source: '/learn/what-is-agentic-commerce', destination: '/agentic-commerce', permanent: true },
-      { source: '/learn/ai-receipts', destination: '/records', permanent: true },
-      { source: '/learn/http-402-ai-payments', destination: '/agentic-commerce', permanent: true },
-      { source: '/learn/ai-consent-and-attribution', destination: '/peac', permanent: true },
-      { source: '/learn', destination: '/blog', permanent: true },
-      { source: '/learn/:path*', destination: '/blog', permanent: true },
-      { source: '/blog/what-is-http-402', destination: '/agentic-commerce', permanent: true },
-      { source: '/blog/http-402-for-apis', destination: '/agentic-commerce', permanent: true },
-      { source: '/blog/adding-402-in-15-minutes', destination: '/agentic-commerce', permanent: true },
-      { source: '/blog/cloudflare-workers-402', destination: '/agentic-commerce', permanent: true },
-      { source: '/blog/from-detection-to-settlement-ai-paywall-peac-http-402', destination: '/agentic-commerce', permanent: true },
-      { source: '/blog/a2a-stack-agent-to-agent-commerce', destination: '/agentic-commerce', permanent: true },
-      { source: '/blog/ai-bot-detection', destination: '/blog', permanent: true },
-      { source: '/blog/aipref-by-ietf', destination: '/blog', permanent: true },
-      { source: '/blog/robots-txt-rfc-9309', destination: '/blog', permanent: true },
-      { source: '/agent-auditor', destination: '/', permanent: true },
-      { source: '/agent-auditor/:path*', destination: '/', permanent: true },
+      { source: '/what-is-originary', destination: '/about', permanent: true },
+      { source: '/agent-auditor', destination: '/verify', permanent: true },
+
+      // Developer + downloads
+      { source: '/developers', destination: '/downloads', permanent: true },
       { source: '/declare', destination: '/downloads', permanent: true },
+
+      // Legal path normalization
       { source: '/legal/privacy', destination: '/privacy', permanent: true },
       { source: '/legal/terms', destination: '/terms', permanent: true },
       { source: '/legal/payments', destination: '/pricing', permanent: true },
       { source: '/copyright', destination: '/terms', permanent: true },
-      {
-        source: '/downloads/originary-cli-1.0.0-darwin-arm64.zip',
-        destination: 'https://github.com/peacprotocol/peac/archive/refs/tags/v0.9.14.zip',
-        permanent: false,
-      },
-      {
-        source: '/downloads/originary-cli-1.0.0-darwin-x64.zip',
-        destination: 'https://github.com/peacprotocol/peac/archive/refs/tags/v0.9.13.2.zip',
-        permanent: false,
-      },
-      {
-        source: '/downloads/originary-cli-1.0.0-linux-x64.tar.gz',
-        destination: 'https://github.com/peacprotocol/peac/archive/refs/tags/v0.9.13.1.tar.gz',
-        permanent: false,
-      },
-      {
-        source: '/downloads/originary-cli-1.0.0-win-x64.zip',
-        destination: 'https://github.com/peacprotocol/peac/archive/refs/tags/v0.9.13.zip',
-        permanent: false,
-      },
+
+      // Section index
+      { source: '/learn', destination: '/blog', permanent: true },
     ]
   },
   async headers() {
@@ -143,7 +92,7 @@ const nextConfig = {
         source: '/.well-known/aipref.json',
         headers: [
           { key: 'Content-Type', value: 'application/json; charset=utf-8' },
-          { key: 'Cache-Control', value: 'public, max-age=300, immutable' },
+          { key: 'Cache-Control', value: 'public, max-age=300, s-maxage=300, must-revalidate' },
           { key: 'Access-Control-Allow-Origin', value: '*' },
           { key: 'X-Robots-Tag', value: 'noindex' },
         ],
@@ -152,7 +101,9 @@ const nextConfig = {
         source: '/.well-known/jwks.json',
         headers: [
           { key: 'Content-Type', value: 'application/json; charset=utf-8' },
-          { key: 'Cache-Control', value: 'public, max-age=300, immutable' },
+          // Bounded revalidation, not immutable: JWKS rotates. Previous keys are
+          // retained through overlap so cached copies stay verifiable during rotation.
+          { key: 'Cache-Control', value: 'public, max-age=300, s-maxage=300, must-revalidate' },
           { key: 'Access-Control-Allow-Origin', value: '*' },
           { key: 'X-Robots-Tag', value: 'noindex' },
         ],
