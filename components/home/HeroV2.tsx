@@ -120,27 +120,27 @@ export function HeroV2() {
       <div style={{ maxWidth: MAX_W, margin: '0 auto', position: 'relative', zIndex: 1 }}>
       {/* Top copy */}
       <div style={heroTopStyle}>
-        <p className="cin-rise" style={heroEyebrow}>VERIFIABLE INFRASTRUCTURE FOR MACHINE ACTIONS</p>
+        <p className="cin-rise" style={heroEyebrow}>ORIGINARY VERIFY</p>
         <h1 id="hero-headline" className="cin-rise cin-display" style={{ ...heroHeadline, ['--cin-i' as string]: 1 }}>
-          Machine actions, made provable.
+          Machine actions, made verifiable.
         </h1>
         <p className="cin-rise" style={{ ...heroSub, ['--cin-i' as string]: 2 }}>
-          Originary turns agent actions, API calls, gateway decisions, payments, and provisioning
-          events into portable signed records that customers, partners, and auditors can verify
-          without access to private logs.
+          Issue portable signed records when APIs, agents, MCP tools, gateways, payment flows, and
+          provisioning systems act. Customers, partners, and auditors can verify those records
+          without access to your private logs or dashboards.
         </p>
         <div className="cin-rise" style={{ ...ctas, ['--cin-i' as string]: 3 }}>
-          <Link href="/contact" className="home-arrow-link" style={btnPrimary}>
-            Start a pilot
+          <Link href="/verify" className="home-arrow-link" style={btnPrimary}>
+            Verify a sample
             <Arrow />
           </Link>
-          <Link href="/verify" className="home-arrow-link" style={btnSecondary}>
-            Verify a sample
+          <Link href="/contact" className="home-arrow-link" style={btnSecondary}>
+            Start a pilot
             <Arrow />
           </Link>
         </div>
         <p className="cin-rise" style={{ ...heroProofLine, ['--cin-i' as string]: 4 }}>
-          Built on PEAC Protocol · Apache-2.0 · Self-hostable · Offline verification
+          Built on PEAC Protocol · Apache-2.0 · Offline verification
         </p>
       </div>
 

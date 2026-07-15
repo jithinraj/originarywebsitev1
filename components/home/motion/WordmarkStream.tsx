@@ -1,20 +1,17 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { useReducedMotion } from './useReducedMotion'
 import { WORDMARK_GEOMETRY } from '../../brand/OriginaryLogoMotion'
 
 const BINARY = '01101111 01110010 01101001 01100111 01101001 01101110 01100001 01110010 01111001'
 
 /**
- * WordmarkStream: the closing signature. The wordmark set viewport-wide in
- * the brand letterforms, filled with a precise grid of 0/1 cells seeded from
- * the word's own 8-bit ASCII. A slow diagonal wave flips bits as it passes and
- * the cursor acts as a write head, flipping and brightening nearby cells.
- * Static frame under reduced motion.
+ * WordmarkStream: the closing signature. The brand wordmark set viewport-wide,
+ * its letterforms engraved with a static grid of 0/1 cells seeded from the
+ * word's own 8-bit ASCII. No animation and no pointer interaction; it only
+ * redraws on resize.
  */
 export function WordmarkStream() {
-  const reduced = useReducedMotion()
   const wrapRef = useRef<HTMLDivElement | null>(null)
   const ref = useRef<HTMLCanvasElement | null>(null)
 
@@ -29,9 +26,6 @@ export function WordmarkStream() {
     const GAP = 16
     const FONT_PX = 11
     const BITS = BINARY.replace(/ /g, '')
-    let raf = 0
-    let running = false
-    let last = 0
     let w = 0
     let h = 0
     let dpr = 1
@@ -39,10 +33,7 @@ export function WordmarkStream() {
     let cols = 0
     let rows = 0
     let bits: Uint8Array = new Uint8Array(0)
-    let heat: Float32Array = new Float32Array(0)
-    let phase: Float32Array = new Float32Array(0)
     let sprites: HTMLCanvasElement[][] = []
-    const px = { x: -9999, y: -9999 }
 
     const makeSprite = (glyph: string, alpha: number) => {
       const spr = document.createElement('canvas')
@@ -82,21 +73,19 @@ export function WordmarkStream() {
       rows = Math.ceil(h / GAP) + 1
       const n = cols * rows
       bits = new Uint8Array(n)
-      heat = new Float32Array(n)
-      phase = new Float32Array(n)
       for (let gy = 0; gy < rows; gy++) {
         for (let gx = 0; gx < cols; gx++) {
           const i = gy * cols + gx
           // Seed from the word's own encoding so the letters read as binary at rest.
           bits[i] = BITS.charCodeAt((gx + gy * 7) % BITS.length) === 49 ? 1 : 0
-          const v = Math.sin(gx * 12.9898 + gy * 78.233) * 43758.5453
-          phase[i] = v - Math.floor(v)
         }
       }
       sprites = [0, 1].map((g) => [makeSprite(String(g), 0.09), makeSprite(String(g), 0.3)])
     }
 
-    const render = (time: number, step: boolean) => {
+    // Static engraving: draw the ASCII bit grid inside the letterforms once.
+    // No animation loop and no pointer interaction; the wordmark is calm.
+    const render = () => {
       if (!letterPath) return
       ctx.clearRect(0, 0, w, h)
       ctx.save()
@@ -109,59 +98,15 @@ export function WordmarkStream() {
           const i = gy * cols + gx
           const x = gx * GAP + GAP / 2
           const y = gy * GAP + GAP / 2
-          if (step) {
-            // Slow diagonal write-wave flips bits as it passes.
-            const raw = x * 0.006 + y * 0.004 - time * 0.09 + phase[i]
-            const wavePos = ((raw % 1) + 1) % 1
-            const inWave = wavePos < 0.013
-            const dx = x - px.x
-            const dy = y - px.y
-            const d2 = dx * dx + dy * dy
-            // Cursor write head: gradient influence within ~150px.
-            const near = d2 < 22500 ? 1 - Math.sqrt(d2) / 150 : 0
-            if (inWave || (near > 0 && Math.random() < near * 0.5)) {
-              bits[i] ^= 1
-              heat[i] = Math.max(heat[i], near > 0 ? 0.6 + near * 0.4 : 0.5)
-            }
-            if (near > 0.5) heat[i] = Math.max(heat[i], near)
-            if (heat[i] > 0.004) heat[i] *= 0.94
-            else heat[i] = 0
-          }
-          const hot = heat[i]
-          const spr = hot > 0.12 ? sprites[bits[i]][1] : sprites[bits[i]][0]
-          const grow = 1 + hot * 0.3
-          const gs = sprSize * grow
-          ctx.drawImage(spr, x - gs / 2, y - gs / 2, gs, gs)
+          ctx.drawImage(sprites[bits[i]][0], x - sprSize / 2, y - sprSize / 2, sprSize, sprSize)
         }
       }
       ctx.restore()
     }
 
-    const loop = (t: number) => {
-      raf = 0
-      if (!running) return
-      if (t - last >= 33) {
-        last = t
-        render(t / 1000, true)
-      }
-      raf = requestAnimationFrame(loop)
-    }
-    const start = () => {
-      if (running || reduced) return
-      running = true
-      if (!raf) raf = requestAnimationFrame(loop)
-    }
-    const stop = () => {
-      running = false
-      if (raf) {
-        cancelAnimationFrame(raf)
-        raf = 0
-      }
-    }
-
     const rebuild = () => {
       buildMask()
-      render(0.6, false)
+      render()
     }
 
     rebuild()
@@ -171,34 +116,11 @@ export function WordmarkStream() {
 
     const ro = new ResizeObserver(() => rebuild())
     ro.observe(wrap)
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => (e.isIntersecting ? start() : stop())),
-      { threshold: 0.08 },
-    )
-    io.observe(wrap)
-    const onVis = () => (document.hidden ? stop() : start())
-    document.addEventListener('visibilitychange', onVis)
-    const onMove = (e: MouseEvent) => {
-      const rect = wrap.getBoundingClientRect()
-      px.x = e.clientX - rect.left
-      px.y = e.clientY - rect.top
-    }
-    const onLeave = () => {
-      px.x = -9999
-      px.y = -9999
-    }
-    wrap.addEventListener('mousemove', onMove, { passive: true })
-    wrap.addEventListener('mouseleave', onLeave, { passive: true })
 
     return () => {
-      stop()
       ro.disconnect()
-      io.disconnect()
-      document.removeEventListener('visibilitychange', onVis)
-      wrap.removeEventListener('mousemove', onMove)
-      wrap.removeEventListener('mouseleave', onLeave)
     }
-  }, [reduced])
+  }, [])
 
   return (
     <div ref={wrapRef} className="cin-wordmark" aria-hidden>

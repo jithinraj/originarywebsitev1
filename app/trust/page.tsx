@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, Card, PALETTE } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
-import { DataTable, StepLabel } from '@/components/specimens/parts'
+import { DataTable, StepLabel, VerificationBoundary } from '@/components/specimens/parts'
 
 export const metadata: Metadata = {
   title: { absolute: 'Originary Trust Center | Security, Privacy and Deployment' },
@@ -366,10 +366,21 @@ export default function TrustPage() {
               carries the fields needed to confirm what happened, when, and who attested to it.
             </p>
             <KeyPoint>
-              Records are self-contained. Verification is local. No network dependency on Originary or any third party
-              at verification time.
+              Records are portable; verification also requires trusted issuer key material. In strict offline mode
+              that key is supplied and there is no network request; in explicit-resolution mode the caller authorizes
+              the JWKS fetch. No mode calls back to Originary.
             </KeyPoint>
           </Card>
+
+          <div>
+            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              the boundary
+            </Mono>
+            <h2 style={{ ...headStyle, marginTop: 12, marginBottom: 20 }}>
+              What a verified record does and does not establish.
+            </h2>
+            <VerificationBoundary />
+          </div>
 
           <Card padding={28}>
             <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
@@ -492,7 +503,7 @@ export default function TrustPage() {
             </Mono>
             <h2 style={{ ...headStyle, marginTop: 12 }}>Legal identity and stewardship</h2>
             <p style={proseStyle}>
-              Originary is a product of {FACTS.legalEntity}, a Delaware corporation. We are the current steward of the
+              Originary is a brand of {FACTS.legalEntity}, a Delaware corporation. Originary maintains the
               PEAC protocol, not its gatekeeper. The protocol specification, reference implementation, conformance
               suite, and all core tooling are published under the {FACTS.license} license.
             </p>

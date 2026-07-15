@@ -2,14 +2,14 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'About | Originary',
-  description: 'Originary builds software for verifiable interaction records across AI agents, APIs, MCP, and automated workflows, with PEAC as the open standard underneath.',
+  description: 'Originary builds software for verifiable interaction records across AI agents, APIs, MCP, and automated workflows, built on the PEAC open-source protocol.',
   robots: 'index,follow',
   alternates: {
     canonical: '/about'
   },
   openGraph: {
     title: 'About | Originary',
-    description: 'Originary builds software for verifiable interaction records across AI agents, APIs, MCP, and automated workflows, with PEAC as the open standard underneath.',
+    description: 'Originary builds software for verifiable interaction records across AI agents, APIs, MCP, and automated workflows, built on the PEAC open-source protocol.',
     url: '/about',
     siteName: 'Originary',
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'About | Originary',
-    description: 'Originary builds software for verifiable interaction records across AI agents, APIs, MCP, and automated workflows, with PEAC as the open standard underneath.',
+    description: 'Originary builds software for verifiable interaction records across AI agents, APIs, MCP, and automated workflows, built on the PEAC open-source protocol.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',

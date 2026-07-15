@@ -71,7 +71,7 @@ export default function StandardsIntegrations() {
               background: 'var(--accent-success)',
               flexShrink: 0
             }} />
-            6 open standards
+            6 open-source protocols
           </span>
 
           <div

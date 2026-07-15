@@ -65,6 +65,18 @@ export function WorksWithStrip() {
           </li>
         ))}
       </ul>
+      <p
+        style={{
+          fontFamily: MONO,
+          fontSize: 11,
+          lineHeight: 1.6,
+          color: PALETTE.faint,
+          margin: '22px 0 0 0',
+          maxWidth: '72ch',
+        }}
+      >
+        Names and logos identify interoperability surfaces. No partnership, certification, or endorsement is implied.
+      </p>
       </div>
     </section>
   )

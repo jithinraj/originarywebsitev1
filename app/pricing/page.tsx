@@ -531,7 +531,7 @@ export default function PricingPage() {
           }}
         >
           <div id="pilot" style={{ maxWidth: 760, margin: '0 auto 72px', scrollMarginTop: 96 }}>
-            <h2 style={{ ...sectionHead, textAlign: 'center', marginBottom: 12 }}>Portable Proof Pilot</h2>
+            <h2 style={{ ...sectionHead, textAlign: 'center', marginBottom: 12 }}>Originary Verification Pilot</h2>
             <p style={{ textAlign: 'center', fontSize: 15, lineHeight: 1.6, color: PALETTE.muted, margin: '0 0 28px' }}>
               A fixed-scope pilot that instruments one production workflow end to end. Three to four weeks, scoped quote.
             </p>

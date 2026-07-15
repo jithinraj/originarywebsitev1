@@ -335,7 +335,7 @@ export default function RecordsPage() {
               { label: 'Time', value: '2026-06-12T14:10:40Z' },
               { label: 'Signature', value: <>Ed25519 e02d7f15... <Dim>valid</Dim></> },
             ]}
-            foot="deny-as-evidence - the refusal itself is portable proof"
+            foot="deny-as-evidence - the refusal itself is portable evidence"
           />
         </SpecimenGrid>
       </Specimen>

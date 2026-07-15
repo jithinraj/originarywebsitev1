@@ -16,16 +16,17 @@ import {
   PAGE_PAD,
 } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
+import { VerificationBoundary } from '@/components/specimens/parts'
 
 export const metadata: Metadata = {
-  title: { absolute: 'PEAC Protocol | Open Standard for Verifiable Interaction Records' },
+  title: { absolute: 'PEAC Protocol | Open-Source Protocol for Verifiable Interaction Records' },
   description:
-    'PEAC is the open standard for portable signed interaction records. Issue records another party can verify without trusting the original dashboard.',
+    'PEAC is an open-source protocol for portable signed interaction records. Issue records another party can verify without trusting the original dashboard.',
   keywords: [
     'PEAC Protocol',
     'portable signed records',
     'verifiable interaction records',
-    'open standard',
+    'open-source protocol',
     'Apache-2.0',
     'Ed25519',
     'JWS',
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'PEAC Protocol | Originary',
     description:
-      'PEAC is the open standard for portable signed interaction records. Apache-2.0. Self-hostable. Offline-verifiable.',
+      'PEAC is an open-source protocol for portable signed interaction records. Apache-2.0. Self-hostable. Offline-verifiable.',
     url: '/peac',
     siteName: 'Originary',
     type: 'website',
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
         url: '/og',
         width: 1200,
         height: 630,
-        alt: 'PEAC Protocol | Open standard for portable signed interaction records',
+        alt: 'PEAC Protocol | Open-source protocol for portable signed interaction records',
       },
     ],
   },
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PEAC Protocol | Originary',
     description:
-      'PEAC is the open standard for portable signed interaction records. Apache-2.0. Self-hostable. Offline-verifiable.',
+      'PEAC is an open-source protocol for portable signed interaction records. Apache-2.0. Self-hostable. Offline-verifiable.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -81,7 +82,7 @@ export default function PeacPage() {
     '@id': 'https://www.originary.xyz/peac#protocol',
     name: 'PEAC Protocol',
     description:
-      'Open standard for portable signed interaction records. Issue, verify, and export records of automated actions across boundaries. Apache-2.0.',
+      'Open-source protocol for portable signed interaction records. Issue, verify, and export records of automated actions across boundaries. Apache-2.0.',
     codeRepository: 'https://github.com/peacprotocol/peac',
     programmingLanguage: ['TypeScript', 'JavaScript'],
     license: 'https://www.apache.org/licenses/LICENSE-2.0',
@@ -93,7 +94,7 @@ export default function PeacPage() {
       'verifiable interaction records',
       'Ed25519',
       'JWS',
-      'open standard',
+      'open-source protocol',
       'Apache-2.0',
     ],
     author: {
@@ -141,7 +142,7 @@ export default function PeacPage() {
                 by Originary
               </p>
               <p className="home-about-lede" style={{ marginTop: 24 }}>
-                The open standard for portable signed interaction records.
+                The open-source protocol for portable signed interaction records.
               </p>
               <p className="home-about-body" style={{ marginTop: 14, maxWidth: 560 }}>
                 Systems use PEAC to issue records another party can verify
@@ -412,6 +413,21 @@ export default function PeacPage() {
           </div>
         </PageSection>
 
+
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+        />
+
+        {/* Verification boundary */}
+        <PageSection>
+          <SectionHeading
+            eyebrow="the boundary"
+            title="What a verified record does and does not establish."
+          />
+          <VerificationBoundary />
+        </PageSection>
 
         <InViewClass
           className="home-about-divider"

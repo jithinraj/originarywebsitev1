@@ -104,7 +104,7 @@ export default function McpPage() {
         <SectionHeading
           index="01"
           eyebrow="The problem"
-          title="A transcript is not portable proof."
+          title="A transcript is not portable evidence."
           sub="An MCP server log can help you debug a tool run. It cannot be handed to another party as something they can independently check. A signed record answers the questions that cross the boundary:"
         />
         <MarkerList
@@ -228,7 +228,7 @@ export default function McpPage() {
               { label: 'Time', value: '2026-06-12T14:10:40Z' },
               { label: 'Signature', value: <>Ed25519 e02d7f15... <Dim>valid</Dim></> },
             ]}
-            foot="deny-as-evidence - portable proof of a refusal"
+            foot="deny-as-evidence - portable evidence of a refusal"
           />
         </SpecimenGrid>
       </PageSection>

@@ -4,7 +4,6 @@ import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { Mono } from './atoms/Mono'
 import { Wordmark } from './Nav'
 import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
-import { FACTS } from '@/lib/facts'
 
 const columns: Array<{
   h: string
@@ -103,20 +102,22 @@ export function HomeFooter() {
               textWrap: 'pretty',
             }}
           >
-            Originary helps teams issue, inspect, and verify signed records for
-            APIs, MCP tools, agent actions, gateway events, provisioning
-            workflows, and agent-commerce flows.
+            Originary develops software for issuing, verifying, and packaging
+            signed interaction records across organizational boundaries.
           </p>
           <p
             style={{
               margin: '16px 0 0 0',
-              fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace',
-              fontSize: 11.5,
-              letterSpacing: '0.02em',
+              maxWidth: 400,
+              fontFamily: SANS,
+              fontSize: 12.5,
+              lineHeight: 1.6,
               color: PALETTE.faint,
+              textWrap: 'pretty',
             }}
           >
-            PEAC {FACTS.currentVersion} · {FACTS.license} · {FACTS.testsCount.toLocaleString('en-US')}{'\u00A0'}tests
+            Originary is a brand of Poem, Inc. Originary Verify is built on PEAC
+            Protocol, an Apache-2.0 open-source project maintained by Originary.
           </p>
         </div>
         <div
@@ -185,7 +186,7 @@ export function HomeFooter() {
         className="home-footer-bottom"
       >
         <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.02em', minWidth: 0 }}>
-          © 2025-2026 Originary · a brand of Poem, Inc. · Apache-2.0 where applicable
+          © 2025-2026 Poem, Inc. · Originary is a brand of Poem, Inc.
         </Mono>
         <div style={{ display: 'flex', gap: 18, alignItems: 'center', flexWrap: 'wrap' }}>
           {legalLinks.map((l) => (
