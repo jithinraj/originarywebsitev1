@@ -308,8 +308,7 @@ export default function RecordsPage() {
             <StepLabel>Expected</StepLabel>
             <Terminal
               lines={[
-                { kind: 'ok', text: 'Signature valid (offline)' },
-                { kind: 'out', text: 'decision: denied - the signature is valid, the answer was no' },
+                { kind: 'ok', text: 'Signature valid (offline).' },
               ]}
             />
           </SpecimenIntro>

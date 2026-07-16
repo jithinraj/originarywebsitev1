@@ -335,7 +335,7 @@ export default function TrustPage() {
                 rows={[
                   ['Where it runs', 'Your infrastructure', 'Your infrastructure'],
                   ['Key custody', 'You. Local or your KMS.', 'You. Local or your KMS.'],
-                  ['Interaction data', 'Never leaves your environment', 'Never leaves your environment'],
+                  ['Interaction data', 'Processed in your environment (self-hosted)', 'Processed in your environment (under agreement)'],
                   ['Support', 'Community (GitHub)', 'Under agreement'],
                   ['Verification', 'Offline, no callback', 'Offline, no callback'],
                 ]}

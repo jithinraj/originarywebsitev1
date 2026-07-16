@@ -149,7 +149,7 @@ export default function AiGatewayPage() {
               <Terminal
                 lines={[
                   { kind: 'out', text: '$ npx -y @peac/cli@0.16.2 verify ./gateway-decision.jws --public-key ./jwks.json' },
-                  { kind: 'ok', text: 'Signature valid (offline)' },
+                  { kind: 'ok', text: 'Signature valid (offline).' },
                 ]}
               />
             </div>

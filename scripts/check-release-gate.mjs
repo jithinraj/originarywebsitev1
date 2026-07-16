@@ -8,23 +8,22 @@ import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
 const pkg = JSON.parse(readFileSync(join(process.cwd(), 'package.json'), 'utf8'))
-const vr = (pkg.scripts && pkg.scripts['verify:release']) || ''
-const required = ['npm run lint', 'npm run typecheck', 'npm run build', 'npm run test:proxy']
+const scripts = pkg.scripts || {}
 
-let pos = -1
-let ok = true
-for (const step of required) {
-  const i = vr.indexOf(step)
-  if (i === -1 || i < pos) {
-    ok = false
-    break
-  }
-  pos = i
+// Exact-match, so no extra command, `|| true`, backgrounding, or alternate construction can slip in.
+const EXPECT = {
+  prebuild: 'npm run check:all',
+  'verify:release': 'npm run lint && npm run typecheck && npm run build && npm run test:proxy',
 }
 
-if (!ok) {
-  console.error(`check:release-gate FAILED: verify:release must run, in order: ${required.join(' && ')}`)
-  console.error(`  got: ${vr}`)
+const errors = []
+for (const [name, value] of Object.entries(EXPECT)) {
+  if (scripts[name] !== value) errors.push(`${name} must be exactly "${value}" (got "${scripts[name] ?? '(missing)'}")`)
+}
+
+if (errors.length) {
+  console.error('check:release-gate FAILED:')
+  for (const e of errors) console.error(`  ${e}`)
   process.exit(1)
 }
-console.log('check:release-gate OK - verify:release runs lint, typecheck, build, test:proxy in order.')
+console.log('check:release-gate OK - prebuild and verify:release match the required release commands exactly.')

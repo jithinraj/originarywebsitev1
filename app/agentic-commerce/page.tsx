@@ -207,8 +207,7 @@ export default function AgenticCommercePage() {
               <StepLabel>Expected</StepLabel>
               <Terminal
                 lines={[
-                  { kind: 'ok', text: 'Signature valid (offline)' },
-                  { kind: 'out', text: 'event: authorized - bound to POST /v1/market-data/search' },
+                  { kind: 'ok', text: 'Signature valid (offline).' },
                 ]}
               />
             </div>

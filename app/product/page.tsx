@@ -172,8 +172,7 @@ export default function ProductPage() {
             <Terminal
               lines={[
                 { kind: 'out', text: '$ npx -y @peac/cli@0.16.2 verify ./record.jws --public-key ./jwks.json' },
-                { kind: 'ok', text: 'Signature valid (offline)' },
-                { kind: 'out', text: 'issuer  https://api.vendor.example' },
+                { kind: 'ok', text: 'Signature valid (offline).' },
               ]}
             />
           </div>

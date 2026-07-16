@@ -168,9 +168,7 @@ export default function ProvisioningRecordsPage() {
               <Terminal
                 lines={[
                   { kind: 'out', text: '$ npx -y @peac/cli@0.16.2 verify ./provisioning-event.jws --public-key ./jwks.json' },
-                  { kind: 'ok', text: 'Signature valid (offline)' },
-                  { kind: 'out', text: 'issuer  https://platform.vendor.example' },
-                  { kind: 'out', text: 'event   created - deployment - prj_4fd2' },
+                  { kind: 'ok', text: 'Signature valid (offline).' },
                 ]}
               />
               <StepLabel>Tamper case</StepLabel>

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/** Committed regression tests for the CLI-pinning gate. */
+/** Committed regression tests for the @peac install/run pinning gate. */
 import { mkdtempSync, mkdirSync, writeFileSync, cpSync, rmSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { tmpdir } from 'node:os'
@@ -11,10 +11,13 @@ const GATE = join(dirname(fileURLToPath(import.meta.url)), 'check-cli-pinning.mj
 const CASES = [
   ['pinned npx command', { 'app/p.tsx': 'const c = "npx -y @peac/cli@0.16.2 verify ./r.jws --public-key ./j.json"\n' }, true],
   ['pinned pnpm dlx command', { 'app/p.tsx': 'const c = "pnpm dlx @peac/cli@0.16.2 samples generate"\n' }, true],
+  ['fully pinned multi-package install', { 'app/p.tsx': 'const c = "npm i @peac/protocol@0.16.2 @peac/crypto@0.16.2 @peac/schema@0.16.2"\n' }, true],
   ['npm registry link is fine', { 'app/p.tsx': 'const u = "https://www.npmjs.com/package/@peac/cli"\n' }, true],
+  ['prose mention is not a command', { 'public/llms.txt': 'The @peac/cli package verifies records.\n' }, true],
   ['unversioned global install rejected', { 'app/p.tsx': 'const c = "npm i -g @peac/cli"\n' }, false],
   ['unversioned npx rejected', { 'app/p.tsx': 'const c = "npx -y @peac/cli verify ./r.jws"\n' }, false],
-  ['unversioned prose mention rejected', { 'public/llms.txt': 'Install the @peac/cli package.\n' }, false],
+  ['mixed: pinned cli + floating protocol rejected', { 'app/p.tsx': 'const c = "npm i @peac/protocol @peac/crypto"\n' }, false],
+  ['floating mcp-server install rejected', { 'app/p.tsx': 'const c = "npm i @peac/mcp-server"\n' }, false],
 ]
 
 let failures = 0

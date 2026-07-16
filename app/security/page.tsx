@@ -93,7 +93,7 @@ export default function Security() {
 
           <h2>Data boundaries</h2>
           <p>
-            Signed records contain policy hashes and decisions, not raw request payloads. The documented supplied-key CLI
+            The examples on this site use selected facts and digests rather than raw request payloads. The documented supplied-key CLI
             flow runs locally, and the /verify page does not accept record uploads. Supplied-key verification runs offline
             and does not depend on Originary being online.
           </p>

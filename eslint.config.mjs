@@ -7,8 +7,8 @@ const config = [
   },
   ...next,
   {
-    // Compatibility override for existing animation/motion components that read external state on mount.
-    // New files remain subject to the default rule.
+    // Compatibility override for existing components that read external state (theme, viewport, media query,
+    // animation frames) inside an effect on mount. New files remain subject to the default rule.
     files: [
       'components/AgentNetworkCanvas.tsx',
       'components/AnimatedComponents.tsx',
@@ -26,8 +26,8 @@ const config = [
     },
   },
   {
-    // Compatibility override for existing animation components. New files remain subject to the default rule.
-    files: ['components/AnimatedComponents.tsx', 'components/JsonLd.tsx'],
+    // Compatibility override for the existing animated counter component. New files remain subject to the default rule.
+    files: ['components/AnimatedComponents.tsx'],
     rules: {
       'react-hooks/purity': 'off',
     },

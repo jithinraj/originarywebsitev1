@@ -78,9 +78,7 @@ export default function VerifyPage() {
           <Terminal
             lines={[
               { kind: 'out', text: '$ pnpm dlx @peac/cli@0.16.2 verify ./record.jws --public-key ./jwks.json' },
-              { kind: 'ok', text: 'Signature valid (offline)' },
-              { kind: 'out', text: 'issuer  https://issuer.example.invalid' },
-              { kind: 'out', text: 'record  POST /v1/market-data/search - 200' },
+              { kind: 'ok', text: 'Signature valid (offline).' },
             ]}
           />
         }

@@ -31,7 +31,10 @@ function scanFile(abs) {
 }
 
 // lstat everywhere: symlinks are never followed or scanned, so a link cannot pull the scan outside the repo.
-function walk(dir) {
+// On machine surfaces (public/, .github/) a symlink is rejected outright rather than silently skipped, so it
+// cannot hide a stale endpoint reference behind a link the scanner would otherwise ignore.
+const MACHINE_ROOTS = new Set(['public', '.github'])
+function walk(dir, rejectSymlinks) {
   let entries
   try {
     entries = readdirSync(dir)
@@ -47,13 +50,16 @@ function walk(dir) {
     } catch {
       continue
     }
-    if (lst.isSymbolicLink()) continue
-    if (lst.isDirectory()) walk(p)
+    if (lst.isSymbolicLink()) {
+      if (rejectSymlinks) found.push(`${relative(ROOT, p).split('\\').join('/')}: symlink not allowed on a public machine surface`)
+      continue
+    }
+    if (lst.isDirectory()) walk(p, rejectSymlinks)
     else if (lst.isFile()) scanFile(p)
   }
 }
 
-for (const r of ROOTS) walk(join(ROOT, r))
+for (const r of ROOTS) walk(join(ROOT, r), MACHINE_ROOTS.has(r))
 
 // Root-level files (README, next.config.js, other root docs/config).
 let rootEntries

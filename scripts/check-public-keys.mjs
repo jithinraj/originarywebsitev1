@@ -105,6 +105,8 @@ walk(PUBLIC, files, false)
 // Duplicate detection is GLOBAL across every published key file, not per-file.
 const kids = new Set()
 const material = new Set()
+let keyFiles = 0
+let keyEntries = 0
 
 for (const abs of files) {
   const rel = abs.slice(ROOT.length + 1)
@@ -127,6 +129,8 @@ for (const abs of files) {
     errors.push(`${rel}: empty or malformed JWKS`)
     continue
   }
+  keyFiles++
+  keyEntries += keys.length
 
   for (const k of keys) {
     if (k === null || typeof k !== 'object' || Array.isArray(k)) {
@@ -172,4 +176,8 @@ if (errors.length) {
   if (DEBUG) for (const e of errors) console.error(`  ${e}`)
   process.exit(1)
 }
-console.log(`check:public-keys OK - ${files.length} JSON file(s) scanned, key material publishable.`)
+if (keyFiles === 0) {
+  console.log(`check:public-keys OK - ${files.length} JSON file(s) scanned; 0 key files found; no public signing material present.`)
+} else {
+  console.log(`check:public-keys OK - ${files.length} JSON file(s) scanned; ${keyFiles} key file(s); ${keyEntries} key ${keyEntries === 1 ? 'entry' : 'entries'}; key material publishable.`)
+}

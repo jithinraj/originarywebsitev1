@@ -71,8 +71,31 @@ for (const [name, files, expectPass] of CASES) {
   console.log(`  ${ok ? 'PASS' : 'FAIL'}  symlinked dir is not followed (external ref not scanned) (expected pass, got ${pass ? 'pass' : 'fail'})`)
 }
 
+// a symlink on a public machine surface must be REJECTED (fail closed), not silently skipped
+{
+  const dir = mkdtempSync(join(tmpdir(), 'retired-pubsym-'))
+  mkdirSync(join(dir, 'scripts'), { recursive: true })
+  mkdirSync(join(dir, 'public', '.well-known'), { recursive: true })
+  cpSync(GATE, join(dir, 'scripts', 'check-retired-endpoints.mjs'))
+  const external = mkdtempSync(join(tmpdir(), 'retired-pubext-'))
+  writeFileSync(join(external, 'stale.txt'), 'https://www.originary.xyz/.well-known/jwks.json\n')
+  symlinkSync(join(external, 'stale.txt'), join(dir, 'public', '.well-known', 'linked.txt'))
+  let pass
+  try {
+    execFileSync(process.execPath, ['scripts/check-retired-endpoints.mjs'], { cwd: dir, stdio: 'pipe' })
+    pass = true
+  } catch {
+    pass = false
+  }
+  rmSync(dir, { recursive: true, force: true })
+  rmSync(external, { recursive: true, force: true })
+  const ok = pass === false
+  if (!ok) failures++
+  console.log(`  ${ok ? 'PASS' : 'FAIL'}  symlink on a public machine surface is rejected (expected fail, got ${pass ? 'pass' : 'fail'})`)
+}
+
 if (failures) {
   console.error(`\ncheck-retired-endpoints tests FAILED: ${failures} case(s).`)
   process.exit(1)
 }
-console.log(`\ncheck-retired-endpoints tests OK - ${CASES.length + 1} cases.`)
+console.log(`\ncheck-retired-endpoints tests OK - ${CASES.length + 2} cases.`)
