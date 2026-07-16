@@ -76,8 +76,9 @@ pnpm dlx @peac/cli@0.16.2 verify ./s/valid/basic-record.jws \\
         <p style={{ fontFamily: SANS, fontSize: 13, lineHeight: 1.55, color: PALETTE.faint, margin: '12px 0 0' }}>
           On success the CLI prints <code style={{ fontFamily: MONO, color: PALETTE.ink }}>Signature valid (offline)</code>;
           a one-byte change fails with <code style={{ fontFamily: MONO, color: PALETTE.ink }}>E_INVALID_SIGNATURE</code>.
-          A valid result confirms the record was signed by the supplied key over exactly these bytes. It does not
-          establish that the supplied key is authorized by the declared issuer.{' '}
+          A valid result confirms that the signature is valid under the public key you supplied over the exact
+          protected header and payload bytes. It does not establish that the supplied key is authorized by the
+          declared issuer.{' '}
           <a href="#proves" style={{ color: PALETTE.success, textDecoration: 'underline', textUnderlineOffset: 3 }}>
             What this checks
           </a>
