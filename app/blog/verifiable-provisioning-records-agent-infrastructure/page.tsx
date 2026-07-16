@@ -530,7 +530,7 @@ export default function Page() {
           <p>The useful question is not &quot;can we log this?&quot;</p>
           <p>The useful question is:</p>
           <div style={pullQuote}>
-            Can we verify what happened after the original system is gone, unavailable, or not
+            Can we verify what the issuer recorded after the original system is gone, unavailable, or not
             trusted as the only source?
           </div>
           <p>That is the gap PEAC is built for.</p>

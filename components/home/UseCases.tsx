@@ -32,7 +32,7 @@ const tiles: Tile[] = [
   },
   {
     title: 'Audit and partner review',
-    q: 'Can a customer, auditor, or partner verify what happened without internal access?',
+    q: 'Can a customer, auditor, or partner verify what the issuer recorded without internal access?',
   },
 ]
 

@@ -90,7 +90,7 @@ export function Hero() {
             }}
           >
             Originary helps teams create signed records so customers, partners,
-            auditors, and internal reviewers can verify what happened without
+            auditors, and internal reviewers can verify what the issuer recorded without
             internal logs or dashboard access.
           </p>
           <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>

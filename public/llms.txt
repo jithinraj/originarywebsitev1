@@ -5,7 +5,7 @@ records of machine actions across organizational boundaries.
 
 Originary Verify helps teams create signed records when APIs, agents, MCP
 tools, gateways, payment flows, and provisioning systems act, so another
-party can verify what happened without private-log or dashboard access.
+party can verify what the issuer recorded without private-log or dashboard access.
 
 Current protocol release: PEAC v0.16.2, which adds evidence patterns for
 paid resources, paid MCP tool records, linked counterparty acknowledgments,
@@ -23,7 +23,7 @@ Contact: contact@originary.xyz
 
 Portable verification for API, MCP, agent, gateway, payment, and
 provisioning workflows. Originary Verify creates signed records so another
-party can verify what happened without internal logs, dashboard access, or
+party can verify what the issuer recorded without internal logs, dashboard access, or
 vendor runtime.
 
 ## Core pages
@@ -69,5 +69,5 @@ interaction records, maintained by Originary.
 ## Notes
 
 Originary does not replace gateways, observability, payment rails, policy
-engines, or runtimes. It records selected facts so another party can verify
-what happened later.
+engines, or runtimes. It records selected facts so another party can later
+verify what the issuer recorded.
