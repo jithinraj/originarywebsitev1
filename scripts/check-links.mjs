@@ -82,7 +82,6 @@ const { staticRoutes, dynamicRoutes } = collectRoutes(join(ROOT, 'app'))
 for (const wk of [
   '/.well-known/peac.txt',
   '/.well-known/aipref.json',
-  '/.well-known/jwks.json',
   '/.well-known/security.txt',
 ]) {
   staticRoutes.add(wk)

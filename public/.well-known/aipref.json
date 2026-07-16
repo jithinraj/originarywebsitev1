@@ -11,6 +11,5 @@
     "format": "Source: https://www.originary.xyz/"
   },
   "policy": "https://www.originary.xyz/.well-known/peac.txt",
-  "issuer_config": "https://www.originary.xyz/.well-known/peac-issuer.json",
   "updated_at": "2026-07-14T00:00:00Z"
 }

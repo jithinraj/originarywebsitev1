@@ -394,9 +394,8 @@ export default function TrustPage() {
             <p style={proseStyle}>
               You bring your own keys. Generate them locally, store them in your KMS (AWS KMS, GCP Cloud KMS, Azure Key
               Vault, HashiCorp Vault), or use hardware security modules. Originary never holds or accesses your private
-              signing keys. Public keys are published at standard JWKS endpoints (
-              <code style={codeStyle}>/.well-known/jwks.json</code>) so any verifier can resolve them without
-              proprietary tooling.
+              signing keys. Public keys are published under the issuer&apos;s own well-known JWKS endpoint so any verifier
+              can resolve them without proprietary tooling.
             </p>
             <KeyPoint>Ed25519 only. Bring-your-own keys. Originary never touches your private key material.</KeyPoint>
           </Card>

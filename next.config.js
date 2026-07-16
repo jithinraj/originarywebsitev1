@@ -98,17 +98,6 @@ const nextConfig = {
         ],
       },
       {
-        source: '/.well-known/jwks.json',
-        headers: [
-          { key: 'Content-Type', value: 'application/json; charset=utf-8' },
-          // Bounded revalidation, not immutable: JWKS rotates. Previous keys are
-          // retained through overlap so cached copies stay verifiable during rotation.
-          { key: 'Cache-Control', value: 'public, max-age=300, s-maxage=300, must-revalidate' },
-          { key: 'Access-Control-Allow-Origin', value: '*' },
-          { key: 'X-Robots-Tag', value: 'noindex' },
-        ],
-      },
-      {
         source: '/aipref.json',
         headers: [
           { key: 'X-Robots-Tag', value: 'noindex' },

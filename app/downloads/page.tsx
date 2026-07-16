@@ -174,7 +174,7 @@ npm i @peac/mcp-server`}
               Verify a signed record locally:
             </div>
             <pre className="home-code" style={{ marginTop: 8, marginBottom: 0 }}>
-{`npx -y @peac/cli verify ./record.jws`}
+{`npx -y @peac/cli@0.16.2 verify ./record.jws --public-key ./jwks.json`}
             </pre>
           </Card>
         </PageSection>

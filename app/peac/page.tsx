@@ -233,7 +233,7 @@ export default function PeacPage() {
               <h3 style={subHead}>Travels across systems</h3>
               <p style={body}>
                 Records are carried as compact JWS strings or exported as bundles. They do not depend on the
-                issuer's dashboard, database, or API to stay verifiable.
+                issuer&apos;s dashboard, database, or API to stay verifiable.
               </p>
             </Card>
             <Card>
@@ -344,8 +344,7 @@ export default function PeacPage() {
               </Mono>
               <h3 style={subHead}>Who asserted it</h3>
               <p style={body}>
-                Ed25519 signature over the canonical JWS signing input. Issuer key is published once at{' '}
-                <code style={code}>/.well-known/peac-issuer.json</code>. Verification is offline.
+                Ed25519 signature over the canonical JWS signing input. Verification is offline with a public key you supply.
               </p>
             </Card>
           </div>
@@ -478,7 +477,7 @@ export default function PeacPage() {
           <Card padding={36} style={{ maxWidth: 760, margin: '0 auto' }}>
             <pre className="home-code" style={{ margin: 0 }}>
 {`npm i -g @peac/cli
-npx -y @peac/cli verify ./record.jws`}
+npx -y @peac/cli@0.16.2 verify ./record.jws --public-key ./jwks.json`}
             </pre>
             <p
               style={{

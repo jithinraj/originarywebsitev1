@@ -22,7 +22,6 @@ Policy: https://www.originary.xyz/.well-known/peac.txt
 
 PEAC wire version: 0.2
 Record signing: EdDSA (Ed25519)
-JWKS: https://www.originary.xyz/.well-known/jwks.json
 
 /* LEGAL */
 

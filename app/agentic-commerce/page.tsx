@@ -195,7 +195,7 @@ export default function AgenticCommercePage() {
               </p>
               <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, marginTop: 14, maxWidth: '52ch' }}>
                 The record preserves the payment artifact as evidence: a signed settlement receipt travels in the
-                record's proofs, and settlement metadata is carried as a digest by default so raw payment headers never
+                record&apos;s proofs, and settlement metadata is carried as a digest by default so raw payment headers never
                 enter the signed payload.
               </p>
               <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, marginTop: 14, maxWidth: '52ch' }}>
@@ -203,7 +203,7 @@ export default function AgenticCommercePage() {
                 artifacts inside portable records and evidence bundles that verify offline.
               </p>
               <StepLabel>Verify it</StepLabel>
-              <CodeBlock>npx -y @peac/cli verify ./payment-event.jws --public-key ./jwks.json</CodeBlock>
+              <CodeBlock>npx -y @peac/cli@0.16.2 verify ./payment-event.jws --public-key ./jwks.json</CodeBlock>
               <StepLabel>Expected</StepLabel>
               <Terminal
                 lines={[

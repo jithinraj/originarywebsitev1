@@ -167,7 +167,7 @@ export default function ProvisioningRecordsPage() {
               <StepLabel>Verify on any machine, later</StepLabel>
               <Terminal
                 lines={[
-                  { kind: 'out', text: '$ npx -y @peac/cli verify ./provisioning-event.jws --public-key ./jwks.json' },
+                  { kind: 'out', text: '$ npx -y @peac/cli@0.16.2 verify ./provisioning-event.jws --public-key ./jwks.json' },
                   { kind: 'ok', text: 'Signature valid (offline)' },
                   { kind: 'out', text: 'issuer  https://platform.vendor.example' },
                   { kind: 'out', text: 'event   created - deployment - prj_4fd2' },
@@ -232,7 +232,7 @@ export default function ProvisioningRecordsPage() {
       <InkBand>
         <InkHeading maxWidth="24ch">Add records to one provisioning workflow this week.</InkHeading>
         <div style={{ maxWidth: 760, margin: '28px auto 0', textAlign: 'left' }}>
-          <CodeBlock tone="ink">npx -y @peac/cli verify ./provisioning-event.jws --public-key ./jwks.json</CodeBlock>
+          <CodeBlock tone="ink">npx -y @peac/cli@0.16.2 verify ./provisioning-event.jws --public-key ./jwks.json</CodeBlock>
         </div>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <InkButton href="/contact" primary>

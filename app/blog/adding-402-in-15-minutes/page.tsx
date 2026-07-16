@@ -152,8 +152,7 @@ Cache-Control: no-store
   "amount": "0.05",
   "currency": "USD",
   "accepted": ["x402", "stripe"],
-  "resource": "/priced",
-  "verify_with": "https://www.originary.xyz/.well-known/peac-issuer.json"
+  "resource": "/priced"
 }`}</pre>
 
           <h2>Step 2: the Express challenge helper</h2>
@@ -223,7 +222,6 @@ function challenge402(req, res) {
     currency: 'USD',
     accepted: ['x402', 'stripe'],
     resource: req.path,
-    verify_with: 'https://www.originary.xyz/.well-known/peac-issuer.json',
   })
 }`}</pre>
 

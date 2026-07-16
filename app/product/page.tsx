@@ -171,7 +171,7 @@ export default function ProductPage() {
             <StepLabel>Verify on any machine, later</StepLabel>
             <Terminal
               lines={[
-                { kind: 'out', text: '$ npx -y @peac/cli verify ./record.jws --public-key ./jwks.json' },
+                { kind: 'out', text: '$ npx -y @peac/cli@0.16.2 verify ./record.jws --public-key ./jwks.json' },
                 { kind: 'ok', text: 'Signature valid (offline)' },
                 { kind: 'out', text: 'issuer  https://api.vendor.example' },
               ]}

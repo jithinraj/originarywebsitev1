@@ -1,152 +1,25 @@
-'use client'
-
-import { useState } from 'react'
 import { PALETTE } from '../home/palette'
 import { SANS, MONO } from '../home/typography'
-import { StatusBadge, type RecordRow } from './parts'
+import type { RecordRow } from './parts'
 
-/* Sample record (base64url-shaped placeholder). This console shows the verification
-   result for the bundled sample; live verification runs in the browser or via the CLI. */
-const SAMPLE_JWS = `eyJhbGciOiJFZERTQSIsImtpZCI6IjIwMjYtMDYta2V5MSIsInR5cCI6ImludGVy
-YWN0aW9uLXJlY29yZCtqd3QifQ.eyJpc3MiOiJodHRwczovL2FwaS52ZW5kb3Iu
-ZXhhbXBsZSIsImFjdGlvbiI6InRvb2xzLmNhbGwgc2VhcmNoX2RvY3MiLCJwb2xp
-Y3kiOnsicmVmIjoidGVybXM6djMifSwicmVzdWx0Ijp7InN0YXR1cyI6MjAwfX0.
-x4mUq2Vh_sample_signature_placeholder`
-
-const RESULT_ROWS: RecordRow[] = [
-  { label: 'Signature', value: 'valid (Ed25519)' },
-  { label: 'Issuer', value: 'https://api.vendor.example' },
-  { label: 'Key', value: 'kid 2026-06-key1 - from /.well-known/jwks.json' },
-  { label: 'Action', value: 'tools.call search_docs' },
-  { label: 'Policy', value: 'terms:v3 - sha256:81af2c...' },
-  { label: 'Result', value: 'allowed - 200 - sha256:9a3c1d...' },
-  { label: 'Time', value: '2026-06-12T14:08:11Z' },
+/*
+ * Illustrative record shape. This is NOT a verifier: it performs no cryptographic check and never shows a
+ * "valid" result. It shows the shape of a signed record and the exact, version-pinned offline CLI command that
+ * actually verifies one. The issuer is a deliberately non-resolving example (issuer.example.invalid) so nothing
+ * here can be mistaken for a real verified record.
+ */
+const SPECIMEN_ROWS: RecordRow[] = [
+  { label: 'Type', value: 'org.peacprotocol/mcp' },
+  { label: 'Issuer', value: 'https://issuer.example.invalid' },
+  { label: 'Action', value: 'tools.call search' },
+  { label: 'Result', value: 'allowed - 200' },
+  { label: 'Algorithm', value: 'Ed25519 (EdDSA), compact JWS' },
 ]
 
-const TABS = ['Paste JWS', 'Upload .jws', 'Upload bundle'] as const
-
 export function VerifyConsole() {
-  const [tab, setTab] = useState<(typeof TABS)[number]>('Paste JWS')
-  const [input, setInput] = useState(SAMPLE_JWS)
-  const [state, setState] = useState<'sample' | 'edited'>('sample')
-
-  const edited = input.trim() !== SAMPLE_JWS.trim()
-
   return (
     <div>
       <div style={{ border: `1px solid ${PALETTE.rule}`, background: PALETTE.paper }}>
-        {/* tabs */}
-        <div style={{ display: 'flex', borderBottom: `1px solid ${PALETTE.hairline}` }}>
-          {TABS.map((t) => {
-            const on = t === tab
-            return (
-              <button
-                key={t}
-                type="button"
-                onClick={() => setTab(t)}
-                style={{
-                  fontFamily: MONO,
-                  fontSize: 11.5,
-                  letterSpacing: '0.03em',
-                  padding: '11px 16px',
-                  background: on ? PALETTE.bg : 'transparent',
-                  border: 'none',
-                  borderBottom: on ? `2px solid ${PALETTE.accent}` : '2px solid transparent',
-                  color: on ? PALETTE.ink : PALETTE.faint,
-                  cursor: 'pointer',
-                }}
-              >
-                {t}
-              </button>
-            )
-          })}
-        </div>
-
-        <div style={{ padding: 18 }}>
-          {tab === 'Paste JWS' ? (
-            <textarea
-              aria-label="Record input"
-              value={input}
-              spellCheck={false}
-              onChange={(e) => setInput(e.target.value)}
-              rows={6}
-              style={{
-                width: '100%',
-                resize: 'vertical',
-                fontFamily: MONO,
-                fontSize: 12,
-                lineHeight: 1.6,
-                color: PALETTE.ink,
-                background: PALETTE.bg,
-                border: `1px solid ${PALETTE.hairline}`,
-                padding: '12px 14px',
-                wordBreak: 'break-all',
-                boxSizing: 'border-box',
-              }}
-            />
-          ) : (
-            <div
-              style={{
-                fontFamily: SANS,
-                fontSize: 14,
-                color: PALETTE.muted,
-                background: PALETTE.bg,
-                border: `1px dashed ${PALETTE.rule}`,
-                padding: '28px 18px',
-                textAlign: 'center',
-              }}
-            >
-              Drag a {tab === 'Upload .jws' ? '.jws record' : 'dispute bundle'} here, or use the pasted sample to see a
-              result.
-            </div>
-          )}
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap', marginTop: 14 }}>
-            <button
-              type="button"
-              className="tamper-btn"
-              onClick={() => setState(edited ? 'edited' : 'sample')}
-              style={{
-                fontFamily: SANS,
-                fontSize: 14,
-                fontWeight: 500,
-                color: PALETTE.paper,
-                background: PALETTE.ink,
-                border: `1px solid ${PALETTE.ink}`,
-                padding: '11px 18px',
-              }}
-            >
-              Verify record
-            </button>
-            <span style={{ fontFamily: SANS, fontSize: 13, color: PALETTE.faint }}>
-              or provide a JWKS URL / public key. Optional.
-            </span>
-            {edited ? (
-              <button
-                type="button"
-                onClick={() => {
-                  setInput(SAMPLE_JWS)
-                  setState('sample')
-                }}
-                style={{
-                  fontFamily: MONO,
-                  fontSize: 11.5,
-                  color: PALETTE.accent,
-                  background: 'transparent',
-                  border: 'none',
-                  cursor: 'pointer',
-                  textDecoration: 'underline',
-                }}
-              >
-                restore sample
-              </button>
-            ) : null}
-          </div>
-        </div>
-      </div>
-
-      {/* result */}
-      <div style={{ marginTop: 16, border: `1px solid ${PALETTE.rule}`, background: PALETTE.paper }}>
         <div
           style={{
             display: 'flex',
@@ -158,55 +31,59 @@ export function VerifyConsole() {
           }}
         >
           <span style={{ fontFamily: MONO, fontSize: 12, color: PALETTE.ink, fontWeight: 500 }}>
-            Verification result
+            Illustrative record shape
           </span>
-          {state === 'edited' ? (
-            <StatusBadge kind="neutral">sample only</StatusBadge>
-          ) : (
-            <StatusBadge kind="verified">valid</StatusBadge>
-          )}
+          <span style={{ fontFamily: MONO, fontSize: 11, letterSpacing: '0.04em', color: PALETTE.faint }}>
+            example - not verified here
+          </span>
         </div>
 
-        {state === 'edited' ? (
-          <div style={{ padding: '18px', fontFamily: SANS, fontSize: 14.5, lineHeight: 1.6, color: PALETTE.muted }}>
-            This console verifies the bundled sample. To check your own record, run it offline with{' '}
-            <code style={{ fontFamily: MONO, color: PALETTE.ink }}>@peac/cli verify --public-key</code>, or use the
-            self-hosted verifier. Nothing you paste here is sent to a server.
-          </div>
-        ) : (
-          <>
-            <dl className="spec-rows" style={{ padding: '6px 18px 10px' }}>
-              {RESULT_ROWS.map((r) => (
-                <div className="spec-row" key={r.label}>
-                  <dt>{r.label}</dt>
-                  <dd>{r.value}</dd>
-                </div>
-              ))}
-            </dl>
-            <div
-              style={{
-                padding: '12px 18px 16px',
-                fontFamily: SANS,
-                fontSize: 13,
-                lineHeight: 1.55,
-                color: PALETTE.faint,
-                borderTop: `1px solid ${PALETTE.hairline}`,
-              }}
-            >
-              This confirms the issuer signed these claims and the record was not changed after signing. It does not
-              assert the claims are true.{' '}
-              <a href="#proves" style={{ color: PALETTE.success, textDecoration: 'underline', textUnderlineOffset: 3 }}>
-                What this proves
-              </a>
-              .
+        <dl className="spec-rows" style={{ padding: '10px 18px 12px' }}>
+          {SPECIMEN_ROWS.map((r) => (
+            <div className="spec-row" key={r.label}>
+              <dt>{r.label}</dt>
+              <dd>{r.value}</dd>
             </div>
-          </>
-        )}
+          ))}
+        </dl>
       </div>
 
-      <p style={{ fontFamily: SANS, fontSize: 12.5, color: PALETTE.faint, marginTop: 16, lineHeight: 1.55 }}>
-        Verification runs in your browser or via the CLI. Records you paste are never sent to a server or stored.
-      </p>
+      <div style={{ marginTop: 16, border: `1px solid ${PALETTE.rule}`, background: PALETTE.paper, padding: 18 }}>
+        <span style={{ fontFamily: MONO, fontSize: 12, color: PALETTE.ink, fontWeight: 500 }}>
+          Verify a record offline
+        </span>
+        <p style={{ fontFamily: SANS, fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '8px 0 12px' }}>
+          Use the PEAC CLI with a record and a public key you supply. Verification runs locally; nothing is
+          uploaded to Originary. Generate a sample and verify it:
+        </p>
+        <pre
+          style={{
+            fontFamily: MONO,
+            fontSize: 12,
+            lineHeight: 1.7,
+            color: PALETTE.ink,
+            background: PALETTE.bg,
+            border: `1px solid ${PALETTE.hairline}`,
+            padding: '12px 14px',
+            overflowX: 'auto',
+            margin: 0,
+          }}
+        >
+{`pnpm dlx @peac/cli@0.16.2 samples generate -o ./s
+pnpm dlx @peac/cli@0.16.2 verify ./s/valid/basic-record.jws \\
+  --public-key ./s/bundles/sandbox-jwks.json`}
+        </pre>
+        <p style={{ fontFamily: SANS, fontSize: 13, lineHeight: 1.55, color: PALETTE.faint, margin: '12px 0 0' }}>
+          On success the CLI prints <code style={{ fontFamily: MONO, color: PALETTE.ink }}>Signature valid (offline)</code>;
+          a one-byte change fails with <code style={{ fontFamily: MONO, color: PALETTE.ink }}>E_INVALID_SIGNATURE</code>.
+          A valid result confirms the record was signed by the supplied key over exactly these bytes. It does not
+          establish that the supplied key is authorized by the declared issuer.{' '}
+          <a href="#proves" style={{ color: PALETTE.success, textDecoration: 'underline', textUnderlineOffset: 3 }}>
+            What this checks
+          </a>
+          .
+        </p>
+      </div>
     </div>
   )
 }
