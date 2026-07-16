@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: 'https://www.originary.xyz/verify',
     type: 'website',
-    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary verifier' }],
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary offline verification guide' }],
   },
   twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: ['/og'] },
 }
@@ -54,29 +54,16 @@ const jsonLd = {
         { '@type': 'ListItem', position: 2, name: 'Verify', item: 'https://www.originary.xyz/verify' },
       ],
     },
-    {
-      '@type': 'SoftwareApplication',
-      '@id': 'https://www.originary.xyz/verify#app',
-      name: 'Originary record verifier',
-      applicationCategory: 'DeveloperApplication',
-      operatingSystem: 'Web',
-      url: 'https://www.originary.xyz/verify',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-    },
   ],
 }
 
-const SAMPLES: Array<{ name: string; status: string; tone: 'ok' | 'deny' | 'fail'; href: string }> = [
-  { name: 'api-call.jws', status: 'valid', tone: 'ok', href: '/records#api' },
-  { name: 'mcp-tool-run.jws', status: 'valid', tone: 'ok', href: '/mcp#specimen' },
-  { name: 'gateway-deny.jws', status: 'denied', tone: 'deny', href: '/records#gateway' },
-  { name: 'payment-event.jws', status: 'valid', tone: 'ok', href: '/agentic-commerce#example' },
-  { name: 'provisioning.jws', status: 'valid', tone: 'ok', href: '/records#provisioning' },
-  { name: 'tampered.jws', status: 'fails', tone: 'fail', href: '/records#api' },
+const SAMPLES: Array<{ name: string; href: string }> = [
+  { name: 'API call record', href: '/records#api' },
+  { name: 'MCP tool-run record', href: '/mcp#specimen' },
+  { name: 'AI gateway decision record', href: '/records#gateway' },
+  { name: 'Payment event record', href: '/agentic-commerce#example' },
+  { name: 'Provisioning record', href: '/records#provisioning' },
 ]
-
-const toneColor = (t: 'ok' | 'deny' | 'fail') =>
-  t === 'ok' ? PALETTE.success : t === 'deny' ? PALETTE.warn : '#9a3b2e'
 
 export default function VerifyPage() {
   return (
@@ -84,20 +71,18 @@ export default function VerifyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Verify"
-        title="Check a record. No account, no chain."
-        sub="Paste a record or upload a file. Verification runs against the issuer's published key: it confirms the signature, decodes the claims, and tells you exactly what passed and what it does not prove. Nothing is stored."
+        title="Verify a signed record offline"
+        sub="Use the PEAC CLI with a record and a public key you supply. Verification runs locally; nothing is uploaded to Originary."
         display
         aside={
           <Terminal
             lines={[
-              { kind: 'out', text: '$ npx -y @peac/cli verify ./record.jws --public-key ./jwks.json' },
-              { kind: 'ok', text: 'Signature valid (offline)' },
-              { kind: 'out', text: 'issuer  https://api.vendor.example' },
-              { kind: 'out', text: 'record  POST /v1/market-data/search - 200' },
+              { kind: 'out', text: '$ pnpm dlx @peac/cli@0.16.2 verify ./record.jws --public-key ./jwks.json' },
+              { kind: 'ok', text: 'Signature valid (offline).' },
             ]}
           />
         }
-        strip={['Public verifier', 'Offline by design', 'Nothing stored', 'PEAC ' + FACTS.currentVersion]}
+        strip={['Supplied key', 'Offline by design', 'Nothing uploaded', 'PEAC ' + FACTS.currentVersion]}
       >
         <AnchorLine style={{ marginTop: 8 }}>Logs stay local. Signed records travel.</AnchorLine>
       </PageHero>
@@ -109,7 +94,7 @@ export default function VerifyPage() {
 
       {/* Samples */}
       <PageSection paddingTop={0} paddingBottom={56} background={PALETTE.paper}>
-        <SectionHeading index="01" eyebrow="Try a sample" title="Don't have a record yet? Verify one of ours." />
+        <SectionHeading index="01" eyebrow="Record types" title="Browse a record type, then generate a sample to verify." />
         <div
           style={{
             display: 'grid',
@@ -132,23 +117,14 @@ export default function VerifyPage() {
                 textDecoration: 'none',
               }}
             >
-              <span style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 13, color: PALETTE.ink }}>{s.name}</span>
-              <span
-                style={{
-                  fontFamily: 'var(--font-plex-mono)',
-                  fontSize: 11,
-                  letterSpacing: '0.04em',
-                  color: toneColor(s.tone),
-                }}
-              >
-                {s.status}
-              </span>
+              <span style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 14, color: PALETTE.ink }}>{s.name}</span>
+              <span style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 12, color: PALETTE.faint }}>-&gt;</span>
             </a>
           ))}
         </div>
         <StepLabel>Prefer the command line?</StepLabel>
-        <CodeBlock>{`pnpm dlx @peac/cli samples generate -o ./s
-pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
+        <CodeBlock>{`pnpm dlx @peac/cli@0.16.2 samples generate -o ./s
+pnpm dlx @peac/cli@0.16.2 verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
       </PageSection>
 
       <PullLine accent="Nothing stored.">
@@ -158,16 +134,16 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
       {/* What this proves */}
       <PageSection paddingTop={56} paddingBottom={56}>
         <div id="proves" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading index="02" eyebrow="What this proves" title="A green check is a precise claim." mark="sealCheck" />
+          <SectionHeading index="02" eyebrow="What verification checks" title="What a valid CLI result establishes." mark="sealCheck" />
           <FlowPanel
-            label="Sequence diagram: you paste a record into the verifier, the issuer's published key resolves or you supply one offline, the Ed25519 signature and bound digests are checked, and the result is a precise green check."
+            label="Sequence diagram: you supply a public key, the CLI checks the Ed25519 signature offline, and the result is a precise pass or a deterministic failure."
             actors={['you', 'verifier']}
             beats={[
-              { kind: 'msg', dir: 'ltr', slot: 1, label: 'paste record - or upload .jws / bundle' },
-              { kind: 'evt', slot: 2, label: 'key resolves from issuer config - or you supply it offline' },
-              { kind: 'evt', slot: 3, label: 'Ed25519 signature + bound digests checked - nothing stored' },
-              { kind: 'rec', slot: 4, label: 'valid - issuer signed exactly these claims' },
-              { kind: 'chk', slot: 5, label: 'precise claim: unchanged since signing, key resolves, digests match' },
+              { kind: 'msg', dir: 'ltr', slot: 1, label: 'run the CLI with a record and a public key you supply' },
+              { kind: 'evt', slot: 2, label: 'you supply the public key - offline, nothing fetched' },
+              { kind: 'evt', slot: 3, label: 'Ed25519 signature and declared record structure checked - nothing stored' },
+              { kind: 'rec', slot: 4, label: 'valid - the signature verifies under the public key you supplied' },
+              { kind: 'chk', slot: 5, label: 'precise claim: unchanged since signing' },
             ]}
             style={{ marginBottom: 22 }}
           />
@@ -177,17 +153,16 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
                 heading: 'A valid result means',
                 tone: 'verified',
                 items: [
-                  'The issuer signed these exact claims.',
-                  'The record was not changed after signing.',
-                  "The signing key resolves to the issuer's published keys.",
-                  'Any bound digest matches the content it covers.',
+                  'The signature is valid under the public key you supplied.',
+                  'The record was not altered after signing.',
+                  'The claims decode exactly as they were signed.',
                 ],
               },
               {
                 heading: 'It still does not mean',
                 tone: 'denied',
                 items: [
-                  'That the issuer told the truth.',
+                  'That the supplied key is authorized by the declared issuer.',
                   'That the policy was correct or legally sufficient.',
                   'That you have seen the full payload.',
                   'That every related event was shared.',
@@ -203,25 +178,15 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
         <SectionHeading
           index="03"
           eyebrow="Network behaviour, precisely"
-          title="Three ways to verify. Different network rules."
+          title="Supplied-key verification is offline."
         />
         <DataTable
           head={['How', 'Network', 'What it does']}
           rows={[
             [
               'verify --public-key',
-              <span style={{ color: PALETTE.success, fontFamily: 'var(--font-plex-mono)', fontSize: 12 }}>none</span>,
-              'You supply the key. The signature is checked entirely offline. No fetch, no callback.',
-            ],
-            [
-              'verify (default)',
-              <span style={{ color: PALETTE.warn, fontFamily: 'var(--font-plex-mono)', fontSize: 12 }}>may resolve key</span>,
-              "Resolves the issuer's published key from its well-known config, then verifies. URL fields are locator hints only; nothing else is fetched.",
-            ],
-            [
-              'this hosted page',
-              <span style={{ color: PALETTE.warn, fontFamily: 'var(--font-plex-mono)', fontSize: 12 }}>explicit only</span>,
-              'Runs in your browser. It only acts on what you paste or upload. Records are not sent to a server or stored.',
+              <span key="net" style={{ color: PALETTE.success, fontFamily: 'var(--font-plex-mono)', fontSize: 12 }}>none</span>,
+              'You supply the public key. The signature is checked entirely offline. No fetch, no callback, nothing uploaded to Originary.',
             ],
           ]}
         />
@@ -232,7 +197,7 @@ pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sa
         <SectionHeading
           index="04"
           eyebrow="Verification profile"
-          title="What the verifier checks."
+          title="PEAC verification capabilities."
           sub={`Current release: PEAC ${FACTS.currentVersion}. These checks compose; the wire format (0.2) and public schema are unchanged.`}
         />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16 }}>

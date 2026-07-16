@@ -50,10 +50,10 @@ export function TamperDemo({
           lines={
             tampered
               ? [
-                  { kind: 'err', text: 'E_INVALID_SIGNATURE' },
-                  { kind: 'out', text: 'one byte changed - the record no longer verifies' },
+                  { kind: 'err', text: 'Verification failed: Ed25519 signature verification failed' },
+                  { kind: 'err', text: '   Code: E_INVALID_SIGNATURE' },
                 ]
-              : [{ kind: 'ok', text: 'Signature valid (offline)' }]
+              : [{ kind: 'ok', text: 'Signature valid (offline).' }]
           }
         />
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', marginTop: 18 }}>

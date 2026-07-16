@@ -218,6 +218,7 @@ export function BitField({
       if (onMove) parent.removeEventListener('mousemove', onMove)
       if (onLeave) parent.removeEventListener('mouseleave', onLeave)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- focus handler is stable; re-subscribing would restart the animation
   }, [mode, tone])
 
   if (mode === 'boot') {

@@ -2,15 +2,13 @@
 # https://www.peacprotocol.org
 #
 # Originary publishes PEAC Protocol and related verification software.
-# This file points automated clients to the current public policy and issuer metadata.
+# This file publishes informational policy and implementation references.
 #
 # Spec: interaction-record+jwt
 # Legacy: peac-receipt/0.1
 # Reference: https://github.com/peacprotocol/peac
 
 version: peac-policy/0.1
-issuer: www.originary.xyz
-verify: https://www.originary.xyz/.well-known/peac-issuer.json
 usage: informational
 attribution: required
 contact: contact@originary.xyz

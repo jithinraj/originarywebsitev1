@@ -11,8 +11,13 @@ export const config = {
     '/downloads/originary-cli-1.0.0-darwin-x64.zip',
     '/downloads/originary-cli-1.0.0-linux-x64.tar.gz',
     '/downloads/originary-cli-1.0.0-win-x64.zip',
+    // Retired issuer-discovery resources, matched explicitly to return 410.
+    '/.well-known/jwks.json',
+    '/.well-known/peac-issuer.json',
   ],
 }
+
+const GONE_ISSUER = new Set(['/.well-known/jwks.json', '/.well-known/peac-issuer.json'])
 
 const GONE_BINARIES = new Set([
   '/downloads/originary-cli-1.0.0-darwin-arm64.zip',
@@ -24,6 +29,21 @@ const GONE_BINARIES = new Set([
 export function proxy(request: NextRequest) {
   const url = request.nextUrl
   const pathname = url.pathname
+
+  // Issuer-discovery resources are retired. Return 410 Gone for all methods (bodyless on HEAD) so clients
+  // stop resolving a key from this origin.
+  if (GONE_ISSUER.has(pathname)) {
+    const isHead = request.method === 'HEAD'
+    return new NextResponse(isHead ? null : 'Gone.\n', {
+      status: 410,
+      headers: {
+        'content-type': 'text/plain; charset=utf-8',
+        'cache-control': 'no-store',
+        'x-robots-tag': 'noindex',
+        'access-control-allow-origin': '*',
+      },
+    })
+  }
 
   // Legacy prebuilt binaries are no longer distributed. Return 410 Gone with a
   // migration message rather than redirecting to an unrelated source archive.

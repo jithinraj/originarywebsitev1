@@ -201,7 +201,7 @@ export default function RecordsPage() {
           eyebrow="01 - API call"
           title="Prove what your API did, without opening your logs."
           answers="Answers which endpoint was called, which terms applied, and what result the API returned."
-          command="npx -y @peac/cli verify ./api-call.jws --public-key ./jwks.json"
+          command="npx -y @peac/cli@0.16.2 verify ./api-call.jws --public-key ./jwks.json"
           recordType="basic-record"
           rows={[
             { label: 'Issuer', value: 'https://api.vendor.example' },
@@ -239,7 +239,7 @@ export default function RecordsPage() {
             }
           >
             <StepLabel>Verify it</StepLabel>
-            <CodeBlock>npx -y @peac/cli verify ./mcp-tool-run.jws --public-key ./jwks.json</CodeBlock>
+            <CodeBlock>npx -y @peac/cli@0.16.2 verify ./mcp-tool-run.jws --public-key ./jwks.json</CodeBlock>
             <StepLabel>Tamper case</StepLabel>
             <p style={{ fontFamily: 'inherit', fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '4px 0 0' }}>
               Change the tool name, the result digest, or one character of the signature and verification fails with{' '}
@@ -271,7 +271,7 @@ export default function RecordsPage() {
             answers="Answers which agent acted, which input digests, and which mandate or policy version the action was bound to."
           >
             <StepLabel>Verify it</StepLabel>
-            <CodeBlock>npx -y @peac/cli verify ./agent-action.jws --public-key ./jwks.json</CodeBlock>
+            <CodeBlock>npx -y @peac/cli@0.16.2 verify ./agent-action.jws --public-key ./jwks.json</CodeBlock>
             <StepLabel>Tamper case</StepLabel>
             <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '4px 0 0' }}>
               Swap the mandate digest for a newer version after the fact and the record still shows the digest that was
@@ -304,12 +304,11 @@ export default function RecordsPage() {
             answers="Answers what happened at the boundary before a request was routed, throttled, or refused. A denied call is still a signed, verifiable event: reviewers see what was refused without reading your gateway logs."
           >
             <StepLabel>Verify it</StepLabel>
-            <CodeBlock>npx -y @peac/cli verify ./gateway-deny.jws --public-key ./jwks.json</CodeBlock>
+            <CodeBlock>npx -y @peac/cli@0.16.2 verify ./gateway-deny.jws --public-key ./jwks.json</CodeBlock>
             <StepLabel>Expected</StepLabel>
             <Terminal
               lines={[
-                { kind: 'ok', text: 'Signature valid (offline)' },
-                { kind: 'out', text: 'decision: denied - the signature is valid, the answer was no' },
+                { kind: 'ok', text: 'Signature valid (offline).' },
               ]}
             />
           </SpecimenIntro>
@@ -347,7 +346,7 @@ export default function RecordsPage() {
             }
           >
             <StepLabel>Verify it</StepLabel>
-            <CodeBlock>npx -y @peac/cli verify ./payment-event.jws --public-key ./jwks.json</CodeBlock>
+            <CodeBlock>npx -y @peac/cli@0.16.2 verify ./payment-event.jws --public-key ./jwks.json</CodeBlock>
             <StepLabel>Tamper case</StepLabel>
             <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '4px 0 0' }}>
               Point the record at a different payment reference after settlement and the original reference stays bound
@@ -392,7 +391,7 @@ export default function RecordsPage() {
             }
           >
             <StepLabel>Verify it</StepLabel>
-            <CodeBlock>npx -y @peac/cli verify ./provisioning-event.jws --public-key ./jwks.json</CodeBlock>
+            <CodeBlock>npx -y @peac/cli@0.16.2 verify ./provisioning-event.jws --public-key ./jwks.json</CodeBlock>
             <StepLabel>Tamper case</StepLabel>
             <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '4px 0 0' }}>
               Backdate the rotation in a spreadsheet all you want: the signed time in the record is the time the issuer
@@ -476,8 +475,8 @@ export default function RecordsPage() {
       <InkBand>
         <InkHeading>Generate these yourself in one command.</InkHeading>
         <div style={{ maxWidth: 760, margin: '28px auto 0', textAlign: 'left' }}>
-          <CodeBlock tone="ink">{`pnpm dlx @peac/cli samples generate -o ./s
-pnpm dlx @peac/cli verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
+          <CodeBlock tone="ink">{`pnpm dlx @peac/cli@0.16.2 samples generate -o ./s
+pnpm dlx @peac/cli@0.16.2 verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
         </div>
         <p style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 12, color: '#7fa98c', marginTop: 18 }}>
           Signature valid (offline) - PEAC {FACTS.currentVersion}

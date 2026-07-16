@@ -160,13 +160,12 @@ export default function McpPage() {
               <StepLabel>Verify on any machine, later</StepLabel>
               <Terminal
                 lines={[
-                  { kind: 'out', text: '$ npx -y @peac/cli verify ./mcp-tool-run.jws --public-key ./jwks.json' },
-                  { kind: 'ok', text: 'Signature valid (offline)' },
-                  { kind: 'out', text: 'issuer  https://mcp.vendor.example' },
-                  { kind: 'out', text: 'tool    search_docs - allowed' },
+                  { kind: 'out', text: '$ npx -y @peac/cli@0.16.2 verify ./mcp-tool-run.jws --public-key ./jwks.json' },
+                  { kind: 'ok', text: 'Signature valid (offline).' },
                   { kind: 'out', text: '$ # now edit one byte of the record and retry' },
-                  { kind: 'out', text: '$ npx -y @peac/cli verify ./mcp-tool-run.tampered.jws --public-key ./jwks.json' },
-                  { kind: 'err', text: 'E_INVALID_SIGNATURE' },
+                  { kind: 'out', text: '$ npx -y @peac/cli@0.16.2 verify ./mcp-tool-run.tampered.jws --public-key ./jwks.json' },
+                  { kind: 'err', text: 'Verification failed: Ed25519 signature verification failed' },
+                  { kind: 'err', text: '   Code: E_INVALID_SIGNATURE' },
                 ]}
               />
               <StepLabel>Two ways tampering shows up</StepLabel>

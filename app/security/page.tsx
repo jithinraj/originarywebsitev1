@@ -72,38 +72,37 @@ export default function Security() {
           <h2>Verification architecture</h2>
           <p>
             Verification is offline by design. Signed records use Ed25519 (RFC 8032) and compact JWS (RFC 7515).
-            Verifiers need only the issuer&apos;s public key. Verification runs in one of three explicit key modes:
-            strict offline (record plus a supplied public key or JWKS, zero network), explicit resolution (the caller
-            authorizes fetching the issuer&apos;s published configuration and JWKS), or cached resolution (a previously
-            resolved key under cache, expiry, and revocation policy). No mode performs an implicit or ambient fetch,
-            and no mode calls back to Originary.
+            Verifiers need only a public key you supply. The supported path is strict offline verification (record plus a
+            supplied public key or JWKS, zero network). Originary does not publish an issuer key for its own domain and
+            performs no key resolution on your behalf.
           </p>
 
           <h2>Key management</h2>
           <p>
-            Signing keys are Ed25519. In self-hosted mode, keys are generated and stored locally. In managed mode, keys
-            are backed by cloud KMS (AWS KMS, GCP Cloud KMS, Azure Key Vault, or HashiCorp Vault). Key rotation follows
-            a 5-state lifecycle with 30-day overlap. Revoked keys are tracked.
+            Signing keys are Ed25519. The self-hosting issuer generates and holds its own keys; key custody, rotation, and
+            revocation are the issuer&apos;s responsibility. Originary does not run signing, key custody, or key resolution
+            as a hosted or managed service today.
           </p>
 
           <h2>Dependency and supply-chain posture</h2>
           <p>
-            All published npm packages are released via GitHub OIDC with provenance attestation. CI runs CodeQL
-            security-extended analysis, dependency review, and audit gates. The repository enforces GitHub Actions SHA
-            pinning. No ambient key discovery is performed. All dependencies are lockfile-pinned.
+            PEAC Protocol and its packages are open source; their security and publishing posture are maintained in the
+            public repository at github.com/peacprotocol/peac. Originary does not run signing, verification, key
+            custody, or record storage as a hosted service today.
           </p>
 
           <h2>Data boundaries</h2>
           <p>
-            Signed records contain policy hashes and decisions, not raw request payloads. In self-hosted mode, no data
-            leaves your environment. In managed mode, only key lifecycle operations or record storage (depending on
-            tier) involve Originary infrastructure. Verification never depends on Originary being online.
+            The examples on this site use selected facts and digests rather than raw request payloads. The documented supplied-key CLI
+            flow runs locally, and the /verify page does not accept record uploads. Supplied-key verification runs offline
+            and does not depend on Originary being online.
           </p>
 
           <h2>Network posture</h2>
           <p>
-            No implicit fetch. No SSRF. URL fields in records are locator hints only and are never automatically
-            dereferenced. The MCP server binds to localhost only with CORS deny-all, rate limiting, and size limits.
+            The supplied-key verification path performs no network fetch and does not dereference URLs carried in the
+            record. URL fields in records are locator hints. The PEAC reference implementation, including its MCP server,
+            is open source; its security posture is documented in the public PEAC repository.
           </p>
 
           <h2>Responsible disclosure</h2>

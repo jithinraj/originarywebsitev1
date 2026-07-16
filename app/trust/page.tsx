@@ -335,7 +335,7 @@ export default function TrustPage() {
                 rows={[
                   ['Where it runs', 'Your infrastructure', 'Your infrastructure'],
                   ['Key custody', 'You. Local or your KMS.', 'You. Local or your KMS.'],
-                  ['Interaction data', 'Never leaves your environment', 'Never leaves your environment'],
+                  ['Interaction data', 'Processed in your environment (self-hosted)', 'Processed in your environment (under agreement)'],
                   ['Support', 'Community (GitHub)', 'Under agreement'],
                   ['Verification', 'Offline, no callback', 'Offline, no callback'],
                 ]}
@@ -392,13 +392,12 @@ export default function TrustPage() {
               (32-byte public keys) and verification is fast.
             </p>
             <p style={proseStyle}>
-              You bring your own keys. Generate them locally, store them in your KMS (AWS KMS, GCP Cloud KMS, Azure Key
-              Vault, HashiCorp Vault), or use hardware security modules. Originary never holds or accesses your private
-              signing keys. Public keys are published at standard JWKS endpoints (
-              <code style={codeStyle}>/.well-known/jwks.json</code>) so any verifier can resolve them without
-              proprietary tooling.
+              You bring your own keys. Generate and store signing keys under infrastructure you control, using an
+              Ed25519-compatible KMS or HSM where appropriate. In the current self-hosted workflow, Originary does not
+              receive or store private signing keys. Issuers distribute public keys through infrastructure they control
+              or out of band; the documented Originary verification flow uses a public key supplied by the verifier.
             </p>
-            <KeyPoint>Ed25519 only. Bring-your-own keys. Originary never touches your private key material.</KeyPoint>
+            <KeyPoint>Ed25519 only. Bring-your-own keys. In the self-hosted workflow, Originary does not receive your private signing keys.</KeyPoint>
           </Card>
 
           <Card padding={28}>
