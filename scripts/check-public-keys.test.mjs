@@ -6,7 +6,7 @@
  * { files: { name: content } } to exercise GLOBAL (cross-file) duplicate detection.
  * The VALID Ed25519 fixture below is a real generated public key (not a length-correct random string).
  */
-import { mkdtempSync, mkdirSync, writeFileSync, cpSync, rmSync } from 'node:fs'
+import { mkdtempSync, mkdirSync, writeFileSync, cpSync, rmSync, symlinkSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { tmpdir } from 'node:os'
 import { execFileSync } from 'node:child_process'
@@ -33,6 +33,8 @@ const CASES = [
   ['duplicate material ACROSS files', { files: { 'a-jwks.json': { keys: [VALID_ED] }, 'b-jwks.json': { keys: [{ ...VALID_ED, kid: 'k9' }] } } }, false],
   ['two distinct keys across files ok', { files: { 'a-jwks.json': { keys: [VALID_ED] }, 'b-jwks.json': { keys: [VALID_ED_2] } } }, true],
   ['absent kid', { keys: [{ kty: 'OKP', crv: 'Ed25519', x: VALID_ED.x }] }, false],
+  ['whitespace-only kid', { keys: [{ ...VALID_ED, kid: '   ' }] }, false],
+  ['overlong kid', { keys: [{ ...VALID_ED, kid: 'x'.repeat(300) }] }, false],
   ['non-canonical base64url (padding)', { keys: [{ ...VALID_ED, x: VALID_ED.x + '=' }] }, false],
   ['wrong coordinate length', { keys: [{ ...VALID_ED, x: 'AAAA' }] }, false],
   ['EC key rejected (Ed25519-only)', { keys: [{ kty: 'EC', crv: 'P-256', x: VALID_ED.x, y: VALID_ED.x, kid: 'k1' }] }, false],
@@ -76,8 +78,60 @@ for (const [name, content, expectPass] of CASES) {
   console.log(`  ${ok ? 'PASS' : 'FAIL'}  ${name} (expected ${expectPass ? 'pass' : 'fail'}, got ${pass ? 'pass' : 'fail'})`)
 }
 
+// ---- symlink negative tests (each must be rejected) ----
+function runGateAt(setup) {
+  const dir = mkdtempSync(join(tmpdir(), 'keygate-sym-'))
+  mkdirSync(join(dir, 'public', '.well-known'), { recursive: true })
+  mkdirSync(join(dir, 'scripts'), { recursive: true })
+  cpSync(GATE, join(dir, 'scripts', 'check-public-keys.mjs'))
+  setup(dir)
+  let pass
+  try {
+    execFileSync(process.execPath, ['scripts/check-public-keys.mjs'], { cwd: dir, stdio: 'pipe' })
+    pass = true
+  } catch {
+    pass = false
+  }
+  rmSync(dir, { recursive: true, force: true })
+  return pass
+}
+
+const SYMCASES = [
+  [
+    'symlinked public/.well-known/keys.json rejected',
+    (dir) => {
+      const real = join(dir, 'real-jwks.json')
+      writeFileSync(real, JSON.stringify({ keys: [VALID_ED] }))
+      symlinkSync(real, join(dir, 'public', '.well-known', 'keys.json'))
+    },
+  ],
+  [
+    'symlinked directory keys.v1 rejected',
+    (dir) => {
+      const realdir = join(dir, 'public', 'realdir')
+      mkdirSync(realdir, { recursive: true })
+      writeFileSync(join(realdir, 'other.txt'), 'x')
+      symlinkSync(realdir, join(dir, 'public', 'keys.v1'))
+    },
+  ],
+  [
+    'symlink resolving outside public rejected',
+    (dir) => {
+      const outside = mkdtempSync(join(tmpdir(), 'keygate-out-'))
+      symlinkSync(outside, join(dir, 'public', 'outside-link'))
+    },
+  ],
+]
+
+for (const [name, setup] of SYMCASES) {
+  const pass = runGateAt(setup)
+  const ok = pass === false
+  if (!ok) failures++
+  console.log(`  ${ok ? 'PASS' : 'FAIL'}  ${name} (expected fail, got ${pass ? 'pass' : 'fail'})`)
+}
+
 if (failures) {
   console.error(`\ncheck-public-keys tests FAILED: ${failures} case(s).`)
   process.exit(1)
 }
-console.log(`\ncheck-public-keys tests OK - ${CASES.length} cases.`)
+console.log(`\ncheck-public-keys tests OK - ${CASES.length + SYMCASES.length} cases.`)

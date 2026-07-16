@@ -158,7 +158,7 @@ export default function DownloadsPage() {
               install with your package manager
             </Mono>
             <pre className="home-code" style={{ marginTop: 12, marginBottom: 0 }}>
-{`npm i -g @peac/cli
+{`npm i -g @peac/cli@0.16.2
 npm i @peac/protocol @peac/crypto @peac/schema
 npm i @peac/mcp-server`}
             </pre>

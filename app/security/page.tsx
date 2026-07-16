@@ -93,16 +93,16 @@ export default function Security() {
 
           <h2>Data boundaries</h2>
           <p>
-            Signed records contain policy hashes and decisions, not raw request payloads. Records and keys stay in your
-            environment; Originary does not host records or run verification as a service today. Supplied-key
-            verification runs offline and never depends on Originary being online.
+            Signed records contain policy hashes and decisions, not raw request payloads. The documented supplied-key CLI
+            flow runs locally, and the /verify page does not accept record uploads. Supplied-key verification runs offline
+            and does not depend on Originary being online.
           </p>
 
           <h2>Network posture</h2>
           <p>
-            No implicit fetch. No SSRF. URL fields in records are locator hints only and are never automatically
-            dereferenced. The PEAC reference implementation, including its MCP server, is open source; its security posture is
-            documented in the public PEAC repository.
+            The supplied-key verification path performs no network fetch and does not dereference URLs carried in the
+            record. URL fields in records are locator hints. The PEAC reference implementation, including its MCP server,
+            is open source; its security posture is documented in the public PEAC repository.
           </p>
 
           <h2>Responsible disclosure</h2>
