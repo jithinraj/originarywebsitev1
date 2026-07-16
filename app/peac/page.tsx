@@ -213,7 +213,7 @@ export default function PeacPage() {
           <SectionHeading
             eyebrow="what peac is"
             title="A record that survives the boundary."
-            sub="PEAC defines how a system issues a signed record for an automated action so another party can verify what happened, without trusting the original system or its dashboard."
+            sub="PEAC defines how a system issues a signed record for an automated action so another party can verify what the issuer recorded, without trusting the original system or its dashboard."
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
             <Card>

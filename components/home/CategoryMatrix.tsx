@@ -33,7 +33,7 @@ export function CategoryMatrix() {
     >
       <SectionTitle
         title="Common places Originary records fit."
-        body="Examples are interoperability surfaces, not partnership claims. Use the same signed-record format wherever another party needs to verify what happened."
+        body="Examples are interoperability surfaces, not partnership claims. Use the same signed-record format wherever another party needs to verify what the issuer recorded."
       />
       <ul
         className="home-category-grid"

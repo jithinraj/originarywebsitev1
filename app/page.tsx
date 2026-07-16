@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AI agent audit records and verification software | Originary',
     description:
-      'Issue signed records so another party can verify what happened without internal logs or dashboard access.',
+      'Issue signed records so another party can verify what the issuer recorded without internal logs or dashboard access.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
