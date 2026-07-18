@@ -81,10 +81,10 @@ export default function Trademark() {
                 <li>Use &ldquo;Originary™&rdquo; on first prominent mention.</li>
                 <li>You may reference Originary for factual compatibility statements.</li>
                 <li>Reference our services in truthful comparative statements.</li>
-                <li>Use our name when describing integrations or partnerships (with accurate context).</li>
+                <li>Make factual interoperability statements, without implying endorsement or partnership.</li>
               </ul>
 
-              <p><strong>Do say:</strong> &ldquo;Built with receipts that work with Originary tools.&rdquo;</p>
+              <p><strong>Do say:</strong> &ldquo;Built with signed records that work with Originary tools.&rdquo;</p>
               <p><strong>Don&apos;t say:</strong> &ldquo;Originary-powered agents&rdquo; (unless we&apos;ve given you written permission).</p>
 
               <h2>Prohibited use</h2>
@@ -102,7 +102,7 @@ export default function Trademark() {
 
               <h2>PEAC Protocol and open source</h2>
               <p><strong>PEAC Protocol</strong> is an open-source protocol (Apache-2.0) stewarded by Originary. <strong>Originary™</strong> is the commercial brand of Poem, Inc.</p>
-              <p style={{ marginTop: 'var(--space-3)' }}>Anyone can implement PEAC Protocol. Originary provides commercial products (Trace, Gateway, Studio, Verify API) built on PEAC.</p>
+              <p style={{ marginTop: 'var(--space-3)' }}>Anyone can implement PEAC Protocol. Originary provides Originary Verify, a commercial product with implementation and deployment support, built on PEAC.</p>
               <p style={{ marginTop: 'var(--space-3)' }}>PEAC Protocol assets and specifications are governed by the Apache-2.0 license. See <Link href="/peac" style={{ color: 'var(--accent-brand)' }}>originary.xyz/peac</Link> for details.</p>
 
               <h2>Brand inquiries</h2>

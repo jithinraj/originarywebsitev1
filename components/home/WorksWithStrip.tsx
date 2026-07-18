@@ -24,7 +24,7 @@ const LOGOS: LogoEntry[] = [
 export function WorksWithStrip() {
   return (
     <section
-      aria-label="Designed to fit with the stack you already use"
+      aria-label="Works with"
       className="home-works-with"
       style={{
         borderTop: `1px solid ${PALETTE.hairline}`,
@@ -43,7 +43,7 @@ export function WorksWithStrip() {
           margin: '0 0 22px 0',
         }}
       >
-        Designed to fit with the stack you already use
+        Works with
       </p>
       <ul className="home-works-with-grid" role="list">
         {LOGOS.map((logo) => (
@@ -65,18 +65,6 @@ export function WorksWithStrip() {
           </li>
         ))}
       </ul>
-      <p
-        style={{
-          fontFamily: MONO,
-          fontSize: 11,
-          lineHeight: 1.6,
-          color: PALETTE.faint,
-          margin: '22px 0 0 0',
-          maxWidth: '72ch',
-        }}
-      >
-        Names and logos identify interoperability surfaces. No partnership, certification, or endorsement is implied.
-      </p>
       </div>
     </section>
   )

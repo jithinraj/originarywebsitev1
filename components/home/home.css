@@ -1120,6 +1120,61 @@ html {
   /* The SVG viewBox aspect ratio is preserved via SVG default; pin height. */
 }
 
+/* Originary logo: the full "originary" wordmark, with the reveal replaying on a
+   gentle loop (data-open toggled by JS) and on hover / keyboard focus. Fades use
+   fill-opacity (survives the legacy `* { opacity:1 !important }` reset);
+   transform-box:view-box keeps translate lengths in SVG user units. */
+.originary-logo .olh-o,
+.originary-logo .olh-stem,
+.originary-logo .olh-casc,
+.originary-logo .olh-dot {
+  transform-box: view-box;
+}
+.originary-logo .olh-o {
+  fill-opacity: 1;
+}
+.originary-logo .olh-casc {
+  fill-opacity: 0;
+  transform: translateX(-150px);
+}
+.originary-logo .olh-dot {
+  fill-opacity: 0;
+  transform: translateY(-280px);
+}
+/* open (loop / hover-replay via data-open, or keyboard focus): full wordmark.
+   Hover is NOT a CSS :hover here — it triggers a JS collapse+re-reveal so the
+   animation plays on hover; :focus-visible keeps the wordmark up for keyboard. */
+.originary-logo[data-open="true"] .olh-stem,
+.originary-logo-link:focus-visible .olh-stem {
+  transform: translateX(615px);
+}
+.originary-logo[data-open="true"] .olh-casc,
+.originary-logo-link:focus-visible .olh-casc {
+  fill-opacity: 1;
+  transform: none;
+}
+.originary-logo[data-open="true"] .olh-dot,
+.originary-logo-link:focus-visible .olh-dot {
+  fill-opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .originary-logo .olh-stem {
+    transform: translateX(615px);
+  }
+  .originary-logo .olh-casc,
+  .originary-logo .olh-dot {
+    fill-opacity: 1;
+    transform: none;
+  }
+  .originary-logo .olh-o,
+  .originary-logo .olh-stem,
+  .originary-logo .olh-casc,
+  .originary-logo .olh-dot {
+    transition: none !important;
+  }
+}
+
 /* Icon-only footer social links. 36x36 hit target, hover lifts ink, focus ring. */
 .home-footer-icon {
   display: inline-flex;

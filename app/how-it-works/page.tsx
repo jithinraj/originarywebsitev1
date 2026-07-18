@@ -127,7 +127,7 @@ const SURFACES: SurfaceData[] = [
     overline: 'Surface 02 of 06',
     title: 'MCP tool run',
     thesis:
-      "Every tool call, signed at the source, carried inside the protocol's own metadata. No changes required.",
+      "Every tool call, signed at the source, carried inside the protocol's own metadata. Unaware hosts need no changes.",
     intro: (
       <>
         An agent host calls a tool over the Model Context Protocol. The tool result returns with the
@@ -192,7 +192,7 @@ const SURFACES: SurfaceData[] = [
       'run summary + count',
     ],
     prove:
-      'The action that executed was byte-for-byte the action approved, who delegated to whom, and that the run chain is complete: nothing added, nothing missing.',
+      'The action that executed was byte-for-byte the action approved, who delegated to whom, and that the run chain matches the issuer\'s sealed run summary and count.',
     carrier:
       'types: agent-action-approved, -invoked, -denied, -delegated, -cancelled, -timed-out, -observed.',
     actors: ['agent', 'approver (human or policy)'],
@@ -259,7 +259,7 @@ const SURFACES: SurfaceData[] = [
       },
       {
         title: 'Redaction disputes',
-        body: 'The produced and delivered digest pair proves content was changed in transit, and exactly which bytes were delivered.',
+        body: 'The produced and delivered digest pair proves the delivered content differs from what was produced, and lets anyone holding a copy confirm which version it is.',
       },
       {
         title: 'Which policy version applied',
@@ -363,7 +363,7 @@ const SURFACES: SurfaceData[] = [
       },
       {
         title: 'Secrets leaking through audit logs',
-        body: 'Impossible by construction here: the schema rejects captured material before anything is signed.',
+        body: 'Sharply reduced here: the schema rejects known secret-bearing fields before anything is signed. Integrations must still keep secrets out of free-text and reference fields.',
       },
       {
         title: 'Who created this account',

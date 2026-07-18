@@ -1,263 +1,181 @@
 "use client";
 
 /**
- * OriginaryLogoMotion
+ * OriginaryLogoMotion — canonical Originary website logo.
  * ────────────────────────────────────────────────────────────────────────────
- * Animated wordmark for Originary.
+ * Faithful port of the design-system `logo-hover.jsx` reveal
+ * (originary-identity-kit): the "1" stem glides to the first i-slot, the cascade
+ * letters (r g i n a r y) slide + fade in left-to-right, and the two i-dots drop
+ * in last (the record-marker beat).
  *
- * Choreography (≈ 1.2 s):
- *   1. The first O resolves at the origin while a single pulse expands from it.
- *   2. The remaining letters slide outward from a contracted state, sequenced
- *      by their distance from the origin.
- *   3. The two i-dots fly out from inside the O and land as record markers —
- *      the "portable signed evidence" beat.
+ * Behaviour here: the FULL "originary" wordmark is the resting/visible state.
+ * The reveal animation replays on a gentle loop (collapse to the compact "o1",
+ * then re-open) and also on hover / keyboard focus. Reduced motion and keyboard
+ * focus resolve straight to the full wordmark.
  *
- * Stack: React + framer-motion. No other deps. Honours `prefers-reduced-motion`.
- *
- * Usage:
- *   <OriginaryLogoMotion />                            // hero, autoplays once
- *   <OriginaryLogoMotion variant="nav" replayOnHover/> // nav lockup, hover-replay
- *   <OriginaryLogoMotion variant="mark" />             // just the O + pulse
- *   <OriginaryLogoMotion replayKey={replayKey} />      // controlled replay
+ * Geometry is FROZEN (originary-identity-kit v2): viewBox "201 644 7487 1918",
+ * one path per letter, `translate(x,2124) scale(1,-1)`. Do not retrack/restyle.
+ * Fades use `fill-opacity` (not opacity) to survive the legacy
+ * `*:not(.payment-page){opacity:1!important}` reset; transform-box:view-box
+ * keeps descenders/dots on the baseline. Motion is CSS (see `.olh-*` in home.css).
  */
 
-import { motion, useReducedMotion, type Easing } from "framer-motion";
-import { useCallback, useId, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-// ─── Geometry ───────────────────────────────────────────────────────────────
+const WORDMARK_VIEW_BOX = "201 644 7487 1918";
+const MARK_VIEW_BOX = "61 1038 1430 1122";
+const flip = (x: number) => `translate(${x},2124) scale(1,-1)`;
+const E = "cubic-bezier(0.4, 0, 0.2, 1)";
+const EB = "cubic-bezier(0.34, 1.3, 0.64, 1)";
 
-const WORDMARK_VIEW_BOX = "48 469 7823 1962";
-const MARK_VIEW_BOX = "20 870 1130 1170";
+// Loop cadence: hold the full wordmark a long beat, briefly collapse to "o1",
+// then re-reveal. (~4x the earlier hold.)
+const LOOP_PERIOD_MS = 20800;
+// How long it dwells on the collapsed "0 1" (binary) before re-revealing (2x).
+const LOOP_CLOSED_MS = 1560;
 
-const CENTROID_X = 3960;
-const ORIGIN_X = 584;
-const ORIGIN_Y = 1457;
-const DOT_Y = 627;
-
-type LetterPath = { id: string; cx: number; d: string };
-
-const PATHS: Record<string, LetterPath> = {
-  O: {
-    id: "O",
-    cx: 584,
-    d: "M584 2008C895 2008 1105 1785 1105 1457C1105 1129 895 904 584 904C273 904 63 1129 63 1457C63 1785 273 2008 584 2008ZM584 1797C421 1797 318 1668 318 1457C318 1245 422 1115 584 1115C745 1115 849 1246 849 1457C849 1667 746 1797 584 1797Z",
-  },
-  r1: {
-    id: "r1",
-    cx: 1513,
-    d: "M1221 1984H1473V1386C1473 1221 1566 1138 1686 1138C1736 1138 1786 1143 1805 1146V922C1785 920 1757 918 1723 918C1587 918 1506 982 1467 1103H1464V928H1221Z",
-  },
-  i1Stem: {
-    id: "i1Stem",
-    cx: 2054,
-    d: "M1928 1984H2180V928H1928Z",
-  },
-  i1Dot: {
-    id: "i1Dot",
-    cx: 2054,
-    d: "M2054 771C2140 771 2205 709 2205 627C2205 546 2140 484 2054 484C1968 484 1903 546 1903 627C1903 709 1968 771 2054 771Z",
-  },
-  g: {
-    id: "g",
-    cx: 2827,
-    d: "M2841 2416C3127 2416 3340 2284 3340 1957V928H3091V1085H3090C3020 964 2905 907 2768 907C2497 907 2313 1130 2313 1451C2313 1769 2494 1991 2770 1991C2909 1991 3021 1935 3089 1811H3090V1972C3090 2134 2999 2221 2841 2221C2723 2221 2636 2173 2612 2082H2365C2393 2287 2562 2416 2841 2416ZM2829 1783C2673 1783 2568 1664 2568 1448C2568 1233 2673 1113 2829 1113C2994 1113 3102 1245 3102 1448C3102 1651 2994 1783 2829 1783Z",
-  },
-  i2Stem: {
-    id: "i2Stem",
-    cx: 3658,
-    d: "M3532 1984H3784V928H3532Z",
-  },
-  i2Dot: {
-    id: "i2Dot",
-    cx: 3658,
-    d: "M3658 771C3744 771 3809 709 3809 627C3809 546 3744 484 3658 484C3572 484 3507 546 3507 627C3507 709 3572 771 3658 771Z",
-  },
-  n: {
-    id: "n",
-    cx: 4458,
-    d: "M4236 1387C4236 1207 4335 1128 4467 1128C4602 1128 4680 1209 4680 1364V1984H4933V1324C4933 1053 4777 907 4556 907C4411 907 4304 971 4232 1090V928H3984V1984H4236Z",
-  },
-  a: {
-    id: "a",
-    cx: 5548,
-    d: "M5449 2001C5621 2001 5710 1929 5760 1835H5764V1984H6012V1264C6012 1044 5849 907 5574 907C5298 907 5126 1046 5114 1256H5357C5364 1167 5446 1103 5569 1103C5690 1103 5762 1167 5762 1257V1265C5762 1337 5695 1340 5499 1362C5281 1385 5084 1444 5084 1684C5084 1895 5239 2001 5449 2001ZM5511 1814C5401 1814 5330 1765 5330 1682C5330 1586 5422 1547 5530 1531C5634 1515 5732 1499 5763 1479V1593C5763 1716 5676 1814 5511 1814Z",
-  },
-  r2: {
-    id: "r2",
-    cx: 6497,
-    d: "M6205 1984H6457V1386C6457 1221 6550 1138 6670 1138C6720 1138 6770 1143 6789 1146V922C6769 920 6741 918 6707 918C6571 918 6490 982 6451 1103H6448V928H6205Z",
-  },
-  y: {
-    id: "y",
-    cx: 7321,
-    d: "M6899 2402H7064C7217 2402 7321 2323 7384 2158L7856 928H7592L7399 1478C7372 1556 7347 1634 7323 1712C7299 1634 7273 1556 7247 1478L7053 928H6786L7193 1978L7154 2080C7124 2163 7092 2197 7024 2197H6899Z",
-  },
+const D = {
+  o: "M573 -24C875 -24 1078 201 1078 526C1078 853 875 1080 573 1080C271 1080 67 853 67 526C67 201 271 -24 573 -24ZM573 158C392 158 281 301 281 526C281 753 393 898 573 898C753 898 865 753 865 526C865 302 754 158 573 158Z",
+  r: "M119 0H330V645C330 802 424 881 543 881C588 881 610 876 622 872L638 1064C633 1066 606 1069 578 1069C448 1069 368 1002 327 890H321V1056H119Z",
+  iStem: "M119 0H330V1056H119Z",
+  iDot: "M224.5 1227.5C292.4 1227.5 347.5 1282.6 347.5 1350.5C347.5 1418.4 292.4 1473.5 224.5 1473.5C156.6 1473.5 101.5 1418.4 101.5 1350.5C101.5 1282.6 156.6 1227.5 224.5 1227.5Z",
+  g: "M580 -432C846 -432 1061 -306 1061 14V1056H853V895H852C781 1021 661 1077 524 1077C251 1077 67 854 67 531C67 209 250 -14 525 -14C664 -14 778 43 851 166H852V6C852 -165 750 -254 580 -254C455 -254 362 -202 336 -102H119C147 -312 321 -432 580 -432ZM568 167C398 167 281 295 281 532C281 769 398 897 568 897C748 897 864 753 864 532C864 311 748 167 568 167Z",
+  n: "M330 608C330 806 443 893 585 893C729 893 816 804 816 632V0H1027V658C1027 934 862 1077 645 1077C506 1077 398 1017 326 897V1056H119V0H330Z",
+  a: "M441 -17C623 -17 709 65 753 150H757V0H965V724C965 939 806 1077 546 1077C282 1077 111 935 101 734H308C316 831 408 904 543 904C673 900 752 830 752 728V719C752 642 690 644 492 620C277 595 75 543 75 302C75 91 231 -17 441 -17ZM484 153C361 153 285 207 285 298C285 405 389 446 504 463C616 479 728 496 757 519V395C757 265 670 153 484 153Z",
+  y: "M133 -418H267C407 -418 509 -338 566 -185L1028 1056H808L612 477C585 398 559 319 533 240C508 319 483 398 455 477L260 1056H38L426 7L384 -118C352 -204 313 -240 247 -240H133Z",
 };
 
-const STEM_ORDER: LetterPath[] = [
-  PATHS.O,
-  PATHS.r1,
-  PATHS.i1Stem,
-  PATHS.g,
-  PATHS.i2Stem,
-  PATHS.n,
-  PATHS.a,
-  PATHS.r2,
-  PATHS.y,
+const SLOT = { o: 140, r1: 1247, i1: 1904, g: 2315, i2: 3427, n: 3813, a: 4913, r2: 5922, y: 6654 };
+const STEM_IDLE_X = 1289; // the "1" idles here; opens +615 to the first i-slot.
+const CASCADE: { d: string; x: number }[] = [
+  { d: D.r, x: SLOT.r1 },
+  { d: D.g, x: SLOT.g },
+  { d: D.iStem, x: SLOT.i2 },
+  { d: D.n, x: SLOT.n },
+  { d: D.a, x: SLOT.a },
+  { d: D.r, x: SLOT.r2 },
+  { d: D.y, x: SLOT.y },
 ];
-
-const PROOF_DOTS: LetterPath[] = [PATHS.i1Dot, PATHS.i2Dot];
-
-// ─── Motion config ──────────────────────────────────────────────────────────
-
-const EASE_OUT: Easing = [0.16, 1, 0.3, 1];
-const EASE_PRECISE: Easing = [0.22, 1, 0.36, 1];
-
-/** Stagger by horizontal distance from the origin O. */
-function letterDelay(cx: number): number {
-  return 0.24 + (Math.abs(cx - ORIGIN_X) / 7400) * 0.48;
-}
-
-/** How far each letter starts contracted toward the wordmark centroid. */
-function contractOffset(cx: number): number {
-  return (CENTROID_X - cx) * 0.12;
-}
-
-// ─── Component ──────────────────────────────────────────────────────────────
+const DOT_SLOTS: { x: number; di: number }[] = [
+  { x: SLOT.i1, di: 0.38 },
+  { x: SLOT.i2, di: 0.45 },
+];
 
 export type OriginaryLogoMotionVariant = "wordmark" | "mark";
 
 export interface OriginaryLogoMotionProps {
-  /** `"wordmark"` (default) renders Originary, `"mark"` renders just the O. */
   variant?: OriginaryLogoMotionVariant;
-  /** Foreground colour. Defaults to near-black. */
   fill?: string;
-  /** Class applied to the root <svg>. Size with Tailwind / CSS as usual. */
   className?: string;
-  /**
-   * When set, the animation re-runs whenever this value changes. Use a
-   * counter, timestamp, or any unique key from your parent state.
-   */
-  replayKey?: number | string;
-  /** Replay on pointer-enter. Default false. */
-  replayOnHover?: boolean;
-  /** Play once on mount. Default true. */
-  autoPlay?: boolean;
-  /** Accessible label. Default "Originary". */
+  /** Pin the wordmark fully open (no loop). */
+  forceOpen?: boolean;
+  /** Auto-replay the reveal on a loop. Default true. */
+  loop?: boolean;
   ariaLabel?: string;
+  /** Accepted for API compatibility. */
+  replayKey?: number | string;
+  replayOnHover?: boolean;
+  autoPlay?: boolean;
 }
 
 export function OriginaryLogoMotion({
   variant = "wordmark",
   fill = "#0B0B0C",
   className,
-  replayKey,
-  replayOnHover = false,
-  autoPlay = true,
+  forceOpen = false,
+  loop = true,
   ariaLabel = "Originary",
 }: OriginaryLogoMotionProps) {
-  const reactId = useId();
-  const [internalKey, setInternalKey] = useState(autoPlay ? 0 : -1);
-  const reduced = useReducedMotion();
+  // Full wordmark is the resting state; the loop briefly collapses + re-reveals.
+  const [open, setOpen] = useState(true);
+  const reopenRef = useRef<number | undefined>(undefined);
 
-  const activeKey = `${replayKey ?? internalKey}-${reactId}`;
-  const handleHover = useCallback(() => {
-    if (replayOnHover) setInternalKey((k) => k + 1);
-  }, [replayOnHover]);
+  // Collapse to "0 1" then re-reveal the wordmark. Used by the loop and on hover.
+  const replay = useCallback(() => {
+    if (forceOpen) return;
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    window.clearTimeout(reopenRef.current);
+    setOpen(false);
+    reopenRef.current = window.setTimeout(() => setOpen(true), LOOP_CLOSED_MS);
+  }, [forceOpen]);
 
-  const isMark = variant === "mark";
-  const viewBox = isMark ? MARK_VIEW_BOX : WORDMARK_VIEW_BOX;
-  const stems = isMark ? [PATHS.O] : STEM_ORDER;
-  const dots = isMark ? [] : PROOF_DOTS;
+  useEffect(() => {
+    if (forceOpen || !loop) return;
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const iv = window.setInterval(replay, LOOP_PERIOD_MS);
+    return () => {
+      window.clearInterval(iv);
+      window.clearTimeout(reopenRef.current);
+    };
+  }, [forceOpen, loop, replay]);
+
+  if (variant === "mark") {
+    return (
+      <svg role="img" aria-label={ariaLabel} viewBox={MARK_VIEW_BOX} className={className} xmlns="http://www.w3.org/2000/svg" fill={fill}>
+        <path d={D.o} transform="translate(0,2124) scale(1,-1)" />
+        <path d={D.iStem} transform="translate(1149,2124) scale(1,-1)" />
+      </svg>
+    );
+  }
+
+  const isOpen = forceOpen || open;
 
   return (
     <svg
-      key={activeKey}
-      role="img"
-      aria-label={ariaLabel}
-      viewBox={viewBox}
-      className={className}
+      viewBox={WORDMARK_VIEW_BOX}
+      className={`originary-logo${className ? ` ${className}` : ""}`}
+      data-open={isOpen ? "true" : undefined}
+      aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
-      onPointerEnter={handleHover}
+      fill={fill}
+      onMouseEnter={replay}
       style={{ overflow: "visible" }}
     >
-      {/* Stems and bowls */}
-      {stems.map((letter) => {
-        const isO = letter.id === "O";
-        const contract = contractOffset(letter.cx);
-        const delay = reduced ? 0 : isO ? 0 : letterDelay(letter.cx);
+      {/* o — always present */}
+      <path className="olh-o" d={D.o} transform={flip(SLOT.o)} />
 
+      {/* the "1" — idles beside the o, glides to the first i-slot on open */}
+      <g className="olh-stem" style={{ transition: `transform 0.45s ${E} 0.04s` }}>
+        <path d={D.iStem} transform={flip(STEM_IDLE_X)} />
+      </g>
+
+      {/* cascade letters — slide + fade in left to right */}
+      {CASCADE.map((L, k) => {
+        const delay = (0.1 + 0.035 * k).toFixed(3);
         return (
-          <motion.path
-            key={letter.id}
-            d={letter.d}
-            fill={fill}
-            initial={
-              reduced
-                ? false
-                : {
-                    x: isO ? 0 : contract,
-                    opacity: isO ? 0 : 0,
-                    scale: isO ? 0.9 : 0.985,
-                  }
-            }
-            animate={{ x: 0, opacity: 1, scale: 1 }}
-            transition={{
-              x: { duration: 1.05, ease: EASE_OUT, delay },
-              opacity: {
-                duration: isO ? 0.48 : 0.7,
-                ease: EASE_PRECISE,
-                delay: isO ? 0.02 : delay + 0.03,
-              },
-              scale: {
-                duration: isO ? 0.82 : 1.05,
-                ease: EASE_OUT,
-                delay: isO ? 0.04 : delay,
-              },
-            }}
-            style={{ transformOrigin: `${letter.cx}px ${ORIGIN_Y}px` }}
-          />
+          <g key={`c${k}`} className="olh-casc" style={{ transition: `fill-opacity 0.3s ${E} ${delay}s, transform 0.38s ${E} ${delay}s` }}>
+            <path d={L.d} transform={flip(L.x)} />
+          </g>
         );
       })}
 
-      {/* Proof dots — fly out from the O, land as i-dots */}
-      {dots.map((dot, i) => {
-        const startX = ORIGIN_X - dot.cx;
-        const startY = ORIGIN_Y - DOT_Y;
-        const delay = reduced ? 0 : 0.32 + i * 0.16;
-        return (
-          <motion.path
-            key={dot.id}
-            d={dot.d}
-            fill={fill}
-            initial={
-              reduced
-                ? false
-                : { x: startX, y: startY, scale: 0.34, opacity: 0 }
-            }
-            animate={{ x: 0, y: 0, scale: 1, opacity: 1 }}
-            transition={{
-              x: { duration: 0.98, ease: EASE_OUT, delay },
-              y: { duration: 0.98, ease: EASE_OUT, delay },
-              scale: { duration: 0.98, ease: EASE_OUT, delay },
-              opacity: {
-                duration: 0.34,
-                ease: EASE_PRECISE,
-                delay: delay + 0.06,
-              },
-            }}
-            style={{ transformOrigin: `${dot.cx}px ${DOT_Y}px` }}
-          />
-        );
-      })}
+      {/* twin i-dots — drop in last */}
+      {DOT_SLOTS.map((dot, i) => (
+        <g key={`d${i}`} className="olh-dot" style={{ transition: `fill-opacity 0.2s ${E} ${dot.di}s, transform 0.4s ${EB} ${dot.di}s` }}>
+          <path d={D.iDot} transform={flip(dot.x)} />
+        </g>
+      ))}
     </svg>
   );
 }
 
 export default OriginaryLogoMotion;
 
-// Geometry export for canvas renderings of the wordmark (giant footer stream).
+// Geometry export for canvas renderings (e.g. a giant footer stream).
 export const WORDMARK_GEOMETRY = {
-  viewBox: { x: 48, y: 469, width: 7823, height: 1962 },
-  paths: [...STEM_ORDER, ...PROOF_DOTS].map((p) => p.d),
-}
+  viewBox: { x: 201, y: 644, width: 7487, height: 1918 },
+  transform: (x: number) => flip(x),
+  paths: [
+    { d: D.o, x: SLOT.o },
+    { d: D.r, x: SLOT.r1 },
+    { d: D.iStem, x: SLOT.i1 },
+    { d: D.iDot, x: SLOT.i1 },
+    { d: D.g, x: SLOT.g },
+    { d: D.iStem, x: SLOT.i2 },
+    { d: D.iDot, x: SLOT.i2 },
+    { d: D.n, x: SLOT.n },
+    { d: D.a, x: SLOT.a },
+    { d: D.r, x: SLOT.r2 },
+    { d: D.y, x: SLOT.y },
+  ],
+};

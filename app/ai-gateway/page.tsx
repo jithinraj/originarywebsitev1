@@ -182,8 +182,8 @@ export default function AiGatewayPage() {
               timestamp travel together with the signature.
             </p>
             <p style={{ fontSize: 15, lineHeight: 1.6, color: PALETTE.muted, marginTop: 18, maxWidth: '54ch' }}>
-              When the gateway redacts rather than blocks, the produced and delivered digest pair proves the content
-              was modified in transit, without revealing the content itself.
+              When the gateway redacts rather than blocks, the produced and delivered digest pair proves the delivered
+              content differs from what was produced, without revealing the content itself.
             </p>
           </div>
           <RecordCard
