@@ -443,8 +443,8 @@ export default function PeacPage() {
               <h3 style={subHead}>Originary Verify</h3>
               <BulletList
                 items={[
-                  'Hosted issuance and verification',
-                  'KMS-backed signing keys',
+                  'Supported self-hosted issuance and verification',
+                  'Bring-your-own-key signing (local or your KMS)',
                   'Audit bundle export',
                   'Implementation and rollout support',
                   'Procurement-ready record artifacts',

@@ -128,7 +128,7 @@ export default function AgenticCommercePage() {
 
       {/* Two truths */}
       <PageSection paddingBottom={64}>
-        <SectionHeading index="01" eyebrow="Two different facts" title="The rail proves the payment. The record proves the context." />
+        <SectionHeading index="01" eyebrow="Two different facts" title="The rail proves the payment. The record carries the context." />
         <SpecimenGrid>
           <Card>
             <div style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: PALETTE.faint }}>
@@ -232,7 +232,7 @@ export default function AgenticCommercePage() {
         </div>
       </PageSection>
 
-      <PullLine accent="The record proves the context.">
+      <PullLine accent="The record carries the context.">
         The rail proves the payment.
       </PullLine>
 

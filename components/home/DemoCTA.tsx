@@ -197,7 +197,7 @@ function CTAAnim() {
       <CTAStep
         label="verified bundle"
         title="Counterparty"
-        sub="hosted verify · exported bundle · offline"
+        sub="offline verify · exported bundle · portable"
         progress={stage3}
         verified
       />

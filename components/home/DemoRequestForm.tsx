@@ -69,7 +69,7 @@ export function DemoRequestForm({
       `Work email: ${fields.email}`,
       `Company: ${fields.company}`,
       `Workflow type: ${fields.workflow}`,
-      `Hosted or self-hosted: ${fields.deployment}`,
+      `Deployment model: ${fields.deployment}`,
       '',
       'What needs to be verified?',
       fields.message,
@@ -163,15 +163,15 @@ export function DemoRequestForm({
         />
       </Field>
 
-      <Field label="Hosted or self-hosted?" htmlFor="demo-deploy">
+      <Field label="Deployment model?" htmlFor="demo-deploy">
         <select
           id="demo-deploy"
           name="deployment"
           defaultValue="Not sure yet"
           className="home-demo-input home-demo-select"
         >
-          <option>Hosted</option>
-          <option>Self-hosted</option>
+          <option>Open-source self-host</option>
+          <option>Supported self-host</option>
           <option>Not sure yet</option>
         </select>
       </Field>

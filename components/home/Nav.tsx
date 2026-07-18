@@ -77,6 +77,7 @@ export function Nav() {
         <Link
           href="/"
           aria-label="Originary"
+          className="originary-logo-link"
           style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -276,12 +277,14 @@ export function Nav() {
 
 export function Wordmark({
   height = 32,
-  replayOnHover = true,
-  autoPlay = true,
+  forceOpen = false,
+  loop = true,
 }: {
   height?: number
-  replayOnHover?: boolean
-  autoPlay?: boolean
+  /** Render the full wordmark statically (no loop). Used in the footer. */
+  forceOpen?: boolean
+  /** Auto-replay the reveal on a loop. Default true (header). */
+  loop?: boolean
 }) {
   return (
     <span
@@ -295,8 +298,8 @@ export function Wordmark({
       <OriginaryLogoMotion
         ariaLabel="Originary"
         fill={PALETTE.ink}
-        replayOnHover={replayOnHover}
-        autoPlay={autoPlay}
+        forceOpen={forceOpen}
+        loop={loop}
         className="home-wordmark-svg"
       />
     </span>
