@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import { FACTS } from '@/lib/facts'
-import { PUBLIC_TRUTH } from '@/lib/public-truth'
+import { PUBLIC_IDENTITY } from '@/lib/public-identity'
 import { DataTable, MarkerList, StepLabel, CodeBlock } from '@/components/specimens/parts'
 
 const TITLE = 'Originary press kit and company information'
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 }
 
 const BOILERPLATE_50 =
-  'Originary, a brand of Poem, Inc., develops software for issuing, verifying, and packaging signed records of machine actions across organizational boundaries. Originary Verify is built on PEAC Protocol, an Apache-2.0 open-source project.'
+  'Originary™ is the software brand of Poem, Inc. Under the Originary brand, Poem, Inc. develops software for issuing, verifying, and packaging signed records of machine actions across organizational boundaries. Originary Verify is built on PEAC Protocol, an Apache-2.0 open-source project.'
 
 const BOILERPLATE_120 =
   'Originary develops verifiable infrastructure for machine actions. Originary Verify helps teams issue, inspect, and package signed records when APIs, agents, MCP tools, gateways, payment flows, and provisioning systems act. Those records can be verified by another party without access to the original private logs or dashboards. Originary Verify is built on PEAC Protocol, an Apache-2.0 open-source protocol project maintained by Originary. Originary is a brand of Poem, Inc., a Delaware corporation.'
@@ -70,27 +70,27 @@ export default function PressPage() {
           sub="Poem, Inc. is the Delaware corporation. Originary is a brand of Poem, Inc. Originary Verify is the commercial product; PEAC Protocol is the Apache-2.0 open-source project Originary maintains. The protocol works without Originary, and records verify without asking us."
         />
         <DataTable
-          head={['Name', 'What it is', 'License and model']}
+          head={['Name', 'Role', 'Status or model']}
           rows={[
             [
-              PUBLIC_TRUTH.legalEntity,
-              'The legal entity: the Delaware corporation operating under the Originary brand',
+              PUBLIC_IDENTITY.legalEntity,
+              'The Delaware corporation that operates the Originary business',
               'Legal entity',
             ],
             [
-              PUBLIC_TRUTH.brand,
-              `The brand: ${PUBLIC_TRUTH.legalEntity}'s source identifier for its software and related offerings`,
-              `A brand of ${PUBLIC_TRUTH.legalEntity}`,
+              PUBLIC_IDENTITY.brand,
+              `The brand under which ${PUBLIC_IDENTITY.legalEntity} develops and offers software, developer tools, and related implementation support`,
+              `A brand and trademark of ${PUBLIC_IDENTITY.legalEntity}`,
             ],
             [
-              PUBLIC_TRUTH.product,
-              'The commercial software and implementation offering for issuing, verifying, and packaging signed records',
+              PUBLIC_IDENTITY.product,
+              'Commercial software and implementation support for issuing, verifying, and packaging signed records',
               'Customer-controlled deployment; scoped engagement',
             ],
             [
-              PUBLIC_TRUTH.protocol,
-              `The Apache-2.0 open-source protocol project maintained by ${PUBLIC_TRUTH.legalEntity} under the Originary brand`,
-              `${PUBLIC_TRUTH.protocolLicense}; implementation-independent`,
+              PUBLIC_IDENTITY.protocol,
+              'An Apache-2.0 open-source protocol project maintained by Originary and usable independently of Originary products',
+              `${PUBLIC_IDENTITY.protocolLicense}; open source`,
             ],
           ]}
         />

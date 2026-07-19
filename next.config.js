@@ -20,6 +20,10 @@ const nextConfig = {
     // exact, semantically correct one-to-one migration of a page that existed.
     // No broad wildcards, no article-to-landing-page redirects; unknown legacy
     // slugs 404 so broken links surface instead of hiding.
+    // Retired-route quarantine is generated from the single contract in
+    // lib/retired-routes.mjs (also consumed by the redirect gate + integration
+    // test); do not duplicate that map here.
+    const { RETIRED_ROUTES } = await import('./lib/retired-routes.mjs')
     return [
       // Discovery / sitemap
       { source: '/sitemap-main.xml', destination: '/sitemap.xml', permanent: true },
@@ -54,9 +58,8 @@ const nextConfig = {
       { source: '/learn', destination: '/blog', permanent: true },
 
       // Retired earlier-generation routes -> current canonical surfaces
-      { source: '/ai', destination: '/records#agent', permanent: true },
-      { source: '/system-of-record', destination: '/how-it-works', permanent: true },
-      { source: '/originary-ai', destination: '/product', permanent: true },
+      // (generated from lib/retired-routes.mjs, the single contract).
+      ...RETIRED_ROUTES.map((r) => ({ source: r.source, destination: r.destination, permanent: true })),
     ]
   },
   async headers() {

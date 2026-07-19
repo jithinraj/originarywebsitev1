@@ -10,6 +10,7 @@
  *  - a base path already covered by a sibling wildcard
  */
 import { readFileSync } from 'node:fs'
+import { RETIRED_ROUTES } from '../lib/retired-routes.mjs'
 
 const cfg = readFileSync('next.config.js', 'utf8')
 
@@ -19,6 +20,10 @@ const pairs = [...block.matchAll(/source:\s*'([^']+)'[^}]*?destination:\s*'([^']
   source: m[1],
   destination: m[2],
 }))
+
+// The retired-route quarantine is generated in next.config.js from the shared
+// contract (a spread, not literals), so merge it in for hygiene validation.
+for (const r of RETIRED_ROUTES) pairs.push({ source: r.source, destination: r.destination })
 
 // Canonical routes come from the same registry the app uses.
 const routesTs = readFileSync('lib/routes.ts', 'utf8')
@@ -74,11 +79,7 @@ for (const { source } of pairs) {
 // Retired earlier-generation routes MUST redirect (route quarantine).
 // If any of these is dropped or repointed, this gate fails so the route can
 // never silently regress to a 404 or the wrong destination.
-const REQUIRED_REDIRECTS = {
-  '/ai': '/records#agent',
-  '/system-of-record': '/how-it-works',
-  '/originary-ai': '/product',
-}
+const REQUIRED_REDIRECTS = Object.fromEntries(RETIRED_ROUTES.map((r) => [r.source, r.destination]))
 const bySource = new Map(pairs.map((p) => [p.source, p.destination]))
 for (const [src, dest] of Object.entries(REQUIRED_REDIRECTS)) {
   if (bySource.get(src) !== dest) {
