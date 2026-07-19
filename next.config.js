@@ -52,6 +52,11 @@ const nextConfig = {
 
       // Section index
       { source: '/learn', destination: '/blog', permanent: true },
+
+      // Retired earlier-generation routes -> current canonical surfaces
+      { source: '/ai', destination: '/records#agent', permanent: true },
+      { source: '/system-of-record', destination: '/how-it-works', permanent: true },
+      { source: '/originary-ai', destination: '/peac', permanent: true },
     ]
   },
   async headers() {

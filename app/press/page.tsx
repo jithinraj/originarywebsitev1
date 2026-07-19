@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import { FACTS } from '@/lib/facts'
+import { PUBLIC_TRUTH } from '@/lib/public-truth'
 import { DataTable, MarkerList, StepLabel, CodeBlock } from '@/components/specimens/parts'
 
 const TITLE = 'Originary press kit and company information'
@@ -71,9 +72,10 @@ export default function PressPage() {
         <DataTable
           head={['Name', 'What it is', 'License and model']}
           rows={[
-            ['Originary', 'The company: verifiable infrastructure for machine actions', 'Commercial (a brand of Poem, Inc.)'],
-            ['Originary Verify', 'The product: issue, verify, and bundle signed records in production', 'Commercial, self-hostable'],
-            ['PEAC Protocol', 'The open-source protocol: record format and verification model', 'Apache-2.0, open source'],
+            [PUBLIC_TRUTH.legalEntity, 'The company: the Delaware corporation behind Originary', 'Legal entity'],
+            [PUBLIC_TRUTH.brand, 'The brand: verifiable infrastructure for machine actions', `A brand of ${PUBLIC_TRUTH.legalEntity}`],
+            [PUBLIC_TRUTH.product, 'The product: issue, verify, and bundle signed records in production', 'Commercial, self-hostable'],
+            [PUBLIC_TRUTH.protocol, 'The open-source protocol: record format and verification model', `${PUBLIC_TRUTH.protocolLicense}, open source`],
           ]}
         />
       </PageSection>

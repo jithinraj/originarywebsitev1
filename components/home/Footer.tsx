@@ -105,20 +105,6 @@ export function HomeFooter() {
             Originary develops software for issuing, verifying, and packaging
             signed interaction records across organizational boundaries.
           </p>
-          <p
-            style={{
-              margin: '16px 0 0 0',
-              maxWidth: 400,
-              fontFamily: SANS,
-              fontSize: 12.5,
-              lineHeight: 1.6,
-              color: PALETTE.faint,
-              textWrap: 'pretty',
-            }}
-          >
-            Originary is a brand of Poem, Inc. Originary Verify is built on PEAC
-            Protocol, an Apache-2.0 open-source project maintained by Originary.
-          </p>
         </div>
         <div
           className="home-footer-cols"

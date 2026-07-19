@@ -46,7 +46,9 @@ for (const { source, destination } of pairs) {
   // Non-page canonical destinations: generated files and discovery documents.
   const NON_PAGE_DEST = new Set(['/sitemap.xml'])
   const isExternal = /^https?:\/\//.test(destination)
-  const destPath = destination.replace(/\/+$/, '') || '/'
+  // Strip a trailing #fragment (e.g. /records#agent) and trailing slashes
+  // before checking the destination against the canonical route set.
+  const destPath = destination.replace(/#.*$/, '').replace(/\/+$/, '') || '/'
   if (
     !isExternal &&
     !canonical.has(destPath) &&
@@ -66,6 +68,21 @@ for (const { source } of pairs) {
   const wild = source.replace(/\/:[a-zA-Z]+[*+]$/, '')
   if (wild !== source && seen.has(wild)) {
     errors.push(`base ${wild} already covered by wildcard ${source}`)
+  }
+}
+
+// Retired earlier-generation routes MUST redirect (route quarantine).
+// If any of these is dropped or repointed, this gate fails so the route can
+// never silently regress to a 404 or the wrong destination.
+const REQUIRED_REDIRECTS = {
+  '/ai': '/records#agent',
+  '/system-of-record': '/how-it-works',
+  '/originary-ai': '/peac',
+}
+const bySource = new Map(pairs.map((p) => [p.source, p.destination]))
+for (const [src, dest] of Object.entries(REQUIRED_REDIRECTS)) {
+  if (bySource.get(src) !== dest) {
+    errors.push(`required redirect missing or wrong: ${src} -> ${dest} (got ${bySource.get(src) ?? 'none'})`)
   }
 }
 
