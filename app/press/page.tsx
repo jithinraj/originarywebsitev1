@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 }
 
 const BOILERPLATE_50 =
-  'Originary develops software for issuing, verifying, and packaging signed records of machine actions across organizational boundaries. Originary Verify is built on PEAC Protocol, an Apache-2.0 open-source project.'
+  'Originary, a brand of Poem, Inc., develops software for issuing, verifying, and packaging signed records of machine actions across organizational boundaries. Originary Verify is built on PEAC Protocol, an Apache-2.0 open-source project.'
 
 const BOILERPLATE_120 =
   'Originary develops verifiable infrastructure for machine actions. Originary Verify helps teams issue, inspect, and package signed records when APIs, agents, MCP tools, gateways, payment flows, and provisioning systems act. Those records can be verified by another party without access to the original private logs or dashboards. Originary Verify is built on PEAC Protocol, an Apache-2.0 open-source protocol project maintained by Originary. Originary is a brand of Poem, Inc., a Delaware corporation.'
@@ -72,10 +72,26 @@ export default function PressPage() {
         <DataTable
           head={['Name', 'What it is', 'License and model']}
           rows={[
-            [PUBLIC_TRUTH.legalEntity, 'The company: the Delaware corporation behind Originary', 'Legal entity'],
-            [PUBLIC_TRUTH.brand, 'The brand: verifiable infrastructure for machine actions', `A brand of ${PUBLIC_TRUTH.legalEntity}`],
-            [PUBLIC_TRUTH.product, 'The product: issue, verify, and bundle signed records in production', 'Commercial, self-hostable'],
-            [PUBLIC_TRUTH.protocol, 'The open-source protocol: record format and verification model', `${PUBLIC_TRUTH.protocolLicense}, open source`],
+            [
+              PUBLIC_TRUTH.legalEntity,
+              'The legal entity: the Delaware corporation operating under the Originary brand',
+              'Legal entity',
+            ],
+            [
+              PUBLIC_TRUTH.brand,
+              `The brand: ${PUBLIC_TRUTH.legalEntity}'s source identifier for its software and related offerings`,
+              `A brand of ${PUBLIC_TRUTH.legalEntity}`,
+            ],
+            [
+              PUBLIC_TRUTH.product,
+              'The commercial software and implementation offering for issuing, verifying, and packaging signed records',
+              'Customer-controlled deployment; scoped engagement',
+            ],
+            [
+              PUBLIC_TRUTH.protocol,
+              `The Apache-2.0 open-source protocol project maintained by ${PUBLIC_TRUTH.legalEntity} under the Originary brand`,
+              `${PUBLIC_TRUTH.protocolLicense}; implementation-independent`,
+            ],
           ]}
         />
       </PageSection>

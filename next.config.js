@@ -56,7 +56,7 @@ const nextConfig = {
       // Retired earlier-generation routes -> current canonical surfaces
       { source: '/ai', destination: '/records#agent', permanent: true },
       { source: '/system-of-record', destination: '/how-it-works', permanent: true },
-      { source: '/originary-ai', destination: '/peac', permanent: true },
+      { source: '/originary-ai', destination: '/product', permanent: true },
     ]
   },
   async headers() {

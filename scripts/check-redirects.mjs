@@ -77,7 +77,7 @@ for (const { source } of pairs) {
 const REQUIRED_REDIRECTS = {
   '/ai': '/records#agent',
   '/system-of-record': '/how-it-works',
-  '/originary-ai': '/peac',
+  '/originary-ai': '/product',
 }
 const bySource = new Map(pairs.map((p) => [p.source, p.destination]))
 for (const [src, dest] of Object.entries(REQUIRED_REDIRECTS)) {
