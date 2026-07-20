@@ -88,7 +88,7 @@ export default function DownloadsPage() {
           eyebrow="open source"
           title="Download PEAC Protocol"
           byline="by Originary"
-          sub="PEAC Protocol is open-source downloadable software published and maintained by Originary. Get the source code, CLI, SDK packages, and verification tooling from the public GitHub repository and package registries."
+          sub="Originary™, the software and developer-tools brand of Poem, Inc., publishes and maintains PEAC Protocol as open-source downloadable software. Get the source code, CLI, SDK packages, and verification tooling from the official GitHub repository and package registries."
           align="center"
         >
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>

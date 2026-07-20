@@ -2,10 +2,10 @@
 /**
  * Redirect integration test (STRICT).
  *
- * Exercises a RUNNING server (dev or `next start`) and asserts the retired-route
- * quarantine end to end. The map is NOT duplicated here: it is imported from the
- * single contract in lib/retired-routes.mjs (also consumed by next.config.js and
- * scripts/check-redirects.mjs).
+ * Exercises a RUNNING server (dev or `next start`) and asserts the legacy route
+ * redirects end to end. The map is NOT duplicated here: it is imported from the
+ * single map in lib/legacy-route-redirects.mjs (also consumed by next.config.js
+ * and scripts/check-redirects.mjs).
  *
  * This is a real gate: it FAILS (exit 1) if the server cannot be reached or the
  * sitemap cannot be fetched. It must be run against a running server (locally,
@@ -13,7 +13,7 @@
  * the server-less prebuild `check:all`. Set BASE_URL to target another origin
  * (default http://localhost:3000).
  *
- * Per retired route it asserts:
+ * Per legacy route it asserts:
  *   - bare source: 308, exact Location, one hop (destination returns 200 directly)
  *   - trailing-slash variant resolves (following redirects) to the destination 200
  *   - query variant: 308, Location path is the destination and the query is preserved
@@ -21,7 +21,7 @@
  *   - the source is not linked from the homepage
  *   - the destination page self-canonicalizes
  */
-import { RETIRED_ROUTES } from '../lib/retired-routes.mjs'
+import { LEGACY_ROUTE_REDIRECTS } from '../lib/legacy-route-redirects.mjs'
 
 const BASE = (process.env.BASE_URL || 'http://localhost:3000').replace(/\/+$/, '')
 const errors = []
@@ -55,7 +55,7 @@ async function main() {
 
   const destinations = new Set()
 
-  for (const { source, destination } of RETIRED_ROUTES) {
+  for (const { source, destination } of LEGACY_ROUTE_REDIRECTS) {
     destinations.add(destination.replace(/#.*$/, ''))
     const destPath = destination.replace(/#.*$/, '')
 
@@ -106,7 +106,7 @@ async function main() {
     errors.forEach((e) => console.error('  ' + e))
     process.exit(1)
   }
-  console.log(`redirect integration test passed (${RETIRED_ROUTES.length} routes x {bare, slash, query} + sitemap + homepage + self-canonical, base ${BASE})`)
+  console.log(`redirect integration test passed (${LEGACY_ROUTE_REDIRECTS.length} routes x {bare, slash, query} + sitemap + homepage + self-canonical, base ${BASE})`)
 }
 
 main()

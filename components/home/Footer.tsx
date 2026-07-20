@@ -105,6 +105,21 @@ export function HomeFooter() {
             Originary develops software for issuing, verifying, and packaging
             signed interaction records across organizational boundaries.
           </p>
+          <p
+            style={{
+              margin: '16px 0 0 0',
+              maxWidth: 400,
+              fontFamily: SANS,
+              fontSize: 12.5,
+              lineHeight: 1.6,
+              color: PALETTE.faint,
+              textWrap: 'pretty',
+            }}
+          >
+            Originary&trade; is Poem, Inc.&rsquo;s software and developer-tools
+            brand. PEAC Protocol is open-source software published and maintained
+            by Originary.
+          </p>
         </div>
         <div
           className="home-footer-cols"
@@ -172,7 +187,7 @@ export function HomeFooter() {
         className="home-footer-bottom"
       >
         <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.02em', minWidth: 0 }}>
-          © 2025-2026 Poem, Inc. · Originary™ is a brand and trademark of Poem, Inc.
+          © 2025-2026 Poem, Inc. · Originary™ is a trademark of Poem, Inc.
         </Mono>
         <div style={{ display: 'flex', gap: 18, alignItems: 'center', flexWrap: 'wrap' }}>
           {legalLinks.map((l) => (

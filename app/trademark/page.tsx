@@ -17,7 +17,7 @@ const webPageJsonLd = {
   '@type': 'WebPage',
   name: 'Trademark & Brand Use',
   url: 'https://www.originary.xyz/trademark',
-  dateModified: '2025-07-27'
+  dateModified: '2026-07-20'
 }
 
 export default function Trademark() {
@@ -62,7 +62,7 @@ export default function Trademark() {
                   fontSize: 'var(--text-sm)',
                   color: 'var(--text-tertiary)'
                 }}>
-                  Effective from 2025-07-27
+                  Last updated 2026-07-20
                 </p>
               </div>
 
@@ -97,12 +97,12 @@ export default function Trademark() {
               </ul>
 
               <h2>Disambiguation</h2>
-              <p>In the United States, <strong>&ldquo;Originary&rdquo;</strong> is used by <strong>Poem, Inc.</strong> to identify our open software and developer tools; <strong>Poem, Inc. is not affiliated with any other business using a similar name.</strong></p>
+              <p><strong>Originary&trade;</strong> identifies software and developer tools published and offered by <strong>Poem, Inc.</strong>, including PEAC Protocol software and Originary Verify. <strong>Poem, Inc. is not affiliated with any other business using a similar name.</strong></p>
               <p style={{ marginTop: 'var(--space-3)' }}><em>This site refers only to Originary at <Link href="https://www.originary.xyz" style={{ color: 'var(--accent-brand)' }}>https://www.originary.xyz/</Link>.</em></p>
 
               <h2>PEAC Protocol and open source</h2>
-              <p><strong>PEAC Protocol</strong> is an open-source protocol (Apache-2.0) stewarded by Originary. <strong>Originary™</strong> is the commercial brand of Poem, Inc.</p>
-              <p style={{ marginTop: 'var(--space-3)' }}>Anyone can implement PEAC Protocol. Originary provides Originary Verify, a commercial product with implementation and deployment support, built on PEAC.</p>
+              <p><strong>PEAC Protocol</strong> is open-source software published and maintained by Originary under Apache-2.0. <strong>Originary&trade;</strong> is the software and developer-tools brand of Poem, Inc.</p>
+              <p style={{ marginTop: 'var(--space-3)' }}>Anyone can implement PEAC Protocol. Originary Verify is a commercial software offering with implementation and deployment support, built on PEAC Protocol.</p>
               <p style={{ marginTop: 'var(--space-3)' }}>PEAC Protocol assets and specifications are governed by the Apache-2.0 license. See <Link href="/peac" style={{ color: 'var(--accent-brand)' }}>originary.xyz/peac</Link> for details.</p>
 
               <h2>Brand inquiries</h2>
