@@ -251,10 +251,14 @@ export default function About() {
             <Reveal delay={120}>
               <div>
                 <p className="home-about-body" style={{ marginTop: 0 }}>
-                  Poem, Inc. is a Delaware corporation. Originary is a brand of
-                  Poem, Inc. Under the Originary brand, Poem develops Originary
-                  Verify and maintains PEAC Protocol, an Apache-2.0 open-source
-                  project.
+                  Poem, Inc. is a Delaware corporation. Originary&trade; is
+                  Poem, Inc.&rsquo;s software and developer-tools brand. Through
+                  Originary, Poem publishes and maintains PEAC Protocol and
+                  develops Originary Verify.
+                </p>
+                <p className="home-about-body">
+                  PEAC software is distributed through GitHub and package
+                  registries under the Apache-2.0 license.
                 </p>
                 <p className="home-about-body">
                   We are a small team. We work in the open where possible and

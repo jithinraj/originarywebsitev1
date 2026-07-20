@@ -502,9 +502,9 @@ export default function TrustPage() {
             </Mono>
             <h2 style={{ ...headStyle, marginTop: 12 }}>Legal identity and stewardship</h2>
             <p style={proseStyle}>
-              Originary is a brand of {FACTS.legalEntity}, a Delaware corporation. Originary maintains the
-              PEAC protocol, not its gatekeeper. The protocol specification, reference implementation, conformance
-              suite, and all core tooling are published under the {FACTS.license} license.
+              Originary&trade; is the software and developer-tools brand of {FACTS.legalEntity}, a Delaware corporation.
+              Originary publishes and maintains PEAC Protocol, not its gatekeeper. The protocol specification, reference
+              implementation, conformance suite, and all core tooling are published under the {FACTS.license} license.
             </p>
             <p style={proseStyle}>
               Stewardship means we maintain the specification, publish test vectors, and ensure interoperability. It

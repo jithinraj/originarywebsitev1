@@ -20,6 +20,10 @@ const nextConfig = {
     // exact, semantically correct one-to-one migration of a page that existed.
     // No broad wildcards, no article-to-landing-page redirects; unknown legacy
     // slugs 404 so broken links surface instead of hiding.
+    // Legacy route redirects are generated from the single map in
+    // lib/legacy-route-redirects.mjs (also consumed by the redirect gate and
+    // integration test); do not duplicate that map here.
+    const { LEGACY_ROUTE_REDIRECTS } = await import('./lib/legacy-route-redirects.mjs')
     return [
       // Discovery / sitemap
       { source: '/sitemap-main.xml', destination: '/sitemap.xml', permanent: true },
@@ -52,6 +56,10 @@ const nextConfig = {
 
       // Section index
       { source: '/learn', destination: '/blog', permanent: true },
+
+      // Legacy routes -> current canonical pages
+      // (generated from lib/legacy-route-redirects.mjs, the single map).
+      ...LEGACY_ROUTE_REDIRECTS.map((r) => ({ source: r.source, destination: r.destination, permanent: true })),
     ]
   },
   async headers() {

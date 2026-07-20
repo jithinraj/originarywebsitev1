@@ -56,9 +56,9 @@ export default function ImprintPage() {
 
         <h2>Brand</h2>
         <p>
-          <strong>Originary</strong> is a brand of Poem, Inc. Poem, Inc.
-          maintains the Originary products and services built around PEAC
-          Protocol.
+          <strong>Originary&trade;</strong> is the software and developer-tools
+          brand of Poem, Inc. Through Originary, Poem, Inc. publishes and
+          maintains PEAC Protocol and offers Originary Verify.
         </p>
         <p>
           <strong>PEAC Protocol</strong> is an open-source protocol published and

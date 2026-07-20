@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import { FACTS } from '@/lib/facts'
+import { PUBLIC_IDENTITY } from '@/lib/public-identity'
 import { DataTable, MarkerList, StepLabel, CodeBlock } from '@/components/specimens/parts'
 
 const TITLE = 'Originary press kit and company information'
@@ -23,10 +24,10 @@ export const metadata: Metadata = {
 }
 
 const BOILERPLATE_50 =
-  'Originary develops software for issuing, verifying, and packaging signed records of machine actions across organizational boundaries. Originary Verify is built on PEAC Protocol, an Apache-2.0 open-source project.'
+  `Originary™ is Poem, Inc.'s software and developer-tools brand. Through Originary, Poem publishes and maintains PEAC Protocol and develops Originary Verify, software for issuing, verifying, and packaging signed records of machine actions across organizational boundaries.`
 
 const BOILERPLATE_120 =
-  'Originary develops verifiable infrastructure for machine actions. Originary Verify helps teams issue, inspect, and package signed records when APIs, agents, MCP tools, gateways, payment flows, and provisioning systems act. Those records can be verified by another party without access to the original private logs or dashboards. Originary Verify is built on PEAC Protocol, an Apache-2.0 open-source protocol project maintained by Originary. Originary is a brand of Poem, Inc., a Delaware corporation.'
+  'Originary develops verifiable infrastructure for machine actions. Originary Verify helps teams issue, inspect, and package signed records when APIs, agents, MCP tools, gateways, payment flows, and provisioning systems act. Those records can be verified by another party without access to the original private logs or dashboards. Originary Verify is built on PEAC Protocol, an Apache-2.0 open-source protocol project published and maintained by Originary. Originary™ is the software and developer-tools brand of Poem, Inc., a Delaware corporation.'
 
 export default function PressPage() {
   return (
@@ -66,14 +67,31 @@ export default function PressPage() {
           index="02"
           eyebrow="The relationship"
           title="Originary and PEAC Protocol."
-          sub="Poem, Inc. is the Delaware corporation. Originary is a brand of Poem, Inc. Originary Verify is the commercial product; PEAC Protocol is the Apache-2.0 open-source project Originary maintains. The protocol works without Originary, and records verify without asking us."
+          sub="Poem, Inc. is the Delaware corporation. Originary™ is its software and developer-tools brand. Through Originary, Poem publishes and maintains PEAC Protocol and develops Originary Verify. PEAC Protocol is independently implementable and self-hostable under Apache-2.0; verification does not depend on an Originary-hosted service."
         />
         <DataTable
-          head={['Name', 'What it is', 'License and model']}
+          head={['Name', 'Role', 'Status']}
           rows={[
-            ['Originary', 'The company: verifiable infrastructure for machine actions', 'Commercial (a brand of Poem, Inc.)'],
-            ['Originary Verify', 'The product: issue, verify, and bundle signed records in production', 'Commercial, self-hostable'],
-            ['PEAC Protocol', 'The open-source protocol: record format and verification model', 'Apache-2.0, open source'],
+            [
+              PUBLIC_IDENTITY.legalEntity,
+              'Legal entity that owns and operates the Originary business',
+              'Delaware corporation',
+            ],
+            [
+              `${PUBLIC_IDENTITY.brand}™`,
+              'Software and developer-tools brand through which Poem publishes PEAC and offers Originary Verify',
+              `Trademark of ${PUBLIC_IDENTITY.legalEntity}`,
+            ],
+            [
+              PUBLIC_IDENTITY.product,
+              'Commercial software offering under the Originary brand',
+              'Supported/self-hosted offering',
+            ],
+            [
+              PUBLIC_IDENTITY.protocol,
+              'Open-source software and protocol project published and maintained by Originary',
+              `${PUBLIC_IDENTITY.protocolLicense}; independently implementable`,
+            ],
           ]}
         />
       </PageSection>

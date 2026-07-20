@@ -94,7 +94,7 @@ export default function ProductPage() {
       <PageHero
         eyebrow="Originary Verify"
         title="The evidence path for machine actions."
-        sub="Originary Verify is the commercial product on top of PEAC Protocol: issue signed records where actions happen, verify them anywhere, and assemble evidence when someone asks what happened."
+        sub="Originary Verify is a commercial software offering built on PEAC Protocol: issue signed records where actions happen, verify them anywhere, and assemble evidence when someone asks what happened."
         display
         aside={
           <RecordCard
@@ -239,9 +239,10 @@ export default function ProductPage() {
           <Button href="/peac">PEAC Protocol</Button>
         </div>
         <p style={{ fontSize: 13.5, lineHeight: 1.65, color: PALETTE.faint, maxWidth: '62ch', marginTop: 22 }}>
-          Poem, Inc. is the Delaware corporation and Originary is its brand. Originary Verify is the commercial product; PEAC Protocol is the Apache-2.0 open-source
-          protocol that defines the record format and verification model; the protocol works without Originary, and
-          records verify without asking us.
+          Poem, Inc. is the Delaware corporation. Originary&trade; is its software and developer-tools brand. Originary Verify is a
+          commercial software offering; PEAC Protocol is Apache-2.0 open-source software published and maintained by Originary that
+          defines the record format and verification model. It can be implemented and self-hosted independently, and verification
+          does not depend on an Originary-hosted service.
         </p>
       </PageSection>
 

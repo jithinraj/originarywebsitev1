@@ -116,8 +116,9 @@ export function HomeFooter() {
               textWrap: 'pretty',
             }}
           >
-            Originary is a brand of Poem, Inc. Originary Verify is built on PEAC
-            Protocol, an Apache-2.0 open-source project maintained by Originary.
+            Originary&trade; is Poem, Inc.&rsquo;s software and developer-tools
+            brand. PEAC Protocol is open-source software published and maintained
+            by Originary.
           </p>
         </div>
         <div
@@ -186,7 +187,7 @@ export function HomeFooter() {
         className="home-footer-bottom"
       >
         <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.02em', minWidth: 0 }}>
-          © 2025-2026 Poem, Inc. · Originary is a brand of Poem, Inc.
+          © 2025-2026 Poem, Inc. · Originary™ is a trademark of Poem, Inc.
         </Mono>
         <div style={{ display: 'flex', gap: 18, alignItems: 'center', flexWrap: 'wrap' }}>
           {legalLinks.map((l) => (
