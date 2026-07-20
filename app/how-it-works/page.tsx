@@ -98,7 +98,7 @@ const SURFACES: SurfaceData[] = [
       'time + unique id',
     ],
     prove:
-      "This exact response was served for this exact request, under this exact policy, without the vendor's logs, dashboard, or cooperation.",
+      "the request digest, the response digest, and the referenced policy for this call, without the vendor's logs, dashboard, or cooperation.",
     carrier: 'carrier: PEAC-Receipt header. discovery: /.well-known/peac.txt.',
     actors: ['agent client', 'api.vendor.example'],
     flow: [
@@ -202,7 +202,7 @@ const SURFACES: SurfaceData[] = [
       { kind: 'msg', dir: 'ltr', slot: 3, label: 'execute - must bind digest A' },
       { kind: 'rec', slot: 4, label: 'records linked: approved to invoked - parent_jti chain' },
       { kind: 'evt', slot: 5, label: 'proposal changed? digest B not equal to A: denied record - fail closed', bad: true },
-      { kind: 'chk', slot: 6, label: 'every action ran exactly as approved, or it did not run' },
+      { kind: 'chk', slot: 6, label: 'each run bound to the approval and run summary the issuer sealed' },
     ],
     fails: [
       {
@@ -223,7 +223,7 @@ const SURFACES: SurfaceData[] = [
     id: 's-gateway',
     overline: 'Surface 04 of 06',
     title: 'Gateway decision',
-    thesis: 'The decision is the evidence. Allow, deny, redact: each one signed, reasoned, and provable.',
+    thesis: 'The decision is the evidence. Allow, deny, redact: each one signed and reasoned by the issuer.',
     intro: (
       <>
         Traffic passes a gateway or guardrail: an AI proxy, an MCP gateway, an egress filter. The gateway
@@ -242,7 +242,7 @@ const SURFACES: SurfaceData[] = [
       'trace correlation',
     ],
     prove:
-      'The gateway applied a specific policy and delivered something different from what was produced, provable without revealing either content. A signed refusal is evidence too.',
+      'the issuer-reported policy reference and distinct produced and delivered digests, so a verifier can confirm the delivered content differs from what was produced, without revealing either. A signed refusal is evidence too.',
     carrier: 'types: org.peacprotocol/access-decision. extension: org.peacprotocol/access.',
     actors: ['app / agent', 'gateway', 'recipient'],
     flow: [
@@ -319,7 +319,7 @@ const SURFACES: SurfaceData[] = [
     id: 's-provision',
     overline: 'Surface 06 of 06',
     title: 'Provisioning event',
-    thesis: 'What the agent stood up, on the record, with secrets structurally excluded.',
+    thesis: 'What the agent stood up, on the record, with credential-value fields rejected by the schema.',
     intro: (
       <>
         An agent provisions real infrastructure: accounts, resources, credentials, budgets, subscriptions,
@@ -454,7 +454,7 @@ function SurfaceSection({
               </ul>
             </div>
             <p className="hiw-wprove">
-              <b>Later, anyone can prove:</b> {s.prove}
+              <b>Later, a verifier can confirm the issuer signed a record binding:</b> {s.prove}
             </p>
             <code className="hiw-wtype">{s.carrier}</code>
             <div className="hiw-actors">actors: {s.actors.join(', ')}</div>

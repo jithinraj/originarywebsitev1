@@ -139,7 +139,7 @@ export default function ProvisioningRecordsPage() {
             beats={[
               { kind: 'msg', dir: 'ltr', slot: 1, label: 'create deployment prj_4fd2 - production' },
               { kind: 'msg', dir: 'rtl', slot: 2, label: 'created - resource + credential references' },
-              { kind: 'evt', slot: 3, label: 'secrets structurally excluded - reference + digest only' },
+              { kind: 'evt', slot: 3, label: 'credential-value fields rejected - reference + digest only' },
               { kind: 'rec', slot: 4, label: 'provisioning-event record - who, what, when, which policy' },
               { kind: 'chk', slot: 5, label: 'verified without console access' },
             ]}
@@ -182,7 +182,7 @@ export default function ProvisioningRecordsPage() {
       </PageSection>
 
       <PullLine accent="Never the secret.">
-        Prove the change.
+        Record the change.
       </PullLine>
 
       {/* What it covers */}
@@ -222,7 +222,11 @@ export default function ProvisioningRecordsPage() {
           ]}
         />
         <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.ink, marginTop: 24, maxWidth: '54ch' }}>
-          It records what happened, so another party can verify it.
+          It records what the issuer reported, so another party can verify it.
+        </p>
+        <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, marginTop: 14, maxWidth: '54ch' }}>
+          The profile rejects credential-value fields. Integrations must still ensure secrets do not enter free-form,
+          extension, log, or external-reference fields.
         </p>
       </PageSection>
 

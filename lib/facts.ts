@@ -88,7 +88,7 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   primaryCategory: 'Signed, portable interaction records',
-  primaryTagline: 'Prove what agents did.',
+  primaryTagline: 'Verify what agents reported.',
   plainSentence: 'Portable signed records for agent, API, MCP, and cross-runtime interactions.',
 
   // ---------------------------------------------------------------------------

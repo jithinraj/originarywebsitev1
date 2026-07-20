@@ -199,7 +199,7 @@ export default function RecordsPage() {
       <Specimen first id="api">
         <TamperDemo
           eyebrow="01 - API call"
-          title="Prove what your API did, without opening your logs."
+          title="Show what your API reported, without opening your logs."
           answers="Answers which endpoint was called, which terms applied, and what result the API returned."
           command="npx -y @peac/cli@0.16.2 verify ./api-call.jws --public-key ./jwks.json"
           recordType="basic-record"

@@ -100,7 +100,7 @@ export default function AgenticCommercePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Agentic commerce records"
-        title="Payment rails prove value moved. Signed records prove what it was for."
+        title="Payment rails move the value. Signed records carry what it was for."
         sub="AI agents call paid APIs, buy data, trigger usage charges, settle invoices, and delegate work. A payment confirmation shows value moved. It rarely shows what the agent was allowed to do, which policy applied, or what result came back. Originary turns those events into signed records another party can verify without your logs."
         display
         aside={
