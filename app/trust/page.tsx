@@ -408,7 +408,8 @@ export default function TrustPage() {
             <p style={proseStyle}>
               Signed records are standard JWS tokens. They are not stored in a proprietary database or locked to an
               Originary account. You can export them, archive them, move them between systems, or store them in your
-              own infrastructure. Any system that understands JWS and Ed25519 can verify them.
+              own infrastructure. Any conforming JOSE implementation can check the Ed25519 signature; full PEAC
+              validation also checks the PEAC record profile, required fields, and applicable semantic constraints.
             </p>
             <p style={proseStyle}>
               Offline verification works by design. Once you have the issuer&apos;s public key (from their JWKS endpoint

@@ -64,7 +64,7 @@ export default function AiGatewayPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="ai gateway"
-        title="Your gateway decides. Records make each decision provable."
+        title="Your gateway decides. A signed record lets another party verify what it reported."
         sub="An AI gateway, LLM gateway, model router, or egress proxy sits at the boundary where agent and model traffic crosses company lines. Originary uses PEAC to issue a signed record for each decision the gateway already makes, so a client, auditor, or partner can verify it later, without your logs or dashboards."
         display
         aside={
@@ -168,8 +168,8 @@ export default function AiGatewayPage() {
         </div>
       </PageSection>
 
-      <PullLine accent="defensible.">
-        Every decision,
+      <PullLine accent="survive the boundary.">
+        Decision records that
       </PullLine>
 
       {/* Deny as evidence */}
@@ -182,8 +182,8 @@ export default function AiGatewayPage() {
               timestamp travel together with the signature.
             </p>
             <p style={{ fontSize: 15, lineHeight: 1.6, color: PALETTE.muted, marginTop: 18, maxWidth: '54ch' }}>
-              When the gateway redacts rather than blocks, the produced and delivered digest pair proves the delivered
-              content differs from what was produced, without revealing the content itself.
+              When the gateway redacts rather than blocks, the record binds distinct produced and delivered digests,
+              so a verifier can confirm the delivered content differs from what was produced, without revealing either.
             </p>
           </div>
           <RecordCard

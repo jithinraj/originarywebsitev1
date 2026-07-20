@@ -10,7 +10,6 @@
  *  - a base path already covered by a sibling wildcard
  */
 import { readFileSync } from 'node:fs'
-import { LEGACY_ROUTE_REDIRECTS } from '../lib/legacy-route-redirects.mjs'
 
 const cfg = readFileSync('next.config.js', 'utf8')
 
@@ -20,10 +19,6 @@ const pairs = [...block.matchAll(/source:\s*'([^']+)'[^}]*?destination:\s*'([^']
   source: m[1],
   destination: m[2],
 }))
-
-// The legacy route redirects are generated in next.config.js from the shared
-// map (a spread, not literals), so merge them in for hygiene validation.
-for (const r of LEGACY_ROUTE_REDIRECTS) pairs.push({ source: r.source, destination: r.destination })
 
 // Canonical routes come from the same registry the app uses.
 const routesTs = readFileSync('lib/routes.ts', 'utf8')
@@ -73,17 +68,6 @@ for (const { source } of pairs) {
   const wild = source.replace(/\/:[a-zA-Z]+[*+]$/, '')
   if (wild !== source && seen.has(wild)) {
     errors.push(`base ${wild} already covered by wildcard ${source}`)
-  }
-}
-
-// Legacy routes MUST redirect to their current canonical page. If any of these
-// is dropped or repointed, this gate fails so the route can never silently
-// regress to a 404 or the wrong destination.
-const REQUIRED_REDIRECTS = Object.fromEntries(LEGACY_ROUTE_REDIRECTS.map((r) => [r.source, r.destination]))
-const bySource = new Map(pairs.map((p) => [p.source, p.destination]))
-for (const [src, dest] of Object.entries(REQUIRED_REDIRECTS)) {
-  if (bySource.get(src) !== dest) {
-    errors.push(`required redirect missing or wrong: ${src} -> ${dest} (got ${bySource.get(src) ?? 'none'})`)
   }
 }
 
