@@ -87,3 +87,6 @@ tsconfig.tsbuildinfo
 
 # Local scratch helpers
 /_*.mjs
+
+# Local evidence captures (never public)
+evidence/

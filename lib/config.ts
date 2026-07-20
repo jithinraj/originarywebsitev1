@@ -1,5 +1,4 @@
-// Site configuration - Poem, Inc. (US Company)
-// No DBA, trademark-only usage, Stripe-ready
+// Site configuration for Poem, Inc.
 
 // Company information
 export const COMPANY_LEGAL_NAME = "Poem, Inc.";
