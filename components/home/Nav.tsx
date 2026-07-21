@@ -32,12 +32,12 @@ const NAV: NavEntry[] = [
     ],
   },
   { kind: 'link', label: 'Verify', href: '/verify' },
+  { kind: 'link', label: 'Downloads', href: '/downloads' },
   {
     kind: 'menu',
     label: 'Developers',
     items: [
       { label: 'How it works', href: '/how-it-works' },
-      { label: 'Downloads', href: '/downloads' },
       { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
     ],
   },
@@ -270,7 +270,7 @@ export function Nav() {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: 22,
+            gap: 18,
           }}
         >
           {NAV.map((entry) =>

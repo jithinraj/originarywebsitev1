@@ -364,9 +364,9 @@ html {
   }
 }
 
-/* The primary nav carries seven top-level entries; collapse it to the menu
-   button below 1024px so the items never crowd or overflow. */
-@media (max-width: 1024px) {
+/* The primary nav carries eight top-level entries; collapse it to the menu
+   button below 1180px so the items never crowd or overflow. */
+@media (max-width: 1180px) {
   .home-nav-links {
     display: none !important;
   }
