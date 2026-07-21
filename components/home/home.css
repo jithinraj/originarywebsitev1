@@ -28,6 +28,25 @@ html {
   color: #14110a;
   border-color: rgba(20, 17, 10, 0.32);
 }
+.home-nav-menubtn:focus-visible {
+  outline: 1px solid rgba(20, 17, 10, 0.45);
+  outline-offset: 2px;
+}
+
+/* Nav dropdown menu items. */
+.home-nav-dropitem {
+  transition:
+    background 140ms ease,
+    color 140ms ease;
+}
+.home-nav-dropitem:hover {
+  background: rgba(20, 17, 10, 0.05);
+  color: #14110a !important;
+}
+.home-nav-dropitem:focus-visible {
+  outline: 1px solid rgba(20, 17, 10, 0.45);
+  outline-offset: -1px;
+}
 
 /* Footer links: shift to ink on hover, mirroring Nav. */
 .home-footer-link {
@@ -345,7 +364,9 @@ html {
   }
 }
 
-@media (max-width: 768px) {
+/* The primary nav carries seven top-level entries; collapse it to the menu
+   button below 1024px so the items never crowd or overflow. */
+@media (max-width: 1024px) {
   .home-nav-links {
     display: none !important;
   }
@@ -358,6 +379,9 @@ html {
   .home-nav-mobile {
     display: block !important;
   }
+}
+
+@media (max-width: 768px) {
   .home-footer-cols {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 32px !important;
