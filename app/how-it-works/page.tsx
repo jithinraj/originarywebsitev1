@@ -711,8 +711,8 @@ export default function HowItWorksPage() {
       <InkBand>
         <InkHeading>Generate these yourself in one command.</InkHeading>
         <div style={{ maxWidth: 760, margin: '28px auto 0', textAlign: 'left' }}>
-          <CodeBlock tone="ink">{`pnpm dlx @peac/cli@0.16.2 samples generate -o ./s
-pnpm dlx @peac/cli@0.16.2 verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
+          <CodeBlock tone="ink">{`pnpm dlx @peac/cli@0.16.3 samples generate -o ./s
+pnpm dlx @peac/cli@0.16.3 verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
         </div>
         <p style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 12, color: '#7fa98c', marginTop: 18 }}>
           Signature valid (offline) - PEAC {FACTS.currentVersion}
