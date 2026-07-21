@@ -9,8 +9,7 @@ import {
   Problem,
   ProductSystem,
   UseCases,
-  CategoryMatrix,
-  Ladder,
+  BuiltOnPEAC,
   DemoCTA,
   Reveal,
   PALETTE,
@@ -92,29 +91,31 @@ export default function Page() {
       >
         <Nav />
         <main id="main-content" role="main">
+          {/* 1. Hero, with the interop strip directly beneath it */}
           <HeroV2 />
-          <ProofStrip />
           <WorksWithStrip />
+          {/* 2. Boundary problem */}
           <Reveal threshold={0.12}>
             <Divider eyebrow="where logs fail" />
             <Problem />
           </Reveal>
+          {/* 3. Record / Verify / Bundle */}
           <Reveal threshold={0.12}>
             <Divider eyebrow="the product" />
             <ProductSystem />
           </Reveal>
+          {/* 4. Priority workflows, with a link to all six */}
           <Reveal threshold={0.12}>
             <Divider eyebrow="where it fits" />
             <UseCases />
           </Reveal>
+          {/* 5. PEAC / open-source proof */}
           <Reveal threshold={0.12}>
-            <Divider eyebrow="ecosystem fit" />
-            <CategoryMatrix />
+            <Divider eyebrow="open source" />
+            <BuiltOnPEAC />
+            <ProofStrip />
           </Reveal>
-          <Reveal threshold={0.12}>
-            <Divider eyebrow="start small" />
-            <Ladder />
-          </Reveal>
+          {/* 6. Final CTA */}
           <Reveal threshold={0.12}>
             <Divider eyebrow="see it on your workflow" />
             <DemoCTA />
