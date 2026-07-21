@@ -203,7 +203,7 @@ export default function AgenticCommercePage() {
                 artifacts inside portable records and evidence bundles that verify offline.
               </p>
               <StepLabel>Verify it</StepLabel>
-              <CodeBlock>npx -y @peac/cli@0.16.2 verify ./payment-event.jws --public-key ./jwks.json</CodeBlock>
+              <CodeBlock>npx -y @peac/cli@0.16.3 verify ./payment-event.jws --public-key ./jwks.json</CodeBlock>
               <StepLabel>Expected</StepLabel>
               <Terminal
                 lines={[

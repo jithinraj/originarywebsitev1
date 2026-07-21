@@ -476,7 +476,7 @@ export default function PeacPage() {
           />
           <Card padding={36} style={{ maxWidth: 760, margin: '0 auto' }}>
             <pre className="home-code" style={{ margin: 0 }}>
-{`npx -y @peac/cli@0.16.2 verify ./record.jws --public-key ./jwks.json`}
+{`npx -y @peac/cli@0.16.3 verify ./record.jws --public-key ./jwks.json`}
             </pre>
             <p
               style={{

@@ -69,8 +69,8 @@ export function VerifyConsole() {
             margin: 0,
           }}
         >
-{`pnpm dlx @peac/cli@0.16.2 samples generate -o ./s
-pnpm dlx @peac/cli@0.16.2 verify ./s/valid/basic-record.jws \\
+{`pnpm dlx @peac/cli@0.16.3 samples generate -o ./s
+pnpm dlx @peac/cli@0.16.3 verify ./s/valid/basic-record.jws \\
   --public-key ./s/bundles/sandbox-jwks.json`}
         </pre>
         <p style={{ fontFamily: SANS, fontSize: 13, lineHeight: 1.55, color: PALETTE.faint, margin: '12px 0 0' }}>

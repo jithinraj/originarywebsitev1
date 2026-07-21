@@ -148,7 +148,7 @@ export default function AiGatewayPage() {
               <StepLabel>Verify on any machine, later</StepLabel>
               <Terminal
                 lines={[
-                  { kind: 'out', text: '$ npx -y @peac/cli@0.16.2 verify ./gateway-decision.jws --public-key ./jwks.json' },
+                  { kind: 'out', text: '$ npx -y @peac/cli@0.16.3 verify ./gateway-decision.jws --public-key ./jwks.json' },
                   { kind: 'ok', text: 'Signature valid (offline).' },
                 ]}
               />
@@ -292,7 +292,7 @@ export default function AiGatewayPage() {
         >
           Verify it
         </div>
-        <CodeBlock tone="ink">npx -y @peac/cli@0.16.2 verify ./gateway-decision.jws --public-key ./jwks.json</CodeBlock>
+        <CodeBlock tone="ink">npx -y @peac/cli@0.16.3 verify ./gateway-decision.jws --public-key ./jwks.json</CodeBlock>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <InkButton href="/contact" primary>
             Start a pilot

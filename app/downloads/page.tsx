@@ -158,7 +158,7 @@ export default function DownloadsPage() {
               install with your package manager
             </Mono>
             <pre className="home-code" style={{ marginTop: 12, marginBottom: 0 }}>
-{`npm i -g @peac/cli@0.16.2
+{`npm i -g @peac/cli@0.16.3
 npm i @peac/protocol@0.16.2 @peac/crypto@0.16.2 @peac/schema@0.16.2
 npm i @peac/mcp-server@0.16.2`}
             </pre>
@@ -174,7 +174,7 @@ npm i @peac/mcp-server@0.16.2`}
               Verify a signed record locally:
             </div>
             <pre className="home-code" style={{ marginTop: 8, marginBottom: 0 }}>
-{`npx -y @peac/cli@0.16.2 verify ./record.jws --public-key ./jwks.json`}
+{`npx -y @peac/cli@0.16.3 verify ./record.jws --public-key ./jwks.json`}
             </pre>
           </Card>
         </PageSection>

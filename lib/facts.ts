@@ -13,16 +13,16 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   /** Latest public release tag. */
-  currentVersion: 'v0.16.2',
+  currentVersion: 'v0.16.3',
 
   /** Public release date for currentVersion. */
-  currentReleaseDate: '2026-07-13',
+  currentReleaseDate: '2026-07-21',
 
   /** npm dist-tag used for currentVersion. */
   currentDistTag: 'latest',
 
   /** Stable release on the npm `latest` dist-tag */
-  stableVersion: 'v0.16.2',
+  stableVersion: 'v0.16.3',
 
   /** Current stable wire format. JWS typ: interaction-record+jwt. */
   stableWireFormat: 'interaction-record+jwt',
@@ -49,10 +49,10 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   /** Release public name. */
-  releaseName: 'Portable Evidence Pack',
+  releaseName: 'Gateway Decision Evidence',
 
   /** Test file count. */
-  testFilesCount: 487,
+  testFilesCount: 489,
 
   /** Current Wire 0.2 JWS typ. */
   currentTyp: 'interaction-record+jwt',
@@ -61,10 +61,10 @@ export const FACTS = {
   legacyTyp: 'peac-receipt/0.1',
 
   /** Test count. */
-  testsCount: 12666,
+  testsCount: 12729,
 
   /** Build targets. */
-  buildTargets: 112,
+  buildTargets: 113,
 
   /** Conformance requirement IDs. */
   conformanceRequirements: 290,
