@@ -1433,6 +1433,8 @@ html {
   align-items: center;
   overflow-x: auto;
   scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 26px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 26px), transparent);
 }
 .pk-hero-strip::-webkit-scrollbar { display: none; }
 @media (max-width: 980px) {
