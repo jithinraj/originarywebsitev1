@@ -1,19 +1,194 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { OriginaryLogoMotion } from '@/components/brand/OriginaryLogoMotion'
 
-const links: Array<{ label: string; href: string }> = [
-  { label: 'Product', href: '/product' },
-  { label: 'How it works', href: '/how-it-works' },
-  { label: 'Downloads', href: '/downloads' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'PEAC', href: '/peac' },
-  { label: 'Contact', href: '/contact' },
+type NavLink = { label: string; href: string; external?: boolean }
+type NavEntry =
+  | { kind: 'link'; label: string; href: string }
+  | { kind: 'menu'; label: string; items: NavLink[] }
+
+const NAV: NavEntry[] = [
+  {
+    kind: 'menu',
+    label: 'Product',
+    items: [
+      { label: 'Originary Verify', href: '/product' },
+      { label: 'Pricing', href: '/pricing' },
+    ],
+  },
+  {
+    kind: 'menu',
+    label: 'Solutions',
+    items: [
+      { label: 'MCP tool runs', href: '/mcp' },
+      { label: 'AI gateway decisions', href: '/ai-gateway' },
+      { label: 'Agentic commerce', href: '/agentic-commerce' },
+      { label: 'Provisioning', href: '/provisioning-records' },
+      { label: 'API and agent records', href: '/records' },
+    ],
+  },
+  { kind: 'link', label: 'Verify', href: '/verify' },
+  {
+    kind: 'menu',
+    label: 'Developers',
+    items: [
+      { label: 'How it works', href: '/how-it-works' },
+      { label: 'Downloads', href: '/downloads' },
+      { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
+    ],
+  },
+  { kind: 'link', label: 'PEAC', href: '/peac' },
+  { kind: 'link', label: 'Trust', href: '/trust' },
+  {
+    kind: 'menu',
+    label: 'Company',
+    items: [
+      { label: 'About', href: '/about' },
+      { label: 'Press', href: '/press' },
+      { label: 'Security', href: '/security' },
+      { label: 'Contact', href: '/contact' },
+    ],
+  },
 ]
+
+const topLinkStyle = {
+  fontFamily: SANS,
+  fontSize: 13.5,
+  color: '#3a352b',
+  textDecoration: 'none',
+  letterSpacing: '-0.005em',
+  transition: 'color 160ms ease',
+} as const
+
+const menuItemStyle = {
+  display: 'block',
+  fontFamily: SANS,
+  fontSize: 13.5,
+  color: '#3a352b',
+  textDecoration: 'none',
+  padding: '9px 12px',
+  borderRadius: 2,
+  whiteSpace: 'nowrap',
+} as const
+
+function Caret({ open }: { open: boolean }) {
+  return (
+    <svg
+      width="9"
+      height="9"
+      viewBox="0 0 10 10"
+      fill="none"
+      aria-hidden
+      style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 160ms ease', marginLeft: 4 }}
+    >
+      <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.3" />
+    </svg>
+  )
+}
+
+function NavMenu({ label, items }: { label: string; items: NavLink[] }) {
+  const [open, setOpen] = useState(false)
+  const wrapRef = useRef<HTMLDivElement>(null)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const menuId = useId()
+
+  useEffect(() => {
+    if (!open) return
+    const onDoc = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false)
+    }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('mousedown', onDoc)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onDoc)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
+  const enter = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current)
+    setOpen(true)
+  }
+  const leave = () => {
+    closeTimer.current = setTimeout(() => setOpen(false), 140)
+  }
+
+  return (
+    <div
+      ref={wrapRef}
+      className="home-nav-menu"
+      style={{ position: 'relative', display: 'inline-flex' }}
+      onMouseEnter={enter}
+      onMouseLeave={leave}
+    >
+      <button
+        type="button"
+        className="home-nav-link home-nav-menubtn"
+        aria-expanded={open ? 'true' : 'false'}
+        aria-controls={menuId}
+        onClick={() => setOpen((v) => !v)}
+        style={{
+          ...topLinkStyle,
+          display: 'inline-flex',
+          alignItems: 'center',
+          background: 'transparent',
+          border: 'none',
+          padding: 0,
+          cursor: 'pointer',
+        }}
+      >
+        {label}
+        <Caret open={open} />
+      </button>
+      <ul
+        id={menuId}
+        className="home-nav-dropdown"
+        style={{
+          position: 'absolute',
+          top: 'calc(100% + 10px)',
+          left: 0,
+          minWidth: 214,
+          listStyle: 'none',
+          margin: 0,
+          padding: 6,
+          background: PALETTE.bg,
+          border: `1px solid ${PALETTE.hairline}`,
+          boxShadow: '0 14px 34px rgba(20, 17, 10, 0.10)',
+          display: open ? 'block' : 'none',
+          zIndex: 60,
+        }}
+      >
+        {items.map((it) => (
+          <li key={it.href}>
+            {it.external ? (
+              <a
+                href={it.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-nav-dropitem"
+                onClick={() => setOpen(false)}
+                style={menuItemStyle}
+              >
+                {it.label}
+              </a>
+            ) : (
+              <Link href={it.href} className="home-nav-dropitem" onClick={() => setOpen(false)} style={menuItemStyle}>
+                {it.label}
+              </Link>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
 
 export function Nav() {
   const [open, setOpen] = useState(false)
@@ -91,29 +266,22 @@ export function Nav() {
 
         <nav
           className="home-nav-links"
+          aria-label="Primary"
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: 28,
+            gap: 22,
           }}
         >
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="home-nav-link"
-              style={{
-                fontFamily: SANS,
-                fontSize: 13.5,
-                color: '#3a352b',
-                textDecoration: 'none',
-                letterSpacing: '-0.005em',
-                transition: 'color 160ms ease',
-              }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV.map((entry) =>
+            entry.kind === 'menu' ? (
+              <NavMenu key={entry.label} label={entry.label} items={entry.items} />
+            ) : (
+              <Link key={entry.href} href={entry.href} className="home-nav-link" style={topLinkStyle}>
+                {entry.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div
@@ -208,24 +376,65 @@ export function Nav() {
             padding: `12px ${PAGE_PAD} 20px ${PAGE_PAD}`,
           }}
         >
-          <nav style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                style={{
-                  fontFamily: SANS,
-                  fontSize: 15,
-                  color: PALETTE.ink,
-                  textDecoration: 'none',
-                  padding: '10px 0',
-                  borderBottom: `1px solid ${PALETTE.hairline}`,
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
+          <nav aria-label="Primary" style={{ display: 'flex', flexDirection: 'column' }}>
+            {NAV.map((entry) =>
+              entry.kind === 'link' ? (
+                <Link
+                  key={entry.href}
+                  href={entry.href}
+                  onClick={() => setOpen(false)}
+                  style={{
+                    fontFamily: SANS,
+                    fontSize: 15,
+                    color: PALETTE.ink,
+                    textDecoration: 'none',
+                    padding: '11px 0',
+                    borderBottom: `1px solid ${PALETTE.hairline}`,
+                  }}
+                >
+                  {entry.label}
+                </Link>
+              ) : (
+                <div key={entry.label} style={{ padding: '11px 0', borderBottom: `1px solid ${PALETTE.hairline}` }}>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-plex-mono)',
+                      fontSize: 10.5,
+                      letterSpacing: '0.16em',
+                      textTransform: 'uppercase',
+                      color: PALETTE.faint,
+                    }}
+                  >
+                    {entry.label}
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 2, marginTop: 8 }}>
+                    {entry.items.map((it) =>
+                      it.external ? (
+                        <a
+                          key={it.href}
+                          href={it.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => setOpen(false)}
+                          style={{ fontFamily: SANS, fontSize: 14.5, color: PALETTE.ink, textDecoration: 'none', padding: '6px 0' }}
+                        >
+                          {it.label}
+                        </a>
+                      ) : (
+                        <Link
+                          key={it.href}
+                          href={it.href}
+                          onClick={() => setOpen(false)}
+                          style={{ fontFamily: SANS, fontSize: 14.5, color: PALETTE.ink, textDecoration: 'none', padding: '6px 0' }}
+                        >
+                          {it.label}
+                        </Link>
+                      ),
+                    )}
+                  </div>
+                </div>
+              ),
+            )}
           </nav>
           <div style={{ display: 'flex', gap: 12, marginTop: 16 }}>
             <a

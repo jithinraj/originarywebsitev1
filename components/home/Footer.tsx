@@ -15,7 +15,6 @@ const columns: Array<{
       { label: 'Originary Verify', href: '/product' },
       { label: 'Verify a sample', href: '/verify' },
       { label: 'Pricing', href: '/pricing' },
-      { label: 'Downloads', href: '/downloads' },
       { label: 'Start a pilot', href: '/contact', emphasis: true },
     ],
   },
@@ -31,11 +30,12 @@ const columns: Array<{
     ],
   },
   {
-    h: 'Protocol',
+    h: 'Developers',
     items: [
-      { label: 'PEAC Protocol', href: '/peac' },
-      { label: 'Record gallery', href: '/records' },
       { label: 'How it works', href: '/how-it-works' },
+      { label: 'Downloads', href: '/downloads' },
+      { label: 'Record gallery', href: '/records' },
+      { label: 'PEAC Protocol', href: '/peac' },
       { label: 'Blog', href: '/blog' },
       { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
     ],
