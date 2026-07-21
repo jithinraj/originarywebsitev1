@@ -91,8 +91,9 @@ export default function Page() {
       >
         <Nav />
         <main id="main-content" role="main">
-          {/* 1. Hero */}
+          {/* 1. Hero, with the interop strip directly beneath it */}
           <HeroV2 />
+          <WorksWithStrip />
           {/* 2. Boundary problem */}
           <Reveal threshold={0.12}>
             <Divider eyebrow="where logs fail" />
@@ -108,18 +109,13 @@ export default function Page() {
             <Divider eyebrow="where it fits" />
             <UseCases />
           </Reveal>
-          {/* 5. Deployment and fit: runs alongside the stack you already have */}
-          <Reveal threshold={0.12}>
-            <Divider eyebrow="works with your stack" />
-            <WorksWithStrip />
-          </Reveal>
-          {/* 6. PEAC / open-source proof */}
+          {/* 5. PEAC / open-source proof */}
           <Reveal threshold={0.12}>
             <Divider eyebrow="open source" />
             <BuiltOnPEAC />
             <ProofStrip />
           </Reveal>
-          {/* 7. Final CTA */}
+          {/* 6. Final CTA */}
           <Reveal threshold={0.12}>
             <Divider eyebrow="see it on your workflow" />
             <DemoCTA />
