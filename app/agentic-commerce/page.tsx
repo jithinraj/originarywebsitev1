@@ -280,7 +280,7 @@ export default function AgenticCommercePage() {
 
       {/* v0.16.2 */}
       <PageSection paddingTop={0} paddingBottom={64} background={PALETTE.paper}>
-        <SectionHeading index="06" eyebrow="What v0.16.2 adds" title="Broader evidence coverage, same wire format." />
+        <SectionHeading index="06" eyebrow="Beyond single records" title="Broader evidence coverage, same wire format." />
         <Card padding={28} style={{ maxWidth: 860 }}>
           <div
             style={{
@@ -291,7 +291,7 @@ export default function AgenticCommercePage() {
               color: PALETTE.accent,
             }}
           >
-            PEAC v0.16.2
+            PEAC v0.16.3
           </div>
           <p
             style={{
