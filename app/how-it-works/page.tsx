@@ -652,7 +652,7 @@ export default function HowItWorksPage() {
 
       {/* v0.16.2 */}
       <PageSection paddingTop={0} paddingBottom={64}>
-        <SectionHeading index="07" eyebrow="What v0.16.2 adds" title="Broader evidence coverage, same wire format." />
+        <SectionHeading index="07" eyebrow="Beyond single records" title="Broader evidence coverage, same wire format." />
         <Card padding={28} style={{ maxWidth: 860 }}>
           <div
             style={{
@@ -663,7 +663,7 @@ export default function HowItWorksPage() {
               color: PALETTE.accent,
             }}
           >
-            PEAC v0.16.2
+            PEAC v0.16.3
           </div>
           <p
             style={{
