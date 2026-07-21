@@ -537,6 +537,93 @@ function JumpIndex({ items }: { items: Array<{ href: string; label: string }> })
   )
 }
 
+const MODEL_STEPS: Array<{ n: string; title: string; body: string; mech: string }> = [
+  {
+    n: '01',
+    title: 'Issue',
+    body: 'At the moment a system acts, it signs a record that binds selected facts, such as the request and response digests, the policy in force, the issuer, and the time, to a key it controls. Private logs stay private.',
+    mech: 'sign() -> interaction-record+jwt',
+  },
+  {
+    n: '02',
+    title: 'Carry',
+    body: 'The record travels with the interaction: a PEAC-Receipt header on an API response, _meta inside an MCP tool result, or an evidence bundle. Systems that do not know PEAC ignore it.',
+    mech: 'PEAC-Receipt header . MCP _meta . bundle',
+  },
+  {
+    n: '03',
+    title: 'Verify and bundle',
+    body: 'Any party checks the signature and the bound digests offline, with no access to your logs or dashboard, then packages related records into a bundle for review, audit, or dispute.',
+    mech: 'verify --public-key -> valid (offline)',
+  },
+]
+
+function ModelSection() {
+  return (
+    <PageSection paddingTop={8} paddingBottom={0}>
+      <SectionHeading index="00" eyebrow="the primitive" title="One record. Issue, carry, verify and bundle." />
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+          gap: 20,
+          marginTop: 4,
+        }}
+      >
+        {MODEL_STEPS.map((s) => (
+          <Card key={s.n} padding={26}>
+            <div
+              style={{
+                fontFamily: 'var(--font-plex-mono)',
+                fontSize: 11,
+                letterSpacing: '0.2em',
+                color: PALETTE.accent,
+              }}
+            >
+              {s.n}
+            </div>
+            <h2
+              style={{
+                fontFamily: 'var(--font-plex-sans)',
+                fontSize: 21,
+                lineHeight: 1.2,
+                letterSpacing: '-0.01em',
+                fontWeight: 500,
+                color: PALETTE.ink,
+                margin: '10px 0 0',
+              }}
+            >
+              {s.title}
+            </h2>
+            <p
+              style={{
+                fontFamily: 'var(--font-plex-sans)',
+                fontSize: 14.5,
+                lineHeight: 1.6,
+                color: PALETTE.muted,
+                margin: '10px 0 14px',
+              }}
+            >
+              {s.body}
+            </p>
+            <code
+              style={{
+                display: 'block',
+                fontFamily: 'var(--font-plex-mono)',
+                fontSize: 11.5,
+                color: PALETTE.faint,
+                whiteSpace: 'pre-wrap',
+              }}
+            >
+              {s.mech}
+            </code>
+          </Card>
+        ))}
+      </div>
+    </PageSection>
+  )
+}
+
 export default function HowItWorksPage() {
   return (
     <PageShell>
@@ -556,6 +643,8 @@ export default function HowItWorksPage() {
           <Button href="/verify">Verify one</Button>
         </div>
       </PageHero>
+
+      <ModelSection />
 
       {SURFACES.map((s, i) => (
         <SurfaceSection s={s} first={i === 0} background={i % 2 === 1 ? PALETTE.paper : undefined} key={s.id} />
