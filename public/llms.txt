@@ -74,6 +74,10 @@ certification, or endorsement is implied by use of these files.
 - https://www.originary.xyz/originary-logo-reverse.svg - wordmark for dark backgrounds
 - https://www.originary.xyz/originary-logo-mark.svg - compact symbol (the origin point)
 - https://www.originary.xyz/originary-logo-mark-reverse.svg - compact symbol for dark backgrounds
+- https://www.originary.xyz/originary-logo-800w.png - wordmark, raster, 800 px wide
+- https://www.originary.xyz/originary-logo-2400w.png - wordmark, raster, 2400 px wide
+- https://www.originary.xyz/originary-logo-reverse-800w.png - wordmark for dark backgrounds, raster
+- https://www.originary.xyz/originary-logo-tm-2400w.png - wordmark with trademark symbol, raster
 
 ## Open protocol
 

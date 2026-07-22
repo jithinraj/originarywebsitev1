@@ -13,8 +13,10 @@ const mono = MONO
 export type BadgeKind = 'verified' | 'denied' | 'invalid' | 'neutral'
 
 const BADGE_COLORS: Record<BadgeKind, { fg: string; bg: string; bd: string }> = {
-  verified: { fg: PALETTE.success, bg: 'rgba(74,116,89,0.10)', bd: 'rgba(74,116,89,0.35)' },
-  denied: { fg: PALETTE.warn, bg: 'rgba(138,106,60,0.10)', bd: 'rgba(138,106,60,0.35)' },
+  // Status text runs at 10.5px, so it uses a darker step of the same hue for legibility.
+  // The tint and border keep the canonical accent values.
+  verified: { fg: '#41654c', bg: 'rgba(74,116,89,0.10)', bd: 'rgba(74,116,89,0.35)' },
+  denied: { fg: '#775a32', bg: 'rgba(138,106,60,0.10)', bd: 'rgba(138,106,60,0.35)' },
   invalid: { fg: RUST, bg: 'rgba(154,59,46,0.08)', bd: 'rgba(154,59,46,0.35)' },
   neutral: { fg: PALETTE.faint, bg: PALETTE.paper, bd: PALETTE.hairline },
 }

@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 export default function AcceptableUse() {
   return (
     <StaticPageLayout>
-      <main>
         <section className="hero">
           <div className="container">
             <div className="hero-content">
@@ -296,7 +295,6 @@ export default function AcceptableUse() {
             </div>
           </div>
         </section>
-      </main>
     </StaticPageLayout>
   )
 }

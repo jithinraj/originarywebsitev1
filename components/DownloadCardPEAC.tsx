@@ -1,4 +1,7 @@
+import { FACTS } from '@/lib/facts'
+
 export default function DownloadCardPEAC() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <section style={{
       marginTop: 'var(--space-8)',
@@ -35,7 +38,7 @@ export default function DownloadCardPEAC() {
           <div style={{ fontWeight: 500, marginBottom: 'var(--space-2)' }}>
             Node.js CLI & Core (npm)
           </div>
-          <pre style={{
+          <pre tabIndex={0} style={{
             overflow: 'auto',
             borderRadius: 'var(--radius-md)',
             background: 'var(--surface-subtle)',
@@ -44,8 +47,8 @@ export default function DownloadCardPEAC() {
             fontFamily: 'var(--font-mono)',
             margin: 'var(--space-2) 0'
           }}>
-{`npm i -g @peac/cli@0.16.3
-npm i @peac/protocol@0.16.2 @peac/crypto@0.16.2 @peac/schema@0.16.2
+{`npm i -g @peac/cli@${v}
+npm i @peac/protocol@${v} @peac/crypto@${v} @peac/schema@${v}
 peac policy init
 peac policy validate peac-policy.yaml`}
           </pre>

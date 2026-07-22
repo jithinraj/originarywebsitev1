@@ -167,8 +167,12 @@ const trustCards: Array<{
     description: 'Export and interoperability guarantees for your records and keys.',
     links: [
       { href: '/peac', label: 'Protocol Overview' },
-      { href: '/conformance', label: 'Conformance Suite' },
-      { href: '/governance', label: 'Governance Model' },
+      {
+        href: 'https://github.com/peacprotocol/peac/tree/main/specs/conformance',
+        label: 'Conformance Suite',
+        external: true,
+      },
+      { href: '/verify', label: 'Offline Verification' },
     ],
   },
 ]
@@ -442,7 +446,10 @@ export default function TrustPage() {
               </strong>{' '}
               These are interoperability surfaces PEAC composes with, not relationships with the organizations behind
               them. Product names, logos, and brands belong to their respective owners. Each row is verifiable at{' '}
-              <a href="https://github.com/peacprotocol/peac" style={{ color: PALETTE.ink }}>
+              <a
+                href="https://github.com/peacprotocol/peac"
+                style={{ color: PALETTE.ink, textDecoration: 'underline', textUnderlineOffset: 3 }}
+              >
                 github.com/peacprotocol/peac
               </a>
               , and the dated per-row detail lives in that repository&apos;s interop matrix.
