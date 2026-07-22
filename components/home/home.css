@@ -217,8 +217,8 @@ html {
   --surface-card: #fbf9f4;
   --text-primary: #14110a;
   --text-secondary: #6b6458;
-  --text-tertiary: #a39d91;
-  --text-muted: #a39d91;
+  --text-tertiary: #6e6759;
+  --text-muted: #6e6759;
   --border-default: rgba(20, 17, 10, 0.14);
   --border-subtle: rgba(20, 17, 10, 0.14);
   --border-strong: rgba(20, 17, 10, 0.18);
@@ -671,7 +671,7 @@ html {
 .home-stat-note {
   font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
   font-size: 13px;
-  color: #a39d91;
+  color: #6e6759;
   margin-top: 6px;
   line-height: 1.4;
 }

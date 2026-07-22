@@ -53,7 +53,7 @@ export function CategoryMatrix() {
             >
               <div className="home-category-card-head">
                 <span className="home-category-card-meta">
-                  <Mono size={11} color="#7a7263" style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  <Mono size={11} color="#5a5346" style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                     {String(CATEGORIES.indexOf(cat) + 1).padStart(2, '0')}
                   </Mono>
                   <span className="home-category-card-mark" aria-hidden>

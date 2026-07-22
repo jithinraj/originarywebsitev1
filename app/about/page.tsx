@@ -269,7 +269,10 @@ export default function About() {
                   Impact Summit, and the record format has been the subject of
                   talks at the MCP Dev Summit and KubeCon India. Links to each are
                   on the{' '}
-                  <Link href="/press" style={{ color: PALETTE.ink }}>
+                  <Link
+                    href="/press"
+                    style={{ color: PALETTE.ink, textDecoration: 'underline', textUnderlineOffset: 3 }}
+                  >
                     press page
                   </Link>
                   .
