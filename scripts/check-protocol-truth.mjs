@@ -4,7 +4,7 @@
  *
  * Fails the build when:
  * 1. The forbidden wire identifier `peac-receipt/0.2` appears anywhere.
- * 2. A stale release metric (pre-v0.16.2 test count) appears in page source.
+ * 2. A stale release metric from an earlier release appears in page source.
  * 3. `peac-receipt/0.1` appears outside an approved legacy-compatibility context.
  */
 import { readFileSync, readdirSync, statSync } from 'node:fs'
@@ -16,8 +16,9 @@ const EXTENSIONS = new Set(['.tsx', '.ts', '.mdx', '.md', '.json', '.txt', '.css
 
 const FORBIDDEN = [
   { pattern: /peac-receipt\/0\.2/, reason: 'peac-receipt/0.2 does not exist; Wire 0.2 is interaction-record+jwt' },
-  { pattern: /11,975|11975/, reason: 'stale pre-v0.16.2 test count' },
-  { pattern: /12,662|(?<!\d)12662(?!\d)/, reason: 'incorrect v0.16.2 test count; canonical facts say 12666' },
+  { pattern: /11,975|11975/, reason: 'stale test count from an earlier release' },
+  { pattern: /12,662|(?<!\d)12662(?!\d)/, reason: 'incorrect test count; use the value in the facts registry' },
+  { pattern: /12,666|(?<!\d)12666(?!\d)/, reason: 'stale test count; use the value in the facts registry' },
 ]
 
 // Files allowed to mention legacy identifiers in a compatibility context.

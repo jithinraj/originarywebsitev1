@@ -60,8 +60,9 @@ export async function GET() {
         >
           {/* Left: brand + headline + tagline */}
           <div style={{ display: 'flex', flexDirection: 'column', flex: 1.25 }}>
+            {/* 182 x 47 preserves the canonical wordmark aspect ratio (7487:1918). */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={wordmarkSrc} width={182} height={64} alt="Originary" />
+            <img src={wordmarkSrc} width={182} height={47} alt="Originary" />
             <div
               style={{
                 display: 'flex',

@@ -20,7 +20,7 @@ export default function AcceptableUse() {
               <span className="kicker">LEGAL</span>
               <h1 className="display">Acceptable Use Policy</h1>
               <p className="sub">Guidelines for permitted and prohibited uses of our services.</p>
-              <p className="legal-date">Effective from July 24, 2025.</p>
+              <p className="legal-date">Last updated July 22, 2026.</p>
             </div>
           </div>
         </section>

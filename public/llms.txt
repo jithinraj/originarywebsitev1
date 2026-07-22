@@ -7,13 +7,15 @@ Originary Verify helps teams create signed records when APIs, agents, MCP
 tools, gateways, payment flows, and provisioning systems act, so another
 party can verify what the issuer recorded without private-log or dashboard access.
 
-Current protocol release: PEAC v0.16.2, which adds evidence patterns for
-paid resources, paid MCP tool records, linked counterparty acknowledgments,
-Merkle commitment helpers, external evidence anchoring, agent spend
-attribution, agent run lineage records, consented action records, and
-runtime lineage exports. The wire format is unchanged.
+Current protocol release: PEAC v0.16.3 "Gateway Decision Evidence", which adds
+a gateway decision evidence profile over the existing access-decision record,
+a runnable offline-verifiable example, and an integrator guide. The wire format
+is unchanged. Earlier evidence patterns remain available: paid resources, paid
+MCP tool records, linked counterparty acknowledgments, Merkle commitment
+helpers, external evidence anchoring, agent spend attribution, agent run
+lineage records, consented action records, and runtime lineage exports.
 
-Last updated: 2026-07-15
+Last updated: 2026-07-22
 
 Organization: Originary (legal entity: Poem, Inc.)
 Location: Delaware, USA
@@ -35,7 +37,9 @@ vendor runtime.
 - https://www.originary.xyz/downloads
 - https://www.originary.xyz/pricing
 - https://www.originary.xyz/contact
-- https://www.originary.xyz/trust
+- https://www.originary.xyz/trust - deployment and verification boundaries, procurement facts, and per-system interoperability status
+- https://www.originary.xyz/press - press kit: quotable boilerplate, fast facts, current metrics, and logo downloads
+- https://www.originary.xyz/security - supported versions, severity and response targets, and supply-chain posture
 
 ## Product pages
 
@@ -58,6 +62,18 @@ vendor runtime.
 - https://www.originary.xyz/blog/a2a-stack-agent-to-agent-commerce
 - https://www.originary.xyz/blog/aipref-by-ietf
 - https://www.originary.xyz/blog/robots-txt-rfc-9309
+
+## Brand assets
+
+The Originary logo, for correct attribution. Scalable vector files; use the
+trademark version where the logo stands on its own. No partnership,
+certification, or endorsement is implied by use of these files.
+
+- https://www.originary.xyz/originary-logo.svg - wordmark, primary
+- https://www.originary.xyz/originary-logo-tm.svg - wordmark with trademark symbol
+- https://www.originary.xyz/originary-logo-reverse.svg - wordmark for dark backgrounds
+- https://www.originary.xyz/originary-logo-mark.svg - compact symbol (the origin point)
+- https://www.originary.xyz/originary-logo-mark-reverse.svg - compact symbol for dark backgrounds
 
 ## Open protocol
 

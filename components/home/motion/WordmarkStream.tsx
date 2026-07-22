@@ -20,7 +20,7 @@ export function WordmarkStream() {
           fill="#14110a"
         >
           {WORDMARK_GEOMETRY.paths.map((p, i) => (
-            <path key={i} d={p.d} transform={WORDMARK_GEOMETRY.transform(p.x)} />
+            <path key={i} d={p.d} transform={('t' in p && p.t) || WORDMARK_GEOMETRY.transform(p.x)} />
           ))}
         </svg>
       </div>

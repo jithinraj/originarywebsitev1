@@ -264,6 +264,16 @@ export default function About() {
                   We are a small team. We work in the open where possible and
                   publish software under permissive licenses.
                 </p>
+                <p className="home-about-body">
+                  Our work has been presented on CNBC-TV18 and at the India AI
+                  Impact Summit, and the record format has been the subject of
+                  talks at the MCP Dev Summit and KubeCon India. Links to each are
+                  on the{' '}
+                  <Link href="/press" style={{ color: PALETTE.ink }}>
+                    press page
+                  </Link>
+                  .
+                </p>
               </div>
             </Reveal>
           </div>

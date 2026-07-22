@@ -54,7 +54,7 @@ export default function Privacy() {
         {JSON.stringify(webPageJsonLd)}
       </Script>
       <PageShell>
-        <LegalDoc title="Privacy Policy" effective="Effective from 2025-07-27">
+        <LegalDoc title="Privacy Policy" effective="Last updated 2026-07-22">
           <h2>Controller</h2>
           <p>
             <strong>Poem, Inc.</strong> (global controller). Contact:{' '}
