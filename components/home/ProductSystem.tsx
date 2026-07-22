@@ -53,7 +53,7 @@ export function ProductSystem() {
         {MODULES.map((m, i) => (
           <Link key={m.title} href={m.href} className="home-prodsys-card">
             <span className="home-prodsys-meta">
-              <Mono size={11} color="#7a7263" style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+              <Mono size={11} color="#5a5346" style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 {String(i + 1).padStart(2, '0')}
               </Mono>
               <span className="home-prodsys-mark" aria-hidden>

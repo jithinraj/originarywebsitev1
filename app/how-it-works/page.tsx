@@ -456,7 +456,7 @@ function SurfaceSection({
             <p className="hiw-wprove">
               <b>Later, a verifier can confirm the issuer signed a record binding:</b> {s.prove}
             </p>
-            <code className="hiw-wtype">{s.carrier}</code>
+            <code className="hiw-wtype" tabIndex={0}>{s.carrier}</code>
             <div className="hiw-actors">actors: {s.actors.join(', ')}</div>
           </div>
           <FlowDiagram beats={s.flow} actors={s.actors} />

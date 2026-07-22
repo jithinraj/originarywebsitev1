@@ -27,7 +27,6 @@ export default function Trademark() {
         {JSON.stringify(webPageJsonLd)}
       </Script>
       <StaticPageLayout>
-      <main>
         <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
           <div className="container">
             <div style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -43,7 +42,7 @@ export default function Trademark() {
                   marginBottom: 'var(--space-6)',
                   fontSize: 'var(--text-sm)',
                   fontWeight: 600,
-                  color: 'var(--accent-brand)'
+                  color: '#0a6a9e'
                 }}>
                   <span>LEGAL</span>
                 </div>
@@ -122,7 +121,6 @@ export default function Trademark() {
             </div>
           </div>
         </section>
-      </main>
       </StaticPageLayout>
     </div>
   )

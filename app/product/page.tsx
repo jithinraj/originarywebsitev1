@@ -133,7 +133,7 @@ export default function ProductPage() {
           {MODULES.map((m, i) => (
             <div key={m.title} style={{ border: `1px solid ${PALETTE.hairline}`, background: PALETTE.paper, padding: '22px 22px 20px' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <span style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 11, letterSpacing: '0.12em', color: '#7a7263' }}>
+                <span style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 11, letterSpacing: '0.12em', color: '#5a5346' }}>
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span aria-hidden style={{ color: '#8a8172', display: 'inline-flex' }}>
