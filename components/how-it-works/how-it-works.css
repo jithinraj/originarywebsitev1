@@ -418,10 +418,12 @@ h2.hiw-title {
   .hiw-flow {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 30px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 30px), transparent);
   }
   .hiw-factors,
   .hiw-fsteps {
-    min-width: 500px;
+    min-width: 460px;
   }
   .hiw-bindlist li {
     overflow-wrap: anywhere;

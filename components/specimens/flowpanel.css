@@ -231,9 +231,11 @@
   .fp-flow {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 30px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 30px), transparent);
   }
   .fp-actors,
   .fp-steps {
-    min-width: 500px;
+    min-width: 460px;
   }
 }
