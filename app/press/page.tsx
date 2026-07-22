@@ -185,6 +185,85 @@ export default function PressPage() {
           title="Names and the logo."
           sub="Two small things that help a story read right: write Originary with a capital O, and spell out PEAC Protocol on first mention. The wordmark is the primary mark. Anything you are unsure about, just ask."
         />
+        <StepLabel>The wordmark</StepLabel>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gap: 14,
+            margin: '10px 0 22px',
+          }}
+        >
+          <figure style={{ margin: 0 }}>
+            <div
+              style={{
+                background: PALETTE.paper,
+                border: `1px solid ${PALETTE.rule}`,
+                padding: '34px 28px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/originary-logo.svg"
+                alt="The Originary wordmark"
+                width={220}
+                height={56}
+                style={{ width: '100%', maxWidth: 220, height: 'auto' }}
+              />
+            </div>
+            <figcaption
+              style={{
+                fontFamily: 'var(--font-plex-mono)',
+                fontSize: 11,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: PALETTE.faint,
+                marginTop: 8,
+              }}
+            >
+              On light
+            </figcaption>
+          </figure>
+          <figure style={{ margin: 0 }}>
+            <div
+              style={{
+                background: PALETTE.ink,
+                border: `1px solid ${PALETTE.ink}`,
+                padding: '34px 28px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/originary-logo-reverse.svg"
+                alt="The Originary wordmark for dark backgrounds"
+                width={220}
+                height={56}
+                style={{ width: '100%', maxWidth: 220, height: 'auto' }}
+              />
+            </div>
+            <figcaption
+              style={{
+                fontFamily: 'var(--font-plex-mono)',
+                fontSize: 11,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: PALETTE.faint,
+                marginTop: 8,
+              }}
+            >
+              On dark
+            </figcaption>
+          </figure>
+        </div>
+        <p style={{ fontSize: 13, lineHeight: 1.65, color: PALETTE.muted, margin: '0 0 20px', maxWidth: '64ch' }}>
+          Save either image directly, or take a file below.
+        </p>
         <StepLabel>Download the logo</StepLabel>
         <ul
           style={{
@@ -192,29 +271,33 @@ export default function PressPage() {
             margin: '4px 0 0',
             padding: 0,
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(275px, 1fr))',
             gap: '10px 24px',
           }}
         >
           {[
-            ['Wordmark (primary)', '/originary-logo.svg'],
-            ['Wordmark with trademark symbol', '/originary-logo-tm.svg'],
-            ['Wordmark for dark backgrounds', '/originary-logo-reverse.svg'],
-            ['Compact mark', '/originary-logo-mark.svg'],
-            ['Compact mark for dark backgrounds', '/originary-logo-mark-reverse.svg'],
-          ].map(([label, href]) => (
+            ['Wordmark (primary)', '/originary-logo.svg', 'SVG'],
+            ['Wordmark', '/originary-logo-2400w.png', 'PNG 2400'],
+            ['Wordmark', '/originary-logo-800w.png', 'PNG 800'],
+            ['Wordmark with trademark symbol', '/originary-logo-tm.svg', 'SVG'],
+            ['Wordmark with trademark symbol', '/originary-logo-tm-2400w.png', 'PNG 2400'],
+            ['Wordmark for dark backgrounds', '/originary-logo-reverse.svg', 'SVG'],
+            ['Wordmark for dark backgrounds', '/originary-logo-reverse-800w.png', 'PNG 800'],
+            ['Compact mark', '/originary-logo-mark.svg', 'SVG'],
+            ['Compact mark for dark backgrounds', '/originary-logo-mark-reverse.svg', 'SVG'],
+          ].map(([label, href, kind]) => (
             <li key={href} style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 14, lineHeight: 1.55 }}>
               <a href={href} download style={{ color: PALETTE.ink }}>
                 {label}
               </a>{' '}
-              <span style={{ color: PALETTE.faint, fontFamily: 'var(--font-plex-mono)', fontSize: 11.5 }}>SVG</span>
+              <span style={{ color: PALETTE.faint, fontFamily: 'var(--font-plex-mono)', fontSize: 11.5 }}>{kind}</span>
             </li>
           ))}
         </ul>
         <p style={{ fontSize: 13, lineHeight: 1.65, color: PALETTE.faint, marginTop: 14, maxWidth: '64ch' }}>
-          Scalable vector files, so they stay sharp at any size. Use the trademark version where the logo stands on its
-          own; the plain wordmark is fine inside an article. Minimum width 112 px, or use the compact mark below that.
-          Need a raster or a specific size? Ask and we will send it.
+          The vector files stay sharp at any size; the PNGs are there when a vector will not do. Use the trademark
+          version where the logo stands on its own; the plain wordmark is fine inside an article. Minimum width 112 px,
+          or use the compact mark below that. Need a different size or format? Ask and we will send it.
         </p>
         <div style={{ marginTop: 26 }}>
           <StepLabel>Press contact</StepLabel>
