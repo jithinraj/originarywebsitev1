@@ -7,7 +7,7 @@ import { DataTable, MarkerList, StepLabel, CodeBlock } from '@/components/specim
 
 const TITLE = 'Originary press kit and company information'
 const DESCRIPTION =
-  'Approved Originary boilerplates, founder biography, current metrics, appearances, logos, screenshots, and media contact.'
+  'Originary press kit: quotable boilerplate, fast facts, current release metrics, founder appearances, brand assets, and media contact.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -34,15 +34,15 @@ export default function PressPage() {
     <PageShell>
       <PageHero
         eyebrow="Press"
-        title="Originary press kit."
-        sub="Approved company language, current metrics, brand assets, and how to reach us. The boilerplate section may be quoted verbatim."
-        strip={['Boilerplate', 'Metrics as of ' + FACTS.currentReleaseDate, 'Brand', 'Contact']}
+        title="Press kit."
+        sub="Working on a story about verifiable records for AI and agents? Everything here is yours to use. Quote the descriptions directly, pull the current facts, grab the logo. We are glad to help, and happy to fact-check a draft before you publish."
+        strip={['Fast facts', 'Boilerplate', 'Metrics as of ' + FACTS.currentReleaseDate, 'Contact']}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <Button href="mailto:contact@originary.xyz?subject=Press" primary>
-            Press contact
+            Email the team
           </Button>
-          <Button href="/about">About the company</Button>
+          <Button href="/about">About Originary</Button>
         </div>
       </PageHero>
 
@@ -51,7 +51,34 @@ export default function PressPage() {
       </PullLine>
 
       <PageSection paddingTop={56} paddingBottom={56}>
-        <SectionHeading index="01" eyebrow="Boilerplate" title="Approved company descriptions." />
+        <SectionHeading
+          index="01"
+          eyebrow="At a glance"
+          title="The fast facts."
+          sub="The quickest reference for a story. Every line is drawn from public releases and company records."
+        />
+        <DataTable
+          head={['Fact', 'Detail']}
+          rows={[
+            ['What it is', 'Verifiable, portable signed records of machine actions across organizational boundaries.'],
+            ['Product', `${PUBLIC_IDENTITY.product}: software for issuing, verifying, and packaging those records.`],
+            ['Protocol', `${PUBLIC_IDENTITY.protocol}: open source under ${PUBLIC_IDENTITY.protocolLicense}.`],
+            ['Company', `${PUBLIC_IDENTITY.legalEntity}, a Delaware corporation. Originary is its software brand.`],
+            ['Founder', 'Jithin Raj.'],
+            ['Current release', `PEAC ${FACTS.currentVersion} "${FACTS.releaseName}" (${FACTS.currentReleaseDate}).`],
+            ['On the web', `${FACTS.domain} . ${FACTS.protocolDomain}`],
+            ['Press contact', 'contact@originary.xyz'],
+          ]}
+        />
+      </PageSection>
+
+      <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
+        <SectionHeading
+          index="02"
+          eyebrow="Boilerplate"
+          title="Descriptions you can quote."
+          sub="Copy either of these straight into your piece. No permission needed, no attribution required."
+        />
         <StepLabel>Short</StepLabel>
         <blockquote style={{ borderLeft: `2px solid ${PALETTE.ink}`, margin: '0 0 28px', padding: '4px 0 4px 22px' }}>
           <p style={{ fontSize: 17, lineHeight: 1.65, color: PALETTE.ink, maxWidth: '64ch', margin: 0 }}>{BOILERPLATE_50}</p>
@@ -62,12 +89,12 @@ export default function PressPage() {
         </blockquote>
       </PageSection>
 
-      <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
+      <PageSection paddingTop={56} paddingBottom={56}>
         <SectionHeading
-          index="02"
-          eyebrow="The relationship"
+          index="03"
+          eyebrow="Who is who"
           title="Originary and PEAC Protocol."
-          sub="Poem, Inc. is the Delaware corporation. Originary™ is its software and developer-tools brand. Through Originary, Poem publishes and maintains PEAC Protocol and develops Originary Verify. PEAC Protocol is independently implementable and self-hostable under Apache-2.0; verification does not depend on an Originary-hosted service."
+          sub="The short version, so the names in your story land right. Poem, Inc. is the Delaware corporation; Originary is its software and developer-tools brand. Through Originary, Poem publishes PEAC Protocol and develops Originary Verify. PEAC Protocol is Apache-2.0, independently implementable, and self-hostable; verification does not depend on an Originary-hosted service."
         />
         <DataTable
           head={['Name', 'Role', 'Status']}
@@ -96,8 +123,13 @@ export default function PressPage() {
         />
       </PageSection>
 
-      <PageSection paddingTop={56} paddingBottom={56}>
-        <SectionHeading index="03" eyebrow="Current metrics" title={'As of PEAC ' + FACTS.currentVersion + ' (' + FACTS.currentReleaseDate + ').'} />
+      <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
+        <SectionHeading
+          index="04"
+          eyebrow="Current metrics"
+          title={'As of PEAC ' + FACTS.currentVersion + '.'}
+          sub="Generated from the release facts registry, so they update with each public release. You can cite the current numbers with confidence."
+        />
         <DataTable
           head={['Metric', 'Value']}
           rows={[
@@ -114,8 +146,13 @@ export default function PressPage() {
         </p>
       </PageSection>
 
-      <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
-        <SectionHeading index="04" eyebrow="Appearances" title="Talks and media." />
+      <PageSection paddingTop={56} paddingBottom={56}>
+        <SectionHeading
+          index="05"
+          eyebrow="Appearances"
+          title="Founder talks and media."
+          sub="Founder Jithin Raj on the record. Happy to arrange an interview or a comment for your piece."
+        />
         <MarkerList
           marker="number"
           items={[
@@ -141,18 +178,22 @@ export default function PressPage() {
         />
       </PageSection>
 
-      <PageSection paddingTop={56} paddingBottom={80}>
+      <PageSection paddingTop={56} paddingBottom={80} background={PALETTE.paper}>
         <SectionHeading
-          index="05"
+          index="06"
           eyebrow="Brand"
-          title="Names, marks, and usage."
-          sub="Write Originary with a capital O; PEAC Protocol in full on first mention. The wordmark is the primary mark. Do not modify, recolor, or combine marks with other logos."
+          title="Names and the logo."
+          sub="Two small things that help a story read right: write Originary with a capital O, and spell out PEAC Protocol on first mention. The wordmark is the primary mark, and the logo lives on the downloads page. Anything you are unsure about, just ask."
         />
         <StepLabel>Press contact</StepLabel>
         <CodeBlock>{`contact@originary.xyz - subject line "Press"`}</CodeBlock>
+        <p style={{ fontSize: 14, lineHeight: 1.7, color: PALETTE.muted, marginTop: 20, maxWidth: '64ch' }}>
+          Need a quote, an interview, a specific asset, or a quick fact-check before you publish? Email us and we will
+          usually reply fast.
+        </p>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 20 }}>
-          <Button href="/trademark">Trademark policy</Button>
           <Button href="/downloads">Logo and assets</Button>
+          <Button href="/trademark">Full brand and trademark policy</Button>
         </div>
       </PageSection>
     </PageShell>
