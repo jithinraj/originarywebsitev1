@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
 import { PageShell, LegalDoc, PALETTE } from '@/components/home'
+import { FACTS } from '@/lib/facts'
 
 export const metadata: Metadata = {
   title: { absolute: 'Security | Originary' },
@@ -37,7 +38,7 @@ const webPageJsonLd = {
   '@type': 'WebPage',
   name: 'Security Disclosure',
   url: 'https://www.originary.xyz/security',
-  dateModified: '2026-04-09',
+  dateModified: FACTS.currentReleaseDate,
 }
 
 const linkStyle = {
@@ -60,14 +61,46 @@ export default function Security() {
           </p>
 
           <h2>Supported versions</h2>
+          <p>Security fixes are applied to the current stable release. Older releases do not receive patches.</p>
+          <ul>
+            <li>
+              <strong>PEAC {FACTS.currentVersion} (current)</strong> &mdash; supported; security fixes applied.
+            </li>
+            <li>
+              <strong>Earlier releases</strong> &mdash; not supported; upgrade to the current release.
+            </li>
+            <li>
+              <strong>Runtime</strong> &mdash; Node.js {FACTS.nodeMinVersion} or newer (required for stable Ed25519 in
+              Web Crypto).
+            </li>
+          </ul>
           <p>
-            Security fixes are applied to the current stable release only. Older versions may not receive patches. See
-            the{' '}
+            See the{' '}
             <Link href="/peac" style={linkStyle}>
               changelog
             </Link>{' '}
-            for release history and current release status.
+            for release history and current status.
           </p>
+
+          <h2>Severity and response</h2>
+          <p>
+            Reported issues are triaged by impact. Fix timelines are set at triage and communicated to the reporter; the
+            acknowledgement targets below apply to all severities.
+          </p>
+          <ul>
+            <li>
+              <strong>Critical</strong> (signature or verification bypass, key exposure) &mdash; acknowledged within 5
+              business days; prioritized immediately at triage.
+            </li>
+            <li>
+              <strong>High</strong> (integrity or confidentiality impact on a supported path) &mdash; acknowledged within
+              5 business days; scheduled promptly.
+            </li>
+            <li>
+              <strong>Medium and Low</strong> (limited or edge-case impact) &mdash; acknowledged within 5 business days;
+              addressed in a subsequent release.
+            </li>
+          </ul>
 
           <h2>Verification architecture</h2>
           <p>
@@ -87,8 +120,18 @@ export default function Security() {
           <h2>Dependency and supply-chain posture</h2>
           <p>
             PEAC Protocol and its packages are open source; their security and publishing posture are maintained in the
-            public repository at github.com/peacprotocol/peac. Originary does not run signing, verification, key
-            custody, or record storage as a hosted service today.
+            public repository at github.com/peacprotocol/peac.
+          </p>
+          <ul>
+            <li>Packages are published to npm with OIDC trusted publishing and SLSA build provenance.</li>
+            <li>Releases are tagged with SSH-signed annotated tags reachable from the public history.</li>
+            <li>
+              Dependency advisories are tracked in the open repository; the build fails on unresolved high-severity
+              advisories in production paths.
+            </li>
+          </ul>
+          <p>
+            Originary does not run signing, verification, key custody, or record storage as a hosted service today.
           </p>
 
           <h2>Data boundaries</h2>
@@ -141,11 +184,14 @@ export default function Security() {
           <h3>Scope</h3>
           <p>This policy covers:</p>
           <ul>
-            <li><strong>originary.xyz</strong> and subdomains</li>
-            <li>Our APIs and services</li>
-            <li>CLI and code samples we publish</li>
-            <li>Infrastructure directly under our control</li>
+            <li><strong>originary.xyz</strong> and its subdomains</li>
+            <li>The CLI, packages, and code samples Originary publishes</li>
+            <li>Infrastructure directly under Originary&apos;s control</li>
           </ul>
+          <p>
+            Originary runs no hosted signing, verification, key-custody, or record-storage service; those run in the
+            issuer&apos;s or verifier&apos;s own environment.
+          </p>
 
           <h3>What to include</h3>
           <ul>
@@ -161,6 +207,9 @@ export default function Security() {
             No formal bounty program at this time. We do provide public credit and our sincere gratitude for responsible
             disclosure.
           </p>
+
+          <h3>Acknowledgements</h3>
+          <p>Reporters who follow this policy and agree to be named are credited here.</p>
 
           <h3>Legal</h3>
           <p>We will not pursue legal action against researchers who:</p>
