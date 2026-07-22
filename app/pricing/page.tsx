@@ -536,6 +536,41 @@ export default function PricingPage() {
                   </li>
                 ))}
               </ul>
+              <dl
+                style={{
+                  margin: '24px 0 0',
+                  paddingTop: 20,
+                  borderTop: `1px solid ${PALETTE.hairline}`,
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                  gap: '18px 28px',
+                }}
+              >
+                {[
+                  ['Duration', 'Fixed and agreed in writing before work begins. The scope above is what the pilot covers for that period.'],
+                  ['Your side', 'Access to the one workflow, a technical contact, and someone who can sign off on acceptance.'],
+                  ['Deliverables', 'A working issuing and verification path for that workflow, an integration and threat-boundary review, and a written deployment recommendation.'],
+                  ['Acceptance', 'Records issue from the workflow and verify offline against a key you supply, and a third party can open the resulting bundle.'],
+                  ['Deployment ownership', 'It runs in your infrastructure and you hold the keys, during the pilot and after it.'],
+                  ['After completion', 'The implementation is yours to run. Continued support applies only under a separate written agreement.'],
+                  ['Not included', 'Hosted verification, key custody, record storage, production on-call, and changes to systems outside the agreed workflow.'],
+                ].map(([term, detail]) => (
+                  <div key={term}>
+                    <dt
+                      style={{
+                        fontFamily: 'var(--font-plex-mono)',
+                        fontSize: 10.5,
+                        letterSpacing: '0.16em',
+                        textTransform: 'uppercase',
+                        color: PALETTE.faint,
+                      }}
+                    >
+                      {term}
+                    </dt>
+                    <dd style={{ margin: '7px 0 0', fontSize: 14, lineHeight: 1.6, color: PALETTE.muted }}>{detail}</dd>
+                  </div>
+                ))}
+              </dl>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, alignItems: 'center', marginTop: 24, paddingTop: 20, borderTop: `1px solid ${PALETTE.hairline}` }}>
                 <a
                   href="/contact"

@@ -61,7 +61,7 @@ export default function Terms() {
         {JSON.stringify(webPageJsonLd)}
       </Script>
       <PageShell>
-        <LegalDoc title="Terms of Service" effective="Effective from 2025-07-27">
+        <LegalDoc title="Terms of Service" effective="Last updated 2026-07-22">
           <h2>Who you&apos;re contracting with</h2>
           <p>
             &quot;Originary&quot;, &quot;we&quot;, and &quot;us&quot; mean <strong>Poem, Inc.</strong>, a Delaware

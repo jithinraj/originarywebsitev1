@@ -347,6 +347,108 @@ export default function TrustPage() {
             </p>
           </div>
 
+          <div>
+            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              procurement
+            </Mono>
+            <h2 style={{ ...headStyle, marginTop: 12 }}>Answers your review team will ask for.</h2>
+            <div style={{ marginTop: 18 }}>
+              <DataTable
+                head={['Procurement fact', 'Current position']}
+                rows={[
+                  [
+                    'Hosting mode',
+                    'Self-hosted. The software runs in your infrastructure; Originary operates no hosted verification service.',
+                  ],
+                  [
+                    'Key custody',
+                    'Yours. The issuer generates and holds its Ed25519 keys locally or in your KMS. Originary never holds signing keys.',
+                  ],
+                  [
+                    'Data processed by Originary',
+                    'None from verification, which runs in your environment. Website only: consent-gated analytics and what you send through the contact form.',
+                  ],
+                  [
+                    'Retention',
+                    'Website data is kept only as long as needed for the stated purpose and legal obligations, then deleted or anonymized.',
+                  ],
+                  [
+                    'Subprocessors',
+                    'Processors for hosting, payments, and support under contractual safeguards. Some support operations are performed by an India affiliate under SCCs and DPAs.',
+                  ],
+                  [
+                    'Data residency',
+                    'Not applicable to verification, which never leaves your environment. Website processing may occur outside your country with the safeguards described in the privacy policy.',
+                  ],
+                  [
+                    'Certifications held',
+                    'None. No SOC 2, ISO 27001, or comparable third-party audit has been completed, and none is claimed.',
+                  ],
+                  [
+                    'SLA and support',
+                    'No SLA on the open-source protocol; support there is community-based via GitHub. Support scope and response commitments apply only where set out in a written agreement.',
+                  ],
+                  [
+                    'Incident process',
+                    'Report to security@originary.xyz. Reports are acknowledged within 5 business days and triaged by severity.',
+                  ],
+                  [
+                    'Responsible contact',
+                    'security@originary.xyz for security, privacy@originary.xyz for data requests, contact@originary.xyz for everything else.',
+                  ],
+                  [
+                    'Evidence',
+                    'The security page, the privacy policy, and the public repository at github.com/peacprotocol/peac.',
+                  ],
+                ]}
+              />
+            </div>
+            <p style={{ ...proseStyle, fontSize: 13, marginTop: 12 }}>
+              Each row states the current position rather than a roadmap commitment. If your review needs something not
+              listed here, contact us and we will answer it directly.
+            </p>
+          </div>
+
+          <div>
+            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              interoperability
+            </Mono>
+            <h2 style={{ ...headStyle, marginTop: 12 }}>What composes with PEAC, and how far it goes.</h2>
+            <p style={{ ...proseStyle, marginTop: 10 }}>
+              Each row states what actually exists in the open repository at {FACTS.currentVersion}. A shipped adapter or
+              mapping is code you can read and run; a documented composition is a written mapping with conformance
+              vectors; an example is a runnable demonstration. Nothing is listed without an artifact behind it.
+            </p>
+            <div style={{ marginTop: 18 }}>
+              <DataTable
+                head={['System', 'Status', 'Evidence in the repository']}
+                rows={[
+                  ['MCP', 'shipped_mapping', 'packages/mappings/mcp, packages/mcp-server, examples/mcp-gateway-receipts'],
+                  ['x402', 'shipped_adapter', 'packages/adapters/x402, examples/x402-paid-resource-records'],
+                  ['OpenTelemetry', 'shipped_adapter', 'packages/telemetry-otel, docs/guides/telemetry-otel-correlation.md'],
+                  ['A2A', 'shipped_mapping', 'packages/mappings/a2a, examples/a2a-gateway-pattern'],
+                  ['MPP / paymentauth', 'shipped_mapping', 'packages/mappings/paymentauth, examples/mpp-payment-record'],
+                  ['UCP', 'shipped_mapping', 'packages/mappings/ucp, examples/ucp-webhook-express'],
+                  ['ACP', 'shipped_mapping', 'packages/mappings/acp, examples/acp-session-lifecycle'],
+                  ['AP2', 'documented_composition', 'docs/specs/AP2-COMPOSITION.md, specs/conformance/interop/ap2-open-mandate-hash'],
+                  ['Stripe', 'documented_composition', 'docs/interop/SIGNED-RECORDS-INTEROP-MATRIX.md, integrator-kits/stripe-projects'],
+                  ['Cloudflare', 'example', 'surfaces/workers/cloudflare, examples/cf-policy-x402-terms'],
+                ]}
+              />
+            </div>
+            <p style={{ ...proseStyle, fontSize: 13, marginTop: 12 }}>
+              <strong style={{ color: PALETTE.ink }}>
+                No partnership, certification, or endorsement is implied.
+              </strong>{' '}
+              These are interoperability surfaces PEAC composes with, not relationships with the organizations behind
+              them. Product names, logos, and brands belong to their respective owners. Each row is verifiable at{' '}
+              <a href="https://github.com/peacprotocol/peac" style={{ color: PALETTE.ink }}>
+                github.com/peacprotocol/peac
+              </a>
+              , and the dated per-row detail lives in that repository&apos;s interop matrix.
+            </p>
+          </div>
+
           <Card padding={28}>
             <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
               verification model

@@ -183,16 +183,48 @@ export default function PressPage() {
           index="06"
           eyebrow="Brand"
           title="Names and the logo."
-          sub="Two small things that help a story read right: write Originary with a capital O, and spell out PEAC Protocol on first mention. The wordmark is the primary mark, and the logo lives on the downloads page. Anything you are unsure about, just ask."
+          sub="Two small things that help a story read right: write Originary with a capital O, and spell out PEAC Protocol on first mention. The wordmark is the primary mark. Anything you are unsure about, just ask."
         />
-        <StepLabel>Press contact</StepLabel>
-        <CodeBlock>{`contact@originary.xyz - subject line "Press"`}</CodeBlock>
+        <StepLabel>Download the logo</StepLabel>
+        <ul
+          style={{
+            listStyle: 'none',
+            margin: '4px 0 0',
+            padding: 0,
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '10px 24px',
+          }}
+        >
+          {[
+            ['Wordmark (primary)', '/originary-logo.svg'],
+            ['Wordmark with trademark symbol', '/originary-logo-tm.svg'],
+            ['Wordmark for dark backgrounds', '/originary-logo-reverse.svg'],
+            ['Compact mark', '/originary-logo-mark.svg'],
+            ['Compact mark for dark backgrounds', '/originary-logo-mark-reverse.svg'],
+          ].map(([label, href]) => (
+            <li key={href} style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 14, lineHeight: 1.55 }}>
+              <a href={href} download style={{ color: PALETTE.ink }}>
+                {label}
+              </a>{' '}
+              <span style={{ color: PALETTE.faint, fontFamily: 'var(--font-plex-mono)', fontSize: 11.5 }}>SVG</span>
+            </li>
+          ))}
+        </ul>
+        <p style={{ fontSize: 13, lineHeight: 1.65, color: PALETTE.faint, marginTop: 14, maxWidth: '64ch' }}>
+          Scalable vector files, so they stay sharp at any size. Use the trademark version where the logo stands on its
+          own; the plain wordmark is fine inside an article. Minimum width 112 px, or use the compact mark below that.
+          Need a raster or a specific size? Ask and we will send it.
+        </p>
+        <div style={{ marginTop: 26 }}>
+          <StepLabel>Press contact</StepLabel>
+          <CodeBlock>{`contact@originary.xyz - subject line "Press"`}</CodeBlock>
+        </div>
         <p style={{ fontSize: 14, lineHeight: 1.7, color: PALETTE.muted, marginTop: 20, maxWidth: '64ch' }}>
           Need a quote, an interview, a specific asset, or a quick fact-check before you publish? Email us and we will
           usually reply fast.
         </p>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 20 }}>
-          <Button href="/downloads">Logo and assets</Button>
           <Button href="/trademark">Full brand and trademark policy</Button>
         </div>
       </PageSection>

@@ -8,6 +8,11 @@ type LogoEntry = {
   size: number
 }
 
+/**
+ * Each entry corresponds to an adapter, mapping, worker surface, or interop
+ * matrix row in the PEAC repository. Per-system status and evidence are listed
+ * on the trust page.
+ */
 const LOGOS: LogoEntry[] = [
   { name: 'MCP', src: '/logos/mcp-algorand.png', size: 34 },
   { name: 'x402', src: '/logos/x402.svg', size: 25 },
@@ -15,10 +20,8 @@ const LOGOS: LogoEntry[] = [
   { name: 'A2A', src: '/logos/a2a-algorand.svg', size: 34 },
   { name: 'Cloudflare', src: '/logos/cloudflare-wordmark.png', size: 30 },
   { name: 'AP2', src: '/logos/ap2-algorand.svg', size: 34 },
-  { name: 'Vercel', src: '/logos/vercel-logotype-light.png', size: 23 },
   { name: 'MPP', src: '/logos/mpp-logo-dark.svg', size: 29 },
   { name: 'OpenTelemetry', src: '/logos/opentelemetry.svg', size: 31 },
-  { name: 'LangChain', src: '/logos/langchain-lockup-black.svg', size: 25 },
 ]
 
 export function WorksWithStrip() {
