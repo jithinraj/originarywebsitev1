@@ -16,8 +16,8 @@ export function BuiltOnPEAC() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)',
-          gap: 56,
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: 'clamp(28px, 4vw, 56px)',
           alignItems: 'start',
         }}
       >
@@ -66,8 +66,8 @@ export function BuiltOnPEAC() {
               padding: 0,
               margin: '24px 0 0 0',
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '8px 24px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))',
+              gap: '10px 24px',
             }}
           >
             {[
@@ -81,13 +81,22 @@ export function BuiltOnPEAC() {
                 style={{
                   fontFamily: SANS,
                   fontSize: 14,
+                  lineHeight: 1.5,
                   color: PALETTE.ink,
                   display: 'flex',
-                  alignItems: 'center',
+                  alignItems: 'flex-start',
                   gap: 10,
                 }}
               >
-                <span style={{ width: 4, height: 4, background: PALETTE.ink }} />
+                <span
+                  style={{
+                    width: 4,
+                    height: 4,
+                    marginTop: 8,
+                    flexShrink: 0,
+                    background: PALETTE.ink,
+                  }}
+                />
                 {item}
               </li>
             ))}

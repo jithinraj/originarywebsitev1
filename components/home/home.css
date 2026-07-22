@@ -382,9 +382,16 @@ html {
 }
 
 @media (max-width: 768px) {
+  /* Flow the four link blocks as balanced columns instead of a fixed grid, so a
+     short block (Product) no longer leaves a tall gap beside a long one. */
   .home-footer-cols {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 32px !important;
+    display: block !important;
+    column-count: 2;
+    column-gap: 28px;
+  }
+  .home-footer-cols > div {
+    break-inside: avoid;
+    margin-bottom: 26px;
   }
   .home-hero-anim-desktop {
     display: none !important;
@@ -438,8 +445,7 @@ html {
 /* Narrow phone: footer to single column. */
 @media (max-width: 480px) {
   .home-footer-cols {
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
+    column-count: 1;
   }
 }
 
