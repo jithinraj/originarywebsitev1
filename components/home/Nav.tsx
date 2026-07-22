@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useId, useRef, useState } from 'react'
 import { SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
@@ -194,6 +195,7 @@ export function Nav() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const toggleRef = useRef<HTMLButtonElement>(null)
+  const pathname = usePathname()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -261,7 +263,8 @@ export function Nav() {
             flexShrink: 0,
           }}
         >
-          <Wordmark />
+          {/* The sequence is a homepage moment only, and only once per session. */}
+          <Wordmark autoPlay={pathname === '/'} replayOnHover />
         </Link>
 
         <nav
@@ -487,13 +490,19 @@ export function Nav() {
 export function Wordmark({
   height = 32,
   forceOpen = false,
-  loop = true,
+  autoPlay = false,
+  replayOnHover = false,
 }: {
   height?: number
-  /** Render the full wordmark statically (no loop). Used in the footer. */
+  /** Render the finished wordmark with no sequence. Used in the footer. */
   forceOpen?: boolean
-  /** Auto-replay the reveal on a loop. Default true (header). */
-  loop?: boolean
+  /** Replay the sequence on hover or focus. */
+  replayOnHover?: boolean
+  /**
+   * Play the ⊙ → 01 → 10 → originary sequence once per session. Reserved for the
+   * homepage header; the name is never withheld anywhere else.
+   */
+  autoPlay?: boolean
 }) {
   return (
     <span
@@ -508,7 +517,8 @@ export function Wordmark({
         ariaLabel="Originary"
         fill={PALETTE.ink}
         forceOpen={forceOpen}
-        loop={loop}
+        autoPlay={autoPlay}
+        replayOnHover={replayOnHover}
         className="home-wordmark-svg"
       />
     </span>
