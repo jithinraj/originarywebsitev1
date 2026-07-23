@@ -38,10 +38,11 @@ const flip = (x: number) => `translate(${x},2124) scale(1,-1)`;
 const ORIGIN_POINT = "translate(488,2946.5) scale(1,-1)";
 
 /** Timing and easing, per the identity spec. */
-const REST_MS = 250; // 200-300ms before any qualified play
 const EJECT_MS = 380; // ⊙ → 01
 const SWAP_MS = 400; // 01 → 10
-const HOLD_MS = 520; // dwell on 10
+const AT_FORMATION = 0; // ⊙ → 01
+const AT_EXCHANGE = 430; // 01 → 10
+const AT_IDENTITY = 950; // 10 → originary
 const GLIDE_MS = 450; // 10 → originary
 const STAGGER_MS = 35; // per cascade letter
 const EASE_STANDARD = "cubic-bezier(0.4, 0, 0.2, 1)";
@@ -62,11 +63,16 @@ const D = {
 };
 
 const SLOT = { o: 140, r1: 1247, i1: 1904, g: 2315, i2: 3427, n: 3813, a: 4913, r2: 5922, y: 6654 };
-/** Where the stem stands while the mark reads 01. */
-const STEM_FORM_X = 1289;
-/** Exchange (10): the ring and the stem trade places. */
-const EX_O_X = 1341;
-const EX_STEM_X = 88;
+/** Where the stem stands while the mark reads 01: the i slot less the 615u glide. */
+const STEM_FORM_X = SLOT.i1 - 615; // 1289
+/** Exchange (10): the ring travels +334, the stem -1201, and they trade places. */
+const EX_O_X = SLOT.o + 334; // 474
+const EX_STEM_X = STEM_FORM_X - 1201; // 88
+/** The point ejects 801u and stretches 3.6x on its way to becoming the stem. */
+const EJECT_X = STEM_FORM_X - 488; // 801
+const EJECT_SCALE_Y = 3.6;
+/** Optical centre of the point inside the o. */
+const POINT_CENTRE = "712.5px 1596px";
 
 const CASCADE: { d: string; x: number }[] = [
   { d: D.r, x: SLOT.r1 },
@@ -155,9 +161,9 @@ export function OriginaryLogoMotion({
             setAnimating(true);
             const at = (ms: number, p: Phase) =>
               timers.current.push(window.setTimeout(() => setPhase(p), ms));
-            at(REST_MS, "formation");
-            at(REST_MS + EJECT_MS, "exchange");
-            at(REST_MS + EJECT_MS + SWAP_MS + HOLD_MS, "identity");
+            at(AT_FORMATION, "formation");
+            at(AT_EXCHANGE, "exchange");
+            at(AT_IDENTITY, "identity");
           }),
         );
       }),
@@ -215,7 +221,8 @@ export function OriginaryLogoMotion({
         className="olh-origin"
         style={{
           fillOpacity: p === "origin" ? 1 : 0,
-          transform: p === "origin" ? "none" : `translateX(${STEM_FORM_X - 488}px)`,
+          transform: p === "origin" ? "none" : `translateX(${EJECT_X}px) scaleY(${EJECT_SCALE_Y})`,
+          transformOrigin: POINT_CENTRE,
           transition: animating ? `transform ${EJECT_MS}ms ${EASE_INOUT}, fill-opacity ${EJECT_MS}ms ${EASE_INOUT}` : "none",
         }}
       >
