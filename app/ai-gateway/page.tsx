@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
@@ -59,6 +60,7 @@ const jsonLd = {
 }
 
 export default function AiGatewayPage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -148,7 +150,7 @@ export default function AiGatewayPage() {
               <StepLabel>Verify on any machine, later</StepLabel>
               <Terminal
                 lines={[
-                  { kind: 'out', text: '$ npx -y @peac/cli@0.16.3 verify ./gateway-decision.jws --public-key ./jwks.json' },
+                  { kind: 'out', text: `$ npx -y @peac/cli@${v} verify ./gateway-decision.jws --public-key ./jwks.json` },
                   { kind: 'ok', text: 'Signature valid (offline).' },
                 ]}
               />
@@ -292,7 +294,7 @@ export default function AiGatewayPage() {
         >
           Verify it
         </div>
-        <CodeBlock tone="ink">npx -y @peac/cli@0.16.3 verify ./gateway-decision.jws --public-key ./jwks.json</CodeBlock>
+        <CodeBlock tone="ink">npx -y @peac/cli@{v} verify ./gateway-decision.jws --public-key ./jwks.json</CodeBlock>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <InkButton href="/contact" primary>
             Start a pilot

@@ -66,6 +66,7 @@ const SAMPLES: Array<{ name: string; href: string }> = [
 ]
 
 export default function VerifyPage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -77,7 +78,7 @@ export default function VerifyPage() {
         aside={
           <Terminal
             lines={[
-              { kind: 'out', text: '$ pnpm dlx @peac/cli@0.16.3 verify ./record.jws --public-key ./jwks.json' },
+              { kind: 'out', text: `$ pnpm dlx @peac/cli@${v} verify ./record.jws --public-key ./jwks.json` },
               { kind: 'ok', text: 'Signature valid (offline).' },
             ]}
           />
@@ -123,8 +124,8 @@ export default function VerifyPage() {
           ))}
         </div>
         <StepLabel>Prefer the command line?</StepLabel>
-        <CodeBlock>{`pnpm dlx @peac/cli@0.16.3 samples generate -o ./s
-pnpm dlx @peac/cli@0.16.3 verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
+        <CodeBlock>{`pnpm dlx @peac/cli@${v} samples generate -o ./s
+pnpm dlx @peac/cli@${v} verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
       </PageSection>
 
       <PullLine accent="Nothing stored.">

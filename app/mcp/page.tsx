@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
@@ -58,6 +59,7 @@ const jsonLd = {
 }
 
 export default function McpPage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -160,10 +162,10 @@ export default function McpPage() {
               <StepLabel>Verify on any machine, later</StepLabel>
               <Terminal
                 lines={[
-                  { kind: 'out', text: '$ npx -y @peac/cli@0.16.3 verify ./mcp-tool-run.jws --public-key ./jwks.json' },
+                  { kind: 'out', text: `$ npx -y @peac/cli@${v} verify ./mcp-tool-run.jws --public-key ./jwks.json` },
                   { kind: 'ok', text: 'Signature valid (offline).' },
                   { kind: 'out', text: '$ # now edit one byte of the record and retry' },
-                  { kind: 'out', text: '$ npx -y @peac/cli@0.16.3 verify ./mcp-tool-run.tampered.jws --public-key ./jwks.json' },
+                  { kind: 'out', text: `$ npx -y @peac/cli@${v} verify ./mcp-tool-run.tampered.jws --public-key ./jwks.json` },
                   { kind: 'err', text: 'Verification failed: Ed25519 signature verification failed' },
                   { kind: 'err', text: '   Code: E_INVALID_SIGNATURE' },
                 ]}

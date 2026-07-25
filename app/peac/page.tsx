@@ -61,6 +61,7 @@ const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
 const mono = 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace'
 
 export default function PeacPage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareSourceCode',
@@ -476,7 +477,7 @@ export default function PeacPage() {
           />
           <Card padding={36} style={{ maxWidth: 760, margin: '0 auto' }}>
             <pre className="home-code" style={{ margin: 0 }}>
-{`npx -y @peac/cli@0.16.3 verify ./record.jws --public-key ./jwks.json`}
+{`npx -y @peac/cli@${v} verify ./record.jws --public-key ./jwks.json`}
             </pre>
             <p
               style={{

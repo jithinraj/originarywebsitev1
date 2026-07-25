@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button, PullLine } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
@@ -95,6 +96,7 @@ const FIT_GROUPS: Array<{ label: string; mark: MarkName; items: string[] }> = [
 ]
 
 export default function AgenticCommercePage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -203,7 +205,7 @@ export default function AgenticCommercePage() {
                 artifacts inside portable records and evidence bundles that verify offline.
               </p>
               <StepLabel>Verify it</StepLabel>
-              <CodeBlock>npx -y @peac/cli@0.16.3 verify ./payment-event.jws --public-key ./jwks.json</CodeBlock>
+              <CodeBlock>npx -y @peac/cli@{v} verify ./payment-event.jws --public-key ./jwks.json</CodeBlock>
               <StepLabel>Expected</StepLabel>
               <Terminal
                 lines={[
@@ -291,7 +293,7 @@ export default function AgenticCommercePage() {
               color: PALETTE.accent,
             }}
           >
-            PEAC v0.16.3
+            PEAC {FACTS.currentVersion}
           </div>
           <p
             style={{

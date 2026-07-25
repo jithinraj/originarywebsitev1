@@ -1,5 +1,6 @@
 import { PALETTE } from '../home/palette'
 import { SANS, MONO } from '../home/typography'
+import { FACTS } from '@/lib/facts'
 import type { RecordRow } from './parts'
 
 /*
@@ -17,6 +18,7 @@ const SPECIMEN_ROWS: RecordRow[] = [
 ]
 
 export function VerifyConsole() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <div>
       <div style={{ border: `1px solid ${PALETTE.rule}`, background: PALETTE.paper }}>
@@ -69,8 +71,8 @@ export function VerifyConsole() {
             margin: 0,
           }}
         >
-{`pnpm dlx @peac/cli@0.16.3 samples generate -o ./s
-pnpm dlx @peac/cli@0.16.3 verify ./s/valid/basic-record.jws \\
+{`pnpm dlx @peac/cli@${v} samples generate -o ./s
+pnpm dlx @peac/cli@${v} verify ./s/valid/basic-record.jws \\
   --public-key ./s/bundles/sandbox-jwks.json`}
         </pre>
         <p style={{ fontFamily: SANS, fontSize: 13, lineHeight: 1.55, color: PALETTE.faint, margin: '12px 0 0' }}>

@@ -625,6 +625,7 @@ function ModelSection() {
 }
 
 export default function HowItWorksPage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -663,7 +664,7 @@ export default function HowItWorksPage() {
               color: PALETTE.accent,
             }}
           >
-            PEAC v0.16.3
+            PEAC {FACTS.currentVersion}
           </div>
           <p
             style={{
@@ -711,8 +712,8 @@ export default function HowItWorksPage() {
       <InkBand>
         <InkHeading>Generate these yourself in one command.</InkHeading>
         <div style={{ maxWidth: 760, margin: '28px auto 0', textAlign: 'left' }}>
-          <CodeBlock tone="ink">{`pnpm dlx @peac/cli@0.16.3 samples generate -o ./s
-pnpm dlx @peac/cli@0.16.3 verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
+          <CodeBlock tone="ink">{`pnpm dlx @peac/cli@${v} samples generate -o ./s
+pnpm dlx @peac/cli@${v} verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
         </div>
         <p style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 12, color: '#7fa98c', marginTop: 18 }}>
           Signature valid (offline) - PEAC {FACTS.currentVersion}
