@@ -18,7 +18,7 @@ import {
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 
-const TITLE = 'Provisioning audit records for agent infrastructure | Originary'
+const TITLE = 'Provisioning audit records for agents | Originary'
 const DESCRIPTION =
   'Bind the request, approval reference, provider operation, resource identifier, result, issuer, and time.'
 

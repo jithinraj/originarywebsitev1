@@ -1,38 +1,45 @@
-'use client'
-
+import Link from 'next/link'
 import { SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
-import { Mono, SectionTitle } from './atoms/Mono'
-import { useInView } from './motion/useInView'
-import { useEnterClock } from './motion/useEnterClock'
-import { ease, lerp, tween } from './motion/easing'
+import { SectionTitle } from './atoms/Mono'
 
-type Tile = { title: string; q: string }
+type CaseCard = { title: string; body: string; cta: string; href: string; marks: string[] }
 
-const tiles: Tile[] = [
+const CARDS: CaseCard[] = [
   {
-    title: 'Agent actions',
-    q: 'What did the agent decide, and which inputs and policy was that decision bound to?',
-  },
-  {
-    title: 'MCP tools',
-    q: 'Which tool was called, under what policy, and what result did the tool return?',
+    title: 'Paid MCP tools and APIs',
+    marks: ['MCP', 'x402', 'MPP', 'paymentauth', 'Stripe'],
+    body: 'Capture signed records for paid tool calls, bind the provider artifact, and preserve what was reported for usage, billing, and disputes.',
+    cta: 'See the paid-service workflow',
+    href: '/mcp',
   },
   {
     title: 'Gateway decisions',
-    q: 'What happened at the boundary before the request was routed, throttled, or refused?',
+    marks: ['Cloudflare', 'Microsoft AGT', 'OpenTelemetry', 'Runtime governance', 'MCP'],
+    body: 'Record an allow, deny, or review decision with the policy or check that was applied, then verify it later outside the originating system.',
+    cta: 'See gateway evidence',
+    href: '/ai-gateway',
   },
   {
-    title: 'Payment events',
-    q: 'What was authorized, captured, refunded, or settled, and against which mandate?',
+    title: 'Paid APIs and agent commerce',
+    marks: ['x402', 'Stripe', 'ACP', 'AP2', 'UCP'],
+    body: 'Connect payment events, access decisions, and settlement-linked artifacts into one reviewable commerce case.',
+    cta: 'See a paid-service dispute',
+    href: '/agentic-commerce',
+  },
+  {
+    title: 'Audit and incident handoff',
+    marks: ['OpenTelemetry', 'Microsoft AGT', 'in-toto', 'SLSA', 'EAT'],
+    body: 'Move from internal logs to a portable evidence bundle for incident review, audits, counterparties, and disputes.',
+    cta: 'See the handoff workflow',
+    href: '/audit-incident-handoff',
   },
   {
     title: 'Provisioning',
-    q: 'Which account, resource, credential, or subscription event occurred, and who issued it?',
-  },
-  {
-    title: 'Audit and partner review',
-    q: 'Can a customer, auditor, or partner verify what the issuer recorded without internal access?',
+    marks: ['Stripe Projects', 'Cloudflare', 'Managed agents', 'DID', 'Runtime governance'],
+    body: 'Record account, resource, credential, subscription, and deployment events so they survive the system that made the change.',
+    cta: 'See provisioning records',
+    href: '/provisioning-records',
   },
 ]
 
@@ -49,181 +56,62 @@ export function UseCases() {
       }}
     >
       <SectionTitle
-        title="One record format. Many places to verify."
-        body="Use the same signed-record primitive across agent actions, MCP tools, gateways, payments, provisioning, audits, and partner reviews."
+        title="Five workflows where cross-boundary evidence matters now."
       />
-      <div style={{ marginTop: 48 }}>
-        <Grid />
-      </div>
-    </section>
-  )
-}
-
-function Grid() {
-  const { ref, entered } = useInView<HTMLDivElement>({ threshold: 0.15 })
-  return (
-    <div ref={ref}>
       <div
-        className="home-cases-grid"
         style={{
+          marginTop: 48,
           display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: 0,
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))',
+          gap: 1,
           border: `1px solid ${PALETTE.hairline}`,
-          background: PALETTE.paper,
+          background: PALETTE.hairline,
         }}
       >
-        {tiles.map((tile, i) => (
-          <UseCaseTile
-            key={tile.title}
-            tile={tile}
-            index={i}
-            entered={entered}
-            borderRight={(i + 1) % 3 !== 0}
-            borderBottom={i < 3}
-          />
+        {CARDS.map((card, i) => (
+          <Link
+            key={card.title}
+            href={card.href}
+            className="home-arrow-link"
+            style={{
+              padding: '24px 24px 26px 24px',
+              background: PALETTE.paper,
+              textDecoration: 'none',
+              display: 'block',
+            }}
+          >
+            <h4 style={{ fontFamily: SANS, fontSize: 17, fontWeight: 500, color: PALETTE.ink, margin: 0, letterSpacing: '-0.01em' }}>
+              {card.title}
+            </h4>
+            <p style={{ fontFamily: SANS, fontSize: 14, lineHeight: 1.55, color: PALETTE.muted, marginTop: 12, marginBottom: 0, textWrap: 'pretty' as const }}>
+              {card.body}
+            </p>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 16, fontFamily: SANS, fontSize: 13.5, color: PALETTE.ink }}>
+              {card.cta}
+            </span>
+            <span className="home-usecase-marks">
+              {card.marks.map((m) => (
+                <span key={m}>{m}</span>
+              ))}
+            </span>
+          </Link>
         ))}
       </div>
-      <VerificationRail entered={entered} count={6} />
       <p
         style={{
-          marginTop: 28,
-          textAlign: 'center',
-          fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
-          fontSize: 14,
-          letterSpacing: '-0.005em',
-          color: PALETTE.ink,
-          fontWeight: 500,
-        }}
-      >
-        Different workflows. Same portable record format.
-      </p>
-    </div>
-  )
-}
-
-function UseCaseTile({
-  tile,
-  index,
-  entered,
-  borderRight,
-  borderBottom,
-}: {
-  tile: Tile
-  index: number
-  entered: boolean
-  borderRight: boolean
-  borderBottom: boolean
-}) {
-  const t = useEnterClock(entered, 6)
-  const delay = 0.1 + index * 0.12
-  const appear = tween(t, delay, delay + 0.6, ease.out)
-  const emitT = tween(t, delay + 0.5, delay + 1.2, ease.inOutQuart)
-  return (
-    <div
-      className="home-tile"
-      style={{
-        padding: '24px 24px 28px 24px',
-        borderRight: borderRight ? `1px solid ${PALETTE.hairline}` : 'none',
-        borderBottom: borderBottom ? `1px solid ${PALETTE.hairline}` : 'none',
-        minHeight: 180,
-        position: 'relative',
-        opacity: appear,
-        transform: `translateY(${(1 - appear) * 8}px)`,
-      }}
-    >
-      <h4
-        style={{
+          marginTop: 20,
           fontFamily: SANS,
-          fontSize: 16,
-          fontWeight: 500,
-          color: PALETTE.ink,
-          margin: 0,
-          letterSpacing: '-0.01em',
+          fontSize: 13.5,
+          color: '#6e6759',
         }}
       >
-        {tile.title}
-      </h4>
-      <div style={{ marginTop: 14 }}>
-        <Mono
-          size={10}
-          color={PALETTE.faint}
-          style={{ letterSpacing: '0.14em', textTransform: 'uppercase' }}
-        >
-          proof question
-        </Mono>
-        <p
-          style={{
-            fontFamily: SANS,
-            fontSize: 14,
-            lineHeight: 1.5,
-            color: PALETTE.muted,
-            marginTop: 6,
-            marginBottom: 0,
-            textWrap: 'pretty',
-          }}
-        >
-          {tile.q}
-        </p>
-      </div>
-      {emitT > 0 && emitT < 1 ? (
-        <div
-          style={{
-            position: 'absolute',
-            right: 18,
-            top: lerp(20, 200, emitT),
-            width: 18,
-            height: 12,
-            background: PALETTE.ink,
-            opacity: 1 - emitT * 0.4,
-          }}
-        />
-      ) : null}
-    </div>
-  )
-}
-
-function VerificationRail({ entered, count }: { entered: boolean; count: number }) {
-  const t = useEnterClock(entered, 6)
-  return (
-    <div
-      style={{
-        marginTop: 0,
-        borderLeft: `1px solid ${PALETTE.hairline}`,
-        borderRight: `1px solid ${PALETTE.hairline}`,
-        borderBottom: `1px solid ${PALETTE.hairline}`,
-        background: PALETTE.paper,
-        padding: '18px 24px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-      }}
-    >
-      <Mono
-        size={11}
-        color={PALETTE.muted}
-        style={{ letterSpacing: '0.14em', textTransform: 'uppercase' }}
-      >
-        shared verification rail
-      </Mono>
-      <div style={{ display: 'flex', gap: 8 }}>
-        {Array.from({ length: count }).map((_, i) => {
-          const delay = 0.1 + i * 0.12 + 1.2
-          const appear = tween(t, delay, delay + 0.4, ease.out)
-          return (
-            <div
-              key={i}
-              style={{
-                width: 22,
-                height: 14,
-                background: PALETTE.ink,
-                opacity: appear,
-                transform: `translateY(${(1 - appear) * 6}px)`,
-              }}
-            />
-          )
-        })}
-      </div>
-    </div>
+        The same workflow serves investigations, security reviews, customer escalations, and audits.
+        Agent actions, payment events, and provisioning use the same record format.{' '}
+        <Link href="/records" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: 3 }}>
+          More workflows
+        </Link>
+        .
+      </p>
+    </section>
   )
 }

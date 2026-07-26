@@ -4,10 +4,13 @@ import {
   HomeFooter,
   Divider,
   HeroV2,
-  WorksWithStrip,
+  InteropMarquee,
   ProofStrip,
   Problem,
   ProductSystem,
+  EvidenceBoundary,
+  EvidenceCasePanel,
+  RecordGallery,
   UseCases,
   BuiltOnPEAC,
   DemoCTA,
@@ -15,14 +18,14 @@ import {
   PALETTE,
 } from '@/components/home'
 import { WordmarkStream } from '@/components/home/motion/WordmarkStream'
-import { originaryVerify, peacProtocol } from '@/lib/structured-data/entities'
+import { originaryVerificationPilot, peacProtocol } from '@/lib/structured-data/entities'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'AI agent audit records and verification software | Originary',
+    absolute: 'Evidence for disputed agent, MCP, API actions | Originary',
   },
   description:
-    'Issue, verify, and package signed records for API, agent, MCP, gateway, payment, and provisioning workflows, without sharing private logs.',
+    'Turn signed records from MCP tools, APIs, gateways, and payment systems into evidence another organisation can verify without access to private logs.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
@@ -30,9 +33,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'AI agent audit records and verification software | Originary',
+    title: 'Evidence for disputed agent, MCP, API actions | Originary',
     description:
-      'Signed records for API, MCP, agent, gateway, payment, and provisioning workflows, verifiable without your private logs.',
+      'Turn signed records from MCP tools, APIs, gateways, and payment systems into evidence another organisation can verify without access to private logs.',
     url: 'https://www.originary.xyz',
     type: 'website',
     locale: 'en_US',
@@ -48,9 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI agent audit records and verification software | Originary',
+    title: 'Evidence for disputed agent, MCP, API actions | Originary',
     description:
-      'Issue signed records so another party can verify what the issuer recorded without internal logs or dashboard access.',
+      'Turn signed records from MCP tools, APIs, gateways, and payment systems into evidence another organisation can verify without access to private logs.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -67,11 +70,9 @@ export const metadata: Metadata = {
   },
 }
 
-// The canonical Organization and WebSite render once in the layout. The
-// homepage adds only the product and protocol nodes, referencing that Org @id.
 const structuredData = {
   '@context': 'https://schema.org',
-  '@graph': [originaryVerify, peacProtocol],
+  '@graph': [originaryVerificationPilot, peacProtocol],
 }
 
 export default function Page() {
@@ -91,33 +92,39 @@ export default function Page() {
       >
         <Nav />
         <main id="main-content" role="main">
-          {/* 1. Hero, with the interop strip directly beneath it */}
           <HeroV2 />
-          <WorksWithStrip />
-          {/* 2. Boundary problem */}
+          <InteropMarquee />
           <Reveal threshold={0.12}>
-            <Divider eyebrow="where logs fail" />
+            <Divider eyebrow="the failure" />
             <Problem />
           </Reveal>
-          {/* 3. Record / Verify / Bundle */}
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="the evidence case" />
+            <EvidenceCasePanel />
+          </Reveal>
           <Reveal threshold={0.12}>
             <Divider eyebrow="the product" />
             <ProductSystem />
           </Reveal>
-          {/* 4. Priority workflows, with a link to all six */}
           <Reveal threshold={0.12}>
-            <Divider eyebrow="where it fits" />
+            <Divider eyebrow="start here" />
             <UseCases />
           </Reveal>
-          {/* 5. PEAC / open-source proof */}
           <Reveal threshold={0.12}>
-            <Divider eyebrow="open source" />
+            <Divider eyebrow="record gallery" />
+            <RecordGallery />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="the boundary" />
+            <EvidenceBoundary />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Divider eyebrow="open foundation" />
             <BuiltOnPEAC />
             <ProofStrip />
           </Reveal>
-          {/* 6. Final CTA */}
           <Reveal threshold={0.12}>
-            <Divider eyebrow="see it on your workflow" />
+            <Divider eyebrow="start with one action" />
             <DemoCTA />
           </Reveal>
         </main>

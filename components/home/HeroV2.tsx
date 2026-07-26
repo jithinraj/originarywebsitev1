@@ -17,6 +17,17 @@ import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { useReducedMotion } from './motion/useReducedMotion'
 import { BitField } from './motion/BitField'
 
+const SUPPORTED = [
+  'Payments',
+  'Approvals',
+  'Access decisions',
+  'API calls',
+  'Tool runs',
+  'Changes',
+  'Deletions',
+  'Handoffs',
+]
+
 type Chip = { id: string; label: string; icon: ReactNode }
 type Output = { id: string; label: string; meta: string }
 
@@ -30,16 +41,17 @@ const CHIPS: Chip[] = [
 ]
 
 const OUTPUTS: Output[] = [
-  { id: 'counterparty', label: 'Counterparty verifies', meta: 'online' },
-  { id: 'audit',        label: 'Auditor reviews',       meta: 'compliance' },
-  { id: 'bundle',       label: 'Bundle exports',        meta: 'portable' },
+  { id: 'developer',    label: 'Developer verifies',    meta: 'debugging, incident review' },
+  { id: 'counterparty', label: 'Counterparty verifies', meta: 'dispute, delivery, trust' },
+  { id: 'audit',        label: 'Auditor reviews',       meta: 'compliance, assurance' },
+  { id: 'bundle',       label: 'Bundle exports',        meta: 'portable evidence pack' },
 ]
 
 /* Stage coordinate y-centers - mirrored in CSS chip top offsets. */
 const LEFT_YS = [20, 68, 116, 164, 212, 260]
-const RIGHT_YS = [68, 140, 212]
+const RIGHT_YS = [38, 106, 174, 242]
 const DIAMOND_CY = 140
-const BUNDLE_IDX = 2 // Bundle exports is the canonical portable path
+const BUNDLE_IDX = 3
 
 type Phase = 'observe' | 'sign' | 'verify' | 'export' | 'rest'
 const PHASE_ORDER: Phase[] = ['observe', 'sign', 'verify', 'export', 'rest']
@@ -120,27 +132,33 @@ export function HeroV2() {
       <div style={{ maxWidth: MAX_W, margin: '0 auto', position: 'relative', zIndex: 1 }}>
       {/* Top copy */}
       <div style={heroTopStyle}>
-        <p className="cin-rise" style={heroEyebrow}>ORIGINARY VERIFY</p>
+        <p className="cin-rise" style={heroEyebrow}>VERIFIABLE RECORDS FOR AGENTS, APIS, AND GATEWAYS</p>
         <h1 id="hero-headline" className="cin-rise cin-display" style={{ ...heroHeadline, ['--cin-i' as string]: 1 }}>
-          Signed records for machine actions across company boundaries.
+          When agents act, create a record others can verify.
         </h1>
         <p className="cin-rise" style={{ ...heroSub, ['--cin-i' as string]: 2 }}>
-          Issue portable signed records when APIs, agents, MCP tools, gateways, payment flows, and
-          provisioning systems act. Customers, partners, and auditors can verify those records
-          without access to your private logs or dashboards.
+          Originary creates portable signed records for payments, approvals, access decisions, API
+          calls, tool runs, provisioning events, and other important machine actions. Developers,
+          teams, customers, partners, auditors, and counterparties can verify them without access to
+          your internal logs.
         </p>
         <div className="cin-rise" style={{ ...ctas, ['--cin-i' as string]: 3 }}>
-          <Link href="/verify" className="home-arrow-link" style={btnPrimary}>
+          <Link href="/contact" className="home-arrow-link" style={btnPrimary}>
+            Start with one workflow
+            <Arrow />
+          </Link>
+          <Link href="/verify" className="home-arrow-link" style={btnSecondary}>
             Verify a sample
             <Arrow />
           </Link>
-          <Link href="/contact" className="home-arrow-link" style={btnSecondary}>
-            Discuss a workflow
-            <Arrow />
-          </Link>
         </div>
-        <p className="cin-rise" style={{ ...heroProofLine, ['--cin-i' as string]: 4 }}>
-          Built on PEAC Protocol · Apache-2.0 · Offline verification
+        <ul className="cin-rise home-hero-strip" style={{ ['--cin-i' as string]: 4 }}>
+          {SUPPORTED.map((label) => (
+            <li key={label}>{label}</li>
+          ))}
+        </ul>
+        <p className="cin-rise" style={{ ...heroProofLine, ['--cin-i' as string]: 5 }}>
+          Built on PEAC Protocol · Open source · Offline verification · Self-hostable
         </p>
       </div>
 

@@ -6,9 +6,9 @@ import { InkBand, InkHeading, InkButton, AnchorLine, CodeBlock } from '@/compone
 import FlowObserver from '@/components/how-it-works/FlowObserver'
 import '@/components/how-it-works/how-it-works.css'
 
-const TITLE = 'How portable signed interaction records work | Originary'
+const TITLE = 'How cross-boundary machine-action evidence works | Originary'
 const DESCRIPTION =
-  'See how a system issues a signed record, how the record binds selected facts and context, and how another party verifies it.'
+  'Issue a signed record at the source, verify it outside the source system, assess evidence limits, and hand the bounded case to another party.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -375,7 +375,13 @@ const SURFACES: SurfaceData[] = [
 
 function FlowDiagram({ beats, actors }: { beats: Beat[]; actors: string[] }) {
   return (
-    <div className="hiw-flow" data-flow>
+    <div
+      className="hiw-flow"
+      data-flow
+      role="group"
+      aria-label={`Sequence diagram: ${actors.join(", ")}`}
+      tabIndex={0}
+    >
       <div className="hiw-factors">
         {actors.map((a) => (
           <span className="hiw-fa" key={a}>
@@ -540,28 +546,34 @@ function JumpIndex({ items }: { items: Array<{ href: string; label: string }> })
 const MODEL_STEPS: Array<{ n: string; title: string; body: string; mech: string }> = [
   {
     n: '01',
-    title: 'Issue',
-    body: 'At the moment a system acts, it signs a record that binds selected facts, such as the request and response digests, the policy in force, the issuer, and the time, to a key it controls. Private logs stay private.',
-    mech: 'sign() -> interaction-record+jwt',
+    title: 'Observe',
+    body: 'A system at the boundary, an API, MCP server, gateway, or payment processor, directly observes an action: what was requested, which policy applied, and what result came back.',
+    mech: 'the issuer is the system that observed the action',
   },
   {
     n: '02',
-    title: 'Carry',
-    body: 'The record travels with the interaction: a PEAC-Receipt header on an API response, _meta inside an MCP tool result, or an evidence bundle. Systems that do not know PEAC ignore it.',
-    mech: 'PEAC-Receipt header . MCP _meta . bundle',
+    title: 'Issue',
+    body: 'At the moment the system acts, it signs a record that binds selected facts, such as the request and response digests, the policy in force, the issuer, and the time, to a key it controls. Private logs stay private.',
+    mech: 'sign() -> interaction-record+jwt',
   },
   {
     n: '03',
-    title: 'Verify and bundle',
-    body: 'Any party checks the signature and the bound digests offline, with no access to your logs or dashboard, then packages related records into a bundle for review, audit, or dispute.',
+    title: 'Verify',
+    body: 'Any party checks the signature and the bound digests offline, outside the system that produced them, with no access to your logs or dashboard, under a supplied key or an explicit expected-issuer policy.',
     mech: 'verify --public-key -> valid (offline)',
+  },
+  {
+    n: '04',
+    title: 'Hand off',
+    body: 'Optionally, package the records, native artifacts, and verification results into a bounded evidence case for a customer, auditor, or partner to inspect independently.',
+    mech: 'records + artifacts + report -> evidence case',
   },
 ]
 
 function ModelSection() {
   return (
     <PageSection paddingTop={8} paddingBottom={0}>
-      <SectionHeading index="00" eyebrow="the primitive" title="One record. Issue, carry, verify and bundle." />
+      <SectionHeading index="00" eyebrow="the primitive" title="Observe, issue, verify, hand off." />
       <div
         style={{
           display: 'grid',
@@ -631,15 +643,15 @@ export default function HowItWorksPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="how it works"
-        title="Six surfaces. One primitive."
-        sub="The same signed record structure covers every surface where an agent or automated system acts: one verification path for all of it. Each section below shows what happens, what the record binds, and the failure mode it closes."
+        title="Issue at the source. Verify outside it. Hand off the evidence."
+        sub="Originary uses PEAC records to preserve bounded statements from the systems that observed an action, then combines those statements with relevant native artifacts for another party."
         display
         aside={<JumpIndex items={HOW_IT_WORKS_JUMP} />}
-        strip={['Six surfaces', 'One primitive', 'One verification path', 'Offline verification']}
+        strip={['Observe', 'Issue', 'Verify', 'Hand off']}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <Button href="/records" primary>
-            See the records
+          <Button href="/evidence-case" primary>
+            See an evidence case
           </Button>
           <Button href="/verify">Verify one</Button>
         </div>
@@ -647,11 +659,19 @@ export default function HowItWorksPage() {
 
       <ModelSection />
 
+      <PageSection paddingTop={56} paddingBottom={0}>
+        <SectionHeading
+          index="00b"
+          eyebrow="in detail"
+          title="The same four stages, at each surface."
+          sub="The record gallery owns the full six-workflow detail. What follows walks each surface once, for readers who want the mechanics before moving on."
+        />
+      </PageSection>
+
       {SURFACES.map((s, i) => (
         <SurfaceSection s={s} first={i === 0} background={i % 2 === 1 ? PALETTE.paper : undefined} key={s.id} />
       ))}
 
-      {/* v0.16.2 */}
       <PageSection paddingTop={0} paddingBottom={64}>
         <SectionHeading index="07" eyebrow="Beyond single records" title="Broader evidence coverage, same wire format." />
         <Card padding={28} style={{ maxWidth: 860 }}>

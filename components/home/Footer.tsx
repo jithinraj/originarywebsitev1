@@ -12,21 +12,22 @@ const columns: Array<{
   {
     h: 'Product',
     items: [
-      { label: 'Originary Verify', href: '/product' },
+      { label: 'Verification pilot', href: '/product' },
+      { label: 'Evidence case', href: '/evidence-case' },
       { label: 'Verify a sample', href: '/verify' },
-      { label: 'Pricing', href: '/pricing' },
+      { label: 'Plans and pilot', href: '/pricing' },
       { label: 'Start a pilot', href: '/contact', emphasis: true },
     ],
   },
   {
-    h: 'Solutions',
+    h: 'Use cases',
     items: [
-      { label: 'MCP tool runs', href: '/mcp', mark: 'link' },
-      { label: 'AI gateway decisions', href: '/ai-gateway', mark: 'valve' },
-      { label: 'Agentic commerce', href: '/agentic-commerce', mark: 'coin' },
+      { label: 'Paid MCP and APIs', href: '/mcp', mark: 'link' },
+      { label: 'Gateway decisions', href: '/ai-gateway', mark: 'valve' },
+      { label: 'Paid APIs and agent commerce', href: '/agentic-commerce', mark: 'coin' },
+      { label: 'Audit and incident handoff', href: '/audit-incident-handoff', mark: 'sealCheck' },
       { label: 'Provisioning', href: '/provisioning-records', mark: 'pipeline' },
-      { label: 'API calls', href: '/records', mark: 'ledger' },
-      { label: 'Agent actions', href: '/records#agent', mark: 'target' },
+      { label: 'Record gallery', href: '/records', mark: 'ledger' },
     ],
   },
   {
@@ -34,7 +35,6 @@ const columns: Array<{
     items: [
       { label: 'How it works', href: '/how-it-works' },
       { label: 'Downloads', href: '/downloads' },
-      { label: 'Record gallery', href: '/records' },
       { label: 'PEAC Protocol', href: '/peac' },
       { label: 'Blog', href: '/blog' },
       { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },

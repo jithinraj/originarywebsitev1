@@ -10,11 +10,10 @@ import { ease, tween } from './motion/easing'
 import { DemoRequestForm } from './DemoRequestForm'
 
 const reasonList = [
-  'Agent action',
-  'Customer dispute',
-  'MCP tool run',
-  'Procurement review',
-  'Payment or gateway event',
+  'Paid tool call',
+  'API request',
+  'Gateway decision',
+  'Incident workflow',
 ]
 
 export function DemoCTA() {
@@ -61,7 +60,7 @@ export function DemoCTA() {
               textWrap: 'balance',
             }}
           >
-            Start with one workflow where proof already matters.
+            Start with one action another party already questions.
           </h3>
           <p
             style={{
@@ -73,9 +72,9 @@ export function DemoCTA() {
               textWrap: 'pretty',
             }}
           >
-            Send one API call, MCP tool run, agent action, gateway decision,
-            payment event, or provisioning workflow. We&rsquo;ll show what a
-            signed record could look like.
+            Bring one paid tool call, API request, gateway decision, or incident
+            workflow. We&rsquo;ll determine what can be recorded, which claims are
+            supportable, and what evidence a separate recipient would actually need.
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {reasonList.map((item) => (
@@ -108,7 +107,7 @@ export function DemoCTA() {
             <CTAButton href="#demo-form" primary>
               Start a pilot
             </CTAButton>
-            <CTAButton href="/downloads">Verify a sample record</CTAButton>
+            <CTAButton href="/verify">Verify a sample</CTAButton>
           </div>
         </div>
         <div

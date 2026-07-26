@@ -15,9 +15,9 @@ import {
   PAGE_PAD,
 } from '@/components/home'
 export const metadata: Metadata = {
-  title: { absolute: 'About Originary | Verifiable Infrastructure for Machine Actions' },
+  title: { absolute: 'About Originary: evidence software for machine actions' },
   description:
-    'Originary builds verification software for machine actions that cross company, vendor, and runtime boundaries. Publishes PEAC Protocol.',
+    'Originary builds open-source and self-hosted evidence software for agent, API, MCP, gateway, and automated-service actions across organisational boundaries.',
   robots: {
     index: true,
     follow: true,
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: '/about' },
   openGraph: {
-    title: 'About | Originary',
+    title: 'About Originary: evidence software for machine actions',
     description:
-      'Originary builds verification software for machine actions that cross company, vendor, and runtime boundaries.',
+      'Originary builds open-source and self-hosted evidence software for agent, API, MCP, gateway, and automated-service actions across organisational boundaries.',
     url: '/about',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'About | Originary',
+    title: 'About Originary: evidence software for machine actions',
     description:
-      'Originary builds verification software for machine actions that cross company, vendor, and runtime boundaries.',
+      'Originary builds open-source and self-hosted evidence software for agent, API, MCP, gateway, and automated-service actions across organisational boundaries.',
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -81,22 +81,15 @@ export default function About() {
 
           <Reveal delay={80}>
             <h1 className="home-about-h1">
-              Verification software for machine actions that cross boundaries.
+              Evidence software for machine actions that cross organisational boundaries.
             </h1>
-          </Reveal>
-
-          <Reveal delay={180}>
-            <p className="home-about-lede">
-              Logs help inside one system. Counterparties need records they can
-              verify independently.
-            </p>
           </Reveal>
 
           <Reveal delay={260}>
             <p className="home-about-body">
-              Originary helps teams issue, inspect, export, and verify portable
-              signed records for API calls, MCP tool runs, gateway decisions,
-              provisioning events, payment workflows, and agent handoffs.
+              Originary develops and supports software for issuing, verifying, and handing off
+              bounded evidence from APIs, MCP tools, agents, gateways, and payment systems. It
+              publishes and maintains PEAC Protocol as Apache-2.0 open-source software.
             </p>
           </Reveal>
         </section>

@@ -14,6 +14,8 @@ export const STATIC_ROUTES: readonly string[] = [
   '/press',
   '/peac',
   '/how-it-works',
+  '/evidence-case',
+  '/audit-incident-handoff',
   '/records',
   '/verify',
   '/mcp',

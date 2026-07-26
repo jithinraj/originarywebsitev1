@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { Mono } from './atoms/Mono'
@@ -41,7 +42,7 @@ export function BuiltOnPEAC() {
               textWrap: 'pretty',
             }}
           >
-            Built on PEAC Protocol.
+            Built on an open record format, not a proprietary evidence database.
           </h2>
         </div>
         <div>
@@ -55,10 +56,9 @@ export function BuiltOnPEAC() {
               textWrap: 'pretty',
             }}
           >
-            PEAC Protocol is the open-source protocol for portable signed interaction
-            records. Originary maintains PEAC Protocol and offers implementation
-            support, record bundles, and deployment help for teams using PEAC in
-            real workflows.
+            PEAC Protocol is an Apache-2.0 open protocol for portable signed interaction
+            records. Teams can issue, verify, implement, and self-host PEAC
+            independently of Originary.
           </p>
           <ul
             style={{
@@ -71,10 +71,12 @@ export function BuiltOnPEAC() {
             }}
           >
             {[
-              'Apache-2.0',
+              'Portable signed records',
               'Offline verification',
-              'Self-hostable verifier',
-              'Exportable records',
+              'Self-managed keys',
+              'Independent implementations',
+              'Conformance vectors',
+              'No Originary callback required',
             ].map((item) => (
               <li
                 key={item}
@@ -101,7 +103,29 @@ export function BuiltOnPEAC() {
               </li>
             ))}
           </ul>
-          <div style={{ marginTop: 28 }}>
+          <div style={{ marginTop: 28, display: 'flex', gap: 10, flexWrap: 'wrap' as const }}>
+            <Link
+              href="/peac"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 10,
+                padding: '12px 18px',
+                fontFamily: SANS,
+                fontSize: 14,
+                fontWeight: 500,
+                letterSpacing: '-0.005em',
+                textDecoration: 'none',
+                color: PALETTE.paper,
+                background: PALETTE.ink,
+                border: `1px solid ${PALETTE.ink}`,
+              }}
+            >
+              Read PEAC Protocol
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <path d="M1 5h8M5.5 1.5L9 5l-3.5 3.5" stroke="currentColor" strokeWidth="1.25" />
+              </svg>
+            </Link>
             <a
               href="https://github.com/peacprotocol/peac"
               target="_blank"
@@ -121,7 +145,7 @@ export function BuiltOnPEAC() {
                 border: `1px solid ${PALETTE.rule}`,
               }}
             >
-              View PEAC on GitHub
+              View the source
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                 <path
                   d="M1 5h8M5.5 1.5L9 5l-3.5 3.5"

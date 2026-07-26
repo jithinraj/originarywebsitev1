@@ -49,7 +49,7 @@ export function FlowPanel({
   }, [])
 
   return (
-    <div className="fp-flow" ref={ref} role="img" aria-label={label} style={style}>
+    <div className="fp-flow" ref={ref} role="img" aria-label={label} tabIndex={0} style={style}>
       <div className="fp-actors" aria-hidden>
         {actors.map((a) => (
           <span className="fp-actor" key={a}>

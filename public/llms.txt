@@ -1,11 +1,12 @@
 # Originary
 
-Originary develops software for issuing, verifying, and packaging signed
-records of machine actions across organizational boundaries.
+Originary builds evidence software for machine actions that cross
+organisational boundaries.
 
-Originary Verify helps teams create signed records when APIs, agents, MCP
-tools, gateways, payment flows, and provisioning systems act, so another
-party can verify what the issuer recorded without private-log or dashboard access.
+When an agent or API action is disputed, Originary turns selected records
+from MCP tools, APIs, gateways, and payment systems into a bounded evidence
+case, so another organisation can verify what happened without access to
+private logs or an Originary-hosted verifier.
 
 Current protocol release: PEAC v0.16.3 "Gateway Decision Evidence", which adds
 a gateway decision evidence profile over the existing access-decision record,
@@ -23,15 +24,17 @@ Contact: contact@originary.xyz
 
 ## What it is
 
-Portable verification for API, MCP, agent, gateway, payment, and
-provisioning workflows. Originary Verify creates signed records so another
-party can verify what the issuer recorded without internal logs, dashboard access, or
-vendor runtime.
+Evidence cases for disputed agent, API, MCP, gateway, and payment actions.
+Originary connects selected signed records and native artifacts so another
+organisation can verify what each source reported and see what evidence is
+still missing, without internal logs, dashboard access, or vendor runtime.
 
 ## Core pages
 
 - https://www.originary.xyz/
 - https://www.originary.xyz/product
+- https://www.originary.xyz/evidence-case - what a bounded evidence case contains, with a downloadable illustrative example
+- https://www.originary.xyz/audit-incident-handoff - assembling and verifying an evidence handoff bundle
 - https://www.originary.xyz/about
 - https://www.originary.xyz/peac
 - https://www.originary.xyz/downloads
@@ -43,13 +46,13 @@ vendor runtime.
 
 ## Product pages
 
-- https://www.originary.xyz/how-it-works - how signed records are issued at six surfaces (API, MCP, agent, gateway, payment, provisioning) and verified offline
-- https://www.originary.xyz/records - gallery of signed record types (API, MCP, agent, gateway, payment, provisioning), each verifiable offline
+- https://www.originary.xyz/how-it-works - the four-stage model (observe, issue, verify, hand off), with the six record surfaces in detail
+- https://www.originary.xyz/records - gallery of signed record types (MCP, API, gateway, agent, payment, provisioning), each verifiable offline
 - https://www.originary.xyz/verify - verify a signed record with the issuer's public key; offline by design, nothing stored
-- https://www.originary.xyz/mcp - signed records for MCP tool calls, inputs, and result digests
-- https://www.originary.xyz/ai-gateway - signed records for AI gateway decisions: allow, deny, redaction digests, and observed spend
+- https://www.originary.xyz/mcp - evidence for disputed MCP tool calls
+- https://www.originary.xyz/ai-gateway - independently verifiable AI gateway decisions
 - https://www.originary.xyz/provisioning-records - signed records for deployments, provider setup, credentials, budgets, and resource lifecycle events
-- https://www.originary.xyz/agentic-commerce - signed records that preserve what a paid agent action reported
+- https://www.originary.xyz/agentic-commerce - evidence for paid APIs, MCP tools, and agent commerce
 
 ## Blog
 
