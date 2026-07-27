@@ -34,13 +34,13 @@ const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
 const mono = 'var(--font-plex-mono), "IBM Plex Mono", monospace'
 
 const TIMELINE = [
-  { time: '14:08:09', event: 'authorisation reference supplied' },
+  { time: '14:08:09', event: 'authorization reference supplied' },
   { time: '14:08:10', event: 'gateway reports allow' },
   { time: '14:08:11', event: 'MCP server reports tools.call market_search' },
-  { time: '14:08:12', event: 'payment provider reports authorised' },
+  { time: '14:08:12', event: 'payment provider reports authorized' },
   { time: '14:08:13', event: 'tool server reports result digest' },
-  { time: null, event: 'delivery observation — not supplied' },
-  { time: null, event: 'counterparty acknowledgment — not supplied' },
+  { time: null, event: 'delivery observation: not supplied' },
+  { time: null, event: 'counterparty acknowledgment: not supplied' },
 ]
 
 const ESTABLISHED = [
@@ -81,7 +81,7 @@ export default function EvidenceCasePage() {
     <PageShell>
       <PageHero
         eyebrow="Evidence case"
-        title="The same bounded evidence, available to both sides."
+        title="A bounded evidence case another party can inspect."
         sub="An evidence case packages selected signed records, preserved native artifacts, and verification results so a separate recipient can inspect the same material without access to the source systems."
         strip={['MCP tool call', 'Gateway decision', 'Payment artifact', 'Missing evidence']}
       >
@@ -103,7 +103,7 @@ export default function EvidenceCasePage() {
               textDecoration: 'none',
             }}
           >
-            Download the illustrative case
+            Download the illustrative case summary
           </a>
           <Link
             href="/verify"
@@ -124,6 +124,10 @@ export default function EvidenceCasePage() {
             Verify one record locally
           </Link>
         </div>
+        <p style={{ fontFamily: sans, fontSize: 13, lineHeight: 1.6, color: PALETTE.faint, maxWidth: '62ch', margin: '14px 0 0' }}>
+          This summary illustrates how findings may be presented. It is not a signed evidence
+          bundle and cannot itself be cryptographically verified.
+        </p>
       </PageHero>
 
       <PageSection paddingTop={0} paddingBottom={56}>
@@ -150,7 +154,7 @@ export default function EvidenceCasePage() {
                 }}
               >
                 <Mono size={12} color={row.time ? PALETTE.faint : '#9a3b2e'} style={{ minWidth: 68, flexShrink: 0 }}>
-                  {row.time ?? '—'}
+                  {row.time ?? 'not recorded'}
                 </Mono>
                 <span style={{ fontFamily: sans, fontSize: 14.5, color: row.time ? PALETTE.ink : '#9a3b2e' }}>
                   {row.event}

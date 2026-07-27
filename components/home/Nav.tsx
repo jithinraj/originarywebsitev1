@@ -311,7 +311,7 @@ export function Nav() {
           </a>
           <Link
             href="/verify"
-            className="home-nav-link"
+            className="home-nav-link home-nav-verify"
             style={{ ...topLinkStyle, whiteSpace: 'nowrap' }}
           >
             Verify a record

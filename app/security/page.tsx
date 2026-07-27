@@ -85,7 +85,7 @@ export default function Security() {
           <h2>Severity and response</h2>
           <p>
             Reported issues are triaged by impact. Fix timelines are set at triage and communicated to the reporter; the
-            acknowledgement targets below apply to all severities.
+            acknowledgment targets below apply to all severities.
           </p>
           <ul>
             <li>
@@ -208,7 +208,7 @@ export default function Security() {
             disclosure.
           </p>
 
-          <h3>Acknowledgements</h3>
+          <h3>Acknowledgments</h3>
           <p>Reporters who follow this policy and agree to be named are credited here.</p>
 
           <h3>Legal</h3>

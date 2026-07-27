@@ -14,7 +14,7 @@ const MODULES: Array<{
   {
     mark: 'target',
     title: 'Collect',
-    body: 'Select the records and native artifacts relevant to the disputed action. Private logs remain in the systems that produced them.',
+    body: 'Select the records and native artifacts relevant to the reviewed or disputed action. Private logs remain in the systems that produced them.',
     href: '/product',
     cta: 'How records are issued',
   },
@@ -41,7 +41,7 @@ const MODULES: Array<{
   },
 ]
 
-/** ProductSystem: the three-module product grammar on the homepage. */
+/** ProductSystem: the four-stage product workflow on the homepage. */
 export function ProductSystem() {
   return (
     <section
@@ -59,13 +59,15 @@ export function ProductSystem() {
       <div className="home-prodsys-grid">
         {MODULES.map((m, i) => (
           <Link key={m.title} href={m.href} className="home-prodsys-card">
-            <span className="home-prodsys-meta">
-              <Mono size={11} color="#5a5346" style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-                {String(i + 1).padStart(2, '0')}
-              </Mono>
-              <span className="home-prodsys-mark" aria-hidden>
-                <MarkGlyph name={m.mark} size={18} />
+            <span className="home-prodsys-rail" aria-hidden data-last={i === MODULES.length - 1 ? '' : undefined}>
+              <span className="home-prodsys-node">
+                <MarkGlyph name={m.mark} size={20} />
               </span>
+            </span>
+            <span className="home-prodsys-step">
+              <Mono size={11} color="#5a5346" style={{ letterSpacing: '0.12em' }}>
+                {`STEP ${String(i + 1).padStart(2, '0')}`}
+              </Mono>
             </span>
             <span
               style={{
@@ -74,7 +76,7 @@ export function ProductSystem() {
                 letterSpacing: '-0.014em',
                 color: PALETTE.ink,
                 display: 'block',
-                margin: '10px 0 8px',
+                margin: '6px 0 8px',
               }}
             >
               {m.title}

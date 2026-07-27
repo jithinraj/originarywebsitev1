@@ -40,7 +40,7 @@ const ossFeatures = [
   'Verifiable interaction records (JWS)',
   'Interaction Record format (current stable)',
   'Policy discovery (peac.txt)',
-  'MCP server - 5 verification tools',
+  'MCP tools for verification, inspection, decoding, issuance and bundle creation',
   'CLI and SDK packages',
   'Self-managed signing keys',
   'Offline verification - no Originary dependency',
@@ -70,7 +70,7 @@ const enterpriseFeatures = [
 ]
 
 const comparisonRows: Array<[string, string, string]> = [
-  ['Price', '$0 forever', 'Custom, scoped'],
+  ['Price', 'No software license fee', 'Custom, scoped'],
   ['License', 'Apache-2.0', 'Apache-2.0 + support terms'],
   ['Signing keys', 'Self-managed', 'Self-managed, with setup guidance'],
   ['Deployment', 'Self-hosted', 'Self-hosted, with guidance'],

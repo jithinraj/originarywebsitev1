@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: { absolute: 'About Originary: evidence software for machine actions' },
   description:
-    'Originary builds open-source and self-hosted evidence software for agent, API, MCP, gateway, and automated-service actions across organisational boundaries.',
+    'Originary builds open-source and self-hosted evidence software for agent, API, MCP, gateway, and automated-service actions across organizational boundaries.',
   robots: {
     index: true,
     follow: true,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Originary: evidence software for machine actions',
     description:
-      'Originary builds open-source and self-hosted evidence software for agent, API, MCP, gateway, and automated-service actions across organisational boundaries.',
+      'Originary builds open-source and self-hosted evidence software for agent, API, MCP, gateway, and automated-service actions across organizational boundaries.',
     url: '/about',
     siteName: 'Originary',
     images: [{ url: '/og' }],
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary',
     title: 'About Originary: evidence software for machine actions',
     description:
-      'Originary builds open-source and self-hosted evidence software for agent, API, MCP, gateway, and automated-service actions across organisational boundaries.',
+      'Originary builds open-source and self-hosted evidence software for agent, API, MCP, gateway, and automated-service actions across organizational boundaries.',
     site: '@originaryx',
     creator: '@originaryx',
   },
@@ -81,7 +81,7 @@ export default function About() {
 
           <Reveal delay={80}>
             <h1 className="home-about-h1">
-              Evidence software for machine actions that cross organisational boundaries.
+              Evidence software for machine actions that cross organizational boundaries.
             </h1>
           </Reveal>
 

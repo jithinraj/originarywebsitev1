@@ -198,7 +198,7 @@ export default function McpPage() {
       <PageSection paddingTop={56} paddingBottom={56}>
         <SectionHeading index="03" eyebrow="Evidence case" title="One tool call, several sources, one bounded case." />
         <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.muted, margin: 0, maxWidth: '62ch' }}>
-          A useful MCP evidence case may connect the tool definition, authorisation or approval
+          A useful MCP evidence case may connect the tool definition, authorization or approval
           reference, gateway decision, tool invocation, result commitment, payment-provider
           artifact, and any available delivery or recipient acknowledgment.
         </p>

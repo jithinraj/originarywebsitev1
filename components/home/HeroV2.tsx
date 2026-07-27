@@ -13,19 +13,27 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import Link from 'next/link'
 import { MONO, SANS } from './typography'
+import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { useReducedMotion } from './motion/useReducedMotion'
 import { BitField } from './motion/BitField'
 
-const SUPPORTED = [
-  'Payments',
-  'Approvals',
-  'Access decisions',
-  'API calls',
-  'Tool runs',
-  'Changes',
-  'Deletions',
-  'Handoffs',
+const SUPPORTED: Array<{ label: string; mark: MarkName }> = [
+  { label: 'Payments', mark: 'coin' },
+  { label: 'Approvals', mark: 'sealCheck' },
+  { label: 'Access decisions', mark: 'valve' },
+  { label: 'API calls', mark: 'braces' },
+  { label: 'Tool runs', mark: 'link' },
+  { label: 'Changes', mark: 'pipeline' },
+  { label: 'Deletions', mark: 'ledger' },
+  { label: 'Handoffs', mark: 'chainSteps' },
+]
+
+const PROOF: Array<{ label: string; mark: MarkName }> = [
+  { label: 'Built on PEAC Protocol', mark: 'diamond' },
+  { label: 'Open source', mark: 'braces' },
+  { label: 'Offline verification', mark: 'sealCheck' },
+  { label: 'Self-hostable', mark: 'agentFrame' },
 ]
 
 type Chip = { id: string; label: string; icon: ReactNode }
@@ -138,9 +146,9 @@ export function HeroV2() {
         </h1>
         <p className="cin-rise" style={{ ...heroSub, ['--cin-i' as string]: 2 }}>
           Originary creates portable signed records for agent actions, API calls, MCP tool runs,
-          gateway decisions, payments, approvals, and provisioning. Developers, teams, customers,
-          partners, auditors, and counterparties can verify those records without access to your
-          internal logs.
+          gateway decisions, payments, approvals and provisioning. Your team, customers, partners
+          and auditors can verify those records without access to the source system&apos;s private
+          logs.
         </p>
         <div className="cin-rise" style={{ ...ctas, ['--cin-i' as string]: 3 }}>
           <Link href="/contact" className="home-arrow-link" style={btnPrimary}>
@@ -153,13 +161,21 @@ export function HeroV2() {
           </Link>
         </div>
         <ul className="cin-rise home-hero-strip" style={{ ['--cin-i' as string]: 4 }}>
-          {SUPPORTED.map((label) => (
-            <li key={label}>{label}</li>
+          {SUPPORTED.map((item) => (
+            <li key={item.label}>
+              <MarkGlyph name={item.mark} size={15} />
+              <span>{item.label}</span>
+            </li>
           ))}
         </ul>
-        <p className="cin-rise" style={{ ...heroProofLine, ['--cin-i' as string]: 5 }}>
-          Built on PEAC Protocol · Open source · Offline verification · Self-hostable
-        </p>
+        <ul className="cin-rise home-hero-proof" style={{ ['--cin-i' as string]: 5 }}>
+          {PROOF.map((item) => (
+            <li key={item.label}>
+              <MarkGlyph name={item.mark} size={14} />
+              <span>{item.label}</span>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* Three-zone flow */}

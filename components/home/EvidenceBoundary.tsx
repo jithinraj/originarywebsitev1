@@ -14,7 +14,7 @@ const ESTABLISHES = [
 const DOES_NOT_ESTABLISH = [
   'that every relevant event was recorded;',
   "that the issuer's observation was complete or truthful;",
-  'that the supplied key was authorised by the claimed issuer;',
+  'that the supplied key was authorized by the claimed issuer;',
   'that delivery occurred;',
   'that a legal or regulatory requirement was satisfied.',
 ]

@@ -289,7 +289,7 @@ export default function RecordsPage() {
         <SpecimenGrid>
           <SpecimenIntro
             eyebrow="03 - Gateway decision"
-            title="A deny is evidence too."
+            title="A refused request can still be recorded."
             answers="Answers what happened at the boundary before a request was routed, throttled, or refused. A denied call is still a signed, verifiable event: reviewers see what was refused without reading your gateway logs."
           >
             <StepLabel>Verify it</StepLabel>
@@ -428,8 +428,8 @@ export default function RecordsPage() {
             <CodeBlock>npx -y @peac/cli@{v} verify ./provisioning-event.jws --public-key ./jwks.json</CodeBlock>
             <StepLabel>Tamper case</StepLabel>
             <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '4px 0 0' }}>
-              Backdate the rotation in a spreadsheet all you want: the signed time in the record is the time the issuer
-              asserted.
+              Changing a later export does not alter the issuance time and event details bound by
+              the signature.
             </p>
             <EstablishBoundary
               establishes="the event, resource, and actor were bound and signed at the asserted time."

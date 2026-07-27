@@ -74,15 +74,15 @@ export default function AuditIncidentHandoffPage() {
         aside={
           <RecordCard
             type="evidence-bundle"
-            badge={{ kind: 'verified', label: 'verified offline' }}
+            badge={{ kind: 'neutral', label: 'illustrative export' }}
             rows={[
-              { label: 'Dispute', value: 'ref DSP-2026-0417' },
-              { label: 'Records', value: '4 signed, 1 denied' },
-              { label: 'Artifacts', value: <Dim>2 preserved references</Dim> },
-              { label: 'Digest', value: <Dim>sha256:6f0a3c...</Dim> },
-              { label: 'Signature', value: 'Ed25519 4ab2c7e1...' },
+              { label: 'Case', value: 'ref DSP-2026-0417' },
+              { label: 'Records', value: '4 supplied' },
+              { label: 'Artifacts', value: <Dim>2 references</Dim> },
+              { label: 'Missing', value: <Dim>delivery observation</Dim> },
+              { label: 'Case digest', value: <Dim>sha256:6f0a3c...</Dim> },
             ]}
-            foot="sample bundle - demo signature"
+            foot="records require individual verification"
           />
         }
         strip={['Signed records', 'Native artifacts', 'Integrity digests', 'Offline verification']}
@@ -148,19 +148,21 @@ export default function AuditIncidentHandoffPage() {
                   margin: '8px 0 0',
                 }}
               >
-{`npx -y @peac/cli@${v} bundle create \\
-  --dispute DSP-2026-0417 \\
-  --receipts ./records \\
-  --keys ./jwks.json \\
-  -o ./case.zip`}
+{`{
+  "case_ref": "DSP-2026-0417",
+  "records": 4,
+  "artifacts": 2,
+  "missing": ["delivery_observation"]
+}`}
               </pre>
               <p style={{ fontSize: 13, color: PALETTE.faint, margin: '10px 0 0', lineHeight: 1.55 }}>
-                The bundle carries the selected records, an integrity digest over its contents, and
-                the dispute reference it was assembled for.
+                Select the relevant signed records, native artifacts, issuer-key information, and
+                review reference. Originary&apos;s pilot defines and implements this export for the
+                selected workflow.
               </p>
             </div>
             <div>
-              <StepLabel>Verify it, offline by default</StepLabel>
+              <StepLabel>Verify the included records, offline by default</StepLabel>
               <pre
                 tabIndex={0}
                 style={{
@@ -175,11 +177,14 @@ export default function AuditIncidentHandoffPage() {
                   margin: '8px 0 0',
                 }}
               >
-{`npx -y @peac/cli@${v} bundle verify ./case.zip`}
+{`npx -y @peac/cli@${v} verify \\
+  ./records/gateway-decision.jws \\
+  --public-key ./jwks.json`}
               </pre>
               <p style={{ fontSize: 13, color: PALETTE.faint, margin: '10px 0 0', lineHeight: 1.55 }}>
-                The reviewer runs the same command against the bundle they received, with the public
-                key or JWKS they were told to expect. Nothing is uploaded to Originary.
+                Each supplied record is verified independently, with the public key or JWKS the
+                reviewer was told to expect. Case-level completeness and evidence sufficiency are
+                assessed separately. Nothing is uploaded to Originary.
               </p>
             </div>
           </SpecimenGrid>

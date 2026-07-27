@@ -182,11 +182,11 @@ pnpm dlx @peac/cli@${v} verify ./s/valid/basic-record.jws --public-key ./s/bundl
         </div>
       </PageSection>
 
-      {/* Network behaviour */}
+      {/* Network behavior */}
       <PageSection paddingTop={56} paddingBottom={80} background={PALETTE.paper}>
         <SectionHeading
           index="03"
-          eyebrow="Network behaviour, precisely"
+          eyebrow="Network behavior, precisely"
           title="Supplied-key verification is offline."
         />
         <DataTable

@@ -111,7 +111,7 @@ export default function ProductPage() {
       <PageHero
         eyebrow="Verification pilot"
         title="From signed records to a reviewable evidence case."
-        sub="Originary helps teams issue records at consequential workflow boundaries, verify supplied evidence under explicit key policies, and package the relevant artifacts for another organisation, through a fixed-scope verification pilot."
+        sub="Originary helps teams issue records at consequential workflow boundaries, verify supplied evidence under explicit key policies, and package the relevant artifacts for another organization, through a fixed-scope verification pilot."
         display
         aside={
           <RecordCard

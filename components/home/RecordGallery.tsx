@@ -2,9 +2,12 @@ import Link from 'next/link'
 import { MAX_W, PAGE_PAD, PALETTE } from './palette'
 import { MONO, SANS } from './typography'
 import { SectionTitle } from './atoms/Mono'
+import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
+import { MiniRecord } from './glyphs/StatusGlyphs'
 
 type Card = {
   type: string
+  mark: MarkName
   why: string
   status: string
   tone: 'ok' | 'denied' | 'linked'
@@ -14,43 +17,49 @@ type Card = {
 const CARDS: Card[] = [
   {
     type: 'Gateway decision',
+    mark: 'valve' as MarkName,
     why: 'Shows the terminal allow, deny, or review the gateway observed, and the policy applied.',
-    status: 'signature verified',
+    status: 'worked example',
     tone: 'ok',
     href: '/records#gateway',
   },
   {
     type: 'Paid API call',
+    mark: 'coin' as MarkName,
     why: 'Binds the endpoint, the terms in force, and the result digest for a metered request.',
-    status: 'signature verified',
+    status: 'worked example',
     tone: 'ok',
     href: '/records#api',
   },
   {
     type: 'MCP tool run',
+    mark: 'link' as MarkName,
     why: 'Records which tool ran, the argument digest, and what the server reported back.',
-    status: 'signature verified',
+    status: 'worked example',
     tone: 'ok',
     href: '/records#mcp',
   },
   {
     type: 'Agent approval',
+    mark: 'sealCheck' as MarkName,
     why: 'Ties an approval to exactly one proposal digest, so a changed action fails closed.',
-    status: 'decision: denied',
+    status: 'deny example',
     tone: 'denied',
     href: '/records#agent',
   },
   {
     type: 'Provisioning event',
+    mark: 'pipeline' as MarkName,
     why: 'Preserves which resource, credential, or subscription changed, and who issued it.',
-    status: 'signature verified',
+    status: 'worked example',
     tone: 'ok',
     href: '/records#provisioning',
   },
   {
     type: 'Payment event',
+    mark: 'lockCoin' as MarkName,
     why: 'Carries the payment reference and mandate the service action was bound to.',
-    status: 'artifact linked',
+    status: 'linked-artifact example',
     tone: 'linked',
     href: '/records#payment',
   },
@@ -73,15 +82,15 @@ export function RecordGallery() {
     >
       <SectionTitle
         title="See what each issuing system actually reported."
-        body="Every record is a bounded signed statement from one issuer. Each sample below verifies offline with a single command."
+        body="Every record is a bounded signed statement from one issuer. Each record family links to a worked example. Shipped PEAC samples can be generated and verified offline."
       />
       <div
         style={{
           marginTop: 44,
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))',
           gap: 16,
         }}
+        className="home-recgal-grid"
       >
         {CARDS.map((c) => (
           <Link
@@ -96,7 +105,15 @@ export function RecordGallery() {
               textDecoration: 'none',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 10 }}>
+            <div className="home-recgal-head">
+              <span className="home-recgal-mark" aria-hidden>
+                <MarkGlyph name={c.mark} size={20} />
+              </span>
+              <span className="home-recgal-shape" aria-hidden>
+                <MiniRecord lines={3} denied={c.tone === 'denied'} />
+              </span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 10, marginTop: 16 }}>
               <span style={{ fontFamily: SANS, fontSize: 16, fontWeight: 500, color: PALETTE.ink, letterSpacing: '-0.01em' }}>
                 {c.type}
               </span>
@@ -108,7 +125,7 @@ export function RecordGallery() {
               {c.why}
             </p>
             <span style={{ fontFamily: SANS, fontSize: 13, color: PALETTE.ink, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              View sample
+              View worked example
             </span>
           </Link>
         ))}

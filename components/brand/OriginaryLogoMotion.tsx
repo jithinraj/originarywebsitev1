@@ -26,7 +26,7 @@ const WORDMARK_VIEW_BOX = "201 644 7487 1918";
 const SYMBOL_VIEW_BOX = "161 998 1104 1196";
 
 const flip = (x: number) => `translate(${x},2124) scale(1,-1)`;
-/** The origin point: optical centre of the o at (712.5, 1596), diameter 246u. */
+/** The origin point: optical center of the o at (712.5, 1596), diameter 246u. */
 const ORIGIN_POINT = "translate(488,2946.5) scale(1,-1)";
 
 /** Timing and easing, per the identity spec. */
@@ -63,7 +63,7 @@ const EX_STEM_X = STEM_FORM_X - 1201; // 88
 /** The point ejects 801u and stretches 3.6x on its way to becoming the stem. */
 const EJECT_X = STEM_FORM_X - 488; // 801
 const EJECT_SCALE_Y = 3.6;
-/** Optical centre of the point inside the o. */
+/** Optical center of the point inside the o. */
 const POINT_CENTRE = "712.5px 1596px";
 
 const CASCADE: { d: string; x: number }[] = [
@@ -202,12 +202,12 @@ export function OriginaryLogoMotion({
       onFocus={replayOnHover ? play : undefined}
       style={{ overflow: "visible" }}
     >
-      {/* the ring — the 0, and the first o */}
+      {/* the ring: the 0, and the first o */}
       <g className="olh-o" style={{ transform: `translateX(${oX - SLOT.o}px)`, transition: animating ? `transform ${moveMs}ms ${moveEase}` : "none" }}>
         <path d={D.o} transform={flip(SLOT.o)} />
       </g>
 
-      {/* the origin point — rests in the o, stretches into the stem, returns to rest */}
+      {/* the origin point: rests in the o, stretches into the stem, returns to rest */}
       <g
         className="olh-origin"
         style={{
@@ -225,7 +225,7 @@ export function OriginaryLogoMotion({
         <path d={D.iDot} transform={ORIGIN_POINT} />
       </g>
 
-      {/* the stem — the 1, and the i */}
+      {/* the stem: the 1, and the i */}
       <g
         className="olh-stem"
         style={{
@@ -279,7 +279,7 @@ export const WORDMARK_GEOMETRY = {
   transform: (x: number) => flip(x),
   paths: [
     { d: D.o, x: SLOT.o },
-    // the origin point sits at the centre of the o, so it carries its own transform
+    // the origin point sits at the center of the o, so it carries its own transform
     { d: D.iDot, x: SLOT.o, t: ORIGIN_POINT },
     { d: D.r, x: SLOT.r1 },
     { d: D.iStem, x: SLOT.i1 },

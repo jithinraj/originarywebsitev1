@@ -20,7 +20,7 @@ import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 
 const TITLE = 'Evidence for paid APIs, MCP, and agent commerce | Originary'
 const DESCRIPTION =
-  'Connect authorisation, API or tool execution, payment-provider artifacts, service results, and delivery evidence in one independently reviewable case.'
+  'Connect authorization, API or tool execution, payment-provider artifacts, service results, and delivery evidence in one independently reviewable case.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -103,7 +103,7 @@ export default function AgenticCommercePage() {
       <PageHero
         eyebrow="Paid services"
         title="A payment provider reports the transaction. It does not establish what the automated service delivered."
-        sub="Originary connects selected authorisation, service-action, result, and payment records so another party can inspect what each source reported and identify what evidence is still missing."
+        sub="Originary connects selected authorization, service-action, result, and payment records so another party can inspect what each source reported and identify what evidence is still missing."
         display
         aside={
           <RecordCard
@@ -137,7 +137,7 @@ export default function AgenticCommercePage() {
               The payment system may report
             </div>
             <ul style={{ margin: '14px 0 0', padding: '0 0 0 18px', fontSize: 15, lineHeight: 1.7, color: PALETTE.muted }}>
-              <li>authorisation status;</li>
+              <li>authorization status;</li>
               <li>amount and currency;</li>
               <li>payment reference;</li>
               <li>capture, settlement, refund, or dispute state;</li>

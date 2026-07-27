@@ -433,10 +433,12 @@ h6 {
   font-weight: 600;
 }
 
-p {
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin: 0;
+@layer originary-base {
+  p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
 }
 
 /* Secondary text uses gray tones, not smaller sizes */
@@ -1738,9 +1740,15 @@ button:hover svg {
   letter-spacing: -0.03em;
 }
 
-.site-root p,
-.site-root li {
-  color: var(--text-secondary);
+/* Placed in a cascade layer so component styles that set their own text colour
+   win regardless of specificity. Pages with no component rule still receive
+   this default. The homepage and product surfaces use the warm palette in
+   components/home/palette.ts, not the design-system greys. */
+@layer originary-base {
+  .site-root p,
+  .site-root li {
+    color: var(--text-secondary);
+  }
 }
 
 .site-root .btn,

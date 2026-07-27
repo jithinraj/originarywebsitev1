@@ -22,7 +22,7 @@ import { originaryVerificationPilot, peacProtocol } from '@/lib/structured-data/
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Verifiable AI Agent, API & Gateway Records',
+    absolute: 'Originary | Verifiable Records for Agents, APIs & Gateways',
   },
   description:
     'Create signed records for agent actions, API calls, MCP tool runs, gateway decisions, payments, and provisioning. Verify them without sharing internal logs.',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Originary | Verifiable AI Agent, API & Gateway Records',
+    title: 'Originary | Verifiable Records for Agents, APIs & Gateways',
     description:
       'Create signed records for agent actions, API calls, MCP tool runs, gateway decisions, payments, and provisioning. Verify them without sharing internal logs.',
     url: 'https://www.originary.xyz',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Verifiable AI Agent, API & Gateway Records',
+    title: 'Originary | Verifiable Records for Agents, APIs & Gateways',
     description:
       'Create signed records for agent actions, API calls, MCP tool runs, gateway decisions, payments, and provisioning. Verify them without sharing internal logs.',
     images: ['/og'],

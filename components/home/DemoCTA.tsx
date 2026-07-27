@@ -60,7 +60,7 @@ export function DemoCTA() {
               textWrap: 'balance',
             }}
           >
-            Start with one action another party already questions.
+            Start with one action another party needs to verify.
           </h3>
           <p
             style={{
