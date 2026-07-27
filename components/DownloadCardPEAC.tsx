@@ -9,13 +9,13 @@ export default function DownloadCardPEAC() {
       border: '1px solid var(--border-default)',
       padding: 'var(--space-6)'
     }}>
-      <h3 style={{
+      <h2 style={{
         fontSize: 'var(--text-xl)',
         fontWeight: 600,
         marginBottom: 'var(--space-2)'
       }}>
         Open Protocol (PEAC) - Upstream Packages
-      </h3>
+      </h2>
       <p style={{
         fontSize: 'var(--text-sm)',
         color: 'var(--text-secondary)',

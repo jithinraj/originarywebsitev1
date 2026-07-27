@@ -43,13 +43,13 @@ export default async function DownloadsServer() {
           <div style={{
             marginBottom: 'var(--space-4)'
           }}>
-            <h3 style={{
+            <h2 style={{
               fontSize: 'var(--text-lg)',
               fontWeight: 600,
               marginBottom: 'var(--space-2)'
             }}>
               {file.platform === 'Templates' ? 'PEAC Templates' : `PEAC Protocol - ${file.platform}`}
-            </h3>
+            </h2>
             <p style={{
               color: 'var(--text-secondary)',
               fontSize: 'var(--text-sm)',
@@ -75,6 +75,7 @@ export default async function DownloadsServer() {
               target={file.url ? '_blank' : undefined}
               rel={file.url ? 'noopener noreferrer' : undefined}
               download={!file.url}
+              aria-label={`Download ${file.filename}`}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',

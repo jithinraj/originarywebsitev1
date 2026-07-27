@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { rootGraph } from '@/lib/structured-data/entities'
-import { Inter, Geist, Geist_Mono, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
+import { Geist, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
@@ -13,20 +13,6 @@ import ScrollAnimationProvider from '@/components/ScrollAnimationProvider'
 const geistSans = Geist({
   subsets: ['latin'],
   variable: '--font-geist-sans',
-  display: 'swap',
-  preload: true,
-})
-
-const geistMono = Geist_Mono({
-  subsets: ['latin'],
-  variable: '--font-geist-mono',
-  display: 'swap',
-  preload: true,
-})
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
   display: 'swap',
   preload: true,
 })
@@ -44,7 +30,7 @@ const plexMono = IBM_Plex_Mono({
   variable: '--font-plex-mono',
   weight: ['400', '500'],
   display: 'swap',
-  preload: false,
+  preload: true,
 })
 
 export const metadata: Metadata = {
@@ -121,7 +107,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" data-theme="light" className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${plexSans.variable} ${plexMono.variable}`}>
+    <html lang="en" data-theme="light" className={`${geistSans.variable} ${plexSans.variable} ${plexMono.variable}`}>
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
@@ -148,9 +134,9 @@ export default function RootLayout({
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-FPG3HTSN2R"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

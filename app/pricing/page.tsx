@@ -351,7 +351,7 @@ export default function PricingPage() {
               >
                 what stays free
               </Mono>
-              <h3 style={{ ...sectionHead, fontSize: 20, marginTop: 12 }}>PEAC Protocol</h3>
+              <h2 style={{ ...sectionHead, fontSize: 20, marginTop: 12 }}>PEAC Protocol</h2>
               <p style={{ fontFamily: sans, fontSize: 14, color: PALETTE.muted, lineHeight: 1.7, marginTop: 10, marginBottom: 0 }}>
                 PEAC Protocol, self-hosted verification, open-source packages, and conformant implementations remain free and portable.
               </p>
@@ -364,7 +364,7 @@ export default function PricingPage() {
               >
                 what originary adds
               </Mono>
-              <h3 style={{ ...sectionHead, fontSize: 20, marginTop: 12 }}>Originary Verify</h3>
+              <h2 style={{ ...sectionHead, fontSize: 20, marginTop: 12 }}>Originary Verify</h2>
               <p style={{ fontFamily: sans, fontSize: 14, color: PALETTE.muted, lineHeight: 1.7, marginTop: 10, marginBottom: 0 }}>
                 A scoped verification pilot, deployment and integration support, and help assembling portable record bundles for teams moving one workflow into production.
               </p>
