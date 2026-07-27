@@ -89,9 +89,9 @@ export function UseCases() {
             <span className="home-usecase-mark" aria-hidden>
               <MarkGlyph name={card.mark} size={22} />
             </span>
-            <h4 style={{ fontFamily: SANS, fontSize: 17, fontWeight: 500, color: PALETTE.ink, margin: '14px 0 0', letterSpacing: '-0.01em' }}>
+            <h3 style={{ fontFamily: SANS, fontSize: 17, fontWeight: 500, color: PALETTE.ink, margin: '14px 0 0', letterSpacing: '-0.01em' }}>
               {card.title}
-            </h4>
+            </h3>
             <p style={{ fontFamily: SANS, fontSize: 14, lineHeight: 1.55, color: PALETTE.muted, marginTop: 12, marginBottom: 0, textWrap: 'pretty' as const }}>
               {card.body}
             </p>

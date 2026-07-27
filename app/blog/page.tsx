@@ -106,7 +106,7 @@ function ArticleCard({ article, featured }: { article: Article; featured?: boole
       >
         {article.category}
       </span>
-      <h3
+      <h2
         style={{
           fontFamily: sans,
           fontSize: featured ? 'clamp(22px, 2.6vw, 28px)' : 18,
@@ -119,7 +119,7 @@ function ArticleCard({ article, featured }: { article: Article; featured?: boole
         }}
       >
         {article.title}
-      </h3>
+      </h2>
       <p
         style={{
           fontFamily: sans,

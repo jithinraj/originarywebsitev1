@@ -287,7 +287,7 @@ export default function PressPage() {
             ['Compact mark for dark backgrounds', '/originary-logo-mark-reverse.svg', 'SVG'],
           ].map(([label, href, kind]) => (
             <li key={href} style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 14, lineHeight: 1.55 }}>
-              <a href={href} download style={{ color: PALETTE.ink }}>
+              <a href={href} download aria-label={`${label}, ${kind}`} style={{ color: PALETTE.ink }}>
                 {label}
               </a>{' '}
               <span style={{ color: PALETTE.faint, fontFamily: 'var(--font-plex-mono)', fontSize: 11.5 }}>{kind}</span>

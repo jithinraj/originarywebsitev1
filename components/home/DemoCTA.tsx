@@ -104,7 +104,7 @@ export function DemoCTA() {
             ))}
           </ul>
           <div style={{ marginTop: 28, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <CTAButton href="#demo-form" primary>
+            <CTAButton href="#demo-form" primary aria-label="Start a pilot: go to the request form">
               Start a pilot
             </CTAButton>
             <CTAButton href="/verify">Verify a sample</CTAButton>
@@ -129,14 +129,17 @@ function CTAButton({
   children,
   href,
   primary,
+  'aria-label': ariaLabel,
 }: {
   children: React.ReactNode
   href: string
   primary?: boolean
+  'aria-label'?: string
 }) {
   return (
     <a
       href={href}
+      aria-label={ariaLabel}
       style={{
         display: 'inline-flex',
         alignItems: 'center',
