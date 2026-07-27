@@ -22,10 +22,10 @@ import { originaryVerificationPilot, peacProtocol } from '@/lib/structured-data/
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Evidence for disputed agent, MCP, API actions | Originary',
+    absolute: 'Originary | Verifiable AI Agent, API & Gateway Records',
   },
   description:
-    'Turn signed records from MCP tools, APIs, gateways, and payment systems into evidence another organisation can verify without access to private logs.',
+    'Create signed records for agent actions, API calls, MCP tool runs, gateway decisions, payments, and provisioning. Verify them without sharing internal logs.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Evidence for disputed agent, MCP, API actions | Originary',
+    title: 'Originary | Verifiable AI Agent, API & Gateway Records',
     description:
-      'Turn signed records from MCP tools, APIs, gateways, and payment systems into evidence another organisation can verify without access to private logs.',
+      'Create signed records for agent actions, API calls, MCP tool runs, gateway decisions, payments, and provisioning. Verify them without sharing internal logs.',
     url: 'https://www.originary.xyz',
     type: 'website',
     locale: 'en_US',
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Evidence for disputed agent, MCP, API actions | Originary',
+    title: 'Originary | Verifiable AI Agent, API & Gateway Records',
     description:
-      'Turn signed records from MCP tools, APIs, gateways, and payment systems into evidence another organisation can verify without access to private logs.',
+      'Create signed records for agent actions, API calls, MCP tool runs, gateway decisions, payments, and provisioning. Verify them without sharing internal logs.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',

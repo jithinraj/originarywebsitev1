@@ -1,12 +1,13 @@
 # Originary
 
-Originary builds evidence software for machine actions that cross
-organisational boundaries.
+Originary creates portable signed records for agent actions, API calls, MCP
+tool runs, gateway decisions, payments, approvals, and provisioning.
+Developers, teams, customers, partners, auditors, and counterparties can
+verify those records without access to your internal logs.
 
-When an agent or API action is disputed, Originary turns selected records
-from MCP tools, APIs, gateways, and payment systems into a bounded evidence
-case, so another organisation can verify what happened without access to
-private logs or an Originary-hosted verifier.
+When an agent or API action is disputed, those records can be assembled into
+a bounded evidence case, so another organisation can verify what happened
+without access to private logs or an Originary-hosted verifier.
 
 Current protocol release: PEAC v0.16.3 "Gateway Decision Evidence", which adds
 a gateway decision evidence profile over the existing access-decision record,
@@ -16,7 +17,7 @@ MCP tool records, linked counterparty acknowledgments, Merkle commitment
 helpers, external evidence anchoring, agent spend attribution, agent run
 lineage records, consented action records, and runtime lineage exports.
 
-Last updated: 2026-07-22
+Last updated: 2026-07-27
 
 Organization: Originary (legal entity: Poem, Inc.)
 Location: Delaware, USA
@@ -24,10 +25,12 @@ Contact: contact@originary.xyz
 
 ## What it is
 
-Evidence cases for disputed agent, API, MCP, gateway, and payment actions.
-Originary connects selected signed records and native artifacts so another
-organisation can verify what each source reported and see what evidence is
-still missing, without internal logs, dashboard access, or vendor runtime.
+Verifiable records for agents, APIs, and gateways. Each record is signed at
+the point the action happens and verifies offline against the issuer's public
+key. For disputed actions, Originary connects selected signed records and
+native artifacts into an evidence case, so another organisation can verify
+what each source reported and see what evidence is still missing, without
+internal logs, dashboard access, or vendor runtime.
 
 ## Core pages
 

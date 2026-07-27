@@ -134,13 +134,13 @@ export function HeroV2() {
       <div style={heroTopStyle}>
         <p className="cin-rise" style={heroEyebrow}>VERIFIABLE RECORDS FOR AGENTS, APIS, AND GATEWAYS</p>
         <h1 id="hero-headline" className="cin-rise cin-display" style={{ ...heroHeadline, ['--cin-i' as string]: 1 }}>
-          When agents act, create a record others can verify.
+          Agent actions, on the record.
         </h1>
         <p className="cin-rise" style={{ ...heroSub, ['--cin-i' as string]: 2 }}>
-          Originary creates portable signed records for payments, approvals, access decisions, API
-          calls, tool runs, provisioning events, and other important machine actions. Developers,
-          teams, customers, partners, auditors, and counterparties can verify them without access to
-          your internal logs.
+          Originary creates portable signed records for agent actions, API calls, MCP tool runs,
+          gateway decisions, payments, approvals, and provisioning. Developers, teams, customers,
+          partners, auditors, and counterparties can verify those records without access to your
+          internal logs.
         </p>
         <div className="cin-rise" style={{ ...ctas, ['--cin-i' as string]: 3 }}>
           <Link href="/contact" className="home-arrow-link" style={btnPrimary}>

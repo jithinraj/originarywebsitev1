@@ -10,28 +10,28 @@ const GH = 'https://github.com/peacprotocol/peac/tree/main/'
 const GHB = 'https://github.com/peacprotocol/peac/blob/main/'
 
 const STACK: Item[] = [
-  { name: 'MCP', href: GH + 'integrator-kits/mcp', logo: { src: '/logos/mcp-official.svg', w: 117, h: 17, ink: 'invert' } },
-  { name: 'Stripe Projects', href: GH + 'integrator-kits/stripe-projects', logo: { src: '/logos/stripe-wordmark-slate.svg', w: 38, h: 16, ink: 'flat' } },
-  { name: 'Microsoft AGT', href: GH + 'packages/adapters/runtime-governance', logo: { src: '/logos/microsoft-agt.svg', w: 27, h: 27, ink: 'gray' } },
   { name: 'Cloudflare Workers', href: GH + 'surfaces/workers/cloudflare', logo: { src: '/logos/cloudflare-wordmark.png', w: 60, h: 20, ink: 'gray' } },
-  { name: 'MPP', href: GH + 'examples/mpp-payment-record', logo: { src: '/logos/mpp-wordmark.svg', w: 34, h: 15, ink: 'invert' } },
-  { name: 'OpenClaw', href: GH + 'packages/adapters/openclaw', logo: { src: '/logos/openclaw.svg', w: 27, h: 27, ink: 'gray' } },
-  { name: 'A2A', href: GH + 'integrator-kits/a2a', logo: { src: '/logos/a2a-official.svg', w: 80, h: 20, ink: 'flat' } },
-  { name: 'x402', href: GH + 'integrator-kits/x402', logo: { src: '/logos/x402-mark.svg', w: 44, h: 17, ink: 'flat' } },
-  { name: 'AP2', href: GHB + 'docs/specs/AP2-COMPOSITION.md', logo: { src: '/logos/ap2.svg', w: 26, h: 28, ink: 'flat' } },
-  { name: 'OpenTelemetry', href: GHB + 'docs/guides/telemetry-otel-correlation.md', logo: { src: '/logos/opentelemetry.svg', w: 64, h: 24, ink: 'flat' } },
-  { name: 'SLSA', href: GH + 'packages/mappings/slsa', logo: { src: '/logos/slsa.svg', w: 61, h: 17, ink: 'invert' } },
   { name: 'UCP', href: GH + 'integrator-kits/ucp', logo: { src: '/logos/ucp.svg', w: 24, h: 28, ink: 'flat' } },
+  { name: 'MCP', href: GH + 'integrator-kits/mcp', logo: { src: '/logos/mcp-official.svg', w: 117, h: 17, ink: 'invert' } },
+  { name: 'MPP', href: GH + 'examples/mpp-payment-record', logo: { src: '/logos/mpp-wordmark.svg', w: 34, h: 15, ink: 'invert' } },
+  { name: 'Stripe Projects', href: GH + 'integrator-kits/stripe-projects', logo: { src: '/logos/stripe-wordmark-slate.svg', w: 38, h: 16, ink: 'flat' } },
+  { name: 'AP2', href: GHB + 'docs/specs/AP2-COMPOSITION.md', logo: { src: '/logos/ap2.svg', w: 26, h: 28, ink: 'flat' } },
+  { name: 'Microsoft AGT', href: GH + 'packages/adapters/runtime-governance', logo: { src: '/logos/microsoft-agt.svg', w: 27, h: 27, ink: 'gray' } },
+  { name: 'OpenClaw', href: GH + 'packages/adapters/openclaw', logo: { src: '/logos/openclaw.svg', w: 27, h: 27, ink: 'gray' } },
+  { name: 'SLSA', href: GH + 'packages/mappings/slsa', logo: { src: '/logos/slsa.svg', w: 61, h: 17, ink: 'invert' } },
+  { name: 'A2A', href: GH + 'integrator-kits/a2a', logo: { src: '/logos/a2a-official.svg', w: 80, h: 20, ink: 'flat' } },
+  { name: 'OpenTelemetry', href: GHB + 'docs/guides/telemetry-otel-correlation.md', logo: { src: '/logos/opentelemetry.svg', w: 64, h: 24, ink: 'flat' } },
+  { name: 'x402', href: GH + 'integrator-kits/x402', logo: { src: '/logos/x402-mark.svg', w: 44, h: 17, ink: 'flat' } },
 ]
 
 const EVIDENCE: Item[] = [
-  { name: 'paymentauth', href: GH + 'integrator-kits/paymentauth', glyph: 'lockCoin' },
-  { name: 'Content Signals', href: GH + 'integrator-kits/content-signals', glyph: 'signal' },
-  { name: 'OpenAI-compatible', href: GH + 'packages/adapters/openai-compatible', glyph: 'braces' },
-  { name: 'Managed agents', href: GH + 'packages/adapters/managed-agents', glyph: 'agentFrame' },
   { name: 'Runtime governance', href: GH + 'packages/adapters/runtime-governance', glyph: 'scales' },
   { name: 'DID', href: GH + 'packages/adapters/did', glyph: 'identity' },
+  { name: 'OpenAI-compatible', href: GH + 'packages/adapters/openai-compatible', glyph: 'braces' },
+  { name: 'paymentauth', href: GH + 'integrator-kits/paymentauth', glyph: 'lockCoin' },
   { name: 'EAT', href: GH + 'packages/adapters/eat', glyph: 'token' },
+  { name: 'Content Signals', href: GH + 'integrator-kits/content-signals', glyph: 'signal' },
+  { name: 'Managed agents', href: GH + 'packages/adapters/managed-agents', glyph: 'agentFrame' },
   { name: 'in-toto', href: GH + 'packages/mappings/intoto', glyph: 'chainSteps' },
 ]
 
@@ -118,18 +118,6 @@ export function InteropMarquee() {
           }}
         >
           {STANDARDS}
-        </p>
-        <p
-          style={{
-            fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
-            fontSize: 12,
-            lineHeight: 1.6,
-            color: PALETTE.faint,
-            margin: '10px 0 0',
-          }}
-        >
-          Each item links to a public adapter, example, mapping, or guide. Names and marks belong to
-          their owners. Interoperability does not imply partnership or endorsement.
         </p>
       </div>
     </section>
