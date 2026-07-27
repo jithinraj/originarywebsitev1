@@ -4,9 +4,9 @@
  */
 export const VOCABULARY = {
   company: 'Originary',
-  product: 'Originary Verify',
+  engagement: 'Originary Verification Pilot',
   protocol: 'PEAC Protocol',
   plainArtifact: 'signed record',
   formalArtifact: 'verifiable interaction record',
-  multiRecordArtifact: 'evidence bundle',
+  multiRecordArtifact: 'evidence case',
 } as const

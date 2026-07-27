@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { PageShell, PageHero, PageSection, SectionHeading, Button, PullLine } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import { FACTS } from '@/lib/facts'
@@ -19,9 +18,9 @@ import {
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { MarkGlyph } from '@/components/home/glyphs/MarkGlyphs'
 
-const TITLE = 'Signed audit record software for machine actions | Originary'
+const TITLE = 'Originary Verification Pilot: cross-boundary evidence'
 const DESCRIPTION =
-  'Originary Verify adds portable signed records and a repeatable verification path to selected production workflows.'
+  'Issue signed records where actions happen, verify them under an explicit key policy, and assemble a bounded evidence case for another party.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -32,7 +31,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: 'https://www.originary.xyz/product',
     type: 'website',
-    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary Verify' }],
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary Verification Pilot' }],
   },
   twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: ['/og'] },
 }
@@ -57,44 +56,62 @@ const jsonLd = {
         { '@type': 'ListItem', position: 2, name: 'Product', item: 'https://www.originary.xyz/product' },
       ],
     },
-    {
-      '@type': 'SoftwareApplication',
-      '@id': 'https://www.originary.xyz/product#app',
-      name: 'Originary Verify',
-      applicationCategory: 'DeveloperApplication',
-      operatingSystem: 'Cross-platform',
-      url: 'https://www.originary.xyz/product',
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', description: 'Open-source core; commercial deployment support by agreement.' },
-    },
   ],
 }
 
 const MODULES = [
   {
-    mark: 'ledger' as const,
-    title: 'Record',
-    body: 'Capture selected facts at the workflow boundary: what happened, which policy applied, what result was returned, when, and who issued the record. Sign it with your keys. Private logs never leave.',
+    mark: 'target' as const,
+    title: 'Issue',
+    body: 'Create a bounded signed record at the API, MCP, gateway, runtime, or payment boundary that directly observed the action.',
   },
   {
     mark: 'sealCheck' as const,
     title: 'Verify',
-    body: 'Check the signature, issuer, policy context, result, and bound digests independently. Strict offline with a supplied key, or explicit caller-authorized key resolution. No account, no callback.',
+    body: 'Validate record structure, signatures, and disclosed-content bindings under a supplied key or an explicit expected-issuer policy.',
+  },
+  {
+    mark: 'diamond' as const,
+    title: 'Assess',
+    body: 'Separate established claims from missing, conflicting, and unevaluated evidence.',
   },
   {
     mark: 'link' as const,
-    title: 'Bundle',
-    body: 'Assemble related records and supporting evidence into a portable bundle a counterparty, auditor, or procurement team can open and verify without access to your systems.',
+    title: 'Hand off',
+    body: 'Export the records, native artifacts, verification results, and timeline for a customer, partner, auditor, or incident reviewer.',
   },
 ]
 
+const RECEIVES = [
+  'case manifest',
+  'selected PEAC records',
+  'preserved native artifacts or references',
+  'verification-key and issuer-policy information',
+  'machine-readable verification results',
+  'human-readable timeline',
+  'established, missing, conflicting, and unevaluated findings',
+  'integrity digests for the exported case',
+]
+
+const PILOT_DELIVERABLES = [
+  'workflow and trust-boundary map',
+  'issuer and key-policy design',
+  'working record issuance',
+  'independent verification path',
+  'one evidence-case export',
+  'threat and non-issuance analysis',
+  'deployment recommendation',
+]
+
 export default function ProductPage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
-        eyebrow="Originary Verify"
-        title="The evidence path for machine actions."
-        sub="Originary Verify is a commercial software offering built on PEAC Protocol: issue signed records where actions happen, verify them anywhere, and assemble evidence when someone asks what happened."
+        eyebrow="Verification pilot"
+        title="From signed records to a reviewable evidence case."
+        sub="Originary helps teams issue records at consequential workflow boundaries, verify supplied evidence under explicit key policies, and package the relevant artifacts for another organization, through a fixed-scope verification pilot."
         display
         aside={
           <RecordCard
@@ -110,13 +127,13 @@ export default function ProductPage() {
             foot="sample record - demo signature"
           />
         }
-        strip={['Record', 'Verify', 'Bundle', 'PEAC ' + FACTS.currentVersion]}
+        strip={['Issue', 'Verify', 'Assess', 'Hand off', 'PEAC ' + FACTS.currentVersion]}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <Button href="/contact" primary>
-            Start a pilot
+          <Button href="/evidence-case" primary>
+            See an evidence case
           </Button>
-          <Button href="/verify">Verify a sample</Button>
+          <Button href="/contact">Start a pilot</Button>
         </div>
         <AnchorLine style={{ marginTop: 26 }}>Logs stay local. Signed records travel.</AnchorLine>
       </PageHero>
@@ -126,10 +143,10 @@ export default function ProductPage() {
         <SectionHeading
           index="01"
           eyebrow="The product system"
-          title="Record, Verify, Bundle."
-          sub="Three modules cover the full evidence path. Each works alone; together they turn a workflow into something another party can check."
+          title="Issue, verify, assess, hand off."
+          sub="Four modules cover the full evidence path. Each works alone; together they turn a workflow into something another party can check."
         />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
           {MODULES.map((m, i) => (
             <div key={m.title} style={{ border: `1px solid ${PALETTE.hairline}`, background: PALETTE.paper, padding: '22px 22px 20px' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -151,18 +168,27 @@ export default function ProductPage() {
         Evidence that outlives
       </PullLine>
 
-      {/* Worked flow */}
+      {/* What the recipient receives */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
-        <SectionHeading index="02" eyebrow="The worked flow" title="One action, end to end." />
+        <SectionHeading index="02" eyebrow="The output" title="What the recipient receives." />
+        <MarkerList marker="check" items={RECEIVES} />
+        <p style={{ fontSize: 13, lineHeight: 1.6, color: PALETTE.faint, margin: '16px 0 0', maxWidth: '62ch' }}>
+          An evidence case is a product artifact. It is not a new PEAC wire type.
+        </p>
+      </PageSection>
+
+      {/* Worked flow */}
+      <PageSection paddingTop={56} paddingBottom={56}>
+        <SectionHeading index="03" eyebrow="The worked flow" title="One action, end to end." />
         <FlowPanel
-          label="Sequence diagram: a workflow performs an action, a signed record is issued at the boundary, the record travels to a counterparty, and it verifies offline while an evidence bundle collects related records for review."
+          label="Sequence diagram: a workflow performs an action, a signed record is issued at the boundary, the record travels to a counterparty, and it verifies offline while an evidence case collects related records for review."
           actors={['your workflow', 'counterparty']}
           beats={[
             { kind: 'msg', dir: 'ltr', slot: 1, label: 'action happens - api call, tool run, payment, deploy' },
             { kind: 'rec', slot: 2, label: 'signed record issued at the boundary - facts + policy + result + time' },
-            { kind: 'msg', dir: 'ltr', slot: 3, label: 'record travels - carrier, export, or bundle' },
+            { kind: 'msg', dir: 'ltr', slot: 3, label: 'record travels - carrier, export, or evidence case' },
             { kind: 'evt', slot: 4, label: 'verified offline - signature, issuer, digests' },
-            { kind: 'chk', slot: 5, label: 'evidence bundle ready for dispute, audit, or review' },
+            { kind: 'chk', slot: 5, label: 'evidence case ready for dispute, audit, or review' },
           ]}
           style={{ marginBottom: 22 }}
         />
@@ -171,7 +197,7 @@ export default function ProductPage() {
             <StepLabel>Verify on any machine, later</StepLabel>
             <Terminal
               lines={[
-                { kind: 'out', text: '$ npx -y @peac/cli@0.16.3 verify ./record.jws --public-key ./jwks.json' },
+                { kind: 'out', text: `$ npx -y @peac/cli@${v} verify ./record.jws --public-key ./jwks.json` },
                 { kind: 'ok', text: 'Signature valid (offline).' },
               ]}
             />
@@ -196,18 +222,18 @@ export default function ProductPage() {
       </PageSection>
 
       {/* Deployment and keys */}
-      <PageSection paddingTop={56} paddingBottom={56}>
+      <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
         <SectionHeading
-          index="03"
+          index="04"
           eyebrow="Deployment and data boundaries"
-          title="Your keys, your records, your infrastructure."
-          sub="Open source is free and self-hosted. Supported self-host adds integration help under agreement, not a data hand-over."
+          title="Your infrastructure, your keys, your records."
+          sub="Open source is free and self-hosted. The verification pilot adds integration help under agreement, not a data hand-over."
         />
         <DataTable
           head={['Mode', 'Where it runs', 'What Originary handles']}
           rows={[
             ['Open source', 'Your infrastructure', 'Nothing. Apache-2.0 code, your keys, your records.'],
-            ['Supported self-host', 'Your infrastructure', 'Integration guidance, upgrades, and support under agreement.'],
+            ['Verification pilot', 'Your infrastructure', 'Integration guidance, design, and support for the agreed engagement.'],
           ]}
         />
         <div style={{ marginTop: 28 }}>
@@ -224,25 +250,27 @@ export default function ProductPage() {
       </PageSection>
 
       {/* Pilot + PEAC relationship */}
-      <PageSection paddingTop={56} paddingBottom={80} background={PALETTE.paper}>
+      <PageSection paddingTop={56} paddingBottom={80}>
         <SectionHeading
-          index="04"
+          index="05"
           eyebrow="Start"
-          title="A fixed-scope pilot, then scale."
-          sub="The Originary Verification Pilot instruments one production workflow end to end in three to four weeks. Scope on the pricing page; records and solutions below."
+          title="One consequential workflow, implemented end to end."
+          sub="The Originary Verification Pilot is a fixed-scope implementation engagement for one workflow, one issuer model, one verification path, and one external evidence recipient."
         />
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+        <MarkerList marker="check" items={PILOT_DELIVERABLES} />
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 24 }}>
           <Button href="/pricing" primary>
-            Pilot scope and pricing
+            Plans and pilot
           </Button>
           <Button href="/records">All six record types</Button>
           <Button href="/peac">PEAC Protocol</Button>
         </div>
         <p style={{ fontSize: 13.5, lineHeight: 1.65, color: PALETTE.faint, maxWidth: '62ch', marginTop: 22 }}>
-          Poem, Inc. is the Delaware corporation. Originary&trade; is its software and developer-tools brand. Originary Verify is a
-          commercial software offering; PEAC Protocol is Apache-2.0 open-source software published and maintained by Originary that
-          defines the record format and verification model. It can be implemented and self-hosted independently, and verification
-          does not depend on an Originary-hosted service.
+          Poem, Inc. is the Delaware corporation. Originary&trade; is its software and developer-tools brand. Originary
+          Verify names the issue, verify, assess, and hand-off workflow that Originary implements through the
+          Verification Pilot, built on PEAC Protocol: Apache-2.0 open-source software published and maintained by
+          Originary that defines the record format and verification model. PEAC can be implemented and self-hosted
+          independently, and verification does not depend on an Originary-hosted service.
         </p>
       </PageSection>
 

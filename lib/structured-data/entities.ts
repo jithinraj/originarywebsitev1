@@ -5,7 +5,7 @@
  */
 export const ORIGINARY_ORG_ID = 'https://www.originary.xyz/#organization'
 export const ORIGINARY_SITE_ID = 'https://www.originary.xyz/#website'
-export const ORIGINARY_VERIFY_ID = 'https://www.originary.xyz/product#originary-verify'
+export const ORIGINARY_PILOT_ID = 'https://www.originary.xyz/product#verification-pilot'
 export const PEAC_PROTOCOL_ID = 'https://www.originary.xyz/peac#protocol'
 export const JITHIN_ID = 'https://www.originary.xyz/about#jithin-raj'
 
@@ -40,15 +40,14 @@ export const originaryWebsite = {
   publisher: { '@id': ORIGINARY_ORG_ID },
 } as const
 
-export const originaryVerify = {
-  '@type': 'SoftwareApplication',
-  '@id': ORIGINARY_VERIFY_ID,
-  name: 'Originary Verify',
+export const originaryVerificationPilot = {
+  '@type': 'Service',
+  '@id': ORIGINARY_PILOT_ID,
+  name: 'Originary Verification Pilot',
+  serviceType: 'Evidence and verification implementation pilot',
   url: 'https://www.originary.xyz/product',
-  applicationCategory: 'DeveloperApplication',
-  operatingSystem: 'Cross-platform',
   description:
-    'Software and support for issuing, verifying, and packaging signed interaction records in production workflows.',
+    'A fixed-scope implementation engagement for one workflow, one issuer model, one verification path, and one external evidence recipient.',
   provider: { '@id': ORIGINARY_ORG_ID },
 } as const
 

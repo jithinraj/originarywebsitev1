@@ -12,29 +12,36 @@ const MODULES: Array<{
   cta: string
 }> = [
   {
-    mark: 'ledger',
-    title: 'Record',
-    body: 'Capture selected facts at the workflow boundary and issue a compact, signed record. Private logs stay private.',
+    mark: 'target',
+    title: 'Collect',
+    body: 'Select the records and native artifacts relevant to the reviewed or disputed action. Private logs remain in the systems that produced them.',
     href: '/product',
     cta: 'How records are issued',
   },
   {
     mark: 'sealCheck',
     title: 'Verify',
-    body: 'Check the signature, issuer, policy context, and result independently. Offline by design; no account, no callback.',
+    body: 'Check signatures, record structure, bound digests, issuer information, and the verification key or expected-issuer policy supplied for the case.',
     href: '/verify',
     cta: 'Verify a sample',
   },
   {
+    mark: 'diamond',
+    title: 'Assess',
+    body: 'Show what the evidence establishes, what is missing, where sources conflict, and which properties were not evaluated.',
+    href: '/evidence-case',
+    cta: 'See an evidence case',
+  },
+  {
     mark: 'link',
-    title: 'Bundle',
-    body: 'Package related records and supporting evidence for disputes, audits, procurement, and partner review.',
-    href: '/product',
-    cta: 'Evidence bundles',
+    title: 'Hand off',
+    body: 'Export the records, native artifacts, verification report, and timeline so another party can inspect the same bounded case.',
+    href: '/evidence-case',
+    cta: 'Evidence case exports',
   },
 ]
 
-/** ProductSystem: the three-module product grammar on the homepage. */
+/** ProductSystem: the four-stage product workflow on the homepage. */
 export function ProductSystem() {
   return (
     <section
@@ -46,19 +53,21 @@ export function ProductSystem() {
       }}
     >
       <SectionTitle
-        title="One product system: Record, Verify, Bundle."
-        body="Originary Verify covers the full evidence path: issue a signed record where the action happens, verify it anywhere, and assemble records into evidence when someone asks what happened."
+        title="One evidence case, assembled from the systems that already observed the action."
+        body="Originary connects selected signed records and native artifacts, verifies them under an explicit key policy, and hands the bounded result to another party."
       />
       <div className="home-prodsys-grid">
         {MODULES.map((m, i) => (
           <Link key={m.title} href={m.href} className="home-prodsys-card">
-            <span className="home-prodsys-meta">
-              <Mono size={11} color="#5a5346" style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-                {String(i + 1).padStart(2, '0')}
-              </Mono>
-              <span className="home-prodsys-mark" aria-hidden>
-                <MarkGlyph name={m.mark} size={18} />
+            <span className="home-prodsys-rail" aria-hidden data-last={i === MODULES.length - 1 ? '' : undefined}>
+              <span className="home-prodsys-node">
+                <MarkGlyph name={m.mark} size={20} />
               </span>
+            </span>
+            <span className="home-prodsys-step">
+              <Mono size={11} color="#5a5346" style={{ letterSpacing: '0.12em' }}>
+                {`STEP ${String(i + 1).padStart(2, '0')}`}
+              </Mono>
             </span>
             <span
               style={{
@@ -67,7 +76,7 @@ export function ProductSystem() {
                 letterSpacing: '-0.014em',
                 color: PALETTE.ink,
                 display: 'block',
-                margin: '10px 0 8px',
+                margin: '6px 0 8px',
               }}
             >
               {m.title}

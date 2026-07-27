@@ -326,7 +326,7 @@ issued_at        -> when the record was generated`}
           </ul>
           <p>
             This lets banks, insurers, publishers, and regulators reconstruct what happened, show
-            chain-of-custody evidence for review, and re-run analyses when policies change.
+            chain-of-custody evidence for review, and re-run analyzes when policies change.
             Originary&apos;s goal: your live AI traffic and artifact repository are two views of
             the same records layer.
           </p>

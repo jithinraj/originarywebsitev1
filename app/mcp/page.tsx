@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
@@ -16,9 +17,9 @@ import {
 } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 
-const TITLE = 'MCP audit trail and signed tool-call records | Originary'
+const TITLE = 'Evidence for disputed MCP tool calls | Originary'
 const DESCRIPTION =
-  'Record tool name, input and output digests, result, issuer, and time so another party can verify the server-reported run.'
+  'Issue and independently verify signed records for MCP tool calls, gateway decisions, results, and paid-tool disputes without sharing server logs.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -58,13 +59,14 @@ const jsonLd = {
 }
 
 export default function McpPage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
-        eyebrow="MCP signed records"
-        title="When an MCP tool runs, what proof leaves the server?"
-        sub="MCP connects agents to tools. The server sees everything; the transcript stays inside it. Originary uses PEAC to issue signed records for tool calls, gateway decisions, and result digests, so a client, auditor, or partner can verify the run without your logs."
+        eyebrow="MCP evidence"
+        title="When an MCP tool call is disputed, can the other party verify what happened?"
+        sub="Originary lets an MCP server or gateway issue bounded signed records for the tool call it observed, then package those records with relevant result and payment artifacts for independent review."
         display
         aside={
           <RecordCard
@@ -83,9 +85,9 @@ export default function McpPage() {
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <Button href="#specimen" primary>
-            See a tool-run record
+            See a disputed tool call
           </Button>
-          <Button href="/records">All six workflows</Button>
+          <Button href="/how-it-works">Add records to an MCP server</Button>
         </div>
       </PageHero>
 
@@ -95,7 +97,7 @@ export default function McpPage() {
           index="01"
           eyebrow="The problem"
           title="A transcript is not portable evidence."
-          sub="An MCP server log can help you debug a tool run. It cannot be handed to another party as something they can independently check. A signed record answers the questions that cross the boundary:"
+          sub="An MCP transcript helps the operator debug. It is not automatically evidence a customer or partner can verify outside that operator's system. A signed record answers the questions that cross the boundary:"
         />
         <MarkerList
           marker="check"
@@ -160,10 +162,10 @@ export default function McpPage() {
               <StepLabel>Verify on any machine, later</StepLabel>
               <Terminal
                 lines={[
-                  { kind: 'out', text: '$ npx -y @peac/cli@0.16.3 verify ./mcp-tool-run.jws --public-key ./jwks.json' },
+                  { kind: 'out', text: `$ npx -y @peac/cli@${v} verify ./mcp-tool-run.jws --public-key ./jwks.json` },
                   { kind: 'ok', text: 'Signature valid (offline).' },
                   { kind: 'out', text: '$ # now edit one byte of the record and retry' },
-                  { kind: 'out', text: '$ npx -y @peac/cli@0.16.3 verify ./mcp-tool-run.tampered.jws --public-key ./jwks.json' },
+                  { kind: 'out', text: `$ npx -y @peac/cli@${v} verify ./mcp-tool-run.tampered.jws --public-key ./jwks.json` },
                   { kind: 'err', text: 'Verification failed: Ed25519 signature verification failed' },
                   { kind: 'err', text: '   Code: E_INVALID_SIGNATURE' },
                 ]}
@@ -188,13 +190,27 @@ export default function McpPage() {
         </div>
       </PageSection>
 
-      <PullLine accent="The proof travels.">
+      <PullLine accent="The evidence travels.">
         The transcript stays.
       </PullLine>
 
-      {/* Deny as evidence */}
+      {/* Evidence-case composition */}
       <PageSection paddingTop={56} paddingBottom={56}>
-        <SectionHeading index="03" eyebrow="Deny as evidence" title="A refused tool call is still an event." />
+        <SectionHeading index="03" eyebrow="Evidence case" title="One tool call, several sources, one bounded case." />
+        <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.muted, margin: 0, maxWidth: '62ch' }}>
+          A useful MCP evidence case may connect the tool definition, authorization or approval
+          reference, gateway decision, tool invocation, result commitment, payment-provider
+          artifact, and any available delivery or recipient acknowledgment.
+        </p>
+        <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.faint, marginTop: 16, maxWidth: '62ch' }}>
+          The signed record reports what its issuer observed. It does not establish that the
+          server recorded every retry, that the result was correct, or that delivery occurred.
+        </p>
+      </PageSection>
+
+      {/* Deny as evidence */}
+      <PageSection paddingTop={0} paddingBottom={56}>
+        <SectionHeading index="04" eyebrow="Deny as evidence" title="A refused tool call is still an event." />
         <SpecimenGrid>
           <div>
             <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.muted, margin: 0, maxWidth: '54ch' }}>
@@ -224,7 +240,7 @@ export default function McpPage() {
 
       {/* Boundaries */}
       <PageSection paddingTop={0} paddingBottom={80} background={PALETTE.paper}>
-        <SectionHeading index="04" eyebrow="Boundaries" title="What Originary does not do here." mark="diamond" />
+        <SectionHeading index="05" eyebrow="Boundaries" title="What Originary does not do here." mark="diamond" />
         <MarkerList
           marker="cross"
           items={[

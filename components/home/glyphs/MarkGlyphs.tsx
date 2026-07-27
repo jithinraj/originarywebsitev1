@@ -14,8 +14,71 @@ export type MarkName =
   | 'link'
   | 'sealCheck'
   | 'pipeline'
+  | 'lockCoin'
+  | 'signal'
+  | 'braces'
+  | 'agentFrame'
+  | 'scales'
+  | 'identity'
+  | 'token'
+  | 'chainSteps'
 
 const PATHS: Record<MarkName, React.ReactNode> = {
+  lockCoin: (
+    <>
+      <circle cx="16" cy="18" r="8" />
+      <path d="M12 12v-1.5a4 4 0 0 1 8 0V12" strokeLinecap="round" />
+      <circle cx="16" cy="18" r="1.8" fill="currentColor" stroke="none" />
+    </>
+  ),
+  signal: (
+    <>
+      <circle cx="16" cy="22" r="1.8" fill="currentColor" stroke="none" />
+      <path d="M11 18a7 7 0 0 1 10 0" strokeLinecap="round" />
+      <path d="M7.5 14a12 12 0 0 1 17 0" strokeLinecap="round" />
+    </>
+  ),
+  braces: (
+    <>
+      <path d="M13 7c-3 0-3 3.5-3 4.5S9 16 7 16s3 0 3 4.5S10 25 13 25" strokeLinecap="round" />
+      <path d="M19 7c3 0 3 3.5 3 4.5s1 4.5 3 4.5-3 0-3 4.5S22 25 19 25" strokeLinecap="round" />
+    </>
+  ),
+  agentFrame: (
+    <>
+      <rect x="6" y="6" width="20" height="20" />
+      <circle cx="16" cy="14" r="3" />
+      <path d="M10.5 23c1.2-2.6 3.2-4 5.5-4s4.3 1.4 5.5 4" strokeLinecap="round" />
+    </>
+  ),
+  scales: (
+    <>
+      <path d="M16 7v18M9 25h14" strokeLinecap="round" />
+      <path d="M7 12h18" strokeLinecap="round" />
+      <path d="M7 12 4 18h6ZM25 12l-3 6h6Z" />
+    </>
+  ),
+  identity: (
+    <>
+      <rect x="5" y="8" width="22" height="16" rx="1.5" />
+      <circle cx="12" cy="15" r="2.6" />
+      <path d="M8.5 20.5c.9-1.7 2.1-2.5 3.5-2.5s2.6.8 3.5 2.5M19 13.5h4.5M19 18h4.5" strokeLinecap="round" />
+    </>
+  ),
+  token: (
+    <>
+      <path d="M16 5.5 25.5 11v10L16 26.5 6.5 21V11Z" />
+      <path d="m12 16 3 3 5.5-6" strokeLinecap="round" strokeLinejoin="round" />
+    </>
+  ),
+  chainSteps: (
+    <>
+      <rect x="4.5" y="12.5" width="7" height="7" />
+      <rect x="20.5" y="12.5" width="7" height="7" />
+      <path d="M11.5 16h9" strokeLinecap="round" />
+      <circle cx="16" cy="16" r="1.6" fill="currentColor" stroke="none" />
+    </>
+  ),
   target: (
     <>
       <circle cx="16" cy="16" r="10" />

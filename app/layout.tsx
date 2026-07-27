@@ -49,10 +49,10 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Originary | Interaction records for AI agents, MCP, & APIs',
+    default: 'Originary | Verifiable Records for Agents, APIs & Gateways',
     template: '%s | Originary',
   },
-  description: 'Originary turns API calls, MCP tool use, runtime decisions, and payment events into signed records another party can verify.',
+  description: 'Create signed records for agent actions, API calls, MCP tool runs, gateway decisions, payments, and provisioning. Verify them without sharing internal logs.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://www.originary.xyz'),
   openGraph: {
-    title: 'Originary | Interaction records for AI agents, MCP, & APIs',
-    description: 'Originary turns API calls, MCP tool use, runtime decisions, and payment events into signed records another party can verify.',
+    title: 'Originary | Verifiable Records for Agents, APIs & Gateways',
+    description: 'Create signed records for agent actions, API calls, MCP tool runs, gateway decisions, payments, and provisioning. Verify them without sharing internal logs.',
     url: 'https://www.originary.xyz',
     siteName: 'Originary',
     images: [{
@@ -78,8 +78,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Interaction records for AI agents, MCP, & APIs',
-    description: 'Originary turns API calls, MCP tool use, runtime decisions, and payment events into signed records another party can verify.',
+    title: 'Originary | Verifiable Records for Agents, APIs & Gateways',
+    description: 'Create signed records for agent actions, API calls, MCP tool runs, gateway decisions, payments, and provisioning. Verify them without sharing internal logs.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { PageShell, PageHero, PageSection, SectionHeading, Card, PullLine } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Card, PullLine, Button } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import { FACTS } from '@/lib/facts'
 import {
@@ -16,9 +16,9 @@ import {
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { VerifyConsole } from '@/components/specimens/VerifyConsole'
 
-const TITLE = 'Verify a signed AI agent record offline | Originary'
+const TITLE = 'Verify a PEAC signed record locally | Originary'
 const DESCRIPTION =
-  'Load a current PEAC record, verify it with supplied key material, change one byte, and see deterministic failure.'
+  'Verify an Ed25519-signed PEAC interaction record with a public key you supply. No upload, account, callback, or Originary dependency.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -66,30 +66,39 @@ const SAMPLES: Array<{ name: string; href: string }> = [
 ]
 
 export default function VerifyPage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
-        eyebrow="Verify"
-        title="Verify a signed record offline"
-        sub="Use the PEAC CLI with a record and a public key you supply. Verification runs locally; nothing is uploaded to Originary."
+        eyebrow="Local verification"
+        title="Verify a signed record locally."
+        sub="Supply a PEAC record and the public key or JWKS you intend to trust. The verifier checks the signature and record profile without uploading the record to Originary."
         display
         aside={
           <Terminal
             lines={[
-              { kind: 'out', text: '$ pnpm dlx @peac/cli@0.16.3 verify ./record.jws --public-key ./jwks.json' },
+              { kind: 'out', text: `$ pnpm dlx @peac/cli@${v} verify ./record.jws --public-key ./jwks.json` },
               { kind: 'ok', text: 'Signature valid (offline).' },
             ]}
           />
         }
         strip={['Supplied key', 'Offline by design', 'Nothing uploaded', 'PEAC ' + FACTS.currentVersion]}
       >
-        <AnchorLine style={{ marginTop: 8 }}>Logs stay local. Signed records travel.</AnchorLine>
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <Button href="#console" primary>
+            Generate and verify a sample
+          </Button>
+          <Button href="#proves">Read the verification model</Button>
+        </div>
+        <AnchorLine style={{ marginTop: 20 }}>Logs stay local. Signed records travel.</AnchorLine>
       </PageHero>
 
       {/* Console */}
       <PageSection paddingTop={8} paddingBottom={56}>
-        <VerifyConsole />
+        <div id="console" style={{ scrollMarginTop: 96 }}>
+          <VerifyConsole />
+        </div>
       </PageSection>
 
       {/* Samples */}
@@ -123,8 +132,8 @@ export default function VerifyPage() {
           ))}
         </div>
         <StepLabel>Prefer the command line?</StepLabel>
-        <CodeBlock>{`pnpm dlx @peac/cli@0.16.3 samples generate -o ./s
-pnpm dlx @peac/cli@0.16.3 verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
+        <CodeBlock>{`pnpm dlx @peac/cli@${v} samples generate -o ./s
+pnpm dlx @peac/cli@${v} verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
       </PageSection>
 
       <PullLine accent="Nothing stored.">
@@ -134,7 +143,7 @@ pnpm dlx @peac/cli@0.16.3 verify ./s/valid/basic-record.jws --public-key ./s/bun
       {/* What this proves */}
       <PageSection paddingTop={56} paddingBottom={56}>
         <div id="proves" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading index="02" eyebrow="What verification checks" title="What a valid CLI result establishes." mark="sealCheck" />
+          <SectionHeading index="02" eyebrow="What verification checks" title="What the verifier checked." mark="sealCheck" />
           <FlowPanel
             label="Sequence diagram: you supply a public key, the CLI checks the Ed25519 signature offline, and the result is a precise pass or a deterministic failure."
             actors={['you', 'verifier']}
@@ -173,11 +182,11 @@ pnpm dlx @peac/cli@0.16.3 verify ./s/valid/basic-record.jws --public-key ./s/bun
         </div>
       </PageSection>
 
-      {/* Network behaviour */}
+      {/* Network behavior */}
       <PageSection paddingTop={56} paddingBottom={80} background={PALETTE.paper}>
         <SectionHeading
           index="03"
-          eyebrow="Network behaviour, precisely"
+          eyebrow="Network behavior, precisely"
           title="Supplied-key verification is offline."
         />
         <DataTable

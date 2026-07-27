@@ -87,9 +87,10 @@ export const FACTS = {
   // Category (governs all site copy)
   // ---------------------------------------------------------------------------
 
-  primaryCategory: 'Signed, portable interaction records',
-  primaryTagline: 'Verify what agents reported.',
-  plainSentence: 'Portable signed records for agent, API, MCP, and cross-runtime interactions.',
+  primaryCategory: 'Portable signed interaction records',
+  primaryTagline: 'Agent actions, on the record.',
+  plainSentence:
+    'Portable signed records for agents, APIs, MCP tools, gateways, payments, and provisioning.',
 
   // ---------------------------------------------------------------------------
   // External links

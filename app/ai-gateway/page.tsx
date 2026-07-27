@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
@@ -17,9 +18,9 @@ import {
 } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 
-const TITLE = 'AI gateway audit trail and signed decision records | Originary'
+const TITLE = 'Export verifiable AI gateway decisions | Originary'
 const DESCRIPTION =
-  'Bind the gateway-reported decision, policy context, result, and delivered-content digest to an issuer and time.'
+  'Turn AI gateway allow, deny, review, routing, and redaction decisions into signed records another party can verify without gateway-log access.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -59,13 +60,14 @@ const jsonLd = {
 }
 
 export default function AiGatewayPage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
-        eyebrow="ai gateway"
-        title="Your gateway decides. A signed record lets another party verify what it reported."
-        sub="An AI gateway, LLM gateway, model router, or egress proxy sits at the boundary where agent and model traffic crosses company lines. Originary uses PEAC to issue a signed record for each decision the gateway already makes, so a client, auditor, or partner can verify it later, without your logs or dashboards."
+        eyebrow="Gateway evidence"
+        title="Export a gateway decision without exporting your gateway logs."
+        sub="A gateway can issue a signed record for the terminal decision it directly observed. A customer, auditor, or partner can later verify that bounded statement under an explicit issuer policy."
         display
         aside={
           <RecordCard
@@ -83,10 +85,10 @@ export default function AiGatewayPage() {
         strip={['Gateway decisions', 'Deny as evidence', 'Redaction digests', 'Spend attribution']}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <Button href="/verify" primary>
-            Verify a sample record
+          <Button href="#specimen" primary>
+            See a gateway decision
           </Button>
-          <Button href="/records">All record types</Button>
+          <Button href="/contact">Start a gateway pilot</Button>
         </div>
       </PageHero>
 
@@ -148,7 +150,7 @@ export default function AiGatewayPage() {
               <StepLabel>Verify on any machine, later</StepLabel>
               <Terminal
                 lines={[
-                  { kind: 'out', text: '$ npx -y @peac/cli@0.16.3 verify ./gateway-decision.jws --public-key ./jwks.json' },
+                  { kind: 'out', text: `$ npx -y @peac/cli@${v} verify ./gateway-decision.jws --public-key ./jwks.json` },
                   { kind: 'ok', text: 'Signature valid (offline).' },
                 ]}
               />
@@ -182,8 +184,9 @@ export default function AiGatewayPage() {
               timestamp travel together with the signature.
             </p>
             <p style={{ fontSize: 15, lineHeight: 1.6, color: PALETTE.muted, marginTop: 18, maxWidth: '54ch' }}>
-              When the gateway redacts rather than blocks, the record binds distinct produced and delivered digests,
-              so a verifier can confirm the delivered content differs from what was produced, without revealing either.
+              When the gateway redacts rather than blocks, the record binds the issuer-reported produced and
+              delivered representations. A separate delivery observation is required to establish what the
+              recipient received.
             </p>
           </div>
           <RecordCard
@@ -292,7 +295,7 @@ export default function AiGatewayPage() {
         >
           Verify it
         </div>
-        <CodeBlock tone="ink">npx -y @peac/cli@0.16.3 verify ./gateway-decision.jws --public-key ./jwks.json</CodeBlock>
+        <CodeBlock tone="ink">npx -y @peac/cli@{v} verify ./gateway-decision.jws --public-key ./jwks.json</CodeBlock>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <InkButton href="/contact" primary>
             Start a pilot

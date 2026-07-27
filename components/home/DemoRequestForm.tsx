@@ -148,7 +148,7 @@ export function DemoRequestForm({
           <option>MCP</option>
           <option>Commerce</option>
           <option>Runtime</option>
-          <option>Not sure. Help us find the proof gap.</option>
+          <option>Not sure yet. Help us scope it.</option>
           <option>Other</option>
         </select>
       </Field>

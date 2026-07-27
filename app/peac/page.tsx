@@ -19,9 +19,9 @@ import { Mono } from '@/components/home/atoms/Mono'
 import { VerificationBoundary } from '@/components/specimens/parts'
 
 export const metadata: Metadata = {
-  title: { absolute: 'PEAC Protocol | Open-Source Protocol for Verifiable Interaction Records' },
+  title: { absolute: 'PEAC Protocol: portable signed interaction records' },
   description:
-    'PEAC is an open-source protocol for portable signed interaction records. Issue records another party can verify without trusting the original dashboard.',
+    'An Apache-2.0 protocol for issuing and verifying portable signed records from APIs, MCP tools, agents, gateways, payments, and provisioning systems.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   robots: {
     index: true,
@@ -61,6 +61,7 @@ const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
 const mono = 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace'
 
 export default function PeacPage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareSourceCode',
@@ -103,37 +104,22 @@ export default function PeacPage() {
                 <span className="home-about-eyebrow">open source</span>
               </InViewClass>
               <h1 className="home-about-h1" style={{ marginTop: 18 }}>
-                PEAC Protocol.
+                An open protocol for portable signed interaction records.
               </h1>
-              <p
-                style={{
-                  fontFamily: mono,
-                  fontSize: 12,
-                  letterSpacing: '0.16em',
-                  textTransform: 'uppercase',
-                  color: PALETTE.muted,
-                  margin: '12px 0 0 0',
-                }}
-              >
-                by Originary
-              </p>
-              <p className="home-about-lede" style={{ marginTop: 24 }}>
-                The open-source protocol for portable signed interaction records.
-              </p>
-              <p className="home-about-body" style={{ marginTop: 14, maxWidth: 560 }}>
-                Systems use PEAC to issue records another party can verify
-                without trusting the original dashboard. Apache-2.0,
-                self-hostable, and offline-verifiable. No Originary account
-                required to issue, verify, or self-host.
+              <p className="home-about-body" style={{ marginTop: 24, maxWidth: 560 }}>
+                PEAC defines a bounded record format, verification model, conformance
+                requirements, and carrier mappings. It can be implemented and used
+                independently of Originary.
               </p>
 
               <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                <Button href="/#demo" primary>
-                  Start a pilot
+                <Button href="https://github.com/peacprotocol/peac/tree/main/docs/specs" primary external>
+                  Read the specification
                 </Button>
                 <Button href="https://github.com/peacprotocol/peac" external>
-                  View on GitHub
+                  View GitHub
                 </Button>
+                <Button href="/verify">Verify a sample</Button>
               </div>
               <div style={{ marginTop: 28, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                 <Pill>Apache-2.0</Pill>
@@ -476,7 +462,7 @@ export default function PeacPage() {
           />
           <Card padding={36} style={{ maxWidth: 760, margin: '0 auto' }}>
             <pre className="home-code" style={{ margin: 0 }}>
-{`npx -y @peac/cli@0.16.3 verify ./record.jws --public-key ./jwks.json`}
+{`npx -y @peac/cli@${v} verify ./record.jws --public-key ./jwks.json`}
             </pre>
             <p
               style={{

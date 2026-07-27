@@ -1,0 +1,55 @@
+{
+  "format": "originary.evidence-case-summary.v0",
+  "illustrative": true,
+  "note": "Illustrative evidence case summary. It is not a signed evidence bundle and cannot itself be cryptographically verified. No customer or adoption claim. Values are constructed to demonstrate the shape of a bounded evidence case, including its gaps.",
+  "scenario": "A customer disputes a paid MCP tool call to a market-data service.",
+  "timeline": [
+    {
+      "time": "14:08:09",
+      "event": "authorization reference supplied"
+    },
+    {
+      "time": "14:08:10",
+      "event": "gateway reports allow"
+    },
+    {
+      "time": "14:08:11",
+      "event": "MCP server reports tools.call market_search"
+    },
+    {
+      "time": "14:08:12",
+      "event": "payment provider reports authorized"
+    },
+    {
+      "time": "14:08:13",
+      "event": "tool server reports result digest"
+    },
+    {
+      "time": null,
+      "event": "delivery observation - not supplied"
+    },
+    {
+      "time": null,
+      "event": "counterparty acknowledgment - not supplied"
+    }
+  ],
+  "findings": {
+    "established": [
+      "the supplied keys validate the gateway and tool-server signatures",
+      "the tool name and argument digest are bound by the tool-server record",
+      "the payment-provider artifact is linked to the case",
+      "the result artifact supplied for review matches its bound digest"
+    ],
+    "missing": [
+      "independent delivery observation",
+      "recipient acknowledgment",
+      "evidence that every relevant retry was included"
+    ],
+    "not_evaluated": [
+      "commercial liability",
+      "legal sufficiency",
+      "correctness of the underlying service result",
+      "whether the issuer omitted another event"
+    ]
+  }
+}

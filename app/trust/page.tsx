@@ -127,7 +127,7 @@ const trustCards: Array<{
     title: 'Verification',
     description: 'Tools and services for signature validation and evidence verification.',
     links: [
-      { href: '/verify', label: 'Online Verification Tool' },
+      { href: '/verify', label: 'Local Verification Instructions' },
       { href: '/records', label: 'Record Gallery' },
     ],
   },

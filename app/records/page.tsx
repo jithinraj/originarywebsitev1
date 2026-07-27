@@ -20,7 +20,7 @@ import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 import { TamperDemo } from '@/components/specimens/TamperDemo'
 
-const TITLE = 'Signed audit records for AI agents, APIs, and MCP | Originary'
+const TITLE = 'Signed record gallery for agents, APIs, and MCP | Originary'
 const DESCRIPTION =
   'Explore issuer-reported record examples for APIs, MCP tools, agent actions, gateways, payments, and provisioning.'
 
@@ -61,6 +61,19 @@ const jsonLd = {
   ],
 }
 
+function EstablishBoundary({ establishes, notEstablish }: { establishes: string; notEstablish: string }) {
+  return (
+    <div style={{ marginTop: 18, display: 'grid', gap: 10 }}>
+      <p style={{ fontSize: 12.5, lineHeight: 1.6, color: PALETTE.success, margin: 0 }}>
+        <b style={{ fontWeight: 600 }}>Verification establishes:</b> {establishes}
+      </p>
+      <p style={{ fontSize: 12.5, lineHeight: 1.6, color: PALETTE.faint, margin: 0 }}>
+        <b style={{ fontWeight: 600 }}>Verification does not establish:</b> {notEstablish}
+      </p>
+    </div>
+  )
+}
+
 function Specimen({
   children,
   first = false,
@@ -90,10 +103,10 @@ function Specimen({
 }
 
 const RECORDS_JUMP: Array<{ href: string; label: string; mark: MarkName }> = [
-  { href: '#api', label: 'API call', mark: 'ledger' },
   { href: '#mcp', label: 'MCP tool run', mark: 'link' },
-  { href: '#agent', label: 'Agent action', mark: 'target' },
+  { href: '#api', label: 'API call', mark: 'ledger' },
   { href: '#gateway', label: 'Gateway decision', mark: 'valve' },
+  { href: '#agent', label: 'Agent action', mark: 'target' },
   { href: '#payment', label: 'Payment event', mark: 'coin' },
   { href: '#provisioning', label: 'Provisioning event', mark: 'pipeline' },
 ]
@@ -156,22 +169,23 @@ function JumpIndex({ items }: { items: Array<{ href: string; label: string; mark
 }
 
 export default function RecordsPage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Record gallery"
-        title="Six workflows. One way to verify them."
-        sub="Every record below carries the same skeleton: facts, policy, result, time, issuer, signature. Read one and you can read them all, and each verifies offline with a single command."
+        title="See exactly what each issuing system reported."
+        sub="Every PEAC record is a bounded signed statement from one issuer. Browse the record families, verify a sample, and inspect the limits of each claim."
         display
         aside={<JumpIndex items={RECORDS_JUMP} />}
         strip={['Record gallery', '06 workflows', 'One primitive', 'Verifies offline']}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <Button href="/verify" primary>
-            Verify a sample record
+            Verify a record
           </Button>
-          <Button href="/how-it-works">How it works</Button>
+          <Button href="/evidence-case">See an evidence case</Button>
         </div>
         <Legend items={['facts', 'policy', 'result', 'time', 'issuer', 'signature']} />
         <AnchorLine style={{ marginTop: 26 }}>Logs stay local. Signed records travel.</AnchorLine>
@@ -195,13 +209,57 @@ export default function RecordsPage() {
         Read one.
       </PullLine>
 
-      {/* 01 - API call (interactive tamper demo) */}
-      <Specimen first id="api">
+      {/* 01 - MCP tool run */}
+      <Specimen first id="mcp">
+        <SpecimenGrid>
+          <SpecimenIntro
+            eyebrow="01 - MCP tool run"
+            title="When an MCP tool runs, what evidence leaves the server?"
+            answers={
+              <>
+                Answers which tool was called, under what policy, and what result digest came back.{' '}
+                <a href="/mcp" style={{ color: PALETTE.success, textDecoration: 'underline', textUnderlineOffset: 3 }}>
+                  Full MCP page
+                </a>
+                .
+              </>
+            }
+          >
+            <StepLabel>Verify it</StepLabel>
+            <CodeBlock>npx -y @peac/cli@{v} verify ./mcp-tool-run.jws --public-key ./jwks.json</CodeBlock>
+            <StepLabel>Tamper case</StepLabel>
+            <p style={{ fontFamily: 'inherit', fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '4px 0 0' }}>
+              Change the tool name, the result digest, or one character of the signature and verification fails with{' '}
+              <code style={{ fontFamily: 'var(--font-plex-mono)', color: '#77592f' }}>E_INVALID_SIGNATURE</code>.
+            </p>
+            <EstablishBoundary
+              establishes="the supplied key validates the signature; the tool name and result digest are bound as shown."
+              notEstablish="that the tool's output was correct, or that every call to the server was recorded."
+            />
+          </SpecimenIntro>
+          <RecordCard
+            type="mcp-tool-run"
+            badge={{ kind: 'verified', label: 'verified offline' }}
+            rows={[
+              { label: 'Issuer', value: 'https://mcp.vendor.example' },
+              { label: 'Tool', value: 'tools.call search_docs' },
+              { label: 'Policy', value: <>tool-policy:v2 <Dim>sha256:4e21b8...</Dim></> },
+              { label: 'Result', value: <>ok <Dim>sha256:9a3c1d...</Dim></> },
+              { label: 'Time', value: '2026-06-12T14:08:11Z' },
+              { label: 'Signature', value: 'Ed25519 7d40e2c9...' },
+            ]}
+            foot="carried in MCP response metadata - travels separately from the server"
+          />
+        </SpecimenGrid>
+      </Specimen>
+
+      {/* 02 - API call (interactive tamper demo) */}
+      <Specimen id="api" background={PALETTE.paper}>
         <TamperDemo
-          eyebrow="01 - API call"
+          eyebrow="02 - API call"
           title="Show what your API reported, without opening your logs."
           answers="Answers which endpoint was called, which terms applied, and what result the API returned."
-          command="npx -y @peac/cli@0.16.3 verify ./api-call.jws --public-key ./jwks.json"
+          command={`npx -y @peac/cli@${v} verify ./api-call.jws --public-key ./jwks.json`}
           recordType="basic-record"
           rows={[
             { label: 'Issuer', value: 'https://api.vendor.example' },
@@ -220,96 +278,31 @@ export default function RecordsPage() {
   "occurred_at": "2026-06-12T14:08:11Z"
 }`}
         />
+        <EstablishBoundary
+          establishes="the signature validates under the supplied key; the endpoint, policy, and result digests are bound as shown."
+          notEstablish="that the API's response was correct, or that no other calls occurred."
+        />
       </Specimen>
 
-      {/* 02 - MCP tool run */}
-      <Specimen id="mcp" background={PALETTE.paper}>
+      {/* 03 - Gateway decision (deny as evidence) */}
+      <Specimen id="gateway">
         <SpecimenGrid>
           <SpecimenIntro
-            eyebrow="02 - MCP tool run"
-            title="When an MCP tool runs, proof can leave the server."
-            answers={
-              <>
-                Answers which tool was called, under what policy, and what result digest came back.{' '}
-                <a href="/mcp" style={{ color: PALETTE.success, textDecoration: 'underline', textUnderlineOffset: 3 }}>
-                  Full MCP page
-                </a>
-                .
-              </>
-            }
-          >
-            <StepLabel>Verify it</StepLabel>
-            <CodeBlock>npx -y @peac/cli@0.16.3 verify ./mcp-tool-run.jws --public-key ./jwks.json</CodeBlock>
-            <StepLabel>Tamper case</StepLabel>
-            <p style={{ fontFamily: 'inherit', fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '4px 0 0' }}>
-              Change the tool name, the result digest, or one character of the signature and verification fails with{' '}
-              <code style={{ fontFamily: 'var(--font-plex-mono)', color: PALETTE.warn }}>E_INVALID_SIGNATURE</code>.
-            </p>
-          </SpecimenIntro>
-          <RecordCard
-            type="mcp-tool-run"
-            badge={{ kind: 'verified', label: 'verified offline' }}
-            rows={[
-              { label: 'Issuer', value: 'https://mcp.vendor.example' },
-              { label: 'Tool', value: 'tools.call search_docs' },
-              { label: 'Policy', value: <>tool-policy:v2 <Dim>sha256:4e21b8...</Dim></> },
-              { label: 'Result', value: <>ok <Dim>sha256:9a3c1d...</Dim></> },
-              { label: 'Time', value: '2026-06-12T14:08:11Z' },
-              { label: 'Signature', value: 'Ed25519 7d40e2c9...' },
-            ]}
-            foot="carried in MCP response metadata - travels separately from the server"
-          />
-        </SpecimenGrid>
-      </Specimen>
-
-      {/* 03 - Agent action */}
-      <Specimen id="agent">
-        <SpecimenGrid>
-          <SpecimenIntro
-            eyebrow="03 - Agent action"
-            title="What did the agent do, and what was it bound to?"
-            answers="Answers which agent acted, which input digests, and which mandate or policy version the action was bound to."
-          >
-            <StepLabel>Verify it</StepLabel>
-            <CodeBlock>npx -y @peac/cli@0.16.3 verify ./agent-action.jws --public-key ./jwks.json</CodeBlock>
-            <StepLabel>Tamper case</StepLabel>
-            <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '4px 0 0' }}>
-              Swap the mandate digest for a newer version after the fact and the record still shows the digest that was
-              actually bound at signing time.
-            </p>
-          </SpecimenIntro>
-          <RecordCard
-            type="full-record"
-            badge={{ kind: 'verified', label: 'verified offline' }}
-            rows={[
-              { label: 'Issuer', value: 'https://runtime.vendor.example' },
-              { label: 'Agent', value: 'research-agent-v3' },
-              { label: 'Action', value: 'summarize_filing' },
-              { label: 'Input', value: <Dim>sha256:c41b09...</Dim> },
-              { label: 'Policy', value: <>mandate:v2 <Dim>sha256:5fe013...</Dim></> },
-              { label: 'Time', value: '2026-06-12T14:09:02Z' },
-              { label: 'Signature', value: 'Ed25519 91bc44a0...' },
-            ]}
-            foot="sample record - demo signature"
-          />
-        </SpecimenGrid>
-      </Specimen>
-
-      {/* 04 - Gateway decision (deny as evidence) */}
-      <Specimen id="gateway" background={PALETTE.paper}>
-        <SpecimenGrid>
-          <SpecimenIntro
-            eyebrow="04 - Gateway decision"
-            title="A deny is evidence too."
+            eyebrow="03 - Gateway decision"
+            title="A refused request can still be recorded."
             answers="Answers what happened at the boundary before a request was routed, throttled, or refused. A denied call is still a signed, verifiable event: reviewers see what was refused without reading your gateway logs."
           >
             <StepLabel>Verify it</StepLabel>
-            <CodeBlock>npx -y @peac/cli@0.16.3 verify ./gateway-deny.jws --public-key ./jwks.json</CodeBlock>
+            <CodeBlock>npx -y @peac/cli@{v} verify ./gateway-deny.jws --public-key ./jwks.json</CodeBlock>
             <StepLabel>Expected</StepLabel>
             <Terminal
               lines={[
                 { kind: 'ok', text: 'Signature valid (offline).' },
               ]}
+            />
+            <EstablishBoundary
+              establishes="the decision and the policy digest are bound and signed as shown."
+              notEstablish="that the policy itself was appropriate, or that the request was handled as decided beyond the gateway."
             />
           </SpecimenIntro>
           <RecordCard
@@ -328,30 +321,71 @@ export default function RecordsPage() {
         </SpecimenGrid>
       </Specimen>
 
+      {/* 04 - Agent action */}
+      <Specimen id="agent" background={PALETTE.paper}>
+        <SpecimenGrid>
+          <SpecimenIntro
+            eyebrow="04 - Agent action"
+            title="What did the agent do, and what was it bound to?"
+            answers="Answers which agent acted, which input digests, and which mandate or policy version the action was bound to."
+          >
+            <StepLabel>Verify it</StepLabel>
+            <CodeBlock>npx -y @peac/cli@{v} verify ./agent-action.jws --public-key ./jwks.json</CodeBlock>
+            <StepLabel>Tamper case</StepLabel>
+            <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '4px 0 0' }}>
+              Swap the mandate digest for a newer version after the fact and the record still shows the digest that was
+              actually bound at signing time.
+            </p>
+            <EstablishBoundary
+              establishes="the input digest and mandate reference were bound at signing time."
+              notEstablish="that the agent was authorized by a human at the time of the action, or that the output was correct."
+            />
+          </SpecimenIntro>
+          <RecordCard
+            type="full-record"
+            badge={{ kind: 'verified', label: 'verified offline' }}
+            rows={[
+              { label: 'Issuer', value: 'https://runtime.vendor.example' },
+              { label: 'Agent', value: 'research-agent-v3' },
+              { label: 'Action', value: 'summarize_filing' },
+              { label: 'Input', value: <Dim>sha256:c41b09...</Dim> },
+              { label: 'Policy', value: <>mandate:v2 <Dim>sha256:5fe013...</Dim></> },
+              { label: 'Time', value: '2026-06-12T14:09:02Z' },
+              { label: 'Signature', value: 'Ed25519 91bc44a0...' },
+            ]}
+            foot="sample record - demo signature"
+          />
+        </SpecimenGrid>
+      </Specimen>
+
       {/* 05 - Payment event */}
       <Specimen id="payment">
         <SpecimenGrid>
           <SpecimenIntro
             eyebrow="05 - Payment event"
-            title="Payment rails move value. Records preserve context."
+            title="The payment provider reports the state. The record preserves the context."
             answers={
               <>
-                Answers what a payment was tied to. The rail establishes value movement; the record binds the action, the
-                mandate, and the observed state to one signed artifact.{' '}
+                Answers what a payment was tied to. The payment provider reports value movement; the record binds the
+                action, the mandate, and the observed payment state to one signed artifact.{' '}
                 <a href="/agentic-commerce" style={{ color: PALETTE.success, textDecoration: 'underline', textUnderlineOffset: 3 }}>
-                  Agentic commerce page
+                  Paid APIs and agent commerce page
                 </a>
                 .
               </>
             }
           >
             <StepLabel>Verify it</StepLabel>
-            <CodeBlock>npx -y @peac/cli@0.16.3 verify ./payment-event.jws --public-key ./jwks.json</CodeBlock>
+            <CodeBlock>npx -y @peac/cli@{v} verify ./payment-event.jws --public-key ./jwks.json</CodeBlock>
             <StepLabel>Tamper case</StepLabel>
             <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '4px 0 0' }}>
               Point the record at a different payment reference after settlement and the original reference stays bound
               under the signature.
             </p>
+            <EstablishBoundary
+              establishes="the payment reference and mandate digest are bound as shown."
+              notEstablish="that funds settled, or that the payment provider's own state matches this record."
+            />
           </SpecimenIntro>
           <RecordCard
             type="payment-event"
@@ -391,12 +425,16 @@ export default function RecordsPage() {
             }
           >
             <StepLabel>Verify it</StepLabel>
-            <CodeBlock>npx -y @peac/cli@0.16.3 verify ./provisioning-event.jws --public-key ./jwks.json</CodeBlock>
+            <CodeBlock>npx -y @peac/cli@{v} verify ./provisioning-event.jws --public-key ./jwks.json</CodeBlock>
             <StepLabel>Tamper case</StepLabel>
             <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '4px 0 0' }}>
-              Backdate the rotation in a spreadsheet all you want: the signed time in the record is the time the issuer
-              asserted.
+              Changing a later export does not alter the issuance time and event details bound by
+              the signature.
             </p>
+            <EstablishBoundary
+              establishes="the event, resource, and actor were bound and signed at the asserted time."
+              notEstablish="that the actor was authorized to make the change, or that no other changes occurred alongside it."
+            />
           </SpecimenIntro>
           <RecordCard
             type="event-time-record"
@@ -414,7 +452,6 @@ export default function RecordsPage() {
         </SpecimenGrid>
       </Specimen>
 
-      {/* v0.16.2 */}
       <PageSection paddingTop={0} paddingBottom={64}>
         <SectionHeading index="07" eyebrow="Beyond single records" title="Broader evidence coverage, same wire format." />
         <Card padding={28} style={{ maxWidth: 860 }}>
@@ -427,7 +464,7 @@ export default function RecordsPage() {
               color: PALETTE.accent,
             }}
           >
-            PEAC v0.16.3
+            PEAC {FACTS.currentVersion}
           </div>
           <p
             style={{
@@ -475,8 +512,8 @@ export default function RecordsPage() {
       <InkBand>
         <InkHeading>Generate these yourself in one command.</InkHeading>
         <div style={{ maxWidth: 760, margin: '28px auto 0', textAlign: 'left' }}>
-          <CodeBlock tone="ink">{`pnpm dlx @peac/cli@0.16.3 samples generate -o ./s
-pnpm dlx @peac/cli@0.16.3 verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
+          <CodeBlock tone="ink">{`pnpm dlx @peac/cli@${v} samples generate -o ./s
+pnpm dlx @peac/cli@${v} verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
         </div>
         <p style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 12, color: '#7fa98c', marginTop: 18 }}>
           Signature valid (offline) - PEAC {FACTS.currentVersion}

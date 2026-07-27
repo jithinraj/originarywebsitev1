@@ -6,16 +6,16 @@ import { WordmarkStream } from '@/components/home/motion/WordmarkStream'
 import { Mono } from '@/components/home/atoms/Mono'
 
 export const metadata: Metadata = {
-  title: { absolute: 'PEAC open source and Originary implementation support' },
+  title: { absolute: 'PEAC open source and Originary verification pilot' },
   description:
-    'Use PEAC free and self-hosted, or engage Originary for a scoped verification pilot and implementation support.',
+    'Use PEAC Protocol under Apache-2.0 or engage Originary for a fixed-scope, self-hosted evidence and verification pilot.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   alternates: { canonical: '/pricing' },
   robots: { index: true, follow: true },
   openGraph: {
-    title: 'PEAC open source and Originary implementation support',
+    title: 'PEAC open source and Originary verification pilot',
     description:
-      'Use PEAC free and self-hosted, or engage Originary for a scoped verification pilot and implementation support.',
+      'Use PEAC Protocol under Apache-2.0 or engage Originary for a fixed-scope, self-hosted evidence and verification pilot.',
     url: '/pricing',
     type: 'website',
     siteName: 'Originary',
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PEAC open source and Originary implementation support',
+    title: 'PEAC open source and Originary verification pilot',
     description:
-      'Use PEAC free and self-hosted, or engage Originary for a scoped verification pilot and implementation support.',
+      'Use PEAC Protocol under Apache-2.0 or engage Originary for a fixed-scope, self-hosted evidence and verification pilot.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -40,7 +40,7 @@ const ossFeatures = [
   'Verifiable interaction records (JWS)',
   'Interaction Record format (current stable)',
   'Policy discovery (peac.txt)',
-  'MCP server - 5 verification tools',
+  'MCP tools for verification, inspection, decoding, issuance and bundle creation',
   'CLI and SDK packages',
   'Self-managed signing keys',
   'Offline verification - no Originary dependency',
@@ -70,7 +70,7 @@ const enterpriseFeatures = [
 ]
 
 const comparisonRows: Array<[string, string, string]> = [
-  ['Price', '$0 forever', 'Custom, scoped'],
+  ['Price', 'No software license fee', 'Custom, scoped'],
   ['License', 'Apache-2.0', 'Apache-2.0 + support terms'],
   ['Signing keys', 'Self-managed', 'Self-managed, with setup guidance'],
   ['Deployment', 'Self-hosted', 'Self-hosted, with guidance'],
@@ -163,16 +163,12 @@ export default function PricingPage() {
           }}
         >
           <InViewClass className="home-eyebrow-rule" as="div">
-            <span className="home-about-eyebrow">pricing</span>
+            <span className="home-about-eyebrow">plans and pilot</span>
           </InViewClass>
-          <h1 className="home-about-h1">Start with the open protocol.</h1>
-          <p className="home-about-lede" style={{ marginTop: 22 }}>
-            Add support when the workflow matters.
-          </p>
-          <p className="home-about-body" style={{ marginTop: 14, maxWidth: 640 }}>
-            Use PEAC Protocol by Originary freely under Apache-2.0. Engage
-            Originary for a scoped verification pilot and implementation support
-            when another party needs verification your logs cannot provide.
+          <h1 className="home-about-h1">Start with one consequential workflow.</h1>
+          <p className="home-about-body" style={{ marginTop: 22, maxWidth: 640 }}>
+            Use PEAC freely. Engage Originary when a customer, partner, auditor, or incident
+            reviewer needs evidence your existing logs cannot provide.
           </p>
         </section>
 
@@ -590,6 +586,9 @@ export default function PricingPage() {
             <h2 style={{ ...sectionHead, textAlign: 'center', marginBottom: 32 }}>Two ways to deploy</h2>
             <div
               className="home-card"
+              role="region"
+              aria-label="Deployment comparison"
+              tabIndex={0}
               style={{
                 background: PALETTE.paper,
                 border: `1px solid ${PALETTE.hairline}`,

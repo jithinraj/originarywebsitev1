@@ -21,8 +21,8 @@ export function Problem() {
       }}
     >
       <SectionTitle
-        title="Logs stop at your boundary."
-        body="API calls, agent runs, gateway decisions, payments, and provisioning events happen inside your systems. Originary lets you share signed records without exposing internal logs."
+        title="Each side has logs. Neither side has evidence the other can independently verify."
+        body="A customer disputes a paid tool call. The provider has a gateway log. The customer has a charge reference. The tool server has a result. Those records live in different systems, under different operators, and may not establish the same facts."
       />
       <div style={{ marginTop: 48 }}>
         <ProblemAnim />
@@ -44,6 +44,20 @@ export function Problem() {
           Records give counterparties something they can verify.
         </Mono>
       </div>
+      <p
+        style={{
+          marginTop: 32,
+          maxWidth: 620,
+          fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
+          fontSize: 16,
+          lineHeight: 1.6,
+          color: PALETTE.ink,
+          fontWeight: 500,
+        }}
+      >
+        The problem is not the absence of data. It is the absence of a bounded, transferable
+        evidence set.
+      </p>
     </section>
   )
 }

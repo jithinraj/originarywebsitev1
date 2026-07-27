@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, SectionHeading, Pill, Button, PullLine } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
@@ -17,7 +18,7 @@ import {
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 
-const TITLE = 'Provisioning audit records for agent infrastructure | Originary'
+const TITLE = 'Provisioning audit records for agents | Originary'
 const DESCRIPTION =
   'Bind the request, approval reference, provider operation, resource identifier, result, issuer, and time.'
 
@@ -77,6 +78,7 @@ const COVERAGE_GROUPS: Array<{ label: string; mark: MarkName; items: string[] }>
 ]
 
 export default function ProvisioningRecordsPage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -167,7 +169,7 @@ export default function ProvisioningRecordsPage() {
               <StepLabel>Verify on any machine, later</StepLabel>
               <Terminal
                 lines={[
-                  { kind: 'out', text: '$ npx -y @peac/cli@0.16.3 verify ./provisioning-event.jws --public-key ./jwks.json' },
+                  { kind: 'out', text: `$ npx -y @peac/cli@${v} verify ./provisioning-event.jws --public-key ./jwks.json` },
                   { kind: 'ok', text: 'Signature valid (offline).' },
                 ]}
               />
@@ -234,7 +236,7 @@ export default function ProvisioningRecordsPage() {
       <InkBand>
         <InkHeading maxWidth="24ch">Add records to one provisioning workflow this week.</InkHeading>
         <div style={{ maxWidth: 760, margin: '28px auto 0', textAlign: 'left' }}>
-          <CodeBlock tone="ink">npx -y @peac/cli@0.16.3 verify ./provisioning-event.jws --public-key ./jwks.json</CodeBlock>
+          <CodeBlock tone="ink">npx -y @peac/cli@{v} verify ./provisioning-event.jws --public-key ./jwks.json</CodeBlock>
         </div>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <InkButton href="/contact" primary>

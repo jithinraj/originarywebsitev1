@@ -3,7 +3,7 @@
 import { WORDMARK_GEOMETRY } from '../../brand/OriginaryLogoMotion'
 
 /**
- * WordmarkStream: the closing signature — the canonical Originary wordmark set
+ * WordmarkStream: the closing signature: the canonical Originary wordmark set
  * viewport-wide, STATIC and solid (frozen v2 geometry). Previously a 0/1-engraved
  * canvas; now the clean wordmark per the identity kit.
  */

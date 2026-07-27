@@ -67,6 +67,7 @@ const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
 const mono = 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace'
 
 export default function DownloadsPage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <>
       <Script
@@ -158,9 +159,9 @@ export default function DownloadsPage() {
               install with your package manager
             </Mono>
             <pre className="home-code" tabIndex={0} style={{ marginTop: 12, marginBottom: 0 }}>
-{`npm i -g @peac/cli@0.16.3
-npm i @peac/protocol@0.16.2 @peac/crypto@0.16.2 @peac/schema@0.16.2
-npm i @peac/mcp-server@0.16.2`}
+{`npm i -g @peac/cli@${v}
+npm i @peac/protocol@${v} @peac/crypto@${v} @peac/schema@${v}
+npm i @peac/mcp-server@${v}`}
             </pre>
             <div
               style={{
@@ -174,7 +175,7 @@ npm i @peac/mcp-server@0.16.2`}
               Verify a signed record locally:
             </div>
             <pre className="home-code" tabIndex={0} style={{ marginTop: 8, marginBottom: 0 }}>
-{`npx -y @peac/cli@0.16.3 verify ./record.jws --public-key ./jwks.json`}
+{`npx -y @peac/cli@${v} verify ./record.jws --public-key ./jwks.json`}
             </pre>
           </Card>
         </PageSection>

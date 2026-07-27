@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button, PullLine } from '@/components/home/page-kit'
 import { PALETTE } from '@/components/home/palette'
 import {
@@ -17,9 +18,9 @@ import {
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 
-const TITLE = 'AI agent payment audit records | Originary'
+const TITLE = 'Evidence for paid APIs, MCP, and agent commerce | Originary'
 const DESCRIPTION =
-  'Preserve payment artifacts and issuer-reported workflow context inside a portable record without replacing the payment rail.'
+  'Connect authorization, API or tool execution, payment-provider artifacts, service results, and delivery evidence in one independently reviewable case.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -55,7 +56,7 @@ const jsonLd = {
         {
           '@type': 'ListItem',
           position: 2,
-          name: 'Agentic commerce',
+          name: 'Paid APIs and agent commerce',
           item: 'https://www.originary.xyz/agentic-commerce',
         },
       ],
@@ -95,13 +96,14 @@ const FIT_GROUPS: Array<{ label: string; mark: MarkName; items: string[] }> = [
 ]
 
 export default function AgenticCommercePage() {
+  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
-        eyebrow="Agentic commerce records"
-        title="Payment rails move the value. Signed records carry what it was for."
-        sub="AI agents call paid APIs, buy data, trigger usage charges, settle invoices, and delegate work. A payment confirmation shows value moved. It rarely shows what the agent was allowed to do, which policy applied, or what result came back. Originary turns those events into signed records another party can verify without your logs."
+        eyebrow="Paid services"
+        title="A payment provider reports the transaction. It does not establish what the automated service delivered."
+        sub="Originary connects selected authorization, service-action, result, and payment records so another party can inspect what each source reported and identify what evidence is still missing."
         display
         aside={
           <RecordCard
@@ -120,39 +122,47 @@ export default function AgenticCommercePage() {
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <Button href="#example" primary>
-            See a paid-call record
+            See a paid-service dispute
           </Button>
-          <Button href="/records">All record types</Button>
+          <Button href="/contact">Start a pilot</Button>
         </div>
       </PageHero>
 
-      {/* Two truths */}
+      {/* Payment evidence vs service evidence */}
       <PageSection paddingBottom={64}>
-        <SectionHeading index="01" eyebrow="Two different facts" title="The rail proves the payment. The record carries the context." />
+        <SectionHeading index="01" eyebrow="Two different questions" title="Payment evidence and service evidence answer different questions." />
         <SpecimenGrid>
           <Card>
             <div style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: PALETTE.faint }}>
-              The payment rail proves
+              The payment system may report
             </div>
-            <div style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 26, fontWeight: 500, letterSpacing: '-0.02em', color: PALETTE.ink, margin: '10px 0 8px' }}>
-              Value moved.
-            </div>
-            <p style={{ fontSize: 15, lineHeight: 1.6, color: PALETTE.muted, margin: 0 }}>
-              A charge was authorized, captured, or settled between two parties.
-            </p>
+            <ul style={{ margin: '14px 0 0', padding: '0 0 0 18px', fontSize: 15, lineHeight: 1.7, color: PALETTE.muted }}>
+              <li>authorization status;</li>
+              <li>amount and currency;</li>
+              <li>payment reference;</li>
+              <li>capture, settlement, refund, or dispute state;</li>
+              <li>provider timestamp.</li>
+            </ul>
           </Card>
           <Card emphasis style={{ borderColor: PALETTE.accent }}>
             <div style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: PALETTE.accent }}>
-              The signed record proves
+              The service evidence may report
             </div>
-            <div style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 26, fontWeight: 500, letterSpacing: '-0.02em', color: PALETTE.ink, margin: '10px 0 8px' }}>
-              What it was for.
-            </div>
-            <p style={{ fontSize: 15, lineHeight: 1.6, color: PALETTE.muted, margin: 0 }}>
-              The action, the policy or mandate, the result, the issuer, and the time, bound into one verifiable artifact.
-            </p>
+            <ul style={{ margin: '14px 0 0', padding: '0 0 0 18px', fontSize: 15, lineHeight: 1.7, color: PALETTE.muted }}>
+              <li>requested endpoint or tool;</li>
+              <li>applicable terms or mandate reference;</li>
+              <li>input and output commitments;</li>
+              <li>service result;</li>
+              <li>gateway decision;</li>
+              <li>available delivery observation.</li>
+            </ul>
           </Card>
         </SpecimenGrid>
+        <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.faint, marginTop: 20, maxWidth: '62ch' }}>
+          Neither source automatically proves the other source&apos;s claims. The payment provider
+          reports the payment state; the service issuer reports the service context; the evidence
+          case preserves and verifies the supplied artifacts.
+        </p>
       </PageSection>
 
       {/* The real questions */}
@@ -203,7 +213,7 @@ export default function AgenticCommercePage() {
                 artifacts inside portable records and evidence bundles that verify offline.
               </p>
               <StepLabel>Verify it</StepLabel>
-              <CodeBlock>npx -y @peac/cli@0.16.3 verify ./payment-event.jws --public-key ./jwks.json</CodeBlock>
+              <CodeBlock>npx -y @peac/cli@{v} verify ./payment-event.jws --public-key ./jwks.json</CodeBlock>
               <StepLabel>Expected</StepLabel>
               <Terminal
                 lines={[
@@ -232,8 +242,8 @@ export default function AgenticCommercePage() {
         </div>
       </PageSection>
 
-      <PullLine accent="The record carries the context.">
-        The rail proves the payment.
+      <PullLine accent="reports the service context.">
+        The payment provider reports the payment state. The service issuer
       </PullLine>
 
       {/* Where it fits */}
@@ -278,7 +288,6 @@ export default function AgenticCommercePage() {
         </p>
       </PageSection>
 
-      {/* v0.16.2 */}
       <PageSection paddingTop={0} paddingBottom={64} background={PALETTE.paper}>
         <SectionHeading index="06" eyebrow="Beyond single records" title="Broader evidence coverage, same wire format." />
         <Card padding={28} style={{ maxWidth: 860 }}>
@@ -291,7 +300,7 @@ export default function AgenticCommercePage() {
               color: PALETTE.accent,
             }}
           >
-            PEAC v0.16.3
+            PEAC {FACTS.currentVersion}
           </div>
           <p
             style={{

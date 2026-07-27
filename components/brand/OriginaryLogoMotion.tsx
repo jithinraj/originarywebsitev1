@@ -1,27 +1,19 @@
 "use client";
 
 /**
- * OriginaryLogoMotion — the canonical Originary mark.
- * ────────────────────────────────────────────────────────────────────────────
- * Two forms from one geometry. The wordmark is the logo; the origin point (the
- * o with a dot at its exact optical centre) is the symbol.
+ * Originary wordmark and origin-point symbol.
  *
- * Motion: ⊙ → 01 → 10 → originary.
- *   ⊙   origin     the point rests inside the o
- *   01  formation  the point ejects and stretches into the stem
- *   10  exchange   ring and stem swap places (the counterparty's view)
- *   originary      the 0 flows back into the first o, the 1 into the i
+ * Phases: origin (⊙) -> formation (01) -> exchange (10) -> identity (originary).
+ * The same ring and stem move between positions; no glyph is swapped for a
+ * typed character.
  *
- * Continuity: nothing is replaced by a typed character. The same ring and stem
- * move between positions throughout.
+ * Plays at most once per session and never loops. Reduced motion and small
+ * screens resolve to the finished wordmark immediately.
  *
- * Plays once per session on the homepage, then the finished wordmark persists.
- * It never loops, never autoplays a second time, and is never required to learn
- * the name. Reduced motion and small screens resolve to the wordmark instantly.
- *
- * Geometry is frozen: wordmark viewBox "201 644 7487 1918", symbol viewBox
- * "161 998 1104 1196", every path placed with translate(x,2124) scale(1,-1).
- * Never redraw, respace, or substitute type.
+ * Frozen geometry, do not redraw or respace:
+ *   wordmark viewBox "201 644 7487 1918"
+ *   symbol   viewBox "161 998 1104 1196"
+ *   paths placed with translate(x,2124) scale(1,-1)
  */
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
@@ -34,7 +26,7 @@ const WORDMARK_VIEW_BOX = "201 644 7487 1918";
 const SYMBOL_VIEW_BOX = "161 998 1104 1196";
 
 const flip = (x: number) => `translate(${x},2124) scale(1,-1)`;
-/** The origin point: optical centre of the o at (712.5, 1596), diameter 246u. */
+/** The origin point: optical center of the o at (712.5, 1596), diameter 246u. */
 const ORIGIN_POINT = "translate(488,2946.5) scale(1,-1)";
 
 /** Timing and easing, per the identity spec. */
@@ -71,7 +63,7 @@ const EX_STEM_X = STEM_FORM_X - 1201; // 88
 /** The point ejects 801u and stretches 3.6x on its way to becoming the stem. */
 const EJECT_X = STEM_FORM_X - 488; // 801
 const EJECT_SCALE_Y = 3.6;
-/** Optical centre of the point inside the o. */
+/** Optical center of the point inside the o. */
 const POINT_CENTRE = "712.5px 1596px";
 
 const CASCADE: { d: string; x: number }[] = [
@@ -124,16 +116,15 @@ export function OriginaryLogoMotion({
   replayOnHover = false,
   ariaLabel = "Originary",
 }: OriginaryLogoMotionProps) {
-  // Server and first paint render the finished wordmark, so the name is never
-  // withheld; the sequence only steps back to ⊙ when it is qualified to play.
+  // First paint renders the finished wordmark; the sequence steps back to
+  // origin only when it qualifies to play.
   const [phase, setPhase] = useState<Phase>("identity");
-  // Transitions stay off until the mark is seated at ⊙, so the wordmark never
-  // flashes and then collapses on its way into the sequence.
+  // Transitions stay off until the mark is seated at origin.
   const [animating, setAnimating] = useState(false);
   const timers = useRef<number[]>([]);
   const rafs = useRef<number[]>([]);
-  // Whether this mount qualifies for the once-per-session play. Resolved once,
-  // before the flag is written, so a re-run of the effect cannot cancel itself.
+  // Resolved once, before the session flag is written, so a re-run of the
+  // effect cannot cancel itself.
   const qualified = useRef<boolean | null>(null);
   if (qualified.current === null) {
     qualified.current = typeof window !== "undefined" && autoPlay && !forceOpen && !shouldResolveImmediately();
@@ -211,25 +202,30 @@ export function OriginaryLogoMotion({
       onFocus={replayOnHover ? play : undefined}
       style={{ overflow: "visible" }}
     >
-      {/* the ring — the 0, and the first o */}
+      {/* the ring: the 0, and the first o */}
       <g className="olh-o" style={{ transform: `translateX(${oX - SLOT.o}px)`, transition: animating ? `transform ${moveMs}ms ${moveEase}` : "none" }}>
         <path d={D.o} transform={flip(SLOT.o)} />
       </g>
 
-      {/* the origin point — rests in the o, then stretches into the stem */}
+      {/* the origin point: rests in the o, stretches into the stem, returns to rest */}
       <g
         className="olh-origin"
         style={{
-          fillOpacity: p === "origin" ? 1 : 0,
-          transform: p === "origin" ? "none" : `translateX(${EJECT_X}px) scaleY(${EJECT_SCALE_Y})`,
+          fillOpacity: p === "origin" || isIdentity ? 1 : 0,
+          transform:
+            p === "origin" || isIdentity ? "none" : `translateX(${EJECT_X}px) scaleY(${EJECT_SCALE_Y})`,
           transformOrigin: POINT_CENTRE,
-          transition: animating ? `transform ${EJECT_MS}ms ${EASE_INOUT}, fill-opacity ${EJECT_MS}ms ${EASE_INOUT}` : "none",
+          transition: animating
+            ? isIdentity
+              ? `fill-opacity 200ms ${EASE_SETTLE} ${GLIDE_MS}ms, transform 200ms ${EASE_SETTLE} ${GLIDE_MS}ms`
+              : `transform ${EJECT_MS}ms ${EASE_INOUT}, fill-opacity ${EJECT_MS}ms ${EASE_INOUT}`
+            : "none",
         }}
       >
         <path d={D.iDot} transform={ORIGIN_POINT} />
       </g>
 
-      {/* the stem — the 1, and the i */}
+      {/* the stem: the 1, and the i */}
       <g
         className="olh-stem"
         style={{
@@ -283,7 +279,7 @@ export const WORDMARK_GEOMETRY = {
   transform: (x: number) => flip(x),
   paths: [
     { d: D.o, x: SLOT.o },
-    // the origin point sits at the centre of the o, so it carries its own transform
+    // the origin point sits at the center of the o, so it carries its own transform
     { d: D.iDot, x: SLOT.o, t: ORIGIN_POINT },
     { d: D.r, x: SLOT.r1 },
     { d: D.iStem, x: SLOT.i1 },
