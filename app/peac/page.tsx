@@ -437,7 +437,7 @@ export default function PeacPage() {
                 ]}
               />
               <div style={{ marginTop: 18 }}>
-                <Button href="/#demo" primary>
+                <Button href="/contact" primary>
                   Start a pilot
                 </Button>
               </div>

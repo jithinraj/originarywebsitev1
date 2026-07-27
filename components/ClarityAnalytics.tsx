@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect } from 'react'
-import clarity from '@microsoft/clarity'
 
 export default function ClarityAnalytics() {
   useEffect(() => {
@@ -12,14 +11,14 @@ export default function ClarityAnalytics() {
     // Use requestIdleCallback if available, otherwise use setTimeout as fallback
     if (typeof requestIdleCallback !== 'undefined') {
       const timer = requestIdleCallback(() => {
-        clarity.init('u5xxnbz8pn')
+        import('@microsoft/clarity').then((m) => m.default.init('u5xxnbz8pn')).catch(() => {})
       }, { timeout: 3000 })
 
       return () => cancelIdleCallback(timer)
     } else {
       // Fallback for Safari and older browsers
       const timer = setTimeout(() => {
-        clarity.init('u5xxnbz8pn')
+        import('@microsoft/clarity').then((m) => m.default.init('u5xxnbz8pn')).catch(() => {})
       }, 1000)
 
       return () => clearTimeout(timer)

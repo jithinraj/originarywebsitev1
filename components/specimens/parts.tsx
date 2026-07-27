@@ -256,7 +256,7 @@ export function SpecimenIntro({
       >
         {eyebrow}
       </div>
-      <h3
+      <h2
         style={{
           fontFamily: sans,
           fontSize: 'clamp(20px, 2.4vw, 25px)',
@@ -269,7 +269,7 @@ export function SpecimenIntro({
         }}
       >
         {title}
-      </h3>
+      </h2>
       {answers ? (
         <p
           style={{
@@ -347,7 +347,7 @@ export function CompareColumns({
     >
       {columns.map((col) => (
         <div key={col.heading}>
-          <h4
+          <h3
             style={{
               fontFamily: mono,
               fontSize: 11.5,
@@ -358,7 +358,7 @@ export function CompareColumns({
             }}
           >
             {col.heading}
-          </h4>
+          </h3>
           <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
             {col.items.map((it, i) => (
               <li

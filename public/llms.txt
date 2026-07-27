@@ -1,5 +1,9 @@
 # Originary
 
+> Portable signed records for agent actions, API calls, MCP tool runs, gateway
+> decisions, payments, approvals, and provisioning, verifiable offline by another
+> organization without access to the source system's private logs.
+
 Originary creates portable signed records for agent actions, API calls, MCP
 tool runs, gateway decisions, payments, approvals, and provisioning. A record
 is issued by a system that observed or reported the action and can be verified
@@ -35,40 +39,40 @@ still missing, without internal logs, dashboard access, or vendor runtime.
 
 ## Core pages
 
-- https://www.originary.xyz/
-- https://www.originary.xyz/product
-- https://www.originary.xyz/evidence-case - what a bounded evidence case contains, with a downloadable illustrative example
-- https://www.originary.xyz/audit-incident-handoff - assembling and verifying an evidence handoff bundle
-- https://www.originary.xyz/about
-- https://www.originary.xyz/peac
-- https://www.originary.xyz/downloads
-- https://www.originary.xyz/pricing
-- https://www.originary.xyz/contact
-- https://www.originary.xyz/trust - deployment and verification boundaries, procurement facts, and per-system interoperability status
-- https://www.originary.xyz/press - press kit: quotable boilerplate, fast facts, current metrics, and logo downloads
-- https://www.originary.xyz/security - supported versions, severity and response targets, and supply-chain posture
+- [Home](https://www.originary.xyz/)
+- [Product](https://www.originary.xyz/product)
+- [Evidence case](https://www.originary.xyz/evidence-case): what a bounded evidence case contains, with a downloadable illustrative example
+- [Audit and incident handoff](https://www.originary.xyz/audit-incident-handoff): assembling and verifying an evidence handoff bundle
+- [About](https://www.originary.xyz/about)
+- [PEAC Protocol](https://www.originary.xyz/peac)
+- [Downloads](https://www.originary.xyz/downloads)
+- [Plans and pilot](https://www.originary.xyz/pricing)
+- [Contact](https://www.originary.xyz/contact)
+- [Trust](https://www.originary.xyz/trust): deployment and verification boundaries, procurement facts, and per-system interoperability status
+- [Press](https://www.originary.xyz/press): press kit: quotable boilerplate, fast facts, current metrics, and logo downloads
+- [Security](https://www.originary.xyz/security): supported versions, severity and response targets, and supply-chain posture
 
 ## Product pages
 
-- https://www.originary.xyz/how-it-works - the four-stage model (observe, issue, verify, hand off), with the six record surfaces in detail
-- https://www.originary.xyz/records - gallery of signed record types (MCP, API, gateway, agent, payment, provisioning), each verifiable offline
-- https://www.originary.xyz/verify - verify a signed record with the issuer's public key; offline by design, nothing stored
-- https://www.originary.xyz/mcp - evidence for disputed MCP tool calls
-- https://www.originary.xyz/ai-gateway - independently verifiable AI gateway decisions
-- https://www.originary.xyz/provisioning-records - signed records for deployments, provider setup, credentials, budgets, and resource lifecycle events
-- https://www.originary.xyz/agentic-commerce - evidence for paid APIs, MCP tools, and agent commerce
+- [How it works](https://www.originary.xyz/how-it-works): the four-stage model (observe, issue, verify, hand off), with the six record surfaces in detail
+- [Records](https://www.originary.xyz/records): gallery of signed record types (MCP, API, gateway, agent, payment, provisioning), each verifiable offline
+- [Verify](https://www.originary.xyz/verify): verify a signed record with the issuer's public key; offline by design, nothing stored
+- [MCP](https://www.originary.xyz/mcp): evidence for disputed MCP tool calls
+- [AI gateway](https://www.originary.xyz/ai-gateway): independently verifiable AI gateway decisions
+- [Provisioning records](https://www.originary.xyz/provisioning-records): signed records for deployments, provider setup, credentials, budgets, and resource lifecycle events
+- [Agentic commerce](https://www.originary.xyz/agentic-commerce): evidence for paid APIs, MCP tools, and agent commerce
 
 ## Blog
 
-- https://www.originary.xyz/blog
+- [Blog](https://www.originary.xyz/blog)
 
 ## Current articles
 
-- https://www.originary.xyz/blog/verifiable-provisioning-records-agent-infrastructure
-- https://www.originary.xyz/blog/what-is-http-402
-- https://www.originary.xyz/blog/a2a-stack-agent-to-agent-commerce
-- https://www.originary.xyz/blog/aipref-by-ietf
-- https://www.originary.xyz/blog/robots-txt-rfc-9309
+- [Verifiable provisioning records agent infrastructure](https://www.originary.xyz/blog/verifiable-provisioning-records-agent-infrastructure)
+- [What is http 402](https://www.originary.xyz/blog/what-is-http-402)
+- [A2a stack agent to agent commerce](https://www.originary.xyz/blog/a2a-stack-agent-to-agent-commerce)
+- [Aipref by ietf](https://www.originary.xyz/blog/aipref-by-ietf)
+- [Robots txt rfc 9309](https://www.originary.xyz/blog/robots-txt-rfc-9309)
 
 ## Brand assets
 
@@ -76,22 +80,22 @@ The Originary logo, for correct attribution. Scalable vector files; use the
 trademark version where the logo stands on its own. No partnership,
 certification, or endorsement is implied by use of these files.
 
-- https://www.originary.xyz/originary-logo.svg - wordmark, primary
-- https://www.originary.xyz/originary-logo-tm.svg - wordmark with trademark symbol
-- https://www.originary.xyz/originary-logo-reverse.svg - wordmark for dark backgrounds
-- https://www.originary.xyz/originary-logo-mark.svg - compact symbol (the origin point)
-- https://www.originary.xyz/originary-logo-mark-reverse.svg - compact symbol for dark backgrounds
-- https://www.originary.xyz/originary-logo-800w.png - wordmark, raster, 800 px wide
-- https://www.originary.xyz/originary-logo-2400w.png - wordmark, raster, 2400 px wide
-- https://www.originary.xyz/originary-logo-reverse-800w.png - wordmark for dark backgrounds, raster
-- https://www.originary.xyz/originary-logo-tm-2400w.png - wordmark with trademark symbol, raster
+- [Originary logo](https://www.originary.xyz/originary-logo.svg): wordmark, primary
+- [Originary logo tm](https://www.originary.xyz/originary-logo-tm.svg): wordmark with trademark symbol
+- [Originary logo reverse](https://www.originary.xyz/originary-logo-reverse.svg): wordmark for dark backgrounds
+- [Originary logo mark](https://www.originary.xyz/originary-logo-mark.svg): compact symbol (the origin point)
+- [Originary logo mark reverse](https://www.originary.xyz/originary-logo-mark-reverse.svg): compact symbol for dark backgrounds
+- [Originary logo 800w](https://www.originary.xyz/originary-logo-800w.png): wordmark, raster, 800 px wide
+- [Originary logo 2400w](https://www.originary.xyz/originary-logo-2400w.png): wordmark, raster, 2400 px wide
+- [Originary logo reverse 800w](https://www.originary.xyz/originary-logo-reverse-800w.png): wordmark for dark backgrounds, raster
+- [Originary logo tm 2400w](https://www.originary.xyz/originary-logo-tm-2400w.png): wordmark with trademark symbol, raster
 
 ## Open protocol
 
 PEAC Protocol is an Apache-2.0 open-source project for portable signed
 interaction records, maintained by Originary.
 
-- https://github.com/peacprotocol/peac
+- [peacprotocol/peac](https://github.com/peacprotocol/peac)
 
 ## Notes
 

@@ -317,7 +317,7 @@ export function Nav() {
             Verify a record
           </Link>
           <Link
-            href="/#demo"
+            href="/contact"
             className="home-nav-cta"
             style={{
               fontFamily: SANS,
@@ -457,7 +457,7 @@ export function Nav() {
               GitHub
             </a>
             <Link
-              href="/#demo"
+              href="/contact"
               onClick={() => setOpen(false)}
               style={{
                 flex: 1,
