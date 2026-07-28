@@ -124,6 +124,11 @@ export default function EvidenceCasePage() {
             Verify one record locally
           </Link>
         </div>
+        <p style={{ fontFamily: sans, fontSize: 13.5, lineHeight: 1.6, color: PALETTE.muted, margin: '16px 0 0' }}>
+          <Link href="/ai-compliance" style={{ color: PALETTE.ink, textDecoration: 'underline', textUnderlineOffset: 3 }}>
+            How evidence cases support compliance and audit review
+          </Link>
+        </p>
         <p style={{ fontFamily: sans, fontSize: 13, lineHeight: 1.6, color: PALETTE.faint, maxWidth: '62ch', margin: '14px 0 0' }}>
           This summary illustrates how findings may be presented. It is not a signed evidence
           bundle and cannot itself be cryptographically verified.

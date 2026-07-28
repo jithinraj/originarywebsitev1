@@ -20,6 +20,7 @@ export const STATIC_ROUTES: readonly string[] = [
   '/verify',
   '/mcp',
   '/ai-gateway',
+  '/ai-compliance',
   '/provisioning-records',
   '/agentic-commerce',
   '/downloads',

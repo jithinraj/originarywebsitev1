@@ -408,7 +408,7 @@ export default function TrustPage() {
               />
             </div>
             <p style={{ ...proseStyle, fontSize: 13, marginTop: 12 }}>
-              Each row states the current position rather than a roadmap commitment. If your review needs something not
+              See also protocol mappings and{' '}<Link href="/ai-compliance" style={{ color: PALETTE.ink, textDecoration: 'underline', textUnderlineOffset: 3 }}>AI compliance evidence</Link>. Each row states the current position rather than a roadmap commitment. If your review needs something not
               listed here, contact us and we will answer it directly.
             </p>
           </div>
