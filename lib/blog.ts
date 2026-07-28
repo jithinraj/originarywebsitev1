@@ -5,7 +5,7 @@
  * listed in the sitemap and marked index=true; archived pieces stay reachable
  * but carry a legacy notice and are excluded from indexing.
  */
-export type ArticleStatus = 'current' | 'updated' | 'archived' | 'superseded'
+export type ArticleStatus = 'current' | 'updated' | 'archived' | 'superseded' | 'draft'
 
 export interface Article {
   slug: string
@@ -77,6 +77,32 @@ export const ARTICLES: Article[] = [
     status: 'current',
     indexable: true,
   },
+  // Draft: unpublished preview pages. Not listed on the blog index, not
+  // indexable, excluded from the sitemap.
+  {
+    slug: 'agent-audit-across-boundaries',
+    title: 'Where private agent logs stop being enough across company boundaries',
+    description:
+      'Private logs answer your own questions well, but fail when another company must verify what happened. See the exact gap: a log line next to a signed record.',
+    category: 'Protocol',
+    author: 'Jithin Raj',
+    readTime: '5 min read',
+    status: 'draft',
+    indexable: false,
+    featured: false,
+  },
+  {
+    slug: 'evidence-bundle-for-disputes',
+    title: 'Building a portable evidence bundle for dispute review',
+    description:
+      'A PEAC evidence bundle packages signed records, keys, and policy so a counterparty can check them independently. What is inside, and the two ways it fails.',
+    category: 'Protocol',
+    author: 'Jithin Raj',
+    readTime: '6 min read',
+    status: 'draft',
+    indexable: false,
+    featured: false,
+  },
   // Archived: earlier HTTP 402-era tutorials. Kept for the record, not
   // maintained against the current release, excluded from indexing.
   {
@@ -131,7 +157,9 @@ export const ARTICLES: Article[] = [
   },
 ]
 
-export const CURRENT_ARTICLES = ARTICLES.filter((a) => a.status !== 'archived' && a.status !== 'superseded')
+export const CURRENT_ARTICLES = ARTICLES.filter(
+  (a) => a.status !== 'archived' && a.status !== 'superseded' && a.status !== 'draft',
+)
 export const ARCHIVED_ARTICLES = ARTICLES.filter((a) => a.status === 'archived' || a.status === 'superseded')
 
 export function getArticle(slug: string): Article | undefined {
