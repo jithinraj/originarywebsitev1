@@ -1851,3 +1851,330 @@ html {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- AI compliance evidence page ---------------------------------------- */
+.aic-grid-4,
+.aic-grid-3 {
+  display: grid;
+  gap: 18px;
+  margin-top: 8px;
+}
+.aic-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.aic-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 1100px) {
+  .aic-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .aic-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 860px) {
+  .aic-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 620px) {
+  .aic-grid-4,
+  .aic-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+.aic-mark {
+  display: inline-flex;
+  color: #8a8375;
+}
+.aic-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+.aic-step {
+  position: relative;
+}
+/* The four stages are one sequence, so a rail connects them: horizontally in a
+   row, vertically once they stack. Without it the nodes read as unrelated. */
+.aic-step::before {
+  content: "";
+  position: absolute;
+  left: 40px;
+  right: -20px;
+  top: 20px;
+  height: 1px;
+  background: rgba(20, 17, 10, 0.16);
+}
+.aic-step[data-last]::before {
+  display: none;
+}
+.aic-step-node {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(20, 17, 10, 0.28);
+  background: #f4f1ea;
+  color: #463f31;
+  margin-bottom: 14px;
+  flex: none;
+}
+@media (max-width: 1100px) {
+  .aic-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .aic-step:nth-child(2n)::before {
+    display: none;
+  }
+}
+@media (max-width: 620px) {
+  .aic-steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .aic-step {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 16px;
+    padding-bottom: 26px;
+  }
+  /* vertical rail down the node column */
+  .aic-step::before,
+  .aic-step:nth-child(2n)::before {
+    display: block;
+    left: 20px;
+    right: auto;
+    top: 44px;
+    bottom: 0;
+    width: 1px;
+    height: auto;
+  }
+  .aic-step[data-last]::before {
+    display: none;
+  }
+  .aic-step[data-last] {
+    padding-bottom: 0;
+  }
+  .aic-step-node {
+    margin-bottom: 0;
+  }
+  .aic-step-body {
+    padding-top: 8px;
+  }
+}
+
+/* Illustrative evidence case: status is legible by shape as well as colour. */
+.aic-case {
+  background: #fbf9f4;
+  border: 1px solid rgba(20, 17, 10, 0.18);
+  max-width: 680px;
+}
+.aic-case-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 15px 20px 13px;
+  border-bottom: 1px solid rgba(20, 17, 10, 0.1);
+}
+.aic-case-title {
+  font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #14110a;
+  font-weight: 600;
+}
+.aic-case-ref {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 13px;
+  color: #6e6759;
+}
+.aic-case-rows {
+  margin: 0;
+}
+.aic-case-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 20px;
+  border-bottom: 1px solid rgba(20, 17, 10, 0.08);
+}
+.aic-case-label {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 14px;
+  color: #14110a;
+  margin: 0;
+  min-width: 0;
+}
+.aic-case-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12.5px;
+  margin: 0;
+  text-align: right;
+}
+.aic-case-vocab {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 14px;
+  padding: 13px 20px 15px;
+  border-top: 1px solid rgba(20, 17, 10, 0.1);
+  font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  color: #6e6759;
+}
+@media (max-width: 560px) {
+  .aic-case-row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 5px;
+  }
+  .aic-case-status {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+/* PEAC band. InkBand centres its container, so every child must centre with it:
+   mixed margins here read as broken alignment. */
+.aic-peac-points {
+  list-style: none;
+  margin: 30px auto 0;
+  padding: 0;
+  max-width: 720px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px 20px;
+  text-align: left;
+}
+.aic-peac-points li {
+  display: grid;
+  grid-template-columns: 6px minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: 10px;
+  font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  color: rgba(244, 241, 234, 0.82);
+}
+.aic-peac-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #7fa88c;
+  transform: translateY(-2px);
+}
+.aic-peac-tagline {
+  font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(244, 241, 234, 0.62);
+  margin: 30px auto 0;
+}
+.aic-peac-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 24px;
+}
+@media (max-width: 760px) {
+  .aic-peac-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 420px;
+  }
+}
+@media (max-width: 460px) {
+  .aic-peac-points {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+  }
+}
+
+.aic-faq {
+  margin: 8px 0 0;
+  border-top: 1px solid rgba(20, 17, 10, 0.14);
+  max-width: 860px;
+}
+.aic-faq-item {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(20, 17, 10, 0.1);
+}
+.aic-faq-item dt {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #14110a;
+  letter-spacing: -0.01em;
+}
+.aic-faq-item dd {
+  margin: 8px 0 0;
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #463f31;
+  max-width: 74ch;
+}
+
+.aic-case-meter {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 3px;
+  padding: 16px 20px 0;
+}
+.aic-case-meter > span {
+  height: 4px;
+  border-radius: 1px;
+  opacity: 0.85;
+}
+.aic-case-meter-label {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #6e6759;
+  margin: 10px 20px 14px;
+}
+.aic-case-meter-label strong {
+  color: #14110a;
+  font-weight: 500;
+}
+.aic-faq-item dt {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: 8px;
+}
+.aic-faq-n {
+  font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #6e6759;
+  font-weight: 400;
+}
+.aic-faq-item dd {
+  padding-left: 42px;
+}
+@media (max-width: 560px) {
+  .aic-faq-item dt {
+    grid-template-columns: 28px minmax(0, 1fr);
+  }
+  .aic-faq-item dd {
+    padding-left: 36px;
+  }
+}

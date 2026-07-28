@@ -119,6 +119,10 @@ export function UseCases() {
         <Link href="/records" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: 3 }}>
           More workflows
         </Link>
+        {' '}or see{' '}
+        <Link href="/ai-compliance" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: 3 }}>
+          AI compliance evidence
+        </Link>
         .
       </p>
     </section>

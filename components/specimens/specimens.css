@@ -149,3 +149,29 @@
     padding: 2px 0 !important;
   }
 }
+
+/* Tables with more than two columns stack ambiguously on small screens: three
+   bare values give no clue which column each belongs to. Opt in with
+   labelColumnsOnMobile to repeat the column heading above each value. */
+@media (max-width: 767px) {
+  .pk-datatable-labelled tr {
+    padding: 16px;
+  }
+  .pk-datatable-labelled td[data-col] {
+    padding: 8px 0 2px !important;
+  }
+  .pk-datatable-labelled td[data-col]::before {
+    content: attr(data-col);
+    display: block;
+    font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6e6759;
+    margin-bottom: 3px;
+  }
+  .pk-datatable-labelled td:first-child {
+    padding-bottom: 6px !important;
+    border-bottom: 1px solid rgba(20, 17, 10, 0.1);
+  }
+}

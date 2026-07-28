@@ -26,6 +26,7 @@ const columns: Array<{
       { label: 'Gateway decisions', href: '/ai-gateway', mark: 'valve' },
       { label: 'Paid APIs and agent commerce', href: '/agentic-commerce', mark: 'coin' },
       { label: 'Audit and incident handoff', href: '/audit-incident-handoff', mark: 'sealCheck' },
+      { label: 'AI compliance evidence', href: '/ai-compliance', mark: 'scales' },
       { label: 'Provisioning', href: '/provisioning-records', mark: 'pipeline' },
       { label: 'Record gallery', href: '/records', mark: 'ledger' },
     ],

@@ -395,13 +395,23 @@ export function CompareColumns({
 export function DataTable({
   head,
   rows,
+  /**
+   * Repeat each column heading beside its value below 768px. Needed when a
+   * table has more than two columns, where stacked values are otherwise
+   * ambiguous about which column they belong to.
+   */
+  labelColumnsOnMobile = false,
 }: {
   head: string[]
   rows: ReactNode[][]
+  labelColumnsOnMobile?: boolean
 }) {
   return (
     <div style={{ overflowX: 'auto', borderTop: `2px solid rgba(20, 17, 10, 0.82)` }}>
-      <table className="pk-datatable" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 520, margin: 0 }}>
+      <table
+        className={`pk-datatable${labelColumnsOnMobile ? ' pk-datatable-labelled' : ''}`}
+        style={{ width: '100%', borderCollapse: 'collapse', minWidth: 520, margin: 0 }}
+      >
         <thead>
           <tr>
             {head.map((h) => (
@@ -430,6 +440,7 @@ export function DataTable({
               {r.map((cell, ci) => (
                 <td
                   key={ci}
+                  data-col={labelColumnsOnMobile && ci > 0 ? head[ci] : undefined}
                   style={{
                     fontFamily: ci === 0 ? mono : sans,
                     fontSize: ci === 0 ? 12.5 : 14.5,

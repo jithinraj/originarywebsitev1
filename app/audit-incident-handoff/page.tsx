@@ -92,6 +92,7 @@ export default function AuditIncidentHandoffPage() {
             See a handoff bundle
           </Button>
           <Button href="/evidence-case">See an evidence case</Button>
+          <Button href="/ai-compliance">AI compliance evidence</Button>
         </div>
       </PageHero>
 

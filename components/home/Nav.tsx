@@ -29,6 +29,7 @@ const NAV: NavEntry[] = [
       { label: 'Paid MCP and APIs', href: '/mcp' },
       { label: 'Gateway decisions', href: '/ai-gateway' },
       { label: 'Audit and incident handoff', href: '/audit-incident-handoff' },
+      { label: 'AI compliance evidence', href: '/ai-compliance' },
       { label: 'More workflows', href: '/records' },
     ],
   },
