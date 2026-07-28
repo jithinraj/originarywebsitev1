@@ -629,8 +629,8 @@ export function ArticleDoc({
   date?: string
   readTime?: string
   parent: { label: string; href: string }
-  /** Lifecycle status; 'archived' and 'superseded' render a notice. */
-  status?: 'current' | 'updated' | 'archived' | 'superseded'
+  /** Lifecycle status; 'archived', 'superseded', and 'draft' render a notice. */
+  status?: 'current' | 'updated' | 'archived' | 'superseded' | 'draft'
   children: ReactNode
 }) {
   return (
@@ -745,10 +745,30 @@ export function ArticleDoc({
             for up-to-date guidance.
           </div>
         ) : null}
+        {status === 'draft' ? (
+          <div
+            role="note"
+            style={{
+              marginTop: 28,
+              padding: '14px 18px',
+              borderLeft: `3px solid ${PALETTE.accent}`,
+              background: 'rgba(74, 98, 124, 0.06)',
+              fontFamily: sans,
+              fontSize: 14,
+              lineHeight: 1.55,
+              color: PALETTE.muted,
+            }}
+          >
+            <strong style={{ color: PALETTE.ink, fontWeight: 500 }}>Draft preview.</strong> Not
+            published. This piece is unlisted, excluded from search indexing, and not included in
+            the sitemap.
+          </div>
+        ) : null}
         <div
           className="home-card legal-doc-body"
           style={{
-            marginTop: status === 'archived' || status === 'superseded' ? 20 : 32,
+            marginTop:
+              status === 'archived' || status === 'superseded' || status === 'draft' ? 20 : 32,
             padding: 36,
             background: PALETTE.paper,
             border: `1px solid ${PALETTE.hairline}`,
