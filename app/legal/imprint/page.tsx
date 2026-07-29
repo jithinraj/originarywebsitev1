@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageShell, LegalDoc, PALETTE } from '@/components/home'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: { absolute: 'Imprint | Originary' },
@@ -28,6 +29,7 @@ const linkStyle = {
 export default function ImprintPage() {
   return (
     <PageShell>
+      <Breadcrumbs current="Imprint" href="/legal/imprint" />
       <LegalDoc title="Imprint" eyebrow="legal">
         <p>
           Company registration and contact information for Originary.

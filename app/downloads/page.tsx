@@ -12,6 +12,7 @@ import {
   PALETTE,
 } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 
 const softwareJsonLd = {
   '@context': 'https://schema.org',
@@ -38,9 +39,9 @@ const peacSourceCodeJsonLd = {
 }
 
 export const metadata: Metadata = {
-  title: { absolute: 'Downloads | Originary' },
+  title: { absolute: 'PEAC Protocol Downloads | Originary' },
   description:
-    'Download PEAC Protocol by Originary: open-source software for portable verification of machine actions. Source code, CLI, SDK packages, and tooling.',
+    'Download PEAC Protocol source code, CLI, SDK packages, MCP server and offline verification tools maintained by Originary.',
   robots: 'index,follow',
   openGraph: {
     title: 'Downloads | Originary',
@@ -85,9 +86,10 @@ export default function DownloadsPage() {
         {JSON.stringify(peacSourceCodeJsonLd)}
       </Script>
       <PageShell>
+      <Breadcrumbs current="PEAC Protocol Downloads" href="/downloads" />
         <PageHero
           eyebrow="open source"
-          title="Download PEAC Protocol"
+          title="PEAC Protocol Downloads"
           byline="by Originary"
           sub="Originary™, the software and developer-tools brand of Poem, Inc., publishes and maintains PEAC Protocol as open-source downloadable software. Get the source code, CLI, SDK packages, and verification tooling from the official GitHub repository and package registries."
           align="center"

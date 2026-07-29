@@ -30,7 +30,9 @@ if (!existsSync(PAGE)) {
   if (!src.includes(`canonical: '${CANONICAL}'`)) errors.push(`canonical is not '${CANONICAL}'`)
   if (!src.includes('openGraph')) errors.push('Open Graph metadata is missing')
   if (!src.includes("'@type': 'WebPage'")) errors.push('WebPage JSON-LD is missing')
-  if (!src.includes("'@type': 'BreadcrumbList'")) errors.push('BreadcrumbList JSON-LD is missing')
+  // the trail may be emitted inline or by the shared Breadcrumbs component
+  const hasBreadcrumb = src.includes("'@type': 'BreadcrumbList'") || src.includes('<Breadcrumbs ')
+  if (!hasBreadcrumb) errors.push('breadcrumb markup is missing')
   if (/noindex/i.test(src)) errors.push('page must not be noindex')
 }
 

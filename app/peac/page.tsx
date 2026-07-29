@@ -17,9 +17,10 @@ import {
 } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
 import { VerificationBoundary } from '@/components/specimens/parts'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: { absolute: 'PEAC Protocol: portable signed interaction records' },
+  title: { absolute: 'PEAC Protocol | Portable Signed Interaction Records' },
   description:
     'An Apache-2.0 protocol for issuing and verifying portable signed records from APIs, MCP tools, agents, gateways, payments, and provisioning systems.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
@@ -89,6 +90,7 @@ export default function PeacPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageShell>
+      <Breadcrumbs current="PEAC Protocol" href="/peac" />
         {/* Editorial hero: asymmetric two-column layout */}
         <section
           className="home-section"
@@ -104,12 +106,12 @@ export default function PeacPage() {
                 <span className="home-about-eyebrow">open source</span>
               </InViewClass>
               <h1 className="home-about-h1" style={{ marginTop: 18 }}>
-                An open protocol for portable signed interaction records.
+                PEAC Protocol
               </h1>
               <p className="home-about-body" style={{ marginTop: 24, maxWidth: 560 }}>
-                PEAC defines a bounded record format, verification model, conformance
-                requirements, and carrier mappings. It can be implemented and used
-                independently of Originary.
+                An open protocol for portable signed interaction records. PEAC defines a bounded
+                record format, verification model, conformance requirements, and carrier mappings.
+                It can be implemented and used independently of Originary.
               </p>
 
               <div style={{ marginTop: 32, display: 'flex', gap: 12, flexWrap: 'wrap' }}>

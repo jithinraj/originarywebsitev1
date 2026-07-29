@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Script from 'next/script'
 import { FACTS } from '@/lib/facts'
 import { ORIGINARY_ORG_ID } from '@/lib/structured-data/entities'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import {
   PageShell,
   PageSection,
@@ -15,7 +16,7 @@ import {
   PAGE_PAD,
 } from '@/components/home'
 export const metadata: Metadata = {
-  title: { absolute: 'About Originary: evidence software for machine actions' },
+  title: { absolute: 'About Originary | Evidence for Machine Actions' },
   description:
     'Originary builds open-source and self-hosted evidence software for agent, API, MCP, gateway, and automated-service actions across organizational boundaries.',
   robots: {
@@ -64,6 +65,7 @@ export default function About() {
         {JSON.stringify(webPageJsonLd)}
       </Script>
       <PageShell>
+      <Breadcrumbs current="About Originary" href="/about" />
         {/* Hero */}
         <section
           className="home-section"
@@ -80,14 +82,13 @@ export default function About() {
           </Reveal>
 
           <Reveal delay={80}>
-            <h1 className="home-about-h1">
-              Evidence software for machine actions that cross organizational boundaries.
-            </h1>
+            <h1 className="home-about-h1">About Originary</h1>
           </Reveal>
 
           <Reveal delay={260}>
             <p className="home-about-body">
-              Originary develops and supports software for issuing, verifying, and handing off
+              Evidence software for machine actions that cross organizational boundaries. Originary
+              develops and supports software for issuing, verifying, and handing off
               bounded evidence from APIs, MCP tools, agents, gateways, and payment systems. It
               publishes and maintains PEAC Protocol as Apache-2.0 open-source software.
             </p>

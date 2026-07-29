@@ -12,9 +12,9 @@ const columns: Array<{
   {
     h: 'Product',
     items: [
-      { label: 'Verification pilot', href: '/product' },
+      { label: 'Verification Pilot', href: '/product' },
       { label: 'Evidence case', href: '/evidence-case' },
-      { label: 'Verify a sample', href: '/verify' },
+      { label: 'Verify a Record', href: '/verify' },
       { label: 'Plans and pilot', href: '/pricing' },
       { label: 'Start a pilot', href: '/contact', emphasis: true },
     ],
@@ -28,14 +28,14 @@ const columns: Array<{
       { label: 'Audit and incident handoff', href: '/audit-incident-handoff', mark: 'sealCheck' },
       { label: 'AI compliance evidence', href: '/ai-compliance', mark: 'scales' },
       { label: 'Provisioning', href: '/provisioning-records', mark: 'pipeline' },
-      { label: 'Record gallery', href: '/records', mark: 'ledger' },
+      { label: 'Record Gallery', href: '/records', mark: 'ledger' },
     ],
   },
   {
     h: 'Developers',
     items: [
-      { label: 'How it works', href: '/how-it-works' },
-      { label: 'Downloads', href: '/downloads' },
+      { label: 'How It Works', href: '/how-it-works' },
+      { label: 'PEAC Protocol Downloads', href: '/downloads' },
       { label: 'PEAC Protocol', href: '/peac' },
       { label: 'Blog', href: '/blog' },
       { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
@@ -44,11 +44,11 @@ const columns: Array<{
   {
     h: 'Company',
     items: [
-      { label: 'About', href: '/about' },
-      { label: 'Press', href: '/press' },
+      { label: 'About Originary', href: '/about' },
+      { label: 'Press Kit', href: '/press' },
       { label: 'Trust Center', href: '/trust' },
       { label: 'Security', href: '/security' },
-      { label: 'Contact', href: '/contact' },
+      { label: 'Contact Originary', href: '/contact' },
     ],
   },
 ]
@@ -186,6 +186,7 @@ export function HomeFooter() {
           justifyContent: 'space-between',
         }}
         className="home-footer-bottom"
+        data-nosnippet
       >
         <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.02em', minWidth: 0 }}>
           © 2025-2026 Poem, Inc. · Originary™ is a trademark of Poem, Inc.

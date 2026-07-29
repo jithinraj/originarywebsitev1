@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button } from '@/components/home/page-kit'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import { InkBand, InkHeading, InkButton, AnchorLine, CodeBlock } from '@/components/specimens/parts'
 import FlowObserver from '@/components/how-it-works/FlowObserver'
 import '@/components/how-it-works/how-it-works.css'
 
-const TITLE = 'How cross-boundary machine-action evidence works | Originary'
+const TITLE = 'How Originary Works | Signed Records and Evidence Cases'
 const DESCRIPTION =
   'Issue a signed record at the source, verify it outside the source system, assess evidence limits, and hand the bounded case to another party.'
 
@@ -35,19 +36,6 @@ const jsonLd = {
       description: DESCRIPTION,
       isPartOf: { '@id': 'https://www.originary.xyz/#website' },
       breadcrumb: { '@id': 'https://www.originary.xyz/how-it-works#breadcrumb' },
-    },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://www.originary.xyz/how-it-works#breadcrumb',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'How it works',
-          item: 'https://www.originary.xyz/how-it-works',
-        },
-      ],
     },
   ],
 }
@@ -640,11 +628,12 @@ export default function HowItWorksPage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
+      <Breadcrumbs current="How It Works" href="/how-it-works" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="how it works"
-        title="Issue at the source. Verify outside it. Hand off the evidence."
-        sub="Originary uses PEAC records to preserve bounded statements from the systems that observed an action, then combines those statements with relevant native artifacts for another party."
+        title="How Originary Works"
+        sub="Issue at the source. Verify outside it. Hand off the evidence. Originary uses PEAC records to preserve bounded statements from the systems that observed an action, then combines those statements with relevant native artifacts for another party."
         display
         aside={<JumpIndex items={HOW_IT_WORKS_JUMP} />}
         strip={['Observe', 'Issue', 'Verify', 'Hand off']}

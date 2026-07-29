@@ -9,9 +9,10 @@ import {
   PALETTE,
 } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Contact | Originary' },
+  title: { absolute: 'Contact Originary | Pilots and Partnerships' },
   description:
     'Tell us the workflow, the system that emits it, who needs to verify it, and why logs are not enough.',
   alternates: { canonical: '/contact' },
@@ -63,10 +64,11 @@ const bestFirstMessage = [
 export default function ContactPage() {
   return (
     <PageShell>
+      <Breadcrumbs current="Contact Originary" href="/contact" />
       <PageHero
         eyebrow="contact"
-        title="Talk to Originary."
-        sub="Tell us the workflow, the system that emits it, who needs to verify it, and why logs are not enough."
+        title="Contact Originary"
+        sub="Talk to Originary. Tell us the workflow, the system that emits it, who needs to verify it, and why logs are not enough."
         align="center"
       />
 

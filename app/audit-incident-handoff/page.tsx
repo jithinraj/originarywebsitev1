@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -45,19 +46,6 @@ const jsonLd = {
       isPartOf: { '@id': 'https://www.originary.xyz/#website' },
       breadcrumb: { '@id': 'https://www.originary.xyz/audit-incident-handoff#breadcrumb' },
     },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://www.originary.xyz/audit-incident-handoff#breadcrumb',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'Audit and incident handoff',
-          item: 'https://www.originary.xyz/audit-incident-handoff',
-        },
-      ],
-    },
   ],
 }
 
@@ -65,6 +53,7 @@ export default function AuditIncidentHandoffPage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
+      <Breadcrumbs current="Audit and Incident Handoff" href="/audit-incident-handoff" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Audit and incident handoff"

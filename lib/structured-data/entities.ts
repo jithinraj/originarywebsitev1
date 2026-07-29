@@ -35,8 +35,9 @@ export const originaryOrganization = {
 export const originaryWebsite = {
   '@type': 'WebSite',
   '@id': ORIGINARY_SITE_ID,
-  url: 'https://www.originary.xyz',
+  url: 'https://www.originary.xyz/',
   name: 'Originary',
+  alternateName: ['Originary.xyz'],
   publisher: { '@id': ORIGINARY_ORG_ID },
 } as const
 

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -47,14 +48,6 @@ const jsonLd = {
       isPartOf: { '@id': 'https://www.originary.xyz/#website' },
       breadcrumb: { '@id': 'https://www.originary.xyz/mcp#breadcrumb' },
     },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://www.originary.xyz/mcp#breadcrumb',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
-        { '@type': 'ListItem', position: 2, name: 'MCP', item: 'https://www.originary.xyz/mcp' },
-      ],
-    },
   ],
 }
 
@@ -62,6 +55,7 @@ export default function McpPage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
+      <Breadcrumbs current="Paid MCP and APIs" href="/mcp" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="MCP evidence"

@@ -4,6 +4,7 @@ import { FACTS } from '@/lib/facts'
 import { Nav, HomeFooter, InViewClass, PALETTE, MAX_W, PAGE_PAD } from '@/components/home'
 import { WordmarkStream } from '@/components/home/motion/WordmarkStream'
 import { Mono } from '@/components/home/atoms/Mono'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: { absolute: 'PEAC open source and Originary verification pilot' },
@@ -153,6 +154,7 @@ export default function PricingPage() {
     >
       <Nav />
       <main id="main-content" role="main">
+          <Breadcrumbs current="Plans and Pilot" href="/pricing" />
         {/* Hero */}
         <section
           className="home-section"

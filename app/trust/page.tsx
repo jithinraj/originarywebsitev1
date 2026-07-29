@@ -4,6 +4,7 @@ import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, Card, PALETTE } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
 import { DataTable, StepLabel, VerificationBoundary } from '@/components/specimens/parts'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: { absolute: 'Originary deployment, verification, and security boundaries' },
@@ -233,6 +234,7 @@ function BoundaryCard({ label, items }: { label: string; items: string[] }) {
 export default function TrustPage() {
   return (
     <PageShell>
+      <Breadcrumbs current="Trust" href="/trust" />
       <PageHero
         eyebrow="trust center"
         title="Clear deployment and verification boundaries."

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button, PullLine } from '@/components/home/page-kit'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -48,19 +49,6 @@ const jsonLd = {
       isPartOf: { '@id': 'https://www.originary.xyz/#website' },
       breadcrumb: { '@id': 'https://www.originary.xyz/agentic-commerce#breadcrumb' },
     },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://www.originary.xyz/agentic-commerce#breadcrumb',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'Paid APIs and agent commerce',
-          item: 'https://www.originary.xyz/agentic-commerce',
-        },
-      ],
-    },
   ],
 }
 
@@ -99,6 +87,7 @@ export default function AgenticCommercePage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
+      <Breadcrumbs current="Agent Commerce" href="/agentic-commerce" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Paid services"

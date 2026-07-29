@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import { FACTS } from '@/lib/facts'
 import { PUBLIC_IDENTITY } from '@/lib/public-identity'
 import { DataTable, MarkerList, StepLabel, CodeBlock } from '@/components/specimens/parts'
 
-const TITLE = 'Originary press kit and company information'
+const TITLE = 'Press Kit | Originary'
 const DESCRIPTION =
   'Originary press kit: quotable boilerplate, fast facts, current release metrics, founder appearances, brand assets, and media contact.'
 
@@ -32,9 +33,10 @@ const BOILERPLATE_120 =
 export default function PressPage() {
   return (
     <PageShell>
+      <Breadcrumbs current="Press Kit" href="/press" />
       <PageHero
         eyebrow="Press"
-        title="Press kit."
+        title="Originary Press Kit"
         sub="Working on a story about verifiable records for AI and agents? Everything here is yours to use. Quote the descriptions directly, pull the current facts, grab the logo. We are glad to help, and happy to fact-check a draft before you publish."
         strip={['Fast facts', 'Boilerplate', 'Metrics as of ' + FACTS.currentReleaseDate, 'Contact']}
       >

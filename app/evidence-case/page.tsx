@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { PageShell, PageHero, PageSection, Card, PALETTE } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
 import { StepLabel, VerificationBoundary } from '@/components/specimens/parts'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: { absolute: 'What an AI agent or API evidence case contains | Originary' },
@@ -79,6 +80,7 @@ function FindingColumn({ title, items, color }: { title: string; items: string[]
 export default function EvidenceCasePage() {
   return (
     <PageShell>
+      <Breadcrumbs current="Evidence Case" href="/evidence-case" />
       <PageHero
         eyebrow="Evidence case"
         title="A bounded evidence case another party can inspect."

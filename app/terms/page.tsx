@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
 import { PageShell, LegalDoc, PALETTE } from '@/components/home'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: { absolute: 'Terms of Service | Originary' },
@@ -61,6 +62,7 @@ export default function Terms() {
         {JSON.stringify(webPageJsonLd)}
       </Script>
       <PageShell>
+      <Breadcrumbs current="Terms" href="/terms" />
         <LegalDoc title="Terms of Service" effective="Last updated 2026-07-22">
           <h2>Who you&apos;re contracting with</h2>
           <p>

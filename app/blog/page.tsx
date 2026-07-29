@@ -14,6 +14,7 @@ import {
   PAGE_PAD,
 } from '@/components/home'
 import { CURRENT_ARTICLES, ARCHIVED_ARTICLES, type Article } from '@/lib/blog'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: {
@@ -168,6 +169,7 @@ export default function BlogPage() {
         {JSON.stringify(jsonLd)}
       </Script>
       <PageShell>
+      <Breadcrumbs current="Blog" href="/blog" />
         {/* Editorial hero */}
         <section
           className="home-section"
