@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Script from 'next/script'
 import { PageShell, LegalDoc, PALETTE } from '@/components/home'
 import { FACTS } from '@/lib/facts'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: { absolute: 'Security | Originary' },
@@ -55,7 +56,8 @@ export default function Security() {
         {JSON.stringify(webPageJsonLd)}
       </Script>
       <PageShell>
-        <LegalDoc title="Security" eyebrow="security">
+      <Breadcrumbs current="Security" href="/security" />
+        <LegalDoc title="Security at Originary" eyebrow="security">
           <p>
             Security posture, supported versions, responsible disclosure, and verification boundaries for Originary.
           </p>

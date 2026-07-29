@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
 import { PageShell, LegalDoc, PALETTE } from '@/components/home'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: { absolute: 'Privacy Policy | Originary' },
@@ -54,6 +55,7 @@ export default function Privacy() {
         {JSON.stringify(webPageJsonLd)}
       </Script>
       <PageShell>
+      <Breadcrumbs current="Privacy" href="/privacy" />
         <LegalDoc title="Privacy Policy" effective="Last updated 2026-07-22">
           <h2>Controller</h2>
           <p>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { PageShell, PageHero, PageSection, SectionHeading, Button, PullLine } from '@/components/home/page-kit'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import { FACTS } from '@/lib/facts'
 import {
@@ -18,7 +19,7 @@ import {
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { MarkGlyph } from '@/components/home/glyphs/MarkGlyphs'
 
-const TITLE = 'Originary Verification Pilot: cross-boundary evidence'
+const TITLE = 'Originary Verification Pilot | Cross-Boundary Evidence'
 const DESCRIPTION =
   'Issue signed records where actions happen, verify them under an explicit key policy, and assemble a bounded evidence case for another party.'
 
@@ -47,14 +48,6 @@ const jsonLd = {
       description: DESCRIPTION,
       isPartOf: { '@id': 'https://www.originary.xyz/#website' },
       breadcrumb: { '@id': 'https://www.originary.xyz/product#breadcrumb' },
-    },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://www.originary.xyz/product#breadcrumb',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
-        { '@type': 'ListItem', position: 2, name: 'Product', item: 'https://www.originary.xyz/product' },
-      ],
     },
   ],
 }
@@ -107,11 +100,12 @@ export default function ProductPage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
+      <Breadcrumbs current="Verification Pilot" href="/product" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Verification pilot"
-        title="From signed records to a reviewable evidence case."
-        sub="Originary helps teams issue records at consequential workflow boundaries, verify supplied evidence under explicit key policies, and package the relevant artifacts for another organization, through a fixed-scope verification pilot."
+        title="Originary Verification Pilot"
+        sub="From signed records to a reviewable evidence case. Originary helps teams issue records at consequential workflow boundaries, verify supplied evidence under explicit key policies, and package the relevant artifacts for another organization, through a fixed-scope verification pilot."
         display
         aside={
           <RecordCard

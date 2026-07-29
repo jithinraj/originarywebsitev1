@@ -11,6 +11,7 @@ import {
   EvidenceBoundary,
   EvidenceCasePanel,
   RecordGallery,
+  StartHere,
   UseCases,
   BuiltOnPEAC,
   DemoCTA,
@@ -95,6 +96,10 @@ export default function Page() {
           <HeroV2 />
           <InteropMarquee />
           <Reveal threshold={0.12}>
+            <Divider eyebrow="start here" />
+            <StartHere />
+          </Reveal>
+          <Reveal threshold={0.12}>
             <Divider eyebrow="the failure" />
             <Problem />
           </Reveal>
@@ -107,7 +112,7 @@ export default function Page() {
             <ProductSystem />
           </Reveal>
           <Reveal threshold={0.12}>
-            <Divider eyebrow="start here" />
+            <Divider eyebrow="review workflows" />
             <UseCases />
           </Reveal>
           <Reveal threshold={0.12}>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
 import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button, PullLine } from '@/components/home/page-kit'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -20,7 +21,7 @@ import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 import { TamperDemo } from '@/components/specimens/TamperDemo'
 
-const TITLE = 'Signed record gallery for agents, APIs, and MCP | Originary'
+const TITLE = 'Record Gallery | Agents, APIs, MCP and Gateways'
 const DESCRIPTION =
   'Explore issuer-reported record examples for APIs, MCP tools, agent actions, gateways, payments, and provisioning.'
 
@@ -49,14 +50,6 @@ const jsonLd = {
       description: DESCRIPTION,
       isPartOf: { '@id': 'https://www.originary.xyz/#website' },
       breadcrumb: { '@id': 'https://www.originary.xyz/records#breadcrumb' },
-    },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://www.originary.xyz/records#breadcrumb',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
-        { '@type': 'ListItem', position: 2, name: 'Records', item: 'https://www.originary.xyz/records' },
-      ],
     },
   ],
 }
@@ -172,11 +165,12 @@ export default function RecordsPage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
+      <Breadcrumbs current="Record Gallery" href="/records" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Record gallery"
-        title="See exactly what each issuing system reported."
-        sub="Every PEAC record is a bounded signed statement from one issuer. Browse the record families, verify a sample, and inspect the limits of each claim."
+        title="Record Gallery"
+        sub="See exactly what each issuing system reported. Every PEAC record is a bounded signed statement from one issuer. Browse the record families, verify a sample, and inspect the limits of each claim."
         display
         aside={<JumpIndex items={RECORDS_JUMP} />}
         strip={['Record gallery', '06 workflows', 'One primitive', 'Verifies offline']}

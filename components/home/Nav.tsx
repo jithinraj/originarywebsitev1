@@ -17,7 +17,7 @@ const NAV: NavEntry[] = [
     kind: 'menu',
     label: 'Product',
     items: [
-      { label: 'Verification pilot', href: '/product' },
+      { label: 'Verification Pilot', href: '/product' },
       { label: 'Evidence case', href: '/evidence-case' },
       { label: 'Plans and pilot', href: '/pricing' },
     ],
@@ -30,15 +30,17 @@ const NAV: NavEntry[] = [
       { label: 'Gateway decisions', href: '/ai-gateway' },
       { label: 'Audit and incident handoff', href: '/audit-incident-handoff' },
       { label: 'AI compliance evidence', href: '/ai-compliance' },
-      { label: 'More workflows', href: '/records' },
+      { label: 'Record Gallery', href: '/records' },
     ],
   },
   {
     kind: 'menu',
     label: 'Developers',
     items: [
-      { label: 'Quickstart', href: '/how-it-works' },
-      { label: 'Verify locally', href: '/verify' },
+      { label: 'How It Works', href: '/how-it-works' },
+      { label: 'Verify a Record', href: '/verify' },
+      { label: 'PEAC Protocol', href: '/peac' },
+      { label: 'PEAC Protocol Downloads', href: '/downloads' },
       { label: 'Documentation', href: 'https://www.peacprotocol.org/docs', external: true },
       { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
     ],
@@ -315,7 +317,7 @@ export function Nav() {
             className="home-nav-link home-nav-verify"
             style={{ ...topLinkStyle, whiteSpace: 'nowrap' }}
           >
-            Verify a record
+            Verify a Record
           </Link>
           <Link
             href="/contact"

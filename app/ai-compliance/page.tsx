@@ -9,6 +9,7 @@ import {
   Button,
   PullLine,
 } from '@/components/home/page-kit'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import {
   RecordCard,
@@ -97,14 +98,7 @@ const jsonLd = {
       about: { '@id': 'https://www.originary.xyz/#organization' },
       breadcrumb: { '@id': `${URL}#breadcrumb` },
     },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': `${URL}#breadcrumb`,
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
-        { '@type': 'ListItem', position: 2, name: 'AI compliance evidence', item: URL },
-      ],
-    },
+    
     {
       '@type': 'FAQPage',
       '@id': `${URL}#faq`,
@@ -313,6 +307,7 @@ const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
 export default function AiCompliancePage() {
   return (
     <PageShell>
+      <Breadcrumbs current="AI Compliance Evidence" href="/ai-compliance" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <PageHero

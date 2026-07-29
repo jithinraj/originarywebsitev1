@@ -33,7 +33,8 @@ const CASES = [
   ['not in llms.txt', { ...OK, 'public/llms.txt': '# Originary\n' }, false],
   ['wrong canonical', { ...OK, 'app/ai-compliance/page.tsx': OK_PAGE.replace("'/ai-compliance'", "'/ai'") }, false],
   ['noindex present', { ...OK, 'app/ai-compliance/page.tsx': OK_PAGE + '\nconst r = { robots: "noindex" }\n' }, false],
-  ['missing BreadcrumbList', { ...OK, 'app/ai-compliance/page.tsx': OK_PAGE.replace("{ '@type': 'BreadcrumbList' }", '{}') }, false],
+  ['missing breadcrumb entirely', { ...OK, 'app/ai-compliance/page.tsx': OK_PAGE.replace("{ '@type': 'BreadcrumbList' }", '{}') }, false],
+  ['breadcrumb via shared component', { ...OK, 'app/ai-compliance/page.tsx': OK_PAGE.replace("{ '@type': 'BreadcrumbList' }", '{}') + '\nconst x = <Breadcrumbs current="AI Compliance Evidence" href="/ai-compliance" />\n' }, true],
 ]
 
 let failures = 0

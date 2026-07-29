@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { PageShell, PageHero, PageSection, SectionHeading, Card, PullLine, Button } from '@/components/home/page-kit'
+import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import { FACTS } from '@/lib/facts'
 import {
@@ -16,7 +17,7 @@ import {
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { VerifyConsole } from '@/components/specimens/VerifyConsole'
 
-const TITLE = 'Verify a PEAC signed record locally | Originary'
+const TITLE = 'Verify a Signed Record | Originary'
 const DESCRIPTION =
   'Verify an Ed25519-signed PEAC interaction record with a public key you supply. No upload, account, callback, or Originary dependency.'
 
@@ -46,14 +47,6 @@ const jsonLd = {
       isPartOf: { '@id': 'https://www.originary.xyz/#website' },
       breadcrumb: { '@id': 'https://www.originary.xyz/verify#breadcrumb' },
     },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://www.originary.xyz/verify#breadcrumb',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.originary.xyz' },
-        { '@type': 'ListItem', position: 2, name: 'Verify', item: 'https://www.originary.xyz/verify' },
-      ],
-    },
   ],
 }
 
@@ -69,11 +62,12 @@ export default function VerifyPage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
+      <Breadcrumbs current="Verify a Record" href="/verify" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Local verification"
-        title="Verify a signed record locally."
-        sub="Supply a PEAC record and the public key or JWKS you intend to trust. The verifier checks the signature and record profile without uploading the record to Originary."
+        title="Verify a Signed Record"
+        sub="Verify a signed record locally. Supply a PEAC record and the public key or JWKS you intend to trust. The verifier checks the signature and record profile without uploading the record to Originary."
         display
         aside={
           <Terminal
