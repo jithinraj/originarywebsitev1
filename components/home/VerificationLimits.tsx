@@ -7,15 +7,13 @@ import { SectionTitle } from './atoms/Mono'
 const CAN = [
   'the supplied key validates the signature;',
   'the protected record has not changed;',
-  'evaluated disclosed content matches its bound digest.',
+  'evaluated content matches what the record binds.',
 ]
 
 const CANNOT = [
   'that every relevant event was recorded;',
-  'that the issuer should be trusted;',
-  'that every statement is true;',
-  'that an external event such as delivery occurred;',
-  'that a legal requirement was satisfied.',
+  'that the issuer or every statement should be trusted;',
+  'that an external event or legal requirement was satisfied.',
 ]
 
 export function VerificationLimits() {
@@ -27,7 +25,7 @@ export function VerificationLimits() {
       <SectionTitle title="Know exactly what was verified." />
       <div className="vlim-grid" style={{ marginTop: 44 }}>
         <div className="vlim-col vlim-col-can">
-          <p className="vlim-head">The record verifies</p>
+          <p className="vlim-head">Verification tells you</p>
           <ul>
             {CAN.map((c) => (
               <li key={c}>{c}</li>
@@ -35,7 +33,7 @@ export function VerificationLimits() {
           </ul>
         </div>
         <div className="vlim-col">
-          <p className="vlim-head">It does not automatically establish</p>
+          <p className="vlim-head">It doesn&apos;t automatically tell you</p>
           <ul>
             {CANNOT.map((c) => (
               <li key={c}>{c}</li>
@@ -44,7 +42,7 @@ export function VerificationLimits() {
         </div>
       </div>
       <p className="vlim-close">
-        Clear verification, without pretending a signature proves more than it does.
+        Clear verification, without claiming more than the record establishes.
       </p>
     </section>
   )

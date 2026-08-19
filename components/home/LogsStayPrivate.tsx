@@ -27,7 +27,7 @@ export function LogsStayPrivate() {
     >
       <SectionTitle
         title="Share the record, not your logs."
-        body="Logs help you run your own system. A PEAC record can leave it. Send the record to a customer, partner, auditor or another service and let them verify it separately."
+        body="Logs are for running your system. PEAC records are built to travel. Send one to a customer, partner, auditor or another service and let them verify it separately."
       />
       <div className="lsp-diagram" style={{ marginTop: 44 }} aria-hidden>
         <div className="lsp-panel">
