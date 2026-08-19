@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 import { SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
@@ -67,7 +70,76 @@ const linkStyle = {
   textDecoration: 'none',
 }
 
+function renderColumnItems(items: (typeof columns)[number]['items']) {
+  return items.map((it) => (
+    <li key={it.label} style={{ marginBottom: 10 }}>
+      {it.external ? (
+        <a
+          href={it.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="home-footer-link home-arrow-link"
+          style={linkStyle}
+        >
+          {it.label}
+        </a>
+      ) : (
+        <Link
+          href={it.href}
+          className="home-footer-link"
+          style={it.emphasis ? { ...linkStyle, color: PALETTE.ink, fontWeight: 500 } : linkStyle}
+        >
+          {it.mark ? (
+            <span className="home-footer-linkmark" aria-hidden>
+              <MarkGlyph name={it.mark} size={13} />
+            </span>
+          ) : null}
+          {it.label}
+        </Link>
+      )}
+    </li>
+  ))
+}
+
+function slugify(label: string): string {
+  return label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+}
+
+function AccordionChevron({ open }: { open: boolean }) {
+  return (
+    <svg
+      width="10"
+      height="10"
+      viewBox="0 0 10 10"
+      fill="none"
+      aria-hidden
+      className="home-footer-accordion-chevron"
+      style={{
+        flexShrink: 0,
+        marginLeft: 12,
+        transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
+      }}
+    >
+      <path d="M1.5 3.5L5 7l3.5-3.5" stroke={PALETTE.faint} strokeWidth="1.25" />
+    </svg>
+  )
+}
+
 export function HomeFooter() {
+  const [openGroups, setOpenGroups] = useState<Set<string>>(() => new Set())
+
+  function toggleGroup(key: string) {
+    setOpenGroups((prev) => {
+      const next = new Set(prev)
+      if (next.has(key)) {
+        next.delete(key)
+      } else {
+        next.add(key)
+      }
+      return next
+    })
+  }
+
   return (
     <footer
       style={{
@@ -138,37 +210,56 @@ export function HomeFooter() {
                 {col.h}
               </Mono>
               <ul style={{ listStyle: 'none', padding: 0, margin: '18px 0 0 0' }}>
-                {col.items.map((it) => (
-                  <li key={it.label} style={{ marginBottom: 10 }}>
-                    {it.external ? (
-                      <a
-                        href={it.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="home-footer-link home-arrow-link"
-                        style={linkStyle}
-                      >
-                        {it.label}
-                      </a>
-                    ) : (
-                      <Link
-                        href={it.href}
-                        className="home-footer-link"
-                        style={it.emphasis ? { ...linkStyle, color: PALETTE.ink, fontWeight: 500 } : linkStyle}
-                      >
-                        {it.mark ? (
-                          <span className="home-footer-linkmark" aria-hidden>
-                            <MarkGlyph name={it.mark} size={13} />
-                          </span>
-                        ) : null}
-                        {it.label}
-                      </Link>
-                    )}
-                  </li>
-                ))}
+                {renderColumnItems(col.items)}
               </ul>
             </div>
           ))}
+        </div>
+
+        <div className="home-footer-accordion">
+          {columns.map((col) => {
+            const isOpen = openGroups.has(col.h)
+            const panelId = `home-footer-accordion-panel-${slugify(col.h)}`
+            return (
+              <div key={col.h} style={{ borderBottom: `1px solid ${PALETTE.hairline}` }}>
+                <button
+                  type="button"
+                  className="home-footer-accordion-trigger"
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
+                  onClick={() => toggleGroup(col.h)}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    width: '100%',
+                    minHeight: 48,
+                    padding: '14px 0',
+                    background: 'none',
+                    border: 'none',
+                    margin: 0,
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                  }}
+                >
+                  <Mono
+                    size={11}
+                    color={PALETTE.faint}
+                    className="home-footer-accordion-label"
+                    style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
+                  >
+                    {col.h}
+                  </Mono>
+                  <AccordionChevron open={isOpen} />
+                </button>
+                {isOpen ? (
+                  <ul id={panelId} style={{ listStyle: 'none', padding: 0, margin: '0 0 20px 0' }}>
+                    {renderColumnItems(col.items)}
+                  </ul>
+                ) : null}
+              </div>
+            )
+          })}
         </div>
       </div>
 
