@@ -13,16 +13,16 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   /** Latest public release tag. */
-  currentVersion: 'v0.16.3',
+  currentVersion: 'v0.16.4',
 
   /** Public release date for currentVersion. */
-  currentReleaseDate: '2026-07-21',
+  currentReleaseDate: '2026-08-09',
 
   /** npm dist-tag used for currentVersion. */
   currentDistTag: 'latest',
 
   /** Stable release on the npm `latest` dist-tag */
-  stableVersion: 'v0.16.3',
+  stableVersion: 'v0.16.4',
 
   /** Current stable wire format. JWS typ: interaction-record+jwt. */
   stableWireFormat: 'interaction-record+jwt',
@@ -49,10 +49,10 @@ export const FACTS = {
   // ---------------------------------------------------------------------------
 
   /** Release public name. */
-  releaseName: 'Gateway Decision Evidence',
+  releaseName: 'Local Record Verification Handoff',
 
   /** Test file count. */
-  testFilesCount: 489,
+  testFilesCount: 506,
 
   /** Current Wire 0.2 JWS typ. */
   currentTyp: 'interaction-record+jwt',
@@ -61,7 +61,7 @@ export const FACTS = {
   legacyTyp: 'peac-receipt/0.1',
 
   /** Test count. */
-  testsCount: 12729,
+  testsCount: 13149,
 
   /** Build targets. */
   buildTargets: 113,

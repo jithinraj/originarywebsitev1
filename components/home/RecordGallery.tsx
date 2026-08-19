@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { MAX_W, PAGE_PAD, PALETTE } from './palette'
-import { MONO, SANS } from './typography'
+import { SANS } from './typography'
 import { SectionTitle } from './atoms/Mono'
 import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
 import { MiniRecord } from './glyphs/StatusGlyphs'
@@ -9,67 +9,54 @@ type Card = {
   type: string
   mark: MarkName
   why: string
-  status: string
   tone: 'ok' | 'denied' | 'linked'
   href: string
 }
 
 const CARDS: Card[] = [
   {
-    type: 'Gateway decision',
-    mark: 'valve' as MarkName,
-    why: 'Shows the terminal allow, deny, or review the gateway observed, and the policy applied.',
-    status: 'worked example',
-    tone: 'ok',
-    href: '/records#gateway',
-  },
-  {
-    type: 'Paid API call',
-    mark: 'coin' as MarkName,
-    why: 'Binds the endpoint, the terms in force, and the result digest for a metered request.',
-    status: 'worked example',
-    tone: 'ok',
-    href: '/records#api',
-  },
-  {
-    type: 'MCP tool run',
+    type: 'Tool call',
     mark: 'link' as MarkName,
-    why: 'Records which tool ran, the argument digest, and what the server reported back.',
-    status: 'worked example',
+    why: 'What tool ran, and what result did it report?',
     tone: 'ok',
     href: '/records#mcp',
   },
   {
-    type: 'Agent approval',
-    mark: 'sealCheck' as MarkName,
-    why: 'Ties an approval to exactly one proposal digest, so a changed action fails closed.',
-    status: 'deny example',
+    type: 'API call',
+    mark: 'braces' as MarkName,
+    why: 'What did the API report receiving and returning?',
+    tone: 'ok',
+    href: '/records#api',
+  },
+  {
+    type: 'Agent action',
+    mark: 'agentFrame' as MarkName,
+    why: 'What action did the agent report taking?',
     tone: 'denied',
     href: '/records#agent',
   },
   {
-    type: 'Provisioning event',
-    mark: 'pipeline' as MarkName,
-    why: 'Preserves which resource, credential, or subscription changed, and who issued it.',
-    status: 'worked example',
+    type: 'Gateway decision',
+    mark: 'valve' as MarkName,
+    why: 'Was the request allowed, blocked, redacted or reviewed?',
     tone: 'ok',
-    href: '/records#provisioning',
+    href: '/records#gateway',
   },
   {
-    type: 'Payment event',
+    type: 'Payment',
     mark: 'lockCoin' as MarkName,
-    why: 'Carries the payment reference and mandate the service action was bound to.',
-    status: 'linked-artifact example',
+    why: 'What did the payment system report?',
     tone: 'linked',
     href: '/records#payment',
   },
+  {
+    type: 'Provisioning',
+    mark: 'pipeline' as MarkName,
+    why: 'What account, credential or resource changed?',
+    tone: 'ok',
+    href: '/records#provisioning',
+  },
 ]
-
-const TONE: Record<Card['tone'], string> = {
-  ok: '#245f3f',
-  denied: '#9a3b2e',
-  linked: '#375873',
-}
 
 export function RecordGallery() {
   return (
@@ -81,8 +68,8 @@ export function RecordGallery() {
       }}
     >
       <SectionTitle
-        title="See what each issuing system actually reported."
-        body="Every record is a bounded signed statement from one issuer. Each record family links to a worked example. Shipped PEAC samples can be generated and verified offline."
+        title="Records for the actions your software takes."
+        body="PEAC uses the same core record model across agents, APIs, tools, gateways, payments and provisioning."
       />
       <div
         style={{
@@ -117,19 +104,25 @@ export function RecordGallery() {
               <span style={{ fontFamily: SANS, fontSize: 16, fontWeight: 500, color: PALETTE.ink, letterSpacing: '-0.01em' }}>
                 {c.type}
               </span>
-              <span style={{ fontFamily: MONO, fontSize: 11, color: TONE[c.tone], whiteSpace: 'nowrap' }}>
-                {c.status}
-              </span>
             </div>
             <p style={{ fontFamily: SANS, fontSize: 13.5, lineHeight: 1.6, color: PALETTE.muted, margin: '10px 0 14px' }}>
               {c.why}
             </p>
             <span style={{ fontFamily: SANS, fontSize: 13, color: PALETTE.ink, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-              View worked example
+              View example
             </span>
           </Link>
         ))}
       </div>
+      <p style={{ fontFamily: SANS, fontSize: 13.5, color: '#6e6759', marginTop: 20 }}>
+        Reviewing a whole incident or transaction?{' '}
+        <Link
+          href="/evidence-case"
+          style={{ color: 'inherit', textDecoration: 'underline' }}
+        >
+          See how related records can be brought together &rarr;
+        </Link>
+      </p>
     </section>
   )
 }

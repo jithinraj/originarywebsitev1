@@ -167,10 +167,10 @@ export default function PricingPage() {
           <InViewClass className="home-eyebrow-rule" as="div">
             <span className="home-about-eyebrow">plans and pilot</span>
           </InViewClass>
-          <h1 className="home-about-h1">Start with one consequential workflow.</h1>
+          <h1 className="home-about-h1">PEAC is free. Originary helps you ship it.</h1>
           <p className="home-about-body" style={{ marginTop: 22, maxWidth: 640 }}>
-            Use PEAC freely. Engage Originary when a customer, partner, auditor, or incident
-            reviewer needs evidence your existing logs cannot provide.
+            Build and verify records yourself with the open protocol, or work with Originary to put
+            them on one real workflow.
           </p>
         </section>
 
@@ -514,7 +514,7 @@ export default function PricingPage() {
           }}
         >
           <div id="pilot" style={{ maxWidth: 760, margin: '0 auto 72px', scrollMarginTop: 96 }}>
-            <h2 style={{ ...sectionHead, textAlign: 'center', marginBottom: 12 }}>Originary Verification Pilot</h2>
+            <h2 style={{ ...sectionHead, textAlign: 'center', marginBottom: 12 }}>Originary Evidence Pilot</h2>
             <p style={{ textAlign: 'center', fontSize: 15, lineHeight: 1.6, color: PALETTE.muted, margin: '0 0 28px' }}>
               A fixed-scope engagement that instruments one production workflow end to end. Scoped quote.
             </p>

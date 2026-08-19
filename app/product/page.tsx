@@ -104,8 +104,8 @@ export default function ProductPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Verification pilot"
-        title="Originary Verification Pilot"
-        sub="From signed records to a reviewable evidence case. Originary helps teams issue records at consequential workflow boundaries, verify supplied evidence under explicit key policies, and package the relevant artifacts for another organization, through a fixed-scope verification pilot."
+        title="Add verifiable records to one real workflow."
+        sub="Pick an agent, API, MCP tool or gateway action your team already needs to review. Originary helps you issue the record, verify it and hand it to the people who need it."
         display
         aside={
           <RecordCard

@@ -60,8 +60,8 @@ export default function AiGatewayPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Gateway evidence"
-        title="Export a gateway decision without exporting your gateway logs."
-        sub="A gateway can issue a signed record for the terminal decision it directly observed. A customer, auditor, or partner can later verify that bounded statement under an explicit issuer policy."
+        title="Keep a record of why the gateway allowed or blocked a request."
+        sub="Record important allow, deny, redaction and review decisions so security teams or customers can inspect them later without access to the gateway's private logs."
         display
         aside={
           <RecordCard

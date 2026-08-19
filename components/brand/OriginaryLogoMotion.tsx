@@ -14,6 +14,8 @@
  *   wordmark viewBox "201 644 7487 1918"
  *   symbol   viewBox "161 998 1104 1196"
  *   paths placed with translate(x,2124) scale(1,-1)
+ *
+ * v3 proprietary revision: i dots are true circles Ø211; origin point Ø292 (display master).
  */
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
@@ -26,10 +28,10 @@ const WORDMARK_VIEW_BOX = "201 644 7487 1918";
 const SYMBOL_VIEW_BOX = "161 998 1104 1196";
 
 const flip = (x: number) => `translate(${x},2124) scale(1,-1)`;
-/** The origin point: optical center of the o at (712.5, 1596), diameter 246u. */
-const ORIGIN_POINT = "translate(488,2946.5) scale(1,-1)";
+/** The origin point: optical center of the o at (712.5, 1596), diameter 292u (display master). */
+const ORIGIN_POINT = "translate(488.5,2946.5) scale(1,-1)";
 
-/** Timing and easing, per the identity spec. */
+/** Timing and easing constants for the phase sequence. */
 const EJECT_MS = 380; // ⊙ → 01
 const SWAP_MS = 400; // 01 → 10
 const AT_FORMATION = 0; // ⊙ → 01
@@ -47,7 +49,8 @@ const D = {
   o: "M573 -24C875 -24 1078 201 1078 526C1078 853 875 1080 573 1080C271 1080 67 853 67 526C67 201 271 -24 573 -24ZM573 158C392 158 281 301 281 526C281 753 393 898 573 898C753 898 865 753 865 526C865 302 754 158 573 158Z",
   r: "M119 0H330V645C330 802 424 881 543 881C588 881 610 876 622 872L638 1064C633 1066 606 1069 578 1069C448 1069 368 1002 327 890H321V1056H119Z",
   iStem: "M119 0H330V1056H119Z",
-  iDot: "M224.5 1227.5C292.4 1227.5 347.5 1282.6 347.5 1350.5C347.5 1418.4 292.4 1473.5 224.5 1473.5C156.6 1473.5 101.5 1418.4 101.5 1350.5C101.5 1282.6 156.6 1227.5 224.5 1227.5Z",
+  iDot: "M224.5 1245C282.77 1245 330 1292.23 330 1350.5C330 1408.77 282.77 1456 224.5 1456C166.23 1456 119 1408.77 119 1350.5C119 1292.23 166.23 1245 224.5 1245Z",
+  point: "M224.5 1204.5C305.13 1204.5 370.5 1269.87 370.5 1350.5C370.5 1431.13 305.13 1496.5 224.5 1496.5C143.87 1496.5 78.5 1431.13 78.5 1350.5C78.5 1269.87 143.87 1204.5 224.5 1204.5Z",
   g: "M580 -432C846 -432 1061 -306 1061 14V1056H853V895H852C781 1021 661 1077 524 1077C251 1077 67 854 67 531C67 209 250 -14 525 -14C664 -14 778 43 851 166H852V6C852 -165 750 -254 580 -254C455 -254 362 -202 336 -102H119C147 -312 321 -432 580 -432ZM568 167C398 167 281 295 281 532C281 769 398 897 568 897C748 897 864 753 864 532C864 311 748 167 568 167Z",
   n: "M330 608C330 806 443 893 585 893C729 893 816 804 816 632V0H1027V658C1027 934 862 1077 645 1077C506 1077 398 1017 326 897V1056H119V0H330Z",
   a: "M441 -17C623 -17 709 65 753 150H757V0H965V724C965 939 806 1077 546 1077C282 1077 111 935 101 734H308C316 831 408 904 543 904C673 900 752 830 752 728V719C752 642 690 644 492 620C277 595 75 543 75 302C75 91 231 -17 441 -17ZM484 153C361 153 285 207 285 298C285 405 389 446 504 463C616 479 728 496 757 519V395C757 265 670 153 484 153Z",
@@ -64,7 +67,7 @@ const EX_STEM_X = STEM_FORM_X - 1201; // 88
 const EJECT_X = STEM_FORM_X - 488; // 801
 const EJECT_SCALE_Y = 3.6;
 /** Optical center of the point inside the o. */
-const POINT_CENTRE = "712.5px 1596px";
+const POINT_CENTRE = "713px 1596px";
 
 const CASCADE: { d: string; x: number }[] = [
   { d: D.r, x: SLOT.r1 },
@@ -176,7 +179,7 @@ export function OriginaryLogoMotion({
     return (
       <svg role="img" aria-label={ariaLabel} viewBox={SYMBOL_VIEW_BOX} className={className} xmlns="http://www.w3.org/2000/svg" fill={fill}>
         <path d={D.o} transform={flip(SLOT.o)} />
-        <path d={D.iDot} transform={ORIGIN_POINT} />
+        <path d={D.point} transform={ORIGIN_POINT} />
       </svg>
     );
   }
@@ -222,7 +225,7 @@ export function OriginaryLogoMotion({
             : "none",
         }}
       >
-        <path d={D.iDot} transform={ORIGIN_POINT} />
+        <path d={D.point} transform={ORIGIN_POINT} />
       </g>
 
       {/* the stem: the 1, and the i */}
@@ -280,7 +283,7 @@ export const WORDMARK_GEOMETRY = {
   paths: [
     { d: D.o, x: SLOT.o },
     // the origin point sits at the center of the o, so it carries its own transform
-    { d: D.iDot, x: SLOT.o, t: ORIGIN_POINT },
+    { d: D.point, x: SLOT.o, t: ORIGIN_POINT },
     { d: D.r, x: SLOT.r1 },
     { d: D.iStem, x: SLOT.i1 },
     { d: D.iDot, x: SLOT.i1 },

@@ -66,8 +66,8 @@ export default function VerifyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Local verification"
-        title="Verify a Signed Record"
-        sub="Verify a signed record locally. Supply a PEAC record and the public key or JWKS you intend to trust. The verifier checks the signature and record profile without uploading the record to Originary."
+        title="Check a signed record."
+        sub="Load a PEAC record and the public key you expect. Verification runs locally and the record is not uploaded to Originary."
         display
         aside={
           <Terminal

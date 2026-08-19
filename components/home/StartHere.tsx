@@ -1,88 +1,103 @@
 import Link from 'next/link'
-import { MAX_W, PAGE_PAD, PALETTE } from './palette'
+import { MAX_W, PAGE_PAD } from './palette'
+import { SectionTitle } from './atoms/Mono'
 import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
 
 /**
- * The principal paths through the site, stated once as plain crawlable links.
- * Anchor text matches each destination's page name so the navigation hierarchy
- * reads the same way to a person and to a search engine.
+ * Four concrete jobs a visitor might have today, each landing on the page
+ * that actually does that job. A row of lighter-weight links below covers
+ * the remaining principal paths without competing with the cards.
  */
-const PATHS: Array<{ label: string; href: string; note: string; mark: MarkName }> = [
+const CARDS: Array<{ title: string; mark: MarkName; body: string; cta: string; href: string }> = [
   {
-    label: 'Verification Pilot',
-    href: '/product',
-    note: 'The fixed-scope engagement: issue, verify, assess, hand off.',
-    mark: 'target',
-  },
-  {
-    label: 'Verify a Record',
-    href: '/verify',
-    note: 'Check a signed record against a key you supply. Nothing is uploaded.',
+    title: 'Verify a record',
     mark: 'sealCheck',
+    body: 'Check a signed record locally.',
+    cta: 'Open verifier',
+    href: '/verify',
   },
   {
-    label: 'PEAC Protocol',
-    href: '/peac',
-    note: 'The open Apache-2.0 record format and verification model underneath.',
-    mark: 'diamond',
+    title: 'Add records to MCP',
+    mark: 'link',
+    body: 'Create signed records for important tool calls.',
+    cta: 'MCP quickstart',
+    href: '/mcp',
   },
   {
-    label: 'How It Works',
+    title: 'Add records to an API',
+    mark: 'braces',
+    body: 'Issue records alongside API interactions.',
+    cta: 'API quickstart',
     href: '/how-it-works',
-    note: 'Observe, issue, verify, hand off, in detail.',
-    mark: 'pipeline',
   },
   {
-    label: 'Record Gallery',
-    href: '/records',
-    note: 'Every record family, with what each one does and does not establish.',
-    mark: 'ledger',
+    title: 'Record gateway decisions',
+    mark: 'valve',
+    body: 'Record allow, deny, redaction and review decisions.',
+    cta: 'Gateway guide',
+    href: '/ai-gateway',
   },
-  {
-    label: 'PEAC Protocol Downloads',
-    href: '/downloads',
-    note: 'Source, CLI, SDK packages and offline verification tooling.',
-    mark: 'chainSteps',
-  },
+]
+
+const LINKS: Array<{ label: string; href: string }> = [
+  { label: 'Browse all records', href: '/records' },
+  { label: 'Agent payments', href: '/agentic-commerce' },
+  { label: 'PEAC docs', href: '/peac' },
+  { label: 'GitHub', href: 'https://github.com/peacprotocol/peac' },
 ]
 
 export function StartHere() {
   return (
     <section
-      aria-labelledby="start-here-heading"
+      id="start-here"
       style={{
         maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
         margin: '0 auto',
         padding: `40px ${PAGE_PAD} 64px ${PAGE_PAD}`,
       }}
     >
-      <h2 id="start-here-heading" className="sh-heading">
-        Start here
-      </h2>
-      <p className="sh-sub">
-        The six paths most people take through Originary and PEAC Protocol.
-      </p>
-      <ul className="sh-grid">
-        {PATHS.map((p) => (
-          <li key={p.href}>
-            <Link href={p.href} className="sh-item">
-              <span className="sh-mark" aria-hidden>
-                <MarkGlyph name={p.mark} size={19} />
+      <SectionTitle title="Start here" body="Choose what you want to do." />
+      <ul className="sth-grid" style={{ marginTop: 44 }} role="list">
+        {CARDS.map((c) => (
+          <li key={c.title}>
+            <Link href={c.href} className="sth-card">
+              <span className="sth-mark" aria-hidden>
+                <MarkGlyph name={c.mark} size={20} />
               </span>
-              <span className="sh-text">
-                <span className="sh-label">{p.label}</span>
-                <span className="sh-note">{p.note}</span>
-              </span>
-              <span className="sh-arrow" aria-hidden>
-                &#8594;
+              <p className="sth-title">{c.title}</p>
+              <p className="sth-body">{c.body}</p>
+              <span className="sth-cta home-arrow-link">
+                {c.cta}
+                <Arrow />
               </span>
             </Link>
           </li>
         ))}
       </ul>
-      <p className="sh-foot" style={{ color: PALETTE.faint }}>
-        Looking for something specific? <Link href="/contact">Contact Originary</Link>.
-      </p>
+      <div className="sth-links">
+        {LINKS.map((l) => {
+          const external = l.href.startsWith('http')
+          return (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="sth-textlink"
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener noreferrer' : undefined}
+            >
+              {l.label}
+            </Link>
+          )
+        })}
+      </div>
     </section>
+  )
+}
+
+function Arrow() {
+  return (
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden>
+      <path d="M1 5h8M5.5 1.5L9 5l-3.5 3.5" stroke="currentColor" strokeWidth="1.25" />
+    </svg>
   )
 }

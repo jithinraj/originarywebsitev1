@@ -67,7 +67,7 @@ export default function ContactPage() {
       <Breadcrumbs current="Contact Originary" href="/contact" />
       <PageHero
         eyebrow="contact"
-        title="Contact Originary"
+        title="What action do you need a better record of?"
         sub="Talk to Originary. Tell us the workflow, the system that emits it, who needs to verify it, and why logs are not enough."
         align="center"
       />

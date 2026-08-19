@@ -35,21 +35,10 @@ const LEGEND: Array<{ tone: StatusName; label: string }> = [
   { tone: 'missing', label: 'not supplied' },
 ]
 
-export function EvidenceCasePanel() {
+export function EvidenceCasePanel({ embedded = false }: { embedded?: boolean } = {}) {
   const established = ROWS.filter((r) => r.tone === 'established').length
-  return (
-    <section
-      style={{
-        maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
-        margin: '0 auto',
-        padding: `40px ${PAGE_PAD} 88px ${PAGE_PAD}`,
-      }}
-    >
-      <SectionTitle
-        title="One evidence case, with its gaps stated."
-        body="Verification separates what the supplied records establish from what is missing, conflicting, or not evaluated. A complete happy path would misrepresent what real evidence looks like."
-      />
-
+  const body = (
+    <>
       <div className="home-case-layout">
         <div className="home-case-sheet">
           <div className="home-case-head">
@@ -133,6 +122,26 @@ export function EvidenceCasePanel() {
           </Link>
         </aside>
       </div>
+    </>
+  )
+
+  if (embedded) {
+    return body
+  }
+
+  return (
+    <section
+      style={{
+        maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
+        margin: '0 auto',
+        padding: `40px ${PAGE_PAD} 88px ${PAGE_PAD}`,
+      }}
+    >
+      <SectionTitle
+        title="One evidence case, with its gaps stated."
+        body="Verification separates what the supplied records establish from what is missing, conflicting, or not evaluated. A complete happy path would misrepresent what real evidence looks like."
+      />
+      {body}
     </section>
   )
 }

@@ -1,12 +1,12 @@
 import { ImageResponse } from '@vercel/og'
 import { readFile } from 'fs/promises'
-import { join } from 'path'
+import { fileURLToPath } from 'url'
 
 export const runtime = 'nodejs'
 
 async function getFont() {
   try {
-    const fontPath = join(process.cwd(), 'public', 'fonts', 'InterDisplay-SemiBold.otf')
+    const fontPath = fileURLToPath(new URL('../../public/fonts/InterDisplay-SemiBold.otf', import.meta.url))
     return await readFile(fontPath)
   } catch {
     const res = await fetch('https://rsms.me/inter/font-files/InterDisplay-SemiBold.otf')
@@ -32,7 +32,8 @@ const ROWS: Array<[string, string]> = [
 
 export async function GET() {
   const fontData = await getFont()
-  const wordmark = await readFile(join(process.cwd(), 'public', 'og-wordmark.png'))
+  const wordmarkPath = fileURLToPath(new URL('../../public/og-wordmark.png', import.meta.url))
+  const wordmark = await readFile(wordmarkPath)
   const wordmarkSrc = `data:image/png;base64,${wordmark.toString('base64')}`
 
   return new ImageResponse(

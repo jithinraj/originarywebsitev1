@@ -17,37 +17,43 @@ const NAV: NavEntry[] = [
     kind: 'menu',
     label: 'Product',
     items: [
-      { label: 'Verification Pilot', href: '/product' },
-      { label: 'Evidence case', href: '/evidence-case' },
-      { label: 'Plans and pilot', href: '/pricing' },
+      { label: 'How it works', href: '/how-it-works' },
+      { label: 'Records', href: '/records' },
+      { label: 'Verify', href: '/verify' },
+      { label: 'Pricing', href: '/pricing' },
     ],
   },
   {
     kind: 'menu',
     label: 'Use cases',
     items: [
-      { label: 'Paid MCP and APIs', href: '/mcp' },
-      { label: 'Gateway decisions', href: '/ai-gateway' },
-      { label: 'Audit and incident handoff', href: '/audit-incident-handoff' },
-      { label: 'AI compliance evidence', href: '/ai-compliance' },
-      { label: 'Record Gallery', href: '/records' },
+      { label: 'MCP', href: '/mcp' },
+      { label: 'AI gateways', href: '/ai-gateway' },
+      { label: 'Audit & compliance', href: '/ai-compliance' },
+      { label: 'Agent payments', href: '/agentic-commerce' },
     ],
   },
   {
     kind: 'menu',
     label: 'Developers',
     items: [
-      { label: 'How It Works', href: '/how-it-works' },
-      { label: 'Verify a Record', href: '/verify' },
-      { label: 'PEAC Protocol', href: '/peac' },
-      { label: 'PEAC Protocol Downloads', href: '/downloads' },
+      { label: 'Start here', href: '/#start-here' },
       { label: 'Documentation', href: 'https://www.peacprotocol.org/docs', external: true },
       { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
     ],
   },
   { kind: 'link', label: 'Downloads', href: '/downloads' },
   { kind: 'link', label: 'PEAC Protocol', href: '/peac' },
-  { kind: 'link', label: 'Trust', href: '/trust' },
+  {
+    kind: 'menu',
+    label: 'Company',
+    items: [
+      { label: 'About', href: '/about' },
+      { label: 'Trust', href: '/trust' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'Contact', href: '/contact' },
+    ],
+  },
 ]
 
 const topLinkStyle = {
@@ -333,7 +339,7 @@ export function Nav() {
               transition: 'background 160ms ease, color 160ms ease',
             }}
           >
-            Start a pilot
+            Discuss a workflow
           </Link>
           <button
             ref={toggleRef}
@@ -479,7 +485,7 @@ export function Nav() {
                 border: `1px solid ${PALETTE.ink}`,
               }}
             >
-              Start a pilot
+              Discuss a workflow
             </Link>
           </div>
         </div>

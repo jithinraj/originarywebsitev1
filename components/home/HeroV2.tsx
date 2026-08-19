@@ -19,14 +19,13 @@ import { useReducedMotion } from './motion/useReducedMotion'
 import { BitField } from './motion/BitField'
 
 const SUPPORTED: Array<{ label: string; mark: MarkName }> = [
+  { label: 'API calls', mark: 'braces' },
+  { label: 'MCP tools', mark: 'link' },
+  { label: 'Agent actions', mark: 'agentFrame' },
+  { label: 'Gateway decisions', mark: 'valve' },
   { label: 'Payments', mark: 'coin' },
   { label: 'Approvals', mark: 'sealCheck' },
-  { label: 'Access decisions', mark: 'valve' },
-  { label: 'API calls', mark: 'braces' },
-  { label: 'Tool runs', mark: 'link' },
-  { label: 'Changes', mark: 'pipeline' },
-  { label: 'Deletions', mark: 'ledger' },
-  { label: 'Handoffs', mark: 'chainSteps' },
+  { label: 'Provisioning', mark: 'pipeline' },
 ]
 
 const PROOF: Array<{ label: string; mark: MarkName }> = [
@@ -49,17 +48,15 @@ const CHIPS: Chip[] = [
 ]
 
 const OUTPUTS: Output[] = [
-  { id: 'developer',    label: 'Developer verifies',    meta: 'debugging, incident review' },
-  { id: 'counterparty', label: 'Counterparty verifies', meta: 'dispute, delivery, trust' },
-  { id: 'audit',        label: 'Auditor reviews',       meta: 'compliance, assurance' },
-  { id: 'bundle',       label: 'Bundle exports',        meta: 'portable evidence pack' },
+  { id: 'team',          label: 'Your team verifies',              meta: 'debugging · incident review' },
+  { id: 'counterparty',  label: 'Customer or partner verifies',    meta: 'shared records · disputes' },
+  { id: 'audit',         label: 'Security or audit reviews',       meta: 'audit · compliance review' },
 ]
 
 /* Stage coordinate y-centers - mirrored in CSS chip top offsets. */
 const LEFT_YS = [20, 68, 116, 164, 212, 260]
-const RIGHT_YS = [38, 106, 174, 242]
+const RIGHT_YS = [56, 140, 224]
 const DIAMOND_CY = 140
-const BUNDLE_IDX = 3
 
 type Phase = 'observe' | 'sign' | 'verify' | 'export' | 'rest'
 const PHASE_ORDER: Phase[] = ['observe', 'sign', 'verify', 'export', 'rest']
@@ -73,11 +70,11 @@ const PHASE_MS: Record<Phase, number> = {
 
 function leftPath(i: number) {
   const y = LEFT_YS[i]
-  return `M 0 ${y} C 50 ${y}, 50 ${DIAMOND_CY}, 100 ${DIAMOND_CY}`
+  return `M 0 ${y} C 50 ${y}, 50 ${DIAMOND_CY}, 106 ${DIAMOND_CY}`
 }
 function rightPath(i: number) {
   const y = RIGHT_YS[i]
-  return `M 0 ${DIAMOND_CY} C 50 ${DIAMOND_CY}, 50 ${y}, 100 ${y}`
+  return `M 0 ${DIAMOND_CY} C 50 ${DIAMOND_CY}, 50 ${y}, 106 ${y}`
 }
 
 export function HeroV2() {
@@ -90,7 +87,7 @@ export function HeroV2() {
     if (reduced) {
       // Static resting state with one input and the canonical export highlighted.
       setChipIdx(2)
-      setOutIdx(BUNDLE_IDX)
+      setOutIdx(2)
       setPhase('export')
       return
     }
@@ -106,9 +103,6 @@ export function HeroV2() {
         setChipIdx(cycle % CHIPS.length)
         setOutIdx(cycle % OUTPUTS.length)
       }
-      if (next === 'export') {
-        setOutIdx(BUNDLE_IDX)
-      }
       step += 1
       if (next === 'rest') cycle += 1
       timeoutId = setTimeout(tick, PHASE_MS[next])
@@ -122,8 +116,7 @@ export function HeroV2() {
 
   const chipActive = (i: number) =>
     i === chipIdx && (phase === 'observe' || phase === 'sign' || phase === 'verify' || phase === 'export')
-  const outActive = (i: number) =>
-    (phase === 'verify' && i === outIdx) || (phase === 'export' && i === BUNDLE_IDX)
+  const outActive = (i: number) => (phase === 'verify' || phase === 'export') && i === outIdx
   const diamondActive = phase === 'sign' || phase === 'verify' || phase === 'export'
   const leftLineDrawing = phase === 'observe' || phase === 'sign'
   const rightLineDrawing = phase === 'verify' || phase === 'export'
@@ -145,19 +138,18 @@ export function HeroV2() {
           Agent actions, on the record.
         </h1>
         <p className="cin-rise" style={{ ...heroSub, ['--cin-i' as string]: 2 }}>
-          Originary creates portable signed records for agent actions, API calls, MCP tool runs,
-          gateway decisions, payments, approvals and provisioning. Your team, customers, partners
-          and auditors can verify those records without access to the source system&apos;s private
-          logs.
+          Turn important agent, API and tool actions into signed records you can verify later and
+          share without exposing private logs. Use them to investigate incidents, answer customers
+          and support audits.
         </p>
         <div className="cin-rise" style={{ ...ctas, ['--cin-i' as string]: 3 }}>
-          <Link href="/contact" className="home-arrow-link" style={btnPrimary}>
-            Start with one workflow
-            <Arrow />
+          <Link href="#see-a-record" className="home-arrow-link" style={btnPrimary}>
+            See a record
+            <Arrow down />
           </Link>
-          <Link href="/verify" className="home-arrow-link" style={btnSecondary}>
-            Verify a sample
-            <Arrow />
+          <Link href="#start-here" className="home-arrow-link" style={btnSecondary}>
+            Start here
+            <Arrow down />
           </Link>
         </div>
         <ul className="cin-rise home-hero-strip" style={{ ['--cin-i' as string]: 4 }}>
@@ -240,10 +232,11 @@ export function HeroV2() {
                         d={leftPath(i)}
                         className={`home-herov2-line home-herov2-line-left ${active ? 'is-drawing' : ''}`}
                         vectorEffect="non-scaling-stroke"
+                        pathLength={100}
                       />
                       {active && !reduced ? (
                         <circle r="2.4" fill="#2c8a55" opacity="0.9">
-                          <animateMotion dur="1.5s" repeatCount="indefinite" path={leftPath(i)} />
+                          <animateMotion dur="0.9s" repeatCount="1" fill="freeze" path={leftPath(i)} />
                         </circle>
                       ) : null}
                     </g>
@@ -313,17 +306,18 @@ export function HeroV2() {
                 </defs>
                 <ellipse cx="0" cy="140" rx="100" ry="120" fill="url(#herov2-glow-r)" />
                 {OUTPUTS.map((_, i) => {
-                  const active = rightLineDrawing && (phase === 'export' ? i === BUNDLE_IDX : i === outIdx)
+                  const active = rightLineDrawing && i === outIdx
                   return (
                     <g key={`r-${i}`}>
                       <path
                         d={rightPath(i)}
                         className={`home-herov2-line home-herov2-line-right ${active ? 'is-drawing' : ''}`}
                         vectorEffect="non-scaling-stroke"
+                        pathLength={100}
                       />
                       {active && !reduced ? (
                         <circle r="2.4" fill="#2c8a55" opacity="0.9">
-                          <animateMotion dur="1.5s" repeatCount="indefinite" path={rightPath(i)} />
+                          <animateMotion dur="0.9s" repeatCount="1" fill="freeze" path={rightPath(i)} />
                         </circle>
                       ) : null}
                     </g>
@@ -340,10 +334,8 @@ export function HeroV2() {
               {OUTPUTS.map((o, i) => (
                 <li
                   key={o.id}
-                  className={`home-herov2-output ${outActive(i) ? 'is-active' : ''} ${
-                    i === BUNDLE_IDX ? 'is-canonical' : ''
-                  }`}
-                  style={{ top: `${RIGHT_YS[i] - 18}px` }}
+                  className={`home-herov2-output ${outActive(i) ? 'is-active' : ''}`}
+                  style={{ top: `${RIGHT_YS[i] - 23}px` }}
                   aria-current={outActive(i) ? 'step' : undefined}
                 >
                   <strong>{o.label}</strong>
@@ -365,6 +357,10 @@ export function HeroV2() {
                 </li>
               ))}
             </ol>
+
+            <p className="home-herov2-export" aria-hidden>
+              Export related records as a portable evidence bundle.
+            </p>
           </div>
 
           <p
@@ -438,20 +434,20 @@ export function HeroV2() {
             <span className="home-herov2-mstep-num">3</span>
             <div>
               <p className="home-herov2-mstep-title">Verified outside your system</p>
-              <p className="home-herov2-mstep-sub">counterparty &middot; audit &middot; bundle &middot; offline</p>
+              <p className="home-herov2-mstep-sub">your team &middot; customer or partner &middot; security or audit</p>
             </div>
           </div>
           <ol className="home-herov2-mobile-chips">
-            {OUTPUTS.map((o, i) => (
-              <li
-                key={o.id}
-                className={`home-herov2-output ${i === BUNDLE_IDX ? 'is-canonical is-active' : ''}`}
-              >
+            {OUTPUTS.map((o) => (
+              <li key={o.id} className="home-herov2-output">
                 <strong>{o.label}</strong>
                 <small>{o.meta}</small>
               </li>
             ))}
           </ol>
+          <p className="home-herov2-export-m">
+            Export related records as a portable evidence bundle.
+          </p>
 
           <p
             className={`home-herov2-tagline ${phase === 'export' || phase === 'rest' ? 'is-revealed' : ''}`}

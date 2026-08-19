@@ -169,8 +169,8 @@ export default function RecordsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Record gallery"
-        title="Record Gallery"
-        sub="See exactly what each issuing system reported. Every PEAC record is a bounded signed statement from one issuer. Browse the record families, verify a sample, and inspect the limits of each claim."
+        title="Signed records for the actions your software takes."
+        sub="APIs, MCP tools, agents, gateways, payments and provisioning use the same core record model, making the records easier to carry and verify across systems."
         display
         aside={<JumpIndex items={RECORDS_JUMP} />}
         strip={['Record gallery', '06 workflows', 'One primitive', 'Verifies offline']}

@@ -1,7 +1,7 @@
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { Mono } from './atoms/Mono'
 
-export function Divider({ eyebrow }: { eyebrow: string }) {
+export function Divider({ eyebrow }: { eyebrow?: string }) {
   return (
     <div
       style={{
@@ -19,13 +19,15 @@ export function Divider({ eyebrow }: { eyebrow: string }) {
           gap: 12,
         }}
       >
-        <Mono
-          size={11.5}
-          color="#5a5346"
-          style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
-        >
-          {eyebrow}
-        </Mono>
+        {eyebrow ? (
+          <Mono
+            size={11.5}
+            color="#5a5346"
+            style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
+          >
+            {eyebrow}
+          </Mono>
+        ) : null}
       </div>
     </div>
   )

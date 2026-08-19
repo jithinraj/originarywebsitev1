@@ -78,8 +78,8 @@ export default function ProvisioningRecordsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="provisioning records"
-        title="Verify who provisioned what, when, and under which policy."
-        sub="Agents and pipelines now create accounts, rotate credentials, set budgets, and ship deployments. Each console keeps its own log. Originary issues a signed record per provisioning event, so a customer, auditor, or platform team can verify the change without access to your consoles."
+        title="Keep a record when automation changes your infrastructure."
+        sub="Accounts created. Credentials rotated. Resources deployed. Subscriptions changed. Keep a signed record of what the system reported changing and when."
         display
         aside={
           <RecordCard

@@ -57,8 +57,8 @@ export default function AuditIncidentHandoffPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Audit and incident handoff"
-        title="Evidence a reviewer can retain, without a copy of your systems."
-        sub="Give a customer, security reviewer, auditor, or partner evidence it can verify outside the system that produced it. Package selected records and native artifacts into a bounded, portable case."
+        title="Give the reviewer the records, not access to your systems."
+        sub="Package the relevant signed records for an incident, customer review or audit so another party can inspect them separately."
         display
         aside={
           <RecordCard

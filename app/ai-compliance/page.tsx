@@ -312,8 +312,8 @@ export default function AiCompliancePage() {
 
       <PageHero
         eyebrow="AI COMPLIANCE EVIDENCE"
-        title="Make AI actions verifiable beyond your own logs."
-        sub="Originary turns selected agent actions, API calls, MCP tool runs, gateway decisions, approvals, payments and provisioning changes into portable signed records. Compliance, risk, security and audit teams can verify what each issuing system reported without access to its private logs or dependence on an Originary service."
+        title="Keep better records for AI audits and reviews."
+        sub="Record important automated actions as they happen so reviewers have something more useful than screenshots and reconstructed timelines."
         display
         strip={['Built on PEAC Protocol', 'Open source', 'Offline verification', 'Self-hostable']}
         aside={
