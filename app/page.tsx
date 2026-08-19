@@ -4,17 +4,15 @@ import {
   HomeFooter,
   Divider,
   HeroV2,
-  InteropMarquee,
-  ProofStrip,
-  Problem,
-  ProductSystem,
-  EvidenceBoundary,
-  EvidenceCasePanel,
+  WhenThisMatters,
+  RecordVerifyShare,
   RecordGallery,
+  VerificationLimits,
   StartHere,
-  UseCases,
-  BuiltOnPEAC,
-  DemoCTA,
+  LogsStayPrivate,
+  ProtocolSimple,
+  InteropMarquee,
+  EndCTA,
   Reveal,
   PALETTE,
 } from '@/components/home'
@@ -23,10 +21,10 @@ import { originaryVerificationPilot, peacProtocol } from '@/lib/structured-data/
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Verifiable Records for Agents, APIs & Gateways',
+    absolute: 'Originary | Verifiable Records for Agent Actions',
   },
   description:
-    'Create signed records for agent actions, API calls, MCP tool runs, gateway decisions, payments, and provisioning. Verify them without sharing internal logs.',
+    'Originary gives agent, API, MCP and gateway actions signed records you can verify later, share with customers or auditors, and use without exposing your logs.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
@@ -34,9 +32,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Originary | Verifiable Records for Agents, APIs & Gateways',
+    title: 'Originary | Verifiable Records for Agent Actions',
     description:
-      'Create signed records for agent actions, API calls, MCP tool runs, gateway decisions, payments, and provisioning. Verify them without sharing internal logs.',
+      'Originary gives agent, API, MCP and gateway actions signed records you can verify later, share with customers or auditors, and use without exposing your logs.',
     url: 'https://www.originary.xyz',
     type: 'website',
     locale: 'en_US',
@@ -52,9 +50,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Verifiable Records for Agents, APIs & Gateways',
+    title: 'Originary | Verifiable Records for Agent Actions',
     description:
-      'Create signed records for agent actions, API calls, MCP tool runs, gateway decisions, payments, and provisioning. Verify them without sharing internal logs.',
+      'Originary gives agent, API, MCP and gateway actions signed records you can verify later, share with customers or auditors, and use without exposing your logs.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -96,41 +94,36 @@ export default function Page() {
           <HeroV2 />
           <InteropMarquee />
           <Reveal threshold={0.12}>
-            <Divider eyebrow="start here" />
-            <StartHere />
+            <Divider />
+            <WhenThisMatters />
           </Reveal>
           <Reveal threshold={0.12}>
-            <Divider eyebrow="the failure" />
-            <Problem />
+            <Divider eyebrow="how it works" />
+            <RecordVerifyShare />
           </Reveal>
           <Reveal threshold={0.12}>
-            <Divider eyebrow="the evidence case" />
-            <EvidenceCasePanel />
+            <Divider />
+            <LogsStayPrivate />
           </Reveal>
           <Reveal threshold={0.12}>
-            <Divider eyebrow="the product" />
-            <ProductSystem />
-          </Reveal>
-          <Reveal threshold={0.12}>
-            <Divider eyebrow="review workflows" />
-            <UseCases />
-          </Reveal>
-          <Reveal threshold={0.12}>
-            <Divider eyebrow="record gallery" />
+            <Divider eyebrow="records" />
             <RecordGallery />
           </Reveal>
           <Reveal threshold={0.12}>
-            <Divider eyebrow="the boundary" />
-            <EvidenceBoundary />
+            <Divider />
+            <VerificationLimits />
           </Reveal>
           <Reveal threshold={0.12}>
-            <Divider eyebrow="open foundation" />
-            <BuiltOnPEAC />
-            <ProofStrip />
+            <Divider eyebrow="open source" />
+            <ProtocolSimple />
           </Reveal>
           <Reveal threshold={0.12}>
-            <Divider eyebrow="start with one action" />
-            <DemoCTA />
+            <Divider />
+            <StartHere />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Divider />
+            <EndCTA />
           </Reveal>
         </main>
         <HomeFooter />

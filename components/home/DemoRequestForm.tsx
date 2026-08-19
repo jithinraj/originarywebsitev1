@@ -4,12 +4,16 @@ import { useState, type FormEvent } from 'react'
 import { PALETTE } from './palette'
 import { SANS, MONO } from './typography'
 
-const INTENT_OPTIONS = [
-  { value: 'pilot', label: 'Start a pilot' },
-  { value: 'security_procurement', label: 'Security or procurement' },
-  { value: 'protocol_standards', label: 'Protocol or standards' },
-  { value: 'integration_partnership', label: 'Integration or partnership' },
-  { value: 'press_speaking', label: 'Press or speaking' },
+const ACTOR_OPTIONS = ['Agent', 'MCP server', 'API', 'Gateway', 'Automated workflow', 'Other']
+
+const REVIEWER_OPTIONS = [
+  'My team',
+  'Customer',
+  'Partner',
+  'Security',
+  'Auditor / compliance',
+  'Another system',
+  'Other',
 ]
 
 type SubmitState = 'idle' | 'sending' | 'sent' | 'error'
@@ -26,12 +30,12 @@ export function DemoRequestForm({
     const form = event.currentTarget
     const formData = new FormData(form)
     const fields = {
-      intent: String(formData.get('intent') ?? 'pilot'),
       email: String(formData.get('email') ?? '').trim(),
       company: String(formData.get('company') ?? '').trim(),
       workflow: String(formData.get('workflow') ?? '').trim(),
-      deployment: String(formData.get('deployment') ?? '').trim(),
-      message: String(formData.get('verification_need') ?? '').trim(),
+      reviewer: String(formData.get('reviewer') ?? '').trim(),
+      message: String(formData.get('message') ?? '').trim(),
+      current_tool: String(formData.get('current_tool') ?? '').trim(),
       website: String(formData.get('website') ?? ''),
     }
 
@@ -62,16 +66,15 @@ export function DemoRequestForm({
   }
 
   function openMailFallback(fields: Record<string, string>) {
-    const label = INTENT_OPTIONS.find((o) => o.value === fields.intent)?.label ?? 'Contact'
-    const subject = `Originary: ${label}`
+    const subject = `Originary: ${fields.workflow || 'Workflow'}`
     const body = [
-      `Intent: ${label}`,
       `Work email: ${fields.email}`,
-      `Company: ${fields.company}`,
-      `Workflow type: ${fields.workflow}`,
-      `Deployment model: ${fields.deployment}`,
+      `Company / project: ${fields.company}`,
+      `What takes the action?: ${fields.workflow}`,
+      `Who needs to review it?: ${fields.reviewer}`,
+      `What do you use today?: ${fields.current_tool}`,
       '',
-      'What needs to be verified?',
+      'What action matters?',
       fields.message,
     ].join('\n')
     window.location.href = `mailto:${destinationEmail}?subject=${encodeURIComponent(
@@ -96,16 +99,6 @@ export function DemoRequestForm({
         Tell us the workflow that needs verification.
       </div>
 
-      <Field label="What is this about?" htmlFor="demo-intent">
-        <select id="demo-intent" name="intent" defaultValue="pilot" className="home-demo-input home-demo-select">
-          {INTENT_OPTIONS.map((o) => (
-            <option key={o.value} value={o.value}>
-              {o.label}
-            </option>
-          ))}
-        </select>
-      </Field>
-
       <input
         type="text"
         name="website"
@@ -126,54 +119,59 @@ export function DemoRequestForm({
         />
       </Field>
 
-      <Field label="Company" htmlFor="demo-company">
+      <Field label="Company / project" htmlFor="demo-company">
         <input
           id="demo-company"
           name="company"
           type="text"
           autoComplete="organization"
-          required
           className="home-demo-input"
         />
       </Field>
 
-      <Field label="Workflow type" htmlFor="demo-workflow">
+      <Field label="What takes the action?" htmlFor="demo-workflow">
         <select
           id="demo-workflow"
           name="workflow"
-          defaultValue="API"
+          defaultValue={ACTOR_OPTIONS[0]}
           className="home-demo-input home-demo-select"
         >
-          <option>API</option>
-          <option>MCP</option>
-          <option>Commerce</option>
-          <option>Runtime</option>
-          <option>Not sure yet. Help us scope it.</option>
-          <option>Other</option>
+          {ACTOR_OPTIONS.map((o) => (
+            <option key={o}>{o}</option>
+          ))}
         </select>
       </Field>
 
-      <Field label="What needs to be verified?" htmlFor="demo-need">
+      <Field label="What action matters?" htmlFor="demo-need">
         <textarea
           id="demo-need"
-          name="verification_need"
+          name="message"
           rows={4}
           required
           className="home-demo-input home-demo-textarea"
         />
       </Field>
 
-      <Field label="Deployment model?" htmlFor="demo-deploy">
+      <Field label="Who needs to review it?" htmlFor="demo-reviewer">
         <select
-          id="demo-deploy"
-          name="deployment"
-          defaultValue="Not sure yet"
+          id="demo-reviewer"
+          name="reviewer"
+          defaultValue={REVIEWER_OPTIONS[0]}
           className="home-demo-input home-demo-select"
         >
-          <option>Open-source self-host</option>
-          <option>Supported self-host</option>
-          <option>Not sure yet</option>
+          {REVIEWER_OPTIONS.map((o) => (
+            <option key={o}>{o}</option>
+          ))}
         </select>
+      </Field>
+
+      <Field label="What do you use today?" htmlFor="demo-current-tool">
+        <input
+          id="demo-current-tool"
+          name="current_tool"
+          type="text"
+          className="home-demo-input"
+        />
       </Field>
 
       <button
@@ -197,7 +195,7 @@ export function DemoRequestForm({
           transition: 'opacity 160ms ease',
         }}
       >
-        {state === 'sending' ? 'Sending...' : 'Send to the team'}
+        {state === 'sending' ? 'Sending...' : 'Send workflow'}
       </button>
 
       <p role="status" aria-live="polite" style={{ margin: '10px 0 0', fontFamily: SANS, fontSize: 13, lineHeight: 1.5, color: state === 'error' ? '#9a3b2e' : PALETTE.success }}>

@@ -82,15 +82,17 @@ export default function About() {
           </Reveal>
 
           <Reveal delay={80}>
-            <h1 className="home-about-h1">About Originary</h1>
+            <h1 className="home-about-h1">We build the record layer for software that takes actions.</h1>
           </Reveal>
 
           <Reveal delay={260}>
             <p className="home-about-body">
-              Evidence software for machine actions that cross organizational boundaries. Originary
-              develops and supports software for issuing, verifying, and handing off
-              bounded evidence from APIs, MCP tools, agents, gateways, and payment systems. It
-              publishes and maintains PEAC Protocol as Apache-2.0 open-source software.
+              Originary develops PEAC Protocol and the tools around it.
+            </p>
+            <p className="home-about-body">
+              PEAC gives agents, APIs, tools, gateways and payment systems a
+              common way to issue portable signed records that can be
+              checked later.
             </p>
           </Reveal>
         </section>
@@ -142,7 +144,8 @@ export default function About() {
         <PageSection paddingTop={32} paddingBottom={64}>
           <Reveal>
             <p className="home-about-pull" style={{ maxWidth: 820, margin: '0 auto' }}>
-              Record locally. Verify across boundaries.
+              Software already acts across systems and companies. The record
+              of an important action should be able to travel too.
             </p>
           </Reveal>
         </PageSection>

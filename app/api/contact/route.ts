@@ -3,12 +3,14 @@ import { NextResponse } from 'next/server'
 
 export const runtime = 'nodejs'
 
-const INTENTS = new Set([
-  'pilot',
-  'security_procurement',
-  'protocol_standards',
-  'integration_partnership',
-  'press_speaking',
+const REVIEWERS = new Set([
+  'My team',
+  'Customer',
+  'Partner',
+  'Security',
+  'Auditor / compliance',
+  'Another system',
+  'Other',
 ])
 
 const MAX_BODY_BYTES = 16 * 1024
@@ -17,7 +19,7 @@ const MAX_COMPANY = 200
 const ALLOWED_ORIGINS = new Set(['https://www.originary.xyz', 'https://originary.xyz'])
 
 // In-memory fixed-window rate limit. Best-effort per warm instance; a shared
-// store (Upstash/Redis) is the production upgrade documented in the PR notes.
+// store (Upstash/Redis) would be needed for multi-instance deployments.
 const RATE = new Map<string, { count: number; reset: number }>()
 const WINDOW_MS = 60_000
 const MAX_PER_WINDOW = 5
@@ -81,26 +83,26 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true })
   }
 
-  const intent = String(body.intent ?? '')
   const email = String(body.email ?? '').trim()
   const company = String(body.company ?? '').trim()
   const message = String(body.message ?? '').trim()
   const workflow = String(body.workflow ?? '').trim()
-  const deployment = String(body.deployment ?? '').trim()
+  const reviewer = String(body.reviewer ?? '').trim()
+  const currentTool = String(body.current_tool ?? '').trim()
 
-  if (!INTENTS.has(intent)) {
-    return NextResponse.json({ ok: false, error: 'invalid_intent' }, { status: 400 })
-  }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) {
     return NextResponse.json({ ok: false, error: 'invalid_email' }, { status: 400 })
   }
-  if (!company || company.length > MAX_COMPANY) {
+  if (company.length > MAX_COMPANY) {
     return NextResponse.json({ ok: false, error: 'invalid_company' }, { status: 400 })
   }
   if (!message || message.length > MAX_FIELD) {
     return NextResponse.json({ ok: false, error: 'invalid_message' }, { status: 400 })
   }
-  const combined = [company, message, workflow, deployment].join('\n')
+  if (reviewer && !REVIEWERS.has(reviewer)) {
+    return NextResponse.json({ ok: false, error: 'invalid_reviewer' }, { status: 400 })
+  }
+  const combined = [company, message, workflow, reviewer, currentTool].join('\n')
   if (looksLikeSensitiveArtifact(combined)) {
     return NextResponse.json(
       { ok: false, error: 'sensitive_artifact', detail: 'Do not submit records, JWS strings, or keys.' },
@@ -114,20 +116,20 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: 'unconfigured' }, { status: 503 })
   }
 
-  // Idempotency key: stable per (email, intent, message) so retries de-dup.
+  // Idempotency key: stable per (email, workflow, message) so retries de-dup.
   const idempotencyKey = createHmac('sha256', process.env.CONTACT_WEBHOOK_SECRET ?? 'unsigned')
-    .update(`${email}|${intent}|${message}`)
+    .update(`${email}|${workflow}|${message}`)
     .digest('hex')
     .slice(0, 32)
 
   // Log delivery metadata only, never message contents or PII.
   const payload = {
     source: 'originary.xyz/contact',
-    intent,
     email,
     company,
     workflow,
-    deployment,
+    reviewer,
+    current_tool: currentTool,
     message,
     idempotency_key: idempotencyKey,
   }
@@ -153,7 +155,7 @@ export async function POST(request: Request) {
     })
     if (!res.ok) throw new Error(`webhook ${res.status}`)
   } catch {
-    console.error(`contact delivery failed intent=${intent} idem=${idempotencyKey}`)
+    console.error(`contact delivery failed workflow=${workflow} idem=${idempotencyKey}`)
     return NextResponse.json({ ok: false, error: 'delivery_failed' }, { status: 502 })
   }
 

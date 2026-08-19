@@ -632,8 +632,8 @@ export default function HowItWorksPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="how it works"
-        title="How Originary Works"
-        sub="Issue at the source. Verify outside it. Hand off the evidence. Originary uses PEAC records to preserve bounded statements from the systems that observed an action, then combines those statements with relevant native artifacts for another party."
+        title="Record the action. Check the record later."
+        sub="Your system signs selected facts about an action. The record can travel separately from the logs and service that created it."
         display
         aside={<JumpIndex items={HOW_IT_WORKS_JUMP} />}
         strip={['Observe', 'Issue', 'Verify', 'Hand off']}

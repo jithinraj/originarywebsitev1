@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { PageShell, PageHero, PageSection, Card, PALETTE } from '@/components/home'
+import { PageShell, PageHero, PageSection, Card, PALETTE, EvidenceCasePanel } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
 import { StepLabel, VerificationBoundary } from '@/components/specimens/parts'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
@@ -136,6 +136,8 @@ export default function EvidenceCasePage() {
           bundle and cannot itself be cryptographically verified.
         </p>
       </PageHero>
+
+      <EvidenceCasePanel />
 
       <PageSection paddingTop={0} paddingBottom={56}>
         <StepLabel>The scenario</StepLabel>

@@ -14,15 +14,17 @@ assembled into a bounded evidence case, so another organization can verify what
 each issuer reported and identify what evidence is missing, without access to
 private logs or an Originary-hosted verifier.
 
-Current protocol release: PEAC v0.16.3 "Gateway Decision Evidence", which adds
-a gateway decision evidence profile over the existing access-decision record,
-a runnable offline-verifiable example, and an integrator guide. The wire format
-is unchanged. Earlier evidence patterns remain available: paid resources, paid
-MCP tool records, linked counterparty acknowledgments, Merkle commitment
-helpers, external evidence anchoring, agent spend attribution, agent run
-lineage records, action approval records, and runtime lineage exports.
+Current protocol release: PEAC v0.16.4 "Local Record Verification Handoff",
+which adds browser-based local verification of a signed record against a
+supplied public key with no network access, RFC 7493 I-JSON enforcement on
+record issuance, and a cross-organization verification handoff guide. The
+wire format is unchanged. Earlier evidence patterns remain available: paid
+resources, paid MCP tool records, linked counterparty acknowledgments, Merkle
+commitment helpers, external evidence anchoring, agent spend attribution,
+agent run lineage records, action approval records, and runtime lineage
+exports.
 
-Last updated: 2026-07-27
+Last updated: 2026-08-18
 
 Organization: Originary (legal entity: Poem, Inc.)
 Location: Delaware, USA
@@ -58,7 +60,7 @@ still missing, without internal logs, dashboard access, or vendor runtime.
 - [How it works](https://www.originary.xyz/how-it-works): the four-stage model (observe, issue, verify, hand off), with the six record surfaces in detail
 - [Records](https://www.originary.xyz/records): gallery of signed record types (MCP, API, gateway, agent, payment, provisioning), each verifiable offline
 - [Verify](https://www.originary.xyz/verify): verify a signed record with the issuer's public key; offline by design, nothing stored
-- [MCP](https://www.originary.xyz/mcp): evidence for disputed MCP tool calls
+- [MCP](https://www.originary.xyz/mcp): keep a verifiable record of important MCP tool calls
 - [AI gateway](https://www.originary.xyz/ai-gateway): independently verifiable AI gateway decisions
 - [Provisioning records](https://www.originary.xyz/provisioning-records): signed records for deployments, provider setup, credentials, budgets, and resource lifecycle events
 - [Agentic commerce](https://www.originary.xyz/agentic-commerce): evidence for paid APIs, MCP tools, and agent commerce

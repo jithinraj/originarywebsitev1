@@ -91,8 +91,8 @@ export default function AgenticCommercePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="Paid services"
-        title="A payment provider reports the transaction. It does not establish what the automated service delivered."
-        sub="Originary connects selected authorization, service-action, result, and payment records so another party can inspect what each source reported and identify what evidence is still missing."
+        title="When an agent pays, keep the action and the payment connected."
+        sub="A payment tells you money moved. It may not tell you which service call, authorization or result the payment belonged to. PEAC records can keep those parts linked for later review."
         display
         aside={
           <RecordCard

@@ -59,8 +59,8 @@ export default function McpPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
         eyebrow="MCP evidence"
-        title="When an MCP tool call is disputed, can the other party verify what happened?"
-        sub="Originary lets an MCP server or gateway issue bounded signed records for the tool call it observed, then package those records with relevant result and payment artifacts for independent review."
+        title="Keep a verifiable record of important MCP tool calls."
+        sub="When a tool changes data, sends something, spends money or triggers another system, create a signed record of the call and reported result that can be checked later."
         display
         aside={
           <RecordCard
@@ -90,7 +90,7 @@ export default function McpPage() {
         <SectionHeading
           index="01"
           eyebrow="The problem"
-          title="A transcript is not portable evidence."
+          title="A transcript helps you debug. A signed record is easier to hand to someone else."
           sub="An MCP transcript helps the operator debug. It is not automatically evidence a customer or partner can verify outside that operator's system. A signed record answers the questions that cross the boundary:"
         />
         <MarkerList

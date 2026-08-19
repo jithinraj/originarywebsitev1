@@ -87,7 +87,7 @@ function Track({ items, dir, stacked }: { items: Item[]; dir: 'left' | 'right'; 
   )
 }
 
-export function InteropMarquee() {
+export function InteropMarquee({ strips = 'all' }: { strips?: 'all' | 'logos' }) {
   return (
     <section
       aria-label="Interoperability surfaces"
@@ -98,28 +98,32 @@ export function InteropMarquee() {
       }}
     >
       <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}>
-        <p className="home-marquee-eyebrow">Works across the agent and API stack</p>
+        <p className="home-marquee-eyebrow">Composes with</p>
       </div>
       <Track items={STACK} dir="left" stacked />
 
-      <div style={{ maxWidth: MAX_W, margin: '20px auto 0', padding: `0 ${PAGE_PAD}` }}>
-        <p className="home-marquee-eyebrow">Interoperates across commerce, identity, and evidence</p>
-      </div>
-      <Track items={EVIDENCE} dir="right" />
+      {strips === 'all' ? (
+        <>
+          <div style={{ maxWidth: MAX_W, margin: '20px auto 0', padding: `0 ${PAGE_PAD}` }}>
+            <p className="home-marquee-eyebrow">Interoperates across commerce, identity, and evidence</p>
+          </div>
+          <Track items={EVIDENCE} dir="right" />
 
-      <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: `18px ${PAGE_PAD} 0` }}>
-        <p
-          style={{
-            fontFamily: MONO,
-            fontSize: 11.5,
-            letterSpacing: '0.04em',
-            color: PALETTE.muted,
-            margin: 0,
-          }}
-        >
-          {STANDARDS}
-        </p>
-      </div>
+          <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: `18px ${PAGE_PAD} 0` }}>
+            <p
+              style={{
+                fontFamily: MONO,
+                fontSize: 11.5,
+                letterSpacing: '0.04em',
+                color: PALETTE.muted,
+                margin: 0,
+              }}
+            >
+              {STANDARDS}
+            </p>
+          </div>
+        </>
+      ) : null}
     </section>
   )
 }

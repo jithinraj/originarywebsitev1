@@ -19,6 +19,7 @@ const FORBIDDEN = [
   { pattern: /11,975|11975/, reason: 'stale test count from an earlier release' },
   { pattern: /12,662|(?<!\d)12662(?!\d)/, reason: 'incorrect test count; use the value in the facts registry' },
   { pattern: /12,666|(?<!\d)12666(?!\d)/, reason: 'stale test count; use the value in the facts registry' },
+  { pattern: /12,729|(?<!\d)12729(?!\d)/, reason: 'stale test count from v0.16.3; use the value in the facts registry' },
 ]
 
 // Files allowed to mention legacy identifiers in a compatibility context.
