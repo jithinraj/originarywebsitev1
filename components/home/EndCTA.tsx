@@ -17,7 +17,7 @@ export function EndCTA() {
         </p>
         <div className="endcta-ctas">
           <Link href="/contact" className="hs-btn" style={btnSolidStyle}>
-            Discuss a workflow
+            Request a demo
           </Link>
           <Link href="/peac" className="hs-btn" style={btnGhostStyle}>
             Build with PEAC

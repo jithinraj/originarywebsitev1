@@ -20,6 +20,9 @@ html {
   outline: 1px solid rgba(20, 17, 10, 0.45);
   outline-offset: 2px;
 }
+.home-nav-cta {
+  color: #14110a;
+}
 .home-nav-cta:hover {
   background: #14110a;
   color: #fbf9f4;
@@ -385,11 +388,12 @@ html {
   }
 }
 
-/* Very narrow phones (<=360px): the wordmark, GitHub link, "Verify a record"
-   and the menu button together exceed the viewport, which pushed the menu
-   button out of reach. Drop the secondary text link and tighten the gutters so
-   the menu stays reachable. */
-@media (max-width: 360px) {
+/* Mobile header (<=640px): the persistent bar only needs the logo and the
+   menu toggle. GitHub and Verify are both reachable inside the expanded
+   hamburger dropdown, so drop them from the persistent bar and tighten the
+   gutters for breathing room. */
+@media (max-width: 640px) {
+  .home-nav-github,
   .home-nav-verify {
     display: none !important;
   }
@@ -1051,23 +1055,12 @@ html {
     color: #6b6458;
     margin: 2px 0 0 0;
   }
-  .home-herov2-mobile-chips {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .home-herov2-mobile-chips .home-herov2-chip,
-  .home-herov2-mobile-chips .home-herov2-output {
-    position: static;
-  }
-  .home-herov2-mobile-chips .home-herov2-output {
-    width: 100%;
-    height: auto;
-    min-height: 46px;
-    padding: 10px 14px;
+  .home-herov2-mstep-fields {
+    font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: #6e6759;
+    margin: 4px 0 0 0;
   }
   .home-herov2-export-m {
     margin: 10px 0 0;
@@ -1075,33 +1068,6 @@ html {
     font-size: 11px;
     letter-spacing: 0.04em;
     color: #6e6759;
-  }
-  .home-herov2-mobile-diamond {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 4px 0 4px 0;
-  }
-}
-
-@media (max-width: 520px) {
-  .home-herov2-mobile-chips {
-    grid-template-columns: 1fr;
-  }
-  .home-herov2-mobile-diamond .home-herov2-diamond {
-    width: 260px;
-    height: 260px;
-  }
-  .home-herov2-mobile-diamond .home-herov2-diamond-shape,
-  .home-herov2-mobile-diamond .home-herov2-diamond-shape-inner {
-    inset: 36px;
-  }
-  .home-herov2-mobile-diamond .home-herov2-diamond-shape-inner {
-    inset: 54px;
-  }
-  .home-herov2-mobile-diamond .home-herov2-diamond-core {
-    max-width: 200px;
-    gap: 6px;
   }
 }
 
@@ -1424,11 +1390,7 @@ html {
 }
 @media (max-width: 767px) {
   .home-hero-strip {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px 16px;
-    max-width: 360px;
-    justify-items: start;
+    display: none;
   }
   .home-hero-proof {
     max-width: 360px;

@@ -379,54 +379,28 @@ export function HeroV2() {
               <p className="home-herov2-mstep-sub">API, MCP, agents, gateways, commerce, provisioning</p>
             </div>
           </div>
-          <ol className="home-herov2-mobile-chips">
-            {CHIPS.map((c, i) => (
-              <li
-                key={c.id}
-                className={`home-herov2-chip ${chipActive(i) ? 'is-active' : ''}`}
-              >
-                <span className="home-herov2-chip-ico">{c.icon}</span>
-                <span className="home-herov2-chip-label">{c.label}</span>
-              </li>
-            ))}
-          </ol>
 
           <div className="home-herov2-mstep">
-            <span className="home-herov2-mstep-num">2</span>
+            <span className="home-herov2-mstep-num">
+              <svg
+                viewBox="0 0 32 32"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.3"
+                aria-hidden
+              >
+                <circle cx="16" cy="16" r="13" />
+                <circle cx="16" cy="16" r="8" />
+                <path d="M16 5v3M16 24v3M5 16h3M24 16h3" strokeLinecap="round" />
+                <circle cx="16" cy="16" r="2.4" fill="currentColor" stroke="none" />
+              </svg>
+            </span>
             <div>
               <p className="home-herov2-mstep-title">Signed record issued</p>
               <p className="home-herov2-mstep-sub">compact &middot; signed &middot; portable</p>
-            </div>
-          </div>
-          <div className="home-herov2-mobile-diamond">
-            <div className={`home-herov2-diamond ${diamondActive ? 'is-active' : ''}`}>
-              <span className="home-herov2-diamond-shape" aria-hidden />
-              <span className="home-herov2-diamond-shape-inner" aria-hidden />
-              <div className="home-herov2-diamond-core" aria-hidden>
-                <svg
-                  viewBox="0 0 32 32"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.3"
-                  aria-hidden
-                >
-                  <circle cx="16" cy="16" r="13" />
-                  <circle cx="16" cy="16" r="8" />
-                  <path d="M16 5v3M16 24v3M5 16h3M24 16h3" strokeLinecap="round" />
-                  <circle cx="16" cy="16" r="2.4" fill="currentColor" stroke="none" />
-                </svg>
-                <div className="home-herov2-diamond-fields">
-                  <span className="home-herov2-diamond-fields-row home-herov2-diamond-fields-primary">
-                    <span>facts &middot; policy</span>
-                    <span>result &middot; time</span>
-                  </span>
-                  <span className="home-herov2-diamond-fields-row home-herov2-diamond-fields-trust">
-                    <span>issuer &middot; signature</span>
-                  </span>
-                </div>
-              </div>
+              <p className="home-herov2-mstep-fields">facts &middot; policy &middot; result &middot; time &middot; issuer &middot; signature</p>
             </div>
           </div>
 
@@ -437,14 +411,6 @@ export function HeroV2() {
               <p className="home-herov2-mstep-sub">your team &middot; customer or partner &middot; security or audit</p>
             </div>
           </div>
-          <ol className="home-herov2-mobile-chips">
-            {OUTPUTS.map((o) => (
-              <li key={o.id} className="home-herov2-output">
-                <strong>{o.label}</strong>
-                <small>{o.meta}</small>
-              </li>
-            ))}
-          </ol>
           <p className="home-herov2-export-m">
             Export related records as a portable evidence bundle.
           </p>
