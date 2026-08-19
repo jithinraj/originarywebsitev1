@@ -1,4 +1,12 @@
 /**
+ * Freshness: to re-verify these values against the canonical PEAC protocol
+ * release state, run `node scripts/check-facts-freshness.mjs` from the repo
+ * root. It fetches docs/releases/facts.json from the peacprotocol/peac
+ * GitHub repo (public, no auth needed) and diffs version/test counts/package
+ * count against the values below. Run it after every PEAC protocol release.
+ * Last manually verified: 2026-08-19 against peacprotocol/peac @ origin/main.
+ */
+/**
  * Evidence-backed facts registry.
  *
  * Every numeric, version, or status claim on the site MUST import from here.

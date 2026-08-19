@@ -138,9 +138,9 @@ export function HeroV2() {
           Agent actions, on the record.
         </h1>
         <p className="cin-rise" style={{ ...heroSub, ['--cin-i' as string]: 2 }}>
-          Turn important agent, API and tool actions into signed records you can verify later and
-          share without exposing private logs. Use them to investigate incidents, answer customers
-          and support audits.
+          Give important agent, API and tool actions a signed record you can verify later.
+          Investigate incidents, answer customers and auditors, and share the record without
+          exposing private logs.
         </p>
         <div className="cin-rise" style={{ ...ctas, ['--cin-i' as string]: 3 }}>
           <Link href="#see-a-record" className="home-arrow-link" style={btnPrimary}>

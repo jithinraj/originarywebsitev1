@@ -68,7 +68,7 @@ export function RecordGallery() {
       }}
     >
       <SectionTitle
-        title="Records for the actions your software takes."
+        title="A record for every important action."
         body="PEAC uses the same core record model across agents, APIs, tools, gateways, payments and provisioning."
       />
       <div

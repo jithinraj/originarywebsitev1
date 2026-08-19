@@ -42,7 +42,8 @@
     "check:machine-integrity": "node scripts/check-machine-integrity.mjs",
     "test:machine-integrity": "node scripts/check-machine-integrity.test.mjs",
     "check:ai-compliance": "node scripts/check-ai-compliance.mjs",
-    "test:ai-compliance": "node scripts/check-ai-compliance.test.mjs"
+    "test:ai-compliance": "node scripts/check-ai-compliance.test.mjs",
+    "check:facts": "node scripts/check-facts-freshness.mjs"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.35.0",

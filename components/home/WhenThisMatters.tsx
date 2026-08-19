@@ -6,20 +6,20 @@ import { SectionTitle } from './atoms/Mono'
  */
 const SCENARIOS = [
   {
-    q: 'Investigate an incident',
-    a: 'See what the system reported without reconstructing the whole story from separate logs.',
+    q: 'An incident happens.',
+    a: 'See what the system recorded without reconstructing the whole story from separate logs.',
   },
   {
-    q: 'Answer a customer',
-    a: 'Share a record they can inspect without giving them access to your internal dashboard.',
+    q: 'A customer asks what changed.',
+    a: 'Send them a record they can inspect instead of screenshots from your dashboard.',
   },
   {
-    q: 'Support an audit',
-    a: 'Provide reviewable records without opening production systems to the reviewer.',
+    q: 'An auditor asks for evidence.',
+    a: 'Share the relevant records without opening production systems.',
   },
   {
-    q: 'Compare conflicting records',
-    a: 'See what each system reported when two sides disagree about an action or transaction.',
+    q: 'Two systems disagree.',
+    a: "Compare what each one recorded instead of relying on either side's private log.",
   },
 ]
 

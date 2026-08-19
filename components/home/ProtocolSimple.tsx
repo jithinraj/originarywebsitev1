@@ -23,8 +23,8 @@ export function ProtocolSimple() {
       <div className="protos-grid">
         <div>
           <SectionTitle
-            title="Open source. Verifiable without Originary."
-            body="PEAC is the Apache-2.0 protocol behind Originary&apos;s records. Issue and verify records yourself, keep your own keys, and run verification locally."
+            title="Open protocol. No Originary required."
+            body="PEAC is the Apache-2.0 protocol behind the records. Issue and verify records yourself, keep your own keys, and run verification locally."
           />
           <Link
             href="/peac"

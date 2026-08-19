@@ -12,8 +12,8 @@ export function EndCTA() {
       <div className="endcta-wrap" style={{ maxWidth: 680, margin: '0 auto', textAlign: 'center' }}>
         <h2 className="endcta-h2">Put your first action on the record.</h2>
         <p className="endcta-body">
-          Tell us what the system does and who needs to review it. We&apos;ll tell you whether
-          PEAC fits before you spend time integrating it.
+          Tell us what the system does and who needs to review it. We&apos;ll help you map the
+          smallest useful PEAC integration.
         </p>
         <div className="endcta-ctas">
           <Link href="/contact" className="hs-btn" style={btnSolidStyle}>
