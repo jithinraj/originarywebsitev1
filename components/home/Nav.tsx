@@ -332,14 +332,13 @@ export function Nav() {
               fontFamily: SANS,
               fontSize: 13,
               fontWeight: 500,
-              color: PALETTE.ink,
               textDecoration: 'none',
               padding: '8px 14px',
               border: `1px solid ${PALETTE.rule}`,
               transition: 'background 160ms ease, color 160ms ease',
             }}
           >
-            Discuss a workflow
+            Request a demo
           </Link>
           <button
             ref={toggleRef}
@@ -485,7 +484,7 @@ export function Nav() {
                 border: `1px solid ${PALETTE.ink}`,
               }}
             >
-              Discuss a workflow
+              Request a demo
             </Link>
           </div>
         </div>
