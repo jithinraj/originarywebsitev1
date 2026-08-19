@@ -64,6 +64,28 @@ html {
   color: #14110a;
 }
 
+/* Mobile footer accordion: hidden by default (desktop/tablet keep the
+   existing four-column grid via .home-footer-cols). Shown only inside the
+   <=768px media query below. */
+.home-footer-accordion {
+  display: none;
+}
+.home-footer-accordion-trigger:hover .home-footer-accordion-label {
+  color: #14110a;
+}
+.home-footer-accordion-trigger:focus-visible {
+  outline: 1px solid rgba(20, 17, 10, 0.45);
+  outline-offset: 2px;
+}
+.home-footer-accordion-chevron {
+  transition: transform 160ms ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-footer-accordion-chevron {
+    transition: none;
+  }
+}
+
 /* Skip-to-content: visually hidden until focused. */
 .home-skip-link {
   position: absolute;
@@ -348,17 +370,10 @@ html {
 }
 
 @media (max-width: 768px) {
-  /* Flow the four link blocks as balanced columns instead of a fixed grid, so a
-     short block (Product) no longer leaves a tall gap beside a long one. */
-  .home-footer-cols {
-    display: block !important;
-    column-count: 2;
-    column-gap: 28px;
-  }
-  .home-footer-cols > div {
-    break-inside: avoid;
-    margin-bottom: 26px;
-  }
+  /* The four-column desktop grid is replaced by a collapsed accordion below
+     this breakpoint; see the .home-footer-accordion swap declared after the
+     .home-footer-top tablet/mobile breakpoints further down this file (it
+     has to come after them to win the grid-template-columns cascade tie). */
   .home-hero-anim-desktop {
     display: none !important;
   }
@@ -654,6 +669,22 @@ html {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 14px !important;
+  }
+}
+
+/* Mobile footer accordion swap. Declared after the .home-footer-top
+ * tablet/mobile breakpoints above so grid-template-columns wins the cascade
+ * (equal-specificity !important rules resolve by source order) and the
+ * accordion gets the full row instead of a half-width column. */
+@media (max-width: 768px) {
+  .home-footer-cols {
+    display: none !important;
+  }
+  .home-footer-top {
+    grid-template-columns: 1fr !important;
+  }
+  .home-footer-accordion {
+    display: block;
   }
 }
 
