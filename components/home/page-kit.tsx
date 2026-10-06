@@ -620,6 +620,7 @@ export function ArticleDoc({
   readTime,
   parent,
   status,
+  plate,
   children,
 }: {
   category: string
@@ -631,6 +632,8 @@ export function ArticleDoc({
   parent: { label: string; href: string }
   /** Lifecycle status; 'archived', 'superseded', and 'draft' render a notice. */
   status?: 'current' | 'updated' | 'archived' | 'superseded' | 'draft'
+  /** Optional header plate rendered between the byline/status area and the prose card. */
+  plate?: ReactNode
   children: ReactNode
 }) {
   return (
@@ -764,11 +767,15 @@ export function ArticleDoc({
             the sitemap.
           </div>
         ) : null}
+        {plate}
         <div
           className="home-card legal-doc-body"
           style={{
-            marginTop:
-              status === 'archived' || status === 'superseded' || status === 'draft' ? 20 : 32,
+            marginTop: plate
+              ? 24
+              : status === 'archived' || status === 'superseded' || status === 'draft'
+                ? 20
+                : 32,
             padding: 36,
             background: PALETTE.paper,
             border: `1px solid ${PALETTE.hairline}`,
