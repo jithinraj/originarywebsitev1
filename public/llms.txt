@@ -73,6 +73,11 @@ still missing, without internal logs, dashboard access, or vendor runtime.
 
 ## Current articles
 
+- [AI agent audit trail handoff](https://www.originary.xyz/blog/ai-agent-audit-trail-handoff)
+- [MCP tool call audit evidence](https://www.originary.xyz/blog/mcp-tool-call-audit-evidence)
+- [AI gateway audit logs policy decisions](https://www.originary.xyz/blog/ai-gateway-audit-logs-policy-decisions)
+- [Agentic commerce payment fulfillment evidence](https://www.originary.xyz/blog/agentic-commerce-payment-fulfillment-evidence)
+- [AI agent customer requests completion](https://www.originary.xyz/blog/ai-agent-customer-requests-completion)
 - [Verifiable provisioning records agent infrastructure](https://www.originary.xyz/blog/verifiable-provisioning-records-agent-infrastructure)
 - [What is http 402](https://www.originary.xyz/blog/what-is-http-402)
 - [A2a stack agent to agent commerce](https://www.originary.xyz/blog/a2a-stack-agent-to-agent-commerce)

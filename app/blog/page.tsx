@@ -15,6 +15,7 @@ import {
 } from '@/components/home'
 import { CURRENT_ARTICLES, ARCHIVED_ARTICLES, type Article } from '@/lib/blog'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
+import { ArticleMotif } from '@/components/blog'
 
 export const metadata: Metadata = {
   title: {
@@ -96,17 +97,20 @@ function ArticleCard({ article, featured }: { article: Article; featured?: boole
       }}
       className="home-card"
     >
-      <span
-        style={{
-          fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace',
-          fontSize: 11,
-          letterSpacing: '0.16em',
-          textTransform: 'uppercase',
-          color: PALETTE.muted,
-        }}
-      >
-        {article.category}
-      </span>
+      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12 }}>
+        <span
+          style={{
+            fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace',
+            fontSize: 11,
+            letterSpacing: '0.16em',
+            textTransform: 'uppercase',
+            color: PALETTE.muted,
+          }}
+        >
+          {article.category}
+        </span>
+        <ArticleMotif slug={article.slug} size={featured ? 64 : 44} />
+      </div>
       <h2
         style={{
           fontFamily: sans,

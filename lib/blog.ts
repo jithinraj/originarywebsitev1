@@ -21,6 +21,63 @@ export interface Article {
 }
 
 export const ARTICLES: Article[] = [
+  // Evidence handoff series (five parts, listed in reading order).
+  {
+    slug: 'ai-agent-audit-trail-handoff',
+    title: 'An AI agent audit trail has to survive the handoff',
+    description:
+      'Can another team review the action once your dashboard is out of reach? What to preserve, what a signature shows, and how to hand off a reviewable case.',
+    category: 'Audit',
+    author: 'Originary',
+    readTime: '6 min read',
+    status: 'current',
+    indexable: true,
+    featured: true,
+  },
+  {
+    slug: 'mcp-tool-call-audit-evidence',
+    title: 'An MCP tool call can succeed while the job is unfinished',
+    description:
+      'Record the result at the level where it happened. Keep approvals, invocations, tool results, and retries distinct for the person who reconciles them.',
+    category: 'MCP',
+    author: 'Originary',
+    readTime: '6 min read',
+    status: 'current',
+    indexable: true,
+  },
+  {
+    slug: 'ai-gateway-audit-logs-policy-decisions',
+    title: 'When a customer asks why your AI gateway allowed a request',
+    description:
+      'A policy decision, an enforcement action, and a downstream result need distinct evidence when a customer questions what your AI gateway allowed.',
+    category: 'Gateways',
+    author: 'Originary',
+    readTime: '6 min read',
+    status: 'current',
+    indexable: true,
+  },
+  {
+    slug: 'agentic-commerce-payment-fulfillment-evidence',
+    title: 'The agent paid. What did it receive?',
+    description:
+      'A payment record answers a payment question. Production, delivery, receipt, and acceptance each need evidence from the system that observed them.',
+    category: 'Commerce',
+    author: 'Originary',
+    readTime: '6 min read',
+    status: 'current',
+    indexable: true,
+  },
+  {
+    slug: 'ai-agent-customer-requests-completion',
+    title: 'Your next customer may be an agent. Can it tell whether you finished?',
+    description:
+      'Businesses handling delegated requests need to make acceptance and completion distinguishable. A status model, completion records, and where to start.',
+    category: 'Agents',
+    author: 'Originary',
+    readTime: '6 min read',
+    status: 'current',
+    indexable: true,
+  },
   {
     slug: 'verifiable-provisioning-records-agent-infrastructure',
     title: 'Verifiable provisioning records for agent-driven infrastructure',
@@ -161,6 +218,15 @@ export const CURRENT_ARTICLES = ARTICLES.filter(
   (a) => a.status !== 'archived' && a.status !== 'superseded' && a.status !== 'draft',
 )
 export const ARCHIVED_ARTICLES = ARTICLES.filter((a) => a.status === 'archived' || a.status === 'superseded')
+
+/** Reading order for the evidence handoff series; drives the in-article series index. */
+export const EVIDENCE_SERIES = [
+  'ai-agent-audit-trail-handoff',
+  'mcp-tool-call-audit-evidence',
+  'ai-gateway-audit-logs-policy-decisions',
+  'agentic-commerce-payment-fulfillment-evidence',
+  'ai-agent-customer-requests-completion',
+] as const
 
 export function getArticle(slug: string): Article | undefined {
   return ARTICLES.find((a) => a.slug === slug)

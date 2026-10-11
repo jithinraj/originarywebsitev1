@@ -1,0 +1,87 @@
+/*
+ * Shared animation vocabulary for article figures.
+ *
+ * FigureFrame toggles two classes on its wrapper: `fig-pending`, added only
+ * when the figure is below the fold at hydration, and `fig-in`, added once
+ * the figure has entered the viewport. Elements inside a figure opt into the
+ * draw or fade treatment with `fig-draw` / `fig-fade`, and both are inert
+ * until an ancestor carries `fig-pending`. That means the finished figure is
+ * always the default: server-rendered markup, no-JS visits, above-the-fold
+ * figures, and reduced-motion visits all see the completed artwork with no
+ * flash of hidden content.
+ *
+ * `fig-draw` targets stroked paths that should draw in. Give the path
+ * `pathLength={1}` so the dash values below are resolution-independent.
+ * `fig-fade` targets marks that should fade and rise into place. `fig-step-N`
+ * (1 through 6) staggers either treatment across a small group of marks.
+ */
+
+.fig-pending .fig-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 720ms cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+.fig-pending.fig-in .fig-draw {
+  stroke-dashoffset: 0;
+}
+
+.fig-pending .fig-fade {
+  opacity: 0;
+  transform: translate3d(0, 6px, 0);
+  transition:
+    opacity 640ms cubic-bezier(0.2, 0.65, 0.25, 1),
+    transform 640ms cubic-bezier(0.2, 0.65, 0.25, 1);
+}
+.fig-pending.fig-in .fig-fade {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.fig-pending .fig-step-1 {
+  transition-delay: 0ms;
+}
+.fig-pending .fig-step-2 {
+  transition-delay: 110ms;
+}
+.fig-pending .fig-step-3 {
+  transition-delay: 220ms;
+}
+.fig-pending .fig-step-4 {
+  transition-delay: 330ms;
+}
+.fig-pending .fig-step-5 {
+  transition-delay: 440ms;
+}
+.fig-pending .fig-step-6 {
+  transition-delay: 550ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fig-pending .fig-draw,
+  .fig-pending .fig-fade {
+    transition: none;
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Evidence series index: non-current entries darken on hover. */
+.series-link {
+  transition: color 160ms ease;
+}
+.series-link:hover {
+  color: #14110a !important;
+}
+
+/* Ordered lists in article bodies: match the unordered-list treatment. */
+.legal-doc-body ol {
+  margin: 0 0 14px 0;
+  padding-left: 22px;
+  color: #6b6458;
+}
+.legal-doc-body ol li {
+  margin-bottom: 6px;
+  padding-left: 2px;
+}
