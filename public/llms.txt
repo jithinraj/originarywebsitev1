@@ -24,7 +24,7 @@ commitment helpers, external evidence anchoring, agent spend attribution,
 agent run lineage records, action approval records, and runtime lineage
 exports.
 
-Last updated: 2026-08-18
+Last updated: 2026-10-11
 
 Organization: Originary (legal entity: Poem, Inc.)
 Location: Delaware, USA
@@ -44,6 +44,7 @@ still missing, without internal logs, dashboard access, or vendor runtime.
 - [Home](https://www.originary.xyz/)
 - [Product](https://www.originary.xyz/product)
 - [Evidence case](https://www.originary.xyz/evidence-case): what a bounded evidence case contains, with a downloadable illustrative example
+- [Action review](https://www.originary.xyz/action-review): review agent-driven operations where source reports disagree; six exception rules, case disposition and an interactive synthetic demo
 - [Audit and incident handoff](https://www.originary.xyz/audit-incident-handoff): assembling and verifying an evidence handoff bundle
 - [AI compliance evidence](https://www.originary.xyz/ai-compliance): AI compliance evidence: how Originary creates and verifies portable signed records for selected agent actions, API calls, gateway decisions, approvals, payments and provisioning changes.
 - [About](https://www.originary.xyz/about)

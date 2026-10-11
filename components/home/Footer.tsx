@@ -17,6 +17,7 @@ const columns: Array<{
     items: [
       { label: 'Verification Pilot', href: '/product' },
       { label: 'Evidence case', href: '/evidence-case' },
+      { label: 'Action review', href: '/action-review' },
       { label: 'Verify a Record', href: '/verify' },
       { label: 'Plans and pilot', href: '/pricing' },
       { label: 'Start a pilot', href: '/contact', emphasis: true },
