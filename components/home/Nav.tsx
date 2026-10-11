@@ -20,6 +20,7 @@ const NAV: NavEntry[] = [
       { label: 'How it works', href: '/how-it-works' },
       { label: 'Records', href: '/records' },
       { label: 'Action review', href: '/action-review' },
+      { label: 'Investigate', href: '/investigate' },
       { label: 'Verify', href: '/verify' },
       { label: 'Pricing', href: '/pricing' },
     ],
