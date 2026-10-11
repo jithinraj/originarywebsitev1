@@ -43,3 +43,20 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Hero card: wider label column for long labels; stack on narrow screens. */
+.inv-hero-card .spec-row {
+  grid-template-columns: 118px minmax(0, 1fr);
+}
+/* Long synthetic tag may wrap instead of overflowing its card. */
+.inv-tag > span {
+  display: inline-block;
+  white-space: normal !important;
+  line-height: 1.5;
+}
+@media (max-width: 600px) {
+  .inv-hero-card .spec-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}

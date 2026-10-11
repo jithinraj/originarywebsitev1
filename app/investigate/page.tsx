@@ -23,7 +23,7 @@ import './investigate.css'
 
 const TITLE = 'Investigate disputed agent actions | Originary'
 const DESCRIPTION =
-  'Turn a disputed agent action into a reviewable evidence case. Bring together existing records, identify what they support, and give another team a clear way to inspect the findings and missing evidence.'
+  'Turn a disputed agent action into a reviewable evidence case: what your existing records support, what is missing, and findings another team can inspect.'
 
 const SOCIAL_DESCRIPTION =
   'Turn a disputed agent action into a reviewable evidence case another team can inspect, challenge and decide on.'
@@ -117,7 +117,11 @@ const linkStyle = {
 } as const
 
 function SyntheticTag() {
-  return <StatusBadge kind="neutral">Synthetic example · fictional systems and people</StatusBadge>
+  return (
+    <span className="inv-tag">
+      <StatusBadge kind="neutral">Synthetic example · fictional systems and people</StatusBadge>
+    </span>
+  )
 }
 
 function Body({ children }: { children: ReactNode }) {
@@ -148,6 +152,7 @@ export default function InvestigatePage() {
         sub="Bring together existing records, identify what they support, and give another team a clear way to inspect the findings and missing evidence."
         display
         aside={
+          <div className="inv-hero-card">
           <RecordCard
             type="evidence-case"
             badge={{ kind: 'neutral', label: 'synthetic example' }}
@@ -160,6 +165,7 @@ export default function InvestigatePage() {
             ]}
             foot="fictional systems and people"
           />
+          </div>
         }
         strip={['Disputed agent actions', 'Cited findings', 'Missing evidence', 'Recipient decision']}
       >
@@ -363,17 +369,19 @@ export default function InvestigatePage() {
         <div className="inv-grid2">
           <Card padding={28} emphasis style={{ background: PALETTE.bg }}>
             <Mono size={10.5} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-              Originary Agent Action Review
+              Originary Investigate
             </Mono>
             <div style={{ marginTop: 12 }}>
               <Minor>Review a disputed action with existing evidence</Minor>
             </div>
-            <p style={{ fontFamily: sans, fontSize: 32, lineHeight: 1.1, fontWeight: 500, letterSpacing: '-0.02em', color: PALETTE.ink, margin: '14px 0 4px' }}>
-              $5,000
+            <p style={{ fontFamily: sans, fontSize: 14.5, lineHeight: 1.6, color: PALETTE.muted, margin: '14px 0 16px' }}>
+              One bounded engagement. We agree the scope and a fixed fee with you before any evidence is handled.
             </p>
-            <p style={{ fontFamily: sans, fontSize: 13.5, color: PALETTE.faint, margin: '0 0 18px' }}>
-              Introductory fixed price for one bounded engagement.
-            </p>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', margin: '0 0 22px' }}>
+              <Button href="#request" primary>
+                Request a scoped review
+              </Button>
+            </div>
             <MarkerList
               marker="check"
               items={[
