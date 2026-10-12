@@ -13,10 +13,10 @@ const RULES = ['reported failure', 'conflicting outcomes', 'gateway vs result', 
 function Stage({ step, title, children, ink = false }: { step: string; title: string; children: React.ReactNode; ink?: boolean }) {
   return (
     <div className={`ard-stage${ink ? ' ink' : ''}`}>
-      <Mono size={10.5} color={ink ? 'rgba(244,241,234,0.62)' : PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+      <Mono size={10.5} color={ink ? 'var(--on-dark-muted)' : PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
         {step}
       </Mono>
-      <div style={{ fontFamily: SANS, fontSize: 16, fontWeight: 500, letterSpacing: '-0.01em', margin: '8px 0 12px', color: ink ? PALETTE.bg : PALETTE.ink }}>
+      <div style={{ fontFamily: SANS, fontSize: 16, fontWeight: 500, letterSpacing: '-0.01em', margin: '8px 0 12px', color: ink ? PALETTE.onDark : PALETTE.ink }}>
         {title}
       </div>
       {children}

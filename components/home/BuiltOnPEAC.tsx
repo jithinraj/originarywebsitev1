@@ -116,9 +116,9 @@ export function BuiltOnPEAC() {
                 fontWeight: 500,
                 letterSpacing: '-0.005em',
                 textDecoration: 'none',
-                color: PALETTE.paper,
-                background: PALETTE.ink,
-                border: `1px solid ${PALETTE.ink}`,
+                color: PALETTE.onAction,
+                background: PALETTE.action,
+                border: `1px solid ${PALETTE.action}`,
               }}
             >
               Read PEAC Protocol

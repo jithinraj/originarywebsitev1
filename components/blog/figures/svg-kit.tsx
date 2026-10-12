@@ -3,21 +3,21 @@ import { PALETTE, MONO, SANS } from '@/components/home'
 
 /**
  * Small SVG vocabulary shared by the evidence-series figures. Role colors:
- * ink for structure, slate for flow and action, sage for a supported or
+ * ink for structure, ink for flow and action, sage for a supported or
  * verified statement, amber for a gap, an unknown, or an overreach. Marks
  * opt into the FigureFrame draw/fade animation through `step`.
  */
 
 export const INK = PALETTE.ink
-export const SLATE = PALETTE.accent
+export const SLATE = PALETTE.ink
 export const SAGE = PALETTE.success
 export const AMBER = PALETTE.warn
 export const FAINT = PALETTE.faint
 export const MUTED = PALETTE.muted
 export const HAIR = PALETTE.hairline
-export const SAGE_WASH = 'rgba(74, 116, 89, 0.08)'
-export const SLATE_WASH = 'rgba(74, 98, 124, 0.07)'
-export const AMBER_WASH = 'rgba(138, 106, 60, 0.07)'
+export const SAGE_WASH = 'var(--success-bg)'
+export const SLATE_WASH = 'var(--code-bg)'
+export const AMBER_WASH = 'var(--warn-bg)'
 
 export const svgStyle = (minWidth = 560) => ({
   minWidth,

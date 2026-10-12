@@ -9,11 +9,11 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
-  background: rgba(20, 17, 10, 0.18);
-  border: 1px solid rgba(20, 17, 10, 0.18);
+  background: var(--rule);
+  border: 1px solid var(--rule);
 }
 .ar-metric {
-  background: #fbf9f4;
+  background: var(--paper);
   padding: 16px 18px;
 }
 
@@ -25,8 +25,8 @@
 }
 
 .ar-panel {
-  background: #fbf9f4;
-  border: 1px solid rgba(20, 17, 10, 0.18);
+  background: var(--paper);
+  border: 1px solid var(--rule);
   min-width: 0;
 }
 .ar-panel-head {
@@ -35,7 +35,7 @@
   align-items: center;
   gap: 12px;
   padding: 16px 18px;
-  border-bottom: 1px solid rgba(20, 17, 10, 0.18);
+  border-bottom: 1px solid var(--rule);
 }
 .ar-panel-foot {
   display: flex;
@@ -43,7 +43,7 @@
   align-items: center;
   gap: 12px;
   padding: 10px 18px;
-  border-top: 1px solid rgba(20, 17, 10, 0.18);
+  border-top: 1px solid var(--rule);
 }
 
 .ar-filters {
@@ -51,7 +51,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   padding: 12px 18px;
-  border-bottom: 1px solid rgba(20, 17, 10, 0.18);
+  border-bottom: 1px solid var(--rule);
 }
 
 .ar-list {
@@ -60,7 +60,7 @@
   padding: 0;
 }
 .ar-list li + li {
-  border-top: 1px solid rgba(20, 17, 10, 0.12);
+  border-top: 1px solid var(--hairline);
 }
 .ar-row {
   display: grid;
@@ -74,24 +74,24 @@
   text-align: left;
 }
 .ar-row:hover {
-  background: rgba(20, 17, 10, 0.03);
+  background: var(--code-bg);
 }
 .ar-row[aria-current='true'] {
-  background: rgba(74, 98, 124, 0.07);
-  border-left-color: #14110a;
+  background: var(--wash);
+  border-left-color: var(--ink);
 }
 .ar-row:focus-visible,
 .ar-console button:focus-visible,
 .ar-console input:focus-visible,
 .ar-console select:focus-visible,
 .ar-console textarea:focus-visible {
-  outline: 2px solid #4a627c;
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
 .ar-block {
   padding: 16px 18px;
-  border-bottom: 1px solid rgba(20, 17, 10, 0.18);
+  border-bottom: 1px solid var(--rule);
 }
 .ar-finding {
   margin-top: 12px;
@@ -100,7 +100,7 @@
 }
 .ar-event {
   padding: 12px 0;
-  border-top: 1px solid rgba(20, 17, 10, 0.12);
+  border-top: 1px solid var(--hairline);
 }
 
 .ar-sr {
@@ -151,20 +151,20 @@
   align-items: stretch;
 }
 .ard-stage {
-  background: #fbf9f4;
-  border: 1px solid rgba(20, 17, 10, 0.18);
+  background: var(--paper);
+  border: 1px solid var(--rule);
   padding: 18px 16px;
   min-width: 0;
 }
 .ard-stage.ink {
-  background: #14110a;
-  border-color: #14110a;
+  background: var(--surface-dark);
+  border-color: var(--surface-dark);
 }
 .ard-arrow {
   position: relative;
   align-self: center;
   height: 1px;
-  background: rgba(20, 17, 10, 0.3);
+  background: var(--border-chip);
   overflow: visible;
 }
 .ard-arrow::after {
@@ -172,7 +172,7 @@
   position: absolute;
   right: 0;
   top: -4px;
-  border-left: 7px solid rgba(20, 17, 10, 0.55);
+  border-left: 7px solid var(--border-chip-active);
   border-top: 4.5px solid transparent;
   border-bottom: 4.5px solid transparent;
 }
@@ -183,8 +183,8 @@
   left: 0;
   width: 5px;
   height: 5px;
-  background: #4a627c;
-  animation: ard-travel 2.4s ease-in-out infinite;
+  background: var(--ink);
+  animation: ard-travel 2.4s var(--ease-move) infinite;
 }
 @keyframes ard-travel {
   0% { left: 0; opacity: 0; }
@@ -204,23 +204,23 @@
   display: grid;
   gap: 1px;
   padding: 7px 10px;
-  border: 1px solid rgba(20, 17, 10, 0.18);
-  background: #f4f1ea;
+  border: 1px solid var(--rule);
+  background: var(--wash);
 }
 .ard-rules li {
   display: flex;
   gap: 8px;
   align-items: baseline;
   padding: 4px 0;
-  border-top: 1px solid rgba(20, 17, 10, 0.1);
+  border-top: 1px solid var(--hairline);
 }
 .ard-ref,
 .ard-out {
   display: grid;
   gap: 2px;
   padding: 10px 12px;
-  border: 1px solid rgba(20, 17, 10, 0.3);
-  background: #f4f1ea;
+  border: 1px solid var(--border-chip);
+  background: var(--wash);
 }
 .ard-out + .ard-out {
   margin-top: 8px;
@@ -230,37 +230,37 @@
   background: transparent;
 }
 .ard-note {
-  font-family: var(--font-plex-sans), 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 12.5px;
   line-height: 1.55;
-  color: #6e6759;
+  color: var(--faint);
   margin: 12px 0 0;
 }
 .ard-note.on-ink {
-  color: rgba(244, 241, 234, 0.7);
+  color: var(--on-dark-muted);
 }
 .ard-states {
   display: grid;
   gap: 6px;
 }
 .ard-state {
-  font-family: var(--font-plex-mono), 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 6px 10px;
-  border: 1px solid rgba(244, 241, 234, 0.28);
-  color: rgba(244, 241, 234, 0.85);
+  border: 1px solid var(--rule-on-dark);
+  color: var(--on-dark);
 }
-.ard-state.s0 { border-color: rgba(214, 140, 120, 0.7); color: #e6b3a6; }
-.ard-state.s1 { border-color: rgba(150, 175, 200, 0.6); color: #b9cbdc; }
-.ard-state.s2 { border-color: rgba(140, 190, 155, 0.6); color: #b5d4bd; }
+.ard-state.s0 { border-color: var(--danger-on-dark); color: var(--danger-on-dark); }
+.ard-state.s1 { border-color: var(--rule-on-dark); color: var(--on-dark); }
+.ard-state.s2 { border-color: var(--success-on-dark); color: var(--success-on-dark); }
 
 /* Hero case snapshot */
 .ar-snap {
-  background: #fbf9f4;
-  border: 1px solid rgba(20, 17, 10, 0.3);
-  box-shadow: 0 1px 0 rgba(20, 17, 10, 0.04), 0 24px 48px -28px rgba(20, 17, 10, 0.28);
+  background: var(--paper);
+  border: 1px solid var(--border-chip);
+  box-shadow: var(--shadow-pop);
 }
 .ar-snap-row {
   display: grid;
@@ -268,10 +268,10 @@
   gap: 12px;
   align-items: baseline;
   padding: 10px 18px;
-  border-top: 1px solid rgba(20, 17, 10, 0.12);
+  border-top: 1px solid var(--hairline);
 }
 .ar-rule-card {
-  transition: border-color 160ms ease, transform 160ms ease;
+  transition: border-color var(--dur-fast) var(--ease-standard), transform var(--dur-fast) var(--ease-standard);
 }
 .ar-rule-card {
   height: 100%;
@@ -280,7 +280,7 @@
   transform: translateY(-2px);
 }
 .ar-rule-card:hover .home-card {
-  border-color: rgba(20, 17, 10, 0.3);
+  border-color: var(--border-chip);
 }
 
 @media (max-width: 1080px) {
@@ -298,7 +298,7 @@
     top: auto;
     bottom: 0;
     left: -4px;
-    border-top: 7px solid rgba(20, 17, 10, 0.55);
+    border-top: 7px solid var(--border-chip-active);
     border-left: 4.5px solid transparent;
     border-right: 4.5px solid transparent;
     border-bottom: 0;

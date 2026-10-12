@@ -485,7 +485,7 @@ function JumpIndex({ items }: { items: Array<{ href: string; label: string }> })
     <Card padding={24}>
       <span
         style={{
-          fontFamily: 'var(--font-plex-mono)',
+          fontFamily: 'var(--font-mono)',
           fontSize: 10,
           letterSpacing: '0.2em',
           textTransform: 'uppercase',
@@ -512,14 +512,14 @@ function JumpIndex({ items }: { items: Array<{ href: string; label: string }> })
               >
                 <span
                   style={{
-                    fontFamily: 'var(--font-plex-mono)',
+                    fontFamily: 'var(--font-mono)',
                     fontSize: 11,
-                    color: PALETTE.accent,
+                    color: PALETTE.faint,
                   }}
                 >
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <span style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 14.5, color: PALETTE.ink }}>
+                <span style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, color: PALETTE.ink }}>
                   {it.label}
                 </span>
               </a>
@@ -574,17 +574,17 @@ function ModelSection() {
           <Card key={s.n} padding={26}>
             <div
               style={{
-                fontFamily: 'var(--font-plex-mono)',
+                fontFamily: 'var(--font-mono)',
                 fontSize: 11,
                 letterSpacing: '0.2em',
-                color: PALETTE.accent,
+                color: PALETTE.faint,
               }}
             >
               {s.n}
             </div>
             <h2
               style={{
-                fontFamily: 'var(--font-plex-sans)',
+                fontFamily: 'var(--font-sans)',
                 fontSize: 21,
                 lineHeight: 1.2,
                 letterSpacing: '-0.01em',
@@ -597,7 +597,7 @@ function ModelSection() {
             </h2>
             <p
               style={{
-                fontFamily: 'var(--font-plex-sans)',
+                fontFamily: 'var(--font-sans)',
                 fontSize: 14.5,
                 lineHeight: 1.6,
                 color: PALETTE.muted,
@@ -609,7 +609,7 @@ function ModelSection() {
             <code
               style={{
                 display: 'block',
-                fontFamily: 'var(--font-plex-mono)',
+                fontFamily: 'var(--font-mono)',
                 fontSize: 11.5,
                 color: PALETTE.faint,
                 whiteSpace: 'pre-wrap',
@@ -666,18 +666,18 @@ export default function HowItWorksPage() {
         <Card padding={28} style={{ maxWidth: 860 }}>
           <div
             style={{
-              fontFamily: 'var(--font-plex-mono)',
+              fontFamily: 'var(--font-mono)',
               fontSize: 10.5,
               letterSpacing: '0.18em',
               textTransform: 'uppercase',
-              color: PALETTE.accent,
+              color: PALETTE.faint,
             }}
           >
             PEAC {FACTS.currentVersion}
           </div>
           <p
             style={{
-              fontFamily: 'var(--font-plex-sans)',
+              fontFamily: 'var(--font-sans)',
               fontSize: 15.5,
               lineHeight: 1.6,
               color: PALETTE.ink,
@@ -705,7 +705,7 @@ export default function HowItWorksPage() {
           </div>
           <p
             style={{
-              fontFamily: 'var(--font-plex-sans)',
+              fontFamily: 'var(--font-sans)',
               fontSize: 13,
               lineHeight: 1.6,
               color: PALETTE.muted,
@@ -724,7 +724,7 @@ export default function HowItWorksPage() {
           <CodeBlock tone="ink">{`pnpm dlx @peac/cli@${v} samples generate -o ./s
 pnpm dlx @peac/cli@${v} verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
         </div>
-        <p style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 12, color: '#7fa98c', marginTop: 18 }}>
+        <p style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--success-on-dark)', marginTop: 18 }}>
           Signature valid (offline) - PEAC {FACTS.currentVersion}
         </p>
         <div style={{ marginTop: 34, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>

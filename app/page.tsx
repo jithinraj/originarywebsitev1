@@ -85,7 +85,7 @@ export default function Page() {
         style={{
           background: PALETTE.bg,
           color: PALETTE.ink,
-          fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
+          fontFamily: 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif',
           minHeight: '100vh',
         }}
       >

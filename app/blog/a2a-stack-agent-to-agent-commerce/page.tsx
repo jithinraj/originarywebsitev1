@@ -42,7 +42,7 @@ const articleJsonLd = {
   publisher: {
     '@type': 'Organization',
     name: 'Originary',
-    logo: { '@type': 'ImageObject', url: 'https://www.originary.xyz/logo/originary-wordmark.svg' },
+    logo: { '@type': 'ImageObject', url: 'https://www.originary.xyz/brand/wordmark/originary-wordmark.svg' },
   },
   mainEntityOfPage: 'https://www.originary.xyz/blog/a2a-stack-agent-to-agent-commerce',
 }
@@ -50,7 +50,7 @@ const articleJsonLd = {
 const linkStyle = {
   color: PALETTE.ink,
   textDecoration: 'underline',
-  textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+  textDecorationColor: 'var(--rule)',
   textUnderlineOffset: 3,
 }
 

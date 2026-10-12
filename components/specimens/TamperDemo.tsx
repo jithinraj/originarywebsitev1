@@ -81,7 +81,7 @@ export function TamperDemo({
           }
           rows={rows}
           foot={foot}
-          style={tampered ? { borderColor: 'rgba(154,59,46,0.45)' } : {}}
+          style={tampered ? { borderColor: 'color-mix(in srgb, var(--danger) 45%, transparent)' } : {}}
         />
         <StepLabel>Decoded payload</StepLabel>
         <CodeBlock>{payload}</CodeBlock>

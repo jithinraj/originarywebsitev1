@@ -114,7 +114,7 @@ export function RecordGallery() {
           </Link>
         ))}
       </div>
-      <p style={{ fontFamily: SANS, fontSize: 13.5, color: '#6e6759', marginTop: 20 }}>
+      <p style={{ fontFamily: SANS, fontSize: 13.5, color: PALETTE.faint, marginTop: 20 }}>
         Reviewing a whole incident or transaction?{' '}
         <Link
           href="/evidence-case"

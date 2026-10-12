@@ -111,7 +111,7 @@ export function UseCases() {
           marginTop: 20,
           fontFamily: SANS,
           fontSize: 13.5,
-          color: '#6e6759',
+          color: PALETTE.faint,
         }}
       >
         The same record path supports customer reviews, incidents, audits and disputes.

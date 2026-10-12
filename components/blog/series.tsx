@@ -11,7 +11,7 @@ import { EVIDENCE_SERIES, getArticle } from '@/lib/blog'
 
 const AMBER = PALETTE.warn
 const SAGE = PALETTE.success
-const SLATE = PALETTE.accent
+const SLATE = PALETTE.ink
 
 const eyebrow: CSSProperties = {
   fontFamily: MONO,
@@ -177,10 +177,10 @@ export function EvidenceTable({
 export type FindingStatus = 'reported' | 'matched' | 'missing' | 'open'
 
 const CHIP: Record<FindingStatus, { label: string; color: string; wash: string; dashed?: boolean }> = {
-  reported: { label: 'reported', color: SLATE, wash: 'rgba(74, 98, 124, 0.08)' },
-  matched: { label: 'matched', color: SAGE, wash: 'rgba(74, 116, 89, 0.08)' },
-  missing: { label: 'not supplied', color: AMBER, wash: 'rgba(138, 106, 60, 0.07)', dashed: true },
-  open: { label: 'open', color: AMBER, wash: 'rgba(138, 106, 60, 0.07)', dashed: true },
+  reported: { label: 'reported', color: SLATE, wash: 'var(--code-bg)' },
+  matched: { label: 'matched', color: SAGE, wash: 'var(--success-bg)' },
+  missing: { label: 'not supplied', color: AMBER, wash: 'var(--warn-bg)', dashed: true },
+  open: { label: 'open', color: AMBER, wash: 'var(--warn-bg)', dashed: true },
 }
 
 export function StatusChip({ status }: { status: FindingStatus }) {
@@ -233,7 +233,7 @@ export function FindingsCard({
             key={i}
             style={{
               display: 'grid',
-              gridTemplateColumns: '112px 1fr',
+              gridTemplateColumns: '112px minmax(0, 1fr)',
               gap: 14,
               alignItems: 'start',
               padding: '13px 16px',
@@ -244,7 +244,7 @@ export function FindingsCard({
             <span>
               <StatusChip status={f.status} />
             </span>
-            <span style={{ fontFamily: SANS, fontSize: 14, lineHeight: 1.55, color: PALETTE.ink }}>
+            <span style={{ fontFamily: SANS, fontSize: 14, lineHeight: 1.55, color: PALETTE.ink, overflowWrap: 'anywhere' }}>
               {f.text}
               <span style={{ ...eyebrow, display: 'block', fontSize: 10, marginTop: 4 }}>
                 source: {f.source}
@@ -258,7 +258,7 @@ export function FindingsCard({
           style={{
             padding: '12px 16px',
             borderTop: `1px dashed ${AMBER}`,
-            background: 'rgba(138, 106, 60, 0.05)',
+            background: 'var(--warn-bg)',
             fontFamily: SANS,
             fontSize: 14,
             lineHeight: 1.55,
@@ -287,7 +287,7 @@ export function NextStep({
         margin: '30px 0 8px 0',
         padding: '22px 24px',
         borderLeft: `2px solid ${SLATE}`,
-        background: 'rgba(74, 98, 124, 0.05)',
+        background: 'var(--code-bg)',
       }}
     >
       <div style={{ ...eyebrow, color: SLATE, marginBottom: 8 }}>Next step</div>

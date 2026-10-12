@@ -12,9 +12,9 @@ export function Boundary({
     <div
       style={{
         position: 'relative',
-        width: 1,
+        width: 0,
         height,
-        background: `repeating-linear-gradient(to bottom, ${PALETTE.rule} 0 4px, transparent 4px 10px)`,
+        borderLeft: `1px dashed ${PALETTE.faint}`,
       }}
     >
       <div

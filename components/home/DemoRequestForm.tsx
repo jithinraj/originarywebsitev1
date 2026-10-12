@@ -187,9 +187,9 @@ export function DemoRequestForm({
           fontSize: 14,
           fontWeight: 500,
           letterSpacing: '-0.005em',
-          color: PALETTE.paper,
-          background: PALETTE.ink,
-          border: `1px solid ${PALETTE.ink}`,
+          color: PALETTE.onAction,
+          background: PALETTE.action,
+          border: `1px solid ${PALETTE.action}`,
           cursor: state === 'sending' ? 'wait' : 'pointer',
           opacity: state === 'sending' ? 0.7 : 1,
           transition: 'opacity 160ms ease',
@@ -198,7 +198,7 @@ export function DemoRequestForm({
         {state === 'sending' ? 'Sending...' : 'Send workflow'}
       </button>
 
-      <p role="status" aria-live="polite" style={{ margin: '10px 0 0', fontFamily: SANS, fontSize: 13, lineHeight: 1.5, color: state === 'error' ? '#9a3b2e' : PALETTE.success }}>
+      <p role="status" aria-live="polite" style={{ margin: '10px 0 0', fontFamily: SANS, fontSize: 13, lineHeight: 1.5, color: state === 'error' ? PALETTE.danger : PALETTE.success }}>
         {state === 'sent'
           ? 'Received. We reply within two business days.'
           : state === 'error'
@@ -221,7 +221,7 @@ export function DemoRequestForm({
           style={{
             color: PALETTE.ink,
             textDecoration: 'underline',
-            textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+            textDecorationColor: 'var(--rule)',
             textUnderlineOffset: 3,
           }}
         >
@@ -235,7 +235,7 @@ export function DemoRequestForm({
           style={{
             color: PALETTE.ink,
             textDecoration: 'underline',
-            textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+            textDecorationColor: 'var(--rule)',
             textUnderlineOffset: 3,
           }}
         >

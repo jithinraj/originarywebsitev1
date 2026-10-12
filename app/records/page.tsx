@@ -109,7 +109,7 @@ function JumpIndex({ items }: { items: Array<{ href: string; label: string; mark
     <Card padding={24}>
       <span
         style={{
-          fontFamily: 'var(--font-plex-mono)',
+          fontFamily: 'var(--font-mono)',
           fontSize: 10,
           letterSpacing: '0.2em',
           textTransform: 'uppercase',
@@ -136,20 +136,20 @@ function JumpIndex({ items }: { items: Array<{ href: string; label: string; mark
               >
                 <span
                   style={{
-                    fontFamily: 'var(--font-plex-mono)',
+                    fontFamily: 'var(--font-mono)',
                     fontSize: 11,
-                    color: PALETTE.accent,
+                    color: PALETTE.faint,
                   }}
                 >
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span
                   aria-hidden
-                  style={{ color: '#8a8172', display: 'inline-flex', alignSelf: 'center' }}
+                  style={{ color: 'var(--faint)', display: 'inline-flex', alignSelf: 'center' }}
                 >
                   <MarkGlyph name={it.mark} size={14} />
                 </span>
-                <span style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 14.5, color: PALETTE.ink }}>
+                <span style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, color: PALETTE.ink }}>
                   {it.label}
                 </span>
               </a>
@@ -224,7 +224,7 @@ export default function RecordsPage() {
             <StepLabel>Tamper case</StepLabel>
             <p style={{ fontFamily: 'inherit', fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '4px 0 0' }}>
               Change the tool name, the result digest, or one character of the signature and verification fails with{' '}
-              <code style={{ fontFamily: 'var(--font-plex-mono)', color: '#77592f' }}>E_INVALID_SIGNATURE</code>.
+              <code style={{ fontFamily: 'var(--font-mono)', color: 'var(--warn)' }}>E_INVALID_SIGNATURE</code>.
             </p>
             <EstablishBoundary
               establishes="the supplied key validates the signature; the tool name and result digest are bound as shown."
@@ -451,18 +451,18 @@ export default function RecordsPage() {
         <Card padding={28} style={{ maxWidth: 860 }}>
           <div
             style={{
-              fontFamily: 'var(--font-plex-mono)',
+              fontFamily: 'var(--font-mono)',
               fontSize: 10.5,
               letterSpacing: '0.18em',
               textTransform: 'uppercase',
-              color: PALETTE.accent,
+              color: PALETTE.faint,
             }}
           >
             PEAC {FACTS.currentVersion}
           </div>
           <p
             style={{
-              fontFamily: 'var(--font-plex-sans)',
+              fontFamily: 'var(--font-sans)',
               fontSize: 15.5,
               lineHeight: 1.6,
               color: PALETTE.ink,
@@ -490,7 +490,7 @@ export default function RecordsPage() {
           </div>
           <p
             style={{
-              fontFamily: 'var(--font-plex-sans)',
+              fontFamily: 'var(--font-sans)',
               fontSize: 13,
               lineHeight: 1.6,
               color: PALETTE.muted,
@@ -509,7 +509,7 @@ export default function RecordsPage() {
           <CodeBlock tone="ink">{`pnpm dlx @peac/cli@${v} samples generate -o ./s
 pnpm dlx @peac/cli@${v} verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
         </div>
-        <p style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 12, color: '#7fa98c', marginTop: 18 }}>
+        <p style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--success-on-dark)', marginTop: 18 }}>
           Signature valid (offline) - PEAC {FACTS.currentVersion}
         </p>
         <div style={{ marginTop: 34, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>

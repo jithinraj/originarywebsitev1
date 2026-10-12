@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
 }
 
-const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
-const mono = 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace'
+const sans = 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif'
+const mono = 'var(--font-mono), "IBM Plex Mono", ui-monospace, monospace'
 
 const ossFeatures = [
   'Full protocol specification',
@@ -110,9 +110,9 @@ const btnPrimary = {
   fontWeight: 500,
   letterSpacing: '-0.005em',
   textDecoration: 'none' as const,
-  color: PALETTE.paper,
-  background: PALETTE.ink,
-  border: `1px solid ${PALETTE.ink}`,
+  color: PALETTE.onAction,
+  background: PALETTE.action,
+  border: `1px solid ${PALETTE.action}`,
 }
 
 const btnSecondary = {
@@ -529,7 +529,7 @@ export default function PricingPage() {
                   'Deployment recommendation',
                 ].map((item) => (
                   <li key={item} style={{ display: 'flex', gap: 10, alignItems: 'baseline', fontSize: 14.5, lineHeight: 1.55, color: PALETTE.ink }}>
-                    <span aria-hidden style={{ color: PALETTE.success, fontFamily: 'var(--font-plex-mono)', fontSize: 13 }}>+</span>
+                    <span aria-hidden style={{ color: PALETTE.success, fontFamily: 'var(--font-mono)', fontSize: 13 }}>+</span>
                     {item}
                   </li>
                 ))}
@@ -556,7 +556,7 @@ export default function PricingPage() {
                   <div key={term}>
                     <dt
                       style={{
-                        fontFamily: 'var(--font-plex-mono)',
+                        fontFamily: 'var(--font-mono)',
                         fontSize: 10.5,
                         letterSpacing: '0.16em',
                         textTransform: 'uppercase',
@@ -573,11 +573,11 @@ export default function PricingPage() {
                 <a
                   href="/contact"
                   className="home-arrow-link"
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 18px', background: PALETTE.ink, color: PALETTE.paper, textDecoration: 'none', fontSize: 14, fontWeight: 500 }}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 18px', background: PALETTE.action, color: PALETTE.onAction, textDecoration: 'none', fontSize: 14, fontWeight: 500 }}
                 >
                   Start a pilot
                 </a>
-                <span style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 12, color: PALETTE.faint }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: PALETTE.faint }}>
                   scoped quote · your infrastructure or supported deployment
                 </span>
               </div>

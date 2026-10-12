@@ -42,7 +42,8 @@ export default function Error({
           align-items: center;
           justify-content: center;
           padding: 24px;
-          background: var(--surface-base);
+          background: var(--bg);
+          font-family: var(--font-sans);
         }
 
         .error-container {
@@ -52,22 +53,22 @@ export default function Error({
 
         .error-code {
           font-size: 120px;
-          font-weight: 700;
+          font-weight: 500;
           line-height: 1;
-          color: var(--text-muted);
+          color: var(--faint);
           margin-bottom: 16px;
         }
 
         .error-title {
           font-size: 28px;
-          font-weight: 600;
-          color: var(--text-primary);
+          font-weight: 500;
+          color: var(--ink);
           margin: 0 0 12px;
         }
 
         .error-description {
           font-size: 16px;
-          color: var(--text-tertiary);
+          color: var(--muted);
           line-height: 1.6;
           margin: 0 0 32px;
         }
@@ -83,17 +84,17 @@ export default function Error({
           align-items: center;
           padding: 12px 24px;
           font-size: 14px;
-          font-weight: 600;
-          color: white;
-          background: var(--accent-brand);
+          font-weight: 500;
+          color: var(--on-action);
+          background: var(--action);
           border: none;
           border-radius: 8px;
           cursor: pointer;
-          transition: background 0.2s;
+          transition: opacity var(--dur-fast) var(--ease-standard);
         }
 
         .error-btn-primary:hover {
-          background: var(--accent-brand-hover);
+          opacity: 0.88;
         }
 
         .error-btn-secondary {
@@ -101,24 +102,24 @@ export default function Error({
           align-items: center;
           padding: 12px 24px;
           font-size: 14px;
-          font-weight: 600;
-          color: var(--text-primary);
-          background: var(--surface-elevated);
-          border: 1px solid var(--border-default);
+          font-weight: 500;
+          color: var(--ink);
+          background: var(--paper);
+          border: 1px solid var(--rule);
           border-radius: 8px;
           text-decoration: none;
-          transition: border-color 0.2s;
+          transition: border-color var(--dur-fast) var(--ease-standard);
         }
 
         .error-btn-secondary:hover {
-          border-color: var(--border-hover);
+          border-color: var(--border-chip-active);
         }
 
         .error-digest {
           margin-top: 24px;
           font-size: 12px;
-          color: var(--text-muted);
-          font-family: ui-monospace, monospace;
+          color: var(--faint);
+          font-family: var(--font-mono);
         }
 
         @media (max-width: 480px) {

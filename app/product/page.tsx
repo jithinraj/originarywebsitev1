@@ -144,10 +144,10 @@ export default function ProductPage() {
           {MODULES.map((m, i) => (
             <div key={m.title} style={{ border: `1px solid ${PALETTE.hairline}`, background: PALETTE.paper, padding: '22px 22px 20px' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <span style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 11, letterSpacing: '0.12em', color: '#5a5346' }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.12em', color: 'var(--muted)' }}>
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <span aria-hidden style={{ color: '#8a8172', display: 'inline-flex' }}>
+                <span aria-hidden style={{ color: 'var(--faint)', display: 'inline-flex' }}>
                   <MarkGlyph name={m.mark} size={18} />
                 </span>
               </div>
@@ -270,7 +270,7 @@ export default function ProductPage() {
 
       <InkBand>
         <InkHeading>Put a signed record on one workflow this week.</InkHeading>
-        <p style={{ fontSize: 15, lineHeight: 1.6, color: 'rgba(244, 241, 234, 0.75)', maxWidth: '52ch', margin: '0 auto 26px' }}>
+        <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--on-dark-muted)', maxWidth: '52ch', margin: '0 auto 26px' }}>
           Start with the workflow another party already asks about. We will show what the signed record should contain.
         </p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>

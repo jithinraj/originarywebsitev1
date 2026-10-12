@@ -274,16 +274,16 @@ export default function AiGatewayPage() {
       {/* Closing */}
       <InkBand>
         <InkHeading maxWidth="26ch">Add records to one gateway route this week.</InkHeading>
-        <p style={{ fontSize: 16.5, lineHeight: 1.6, color: 'rgba(244,241,234,0.78)', maxWidth: '54ch', margin: '20px auto 0' }}>
+        <p style={{ fontSize: 16.5, lineHeight: 1.6, color: 'var(--on-dark-muted)', maxWidth: '54ch', margin: '20px auto 0' }}>
           Start with the route another party already asks about. We will show what the signed record should contain.
         </p>
         <div
           style={{
-            fontFamily: 'var(--font-plex-mono)',
+            fontFamily: 'var(--font-mono)',
             fontSize: 10.5,
             letterSpacing: '0.16em',
             textTransform: 'uppercase',
-            color: 'rgba(244,241,234,0.55)',
+            color: 'var(--on-dark-muted)',
             margin: '30px 0 8px',
           }}
         >

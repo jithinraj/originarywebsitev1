@@ -34,10 +34,10 @@ export default async function DownloadsServer() {
         <div
           key={file.filename}
           style={{
-            border: '1px solid var(--border-default)',
-            borderRadius: 'var(--radius-lg)',
+            border: '1px solid var(--hairline)',
+            borderRadius: 'var(--radius-card)',
             padding: 'var(--space-6)',
-            background: 'var(--surface-elevated)'
+            background: 'var(--paper)'
           }}
         >
           <div style={{
@@ -45,13 +45,13 @@ export default async function DownloadsServer() {
           }}>
             <h2 style={{
               fontSize: 'var(--text-lg)',
-              fontWeight: 600,
+              fontWeight: 500,
               marginBottom: 'var(--space-2)'
             }}>
               {file.platform === 'Templates' ? 'PEAC Templates' : `PEAC Protocol - ${file.platform}`}
             </h2>
             <p style={{
-              color: 'var(--text-secondary)',
+              color: 'var(--ink-2)',
               fontSize: 'var(--text-sm)',
               marginBottom: 'var(--space-1)'
             }}>
@@ -63,7 +63,7 @@ export default async function DownloadsServer() {
             <p style={{
               fontFamily: 'var(--font-mono)',
               fontSize: 'var(--text-xs)',
-              color: 'var(--text-tertiary)',
+              color: 'var(--muted)',
               fontWeight: 500,
               marginBottom: 'var(--space-3)',
               wordBreak: 'break-all'
@@ -81,10 +81,10 @@ export default async function DownloadsServer() {
                 alignItems: 'center',
                 gap: 'var(--space-2)',
                 padding: 'var(--space-2) var(--space-3)',
-                background: 'var(--accent-brand)',
-                color: 'var(--white)',
+                background: 'var(--action)',
+                color: 'var(--on-action)',
                 textDecoration: 'none',
-                borderRadius: 'var(--radius-md)',
+                borderRadius: 'var(--radius-panel)',
                 fontSize: 'var(--text-sm)',
                 fontWeight: 500
               }}
@@ -100,7 +100,7 @@ export default async function DownloadsServer() {
             gap: 'var(--space-4)',
             alignItems: 'center',
             fontSize: 'var(--text-sm)',
-            color: 'var(--text-secondary)'
+            color: 'var(--ink-2)'
           }}>
             <span>v{manifest.version}</span>
             {file.size > 0 && (
@@ -117,7 +117,7 @@ export default async function DownloadsServer() {
                   <code style={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: 'var(--text-xs)',
-                    background: 'var(--surface-card)',
+                    background: 'var(--code-bg)',
                     padding: '2px 4px',
                     borderRadius: 'var(--radius-sm)',
                     wordBreak: 'break-all'

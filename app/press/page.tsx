@@ -209,7 +209,7 @@ export default function PressPage() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/originary-logo.svg"
+                src="/brand/wordmark/originary-wordmark.svg"
                 alt="The Originary wordmark"
                 width={220}
                 height={56}
@@ -218,7 +218,7 @@ export default function PressPage() {
             </div>
             <figcaption
               style={{
-                fontFamily: 'var(--font-plex-mono)',
+                fontFamily: 'var(--font-mono)',
                 fontSize: 11,
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
@@ -232,8 +232,8 @@ export default function PressPage() {
           <figure style={{ margin: 0 }}>
             <div
               style={{
-                background: PALETTE.ink,
-                border: `1px solid ${PALETTE.ink}`,
+                background: PALETTE.surfaceDark,
+                border: `1px solid ${PALETTE.surfaceDark}`,
                 padding: '34px 28px',
                 display: 'flex',
                 alignItems: 'center',
@@ -242,7 +242,7 @@ export default function PressPage() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/originary-logo-reverse.svg"
+                src="/brand/wordmark/originary-wordmark-reverse.svg"
                 alt="The Originary wordmark for dark backgrounds"
                 width={220}
                 height={56}
@@ -251,7 +251,7 @@ export default function PressPage() {
             </div>
             <figcaption
               style={{
-                fontFamily: 'var(--font-plex-mono)',
+                fontFamily: 'var(--font-mono)',
                 fontSize: 11,
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
@@ -278,28 +278,47 @@ export default function PressPage() {
           }}
         >
           {[
-            ['Wordmark (primary)', '/originary-logo.svg', 'SVG'],
-            ['Wordmark', '/originary-logo-2400w.png', 'PNG 2400'],
-            ['Wordmark', '/originary-logo-800w.png', 'PNG 800'],
-            ['Wordmark with trademark symbol', '/originary-logo-tm.svg', 'SVG'],
-            ['Wordmark with trademark symbol', '/originary-logo-tm-2400w.png', 'PNG 2400'],
-            ['Wordmark for dark backgrounds', '/originary-logo-reverse.svg', 'SVG'],
-            ['Wordmark for dark backgrounds', '/originary-logo-reverse-800w.png', 'PNG 800'],
-            ['Compact mark', '/originary-logo-mark.svg', 'SVG'],
-            ['Compact mark for dark backgrounds', '/originary-logo-mark-reverse.svg', 'SVG'],
+            ['Brand kit, all files', '/brand/originary-brand-kit-v17-2026-10-12-cobalt.zip', 'ZIP'],
+            ['Wordmark (primary)', '/brand/wordmark/originary-wordmark.svg', 'SVG'],
+            ['Wordmark for dark backgrounds', '/brand/wordmark/originary-wordmark-reverse.svg', 'SVG'],
+            ['Wordmark', '/brand/wordmark/originary-wordmark-240w.png', 'PNG 240'],
+            ['Wordmark', '/brand/wordmark/originary-wordmark-800w.png', 'PNG 800'],
+            ['Wordmark', '/brand/wordmark/originary-wordmark-1200w.png', 'PNG 1200'],
+            ['Wordmark', '/brand/wordmark/originary-wordmark-2400w.png', 'PNG 2400'],
+            ['Wordmark', '/brand/wordmark/originary-wordmark-3840w.png', 'PNG 3840'],
+            ['Wordmark for dark backgrounds', '/brand/wordmark/originary-wordmark-reverse-240w.png', 'PNG 240'],
+            ['Wordmark for dark backgrounds', '/brand/wordmark/originary-wordmark-reverse-800w.png', 'PNG 800'],
+            ['Wordmark for dark backgrounds', '/brand/wordmark/originary-wordmark-reverse-1200w.png', 'PNG 1200'],
+            ['Wordmark for dark backgrounds', '/brand/wordmark/originary-wordmark-reverse-2400w.png', 'PNG 2400'],
+            ['Wordmark for dark backgrounds', '/brand/wordmark/originary-wordmark-reverse-3840w.png', 'PNG 3840'],
+            ['App icon', '/brand/app-icon/originary-app-icon.svg', 'SVG'],
+            ['App icon', '/brand/app-icon/originary-app-icon-16.png', 'PNG 16'],
+            ['App icon', '/brand/app-icon/originary-app-icon-32.png', 'PNG 32'],
+            ['App icon', '/brand/app-icon/originary-app-icon-64.png', 'PNG 64'],
+            ['App icon', '/brand/app-icon/originary-app-icon-128.png', 'PNG 128'],
+            ['App icon', '/brand/app-icon/originary-app-icon-180.png', 'PNG 180'],
+            ['App icon', '/brand/app-icon/originary-app-icon-192.png', 'PNG 192'],
+            ['App icon', '/brand/app-icon/originary-app-icon-256.png', 'PNG 256'],
+            ['App icon', '/brand/app-icon/originary-app-icon-512.png', 'PNG 512'],
+            ['App icon', '/brand/app-icon/originary-app-icon-1024.png', 'PNG 1024'],
+            ['Avatar', '/brand/social/originary-avatar-400.png', 'PNG 400'],
+            ['Link preview', '/brand/social/originary-link-preview-1200x630.png', 'PNG 1200x630'],
+            ['X header', '/brand/social/originary-x-header-1500x500.png', 'PNG 1500x500'],
+            ['LinkedIn banner', '/brand/social/originary-linkedin-banner-1584x396.png', 'PNG 1584x396'],
           ].map(([label, href, kind]) => (
-            <li key={href} style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 14, lineHeight: 1.55 }}>
+            <li key={href} style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.55 }}>
               <a href={href} download aria-label={`${label}, ${kind}`} style={{ color: PALETTE.ink }}>
                 {label}
               </a>{' '}
-              <span style={{ color: PALETTE.faint, fontFamily: 'var(--font-plex-mono)', fontSize: 11.5 }}>{kind}</span>
+              <span style={{ color: PALETTE.faint, fontFamily: 'var(--font-mono)', fontSize: 11.5 }}>{kind}</span>
             </li>
           ))}
         </ul>
         <p style={{ fontSize: 13, lineHeight: 1.65, color: PALETTE.faint, marginTop: 14, maxWidth: '64ch' }}>
-          The vector files stay sharp at any size; the PNGs are there when a vector will not do. Use the trademark
-          version where the logo stands on its own; the plain wordmark is fine inside an article. Minimum width 112 px,
-          or use the compact mark below that. Need a different size or format? Ask and we will send it.
+          The vector files stay sharp at any size; the PNGs are there when a vector will not do. Use the wordmark in
+          ink on white or light greys, and the reverse file on ink or dark greys; never recolour, retype or re-space it.
+          Keep it at least 120 px wide (96 px at the very least) with one x-height of clear space, and use the app icon
+          below that. Need a different size or format? Ask and we will send it.
         </p>
         <div style={{ marginTop: 26 }}>
           <StepLabel>Press contact</StepLabel>

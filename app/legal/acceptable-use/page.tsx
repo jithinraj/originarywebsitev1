@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import StaticPageLayout from '@/components/StaticPageLayout'
+import { PageShell, LegalDoc } from '@/components/home'
 
 export const metadata: Metadata = {
   title: 'Acceptable Use Policy',
@@ -8,25 +8,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/legal/acceptable-use',
   },
+  openGraph: {
+    title: 'Acceptable Use Policy | Originary',
+    description: 'Acceptable use policy outlining permitted and prohibited uses of Originary services.',
+    url: '/legal/acceptable-use',
+    siteName: 'Originary',
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary' }],
+    type: 'website',
+  },
+  twitter: { card: 'summary_large_image', title: 'Acceptable Use Policy | Originary', description: 'Acceptable use policy outlining permitted and prohibited uses of Originary services.', images: ['/og'] },
 }
 
 export default function AcceptableUse() {
   return (
-    <StaticPageLayout>
-        <section className="hero">
-          <div className="container">
-            <div className="hero-content">
-              <span className="kicker">LEGAL</span>
-              <h1 className="display">Acceptable Use Policy</h1>
-              <p className="sub">Guidelines for permitted and prohibited uses of our services.</p>
-              <p className="legal-date">Last updated July 22, 2026.</p>
-            </div>
-          </div>
-        </section>
+    <PageShell>
+      <LegalDoc title="Acceptable Use Policy" eyebrow="LEGAL" effective="Last updated July 22, 2026.">
+        <p>Guidelines for permitted and prohibited uses of our services.</p>
 
-        <section className="section">
-          <div className="container">
-            <div className="legal-content">
               <h2>1. Purpose and Scope</h2>
               <p>This Acceptable Use Policy governs your use of Originary&rsquo;s services and applies to all users, including free and paid customers. This policy is incorporated into and forms part of our Terms of Service.</p>
 
@@ -278,7 +276,7 @@ export default function AcceptableUse() {
 
               <p>For questions about this policy or to report violations:</p>
 
-              <div className="contact-info">
+              <div style={{ marginTop: 16 }}>
                 <p><strong>Contact:</strong> <a href="mailto:contact@originary.xyz">contact@originary.xyz</a></p>
                 <p><strong>Mailing Address (US):</strong><br />
                 Originary<br />
@@ -292,9 +290,7 @@ export default function AcceptableUse() {
                 Gurugram, Haryana 122002<br />
                 India</p>
               </div>
-            </div>
-          </div>
-        </section>
-    </StaticPageLayout>
+      </LegalDoc>
+    </PageShell>
   )
 }

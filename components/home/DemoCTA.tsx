@@ -67,7 +67,7 @@ export function DemoCTA() {
               fontFamily: SANS,
               fontSize: 16,
               lineHeight: 1.6,
-              color: '#3a352b',
+              color: PALETTE.body,
               margin: '16px 0 22px 0',
               textWrap: 'pretty',
             }}
@@ -95,7 +95,7 @@ export function DemoCTA() {
                     width: 8,
                     height: 8,
                     borderRadius: '50%',
-                    background: PALETTE.accent,
+                    background: PALETTE.ink,
                     flexShrink: 0,
                   }}
                 />

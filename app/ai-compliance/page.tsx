@@ -205,10 +205,10 @@ const CASE_ROWS: Array<{ label: string; status: string; tone: StatusName }> = [
 ]
 
 const TONE: Record<StatusName, string> = {
-  established: '#245f3f',
-  linked: '#375873',
-  missing: '#9a3b2e',
-  partial: '#77592f',
+  established: 'var(--success)',
+  linked: 'var(--ink-2)',
+  missing: 'var(--danger)',
+  partial: 'var(--warn)',
 }
 
 const STATUS_VOCAB = ['established', 'linked', 'bounded', 'missing', 'conflicting', 'not evaluated']
@@ -301,8 +301,8 @@ const PEAC_POINTS = [
   'No Originary callback required',
 ]
 
-const mono = 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace'
-const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
+const mono = 'var(--font-mono), "IBM Plex Mono", ui-monospace, monospace'
+const sans = 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif'
 
 export default function AiCompliancePage() {
   return (
@@ -719,7 +719,7 @@ export default function AiCompliancePage() {
             fontFamily: sans,
             fontSize: 16.5,
             lineHeight: 1.6,
-            color: 'rgba(244, 241, 234, 0.78)',
+            color: 'var(--on-dark-muted)',
             maxWidth: '58ch',
             margin: '20px auto 0',
           }}

@@ -48,7 +48,7 @@ const articleJsonLd = {
     name: 'Originary',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://www.originary.xyz/logo/originary-wordmark.svg',
+      url: 'https://www.originary.xyz/brand/wordmark/originary-wordmark.svg',
     },
   },
   mainEntityOfPage: 'https://www.originary.xyz/blog/adding-402-in-15-minutes',
@@ -57,7 +57,7 @@ const articleJsonLd = {
 const linkStyle = {
   color: PALETTE.ink,
   textDecoration: 'underline',
-  textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+  textDecorationColor: 'var(--rule)',
   textUnderlineOffset: 3,
 }
 
@@ -65,9 +65,9 @@ const codeBlock = {
   marginTop: 12,
   marginBottom: 16,
   padding: '14px 18px',
-  background: 'rgba(20, 17, 10, 0.04)',
+  background: 'var(--code-bg)',
   border: `1px solid ${PALETTE.rule}`,
-  fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace',
+  fontFamily: 'var(--font-mono), "IBM Plex Mono", ui-monospace, monospace',
   fontSize: 13,
   lineHeight: 1.6,
   color: PALETTE.ink,
@@ -79,9 +79,9 @@ const callout = {
   marginTop: 8,
   marginBottom: 14,
   padding: '14px 18px',
-  background: 'rgba(20, 17, 10, 0.03)',
+  background: 'var(--code-bg)',
   borderLeft: `2px solid ${PALETTE.rule}`,
-  fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
+  fontFamily: 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif',
   fontSize: 14,
   lineHeight: 1.65,
   color: PALETTE.muted,

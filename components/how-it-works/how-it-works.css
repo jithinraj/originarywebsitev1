@@ -6,33 +6,33 @@
 .hiw-sdeep {
   margin-top: 54px;
   padding-top: 38px;
-  border-top: 1px dashed rgba(20, 17, 10, 0.3);
+  border-top: 1px dashed var(--border-chip);
 }
 
 .hiw-sno {
-  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-weight: 600;
   font-size: 0.6rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #4a627c;
+  color: var(--muted);
 }
 
-/* Doubled selector so legacy global h2 rules (design-system.css) cannot outrank it. */
+/* Doubled selector kept so the page-level h2 base rules cannot outrank it. */
 .hiw-sdeep h2.hiw-title,
 h2.hiw-title {
-  font-family: var(--font-plex-sans), 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   font-size: clamp(1.75rem, 2.4vw, 2.125rem);
   letter-spacing: -0.02em;
   line-height: 1.12;
-  color: #14110a;
+  color: var(--ink);
   margin: 12px 0 10px;
   text-wrap: balance;
 }
 
 .hiw-thesis {
-  color: #463f31;
+  color: var(--ink-2);
   font-size: 1rem;
   line-height: 1.55;
   max-width: 70ch;
@@ -50,56 +50,56 @@ h2.hiw-title {
 }
 
 .hiw-wtext {
-  background: #fbf9f4;
-  border: 1px solid rgba(20, 17, 10, 0.18);
-  border-radius: 0;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-panel);
   padding: 22px 24px 20px;
   display: flex;
   flex-direction: column;
 }
 
 .hiw-wno {
-  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-weight: 600;
   font-size: 0.6rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #4a627c;
+  color: var(--muted);
 }
 
 .hiw-intro {
-  font-family: var(--font-plex-sans), 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.93rem;
   line-height: 1.6;
-  color: #463f31;
+  color: var(--ink-2);
   margin: 10px 0 12px;
   max-width: none;
 }
 
 .hiw-intro b {
-  color: #14110a;
+  color: var(--ink);
 }
 
 .hiw-intro code {
-  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 0.82em;
-  background: #f4f1ea;
+  background: var(--bg);
   padding: 0.1em 0.35em;
-  border-radius: 0;
+  border-radius: var(--radius-panel);
 }
 
 .hiw-wbind {
-  border-top: 1px solid rgba(20, 17, 10, 0.18);
+  border-top: 1px solid var(--rule);
   padding-top: 12px;
 }
 
 .hiw-label {
-  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-weight: 600;
   font-size: 0.625rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #6e6759;
+  color: var(--faint);
 }
 
 .hiw-bindlist {
@@ -112,35 +112,35 @@ h2.hiw-title {
 }
 
 .hiw-bindlist li {
-  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 0.6rem;
   letter-spacing: 0.04em;
-  border: 1px solid rgba(20, 17, 10, 0.3);
-  border-radius: 0;
+  border: 1px solid var(--border-chip);
+  border-radius: var(--radius-panel);
   padding: 4px 9px;
-  color: #14110a;
-  background: #f4f1ea;
+  color: var(--ink);
+  background: var(--bg);
 }
 
 .hiw-wprove {
-  font-family: var(--font-plex-sans), 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.9rem;
   line-height: 1.55;
-  color: #463f31;
+  color: var(--ink-2);
   margin: 14px 0 0;
   max-width: none;
 }
 
 .hiw-wprove b {
-  color: #4a627c;
+  color: var(--muted);
 }
 
 .hiw-wtype {
   margin-top: auto;
   padding-top: 16px;
-  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 0.62rem;
-  color: #4a627c;
+  color: var(--muted);
   background: none;
   font-weight: 600;
   overflow-x: auto;
@@ -150,21 +150,21 @@ h2.hiw-title {
 
 .hiw-actors {
   margin-top: 6px;
-  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 0.6rem;
   letter-spacing: 0.04em;
-  color: #6e6759;
+  color: var(--faint);
 }
 
 /* ---------- flow diagram (animated sequence panel) ---------- */
 
 .hiw-flow {
   --hiw-dur: 12s;
-  background: #14110a;
-  border: 1px solid rgba(244, 241, 234, 0.18);
-  border-radius: 0;
+  background: var(--surface-dark);
+  border: 1px solid var(--rule-on-dark);
+  border-radius: var(--radius-panel);
   padding: 18px 20px 20px;
-  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -183,11 +183,11 @@ h2.hiw-title {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #f4f1ea;
-  border: 1px solid rgba(244, 241, 234, 0.18);
-  background: rgba(244, 241, 234, 0.05);
+  color: var(--on-dark);
+  border: 1px solid var(--rule-on-dark);
+  background: color-mix(in srgb, var(--on-dark) 5%, transparent);
   padding: 6px 11px;
-  border-radius: 0;
+  border-radius: var(--radius-panel);
 }
 
 .hiw-fsteps {
@@ -208,7 +208,7 @@ h2.hiw-title {
   left: 0;
   right: 0;
   top: 68%;
-  border-top: 1px dashed rgba(244, 241, 234, 0.4);
+  border-top: 1px dashed var(--rule-on-dark);
   opacity: 0.5;
 }
 
@@ -224,13 +224,13 @@ h2.hiw-title {
 .hiw-fmsg.ltr .hiw-fhead {
   right: -1px;
   border-right: none;
-  border-left-color: #7fa98c;
+  border-left-color: var(--success-on-dark);
 }
 
 .hiw-fmsg.rtl .hiw-fhead {
   left: -1px;
   border-left: none;
-  border-right-color: #7fa98c;
+  border-right-color: var(--success-on-dark);
 }
 
 .hiw-fmsg .hiw-flabel {
@@ -240,7 +240,7 @@ h2.hiw-title {
   right: 0;
   font-size: 0.6rem;
   letter-spacing: 0.05em;
-  color: #f4f1ea;
+  color: var(--on-dark);
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -255,8 +255,7 @@ h2.hiw-title {
   height: 7px;
   margin-top: -3.5px;
   border-radius: 50%;
-  background: #7fa98c;
-  box-shadow: 0 0 9px rgba(127, 169, 140, 0.85);
+  background: var(--success-on-dark);
   opacity: 0;
 }
 
@@ -272,15 +271,15 @@ h2.hiw-title {
 .hiw-fevt {
   text-align: center;
   font-size: 0.6rem;
-  color: #c9a668;
-  border: 1px dashed rgba(244, 241, 234, 0.4);
-  border-radius: 0;
+  color: var(--warn-on-dark);
+  border: 1px dashed var(--rule-on-dark);
+  border-radius: var(--radius-panel);
   padding: 8px 10px;
   letter-spacing: 0.05em;
 }
 
 .hiw-fevt.bad {
-  color: #d08b7e;
+  color: var(--danger-on-dark);
 }
 
 .hiw-frec .hiw-fchit {
@@ -288,9 +287,9 @@ h2.hiw-title {
   text-align: center;
   font-size: 0.6rem;
   letter-spacing: 0.05em;
-  color: #0b2c1e;
-  background: #7fa98c;
-  border-radius: 0;
+  color: var(--surface-dark);
+  background: var(--success-on-dark);
+  border-radius: var(--radius-panel);
   padding: 9px 10px;
   font-weight: 600;
 }
@@ -298,7 +297,7 @@ h2.hiw-title {
 .hiw-fchk {
   text-align: center;
   font-size: 0.62rem;
-  color: #7fa98c;
+  color: var(--success-on-dark);
   letter-spacing: 0.07em;
 }
 
@@ -328,9 +327,9 @@ h2.hiw-title {
 @keyframes hiw-slot5 { 0%, 57% { opacity: 0; } 61%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
 @keyframes hiw-slot6 { 0%, 71% { opacity: 0; } 75%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
 
-@keyframes hiw-pop3 { 0%, 29% { transform: scale(0.9); } 35% { transform: scale(1.04); } 39%, 100% { transform: scale(1); } }
-@keyframes hiw-pop4 { 0%, 43% { transform: scale(0.9); } 49% { transform: scale(1.04); } 53%, 100% { transform: scale(1); } }
-@keyframes hiw-pop5 { 0%, 57% { transform: scale(0.9); } 63% { transform: scale(1.04); } 67%, 100% { transform: scale(1); } }
+@keyframes hiw-pop3 { 0%, 29% { transform: scale(0.9); } 35% { transform: scale(1); } 39%, 100% { transform: scale(1); } }
+@keyframes hiw-pop4 { 0%, 43% { transform: scale(0.9); } 49% { transform: scale(1); } 53%, 100% { transform: scale(1); } }
+@keyframes hiw-pop5 { 0%, 57% { transform: scale(0.9); } 63% { transform: scale(1); } 67%, 100% { transform: scale(1); } }
 
 @keyframes hiw-dgo1 { 0%, 1% { left: 0; opacity: 0; } 5% { opacity: 1; } 13% { left: calc(100% - 7px); opacity: 1; } 15%, 100% { left: calc(100% - 7px); opacity: 0; } }
 @keyframes hiw-dgo2 { 0%, 15% { left: 0; opacity: 0; } 19% { opacity: 1; } 27% { left: calc(100% - 7px); opacity: 1; } 29%, 100% { left: calc(100% - 7px); opacity: 0; } }
@@ -378,18 +377,18 @@ h2.hiw-title {
 }
 
 .hiw-failc {
-  border: 1px solid rgba(20, 17, 10, 0.18);
-  border-left: 3px solid #8a6a3c;
-  border-radius: 0;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--muted);
+  border-radius: var(--radius-panel);
   padding: 12px 15px;
-  background: #fbf9f4;
+  background: var(--paper);
   font-size: 0.84rem;
-  color: #463f31;
+  color: var(--ink-2);
 }
 
 .hiw-failc b {
   display: block;
-  color: #14110a;
+  color: var(--ink);
   font-size: 0.86rem;
   margin-bottom: 3px;
 }
@@ -397,10 +396,10 @@ h2.hiw-title {
 .hiw-failc p {
   margin: 0;
   max-width: none;
-  font-family: var(--font-plex-sans), 'IBM Plex Sans', system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.84rem;
   line-height: 1.5;
-  color: #463f31;
+  color: var(--ink-2);
 }
 
 /* ---------- responsive ---------- */
@@ -418,8 +417,6 @@ h2.hiw-title {
   .hiw-flow {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 30px), transparent);
-    mask-image: linear-gradient(to right, #000 calc(100% - 30px), transparent);
   }
   .hiw-factors,
   .hiw-fsteps {
@@ -435,6 +432,6 @@ h2.hiw-title {
 }
 
 .hiw-flow:focus-visible {
-  outline: 2px solid rgba(244, 241, 234, 0.75);
+  outline: 2px solid var(--accent-on-dark);
   outline-offset: -2px;
 }

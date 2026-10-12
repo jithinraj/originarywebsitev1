@@ -112,7 +112,7 @@ const STEPS = [
 const linkStyle = {
   color: PALETTE.ink,
   textDecoration: 'underline',
-  textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+  textDecorationColor: 'var(--rule)',
   textUnderlineOffset: 3,
 } as const
 
@@ -256,7 +256,7 @@ export default function InvestigatePage() {
         <div className="inv-grid3">
           {STEPS.map((s, i) => (
             <Card key={s.title} padding={24}>
-              <Mono size={11} color={PALETTE.accent} style={{ letterSpacing: '0.1em' }}>
+              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.1em' }}>
                 {String(i + 1).padStart(2, '0')}
               </Mono>
               <div style={{ marginTop: 12 }}>
@@ -443,7 +443,7 @@ export default function InvestigatePage() {
               margin: '0 0 20px',
               padding: '14px 18px',
               borderLeft: `3px solid ${PALETTE.warn}`,
-              background: 'rgba(138, 106, 60, 0.06)',
+              background: 'var(--warn-bg)',
               fontFamily: sans,
               fontSize: 14,
               lineHeight: 1.55,
@@ -499,7 +499,7 @@ export default function InvestigatePage() {
       {/* Closing */}
       <InkBand>
         <InkHeading maxWidth="28ch">Bring the next disputed agent action to a decision.</InkHeading>
-        <p style={{ fontSize: 16.5, lineHeight: 1.6, color: 'rgba(244,241,234,0.78)', maxWidth: '54ch', margin: '20px auto 0' }}>
+        <p style={{ fontSize: 16.5, lineHeight: 1.6, color: 'var(--on-dark-muted)', maxWidth: '54ch', margin: '20px auto 0' }}>
           Start with one question another team already needs answered. We will agree the scope before any
           evidence moves.
         </p>

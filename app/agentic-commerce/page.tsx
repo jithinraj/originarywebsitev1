@@ -122,7 +122,7 @@ export default function AgenticCommercePage() {
         <SectionHeading index="01" eyebrow="Two different questions" title="Payment evidence and service evidence answer different questions." />
         <SpecimenGrid>
           <Card>
-            <div style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: PALETTE.faint }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: PALETTE.faint }}>
               The payment system may report
             </div>
             <ul style={{ margin: '14px 0 0', padding: '0 0 0 18px', fontSize: 15, lineHeight: 1.7, color: PALETTE.muted }}>
@@ -133,8 +133,8 @@ export default function AgenticCommercePage() {
               <li>provider timestamp.</li>
             </ul>
           </Card>
-          <Card emphasis style={{ borderColor: PALETTE.accent }}>
-            <div style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: PALETTE.accent }}>
+          <Card emphasis style={{ borderColor: PALETTE.accentBorder, background: PALETTE.accentTint }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: PALETTE.accent }}>
               The service evidence may report
             </div>
             <ul style={{ margin: '14px 0 0', padding: '0 0 0 18px', fontSize: 15, lineHeight: 1.7, color: PALETTE.muted }}>
@@ -282,18 +282,18 @@ export default function AgenticCommercePage() {
         <Card padding={28} style={{ maxWidth: 860 }}>
           <div
             style={{
-              fontFamily: 'var(--font-plex-mono)',
+              fontFamily: 'var(--font-mono)',
               fontSize: 10.5,
               letterSpacing: '0.18em',
               textTransform: 'uppercase',
-              color: PALETTE.accent,
+              color: PALETTE.faint,
             }}
           >
             PEAC {FACTS.currentVersion}
           </div>
           <p
             style={{
-              fontFamily: 'var(--font-plex-sans)',
+              fontFamily: 'var(--font-sans)',
               fontSize: 15.5,
               lineHeight: 1.6,
               color: PALETTE.ink,
@@ -321,7 +321,7 @@ export default function AgenticCommercePage() {
           </div>
           <p
             style={{
-              fontFamily: 'var(--font-plex-sans)',
+              fontFamily: 'var(--font-sans)',
               fontSize: 13,
               lineHeight: 1.6,
               color: PALETTE.muted,
@@ -336,7 +336,7 @@ export default function AgenticCommercePage() {
       {/* Closing */}
       <InkBand>
         <InkHeading>Start with one paid workflow where another party asks what happened.</InkHeading>
-        <p style={{ fontSize: 16.5, lineHeight: 1.6, color: 'rgba(244,241,234,0.78)', maxWidth: '56ch', margin: '20px auto 0' }}>
+        <p style={{ fontSize: 16.5, lineHeight: 1.6, color: 'var(--on-dark-muted)', maxWidth: '56ch', margin: '20px auto 0' }}>
           A paid API call, an MCP tool that triggers a charge, a gateway decision, a payment authorization, or a dispute
           review.
         </p>

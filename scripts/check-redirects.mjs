@@ -9,7 +9,7 @@
  *  - article-to-generic redirects (/blog/<slug> -> a non-article page)
  *  - a base path already covered by a sibling wildcard
  */
-import { readFileSync } from 'node:fs'
+import { readFileSync, existsSync, statSync } from 'node:fs'
 
 const cfg = readFileSync('next.config.js', 'utf8')
 
@@ -29,6 +29,12 @@ const errors = []
 const seen = new Set()
 
 const WILDCARD_ALLOW = new Set() // no broad wildcards permitted
+
+// A retired asset URL may point at a file that exists in public/ (e.g. a v17 brand-kit file).
+function isPublicFile(p) {
+  const f = 'public' + p
+  return existsSync(f) && statSync(f).isFile()
+}
 
 for (const { source, destination } of pairs) {
   if (seen.has(source)) errors.push(`duplicate source: ${source}`)
@@ -53,7 +59,8 @@ for (const { source, destination } of pairs) {
     !isExternal &&
     !canonical.has(destPath) &&
     !destination.startsWith('/.well-known') &&
-    !NON_PAGE_DEST.has(destination)
+    !NON_PAGE_DEST.has(destination) &&
+    !isPublicFile(destPath)
   ) {
     errors.push(`destination is not canonical: ${source} -> ${destination}`)
   }

@@ -7,9 +7,11 @@ Location: United States
 
 /* SITE */
 
-Last updated: 2026-07-15
+Last updated: 2026-10-12
 Language: English
 Framework: Next.js
+Design: Originary brand guidelines v17 (Carbon + Cobalt), light and dark themes
+Typefaces: IBM Plex Sans, IBM Plex Mono
 
 /* LINKS */
 

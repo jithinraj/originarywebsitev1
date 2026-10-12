@@ -24,7 +24,7 @@ commitment helpers, external evidence anchoring, agent spend attribution,
 agent run lineage records, action approval records, and runtime lineage
 exports.
 
-Last updated: 2026-10-11
+Last updated: 2026-10-12
 
 Organization: Originary (legal entity: Poem, Inc.)
 Location: Delaware, USA
@@ -86,19 +86,19 @@ still missing, without internal logs, dashboard access, or vendor runtime.
 
 ## Brand assets
 
-The Originary logo, for correct attribution. Scalable vector files; use the
-trademark version where the logo stands on its own. No partnership,
-certification, or endorsement is implied by use of these files.
+The Originary wordmark (brand guidelines v17), for correct attribution. Reproduce
+it only from these files: ink on white or light greys, the reverse file on ink or
+dark greys, never recoloured, retyped or re-spaced. Below 96 px wide, use the app
+icon. No partnership, certification, or endorsement is implied by use of these files.
 
-- [Originary logo](https://www.originary.xyz/originary-logo.svg): wordmark, primary
-- [Originary logo tm](https://www.originary.xyz/originary-logo-tm.svg): wordmark with trademark symbol
-- [Originary logo reverse](https://www.originary.xyz/originary-logo-reverse.svg): wordmark for dark backgrounds
-- [Originary logo mark](https://www.originary.xyz/originary-logo-mark.svg): compact symbol (the origin point)
-- [Originary logo mark reverse](https://www.originary.xyz/originary-logo-mark-reverse.svg): compact symbol for dark backgrounds
-- [Originary logo 800w](https://www.originary.xyz/originary-logo-800w.png): wordmark, raster, 800 px wide
-- [Originary logo 2400w](https://www.originary.xyz/originary-logo-2400w.png): wordmark, raster, 2400 px wide
-- [Originary logo reverse 800w](https://www.originary.xyz/originary-logo-reverse-800w.png): wordmark for dark backgrounds, raster
-- [Originary logo tm 2400w](https://www.originary.xyz/originary-logo-tm-2400w.png): wordmark with trademark symbol, raster
+- [Brand kit](https://www.originary.xyz/brand/originary-brand-kit-v17-2026-10-12-cobalt.zip): every file below plus favicons and design tokens, ZIP
+- [Originary wordmark](https://www.originary.xyz/brand/wordmark/originary-wordmark.svg): ink master, SVG
+- [Originary wordmark reverse](https://www.originary.xyz/brand/wordmark/originary-wordmark-reverse.svg): for dark backgrounds, SVG
+- [Originary wordmark 800w](https://www.originary.xyz/brand/wordmark/originary-wordmark-800w.png): raster, 800 px wide
+- [Originary wordmark 2400w](https://www.originary.xyz/brand/wordmark/originary-wordmark-2400w.png): raster, 2400 px wide
+- [Originary wordmark reverse 800w](https://www.originary.xyz/brand/wordmark/originary-wordmark-reverse-800w.png): for dark backgrounds, raster
+- [Originary app icon](https://www.originary.xyz/brand/app-icon/originary-app-icon.svg): app icon and avatar tile, SVG
+- [Originary link preview](https://www.originary.xyz/brand/social/originary-link-preview-1200x630.png): 1200 x 630
 
 ## Open protocol
 

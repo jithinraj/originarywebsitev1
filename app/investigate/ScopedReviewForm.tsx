@@ -66,7 +66,7 @@ export function ScopedReviewForm() {
           fontFamily: SANS,
           fontSize: 13.5,
           lineHeight: 1.5,
-          color: '#9a3b2e',
+          color: 'var(--danger)',
           fontWeight: 500,
           margin: problems.length ? '0 0 16px' : 0,
           outline: 'none',
@@ -159,9 +159,9 @@ export function ScopedReviewForm() {
           fontSize: 14,
           fontWeight: 500,
           letterSpacing: '-0.005em',
-          color: PALETTE.paper,
-          background: PALETTE.ink,
-          border: `1px solid ${PALETTE.ink}`,
+          color: PALETTE.onAction,
+          background: PALETTE.action,
+          border: `1px solid ${PALETTE.action}`,
           cursor: 'pointer',
         }}
       >
@@ -184,7 +184,7 @@ export function ScopedReviewForm() {
           style={{
             color: PALETTE.ink,
             textDecoration: 'underline',
-            textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+            textDecorationColor: 'var(--rule)',
             textUnderlineOffset: 3,
           }}
         >

@@ -172,7 +172,7 @@ function ComparisonMiddle({ time }: { time: number }) {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 8px 22px -18px rgba(20, 17, 10, 0.35)',
+            boxShadow: 'var(--shadow-tile)',
           }}
         >
           <Mono

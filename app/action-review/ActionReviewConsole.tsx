@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from
 import { PALETTE } from '@/components/home/palette'
 import { SANS, MONO } from '@/components/home/typography'
 import { Mono } from '@/components/home/atoms/Mono'
-import { RUST } from '@/components/specimens/parts'
 import {
   REVIEW_CLOCK,
   SIMULATIONS,
@@ -18,17 +17,17 @@ import {
 } from './engine'
 
 const SEVERITY_STYLE: Record<Severity, { fg: string; bg: string; bd: string }> = {
-  critical: { fg: RUST, bg: 'rgba(154,59,46,0.08)', bd: 'rgba(154,59,46,0.35)' },
-  high: { fg: '#775a32', bg: 'rgba(138,106,60,0.10)', bd: 'rgba(138,106,60,0.35)' },
-  medium: { fg: '#3f566e', bg: 'rgba(74,98,124,0.09)', bd: 'rgba(74,98,124,0.32)' },
+  critical: { fg: PALETTE.danger, bg: 'var(--danger-bg)', bd: 'var(--danger)' },
+  high: { fg: 'var(--warn)', bg: 'var(--warn-bg)', bd: 'var(--warn)' },
+  medium: { fg: 'var(--ink-2)', bg: 'var(--wash)', bd: 'var(--rule)' },
   low: { fg: PALETTE.faint, bg: PALETTE.paper, bd: PALETTE.hairline },
   none: { fg: PALETTE.faint, bg: PALETTE.paper, bd: PALETTE.hairline },
 }
 const STATUS_STYLE: Record<CaseStatus, { fg: string; bg: string; bd: string }> = {
   open: { fg: PALETTE.ink, bg: 'transparent', bd: PALETTE.rule },
-  in_review: { fg: '#3f566e', bg: 'rgba(74,98,124,0.09)', bd: 'rgba(74,98,124,0.32)' },
+  in_review: { fg: 'var(--ink-2)', bg: 'var(--wash)', bd: 'var(--rule)' },
   monitoring: { fg: PALETTE.faint, bg: 'transparent', bd: PALETTE.hairline },
-  resolved: { fg: '#41654c', bg: 'rgba(74,116,89,0.10)', bd: 'rgba(74,116,89,0.35)' },
+  resolved: { fg: 'var(--success)', bg: 'var(--success-bg)', bd: 'var(--success)' },
 }
 
 const pretty = (s: string) => s.split('_').join(' ').split('.').join(' · ')
@@ -481,7 +480,7 @@ export function ActionReviewConsole() {
                     {message ? (
                       <span
                         role={message.kind === 'err' ? 'alert' : 'status'}
-                        style={{ fontFamily: SANS, fontSize: 13, color: message.kind === 'err' ? RUST : PALETTE.success }}
+                        style={{ fontFamily: SANS, fontSize: 13, color: message.kind === 'err' ? PALETTE.danger : PALETTE.success }}
                       >
                         {message.text}
                       </span>
