@@ -32,7 +32,7 @@
   grid-template-columns: 92px minmax(0, 1fr);
   gap: 16px;
   padding: 9px 0;
-  border-top: 1px solid rgba(20, 17, 10, 0.1);
+  border-top: 1px solid var(--hairline);
 }
 
 .spec-row:first-child {
@@ -40,20 +40,20 @@
 }
 
 .spec-row dt {
-  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 10.5px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #6e6759;
+  color: var(--faint);
   margin: 1px 0 0 0;
 }
 
 .spec-row dd {
   margin: 0;
-  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 12.5px;
   line-height: 1.5;
-  color: #14110a;
+  color: var(--ink);
   overflow-wrap: anywhere;
   word-break: break-word;
 }
@@ -70,33 +70,33 @@
 }
 
 .tamper-btn {
-  font-family: var(--font-plex-mono), 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 11.5px;
   letter-spacing: 0.03em;
   padding: 9px 15px;
-  border: 1px solid rgba(20, 17, 10, 0.3);
+  border: 1px solid var(--border-chip);
   background: transparent;
-  color: #14110a;
+  color: var(--ink);
   cursor: pointer;
   transition:
-    background 160ms ease,
-    border-color 160ms ease,
-    color 160ms ease;
+    background var(--dur-fast) var(--ease-standard),
+    border-color var(--dur-fast) var(--ease-standard),
+    color var(--dur-fast) var(--ease-standard);
 }
 
 .tamper-btn:hover {
-  background: rgba(154, 59, 46, 0.07);
-  border-color: #9a3b2e;
-  color: #9a3b2e;
+  background: var(--danger-bg);
+  border-color: var(--danger);
+  color: var(--danger);
 }
 
 .tamper-btn:focus-visible {
-  outline: 2px solid #4a627c;
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
 .spec-fade {
-  transition: opacity 220ms ease;
+  transition: opacity var(--dur-base) var(--ease-standard);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -108,16 +108,16 @@
 
 /* Card + ledger response */
 .spec-fade {
-  transition: border-color 200ms ease;
+  transition: border-color var(--dur-base) var(--ease-standard);
 }
 .spec-fade:hover {
-  border-color: rgba(20, 17, 10, 0.32);
+  border-color: var(--rule);
 }
 .spec-ledger li {
-  transition: background 160ms ease;
+  transition: background var(--dur-fast) var(--ease-standard);
 }
 .spec-ledger li:hover {
-  background: rgba(20, 17, 10, 0.025);
+  background: var(--code-bg);
 }
 
 /* DataTable: self-contained stacked rows below 768px so prose wraps at the
@@ -138,7 +138,7 @@
     left: -9999px;
   }
   .pk-datatable tr {
-    border-top: 1px solid rgba(20, 17, 10, 0.14);
+    border-top: 1px solid var(--border-card);
     padding: 14px 16px;
   }
   .pk-datatable tbody tr:first-child {
@@ -163,15 +163,15 @@
   .pk-datatable-labelled td[data-col]::before {
     content: attr(data-col);
     display: block;
-    font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+    font-family: var(--font-mono);
     font-size: 10.5px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #6e6759;
+    color: var(--faint);
     margin-bottom: 3px;
   }
   .pk-datatable-labelled td:first-child {
     padding-bottom: 6px !important;
-    border-bottom: 1px solid rgba(20, 17, 10, 0.1);
+    border-bottom: 1px solid var(--hairline);
   }
 }

@@ -64,8 +64,8 @@ export const metadata: Metadata = {
   },
 }
 
-const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
-const mono = 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace'
+const sans = 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif'
+const mono = 'var(--font-mono), "IBM Plex Mono", ui-monospace, monospace'
 
 export default function DownloadsPage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
@@ -234,7 +234,7 @@ npm i @peac/mcp-server@${v}`}
                 style={{
                   color: PALETTE.ink,
                   textDecoration: 'underline',
-                  textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+                  textDecorationColor: 'var(--rule)',
                   textUnderlineOffset: 3,
                 }}
               >

@@ -58,8 +58,8 @@ export const metadata: Metadata = {
   },
 }
 
-const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
-const mono = 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace'
+const sans = 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif'
+const mono = 'var(--font-mono), "IBM Plex Mono", ui-monospace, monospace'
 
 export default function PeacPage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
@@ -493,7 +493,7 @@ export default function PeacPage() {
                   fontSize: 12,
                   color: PALETTE.muted,
                   textDecoration: 'underline',
-                  textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+                  textDecorationColor: 'var(--rule)',
                   textUnderlineOffset: 3,
                   alignSelf: 'center',
                 }}
@@ -529,7 +529,7 @@ const code = {
   fontFamily: mono,
   fontSize: 13,
   color: PALETTE.ink,
-  background: 'rgba(20, 17, 10, 0.04)',
+  background: 'var(--code-bg)',
   padding: '2px 6px',
   border: `1px solid ${PALETTE.hairline}`,
 }

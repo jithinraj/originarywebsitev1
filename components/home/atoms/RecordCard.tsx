@@ -38,7 +38,7 @@ export function RecordCard({
         background: PALETTE.paper,
         border: `1px solid ${signed ? PALETTE.rule : PALETTE.hairline}`,
         boxShadow: signed
-          ? '0 1px 0 rgba(20,17,10,0.04), 0 12px 30px -18px rgba(20,17,10,0.25)'
+          ? 'var(--shadow-float)'
           : 'none',
         transition: 'box-shadow 320ms ease, border-color 320ms ease',
         ...style,
@@ -81,7 +81,7 @@ export function RecordCard({
           style={{
             fontFamily: MONO,
             fontSize: 10,
-            color: signed ? PALETTE.accent : PALETTE.faint,
+            color: signed ? PALETTE.ink : PALETTE.faint,
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
             opacity: signed ? 1 : 0.6,

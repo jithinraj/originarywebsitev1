@@ -14,8 +14,6 @@ type ArticleFigureProps = {
 const dotgrid: CSSProperties = {
   position: 'absolute',
   inset: 0,
-  backgroundImage: 'radial-gradient(rgba(20, 17, 10, 0.12) 1px, transparent 1px)',
-  backgroundSize: '22px 22px',
   pointerEvents: 'none',
 }
 

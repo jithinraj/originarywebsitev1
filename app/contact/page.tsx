@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/contact' },
 }
 
-const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
+const sans = 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif'
 
 const helpItems = [
   {
@@ -208,7 +208,7 @@ export default function ContactPage() {
                       width: 8,
                       height: 8,
                       borderRadius: '50%',
-                      background: PALETTE.accent,
+                      background: PALETTE.muted,
                       flexShrink: 0,
                     }}
                   />

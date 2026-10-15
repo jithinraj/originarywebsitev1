@@ -69,17 +69,17 @@
 
 /* Evidence series index: non-current entries darken on hover. */
 .series-link {
-  transition: color 160ms ease;
+  transition: color var(--dur-fast) var(--ease-standard);
 }
 .series-link:hover {
-  color: #14110a !important;
+  color: var(--ink) !important;
 }
 
 /* Ordered lists in article bodies: match the unordered-list treatment. */
 .legal-doc-body ol {
   margin: 0 0 14px 0;
   padding-left: 22px;
-  color: #6b6458;
+  color: var(--muted);
 }
 .legal-doc-body ol li {
   margin-bottom: 6px;

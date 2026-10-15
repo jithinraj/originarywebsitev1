@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { rootGraph } from '@/lib/structured-data/entities'
-import { Geist, IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
+import { BRAND } from '@/lib/brand-tokens'
+import { THEME_INIT_SCRIPT } from '@/components/brand/theme'
+import { IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
@@ -8,14 +10,6 @@ import PerformanceMonitor from '@/components/PerformanceMonitor'
 import SkipNavigation from '@/components/SkipNavigation'
 import ClarityAnalytics from '@/components/ClarityAnalytics'
 import AmplitudeAnalytics from '@/components/AmplitudeAnalytics'
-import ScrollAnimationProvider from '@/components/ScrollAnimationProvider'
-
-const geistSans = Geist({
-  subsets: ['latin'],
-  variable: '--font-geist-sans',
-  display: 'swap',
-  preload: true,
-})
 
 const plexSans = IBM_Plex_Sans({
   subsets: ['latin'],
@@ -96,7 +90,8 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: '#f4f1ea', // matches homepage PALETTE.bg
+  // Light is the default; the theme toggle updates this tag when the reader picks dark.
+  themeColor: BRAND.bg,
   colorScheme: 'light',
   viewportFit: 'cover',
 }
@@ -107,10 +102,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" data-theme="light" className={`${geistSans.variable} ${plexSans.variable} ${plexMono.variable}`}>
+    <html lang="en" data-theme="light" suppressHydrationWarning className={`${plexSans.variable} ${plexMono.variable}`}>
       <head>
+        {/* Applies the reader's saved theme before first paint (light unless they chose dark). */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
@@ -120,8 +117,7 @@ export default function RootLayout({
       <body>
         <PerformanceMonitor />
         <SkipNavigation />
-        <ScrollAnimationProvider />
-        <div className="wrap hp-root site-root">
+        <div className="site-root">
           {children}
         </div>
 

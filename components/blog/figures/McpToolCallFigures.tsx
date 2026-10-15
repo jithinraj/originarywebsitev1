@@ -66,7 +66,7 @@ export function RefundEvidenceLevels() {
               w={122}
               h={54}
               stroke={n.later ? FAINT : PALETTE.ink}
-              fill={n.later ? PALETTE.bg : i === 2 ? 'rgba(74, 116, 89, 0.08)' : PALETTE.paper}
+              fill={n.later ? PALETTE.bg : i === 2 ? 'var(--success-bg)' : PALETTE.paper}
               dashed={n.later}
               step={step}
             />

@@ -57,9 +57,9 @@ export function HandoffCaseDiagram() {
       </T>
 
       {/* Handoff case */}
-      <Box x={250} y={54} w={176} h={152} stroke={SLATE} fill={SLATE_WASH} step={3} />
-      <path d="M 404 54 L 426 76 V 54 Z" fill={PALETTE.bg} stroke={SLATE} strokeWidth="1.25" className="fig-fade fig-step-3" />
-      <T x={338} y={80} color={SLATE} step={3}>
+      <Box x={250} y={54} w={176} h={152} stroke={PALETTE.accent} fill={PALETTE.accentTint} step={3} />
+      <path d="M 404 54 L 426 76 V 54 Z" fill={PALETTE.bg} stroke={PALETTE.accent} strokeWidth="1.25" className="fig-fade fig-step-3" />
+      <T x={338} y={80} color={PALETTE.accent} step={3}>
         HANDOFF CASE
       </T>
       {caseItems.map((label, i) => (

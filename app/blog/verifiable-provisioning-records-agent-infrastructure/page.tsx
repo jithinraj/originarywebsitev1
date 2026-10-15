@@ -44,7 +44,7 @@ const jsonLd = {
   publisher: {
     '@type': 'Organization',
     name: 'Originary',
-    logo: { '@type': 'ImageObject', url: 'https://www.originary.xyz/logo/originary-wordmark.svg' },
+    logo: { '@type': 'ImageObject', url: 'https://www.originary.xyz/brand/wordmark/originary-wordmark.svg' },
   },
   mainEntityOfPage:
     'https://www.originary.xyz/blog/verifiable-provisioning-records-agent-infrastructure',
@@ -53,7 +53,7 @@ const jsonLd = {
 const linkStyle = {
   color: PALETTE.ink,
   textDecoration: 'underline',
-  textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+  textDecorationColor: 'var(--rule)',
   textUnderlineOffset: 3,
 }
 
@@ -61,9 +61,9 @@ const callout = {
   marginTop: 8,
   marginBottom: 14,
   padding: '14px 18px',
-  background: 'rgba(20, 17, 10, 0.03)',
+  background: 'var(--code-bg)',
   borderLeft: `2px solid ${PALETTE.rule}`,
-  fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
+  fontFamily: 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif',
   fontSize: 14,
   lineHeight: 1.65,
   color: PALETTE.muted,
@@ -75,7 +75,7 @@ const pullQuote = {
   padding: '18px 22px',
   background: PALETTE.bg,
   border: `1px solid ${PALETTE.rule}`,
-  fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
+  fontFamily: 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif',
   fontSize: 17,
   fontWeight: 500,
   lineHeight: 1.5,
@@ -96,21 +96,21 @@ const providerCard = {
   padding: '14px 16px',
   background: PALETTE.bg,
   border: `1px solid ${PALETTE.rule}`,
-  fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
+  fontFamily: 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif',
   fontSize: 14,
   lineHeight: 1.55,
   color: PALETTE.ink,
 }
 
 const providerName = {
-  fontWeight: 600,
+  fontWeight: 500,
   fontSize: 15,
   marginBottom: 2,
   color: PALETTE.ink,
 }
 
 const providerMeta = {
-  fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace',
+  fontFamily: 'var(--font-mono), "IBM Plex Mono", ui-monospace, monospace',
   fontSize: 12,
   textTransform: 'uppercase' as const,
   letterSpacing: '0.04em',
@@ -119,7 +119,7 @@ const providerMeta = {
 }
 
 const providerLabel = {
-  fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace',
+  fontFamily: 'var(--font-mono), "IBM Plex Mono", ui-monospace, monospace',
   fontSize: 11,
   textTransform: 'uppercase' as const,
   letterSpacing: '0.04em',

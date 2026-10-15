@@ -258,7 +258,7 @@ function ProblemAnim() {
               background: PALETTE.paper,
               border: `1px solid ${PALETTE.rule}`,
               boxShadow:
-                '0 1px 0 rgba(20,17,10,0.04), 0 12px 30px -22px rgba(20,17,10,0.3)',
+                'var(--shadow-float)',
               padding: '8px 12px',
             }}
           >
@@ -277,7 +277,7 @@ function ProblemAnim() {
               >
                 signed record
               </Mono>
-              <Mono size={9} color={PALETTE.accent}>
+              <Mono size={9} color={PALETTE.muted}>
                 portable
               </Mono>
             </div>

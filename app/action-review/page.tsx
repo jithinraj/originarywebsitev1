@@ -5,7 +5,7 @@ import { PALETTE } from '@/components/home/palette'
 import { SANS } from '@/components/home/typography'
 import { Mono } from '@/components/home/atoms/Mono'
 import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
-import { VerificationBoundary, InkBand, InkHeading, InkButton, RUST } from '@/components/specimens/parts'
+import { VerificationBoundary, InkBand, InkHeading, InkButton } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { ActionReviewConsole } from './ActionReviewConsole'
 import { CaseFlowDiagram } from './CaseFlowDiagram'
@@ -94,13 +94,13 @@ const RULES: Array<{ title: string; body: string; mark: MarkName; severity: stri
   },
 ]
 
-const SEVERITY_FG: Record<string, string> = { critical: RUST, high: '#775a32', medium: '#3f566e' }
+const SEVERITY_FG: Record<string, string> = { critical: PALETTE.danger, high: 'var(--warn)', medium: 'var(--ink-2)' }
 
 function CaseSnapshot() {
   const rows: Array<[string, React.ReactNode]> = [
     ['gateway', <span key="g">denied vendor.update <span style={{ color: PALETTE.faint }}>· 15:19 UTC</span></span>],
     ['company', <span key="c">succeeded <span style={{ color: PALETTE.faint }}>· 15:21 UTC</span></span>],
-    ['finding', <span key="f" style={{ color: RUST }}>Gateway denial and reported success</span>],
+    ['finding', <span key="f" style={{ color: PALETTE.danger }}>Gateway denial and reported success</span>],
     ['basis', <span key="b" style={{ color: PALETTE.faint }}>source-reported, not verified</span>],
   ]
   return (
@@ -110,15 +110,15 @@ function CaseSnapshot() {
           <Mono size={10.5} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase', display: 'block' }}>
             Case
           </Mono>
-          <Mono size={13.5} color={PALETTE.ink} style={{ display: 'block', marginTop: 4 }}>
+          <Mono size={13.5} color={PALETTE.ink} style={{ display: 'block', marginTop: 4, overflowWrap: 'anywhere' }}>
             acme:workflow-88
           </Mono>
         </div>
         <div style={{ display: 'flex', gap: 6 }}>
           <Mono
             size={10.5}
-            color={RUST}
-            style={{ textTransform: 'uppercase', border: '1px solid rgba(154,59,46,0.35)', background: 'rgba(154,59,46,0.08)', padding: '3px 8px' }}
+            color={PALETTE.danger}
+            style={{ textTransform: 'uppercase', border: '1px solid var(--danger)', background: 'var(--danger-bg)', padding: '3px 8px' }}
           >
             critical
           </Mono>
@@ -257,7 +257,7 @@ export default function ActionReviewPage() {
             fontFamily: SANS,
             fontSize: 16,
             lineHeight: 1.6,
-            color: 'rgba(244,241,234,0.72)',
+            color: 'var(--on-dark-muted)',
             maxWidth: '56ch',
             margin: '16px auto 28px',
           }}

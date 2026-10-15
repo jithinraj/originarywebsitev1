@@ -42,7 +42,7 @@ const articleJsonLd = {
   publisher: {
     '@type': 'Organization',
     name: 'Originary',
-    logo: { '@type': 'ImageObject', url: 'https://www.originary.xyz/logo/originary-wordmark.svg' },
+    logo: { '@type': 'ImageObject', url: 'https://www.originary.xyz/brand/wordmark/originary-wordmark.svg' },
   },
   mainEntityOfPage: 'https://www.originary.xyz/blog/http-402-for-apis',
 }
@@ -50,7 +50,7 @@ const articleJsonLd = {
 const linkStyle = {
   color: PALETTE.ink,
   textDecoration: 'underline',
-  textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+  textDecorationColor: 'var(--rule)',
   textUnderlineOffset: 3,
 }
 
@@ -102,14 +102,14 @@ export default function Page() {
             <li><strong>Instructions:</strong> how to pay and retry</li>
           </ol>
           <pre style={{
-            background: 'rgba(20, 17, 10, 0.04)',
+            background: 'var(--code-bg)',
             border: `1px solid ${PALETTE.hairline}`,
             padding: '14px 16px',
             fontSize: 13,
             lineHeight: 1.6,
             overflowX: 'auto',
             color: PALETTE.ink,
-            fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", monospace',
+            fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
           }}>
 {`HTTP/1.1 402 Payment Required
 Content-Type: application/json

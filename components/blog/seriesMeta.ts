@@ -64,7 +64,7 @@ export function seriesJsonLd(slug: string, keywords: string[]) {
     publisher: {
       '@type': 'Organization',
       name: 'Originary',
-      logo: { '@type': 'ImageObject', url: `${SITE}/logo/originary-wordmark.svg` },
+      logo: { '@type': 'ImageObject', url: `${SITE}/brand/wordmark/originary-wordmark.svg` },
     },
     mainEntityOfPage: `${SITE}/blog/${slug}`,
   }

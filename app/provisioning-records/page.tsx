@@ -170,7 +170,7 @@ export default function ProvisioningRecordsPage() {
               <StepLabel>Tamper case</StepLabel>
               <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '4px 0 0' }}>
                 Change the resource, the actor, or one character of the signature and verification fails with{' '}
-                <code style={{ fontFamily: 'var(--font-plex-mono)', color: PALETTE.warn }}>E_INVALID_SIGNATURE</code>.
+                <code style={{ fontFamily: 'var(--font-mono)', color: PALETTE.warn }}>E_INVALID_SIGNATURE</code>.
               </p>
             </div>
           </SpecimenGrid>

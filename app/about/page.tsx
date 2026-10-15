@@ -360,7 +360,7 @@ const linkAction = {
   alignItems: 'center',
   gap: 8,
   color: PALETTE.ink,
-  fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
+  fontFamily: 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif',
   fontSize: 15,
   fontWeight: 500,
   letterSpacing: '-0.005em',

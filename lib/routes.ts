@@ -32,11 +32,14 @@ export const STATIC_ROUTES: readonly string[] = [
   '/security',
   '/privacy',
   '/terms',
-  '/trademark',
   '/legal/imprint',
-  '/legal/acceptable-use',
   '/blog',
 ]
+
+// Real pages that are deliberately noindex (robots metadata on the page). They
+// exist and can be linked to, but stay out of the sitemap and IndexNow so the
+// sitemap never submits a URL the page itself asks not to be indexed.
+export const NOINDEX_ROUTES: readonly string[] = ['/trademark', '/legal/acceptable-use']
 
 // Indexable blog article routes, derived from the content registry.
 export const ARTICLE_ROUTES: readonly string[] = CURRENT_ARTICLES.filter((a) => a.indexable).map(

@@ -5,20 +5,20 @@ export default function DownloadCardPEAC() {
   return (
     <section style={{
       marginTop: 'var(--space-8)',
-      borderRadius: 'var(--radius-2xl)',
-      border: '1px solid var(--border-default)',
+      borderRadius: 'var(--radius-card)',
+      border: '1px solid var(--hairline)',
       padding: 'var(--space-6)'
     }}>
       <h2 style={{
         fontSize: 'var(--text-xl)',
-        fontWeight: 600,
+        fontWeight: 500,
         marginBottom: 'var(--space-2)'
       }}>
         Open Protocol (PEAC) - Upstream Packages
       </h2>
       <p style={{
         fontSize: 'var(--text-sm)',
-        color: 'var(--text-secondary)',
+        color: 'var(--ink-2)',
         marginBottom: 'var(--space-4)'
       }}>
         PEAC is the open protocol behind Originary&apos;s signed interaction records. Install from the official upstream packages and repository.
@@ -31,8 +31,8 @@ export default function DownloadCardPEAC() {
         marginBottom: 'var(--space-4)'
       }}>
         <div style={{
-          borderRadius: 'var(--radius-lg)',
-          border: '1px solid var(--border-default)',
+          borderRadius: 'var(--radius-card)',
+          border: '1px solid var(--hairline)',
           padding: 'var(--space-4)'
         }}>
           <div style={{ fontWeight: 500, marginBottom: 'var(--space-2)' }}>
@@ -40,8 +40,8 @@ export default function DownloadCardPEAC() {
           </div>
           <pre tabIndex={0} style={{
             overflow: 'auto',
-            borderRadius: 'var(--radius-md)',
-            background: 'var(--surface-subtle)',
+            borderRadius: 'var(--radius-panel)',
+            background: 'var(--wash)',
             padding: 'var(--space-3)',
             fontSize: 'var(--text-xs)',
             fontFamily: 'var(--font-mono)',
@@ -54,7 +54,7 @@ peac policy validate peac-policy.yaml`}
           </pre>
           <p style={{
             fontSize: 'var(--text-xs)',
-            color: 'var(--text-secondary)',
+            color: 'var(--ink-2)',
             marginBottom: 'var(--space-3)'
           }}>
             Requires Node 22.13+; see upstream docs.
@@ -63,7 +63,7 @@ peac policy validate peac-policy.yaml`}
             <a
               style={{
                 textDecoration: 'underline',
-                color: 'var(--accent-brand)',
+                color: 'var(--ink)',
                 fontSize: 'var(--text-sm)'
               }}
               href="https://github.com/peacprotocol/peac"
@@ -75,7 +75,7 @@ peac policy validate peac-policy.yaml`}
             <a
               style={{
                 textDecoration: 'underline',
-                color: 'var(--accent-brand)',
+                color: 'var(--ink)',
                 fontSize: 'var(--text-sm)'
               }}
               href="https://www.peacprotocol.org/docs"
@@ -88,8 +88,8 @@ peac policy validate peac-policy.yaml`}
         </div>
 
         <div style={{
-          borderRadius: 'var(--radius-lg)',
-          border: '1px solid var(--border-default)',
+          borderRadius: 'var(--radius-card)',
+          border: '1px solid var(--hairline)',
           padding: 'var(--space-4)'
         }}>
           <div style={{ fontWeight: 500, marginBottom: 'var(--space-2)' }}>
@@ -97,13 +97,13 @@ peac policy validate peac-policy.yaml`}
           </div>
           <p style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-2)' }}>
             Current stable: <code style={{
-              background: 'var(--surface-subtle)',
+              background: 'var(--wash)',
               padding: '2px 4px',
               borderRadius: 'var(--radius-sm)',
               fontFamily: 'var(--font-mono)'
             }}>interaction-record+jwt</code> (Wire 0.2)
           </p>
-          <p style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>
+          <p style={{ fontSize: 'var(--text-xs)', color: 'var(--ink-2)' }}>
             Legacy format <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85em' }}>peac-receipt/0.1</code> (Wire 0.1) is frozen.
           </p>
         </div>
@@ -111,7 +111,7 @@ peac policy validate peac-policy.yaml`}
 
       <p style={{
         fontSize: 'var(--text-xs)',
-        color: 'var(--text-secondary)'
+        color: 'var(--ink-2)'
       }}>
         Upstream licensing: Apache-2.0. Use at your own discretion; see the repository for details.
       </p>

@@ -17,9 +17,9 @@ const btnBase: CSSProperties = {
 
 const primaryBtn: CSSProperties = {
   ...btnBase,
-  background: PALETTE.ink,
-  color: PALETTE.paper,
-  border: `1px solid ${PALETTE.ink}`,
+  background: PALETTE.action,
+  color: PALETTE.onAction,
+  border: `1px solid ${PALETTE.action}`,
 }
 
 const secondaryBtn: CSSProperties = {
@@ -63,7 +63,7 @@ export default function NotFound() {
           <h1
             style={{
               fontSize: 'clamp(32px, 5vw, 48px)',
-              fontWeight: 600,
+              fontWeight: 500,
               lineHeight: 1.1,
               letterSpacing: '-0.02em',
               margin: 0,

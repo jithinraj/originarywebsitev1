@@ -244,7 +244,7 @@ export function PullLine({
   rule = 'both',
 }: {
   children: ReactNode
-  /** Trailing clause rendered in the verify green. */
+  /** Trailing qualifier: two-tone headline, claim in ink, qualifier in grey. Never coloured. */
   accent?: ReactNode
   /** Small mono kicker above the statement. */
   kicker?: string
@@ -290,7 +290,7 @@ export function PullLine({
           }}
         >
           {children}
-          {accent ? <span style={{ color: PALETTE.success }}> {accent}</span> : null}
+          {accent ? <span style={{ color: PALETTE.faint }}> {accent}</span> : null}
         </p>
       </div>
     </section>
@@ -331,14 +331,14 @@ export function SectionHeading({
           style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
         >
           {index ? (
-            <span aria-hidden style={{ color: PALETTE.accent, marginRight: 10 }}>
+            <span aria-hidden style={{ color: PALETTE.muted, marginRight: 10 }}>
               {index}
             </span>
           ) : null}
           {mark ? (
             <span
               aria-hidden
-              style={{ display: 'inline-flex', verticalAlign: '-3px', marginRight: 9, color: '#8a8172' }}
+              style={{ display: 'inline-flex', verticalAlign: '-3px', marginRight: 9, color: PALETTE.faint }}
             >
               <MarkGlyph name={mark} size={14} />
             </span>
@@ -648,6 +648,7 @@ export function ArticleDoc({
       <div style={{ maxWidth: 780, margin: '0 auto' }}>
         <nav
           aria-label="Breadcrumb"
+          className="pk-crumb"
           style={{
             fontFamily: mono,
             fontSize: 11,
@@ -732,7 +733,7 @@ export function ArticleDoc({
               marginTop: 28,
               padding: '14px 18px',
               borderLeft: `3px solid ${PALETTE.warn}`,
-              background: 'rgba(138, 106, 60, 0.06)',
+              background: 'var(--warn-bg)',
               fontFamily: sans,
               fontSize: 14,
               lineHeight: 1.55,
@@ -754,8 +755,8 @@ export function ArticleDoc({
             style={{
               marginTop: 28,
               padding: '14px 18px',
-              borderLeft: `3px solid ${PALETTE.accent}`,
-              background: 'rgba(74, 98, 124, 0.06)',
+              borderLeft: `3px solid ${PALETTE.faint}`,
+              background: 'var(--wash)',
               fontFamily: sans,
               fontSize: 14,
               lineHeight: 1.55,
@@ -828,7 +829,7 @@ export function ArticleRelated({
                     fontSize: 15,
                     color: PALETTE.ink,
                     textDecoration: 'underline',
-                    textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+                    textDecorationColor: 'var(--rule)',
                     textUnderlineOffset: 3,
                   }}
                 >
@@ -844,7 +845,7 @@ export function ArticleRelated({
                     fontSize: 15,
                     color: PALETTE.ink,
                     textDecoration: 'underline',
-                    textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+                    textDecorationColor: 'var(--rule)',
                     textUnderlineOffset: 3,
                   }}
                 >

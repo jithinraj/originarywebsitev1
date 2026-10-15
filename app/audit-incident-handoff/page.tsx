@@ -127,7 +127,7 @@ export default function AuditIncidentHandoffPage() {
               <pre
                 tabIndex={0}
                 style={{
-                  fontFamily: 'var(--font-plex-mono)',
+                  fontFamily: 'var(--font-mono)',
                   fontSize: 12.5,
                   lineHeight: 1.7,
                   color: PALETTE.ink,
@@ -156,7 +156,7 @@ export default function AuditIncidentHandoffPage() {
               <pre
                 tabIndex={0}
                 style={{
-                  fontFamily: 'var(--font-plex-mono)',
+                  fontFamily: 'var(--font-mono)',
                   fontSize: 12.5,
                   lineHeight: 1.7,
                   color: PALETTE.ink,
@@ -221,7 +221,7 @@ export default function AuditIncidentHandoffPage() {
       {/* Closing */}
       <InkBand>
         <InkHeading maxWidth="26ch">Hand off one bundle the next time a reviewer asks.</InkHeading>
-        <p style={{ fontSize: 16.5, lineHeight: 1.6, color: 'rgba(244,241,234,0.78)', maxWidth: '54ch', margin: '20px auto 0' }}>
+        <p style={{ fontSize: 16.5, lineHeight: 1.6, color: 'var(--on-dark-muted)', maxWidth: '54ch', margin: '20px auto 0' }}>
           Start with the review or dispute another party already asked about. We will show what the
           bundle should contain.
         </p>

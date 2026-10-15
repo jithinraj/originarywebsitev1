@@ -58,7 +58,7 @@ const jsonLd = {
     name: 'Originary',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://www.originary.xyz/logo/originary-wordmark.svg',
+      url: 'https://www.originary.xyz/brand/wordmark/originary-wordmark.svg',
     },
   },
   about: [
@@ -71,7 +71,7 @@ const jsonLd = {
   ],
 }
 
-const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
+const sans = 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif'
 
 const blogLabel = {
   maxWidth: 1080,
@@ -93,14 +93,14 @@ function ArticleCard({ article, featured }: { article: Article; featured?: boole
         background: PALETTE.paper,
         textDecoration: 'none',
         color: PALETTE.ink,
-        transition: 'transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease',
+        transition: 'transform var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard), border-color var(--dur-base) var(--ease-standard)',
       }}
       className="home-card"
     >
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12 }}>
         <span
           style={{
-            fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace',
+            fontFamily: 'var(--font-mono), "IBM Plex Mono", ui-monospace, monospace',
             fontSize: 11,
             letterSpacing: '0.16em',
             textTransform: 'uppercase',
@@ -146,7 +146,7 @@ function ArticleCard({ article, featured }: { article: Article; featured?: boole
           marginTop: 8,
           paddingTop: 14,
           borderTop: `1px solid ${PALETTE.hairline}`,
-          fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", monospace',
+          fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
           fontSize: 11,
           letterSpacing: '0.06em',
           color: PALETTE.faint,
@@ -310,7 +310,7 @@ export default function BlogPage() {
                   >
                     <span
                       style={{
-                        fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", monospace',
+                        fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
                         fontSize: 10.5,
                         letterSpacing: '0.14em',
                         textTransform: 'uppercase',

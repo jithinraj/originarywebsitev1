@@ -164,7 +164,7 @@ export function HomeFooter() {
       >
         <div style={{ minWidth: 0 }}>
           <Link href="/" aria-label="Originary home" style={{ display: 'inline-flex', color: 'inherit' }}>
-            <Wordmark forceOpen />
+            <Wordmark />
           </Link>
           <p
             style={{

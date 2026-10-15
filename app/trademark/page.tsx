@@ -1,7 +1,14 @@
 import { Metadata } from 'next'
-import StaticPageLayout from '@/components/StaticPageLayout'
+import { PageShell, LegalDoc, PALETTE } from '@/components/home'
 import Link from 'next/link'
 import Script from 'next/script'
+
+const linkStyle = {
+  color: PALETTE.ink,
+  textDecoration: 'underline',
+  textDecorationColor: 'var(--rule)',
+  textUnderlineOffset: 3,
+}
 
 export const metadata: Metadata = {
   title: 'Trademark & Brand Use',
@@ -10,6 +17,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/trademark',
   },
+  openGraph: {
+    title: 'Trademark & Brand Use | Originary',
+    description: 'Originary trademark guidelines and brand use policy for proper usage of our marks.',
+    url: '/trademark',
+    siteName: 'Originary',
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary' }],
+    type: 'website',
+  },
+  twitter: { card: 'summary_large_image', title: 'Trademark & Brand Use | Originary', description: 'Originary trademark guidelines and brand use policy for proper usage of our marks.', images: ['/og'] },
 }
 
 const webPageJsonLd = {
@@ -22,58 +38,13 @@ const webPageJsonLd = {
 
 export default function Trademark() {
   return (
-    <div className="wrap">
+    <>
       <Script id="trademark-json-ld" type="application/ld+json" strategy="beforeInteractive">
         {JSON.stringify(webPageJsonLd)}
       </Script>
-      <StaticPageLayout>
-        <section className="section" style={{ background: 'var(--surface-elevated)', paddingTop: 'var(--space-24)' }}>
-          <div className="container">
-            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-              <div style={{ textAlign: 'center', marginBottom: 'var(--space-16)' }}>
-                <div style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 'var(--space-3)',
-                  background: 'var(--accent-brand-subtle)',
-                  border: '1px solid var(--accent-brand-muted)',
-                  borderRadius: 'var(--radius-full)',
-                  padding: 'var(--space-2) var(--space-6)',
-                  marginBottom: 'var(--space-6)',
-                  fontSize: 'var(--text-sm)',
-                  fontWeight: 600,
-                  color: '#0a6a9e'
-                }}>
-                  <span>LEGAL</span>
-                </div>
-
-                <h1 style={{
-                  fontSize: 'clamp(var(--text-4xl), 6vw, var(--text-5xl))',
-                  fontWeight: 700,
-                  lineHeight: 1.1,
-                  letterSpacing: '-0.04em',
-                  marginBottom: 'var(--space-6)',
-                  color: 'var(--text-primary)'
-                }}>
-                  Trademark &amp; Brand Use
-                </h1>
-                <p style={{
-                  fontSize: 'var(--text-sm)',
-                  color: 'var(--text-tertiary)'
-                }}>
-                  Last updated 2026-07-20
-                </p>
-              </div>
-
-              <div className="card" style={{ textAlign: 'left' }}>
-                <div style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 'var(--space-8)',
-                  lineHeight: 1.7,
-                  color: 'var(--text-secondary)'
-                }}>
-              <p><strong>&ldquo;Originary&rdquo;</strong> and the Originary logo are trademarks of <strong>Poem, Inc.</strong> Proper use:</p>
+      <PageShell>
+        <LegalDoc title="Trademark &amp; Brand Use" eyebrow="LEGAL" effective="Last updated 2026-07-20">
+<p><strong>&ldquo;Originary&rdquo;</strong> and the Originary logo are trademarks of <strong>Poem, Inc.</strong> Proper use:</p>
 
               <h2>Permitted use</h2>
               <ul>
@@ -97,31 +68,27 @@ export default function Trademark() {
 
               <h2>Disambiguation</h2>
               <p><strong>Originary&trade;</strong> identifies software and developer tools published and offered by <strong>Poem, Inc.</strong>, including PEAC Protocol software and Originary Verify. <strong>Poem, Inc. is not affiliated with any other business using a similar name.</strong></p>
-              <p style={{ marginTop: 'var(--space-3)' }}><em>This site refers only to Originary at <Link href="https://www.originary.xyz" style={{ color: 'var(--accent-brand)' }}>https://www.originary.xyz/</Link>.</em></p>
+              <p style={{ marginTop: 12 }}><em>This site refers only to Originary at <Link href="https://www.originary.xyz" style={linkStyle}>https://www.originary.xyz/</Link>.</em></p>
 
               <h2>PEAC Protocol and open source</h2>
               <p><strong>PEAC Protocol</strong> is open-source software published and maintained by Originary under Apache-2.0. <strong>Originary&trade;</strong> is the software and developer-tools brand of Poem, Inc.</p>
-              <p style={{ marginTop: 'var(--space-3)' }}>Anyone can implement PEAC Protocol. Originary Verify is a commercial software offering with implementation and deployment support, built on PEAC Protocol.</p>
-              <p style={{ marginTop: 'var(--space-3)' }}>PEAC Protocol assets and specifications are governed by the Apache-2.0 license. See <Link href="/peac" style={{ color: 'var(--accent-brand)' }}>originary.xyz/peac</Link> for details.</p>
+              <p style={{ marginTop: 12 }}>Anyone can implement PEAC Protocol. Originary Verify is a commercial software offering with implementation and deployment support, built on PEAC Protocol.</p>
+              <p style={{ marginTop: 12 }}>PEAC Protocol assets and specifications are governed by the Apache-2.0 license. See <Link href="/peac" style={linkStyle}>originary.xyz/peac</Link> for details.</p>
 
               <h2>Brand inquiries</h2>
-              <p>For trademark questions or brand partnerships: <Link href="mailto:contact@originary.xyz" style={{ color: 'var(--accent-brand)' }}>contact@originary.xyz</Link></p>
+              <p>For trademark questions or brand partnerships: <Link href="mailto:contact@originary.xyz" style={linkStyle}>contact@originary.xyz</Link></p>
 
-                </div>
-              </div>
 
-              <div style={{ textAlign: 'center', marginTop: 'var(--space-12)' }}>
-                <Link href="/terms" className="btn btn-secondary" style={{ marginRight: 'var(--space-4)' }}>
-                  Terms of Service
-                </Link>
-                <Link href="/contact" className="btn btn-primary">
-                  Contact us
-                </Link>
-              </div>
-            </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 32 }}>
+            <Link href="/terms" style={{ ...linkStyle, textDecoration: 'none', border: '1px solid var(--rule)', padding: '12px 18px', fontSize: 14, fontWeight: 500 }}>
+              Terms of Service
+            </Link>
+            <Link href="/contact" style={{ background: 'var(--action)', color: 'var(--on-action)', border: '1px solid var(--action)', padding: '12px 18px', fontSize: 14, fontWeight: 500, textDecoration: 'none' }}>
+              Contact us
+            </Link>
           </div>
-        </section>
-      </StaticPageLayout>
-    </div>
+        </LegalDoc>
+      </PageShell>
+    </>
   )
 }

@@ -7,7 +7,7 @@ import { useReducedMotion } from './useReducedMotion'
  * BitField: the hero substrate. A precise grid of tiny mono 0/1 glyphs at
  * whisper opacity; a slow wave of bit-flips travels through it and the cursor
  * writes bits, flipping and brightening cells around it. Freshly flipped
- * cells briefly read sage. Static sparse field under reduced motion and on
+ * cells briefly darken to full ink. Static sparse field under reduced motion and on
  * small viewports; dot-grid fallback without canvas.
  */
 export function BitField({
@@ -41,8 +41,11 @@ export function BitField({
 
     const GAP = 22
     const FONT_PX = 10
-    const INKC = tone === 'paper' ? '244, 241, 234' : '20, 17, 10'
-    const SAGE = tone === 'paper' ? '154, 208, 170' : '74, 116, 89'
+    const cssVar = (name: string) =>
+      getComputedStyle(document.documentElement).getPropertyValue(name).trim() || 'currentColor'
+    // Ink only: green is reserved for results in v17, so the cursor highlight is a stronger ink.
+    // Read from the tokens on every build so a theme switch repaints the field.
+    const inkColor = () => (tone === 'paper' ? cssVar('--on-dark') : cssVar('--ink'))
     const BASE_A = tone === 'paper' ? 0.11 : 0.14
     const LIFT_A = tone === 'paper' ? 0.38 : 0.44
 
@@ -59,7 +62,7 @@ export function BitField({
     let phase: Float32Array = new Float32Array(0)
     const px = { x: -9999, y: -9999 }
 
-    // Pre-rendered glyph sprites: [glyph 0|1][tone base|lift|sage]
+    // Pre-rendered glyph sprites: [glyph 0|1][tone base|lift|hot]
     let sprites: HTMLCanvasElement[][] = []
 
     const makeSprite = (glyph: string, color: string, alpha: number) => {
@@ -73,9 +76,19 @@ export function BitField({
       c.font = `500 ${FONT_PX}px "IBM Plex Mono", ui-monospace, monospace`
       c.textAlign = 'center'
       c.textBaseline = 'middle'
-      c.fillStyle = `rgba(${color}, ${alpha})`
+      c.globalAlpha = alpha
+      c.fillStyle = color
       c.fillText(glyph, size / dpr / 2, size / dpr / 2)
       return s
+    }
+
+    const paintSprites = () => {
+      const ink = inkColor()
+      sprites = [0, 1].map((g) => [
+        makeSprite(String(g), ink, BASE_A),
+        makeSprite(String(g), ink, LIFT_A),
+        makeSprite(String(g), ink, 0.82),
+      ])
     }
 
     const build = () => {
@@ -99,11 +112,7 @@ export function BitField({
         bits[i] = (s - Math.floor(s)) > 0.5 ? 1 : 0
         phase[i] = (Math.sin(x * 31.7 + y * 17.3) * 12.9898 % 1 + 1) % 1
       }
-      sprites = [0, 1].map((g) => [
-        makeSprite(String(g), INKC, BASE_A),
-        makeSprite(String(g), INKC, LIFT_A),
-        makeSprite(String(g), SAGE, 0.72),
-      ])
+      paintSprites()
     }
 
     const render = (time: number, step: boolean) => {
@@ -184,6 +193,11 @@ export function BitField({
       render(0.5, false)
     })
     ro.observe(parent)
+    const themeObserver = new MutationObserver(() => {
+      paintSprites()
+      render(0.5, false)
+    })
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
 
     let io: IntersectionObserver | null = null
     let onVis: (() => void) | null = null
@@ -213,6 +227,7 @@ export function BitField({
     return () => {
       stop()
       ro.disconnect()
+      themeObserver.disconnect()
       io?.disconnect()
       if (onVis) document.removeEventListener('visibilitychange', onVis)
       if (onMove) parent.removeEventListener('mousemove', onMove)

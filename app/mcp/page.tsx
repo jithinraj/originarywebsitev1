@@ -253,7 +253,7 @@ export default function McpPage() {
       {/* Closing */}
       <InkBand>
         <InkHeading maxWidth="24ch">Add records to one MCP tool this week.</InkHeading>
-        <p style={{ fontSize: 16.5, lineHeight: 1.6, color: 'rgba(244,241,234,0.78)', maxWidth: '54ch', margin: '20px auto 0' }}>
+        <p style={{ fontSize: 16.5, lineHeight: 1.6, color: 'var(--on-dark-muted)', maxWidth: '54ch', margin: '20px auto 0' }}>
           Start with the tool another party already asks about. We will show what the signed record should contain.
         </p>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>

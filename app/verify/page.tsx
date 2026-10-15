@@ -120,8 +120,8 @@ export default function VerifyPage() {
                 textDecoration: 'none',
               }}
             >
-              <span style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 14, color: PALETTE.ink }}>{s.name}</span>
-              <span style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 12, color: PALETTE.faint }}>-&gt;</span>
+              <span style={{ fontFamily: 'var(--font-sans)', fontSize: 14, color: PALETTE.ink }}>{s.name}</span>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: PALETTE.faint }}>-&gt;</span>
             </a>
           ))}
         </div>
@@ -188,7 +188,7 @@ pnpm dlx @peac/cli@${v} verify ./s/valid/basic-record.jws --public-key ./s/bundl
           rows={[
             [
               'verify --public-key',
-              <span key="net" style={{ color: PALETTE.success, fontFamily: 'var(--font-plex-mono)', fontSize: 12 }}>none</span>,
+              <span key="net" style={{ color: PALETTE.success, fontFamily: 'var(--font-mono)', fontSize: 12 }}>none</span>,
               'You supply the public key. The signature is checked entirely offline. No fetch, no callback, nothing uploaded to Originary.',
             ],
           ]}
@@ -238,14 +238,14 @@ pnpm dlx @peac/cli@${v} verify ./s/valid/basic-record.jws --public-key ./s/bundl
           ].map((c) => (
             <Card key={c.name}>
               <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 10 }}>
-                <span style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 16, fontWeight: 500, color: PALETTE.ink, letterSpacing: '-0.01em' }}>
+                <span style={{ fontFamily: 'var(--font-sans)', fontSize: 16, fontWeight: 500, color: PALETTE.ink, letterSpacing: '-0.01em' }}>
                   {c.name}
                 </span>
-                <span style={{ fontFamily: 'var(--font-plex-mono)', fontSize: 10.5, letterSpacing: '0.04em', color: PALETTE.faint, whiteSpace: 'nowrap' }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10.5, letterSpacing: '0.04em', color: PALETTE.faint, whiteSpace: 'nowrap' }}>
                   {c.tag}
                 </span>
               </div>
-              <p style={{ fontFamily: 'var(--font-plex-sans)', fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '10px 0 0' }}>
+              <p style={{ fontFamily: 'var(--font-sans)', fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '10px 0 0' }}>
                 {c.body}
               </p>
             </Card>

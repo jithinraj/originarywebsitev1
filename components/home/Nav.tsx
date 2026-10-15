@@ -5,7 +5,8 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useId, useRef, useState } from 'react'
 import { SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
-import { OriginaryLogoMotion } from '@/components/brand/OriginaryLogoMotion'
+import { OriginaryWordmark } from '@/components/brand/OriginaryWordmark'
+import { ThemeToggle } from '@/components/brand/ThemeToggle'
 
 type NavLink = { label: string; href: string; external?: boolean }
 type NavEntry =
@@ -61,17 +62,17 @@ const NAV: NavEntry[] = [
 const topLinkStyle = {
   fontFamily: SANS,
   fontSize: 13.5,
-  color: '#3a352b',
+  color: PALETTE.muted,
   textDecoration: 'none',
   letterSpacing: '-0.005em',
-  transition: 'color 160ms ease',
+  transition: 'color var(--dur-fast) var(--ease-standard)',
 } as const
 
 const menuItemStyle = {
   display: 'block',
   fontFamily: SANS,
   fontSize: 13.5,
-  color: '#3a352b',
+  color: PALETTE.muted,
   textDecoration: 'none',
   padding: '9px 12px',
   borderRadius: 2,
@@ -86,7 +87,7 @@ function Caret({ open }: { open: boolean }) {
       viewBox="0 0 10 10"
       fill="none"
       aria-hidden
-      style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 160ms ease', marginLeft: 4 }}
+      style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform var(--dur-fast) var(--ease-standard)', marginLeft: 4 }}
     >
       <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" strokeWidth="1.3" />
     </svg>
@@ -163,7 +164,7 @@ function NavMenu({ label, items }: { label: string; items: NavLink[] }) {
           padding: 6,
           background: PALETTE.bg,
           border: `1px solid ${PALETTE.hairline}`,
-          boxShadow: '0 14px 34px rgba(20, 17, 10, 0.10)',
+          boxShadow: 'var(--shadow-float)',
           display: open ? 'block' : 'none',
           zIndex: 60,
         }}
@@ -195,16 +196,8 @@ function NavMenu({ label, items }: { label: string; items: NavLink[] }) {
 
 export function Nav() {
   const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const toggleRef = useRef<HTMLButtonElement>(null)
   const pathname = usePathname()
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   // Body scroll lock + Escape key while mobile menu is open.
   useEffect(() => {
@@ -231,11 +224,10 @@ export function Nav() {
         position: 'sticky',
         top: 0,
         zIndex: 50,
-        background: scrolled || open ? 'rgba(244, 241, 234, 0.92)' : 'rgba(244, 241, 234, 0.85)',
-        backdropFilter: 'saturate(140%) blur(8px)',
-        WebkitBackdropFilter: 'saturate(140%) blur(8px)',
+        background: PALETTE.bg,
+        height: 'var(--header-h)',
         borderBottom: `1px solid ${PALETTE.hairline}`,
-        transition: 'background 200ms ease',
+        transition: 'none',
       }}
     >
       <a href="#main-content" className="home-skip-link">
@@ -246,7 +238,8 @@ export function Nav() {
         style={{
           maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
           margin: '0 auto',
-          padding: `18px ${PAGE_PAD}`,
+          padding: `0 ${PAGE_PAD}`,
+          height: 'var(--header-h)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -266,7 +259,7 @@ export function Nav() {
           }}
         >
           {/* The sequence is a homepage moment only, and only once per session. */}
-          <Wordmark autoPlay={pathname === '/'} replayOnHover />
+          <Wordmark />
         </Link>
 
         <nav
@@ -298,6 +291,7 @@ export function Nav() {
             flexShrink: 0,
           }}
         >
+          <ThemeToggle className="home-nav-theme" />
           <a
             href="https://github.com/peacprotocol/peac"
             target="_blank"
@@ -313,7 +307,7 @@ export function Nav() {
               color: PALETTE.muted,
               border: `1px solid ${PALETTE.rule}`,
               borderRadius: '50%',
-              transition: 'color 160ms ease, border-color 160ms ease',
+              transition: 'color var(--dur-fast) var(--ease-standard), border-color var(--dur-fast) var(--ease-standard)',
             }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -337,7 +331,7 @@ export function Nav() {
               textDecoration: 'none',
               padding: '8px 14px',
               border: `1px solid ${PALETTE.rule}`,
-              transition: 'background 160ms ease, color 160ms ease',
+              transition: 'background var(--dur-fast) var(--ease-standard), color var(--dur-fast) var(--ease-standard)',
             }}
           >
             Request a demo
@@ -478,12 +472,12 @@ export function Nav() {
                 fontFamily: SANS,
                 fontSize: 13,
                 fontWeight: 500,
-                color: PALETTE.paper,
-                background: PALETTE.ink,
+                color: PALETTE.onAction,
+                background: PALETTE.action,
                 textDecoration: 'none',
                 padding: '10px 14px',
                 textAlign: 'center',
-                border: `1px solid ${PALETTE.ink}`,
+                border: `1px solid ${PALETTE.action}`,
               }}
             >
               Request a demo
@@ -495,40 +489,7 @@ export function Nav() {
   )
 }
 
-export function Wordmark({
-  height = 32,
-  forceOpen = false,
-  autoPlay = false,
-  replayOnHover = false,
-}: {
-  height?: number
-  /** Render the finished wordmark with no sequence. Used in the footer. */
-  forceOpen?: boolean
-  /** Replay the sequence on hover or focus. */
-  replayOnHover?: boolean
-  /**
-   * Play the ⊙ → 01 → 10 → originary sequence once per session. Reserved for the
-   * homepage header; the name is never withheld anywhere else.
-   */
-  autoPlay?: boolean
-}) {
-  return (
-    <span
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        height,
-        overflow: 'visible',
-      }}
-    >
-      <OriginaryLogoMotion
-        ariaLabel="Originary"
-        fill={PALETTE.ink}
-        forceOpen={forceOpen}
-        autoPlay={autoPlay}
-        replayOnHover={replayOnHover}
-        className="home-wordmark-svg"
-      />
-    </span>
-  )
+/** Header and footer wordmark: the v17 master at 120 px (the normal minimum), never animated. */
+export function Wordmark({ width = 120 }: { width?: number }) {
+  return <OriginaryWordmark width={width} className="home-wordmark-svg" />
 }

@@ -30,7 +30,7 @@ type MotifKey = KnownSlug | 'archive'
 
 const KNOWN_SLUG_SET: ReadonlySet<string> = new Set(KNOWN_SLUGS)
 
-const SLATE = PALETTE.accent
+const SLATE = PALETTE.muted
 const SAGE = PALETTE.success
 const HAIR = PALETTE.hairline
 const LOG = PALETTE.muted

@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/evidence-case' },
 }
 
-const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
-const mono = 'var(--font-plex-mono), "IBM Plex Mono", monospace'
+const sans = 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif'
+const mono = 'var(--font-mono), "IBM Plex Mono", monospace'
 
 const TIMELINE = [
   { time: '14:08:09', event: 'authorization reference supplied' },
@@ -99,9 +99,9 @@ export default function EvidenceCasePage() {
               fontFamily: sans,
               fontSize: 13.5,
               fontWeight: 500,
-              color: PALETTE.paper,
-              background: PALETTE.ink,
-              border: `1px solid ${PALETTE.ink}`,
+              color: PALETTE.onAction,
+              background: PALETTE.action,
+              border: `1px solid ${PALETTE.action}`,
               textDecoration: 'none',
             }}
           >
@@ -159,13 +159,13 @@ export default function EvidenceCasePage() {
                   gap: 16,
                   padding: '13px 20px',
                   borderBottom: i < TIMELINE.length - 1 ? `1px solid ${PALETTE.hairline}` : 'none',
-                  background: row.time ? 'transparent' : 'rgba(154,59,46,0.04)',
+                  background: row.time ? 'transparent' : 'var(--danger-bg)',
                 }}
               >
-                <Mono size={12} color={row.time ? PALETTE.faint : '#9a3b2e'} style={{ minWidth: 68, flexShrink: 0 }}>
+                <Mono size={12} color={row.time ? PALETTE.faint : 'var(--danger)'} style={{ minWidth: 68, flexShrink: 0 }}>
                   {row.time ?? 'not recorded'}
                 </Mono>
-                <span style={{ fontFamily: sans, fontSize: 14.5, color: row.time ? PALETTE.ink : '#9a3b2e' }}>
+                <span style={{ fontFamily: sans, fontSize: 14.5, color: row.time ? PALETTE.ink : 'var(--danger)' }}>
                   {row.event}
                 </span>
               </li>
@@ -185,7 +185,7 @@ export default function EvidenceCasePage() {
           }}
         >
           <FindingColumn title="Established" items={ESTABLISHED} color={PALETTE.success} />
-          <FindingColumn title="Missing" items={MISSING} color="#9a3b2e" />
+          <FindingColumn title="Missing" items={MISSING} color="var(--danger)" />
           <FindingColumn title="Not evaluated" items={NOT_EVALUATED} color={PALETTE.faint} />
         </div>
       </PageSection>

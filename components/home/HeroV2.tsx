@@ -211,19 +211,6 @@ export function HeroV2() {
                 width="100%"
                 height="100%"
               >
-                <defs>
-                  <radialGradient
-                    id="herov2-glow-l"
-                    cx="100"
-                    cy="140"
-                    r="80"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0%" stopColor="rgba(154,208,170,0.16)" />
-                    <stop offset="100%" stopColor="rgba(154,208,170,0)" />
-                  </radialGradient>
-                </defs>
-                <ellipse cx="100" cy="140" rx="100" ry="120" fill="url(#herov2-glow-l)" />
                 {CHIPS.map((_, i) => {
                   const active = leftLineDrawing && i === chipIdx
                   return (
@@ -235,7 +222,7 @@ export function HeroV2() {
                         pathLength={100}
                       />
                       {active && !reduced ? (
-                        <circle r="2.4" fill="#2c8a55" opacity="0.9">
+                        <circle r="2.4" fill="var(--ink)" opacity="0.9">
                           <animateMotion dur="0.9s" repeatCount="1" fill="freeze" path={leftPath(i)} />
                         </circle>
                       ) : null}
@@ -292,19 +279,6 @@ export function HeroV2() {
                 width="100%"
                 height="100%"
               >
-                <defs>
-                  <radialGradient
-                    id="herov2-glow-r"
-                    cx="0"
-                    cy="140"
-                    r="80"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0%" stopColor="rgba(154,208,170,0.16)" />
-                    <stop offset="100%" stopColor="rgba(154,208,170,0)" />
-                  </radialGradient>
-                </defs>
-                <ellipse cx="0" cy="140" rx="100" ry="120" fill="url(#herov2-glow-r)" />
                 {OUTPUTS.map((_, i) => {
                   const active = rightLineDrawing && i === outIdx
                   return (
@@ -316,7 +290,7 @@ export function HeroV2() {
                         pathLength={100}
                       />
                       {active && !reduced ? (
-                        <circle r="2.4" fill="#2c8a55" opacity="0.9">
+                        <circle r="2.4" fill="var(--ink)" opacity="0.9">
                           <animateMotion dur="0.9s" repeatCount="1" fill="freeze" path={rightPath(i)} />
                         </circle>
                       ) : null}
@@ -460,7 +434,7 @@ const heroProofLine = {
   fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace',
   fontSize: 11.5,
   letterSpacing: '0.02em',
-  color: '#6e6759',
+  color: PALETTE.faint,
   margin: '18px 0 0',
 } as const
 
@@ -468,7 +442,7 @@ const heroEyebrow = {
   fontFamily: MONO,
   fontSize: 11,
   letterSpacing: '0.16em',
-  color: '#5a5346',
+  color: PALETTE.muted,
   margin: 0,
 }
 const heroHeadline = {
@@ -485,7 +459,7 @@ const heroSub = {
   fontFamily: SANS,
   fontSize: 18,
   lineHeight: 1.55,
-  color: '#3a352b',
+  color: PALETTE.body,
   margin: '20px auto 0',
   maxWidth: 660,
 }
@@ -511,9 +485,9 @@ const btnBase = {
 }
 const btnPrimary = {
   ...btnBase,
-  color: PALETTE.paper,
-  background: PALETTE.ink,
-  border: `1px solid ${PALETTE.ink}`,
+  color: PALETTE.onAction,
+  background: PALETTE.action,
+  border: `1px solid ${PALETTE.action}`,
 }
 const btnSecondary = {
   ...btnBase,

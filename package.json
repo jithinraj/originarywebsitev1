@@ -25,7 +25,9 @@
     "check:links": "node scripts/check-links.mjs",
     "check:snippets": "node scripts/check-snippets.mjs",
     "check:seo": "node scripts/seo-lint.mjs",
-    "check:all": "npm run check:truth && npm run check:securitytxt && npm run check:ai-compliance && npm run test:ai-compliance && npm run check:machine-integrity && npm run test:machine-integrity && npm run check:routes && npm run check:redirects && npm run check:structured-data && npm run check:public-keys && npm run test:public-keys && npm run check:retired-endpoints && npm run test:retired-endpoints && npm run check:cli-pinning && npm run test:cli-pinning && npm run check:release-gate && npm run check:links && npm run check:snippets && npm run check:seo && npm run verify:footer",
+    "check:all": "npm run check:brand && npm run test:brand && npm run check:truth && npm run check:securitytxt && npm run check:ai-compliance && npm run test:ai-compliance && npm run check:machine-integrity && npm run test:machine-integrity && npm run check:routes && npm run check:redirects && npm run check:structured-data && npm run check:public-keys && npm run test:public-keys && npm run check:retired-endpoints && npm run test:retired-endpoints && npm run check:cli-pinning && npm run test:cli-pinning && npm run check:release-gate && npm run check:links && npm run check:snippets && npm run check:seo && npm run verify:footer",
+    "check:brand": "node scripts/check-brand-tokens.mjs",
+    "test:brand": "node scripts/check-brand-tokens.test.mjs",
     "check:redirects": "node scripts/check-redirects.mjs",
     "check:routes": "node scripts/check-routes.mjs",
     "check:structured-data": "node scripts/check-structured-data.mjs",
@@ -64,8 +66,7 @@
     "rehype-pretty-code": "^0.14.1",
     "rss": "^1.2.2",
     "shiki": "^3.21.0",
-    "stripe": "^20.2.0",
-    "tailwind-merge": "^3.4.0"
+    "stripe": "^20.2.0"
   },
   "devDependencies": {
     "@types/node": "^24.10.13",
@@ -76,7 +77,6 @@
     "eslint-config-next": "^16.1.6",
     "playwright": "^1.58.0",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3"
   },
   "packageManager": "npm@11.11.0"

@@ -35,7 +35,7 @@ export function Mono({
 
 export function Eyebrow({
   children,
-  color = '#5a5346',
+  color = 'var(--muted)',
 }: {
   children: ReactNode
   color?: string
@@ -100,7 +100,7 @@ export function SectionTitle({
             fontFamily: 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
             fontSize: 18,
             lineHeight: 1.55,
-            color: '#3a352b',
+            color: 'var(--ink-2)',
             marginTop: 18,
             maxWidth: 640,
             marginLeft: align === 'center' ? 'auto' : 0,

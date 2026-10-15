@@ -269,18 +269,6 @@ function HeroAnim() {
         overflow: 'hidden',
       }}
     >
-      {/* Very faint baseline grid */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage: `linear-gradient(${PALETTE.hairline} 1px, transparent 1px)`,
-          backgroundSize: '100% 56px',
-          opacity: 0.18,
-          pointerEvents: 'none',
-        }}
-      />
-
       {/* Three cards across the top */}
       <FlowCard
         x={issuerX}
@@ -327,10 +315,10 @@ function HeroAnim() {
             top: CARDS_Y + CARD_H + 22 - 4,
             width: 8,
             height: 8,
-            background: PALETTE.accent,
+            background: PALETTE.ink,
             opacity: requestT > 0.05 && requestT < 1 ? 1 : 0,
             transition: 'opacity 120ms',
-            boxShadow: '0 0 0 4px rgba(74, 98, 124, 0.16)',
+            boxShadow: '0 0 0 4px var(--hairline)',
           }}
         />
       ) : null}
@@ -382,7 +370,7 @@ function FlowCard({
   const dotBg = verified
     ? PALETTE.success
     : active
-      ? PALETTE.accent
+      ? PALETTE.ink
       : PALETTE.hairline
   return (
     <div
@@ -394,7 +382,7 @@ function FlowCard({
         height: CARD_H,
         background: PALETTE.paper,
         border: `1px solid ${borderColor}`,
-        boxShadow: active ? '0 12px 28px -20px rgba(20, 17, 10, 0.35)' : 'none',
+        boxShadow: active ? 'var(--shadow-float)' : 'none',
         transition: 'border-color 280ms ease, box-shadow 280ms ease',
         padding: '14px 16px',
         display: 'flex',
@@ -495,13 +483,13 @@ function ArrowRow({
         y1={4}
         x2={leftStart + (leftEnd - leftStart) * Math.max(0.05, leftArrowProgress)}
         y2={4}
-        stroke={leftArrowProgress > 0.05 ? PALETTE.accent : PALETTE.rule}
+        stroke={leftArrowProgress > 0.05 ? PALETTE.ink : PALETTE.rule}
         strokeWidth="1.5"
       />
       <path
         d={`M${leftEnd - 6} 0 L${leftEnd} 4 L${leftEnd - 6} 8`}
         fill="none"
-        stroke={leftArrowProgress > 0.9 ? PALETTE.accent : PALETTE.rule}
+        stroke={leftArrowProgress > 0.9 ? PALETTE.ink : PALETTE.rule}
         strokeWidth="1.5"
         opacity={leftArrowProgress > 0.5 ? 1 : 0.4}
       />
@@ -523,13 +511,13 @@ function ArrowRow({
         y1={4}
         x2={rightStart + (rightEnd - rightStart) * Math.max(0.05, rightArrowProgress)}
         y2={4}
-        stroke={rightArrowProgress > 0.05 ? PALETTE.accent : PALETTE.rule}
+        stroke={rightArrowProgress > 0.05 ? PALETTE.ink : PALETTE.rule}
         strokeWidth="1.5"
       />
       <path
         d={`M${rightEnd - 6} 0 L${rightEnd} 4 L${rightEnd - 6} 8`}
         fill="none"
-        stroke={rightArrowProgress > 0.9 ? PALETTE.accent : PALETTE.rule}
+        stroke={rightArrowProgress > 0.9 ? PALETTE.ink : PALETTE.rule}
         strokeWidth="1.5"
         opacity={rightArrowProgress > 0.5 ? 1 : 0.4}
       />
@@ -562,8 +550,8 @@ function RecordPanel({ reveal = 1, signed = false }: { reveal?: number; signed?:
         background: PALETTE.paper,
         border: `1px solid ${signed ? PALETTE.ink : PALETTE.rule}`,
         boxShadow: signed
-          ? '0 22px 44px -28px rgba(20, 17, 10, 0.35)'
-          : '0 1px 0 rgba(20,17,10,0.04)',
+          ? 'var(--shadow-pop)'
+          : 'none',
         transition: 'border-color 280ms ease, box-shadow 280ms ease',
       }}
     >
@@ -592,7 +580,7 @@ function RecordPanel({ reveal = 1, signed = false }: { reveal?: number; signed?:
           style={{
             fontFamily: MONO,
             fontSize: 12,
-            color: signed ? PALETTE.accent : PALETTE.muted,
+            color: signed ? PALETTE.ink : PALETTE.muted,
             letterSpacing: '0.16em',
             textTransform: 'uppercase',
             fontWeight: 500,

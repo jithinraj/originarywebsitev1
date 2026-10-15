@@ -22,7 +22,7 @@ export function Divider({ eyebrow }: { eyebrow?: string }) {
         {eyebrow ? (
           <Mono
             size={11.5}
-            color="#5a5346"
+            color="var(--muted)"
             style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
           >
             {eyebrow}

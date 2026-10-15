@@ -32,13 +32,13 @@ export const metadata: Metadata = {
   alternates: { canonical: '/trust' },
 }
 
-const sans = 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif'
-const mono = 'var(--font-plex-mono), "IBM Plex Mono", monospace'
+const sans = 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif'
+const mono = 'var(--font-mono), "IBM Plex Mono", monospace'
 
 const linkStyle = {
   color: PALETTE.ink,
   textDecoration: 'underline',
-  textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+  textDecorationColor: 'var(--rule)',
   textUnderlineOffset: 3,
 }
 
@@ -54,9 +54,9 @@ const proseStyle = {
 const codeStyle = {
   fontFamily: mono,
   fontSize: '0.92em',
-  background: 'rgba(20, 17, 10, 0.04)',
+  background: 'var(--code-bg)',
   padding: '2px 5px',
-  border: `1px solid rgba(20, 17, 10, 0.10)`,
+  border: `1px solid var(--hairline)`,
   color: PALETTE.ink,
 }
 
@@ -689,6 +689,7 @@ export default function TrustPage() {
                   l.external ? (
                     <a
                       key={l.href}
+                      className="trust-link"
                       href={l.href}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -698,7 +699,7 @@ export default function TrustPage() {
                         fontWeight: 500,
                         color: PALETTE.ink,
                         textDecoration: 'underline',
-                        textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+                        textDecorationColor: 'var(--rule)',
                         textUnderlineOffset: 3,
                       }}
                     >
@@ -707,6 +708,7 @@ export default function TrustPage() {
                   ) : (
                     <Link
                       key={l.href}
+                      className="trust-link"
                       href={l.href}
                       style={{
                         fontFamily: sans,
@@ -714,7 +716,7 @@ export default function TrustPage() {
                         fontWeight: 500,
                         color: PALETTE.ink,
                         textDecoration: 'underline',
-                        textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+                        textDecorationColor: 'var(--rule)',
                         textUnderlineOffset: 3,
                       }}
                     >
@@ -749,7 +751,7 @@ export default function TrustPage() {
               fontWeight: 500,
               color: PALETTE.ink,
               textDecoration: 'underline',
-              textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+              textDecorationColor: 'var(--rule)',
               textUnderlineOffset: 4,
             }}
           >

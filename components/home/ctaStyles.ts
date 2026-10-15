@@ -8,12 +8,12 @@ import type { CSSProperties } from 'react'
  * win regardless of stylesheet specificity, so colour lives here.
  */
 export const btnSolidStyle: CSSProperties = {
-  color: '#f4f1ea',
-  background: '#14110a',
-  border: '1px solid #14110a',
+  color: 'var(--on-action)',
+  background: 'var(--action)',
+  border: '1px solid var(--action)',
 }
 export const btnGhostStyle: CSSProperties = {
-  color: '#14110a',
+  color: 'var(--ink)',
   background: 'transparent',
-  border: '1px solid rgba(20, 17, 10, 0.32)',
+  border: '1px solid var(--border-chip)',
 }

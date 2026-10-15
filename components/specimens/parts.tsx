@@ -4,8 +4,8 @@ import { BitField } from '../home/motion/BitField'
 import { SANS, MONO } from '../home/typography'
 import './specimens.css'
 
-/* Warm "invalid/tamper" accent, derived to sit with PALETTE (no global token change). */
-export const RUST = '#9a3b2e'
+/* Invalid/tamper result colour: the danger token. */
+export const RUST = PALETTE.danger
 
 const sans = SANS
 const mono = MONO
@@ -14,9 +14,9 @@ export type BadgeKind = 'verified' | 'denied' | 'invalid' | 'neutral'
 
 const BADGE_COLORS: Record<BadgeKind, { fg: string; bg: string; bd: string }> = {
   // Text uses a darker step of the accent hue for contrast at 10.5px.
-  verified: { fg: '#41654c', bg: 'rgba(74,116,89,0.10)', bd: 'rgba(74,116,89,0.35)' },
-  denied: { fg: '#775a32', bg: 'rgba(138,106,60,0.10)', bd: 'rgba(138,106,60,0.35)' },
-  invalid: { fg: RUST, bg: 'rgba(154,59,46,0.08)', bd: 'rgba(154,59,46,0.35)' },
+  verified: { fg: PALETTE.success, bg: 'var(--success-bg)', bd: 'color-mix(in srgb, var(--success) 35%, transparent)' },
+  denied: { fg: PALETTE.warn, bg: 'var(--warn-bg)', bd: 'color-mix(in srgb, var(--warn) 35%, transparent)' },
+  invalid: { fg: RUST, bg: 'var(--danger-bg)', bd: 'color-mix(in srgb, var(--danger) 35%, transparent)' },
   neutral: { fg: PALETTE.faint, bg: PALETTE.paper, bd: PALETTE.hairline },
 }
 
@@ -127,9 +127,9 @@ export function CodeBlock({
         fontFamily: mono,
         fontSize: 12.5,
         lineHeight: 1.6,
-        color: ink ? 'rgba(244,241,234,0.92)' : PALETTE.ink,
-        background: ink ? 'rgba(244,241,234,0.06)' : PALETTE.paper,
-        border: `1px solid ${ink ? 'rgba(244,241,234,0.18)' : PALETTE.hairline}`,
+        color: ink ? PALETTE.onDark : PALETTE.ink,
+        background: ink ? PALETTE.surfaceDark : PALETTE.paper,
+        border: `1px solid ${ink ? 'var(--rule-on-dark)' : PALETTE.hairline}`,
         padding: '14px 16px',
         margin: 0,
         overflowX: 'auto',
@@ -149,14 +149,14 @@ export function Terminal({ lines, tone = 'paper' }: { lines: TermLine[]; tone?: 
   const color = (k: TermLine['kind']) =>
     k === 'ok'
       ? ink
-        ? '#7fa98c'
+        ? 'var(--success-on-dark)'
         : PALETTE.success
       : k === 'err'
         ? ink
-          ? '#d08b7e'
+          ? 'var(--danger-on-dark)'
           : RUST
         : ink
-          ? 'rgba(244,241,234,0.65)'
+          ? 'var(--on-dark-muted)'
           : PALETTE.faint
   return (
     <div
@@ -165,8 +165,8 @@ export function Terminal({ lines, tone = 'paper' }: { lines: TermLine[]; tone?: 
         fontFamily: mono,
         fontSize: 12.5,
         lineHeight: 1.7,
-        background: ink ? 'rgba(244,241,234,0.06)' : PALETTE.paper,
-        border: `1px solid ${ink ? 'rgba(244,241,234,0.18)' : PALETTE.hairline}`,
+        background: ink ? PALETTE.surfaceDark : PALETTE.paper,
+        border: `1px solid ${ink ? 'var(--rule-on-dark)' : PALETTE.hairline}`,
         padding: '12px 16px',
       }}
     >
@@ -209,7 +209,7 @@ export function Legend({ items }: { items: string[] }) {
               fontSize: 11,
               letterSpacing: '0.04em',
               color: isSig ? PALETTE.success : PALETTE.muted,
-              border: `1px solid ${isSig ? 'rgba(74,116,89,0.35)' : PALETTE.hairline}`,
+              border: `1px solid ${isSig ? 'color-mix(in srgb, var(--success) 35%, transparent)' : PALETTE.hairline}`,
               background: PALETTE.paper,
               padding: '4px 11px',
             }}
@@ -296,8 +296,8 @@ export function InkBand({ children }: { children: ReactNode }) {
     <section
       className="cin-stage"
       style={{
-        background: PALETTE.ink,
-        color: PALETTE.bg,
+        background: PALETTE.surfaceDark,
+        color: PALETTE.onDark,
         padding: `clamp(56px, 8vh, 88px) ${PAGE_PAD}`,
       }}
     >
@@ -319,7 +319,7 @@ export function InkHeading({ children, maxWidth = '26ch' }: { children: ReactNod
         lineHeight: 1.14,
         letterSpacing: '-0.02em',
         fontWeight: 500,
-        color: PALETTE.bg,
+        color: PALETTE.onDark,
         margin: '0 auto',
         maxWidth,
         textWrap: 'balance',
@@ -407,7 +407,7 @@ export function DataTable({
   labelColumnsOnMobile?: boolean
 }) {
   return (
-    <div style={{ overflowX: 'auto', borderTop: `2px solid rgba(20, 17, 10, 0.82)` }}>
+    <div style={{ overflowX: 'auto', borderTop: `2px solid ${PALETTE.ink}` }}>
       <table
         className={`pk-datatable${labelColumnsOnMobile ? ' pk-datatable-labelled' : ''}`}
         style={{ width: '100%', borderCollapse: 'collapse', minWidth: 520, margin: 0 }}
@@ -481,7 +481,7 @@ export function MarkerList({
         margin: 0,
         padding: 0,
         maxWidth,
-        borderTop: `2px solid rgba(20, 17, 10, 0.82)`,
+        borderTop: `2px solid ${PALETTE.ink}`,
       }}
     >
       {items.map((it, i) => (
@@ -539,9 +539,9 @@ export function InkButton({
     fontWeight: 500,
     letterSpacing: '-0.005em',
     textDecoration: 'none',
-    color: primary ? PALETTE.ink : PALETTE.bg,
-    background: primary ? PALETTE.bg : 'transparent',
-    border: `1px solid ${primary ? PALETTE.bg : 'rgba(244,241,234,0.4)'}`,
+    color: primary ? PALETTE.surfaceDark : PALETTE.onDark,
+    background: primary ? PALETTE.onDark : 'transparent',
+    border: `1px solid ${primary ? PALETTE.onDark : 'var(--rule-on-dark)'}`,
   }
   return (
     <a href={href} style={styles}>
@@ -569,7 +569,7 @@ export function AnchorLine({
         fontFamily: mono,
         fontSize: 12,
         letterSpacing: '0.04em',
-        color: onInk ? 'rgba(244,241,234,0.7)' : PALETTE.faint,
+        color: onInk ? 'var(--on-dark-muted)' : PALETTE.faint,
         margin: 0,
         ...style,
       }}

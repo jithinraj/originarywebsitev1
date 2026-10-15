@@ -1,26 +1,32 @@
 import { ImageResponse } from '@vercel/og'
 import { readFile } from 'fs/promises'
 import { fileURLToPath } from 'url'
+import { BRAND } from '@/lib/brand-tokens'
 
 export const runtime = 'nodejs'
 
-async function getFont() {
-  try {
-    const fontPath = fileURLToPath(new URL('../../public/fonts/InterDisplay-SemiBold.otf', import.meta.url))
-    return await readFile(fontPath)
-  } catch {
-    const res = await fetch('https://rsms.me/inter/font-files/InterDisplay-SemiBold.otf')
-    return Buffer.from(await res.arrayBuffer())
-  }
+// Literal URLs so the bundler resolves each font file exactly.
+const FONT_URLS = {
+  sans400: new URL('../../public/fonts/ibm-plex-sans-latin-400-normal.woff', import.meta.url),
+  sans500: new URL('../../public/fonts/ibm-plex-sans-latin-500-normal.woff', import.meta.url),
+  mono400: new URL('../../public/fonts/ibm-plex-mono-latin-400-normal.woff', import.meta.url),
 }
 
-// Colors mirror the homepage palette in components/home/palette.ts
-const BG = '#f4f1ea'
-const PAPER = '#fbf9f4'
-const INK = '#14110a'
-const FAINT = '#6e6759'
-const SAGE = '#4a7459'
-const HAIRLINE = 'rgba(20,17,10,0.18)'
+async function loadFont(key: keyof typeof FONT_URLS) {
+  return await readFile(fileURLToPath(FONT_URLS[key]))
+}
+
+// Colours come from lib/brand-tokens.ts (satori cannot read CSS variables).
+const BG = BRAND.bg
+const PAPER = BRAND.bg
+const INK = BRAND.ink
+const MUTED = BRAND.muted
+const FAINT = BRAND.faint
+const SUCCESS = BRAND.success
+const HAIRLINE = BRAND.rule
+
+const SANS = 'IBM Plex Sans'
+const MONO = 'IBM Plex Mono'
 
 const ROWS: Array<[string, string]> = [
   ['ISSUER', 'https://api.vendor.example'],
@@ -31,7 +37,11 @@ const ROWS: Array<[string, string]> = [
 ]
 
 export async function GET() {
-  const fontData = await getFont()
+  const [sans400, sans500, mono400] = await Promise.all([
+    loadFont('sans400'),
+    loadFont('sans500'),
+    loadFont('mono400'),
+  ])
   const wordmarkPath = fileURLToPath(new URL('../../public/og-wordmark.png', import.meta.url))
   const wordmark = await readFile(wordmarkPath)
   const wordmarkSrc = `data:image/png;base64,${wordmark.toString('base64')}`
@@ -45,6 +55,7 @@ export async function GET() {
           display: 'flex',
           backgroundColor: BG,
           padding: '36px',
+          fontFamily: SANS,
         }}
       >
         {/* Datasheet plate: hairline frame around the whole card */}
@@ -61,9 +72,9 @@ export async function GET() {
         >
           {/* Left: brand + headline + tagline */}
           <div style={{ display: 'flex', flexDirection: 'column', flex: 1.25 }}>
-            {/* 182 x 47 preserves the canonical wordmark aspect ratio (7487:1918). */}
+            {/* 200 x 47 preserves the wordmark aspect ratio (1200:279). Clear space around it is well over 1/8 of its width. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={wordmarkSrc} width={182} height={47} alt="Originary" />
+            <img src={wordmarkSrc} width={200} height={47} alt="Originary" />
             <div
               style={{
                 display: 'flex',
@@ -71,20 +82,20 @@ export async function GET() {
                 marginTop: '46px',
               }}
             >
-              <span style={{ fontSize: '44px', fontWeight: 600, color: INK, lineHeight: 1.14, letterSpacing: '-0.02em' }}>
+              <span style={{ fontSize: '44px', fontWeight: 500, color: INK, lineHeight: 1.14, letterSpacing: '-0.022em' }}>
                 Verify agent, API, and
               </span>
-              <span style={{ fontSize: '44px', fontWeight: 600, color: INK, lineHeight: 1.14, letterSpacing: '-0.02em' }}>
+              <span style={{ fontSize: '44px', fontWeight: 500, color: INK, lineHeight: 1.14, letterSpacing: '-0.022em' }}>
                 gateway actions across
               </span>
-              <span style={{ fontSize: '44px', fontWeight: 600, color: INK, lineHeight: 1.14, letterSpacing: '-0.02em' }}>
+              <span style={{ fontSize: '44px', fontWeight: 500, color: INK, lineHeight: 1.14, letterSpacing: '-0.022em' }}>
                 company boundaries
               </span>
             </div>
-            <div style={{ display: 'flex', marginTop: '38px', fontSize: '21px', color: SAGE, letterSpacing: '0.02em' }}>
+            <div style={{ display: 'flex', marginTop: '38px', fontSize: '21px', color: MUTED, letterSpacing: '-0.004em' }}>
               Logs stay local. Signed records travel.
             </div>
-            <div style={{ display: 'flex', marginTop: '14px', fontSize: '19px', color: FAINT }}>
+            <div style={{ display: 'flex', marginTop: '14px', fontFamily: MONO, fontSize: '17px', color: FAINT, letterSpacing: '0.12em' }}>
               originary.xyz
             </div>
           </div>
@@ -101,15 +112,16 @@ export async function GET() {
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: '19px', fontWeight: 600, color: INK }}>signed-record</span>
+              <span style={{ fontFamily: MONO, fontSize: '18px', color: INK }}>signed-record</span>
               <span
                 style={{
                   display: 'flex',
-                  fontSize: '14px',
-                  color: SAGE,
-                  border: `1px solid ${SAGE}`,
+                  fontFamily: MONO,
+                  fontSize: '13px',
+                  color: SUCCESS,
+                  border: `1px solid ${SUCCESS}`,
                   padding: '5px 10px',
-                  letterSpacing: '0.08em',
+                  letterSpacing: '0.12em',
                 }}
               >
                 VERIFIED OFFLINE
@@ -127,8 +139,8 @@ export async function GET() {
                     alignItems: 'center',
                   }}
                 >
-                  <span style={{ fontSize: '13px', color: FAINT, letterSpacing: '0.08em', width: '104px' }}>{label}</span>
-                  <span style={{ fontSize: '16px', color: INK }}>{value}</span>
+                  <span style={{ fontFamily: MONO, fontSize: '12px', color: FAINT, letterSpacing: '0.12em', width: '104px' }}>{label}</span>
+                  <span style={{ fontFamily: MONO, fontSize: '15px', color: INK }}>{value}</span>
                 </div>
               ))}
             </div>
@@ -140,12 +152,9 @@ export async function GET() {
       width: 1200,
       height: 630,
       fonts: [
-        {
-          name: 'InterDisplay',
-          data: fontData,
-          weight: 600,
-          style: 'normal',
-        },
+        { name: SANS, data: sans400, weight: 400, style: 'normal' },
+        { name: SANS, data: sans500, weight: 500, style: 'normal' },
+        { name: MONO, data: mono400, weight: 400, style: 'normal' },
       ],
     }
   )

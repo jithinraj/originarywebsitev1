@@ -22,10 +22,10 @@ const ROWS: Row[] = [
 ]
 
 const TONE: Record<StatusName, string> = {
-  established: '#245f3f',
-  linked: '#375873',
-  missing: '#9a3b2e',
-  partial: '#77592f',
+  established: 'var(--success)',
+  linked: 'var(--ink)',
+  missing: 'var(--danger)',
+  partial: 'var(--warn)',
 }
 
 const LEGEND: Array<{ tone: StatusName; label: string }> = [

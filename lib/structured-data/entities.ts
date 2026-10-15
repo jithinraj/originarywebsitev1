@@ -17,7 +17,7 @@ export const originaryOrganization = {
   url: 'https://www.originary.xyz',
   logo: {
     '@type': 'ImageObject',
-    url: 'https://www.originary.xyz/logo/originary-wordmark.svg',
+    url: 'https://www.originary.xyz/brand/wordmark/originary-wordmark.svg',
   },
   description:
     'Originary develops software for issuing, verifying, and packaging signed records of machine actions across organizational boundaries.',

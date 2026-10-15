@@ -30,7 +30,7 @@ export function StepActionGlyph({ progress = 1 }: { progress?: number }) {
         cx={80 + fill * 30}
         cy="40"
         r="3"
-        fill={PALETTE.accent}
+        fill={PALETTE.ink}
         opacity={fill > 0.3 ? 1 : 0}
       />
     </svg>

@@ -42,7 +42,7 @@ const articleJsonLd = {
   publisher: {
     '@type': 'Organization',
     name: 'Originary',
-    logo: { '@type': 'ImageObject', url: 'https://www.originary.xyz/logo/originary-wordmark.svg' },
+    logo: { '@type': 'ImageObject', url: 'https://www.originary.xyz/brand/wordmark/originary-wordmark.svg' },
   },
   mainEntityOfPage: 'https://www.originary.xyz/blog/cloudflare-workers-402',
 }
@@ -50,19 +50,19 @@ const articleJsonLd = {
 const linkStyle = {
   color: PALETTE.ink,
   textDecoration: 'underline',
-  textDecorationColor: 'rgba(20, 17, 10, 0.30)',
+  textDecorationColor: 'var(--rule)',
   textUnderlineOffset: 3,
 }
 
 const codeBlock = {
-  background: 'rgba(20, 17, 10, 0.04)',
+  background: 'var(--code-bg)',
   border: `1px solid ${PALETTE.hairline}`,
   padding: '14px 16px',
   fontSize: 13,
   lineHeight: 1.6,
   overflowX: 'auto' as const,
   color: PALETTE.ink,
-  fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", monospace',
+  fontFamily: 'var(--font-mono), "IBM Plex Mono", monospace',
 }
 
 export default function Page() {
