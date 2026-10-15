@@ -197,10 +197,11 @@ export default function PressPage() {
           }}
         >
           <figure style={{ margin: 0 }}>
+            {/* A specimen of the wordmark on light: stays white in both themes. */}
             <div
               style={{
-                background: PALETTE.paper,
-                border: `1px solid ${PALETTE.rule}`,
+                background: 'var(--grey-0)',
+                border: '1px solid var(--grey-100)',
                 padding: '34px 28px',
                 display: 'flex',
                 alignItems: 'center',

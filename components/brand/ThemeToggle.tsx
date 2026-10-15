@@ -66,16 +66,18 @@ export function ThemeToggle({ className }: { className?: string }) {
   // Server render and first client render agree on light; the store then reports the real attribute.
   const theme = useSyncExternalStore<Theme>(subscribe, readTheme, () => 'light')
   const dark = theme === 'dark'
-  const label = dark ? 'Switch to light theme' : 'Switch to dark theme'
+  // A toggle button keeps one name and reports its state through aria-pressed;
+  // a name that flips as well reads as "Switch to light theme, pressed".
+  const title = dark ? 'Switch to light theme' : 'Switch to dark theme'
 
   return (
     <button
       type="button"
       className={className}
       onClick={() => applyTheme(dark ? 'light' : 'dark')}
-      aria-label={label}
+      aria-label="Dark theme"
       aria-pressed={dark}
-      title={label}
+      title={title}
     >
       {dark ? <SunIcon /> : <MoonIcon />}
     </button>

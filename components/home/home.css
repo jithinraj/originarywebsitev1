@@ -56,6 +56,14 @@ html {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
+/* Icon-only header buttons share one shape: GitHub, theme and menu are circles. */
+.home-nav-toggle {
+  border-radius: 50%;
+}
+.home-nav-toggle:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
 .home-nav-menubtn:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
@@ -420,6 +428,11 @@ html {
     width: 44px;
     height: 44px;
   }
+  /* Same size as the theme switch beside it (inline style sets 34 px). */
+  .home-nav-toggle {
+    width: 44px !important;
+    height: 44px !important;
+  }
   .home-demo-input {
     min-height: 44px;
     font-size: 16px; /* prevents iOS zoom on focus */
@@ -428,16 +441,12 @@ html {
 
 /* Mobile header (<=640px): the persistent bar only needs the logo and the
    menu toggle. GitHub and Verify are both reachable inside the expanded
-   hamburger dropdown, so drop them from the persistent bar and tighten the
-   gutters for breathing room. */
+   hamburger dropdown, so drop them from the persistent bar. The bar keeps
+   the page gutter so the wordmark lines up with the content below it. */
 @media (max-width: 640px) {
   .home-nav-github,
   .home-nav-verify {
     display: none !important;
-  }
-  .home-nav-inner {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
   }
   .home-nav-actions {
     gap: 10px !important;
@@ -1034,7 +1043,9 @@ html {
   margin: 28px 0 0 0;
   letter-spacing: -0.008em;
   font-weight: 500;
-  opacity: 0.42;
+  /* Dimmed until the flow reaches export, but never below WCAG AA:
+     ink at 0.62 is about 5.6:1 on white and 7.7:1 reversed on ink. */
+  opacity: 0.62;
   transform: translateY(4px);
   transition: opacity 620ms var(--ease-settle),
     transform 620ms var(--ease-settle);

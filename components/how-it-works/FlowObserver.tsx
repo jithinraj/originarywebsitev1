@@ -3,7 +3,7 @@
 /**
  * FlowObserver: starts each animated how-it-works diagram when it scrolls
  * into view and pauses it off-screen. Mount once on the how-it-works page.
- * Mirrors the site's ScrollAnimationProvider pattern (IntersectionObserver,
+ * Uses the site's usual reveal pattern (IntersectionObserver,
  * reduced motion is respected by the CSS, not by JS).
  */
 import { useEffect } from 'react'

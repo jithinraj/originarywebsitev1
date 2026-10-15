@@ -489,7 +489,7 @@ export function Nav() {
   )
 }
 
-/** Header and footer wordmark: the v17 master, 112 px wide, never animated. */
-export function Wordmark({ width = 112 }: { width?: number }) {
+/** Header and footer wordmark: the v17 master at 120 px (the normal minimum), never animated. */
+export function Wordmark({ width = 120 }: { width?: number }) {
   return <OriginaryWordmark width={width} className="home-wordmark-svg" />
 }
