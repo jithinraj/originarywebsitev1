@@ -1,66 +1,102 @@
 import { MAX_W, PAGE_PAD } from './palette'
-import { SectionTitle } from './atoms/Mono'
+import { SectionHead } from './atoms/SectionHead'
+import { LogStream } from './motion/LogStream'
 
 /**
  * Illustrative diagram: private logs stay on one side of the company
- * boundary; the signed record is the artifact that crosses it.
+ * boundary; the signed record is the artifact that crosses it. Below it, the
+ * four people or systems the record travels to, each with the moment it
+ * matters.
  */
-const LOG_LINES = [
-  { label: 'operator log', line: '14:08:11 POST /v1/search 200' },
-  { label: 'telemetry', line: 'span 7bc2 latency=412ms' },
-  { label: 'dashboard', line: 'metric usage.api +1' },
-  { label: 'trace', line: 'parent.span = a4f1d' },
+const RECORD_ROWS = [
+  { label: 'Issuer', line: 'support-agent.example' },
+  { label: 'Action', line: 'customer record updated' },
+  { label: 'Result', line: 'refunded' },
+  { label: 'Signature', line: 'Ed25519 a4OuUC8MwrrNyR9r…' },
 ]
 
-const RECORD_ROWS = [
-  { label: 'issuer', line: 'support-agent.example' },
-  { label: 'action', line: 'customer record updated' },
-  { label: 'result', line: 'refunded' },
-  { label: 'signature', line: 'a4OuUC8MwrrNyR9r9cj_Fww0…' },
+const DESTINATIONS = [
+  {
+    who: 'Your team',
+    q: 'An incident happens.',
+    a: 'See what the system recorded without rebuilding the story from separate logs.',
+  },
+  {
+    who: 'A customer',
+    q: 'A customer asks what changed.',
+    a: 'Send a record they can inspect instead of screenshots from your dashboard.',
+  },
+  {
+    who: 'An auditor',
+    q: 'An auditor asks for evidence.',
+    a: 'Share the relevant records without opening production systems.',
+  },
+  {
+    who: 'Another system',
+    q: 'Two systems disagree.',
+    a: "Compare what each one recorded instead of relying on either side's private log.",
+  },
 ]
 
 export function LogsStayPrivate() {
   return (
     <section
-      className="home-section"
-      style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', padding: `40px ${PAGE_PAD} 88px ${PAGE_PAD}` }}
+      className="hx-section"
+      style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', paddingLeft: PAGE_PAD, paddingRight: PAGE_PAD }}
     >
-      <SectionTitle
-        title="Share the record, not your logs."
-        body="Logs are for running your system. PEAC records are built to travel. Send one to a customer, partner, auditor or another service and let them verify it separately."
+      <SectionHead
+        eyebrow="Share"
+        title="Share the record,"
+        qualifier="not your logs."
+        body="Logs are for running your system. Records are built to travel: send one to whoever needs it, and they verify it on their own."
       />
-      <div className="lsp-diagram" style={{ marginTop: 44 }} aria-hidden>
-        <div className="lsp-panel">
-          <p className="lsp-panel-head">
-            Source system <span>private logs stay here</span>
+
+      <div className="lsp-diagram" aria-hidden>
+        <div className="lsp-side">
+          <p className="lsp-side-head">
+            Your system <span>stays here</span>
           </p>
-          {LOG_LINES.map((r) => (
-            <div key={r.label} className="lsp-row">
-              <span className="lsp-row-label">{r.label}</span>
-              <span className="lsp-row-line">{r.line}</span>
-            </div>
-          ))}
+          <LogStream />
         </div>
         <div className="lsp-boundary">
-          <span>company boundary</span>
+          <span className="lsp-boundary-label">company boundary</span>
+          <span className="lsp-cross">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M4 12h15m-5-5 5 5-5 5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
         </div>
-        <div className="lsp-panel lsp-panel-record">
-          <p className="lsp-panel-head">
-            Signed record <span className="lsp-travels">travels</span>
+        <div className="lsp-side lsp-side-out">
+          <p className="lsp-side-head">
+            Signed record <span>travels</span>
           </p>
-          {RECORD_ROWS.map((r) => (
-            <div key={r.label} className="lsp-row">
-              <span className="lsp-row-label">{r.label}</span>
-              <span className="lsp-row-line">{r.line}</span>
-            </div>
-          ))}
-          <p className="lsp-recipients">&rarr; customer &middot; partner &middot; auditor &middot; another system</p>
-          <p className="lsp-checks">checks the supplied record</p>
+          <div className="rc rc-compact">
+            <dl className="rc-fields rc-fields-1">
+              {RECORD_ROWS.map((r) => (
+                <div key={r.label}>
+                  <dt>{r.label}</dt>
+                  <dd>{r.line}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="rc-compact-foot">Anyone with the issuer&apos;s public key can verify it.</p>
+          </div>
         </div>
       </div>
-      <p className="lsp-fine" style={{ marginTop: 24 }}>
-        No Originary account is required to verify a PEAC record.
+      <p className="sr-only">
+        Operator logs, telemetry, dashboards and traces stay inside your system. Only the signed record crosses the
+        company boundary.
       </p>
+
+      <ul className="lsp-dest" role="list">
+        {DESTINATIONS.map((d) => (
+          <li key={d.who}>
+            <p className="lsp-dest-who">{d.who}</p>
+            <p className="lsp-dest-q">{d.q}</p>
+            <p className="lsp-dest-a">{d.a}</p>
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }

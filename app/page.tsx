@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
 import {
   Nav,
   HomeFooter,
-  Divider,
   HeroV2,
-  WhenThisMatters,
   RecordVerifyShare,
   RecordGallery,
   VerificationLimits,
@@ -12,7 +10,6 @@ import {
   LogsStayPrivate,
   ProtocolSimple,
   InteropMarquee,
-  EndCTA,
   Reveal,
   PALETTE,
 } from '@/components/home'
@@ -93,37 +90,24 @@ export default function Page() {
         <main id="main-content" role="main">
           <HeroV2 />
           <InteropMarquee />
+          {/* Below the hero the page walks the product: record, verify, share, then build. */}
           <Reveal threshold={0.12}>
-            <Divider />
-            <WhenThisMatters />
-          </Reveal>
-          <Reveal threshold={0.12}>
-            <Divider eyebrow="how it works" />
             <RecordVerifyShare />
           </Reveal>
           <Reveal threshold={0.12}>
-            <Divider />
+            <VerificationLimits />
+          </Reveal>
+          <Reveal threshold={0.12} className="hx-band">
             <LogsStayPrivate />
           </Reveal>
           <Reveal threshold={0.12}>
-            <Divider eyebrow="records" />
             <RecordGallery />
           </Reveal>
           <Reveal threshold={0.12}>
-            <Divider />
-            <VerificationLimits />
-          </Reveal>
-          <Reveal threshold={0.12}>
-            <Divider eyebrow="open source" />
             <ProtocolSimple />
           </Reveal>
           <Reveal threshold={0.12}>
-            <Divider />
             <StartHere />
-          </Reveal>
-          <Reveal threshold={0.12}>
-            <Divider />
-            <EndCTA />
           </Reveal>
         </main>
         <HomeFooter />

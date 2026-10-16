@@ -3,25 +3,26 @@ import { MAX_W, PAGE_PAD, PALETTE } from './palette'
 import { MONO } from './typography'
 
 type Ink = 'flat' | 'gray' | 'invert'
-type Logo = { src: string; w: number; h: number; ink: Ink }
+/** wm: the logo is a wordmark that already spells the name, so no caption. */
+type Logo = { src: string; w: number; h: number; ink: Ink; wm?: boolean }
 type Item = { name: string; href: string; logo?: Logo; glyph?: MarkName }
 
 const GH = 'https://github.com/peacprotocol/peac/tree/main/'
 const GHB = 'https://github.com/peacprotocol/peac/blob/main/'
 
 const STACK: Item[] = [
-  { name: 'Cloudflare Workers', href: GH + 'surfaces/workers/cloudflare', logo: { src: '/logos/cloudflare-wordmark.png', w: 60, h: 20, ink: 'gray' } },
-  { name: 'UCP', href: GH + 'integrator-kits/ucp', logo: { src: '/logos/ucp.svg', w: 24, h: 28, ink: 'flat' } },
-  { name: 'MCP', href: GH + 'integrator-kits/mcp', logo: { src: '/logos/mcp-official.svg', w: 117, h: 17, ink: 'invert' } },
-  { name: 'MPP', href: GH + 'examples/mpp-payment-record', logo: { src: '/logos/mpp-wordmark.svg', w: 34, h: 15, ink: 'invert' } },
-  { name: 'Stripe Projects', href: GH + 'integrator-kits/stripe-projects', logo: { src: '/logos/stripe-wordmark-slate.svg', w: 38, h: 16, ink: 'flat' } },
-  { name: 'AP2', href: GHB + 'docs/specs/AP2-COMPOSITION.md', logo: { src: '/logos/ap2.svg', w: 26, h: 28, ink: 'flat' } },
-  { name: 'Microsoft AGT', href: GH + 'packages/adapters/runtime-governance', logo: { src: '/logos/microsoft-agt.svg', w: 27, h: 27, ink: 'gray' } },
-  { name: 'OpenClaw', href: GH + 'packages/adapters/openclaw', logo: { src: '/logos/openclaw.svg', w: 27, h: 27, ink: 'gray' } },
-  { name: 'SLSA', href: GH + 'packages/mappings/slsa', logo: { src: '/logos/slsa.svg', w: 61, h: 17, ink: 'invert' } },
-  { name: 'A2A', href: GH + 'integrator-kits/a2a', logo: { src: '/logos/a2a-official.svg', w: 80, h: 20, ink: 'flat' } },
-  { name: 'OpenTelemetry', href: GHB + 'docs/guides/telemetry-otel-correlation.md', logo: { src: '/logos/opentelemetry.svg', w: 64, h: 24, ink: 'flat' } },
-  { name: 'x402', href: GH + 'integrator-kits/x402', logo: { src: '/logos/x402-mark.svg', w: 44, h: 17, ink: 'flat' } },
+  { name: 'Cloudflare Workers', href: GH + 'surfaces/workers/cloudflare', logo: { src: '/logos/cloudflare-wordmark.png', w: 72, h: 24, ink: 'gray', wm: true } },
+  { name: 'UCP', href: GH + 'integrator-kits/ucp', logo: { src: '/logos/ucp.svg', w: 19, h: 22, ink: 'flat' } },
+  { name: 'MCP', href: GH + 'integrator-kits/mcp', logo: { src: '/logos/mcp-official.svg', w: 117, h: 17, ink: 'invert', wm: true } },
+  { name: 'MPP', href: GH + 'examples/mpp-payment-record', logo: { src: '/logos/mpp-wordmark.svg', w: 34, h: 15, ink: 'invert', wm: true } },
+  { name: 'Stripe Projects', href: GH + 'integrator-kits/stripe-projects', logo: { src: '/logos/stripe-wordmark-slate.svg', w: 38, h: 16, ink: 'flat', wm: true } },
+  { name: 'AP2', href: GHB + 'docs/specs/AP2-COMPOSITION.md', logo: { src: '/logos/ap2.svg', w: 20, h: 22, ink: 'flat' } },
+  { name: 'Microsoft AGT', href: GH + 'packages/adapters/runtime-governance', logo: { src: '/logos/microsoft-agt.svg', w: 22, h: 22, ink: 'gray' } },
+  { name: 'OpenClaw', href: GH + 'packages/adapters/openclaw', logo: { src: '/logos/openclaw.svg', w: 22, h: 22, ink: 'gray' } },
+  { name: 'SLSA', href: GH + 'packages/mappings/slsa', logo: { src: '/logos/slsa.svg', w: 61, h: 17, ink: 'invert', wm: true } },
+  { name: 'A2A', href: GH + 'integrator-kits/a2a', logo: { src: '/logos/a2a-official.svg', w: 96, h: 24, ink: 'flat', wm: true } },
+  { name: 'OpenTelemetry', href: GHB + 'docs/guides/telemetry-otel-correlation.md', logo: { src: '/logos/opentelemetry.svg', w: 75, h: 28, ink: 'flat', wm: true } },
+  { name: 'x402', href: GH + 'integrator-kits/x402', logo: { src: '/logos/x402-mark.svg', w: 44, h: 17, ink: 'flat', wm: true } },
 ]
 
 const EVIDENCE: Item[] = [
@@ -60,10 +61,21 @@ function ItemMark({ item }: { item: Item }) {
   )
 }
 
-function Track({ items, dir, stacked }: { items: Item[]; dir: 'left' | 'right'; stacked?: boolean }) {
+function Track({
+  items,
+  dir,
+  stacked,
+  variant,
+}: {
+  items: Item[]
+  dir: 'left' | 'right'
+  stacked?: boolean
+  /** 'logos' is the partner-mark row; the evidence row keeps the original styling. */
+  variant?: 'logos'
+}) {
   const sequence = [...items, ...items]
   return (
-    <div className="home-marquee" data-dir={dir} data-stacked={stacked ? '' : undefined}>
+    <div className="home-marquee" data-dir={dir} data-stacked={stacked ? '' : undefined} data-variant={variant}>
       <ul className="home-marquee-track" role="list">
         {sequence.map((it, i) => {
           const dup = i >= items.length
@@ -77,7 +89,7 @@ function Track({ items, dir, stacked }: { items: Item[]; dir: 'left' | 'right'; 
                 tabIndex={dup ? -1 : undefined}
               >
                 <ItemMark item={it} />
-                <span className="home-marquee-name">{it.name}</span>
+                <span className={it.logo?.wm ? 'sr-only' : 'home-marquee-name'}>{it.name}</span>
               </a>
             </li>
           )
@@ -87,43 +99,48 @@ function Track({ items, dir, stacked }: { items: Item[]; dir: 'left' | 'right'; 
   )
 }
 
-export function InteropMarquee({ strips = 'all' }: { strips?: 'all' | 'logos' }) {
+/**
+ * Partner marks (one monochrome row, captioned per brand v17), then the
+ * commerce, identity and evidence row and the standards line. Content edges
+ * line up with every other home section (same max width and gutter).
+ */
+export function InteropMarquee() {
+  const frame = { maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', padding: `0 ${PAGE_PAD}` }
   return (
     <section
       aria-label="Interoperability surfaces"
       style={{
         borderTop: `1px solid ${PALETTE.hairline}`,
         borderBottom: `1px solid ${PALETTE.hairline}`,
-        padding: `clamp(22px, 3vh, 32px) 0 clamp(24px, 3.5vh, 36px)`,
+        padding: 'clamp(24px, 3.5vh, 36px) 0',
       }}
     >
-      <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}>
+      <div style={frame}>
         <p className="home-marquee-eyebrow">Composes with</p>
       </div>
-      <Track items={STACK} dir="left" stacked />
+      <Track items={STACK} dir="left" variant="logos" />
+      <div style={frame}>
+        <p className="home-marquee-caption">Examples are interoperability surfaces, not partnership claims.</p>
+      </div>
 
-      {strips === 'all' ? (
-        <>
-          <div style={{ maxWidth: MAX_W, margin: '20px auto 0', padding: `0 ${PAGE_PAD}` }}>
-            <p className="home-marquee-eyebrow">Interoperates across commerce, identity, and evidence</p>
-          </div>
-          <Track items={EVIDENCE} dir="right" />
+      <div style={{ ...frame, marginTop: 20 }}>
+        <p className="home-marquee-eyebrow">Interoperates across commerce, identity, and evidence</p>
+      </div>
+      <Track items={EVIDENCE} dir="right" />
 
-          <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: `18px ${PAGE_PAD} 0` }}>
-            <p
-              style={{
-                fontFamily: MONO,
-                fontSize: 11.5,
-                letterSpacing: '0.04em',
-                color: PALETTE.muted,
-                margin: 0,
-              }}
-            >
-              {STANDARDS}
-            </p>
-          </div>
-        </>
-      ) : null}
+      <div style={{ ...frame, paddingTop: 18 }}>
+        <p
+          style={{
+            fontFamily: MONO,
+            fontSize: 11.5,
+            letterSpacing: '0.04em',
+            color: PALETTE.muted,
+            margin: 0,
+          }}
+        >
+          {STANDARDS}
+        </p>
+      </div>
     </section>
   )
 }

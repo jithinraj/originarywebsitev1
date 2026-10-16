@@ -1,42 +1,34 @@
 import Link from 'next/link'
 import { MAX_W, PAGE_PAD } from './palette'
-import { SectionTitle } from './atoms/Mono'
+import { SectionHead } from './atoms/SectionHead'
 import { RecordDemo } from './RecordDemo'
 
 /**
- * The product explained in three steps.
+ * The product moment: one live signed record, centred. The hero diagram
+ * already tells record, verify, share; this section lets you do it.
  */
-const STEPS = [
-  { n: '01', title: 'Record', body: 'Your agent, API, tool server or gateway signs selected facts about the action.' },
-  { n: '02', title: 'Verify', body: 'Check the record later with the public key you expect.' },
-  { n: '03', title: 'Share', body: 'Send it to another team, customer or reviewer without sharing private logs.' },
-]
-
 export function RecordVerifyShare() {
   return (
     <section
       id="see-a-record"
-      className="home-section"
-      style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', padding: `40px ${PAGE_PAD} 88px ${PAGE_PAD}` }}
+      className="hx-section"
+      style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', paddingLeft: PAGE_PAD, paddingRight: PAGE_PAD }}
     >
-      <SectionTitle title="Record the action. Verify it anywhere." />
-      <div className="rvs-grid" style={{ marginTop: 44 }}>
-        <div className="rvs-rail">
-          {STEPS.map((s) => (
-            <div key={s.n} className="rvs-step">
-              <span className="rvs-num">{s.n}</span>
-              <div>
-                <p className="rvs-title">{s.title}</p>
-                <p className="rvs-body">{s.body}</p>
-              </div>
-            </div>
-          ))}
-          <Link href="/how-it-works" className="rvs-link">
-            See how it works &rarr;
-          </Link>
-        </div>
+      <SectionHead
+        eyebrow="See a record"
+        title="Record the action."
+        qualifier="Verify it anywhere."
+        body="A real Ed25519 signature, checked in your browser. Change one field and the check fails."
+        center
+      />
+      <div className="rvs-stage">
         <RecordDemo />
       </div>
+      <p className="rvs-more">
+        <Link href="/how-it-works" className="hx-textlink">
+          See how it works
+        </Link>
+      </p>
     </section>
   )
 }

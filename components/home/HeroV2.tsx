@@ -10,30 +10,13 @@
  * end-to-end explainer.
  */
 
-import { useEffect, useState, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import Link from 'next/link'
 import { MONO, SANS } from './typography'
-import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { useReducedMotion } from './motion/useReducedMotion'
 import { BitField } from './motion/BitField'
-
-const SUPPORTED: Array<{ label: string; mark: MarkName }> = [
-  { label: 'API calls', mark: 'braces' },
-  { label: 'MCP tools', mark: 'link' },
-  { label: 'Agent actions', mark: 'agentFrame' },
-  { label: 'Gateway decisions', mark: 'valve' },
-  { label: 'Payments', mark: 'coin' },
-  { label: 'Approvals', mark: 'sealCheck' },
-  { label: 'Provisioning', mark: 'pipeline' },
-]
-
-const PROOF: Array<{ label: string; mark: MarkName }> = [
-  { label: 'Built on PEAC Protocol', mark: 'diamond' },
-  { label: 'Open source', mark: 'braces' },
-  { label: 'Offline verification', mark: 'sealCheck' },
-  { label: 'Self-hostable', mark: 'agentFrame' },
-]
+import { FACTS } from '@/lib/facts'
 
 type Chip = { id: string; label: string; icon: ReactNode }
 type Output = { id: string; label: string; meta: string }
@@ -79,6 +62,32 @@ function rightPath(i: number) {
 
 export function HeroV2() {
   const reduced = useReducedMotion()
+  const stageRef = useRef<HTMLDivElement | null>(null)
+
+  // Fit the flow diagram into the first screen: scale it to the height left
+  // below the copy (never under 70%, so node text stays readable; on very short
+  // windows the bottom of the diagram scrolls instead).
+  useEffect(() => {
+    const stage = stageRef.current
+    if (!stage) return
+    const fit = () => {
+      stage.style.transform = ''
+      stage.style.marginBottom = ''
+      if (stage.offsetParent === null) return // hidden below 1180 px
+      const top = stage.getBoundingClientRect().top + window.scrollY
+      const natural = stage.offsetHeight
+      const room = window.innerHeight - top - 20
+      const s = Math.max(0.7, Math.min(1, room / natural))
+      if (s < 1) {
+        stage.style.transform = `scale(${s})`
+        stage.style.marginBottom = `${-(1 - s) * natural}px`
+      }
+    }
+    fit()
+    window.addEventListener('resize', fit)
+    document.fonts?.ready.then(fit)
+    return () => window.removeEventListener('resize', fit)
+  }, [])
   const [chipIdx, setChipIdx] = useState(0)
   const [outIdx, setOutIdx] = useState(0)
   const [phase, setPhase] = useState<Phase>('observe')
@@ -126,48 +135,43 @@ export function HeroV2() {
       className="home-section cin-stage"
       aria-labelledby="hero-headline"
       style={{
-        padding: `clamp(40px, 7vh, 84px) ${PAGE_PAD} clamp(32px, 5vh, 56px) ${PAGE_PAD}`,
+        padding: `clamp(28px, 5vh, 72px) ${PAGE_PAD} clamp(32px, 5vh, 56px) ${PAGE_PAD}`,
       }}
     >
-      <BitField className="cin-stream" />
+      <BitField className="cin-stream" strength={0.6} />
       <div style={{ maxWidth: MAX_W, margin: '0 auto', position: 'relative', zIndex: 1 }}>
       {/* Top copy */}
       <div style={heroTopStyle}>
-        <p className="cin-rise" style={heroEyebrow}>VERIFIABLE RECORDS FOR AGENTS, APIS, AND GATEWAYS</p>
+        <Link href="/peac" className="cin-rise hero-pill">
+          <span className="hero-pill-tag">PEAC {FACTS.currentVersion}</span>
+          <span>
+            Open protocol<span className="hero-pill-wide"> for verifiable records</span>
+          </span>
+          <Arrow />
+        </Link>
         <h1 id="hero-headline" className="cin-rise cin-display" style={{ ...heroHeadline, ['--cin-i' as string]: 1 }}>
-          Agent actions, on the record.
+          <span className="hero-line">Agent actions,</span> <span className="hero-line">on the record.</span>
         </h1>
-        <p className="cin-rise" style={{ ...heroSub, ['--cin-i' as string]: 2 }}>
-          Give important agent, API and tool actions a signed record you can verify later.
-          Investigate incidents, answer customers and auditors, and share the record without
-          exposing private logs.
+        <p className="cin-rise hero-sub" style={{ ...heroSub, ['--cin-i' as string]: 2 }}>
+          Give every important agent, API and tool action a signed record. Verify it later, and share it
+          with customers or auditors without exposing your logs.
         </p>
-        <div className="cin-rise" style={{ ...ctas, ['--cin-i' as string]: 3 }}>
+        <div className="cin-rise hero-ctas" style={{ ...ctas, ['--cin-i' as string]: 3 }}>
           <Link href="#see-a-record" className="home-arrow-link" style={btnPrimary}>
             See a record
             <Arrow down />
           </Link>
           <Link href="#start-here" className="home-arrow-link" style={btnSecondary}>
-            Start here
+            Start building
             <Arrow down />
           </Link>
         </div>
-        <ul className="cin-rise home-hero-strip" style={{ ['--cin-i' as string]: 4 }}>
-          {SUPPORTED.map((item) => (
-            <li key={item.label}>
-              <MarkGlyph name={item.mark} size={15} />
-              <span>{item.label}</span>
-            </li>
-          ))}
-        </ul>
-        <ul className="cin-rise home-hero-proof" style={{ ['--cin-i' as string]: 5 }}>
-          {PROOF.map((item) => (
-            <li key={item.label}>
-              <MarkGlyph name={item.mark} size={14} />
-              <span>{item.label}</span>
-            </li>
-          ))}
-        </ul>
+        <p className="cin-rise hero-proof" style={{ ['--cin-i' as string]: 4 }}>
+          <span>Open source</span>
+          <span>Offline verification</span>
+          <span>Self-hostable</span>
+          <span className="hero-proof-wide">No Originary account needed to verify</span>
+        </p>
       </div>
 
       {/* Three-zone flow */}
@@ -178,7 +182,7 @@ export function HeroV2() {
           compliance review, dispute evidence, and partner handoff.
         </p>
 
-        <div className="home-herov2-stage">
+        <div className="home-herov2-stage" ref={stageRef}>
           <div className="home-herov2-titlerow" aria-hidden>
             <span className="home-herov2-zone-title">Local workflow</span>
             <span className="home-herov2-zone-title is-center">Signed record issued</span>
@@ -332,68 +336,46 @@ export function HeroV2() {
               ))}
             </ol>
 
-            <p className="home-herov2-export" aria-hidden>
-              Export related records as a portable evidence bundle.
-            </p>
           </div>
-
-          <p
-            className={`home-herov2-tagline ${phase === 'export' || phase === 'rest' ? 'is-revealed' : ''}`}
-          >
-            Logs stay local. Signed records travel.
-          </p>
         </div>
 
-        {/* Mobile stack fallback */}
-        <div className="home-herov2-mobile" aria-hidden>
-          <div className="home-herov2-mstep">
-            <span className="home-herov2-mstep-num">1</span>
-            <div>
-              <p className="home-herov2-mstep-title">Local workflow</p>
-              <p className="home-herov2-mstep-sub">API, MCP, agents, gateways, commerce, provisioning</p>
-            </div>
-          </div>
-
-          <div className="home-herov2-mstep">
-            <span className="home-herov2-mstep-num">
-              <svg
-                viewBox="0 0 32 32"
-                width="16"
-                height="16"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.3"
-                aria-hidden
-              >
-                <circle cx="16" cy="16" r="13" />
-                <circle cx="16" cy="16" r="8" />
-                <path d="M16 5v3M16 24v3M5 16h3M24 16h3" strokeLinecap="round" />
-                <circle cx="16" cy="16" r="2.4" fill="currentColor" stroke="none" />
-              </svg>
+        {/* Mobile and tablet: the same story, vertical and live. */}
+        <div className="hm-flow" aria-hidden>
+          <p className="hm-zone">Local workflow</p>
+          <div className={`hm-node ${chipActive(chipIdx) ? 'is-active' : ''}`}>
+            <span className="home-herov2-chip-ico">{CHIPS[chipIdx].icon}</span>
+            <span key={CHIPS[chipIdx].id} className="hm-swap">
+              {CHIPS[chipIdx].label}
             </span>
-            <div>
-              <p className="home-herov2-mstep-title">Signed record issued</p>
-              <p className="home-herov2-mstep-sub">compact &middot; signed &middot; portable</p>
-              <p className="home-herov2-mstep-fields">facts &middot; policy &middot; result &middot; time &middot; issuer &middot; signature</p>
-            </div>
           </div>
-
-          <div className="home-herov2-mstep">
-            <span className="home-herov2-mstep-num">3</span>
-            <div>
-              <p className="home-herov2-mstep-title">Verified outside your system</p>
-              <p className="home-herov2-mstep-sub">your team &middot; customer or partner &middot; security or audit</p>
-            </div>
+          <span className={`hm-wire ${phase !== 'observe' ? 'is-on' : ''}`} />
+          <div className={`hm-seal ${diamondActive ? 'is-active' : ''}`}>
+            <svg viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.3" aria-hidden>
+              <circle cx="16" cy="16" r="13" />
+              <circle cx="16" cy="16" r="8" />
+              <path d="M16 5v3M16 24v3M5 16h3M24 16h3" strokeLinecap="round" />
+              <circle cx="16" cy="16" r="2.4" fill="currentColor" stroke="none" />
+            </svg>
+            <span className="hm-seal-title">Signed record issued</span>
+            <span className="hm-seal-fields">facts &middot; policy &middot; result &middot; time &middot; issuer &middot; signature</span>
           </div>
-          <p className="home-herov2-export-m">
-            Export related records as a portable evidence bundle.
-          </p>
-
-          <p
-            className={`home-herov2-tagline ${phase === 'export' || phase === 'rest' ? 'is-revealed' : ''}`}
-          >
-            Logs stay local. Signed records travel.
-          </p>
+          <span className={`hm-wire ${phase === 'verify' || phase === 'export' ? 'is-on' : ''}`} />
+          <div className={`hm-out ${outActive(outIdx) ? 'is-active' : ''}`}>
+            <span>
+              <strong key={OUTPUTS[outIdx].id} className="hm-swap">
+                {OUTPUTS[outIdx].label}
+              </strong>
+              <small>{OUTPUTS[outIdx].meta}</small>
+            </span>
+            {outActive(outIdx) ? (
+              <svg className="home-herov2-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden>
+                <path d="m5 12 5 5 9-11" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            ) : (
+              <span className="home-herov2-check-placeholder" aria-hidden />
+            )}
+          </div>
+          <p className="hm-zone hm-zone-end">Verified outside your system</p>
         </div>
       </div>
       </div>
@@ -430,21 +412,7 @@ const heroTopStyle = {
   margin: '0 auto',
   textAlign: 'center' as const,
 }
-const heroProofLine = {
-  fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace',
-  fontSize: 11.5,
-  letterSpacing: '0.02em',
-  color: PALETTE.faint,
-  margin: '18px 0 0',
-} as const
 
-const heroEyebrow = {
-  fontFamily: MONO,
-  fontSize: 11,
-  letterSpacing: '0.16em',
-  color: PALETTE.muted,
-  margin: 0,
-}
 const heroHeadline = {
   fontFamily: SANS,
   fontSize: 'clamp(36px, 4.6vw, 58px)',
@@ -466,7 +434,7 @@ const heroSub = {
 const ctas = {
   marginTop: 28,
   display: 'flex',
-  gap: 10,
+  gap: 12,
   flexWrap: 'wrap' as const,
   justifyContent: 'center',
 }
@@ -474,10 +442,10 @@ const btnBase = {
   display: 'inline-flex',
   alignItems: 'center',
   gap: 10,
-  padding: '11px 18px',
-  minHeight: 42,
+  padding: '14px 22px',
+  minHeight: 48,
   fontFamily: SANS,
-  fontSize: 13,
+  fontSize: 14.5,
   fontWeight: 500,
   letterSpacing: '0.005em',
   textDecoration: 'none' as const,

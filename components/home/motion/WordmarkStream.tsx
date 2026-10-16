@@ -1,17 +1,17 @@
 'use client'
 
-import { OriginaryIdent } from '../../brand/OriginaryIdent'
+import { AsciiWordmark } from './AsciiWordmark'
 
 /**
- * WordmarkStream: the closing signature. The v17 ident plays once when it
- * comes into view and ends on the master wordmark; reduced motion and no-JS
- * show the master directly.
+ * WordmarkStream: the closing signature. The master wordmark, drawn in live
+ * characters that assemble on first view and play with the cursor; reduced
+ * motion shows it still and no-JS shows the master SVG.
  */
 export function WordmarkStream() {
   return (
-    <div className="cin-wordmark" aria-hidden>
+    <div className="cin-wordmark">
       <div style={{ padding: '0 clamp(12px, 1.4vw, 28px)' }}>
-        <OriginaryIdent crop="word" />
+        <AsciiWordmark />
       </div>
     </div>
   )
