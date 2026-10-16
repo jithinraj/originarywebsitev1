@@ -2,7 +2,10 @@
 
 /**
  * Sample-record demo: one action shown as a record, with a real Ed25519
- * signature check in the browser.
+ * signature check in the browser. The card shows both sides of the record:
+ * the decoded payload a person reads, and the signed token and public key a
+ * verifier checks. Changing one field highlights the changed line and the
+ * changed bytes, and the check fails.
  *
  * Demo keypair generated for this page; the issuer is the reserved example
  * domain support-agent.example, so nothing here can be mistaken for a
@@ -23,7 +26,8 @@ const SIG_SEG =
 
 const ISSUED_AT = '2026-04-17 08:01:31 UTC'
 
-type State = 'idle' | 'checking' | 'valid' | 'invalid' | 'unsupported'
+export type DemoState = 'idle' | 'checking' | 'valid' | 'invalid' | 'unsupported'
+type State = DemoState
 
 function b64uToBytes(s: string): Uint8Array<ArrayBuffer> {
   const b64 = s.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - (s.length % 4)) % 4)
@@ -33,11 +37,21 @@ function b64uToBytes(s: string): Uint8Array<ArrayBuffer> {
   return out
 }
 
+/** The decoded payload, one line per field, in the token's own order. */
+function payloadLines(seg: string): Array<{ key: string; value: string }> {
+  const obj = JSON.parse(new TextDecoder().decode(b64uToBytes(seg))) as Record<string, string | number>
+  return Object.entries(obj).map(([key, v]) => ({ key, value: typeof v === 'string' ? `"${v}"` : String(v) }))
+}
 
-export function RecordDemo() {
+export function RecordDemo({ onState }: { onState?: (s: DemoState, changed: boolean) => void } = {}) {
   const [state, setState] = useState<State>('idle')
   const [changed, setChanged] = useState(false)
+  const [ms, setMs] = useState<number | null>(null)
   const keyRef = useRef<CryptoKey | null>(null)
+
+  useEffect(() => {
+    onState?.(state, changed)
+  }, [state, changed, onState])
 
   useEffect(() => {
     let live = true
@@ -65,94 +79,155 @@ export function RecordDemo() {
     const input = new TextEncoder().encode(`${HEADER_SEG}.${withChange ? TAMPERED_SEG : PAYLOAD_SEG}`)
     const sig = b64uToBytes(SIG_SEG)
     let ok = false
+    const t0 = performance.now()
     try {
       ok = await crypto.subtle.verify('Ed25519', key, sig, input)
     } catch {
       setState('unsupported')
       return
     }
+    setMs(performance.now() - t0)
     setState(ok ? 'valid' : 'invalid')
   }, [])
 
-  const settled = state === 'valid' || state === 'invalid'
-
+  const lines = payloadLines(changed ? TAMPERED_SEG : PAYLOAD_SEG)
+  const timing = ms === null ? '' : ms < 1 ? `${ms.toFixed(2)} ms` : `${ms.toFixed(1)} ms`
 
   return (
-    <div className="hs-panel" data-state={state}>
-      <div className="hs-panel-head">
-        <span>Refund approved</span>
-        <span className="hs-panel-tag">sample record</span>
-      </div>
-      <dl className="hs-fields">
-        <div>
-          <dt>Action</dt>
-          <dd>Refund approved</dd>
-        </div>
-        <div>
-          <dt>System</dt>
-          <dd>support-agent</dd>
-        </div>
-        <div>
-          <dt>Time</dt>
-          <dd>{ISSUED_AT}</dd>
-        </div>
-        <div data-changed={changed ? 'yes' : 'no'}>
-          <dt>Result</dt>
-          <dd>
-            {changed ? 'not refunded' : 'refunded'}
-            {changed ? <span className="hs-changed-tag">changed</span> : null}
-          </dd>
-        </div>
-        <div>
-          <dt>Issuer</dt>
-          <dd>support-agent.example</dd>
-        </div>
-        <div>
-          <dt>Demo signature</dt>
-          <dd>{SIG_SEG.slice(0, 24)}&hellip;</dd>
-        </div>
-      </dl>
-
-      <div className="hs-acts">
-        <button type="button" className="hs-btn hs-btn-solid hs-btn-sm" onClick={() => run(false)}>
-          {changed ? 'Restore and verify' : 'Verify'}
-        </button>
-        <button
-          type="button"
-          className="hs-btn hs-btn-ghost hs-btn-sm"
-          onClick={() => run(true)}
-          disabled={changed}
-        >
-          Change one field
-        </button>
+    <div className="rc rd" data-state={state} data-changed={changed ? 'yes' : 'no'}>
+      <div className="rc-head">
+        <span className="rc-issuer">
+          <span className="rc-seal" aria-hidden>
+            <SealMark />
+          </span>
+          support-agent.example
+        </span>
+        <span className="rc-tag">Sample record</span>
       </div>
 
-      <output className="hs-out" aria-live="polite">
-        {state === 'idle' ? <p className="hs-out-idle">Not checked yet.</p> : null}
-        {state === 'checking' ? <p className="hs-out-idle">Checking&hellip;</p> : null}
-        {state === 'unsupported' ? (
-          <p className="hs-out-bad">
-            This browser can&apos;t verify Ed25519 signatures. Use <code>peac verify</code> instead.
+      <div className="rd-body">
+        {/* What a person reads */}
+        <div className="rd-col">
+          <p className="rd-label">Decoded record</p>
+          <p className="rd-title">Refund approved</p>
+          <p className="rd-meta">
+            support-agent <span aria-hidden>&middot;</span> {ISSUED_AT}
           </p>
-        ) : null}
-        {settled ? (
-          <div>
-            <p className={state === 'valid' ? 'hs-out-ok' : 'hs-out-bad'}>
-              {state === 'valid' ? 'Signature valid' : 'Signature invalid'}
-            </p>
-            {state === 'valid' ? (
-              <>
-                <p className="hs-out-note">The supplied key validates this signed record.</p>
-                <p className="hs-out-note hs-out-note-sm">
-                  The protected record has not changed since it was signed.
-                </p>
-              </>
-            ) : (
-              <p className="hs-out-note">The record no longer validates under the supplied key.</p>
-            )}
-          </div>
-        ) : null}
-      </output>
+          <pre className="rd-json" aria-label="Decoded payload">
+            <span className="rd-punct">{'{'}</span>
+            {'\n'}
+            {lines.map((l, i) => {
+              const hit = changed && l.key === 'result'
+              return (
+                <span key={l.key} className={hit ? 'rd-line rd-hit' : 'rd-line'}>
+                  {'  '}
+                  <span className="rd-key">&quot;{l.key}&quot;</span>
+                  <span className="rd-punct">: </span>
+                  <span className="rd-val">{l.value}</span>
+                  {i < lines.length - 1 ? <span className="rd-punct">,</span> : null}
+                  {hit ? <span className="rd-changed">changed</span> : null}
+                  {'\n'}
+                </span>
+              )
+            })}
+            <span className="rd-punct">{'}'}</span>
+          </pre>
+        </div>
+
+        {/* What a verifier checks */}
+        <div className="rd-col rd-col-machine">
+          <p className="rd-label">Signed token &middot; compact JWS</p>
+          <p className="rd-token" aria-label="Signed token: header, payload and signature">
+            <span className="rd-seg rd-seg-h">{HEADER_SEG}</span>
+            <span className="rd-dot">.</span>
+            <span className={changed ? 'rd-seg rd-seg-p rd-seg-hit' : 'rd-seg rd-seg-p'}>
+              {changed ? TAMPERED_SEG : PAYLOAD_SEG}
+            </span>
+            <span className="rd-dot">.</span>
+            <span className="rd-seg rd-seg-s">{SIG_SEG}</span>
+          </p>
+          <p className="rd-legend" aria-hidden>
+            <span className="rd-legend-h">header</span>
+            <span className="rd-legend-p">payload</span>
+            <span className="rd-legend-s">signature</span>
+          </p>
+          <p className="rd-label rd-label-key">Issuer&apos;s public key &middot; Ed25519</p>
+          <p className="rd-key-box">{JWK.x}</p>
+        </div>
+      </div>
+
+      <div className="rd-foot">
+        <div className="rc-acts">
+          <button type="button" className="hs-btn hs-btn-solid hs-btn-sm" onClick={() => run(false)}>
+            {changed ? 'Restore and verify' : 'Verify signature'}
+          </button>
+          <button
+            type="button"
+            className="hs-btn hs-btn-ghost hs-btn-sm"
+            onClick={() => run(true)}
+            disabled={changed}
+          >
+            Change one field
+          </button>
+        </div>
+        <output className="rd-status" aria-live="polite">
+          <StatusIcon state={state} />
+          <span>
+            <span className="rd-status-word">
+              {state === 'idle'
+                ? 'Not verified yet'
+                : state === 'checking'
+                  ? 'Checking…'
+                  : state === 'valid'
+                    ? 'Signature valid'
+                    : state === 'invalid'
+                      ? 'Signature invalid'
+                      : 'Ed25519 not supported here'}
+            </span>
+            <span className="rd-status-note">
+              {state === 'idle'
+                ? 'Runs in your browser with the issuer\u2019s public key. Nothing is sent anywhere.'
+                : state === 'valid'
+                  ? `Checked in ${timing} in your browser. The record has not changed since it was signed.`
+                  : state === 'invalid'
+                    ? 'The result field changed, so these bytes no longer match the signature.'
+                    : state === 'unsupported'
+                      ? 'Use the PEAC CLI (peac verify) instead.'
+                      : ' '}
+            </span>
+          </span>
+        </output>
+      </div>
     </div>
+  )
+}
+
+function SealMark() {
+  return (
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+      <circle cx="12" cy="12" r="8" />
+      <circle cx="12" cy="12" r="3.2" />
+    </svg>
+  )
+}
+
+/* Results carry an icon and a word, never colour alone. */
+function StatusIcon({ state }: { state: State }) {
+  return (
+    <svg viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+      {state === 'valid' ? (
+        <>
+          <circle cx="10" cy="10" r="8.25" />
+          <path d="m6.4 10.2 2.4 2.4 4.8-5.2" strokeLinecap="round" strokeLinejoin="round" />
+        </>
+      ) : state === 'invalid' || state === 'unsupported' ? (
+        <>
+          <circle cx="10" cy="10" r="8.25" />
+          <path d="m7.2 7.2 5.6 5.6m0-5.6-5.6 5.6" strokeLinecap="round" />
+        </>
+      ) : (
+        <circle cx="10" cy="10" r="8.25" strokeDasharray="2.6 2.6" />
+      )}
+    </svg>
   )
 }

@@ -65,7 +65,8 @@
 /* ---------- home hero display type ---------- */
 
 .cin-display {
-  font-size: clamp(40px, 5.9vw, 86px) !important;
+  /* Width sets the size, and short windows cap it so the hero visual still fits. */
+  font-size: clamp(40px, min(5.9vw, 8.2vh), 86px) !important;
   line-height: 1.01 !important;
   letter-spacing: -0.036em !important;
 }
@@ -88,4 +89,25 @@
   margin: clamp(14px, 2.5vh, 36px) 0 0;
   border-top: 1px solid var(--hairline);
   padding-top: clamp(14px, 2.5vh, 32px);
+}
+
+/* ---- ASCII wordmark: the closing signature in characters ----------------- */
+.awm {
+  position: relative;
+  touch-action: pan-y;
+}
+.awm-canvas {
+  display: block;
+  width: 100%;
+  cursor: crosshair;
+}
+/* No JS: the master SVG. Once the canvas is ready the SVG steps aside. */
+.awm-fallback {
+  padding: 4% 0;
+}
+.awm:not([data-ready]) .awm-canvas {
+  display: none;
+}
+.awm[data-ready] .awm-fallback {
+  display: none;
 }

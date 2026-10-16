@@ -14,11 +14,14 @@ export function BitField({
   className,
   tone = 'ink',
   focus = 'center',
+  strength = 1,
 }: {
   className?: string
   tone?: 'ink' | 'paper'
   /** Where the protected content zone sits: field attenuates inside it. */
   focus?: 'center' | 'left'
+  /** Field opacity multiplier (1 = default). */
+  strength?: number
 }) {
   const reduced = useReducedMotion()
   const ref = useRef<HTMLCanvasElement | null>(null)
@@ -46,8 +49,8 @@ export function BitField({
     // Ink only: green is reserved for results in v17, so the cursor highlight is a stronger ink.
     // Read from the tokens on every build so a theme switch repaints the field.
     const inkColor = () => (tone === 'paper' ? cssVar('--on-dark') : cssVar('--ink'))
-    const BASE_A = tone === 'paper' ? 0.11 : 0.14
-    const LIFT_A = tone === 'paper' ? 0.38 : 0.44
+    const BASE_A = (tone === 'paper' ? 0.11 : 0.14) * strength
+    const LIFT_A = (tone === 'paper' ? 0.38 : 0.44) * Math.min(1, strength + 0.25)
 
     let raf = 0
     let running = false
@@ -234,7 +237,7 @@ export function BitField({
       if (onLeave) parent.removeEventListener('mouseleave', onLeave)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps -- focus handler is stable; re-subscribing would restart the animation
-  }, [mode, tone])
+  }, [mode, tone, strength])
 
   if (mode === 'boot') {
     return <div className={`cin-dotgrid${tone === 'paper' ? ' cin-dotgrid-ink' : ''}`} aria-hidden />

@@ -1,49 +1,63 @@
 import { MAX_W, PAGE_PAD } from './palette'
-import { SectionTitle } from './atoms/Mono'
+import { SectionHead } from './atoms/SectionHead'
+import { StatusGlyph } from './glyphs/StatusGlyphs'
 
 /**
- * States what a valid signature establishes and what it does not.
+ * What a valid signature establishes and what it leaves to the reader, set as
+ * a result panel: green icon and word for what was checked, the dashed
+ * not-evaluated mark for everything else.
  */
-const CAN = [
-  'the supplied key validates the signature;',
-  'the protected record has not changed;',
-  'evaluated content matches what the record binds.',
+const CHECKED = [
+  'The supplied key validates the signature.',
+  'The protected record has not changed since it was signed.',
+  'Evaluated content matches what the record binds.',
 ]
 
-const CANNOT = [
-  'that every relevant event was recorded;',
-  'that the issuer or every statement should be trusted;',
-  'that an external event or legal requirement was satisfied.',
+const NOT_CHECKED = [
+  'Whether every relevant event was recorded.',
+  'Whether the issuer, or each statement, should be trusted.',
+  'Whether an external event or legal requirement was satisfied.',
 ]
 
 export function VerificationLimits() {
   return (
     <section
-      className="home-section"
-      style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', padding: `40px ${PAGE_PAD} 88px ${PAGE_PAD}` }}
+      className="hx-section"
+      style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', paddingLeft: PAGE_PAD, paddingRight: PAGE_PAD }}
     >
-      <SectionTitle title="Know exactly what was verified." />
-      <div className="vlim-grid" style={{ marginTop: 44 }}>
-        <div className="vlim-col vlim-col-can">
-          <p className="vlim-head">Verification tells you</p>
-          <ul>
-            {CAN.map((c) => (
-              <li key={c}>{c}</li>
+      <div className="vlim-grid">
+        <SectionHead
+          eyebrow="What verification means"
+          title="Know what was verified."
+          qualifier="Nothing more is claimed."
+          stack
+          body="A valid signature is a precise result. It establishes three things and leaves the rest to your own review."
+        />
+        <div className="vlim-panel" role="group" aria-label="What a valid signature establishes">
+          <p className="vlim-panel-head">
+            <span>Result</span>
+            <span>Signature valid</span>
+          </p>
+          <ul className="vlim-list" role="list">
+            {CHECKED.map((c) => (
+              <li key={c} data-kind="checked">
+                <StatusGlyph name="established" size={20} />
+                <span className="vlim-word">Checked</span>
+                <span className="vlim-text">{c}</span>
+              </li>
             ))}
           </ul>
-        </div>
-        <div className="vlim-col">
-          <p className="vlim-head">It doesn&apos;t automatically tell you</p>
-          <ul>
-            {CANNOT.map((c) => (
-              <li key={c}>{c}</li>
+          <ul className="vlim-list vlim-list-not" role="list">
+            {NOT_CHECKED.map((c) => (
+              <li key={c} data-kind="not">
+                <StatusGlyph name="missing" size={20} />
+                <span className="vlim-word">Not checked</span>
+                <span className="vlim-text">{c}</span>
+              </li>
             ))}
           </ul>
         </div>
       </div>
-      <p className="vlim-close">
-        Clear verification, without claiming more than the record establishes.
-      </p>
     </section>
   )
 }

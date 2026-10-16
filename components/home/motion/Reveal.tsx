@@ -47,6 +47,9 @@ export function Reveal({
     if (reduced) return
     const el = ref.current
     if (!el) return
+    // useReducedMotion starts false and settles after mount, so read the media
+    // query here too: a reduced-motion reader must never get the hidden state.
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return
 
     const rect = el.getBoundingClientRect()
     const inViewport = rect.top < window.innerHeight && rect.bottom > 0
@@ -103,6 +106,11 @@ export function Reveal({
     return () => {
       io?.disconnect()
       if (safety) clearTimeout(safety)
+      // Never leave the element in the hidden pre-animation state.
+      el.style.opacity = ''
+      el.style.transform = ''
+      el.style.transition = ''
+      el.style.willChange = ''
     }
   }, [reduced, distance, duration, delay, threshold])
 
