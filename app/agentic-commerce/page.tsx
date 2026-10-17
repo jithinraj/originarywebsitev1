@@ -1,27 +1,16 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
-import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button, PullLine } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button } from '@/components/home/page-kit'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
+import { PaymentLink } from '@/components/heroes/HeroArtifacts'
 import { PALETTE } from '@/components/home/palette'
-import {
-  RecordCard,
-  CodeBlock,
-  Terminal,
-  StepLabel,
-  SpecimenGrid,
-  MarkerList,
-  InkBand,
-  InkHeading,
-  InkButton,
-  AnchorLine,
-  Dim,
-} from '@/components/specimens/parts'
+import { RecordCard, CodeBlock, Terminal, StepLabel, SpecimenGrid, MarkerList, InkBand, InkHeading, InkButton, Dim } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 
-const TITLE = 'Evidence for paid APIs, MCP, and agent commerce | Originary'
+const TITLE = 'Agent payment records for paid APIs and MCP | Originary'
 const DESCRIPTION =
-  'Connect authorization, API or tool execution, payment-provider artifacts, service results, and delivery evidence in one independently reviewable case.'
+  'Connect an agent payment to the API or MCP call, authorization and result it paid for, in signed records that keep the rail artifacts and verify offline.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -87,31 +76,18 @@ export default function AgenticCommercePage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
-      <Breadcrumbs current="Agent Commerce" href="/agentic-commerce" />
+      <Breadcrumbs current="Agent payments" href="/agentic-commerce" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
-        eyebrow="Paid services"
+        eyebrow="Agent payments"
         title="When an agent pays, keep the action and the payment connected."
         sub="A payment tells you money moved. It may not tell you which service call, authorization or result the payment belonged to. PEAC records can keep those parts linked for later review."
         display
-        aside={
-          <RecordCard
-            type="payment-event"
-            badge={{ kind: 'verified', label: 'verified offline' }}
-            rows={[
-              { label: 'Issuer', value: 'https://api.vendor.example' },
-              { label: 'Event', value: 'authorized' },
-              { label: 'Action', value: 'POST /v1/market-data/search' },
-              { label: 'Signature', value: 'Ed25519 30cf81d6...' },
-            ]}
-            foot="observation record - not a payment instruction"
-          />
-        }
-        strip={['Payment context', 'Observed settlement', 'Counterparty acknowledgment', 'Verifies offline']}
+        aside={<PaymentLink />}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <Button href="#example" primary>
-            See a paid-service dispute
+            See a paid API call
           </Button>
           <Button href="/contact">Start a pilot</Button>
         </div>
@@ -149,24 +125,9 @@ export default function AgenticCommercePage() {
         </SpecimenGrid>
         <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.faint, marginTop: 20, maxWidth: '62ch' }}>
           Neither source automatically proves the other source&apos;s claims. The payment provider
-          reports the payment state; the service issuer reports the service context; the evidence
-          case preserves and verifies the supplied artifacts.
+          reports the payment state and the service issuer reports the service context. The evidence
+          case keeps both and verifies the artifacts supplied.
         </p>
-      </PageSection>
-
-      {/* The real questions */}
-      <PageSection paddingTop={0} paddingBottom={64} background={PALETTE.paper}>
-        <SectionHeading index="02" eyebrow="The real questions" title={'When an agent pays, "did money move?" is the easy part.'} />
-        <MarkerList
-          marker="check"
-          items={[
-            'What was requested, and which policy or mandate applied?',
-            'Who or what authorized the action?',
-            'What result did the vendor return?',
-            'Was the action allowed, denied, captured, refunded, or disputed?',
-            'Can a customer, auditor, or partner verify the record later, without your systems?',
-          ]}
-        />
       </PageSection>
 
       {/* Worked example */}
@@ -193,7 +154,7 @@ export default function AgenticCommercePage() {
                 can check.
               </p>
               <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, marginTop: 14, maxWidth: '52ch' }}>
-                The record preserves the payment artifact as evidence: a signed settlement receipt travels in the
+                The record preserves the payment artifact as evidence: a signed settlement receipt is carried in the
                 record&apos;s proofs, and settlement metadata is carried as a digest by default so raw payment headers never
                 enter the signed payload.
               </p>
@@ -231,13 +192,9 @@ export default function AgenticCommercePage() {
         </div>
       </PageSection>
 
-      <PullLine accent="reports the service context.">
-        The payment provider reports the payment state. The service issuer
-      </PullLine>
-
       {/* Where it fits */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
-        <SectionHeading index="04" eyebrow="Where it fits" title="Records can sit around commerce workflows you already run." />
+        <SectionHeading index="04" eyebrow="Where it fits" title="Where records fit in the commerce workflows you already run." />
         <div className="pk-fit-groups">
           {FIT_GROUPS.map((g) => (
             <div key={g.label}>
@@ -269,68 +226,12 @@ export default function AgenticCommercePage() {
             'It does not process payments.',
             'It does not replace your ledger or accounting system.',
             'It does not decide tax treatment.',
-            'It does not require a chain, or another company to use Originary.',
+            'It does not require a blockchain, and the other party does not need Originary.',
           ]}
         />
         <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.ink, marginTop: 24, maxWidth: '54ch' }}>
           It issues, inspects, and verifies signed records from commerce workflows you already run.
         </p>
-      </PageSection>
-
-      <PageSection paddingTop={0} paddingBottom={64} background={PALETTE.paper}>
-        <SectionHeading index="06" eyebrow="Beyond single records" title="Broader evidence coverage, same wire format." />
-        <Card padding={28} style={{ maxWidth: 860 }}>
-          <div
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: 10.5,
-              letterSpacing: '0.18em',
-              textTransform: 'uppercase',
-              color: PALETTE.faint,
-            }}
-          >
-            PEAC {FACTS.currentVersion}
-          </div>
-          <p
-            style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: 15.5,
-              lineHeight: 1.6,
-              color: PALETTE.ink,
-              margin: '12px 0 16px',
-              maxWidth: '58ch',
-            }}
-          >
-            Portable evidence beyond single signed records: the wire format stays stable while evidence coverage
-            broadens.
-          </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-            {[
-              'Paid resource records',
-              'Paid MCP tool records',
-              'Linked counterparty acknowledgments',
-              'Merkle commitment helpers',
-              'External evidence anchoring',
-              'Agent spend attribution',
-              'Agent run lineage records',
-              'Consented action records',
-              'Runtime lineage exports',
-            ].map((c) => (
-              <Pill key={c}>{c}</Pill>
-            ))}
-          </div>
-          <p
-            style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: 13,
-              lineHeight: 1.6,
-              color: PALETTE.muted,
-              margin: '16px 0 0',
-            }}
-          >
-            Broader evidence coverage, not a new payment rail, gateway, or policy engine.
-          </p>
-        </Card>
       </PageSection>
 
       {/* Closing */}
@@ -346,7 +247,6 @@ export default function AgenticCommercePage() {
           </InkButton>
           <InkButton href="/verify">Verify a record</InkButton>
         </div>
-        <AnchorLine onInk style={{ marginTop: 36 }}>Logs stay local. Signed records travel.</AnchorLine>
       </InkBand>
     </PageShell>
   )

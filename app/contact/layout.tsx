@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Contact | Originary',
-    description: 'Talk to Originary about technical review, enterprise deployment, pilots, integration support, security, or partner workflows.',
+    description: 'Talk to Originary about a Verification Pilot, integration support, security questions or partner workflows that need signed records.',
     url: '/contact',
     siteName: 'Originary',
     type: 'website',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Contact | Originary',
-    description: 'Talk to Originary about technical review, enterprise deployment, pilots, integration support, security, or partner workflows.',
+    description: 'Talk to Originary about a Verification Pilot, integration support, security questions or partner workflows that need signed records.',
     images: ['/og'],
   },
 }

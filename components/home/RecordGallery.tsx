@@ -134,7 +134,7 @@ export function RecordGallery() {
         title="One record model"
         qualifier="for every important action."
         stack
-        body="Six kinds of action, one signed shape: facts, policy, result, time, issuer and signature."
+        body="Tool calls, API calls, agent actions, gateway decisions, payments and provisioning all share six parts: facts, policy, result, time, issuer and signature."
       />
       <div className="rix">
         <div className="rix-tabs" role="tablist" aria-label="Record types" aria-orientation="vertical">
@@ -180,7 +180,7 @@ export function RecordGallery() {
               ))}
             </dl>
             <div className="rix-card-foot">
-              <span>Same shape, same verifier, for all six.</span>
+              <span>One verifier checks all six.</span>
               <Link href={f.href} className="rix-go">
                 Open this example
                 <Arrow />

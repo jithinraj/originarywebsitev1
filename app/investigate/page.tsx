@@ -1,23 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
-import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button, Card } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Button, Card } from '@/components/home/page-kit'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import { SANS } from '@/components/home/typography'
 import { Mono } from '@/components/home/atoms/Mono'
-import {
-  RecordCard,
-  StatusBadge,
-  Dim,
-  MarkerList,
-  InkBand,
-  InkHeading,
-  InkButton,
-  AnchorLine,
-  DataTable,
-  type BadgeKind,
-} from '@/components/specimens/parts'
+import { RecordCard, StatusBadge, Dim, MarkerList, InkBand, InkHeading, InkButton, DataTable, type BadgeKind } from '@/components/specimens/parts'
 import { ScopedReviewForm } from './ScopedReviewForm'
 import './investigate.css'
 
@@ -149,7 +138,7 @@ export default function InvestigatePage() {
       <PageHero
         eyebrow="Originary Investigate · preview"
         title="Turn a disputed agent action into a reviewable evidence case."
-        sub="Bring together existing records, identify what they support, and give another team a clear way to inspect the findings and missing evidence."
+        sub="Gather the records you already have, see what they support and what is missing, and give the deciding team findings they can check."
         display
         aside={
           <div className="inv-hero-card">
@@ -241,18 +230,16 @@ export default function InvestigatePage() {
             </ol>
           </Card>
           <p style={{ fontFamily: sans, fontSize: 13.5, lineHeight: 1.6, color: PALETTE.faint, maxWidth: '66ch', margin: '18px 0 0' }}>
-            The useful moment is seeing a plausible claim fail to become an established finding merely
-            because a transcript says it happened. This page shows a summary; the synthetic case itself
+            Note the first finding: the agent said the rollback worked, but a transcript saying so is
+            not enough to establish it. This page shows a summary; the synthetic case itself
             ships with the open-source preview as a signed bundle a recipient can check locally.
           </p>
         </div>
       </PageSection>
 
-      <PullLine accent="because a transcript says so.">A claim is not a finding</PullLine>
-
       {/* 02 How a review works */}
       <PageSection paddingTop={64} paddingBottom={64}>
-        <SectionHeading index="02" eyebrow="How a review works" title="Question, records, handoff." />
+        <SectionHeading index="02" eyebrow="How a review works" title="Three steps from question to handoff." />
         <div className="inv-grid3">
           {STEPS.map((s, i) => (
             <Card key={s.title} padding={24}>
@@ -365,8 +352,8 @@ export default function InvestigatePage() {
 
       {/* 05 Two ways to start */}
       <PageSection paddingTop={64} paddingBottom={64} background={PALETTE.paper}>
-        <SectionHeading index="05" eyebrow="Engagement" title="Two ways to start." />
-        <div className="inv-grid2">
+        <SectionHeading index="05" eyebrow="Engagement" title="One scoped review." />
+        <div style={{ maxWidth: 760 }}>
           <Card padding={28} emphasis style={{ background: PALETTE.bg }}>
             <Mono size={10.5} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
               Originary Investigate
@@ -375,7 +362,7 @@ export default function InvestigatePage() {
               <Minor>Review a disputed action with existing evidence</Minor>
             </div>
             <p style={{ fontFamily: sans, fontSize: 14.5, lineHeight: 1.6, color: PALETTE.muted, margin: '14px 0 16px' }}>
-              One bounded engagement. We agree the scope and a fixed fee with you before any evidence is handled.
+              One engagement. We agree the scope and a fixed fee with you before any evidence is handled.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', margin: '0 0 22px' }}>
               <Button href="#request" primary>
@@ -399,31 +386,13 @@ export default function InvestigatePage() {
               favourable conclusion; &ldquo;not established&rdquo; is a legitimate outcome.
             </p>
           </Card>
-          <Card padding={28} style={{ background: PALETTE.bg }}>
-            <Mono size={10.5} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-              Verification Pilot
-            </Mono>
-            <div style={{ marginTop: 12 }}>
-              <Minor>Record one workflow so future evidence is easier</Minor>
-            </div>
-            <Body>
-              The{' '}
-              <Link href="/product" style={linkStyle}>
-                Verification Pilot
-              </Link>{' '}
-              adds signed records to one existing workflow, so the next dispute starts with records built to
-              be checked. See an{' '}
-              <Link href="/evidence-case" style={linkStyle}>
-                illustrative evidence case
-              </Link>{' '}
-              or{' '}
-              <Link href="/verify" style={linkStyle}>
-                verify a record
-              </Link>
-              .
-            </Body>
-            <Body>Neither path requires adopting the whole PEAC stack up front.</Body>
-          </Card>
+        <p style={{ fontFamily: sans, fontSize: 14.5, lineHeight: 1.6, color: PALETTE.muted, margin: '20px 0 0', maxWidth: 760 }}>
+          Want future cases to start with signed records? The{' '}
+          <Link href="/product" style={linkStyle}>
+            Verification Pilot
+          </Link>{' '}
+          adds them to one existing workflow.
+        </p>
         </div>
       </PageSection>
 
@@ -471,7 +440,7 @@ export default function InvestigatePage() {
             ],
             [
               'supported inputs',
-              'Agent endpoint records (numbat), git history, GitHub audit logs, AWS CloudTrail, and any JSON Lines, JSON or CSV export with a field mapping. OpenTelemetry, ADR Sensor and PEAC records are experimental.',
+              'Agent endpoint records, git history, GitHub audit logs, AWS CloudTrail, and any JSON Lines, JSON or CSV export with a field mapping. OpenTelemetry traces, decision-record exports and PEAC records are experimental.',
             ],
             [
               'verification limits',
@@ -509,9 +478,6 @@ export default function InvestigatePage() {
           </InkButton>
           <InkButton href="/evidence-case">See an evidence case</InkButton>
         </div>
-        <AnchorLine onInk style={{ marginTop: 36 }}>
-          Investigate is open source under Apache-2.0.
-        </AnchorLine>
       </InkBand>
     </PageShell>
   )

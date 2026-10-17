@@ -13,51 +13,56 @@ type NavEntry =
   | { kind: 'link'; label: string; href: string }
   | { kind: 'menu'; label: string; items: NavLink[] }
 
-const NAV: NavEntry[] = [
+// One map for the header and the footer (Footer.tsx imports SITE_MAP).
+export const SITE_MAP: Array<{ label: string; items: NavLink[] }> = [
   {
-    kind: 'menu',
     label: 'Product',
     items: [
+      { label: 'Verification Pilot', href: '/product' },
       { label: 'How it works', href: '/how-it-works' },
       { label: 'Records', href: '/records' },
+      { label: 'Evidence case', href: '/evidence-case' },
       { label: 'Action review', href: '/action-review' },
       { label: 'Investigate', href: '/investigate' },
-      { label: 'Verify', href: '/verify' },
+      { label: 'Verify a record', href: '/verify' },
       { label: 'Pricing', href: '/pricing' },
     ],
   },
   {
-    kind: 'menu',
     label: 'Use cases',
     items: [
-      { label: 'MCP', href: '/mcp' },
+      { label: 'MCP tools', href: '/mcp' },
       { label: 'AI gateways', href: '/ai-gateway' },
-      { label: 'Audit & compliance', href: '/ai-compliance' },
       { label: 'Agent payments', href: '/agentic-commerce' },
+      { label: 'Audit and incident handoff', href: '/audit-incident-handoff' },
+      { label: 'AI compliance', href: '/ai-compliance' },
+      { label: 'Provisioning', href: '/provisioning-records' },
     ],
   },
   {
-    kind: 'menu',
     label: 'Developers',
     items: [
       { label: 'Start here', href: '/#start-here' },
+      { label: 'PEAC Protocol', href: '/peac' },
+      { label: 'Downloads', href: '/downloads' },
       { label: 'Documentation', href: 'https://www.peacprotocol.org/docs', external: true },
       { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
+      { label: 'Blog', href: '/blog' },
     ],
   },
-  { kind: 'link', label: 'Downloads', href: '/downloads' },
-  { kind: 'link', label: 'PEAC Protocol', href: '/peac' },
   {
-    kind: 'menu',
     label: 'Company',
     items: [
       { label: 'About', href: '/about' },
-      { label: 'Trust', href: '/trust' },
-      { label: 'Blog', href: '/blog' },
+      { label: 'Trust center', href: '/trust' },
+      { label: 'Security', href: '/security' },
+      { label: 'Press kit', href: '/press' },
       { label: 'Contact', href: '/contact' },
     ],
   },
 ]
+
+const NAV: NavEntry[] = SITE_MAP.map((g) => ({ kind: 'menu' as const, label: g.label, items: g.items }))
 
 const topLinkStyle = {
   fontFamily: SANS,
@@ -199,11 +204,14 @@ export function Nav() {
   const toggleRef = useRef<HTMLButtonElement>(null)
   const pathname = usePathname()
 
-  // Body scroll lock + Escape key while mobile menu is open.
+  // Page scroll lock + Escape key while mobile menu is open. The lock goes on
+  // <html>, not <body>: overflow on body would make it a scroll container and
+  // unstick the header while the menu is open.
   useEffect(() => {
     if (!open) return
-    const prevOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
+    const root = document.documentElement
+    const prevOverflow = root.style.overflow
+    root.style.overflow = 'hidden'
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setOpen(false)
@@ -212,7 +220,7 @@ export function Nav() {
     }
     window.addEventListener('keydown', onKey)
     return () => {
-      document.body.style.overflow = prevOverflow
+      root.style.overflow = prevOverflow
       window.removeEventListener('keydown', onKey)
     }
   }, [open])
@@ -319,7 +327,7 @@ export function Nav() {
             className="home-nav-link home-nav-verify"
             style={{ ...topLinkStyle, whiteSpace: 'nowrap' }}
           >
-            Verify a Record
+            Verify a record
           </Link>
           <Link
             href="/contact"
@@ -334,7 +342,7 @@ export function Nav() {
               transition: 'background var(--dur-fast) var(--ease-standard), color var(--dur-fast) var(--ease-standard)',
             }}
           >
-            Request a demo
+            Start a pilot
           </Link>
           <button
             ref={toggleRef}
@@ -377,8 +385,19 @@ export function Nav() {
           className="home-nav-mobile"
           style={{
             display: 'none',
+            // A full sheet below the 64 px header: its own background and scroll,
+            // so the menu never draws over the page.
+            position: 'fixed',
+            top: 'var(--header-h)',
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 60,
+            overflowY: 'auto',
+            overscrollBehavior: 'contain',
+            background: PALETTE.bg,
             borderTop: `1px solid ${PALETTE.hairline}`,
-            padding: `12px ${PAGE_PAD} 20px ${PAGE_PAD}`,
+            padding: `12px ${PAGE_PAD} 32px ${PAGE_PAD}`,
           }}
         >
           <nav aria-label="Primary" style={{ display: 'flex', flexDirection: 'column' }}>
@@ -480,7 +499,7 @@ export function Nav() {
                 border: `1px solid ${PALETTE.action}`,
               }}
             >
-              Request a demo
+              Start a pilot
             </Link>
           </div>
         </div>

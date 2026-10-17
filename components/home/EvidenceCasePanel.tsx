@@ -31,7 +31,7 @@ const TONE: Record<StatusName, string> = {
 const LEGEND: Array<{ tone: StatusName; label: string }> = [
   { tone: 'established', label: 'established' },
   { tone: 'linked', label: 'linked artifact' },
-  { tone: 'partial', label: 'bounded' },
+  { tone: 'partial', label: 'with limitations' },
   { tone: 'missing', label: 'not supplied' },
 ]
 
@@ -55,7 +55,7 @@ export function EvidenceCasePanel({ embedded = false }: { embedded?: boolean } =
             <strong>
               {established} of {ROWS.length}
             </strong>{' '}
-            elements verified under the supplied key. One is linked, one is bounded, one was never
+            elements established. One is linked, one has stated limitations, and one was never
             supplied.
           </p>
 
@@ -109,8 +109,8 @@ export function EvidenceCasePanel({ embedded = false }: { embedded?: boolean } =
             <li>
               <StatusGlyph name="missing" size={16} style={{ color: TONE.missing }} />
               <span>
-                Delivery was never recorded, so the case cannot speak to it. The gap is stated, not
-                inferred.
+                Delivery was never recorded, so the case says nothing about it and lists it as
+                missing.
               </span>
             </li>
           </ul>
@@ -139,7 +139,7 @@ export function EvidenceCasePanel({ embedded = false }: { embedded?: boolean } =
     >
       <SectionTitle
         title="One evidence case, with its gaps stated."
-        body="Verification separates what the supplied records establish from what is missing, conflicting, or not evaluated. A complete happy path would misrepresent what real evidence looks like."
+        body="Verification separates what the supplied records establish from what is missing, conflicting, or not evaluated."
       />
       {body}
     </section>

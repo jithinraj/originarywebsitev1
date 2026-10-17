@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: { absolute: 'AI Bot Detection and Crawler Signals | Originary' },
   description:
     'How metadata, model fingerprints, and signed records turn AI traffic into verifiable records for audits and partner review.',
-  authors: [{ name: 'Jithin Raj, Founder' }],
+  authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
     title: 'Agent and Crawler Signals',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       'Detection alone is not enough. Metadata, model fingerprints, and signed records transform AI traffic into verifiable, enforceable records.',
     url: '/blog/ai-bot-detection',
     publishedTime: '2025-12-01',
-    authors: ['Jithin Raj', 'Originary Team'],
+    authors: ['Originary'],
     images: ['/og'],
     siteName: 'Originary',
   },
@@ -103,8 +103,8 @@ export default function Page() {
         <ArticleDoc
           category="technical"
           title="AI bot detection and crawler signals"
-          sub="Detection alone is not enough. Learn how metadata, model fingerprints, and signed records transform AI traffic from guesswork into verifiable, enforceable records."
-          author="Jithin Raj, Founder"
+          sub="Detection tells you an automated client is calling. Metadata, model fingerprints, and signed records together tell you which one, under what declared purpose, in a record someone else can check."
+          author="Originary"
           date="2025-12-01"
           readTime="6 min read"
           parent={{ label: 'Blog', href: '/blog' }}
@@ -117,7 +117,7 @@ export default function Page() {
             something portable to work with.
           </div>
 
-          <p>&quot;AI detection&quot; is having a moment. But most people mean one of two things:</p>
+          <p>When people say &quot;AI detection&quot;, they usually mean one of two things:</p>
           <ul>
             <li>
               <strong>Content authenticity.</strong> Is this content real, or did an AI model
@@ -129,8 +129,8 @@ export default function Page() {
             </li>
           </ul>
           <p>
-            Those are different jobs. Both matter. Both are easy to get wrong if you only rely on
-            classifiers and vibes.
+            They are different jobs, and both go wrong when a classifier score is the only
+            evidence.
           </p>
           <p>
             Originary takes a different view: <strong>every time an AI system touches your data,
@@ -138,7 +138,7 @@ export default function Page() {
             to work for developers, auditors, partners, and automated agents at the same time.
           </p>
           <div style={callout}>
-            That is exactly what{' '}
+            That trail is what{' '}
             <Link href="/peac" style={linkStyle}>
               PEAC Protocol
             </Link>{' '}
@@ -173,8 +173,8 @@ export default function Page() {
           </div>
 
           <p>
-            Agent and crawler identification is the missing visibility layer between your content
-            and the growing universe of AI crawlers, copilots, and headless agents.
+            Agent and crawler identification gives you that visibility into the AI crawlers,
+            copilots, and headless agents reaching your content.
           </p>
 
           <h2>2. Why &quot;detection-only&quot; is not enough</h2>
@@ -186,7 +186,7 @@ export default function Page() {
             <li>
               <strong>It is an arms race.</strong> As models improve, naive classifiers become
               less reliable. A detector that feels strong this quarter may be unreliable next
-              quarter. (We have seen 20%+ false positive drops in under 6 months.)
+              quarter.
             </li>
             <li>
               <strong>Scores are not proof.</strong> A &quot;0.84 likelihood of AI&quot; score is
@@ -217,7 +217,7 @@ export default function Page() {
 
           <h2>3. The four pillars of useful agent and crawler identification</h2>
           <p>
-            In practice, agent and crawler identification becomes powerful when you combine four
+            In practice, agent and crawler identification works best when you combine four
             signal types:
           </p>
           <ul>
@@ -227,7 +227,7 @@ export default function Page() {
             <li><strong>Pillar 4: artifact repository</strong></li>
           </ul>
 
-          <h3>3.1 Metadata: the quiet truth-teller</h3>
+          <h3>3.1 Metadata: what the request and the file carry</h3>
           <p>
             Metadata is &quot;data about the data.&quot; For agent and crawler identification,
             you care about at least three layers:
@@ -250,7 +250,7 @@ export default function Page() {
 
           <p>
             On its own, metadata can be spoofed. Combined with signed records, it becomes a
-            strong integrity check. In PEAC, metadata is not an afterthought - effective AI
+            strong integrity check. In PEAC, effective AI
             preference policies (
             <Link href="/blog/aipref-by-ietf" style={linkStyle}>
               AIPREF
@@ -285,7 +285,7 @@ export default function Page() {
 
           <h3>3.3 Access: every AI call as a verifiable event</h3>
           <p>
-            This is the most undervalued pillar. Traditional logs tell you IP, path, timestamp.{' '}
+            Traditional logs tell you IP, path, and timestamp.{' '}
             <strong>That is not enough for AI agents and 402-style paid access.</strong>
           </p>
           <p>In a PEAC-aware environment, each AI call becomes a structured, signed event:</p>
@@ -326,7 +326,7 @@ issued_at        -> when the record was generated`}
           </ul>
           <p>
             This lets banks, insurers, publishers, and regulators reconstruct what happened, show
-            chain-of-custody evidence for review, and re-run analyzes when policies change.
+            chain-of-custody evidence for review, and re-run analyses when policies change.
             Originary&apos;s goal: your live AI traffic and artifact repository are two views of
             the same records layer.
           </p>
@@ -342,7 +342,7 @@ issued_at        -> when the record was generated`}
           <p>
             AIPREF policies describe how your content may be used. These are snapshotted into
             every record.{' '}
-            <strong>AI agents can no longer pretend they did not know your terms.</strong>
+            <strong>The record shows which terms were published when the agent made the request.</strong>
           </p>
 
           <h3>4.2 Enforce and measure with HTTP 402 and records</h3>
@@ -356,8 +356,8 @@ issued_at        -> when the record was generated`}
             details.
           </p>
           <p>
-            Agent and crawler identification becomes not just &quot;yes, that looked like a
-            bot&quot; but{' '}
+            Agent and crawler identification moves from &quot;yes, that looked like a
+            bot&quot; to{' '}
             <strong>
               &quot;yes, that bot paid, under these terms, here is the verified record.&quot;
             </strong>

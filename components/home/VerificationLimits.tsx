@@ -28,10 +28,10 @@ export function VerificationLimits() {
       <div className="vlim-grid">
         <SectionHead
           eyebrow="What verification means"
-          title="Know what was verified."
-          qualifier="Nothing more is claimed."
+          title="A valid signature establishes three things"
+          qualifier="and leaves the rest to you."
           stack
-          body="A valid signature is a precise result. It establishes three things and leaves the rest to your own review."
+          body="It tells you the record is intact and was signed by the key you supplied. Whether the record is complete, and whether to trust the issuer, are still your questions."
         />
         <div className="vlim-panel" role="group" aria-label="What a valid signature establishes">
           <p className="vlim-panel-head">

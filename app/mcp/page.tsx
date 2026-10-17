@@ -1,26 +1,14 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
-import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Button } from '@/components/home/page-kit'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
-import {
-  RecordCard,
-  CodeBlock,
-  Terminal,
-  StepLabel,
-  SpecimenGrid,
-  MarkerList,
-  InkBand,
-  InkHeading,
-  InkButton,
-  AnchorLine,
-  Dim,
-} from '@/components/specimens/parts'
+import { RecordCard, CodeBlock, Terminal, StepLabel, SpecimenGrid, MarkerList, InkBand, InkHeading, InkButton, Dim } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 
-const TITLE = 'Evidence for disputed MCP tool calls | Originary'
+const TITLE = 'Signed audit records for MCP tool calls | Originary'
 const DESCRIPTION =
-  'Issue and independently verify signed records for MCP tool calls, gateway decisions, results, and paid-tool disputes without sharing server logs.'
+  'Sign a record of each important MCP tool call: tool, parameter digest, policy and result. Customers and partners verify it offline, without your server logs.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -55,33 +43,31 @@ export default function McpPage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
-      <Breadcrumbs current="Paid MCP and APIs" href="/mcp" />
+      <Breadcrumbs current="MCP tools" href="/mcp" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
-        eyebrow="MCP evidence"
+        eyebrow="MCP tools"
         title="Keep a verifiable record of important MCP tool calls."
         sub="When a tool changes data, sends something, spends money or triggers another system, create a signed record of the call and reported result that can be checked later."
         display
         aside={
-          <RecordCard
-            type="mcp-tool-run"
-            badge={{ kind: 'verified', label: 'verified offline' }}
-            rows={[
-              { label: 'Issuer', value: 'https://mcp.vendor.example' },
-              { label: 'Tool', value: 'tools.call search_docs' },
-              { label: 'Result', value: <>ok <Dim>sha256:9a3c1d...</Dim></> },
-              { label: 'Signature', value: 'Ed25519 7d40e2c9...' },
-            ]}
-            foot="sample record - demo signature"
-          />
+          <div>
+            <CodeBlock tone="ink">{`"_meta": {
+  "org.peacprotocol/receipt_ref": "sha256:f04d11...",
+  "org.peacprotocol/receipt_jws": "eyJhbGciOiJFZERTQSIs..."
+}`}</CodeBlock>
+            <p style={{ fontSize: 13.5, color: PALETTE.muted, margin: '12px 0 0', lineHeight: 1.55 }}>
+              The record rides the tool result&apos;s <code>_meta</code>. Hosts that do not know PEAC ignore it; the
+              tool&apos;s own result is untouched.
+            </p>
+          </div>
         }
-        strip={['MCP tool calls', 'Result digests', 'Deny as evidence', 'Verifies offline']}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <Button href="#specimen" primary>
-            See a disputed tool call
+            See a tool-call record
           </Button>
-          <Button href="/how-it-works">Add records to an MCP server</Button>
+          <Button href="/how-it-works#s-mcp">How MCP records work</Button>
         </div>
       </PageHero>
 
@@ -90,8 +76,8 @@ export default function McpPage() {
         <SectionHeading
           index="01"
           eyebrow="The problem"
-          title="A transcript helps you debug. A signed record is easier to hand to someone else."
-          sub="An MCP transcript helps the operator debug. It is not automatically evidence a customer or partner can verify outside that operator's system. A signed record answers the questions that cross the boundary:"
+          title="An MCP transcript is hard to hand to a customer."
+          sub="A transcript lives in the operator's system, where a customer or partner cannot check it. A signed record answers the questions they will ask:"
         />
         <MarkerList
           marker="check"
@@ -108,7 +94,7 @@ export default function McpPage() {
       {/* The specimen */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper} className="" >
         <div id="specimen" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading index="02" eyebrow="The specimen" title="One tool run. One signed record." mark="link" />
+          <SectionHeading index="02" eyebrow="The specimen" title="What the record of one tool call contains." mark="link" />
           <FlowPanel
             label="Sequence diagram: an MCP client calls a tool, the result returns with a signed record riding response metadata, and any party verifies the record offline later."
             actors={['mcp client', 'tool server']}
@@ -116,8 +102,8 @@ export default function McpPage() {
               { kind: 'msg', dir: 'ltr', slot: 1, label: 'tools.call search_docs - args sha256:c41b09' },
               { kind: 'msg', dir: 'rtl', slot: 2, label: 'result ok - record rides _meta (receipt_jws)' },
               { kind: 'rec', slot: 3, label: 'mcp-tool-run record - tool + params digest + result digest' },
-              { kind: 'evt', slot: 4, label: 'record travels separately from the server that created it' },
-              { kind: 'chk', slot: 5, label: 'verified offline - any machine, years later' },
+              { kind: 'evt', slot: 4, label: 'the record can be checked without the server that created it' },
+              { kind: 'chk', slot: 5, label: 'verified later, offline, on any machine' },
             ]}
             style={{ marginBottom: 22 }}
           />
@@ -138,18 +124,9 @@ export default function McpPage() {
                 foot="sample record - demo signature"
                 style={{ background: PALETTE.bg }}
               />
-              <StepLabel>How it travels</StepLabel>
-              <CodeBlock>{`"_meta": {
-  "org.peacprotocol/receipt_ref": "sha256:f04d11...",
-  "org.peacprotocol/receipt_jws": "eyJhbGciOiJFZERTQSIs..."
-}`}</CodeBlock>
-              <p style={{ fontSize: 13, color: PALETTE.faint, margin: '10px 0 0', lineHeight: 1.55 }}>
-                Records ride existing MCP response metadata or export as bundles. They travel separately from the server
-                that created them.
-              </p>
               <p style={{ fontSize: 13, color: PALETTE.faint, margin: '10px 0 0', lineHeight: 1.55 }}>
                 Paid MCP tool records compose the same way: the record binds the tool name, an args digest, and
-                the observed payment receipt digest, and travels in the tool result metadata.
+                the observed payment receipt digest, and is carried in the tool result metadata.
               </p>
             </div>
             <div>
@@ -170,7 +147,7 @@ export default function McpPage() {
                 items={[
                   <>
                     <b style={{ fontWeight: 600 }}>Edited record:</b> any change after signing breaks the Ed25519
-                    signature. Verification fails loudly.
+                    signature, so verification fails.
                   </>,
                   <>
                     <b style={{ fontWeight: 600 }}>Swapped content:</b> the record binds a content digest. If the content
@@ -184,52 +161,24 @@ export default function McpPage() {
         </div>
       </PageSection>
 
-      <PullLine accent="The evidence travels.">
-        The transcript stays.
-      </PullLine>
-
-      {/* Evidence-case composition */}
+      {/* Evidence case and refusals: one line each, linked */}
       <PageSection paddingTop={56} paddingBottom={56}>
-        <SectionHeading index="03" eyebrow="Evidence case" title="One tool call, several sources, one bounded case." />
-        <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.muted, margin: 0, maxWidth: '62ch' }}>
-          A useful MCP evidence case may connect the tool definition, authorization or approval
-          reference, gateway decision, tool invocation, result commitment, payment-provider
-          artifact, and any available delivery or recipient acknowledgment.
-        </p>
-        <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.faint, marginTop: 16, maxWidth: '62ch' }}>
-          The signed record reports what its issuer observed. It does not establish that the
-          server recorded every retry, that the result was correct, or that delivery occurred.
-        </p>
-      </PageSection>
-
-      {/* Deny as evidence */}
-      <PageSection paddingTop={0} paddingBottom={56}>
-        <SectionHeading index="04" eyebrow="Deny as evidence" title="A refused tool call is still an event." />
-        <SpecimenGrid>
+        <dl className="mcp-more">
           <div>
-            <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.muted, margin: 0, maxWidth: '54ch' }}>
-              When a gateway or server refuses a tool call, the refusal can be signed too: the requested tool, the policy
-              that denied it, the reason class, the time, the issuer. Reviewers get evidence of what was refused without
-              reading server logs.
-            </p>
-            <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, marginTop: 18 }}>
-              The signature is valid. The answer was no. Both facts travel together.
-            </p>
+            <dt>Several sources, one case</dt>
+            <dd>
+              Tool definition, approval, gateway decision, invocation and result can be bundled for a reviewer.{' '}
+              <a href="/evidence-case">See an evidence case</a>.
+            </dd>
           </div>
-          <RecordCard
-            type="org.peacprotocol/access-decision"
-            badge={{ kind: 'denied', label: 'decision: denied' }}
-            rows={[
-              { label: 'Issuer', value: 'https://gateway.vendor.example' },
-              { label: 'Request', value: 'tools.call export_billing' },
-              { label: 'Policy', value: <>tool-policy:v2 <Dim>sha256:4e21b8...</Dim></> },
-              { label: 'Result', value: 'denied - policy_violation' },
-              { label: 'Time', value: '2026-06-12T14:10:40Z' },
-              { label: 'Signature', value: <>Ed25519 e02d7f15... <Dim>valid</Dim></> },
-            ]}
-            foot="deny-as-evidence - portable evidence of a refusal"
-          />
-        </SpecimenGrid>
+          <div>
+            <dt>Refusals are records too</dt>
+            <dd>
+              A denied tool call can be signed: the tool, the policy, the reason and the time.{' '}
+              <a href="/ai-gateway">See a gateway decision</a>.
+            </dd>
+          </div>
+        </dl>
       </PageSection>
 
       {/* Boundaries */}
@@ -246,15 +195,15 @@ export default function McpPage() {
           ]}
         />
         <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.ink, marginTop: 24, maxWidth: '54ch' }}>
-          It gives your MCP workflow a portable signed record.
+          It adds signed records to the tool calls you choose.
         </p>
       </PageSection>
 
       {/* Closing */}
       <InkBand>
-        <InkHeading maxWidth="24ch">Add records to one MCP tool this week.</InkHeading>
+        <InkHeading maxWidth="24ch">Start with one MCP tool.</InkHeading>
         <p style={{ fontSize: 16.5, lineHeight: 1.6, color: 'var(--on-dark-muted)', maxWidth: '54ch', margin: '20px auto 0' }}>
-          Start with the tool another party already asks about. We will show what the signed record should contain.
+          Pick the tool a customer or partner already asks about, and we will work out its record with you.
         </p>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <InkButton href="/contact" primary>
@@ -262,7 +211,6 @@ export default function McpPage() {
           </InkButton>
           <InkButton href="/verify">Verify a record</InkButton>
         </div>
-        <AnchorLine onInk style={{ marginTop: 36 }}>Logs stay local. Signed records travel.</AnchorLine>
       </InkBand>
     </PageShell>
   )

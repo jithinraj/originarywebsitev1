@@ -16,9 +16,9 @@ export function RecordVerifyShare() {
     >
       <SectionHead
         eyebrow="See a record"
-        title="Record the action."
-        qualifier="Verify it anywhere."
-        body="A real Ed25519 signature, checked in your browser. Change one field and the check fails."
+        title="Check a signed record"
+        qualifier="right here, in your browser."
+        body="This is a real Ed25519 signature. Change one field and watch the check fail."
         center
       />
       <div className="rvs-stage">

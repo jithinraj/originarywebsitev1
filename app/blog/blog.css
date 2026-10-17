@@ -1,0 +1,32 @@
+/* Page-local layout for bl. Hairline-ruled lists, no boxed cards. Colours come from tokens. */
+.bl-glance { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
+.bl-glance > div { padding: 18px 20px 20px 0; border-bottom: 1px solid var(--hairline); }
+.bl-glance > div + div { padding-left: 20px; border-left: 1px solid var(--hairline); }
+.bl-k { font-family: var(--font-mono), "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.bl-v { font-size: 19px; font-weight: 500; letter-spacing: -0.012em; color: var(--ink); margin: 8px 0 0; line-height: 1.25; }
+.bl-n { font-size: 14px; line-height: 1.55; color: var(--muted); margin: 6px 0 0; }
+.bl-p { font-size: 15.5px; line-height: 1.65; color: var(--ink-2); margin: 0 0 14px; max-width: 62ch; text-wrap: pretty; }
+.bl-small { font-size: 13.5px; line-height: 1.6; color: var(--muted); margin: 14px 0 0; max-width: 70ch; }
+.bl-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 5vw, 72px); }
+.bl-cols > div { min-width: 0; border-top: 2px solid var(--ink); padding-top: 18px; }
+.bl-h3 { font-size: 19px; font-weight: 500; letter-spacing: -0.012em; color: var(--ink); margin: 0 0 12px; }
+.bl-list { list-style: none; margin: 0; padding: 0; }
+.bl-list > li { padding: 12px 0; border-top: 1px solid var(--hairline); font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.bl-list > li:last-child { border-bottom: 1px solid var(--hairline); }
+.bl-rows { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+.bl-row { display: block; border-bottom: 1px solid var(--hairline); min-width: 0; }
+.bl-row a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 20px; padding: 18px 0; text-decoration: none; color: var(--ink); align-items: baseline; }
+.bl-ser .bl-row a { grid-template-columns: 44px minmax(0, 1fr) auto; }
+.bl-row a:hover .bl-t { text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 4px; }
+.bl-n { font-family: var(--font-mono), "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--faint); }
+.bl-t { display: block; font-size: 19px; font-weight: 500; letter-spacing: -0.012em; line-height: 1.25; color: var(--ink); text-wrap: balance; }
+.bl-d { display: block; font-size: 14.5px; line-height: 1.55; color: var(--muted); margin-top: 6px; max-width: 68ch; }
+.bl-m { font-family: var(--font-mono), "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); white-space: nowrap; }
+.bl-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(28px, 5vw, 72px); }
+@media (max-width: 760px) {
+  .bl-two { grid-template-columns: minmax(0, 1fr); }
+  .bl-row a, .bl-ser .bl-row a { grid-template-columns: minmax(0, 1fr); }
+  .bl-ser .bl-row a { grid-template-columns: 32px minmax(0, 1fr); }
+  .bl-ser .bl-row a .bl-m { grid-column: 2; }
+  .bl-d { display: none; }
+}

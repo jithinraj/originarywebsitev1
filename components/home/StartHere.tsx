@@ -12,7 +12,7 @@ const PATHS: Array<{ title: string; body: string; href: string }> = [
   { title: 'Verify a record', body: 'Check a signed record locally.', href: '/verify' },
   { title: 'Add records to MCP', body: 'Sign records for important tool calls.', href: '/mcp' },
   { title: 'Add records to an API', body: 'Issue records alongside API calls.', href: '/how-it-works' },
-  { title: 'Record gateway decisions', body: 'Allow, deny, redact and review.', href: '/ai-gateway' },
+  { title: 'Record gateway decisions', body: 'Sign allow, deny, redact and review decisions.', href: '/ai-gateway' },
 ]
 
 export function StartHere() {
@@ -26,16 +26,16 @@ export function StartHere() {
         <div id="demo-form" className="sth-pitch">
           <SectionHead
             eyebrow="Start here"
-            title="Put your first action"
-            qualifier="on the record."
+            title="You know which action gets questioned."
+            qualifier="Start there."
             stack
             display
             center
-            body="Tell us what the system does and who needs to review it. We'll help you map the smallest useful PEAC integration."
+            body="Tell us what your system does and who needs to check it. We'll help you give that one action a signed record first, then grow from there."
           />
           <div className="sth-ctas">
             <Link href="/contact" className="hs-btn home-arrow-link" style={btnSolidStyle}>
-              Request a demo
+              Start a pilot
               <Arrow />
             </Link>
             <Link href="/peac" className="hs-btn home-arrow-link" style={btnGhostStyle}>

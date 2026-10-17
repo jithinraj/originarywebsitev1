@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ORIGINARY_ORG_ID } from '@/lib/structured-data/entities'
 import Script from 'next/script'
 import { PageShell, ArticleDoc, ArticleRelated, PALETTE } from '@/components/home'
 
@@ -6,7 +7,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Building a Portable Evidence Bundle for Dispute Review | Originary' },
   description:
     'A PEAC evidence bundle packages signed records, keys, and policy so a counterparty can check them independently. What is inside, and the two ways it fails.',
-  authors: [{ name: 'Jithin Raj' }],
+  authors: [{ name: 'Originary' }],
   alternates: { canonical: '/blog/evidence-bundle-for-disputes' },
   openGraph: {
     title: 'Building a Portable Evidence Bundle for Dispute Review',
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       'A PEAC evidence bundle packages signed records, keys, and policy so a counterparty can check them independently. Here is what is inside one, what its signature covers, and the two ways it fails.',
     type: 'article',
     url: '/blog/evidence-bundle-for-disputes',
-    authors: ['Jithin Raj'],
+    authors: ['Originary'],
     images: ['/og'],
     siteName: 'Originary',
   },
@@ -36,7 +37,7 @@ const jsonLd = {
   headline: 'Building a portable evidence bundle for dispute review',
   description:
     'A PEAC evidence bundle packages signed records, keys, and policy so a counterparty can check them independently. Here is what is inside one, what its signature covers, and the two ways it fails.',
-  author: { '@type': 'Person', name: 'Jithin Raj', url: 'https://github.com/jithinraj' },
+  author: { '@id': ORIGINARY_ORG_ID },
   publisher: {
     '@type': 'Organization',
     name: 'Originary',
@@ -74,7 +75,7 @@ export default function Page() {
           category="protocol"
           title="Building a portable evidence bundle for dispute review"
           sub="A PEAC evidence bundle packages signed records, keys, and policy so a counterparty can check them independently."
-          author="Jithin Raj"
+          author="Originary"
           readTime="6 min read"
           parent={{ label: 'Blog', href: '/blog' }}
           status="draft"
@@ -82,10 +83,9 @@ export default function Page() {
           <p>
             A dispute between two companies usually stalls on the same thing: each side has
             evidence the other cannot see, so the argument becomes about whose private records to
-            believe. A portable evidence bundle addresses that. It does not settle the dispute or
-            deliver certainty about who was right. It lets a counterparty check your evidence
-            themselves, which removes one recurring source of deadlock: the unverifiable
-            disagreement about what the records say.
+            believe. A portable evidence bundle lets a counterparty check your evidence themselves,
+            which removes one recurring source of deadlock: the unverifiable disagreement about
+            what the records say.
           </p>
           <p>
             The claim is deliberately small. A bundle reduces evidence-collection and
@@ -122,7 +122,7 @@ policy/peac.txt      the discovery policy snapshot`}
 
           <h2>What <code>bundle.sig</code> actually signs</h2>
           <p>
-            This is the detail people get wrong, so it is worth being exact. <code>bundle.sig</code>{' '}
+            It is easy to misread what this signature covers. <code>bundle.sig</code>{' '}
             is a compact JWS whose payload is a single field:
           </p>
           <pre style={codeBlock}>
@@ -219,7 +219,7 @@ Recommendation: VALID`}
             bundle removes the need to call the issuer&apos;s servers at check time; it does not
             remove the need for a trust path to the issuer&apos;s key.
           </p>
-          <p>Four things stay separate, and a review has to keep them separate:</p>
+          <p>A review has to keep four checks apart:</p>
           <ul>
             <li>
               <strong>Integrity</strong>: the files match their recorded hashes. Checked on every
@@ -302,7 +302,7 @@ Recommendation: VALID`}
 
         <ArticleRelated
           links={[
-            { label: 'What is HTTP 402? A neutral explainer', href: '/blog/what-is-http-402' },
+            { label: 'What is HTTP 402? Payment Required, explained', href: '/blog/what-is-http-402' },
             { label: 'PEAC Protocol overview', href: '/peac' },
           ]}
         />

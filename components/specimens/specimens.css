@@ -12,11 +12,14 @@
 .spec-grid.spec-grid--narrow {
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
 }
+.spec-grid > * {
+  min-width: 0;
+}
 
 @media (max-width: 900px) {
   .spec-grid,
   .spec-grid.spec-grid--narrow {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 28px;
   }
 }
@@ -61,8 +64,8 @@
 /* Small phones: give long record values (URLs, digests) more room. */
 @media (max-width: 460px) {
   .spec-row {
-    grid-template-columns: 64px minmax(0, 1fr);
-    gap: 10px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
   }
   .spec-row dd {
     font-size: 12px;

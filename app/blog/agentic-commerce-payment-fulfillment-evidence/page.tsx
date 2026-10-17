@@ -89,7 +89,7 @@ export default function Page() {
             ]}
           />
           <p>
-            This is a way to structure a review, not a universal transaction standard. A synchronous
+            Treat the table as a review structure rather than a universal transaction model. A synchronous
             data request and a long-running research job will have different evidence and
             acceptance criteria.
           </p>
@@ -212,22 +212,21 @@ export default function Page() {
               ]}
               footer={
                 <>
-                  <strong>Still open:</strong> the fulfillment question. Where additional evidence is
-                  needed is now visible.
+                  <strong>Still open:</strong> the fulfillment question. The case now shows where the
+                  missing evidence has to come from.
                 </>
               }
             />
           </ArticleFigure>
 
           <p>
-            Those findings still leave a fulfillment question open. They are more useful than a
-            single &ldquo;purchase verified&rdquo; badge because they show where additional evidence
-            is needed.
+            A single &ldquo;purchase verified&rdquo; badge would have hidden that gap. Here the
+            operator can see that the next question goes to the buyer.
           </p>
           <p>
             If the buyer supplies a conflicting observation, preserve it. A reviewer may need to
             compare the attempts, the representations, or the terms. The purpose of the case is to
-            make the disagreement inspectable, not manufacture agreement between two signatures.
+            make the disagreement inspectable, not to manufacture agreement between two signatures.
           </p>
 
           <h2>Build for the person who reconciles the exception</h2>

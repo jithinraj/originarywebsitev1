@@ -3,7 +3,7 @@
    sage record chit, amber event rows) with a fp- scope so both can coexist. */
 
 .fp-flow {
-  --fp-dur: 12s;
+  --fp-dur: 8s;
   background: var(--surface-dark);
   border: 1px solid var(--rule-on-dark);
   border-radius: var(--radius-panel);
@@ -23,7 +23,7 @@
 }
 
 .fp-actor {
-  font-size: 0.58rem;
+  font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -68,13 +68,13 @@
 .fp-msg.ltr .fp-head {
   right: -1px;
   border-right: none;
-  border-left-color: var(--success-on-dark);
+  border-left-color: var(--on-dark-muted);
 }
 
 .fp-msg.rtl .fp-head {
   left: -1px;
   border-left: none;
-  border-right-color: var(--success-on-dark);
+  border-right-color: var(--on-dark-muted);
 }
 
 .fp-msg .fp-label {
@@ -82,8 +82,8 @@
   top: -3px;
   left: 0;
   right: 0;
-  font-size: 0.6rem;
-  letter-spacing: 0.05em;
+  font-size: 11px;
+  letter-spacing: 0.03em;
   color: var(--on-dark);
   text-align: center;
   white-space: nowrap;
@@ -99,7 +99,7 @@
   height: 7px;
   margin-top: -3.5px;
   border-radius: 50%;
-  background: var(--success-on-dark);
+  background: var(--on-dark);
   opacity: 0;
 }
 
@@ -113,9 +113,13 @@
 }
 
 .fp-evt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   text-align: center;
-  font-size: 0.6rem;
-  color: var(--warn-on-dark);
+  font-size: 11px;
+  color: var(--on-dark-muted);
   border: 1px dashed var(--rule-on-dark);
   border-radius: var(--radius-panel);
   padding: 8px 10px;
@@ -129,56 +133,63 @@
 .fp-rec .fp-chit {
   display: block;
   text-align: center;
-  font-size: 0.6rem;
-  letter-spacing: 0.05em;
-  color: var(--surface-dark);
-  background: var(--success-on-dark);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--on-dark);
+  background: var(--surface-dark-card);
+  border: 1px solid var(--accent-on-dark);
   border-radius: var(--radius-panel);
   padding: 9px 10px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .fp-chk {
-  text-align: center;
-  font-size: 0.62rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 11.5px;
   color: var(--success-on-dark);
-  letter-spacing: 0.07em;
+  letter-spacing: 0.04em;
+}
+.fp-ico {
+  flex: none;
 }
 
 /* shared animation slots: every element in a flow loops on the same clock */
-.fp-s1 { animation: fp-slot1 var(--fp-dur) linear infinite; }
-.fp-s2 { animation: fp-slot2 var(--fp-dur) linear infinite; }
-.fp-s3 { animation: fp-slot3 var(--fp-dur) linear infinite; }
-.fp-s4 { animation: fp-slot4 var(--fp-dur) linear infinite; }
-.fp-s5 { animation: fp-slot5 var(--fp-dur) linear infinite; }
-.fp-s6 { animation: fp-slot6 var(--fp-dur) linear infinite; }
+.fp-s1 { animation: fp-slot1 var(--fp-dur) linear 1 both; }
+.fp-s2 { animation: fp-slot2 var(--fp-dur) linear 1 both; }
+.fp-s3 { animation: fp-slot3 var(--fp-dur) linear 1 both; }
+.fp-s4 { animation: fp-slot4 var(--fp-dur) linear 1 both; }
+.fp-s5 { animation: fp-slot5 var(--fp-dur) linear 1 both; }
+.fp-s6 { animation: fp-slot6 var(--fp-dur) linear 1 both; }
 
-.fp-rec.fp-s1 .fp-chit { animation: fp-slot1 var(--fp-dur) linear infinite, fp-pop1 var(--fp-dur) linear infinite; }
-.fp-rec.fp-s2 .fp-chit { animation: fp-slot2 var(--fp-dur) linear infinite, fp-pop2 var(--fp-dur) linear infinite; }
-.fp-rec.fp-s3 .fp-chit { animation: fp-slot3 var(--fp-dur) linear infinite, fp-pop3 var(--fp-dur) linear infinite; }
-.fp-rec.fp-s4 .fp-chit { animation: fp-slot4 var(--fp-dur) linear infinite, fp-pop4 var(--fp-dur) linear infinite; }
-.fp-rec.fp-s5 .fp-chit { animation: fp-slot5 var(--fp-dur) linear infinite, fp-pop5 var(--fp-dur) linear infinite; }
-.fp-rec.fp-s6 .fp-chit { animation: fp-slot6 var(--fp-dur) linear infinite, fp-pop6 var(--fp-dur) linear infinite; }
+.fp-rec.fp-s1 .fp-chit { animation: fp-slot1 var(--fp-dur) linear 1 both, fp-pop1 var(--fp-dur) linear 1 both; }
+.fp-rec.fp-s2 .fp-chit { animation: fp-slot2 var(--fp-dur) linear 1 both, fp-pop2 var(--fp-dur) linear 1 both; }
+.fp-rec.fp-s3 .fp-chit { animation: fp-slot3 var(--fp-dur) linear 1 both, fp-pop3 var(--fp-dur) linear 1 both; }
+.fp-rec.fp-s4 .fp-chit { animation: fp-slot4 var(--fp-dur) linear 1 both, fp-pop4 var(--fp-dur) linear 1 both; }
+.fp-rec.fp-s5 .fp-chit { animation: fp-slot5 var(--fp-dur) linear 1 both, fp-pop5 var(--fp-dur) linear 1 both; }
+.fp-rec.fp-s6 .fp-chit { animation: fp-slot6 var(--fp-dur) linear 1 both, fp-pop6 var(--fp-dur) linear 1 both; }
 
-.fp-msg.ltr.fp-s1 .fp-dot { animation: fp-dgo1 var(--fp-dur) linear infinite; }
-.fp-msg.ltr.fp-s2 .fp-dot { animation: fp-dgo2 var(--fp-dur) linear infinite; }
-.fp-msg.ltr.fp-s3 .fp-dot { animation: fp-dgo3 var(--fp-dur) linear infinite; }
-.fp-msg.ltr.fp-s4 .fp-dot { animation: fp-dgo4 var(--fp-dur) linear infinite; }
-.fp-msg.ltr.fp-s5 .fp-dot { animation: fp-dgo5 var(--fp-dur) linear infinite; }
-.fp-msg.ltr.fp-s6 .fp-dot { animation: fp-dgo6 var(--fp-dur) linear infinite; }
-.fp-msg.rtl.fp-s1 .fp-dot { animation: fp-drt1 var(--fp-dur) linear infinite; }
-.fp-msg.rtl.fp-s2 .fp-dot { animation: fp-drt2 var(--fp-dur) linear infinite; }
-.fp-msg.rtl.fp-s3 .fp-dot { animation: fp-drt3 var(--fp-dur) linear infinite; }
-.fp-msg.rtl.fp-s4 .fp-dot { animation: fp-drt4 var(--fp-dur) linear infinite; }
-.fp-msg.rtl.fp-s5 .fp-dot { animation: fp-drt5 var(--fp-dur) linear infinite; }
-.fp-msg.rtl.fp-s6 .fp-dot { animation: fp-drt6 var(--fp-dur) linear infinite; }
+.fp-msg.ltr.fp-s1 .fp-dot { animation: fp-dgo1 var(--fp-dur) linear 1 both; }
+.fp-msg.ltr.fp-s2 .fp-dot { animation: fp-dgo2 var(--fp-dur) linear 1 both; }
+.fp-msg.ltr.fp-s3 .fp-dot { animation: fp-dgo3 var(--fp-dur) linear 1 both; }
+.fp-msg.ltr.fp-s4 .fp-dot { animation: fp-dgo4 var(--fp-dur) linear 1 both; }
+.fp-msg.ltr.fp-s5 .fp-dot { animation: fp-dgo5 var(--fp-dur) linear 1 both; }
+.fp-msg.ltr.fp-s6 .fp-dot { animation: fp-dgo6 var(--fp-dur) linear 1 both; }
+.fp-msg.rtl.fp-s1 .fp-dot { animation: fp-drt1 var(--fp-dur) linear 1 both; }
+.fp-msg.rtl.fp-s2 .fp-dot { animation: fp-drt2 var(--fp-dur) linear 1 both; }
+.fp-msg.rtl.fp-s3 .fp-dot { animation: fp-drt3 var(--fp-dur) linear 1 both; }
+.fp-msg.rtl.fp-s4 .fp-dot { animation: fp-drt4 var(--fp-dur) linear 1 both; }
+.fp-msg.rtl.fp-s5 .fp-dot { animation: fp-drt5 var(--fp-dur) linear 1 both; }
+.fp-msg.rtl.fp-s6 .fp-dot { animation: fp-drt6 var(--fp-dur) linear 1 both; }
 
-@keyframes fp-slot1 { 0%, 1% { opacity: 0; } 5%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
-@keyframes fp-slot2 { 0%, 15% { opacity: 0; } 19%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
-@keyframes fp-slot3 { 0%, 29% { opacity: 0; } 33%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
-@keyframes fp-slot4 { 0%, 43% { opacity: 0; } 47%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
-@keyframes fp-slot5 { 0%, 57% { opacity: 0; } 61%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
-@keyframes fp-slot6 { 0%, 71% { opacity: 0; } 75%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@keyframes fp-slot1 { 0%, 1% { opacity: 0; } 5%, 100% { opacity: 1; } }
+@keyframes fp-slot2 { 0%, 15% { opacity: 0; } 19%, 100% { opacity: 1; } }
+@keyframes fp-slot3 { 0%, 29% { opacity: 0; } 33%, 100% { opacity: 1; } }
+@keyframes fp-slot4 { 0%, 43% { opacity: 0; } 47%, 100% { opacity: 1; } }
+@keyframes fp-slot5 { 0%, 57% { opacity: 0; } 61%, 100% { opacity: 1; } }
+@keyframes fp-slot6 { 0%, 71% { opacity: 0; } 75%, 100% { opacity: 1; } }
 
 @keyframes fp-pop1 { 0%, 1% { transform: scale(0.9); } 7% { transform: scale(1); } 11%, 100% { transform: scale(1); } }
 @keyframes fp-pop2 { 0%, 15% { transform: scale(0.9); } 21% { transform: scale(1); } 25%, 100% { transform: scale(1); } }
@@ -226,14 +237,63 @@
   }
 }
 
+/* Vertical list for narrow screens */
+.fp-list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.fp-li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--hairline-on-dark);
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--on-dark);
+}
+.fp-li:last-child {
+  border-bottom: 0;
+}
+.fp-li-msg {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+.fp-li-who {
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-dark-muted);
+}
+.fp-li-evt {
+  color: var(--on-dark-muted);
+}
+.fp-li-evt.bad {
+  color: var(--danger-on-dark);
+}
+.fp-li-rec {
+  margin: 6px 0;
+  padding: 10px 12px;
+  border: 1px solid var(--accent-on-dark);
+  border-radius: var(--radius-panel);
+  background: var(--surface-dark-card);
+}
+.fp-li-chk {
+  color: var(--success-on-dark);
+}
 @media (max-width: 640px) {
   .fp-flow {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    min-height: 0;
   }
   .fp-actors,
   .fp-steps {
-    min-width: 460px;
+    display: none;
+  }
+  .fp-list {
+    display: block;
   }
 }
 

@@ -56,8 +56,8 @@ export default function Page() {
             tool ran, the provider accepted a refund, or the customer received the funds.
           </p>
           <p>
-            MCP makes tools available to agents. The meaning of a business outcome still has to come
-            from the systems responsible for that outcome.
+            MCP gives the agent a way to call the refund tool. Whether the customer has been refunded
+            is still something only the payment provider can report.
           </p>
 
           <ArticleFigure
@@ -151,7 +151,8 @@ export default function Page() {
             ]}
           />
           <p>
-            This is a review design, not a proposed MCP message schema. The exact mapping depends on
+            The table describes what a reviewer needs; it does not propose an MCP message schema. The
+            exact mapping depends on
             the tool and the record format in use.
           </p>
           <p>

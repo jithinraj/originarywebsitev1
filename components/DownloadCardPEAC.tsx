@@ -3,118 +3,47 @@ import { FACTS } from '@/lib/facts'
 export default function DownloadCardPEAC() {
   const v = FACTS.currentVersion.replace(/^v/, '')
   return (
-    <section style={{
-      marginTop: 'var(--space-8)',
-      borderRadius: 'var(--radius-card)',
-      border: '1px solid var(--hairline)',
-      padding: 'var(--space-6)'
-    }}>
-      <h2 style={{
-        fontSize: 'var(--text-xl)',
-        fontWeight: 500,
-        marginBottom: 'var(--space-2)'
-      }}>
-        Open Protocol (PEAC) - Upstream Packages
-      </h2>
-      <p style={{
-        fontSize: 'var(--text-sm)',
-        color: 'var(--ink-2)',
-        marginBottom: 'var(--space-4)'
-      }}>
-        PEAC is the open protocol behind Originary&apos;s signed interaction records. Install from the official upstream packages and repository.
+    <section className="dl-pkg" aria-labelledby="dl-pkg-h">
+      <h3 id="dl-pkg-h" className="dl-pkg-h">
+        PEAC Protocol packages by Originary
+      </h3>
+      <p className="dl-pkg-sub">
+        PEAC is the open protocol behind Originary&apos;s signed interaction records. Install the official packages
+        and repository, published and maintained by Originary.
       </p>
 
-      <div style={{
-        display: 'grid',
-        gap: 'var(--space-3)',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
-        marginBottom: 'var(--space-4)'
-      }}>
-        <div style={{
-          borderRadius: 'var(--radius-card)',
-          border: '1px solid var(--hairline)',
-          padding: 'var(--space-4)'
-        }}>
-          <div style={{ fontWeight: 500, marginBottom: 'var(--space-2)' }}>
-            Node.js CLI & Core (npm)
-          </div>
-          <pre tabIndex={0} style={{
-            overflow: 'auto',
-            borderRadius: 'var(--radius-panel)',
-            background: 'var(--wash)',
-            padding: 'var(--space-3)',
-            fontSize: 'var(--text-xs)',
-            fontFamily: 'var(--font-mono)',
-            margin: 'var(--space-2) 0'
-          }}>
+      <div className="dl-pkg-grid">
+        <div className="dl-pkg-card">
+          <p className="dl-pkg-t">Node.js CLI &amp; Core (npm)</p>
+          <pre className="dl-pkg-pre" tabIndex={0}>
 {`npm i -g @peac/cli@${v}
 npm i @peac/protocol@${v} @peac/crypto@${v} @peac/schema@${v}
 peac policy init
 peac policy validate peac-policy.yaml`}
           </pre>
-          <p style={{
-            fontSize: 'var(--text-xs)',
-            color: 'var(--ink-2)',
-            marginBottom: 'var(--space-3)'
-          }}>
-            Requires Node 22.13+; see upstream docs.
-          </p>
-          <div style={{ display: 'flex', gap: 'var(--space-3)' }}>
-            <a
-              style={{
-                textDecoration: 'underline',
-                color: 'var(--ink)',
-                fontSize: 'var(--text-sm)'
-              }}
-              href="https://github.com/peacprotocol/peac"
-              target="_blank"
-              rel="noreferrer"
-            >
+          <p className="dl-pkg-note">Requires Node 22.13+; see the docs.</p>
+          <p className="dl-pkg-links">
+            <a href="https://github.com/peacprotocol/peac" target="_blank" rel="noreferrer">
               GitHub
             </a>
-            <a
-              style={{
-                textDecoration: 'underline',
-                color: 'var(--ink)',
-                fontSize: 'var(--text-sm)'
-              }}
-              href="https://www.peacprotocol.org/docs"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://www.peacprotocol.org/docs" target="_blank" rel="noreferrer">
               Docs
             </a>
-          </div>
+          </p>
         </div>
 
-        <div style={{
-          borderRadius: 'var(--radius-card)',
-          border: '1px solid var(--hairline)',
-          padding: 'var(--space-4)'
-        }}>
-          <div style={{ fontWeight: 500, marginBottom: 'var(--space-2)' }}>
-            Wire Format
-          </div>
-          <p style={{ fontSize: 'var(--text-sm)', marginBottom: 'var(--space-2)' }}>
-            Current stable: <code style={{
-              background: 'var(--wash)',
-              padding: '2px 4px',
-              borderRadius: 'var(--radius-sm)',
-              fontFamily: 'var(--font-mono)'
-            }}>interaction-record+jwt</code> (Wire 0.2)
+        <div className="dl-pkg-card">
+          <p className="dl-pkg-t">Wire Format</p>
+          <p className="dl-pkg-body">
+            Current stable: <code>interaction-record+jwt</code> (Wire 0.2)
           </p>
-          <p style={{ fontSize: 'var(--text-xs)', color: 'var(--ink-2)' }}>
-            Legacy format <code style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85em' }}>peac-receipt/0.1</code> (Wire 0.1) is frozen.
+          <p className="dl-pkg-note">
+            Legacy format <code>peac-receipt/0.1</code> (Wire 0.1) is frozen.
           </p>
         </div>
       </div>
 
-      <p style={{
-        fontSize: 'var(--text-xs)',
-        color: 'var(--ink-2)'
-      }}>
-        Upstream licensing: Apache-2.0. Use at your own discretion; see the repository for details.
-      </p>
+      <p className="dl-pkg-note">Licensing: Apache-2.0. Use at your own discretion; see the repository for details.</p>
     </section>
-  );
+  )
 }

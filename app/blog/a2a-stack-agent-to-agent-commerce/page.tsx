@@ -4,10 +4,10 @@ import Script from 'next/script'
 import { PageShell, ArticleDoc, ArticleRelated, PALETTE } from '@/components/home'
 
 export const metadata: Metadata = {
-  title: { absolute: 'The A2A Stack: Agent-to-Agent Commerce | Originary' },
+  title: { absolute: 'Portable Evidence Across Agent-to-Agent Handoffs | Originary' },
   description:
-    'How AI agents coordinate, transact, and verify interactions. The A2A stack covers policy discovery, HTTP 402 payments, and signed records.',
-  authors: [{ name: 'Jithin Raj, Founder' }],
+    'When one agent pays another, the record of what was authorized and delivered has to travel with the handoff: policy discovery, HTTP 402 and signed records.',
+  authors: [{ name: 'Originary' }],
   alternates: { canonical: '/blog/a2a-stack-agent-to-agent-commerce' },
   openGraph: {
     title: 'The A2A Stack: Agent-to-Agent Commerce',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: 'article',
     url: '/blog/a2a-stack-agent-to-agent-commerce',
     publishedTime: '2025-12-03',
-    authors: ['Jithin Raj', 'Originary Team'],
+    authors: ['Originary'],
     images: ['/og'],
     siteName: 'Originary',
   },
@@ -64,16 +64,17 @@ export default function Page() {
         <ArticleDoc
           category="vision"
           title="Portable evidence across agent-to-agent handoffs"
-          sub="Agents calling agents, paying for API access, and verifying each other&apos;s outputs. This is agent-to-agent commerce, and it needs new infrastructure."
-          author="Jithin Raj, Founder"
+          sub="When one agent pays another for work, each operator needs a record of what was paid for and what came back, and that record has to travel with the handoff."
+          author="Originary"
           date="2025-12-03"
           readTime="2 min read"
           parent={{ label: 'Blog', href: '/blog' }}
         >
-          <h2>The problem: agents cannot coordinate</h2>
+          <h2>What an agent has to answer before it hands off work</h2>
           <p>
-            AI agents are already calling APIs, browsing websites, and executing code. But when
-            Agent A needs to use Agent B&apos;s service, fundamental questions arise:
+            Suppose Agent A needs a document translated by Agent B, a service another company runs,
+            and the service charges per request. Before Agent A can hand off the work, it has to
+            answer:
           </p>
           <ul>
             <li>How to discover AI policy and pricing?</li>
@@ -97,8 +98,8 @@ export default function Page() {
               with payment instructions (x402, Stripe).
             </li>
             <li>
-              <strong>Layer 3, receipts.</strong> Every transaction returns a signed, verifiable
-              record as proof.
+              <strong>Layer 3, receipts.</strong> Each transaction returns a signed, verifiable
+              record.
             </li>
             <li>
               <strong>Layer 4, provenance.</strong> Chain of records creates auditable lineage
@@ -139,9 +140,9 @@ export default function Page() {
             machine-readable.
           </p>
           <ul>
-            <li><strong>Proof of service.</strong> Cryptographic evidence of work performed.</li>
+            <li><strong>Record of service.</strong> A signed statement from the provider about the work it reported performing.</li>
             <li><strong>Audit trail.</strong> Operators review agent spending.</li>
-            <li><strong>Review and reconciliation.</strong> Shows exactly what was delivered.</li>
+            <li><strong>Review and reconciliation.</strong> Shows what the provider reported delivering.</li>
             <li><strong>Compliance.</strong> Bundled for regulatory reporting.</li>
           </ul>
 

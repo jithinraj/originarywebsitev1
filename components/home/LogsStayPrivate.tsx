@@ -48,7 +48,7 @@ export function LogsStayPrivate() {
         eyebrow="Share"
         title="Share the record,"
         qualifier="not your logs."
-        body="Logs are for running your system. Records are built to travel: send one to whoever needs it, and they verify it on their own."
+        body="Your logs stay inside your system. You send the signed record to whoever needs it, and they check it with your public key."
       />
 
       <div className="lsp-diagram" aria-hidden>
@@ -68,7 +68,7 @@ export function LogsStayPrivate() {
         </div>
         <div className="lsp-side lsp-side-out">
           <p className="lsp-side-head">
-            Signed record <span>travels</span>
+            Signed record <span>is sent out</span>
           </p>
           <div className="rc rc-compact">
             <dl className="rc-fields rc-fields-1">

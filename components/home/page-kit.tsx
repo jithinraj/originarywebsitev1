@@ -47,6 +47,7 @@ export function PageShell({ children }: { children: ReactNode }) {
 export function PageHero({
   eyebrow,
   title,
+  qualifier,
   byline,
   sub,
   align = 'left',
@@ -57,6 +58,8 @@ export function PageHero({
 }: {
   eyebrow?: string
   title: string
+  /** Two-tone headline: the qualifier follows the claim in the faint tone. */
+  qualifier?: string
   byline?: string
   sub?: string
   align?: 'left' | 'center'
@@ -65,7 +68,9 @@ export function PageHero({
   display?: boolean
   children?: ReactNode
 }) {
-  const plate = Boolean(aside) || display
+  // Every page opens on the same substrate as the homepage hero; the artifact
+  // (aside) and the headline make each opening its own.
+  const plate = true
   return (
     <>
     <section
@@ -76,7 +81,7 @@ export function PageHero({
         borderBottom: plate && !strip ? `1px solid ${PALETTE.hairline}` : undefined,
       }}
     >
-      {display ? <BitField className="cin-stream" focus="left" /> : null}
+      <BitField className="cin-stream" focus="left" strength={display ? 1 : 0.55} />
       <div style={{ maxWidth: MAX_W, margin: '0 auto', position: 'relative', zIndex: 1 }}>
       <div className={aside ? 'pk-hero-grid' : undefined}>
       <div
@@ -93,7 +98,7 @@ export function PageHero({
             size={11}
             color={PALETTE.muted}
             className="cin-rise"
-            style={{ letterSpacing: '0.2em', textTransform: 'uppercase', display: 'block' }}
+            style={{ letterSpacing: 'var(--ls-eyebrow)', textTransform: 'uppercase', display: 'block' }}
           >
             {eyebrow}
           </Mono>
@@ -103,7 +108,7 @@ export function PageHero({
           style={{
             ['--cin-i' as string]: 1,
             fontFamily: sans,
-            fontSize: display ? 'clamp(42px, 5.4vw, 76px)' : 'clamp(32px, 4vw, 44px)',
+            fontSize: display ? 'clamp(38px, 4.6vw, 60px)' : 'clamp(34px, 4vw, 48px)',
             lineHeight: display ? 1.04 : 1.08,
             fontWeight: 500,
             letterSpacing: display ? '-0.033em' : '-0.025em',
@@ -113,6 +118,7 @@ export function PageHero({
           }}
         >
           {title}
+          {qualifier ? <span className="pk-h1-q"> {qualifier}</span> : null}
         </h1>
         {byline ? (
           <div
@@ -135,11 +141,11 @@ export function PageHero({
             style={{
               ['--cin-i' as string]: 2,
               fontFamily: sans,
-              fontSize: 17,
-              lineHeight: 1.6,
-              color: PALETTE.muted,
-              margin: '16px 0 0 0',
-              maxWidth: 600,
+              fontSize: 18,
+              lineHeight: 1.55,
+              color: PALETTE.body,
+              margin: '20px 0 0 0',
+              maxWidth: 620,
               marginLeft: align === 'center' ? 'auto' : 0,
               marginRight: align === 'center' ? 'auto' : 0,
               textWrap: 'pretty',
@@ -148,7 +154,7 @@ export function PageHero({
             {sub}
           </p>
         ) : null}
-        {children ? <div className="cin-rise" style={{ ['--cin-i' as string]: 3, marginTop: 22 }}>{children}</div> : null}
+        {children ? <div className="cin-rise" style={{ ['--cin-i' as string]: 3, marginTop: 28 }}>{children}</div> : null}
       </div>
       {aside ? <div className="pk-hero-aside">{aside}</div> : null}
       </div>
@@ -221,7 +227,7 @@ export function PageSection({
 }) {
   return (
     <section
-      className={`home-section ${className}`.trim()}
+      className={`home-section pk-section ${className}`.trim()}
       style={{
         background,
         padding: `${paddingTop}px ${PAGE_PAD} ${paddingBottom}px ${PAGE_PAD}`,
@@ -321,28 +327,17 @@ export function SectionHeading({
         marginLeft: align === 'center' ? 'auto' : 0,
         marginRight: align === 'center' ? 'auto' : 0,
         textAlign: align,
-        marginBottom: 32,
+        marginBottom: 40,
       }}
     >
       {eyebrow ? (
         <Mono
           size={11}
-          color={PALETTE.faint}
+          color={PALETTE.muted}
           style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
         >
-          {index ? (
-            <span aria-hidden style={{ color: PALETTE.muted, marginRight: 10 }}>
-              {index}
-            </span>
-          ) : null}
-          {mark ? (
-            <span
-              aria-hidden
-              style={{ display: 'inline-flex', verticalAlign: '-3px', marginRight: 9, color: PALETTE.faint }}
-            >
-              <MarkGlyph name={mark} size={14} />
-            </span>
-          ) : null}
+          {/* index and mark are accepted for compatibility but not drawn: the homepage
+              grammar has no section numbers or heading icons. */}
           {eyebrow}
         </Mono>
       ) : null}
@@ -364,10 +359,10 @@ export function SectionHeading({
         <p
           style={{
             fontFamily: sans,
-            fontSize: 16,
-            lineHeight: 1.6,
-            color: PALETTE.muted,
-            margin: '14px 0 0 0',
+            fontSize: 17,
+            lineHeight: 1.55,
+            color: PALETTE.body,
+            margin: '16px 0 0 0',
             maxWidth: 620,
             marginLeft: align === 'center' ? 'auto' : 0,
             marginRight: align === 'center' ? 'auto' : 0,
@@ -398,6 +393,7 @@ export function Card({
       style={{
         background: PALETTE.paper,
         border: `1px solid ${emphasis ? PALETTE.rule : PALETTE.hairline}`,
+        borderRadius: 'var(--radius-card)',
         padding,
         ...style,
       }}
@@ -465,6 +461,7 @@ export function Pill({ children }: { children: ReactNode }) {
         padding: '4px 10px',
         background: PALETTE.paper,
         border: `1px solid ${PALETTE.hairline}`,
+        borderRadius: 'var(--radius-pill)',
         display: 'inline-flex',
         alignItems: 'center',
       }}
@@ -489,15 +486,16 @@ export function Button({
     display: 'inline-flex',
     alignItems: 'center',
     gap: 10,
-    padding: '12px 18px',
+    padding: '14px 22px',
+    minHeight: 48,
     fontFamily: sans,
-    fontSize: 14,
+    fontSize: 14.5,
     fontWeight: 500,
-    letterSpacing: '-0.005em',
+    letterSpacing: '0.005em',
     textDecoration: 'none',
-    color: primary ? PALETTE.paper : PALETTE.ink,
-    background: primary ? PALETTE.ink : 'transparent',
-    border: `1px solid ${primary ? PALETTE.ink : PALETTE.rule}`,
+    color: primary ? PALETTE.onAction : PALETTE.ink,
+    background: primary ? PALETTE.action : 'transparent',
+    border: `1px solid ${primary ? PALETTE.action : 'var(--border-chip)'}`,
   }
   const arrow = (
     <svg width="10" height="10" viewBox="0 0 10 10" fill="none">

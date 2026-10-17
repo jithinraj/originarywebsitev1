@@ -16,11 +16,11 @@ import {
   PAGE_PAD,
 } from '@/components/home'
 import { Mono } from '@/components/home/atoms/Mono'
-import { VerificationBoundary } from '@/components/specimens/parts'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
+import { StatusIcon } from '@/components/specimens/parts'
 
 export const metadata: Metadata = {
-  title: { absolute: 'PEAC Protocol | Portable Signed Interaction Records' },
+  title: { absolute: 'PEAC Protocol: open signed interaction records | Originary' },
   description:
     'An Apache-2.0 protocol for issuing and verifying portable signed records from APIs, MCP tools, agents, gateways, payments, and provisioning systems.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'PEAC Protocol | Originary',
     description:
-      'PEAC is an open-source protocol for portable signed interaction records. Apache-2.0. Self-hostable. Offline-verifiable.',
+      'PEAC is an open-source protocol (Apache-2.0) for portable signed interaction records that you can self-host and verify offline.',
     url: '/peac',
     siteName: 'Originary',
     type: 'website',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PEAC Protocol | Originary',
     description:
-      'PEAC is an open-source protocol for portable signed interaction records. Apache-2.0. Self-hostable. Offline-verifiable.',
+      'PEAC is an open-source protocol (Apache-2.0) for portable signed interaction records that you can self-host and verify offline.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -95,7 +95,7 @@ export default function PeacPage() {
         <section
           className="home-section"
           style={{
-            maxWidth: MAX_W,
+            maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`,
             margin: '0 auto',
             padding: `clamp(64px, 9vh, 112px) ${PAGE_PAD} clamp(40px, 6vh, 64px) ${PAGE_PAD}`,
           }}
@@ -109,7 +109,7 @@ export default function PeacPage() {
                 PEAC Protocol
               </h1>
               <p className="home-about-body" style={{ marginTop: 24, maxWidth: 560 }}>
-                An open protocol for portable signed interaction records. PEAC defines a bounded
+                An open protocol for portable signed interaction records. PEAC defines the
                 record format, verification model, conformance requirements, and carrier mappings.
                 It can be implemented and used independently of Originary.
               </p>
@@ -118,16 +118,11 @@ export default function PeacPage() {
                 <Button href="https://github.com/peacprotocol/peac/tree/main/docs/specs" primary external>
                   Read the specification
                 </Button>
-                <Button href="https://github.com/peacprotocol/peac" external>
-                  View GitHub
-                </Button>
                 <Button href="/verify">Verify a sample</Button>
               </div>
               <div style={{ marginTop: 28, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                 <Pill>Apache-2.0</Pill>
-                <Pill>Self-hostable</Pill>
                 <Pill>Offline-verifiable</Pill>
-                <Pill>No Originary account required</Pill>
               </div>
             </div>
 
@@ -156,8 +151,8 @@ export default function PeacPage() {
                   <span style={peacHeroCardVal}>Ed25519:8b3e&hellip;</span>
                 </div>
                 <div style={peacHeroCardFoot}>
-                  <span style={peacHeroCardDot} className="home-active-dot" />
-                  verified offline · {FACTS.currentVersion}
+                  <StatusIcon kind="ok" size={13} />
+                  sample · verified offline · {FACTS.currentVersion}
                 </div>
               </div>
             </aside>
@@ -167,48 +162,36 @@ export default function PeacPage() {
         <InViewClass
           className="home-about-divider"
           as="div"
-          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+          style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+        />
+
+
+        <InViewClass
+          className="home-about-divider"
+          as="div"
+          style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
         />
 
         <PageSection paddingTop={24} paddingBottom={48}>
-          <p
-            style={{
-              fontFamily: sans,
-              fontSize: 15,
-              lineHeight: 1.65,
-              color: PALETTE.muted,
-              margin: 0,
-              maxWidth: 720,
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              textAlign: 'center',
-              textWrap: 'pretty',
-            }}
-          >
+          <p className="pc-pub">
             PEAC Protocol is published by Originary and distributed through GitHub and package
             registries under Apache-2.0.
           </p>
         </PageSection>
 
-        <InViewClass
-          className="home-about-divider"
-          as="div"
-          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
-        />
-
         {/* 1. What PEAC is */}
         <PageSection>
           <SectionHeading
             eyebrow="what peac is"
-            title="A record that survives the boundary."
-            sub="PEAC defines how a system issues a signed record for an automated action so another party can verify what the issuer recorded, without trusting the original system or its dashboard."
+            title="A signed record another party can check."
+            sub="PEAC defines how a system issues a signed record for an automated action so another party can verify what the issuer recorded, without access to the issuer's private systems, under an explicit issuer-and-key policy."
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
+          <div className="pc-grid pc-2">
             <Card>
               <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
                 signed
               </Mono>
-              <h3 style={subHead}>One artifact, many signers</h3>
+              <h3 style={subHead}>Signed by the issuer</h3>
               <p style={body}>
                 Every record is signed with Ed25519. Issuers publish their public key once. Verifiers check the
                 signature offline against that key.
@@ -218,21 +201,10 @@ export default function PeacPage() {
               <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
                 portable
               </Mono>
-              <h3 style={subHead}>Travels across systems</h3>
+              <h3 style={subHead}>Verifiable away from the issuer</h3>
               <p style={body}>
                 Records are carried as compact JWS strings or exported as bundles. They do not depend on the
                 issuer&apos;s dashboard, database, or API to stay verifiable.
-              </p>
-            </Card>
-            <Card>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-                open
-              </Mono>
-              <h3 style={subHead}>Apache-2.0</h3>
-              <p style={body}>
-                Originary publishes the protocol specification, reference implementations, and core tooling
-                publicly on GitHub. Anyone can self-host, issue, and verify records without an Originary account
-                or managed service.
               </p>
             </Card>
           </div>
@@ -248,7 +220,7 @@ export default function PeacPage() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(180px, 100%), 1fr))',
               gap: 0,
               border: `1px solid ${PALETTE.hairline}`,
               background: PALETTE.bg,
@@ -265,24 +237,24 @@ export default function PeacPage() {
         <InViewClass
           className="home-about-divider"
           as="div"
-          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+          style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
         />
 
         {/* 3. What a record contains */}
         <PageSection>
           <SectionHeading
             eyebrow="what a record contains"
-            title="One signed artifact. Six fields."
-            sub="Every record carries the same skeleton: facts, policy, result, time, issuer, signature. The issuer asserts the first four; the last two prove who said so and let anyone check it."
+            title="Six parts in every record."
+            sub="Every record carries the same skeleton: facts, policy, result, time, issuer, signature. The issuer asserts the first four; the last two identify who signed it and let anyone check it."
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
+          <div className="pc-grid pc-3">
             <Card>
               <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
                 action
               </Mono>
               <h3 style={subHead}>What happened</h3>
               <p style={body}>
-                The boundary action. An API call, MCP tool run, gateway decision, provisioning event, or payment-related
+                The action itself: an API call, MCP tool run, gateway decision, provisioning event, or payment-related
                 machine action, captured as a typed signed record with its selected facts.
               </p>
             </Card>
@@ -292,8 +264,8 @@ export default function PeacPage() {
               </Mono>
               <h3 style={subHead}>Under what terms</h3>
               <p style={body}>
-                A digest of the policy or terms that applied at issue time. Verifiers can prove a record was issued
-                under a specific version of <code style={code}>peac.txt</code> or another published policy document.
+                A digest of the policy or terms that applied at issue time. A verifier can check which version of{' '}
+                <code style={code}>peac.txt</code> or another published policy document the record binds.
               </p>
             </Card>
             <Card>
@@ -312,8 +284,8 @@ export default function PeacPage() {
               </Mono>
               <h3 style={subHead}>When it happened</h3>
               <p style={body}>
-                Issue time and, where relevant, the observed event time. A record is datable evidence: a later review
-                can place the action on a timeline without trusting anyone&apos;s clock retroactively.
+                Issue time and, where relevant, the observed event time, as the issuer recorded them, so a later review
+                can place the action on a timeline.
               </p>
             </Card>
             <Card>
@@ -323,14 +295,14 @@ export default function PeacPage() {
               <h3 style={subHead}>Who issued it</h3>
               <p style={body}>
                 The system that observed the action and signed the record, identified by its issuer URL. Keys resolve
-                from the issuer&apos;s published configuration, so identity is checkable, not asserted.
+                from the issuer&apos;s published configuration, so a verifier can check which key signed it.
               </p>
             </Card>
             <Card>
               <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
                 signature
               </Mono>
-              <h3 style={subHead}>Who asserted it</h3>
+              <h3 style={subHead}>Signature</h3>
               <p style={body}>
                 Ed25519 signature over the canonical JWS signing input. Verification is offline with a public key you supply.
               </p>
@@ -342,30 +314,22 @@ export default function PeacPage() {
         <InViewClass
           className="home-about-divider"
           as="div"
-          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+          style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
         />
 
         {/* 4. Workflows */}
         <PageSection background={PALETTE.paper} paddingTop={80} paddingBottom={80}>
           <SectionHeading
             eyebrow="workflows"
-            title="One primitive, many record workflows."
+            title="The surfaces PEAC already maps."
             sub="PEAC composes with the systems your stack already uses. Each profile maps an existing surface to a portable signed record without replacing the runtime that produced it."
           />
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              gap: 0,
-              border: `1px solid ${PALETTE.hairline}`,
-              background: PALETTE.bg,
-            }}
-          >
+          <div className="pc-grid pc-4">
             {[
               ['API requests', 'POST / GET / scoped calls behind an issuer'],
               ['MCP tool calls', 'Tool name, policy, result digest'],
               ['A2A handoffs', 'Task ids, parent task, signature observation'],
-              ['Gateway decisions', 'Routed / blocked / decided records'],
+              ['Gateway decisions', 'Allow, deny and review decisions'],
               ['Provisioning lifecycle', '10 observed event kinds'],
               ['Runtime governance', 'AGT mapper and lifecycle observation'],
               ['HTTP 402', 'Challenge / response for paid surfaces'],
@@ -380,22 +344,7 @@ export default function PeacPage() {
         <InViewClass
           className="home-about-divider"
           as="div"
-          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
-        />
-
-        {/* Verification boundary */}
-        <PageSection>
-          <SectionHeading
-            eyebrow="the boundary"
-            title="What a verified record does and does not establish."
-          />
-          <VerificationBoundary />
-        </PageSection>
-
-        <InViewClass
-          className="home-about-divider"
-          as="div"
-          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+          style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
         />
 
         {/* 5. Use standalone or with Originary */}
@@ -405,7 +354,7 @@ export default function PeacPage() {
             title="Self-host the protocol or use it with Originary."
             sub="Anyone can self-host PEAC Protocol, issue records, and verify them without an Originary account or managed service. Originary publishes and maintains PEAC Protocol and also offers commercial tools and implementation support for teams running it in production."
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: 16 }}>
             <Card>
               <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
                 self-host
@@ -428,7 +377,7 @@ export default function PeacPage() {
               <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
                 commercial
               </Mono>
-              <h3 style={subHead}>Originary Verify</h3>
+              <h3 style={subHead}>Verification Pilot</h3>
               <BulletList
                 items={[
                   'Supported self-hosted issuance and verification',
@@ -451,14 +400,14 @@ export default function PeacPage() {
         <InViewClass
           className="home-about-divider"
           as="div"
-          style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
+          style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}
         />
 
         {/* 6. Install */}
         <PageSection paddingBottom={112}>
           <SectionHeading
             eyebrow="install"
-            title="Two lines to a verifier."
+            title="Verify a record with one command."
             sub="Install the public packages from the npm latest dist-tag and verify a signed record locally."
             align="center"
           />

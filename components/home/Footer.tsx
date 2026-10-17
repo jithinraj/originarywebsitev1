@@ -5,58 +5,19 @@ import Link from 'next/link'
 import { SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { Mono } from './atoms/Mono'
-import { Wordmark } from './Nav'
+import { Wordmark, SITE_MAP } from './Nav'
 import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
 
-const columns: Array<{
-  h: string
-  items: Array<{ label: string; href: string; external?: boolean; mark?: MarkName; emphasis?: boolean }>
-}> = [
-  {
-    h: 'Product',
-    items: [
-      { label: 'Verification Pilot', href: '/product' },
-      { label: 'Evidence case', href: '/evidence-case' },
-      { label: 'Action review', href: '/action-review' },
-      { label: 'Investigate', href: '/investigate' },
-      { label: 'Verify a Record', href: '/verify' },
-      { label: 'Plans and pilot', href: '/pricing' },
-      { label: 'Start a pilot', href: '/contact', emphasis: true },
-    ],
-  },
-  {
-    h: 'Use cases',
-    items: [
-      { label: 'Paid MCP and APIs', href: '/mcp', mark: 'link' },
-      { label: 'Gateway decisions', href: '/ai-gateway', mark: 'valve' },
-      { label: 'Paid APIs and agent commerce', href: '/agentic-commerce', mark: 'coin' },
-      { label: 'Audit and incident handoff', href: '/audit-incident-handoff', mark: 'sealCheck' },
-      { label: 'AI compliance evidence', href: '/ai-compliance', mark: 'scales' },
-      { label: 'Provisioning', href: '/provisioning-records', mark: 'pipeline' },
-      { label: 'Record Gallery', href: '/records', mark: 'ledger' },
-    ],
-  },
-  {
-    h: 'Developers',
-    items: [
-      { label: 'How It Works', href: '/how-it-works' },
-      { label: 'PEAC Protocol Downloads', href: '/downloads' },
-      { label: 'PEAC Protocol', href: '/peac' },
-      { label: 'Blog', href: '/blog' },
-      { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
-    ],
-  },
-  {
-    h: 'Company',
-    items: [
-      { label: 'About Originary', href: '/about' },
-      { label: 'Press Kit', href: '/press' },
-      { label: 'Trust Center', href: '/trust' },
-      { label: 'Security', href: '/security' },
-      { label: 'Contact Originary', href: '/contact' },
-    ],
-  },
-]
+type FooterItem = { label: string; href: string; external?: boolean; mark?: MarkName; emphasis?: boolean }
+
+// Same groups and labels as the header (Nav.tsx SITE_MAP), plus the one conversion link.
+const columns: Array<{ h: string; items: FooterItem[] }> = SITE_MAP.map((g) => ({
+  h: g.label,
+  items:
+    g.label === 'Product'
+      ? [...g.items, { label: 'Start a pilot', href: '/contact', emphasis: true }]
+      : g.items,
+}))
 
 const legalLinks: Array<{ label: string; href: string }> = [
   { label: 'Privacy', href: '/privacy' },

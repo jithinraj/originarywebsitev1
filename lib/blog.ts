@@ -26,7 +26,7 @@ export const ARTICLES: Article[] = [
     slug: 'ai-agent-audit-trail-handoff',
     title: 'An AI agent audit trail has to survive the handoff',
     description:
-      'Can another team review the action once your dashboard is out of reach? What to preserve, what a signature shows, and how to hand off a reviewable case.',
+      'Another team has to review an agent action without access to your dashboard. What to preserve, what a signature shows, and how to hand off a case they can check.',
     category: 'Audit',
     author: 'Originary',
     readTime: '6 min read',
@@ -105,7 +105,7 @@ export const ARTICLES: Article[] = [
     slug: 'robots-txt-rfc-9309',
     title: 'robots.txt (RFC 9309): crawl access control for the web',
     description:
-      'RFC 9309 formalized the Robots Exclusion Protocol. A look at what it does, what it does not, and why access decisions still benefit from verifiable records.',
+      'RFC 9309 formalized the Robots Exclusion Protocol. Its matching and error rules, the limits of crawl control, and where verifiable access records fit.',
     category: 'Standards',
     author: 'Originary',
     readTime: '5 min read',
@@ -114,7 +114,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'what-is-http-402',
-    title: 'What is HTTP 402? A neutral explainer',
+    title: 'What is HTTP 402? Payment Required, explained',
     description:
       'HTTP 402 Payment Required, its history, its recent revival for agents and APIs, and how it relates to (but is separate from) signed interaction records.',
     category: 'Explainer',
@@ -127,7 +127,7 @@ export const ARTICLES: Article[] = [
     slug: 'a2a-stack-agent-to-agent-commerce',
     title: 'Portable evidence across agent-to-agent handoffs',
     description:
-      'As agents hand work to other agents, the record of what was authorized and what happened has to travel with them. A look at portable evidence across A2A flows.',
+      'When agents hand work to other agents, the record of what was authorized and what happened has to travel with the work: policy discovery, HTTP 402 payment, and signed records.',
     category: 'Agents',
     author: 'Originary',
     readTime: '2 min read',
@@ -140,9 +140,9 @@ export const ARTICLES: Article[] = [
     slug: 'agent-audit-across-boundaries',
     title: 'Where private agent logs stop being enough across company boundaries',
     description:
-      'Private logs answer your own questions well, but fail when another company must verify what happened. See the exact gap: a log line next to a signed record.',
+      'When another company has to check what your agent did, a private log cannot help them. The same refund as a log line and as a signed record, side by side.',
     category: 'Protocol',
-    author: 'Jithin Raj',
+    author: 'Originary',
     readTime: '5 min read',
     status: 'draft',
     indexable: false,
@@ -154,7 +154,7 @@ export const ARTICLES: Article[] = [
     description:
       'A PEAC evidence bundle packages signed records, keys, and policy so a counterparty can check them independently. What is inside, and the two ways it fails.',
     category: 'Protocol',
-    author: 'Jithin Raj',
+    author: 'Originary',
     readTime: '6 min read',
     status: 'draft',
     indexable: false,

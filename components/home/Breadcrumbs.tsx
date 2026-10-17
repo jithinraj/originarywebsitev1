@@ -23,7 +23,7 @@ export function Breadcrumbs({ current, href }: { current: string; href: string }
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav aria-label="Breadcrumb" className="bc-nav">
-        <div style={{ maxWidth: MAX_W, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}>
+        <div style={{ maxWidth: `calc(${MAX_W}px + 2 * ${PAGE_PAD})`, margin: '0 auto', padding: `0 ${PAGE_PAD}` }}>
           <ol className="bc-list">
             <li>
               <Link href="/">Home</Link>
