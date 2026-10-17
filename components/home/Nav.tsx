@@ -377,8 +377,19 @@ export function Nav() {
           className="home-nav-mobile"
           style={{
             display: 'none',
+            // A full sheet below the 64 px header: its own background and scroll,
+            // so the menu never draws over the page.
+            position: 'fixed',
+            top: 'var(--header-h)',
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 60,
+            overflowY: 'auto',
+            overscrollBehavior: 'contain',
+            background: PALETTE.bg,
             borderTop: `1px solid ${PALETTE.hairline}`,
-            padding: `12px ${PAGE_PAD} 20px ${PAGE_PAD}`,
+            padding: `12px ${PAGE_PAD} 32px ${PAGE_PAD}`,
           }}
         >
           <nav aria-label="Primary" style={{ display: 'flex', flexDirection: 'column' }}>
