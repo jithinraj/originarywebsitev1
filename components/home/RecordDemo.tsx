@@ -13,15 +13,15 @@
  */
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-const JWK = { kty: 'OKP', crv: 'Ed25519', x: 'AuFbhNMoYUl-48DqDWzihJVBED3M1lD8v3qARLZRD4s' } as const
+export const JWK = { kty: 'OKP', crv: 'Ed25519', x: 'AuFbhNMoYUl-48DqDWzihJVBED3M1lD8v3qARLZRD4s' } as const
 
-const HEADER_SEG =
+export const HEADER_SEG =
   'eyJhbGciOiJFZERTQSIsImtpZCI6Imh0dHBzOi8vc3VwcG9ydC1hZ2VudC5leGFtcGxlLy53ZWxsLWtub3duL2p3a3MuanNvbiNkZW1vLTEiLCJ0eXAiOiJpbnRlcmFjdGlvbi1yZWNvcmQrand0In0'
-const PAYLOAD_SEG =
+export const PAYLOAD_SEG =
   'eyJhY3Rpb24iOiJyZWZ1bmRfYXBwcm92ZWQiLCJpYXQiOjE3NzY0MTI4OTEsImlzcyI6Imh0dHBzOi8vc3VwcG9ydC1hZ2VudC5leGFtcGxlIiwicmVzdWx0IjoicmVmdW5kZWQiLCJzdWIiOiJjcm0udXBkYXRlIn0'
-const TAMPERED_SEG =
+export const TAMPERED_SEG =
   'eyJhY3Rpb24iOiJyZWZ1bmRfYXBwcm92ZWQiLCJpYXQiOjE3NzY0MTI4OTEsImlzcyI6Imh0dHBzOi8vc3VwcG9ydC1hZ2VudC5leGFtcGxlIiwicmVzdWx0Ijoibm90X3JlZnVuZGVkIiwic3ViIjoiY3JtLnVwZGF0ZSJ9'
-const SIG_SEG =
+export const SIG_SEG =
   'II1J0aGhPVY8SaJ4SE9AJ_BCWEDs9bg5goG5OYL2AagxTmXNPxNxu2NloFSFkZlh1oIF-ocuHuoAVmGXyEetDQ'
 
 const ISSUED_AT = '2026-04-17 08:01:31 UTC'

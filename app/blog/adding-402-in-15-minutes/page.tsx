@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: { absolute: 'Add HTTP 402 to Your API in 15 Minutes | Originary' },
   description:
     'A 15-minute walkthrough for adding HTTP 402 to an Express API: challenge response, header format, receipt verification middleware, and failure modes.',
-  authors: [{ name: 'Jithin Raj, Founder' }],
+  authors: [{ name: 'Originary' }],
   alternates: { canonical: '/blog/adding-402-in-15-minutes' },
   openGraph: {
     title: 'Add HTTP 402 to Your API in 15 Minutes',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: 'article',
     url: '/blog/adding-402-in-15-minutes',
     publishedTime: '2025-11-03',
-    authors: ['Jithin Raj', 'Originary Team'],
+    authors: ['Originary'],
     images: ['/og'],
     siteName: 'Originary',
   },
@@ -106,7 +106,7 @@ export default function Page() {
               responses in 15 minutes, no SDK required.
             </>
           }
-          author="Jithin Raj, Founder"
+          author="Originary"
           date="2025-11-03"
           readTime="5 min read"
           parent={{ label: 'Blog', href: '/blog' }}

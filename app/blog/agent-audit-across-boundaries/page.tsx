@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
+import { ORIGINARY_ORG_ID } from '@/lib/structured-data/entities'
 import Script from 'next/script'
 import { PageShell, ArticleDoc, ArticleRelated, PALETTE } from '@/components/home'
 
 export const metadata: Metadata = {
   title: { absolute: 'Why Private Agent Logs Fail Across Company Boundaries | Originary' },
   description:
-    'Private logs answer your own questions well, but fail when another company must verify what happened. See the exact gap: a log line next to a signed record.',
-  authors: [{ name: 'Jithin Raj' }],
+    'When another company has to check what your agent did, a private log cannot help them. The same refund as a log line and as a signed record, side by side.',
+  authors: [{ name: 'Originary' }],
   alternates: { canonical: '/blog/agent-audit-across-boundaries' },
   openGraph: {
     title: 'Why Private Agent Logs Fail Across Company Boundaries',
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       'Private logs answer your own questions well. They fail when another company has to verify what happened. Here is the exact gap, with a log line and a signed record side by side.',
     type: 'article',
     url: '/blog/agent-audit-across-boundaries',
-    authors: ['Jithin Raj'],
+    authors: ['Originary'],
     images: ['/og'],
     siteName: 'Originary',
   },
@@ -36,7 +37,7 @@ const jsonLd = {
   headline: 'Where private agent logs stop being enough across company boundaries',
   description:
     'Private logs answer your own questions well. They fail when another company has to verify what happened. Here is the exact gap, with a log line and a signed record side by side.',
-  author: { '@type': 'Person', name: 'Jithin Raj', url: 'https://github.com/jithinraj' },
+  author: { '@id': ORIGINARY_ORG_ID },
   publisher: {
     '@type': 'Organization',
     name: 'Originary',
@@ -91,8 +92,8 @@ export default function Page() {
         <ArticleDoc
           category="protocol"
           title="Where private agent logs stop being enough across company boundaries"
-          sub="Private logs answer your own questions well. They fail when another company has to verify what happened."
-          author="Jithin Raj"
+          sub="Your logs answer your own questions. A partner disputing a refund needs evidence they can check for themselves, under a key they accept as yours."
+          author="Originary"
           readTime="5 min read"
           parent={{ label: 'Blog', href: '/blog' }}
           status="draft"
@@ -106,9 +107,8 @@ export default function Page() {
             you can read, that you could have edited, and that the partner has no way to check.
           </p>
           <p>
-            This is a specific failure, worth naming precisely. Application logs are excellent at
-            one job and structurally unsuited to another. Nothing here argues for fewer logs; it
-            argues that a cross-company dispute asks a question logs were never built to answer.
+            Nothing here argues for fewer logs. Application logs are built to answer your own
+            questions, and a cross-company dispute asks a different one.
           </p>
 
           <h2>What logs are for</h2>
@@ -119,7 +119,7 @@ export default function Page() {
             boundary, a log is the right tool.
           </p>
           <p>
-            The limit is scope, not quality. A private log gives an outside reader no way to check
+            The limit is who can check it. A private log gives an outside reader no way to check
             that it is authentic or unaltered, and it usually cannot be shared without exposing
             more than you intend. That is fine when the reader already trusts you. It fails when
             the reader is a different company with a reason to doubt you. (Signed, append-only and
@@ -160,13 +160,12 @@ export default function Page() {
             The record names the issuer (<code>iss</code>), the action and its subject, and the
             decision, and it is signed. A partner verifies it under a public key they accept as
             yours, offline, and sees that these exact bytes were signed by your key and are
-            unchanged. The log line carries none of that. That is the whole difference, and it is
-            narrow: the record does not carry more truth than the log, it carries checkability the
-            log cannot.
+            unchanged. The log line carries none of that. The difference is narrow: the record is no more
+            truthful than the log, but a partner can check it, and they cannot check the log.
           </p>
 
           <h2>Log and record, compared</h2>
-          <p>They are not competitors; they answer different questions.</p>
+          <p>Each answers a different question.</p>
           <div
             className="home-card"
             role="region"
@@ -231,7 +230,7 @@ export default function Page() {
             the same way years from now only if the key can still be retrieved, the algorithm is
             still supported, and the relevant time and revocation context can be established.
             Retain those deliberately, before the relationship or the systems disappear.
-            Durability is upkeep, not a property that maintains itself.
+            Long-term verifiability depends on that upkeep.
           </p>
 
           <h2>If you will be the one asked to show what happened</h2>
@@ -252,7 +251,7 @@ export default function Page() {
             Preparing bounded, independently checkable evidence for exactly this kind of
             cross-company agent and API action is the problem Originary works on. If you are
             facing a specific cross-boundary review or dispute, that is the conversation to have
-            with us; it starts from your actual workflow, not a platform pitch.
+            with us. We start from your actual workflow.
           </p>
 
           <h2>References</h2>
@@ -299,7 +298,7 @@ export default function Page() {
               label: 'Building a portable evidence bundle for dispute review',
               href: '/blog/evidence-bundle-for-disputes',
             },
-            { label: 'What is HTTP 402? A neutral explainer', href: '/blog/what-is-http-402' },
+            { label: 'What is HTTP 402? Payment Required, explained', href: '/blog/what-is-http-402' },
             { label: 'PEAC Protocol overview', href: '/peac' },
           ]}
         />

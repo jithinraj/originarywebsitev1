@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: { absolute: 'AI Paywalls, HTTP 402, and Portable Records | Originary' },
   description:
     'How PEAC connects agent and crawler signals to HTTP 402, x402, and Stripe, with signed records for billing, audit, and partner review.',
-  authors: [{ name: 'Jithin Raj, Founder' }],
+  authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
     title: 'AI Paywall: Detection to Settlement',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       'How Originary and PEAC turn agent and crawler identification into an AI paywall using HTTP 402, x402, and Stripe.',
     url: '/blog/from-detection-to-settlement-ai-paywall-peac-http-402',
     publishedTime: '2025-12-01',
-    authors: ['Jithin Raj', 'Originary Team'],
+    authors: ['Originary'],
     images: ['/og'],
     siteName: 'Originary',
   },
@@ -116,7 +116,7 @@ export default function Page() {
           category="technical"
           title="AI paywalls, HTTP 402, and portable records"
           sub="How Originary and PEAC Protocol turn agent and crawler identification into an AI paywall using HTTP 402, x402, and Stripe, with signed records for billing, audit, and partner review."
-          author="Jithin Raj, Founder"
+          author="Originary"
           date="2025-12-01"
           readTime="7 min read"
           parent={{ label: 'Blog', href: '/blog' }}
@@ -134,7 +134,7 @@ export default function Page() {
             could not do for a long time was <strong>pay for what they use</strong>.
           </p>
           <p>
-            That gap is closing fast. New payment standards built on{' '}
+            That is changing. Payment specifications built on{' '}
             <a
               href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/402"
               target="_blank"
@@ -173,7 +173,7 @@ export default function Page() {
             fingerprints, and access logs to understand who is calling you and why.
           </p>
           <p>
-            That is necessary, but not sufficient. If you are a publisher, API provider, SaaS
+            Visibility comes first. If you are a publisher, API provider, SaaS
             platform, or data owner, the key questions are:
           </p>
           <ul>
@@ -191,8 +191,8 @@ export default function Page() {
             <li>A signed record that will hold up in an audit or partner review</li>
           </ul>
           <p>
-            PEAC exists to close that gap. The protocol treats every AI access event as something
-            that can be priced, consented, and proven.
+            PEAC addresses those three. The protocol treats each AI access event as something that
+            can be priced, consented to, and recorded.
           </p>
           <div style={pullQuote}>
             Detection tells you <em>&quot;there is an AI here&quot;</em>. PEAC tells you{' '}
@@ -276,8 +276,8 @@ export default function Page() {
           <h3>2.2 What PEAC adds on top</h3>
           <p>
             PEAC does not try to replace x402 or Stripe. Our direction is explicit: the protocol
-            is a <strong>portable record layer</strong> that completes existing payment rails
-            rather than competes with them.
+            is a <strong>portable record layer</strong> that works alongside existing payment rails
+            instead of competing with them.
           </p>
 
           <h4>PEAC 0.9.12 - Generic HTTP 402 semantics</h4>
@@ -524,8 +524,8 @@ Content-Type: application/json
               Agent and crawler identification becomes the front door into a programmable AI
               paywall
             </li>
-            <li>HTTP 402 becomes the standard control plane for AI payments</li>
-            <li>x402 and Stripe are first-class citizens, not competing standards</li>
+            <li>HTTP 402 is the signal that an AI request requires payment</li>
+            <li>x402 and Stripe are both first-class rails</li>
             <li>
               <code>PEAC-Receipt</code> is the common language between engineering, finance,
               partner reviews, and external counterparties

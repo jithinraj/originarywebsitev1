@@ -1,23 +1,23 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import DownloadsServer from './DownloadsServer'
 import DownloadCardPEAC from '@/components/DownloadCardPEAC'
 import { FACTS } from '@/lib/facts'
-import {
-  PageShell,
-  PageHero,
-  PageSection,
-  Card,
-  Button,
-  PALETTE,
-} from '@/components/home'
-import { Mono } from '@/components/home/atoms/Mono'
+import { ORIGINARY_ORG_ID } from '@/lib/structured-data/entities'
+import { PageShell, PageHero, PageSection, SectionHeading, Button } from '@/components/home'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
+import { OriginaryWordmark } from '@/components/brand/OriginaryWordmark'
+import { Terminal } from '@/components/specimens/parts'
+import './downloads.css'
+
+// The canonical Originary Organization (Poem, Inc.) is defined once, site-wide.
+const publisher = { '@id': ORIGINARY_ORG_ID }
 
 const softwareJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: 'PEAC Protocol',
+  brand: { '@type': 'Brand', name: 'Originary' },
+  publisher,
   operatingSystem: 'Windows, macOS, Linux',
   applicationCategory: 'DeveloperApplication',
   downloadUrl: 'https://www.originary.xyz/downloads/',
@@ -32,6 +32,7 @@ const peacSourceCodeJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareSourceCode',
   name: 'PEAC Protocol',
+  publisher,
   codeRepository: 'https://github.com/peacprotocol/peac',
   license: 'https://www.apache.org/licenses/LICENSE-2.0',
   programmingLanguage: 'TypeScript',
@@ -39,24 +40,24 @@ const peacSourceCodeJsonLd = {
 }
 
 export const metadata: Metadata = {
-  title: { absolute: 'PEAC Protocol Downloads | Originary' },
+  title: { absolute: 'Originary Downloads | PEAC Protocol software' },
   description:
-    'Download PEAC Protocol source code, CLI, SDK packages, MCP server and offline verification tools maintained by Originary.',
+    'Originary Downloads: PEAC Protocol source code, CLI, SDK packages, MCP server and offline verification tools, published and maintained by Originary.',
   robots: 'index,follow',
   openGraph: {
-    title: 'Downloads | Originary',
+    title: 'Originary Downloads',
     description:
-      'Download PEAC Protocol by Originary: open-source software for portable verification of machine actions.',
+      'Originary Downloads: PEAC Protocol, open-source software by Originary for portable verification of machine actions.',
     url: '/downloads',
     siteName: 'Originary',
-    images: [{ url: '/og', width: 1200, height: 630, alt: 'Downloads | Originary' }],
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Originary Downloads' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Downloads | Originary',
+    title: 'Originary Downloads',
     description:
-      'Download PEAC Protocol by Originary: open-source software for portable verification of machine actions.',
+      'Originary Downloads: PEAC Protocol, open-source software by Originary for portable verification of machine actions.',
     images: ['/og'],
   },
   alternates: {
@@ -64,38 +65,26 @@ export const metadata: Metadata = {
   },
 }
 
-const sans = 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif'
-const mono = 'var(--font-mono), "IBM Plex Mono", ui-monospace, monospace'
-
 export default function DownloadsPage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <>
-      <Script
-        id="software-json-ld"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-      >
-        {JSON.stringify(softwareJsonLd)}
-      </Script>
-      <Script
-        id="peac-source-json-ld"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-      >
-        {JSON.stringify(peacSourceCodeJsonLd)}
-      </Script>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(peacSourceCodeJsonLd) }} />
       <PageShell>
-      <Breadcrumbs current="PEAC Protocol Downloads" href="/downloads" />
+        <Breadcrumbs current="Originary Downloads" href="/downloads" />
         <PageHero
           eyebrow="open source"
-          title="PEAC Protocol Downloads"
-          byline="by Originary"
+          title="Originary Downloads."
+          qualifier="PEAC Protocol, open source."
           sub="Originary™, the software and developer-tools brand of Poem, Inc., publishes and maintains PEAC Protocol as open-source downloadable software. Get the source code, CLI, SDK packages, and verification tooling from the official GitHub repository and package registries."
-          align="center"
+          aside={<ReleaseCard />}
         >
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Button href="https://github.com/peacprotocol/peac" external primary>
+          <div className="dl-ctas">
+            <Button href="#distributions" primary>
+              Download
+            </Button>
+            <Button href="https://github.com/peacprotocol/peac" external>
               View on GitHub
             </Button>
             <Button href="https://www.npmjs.com/package/@peac/cli" external>
@@ -104,186 +93,94 @@ export default function DownloadsPage() {
           </div>
         </PageHero>
 
-        <PageSection paddingTop={16} paddingBottom={48}>
-          <div
-            style={{
-              maxWidth: 760,
-              margin: '0 auto',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: 0,
-              border: `1px solid ${PALETTE.hairline}`,
-              background: PALETTE.paper,
-            }}
-          >
-            <DownloadFact label="publisher" value="Originary (Poem, Inc.)" />
-            <DownloadFact label="primary distribution" value="GitHub" border />
-            <DownloadFact label="license" value={FACTS.license} border />
-          </div>
-          <div
-            style={{
-              maxWidth: 760,
-              margin: '20px auto 0 auto',
-              padding: '16px 20px',
-              fontFamily: mono,
-              fontSize: 12,
-              color: PALETTE.muted,
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: 18,
-              borderTop: `1px solid ${PALETTE.hairline}`,
-            }}
-          >
-            <span>
-              <strong style={{ color: PALETTE.ink }}>Current release:</strong>{' '}
-              {FACTS.currentVersion} on npm {FACTS.currentDistTag}
-            </span>
-            <span style={{ color: PALETTE.faint }}>·</span>
-            <span>
-              <strong style={{ color: PALETTE.ink }}>Current wire format:</strong>{' '}
-              {FACTS.stableWireFormat}
-            </span>
-            <span style={{ color: PALETTE.faint }}>·</span>
-            <span>
-              <strong style={{ color: PALETTE.ink }}>Legacy format:</strong>{' '}
-              {FACTS.legacyWireFormat}
-            </span>
-          </div>
+        <PageSection paddingTop={56} paddingBottom={56}>
+          <div id="distributions" className="dl-anchor" />
+          <SectionHeading
+            eyebrow="Originary distributions"
+            title="Source code, from the official repository."
+            sub="The latest PEAC Protocol source tree and SDKs, as Originary publishes them on GitHub."
+          />
+          <DownloadsServer />
         </PageSection>
 
-        <PageSection paddingBottom={48}>
-          <Card padding={32} style={{ maxWidth: 760, margin: '0 auto' }}>
-            <Mono
-              size={11}
-              color={PALETTE.muted}
-              style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
-            >
-              install with your package manager
-            </Mono>
-            <pre className="home-code" tabIndex={0} style={{ marginTop: 12, marginBottom: 0 }}>
-{`npm i -g @peac/cli@${v}
-npm i @peac/protocol@${v} @peac/crypto@${v} @peac/schema@${v}
-npm i @peac/mcp-server@${v}`}
-            </pre>
-            <div
-              style={{
-                marginTop: 18,
-                fontFamily: sans,
-                fontSize: 13,
-                lineHeight: 1.6,
-                color: PALETTE.muted,
-              }}
-            >
-              Verify a signed record locally:
+        <PageSection paddingTop={24} paddingBottom={56}>
+          <SectionHeading
+            eyebrow="install with your package manager"
+            title="Or install the packages."
+            sub={`Pinned to the current release, ${FACTS.currentVersion}, so what you install matches what is described here.`}
+          />
+          <div className="dl-install">
+            <div>
+              <p className="dl-k">Install</p>
+              <Terminal
+                tone="ink"
+                lines={[
+                  { kind: 'out', text: `$ npm i -g @peac/cli@${v}` },
+                  { kind: 'out', text: `$ npm i @peac/protocol@${v} @peac/crypto@${v} @peac/schema@${v}` },
+                  { kind: 'out', text: `$ npm i @peac/mcp-server@${v}` },
+                ]}
+              />
             </div>
-            <pre className="home-code" tabIndex={0} style={{ marginTop: 8, marginBottom: 0 }}>
-{`npx -y @peac/cli@${v} verify ./record.jws --public-key ./jwks.json`}
-            </pre>
-          </Card>
-        </PageSection>
-
-        <PageSection paddingBottom={48}>
-          <div
-            className="home-downloads-scope"
-            style={{ maxWidth: 760, margin: '0 auto' }}
-          >
-            <Mono
-              size={11}
-              color={PALETTE.muted}
-              style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
-            >
-              available distributions
-            </Mono>
-            <div style={{ marginTop: 16 }}>
-              <DownloadsServer />
-            </div>
-            <div style={{ marginTop: 16 }}>
-              <DownloadCardPEAC />
+            <div>
+              <p className="dl-k">Verify a signed record locally</p>
+              <Terminal
+                tone="ink"
+                lines={[
+                  { kind: 'out', text: `$ npx -y @peac/cli@${v} verify ./record.jws \\` },
+                  { kind: 'out', text: '    --public-key ./jwks.json' },
+                ]}
+              />
             </div>
           </div>
+          <DownloadCardPEAC />
         </PageSection>
 
-        <PageSection paddingBottom={112}>
-          <Card padding={28} style={{ maxWidth: 760, margin: '0 auto' }}>
-            <p
-              style={{
-                fontFamily: sans,
-                fontSize: 14,
-                lineHeight: 1.65,
-                color: PALETTE.muted,
-                margin: 0,
-              }}
-            >
-              <strong style={{ color: PALETTE.ink }}>
+        <PageSection paddingTop={24} paddingBottom={112}>
+          <div className="dl-pub">
+            <OriginaryWordmark width={132} decorative />
+            <div>
+              <p className="dl-pub-lead">
                 PEAC Protocol is published by Originary and distributed through GitHub under {FACTS.license}.
-              </strong>{' '}
-              Originary maintains the protocol specification, reference implementation, CLI, SDK packages, and verification tooling listed above.
-            </p>
-            <p
-              style={{
-                fontFamily: sans,
-                fontSize: 13,
-                lineHeight: 1.65,
-                color: PALETTE.faint,
-                margin: '18px 0 0 0',
-              }}
-            >
-              Published by Poem, Inc. Contact:{' '}
-              <a
-                href="mailto:contact@originary.xyz"
-                style={{
-                  color: PALETTE.ink,
-                  textDecoration: 'underline',
-                  textDecorationColor: 'var(--rule)',
-                  textUnderlineOffset: 3,
-                }}
-              >
-                contact@originary.xyz
-              </a>
-              .
-            </p>
-          </Card>
+              </p>
+              <p className="dl-pub-body">
+                Originary maintains the protocol specification, reference implementation, CLI, SDK packages, and
+                verification tooling listed above.
+              </p>
+              <p className="dl-pub-small">
+                Published by Poem, Inc. Contact: <a href="mailto:contact@originary.xyz">contact@originary.xyz</a>.
+              </p>
+            </div>
+          </div>
         </PageSection>
       </PageShell>
     </>
   )
 }
 
-function DownloadFact({
-  label,
-  value,
-  border,
-}: {
-  label: string
-  value: string
-  border?: boolean
-}) {
+/** Hero aside: who publishes the software, and what the current release is. */
+function ReleaseCard() {
+  const rows: Array<[string, string]> = [
+    ['publisher', 'Originary (Poem, Inc.)'],
+    ['primary distribution', 'GitHub'],
+    ['license', FACTS.license],
+    ['current release', `${FACTS.currentVersion} on npm ${FACTS.currentDistTag}`],
+    ['current wire format', FACTS.stableWireFormat],
+    ['legacy format', FACTS.legacyWireFormat],
+  ]
   return (
-    <div
-      style={{
-        padding: '20px 24px',
-        borderLeft: border ? `1px solid ${PALETTE.hairline}` : 'none',
-      }}
-    >
-      <Mono
-        size={10}
-        color={PALETTE.faint}
-        style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
-      >
-        {label}
-      </Mono>
-      <div
-        style={{
-          fontFamily: sans,
-          fontSize: 16,
-          fontWeight: 500,
-          color: PALETTE.ink,
-          marginTop: 8,
-          letterSpacing: '-0.005em',
-        }}
-      >
-        {value}
+    <div className="ha-card dl-release" aria-label="Originary Downloads: publisher and current release">
+      <div className="dl-release-mark">
+        <OriginaryWordmark width={118} />
+        <span className="dl-release-tag">Downloads</span>
       </div>
+      <dl className="ha-rows ha-rows-wide">
+        {rows.map(([k, val]) => (
+          <div key={k}>
+            <dt>{k}</dt>
+            <dd>{val}</dd>
+          </div>
+        ))}
+      </dl>
     </div>
   )
 }

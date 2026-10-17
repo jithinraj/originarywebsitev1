@@ -6,8 +6,8 @@ import { PageShell, ArticleDoc, ArticleRelated, PALETTE } from '@/components/hom
 export const metadata: Metadata = {
   title: { absolute: 'robots.txt (RFC 9309) Deep Dive | Originary' },
   description:
-    'Technical deep dive into RFC 9309, the standardized Robots Exclusion Protocol. Matching rules, error handling, and AIPREF integration.',
-  authors: [{ name: 'Jithin Raj, Founder' }],
+    'How RFC 9309 defines robots.txt matching, fetch errors, and caching, and how AIPREF usage preferences build on it.',
+  authors: [{ name: 'Originary' }],
   openGraph: {
     type: 'article',
     title: "robots.txt (RFC 9309): The Web's Crawl Access Control",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "robots.txt (RFC 9309): The Web's Crawl Access Control",
-    description: 'Understanding RFC 9309 - the standardized Robots Exclusion Protocol.',
+    description: 'RFC 9309 matching rules, fetch errors, and caching for robots.txt.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -95,21 +95,24 @@ export default function RobotsTxtRFC9309Article() {
         <ArticleDoc
           category="technical"
           title="robots.txt (RFC 9309): crawl access control for the web"
-          sub="RFC 9309 standardizes the Robots Exclusion Protocol, defining how publishers control crawler access to their content. This guide covers the specification's technical details, matching rules, error handling, and how it complements AIPREF usage preferences."
-          author="Jithin Raj, Founder"
+          sub="RFC 9309 turned a 1994 convention into a specification for how crawlers read robots.txt. The matching rules, the error and caching behavior, and where AIPREF usage preferences fit."
+          author="Originary"
           date="2025-10-14"
           readTime="5 min read"
           parent={{ label: 'Blog', href: '/blog' }}
         >
           <div style={callout}>
-            <strong>Summary.</strong> The Robots Exclusion Protocol, standardized as RFC 9309 in
-            September 2022, is the web&apos;s mechanism for <strong>crawl access control</strong>.
+            <strong>Summary.</strong> If your <code>/robots.txt</code> returns a 404, a crawler may
+            fetch anything on your site. If it returns a 503, the crawler should treat everything
+            as disallowed until the file is reachable. Rules like these are set out in RFC 9309,
+            published in September 2022, which standardized the Robots Exclusion Protocol as the
+            web&apos;s mechanism for <strong>crawl access control</strong>.
             It tells automated clients (crawlers, bots, agents) which URL paths they may fetch
             from an origin.
             <br />
             <br />
-            <strong>Critical:</strong> robots.txt is not access authorization or security. It is a
-            cooperative signal. Listing paths in robots.txt makes them discoverable. Use real
+            <strong>Not a security control.</strong> robots.txt is a cooperative signal; it does not
+            authorize or deny access. Listing paths in robots.txt makes them discoverable. Use real
             authentication for sensitive resources.
             <br />
             <br />
@@ -213,9 +216,9 @@ export default function RobotsTxtRFC9309Article() {
 
           <div style={warning}>
             <strong>Important: 4xx vs 5xx semantics.</strong> A <code>404 Not Found</code> means
-            &quot;no restrictions&quot; - crawlers may proceed. A{' '}
+            &quot;no restrictions&quot;, so crawlers may proceed. A{' '}
             <code>503 Service Unavailable</code> means &quot;assume everything is disallowed&quot;
-            until the file is reachable. This distinction is critical for proper crawler behavior.
+            until the file is reachable. Serving the wrong one changes what every compliant crawler does.
           </div>
 
           <h2>What robots.txt does NOT do</h2>
@@ -237,7 +240,7 @@ export default function RobotsTxtRFC9309Article() {
             <li>
               <strong>It does not control usage after access.</strong> robots.txt only controls
               whether a crawler <em>fetches</em> content. It says nothing about training,
-              indexing, or other downstream usage. That is where AIPREF comes in.
+              indexing, or other downstream usage. AIPREF addresses that question.
             </li>
           </ul>
 
@@ -394,8 +397,8 @@ Content-Usage: /research/ train-ai=y`}
               Together, they reduce ambiguity for publishers and responsible crawlers.
             </p>
             <p style={{ margin: 0 }}>
-              Remember: robots.txt is cooperative signaling, not security. Use real authentication
-              for sensitive resources.
+              Because robots.txt is a cooperative signal, protect sensitive resources with real
+              authentication.
             </p>
           </div>
 
@@ -438,7 +441,7 @@ Content-Usage: /research/ train-ai=y`}
               <Link href="/blog/aipref-by-ietf" style={linkStyle}>
                 AIPREF: AI Usage Preferences
               </Link>{' '}
-              - comprehensive guide to the AIPREF specification.
+              - our guide to the AIPREF drafts.
             </li>
           </ul>
         </ArticleDoc>

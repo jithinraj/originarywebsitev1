@@ -6,8 +6,8 @@ import { PageShell, ArticleDoc, ArticleRelated, PALETTE } from '@/components/hom
 export const metadata: Metadata = {
   title: { absolute: 'HTTP 402 on Cloudflare Workers | Originary' },
   description:
-    'Deploy HTTP 402 responses at the edge with Cloudflare Workers. Zero cold starts, KV storage, and Web Crypto API for verification.',
-  authors: [{ name: 'Jithin Raj, Founder' }],
+    'Serve HTTP 402 responses at the edge with Cloudflare Workers, using KV for challenges and the Web Crypto API for receipt verification.',
+  authors: [{ name: 'Originary' }],
   alternates: { canonical: '/blog/cloudflare-workers-402' },
   openGraph: {
     title: 'HTTP 402 on Cloudflare Workers',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: 'article',
     url: '/blog/cloudflare-workers-402',
     publishedTime: '2025-11-03',
-    authors: ['Jithin Raj', 'Originary Team'],
+    authors: ['Originary'],
     images: ['/og'],
     siteName: 'Originary',
   },
@@ -77,15 +77,15 @@ export default function Page() {
           title="HTTP 402 on Cloudflare Workers"
           sub={
             <>
-              Want{' '}
+              Build{' '}
               <Link href="/peac" style={linkStyle}>
                 HTTP 402 payment gates
               </Link>{' '}
-              that respond in under 50ms worldwide? Deploy them at the edge with Cloudflare
-              Workers. Here is how.
+              that respond in under 50ms worldwide by deploying them at the edge with Cloudflare
+              Workers.
             </>
           }
-          author="Jithin Raj, Founder"
+          author="Originary"
           date="2025-11-03"
           readTime="2 min read"
           parent={{ label: 'Blog', href: '/blog' }}
@@ -98,7 +98,7 @@ export default function Page() {
             <li><strong>Cold starts.</strong> Serverless functions spin up, 500ms to 2s delay.</li>
             <li><strong>Single point of failure.</strong> One region down, whole API down.</li>
           </ul>
-          <p>Edge computing solves all three:</p>
+          <p>Running at the edge addresses each of these:</p>
           <ul>
             <li>Deploy to <strong>300+ edge locations</strong> globally</li>
             <li><strong>Zero cold starts.</strong> Workers are always warm</li>
@@ -172,8 +172,8 @@ async function handlePriced(request, env) {
             origin servers, no cold starts, no vendor lock-in (Web Crypto API works everywhere).
           </p>
           <p>
-            If you are building agent-to-agent commerce systems, edge deployment is the only sane
-            choice. Agents do not wait 500ms for cold starts.
+            If you are building agent-to-agent commerce systems, start at the edge, where cold
+            starts do not add latency to an agent&apos;s request.
           </p>
           <p>
             See the{' '}

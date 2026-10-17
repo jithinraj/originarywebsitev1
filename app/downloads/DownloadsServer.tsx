@@ -13,6 +13,15 @@ async function getManifest() {
   }
 }
 
+type ManifestFile = {
+  filename: string
+  platform: string
+  description?: string
+  url?: string
+  size: number
+  sha256?: string
+}
+
 export default async function DownloadsServer() {
   const manifest = await getManifest()
 
@@ -28,112 +37,44 @@ export default async function DownloadsServer() {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i]
   }
 
-  return (
-    <div style={{ display: 'grid', gap: 'var(--space-6)', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))' }}>
-      {manifest.files.map((file: any) => (
-        <div
-          key={file.filename}
-          style={{
-            border: '1px solid var(--hairline)',
-            borderRadius: 'var(--radius-card)',
-            padding: 'var(--space-6)',
-            background: 'var(--paper)'
-          }}
-        >
-          <div style={{
-            marginBottom: 'var(--space-4)'
-          }}>
-            <h2 style={{
-              fontSize: 'var(--text-lg)',
-              fontWeight: 500,
-              marginBottom: 'var(--space-2)'
-            }}>
-              {file.platform === 'Templates' ? 'PEAC Templates' : `PEAC Protocol - ${file.platform}`}
-            </h2>
-            <p style={{
-              color: 'var(--ink-2)',
-              fontSize: 'var(--text-sm)',
-              marginBottom: 'var(--space-1)'
-            }}>
-              {file.description || (file.platform === 'Templates'
-                ? 'Ready-to-use policy templates for different use cases'
-                : 'Command-line tool for verifying PEAC policy files')
-              }
-            </p>
-            <p style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: 'var(--text-xs)',
-              color: 'var(--muted)',
-              fontWeight: 500,
-              marginBottom: 'var(--space-3)',
-              wordBreak: 'break-all'
-            }}>
-              {file.filename}
-            </p>
-            <a
-              href={file.url || `/downloads/${file.filename}`}
-              target={file.url ? '_blank' : undefined}
-              rel={file.url ? 'noopener noreferrer' : undefined}
-              download={!file.url}
-              aria-label={`Download ${file.filename}`}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 'var(--space-2)',
-                padding: 'var(--space-2) var(--space-3)',
-                background: 'var(--action)',
-                color: 'var(--on-action)',
-                textDecoration: 'none',
-                borderRadius: 'var(--radius-panel)',
-                fontSize: 'var(--text-sm)',
-                fontWeight: 500
-              }}
-            >
-              <Download size={16} />
-              Download
-            </a>
-          </div>
+  const version = manifest.version === 'latest' ? 'latest' : `v${manifest.version}`
 
-          <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: 'var(--space-4)',
-            alignItems: 'center',
-            fontSize: 'var(--text-sm)',
-            color: 'var(--ink-2)'
-          }}>
-            <span>v{manifest.version}</span>
-            {file.size > 0 && (
-              <>
-                <span>·</span>
-                <span>{formatBytes(file.size)}</span>
-              </>
-            )}
-            {file.sha256 && (
-              <>
-                <span>·</span>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
-                  <span>SHA-256:</span>
-                  <code style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: 'var(--text-xs)',
-                    background: 'var(--code-bg)',
-                    padding: '2px 4px',
-                    borderRadius: 'var(--radius-sm)',
-                    wordBreak: 'break-all'
-                  }}>
-                    {file.sha256}
-                  </code>
-                </div>
-              </>
-            )}
-            {file.url && (
-              <>
-                <span>·</span>
-                <span>GitHub Release</span>
-              </>
-            )}
-          </div>
+  return (
+    <div className="dl-files">
+      {manifest.files.map((file: ManifestFile) => (
+        <div key={file.filename} className="dl-file">
+          <p className="dl-file-by">Originary</p>
+          <h3 className="dl-file-t">
+            {file.platform === 'Templates' ? 'PEAC Templates' : `PEAC Protocol, ${file.platform}`}
+          </h3>
+          <p className="dl-file-d">
+            {file.description ||
+              (file.platform === 'Templates'
+                ? 'Ready-to-use policy templates for different use cases'
+                : 'Command-line tool for verifying PEAC policy files')}
+          </p>
+          <p className="dl-file-name">{file.filename}</p>
+          <p className="dl-file-meta">
+            <span>{version}</span>
+            {file.size > 0 && <span>{formatBytes(file.size)}</span>}
+            {file.url && <span>from GitHub</span>}
+          </p>
+          {file.sha256 && (
+            <p className="dl-file-sha">
+              SHA-256: <code>{file.sha256}</code>
+            </p>
+          )}
+          <a
+            className="dl-file-btn"
+            href={file.url || `/downloads/${file.filename}`}
+            target={file.url ? '_blank' : undefined}
+            rel={file.url ? 'noopener noreferrer' : undefined}
+            download={!file.url}
+            aria-label={`Download ${file.filename}`}
+          >
+            <Download size={16} aria-hidden />
+            Download
+          </a>
         </div>
       ))}
     </div>

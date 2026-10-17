@@ -1,15 +1,16 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FACTS } from '@/lib/facts'
-import { PageShell, PageHero, PageSection, Card, PALETTE } from '@/components/home'
-import { Mono } from '@/components/home/atoms/Mono'
-import { DataTable, StepLabel, VerificationBoundary } from '@/components/specimens/parts'
+import { PageShell, PageHero, PageSection, SectionHeading, Button } from '@/components/home'
+import { DataTable } from '@/components/specimens/parts'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
+import { TrustGlance } from '@/components/heroes/HeroArtifacts'
+import './trust.css'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Originary deployment, verification, and security boundaries' },
+  title: { absolute: 'Trust center: keys, data and security | Originary' },
   description:
-    'Review current key-custody, network, data, retention, telemetry, supply-chain, and support boundaries.',
+    'Where Originary stands today on key custody, hosting, data processing, retention, subprocessors, supply chain, certifications and vulnerability disclosure.',
   openGraph: {
     title: 'Trust Center | Originary',
     description:
@@ -32,732 +33,301 @@ export const metadata: Metadata = {
   alternates: { canonical: '/trust' },
 }
 
-const sans = 'var(--font-sans), "IBM Plex Sans", system-ui, sans-serif'
-const mono = 'var(--font-mono), "IBM Plex Mono", monospace'
+const REPO_TREE = `https://github.com/peacprotocol/peac/tree/${FACTS.currentVersion}/`
+const REPO_BLOB = `https://github.com/peacprotocol/peac/blob/${FACTS.currentVersion}/`
+// Files link to /blob/, folders to /tree/, so no link goes through a redirect.
+const repoHref = (p: string) => (/\.[a-z0-9]+$/i.test(p) ? REPO_BLOB : REPO_TREE) + p
 
-const linkStyle = {
-  color: PALETTE.ink,
-  textDecoration: 'underline',
-  textDecorationColor: 'var(--rule)',
-  textUnderlineOffset: 3,
-}
-
-const proseStyle = {
-  fontFamily: sans,
-  fontSize: 15,
-  lineHeight: 1.7,
-  color: PALETTE.muted,
-  margin: '0 0 14px 0',
-  textWrap: 'pretty' as const,
-}
-
-const codeStyle = {
-  fontFamily: mono,
-  fontSize: '0.92em',
-  background: 'var(--code-bg)',
-  padding: '2px 5px',
-  border: `1px solid var(--hairline)`,
-  color: PALETTE.ink,
-}
-
-const headStyle = {
-  fontFamily: sans,
-  fontSize: 20,
-  lineHeight: 1.2,
-  fontWeight: 500,
-  letterSpacing: '-0.01em',
-  color: PALETTE.ink,
-  margin: '0 0 14px 0',
-}
-
-const cardTitleStyle = {
-  fontFamily: sans,
-  fontSize: 17,
-  fontWeight: 500,
-  letterSpacing: '-0.01em',
-  color: PALETTE.ink,
-  margin: '0 0 8px 0',
-}
-
-const cardDescStyle = {
-  fontFamily: sans,
-  fontSize: 14,
-  lineHeight: 1.6,
-  color: PALETTE.muted,
-  margin: '0 0 16px 0',
-}
-
-const artifactGridItems: Array<{ label: string; href: string; external?: boolean }> = [
-  { label: 'Security', href: '/security' },
-  { label: 'Privacy', href: '/privacy' },
-  { label: 'Terms', href: '/terms' },
-  { label: 'GitHub', href: 'https://github.com/peacprotocol/peac', external: true },
-  { label: 'Deployment model', href: '/pricing' },
-  { label: 'PEAC protocol', href: '/peac' },
-  { label: 'security.txt', href: '/.well-known/security.txt', external: true },
-  { label: 'Contact', href: '/contact' },
-]
-
-const trustCards: Array<{
-  label: string
-  title: string
-  description: string
-  links: Array<{ href: string; label: string; external?: boolean }>
-}> = [
-  {
-    label: 'security',
-    title: 'Security',
-    description: 'Responsible disclosure policy and security reporting guidelines.',
-    links: [
-      { href: '/security', label: 'Security Disclosure Policy' },
-      { href: '/.well-known/security.txt', label: 'security.txt (RFC 9116)', external: true },
-    ],
-  },
-  {
-    label: 'protocol',
-    title: 'Protocol',
-    description: 'PEAC protocol specifications and AI preference frameworks.',
-    links: [
-      { href: '/.well-known/peac.txt', label: 'peac.txt Specification', external: true },
-      { href: '/.well-known/aipref.json', label: 'aipref.json (AI Preferences)', external: true },
-      { href: '/robots.txt', label: 'robots.txt (RFC 9309)', external: true },
-    ],
-  },
-  {
-    label: 'verification',
-    title: 'Verification',
-    description: 'Tools and services for signature validation and evidence verification.',
-    links: [
-      { href: '/verify', label: 'Local Verification Instructions' },
-      { href: '/records', label: 'Record Gallery' },
-    ],
-  },
-  {
-    label: 'legal',
-    title: 'Legal',
-    description: 'Terms, privacy policy, and compliance documentation.',
-    links: [
-      { href: '/terms', label: 'Terms of Service' },
-      { href: '/privacy', label: 'Privacy Policy' },
-      { href: '/copyright', label: 'Copyright Policy' },
-    ],
-  },
-  {
-    label: 'architecture',
-    title: 'Security architecture',
-    description: 'How the system is built to keep your data and keys safe.',
-    links: [
-      { href: '/pricing', label: 'Deployment options and pricing' },
-      { href: '/.well-known/security.txt', label: 'security.txt (RFC 9116)', external: true },
-      { href: 'https://github.com/peacprotocol/peac/security', label: 'GitHub Security Advisories', external: true },
-    ],
-  },
-  {
-    label: 'company',
-    title: 'Company',
-    description: 'Corporate information and brand guidelines.',
-    links: [
-      { href: '/about', label: 'About Originary' },
-      { href: '/trademark', label: 'Trademark Guidelines' },
-      { href: '/contact', label: 'Contact' },
-    ],
-  },
-  {
-    label: 'portability',
-    title: 'Portability',
-    description: 'Export and interoperability guarantees for your records and keys.',
-    links: [
-      { href: '/peac', label: 'Protocol Overview' },
-      {
-        href: 'https://github.com/peacprotocol/peac/tree/main/specs/conformance',
-        label: 'Conformance Suite',
-        external: true,
-      },
-      { href: '/verify', label: 'Offline Verification' },
-    ],
-  },
-]
-
-function KeyPoint({ children }: { children: React.ReactNode }) {
+function Evidence({ paths }: { paths: string[] }) {
   return (
-    <div
-      style={{
-        marginTop: 16,
-        padding: '14px 18px',
-        background: PALETTE.bg,
-        border: `1px solid ${PALETTE.hairline}`,
-        fontFamily: sans,
-        fontSize: 14,
-        lineHeight: 1.6,
-        color: PALETTE.ink,
-      }}
-    >
+    <span className="tr-mono">
+      {paths.map((p, i) => (
+        <span key={p}>
+          {i > 0 ? <br /> : null}
+          <a className="tr-a" href={repoHref(p)} target="_blank" rel="noopener noreferrer">
+            {p}
+          </a>
+        </span>
+      ))}
+    </span>
+  )
+}
+
+function L({ href, children, external }: { href: string; children: React.ReactNode; external?: boolean }) {
+  return external ? (
+    <a className="tr-a" href={href} target="_blank" rel="noopener noreferrer">
       {children}
-    </div>
+    </a>
+  ) : (
+    <Link className="tr-a" href={href}>
+      {children}
+    </Link>
   )
 }
 
-function BoundaryCard({ label, items }: { label: string; items: string[] }) {
-  return (
-    <div
-      style={{
-        background: PALETTE.bg,
-        border: `1px solid ${PALETTE.hairline}`,
-        padding: 20,
-      }}
-    >
-      <Mono
-        size={11}
-        color={PALETTE.faint}
-        style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
-      >
-        {label}
-      </Mono>
-      <ul
-        style={{
-          margin: '12px 0 0 0',
-          padding: '0 0 0 18px',
-          fontFamily: sans,
-          fontSize: 14,
-          lineHeight: 1.7,
-          color: PALETTE.muted,
-        }}
-      >
-        {items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </div>
-  )
-}
+const interop: Array<[string, string, string[]]> = [
+  ['MCP', 'Shipped mapping', ['packages/mappings/mcp', 'packages/mcp-server', 'examples/mcp-gateway-receipts']],
+  ['x402', 'Shipped adapter', ['packages/adapters/x402', 'examples/x402-paid-resource-records']],
+  ['OpenTelemetry', 'Shipped adapter', ['packages/telemetry-otel', 'docs/guides/telemetry-otel-correlation.md']],
+  ['A2A', 'Shipped mapping', ['packages/mappings/a2a', 'examples/a2a-gateway-pattern']],
+  ['MPP / paymentauth', 'Shipped mapping', ['packages/mappings/paymentauth', 'examples/mpp-payment-record']],
+  ['UCP', 'Shipped mapping', ['packages/mappings/ucp', 'examples/ucp-webhook-express']],
+  ['ACP', 'Shipped mapping', ['packages/mappings/acp', 'examples/acp-session-lifecycle']],
+  ['AP2', 'Written composition', ['docs/specs/AP2-COMPOSITION.md', 'specs/conformance/interop/ap2-open-mandate-hash']],
+  ['Stripe', 'Written composition', ['docs/interop/SIGNED-RECORDS-INTEROP-MATRIX.md', 'integrator-kits/stripe-projects']],
+  ['Cloudflare', 'Example', ['surfaces/workers/cloudflare', 'examples/cf-policy-x402-terms']],
+]
 
 export default function TrustPage() {
   return (
     <PageShell>
-      <Breadcrumbs current="Trust" href="/trust" />
+      <Breadcrumbs current="Trust center" href="/trust" />
       <PageHero
         eyebrow="trust center"
-        title="Clear deployment and verification boundaries."
-        sub="Review current key-custody, network, data, retention, telemetry, supply-chain, and support boundaries. Every claim links to the artifact that backs it."
-        strip={['Deployment modes', 'Key custody', 'Data boundaries', 'PEAC ' + FACTS.currentVersion]}
+        title="Where your keys, data and records live."
+        sub="Key custody, network, data, retention and support, stated as current positions rather than roadmap."
+        aside={
+          <TrustGlance
+            items={[
+              ['Hosting', 'None', 'Self-hosted. Originary runs no verification service.'],
+              ['Key custody', 'Yours', 'Local or your KMS. Originary never holds signing keys.'],
+              ['Certifications', 'None claimed', 'No SOC 2 or ISO 27001 audit has been completed.'],
+              ['Disclosure', '5 business days', 'To acknowledge a security report.'],
+            ]}
+          />
+        }
       >
-        <p
-          style={{
-            fontFamily: sans,
-            fontSize: 14,
-            lineHeight: 1.6,
-            color: PALETTE.faint,
-            margin: '8px 0 0',
-            maxWidth: 620,
-            textWrap: 'pretty',
-          }}
-        >
-          Relevant for AI agent workflows, APIs, MCP systems, enterprise reviews, and any workflow where verification
-          must survive beyond the original vendor boundary.
-        </p>
+        <Button href="/contact" primary>
+          Start a pilot
+        </Button>
       </PageHero>
 
-      <PageSection paddingTop={16} paddingBottom={32}>
-        <div
-          className="home-trust-chips"
-          style={{
-            maxWidth: 880,
-            margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(160px, 100%), 1fr))',
-            gap: 12,
-          }}
-        >
-          {artifactGridItems.map((item) =>
-            item.external ? (
-              <a
-                key={item.label}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '12px 16px',
-                  background: PALETTE.paper,
-                  border: `1px solid ${PALETTE.hairline}`,
-                  fontFamily: sans,
-                  fontSize: 13,
-                  fontWeight: 500,
-                  color: PALETTE.ink,
-                  textDecoration: 'none',
-                  textAlign: 'center',
-                  minHeight: 44,
-                }}
-              >
-                {item.label}
-              </a>
-            ) : (
-              <Link
-                key={item.label}
-                href={item.href}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '12px 16px',
-                  background: PALETTE.paper,
-                  border: `1px solid ${PALETTE.hairline}`,
-                  fontFamily: sans,
-                  fontSize: 13,
-                  fontWeight: 500,
-                  color: PALETTE.ink,
-                  textDecoration: 'none',
-                  textAlign: 'center',
-                  minHeight: 44,
-                }}
-              >
-                {item.label}
-              </Link>
-            ),
-          )}
+
+      <PageSection paddingBottom={64}>
+        <SectionHeading eyebrow="procurement" title="Answers your review team will ask for." />
+        <DataTable
+          head={['Procurement fact', 'Current position']}
+          rows={[
+            [
+              'Hosting mode',
+              <>
+                Self-hosted. The software runs in your infrastructure; Originary operates no hosted verification
+                service. <L href="/pricing">Deployment options</L>.
+              </>,
+            ],
+            [
+              'Key custody',
+              <>
+                Yours. The issuer generates and holds its Ed25519 keys locally or in your KMS. Originary never holds
+                signing keys. <L href="/security">Key management</L>.
+              </>,
+            ],
+            [
+              'Data processed by Originary',
+              <>
+                None from verification, which runs in your environment. Website only: consent-gated analytics and what
+                you send through the contact form. <L href="/privacy">Privacy policy</L>.
+              </>,
+            ],
+            [
+              'Retention',
+              <>
+                Website data is kept only as long as needed for the stated purpose and legal obligations, then deleted
+                or anonymized. <L href="/privacy">Privacy policy</L>.
+              </>,
+            ],
+            [
+              'Subprocessors',
+              <>
+                Processors for hosting, payments, and support under contractual safeguards. Some support operations are
+                performed by an India affiliate under SCCs and DPAs. <L href="/privacy">Privacy policy</L>.
+              </>,
+            ],
+            [
+              'Data residency',
+              <>
+                Not applicable to verification, which never leaves your environment. Website processing may occur
+                outside your country with the safeguards described in the <L href="/privacy">privacy policy</L>.
+              </>,
+            ],
+            [
+              'Supply chain',
+              <>
+                npm packages use OIDC trusted publishing and SLSA build provenance; releases carry SSH-signed annotated
+                tags. <L href="/security">Supply-chain posture</L>.
+              </>,
+            ],
+            [
+              'Certifications held',
+              'None. No SOC 2, ISO 27001, or comparable third-party audit has been completed, and none is claimed.',
+            ],
+            [
+              'SLA and support',
+              'No SLA on the open-source protocol; support there is community-based via GitHub. Support scope and response commitments apply only where set out in a written agreement.',
+            ],
+            [
+              'Incident process',
+              <>
+                Report to <L href="mailto:security@originary.xyz">security@originary.xyz</L>. Reports are acknowledged
+                within 5 business days and triaged by severity. <L href="/security">Disclosure policy</L>,{' '}
+                <L href="/.well-known/security.txt" external>
+                  security.txt
+                </L>
+                .
+              </>,
+            ],
+            [
+              'Responsible contact',
+              <>
+                <L href="mailto:security@originary.xyz">security@originary.xyz</L> for security,{' '}
+                <L href="mailto:privacy@originary.xyz">privacy@originary.xyz</L> for data requests,{' '}
+                <L href="mailto:contact@originary.xyz">contact@originary.xyz</L> for everything else.
+              </>,
+            ],
+            [
+              'Evidence',
+              <>
+                <L href="/security">Security</L>, <L href="/privacy">privacy policy</L>, and the{' '}
+                <L href="https://github.com/peacprotocol/peac" external>
+                  public repository
+                </L>
+                .
+              </>,
+            ],
+          ]}
+        />
+        <p className="tr-small">
+          Each row states the current position, not a roadmap commitment. If your review needs something not listed
+          here, <L href="/contact">contact us</L> and we will answer it directly.
+        </p>
+      </PageSection>
+
+      <PageSection paddingBottom={64}>
+        <SectionHeading
+          eyebrow="interoperability"
+          title="What composes with PEAC, and how far it goes."
+          sub={`Each row states what exists in the open repository at ${FACTS.currentVersion}. A shipped adapter or mapping is code you can read and run; a written composition is a mapping with conformance vectors; an example is a runnable demonstration.`}
+        />
+        <DataTable
+          head={['System', 'Status', 'Evidence in the repository']}
+          labelColumnsOnMobile
+          rows={interop.map(([name, status, paths]) => [name, status, <Evidence key={name} paths={paths} />])}
+        />
+        <p className="tr-small">
+          <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>
+            No partnership, certification, or endorsement is implied.
+          </strong>{' '}
+          These are interoperability surfaces PEAC composes with, not relationships with the organizations behind them.
+          Product names, logos, and brands belong to their respective owners. Dated per-row detail lives in the
+          repository&apos;s interop matrix.
+        </p>
+      </PageSection>
+
+      <PageSection paddingBottom={64}>
+        <SectionHeading eyebrow="verification" title="How verification works." />
+        <div className="tr-cols">
+          <div>
+            <h3 className="tr-h3">Verifying a record</h3>
+            <p className="tr-p">
+              Every interaction record is a signed JSON Web Signature (JWS). The issuer signs the claims with a private
+              key; any verifier checks the signature against the issuer&apos;s public key. Any conforming JOSE
+              implementation can check the signature; full PEAC validation also checks the record profile and required
+              fields.
+            </p>
+            <p className="tr-p">
+              Verification does not call Originary. In strict offline mode the key is supplied and there is no network
+              request. In explicit-resolution mode the caller authorizes a single JWKS fetch, then validates locally.
+              Verification also depends on trusted issuer key material and on the verifier&apos;s cache, expiry, and
+              revocation policy.
+            </p>
+          </div>
+          <div>
+            <h3 className="tr-h3">Cryptography and keys</h3>
+            <p className="tr-p">
+              Ed25519 only, standardized in RFC 8032, with compact 32-byte public keys. You bring your own keys, under
+              infrastructure you control, using an Ed25519-compatible KMS or HSM where appropriate. In the self-hosted
+              workflow Originary does not receive or store private signing keys.
+            </p>
+            <p className="tr-p">
+              Records are standard JWS tokens, not stored in a proprietary database or tied to an Originary account. You
+              can export, archive and move them. The protocol is designed for multiple independent implementations.
+            </p>
+          </div>
         </div>
       </PageSection>
 
-      <PageSection paddingBottom={48}>
-        <div
-          style={{
-            maxWidth: 880,
-            margin: '0 auto',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 24,
-          }}
-        >
+      <PageSection paddingBottom={64}>
+        <SectionHeading
+          eyebrow="data boundaries"
+          title="What stays with you, and what you publish."
+          sub="The signing libraries, verification functions and SDK run in your environment. They do not send interaction data, record contents or business payloads to Originary."
+        />
+        <div className="tr-cols">
           <div>
-            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-              the matrix
-            </Mono>
-            <h2 style={{ ...headStyle, marginTop: 12 }}>What runs where, and who holds what.</h2>
-            <div style={{ marginTop: 18 }}>
-              <DataTable
-                head={['', 'Open source', 'Supported self-host']}
-                rows={[
-                  ['Where it runs', 'Your infrastructure', 'Your infrastructure'],
-                  ['Key custody', 'You. Local or your KMS.', 'You. Local or your KMS.'],
-                  ['Interaction data', 'Processed in your environment (self-hosted)', 'Processed in your environment (under agreement)'],
-                  ['Support', 'Community (GitHub)', 'Under agreement'],
-                  ['Verification', 'Offline, no callback', 'Offline, no callback'],
-                ]}
-              />
-            </div>
-            <p style={{ ...proseStyle, fontSize: 13, marginTop: 12 }}>
-              Originary does not host verification, custody keys, or store your records. Anything not listed here is not
-              offered. Verification never requires Originary to be online in any mode.
-            </p>
+            <h3 className="tr-h3">Stays in your environment</h3>
+            <ul className="tr-list">
+              <li>Private signing keys</li>
+              <li>Interaction payloads and business data</li>
+              <li>Record contents and claims</li>
+              <li>Verification results and decisions</li>
+            </ul>
           </div>
-
           <div>
-            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-              procurement
-            </Mono>
-            <h2 style={{ ...headStyle, marginTop: 12 }}>Answers your review team will ask for.</h2>
-            <div style={{ marginTop: 18 }}>
-              <DataTable
-                head={['Procurement fact', 'Current position']}
-                rows={[
-                  [
-                    'Hosting mode',
-                    'Self-hosted. The software runs in your infrastructure; Originary operates no hosted verification service.',
-                  ],
-                  [
-                    'Key custody',
-                    'Yours. The issuer generates and holds its Ed25519 keys locally or in your KMS. Originary never holds signing keys.',
-                  ],
-                  [
-                    'Data processed by Originary',
-                    'None from verification, which runs in your environment. Website only: consent-gated analytics and what you send through the contact form.',
-                  ],
-                  [
-                    'Retention',
-                    'Website data is kept only as long as needed for the stated purpose and legal obligations, then deleted or anonymized.',
-                  ],
-                  [
-                    'Subprocessors',
-                    'Processors for hosting, payments, and support under contractual safeguards. Some support operations are performed by an India affiliate under SCCs and DPAs.',
-                  ],
-                  [
-                    'Data residency',
-                    'Not applicable to verification, which never leaves your environment. Website processing may occur outside your country with the safeguards described in the privacy policy.',
-                  ],
-                  [
-                    'Certifications held',
-                    'None. No SOC 2, ISO 27001, or comparable third-party audit has been completed, and none is claimed.',
-                  ],
-                  [
-                    'SLA and support',
-                    'No SLA on the open-source protocol; support there is community-based via GitHub. Support scope and response commitments apply only where set out in a written agreement.',
-                  ],
-                  [
-                    'Incident process',
-                    'Report to security@originary.xyz. Reports are acknowledged within 5 business days and triaged by severity.',
-                  ],
-                  [
-                    'Responsible contact',
-                    'security@originary.xyz for security, privacy@originary.xyz for data requests, contact@originary.xyz for everything else.',
-                  ],
-                  [
-                    'Evidence',
-                    'The security page, the privacy policy, and the public repository at github.com/peacprotocol/peac.',
-                  ],
-                ]}
-              />
-            </div>
-            <p style={{ ...proseStyle, fontSize: 13, marginTop: 12 }}>
-              See also protocol mappings and{' '}<Link href="/ai-compliance" style={{ color: PALETTE.ink, textDecoration: 'underline', textUnderlineOffset: 3 }}>AI compliance evidence</Link>. Each row states the current position rather than a roadmap commitment. If your review needs something not
-              listed here, contact us and we will answer it directly.
-            </p>
+            <h3 className="tr-h3">Published by you</h3>
+            <ul className="tr-list">
+              <li>Public keys (JWKS endpoint)</li>
+              <li>Issuer configuration (peac-issuer.json)</li>
+              <li>Policy metadata (peac.txt)</li>
+              <li>Signed records you choose to share</li>
+            </ul>
           </div>
-
-          <div>
-            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-              interoperability
-            </Mono>
-            <h2 style={{ ...headStyle, marginTop: 12 }}>What composes with PEAC, and how far it goes.</h2>
-            <p style={{ ...proseStyle, marginTop: 10 }}>
-              Each row states what actually exists in the open repository at {FACTS.currentVersion}. A shipped adapter or
-              mapping is code you can read and run; a documented composition is a written mapping with conformance
-              vectors; an example is a runnable demonstration. Nothing is listed without an artifact behind it.
-            </p>
-            <div style={{ marginTop: 18 }}>
-              <DataTable
-                head={['System', 'Status', 'Evidence in the repository']}
-                rows={[
-                  ['MCP', 'shipped_mapping', 'packages/mappings/mcp, packages/mcp-server, examples/mcp-gateway-receipts'],
-                  ['x402', 'shipped_adapter', 'packages/adapters/x402, examples/x402-paid-resource-records'],
-                  ['OpenTelemetry', 'shipped_adapter', 'packages/telemetry-otel, docs/guides/telemetry-otel-correlation.md'],
-                  ['A2A', 'shipped_mapping', 'packages/mappings/a2a, examples/a2a-gateway-pattern'],
-                  ['MPP / paymentauth', 'shipped_mapping', 'packages/mappings/paymentauth, examples/mpp-payment-record'],
-                  ['UCP', 'shipped_mapping', 'packages/mappings/ucp, examples/ucp-webhook-express'],
-                  ['ACP', 'shipped_mapping', 'packages/mappings/acp, examples/acp-session-lifecycle'],
-                  ['AP2', 'documented_composition', 'docs/specs/AP2-COMPOSITION.md, specs/conformance/interop/ap2-open-mandate-hash'],
-                  ['Stripe', 'documented_composition', 'docs/interop/SIGNED-RECORDS-INTEROP-MATRIX.md, integrator-kits/stripe-projects'],
-                  ['Cloudflare', 'example', 'surfaces/workers/cloudflare, examples/cf-policy-x402-terms'],
-                ]}
-              />
-            </div>
-            <p style={{ ...proseStyle, fontSize: 13, marginTop: 12 }}>
-              <strong style={{ color: PALETTE.ink }}>
-                No partnership, certification, or endorsement is implied.
-              </strong>{' '}
-              These are interoperability surfaces PEAC composes with, not relationships with the organizations behind
-              them. Product names, logos, and brands belong to their respective owners. Each row is verifiable at{' '}
-              <a
-                href="https://github.com/peacprotocol/peac"
-                style={{ color: PALETTE.ink, textDecoration: 'underline', textUnderlineOffset: 3 }}
-              >
-                github.com/peacprotocol/peac
-              </a>
-              , and the dated per-row detail lives in that repository&apos;s interop matrix.
-            </p>
-          </div>
-
-          <Card padding={28}>
-            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-              verification model
-            </Mono>
-            <h2 style={{ ...headStyle, marginTop: 12 }}>Verification model</h2>
-            <p style={proseStyle}>
-              Every interaction record is a signed JSON Web Signature (JWS). When a record is issued, the issuer signs
-              the claims payload with their private key. Any verifier, your code, a third-party auditor, or an offline
-              script, can verify the signature using the issuer&apos;s published public key.
-            </p>
-            <p style={proseStyle}>
-              Verification does not call Originary. After issuer key resolution, records can be verified locally or
-              offline according to the verifier&apos;s cache, expiry, and revocation policy. In explicit-resolution mode
-              the verifier retrieves the issuer&apos;s published JWKS once, only when the caller authorizes it, then
-              validates signatures locally; strict offline mode takes a supplied key and performs no network request. If the
-              issuer is temporarily unreachable, verifiers may use previously cached public keys. The signed record
-              carries the fields needed to confirm what happened, when, and who attested to it.
-            </p>
-            <KeyPoint>
-              Records are portable; verification also requires trusted issuer key material. In strict offline mode
-              that key is supplied and there is no network request; in explicit-resolution mode the caller authorizes
-              the JWKS fetch. No mode calls back to Originary.
-            </KeyPoint>
-          </Card>
-
-          <div>
-            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-              the boundary
-            </Mono>
-            <h2 style={{ ...headStyle, marginTop: 12, marginBottom: 20 }}>
-              What a verified record does and does not establish.
-            </h2>
-            <VerificationBoundary />
-          </div>
-
-          <Card padding={28}>
-            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-              cryptography
-            </Mono>
-            <h2 style={{ ...headStyle, marginTop: 12 }}>Cryptography and key management</h2>
-            <p style={proseStyle}>
-              PEAC uses Ed25519, a widely deployed modern signature scheme standardized in RFC 8032. Keys are compact
-              (32-byte public keys) and verification is fast.
-            </p>
-            <p style={proseStyle}>
-              You bring your own keys. Generate and store signing keys under infrastructure you control, using an
-              Ed25519-compatible KMS or HSM where appropriate. In the current self-hosted workflow, Originary does not
-              receive or store private signing keys. Issuers distribute public keys through infrastructure they control
-              or out of band; the documented Originary verification flow uses a public key supplied by the verifier.
-            </p>
-            <KeyPoint>Ed25519 only. Bring-your-own keys. In the self-hosted workflow, Originary does not receive your private signing keys.</KeyPoint>
-          </Card>
-
-          <Card padding={28}>
-            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-              portability
-            </Mono>
-            <h2 style={{ ...headStyle, marginTop: 12 }}>Portability and offline verification</h2>
-            <p style={proseStyle}>
-              Signed records are standard JWS tokens. They are not stored in a proprietary database or locked to an
-              Originary account. You can export them, archive them, move them between systems, or store them in your
-              own infrastructure. Any conforming JOSE implementation can check the Ed25519 signature; full PEAC
-              validation also checks the PEAC record profile, required fields, and applicable semantic constraints.
-            </p>
-            <p style={proseStyle}>
-              Offline verification works by design. Once you have the issuer&apos;s public key (from their JWKS endpoint
-              or cached locally), you can verify any record without network access. There is no license server, no
-              token refresh, and no API call required to confirm a signature.
-            </p>
-            <p style={proseStyle}>
-              The PEAC protocol is designed for multiple independent implementations. Your records are not tied to
-              Originary&apos;s software. Any conformant implementation can issue, verify, and process the same records.
-            </p>
-            <KeyPoint>Standard JWS format. Verify offline with cached keys. No vendor lock-in. Records are yours.</KeyPoint>
-          </Card>
-
-          <Card padding={28}>
-            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-              data boundaries
-            </Mono>
-            <h2 style={{ ...headStyle, marginTop: 12 }}>Data handling boundaries</h2>
-            <p style={proseStyle}>
-              Originary&apos;s tooling operates locally by default. The signing libraries, verification functions, and
-              protocol SDK run in your environment. They do not send interaction data, record contents, or business
-              payloads to Originary servers.
-            </p>
-            <div
-              className="home-trust-boundary-grid"
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                gap: 16,
-                margin: '24px 0',
-              }}
-            >
-              <BoundaryCard
-                label="Stays in your environment"
-                items={[
-                  'Private signing keys',
-                  'Interaction payloads and business data',
-                  'Record contents and claims',
-                  'Verification results and decisions',
-                ]}
-              />
-              <BoundaryCard
-                label="Published by you"
-                items={[
-                  'Public keys (JWKS endpoint)',
-                  'Issuer configuration (peac-issuer.json)',
-                  'Policy metadata (peac.txt)',
-                  'Signed records you choose to share',
-                ]}
-              />
-            </div>
-            <p style={proseStyle}>
-              Originary does not run a hosted verification service, dashboards, or record storage. If you engage
-              Originary for a scoped pilot or supported self-host, data handling for that engagement is covered in our{' '}
-              <Link href="/privacy" style={linkStyle}>
-                Privacy Policy
-              </Link>
-              .
-            </p>
-          </Card>
-
-          <Card padding={28}>
-            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-              responsible disclosure
-            </Mono>
-            <h2 style={{ ...headStyle, marginTop: 12 }}>Responsible disclosure</h2>
-            <p style={proseStyle}>
-              If you discover a security vulnerability in the PEAC protocol, any Originary product, or this website,
-              please report it to{' '}
-              <a href="mailto:security@originary.xyz" style={linkStyle}>
-                security@originary.xyz
-              </a>
-              . We acknowledge reports within 5 business days and coordinate fixes before public disclosure.
-            </p>
-            <p style={proseStyle}>
-              Our machine-readable security policy is published at{' '}
-              <a href="/.well-known/security.txt" style={linkStyle}>
-                /.well-known/security.txt
-              </a>{' '}
-              per RFC 9116. The PEAC protocol repository accepts security reports through GitHub Security Advisories.
-            </p>
-            <KeyPoint>
-              Report vulnerabilities to security@originary.xyz. We follow responsible disclosure practices with
-              coordinated timelines.
-            </KeyPoint>
-          </Card>
-
-          <Card padding={28}>
-            <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-              stewardship
-            </Mono>
-            <h2 style={{ ...headStyle, marginTop: 12 }}>Legal identity and stewardship</h2>
-            <p style={proseStyle}>
-              Originary&trade; is the software and developer-tools brand of {FACTS.legalEntity}, a Delaware corporation.
-              Originary publishes and maintains PEAC Protocol, not its gatekeeper. The protocol specification, reference
-              implementation, conformance suite, and all core tooling are published under the {FACTS.license} license.
-            </p>
-            <p style={proseStyle}>
-              Stewardship means we maintain the specification, publish test vectors, and ensure interoperability. It
-              does not mean we control who can implement, extend, or build on the protocol. Anyone can build a
-              conformant implementation without permission, payment, or partnership with Originary.
-            </p>
-            <p style={proseStyle}>
-              The protocol is designed to reach 1.0 with multiple independent implementations. Our goal is a standard
-              that outlasts any single company, including ours.
-            </p>
-            <KeyPoint>
-              {FACTS.legalEntity}, Delaware. PEAC is open source ({FACTS.license}). Stewardship, not gatekeeping.
-            </KeyPoint>
-          </Card>
         </div>
+        <p className="tr-small">
+          Originary does not run hosted verification, dashboards, or record storage. Data handling for a scoped pilot or
+          supported self-host is covered in the <L href="/privacy">Privacy Policy</L>.
+        </p>
       </PageSection>
 
-      <PageSection paddingBottom={32}>
-        <div style={{ maxWidth: 880, margin: '0 auto 32px auto', textAlign: 'center' }}>
-          <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}>
-            resources
-          </Mono>
-          <h2
-            style={{
-              fontFamily: sans,
-              fontSize: 'clamp(24px, 3vw, 32px)',
-              fontWeight: 500,
-              letterSpacing: '-0.02em',
-              color: PALETTE.ink,
-              margin: '12px 0 12px 0',
-              textWrap: 'balance',
-            }}
-          >
-            Resources and policies
-          </h2>
-          <p
-            style={{
-              fontFamily: sans,
-              fontSize: 15,
-              lineHeight: 1.6,
-              color: PALETTE.muted,
-              margin: '0 auto',
-              maxWidth: 600,
-              textWrap: 'pretty',
-            }}
-          >
-            Direct links to policies, specifications, verification endpoints, and corporate information.
-          </p>
-        </div>
-
-        <div
-          className="home-trust-cards"
-          style={{
-            maxWidth: 880,
-            margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))',
-            gap: 24,
-          }}
-        >
-          {trustCards.map((c) => (
-            <Card key={c.label} padding={28} style={{ height: '100%' }}>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-                {c.label}
-              </Mono>
-              <h3 style={{ ...cardTitleStyle, marginTop: 12 }}>{c.title}</h3>
-              <p style={cardDescStyle}>{c.description}</p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {c.links.map((l) =>
-                  l.external ? (
-                    <a
-                      key={l.href}
-                      className="trust-link"
-                      href={l.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        fontFamily: sans,
-                        fontSize: 13,
-                        fontWeight: 500,
-                        color: PALETTE.ink,
-                        textDecoration: 'underline',
-                        textDecorationColor: 'var(--rule)',
-                        textUnderlineOffset: 3,
-                      }}
-                    >
-                      {l.label}
-                    </a>
-                  ) : (
-                    <Link
-                      key={l.href}
-                      className="trust-link"
-                      href={l.href}
-                      style={{
-                        fontFamily: sans,
-                        fontSize: 13,
-                        fontWeight: 500,
-                        color: PALETTE.ink,
-                        textDecoration: 'underline',
-                        textDecorationColor: 'var(--rule)',
-                        textUnderlineOffset: 3,
-                      }}
-                    >
-                      {l.label}
-                    </Link>
-                  ),
-                )}
-              </div>
-            </Card>
-          ))}
-        </div>
+      <PageSection paddingBottom={64}>
+        <SectionHeading eyebrow="stewardship" title="Legal identity and stewardship." />
+        <p className="tr-p">
+          Originary&trade; is the software and developer-tools brand of {FACTS.legalEntity}, a Delaware corporation.
+          Originary publishes and maintains PEAC Protocol, not its gatekeeper. The protocol specification, reference
+          implementation, conformance suite, and all core tooling are published under the {FACTS.license} license.
+        </p>
+        <p className="tr-p">
+          Stewardship means we maintain the specification, publish test vectors, and ensure interoperability. It
+          does not mean we control who can implement, extend, or build on the protocol. Anyone can build a
+          conformant implementation without permission, payment, or partnership with Originary.
+        </p>
       </PageSection>
 
-      <PageSection paddingBottom={112}>
-        <div style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center' }}>
-          <p
-            style={{
-              fontFamily: sans,
-              fontSize: 15,
-              lineHeight: 1.6,
-              color: PALETTE.muted,
-              margin: '0 0 12px 0',
-            }}
-          >
-            Questions about security, compliance, or verification?
-          </p>
-          <a
-            href="mailto:contact@originary.xyz"
-            style={{
-              fontFamily: sans,
-              fontSize: 18,
-              fontWeight: 500,
-              color: PALETTE.ink,
-              textDecoration: 'underline',
-              textDecorationColor: 'var(--rule)',
-              textUnderlineOffset: 4,
-            }}
-          >
-            contact@originary.xyz
-          </a>
-        </div>
+      <PageSection paddingBottom={96}>
+        <SectionHeading eyebrow="resources" title="Policies and specifications." />
+        <ul className="tr-links">
+          <li><L href="/security">Security</L></li>
+          <li><L href="/privacy">Privacy</L></li>
+          <li><L href="/terms">Terms</L></li>
+          <li><L href="/trademark">Trademark</L></li>
+          <li><L href="/verify">Verify locally</L></li>
+          <li><L href="/records">Record gallery</L></li>
+          <li><L href="/peac">PEAC Protocol</L></li>
+          <li><L href="/.well-known/peac.txt" external>peac.txt</L></li>
+          <li><L href="/.well-known/aipref.json" external>aipref.json</L></li>
+          <li>
+            <L href="https://github.com/peacprotocol/peac/tree/main/specs/conformance" external>
+              Conformance suite
+            </L>
+          </li>
+          <li>
+            <L href="https://github.com/peacprotocol/peac/security" external>
+              GitHub Security Advisories
+            </L>
+          </li>
+        </ul>
+        <p className="tr-small">
+          Questions about security, compliance or verification: <L href="mailto:contact@originary.xyz">contact@originary.xyz</L>
+        </p>
       </PageSection>
     </PageShell>
   )

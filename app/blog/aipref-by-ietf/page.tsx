@@ -6,7 +6,7 @@ import { PageShell, ArticleDoc, ArticleRelated, PALETTE } from '@/components/hom
 export const metadata: Metadata = {
   title: { absolute: 'AIPREF: AI Usage Preferences by IETF | Originary' },
   description:
-    'Understanding the IETF AIPREF specification for AI usage preferences through HTTP headers and robots.txt. Implementation guide.',
+    'How the IETF AIPREF drafts let publishers state AI usage preferences in HTTP headers and robots.txt, with server examples and resolution rules.',
   authors: [{ name: 'Originary Team' }],
   openGraph: {
     type: 'article',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'AIPREF: A Common Language for AI Usage Preferences',
-    description: 'Understanding the IETF AIPREF specification for expressing AI usage preferences.',
+    description: 'How the IETF AIPREF drafts let publishers state AI usage preferences.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -86,7 +86,7 @@ export default function AIPREFArticle() {
         <ArticleDoc
           category="technical"
           title="AIPREF: a common language for AI usage preferences"
-          sub="The IETF AIPREF working group is developing a standardized way for publishers to express how their content should be used by automated systems. Here is what it is, how it works, and how to implement it today."
+          sub="The IETF AIPREF working group is developing a standardized way for publishers to express how their content should be used by automated systems. This guide covers the vocabulary, the two attachment mechanisms, and how to deploy them while the drafts are still moving."
           author="Originary Team"
           date="2025-10-14"
           readTime="6 min read"
@@ -99,17 +99,17 @@ export default function AIPREFArticle() {
           </div>
 
           <p>
-            As AI systems increasingly rely on web content for training and operation, publishers
-            need a clear, standardized way to communicate their usage preferences. The IETF AI
-            Preferences (AIPREF) working group addresses this need by defining both a vocabulary
-            for expressing usage preferences and mechanisms for attaching those preferences to
-            content.
+            Suppose you want search engines to keep indexing your site, but you do not want the
+            same pages used to train generative models. robots.txt can say which crawler may fetch
+            which path. It cannot say what the fetched content may be used for. The IETF AI
+            Preferences (AIPREF) working group is defining both a vocabulary for that kind of
+            preference and mechanisms for attaching it to content.
           </p>
           <p>
-            Unlike informal conventions or platform-specific controls, AIPREF provides an
-            Internet-scale standard that works across the HTTP ecosystem. It builds on existing
-            infrastructure (robots.txt, HTTP headers) while introducing purpose-specific semantics
-            that robots.txt alone cannot provide.
+            AIPREF builds on infrastructure publishers already run (robots.txt and HTTP headers)
+            and adds purpose-specific semantics that robots.txt alone cannot express. Unlike
+            informal conventions or platform-specific controls, it is being developed as an
+            Internet-wide specification.
           </p>
 
           <h2>What is AIPREF?</h2>
@@ -285,7 +285,7 @@ Content-Usage: /public-research/ train-ai=y, train-genai=n`}
           <h3>4. Unknown is valid</h3>
           <p>
             If a category is not specified and cannot be inherited, the preference is
-            &quot;unknown.&quot; This is a valid state - not every publisher needs to express
+            &quot;unknown.&quot; This is a valid state: not every publisher needs to express
             preferences for every category.
           </p>
 
@@ -355,8 +355,8 @@ Content-Usage: /public-research/ train-ai=y, train-genai=n`}
           <h4>C2PA / Content Credentials</h4>
           <p>
             Handles content provenance and authenticity. AIPREF expresses usage preferences; C2PA
-            verifies content lineage. They work together: AIPREF states the rules, C2PA provides
-            records of what was accessed.
+            verifies content lineage. They answer different questions: AIPREF states how content
+            may be used, and C2PA describes where it came from and how it was made.
           </p>
 
           <h2>Implementation roadmap</h2>
@@ -402,10 +402,9 @@ Content-Usage: train-genai=n, search=y`}
 
           <h2>Originary&apos;s position</h2>
           <p>
-            We support the IETF AIPREF effort and view it as a critical piece of infrastructure
-            for the agentic web. Standardized, machine-readable preference signals reduce
-            friction, improve transparency, and create conditions for responsible AI development
-            at Internet scale.
+            We support the IETF AIPREF effort. A shared, machine-readable vocabulary lets a
+            publisher state a preference once and have any automated system read it the same way,
+            instead of configuring each platform&apos;s controls separately.
           </p>
           <p>
             Originary reads AIPREF preferences where publishers expose them and pairs preference

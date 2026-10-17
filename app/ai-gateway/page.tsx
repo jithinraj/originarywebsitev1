@@ -1,27 +1,15 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { FACTS } from '@/lib/facts'
-import { PageShell, PageHero, PageSection, SectionHeading, PullLine, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Button } from '@/components/home/page-kit'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
-import {
-  RecordCard,
-  CodeBlock,
-  Terminal,
-  StepLabel,
-  SpecimenGrid,
-  MarkerList,
-  InkBand,
-  InkHeading,
-  InkButton,
-  AnchorLine,
-  Dim,
-} from '@/components/specimens/parts'
+import { RecordCard, CodeBlock, Terminal, StepLabel, SpecimenGrid, MarkerList, InkBand, InkHeading, InkButton, Dim } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 
-const TITLE = 'Export verifiable AI gateway decisions | Originary'
+const TITLE = 'AI gateway audit trail with signed decisions | Originary'
 const DESCRIPTION =
-  'Turn AI gateway allow, deny, review, routing, and redaction decisions into signed records another party can verify without gateway-log access.'
+  'Record AI gateway allow, deny, redact and review decisions as signed records. Security teams and customers verify them offline, without gateway log access.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -56,33 +44,34 @@ export default function AiGatewayPage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
-      <Breadcrumbs current="Gateway Decisions" href="/ai-gateway" />
+      <Breadcrumbs current="AI gateways" href="/ai-gateway" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
-        eyebrow="Gateway evidence"
+        eyebrow="AI gateways"
         title="Keep a record of why the gateway allowed or blocked a request."
         sub="Record important allow, deny, redaction and review decisions so security teams or customers can inspect them later without access to the gateway's private logs."
         display
         aside={
-          <RecordCard
-            type="org.peacprotocol/access-decision"
-            badge={{ kind: 'verified', label: 'verified offline' }}
-            rows={[
-              { label: 'Issuer', value: 'https://gateway.vendor.example' },
-              { label: 'Request', value: 'tools.call market_data' },
-              { label: 'Decision', value: 'allow - policy applied' },
-              { label: 'Signature', value: 'Ed25519 e02d7f15...' },
-            ]}
-            foot="sample record - demo signature"
-          />
+          <dl className="gw-types" aria-label="Decisions a gateway record can carry">
+            {[
+              ['Allow', 'Forwarded, with the policy that applied bound to the record.'],
+              ['Deny', 'Refused, with the reason code and policy digest bound.'],
+              ['Redact', 'Changed in transit, with produced and delivered digests bound.'],
+              ['Metered', 'Allowed against a paid endpoint, with the observed payment context.'],
+            ].map(([k, d]) => (
+              <div key={k}>
+                <dt>{k}</dt>
+                <dd>{d}</dd>
+              </div>
+            ))}
+          </dl>
         }
-        strip={['Gateway decisions', 'Deny as evidence', 'Redaction digests', 'Spend attribution']}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <Button href="#specimen" primary>
             See a gateway decision
           </Button>
-          <Button href="/contact">Start a gateway pilot</Button>
+          <Button href="/contact">Start a pilot</Button>
         </div>
       </PageHero>
 
@@ -91,8 +80,8 @@ export default function AiGatewayPage() {
         <SectionHeading
           index="01"
           eyebrow="The problem"
-          title="Gateway logs explain decisions internally. Signed records let others verify them."
-          sub="A gateway log can help you debug a routing or policy decision internally. It cannot be handed to a customer, auditor, or counterparty as independent proof. A signed record answers the questions that cross the boundary:"
+          title="A customer cannot check your gateway logs."
+          sub="Gateway logs help you debug a routing or policy decision, but you cannot hand them to a customer, auditor or counterparty to check for themselves. A signed record answers what they will want to know:"
         />
         <MarkerList
           marker="check"
@@ -109,7 +98,7 @@ export default function AiGatewayPage() {
       {/* The specimen */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
         <div id="specimen" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading index="02" eyebrow="The specimen" title="One gateway decision. One signed record." mark="valve" />
+          <SectionHeading index="02" eyebrow="The specimen" title="What the record of one gateway decision contains." mark="valve" />
           <FlowPanel
             label="Sequence diagram: a request passes the gateway, one path is allowed and forwarded, another is denied by policy, and both outcomes become a signed decision record with produced and delivered digests."
             actors={['app / agent', 'gateway', 'recipient']}
@@ -117,7 +106,7 @@ export default function AiGatewayPage() {
               { kind: 'msg', dir: 'ltr', slot: 1, half: 'l', label: 'request tools.call market_data' },
               { kind: 'msg', dir: 'ltr', slot: 2, half: 'r', label: 'allow - policy applied, forwarded' },
               { kind: 'evt', slot: 3, bad: true, label: 'deny path: export_billing refused - policy_violation' },
-              { kind: 'evt', slot: 4, label: 'produced + delivered digests recorded at the boundary' },
+              { kind: 'evt', slot: 4, label: 'produced + delivered digests recorded at the gateway' },
               { kind: 'rec', slot: 5, label: 'access-decision record - allow and deny both signed' },
               { kind: 'chk', slot: 6, label: 'verified without gateway logs or dashboards' },
             ]}
@@ -150,23 +139,19 @@ export default function AiGatewayPage() {
               />
             </div>
             <div>
-              <StepLabel>How it travels</StepLabel>
+              <StepLabel>Carrier in an MCP gateway</StepLabel>
               <CodeBlock>{`"_meta": {
   "org.peacprotocol/receipt_ref": "sha256:f04d11...",
   "org.peacprotocol/receipt_jws": "eyJhbGciOiJFZERTQSIs..."
 }`}</CodeBlock>
               <p style={{ fontSize: 13, color: PALETTE.faint, margin: '10px 0 0', lineHeight: 1.55 }}>
-                Records ride existing gateway response metadata or export as bundles. They travel separately from the
-                gateway that created them.
+                In front of MCP servers the record rides the tool result&apos;s <code>_meta</code>. HTTP gateways carry it
+                in the <code>PEAC-Receipt</code> response header. Records can also export as bundles.
               </p>
             </div>
           </SpecimenGrid>
         </div>
       </PageSection>
-
-      <PullLine accent="survive the boundary.">
-        Decision records that
-      </PullLine>
 
       {/* Deny as evidence */}
       <PageSection paddingTop={56} paddingBottom={56}>
@@ -174,8 +159,8 @@ export default function AiGatewayPage() {
         <SpecimenGrid>
           <div>
             <p style={{ fontSize: 16.5, lineHeight: 1.6, color: PALETTE.muted, margin: 0, maxWidth: '54ch' }}>
-              A signed deny records what was refused, when, and why: the reason code, the policy digest, and the
-              timestamp travel together with the signature.
+              A signed deny records what was refused, when and why. The reason code, policy digest and
+              timestamp are all covered by the signature.
             </p>
             <p style={{ fontSize: 15, lineHeight: 1.6, color: PALETTE.muted, marginTop: 18, maxWidth: '54ch' }}>
               When the gateway redacts rather than blocks, the record binds the issuer-reported produced and
@@ -194,39 +179,14 @@ export default function AiGatewayPage() {
               { label: 'Time', value: '2026-07-02T09:16:04Z' },
               { label: 'Signature', value: <>Ed25519 e02d7f15... <Dim>valid</Dim></> },
             ]}
-            foot="deny-as-evidence - portable evidence of a refusal"
+            foot="signed refusal - reason code and policy digest bound"
           />
         </SpecimenGrid>
       </PageSection>
 
-      {/* Spend attribution */}
-      <PageSection paddingTop={0} paddingBottom={64} background={PALETTE.paper}>
-        <SectionHeading
-          index="04"
-          eyebrow="Spend attribution"
-          title="When agent traffic hits a metered or paid endpoint, the record binds who spent what."
-          sub="Each call yields a signed record binding the caller identity or agent reference, the action, and the observed payment context. Finance and audit review can reconcile agent spend against signed records instead of one side's counters."
-        />
-        <RecordCard
-          type="org.peacprotocol/access-decision"
-          badge={{ kind: 'verified', label: 'verified offline' }}
-          rows={[
-            { label: 'Issuer', value: 'https://gateway.vendor.example' },
-            { label: 'Agent', value: 'research-agent-v3' },
-            { label: 'Request', value: 'POST /v1/market-data/search' },
-            { label: 'Decision', value: 'allow - metered' },
-            { label: 'Payment', value: <Dim>observed context - x402-style</Dim> },
-            { label: 'Time', value: '2026-07-02T09:17:52Z' },
-            { label: 'Signature', value: 'Ed25519 c9a012ff...' },
-          ]}
-          foot="observation record - not a payment instruction"
-          style={{ maxWidth: 560 }}
-        />
-      </PageSection>
-
       {/* Fits your stack */}
       <PageSection paddingTop={56} paddingBottom={56}>
-        <SectionHeading index="05" eyebrow="Fits your stack" title="Records compose with what your gateway already touches." />
+        <SectionHeading index="05" eyebrow="Fits your stack" title="Records connect to the tools around your gateway." />
         <MarkerList
           marker="number"
           items={[
@@ -237,16 +197,16 @@ export default function AiGatewayPage() {
             </>,
             <>
               <b style={{ fontWeight: 600 }}>In front of MCP servers:</b> per-tool-call records travel alongside the
-              gateway decision. See <Link href="/mcp" style={{ color: PALETTE.ink }}>/mcp</Link>.
+              gateway decision. See <Link href="/mcp" style={{ color: 'var(--link)' }}>MCP tools</Link>.
             </>,
             <>
               <b style={{ fontWeight: 600 }}>In front of paid or metered endpoints:</b> x402-style payment observation
               binds the decision to the call it metered. See{' '}
-              <Link href="/agentic-commerce" style={{ color: PALETTE.ink }}>/agentic-commerce</Link>.
+              <Link href="/agentic-commerce" style={{ color: 'var(--link)' }}>agent payments</Link>.
             </>,
             <>
-              <b style={{ fontWeight: 600 }}>Evidence bundles:</b> export a set of decision records for a dispute or
-              a review, verifiable without access to the gateway.
+              <b style={{ fontWeight: 600 }}>Evidence bundles:</b> export a set of decision records for a review,
+              verifiable without access to the gateway.
             </>,
           ]}
         />
@@ -273,9 +233,9 @@ export default function AiGatewayPage() {
 
       {/* Closing */}
       <InkBand>
-        <InkHeading maxWidth="26ch">Add records to one gateway route this week.</InkHeading>
+        <InkHeading maxWidth="26ch">Start with one gateway route.</InkHeading>
         <p style={{ fontSize: 16.5, lineHeight: 1.6, color: 'var(--on-dark-muted)', maxWidth: '54ch', margin: '20px auto 0' }}>
-          Start with the route another party already asks about. We will show what the signed record should contain.
+          Pick the route a security team or customer already asks about, and we will define its record with you.
         </p>
         <div
           style={{
@@ -296,7 +256,6 @@ export default function AiGatewayPage() {
           </InkButton>
           <InkButton href="/verify">Verify a record</InkButton>
         </div>
-        <AnchorLine onInk style={{ marginTop: 36 }}>Logs stay local. Signed records travel.</AnchorLine>
       </InkBand>
     </PageShell>
   )

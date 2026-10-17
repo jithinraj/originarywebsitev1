@@ -57,8 +57,8 @@ export default function Page() {
             &ldquo;allowed&rdquo; event with no policy context.
           </p>
           <p>
-            The gateway occupies a useful observation point. The evidence it produces needs to
-            preserve precisely what that point could see and do.
+            A gateway sees a large share of an agent&rsquo;s traffic. Its evidence should record
+            exactly what the gateway saw and did, and stop there.
           </p>
 
           <h2>Begin with the policy decision</h2>

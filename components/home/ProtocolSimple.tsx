@@ -28,10 +28,10 @@ export function ProtocolSimple() {
     >
       <SectionHead
         eyebrow="Open protocol"
-        title="Open protocol."
-        qualifier="No Originary required."
+        title="Built on an open protocol"
+        qualifier="you can run without us."
         stack
-        body={`PEAC is the ${FACTS.license} protocol behind every record. Issue records yourself, keep your own keys, and verify anywhere, offline.`}
+        body={`PEAC is the ${FACTS.license} protocol behind every record. Issue records with your own keys and verify them anywhere, offline.`}
         center
       />
 

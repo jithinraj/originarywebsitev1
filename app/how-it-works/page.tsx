@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
-import { FACTS } from '@/lib/facts'
-import { PageShell, PageHero, PageSection, SectionHeading, Card, Pill, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Button } from '@/components/home/page-kit'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
-import { PALETTE } from '@/components/home/palette'
-import { InkBand, InkHeading, InkButton, AnchorLine, CodeBlock } from '@/components/specimens/parts'
-import FlowObserver from '@/components/how-it-works/FlowObserver'
-import '@/components/how-it-works/how-it-works.css'
+import { RecordPath } from '@/components/heroes/HeroArtifacts'
+import { InkBand, InkHeading, InkButton } from '@/components/specimens/parts'
+import type { FlowBeat } from '@/components/specimens/FlowPanel'
+import { SurfaceTabs } from '@/components/how-it-works/SurfaceTabs'
+import { RecordDemo } from '@/components/home/RecordDemo'
 
-const TITLE = 'How Originary Works | Signed Records and Evidence Cases'
+const TITLE = 'How signed records for AI agents work | Originary'
 const DESCRIPTION =
-  'Issue a signed record at the source, verify it outside the source system, assess evidence limits, and hand the bounded case to another party.'
+  'An API, MCP server or gateway signs a record of each action. Anyone with the public key can verify it offline, then share related records as one case.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -40,11 +40,7 @@ const jsonLd = {
   ],
 }
 
-type Beat =
-  | { kind: 'msg'; dir: 'ltr' | 'rtl'; slot: number; label: string; half?: 'l' | 'r' }
-  | { kind: 'evt'; slot: number; label: string; bad?: boolean }
-  | { kind: 'rec'; slot: number; label: string }
-  | { kind: 'chk'; slot: number; label: string }
+type Beat = FlowBeat
 
 type Fail = { title: string; body: string }
 
@@ -68,11 +64,11 @@ const SURFACES: SurfaceData[] = [
     overline: 'Surface 01 of 06',
     title: 'API call',
     thesis:
-      'A metered response you can hold onto. The API answers, and the answer carries its own signed evidence.',
+      'The API response comes back with a signed record of the request, the response and the terms that applied.',
     intro: (
       <>
         A client, human app, or agent calls an API. The response returns with a signed record in the{' '}
-        <code>PEAC-Receipt</code> header: same request, same wire, one extra header. The publisher&apos;s
+        <code>PEAC-Receipt</code> header. Nothing else about the request or response changes. The publisher&apos;s
         terms live at <code>/.well-known/peac.txt</code>, and the record binds a digest of the policy
         that was in force <b>at the moment of the call</b>.
       </>
@@ -86,14 +82,14 @@ const SURFACES: SurfaceData[] = [
       'time + unique id',
     ],
     prove:
-      "the request digest, the response digest, and the referenced policy for this call, without the vendor's logs, dashboard, or cooperation.",
+      "the request digest, the response digest, and the referenced policy for this call, without the vendor's logs or dashboard.",
     carrier: 'carrier: PEAC-Receipt header. discovery: /.well-known/peac.txt.',
     actors: ['agent client', 'api.vendor.example'],
     flow: [
       { kind: 'msg', dir: 'ltr', slot: 1, label: 'GET /reports/q3' },
       { kind: 'msg', dir: 'rtl', slot: 2, label: '200 OK - PEAC-Receipt: eyJhbG...' },
       { kind: 'rec', slot: 3, label: 'record issued: resource + request/response digests + policy bound' },
-      { kind: 'chk', slot: 4, label: 'verified offline - by any party - years later - no vendor login' },
+      { kind: 'chk', slot: 4, label: 'verified later, offline, under the issuer public key' },
     ],
     fails: [
       {
@@ -102,7 +98,7 @@ const SURFACES: SurfaceData[] = [
       },
       {
         title: 'Metering and usage disputes',
-        body: "Each call yields its own receipt. Usage claims reconcile against signed records, not counters in one side's database.",
+        body: "Each call yields its own receipt, so usage claims can be checked against signed records instead of one side's counters.",
       },
       {
         title: 'Those were not the terms',
@@ -115,7 +111,7 @@ const SURFACES: SurfaceData[] = [
     overline: 'Surface 02 of 06',
     title: 'MCP tool run',
     thesis:
-      "Every tool call, signed at the source, carried inside the protocol's own metadata. Unaware hosts need no changes.",
+      "Each tool call gets a signed record inside MCP's own _meta field. Hosts that do not read it need no changes.",
     intro: (
       <>
         An agent host calls a tool over the Model Context Protocol. The tool result returns with the
@@ -140,7 +136,7 @@ const SURFACES: SurfaceData[] = [
       { kind: 'msg', dir: 'ltr', slot: 1, label: 'tools/call - search_flights { args }' },
       { kind: 'msg', dir: 'rtl', slot: 2, label: 'result - _meta carries the signed record' },
       { kind: 'rec', slot: 3, label: 'record binds tool name + args digest + result digest + manifest ref' },
-      { kind: 'chk', slot: 4, label: 'prove which tool, which inputs, which output, per call' },
+      { kind: 'chk', slot: 4, label: 'shows the tool, inputs and output of each call' },
     ],
     fails: [
       {
@@ -162,7 +158,7 @@ const SURFACES: SurfaceData[] = [
     overline: 'Surface 03 of 06',
     title: 'Agent action',
     thesis:
-      "Approvals that bind. Actions that chain. An agent's run becomes a verifiable sequence, not a story.",
+      "The approval names one exact action, the execution must match it, and every step links to the one before.",
     intro: (
       <>
         An agent proposes an action, and a human or policy approves it. The approval record binds{' '}
@@ -199,7 +195,7 @@ const SURFACES: SurfaceData[] = [
       },
       {
         title: 'Silent extra actions',
-        body: 'The run summary seals a record count and a Merkle root. An absent record is detectable, not deniable.',
+        body: 'The run summary seals a record count and a Merkle root. A record missing from the sealed run is detectable.',
       },
       {
         title: 'Delegation disputes',
@@ -211,7 +207,7 @@ const SURFACES: SurfaceData[] = [
     id: 's-gateway',
     overline: 'Surface 04 of 06',
     title: 'Gateway decision',
-    thesis: 'The decision is the evidence. Allow, deny, redact: each one signed and reasoned by the issuer.',
+    thesis: 'Each allow, deny, redact or review decision becomes a signed record carrying the gateway reason code.',
     intro: (
       <>
         Traffic passes a gateway or guardrail: an AI proxy, an MCP gateway, an egress filter. The gateway
@@ -238,12 +234,12 @@ const SURFACES: SurfaceData[] = [
       { kind: 'evt', slot: 2, label: 'policy check - pii detected: redact - reason: pii_email' },
       { kind: 'msg', dir: 'ltr', slot: 3, label: 'delivered redacted - sha256:e01b...', half: 'r' },
       { kind: 'rec', slot: 4, label: 'decision record - allow + redact - policy digest - produced not equal to delivered' },
-      { kind: 'chk', slot: 5, label: 'prove what left the boundary without revealing it' },
+      { kind: 'chk', slot: 5, label: 'shows what left the gateway without revealing it' },
     ],
     fails: [
       {
         title: 'The gateway never blocked it',
-        body: 'A signed deny with a reason code and timestamp settles what was refused, and when, and why.',
+        body: 'A signed deny with a reason code and timestamp shows what was refused, when, and under which rule.',
       },
       {
         title: 'Redaction disputes',
@@ -259,7 +255,7 @@ const SURFACES: SurfaceData[] = [
     id: 's-payment',
     overline: 'Surface 05 of 06',
     title: 'Payment event',
-    thesis: 'The money moves on the rail. The evidence moves with you: offer, payment, delivery, acknowledgment.',
+    thesis: 'Payment settles on the rail. The record keeps the artifacts the rail produced, alongside the offer, delivery and acknowledgment.',
     intro: (
       <>
         An agent hits a paid resource and gets a <b>402 response with a signed offer</b>. Payment settles
@@ -291,7 +287,7 @@ const SURFACES: SurfaceData[] = [
     fails: [
       {
         title: 'Paid but denied, or served but unpaid',
-        body: 'Offer, settlement, and delivery records make each leg separately provable. The classic 402 dispute pair dissolves.',
+        body: 'Offer, settlement and delivery each get their own record, so each leg of a 402 dispute can be checked separately.',
       },
       {
         title: 'Double charge and replay',
@@ -299,7 +295,7 @@ const SURFACES: SurfaceData[] = [
       },
       {
         title: 'We never received it',
-        body: "A delivery digest, and the counterparty's own acknowledgment record, answer it with signatures, not assertions.",
+        body: "A delivery digest and the counterparty's own signed acknowledgment answer it directly.",
       },
     ],
   },
@@ -307,17 +303,16 @@ const SURFACES: SurfaceData[] = [
     id: 's-provision',
     overline: 'Surface 06 of 06',
     title: 'Provisioning event',
-    thesis: 'What the agent stood up, on the record, with credential-value fields rejected by the schema.',
+    thesis: 'A signed trail of what the agent created or changed. The schema rejects credential values.',
     intro: (
       <>
         An agent provisions real infrastructure: accounts, resources, credentials, budgets, subscriptions,
         and deployments. Each event becomes an <code>*-observed</code> record. The critical property is
         that <b>credential material is never captured</b>. The schema itself rejects secret values, so the
-        record carries a reference and a digest, and a leak through the evidence layer is structurally
-        impossible.{' '}
+        record carries a reference and a digest, not the secret itself.{' '}
         <a
           href="/provisioning-records"
-          style={{ color: PALETTE.success, textDecoration: 'underline', textUnderlineOffset: 3 }}
+          style={{ color: 'var(--link)', textDecoration: 'underline', textUnderlineOffset: 3 }}
         >
           See provisioning records
         </a>
@@ -342,12 +337,12 @@ const SURFACES: SurfaceData[] = [
       { kind: 'msg', dir: 'rtl', slot: 2, label: 'created - secret: sk_live_9f2...' },
       { kind: 'evt', slot: 3, label: 'redaction: secret never captured, reference + digest only' },
       { kind: 'rec', slot: 4, label: 'credential-observed record - account / resource / budget trail' },
-      { kind: 'chk', slot: 5, label: 'prove the lifecycle, never the secret' },
+      { kind: 'chk', slot: 5, label: 'records the lifecycle without the secret' },
     ],
     fails: [
       {
         title: 'Shadow infrastructure',
-        body: 'Resources an agent quietly stood up appear in the observed trail with issuer and time: discoverable, datable, attributable.',
+        body: 'Resources an agent quietly stood up appear in the observed trail with the issuer and time attached.',
       },
       {
         title: 'Secrets leaking through audit logs',
@@ -361,181 +356,11 @@ const SURFACES: SurfaceData[] = [
   },
 ]
 
-function FlowDiagram({ beats, actors }: { beats: Beat[]; actors: string[] }) {
-  return (
-    <div
-      className="hiw-flow"
-      data-flow
-      role="group"
-      aria-label={`Sequence diagram: ${actors.join(", ")}`}
-      tabIndex={0}
-    >
-      <div className="hiw-factors">
-        {actors.map((a) => (
-          <span className="hiw-fa" key={a}>
-            {a}
-          </span>
-        ))}
-      </div>
-      <div className="hiw-fsteps">
-        {beats.map((b, i) => {
-          if (b.kind === 'msg') {
-            const half = b.half ? ` half-${b.half}` : ''
-            return (
-              <div className={`hiw-fmsg ${b.dir}${half} hiw-s${b.slot}`} key={i}>
-                <span className="hiw-fline" />
-                <span className="hiw-fhead" />
-                <span className="hiw-flabel">{b.label}</span>
-                <span className="hiw-fdot" />
-              </div>
-            )
-          }
-          if (b.kind === 'evt') {
-            return (
-              <div className={`hiw-fevt${b.bad ? ' bad' : ''} hiw-s${b.slot}`} key={i}>
-                {b.label}
-              </div>
-            )
-          }
-          if (b.kind === 'rec') {
-            return (
-              <div className={`hiw-frec hiw-s${b.slot}`} key={i}>
-                <span className="hiw-fchit">{b.label}</span>
-              </div>
-            )
-          }
-          return (
-            <div className={`hiw-fchk hiw-s${b.slot}`} key={i}>
-              {b.label}
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
-
-function SurfaceSection({
-  s,
-  first = false,
-  background,
-}: {
-  s: SurfaceData
-  first?: boolean
-  background?: string
-}) {
-  return (
-    <PageSection paddingTop={first ? 8 : 0} paddingBottom={0} background={background}>
-      <div
-        className="hiw-sdeep"
-        id={s.id}
-        style={first ? { marginTop: 0, paddingTop: 0, borderTop: 'none', scrollMarginTop: 96 } : { scrollMarginTop: 96 }}
-      >
-        <span className="hiw-sno">{s.overline}</span>
-        <h2 className="hiw-title">{s.title}</h2>
-        <p className="hiw-thesis">{s.thesis}</p>
-
-        <div className="hiw-walk">
-          <div className="hiw-wtext">
-            <span className="hiw-wno">what happens</span>
-            <p className="hiw-intro">{s.intro}</p>
-            <div className="hiw-wbind">
-              <span className="hiw-label">the record binds</span>
-              <ul className="hiw-bindlist">
-                {s.binds.map((b) => (
-                  <li key={b}>{b}</li>
-                ))}
-              </ul>
-            </div>
-            <p className="hiw-wprove">
-              <b>Later, a verifier can confirm the issuer signed a record binding:</b> {s.prove}
-            </p>
-            <code className="hiw-wtype" tabIndex={0}>{s.carrier}</code>
-            <div className="hiw-actors">actors: {s.actors.join(', ')}</div>
-          </div>
-          <FlowDiagram beats={s.flow} actors={s.actors} />
-        </div>
-
-        <div className="hiw-duo">
-          <div className="hiw-fails">
-            {s.fails.map((f) => (
-              <div className="hiw-failc" key={f.title}>
-                <b>{f.title}</b>
-                <p>{f.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </PageSection>
-  )
-}
-
-const HOW_IT_WORKS_JUMP = [
-  { href: '#s-api', label: 'API call' },
-  { href: '#s-mcp', label: 'MCP tool run' },
-  { href: '#s-action', label: 'Agent action' },
-  { href: '#s-gateway', label: 'Gateway decision' },
-  { href: '#s-payment', label: 'Payment event' },
-  { href: '#s-provision', label: 'Provisioning event' },
-]
-
-function JumpIndex({ items }: { items: Array<{ href: string; label: string }> }) {
-  return (
-    <Card padding={24}>
-      <span
-        style={{
-          fontFamily: 'var(--font-mono)',
-          fontSize: 10,
-          letterSpacing: '0.2em',
-          textTransform: 'uppercase',
-          color: PALETTE.faint,
-        }}
-      >
-        contents
-      </span>
-      <nav aria-label="Page contents">
-        <ul style={{ listStyle: 'none', margin: '12px 0 0', padding: 0 }}>
-          {items.map((it, i) => (
-            <li key={it.href}>
-              <a
-                href={it.href}
-                className="home-footer-link"
-                style={{
-                  display: 'flex',
-                  alignItems: 'baseline',
-                  gap: 14,
-                  padding: '10px 0',
-                  textDecoration: 'none',
-                  borderTop: i > 0 ? `1px solid ${PALETTE.hairline}` : undefined,
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: 11,
-                    color: PALETTE.faint,
-                  }}
-                >
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <span style={{ fontFamily: 'var(--font-sans)', fontSize: 14.5, color: PALETTE.ink }}>
-                  {it.label}
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </Card>
-  )
-}
-
 const MODEL_STEPS: Array<{ n: string; title: string; body: string; mech: string }> = [
   {
     n: '01',
     title: 'Observe',
-    body: 'A system at the boundary, an API, MCP server, gateway, or payment processor, directly observes an action: what was requested, which policy applied, and what result came back.',
+    body: 'The system that handles the action, such as an API, MCP server, gateway or payment processor, observes what was requested, which policy applied and what came back.',
     mech: 'the issuer is the system that observed the action',
   },
   {
@@ -553,192 +378,75 @@ const MODEL_STEPS: Array<{ n: string; title: string; body: string; mech: string 
   {
     n: '04',
     title: 'Hand off',
-    body: 'Optionally, package the records, native artifacts, and verification results into a bounded evidence case for a customer, auditor, or partner to inspect independently.',
+    body: 'Optionally, package the records, native artifacts, and verification results into one evidence case for a customer, auditor, or partner to inspect independently.',
     mech: 'records + artifacts + report -> evidence case',
   },
 ]
 
-function ModelSection() {
-  return (
-    <PageSection paddingTop={8} paddingBottom={0}>
-      <SectionHeading index="00" eyebrow="the primitive" title="Observe, issue, verify, hand off." />
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: 20,
-          marginTop: 4,
-        }}
-      >
-        {MODEL_STEPS.map((s) => (
-          <Card key={s.n} padding={26}>
-            <div
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: 11,
-                letterSpacing: '0.2em',
-                color: PALETTE.faint,
-              }}
-            >
-              {s.n}
-            </div>
-            <h2
-              style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 21,
-                lineHeight: 1.2,
-                letterSpacing: '-0.01em',
-                fontWeight: 500,
-                color: PALETTE.ink,
-                margin: '10px 0 0',
-              }}
-            >
-              {s.title}
-            </h2>
-            <p
-              style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 14.5,
-                lineHeight: 1.6,
-                color: PALETTE.muted,
-                margin: '10px 0 14px',
-              }}
-            >
-              {s.body}
-            </p>
-            <code
-              style={{
-                display: 'block',
-                fontFamily: 'var(--font-mono)',
-                fontSize: 11.5,
-                color: PALETTE.faint,
-                whiteSpace: 'pre-wrap',
-              }}
-            >
-              {s.mech}
-            </code>
-          </Card>
-        ))}
-      </div>
-    </PageSection>
-  )
-}
-
 export default function HowItWorksPage() {
-  const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
-      <Breadcrumbs current="How It Works" href="/how-it-works" />
+      <Breadcrumbs current="How it works" href="/how-it-works" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
-        eyebrow="how it works"
-        title="Record the action. Check the record later."
-        sub="Your system signs selected facts about an action. The record can travel separately from the logs and service that created it."
+        eyebrow="How it works"
+        title="How a signed record is made and checked"
+        sub="Your system signs selected facts about an action. The record is kept apart from the logs and the service that produced it, so anyone with the issuer's public key can check it offline."
         display
-        aside={<JumpIndex items={HOW_IT_WORKS_JUMP} />}
-        strip={['Observe', 'Issue', 'Verify', 'Hand off']}
+        aside={<RecordPath />}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-          <Button href="/evidence-case" primary>
-            See an evidence case
+          <Button href="#surfaces" primary>
+            See each surface
           </Button>
-          <Button href="/verify">Verify one</Button>
+          <Button href="/verify">Verify a record</Button>
         </div>
       </PageHero>
 
-      <ModelSection />
+      <PageSection paddingTop={40} paddingBottom={88}>
+        <ol className="hw-steps" role="list" aria-label="Observe, issue, verify, hand off">
+          {MODEL_STEPS.map((st) => (
+            <li key={st.n}>
+              <span className="hw-step-n">{st.n}</span>
+              <p className="hw-step-t">{st.title}</p>
+              <p className="hw-step-b">{st.body}</p>
+              <code className="hw-step-m">{st.mech}</code>
+            </li>
+          ))}
+        </ol>
+      </PageSection>
 
-      <PageSection paddingTop={56} paddingBottom={0}>
+      <PageSection paddingTop={0} paddingBottom={88}>
+        <div id="surfaces" style={{ scrollMarginTop: 96 }}>
+          <SectionHeading
+            eyebrow="Six surfaces, one record"
+            title="The same four steps, wherever the action happens."
+            sub="Pick a surface to see what the record binds, how it is carried and which questions it answers."
+          />
+          <SurfaceTabs surfaces={SURFACES} />
+        </div>
+      </PageSection>
+
+      <PageSection paddingTop={0} paddingBottom={96}>
         <SectionHeading
-          index="00b"
-          eyebrow="in detail"
-          title="The same four stages, at each surface."
-          sub="The record gallery owns the full six-workflow detail. What follows walks each surface once, for readers who want the mechanics before moving on."
+          eyebrow="Check one"
+          title="Try it on the sample record."
+          sub="Verify the sample, then change the result field and verify again. The check runs in your browser."
         />
+        <div style={{ maxWidth: 1040 }}>
+          <RecordDemo />
+        </div>
       </PageSection>
 
-      {SURFACES.map((s, i) => (
-        <SurfaceSection s={s} first={i === 0} background={i % 2 === 1 ? PALETTE.paper : undefined} key={s.id} />
-      ))}
-
-      <PageSection paddingTop={0} paddingBottom={64}>
-        <SectionHeading index="07" eyebrow="Beyond single records" title="Broader evidence coverage, same wire format." />
-        <Card padding={28} style={{ maxWidth: 860 }}>
-          <div
-            style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: 10.5,
-              letterSpacing: '0.18em',
-              textTransform: 'uppercase',
-              color: PALETTE.faint,
-            }}
-          >
-            PEAC {FACTS.currentVersion}
-          </div>
-          <p
-            style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: 15.5,
-              lineHeight: 1.6,
-              color: PALETTE.ink,
-              margin: '12px 0 16px',
-              maxWidth: '58ch',
-            }}
-          >
-            Portable evidence beyond single signed records: the wire format stays stable while evidence coverage
-            broadens.
-          </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-            {[
-              'Paid resource records',
-              'Paid MCP tool records',
-              'Linked counterparty acknowledgments',
-              'Merkle commitment helpers',
-              'External evidence anchoring',
-              'Agent spend attribution',
-              'Agent run lineage records',
-              'Consented action records',
-              'Runtime lineage exports',
-            ].map((c) => (
-              <Pill key={c}>{c}</Pill>
-            ))}
-          </div>
-          <p
-            style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: 13,
-              lineHeight: 1.6,
-              color: PALETTE.muted,
-              margin: '16px 0 0',
-            }}
-          >
-            Broader evidence coverage, not a new payment rail, gateway, or policy engine.
-          </p>
-        </Card>
-      </PageSection>
-
-      {/* Closing */}
       <InkBand>
-        <InkHeading>Generate these yourself in one command.</InkHeading>
-        <div style={{ maxWidth: 760, margin: '28px auto 0', textAlign: 'left' }}>
-          <CodeBlock tone="ink">{`pnpm dlx @peac/cli@${v} samples generate -o ./s
-pnpm dlx @peac/cli@${v} verify ./s/valid/basic-record.jws --public-key ./s/bundles/sandbox-jwks.json`}</CodeBlock>
-        </div>
-        <p style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--success-on-dark)', marginTop: 18 }}>
-          Signature valid (offline) - PEAC {FACTS.currentVersion}
-        </p>
-        <div style={{ marginTop: 34, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <InkButton href="/verify" primary>
-            Verify a record
+        <InkHeading maxWidth="24ch">Try it on one of your own workflows.</InkHeading>
+        <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <InkButton href="/contact" primary>
+            Start a pilot
           </InkButton>
-          <InkButton href="/contact">Start a pilot</InkButton>
+          <InkButton href="/records">Browse the records</InkButton>
         </div>
-        <AnchorLine onInk style={{ marginTop: 36 }}>
-          Logs stay local. Signed records travel.
-        </AnchorLine>
       </InkBand>
-
-      <FlowObserver />
     </PageShell>
   )
 }

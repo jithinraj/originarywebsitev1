@@ -6,8 +6,8 @@ import { PageShell, ArticleDoc, ArticleRelated, PALETTE } from '@/components/hom
 export const metadata: Metadata = {
   title: { absolute: 'What is HTTP 402? How PEAC Uses 402 for Agent Payments | Originary' },
   description:
-    'HTTP 402 Payment Required is reserved for digital payments. Learn how PEAC uses 402 for AI access control and receipts.',
-  authors: [{ name: 'Jithin Raj, Founder' }],
+    'HTTP 402 Payment Required was reserved in 1997 and left unused for decades. Its history, its use by agents and APIs, and where PEAC records fit.',
+  authors: [{ name: 'Originary' }],
   alternates: { canonical: '/blog/what-is-http-402' },
   openGraph: {
     title: 'What is HTTP 402? How PEAC Uses 402 for Agent Payments',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: 'article',
     url: '/blog/what-is-http-402',
     publishedTime: '2025-12-03',
-    authors: ['Jithin Raj', 'Originary Team'],
+    authors: ['Originary'],
     images: ['/og'],
     siteName: 'Originary',
   },
@@ -77,12 +77,17 @@ export default function Page() {
         <ArticleDoc
           category="explainer"
           title="What is HTTP 402? Payment Required for agents and APIs"
-          sub="HTTP 402 Payment Required was reserved in 1997 for digital payments. With the rise of AI agents needing machine-readable payment signals, it is finally being activated."
-          author="Jithin Raj, Founder"
+          sub="HTTP 402 Payment Required was reserved in 1997 for digital payments. It sat unused for decades. Agents calling paid APIs need a machine-readable way to learn that payment is required, and specifications such as x402 now use 402 for that."
+          author="Originary"
           date="2025-12-03"
           readTime="2 min read"
           parent={{ label: 'Blog', href: '/blog' }}
         >
+          <p>
+            An agent calling a paid API cannot fill in a checkout form. It needs the server to say,
+            in a form software can read, that payment is required and how to make it. HTTP has
+            had a status code reserved for that since 1997.
+          </p>
           <h2>The history of HTTP 402</h2>
           <ul>
             <li><strong>1997.</strong> HTTP 402 defined in RFC 2068, marked as &quot;reserved for future use&quot; for digital payments.</li>
@@ -98,8 +103,8 @@ export default function Page() {
 
           <h2>Why HTTP 402 matters now</h2>
           <p>
-            The rise of AI agents changes everything. Unlike human users who can navigate payment
-            forms, AI agents need machine-readable payment signals.
+            A person can read a pricing page and fill in a payment form. An agent needs the same
+            information as structured data:
           </p>
           <ul>
             <li><strong>Clear signal.</strong> HTTP 402 unambiguously signals &quot;payment required&quot;.</li>
@@ -137,12 +142,12 @@ Content-Type: application/json
 
           <h2>x402: the payment extension</h2>
           <p>
-            x402 is an extension that adds structured payment descriptions to HTTP 402 responses.
-            It works with PEAC to provide:
+            x402 is a specification layered on HTTP 402 that adds structured payment descriptions to
+            402 responses. Used with PEAC, the flow provides:
           </p>
           <ul>
             <li><strong>Payment negotiation.</strong> Agents can query acceptable payment methods.</li>
-            <li><strong>Receipt return.</strong> Successful payments return PEAC receipts.</li>
+            <li><strong>Receipts.</strong> x402 carries its own payment artifacts; a PEAC record can reference them alongside the access decision.</li>
             <li><strong>Verification.</strong> Receipts can be verified at the domain&apos;s verify endpoint.</li>
           </ul>
           <p>
@@ -164,7 +169,7 @@ Content-Type: application/json
           </pre>
 
           <h2>Beyond payments: access control</h2>
-          <p>HTTP 402 in PEAC is not only about money. It can gate access based on:</p>
+          <p>In PEAC, a 402 response can also gate access on conditions other than payment:</p>
           <ul>
             <li><strong>AI bot policy.</strong> Require agents to comply with crawling policy.</li>
             <li><strong>Attribution.</strong> Require agreement to attribution terms.</li>

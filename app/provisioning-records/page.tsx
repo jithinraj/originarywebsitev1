@@ -1,27 +1,16 @@
 import type { Metadata } from 'next'
 import { FACTS } from '@/lib/facts'
-import { PageShell, PageHero, PageSection, SectionHeading, Pill, Button, PullLine } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Pill, Button } from '@/components/home/page-kit'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
+import { EventStream } from '@/components/heroes/HeroArtifacts'
 import { PALETTE } from '@/components/home/palette'
-import {
-  RecordCard,
-  CodeBlock,
-  Terminal,
-  StepLabel,
-  SpecimenGrid,
-  MarkerList,
-  InkBand,
-  InkHeading,
-  InkButton,
-  AnchorLine,
-  Dim,
-} from '@/components/specimens/parts'
+import { RecordCard, Terminal, StepLabel, SpecimenGrid, MarkerList, InkBand, InkHeading, InkButton, Dim } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 
 const TITLE = 'Provisioning audit records for agents | Originary'
 const DESCRIPTION =
-  'Bind the request, approval reference, provider operation, resource identifier, result, issuer, and time.'
+  'Signed records of what an agent or pipeline provisioned: accounts, credentials, deployments and budgets, with issuer and time and no secret values.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -74,28 +63,14 @@ export default function ProvisioningRecordsPage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
   return (
     <PageShell>
-      <Breadcrumbs current="Provisioning Records" href="/provisioning-records" />
+      <Breadcrumbs current="Provisioning" href="/provisioning-records" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <PageHero
-        eyebrow="provisioning records"
+        eyebrow="Provisioning"
         title="Keep a record when automation changes your infrastructure."
-        sub="Accounts created. Credentials rotated. Resources deployed. Subscriptions changed. Keep a signed record of what the system reported changing and when."
+        sub="When an agent or pipeline creates an account, rotates a credential, deploys a resource or changes a subscription, keep a signed record of what it reported changing and when."
         display
-        aside={
-          <RecordCard
-            type="provisioning-event"
-            badge={{ kind: 'verified', label: 'verified offline' }}
-            rows={[
-              { label: 'Issuer', value: 'https://platform.vendor.example' },
-              { label: 'Event', value: 'created - deployment' },
-              { label: 'Resource', value: 'prj_4fd2 - production' },
-              { label: 'Actor', value: 'deploy-agent-v2' },
-              { label: 'Signature', value: 'Ed25519 91bc44a0...' },
-            ]}
-            foot="sample record - demo signature"
-          />
-        }
-        strip={['Provisioning events', 'Credential lifecycle', 'Budgets and subscriptions', 'Verifies offline']}
+        aside={<EventStream />}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <Button href="#specimen" primary>
@@ -110,8 +85,8 @@ export default function ProvisioningRecordsPage() {
         <SectionHeading
           index="01"
           eyebrow="The problem"
-          title="Provisioning happens everywhere. The audit trail does not travel."
-          sub="Deployments, provider setup, and credential changes are spread across consoles, CLIs, and CI. Each log is internal. A signed record answers the questions that cross the boundary:"
+          title="Provisioning logs are scattered across tools."
+          sub="Deployments, provider setup and credential changes are recorded in consoles, CLIs and CI, where an outside reviewer cannot check them. A signed record answers the questions a reviewer will ask:"
         />
         <MarkerList
           marker="check"
@@ -128,7 +103,7 @@ export default function ProvisioningRecordsPage() {
       {/* The specimen */}
       <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
         <div id="specimen" style={{ scrollMarginTop: 96 }}>
-          <SectionHeading index="02" eyebrow="The specimen" title="One provisioning event. One signed record." mark="pipeline" />
+          <SectionHeading index="02" eyebrow="The specimen" title="What the record of one deployment contains." mark="pipeline" />
           <FlowPanel
             label="Sequence diagram: a deploy pipeline creates a production resource at a cloud provider, the provisioning event is observed with references and digests only, and a signed record lets anyone verify the change without console access."
             actors={['deploy pipeline', 'cloud provider']}
@@ -170,16 +145,12 @@ export default function ProvisioningRecordsPage() {
               <StepLabel>Tamper case</StepLabel>
               <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: '4px 0 0' }}>
                 Change the resource, the actor, or one character of the signature and verification fails with{' '}
-                <code style={{ fontFamily: 'var(--font-mono)', color: PALETTE.warn }}>E_INVALID_SIGNATURE</code>.
+                <code style={{ fontFamily: 'var(--font-mono)', color: PALETTE.danger }}>E_INVALID_SIGNATURE</code>.
               </p>
             </div>
           </SpecimenGrid>
         </div>
       </PageSection>
-
-      <PullLine accent="Never the secret.">
-        Record the change.
-      </PullLine>
 
       {/* What it covers */}
       <PageSection paddingTop={56} paddingBottom={56}>
@@ -228,17 +199,13 @@ export default function ProvisioningRecordsPage() {
 
       {/* Closing */}
       <InkBand>
-        <InkHeading maxWidth="24ch">Add records to one provisioning workflow this week.</InkHeading>
-        <div style={{ maxWidth: 760, margin: '28px auto 0', textAlign: 'left' }}>
-          <CodeBlock tone="ink">npx -y @peac/cli@{v} verify ./provisioning-event.jws --public-key ./jwks.json</CodeBlock>
-        </div>
+        <InkHeading maxWidth="24ch">Start with one provisioning workflow.</InkHeading>
         <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <InkButton href="/contact" primary>
             Start a pilot
           </InkButton>
           <InkButton href="/verify">Verify a record</InkButton>
         </div>
-        <AnchorLine onInk style={{ marginTop: 36 }}>Logs stay local. Signed records travel.</AnchorLine>
       </InkBand>
     </PageShell>
   )

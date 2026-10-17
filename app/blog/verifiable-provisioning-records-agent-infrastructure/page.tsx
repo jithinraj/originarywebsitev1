@@ -84,7 +84,7 @@ const pullQuote = {
 
 const providerGrid = {
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px, 100%), 1fr))',
   gap: 12,
   marginTop: 14,
   marginBottom: 18,
@@ -338,7 +338,7 @@ export default function Page() {
         <ArticleDoc
           category="protocol"
           title="Verifiable provisioning records for agent-driven infrastructure"
-          sub="When agents provision infrastructure, the proof should outlive the session that made the change."
+          sub="An agent can create a database and rotate a key in one session. The record of what changed should still be checkable after that session ends."
           author="Originary Team"
           date="2026-05-18"
           readTime="11 min read"
@@ -353,9 +353,10 @@ export default function Page() {
           </div>
 
           <p>
-            The point is not to make PEAC a provisioning system. The point is to make
-            provisioning observable as a portable record when a resource, credential, domain,
-            budget, or deployment target changes across systems.
+            Ask a coding agent to set up a new app and it may create a database, attach auth, and
+            write fresh credentials into a local file. Later, someone has to work out what it
+            changed. This post is about making each of those changes, to a resource, credential,
+            domain, budget, or deployment target, observable as a portable record.
           </p>
 
           <p>Provisioning used to be a human workflow.</p>
@@ -365,9 +366,8 @@ export default function Page() {
             the app. Some of that work lived in Git. Some lived in provider dashboards. Some
             lived in shell history. A lot lived nowhere durable at all.
           </p>
-          <p>That model is changing.</p>
           <p>
-            Coding agents can now set up more of the application stack directly. They can
+            Coding agents now do more of that setup directly. They can
             initialize projects, provision databases, attach auth, create analytics projects,
             rotate credentials, and sync environment variables.{' '}
             <a
@@ -382,9 +382,9 @@ export default function Page() {
             managing credentials, handling upgrades, and giving coding agents the same command
             path humans use.
           </p>
-          <p>That is useful. It is also a new audit problem.</p>
+          <p>It is convenient, and it creates an audit problem.</p>
           <p>
-            When an agent provisions infrastructure, teams need to answer simple questions later:
+            After an agent provisions infrastructure, a teammate or reviewer will eventually ask:
           </p>
           <ul>
             <li>What changed?</li>
@@ -398,7 +398,7 @@ export default function Page() {
             Logs help, but logs usually stay where they were produced. They are often local,
             partial, mutable, or tied to a specific vendor&apos;s system.
           </p>
-          <p>Provisioning needs a portable record layer.</p>
+          <p>A provisioning record has to be able to leave the machine that produced it.</p>
 
           <h2>What PEAC does not do</h2>
           <ul>
@@ -423,7 +423,7 @@ export default function Page() {
             generated LLM context, or other sanitized evidence. The record can then be signed,
             exported, and verified later without depending on the original runtime.
           </p>
-          <p>That distinction matters.</p>
+          <p>The scope is narrow on purpose:</p>
           <ul>
             <li>PEAC does not provision resources.</li>
             <li>PEAC does not store credentials.</li>
@@ -444,9 +444,8 @@ export default function Page() {
             We added a PEAC example and integration kit for Stripe Projects provisioning records.
           </p>
           <p>
-            The example is intentionally small. It does not wrap Stripe Projects. It does not
-            claim a Stripe partnership. It does not introduce a new PEAC package or a new
-            protocol surface.
+            The example is intentionally small. It does not wrap Stripe Projects, claim a Stripe
+            partnership, or introduce a new PEAC package or protocol surface.
           </p>
           <p>It shows a pattern:</p>
           <ol>
@@ -465,9 +464,9 @@ export default function Page() {
           </ul>
           <p>
             Each record binds to observed artifacts from the workflow. The example uses
-            experimental, illustrative type names. They are not registry commitments. That is
-            deliberate. The goal is to show the shape of the record, not freeze a
-            vendor-specific vocabulary too early.
+            experimental, illustrative type names. They are deliberately not registry commitments:
+            the example shows the shape of the record without freezing a vendor-specific
+            vocabulary too early.
           </p>
 
           <h2>Why this matters for agents</h2>
@@ -482,7 +481,7 @@ export default function Page() {
           </ul>
           <p>No single system naturally owns the full story.</p>
           <p>
-            That is exactly where signed records are useful. They let each boundary emit or
+            Signed records let each boundary emit or
             preserve a verifiable statement about what it observed, without forcing one platform
             to become the control plane for everything.
           </p>
@@ -500,7 +499,6 @@ export default function Page() {
           </p>
 
           <h2>What the kit does not claim</h2>
-          <p>This is important enough to say plainly.</p>
           <p>
             The Stripe Projects kit records provisioning and credential workflow observations. It
             does not infer settlement, legal acceptance, provider-side finality, or production
@@ -512,11 +510,11 @@ export default function Page() {
             billing or upgrade flow can show delegation-related evidence. It does not
             automatically become payment settlement evidence.
           </p>
-          <p>That conservative boundary is the point.</p>
+          <p>The kit keeps to that boundary on purpose.</p>
           <div style={callout}>PEAC is more useful when it says less, precisely.</div>
 
           <h2>Why not just use logs?</h2>
-          <p>Logs are necessary. They are not enough.</p>
+          <p>You still need logs. The limit is where they live.</p>
           <p>
             A log is usually tied to the system that produced it. A signed interaction record is
             designed to leave that system.
@@ -527,15 +525,14 @@ export default function Page() {
             affect environment files, and later become relevant during security review, incident
             response, onboarding, or compliance work.
           </p>
-          <p>The useful question is not &quot;can we log this?&quot;</p>
-          <p>The useful question is:</p>
+          <p>By then, whether the event was logged matters less than this:</p>
           <div style={pullQuote}>
             Can we verify what the issuer recorded after the original system is gone, unavailable, or not
             trusted as the only source?
           </div>
-          <p>That is the gap PEAC is built for.</p>
+          <p>PEAC records are designed to answer that question.</p>
 
-          <h2>A pattern, not a one-off</h2>
+          <h2>The same pattern beyond Stripe Projects</h2>
           <p>
             Stripe Projects is the first concrete example here because it is a clear, current
             provisioning workflow with agent support, local project state, credential sync, and
@@ -554,10 +551,12 @@ export default function Page() {
             <li>agent tool installation</li>
             <li>provider dashboard changes exported into local workflows</li>
           </ul>
-          <p>The protocol category is not &quot;Stripe Projects records.&quot;</p>
-          <p>The category is <strong>verifiable provisioning records</strong>.</p>
           <p>
-            Stripe Projects is simply a good place to show the pattern. The{' '}
+            The category is <strong>verifiable provisioning records</strong>, and Stripe Projects
+            is one source of them.
+          </p>
+          <p>
+            It is a good place to show the pattern. The{' '}
             <a
               href="https://projects.dev/providers/"
               target="_blank"
@@ -572,8 +571,7 @@ export default function Page() {
 
           <h2>Where provisioning records apply</h2>
           <p>
-            Stripe Projects shows the shape of a broader category: agents and CLIs increasingly
-            provision services across app stacks. PEAC does not replace those providers. It gives
+            Agents and CLIs increasingly provision services across app stacks. PEAC does not replace those providers. It gives
             teams portable signed records of what changed, which tool observed it, and what another
             party can verify later.
           </p>
@@ -611,10 +609,9 @@ export default function Page() {
             provisioning workflow.
           </p>
           <p>
-            The goal is not to replace your CLI, cloud provider, agent framework, or deployment
-            system.
+            None of this replaces your CLI, cloud provider, agent framework, or deployment system.
+            It adds one property to the workflow:
           </p>
-          <p>The goal is simpler:</p>
           <div style={pullQuote}>
             When agents change infrastructure, the proof should outlive the session that made the
             change.

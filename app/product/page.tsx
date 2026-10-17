@@ -1,27 +1,14 @@
 import type { Metadata } from 'next'
-import { PageShell, PageHero, PageSection, SectionHeading, Button, PullLine } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Button } from '@/components/home/page-kit'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import { FACTS } from '@/lib/facts'
-import {
-  RecordCard,
-  Terminal,
-  StepLabel,
-  SpecimenGrid,
-  MarkerList,
-  DataTable,
-  InkBand,
-  InkHeading,
-  InkButton,
-  AnchorLine,
-  Dim,
-} from '@/components/specimens/parts'
+import { Terminal, StepLabel, SpecimenGrid, MarkerList, DataTable, InkBand, InkHeading, InkButton } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
-import { MarkGlyph } from '@/components/home/glyphs/MarkGlyphs'
 
-const TITLE = 'Originary Verification Pilot | Cross-Boundary Evidence'
+const TITLE = 'Verification Pilot for agent and API records | Originary'
 const DESCRIPTION =
-  'Issue signed records where actions happen, verify them under an explicit key policy, and assemble a bounded evidence case for another party.'
+  'A fixed-scope pilot that adds signed records to one agent, API, MCP or gateway workflow, verifies them offline and hands an evidence case to your reviewer.'
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -55,21 +42,25 @@ const jsonLd = {
 const MODULES = [
   {
     mark: 'target' as const,
+    out: 'signed record',
     title: 'Issue',
-    body: 'Create a bounded signed record at the API, MCP, gateway, runtime, or payment boundary that directly observed the action.',
+    body: 'Sign a record in the API, MCP server, gateway, runtime or payment system that directly observed the action.',
   },
   {
     mark: 'sealCheck' as const,
+    out: 'verification report',
     title: 'Verify',
     body: 'Validate record structure, signatures, and disclosed-content bindings under a supplied key or an explicit expected-issuer policy.',
   },
   {
     mark: 'diamond' as const,
+    out: 'established, missing and conflicting findings',
     title: 'Assess',
     body: 'Separate established claims from missing, conflicting, and unevaluated evidence.',
   },
   {
     mark: 'link' as const,
+    out: 'exported evidence case',
     title: 'Hand off',
     body: 'Export the records, native artifacts, verification results, and timeline for a customer, partner, auditor, or incident reviewer.',
   },
@@ -86,16 +77,6 @@ const RECEIVES = [
   'integrity digests for the exported case',
 ]
 
-const PILOT_DELIVERABLES = [
-  'workflow and trust-boundary map',
-  'issuer and key-policy design',
-  'working record issuance',
-  'independent verification path',
-  'one evidence-case export',
-  'threat and non-issuance analysis',
-  'deployment recommendation',
-]
-
 export default function ProductPage() {
   const v = FACTS.currentVersion.replace(/^v/, '')
   return (
@@ -108,20 +89,18 @@ export default function ProductPage() {
         sub="Pick an agent, API, MCP tool or gateway action your team already needs to review. Originary helps you issue the record, verify it and hand it to the people who need it."
         display
         aside={
-          <RecordCard
-            type="mcp-tool-run"
-            badge={{ kind: 'verified', label: 'verified offline' }}
-            rows={[
-              { label: 'Issuer', value: 'https://api.vendor.example' },
-              { label: 'Action', value: 'POST /v1/market-data/search' },
-              { label: 'Policy', value: <>terms:v3 <Dim>sha256:4e21b8...</Dim></> },
-              { label: 'Result', value: <>200 <Dim>sha256:9a3c1d...</Dim></> },
-              { label: 'Signature', value: 'Ed25519 7d40e2c9...' },
-            ]}
-            foot="sample record - demo signature"
-          />
+          <div className="pd-case">
+            <p className="pd-case-head">
+              <span>Evidence case</span>
+              <span>what the recipient opens</span>
+            </p>
+            <ol className="pd-case-list" role="list">
+              {RECEIVES.map((r) => (
+                <li key={r}>{r}</li>
+              ))}
+            </ol>
+          </div>
         }
-        strip={['Issue', 'Verify', 'Assess', 'Hand off', 'PEAC ' + FACTS.currentVersion]}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
           <Button href="/evidence-case" primary>
@@ -129,46 +108,25 @@ export default function ProductPage() {
           </Button>
           <Button href="/contact">Start a pilot</Button>
         </div>
-        <AnchorLine style={{ marginTop: 26 }}>Logs stay local. Signed records travel.</AnchorLine>
       </PageHero>
 
       {/* Modules */}
-      <PageSection paddingBottom={64}>
+      <PageSection paddingBottom={88}>
         <SectionHeading
-          index="01"
           eyebrow="The product system"
-          title="Issue, verify, assess, hand off."
-          sub="Four modules cover the full evidence path. Each works alone; together they turn a workflow into something another party can check."
+          title="Four stages, from the action to the reviewer."
+          sub="You can use any stage on its own. Used together, they give another party a workflow they can check."
         />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
+        <ol className="hw-steps" role="list">
           {MODULES.map((m, i) => (
-            <div key={m.title} style={{ border: `1px solid ${PALETTE.hairline}`, background: PALETTE.paper, padding: '22px 22px 20px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.12em', color: 'var(--muted)' }}>
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <span aria-hidden style={{ color: 'var(--faint)', display: 'inline-flex' }}>
-                  <MarkGlyph name={m.mark} size={18} />
-                </span>
-              </div>
-              <h3 style={{ fontSize: 21, letterSpacing: '-0.014em', color: PALETTE.ink, margin: '10px 0 8px', fontWeight: 500 }}>{m.title}</h3>
-              <p style={{ fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: 0 }}>{m.body}</p>
-            </div>
+            <li key={m.title}>
+              <span className="hw-step-n">{String(i + 1).padStart(2, '0')}</span>
+              <p className="hw-step-t">{m.title}</p>
+              <p className="hw-step-b">{m.body}</p>
+              <code className="hw-step-m">&rarr; {m.out}</code>
+            </li>
           ))}
-        </div>
-      </PageSection>
-
-      <PullLine accent="the system that made it.">
-        Evidence that outlives
-      </PullLine>
-
-      {/* What the recipient receives */}
-      <PageSection paddingTop={56} paddingBottom={56} background={PALETTE.paper}>
-        <SectionHeading index="02" eyebrow="The output" title="What the recipient receives." />
-        <MarkerList marker="check" items={RECEIVES} />
-        <p style={{ fontSize: 13, lineHeight: 1.6, color: PALETTE.faint, margin: '16px 0 0', maxWidth: '62ch' }}>
-          An evidence case is a product artifact. It is not a new PEAC wire type.
-        </p>
+        </ol>
       </PageSection>
 
       {/* Worked flow */}
@@ -179,8 +137,8 @@ export default function ProductPage() {
           actors={['your workflow', 'counterparty']}
           beats={[
             { kind: 'msg', dir: 'ltr', slot: 1, label: 'action happens - api call, tool run, payment, deploy' },
-            { kind: 'rec', slot: 2, label: 'signed record issued at the boundary - facts + policy + result + time' },
-            { kind: 'msg', dir: 'ltr', slot: 3, label: 'record travels - carrier, export, or evidence case' },
+            { kind: 'rec', slot: 2, label: 'signed record issued where the action happened - facts + policy + result + time' },
+            { kind: 'msg', dir: 'ltr', slot: 3, label: 'record is sent - carrier, export, or evidence case' },
             { kind: 'evt', slot: 4, label: 'verified offline - signature, issuer, digests' },
             { kind: 'chk', slot: 5, label: 'evidence case ready for dispute, audit, or review' },
           ]}
@@ -201,7 +159,7 @@ export default function ProductPage() {
             <MarkerList
               marker="check"
               items={[
-                'The issuer signed exactly these claims.',
+                'The supplied key signed exactly these claims.',
                 'The record was not changed after signing.',
                 'Bound digests match the supplied content they cover.',
                 'The record states which policy and result the issuer reported as applicable.',
@@ -220,44 +178,30 @@ export default function ProductPage() {
         <SectionHeading
           index="04"
           eyebrow="Deployment and data boundaries"
-          title="Your infrastructure, your keys, your records."
-          sub="Open source is free and self-hosted. The verification pilot adds integration help under agreement, not a data hand-over."
+          title="It runs in your infrastructure, with your keys."
+          sub="Open source is free and self-hosted. The Verification Pilot adds integration help under a written agreement, and you hand over no data."
         />
         <DataTable
           head={['Mode', 'Where it runs', 'What Originary handles']}
           rows={[
-            ['Open source', 'Your infrastructure', 'Nothing. Apache-2.0 code, your keys, your records.'],
-            ['Verification pilot', 'Your infrastructure', 'Integration guidance, design, and support for the agreed engagement.'],
+            ['Open source', 'Your infrastructure', 'Nothing. You run the Apache-2.0 code with your own keys.'],
+            ['Verification Pilot', 'Your infrastructure', 'Integration guidance, design, and support for the agreed engagement.'],
           ]}
         />
-        <div style={{ marginTop: 28 }}>
-          <StepLabel>Key resolution modes</StepLabel>
-          <DataTable
-            head={['Mode', 'Network', 'Use case']}
-            rows={[
-              ['Strict offline', 'None. Record plus a supplied public key or JWKS.', 'Audit, air-gapped verification'],
-              ['Explicit resolution', 'Caller-authorized fetch of issuer config and JWKS.', 'Interactive tools and services'],
-              ['Cached resolution', 'Optional refresh under cache, expiry, and revocation policy.', 'Production verifiers'],
-            ]}
-          />
-        </div>
       </PageSection>
 
-      {/* Pilot + PEAC relationship */}
-      <PageSection paddingTop={56} paddingBottom={80}>
+      {/* Scope pointer */}
+      <PageSection paddingTop={56} paddingBottom={88}>
         <SectionHeading
-          index="05"
           eyebrow="Start"
-          title="One consequential workflow, implemented end to end."
-          sub="The Originary Verification Pilot is a fixed-scope implementation engagement for one workflow, one issuer model, one verification path, and one external evidence recipient."
+          title="One workflow, implemented end to end."
+          sub="The Verification Pilot is a fixed-scope engagement: one workflow, one issuer model, one verification path and one external recipient. Scope, terms and pricing are on the pricing page."
         />
-        <MarkerList marker="check" items={PILOT_DELIVERABLES} />
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 24 }}>
-          <Button href="/pricing" primary>
-            Plans and pilot
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <Button href="/pricing#pilot" primary>
+            Pilot scope and pricing
           </Button>
           <Button href="/records">All six record types</Button>
-          <Button href="/peac">PEAC Protocol</Button>
         </div>
         <p style={{ fontSize: 13.5, lineHeight: 1.65, color: PALETTE.faint, maxWidth: '62ch', marginTop: 22 }}>
           Poem, Inc. is the Delaware corporation. Originary&trade; is its software and developer-tools brand. Originary
@@ -269,9 +213,9 @@ export default function ProductPage() {
       </PageSection>
 
       <InkBand>
-        <InkHeading>Put a signed record on one workflow this week.</InkHeading>
+        <InkHeading maxWidth="24ch">Bring the workflow people already ask you about.</InkHeading>
         <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--on-dark-muted)', maxWidth: '52ch', margin: '0 auto 26px' }}>
-          Start with the workflow another party already asks about. We will show what the signed record should contain.
+          Tell us who asks about it and what they need to see, and we will draft the record with you.
         </p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
           <InkButton href="/contact" primary>
@@ -279,9 +223,6 @@ export default function ProductPage() {
           </InkButton>
           <InkButton href="/verify">Verify a sample</InkButton>
         </div>
-        <AnchorLine onInk style={{ marginTop: 30 }}>
-          Logs stay local. Signed records travel.
-        </AnchorLine>
       </InkBand>
     </PageShell>
   )

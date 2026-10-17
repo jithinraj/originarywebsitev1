@@ -20,8 +20,13 @@ type SubmitState = 'idle' | 'sending' | 'sent' | 'error'
 
 export function DemoRequestForm({
   destinationEmail = 'contact@originary.xyz',
+  compact = false,
+  submitLabel = 'Send workflow',
 }: {
   destinationEmail?: string
+  /** Drop the in-form heading and the email-fallback sentence when the page already says both. */
+  compact?: boolean
+  submitLabel?: string
 }) {
   const [state, setState] = useState<SubmitState>('idle')
 
@@ -84,7 +89,7 @@ export function DemoRequestForm({
 
   return (
     <form className="home-demo-form" onSubmit={handleSubmit}>
-      <div
+      {!compact && <div
         className="home-demo-form-eyebrow"
         style={{
           fontFamily: MONO,
@@ -97,7 +102,7 @@ export function DemoRequestForm({
         }}
       >
         Tell us the workflow that needs verification.
-      </div>
+      </div>}
 
       <input
         type="text"
@@ -195,7 +200,7 @@ export function DemoRequestForm({
           transition: 'opacity 160ms ease',
         }}
       >
-        {state === 'sending' ? 'Sending...' : 'Send workflow'}
+        {state === 'sending' ? 'Sending...' : submitLabel}
       </button>
 
       <p role="status" aria-live="polite" style={{ margin: '10px 0 0', fontFamily: SANS, fontSize: 13, lineHeight: 1.5, color: state === 'error' ? PALETTE.danger : PALETTE.success }}>
@@ -215,7 +220,7 @@ export function DemoRequestForm({
           color: PALETTE.muted,
         }}
       >
-        Sent to the team and routed by topic; falls back to an email draft to{' '}
+        {!compact && <>Sent to the team and routed by topic; falls back to an email draft to{' '}
         <a
           href={`mailto:${destinationEmail}`}
           style={{
@@ -227,7 +232,7 @@ export function DemoRequestForm({
         >
           {destinationEmail}
         </a>
-        {' '}if submission is unavailable. Business contact details only; never paste records, JWS strings,
+        {' '}if submission is unavailable.{' '}</>} Business contact details only; never paste records, JWS strings,
         or keys. We use what you send only to route your message and reply, and retain it no longer than
         needed for that. See our{' '}
         <a

@@ -307,7 +307,7 @@ export function HeroV2() {
             {/* RIGHT chips */}
             <ol
               className="home-herov2-col home-herov2-col-right"
-              aria-label="Verification methods anyone can use"
+              aria-label="Who verifies the record"
             >
               {OUTPUTS.map((o, i) => (
                 <li

@@ -13,11 +13,34 @@ const mono = MONO
 export type BadgeKind = 'verified' | 'denied' | 'invalid' | 'neutral'
 
 const BADGE_COLORS: Record<BadgeKind, { fg: string; bg: string; bd: string }> = {
-  // Text uses a darker step of the accent hue for contrast at 10.5px.
   verified: { fg: PALETTE.success, bg: 'var(--success-bg)', bd: 'color-mix(in srgb, var(--success) 35%, transparent)' },
-  denied: { fg: PALETTE.warn, bg: 'var(--warn-bg)', bd: 'color-mix(in srgb, var(--warn) 35%, transparent)' },
+  // A denied decision is a recorded fact, not a warning or a failed check: neutral ink.
+  denied: { fg: PALETTE.ink, bg: PALETTE.paper, bd: 'var(--border-chip)' },
   invalid: { fg: RUST, bg: 'var(--danger-bg)', bd: 'color-mix(in srgb, var(--danger) 35%, transparent)' },
   neutral: { fg: PALETTE.faint, bg: PALETTE.paper, bd: PALETTE.hairline },
+}
+
+/** Status glyphs: results always carry an icon and a word. */
+export function StatusIcon({ kind, size = 12 }: { kind: 'ok' | 'bad' | 'deny' | 'none'; size?: number }) {
+  return (
+    <svg viewBox="0 0 16 16" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden style={{ flex: 'none' }}>
+      {kind === 'none' ? (
+        <circle cx="8" cy="8" r="6.5" strokeDasharray="2.2 2.2" />
+      ) : (
+        <circle cx="8" cy="8" r="6.5" />
+      )}
+      {kind === 'ok' ? <path d="m5.2 8.2 1.9 1.9 3.8-4.2" strokeLinecap="round" strokeLinejoin="round" /> : null}
+      {kind === 'bad' ? <path d="m5.8 5.8 4.4 4.4m0-4.4-4.4 4.4" strokeLinecap="round" /> : null}
+      {kind === 'deny' ? <path d="M4.2 11.8 11.8 4.2" strokeLinecap="round" /> : null}
+    </svg>
+  )
+}
+
+const BADGE_ICON: Record<BadgeKind, 'ok' | 'bad' | 'deny' | 'none'> = {
+  verified: 'ok',
+  denied: 'deny',
+  invalid: 'bad',
+  neutral: 'none',
 }
 
 export function StatusBadge({ kind, children }: { kind: BadgeKind; children: ReactNode }) {
@@ -25,6 +48,9 @@ export function StatusBadge({ kind, children }: { kind: BadgeKind; children: Rea
   return (
     <span
       style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: 6,
         fontFamily: mono,
         fontSize: 10.5,
         letterSpacing: '0.04em',
@@ -32,10 +58,12 @@ export function StatusBadge({ kind, children }: { kind: BadgeKind; children: Rea
         color: c.fg,
         background: c.bg,
         border: `1px solid ${c.bd}`,
-        padding: '3px 9px',
+        borderRadius: 'var(--radius-pill)',
+        padding: '3px 10px 3px 7px',
         whiteSpace: 'nowrap',
       }}
     >
+      <StatusIcon kind={BADGE_ICON[kind]} />
       {children}
     </span>
   )
@@ -67,6 +95,7 @@ export function RecordCard({
       style={{
         background: PALETTE.paper,
         border: `1px solid ${PALETTE.rule}`,
+        borderRadius: 'var(--radius-card)',
         padding: '18px 20px 16px',
         ...style,
       }}
@@ -132,6 +161,7 @@ export function CodeBlock({
         border: `1px solid ${ink ? 'var(--rule-on-dark)' : PALETTE.hairline}`,
         padding: '14px 16px',
         margin: 0,
+        borderRadius: 'var(--radius-panel)',
         overflowX: 'auto',
         whiteSpace: 'pre-wrap',
         wordBreak: 'break-word',
@@ -156,8 +186,8 @@ export function Terminal({ lines, tone = 'paper' }: { lines: TermLine[]; tone?: 
           ? 'var(--danger-on-dark)'
           : RUST
         : ink
-          ? 'var(--on-dark-muted)'
-          : PALETTE.faint
+          ? PALETTE.onDark
+          : PALETTE.ink
   return (
     <div
       className="spec-fade"
@@ -167,12 +197,25 @@ export function Terminal({ lines, tone = 'paper' }: { lines: TermLine[]; tone?: 
         lineHeight: 1.7,
         background: ink ? PALETTE.surfaceDark : PALETTE.paper,
         border: `1px solid ${ink ? 'var(--rule-on-dark)' : PALETTE.hairline}`,
+        borderRadius: 'var(--radius-panel)',
         padding: '12px 16px',
+        overflowX: 'auto',
       }}
     >
       {lines.map((l, i) => (
-        <div key={i} style={{ color: color(l.kind) }}>
-          {l.text}
+        <div
+          key={i}
+          style={{ color: color(l.kind), display: 'flex', alignItems: 'center', gap: 8, whiteSpace: 'pre', minWidth: 'max-content' }}
+        >
+          {l.kind === 'ok' ? <StatusIcon kind="ok" size={13} /> : l.kind === 'err' ? <StatusIcon kind="bad" size={13} /> : null}
+          {l.kind === 'out' && l.text.startsWith('$ ') ? (
+            <span>
+              <span style={{ color: ink ? 'var(--on-dark-muted)' : PALETTE.faint, userSelect: 'none' }}>$ </span>
+              {l.text.slice(2)}
+            </span>
+          ) : (
+            l.text
+          )}
         </div>
       ))}
     </div>
@@ -472,7 +515,11 @@ export function MarkerList({
   items: ReactNode[]
   maxWidth?: number
 }) {
-  const color = marker === 'cross' ? PALETTE.warn : marker === 'check' ? PALETTE.success : PALETTE.accent
+  // Result colours (green, amber) are reserved for verification results, so list
+  // markers stay neutral: 'check' renders as a plain numbered list, and 'cross'
+  // ("does not do") as a quiet dash.
+  const color = PALETTE.muted
+  const glyph = marker === 'cross'
   return (
     <ul
       className="spec-ledger"
@@ -489,7 +536,7 @@ export function MarkerList({
           key={i}
           style={{
             display: 'grid',
-            gridTemplateColumns: marker === 'number' ? '34px minmax(0, 1fr)' : '34px 18px minmax(0, 1fr)',
+            gridTemplateColumns: glyph ? '34px 18px minmax(0, 1fr)' : '34px minmax(0, 1fr)',
             gap: 12,
             alignItems: 'baseline',
             padding: '13px 2px',
@@ -507,9 +554,9 @@ export function MarkerList({
           >
             {String(i + 1).padStart(2, '0')}
           </span>
-          {marker !== 'number' ? (
+          {glyph ? (
             <span aria-hidden="true" style={{ fontFamily: mono, fontSize: 12.5, color }}>
-              {marker === 'check' ? '✓' : '×'}
+              &ndash;
             </span>
           ) : null}
           <span style={{ fontFamily: sans, fontSize: 15, lineHeight: 1.55, color: PALETTE.ink }}>{it}</span>

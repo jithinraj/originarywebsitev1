@@ -109,9 +109,8 @@ export default function Page() {
           </ArticleFigure>
 
           <p>
-            This is an application design recommendation, not a PEAC schema or a claim that every
-            business uses these states. Some workflows need fewer states. Others need explicit
-            expiry, cancellation, or review states.
+            Treat it as application design advice; not every business uses these states. Some
+            workflows need fewer. Others need explicit expiry, cancellation, or review states.
           </p>
           <p>
             The interface should also give the agent a stable request reference and a documented
@@ -228,9 +227,9 @@ export default function Page() {
             useful.
           </p>
           <PullLine>
-            The business still serves the customer. The agent still acts within the customer&rsquo;s
-            authority. Both should be able to retain a precise account of the result they were
-            given.
+            The business keeps serving the customer, and the agent keeps acting within the
+            customer&rsquo;s authority. What changes is that both can keep a precise account of the
+            result they were given.
           </PullLine>
 
           <NextStep actions={[{ label: 'Talk to Originary', href: '/contact' }]}>

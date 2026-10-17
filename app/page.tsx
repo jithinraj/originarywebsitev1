@@ -18,10 +18,10 @@ import { originaryVerificationPilot, peacProtocol } from '@/lib/structured-data/
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Originary | Verifiable Records for Agent Actions',
+    absolute: 'Verifiable audit records for AI agents and APIs | Originary',
   },
   description:
-    'Originary gives agent, API, MCP and gateway actions signed records you can verify later, share with customers or auditors, and use without exposing your logs.',
+    'Signed records for AI agent, API, MCP and gateway actions. Verify them offline and share them with customers or auditors without exposing your logs.',
   authors: [{ name: 'Originary', url: 'https://www.originary.xyz' }],
   creator: 'Originary',
   publisher: 'Originary',
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Originary | Verifiable Records for Agent Actions',
+    title: 'Verifiable audit records for AI agents and APIs | Originary',
     description:
-      'Originary gives agent, API, MCP and gateway actions signed records you can verify later, share with customers or auditors, and use without exposing your logs.',
+      'Signed records for AI agent, API, MCP and gateway actions. Verify them offline and share them with customers or auditors without exposing your logs.',
     url: 'https://www.originary.xyz',
     type: 'website',
     locale: 'en_US',
@@ -40,16 +40,16 @@ export const metadata: Metadata = {
         url: '/og',
         width: 1200,
         height: 630,
-        alt: 'Originary | Verify Machine Actions Across Boundaries',
+        alt: 'Originary: signed records for agent and API actions',
       },
     ],
     siteName: 'Originary',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Originary | Verifiable Records for Agent Actions',
+    title: 'Verifiable audit records for AI agents and APIs | Originary',
     description:
-      'Originary gives agent, API, MCP and gateway actions signed records you can verify later, share with customers or auditors, and use without exposing your logs.',
+      'Signed records for AI agent, API, MCP and gateway actions. Verify them offline and share them with customers or auditors without exposing your logs.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',

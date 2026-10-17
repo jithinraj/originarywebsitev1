@@ -17,7 +17,7 @@ export function BuiltOnPEAC() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
           gap: 'clamp(28px, 4vw, 56px)',
           alignItems: 'start',
         }}
@@ -66,7 +66,7 @@ export function BuiltOnPEAC() {
               padding: 0,
               margin: '24px 0 0 0',
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(190px, 100%), 1fr))',
               gap: '10px 24px',
             }}
           >

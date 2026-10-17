@@ -71,7 +71,7 @@ export default function Page() {
             </FigureFrame>
           </ArticleFigure>
 
-          <h2>Telemetry gives you visibility. A handoff needs context.</h2>
+          <h2>What survives a telemetry export</h2>
           <p>
             OpenTelemetry collects and exports traces, metrics, logs, and other signals. It is built
             for observing systems, and that includes activity across services. Logs can be exported.
@@ -96,8 +96,8 @@ export default function Page() {
               sampling documentation
             </ExtLink>{' '}
             explains how teams can retain a representative selection of traces. That can be
-            appropriate for diagnosing aggregate behavior. An approval required for reviewing one
-            particular permission change cannot depend on that change happening to survive a
+            appropriate for diagnosing aggregate behavior. The approval record a reviewer needs for
+            one particular permission change cannot depend on whether its trace survived a
             sampling decision.
           </p>
           <p>
@@ -132,7 +132,7 @@ export default function Page() {
             request and returning a result. An approval service can report the approval it issued. A
             separate observer can report the state it read. Each statement has a source and a limit.
           </p>
-          <p>That is the useful starting point for signed interaction records.</p>
+          <p>A signed interaction record starts from there: one issuer making one bounded statement.</p>
 
           <h2>What the signature contributes</h2>
           <p>
@@ -141,8 +141,8 @@ export default function Page() {
             establish why that key is acceptable for the claimed issuer.
           </p>
           <p>
-            This is stronger than relying on a screenshot&rsquo;s appearance. It is also narrower
-            than proving the entire event occurred as described.
+            That is stronger than trusting how a screenshot looks, and narrower than proving the
+            whole event happened as described.
           </p>
           <p>
             An issuer can sign an incorrect statement. A compromised system can produce valid
@@ -208,14 +208,14 @@ export default function Page() {
             service.
           </p>
           <p>
-            The useful contribution is a handoff that preserves who reported what and gives the
+            What Originary adds is a handoff that preserves who reported what and gives the
             recipient a repeatable way to inspect it. That work sits alongside observability,
             authorization, and the systems that execute the action.
           </p>
           <p>
-            There are workflows where an existing native export already does the job. Use it. There
-            are also workflows where the other party cannot accept your internal investigation as
-            its sole evidence. That is where a portable signed record earns its place.
+            If an existing native export already does the job, use it. A portable signed record is
+            for the workflows where the other party cannot accept your internal investigation as
+            its only evidence.
           </p>
           <p>
             Before instrumenting every agent action, choose one action another team already reviews.

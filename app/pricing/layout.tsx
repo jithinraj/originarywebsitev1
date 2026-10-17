@@ -9,8 +9,8 @@ export const metadata: Metadata = {
     canonical: '/pricing'
   },
   openGraph: {
-    title: 'Pricing ',
-    description: 'PEAC Protocol is free and open-source. Apache-2.0. Self-host with no limits. Commercial support available.',
+    title: 'Pricing | Originary',
+    description: 'PEAC Protocol is free and open source under Apache-2.0. The Verification Pilot puts one production workflow on signed records, by scoped quote.',
     url: '/pricing',
     siteName: 'Originary',
     images: [{
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pricing ',
-    description: 'PEAC Protocol is free and open-source. Apache-2.0. Self-host with no limits. Commercial support available.',
+    title: 'Pricing | Originary',
+    description: 'PEAC Protocol is free and open source under Apache-2.0. The Verification Pilot puts one production workflow on signed records, by scoped quote.',
     images: ['/og']
   }
 }
@@ -44,10 +44,8 @@ const offerCatalogJsonLd = {
     },
     {
       '@type': 'Offer',
-      'name': 'Enterprise Support',
-      'description': 'Guided deployment, managed key infrastructure, compliance evidence, and dedicated engineering access.',
-      'price': '0',
-      'priceCurrency': 'USD',
+      'name': 'Verification Pilot',
+      'description': 'A fixed-scope engagement: one production workflow, issued and verified end to end in your infrastructure. Priced by scoped quote.',
       'availability': 'https://schema.org/PreOrder'
     }
   ]

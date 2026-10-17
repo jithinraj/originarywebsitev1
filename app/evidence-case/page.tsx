@@ -1,18 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageShell, PageHero, PageSection, Card, PALETTE, EvidenceCasePanel } from '@/components/home'
+import { StatusGlyph } from '@/components/home/glyphs/StatusGlyphs'
 import { Mono } from '@/components/home/atoms/Mono'
-import { StepLabel, VerificationBoundary } from '@/components/specimens/parts'
+import { StepLabel, InkBand, InkHeading, InkButton } from '@/components/specimens/parts'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
+import { CaseSummary } from '@/components/heroes/HeroArtifacts'
 
 export const metadata: Metadata = {
   title: { absolute: 'What an AI agent or API evidence case contains | Originary' },
   description:
-    'Inspect a bounded evidence case containing signed records, native artifacts, verification results, a timeline, and explicit missing-evidence findings.',
+    'An example evidence case for a disputed paid MCP tool call: signed records, native artifacts, verification results, a timeline and the evidence still missing.',
   openGraph: {
     title: 'Evidence case | Originary',
     description:
-      'Inspect a bounded evidence case containing signed records, native artifacts, verification results, a timeline, and explicit missing-evidence findings.',
+      'An example evidence case for a disputed paid MCP tool call: signed records, native artifacts, verification results, a timeline and the evidence still missing.',
     type: 'website',
     url: '/evidence-case',
     siteName: 'Originary',
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Evidence case | Originary',
     description:
-      'Inspect a bounded evidence case containing signed records, native artifacts, verification results, a timeline, and explicit missing-evidence findings.',
+      'An example evidence case for a disputed paid MCP tool call: signed records, native artifacts, verification results, a timeline and the evidence still missing.',
     images: ['/og'],
     site: '@originaryx',
     creator: '@originaryx',
@@ -62,12 +64,25 @@ const NOT_EVALUATED = [
   'whether the issuer omitted another event.',
 ]
 
-function FindingColumn({ title, items, color }: { title: string; items: string[]; color: string }) {
+function FindingColumn({
+  title,
+  items,
+  color,
+  glyph,
+}: {
+  title: string
+  items: string[]
+  color: string
+  glyph: 'established' | 'missing' | 'partial'
+}) {
   return (
     <div style={{ borderTop: `2px solid ${color}`, paddingTop: 16 }}>
-      <Mono size={10.5} color={color} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
-        {title}
-      </Mono>
+      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color }}>
+        <StatusGlyph name={glyph} size={16} />
+        <Mono size={10.5} color={color} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+          {title}
+        </Mono>
+      </span>
       <ul style={{ margin: '14px 0 0', padding: '0 0 0 18px', fontFamily: sans, fontSize: 14, lineHeight: 1.7, color: PALETTE.muted }}>
         {items.map((item) => (
           <li key={item}>{item}</li>
@@ -80,12 +95,12 @@ function FindingColumn({ title, items, color }: { title: string; items: string[]
 export default function EvidenceCasePage() {
   return (
     <PageShell>
-      <Breadcrumbs current="Evidence Case" href="/evidence-case" />
+      <Breadcrumbs current="Evidence case" href="/evidence-case" />
       <PageHero
         eyebrow="Evidence case"
-        title="A bounded evidence case another party can inspect."
+        title="An evidence case another party can inspect on its own."
         sub="An evidence case packages selected signed records, preserved native artifacts, and verification results so a separate recipient can inspect the same material without access to the source systems."
-        strip={['MCP tool call', 'Gateway decision', 'Payment artifact', 'Missing evidence']}
+        aside={<CaseSummary established={ESTABLISHED.length} missing={MISSING.length} notEvaluated={NOT_EVALUATED.length} />}
       >
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' as const, marginTop: 8 }}>
           <a
@@ -142,7 +157,7 @@ export default function EvidenceCasePage() {
       <PageSection paddingTop={0} paddingBottom={56}>
         <StepLabel>The scenario</StepLabel>
         <p style={{ fontFamily: sans, fontSize: 17, lineHeight: 1.6, color: PALETTE.ink, maxWidth: '62ch', margin: '0 0 8px' }}>
-          A customer disputes a paid MCP tool call to a market-data service.
+          A customer questions a paid MCP tool call to a market-data service.
         </p>
         <p style={{ fontFamily: sans, fontSize: 14, lineHeight: 1.6, color: PALETTE.faint, maxWidth: '62ch', margin: '0 0 28px' }}>
           This scenario is illustrative. It intentionally includes missing evidence: a complete
@@ -159,13 +174,14 @@ export default function EvidenceCasePage() {
                   gap: 16,
                   padding: '13px 20px',
                   borderBottom: i < TIMELINE.length - 1 ? `1px solid ${PALETTE.hairline}` : 'none',
-                  background: row.time ? 'transparent' : 'var(--danger-bg)',
+                  background: 'transparent',
                 }}
               >
-                <Mono size={12} color={row.time ? PALETTE.faint : 'var(--danger)'} style={{ minWidth: 68, flexShrink: 0 }}>
+                <Mono size={12} color={row.time ? PALETTE.faint : PALETTE.warn} style={{ minWidth: 92, flexShrink: 0, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  {row.time ? null : <StatusGlyph name="missing" size={13} />}
                   {row.time ?? 'not recorded'}
                 </Mono>
-                <span style={{ fontFamily: sans, fontSize: 14.5, color: row.time ? PALETTE.ink : 'var(--danger)' }}>
+                <span style={{ fontFamily: sans, fontSize: 14.5, color: row.time ? PALETTE.ink : PALETTE.muted }}>
                   {row.event}
                 </span>
               </li>
@@ -184,21 +200,21 @@ export default function EvidenceCasePage() {
             gap: 'clamp(20px, 3vw, 36px)',
           }}
         >
-          <FindingColumn title="Established" items={ESTABLISHED} color={PALETTE.success} />
-          <FindingColumn title="Missing" items={MISSING} color="var(--danger)" />
-          <FindingColumn title="Not evaluated" items={NOT_EVALUATED} color={PALETTE.faint} />
+          <FindingColumn title="Established" items={ESTABLISHED} color={PALETTE.success} glyph="established" />
+          <FindingColumn title="Missing" items={MISSING} color={PALETTE.warn} glyph="missing" />
+          <FindingColumn title="Not evaluated" items={NOT_EVALUATED} color="var(--not-evaluated)" glyph="partial" />
         </div>
       </PageSection>
 
-      <PageSection paddingTop={0} paddingBottom={96}>
-        <StepLabel>What verification checks</StepLabel>
-        <div style={{ marginTop: 8 }}>
-          <VerificationBoundary />
+      <InkBand>
+        <InkHeading maxWidth="24ch">Send the reviewer one case they can check offline.</InkHeading>
+        <div style={{ marginTop: 30, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <InkButton href="/contact" primary>
+            Start a pilot
+          </InkButton>
+          <InkButton href="/verify">Verify a record</InkButton>
         </div>
-        <p style={{ fontFamily: sans, fontSize: 13, lineHeight: 1.6, color: PALETTE.faint, maxWidth: '62ch', marginTop: 24 }}>
-          An evidence case is a product artifact. It is not a new PEAC wire type.
-        </p>
-      </PageSection>
+      </InkBand>
     </PageShell>
   )
 }

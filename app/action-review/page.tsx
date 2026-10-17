@@ -1,17 +1,15 @@
 import type { Metadata } from 'next'
-import { PageShell, PageHero, PageSection, SectionHeading, Card, Button } from '@/components/home/page-kit'
+import { PageShell, PageHero, PageSection, SectionHeading, Button } from '@/components/home/page-kit'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import { SANS } from '@/components/home/typography'
 import { Mono } from '@/components/home/atoms/Mono'
-import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
-import { VerificationBoundary, InkBand, InkHeading, InkButton } from '@/components/specimens/parts'
-import { FlowPanel } from '@/components/specimens/FlowPanel'
+import { InkBand, InkHeading, InkButton } from '@/components/specimens/parts'
 import { ActionReviewConsole } from './ActionReviewConsole'
 import { CaseFlowDiagram } from './CaseFlowDiagram'
 import './action-review.css'
 
-const TITLE = 'Action Review: agent operation exceptions | Originary'
+const TITLE = 'Review AI agent actions when reports conflict | Originary'
 const DESCRIPTION =
   'Review agent-driven operations: see conflicting source reports, unknown outcomes and unsupported approvals, record a disposition, and export the case.'
 const URL = 'https://www.originary.xyz/action-review'
@@ -54,47 +52,6 @@ const jsonLd = {
     },
   ],
 }
-
-const RULES: Array<{ title: string; body: string; mark: MarkName; severity: string }> = [
-  {
-    title: 'Conflicting outcomes',
-    body: 'Sources reported incompatible final states for one operation, such as cancelled and succeeded.',
-    mark: 'diamond',
-    severity: 'critical',
-  },
-  {
-    title: 'Gateway and result discrepancy',
-    body: 'A gateway reported denial while another source reported successful execution.',
-    mark: 'valve',
-    severity: 'critical',
-  },
-  {
-    title: 'Reported failure',
-    body: 'A source reported the operation failed. Treated as a report, not a verified business outcome.',
-    mark: 'signal',
-    severity: 'high',
-  },
-  {
-    title: 'Unknown outcome',
-    body: 'The last report was in progress more than 30 minutes ago. A timeout is not read as failure.',
-    mark: 'target',
-    severity: 'high',
-  },
-  {
-    title: 'Unsupported approval',
-    body: 'An agent or company asserted user approval without an independent approval artifact.',
-    mark: 'identity',
-    severity: 'medium',
-  },
-  {
-    title: 'Amount disagreement',
-    body: 'Sources reported different amounts in the same currency for one operation.',
-    mark: 'coin',
-    severity: 'medium',
-  },
-]
-
-const SEVERITY_FG: Record<string, string> = { critical: PALETTE.danger, high: 'var(--warn)', medium: 'var(--ink-2)' }
 
 function CaseSnapshot() {
   const rows: Array<[string, React.ReactNode]> = [
@@ -163,44 +120,11 @@ export default function ActionReviewPage() {
           <Button href="#try" primary>
             Try the interactive demo
           </Button>
-          <Button href="/contact">Talk to us about a workflow</Button>
+          <Button href="/contact">Start a pilot</Button>
         </div>
       </PageHero>
 
-      <PageSection paddingTop={72} paddingBottom={72}>
-        <SectionHeading
-          index="01"
-          eyebrow="How a case forms"
-          title="Separate reports in. One reviewable case out."
-          sub="Agents, companies, gateways and payment providers each report on the same operation from their own side. Action Review lines those reports up, checks them against six rules, and puts the exceptions in front of a person."
-          mark="pipeline"
-        />
-        <CaseFlowDiagram />
-      </PageSection>
-
-      <PageSection paddingTop={64} paddingBottom={64} background={PALETTE.paper}>
-        <SectionHeading
-          index="02"
-          eyebrow="One exception, step by step"
-          title="The gateway said no. The company said done."
-          sub="Neither report is wrong on its own. Together they are a question someone has to answer, and the case keeps both reports side by side until they do."
-          mark="valve"
-        />
-        <FlowPanel
-          label="Sequence diagram: an agent requests vendor.update, the gateway reports a denial, the company reports the same operation succeeded, a critical case opens, and a reviewer records a disposition with a reason."
-          actors={['agent', 'gateway', 'company']}
-          beats={[
-            { kind: 'msg', dir: 'ltr', slot: 1, half: 'l', label: 'request vendor.update' },
-            { kind: 'evt', slot: 2, bad: true, label: 'gateway reports: denied by policy' },
-            { kind: 'msg', dir: 'rtl', slot: 3, half: 'r', label: 'company reports: succeeded' },
-            { kind: 'evt', slot: 4, bad: true, label: 'rule match: gateway denial and reported success' },
-            { kind: 'rec', slot: 5, label: 'case opened - critical - both reports attached' },
-            { kind: 'chk', slot: 6, label: 'reviewer records what was checked and why' },
-          ]}
-        />
-      </PageSection>
-
-      <PageSection paddingTop={72} paddingBottom={72}>
+      <PageSection paddingTop={56} paddingBottom={88}>
         <div id="try" style={{ scrollMarginTop: 96 }}>
           <SectionHeading
             index="03"
@@ -210,44 +134,22 @@ export default function ActionReviewPage() {
             mark="ledger"
           />
           <ActionReviewConsole />
-        </div>
-      </PageSection>
-
-      <PageSection paddingTop={0} paddingBottom={72}>
-        <SectionHeading
-          index="04"
-          eyebrow="Exception rules"
-          title="Six deterministic checks, each stated as a report."
-          sub="Every finding names the events it came from. The rules describe what sources said; they do not decide what happened."
-          mark="braces"
-        />
-        <div className="ar-rules">
-          {RULES.map((r) => (
-            <div key={r.title} className="ar-rule-card">
-            <Card padding={22} style={{ height: '100%' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: PALETTE.ink }}>
-                <MarkGlyph name={r.mark} size={26} />
-                <Mono size={10.5} color={SEVERITY_FG[r.severity]} style={{ letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-                  {r.severity}
-                </Mono>
-              </div>
-              <div style={{ fontFamily: SANS, fontSize: 16, fontWeight: 500, margin: '16px 0 6px' }}>{r.title}</div>
-              <p style={{ fontFamily: SANS, fontSize: 14, lineHeight: 1.6, color: PALETTE.muted, margin: 0 }}>{r.body}</p>
-            </Card>
-            </div>
-          ))}
+          <p className="ar-note">
+            Reports are attributed to their source, not verified. Signed records carry the parts that can be checked;
+            see an <a href="/evidence-case">evidence case</a>.
+          </p>
         </div>
       </PageSection>
 
       <PageSection paddingTop={0} paddingBottom={88}>
         <SectionHeading
-          index="05"
-          eyebrow="Verification boundary"
-          title="Reported is not the same as verified."
-          sub="Action Review works from what each system says it saw. When a case has to travel to another party, signed records and an evidence case carry the parts that can be checked."
-          mark="sealCheck"
+          index="01"
+          eyebrow="How a case forms"
+          title="Every report on one operation, lined up in one case."
+          sub="Agents, companies, gateways and payment providers each report on the same operation from their own side. Action Review lines those reports up, checks them against six rules, and puts the exceptions in front of a person."
+          mark="pipeline"
         />
-        <VerificationBoundary />
+        <CaseFlowDiagram />
       </PageSection>
 
       <InkBand>
@@ -266,7 +168,7 @@ export default function ActionReviewPage() {
         </p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
           <InkButton href="/contact" primary>
-            Talk to us
+            Start a pilot
           </InkButton>
           <InkButton href="/evidence-case">See an evidence case</InkButton>
         </div>

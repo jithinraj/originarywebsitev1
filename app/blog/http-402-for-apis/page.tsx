@@ -6,8 +6,8 @@ import { PageShell, ArticleDoc, ArticleRelated, PALETTE } from '@/components/hom
 export const metadata: Metadata = {
   title: { absolute: 'HTTP 402 for APIs: Request, Challenge, and Record | Originary' },
   description:
-    'Practical guide to implementing HTTP 402 Payment Required in APIs. Learn 402 response anatomy, verification patterns, and common pitfalls.',
-  authors: [{ name: 'Jithin Raj, Founder' }],
+    'How to implement HTTP 402 Payment Required in an API: response anatomy, receipt verification, and common pitfalls.',
+  authors: [{ name: 'Originary' }],
   alternates: { canonical: '/blog/http-402-for-apis' },
   openGraph: {
     title: 'HTTP 402 for APIs: Request, Challenge, and Record',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: 'article',
     url: '/blog/http-402-for-apis',
     publishedTime: '2025-11-03',
-    authors: ['Jithin Raj', 'Originary Team'],
+    authors: ['Originary'],
     images: ['/og'],
     siteName: 'Originary',
   },
@@ -69,12 +69,12 @@ export default function Page() {
               <Link href="/peac" style={linkStyle}>
                 HTTP 402 Payment Required
               </Link>{' '}
-              was reserved in 1999 for &quot;future digital payments.&quot; That future is now.
-              Here is how to implement 402 responses that work for automated agents and human
-              developers alike.
+              was reserved in 1997 (RFC 2068) for &quot;future digital payments.&quot; Agents calling priced
+              APIs now give it a use. This is how to build 402 responses that both automated agents
+              and human developers can act on.
             </>
           }
-          author="Jithin Raj, Founder"
+          author="Originary"
           date="2025-11-03"
           readTime="2 min read"
           parent={{ label: 'Blog', href: '/blog' }}
@@ -89,7 +89,7 @@ export default function Page() {
             <li><strong>Clear semantics.</strong> Distinguish payment from auth/permission issues.</li>
           </ul>
           <p>
-            HTTP 402 provides semantic clarity. Unlike 401 (auth missing) or 403 (permission
+            HTTP 402 has a distinct meaning. Unlike 401 (auth missing) or 403 (permission
             denied), 402 signals: <em>&quot;This resource exists, pay first.&quot;</em>
           </p>
 
@@ -127,8 +127,8 @@ Cache-Control: no-store
 }`}
           </pre>
 
-          <h2>Receipt verification: the critical step</h2>
-          <p>A receipt is cryptographic proof of payment. Your server must verify four things:</p>
+          <h2>Verifying the receipt</h2>
+          <p>A receipt is signed evidence of payment. Your server must verify four things:</p>
           <ol>
             <li><strong>Verify signature.</strong> Ensure receipt is from a trusted source using cryptographic verification.</li>
             <li><strong>Check timestamp.</strong> Reject expired receipts (typically more than 5 minutes old).</li>
@@ -150,7 +150,7 @@ Cache-Control: no-store
 
           <h2>What is next</h2>
           <p>
-            HTTP 402 is just the transport layer. To build a complete agent-to-agent commerce
+            HTTP 402 only carries the payment signal. To build a complete agent-to-agent commerce
             system, you will need receipt issuance, entitlement tracking, monitoring, and client
             SDKs.
           </p>
