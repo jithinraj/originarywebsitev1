@@ -1,19 +1,22 @@
 # Originary design system
 
-The website has one design system: **Originary brand guidelines v17, Carbon + Cobalt (12 October 2026)**.
-Every page, component, image route and asset follows it. There is no other palette, theme or logo.
+The website has one design system: **Originary brand guidelines v17, locked 18 October 2026** (Carbon neutrals,
+one cobalt accent). Every page, component, image route and asset follows it. There is no other palette, theme or
+logo. v17 is held unchanged for at least twelve months of consistent use; any change to the wordmark needs founder
+approval.
 
 ## Source of truth
 
 | What | Where |
 |---|---|
-| Colour, type, spacing, radius, motion tokens (light and dark) | `app/originary-tokens.css` |
+| Colour, type, spacing, radius, motion and chart tokens (light and dark) | `app/originary-tokens.css` |
 | Element defaults (headings, links, code, focus, reduced motion, print) | `app/originary-base.css` |
 | Inline-style handles for the tokens | `components/home/palette.ts` (`PALETTE`, values are CSS variables) |
 | Literal token values for OG images and canvas only | `lib/brand-tokens.ts` |
+| Theme choice (system setting, toggle, first-paint script) | `components/brand/theme.ts`, `components/brand/ThemeToggle.tsx` |
 | Wordmark (static master) | `components/brand/OriginaryWordmark.tsx`, geometry in `components/brand/wordmark-geometry.ts` |
 | Logo animation (ident) | `components/brand/OriginaryIdent.tsx` |
-| Brand kit files | `public/brand/` (wordmark, app icon, social), `public/logo/`, favicons in `public/` |
+| Brand kit files | `public/brand/` (wordmark, app icon, social), favicons in `public/`, manifest icons in `public/icons/` |
 
 `app/globals.css` imports the tokens and the base, nothing else. Tailwind is not used.
 
@@ -50,16 +53,20 @@ Panels that stay dark in both themes (proof consoles, terminals) use `--surface-
 
 Rules:
 
-- **One cobalt element per view.** Never on the wordmark, the app icon, headlines or large backgrounds.
+- **Cobalt marks what you can act on** (links, focus, selection) and the one element a composition points to.
+  Never on the wordmark, the app icon, headlines or large backgrounds.
 - **Primary buttons stay ink** (`--action`), never cobalt.
 - **Results always carry an icon and a word**, never colour alone.
 - **Focus is a 2 px cobalt outline**, offset 2 px.
-- No gradients, glass, glows, textures or stock photography.
-- Share of a surface: roughly white 62%, ink 28%, cobalt 6%, results 4%.
+- No gradients, glass, glows or textures.
 - Every text role is at least 4.5 : 1 on its page and panel in both themes.
 
-Light is the default for every visitor. Dark applies only when the reader picks it with the theme toggle in the
-header (`components/brand/ThemeToggle.tsx`); the choice is stored in `localStorage` and applied before first paint.
+### Themes
+
+Light is the default. Dark follows the reader's system setting, or the theme toggle in the header, and swaps
+the wordmark to the reverse master. `THEME_INIT_SCRIPT` sets `data-theme` on `<html>` before first paint and
+follows system changes. A toggle choice that differs from the system is stored in `localStorage` and overrides
+it; choosing the system's own theme clears the override.
 
 ## Typography
 
@@ -69,13 +76,18 @@ IBM Plex for everything but the logo: Sans 300 / 400 / 500 / 600, Mono 400 / 500
 |---|---|
 | Hero | Sans 500, 36–58 px (`--text-hero`), −0.028em, line height 1.06 |
 | Section | Sans 500, 28–42 px (`--text-section`), −0.022em |
-| Card title | Sans 500, 19 px, −0.012em |
-| Lede | Sans 400, 17–18 px, line height 1.55 |
-| Eyebrow | Mono 11 px, 0.16em, uppercase through styling |
-| Machine truth | Mono 13 px |
+| Card title | Sans 600, 19 px, −0.012em |
+| Body | Sans 400, 16–18 px, line height 1.55 |
+| Label | Mono 12 px, 0.12em, uppercase through styling |
+| Code | Mono 13–14 px |
 
-Headlines use weight 500 and sentence case and are never coloured. Two-tone headlines set the claim in
-`--ink` and the qualifier in `--faint`.
+- Headlines are sentence case and never coloured: weight 500 at display sizes, 600 below 20 px, where weight
+  carries the hierarchy (`h3` to `h6` default to 600).
+- Reading text is 16–18 px; 14 px (`--text-body`) only in dense product UI.
+- **Nothing on screen is below 12 px.** Mono is for code, identifiers, data and short labels of 12 px or more.
+  SVG figures sized in viewBox units (`components/blog/figures/`) are the one exception the gate allows.
+- A grey qualifier in a headline (claim in `--ink`, qualifier in `--faint`) is optional, not a formula.
+- Labels are uppercase through `text-transform`, not typed capitals.
 
 ## Wordmark
 
@@ -83,40 +95,72 @@ The wordmark is the logo: one lowercase word, drawn, not typed. Reproduce it onl
 
 - Use `<OriginaryWordmark />`. `tone="auto"` shows the ink master in light and the reverse master in dark;
   use `tone="reverse"` on panels that stay dark.
-- Header: 64 px bar, wordmark 112 px wide, left-aligned. Centre only on covers and title screens.
+- Header: 64 px bar, wordmark 120 px wide (`--wordmark-header-w`), left-aligned, file centred vertically.
+  Centre only on covers and title screens.
 - Minimum 120 px wide normally, 96 px at the very least. Below 96 px use the app icon.
 - Clear space is one x-height (about one eighth of the wordmark's width) on every side.
 - Ink `#0B0B0C` or white only. Never recolour (not even cobalt), stretch, outline, shadow, retype, re-space,
   rotate, or place on mid-tones.
 - `alt="Originary"`, or `alt=""` when adjacent text already says Originary.
 
-App icon and favicon: the wordmark's o in white, 260 wide, centred on a 512 ink tile with a 96 corner radius.
-It is a container, not a second logo: never place it beside the wordmark as a lockup.
+### App icon and favicon
+
+Two masters, both the wordmark's o in white on a 512 ink tile with a 96 corner radius:
+
+- **Large master** (o 260 wide): app icons and anything shown at 64 px or more: `apple-touch-icon.png`,
+  `public/icons/*` (manifest), `public/brand/app-icon/originary-app-icon*.{svg,png}` from 64 px up.
+- **Small master** (o 328 wide, strokes about 13% heavier): favicons, avatars and tabs, 16–48 px:
+  `favicon.ico` (16, 32, 48), `favicon.svg`, `favicon-32x32.png`, `public/brand/app-icon/originary-app-icon-small*`,
+  and the social avatar.
+
+The tile is a container, not a second logo: never place it beside the wordmark as a lockup. Supply the square,
+unmasked tile where a platform applies its own mask. No recolouring, effects, borders or radius changes.
 
 Partner marks: monochrome, one row at 78% opacity, never joined to the wordmark, captioned
 "Examples are interoperability surfaces, not partnership claims."
 
 ## Logo animation
 
-`<OriginaryIdent />` is the v17 ident: ⊙ → o1 → 1o → originary, 5.0 s, scenes 0.8 · 0.9 · 0.8 · 1.3 · 1.2 s,
-ending on the master. It plays once, to open or close (the site uses it as the closing signature). It is
-never a loader or a looping decoration and never in colour. Reduced motion shows the final frame.
+`<OriginaryIdent />` is the v17 ident: a dot in the o becomes a stem, the two trade places and the word builds
+around them, 5.0 s, scenes 0.8 · 0.9 · 0.8 · 1.3 · 1.2 s, ending on the master. It is for films, keynotes and
+launches and plays once. The website does not play it: where a page animates the wordmark in, use a 0.4 s fade.
+It is never a loader or a loop and never in colour. Reduced motion shows the final frame.
 
 ## Diagrams, icons and motion
 
 - Nodes: `--paper`, 1 px `--rule` border, 6 px radius. Originary's node is the one cobalt element.
 - Lines: 1.5 px ink for signed records; dashed grey for anything not evaluated.
 - Results at the end of the path, green, amber or red, with an icon and a word.
-- Labels: mono, uppercase, 11–13 px.
+- Labels: mono, uppercase, 12–13 px.
 - Icons: 24 px grid, 1.5 px stroke, no fill, `currentColor`; 14 px inside chips. Only to name a system in a
   diagram, never as decoration on cards.
 - Motion: lines draw over 900 ms (`--dur-slow`), hovers 160 ms (`--dur-fast`), cards lift 2 px over 220 ms
   (`--dur-base`). Calm easing, no bounce or overshoot. Reduced motion shows the end state.
 
+## Photography and data
+
+Photographs show what exists; charts show what was measured. Both carry a caption, a date and a source.
+
+- Photographs: real work (people, prototypes, instruments, places) as they are; true colour; no stock or generic
+  technology imagery, filters, duotones or text over faces. Renders are labelled; a generated image is never shown
+  as a photograph.
+- Argument charts: `--chart-ink` and greys (`--chart-grey-1`, `--chart-grey-2`); the one series that matters in
+  `--chart-focus` (cobalt).
+- Research figures: Okabe–Ito with ink in place of black. Lines and marks `--chart-blue`, `--chart-vermilion`,
+  `--chart-green`, `--chart-purple`; fills only `--chart-orange`, `--chart-sky`, `--chart-yellow`.
+- Label lines directly, start bar axes at zero, cite the source, and keep green, amber and red for results.
+
 ## Voice
 
-Calm, precise and infrastructural. Short declarative sentences addressed to you. Sentence case everywhere.
-No hype, emoji or exclamation marks. Say what was checked and what was not.
+Talk to the reader: product and docs say you; company and research copy may say we. Fact first, then the
+consequence. Name the real thing (API calls, MCP tool runs, agent actions, payment events). State scope honestly:
+label examples, mark what was not evaluated, give the method and sample with every result. Sentence case; no
+emoji, exclamation marks or superlatives.
+
+- Use: signed, record, verify, issuer, counterparty, boundary, evidence, not evaluated.
+- Avoid: trustless, immutable, guaranteed, seamless, AI-powered, revolutionary, breakthrough, world-class.
+- Say tamper-evident, never tamper-proof. Say "Signature valid. Settlement not evaluated.", never "Fully verified."
+- Originary in running text, with a capital O; lowercase only as the drawn wordmark.
 
 ## Rules for code
 
@@ -125,4 +169,5 @@ No hype, emoji or exclamation marks. Say what was checked and what was not.
   one-off alpha.
 - Pick tokens by role, not by today's value, so dark mode stays correct (button fill `--action`, not `--ink`).
 - OG image routes and canvas code are the only places that use `lib/brand-tokens.ts`.
-- `npm run check:brand` enforces the raw-colour rule.
+- `npm run check:brand` enforces the raw-colour rule, the 12 px text floor and the 96 px wordmark minimum;
+  `npm run test:brand` holds its regression cases.

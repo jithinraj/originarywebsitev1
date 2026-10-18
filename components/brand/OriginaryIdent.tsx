@@ -11,8 +11,9 @@
  *
  * 5.0 s, played once. Scenes 0.8 · 0.9 · 0.8 · 1.3 · 1.2 s. Calm easing, no
  * bounce or overshoot. Ink on white or white on ink using the reverse
- * outlines, never in colour. Use it to open or close; never as a loader or a
- * looping decoration. With reduced motion on, it shows the final frame.
+ * outlines, never in colour. For films, keynotes and launches (guidelines locked
+ * 18 Oct 2026); elsewhere use a 0.4 s fade. Never a loader or a looping
+ * decoration. With reduced motion on, it shows the final frame.
  */
 
 import { useEffect, useRef, useState, type CSSProperties, type ReactElement } from 'react'

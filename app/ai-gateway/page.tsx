@@ -240,8 +240,8 @@ export default function AiGatewayPage() {
         <div
           style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: 10.5,
-            letterSpacing: '0.16em',
+            fontSize: 12,
+            letterSpacing: '0.12em',
             textTransform: 'uppercase',
             color: 'var(--on-dark-muted)',
             margin: '30px 0 8px',

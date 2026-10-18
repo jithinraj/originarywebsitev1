@@ -52,7 +52,7 @@ export function StatusBadge({ kind, children }: { kind: BadgeKind; children: Rea
         alignItems: 'center',
         gap: 6,
         fontFamily: mono,
-        fontSize: 10.5,
+        fontSize: 12,
         letterSpacing: '0.04em',
         textTransform: 'uppercase',
         color: c.fg,
@@ -130,7 +130,7 @@ export function RecordCard({
             paddingTop: 12,
             borderTop: `1px solid ${PALETTE.hairline}`,
             fontFamily: mono,
-            fontSize: 10.5,
+            fontSize: 12,
             letterSpacing: '0.03em',
             color: PALETTE.faint,
           }}
@@ -227,8 +227,8 @@ export function StepLabel({ children }: { children: ReactNode }) {
     <div
       style={{
         fontFamily: mono,
-        fontSize: 10.5,
-        letterSpacing: '0.16em',
+        fontSize: 12,
+        letterSpacing: '0.12em',
         textTransform: 'uppercase',
         color: PALETTE.faint,
         margin: '20px 0 8px',
@@ -249,7 +249,7 @@ export function Legend({ items }: { items: string[] }) {
             key={it}
             style={{
               fontFamily: mono,
-              fontSize: 11,
+              fontSize: 12,
               letterSpacing: '0.04em',
               color: isSig ? PALETTE.success : PALETTE.muted,
               border: `1px solid ${isSig ? 'color-mix(in srgb, var(--success) 35%, transparent)' : PALETTE.hairline}`,
@@ -291,8 +291,8 @@ export function SpecimenIntro({
       <div
         style={{
           fontFamily: mono,
-          fontSize: 10.5,
-          letterSpacing: '0.16em',
+          fontSize: 12,
+          letterSpacing: '0.12em',
           textTransform: 'uppercase',
           color: PALETTE.faint,
         }}
@@ -393,7 +393,7 @@ export function CompareColumns({
           <h3
             style={{
               fontFamily: mono,
-              fontSize: 11.5,
+              fontSize: 12,
               letterSpacing: '0.06em',
               textTransform: 'uppercase',
               color: BADGE_COLORS[col.tone].fg,
@@ -463,7 +463,7 @@ export function DataTable({
                 style={{
                   textAlign: 'left',
                   fontFamily: mono,
-                  fontSize: 10.5,
+                  fontSize: 12,
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
                   color: PALETTE.faint,
@@ -547,7 +547,7 @@ export function MarkerList({
             aria-hidden="true"
             style={{
               fontFamily: mono,
-              fontSize: 11,
+              fontSize: 12,
               letterSpacing: '0.08em',
               color: PALETTE.faint,
             }}
@@ -642,7 +642,7 @@ export function VerificationBoundary() {
       className="spec-grid"
     >
       <div style={{ borderTop: `2px solid ${PALETTE.success}`, paddingTop: 16 }}>
-        <div style={{ fontFamily: mono, fontSize: 10.5, letterSpacing: '0.16em', textTransform: 'uppercase', color: PALETTE.success }}>
+        <div style={{ fontFamily: mono, fontSize: 12, letterSpacing: '0.12em', textTransform: 'uppercase', color: PALETTE.success }}>
           What verification establishes
         </div>
         <p style={{ fontFamily: sans, fontSize: 14.5, lineHeight: 1.6, color: PALETTE.muted, margin: '12px 0 0', maxWidth: '52ch' }}>
@@ -651,7 +651,7 @@ export function VerificationBoundary() {
         </p>
       </div>
       <div style={{ borderTop: `2px solid ${PALETTE.hairline}`, paddingTop: 16 }}>
-        <div style={{ fontFamily: mono, fontSize: 10.5, letterSpacing: '0.16em', textTransform: 'uppercase', color: PALETTE.faint }}>
+        <div style={{ fontFamily: mono, fontSize: 12, letterSpacing: '0.12em', textTransform: 'uppercase', color: PALETTE.faint }}>
           What verification does not establish
         </div>
         <p style={{ fontFamily: sans, fontSize: 14.5, lineHeight: 1.6, color: PALETTE.muted, margin: '12px 0 0', maxWidth: '52ch' }}>

@@ -44,7 +44,7 @@ export function Eyebrow({
     <div
       style={{
         fontFamily: MONO,
-        fontSize: 11.5,
+        fontSize: 12,
         color,
         letterSpacing: '0.11em',
         textTransform: 'uppercase',

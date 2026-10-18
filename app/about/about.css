@@ -239,7 +239,7 @@
 }
 .ab-tl-n {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   color: var(--faint);
@@ -371,7 +371,7 @@
 .ab-co-k {
   margin: 0 0 10px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   color: var(--muted);

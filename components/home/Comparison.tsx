@@ -66,7 +66,7 @@ function ComparisonAnim() {
         }}
       >
         <Mono
-          size={11}
+          size={12}
           color={PALETTE.muted}
           style={{ letterSpacing: '0.05em' }}
         >
@@ -105,7 +105,7 @@ function ComparisonAnim() {
                   {it.label}
                 </span>
                 <Mono
-                  size={10}
+                  size={12}
                   color={PALETTE.faint}
                   style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
                 >
@@ -142,7 +142,7 @@ function ComparisonMiddle({ time }: { time: number }) {
       }}
     >
       <Mono
-        size={11}
+        size={12}
         color={PALETTE.ink}
         style={{ letterSpacing: '0.05em' }}
       >
@@ -176,7 +176,7 @@ function ComparisonMiddle({ time }: { time: number }) {
           }}
         >
           <Mono
-            size={11}
+            size={12}
             color={PALETTE.ink}
             style={{ letterSpacing: '-0.005em', fontWeight: 500 }}
           >
@@ -186,7 +186,7 @@ function ComparisonMiddle({ time }: { time: number }) {
       </div>
 
       <Mono
-        size={11}
+        size={12}
         color={PALETTE.muted}
         style={{ marginTop: 32, maxWidth: 220, textAlign: 'center', lineHeight: 1.55 }}
       >
@@ -201,7 +201,7 @@ function ComparisonRight({ time }: { time: number }) {
   return (
     <div style={{ padding: '28px 28px', display: 'flex', flexDirection: 'column' }}>
       <Mono
-        size={11}
+        size={12}
         color={PALETTE.muted}
         style={{ letterSpacing: '0.05em' }}
       >
@@ -229,7 +229,7 @@ function ComparisonRight({ time }: { time: number }) {
           ]}
         />
       </div>
-      <Mono size={11} color={PALETTE.muted} style={{ marginTop: 18, lineHeight: 1.55, letterSpacing: '-0.005em' }}>
+      <Mono size={12} color={PALETTE.muted} style={{ marginTop: 18, lineHeight: 1.55, letterSpacing: '-0.005em' }}>
         Customer, auditor, partner, downstream system.
       </Mono>
     </div>

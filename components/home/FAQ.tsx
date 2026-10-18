@@ -57,9 +57,9 @@ export function FAQ() {
           >
             <div>
               <Mono
-                size={10}
+                size={12}
                 color={PALETTE.faint}
-                style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
+                style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
               >
                 {String(i + 1).padStart(2, '0')}
               </Mono>

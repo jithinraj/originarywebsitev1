@@ -242,12 +242,17 @@ export default function PressPage() {
               <DL key="b" items={sizes.map((n): [string, string] => [String(n), `${WMR}-${n}w.png`])} />,
             ],
             [
-              'App icon',
+              'App icon, 64 px and up',
               <DL key="a" items={[['SVG', `${AI}.svg`]]} />,
               <DL
                 key="b"
-                items={[16, 32, 64, 128, 180, 192, 256, 512, 1024].map((n): [string, string] => [String(n), `${AI}-${n}.png`])}
+                items={[64, 128, 180, 192, 256, 512, 1024].map((n): [string, string] => [String(n), `${AI}-${n}.png`])}
               />,
+            ],
+            [
+              'Favicon and avatar, 16 to 48 px',
+              <DL key="a" items={[['SVG', `${AI}-small.svg`]]} />,
+              <DL key="b" items={[16, 32, 48].map((n): [string, string] => [String(n), `${AI}-small-${n}.png`])} />,
             ],
             [
               'Social',

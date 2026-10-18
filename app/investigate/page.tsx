@@ -184,7 +184,7 @@ export default function InvestigatePage() {
               <div style={{ marginBottom: 14 }}>
                 <SyntheticTag />
               </div>
-              <Mono size={10.5} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 Question for review
               </Mono>
               <p
@@ -243,7 +243,7 @@ export default function InvestigatePage() {
         <div className="inv-grid3">
           {STEPS.map((s, i) => (
             <Card key={s.title} padding={24}>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.1em' }}>
+              <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.1em' }}>
                 {String(i + 1).padStart(2, '0')}
               </Mono>
               <div style={{ marginTop: 12 }}>
@@ -355,7 +355,7 @@ export default function InvestigatePage() {
         <SectionHeading index="05" eyebrow="Engagement" title="One scoped review." />
         <div style={{ maxWidth: 760 }}>
           <Card padding={28} emphasis style={{ background: PALETTE.bg }}>
-            <Mono size={10.5} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+            <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
               Originary Investigate
             </Mono>
             <div style={{ marginTop: 12 }}>

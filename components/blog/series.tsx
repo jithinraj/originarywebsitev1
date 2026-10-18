@@ -15,7 +15,7 @@ const SLATE = PALETTE.ink
 
 const eyebrow: CSSProperties = {
   fontFamily: MONO,
-  fontSize: 11,
+  fontSize: 12,
   letterSpacing: '0.12em',
   textTransform: 'uppercase',
   color: PALETTE.faint,
@@ -65,7 +65,7 @@ export function SeriesIndex({ current }: { current: string }) {
             lineHeight: 1.45,
           }
           const num = (
-            <span style={{ fontFamily: MONO, fontSize: 11, color: here ? SLATE : PALETTE.faint }}>
+            <span style={{ fontFamily: MONO, fontSize: 12, color: here ? SLATE : PALETTE.faint }}>
               {String(i + 1).padStart(2, '0')}
             </span>
           )
@@ -76,7 +76,7 @@ export function SeriesIndex({ current }: { current: string }) {
                   {num}
                   <span style={{ color: PALETTE.ink, fontWeight: 500 }}>
                     {a.title}{' '}
-                    <span style={{ ...eyebrow, fontSize: 10, color: SLATE, marginLeft: 6 }}>
+                    <span style={{ ...eyebrow, fontSize: 12, color: SLATE, marginLeft: 6 }}>
                       reading
                     </span>
                   </span>
@@ -146,7 +146,7 @@ export function EvidenceTable({
                   ...cell,
                   borderTop: 'none',
                   fontFamily: MONO,
-                  fontSize: 11,
+                  fontSize: 12,
                   fontWeight: 400,
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
@@ -190,7 +190,7 @@ export function StatusChip({ status }: { status: FindingStatus }) {
       style={{
         display: 'inline-block',
         fontFamily: MONO,
-        fontSize: 10,
+        fontSize: 12,
         letterSpacing: '0.1em',
         textTransform: 'uppercase',
         color: c.color,
@@ -246,7 +246,7 @@ export function FindingsCard({
             </span>
             <span style={{ fontFamily: SANS, fontSize: 14, lineHeight: 1.55, color: PALETTE.ink, overflowWrap: 'anywhere' }}>
               {f.text}
-              <span style={{ ...eyebrow, display: 'block', fontSize: 10, marginTop: 4 }}>
+              <span style={{ ...eyebrow, display: 'block', fontSize: 12, marginTop: 4 }}>
                 source: {f.source}
               </span>
             </span>

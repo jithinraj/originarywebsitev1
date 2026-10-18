@@ -64,7 +64,7 @@ function CaseSnapshot() {
     <div className="ar-snap" role="img" aria-label="Sample case: a gateway reported a denial and a company reported success for the same operation, so the case is flagged critical and opened for review.">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, padding: '14px 18px' }}>
         <div style={{ minWidth: 0 }}>
-          <Mono size={10.5} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase', display: 'block' }}>
+          <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase', display: 'block' }}>
             Case
           </Mono>
           <Mono size={13.5} color={PALETTE.ink} style={{ display: 'block', marginTop: 4, overflowWrap: 'anywhere' }}>
@@ -73,20 +73,20 @@ function CaseSnapshot() {
         </div>
         <div style={{ display: 'flex', gap: 6 }}>
           <Mono
-            size={10.5}
+            size={12}
             color={PALETTE.danger}
             style={{ textTransform: 'uppercase', border: '1px solid var(--danger)', background: 'var(--danger-bg)', padding: '3px 8px' }}
           >
             critical
           </Mono>
-          <Mono size={10.5} color={PALETTE.ink} style={{ textTransform: 'uppercase', border: `1px solid ${PALETTE.rule}`, padding: '3px 8px' }}>
+          <Mono size={12} color={PALETTE.ink} style={{ textTransform: 'uppercase', border: `1px solid ${PALETTE.rule}`, padding: '3px 8px' }}>
             open
           </Mono>
         </div>
       </div>
       {rows.map(([label, value]) => (
         <div className="ar-snap-row" key={label}>
-          <Mono size={10.5} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+          <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
             {label}
           </Mono>
           <Mono size={12} color={PALETTE.ink}>
@@ -95,7 +95,7 @@ function CaseSnapshot() {
         </div>
       ))}
       <div style={{ padding: '10px 18px', borderTop: `1px solid ${PALETTE.hairline}`, background: PALETTE.bg }}>
-        <Mono size={10.5} color={PALETTE.faint}>
+        <Mono size={12} color={PALETTE.faint}>
           synthetic case · rules run in your browser
         </Mono>
       </div>

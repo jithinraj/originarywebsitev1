@@ -423,8 +423,8 @@ export function Nav() {
                   <div
                     style={{
                       fontFamily: 'var(--font-plex-mono)',
-                      fontSize: 10.5,
-                      letterSpacing: '0.16em',
+                      fontSize: 12,
+                      letterSpacing: '0.12em',
                       textTransform: 'uppercase',
                       color: PALETTE.faint,
                     }}

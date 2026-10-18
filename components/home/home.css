@@ -543,7 +543,7 @@ html {
 .home-about-eyebrow {
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--ink-2);
   font-family: var(--font-mono);
 }
@@ -651,7 +651,7 @@ html {
 }
 .home-stat-label {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
@@ -783,7 +783,7 @@ html {
   width: 280px;
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.04em;
   color: var(--faint);
 }
@@ -848,7 +848,7 @@ html {
 }
 .home-herov2-output small {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.04em;
   color: var(--faint);
   margin-left: 0;
@@ -1113,7 +1113,7 @@ html {
   }
   .home-herov2-mstep-fields {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.02em;
     color: var(--faint);
     margin: 4px 0 0 0;
@@ -1121,7 +1121,7 @@ html {
   .home-herov2-export-m {
     margin: 10px 0 0;
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.04em;
     color: var(--faint);
   }
@@ -1177,7 +1177,7 @@ html {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 8px 28px;
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: 0.02em;
 }
 .home-proof-item {
@@ -1242,7 +1242,7 @@ html {
 @media (max-width: 480px) {
   .home-herov2-diamond-fields-primary,
   .home-herov2-diamond-fields-trust {
-    font-size: 11.5px;
+    font-size: 12px;
   }
 }
 
@@ -1280,9 +1280,9 @@ html {
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--faint);
   margin-bottom: 12px;
@@ -1372,7 +1372,7 @@ html {
   justify-content: center;
   gap: 10px 20px;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: 0.04em;
   max-width: 1040px;
   color: var(--muted);
@@ -1406,7 +1406,7 @@ html {
   border: 1px solid var(--border-card);
   background: var(--paper);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.04em;
   color: var(--muted);
 }
@@ -1424,14 +1424,14 @@ html {
 @media (max-width: 400px) {
   .home-hero-proof li {
     padding: 5px 9px;
-    font-size: 10.5px;
+    font-size: 12px;
   }
 }
 
 .home-marquee-eyebrow {
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.18em;
+  font-size: 12px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-2);
   margin: 0 0 12px 0;
@@ -1524,7 +1524,7 @@ html {
   color: inherit;
 }
 .home-marquee[data-stacked] .home-marquee-name {
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -1572,7 +1572,7 @@ html {
 }
 .home-usecase-marks span {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.04em;
   color: var(--faint);
 }
@@ -1702,7 +1702,7 @@ html {
 .home-case-row-source {
   display: block;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.05em;
   color: var(--faint);
   margin-top: 2px;
@@ -1728,7 +1728,7 @@ html {
   align-items: center;
   gap: 6px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.05em;
 }
 .home-case-aside {
@@ -1737,8 +1737,8 @@ html {
 }
 .home-case-aside-eyebrow {
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.16em;
+  font-size: 12px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-2);
   margin: 0 0 14px;
@@ -1765,7 +1765,7 @@ html {
 }
 .home-case-aside-foot {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.04em;
   color: var(--faint);
   margin: 20px 0 0;
@@ -1996,7 +1996,7 @@ html {
   padding: 13px 20px 15px;
   border-top: 1px solid var(--hairline);
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.05em;
   color: var(--faint);
 }
@@ -2029,7 +2029,7 @@ html {
   align-items: baseline;
   column-gap: 10px;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: 0.03em;
   line-height: 1.5;
   color: var(--on-dark);
@@ -2124,7 +2124,7 @@ html {
 }
 .aic-faq-n {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   color: var(--faint);
   font-weight: 400;
@@ -2154,7 +2154,7 @@ html {
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--faint);
@@ -2191,8 +2191,8 @@ html {
 }
 .hs-eyebrow {
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
+  font-size: 12px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
   margin: 0 0 16px;
@@ -2304,7 +2304,7 @@ html {
   justify-content: space-between;
   gap: 12px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-2);
@@ -2334,7 +2334,7 @@ html {
 }
 .hs-fields dt {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--faint);
@@ -2349,7 +2349,7 @@ html {
   gap: 8px;
 }
 .hs-changed-tag {
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--danger);
@@ -2558,7 +2558,7 @@ html {
 }
 .rc-tag {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: var(--ls-pill);
   text-transform: uppercase;
   color: var(--faint);
@@ -2609,7 +2609,7 @@ html {
 }
 .rc-fields dt {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: var(--ls-pill);
   text-transform: uppercase;
   color: var(--faint);
@@ -2783,7 +2783,7 @@ html {
 }
 .vlim-word {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: var(--ls-pill);
   text-transform: uppercase;
 }
@@ -2897,7 +2897,7 @@ html {
   transform: translateX(-50%);
   width: 88px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   line-height: 1.3;
   letter-spacing: var(--ls-meta);
   text-transform: uppercase;
@@ -3005,7 +3005,7 @@ html {
     rotate: 90deg;
   }
   .lsp-stream {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 @media (max-width: 560px) {
@@ -3070,7 +3070,7 @@ html {
 .rix-n {
   grid-row: 1 / 3;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--faint);
 }
 .rix-type {
@@ -3391,7 +3391,7 @@ html {
 }
 @media (max-width: 520px) {
   .rc-tag {
-    font-size: 10.5px;
+    font-size: 12px;
     padding: 2px 7px;
   }
   .rc-issuer {
@@ -3458,7 +3458,7 @@ html {
 }
 .hero-pill-tag {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.04em;
   color: var(--on-action);
   background: var(--action);
@@ -3478,7 +3478,7 @@ html {
   gap: 4px 0;
   margin: 18px 0 0;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: 0.02em;
   color: var(--faint);
 }
@@ -3563,7 +3563,7 @@ html {
     display: block;
     margin-top: 2px;
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--muted);
   }
   .hm-out.is-active {
@@ -3605,7 +3605,7 @@ html {
   }
   .hm-seal-fields {
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.02em;
     color: var(--muted);
     text-align: center;
@@ -3715,7 +3715,7 @@ html {
 .rd-label {
   margin: 0 0 12px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: var(--ls-meta);
   text-transform: uppercase;
   color: var(--faint);
@@ -3775,7 +3775,7 @@ html {
 }
 .rd-changed {
   margin-left: 10px;
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: var(--ls-pill);
   text-transform: uppercase;
   color: var(--danger);
@@ -3813,7 +3813,7 @@ html {
   gap: 16px;
   margin: 12px 0 0;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.04em;
 }
 .rd-legend span::before {
@@ -3914,7 +3914,7 @@ html {
     padding: 16px 18px;
   }
   .rd-json {
-    font-size: 11.5px;
+    font-size: 12px;
   }
 }
 
@@ -4025,7 +4025,7 @@ pre[data-armed] + .typed-after {
 }
 @media (max-width: 560px) {
   .rc-tag {
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: 0.08em;
   }
 }
@@ -4123,7 +4123,7 @@ pre[data-armed] + .typed-after {
 .vf-label span {
   margin-left: 8px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: var(--fw-regular);
   color: var(--faint);
 }
@@ -4265,7 +4265,7 @@ pre[data-armed] + .typed-after {
 }
 .vf-word {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: var(--ls-pill);
   text-transform: uppercase;
   color: var(--muted);
@@ -4325,7 +4325,7 @@ pre[data-armed] + .typed-after {
 }
 .vf-profile-ref {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--muted);
 }
 .vf-profile dd {
@@ -4466,7 +4466,7 @@ pre[data-armed] + .typed-after {
 .pr-table tbody th {
   width: 26%;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: var(--fw-regular);
   letter-spacing: var(--ls-pill);
   text-transform: uppercase;
@@ -4492,7 +4492,7 @@ pre[data-armed] + .typed-after {
 }
 .pr-terms dt {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: var(--ls-pill);
   text-transform: uppercase;
   color: var(--muted);
@@ -4538,7 +4538,7 @@ pre[data-armed] + .typed-after {
 }
 .hw-step-n {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--faint);
 }
 .hw-step-t {
@@ -4807,7 +4807,7 @@ pre[data-armed] + .typed-after {
 }
 .gw-types dt {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: var(--ls-pill);
   text-transform: uppercase;
   color: var(--ink);
@@ -4854,7 +4854,7 @@ pre[data-armed] + .typed-after {
   border-bottom: 1px solid var(--hairline);
   background: var(--wash);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: var(--ls-pill);
   text-transform: uppercase;
   color: var(--ink);
@@ -4915,7 +4915,7 @@ pre[data-armed] + .typed-after {
 }
 .aic-step-node {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--muted);
 }
 @media (max-width: 760px) {
@@ -4968,7 +4968,7 @@ pre[data-armed] + .typed-after {
   border-bottom: 1px solid var(--hairline);
   background: var(--wash);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: var(--ls-pill);
   text-transform: uppercase;
   color: var(--ink);
@@ -5000,7 +5000,7 @@ pre[data-armed] + .typed-after {
 }
 .ha-rows dt {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: var(--ls-pill);
   text-transform: uppercase;
   color: var(--faint);
@@ -5083,7 +5083,7 @@ pre[data-armed] + .typed-after {
   border-radius: var(--radius-pill);
   background: var(--accent-tint);
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: 0.04em;
   color: var(--ink);
   animation: ha-in 400ms var(--ease-settle) 600ms both;
@@ -5221,7 +5221,7 @@ pre[data-armed] + .typed-after {
 }
 .ha-glance dt {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 12px;
   letter-spacing: var(--ls-pill);
   text-transform: uppercase;
   color: var(--faint);
@@ -5328,7 +5328,7 @@ pre[data-armed] + .typed-after {
   grid-column: 1 / -1;
   margin: 4px 0 0;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--faint);
 }
 @media (max-width: 520px) {

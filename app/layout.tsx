@@ -90,9 +90,10 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  // Light is the default; the theme toggle updates this tag when the reader picks dark.
+  // Light is the default; THEME_INIT_SCRIPT and the theme toggle update this tag
+  // when the system setting or the reader's choice is dark.
   themeColor: BRAND.bg,
-  colorScheme: 'light',
+  colorScheme: 'light dark',
   viewportFit: 'cover',
 }
 
@@ -104,7 +105,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning className={`${plexSans.variable} ${plexMono.variable}`}>
       <head>
-        {/* Applies the reader's saved theme before first paint (light unless they chose dark). */}
+        {/* Applies the reader's saved theme, or else their system setting, before first paint. */}
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

@@ -60,7 +60,7 @@ export function ArticlePlate({ slug, category, keyword }: ArticlePlateProps) {
             position: 'relative',
             flex: 'none',
             fontFamily: MONO,
-            fontSize: 11,
+            fontSize: 12,
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
             color: PALETTE.faint,

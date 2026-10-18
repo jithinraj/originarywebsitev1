@@ -3,7 +3,7 @@
  * contexts that cannot read CSS variables: next/og image routes (satori) and
  * canvas. Everything else uses the CSS variables. Keep the two in step.
  *
- * Brand guidelines v17 · Carbon + Cobalt · 12 Oct 2026.
+ * Brand guidelines v17 · Carbon + Cobalt · locked 18 Oct 2026.
  */
 export const BRAND = {
   bg: '#FFFFFF',

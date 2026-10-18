@@ -52,7 +52,7 @@ export default function NotFound() {
             style={{
               fontFamily: MONO,
               fontSize: '13px',
-              letterSpacing: '0.14em',
+              letterSpacing: '0.12em',
               textTransform: 'uppercase',
               color: PALETTE.faint,
               marginBottom: '20px',

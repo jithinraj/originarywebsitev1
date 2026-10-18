@@ -95,7 +95,7 @@ export function PageHero({
       >
         {eyebrow ? (
           <Mono
-            size={11}
+            size={12}
             color={PALETTE.muted}
             className="cin-rise"
             style={{ letterSpacing: 'var(--ls-eyebrow)', textTransform: 'uppercase', display: 'block' }}
@@ -192,9 +192,9 @@ export function PageHero({
                 />
               ) : null}
               <Mono
-                size={10.5}
+                size={12}
                 color={PALETTE.muted}
-                style={{ letterSpacing: '0.18em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}
+                style={{ letterSpacing: '0.12em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}
               >
                 {item}
               </Mono>
@@ -272,8 +272,8 @@ export function PullLine({
           <p
             style={{
               fontFamily: MONO,
-              fontSize: 11,
-              letterSpacing: '0.18em',
+              fontSize: 12,
+              letterSpacing: '0.12em',
               textTransform: 'uppercase',
               color: PALETTE.faint,
               margin: '0 0 18px',
@@ -332,9 +332,9 @@ export function SectionHeading({
     >
       {eyebrow ? (
         <Mono
-          size={11}
+          size={12}
           color={PALETTE.muted}
-          style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
+          style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
         >
           {/* index and mark are accepted for compatibility but not drawn: the homepage
               grammar has no section numbers or heading icons. */}
@@ -555,9 +555,9 @@ export function LegalDoc({
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         {eyebrow ? (
           <Mono
-            size={11}
+            size={12}
             color={PALETTE.muted}
-            style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
+            style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
           >
             {eyebrow}
           </Mono>
@@ -649,7 +649,7 @@ export function ArticleDoc({
           className="pk-crumb"
           style={{
             fontFamily: mono,
-            fontSize: 11,
+            fontSize: 12,
             letterSpacing: '0.08em',
             color: PALETTE.faint,
             marginBottom: 32,
@@ -668,9 +668,9 @@ export function ArticleDoc({
           </Link>
         </nav>
         <Mono
-          size={11}
+          size={12}
           color={PALETTE.muted}
-          style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
+          style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
         >
           {category}
         </Mono>
@@ -714,7 +714,7 @@ export function ArticleDoc({
               gap: 18,
               flexWrap: 'wrap',
               fontFamily: mono,
-              fontSize: 11,
+              fontSize: 12,
               letterSpacing: '0.06em',
               color: PALETTE.faint,
               textTransform: 'uppercase',
@@ -808,9 +808,9 @@ export function ArticleRelated({
     >
       <div style={{ maxWidth: 780, margin: '0 auto' }}>
         <Mono
-          size={11}
+          size={12}
           color={PALETTE.faint}
-          style={{ letterSpacing: '0.18em', textTransform: 'uppercase', marginBottom: 18, display: 'block' }}
+          style={{ letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 18, display: 'block' }}
         >
           related
         </Mono>
