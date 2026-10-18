@@ -98,7 +98,7 @@ export default function AgenticCommercePage() {
         <SectionHeading index="01" eyebrow="Two different questions" title="Payment evidence and service evidence answer different questions." />
         <SpecimenGrid>
           <Card>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: PALETTE.faint }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.06em', textTransform: 'uppercase', color: PALETTE.faint }}>
               The payment system may report
             </div>
             <ul style={{ margin: '14px 0 0', padding: '0 0 0 18px', fontSize: 15, lineHeight: 1.7, color: PALETTE.muted }}>
@@ -110,7 +110,7 @@ export default function AgenticCommercePage() {
             </ul>
           </Card>
           <Card emphasis style={{ borderColor: PALETTE.accentBorder, background: PALETTE.accentTint }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase', color: PALETTE.accent }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.06em', textTransform: 'uppercase', color: PALETTE.accent }}>
               The service evidence may report
             </div>
             <ul style={{ margin: '14px 0 0', padding: '0 0 0 18px', fontSize: 15, lineHeight: 1.7, color: PALETTE.muted }}>

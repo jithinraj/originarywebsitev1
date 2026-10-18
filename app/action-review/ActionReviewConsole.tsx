@@ -38,7 +38,7 @@ function Badge({ tone, children }: { tone: { fg: string; bg: string; bd: string 
     <span
       style={{
         fontFamily: MONO,
-        fontSize: 10.5,
+        fontSize: 12,
         letterSpacing: '0.04em',
         textTransform: 'uppercase',
         color: tone.fg,
@@ -55,7 +55,7 @@ function Badge({ tone, children }: { tone: { fg: string; bg: string; bd: string 
 
 function Label({ children }: { children: ReactNode }) {
   return (
-    <Mono size={10.5} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase', display: 'block' }}>
+    <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase', display: 'block' }}>
       {children}
     </Mono>
   )
@@ -266,7 +266,7 @@ export function ActionReviewConsole() {
                 Ordered by severity, then newest activity
               </div>
             </div>
-            <Mono size={11} color={PALETTE.faint}>
+            <Mono size={12} color={PALETTE.faint}>
               {visible.length} of {cases.length}
             </Mono>
           </div>
@@ -321,13 +321,13 @@ export function ActionReviewConsole() {
                     <span style={{ fontFamily: SANS, fontSize: 14, fontWeight: 500, color: PALETTE.ink, textAlign: 'left' }}>
                       {c.title}
                     </span>
-                    <Mono size={11.5} color={PALETTE.faint} style={{ textAlign: 'left', wordBreak: 'break-all' }}>
+                    <Mono size={12} color={PALETTE.faint} style={{ textAlign: 'left', wordBreak: 'break-all' }}>
                       {c.operation_ref}
                     </Mono>
                     <span style={{ display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center' }}>
                       <Badge tone={SEVERITY_STYLE[c.severity]}>{c.severity}</Badge>
                       <Badge tone={STATUS_STYLE[c.status]}>{pretty(c.status)}</Badge>
-                      <Mono size={11} color={PALETTE.faint}>
+                      <Mono size={12} color={PALETTE.faint}>
                         {c.events.length} events
                       </Mono>
                     </span>
@@ -337,7 +337,7 @@ export function ActionReviewConsole() {
             )}
           </ul>
           <div className="ar-panel-foot">
-            <Mono size={11} color={PALETTE.faint}>
+            <Mono size={12} color={PALETTE.faint}>
               All figures are source-reported
             </Mono>
             <button type="button" onClick={reset} style={{ ...button(), padding: '6px 10px', fontSize: 12.5 }}>
@@ -386,7 +386,7 @@ export function ActionReviewConsole() {
                       <p style={{ fontFamily: SANS, fontSize: 13.5, lineHeight: 1.6, color: PALETTE.muted, margin: '6px 0 4px' }}>
                         {f.detail}
                       </p>
-                      <Mono size={11} color={PALETTE.faint} style={{ wordBreak: 'break-all' }}>
+                      <Mono size={12} color={PALETTE.faint} style={{ wordBreak: 'break-all' }}>
                         events: {f.event_ids.join(', ')}
                       </Mono>
                     </div>
@@ -409,16 +409,16 @@ export function ActionReviewConsole() {
                     .map((e) => (
                       <li key={e.event_id} className="ar-event">
                         <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>
-                          <Mono size={11} color={PALETTE.muted}>
+                          <Mono size={12} color={PALETTE.muted}>
                             {e.source} · {pretty(e.basis)}
                           </Mono>
-                          <Mono size={11} color={PALETTE.faint}>
+                          <Mono size={12} color={PALETTE.faint}>
                             {clock(e.occurred_at)}
                           </Mono>
                         </div>
                         <div style={{ fontFamily: MONO, fontSize: 12.5, color: PALETTE.ink, margin: '6px 0 2px' }}>{pretty(e.kind)}</div>
                         <div style={{ fontFamily: SANS, fontSize: 14, lineHeight: 1.5, color: PALETTE.ink }}>{e.summary}</div>
-                        <Mono size={10.5} color={PALETTE.faint} style={{ display: 'block', marginTop: 6, wordBreak: 'break-all' }}>
+                        <Mono size={12} color={PALETTE.faint} style={{ display: 'block', marginTop: 6, wordBreak: 'break-all' }}>
                           issuer {e.issuer}
                           {e.amount_minor ? ` · ${e.currency} ${(Number(e.amount_minor) / 100).toFixed(2)}` : ''}
                           {e.approved_by ? ` · approved_by ${e.approved_by}` : ''} · sha256{' '}
@@ -495,7 +495,7 @@ export function ActionReviewConsole() {
                   <ol style={{ listStyle: 'none', margin: '8px 0 0', padding: 0 }}>
                     {selected.audit.map((a) => (
                       <li key={a.id} style={{ padding: '8px 0', borderTop: `1px solid ${PALETTE.hairline}` }}>
-                        <Mono size={11} color={PALETTE.muted}>
+                        <Mono size={12} color={PALETTE.muted}>
                           {pretty(a.action)} · {a.actor} · {clock(a.at)} · {pretty(a.from_status)} to {pretty(a.to_status)}
                         </Mono>
                         <div style={{ fontFamily: SANS, fontSize: 13.5, color: PALETTE.ink, marginTop: 3 }}>{a.note ?? 'No note'}</div>

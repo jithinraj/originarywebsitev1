@@ -36,7 +36,7 @@ export function ArticleFigure({ label, caption, plate = false, children }: Artic
         <div
           style={{
             fontFamily: MONO,
-            fontSize: 11,
+            fontSize: 12,
             letterSpacing: '0.08em',
             textTransform: 'uppercase',
             color: PALETTE.faint,
@@ -85,7 +85,7 @@ export function ArticleFigure({ label, caption, plate = false, children }: Artic
             <span
               style={{
                 fontFamily: MONO,
-                fontSize: 11,
+                fontSize: 12,
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
                 color: PALETTE.faint,

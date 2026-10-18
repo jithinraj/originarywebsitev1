@@ -132,7 +132,7 @@ export function InteropMarquee() {
         <p
           style={{
             fontFamily: MONO,
-            fontSize: 11.5,
+            fontSize: 12,
             letterSpacing: '0.04em',
             color: PALETTE.muted,
             margin: 0,

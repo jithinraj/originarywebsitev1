@@ -25,8 +25,8 @@ function Column({ title, items, tone }: { title: string; items: string[]; tone: 
       <div
         style={{
           fontFamily: MONO_FONT,
-          fontSize: 10.5,
-          letterSpacing: '0.16em',
+          fontSize: 12,
+          letterSpacing: '0.12em',
           textTransform: 'uppercase',
           color: tone === 'ok' ? PALETTE.success : PALETTE.faint,
         }}

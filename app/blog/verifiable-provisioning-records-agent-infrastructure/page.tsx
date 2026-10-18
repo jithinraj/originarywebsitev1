@@ -120,7 +120,7 @@ const providerMeta = {
 
 const providerLabel = {
   fontFamily: 'var(--font-mono), "IBM Plex Mono", ui-monospace, monospace',
-  fontSize: 11,
+  fontSize: 12,
   textTransform: 'uppercase' as const,
   letterSpacing: '0.04em',
   color: PALETTE.muted,

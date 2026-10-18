@@ -58,7 +58,7 @@ export function RecordCard({
             style={{
               fontFamily:
                 'var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif',
-              fontSize: 11,
+              fontSize: 12,
               color: PALETTE.muted,
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
@@ -70,7 +70,7 @@ export function RecordCard({
           <span
             style={{
               fontFamily: MONO,
-              fontSize: 11,
+              fontSize: 12,
               color: PALETTE.faint,
             }}
           >
@@ -80,7 +80,7 @@ export function RecordCard({
         <div
           style={{
             fontFamily: MONO,
-            fontSize: 10,
+            fontSize: 12,
             color: signed ? PALETTE.ink : PALETTE.faint,
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
@@ -114,7 +114,7 @@ export function RecordCard({
               <div
                 style={{
                   fontFamily: MONO,
-                  fontSize: 11,
+                  fontSize: 12,
                   color: PALETTE.muted,
                   letterSpacing: '0.02em',
                 }}

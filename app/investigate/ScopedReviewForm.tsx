@@ -214,7 +214,7 @@ function Field({
         style={{
           display: 'block',
           fontFamily: MONO,
-          fontSize: 10.5,
+          fontSize: 12,
           letterSpacing: '0.12em',
           textTransform: 'uppercase',
           color: PALETTE.muted,

@@ -93,8 +93,8 @@ export function DemoRequestForm({
         className="home-demo-form-eyebrow"
         style={{
           fontFamily: MONO,
-          fontSize: 11,
-          letterSpacing: '0.18em',
+          fontSize: 12,
+          letterSpacing: '0.12em',
           textTransform: 'uppercase',
           color: PALETTE.muted,
           marginBottom: 20,

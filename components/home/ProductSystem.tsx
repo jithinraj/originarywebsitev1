@@ -65,7 +65,7 @@ export function ProductSystem() {
               </span>
             </span>
             <span className="home-prodsys-step">
-              <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.12em' }}>
+              <Mono size={12} color={PALETTE.muted} style={{ letterSpacing: '0.12em' }}>
                 {`STEP ${String(i + 1).padStart(2, '0')}`}
               </Mono>
             </span>

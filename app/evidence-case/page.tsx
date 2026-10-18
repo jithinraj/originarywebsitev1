@@ -79,7 +79,7 @@ function FindingColumn({
     <div style={{ borderTop: `2px solid ${color}`, paddingTop: 16 }}>
       <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color }}>
         <StatusGlyph name={glyph} size={16} />
-        <Mono size={10.5} color={color} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+        <Mono size={12} color={color} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
           {title}
         </Mono>
       </span>

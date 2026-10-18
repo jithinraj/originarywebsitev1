@@ -170,7 +170,7 @@ function ReleaseCard() {
   return (
     <div className="ha-card dl-release" aria-label="Originary Downloads: publisher and current release">
       <div className="dl-release-mark">
-        <OriginaryWordmark width={118} />
+        <OriginaryWordmark width={120} />
         <span className="dl-release-tag">Downloads</span>
       </div>
       <dl className="ha-rows ha-rows-wide">

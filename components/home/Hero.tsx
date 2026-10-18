@@ -42,9 +42,9 @@ export function Hero() {
       >
         <div>
           <Mono
-            size={11}
+            size={12}
             color={PALETTE.muted}
-            style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
+            style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
           >
             when logs are not enough
           </Mono>
@@ -108,7 +108,7 @@ export function Hero() {
               <div key={t} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <span style={{ width: 6, height: 6, background: PALETTE.ink }} />
                 <Mono
-                  size={11}
+                  size={12}
                   color={PALETTE.muted}
                   style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
                 >
@@ -437,7 +437,7 @@ function FlowCard({
             fontFamily: MONO,
             fontSize: 12,
             color: verified ? PALETTE.success : PALETTE.muted,
-            letterSpacing: '0.16em',
+            letterSpacing: '0.12em',
             textTransform: 'uppercase',
             fontWeight: 500,
           }}
@@ -581,7 +581,7 @@ function RecordPanel({ reveal = 1, signed = false }: { reveal?: number; signed?:
             fontFamily: MONO,
             fontSize: 12,
             color: signed ? PALETTE.ink : PALETTE.muted,
-            letterSpacing: '0.16em',
+            letterSpacing: '0.12em',
             textTransform: 'uppercase',
             fontWeight: 500,
           }}
@@ -686,9 +686,9 @@ function StaticHero() {
             <span
               style={{
                 fontFamily: MONO,
-                fontSize: 11,
+                fontSize: 12,
                 color: PALETTE.faint,
-                letterSpacing: '0.18em',
+                letterSpacing: '0.12em',
                 fontWeight: 500,
               }}
             >

@@ -24,9 +24,9 @@ export function BuiltOnPEAC() {
       >
         <div>
           <Mono
-            size={11}
+            size={12}
             color={PALETTE.faint}
-            style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
+            style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
           >
             open-source protocol
           </Mono>

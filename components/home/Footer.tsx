@@ -166,9 +166,9 @@ export function HomeFooter() {
           {columns.map((col) => (
             <div key={col.h}>
               <Mono
-                size={11}
+                size={12}
                 color={PALETTE.faint}
-                style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
+                style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
               >
                 {col.h}
               </Mono>
@@ -206,10 +206,10 @@ export function HomeFooter() {
                   }}
                 >
                   <Mono
-                    size={11}
+                    size={12}
                     color={PALETTE.faint}
                     className="home-footer-accordion-label"
-                    style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}
+                    style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
                   >
                     {col.h}
                   </Mono>
@@ -242,7 +242,7 @@ export function HomeFooter() {
         className="home-footer-bottom"
         data-nosnippet
       >
-        <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.02em', minWidth: 0 }}>
+        <Mono size={12} color={PALETTE.muted} style={{ letterSpacing: '0.02em', minWidth: 0 }}>
           © 2025-2026 Poem, Inc. · Originary™ is a trademark of Poem, Inc.
         </Mono>
         <div style={{ display: 'flex', gap: 18, alignItems: 'center', flexWrap: 'wrap' }}>
@@ -290,7 +290,7 @@ export function HomeFooter() {
           style={{
             margin: 0,
             fontFamily: SANS,
-            fontSize: 11.5,
+            fontSize: 12,
             lineHeight: 1.55,
             color: PALETTE.faint,
           }}

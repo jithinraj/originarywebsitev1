@@ -188,7 +188,7 @@ export default function PeacPage() {
           />
           <div className="pc-grid pc-2">
             <Card>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 signed
               </Mono>
               <h3 style={subHead}>Signed by the issuer</h3>
@@ -198,7 +198,7 @@ export default function PeacPage() {
               </p>
             </Card>
             <Card>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 portable
               </Mono>
               <h3 style={subHead}>Verifiable away from the issuer</h3>
@@ -249,7 +249,7 @@ export default function PeacPage() {
           />
           <div className="pc-grid pc-3">
             <Card>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 action
               </Mono>
               <h3 style={subHead}>What happened</h3>
@@ -259,7 +259,7 @@ export default function PeacPage() {
               </p>
             </Card>
             <Card>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 policy
               </Mono>
               <h3 style={subHead}>Under what terms</h3>
@@ -269,7 +269,7 @@ export default function PeacPage() {
               </p>
             </Card>
             <Card>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 result
               </Mono>
               <h3 style={subHead}>What returned</h3>
@@ -279,7 +279,7 @@ export default function PeacPage() {
               </p>
             </Card>
             <Card>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 time
               </Mono>
               <h3 style={subHead}>When it happened</h3>
@@ -289,7 +289,7 @@ export default function PeacPage() {
               </p>
             </Card>
             <Card>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 issuer
               </Mono>
               <h3 style={subHead}>Who issued it</h3>
@@ -299,7 +299,7 @@ export default function PeacPage() {
               </p>
             </Card>
             <Card>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 signature
               </Mono>
               <h3 style={subHead}>Signature</h3>
@@ -356,7 +356,7 @@ export default function PeacPage() {
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: 16 }}>
             <Card>
-              <Mono size={11} color={PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 self-host
               </Mono>
               <h3 style={subHead}>Apache-2.0</h3>
@@ -374,7 +374,7 @@ export default function PeacPage() {
               </div>
             </Card>
             <Card emphasis>
-              <Mono size={11} color={PALETTE.muted} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+              <Mono size={12} color={PALETTE.muted} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 commercial
               </Mono>
               <h3 style={subHead}>Verification Pilot</h3>
@@ -508,7 +508,7 @@ const peacHeroCard = {
 
 const peacHeroCardLabel = {
   fontFamily: mono,
-  fontSize: 11,
+  fontSize: 12,
   letterSpacing: '0.12em',
   textTransform: 'uppercase' as const,
   color: PALETTE.faint,
@@ -545,7 +545,7 @@ const peacHeroCardFoot = {
   alignItems: 'center',
   gap: 8,
   fontFamily: mono,
-  fontSize: 11,
+  fontSize: 12,
   letterSpacing: '0.08em',
   textTransform: 'uppercase' as const,
   color: PALETTE.muted,
@@ -577,7 +577,7 @@ function Stat({
         borderLeft: border ? `1px solid ${PALETTE.hairline}` : 'none',
       }}
     >
-      <Mono size={10} color={PALETTE.faint} style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}>
+      <Mono size={12} color={PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
         {label}
       </Mono>
       <div
@@ -615,7 +615,7 @@ function ProfileCell({ title, sub }: { title: string; sub: string }) {
       <div style={{ fontFamily: sans, fontSize: 14, fontWeight: 500, color: PALETTE.ink, marginBottom: 6 }}>
         {title}
       </div>
-      <div style={{ fontFamily: mono, fontSize: 11, color: PALETTE.muted, lineHeight: 1.5 }}>
+      <div style={{ fontFamily: mono, fontSize: 12, color: PALETTE.muted, lineHeight: 1.5 }}>
         {sub}
       </div>
     </div>

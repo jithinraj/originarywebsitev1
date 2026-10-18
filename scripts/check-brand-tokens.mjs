@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 /**
- * One design system: Originary brand guidelines v17 (Carbon + Cobalt). See DESIGN_SYSTEM.md.
+ * One design system: Originary brand guidelines v17, locked 18 Oct 2026. See DESIGN_SYSTEM.md.
  *
  * Fails when site code outside the token files:
  *   - writes a raw colour (#hex, rgb(), rgba(), hsl(), hsla()),
  *   - uses a gradient or backdrop-filter (no gradients, glass or glows),
  *   - sets a font family other than IBM Plex (Inter, Fraunces, Geist),
- *   - references a CSS custom property that nothing defines (a leftover legacy token).
+ *   - references a CSS custom property that nothing defines (a leftover legacy token),
+ *   - sets on-screen text below 12 px (font-size, fontSize, <Mono size>),
+ *   - draws the wordmark below its 96 px absolute minimum.
+ *
+ * SVG figures sized in viewBox units (components/blog/figures/) are exempt from the 12 px rule.
  *
  * Colour lives only in app/originary-tokens.css; lib/brand-tokens.ts mirrors it for OG images and canvas.
  * A line that must show a literal colour as content (a code sample) can carry the marker `brand-allow`.
@@ -30,6 +34,10 @@ const LEGACY_FONT = /(?:font-family|fontFamily|next\/font\/google)[^\n]*\b(?:Int
 const VAR_USE = /var\(\s*--([a-zA-Z0-9_-]+)/g
 const VAR_DEF = /(?:^|[\s{;'"`(,])--([a-zA-Z0-9_-]+)['"`]?\s*:/g
 const FONT_VAR = /variable:\s*['"]--([a-zA-Z0-9_-]+)['"]/g
+// Text below 12 px: CSS px, inline numbers or px strings, and the Mono atom's size prop.
+const SMALL_TEXT = /(?:font-size:\s*|fontSize:\s*['"]?|<Mono\b[^>]*\bsize=\{)(?:[0-9]|1[01])(?:\.\d+)?(?![0-9.])(?!\s*(?:rem|em|%|vw|vh))/
+const SMALL_WORDMARK = /<OriginaryWordmark\b[^>]*\bwidth=\{\s*(?:[0-9]|[1-8][0-9]|9[0-5])(?:\.\d+)?\s*\}/
+const SVG_UNIT_DIRS = ['components/blog/figures/']
 
 const files = []
 function walk(d) {
@@ -69,6 +77,7 @@ for (const { text } of sources) {
 const found = []
 for (const { rel, text } of sources) {
   const isTokenFile = TOKEN_FILES.has(rel)
+  const svgUnits = SVG_UNIT_DIRS.some((d) => rel.startsWith(d))
   text.split('\n').forEach((line, i) => {
     if (line.includes(MARKER)) return
     const at = `${rel}:${i + 1}`
@@ -80,6 +89,8 @@ for (const { rel, text } of sources) {
     if (GRADIENT.test(line)) found.push(`${at}: gradient (v17 uses flat fills and hairlines)`)
     if (GLASS.test(line)) found.push(`${at}: backdrop-filter (no glass effects)`)
     if (LEGACY_FONT.test(line)) found.push(`${at}: non-Plex font family (IBM Plex Sans / Mono only)`)
+    if (!svgUnits && SMALL_TEXT.test(line)) found.push(`${at}: text below 12 px (mono labels are 12 px or more)`)
+    if (SMALL_WORDMARK.test(line)) found.push(`${at}: wordmark below 96 px wide (use the app icon instead)`)
     for (const m of line.matchAll(VAR_USE)) {
       if (!defined.has(m[1])) found.push(`${at}: var(--${m[1]}) is not defined by any token or component`)
     }

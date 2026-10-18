@@ -139,8 +139,8 @@ function ProblemAnim() {
           left: leftX,
           top: 16,
           fontFamily: MONO,
-          fontSize: 10,
-          letterSpacing: '0.14em',
+          fontSize: 12,
+          letterSpacing: '0.12em',
           textTransform: 'uppercase',
           color: PALETTE.faint,
         }}
@@ -153,8 +153,8 @@ function ProblemAnim() {
           right: 20,
           top: 16,
           fontFamily: MONO,
-          fontSize: 10,
-          letterSpacing: '0.14em',
+          fontSize: 12,
+          letterSpacing: '0.12em',
           textTransform: 'uppercase',
           color: PALETTE.faint,
         }}
@@ -184,9 +184,9 @@ function ProblemAnim() {
         }}
       >
         <Mono
-          size={10}
+          size={12}
           color={PALETTE.muted}
-          style={{ letterSpacing: '0.14em', textTransform: 'uppercase' }}
+          style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
         >
           local logs
         </Mono>
@@ -202,11 +202,11 @@ function ProblemAnim() {
                   padding: '5px 0',
                 }}
               >
-                <Mono size={10} color={PALETTE.faint}>
+                <Mono size={12} color={PALETTE.faint}>
                   {log.label}
                 </Mono>
                 <div>
-                  <Mono size={11} color={PALETTE.ink}>
+                  <Mono size={12} color={PALETTE.ink}>
                     {log.detail}
                   </Mono>
                 </div>
@@ -229,8 +229,8 @@ function ProblemAnim() {
         <div
           style={{
             fontFamily: MONO,
-            fontSize: 9,
-            letterSpacing: '0.16em',
+            fontSize: 12,
+            letterSpacing: '0.12em',
             textTransform: 'uppercase',
             color: PALETTE.warn,
             background: PALETTE.paper,
@@ -271,21 +271,21 @@ function ProblemAnim() {
               }}
             >
               <Mono
-                size={10}
+                size={12}
                 color={PALETTE.muted}
-                style={{ letterSpacing: '0.14em', textTransform: 'uppercase' }}
+                style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
               >
                 signed record
               </Mono>
-              <Mono size={9} color={PALETTE.muted}>
+              <Mono size={12} color={PALETTE.muted}>
                 portable
               </Mono>
             </div>
-            <Mono size={10} color={PALETTE.ink}>
+            <Mono size={12} color={PALETTE.ink}>
               POST /v1/search · 200
             </Mono>
             <div style={{ marginTop: 2 }}>
-              <Mono size={9} color={PALETTE.faint}>
+              <Mono size={12} color={PALETTE.faint}>
                 sig 3045...
               </Mono>
             </div>

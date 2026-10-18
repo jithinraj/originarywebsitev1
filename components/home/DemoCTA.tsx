@@ -42,9 +42,9 @@ export function DemoCTA() {
       >
         <div style={{ padding: '36px 36px 40px 36px' }}>
           <Mono
-            size={11}
+            size={12}
             color={PALETTE.muted}
-            style={{ letterSpacing: '0.18em', textTransform: 'uppercase' }}
+            style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
           >
             Get started
           </Mono>
@@ -242,9 +242,9 @@ function CTAStep({
         }}
       >
         <Mono
-          size={10}
+          size={12}
           color={PALETTE.faint}
-          style={{ letterSpacing: '0.14em', textTransform: 'uppercase' }}
+          style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}
         >
           {label}
         </Mono>
@@ -267,7 +267,7 @@ function CTAStep({
       <div
         style={{
           fontFamily: 'var(--font-plex-mono), "IBM Plex Mono", monospace',
-          fontSize: 11,
+          fontSize: 12,
           color: PALETTE.muted,
           marginTop: 8,
           lineHeight: 1.5,

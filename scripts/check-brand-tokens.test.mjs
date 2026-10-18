@@ -27,6 +27,15 @@ const CASES = [
   ['glass rejected', { [TOKENS]: TOKEN_CSS, 'app/p.tsx': "const s = { backdropFilter: 'blur(20px)' }\n" }, false],
   ['legacy font rejected', { [TOKENS]: TOKEN_CSS, 'app/a.css': ".a { font-family: 'Inter', sans-serif; }\n" }, false],
   ['undefined legacy token rejected', { [TOKENS]: TOKEN_CSS, 'app/p.tsx': "const s = { color: 'var(--text-primary)' }\n" }, false],
+  ['12 px text passes', { [TOKENS]: TOKEN_CSS, 'app/a.css': '.a { font-size: 12px; }\n', 'app/p.tsx': "const s = { fontSize: 12.5 }\nconst m = <Mono size={13}>x</Mono>\n" }, true],
+  ['rem and em sizes are not px', { [TOKENS]: TOKEN_CSS, 'app/a.css': '.a { font-size: 1rem; } .b { font-size: 0.9em; }\n' }, true],
+  ['svg figure units exempt', { [TOKENS]: TOKEN_CSS, 'components/blog/figures/f.tsx': 'const s = { fontSize: 10 }\n' }, true],
+  ['wordmark at 120 passes', { [TOKENS]: TOKEN_CSS, 'app/p.tsx': 'const w = <OriginaryWordmark width={120} />\n' }, true],
+  ['11 px css text rejected', { [TOKENS]: TOKEN_CSS, 'components/a.css': '.a { font-size: 11px; }\n' }, false],
+  ['10.5 inline text rejected', { [TOKENS]: TOKEN_CSS, 'app/p.tsx': 'const s = { fontSize: 10.5 }\n' }, false],
+  ['px string inline text rejected', { [TOKENS]: TOKEN_CSS, 'app/p.tsx': "const s = { fontSize: '11px' }\n" }, false],
+  ['small Mono size rejected', { [TOKENS]: TOKEN_CSS, 'app/p.tsx': 'const m = <Mono size={11} color="x">x</Mono>\n' }, false],
+  ['wordmark below 96 rejected', { [TOKENS]: TOKEN_CSS, 'app/p.tsx': 'const w = <OriginaryWordmark width={80} />\n' }, false],
   ['undefined token with fallback rejected', { [TOKENS]: TOKEN_CSS, 'app/a.css': '.a { color: var(--accent-brand, var(--ink)); }\n' }, false],
 ]
 

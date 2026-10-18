@@ -13,7 +13,7 @@ const RULES = ['reported failure', 'conflicting outcomes', 'gateway vs result', 
 function Stage({ step, title, children, ink = false }: { step: string; title: string; children: React.ReactNode; ink?: boolean }) {
   return (
     <div className={`ard-stage${ink ? ' ink' : ''}`}>
-      <Mono size={10.5} color={ink ? 'var(--on-dark-muted)' : PALETTE.faint} style={{ letterSpacing: '0.16em', textTransform: 'uppercase' }}>
+      <Mono size={12} color={ink ? 'var(--on-dark-muted)' : PALETTE.faint} style={{ letterSpacing: '0.12em', textTransform: 'uppercase' }}>
         {step}
       </Mono>
       <div style={{ fontFamily: SANS, fontSize: 16, fontWeight: 500, letterSpacing: '-0.01em', margin: '8px 0 12px', color: ink ? PALETTE.onDark : PALETTE.ink }}>
@@ -40,10 +40,10 @@ export function CaseFlowDiagram() {
         <ul className="ard-chips">
           {SOURCES.map(([name, kinds]) => (
             <li key={name}>
-              <Mono size={11.5} color={PALETTE.ink}>
+              <Mono size={12} color={PALETTE.ink}>
                 {name}
               </Mono>
-              <Mono size={10.5} color={PALETTE.faint}>
+              <Mono size={12} color={PALETTE.faint}>
                 {kinds}
               </Mono>
             </li>
@@ -53,10 +53,10 @@ export function CaseFlowDiagram() {
       <span className="ard-arrow" aria-hidden />
       <Stage step="02 · Correlate" title="One operation, every report">
         <div className="ard-ref">
-          <Mono size={11.5} color={PALETTE.ink}>
+          <Mono size={12} color={PALETTE.ink}>
             operation_ref
           </Mono>
-          <Mono size={10.5} color={PALETTE.faint}>
+          <Mono size={12} color={PALETTE.faint}>
             acme:workflow-88
           </Mono>
         </div>
@@ -67,10 +67,10 @@ export function CaseFlowDiagram() {
         <ol className="ard-rules">
           {RULES.map((r, i) => (
             <li key={r}>
-              <Mono size={10.5} color={PALETTE.faint}>
+              <Mono size={12} color={PALETTE.faint}>
                 {String(i + 1).padStart(2, '0')}
               </Mono>
-              <Mono size={11} color={PALETTE.ink}>
+              <Mono size={12} color={PALETTE.ink}>
                 {r}
               </Mono>
             </li>
@@ -91,18 +91,18 @@ export function CaseFlowDiagram() {
       <span className="ard-arrow" aria-hidden />
       <Stage step="05 · Hand off" title="Export what was found">
         <div className="ard-out">
-          <Mono size={11} color={PALETTE.ink}>
+          <Mono size={12} color={PALETTE.ink}>
             case report (JSON)
           </Mono>
-          <Mono size={10.5} color={PALETTE.faint}>
+          <Mono size={12} color={PALETTE.faint}>
             unsigned, source-attributed
           </Mono>
         </div>
         <div className="ard-out dashed">
-          <Mono size={11} color={PALETTE.ink}>
+          <Mono size={12} color={PALETTE.ink}>
             evidence case
           </Mono>
-          <Mono size={10.5} color={PALETTE.faint}>
+          <Mono size={12} color={PALETTE.faint}>
             signed records, when required
           </Mono>
         </div>
