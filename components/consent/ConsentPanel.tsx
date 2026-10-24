@@ -57,8 +57,8 @@ export function ConsentPanel({
       ) : (
         <>
           <p className="cn-body">
-            {asking ? 'May we measure how this site is used?' : state} Allowing loads Google Analytics, Amplitude,
-            Vercel Analytics and Microsoft Clarity, which records sessions. Nothing loads until you allow it.{' '}
+            {asking ? 'May we measure how this site is used?' : state} Allowing loads analytics, which records
+            sessions. Nothing loads until you allow it.{' '}
             <Link href="/privacy">Privacy policy</Link>
           </p>
           <div className="cn-actions">
