@@ -1,0 +1,109 @@
+/* /peac only: moved out of components/home/home.css (24 Oct 2026) so other pages
+   do not load it. Loaded after home.css; order inside is the original order. */
+/* Code block aesthetic on /downloads */
+.home-code {
+  font-family: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  background: var(--code-bg);
+  border: 1px solid var(--border-card);
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink);
+  overflow-x: auto;
+}
+/* Eyebrow rule: a 1px line that slides in from the left under a Mono label
+ * the first time it enters the viewport. Opt in via home-eyebrow-rule. */
+.home-eyebrow-rule {
+  position: relative;
+  padding-bottom: 6px;
+}
+.home-eyebrow-rule::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background: color-mix(in srgb, var(--ink) 32%, transparent);
+  transition: width 720ms var(--ease-settle);
+}
+.home-eyebrow-rule.is-in::after {
+  width: 32px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-eyebrow-rule::after { transition: none; width: 32px; }
+}
+/* About page surface: editorial layout helpers. */
+.home-about-eyebrow {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--ink-2);
+  font-family: var(--font-mono);
+}
+.home-about-h1 {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: clamp(36px, 5.6vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 18px 0 0 0;
+  text-wrap: balance;
+}
+.home-about-body {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: clamp(15.5px, 1.65vw, 17px);
+  line-height: 1.7;
+  color: var(--ink-2);
+  margin: 14px 0 0 0;
+  max-width: 640px;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+.home-about-divider {
+  height: 1px;
+  background: color-mix(in srgb, var(--ink) 14%, transparent);
+  /* Painted in the content box only, so the rule stays on the 1200 px grid. */
+  background-clip: content-box;
+  margin: clamp(40px, 6vw, 64px) 0;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 760ms var(--ease-settle);
+}
+.home-about-divider.is-in { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) {
+  .home-about-divider { transition: none; transform: scaleX(1); }
+}
+@media (max-width: 880px) {
+  .home-peac-hero-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 32px !important;
+  }
+}
+/* ---- Even grids (no orphan cells) ---------------------------------------- */
+.pc-grid {
+  display: grid;
+  gap: 16px;
+}
+.pc-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pc-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.pc-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1000px) {
+  .pc-3,
+  .pc-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .pc-2,
+  .pc-3,
+  .pc-4 { grid-template-columns: minmax(0, 1fr); }
+}
+.pc-pub {
+  margin: 0 auto;
+  max-width: 720px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+  text-align: center;
+  text-wrap: pretty;
+}

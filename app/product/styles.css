@@ -1,0 +1,52 @@
+/* /product only: moved out of components/home/home.css (24 Oct 2026) so other pages
+   do not load it. Loaded after home.css; order inside is the original order. */
+/* ---- Product: evidence case (hero aside) ---------------------------------- */
+.pd-case {
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  box-shadow: var(--shadow-pop);
+  overflow: hidden;
+}
+.pd-case-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--hairline);
+  background: var(--wash);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: var(--ls-pill);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.pd-case-head span:last-child {
+  color: var(--faint);
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+.pd-case-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 20px 10px;
+  counter-reset: pd;
+}
+.pd-case-list li {
+  counter-increment: pd;
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink);
+}
+.pd-case-list li:last-child {
+  border-bottom: 0;
+}
+.pd-case-list li::before {
+  content: counter(pd, decimal-leading-zero);
+  color: var(--faint);
+}

@@ -325,3 +325,15 @@
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
+
+/* Paused by the reader (lib/motion.ts). */
+:root[data-motion='paused'] .ard-arrow::before {
+  animation-play-state: paused;
+}
+
+/* Phones: 44 px tap areas for the simulated-report buttons. */
+@media (max-width: 600px) {
+  .ar-sim-btn {
+    min-height: 44px;
+  }
+}

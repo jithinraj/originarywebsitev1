@@ -6,6 +6,7 @@ import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import { RecordCard, CodeBlock, Terminal, StepLabel, SpecimenGrid, MarkerList, InkBand, InkHeading, InkButton, Dim } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
+import './styles.css'
 
 const TITLE = 'AI gateway audit trail with signed decisions | Originary'
 const DESCRIPTION =

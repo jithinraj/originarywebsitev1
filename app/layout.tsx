@@ -2,14 +2,12 @@ import type { Metadata } from 'next'
 import { rootGraph } from '@/lib/structured-data/entities'
 import { BRAND } from '@/lib/brand-tokens'
 import { THEME_INIT_SCRIPT } from '@/components/brand/theme'
+import { MOTION_INIT_SCRIPT } from '@/lib/motion'
 import { IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
-import Script from 'next/script'
-import { Analytics } from '@vercel/analytics/next'
 import PerformanceMonitor from '@/components/PerformanceMonitor'
 import SkipNavigation from '@/components/SkipNavigation'
-import ClarityAnalytics from '@/components/ClarityAnalytics'
-import AmplitudeAnalytics from '@/components/AmplitudeAnalytics'
+import AnalyticsGate from '@/components/consent/AnalyticsGate'
 
 const plexSans = IBM_Plex_Sans({
   subsets: ['latin'],
@@ -90,10 +88,10 @@ export const viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  // Light is the default; THEME_INIT_SCRIPT and the theme toggle update this tag
-  // when the system setting or the reader's choice is dark.
+  // Light is the default whatever the system setting; THEME_INIT_SCRIPT and the theme
+  // toggle switch these to dark only when the reader picks dark.
   themeColor: BRAND.bg,
-  colorScheme: 'light dark',
+  colorScheme: 'light',
   viewportFit: 'cover',
 }
 
@@ -105,14 +103,15 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning className={`${plexSans.variable} ${plexMono.variable}`}>
       <head>
-        {/* Applies the reader's saved theme, or else their system setting, before first paint. */}
+        {/* Applies a saved dark pick before first paint; everyone else gets light. */}
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        {/* Applies a saved pause of looping motion before first paint. */}
+        <script dangerouslySetInnerHTML={{ __html: MOTION_INIT_SCRIPT }} />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(rootGraph) }} />
       </head>
       <body>
@@ -122,28 +121,8 @@ export default function RootLayout({
           {children}
         </div>
 
-        {/* Microsoft Clarity */}
-        <ClarityAnalytics />
-
-        {/* Amplitude Analytics */}
-        <AmplitudeAnalytics />
-
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-FPG3HTSN2R"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-FPG3HTSN2R');
-          `}
-        </Script>
-
-        {/* Vercel Analytics */}
-        <Analytics />
+        {/* Analytics load only after the reader opts in (see /privacy). */}
+        <AnalyticsGate />
       </body>
     </html>
   )

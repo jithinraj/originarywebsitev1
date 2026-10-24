@@ -76,7 +76,6 @@ export default function DownloadsPage() {
         <PageHero
           eyebrow="open source"
           title="Originary Downloads."
-          qualifier="PEAC Protocol, open source."
           sub="Originary™, the software and developer-tools brand of Poem, Inc., publishes and maintains PEAC Protocol as open-source downloadable software. Get the source code, CLI, SDK packages, and verification tooling from the official GitHub repository and package registries."
           aside={<ReleaseCard />}
         >

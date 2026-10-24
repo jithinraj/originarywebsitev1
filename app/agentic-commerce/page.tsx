@@ -7,6 +7,7 @@ import { PALETTE } from '@/components/home/palette'
 import { RecordCard, CodeBlock, Terminal, StepLabel, SpecimenGrid, MarkerList, InkBand, InkHeading, InkButton, Dim } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
+import './styles.css'
 
 const TITLE = 'Agent payment records for paid APIs and MCP | Originary'
 const DESCRIPTION =

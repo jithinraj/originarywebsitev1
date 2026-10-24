@@ -5,6 +5,7 @@ import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import { RecordCard, StepLabel, SpecimenGrid, MarkerList, InkBand, InkHeading, InkButton, Dim } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
+import './styles.css'
 
 const TITLE = 'Audit and incident evidence handoff | Originary'
 const DESCRIPTION =

@@ -16,6 +16,7 @@ import { MONO, SANS } from './typography'
 import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { useReducedMotion } from './motion/useReducedMotion'
 import { BitField } from './motion/BitField'
+import { MotionToggle } from './motion/MotionToggle'
 import { FACTS } from '@/lib/facts'
 
 type Chip = { id: string; label: string; icon: ReactNode }
@@ -138,39 +139,42 @@ export function HeroV2() {
         padding: `clamp(28px, 5vh, 72px) ${PAGE_PAD} clamp(32px, 5vh, 56px) ${PAGE_PAD}`,
       }}
     >
-      <BitField className="cin-stream" strength={0.6} />
+      {/* The field stays clear of everything marked data-field-clear; the copy renders at once. */}
+      <BitField className="cin-stream" />
+      <MotionToggle className="mt-corner" />
       <div style={{ maxWidth: MAX_W, margin: '0 auto', position: 'relative', zIndex: 1 }}>
       {/* Top copy */}
       <div style={heroTopStyle}>
-        <Link href="/peac" className="cin-rise hero-pill">
+        <Link href="/peac" className="hero-pill" data-field-clear>
           <span className="hero-pill-tag">PEAC {FACTS.currentVersion}</span>
           <span>
             Open protocol<span className="hero-pill-wide"> for verifiable records</span>
           </span>
           <Arrow />
         </Link>
-        <h1 id="hero-headline" className="cin-rise cin-display" style={{ ...heroHeadline, ['--cin-i' as string]: 1 }}>
-          <span className="hero-line">Agent actions,</span> <span className="hero-line">on the record.</span>
+        <h1 id="hero-headline" className="cin-display" style={heroHeadline}>
+          <span className="hero-line" data-field-clear>Agent actions,</span>{' '}
+          <span className="hero-line" data-field-clear>on the record.</span>
         </h1>
-        <p className="cin-rise hero-sub" style={{ ...heroSub, ['--cin-i' as string]: 2 }}>
+        <p className="hero-sub" style={heroSub} data-field-clear>
           Give every important agent, API and tool action a signed record. Verify it later, and share it
           with customers or auditors without exposing your logs.
         </p>
-        <div className="cin-rise hero-ctas" style={{ ...ctas, ['--cin-i' as string]: 3 }}>
-          <Link href="#see-a-record" className="home-arrow-link" style={btnPrimary}>
+        <div className="hero-ctas" style={ctas}>
+          <Link href="#see-a-record" className="home-arrow-link" style={btnPrimary} data-field-clear>
             See a record
             <Arrow down />
           </Link>
-          <Link href="#start-here" className="home-arrow-link" style={btnSecondary}>
+          <Link href="#start-here" className="home-arrow-link" style={btnSecondary} data-field-clear>
             Start building
             <Arrow down />
           </Link>
         </div>
-        <p className="cin-rise hero-proof" style={{ ['--cin-i' as string]: 4 }}>
-          <span>Open source</span>
-          <span>Offline verification</span>
-          <span>Self-hostable</span>
-          <span className="hero-proof-wide">No Originary account needed to verify</span>
+        <p className="hero-proof">
+          <span data-field-clear>Open source</span>
+          <span data-field-clear>Offline verification</span>
+          <span data-field-clear>Self-hostable</span>
+          <span className="hero-proof-wide" data-field-clear>No Originary account needed to verify</span>
         </p>
       </div>
 
@@ -182,7 +186,7 @@ export function HeroV2() {
           compliance review, dispute evidence, and partner handoff.
         </p>
 
-        <div className="home-herov2-stage" ref={stageRef}>
+        <div className="home-herov2-stage" ref={stageRef} data-field-clear>
           <div className="home-herov2-titlerow" aria-hidden>
             <span className="home-herov2-zone-title">Local workflow</span>
             <span className="home-herov2-zone-title is-center">Signed record issued</span>
@@ -340,7 +344,7 @@ export function HeroV2() {
         </div>
 
         {/* Mobile and tablet: the same story, vertical and live. */}
-        <div className="hm-flow" aria-hidden>
+        <div className="hm-flow" aria-hidden data-field-clear>
           <p className="hm-zone">Local workflow</p>
           <div className={`hm-node ${chipActive(chipIdx) ? 'is-active' : ''}`}>
             <span className="home-herov2-chip-ico">{CHIPS[chipIdx].icon}</span>

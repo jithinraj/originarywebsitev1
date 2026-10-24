@@ -4,8 +4,8 @@ import { FACTS } from '@/lib/facts'
 import { ORIGINARY_ORG_ID } from '@/lib/structured-data/entities'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PageShell, Reveal, MAX_W, PAGE_PAD } from '@/components/home'
-import { BitField } from '@/components/home/motion/BitField'
-import { InkButton } from '@/components/specimens/parts'
+import { Button } from '@/components/home/page-kit'
+import { MotionToggle } from '@/components/home/motion/MotionToggle'
 import { Constellation } from '@/components/about/Constellation'
 import { Stage } from '@/components/about/Stage'
 import { ScrollLines } from '@/components/about/ScrollLines'
@@ -90,6 +90,27 @@ const BELIEFS = [
   },
 ]
 
+const BUILD: Array<{ t: string; b: string; link: string; href: string }> = [
+  {
+    t: 'An open protocol.',
+    b: 'PEAC Protocol defines the record and how to verify it. It is Apache-2.0, and anyone can implement it without us.',
+    link: 'PEAC Protocol',
+    href: '/peac',
+  },
+  {
+    t: 'The tools.',
+    b: 'Software to issue, verify and package signed records: a CLI, SDKs, an MCP server and a verifier that runs in your browser.',
+    link: 'Downloads',
+    href: '/downloads',
+  },
+  {
+    t: 'Real workflows.',
+    b: 'Verification Pilots put signed records into one production workflow at a time, with the team that needs them.',
+    link: 'Verification Pilot',
+    href: '/product',
+  },
+]
+
 const TALKS: Array<{ when: string; what: string; href: string }> = [
   {
     when: 'Jun 2026',
@@ -114,31 +135,30 @@ export default function About() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
       <Breadcrumbs current="About" href="/about" />
 
-      {/* Hero: the one ink opening on the site */}
+      {/* Hero: light like the rest of the site; the constellation is its one image, and the copy renders at once. */}
       <section className="cin-stage ab-hero" aria-labelledby="about-title">
-        <div className="cin-ink-wash" aria-hidden />
-        <BitField className="cin-stream" tone="paper" focus="center" strength={0.38} />
+        <MotionToggle className="mt-corner" />
         <div className="ab-hero-c" style={{ ...frame, position: 'relative', zIndex: 1 }}>
-          <p className="cin-rise ab-eyebrow">About Originary</p>
-          <h1 id="about-title" className="cin-rise ab-h1" style={{ ['--cin-i' as string]: 1 }}>
+          <p className="ab-eyebrow">About Originary</p>
+          <h1 id="about-title" className="ab-h1">
             Make AI verifiable.{' '}
             <span className="ab-h1-q">
               <span className="ab-nb">Every action.</span> <span className="ab-nb">By anyone.</span>{' '}
               <span className="ab-nb">Anywhere.</span>
             </span>
           </h1>
-          <p className="cin-rise ab-lede" style={{ ['--cin-i' as string]: 2 }}>
-            AI already buys, books, approves and signs for people every day. Our mission is a world where anyone it
-            touches can check what it did, for themselves.
+          <p className="ab-lede">
+            AI already buys, books, approves and signs for people every day. We build the open records and tools that
+            let anyone it touches check what it did, for themselves.
           </p>
-          <div className="cin-rise ab-ctas" style={{ ['--cin-i' as string]: 3 }}>
-            <InkButton href="#beliefs" primary>
-              What we believe
-            </InkButton>
-            <InkButton href="/contact">Talk to us</InkButton>
+          <div className="ab-ctas">
+            <Button href="#thesis" primary>
+              Read our thesis
+            </Button>
+            <Button href="/contact">Talk to us</Button>
           </div>
         </div>
-        <div className="cin-rise ab-hero-art" style={{ ...frame, position: 'relative', zIndex: 1, ['--cin-i' as string]: 4 }}>
+        <div className="ab-hero-art" style={{ ...frame, position: 'relative', zIndex: 1 }}>
           <Constellation />
         </div>
       </section>
@@ -156,11 +176,39 @@ export default function About() {
         </div>
       </section>
 
-      {/* 02 The tools people built to check each other */}
+      {/* 02 The thesis: who holds the evidence holds the story */}
+      <section id="thesis" className="ab-chapter" style={frame} aria-labelledby="ab-thesis">
+        <Reveal>
+          <p className="ab-n">02</p>
+          <div className="ab-split">
+            <h2 id="ab-thesis" className="ab-h2">
+              Whoever holds the logs{' '}
+              <span className="ab-h2-q">holds the story.</span>
+            </h2>
+            <div>
+              <p className="ab-body ab-body-first">
+                Today the only record of what an agent did sits in the systems of whoever runs it. When something goes
+                wrong, the customer, the partner or the auditor has to ask for that record and accept what they are
+                shown.
+              </p>
+              <p className="ab-body">
+                As agents take on more of the work, that quietly hands the power to explain, dispute and audit to
+                whoever operates them. That is the default. We don&rsquo;t think it has to be.
+              </p>
+              <p className="ab-body">
+                A signed record travels with the action. Anyone it affects can check, with the issuer&rsquo;s public
+                key, what was recorded and who stands behind it, without access to the operator&rsquo;s systems.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* 03 The tools people built to check each other */}
       <section className="ab-chapter ab-band" aria-labelledby="ab-tools">
         <div style={frame}>
           <Reveal>
-            <p className="ab-n">02</p>
+            <p className="ab-n">03</p>
             <div className="ab-split">
               <h2 id="ab-tools" className="ab-h2">
                 We have solved this before.{' '}
@@ -189,10 +237,10 @@ export default function About() {
         </div>
       </section>
 
-      {/* 03 Four questions */}
+      {/* 04 Four questions */}
       <section className="ab-chapter" style={frame} aria-labelledby="ab-q">
         <Reveal>
-          <p className="ab-n">03</p>
+          <p className="ab-n">04</p>
           <div className="ab-split">
             <h2 id="ab-q" className="ab-h2">
               Four questions.{' '}
@@ -218,11 +266,11 @@ export default function About() {
         </Stage>
       </section>
 
-      {/* 04 The scope of the ambition */}
+      {/* 05 The scope of the ambition */}
       <section className="ab-chapter ab-band" aria-labelledby="ab-amb">
         <div style={frame}>
           <Reveal>
-            <p className="ab-n">04</p>
+            <p className="ab-n">05</p>
             <div className="ab-split">
               <h2 id="ab-amb" className="ab-h2">
                 Wherever AI acts.{' '}
@@ -251,10 +299,10 @@ export default function About() {
         </div>
       </section>
 
-      {/* 05 What we believe */}
+      {/* 06 What we believe */}
       <section id="beliefs" className="ab-chapter" style={frame} aria-labelledby="ab-beliefs">
         <Reveal>
-          <p className="ab-n">05</p>
+          <p className="ab-n">06</p>
           <h2 id="ab-beliefs" className="ab-h2">
             What we believe.
           </h2>
@@ -270,11 +318,35 @@ export default function About() {
         </Stage>
       </section>
 
-      {/* 06 The company */}
+      {/* 07 What we build */}
+      <section className="ab-chapter" style={frame} aria-labelledby="ab-build">
+        <Reveal>
+          <p className="ab-n">07</p>
+          <h2 id="ab-build" className="ab-h2">
+            What we build.
+          </h2>
+        </Reveal>
+        <Stage className="ab-do">
+          <ol className="ab-do-list" role="list">
+            {BUILD.map((x, i) => (
+              <li key={x.t} style={{ ['--do-i' as string]: i }}>
+                <span className="ab-do-n">{String(i + 1).padStart(2, '0')}</span>
+                <p className="ab-do-t">{x.t}</p>
+                <p className="ab-do-b">{x.b}</p>
+                <Link href={x.href} className="ab-do-a">
+                  {x.link}
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </Stage>
+      </section>
+
+      {/* 08 The company */}
       <section className="ab-chapter ab-band" aria-labelledby="ab-who">
         <div style={frame}>
           <Reveal>
-            <p className="ab-n">06</p>
+            <p className="ab-n">08</p>
             <div className="ab-split">
               <h2 id="ab-who" className="ab-h2">
                 A small team.{' '}
@@ -342,7 +414,6 @@ export default function About() {
 
       {/* Finale: the hero's field, every point now reached */}
       <section className="cin-stage ab-finale" aria-labelledby="ab-close">
-        <div className="cin-ink-wash" aria-hidden />
         <div className="ab-finale-art" aria-hidden>
           <Constellation lit />
         </div>
@@ -352,10 +423,10 @@ export default function About() {
             <span>Verify across boundaries.</span>
           </h2>
           <div className="ab-ctas">
-            <InkButton href="/contact" primary>
+            <Button href="/contact" primary>
               Talk to us
-            </InkButton>
-            <InkButton href="/peac">Read PEAC Protocol</InkButton>
+            </Button>
+            <Button href="/peac">Read PEAC Protocol</Button>
           </div>
         </div>
       </section>

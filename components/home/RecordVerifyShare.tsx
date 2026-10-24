@@ -16,8 +16,7 @@ export function RecordVerifyShare() {
     >
       <SectionHead
         eyebrow="See a record"
-        title="Check a signed record"
-        qualifier="right here, in your browser."
+        title="Check a signed record right here, in your browser."
         body="This is a real Ed25519 signature. Change one field and watch the check fail."
         center
       />

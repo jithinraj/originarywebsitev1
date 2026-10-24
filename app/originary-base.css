@@ -261,6 +261,12 @@ pre code {
   border: 0;
 }
 
+/* ---------- Identifiers keep their case inside uppercase labels ---------- */
+/* Versions, algorithm names, media types and code: "v0.16.4", "Ed25519", never "V0.16.4", "ED25519". */
+.keep-case {
+  text-transform: none;
+}
+
 /* ---------- Reduced motion: show the end state ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,

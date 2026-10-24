@@ -1,0 +1,156 @@
+/* /how-it-works only: moved out of components/home/home.css (24 Oct 2026) so other pages
+   do not load it. Loaded after home.css; order inside is the original order. */
+.hw-anchor {
+  display: block;
+  position: relative;
+  top: -110px;
+  visibility: hidden;
+  height: 0;
+}
+.hw-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 24px;
+}
+.hw-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: start;
+  padding: clamp(22px, 3vw, 34px);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  animation: rix-in var(--dur-base) var(--ease-settle) both;
+}
+.hw-title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-section);
+  color: var(--ink);
+}
+.hw-thesis {
+  margin: 10px 0 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-lede);
+  line-height: 1.5;
+  color: var(--ink);
+}
+.hw-intro {
+  margin: 12px 0 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.hw-intro code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  color: var(--ink);
+  background: var(--code-bg);
+  padding: 1px 5px;
+  border-radius: var(--radius-sm);
+}
+.hw-label {
+  margin: 22px 0 10px;
+  font-family: var(--font-mono);
+  font-size: var(--text-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.hw-binds {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--hairline);
+}
+.hw-binds li {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink);
+}
+.hw-binds li:nth-child(odd) {
+  padding-right: 12px;
+}
+.hw-carrier {
+  margin: 16px 0 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.hw-fails {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+}
+.hw-fails li {
+  padding-top: 16px;
+  border-top: 1px solid var(--border-card);
+}
+.hw-fail-t {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  font-weight: var(--fw-medium);
+  color: var(--ink);
+}
+.hw-fail-b {
+  margin: 6px 0 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+@media (max-width: 1000px) {
+  .hw-panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 720px) {
+  .hw-fails {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+@media (max-width: 520px) {
+  .hw-binds {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hw-panel { animation: none; }
+}
+/* How it works: the record's path */
+.ha-path {
+  position: relative;
+  padding: 24px 26px 22px;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  background: var(--paper);
+  box-shadow: var(--shadow-pop);
+}
+.ha-path-t {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: var(--fw-medium);
+  color: var(--ink);
+}
+.ha-path-s {
+  margin-top: 3px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}

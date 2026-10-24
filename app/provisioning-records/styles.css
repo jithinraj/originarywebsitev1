@@ -1,0 +1,20 @@
+/* /provisioning-records only: moved out of components/home/home.css (24 Oct 2026) so other pages
+   do not load it. Loaded after home.css; order inside is the original order. */
+.ha-stream-t {
+  color: var(--faint);
+}
+.ha-stream-e {
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ha-stream-r {
+  color: var(--muted);
+  white-space: nowrap;
+}
+@media (max-width: 520px) {
+  .ha-stream-r {
+    display: none;
+  }
+}

@@ -1,0 +1,13 @@
+/* /agentic-commerce only: moved out of components/home/home.css (24 Oct 2026) so other pages
+   do not load it. Loaded after home.css; order inside is the original order. */
+/* Agentic commerce: payment artifact linked to the service record */
+.ha-link {
+  display: grid;
+  grid-template-rows: auto 56px auto;
+}
+.ha-link-join {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

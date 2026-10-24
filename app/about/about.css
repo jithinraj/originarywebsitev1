@@ -2,11 +2,12 @@
    tokens. Below-the-fold motion is armed by <Stage> ([data-armed] until
    [data-in]); without JavaScript or with reduced motion everything is static. */
 
-/* ---- Hero (ink) ---------------------------------------------------------- */
+/* ---- Hero: light like the rest of the site (dark only in the dark theme) --- */
 .ab-hero {
   padding: clamp(72px, 12vh, 144px) 0 clamp(56px, 8vh, 96px);
-  background: var(--surface-dark);
-  color: var(--on-dark);
+  background: var(--bg);
+  color: var(--ink);
+  border-bottom: 1px solid var(--hairline);
 }
 .ab-hero-c {
   max-width: 980px;
@@ -18,7 +19,7 @@
   font-size: 12px;
   letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
-  color: var(--on-dark-muted);
+  color: var(--muted);
 }
 .ab-h1 {
   margin: 0;
@@ -27,13 +28,13 @@
   font-weight: var(--fw-medium);
   line-height: 1.04;
   letter-spacing: -0.034em;
-  color: var(--on-dark);
+  color: var(--ink);
   text-wrap: balance;
 }
 .ab-h1-q {
   display: block;
   margin-top: 0.12em;
-  color: var(--on-dark-muted);
+  color: var(--faint);
 }
 .ab-nb {
   white-space: nowrap;
@@ -44,7 +45,7 @@
   font-family: var(--font-sans);
   font-size: var(--text-sub);
   line-height: var(--lh-body);
-  color: var(--on-dark-muted);
+  color: var(--ink-2);
 }
 .ab-ctas {
   display: flex;
@@ -129,7 +130,7 @@
 }
 .ab-sl-line {
   display: block;
-  color: var(--faint);
+  color: var(--ink-2);
   text-wrap: balance;
 }
 .ab-sl-line:last-child {
@@ -138,8 +139,9 @@
 .ab-mani-h [data-w] {
   transition: color 260ms linear;
 }
+/* Unlit words stay readable (about 3.7 : 1 at display size), so the effect never hides the text. */
 .ab-mani-h[data-ready] [data-w]:not([data-on]) {
-  color: var(--rule);
+  color: color-mix(in srgb, var(--ink) 50%, transparent);
 }
 .ab-mani-sub {
   margin: clamp(28px, 4vh, 44px) 0 0;
@@ -169,6 +171,20 @@
   }
   .ab-mani-sub {
     opacity: clamp(0, calc((var(--ab-p) - 0.64) * 5), 1);
+  }
+}
+/* Phones: no pinned track, which reads as a stuck page; words light as the heading scrolls past. */
+@media (prefers-reduced-motion: no-preference) and (max-width: 640px) {
+  .ab-mani {
+    height: auto;
+  }
+  .ab-mani-pin {
+    position: static;
+    height: auto;
+    padding: clamp(72px, 12vh, 120px) 0;
+  }
+  .ab-mani-sub {
+    opacity: 1;
   }
 }
 
@@ -423,22 +439,115 @@
   text-decoration-color: var(--ink);
 }
 
+/* ---- 07: what we build, in three parts ------------------------------------ */
+.ab-do {
+  margin-top: clamp(40px, 6vh, 64px);
+}
+.ab-do-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 48px);
+  border-top: 1px solid var(--ink);
+}
+.ab-do-list li {
+  --do-i: 0;
+  padding-top: 28px;
+  transition: transform 650ms var(--ease-settle);
+  transition-delay: calc(var(--do-i) * 140ms);
+}
+/* Position only, never opacity: the text is readable at every moment of the reveal. */
+.ab-do[data-armed]:not([data-in]) .ab-do-list li {
+  transform: translate3d(0, 10px, 0);
+}
+.ab-do-n {
+  display: block;
+  margin: 0 0 18px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+}
+.ab-do-t {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: var(--fw-medium);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.ab-do-b {
+  margin: 12px 0 0;
+  max-width: 40ch;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.ab-do-a {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+.ab-do-a::after {
+  content: " \2192";
+}
+.ab-do-a:hover {
+  color: var(--link-hover);
+}
+@media (max-width: 860px) {
+  .ab-do-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .ab-do-a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: 4px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ab-do-list li {
+    transition: none;
+  }
+}
+
 /* ---- Finale: the hero's field, every point reached ------------------------ */
 .ab-finale {
   position: relative;
   overflow: hidden;
   padding: clamp(120px, 20vh, 220px) 0;
-  background: var(--surface-dark);
-  color: var(--on-dark);
+  background: var(--wash);
+  color: var(--ink);
+  border-top: 1px solid var(--hairline);
   text-align: center;
+}
+/* The field sits below the words, never behind them. */
+.ab-finale {
+  padding-bottom: clamp(240px, 34vh, 360px);
+}
+@media (max-width: 640px) {
+  /* The phone field is 5 x 5 and taller: room for it below the buttons. */
+  .ab-finale {
+    padding-bottom: 380px;
+  }
 }
 .ab-finale-art {
   position: absolute;
-  top: 50%;
+  bottom: clamp(16px, 3vh, 40px);
   left: 50%;
   width: min(1200px, calc(100% - 32px));
-  transform: translate(-50%, -50%);
-  opacity: 0.42;
+  transform: translateX(-50%);
+  opacity: 0.55;
   pointer-events: none;
 }
 .ab-close {
@@ -448,12 +557,12 @@
   font-weight: var(--fw-medium);
   line-height: 1.04;
   letter-spacing: -0.034em;
-  color: var(--on-dark);
+  color: var(--ink);
   text-wrap: balance;
 }
 .ab-close span {
   display: block;
-  color: var(--on-dark-muted);
+  color: var(--faint);
 }
 .ab-finale .ab-ctas {
   justify-content: center;
@@ -545,28 +654,37 @@
 }
 .cf-mesh {
   fill: none;
-  stroke: var(--hairline-on-dark);
+  stroke: var(--hairline);
   stroke-width: 1;
 }
 .cf-node {
-  fill: var(--on-dark);
+  fill: var(--ink);
 }
 .cf-arc {
   fill: none;
-  stroke: var(--accent-on-dark);
+  stroke: var(--accent);
   stroke-width: 1.4;
   stroke-linecap: round;
 }
 .cf-arc-still {
   fill: none;
-  stroke: var(--on-dark-muted);
+  stroke: var(--accent);
   stroke-width: 1;
-  opacity: 0.4;
+  opacity: 0.45;
 }
 .cf-ring {
   fill: none;
-  stroke: var(--on-dark);
+  stroke: var(--accent);
   stroke-width: 1;
+}
+/* Phones get the 5 x 5 field; scoped so the .cf-svg rule above cannot override it. */
+@media (max-width: 640px) {
+  .cf .cf-d {
+    display: none;
+  }
+  .cf .cf-m {
+    display: block;
+  }
 }
 
 /* ---- 03: four questions, a cross that draws itself ----------------------- */
@@ -628,9 +746,6 @@
   transition: color 500ms var(--ease-standard);
   transition-delay: calc(900ms + var(--qs-i) * 380ms);
 }
-.ab-qs[data-armed]:not([data-in]) .ab-qs-n {
-  color: var(--rule);
-}
 .ab-qs-q {
   font-family: var(--font-sans);
   font-size: clamp(30px, 4vw, 58px);
@@ -647,9 +762,9 @@
 .ab-qs-list li:last-child .ab-qs-q {
   color: var(--accent);
 }
-/* Faint until the cross is drawn, then answered one by one. */
+/* Lighter until the cross is drawn, then answered one by one; readable (3.7 : 1) even before. */
 .ab-qs[data-armed]:not([data-in]) .ab-qs-list li .ab-qs-q {
-  color: var(--rule);
+  color: color-mix(in srgb, var(--ink) 50%, transparent);
 }
 
 /* ---- 04: the scope, a slow drift of places ------------------------------- */
@@ -682,8 +797,9 @@
   color: var(--faint);
   white-space: nowrap;
 }
+/* The second row stays lighter but above 3 : 1 at its display size. */
 .ab-mq-row[data-dir='r'] .ab-mq-w {
-  color: var(--rule);
+  color: color-mix(in srgb, var(--ink) 45%, transparent);
 }
 .ab-mq-w::after {
   content: '';
@@ -727,4 +843,9 @@
   .ab-mq-track {
     animation: none;
   }
+}
+
+/* Paused by the reader (lib/motion.ts). */
+:root[data-motion='paused'] .ab-mq-track {
+  animation-play-state: paused;
 }

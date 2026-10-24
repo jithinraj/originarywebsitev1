@@ -1,0 +1,18 @@
+/* /trust only: moved out of components/home/home.css (24 Oct 2026) so other pages
+   do not load it. Loaded after home.css; order inside is the original order. */
+.ha-glance-v {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 22px;
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-card);
+  color: var(--ink);
+}
+.ha-glance-n {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--muted);
+}

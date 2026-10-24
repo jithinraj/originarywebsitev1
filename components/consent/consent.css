@@ -1,0 +1,125 @@
+/* Consent panel: a quiet card in the lower left, full width on phones. Both choices look the same;
+   the current choice fills in ink when the panel reopens from Privacy choices. */
+.cn-panel {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 70;
+  width: min(392px, calc(100vw - 32px));
+  padding: 16px 18px 18px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-pop);
+  font-family: var(--font-sans);
+  animation: cn-in var(--dur-base) var(--ease-settle) both;
+}
+.cn-panel:focus {
+  outline: none;
+}
+.cn-panel:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+.cn-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 24px;
+}
+.cn-k {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cn-x {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin: -4px -6px -4px 0;
+  padding: 0;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.cn-x:hover {
+  color: var(--ink);
+}
+.cn-body {
+  margin: 8px 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.cn-body a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+.cn-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 14px;
+}
+.cn-btn {
+  height: 40px;
+  padding: 0 16px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: var(--fw-medium);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  cursor: pointer;
+  transition:
+    border-color var(--dur-fast) var(--ease-standard),
+    background-color var(--dur-fast) var(--ease-standard);
+}
+.cn-btn:hover {
+  border-color: var(--ink);
+}
+.cn-btn[aria-pressed='true'] {
+  color: var(--on-action);
+  background: var(--action);
+  border-color: var(--action);
+}
+.cn-btn:focus-visible,
+.cn-x:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+@keyframes cn-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 520px) {
+  .cn-panel {
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    width: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cn-panel {
+    animation: none;
+  }
+}

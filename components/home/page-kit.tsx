@@ -7,6 +7,7 @@ import { SANS, MONO } from './typography'
 import { Nav } from './Nav'
 import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
 import { BitField } from './motion/BitField'
+import { MotionToggle } from './motion/MotionToggle'
 import { WordmarkStream } from './motion/WordmarkStream'
 import { HomeFooter } from './Footer'
 import { Mono } from './atoms/Mono'
@@ -81,10 +82,13 @@ export function PageHero({
         borderBottom: plate && !strip ? `1px solid ${PALETTE.hairline}` : undefined,
       }}
     >
-      <BitField className="cin-stream" focus="left" strength={display ? 1 : 0.55} />
+      {/* The field stays clear of the copy and the artifact; the copy renders at once. */}
+      <BitField className="cin-stream" focus={align === 'center' ? 'center' : 'left'} strength={display ? 1 : 0.85} />
+      <MotionToggle className="mt-corner" />
       <div style={{ maxWidth: MAX_W, margin: '0 auto', position: 'relative', zIndex: 1 }}>
       <div className={aside ? 'pk-hero-grid' : undefined}>
       <div
+        data-field-clear
         style={{
           maxWidth: aside ? undefined : 720,
           marginLeft: align === 'center' ? 'auto' : 0,
@@ -97,16 +101,13 @@ export function PageHero({
           <Mono
             size={12}
             color={PALETTE.muted}
-            className="cin-rise"
             style={{ letterSpacing: 'var(--ls-eyebrow)', textTransform: 'uppercase', display: 'block' }}
           >
             {eyebrow}
           </Mono>
         ) : null}
         <h1
-          className="cin-rise"
           style={{
-            ['--cin-i' as string]: 1,
             fontFamily: sans,
             fontSize: display ? 'clamp(38px, 4.6vw, 60px)' : 'clamp(34px, 4vw, 48px)',
             lineHeight: display ? 1.04 : 1.08,
@@ -137,9 +138,7 @@ export function PageHero({
         ) : null}
         {sub ? (
           <p
-            className="cin-rise"
             style={{
-              ['--cin-i' as string]: 2,
               fontFamily: sans,
               fontSize: 18,
               lineHeight: 1.55,
@@ -154,9 +153,9 @@ export function PageHero({
             {sub}
           </p>
         ) : null}
-        {children ? <div className="cin-rise" style={{ ['--cin-i' as string]: 3, marginTop: 28 }}>{children}</div> : null}
+        {children ? <div style={{ marginTop: 28 }}>{children}</div> : null}
       </div>
-      {aside ? <div className="pk-hero-aside">{aside}</div> : null}
+      {aside ? <div className="pk-hero-aside" data-field-clear>{aside}</div> : null}
       </div>
       </div>
     </section>

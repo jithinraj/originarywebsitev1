@@ -8,7 +8,8 @@ import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { OriginaryWordmark } from '@/components/brand/OriginaryWordmark'
 import { ThemeToggle } from '@/components/brand/ThemeToggle'
 
-type NavLink = { label: string; href: string; external?: boolean }
+/** secondary: listed in the footer only, so the header menus carry the core of each group. */
+type NavLink = { label: string; href: string; external?: boolean; secondary?: boolean }
 type NavEntry =
   | { kind: 'link'; label: string; href: string }
   | { kind: 'menu'; label: string; items: NavLink[] }
@@ -21,11 +22,12 @@ export const SITE_MAP: Array<{ label: string; items: NavLink[] }> = [
       { label: 'Verification Pilot', href: '/product' },
       { label: 'How it works', href: '/how-it-works' },
       { label: 'Records', href: '/records' },
-      { label: 'Evidence case', href: '/evidence-case' },
-      { label: 'Action review', href: '/action-review' },
-      { label: 'Investigate', href: '/investigate' },
       { label: 'Verify a record', href: '/verify' },
       { label: 'Pricing', href: '/pricing' },
+      // Worked examples of what a pilot produces: one offer in the header, the rest in the footer.
+      { label: 'Evidence case', href: '/evidence-case', secondary: true },
+      { label: 'Action review', href: '/action-review', secondary: true },
+      { label: 'Investigate', href: '/investigate', secondary: true },
     ],
   },
   {
@@ -62,7 +64,16 @@ export const SITE_MAP: Array<{ label: string; items: NavLink[] }> = [
   },
 ]
 
-const NAV: NavEntry[] = SITE_MAP.map((g) => ({ kind: 'menu' as const, label: g.label, items: g.items }))
+// Downloads sits in the header strip after Developers, so that menu leaves it out, and secondary
+// pages stay out of the header; the footer keeps the full map.
+const DOWNLOADS = { kind: 'link', label: 'Downloads', href: '/downloads' } as const
+const NAV: NavEntry[] = SITE_MAP.flatMap((g): NavEntry[] => {
+  const items = g.items.filter((it) => !it.secondary && it.href !== DOWNLOADS.href)
+  const menu: NavEntry = { kind: 'menu', label: g.label, items }
+  return g.label === 'Developers' ? [menu, DOWNLOADS] : [menu]
+})
+
+const groupId = (label: string) => `home-nav-group-${label.toLowerCase().replace(/\s+/g, '-')}`
 
 const topLinkStyle = {
   fontFamily: SANS,
@@ -201,6 +212,8 @@ function NavMenu({ label, items }: { label: string; items: NavLink[] }) {
 
 export function Nav() {
   const [open, setOpen] = useState(false)
+  // Mobile sheet: one group open at a time, all closed when the sheet opens, so it fits one screen.
+  const [group, setGroup] = useState<string | null>(null)
   const toggleRef = useRef<HTMLButtonElement>(null)
   const pathname = usePathname()
 
@@ -351,7 +364,10 @@ export function Nav() {
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open ? 'true' : 'false'}
             aria-controls="home-nav-mobile-menu"
-            onClick={() => setOpen((v) => !v)}
+            onClick={() => {
+              setOpen((v) => !v)
+              setGroup(null)
+            }}
             style={{
               display: 'none',
               alignItems: 'center',
@@ -412,26 +428,42 @@ export function Nav() {
                     fontSize: 15,
                     color: PALETTE.ink,
                     textDecoration: 'none',
-                    padding: '11px 0',
+                    padding: '13px 0',
                     borderBottom: `1px solid ${PALETTE.hairline}`,
                   }}
                 >
                   {entry.label}
                 </Link>
               ) : (
-                <div key={entry.label} style={{ padding: '11px 0', borderBottom: `1px solid ${PALETTE.hairline}` }}>
-                  <div
+                <div key={entry.label} style={{ borderBottom: `1px solid ${PALETTE.hairline}` }}>
+                  <button
+                    type="button"
+                    aria-expanded={group === entry.label}
+                    aria-controls={groupId(entry.label)}
+                    onClick={() => setGroup((g) => (g === entry.label ? null : entry.label))}
                     style={{
-                      fontFamily: 'var(--font-plex-mono)',
-                      fontSize: 12,
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                      color: PALETTE.faint,
+                      display: 'flex',
+                      width: '100%',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      fontFamily: SANS,
+                      fontSize: 15,
+                      color: PALETTE.ink,
+                      background: 'none',
+                      border: 0,
+                      padding: '13px 0',
+                      cursor: 'pointer',
+                      textAlign: 'left',
                     }}
                   >
                     {entry.label}
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 2, marginTop: 8 }}>
+                    <Caret open={group === entry.label} />
+                  </button>
+                  <div
+                    id={groupId(entry.label)}
+                    hidden={group !== entry.label}
+                    style={{ flexDirection: 'column', gap: 2, padding: '0 0 10px 12px', display: group === entry.label ? 'flex' : 'none' }}
+                  >
                     {entry.items.map((it) =>
                       it.external ? (
                         <a
@@ -440,7 +472,7 @@ export function Nav() {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={() => setOpen(false)}
-                          style={{ fontFamily: SANS, fontSize: 14.5, color: PALETTE.ink, textDecoration: 'none', padding: '6px 0' }}
+                          style={{ fontFamily: SANS, fontSize: 14.5, color: PALETTE.ink, textDecoration: 'none', padding: '9px 0' }}
                         >
                           {it.label}
                         </a>
@@ -449,7 +481,7 @@ export function Nav() {
                           key={it.href}
                           href={it.href}
                           onClick={() => setOpen(false)}
-                          style={{ fontFamily: SANS, fontSize: 14.5, color: PALETTE.ink, textDecoration: 'none', padding: '6px 0' }}
+                          style={{ fontFamily: SANS, fontSize: 14.5, color: PALETTE.ink, textDecoration: 'none', padding: '9px 0' }}
                         >
                           {it.label}
                         </Link>

@@ -1,0 +1,286 @@
+/* /ai-compliance only: moved out of components/home/home.css (24 Oct 2026) so other pages
+   do not load it. Loaded after home.css; order inside is the original order. */
+/* ---- AI compliance evidence page ---------------------------------------- */
+.aic-grid-4,
+.aic-grid-3 {
+  display: grid;
+  gap: 18px;
+  margin-top: 8px;
+}
+.aic-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 1100px) {
+  .aic-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 860px) {
+  .aic-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 620px) {
+  .aic-grid-4,
+  .aic-grid-3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.aic-mark {
+  display: inline-flex;
+  color: var(--faint);
+}
+.aic-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+.aic-step {
+  position: relative;
+}
+/* The four stages are one sequence, so a rail connects them: horizontally in a
+   row, vertically once they stack. Without it the nodes read as unrelated. */
+.aic-step::before {
+  content: "";
+  position: absolute;
+  left: 40px;
+  right: -20px;
+  top: 20px;
+  height: 1px;
+  background: color-mix(in srgb, var(--ink) 16%, transparent);
+}
+.aic-step[data-last]::before {
+  display: none;
+}
+.aic-step-node {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--rule);
+  background: var(--bg);
+  color: var(--ink-2);
+  margin-bottom: 14px;
+  flex: none;
+}
+@media (max-width: 1100px) {
+  .aic-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .aic-step:nth-child(2n)::before {
+    display: none;
+  }
+}
+@media (max-width: 620px) {
+  .aic-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .aic-step {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 16px;
+    padding-bottom: 26px;
+  }
+  /* vertical rail down the node column */
+  .aic-step::before,
+  .aic-step:nth-child(2n)::before {
+    display: block;
+    left: 20px;
+    right: auto;
+    top: 44px;
+    bottom: 0;
+    width: 1px;
+    height: auto;
+  }
+  .aic-step[data-last]::before {
+    display: none;
+  }
+  .aic-step[data-last] {
+    padding-bottom: 0;
+  }
+  .aic-step-node {
+    margin-bottom: 0;
+  }
+  .aic-step-body {
+    padding-top: 8px;
+  }
+}
+/* Illustrative evidence case: status is legible by shape as well as colour. */
+.aic-case {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  max-width: 680px;
+}
+.aic-case-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 15px 20px 13px;
+  border-bottom: 1px solid var(--hairline);
+}
+.aic-case-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 500;
+}
+.aic-case-ref {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 13px;
+  color: var(--faint);
+}
+.aic-case-rows {
+  margin: 0;
+}
+.aic-case-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 20px;
+  border-bottom: 1px solid var(--hairline);
+}
+.aic-case-label {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  margin: 0;
+  min-width: 0;
+}
+.aic-case-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  margin: 0;
+  text-align: right;
+}
+@media (max-width: 560px) {
+  .aic-case-row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 5px;
+  }
+  .aic-case-status {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+.aic-faq {
+  margin: 8px 0 0;
+  border-top: 1px solid var(--border-card);
+  max-width: 860px;
+}
+.aic-faq-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.aic-faq-item dt {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.aic-faq-item dd {
+  margin: 8px 0 0;
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  max-width: 74ch;
+}
+.aic-case-meter {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 3px;
+  padding: 16px 20px 0;
+}
+.aic-case-meter > span {
+  height: 4px;
+  border-radius: 1px;
+  opacity: 0.85;
+}
+.aic-case-meter-label {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--faint);
+  margin: 10px 20px 14px;
+}
+.aic-case-meter-label strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+.aic-faq-item dt {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: 8px;
+}
+.aic-faq-n {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+  font-weight: 400;
+}
+.aic-faq-item dd {
+  padding-left: 42px;
+}
+@media (max-width: 560px) {
+  .aic-faq-item dt {
+    grid-template-columns: 28px minmax(0, 1fr);
+  }
+  .aic-faq-item dd {
+    padding-left: 36px;
+  }
+}
+/* ---- AI compliance: review workflows list --------------------------------- */
+.aic-wf {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(24px, 4vw, 64px);
+  border-top: 1px solid var(--ink);
+}
+.aic-wf > div {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border-card);
+}
+.aic-wf dt {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: var(--fw-medium);
+  color: var(--ink);
+}
+.aic-wf dd {
+  margin: 6px 0 0;
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.aic-step-node {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+@media (max-width: 760px) {
+  .aic-wf {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
