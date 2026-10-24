@@ -7,6 +7,7 @@ import { PALETTE, MAX_W, PAGE_PAD } from './palette'
 import { Mono } from './atoms/Mono'
 import { Wordmark, SITE_MAP } from './Nav'
 import { MarkGlyph, type MarkName } from './glyphs/MarkGlyphs'
+import { openPrivacyChoices } from '@/lib/consent'
 
 type FooterItem = { label: string; href: string; external?: boolean; mark?: MarkName; emphasis?: boolean }
 
@@ -124,7 +125,7 @@ export function HomeFooter() {
         className="home-footer-top"
       >
         <div style={{ minWidth: 0 }}>
-          <Link href="/" aria-label="Originary home" style={{ display: 'inline-flex', color: 'inherit' }}>
+          <Link href="/" aria-label="Originary home" className="home-footer-home" style={{ display: 'inline-flex', color: 'inherit' }}>
             <Wordmark />
           </Link>
           <p
@@ -251,6 +252,15 @@ export function HomeFooter() {
               {l.label}
             </Link>
           ))}
+          {/* Reopens the analytics consent panel (components/consent). */}
+          <button
+            type="button"
+            onClick={openPrivacyChoices}
+            className="home-footer-link"
+            style={{ ...linkStyle, fontSize: 12, background: 'none', border: 0, padding: 0, cursor: 'pointer' }}
+          >
+            Privacy choices
+          </button>
         </div>
         <div style={{ display: 'flex', gap: 14, alignItems: 'center' }}>
           <a

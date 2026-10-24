@@ -6,6 +6,7 @@ import { InkBand, InkHeading, InkButton } from '@/components/specimens/parts'
 import type { FlowBeat } from '@/components/specimens/FlowPanel'
 import { SurfaceTabs } from '@/components/how-it-works/SurfaceTabs'
 import { RecordDemo } from '@/components/home/RecordDemo'
+import './styles.css'
 
 const TITLE = 'How signed records for AI agents work | Originary'
 const DESCRIPTION =

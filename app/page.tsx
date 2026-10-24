@@ -14,7 +14,9 @@ import {
   PALETTE,
 } from '@/components/home'
 import { WordmarkStream } from '@/components/home/motion/WordmarkStream'
+import { Thesis } from '@/components/home/Thesis'
 import { originaryVerificationPilot, peacProtocol } from '@/lib/structured-data/entities'
+import './home-page.css'
 
 export const metadata: Metadata = {
   title: {
@@ -105,6 +107,9 @@ export default function Page() {
           </Reveal>
           <Reveal threshold={0.12}>
             <ProtocolSimple />
+          </Reveal>
+          <Reveal threshold={0.12}>
+            <Thesis />
           </Reveal>
           <Reveal threshold={0.12}>
             <StartHere />

@@ -5,6 +5,7 @@ import { PageShell, PageHero, PageSection, SectionHeading } from '@/components/h
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { InkBand, InkHeading, InkButton } from '@/components/specimens/parts'
 import { btnSolidStyle, btnGhostStyle } from '@/components/home/ctaStyles'
+import './styles.css'
 
 export const metadata: Metadata = {
   title: { absolute: 'Pricing: open source and the Verification Pilot | Originary' },
@@ -149,20 +150,21 @@ export default function PricingPage() {
       <PageSection paddingTop={0} paddingBottom={88}>
         <SectionHeading title="Compare." align="center" />
         <div className="pr-table-wrap" role="region" aria-label="Plan comparison" tabIndex={0}>
-          <table className="pr-table">
-            <thead>
-              <tr>
-                <th scope="col"><span className="sr-only">Feature</span></th>
-                <th scope="col">Open source</th>
-                <th scope="col">Verification Pilot</th>
+          {/* Explicit roles keep the table semantics when phones restack the rows (styles.css). */}
+          <table className="pr-table" role="table">
+            <thead role="rowgroup">
+              <tr role="row">
+                <th scope="col" role="columnheader"><span className="sr-only">Feature</span></th>
+                <th scope="col" role="columnheader">Open source</th>
+                <th scope="col" role="columnheader">Verification Pilot</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody role="rowgroup">
               {COMPARE.map(([k, a, b]) => (
-                <tr key={k}>
-                  <th scope="row">{k}</th>
-                  <td>{a}</td>
-                  <td>{b}</td>
+                <tr key={k} role="row">
+                  <th scope="row" role="rowheader">{k}</th>
+                  <td role="cell" data-plan="Open source">{a}</td>
+                  <td role="cell" data-plan="Verification Pilot">{b}</td>
                 </tr>
               ))}
             </tbody>

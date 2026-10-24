@@ -7,6 +7,7 @@ import { PALETTE } from '@/components/home/palette'
 import { RecordCard, CodeBlock, Terminal, StepLabel, SpecimenGrid, SpecimenIntro, InkBand, InkHeading, InkButton, Dim } from '@/components/specimens/parts'
 import { TamperDemo } from '@/components/specimens/TamperDemo'
 import { VerificationLimits } from '@/components/home/VerificationLimits'
+import './styles.css'
 
 const TITLE = 'Signed record examples for AI agents and APIs | Originary'
 const DESCRIPTION =

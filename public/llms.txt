@@ -24,7 +24,7 @@ commitment helpers, external evidence anchoring, agent spend attribution,
 agent run lineage records, action approval records, and runtime lineage
 exports.
 
-Last updated: 2026-10-12
+Last updated: 2026-10-24
 
 Organization: Originary (legal entity: Poem, Inc.)
 Location: Delaware, USA
@@ -39,6 +39,17 @@ selected signed records and native artifacts into an evidence case, so another
 organization can verify what each issuer reported and identify what evidence is
 still missing, without internal logs, dashboard access, or vendor runtime.
 
+## Why we build this
+
+As agents take on real work, the only record of what they did sits inside the
+systems that run them, so the people an action affects have to ask for it and
+accept what they are shown. A signed record travels with the action instead:
+anyone it affects can check, with the issuer's public key, what was recorded and
+who stands behind it, without access to the operator's systems. Originary builds
+an open protocol (PEAC Protocol), the tools to issue, verify and package signed
+records, and Verification Pilots that put them into one production workflow at
+a time.
+
 ## Core pages
 
 - [Home](https://www.originary.xyz/)
@@ -48,9 +59,9 @@ still missing, without internal logs, dashboard access, or vendor runtime.
 - [Investigate](https://www.originary.xyz/investigate): turn a disputed agent action into a reviewable evidence case, with cited findings, missing evidence and a recipient decision
 - [Audit and incident handoff](https://www.originary.xyz/audit-incident-handoff): assembling and verifying an evidence handoff bundle
 - [AI compliance evidence](https://www.originary.xyz/ai-compliance): AI compliance evidence: how Originary creates and verifies portable signed records for selected agent actions, API calls, gateway decisions, approvals, payments and provisioning changes.
-- [About](https://www.originary.xyz/about)
+- [About](https://www.originary.xyz/about): mission, the thesis (whoever holds the logs holds the story), and what Originary builds: an open protocol, the tools, and Verification Pilots
 - [PEAC Protocol](https://www.originary.xyz/peac)
-- [Downloads](https://www.originary.xyz/downloads)
+- [Downloads](https://www.originary.xyz/downloads): Originary Downloads: PEAC Protocol source code, CLI, SDK packages, and verification tooling from the official repository and package registries
 - [Plans and pilot](https://www.originary.xyz/pricing)
 - [Contact](https://www.originary.xyz/contact)
 - [Trust](https://www.originary.xyz/trust): deployment and verification boundaries, procurement facts, and per-system interoperability status
@@ -112,3 +123,7 @@ interaction records, maintained by Originary.
 Originary does not replace gateways, observability, payment rails, policy
 engines, or runtimes. It records selected facts so another party can later
 verify what the issuer recorded.
+
+Site analytics on originary.xyz load only after a visitor opts in, and never
+under Global Privacy Control or Do Not Track. The Verify page checks records in
+the browser; nothing pasted there is uploaded or session-recorded.

@@ -18,6 +18,7 @@ import {
 import { Mono } from '@/components/home/atoms/Mono'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { StatusIcon } from '@/components/specimens/parts'
+import './styles.css'
 
 export const metadata: Metadata = {
   title: { absolute: 'PEAC Protocol: open signed interaction records | Originary' },
@@ -129,7 +130,7 @@ export default function PeacPage() {
             {/* Right column: record-shape preview card */}
             <aside style={peacHeroAside}>
               <div className="home-card" style={peacHeroCard}>
-                <div style={peacHeroCardLabel}>wire 0.2 · interaction-record+jwt</div>
+                <div style={peacHeroCardLabel}>wire 0.2 · <span className="keep-case">interaction-record+jwt</span></div>
                 <div style={peacHeroCardLine}>
                   <span style={peacHeroCardKey}>iss</span>
                   <span style={peacHeroCardVal}>https://api.example.com</span>
@@ -152,7 +153,7 @@ export default function PeacPage() {
                 </div>
                 <div style={peacHeroCardFoot}>
                   <StatusIcon kind="ok" size={13} />
-                  sample · verified offline · {FACTS.currentVersion}
+                  sample · verified offline · <span className="keep-case">{FACTS.currentVersion}</span>
                 </div>
               </div>
             </aside>
@@ -445,6 +446,8 @@ export default function PeacPage() {
                   textDecorationColor: 'var(--rule)',
                   textUnderlineOffset: 3,
                   alignSelf: 'center',
+                  // A 44 px tap area around a small text link.
+                  padding: '12px 0',
                 }}
               >
                 {FACTS.currentVersion} release notes

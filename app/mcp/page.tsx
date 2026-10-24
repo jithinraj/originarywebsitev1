@@ -5,6 +5,7 @@ import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import { RecordCard, CodeBlock, Terminal, StepLabel, SpecimenGrid, MarkerList, InkBand, InkHeading, InkButton, Dim } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
+import './styles.css'
 
 const TITLE = 'Signed audit records for MCP tool calls | Originary'
 const DESCRIPTION =

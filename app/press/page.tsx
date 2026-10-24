@@ -7,6 +7,7 @@ import { FACTS } from '@/lib/facts'
 import { PUBLIC_IDENTITY } from '@/lib/public-identity'
 import { DataTable, MarkerList } from '@/components/specimens/parts'
 import { CopyButton } from './CopyButton'
+import './styles.css'
 import './press.css'
 
 const TITLE = 'Press kit | Originary'

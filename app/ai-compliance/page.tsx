@@ -8,6 +8,7 @@ import { FlowPanel } from '@/components/specimens/FlowPanel'
 import { VerificationLimits } from '@/components/home/VerificationLimits'
 import { MarkGlyph, type MarkName } from '@/components/home/glyphs/MarkGlyphs'
 import { StatusGlyph, type StatusName } from '@/components/home/glyphs/StatusGlyphs'
+import './styles.css'
 
 const TITLE = 'AI Compliance Evidence for Agents & APIs | Originary'
 const DESCRIPTION =

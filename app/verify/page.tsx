@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { FACTS } from '@/lib/facts'
 import { InkBand, InkHeading, InkButton, Terminal } from '@/components/specimens/parts'
 import { Verifier } from '@/components/specimens/Verifier'
+import './styles.css'
 
 const TITLE = 'Verify an Ed25519 JWS signature online | Originary'
 const DESCRIPTION =
@@ -60,7 +61,8 @@ export default function VerifyPage() {
       />
 
       <PageSection paddingTop={8} paddingBottom={72}>
-        <div id="console" style={{ scrollMarginTop: 96 }}>
+        {/* Clarity never starts on /verify (AnalyticsGate); the mask also covers a session begun elsewhere. */}
+        <div id="console" style={{ scrollMarginTop: 96 }} data-clarity-mask="True">
           <Verifier />
         </div>
       </PageSection>

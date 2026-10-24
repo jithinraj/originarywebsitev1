@@ -10,19 +10,23 @@ type Item = { name: string; href: string; logo?: Logo; glyph?: MarkName }
 const GH = 'https://github.com/peacprotocol/peac/tree/main/'
 const GHB = 'https://github.com/peacprotocol/peac/blob/main/'
 
+// Heights are optical, not dimensional (checked on 2x screenshots, 24 Oct 2026): every name reads at
+// the caption's letter size (about 10.5 px caps), stand-alone wordmarks sit a little larger, and marks
+// with a large symbol (Cloudflare, OpenTelemetry, A2A) a little smaller. Re-check against a screenshot
+// of the row after any change; file dimensions do not tell you how big a mark looks.
 const STACK: Item[] = [
-  { name: 'Cloudflare Workers', href: GH + 'surfaces/workers/cloudflare', logo: { src: '/logos/cloudflare-wordmark.png', w: 72, h: 24, ink: 'gray', wm: true } },
+  { name: 'Cloudflare Workers', href: GH + 'surfaces/workers/cloudflare', logo: { src: '/logos/cloudflare-wordmark.png', w: 74, h: 25, ink: 'gray', wm: true } },
   { name: 'UCP', href: GH + 'integrator-kits/ucp', logo: { src: '/logos/ucp.svg', w: 19, h: 22, ink: 'flat' } },
-  { name: 'MCP', href: GH + 'integrator-kits/mcp', logo: { src: '/logos/mcp-official.svg', w: 117, h: 17, ink: 'invert', wm: true } },
-  { name: 'MPP', href: GH + 'examples/mpp-payment-record', logo: { src: '/logos/mpp-wordmark.svg', w: 34, h: 15, ink: 'invert', wm: true } },
-  { name: 'Stripe Projects', href: GH + 'integrator-kits/stripe-projects', logo: { src: '/logos/stripe-wordmark-slate.svg', w: 38, h: 16, ink: 'flat', wm: true } },
+  { name: 'MCP', href: GH + 'integrator-kits/mcp', logo: { src: '/logos/mcp-official.svg', w: 137, h: 20, ink: 'invert', wm: true } },
+  { name: 'MPP', href: GH + 'examples/mpp-payment-record', logo: { src: '/logos/mpp-wordmark.svg', w: 32, h: 14, ink: 'invert', wm: true } },
+  { name: 'Stripe Projects', href: GH + 'integrator-kits/stripe-projects', logo: { src: '/logos/stripe-wordmark-slate.svg', w: 36, h: 15, ink: 'flat', wm: true } },
   { name: 'AP2', href: GHB + 'docs/specs/AP2-COMPOSITION.md', logo: { src: '/logos/ap2.svg', w: 20, h: 22, ink: 'flat' } },
   { name: 'Microsoft AGT', href: GH + 'packages/adapters/runtime-governance', logo: { src: '/logos/microsoft-agt.svg', w: 22, h: 22, ink: 'gray' } },
   { name: 'OpenClaw', href: GH + 'packages/adapters/openclaw', logo: { src: '/logos/openclaw.svg', w: 22, h: 22, ink: 'gray' } },
-  { name: 'SLSA', href: GH + 'packages/mappings/slsa', logo: { src: '/logos/slsa.svg', w: 61, h: 17, ink: 'invert', wm: true } },
-  { name: 'A2A', href: GH + 'integrator-kits/a2a', logo: { src: '/logos/a2a-official.svg', w: 96, h: 24, ink: 'flat', wm: true } },
+  { name: 'SLSA', href: GH + 'packages/mappings/slsa', logo: { src: '/logos/slsa.svg', w: 57, h: 16, ink: 'invert', wm: true } },
+  { name: 'A2A', href: GH + 'integrator-kits/a2a', logo: { src: '/logos/a2a-official.svg', w: 104, h: 26, ink: 'flat', wm: true } },
   { name: 'OpenTelemetry', href: GHB + 'docs/guides/telemetry-otel-correlation.md', logo: { src: '/logos/opentelemetry.svg', w: 75, h: 28, ink: 'flat', wm: true } },
-  { name: 'x402', href: GH + 'integrator-kits/x402', logo: { src: '/logos/x402-mark.svg', w: 44, h: 17, ink: 'flat', wm: true } },
+  { name: 'x402', href: GH + 'integrator-kits/x402', logo: { src: '/logos/x402-mark.svg', w: 39, h: 15, ink: 'flat', wm: true } },
 ]
 
 const EVIDENCE: Item[] = [

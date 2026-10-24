@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useReducedMotion } from '@/components/home/motion/useReducedMotion'
 
 /**
  * Constellation: the abstract /about hero. A loose field of points, faintly
@@ -8,8 +9,9 @@ import { useEffect, useState } from 'react'
  * lights up and stays lit. No labels: every action, anywhere, leaving a mark.
  *
  * The layout is seeded, so server and client render the same points. Motion is
- * SMIL, mounted only when the reader allows motion; otherwise the finished
- * state is drawn. Styles: app/about/about.css under "Constellation".
+ * SMIL, mounted only when the reader allows motion (OS setting and the site's
+ * pause control); otherwise the finished state is drawn. Styles:
+ * app/about/about.css under "Constellation".
  */
 type Pt = [number, number]
 type Layout = { w: number; h: number; cols: number; nodes: Pt[]; mesh: string; arcs: Array<{ d: string; to: number }>; step: number }
@@ -105,12 +107,13 @@ function Field({ L, mode, lit, className }: { L: Layout; mode: 'idle' | 'motion'
 
 /** `lit`: the finished field, every point reached; the closing bookend to the hero. */
 export function Constellation({ lit = false }: { lit?: boolean }) {
-  const [mode, setMode] = useState<'idle' | 'motion' | 'still'>('idle')
+  const still = useReducedMotion()
+  const [ready, setReady] = useState(false)
   useEffect(() => {
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const t = window.setTimeout(() => setMode(reduce ? 'still' : 'motion'), 0)
+    const t = window.setTimeout(() => setReady(true), 0)
     return () => window.clearTimeout(t)
   }, [])
+  const mode = !ready ? 'idle' : still ? 'still' : 'motion'
   return (
     <div className="cf">
       <Field L={DESK} mode={mode} lit={lit} className="cf-svg cf-d" />

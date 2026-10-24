@@ -1,10 +1,12 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { PageShell, PageHero, PageSection, SectionHeading, Button } from '@/components/home/page-kit'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { PALETTE } from '@/components/home/palette'
 import { FACTS } from '@/lib/facts'
 import { Terminal, StepLabel, SpecimenGrid, MarkerList, DataTable, InkBand, InkHeading, InkButton } from '@/components/specimens/parts'
 import { FlowPanel } from '@/components/specimens/FlowPanel'
+import './styles.css'
 
 const TITLE = 'Verification Pilot for agent and API records | Originary'
 const DESCRIPTION =
@@ -203,6 +205,13 @@ export default function ProductPage() {
           </Button>
           <Button href="/records">All six record types</Button>
         </div>
+        <p style={{ fontSize: 15, lineHeight: 1.65, color: PALETTE.muted, margin: '22px 0 0' }}>
+          Worked examples: <Link href="/evidence-case" style={exampleLink}>Evidence case</Link>
+          {' · '}
+          <Link href="/action-review" style={exampleLink}>Action review</Link>
+          {' · '}
+          <Link href="/investigate" style={exampleLink}>Investigate</Link>
+        </p>
         <p style={{ fontSize: 13.5, lineHeight: 1.65, color: PALETTE.faint, maxWidth: '62ch', marginTop: 22 }}>
           Poem, Inc. is the Delaware corporation. Originary&trade; is its software and developer-tools brand. Originary
           Verify names the issue, verify, assess, and hand-off workflow that Originary implements through the
@@ -227,3 +236,5 @@ export default function ProductPage() {
     </PageShell>
   )
 }
+
+const exampleLink = { color: PALETTE.ink, textDecoration: 'underline', textUnderlineOffset: 3 } as const

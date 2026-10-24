@@ -1,16 +1,15 @@
 'use client'
 
 import { useSyncExternalStore } from 'react'
-import { DARK_QUERY, THEME_COLOR, THEME_STORAGE_KEY } from './theme'
+import { THEME_COLOR, THEME_STORAGE_KEY } from './theme'
 
 /**
- * Light / dark theme switch. Light is the default; dark follows the reader's
- * system setting until they pick a theme here. A pick that differs from the
- * system is remembered in localStorage; picking the system's own theme clears it,
- * so the site follows the system again.
+ * Light / dark theme switch. Light is the default for every reader, whatever their
+ * system setting; dark applies only when they pick it here. A dark pick is remembered
+ * in localStorage; picking light clears it, since light is the default.
  *
- * THEME_INIT_SCRIPT (./theme.ts) in the root layout applies the saved choice or the
- * system setting before first paint, so a dark-theme reader never sees a light flash.
+ * THEME_INIT_SCRIPT (./theme.ts) in the root layout applies a saved dark pick before
+ * first paint, so a reader who chose dark never sees a light flash.
  * Both themes use the same token roles (app/originary-tokens.css).
  */
 
@@ -20,17 +19,12 @@ function readTheme(): Theme {
   return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
 }
 
-function systemTheme(): Theme {
-  return window.matchMedia(DARK_QUERY).matches ? 'dark' : 'light'
-}
-
 function subscribe(onChange: () => void) {
   const mo = new MutationObserver(onChange)
   mo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
   const onStorage = (e: StorageEvent) => {
     if (e.key !== THEME_STORAGE_KEY) return
-    const v = e.newValue
-    applyTheme(v === 'dark' || v === 'light' ? v : systemTheme(), false)
+    applyTheme(e.newValue === 'dark' ? 'dark' : 'light', false)
   }
   window.addEventListener('storage', onStorage)
   return () => {
@@ -46,8 +40,8 @@ function applyTheme(next: Theme, persist = true) {
   document.querySelectorAll('meta[name="theme-color"]').forEach((m) => m.setAttribute('content', THEME_COLOR[next]))
   if (!persist) return
   try {
-    if (next === systemTheme()) localStorage.removeItem(THEME_STORAGE_KEY)
-    else localStorage.setItem(THEME_STORAGE_KEY, next)
+    if (next === 'dark') localStorage.setItem(THEME_STORAGE_KEY, 'dark')
+    else localStorage.removeItem(THEME_STORAGE_KEY)
   } catch {
     // Storage blocked (private mode): the switch still works for this page view.
   }

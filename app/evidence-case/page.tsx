@@ -6,6 +6,7 @@ import { Mono } from '@/components/home/atoms/Mono'
 import { StepLabel, InkBand, InkHeading, InkButton } from '@/components/specimens/parts'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { CaseSummary } from '@/components/heroes/HeroArtifacts'
+import './styles.css'
 
 export const metadata: Metadata = {
   title: { absolute: 'What an AI agent or API evidence case contains | Originary' },

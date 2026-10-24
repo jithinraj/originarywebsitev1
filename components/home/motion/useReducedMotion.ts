@@ -1,17 +1,20 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { onMotionChange, prefersStill } from '@/lib/motion'
 
+/**
+ * True when animation should hold still: the OS asks for reduced motion, or the reader paused the
+ * site's motion with the pause control (lib/motion.ts).
+ */
 export function useReducedMotion(): boolean {
-  const [rm, setRm] = useState(false)
+  const [still, setStill] = useState(false)
 
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    setRm(mq.matches)
-    const onChange = () => setRm(mq.matches)
-    mq.addEventListener?.('change', onChange)
-    return () => mq.removeEventListener?.('change', onChange)
+    const read = () => setStill(prefersStill())
+    read()
+    return onMotionChange(read)
   }, [])
 
-  return rm
+  return still
 }

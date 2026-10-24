@@ -1,0 +1,191 @@
+/* /evidence-case only: moved out of components/home/home.css (24 Oct 2026) so other pages
+   do not load it. Loaded after home.css; order inside is the original order. */
+/* ---- Evidence case sheet -------------------------------------------------
+   Two panes: the case sheet itself, and what a reviewer may conclude from it.
+   Every row carries a source mark and a status mark, so state is legible by
+   shape as well as colour. */
+.home-case-layout {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.home-case-sheet {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+}
+.home-case-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 16px 20px 14px;
+  border-bottom: 1px solid var(--hairline);
+}
+.home-case-head-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 500;
+}
+.home-case-head-ref {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 13px;
+  color: var(--faint);
+}
+.home-case-meter {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 3px;
+  padding: 16px 20px 0;
+}
+.home-case-meter > span {
+  height: 4px;
+  border-radius: 1px;
+  opacity: 0.85;
+}
+.home-case-meter-label {
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--faint);
+  margin: 10px 20px 4px;
+}
+.home-case-meter-label strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+.home-case-rows {
+  margin: 0;
+  border-top: 1px solid var(--hairline);
+}
+.home-case-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 20px;
+  border-bottom: 1px solid var(--hairline);
+}
+.home-case-row:last-child {
+  border-bottom: none;
+}
+.home-case-row-mark {
+  display: inline-flex;
+  color: var(--faint);
+}
+.home-case-row-label {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 12px;
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  margin: 0;
+  min-width: 0;
+}
+.home-case-row-label > span:last-child {
+  grid-column: 2;
+}
+.home-case-row-source {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--faint);
+  margin-top: 2px;
+}
+.home-case-row-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  margin: 0;
+  text-align: right;
+}
+.home-case-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  padding: 13px 20px 15px;
+  border-top: 1px solid var(--hairline);
+}
+.home-case-legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+.home-case-aside {
+  border-left: 2px solid var(--border-card);
+  padding: 2px 0 2px 22px;
+}
+.home-case-aside-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin: 0 0 14px;
+}
+.home-case-aside-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+.home-case-aside-list li {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  gap: 11px;
+  align-items: start;
+  font-family: var(--font-plex-sans), "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.home-case-aside-list li svg {
+  margin-top: 2px;
+}
+.home-case-aside-foot {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--faint);
+  margin: 20px 0 0;
+}
+@media (max-width: 900px) {
+  .home-case-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .home-case-aside {
+    border-left: none;
+    border-top: 1px solid var(--border-card);
+    padding: 20px 0 0 0;
+  }
+}
+@media (max-width: 560px) {
+  .home-case-row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 6px;
+  }
+  .home-case-row-status {
+    justify-content: flex-start;
+    text-align: left;
+    padding-left: 38px;
+  }
+}
+.ha-c-ok { color: var(--success) !important; }
+.ha-c-miss { color: var(--warn) !important; }
+.ha-c-none { color: var(--not-evaluated) !important; }

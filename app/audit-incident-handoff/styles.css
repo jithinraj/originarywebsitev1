@@ -1,0 +1,17 @@
+/* /audit-incident-handoff only: moved out of components/home/home.css (24 Oct 2026) so other pages
+   do not load it. Loaded after home.css; order inside is the original order. */
+/* ---- Two lists side by side (audit: contains / does not do) -------------- */
+.aud-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+.aud-pair h2 {
+  font-size: clamp(24px, 2.4vw, 30px) !important;
+}
+@media (max-width: 860px) {
+  .aud-pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

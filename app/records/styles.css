@@ -1,0 +1,18 @@
+/* /records only: moved out of components/home/home.css (24 Oct 2026) so other pages
+   do not load it. Loaded after home.css; order inside is the original order. */
+/* ---- Records: jump row ------------------------------------------------------ */
+.rec-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+/* Records: a fanned deck */
+.ha-deck {
+  position: relative;
+  height: 300px;
+}
+@media (max-width: 520px) {
+  .ha-deck {
+    height: 280px;
+  }
+}

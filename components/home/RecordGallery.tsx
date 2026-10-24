@@ -131,9 +131,7 @@ export function RecordGallery() {
     >
       <SectionHead
         eyebrow="Record types"
-        title="One record model"
-        qualifier="for every important action."
-        stack
+        title="One record model for every important action."
         body="Tool calls, API calls, agent actions, gateway decisions, payments and provisioning all share six parts: facts, policy, result, time, issuer and signature."
       />
       <div className="rix">

@@ -13,7 +13,9 @@ approval.
 | Element defaults (headings, links, code, focus, reduced motion, print) | `app/originary-base.css` |
 | Inline-style handles for the tokens | `components/home/palette.ts` (`PALETTE`, values are CSS variables) |
 | Literal token values for OG images and canvas only | `lib/brand-tokens.ts` |
-| Theme choice (system setting, toggle, first-paint script) | `components/brand/theme.ts`, `components/brand/ThemeToggle.tsx` |
+| Theme choice (light default, toggle, first-paint script) | `components/brand/theme.ts`, `components/brand/ThemeToggle.tsx` |
+| Pause control for looping motion (first-paint script, toggle) | `lib/motion.ts`, `components/home/motion/MotionToggle.tsx` |
+| Analytics consent (opt-in, Privacy choices) | `lib/consent.ts`, `components/consent/` |
 | Wordmark (static master) | `components/brand/OriginaryWordmark.tsx`, geometry in `components/brand/wordmark-geometry.ts` |
 | Logo animation (ident) | `components/brand/OriginaryIdent.tsx` |
 | Brand kit files | `public/brand/` (wordmark, app icon, social), favicons in `public/`, manifest icons in `public/icons/` |
@@ -58,15 +60,16 @@ Rules:
 - **Primary buttons stay ink** (`--action`), never cobalt.
 - **Results always carry an icon and a word**, never colour alone.
 - **Focus is a 2 px cobalt outline**, offset 2 px.
-- No gradients, glass, glows or textures.
+- No gradients, glass or glows. One texture only: the bit field (see "The bit field").
 - Every text role is at least 4.5 : 1 on its page and panel in both themes.
 
 ### Themes
 
-Light is the default. Dark follows the reader's system setting, or the theme toggle in the header, and swaps
-the wordmark to the reverse master. `THEME_INIT_SCRIPT` sets `data-theme` on `<html>` before first paint and
-follows system changes. A toggle choice that differs from the system is stored in `localStorage` and overrides
-it; choosing the system's own theme clears the override.
+Light is the default for every reader, whatever their system setting. Dark applies only when the reader picks it
+with the theme toggle in the header, and swaps the wordmark to the reverse master. A dark pick is stored in
+`localStorage`; picking light clears it. `THEME_INIT_SCRIPT` sets `data-theme` on `<html>` before first paint, so
+a reader who chose dark never sees a light flash. This replaces the v17 guide's follow-the-system rule (founder
+decision, 24 October 2026).
 
 ## Typography
 
@@ -102,6 +105,8 @@ The wordmark is the logo: one lowercase word, drawn, not typed. Reproduce it onl
 - Ink `#0B0B0C` or white only. Never recolour (not even cobalt), stretch, outline, shadow, retype, re-space,
   rotate, or place on mid-tones.
 - `alt="Originary"`, or `alt=""` when adjacent text already says Originary.
+- The one exception: the ASCII wordmark under the footer (`WordmarkStream`), drawn in characters from the
+  master geometry (founder decision, 24 October 2026). Nowhere else is the wordmark retyped or drawn in characters.
 
 ### App icon and favicon
 
@@ -117,7 +122,9 @@ The tile is a container, not a second logo: never place it beside the wordmark a
 unmasked tile where a platform applies its own mask. No recolouring, effects, borders or radius changes.
 
 Partner marks: monochrome, one row at 78% opacity, never joined to the wordmark, captioned
-"Examples are interoperability surfaces, not partnership claims."
+"Examples are interoperability surfaces, not partnership claims." Size them optically, not by file dimensions:
+every name reads at the caption's letter size (about 10.5 px caps), and marks with a large symbol sit a little
+smaller. Check any change on a 2x screenshot of the row.
 
 ## Logo animation
 
@@ -136,6 +143,26 @@ It is never a loader or a loop and never in colour. Reduced motion shows the fin
   diagram, never as decoration on cards.
 - Motion: lines draw over 900 ms (`--dur-slow`), hovers 160 ms (`--dur-fast`), cards lift 2 px over 220 ms
   (`--dur-base`). Calm easing, no bounce or overshoot. Reduced motion shows the end state.
+- Looping motion (the bit field, the hero flow, logo rows, the log stream, the /about constellation and
+  marquee) stops under the reader's pause control as well as under reduced motion: `lib/motion.ts` sets
+  `data-motion="paused"` on `<html>`, CSS loops add `:root[data-motion='paused'] … { animation-play-state:
+  paused }`, and script loops use `useReducedMotion()`, which reports both. Every stage with a loop carries
+  `<MotionToggle className="mt-corner" />` (WCAG 2.2.2).
+- Hero and page-hero copy renders at once, with no entrance animation: it is what the page is judged by first.
+
+### The bit field
+
+The site's one texture (`components/home/motion/BitField.tsx`): IBM Plex Mono 0/1 glyphs, 10 px on a 22 px
+grid, behind the homepage hero and page heroes. Not on /about, which has the constellation.
+
+- Ink at 6% (7.5% in the dark theme), never above 20%. Densest at the far sides, easing out toward the centre.
+- Never behind content: everything marked `data-field-clear` keeps 14 px clear with a 120 px feather. It fades
+  in under the header and out at the stage's lower edge.
+- Motion: sparse vertical rain. Drops of light fall down single columns at 70–120 px/s (about one new drop
+  per column every 80 s, so a handful at once), brightest at the head and fading over a 10-cell trail; each bit a
+  head passes flips over 0.5 s. The digits never leave the grid. A few bits also flip on their own (about 0.4%
+  a second, over 1.4 s), and the cursor brightens bits within 150 px and stirs a few. Still on phones, under
+  reduced motion and when paused.
 
 ## Photography and data
 
@@ -171,3 +198,7 @@ emoji, exclamation marks or superlatives.
 - OG image routes and canvas code are the only places that use `lib/brand-tokens.ts`.
 - `npm run check:brand` enforces the raw-colour rule, the 12 px text floor and the 96 px wordmark minimum;
   `npm run test:brand` holds its regression cases.
+- Identifiers keep their case inside uppercase labels: wrap versions, algorithm names, media types and code in
+  `<span className="keep-case">` ("v0.16.4", "Ed25519", never "V0.16.4").
+- Analytics load only through `components/consent/AnalyticsGate.tsx`, after opt-in, as /privacy describes.
+  Never add a tracking script, pixel or preconnect anywhere else.

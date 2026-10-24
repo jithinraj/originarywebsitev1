@@ -431,7 +431,7 @@ export function ActionReviewConsole() {
                   <Label>Simulate an incoming report</Label>
                   <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 8 }}>
                     {SIMULATIONS.map((s, i) => (
-                      <button key={s.label} type="button" onClick={() => simulate(i)} style={{ ...button(), padding: '6px 10px', fontSize: 12.5 }}>
+                      <button key={s.label} type="button" className="ar-sim-btn" onClick={() => simulate(i)} style={{ ...button(), padding: '6px 10px', fontSize: 12.5 }}>
                         + {s.label}
                       </button>
                     ))}

@@ -10,9 +10,9 @@
    backgrounds. Green, amber and red state results only, always
    with an icon and a word.
 
-   Light is the default. Dark follows the reader's system setting or
-   the theme toggle; components/brand/theme.ts sets [data-theme] on
-   <html> before first paint, and an explicit choice overrides the system.
+   Light is the default whatever the system setting. Dark applies only
+   when the reader picks it with the theme toggle; components/brand/theme.ts
+   sets [data-theme] on <html> before first paint.
    ============================================================ */
 
 :root {

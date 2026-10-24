@@ -151,7 +151,7 @@ export function RecordDemo({ onState }: { onState?: (s: DemoState, changed: bool
             <span className="rd-legend-p">payload</span>
             <span className="rd-legend-s">signature</span>
           </p>
-          <p className="rd-label rd-label-key">Issuer&apos;s public key &middot; Ed25519</p>
+          <p className="rd-label rd-label-key">Issuer&apos;s public key &middot; <span className="keep-case">Ed25519</span></p>
           <p className="rd-key-box">{JWK.x}</p>
         </div>
       </div>
@@ -192,7 +192,7 @@ export function RecordDemo({ onState }: { onState?: (s: DemoState, changed: bool
                   : state === 'invalid'
                     ? 'The result field changed, so these bytes no longer match the signature.'
                     : state === 'unsupported'
-                      ? 'Use the PEAC CLI (peac verify) instead.'
+                      ? 'This browser cannot check Ed25519 signatures. Try a current Chrome, Edge, Firefox or Safari.'
                       : ' '}
             </span>
           </span>

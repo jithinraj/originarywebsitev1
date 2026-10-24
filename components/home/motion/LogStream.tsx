@@ -1,11 +1,12 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useReducedMotion } from './useReducedMotion'
 
 /**
  * LogStream: the "your system" side of the Share diagram. New illustrative
  * log lines tick in at the top while the section is on screen; the oldest
- * fades out at the bottom. Static under reduced motion.
+ * fades out at the bottom. Static under reduced motion or the pause control.
  */
 const EVENTS = [
   'POST /v1/search 200 {ms}ms',
@@ -39,9 +40,10 @@ function lineAt(n: number) {
 
 export function LogStream() {
   const [head, setHead] = useState(VISIBLE)
+  const still = useReducedMotion()
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (still) return
     let timer = 0
     const io = new IntersectionObserver(([e]) => {
       window.clearInterval(timer)
@@ -53,7 +55,7 @@ export function LogStream() {
       io.disconnect()
       window.clearInterval(timer)
     }
-  }, [])
+  }, [still])
 
   const rows = Array.from({ length: VISIBLE }, (_, k) => head - 1 - k)
   return (

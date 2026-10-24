@@ -28,9 +28,7 @@ export function ProtocolSimple() {
     >
       <SectionHead
         eyebrow="Open protocol"
-        title="Built on an open protocol"
-        qualifier="you can run without us."
-        stack
+        title="Built on an open protocol you can run without us."
         body={`PEAC is the ${FACTS.license} protocol behind every record. Issue records with your own keys and verify them anywhere, offline.`}
         center
       />
@@ -38,7 +36,7 @@ export function ProtocolSimple() {
       <figure className="protos-term">
         <figcaption className="protos-term-head">
           <span>Verify offline</span>
-          <span>PEAC {FACTS.currentVersion}</span>
+          <span>PEAC <span className="keep-case">{FACTS.currentVersion}</span></span>
         </figcaption>
         <TypedLines
           className="protos-term-body"

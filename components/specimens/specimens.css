@@ -178,3 +178,10 @@
     border-bottom: 1px solid var(--hairline);
   }
 }
+
+/* Phones: a 44 px tap area. */
+@media (max-width: 600px) {
+  .tamper-btn {
+    min-height: 44px;
+  }
+}

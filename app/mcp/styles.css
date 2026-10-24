@@ -1,0 +1,37 @@
+/* /mcp only: moved out of components/home/home.css (24 Oct 2026) so other pages
+   do not load it. Loaded after home.css; order inside is the original order. */
+/* ---- Solution pages: compact "more" rows -------------------------------- */
+.mcp-more {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 4vw, 56px);
+}
+.mcp-more > div {
+  padding-top: 18px;
+  border-top: 1px solid var(--ink);
+}
+.mcp-more dt {
+  font-family: var(--font-sans);
+  font-size: var(--text-card-title);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-card);
+  color: var(--ink);
+}
+.mcp-more dd {
+  margin: 8px 0 0;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.mcp-more a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+@media (max-width: 760px) {
+  .mcp-more {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -5,6 +5,7 @@ import { PageShell, PageHero, PageSection, SectionHeading, Button } from '@/comp
 import { DataTable } from '@/components/specimens/parts'
 import { Breadcrumbs } from '@/components/home/Breadcrumbs'
 import { TrustGlance } from '@/components/heroes/HeroArtifacts'
+import './styles.css'
 import './trust.css'
 
 export const metadata: Metadata = {
