@@ -83,6 +83,12 @@ const button = (primary = false): CSSProperties => ({
   borderRadius: 0,
 })
 
+// Time stamp for a simulated report: the current time, never earlier than the demo review clock.
+// Kept outside the component because it reads the clock; it runs only from a click handler.
+function simulatedReportTime() {
+  return new Date(Math.max(Date.now(), REVIEW_CLOCK)).toISOString()
+}
+
 export function ActionReviewConsole() {
   const [cases, setCases] = useState<ReviewCase[]>(seedCases)
   const [selectedId, setSelectedId] = useState<string>(() => sortCases(seedCases())[0].id)
@@ -129,13 +135,15 @@ export function ActionReviewConsole() {
     }
   }, [cases, digests])
 
-  useEffect(() => {
+  // Reset the form only when the selection changes. Done during render (React's pattern for
+  // adjusting state when an input changes), so the form never paints with the previous case's values.
+  const [formCaseId, setFormCaseId] = useState<string | null>(null)
+  if (formCaseId !== selectedId) {
+    setFormCaseId(selectedId)
     if (selected) setDisposition(selected.status === 'monitoring' ? 'in_review' : selected.status)
     setNote('')
     setMessage(null)
-    // Reset the form only when the selection changes.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedId])
+  }
 
   function update(id: string, fn: (c: ReviewCase) => ReviewCase) {
     setCases((all) => all.map((c) => (c.id === id ? fn(c) : c)))
@@ -174,7 +182,7 @@ export function ActionReviewConsole() {
   function simulate(index: number) {
     if (!selected) return
     const sim = SIMULATIONS[index]
-    const at = new Date(Math.max(Date.now(), REVIEW_CLOCK)).toISOString()
+    const at = simulatedReportTime()
     update(selected.id, (c) =>
       recompute(
         {
